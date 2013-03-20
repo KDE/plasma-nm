@@ -315,12 +315,8 @@ void Model::insertItem(ModelItem* item)
         m_connections << item;
         endInsertRows();
 
-        connect(item, SIGNAL(nameChanged(QString)), SLOT(onChanged()));
-        connect(item, SIGNAL(uuidChanged(QString)), SLOT(onChanged()));
-        connect(item, SIGNAL(ssidChanged(QString)), SLOT(onChanged()));
-        connect(item, SIGNAL(connectedChanged(bool)), SLOT(onChanged()));
+        connect(item, SIGNAL(connectionChanged()), SLOT(onChanged()));
         connect(item, SIGNAL(signalChanged(int)), SLOT(onChanged()));
-        connect(item, SIGNAL(secureChanged(bool)), SLOT(onChanged()));
         connect(item, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), SLOT(onChanged()));
         connect(item, SIGNAL(accessPointChanged(QString)), SLOT(onChanged()));
 

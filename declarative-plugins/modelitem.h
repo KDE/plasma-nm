@@ -69,13 +69,8 @@ public:
     QString specificPath() const;
 
 Q_SIGNALS:
-    void nameChanged(const QString & name);
-    void uuidChanged(const QString & uuid);
-    void typeChanged(NetworkManager::Settings::ConnectionSettings::ConnectionType type);
-    void connectedChanged(bool connected);
-    void ssidChanged(const QString & ssid);
+    void connectionChanged();
     void signalChanged(int signal);
-    void secureChanged(bool secure);
     void stateChanged(NetworkManager::ActiveConnection::State state);
     void accessPointChanged(const QString & accessPoint);
 

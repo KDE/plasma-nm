@@ -41,8 +41,10 @@ ModelItem::~ModelItem()
 
 QString ModelItem::name() const
 {
-    if (m_connection)
+    if (m_connection) {
+        NMDebug() << "NAME = " << m_connection->id();
         return m_connection->id();
+    }
 
     if (m_network)
         return m_network->ssid();
@@ -99,6 +101,16 @@ QString ModelItem::ssid() const
 {
     if (m_network)
         return m_network->ssid();
+
+    if (m_connection) {
+        NetworkManager::Settings::ConnectionSettings settings;
+        settings.fromMap(m_connection->settings());
+
+        if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
+            NetworkManager::Settings::WirelessSetting * wirelessSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
+            return wirelessSetting->ssid();
+        }
+    }
 
     return QString();
 }
@@ -333,37 +345,11 @@ void ModelItem::onActiveConnectionStateChanged(NetworkManager::ActiveConnection:
 
 void ModelItem::onConnectionUpdated(const QVariantMapMap& map)
 {
-    NetworkManager::Settings::ConnectionSettings settings;
-    settings.fromMap(map);
+    Q_UNUSED(map);
 
-    if (settings.id() != name()) {
-        emit nameChanged(name());
-        NMDebug() << "Item: Name has been changed to " << name();
-    }
+    emit connectionChanged();
 
-    if (settings.uuid() != uuid()) {
-        emit uuidChanged(uuid());
-        NMDebug() << "Item: Uuid has been changed to " << uuid();
-    }
-
-    if (settings.connectionType() != type()) {
-        emit typeChanged(type());
-        NMDebug() << "Item: Type has been changed to " << type();
-    }
-
-    if (type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-        NetworkManager::Settings::WirelessSetting * wirelessSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
-
-        if (!wirelessSetting->security().isEmpty() != secure()) {
-            emit secureChanged(secure());
-            NMDebug() << "Item: Secure has been changed to " << secure();
-        }
-
-        if (QString(QString(wirelessSetting->ssid())) != ssid()) {
-            emit ssidChanged(ssid());
-            NMDebug() << "Item: Ssid has been changed to " << ssid();
-        }
-    }
+    NMDebug() << "Item: connection changed";
 }
 
 void ModelItem::onSignalStrengthChanged(int strength)

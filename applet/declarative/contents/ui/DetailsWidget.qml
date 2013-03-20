@@ -69,7 +69,7 @@ Item {
 
             height: 25; width: parent.width/3;
             flat: true;
-            iconSource: QIcon("edit-undo");
+            iconSource: QIcon("go-previous");
             text: i18n("Back");
 
             onClicked: hideDetails();

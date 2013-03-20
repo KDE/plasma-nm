@@ -25,6 +25,7 @@
 #include <QIcon>
 
 #include <QtNetworkManager/activeconnection.h>
+#include <QtNetworkManager/wirelessnetworkinterfaceenvironment.h>
 
 class AppletInfo : public QObject
 {
@@ -40,18 +41,27 @@ public Q_SLOTS:
 private Q_SLOTS:
     void activeConnectionsChanged();
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
+    void setAppletIcons();
+    void setWirelessIconForSignalStrenght(int strenght);
 
 Q_SIGNALS:
-    void activatingConnection(const QString & connectionUuid);
+    void startActivatingConnection(const QString & connectionUuid);
     void stopActivatingConnection(const QString & connectionUuid);
-    void mainConnectionIcon(const QString & icon);
-    void secondConnectionIcon(const QString & icon);
+    void setConnectionIcon(const QString & icon);
+    void setVpnIcon();
+    void unsetVpnIcon();
 
     void networkingEnabled(bool enabled);
     void wirelessEnabled(bool enabled);
     void wwanEnabled(bool enabled);
 private:
-    void setAppletInfo();
+    int m_wirelessSignal;
+    NetworkManager::WirelessNetwork * m_wirelessNetwork;
+    NetworkManager::WirelessNetworkInterfaceEnvironment * m_wirelessEnvironment;
+
+    void setMainDisconnectedIcon();
+    void setModemIcon();
+    void setWirelessIcon(NetworkManager::Device * device, const QString & ssid);
 };
 
 #endif // PLASMA_NM_APPLET_INFO_H

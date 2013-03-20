@@ -20,24 +20,34 @@
 
 import QtQuick 1.1
 import org.kde.qtextracomponents 0.1
+import org.kde.plasma.core 0.1 as PlasmaCore
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasmanm 0.1 as PlasmaNm
 
 Item {
     id: trayIcon;
 
-    QIconItem {
-        id: mainConnectionIcon;
+    PlasmaCore.Svg {
+        id: svgIcons;
+
+        multipleImages: true;
+        imagePath: "icons/plasma-nm";
+    }
+
+    PlasmaCore.SvgItem {
+        id: connectionIcon;
 
         anchors.fill: parent;
-        icon: QIcon("");
+        svg: svgIcons;
+        elementId: "network-wired";
 
         QIconItem {
-            id: secondConnectionIcon;
+            id: vpnIcon;
 
             width: parent.width/1.5; height: parent.height/1.5;
             anchors { bottom: parent.bottom; right: parent.right }
-            icon: QIcon("");
+            icon: QIcon("object-locked");
+            visible: false;
         }
 
         PlasmaComponents.BusyIndicator {
@@ -59,7 +69,7 @@ Item {
         PlasmaNm.AppletInfo {
             id: iconInfo;
 
-            onActivatingConnection: {
+            onStartActivatingConnection: {
                 busyIndicator.running = true;
             }
 
@@ -67,12 +77,16 @@ Item {
                 busyIndicator.running = false;
             }
 
-            onMainConnectionIcon: {
-                mainConnectionIcon.icon = QIcon(icon);
+            onSetConnectionIcon: {
+                connectionIcon.elementId = icon
             }
 
-            onSecondConnectionIcon: {
-                secondConnectionIcon.icon = QIcon(icon);
+            onSetVpnIcon: {
+                vpnIcon.visible = true;
+            }
+
+            onUnsetVpnIcon: {
+                vpnIcon.visible = false;
             }
         }
 

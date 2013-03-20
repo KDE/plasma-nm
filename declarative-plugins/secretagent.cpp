@@ -69,7 +69,7 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
         }
     }
 
-    return settings->toMap();
+    return QVariantMapMap();
 }
 
 void SecretAgent::SaveSecrets(const QVariantMapMap &connection, const QDBusObjectPath &connection_path)

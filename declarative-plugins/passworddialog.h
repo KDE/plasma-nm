@@ -17,6 +17,9 @@ public:
     ~PasswordDialog();
     QVariantMap secrets() const;
 
+private slots:
+    void showPassword(bool show);
+
 private:
     Ui::PasswordDialog * m_ui;
     QStringList m_neededSecrets;

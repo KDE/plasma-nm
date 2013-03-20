@@ -15,6 +15,10 @@ PasswordDialog::PasswordDialog(NetworkManager::Settings::Setting *setting, const
     } else {
         m_ui->labelText->setText(i18n("Please provide a password below"));
     }
+
+    connect(m_ui->showPassword, SIGNAL(toggled(bool)), this, SLOT(showPassword(bool)));
+    connect(m_ui->buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(m_ui->buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 }
 
 PasswordDialog::~PasswordDialog()
@@ -30,4 +34,9 @@ QVariantMap PasswordDialog::secrets() const
         result.insert(m_neededSecrets.first(), m_ui->password->text());
 
     return result;
+}
+
+void PasswordDialog::showPassword(bool show)
+{
+    m_ui->password->setPasswordMode(!show);
 }

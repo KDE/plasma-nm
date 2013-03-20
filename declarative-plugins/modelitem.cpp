@@ -42,7 +42,6 @@ ModelItem::~ModelItem()
 QString ModelItem::name() const
 {
     if (m_connection) {
-        NMDebug() << "NAME = " << m_connection->id();
         return m_connection->id();
     }
 
@@ -336,11 +335,12 @@ QString ModelItem::specificPath() const
 void ModelItem::onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state)
 {
     if (state == NetworkManager::ActiveConnection::Deactivated) {
+        NMItemDebug() << name() << ": has been disconnected";
         m_active = 0;
     }
 
-    NMDebug() << "Item: State has been changed to " << state;
-    emit stateChanged(state);
+    NMItemDebug() << name() << ": state has been changed to " << state;
+    emit stateChanged();
 }
 
 void ModelItem::onConnectionUpdated(const QVariantMapMap& map)
@@ -349,20 +349,20 @@ void ModelItem::onConnectionUpdated(const QVariantMapMap& map)
 
     emit connectionChanged();
 
-    NMDebug() << "Item: connection changed";
+    NMItemDebug() << name() << ": connection changed";
 }
 
 void ModelItem::onSignalStrengthChanged(int strength)
 {
-    emit signalChanged(strength);
+    emit signalChanged();
 
-    NMDebug() << "Item: " << " strength changed to " << strength;
+    NMItemDebug() << name() << ": strength changed to " << strength;
 }
 
 void ModelItem::onAccessPointChanged(const QString& accessPoint)
 {
-    emit accessPointChanged(accessPoint);
+    emit accessPointChanged();
 
-    NMDebug() << "Item: " << " access point changed to " << accessPoint;
+    NMItemDebug() << name() << ": access point changed to " << accessPoint;
 }
 

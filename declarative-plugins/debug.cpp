@@ -20,8 +20,33 @@
 
 #include "debug.h"
 
-int debugArea()
+int appletDebugArea()
 {
-    static int area = KDebug::registerArea("Plasma-nm", false);
+    static int area = KDebug::registerArea("Plasma-nm (applet)", false);
     return area;
 }
+
+int modelDebugArea()
+{
+    static int area = KDebug::registerArea("Plasma-nm (model)", false);
+    return area;
+}
+
+int monitorDebugArea()
+{
+    static int area = KDebug::registerArea("Plasma-nm (monitor)", false);
+    return area;
+}
+
+int monitorSignalDebugArea()
+{
+    static int area = KDebug::registerArea("Plasma-nm (monitor signals)", false);
+    return area;
+}
+
+int itemDebugArea()
+{
+    static int area = KDebug::registerArea("Plasma-nm (item)", false);
+    return area;
+}
+

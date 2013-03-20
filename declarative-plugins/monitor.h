@@ -21,10 +21,10 @@
 #ifndef PLASMA_NM_MONITOR_H
 #define PLASMA_NM_MONITOR_H
 
-#include <QtNetworkManager/manager.h>
 #include <QtNetworkManager/activeconnection.h>
 #include <QtNetworkManager/accesspoint.h>
 #include <QtNetworkManager/device.h>
+#include <QtNetworkManager/manager.h>
 #include <QtNetworkManager/wirelessnetworkinterfaceenvironment.h>
 
 class Monitor : public QObject

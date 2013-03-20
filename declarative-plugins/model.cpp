@@ -155,7 +155,7 @@ void Model::addActiveConnection(NetworkManager::ActiveConnection* active)
                 QModelIndex modelIndex = createIndex(row, 0);
                 dataChanged(modelIndex, modelIndex);
             }
-            NMDebug() << "Model: Connection " << item->name() << " has been updated";
+            NMModelDebug() << "Connection " << item->name() << " has been updated";
             break;
         }
     }
@@ -181,7 +181,7 @@ void Model::addVpnConnection(NetworkManager::Settings::Connection * connection)
     ModelItem * item = new ModelItem();
     item->setConnection(connection);
 
-    NMDebug() << "Model: VPN Connection " << settings->id() << " has been added";
+    NMModelDebug() << "VPN Connection " << settings->id() << " has been added";
     insertItem(item);
 }
 
@@ -199,7 +199,7 @@ void Model::removeWirelessNetwork(const QString& ssid)
             m_connections.removeOne(item);
             delete item;
             endRemoveRows();
-            NMDebug() << "Model: Wireless network " << ssid << " has been removed";
+            NMModelDebug() << "Wireless network " << ssid << " has been removed";
             break;
         }
     }
@@ -222,7 +222,7 @@ void Model::removeConnection(const QString& connection)
                     m_connections.removeOne(item);
                     delete item;
                     endRemoveRows();
-                    NMDebug() << "Model: Connection " << name << " has been removed";
+                    NMModelDebug() << "Connection " << name << " has been removed";
                 }
 
             // Or it's still available so we have to update it
@@ -232,7 +232,7 @@ void Model::removeConnection(const QString& connection)
                     QModelIndex modelIndex = createIndex(row, 0);
                     dataChanged(modelIndex, modelIndex);
                 }
-                NMDebug() << "Model: Connection " << item->name() << " has been removed from known connections";
+                NMModelDebug() << "Connection " << item->name() << " has been removed from known connections";
             }
 
             break;
@@ -255,7 +255,7 @@ void Model::removeConnectionsByDevice(const QString& udi)
             m_connections.removeOne(item);
             delete item;
             endRemoveRows();
-            NMDebug() << "Model: Connection " << name << " has been removed";
+            NMModelDebug() << "Connection " << name << " has been removed";
             row = -1;
         }
     }
@@ -275,7 +275,7 @@ void Model::removeVpnConnections()
             m_connections.removeOne(item);
             delete item;
             endRemoveRows();
-            NMDebug() << "Model: VPN Connection " << item->name() << " has been removed";
+            NMModelDebug() << "VPN Connection " << item->name() << " has been removed";
             row = -1;
         }
     }
@@ -303,7 +303,7 @@ void Model::insertItem(ModelItem* item)
                 QModelIndex modelIndex = createIndex(row, 0);
                 dataChanged(modelIndex, modelIndex);
             }
-            NMDebug() << "Model: Connection " << it->name() << " has been updated";
+            NMModelDebug() << "Connection " << it->name() << " has been updated";
             found = true;
             break;
         }
@@ -316,11 +316,11 @@ void Model::insertItem(ModelItem* item)
         endInsertRows();
 
         connect(item, SIGNAL(connectionChanged()), SLOT(onChanged()));
-        connect(item, SIGNAL(signalChanged(int)), SLOT(onChanged()));
-        connect(item, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), SLOT(onChanged()));
-        connect(item, SIGNAL(accessPointChanged(QString)), SLOT(onChanged()));
+        connect(item, SIGNAL(signalChanged()), SLOT(onChanged()));
+        connect(item, SIGNAL(stateChanged()), SLOT(onChanged()));
+        connect(item, SIGNAL(accessPointChanged()), SLOT(onChanged()));
 
-        NMDebug() << "Model: Connection " << item->name() << " has been added";
+        NMModelDebug() << "Connection " << item->name() << " has been added";
     } else {
         delete item;
     }
@@ -334,7 +334,7 @@ void Model::onChanged()
     if (row >= 0) {
         QModelIndex index = createIndex(row, 0);
         dataChanged(index, index);
-        NMDebug() << "Model: Item " << item->name() << " has been changed";
+        NMModelDebug() << "Item " << item->name() << " has been changed";
     }
 }
 

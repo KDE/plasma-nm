@@ -75,7 +75,7 @@ void AppletInfo::activeConnectionsChanged()
                 SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)));
 
         if (active->state() == NetworkManager::ActiveConnection::Activating) {
-            NMDebug() << "Applet info: Emit signal activatingConnection(" << active->connection()->id() << ")";
+            NMAppletDebug() << "Emit signal activatingConnection(" << active->connection()->id() << ")";
             Q_EMIT startActivatingConnection(active->connection()->uuid());
         }
     }
@@ -89,7 +89,7 @@ void AppletInfo::activeConnectionStateChanged(NetworkManager::ActiveConnection::
 
     if (state == NetworkManager::ActiveConnection::Deactivated ||
         state == NetworkManager::ActiveConnection::Activated) {
-        NMDebug() << "Applet info: Emit signal stopActivatingConnection(" << active->connection()->id() << ")";
+        NMAppletDebug() << "Emit signal stopActivatingConnection(" << active->connection()->id() << ")";
         Q_EMIT stopActivatingConnection(active->connection()->uuid());
     }
 
@@ -122,7 +122,7 @@ void AppletInfo::setAppletIcons()
                 break;
             } else if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Wired) {
                 connectionFound = true;
-                NMDebug() << "Monitor: Emit signal setConnectionIcon(network-wired-activated)";
+                NMAppletDebug() << "Emit signal setConnectionIcon(network-wired-activated)";
                 Q_EMIT setConnectionIcon(QString("network-wired-activated"));
             } else if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
                 connectionFound = true;
@@ -133,7 +133,7 @@ void AppletInfo::setAppletIcons()
 
         if (active->vpn() && active->state() == NetworkManager::ActiveConnection::Activated) {
             vpnFound = true;
-            NMDebug() << "Monitor: Emit signal setVpnIcon()";
+            NMAppletDebug() << "Emit signal setVpnIcon()";
             Q_EMIT setVpnIcon();
         }
     }
@@ -143,7 +143,7 @@ void AppletInfo::setAppletIcons()
     }
 
     if (!vpnFound) {
-        NMDebug() << "Monitor: Emit signal unsetVpnIcon()";
+        NMAppletDebug() << "Emit signal unsetVpnIcon()";
         Q_EMIT unsetVpnIcon();
     }
 }
@@ -177,16 +177,16 @@ void AppletInfo::setMainDisconnectedIcon()
     }
 
     if (wired) {
-        NMDebug() << "Monitor: Emit signal setConnectionIcon(network-wired)";
+        NMAppletDebug() << "Emit signal setConnectionIcon(network-wired)";
         Q_EMIT setConnectionIcon(QString("network-wired"));
     } else if (wireless) {
-        NMDebug() << "Monitor: Emit signal setConnectionIcon(network-wireless-0)";
+        NMAppletDebug() << "Emit signal setConnectionIcon(network-wireless-0)";
         Q_EMIT setConnectionIcon(QString("network-wireless-0"));
     } else if (modem) {
-        NMDebug() << "Monitor: Emit signal setConnectionIcon(network-mobile-0-none)";
+        NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile-0-none)";
         Q_EMIT setConnectionIcon(QString("network-mobile-0-none"));
     } else {
-        NMDebug() << "Monitor: Emit signal setConnectionIcon(network-wired)";
+        NMAppletDebug() << "Emit signal setConnectionIcon(network-wired)";
         Q_EMIT setConnectionIcon(QString("network-wired"));
     }
 }
@@ -236,7 +236,7 @@ void AppletInfo::setWirelessIconForSignalStrenght(int strenght)
 
         QString icon = QString("network-wireless-%1").arg(iconStrenght);
 
-        NMDebug() << "Monitor: Emit signal setConnectionIcon(" << icon << ")";
+        NMAppletDebug() << "Emit signal setConnectionIcon(" << icon << ")";
         Q_EMIT setConnectionIcon(icon);
     }
 }

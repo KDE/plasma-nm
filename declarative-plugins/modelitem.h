@@ -21,10 +21,11 @@
 #ifndef PLASMA_NM_MODEL_ITEM_H
 #define PLASMA_NM_MODEL_ITEM_H
 
-#include <QtNetworkManager/settings/connection.h>
-#include <QtNetworkManager/connection.h>
-#include <QtNetworkManager/wirelessnetwork.h>
 #include <QtNetworkManager/activeconnection.h>
+#include <QtNetworkManager/connection.h>
+#include <QtNetworkManager/vpnconnection.h>
+#include <QtNetworkManager/wirelessnetwork.h>
+#include <QtNetworkManager/settings/connection.h>
 
 class ModelItem : public QObject
 {
@@ -69,10 +70,10 @@ public:
     QString specificPath() const;
 
 Q_SIGNALS:
+    void accessPointChanged();
     void connectionChanged();
-    void signalChanged(int signal);
-    void stateChanged(NetworkManager::ActiveConnection::State state);
-    void accessPointChanged(const QString & accessPoint);
+    void signalChanged();
+    void stateChanged();
 
 private Q_SLOTS:
     void onAccessPointChanged(const QString & accessPoint);

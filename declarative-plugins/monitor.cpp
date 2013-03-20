@@ -62,7 +62,7 @@ void Monitor::init()
             SLOT(connectionRemoved(QString)));
 
     foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
-        NMDebug() << "Monitor -> model: Emit signal addActiveConnection(" << active->connection()->id() << ")";
+        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active->connection()->id() << ")";
         Q_EMIT addActiveConnection(active);
     }
 }
@@ -70,8 +70,8 @@ void Monitor::init()
 void Monitor::addAvailableConnectionsForDevice(NetworkManager::Device* device)
 {
     foreach (NetworkManager::Settings::Connection * con, device->availableConnections()) {
-        NMDebug() << "Monitor: Available connection " << con->id() << " for device " << device->interfaceName();
-        NMDebug() << "Monitor -> model: Emit signal addConnection(" << con->id() << ")";
+        NMMonitorDebug() << "Available connection " << con->id() << " for device " << device->interfaceName();
+        NMMonitorSignalDebug() << "Emit signal addConnection(" << con->id() << ")";
         Q_EMIT addConnection(con, device);
     }
 }
@@ -93,7 +93,7 @@ void Monitor::addDevice(NetworkManager::Device* device)
         foreach (const QString & network, wifiEnv->networks()) {
             NetworkManager::WirelessNetwork * wifiNetwork = wifiEnv->findNetwork(network);
 
-            NMDebug() << "Monitor -> model: Emit signal addWirelessNetwork(" << wifiNetwork->ssid() << ")";
+            NMMonitorSignalDebug() << "Emit signal addWirelessNetwork(" << wifiNetwork->ssid() << ")";
             Q_EMIT addWirelessNetwork(wifiNetwork, wifiEnv->interface());
         }
 
@@ -109,11 +109,11 @@ void Monitor::cablePlugged(bool plugged)
     NetworkManager::Device * device = qobject_cast<NetworkManager::Device*>(sender());
 
     if (plugged) {
-        NMDebug() << "Monitor: Cable plugged to " << device->interfaceName() ;
+        NMMonitorDebug() << "Cable plugged to " << device->interfaceName() ;
         addAvailableConnectionsForDevice(device);
     } else {
-        NMDebug() << "Monitor: Cable unplugged from " << device->interfaceName() ;
-        NMDebug() << "Monitor -> model: Emit signal removeConnectionsByDevice(" << device->interfaceName()  << ")";
+        NMMonitorDebug() << "Cable unplugged from " << device->interfaceName() ;
+        NMMonitorSignalDebug() << "Emit signal removeConnectionsByDevice(" << device->interfaceName()  << ")";
         Q_EMIT removeConnectionsByDevice(device->udi());
     }
 }
@@ -125,8 +125,8 @@ void Monitor::connectionAdded(const QString& connection)
     foreach (NetworkManager::Device * dev, m_devices) {
         foreach (NetworkManager::Settings::Connection * con, dev->availableConnections()) {
             if (con->uuid() == newConnection->uuid()) {
-                NMDebug() << "Monitor: Connection " << con->id() << " added";
-                NMDebug() << "Monitor -> model: Emit signal addConnection(" << con->id() << ")";
+                NMMonitorDebug() << "Connection " << con->id() << " added";
+                NMMonitorSignalDebug() << "Emit signal addConnection(" << con->id() << ")";
                 Q_EMIT addConnection(con, dev);
             }
         }
@@ -135,15 +135,16 @@ void Monitor::connectionAdded(const QString& connection)
 
 void Monitor::connectionRemoved(const QString& connection)
 {
-    NMDebug() << "Monitor: Connection " << connection << " removed";
-    NMDebug() << "Monitor -> model: Emit signal removeConnection(" << connection << ")";
+    NMMonitorDebug() << "Connection " << connection << " removed";
+    NMMonitorSignalDebug() << "Emit signal removeConnection(" << connection << ")";
     Q_EMIT removeConnection(connection);
 }
 
 void Monitor::changeActiveConnections()
 {
+    NMMonitorDebug() << "Active connections have been changed";
     foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
-        NMDebug() << "Monitor -> model: Emit signal addActiveConnection(" << active->connection()->id() << ")";
+        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active->connection()->id() << ")";
         Q_EMIT addActiveConnection(active);
     }
 }
@@ -154,15 +155,15 @@ void Monitor::deviceAdded(const QString& device)
     m_devices << dev;
     addDevice(dev);
 
-    NMDebug() << "Monitor: Device " << dev->interfaceName()  << " added";
+    NMMonitorDebug() << "Device " << dev->interfaceName()  << " added";
 }
 
 void Monitor::deviceRemoved(const QString& device)
 {
     foreach (NetworkManager::Device * dev, m_devices) {
         if (dev->uni() == device) {
-            NMDebug() << "Monitor: Device " << dev->interfaceName() << " removed";
-            NMDebug() << "Monitor -> model: Emit signal removeConnectionsByDevice(" << dev->interfaceName()  << ")";
+            NMMonitorDebug() << "Device " << dev->interfaceName() << " removed";
+            NMMonitorSignalDebug() << "Emit signal removeConnectionsByDevice(" << dev->interfaceName()  << ")";
             Q_EMIT removeConnectionsByDevice(dev->udi());
             m_devices.removeOne(dev);
             delete dev;
@@ -173,7 +174,7 @@ void Monitor::deviceRemoved(const QString& device)
 
 void Monitor::statusChanged(NetworkManager::Status status)
 {
-    NMDebug() << "Monitor: NetworkManager status changed to " << status;
+    NMMonitorDebug() << "NetworkManager status changed to " << status;
 
     if (status == NetworkManager::Connected ||
         status == NetworkManager::ConnectedLinkLocal ||
@@ -184,13 +185,13 @@ void Monitor::statusChanged(NetworkManager::Status status)
             settings.fromMap(con->settings());
 
             if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Vpn) {
-                NMDebug() << "Monitor -> model: Emit signal addVpnConnection(" << con->id() << ")";
+                NMMonitorSignalDebug() << "Emit signal addVpnConnection(" << con->id() << ")";
                 Q_EMIT addVpnConnection(con);
             }
         }
 
     } else {
-        NMDebug() << "Monitor -> model: Emit signal removeVpnConnections()";
+        NMMonitorSignalDebug() << "Emit signal removeVpnConnections()";
         Q_EMIT removeVpnConnections();
     }
 }
@@ -209,8 +210,8 @@ void Monitor::wirelessNetworkAppeared(const QString& ssid)
         }
     }
 
-    NMDebug() << "Monitor: Wireless network " << ssid << " appeared";
-    NMDebug() << "Monitor -> model: Emit signal addWirelessNetwork(" << ssid << ")";
+    NMMonitorDebug() << "Wireless network " << ssid << " appeared";
+    NMMonitorSignalDebug() << "Emit signal addWirelessNetwork(" << ssid << ")";
     Q_EMIT addWirelessNetwork(network, wirelessInterface->interface());
 
     addAvailableConnectionsForDevice(wirelessInterface->interface());
@@ -218,7 +219,7 @@ void Monitor::wirelessNetworkAppeared(const QString& ssid)
 
 void Monitor::wirelessNetworkDisappeared(const QString& ssid)
 {
-    NMDebug() << "Monitor: Wireless network " << ssid << " disappeared";
-    NMDebug() << "Monitor -> model: Emit signal removeWirelessNetwork(" << ssid << ")";
+    NMMonitorDebug() << "Wireless network " << ssid << " disappeared";
+    NMMonitorSignalDebug() << "Emit signal removeWirelessNetwork(" << ssid << ")";
     Q_EMIT removeWirelessNetwork(ssid);
 }

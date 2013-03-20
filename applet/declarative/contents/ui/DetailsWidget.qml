@@ -62,12 +62,12 @@ Item {
 
         spacing: 2;
         exclusive: false;
-        anchors { horizontalCenter: parent.horizontalCenter; bottom: parent.bottom }
+        anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
 
         PlasmaComponents.ToolButton {
             id: backButton;
 
-            height: 25;
+            height: 25; width: parent.width/3;
             flat: true;
             iconSource: QIcon("edit-undo");
             text: i18n("Back");
@@ -78,7 +78,7 @@ Item {
         PlasmaComponents.ToolButton {
             id: editButton;
 
-            height: 25;
+            height: 25; width: parent.width/3;
             iconSource: QIcon("configure");
             text: i18n("Edit");
             enabled: editable;
@@ -87,7 +87,7 @@ Item {
         PlasmaComponents.ToolButton {
             id: removeButton;
 
-            height: 25;
+            height: 25; width: parent.width/3;
             iconSource: QIcon("edit-delete");
             text: i18n("Remove");
             enabled: editable;

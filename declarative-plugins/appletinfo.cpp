@@ -101,13 +101,10 @@ void AppletInfo::setAppletIcons()
     bool connectionFound = false;
     bool vpnFound = false;
 
-    if (m_wirelessNetwork) {
-        delete m_wirelessNetwork;
-        m_wirelessNetwork = 0;
-    }
     if (m_wirelessEnvironment) {
         delete m_wirelessEnvironment;
         m_wirelessEnvironment = 0;
+        m_wirelessNetwork = 0;
     }
     m_wirelessSignal = 0;
 

@@ -1,5 +1,6 @@
 /*
-    Copyright 2012-2013  Jan Grulich <jgrulich@redhat.com>
+    Copyright 2012-2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -19,8 +20,12 @@
 */
 
 #include "secretagent.h"
+#include "passworddialog.h"
 
 #include <QtNetworkManager/settings/connection.h>
+#include <QtNetworkManager/settings/802-11-wireless.h>
+
+#include <KWindowSystem>
 
 SecretAgent::SecretAgent(QObject* parent):
     NetworkManager::SecretAgent("org.kde.plasma-nm", parent)
@@ -31,18 +36,37 @@ SecretAgent::~SecretAgent()
 {
 }
 
-QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const QDBusObjectPath &connection_path, const QString &setting_name, const QStringList &hints, uint flags)
+QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const QDBusObjectPath &connection_path, const QString &setting_name,
+                                       const QStringList &hints, uint flags)
 {
+    qDebug() << Q_FUNC_INFO;
+    qDebug() << "Path:" << connection_path.path();
+    qDebug() << "Setting name:" << setting_name;
+    qDebug() << "Hints:" << hints;
+    qDebug() << "Flags:" << flags;
+
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
     settings->fromMap(connection);
 
     NetworkManager::Settings::Setting * setting = settings->setting(NetworkManager::Settings::Setting::typeFromString(setting_name));
 
-    NetworkManager::SecretAgent::GetSecretsFlags secretsFlags((int)flags);
+    NetworkManager::SecretAgent::GetSecretsFlags secretsFlags(static_cast<int>(flags));
+    const bool requestNew = secretsFlags.testFlag(RequestNew);
 
-    if (secretsFlags.testFlag(RequestNew) ||
-        (secretsFlags.testFlag(AllowInteraction) && !setting->needSecrets().isEmpty())) {
-        // TODO
+    if (requestNew || (secretsFlags.testFlag(AllowInteraction) && !setting->needSecrets(requestNew).isEmpty())) {
+        NetworkManager::Settings::WirelessSetting * wifi = static_cast<NetworkManager::Settings::WirelessSetting *>(settings->setting(NetworkManager::Settings::Setting::Wireless));
+        const QString ssid = wifi->ssid();
+
+        PasswordDialog * dlg = new PasswordDialog(setting, setting->needSecrets(requestNew), ssid);
+        QVariantMapMap result;
+        int dlgResult = dlg->exec();
+        KWindowSystem::activateWindow(dlg->winId());
+        KWindowSystem::demandAttention(dlg->winId());
+        if (dlgResult == QDialog::Accepted) {
+            result.insert(setting_name, dlg->secrets());
+            delete dlg;
+            return result;
+        }
     }
 
     return settings->toMap();

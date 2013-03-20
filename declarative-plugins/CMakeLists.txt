@@ -9,9 +9,14 @@ set(plasma_nm_qml_plugins_SRCS
    model.cpp
    modelitem.cpp
    monitor.cpp
+   passworddialog.cpp
    sortmodel.cpp
    secretagent.cpp
    qmlplugins.cpp
+)
+
+kde4_add_ui_files(plasma_nm_qml_plugins_SRCS
+    ui/passworddialog.ui
 )
 
 kde4_add_library(plasmanmplugins SHARED ${plasma_nm_qml_plugins_SRCS})

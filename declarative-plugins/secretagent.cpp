@@ -20,6 +20,8 @@
 
 #include "secretagent.h"
 
+#include <QtNetworkManager/settings/connection.h>
+
 SecretAgent::SecretAgent(QObject* parent):
     NetworkManager::SecretAgent("org.kde.plasma-nm", parent)
 {
@@ -31,7 +33,19 @@ SecretAgent::~SecretAgent()
 
 QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const QDBusObjectPath &connection_path, const QString &setting_name, const QStringList &hints, uint flags)
 {
+    NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
+    settings->fromMap(connection);
 
+    NetworkManager::Settings::Setting * setting = settings->setting(NetworkManager::Settings::Setting::typeFromString(setting_name));
+
+    NetworkManager::SecretAgent::GetSecretsFlags secretsFlags((int)flags);
+
+    if (secretsFlags.testFlag(RequestNew) ||
+        (secretsFlags.testFlag(AllowInteraction) && !setting->needSecrets().isEmpty())) {
+        // TODO
+    }
+
+    return settings->toMap();
 }
 
 void SecretAgent::SaveSecrets(const QVariantMapMap &connection, const QDBusObjectPath &connection_path)

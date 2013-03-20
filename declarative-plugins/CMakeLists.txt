@@ -10,6 +10,7 @@ set(plasma_nm_qml_plugins_SRCS
    modelitem.cpp
    monitor.cpp
    sortmodel.cpp
+   secretagent.cpp
    qmlplugins.cpp
 )
 

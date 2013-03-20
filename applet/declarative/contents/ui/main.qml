@@ -67,6 +67,10 @@ Item {
         sourceModel: connectionModel;
     }
 
+    PlasmaNm.SecretAgent {
+        id: secretAgent;
+    }
+
     ListView {
         id: connectionView;
 

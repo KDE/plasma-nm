@@ -28,6 +28,7 @@
 #include "model.h"
 #include "sortmodel.h"
 #include "appletinfo.h"
+#include "secretagent.h"
 
 void QmlPlugins::registerTypes(const char* uri)
 {
@@ -35,6 +36,7 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<Model>(uri, 0, 1, "Model");
     qmlRegisterType<SortModel>(uri, 0, 1, "SortModel");
     qmlRegisterType<AppletInfo>(uri, 0, 1, "AppletInfo");
+    qmlRegisterType<SecretAgent>(uri, 0, 1, "SecretAgent");
 }
 
 Q_EXPORT_PLUGIN2(plasmanm, QmlPlugins);

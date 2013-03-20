@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Lukáš Tinkl &lt;ltinkl@redhat.com&gt;</author>
+ <class>Security8021x</class>
+ <widget class="QWidget" name="Security8021x">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>563</width>
+    <height>471</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>&amp;Authentication:</string>
+     </property>
+     <property name="buddy">
+      <cstring>auth</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QComboBox" name="auth">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>MD5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>TLS</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>LEAP</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>FAST</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tunneled TLS (TTLS)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Protected EAP (PEAP)</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="md5Page">
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>&amp;Username:</string>
+         </property>
+         <property name="buddy">
+          <cstring>md5UserName</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="md5UserName"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>&amp;Password:</string>
+         </property>
+         <property name="buddy">
+          <cstring>md5Password</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="KLineEdit" name="md5Password">
+         <property name="passwordMode">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QCheckBox" name="cbAskMd5Password">
+         <property name="text">
+          <string>A&amp;sk for this password every time</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QCheckBox" name="cbShowMd5Password">
+         <property name="text">
+          <string>S&amp;how password</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tlsPage">
+      <layout class="QFormLayout" name="formLayout_2">
+       <property name="fieldGrowthPolicy">
+        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>&amp;Identity:</string>
+         </property>
+         <property name="buddy">
+          <cstring>tlsIdentity</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="tlsIdentity"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>&amp;User certificate:</string>
+         </property>
+         <property name="buddy">
+          <cstring>tlsUserCert</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>&amp;CA certificate:</string>
+         </property>
+         <property name="buddy">
+          <cstring>tlsCACert</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="KUrlRequester" name="tlsCACert">
+         <property name="filter">
+          <string notr="true">*.der *.pem *.crt *.cer</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>&amp;Private key:</string>
+         </property>
+         <property name="buddy">
+          <cstring>tlsPrivateKey</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="KUrlRequester" name="tlsPrivateKey">
+         <property name="filter">
+          <string notr="true">*.der *.pem *.p12</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Private &amp;key password:</string>
+         </property>
+         <property name="buddy">
+          <cstring>tlsPrivateKeyPassword</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="KLineEdit" name="tlsPrivateKeyPassword">
+         <property name="passwordMode">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QCheckBox" name="cbShowTlsPassword">
+         <property name="text">
+          <string>&amp;Show password</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="KUrlRequester" name="tlsUserCert">
+         <property name="filter">
+          <string notr="true">*.der *.pem *.crt *.cer</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="leapPage">
+      <layout class="QFormLayout" name="formLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>&amp;Username:</string>
+         </property>
+         <property name="buddy">
+          <cstring>leapUsername</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="leapUsername"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>&amp;Password:</string>
+         </property>
+         <property name="buddy">
+          <cstring>leapPassword</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="KLineEdit" name="leapPassword"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QCheckBox" name="cbShowLeapPassword">
+         <property name="text">
+          <string>&amp;Show password</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="fastPage">
+      <layout class="QFormLayout" name="formLayout_4">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>A&amp;nonymous identity:</string>
+         </property>
+         <property name="buddy">
+          <cstring>fastAnonIdentity</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="fastAnonIdentity"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="fastAllowPacProvisioning">
+         <property name="text">
+          <string>Automatic &amp;PAC provisioning</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="pacMethod">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>Anonymous</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Authenticated</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Both</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>PAC &amp;file:</string>
+         </property>
+         <property name="buddy">
+          <cstring>pacFile</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="KUrlRequester" name="pacFile">
+         <property name="filter">
+          <string notr="true">*.pac</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="text">
+          <string>&amp;Inner authentication:</string>
+         </property>
+         <property name="buddy">
+          <cstring>fastInnerAuth</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="fastInnerAuth">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>GTC</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>MSCHAPv2</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>&amp;Username:</string>
+         </property>
+         <property name="buddy">
+          <cstring>fastUsername</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="fastUsername"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Pass&amp;word:</string>
+         </property>
+         <property name="buddy">
+          <cstring>fastPassword</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="KLineEdit" name="fastPassword">
+         <property name="passwordMode">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QCheckBox" name="cbAskFastPassword">
+         <property name="text">
+          <string>Ask for this password &amp;everytime</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QCheckBox" name="cbShowFastPassword">
+         <property name="text">
+          <string>S&amp;how password</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="ttlsPage">
+      <layout class="QFormLayout" name="formLayout_5">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string>A&amp;nonymous identity:</string>
+         </property>
+         <property name="buddy">
+          <cstring>fastAnonIdentity</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="ttlsAnonIdentity"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>&amp;CA certificate:</string>
+         </property>
+         <property name="buddy">
+          <cstring>tlsCACert</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="KUrlRequester" name="ttlsCACert">
+         <property name="filter">
+          <string notr="true">*.der *.pem *.crt *.cer</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>&amp;Inner authentication:</string>
+         </property>
+         <property name="buddy">
+          <cstring>fastInnerAuth</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="ttlsInnerAuth">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>PAP</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>MSCHAP</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>MSCHAPv2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>CHAP</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>&amp;Username:</string>
+         </property>
+         <property name="buddy">
+          <cstring>fastUsername</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="ttlsUsername"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string>Pass&amp;word:</string>
+         </property>
+         <property name="buddy">
+          <cstring>fastPassword</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="KLineEdit" name="ttlsPassword">
+         <property name="passwordMode">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QCheckBox" name="cbAskTtlsPassword">
+         <property name="text">
+          <string>Ask for this password &amp;everytime</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QCheckBox" name="cbShowTtlsPassword">
+         <property name="text">
+          <string>S&amp;how password</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="peapPage">
+      <layout class="QFormLayout" name="formLayout_6">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_24">
+         <property name="text">
+          <string>A&amp;nonymous identity:</string>
+         </property>
+         <property name="buddy">
+          <cstring>fastAnonIdentity</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="peapAnonIdentity"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_23">
+         <property name="text">
+          <string>&amp;CA certificate:</string>
+         </property>
+         <property name="buddy">
+          <cstring>tlsCACert</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="KUrlRequester" name="peapCACert">
+         <property name="filter">
+          <string notr="true">*.der *.pem *.crt *.cer</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_22">
+         <property name="text">
+          <string>&amp;Inner authentication:</string>
+         </property>
+         <property name="buddy">
+          <cstring>fastInnerAuth</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="peapInnerAuth">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>MSCHAPv2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>MD5</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>GTC</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_25">
+         <property name="text">
+          <string>&amp;Username:</string>
+         </property>
+         <property name="buddy">
+          <cstring>fastUsername</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="peapUsername"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_21">
+         <property name="text">
+          <string>Pass&amp;word:</string>
+         </property>
+         <property name="buddy">
+          <cstring>fastPassword</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="KLineEdit" name="peapPassword">
+         <property name="passwordMode">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QCheckBox" name="cbAskPeapPassword">
+         <property name="text">
+          <string>Ask for this password &amp;everytime</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QCheckBox" name="cbShowPeapPassword">
+         <property name="text">
+          <string>S&amp;how password</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_26">
+         <property name="text">
+          <string>PEAP &amp;version:</string>
+         </property>
+         <property name="buddy">
+          <cstring>peapVersion</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="peapVersion">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>Automatic</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Version 0</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Version 1</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QFrame</extends>
+   <header>kurlrequester.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>auth</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>stackedWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>156</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>stackedWidget</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>auth</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>376</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>355</x>
+     <y>14</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbAskMd5Password</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>md5Password</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>123</x>
+     <y>98</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>80</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fastAllowPacProvisioning</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pacMethod</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>95</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>285</x>
+     <y>77</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbAskFastPassword</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>fastPassword</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>311</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>311</x>
+     <y>189</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbAskTtlsPassword</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ttlsPassword</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>253</x>
+     <y>180</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>245</x>
+     <y>156</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbAskPeapPassword</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>peapPassword</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>216</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>215</x>
+     <y>191</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

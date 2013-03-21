@@ -188,7 +188,7 @@ QString ModelItem::detailInformations() const
 
             info += QString("<tr>");
             info += QString("<td align=right><b>") + i18n("Connection speed:") + QString("</b></td>");
-            info += QString("<td align=left>") + i18n("%1 MBit/s", wired->bitRate()) + QString("</td>");
+            info += QString("<td align=left>") + i18n("%1 MBit/s", wired->bitRate()/1000) + QString("</td>");
             info += QString("</tr>");
 
             info += QString("<tr>");

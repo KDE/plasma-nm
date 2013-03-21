@@ -153,38 +153,38 @@ bool ModelItem::secure() const
 QString ModelItem::detailInformations() const
 {
     QString info = "<qt><table>";
-    QString format = "<tr><td align=\"right\"><b>%1:</b></td><td align=\"left\">&nbsp;%2</td></tr>";
+    QString format = "<tr><td align=\"right\"><b>%1</b></td><td align=\"left\">&nbsp;%2</td></tr>";
 
     if (m_connection) {
         NetworkManager::Settings::ConnectionSettings settings;
         settings.fromMap(m_connection->settings());
-        info += QString(format).arg(i18nc("type of network device", "Type"), settings.typeAsString(settings.connectionType()));
+        info += QString(format).arg(i18nc("type of network device", "Type:"), settings.typeAsString(settings.connectionType()));
     }
 
     if (m_device && connected()) {
         if (device()->ipV4Config().isValid()) {
             QHostAddress addr(device()->ipV4Config().addresses().first().address());
-             info += QString(format).arg(i18n("IPv4 Address"), addr.toString());
+             info += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
         }
 
         if (device()->ipV6Config().isValid()) {
             QHostAddress addr(device()->ipV6Config().addresses().first().address());
-            info += QString(format).arg(i18n("IPv6 Address"), addr.toString());
+            info += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
         }
 
         if (device()->type() == NetworkManager::Device::Ethernet) {
             NetworkManager::WiredDevice * wired = qobject_cast<NetworkManager::WiredDevice*>(device());
             if (wired->bitRate() < 1000000) {
-                info += QString(format).arg(i18n("Connection speed"), i18n("%1 Mb/s", wired->bitRate()/1000));
+                info += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wired->bitRate()/1000));
             } else {
-                info += QString(format).arg(i18n("Connection speed"), i18n("%1 Gb/s", wired->bitRate()/1000000));
+                info += QString(format).arg(i18n("Connection speed:"), i18n("%1 Gb/s", wired->bitRate()/1000000));
             }
             info += QString(format).arg(i18n("MAC Address"), wired->permanentHardwareAddress());
 
         } else if (device()->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice * wireless = qobject_cast<NetworkManager::WirelessDevice*>(device());
-            info += QString(format).arg(i18n("Connection speed"), i18n("%1 Mb/s", wireless->bitRate()/1000));
-            info += QString(format).arg(i18n("MAC Address"), wireless->permanentHardwareAddress());
+            info += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wireless->bitRate()/1000));
+            info += QString(format).arg(i18n("MAC Address:"), wireless->permanentHardwareAddress());
         }
 
         QString name;
@@ -193,16 +193,16 @@ QString ModelItem::detailInformations() const
         } else {
             name = device()->ipInterfaceName();
         }
-        info += QString(format).arg(i18nc("network device driver", "Driver"), device()->driver());
+        info += QString(format).arg(i18nc("network device driver", "Driver:"), device()->driver());
     }
 
     if (m_network) {
         NetworkManager::WirelessDevice * wifiDev = qobject_cast<NetworkManager::WirelessDevice*>(m_device);
         NetworkManager::AccessPoint * ap = wifiDev->findAccessPoint(m_network->referenceAccessPoint());
 
-        info += QString(format).arg(i18n("Access point (SSID)"), m_network->ssid());
-        info += QString(format).arg(i18n("Access point (BSSID)"), ap->hardwareAddress());
-        info += QString(format).arg(i18nc("Wifi AP frequency", "Frequency"), i18n("%1 Mhz", ap->frequency()));
+        info += QString(format).arg(i18n("Access point (SSID):"), m_network->ssid());
+        info += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
+        info += QString(format).arg(i18nc("Wifi AP frequency", "Frequency:"), i18n("%1 Mhz", ap->frequency()));
     }
 
     info += QString("</table></qt>");

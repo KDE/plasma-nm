@@ -129,7 +129,7 @@ void AppletInfo::setAppletIcons()
                 setWirelessIcon(active->devices().first(), wirelessSetting->ssid());
             }
         }
-        NMAppletDebug() << active->vpn() << " - " << active->state();
+
         if (active->vpn() && active->state() == NetworkManager::ActiveConnection::Activated) {
             vpnFound = true;
             NMAppletDebug() << "Emit signal setVpnIcon()";

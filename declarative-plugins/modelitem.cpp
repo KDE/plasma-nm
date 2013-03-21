@@ -152,100 +152,57 @@ bool ModelItem::secure() const
 
 QString ModelItem::detailInformations() const
 {
-    QString info = "<table>";
+    QString info = "<qt><table>";
+    QString format = "<tr><td align=\"right\"><b>%1:</b></td><td align=\"left\">&nbsp;%2</td></tr>";
 
     if (m_connection) {
         NetworkManager::Settings::ConnectionSettings settings;
         settings.fromMap(m_connection->settings());
-
-        info += QString("<tr>");
-        info += QString("<td align=right><b>") + i18nc("type of network device", "Type:") + QString("</b></td>");
-        info += QString("<td align=left>") + settings.typeAsString(settings.connectionType()) + QString("</td>");
-        info += QString("</tr>");
+        info += QString(format).arg(i18nc("type of network device", "Type"), settings.typeAsString(settings.connectionType()));
     }
 
     if (m_device && connected()) {
         if (device()->ipV4Config().isValid()) {
             QHostAddress addr(device()->ipV4Config().addresses().first().address());
-
-            info += QString("<tr>");
-            info += QString("<td align=right><b>") + i18n("IPv4 Address:") + QString("</b></td>");
-            info += QString("<td align=left>") + addr.toString() + QString("</td>");
-            info += QString("</tr>");
+             info += QString(format).arg(i18n("IPv4 Address"), addr.toString());
         }
 
         if (device()->ipV6Config().isValid()) {
             QHostAddress addr(device()->ipV6Config().addresses().first().address());
-
-            info += QString("<tr>");
-            info += QString("<td align=right><b>") + i18n("IPv6 Address:") + QString("</b></td>");
-            info += QString("<td align=left>") + addr.toString() + QString("</td>");
-            info += QString("</tr>");
+            info += QString(format).arg(i18n("IPv6 Address"), addr.toString());
         }
 
         if (device()->type() == NetworkManager::Device::Ethernet) {
             NetworkManager::WiredDevice * wired = qobject_cast<NetworkManager::WiredDevice*>(device());
-
-            info += QString("<tr>");
-            info += QString("<td align=right><b>") + i18n("Connection speed:") + QString("</b></td>");
-            info += QString("<td align=left>") + i18n("%1 MBit/s", wired->bitRate()/1000) + QString("</td>");
-            info += QString("</tr>");
-
-            info += QString("<tr>");
-            info += QString("<td align=right><b>") + i18n("MAC Address:") + QString("</b></td>");
-            info += QString("<td align=left>") + wired->permanentHardwareAddress() + QString("</td>");
-            info += QString("</tr>");
+            info += QString(format).arg(i18n("Connection speed"), i18n("%1 MBit/s", wired->bitRate()/1000));
+            info += QString(format).arg(i18n("MAC Address"), wired->permanentHardwareAddress());
 
         } else if (device()->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice * wireless = qobject_cast<NetworkManager::WirelessDevice*>(device());
-
-            info += QString("<tr>");
-            info += QString("<td align=right><b>") + i18n("Connection speed:") + QString("</b></td>");
-            info += QString("<td align=left>") + i18n("%1 Mb/s", wireless->bitRate()/1000) + QString("</td>");
-            info += QString("</tr>");
-
-            info += QString("<tr>");
-            info += QString("<td align=right><b>") + i18n("MAC Address:") + QString("</b></td>");
-            info += QString("<td align=left>") + wireless->permanentHardwareAddress() + QString("</td>");
-            info += QString("</tr>");
+            info += QString(format).arg(i18n("Connection speed"), i18n("%1 Mb/s", wireless->bitRate()/1000));
+            info += QString(format).arg(i18n("MAC Address"), wireless->permanentHardwareAddress());
         }
 
-        info += QString("<tr>");
-        info += QString("<td align=right><b>") + i18nc("name assigned by system", "System name:") + QString("</b></td>");
+        QString name;
         if (device()->ipInterfaceName().isEmpty()) {
-            info += QString("<td align=left>") + device()->interfaceName() + QString("</td>");
+            name = device()->interfaceName();
         } else {
-            info += QString("<td align=left>") + device()->ipInterfaceName() + QString("</td>");
+            name = device()->ipInterfaceName();
         }
-        info += QString("</tr>");
-
-        info += QString("<tr>");
-        info += QString("<td align=right><b>") + i18nc("network device driver", "Driver:") + QString("</b></td>");
-        info += QString("<td align=left>") + device()->driver() + QString("</td>");
-        info += QString("</tr>");
+        info += QString(format).arg(i18nc("network device driver", "Driver"), device()->driver());
     }
 
     if (m_network) {
-        info += QString("<tr>");
-        info += QString("<td align=right><b>") + i18n("Access point (SSID):") + QString("</b></td>");
-        info += QString("<td align=left>") + m_network->ssid() + QString("</td>");
-        info += QString("</tr>");
+        info += QString(format).arg(i18n("Access point (SSID)"), m_network->ssid());
 
         NetworkManager::WirelessDevice * wifiDev = qobject_cast<NetworkManager::WirelessDevice*>(m_device);
         NetworkManager::AccessPoint * ap = wifiDev->findAccessPoint(m_network->referenceAccessPoint());
 
-        info += QString("<tr>");
-        info += QString("<td align=right><b>") + i18n("Access point (BSSID):") + QString("</b></td>");
-        info += QString("<td align=left>") + ap->hardwareAddress() + QString("</td>");
-        info += QString("</tr>");
-
-        info += QString("<tr>");
-        info += QString("<td align=right><b>") + i18nc("Wifi AP frequency", "Frequency:") + QString("</b></td>");
-        info += QString("<td align=left>") + i18n("%1 Mhz", ap->frequency()) + QString("</td>");
-        info += QString("</tr>");
+        info += QString(format).arg(i18n("Access point (BSSID)"), ap->hardwareAddress());
+        info += QString(format).arg(i18nc("Wifi AP frequency", "Frequency"), i18n("%1 Mhz", ap->frequency()));
     }
 
-    info += QString("</table>");
+    info += QString("</table></qt>");
 
     return info;
 }

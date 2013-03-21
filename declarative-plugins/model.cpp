@@ -155,7 +155,7 @@ void Model::addActiveConnection(NetworkManager::ActiveConnection* active)
                 QModelIndex modelIndex = createIndex(row, 0);
                 dataChanged(modelIndex, modelIndex);
             }
-            NMModelDebug() << "Connection " << item->name() << " has been updated";
+            NMModelDebug() << "Connection " << item->name() << " has been updated by active connection";
             break;
         }
     }
@@ -292,9 +292,11 @@ void Model::insertItem(ModelItem* item)
             (!it->ssid().isEmpty() && !item->ssid().isEmpty() && it->ssid() == item->ssid())) {
             // Update info
             if (!it->wirelessNetwork() && item->wirelessNetwork()) {
+                NMModelDebug() << "Connection " << it->name() << " has been updated by wireless network";
                 it->setWirelessNetwork(item->wirelessNetwork());
             }
             if (!it->connection() && item->connection()) {
+                NMModelDebug() << "Connection " << it->name() << " has been updated by connection";
                 it->setConnection(item->connection());
             }
 
@@ -303,7 +305,6 @@ void Model::insertItem(ModelItem* item)
                 QModelIndex modelIndex = createIndex(row, 0);
                 dataChanged(modelIndex, modelIndex);
             }
-            NMModelDebug() << "Connection " << it->name() << " has been updated";
             found = true;
             break;
         }

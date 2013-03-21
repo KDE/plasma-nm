@@ -38,10 +38,10 @@ public Q_SLOTS:
     void init();
 
 private Q_SLOTS:
+    void activeConnectionsChanged();
     void cablePlugged(bool plugged);
     void connectionAdded(const QString & connection);
     void connectionRemoved(const QString & connection);
-    void changeActiveConnections();
     void deviceAdded(const QString & device);
     void deviceRemoved(const QString & device);
     void statusChanged(NetworkManager::Status status);

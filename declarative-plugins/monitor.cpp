@@ -49,7 +49,7 @@ void Monitor::init()
     statusChanged(NetworkManager::status());
 
     connect(NetworkManager::notifier(), SIGNAL(activeConnectionsChanged()),
-            SLOT(changeActiveConnections()));
+            SLOT(activeConnectionsChanged()));
     connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)),
             SLOT(deviceAdded(QString)));
     connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
@@ -62,6 +62,7 @@ void Monitor::init()
             SLOT(connectionRemoved(QString)));
 
     foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
+        NMMonitorDebug() << "Available active connection (" << active->connection()->id() << ")";
         NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active->connection()->id() << ")";
         Q_EMIT addActiveConnection(active);
     }
@@ -78,21 +79,21 @@ void Monitor::addAvailableConnectionsForDevice(NetworkManager::Device* device)
 
 void Monitor::addDevice(NetworkManager::Device* device)
 {
-    addAvailableConnectionsForDevice(device);
-
     if (device->type() == NetworkManager::Device::Ethernet) {
+        NMMonitorDebug() << "Available wired device " << device->interfaceName();
         NetworkManager::WiredDevice * wiredDev = static_cast<NetworkManager::WiredDevice*>(device);
         connect(wiredDev, SIGNAL(carrierChanged(bool)),
                 SLOT(cablePlugged(bool)));
 
     } else if (device->type() == NetworkManager::Device::Wifi) {
+        NMMonitorDebug() << "Available wireless device " << device->interfaceName();
         NetworkManager::WirelessDevice * wifiDev = static_cast<NetworkManager::WirelessDevice*>(device);
         NetworkManager::WirelessNetworkInterfaceEnvironment * wifiEnv = new NetworkManager::WirelessNetworkInterfaceEnvironment(wifiDev);
         m_wirelessInterfaces << wifiEnv;
 
         foreach (const QString & network, wifiEnv->networks()) {
             NetworkManager::WirelessNetwork * wifiNetwork = wifiEnv->findNetwork(network);
-
+            NMMonitorDebug() << "Available wireless network " << network << " for device " << device->ipInterfaceName();
             NMMonitorSignalDebug() << "Emit signal addWirelessNetwork(" << wifiNetwork->ssid() << ")";
             Q_EMIT addWirelessNetwork(wifiNetwork, wifiEnv->interface());
         }
@@ -101,6 +102,17 @@ void Monitor::addDevice(NetworkManager::Device* device)
                 SLOT(wirelessNetworkAppeared(QString)));
         connect(wifiEnv, SIGNAL(networkDisappeared(QString)),
                 SLOT(wirelessNetworkDisappeared(QString)));
+    }
+
+   addAvailableConnectionsForDevice(device);
+}
+
+void Monitor::activeConnectionsChanged()
+{
+    NMMonitorDebug() << "Active connections have been changed";
+    foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
+        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active->connection()->id() << ")";
+        Q_EMIT addActiveConnection(active);
     }
 }
 
@@ -140,22 +152,13 @@ void Monitor::connectionRemoved(const QString& connection)
     Q_EMIT removeConnection(connection);
 }
 
-void Monitor::changeActiveConnections()
-{
-    NMMonitorDebug() << "Active connections have been changed";
-    foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
-        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active->connection()->id() << ")";
-        Q_EMIT addActiveConnection(active);
-    }
-}
-
 void Monitor::deviceAdded(const QString& device)
 {
     NetworkManager::Device * dev = new NetworkManager::Device(device);
     m_devices << dev;
-    addDevice(dev);
 
     NMMonitorDebug() << "Device " << dev->interfaceName()  << " added";
+    addDevice(dev);
 }
 
 void Monitor::deviceRemoved(const QString& device)
@@ -176,10 +179,11 @@ void Monitor::statusChanged(NetworkManager::Status status)
 {
     NMMonitorDebug() << "NetworkManager status changed to " << status;
 
+    // We can add vpn connections
     if (status == NetworkManager::Connected ||
         status == NetworkManager::ConnectedLinkLocal ||
         status == NetworkManager::ConnectedSiteOnly) {
-
+        NMMonitorDebug() << "NetworkManager is connected";
         foreach (NetworkManager::Settings::Connection * con, NetworkManager::Settings::listConnections()) {
             NetworkManager::Settings::ConnectionSettings settings;
             settings.fromMap(con->settings());
@@ -190,7 +194,9 @@ void Monitor::statusChanged(NetworkManager::Status status)
             }
         }
 
+    // We have to remove all vpn connections
     } else {
+        NMMonitorDebug() << "NetworkManager is not connected";
         NMMonitorSignalDebug() << "Emit signal removeVpnConnections()";
         Q_EMIT removeVpnConnections();
     }
@@ -214,7 +220,22 @@ void Monitor::wirelessNetworkAppeared(const QString& ssid)
     NMMonitorSignalDebug() << "Emit signal addWirelessNetwork(" << ssid << ")";
     Q_EMIT addWirelessNetwork(network, wirelessInterface->interface());
 
-    addAvailableConnectionsForDevice(wirelessInterface->interface());
+    // Check if we have some known connection for this access point
+    foreach (NetworkManager::Device * device, m_devices) {
+        if (device->type() == NetworkManager::Device::Wifi) {
+            foreach (NetworkManager::Settings::Connection * connection, device->availableConnections()) {
+                NetworkManager::Settings::ConnectionSettings settings;
+                settings.fromMap(connection->settings());
+
+                NetworkManager::Settings::WirelessSetting * wirelessSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
+                if (wirelessSetting->ssid() == ssid) {
+                    NMMonitorDebug() << "Known connection for previusly added access point " << ssid;
+                    NMMonitorSignalDebug() << "Emit signal addConnection(" << connection->id() << ")";
+                    Q_EMIT addConnection(connection, wirelessInterface->interface());
+                }
+            }
+        }
+    }
 }
 
 void Monitor::wirelessNetworkDisappeared(const QString& ssid)

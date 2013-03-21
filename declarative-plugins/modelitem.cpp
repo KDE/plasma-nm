@@ -250,6 +250,12 @@ QString ModelItem::detailInformations() const
 
 void ModelItem::setWirelessNetwork(NetworkManager::WirelessNetwork * network)
 {
+    // Just for sure disconnect the previous one, if exists
+    if (m_network) {
+        disconnect(m_network, SIGNAL(signalStrengthChanged(int)));
+        disconnect(m_network, SIGNAL(referenceAccessPointChanged(QString)));
+    }
+
     m_network = network;
 
     if (m_network) {
@@ -265,6 +271,11 @@ NetworkManager::WirelessNetwork* ModelItem::wirelessNetwork() const
 
 void ModelItem::setActiveConnection(NetworkManager::ActiveConnection* active)
 {
+    // Just for sure disconnect the previous one, if exists
+    if (m_active) {
+        disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)));
+    }
+
     m_active = active;
 
     if (m_active) {
@@ -290,6 +301,11 @@ NetworkManager::Device* ModelItem::device() const
 
 void ModelItem::setConnection(NetworkManager::Settings::Connection* connection)
 {
+    // Just for sure disconnect the previous one, if exists
+    if (m_connection) {
+        disconnect(m_connection, SIGNAL(updated(QVariantMapMap)));
+    }
+
     m_connection = connection;
 
     if (m_connection) {

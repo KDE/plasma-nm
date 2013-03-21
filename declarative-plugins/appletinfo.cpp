@@ -119,7 +119,6 @@ void AppletInfo::setAppletIcons()
                 settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Gsm) {
                 connectionFound = true;
                 setModemIcon();
-                break;
             } else if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Wired) {
                 connectionFound = true;
                 NMAppletDebug() << "Emit signal setConnectionIcon(network-wired-activated)";
@@ -130,7 +129,7 @@ void AppletInfo::setAppletIcons()
                 setWirelessIcon(active->devices().first(), wirelessSetting->ssid());
             }
         }
-
+        NMAppletDebug() << active->vpn() << " - " << active->state();
         if (active->vpn() && active->state() == NetworkManager::ActiveConnection::Activated) {
             vpnFound = true;
             NMAppletDebug() << "Emit signal setVpnIcon()";
@@ -194,8 +193,8 @@ void AppletInfo::setMainDisconnectedIcon()
 void AppletInfo::setModemIcon()
 {
     // TODO
-    NMAppletDebug() << "Emit signal setConnectionIcon(phone)";
-    Q_EMIT setConnectionIcon(QString("phone"));
+    NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile-100-none)";
+    Q_EMIT setConnectionIcon(QString("network-mobile-100-none"));
 }
 
 void AppletInfo::setWirelessIcon(NetworkManager::Device * device, const QString & ssid)

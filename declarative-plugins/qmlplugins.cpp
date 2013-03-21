@@ -39,4 +39,4 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<SecretAgent>(uri, 0, 1, "SecretAgent");
 }
 
-Q_EXPORT_PLUGIN2(plasmanm, QmlPlugins);
+Q_EXPORT_PLUGIN2(plasmanm, QmlPlugins)

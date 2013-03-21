@@ -44,7 +44,7 @@ void Handler::addAndActivateConnection(const QString& connection, const QString&
     Q_UNUSED(connection);
     Q_UNUSED(device);
     Q_UNUSED(specificObject);
-    
+
     qDebug() << "addAndActivate";
 }
 
@@ -54,7 +54,11 @@ void Handler::deactivateConnection(const QString& connection)
 
     foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
         if (active->uuid() == con.uuid()) {
-            NetworkManager::deactivateConnection(active->path());
+            if (active->vpn()) {
+                NetworkManager::deactivateConnection(active->path());
+            } else {
+                active->devices().first()->disconnectInterface();
+            }
         }
     }
 }

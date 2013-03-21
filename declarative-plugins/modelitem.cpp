@@ -159,7 +159,7 @@ QString ModelItem::detailInformations() const
         settings.fromMap(m_connection->settings());
 
         info += QString("<tr>");
-        info += QString("<td align=right><b>") + i18nc("type of network device", "Type") + QString(": ") + QString("</b></td>");
+        info += QString("<td align=right><b>") + i18nc("type of network device", "Type:") + QString("</b></td>");
         info += QString("<td align=left>") + settings.typeAsString(settings.connectionType()) + QString("</td>");
         info += QString("</tr>");
     }
@@ -169,7 +169,7 @@ QString ModelItem::detailInformations() const
             QHostAddress addr(device()->ipV4Config().addresses().first().address());
 
             info += QString("<tr>");
-            info += QString("<td align=right><b>") + i18n("IPv4 Address") + QString(": ") + QString("</b></td>");
+            info += QString("<td align=right><b>") + i18n("IPv4 Address:") + QString("</b></td>");
             info += QString("<td align=left>") + addr.toString() + QString("</td>");
             info += QString("</tr>");
         }
@@ -178,7 +178,7 @@ QString ModelItem::detailInformations() const
             QHostAddress addr(device()->ipV6Config().addresses().first().address());
 
             info += QString("<tr>");
-            info += QString("<td align=right><b>") + i18n("IPv6 Address") + QString(": ") + QString("</b></td>");
+            info += QString("<td align=right><b>") + i18n("IPv6 Address:") + QString("</b></td>");
             info += QString("<td align=left>") + addr.toString() + QString("</td>");
             info += QString("</tr>");
         }
@@ -187,12 +187,12 @@ QString ModelItem::detailInformations() const
             NetworkManager::WiredDevice * wired = qobject_cast<NetworkManager::WiredDevice*>(device());
 
             info += QString("<tr>");
-            info += QString("<td align=right><b>") + i18n("Connection speed") + QString(": ") + QString("</b></td>");
-            info += QString("<td align=left>") + QString::number(wired->bitRate()) + QString(" ") + QString("MBit/s") + QString("</td>");
+            info += QString("<td align=right><b>") + i18n("Connection speed:") + QString("</b></td>");
+            info += QString("<td align=left>") + i18n("%1 MBit/s", wired->bitRate()) + QString("</td>");
             info += QString("</tr>");
 
             info += QString("<tr>");
-            info += QString("<td align=right><b>") + i18n("MAC Address") + QString(": ") + QString("</b></td>");
+            info += QString("<td align=right><b>") + i18n("MAC Address:") + QString("</b></td>");
             info += QString("<td align=left>") + wired->permanentHardwareAddress() + QString("</td>");
             info += QString("</tr>");
 
@@ -200,18 +200,18 @@ QString ModelItem::detailInformations() const
             NetworkManager::WirelessDevice * wireless = qobject_cast<NetworkManager::WirelessDevice*>(device());
 
             info += QString("<tr>");
-            info += QString("<td align=right><b>") + i18n("Connection speed") + QString(": ") + QString("</b></td>");
-            info += QString("<td align=left>") + QString::number(wireless->bitRate()) + QString(" ") + QString("MBit/s") + QString("</td>");
+            info += QString("<td align=right><b>") + i18n("Connection speed:") + QString("</b></td>");
+            info += QString("<td align=left>") + i18n("%1 MBit/s", wireless-->bitRate()) + QString("</td>");
             info += QString("</tr>");
 
             info += QString("<tr>");
-            info += QString("<td align=right><b>") + i18n("MAC Address") + QString(": ") + QString("</b></td>");
+            info += QString("<td align=right><b>") + i18n("MAC Address:") + QString("</b></td>");
             info += QString("<td align=left>") + wireless->permanentHardwareAddress() + QString("</td>");
             info += QString("</tr>");
         }
 
         info += QString("<tr>");
-        info += QString("<td align=right><b>") + i18nc("name assigned by system", "System name") + QString(": ") + QString("</b></td>");
+        info += QString("<td align=right><b>") + i18nc("name assigned by system", "System name:") + QString("</b></td>");
         if (device()->ipInterfaceName().isEmpty()) {
             info += QString("<td align=left>") + device()->interfaceName() + QString("</td>");
         } else {
@@ -220,14 +220,14 @@ QString ModelItem::detailInformations() const
         info += QString("</tr>");
 
         info += QString("<tr>");
-        info += QString("<td align=right><b>") + i18nc("network device driver", "Driver") + QString(": ") + QString("</b></td>");
+        info += QString("<td align=right><b>") + i18nc("network device driver", "Driver:") + QString("</b></td>");
         info += QString("<td align=left>") + device()->driver() + QString("</td>");
         info += QString("</tr>");
     }
 
     if (m_network) {
         info += QString("<tr>");
-        info += QString("<td align=right><b>") + i18n("Access point (SSID)") + QString(": ") + QString("</b></td>");
+        info += QString("<td align=right><b>") + i18n("Access point (SSID):") + QString("</b></td>");
         info += QString("<td align=left>") + m_network->ssid() + QString("</td>");
         info += QString("</tr>");
 
@@ -235,13 +235,13 @@ QString ModelItem::detailInformations() const
         NetworkManager::AccessPoint * ap = wifiDev->findAccessPoint(m_network->referenceAccessPoint());
 
         info += QString("<tr>");
-        info += QString("<td align=right><b>") + i18n("Access point (BSSID)") + QString(": ") + QString("</b></td>");
+        info += QString("<td align=right><b>") + i18n("Access point (BSSID):") + QString("</b></td>");
         info += QString("<td align=left>") + ap->hardwareAddress() + QString("</td>");
         info += QString("</tr>");
 
         info += QString("<tr>");
-        info += QString("<td align=right><b>") + i18nc("Wifi AP frequency", "Frequency") + QString(": ") + QString("</b></td>");
-        info += QString("<td align=left>") + QString::number(ap->frequency()) + QString(" ") + QString("Mhz") + QString("</td>");
+        info += QString("<td align=right><b>") + i18nc("Wifi AP frequency", "Frequency:") + QString("</b></td>");
+        info += QString("<td align=left>") + i18n("%1 Mhz", ap->frequency()) + QString("</td>");
         info += QString("</tr>");
     }
 

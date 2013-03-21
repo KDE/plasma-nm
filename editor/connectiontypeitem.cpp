@@ -31,7 +31,7 @@ ConnectionTypeItem::ConnectionTypeItem(QTreeWidget * parent, const QString &type
     QString text;
 
     if (type == QLatin1String("adsl")) {
-        text = i18n("Adsl");
+        text = i18n("ADSL");
         setIcon(0, KIcon("modem"));
     } else if (type == QLatin1String("bluetooth")) {
         text = i18n("Bluetooth");
@@ -51,11 +51,11 @@ ConnectionTypeItem::ConnectionTypeItem(QTreeWidget * parent, const QString &type
     } else if (type == QLatin1String("802-11-olpc-mesh")) {
         text = i18n("Olpc mesh");
     } else if (type == QLatin1String("pppoe")) {
-        text = i18n("Pppoe");
+        text = i18n("PPPoE");
     } else if (type == QLatin1String("vlan")) {
         text = i18n("VLAN");
     } else if (type == QLatin1String("vpn")) {
-        text = i18n("Vpn");
+        text = i18n("VPN");
         setIcon(0, KIcon("secure-card"));
     } else if (type == QLatin1String("wimax")) {
         text = i18n("WiMAX");

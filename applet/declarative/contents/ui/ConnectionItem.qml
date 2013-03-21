@@ -81,7 +81,7 @@ Item {
 
             anchors.fill: parent;
             onClicked: {
-                if (!connected) {
+                if (!connected && !connecting) {
                     if (uuid) {
                         activateConnectionItem(connectionPath, devicePath, specificPath);
                     } else {

@@ -174,7 +174,11 @@ QString ModelItem::detailInformations() const
 
         if (device()->type() == NetworkManager::Device::Ethernet) {
             NetworkManager::WiredDevice * wired = qobject_cast<NetworkManager::WiredDevice*>(device());
-            info += QString(format).arg(i18n("Connection speed"), i18n("%1 MBit/s", wired->bitRate()/1000));
+            if (wired->bitRate() < 1000000) {
+                info += QString(format).arg(i18n("Connection speed"), i18n("%1 Mb/s", wired->bitRate()/1000));
+            } else {
+                info += QString(format).arg(i18n("Connection speed"), i18n("%1 Gb/s", wired->bitRate()/1000000));
+            }
             info += QString(format).arg(i18n("MAC Address"), wired->permanentHardwareAddress());
 
         } else if (device()->type() == NetworkManager::Device::Wifi) {
@@ -193,11 +197,10 @@ QString ModelItem::detailInformations() const
     }
 
     if (m_network) {
-        info += QString(format).arg(i18n("Access point (SSID)"), m_network->ssid());
-
         NetworkManager::WirelessDevice * wifiDev = qobject_cast<NetworkManager::WirelessDevice*>(m_device);
         NetworkManager::AccessPoint * ap = wifiDev->findAccessPoint(m_network->referenceAccessPoint());
 
+        info += QString(format).arg(i18n("Access point (SSID)"), m_network->ssid());
         info += QString(format).arg(i18n("Access point (BSSID)"), ap->hardwareAddress());
         info += QString(format).arg(i18nc("Wifi AP frequency", "Frequency"), i18n("%1 Mhz", ap->frequency()));
     }

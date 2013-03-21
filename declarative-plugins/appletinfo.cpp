@@ -194,6 +194,8 @@ void AppletInfo::setMainDisconnectedIcon()
 void AppletInfo::setModemIcon()
 {
     // TODO
+    NMAppletDebug() << "Emit signal setConnectionIcon(phone)";
+    Q_EMIT setConnectionIcon(QString("phone"));
 }
 
 void AppletInfo::setWirelessIcon(NetworkManager::Device * device, const QString & ssid)

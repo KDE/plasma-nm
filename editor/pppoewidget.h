@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,34 +18,36 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONNECTION_DETAIL_EDITOR_H
-#define CONNECTION_DETAIL_EDITOR_H
+#ifndef PPPOE_WIDGET_H
+#define PPPOE_WIDGET_H
 
-#include <QtGui/QDialog>
+#include <QtGui/QWidget>
 
-#include <QtNetworkManager/settings/connection.h>
+#include <QtNetworkManager/settings/setting.h>
+
+#include "settingwidget.h"
 
 namespace Ui
 {
-class ConnectionDetailEditor;
+class PppoeWidget;
 }
 
-class ConnectionDetailEditor : public QDialog
+class PppoeWidget : public SettingWidget
 {
     Q_OBJECT
-
 public:
-    ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings * connection, QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~ConnectionDetailEditor();
+    PppoeWidget(NetworkManager::Settings::Setting *setting = 0, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    virtual ~PppoeWidget();
 
-private Q_SLOTS:
-    void saveSetting();
+    void loadConfig(NetworkManager::Settings::Setting *setting);
+
+    QVariantMap setting() const;
+
+private slots:
+    void showPassword(bool show);
 
 private:
-    Ui::ConnectionDetailEditor * m_detailEditor;
-    NetworkManager::Settings::ConnectionSettings * m_connection;
-
-    void initTabs();
+    Ui::PppoeWidget * m_ui;
 };
 
-#endif // CONNECTION_DETAIL_EDITOR_H
+#endif // PPPOE_WIDGET_H

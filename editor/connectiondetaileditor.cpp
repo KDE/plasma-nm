@@ -27,6 +27,8 @@
 #include "ipv6widget.h"
 #include "wifisecurity.h"
 #include "wiredsecurity.h"
+#include "pppwidget.h"
+#include "pppoewidget.h"
 
 #include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/activeconnection.h>
@@ -45,8 +47,7 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings* con
     if (connection->id().isEmpty()) {
         setWindowTitle(i18n("New Connection (%1)", connection->typeAsString(connection->connectionType())));
         m_detailEditor->connectionName->setText(i18n("New %1 connection", connection->typeAsString(connection->connectionType())));
-    }
-    else {
+    } else {
         setWindowTitle(i18n("Edit Connection '%1'", connection->id()));
         m_detailEditor->connectionName->setText(connection->id());
     }
@@ -63,17 +64,12 @@ void ConnectionDetailEditor::initTabs()
     ConnectionWidget * connectionWidget = new ConnectionWidget(m_connection);
     m_detailEditor->tabWidget->addTab(connectionWidget, i18n("General"));
 
-    foreach (Settings::Setting * setting, m_connection->settings()) {
-        addTab(setting->type());
-    }
-}
+    const NetworkManager::Settings::ConnectionSettings::ConnectionType type = m_connection->connectionType();
 
-void ConnectionDetailEditor::addTab(Settings::Setting::SettingType type)
-{
     /*Adsl, Cdma, Gsm, Infiniband, Ipv4, Ipv6, Ppp, Pppoe, Security8021x, Serial,
       Vpn, Wired, Wireless, WirelessSecurity, Bluetooth, OlpcMesh, Vlan, Wimax, Bond, Bridge, BridgePort;*/
-    if (type == Settings::Setting::Wired) {
-        WiredConnectionWidget * wiredWidget = new WiredConnectionWidget(m_connection->setting(type), this);
+    if (type == NetworkManager::Settings::ConnectionSettings::Wired) {
+        WiredConnectionWidget * wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Settings::Setting::Wired), this);
         m_detailEditor->tabWidget->addTab(wiredWidget, i18n("Wired"));
         WiredSecurity * wiredSecurity = new WiredSecurity(static_cast<NetworkManager::Settings::Security8021xSetting *>(m_connection->setting(NetworkManager::Settings::Setting::Security8021x)), this);
         m_detailEditor->tabWidget->addTab(wiredSecurity, i18n("802.1x Security"));
@@ -81,8 +77,8 @@ void ConnectionDetailEditor::addTab(Settings::Setting::SettingType type)
         m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
         IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv6), this);
         m_detailEditor->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
-    } else if (type == Settings::Setting::Wireless) {
-        WifiConnectionWidget * wifiWidget = new WifiConnectionWidget(m_connection->setting(type), this);
+    } else if (type == NetworkManager::Settings::ConnectionSettings::Wireless) {
+        WifiConnectionWidget * wifiWidget = new WifiConnectionWidget(m_connection->setting(NetworkManager::Settings::Setting::Wireless), this);
         m_detailEditor->tabWidget->addTab(wifiWidget, i18n("Wireless"));
         WifiSecurity * wifiSecurity = new WifiSecurity(m_connection->setting(NetworkManager::Settings::Setting::WirelessSecurity),
                                                        static_cast<NetworkManager::Settings::Security8021xSetting *>(m_connection->setting(NetworkManager::Settings::Setting::Security8021x)),
@@ -92,6 +88,15 @@ void ConnectionDetailEditor::addTab(Settings::Setting::SettingType type)
         m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
         IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv6), this);
         m_detailEditor->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
+    } else if (type == NetworkManager::Settings::ConnectionSettings::Pppoe) { // DSL
+        PppoeWidget * pppoeWidget = new PppoeWidget(m_connection->setting(NetworkManager::Settings::Setting::Pppoe), this);
+        m_detailEditor->tabWidget->addTab(pppoeWidget, i18n("DSL"));
+        WiredConnectionWidget * wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Settings::Setting::Wired), this);
+        m_detailEditor->tabWidget->addTab(wiredWidget, i18n("Wired"));
+        PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
+        m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
+        IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
+        m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
     }
 }
 

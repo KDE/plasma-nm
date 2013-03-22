@@ -51,9 +51,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     action->setText(i18n("Hardware"));
 
     action = new QAction(i18n("DSL"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Adsl);
-    // TODO: disabled for now
-    action->setDisabled(true);
+    action->setData(NetworkManager::Settings::ConnectionSettings::Pppoe);
     m_menu->addAction(action);
     action = new QAction(i18n("InfiniBand"), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Infiniband);
@@ -264,6 +262,8 @@ void ConnectionEditor::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetI
 
 void ConnectionEditor::addConnection(QAction* action)
 {
+    qDebug() << "ADDING new connection" << action->data().toUInt();
+
     Settings::ConnectionSettings::ConnectionType type = (Settings::ConnectionSettings::ConnectionType) action->data().toUInt();
     Settings::ConnectionSettings * newConnection = new Settings::ConnectionSettings(type);
 

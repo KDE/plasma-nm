@@ -27,9 +27,9 @@ ConnectionItem::ConnectionItem(QTreeWidgetItem * parent, const QStringList & str
     QTreeWidgetItem(parent, strings, UserType)
 {
     if (active) {
-       setIcon(0, KIcon("user-online"));
+        setIcon(0, KIcon("user-online"));
     } else {
-       setIcon(0, KIcon("user-offline"));
+        setIcon(0, KIcon("user-offline"));
     }
 
     setSizeHint(0, QSize(150, 20));

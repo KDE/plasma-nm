@@ -26,6 +26,7 @@ set(connectioneditor_SRCS
    wiredsecurity.cpp
    security802-1x.cpp
    pppwidget.cpp
+   pppoewidget.cpp
 )
 
 set(connectioneditor_HDRS
@@ -51,6 +52,7 @@ set(connectioneditor_HDRS
    wiredsecurity.h
    security802-1x.h
    pppwidget.h
+   pppoewidget.h
 )
 
 kde4_add_ui_files(connectioneditor_SRCS
@@ -67,7 +69,9 @@ kde4_add_ui_files(connectioneditor_SRCS
     ui/wiredsecurity.ui
     ui/802-1x.ui
     ui/ppp.ui
+    ui/pppoe.ui
 )
+
 qt4_wrap_cpp(connectioneditor_HDRS_MOC ${connectioneditor_HDRS})
 
 add_executable(plasma-nm-connectioneditor ${connectioneditor_SRCS} ${connectioneditor_HDRS_MOC})

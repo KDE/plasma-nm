@@ -33,6 +33,9 @@ ConnectionTypeItem::ConnectionTypeItem(QTreeWidget * parent, const QString &type
     if (type == QLatin1String("adsl")) {
         text = i18n("ADSL");
         setIcon(0, KIcon("modem"));
+    } else if (type == QLatin1String("pppoe")) {
+        text = i18n("DSL");
+        setIcon(0, KIcon("modem"));
     } else if (type == QLatin1String("bluetooth")) {
         text = i18n("Bluetooth");
         setIcon(0, KIcon("bluetooth"));

@@ -24,6 +24,7 @@
 #include <QObject>
 #include <QIcon>
 
+#include <QtNetworkManager/manager.h>
 #include <QtNetworkManager/activeconnection.h>
 #include <QtNetworkManager/wirelessnetworkinterfaceenvironment.h>
 
@@ -37,17 +38,21 @@ public:
 public Q_SLOTS:
     void initIconInfo();
     void initNetworkInfo();
+    void initStatusInfo();
 
 private Q_SLOTS:
     void activeConnectionsChanged();
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
     void setAppletIcons();
     void setWirelessIconForSignalStrenght(int strenght);
+    void statusChanged(NetworkManager::Status status);
 
 Q_SIGNALS:
     void startActivatingConnection(const QString & connectionUuid);
     void stopActivatingConnection(const QString & connectionUuid);
     void setConnectionIcon(const QString & icon);
+    void setConnectedStatus();
+    void setDisconnectedStatus();
     void setVpnIcon();
     void unsetVpnIcon();
 

@@ -69,6 +69,14 @@ void AppletInfo::initNetworkInfo()
     wwanEnabled(NetworkManager::isWwanEnabled());
 }
 
+void AppletInfo::initStatusInfo()
+{
+    connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
+            SLOT(statusChanged(NetworkManager::Status)));
+
+    statusChanged(NetworkManager::status());
+}
+
 void AppletInfo::activeConnectionsChanged()
 {
     QList<NetworkManager::ActiveConnection*> actives = NetworkManager::activeConnections();
@@ -244,3 +252,17 @@ void AppletInfo::setWirelessIconForSignalStrenght(int strenght)
         Q_EMIT setConnectionIcon(icon);
     }
 }
+
+void AppletInfo::statusChanged(NetworkManager::Status status)
+{
+    if (status == NetworkManager::Connected ||
+        status == NetworkManager::ConnectedLinkLocal ||
+        status == NetworkManager::ConnectedSiteOnly) {
+        NMAppletDebug() << "Emit signal setConnectedStatus()";
+        Q_EMIT setConnectedStatus();
+    } else {
+        NMAppletDebug() << "Emit signal setDisconnectedStatus()";
+        Q_EMIT setDisconnectedStatus();
+    }
+}
+

@@ -45,12 +45,32 @@ Item {
 
     height: 30;
 
+    PlasmaNM.AppletInfo {
+        id: statusInfo;
+
+        onSetConnectedStatus: {
+            statusIcon.icon = QIcon("user-online");
+            statusLabel.text = i18n("Connected");
+        }
+
+        onSetDisconnectedStatus: {
+            statusIcon.icon = QIcon("user-offline");
+            statusLabel.text = i18n("Not connected");
+        }
+    }
+
+    QIconItem {
+        id: statusIcon
+
+        height: 20; width: 20;
+        anchors { left: parent.left; bottom: parent.bottom; top: statusLabel.top}
+    }
+
     PlasmaComponents.Label {
-        id: toolLabel;
+        id: statusLabel;
 
         height: 30;
-        anchors { left: parent.left; right: toolButton.left; bottom: parent.bottom }
-        text: i18n("Some text");
+        anchors { left: statusIcon.right; right: toolButton.left; bottom: parent.bottom; leftMargin: 5 }
     }
 
     PlasmaComponents.ToolButton {
@@ -112,5 +132,9 @@ Item {
 
     transitions: Transition {
         NumberAnimation { duration: 200; properties: "height, visible" }
+    }
+
+    Component.onCompleted: {
+        statusInfo.initStatusInfo();
     }
 }

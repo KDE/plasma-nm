@@ -1,7 +1,15 @@
 [Desktop Entry]
 Name=Plasma applet for NetworkManager
+Name[pt]='Applet' do Plasma para o NetworkManager
+Name[pt_BR]=Miniaplicativo do Plasma para o NetworkManager
+Name[uk]=Аплет Плазми для NetworkManager
+Name[x-test]=xxPlasma applet for NetworkManagerxx
 
 Comment=Plasma applet written in QML for managing network connections
+Comment[pt]=Uma 'applet' do Plasma, feita em QML, para gerir as ligações de rede
+Comment[pt_BR]=Miniaplicativo do Plasma em QML para gerenciamento de conexões de rede
+Comment[uk]=Аплет Плазми, написаний мовою QML. Призначено для керування з’єднаннями з мережею.
+Comment[x-test]=xxPlasma applet written in QML for managing network connectionsxx
 
 Type=Service
 ServiceTypes=Plasma/Applet,Plasma/PopupApplet

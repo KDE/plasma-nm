@@ -55,10 +55,7 @@ QString ModelItem::name() const
 
 QString ModelItem::uuid() const
 {
-    if (m_connection)
-        return m_connection->uuid();
-
-    return QString();
+    return m_uuid;
 }
 
 NetworkManager::Settings::ConnectionSettings::ConnectionType ModelItem::type() const
@@ -98,22 +95,14 @@ bool ModelItem::connecting() const
     return false;
 }
 
+QString ModelItem::deviceUdi() const
+{
+    return m_deviceUdi;
+}
+
 QString ModelItem::ssid() const
 {
-    if (m_network)
-        return m_network->ssid();
-
-    if (m_connection) {
-        NetworkManager::Settings::ConnectionSettings settings;
-        settings.fromMap(m_connection->settings());
-
-        if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-            NetworkManager::Settings::WirelessSetting * wirelessSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
-            return wirelessSetting->ssid();
-        }
-    }
-
-    return QString();
+    return m_ssid;
 }
 
 int ModelItem::signal() const
@@ -225,9 +214,12 @@ void ModelItem::setWirelessNetwork(NetworkManager::WirelessNetwork * network)
     m_network = network;
 
     if (m_network) {
+        m_ssid = network->ssid();
+
         connect(m_network, SIGNAL(signalStrengthChanged(int)), SLOT(onSignalStrengthChanged(int)));
         connect(m_network, SIGNAL(referenceAccessPointChanged(QString)), SLOT(onAccessPointChanged(QString)));
     }
+
 }
 
 NetworkManager::WirelessNetwork* ModelItem::wirelessNetwork() const
@@ -258,6 +250,10 @@ NetworkManager::ActiveConnection* ModelItem::activeConnection() const
 void ModelItem::setDevice(NetworkManager::Device* device)
 {
     m_device = device;
+
+    if (m_device) {
+        m_deviceUdi = m_device->udi();
+    }
 }
 
 NetworkManager::Device* ModelItem::device() const
@@ -277,6 +273,13 @@ void ModelItem::setConnection(NetworkManager::Settings::Connection* connection)
     if (m_connection) {
         NetworkManager::Settings::ConnectionSettings settings;
         settings.fromMap(connection->settings());
+
+        m_uuid = settings.uuid();
+
+        if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
+            NetworkManager::Settings::WirelessSetting * wirelessSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
+            m_ssid = wirelessSetting->ssid();
+        }
 
         connect(connection, SIGNAL(updated(QVariantMapMap)), SLOT(onConnectionUpdated(QVariantMapMap)));
     }

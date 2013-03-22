@@ -245,7 +245,7 @@ void Model::removeConnectionsByDevice(const QString& udi)
     int row = -1;
 
     foreach (ModelItem * item, m_connections) {
-        if (item->device()->udi() == udi) {
+        if (item->deviceUdi() == udi) {
             row  = m_connections.indexOf(item);
         }
 

@@ -41,6 +41,7 @@ public:
     NetworkManager::Settings::ConnectionSettings::ConnectionType type() const;
     bool connected() const;
     bool connecting() const;
+    QString deviceUdi() const;
     QString ssid() const;
     int signal() const;
     bool secure() const;
@@ -86,6 +87,10 @@ private:
     NetworkManager::ActiveConnection * m_active;
     NetworkManager::Settings::Connection * m_connection;
     NetworkManager::Device * m_device;
+
+    QString m_uuid;
+    QString m_ssid;
+    QString m_deviceUdi;
 };
 
 #endif // PLASMA_NM_CONNECTION_ITEM_H

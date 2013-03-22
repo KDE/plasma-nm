@@ -61,8 +61,11 @@ void AppletInfo::initNetworkInfo()
     connect(NetworkManager::notifier(), SIGNAL(wwanEnabledChanged(bool)),
             SIGNAL(wwanEnabled(bool)));
 
+    NMAppletDebug() << "Emig signal networkingEnabled(" << NetworkManager::isNetworkingEnabled() << ")";
     networkingEnabled(NetworkManager::isNetworkingEnabled());
+    NMAppletDebug() << "Emig signal wirelessEnabled(" << NetworkManager::isWirelessEnabled() << ")";
     wirelessEnabled(NetworkManager::isWirelessEnabled());
+    NMAppletDebug() << "Emig signal wwanEnabled(" << NetworkManager::isWwanEnabled() << ")";
     wwanEnabled(NetworkManager::isWwanEnabled());
 }
 
@@ -193,8 +196,8 @@ void AppletInfo::setMainDisconnectedIcon()
 void AppletInfo::setModemIcon()
 {
     // TODO
-    NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile-100-none)";
-    Q_EMIT setConnectionIcon(QString("network-mobile-100-none"));
+    NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile-100)";
+    Q_EMIT setConnectionIcon(QString("network-mobile-100"));
 }
 
 void AppletInfo::setWirelessIcon(NetworkManager::Device * device, const QString & ssid)

@@ -26,6 +26,18 @@ int appletDebugArea()
     return area;
 }
 
+int handlerDebugArea()
+{
+    static int area = KDebug::registerArea("Plasma-nm (handler)", false);
+    return area;
+}
+
+int itemDebugArea()
+{
+    static int area = KDebug::registerArea("Plasma-nm (item)", false);
+    return area;
+}
+
 int modelDebugArea()
 {
     static int area = KDebug::registerArea("Plasma-nm (model)", false);
@@ -44,9 +56,4 @@ int monitorSignalDebugArea()
     return area;
 }
 
-int itemDebugArea()
-{
-    static int area = KDebug::registerArea("Plasma-nm (item)", false);
-    return area;
-}
 

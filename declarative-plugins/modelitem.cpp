@@ -183,7 +183,11 @@ QString ModelItem::detailInformations() const
 
         } else if (device()->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice * wireless = qobject_cast<NetworkManager::WirelessDevice*>(device());
-            info += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wireless->bitRate()/1000));
+            if (wireless->bitRate() < 1000) {
+                info += QString(format).arg(i18n("Connection speed:"), i18n("%1 Kb/s", wireless->bitRate()));
+            } else {
+                info += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wireless->bitRate()/1000));
+            }
             info += QString(format).arg(i18n("MAC Address:"), wireless->permanentHardwareAddress());
         }
 

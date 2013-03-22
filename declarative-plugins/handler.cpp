@@ -22,8 +22,11 @@
 
 #include <QtNetworkManager/manager.h>
 #include <QtNetworkManager/accesspoint.h>
+#include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/settings/connection.h>
 #include <QtNetworkManager/activeconnection.h>
+
+#include "debug.h"
 
 Handler::Handler(QObject* parent):
     QObject(parent)
@@ -36,6 +39,10 @@ Handler::~Handler()
 
 void Handler::activateConnection(const QString& connection, const QString& device, const QString& specificObject)
 {
+    NetworkManager::Settings::Connection con(connection);
+
+    NMHandlerDebug() << "Activating " << con.id() << " connection";
+
     NetworkManager::activateConnection(connection, device, specificObject);
 }
 
@@ -45,7 +52,7 @@ void Handler::addAndActivateConnection(const QString& connection, const QString&
     Q_UNUSED(device);
     Q_UNUSED(specificObject);
 
-    qDebug() << "addAndActivate";
+    NMHandlerDebug() << "Add and activate connection";
 }
 
 void Handler::deactivateConnection(const QString& connection)
@@ -61,20 +68,25 @@ void Handler::deactivateConnection(const QString& connection)
             }
         }
     }
+
+    NMHandlerDebug() << "Deactivating " << con.id() << " connection";
 }
 
 void Handler::enableNetworking(bool enable)
 {
+    NMHandlerDebug() << "Networking enabled: " << enable;
     NetworkManager::setNetworkingEnabled(enable);
 }
 
 void Handler::enableWireless(bool enable)
 {
+    NMHandlerDebug() << "Wireless enabled: " << enable;
     NetworkManager::setWirelessEnabled(enable);
 }
 
 void Handler::enableWwan(bool enable)
 {
+    NMHandlerDebug() << "Wwan enabled: " << enable;
     NetworkManager::setWwanEnabled(enable);
 }
 

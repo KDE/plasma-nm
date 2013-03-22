@@ -33,6 +33,12 @@ Item {
     signal activateConnectionItem(string connection, string device, string specificObject);
     signal addAndActivateConnectionItem(string connection, string device, string specificObject);
     signal deactivateConnectionItem(string connection);
+    signal itemExpanded();
+
+    function hideDetails() {
+        state = '';
+        expanded = false;
+    }
 
     height: 30;
     anchors { left: parent.left; right: parent.right }
@@ -128,6 +134,7 @@ Item {
         onClicked: {
             if (!expanded) {
                 connectionItem.state = 'Details';
+                itemExpanded();
             } else {
                 connectionItem.state = '';
             }
@@ -153,8 +160,7 @@ Item {
         editable: uuid == "" ? false : true;
 
         onHideDetails: {
-            connectionItem.state = '';
-            expanded = false;
+            connectionItem.hideDetails();
         }
     }
 

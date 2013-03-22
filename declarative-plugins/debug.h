@@ -24,12 +24,14 @@
 #include <KDebug>
 
 int appletDebugArea();
+int itemDebugArea();
+int handlerDebugArea();
 int modelDebugArea();
 int monitorDebugArea();
 int monitorSignalDebugArea();
-int itemDebugArea();
 
 #define NMAppletDebug() kDebug(appletDebugArea())
+#define NMHandlerDebug() kDebug(handlerDebugArea())
 #define NMModelDebug() kDebug(modelDebugArea())
 #define NMMonitorDebug() kDebug(monitorDebugArea())
 #define NMMonitorSignalDebug() kDebug(monitorSignalDebugArea())

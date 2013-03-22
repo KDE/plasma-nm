@@ -51,9 +51,9 @@ Item {
                 mainWindow.activateConnection.connect(activateConnection);
                 mainWindow.addAndActivateConnection.connect(addAndActivateConnection);
                 mainWindow.deactivateConnection.connect(deactivateConnection);
-//                 mainWindow.enableNetworking.connect(enableNetworking);
-//                 mainWindow.enableWireless.connect(enableWireless);
-//                 mainWindow.enableWwan.connect(enableWwan);
+                toolbar.enableNetworking.connect(enableNetworking);
+                toolbar.enableWireless.connect(enableWireless);
+                toolbar.enableWwan.connect(enableWwan);
             }
     }
 
@@ -71,16 +71,35 @@ Item {
         id: secretAgent;
     }
 
-    ListView {
-        id: connectionView;
+    PlasmaExtras.ScrollArea {
+        id: scrollArea;
 
-        anchors { fill: parent; topMargin: 5 }
-        spacing: 8;
-        model: sortedConnectionModel;
-        delegate: ConnectionItem {
-            onActivateConnectionItem: activateConnection(connection, device, specificObject);
-            onAddAndActivateConnectionItem: addAndActivateConnection(connection, device, specificObject);
-            onDeactivateConnectionItem: deactivateConnection(connection);
+        anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbar.top }
+
+        ListView {
+            id: connectionView;
+
+            anchors { fill: parent; topMargin: 5 }
+            spacing: 8;
+            model: sortedConnectionModel;
+            delegate: ConnectionItem {
+                onActivateConnectionItem: activateConnection(connection, device, specificObject);
+                onAddAndActivateConnectionItem: addAndActivateConnection(connection, device, specificObject);
+                onDeactivateConnectionItem: deactivateConnection(connection);
+                onItemExpanded: {
+                    toolbar.hideOptions();
+                }
+
+                Component.onCompleted: {
+                    toolbar.toolbarExpanded.connect(hideDetails);
+                }
+            }
         }
+    }
+
+    Toolbar {
+        id: toolbar;
+
+        anchors { left: parent.left; right: parent.right; bottom: parent.bottom; leftMargin: 10}
     }
 }

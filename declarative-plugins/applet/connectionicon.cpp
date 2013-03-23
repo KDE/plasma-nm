@@ -60,7 +60,7 @@ void ConnectionIcon::activeConnectionsChanged()
                 SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)));
 
         if (active->state() == NetworkManager::ActiveConnection::Activating) {
-            NMAppletDebug() << "Emit signal activatingConnection(" << active->connection()->id() << ")";
+            NMAppletDebug() << "Emit signal showConnectionIndicator()";
             Q_EMIT showConnectingIndicator();
         }
     }
@@ -74,7 +74,7 @@ void ConnectionIcon::activeConnectionStateChanged(NetworkManager::ActiveConnecti
 
     if (state == NetworkManager::ActiveConnection::Deactivated ||
         state == NetworkManager::ActiveConnection::Activated) {
-        NMAppletDebug() << "Emit signal stopActivatingConnection(" << active->connection()->id() << ")";
+            NMAppletDebug() << "Emit signal hideConnectionIndicator()";
         Q_EMIT hideConnectingIndicator();
     }
 

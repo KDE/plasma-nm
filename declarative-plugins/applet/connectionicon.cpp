@@ -145,7 +145,7 @@ void ConnectionIcon::setDisconnectedIcon()
                 wired = true;
                 disconnect(wiredDev, SIGNAL(carrierChanged(bool)));
                 connect(wiredDev, SIGNAL(carrierChanged(bool)),
-                        SLOT(setAppletIcons()));
+                        SLOT(setIcons()));
             }
         } else if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice * wirelessDev = qobject_cast<NetworkManager::WirelessDevice*>(device);
@@ -153,7 +153,7 @@ void ConnectionIcon::setDisconnectedIcon()
                 wireless = true;
                 disconnect(wirelessDev, SIGNAL(accessPointAppeared(QString)));
                 connect(wirelessDev, SIGNAL(accessPointAppeared(QString)),
-                        SLOT(setAppletIcons()));
+                        SLOT(setIcons()));
             }
         } else if (device->type() == NetworkManager::Device::Modem) {
             modem = true;

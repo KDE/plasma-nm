@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.6)
 
 find_package(Qt4 REQUIRED)
 find_package(KDE4 REQUIRED)
-find_package(NetworkManager REQUIRED)
+find_package(NetworkManager "0.9.8" REQUIRED)
 
 include(FindPkgConfig)
 

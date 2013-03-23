@@ -343,8 +343,10 @@ QString Model::connectionIcon(NetworkManager::Settings::ConnectionSettings::Conn
 {
     switch (type) {
         case NetworkManager::Settings::ConnectionSettings::Adsl:
+            return QString("modem");
             break;
         case NetworkManager::Settings::ConnectionSettings::Bluetooth:
+            return QString("bluetooth");
             break;
         case NetworkManager::Settings::ConnectionSettings::Bond:
             break;
@@ -361,6 +363,7 @@ QString Model::connectionIcon(NetworkManager::Settings::ConnectionSettings::Conn
         case NetworkManager::Settings::ConnectionSettings::OLPCMesh:
             break;
         case NetworkManager::Settings::ConnectionSettings::Pppoe:
+            return QString("modem");
             break;
         case NetworkManager::Settings::ConnectionSettings::Vlan:
             break;

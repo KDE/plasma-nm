@@ -53,8 +53,6 @@ ConnectionTypeItem::ConnectionTypeItem(QTreeWidget * parent, const QString &type
         text = i18n("InfiniBand");
     } else if (type == QLatin1String("802-11-olpc-mesh")) {
         text = i18n("Olpc mesh");
-    } else if (type == QLatin1String("pppoe")) {
-        text = i18n("PPPoE");
     } else if (type == QLatin1String("vlan")) {
         text = i18n("VLAN");
     } else if (type == QLatin1String("vpn")) {

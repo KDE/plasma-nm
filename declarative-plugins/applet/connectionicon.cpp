@@ -18,66 +18,40 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
-#include "appletinfo.h"
+#include "connectionicon.h"
 
 #include <QtNetworkManager/manager.h>
 #include <QtNetworkManager/connection.h>
 #include <QtNetworkManager/wireddevice.h>
 #include <QtNetworkManager/wirelessdevice.h>
-
 #include <QtNetworkManager/settings/connection.h>
 #include <QtNetworkManager/settings/802-11-wireless.h>
 
 #include "debug.h"
 
-AppletInfo::AppletInfo(QObject* parent):
+ConnectionIcon::ConnectionIcon(QObject* parent):
     QObject(parent),
     m_wirelessSignal(0),
-    m_wirelessNetwork(0)
+    m_wirelessNetwork(0),
+    m_wirelessEnvironment(0)
 {
 }
 
-AppletInfo::~AppletInfo()
+ConnectionIcon::~ConnectionIcon()
 {
     if (m_wirelessEnvironment)
         delete m_wirelessEnvironment;
 }
 
-void AppletInfo::initIconInfo()
+void ConnectionIcon::init()
 {
     connect(NetworkManager::notifier(), SIGNAL(activeConnectionsChanged()),
             SLOT(activeConnectionsChanged()));
 
-    setAppletIcons();
+    setIcons();
 }
 
-void AppletInfo::initNetworkInfo()
-{
-    connect(NetworkManager::notifier(), SIGNAL(networkingEnabledChanged(bool)),
-            SIGNAL(networkingEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
-            SIGNAL(wirelessEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wwanEnabledChanged(bool)),
-            SIGNAL(wwanEnabled(bool)));
-
-    NMAppletDebug() << "Emig signal networkingEnabled(" << NetworkManager::isNetworkingEnabled() << ")";
-    networkingEnabled(NetworkManager::isNetworkingEnabled());
-    NMAppletDebug() << "Emig signal wirelessEnabled(" << NetworkManager::isWirelessEnabled() << ")";
-    wirelessEnabled(NetworkManager::isWirelessEnabled());
-    NMAppletDebug() << "Emig signal wwanEnabled(" << NetworkManager::isWwanEnabled() << ")";
-    wwanEnabled(NetworkManager::isWwanEnabled());
-}
-
-void AppletInfo::initStatusInfo()
-{
-    connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
-            SLOT(statusChanged(NetworkManager::Status)));
-
-    statusChanged(NetworkManager::status());
-}
-
-void AppletInfo::activeConnectionsChanged()
+void ConnectionIcon::activeConnectionsChanged()
 {
     QList<NetworkManager::ActiveConnection*> actives = NetworkManager::activeConnections();
 
@@ -87,29 +61,29 @@ void AppletInfo::activeConnectionsChanged()
 
         if (active->state() == NetworkManager::ActiveConnection::Activating) {
             NMAppletDebug() << "Emit signal activatingConnection(" << active->connection()->id() << ")";
-            Q_EMIT startActivatingConnection(active->connection()->uuid());
+            Q_EMIT showConnectingIndicator();
         }
     }
 
-    setAppletIcons();
+    setIcons();
 }
 
-void AppletInfo::activeConnectionStateChanged(NetworkManager::ActiveConnection::State state)
+void ConnectionIcon::activeConnectionStateChanged(NetworkManager::ActiveConnection::State state)
 {
     NetworkManager::ActiveConnection * active = qobject_cast<NetworkManager::ActiveConnection*>(sender());
 
     if (state == NetworkManager::ActiveConnection::Deactivated ||
         state == NetworkManager::ActiveConnection::Activated) {
         NMAppletDebug() << "Emit signal stopActivatingConnection(" << active->connection()->id() << ")";
-        Q_EMIT stopActivatingConnection(active->connection()->uuid());
+        Q_EMIT hideConnectingIndicator();
     }
 
-    setAppletIcons();
+    setIcons();
 }
 
-void AppletInfo::setAppletIcons()
+void ConnectionIcon::setIcons()
 {
-    bool connectionFound = false;
+bool connectionFound = false;
     bool vpnFound = false;
 
     if (m_wirelessEnvironment) {
@@ -149,7 +123,7 @@ void AppletInfo::setAppletIcons()
     }
 
     if (!connectionFound) {
-        setMainDisconnectedIcon();
+        setDisconnectedIcon();
     }
 
     if (!vpnFound) {
@@ -158,7 +132,7 @@ void AppletInfo::setAppletIcons()
     }
 }
 
-void AppletInfo::setMainDisconnectedIcon()
+void ConnectionIcon::setDisconnectedIcon()
 {
     bool wired = false;
     bool wireless = false;
@@ -201,14 +175,14 @@ void AppletInfo::setMainDisconnectedIcon()
     }
 }
 
-void AppletInfo::setModemIcon()
+void ConnectionIcon::setModemIcon()
 {
     // TODO
     NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile-100)";
     Q_EMIT setConnectionIcon(QString("network-mobile-100"));
 }
 
-void AppletInfo::setWirelessIcon(NetworkManager::Device * device, const QString & ssid)
+void ConnectionIcon::setWirelessIcon(NetworkManager::Device* device, const QString& ssid)
 {
     NetworkManager::WirelessDevice * wirelessDevice = qobject_cast<NetworkManager::WirelessDevice*>(device);
     m_wirelessEnvironment = new NetworkManager::WirelessNetworkInterfaceEnvironment(wirelessDevice);
@@ -220,7 +194,7 @@ void AppletInfo::setWirelessIcon(NetworkManager::Device * device, const QString 
     setWirelessIconForSignalStrenght(m_wirelessNetwork->signalStrength());
 }
 
-void AppletInfo::setWirelessIconForSignalStrenght(int strenght)
+void ConnectionIcon::setWirelessIconForSignalStrenght(int strenght)
 {
     int diff = m_wirelessSignal - strenght;
 
@@ -252,17 +226,3 @@ void AppletInfo::setWirelessIconForSignalStrenght(int strenght)
         Q_EMIT setConnectionIcon(icon);
     }
 }
-
-void AppletInfo::statusChanged(NetworkManager::Status status)
-{
-    if (status == NetworkManager::Connected ||
-        status == NetworkManager::ConnectedLinkLocal ||
-        status == NetworkManager::ConnectedSiteOnly) {
-        NMAppletDebug() << "Emit signal setConnectedStatus()";
-        Q_EMIT setConnectedStatus();
-    } else {
-        NMAppletDebug() << "Emit signal setDisconnectedStatus()";
-        Q_EMIT setDisconnectedStatus();
-    }
-}
-

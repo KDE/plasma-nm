@@ -18,31 +18,25 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "qmlplugins.h"
+#ifndef PLASMA_NM_ENABLED_CONNECTIONS_H
+#define PLASMA_NM_ENABLED_CONNECTIONS_H
 
-#include <QtDeclarative/QDeclarativeItem>
+#include <QObject>
 
-#include "applet/connectionicon.h"
-#include "applet/enabledconnections.h"
-#include "applet/globalstatus.h"
-
-#include "model/modelitem.h"
-#include "model/monitor.h"
-#include "model/model.h"
-#include "model/sortmodel.h"
-
-#include "handler.h"
-#include "secretagent.h"
-
-void QmlPlugins::registerTypes(const char* uri)
+class EnabledConnections : public QObject
 {
-    qmlRegisterType<ConnectionIcon>(uri, 0, 1, "ConnectionIcon");
-    qmlRegisterType<EnabledConnections>(uri, 0, 1, "EnabledConnections");
-    qmlRegisterType<GlobalStatus>(uri, 0, 1, "GlobalStatus");
-    qmlRegisterType<Handler>(uri, 0, 1, "Handler");
-    qmlRegisterType<Model>(uri, 0, 1, "Model");
-    qmlRegisterType<SortModel>(uri, 0, 1, "SortModel");
-    qmlRegisterType<SecretAgent>(uri, 0, 1, "SecretAgent");
-}
+Q_OBJECT
+public:
+    explicit EnabledConnections(QObject* parent = 0);
+    virtual ~EnabledConnections();
 
-Q_EXPORT_PLUGIN2(plasmanm, QmlPlugins)
+public Q_SLOTS:
+    void init();
+
+Q_SIGNALS:
+    void networkingEnabled(bool enabled);
+    void wirelessEnabled(bool enabled);
+    void wwanEnabled(bool enabled);
+};
+
+#endif // PLASMA_NM_ENABLED_CONNECTIONS_H

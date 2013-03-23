@@ -18,31 +18,29 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "qmlplugins.h"
+#ifndef PLASMA_NM_GLOBAL_STATUS_H
+#define PLASMA_NM_GLOBAL_STATUS_H
 
-#include <QtDeclarative/QDeclarativeItem>
+#include <QObject>
+#include <QIcon>
 
-#include "applet/connectionicon.h"
-#include "applet/enabledconnections.h"
-#include "applet/globalstatus.h"
+#include <QtNetworkManager/manager.h>
 
-#include "model/modelitem.h"
-#include "model/monitor.h"
-#include "model/model.h"
-#include "model/sortmodel.h"
-
-#include "handler.h"
-#include "secretagent.h"
-
-void QmlPlugins::registerTypes(const char* uri)
+class GlobalStatus : public QObject
 {
-    qmlRegisterType<ConnectionIcon>(uri, 0, 1, "ConnectionIcon");
-    qmlRegisterType<EnabledConnections>(uri, 0, 1, "EnabledConnections");
-    qmlRegisterType<GlobalStatus>(uri, 0, 1, "GlobalStatus");
-    qmlRegisterType<Handler>(uri, 0, 1, "Handler");
-    qmlRegisterType<Model>(uri, 0, 1, "Model");
-    qmlRegisterType<SortModel>(uri, 0, 1, "SortModel");
-    qmlRegisterType<SecretAgent>(uri, 0, 1, "SecretAgent");
-}
+Q_OBJECT
+public:
+    GlobalStatus(QObject* parent = 0);
+    virtual ~GlobalStatus();
 
-Q_EXPORT_PLUGIN2(plasmanm, QmlPlugins)
+public Q_SLOTS:
+    void init();
+
+private Q_SLOTS:
+    void statusChanged(NetworkManager::Status status);
+
+Q_SIGNALS:
+    void setGlobalStatus(const QString & status, bool connected, bool inProgress);
+};
+
+#endif // PLAMA_NM_GLOBAL_STATUS_H

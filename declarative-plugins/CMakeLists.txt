@@ -3,14 +3,18 @@ include_directories (${CMAKE_CURRENT_BINARY_DIR}
 )
 
 set(plasma_nm_qml_plugins_SRCS
-   appletinfo.cpp
+   applet/enabledconnections.cpp
+   applet/connectionicon.cpp
+   applet/globalstatus.cpp
+
+   model/model.cpp
+   model/modelitem.cpp
+   model/monitor.cpp
+   model/sortmodel.cpp
+
    debug.cpp
    handler.cpp
-   model.cpp
-   modelitem.cpp
-   monitor.cpp
    passworddialog.cpp
-   sortmodel.cpp
    secretagent.cpp
    qmlplugins.cpp
 )

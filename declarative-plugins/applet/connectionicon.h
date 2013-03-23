@@ -18,55 +18,44 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_APPLET_INFO_H
-#define PLASMA_NM_APPLET_INFO_H
-
-#include <QObject>
-#include <QIcon>
+#ifndef PLASMA_NM_CONNECTION_ICON_H
+#define PLASMA_NM_CONNECTION_ICON_H
 
 #include <QtNetworkManager/manager.h>
 #include <QtNetworkManager/activeconnection.h>
 #include <QtNetworkManager/wirelessnetworkinterfaceenvironment.h>
 
-class AppletInfo : public QObject
+class ConnectionIcon : public QObject
 {
 Q_OBJECT
 public:
-    explicit AppletInfo(QObject* parent = 0);
-    virtual ~AppletInfo();
+    ConnectionIcon(QObject* parent = 0);
+    virtual ~ConnectionIcon();
 
 public Q_SLOTS:
-    void initIconInfo();
-    void initNetworkInfo();
-    void initStatusInfo();
+    void init();
 
 private Q_SLOTS:
     void activeConnectionsChanged();
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
-    void setAppletIcons();
+    void setIcons();
     void setWirelessIconForSignalStrenght(int strenght);
-    void statusChanged(NetworkManager::Status status);
 
 Q_SIGNALS:
-    void startActivatingConnection(const QString & connectionUuid);
-    void stopActivatingConnection(const QString & connectionUuid);
+    void hideConnectingIndicator();
+    void showConnectingIndicator();
     void setConnectionIcon(const QString & icon);
-    void setConnectedStatus();
-    void setDisconnectedStatus();
     void setVpnIcon();
     void unsetVpnIcon();
 
-    void networkingEnabled(bool enabled);
-    void wirelessEnabled(bool enabled);
-    void wwanEnabled(bool enabled);
 private:
     int m_wirelessSignal;
     NetworkManager::WirelessNetwork * m_wirelessNetwork;
     NetworkManager::WirelessNetworkInterfaceEnvironment * m_wirelessEnvironment;
 
-    void setMainDisconnectedIcon();
+    void setDisconnectedIcon();
     void setModemIcon();
     void setWirelessIcon(NetworkManager::Device * device, const QString & ssid);
 };
 
-#endif // PLASMA_NM_APPLET_INFO_H
+#endif // PLASMA_NM_CONNECTION_ICON_H

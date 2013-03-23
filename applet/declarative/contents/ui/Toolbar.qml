@@ -45,17 +45,17 @@ Item {
 
     height: 30;
 
-    PlasmaNM.AppletInfo {
-        id: statusInfo;
+    PlasmaNM.GlobalStatus {
+        id: globalStatus;
 
-        onSetConnectedStatus: {
-            statusIcon.icon = QIcon("user-online");
-            statusLabel.text = i18n("Connected");
-        }
-
-        onSetDisconnectedStatus: {
-            statusIcon.icon = QIcon("user-offline");
-            statusLabel.text = i18n("Not connected");
+        onSetGlobalStatus: {
+            statusLabel.text = status;
+            progressIndicator.running = inProgress;
+            if (connected) {
+                statusIcon.icon = QIcon("user-online");
+            } else {
+                statusIcon.icon = QIcon("user-offline");
+            }
         }
     }
 
@@ -64,6 +64,14 @@ Item {
 
         height: 20; width: 20;
         anchors { left: parent.left; bottom: parent.bottom; top: statusLabel.top}
+
+        PlasmaComponents.BusyIndicator {
+            id: progressIndicator;
+
+            anchors.fill: parent;
+            running: false;
+            visible: running;
+        }
     }
 
     PlasmaComponents.Label {
@@ -91,8 +99,8 @@ Item {
         }
     }
 
-    PlasmaNM.AppletInfo {
-        id: networkInfo;
+    PlasmaNM.EnabledConnections {
+        id: enabledConnections;
 
         onNetworkingEnabled: {
             options.networkingEnabled = enabled;
@@ -118,7 +126,7 @@ Item {
         onWwanEnabledChanged: enableWwan(enabled);
 
         Component.onCompleted: {
-            networkInfo.initNetworkInfo();
+            enabledConnections.init();
         }
     }
 
@@ -135,6 +143,6 @@ Item {
     }
 
     Component.onCompleted: {
-        statusInfo.initStatusInfo();
+        globalStatus.init();
     }
 }

@@ -66,15 +66,15 @@ Item {
             onClicked: plasmoid.togglePopup()
         }
 
-        PlasmaNm.AppletInfo {
-            id: iconInfo;
+        PlasmaNm.ConnectionIcon {
+            id: connectionIconProvider;
 
-            onStartActivatingConnection: {
-                busyIndicator.running = true;
+            onHideConnectingIndicator: {
+                busyIndicator.running = false;
             }
 
-            onStopActivatingConnection: {
-                busyIndicator.running = false;
+            onShowConnectingIndicator: {
+                busyIndicator.running = true;
             }
 
             onSetConnectionIcon: {
@@ -91,7 +91,7 @@ Item {
         }
 
         Component.onCompleted: {
-            iconInfo.initIconInfo();
+            connectionIconProvider.init();
         }
     }
 }

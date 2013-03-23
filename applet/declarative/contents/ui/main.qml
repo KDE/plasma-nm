@@ -40,10 +40,6 @@ Item {
     width: 300;
     height: 400;
 
-//     signal enableNetworking(bool enable);
-//     signal enableWireless(bool enable);
-//     signal enableWwan(bool enable);
-
     PlasmaNm.Handler {
             id: handler;
 

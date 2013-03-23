@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 2.6)
 
 find_package(Qt4 REQUIRED)
 find_package(KDE4 REQUIRED)
+find_package(NetworkManager REQUIRED)
 
 include(FindPkgConfig)
 
@@ -21,6 +22,7 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}
                     ${QTNETWORK_INCLUDE_DIRS}
                     ${QTNETWORKMANAGER_INCLUDE_DIRS}
+                    ${NETWORKMANAGER_INCLUDE_DIRS}
                     ${KDE4_INCLUDES})
 
 add_subdirectory(applet)

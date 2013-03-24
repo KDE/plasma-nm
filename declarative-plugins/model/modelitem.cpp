@@ -172,8 +172,8 @@ void ModelItem::setWirelessNetwork(NetworkManager::WirelessNetwork * network)
 {
     // Just for sure disconnect the previous one, if exists
     if (m_network) {
-        disconnect(m_network, SIGNAL(signalStrengthChanged(int)), 0, 0);
-        disconnect(m_network, SIGNAL(referenceAccessPointChanged(QString)), 0, 0);
+        disconnect(m_network, SIGNAL(signalStrengthChanged(int)), this, SLOT(onSignalStrengthChanged(int)));
+        disconnect(m_network, SIGNAL(referenceAccessPointChanged(QString)), this, SLOT(onSignalStrengthChanged(int)));
     }
 
     m_network = network;
@@ -212,7 +212,7 @@ void ModelItem::setActiveConnection(NetworkManager::ActiveConnection* active)
 {
     // Just for sure disconnect the previous one, if exists
     if (m_active) {
-        disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), 0, 0);
+//         disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), 0, 0);
     }
 
     m_active = active;
@@ -257,7 +257,7 @@ void ModelItem::setConnection(NetworkManager::Settings::Connection* connection)
 {
     // Just for sure disconnect the previous one, if exists
     if (m_connection) {
-        disconnect(m_connection, SIGNAL(updated(QVariantMapMap)));
+        disconnect(m_connection, SIGNAL(updated(QVariantMapMap)), this, SLOT(onConnectionUpdated(QVariantMapMap)));
     }
 
     m_connection = connection;
@@ -326,7 +326,7 @@ void ModelItem::onActiveConnectionStateChanged(NetworkManager::ActiveConnection:
     if (state == NetworkManager::ActiveConnection::Deactivated ||
         state == NetworkManager::ActiveConnection::Deactivating) {
         NMItemDebug() << name() << ": disconnected";
-        disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), 0, 0);
+        disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
         m_active = 0;
         m_conecting = false;
         m_connected = false;

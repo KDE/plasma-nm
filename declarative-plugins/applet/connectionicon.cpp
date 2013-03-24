@@ -70,9 +70,10 @@ void ConnectionIcon::activeConnectionsChanged()
 
 void ConnectionIcon::activeConnectionStateChanged(NetworkManager::ActiveConnection::State state)
 {
+    NMAppletDebug() << "FOOOOOO - " << state;
     if (state == NetworkManager::ActiveConnection::Deactivated ||
         state == NetworkManager::ActiveConnection::Activated) {
-            NMAppletDebug() << "Emit signal hideConnectionIndicator()";
+        NMAppletDebug() << "Emit signal hideConnectionIndicator()";
         Q_EMIT hideConnectingIndicator();
     }
 

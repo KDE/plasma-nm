@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PASSWORDDIALOG_H
-#define PASSWORDDIALOG_H
+#ifndef PLASMA_NM_PASSWORDDIALOG_H
+#define PLASMA_NM_PASSWORDDIALOG_H
 
 #include <QtNetworkManager/generic-types.h>
 #include <QtNetworkManager/settings/connection.h>
@@ -45,4 +45,4 @@ private:
     QStringList m_neededSecrets;
 };
 
-#endif // PASSWORDDIALOG_H
+#endif // PLASMA_NM_PASSWORDDIALOG_H

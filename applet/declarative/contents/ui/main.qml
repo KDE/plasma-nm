@@ -70,7 +70,7 @@ Item {
     ListView {
         id: connectionView;
 
-        anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbar.top; topMargin: 5 }
+        anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbarSeparator.top; topMargin: 5; bottomMargin: 10 }
         spacing: 8;
         model: sortedConnectionModel;
         delegate: ConnectionItem {
@@ -85,6 +85,15 @@ Item {
                 toolbar.toolbarExpanded.connect(hideDetails);
             }
         }
+    }
+
+    Rectangle {
+        id: toolbarSeparator;
+
+        height: 1;
+        anchors { left: parent.left; right: parent.right; bottom: toolbar.top; bottomMargin: 2; leftMargin: 5; rightMargin: 5 }
+        radius: 2;
+        color: theme.highlightColor;
     }
 
     Toolbar {

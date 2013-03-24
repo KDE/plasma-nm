@@ -67,28 +67,22 @@ Item {
         id: secretAgent;
     }
 
-    PlasmaExtras.ScrollArea {
-        id: scrollArea;
+    ListView {
+        id: connectionView;
 
-        anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbar.top }
+        anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbar.top; topMargin: 5 }
+        spacing: 8;
+        model: sortedConnectionModel;
+        delegate: ConnectionItem {
+            onActivateConnectionItem: activateConnection(connection, device, specificObject);
+            onAddAndActivateConnectionItem: addAndActivateConnection(connection, device, specificObject);
+            onDeactivateConnectionItem: deactivateConnection(connection);
+            onItemExpanded: {
+                toolbar.hideOptions();
+            }
 
-        ListView {
-            id: connectionView;
-
-            anchors { fill: parent; topMargin: 5 }
-            spacing: 8;
-            model: sortedConnectionModel;
-            delegate: ConnectionItem {
-                onActivateConnectionItem: activateConnection(connection, device, specificObject);
-                onAddAndActivateConnectionItem: addAndActivateConnection(connection, device, specificObject);
-                onDeactivateConnectionItem: deactivateConnection(connection);
-                onItemExpanded: {
-                    toolbar.hideOptions();
-                }
-
-                Component.onCompleted: {
-                    toolbar.toolbarExpanded.connect(hideDetails);
-                }
+            Component.onCompleted: {
+                toolbar.toolbarExpanded.connect(hideDetails);
             }
         }
     }

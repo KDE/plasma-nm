@@ -138,9 +138,8 @@ QVariant Model::data(const QModelIndex& index, int role) const
 
 void Model::addWirelessNetwork(NetworkManager::WirelessNetwork * network, NetworkManager::Device * device)
 {
-    ModelItem * item = new ModelItem();
+    ModelItem * item = new ModelItem(device);
     item->setWirelessNetwork(network);
-    item->setDevice(device);
 
     insertItem(item);
 }
@@ -166,9 +165,8 @@ void Model::addConnection(NetworkManager::Settings::Connection* connection, Netw
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
     settings->fromMap(connection->settings());
 
-    ModelItem * item = new ModelItem();
+    ModelItem * item = new ModelItem(device);
     item->setConnection(connection);
-    item->setDevice(device);
 
     insertItem(item);
 }
@@ -309,17 +307,17 @@ void Model::insertItem(ModelItem* item)
             break;
         }
     }
-    // Item doesn't exit, let's add it
+    // Item doesn't exist, let's add it
     if (!found) {
         int index = m_connections.count();
         beginInsertRows(QModelIndex(), index, index);
         m_connections << item;
         endInsertRows();
 
+        connect(item, SIGNAL(accessPointChanged()), SLOT(onChanged()));
         connect(item, SIGNAL(connectionChanged()), SLOT(onChanged()));
         connect(item, SIGNAL(signalChanged()), SLOT(onChanged()));
         connect(item, SIGNAL(stateChanged()), SLOT(onChanged()));
-        connect(item, SIGNAL(accessPointChanged()), SLOT(onChanged()));
 
         NMModelDebug() << "Connection " << item->name() << " has been added";
     } else {

@@ -31,20 +31,22 @@ class ModelItem : public QObject
 {
 Q_OBJECT
 public:
-    ModelItem(QObject* parent = 0);
+    ModelItem(NetworkManager::Device * device = 0, QObject * parent = 0);
     ~ModelItem();
 
     // Basic properties
 
     QString name() const;
     QString uuid() const;
-    NetworkManager::Settings::ConnectionSettings::ConnectionType type() const;
     bool connected() const;
     bool connecting() const;
     QString deviceUdi() const;
     QString ssid() const;
     int signal() const;
     bool secure() const;
+    NetworkManager::Settings::ConnectionSettings::ConnectionType type() const;
+
+    bool operator==(ModelItem * item);
 
     // Detail info
 
@@ -83,14 +85,24 @@ private Q_SLOTS:
     void onSignalStrengthChanged(int strength);
 
 private:
-    NetworkManager::WirelessNetwork * m_network;
     NetworkManager::ActiveConnection * m_active;
     NetworkManager::Settings::Connection * m_connection;
     NetworkManager::Device * m_device;
+    NetworkManager::WirelessNetwork * m_network;
 
+    QString m_name;
     QString m_uuid;
-    QString m_ssid;
+    bool m_connected;
+    bool m_conecting;
+    QString m_details;
     QString m_deviceUdi;
+    QString m_ssid;
+    int m_signal;
+    bool m_secure;
+    NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
+
+    void updateDetails();
+    void setConnectionSettings(const QVariantMapMap & map);
 };
 
 #endif // PLASMA_NM_CONNECTION_ITEM_H

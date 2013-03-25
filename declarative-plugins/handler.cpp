@@ -90,3 +90,9 @@ void Handler::enableWwan(bool enable)
     NetworkManager::setWwanEnabled(enable);
 }
 
+void Handler::removeConnection(const QString& connection)
+{
+    NetworkManager::Settings::Connection * con = NetworkManager::Settings::findConnection(connection);
+
+    con->remove();
+}

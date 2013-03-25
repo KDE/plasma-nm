@@ -33,6 +33,7 @@ Item {
     signal activateConnectionItem(string connection, string device, string specificObject);
     signal addAndActivateConnectionItem(string connection, string device, string specificObject);
     signal deactivateConnectionItem(string connection);
+    signal removeConnectionItem(string connection);
     signal itemExpanded();
 
     function hideDetails() {
@@ -162,6 +163,10 @@ Item {
 
         onHideDetails: {
             connectionItem.hideDetails();
+        }
+
+        onRemoveConnection: {
+            connectionItem.removeConnectionItem(connectionPath);
         }
     }
 

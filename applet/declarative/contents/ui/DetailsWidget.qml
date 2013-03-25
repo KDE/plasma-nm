@@ -31,6 +31,7 @@ Item {
     property bool editable;
 
     signal hideDetails();
+    signal removeConnection();
 
     Rectangle {
         id: separator;
@@ -83,6 +84,11 @@ Item {
             iconSource: QIcon("edit-delete");
             text: i18n("Remove");
             enabled: editable;
+
+            onClicked: {
+                hideDetails();
+                removeConnection();
+            }
         }
     }
 }

@@ -36,6 +36,7 @@ Item {
     signal activateConnection(string connection, string device, string specificObject);
     signal addAndActivateConnection(string connection, string device, string specificObject);
     signal deactivateConnection(string connection);
+    signal removeConnection(string connection);
 
     width: 300;
     height: 400;
@@ -47,6 +48,7 @@ Item {
                 mainWindow.activateConnection.connect(activateConnection);
                 mainWindow.addAndActivateConnection.connect(addAndActivateConnection);
                 mainWindow.deactivateConnection.connect(deactivateConnection);
+                mainWindow.removeConnection.connect(removeConnection);
                 toolbar.enableNetworking.connect(enableNetworking);
                 toolbar.enableWireless.connect(enableWireless);
                 toolbar.enableWwan.connect(enableWwan);
@@ -77,6 +79,7 @@ Item {
             onActivateConnectionItem: activateConnection(connection, device, specificObject);
             onAddAndActivateConnectionItem: addAndActivateConnection(connection, device, specificObject);
             onDeactivateConnectionItem: deactivateConnection(connection);
+            onRemoveConnectionItem: removeConnection(connection);
             onItemExpanded: {
                 toolbar.hideOptions();
             }

@@ -72,6 +72,11 @@ QString ModelItem::deviceUdi() const
     return m_deviceUdi;
 }
 
+QString ModelItem::detailInformations() const
+{
+    return m_details;
+}
+
 QString ModelItem::ssid() const
 {
     return m_ssid;
@@ -161,11 +166,6 @@ void ModelItem::updateDetails()
     m_details += QString("</table></qt>");
 }
 
-QString ModelItem::detailInformations() const
-{
-    return m_details;
-}
-
 bool ModelItem::operator==(ModelItem* item)
 {
     if (((item->uuid() == this->uuid()) && !item->name().isEmpty() && !this->name().isEmpty()) ||
@@ -206,6 +206,11 @@ void ModelItem::setWirelessNetwork(NetworkManager::WirelessNetwork * network)
 
         connect(m_network, SIGNAL(signalStrengthChanged(int)), SLOT(onSignalStrengthChanged(int)));
         connect(m_network, SIGNAL(referenceAccessPointChanged(QString)), SLOT(onAccessPointChanged(QString)));
+    } else {
+        m_ssid.clear();
+        m_signal = 0;
+        m_type = NetworkManager::Settings::ConnectionSettings::Unknown;
+        m_secure = false;
     }
 
     updateDetails();
@@ -245,6 +250,9 @@ void ModelItem::setActiveConnection(NetworkManager::ActiveConnection* active)
                 SLOT(onDefaultRouteChanged(bool)));
         connect(m_active, SIGNAL(default6Changed(bool)),
                 SLOT(onDefaultRouteChanged(bool)));
+    } else {
+        m_conecting = false;
+        m_connected = false;
     }
 
     updateDetails();
@@ -261,6 +269,8 @@ void ModelItem::setDevice(NetworkManager::Device* device)
 
     if (m_device) {
         m_deviceUdi = m_device->udi();
+    } else {
+        m_deviceUdi.clear();
     }
 
     updateDetails();
@@ -284,6 +294,18 @@ void ModelItem::setConnection(NetworkManager::Settings::Connection* connection)
         setConnectionSettings(connection->settings());
 
         connect(connection, SIGNAL(updated(QVariantMapMap)), SLOT(onConnectionUpdated(QVariantMapMap)));
+    } else {
+        m_uuid.clear();
+        if (m_network) {
+            m_name = m_network->ssid();
+            m_type = NetworkManager::Settings::ConnectionSettings::Wireless;
+        } else {
+            m_name.clear();
+            m_type = NetworkManager::Settings::ConnectionSettings::Unknown;
+            m_ssid.clear();
+            m_secure = false;
+        }
+        m_active = 0;
     }
 }
 

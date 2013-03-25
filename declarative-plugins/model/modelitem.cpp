@@ -101,6 +101,11 @@ void ModelItem::updateDetails()
         m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
     }
 
+    if (m_active) {
+        m_details += QString(format).arg(i18nc("default Ipv4 route", "Default IPv4 connection:"),m_active->default4() ? "yes" : "no");
+        m_details += QString(format).arg(i18nc("default Ipv6 route", "Default IPv6 connection:"), m_active->default6() ? "yes" : "no");
+    }
+
     if (m_device) {
 
         if (device()->ipV4Config().isValid() && connected()) {
@@ -142,7 +147,6 @@ void ModelItem::updateDetails()
         } else {
             name = device()->ipInterfaceName();
         }
-        m_details += QString(format).arg(i18nc("network device driver", "Driver:"), device()->driver());
     }
 
     if (m_network) {
@@ -216,7 +220,12 @@ void ModelItem::setActiveConnection(NetworkManager::ActiveConnection* active)
 {
     // Just for sure disconnect the previous one, if exists
     if (m_active) {
-//         disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), 0, 0);
+        disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                   this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
+        disconnect(m_active, SIGNAL(default4Changed(bool)),
+                this, SLOT(onDefaultRouteChanged(bool)));
+        disconnect(m_active, SIGNAL(default6Changed(bool)),
+                this, SLOT(onDefaultRouteChanged(bool)));
     }
 
     m_active = active;
@@ -229,8 +238,13 @@ void ModelItem::setActiveConnection(NetworkManager::ActiveConnection* active)
             NMItemDebug() << name() << ": activated";
             m_connected = true;
         }
+
         connect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                 SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
+        connect(m_active, SIGNAL(default4Changed(bool)),
+                SLOT(onDefaultRouteChanged(bool)));
+        connect(m_active, SIGNAL(default6Changed(bool)),
+                SLOT(onDefaultRouteChanged(bool)));
     }
 
     updateDetails();
@@ -357,6 +371,17 @@ void ModelItem::onConnectionUpdated(const QVariantMapMap& map)
     emit connectionChanged();
 
     NMItemDebug() << name() << ": connection changed";
+}
+
+void ModelItem::onDefaultRouteChanged(bool defaultRoute)
+{
+    Q_UNUSED(defaultRoute);
+
+    updateDetails();
+
+    emit defaultRouteChanged();
+
+    NMItemDebug() << name() << ": default route changed";
 }
 
 void ModelItem::onSignalStrengthChanged(int strength)

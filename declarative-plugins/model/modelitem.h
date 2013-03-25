@@ -75,6 +75,7 @@ public:
 Q_SIGNALS:
     void accessPointChanged();
     void connectionChanged();
+    void defaultRouteChanged();
     void signalChanged();
     void stateChanged();
 
@@ -82,6 +83,7 @@ private Q_SLOTS:
     void onAccessPointChanged(const QString & accessPoint);
     void onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state);
     void onConnectionUpdated(const QVariantMapMap & map);
+    void onDefaultRouteChanged(bool defaultRoute);
     void onSignalStrengthChanged(int strength);
 
 private:

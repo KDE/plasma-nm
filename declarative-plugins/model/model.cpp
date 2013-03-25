@@ -316,6 +316,7 @@ void Model::insertItem(ModelItem* item)
 
         connect(item, SIGNAL(accessPointChanged()), SLOT(onChanged()));
         connect(item, SIGNAL(connectionChanged()), SLOT(onChanged()));
+        connect(item, SIGNAL(defaultRouteChanged()), SLOT(onChanged()));
         connect(item, SIGNAL(signalChanged()), SLOT(onChanged()));
         connect(item, SIGNAL(stateChanged()), SLOT(onChanged()));
 

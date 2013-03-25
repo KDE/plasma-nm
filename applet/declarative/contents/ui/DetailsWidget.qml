@@ -97,28 +97,29 @@ Item {
             PlasmaComponents.Label {
                 id: dialogText;
 
-                anchors { left: parent.left; right: parent.right; top: parent.top; bottom: dialogButtons.top }
+                anchors { left: parent.left; right: parent.right; leftMargin: 10; rightMargin: 10 }
                 textFormat: Text.RichText;
                 wrapMode: Text.WordWrap;
                 font.weight: Font.DemiBold;
+                horizontalAlignment: Text.AlignHCenter;
                 text: i18n("Do you really want to remove connection %1?", connectionName);
             }
         ]
-        content: [
-            PlasmaComponents.ButtonRow {
-                id: dialogButtons;
 
-                height: 20; width: 200;
-                anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
-
+        buttons: [
+            Row {
                 PlasmaComponents.Button {
-                    height: 20; width: 100;
+                    id: confirmRemoveButton;
+
+                    height: 20; width: 150;
                     text: i18n("Remove")
 
                     onClicked: dialog.accept();
                 }
                 PlasmaComponents.Button {
-                    height: 20; width: 100;
+                    id: cancelRemoveButton;
+
+                    height: 20; width: 150;
                     text: i18n("Cancel")
 
                     onClicked: dialog.reject();

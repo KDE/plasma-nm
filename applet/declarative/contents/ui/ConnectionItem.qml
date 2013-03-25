@@ -158,6 +158,7 @@ Item {
             bottomMargin: 5;
         }
         text: detailInformations;
+        connectionName: name;
         visible: false;
         editable: uuid == "" ? false : true;
 

@@ -28,6 +28,7 @@ Item {
     id: detailInformationsWidget;
 
     property alias text: details.text;
+    property string connectionName;
     property bool editable;
 
     signal hideDetails();
@@ -85,10 +86,50 @@ Item {
             text: i18n("Remove");
             enabled: editable;
 
-            onClicked: {
-                hideDetails();
-                removeConnection();
+            onClicked: dialog.open();
+        }
+    }
+
+    PlasmaComponents.Dialog {
+        id: dialog;
+
+        title: [
+            PlasmaComponents.Label {
+                id: dialogText;
+
+                anchors { left: parent.left; right: parent.right; top: parent.top; bottom: dialogButtons.top }
+                textFormat: Text.RichText;
+                wrapMode: Text.WordWrap;
+                font.weight: Font.DemiBold;
+                text: i18n("Do you really want to remove connection %1?", connectionName);
             }
+        ]
+        content: [
+            PlasmaComponents.ButtonRow {
+                id: dialogButtons;
+
+                height: 20; width: 200;
+                anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
+
+                PlasmaComponents.Button {
+                    height: 20; width: 100;
+                    text: i18n("Remove")
+
+                    onClicked: dialog.accept();
+                }
+                PlasmaComponents.Button {
+                    height: 20; width: 100;
+                    text: i18n("Cancel")
+
+                    onClicked: dialog.reject();
+                }
+            }
+        ]
+        visualParent: details;
+
+        onAccepted: {
+            hideDetails();
+            removeConnection();
         }
     }
 }

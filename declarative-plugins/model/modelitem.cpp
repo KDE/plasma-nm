@@ -101,7 +101,7 @@ void ModelItem::updateDetails()
         m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
     }
 
-    if (m_active) {
+    if (m_active && type() != NetworkManager::Settings::ConnectionSettings::Vpn) {
         m_details += QString(format).arg(i18nc("default Ipv4 route", "Default IPv4 connection:"),m_active->default4() ? "yes" : "no");
         m_details += QString(format).arg(i18nc("default Ipv6 route", "Default IPv6 connection:"), m_active->default6() ? "yes" : "no");
     }

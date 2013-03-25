@@ -27,6 +27,7 @@ set(connectioneditor_SRCS
    security802-1x.cpp
    pppwidget.cpp
    pppoewidget.cpp
+   gsmwidget.cpp
 )
 
 set(connectioneditor_HDRS
@@ -53,6 +54,7 @@ set(connectioneditor_HDRS
    security802-1x.h
    pppwidget.h
    pppoewidget.h
+   gsmwidget.h
 )
 
 kde4_add_ui_files(connectioneditor_SRCS
@@ -70,6 +72,7 @@ kde4_add_ui_files(connectioneditor_SRCS
     ui/802-1x.ui
     ui/ppp.ui
     ui/pppoe.ui
+    ui/gsm.ui
 )
 
 qt4_wrap_cpp(connectioneditor_HDRS_MOC ${connectioneditor_HDRS})

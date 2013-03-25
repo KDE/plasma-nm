@@ -101,33 +101,37 @@ void ModelItem::updateDetails()
         m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
     }
 
-    if (m_device && connected()) {
+    if (m_device) {
 
-        if (device()->ipV4Config().isValid()) {
+        if (device()->ipV4Config().isValid() && connected()) {
             QHostAddress addr(device()->ipV4Config().addresses().first().address());
             m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
         }
 
-        if (device()->ipV6Config().isValid()) {
+        if (device()->ipV6Config().isValid() && connected()) {
             QHostAddress addr(device()->ipV6Config().addresses().first().address());
             m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
         }
 
         if (device()->type() == NetworkManager::Device::Ethernet) {
             NetworkManager::WiredDevice * wired = qobject_cast<NetworkManager::WiredDevice*>(device());
-            if (wired->bitRate() < 1000000) {
-                m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wired->bitRate()/1000));
-            } else {
-                m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Gb/s", wired->bitRate()/1000000));
+            if (connected()) {
+                if (wired->bitRate() < 1000000) {
+                    m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wired->bitRate()/1000));
+                } else {
+                    m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Gb/s", wired->bitRate()/1000000));
+                }
             }
             m_details += QString(format).arg(i18n("MAC Address"), wired->permanentHardwareAddress());
 
         } else if (device()->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice * wireless = qobject_cast<NetworkManager::WirelessDevice*>(device());
-            if (wireless->bitRate() < 1000) {
-                m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Kb/s", wireless->bitRate()));
-            } else {
-                m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wireless->bitRate()/1000));
+            if (connected()) {
+                if (wireless->bitRate() < 1000) {
+                    m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Kb/s", wireless->bitRate()));
+                } else {
+                    m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wireless->bitRate()/1000));
+                }
             }
             m_details += QString(format).arg(i18n("MAC Address:"), wireless->permanentHardwareAddress());
         }

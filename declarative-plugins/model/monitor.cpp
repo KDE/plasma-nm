@@ -132,7 +132,7 @@ void Monitor::cablePlugged(bool plugged)
 
 void Monitor::connectionAdded(const QString& connection)
 {
-    NetworkManager::Settings::Connection * newConnection = new NetworkManager::Settings::Connection(connection);
+    NetworkManager::Settings::Connection * newConnection = NetworkManager::Settings::findConnection(connection);
 
     foreach (NetworkManager::Device * dev, m_devices) {
         foreach (NetworkManager::Settings::Connection * con, dev->availableConnections()) {

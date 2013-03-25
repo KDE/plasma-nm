@@ -39,9 +39,9 @@ Handler::~Handler()
 
 void Handler::activateConnection(const QString& connection, const QString& device, const QString& specificObject)
 {
-    NetworkManager::Settings::Connection con(connection);
+    NetworkManager::Settings::Connection * con = NetworkManager::Settings::findConnection(connection);
 
-    NMHandlerDebug() << "Activating " << con.id() << " connection";
+    NMHandlerDebug() << "Activating " << con->id() << " connection";
 
     NetworkManager::activateConnection(connection, device, specificObject);
 }
@@ -57,10 +57,10 @@ void Handler::addAndActivateConnection(const QString& connection, const QString&
 
 void Handler::deactivateConnection(const QString& connection)
 {
-    NetworkManager::Settings::Connection con(connection);
+    NetworkManager::Settings::Connection * con = NetworkManager::Settings::findConnection(connection);
 
     foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
-        if (active->uuid() == con.uuid()) {
+        if (active->uuid() == con->uuid()) {
             if (active->vpn()) {
                 NetworkManager::deactivateConnection(active->path());
             } else {
@@ -69,7 +69,7 @@ void Handler::deactivateConnection(const QString& connection)
         }
     }
 
-    NMHandlerDebug() << "Deactivating " << con.id() << " connection";
+    NMHandlerDebug() << "Deactivating " << con->id() << " connection";
 }
 
 void Handler::enableNetworking(bool enable)

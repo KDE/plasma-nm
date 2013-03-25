@@ -153,7 +153,6 @@ Item {
             bottomMargin: 5;
         }
         text: itemDetailInformations;
-//         connectionName: itemName;
         visible: false;
         editable: itemUuid == "" ? false : true;
 

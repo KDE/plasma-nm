@@ -28,7 +28,6 @@ Item {
     id: detailInformationsWidget;
 
     property alias text: detailsText.text;
-//     property string connectionName;
     property bool editable;
 
     signal hideDetails();
@@ -88,6 +87,4 @@ Item {
             onClicked: removeConnection();
         }
     }
-
-
 }

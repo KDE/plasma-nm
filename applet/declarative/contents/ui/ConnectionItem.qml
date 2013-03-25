@@ -172,7 +172,7 @@ Item {
             PropertyChanges { target: connectionItem; height: connectionItem.ListView.view.height }
             PropertyChanges { target: detailWidget; visible: true}
             PropertyChanges { target: connectionItem.ListView.view; interactive: false }
-            PropertyChanges { target: connectionItem.ListView.view; explicit: true; contentY: connectionItem.y }
+            PropertyChanges { target: connectionItem.ListView.view; contentY: connectionItem.y }
         }
     ]
 

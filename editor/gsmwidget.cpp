@@ -40,6 +40,8 @@ GsmWidget::GsmWidget(NetworkManager::Settings::Setting * setting, QWidget* paren
     m_ui->type->addItem(i18n("Prefer 4G (LTE)"), NetworkManager::Settings::GsmSetting::Prefer4GLte);
     m_ui->type->addItem(i18n("4G Only (LTE)"), NetworkManager::Settings::GsmSetting::Only4GLte);
 
+    connect(m_ui->cbShowPasswords, SIGNAL(toggled(bool)), SLOT(showPasswords(bool)));
+
     if (setting)
         loadConfig(setting);
 }
@@ -83,4 +85,10 @@ QVariantMap GsmWidget::setting() const
         gsmSetting.setPin(m_ui->pin->text());
 
     return gsmSetting.toMap();
+}
+
+void GsmWidget::showPasswords(bool show)
+{
+    m_ui->password->setPasswordMode(!show);
+    m_ui->pin->setPasswordMode(!show);
 }

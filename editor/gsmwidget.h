@@ -43,6 +43,9 @@ public:
 
     QVariantMap setting() const;
 
+private slots:
+    void showPasswords(bool show);
+
 private:
     Ui::GsmWidget * m_ui;
 };

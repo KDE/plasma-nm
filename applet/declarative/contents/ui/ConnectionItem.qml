@@ -72,9 +72,9 @@ Item {
     QIconItem {
         id: connectionConnected;
 
-        width: 30; height: 30;
+        width: 20; height: 30;
         anchors { right: parent.right; top: parent.top; rightMargin: 5 }
-        icon: connected ? QIcon("network-connect") : QIcon("network-disconnect");
+        icon: connected ? QIcon("user-online") : QIcon("user-offline");
 
         PlasmaComponents.BusyIndicator {
             id: connectingIndicator;

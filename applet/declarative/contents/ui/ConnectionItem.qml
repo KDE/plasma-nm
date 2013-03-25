@@ -70,12 +70,12 @@ Item {
         font.weight: connected ? Font.DemiBold : Font.Normal;
     }
 
-    QIconItem {
+    PlasmaComponents.ToolButton {
         id: connectionConnected;
 
-        width: 20; height: 30;
+        width: 35; height: 35;
         anchors { right: parent.right; top: parent.top; rightMargin: 5 }
-        icon: connected ? QIcon("user-online") : QIcon("user-offline");
+        iconSource: connected ? "user-online" : "user-offline";
 
         PlasmaComponents.BusyIndicator {
             id: connectingIndicator;
@@ -177,7 +177,7 @@ Item {
             PropertyChanges { target: connectionItem; height: connectionItem.ListView.view.height }
             PropertyChanges { target: details; visible: true}
             PropertyChanges { target: connectionItem.ListView.view; interactive: false }
-            PropertyChanges { target: connectionItem.ListView.view; explicit: true; contentY: connectionItem.y }
+            PropertyChanges { target: connectionItem.ListView.view; contentY: connectionItem.y }
         }
     ]
 

@@ -27,13 +27,13 @@ import org.kde.plasma.core 0.1 as PlasmaCore
 Item {
     id: connectionItem;
 
-    property bool isWireless: (type == 14) ? true : false;
+    property bool isWireless: (itemType == 14) ? true : false;
     property bool expanded: false;
 
-    signal activateConnectionItem(string connection, string device, string specificObject);
-    signal addAndActivateConnectionItem(string connection, string device, string specificObject);
-    signal deactivateConnectionItem(string connection);
-    signal removeConnectionItem(string connection);
+    signal activateConnectionItem(string connectionPath, string devicePath, string specificObjectPath);
+    signal addAndActivateConnectionItem(string connectionPath, string devicePath, string specificObjectPath);
+    signal deactivateConnectionItem(string connectionPath);
+    signal removeConnectionItem(string connectionName, string connectionPath);
     signal itemExpanded();
 
     function hideDetails() {
@@ -45,92 +45,87 @@ Item {
     anchors { left: parent.left; right: parent.right }
 
     QIconItem {
-        id: connectionType;
+        id: connectionTypeIcon;
 
         height: 30; width: 30;
         anchors { left: parent.left; top: parent.top; leftMargin: 5 }
-        icon: QIcon(connectionIcon);
+        icon: QIcon(itemConnectionIcon);
 
         QIconItem {
-            id: connectionSecurity;
+            id: connectionSecurityIcon;
             width: 15; height: 15;
             anchors { bottom: parent.bottom; right: parent.right }
             icon: QIcon("object-locked");
-            visible: secure;
+            visible: itemSecure;
         }
     }
 
     PlasmaComponents.Label {
-        id: connectionName;
+        id: connectionNameLabel;
 
-        height: signal ? 15 : 30;
-        anchors { left: connectionType.right; right: connectionConnected.left; top: parent.top; leftMargin: 5 }
-        text: name;
+        height: itemSignal ? 15 : 30;
+        anchors { left: connectionTypeIcon.right; right: connectButton.left; top: parent.top; leftMargin: 5 }
+        text: itemName;
         elide: Text.ElideRight;
-        font.weight: connected ? Font.DemiBold : Font.Normal;
+        font.weight: itemConnected ? Font.DemiBold : Font.Normal;
     }
 
     PlasmaComponents.ToolButton {
-        id: connectionConnected;
+        id: connectButton;
 
         width: 35; height: 35;
         anchors { right: parent.right; top: parent.top; rightMargin: 5 }
-        iconSource: connected ? "user-online" : "user-offline";
+        iconSource: itemConnected ? "user-online" : "user-offline";
 
         PlasmaComponents.BusyIndicator {
             id: connectingIndicator;
             anchors.fill: parent;
-            running: connecting;
+            running: itemConnecting;
             visible: running;
         }
 
-        MouseArea {
-            id: clickArea;
-
-            anchors.fill: parent;
-            onClicked: {
-                if (!connected && !connecting) {
-                    if (uuid) {
-                        activateConnectionItem(connectionPath, devicePath, specificPath);
-                    } else {
-                        addAndActivateConnectionItem(connectionPath, devicePath, specificPath);
-                    }
+        onClicked: {
+            if (!itemConnected && !itemConnecting) {
+                if (itemUuid) {
+                    activateConnectionItem(itemConnectionPath, itemDevicePath, itemSpecificPath);
                 } else {
-                    deactivateConnectionItem(connectionPath);
+                    addAndActivateConnectionItem(itemConnectionPath, itemDevicePath, itemSpecificPath);
                 }
+            } else {
+                deactivateConnectionItem(itemConnectionPath);
+            }
 
-                if (expanded) {
-                    connectionItem.state = '';
-                    expanded = false;
-                }
+            if (expanded) {
+                connectionItem.state = '';
+                expanded = false;
             }
         }
     }
 
     PlasmaComponents.ProgressBar {
-        id: connectionSignal;
+        id: connectionSignalMeter;
 
-        height: signal ? 15 : 0;
+        height: itemSignal ? 15 : 0;
         anchors {
-            top: connectionName.bottom;
-            left: connectionType.right;
-            right: connectionConnected.left;
+            top: connectionNameLabel.bottom;
+            left: connectionTypeIcon.right;
+            right: connectButton.left;
             leftMargin: 5;
             rightMargin: 10;
         }
-        visible: signal ? true : false;
+        visible: itemSignal ? true : false;
         minimumValue: 0; maximumValue:100;
-        value: signal;
+        value: itemSignal;
     }
 
     MouseArea {
-        id: showInfo;
+        id: mouseAreaShowInfo;
 
         anchors {
             top: connectionItem.top;
-            bottom: connectionType.bottom;
+            bottom: connectionTypeIcon.bottom;
             left: connectionItem.left;
-            right: connectionConnected.left;
+            right: connectButton.left;
         }
 
         onClicked: {
@@ -145,29 +140,29 @@ Item {
     }
 
     DetailsWidget {
-        id: details;
+        id: detailWidget;
 
         anchors {
             left: parent.left;
             right: parent.right;
-            top: connectionType.bottom;
+            top: connectionTypeIcon.bottom;
             bottom: parent.bottom;
             topMargin: 10;
             leftMargin: 10;
             rightMargin: 10
             bottomMargin: 5;
         }
-        text: detailInformations;
-        connectionName: name;
+        text: itemDetailInformations;
+//         connectionName: itemName;
         visible: false;
-        editable: uuid == "" ? false : true;
+        editable: itemUuid == "" ? false : true;
 
         onHideDetails: {
             connectionItem.hideDetails();
         }
 
         onRemoveConnection: {
-            connectionItem.removeConnectionItem(connectionPath);
+            connectionItem.removeConnectionItem(itemName, itemConnectionPath);
         }
     }
 
@@ -175,9 +170,9 @@ Item {
         State {
             name: "Details";
             PropertyChanges { target: connectionItem; height: connectionItem.ListView.view.height }
-            PropertyChanges { target: details; visible: true}
+            PropertyChanges { target: detailWidget; visible: true}
             PropertyChanges { target: connectionItem.ListView.view; interactive: false }
-            PropertyChanges { target: connectionItem.ListView.view; contentY: connectionItem.y }
+            PropertyChanges { target: connectionItem.ListView.view; explicit: true; contentY: connectionItem.y }
         }
     ]
 

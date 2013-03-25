@@ -72,7 +72,7 @@ Item {
     }
 
     PlasmaComponents.ToolButton {
-        id: editorButton;
+        id: openEditorButton;
 
         height: 30;
         anchors { left: parent.left; right: parent.right; top: wwanEnabled.bottom; topMargin: 10}

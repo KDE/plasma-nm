@@ -25,7 +25,7 @@ import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasmanm 0.1 as PlasmaNm
 
 Item {
-    id: trayIcon;
+    id: panelIconWidget;
 
     PlasmaCore.Svg {
         id: svgIcons;
@@ -51,7 +51,7 @@ Item {
         }
 
         PlasmaComponents.BusyIndicator {
-            id: busyIndicator;
+            id: connectingIndicator;
 
             anchors.fill: parent;
             running: false
@@ -59,7 +59,7 @@ Item {
         }
 
         MouseArea {
-            id: mouseArea
+            id: mouseAreaPopup
 
             anchors.fill: parent
             hoverEnabled: true
@@ -70,11 +70,11 @@ Item {
             id: connectionIconProvider;
 
             onHideConnectingIndicator: {
-                busyIndicator.running = false;
+                connectingIndicator.running = false;
             }
 
             onShowConnectingIndicator: {
-                busyIndicator.running = true;
+                connectingIndicator.running = true;
             }
 
             onSetConnectionIcon: {

@@ -27,15 +27,15 @@ import org.kde.plasma.core 0.1 as PlasmaCore
 Item {
     id: detailInformationsWidget;
 
-    property alias text: details.text;
-    property string connectionName;
+    property alias text: detailsText.text;
+//     property string connectionName;
     property bool editable;
 
     signal hideDetails();
     signal removeConnection();
 
     Rectangle {
-        id: separator;
+        id: detailsSeparator;
 
         height: 2;
         anchors { top: parent.top; left: parent.left; right: parent.right; topMargin: 5 }
@@ -44,11 +44,10 @@ Item {
     }
 
     PlasmaComponents.Label {
-        id: details;
+        id: detailsText;
 
-        anchors { top: separator.bottom; horizontalCenter: parent.horizontalCenter; topMargin: 10 }
+        anchors { top: detailsSeparator.bottom; horizontalCenter: parent.horizontalCenter; topMargin: 10 }
         lineHeight: 1.5;
-        text: details;
     }
 
     PlasmaComponents.ButtonRow {
@@ -86,51 +85,9 @@ Item {
             text: i18n("Remove");
             enabled: editable;
 
-            onClicked: dialog.open();
+            onClicked: removeConnection();
         }
     }
 
-    PlasmaComponents.Dialog {
-        id: dialog;
 
-        title: [
-            PlasmaComponents.Label {
-                id: dialogText;
-
-                anchors { left: parent.left; right: parent.right; leftMargin: 10; rightMargin: 10 }
-                textFormat: Text.RichText;
-                wrapMode: Text.WordWrap;
-                font.weight: Font.DemiBold;
-                horizontalAlignment: Text.AlignHCenter;
-                text: i18n("Do you really want to remove connection %1?", connectionName);
-            }
-        ]
-
-        buttons: [
-            Row {
-                PlasmaComponents.Button {
-                    id: confirmRemoveButton;
-
-                    height: 20; width: 150;
-                    text: i18n("Remove")
-
-                    onClicked: dialog.accept();
-                }
-                PlasmaComponents.Button {
-                    id: cancelRemoveButton;
-
-                    height: 20; width: 150;
-                    text: i18n("Cancel")
-
-                    onClicked: dialog.reject();
-                }
-            }
-        ]
-        visualParent: details;
-
-        onAccepted: {
-            hideDetails();
-            removeConnection();
-        }
-    }
 }

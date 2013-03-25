@@ -31,20 +31,20 @@ Model::Model(QObject* parent):
     m_connections(QList<ModelItem*>())
 {
     QHash<int, QByteArray> roles = roleNames();
-    roles[NameRole] = "name";
-    roles[UuidRole] = "uuid";
-    roles[TypeRole] = "type";
-    roles[ConnectedRole] = "connected";
-    roles[ConnectingRole] = "connecting";
-    roles[SsidRole] = "ssid";
-    roles[SignalRole] = "signal";
-    roles[SecureRole] = "secure";
-    roles[DeviceRole] = "device";
-    roles[ConnectionPathRole] = "connectionPath";
-    roles[DevicePathTypeRole] = "devicePath";
-    roles[SpecificPathRole] = "specificPath";
-    roles[ConnectionIconRole] = "connectionIcon";
-    roles[ConnectionDetailInformationsRole] = "detailInformations";
+    roles[NameRole] = "itemName";
+    roles[UuidRole] = "itemUuid";
+    roles[TypeRole] = "itemType";
+    roles[ConnectedRole] = "itemConnected";
+    roles[ConnectingRole] = "itemConnecting";
+    roles[SsidRole] = "itemSsid";
+    roles[SignalRole] = "itemSignal";
+    roles[SecureRole] = "itemSecure";
+    roles[DeviceRole] = "itemDevice";
+    roles[ConnectionPathRole] = "itemConnectionPath";
+    roles[DevicePathTypeRole] = "itemDevicePath";
+    roles[SpecificPathRole] = "itemSpecificPath";
+    roles[ConnectionIconRole] = "itemConnectionIcon";
+    roles[ConnectionDetailInformationsRole] = "itemDetailInformations";
     setRoleNames(roles);
 
     connect(m_monitor, SIGNAL(addWirelessNetwork(NetworkManager::WirelessNetwork*, NetworkManager::Device*)),

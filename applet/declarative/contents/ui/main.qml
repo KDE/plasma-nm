@@ -33,10 +33,12 @@ Item {
     property int minimumHeight: 300;
     property Component compactRepresentation: CompactRepresantation{}
 
-    signal activateConnection(string connection, string device, string specificObject);
-    signal addAndActivateConnection(string connection, string device, string specificObject);
-    signal deactivateConnection(string connection);
-    signal removeConnection(string connection);
+    signal activateConnection(string connectionPath, string devicePath, string specificObjectPath);
+    signal addAndActivateConnection(string connectionPath, string devicePath, string specificObjectPath);
+    signal deactivateConnection(string connectionPath);
+    signal removeConnection(string connectionPath);
+
+    signal hideDetails();
 
     width: 300;
     height: 400;
@@ -60,7 +62,7 @@ Item {
     }
 
     PlasmaNm.SortModel {
-        id: sortedConnectionModel;
+        id: connectionSortModel;
 
         sourceModel: connectionModel;
     }
@@ -74,18 +76,18 @@ Item {
 
         anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbarSeparator.top; topMargin: 5; bottomMargin: 10 }
         spacing: 8;
-        model: sortedConnectionModel;
+        model: connectionSortModel;
         delegate: ConnectionItem {
-            onActivateConnectionItem: activateConnection(connection, device, specificObject);
-            onAddAndActivateConnectionItem: addAndActivateConnection(connection, device, specificObject);
-            onDeactivateConnectionItem: deactivateConnection(connection);
-            onRemoveConnectionItem: removeConnection(connection);
+            onActivateConnectionItem: activateConnection(connectionPath, devicePath, specificObjectPath);
+            onAddAndActivateConnectionItem: addAndActivateConnection(connectionPath, devicePath, specificObjectPath);
+            onDeactivateConnectionItem: deactivateConnection(connectionPath);
+            onRemoveConnectionItem: dialog.openDialog(connectionName, connectionPath);
             onItemExpanded: {
                 toolbar.hideOptions();
             }
 
             Component.onCompleted: {
-                toolbar.toolbarExpanded.connect(hideDetails);
+                mainWindow.hideDetails.connect(hideDetails);
             }
         }
     }
@@ -103,5 +105,63 @@ Item {
         id: toolbar;
 
         anchors { left: parent.left; right: parent.right; bottom: parent.bottom; leftMargin: 10}
+
+        onToolbarExpanded: {
+            hideDetails();
+        }
+    }
+
+    PlasmaComponents.Dialog {
+        id: dialog;
+
+        property string path;
+
+        function openDialog(connectionName, connectionPath) {
+            dialogText.name = connectionName;
+            path = connectionPath;
+
+            open();
+        }
+
+        title: [
+            PlasmaComponents.Label {
+                id: dialogText;
+
+                property string name;
+
+                anchors { left: parent.left; right: parent.right; leftMargin: 10; rightMargin: 10 }
+                textFormat: Text.RichText;
+                wrapMode: Text.WordWrap;
+                font.weight: Font.DemiBold;
+                horizontalAlignment: Text.AlignHCenter;
+                text: i18n("Do you really want to remove connection %1?", name);
+            }
+        ]
+
+        buttons: [
+            Row {
+                PlasmaComponents.Button {
+                    id: confirmRemoveButton;
+
+                    height: 20; width: 150;
+                    text: i18n("Remove")
+
+                    onClicked: dialog.accept();
+                }
+                PlasmaComponents.Button {
+                    id: cancelRemoveButton;
+
+                    height: 20; width: 150;
+                    text: i18n("Cancel")
+
+                    onClicked: dialog.reject();
+                }
+            }
+        ]
+
+        onAccepted: {
+            removeConnection(path);
+            hideDetails();
+        }
     }
 }

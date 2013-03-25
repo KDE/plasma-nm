@@ -134,6 +134,10 @@ void Monitor::connectionAdded(const QString& connection)
 {
     NetworkManager::Settings::Connection * newConnection = NetworkManager::Settings::findConnection(connection);
 
+    if (!newConnection) {
+        NMMonitorDebug() << "The new connection has been added, but it was not found";
+    }
+
     foreach (NetworkManager::Device * dev, m_devices) {
         foreach (NetworkManager::Settings::Connection * con, dev->availableConnections()) {
             if (con->uuid() == newConnection->uuid()) {

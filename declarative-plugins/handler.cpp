@@ -41,7 +41,11 @@ void Handler::activateConnection(const QString& connection, const QString& devic
 {
     NetworkManager::Settings::Connection * con = NetworkManager::Settings::findConnection(connection);
 
-    NMHandlerDebug() << "Activating " << con->id() << " connection";
+    if (!con) {
+        NMHandlerDebug() << "Not possible to activate this connection";
+        return;
+    }
+        NMHandlerDebug() << "Activating " << con->id() << " connection";
 
     NetworkManager::activateConnection(connection, device, specificObject);
 }
@@ -58,6 +62,11 @@ void Handler::addAndActivateConnection(const QString& connection, const QString&
 void Handler::deactivateConnection(const QString& connection)
 {
     NetworkManager::Settings::Connection * con = NetworkManager::Settings::findConnection(connection);
+
+    if (!con) {
+        NMHandlerDebug() << "Not possible to deactivate this connection";
+        return;
+    }
 
     foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
         if (active->uuid() == con->uuid()) {
@@ -93,6 +102,11 @@ void Handler::enableWwan(bool enable)
 void Handler::removeConnection(const QString& connection)
 {
     NetworkManager::Settings::Connection * con = NetworkManager::Settings::findConnection(connection);
+
+    if (!con) {
+        NMHandlerDebug() << "Not possible to remove this connection";
+        return;
+    }
 
     con->remove();
 }

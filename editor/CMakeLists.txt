@@ -28,6 +28,7 @@ set(connectioneditor_SRCS
    pppwidget.cpp
    pppoewidget.cpp
    gsmwidget.cpp
+   cdmawidget.cpp
 )
 
 set(connectioneditor_HDRS
@@ -55,6 +56,7 @@ set(connectioneditor_HDRS
    pppwidget.h
    pppoewidget.h
    gsmwidget.h
+   cdmawidget.h
 )
 
 kde4_add_ui_files(connectioneditor_SRCS
@@ -73,10 +75,10 @@ kde4_add_ui_files(connectioneditor_SRCS
     ui/ppp.ui
     ui/pppoe.ui
     ui/gsm.ui
+    ui/cdma.ui
 )
 
 qt4_wrap_cpp(connectioneditor_HDRS_MOC ${connectioneditor_HDRS})
 
 add_executable(plasma-nm-connectioneditor ${connectioneditor_SRCS} ${connectioneditor_HDRS_MOC})
 target_link_libraries(plasma-nm-connectioneditor QtNetworkManager ${QT_QTCORE_LIBRARY} ${QT_QTDBUS_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
-

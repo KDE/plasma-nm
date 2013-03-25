@@ -63,8 +63,9 @@ Item {
         id: connectionName;
 
         height: signal ? 15 : 30;
-        anchors { left: connectionType.right; top: parent.top; leftMargin: 5 }
+        anchors { left: connectionType.right; right: connectionConnected.left; top: parent.top; leftMargin: 5 }
         text: name;
+        elide: Text.ElideRight;
         font.weight: connected ? Font.DemiBold : Font.Normal;
     }
 

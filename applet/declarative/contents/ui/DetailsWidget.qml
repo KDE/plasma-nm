@@ -32,19 +32,11 @@ Item {
 
     signal hideDetails();
 
-    PlasmaExtras.Heading {
-        id: title;
-
-        anchors { left: parent.left; right: parent.right; top: parent.top }
-        level: 3;
-        text: i18n("Connection details");
-    }
-
     Rectangle {
         id: separator;
 
         height: 2;
-        anchors { top: title.bottom; left: parent.left; right: parent.right; topMargin: 5 }
+        anchors { top: parent.top; left: parent.left; right: parent.right; topMargin: 5 }
         radius: 2;
         color: theme.highlightColor;
     }

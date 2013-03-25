@@ -136,6 +136,7 @@ void Monitor::connectionAdded(const QString& connection)
 
     if (!newConnection) {
         NMMonitorDebug() << "The new connection has been added, but it was not found";
+        return;
     }
 
     foreach (NetworkManager::Device * dev, m_devices) {

@@ -102,8 +102,8 @@ void ModelItem::updateDetails()
     }
 
     if (m_active) {
-        m_details += QString(format).arg(i18nc("default Ipv4 route", "Default IPv4 connection:"),m_active->default4() ? "yes" : "no");
-        m_details += QString(format).arg(i18nc("default Ipv6 route", "Default IPv6 connection:"), m_active->default6() ? "yes" : "no");
+        m_details += QString(format).arg(i18nc("default Ipv4 route", "Default IPv4 connection:"), m_active->default4() ? i18n("yes") : i18n("no"));
+        m_details += QString(format).arg(i18nc("default Ipv6 route", "Default IPv6 connection:"), m_active->default6() ? i18n("yes") : i18n("no"));
     }
 
     if (m_device) {
@@ -127,7 +127,7 @@ void ModelItem::updateDetails()
                     m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Gb/s", wired->bitRate()/1000000));
                 }
             }
-            m_details += QString(format).arg(i18n("MAC Address"), wired->permanentHardwareAddress());
+            m_details += QString(format).arg(i18n("MAC Address:"), wired->permanentHardwareAddress());
 
         } else if (device()->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice * wireless = qobject_cast<NetworkManager::WirelessDevice*>(device());
@@ -401,4 +401,3 @@ void ModelItem::onAccessPointChanged(const QString& accessPoint)
 
     NMItemDebug() << name() << ": access point changed to " << accessPoint;
 }
-

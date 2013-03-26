@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=kde-nm-connection-editor
+GenericName=NetworkManager connection editor for KDE
+Comment=Edit your network connections
+Exec=kde-nm-connection-editor
+Icon=network-defaultroute
+Type=Application
+Terminal=false
+Categories=Qt;KDE;Network

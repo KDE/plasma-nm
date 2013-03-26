@@ -31,34 +31,6 @@ set(connectioneditor_SRCS
    cdmawidget.cpp
 )
 
-set(connectioneditor_HDRS
-   connectioneditor.h
-   connectionitem.h
-   connectiontypeitem.h
-   connectiondetaileditor.h
-   settingwidget.h
-   connectionwidget.h
-   wiredconnectionwidget.h
-   wificonnectionwidget.h
-   ipv4widget.h
-   ui/ipv4routeswidget.h
-   ui/delegate.h
-   ui/intdelegate.h
-   ui/ipv4delegate.h
-   ui/simpleipv4addressvalidator.h
-   ipv6widget.h
-   ui/ipv6routeswidget.h
-   ui/ipv6delegate.h
-   ui/simpleipv6addressvalidator.h
-   wifisecurity.h
-   wiredsecurity.h
-   security802-1x.h
-   pppwidget.h
-   pppoewidget.h
-   gsmwidget.h
-   cdmawidget.h
-)
-
 kde4_add_ui_files(connectioneditor_SRCS
     ui/connectioneditor.ui
     ui/connectiondetaileditor.ui
@@ -78,7 +50,8 @@ kde4_add_ui_files(connectioneditor_SRCS
     ui/cdma.ui
 )
 
-qt4_wrap_cpp(connectioneditor_HDRS_MOC ${connectioneditor_HDRS})
+kde4_add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})
+target_link_libraries(kde-nm-connection-editor QtNetworkManager ${QT_QTCORE_LIBRARY} ${QT_QTDBUS_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
 
-add_executable(plasma-nm-connectioneditor ${connectioneditor_SRCS} ${connectioneditor_HDRS_MOC})
-target_link_libraries(plasma-nm-connectioneditor QtNetworkManager ${QT_QTCORE_LIBRARY} ${QT_QTDBUS_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
+install(TARGETS kde-nm-connection-editor DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(PROGRAMS kde-nm-connection-editor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

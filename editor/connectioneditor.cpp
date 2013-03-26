@@ -272,8 +272,6 @@ void ConnectionEditor::addConnection(QAction* action)
         //TODO
         newConnection->printSetting();
     }
-
-    delete newConnection;
 }
 
 void ConnectionEditor::editConnection()
@@ -286,6 +284,29 @@ void ConnectionEditor::editConnection()
     }
 
     Settings::Connection * connection = Settings::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
+
+    if (!connection) {
+        return;
+    }
+
+    Settings::ConnectionSettings * connectionSetting = new Settings::ConnectionSettings();
+    connectionSetting->fromMap(connection->settings());
+
+    ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting, this);
+    if (editor->exec() == QDialog::Accepted) {
+        //TODO
+        connectionSetting->printSetting();
+    }
+}
+
+void ConnectionEditor::editConnection(const QString & uuid)
+{
+    Settings::Connection * connection = Settings::findConnectionByUuid(uuid);
+
+    if (!connection) {
+        return;
+    }
+
     Settings::ConnectionSettings * connectionSetting = new Settings::ConnectionSettings();
     connectionSetting->fromMap(connection->settings());
 
@@ -295,5 +316,6 @@ void ConnectionEditor::editConnection()
         connectionSetting->printSetting();
     }
 
-    delete connectionSetting;
+    // CLOSE APPLICATION
+    //TODO
 }

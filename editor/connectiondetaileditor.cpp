@@ -147,12 +147,14 @@ void ConnectionDetailEditor::saveSetting()
         settings.insert(widget->type(), widget->setting());
     }
 
-    m_connection->fromMap(settings);
-    m_connection->setId(m_detailEditor->connectionName->text());
+    NetworkManager::Settings::ConnectionSettings * connectionSettings = new NetworkManager::Settings::ConnectionSettings(m_connection->connectionType());
 
-    if (m_connection->connectionType() == Settings::ConnectionSettings::Wireless) {
-        NetworkManager::Settings::WirelessSecuritySetting * securitySetting = static_cast<NetworkManager::Settings::WirelessSecuritySetting*>(m_connection->setting(Settings::Setting::WirelessSecurity));
-        NetworkManager::Settings::WirelessSetting * wirelessSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(m_connection->setting(Settings::Setting::Wireless));
+    connectionSettings->fromMap(settings);
+    connectionSettings->setId(m_detailEditor->connectionName->text());
+
+    if (connectionSettings->connectionType() == Settings::ConnectionSettings::Wireless) {
+        NetworkManager::Settings::WirelessSecuritySetting * securitySetting = static_cast<NetworkManager::Settings::WirelessSecuritySetting*>(connectionSettings->setting(Settings::Setting::WirelessSecurity));
+        NetworkManager::Settings::WirelessSetting * wirelessSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(connectionSettings->setting(Settings::Setting::Wireless));
 
         if (securitySetting && wirelessSetting) {
             if (securitySetting->keyMgmt() != NetworkManager::Settings::WirelessSecuritySetting::WirelessSecuritySetting::Unknown) {
@@ -162,19 +164,23 @@ void ConnectionDetailEditor::saveSetting()
     }
 
     if (m_new) {
-        m_connection->setUuid(QUuid::createUuid().toString().mid(1, QUuid::createUuid().toString().length() - 2));
+        connectionSettings->setUuid(QUuid::createUuid().toString().mid(1, QUuid::createUuid().toString().length() - 2));
+    } else {
+        connectionSettings->setUuid(m_connection->uuid());
     }
 
-    m_connection->printSetting();
+    connectionSettings->printSetting();
+
     if (m_new) {
         connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                 SLOT(connectionAddComplete(QString,bool,QString)));
-        qDebug() << NetworkManager::Settings::addConnection(m_connection->toMap());
+        NetworkManager::Settings::addConnection(connectionSettings->toMap());
     } else {
-        NetworkManager::Settings::Connection * connection = NetworkManager::Settings::findConnectionByUuid(m_connection->uuid());
+        NetworkManager::Settings::Connection * connection = 0;
+        connection = NetworkManager::Settings::findConnectionByUuid(connectionSettings->uuid());
 
         if (connection) {
-            connection->update(m_connection->toMap());
+            connection->update(connectionSettings->toMap());
         }
     }
 }

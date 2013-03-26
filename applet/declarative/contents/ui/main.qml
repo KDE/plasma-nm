@@ -36,8 +36,9 @@ Item {
     signal activateConnection(string connectionPath, string devicePath, string specificObjectPath);
     signal addAndActivateConnection(string connectionPath, string devicePath, string specificObjectPath);
     signal deactivateConnection(string connectionPath);
+    signal editConnection(string connectionUuid);
     signal removeConnection(string connectionPath);
-
+    signal openEditor();
     signal hideDetails();
 
     width: 300;
@@ -50,7 +51,9 @@ Item {
                 mainWindow.activateConnection.connect(activateConnection);
                 mainWindow.addAndActivateConnection.connect(addAndActivateConnection);
                 mainWindow.deactivateConnection.connect(deactivateConnection);
+                mainWindow.editConnection.connect(editConnection);
                 mainWindow.removeConnection.connect(removeConnection);
+                mainWindow.openEditor.connect(openEditor);
                 toolbar.enableNetworking.connect(enableNetworking);
                 toolbar.enableWireless.connect(enableWireless);
                 toolbar.enableWwan.connect(enableWwan);
@@ -81,6 +84,10 @@ Item {
             onActivateConnectionItem: activateConnection(connectionPath, devicePath, specificObjectPath);
             onAddAndActivateConnectionItem: addAndActivateConnection(connectionPath, devicePath, specificObjectPath);
             onDeactivateConnectionItem: deactivateConnection(connectionPath);
+            onEditConnectionItem: {
+                hideDetails();
+                editConnection(connectionUuid);
+            }
             onRemoveConnectionItem: dialog.openDialog(connectionName, connectionPath);
             onItemExpanded: {
                 toolbar.hideOptions();
@@ -108,6 +115,10 @@ Item {
 
         onToolbarExpanded: {
             hideDetails();
+        }
+        onOpenEditorToolbar: {
+            toolbar.hideOptions();
+            openEditor();
         }
     }
 

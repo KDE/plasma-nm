@@ -36,6 +36,7 @@ Item {
     signal enableNetworking(bool enable);
     signal enableWireless(bool enable);
     signal enableWwan(bool enable);
+    signal openEditorToolbar();
 
     function hideOptions()
     {
@@ -124,6 +125,7 @@ Item {
         onNetworkingEnabledChanged: enableNetworking(enabled);
         onWirelessEnabledChanged: enableWireless(enabled);
         onWwanEnabledChanged: enableWwan(enabled);
+        onOpenEditor: openEditorToolbar();
 
         Component.onCompleted: {
             enabledConnections.init();

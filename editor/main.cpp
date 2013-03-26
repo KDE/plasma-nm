@@ -27,7 +27,7 @@
 int main(int argc, char *argv[])
 {
     KAboutData about("kde-nm-connection-editor", 0, ki18n("NetworkManager connection editor for KDE"),
-                "1.0", ki18n("Editor for adding/editing/removing your network connections"),
+                "1.0", ki18n("Edit your network connections"),
                 KAboutData::License_GPL, ki18n("(C) 2013 Jan Grulich and Lukáš Tinkl"));
     about.addAuthor( ki18n("Jan Grulich"), ki18n("Developer"), "jgrulich@redhat.com" );
     about.addAuthor( ki18n("LUkáš Tinkl"), ki18n("Developer"), "ltinkl@redhat.com" );

@@ -33,6 +33,7 @@ Item {
     signal activateConnectionItem(string connectionPath, string devicePath, string specificObjectPath);
     signal addAndActivateConnectionItem(string connectionPath, string devicePath, string specificObjectPath);
     signal deactivateConnectionItem(string connectionPath);
+    signal editConnectionItem(string connectionUuid);
     signal removeConnectionItem(string connectionName, string connectionPath);
     signal itemExpanded();
 
@@ -158,6 +159,10 @@ Item {
 
         onHideDetails: {
             connectionItem.hideDetails();
+        }
+
+        onEditConnection: {
+            connectionItem.editConnectionItem(itemUuid);
         }
 
         onRemoveConnection: {

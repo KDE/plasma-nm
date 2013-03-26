@@ -26,6 +26,8 @@
 #include <QtNetworkManager/settings/connection.h>
 #include <QtNetworkManager/activeconnection.h>
 
+#include <KProcess>
+
 #include "debug.h"
 
 Handler::Handler(QObject* parent):
@@ -99,6 +101,13 @@ void Handler::enableWwan(bool enable)
     NetworkManager::setWwanEnabled(enable);
 }
 
+void Handler::editConnection(const QString& uuid)
+{
+    QStringList args;
+    args << uuid;
+    KProcess::startDetached("kde-nm-connection-editor", args);
+}
+
 void Handler::removeConnection(const QString& connection)
 {
     NetworkManager::Settings::Connection * con = NetworkManager::Settings::findConnection(connection);
@@ -109,4 +118,9 @@ void Handler::removeConnection(const QString& connection)
     }
 
     con->remove();
+}
+
+void Handler::openEditor()
+{
+    KProcess::startDetached("kde-nm-connection-editor");
 }

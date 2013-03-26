@@ -31,6 +31,7 @@ Item {
     property bool editable;
 
     signal hideDetails();
+    signal editConnection();
     signal removeConnection();
 
     Rectangle {
@@ -74,6 +75,8 @@ Item {
             iconSource: QIcon("configure");
             text: i18n("Edit");
             enabled: editable;
+
+            onClicked: editConnection();
         }
 
         PlasmaComponents.ToolButton {

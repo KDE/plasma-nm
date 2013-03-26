@@ -34,6 +34,7 @@ Item {
     signal networkingEnabledChanged(bool enabled);
     signal wirelessEnabledChanged(bool enabled);
     signal wwanEnabledChanged(bool enabled);
+    signal openEditor();
 
     PlasmaComponents.CheckBox {
         id: networkingEnabled;
@@ -74,9 +75,11 @@ Item {
     PlasmaComponents.ToolButton {
         id: openEditorButton;
 
-        height: 30;
+        height: 20;
         anchors { left: parent.left; right: parent.right; top: wwanEnabled.bottom; topMargin: 10}
-        text: i18n("Settings");
+        text: i18n("Open connection editor");
         iconSource: "configure";
+
+        onClicked: openEditor();
     }
 }

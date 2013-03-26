@@ -38,7 +38,9 @@ public Q_SLOTS:
     void enableNetworking(bool enable);
     void enableWireless(bool enable);
     void enableWwan(bool enable);
+    void editConnection(const QString & uuid);
     void removeConnection(const QString & connection);
+    void openEditor();
 };
 
 #endif // PLASMA_NM_HANDLER_H

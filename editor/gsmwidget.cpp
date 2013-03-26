@@ -42,6 +42,8 @@ GsmWidget::GsmWidget(NetworkManager::Settings::Setting * setting, QWidget* paren
 
     connect(m_ui->cbShowPasswords, SIGNAL(toggled(bool)), SLOT(showPasswords(bool)));
 
+    // TODO make the Change... button relaunch the wizard
+
     if (setting)
         loadConfig(setting);
 }

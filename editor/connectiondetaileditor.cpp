@@ -29,6 +29,8 @@
 #include "wiredsecurity.h"
 #include "pppwidget.h"
 #include "pppoewidget.h"
+#include "gsmwidget.h"
+#include "cdmawidget.h"
 
 #include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/activeconnection.h>
@@ -112,6 +114,20 @@ void ConnectionDetailEditor::initTabs()
         m_detailEditor->tabWidget->addTab(pppoeWidget, i18n("DSL"));
         WiredConnectionWidget * wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Settings::Setting::Wired), this);
         m_detailEditor->tabWidget->addTab(wiredWidget, i18n("Wired"));
+        PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
+        m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
+        IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
+        m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
+    } else if (type == NetworkManager::Settings::ConnectionSettings::Gsm) { // GSM
+        GsmWidget * gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Settings::Setting::Gsm), this);
+        m_detailEditor->tabWidget->addTab(gsmWidget, i18n("Mobile Broadband"));
+        PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
+        m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
+        IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
+        m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
+    } else if (type == NetworkManager::Settings::ConnectionSettings::Cdma) { // CDMA
+        CdmaWidget * cdmaWidget = new CdmaWidget(m_connection->setting(NetworkManager::Settings::Setting::Cdma), this);
+        m_detailEditor->tabWidget->addTab(cdmaWidget, i18n("Mobile Broadband"));
         PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
         m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);

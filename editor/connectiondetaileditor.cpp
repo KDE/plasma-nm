@@ -35,6 +35,7 @@
 #include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/activeconnection.h>
 #include <QtNetworkManager/connection.h>
+#include <QtNetworkManager/settings/802-11-wireless.h>
 
 using namespace NetworkManager;
 
@@ -148,6 +149,17 @@ void ConnectionDetailEditor::saveSetting()
 
     m_connection->fromMap(settings);
     m_connection->setId(m_detailEditor->connectionName->text());
+
+    if (m_connection->connectionType() == Settings::ConnectionSettings::Wireless) {
+        NetworkManager::Settings::WirelessSecuritySetting * securitySetting = static_cast<NetworkManager::Settings::WirelessSecuritySetting*>(m_connection->setting(Settings::Setting::WirelessSecurity));
+        NetworkManager::Settings::WirelessSetting * wirelessSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(m_connection->setting(Settings::Setting::Wireless));
+
+        if (securitySetting && wirelessSetting) {
+            if (securitySetting->keyMgmt() != NetworkManager::Settings::WirelessSecuritySetting::WirelessSecuritySetting::Unknown) {
+                wirelessSetting->setSecurity("802-11-wireless-security");
+            }
+        }
+    }
 
     if (m_new) {
         m_connection->setUuid(QUuid::createUuid().toString().mid(1, QUuid::createUuid().toString().length() - 2));

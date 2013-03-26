@@ -93,7 +93,7 @@ void Monitor::addDevice(NetworkManager::Device* device)
 
         foreach (const QString & network, wifiEnv->networks()) {
             NetworkManager::WirelessNetwork * wifiNetwork = wifiEnv->findNetwork(network);
-            NMMonitorDebug() << "Available wireless network " << network << " for device " << device->ipInterfaceName();
+            NMMonitorDebug() << "Available wireless network " << network << " for device " << device->interfaceName();
             NMMonitorSignalDebug() << "Emit signal addWirelessNetwork(" << wifiNetwork->ssid() << ")";
             Q_EMIT addWirelessNetwork(wifiNetwork, wifiEnv->interface());
         }
@@ -141,6 +141,7 @@ void Monitor::connectionAdded(const QString& connection)
 
     foreach (NetworkManager::Device * dev, m_devices) {
         foreach (NetworkManager::Settings::Connection * con, dev->availableConnections()) {
+            qDebug() << con->id() << " == " << newConnection->id();
             if (con->uuid() == newConnection->uuid()) {
                 NMMonitorDebug() << "Connection " << con->id() << " added";
                 NMMonitorSignalDebug() << "Emit signal addConnection(" << con->id() << ")";

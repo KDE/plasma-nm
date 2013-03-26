@@ -32,31 +32,50 @@
 
 #include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/activeconnection.h>
+#include <QtNetworkManager/connection.h>
 
 using namespace NetworkManager;
+
+ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::ConnectionType type, QWidget* parent, Qt::WindowFlags f):
+    QDialog(parent, f),
+    m_detailEditor(new Ui::ConnectionDetailEditor),
+    m_connection(new NetworkManager::Settings::ConnectionSettings(type)),
+    m_new(true)
+{
+    m_detailEditor->setupUi(this);
+
+    initEditor();
+}
+
 
 ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings* connection, QWidget* parent, Qt::WindowFlags f):
     QDialog(parent, f),
     m_detailEditor(new Ui::ConnectionDetailEditor),
-    m_connection(connection)
+    m_connection(connection),
+    m_new(false)
 {
     m_detailEditor->setupUi(this);
 
-    initTabs();
-
-    if (connection->id().isEmpty()) {
-        setWindowTitle(i18n("New Connection (%1)", connection->typeAsString(connection->connectionType())));
-        m_detailEditor->connectionName->setText(i18n("New %1 connection", connection->typeAsString(connection->connectionType())));
-    } else {
-        setWindowTitle(i18n("Edit Connection '%1'", connection->id()));
-        m_detailEditor->connectionName->setText(connection->id());
-    }
-
-    connect(this, SIGNAL(accepted()), SLOT(saveSetting()));
+    initEditor();
 }
 
 ConnectionDetailEditor::~ConnectionDetailEditor()
 {
+}
+
+void ConnectionDetailEditor::initEditor()
+{
+    initTabs();
+
+    if (m_connection->id().isEmpty()) {
+        setWindowTitle(i18n("New Connection (%1)", m_connection->typeAsString(m_connection->connectionType())));
+        m_detailEditor->connectionName->setText(i18n("New %1 connection", m_connection->typeAsString(m_connection->connectionType())));
+    } else {
+        setWindowTitle(i18n("Edit Connection '%1'", m_connection->id()));
+        m_detailEditor->connectionName->setText(m_connection->id());
+    }
+
+    connect(this, SIGNAL(accepted()), SLOT(saveSetting()));
 }
 
 void ConnectionDetailEditor::initTabs()
@@ -113,5 +132,26 @@ void ConnectionDetailEditor::saveSetting()
 
     m_connection->fromMap(settings);
     m_connection->setId(m_detailEditor->connectionName->text());
-    m_connection->setUuid(QUuid::createUuid().toString().mid(1, QUuid::createUuid().toString().length() - 2));
+
+    if (m_new) {
+        m_connection->setUuid(QUuid::createUuid().toString().mid(1, QUuid::createUuid().toString().length() - 2));
+    }
+
+    m_connection->printSetting();
+    if (m_new) {
+        connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
+                SLOT(connectionAddComplete(QString,bool,QString)));
+        qDebug() << NetworkManager::Settings::addConnection(m_connection->toMap());
+    } else {
+        NetworkManager::Settings::Connection * connection = NetworkManager::Settings::findConnectionByUuid(m_connection->uuid());
+
+        if (connection) {
+            connection->update(m_connection->toMap());
+        }
+    }
+}
+
+void ConnectionDetailEditor::connectionAddComplete(const QString& id, bool success, const QString& msg)
+{
+    qDebug() << id << " - " << success << " - " << msg;
 }

@@ -35,16 +35,22 @@ class ConnectionDetailEditor : public QDialog
     Q_OBJECT
 
 public:
-    ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings * connection, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType type,
+                           QWidget* parent = 0, Qt::WindowFlags f = 0);
+    ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings * connection,
+                           QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~ConnectionDetailEditor();
 
 private Q_SLOTS:
     void saveSetting();
+    void connectionAddComplete(const QString & id, bool success, const QString & msg);
 
 private:
     Ui::ConnectionDetailEditor * m_detailEditor;
     NetworkManager::Settings::ConnectionSettings * m_connection;
+    bool m_new;
 
+    void initEditor();
     void initTabs();
 };
 

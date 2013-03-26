@@ -42,9 +42,6 @@ public:
     explicit ConnectionEditor(QWidget* parent = 0, Qt::WindowFlags flags = 0);
     virtual ~ConnectionEditor();
 
-public Q_SLOTS:
-    void editConnection(const QString & uuid);
-
 private Q_SLOTS:
     void initializeConnections();
     void currentItemChanged(QTreeWidgetItem * current, QTreeWidgetItem * previous);

@@ -23,7 +23,12 @@
 #include <KCmdLineArgs>
 #include <KUrl>
 
+#include <QtNetworkManager/settings.h>
+#include <QtNetworkManager/connection.h>
+#include <QtNetworkManager/settings/connection.h>
+
 #include "connectioneditor.h"
+#include "connectiondetaileditor.h"
 
 int main(int argc, char *argv[])
 {
@@ -41,12 +46,19 @@ int main(int argc, char *argv[])
 
     KApplication app;
 
-    ConnectionEditor * editor = new ConnectionEditor();
-
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     if(args->count()) {
-        editor->editConnection(args->arg(0));
+        NetworkManager::Settings::Connection * connection = NetworkManager::Settings::findConnectionByUuid(args->arg(0));
+
+        if (connection) {
+            NetworkManager::Settings::ConnectionSettings * connectionSetting = new NetworkManager::Settings::ConnectionSettings();
+            connectionSetting->fromMap(connection->settings());
+
+            ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting);
+            editor->show();
+        }
     } else {
+        ConnectionEditor * editor = new ConnectionEditor();
         editor->show();
     }
 

@@ -265,15 +265,9 @@ void ConnectionEditor::addConnection(QAction* action)
     qDebug() << "ADDING new connection" << action->data().toUInt();
 
     Settings::ConnectionSettings::ConnectionType type = (Settings::ConnectionSettings::ConnectionType) action->data().toUInt();
-//     Settings::ConnectionSettings * newConnection = new Settings::ConnectionSettings(type);
 
     ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, this);
-    if (editor->exec() == QDialog::Accepted) {
-        //TODO
-//         newConnection->printSetting();
-    }
-//
-//     delete newConnection;
+    editor->exec();
 }
 
 void ConnectionEditor::editConnection()
@@ -295,29 +289,5 @@ void ConnectionEditor::editConnection()
     connectionSetting->fromMap(connection->settings());
 
     ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting, this);
-    if (editor->exec() == QDialog::Accepted) {
-        //TODO
-//         connectionSetting->printSetting();
-    }
-}
-
-void ConnectionEditor::editConnection(const QString & uuid)
-{
-    Settings::Connection * connection = Settings::findConnectionByUuid(uuid);
-
-    if (!connection) {
-        return;
-    }
-
-    Settings::ConnectionSettings * connectionSetting = new Settings::ConnectionSettings();
-    connectionSetting->fromMap(connection->settings());
-
-    ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting, this);
-    if (editor->exec() == QDialog::Accepted) {
-        //TODO
-//         connectionSetting->printSetting();
-    }
-
-    // CLOSE APPLICATION
-    //TODO
+    editor->exec();
 }

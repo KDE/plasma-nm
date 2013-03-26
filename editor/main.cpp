@@ -21,16 +21,17 @@
 #include <KApplication>
 #include <KAboutData>
 #include <KCmdLineArgs>
-#include <kurl.h>
+#include <KUrl>
+
 #include "connectioneditor.h"
 
 int main(int argc, char *argv[])
 {
     KAboutData about("kde-nm-connection-editor", 0, ki18n("NetworkManager connection editor for KDE"),
-                "1.0", ki18n("Edit your network connections"),
-                KAboutData::License_GPL, ki18n("(C) 2013 Jan Grulich and Lukáš Tinkl"));
-    about.addAuthor( ki18n("Jan Grulich"), ki18n("Developer"), "jgrulich@redhat.com" );
-    about.addAuthor( ki18n("LUkáš Tinkl"), ki18n("Developer"), "ltinkl@redhat.com" );
+                     "0.1", ki18n("Edit your network connections"),
+                     KAboutData::License_GPL, ki18n("(C) 2013 Jan Grulich and Lukáš Tinkl"));
+    about.addAuthor(ki18n("Jan Grulich"), ki18n("Developer"), "jgrulich@redhat.com");
+    about.addAuthor(ki18n("Lukáš Tinkl"), ki18n("Developer"), "ltinkl@redhat.com");
 
     KCmdLineArgs::init(argc, argv, &about);
 
@@ -43,8 +44,7 @@ int main(int argc, char *argv[])
     ConnectionEditor * editor = new ConnectionEditor();
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    if(args->count())
-    {
+    if(args->count()) {
         editor->editConnection(args->arg(0));
     } else {
         editor->show();

@@ -24,6 +24,7 @@
 
 #include <QtNetworkManager/settings/connection.h>
 #include <QtNetworkManager/settings/802-11-wireless.h>
+#include <QtNetworkManager/generic-types.h>
 
 #include <KWindowSystem>
 
@@ -45,6 +46,14 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
     qDebug() << "Hints:" << hints;
     qDebug() << "Flags:" << flags;
 
+#if 0
+    QStringMap secrets = qdbus_cast<QStringMap>(connection.value("vpn").value("secrets"));
+    qDebug() << "SECRETS: " << secrets;
+    foreach (const QString & secret, secrets.keys()) {
+        qDebug() << "Needed secret:" << secret;
+    }
+#endif
+
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
     settings->fromMap(connection);
 
@@ -62,10 +71,10 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
 
         PasswordDialog * dlg = new PasswordDialog(setting, setting->needSecrets(requestNew), ssid);
         QVariantMapMap result;
-        int dlgResult = dlg->exec();
+        dlg->setWindowModality(Qt::WindowModal);
+        KWindowSystem::setMainWindow(dlg, 0);
         KWindowSystem::activateWindow(dlg->winId());
-        KWindowSystem::demandAttention(dlg->winId());
-        if (dlgResult == QDialog::Accepted) {
+        if (dlg->exec() == QDialog::Accepted) {
             result.insert(setting_name, dlg->secrets());
             delete dlg;
             return result;

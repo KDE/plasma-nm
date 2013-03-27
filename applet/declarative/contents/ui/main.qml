@@ -82,7 +82,7 @@ Item {
         model: connectionSortModel;
         delegate: ConnectionItem {
             onActivateConnectionItem: activateConnection(connectionPath, devicePath, specificObjectPath);
-            onAddAndActivateConnectionItem: addAndActivateConnection(connectionPath, devicePath, specificObjectPath);
+            onAddAndActivateConnectionItem: addAndActivateConnection(devicePath, specificObjectPath);
             onDeactivateConnectionItem: deactivateConnection(connectionPath);
             onEditConnectionItem: {
                 hideDetails();

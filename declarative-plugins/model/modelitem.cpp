@@ -46,6 +46,7 @@ ModelItem::ModelItem(NetworkManager::Device * device, QObject * parent):
 
 ModelItem::~ModelItem()
 {
+    delete m_vpn;
 }
 
 QString ModelItem::name() const

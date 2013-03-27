@@ -34,7 +34,7 @@ Item {
     property Component compactRepresentation: CompactRepresantation{}
 
     signal activateConnection(string connectionPath, string devicePath, string specificObjectPath);
-    signal addAndActivateConnection(string connectionPath, string devicePath, string specificObjectPath);
+    signal addAndActivateConnection(string devicePath, string specificObjectPath);
     signal deactivateConnection(string connectionPath);
     signal editConnection(string connectionUuid);
     signal removeConnection(string connectionPath);

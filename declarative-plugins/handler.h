@@ -33,7 +33,7 @@ public:
 
 public Q_SLOTS:
     void activateConnection(const QString & connection, const QString & device, const QString & specificObject);
-    void addAndActivateConnection(const QString & connection, const QString & device, const QString & specificObject);
+    void addAndActivateConnection(const QString & device, const QString & specificObject);
     void deactivateConnection(const QString & connection);
     void enableNetworking(bool enable);
     void enableWireless(bool enable);

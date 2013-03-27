@@ -31,7 +31,7 @@ Item {
     property bool expanded: false;
 
     signal activateConnectionItem(string connectionPath, string devicePath, string specificObjectPath);
-    signal addAndActivateConnectionItem(string connectionPath, string devicePath, string specificObjectPath);
+    signal addAndActivateConnectionItem(string devicePath, string specificObjectPath);
     signal deactivateConnectionItem(string connectionPath);
     signal editConnectionItem(string connectionUuid);
     signal removeConnectionItem(string connectionName, string connectionPath);
@@ -90,7 +90,7 @@ Item {
                 if (itemUuid) {
                     activateConnectionItem(itemConnectionPath, itemDevicePath, itemSpecificPath);
                 } else {
-                    addAndActivateConnectionItem(itemConnectionPath, itemDevicePath, itemSpecificPath);
+                    addAndActivateConnectionItem(itemDevicePath, itemSpecificPath);
                 }
             } else {
                 deactivateConnectionItem(itemConnectionPath);

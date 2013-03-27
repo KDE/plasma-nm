@@ -21,8 +21,6 @@
 #include "connectionwidget.h"
 #include "ui_connectionwidget.h"
 
-#include <QtNetworkManager/settings/802-3-ethernet.h>
-
 ConnectionWidget::ConnectionWidget(NetworkManager::Settings::ConnectionSettings* settings, QWidget* parent, Qt::WindowFlags f):
     QWidget(parent, f),
     m_widget(new Ui::ConnectionWidget),

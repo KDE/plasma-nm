@@ -68,7 +68,42 @@ ConnectionDetailEditor::~ConnectionDetailEditor()
 
 void ConnectionDetailEditor::initEditor()
 {
-    initTabs();
+    if (!m_new) {
+        NetworkManager::Settings::Connection * connection = NetworkManager::Settings::findConnectionByUuid(m_connection->uuid());
+        if (connection) {
+            connect(connection, SIGNAL(gotSecrets(QString,bool,QVariantMapMap,QString)),
+                    SLOT(gotSecrets(QString,bool, QVariantMapMap, QString)));
+
+            switch (m_connection->connectionType()) {
+                case Settings::ConnectionSettings::Adsl:
+                    connection->secrets("adsl");
+                    break;
+                case Settings::ConnectionSettings::Bluetooth:
+                    connection->secrets("gsm");
+                    break;
+                case Settings::ConnectionSettings::Cdma:
+                    connection->secrets("cdma");
+                    break;
+                case Settings::ConnectionSettings::Gsm:
+                    connection->secrets("gsm");
+                    break;
+                case Settings::ConnectionSettings::Pppoe:
+                    connection->secrets("pppoe");
+                    break;
+                case Settings::ConnectionSettings::Wired:
+                    connection->secrets("802-1x");
+                    break;
+                case Settings::ConnectionSettings::Wireless:
+                    connection->secrets("802-1x");
+                    connection->secrets("802-11-wireless-security");
+                    break;
+                default:
+                    break;
+            }
+        }
+    } else {
+        initTabs();
+    }
 
     if (m_connection->id().isEmpty()) {
         setWindowTitle(i18n("New Connection (%1)", m_connection->typeAsString(m_connection->connectionType())));
@@ -187,4 +222,18 @@ void ConnectionDetailEditor::saveSetting()
 void ConnectionDetailEditor::connectionAddComplete(const QString& id, bool success, const QString& msg)
 {
     qDebug() << id << " - " << success << " - " << msg;
+}
+
+void ConnectionDetailEditor::gotSecrets(const QString& id, bool success, const QVariantMapMap& secrets, const QString& msg)
+{
+    if (success) {
+        foreach (const QString & key, secrets.keys()) {
+            NetworkManager::Settings::Setting * setting = m_connection->setting(NetworkManager::Settings::Setting::typeFromString(key));
+            setting->secretsFromMap(secrets.value(key));
+        }
+    } else {
+        qDebug() << msg;
+    }
+
+    initTabs();
 }

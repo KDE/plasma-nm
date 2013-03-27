@@ -164,7 +164,7 @@ void ConnectionDetailEditor::saveSetting()
     }
 
     if (m_new) {
-        connectionSettings->setUuid(QUuid::createUuid().toString().mid(1, QUuid::createUuid().toString().length() - 2));
+        connectionSettings->setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
     } else {
         connectionSettings->setUuid(m_connection->uuid());
     }

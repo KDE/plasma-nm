@@ -74,7 +74,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
 
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings(NetworkManager::Settings::ConnectionSettings::Wireless);
     settings->setId(ap->ssid());
-    settings->setUuid(QUuid::createUuid().toString().mid(1, QUuid::createUuid().toString().length() - 2));
+    settings->setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
 
     NetworkManager::Settings::WirelessSetting * wifiSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(settings->setting(NetworkManager::Settings::Setting::Wireless));
     wifiSetting->setSsid(ap->ssid().toAscii());

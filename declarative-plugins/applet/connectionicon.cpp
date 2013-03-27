@@ -186,10 +186,14 @@ void ConnectionIcon::setWirelessIcon(NetworkManager::Device* device, const QStri
     m_wirelessEnvironment = new NetworkManager::WirelessNetworkInterfaceEnvironment(wirelessDevice);
     m_wirelessNetwork = m_wirelessEnvironment->findNetwork(ssid);
 
-    connect(m_wirelessNetwork, SIGNAL(signalStrengthChanged(int)),
-            SLOT(setWirelessIconForSignalStrenght(int)));
+    if (m_wirelessNetwork) {
+        connect(m_wirelessNetwork, SIGNAL(signalStrengthChanged(int)),
+                SLOT(setWirelessIconForSignalStrenght(int)));
 
-    setWirelessIconForSignalStrenght(m_wirelessNetwork->signalStrength());
+        setWirelessIconForSignalStrenght(m_wirelessNetwork->signalStrength());
+    } else {
+        setDisconnectedIcon();
+    }
 }
 
 void ConnectionIcon::setWirelessIconForSignalStrenght(int strenght)

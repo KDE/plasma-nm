@@ -50,7 +50,7 @@ QVariantMap PasswordDialog::secrets() const
 {
     QVariantMap result;
 
-    if (!m_ui->password->text().isEmpty())
+    if (!m_ui->password->text().isEmpty() && !m_neededSecrets.isEmpty())
         result.insert(m_neededSecrets.first(), m_ui->password->text());
 
     return result;

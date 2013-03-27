@@ -50,22 +50,24 @@ WifiSecurity::~WifiSecurity()
 }
 
 void WifiSecurity::loadConfig(NetworkManager::Settings::Setting * setting)
-{
-    Q_UNUSED(setting);
+{   
+    NetworkManager::Settings::WirelessSecuritySetting * wifiSecurity = static_cast<NetworkManager::Settings::WirelessSecuritySetting *>(setting);
 
-    const NetworkManager::Settings::WirelessSecuritySetting::KeyMgmt keyMgmt = m_wifiSecurity->keyMgmt();
-    const NetworkManager::Settings::WirelessSecuritySetting::AuthAlg authAlg = m_wifiSecurity->authAlg();
+    const NetworkManager::Settings::WirelessSecuritySetting::KeyMgmt keyMgmt = wifiSecurity->keyMgmt();
+    const NetworkManager::Settings::WirelessSecuritySetting::AuthAlg authAlg = wifiSecurity->authAlg();
+
+    // TODO add wep-key-type
 
     if (keyMgmt == NetworkManager::Settings::WirelessSecuritySetting::Unknown) {
         m_ui->securityCombo->setCurrentIndex(0); // None
 
     } else if (keyMgmt == NetworkManager::Settings::WirelessSecuritySetting::Wep) {
         m_ui->securityCombo->setCurrentIndex(1);  // WEP
-        const int keyIndex = static_cast<int>(m_wifiSecurity->wepTxKeyindex());
+        const int keyIndex = static_cast<int>(wifiSecurity->wepTxKeyindex());
         setWepKey(keyIndex);
         m_ui->wepIndex->setCurrentIndex(keyIndex);
 
-        if (m_wifiSecurity->authAlg() == NetworkManager::Settings::WirelessSecuritySetting::Open) {
+        if (wifiSecurity->authAlg() == NetworkManager::Settings::WirelessSecuritySetting::Open) {
             m_ui->wepAuth->setCurrentIndex(0);
         }
         else {
@@ -75,8 +77,8 @@ void WifiSecurity::loadConfig(NetworkManager::Settings::Setting * setting)
     } else if (keyMgmt == NetworkManager::Settings::WirelessSecuritySetting::Ieee8021x
                && authAlg == NetworkManager::Settings::WirelessSecuritySetting::Leap) {
         m_ui->securityCombo->setCurrentIndex(2);  // LEAP
-        m_ui->leapUsername->setText(m_wifiSecurity->leapUsername());
-        m_ui->leapPassword->setText(m_wifiSecurity->leapPassword());
+        m_ui->leapUsername->setText(wifiSecurity->leapUsername());
+        m_ui->leapPassword->setText(wifiSecurity->leapPassword());
 
     } else if (keyMgmt == NetworkManager::Settings::WirelessSecuritySetting::Ieee8021x) {
         m_ui->securityCombo->setCurrentIndex(3);  // Dynamic WEP
@@ -84,7 +86,7 @@ void WifiSecurity::loadConfig(NetworkManager::Settings::Setting * setting)
 
     } else if (keyMgmt == NetworkManager::Settings::WirelessSecuritySetting::WpaPsk) {
         m_ui->securityCombo->setCurrentIndex(4);  // WPA
-        m_ui->psk->setText(m_wifiSecurity->psk());
+        m_ui->psk->setText(wifiSecurity->psk());
 
     } else if (keyMgmt == NetworkManager::Settings::WirelessSecuritySetting::WpaEap) {
         m_ui->securityCombo->setCurrentIndex(5);  // WPA2 Enterprise
@@ -94,47 +96,46 @@ void WifiSecurity::loadConfig(NetworkManager::Settings::Setting * setting)
 
 QVariantMap WifiSecurity::setting() const
 {
-    QVariantMap tmp80211Map;
+     // TODO add wep-key-type
+
+    NetworkManager::Settings::WirelessSecuritySetting wifiSecurity;
 
     const int securityIndex = m_ui->securityCombo->currentIndex();
     if (securityIndex == 0) {
-        m_wifiSecurity->setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Unknown);
-    }
-    else if (securityIndex == 1)  { // WEP
-        m_wifiSecurity->setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Wep);
+        wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Unknown);
+    } else if (securityIndex == 1)  { // WEP
+        wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Wep);
         const int keyIndex = m_ui->wepIndex->currentIndex();
         const QString wepKey = m_ui->wepKey->text();
-        m_wifiSecurity->setWepTxKeyindex(keyIndex);
+        wifiSecurity.setWepTxKeyindex(keyIndex);
         if (keyIndex == 0)
-            m_wifiSecurity->setWepKey0(wepKey);
+            wifiSecurity.setWepKey0(wepKey);
         else if (keyIndex == 1)
-            m_wifiSecurity->setWepKey1(wepKey);
+            wifiSecurity.setWepKey1(wepKey);
         else if (keyIndex == 2)
-            m_wifiSecurity->setWepKey2(wepKey);
+            wifiSecurity.setWepKey2(wepKey);
         else if (keyIndex == 3)
-            m_wifiSecurity->setWepKey3(wepKey);
+            wifiSecurity.setWepKey3(wepKey);
 
         if (m_ui->wepAuth->currentIndex() == 0)
-            m_wifiSecurity->setAuthAlg(NetworkManager::Settings::WirelessSecuritySetting::Open);
+            wifiSecurity.setAuthAlg(NetworkManager::Settings::WirelessSecuritySetting::Open);
         else
-            m_wifiSecurity->setAuthAlg(NetworkManager::Settings::WirelessSecuritySetting::Shared);
+            wifiSecurity.setAuthAlg(NetworkManager::Settings::WirelessSecuritySetting::Shared);
     } else if (securityIndex == 2) { // LEAP
-        m_wifiSecurity->setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Ieee8021x);
-        m_wifiSecurity->setAuthAlg(NetworkManager::Settings::WirelessSecuritySetting::Leap);
-        m_wifiSecurity->setLeapUsername(m_ui->leapUsername->text());
-        m_wifiSecurity->setLeapPassword(m_ui->leapPassword->text());
+        wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Ieee8021x);
+        wifiSecurity.setAuthAlg(NetworkManager::Settings::WirelessSecuritySetting::Leap);
+        wifiSecurity.setLeapUsername(m_ui->leapUsername->text());
+        wifiSecurity.setLeapPassword(m_ui->leapPassword->text());
     } else if (securityIndex == 3) {  // Dynamic WEP
-        m_wifiSecurity->setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Ieee8021x);
-        tmp80211Map = m_8021xWidget->setting();
+        wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Ieee8021x);
     } else if (securityIndex == 4) { // WPA
-        m_wifiSecurity->setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::WpaPsk);
-        m_wifiSecurity->setPsk(m_ui->psk->text());
+        wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::WpaPsk);
+        wifiSecurity.setPsk(m_ui->psk->text());
     } else if (securityIndex == 5) {  // WPA2 Enterprise
-        m_wifiSecurity->setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::WpaEap);
-        tmp80211Map = m_WPA2Widget->setting();
+        wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::WpaEap);
     }
 
-    return m_wifiSecurity->toMap();
+    return wifiSecurity.toMap();
 }
 
 QVariantMap WifiSecurity::setting8021x() const

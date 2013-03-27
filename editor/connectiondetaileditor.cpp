@@ -176,8 +176,7 @@ void ConnectionDetailEditor::saveSetting()
                 SLOT(connectionAddComplete(QString,bool,QString)));
         NetworkManager::Settings::addConnection(connectionSettings->toMap());
     } else {
-        NetworkManager::Settings::Connection * connection = 0;
-        connection = NetworkManager::Settings::findConnectionByUuid(connectionSettings->uuid());
+        NetworkManager::Settings::Connection * connection = NetworkManager::Settings::findConnectionByUuid(connectionSettings->uuid());
 
         if (connection) {
             connection->update(connectionSettings->toMap());

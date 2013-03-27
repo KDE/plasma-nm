@@ -52,10 +52,13 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
 
     NetworkManager::SecretAgent::GetSecretsFlags secretsFlags(static_cast<int>(flags));
     const bool requestNew = secretsFlags.testFlag(RequestNew);
+    const bool userRequested = secretsFlags.testFlag(UserRequested);
 
-    if (requestNew || (secretsFlags.testFlag(AllowInteraction) && !setting->needSecrets(requestNew).isEmpty())) {
+    if (requestNew || userRequested || (secretsFlags.testFlag(AllowInteraction) && !setting->needSecrets(requestNew).isEmpty())) {
         NetworkManager::Settings::WirelessSetting * wifi = static_cast<NetworkManager::Settings::WirelessSetting *>(settings->setting(NetworkManager::Settings::Setting::Wireless));
-        const QString ssid = wifi->ssid();
+        QString ssid;
+        if (wifi)
+            ssid = wifi->ssid();
 
         PasswordDialog * dlg = new PasswordDialog(setting, setting->needSecrets(requestNew), ssid);
         QVariantMapMap result;

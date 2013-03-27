@@ -26,7 +26,7 @@
 class ConnectionItem : public QTreeWidgetItem
 {
 public:
-    enum {ConnectionIdRole = (Qt::UserRole + 1), ConnectionLastUsedRole};
+    enum {ConnectionIdRole = (Qt::UserRole + 1), ConnectionPathRole, ConnectionLastUsedRole};
 
     ConnectionItem(QTreeWidgetItem * parent, const QStringList & strings, bool active = false);
 };

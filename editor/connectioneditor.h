@@ -47,11 +47,15 @@ private Q_SLOTS:
     void currentItemChanged(QTreeWidgetItem * current, QTreeWidgetItem * previous);
     void addConnection(QAction * action);
     void editConnection();
+    void removeConnection();
+    void connectionAdded(const QString & connection);
+    void connectionRemoved(const QString & connection);
 
 private:
     Ui::ConnectionEditor * m_editor;
     QMenu * m_menu;
 
+    void insertConnection(NetworkManager::Settings::Connection * connection);
     QString formatDateRelative(const QDateTime & lastUsed) const;
     QTreeWidgetItem * findTopLevelItem(const QString & type);
 };

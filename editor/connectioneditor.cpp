@@ -140,8 +140,14 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
             SLOT(addConnection(QAction*)));
     connect(m_editor->editButton, SIGNAL(clicked()),
             SLOT(editConnection()));
+    connect(m_editor->deleteButton, SIGNAL(clicked()),
+            SLOT(removeConnection()));
     connect(m_editor->connectionsWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
             SLOT(editConnection()));
+    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAdded(QString)),
+            SLOT(connectionAdded(QString)));
+    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionRemoved(QString)),
+            SLOT(connectionRemoved(QString)));
 }
 
 ConnectionEditor::~ConnectionEditor()
@@ -152,48 +158,57 @@ void ConnectionEditor::initializeConnections()
 {
     m_editor->connectionsWidget->clear();
 
+    foreach (Settings::Connection * con, Settings::listConnections()) {
+        insertConnection(con);
+    }
+}
+
+void ConnectionEditor::insertConnection(NetworkManager::Settings::Connection* connection)
+{
+    Settings::ConnectionSettings * settings = new Settings::ConnectionSettings();
+    settings->fromMap(connection->settings());
+
+    const QString name = settings->id();
+    const QString type = Settings::ConnectionSettings::typeAsString(settings->connectionType());
+
+    // Can't continue if name or type are empty
+    if (name.isEmpty() || type.isEmpty()) {
+        return;
+    }
+
     QStringList actives;
 
     foreach(NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
-        actives << active->connection()->uuid();
+        if (active->state() == NetworkManager::ActiveConnection::Activated) {
+            actives << active->connection()->uuid();
+        }
     }
 
-    foreach (Settings::Connection * con, Settings::listConnections()) {
-        Settings::ConnectionSettings * settings = new Settings::ConnectionSettings();
-        settings->fromMap(con->settings());
+    const bool active = actives.contains(settings->uuid());
+    const QString lastUsed = formatDateRelative(settings->timestamp());
 
-        const QString name = settings->id();
-        const QString type = Settings::ConnectionSettings::typeAsString(settings->connectionType());
+    QStringList params;
+    params << name;
+    params << lastUsed;
 
-        // Can't continue if name or type are empty
-        if (name.isEmpty() || type.isEmpty()) {
-            continue;
-        }
-
-        const bool active = actives.contains(settings->uuid());
-        const QString lastUsed = formatDateRelative(settings->timestamp());
-
-        QStringList params;
-        params << name;
-        params << lastUsed;
-
-        // Create a root item if this type doesn't exist
-        if (!findTopLevelItem(type)) {
-            qDebug() << "creating toplevel item" << type;
-            (void) new ConnectionTypeItem(m_editor->connectionsWidget, type);
-        }
-
-        QTreeWidgetItem * item = findTopLevelItem(type);
-        ConnectionItem * connectionItem = new ConnectionItem(item, params, active);
-        connectionItem->setData(0, Qt::UserRole, "connection");
-        connectionItem->setData(0, ConnectionItem::ConnectionIdRole, settings->uuid());
-        connectionItem->setData(1, ConnectionItem::ConnectionLastUsedRole, lastUsed);
-
-        m_editor->connectionsWidget->resizeColumnToContents(0);
-
-        delete settings;
+    // Create a root item if this type doesn't exist
+    if (!findTopLevelItem(type)) {
+        qDebug() << "creating toplevel item" << type;
+        (void) new ConnectionTypeItem(m_editor->connectionsWidget, type);
     }
+
+    QTreeWidgetItem * item = findTopLevelItem(type);
+    ConnectionItem * connectionItem = new ConnectionItem(item, params, active);
+    connectionItem->setData(0, Qt::UserRole, "connection");
+    connectionItem->setData(0, ConnectionItem::ConnectionIdRole, settings->uuid());
+    connectionItem->setData(0, ConnectionItem::ConnectionPathRole, connection->path());
+    connectionItem->setData(1, ConnectionItem::ConnectionLastUsedRole, lastUsed);
+
+    m_editor->connectionsWidget->resizeColumnToContents(0);
+
+    delete settings;
 }
+
 
 QString ConnectionEditor::formatDateRelative(const QDateTime & lastUsed) const
 {
@@ -290,4 +305,51 @@ void ConnectionEditor::editConnection()
 
     ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting, this);
     editor->exec();
+}
+
+void ConnectionEditor::removeConnection()
+{
+    QTreeWidgetItem * currentItem = m_editor->connectionsWidget->currentItem();
+
+    if (currentItem->data(0, Qt::UserRole).toString() != "connection") {
+        qDebug() << "clicked on the root item which is not removable";
+        return;
+    }
+
+    Settings::Connection * connection = Settings::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
+
+    if (!connection) {
+        return;
+    }
+
+    connection->remove();
+}
+
+void ConnectionEditor::connectionAdded(const QString& connection)
+{
+    NetworkManager::Settings::Connection * con = NetworkManager::Settings::findConnection(connection);
+
+    if (!con) {
+        return;
+    }
+
+    insertConnection(con);
+}
+
+void ConnectionEditor::connectionRemoved(const QString& connection)
+{
+    QTreeWidgetItemIterator it(m_editor->connectionsWidget);
+
+    while (*it) {
+        if ((*it)->data(0, ConnectionItem::ConnectionPathRole).toString() == connection) {
+            qDebug() << "found:" << connection;
+            QTreeWidgetItem * parent = (*it)->parent();
+            delete (*it);
+            if (!parent->childCount()) {
+                delete parent;
+            }
+            break;
+        }
+        ++it;
+    }
 }

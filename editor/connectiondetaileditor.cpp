@@ -43,6 +43,7 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::Con
     QDialog(parent, f),
     m_detailEditor(new Ui::ConnectionDetailEditor),
     m_connection(new NetworkManager::Settings::ConnectionSettings(type)),
+    m_numSecrets(0),
     m_new(true)
 {
     m_detailEditor->setupUi(this);
@@ -55,6 +56,7 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings* con
     QDialog(parent, f),
     m_detailEditor(new Ui::ConnectionDetailEditor),
     m_connection(connection),
+    m_numSecrets(0),
     m_new(false)
 {
     m_detailEditor->setupUi(this);
@@ -77,27 +79,35 @@ void ConnectionDetailEditor::initEditor()
             switch (m_connection->connectionType()) {
                 case Settings::ConnectionSettings::Adsl:
                     connection->secrets("adsl");
+                    m_numSecrets = 1;
                     break;
                 case Settings::ConnectionSettings::Bluetooth:
                     connection->secrets("gsm");
+                    m_numSecrets = 1;
                     break;
                 case Settings::ConnectionSettings::Cdma:
                     connection->secrets("cdma");
+                    m_numSecrets = 1;
                     break;
                 case Settings::ConnectionSettings::Gsm:
                     connection->secrets("gsm");
+                    m_numSecrets = 1;
                     break;
                 case Settings::ConnectionSettings::Pppoe:
                     connection->secrets("pppoe");
+                    m_numSecrets = 1;
                     break;
                 case Settings::ConnectionSettings::Wired:
                     connection->secrets("802-1x");
+                    m_numSecrets = 1;
                     break;
                 case Settings::ConnectionSettings::Wireless:
                     connection->secrets("802-1x");
                     connection->secrets("802-11-wireless-security");
+                    m_numSecrets = 2;
                     break;
                 default:
+                    initTabs();
                     break;
             }
         }
@@ -226,6 +236,12 @@ void ConnectionDetailEditor::connectionAddComplete(const QString& id, bool succe
 
 void ConnectionDetailEditor::gotSecrets(const QString& id, bool success, const QVariantMapMap& secrets, const QString& msg)
 {
+    if (id == m_connection->uuid()) {
+        m_numSecrets--;
+    } else {
+        return;
+    }
+
     if (success) {
         foreach (const QString & key, secrets.keys()) {
             NetworkManager::Settings::Setting * setting = m_connection->setting(NetworkManager::Settings::Setting::typeFromString(key));
@@ -235,5 +251,7 @@ void ConnectionDetailEditor::gotSecrets(const QString& id, bool success, const Q
         qDebug() << msg;
     }
 
-    initTabs();
+    if (!m_numSecrets) {
+        initTabs();
+    }
 }

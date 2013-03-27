@@ -48,6 +48,7 @@ private Q_SLOTS:
 private:
     Ui::ConnectionDetailEditor * m_detailEditor;
     NetworkManager::Settings::ConnectionSettings * m_connection;
+    int m_numSecrets;
     bool m_new;
 
     void initEditor();

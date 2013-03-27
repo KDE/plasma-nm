@@ -28,6 +28,7 @@
 #include <QtGui/QTreeWidgetItem>
 
 #include <KLocale>
+#include <KMessageBox>
 
 #include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/connection.h>
@@ -322,7 +323,11 @@ void ConnectionEditor::removeConnection()
         return;
     }
 
-    connection->remove();
+    if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->id()), i18n("Remove Connection"), KStandardGuiItem::remove(),
+                                   KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
+            == KMessageBox::Yes) {
+        connection->remove();
+    }
 }
 
 void ConnectionEditor::connectionAdded(const QString& connection)

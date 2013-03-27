@@ -85,12 +85,14 @@ private Q_SLOTS:
     void onConnectionUpdated(const QVariantMapMap & map);
     void onDefaultRouteChanged(bool defaultRoute);
     void onSignalStrengthChanged(int strength);
+    void onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state);
 
 private:
     NetworkManager::ActiveConnection * m_active;
     NetworkManager::Settings::Connection * m_connection;
     NetworkManager::Device * m_device;
     NetworkManager::WirelessNetwork * m_network;
+    NetworkManager::VpnConnection * m_vpn;
 
     QString m_name;
     QString m_uuid;

@@ -34,6 +34,7 @@ ModelItem::ModelItem(NetworkManager::Device * device, QObject * parent):
     m_connection(0),
     m_device(0),
     m_network(0),
+    m_vpn(0),
     m_connected(false),
     m_conecting(false),
     m_signal(0),
@@ -233,6 +234,11 @@ void ModelItem::setActiveConnection(NetworkManager::ActiveConnection* active)
                 this, SLOT(onDefaultRouteChanged(bool)));
     }
 
+    if (m_vpn) {
+        disconnect(m_vpn, SIGNAL(stateChanged(NetworkManager::VpnConnection::State)),
+                   this, SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State)));
+    }
+
     m_active = active;
 
     if (m_active) {
@@ -244,12 +250,21 @@ void ModelItem::setActiveConnection(NetworkManager::ActiveConnection* active)
             m_connected = true;
         }
 
+        if (m_active->vpn()) {
+            m_vpn = new NetworkManager::VpnConnection(m_active->path());
+
+            connect(m_vpn, SIGNAL(stateChanged(NetworkManager::VpnConnection::State)),
+                    SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State)));
+        } else {
+            connect(m_active, SIGNAL(default4Changed(bool)),
+                SLOT(onDefaultRouteChanged(bool)));
+            connect(m_active, SIGNAL(default6Changed(bool)),
+                SLOT(onDefaultRouteChanged(bool)));
+        }
+
         connect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                 SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
-        connect(m_active, SIGNAL(default4Changed(bool)),
-                SLOT(onDefaultRouteChanged(bool)));
-        connect(m_active, SIGNAL(default6Changed(bool)),
-                SLOT(onDefaultRouteChanged(bool)));
+
     } else {
         m_conecting = false;
         m_connected = false;
@@ -422,4 +437,17 @@ void ModelItem::onAccessPointChanged(const QString& accessPoint)
     emit accessPointChanged();
 
     NMItemDebug() << name() << ": access point changed to " << accessPoint;
+}
+
+void ModelItem::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state)
+{
+    if (state == NetworkManager::VpnConnection::Disconnected) {
+        m_conecting = false;
+        m_connected = false;
+        delete m_vpn;
+        m_vpn = 0;
+        NMItemDebug() << name() << ": disconnected";
+        disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
+        m_active = 0;
+    }
 }

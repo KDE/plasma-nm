@@ -77,7 +77,7 @@ Item {
 
         height: 20;
         anchors { left: parent.left; right: parent.right; top: wwanEnabled.bottom; topMargin: 10}
-        text: i18n("Open connection editor");
+        text: i18n("Edit connections...");
         iconSource: "configure";
 
         onClicked: openEditor();

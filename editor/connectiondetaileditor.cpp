@@ -189,7 +189,19 @@ void ConnectionDetailEditor::saveSetting()
 
     for (int i = 1; i < m_detailEditor->tabWidget->count(); ++i) {
         SettingWidget * widget = static_cast<SettingWidget*>(m_detailEditor->tabWidget->widget(i));
-        settings.insert(widget->type(), widget->setting());
+        const QString type = widget->type();
+        settings.insert(type, widget->setting());
+
+        QVariantMap security8021x;
+        if (type == NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::WirelessSecurity)) {
+            security8021x = static_cast<WifiSecurity *>(widget)->setting8021x();
+        } else if (type == NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x)) {
+            security8021x = static_cast<WiredSecurity *>(widget)->setting();
+        }
+
+        if (!security8021x.isEmpty()) {
+            settings.insert(NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x), security8021x);
+        }
     }
 
     NetworkManager::Settings::ConnectionSettings * connectionSettings = new NetworkManager::Settings::ConnectionSettings(m_connection->connectionType());

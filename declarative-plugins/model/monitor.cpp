@@ -160,11 +160,14 @@ void Monitor::connectionRemoved(const QString& connection)
 
 void Monitor::deviceAdded(const QString& device)
 {
-    NetworkManager::Device * dev = new NetworkManager::Device(device);
-    m_devices << dev;
+    NetworkManager::Device * dev = NetworkManager::findNetworkInterface(device);
 
-    NMMonitorDebug() << "Device " << dev->interfaceName()  << " added";
-    addDevice(dev);
+    if (dev) {
+        m_devices << dev;
+
+        NMMonitorDebug() << "Device " << dev->interfaceName()  << " added";
+        addDevice(dev);
+    }
 }
 
 void Monitor::deviceRemoved(const QString& device)

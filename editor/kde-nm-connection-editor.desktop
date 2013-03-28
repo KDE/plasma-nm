@@ -1,7 +1,22 @@
 [Desktop Entry]
 Name=kde-nm-connection-editor
+Name[pt]=kde-nm-connection-editor
+Name[pt_BR]=kde-nm-connection-editor
+Name[sv]=kde-nm-connection-editor
+Name[uk]=Редактор з’єднань kde-nm
+Name[x-test]=xxkde-nm-connection-editorxx
 GenericName=NetworkManager connection editor for KDE
+GenericName[pt]=Editor de ligações do NetworkManager para o KDE
+GenericName[pt_BR]=Editor de conexões do NetworkManager para o KDE
+GenericName[sv]=Nätverkshanteringens anslutningseditor för KDE
+GenericName[uk]=Редактор з’єднань NetworkManager для KDE
+GenericName[x-test]=xxNetworkManager connection editor for KDExx
 Comment=Edit your network connections
+Comment[pt]=Edite as suas ligações de rede
+Comment[pt_BR]=Edite as suas conexões de rede
+Comment[sv]=Redigera nätverksanslutningar
+Comment[uk]=Редагування ваших записів з’єднань з мережею
+Comment[x-test]=xxEdit your network connectionsxx
 Exec=kde-nm-connection-editor
 Icon=network-defaultroute
 Type=Application

@@ -140,8 +140,6 @@ QVariantMap WifiSecurity::setting() const
 
 QVariantMap WifiSecurity::setting8021x() const
 {
-    // TODO return and use this somewhere !!!
-
     if (m_ui->securityCombo->currentIndex() == 3) // Dynamic WEP
         return m_8021xWidget->setting();
     else if (m_ui->securityCombo->currentIndex() == 5) // WPA2 Enterprise

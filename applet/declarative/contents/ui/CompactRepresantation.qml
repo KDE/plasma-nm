@@ -40,58 +40,59 @@ Item {
         anchors.fill: parent;
         svg: svgIcons;
         elementId: "network-wired";
+        visible: !connectingIndicator.running;
 
         QIconItem {
-            id: vpnIcon;
+            id: hoverIcon;
 
             width: parent.width/1.5; height: parent.height/1.5;
             anchors { bottom: parent.bottom; right: parent.right }
-            icon: QIcon("object-locked");
             visible: false;
         }
+    }
 
-        PlasmaComponents.BusyIndicator {
-            id: connectingIndicator;
+    PlasmaComponents.BusyIndicator {
+        id: connectingIndicator;
 
-            anchors.fill: parent;
-            running: false
-            visible: running;
+        anchors.fill: parent;
+        running: false
+        visible: running;
+    }
+
+    MouseArea {
+        id: mouseAreaPopup
+
+        anchors.fill: parent
+        hoverEnabled: true
+        onClicked: plasmoid.togglePopup()
+    }
+
+    PlasmaNm.ConnectionIcon {
+        id: connectionIconProvider;
+
+        onHideConnectingIndicator: {
+            connectingIndicator.running = false;
         }
 
-        MouseArea {
-            id: mouseAreaPopup
-
-            anchors.fill: parent
-            hoverEnabled: true
-            onClicked: plasmoid.togglePopup()
+        onShowConnectingIndicator: {
+            connectingIndicator.running = true;
         }
 
-        PlasmaNm.ConnectionIcon {
-            id: connectionIconProvider;
-
-            onHideConnectingIndicator: {
-                connectingIndicator.running = false;
-            }
-
-            onShowConnectingIndicator: {
-                connectingIndicator.running = true;
-            }
-
-            onSetConnectionIcon: {
-                connectionIcon.elementId = icon
-            }
-
-            onSetVpnIcon: {
-                vpnIcon.visible = true;
-            }
-
-            onUnsetVpnIcon: {
-                vpnIcon.visible = false;
-            }
+        onSetConnectionIcon: {
+            connectionIcon.elementId = icon;
         }
 
-        Component.onCompleted: {
-            connectionIconProvider.init();
+        onSetHoverIcon: {
+            hoverIcon.visible = true;
+            hoverIcon.icon = QIcon(icon);
         }
+
+        onUnsetHoverIcon: {
+            hoverIcon.visible = false;
+        }
+    }
+
+    Component.onCompleted: {
+        connectionIconProvider.init();
     }
 }

@@ -48,6 +48,7 @@ Item {
 
         anchors { top: detailsSeparator.bottom; horizontalCenter: parent.horizontalCenter; topMargin: 10 }
         lineHeight: 1.5;
+        textFormat: Text.RichText;
     }
 
     PlasmaComponents.ButtonRow {

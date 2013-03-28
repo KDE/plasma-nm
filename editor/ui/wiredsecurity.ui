@@ -14,7 +14,7 @@
    <item>
     <widget class="QCheckBox" name="use8021X">
      <property name="text">
-      <string>Use 802.1&amp;x  security for this connection</string>
+      <string>Use 802.1&amp;x security for this connection</string>
      </property>
     </widget>
    </item>

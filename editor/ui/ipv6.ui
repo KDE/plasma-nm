@@ -328,7 +328,7 @@
      </item>
      <item>
       <property name="text">
-       <string>Enabled (prefer temporady addresses)</string>
+       <string>Enabled (prefer temporary addresses)</string>
       </property>
      </item>
     </widget>

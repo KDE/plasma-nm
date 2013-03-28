@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Plasma applet for NetworkManager
+Name=Network Management
 Name[cs]=Aplet Plasma pro NetworkManager
 Name[nl]=Plasma-applet voor NetworkManager
 Name[pt]='Applet' do Plasma para o NetworkManager
@@ -9,7 +9,7 @@ Name[sv]=Plasma-miniprogram för nätverkshantering
 Name[uk]=Аплет Плазми для NetworkManager
 Name[x-test]=xxPlasma applet for NetworkManagerxx
 
-Comment=Plasma applet written in QML for managing network connections
+Comment=Network status and control
 Comment[cs]=Aplet Plasma napsaný v QML pro správu síťových spojení
 Comment[nl]=Plasma-applet geschreven in QML voor beheer van netwerkverbindingen
 Comment[pt]=Uma 'applet' do Plasma, feita em QML, para gerir as ligações de rede

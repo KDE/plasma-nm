@@ -47,6 +47,12 @@ void ConnectionIcon::init()
 {
     connect(NetworkManager::notifier(), SIGNAL(activeConnectionsChanged()),
             SLOT(activeConnectionsChanged()));
+    connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
+            SLOT(setIcons()));
+    connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)),
+            SLOT(deviceAdded(QString)));
+    connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
+            SLOT(deviceRemoved(QString)));
 
     setIcons();
 }
@@ -77,6 +83,63 @@ void ConnectionIcon::activeConnectionStateChanged(NetworkManager::ActiveConnecti
     }
 
     setIcons();
+}
+
+void ConnectionIcon::accessPointAppeared(const QString& accesspoint)
+{
+    Q_UNUSED(accesspoint);
+
+    if (NetworkManager::status() == NetworkManager::Disconnected) {
+        foreach (NetworkManager::Device * dev, NetworkManager::networkInterfaces()) {
+            if (dev->type() == NetworkManager::Device::Ethernet) {
+                NetworkManager::WiredDevice * wiredDevice = qobject_cast<NetworkManager::WiredDevice*>(dev);
+                if (!wiredDevice->carrier()) {
+                    setDisconnectedIcon();
+                }
+            }
+        }
+    }
+}
+
+void ConnectionIcon::carrierChanged(bool carrier)
+{
+    Q_UNUSED(carrier);
+
+    if (NetworkManager::status() == NetworkManager::Disconnected) {
+        setDisconnectedIcon();
+    }
+}
+
+void ConnectionIcon::deviceAdded(const QString& device)
+{
+    NetworkManager::Device * dev = NetworkManager::findNetworkInterface(device);
+
+    if (!dev) {
+        return;
+    }
+
+    if (dev->type() == NetworkManager::Device::Ethernet) {
+        NetworkManager::WiredDevice * wiredDev = qobject_cast<NetworkManager::WiredDevice*>(dev);
+        connect(wiredDev, SIGNAL(carrierChanged(bool)),
+                SLOT(carrierChanged(bool)));
+    } else if (dev->type() == NetworkManager::Device::Wifi) {
+        NetworkManager::WirelessDevice * wirelessDev = qobject_cast<NetworkManager::WirelessDevice*>(dev);
+        if (!wirelessDev->accessPoints().isEmpty()) {
+            connect(wirelessDev, SIGNAL(accessPointAppeared(QString)),
+                    SLOT(accessPointAppeared(QString)));
+        }
+    } else if (dev->type() == NetworkManager::Device::Modem) {
+        // TODO
+    }
+}
+
+void ConnectionIcon::deviceRemoved(const QString& device)
+{
+    Q_UNUSED(device);
+
+    if (NetworkManager::status() == NetworkManager::Disconnected) {
+        setIcons();
+    }
 }
 
 void ConnectionIcon::setIcons()
@@ -115,8 +178,8 @@ bool connectionFound = false;
 
         if (active->vpn() && active->state() == NetworkManager::ActiveConnection::Activated) {
             vpnFound = true;
-            NMAppletDebug() << "Emit signal setVpnIcon()";
-            Q_EMIT setVpnIcon();
+            NMAppletDebug() << "Emit signal setHoverIcon(object-locked)";
+            Q_EMIT setHoverIcon("object-locked");
         }
     }
 
@@ -124,14 +187,23 @@ bool connectionFound = false;
         setDisconnectedIcon();
     }
 
-    if (!vpnFound) {
-        NMAppletDebug() << "Emit signal unsetVpnIcon()";
-        Q_EMIT unsetVpnIcon();
+    if (!vpnFound && connectionFound) {
+        NMAppletDebug() << "Emit signal unsetHoverIcon()";
+        Q_EMIT unsetHoverIcon();
     }
 }
 
 void ConnectionIcon::setDisconnectedIcon()
 {
+    if (NetworkManager::status() == NetworkManager::Unknown ||
+        NetworkManager::status() == NetworkManager::Asleep) {
+        NMAppletDebug() << "Emit signal setConnectionIcon(network-wired)";
+        Q_EMIT setConnectionIcon(QString("network-wired"));
+        NMAppletDebug() << "Emit signal setHoverIcon(dialog-error)";
+        Q_EMIT setHoverIcon("dialog-error");
+        return;
+    }
+
     bool wired = false;
     bool wireless = false;
     bool modem = false;
@@ -141,17 +213,11 @@ void ConnectionIcon::setDisconnectedIcon()
             NetworkManager::WiredDevice * wiredDev = qobject_cast<NetworkManager::WiredDevice*>(device);
             if (wiredDev->carrier()) {
                 wired = true;
-                disconnect(wiredDev, SIGNAL(carrierChanged(bool)));
-                connect(wiredDev, SIGNAL(carrierChanged(bool)),
-                        SLOT(setIcons()));
             }
         } else if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice * wirelessDev = qobject_cast<NetworkManager::WirelessDevice*>(device);
             if (!wirelessDev->accessPoints().isEmpty()) {
                 wireless = true;
-                disconnect(wirelessDev, SIGNAL(accessPointAppeared(QString)));
-                connect(wirelessDev, SIGNAL(accessPointAppeared(QString)),
-                        SLOT(setIcons()));
             }
         } else if (device->type() == NetworkManager::Device::Modem) {
             modem = true;
@@ -171,6 +237,8 @@ void ConnectionIcon::setDisconnectedIcon()
         NMAppletDebug() << "Emit signal setConnectionIcon(network-wired)";
         Q_EMIT setConnectionIcon(QString("network-wired"));
     }
+
+    Q_EMIT unsetHoverIcon();
 }
 
 void ConnectionIcon::setModemIcon()

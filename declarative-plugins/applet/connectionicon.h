@@ -38,6 +38,10 @@ public Q_SLOTS:
 private Q_SLOTS:
     void activeConnectionsChanged();
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
+    void accessPointAppeared(const QString & accesspoint);
+    void carrierChanged(bool carrier);
+    void deviceAdded(const QString & device);
+    void deviceRemoved(const QString & device);
     void setIcons();
     void setWirelessIconForSignalStrenght(int strenght);
 
@@ -45,8 +49,8 @@ Q_SIGNALS:
     void hideConnectingIndicator();
     void showConnectingIndicator();
     void setConnectionIcon(const QString & icon);
-    void setVpnIcon();
-    void unsetVpnIcon();
+    void setHoverIcon(const QString & icon);
+    void unsetHoverIcon();
 
 private:
     int m_wirelessSignal;

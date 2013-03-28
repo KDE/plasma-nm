@@ -78,6 +78,7 @@ Item {
         id: connectionView;
 
         anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbarSeparator.top; topMargin: 5; bottomMargin: 10 }
+        clip: true
         spacing: 8;
         model: connectionSortModel;
         delegate: ConnectionItem {

@@ -41,6 +41,7 @@ public:
     bool connected() const;
     bool connecting() const;
     QString deviceUdi() const;
+    QString icon() const;
     QString ssid() const;
     int signal() const;
     bool secure() const;
@@ -100,13 +101,17 @@ private:
     bool m_conecting;
     QString m_details;
     QString m_deviceUdi;
+    QString m_icon;
     QString m_ssid;
+    int m_previousSignal;
     int m_signal;
     bool m_secure;
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
 
     void updateDetails();
     void setConnectionSettings(const QVariantMapMap & map);
+    void setConnectionIcon();
+    void setWirelessIcon();
 };
 
 #endif // PLASMA_NM_CONNECTION_ITEM_H

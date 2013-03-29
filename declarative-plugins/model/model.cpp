@@ -123,7 +123,7 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 return item->specificPath();
                 break;
             case ConnectionIconRole:
-                return connectionIcon(item->type());
+                return item->icon();
                 break;
             case ConnectionDetailInformationsRole:
                 return item->detailInformations();
@@ -336,51 +336,4 @@ void Model::onChanged()
         dataChanged(index, index);
         NMModelDebug() << "Item " << item->name() << " has been changed";
     }
-}
-
-QString Model::connectionIcon(NetworkManager::Settings::ConnectionSettings::ConnectionType type) const
-{
-    switch (type) {
-        case NetworkManager::Settings::ConnectionSettings::Adsl:
-            return QString("modem");
-            break;
-        case NetworkManager::Settings::ConnectionSettings::Bluetooth:
-            return QString("bluetooth");
-            break;
-        case NetworkManager::Settings::ConnectionSettings::Bond:
-            break;
-        case NetworkManager::Settings::ConnectionSettings::Bridge:
-            break;
-        case NetworkManager::Settings::ConnectionSettings::Cdma:
-            return QString("phone");
-            break;
-        case NetworkManager::Settings::ConnectionSettings::Gsm:
-            return QString("phone");
-            break;
-        case NetworkManager::Settings::ConnectionSettings::Infiniband:
-            break;
-        case NetworkManager::Settings::ConnectionSettings::OLPCMesh:
-            break;
-        case NetworkManager::Settings::ConnectionSettings::Pppoe:
-            return QString("modem");
-            break;
-        case NetworkManager::Settings::ConnectionSettings::Vlan:
-            break;
-        case NetworkManager::Settings::ConnectionSettings::Vpn:
-            return QString("secure-card");
-            break;
-        case NetworkManager::Settings::ConnectionSettings::Wimax:
-            break;
-        case NetworkManager::Settings::ConnectionSettings::Wired:
-            return QString("network-wired");
-            break;
-        case NetworkManager::Settings::ConnectionSettings::Wireless:
-            return QString("network-wireless");
-            break;
-        default:
-            return QString();
-            break;
-    }
-
-    return QString();
 }

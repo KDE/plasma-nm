@@ -61,8 +61,6 @@ private:
     QList<ModelItem*> m_connections;
 
     void insertItem(ModelItem * item);
-
-    QString connectionIcon(NetworkManager::Settings::ConnectionSettings::ConnectionType type) const;
 };
 
 

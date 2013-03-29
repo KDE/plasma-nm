@@ -77,7 +77,10 @@ Item {
             text: i18n("Edit");
             enabled: editable;
 
-            onClicked: editConnection();
+            onClicked: {
+                hideDetails();
+                editConnection();
+            }
         }
 
         PlasmaComponents.ToolButton {
@@ -88,7 +91,10 @@ Item {
             text: i18n("Remove");
             enabled: editable;
 
-            onClicked: removeConnection();
+            onClicked: {
+                hideDetails();
+                removeConnection();
+            }
         }
     }
 }

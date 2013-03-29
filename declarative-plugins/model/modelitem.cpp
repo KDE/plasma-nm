@@ -37,6 +37,7 @@ ModelItem::ModelItem(NetworkManager::Device * device, QObject * parent):
     m_vpn(0),
     m_connected(false),
     m_conecting(false),
+    m_previousSignal(0),
     m_signal(0),
     m_secure(false),
     m_type(NetworkManager::Settings::ConnectionSettings::Unknown)
@@ -77,6 +78,11 @@ QString ModelItem::deviceUdi() const
 QString ModelItem::detailInformations() const
 {
     return m_details;
+}
+
+QString ModelItem::icon() const
+{
+    return m_icon;
 }
 
 QString ModelItem::ssid() const
@@ -190,6 +196,7 @@ void ModelItem::setWirelessNetwork(NetworkManager::WirelessNetwork * network)
 
     if (m_network) {
         m_ssid = network->ssid();
+        m_previousSignal = m_signal;
         m_signal = m_network->signalStrength();
         m_type = NetworkManager::Settings::ConnectionSettings::Wireless;
 
@@ -215,6 +222,7 @@ void ModelItem::setWirelessNetwork(NetworkManager::WirelessNetwork * network)
         m_secure = false;
     }
 
+    setWirelessIcon();
     updateDetails();
 }
 
@@ -342,6 +350,7 @@ void ModelItem::setConnectionSettings(const QVariantMapMap& map)
         }
     }
 
+    setConnectionIcon();
     updateDetails();
 }
 
@@ -424,9 +433,14 @@ void ModelItem::onDefaultRouteChanged(bool defaultRoute)
 
 void ModelItem::onSignalStrengthChanged(int strength)
 {
+    m_previousSignal = m_signal;
     m_signal = strength;
 
-    emit signalChanged();
+    if (m_previousSignal - m_signal >= 25 ||
+        m_previousSignal - m_signal <= 25) {
+        setWirelessIcon();
+        emit signalChanged();
+    }
 
     NMItemDebug() << name() << ": strength changed to " << strength;
 }
@@ -450,5 +464,65 @@ void ModelItem::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State
         NMItemDebug() << name() << ": disconnected";
         disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
         m_active = 0;
+    }
+}
+
+void ModelItem::setConnectionIcon()
+{
+    switch (m_type) {
+        case NetworkManager::Settings::ConnectionSettings::Adsl:
+            m_icon = "modem";
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Bluetooth:
+            m_icon = "bluetooth";
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Bond:
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Bridge:
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Cdma:
+            m_icon = "phone";
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Gsm:
+            m_icon = "phone";
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Infiniband:
+            break;
+        case NetworkManager::Settings::ConnectionSettings::OLPCMesh:
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Pppoe:
+            m_icon = "modem";
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Vlan:
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Vpn:
+            m_icon = "secure-card";
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Wimax:
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Wired:
+            m_icon = "network-wired";
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Wireless:
+            setWirelessIcon();
+            break;
+        default:
+            m_icon = "network-wired";
+            break;
+    }
+}
+
+void ModelItem::setWirelessIcon()
+{
+    if (m_signal <= 5) {
+        m_icon = "network-wireless-connected-0";
+    } else if (m_signal <= 25) {
+        m_icon = "network-wireless-connected-25";
+    } else if (m_signal <= 50) {
+        m_icon = "network-wireless-connected-50";
+    } else if (m_signal <= 75) {
+        m_icon = "network-wireless-connected-75";
+    } else {
+        m_icon = "network-wireless-connected-100";
     }
 }

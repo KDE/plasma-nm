@@ -64,7 +64,7 @@ Item {
     PlasmaComponents.Label {
         id: connectionNameLabel;
 
-        height: itemSignal ? 15 : 30;
+        height: 30;
         anchors { left: connectionTypeIcon.right; right: connectButton.left; top: parent.top; leftMargin: 5 }
         text: itemName;
         elide: Text.ElideRight;
@@ -103,21 +103,21 @@ Item {
         }
     }
 
-    PlasmaComponents.ProgressBar {
-        id: connectionSignalMeter;
-
-        height: itemSignal ? 15 : 0;
-        anchors {
-            top: connectionNameLabel.bottom;
-            left: connectionTypeIcon.right;
-            right: connectButton.left;
-            leftMargin: 5;
-            rightMargin: 10;
-        }
-        visible: itemSignal ? true : false;
-        minimumValue: 0; maximumValue:100;
-        value: itemSignal;
-    }
+//     PlasmaComponents.ProgressBar {
+//         id: connectionSignalMeter;
+//
+//         height: itemSignal ? 15 : 0;
+//         anchors {
+//             top: connectionNameLabel.bottom;
+//             left: connectionTypeIcon.right;
+//             right: connectButton.left;
+//             leftMargin: 5;
+//             rightMargin: 10;
+//         }
+//         visible: itemSignal ? true : false;
+//         minimumValue: 0; maximumValue:100;
+//         value: itemSignal;
+//     }
 
     MouseArea {
         id: mouseAreaShowInfo;

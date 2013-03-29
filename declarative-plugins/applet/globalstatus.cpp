@@ -20,6 +20,9 @@
 
 #include "globalstatus.h"
 
+#include <QtNetworkManager/activeconnection.h>
+#include <QtNetworkManager/connection.h>
+
 #include <KLocalizedString>
 
 GlobalStatus::GlobalStatus(QObject* parent):
@@ -45,47 +48,50 @@ void GlobalStatus::statusChanged(NetworkManager::Status status)
     bool connected = false;
     bool inProgress = false;
 
-    switch (status) {
-        case NetworkManager::Unknown:
-            statusMsg = i18n("Unknown");
-            connected = false;
-            inProgress = false;
-            break;
-        case NetworkManager::Asleep:
-            statusMsg = i18n("Inactive");
-            connected = false;
-            inProgress = false;
-            break;
-        case NetworkManager::Disconnected:
-            statusMsg = i18n("Disconnected");
-            connected = false;
-            inProgress = false;
-            break;
-        case NetworkManager::Disconnecting:
-            statusMsg = i18n("Disconnecting");
-            connected = true;
-            inProgress = true;
-            break;
-        case NetworkManager::Connecting:
-            statusMsg = i18n("Connecting");
-            connected = false;
-            inProgress = true;
-            break;
-        case NetworkManager::ConnectedLinkLocal:
-            statusMsg = i18n("Connected");
-            connected = true;
-            inProgress = false;
-            break;
-        case NetworkManager::ConnectedSiteOnly:
-            statusMsg = i18n("Connected");
-            connected = true;
-            inProgress = false;
-            break;
-        case NetworkManager::Connected:
-            statusMsg = i18n("Connected");
-            connected = true;
-            inProgress = false;
-            break;
+    if (status == NetworkManager::Connected ||
+        status == NetworkManager::ConnectedLinkLocal ||
+        status == NetworkManager::ConnectedSiteOnly) {
+
+        QString id;
+        foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
+            if (active->default4() || active->default6()) {
+                id = active->connection()->id();
+                break;
+            }
+        }
+        statusMsg = i18n("Connected (%1)").arg(id);
+        connected = true;
+        inProgress = false;
+
+    } else {
+
+        switch (status) {
+            case NetworkManager::Asleep:
+                statusMsg = i18n("Inactive");
+                connected = false;
+                inProgress = false;
+                break;
+            case NetworkManager::Disconnected:
+                statusMsg = i18n("Disconnected");
+                connected = false;
+                inProgress = false;
+                break;
+            case NetworkManager::Disconnecting:
+                statusMsg = i18n("Disconnecting");
+                connected = true;
+                inProgress = true;
+                break;
+            case NetworkManager::Connecting:
+                statusMsg = i18n("Connecting");
+                connected = false;
+                inProgress = true;
+                break;
+            default:
+                statusMsg = i18n("Unknown");
+                connected = false;
+                inProgress = false;
+                break;
+        }
     }
 
     Q_EMIT setGlobalStatus(statusMsg, connected, inProgress);

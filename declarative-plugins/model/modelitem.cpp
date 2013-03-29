@@ -114,11 +114,6 @@ void ModelItem::updateDetails()
         m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
     }
 
-    if (m_active && type() != NetworkManager::Settings::ConnectionSettings::Vpn) {
-        m_details += QString(format).arg(i18nc("default Ipv4 route", "Default IPv4 connection:"), m_active->default4() ? i18n("yes") : i18n("no"));
-        m_details += QString(format).arg(i18nc("default Ipv6 route", "Default IPv6 connection:"), m_active->default6() ? i18n("yes") : i18n("no"));
-    }
-
     if (m_device) {
 
         if (device()->ipV4Config().isValid() && connected()) {
@@ -145,9 +140,9 @@ void ModelItem::updateDetails()
         } else if (device()->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice * wireless = qobject_cast<NetworkManager::WirelessDevice*>(device());
             if (connected()) {
-                if (wireless->bitRate() < 1000) {
+                if (wireless->bitRate() && wireless->bitRate() < 1000) {
                     m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Kb/s", wireless->bitRate()));
-                } else {
+                } else if (wireless->bitRate()) {
                     m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wireless->bitRate()/1000));
                 }
             }
@@ -368,7 +363,6 @@ void ModelItem::onActiveConnectionStateChanged(NetworkManager::ActiveConnection:
     if (state == NetworkManager::ActiveConnection::Deactivated ||
         state == NetworkManager::ActiveConnection::Deactivating) {
         NMItemDebug() << name() << ": disconnected";
-//         disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
         m_active = 0;
         m_conecting = false;
         m_connected = false;
@@ -439,7 +433,6 @@ void ModelItem::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State
         delete m_vpn;
         m_vpn = 0;
         NMItemDebug() << name() << ": disconnected";
-//         disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
         m_active = 0;
     }
 }

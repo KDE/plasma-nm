@@ -186,12 +186,6 @@ bool ModelItem::operator==(ModelItem* item)
 
 void ModelItem::setWirelessNetwork(NetworkManager::WirelessNetwork * network)
 {
-    // Just for sure disconnect the previous one, if exists
-    if (m_network) {
-        disconnect(m_network, SIGNAL(signalStrengthChanged(int)), this, SLOT(onSignalStrengthChanged(int)));
-        disconnect(m_network, SIGNAL(referenceAccessPointChanged(QString)), this, SLOT(onSignalStrengthChanged(int)));
-    }
-
     m_network = network;
 
     if (m_network) {
@@ -213,8 +207,10 @@ void ModelItem::setWirelessNetwork(NetworkManager::WirelessNetwork * network)
             m_name = ssid();
         }
 
-        connect(m_network, SIGNAL(signalStrengthChanged(int)), SLOT(onSignalStrengthChanged(int)));
-        connect(m_network, SIGNAL(referenceAccessPointChanged(QString)), SLOT(onAccessPointChanged(QString)));
+        connect(m_network, SIGNAL(signalStrengthChanged(int)),
+                SLOT(onSignalStrengthChanged(int)), Qt::UniqueConnection);
+        connect(m_network, SIGNAL(referenceAccessPointChanged(QString)),
+                SLOT(onAccessPointChanged(QString)), Qt::UniqueConnection);
     } else {
         m_ssid.clear();
         m_signal = 0;
@@ -233,21 +229,6 @@ NetworkManager::WirelessNetwork* ModelItem::wirelessNetwork() const
 
 void ModelItem::setActiveConnection(NetworkManager::ActiveConnection* active)
 {
-    // Just for sure disconnect the previous one, if exists
-    if (m_active) {
-        disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-                   this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
-        disconnect(m_active, SIGNAL(default4Changed(bool)),
-                this, SLOT(onDefaultRouteChanged(bool)));
-        disconnect(m_active, SIGNAL(default6Changed(bool)),
-                this, SLOT(onDefaultRouteChanged(bool)));
-    }
-
-    if (m_vpn) {
-        disconnect(m_vpn, SIGNAL(stateChanged(NetworkManager::VpnConnection::State)),
-                   this, SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State)));
-    }
-
     m_active = active;
 
     if (m_active) {
@@ -263,12 +244,12 @@ void ModelItem::setActiveConnection(NetworkManager::ActiveConnection* active)
             m_vpn = new NetworkManager::VpnConnection(m_active->path());
 
             connect(m_vpn, SIGNAL(stateChanged(NetworkManager::VpnConnection::State)),
-                    SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State)));
+                    SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State)), Qt::UniqueConnection);
         } else {
             connect(m_active, SIGNAL(default4Changed(bool)),
-                SLOT(onDefaultRouteChanged(bool)));
+                    SLOT(onDefaultRouteChanged(bool)), Qt::UniqueConnection);
             connect(m_active, SIGNAL(default6Changed(bool)),
-                SLOT(onDefaultRouteChanged(bool)));
+                    SLOT(onDefaultRouteChanged(bool)), Qt::UniqueConnection);
         }
 
         connect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
@@ -307,17 +288,13 @@ NetworkManager::Device* ModelItem::device() const
 
 void ModelItem::setConnection(NetworkManager::Settings::Connection* connection)
 {
-    // Just for sure disconnect the previous one, if exists
-    if (m_connection) {
-        disconnect(m_connection, SIGNAL(updated(QVariantMapMap)), this, SLOT(onConnectionUpdated(QVariantMapMap)));
-    }
-
     m_connection = connection;
 
     if (m_connection) {
         setConnectionSettings(connection->settings());
 
-        connect(connection, SIGNAL(updated(QVariantMapMap)), SLOT(onConnectionUpdated(QVariantMapMap)));
+        connect(connection, SIGNAL(updated(QVariantMapMap)),
+                SLOT(onConnectionUpdated(QVariantMapMap)), Qt::UniqueConnection);
     } else {
         m_uuid.clear();
         if (m_network) {
@@ -391,7 +368,7 @@ void ModelItem::onActiveConnectionStateChanged(NetworkManager::ActiveConnection:
     if (state == NetworkManager::ActiveConnection::Deactivated ||
         state == NetworkManager::ActiveConnection::Deactivating) {
         NMItemDebug() << name() << ": disconnected";
-        disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
+//         disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
         m_active = 0;
         m_conecting = false;
         m_connected = false;
@@ -462,7 +439,7 @@ void ModelItem::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State
         delete m_vpn;
         m_vpn = 0;
         NMItemDebug() << name() << ": disconnected";
-        disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
+//         disconnect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)), SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
         m_active = 0;
     }
 }

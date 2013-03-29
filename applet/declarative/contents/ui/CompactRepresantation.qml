@@ -59,12 +59,27 @@ Item {
         visible: running;
     }
 
+    PlasmaNm.GlobalStatus {
+        id: globalStatus;
+
+        onSetGlobalStatus: {
+            tooltip.subText = status;
+        }
+    }
+
     MouseArea {
         id: mouseAreaPopup
 
         anchors.fill: parent
         hoverEnabled: true
         onClicked: plasmoid.togglePopup()
+
+        PlasmaCore.ToolTip {
+             id: tooltip
+             target: mouseAreaPopup
+             image: connectionIcon.elementId
+             mainText: i18n("Network management")
+        }
     }
 
     PlasmaNm.ConnectionIcon {
@@ -93,6 +108,7 @@ Item {
     }
 
     Component.onCompleted: {
+        globalStatus.init();
         connectionIconProvider.init();
     }
 }

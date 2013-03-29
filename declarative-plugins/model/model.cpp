@@ -218,7 +218,7 @@ void Model::removeConnection(const QString& connection)
                 if (row >= 0) {
                     beginRemoveRows(QModelIndex(), row, row);
                     m_connections.removeOne(item);
-                    delete item;
+                    item->deleteLater();
                     endRemoveRows();
                     NMModelDebug() << "Connection " << name << " has been removed";
                 }
@@ -251,7 +251,7 @@ void Model::removeConnectionsByDevice(const QString& udi)
             QString name = item->name();
             beginRemoveRows(QModelIndex(), row, row);
             m_connections.removeOne(item);
-            delete item;
+            item->deleteLater();
             endRemoveRows();
             NMModelDebug() << "Connection " << name << " has been removed";
             row = -1;
@@ -271,7 +271,7 @@ void Model::removeVpnConnections()
         if (row >= 0) {
             beginRemoveRows(QModelIndex(), row, row);
             m_connections.removeOne(item);
-            delete item;
+            item->deleteLater();
             endRemoveRows();
             NMModelDebug() << "VPN Connection " << item->name() << " has been removed";
             row = -1;

@@ -36,7 +36,9 @@ public Q_SLOTS:
 Q_SIGNALS:
     void networkingEnabled(bool enabled);
     void wirelessEnabled(bool enabled);
+    void wirelessHwEnabled(bool enabled);
     void wwanEnabled(bool enabled);
+    void wwanHwEnabled(bool enabled);
 };
 
 #endif // PLASMA_NM_ENABLED_CONNECTIONS_H

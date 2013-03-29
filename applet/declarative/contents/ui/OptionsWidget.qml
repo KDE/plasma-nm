@@ -30,6 +30,8 @@ Item {
     property alias networkingEnabled: networkingEnabled.checked;
     property alias wirelessEnabled: wirelessEnabled.checked;
     property alias wwanEnabled: wwanEnabled.checked;
+    property alias wirelessHwEnabled: wirelessEnabled.enabled;
+    property alias wwanHwEnabled: wwanEnabled.enabled;
 
     signal networkingEnabledChanged(bool enabled);
     signal wirelessEnabledChanged(bool enabled);

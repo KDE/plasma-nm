@@ -111,8 +111,16 @@ Item {
             options.wirelessEnabled = enabled;
         }
 
+        onWirelessHwEnabled: {
+            options.wirelessHwEnabled = enabled;
+        }
+
         onWwanEnabled: {
             options.wwanEnabled = enabled;
+        }
+
+        onWwanHwEnabled: {
+            options.wwanHwEnabled = enabled;
         }
     }
 

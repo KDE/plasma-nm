@@ -40,13 +40,21 @@ void EnabledConnections::init()
             SIGNAL(networkingEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
             SIGNAL(wirelessEnabled(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(wimaxHardwareEnabledChanged(bool)),
+            SIGNAL(wirelessHwEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wwanEnabledChanged(bool)),
             SIGNAL(wwanEnabled(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(wwanHardwareEnabledChanged(bool)),
+            SIGNAL(wwanHwEnabled(bool)));
 
     NMAppletDebug() << "Emig signal networkingEnabled(" << NetworkManager::isNetworkingEnabled() << ")";
     networkingEnabled(NetworkManager::isNetworkingEnabled());
     NMAppletDebug() << "Emig signal wirelessEnabled(" << NetworkManager::isWirelessEnabled() << ")";
     wirelessEnabled(NetworkManager::isWirelessEnabled());
+    NMAppletDebug() << "Emig signal wirelessHwEnabled(" << NetworkManager::isWirelessHardwareEnabled() << ")";
+    wirelessHwEnabled(NetworkManager::isWirelessHardwareEnabled());
     NMAppletDebug() << "Emig signal wwanEnabled(" << NetworkManager::isWwanEnabled() << ")";
     wwanEnabled(NetworkManager::isWwanEnabled());
+    NMAppletDebug() << "Emig signal wwanEnabled(" << NetworkManager::isWwanHardwareEnabled() << ")";
+    wwanEnabled(NetworkManager::isWwanHardwareEnabled());
 }

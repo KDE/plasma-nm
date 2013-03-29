@@ -25,6 +25,8 @@
 
 #include <KLocalizedString>
 
+#include "debug.h"
+
 GlobalStatus::GlobalStatus(QObject* parent):
     QObject(parent)
 {
@@ -38,7 +40,24 @@ void GlobalStatus::init()
 {
     connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
             SLOT(statusChanged(NetworkManager::Status)));
+    connect(NetworkManager::notifier(), SIGNAL(activeConnectionsChanged()),
+            SLOT(activeConnectionsChanged()));
 
+    statusChanged(NetworkManager::status());
+}
+
+void GlobalStatus::activeConnectionsChanged()
+{
+    foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
+        connect(active, SIGNAL(default4Changed(bool)),
+                SLOT(defaultChanged()), Qt::UniqueConnection);
+        connect(active, SIGNAL(default6Changed(bool)),
+                SLOT(defaultChanged()), Qt::UniqueConnection);
+    }
+}
+
+void GlobalStatus::defaultChanged()
+{
     statusChanged(NetworkManager::status());
 }
 
@@ -59,7 +78,7 @@ void GlobalStatus::statusChanged(NetworkManager::Status status)
                 break;
             }
         }
-        statusMsg = i18n("Connected (%1)").arg(id);
+        statusMsg = i18n("Connected (via %1)").arg(id);
         connected = true;
         inProgress = false;
 
@@ -94,5 +113,6 @@ void GlobalStatus::statusChanged(NetworkManager::Status status)
         }
     }
 
+    NMAppletDebug() << "Emit signal setGlobalStatus(" << statusMsg << ", " << connected << ", " << inProgress << ")";
     Q_EMIT setGlobalStatus(statusMsg, connected, inProgress);
 }

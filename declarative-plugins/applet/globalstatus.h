@@ -37,8 +37,9 @@ public Q_SLOTS:
     void init();
 
 private Q_SLOTS:
+    void activeConnectionsChanged();
+    void defaultChanged();
     void statusChanged(NetworkManager::Status status);
-
 Q_SIGNALS:
     void setGlobalStatus(const QString & status, bool connected, bool inProgress);
 };

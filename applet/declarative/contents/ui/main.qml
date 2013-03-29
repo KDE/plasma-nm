@@ -86,7 +86,6 @@ Item {
             onAddAndActivateConnectionItem: addAndActivateConnection(devicePath, specificObjectPath);
             onDeactivateConnectionItem: deactivateConnection(connectionPath);
             onEditConnectionItem: {
-                hideDetails();
                 editConnection(connectionUuid);
             }
             onRemoveConnectionItem: dialog.openDialog(connectionName, connectionPath);
@@ -173,7 +172,10 @@ Item {
 
         onAccepted: {
             removeConnection(path);
-            hideDetails();
         }
+    }
+
+    Component.onCompleted: {
+        plasmoid.popupEvent.connect(toolbar.hideOptions);
     }
 }

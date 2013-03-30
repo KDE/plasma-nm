@@ -1,7 +1,20 @@
 [Desktop Entry]
 Name=Network Management
+Name[de]=Netzwerkverwaltung
+Name[pt]=Gestão de Rede
+Name[pt_BR]=Gerenciamento de rede
+Name[sk]=Správa siete
+Name[sv]=Nätverkshantering
+Name[uk]=Керування мережею
+Name[x-test]=xxNetwork Managementxx
 
 Comment=Network status and control
+Comment[pt]=Estado e controlo da rede
+Comment[pt_BR]=Estado e controle da rede
+Comment[sk]=Správa a ovládanie siete
+Comment[sv]=Nätverksstatus och kontroll
+Comment[uk]=Стеження за станом і керування мережею
+Comment[x-test]=xxNetwork status and controlxx
 
 Type=Service
 ServiceTypes=Plasma/Applet,Plasma/PopupApplet

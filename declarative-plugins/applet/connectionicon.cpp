@@ -63,8 +63,11 @@ void ConnectionIcon::activeConnectionsChanged()
 
     foreach (NetworkManager::ActiveConnection * active, actives) {
         connect(active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-                SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)));
-
+                SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
+        connect(active, SIGNAL(default4Changed(bool)),
+                SLOT(setIcons()), Qt::UniqueConnection);
+        connect(active, SIGNAL(default6Changed(bool)),
+                SLOT(setIcons()), Qt::UniqueConnection);
         if (active->state() == NetworkManager::ActiveConnection::Activating) {
             NMAppletDebug() << "Emit signal showConnectionIndicator()";
             Q_EMIT showConnectingIndicator();
@@ -256,7 +259,7 @@ void ConnectionIcon::setWirelessIcon(NetworkManager::Device* device, const QStri
 
     if (m_wirelessNetwork) {
         connect(m_wirelessNetwork, SIGNAL(signalStrengthChanged(int)),
-                SLOT(setWirelessIconForSignalStrenght(int)));
+                SLOT(setWirelessIconForSignalStrenght(int)), Qt::UniqueConnection);
 
         setWirelessIconForSignalStrenght(m_wirelessNetwork->signalStrength());
     } else {

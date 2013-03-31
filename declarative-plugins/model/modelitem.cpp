@@ -137,7 +137,7 @@ QString ModelItem::sectionType() const
     } else if (m_uuid != "") {
         return i18n("Previous connections");
     } else {
-        return i18n("Uknown connections");
+        return i18n("Unknown connections");
     }
 }
 

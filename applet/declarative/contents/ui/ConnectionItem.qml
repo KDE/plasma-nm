@@ -167,7 +167,7 @@ Item {
             name: "Hidden";
             when: ((!connectionView.activeExpanded && itemSection == i18n("Active connections")) ||
                    (!connectionView.previousExpanded && itemSection == i18n("Previous connections")) ||
-                   (!connectionView.uknownExpanded && itemSection == i18n("Uknown connections")))
+                   (!connectionView.unknownExpanded && itemSection == i18n("Unknown connections")))
             PropertyChanges { target: connectionItem; height: 0; }
             PropertyChanges { target: connectionItem; visible: false; }
         }

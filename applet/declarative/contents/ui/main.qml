@@ -80,7 +80,7 @@ Item {
 
         property bool activeExpanded: true;
         property bool previousExpanded: true;
-        property bool uknownExpanded: true;
+        property bool unknownExpanded: true;
 
         anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbarSeparator.top; topMargin: 5; bottomMargin: 10 }
         clip: true
@@ -93,7 +93,7 @@ Item {
                 } else if (section == i18n("Previous connections")) {
                     connectionView.previousExpanded = false;
                 } else {
-                    connectionView.uknownExpanded = false;
+                    connectionView.unknownExpanded = false;
                 }
             }
 
@@ -103,7 +103,7 @@ Item {
                 } else if (section == i18n("Previous connections")) {
                     connectionView.previousExpanded = true;
                 } else {
-                    connectionView.uknownExpanded = true;
+                    connectionView.unknownExpanded = true;
                 }
             }
         }

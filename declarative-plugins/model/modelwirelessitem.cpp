@@ -43,13 +43,13 @@ ModelWirelessItem::~ModelWirelessItem()
 
 QString ModelWirelessItem::icon() const
 {
-    if (m_signal <= 5) {
+    if (m_signal < 13) {
         return "network-wireless-connected-0";
-    } else if (m_signal <= 25) {
+    } else if (m_signal < 38) {
         return "network-wireless-connected-25";
-    } else if (m_signal <= 50) {
+    } else if (m_signal < 63) {
         return "network-wireless-connected-50";
-    } else if (m_signal <= 75) {
+    } else if (m_signal < 88) {
         return "network-wireless-connected-75";
     } else {
         return "network-wireless-connected-100";
@@ -102,7 +102,7 @@ void ModelWirelessItem::updateDetailsContent()
         NetworkManager::WirelessDevice * wifiDev = qobject_cast<NetworkManager::WirelessDevice*>(m_device);
         NetworkManager::AccessPoint * ap = wifiDev->findAccessPoint(m_network->referenceAccessPoint());
 
-        m_details += QString(format).arg(i18n("Signal strength:"), QString("%1").arg(m_network->signalStrength()));
+        m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%").arg(m_network->signalStrength()));
         m_details += QString(format).arg(i18n("Access point (SSID):"), m_network->ssid());
         m_details += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
         m_details += QString(format).arg(i18nc("Wifi AP frequency", "Frequency:"), i18n("%1 Mhz", ap->frequency()));

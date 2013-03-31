@@ -201,10 +201,6 @@ void ModelWirelessItem::onSignalStrengthChanged(int strength)
     m_previousSignal = m_signal;
     m_signal = strength;
 
-    if (m_previousSignal - m_signal >= 25 ||
-        m_previousSignal - m_signal <= 25) {
-    }
-
     updateDetails();
 
     emit itemChanged();

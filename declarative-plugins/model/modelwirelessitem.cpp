@@ -102,6 +102,7 @@ void ModelWirelessItem::updateDetailsContent()
         NetworkManager::WirelessDevice * wifiDev = qobject_cast<NetworkManager::WirelessDevice*>(m_device);
         NetworkManager::AccessPoint * ap = wifiDev->findAccessPoint(m_network->referenceAccessPoint());
 
+        m_details += QString(format).arg(i18n("Signal strength:"), QString("%1").arg(m_network->signalStrength()));
         m_details += QString(format).arg(i18n("Access point (SSID):"), m_network->ssid());
         m_details += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
         m_details += QString(format).arg(i18nc("Wifi AP frequency", "Frequency:"), i18n("%1 Mhz", ap->frequency()));
@@ -202,8 +203,11 @@ void ModelWirelessItem::onSignalStrengthChanged(int strength)
 
     if (m_previousSignal - m_signal >= 25 ||
         m_previousSignal - m_signal <= 25) {
-        emit itemChanged();
     }
+
+    updateDetails();
+
+    emit itemChanged();
 
     NMItemDebug() << name() << ": strength changed to " << strength;
 }

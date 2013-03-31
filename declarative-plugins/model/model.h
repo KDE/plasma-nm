@@ -36,7 +36,7 @@ class Model : public QAbstractListModel
 Q_OBJECT
 public:
     enum ConnectionRole {NameRole = Qt::UserRole + 1, UuidRole, TypeRole, ConnectedRole, ConnectingRole, SsidRole, SignalRole, SecureRole, DeviceRole,
-                         ConnectionPathRole, DevicePathTypeRole, SpecificPathRole, ConnectionIconRole, ConnectionDetailInformationsRole};
+                         ConnectionPathRole, DevicePathTypeRole, SpecificPathRole, ConnectionIconRole, ConnectionDetailInformationsRole, SectionRole/*, SectionStringRole*/};
 
     Model(QObject* parent = 0);
     virtual ~Model();

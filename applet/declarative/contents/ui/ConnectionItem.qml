@@ -42,13 +42,13 @@ Item {
         expanded = false;
     }
 
-    height: 30;
+    height: 25;
     anchors { left: parent.left; right: parent.right }
 
     QIconItem {
         id: connectionTypeIcon;
 
-        height: 30; width: 30;
+        height: 25; width: 25;
         anchors { left: parent.left; top: parent.top; leftMargin: 5 }
         icon: QIcon(itemConnectionIcon);
 
@@ -64,7 +64,7 @@ Item {
     PlasmaComponents.Label {
         id: connectionNameLabel;
 
-        height: 30;
+        height: 25;
         anchors { left: connectionTypeIcon.right; right: connectButton.left; top: parent.top; leftMargin: 5 }
         text: itemName;
         elide: Text.ElideRight;
@@ -74,7 +74,7 @@ Item {
     PlasmaComponents.ToolButton {
         id: connectButton;
 
-        width: 35; height: 35;
+        width: 30; height: 30;
         anchors { right: parent.right; top: parent.top; rightMargin: 5 }
         iconSource: itemConnected ? "user-online" : "user-offline";
 
@@ -102,22 +102,6 @@ Item {
             }
         }
     }
-
-//     PlasmaComponents.ProgressBar {
-//         id: connectionSignalMeter;
-//
-//         height: itemSignal ? 15 : 0;
-//         anchors {
-//             top: connectionNameLabel.bottom;
-//             left: connectionTypeIcon.right;
-//             right: connectButton.left;
-//             leftMargin: 5;
-//             rightMargin: 10;
-//         }
-//         visible: itemSignal ? true : false;
-//         minimumValue: 0; maximumValue:100;
-//         value: itemSignal;
-//     }
 
     MouseArea {
         id: mouseAreaShowInfo;
@@ -177,6 +161,15 @@ Item {
             PropertyChanges { target: detailWidget; visible: true}
             PropertyChanges { target: connectionItem.ListView.view; interactive: false }
             PropertyChanges { target: connectionItem.ListView.view; contentY: connectionItem.y }
+        },
+
+        State {
+            name: "Hidden";
+            when: ((!connectionView.activeExpanded && itemSection == i18n("Active connections")) ||
+                   (!connectionView.previousExpanded && itemSection == i18n("Previous connections")) ||
+                   (!connectionView.uknownExpanded && itemSection == i18n("Uknown connections")))
+            PropertyChanges { target: connectionItem; height: 0; }
+            PropertyChanges { target: connectionItem; visible: false; }
         }
     ]
 

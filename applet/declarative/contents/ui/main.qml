@@ -40,6 +40,7 @@ Item {
     signal removeConnection(string connectionPath);
     signal openEditor();
     signal hideDetails();
+    signal sectionChanged();
 
     width: 300;
     height: 400;
@@ -77,10 +78,36 @@ Item {
     ListView {
         id: connectionView;
 
+        property bool activeExpanded: true;
+        property bool previousExpanded: true;
+        property bool uknownExpanded: true;
+
         anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbarSeparator.top; topMargin: 5; bottomMargin: 10 }
         clip: true
-        spacing: 8;
+        spacing: 5;
         model: connectionSortModel;
+        section.property: "itemSection";
+        section.delegate: SectionHeader {
+            onHideSection: {
+                if (section == i18n("Active connections")) {
+                    connectionView.activeExpanded = false;
+                } else if (section == i18n("Previous connections")) {
+                    connectionView.previousExpanded = false;
+                } else {
+                    connectionView.uknownExpanded = false;
+                }
+            }
+
+            onShowSection: {
+                if (section == i18n("Active connections")) {
+                    connectionView.activeExpanded = true;
+                } else if (section == i18n("Previous connections")) {
+                    connectionView.previousExpanded = true;
+                } else {
+                    connectionView.uknownExpanded = true;
+                }
+            }
+        }
         delegate: ConnectionItem {
             onActivateConnectionItem: activateConnection(connectionPath, devicePath, specificObjectPath);
             onAddAndActivateConnectionItem: addAndActivateConnection(devicePath, specificObjectPath);
@@ -92,7 +119,6 @@ Item {
             onItemExpanded: {
                 toolbar.hideOptions();
             }
-
             Component.onCompleted: {
                 mainWindow.hideDetails.connect(hideDetails);
             }

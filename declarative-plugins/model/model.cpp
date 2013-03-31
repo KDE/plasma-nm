@@ -49,6 +49,7 @@ Model::Model(QObject* parent):
     roles[SpecificPathRole] = "itemSpecificPath";
     roles[ConnectionIconRole] = "itemConnectionIcon";
     roles[ConnectionDetailInformationsRole] = "itemDetailInformations";
+    roles[SectionRole] = "itemSection";
     setRoleNames(roles);
 
     connect(m_monitor, SIGNAL(addWirelessNetwork(NetworkManager::WirelessNetwork*, NetworkManager::Device*)),
@@ -132,6 +133,12 @@ QVariant Model::data(const QModelIndex& index, int role) const
             case ConnectionDetailInformationsRole:
                 return item->detailInformations();
                 break;
+            case SectionRole:
+                return item->sectionType();
+                break;
+//             case SectionStringRole:
+//                 return item->sectionTypeString();
+//                 break;
             default:
                 break;
         }
@@ -311,6 +318,7 @@ void Model::insertItem(ModelItem* item)
                 wifiIt->setWirelessNetwork(wifiItem->wirelessNetwork());
                 }
             }
+
             if (!it->connection() && item->connection()) {
                 NMModelDebug() << "Connection " << it->name() << " has been updated by connection";
                 it->setConnection(item->connection());
@@ -332,11 +340,6 @@ void Model::insertItem(ModelItem* item)
         m_connections << item;
         endInsertRows();
 
-//         connect(item, SIGNAL(accessPointChanged()), SLOT(onChanged()));
-//         connect(item, SIGNAL(connectionChanged()), SLOT(onChanged()));
-//         connect(item, SIGNAL(defaultRouteChanged()), SLOT(onChanged()));
-//         connect(item, SIGNAL(signalChanged()), SLOT(onChanged()));
-//         connect(item, SIGNAL(stateChanged()), SLOT(onChanged()));
         connect(item, SIGNAL(itemChanged()), SLOT(onChanged()));
         NMModelDebug() << "Connection " << item->name() << " has been added";
     } else {

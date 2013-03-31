@@ -29,6 +29,8 @@ class ModelItem : public QObject
 {
 Q_OBJECT
 public:
+    enum SectionType { Connected, Known, Unknown };
+
     ModelItem(NetworkManager::Device * device = 0, QObject * parent = 0);
     virtual ~ModelItem();
 
@@ -43,6 +45,7 @@ public:
     virtual QString ssid() const;
     virtual int signal() const;
     virtual bool secure() const;
+    QString sectionType() const;
     NetworkManager::Settings::ConnectionSettings::ConnectionType type() const;
 
     bool operator==(ModelItem * item);
@@ -86,6 +89,7 @@ protected:
     QString m_deviceUdi;
     QString m_details;
     QString m_name;
+    SectionType m_sectionType;
     QString m_uuid;
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
 

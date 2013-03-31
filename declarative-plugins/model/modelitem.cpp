@@ -31,6 +31,7 @@ ModelItem::ModelItem(NetworkManager::Device * device, QObject * parent):
     m_device(0),
     m_connected(false),
     m_connecting(false),
+    m_sectionType(ModelItem::Unknown),
     m_type(NetworkManager::Settings::ConnectionSettings::Unknown)
 {
     setDevice(device);
@@ -129,6 +130,17 @@ bool ModelItem::secure() const
     return false;
 }
 
+QString ModelItem::sectionType() const
+{
+    if (m_connected) {
+        return i18n("Active connections");
+    } else if (m_uuid != "") {
+        return i18n("Previous connections");
+    } else {
+        return i18n("Uknown connections");
+    }
+}
+
 NetworkManager::Settings::ConnectionSettings::ConnectionType ModelItem::type() const
 {
     return m_type;
@@ -194,6 +206,7 @@ void ModelItem::setActiveConnection(NetworkManager::ActiveConnection* active)
             NMItemDebug() << name() << ": activated";
             m_connected = true;
             m_connecting = false;
+
         }
 
         connect(m_active, SIGNAL(default4Changed(bool)),

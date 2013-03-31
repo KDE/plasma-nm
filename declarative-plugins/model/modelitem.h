@@ -23,8 +23,6 @@
 
 #include <QtNetworkManager/activeconnection.h>
 #include <QtNetworkManager/connection.h>
-#include <QtNetworkManager/vpnconnection.h>
-#include <QtNetworkManager/wirelessnetwork.h>
 #include <QtNetworkManager/settings/connection.h>
 
 class ModelItem : public QObject
@@ -32,19 +30,19 @@ class ModelItem : public QObject
 Q_OBJECT
 public:
     ModelItem(NetworkManager::Device * device = 0, QObject * parent = 0);
-    ~ModelItem();
+    virtual ~ModelItem();
 
     // Basic properties
 
-    QString name() const;
-    QString uuid() const;
     bool connected() const;
     bool connecting() const;
     QString deviceUdi() const;
-    QString icon() const;
-    QString ssid() const;
-    int signal() const;
-    bool secure() const;
+    virtual QString icon() const;
+    QString name() const;
+    QString uuid() const;
+    virtual QString ssid() const;
+    virtual int signal() const;
+    virtual bool secure() const;
     NetworkManager::Settings::ConnectionSettings::ConnectionType type() const;
 
     bool operator==(ModelItem * item);
@@ -55,63 +53,46 @@ public:
 
     // Objects
 
-    void setActiveConnection(NetworkManager::ActiveConnection * active);
+    virtual void setActiveConnection(NetworkManager::ActiveConnection * active);
     NetworkManager::ActiveConnection * activeConnection() const;
 
-    void setConnection(NetworkManager::Settings::Connection * connection);
+    virtual void setConnection(NetworkManager::Settings::Connection * connection);
     NetworkManager::Settings::Connection * connection() const;
 
     void setDevice(NetworkManager::Device * device);
     NetworkManager::Device * device() const;
 
-    void setWirelessNetwork(NetworkManager::WirelessNetwork * network);
-    NetworkManager::WirelessNetwork * wirelessNetwork() const;
-
     // Object paths
 
     QString connectionPath() const;
     QString devicePath() const;
-    QString specificPath() const;
+    virtual QString specificPath() const;
 
 Q_SIGNALS:
-    void accessPointChanged();
-    void connectionChanged();
-    void defaultRouteChanged();
-    void signalChanged();
-    void stateChanged();
+    void itemChanged();
 
 private Q_SLOTS:
-    void onAccessPointChanged(const QString & accessPoint);
     void onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state);
     void onConnectionUpdated(const QVariantMapMap & map);
     void onDefaultRouteChanged(bool defaultRoute);
-    void onSignalStrengthChanged(int strength);
-    void onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state);
 
-private:
+protected:
     NetworkManager::ActiveConnection * m_active;
     NetworkManager::Settings::Connection * m_connection;
     NetworkManager::Device * m_device;
-    NetworkManager::WirelessNetwork * m_network;
-    NetworkManager::VpnConnection * m_vpn;
 
+    bool m_connected;
+    bool m_connecting;
+    QString m_deviceUdi;
+    QString m_details;
     QString m_name;
     QString m_uuid;
-    bool m_connected;
-    bool m_conecting;
-    QString m_details;
-    QString m_deviceUdi;
-    QString m_icon;
-    QString m_ssid;
-    int m_previousSignal;
-    int m_signal;
-    bool m_secure;
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
 
     void updateDetails();
-    void setConnectionSettings(const QVariantMapMap & map);
-    void setConnectionIcon();
-    void setWirelessIcon();
+
+    virtual void updateDetailsContent();
+    virtual void setConnectionSettings(const QVariantMapMap & map);
 };
 
 #endif // PLASMA_NM_CONNECTION_ITEM_H

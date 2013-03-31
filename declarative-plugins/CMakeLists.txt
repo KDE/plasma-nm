@@ -9,6 +9,9 @@ set(plasma_nm_qml_plugins_SRCS
 
    model/model.cpp
    model/modelitem.cpp
+   model/modelwirelessitem.cpp
+   model/modelwireditem.cpp
+   model/modelvpnitem.cpp
    model/monitor.cpp
    model/sortmodel.cpp
 

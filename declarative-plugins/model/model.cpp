@@ -23,6 +23,10 @@
 #include <QtNetworkManager/wireddevice.h>
 #include <QtNetworkManager/settings/802-11-wireless.h>
 
+#include "model/modelwirelessitem.h"
+#include "model/modelwireditem.h"
+#include "model/modelvpnitem.h"
+
 #include "debug.h"
 
 Model::Model(QObject* parent):
@@ -138,7 +142,7 @@ QVariant Model::data(const QModelIndex& index, int role) const
 
 void Model::addWirelessNetwork(NetworkManager::WirelessNetwork * network, NetworkManager::Device * device)
 {
-    ModelItem * item = new ModelItem(device);
+    ModelWirelessItem * item = new ModelWirelessItem(device);
     item->setWirelessNetwork(network);
 
     insertItem(item);
@@ -165,10 +169,20 @@ void Model::addConnection(NetworkManager::Settings::Connection* connection, Netw
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
     settings->fromMap(connection->settings());
 
-    ModelItem * item = new ModelItem(device);
-    item->setConnection(connection);
+    if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
+        ModelWirelessItem * item = new ModelWirelessItem(device);
+        item->setConnection(connection);
+        insertItem(item);
+    } else if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Wired) {
+        ModelWiredItem * item = new ModelWiredItem(device);
+        item->setConnection(connection);
+        insertItem(item);
+    } else {
+        ModelItem * item = new ModelItem(device);
+        item->setConnection(connection);
+        insertItem(item);
+    }
 
-    insertItem(item);
 }
 
 void Model::addVpnConnection(NetworkManager::Settings::Connection * connection)
@@ -176,7 +190,7 @@ void Model::addVpnConnection(NetworkManager::Settings::Connection * connection)
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
     settings->fromMap(connection->settings());
 
-    ModelItem * item = new ModelItem();
+    ModelVpnItem * item = new ModelVpnItem();
     item->setConnection(connection);
 
     NMModelDebug() << "VPN Connection " << settings->id() << " has been added";
@@ -289,9 +303,13 @@ void Model::insertItem(ModelItem* item)
             (!it->name().isEmpty() && !item->name().isEmpty() && it->name() == item->name()) ||
             (!it->ssid().isEmpty() && !item->ssid().isEmpty() && it->ssid() == item->ssid())) {
             // Update info
-            if (!it->wirelessNetwork() && item->wirelessNetwork()) {
+            if (it->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
+                ModelWirelessItem * wifiIt = qobject_cast<ModelWirelessItem*>(it);
+                ModelWirelessItem * wifiItem = qobject_cast<ModelWirelessItem*>(item);
+                if (!wifiIt->wirelessNetwork() && wifiItem->wirelessNetwork()) {
                 NMModelDebug() << "Connection " << it->name() << " has been updated by wireless network";
-                it->setWirelessNetwork(item->wirelessNetwork());
+                wifiIt->setWirelessNetwork(wifiItem->wirelessNetwork());
+                }
             }
             if (!it->connection() && item->connection()) {
                 NMModelDebug() << "Connection " << it->name() << " has been updated by connection";
@@ -314,12 +332,12 @@ void Model::insertItem(ModelItem* item)
         m_connections << item;
         endInsertRows();
 
-        connect(item, SIGNAL(accessPointChanged()), SLOT(onChanged()));
-        connect(item, SIGNAL(connectionChanged()), SLOT(onChanged()));
-        connect(item, SIGNAL(defaultRouteChanged()), SLOT(onChanged()));
-        connect(item, SIGNAL(signalChanged()), SLOT(onChanged()));
-        connect(item, SIGNAL(stateChanged()), SLOT(onChanged()));
-
+//         connect(item, SIGNAL(accessPointChanged()), SLOT(onChanged()));
+//         connect(item, SIGNAL(connectionChanged()), SLOT(onChanged()));
+//         connect(item, SIGNAL(defaultRouteChanged()), SLOT(onChanged()));
+//         connect(item, SIGNAL(signalChanged()), SLOT(onChanged()));
+//         connect(item, SIGNAL(stateChanged()), SLOT(onChanged()));
+        connect(item, SIGNAL(itemChanged()), SLOT(onChanged()));
         NMModelDebug() << "Connection " << item->name() << " has been added";
     } else {
         delete item;

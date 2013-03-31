@@ -42,7 +42,7 @@ Item {
         expanded = false;
     }
 
-    height: 25;
+    height: 30;
     anchors { left: parent.left; right: parent.right }
 
     QIconItem {
@@ -64,7 +64,7 @@ Item {
     PlasmaComponents.Label {
         id: connectionNameLabel;
 
-        height: 25;
+        height: 30;
         anchors { left: connectionTypeIcon.right; right: connectButton.left; top: parent.top; leftMargin: 5 }
         text: itemName;
         elide: Text.ElideRight;

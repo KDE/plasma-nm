@@ -84,7 +84,6 @@ Item {
 
         anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbarSeparator.top; topMargin: 5; bottomMargin: 10 }
         clip: true
-        spacing: 5;
         model: connectionSortModel;
         section.property: "itemSection";
         section.delegate: SectionHeader {

@@ -31,6 +31,7 @@
 #include "pppoewidget.h"
 #include "gsmwidget.h"
 #include "cdmawidget.h"
+#include "btwidget.h"
 
 #include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/activeconnection.h>
@@ -178,6 +179,21 @@ void ConnectionDetailEditor::initTabs()
         m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
         m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
+    } else if (type == NetworkManager::Settings::ConnectionSettings::Bluetooth) {
+        BtWidget * btWidget = new BtWidget(m_connection->setting(NetworkManager::Settings::Setting::Bluetooth), this);
+        m_detailEditor->tabWidget->addTab(btWidget, i18n("Bluetooth"));
+        NetworkManager::Settings::BluetoothSetting * btSetting = static_cast<NetworkManager::Settings::BluetoothSetting *>(m_connection->setting(NetworkManager::Settings::Setting::Bluetooth));
+        if (btSetting->profileType() == NetworkManager::Settings::BluetoothSetting::Dun) {
+            GsmWidget * gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Settings::Setting::Gsm), this);
+            m_detailEditor->tabWidget->addTab(gsmWidget, i18n("GSM"));
+            PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
+            m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
+            // TODO serial setting?
+        }
+        IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
+        m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
+        IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv6), this);
+        m_detailEditor->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
     }
 }
 

@@ -34,6 +34,8 @@ BtWidget::BtWidget(NetworkManager::Settings::Setting * setting, QWidget* parent,
     m_ui->type->addItem(i18n("DUN (dial up networking)"), NetworkManager::Settings::BluetoothSetting::Dun);
     m_ui->type->addItem(i18n("PAN (personal area network)"), NetworkManager::Settings::BluetoothSetting::Panu);
 
+    m_ui->type->setEnabled(false);
+
     if (setting)
         loadConfig(setting);
 }

@@ -31,13 +31,13 @@ Item {
     property bool expanded: true;
 
     anchors { left: parent.left; right: parent.right }
-    height: 20
+    height: 25;
 
     PlasmaComponents.Label {
         id: sectionLabel
 
         height: 15;
-        anchors { bottom: parent.bottom; bottomMargin: 5; left: parent.left; leftMargin: 10 }
+        anchors { bottom: parent.bottom; bottomMargin: 5; left: expandButton.right; leftMargin: 5 }
         text: section;
         font.weight: Font.DemiBold;
     }
@@ -46,8 +46,7 @@ Item {
         id: sectionSeparator
 
         height: 1;
-        width: 20;
-        anchors { left: sectionLabel.right; right: expandButton.left; bottom: sectionLabel.bottom; leftMargin: 10; rightMargin: 5; bottomMargin: 5 }
+        anchors { left: sectionLabel.right; right: parent.right; bottom: sectionLabel.bottom; leftMargin: 10; rightMargin: 10; bottomMargin: 5 }
         radius: 2;
         color: theme.highlightColor;
     }
@@ -55,8 +54,8 @@ Item {
     PlasmaComponents.ToolButton {
         id: expandButton;
 
-        height: 20; width: 20
-        anchors { right: parent.right; rightMargin: 10}
+        height: 25; width: 25;
+        anchors { left: parent.left; leftMargin: 4}
         iconSource: "list-remove";
 
         onClicked: {
@@ -68,7 +67,6 @@ Item {
                 iconSource = "list-remove";
             }
             expanded = !expanded;
-
         }
     }
 }

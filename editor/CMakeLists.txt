@@ -29,6 +29,7 @@ set(connectioneditor_SRCS
    pppoewidget.cpp
    gsmwidget.cpp
    cdmawidget.cpp
+   btwidget.cpp
 )
 
 kde4_add_ui_files(connectioneditor_SRCS
@@ -48,6 +49,7 @@ kde4_add_ui_files(connectioneditor_SRCS
     ui/pppoe.ui
     ui/gsm.ui
     ui/cdma.ui
+    ui/bt.ui
 )
 
 kde4_add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})

@@ -38,12 +38,6 @@ Item {
     signal enableWwan(bool enable);
     signal openEditorToolbar();
 
-    function hideOptions()
-    {
-        toolBar.state = '';
-        expanded = false;
-    }
-
     height: 30;
 
     PlasmaNM.GlobalStatus {
@@ -91,12 +85,14 @@ Item {
 
         onClicked: {
             if (!expanded) {
-                toolBar.state = 'Options';
+                toolbarExpanded();
+                expanded = !expanded;
+            // Toolbar may be set as expanded, but was closed from the item
+            } else if (expanded && connectionView.itemExpandable == true && toolbar.toolbarExpandable == false) {
                 toolbarExpanded();
             } else {
-                toolBar.state = '';
+                expanded = !expanded;
             }
-            expanded = !expanded;
         }
     }
 
@@ -133,7 +129,10 @@ Item {
         onNetworkingEnabledChanged: enableNetworking(enabled);
         onWirelessEnabledChanged: enableWireless(enabled);
         onWwanEnabledChanged: enableWwan(enabled);
-        onOpenEditor: openEditorToolbar();
+        onOpenEditor: {
+            expanded = false;
+            openEditorToolbar();
+        }
 
         Component.onCompleted: {
             enabledConnections.init();
@@ -143,6 +142,7 @@ Item {
     states: [
         State {
             name: "Options";
+            when: expanded && toolbar.toolbarExpandable;
             PropertyChanges { target: toolBar; height: 150 }
             PropertyChanges { target: options; visible: true }
         }

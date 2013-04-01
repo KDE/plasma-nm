@@ -37,11 +37,6 @@ Item {
     signal removeConnectionItem(string connectionName, string connectionPath);
     signal itemExpanded();
 
-    function hideDetails() {
-        state = '';
-        expanded = false;
-    }
-
     height: 30;
     anchors { left: parent.left; right: parent.right }
 
@@ -96,10 +91,7 @@ Item {
                 deactivateConnectionItem(itemConnectionPath);
             }
 
-            if (expanded) {
-                connectionItem.state = '';
-                expanded = false;
-            }
+            expanded = false;
         }
     }
 
@@ -115,12 +107,14 @@ Item {
 
         onClicked: {
             if (!expanded) {
-                connectionItem.state = 'Details';
+                itemExpanded();
+                expanded = !expanded;
+            // Item may be set as expanded, but was closed from the toolbar
+            } else if (expanded && connectionView.itemExpandable == false && toolbar.toolbarExpandable == true) {
                 itemExpanded();
             } else {
-                connectionItem.state = '';
+                expanded = !expanded;
             }
-            expanded = !expanded;
         }
     }
 
@@ -142,7 +136,7 @@ Item {
         editable: itemUuid == "" ? false : true;
 
         onHideDetails: {
-            connectionItem.hideDetails();
+            expanded = false;
         }
 
         onEditConnection: {
@@ -157,6 +151,7 @@ Item {
     states: [
         State {
             name: "Details";
+            when: (expanded && connectionView.itemExpandable);
             PropertyChanges { target: connectionItem; height: connectionItem.ListView.view.height }
             PropertyChanges { target: detailWidget; visible: true}
             PropertyChanges { target: connectionItem.ListView.view; interactive: false }

@@ -39,7 +39,6 @@ Item {
     signal editConnection(string connectionUuid);
     signal removeConnection(string connectionPath);
     signal openEditor();
-    signal hideDetails();
     signal sectionChanged();
 
     width: 300;
@@ -77,6 +76,8 @@ Item {
 
     ListView {
         id: connectionView;
+
+        property bool itemExpandable: true;
 
         property bool activeExpanded: true;
         property bool previousExpanded: true;
@@ -116,10 +117,8 @@ Item {
             }
             onRemoveConnectionItem: dialog.openDialog(connectionName, connectionPath);
             onItemExpanded: {
-                toolbar.hideOptions();
-            }
-            Component.onCompleted: {
-                mainWindow.hideDetails.connect(hideDetails);
+                connectionView.itemExpandable = true;
+                toolbar.toolbarExpandable = false;
             }
         }
     }
@@ -136,13 +135,16 @@ Item {
     Toolbar {
         id: toolbar;
 
+        property bool toolbarExpandable: true;
+
         anchors { left: parent.left; right: parent.right; bottom: parent.bottom; leftMargin: 10}
 
         onToolbarExpanded: {
-            hideDetails();
+            toolbarExpandable = true;
+            connectionView.itemExpandable = false;
         }
+
         onOpenEditorToolbar: {
-            toolbar.hideOptions();
             openEditor();
         }
     }

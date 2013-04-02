@@ -65,20 +65,25 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
     const bool allowInteraction = secretsFlags.testFlag(AllowInteraction);
 
     if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested)) {
-        NetworkManager::Settings::WirelessSetting * wifi = static_cast<NetworkManager::Settings::WirelessSetting *>(settings->setting(NetworkManager::Settings::Setting::Wireless));
-        QString ssid;
-        if (wifi)
-            ssid = wifi->ssid();
-
-        PasswordDialog * dlg = new PasswordDialog(setting, setting->needSecrets(requestNew), ssid);
         QVariantMapMap result;
-        dlg->setWindowModality(Qt::WindowModal);
-        KWindowSystem::setMainWindow(dlg, 0);
-        KWindowSystem::activateWindow(dlg->winId());
-        if (dlg->exec() == QDialog::Accepted) {
-            result.insert(setting_name, dlg->secrets());
-            delete dlg;
-            return result;
+        if (setting->type() == NetworkManager::Settings::Setting::Vpn) {
+            // TODO
+        } else {
+            NetworkManager::Settings::WirelessSetting * wifi = static_cast<NetworkManager::Settings::WirelessSetting *>(settings->setting(NetworkManager::Settings::Setting::Wireless));
+            QString ssid;
+            if (wifi)
+                ssid = wifi->ssid();
+
+            PasswordDialog * dlg = new PasswordDialog(setting, setting->needSecrets(requestNew), ssid);
+
+            dlg->setWindowModality(Qt::WindowModal);
+            KWindowSystem::setMainWindow(dlg, 0);
+            KWindowSystem::activateWindow(dlg->winId());
+            if (dlg->exec() == QDialog::Accepted) {
+                result.insert(setting_name, dlg->secrets());
+                delete dlg;
+                return result;
+            }
         }
     }
 

@@ -19,6 +19,7 @@ set(plasma_nm_qml_plugins_SRCS
    handler.cpp
    passworddialog.cpp
    secretagent.cpp
+   vpnuiplugin.cpp
    qmlplugins.cpp
 )
 

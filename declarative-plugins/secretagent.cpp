@@ -62,8 +62,9 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
     NetworkManager::SecretAgent::GetSecretsFlags secretsFlags(static_cast<int>(flags));
     const bool requestNew = secretsFlags.testFlag(RequestNew);
     const bool userRequested = secretsFlags.testFlag(UserRequested);
+    const bool allowInteraction = secretsFlags.testFlag(AllowInteraction);
 
-    if (requestNew || userRequested || (secretsFlags.testFlag(AllowInteraction) && !setting->needSecrets(requestNew).isEmpty())) {
+    if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested)) {
         NetworkManager::Settings::WirelessSetting * wifi = static_cast<NetworkManager::Settings::WirelessSetting *>(settings->setting(NetworkManager::Settings::Setting::Wireless));
         QString ssid;
         if (wifi)

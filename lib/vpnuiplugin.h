@@ -26,7 +26,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <QVariant>
 #include <QMessageBox>
 
-#include "../editor/settingwidget.h"
+#include "settingwidget.h"
 
 /**
  * Plugin for UI elements for VPN configuration

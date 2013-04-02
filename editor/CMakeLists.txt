@@ -1,5 +1,6 @@
 include_directories (${CMAKE_CURRENT_BINARY_DIR}
                      ${CMAKE_CURRENT_SOURCE_DIR}
+                     ${CMAKE_CURRENT_SOURCE_DIR}/../lib
 )
 
 set(connectioneditor_SRCS
@@ -8,7 +9,6 @@ set(connectioneditor_SRCS
    connectionitem.cpp
    connectiontypeitem.cpp
    connectiondetaileditor.cpp
-   settingwidget.cpp
    connectionwidget.cpp
    wiredconnectionwidget.cpp
    wificonnectionwidget.cpp
@@ -53,7 +53,7 @@ kde4_add_ui_files(connectioneditor_SRCS
 )
 
 kde4_add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})
-target_link_libraries(kde-nm-connection-editor QtNetworkManager ${QT_QTCORE_LIBRARY} ${QT_QTDBUS_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
+target_link_libraries(kde-nm-connection-editor plasmanm-internal QtNetworkManager ${QT_QTCORE_LIBRARY} ${QT_QTDBUS_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
 
 install(TARGETS kde-nm-connection-editor DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS kde-nm-connection-editor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

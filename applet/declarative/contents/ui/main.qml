@@ -41,6 +41,11 @@ Item {
     signal openEditor();
     signal sectionChanged();
 
+    function hideOptions() {
+        connectionView.itemExpandable = true;
+        toolbar.toolbarExpandable = false;
+    }
+
     width: 300;
     height: 400;
 
@@ -203,6 +208,6 @@ Item {
     }
 
     Component.onCompleted: {
-        plasmoid.popupEvent.connect(toolbar.hideOptions);
+        plasmoid.popupEvent.connect(mainWindow.hideOptions);
     }
 }

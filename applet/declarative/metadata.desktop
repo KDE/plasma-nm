@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Network Management
+Name[cs]=Správa sítě
 Name[de]=Netzwerkverwaltung
 Name[pt]=Gestão de Rede
 Name[pt_BR]=Gerenciamento de rede
@@ -9,6 +10,7 @@ Name[uk]=Керування мережею
 Name[x-test]=xxNetwork Managementxx
 
 Comment=Network status and control
+Comment[cs]=Stav a ovládání sítě
 Comment[pt]=Estado e controlo da rede
 Comment[pt_BR]=Estado e controle da rede
 Comment[sk]=Správa a ovládanie siete

@@ -115,6 +115,10 @@ void ConnectionDetailEditor::initEditor()
                     connection->secrets("802-11-wireless-security");
                     m_numSecrets = 2;
                     break;
+                case Settings::ConnectionSettings::Vpn:
+                    connection->secrets("vpn");
+                    m_numSecrets = 1;
+                    break;
                 default:
                     initTabs();
                     break;

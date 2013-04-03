@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Lukáš Tinkl &lt;ltinkl@redhat.com&gt;</author>
+ <class>VpncWidget</class>
+ <widget class="QWidget" name="VpncWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>449</width>
+    <height>405</height>
+   </rect>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>&amp;Gateway:</string>
+     </property>
+     <property name="buddy">
+      <cstring>gateway</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QLineEdit" name="gateway"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>&amp;User name:</string>
+     </property>
+     <property name="buddy">
+      <cstring>user</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLineEdit" name="user"/>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>User &amp;password:</string>
+     </property>
+     <property name="buddy">
+      <cstring>userPassword</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="KLineEdit" name="userPassword">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="passwordMode">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cboUserPasswordType">
+       <item>
+        <property name="text">
+         <string>Always Ask</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Saved</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Not Required</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>G&amp;roup name:</string>
+     </property>
+     <property name="buddy">
+      <cstring>group</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QLineEdit" name="group"/>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Group pa&amp;ssword:</string>
+     </property>
+     <property name="buddy">
+      <cstring>groupPassword</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="KLineEdit" name="groupPassword">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="passwordMode">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cboGroupPasswordType">
+       <item>
+        <property name="text">
+         <string>Always Ask</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Saved</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Not Required</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="5" column="2">
+    <widget class="QCheckBox" name="cbShowPasswords">
+     <property name="text">
+      <string>S&amp;how passwords</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Preferred</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>144</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="7" column="0" colspan="3">
+    <widget class="QCheckBox" name="useHybridAuth">
+     <property name="text">
+      <string>Use h&amp;ybrid authentication</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>CA &amp;file:</string>
+     </property>
+     <property name="buddy">
+      <cstring>caFile</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2">
+    <widget class="KUrlRequester" name="caFile">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="2">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnAdvanced">
+       <property name="text">
+        <string>&amp;Advanced...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QFrame</extends>
+   <header>kurlrequester.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>gateway</tabstop>
+  <tabstop>user</tabstop>
+  <tabstop>userPassword</tabstop>
+  <tabstop>cboUserPasswordType</tabstop>
+  <tabstop>group</tabstop>
+  <tabstop>groupPassword</tabstop>
+  <tabstop>cboGroupPasswordType</tabstop>
+  <tabstop>cbShowPasswords</tabstop>
+  <tabstop>useHybridAuth</tabstop>
+  <tabstop>caFile</tabstop>
+ </tabstops>
+ <includes>
+  <include location="local">#include KUrlRequester</include>
+ </includes>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>useHybridAuth</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>caFile</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>58</x>
+     <y>391</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>147</x>
+     <y>421</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>useHybridAuth</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_6</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>37</x>
+     <y>395</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>33</x>
+     <y>424</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

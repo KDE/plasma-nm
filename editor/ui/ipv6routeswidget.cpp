@@ -107,45 +107,33 @@ bool IpV6RoutesWidget::ignoreautoroutes() const
     return d->ui.cbIgnoreAutoRoutes->isChecked();
 }
 
-void IpV6RoutesWidget::setRoutes(const QList<NetworkManager::IPv6Route> &list)
+void IpV6RoutesWidget::setRoutes(const QList<NetworkManager::IpRoute> &list)
 {
     d->model.removeRows(0, d->model.rowCount());
-    foreach (const NetworkManager::IPv6Route &addr, list) {
+    foreach (const NetworkManager::IpRoute &route, list) {
         QList<QStandardItem *> item;
-        QNetworkAddressEntry entry;
-        QNetworkAddressEntry nexthop;
-        // we need to set up IP before prefix/netmask manipulation
-        entry.setIp(QHostAddress(addr.route()));
-        nexthop.setIp(QHostAddress(addr.nextHop()));
-        kDebug()<<entry.ip().toString();
-        item << new QStandardItem(entry.ip().toString())
-             << new QStandardItem(QString::number(addr.prefix(),10))
-             << new QStandardItem(nexthop.ip().toString())
-             << new QStandardItem(QString::number(addr.metric(),10));
+        kDebug() << route.ip();
+        item << new QStandardItem(route.ip().toString())
+             << new QStandardItem(QString::number(route.prefixLength(), 10))
+             << new QStandardItem(route.nextHop().toString())
+             << new QStandardItem(QString::number(route.metric(), 10));
 
         d->model.appendRow(item);
     }
 }
 
-QList<NetworkManager::IPv6Route> IpV6RoutesWidget::routes()
+QList<NetworkManager::IpRoute> IpV6RoutesWidget::routes()
 {
-    QList<NetworkManager::IPv6Route> list;
+    QList<NetworkManager::IpRoute> list;
 
     for (int i = 0, rowCount = d->model.rowCount(); i < rowCount; i++) {
-        QHostAddress ip, nhop;
-        QNetworkAddressEntry entry;
-        quint32 netmask, metric;
+        NetworkManager::IpRoute route;
+        route.setIp(QHostAddress(d->model.item(i, 0)->text()));
+        route.setNextHop(QHostAddress(d->model.item(i, 2)->text()));
+        route.setPrefixLength(d->model.item(i, 1)->text().toUInt());
+        route.setMetric(d->model.item(i, 3)->text().toUInt());
 
-        ip.setAddress(d->model.item(i, 0)->text());
-        entry.setIp(ip);
-        nhop.setAddress(d->model.item(i, 2)->text());
-        netmask = d->model.item(i, 1)->text().toUInt();
-        metric = d->model.item(i, 3)->text().toUInt();
-
-        list.append(NetworkManager::IPv6Route(ip.toIPv6Address(),
-                                              netmask,
-                                              nhop.toIPv6Address(),
-                                              metric));
+        list << route;
     }
     return list;
 }

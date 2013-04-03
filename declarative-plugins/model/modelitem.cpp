@@ -157,12 +157,12 @@ void ModelItem::updateDetailsContent()
     if (m_device) {
 
         if (device()->ipV4Config().isValid() && connected()) {
-            QHostAddress addr(device()->ipV4Config().addresses().first().address());
+            QHostAddress addr = device()->ipV4Config().addresses().first().ip();
             m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
         }
 
         if (device()->ipV6Config().isValid() && connected()) {
-            QHostAddress addr(device()->ipV6Config().addresses().first().address());
+            QHostAddress addr = device()->ipV6Config().addresses().first().ip();
             m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
         }
 

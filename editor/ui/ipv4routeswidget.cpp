@@ -106,50 +106,38 @@ bool IpV4RoutesWidget::ignoreautoroutes() const
     return d->ui.cbIgnoreAutoRoutes->isChecked();
 }
 
-void IpV4RoutesWidget::setRoutes(const QList<NetworkManager::IPv4Route> &list)
+void IpV4RoutesWidget::setRoutes(const QList<NetworkManager::IpRoute> &list)
 {
     d->model.removeRows(0, d->model.rowCount());
-    foreach (const NetworkManager::IPv4Route &addr, list) {
+    foreach (const NetworkManager::IpRoute &route, list) {
         QList<QStandardItem *> item;
-        QNetworkAddressEntry entry;
-        QNetworkAddressEntry nexthop;
-        // we need to set up IP before prefix/netmask manipulation
-        entry.setIp(QHostAddress(addr.route()));
-        entry.setPrefixLength(addr.prefix());
-        nexthop.setIp(QHostAddress(addr.nextHop()));
-        kDebug()<<entry.ip().toString();
-        item << new QStandardItem(entry.ip().toString())
-             << new QStandardItem(entry.netmask().toString())
-             << new QStandardItem(nexthop.ip().toString())
-             << new QStandardItem(QString::number(addr.metric(),10));
+
+        kDebug() << route.ip();
+        item << new QStandardItem(route.ip().toString())
+             << new QStandardItem(route.netmask().toString())
+             << new QStandardItem(route.nextHop().toString())
+             << new QStandardItem(QString::number(route.metric(), 10));
 
         d->model.appendRow(item);
     }
 }
 
-QList<NetworkManager::IPv4Route> IpV4RoutesWidget::routes()
+QList<NetworkManager::IpRoute> IpV4RoutesWidget::routes()
 {
-    QList<NetworkManager::IPv4Route> list;
+    QList<NetworkManager::IpRoute> list;
 
     for (int i = 0, rowCount = d->model.rowCount(); i < rowCount; i++) {
-        QHostAddress ip, mask, nhop;
-        QNetworkAddressEntry entry;
-        quint32 metric = 0;
+        NetworkManager::IpRoute route;
+        route.setIp(QHostAddress(d->model.item(i, 0)->text()));
+        route.setNetmask(QHostAddress(d->model.item(i, 1)->text()));
+        route.setNextHop(QHostAddress(d->model.item(i, 2)->text()));
 
-        ip.setAddress(d->model.item(i, 0)->text());
-        entry.setIp(ip);
-        mask.setAddress(d->model.item(i, 1)->text());
-        entry.setNetmask(mask);
-        nhop.setAddress(d->model.item(i, 2)->text());
         QStandardItem *item = d->model.item(i, 3);
         if (item) {
-            metric = item->text().toUInt();
+            route.setMetric(item->text().toUInt());
         }
 
-        list.append(NetworkManager::IPv4Route(ip.toIPv4Address(),
-                                              entry.prefixLength(),
-                                              nhop.toIPv4Address(),
-                                              metric));
+        list << route;
     }
     return list;
 }

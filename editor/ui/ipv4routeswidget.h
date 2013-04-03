@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDialog>
 #include <QStyledItemDelegate>
 
-#include <QtNetworkManager/ipv4config.h>
+#include <QtNetworkManager/ipconfig.h>
 
 class QStandardItem;
 class QItemSelection;
@@ -36,8 +36,8 @@ public:
     IpV4RoutesWidget(QWidget * parent = 0);
     virtual ~IpV4RoutesWidget();
 
-    void setRoutes(const QList<NetworkManager::IPv4Route> &list);
-    QList<NetworkManager::IPv4Route> routes();
+    void setRoutes(const QList<NetworkManager::IpRoute> &list);
+    QList<NetworkManager::IpRoute> routes();
     void setNeverDefault(bool checked);
     bool neverDefault() const;
     void setIgnoreAutoRoutes(bool checked);

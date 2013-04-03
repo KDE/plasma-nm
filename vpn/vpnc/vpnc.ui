@@ -52,6 +52,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="KLineEdit" name="userPassword">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -65,6 +68,9 @@
      </item>
      <item>
       <widget class="QComboBox" name="cboUserPasswordType">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
        <item>
         <property name="text">
          <string>Always Ask</string>
@@ -111,6 +117,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="KLineEdit" name="groupPassword">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -124,6 +133,9 @@
      </item>
      <item>
       <widget class="QComboBox" name="cboGroupPasswordType">
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
        <item>
         <property name="text">
          <string>Always Ask</string>
@@ -243,9 +255,6 @@
   <tabstop>useHybridAuth</tabstop>
   <tabstop>caFile</tabstop>
  </tabstops>
- <includes>
-  <include location="local">#include KUrlRequester</include>
- </includes>
  <resources/>
  <connections>
   <connection>

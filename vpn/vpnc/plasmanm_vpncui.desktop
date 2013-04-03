@@ -2,7 +2,7 @@
 Type=Service
 Icon=
 ServiceTypes=PlasmaNM/VpnUiPlugin
-X-KDE-Library=plasmanm-vpncui
+X-KDE-Library=plasmanm_vpncui
 X-NetworkManager-Services=org.freedesktop.NetworkManager.vpnc
 X-KDE-PluginInfo-Author=Lukáš Tinkl
 X-KDE-PluginInfo-Email=ltinkl@redhat.com

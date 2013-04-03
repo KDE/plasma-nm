@@ -44,6 +44,7 @@ public:
 private slots:
     void userPasswordTypeChanged(int index);
     void groupPasswordTypeChanged(int index);
+    void showPasswords(bool show);
 
 private:
     Ui::VpncWidget * m_ui;

@@ -39,7 +39,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NM_VPNC_LOCAL_PORT_DEFAULT 500
 
 K_PLUGIN_FACTORY(VpncUiPluginFactory, registerPlugin<VpncUiPlugin>();)
-K_EXPORT_PLUGIN(VpncUiPluginFactory("plasmanm-vpncui"))
+K_EXPORT_PLUGIN(VpncUiPluginFactory("plasmanm_vpncui", "plasmanm_vpncui"))
 
 VpncUiPlugin::VpncUiPlugin(QObject * parent, const QVariantList &) : VpnUiPlugin(parent)
 {

@@ -1,18 +1,19 @@
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../lib
-	${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 set(vpnc_SRCS
-   vpnc.cpp
-   vpncwidget.cpp
+    vpnc.cpp
+    vpncwidget.cpp
 )
 
 kde4_add_ui_files(vpnc_SRCS vpnc.ui)
 
-kde4_add_plugin(plasmanm-vpncui ${vpnc_SRCS})
+kde4_add_plugin(plasmanm_vpncui ${vpnc_SRCS})
 
-target_link_libraries(plasmanm-vpncui plasmanm-internal QtNetworkManager ${KDE4_KIO_LIBS})
+target_link_libraries(plasmanm_vpncui plasmanm-internal QtNetworkManager ${KDE4_KIO_LIBS})
 
-install(TARGETS plasmanm-vpncui  DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS plasmanm_vpncui  DESTINATION ${PLUGIN_INSTALL_DIR})
 
-install(FILES plasmanm-vpncui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
+install(FILES plasmanm_vpncui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})

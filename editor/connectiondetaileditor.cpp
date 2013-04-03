@@ -221,8 +221,9 @@ void ConnectionDetailEditor::initTabs()
                                                                                  QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
                                                                                  this, QVariantList(), &error);
             if (vpnPlugin && error.isEmpty()) {
+                const QString shortName = serviceType.section('.', -1);
                 SettingWidget * vpnWidget = vpnPlugin->widget(vpnSetting, this);
-                m_detailEditor->tabWidget->addTab(vpnWidget, i18n("VPN"));
+                m_detailEditor->tabWidget->addTab(vpnWidget, i18n("VPN (%1)", shortName));
                 IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
                 m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
             } else {

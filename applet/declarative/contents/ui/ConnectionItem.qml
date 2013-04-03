@@ -43,7 +43,7 @@ Item {
     QIconItem {
         id: connectionTypeIcon;
 
-        height: 25; width: 25;
+        height: 30; width: 25;
         anchors { left: parent.left; top: parent.top; leftMargin: 5 }
         icon: QIcon(itemConnectionIcon);
 
@@ -134,6 +134,14 @@ Item {
         text: itemDetailInformations;
         visible: false;
         editable: itemUuid == "" ? false : true;
+        enableTraffic: {
+            if (itemDevicePath != "" && itemConnected) {
+                true;
+            } else {
+                false;
+            }
+        }
+        device: itemDevicePath;
 
         onHideDetails: {
             expanded = false;
@@ -153,7 +161,7 @@ Item {
             name: "Details";
             when: (expanded && connectionView.itemExpandable);
             PropertyChanges { target: connectionItem; height: connectionItem.ListView.view.height }
-            PropertyChanges { target: detailWidget; visible: true}
+            PropertyChanges { target: detailWidget; visible: true }
             PropertyChanges { target: connectionItem.ListView.view; interactive: false }
             PropertyChanges { target: connectionItem.ListView.view; contentY: connectionItem.y }
         },

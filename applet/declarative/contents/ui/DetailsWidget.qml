@@ -23,12 +23,15 @@ import org.kde.qtextracomponents 0.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasma.core 0.1 as PlasmaCore
+import org.kde.plasmanm 0.1 as PlasmaNM
 
 Item {
     id: detailInformationsWidget;
 
-    property alias text: detailsText.text;
     property bool editable;
+    property bool enableTraffic;
+    property alias device: trafficMonitor.device;
+    property alias text: detailsText.text;
 
     signal hideDetails();
     signal editConnection();
@@ -43,12 +46,28 @@ Item {
         color: theme.highlightColor;
     }
 
-    PlasmaComponents.Label {
-        id: detailsText;
+    Flickable {
+        id: detailsView;
 
-        anchors { top: detailsSeparator.bottom; horizontalCenter: parent.horizontalCenter; topMargin: 10 }
-        lineHeight: 1.5;
-        textFormat: Text.RichText;
+        anchors { left: parent.left; right: parent.right; top: detailsSeparator.bottom; bottom: buttons.top; topMargin: 10 }
+        contentHeight: trafficMonitor.height + detailsText.paintedHeight + 15;
+        contentWidth: detailsView.width;
+        clip: true; interactive: false;
+
+        PlasmaComponents.Label {
+            id: detailsText;
+
+            anchors { top: parent.top; horizontalCenter: parent.horizontalCenter; topMargin: 10 }
+            textFormat: Text.RichText;
+        }
+
+        PlasmaNM.TrafficMonitor {
+            id: trafficMonitor;
+
+            height: 0;
+            visible: false;
+            anchors { top: detailsText.bottom; left: parent.left; right: parent.right }
+        }
     }
 
     PlasmaComponents.ButtonRow {
@@ -97,4 +116,13 @@ Item {
             }
         }
     }
+
+    states: [
+        State {
+            name: "TrafficMonitor";
+            when: enableTraffic
+            PropertyChanges { target: trafficMonitor; height: 100; visible: true }
+            PropertyChanges { target: detailsView; interactive: true }
+        }
+    ]
 }

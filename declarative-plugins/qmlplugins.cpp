@@ -25,6 +25,7 @@
 #include "applet/connectionicon.h"
 #include "applet/enabledconnections.h"
 #include "applet/globalstatus.h"
+#include "applet/trafficmonitor.h"
 
 #include "model/modelitem.h"
 #include "model/monitor.h"
@@ -43,6 +44,7 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<Model>(uri, 0, 1, "Model");
     qmlRegisterType<SortModel>(uri, 0, 1, "SortModel");
     qmlRegisterType<SecretAgent>(uri, 0, 1, "SecretAgent");
+    qmlRegisterType<TrafficMonitor>(uri, 0, 1, "TrafficMonitor");
 }
 
 Q_EXPORT_PLUGIN2(plasmanm, QmlPlugins)

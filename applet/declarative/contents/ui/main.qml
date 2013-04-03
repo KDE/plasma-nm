@@ -33,12 +33,14 @@ Item {
     property int minimumHeight: 300;
     property Component compactRepresentation: CompactRepresantation{}
 
+    // Signals for handler
     signal activateConnection(string connectionPath, string devicePath, string specificObjectPath);
     signal addAndActivateConnection(string devicePath, string specificObjectPath);
     signal deactivateConnection(string connectionPath);
     signal editConnection(string connectionUuid);
     signal removeConnection(string connectionPath);
     signal openEditor();
+
     signal sectionChanged();
 
     function hideOptions() {

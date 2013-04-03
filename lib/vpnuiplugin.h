@@ -27,11 +27,12 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <QMessageBox>
 
 #include "settingwidget.h"
+#include "plasmanm_export.h"
 
 /**
  * Plugin for UI elements for VPN configuration
  */
-class VpnUiPlugin : public QObject
+class PLASMANM_EXPORT VpnUiPlugin : public QObject
 {
     Q_OBJECT
 public:

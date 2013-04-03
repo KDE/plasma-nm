@@ -32,11 +32,17 @@
 #include "gsmwidget.h"
 #include "cdmawidget.h"
 #include "btwidget.h"
+#include "vpnuiplugin.h"
 
 #include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/activeconnection.h>
 #include <QtNetworkManager/connection.h>
 #include <QtNetworkManager/settings/802-11-wireless.h>
+#include <QtNetworkManager/settings/vpn.h>
+#include <QtNetworkManager/generic-types.h>
+
+#include <KPluginFactory>
+#include <KServiceTypeTrader>
 
 using namespace NetworkManager;
 
@@ -71,6 +77,8 @@ ConnectionDetailEditor::~ConnectionDetailEditor()
 
 void ConnectionDetailEditor::initEditor()
 {
+    qDBusRegisterMetaType<QStringMap>();
+
     if (!m_new) {
         NetworkManager::Settings::Connection * connection = NetworkManager::Settings::findConnectionByUuid(m_connection->uuid());
         if (connection) {
@@ -194,6 +202,29 @@ void ConnectionDetailEditor::initTabs()
         m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
         IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv6), this);
         m_detailEditor->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
+    } else if (type == NetworkManager::Settings::ConnectionSettings::Vpn) {
+        QString error;
+        VpnUiPlugin * vpnPlugin = 0;
+        NetworkManager::Settings::VpnSetting *vpnSetting =
+                static_cast<NetworkManager::Settings::VpnSetting*>(m_connection->setting(NetworkManager::Settings::Setting::Vpn));
+        if (!vpnSetting) {
+            qDebug() << "Missing VPN setting!";
+        } else {
+            const QString serviceType = vpnSetting->serviceType();
+            qDebug() << "Loading VPN plugin" << serviceType;
+            //vpnSetting->printSetting();
+            vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNM/VpnUiPlugin"),
+                                                                                 QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
+                                                                                 this, QVariantList(), &error);
+            if (vpnPlugin && error.isEmpty()) {
+                SettingWidget * vpnWidget = vpnPlugin->widget(vpnSetting, this);
+                m_detailEditor->tabWidget->addTab(vpnWidget, i18n("VPN"));
+                IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
+                m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
+            } else {
+                qDebug() << error << ", serviceType == " << serviceType;
+            }
+        }
     }
 }
 

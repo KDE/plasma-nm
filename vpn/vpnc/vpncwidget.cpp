@@ -36,6 +36,7 @@ VpncWidget::VpncWidget(NetworkManager::Settings::Setting * setting, QWidget* par
 
     connect(m_ui->cboUserPasswordType, SIGNAL(currentIndexChanged(int)), SLOT(userPasswordTypeChanged(int)));
     connect(m_ui->cboGroupPasswordType, SIGNAL(currentIndexChanged(int)), SLOT(groupPasswordTypeChanged(int)));
+    connect(m_ui->cbShowPasswords, SIGNAL(toggled(bool)), SLOT(showPasswords(bool)));
 
     if (m_setting)
         loadConfig(setting);

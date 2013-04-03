@@ -36,6 +36,7 @@ class ConnectionDetailEditor : public QDialog
 
 public:
     ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType type,
+                           const QString &vpnType,
                            QWidget* parent = 0, Qt::WindowFlags f = 0);
     ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings * connection,
                            QWidget* parent = 0, Qt::WindowFlags f = 0);
@@ -50,6 +51,7 @@ private:
     NetworkManager::Settings::ConnectionSettings * m_connection;
     int m_numSecrets;
     bool m_new;
+    QString m_vpnType;
 
     void initEditor();
     void initTabs();

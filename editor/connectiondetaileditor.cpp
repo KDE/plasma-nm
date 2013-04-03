@@ -46,12 +46,13 @@
 
 using namespace NetworkManager;
 
-ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::ConnectionType type, QWidget* parent, Qt::WindowFlags f):
+ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::ConnectionType type, const QString &vpnType, QWidget* parent, Qt::WindowFlags f):
     QDialog(parent, f),
     m_detailEditor(new Ui::ConnectionDetailEditor),
     m_connection(new NetworkManager::Settings::ConnectionSettings(type)),
     m_numSecrets(0),
-    m_new(true)
+    m_new(true),
+    m_vpnType(vpnType)
 {
     m_detailEditor->setupUi(this);
 
@@ -73,6 +74,8 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings* con
 
 ConnectionDetailEditor::~ConnectionDetailEditor()
 {
+    if (m_new)
+        delete m_connection;
 }
 
 void ConnectionDetailEditor::initEditor()
@@ -214,7 +217,12 @@ void ConnectionDetailEditor::initTabs()
         if (!vpnSetting) {
             qDebug() << "Missing VPN setting!";
         } else {
-            const QString serviceType = vpnSetting->serviceType();
+
+            QString serviceType;
+            if (m_new && !m_vpnType.isEmpty())
+                serviceType = m_vpnType;
+            else
+                serviceType = vpnSetting->serviceType();
             qDebug() << "Loading VPN plugin" << serviceType;
             //vpnSetting->printSetting();
             vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNM/VpnUiPlugin"),

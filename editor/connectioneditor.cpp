@@ -29,6 +29,8 @@
 
 #include <KLocale>
 #include <KMessageBox>
+#include <KService>
+#include <KServiceTypeTrader>
 
 #include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/connection.h>
@@ -98,36 +100,15 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     action = m_menu->addSeparator();
     action->setText(i18n("VPN"));
 
-    action = new QAction(i18n("Cisco AnyConnect Compatible VPN (openconnect)"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Vpn);
-    // TODO: disabled for now
-    action->setDisabled(true);
-    m_menu->addAction(action);
-    action = new QAction(i18n("Cisco VPN (vpnc)"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Vpn);
-    // TODO: disabled for now
-    action->setDisabled(true);
-    m_menu->addAction(action);
-    action = new QAction(i18n("IPSec based VPN"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Vpn);
-    // TODO: disabled for now
-    action->setDisabled(true);
-    m_menu->addAction(action);
-    action = new QAction(i18n("Layer 2 Tunneling Protocol (l2tp)"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Vpn);
-    // TODO: disabled for now
-    action->setDisabled(true);
-    m_menu->addAction(action);
-    action = new QAction(i18n("OpenVPN"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Vpn);
-    // TODO: disabled for now
-    action->setDisabled(true);
-    m_menu->addAction(action);
-    action = new QAction(i18n("Point-to-Point Tunneling Protocol VPN (PPTP)"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Vpn);
-    // TODO: disabled for now
-    action->setDisabled(true);
-    m_menu->addAction(action);
+    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNM/VpnUiPlugin");
+    foreach (KService::Ptr service, services) {
+        qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String);
+
+        action = new QAction(service->name(), this);
+        action->setData(NetworkManager::Settings::ConnectionSettings::Vpn);
+        action->setProperty("type", service->property("X-NetworkManager-Services", QVariant::String));
+        m_menu->addAction(action);
+    }
 
     m_editor->addButton->setMenu(m_menu);
 
@@ -279,10 +260,12 @@ void ConnectionEditor::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetI
 void ConnectionEditor::addConnection(QAction* action)
 {
     qDebug() << "ADDING new connection" << action->data().toUInt();
+    const QString vpnType = action->property("type").toString();
+    qDebug() << "VPN type:" << vpnType;
 
     Settings::ConnectionSettings::ConnectionType type = (Settings::ConnectionSettings::ConnectionType) action->data().toUInt();
 
-    ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, this);
+    ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, vpnType, this);
     editor->exec();
 }
 

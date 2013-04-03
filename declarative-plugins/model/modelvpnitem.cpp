@@ -20,6 +20,11 @@
 
 #include "model/modelvpnitem.h"
 
+#include <QtNetworkManager/settings/connection.h>
+#include <QtNetworkManager/settings/vpn.h>
+
+#include <KLocalizedString>
+
 #include "debug.h"
 
 ModelVpnItem::ModelVpnItem(NetworkManager::Device* device, QObject* parent):
@@ -33,6 +38,22 @@ ModelVpnItem::ModelVpnItem(NetworkManager::Device* device, QObject* parent):
 ModelVpnItem::~ModelVpnItem()
 {
     delete m_vpn;
+}
+
+void ModelVpnItem::updateDetailsContent()
+{
+    ModelItem::updateDetailsContent();
+
+    QString format = "<tr><td align=\"right\"><b>%1</b></td><td align=\"left\">&nbsp;%2</td></tr>";
+
+    if (m_connection) {
+        NetworkManager::Settings::ConnectionSettings settings;
+        settings.fromMap(m_connection->settings());
+        NetworkManager::Settings::VpnSetting * vpnSetting = static_cast<NetworkManager::Settings::VpnSetting*>(settings.setting(NetworkManager::Settings::Setting::Vpn));
+        if (vpnSetting) {
+            m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
+        }
+    }
 }
 
 void ModelVpnItem::setActiveConnection(NetworkManager::ActiveConnection* active)

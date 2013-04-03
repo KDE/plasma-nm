@@ -57,7 +57,7 @@ Item {
     QIconItem {
         id: statusIcon
 
-        height: 20; width: 20;
+        height: 25; width: 25;
         anchors { left: parent.left; bottom: parent.bottom; top: statusLabel.top}
 
         PlasmaComponents.BusyIndicator {

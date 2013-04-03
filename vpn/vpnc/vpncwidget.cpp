@@ -99,7 +99,47 @@ void VpncWidget::loadConfig(NetworkManager::Settings::Setting *setting)
 
 QVariantMap VpncWidget::setting() const
 {
+    QStringMap data;
+    QStringMap secrets;
 
+    if (!m_ui->gateway->text().isEmpty())
+        data.insert(NM_VPNC_KEY_GATEWAY, m_ui->gateway->text());
+
+    if (!m_ui->user->text().isEmpty())
+        data.insert(NM_VPNC_KEY_XAUTH_USER, m_ui->user->text());
+
+    if (m_ui->userPassword->isEnabled() && !m_ui->userPassword->text().isEmpty())
+        secrets.insert(NM_VPNC_KEY_XAUTH_PASSWORD, m_ui->userPassword->text());
+
+    const int userPasswordTypeIndex =  m_ui->cboUserPasswordType->currentIndex();
+    if (userPasswordTypeIndex == 0) // always ask
+        data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Settings::Setting::NotSaved));
+    else if (userPasswordTypeIndex == 2) // not required
+        data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Settings::Setting::NotRequired));
+    else // none
+        data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Settings::Setting::None));
+
+    if (!m_ui->group->text().isEmpty())
+        data.insert(NM_VPNC_KEY_ID, m_ui->group->text());
+
+    if (m_ui->groupPassword->isEnabled() && !m_ui->groupPassword->text().isEmpty())
+        secrets.insert(NM_VPNC_KEY_SECRET, m_ui->groupPassword->text());
+
+    const int groupPasswordTypeIndex =  m_ui->cboGroupPasswordType->currentIndex();
+    if (groupPasswordTypeIndex == 0) // always ask
+        data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Settings::Setting::NotSaved));
+    else if (groupPasswordTypeIndex == 2) // not required
+        data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Settings::Setting::NotRequired));
+    else // none
+        data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Settings::Setting::None));
+
+    if (m_ui->useHybridAuth->isChecked() && !m_ui->caFile->url().isEmpty()) {
+        data.insert(NM_VPNC_KEY_AUTHMODE, "hybrid");
+        data.insert(NM_VPNC_KEY_CA_FILE, m_ui->caFile->url().url());
+    }
+
+    m_setting->setData(data);
+    m_setting->setSecrets(secrets);
     return m_setting->toMap();
 }
 

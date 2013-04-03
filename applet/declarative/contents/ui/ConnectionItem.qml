@@ -161,9 +161,9 @@ Item {
             name: "Details";
             when: (expanded && connectionView.itemExpandable);
             PropertyChanges { target: connectionItem; height: connectionItem.ListView.view.height }
-            PropertyChanges { target: detailWidget; visible: true }
             PropertyChanges { target: connectionItem.ListView.view; interactive: false }
             PropertyChanges { target: connectionItem.ListView.view; contentY: connectionItem.y }
+            PropertyChanges { target: detailWidget; visible: true }
         },
 
         State {
@@ -177,6 +177,6 @@ Item {
     ]
 
     transitions: Transition {
-        NumberAnimation { duration: 200; properties: "height, contentY, visible" }
+        NumberAnimation { duration: 200; properties: "height, contentY" }
     }
 }

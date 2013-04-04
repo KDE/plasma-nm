@@ -45,7 +45,7 @@ private slots:
     void setShowFastPassword(bool on);
     void setShowTtlsPassword(bool on);
     void setShowPeapPassword(bool on);
-    
+
 private:
     void loadConfig();
     NetworkManager::Settings::Security8021xSetting * m_setting;

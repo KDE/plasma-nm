@@ -44,6 +44,10 @@ public:
     void loadConfig(NetworkManager::Settings::Setting * setting);
     QVariantMap setting() const;
     QVariantMap setting8021x() const;
+
+    bool enabled() const;
+    bool enabled8021x() const;
+
 private slots:
     void slotShowWepKeyPasswordChecked(bool checked);
     void slotShowLeapPasswordChecked(bool checked);

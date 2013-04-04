@@ -40,6 +40,15 @@ WiredSecurity::~WiredSecurity()
 {
 }
 
+bool WiredSecurity::enabled8021x() const
+{
+    if (m_ui->use8021X->checkState() == Qt::Checked) {
+        return true;
+    }
+
+    return false;
+}
+
 void WiredSecurity::loadConfig(NetworkManager::Settings::Setting * setting)
 {
     Q_UNUSED(setting);

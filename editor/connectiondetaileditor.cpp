@@ -250,17 +250,27 @@ void ConnectionDetailEditor::saveSetting()
     for (int i = 1; i < m_detailEditor->tabWidget->count(); ++i) {
         SettingWidget * widget = static_cast<SettingWidget*>(m_detailEditor->tabWidget->widget(i));
         const QString type = widget->type();
-        settings.insert(type, widget->setting());
+        if (type != NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x) &&
+            type != NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::WirelessSecurity)) {
+            settings.insert(type, widget->setting());
+        }
 
         QVariantMap security8021x;
         if (type == NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::WirelessSecurity)) {
-            security8021x = static_cast<WifiSecurity *>(widget)->setting8021x();
+            WifiSecurity * wifiSecurity = static_cast<WifiSecurity*>(widget);
+            if (wifiSecurity->enabled()) {
+                settings.insert(type, wifiSecurity->setting());
+            }
+            if (wifiSecurity->enabled8021x()) {
+                security8021x = static_cast<WifiSecurity *>(widget)->setting8021x();
+                settings.insert(NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x), security8021x);
+            }
         } else if (type == NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x)) {
-            security8021x = static_cast<WiredSecurity *>(widget)->setting();
-        }
-
-        if (!security8021x.isEmpty()) {
-            settings.insert(NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x), security8021x);
+            WiredSecurity * wiredSecurity = static_cast<WiredSecurity*>(widget);
+            if (wiredSecurity->enabled8021x()) {
+                security8021x = static_cast<WiredSecurity *>(widget)->setting();
+                settings.insert(NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x), security8021x);
+            }
         }
     }
 

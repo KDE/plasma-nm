@@ -23,6 +23,7 @@
 
 #include <QtNetworkManager/manager.h>
 #include <QtNetworkManager/activeconnection.h>
+#include <QtNetworkManager/wirelessnetwork.h>
 #include <QtNetworkManager/wirelessnetworkinterfaceenvironment.h>
 
 class ConnectionIcon : public QObject
@@ -54,7 +55,7 @@ Q_SIGNALS:
 
 private:
     int m_wirelessSignal;
-    NetworkManager::WirelessNetwork * m_wirelessNetwork;
+    NetworkManager::WirelessNetwork::Ptr m_wirelessNetwork;
     NetworkManager::WirelessNetworkInterfaceEnvironment * m_wirelessEnvironment;
 
     void setDisconnectedIcon();

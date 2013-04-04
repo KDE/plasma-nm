@@ -92,10 +92,12 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr &device)
         m_wirelessInterfaces << wifiEnv;
 
         foreach (const QString & network, wifiEnv->networks()) {
-            NetworkManager::WirelessNetwork * wifiNetwork = wifiEnv->findNetwork(network);
-            NMMonitorDebug() << "Available wireless network " << network << " for device " << device->interfaceName();
-            NMMonitorSignalDebug() << "Emit signal addWirelessNetwork(" << wifiNetwork->ssid() << ")";
-            Q_EMIT addWirelessNetwork(wifiNetwork, wifiEnv->interface());
+            NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiEnv->findNetwork(network);
+            if (wifiNetwork) {
+                NMMonitorDebug() << "Available wireless network " << network << " for device " << device->interfaceName();
+                NMMonitorSignalDebug() << "Emit signal addWirelessNetwork(" << wifiNetwork->ssid() << ")";
+                Q_EMIT addWirelessNetwork(wifiNetwork, wifiEnv->interface());
+            }
         }
 
         connect(wifiEnv, SIGNAL(networkAppeared(QString)),
@@ -215,12 +217,11 @@ void Monitor::statusChanged(NetworkManager::Status status)
 
 void Monitor::wirelessNetworkAppeared(const QString& ssid)
 {
-    NetworkManager::WirelessNetwork * network = 0;
+    NetworkManager::WirelessNetwork::Ptr network;
     NetworkManager::WirelessNetworkInterfaceEnvironment * wirelessInterface = 0;
 
     foreach (NetworkManager::WirelessNetworkInterfaceEnvironment * env, m_wirelessInterfaces) {
         network = env->findNetwork(ssid);
-
         if (network) {
             wirelessInterface = env;
             break;

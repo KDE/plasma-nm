@@ -147,13 +147,13 @@ void ConnectionIcon::deviceRemoved(const QString& device)
 
 void ConnectionIcon::setIcons()
 {
-bool connectionFound = false;
+    bool connectionFound = false;
     bool vpnFound = false;
 
     if (m_wirelessEnvironment) {
         delete m_wirelessEnvironment;
         m_wirelessEnvironment = 0;
-        m_wirelessNetwork = 0;
+        m_wirelessNetwork.clear();
     }
     m_wirelessSignal = 0;
 
@@ -264,7 +264,7 @@ void ConnectionIcon::setWirelessIcon(const NetworkManager::Device::Ptr &device, 
     m_wirelessNetwork = m_wirelessEnvironment->findNetwork(ssid);
 
     if (m_wirelessNetwork) {
-        connect(m_wirelessNetwork, SIGNAL(signalStrengthChanged(int)),
+        connect(m_wirelessNetwork.data(), SIGNAL(signalStrengthChanged(int)),
                 SLOT(setWirelessIconForSignalStrenght(int)), Qt::UniqueConnection);
 
         setWirelessIconForSignalStrenght(m_wirelessNetwork->signalStrength());

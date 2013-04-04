@@ -51,7 +51,7 @@ Q_SIGNALS:
     void addActiveConnection(NetworkManager::ActiveConnection * active);
     void addConnection(NetworkManager::Settings::Connection * connection, const NetworkManager::Device::Ptr &device);
     void addVpnConnection(NetworkManager::Settings::Connection * connection);
-    void addWirelessNetwork(NetworkManager::WirelessNetwork * network, const NetworkManager::Device::Ptr &device);
+    void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device);
     void removeWirelessNetwork(const QString & ssid);
     void removeConnectionsByDevice(const QString & udi);
     void removeConnection(const QString & connection);

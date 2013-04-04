@@ -6,9 +6,10 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../lib
 set(vpnc_SRCS
     vpnc.cpp
     vpncwidget.cpp
+    vpncadvancedwidget.cpp
 )
 
-kde4_add_ui_files(vpnc_SRCS vpnc.ui)
+kde4_add_ui_files(vpnc_SRCS vpnc.ui vpncadvanced.ui)
 
 kde4_add_plugin(plasmanm_vpncui ${vpnc_SRCS})
 

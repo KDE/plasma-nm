@@ -132,21 +132,11 @@ void IPv4Widget::loadConfig(NetworkManager::Settings::Setting * setting)
     m_ui->dhcpClientId->setText(m_ipv4Setting->dhcpClientId());
 
     // addresses
-    foreach (const NetworkManager::IPv4Address &addr, m_ipv4Setting->addresses()) {
+    foreach (const NetworkManager::IpAddress &addr, m_ipv4Setting->addresses()) {
         QList<QStandardItem *> item;
-        QNetworkAddressEntry entry;
-        // we need to set up IP before prefix/netmask manipulation
-        entry.setIp(QHostAddress(addr.address()));
-        entry.setPrefixLength(addr.netMask());
-
-        item << new QStandardItem(entry.ip().toString())
-             << new QStandardItem(entry.netmask().toString());
-
-        QString gateway;
-        if (addr.gateway()) {
-            gateway = QHostAddress(addr.gateway()).toString();
-        }
-        item << new QStandardItem(gateway);
+        item << new QStandardItem(addr.ip().toString())
+             << new QStandardItem(addr.netmask().toString())
+             << new QStandardItem(addr.gateway().toString());
 
         d->model.appendRow(item);
     }
@@ -182,20 +172,13 @@ QVariantMap IPv4Widget::setting() const
 
     // addresses
     if (m_ui->tableViewAddresses->isEnabled()) {
-        QList<NetworkManager::IPv4Address> list;
+        QList<NetworkManager::IpAddress> list;
         for (int i = 0, rowCount = d->model.rowCount(); i < rowCount; i++) {
-            QHostAddress ip, mask, gw;
-            QNetworkAddressEntry entry;
-
-            ip.setAddress(d->model.item(i, 0)->text());
-            entry.setIp(ip);
-            mask.setAddress(d->model.item(i, 1)->text());
-            entry.setNetmask(mask);
-            gw.setAddress(d->model.item(i, 2)->text());
-
-            list.append(NetworkManager::IPv4Address(ip.toIPv4Address(),
-                                                    entry.prefixLength(),
-                                                    gw.toIPv4Address()));
+            NetworkManager::IpAddress address;
+            address.setIp(QHostAddress(d->model.item(i, 0)->text()));
+            address.setNetmask(QHostAddress(d->model.item(i, 1)->text()));
+            address.setGateway(QHostAddress(d->model.item(i, 2)->text()));
+            list << address;
         }
         if (!list.isEmpty()) {
             m_ipv4Setting->setAddresses(list);

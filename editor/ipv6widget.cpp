@@ -118,20 +118,12 @@ void IPv6Widget::loadConfig(NetworkManager::Settings::Setting * setting)
     m_ui->dnsSearch->setText(m_ipv6Setting->dnsSearch().join(","));
 
     // addresses
-    foreach (const NetworkManager::IPv6Address &addr, m_ipv6Setting->addresses()) {
+    foreach (const NetworkManager::IpAddress &address, m_ipv6Setting->addresses()) {
         QList<QStandardItem *> item;
-        QNetworkAddressEntry entry;
-        // we need to set up IP before prefix/netmask manipulation
-        entry.setIp(QHostAddress(addr.address()));
 
-        item << new QStandardItem(entry.ip().toString())
-             << new QStandardItem(QString::number(addr.netMask(),10));
-
-        QString gateway;
-        if (!QHostAddress(addr.gateway()).isNull()) {
-            gateway = QHostAddress(addr.gateway()).toString();
-        }
-        item << new QStandardItem(gateway);
+        item << new QStandardItem(address.ip().toString())
+             << new QStandardItem(QString::number(address.prefixLength(),10))
+             << new QStandardItem(address.gateway().toString());
 
         d->model.appendRow(item);
     }
@@ -167,19 +159,14 @@ QVariantMap IPv6Widget::setting() const
 
     // addresses
     if (m_ui->tableViewAddresses->isEnabled()) {
-        QList<NetworkManager::IPv6Address> list;
+        QList<NetworkManager::IpAddress> list;
         for (int i = 0, rowCount = d->model.rowCount(); i < rowCount; i++) {
-            QHostAddress ip, gw;
-            QNetworkAddressEntry entry;
+            NetworkManager::IpAddress address;
+            address.setIp(QHostAddress(d->model.item(i, 0)->text()));
+            address.setPrefixLength(d->model.item(i, 1)->text().toInt());
+            address.setGateway(QHostAddress(d->model.item(i, 2)->text()));
 
-            ip.setAddress(d->model.item(i, 0)->text());
-            entry.setIp(ip);
-            entry.setPrefixLength(d->model.item(i, 1)->text().toInt());
-            gw.setAddress(d->model.item(i, 2)->text());
-
-            list.append(NetworkManager::IPv6Address(ip.toIPv6Address(),
-                                                    entry.prefixLength(),
-                                                    gw.toIPv6Address()));
+            list << address;
         }
         m_ipv6Setting->setAddresses(list);
     }

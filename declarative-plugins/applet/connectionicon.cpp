@@ -261,6 +261,7 @@ void ConnectionIcon::setModemIcon(NetworkManager::Device * device)
         connect(m_modemNetwork, SIGNAL(destroyed(QObject*)),
                 SLOT(modemNetworkRemoved()));
 
+        m_signal = m_modemNetwork->getSignalQuality();
         setIconForModem();
     } else {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile)";

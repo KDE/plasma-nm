@@ -147,7 +147,7 @@ QVariant Model::data(const QModelIndex& index, int role) const
     return QVariant();
 }
 
-void Model::addWirelessNetwork(NetworkManager::WirelessNetwork * network, NetworkManager::Device * device)
+void Model::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device)
 {
     ModelWirelessItem * item = new ModelWirelessItem(device);
     item->setWirelessNetwork(network);
@@ -171,7 +171,7 @@ void Model::addActiveConnection(NetworkManager::ActiveConnection* active)
     }
 }
 
-void Model::addConnection(NetworkManager::Settings::Connection* connection, NetworkManager::Device* device)
+void Model::addConnection(NetworkManager::Settings::Connection* connection, const NetworkManager::Device::Ptr &device)
 {
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
     settings->fromMap(connection->settings());

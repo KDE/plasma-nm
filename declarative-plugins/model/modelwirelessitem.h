@@ -29,7 +29,7 @@ class ModelWirelessItem : public ModelItem
 {
 Q_OBJECT
 public:
-    ModelWirelessItem(NetworkManager::Device * device, QObject * parent = 0);
+    explicit ModelWirelessItem(const NetworkManager::Device::Ptr &device = NetworkManager::Device::Ptr(), QObject * parent = 0);
     ~ModelWirelessItem();
 
     // Basic properties
@@ -43,8 +43,8 @@ public:
 
     void setConnection(NetworkManager::Settings::Connection * connection);
 
-    void setWirelessNetwork(NetworkManager::WirelessNetwork * network);
-    NetworkManager::WirelessNetwork * wirelessNetwork() const;
+    void setWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network);
+    NetworkManager::WirelessNetwork::Ptr wirelessNetwork() const;
 
     // Object paths
 
@@ -59,7 +59,7 @@ protected:
     void setConnectionSettings(const QVariantMapMap & map);
 
 private:
-    NetworkManager::WirelessNetwork * m_network;
+    NetworkManager::WirelessNetwork::Ptr m_network;
 
     QString m_ssid;
     int m_previousSignal;

@@ -27,7 +27,7 @@
 
 #include "debug.h"
 
-ModelWiredItem::ModelWiredItem(NetworkManager::Device* device, QObject* parent):
+ModelWiredItem::ModelWiredItem(const NetworkManager::Device::Ptr &device, QObject* parent):
     ModelItem(device, parent)
 {
     m_type = NetworkManager::Settings::ConnectionSettings::Wired;
@@ -44,7 +44,7 @@ void ModelWiredItem::updateDetailsContent()
     QString format = "<tr><td align=\"right\"><b>%1</b></td><td align=\"left\">&nbsp;%2</td></tr>";
 
     if (m_device) {
-        NetworkManager::WiredDevice * wired = qobject_cast<NetworkManager::WiredDevice*>(device());
+        NetworkManager::WiredDevice::Ptr wired = device().objectCast<NetworkManager::WiredDevice>();
         if (connected()) {
             if (wired->bitRate() < 1000000) {
                 m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wired->bitRate()/1000));

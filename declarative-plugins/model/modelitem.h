@@ -31,7 +31,7 @@ Q_OBJECT
 public:
     enum SectionType { Connected, Known, Unknown };
 
-    ModelItem(NetworkManager::Device * device = 0, QObject * parent = 0);
+    explicit ModelItem(const NetworkManager::Device::Ptr &device = NetworkManager::Device::Ptr(), QObject * parent = 0);
     virtual ~ModelItem();
 
     // Basic properties
@@ -62,8 +62,8 @@ public:
     virtual void setConnection(NetworkManager::Settings::Connection * connection);
     NetworkManager::Settings::Connection * connection() const;
 
-    void setDevice(NetworkManager::Device * device);
-    NetworkManager::Device * device() const;
+    void setDevice(const NetworkManager::Device::Ptr device);
+    NetworkManager::Device::Ptr device() const;
 
     // Object paths
 
@@ -82,7 +82,7 @@ private Q_SLOTS:
 protected:
     NetworkManager::ActiveConnection * m_active;
     NetworkManager::Settings::Connection * m_connection;
-    NetworkManager::Device * m_device;
+    NetworkManager::Device::Ptr m_device;
 
     bool m_connected;
     bool m_connecting;

@@ -29,7 +29,7 @@ class ModelVpnItem : public ModelItem
 {
 Q_OBJECT
 public:
-    ModelVpnItem(NetworkManager::Device * device = 0, QObject * parent = 0);
+    explicit ModelVpnItem(const NetworkManager::Device::Ptr &device = NetworkManager::Device::Ptr(), QObject * parent = 0);
     ~ModelVpnItem();
 
     void setActiveConnection(NetworkManager::ActiveConnection * active);

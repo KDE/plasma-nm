@@ -27,7 +27,7 @@ class ModelWiredItem : public ModelItem
 {
 Q_OBJECT
 public:
-    ModelWiredItem(NetworkManager::Device * device, QObject * parent = 0);
+    explicit ModelWiredItem(const NetworkManager::Device::Ptr &device = NetworkManager::Device::Ptr(), QObject * parent = 0);
     ~ModelWiredItem();
 
     void setConnection(NetworkManager::Settings::Connection * connection);

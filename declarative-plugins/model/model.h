@@ -48,9 +48,9 @@ private Q_SLOTS:
     void onChanged();
 
     void addActiveConnection(NetworkManager::ActiveConnection * active);
-    void addConnection(NetworkManager::Settings::Connection * connection, NetworkManager::Device * device);
+    void addConnection(NetworkManager::Settings::Connection * connection, const NetworkManager::Device::Ptr &device);
     void addVpnConnection(NetworkManager::Settings::Connection * connection);
-    void addWirelessNetwork(NetworkManager::WirelessNetwork * network, NetworkManager::Device * device);
+    void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device);
     void removeConnection(const QString & connection);
     void removeConnectionsByDevice(const QString & udi);
     void removeVpnConnections();

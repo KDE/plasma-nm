@@ -27,7 +27,7 @@
 
 #include "debug.h"
 
-ModelWirelessItem::ModelWirelessItem(NetworkManager::Device* device, QObject* parent):
+ModelWirelessItem::ModelWirelessItem(const NetworkManager::Device::Ptr &device, QObject* parent):
     ModelItem(device, parent),
     m_network(0),
     m_previousSignal(0),
@@ -87,7 +87,7 @@ void ModelWirelessItem::updateDetailsContent()
     QString format = "<tr><td align=\"right\"><b>%1</b></td><td align=\"left\">&nbsp;%2</td></tr>";
 
     if (m_device) {
-        NetworkManager::WirelessDevice * wireless = qobject_cast<NetworkManager::WirelessDevice*>(device());
+        NetworkManager::WirelessDevice::Ptr wireless = device().objectCast<NetworkManager::WirelessDevice>();
         if (connected()) {
             if (wireless->bitRate() && wireless->bitRate() < 1000) {
                 m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Kb/s", wireless->bitRate()));
@@ -99,7 +99,7 @@ void ModelWirelessItem::updateDetailsContent()
     }
 
     if (m_network) {
-        NetworkManager::WirelessDevice * wifiDev = qobject_cast<NetworkManager::WirelessDevice*>(m_device);
+        NetworkManager::WirelessDevice::Ptr wifiDev = m_device.objectCast<NetworkManager::WirelessDevice>();
         NetworkManager::AccessPoint * ap = wifiDev->findAccessPoint(m_network->referenceAccessPoint());
 
         m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%").arg(m_network->signalStrength()));
@@ -141,7 +141,7 @@ void ModelWirelessItem::setConnectionSettings(const QVariantMapMap& map)
     updateDetails();
 }
 
-void ModelWirelessItem::setWirelessNetwork(NetworkManager::WirelessNetwork* network)
+void ModelWirelessItem::setWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network)
 {
     m_network = network;
 
@@ -152,7 +152,7 @@ void ModelWirelessItem::setWirelessNetwork(NetworkManager::WirelessNetwork* netw
         m_type = NetworkManager::Settings::ConnectionSettings::Wireless;
 
         if (m_device) {
-            NetworkManager::WirelessDevice * wifiDev = qobject_cast<NetworkManager::WirelessDevice*>(m_device);
+            NetworkManager::WirelessDevice::Ptr wifiDev = m_device.objectCast<NetworkManager::WirelessDevice>();
             NetworkManager::AccessPoint * ap = wifiDev->findAccessPoint(m_network->referenceAccessPoint());
 
             if (ap->capabilities() & NetworkManager::AccessPoint::Privacy) {
@@ -164,9 +164,9 @@ void ModelWirelessItem::setWirelessNetwork(NetworkManager::WirelessNetwork* netw
             m_name = ssid();
         }
 
-        connect(m_network, SIGNAL(signalStrengthChanged(int)),
+        connect(m_network.data(), SIGNAL(signalStrengthChanged(int)),
                 SLOT(onSignalStrengthChanged(int)), Qt::UniqueConnection);
-        connect(m_network, SIGNAL(referenceAccessPointChanged(QString)),
+        connect(m_network.data(), SIGNAL(referenceAccessPointChanged(QString)),
                 SLOT(onAccessPointChanged(QString)), Qt::UniqueConnection);
     } else {
         m_ssid.clear();
@@ -178,13 +178,13 @@ void ModelWirelessItem::setWirelessNetwork(NetworkManager::WirelessNetwork* netw
     updateDetails();
 }
 
-NetworkManager::WirelessNetwork* ModelWirelessItem::wirelessNetwork() const
+NetworkManager::WirelessNetwork::Ptr ModelWirelessItem::wirelessNetwork() const
 {
     if (m_network) {
         return m_network;
     }
 
-    return 0;
+    return NetworkManager::WirelessNetwork::Ptr();
 }
 
 void ModelWirelessItem::onAccessPointChanged(const QString& accessPoint)

@@ -22,7 +22,7 @@
 
 #include "debug.h"
 
-ModelVpnItem::ModelVpnItem(NetworkManager::Device* device, QObject* parent):
+ModelVpnItem::ModelVpnItem(const NetworkManager::Device::Ptr &device, QObject* parent):
     ModelItem(device, parent),
     m_vpn(0)
 {

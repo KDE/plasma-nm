@@ -24,7 +24,7 @@
 
 #include "debug.h"
 
-ModelItem::ModelItem(NetworkManager::Device * device, QObject * parent):
+ModelItem::ModelItem(const NetworkManager::Device::Ptr &device, QObject * parent):
     QObject(parent),
     m_active(0),
     m_connection(0),
@@ -228,7 +228,7 @@ NetworkManager::ActiveConnection* ModelItem::activeConnection() const
     return m_active;
 }
 
-void ModelItem::setDevice(NetworkManager::Device* device)
+void ModelItem::setDevice(const NetworkManager::Device::Ptr device)
 {
     m_device = device;
 
@@ -241,7 +241,7 @@ void ModelItem::setDevice(NetworkManager::Device* device)
     updateDetails();
 }
 
-NetworkManager::Device* ModelItem::device() const
+NetworkManager::Device::Ptr ModelItem::device() const
 {
     return m_device;
 }

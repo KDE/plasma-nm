@@ -49,9 +49,9 @@ private Q_SLOTS:
     void wirelessNetworkDisappeared(const QString & ssid);
 Q_SIGNALS:
     void addActiveConnection(NetworkManager::ActiveConnection * active);
-    void addConnection(NetworkManager::Settings::Connection * connection, NetworkManager::Device * device);
+    void addConnection(NetworkManager::Settings::Connection * connection, const NetworkManager::Device::Ptr &device);
     void addVpnConnection(NetworkManager::Settings::Connection * connection);
-    void addWirelessNetwork(NetworkManager::WirelessNetwork * network, NetworkManager::Device * device);
+    void addWirelessNetwork(NetworkManager::WirelessNetwork * network, const NetworkManager::Device::Ptr &device);
     void removeWirelessNetwork(const QString & ssid);
     void removeConnectionsByDevice(const QString & udi);
     void removeConnection(const QString & connection);
@@ -59,10 +59,10 @@ Q_SIGNALS:
 
 private:
     QList<NetworkManager::WirelessNetworkInterfaceEnvironment*> m_wirelessInterfaces;
-    NetworkManager::DeviceList m_devices;
+    NetworkManager::Device::List m_devices;
 
-    void addAvailableConnectionsForDevice(NetworkManager::Device * device);
-    void addDevice(NetworkManager::Device * device);
+    void addAvailableConnectionsForDevice(const NetworkManager::Device::Ptr &device);
+    void addDevice(const NetworkManager::Device::Ptr &device);
 };
 
 #endif // PLASMA_NM_MONITOR_H

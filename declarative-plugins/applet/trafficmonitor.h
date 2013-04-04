@@ -51,7 +51,7 @@ private:
     void updateTraffic();
     void setUpdateEnabled(bool enable);
 
-    NetworkManager::Device * m_device;
+    NetworkManager::Device::Ptr m_device;
 
     Plasma::DataEngine * m_engine;
     Plasma::SignalPlotter *m_trafficPlotter;

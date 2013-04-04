@@ -42,7 +42,7 @@ Monitor::~Monitor()
 
 void Monitor::init()
 {
-    foreach (NetworkManager::Device * dev, m_devices) {
+    foreach (const NetworkManager::Device::Ptr &dev, m_devices) {
         addDevice(dev);
     }
 
@@ -68,7 +68,7 @@ void Monitor::init()
     }
 }
 
-void Monitor::addAvailableConnectionsForDevice(NetworkManager::Device* device)
+void Monitor::addAvailableConnectionsForDevice(const NetworkManager::Device::Ptr &device)
 {
     foreach (NetworkManager::Settings::Connection * con, device->availableConnections()) {
         NMMonitorDebug() << "Available connection " << con->id() << " for device " << device->interfaceName();
@@ -77,17 +77,17 @@ void Monitor::addAvailableConnectionsForDevice(NetworkManager::Device* device)
     }
 }
 
-void Monitor::addDevice(NetworkManager::Device* device)
+void Monitor::addDevice(const NetworkManager::Device::Ptr &device)
 {
     if (device->type() == NetworkManager::Device::Ethernet) {
         NMMonitorDebug() << "Available wired device " << device->interfaceName();
-        NetworkManager::WiredDevice * wiredDev = static_cast<NetworkManager::WiredDevice*>(device);
-        connect(wiredDev, SIGNAL(carrierChanged(bool)),
+        NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
+        connect(wiredDev.data(), SIGNAL(carrierChanged(bool)),
                 SLOT(cablePlugged(bool)));
 
     } else if (device->type() == NetworkManager::Device::Wifi) {
         NMMonitorDebug() << "Available wireless device " << device->interfaceName();
-        NetworkManager::WirelessDevice * wifiDev = static_cast<NetworkManager::WirelessDevice*>(device);
+        NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
         NetworkManager::WirelessNetworkInterfaceEnvironment * wifiEnv = new NetworkManager::WirelessNetworkInterfaceEnvironment(wifiDev);
         m_wirelessInterfaces << wifiEnv;
 
@@ -118,7 +118,7 @@ void Monitor::activeConnectionsChanged()
 
 void Monitor::cablePlugged(bool plugged)
 {
-    NetworkManager::Device * device = qobject_cast<NetworkManager::Device*>(sender());
+    NetworkManager::Device::Ptr device(qobject_cast<NetworkManager::Device*>(sender()));
 
     if (plugged) {
         NMMonitorDebug() << "Cable plugged to " << device->interfaceName() ;
@@ -139,7 +139,7 @@ void Monitor::connectionAdded(const QString& connection)
         return;
     }
 
-    foreach (NetworkManager::Device * dev, m_devices) {
+    foreach (const NetworkManager::Device::Ptr &dev, m_devices) {
         foreach (NetworkManager::Settings::Connection * con, dev->availableConnections()) {
             qDebug() << con->id() << " == " << newConnection->id();
             if (con->uuid() == newConnection->uuid()) {
@@ -160,7 +160,7 @@ void Monitor::connectionRemoved(const QString& connection)
 
 void Monitor::deviceAdded(const QString& device)
 {
-    NetworkManager::Device * dev = NetworkManager::findNetworkInterface(device);
+    NetworkManager::Device::Ptr dev = NetworkManager::findNetworkInterface(device);
 
     if (dev) {
         m_devices << dev;
@@ -172,13 +172,12 @@ void Monitor::deviceAdded(const QString& device)
 
 void Monitor::deviceRemoved(const QString& device)
 {
-    foreach (NetworkManager::Device * dev, m_devices) {
+    foreach (const NetworkManager::Device::Ptr &dev, m_devices) {
         if (dev->uni() == device) {
             NMMonitorDebug() << "Device " << dev->interfaceName() << " removed";
             NMMonitorSignalDebug() << "Emit signal removeConnectionsByDevice(" << dev->interfaceName()  << ")";
             Q_EMIT removeConnectionsByDevice(dev->udi());
             m_devices.removeOne(dev);
-            delete dev;
             break;
         }
     }
@@ -230,7 +229,7 @@ void Monitor::wirelessNetworkAppeared(const QString& ssid)
     Q_EMIT addWirelessNetwork(network, wirelessInterface->interface());
 
     // Check if we have some known connection for this access point
-    foreach (NetworkManager::Device * device, m_devices) {
+    foreach (const NetworkManager::Device::Ptr &device, m_devices) {
         if (device->type() == NetworkManager::Device::Wifi) {
             foreach (NetworkManager::Settings::Connection * connection, device->availableConnections()) {
                 NetworkManager::Settings::ConnectionSettings settings;

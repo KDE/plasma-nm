@@ -59,7 +59,7 @@ private:
 
     void setDisconnectedIcon();
     void setModemIcon();
-    void setWirelessIcon(NetworkManager::Device * device, const QString & ssid);
+    void setWirelessIcon(const NetworkManager::Device::Ptr &device, const QString & ssid);
 };
 
 #endif // PLASMA_NM_CONNECTION_ICON_H

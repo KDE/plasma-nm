@@ -93,9 +93,9 @@ void ConnectionIcon::accessPointAppeared(const QString& accesspoint)
     Q_UNUSED(accesspoint);
 
     if (NetworkManager::status() == NetworkManager::Disconnected) {
-        foreach (NetworkManager::Device * dev, NetworkManager::networkInterfaces()) {
+        foreach (const NetworkManager::Device::Ptr &dev, NetworkManager::networkInterfaces()) {
             if (dev->type() == NetworkManager::Device::Ethernet) {
-                NetworkManager::WiredDevice * wiredDevice = qobject_cast<NetworkManager::WiredDevice*>(dev);
+                NetworkManager::WiredDevice::Ptr wiredDevice = dev.objectCast<NetworkManager::WiredDevice>();
                 if (!wiredDevice->carrier()) {
                     setDisconnectedIcon();
                 }
@@ -115,20 +115,20 @@ void ConnectionIcon::carrierChanged(bool carrier)
 
 void ConnectionIcon::deviceAdded(const QString& device)
 {
-    NetworkManager::Device * dev = NetworkManager::findNetworkInterface(device);
+    NetworkManager::Device::Ptr dev = NetworkManager::findNetworkInterface(device);
 
     if (!dev) {
         return;
     }
 
     if (dev->type() == NetworkManager::Device::Ethernet) {
-        NetworkManager::WiredDevice * wiredDev = qobject_cast<NetworkManager::WiredDevice*>(dev);
-        connect(wiredDev, SIGNAL(carrierChanged(bool)),
+        NetworkManager::WiredDevice::Ptr wiredDev = dev.objectCast<NetworkManager::WiredDevice>();
+        connect(wiredDev.data(), SIGNAL(carrierChanged(bool)),
                 SLOT(carrierChanged(bool)));
     } else if (dev->type() == NetworkManager::Device::Wifi) {
-        NetworkManager::WirelessDevice * wirelessDev = qobject_cast<NetworkManager::WirelessDevice*>(dev);
+        NetworkManager::WirelessDevice::Ptr wirelessDev = dev.objectCast<NetworkManager::WirelessDevice>();
         if (!wirelessDev->accessPoints().isEmpty()) {
-            connect(wirelessDev, SIGNAL(accessPointAppeared(QString)),
+            connect(wirelessDev.data(), SIGNAL(accessPointAppeared(QString)),
                     SLOT(accessPointAppeared(QString)));
         }
     } else if (dev->type() == NetworkManager::Device::Modem) {
@@ -211,14 +211,14 @@ void ConnectionIcon::setDisconnectedIcon()
     bool wireless = false;
     bool modem = false;
 
-    foreach (NetworkManager::Device * device, NetworkManager::networkInterfaces()) {
+    foreach (const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
-            NetworkManager::WiredDevice * wiredDev = qobject_cast<NetworkManager::WiredDevice*>(device);
+            NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
             if (wiredDev->carrier()) {
                 wired = true;
             }
         } else if (device->type() == NetworkManager::Device::Wifi) {
-            NetworkManager::WirelessDevice * wirelessDev = qobject_cast<NetworkManager::WirelessDevice*>(device);
+            NetworkManager::WirelessDevice::Ptr wirelessDev = device.objectCast<NetworkManager::WirelessDevice>();
             if (!wirelessDev->accessPoints().isEmpty()) {
                 wireless = true;
             }
@@ -251,9 +251,9 @@ void ConnectionIcon::setModemIcon()
     Q_EMIT setConnectionIcon(QString("network-mobile-100"));
 }
 
-void ConnectionIcon::setWirelessIcon(NetworkManager::Device* device, const QString& ssid)
+void ConnectionIcon::setWirelessIcon(const NetworkManager::Device::Ptr &device, const QString& ssid)
 {
-    NetworkManager::WirelessDevice * wirelessDevice = qobject_cast<NetworkManager::WirelessDevice*>(device);
+    NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
     m_wirelessEnvironment = new NetworkManager::WirelessNetworkInterfaceEnvironment(wirelessDevice);
     m_wirelessNetwork = m_wirelessEnvironment->findNetwork(ssid);
 

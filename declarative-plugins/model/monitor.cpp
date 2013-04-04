@@ -118,15 +118,18 @@ void Monitor::activeConnectionsChanged()
 
 void Monitor::cablePlugged(bool plugged)
 {
-    NetworkManager::Device::Ptr device(qobject_cast<NetworkManager::Device*>(sender()));
+    NetworkManager::Device *devicePtr = qobject_cast<NetworkManager::Device*>(sender());
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePtr->uni());
 
-    if (plugged) {
-        NMMonitorDebug() << "Cable plugged to " << device->interfaceName() ;
-        addAvailableConnectionsForDevice(device);
-    } else {
-        NMMonitorDebug() << "Cable unplugged from " << device->interfaceName() ;
-        NMMonitorSignalDebug() << "Emit signal removeConnectionsByDevice(" << device->interfaceName()  << ")";
-        Q_EMIT removeConnectionsByDevice(device->udi());
+    if (device) {
+        if (plugged) {
+            NMMonitorDebug() << "Cable plugged to " << device->interfaceName() ;
+            addAvailableConnectionsForDevice(device);
+        } else {
+            NMMonitorDebug() << "Cable unplugged from " << device->interfaceName() ;
+            NMMonitorSignalDebug() << "Emit signal removeConnectionsByDevice(" << device->interfaceName()  << ")";
+            Q_EMIT removeConnectionsByDevice(device->udi());
+        }
     }
 }
 

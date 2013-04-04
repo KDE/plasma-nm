@@ -175,7 +175,12 @@ bool connectionFound = false;
             } else if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
                 connectionFound = true;
                 NetworkManager::Settings::WirelessSetting * wirelessSetting = dynamic_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
-                setWirelessIcon(active->devices().first(), wirelessSetting->ssid());
+                NetworkManager::Device::List list = active->devices();
+                if (!list.empty()) {
+                    setWirelessIcon(list.first(), wirelessSetting->ssid());
+                } else {
+                    connectionFound = false;
+                }
             }
         }
 
@@ -254,6 +259,7 @@ void ConnectionIcon::setModemIcon()
 void ConnectionIcon::setWirelessIcon(const NetworkManager::Device::Ptr &device, const QString& ssid)
 {
     NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
+    NMAppletDebug() << wirelessDevice << wirelessDevice.isNull() << wirelessDevice.data();
     m_wirelessEnvironment = new NetworkManager::WirelessNetworkInterfaceEnvironment(wirelessDevice);
     m_wirelessNetwork = m_wirelessEnvironment->findNetwork(ssid);
 

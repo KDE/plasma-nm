@@ -13,6 +13,7 @@ set(plasma_nm_qml_plugins_SRCS
    model/modelwirelessitem.cpp
    model/modelwireditem.cpp
    model/modelvpnitem.cpp
+   model/modelmodemitem.cpp
    model/monitor.cpp
    model/sortmodel.cpp
 
@@ -31,6 +32,7 @@ kde4_add_library(plasmanmplugins SHARED ${plasma_nm_qml_plugins_SRCS})
 
 target_link_libraries(plasmanmplugins
     QtNetworkManager
+    QtModemManager
     ${KDE4_PLASMA_LIBS}
     ${QT_QTNETWORK_LIBRARY}
     ${KDE4_KDEUI_LIBS}

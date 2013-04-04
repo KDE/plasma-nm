@@ -62,7 +62,7 @@ public:
     virtual void setConnection(NetworkManager::Settings::Connection * connection);
     NetworkManager::Settings::Connection * connection() const;
 
-    void setDevice(NetworkManager::Device * device);
+    virtual void setDevice(NetworkManager::Device * device);
     NetworkManager::Device * device() const;
 
     // Object paths

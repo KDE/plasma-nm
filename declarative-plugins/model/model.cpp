@@ -26,6 +26,7 @@
 #include "model/modelwirelessitem.h"
 #include "model/modelwireditem.h"
 #include "model/modelvpnitem.h"
+#include "model/modelmodemitem.h"
 
 #include "debug.h"
 
@@ -136,9 +137,6 @@ QVariant Model::data(const QModelIndex& index, int role) const
             case SectionRole:
                 return item->sectionType();
                 break;
-//             case SectionStringRole:
-//                 return item->sectionTypeString();
-//                 break;
             default:
                 break;
         }
@@ -182,6 +180,11 @@ void Model::addConnection(NetworkManager::Settings::Connection* connection, Netw
         insertItem(item);
     } else if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Wired) {
         ModelWiredItem * item = new ModelWiredItem(device);
+        item->setConnection(connection);
+        insertItem(item);
+    } else if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Gsm ||
+               settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Cdma) {
+        ModelModemItem * item = new ModelModemItem(device);
         item->setConnection(connection);
         insertItem(item);
     } else {

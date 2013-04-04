@@ -8,6 +8,11 @@ find_package(NetworkManager "0.9.8" REQUIRED)
 
 include(FindPkgConfig)
 
+pkg_check_modules(QTMODEMMANAGER REQUIRED QtModemManager)
+if (NOT QTMODEMMANAGER_FOUND)
+    message(FATAL_ERROR "ERROR: QtModemManager not found. http://projects.kde.org/search?q=modemmanager&scope=all&all_words=1&projects=1&submit=Submit")
+endif (NOT QTMODEMMANAGER_FOUND)
+
 pkg_check_modules(QTNETWORKMANAGER REQUIRED QtNetworkManager)
 if (NOT QTNETWORKMANAGER_FOUND)
     message(FATAL_ERROR "ERROR: QtNetworkManager not found. http://projects.kde.org/libnm-qt")
@@ -21,6 +26,7 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_CURRENT_BINARY_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}
                     ${QTNETWORK_INCLUDE_DIRS}
+                    ${QTMODEMMANAGER_INCLUDE_DIRS}
                     ${QTNETWORKMANAGER_INCLUDE_DIRS}
                     ${NETWORKMANAGER_INCLUDE_DIRS}
                     ${KDE4_INCLUDES})

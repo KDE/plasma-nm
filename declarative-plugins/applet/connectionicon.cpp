@@ -22,6 +22,8 @@
 
 #include <QtNetworkManager/manager.h>
 #include <QtNetworkManager/connection.h>
+#include <QtNetworkManager/device.h>
+#include <QtNetworkManager/modemdevice.h>
 #include <QtNetworkManager/wireddevice.h>
 #include <QtNetworkManager/wirelessdevice.h>
 #include <QtNetworkManager/settings/connection.h>
@@ -31,9 +33,10 @@
 
 ConnectionIcon::ConnectionIcon(QObject* parent):
     QObject(parent),
-    m_wirelessSignal(0),
+    m_signal(0),
     m_wirelessNetwork(0),
-    m_wirelessEnvironment(0)
+    m_wirelessEnvironment(0),
+    m_modemNetwork(0)
 {
 }
 
@@ -53,6 +56,16 @@ void ConnectionIcon::init()
             SLOT(deviceAdded(QString)));
     connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
             SLOT(deviceRemoved(QString)));
+    connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
+            SLOT(setIcons()));
+    connect(NetworkManager::notifier(), SIGNAL(wirelessHardwareEnabledChanged(bool)),
+            SLOT(setIcons()));
+    connect(NetworkManager::notifier(), SIGNAL(wwanEnabledChanged(bool)),
+            SLOT(setIcons()));
+    connect(NetworkManager::notifier(), SIGNAL(wwanHardwareEnabledChanged(bool)),
+            SLOT(setIcons()));
+    connect(NetworkManager::notifier(), SIGNAL(networkingEnabledChanged(bool)),
+            SLOT(setIcons()));
 
     setIcons();
 }
@@ -88,21 +101,21 @@ void ConnectionIcon::activeConnectionStateChanged(NetworkManager::ActiveConnecti
     setIcons();
 }
 
-void ConnectionIcon::accessPointAppeared(const QString& accesspoint)
-{
-    Q_UNUSED(accesspoint);
-
-    if (NetworkManager::status() == NetworkManager::Disconnected) {
-        foreach (NetworkManager::Device * dev, NetworkManager::networkInterfaces()) {
-            if (dev->type() == NetworkManager::Device::Ethernet) {
-                NetworkManager::WiredDevice * wiredDevice = qobject_cast<NetworkManager::WiredDevice*>(dev);
-                if (!wiredDevice->carrier()) {
-                    setDisconnectedIcon();
-                }
-            }
-        }
-    }
-}
+// void ConnectionIcon::accessPointAppeared(const QString& accesspoint)
+// {
+//     Q_UNUSED(accesspoint);
+//
+//     if (NetworkManager::status() == NetworkManager::Disconnected) {
+//         foreach (NetworkManager::Device * dev, NetworkManager::networkInterfaces()) {
+//             if (dev->type() == NetworkManager::Device::Ethernet) {
+//                 NetworkManager::WiredDevice * wiredDevice = qobject_cast<NetworkManager::WiredDevice*>(dev);
+//                 if (!wiredDevice->carrier()) {
+//                     setDisconnectedIcon();
+//                 }
+//             }
+//         }
+//     }
+// }
 
 void ConnectionIcon::carrierChanged(bool carrier)
 {
@@ -125,7 +138,7 @@ void ConnectionIcon::deviceAdded(const QString& device)
         NetworkManager::WiredDevice * wiredDev = qobject_cast<NetworkManager::WiredDevice*>(dev);
         connect(wiredDev, SIGNAL(carrierChanged(bool)),
                 SLOT(carrierChanged(bool)));
-    } else if (dev->type() == NetworkManager::Device::Wifi) {
+    } /*else if (dev->type() == NetworkManager::Device::Wifi) {
         NetworkManager::WirelessDevice * wirelessDev = qobject_cast<NetworkManager::WirelessDevice*>(dev);
         if (!wirelessDev->accessPoints().isEmpty()) {
             connect(wirelessDev, SIGNAL(accessPointAppeared(QString)),
@@ -133,7 +146,7 @@ void ConnectionIcon::deviceAdded(const QString& device)
         }
     } else if (dev->type() == NetworkManager::Device::Modem) {
         // TODO
-    }
+    }*/
 }
 
 void ConnectionIcon::deviceRemoved(const QString& device)
@@ -147,7 +160,7 @@ void ConnectionIcon::deviceRemoved(const QString& device)
 
 void ConnectionIcon::setIcons()
 {
-bool connectionFound = false;
+    bool connectionFound = false;
     bool vpnFound = false;
 
     if (m_wirelessEnvironment) {
@@ -155,27 +168,33 @@ bool connectionFound = false;
         m_wirelessEnvironment = 0;
         m_wirelessNetwork = 0;
     }
-    m_wirelessSignal = 0;
+    m_signal = 0;
+
+    if (m_modemNetwork) {
+        disconnect(m_modemNetwork, 0, this, 0);
+        m_modemNetwork = 0;
+    }
 
     QList<NetworkManager::ActiveConnection*> actives = NetworkManager::activeConnections();
 
     foreach (NetworkManager::ActiveConnection * active, actives) {
         if ((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) {
-            NetworkManager::Settings::ConnectionSettings settings;
-            settings.fromMap(active->connection()->settings());
+            NetworkManager::Device::Type type = active->devices().first()->type();
 
-            if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Cdma ||
-                settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Gsm) {
+            if (type == NetworkManager::Device::Wifi) {
+                NetworkManager::Settings::ConnectionSettings settings;
+                settings.fromMap(active->connection()->settings());
+                NetworkManager::Settings::WirelessSetting * wirelessSetting = dynamic_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
+                setWirelessIcon(active->devices().first(), wirelessSetting->ssid());
                 connectionFound = true;
-                setModemIcon();
-            } else if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Wired) {
+            } else if (type == NetworkManager::Device::Ethernet) {
                 connectionFound = true;
                 NMAppletDebug() << "Emit signal setConnectionIcon(network-wired-activated)";
                 Q_EMIT setConnectionIcon(QString("network-wired-activated"));
-            } else if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
+            } else if (type == NetworkManager::Device::Modem ||
+                       type == NetworkManager::Device::Bluetooth) {
                 connectionFound = true;
-                NetworkManager::Settings::WirelessSetting * wirelessSetting = dynamic_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
-                setWirelessIcon(active->devices().first(), wirelessSetting->ssid());
+                setModemIcon(active->devices().first());
             }
         }
 
@@ -217,12 +236,13 @@ void ConnectionIcon::setDisconnectedIcon()
             if (wiredDev->carrier()) {
                 wired = true;
             }
-        } else if (device->type() == NetworkManager::Device::Wifi) {
-            NetworkManager::WirelessDevice * wirelessDev = qobject_cast<NetworkManager::WirelessDevice*>(device);
-            if (!wirelessDev->accessPoints().isEmpty()) {
-                wireless = true;
-            }
-        } else if (device->type() == NetworkManager::Device::Modem) {
+        } else if (device->type() == NetworkManager::Device::Wifi &&
+                   NetworkManager::isWirelessEnabled() &&
+                   NetworkManager::isWirelessHardwareEnabled()) {
+            wireless = true;
+        } else if (device->type() == NetworkManager::Device::Modem &&
+                   NetworkManager::isWwanEnabled() &&
+                   NetworkManager::isWwanHardwareEnabled()) {
             modem = true;
         }
     }
@@ -230,13 +250,13 @@ void ConnectionIcon::setDisconnectedIcon()
     if (wired) {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-wired)";
         Q_EMIT setConnectionIcon(QString("network-wired"));
+    } else if (modem) {
+        NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile)";
+        Q_EMIT setConnectionIcon(QString("network-mobile"));
     } else if (wireless) {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-wireless-0)";
         Q_EMIT setConnectionIcon(QString("network-wireless-0"));
-    } else if (modem) {
-        NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile-0-none)";
-        Q_EMIT setConnectionIcon(QString("network-mobile-0-none"));
-    } else {
+    }  else {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-wired)";
         Q_EMIT setConnectionIcon(QString("network-wired"));
     }
@@ -244,12 +264,104 @@ void ConnectionIcon::setDisconnectedIcon()
     Q_EMIT unsetHoverIcon();
 }
 
-void ConnectionIcon::setModemIcon()
+void ConnectionIcon::setModemIcon(NetworkManager::Device * device)
 {
-    // TODO
-    NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile-100)";
-    Q_EMIT setConnectionIcon(QString("network-mobile-100"));
+    NetworkManager::ModemDevice * modemDevice = qobject_cast<NetworkManager::ModemDevice*>(device);
+
+    if (!modemDevice) {
+        NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile-100)";
+        Q_EMIT setConnectionIcon(QString("network-mobile-100"));
+
+        return;
+    }
+
+    m_modemNetwork = modemDevice->getModemNetworkIface();
+
+    if (m_modemNetwork) {
+        connect(m_modemNetwork, SIGNAL(signalQualityChanged(uint)),
+                SLOT(modemSignalChanged()), Qt::UniqueConnection);
+        connect(m_modemNetwork, SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
+                SLOT(setIconForModem()), Qt::UniqueConnection);
+
+        setIconForModem();
+    } else {
+        NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile)";
+        Q_EMIT setConnectionIcon(QString("network-mobile"));
+
+        return;
+    }
 }
+
+void ConnectionIcon::modemSignalChanged(uint signal)
+{
+    int diff = m_signal - signal;
+
+    if (diff >= 10 ||
+        diff <= -10) {
+        m_signal = signal;
+
+        setIconForModem();
+    }
+}
+
+void ConnectionIcon::setIconForModem()
+{
+    if (!m_signal) {
+        m_signal = m_modemNetwork->getSignalQuality();
+    }
+    QString strength = "00";
+
+    if (m_signal < 13) {
+        strength = '0';
+    } else if (m_signal < 30) {
+        strength = "20";
+    } else if (m_signal < 50) {
+        strength = "40";
+    } else if (m_signal < 70) {
+        strength = "60";
+    } else if (m_signal < 90) {
+        strength = "80";
+    } else {
+        strength = "100";
+    }
+
+    int accesstechnology = m_modemNetwork->getAccessTechnology();
+
+    QString result;;
+
+    switch(accesstechnology) {
+        case ModemManager::ModemInterface::UnknownTechnology:
+        case ModemManager::ModemInterface::Gsm:
+        case ModemManager::ModemInterface::GsmCompact:
+            result = "network-mobile-%1";
+            break;
+        case ModemManager::ModemInterface::Gprs:
+            result = "network-mobile-%1-gprs";
+            break;
+        case ModemManager::ModemInterface::Edge:
+            result = "network-mobile-%1-edge";
+            break;
+        case ModemManager::ModemInterface::Umts:
+            result = "network-mobile-%1-umts";
+            break;
+        case ModemManager::ModemInterface::Hsdpa:
+            result = "network-mobile-%1-hsdpa";
+            break;
+        case ModemManager::ModemInterface::Hsupa:
+            result = "network-mobile-%1-hsupa";
+            break;
+        case ModemManager::ModemInterface::Hspa:
+            result = "network-mobile-%1-hspa";
+            break;
+        default:
+            result = "network-mobile-%1";
+            break;
+    }
+
+    NMAppletDebug() << "Emit signal setConnectionIcon(" << QString(result).arg(strength) << ")";
+    Q_EMIT setConnectionIcon(QString(result).arg(strength));
+}
+
 
 void ConnectionIcon::setWirelessIcon(NetworkManager::Device* device, const QString& ssid)
 {
@@ -269,7 +381,7 @@ void ConnectionIcon::setWirelessIcon(NetworkManager::Device* device, const QStri
 
 void ConnectionIcon::setWirelessIconForSignalStrenght(int strenght)
 {
-    int diff = m_wirelessSignal - strenght;
+    int diff = m_signal - strenght;
 
     if (diff >= 10 ||
         diff <= -10) {
@@ -291,7 +403,7 @@ void ConnectionIcon::setWirelessIconForSignalStrenght(int strenght)
             iconStrenght = 80;
         }
 
-        m_wirelessSignal = iconStrenght;
+        m_signal = iconStrenght;
 
         QString icon = QString("network-wireless-%1").arg(iconStrenght);
 

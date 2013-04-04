@@ -22,6 +22,7 @@
 
 #include "nm-vpnc-service.h"
 #include "vpncwidget.h"
+#include "vpncadvancedwidget.h"
 #include "ui_vpnc.h"
 
 
@@ -37,6 +38,7 @@ VpncWidget::VpncWidget(NetworkManager::Settings::Setting * setting, QWidget* par
     connect(m_ui->cboUserPasswordType, SIGNAL(currentIndexChanged(int)), SLOT(userPasswordTypeChanged(int)));
     connect(m_ui->cboGroupPasswordType, SIGNAL(currentIndexChanged(int)), SLOT(groupPasswordTypeChanged(int)));
     connect(m_ui->cbShowPasswords, SIGNAL(toggled(bool)), SLOT(showPasswords(bool)));
+    connect(m_ui->btnAdvanced, SIGNAL(clicked()), SLOT(showAdvanced()));
 
     if (m_setting)
         loadConfig(setting);
@@ -167,4 +169,17 @@ void VpncWidget::showPasswords(bool show)
 {
     m_ui->userPassword->setPasswordMode(!show);
     m_ui->groupPassword->setPasswordMode(!show);
+}
+
+void VpncWidget::showAdvanced()
+{
+    VpncAdvancedWidget * adv = new VpncAdvancedWidget(m_setting, this);
+    if (adv->exec() == QDialog::Accepted) {
+        QStringMap advData = adv->setting();
+        if (!advData.isEmpty()) {
+            m_setting->data().unite(advData);
+        }
+    }
+
+    delete adv;
 }

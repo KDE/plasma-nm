@@ -26,20 +26,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class Delegate : public QStyledItemDelegate
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     Delegate(QObject * parent = 0);
     virtual ~Delegate();
 
     virtual QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option,
-                const QModelIndex &index) const;
+                                   const QModelIndex &index) const;
     virtual void setEditorData(QWidget *editor, const QModelIndex &index) const;
 
     virtual void setModelData(QWidget *editor, QAbstractItemModel *model,
-                const QModelIndex &index) const;
+                              const QModelIndex &index) const;
 
     virtual void updateEditorGeometry(QWidget *editor,
-                const QStyleOptionViewItem &option, const QModelIndex &index) const;
+                                      const QStyleOptionViewItem &option, const QModelIndex &index) const;
 };
 
 #endif

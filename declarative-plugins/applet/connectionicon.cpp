@@ -101,22 +101,6 @@ void ConnectionIcon::activeConnectionStateChanged(NetworkManager::ActiveConnecti
     setIcons();
 }
 
-// void ConnectionIcon::accessPointAppeared(const QString& accesspoint)
-// {
-//     Q_UNUSED(accesspoint);
-//
-//     if (NetworkManager::status() == NetworkManager::Disconnected) {
-//         foreach (NetworkManager::Device * dev, NetworkManager::networkInterfaces()) {
-//             if (dev->type() == NetworkManager::Device::Ethernet) {
-//                 NetworkManager::WiredDevice * wiredDevice = qobject_cast<NetworkManager::WiredDevice*>(dev);
-//                 if (!wiredDevice->carrier()) {
-//                     setDisconnectedIcon();
-//                 }
-//             }
-//         }
-//     }
-// }
-
 void ConnectionIcon::carrierChanged(bool carrier)
 {
     Q_UNUSED(carrier);
@@ -138,15 +122,7 @@ void ConnectionIcon::deviceAdded(const QString& device)
         NetworkManager::WiredDevice * wiredDev = qobject_cast<NetworkManager::WiredDevice*>(dev);
         connect(wiredDev, SIGNAL(carrierChanged(bool)),
                 SLOT(carrierChanged(bool)));
-    } /*else if (dev->type() == NetworkManager::Device::Wifi) {
-        NetworkManager::WirelessDevice * wirelessDev = qobject_cast<NetworkManager::WirelessDevice*>(dev);
-        if (!wirelessDev->accessPoints().isEmpty()) {
-            connect(wirelessDev, SIGNAL(accessPointAppeared(QString)),
-                    SLOT(accessPointAppeared(QString)));
-        }
-    } else if (dev->type() == NetworkManager::Device::Modem) {
-        // TODO
-    }*/
+    }
 }
 
 void ConnectionIcon::deviceRemoved(const QString& device)
@@ -282,6 +258,8 @@ void ConnectionIcon::setModemIcon(NetworkManager::Device * device)
                 SLOT(modemSignalChanged()), Qt::UniqueConnection);
         connect(m_modemNetwork, SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
                 SLOT(setIconForModem()), Qt::UniqueConnection);
+        connect(m_modemNetwork, SIGNAL(destroyed(QObject*)),
+                SLOT(modemNetworkRemoved()));
 
         setIconForModem();
     } else {
@@ -290,6 +268,11 @@ void ConnectionIcon::setModemIcon(NetworkManager::Device * device)
 
         return;
     }
+}
+
+void ConnectionIcon::modemNetworkRemoved()
+{
+    m_modemNetwork = 0;
 }
 
 void ConnectionIcon::modemSignalChanged(uint signal)

@@ -40,10 +40,10 @@ public Q_SLOTS:
 private Q_SLOTS:
     void activeConnectionsChanged();
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
-//     void accessPointAppeared(const QString & accesspoint);
     void carrierChanged(bool carrier);
     void deviceAdded(const QString & device);
     void deviceRemoved(const QString & device);
+    void modemNetworkRemoved();
     void modemSignalChanged(uint signal);
     void setIcons();
     void setWirelessIconForSignalStrenght(int strenght);

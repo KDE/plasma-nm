@@ -13,15 +13,14 @@ kde4_add_ui_files(plasmanm-internal_SRCS
     ui/passworddialog.ui
 )
 
-kde4_add_library(plasmanm-internal STATIC ${plasmanm-internal_SRCS})
-SET_TARGET_PROPERTIES(plasmanm-internal PROPERTIES COMPILE_FLAGS -fPIC)
+kde4_add_library(plasmanm-internal SHARED ${plasmanm-internal_SRCS})
 target_link_libraries(plasmanm-internal QtNetworkManager ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS})
 
-#set_target_properties(plasmanm-internal PROPERTIES
-#    VERSION ${GENERIC_LIB_VERSION}
-#    SOVERSION ${GENERIC_LIB_SOVERSION}
-#)
+set_target_properties(plasmanm-internal PROPERTIES
+    VERSION 0
+    SOVERSION 0
+)
 
-#install(TARGETS plasmanm-internal ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS plasmanm-internal ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES plasma-nm-vpnuiplugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})

@@ -24,10 +24,11 @@
 #include <QtGui/QWidget>
 #include <QtNetworkManager/settings/setting.h>
 
-class SettingWidget : public QWidget
-{
-Q_OBJECT
+#include <kdemacros.h>
 
+class KDE_EXPORT SettingWidget : public QWidget
+{
+    Q_OBJECT
 public:
     SettingWidget(NetworkManager::Settings::Setting * setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~SettingWidget();

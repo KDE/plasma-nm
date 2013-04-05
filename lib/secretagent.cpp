@@ -51,14 +51,6 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
     qDebug() << "Hints:" << hints;
     qDebug() << "Flags:" << flags;
 
-#if 0
-    QStringMap secrets = qdbus_cast<QStringMap>(connection.value("vpn").value("secrets"));
-    qDebug() << "SECRETS: " << secrets;
-    foreach (const QString & secret, secrets.keys()) {
-        qDebug() << "Needed secret:" << secret;
-    }
-#endif
-
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
     settings->fromMap(connection);
 
@@ -70,7 +62,7 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
     const bool allowInteraction = secretsFlags.testFlag(AllowInteraction);
     const bool isVpn = (setting->type() == NetworkManager::Settings::Setting::Vpn);
 
-    if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && userRequested)) {
+    if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
         QVariantMapMap result;
         if (isVpn) {
             QString error;
@@ -81,8 +73,8 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
                 qDebug() << "Missing VPN setting!";
             } else {
                 const QString serviceType = vpnSetting->serviceType();
-                qDebug() << "Loading VPN plugin" << serviceType;
-                vpnSetting->printSetting();
+                //qDebug() << "Agent loading VPN plugin" << serviceType << "from DBUS" << calledFromDBus();
+                //vpnSetting->printSetting();
                 vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNM/VpnUiPlugin"),
                                                                                      QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
                                                                                      this, QVariantList(), &error);
@@ -120,6 +112,12 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
             }
             delete dlg;
         }
+    } else if (isVpn && userRequested) { // just return what we have
+        QVariantMapMap result;
+        NetworkManager::Settings::VpnSetting *vpnSetting =
+                static_cast<NetworkManager::Settings::VpnSetting*>(settings->setting(NetworkManager::Settings::Setting::Vpn));
+        result.insert("vpn", vpnSetting->secretsToMap());
+        return result;
     }
 
     return QVariantMapMap();

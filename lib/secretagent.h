@@ -24,10 +24,11 @@
 
 #include <QtNetworkManager/secretagent.h>
 
-class SecretAgent : public NetworkManager::SecretAgent
-{
-Q_OBJECT
+#include <kdemacros.h>
 
+class KDE_EXPORT SecretAgent : public NetworkManager::SecretAgent
+{
+    Q_OBJECT
 public:
     SecretAgent(QObject* parent = 0);
     virtual ~SecretAgent();

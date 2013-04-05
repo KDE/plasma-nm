@@ -26,9 +26,11 @@
 
 #include <QDialog>
 
+#include <kdemacros.h>
+
 #include "ui_passworddialog.h"
 
-class PasswordDialog : public QDialog
+class KDE_EXPORT PasswordDialog : public QDialog
 {
     Q_OBJECT
 public:

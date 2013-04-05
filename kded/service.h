@@ -25,12 +25,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PLASMANM_KDED_SERVICE_H
 
 #include <KDEDModule>
+#include <kdemacros.h>
 
 #include <QVariant>
 
 class NetworkManagementServicePrivate;
 
-class NetworkManagementService : public KDEDModule
+class KDE_EXPORT NetworkManagementService : public KDEDModule
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(NetworkManagementService)

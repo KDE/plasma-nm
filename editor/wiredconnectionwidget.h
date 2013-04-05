@@ -35,10 +35,10 @@ class WiredConnectionWidget : public SettingWidget
 Q_OBJECT
 
 public:
-    WiredConnectionWidget(NetworkManager::Settings::Setting* setting = 0, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit WiredConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~WiredConnectionWidget();
 
-    void loadConfig(NetworkManager::Settings::Setting * setting);
+    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting() const;
 

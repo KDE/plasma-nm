@@ -49,7 +49,8 @@ void ModelVpnItem::updateDetailsContent()
     if (m_connection) {
         NetworkManager::Settings::ConnectionSettings settings;
         settings.fromMap(m_connection->settings());
-        NetworkManager::Settings::VpnSetting * vpnSetting = static_cast<NetworkManager::Settings::VpnSetting*>(settings.setting(NetworkManager::Settings::Setting::Vpn));
+        NetworkManager::Settings::VpnSetting::Ptr vpnSetting;
+        vpnSetting = settings.setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
         if (vpnSetting) {
             m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
         }

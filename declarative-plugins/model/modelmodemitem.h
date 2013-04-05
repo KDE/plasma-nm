@@ -45,7 +45,7 @@ private Q_SLOTS:
     void onAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode);
     void onAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology tech);
 protected:
-    ModemManager::ModemGsmNetworkInterface * m_modemNetwork;
+    ModemManager::ModemGsmNetworkInterface::Ptr m_modemNetwork;
 
     void updateDetailsContent();
 };

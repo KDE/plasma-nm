@@ -134,7 +134,8 @@ void ModelWirelessItem::setConnectionSettings(const QVariantMapMap& map)
     settings.fromMap(map);
 
     if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-        NetworkManager::Settings::WirelessSetting * wirelessSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
+        NetworkManager::Settings::WirelessSetting::Ptr wirelessSetting;
+        wirelessSetting = settings.setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
         m_ssid = wirelessSetting->ssid();
         if (!wirelessSetting->security().isEmpty()) {
             m_secure = true;

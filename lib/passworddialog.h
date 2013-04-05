@@ -34,7 +34,7 @@ class KDE_EXPORT PasswordDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit PasswordDialog(NetworkManager::Settings::Setting * setting, const QStringList & neededSecrets,
+    explicit PasswordDialog(const NetworkManager::Settings::Setting::Ptr &setting, const QStringList & neededSecrets,
                             const QString & ssid = QString(), QWidget *parent = 0);
     ~PasswordDialog();
     QVariantMap secrets() const;

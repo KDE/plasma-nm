@@ -20,7 +20,7 @@
 
 #include "passworddialog.h"
 
-PasswordDialog::PasswordDialog(NetworkManager::Settings::Setting *setting, const QStringList &neededSecrets, const QString &ssid, QWidget *parent) :
+PasswordDialog::PasswordDialog(const NetworkManager::Settings::Setting::Ptr &setting, const QStringList &neededSecrets, const QString &ssid, QWidget *parent) :
     QDialog(parent), m_ui(new Ui::PasswordDialog), m_neededSecrets(neededSecrets)
 {
     m_ui->setupUi(this);

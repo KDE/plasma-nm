@@ -44,8 +44,8 @@ public:
     VpnUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
     virtual ~VpnUiPlugin();
 
-    virtual SettingWidget * widget(NetworkManager::Settings::VpnSetting *setting, QWidget * parent = 0) = 0;
-    virtual SettingWidget * askUser(NetworkManager::Settings::VpnSetting *setting, QWidget * parent = 0) = 0;
+    virtual SettingWidget * widget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;
+    virtual SettingWidget * askUser(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;
 
 #if 0
     /**

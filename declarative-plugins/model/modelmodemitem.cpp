@@ -110,16 +110,16 @@ void ModelModemItem::setDevice(const NetworkManager::Device::Ptr & device)
     NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
 
     if (modemDevice) {
-        m_modemNetwork = modemDevice.data()->getModemNetworkIface();
+        m_modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
 
         if (m_modemNetwork) {
-            connect(m_modemNetwork, SIGNAL(destroyed(QObject*)),
+            connect(m_modemNetwork.data(), SIGNAL(destroyed(QObject*)),
                     SLOT(modemNetworkRemoved()));
-            connect(m_modemNetwork, SIGNAL(signalQualityChanged(uint)),
+            connect(m_modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
                     SLOT(onSignalQualitychanged(uint)), Qt::UniqueConnection);
-            connect(m_modemNetwork, SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
+            connect(m_modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
                     SLOT(onAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)), Qt::UniqueConnection);
-            connect(m_modemNetwork, SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
+            connect(m_modemNetwork.data(), SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
                     SLOT(onAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)), Qt::UniqueConnection);
         }
     }
@@ -141,7 +141,7 @@ void ModelModemItem::updateDetailsContent()
 
 void ModelModemItem::modemNetworkRemoved()
 {
-    m_modemNetwork = 0;
+    m_modemNetwork.clear();
 }
 
 void ModelModemItem::onSignalQualitychanged(uint signal)

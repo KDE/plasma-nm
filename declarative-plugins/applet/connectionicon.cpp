@@ -138,8 +138,8 @@ void ConnectionIcon::setIcons()
     m_signal = 0;
 
     if (m_modemNetwork) {
-        disconnect(m_modemNetwork, 0, this, 0);
-        m_modemNetwork = 0;
+        disconnect(m_modemNetwork.data(), 0, this, 0);
+        m_modemNetwork.clear();
     }
 
     NetworkManager::ActiveConnection::List actives = NetworkManager::activeConnections();
@@ -153,7 +153,7 @@ void ConnectionIcon::setIcons()
                 if (type == NetworkManager::Device::Wifi) {
                     NetworkManager::Settings::ConnectionSettings settings;
                     settings.fromMap(active.data()->connection()->settings());
-                    NetworkManager::Settings::WirelessSetting * wirelessSetting = dynamic_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
+                    NetworkManager::Settings::WirelessSetting::Ptr wirelessSetting = settings.setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
                     setWirelessIcon(device, wirelessSetting->ssid());
                     connectionFound = true;
                 } else if (type == NetworkManager::Device::Ethernet) {
@@ -245,14 +245,14 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
         return;
     }
 
-    m_modemNetwork = modemDevice->getModemNetworkIface();
+    m_modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
 
     if (m_modemNetwork) {
-        connect(m_modemNetwork, SIGNAL(signalQualityChanged(uint)),
+        connect(m_modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
                 SLOT(modemSignalChanged(uint)), Qt::UniqueConnection);
-        connect(m_modemNetwork, SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
+        connect(m_modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
                 SLOT(setIconForModem()), Qt::UniqueConnection);
-        connect(m_modemNetwork, SIGNAL(destroyed(QObject*)),
+        connect(m_modemNetwork.data(), SIGNAL(destroyed(QObject*)),
                 SLOT(modemNetworkRemoved()));
 
         m_signal = m_modemNetwork->getSignalQuality();
@@ -267,7 +267,7 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
 
 void ConnectionIcon::modemNetworkRemoved()
 {
-    m_modemNetwork = 0;
+    m_modemNetwork.clear();
 }
 
 void ConnectionIcon::modemSignalChanged(uint signal)

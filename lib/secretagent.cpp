@@ -54,7 +54,7 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
     settings->fromMap(connection);
 
-    NetworkManager::Settings::Setting * setting = settings->setting(NetworkManager::Settings::Setting::typeFromString(setting_name));
+    NetworkManager::Settings::Setting::Ptr setting = settings->setting(NetworkManager::Settings::Setting::typeFromString(setting_name));
 
     NetworkManager::SecretAgent::GetSecretsFlags secretsFlags(static_cast<int>(flags));
     const bool requestNew = secretsFlags.testFlag(RequestNew);
@@ -67,8 +67,8 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
         if (isVpn) {
             QString error;
             VpnUiPlugin * vpnPlugin = 0;
-            NetworkManager::Settings::VpnSetting *vpnSetting =
-                    static_cast<NetworkManager::Settings::VpnSetting*>(settings->setting(NetworkManager::Settings::Setting::Vpn));
+            NetworkManager::Settings::VpnSetting::Ptr vpnSetting =
+                    settings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
             if (!vpnSetting) {
                 qDebug() << "Missing VPN setting!";
             } else {
@@ -95,7 +95,7 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
                 }
             }
         } else {
-            NetworkManager::Settings::WirelessSetting * wifi = static_cast<NetworkManager::Settings::WirelessSetting *>(settings->setting(NetworkManager::Settings::Setting::Wireless));
+            NetworkManager::Settings::WirelessSetting::Ptr wifi = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
             QString ssid;
             if (wifi)
                 ssid = wifi->ssid();
@@ -114,8 +114,8 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
         }
     } else if (isVpn && userRequested) { // just return what we have
         QVariantMapMap result;
-        NetworkManager::Settings::VpnSetting *vpnSetting =
-                static_cast<NetworkManager::Settings::VpnSetting*>(settings->setting(NetworkManager::Settings::Setting::Vpn));
+        NetworkManager::Settings::VpnSetting::Ptr vpnSetting =
+                settings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
         result.insert("vpn", vpnSetting->secretsToMap());
         return result;
     }

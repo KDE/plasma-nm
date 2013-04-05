@@ -59,7 +59,7 @@ Q_SIGNALS:
 private:
     int m_signal;
     NetworkManager::WirelessNetwork::Ptr m_wirelessNetwork;
-    ModemManager::ModemGsmNetworkInterface * m_modemNetwork;
+    ModemManager::ModemGsmNetworkInterface::Ptr m_modemNetwork;
 
     void setDisconnectedIcon();
     void setModemIcon(const NetworkManager::Device::Ptr & device);

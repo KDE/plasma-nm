@@ -24,7 +24,7 @@
 #include "ui_wiredconnectionwidget.h"
 
 
-WiredConnectionWidget::WiredConnectionWidget(NetworkManager::Settings::Setting* setting, QWidget* parent, Qt::WindowFlags f):
+WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_widget(new Ui::WiredConnectionWidget)
 {

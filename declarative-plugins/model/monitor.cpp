@@ -234,7 +234,8 @@ void Monitor::wirelessNetworkAppeared(const QString& ssid)
                 NetworkManager::Settings::ConnectionSettings settings;
                 settings.fromMap(connection->settings());
 
-                NetworkManager::Settings::WirelessSetting * wirelessSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
+                NetworkManager::Settings::WirelessSetting::Ptr wirelessSetting;
+                wirelessSetting = settings.setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
                 if (wirelessSetting->ssid() == ssid) {
                     NMMonitorDebug() << "Known connection for previusly added access point " << ssid;
                     NMMonitorSignalDebug() << "Emit signal addConnection(" << connection->id() << ")";

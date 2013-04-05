@@ -62,8 +62,13 @@ public:
     virtual void setConnection(NetworkManager::Settings::Connection * connection);
     NetworkManager::Settings::Connection * connection() const;
 
+<<<<<<< HEAD
     void setDevice(const NetworkManager::Device::Ptr device);
     NetworkManager::Device::Ptr device() const;
+=======
+    virtual void setDevice(NetworkManager::Device * device);
+    NetworkManager::Device * device() const;
+>>>>>>> master
 
     // Object paths
 

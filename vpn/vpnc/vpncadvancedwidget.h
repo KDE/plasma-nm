@@ -18,38 +18,29 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef VPNC_WIDGET_H
-#define VPNC_WIDGET_H
+#ifndef VPNCADVANCEDWIDGET_H
+#define VPNCADVANCEDWIDGET_H
+
+#include <QDialog>
 
 #include <QtNetworkManager/settings/vpn.h>
 
-#include "settingwidget.h"
-
 namespace Ui
 {
-class VpncWidget;
+class VpncAdvancedWidget;
 }
 
-class VpncWidget : public SettingWidget
+class VpncAdvancedWidget : public QDialog
 {
     Q_OBJECT
 public:
-    VpncWidget(NetworkManager::Settings::VpnSetting *setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~VpncWidget();
+    VpncAdvancedWidget(NetworkManager::Settings::VpnSetting * setting, QWidget *parent = 0);
 
-    void loadConfig(NetworkManager::Settings::Setting *setting);
-
-    QVariantMap setting() const;
-
-private slots:
-    void userPasswordTypeChanged(int index);
-    void groupPasswordTypeChanged(int index);
-    void showPasswords(bool show);
-    void showAdvanced();
+    QStringMap setting() const;
 
 private:
-    Ui::VpncWidget * m_ui;
-    NetworkManager::Settings::VpnSetting * m_setting;
+    void loadConfig(NetworkManager::Settings::VpnSetting * setting);
+    Ui::VpncAdvancedWidget * m_ui;
 };
 
-#endif // VPNC_WIDGET_H
+#endif // VPNCADVANCEDWIDGET_H

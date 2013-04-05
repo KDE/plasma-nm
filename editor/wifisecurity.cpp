@@ -49,8 +49,27 @@ WifiSecurity::~WifiSecurity()
 {
 }
 
+bool WifiSecurity::enabled() const
+{
+    if (m_ui->securityCombo->currentIndex() != 0) {
+        return true;
+    }
+
+    return false;
+}
+
+bool WifiSecurity::enabled8021x() const
+{
+    if (m_ui->securityCombo->currentIndex() == 3 ||
+        m_ui->securityCombo->currentIndex() == 5) {
+        return true;
+    }
+
+    return false;
+}
+
 void WifiSecurity::loadConfig(NetworkManager::Settings::Setting * setting)
-{   
+{
     NetworkManager::Settings::WirelessSecuritySetting * wifiSecurity = static_cast<NetworkManager::Settings::WirelessSecuritySetting *>(setting);
 
     const NetworkManager::Settings::WirelessSecuritySetting::KeyMgmt keyMgmt = wifiSecurity->keyMgmt();

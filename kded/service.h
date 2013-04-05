@@ -1,5 +1,8 @@
 /*
-Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
+Copyright 2009 Dario Freddi <drf54321@gmail.com>
+Copyright 2009 Will Stephenson <wstephenson@kde.org>
+Copyright 2012 Lamarque V. Souza <lamarque@kde.org>
+Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -18,28 +21,24 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef DELEGATE_H
-#define DELEGATE_H
+#ifndef PLASMANM_KDED_SERVICE_H
+#define PLASMANM_KDED_SERVICE_H
 
-#include <QWidget>
-#include <QStyledItemDelegate>
+#include <KDEDModule>
 
-class Delegate : public QStyledItemDelegate
+#include <QVariant>
+
+class NetworkManagementServicePrivate;
+
+class NetworkManagementService : public KDEDModule
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(NetworkManagementService)
 public:
-    Delegate(QObject * parent = 0);
-    virtual ~Delegate();
-
-    virtual QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option,
-                                   const QModelIndex &index) const;
-    virtual void setEditorData(QWidget *editor, const QModelIndex &index) const;
-
-    virtual void setModelData(QWidget *editor, QAbstractItemModel *model,
-                              const QModelIndex &index) const;
-
-    virtual void updateEditorGeometry(QWidget *editor,
-                                      const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    NetworkManagementService(QObject * parent, const QVariantList&);
+    virtual ~NetworkManagementService();
+private:
+    NetworkManagementServicePrivate * d_ptr;
 };
 
-#endif
+#endif // PLASMANM_KDED_SERVICE_H

@@ -28,14 +28,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QVariant>
 
-class VpncUiPlugin : public VpnUiPlugin
+class KDE_EXPORT VpncUiPlugin : public VpnUiPlugin
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    explicit VpncUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
+    VpncUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
     virtual ~VpncUiPlugin();
-    SettingWidget * widget(NetworkManager::Settings::Setting *setting, QWidget * parent = 0);
-    QDialog * askUser(NetworkManager::Settings::Setting *setting, QWidget * parent = 0);
+    virtual SettingWidget * widget(NetworkManager::Settings::VpnSetting *setting, QWidget * parent = 0);
+    virtual SettingWidget * askUser(NetworkManager::Settings::VpnSetting *setting, QWidget * parent = 0);
 #if 0
     QString suggestedFileName(Knm::Connection *connection) const;
     QString supportedFileExtensions() const;

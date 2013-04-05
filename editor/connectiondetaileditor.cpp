@@ -46,12 +46,13 @@
 
 using namespace NetworkManager;
 
-ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::ConnectionType type, QWidget* parent, Qt::WindowFlags f):
+ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::ConnectionType type, const QString &vpnType, QWidget* parent, Qt::WindowFlags f):
     QDialog(parent, f),
     m_detailEditor(new Ui::ConnectionDetailEditor),
     m_connection(new NetworkManager::Settings::ConnectionSettings(type)),
     m_numSecrets(0),
-    m_new(true)
+    m_new(true),
+    m_vpnType(vpnType)
 {
     m_detailEditor->setupUi(this);
 
@@ -73,6 +74,8 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings* con
 
 ConnectionDetailEditor::~ConnectionDetailEditor()
 {
+    if (m_new)
+        delete m_connection;
 }
 
 void ConnectionDetailEditor::initEditor()
@@ -114,6 +117,10 @@ void ConnectionDetailEditor::initEditor()
                     connection->secrets("802-1x");
                     connection->secrets("802-11-wireless-security");
                     m_numSecrets = 2;
+                    break;
+                case Settings::ConnectionSettings::Vpn:
+                    connection->secrets("vpn");
+                    m_numSecrets = 1;
                     break;
                 default:
                     initTabs();
@@ -210,15 +217,20 @@ void ConnectionDetailEditor::initTabs()
         if (!vpnSetting) {
             qDebug() << "Missing VPN setting!";
         } else {
-            const QString serviceType = vpnSetting->serviceType();
+            QString serviceType;
+            if (m_new && !m_vpnType.isEmpty())
+                serviceType = m_vpnType;
+            else
+                serviceType = vpnSetting->serviceType();
             qDebug() << "Loading VPN plugin" << serviceType;
             //vpnSetting->printSetting();
             vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNM/VpnUiPlugin"),
                                                                                  QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
                                                                                  this, QVariantList(), &error);
             if (vpnPlugin && error.isEmpty()) {
+                const QString shortName = serviceType.section('.', -1);
                 SettingWidget * vpnWidget = vpnPlugin->widget(vpnSetting, this);
-                m_detailEditor->tabWidget->addTab(vpnWidget, i18n("VPN"));
+                m_detailEditor->tabWidget->addTab(vpnWidget, i18n("VPN (%1)", shortName));
                 IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
                 m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
             } else {
@@ -237,17 +249,27 @@ void ConnectionDetailEditor::saveSetting()
     for (int i = 1; i < m_detailEditor->tabWidget->count(); ++i) {
         SettingWidget * widget = static_cast<SettingWidget*>(m_detailEditor->tabWidget->widget(i));
         const QString type = widget->type();
-        settings.insert(type, widget->setting());
+        if (type != NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x) &&
+            type != NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::WirelessSecurity)) {
+            settings.insert(type, widget->setting());
+        }
 
         QVariantMap security8021x;
         if (type == NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::WirelessSecurity)) {
-            security8021x = static_cast<WifiSecurity *>(widget)->setting8021x();
+            WifiSecurity * wifiSecurity = static_cast<WifiSecurity*>(widget);
+            if (wifiSecurity->enabled()) {
+                settings.insert(type, wifiSecurity->setting());
+            }
+            if (wifiSecurity->enabled8021x()) {
+                security8021x = static_cast<WifiSecurity *>(widget)->setting8021x();
+                settings.insert(NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x), security8021x);
+            }
         } else if (type == NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x)) {
-            security8021x = static_cast<WiredSecurity *>(widget)->setting();
-        }
-
-        if (!security8021x.isEmpty()) {
-            settings.insert(NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x), security8021x);
+            WiredSecurity * wiredSecurity = static_cast<WiredSecurity*>(widget);
+            if (wiredSecurity->enabled8021x()) {
+                security8021x = static_cast<WiredSecurity *>(widget)->setting();
+                settings.insert(NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x), security8021x);
+            }
         }
     }
 

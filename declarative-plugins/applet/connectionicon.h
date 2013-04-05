@@ -26,6 +26,8 @@
 #include <QtNetworkManager/wirelessnetwork.h>
 #include <QtNetworkManager/wirelessnetworkinterfaceenvironment.h>
 
+#include <QtModemManager/modemgsmnetworkinterface.h>
+
 class ConnectionIcon : public QObject
 {
 Q_OBJECT
@@ -39,12 +41,14 @@ public Q_SLOTS:
 private Q_SLOTS:
     void activeConnectionsChanged();
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
-    void accessPointAppeared(const QString & accesspoint);
     void carrierChanged(bool carrier);
     void deviceAdded(const QString & device);
     void deviceRemoved(const QString & device);
+    void modemNetworkRemoved();
+    void modemSignalChanged(uint signal);
     void setIcons();
     void setWirelessIconForSignalStrenght(int strenght);
+    void setIconForModem();
 
 Q_SIGNALS:
     void hideConnectingIndicator();
@@ -54,13 +58,14 @@ Q_SIGNALS:
     void unsetHoverIcon();
 
 private:
-    int m_wirelessSignal;
-    NetworkManager::WirelessNetwork::Ptr m_wirelessNetwork;
+    int m_signal;
+    NetworkManager::WirelessNetwork * m_wirelessNetwork;
     NetworkManager::WirelessNetworkInterfaceEnvironment * m_wirelessEnvironment;
+    ModemManager::ModemGsmNetworkInterface * m_modemNetwork;
 
     void setDisconnectedIcon();
-    void setModemIcon();
-    void setWirelessIcon(const NetworkManager::Device::Ptr &device, const QString & ssid);
+    void setModemIcon(NetworkManager::Device * device);
+    void setWirelessIcon(NetworkManager::Device * device, const QString & ssid);
 };
 
 #endif // PLASMA_NM_CONNECTION_ICON_H

@@ -37,6 +37,9 @@ public:
 private Q_SLOTS:
     void onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state);
 
+protected:
+    void updateDetailsContent();
+
 private:
     NetworkManager::VpnConnection * m_vpn;
 };

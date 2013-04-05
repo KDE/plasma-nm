@@ -33,7 +33,6 @@
 #include "model/sortmodel.h"
 
 #include "handler.h"
-#include "secretagent.h"
 
 void QmlPlugins::registerTypes(const char* uri)
 {
@@ -43,7 +42,6 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<Handler>(uri, 0, 1, "Handler");
     qmlRegisterType<Model>(uri, 0, 1, "Model");
     qmlRegisterType<SortModel>(uri, 0, 1, "SortModel");
-    qmlRegisterType<SecretAgent>(uri, 0, 1, "SecretAgent");
     qmlRegisterType<TrafficMonitor>(uri, 0, 1, "TrafficMonitor");
 }
 

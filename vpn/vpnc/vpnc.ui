@@ -203,6 +203,9 @@
      <property name="enabled">
       <bool>false</bool>
      </property>
+     <property name="filter">
+      <string>*.pem *.crt *.cer</string>
+     </property>
     </widget>
    </item>
    <item row="9" column="2">

@@ -44,7 +44,7 @@ public:
     void setIgnoreAutoRoutesCheckboxEnabled(bool enabled);
     bool ignoreautoroutes() const;
 
-protected slots:
+private slots:
     void addRoute();
     void removeRoute();
     /**

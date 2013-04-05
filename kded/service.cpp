@@ -1,5 +1,7 @@
 /*
-Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
+Copyright 2009 Dario Freddi <drf54321@gmail.com>
+Copyright 2009 Will Stephenson <wstephenson@kde.org>
+Copyright 2011-2012 Lamarque V. Souza <lamarque@kde.org>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -18,28 +20,30 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef DELEGATE_H
-#define DELEGATE_H
+#include <KPluginFactory>
 
-#include <QWidget>
-#include <QStyledItemDelegate>
+#include "service.h"
 
-class Delegate : public QStyledItemDelegate
+#include "secretagent.h"
+
+K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManagementService>();)
+K_EXPORT_PLUGIN(NetworkManagementServiceFactory("plasmanm"))
+
+class NetworkManagementServicePrivate
 {
-    Q_OBJECT
 public:
-    Delegate(QObject * parent = 0);
-    virtual ~Delegate();
-
-    virtual QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option,
-                                   const QModelIndex &index) const;
-    virtual void setEditorData(QWidget *editor, const QModelIndex &index) const;
-
-    virtual void setModelData(QWidget *editor, QAbstractItemModel *model,
-                              const QModelIndex &index) const;
-
-    virtual void updateEditorGeometry(QWidget *editor,
-                                      const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    SecretAgent * agent;
 };
 
-#endif
+NetworkManagementService::NetworkManagementService(QObject * parent, const QVariantList&)
+        : KDEDModule(parent), d_ptr(new NetworkManagementServicePrivate)
+{
+    Q_D(NetworkManagementService);
+
+    d->agent = new SecretAgent(this);
+}
+
+NetworkManagementService::~NetworkManagementService()
+{
+    delete d_ptr;
+}

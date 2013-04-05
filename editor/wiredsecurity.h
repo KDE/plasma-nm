@@ -42,6 +42,8 @@ public:
     void loadConfig(NetworkManager::Settings::Setting * setting);
     QVariantMap setting() const;
 
+    bool enabled8021x() const;
+
 private:
     Ui::WiredSecurity * m_ui;
     Security8021x * m_8021xWidget;

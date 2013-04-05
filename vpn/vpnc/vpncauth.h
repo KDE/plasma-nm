@@ -1,5 +1,6 @@
 /*
-Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
+Copyright 2008 Will Stephenson <wstephenson@kde.org>
+Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -18,28 +19,32 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef DELEGATE_H
-#define DELEGATE_H
+#ifndef VPNCAUTH_H
+#define VPNCAUTH_H
 
-#include <QWidget>
-#include <QStyledItemDelegate>
+#include <QDialog>
 
-class Delegate : public QStyledItemDelegate
+#include <QtNetworkManager/settings/vpn.h>
+
+#include "settingwidget.h"
+
+class VpncAuthDialogPrivate;
+
+class VpncAuthDialog : public SettingWidget
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(VpncAuthDialog)
 public:
-    Delegate(QObject * parent = 0);
-    virtual ~Delegate();
+    VpncAuthDialog(NetworkManager::Settings::VpnSetting *setting, QWidget * parent = 0);
+    ~VpncAuthDialog();
+    virtual void readSecrets();
+    virtual QVariantMap setting() const;
 
-    virtual QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option,
-                                   const QModelIndex &index) const;
-    virtual void setEditorData(QWidget *editor, const QModelIndex &index) const;
+private slots:
+    void showPasswordsChanged(bool);
 
-    virtual void setModelData(QWidget *editor, QAbstractItemModel *model,
-                              const QModelIndex &index) const;
-
-    virtual void updateEditorGeometry(QWidget *editor,
-                                      const QStyleOptionViewItem &option, const QModelIndex &index) const;
+private:
+    VpncAuthDialogPrivate * d_ptr;
 };
 
-#endif
+#endif // VPNCAUTH_H

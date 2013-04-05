@@ -70,7 +70,7 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
     const bool allowInteraction = secretsFlags.testFlag(AllowInteraction);
     const bool isVpn = (setting->type() == NetworkManager::Settings::Setting::Vpn);
 
-    if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && userRequested)) {
+    if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
         QVariantMapMap result;
         if (isVpn) {
             QString error;
@@ -120,6 +120,12 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
             }
             delete dlg;
         }
+    } else if (isVpn && userRequested) { // just return what we have
+        QVariantMapMap result;
+        NetworkManager::Settings::VpnSetting *vpnSetting =
+                static_cast<NetworkManager::Settings::VpnSetting*>(settings->setting(NetworkManager::Settings::Setting::Vpn));
+        result.insert("vpn", vpnSetting->secretsToMap());
+        return result;
     }
 
     return QVariantMapMap();

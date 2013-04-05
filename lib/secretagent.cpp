@@ -51,14 +51,6 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
     qDebug() << "Hints:" << hints;
     qDebug() << "Flags:" << flags;
 
-#if 0
-    QStringMap secrets = qdbus_cast<QStringMap>(connection.value("vpn").value("secrets"));
-    qDebug() << "SECRETS: " << secrets;
-    foreach (const QString & secret, secrets.keys()) {
-        qDebug() << "Needed secret:" << secret;
-    }
-#endif
-
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
     settings->fromMap(connection);
 
@@ -81,8 +73,8 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
                 qDebug() << "Missing VPN setting!";
             } else {
                 const QString serviceType = vpnSetting->serviceType();
-                qDebug() << "Agent loading VPN plugin" << serviceType << "from DBUS" << calledFromDBus();
-                vpnSetting->printSetting();
+                //qDebug() << "Agent loading VPN plugin" << serviceType << "from DBUS" << calledFromDBus();
+                //vpnSetting->printSetting();
                 vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNM/VpnUiPlugin"),
                                                                                      QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
                                                                                      this, QVariantList(), &error);

@@ -43,8 +43,10 @@ void ModelWiredItem::updateDetailsContent()
 
     QString format = "<tr><td align=\"right\"><b>%1</b></td><td align=\"left\">&nbsp;%2</td></tr>";
 
-    if (m_device) {
-        NetworkManager::WiredDevice::Ptr wired = device().objectCast<NetworkManager::WiredDevice>();
+    NetworkManager::Device::Ptr device = NetworkManager::findDeviceByIpFace(m_deviceUdi);
+
+    if (device) {
+        NetworkManager::WiredDevice::Ptr wired = device.objectCast<NetworkManager::WiredDevice>();
         if (connected()) {
             if (wired->bitRate() < 1000000) {
                 m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wired->bitRate()/1000));

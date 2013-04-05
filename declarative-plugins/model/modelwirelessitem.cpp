@@ -86,8 +86,10 @@ void ModelWirelessItem::updateDetailsContent()
 
     QString format = "<tr><td align=\"right\"><b>%1</b></td><td align=\"left\">&nbsp;%2</td></tr>";
 
-    if (m_device) {
-        NetworkManager::WirelessDevice::Ptr wireless = device().objectCast<NetworkManager::WirelessDevice>();
+    NetworkManager::Device::Ptr device = NetworkManager::findDeviceByIpFace(m_deviceUdi);
+
+    if (device) {
+        NetworkManager::WirelessDevice::Ptr wireless = device.objectCast<NetworkManager::WirelessDevice>();
         if (connected()) {
             if (wireless->bitRate() && wireless->bitRate() < 1000) {
                 m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Kb/s", wireless->bitRate()));

@@ -154,23 +154,24 @@ void ModelItem::updateDetailsContent()
         m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
     }
 
-    if (m_device) {
+    NetworkManager::Device::Ptr device = NetworkManager::findDeviceByIpFace(m_deviceUdi);
 
-        if (device()->ipV4Config().isValid() && connected()) {
-            QHostAddress addr = device()->ipV4Config().addresses().first().ip();
+    if (device) {
+        if (device->ipV4Config().isValid() && connected()) {
+            QHostAddress addr = device->ipV4Config().addresses().first().ip();
             m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
         }
 
-        if (device()->ipV6Config().isValid() && connected()) {
-            QHostAddress addr = device()->ipV6Config().addresses().first().ip();
+        if (device->ipV6Config().isValid() && connected()) {
+            QHostAddress addr = device->ipV6Config().addresses().first().ip();
             m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
         }
 
         QString name;
-        if (device()->ipInterfaceName().isEmpty()) {
-            name = device()->interfaceName();
+        if (device->ipInterfaceName().isEmpty()) {
+            name = device->interfaceName();
         } else {
-            name = device()->ipInterfaceName();
+            name = device->ipInterfaceName();
         }
         m_details += QString(format).arg(i18n("System name:"), name);
     }

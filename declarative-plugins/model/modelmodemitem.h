@@ -40,6 +40,7 @@ public:
     void setDevice(const NetworkManager::Device::Ptr & device);
 
 private Q_SLOTS:
+    void modemNetworkRemoved();
     void onSignalQualitychanged(uint signal);
     void onAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode);
     void onAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology tech);

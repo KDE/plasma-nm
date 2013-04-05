@@ -28,7 +28,8 @@
 #include "debug.h"
 
 ModelModemItem::ModelModemItem(const NetworkManager::Device::Ptr & device, QObject* parent):
-    ModelItem(device, parent)
+    ModelItem(device, parent),
+    m_modemNetwork(0)
 {
     setDevice(device);
 }
@@ -112,6 +113,8 @@ void ModelModemItem::setDevice(const NetworkManager::Device::Ptr & device)
         m_modemNetwork = modemDevice.data()->getModemNetworkIface();
 
         if (m_modemNetwork) {
+            connect(m_modemNetwork, SIGNAL(destroyed(QObject*)),
+                    SLOT(modemNetworkRemoved()));
             connect(m_modemNetwork, SIGNAL(signalQualityChanged(uint)),
                     SLOT(onSignalQualitychanged(uint)), Qt::UniqueConnection);
             connect(m_modemNetwork, SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
@@ -134,6 +137,11 @@ void ModelModemItem::updateDetailsContent()
         m_details += QString(format).arg(i18n("Access technology:"), QString("%1/%2").arg(convertTypeToString(m_modemNetwork->type()), convertAccessTechnologyToString(m_modemNetwork->getAccessTechnology())));
         m_details += QString(format).arg(i18n("Allowed Mode"), convertAllowedModeToString(m_modemNetwork->getAllowedMode()));
     }
+}
+
+void ModelModemItem::modemNetworkRemoved()
+{
+    m_modemNetwork = 0;
 }
 
 void ModelModemItem::onSignalQualitychanged(uint signal)

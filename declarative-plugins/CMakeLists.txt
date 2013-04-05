@@ -19,13 +19,7 @@ set(plasma_nm_qml_plugins_SRCS
 
    debug.cpp
    handler.cpp
-   passworddialog.cpp
-   secretagent.cpp
    qmlplugins.cpp
-)
-
-kde4_add_ui_files(plasma_nm_qml_plugins_SRCS
-    ui/passworddialog.ui
 )
 
 kde4_add_library(plasmanmplugins SHARED ${plasma_nm_qml_plugins_SRCS})

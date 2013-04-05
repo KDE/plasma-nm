@@ -26,13 +26,13 @@
 #include "ui_vpnc.h"
 
 
-VpncWidget::VpncWidget(NetworkManager::Settings::Setting * setting, QWidget* parent, Qt::WindowFlags f):
+VpncWidget::VpncWidget(NetworkManager::Settings::VpnSetting *setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
-    m_ui(new Ui::VpncWidget)
+    m_ui(new Ui::VpncWidget),
+    m_setting(setting)
 {
     qDBusRegisterMetaType<QStringMap>();
 
-    m_setting = static_cast<NetworkManager::Settings::VpnSetting *>(setting);
     m_ui->setupUi(this);
 
     connect(m_ui->cboUserPasswordType, SIGNAL(currentIndexChanged(int)), SLOT(userPasswordTypeChanged(int)));

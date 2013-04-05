@@ -26,23 +26,26 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <QVariant>
 #include <QMessageBox>
 
+#include <QtNetworkManager/settings/vpn.h>
+
+#include <kdemacros.h>
+
 #include "settingwidget.h"
-#include "plasmanm_export.h"
 
 /**
  * Plugin for UI elements for VPN configuration
  */
-class PLASMANM_EXPORT VpnUiPlugin : public QObject
+class KDE_EXPORT VpnUiPlugin : public QObject
 {
     Q_OBJECT
 public:
     enum ErrorType {NoError, NotImplemented, Error};
 
-    VpnUiPlugin(QObject * parent = 0);
+    VpnUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
     virtual ~VpnUiPlugin();
 
-    virtual SettingWidget * widget(NetworkManager::Settings::Setting *setting = 0, QWidget * parent = 0) = 0;
-    virtual QDialog * askUser(NetworkManager::Settings::Setting *setting = 0, QWidget * parent = 0) = 0;
+    virtual SettingWidget * widget(NetworkManager::Settings::VpnSetting *setting, QWidget * parent = 0) = 0;
+    virtual SettingWidget * askUser(NetworkManager::Settings::VpnSetting *setting, QWidget * parent = 0) = 0;
 
 #if 0
     /**

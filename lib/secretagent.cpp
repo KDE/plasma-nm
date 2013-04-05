@@ -21,12 +21,17 @@
 
 #include "secretagent.h"
 #include "passworddialog.h"
+#include "vpnuiplugin.h"
 
 #include <QtNetworkManager/settings/connection.h>
 #include <QtNetworkManager/settings/802-11-wireless.h>
 #include <QtNetworkManager/generic-types.h>
+#include <QtNetworkManager/settings/vpn.h>
 
+#include <KServiceTypeTrader>
+#include <KPluginFactory>
 #include <KWindowSystem>
+#include <KDialog>
 
 SecretAgent::SecretAgent(QObject* parent):
     NetworkManager::SecretAgent("org.kde.plasma-nm", parent)
@@ -63,11 +68,40 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
     const bool requestNew = secretsFlags.testFlag(RequestNew);
     const bool userRequested = secretsFlags.testFlag(UserRequested);
     const bool allowInteraction = secretsFlags.testFlag(AllowInteraction);
+    const bool isVpn = (setting->type() == NetworkManager::Settings::Setting::Vpn);
 
-    if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested)) {
+    if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && userRequested)) {
         QVariantMapMap result;
-        if (setting->type() == NetworkManager::Settings::Setting::Vpn) {
-            // TODO
+        if (isVpn) {
+            QString error;
+            VpnUiPlugin * vpnPlugin = 0;
+            NetworkManager::Settings::VpnSetting *vpnSetting =
+                    static_cast<NetworkManager::Settings::VpnSetting*>(settings->setting(NetworkManager::Settings::Setting::Vpn));
+            if (!vpnSetting) {
+                qDebug() << "Missing VPN setting!";
+            } else {
+                const QString serviceType = vpnSetting->serviceType();
+                qDebug() << "Loading VPN plugin" << serviceType;
+                vpnSetting->printSetting();
+                vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNM/VpnUiPlugin"),
+                                                                                     QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
+                                                                                     this, QVariantList(), &error);
+                if (vpnPlugin && error.isEmpty()) {
+                    const QString shortName = serviceType.section('.', -1);
+                    KDialog * dlg = new KDialog;
+                    dlg->setMainWidget(vpnPlugin->askUser(vpnSetting));
+                    dlg->setButtons(KDialog::Ok | KDialog::Cancel);
+                    dlg->setCaption(i18n("VPN secrets (%1)", shortName));
+                    if (dlg->exec() == KDialog::Accepted) {
+                        result.insert(setting_name, static_cast<SettingWidget *>(dlg->mainWidget())->setting());
+                        delete dlg;
+                        return result;
+                    }
+                    delete dlg;
+                } else {
+                    qDebug() << error << ", serviceType == " << serviceType;
+                }
+            }
         } else {
             NetworkManager::Settings::WirelessSetting * wifi = static_cast<NetworkManager::Settings::WirelessSetting *>(settings->setting(NetworkManager::Settings::Setting::Wireless));
             QString ssid;
@@ -84,6 +118,7 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
                 delete dlg;
                 return result;
             }
+            delete dlg;
         }
     }
 

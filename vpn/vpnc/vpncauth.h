@@ -1,7 +1,5 @@
 /*
 Copyright 2008 Will Stephenson <wstephenson@kde.org>
-Copyright 2011-2012 Rajeesh K Nambiar <rajeeshknambiar@gmail.com>
-Copyright 2011-2012 Lamarque V. Souza <lamarque@kde.org>
 Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
 
 This program is free software; you can redistribute it and/or
@@ -21,27 +19,32 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef KNM4_VPNC_H
-#define KNM4_VPNC_H
+#ifndef VPNCAUTH_H
+#define VPNCAUTH_H
 
-#include "vpnuiplugin.h"
+#include <QDialog>
 
-#include <QVariant>
+#include <QtNetworkManager/settings/vpn.h>
 
-class KDE_EXPORT VpncUiPlugin : public VpnUiPlugin
+#include "settingwidget.h"
+
+class VpncAuthDialogPrivate;
+
+class VpncAuthDialog : public SettingWidget
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(VpncAuthDialog)
 public:
-    VpncUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
-    virtual ~VpncUiPlugin();
-    virtual SettingWidget * widget(NetworkManager::Settings::VpnSetting *setting, QWidget * parent = 0);
-    virtual SettingWidget * askUser(NetworkManager::Settings::VpnSetting *setting, QWidget * parent = 0);
-#if 0
-    QString suggestedFileName(Knm::Connection *connection) const;
-    QString supportedFileExtensions() const;
-    QVariantList importConnectionSettings(const QString &fileName);
-    bool exportConnectionSettings(Knm::Connection * connection, const QString &fileName);
-#endif
+    VpncAuthDialog(NetworkManager::Settings::VpnSetting *setting, QWidget * parent = 0);
+    ~VpncAuthDialog();
+    virtual void readSecrets();
+    virtual QVariantMap setting() const;
+
+private slots:
+    void showPasswordsChanged(bool);
+
+private:
+    VpncAuthDialogPrivate * d_ptr;
 };
 
-#endif //  KNM4_VPNC_H
+#endif // VPNCAUTH_H

@@ -217,7 +217,6 @@ void ConnectionDetailEditor::initTabs()
         if (!vpnSetting) {
             qDebug() << "Missing VPN setting!";
         } else {
-
             QString serviceType;
             if (m_new && !m_vpnType.isEmpty())
                 serviceType = m_vpnType;

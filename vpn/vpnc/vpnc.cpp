@@ -35,6 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtNetworkManager/settings/ipv4.h>
 
 #include "vpncwidget.h"
+#include "vpncauth.h"
 
 #define NM_VPNC_LOCAL_PORT_DEFAULT 500
 
@@ -51,15 +52,14 @@ VpncUiPlugin::~VpncUiPlugin()
 
 }
 
-SettingWidget * VpncUiPlugin::widget(NetworkManager::Settings::Setting *setting, QWidget * parent)
+SettingWidget * VpncUiPlugin::widget(NetworkManager::Settings::VpnSetting *setting, QWidget * parent)
 {
     return new VpncWidget(setting, parent);
 }
 
-QDialog * VpncUiPlugin::askUser(NetworkManager::Settings::Setting *setting, QWidget * parent)
+SettingWidget *VpncUiPlugin::askUser(NetworkManager::Settings::VpnSetting *setting, QWidget * parent)
 {
-    // TODO
-    return 0;
+    return new VpncAuthDialog(setting, parent);
 }
 
 #if 0

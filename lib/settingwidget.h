@@ -24,8 +24,6 @@
 #include <QtGui/QWidget>
 #include <QtNetworkManager/settings/setting.h>
 
-class QTreeWidgetItem;
-
 class SettingWidget : public QWidget
 {
 Q_OBJECT

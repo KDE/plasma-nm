@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Plasma NM module
+Comment=Provides secrets to the NetworkManager daemon
+Type=Service
+X-KDE-ServiceTypes=KDEDModule
+X-KDE-ModuleType=Library
+X-KDE-Library=plasmanm
+X-KDE-DBus-ModuleName=plasmanm
+X-KDE-Kded-autoload=true
+X-KDE-Kded-load-on-demand=true
+X-KDE-Kded-phase=1
+OnlyShowIn=KDE;

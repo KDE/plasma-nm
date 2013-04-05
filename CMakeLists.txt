@@ -10,7 +10,7 @@ include(FindPkgConfig)
 
 pkg_check_modules(QTMODEMMANAGER REQUIRED QtModemManager)
 if (NOT QTMODEMMANAGER_FOUND)
-    message(FATAL_ERROR "ERROR: QtModemManager not found. http://projects.kde.org/search?q=modemmanager&scope=all&all_words=1&projects=1&submit=Submit")
+    message(FATAL_ERROR "ERROR: QtModemManager not found. http://projects.kde.org/libmm-qt")
 endif (NOT QTMODEMMANAGER_FOUND)
 
 pkg_check_modules(QTNETWORKMANAGER REQUIRED QtNetworkManager)
@@ -31,8 +31,9 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${NETWORKMANAGER_INCLUDE_DIRS}
                     ${KDE4_INCLUDES})
 
+add_subdirectory(lib)
 add_subdirectory(applet)
 add_subdirectory(declarative-plugins)
 add_subdirectory(editor)
 add_subdirectory(vpn)
-add_subdirectory(lib)
+add_subdirectory(kded)

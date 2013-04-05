@@ -25,7 +25,8 @@
 #include <QtNetworkManager/accesspoint.h>
 #include <QtNetworkManager/device.h>
 #include <QtNetworkManager/manager.h>
-#include <QtNetworkManager/wirelessnetworkinterfaceenvironment.h>
+#include <QtNetworkManager/wirelessnetwork.h>
+#include <QtNetworkManager/wirelessdevice.h>
 
 class Monitor : public QObject
 {
@@ -49,8 +50,8 @@ private Q_SLOTS:
     void wirelessNetworkDisappeared(const QString & ssid);
 Q_SIGNALS:
     void addActiveConnection(const NetworkManager::ActiveConnection::Ptr & active);
-    void addConnection(NetworkManager::Settings::Connection * connection, const NetworkManager::Device::Ptr &device);
-    void addVpnConnection(NetworkManager::Settings::Connection * connection);
+    void addConnection(const NetworkManager::Settings::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device);
+    void addVpnConnection(const NetworkManager::Settings::Connection::Ptr &connection);
     void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device);
     void removeWirelessNetwork(const QString & ssid);
     void removeConnectionsByDevice(const QString & udi);
@@ -58,7 +59,7 @@ Q_SIGNALS:
     void removeVpnConnections();
 
 private:
-    QList<NetworkManager::WirelessNetworkInterfaceEnvironment*> m_wirelessInterfaces;
+    NetworkManager::WirelessDevice::List m_wirelessDevices;
     NetworkManager::Device::List m_devices;
 
     void addAvailableConnectionsForDevice(const NetworkManager::Device::Ptr &device);

@@ -55,7 +55,7 @@ private:
     Ui::ConnectionEditor * m_editor;
     QMenu * m_menu;
 
-    void insertConnection(NetworkManager::Settings::Connection * connection);
+    void insertConnection(const NetworkManager::Settings::Connection::Ptr &connection);
     QString formatDateRelative(const QDateTime & lastUsed) const;
     QTreeWidgetItem * findTopLevelItem(const QString & type);
 };

@@ -140,14 +140,14 @@ void ConnectionEditor::initializeConnections()
 {
     m_editor->connectionsWidget->clear();
 
-    foreach (Settings::Connection * con, Settings::listConnections()) {
+    foreach (const Settings::Connection::Ptr &con, Settings::listConnections()) {
         insertConnection(con);
     }
 }
 
-void ConnectionEditor::insertConnection(NetworkManager::Settings::Connection* connection)
+void ConnectionEditor::insertConnection(const NetworkManager::Settings::Connection::Ptr &connection)
 {
-    Settings::ConnectionSettings * settings = new Settings::ConnectionSettings();
+    Settings::ConnectionSettings *settings = new Settings::ConnectionSettings();
     settings->fromMap(connection->settings());
 
     const QString name = settings->id();
@@ -278,7 +278,7 @@ void ConnectionEditor::editConnection()
         return;
     }
 
-    Settings::Connection * connection = Settings::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
+    Settings::Connection::Ptr connection = Settings::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
 
     if (!connection) {
         return;
@@ -300,7 +300,7 @@ void ConnectionEditor::removeConnection()
         return;
     }
 
-    Settings::Connection * connection = Settings::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
+    Settings::Connection::Ptr connection = Settings::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
 
     if (!connection) {
         return;
@@ -315,7 +315,7 @@ void ConnectionEditor::removeConnection()
 
 void ConnectionEditor::connectionAdded(const QString& connection)
 {
-    NetworkManager::Settings::Connection * con = NetworkManager::Settings::findConnection(connection);
+    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
 
     if (!con) {
         return;

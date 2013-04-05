@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     if(args->count()) {
-        NetworkManager::Settings::Connection * connection = NetworkManager::Settings::findConnectionByUuid(args->arg(0));
+        NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(args->arg(0));
 
         if (connection) {
             NetworkManager::Settings::ConnectionSettings * connectionSetting = new NetworkManager::Settings::ConnectionSettings();

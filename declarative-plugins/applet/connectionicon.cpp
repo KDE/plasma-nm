@@ -34,16 +34,12 @@
 ConnectionIcon::ConnectionIcon(QObject* parent):
     QObject(parent),
     m_signal(0),
-    m_wirelessNetwork(0),
-    m_wirelessEnvironment(0),
     m_modemNetwork(0)
 {
 }
 
 ConnectionIcon::~ConnectionIcon()
 {
-    if (m_wirelessEnvironment)
-        delete m_wirelessEnvironment;
 }
 
 void ConnectionIcon::init()
@@ -139,11 +135,6 @@ void ConnectionIcon::setIcons()
     bool connectionFound = false;
     bool vpnFound = false;
 
-    if (m_wirelessEnvironment) {
-        delete m_wirelessEnvironment;
-        m_wirelessEnvironment = 0;
-        m_wirelessNetwork.clear();
-    }
     m_signal = 0;
 
     if (m_modemNetwork) {
@@ -352,9 +343,11 @@ void ConnectionIcon::setIconForModem()
 void ConnectionIcon::setWirelessIcon(const NetworkManager::Device::Ptr &device, const QString& ssid)
 {
     NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
-    NMAppletDebug() << wirelessDevice << wirelessDevice.isNull() << wirelessDevice.data();
-    m_wirelessEnvironment = new NetworkManager::WirelessNetworkInterfaceEnvironment(wirelessDevice);
-    m_wirelessNetwork = m_wirelessEnvironment->findNetwork(ssid);
+    if (device) {
+        m_wirelessNetwork = wirelessDevice->findNetwork(ssid);
+    } else {
+        m_wirelessNetwork.clear();
+    }
 
     if (m_wirelessNetwork) {
         connect(m_wirelessNetwork.data(), SIGNAL(signalStrengthChanged(int)),

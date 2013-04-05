@@ -44,7 +44,7 @@ Handler::~Handler()
 
 void Handler::activateConnection(const QString& connection, const QString& device, const QString& specificObject)
 {
-    NetworkManager::Settings::Connection * con = NetworkManager::Settings::findConnection(connection);
+    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
 
     if (!con) {
         NMHandlerDebug() << "Not possible to activate this connection";
@@ -85,7 +85,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
 
 void Handler::deactivateConnection(const QString& connection)
 {
-    NetworkManager::Settings::Connection * con = NetworkManager::Settings::findConnection(connection);
+    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
 
     if (!con) {
         NMHandlerDebug() << "Not possible to deactivate this connection";
@@ -135,7 +135,7 @@ void Handler::editConnection(const QString& uuid)
 
 void Handler::removeConnection(const QString& connection)
 {
-    NetworkManager::Settings::Connection * con = NetworkManager::Settings::findConnection(connection);
+    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
 
     if (!con) {
         NMHandlerDebug() << "Not possible to remove this connection";

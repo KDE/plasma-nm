@@ -24,7 +24,6 @@
 #include <QtNetworkManager/manager.h>
 #include <QtNetworkManager/activeconnection.h>
 #include <QtNetworkManager/wirelessnetwork.h>
-#include <QtNetworkManager/wirelessnetworkinterfaceenvironment.h>
 
 #include <QtModemManager/modemgsmnetworkinterface.h>
 
@@ -60,7 +59,6 @@ Q_SIGNALS:
 private:
     int m_signal;
     NetworkManager::WirelessNetwork::Ptr m_wirelessNetwork;
-    NetworkManager::WirelessNetworkInterfaceEnvironment * m_wirelessEnvironment;
     ModemManager::ModemGsmNetworkInterface * m_modemNetwork;
 
     void setDisconnectedIcon();

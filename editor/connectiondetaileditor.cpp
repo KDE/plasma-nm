@@ -83,9 +83,9 @@ void ConnectionDetailEditor::initEditor()
     qDBusRegisterMetaType<QStringMap>();
 
     if (!m_new) {
-        NetworkManager::Settings::Connection * connection = NetworkManager::Settings::findConnectionByUuid(m_connection->uuid());
+        NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(m_connection->uuid());
         if (connection) {
-            connect(connection, SIGNAL(gotSecrets(QString,bool,QVariantMapMap,QString)),
+            connect(connection.data(), SIGNAL(gotSecrets(QString,bool,QVariantMapMap,QString)),
                     SLOT(gotSecrets(QString,bool, QVariantMapMap, QString)));
 
             switch (m_connection->connectionType()) {
@@ -302,7 +302,7 @@ void ConnectionDetailEditor::saveSetting()
                 SLOT(connectionAddComplete(QString,bool,QString)));
         NetworkManager::Settings::addConnection(connectionSettings->toMap());
     } else {
-        NetworkManager::Settings::Connection * connection = NetworkManager::Settings::findConnectionByUuid(connectionSettings->uuid());
+        NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(connectionSettings->uuid());
 
         if (connection) {
             connection->update(connectionSettings->toMap());

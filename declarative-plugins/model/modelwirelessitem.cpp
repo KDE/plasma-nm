@@ -22,6 +22,7 @@
 
 #include <QtNetworkManager/wirelessdevice.h>
 #include <QtNetworkManager/settings/802-11-wireless.h>
+#include <QtNetworkManager/manager.h>
 
 #include <KLocalizedString>
 
@@ -74,7 +75,7 @@ bool ModelWirelessItem::secure() const
 QString ModelWirelessItem::specificPath() const
 {
     if (m_network) {
-        return m_network->referenceAccessPoint();
+        return m_network->referenceAccessPoint()->uni();
     }
 
     return QString();
@@ -102,7 +103,7 @@ void ModelWirelessItem::updateDetailsContent()
 
     if (m_network) {
         NetworkManager::WirelessDevice::Ptr wifiDev = m_device.objectCast<NetworkManager::WirelessDevice>();
-        NetworkManager::AccessPoint::Ptr ap = wifiDev.data()->findAccessPoint(m_network->referenceAccessPoint());
+        NetworkManager::AccessPoint::Ptr ap = wifiDev->findAccessPoint(m_network->referenceAccessPoint()->uni());
 
         m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%").arg(m_network->signalStrength()));
         m_details += QString(format).arg(i18n("Access point (SSID):"), m_network->ssid());
@@ -155,7 +156,7 @@ void ModelWirelessItem::setWirelessNetwork(const NetworkManager::WirelessNetwork
 
         if (m_device) {
             NetworkManager::WirelessDevice::Ptr wifiDev = m_device.objectCast<NetworkManager::WirelessDevice>();
-            NetworkManager::AccessPoint::Ptr ap = wifiDev.data()->findAccessPoint(m_network->referenceAccessPoint());
+            NetworkManager::AccessPoint::Ptr ap = wifiDev->findAccessPoint(m_network->referenceAccessPoint()->uni());
 
             if (ap->capabilities() & NetworkManager::AccessPoint::Privacy) {
                 m_secure = true;

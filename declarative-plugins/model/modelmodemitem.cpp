@@ -27,7 +27,7 @@
 
 #include "debug.h"
 
-ModelModemItem::ModelModemItem(NetworkManager::Device* device, QObject* parent):
+ModelModemItem::ModelModemItem(const NetworkManager::Device::Ptr & device, QObject* parent):
     ModelItem(device, parent)
 {
     setDevice(device);
@@ -102,14 +102,14 @@ QString ModelModemItem::convertAccessTechnologyToString(const ModemManager::Mode
     return i18nc("Unknown cellular access technology","Unknown");
 }
 
-void ModelModemItem::setDevice(NetworkManager::Device* device)
+void ModelModemItem::setDevice(const NetworkManager::Device::Ptr & device)
 {
     ModelItem::setDevice(device);
 
-    NetworkManager::ModemDevice * modemDevice = qobject_cast<NetworkManager::ModemDevice*>(device);
+    NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
 
     if (modemDevice) {
-        m_modemNetwork = modemDevice->getModemNetworkIface();
+        m_modemNetwork = modemDevice.data()->getModemNetworkIface();
 
         if (m_modemNetwork) {
             connect(m_modemNetwork, SIGNAL(signalQualityChanged(uint)),

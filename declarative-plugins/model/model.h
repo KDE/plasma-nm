@@ -47,7 +47,7 @@ public:
 private Q_SLOTS:
     void onChanged();
 
-    void addActiveConnection(NetworkManager::ActiveConnection * active);
+    void addActiveConnection(const NetworkManager::ActiveConnection::Ptr & active);
     void addConnection(NetworkManager::Settings::Connection * connection, const NetworkManager::Device::Ptr &device);
     void addVpnConnection(NetworkManager::Settings::Connection * connection);
     void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device);

@@ -34,10 +34,10 @@ public:
     static QString convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode);
     static QString convertAccessTechnologyToString(const ModemManager::ModemInterface::AccessTechnology tech);
 
-    ModelModemItem(NetworkManager::Device * device, QObject * parent = 0);
+    ModelModemItem(const NetworkManager::Device::Ptr & device, QObject * parent = 0);
     ~ModelModemItem();
 
-    void setDevice(NetworkManager::Device * device);
+    void setDevice(const NetworkManager::Device::Ptr & device);
 
 private Q_SLOTS:
     void onSignalQualitychanged(uint signal);

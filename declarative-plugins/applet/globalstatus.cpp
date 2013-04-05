@@ -48,10 +48,10 @@ void GlobalStatus::init()
 
 void GlobalStatus::activeConnectionsChanged()
 {
-    foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
-        connect(active, SIGNAL(default4Changed(bool)),
+    foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+        connect(active.data(), SIGNAL(default4Changed(bool)),
                 SLOT(defaultChanged()), Qt::UniqueConnection);
-        connect(active, SIGNAL(default6Changed(bool)),
+        connect(active.data(), SIGNAL(default6Changed(bool)),
                 SLOT(defaultChanged()), Qt::UniqueConnection);
     }
 }
@@ -72,9 +72,9 @@ void GlobalStatus::statusChanged(NetworkManager::Status status)
         status == NetworkManager::ConnectedSiteOnly) {
 
         QString id;
-        foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
-            if (active->default4() || active->default6()) {
-                id = active->connection()->id();
+        foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+            if (active.data()->default4() || active.data()->default6()) {
+                id = active.data()->connection()->id();
                 break;
             }
         }

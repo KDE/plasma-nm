@@ -160,9 +160,9 @@ void ConnectionEditor::insertConnection(NetworkManager::Settings::Connection* co
 
     QStringList actives;
 
-    foreach(NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
-        if (active->state() == NetworkManager::ActiveConnection::Activated) {
-            actives << active->connection()->uuid();
+    foreach(const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+        if (active.data()->state() == NetworkManager::ActiveConnection::Activated) {
+            actives << active.data()->connection()->uuid();
         }
     }
 

@@ -32,7 +32,7 @@ public:
     explicit ModelVpnItem(const NetworkManager::Device::Ptr &device = NetworkManager::Device::Ptr(), QObject * parent = 0);
     ~ModelVpnItem();
 
-    void setActiveConnection(NetworkManager::ActiveConnection * active);
+    void setActiveConnection(const NetworkManager::ActiveConnection::Ptr & active);
 
 private Q_SLOTS:
     void onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state);

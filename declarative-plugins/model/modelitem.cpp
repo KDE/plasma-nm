@@ -193,27 +193,28 @@ bool ModelItem::operator==(ModelItem* item)
     return false;
 }
 
-void ModelItem::setActiveConnection(NetworkManager::ActiveConnection* active)
+void ModelItem::setActiveConnection(const NetworkManager::ActiveConnection::Ptr & active)
 {
     m_active = active;
 
     if (m_active) {
-        if (m_active->state() == NetworkManager::ActiveConnection::Activating) {
+        qDebug() << "active";
+        if (m_active.data()->state() == NetworkManager::ActiveConnection::Activating) {
             m_connecting = true;
             m_connected = false;
             NMItemDebug() << name() << ": activating";
-        } else if (m_active->state() == NetworkManager::ActiveConnection::Activated) {
+        } else if (m_active.data()->state() == NetworkManager::ActiveConnection::Activated) {
             NMItemDebug() << name() << ": activated";
             m_connected = true;
             m_connecting = false;
 
         }
 
-        connect(m_active, SIGNAL(default4Changed(bool)),
+        connect(m_active.data(), SIGNAL(default4Changed(bool)),
                 SLOT(onDefaultRouteChanged(bool)), Qt::UniqueConnection);
-        connect(m_active, SIGNAL(default6Changed(bool)),
+        connect(m_active.data(), SIGNAL(default6Changed(bool)),
                 SLOT(onDefaultRouteChanged(bool)), Qt::UniqueConnection);
-        connect(m_active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+        connect(m_active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                 SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
     } else {
         m_connecting = false;
@@ -223,12 +224,12 @@ void ModelItem::setActiveConnection(NetworkManager::ActiveConnection* active)
     updateDetails();
 }
 
-NetworkManager::ActiveConnection* ModelItem::activeConnection() const
+NetworkManager::ActiveConnection::Ptr ModelItem::activeConnection() const
 {
     return m_active;
 }
 
-void ModelItem::setDevice(const NetworkManager::Device::Ptr device)
+void ModelItem::setDevice(const NetworkManager::Device::Ptr & device)
 {
     m_device = device;
 
@@ -258,7 +259,7 @@ void ModelItem::setConnection(NetworkManager::Settings::Connection* connection)
     } else {
         m_name.clear();
         m_uuid.clear();
-        m_active = 0;
+        m_active.clear();
     }
 }
 
@@ -307,7 +308,7 @@ void ModelItem::onActiveConnectionStateChanged(NetworkManager::ActiveConnection:
     if (state == NetworkManager::ActiveConnection::Deactivated ||
         state == NetworkManager::ActiveConnection::Deactivating) {
         NMItemDebug() << name() << ": disconnected";
-        m_active = 0;
+        m_active.clear();
         m_connecting = false;
         m_connected = false;
     } else if (state == NetworkManager::ActiveConnection::Activated) {

@@ -56,19 +56,14 @@ public:
 
     // Objects
 
-    virtual void setActiveConnection(NetworkManager::ActiveConnection * active);
-    NetworkManager::ActiveConnection * activeConnection() const;
+    virtual void setActiveConnection(const NetworkManager::ActiveConnection::Ptr & active);
+    NetworkManager::ActiveConnection::Ptr activeConnection() const;
 
     virtual void setConnection(NetworkManager::Settings::Connection * connection);
     NetworkManager::Settings::Connection * connection() const;
 
-<<<<<<< HEAD
-    void setDevice(const NetworkManager::Device::Ptr device);
+    void setDevice(const NetworkManager::Device::Ptr & device);
     NetworkManager::Device::Ptr device() const;
-=======
-    virtual void setDevice(NetworkManager::Device * device);
-    NetworkManager::Device * device() const;
->>>>>>> master
 
     // Object paths
 
@@ -85,7 +80,7 @@ private Q_SLOTS:
     void onDefaultRouteChanged(bool defaultRoute);
 
 protected:
-    NetworkManager::ActiveConnection * m_active;
+    NetworkManager::ActiveConnection::Ptr m_active;
     NetworkManager::Settings::Connection * m_connection;
     NetworkManager::Device::Ptr m_device;
 

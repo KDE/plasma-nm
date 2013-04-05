@@ -61,9 +61,9 @@ void Monitor::init()
     connect(NetworkManager::Settings::notifier(), SIGNAL(connectionRemoved(QString)),
             SLOT(connectionRemoved(QString)));
 
-    foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
-        NMMonitorDebug() << "Available active connection (" << active->connection()->id() << ")";
-        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active->connection()->id() << ")";
+    foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+        NMMonitorDebug() << "Available active connection (" << active.data()->connection()->id() << ")";
+        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active.data()->connection()->id() << ")";
         Q_EMIT addActiveConnection(active);
     }
 }
@@ -112,8 +112,8 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr &device)
 void Monitor::activeConnectionsChanged()
 {
     NMMonitorDebug() << "Active connections have been changed";
-    foreach (NetworkManager::ActiveConnection * active, NetworkManager::activeConnections()) {
-        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active->connection()->id() << ")";
+    foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active.data()->connection()->id() << ")";
         Q_EMIT addActiveConnection(active);
     }
 }

@@ -72,14 +72,14 @@ void ConnectionIcon::init()
 
 void ConnectionIcon::activeConnectionsChanged()
 {
-    QList<NetworkManager::ActiveConnection*> actives = NetworkManager::activeConnections();
+    NetworkManager::ActiveConnection::List actives = NetworkManager::activeConnections();
 
-    foreach (NetworkManager::ActiveConnection * active, actives) {
-        connect(active, SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+    foreach (const NetworkManager::ActiveConnection::Ptr & active, actives) {
+        connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                 SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
-        connect(active, SIGNAL(default4Changed(bool)),
+        connect(active.data(), SIGNAL(default4Changed(bool)),
                 SLOT(setIcons()), Qt::UniqueConnection);
-        connect(active, SIGNAL(default6Changed(bool)),
+        connect(active.data(), SIGNAL(default6Changed(bool)),
                 SLOT(setIcons()), Qt::UniqueConnection);
         if (active->state() == NetworkManager::ActiveConnection::Activating) {
             NMAppletDebug() << "Emit signal showConnectionIndicator()";
@@ -151,26 +151,29 @@ void ConnectionIcon::setIcons()
         m_modemNetwork = 0;
     }
 
-    QList<NetworkManager::ActiveConnection*> actives = NetworkManager::activeConnections();
+    NetworkManager::ActiveConnection::List actives = NetworkManager::activeConnections();
 
-    foreach (NetworkManager::ActiveConnection * active, actives) {
-        if ((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) {
-            NetworkManager::Device::Type type = active->devices().first()->type();
+    foreach (const NetworkManager::ActiveConnection::Ptr & active, actives) {
+        if ((active.data()->default4() || active.data()->default6()) && active.data()->state() == NetworkManager::ActiveConnection::Activated) {
+            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active.data()->devices().first());
+            if (device) {
+                NetworkManager::Device::Type type = device->type();
 
-            if (type == NetworkManager::Device::Wifi) {
-                NetworkManager::Settings::ConnectionSettings settings;
-                settings.fromMap(active->connection()->settings());
-                NetworkManager::Settings::WirelessSetting * wirelessSetting = dynamic_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
-                setWirelessIcon(active->devices().first(), wirelessSetting->ssid());
-                connectionFound = true;
-            } else if (type == NetworkManager::Device::Ethernet) {
-                connectionFound = true;
-                NMAppletDebug() << "Emit signal setConnectionIcon(network-wired-activated)";
-                Q_EMIT setConnectionIcon(QString("network-wired-activated"));
-            } else if (type == NetworkManager::Device::Modem ||
-                       type == NetworkManager::Device::Bluetooth) {
-                connectionFound = true;
-                setModemIcon(active->devices().first());
+                if (type == NetworkManager::Device::Wifi) {
+                    NetworkManager::Settings::ConnectionSettings settings;
+                    settings.fromMap(active.data()->connection()->settings());
+                    NetworkManager::Settings::WirelessSetting * wirelessSetting = dynamic_cast<NetworkManager::Settings::WirelessSetting*>(settings.setting(NetworkManager::Settings::Setting::Wireless));
+                    setWirelessIcon(device, wirelessSetting->ssid());
+                    connectionFound = true;
+                } else if (type == NetworkManager::Device::Ethernet) {
+                    connectionFound = true;
+                    NMAppletDebug() << "Emit signal setConnectionIcon(network-wired-activated)";
+                    Q_EMIT setConnectionIcon(QString("network-wired-activated"));
+                } else if (type == NetworkManager::Device::Modem ||
+                            type == NetworkManager::Device::Bluetooth) {
+                    connectionFound = true;
+                    setModemIcon(device);
+                }
             }
         }
 
@@ -240,9 +243,9 @@ void ConnectionIcon::setDisconnectedIcon()
     Q_EMIT unsetHoverIcon();
 }
 
-void ConnectionIcon::setModemIcon(NetworkManager::Device * device)
+void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
 {
-    NetworkManager::ModemDevice * modemDevice = qobject_cast<NetworkManager::ModemDevice*>(device);
+    NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
 
     if (!modemDevice) {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile-100)";

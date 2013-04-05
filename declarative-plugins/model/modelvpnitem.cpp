@@ -56,11 +56,11 @@ void ModelVpnItem::updateDetailsContent()
     }
 }
 
-void ModelVpnItem::setActiveConnection(NetworkManager::ActiveConnection* active)
+void ModelVpnItem::setActiveConnection(const NetworkManager::ActiveConnection::Ptr & active)
 {
     ModelItem::setActiveConnection(active);
 
-    if (m_active->vpn()) {
+    if (m_active.data()->vpn()) {
         m_vpn = new NetworkManager::VpnConnection(m_active->path());
 
         connect(m_vpn, SIGNAL(stateChanged(NetworkManager::VpnConnection::State)),
@@ -76,6 +76,6 @@ void ModelVpnItem::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         delete m_vpn;
         m_vpn = 0;
         NMItemDebug() << name() << ": disconnected";
-        m_active = 0;
+        m_active.clear();
     }
 }

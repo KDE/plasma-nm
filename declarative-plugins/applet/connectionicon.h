@@ -59,13 +59,13 @@ Q_SIGNALS:
 
 private:
     int m_signal;
-    NetworkManager::WirelessNetwork * m_wirelessNetwork;
+    NetworkManager::WirelessNetwork::Ptr m_wirelessNetwork;
     NetworkManager::WirelessNetworkInterfaceEnvironment * m_wirelessEnvironment;
     ModemManager::ModemGsmNetworkInterface * m_modemNetwork;
 
     void setDisconnectedIcon();
-    void setModemIcon(NetworkManager::Device * device);
-    void setWirelessIcon(NetworkManager::Device * device, const QString & ssid);
+    void setModemIcon(const NetworkManager::Device::Ptr & device);
+    void setWirelessIcon(const NetworkManager::Device::Ptr & device, const QString & ssid);
 };
 
 #endif // PLASMA_NM_CONNECTION_ICON_H

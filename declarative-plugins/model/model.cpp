@@ -53,12 +53,12 @@ Model::Model(QObject* parent):
     roles[SectionRole] = "itemSection";
     setRoleNames(roles);
 
-    connect(m_monitor, SIGNAL(addWirelessNetwork(NetworkManager::WirelessNetwork*, NetworkManager::Device*)),
-            SLOT(addWirelessNetwork(NetworkManager::WirelessNetwork*, NetworkManager::Device*)));
-    connect(m_monitor, SIGNAL(addActiveConnection(NetworkManager::ActiveConnection*)),
-            SLOT(addActiveConnection(NetworkManager::ActiveConnection*)));
-    connect(m_monitor, SIGNAL(addConnection(NetworkManager::Settings::Connection*,NetworkManager::Device*)),
-            SLOT(addConnection(NetworkManager::Settings::Connection*,NetworkManager::Device*)));
+    connect(m_monitor, SIGNAL(addWirelessNetwork(NetworkManager::WirelessNetwork::Ptr, NetworkManager::Device::Ptr)),
+            SLOT(addWirelessNetwork(NetworkManager::WirelessNetwork::Ptr, NetworkManager::Device::Ptr)));
+    connect(m_monitor, SIGNAL(addActiveConnection(NetworkManager::ActiveConnection::Ptr)),
+            SLOT(addActiveConnection(NetworkManager::ActiveConnection::Ptr)));
+    connect(m_monitor, SIGNAL(addConnection(NetworkManager::Settings::Connection*,NetworkManager::Device::Ptr)),
+            SLOT(addConnection(NetworkManager::Settings::Connection*,NetworkManager::Device::Ptr)));
     connect(m_monitor, SIGNAL(removeWirelessNetwork(QString)),
             SLOT(removeWirelessNetwork(QString)));
     connect(m_monitor, SIGNAL(removeConnection(QString)),
@@ -153,10 +153,10 @@ void Model::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &netwo
     insertItem(item);
 }
 
-void Model::addActiveConnection(NetworkManager::ActiveConnection* active)
+void Model::addActiveConnection(const NetworkManager::ActiveConnection::Ptr & active)
 {
     foreach (ModelItem * item, m_connections) {
-        if (active->connection()->uuid() == item->uuid()) {
+        if (active.data()->connection()->uuid() == item->uuid()) {
             item->setActiveConnection(active);
             int row = m_connections.indexOf(item);
             if (row >= 0) {

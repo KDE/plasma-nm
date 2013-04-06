@@ -22,6 +22,7 @@
 
 #include "wificonnectionwidget.h"
 #include "ui_wificonnectionwidget.h"
+#include "uiutils.h"
 
 WifiConnectionWidget::WifiConnectionWidget(NetworkManager::Settings::Setting * setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
@@ -54,11 +55,11 @@ void WifiConnectionWidget::loadConfig(NetworkManager::Settings::Setting * settin
     }
 
     if (!wifiSetting->macAddress().isEmpty()) {
-        m_ui->macAddress->setText(QString(wifiSetting->macAddress()));
+        m_ui->macAddress->setText(UiUtils::macAddressAsString((wifiSetting->macAddress())));
     }
 
     if (!wifiSetting->clonedMacAddress().isEmpty()) {
-        m_ui->clonedMacAddress->setText(QString(wifiSetting->clonedMacAddress()));
+        m_ui->clonedMacAddress->setText(UiUtils::macAddressAsString(wifiSetting->clonedMacAddress()));
     }
 
     if (wifiSetting->mtu()) {
@@ -83,11 +84,11 @@ QVariantMap WifiConnectionWidget::setting() const
     }
 
     if (!m_ui->macAddress->text().isEmpty() && m_ui->macAddress->text() != ":::::") {
-        wifiSetting.setMacAddress(m_ui->macAddress->text().toLatin1());
+        wifiSetting.setMacAddress(UiUtils::macAddressFromString(m_ui->macAddress->text()));
     }
 
     if (!m_ui->clonedMacAddress->text().isEmpty() && m_ui->clonedMacAddress->text() != ":::::") {
-        wifiSetting.setClonedMacAddress(m_ui->clonedMacAddress->text().toLatin1());
+        wifiSetting.setClonedMacAddress(UiUtils::macAddressFromString(m_ui->clonedMacAddress->text()));
     }
 
     if (m_ui->mtu->value()) {

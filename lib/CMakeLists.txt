@@ -7,6 +7,7 @@ set(plasmanm-internal_SRCS
     vpnuiplugin.cpp
     passworddialog.cpp
     secretagent.cpp
+    uiutils.cpp
 )
 
 kde4_add_ui_files(plasmanm-internal_SRCS

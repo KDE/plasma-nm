@@ -37,9 +37,9 @@ class WiredSecurity : public SettingWidget
 {
     Q_OBJECT
 public:
-    WiredSecurity(NetworkManager::Settings::Security8021xSetting * setting8021x = 0, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    WiredSecurity(const NetworkManager::Settings::Security8021xSetting::Ptr &setting8021x = NetworkManager::Settings::Security8021xSetting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~WiredSecurity();
-    void loadConfig(NetworkManager::Settings::Setting * setting);
+    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
     QVariantMap setting() const;
 
     bool enabled8021x() const;
@@ -47,7 +47,7 @@ public:
 private:
     Ui::WiredSecurity * m_ui;
     Security8021x * m_8021xWidget;
-    NetworkManager::Settings::Security8021xSetting * m_8021xSetting;
+    NetworkManager::Settings::Security8021xSetting::Ptr m_8021xSetting;
 };
 
 #endif // WIRED_SECURITY

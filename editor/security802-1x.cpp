@@ -21,7 +21,7 @@
 #include "security802-1x.h"
 #include "ui_802-1x.h"
 
-Security8021x::Security8021x(NetworkManager::Settings::Security8021xSetting *setting, bool wifiMode, QWidget *parent) :
+Security8021x::Security8021x(const NetworkManager::Settings::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent) :
     QWidget(parent),
     m_setting(setting),
     m_ui(new Ui::Security8021x)

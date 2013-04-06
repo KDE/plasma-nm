@@ -57,10 +57,9 @@ public:
 };
 
 
-IPv6Widget::IPv6Widget(NetworkManager::Settings::Setting* setting, QWidget* parent, Qt::WindowFlags f):
+IPv6Widget::IPv6Widget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::IPv6Widget),
-    m_ipv6Setting(0),
     d(new IPv6Widget::Private())
 {
     m_ui->setupUi(this);
@@ -85,7 +84,7 @@ IPv6Widget::IPv6Widget(NetworkManager::Settings::Setting* setting, QWidget* pare
             this, SLOT(tableViewItemChanged(QStandardItem*)));
 
     if (setting) {
-        m_ipv6Setting = static_cast<NetworkManager::Settings::Ipv6Setting *>(setting);
+        m_ipv6Setting = setting.staticCast<NetworkManager::Settings::Ipv6Setting>();
         loadConfig(m_ipv6Setting);
     }
 
@@ -102,7 +101,7 @@ IPv6Widget::~IPv6Widget()
     delete d;
 }
 
-void IPv6Widget::loadConfig(NetworkManager::Settings::Setting * setting)
+void IPv6Widget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
     Q_UNUSED(setting)
 

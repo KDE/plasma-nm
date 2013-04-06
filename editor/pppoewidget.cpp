@@ -24,7 +24,7 @@
 #include "ui_pppoe.h"
 
 
-PppoeWidget::PppoeWidget(NetworkManager::Settings::Setting * setting, QWidget* parent, Qt::WindowFlags f):
+PppoeWidget::PppoeWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::PppoeWidget)
 {
@@ -40,9 +40,9 @@ PppoeWidget::~PppoeWidget()
 {
 }
 
-void PppoeWidget::loadConfig(NetworkManager::Settings::Setting *setting)
+void PppoeWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::PppoeSetting* pppoeSetting = static_cast<NetworkManager::Settings::PppoeSetting*>(setting);
+    NetworkManager::Settings::PppoeSetting::Ptr pppoeSetting = setting.staticCast<NetworkManager::Settings::PppoeSetting>();
 
     m_ui->service->setText(pppoeSetting->service());
     m_ui->username->setText(pppoeSetting->username());

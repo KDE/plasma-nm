@@ -24,10 +24,10 @@
 #include "ui_bt.h"
 
 
-BtWidget::BtWidget(NetworkManager::Settings::Setting * setting, QWidget* parent, Qt::WindowFlags f):
+BtWidget::BtWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::BtWidget),
-    m_btSetting(static_cast<NetworkManager::Settings::BluetoothSetting *>(setting))
+    m_btSetting(setting.staticCast<NetworkManager::Settings::BluetoothSetting>())
 {
     m_ui->setupUi(this);
 
@@ -44,7 +44,7 @@ BtWidget::~BtWidget()
 {
 }
 
-void BtWidget::loadConfig(NetworkManager::Settings::Setting *setting)
+void BtWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
     Q_UNUSED(setting);
 

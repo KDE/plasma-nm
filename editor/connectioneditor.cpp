@@ -284,7 +284,7 @@ void ConnectionEditor::editConnection()
         return;
     }
 
-    Settings::ConnectionSettings * connectionSetting = new Settings::ConnectionSettings();
+    Settings::ConnectionSettings::Ptr connectionSetting = Settings::ConnectionSettings::Ptr(new Settings::ConnectionSettings());
     connectionSetting->fromMap(connection->settings());
 
     ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting, this);

@@ -24,7 +24,7 @@
 #include "ui_cdma.h"
 
 
-CdmaWidget::CdmaWidget(NetworkManager::Settings::Setting * setting, QWidget* parent, Qt::WindowFlags f):
+CdmaWidget::CdmaWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::CdmaWidget)
 {
@@ -40,9 +40,9 @@ CdmaWidget::~CdmaWidget()
 {
 }
 
-void CdmaWidget::loadConfig(NetworkManager::Settings::Setting *setting)
+void CdmaWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::CdmaSetting *cdmaSetting = static_cast<NetworkManager::Settings::CdmaSetting *>(setting);
+    NetworkManager::Settings::CdmaSetting::Ptr cdmaSetting = setting.staticCast<NetworkManager::Settings::CdmaSetting>();
     m_ui->number->setText(cdmaSetting->number());
     m_ui->username->setText(cdmaSetting->username());
     m_ui->password->setText(cdmaSetting->password());

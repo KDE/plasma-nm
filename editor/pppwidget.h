@@ -36,10 +36,10 @@ class PPPWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    PPPWidget(NetworkManager::Settings::Setting *setting = 0, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    PPPWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~PPPWidget();
 
-    void loadConfig(NetworkManager::Settings::Setting *setting);
+    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting() const;
 

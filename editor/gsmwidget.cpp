@@ -26,7 +26,7 @@
 #include "ui_gsm.h"
 
 
-GsmWidget::GsmWidget(NetworkManager::Settings::Setting * setting, QWidget* parent, Qt::WindowFlags f):
+GsmWidget::GsmWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::GsmWidget)
 {
@@ -52,9 +52,9 @@ GsmWidget::~GsmWidget()
 {
 }
 
-void GsmWidget::loadConfig(NetworkManager::Settings::Setting *setting)
+void GsmWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::GsmSetting * gsmSetting = static_cast<NetworkManager::Settings::GsmSetting *>(setting);
+    NetworkManager::Settings::GsmSetting::Ptr gsmSetting = setting.staticCast<NetworkManager::Settings::GsmSetting>();
     m_ui->number->setText(gsmSetting->number());
     m_ui->username->setText(gsmSetting->username());
     m_ui->password->setText(gsmSetting->password());

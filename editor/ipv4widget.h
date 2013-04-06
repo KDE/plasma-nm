@@ -37,10 +37,10 @@ class IPv4Widget : public SettingWidget
     Q_OBJECT
 
 public:
-    IPv4Widget(NetworkManager::Settings::Setting* setting = 0, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    IPv4Widget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~IPv4Widget();
 
-    void loadConfig(NetworkManager::Settings::Setting * setting);
+    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting() const;
 
@@ -56,7 +56,7 @@ private slots:
 
 private:
     Ui::IPv4Widget * m_ui;
-    NetworkManager::Settings::Ipv4Setting* m_ipv4Setting;
+    NetworkManager::Settings::Ipv4Setting::Ptr m_ipv4Setting;
 
     class Private;
     Private *d;

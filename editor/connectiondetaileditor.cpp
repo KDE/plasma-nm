@@ -46,7 +46,7 @@
 
 using namespace NetworkManager;
 
-ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::ConnectionType type, const QString &vpnType, QWidget* parent, Qt::WindowFlags f):
+ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType type, const QString &vpnType, QWidget* parent, Qt::WindowFlags f):
     QDialog(parent, f),
     m_detailEditor(new Ui::ConnectionDetailEditor),
     m_connection(new NetworkManager::Settings::ConnectionSettings(type)),
@@ -60,7 +60,7 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::Con
 }
 
 
-ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings* connection, QWidget* parent, Qt::WindowFlags f):
+ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::Settings::ConnectionSettings::Ptr &connection, QWidget* parent, Qt::WindowFlags f):
     QDialog(parent, f),
     m_detailEditor(new Ui::ConnectionDetailEditor),
     m_connection(connection),
@@ -74,8 +74,6 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings* con
 
 ConnectionDetailEditor::~ConnectionDetailEditor()
 {
-    if (m_new)
-        delete m_connection;
 }
 
 void ConnectionDetailEditor::initEditor()
@@ -154,7 +152,7 @@ void ConnectionDetailEditor::initTabs()
     if (type == NetworkManager::Settings::ConnectionSettings::Wired) {
         WiredConnectionWidget * wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Settings::Setting::Wired), this);
         m_detailEditor->tabWidget->addTab(wiredWidget, i18n("Wired"));
-        WiredSecurity * wiredSecurity = new WiredSecurity(static_cast<NetworkManager::Settings::Security8021xSetting *>(m_connection->setting(NetworkManager::Settings::Setting::Security8021x)), this);
+        WiredSecurity * wiredSecurity = new WiredSecurity(m_connection->setting(NetworkManager::Settings::Setting::Security8021x).staticCast<NetworkManager::Settings::Security8021xSetting>(), this);
         m_detailEditor->tabWidget->addTab(wiredSecurity, i18n("802.1x Security"));
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
         m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
@@ -164,7 +162,7 @@ void ConnectionDetailEditor::initTabs()
         WifiConnectionWidget * wifiWidget = new WifiConnectionWidget(m_connection->setting(NetworkManager::Settings::Setting::Wireless), this);
         m_detailEditor->tabWidget->addTab(wifiWidget, i18n("Wireless"));
         WifiSecurity * wifiSecurity = new WifiSecurity(m_connection->setting(NetworkManager::Settings::Setting::WirelessSecurity),
-                                                       static_cast<NetworkManager::Settings::Security8021xSetting *>(m_connection->setting(NetworkManager::Settings::Setting::Security8021x)),
+                                                       m_connection->setting(NetworkManager::Settings::Setting::Security8021x).staticCast<NetworkManager::Settings::Security8021xSetting>(),
                                                        this);
         m_detailEditor->tabWidget->addTab(wifiSecurity, i18n("Wi-Fi Security"));
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
@@ -197,7 +195,7 @@ void ConnectionDetailEditor::initTabs()
     } else if (type == NetworkManager::Settings::ConnectionSettings::Bluetooth) {
         BtWidget * btWidget = new BtWidget(m_connection->setting(NetworkManager::Settings::Setting::Bluetooth), this);
         m_detailEditor->tabWidget->addTab(btWidget, i18n("Bluetooth"));
-        NetworkManager::Settings::BluetoothSetting * btSetting = static_cast<NetworkManager::Settings::BluetoothSetting *>(m_connection->setting(NetworkManager::Settings::Setting::Bluetooth));
+        NetworkManager::Settings::BluetoothSetting::Ptr btSetting = m_connection->setting(NetworkManager::Settings::Setting::Bluetooth).staticCast<NetworkManager::Settings::BluetoothSetting>();
         if (btSetting->profileType() == NetworkManager::Settings::BluetoothSetting::Dun) {
             GsmWidget * gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Settings::Setting::Gsm), this);
             m_detailEditor->tabWidget->addTab(gsmWidget, i18n("GSM"));
@@ -212,8 +210,8 @@ void ConnectionDetailEditor::initTabs()
     } else if (type == NetworkManager::Settings::ConnectionSettings::Vpn) {
         QString error;
         VpnUiPlugin * vpnPlugin = 0;
-        NetworkManager::Settings::VpnSetting *vpnSetting =
-                static_cast<NetworkManager::Settings::VpnSetting*>(m_connection->setting(NetworkManager::Settings::Setting::Vpn));
+        NetworkManager::Settings::VpnSetting::Ptr vpnSetting =
+                m_connection->setting(NetworkManager::Settings::Setting::Vpn).staticCast<NetworkManager::Settings::VpnSetting>();
         if (!vpnSetting) {
             qDebug() << "Missing VPN setting!";
         } else {
@@ -279,8 +277,8 @@ void ConnectionDetailEditor::saveSetting()
     connectionSettings->setId(m_detailEditor->connectionName->text());
 
     if (connectionSettings->connectionType() == Settings::ConnectionSettings::Wireless) {
-        NetworkManager::Settings::WirelessSecuritySetting * securitySetting = static_cast<NetworkManager::Settings::WirelessSecuritySetting*>(connectionSettings->setting(Settings::Setting::WirelessSecurity));
-        NetworkManager::Settings::WirelessSetting * wirelessSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(connectionSettings->setting(Settings::Setting::Wireless));
+        NetworkManager::Settings::WirelessSecuritySetting::Ptr securitySetting = connectionSettings->setting(Settings::Setting::WirelessSecurity).staticCast<NetworkManager::Settings::WirelessSecuritySetting>();
+        NetworkManager::Settings::WirelessSetting::Ptr wirelessSetting = connectionSettings->setting(Settings::Setting::Wireless).staticCast<NetworkManager::Settings::WirelessSetting>();
 
         if (securitySetting && wirelessSetting) {
             if (securitySetting->keyMgmt() != NetworkManager::Settings::WirelessSecuritySetting::WirelessSecuritySetting::Unknown) {
@@ -325,7 +323,7 @@ void ConnectionDetailEditor::gotSecrets(const QString& id, bool success, const Q
 
     if (success) {
         foreach (const QString & key, secrets.keys()) {
-            NetworkManager::Settings::Setting * setting = m_connection->setting(NetworkManager::Settings::Setting::typeFromString(key));
+            NetworkManager::Settings::Setting::Ptr setting = m_connection->setting(NetworkManager::Settings::Setting::typeFromString(key));
             setting->secretsFromMap(secrets.value(key));
         }
     } else {

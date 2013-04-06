@@ -21,12 +21,12 @@
 #include "wifisecurity.h"
 #include "ui_wifisecurity.h"
 
-WifiSecurity::WifiSecurity(NetworkManager::Settings::Setting * setting, NetworkManager::Settings::Security8021xSetting * setting8021x,
+WifiSecurity::WifiSecurity(const NetworkManager::Settings::Setting::Ptr &setting, const NetworkManager::Settings::Security8021xSetting::Ptr &setting8021x,
                            QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::WifiSecurity)
 {
-    m_wifiSecurity = static_cast<NetworkManager::Settings::WirelessSecuritySetting*>(setting);
+    m_wifiSecurity = setting.staticCast<NetworkManager::Settings::WirelessSecuritySetting>();
 
     m_ui->setupUi(this);
 
@@ -68,9 +68,9 @@ bool WifiSecurity::enabled8021x() const
     return false;
 }
 
-void WifiSecurity::loadConfig(NetworkManager::Settings::Setting * setting)
+void WifiSecurity::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::WirelessSecuritySetting * wifiSecurity = static_cast<NetworkManager::Settings::WirelessSecuritySetting *>(setting);
+    NetworkManager::Settings::WirelessSecuritySetting::Ptr wifiSecurity = setting.staticCast<NetworkManager::Settings::WirelessSecuritySetting>();
 
     const NetworkManager::Settings::WirelessSecuritySetting::KeyMgmt keyMgmt = wifiSecurity->keyMgmt();
     const NetworkManager::Settings::WirelessSecuritySetting::AuthAlg authAlg = wifiSecurity->authAlg();

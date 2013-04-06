@@ -38,10 +38,11 @@ class WifiSecurity : public SettingWidget
 {
     Q_OBJECT
 public:
-    WifiSecurity(NetworkManager::Settings::Setting* setting = 0, NetworkManager::Settings::Security8021xSetting * setting8021x = 0,
+    WifiSecurity(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(),
+                 const NetworkManager::Settings::Security8021xSetting::Ptr &setting8021x = NetworkManager::Settings::Security8021xSetting::Ptr(),
                  QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~WifiSecurity();
-    void loadConfig(NetworkManager::Settings::Setting * setting);
+    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
     QVariantMap setting() const;
     QVariantMap setting8021x() const;
 
@@ -58,7 +59,7 @@ private:
     Ui::WifiSecurity * m_ui;
     Security8021x * m_8021xWidget;
     Security8021x * m_WPA2Widget;
-    NetworkManager::Settings::WirelessSecuritySetting * m_wifiSecurity;
+    NetworkManager::Settings::WirelessSecuritySetting::Ptr m_wifiSecurity;
 };
 
 #endif // WIFI_SECURITY

@@ -38,7 +38,7 @@ public:
     ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType type,
                            const QString &vpnType,
                            QWidget* parent = 0, Qt::WindowFlags f = 0);
-    ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings * connection,
+    ConnectionDetailEditor(const NetworkManager::Settings::ConnectionSettings::Ptr &setting,
                            QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~ConnectionDetailEditor();
 
@@ -48,7 +48,7 @@ private Q_SLOTS:
     void gotSecrets(const QString & id, bool success, const QVariantMapMap & secrets, const QString & msg);
 private:
     Ui::ConnectionDetailEditor * m_detailEditor;
-    NetworkManager::Settings::ConnectionSettings * m_connection;
+    NetworkManager::Settings::ConnectionSettings::Ptr m_connection;
     int m_numSecrets;
     bool m_new;
     QString m_vpnType;

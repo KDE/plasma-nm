@@ -23,7 +23,7 @@
 #include "wificonnectionwidget.h"
 #include "ui_wificonnectionwidget.h"
 
-WifiConnectionWidget::WifiConnectionWidget(NetworkManager::Settings::Setting * setting, QWidget* parent, Qt::WindowFlags f):
+WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::WifiConnectionWidget)
 {
@@ -37,9 +37,9 @@ WifiConnectionWidget::~WifiConnectionWidget()
 {
 }
 
-void WifiConnectionWidget::loadConfig(NetworkManager::Settings::Setting * setting)
+void WifiConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::WirelessSetting * wifiSetting = static_cast<NetworkManager::Settings::WirelessSetting*>(setting);
+    NetworkManager::Settings::WirelessSetting::Ptr wifiSetting = setting.staticCast<NetworkManager::Settings::WirelessSetting>();
 
     if (!wifiSetting->ssid().isEmpty()) {
         m_ui->SSIDLineEdit->setText(QString::fromUtf8(wifiSetting->ssid()));

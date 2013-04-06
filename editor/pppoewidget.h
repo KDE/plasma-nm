@@ -36,10 +36,10 @@ class PppoeWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    PppoeWidget(NetworkManager::Settings::Setting *setting = 0, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    PppoeWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~PppoeWidget();
 
-    void loadConfig(NetworkManager::Settings::Setting *setting);
+    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting() const;
 

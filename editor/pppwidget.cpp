@@ -24,7 +24,7 @@
 #include "ui_ppp.h"
 
 
-PPPWidget::PPPWidget(NetworkManager::Settings::Setting * setting, QWidget* parent, Qt::WindowFlags f):
+PPPWidget::PPPWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::PPPWidget)
 {
@@ -38,9 +38,9 @@ PPPWidget::~PPPWidget()
 {
 }
 
-void PPPWidget::loadConfig(NetworkManager::Settings::Setting *setting)
+void PPPWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::PppSetting * pppSetting = static_cast<NetworkManager::Settings::PppSetting *>(setting);
+    NetworkManager::Settings::PppSetting::Ptr pppSetting = setting.staticCast<NetworkManager::Settings::PppSetting>();
 
     m_ui->eap->setChecked(!pppSetting->refuseEap());
     m_ui->pap->setChecked(!pppSetting->refusePap());

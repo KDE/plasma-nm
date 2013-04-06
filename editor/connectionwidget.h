@@ -35,10 +35,10 @@ class ConnectionWidget : public QWidget
 Q_OBJECT
 
 public:
-    ConnectionWidget(NetworkManager::Settings::ConnectionSettings* settings = 0, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    ConnectionWidget(const NetworkManager::Settings::ConnectionSettings::Ptr &settings = NetworkManager::Settings::ConnectionSettings::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~ConnectionWidget();
 
-    void loadConfig(NetworkManager::Settings::ConnectionSettings * settings);
+    void loadConfig(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
 
     QVariantMapMap setting() const;
 

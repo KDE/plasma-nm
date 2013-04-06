@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
         NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(args->arg(0));
 
         if (connection) {
-            NetworkManager::Settings::ConnectionSettings * connectionSetting = new NetworkManager::Settings::ConnectionSettings();
+            NetworkManager::Settings::ConnectionSettings::Ptr connectionSetting = NetworkManager::Settings::ConnectionSettings::Ptr(new NetworkManager::Settings::ConnectionSettings());
             connectionSetting->fromMap(connection->settings());
 
             ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting);

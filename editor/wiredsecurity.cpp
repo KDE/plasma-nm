@@ -21,7 +21,7 @@
 #include "wiredsecurity.h"
 #include "ui_wiredsecurity.h"
 
-WiredSecurity::WiredSecurity(NetworkManager::Settings::Security8021xSetting * setting8021x, QWidget* parent, Qt::WindowFlags f):
+WiredSecurity::WiredSecurity(const NetworkManager::Settings::Security8021xSetting::Ptr &setting8021x, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting8021x, parent, f),
     m_ui(new Ui::WiredSecurity),
     m_8021xSetting(setting8021x)
@@ -49,7 +49,7 @@ bool WiredSecurity::enabled8021x() const
     return false;
 }
 
-void WiredSecurity::loadConfig(NetworkManager::Settings::Setting * setting)
+void WiredSecurity::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
     Q_UNUSED(setting);
 }

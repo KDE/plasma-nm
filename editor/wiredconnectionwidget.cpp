@@ -42,9 +42,9 @@ WiredConnectionWidget::~WiredConnectionWidget()
 {
 }
 
-void WiredConnectionWidget::loadConfig(NetworkManager::Settings::Setting * setting)
+void WiredConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::WiredSetting * wiredSetting = static_cast<NetworkManager::Settings::WiredSetting*>(setting);
+    NetworkManager::Settings::WiredSetting::Ptr wiredSetting = setting.staticCast<NetworkManager::Settings::WiredSetting>();
 
     if (!wiredSetting->macAddress().isEmpty()) {
         m_widget->macAddress->setText(QString(wiredSetting->macAddress()));

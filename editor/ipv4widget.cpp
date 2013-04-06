@@ -70,10 +70,9 @@ public:
 };
 
 
-IPv4Widget::IPv4Widget(NetworkManager::Settings::Setting* setting, QWidget* parent, Qt::WindowFlags f):
+IPv4Widget::IPv4Widget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::IPv4Widget),
-    m_ipv4Setting(0),
     d(new IPv4Widget::Private())
 {
     m_ui->setupUi(this);
@@ -97,7 +96,7 @@ IPv4Widget::IPv4Widget(NetworkManager::Settings::Setting* setting, QWidget* pare
             this, SLOT(tableViewItemChanged(QStandardItem*)));
 
     if (setting) {
-        m_ipv4Setting = static_cast<NetworkManager::Settings::Ipv4Setting *>(setting);
+        m_ipv4Setting = setting.staticCast<NetworkManager::Settings::Ipv4Setting>();
         loadConfig(m_ipv4Setting);
     }
 
@@ -114,7 +113,7 @@ IPv4Widget::~IPv4Widget()
     delete d;
 }
 
-void IPv4Widget::loadConfig(NetworkManager::Settings::Setting * setting)
+void IPv4Widget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
     Q_UNUSED(setting)
 

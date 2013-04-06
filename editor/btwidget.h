@@ -36,16 +36,16 @@ class BtWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    BtWidget(NetworkManager::Settings::Setting *setting = 0, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    BtWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~BtWidget();
 
-    void loadConfig(NetworkManager::Settings::Setting *setting);
+    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting() const;
 
 private:
     Ui::BtWidget * m_ui;
-    NetworkManager::Settings::BluetoothSetting * m_btSetting;
+    NetworkManager::Settings::BluetoothSetting::Ptr m_btSetting;
 };
 
 #endif // BT_WIDGET_H

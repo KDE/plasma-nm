@@ -36,10 +36,10 @@ class GsmWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    GsmWidget(NetworkManager::Settings::Setting *setting = 0, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    GsmWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~GsmWidget();
 
-    void loadConfig(NetworkManager::Settings::Setting *setting);
+    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting() const;
 

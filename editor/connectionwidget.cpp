@@ -21,7 +21,7 @@
 #include "connectionwidget.h"
 #include "ui_connectionwidget.h"
 
-ConnectionWidget::ConnectionWidget(NetworkManager::Settings::ConnectionSettings* settings, QWidget* parent, Qt::WindowFlags f):
+ConnectionWidget::ConnectionWidget(const NetworkManager::Settings::ConnectionSettings::Ptr &settings, QWidget* parent, Qt::WindowFlags f):
     QWidget(parent, f),
     m_widget(new Ui::ConnectionWidget),
     m_type(settings->connectionType())
@@ -38,7 +38,7 @@ ConnectionWidget::~ConnectionWidget()
 {
 }
 
-void ConnectionWidget::loadConfig(NetworkManager::Settings::ConnectionSettings * settings)
+void ConnectionWidget::loadConfig(const NetworkManager::Settings::ConnectionSettings::Ptr &settings)
 {
     //TODO
     Q_UNUSED(settings);

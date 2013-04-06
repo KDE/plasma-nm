@@ -37,10 +37,10 @@ class IPv6Widget : public SettingWidget
     Q_OBJECT
 
 public:
-    IPv6Widget(NetworkManager::Settings::Setting* setting = 0, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    IPv6Widget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~IPv6Widget();
 
-    void loadConfig(NetworkManager::Settings::Setting * setting);
+    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting() const;
 
@@ -56,7 +56,7 @@ private slots:
 
 private:
     Ui::IPv6Widget * m_ui;
-    NetworkManager::Settings::Ipv6Setting* m_ipv6Setting;
+    NetworkManager::Settings::Ipv6Setting::Ptr m_ipv6Setting;
 
     class Private;
     Private *d;

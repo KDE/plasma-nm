@@ -30,7 +30,7 @@ public:
     explicit ModelWiredItem(const NetworkManager::Device::Ptr &device = NetworkManager::Device::Ptr(), QObject * parent = 0);
     ~ModelWiredItem();
 
-    void setConnection(NetworkManager::Settings::Connection * connection);
+    void setConnection(const NetworkManager::Settings::Connection::Ptr & connection);
 
 protected:
     void updateDetailsContent();

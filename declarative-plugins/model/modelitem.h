@@ -59,8 +59,8 @@ public:
     virtual void setActiveConnection(const NetworkManager::ActiveConnection::Ptr & active);
     NetworkManager::ActiveConnection::Ptr activeConnection() const;
 
-    virtual void setConnection(NetworkManager::Settings::Connection * connection);
-    NetworkManager::Settings::Connection * connection() const;
+    virtual void setConnection(const NetworkManager::Settings::Connection::Ptr & connection);
+    NetworkManager::Settings::Connection::Ptr connection() const;
 
     void setDevice(const NetworkManager::Device::Ptr & device);
     NetworkManager::Device::Ptr device() const;
@@ -81,7 +81,7 @@ private Q_SLOTS:
 
 protected:
     NetworkManager::ActiveConnection::Ptr m_active;
-    NetworkManager::Settings::Connection * m_connection;
+    NetworkManager::Settings::Connection::Ptr m_connection;
     NetworkManager::Device::Ptr m_device;
 
     bool m_connected;

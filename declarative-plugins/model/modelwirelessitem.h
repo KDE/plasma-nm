@@ -41,7 +41,7 @@ public:
 
     // Objects
 
-    void setConnection(NetworkManager::Settings::Connection * connection);
+    void setConnection(const NetworkManager::Settings::Connection::Ptr & connection);
 
     void setWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network);
     NetworkManager::WirelessNetwork::Ptr wirelessNetwork() const;

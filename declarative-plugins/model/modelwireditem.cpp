@@ -59,7 +59,7 @@ void ModelWiredItem::updateDetailsContent()
     }
 }
 
-void ModelWiredItem::setConnection(NetworkManager::Settings::Connection* connection)
+void ModelWiredItem::setConnection(const NetworkManager::Settings::Connection::Ptr & connection)
 {
     ModelItem::setConnection(connection);
 }

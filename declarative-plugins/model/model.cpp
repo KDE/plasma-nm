@@ -57,16 +57,16 @@ Model::Model(QObject* parent):
             SLOT(addWirelessNetwork(NetworkManager::WirelessNetwork::Ptr, NetworkManager::Device::Ptr)));
     connect(m_monitor, SIGNAL(addActiveConnection(NetworkManager::ActiveConnection::Ptr)),
             SLOT(addActiveConnection(NetworkManager::ActiveConnection::Ptr)));
-    connect(m_monitor, SIGNAL(addConnection(NetworkManager::Settings::Connection*,NetworkManager::Device::Ptr)),
-            SLOT(addConnection(NetworkManager::Settings::Connection*,NetworkManager::Device::Ptr)));
+    connect(m_monitor, SIGNAL(addConnection(NetworkManager::Settings::Connection::Ptr,NetworkManager::Device::Ptr)),
+            SLOT(addConnection(NetworkManager::Settings::Connection::Ptr,NetworkManager::Device::Ptr)));
     connect(m_monitor, SIGNAL(removeWirelessNetwork(QString)),
             SLOT(removeWirelessNetwork(QString)));
     connect(m_monitor, SIGNAL(removeConnection(QString)),
             SLOT(removeConnection(QString)));
     connect(m_monitor, SIGNAL(removeConnectionsByDevice(QString)),
             SLOT(removeConnectionsByDevice(QString)));
-    connect(m_monitor, SIGNAL(addVpnConnection(NetworkManager::Settings::Connection*)),
-            SLOT(addVpnConnection(NetworkManager::Settings::Connection*)));
+    connect(m_monitor, SIGNAL(addVpnConnection(NetworkManager::Settings::Connection::Ptr)),
+            SLOT(addVpnConnection(NetworkManager::Settings::Connection::Ptr)));
     connect(m_monitor, SIGNAL(removeVpnConnections()),
             SLOT(removeVpnConnections()));
 
@@ -169,7 +169,7 @@ void Model::addActiveConnection(const NetworkManager::ActiveConnection::Ptr & ac
     }
 }
 
-void Model::addConnection(NetworkManager::Settings::Connection* connection, const NetworkManager::Device::Ptr &device)
+void Model::addConnection(const NetworkManager::Settings::Connection::Ptr & connection, const NetworkManager::Device::Ptr &device)
 {
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
     settings->fromMap(connection->settings());
@@ -195,7 +195,7 @@ void Model::addConnection(NetworkManager::Settings::Connection* connection, cons
 
 }
 
-void Model::addVpnConnection(NetworkManager::Settings::Connection * connection)
+void Model::addVpnConnection(const NetworkManager::Settings::Connection::Ptr & connection)
 {
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
     settings->fromMap(connection->settings());
@@ -232,7 +232,7 @@ void Model::removeConnection(const QString& connection)
     foreach (ModelItem * item, m_connections) {
         if (item->connectionPath() == connection) {
             QString name = item->name();
-            item->setConnection(0);
+            item->setConnection(NetworkManager::Settings::Connection::Ptr());
 
             /* We removed connection details, but this connection can be available
                as accesspoint, if not, we have to delete it */

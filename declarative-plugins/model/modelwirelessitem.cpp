@@ -112,7 +112,7 @@ void ModelWirelessItem::updateDetailsContent()
     }
 }
 
-void ModelWirelessItem::setConnection(NetworkManager::Settings::Connection* connection)
+void ModelWirelessItem::setConnection(const NetworkManager::Settings::Connection::Ptr & connection)
 {
     ModelItem::setConnection(connection);
 

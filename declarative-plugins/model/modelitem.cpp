@@ -158,6 +158,7 @@ void ModelItem::updateDetailsContent()
     NetworkManager::Device::Ptr device = NetworkManager::findDeviceByIpFace(m_deviceUdi);
 
     if (device) {
+        qDebug() << "DEVICE FOUND";
         if (device->ipV4Config().isValid() && connected()) {
             QHostAddress addr = device->ipV4Config().addresses().first().ip();
             m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
@@ -175,6 +176,8 @@ void ModelItem::updateDetailsContent()
             name = device->ipInterfaceName();
         }
         m_details += QString(format).arg(i18n("System name:"), name);
+    } else {
+        qDebug() << "NO DEVICE FOUND";
     }
 }
 
@@ -249,14 +252,14 @@ NetworkManager::Device::Ptr ModelItem::device() const
     return m_device;
 }
 
-void ModelItem::setConnection(NetworkManager::Settings::Connection* connection)
+void ModelItem::setConnection(const NetworkManager::Settings::Connection::Ptr & connection)
 {
     m_connection = connection;
 
     if (m_connection) {
         setConnectionSettings(connection->settings());
 
-        connect(connection, SIGNAL(updated(QVariantMapMap)),
+        connect(connection.data(), SIGNAL(updated(QVariantMapMap)),
                 SLOT(onConnectionUpdated(QVariantMapMap)), Qt::UniqueConnection);
     } else {
         m_name.clear();
@@ -277,7 +280,7 @@ void ModelItem::setConnectionSettings(const QVariantMapMap& map)
     updateDetails();
 }
 
-NetworkManager::Settings::Connection* ModelItem::connection() const
+NetworkManager::Settings::Connection::Ptr ModelItem::connection() const
 {
     return m_connection;
 }

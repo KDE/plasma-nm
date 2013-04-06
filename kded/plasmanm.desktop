@@ -1,6 +1,14 @@
 [Desktop Entry]
 Name=Plasma NM module
+Name[pt]=Módulo do NM para o Plasma
+Name[pt_BR]=Módulo do NM para o Plasma
+Name[uk]=Модуль керування мережею Плазми
+Name[x-test]=xxPlasma NM modulexx
 Comment=Provides secrets to the NetworkManager daemon
+Comment[pt]=Fornece as senhas do serviço NetworkManager
+Comment[pt_BR]=Fornece as senhas do serviço NetworkManager
+Comment[uk]=Надає реєстраційні дані фоновій службі NetworkManager
+Comment[x-test]=xxProvides secrets to the NetworkManager daemonxx
 Type=Service
 X-KDE-ServiceTypes=KDEDModule
 X-KDE-ModuleType=Library

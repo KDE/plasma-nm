@@ -22,6 +22,7 @@
 
 #include "wiredconnectionwidget.h"
 #include "ui_wiredconnectionwidget.h"
+#include "uiutils.h"
 
 
 WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
@@ -47,11 +48,11 @@ void WiredConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::
     NetworkManager::Settings::WiredSetting::Ptr wiredSetting = setting.staticCast<NetworkManager::Settings::WiredSetting>();
 
     if (!wiredSetting->macAddress().isEmpty()) {
-        m_widget->macAddress->setText(QString(wiredSetting->macAddress()));
+        m_widget->macAddress->setText(UiUtils::macAddressAsString(wiredSetting->macAddress()));
     }
 
     if (!wiredSetting->clonedMacAddress().isEmpty()) {
-        m_widget->clonedMacAddress->setText(QString(wiredSetting->clonedMacAddress()));
+        m_widget->clonedMacAddress->setText(UiUtils::macAddressAsString(wiredSetting->clonedMacAddress()));
     }
 
     if (wiredSetting->mtu()) {
@@ -76,11 +77,11 @@ QVariantMap WiredConnectionWidget::setting() const
     NetworkManager::Settings::WiredSetting wiredSetting;
 
     if (!m_widget->macAddress->text().isEmpty() && m_widget->macAddress->text() != ":::::") {
-        wiredSetting.setMacAddress(m_widget->macAddress->text().toLatin1());
+        wiredSetting.setMacAddress(UiUtils::macAddressFromString(m_widget->macAddress->text()));
     }
 
     if (!m_widget->clonedMacAddress->text().isEmpty() && m_widget->clonedMacAddress->text() != ":::::") {
-        wiredSetting.setClonedMacAddress(m_widget->clonedMacAddress->text().toLatin1());
+        wiredSetting.setClonedMacAddress(UiUtils::macAddressFromString(m_widget->clonedMacAddress->text()));
     }
 
     if (m_widget->mtu->value()) {

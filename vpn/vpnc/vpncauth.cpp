@@ -29,10 +29,10 @@ class VpncAuthDialogPrivate
 {
 public:
     Ui_VpncAuth ui;
-    NetworkManager::Settings::VpnSetting * setting;
+    NetworkManager::Settings::VpnSetting::Ptr setting;
 };
 
-VpncAuthDialog::VpncAuthDialog(NetworkManager::Settings::VpnSetting *setting, QWidget * parent)
+VpncAuthDialog::VpncAuthDialog(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent)
     : SettingWidget(setting, parent), d_ptr(new VpncAuthDialogPrivate)
 {
     Q_D(VpncAuthDialog);

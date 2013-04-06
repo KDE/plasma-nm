@@ -26,7 +26,7 @@
 #include "ui_vpnc.h"
 
 
-VpncWidget::VpncWidget(NetworkManager::Settings::VpnSetting *setting, QWidget* parent, Qt::WindowFlags f):
+VpncWidget::VpncWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::VpncWidget),
     m_setting(setting)
@@ -48,7 +48,7 @@ VpncWidget::~VpncWidget()
 {
 }
 
-void VpncWidget::loadConfig(NetworkManager::Settings::Setting *setting)
+void VpncWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
     Q_UNUSED(setting);
 

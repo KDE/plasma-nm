@@ -34,10 +34,10 @@ class VpncWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    VpncWidget(NetworkManager::Settings::VpnSetting *setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    VpncWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~VpncWidget();
 
-    void loadConfig(NetworkManager::Settings::Setting *setting);
+    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting() const;
 
@@ -49,7 +49,7 @@ private slots:
 
 private:
     Ui::VpncWidget * m_ui;
-    NetworkManager::Settings::VpnSetting * m_setting;
+    NetworkManager::Settings::VpnSetting::Ptr m_setting;
 };
 
 #endif // VPNC_WIDGET_H

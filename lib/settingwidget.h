@@ -30,10 +30,10 @@ class KDE_EXPORT SettingWidget : public QWidget
 {
     Q_OBJECT
 public:
-    SettingWidget(NetworkManager::Settings::Setting * setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    SettingWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~SettingWidget();
 
-    virtual void loadConfig(NetworkManager::Settings::Setting * setting);
+    virtual void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
     virtual void readSecrets();
 
     virtual QVariantMap setting() const = 0;

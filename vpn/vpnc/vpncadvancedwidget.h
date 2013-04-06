@@ -34,12 +34,12 @@ class VpncAdvancedWidget : public QDialog
 {
     Q_OBJECT
 public:
-    VpncAdvancedWidget(NetworkManager::Settings::VpnSetting * setting, QWidget *parent = 0);
+    VpncAdvancedWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget *parent = 0);
 
     QStringMap setting() const;
 
 private:
-    void loadConfig(NetworkManager::Settings::VpnSetting * setting);
+    void loadConfig(const NetworkManager::Settings::VpnSetting::Ptr &setting);
     Ui::VpncAdvancedWidget * m_ui;
 };
 

@@ -25,7 +25,7 @@
 #include "vpncadvancedwidget.h"
 #include "ui_vpncadvanced.h"
 
-VpncAdvancedWidget::VpncAdvancedWidget(NetworkManager::Settings::VpnSetting *setting, QWidget *parent) :
+VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget *parent) :
     QDialog(parent),
     m_ui(new Ui::VpncAdvancedWidget)
 {
@@ -63,7 +63,7 @@ VpncAdvancedWidget::VpncAdvancedWidget(NetworkManager::Settings::VpnSetting *set
     loadConfig(setting);
 }
 
-void VpncAdvancedWidget::loadConfig(NetworkManager::Settings::VpnSetting *setting)
+void VpncAdvancedWidget::loadConfig(const NetworkManager::Settings::VpnSetting::Ptr &setting)
 {
     m_ui->domain->setText(setting->data().value(NM_VPNC_KEY_DOMAIN));
 

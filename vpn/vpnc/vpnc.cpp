@@ -52,12 +52,12 @@ VpncUiPlugin::~VpncUiPlugin()
 
 }
 
-SettingWidget * VpncUiPlugin::widget(NetworkManager::Settings::VpnSetting *setting, QWidget * parent)
+SettingWidget * VpncUiPlugin::widget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent)
 {
     return new VpncWidget(setting, parent);
 }
 
-SettingWidget *VpncUiPlugin::askUser(NetworkManager::Settings::VpnSetting *setting, QWidget * parent)
+SettingWidget *VpncUiPlugin::askUser(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent)
 {
     return new VpncAuthDialog(setting, parent);
 }

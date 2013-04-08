@@ -150,6 +150,7 @@ void ModelWirelessItem::setWirelessNetwork(const NetworkManager::WirelessNetwork
     m_network = network;
 
     if (m_network) {
+        m_specificPath = m_network.data()->referenceAccessPoint().data()->uni();
         m_ssid = network->ssid();
         m_previousSignal = m_signal;
         m_signal = m_network->signalStrength();
@@ -173,6 +174,7 @@ void ModelWirelessItem::setWirelessNetwork(const NetworkManager::WirelessNetwork
         connect(m_network.data(), SIGNAL(referenceAccessPointChanged(QString)),
                 SLOT(onAccessPointChanged(QString)), Qt::UniqueConnection);
     } else {
+        m_specificPath.clear();
         m_ssid.clear();
         m_signal = 0;
         m_type = NetworkManager::Settings::ConnectionSettings::Unknown;
@@ -194,6 +196,8 @@ NetworkManager::WirelessNetwork::Ptr ModelWirelessItem::wirelessNetwork() const
 void ModelWirelessItem::onAccessPointChanged(const QString& accessPoint)
 {
     updateDetails();
+
+    m_specificPath = accessPoint;
 
     emit itemChanged();
 

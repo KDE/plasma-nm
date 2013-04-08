@@ -41,7 +41,7 @@ protected:
     void updateDetailsContent();
 
 private:
-    NetworkManager::VpnConnection * m_vpn;
+    NetworkManager::VpnConnection::Ptr m_vpn;
 };
 
 #endif // PLASMA_NM_CONNECTION_VPN_ITEM_H

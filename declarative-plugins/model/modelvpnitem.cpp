@@ -32,12 +32,10 @@ ModelVpnItem::ModelVpnItem(const NetworkManager::Device::Ptr &device, QObject* p
     m_vpn(0)
 {
     m_type = NetworkManager::Settings::ConnectionSettings::Vpn;
-//     m_icon = "secure-card";
 }
 
 ModelVpnItem::~ModelVpnItem()
 {
-    delete m_vpn;
 }
 
 void ModelVpnItem::updateDetailsContent()
@@ -62,9 +60,9 @@ void ModelVpnItem::setActiveConnection(const NetworkManager::ActiveConnection::P
     ModelItem::setActiveConnection(active);
 
     if (m_active.data()->vpn()) {
-        m_vpn = new NetworkManager::VpnConnection(m_active->path());
+        m_vpn =  NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(m_active->path()));
 
-        connect(m_vpn, SIGNAL(stateChanged(NetworkManager::VpnConnection::State)),
+        connect(m_vpn.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State)),
                 SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State)), Qt::UniqueConnection);
     }
 }
@@ -74,8 +72,7 @@ void ModelVpnItem::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
     if (state == NetworkManager::VpnConnection::Disconnected) {
         m_connecting = false;
         m_connected = false;
-        delete m_vpn;
-        m_vpn = 0;
+        m_vpn.clear();
         NMItemDebug() << name() << ": disconnected";
         m_active.clear();
     }

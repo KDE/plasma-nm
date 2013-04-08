@@ -86,10 +86,13 @@ protected:
 
     bool m_connected;
     bool m_connecting;
+    QString m_connectionPath;
     QString m_deviceUdi;
+    QString m_devicePath;
     QString m_details;
     QString m_name;
     SectionType m_sectionType;
+    QString m_specificPath;
     QString m_uuid;
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
 

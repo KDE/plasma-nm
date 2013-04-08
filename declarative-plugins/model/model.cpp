@@ -229,7 +229,9 @@ void Model::removeWirelessNetwork(const QString& ssid)
 
 void Model::removeConnection(const QString& connection)
 {
+    qDebug() << "remove connection";
     foreach (ModelItem * item, m_connections) {
+        qDebug() << item->connectionPath() << " == " << connection;
         if (item->connectionPath() == connection) {
             QString name = item->name();
             item->setConnection(NetworkManager::Settings::Connection::Ptr());

@@ -235,9 +235,11 @@ void ModelItem::setDevice(const NetworkManager::Device::Ptr & device)
     m_device = device;
 
     if (m_device) {
+        m_devicePath = m_device->uni();
         m_deviceUdi = m_device->udi();
     } else {
         m_deviceUdi.clear();
+        m_devicePath.clear();
     }
 
     updateDetails();
@@ -255,9 +257,12 @@ void ModelItem::setConnection(const NetworkManager::Settings::Connection::Ptr & 
     if (m_connection) {
         setConnectionSettings(connection->settings());
 
+        m_connectionPath = m_connection->path();
+
         connect(connection.data(), SIGNAL(updated(QVariantMapMap)),
                 SLOT(onConnectionUpdated(QVariantMapMap)), Qt::UniqueConnection);
     } else {
+        m_connectionPath.clear();
         m_name.clear();
         m_uuid.clear();
         m_active.clear();
@@ -283,20 +288,12 @@ NetworkManager::Settings::Connection::Ptr ModelItem::connection() const
 
 QString ModelItem::connectionPath() const
 {
-    if (m_connection) {
-        return m_connection->path();
-    }
-
-    return QString();
+    return m_connectionPath;
 }
 
 QString ModelItem::devicePath() const
 {
-    if (m_device) {
-        return m_device->uni();
-    }
-
-    return QString();
+    return m_devicePath;
 }
 
 QString ModelItem::specificPath() const

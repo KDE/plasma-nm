@@ -99,16 +99,20 @@ void ModelWirelessItem::updateDetailsContent()
             }
         }
         m_details += QString(format).arg(i18n("MAC Address:"), wireless->permanentHardwareAddress());
-    }
 
-    if (m_network) {
-        NetworkManager::WirelessDevice::Ptr wifiDev = m_device.objectCast<NetworkManager::WirelessDevice>();
-        NetworkManager::AccessPoint::Ptr ap = wifiDev->findAccessPoint(m_network->referenceAccessPoint()->uni());
+        NetworkManager::WirelessNetwork::Ptr network = wireless->findNetwork(m_ssid);
 
-        m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%").arg(m_network->signalStrength()));
-        m_details += QString(format).arg(i18n("Access point (SSID):"), m_network->ssid());
-        m_details += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
-        m_details += QString(format).arg(i18nc("Wifi AP frequency", "Frequency:"), i18n("%1 Mhz", ap->frequency()));
+        if (network) {
+            NetworkManager::AccessPoint::Ptr ap = wireless->findAccessPoint(network->referenceAccessPoint()->uni());
+
+            m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%").arg(network->signalStrength()));
+            m_details += QString(format).arg(i18n("Access point (SSID):"), network->ssid());
+
+            if (ap) {
+                m_details += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
+                m_details += QString(format).arg(i18nc("Wifi AP frequency", "Frequency:"), i18n("%1 Mhz", ap->frequency()));
+            }
+        }
     }
 }
 

@@ -158,7 +158,6 @@ void ModelItem::updateDetailsContent()
     NetworkManager::Device::Ptr device = NetworkManager::findDeviceByIpFace(m_deviceUdi);
 
     if (device) {
-        qDebug() << "DEVICE FOUND";
         if (device->ipV4Config().isValid() && connected()) {
             QHostAddress addr = device->ipV4Config().addresses().first().ip();
             m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
@@ -176,8 +175,6 @@ void ModelItem::updateDetailsContent()
             name = device->ipInterfaceName();
         }
         m_details += QString(format).arg(i18n("System name:"), name);
-    } else {
-        qDebug() << "NO DEVICE FOUND";
     }
 }
 
@@ -203,7 +200,6 @@ void ModelItem::setActiveConnection(const NetworkManager::ActiveConnection::Ptr 
     m_active = active;
 
     if (m_active) {
-        qDebug() << "active";
         if (m_active.data()->state() == NetworkManager::ActiveConnection::Activating) {
             m_connecting = true;
             m_connected = false;

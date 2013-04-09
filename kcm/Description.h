@@ -24,6 +24,8 @@
 #include <QDBusObjectPath>
 #include <QDBusMessage>
 
+#include <QtNetworkManager/device.h>
+
 namespace Ui {
     class Description;
 }
@@ -37,8 +39,12 @@ public:
     int innerHeight() const;
     void setDevice(const QString &uni);
 
+private slots:
+    void on_disconnectPB_clicked();
+
 private:
     Ui::Description *ui;
+    NetworkManager::Device::Ptr m_device;
 };
 
 #endif // DESCRIPTION_H

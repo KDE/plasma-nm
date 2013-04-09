@@ -65,6 +65,7 @@ void Description::setDevice(const QString &uni)
     }
 
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(uni);
+    m_device = device;
     if (device) {
         QString state;
         switch (device->state()) {
@@ -81,6 +82,7 @@ void Description::setDevice(const QString &uni)
             break;
         }
         ui->statusL->setText(state);
+        ui->disconnectPB->setEnabled(device->state() == Device::Activated);
 
         ui->connectionCB->clear();
         foreach (const Settings::Connection::Ptr &connection, device->availableConnections()) {
@@ -123,6 +125,17 @@ void Description::setDevice(const QString &uni)
         ui->ipv4DnsServerL->setText(nameservers.join(QLatin1String(", ")));
 
         ui->ipv4SearchDomainsL->setText(device->ipV4Config().domains().join(QLatin1String("\n")));
+    }
+}
+
+void Description::on_disconnectPB_clicked()
+{
+    if (m_device) {
+        if (m_device->state() == NetworkManager::Device::Activated) {
+            m_device->disconnect();
+        } else {
+            ui->disconnectPB->setEnabled(false);
+        }
     }
 }
 

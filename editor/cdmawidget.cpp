@@ -43,7 +43,9 @@ CdmaWidget::~CdmaWidget()
 void CdmaWidget::loadConfig(NetworkManager::Settings::Setting *setting)
 {
     NetworkManager::Settings::CdmaSetting *cdmaSetting = static_cast<NetworkManager::Settings::CdmaSetting *>(setting);
-    m_ui->number->setText(cdmaSetting->number());
+    const QString number = cdmaSetting->number();
+    if (!number.isEmpty())
+        m_ui->number->setText(number);
     m_ui->username->setText(cdmaSetting->username());
     m_ui->password->setText(cdmaSetting->password());
 }

@@ -59,7 +59,9 @@ GsmWidget::~GsmWidget()
 void GsmWidget::loadConfig(NetworkManager::Settings::Setting *setting)
 {
     NetworkManager::Settings::GsmSetting * gsmSetting = static_cast<NetworkManager::Settings::GsmSetting *>(setting);
-    m_ui->number->setText(gsmSetting->number());
+    const QString number = gsmSetting->number();
+    if (!number.isEmpty())
+        m_ui->number->setText(number);
     m_ui->username->setText(gsmSetting->username());
     m_ui->password->setText(gsmSetting->password());
 

@@ -1,7 +1,3 @@
-include_directories(
-   ${CMAKE_CURRENT_SOURCE_DIR}/../lib/
-   )
-
 set(kded_plasmanm_SRCS
    service.cpp
    )

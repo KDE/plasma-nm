@@ -2,11 +2,11 @@ project(plasma-nm)
 
 cmake_minimum_required(VERSION 2.6)
 
-find_package(Qt4 REQUIRED)
 find_package(KDE4 REQUIRED)
 find_package(NetworkManager "0.9.8" REQUIRED)
 
 include(FindPkgConfig)
+include(KDE4Defaults)
 
 pkg_check_modules(QTMODEMMANAGER REQUIRED QtModemManager)
 if (NOT QTMODEMMANAGER_FOUND)
@@ -18,13 +18,23 @@ if (NOT QTNETWORKMANAGER_FOUND)
     message(FATAL_ERROR "ERROR: QtNetworkManager not found. http://projects.kde.org/libnm-qt")
 endif (NOT QTNETWORKMANAGER_FOUND)
 
+set(KDE_NETWORK_VERSION "0.1.0")
+configure_file(config.h.cmake
+               ${CMAKE_CURRENT_BINARY_DIR}/config.h )
+
 pkg_check_modules(QTNETWORK REQUIRED QtNetwork)
 pkg_check_modules(NETWORKMANAGER REQUIRED NetworkManager)
+
+add_definitions(
+    ${QT_DEFINITIONS}
+    ${KDE_DEFINITIONS}
+)
 
 include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_BINARY_DIR}
                     ${CMAKE_CURRENT_BINARY_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}
+                    ${CMAKE_CURRENT_SOURCE_DIR}/lib
                     ${QTNETWORK_INCLUDE_DIRS}
                     ${QTMODEMMANAGER_INCLUDE_DIRS}
                     ${QTNETWORKMANAGER_INCLUDE_DIRS}
@@ -37,3 +47,4 @@ add_subdirectory(declarative-plugins)
 add_subdirectory(editor)
 add_subdirectory(vpn)
 add_subdirectory(kded)
+add_subdirectory(kcm)

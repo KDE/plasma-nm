@@ -86,6 +86,10 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
                     dlg->setMainWidget(vpnPlugin->askUser(vpnSetting));
                     dlg->setButtons(KDialog::Ok | KDialog::Cancel);
                     dlg->setCaption(i18n("VPN secrets (%1)", shortName));
+
+                    KWindowSystem::setState(dlg->winId(), NET::KeepAbove);
+                    KWindowSystem::forceActiveWindow(dlg->winId());
+
                     if (dlg->exec() == KDialog::Accepted) {
                         result.insert(setting_name, static_cast<SettingWidget *>(dlg->mainWidget())->setting());
                         delete dlg;
@@ -104,9 +108,9 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
 
             PasswordDialog * dlg = new PasswordDialog(setting, setting->needSecrets(requestNew), ssid);
 
-            dlg->setWindowModality(Qt::WindowModal);
-            KWindowSystem::setMainWindow(dlg, 0);
-            KWindowSystem::activateWindow(dlg->winId());
+            KWindowSystem::setState(dlg->winId(), NET::KeepAbove);
+            KWindowSystem::forceActiveWindow(dlg->winId());
+
             if (dlg->exec() == QDialog::Accepted) {
                 result.insert(setting_name, dlg->secrets());
                 delete dlg;

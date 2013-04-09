@@ -157,7 +157,8 @@ public:
     static QString convertBandToString(const ModemManager::ModemInterface::Band band);
     static QString convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode);
     static QString convertAccessTechnologyToString(const ModemManager::ModemInterface::AccessTechnology tech);
-    static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
 #endif
+    static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
+
 };
 #endif // UIUTILS_H

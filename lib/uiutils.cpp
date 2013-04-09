@@ -566,6 +566,7 @@ QString UiUtils::convertAccessTechnologyToString(const ModemManager::ModemInterf
 
     return i18nc("Unknown cellular access technology","Unknown");
 }
+#endif
 
 NetworkManager::ModemDevice::Capability UiUtils::modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps)
 {
@@ -580,4 +581,4 @@ NetworkManager::ModemDevice::Capability UiUtils::modemSubType(NetworkManager::Mo
     }
     return NetworkManager::ModemDevice::NoCapability;
 }
-#endif
+

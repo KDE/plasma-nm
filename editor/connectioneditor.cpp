@@ -24,6 +24,7 @@
 #include "connectionitem.h"
 #include "connectiontypeitem.h"
 #include "connectiondetaileditor.h"
+#include "mobileconnectionwizard.h"
 
 #include <QtGui/QTreeWidgetItem>
 
@@ -61,10 +62,8 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     // TODO: disabled for now
     action->setDisabled(true);
     m_menu->addAction(action);
-    action = new QAction(i18n("Mobile Broadband"), this);
+    action = new QAction(i18n("Mobile Broadband..."), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Gsm);
-    // TODO: disabled for now
-    action->setDisabled(true);
     m_menu->addAction(action);
     action = new QAction(i18n("Wired"), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Wired);
@@ -262,8 +261,20 @@ void ConnectionEditor::addConnection(QAction* action)
 
     Settings::ConnectionSettings::ConnectionType type = (Settings::ConnectionSettings::ConnectionType) action->data().toUInt();
 
-    ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, vpnType, this);
-    editor->exec();
+    if (type == NetworkManager::Settings::ConnectionSettings::Gsm) { // launch the mobile broadband wizard
+        QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::Settings::ConnectionSettings::Unknown, this);
+        if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
+            qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
+            ConnectionDetailEditor * editor = new ConnectionDetailEditor(wizard.data()->type(), wizard.data()->args(), this);
+            editor->exec();
+        }
+        if (wizard) {
+            wizard.data()->deleteLater();
+        }
+    } else {
+        ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, vpnType, this);
+        editor->exec();
+    }
 }
 
 void ConnectionEditor::editConnection()

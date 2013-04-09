@@ -40,6 +40,9 @@ public:
                            QWidget* parent = 0, Qt::WindowFlags f = 0);
     ConnectionDetailEditor(const NetworkManager::Settings::ConnectionSettings::Ptr &setting,
                            QWidget* parent = 0, Qt::WindowFlags f = 0);
+    ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType type,
+                           const QVariantList &args,
+                           QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~ConnectionDetailEditor();
 
 private Q_SLOTS:

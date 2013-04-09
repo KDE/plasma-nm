@@ -40,7 +40,15 @@ ConnectionWidget::~ConnectionWidget()
 
 void ConnectionWidget::loadConfig(const NetworkManager::Settings::ConnectionSettings::Ptr &settings)
 {
-    //TODO
+    if (settings->permissions().isEmpty()) {
+        m_widget->allUsers->setChecked(true);
+    } else {
+        // TODO??
+        m_widget->allUsers->setChecked(false);
+    }
+
+    m_widget->autoconnect->setChecked(settings->autoconnect());
+
     Q_UNUSED(settings);
 }
 

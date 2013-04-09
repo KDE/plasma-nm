@@ -259,8 +259,8 @@ void ModelItem::setConnection(const NetworkManager::Settings::Connection::Ptr & 
 
         m_connectionPath = m_connection->path();
 
-        connect(connection.data(), SIGNAL(updated(QVariantMapMap)),
-                SLOT(onConnectionUpdated(QVariantMapMap)), Qt::UniqueConnection);
+        connect(connection.data(), SIGNAL(updated()),
+                SLOT(onConnectionUpdated()), Qt::UniqueConnection);
     } else {
         m_connectionPath.clear();
         m_name.clear();
@@ -269,14 +269,11 @@ void ModelItem::setConnection(const NetworkManager::Settings::Connection::Ptr & 
     }
 }
 
-void ModelItem::setConnectionSettings(const QVariantMapMap& map)
+void ModelItem::setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings)
 {
-    NetworkManager::Settings::ConnectionSettings settings;
-    settings.fromMap(map);
-
-    m_uuid = settings.uuid();
-    m_name = settings.id();
-    m_type = settings.connectionType();
+    m_uuid = settings->uuid();
+    m_name = settings->id();
+    m_type = settings->connectionType();
 
     updateDetails();
 }
@@ -325,13 +322,16 @@ void ModelItem::onActiveConnectionStateChanged(NetworkManager::ActiveConnection:
     emit itemChanged();
 }
 
-void ModelItem::onConnectionUpdated(const QVariantMapMap& map)
+void ModelItem::onConnectionUpdated()
 {
-    setConnectionSettings(map);
+    NetworkManager::Settings::Connection *connection = qobject_cast<NetworkManager::Settings::Connection*>(sender());
+    if (connection) {
+        setConnectionSettings(connection->settings());
 
-    emit itemChanged();
+        emit itemChanged();
 
-    NMItemDebug() << name() << ": connection changed";
+        NMItemDebug() << name() << ": connection changed";
+    }
 }
 
 void ModelItem::onDefaultRouteChanged(bool defaultRoute)

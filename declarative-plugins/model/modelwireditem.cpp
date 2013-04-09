@@ -64,9 +64,9 @@ void ModelWiredItem::setConnection(const NetworkManager::Settings::Connection::P
     ModelItem::setConnection(connection);
 }
 
-void ModelWiredItem::setConnectionSettings(const QVariantMapMap& map)
+void ModelWiredItem::setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings)
 {
-    ModelItem::setConnectionSettings(map);
+    ModelItem::setConnectionSettings(settings);
 
     updateDetails();
 }

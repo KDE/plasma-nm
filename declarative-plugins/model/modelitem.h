@@ -24,6 +24,7 @@
 #include <QtNetworkManager/activeconnection.h>
 #include <QtNetworkManager/connection.h>
 #include <QtNetworkManager/settings/connection.h>
+#include <QtNetworkManager/device.h>
 
 class ModelItem : public QObject
 {
@@ -76,7 +77,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state);
-    void onConnectionUpdated(const QVariantMapMap & map);
+    void onConnectionUpdated();
     void onDefaultRouteChanged(bool defaultRoute);
 
 protected:
@@ -99,7 +100,7 @@ protected:
     void updateDetails();
 
     virtual void updateDetailsContent();
-    virtual void setConnectionSettings(const QVariantMapMap & map);
+    virtual void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
 };
 
 #endif // PLASMA_NM_CONNECTION_ITEM_H

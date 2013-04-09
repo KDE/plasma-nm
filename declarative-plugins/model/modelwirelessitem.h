@@ -56,7 +56,7 @@ private Q_SLOTS:
 
 protected:
     void updateDetailsContent();
-    void setConnectionSettings(const QVariantMapMap & map);
+    void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
 
 private:
     NetworkManager::WirelessNetwork::Ptr m_network;

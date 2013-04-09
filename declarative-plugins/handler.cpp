@@ -50,7 +50,7 @@ void Handler::activateConnection(const QString& connection, const QString& devic
         NMHandlerDebug() << "Not possible to activate this connection";
         return;
     }
-        NMHandlerDebug() << "Activating " << con->id() << " connection";
+        NMHandlerDebug() << "Activating " << con->name() << " connection";
 
     NetworkManager::activateConnection(connection, device, specificObject);
 }
@@ -106,7 +106,7 @@ void Handler::deactivateConnection(const QString& connection)
         }
     }
 
-    NMHandlerDebug() << "Deactivating " << con->id() << " connection";
+    NMHandlerDebug() << "Deactivating " << con->name() << " connection";
 }
 
 void Handler::enableNetworking(bool enable)

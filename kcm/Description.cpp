@@ -86,11 +86,7 @@ void Description::setDevice(const QString &uni)
 
         ui->connectionCB->clear();
         foreach (const Settings::Connection::Ptr &connection, device->availableConnections()) {
-            Settings::ConnectionSettings *settings = new Settings::ConnectionSettings();
-            settings->fromMap(connection->settings());
-
-            QString name = settings->id();
-            ui->connectionCB->addItem(name, connection->uuid());
+            ui->connectionCB->addItem(connection->name(), connection->uuid());
         }
 
         int active = -1;

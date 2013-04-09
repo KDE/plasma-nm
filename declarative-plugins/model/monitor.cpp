@@ -61,8 +61,8 @@ void Monitor::init()
             SLOT(connectionRemoved(QString)));
 
     foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-        NMMonitorDebug() << "Available active connection (" << active.data()->connection()->id() << ")";
-        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active.data()->connection()->id() << ")";
+        NMMonitorDebug() << "Available active connection (" << active.data()->connection()->name() << ")";
+        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active.data()->connection()->name() << ")";
         Q_EMIT addActiveConnection(active);
     }
 }
@@ -70,8 +70,8 @@ void Monitor::init()
 void Monitor::addAvailableConnectionsForDevice(const NetworkManager::Device::Ptr &device)
 {
     foreach (const NetworkManager::Settings::Connection::Ptr &con, device->availableConnections()) {
-        NMMonitorDebug() << "Available connection " << con->id() << " for device " << device->interfaceName();
-        NMMonitorSignalDebug() << "Emit signal addConnection(" << con->id() << ")";
+        NMMonitorDebug() << "Available connection " << con->name() << " for device " << device->interfaceName();
+        NMMonitorSignalDebug() << "Emit signal addConnection(" << con->name() << ")";
         Q_EMIT addConnection(con, device);
     }
 }
@@ -108,7 +108,7 @@ void Monitor::activeConnectionsChanged()
 {
     NMMonitorDebug() << "Active connections have been changed";
     foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active.data()->connection()->id() << ")";
+        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active.data()->connection()->name() << ")";
         Q_EMIT addActiveConnection(active);
     }
 }
@@ -141,10 +141,10 @@ void Monitor::connectionAdded(const QString& connection)
 
     foreach (const NetworkManager::Device::Ptr &dev, m_devices) {
         foreach (const NetworkManager::Settings::Connection::Ptr &con, dev->availableConnections()) {
-            qDebug() << con->id() << " == " << newConnection->id();
+            qDebug() << con->name() << " == " << newConnection->name();
             if (con->uuid() == newConnection->uuid()) {
-                NMMonitorDebug() << "Connection " << con->id() << " added";
-                NMMonitorSignalDebug() << "Emit signal addConnection(" << con->id() << ")";
+                NMMonitorDebug() << "Connection " << con->name() << " added";
+                NMMonitorSignalDebug() << "Emit signal addConnection(" << con->name() << ")";
                 Q_EMIT addConnection(con, dev);
             }
         }
@@ -193,11 +193,10 @@ void Monitor::statusChanged(NetworkManager::Status status)
         status == NetworkManager::ConnectedSiteOnly) {
         NMMonitorDebug() << "NetworkManager is connected";
         foreach (const NetworkManager::Settings::Connection::Ptr &con, NetworkManager::Settings::listConnections()) {
-            NetworkManager::Settings::ConnectionSettings settings;
-            settings.fromMap(con->settings());
+            NetworkManager::Settings::ConnectionSettings::Ptr settings = con->settings();
 
-            if (settings.connectionType() == NetworkManager::Settings::ConnectionSettings::Vpn) {
-                NMMonitorSignalDebug() << "Emit signal addVpnConnection(" << con->id() << ")";
+            if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Vpn) {
+                NMMonitorSignalDebug() << "Emit signal addVpnConnection(" << con->name() << ")";
                 Q_EMIT addVpnConnection(con);
             }
         }
@@ -231,14 +230,13 @@ void Monitor::wirelessNetworkAppeared(const QString& ssid)
     foreach (const NetworkManager::Device::Ptr &device, m_devices) {
         if (device->type() == NetworkManager::Device::Wifi) {
             foreach (const NetworkManager::Settings::Connection::Ptr &connection, device->availableConnections()) {
-                NetworkManager::Settings::ConnectionSettings settings;
-                settings.fromMap(connection->settings());
+                NetworkManager::Settings::ConnectionSettings::Ptr settings = connection->settings();
 
                 NetworkManager::Settings::WirelessSetting::Ptr wirelessSetting;
-                wirelessSetting = settings.setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
+                wirelessSetting = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
                 if (wirelessSetting->ssid() == ssid) {
                     NMMonitorDebug() << "Known connection for previusly added access point " << ssid;
-                    NMMonitorSignalDebug() << "Emit signal addConnection(" << connection->id() << ")";
+                    NMMonitorSignalDebug() << "Emit signal addConnection(" << connection->name() << ")";
                     Q_EMIT addConnection(connection, wirelessDevice);
                 }
             }

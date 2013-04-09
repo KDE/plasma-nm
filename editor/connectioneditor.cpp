@@ -147,10 +147,9 @@ void ConnectionEditor::initializeConnections()
 
 void ConnectionEditor::insertConnection(const NetworkManager::Settings::Connection::Ptr &connection)
 {
-    Settings::ConnectionSettings *settings = new Settings::ConnectionSettings();
-    settings->fromMap(connection->settings());
+    Settings::ConnectionSettings::Ptr settings = connection->settings();
 
-    const QString name = settings->id();
+    const QString name = connection->name();
     const QString type = Settings::ConnectionSettings::typeAsString(settings->connectionType());
 
     // Can't continue if name or type are empty
@@ -187,8 +186,6 @@ void ConnectionEditor::insertConnection(const NetworkManager::Settings::Connecti
     connectionItem->setData(1, ConnectionItem::ConnectionLastUsedRole, lastUsed);
 
     m_editor->connectionsWidget->resizeColumnToContents(0);
-
-    delete settings;
 }
 
 
@@ -284,10 +281,7 @@ void ConnectionEditor::editConnection()
         return;
     }
 
-    Settings::ConnectionSettings::Ptr connectionSetting = Settings::ConnectionSettings::Ptr(new Settings::ConnectionSettings());
-    connectionSetting->fromMap(connection->settings());
-
-    ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting, this);
+    ConnectionDetailEditor * editor = new ConnectionDetailEditor(connection->settings(), this);
     editor->exec();
 }
 
@@ -306,7 +300,7 @@ void ConnectionEditor::removeConnection()
         return;
     }
 
-    if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->id()), i18n("Remove Connection"), KStandardGuiItem::remove(),
+    if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->name()), i18n("Remove Connection"), KStandardGuiItem::remove(),
                                    KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
             == KMessageBox::Yes) {
         connection->remove();

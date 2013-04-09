@@ -171,8 +171,7 @@ void Model::addActiveConnection(const NetworkManager::ActiveConnection::Ptr & ac
 
 void Model::addConnection(const NetworkManager::Settings::Connection::Ptr & connection, const NetworkManager::Device::Ptr &device)
 {
-    NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
-    settings->fromMap(connection->settings());
+    NetworkManager::Settings::ConnectionSettings::Ptr settings = connection->settings();
 
     if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
         ModelWirelessItem * item = new ModelWirelessItem(device);
@@ -192,18 +191,14 @@ void Model::addConnection(const NetworkManager::Settings::Connection::Ptr & conn
         item->setConnection(connection);
         insertItem(item);
     }
-
 }
 
 void Model::addVpnConnection(const NetworkManager::Settings::Connection::Ptr & connection)
 {
-    NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
-    settings->fromMap(connection->settings());
-
     ModelVpnItem * item = new ModelVpnItem();
     item->setConnection(connection);
 
-    NMModelDebug() << "VPN Connection " << settings->id() << " has been added";
+    NMModelDebug() << "VPN Connection " << connection->name() << " has been added";
     insertItem(item);
 }
 

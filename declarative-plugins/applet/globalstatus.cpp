@@ -71,14 +71,14 @@ void GlobalStatus::statusChanged(NetworkManager::Status status)
         status == NetworkManager::ConnectedLinkLocal ||
         status == NetworkManager::ConnectedSiteOnly) {
 
-        QString id;
+        QString name;
         foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
             if (active.data()->default4() || active.data()->default6()) {
-                id = active.data()->connection()->id();
+                name = active.data()->connection()->name();
                 break;
             }
         }
-        statusMsg = i18n("Connected (via %1)").arg(id);
+        statusMsg = i18n("Connected (via %1)").arg(name);
         connected = true;
         inProgress = false;
 

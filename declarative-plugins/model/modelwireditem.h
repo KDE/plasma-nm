@@ -34,7 +34,7 @@ public:
 
 protected:
     void updateDetailsContent();
-    void setConnectionSettings(const QVariantMapMap & map);
+    void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
 
 };
 

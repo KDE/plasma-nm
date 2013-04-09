@@ -155,9 +155,9 @@ void ConnectionIcon::setIcons()
                 NetworkManager::Device::Type type = device->type();
 
                 if (type == NetworkManager::Device::Wifi) {
-                    NetworkManager::Settings::ConnectionSettings settings;
-                    settings.fromMap(active.data()->connection()->settings());
-                    NetworkManager::Settings::WirelessSetting::Ptr wirelessSetting = settings.setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
+                    NetworkManager::Settings::ConnectionSettings::Ptr settings;
+                    settings = active.data()->connection()->settings();
+                    NetworkManager::Settings::WirelessSetting::Ptr wirelessSetting = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
                     setWirelessIcon(device, wirelessSetting->ssid());
                     connectionFound = true;
                 } else if (type == NetworkManager::Device::Ethernet) {

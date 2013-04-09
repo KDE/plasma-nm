@@ -25,7 +25,7 @@
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenu>
 
-#include <QtNetworkManager/settings/connection.h>
+#include <QtNetworkManager/connection.h>
 
 namespace Ui
 {

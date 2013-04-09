@@ -33,6 +33,8 @@
 #include <KWindowSystem>
 #include <KDialog>
 
+#include <KDebug>
+
 SecretAgent::SecretAgent(QObject* parent):
     NetworkManager::SecretAgent("org.kde.plasma-nm", parent)
 {

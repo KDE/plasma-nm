@@ -76,9 +76,8 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::Con
         qDebug() << "Argument:" << arg;
     }
 
-    if (args.count() >= 2) {
-
-        QVariantMap tmp = qdbus_cast<QVariantMap>(args.value(2));
+    if (args.count() == 2) { //GSM or CDMA
+        QVariantMap tmp = qdbus_cast<QVariantMap>(args.value(1));
 
 #if 0 // network IDs are not used yet and seem to break the setting
         if (args.count() == 3) { // gsm specific

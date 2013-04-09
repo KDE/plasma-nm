@@ -43,10 +43,7 @@ ConnectionTypeItem::ConnectionTypeItem(QTreeWidget * parent, const QString &type
         text = i18n("Bond");
     } else if (type == QLatin1String("bridge")) {
         text = i18n("Bridge");
-    } else if (type == QLatin1String("cdma")) {
-        text = i18n("Mobile broadband");
-        setIcon(0, KIcon("phone"));
-    } else if (type == QLatin1String("gsm")) {
+    } else if (type == QLatin1String("mobile")) {
         text = i18n("Mobile broadband");
         setIcon(0, KIcon("phone"));
     } else if (type == QLatin1String("infiniband")) {

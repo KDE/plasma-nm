@@ -150,7 +150,9 @@ void ConnectionEditor::insertConnection(NetworkManager::Settings::Connection* co
     settings->fromMap(connection->settings());
 
     const QString name = settings->id();
-    const QString type = Settings::ConnectionSettings::typeAsString(settings->connectionType());
+    QString type = Settings::ConnectionSettings::typeAsString(settings->connectionType());
+    if (type == "gsm" || type == "cdma")
+        type = "mobile"; // cdma+gsm meta category
 
     // Can't continue if name or type are empty
     if (name.isEmpty() || type.isEmpty()) {

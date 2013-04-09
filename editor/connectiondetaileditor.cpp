@@ -76,15 +76,16 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::Con
         qDebug() << "Argument:" << arg;
     }
 
-    if (args.count() >= 2) {
+    if (args.count() == 2) { //GSM or CDMA
+        QVariantMap tmp = qdbus_cast<QVariantMap>(args.value(1));
 
-        QVariantMap tmp = qdbus_cast<QVariantMap>(args.value(2));
-
+#if 0 // network IDs are not used yet and seem to break the setting
         if (args.count() == 3) { // gsm specific
             QStringList networkIds = args.value(1).toStringList();
             if (!networkIds.isEmpty())
                 tmp.insert("network-id", networkIds.first());
         }
+#endif
 
         m_connection->setConnectionType(type);
         m_connection->setId(args.value(0).toString());
@@ -226,14 +227,14 @@ void ConnectionDetailEditor::initTabs()
         m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Gsm) { // GSM
         GsmWidget * gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Settings::Setting::Gsm), this);
-        m_detailEditor->tabWidget->addTab(gsmWidget, i18n("Mobile Broadband"));
+        m_detailEditor->tabWidget->addTab(gsmWidget, i18n("Mobile Broadband (%1)", m_connection->typeAsString(m_connection->connectionType())));
         PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
         m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
         m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Cdma) { // CDMA
         CdmaWidget * cdmaWidget = new CdmaWidget(m_connection->setting(NetworkManager::Settings::Setting::Cdma), this);
-        m_detailEditor->tabWidget->addTab(cdmaWidget, i18n("Mobile Broadband"));
+        m_detailEditor->tabWidget->addTab(cdmaWidget, i18n("Mobile Broadband (%1)", m_connection->typeAsString(m_connection->connectionType())));
         PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
         m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);

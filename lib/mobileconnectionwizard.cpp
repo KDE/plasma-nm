@@ -233,7 +233,7 @@ QVariantList MobileConnectionWizard::args()
         break;
 
     case NetworkManager::Settings::ConnectionSettings::Gsm:
-        temp << provider << mProviders->getNetworkIds(provider) << mProviders->getApnInfo(apn);
+        temp << provider /*<< mProviders->getNetworkIds(provider)*/ << mProviders->getApnInfo(apn);
         break;
 
     default:

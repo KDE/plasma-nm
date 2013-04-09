@@ -80,11 +80,13 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::Con
 
         QVariantMap tmp = qdbus_cast<QVariantMap>(args.value(2));
 
+#if 0 // network IDs are not used yet and seem to break the setting
         if (args.count() == 3) { // gsm specific
             QStringList networkIds = args.value(1).toStringList();
             if (!networkIds.isEmpty())
                 tmp.insert("network-id", networkIds.first());
         }
+#endif
 
         m_connection->setConnectionType(type);
         m_connection->setId(args.value(0).toString());

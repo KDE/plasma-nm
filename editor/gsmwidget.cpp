@@ -32,6 +32,10 @@ GsmWidget::GsmWidget(NetworkManager::Settings::Setting * setting, QWidget* paren
 {
     m_ui->setupUi(this);
 
+    // Network ID not supported yet in NM
+    m_ui->labelNetworkId->setHidden(true);
+    m_ui->networkId->setHidden(true);
+
     m_ui->type->addItem(i18nc("GSM network type", "Any"), NetworkManager::Settings::GsmSetting::Any);
     m_ui->type->addItem(i18n("3G Only (UMTS/HSPA)"), NetworkManager::Settings::GsmSetting::Only3G);
     m_ui->type->addItem(i18n("2G Only (GPRS/EDGE)"), NetworkManager::Settings::GsmSetting::GprsEdgeOnly);

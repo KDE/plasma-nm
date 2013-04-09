@@ -79,6 +79,8 @@ void ConnectionIcon::activeConnectionsChanged()
                 SLOT(setIcons()), Qt::UniqueConnection);
         if (active->state() == NetworkManager::ActiveConnection::Activating) {
             NMAppletDebug() << "Emit signal showConnectionIndicator()";
+            connect(active.data(), SIGNAL(destroyed(QObject*)),
+                    SIGNAL(hideConnectingIndicator()));
             Q_EMIT showConnectingIndicator();
         }
     }
@@ -89,7 +91,9 @@ void ConnectionIcon::activeConnectionsChanged()
 void ConnectionIcon::activeConnectionStateChanged(NetworkManager::ActiveConnection::State state)
 {
     if (state == NetworkManager::ActiveConnection::Deactivated ||
-        state == NetworkManager::ActiveConnection::Activated) {
+        state == NetworkManager::ActiveConnection::Deactivating ||
+        state == NetworkManager::ActiveConnection::Activated ||
+        state == NetworkManager::ActiveConnection::Unknown) {
         NMAppletDebug() << "Emit signal hideConnectionIndicator()";
         Q_EMIT hideConnectingIndicator();
     }

@@ -229,14 +229,14 @@ void ConnectionDetailEditor::initTabs()
         m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Gsm) { // GSM
         GsmWidget * gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Settings::Setting::Gsm), this);
-        m_detailEditor->tabWidget->addTab(gsmWidget, i18n("Mobile Broadband"));
+        m_detailEditor->tabWidget->addTab(gsmWidget, i18n("Mobile Broadband (%1)", m_connection->typeAsString(m_connection->connectionType())));
         PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
         m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
         m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Cdma) { // CDMA
         CdmaWidget * cdmaWidget = new CdmaWidget(m_connection->setting(NetworkManager::Settings::Setting::Cdma), this);
-        m_detailEditor->tabWidget->addTab(cdmaWidget, i18n("Mobile Broadband"));
+        m_detailEditor->tabWidget->addTab(cdmaWidget, i18n("Mobile Broadband (%1)", m_connection->typeAsString(m_connection->connectionType())));
         PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
         m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);

@@ -35,7 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "mobileproviders.h"
 
-class MobileConnectionWizard : public QWizard
+class KDE_EXPORT MobileConnectionWizard : public QWizard
 {
 Q_OBJECT
 public:

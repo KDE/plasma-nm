@@ -34,6 +34,8 @@
 #include "btwidget.h"
 #include "vpnuiplugin.h"
 
+#include <QDebug>
+
 #include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/activeconnection.h>
 #include <QtNetworkManager/connection.h>
@@ -55,6 +57,50 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::Con
     m_vpnType(vpnType)
 {
     m_detailEditor->setupUi(this);
+
+    initEditor();
+}
+
+ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::ConnectionType type, const QVariantList &args, QWidget *parent, Qt::WindowFlags f):
+    QDialog(parent, f),
+    m_detailEditor(new Ui::ConnectionDetailEditor),
+    m_connection(new NetworkManager::Settings::ConnectionSettings(type)),
+    m_numSecrets(0),
+    m_new(true)
+{
+    m_detailEditor->setupUi(this);
+
+    // parse args given from the wizard
+    qDebug() << "Editing new mobile connection, number of args:" << args.count();
+    foreach(const QVariant & arg, args) {
+        qDebug() << "Argument:" << arg;
+    }
+
+    if (args.count() >= 2) {
+
+        QVariantMap tmp = qdbus_cast<QVariantMap>(args.value(2));
+
+        if (args.count() == 3) { // gsm specific
+            QStringList networkIds = args.value(1).toStringList();
+            if (!networkIds.isEmpty())
+                tmp.insert("network-id", networkIds.first());
+        }
+
+        m_connection->setConnectionType(type);
+        m_connection->setId(args.value(0).toString());
+        qDebug() << "New " << m_connection->typeAsString(m_connection->connectionType()) << "connection initializing with:" << tmp;
+        if (type == Settings::ConnectionSettings::Gsm)
+            m_connection->setting(Settings::Setting::Gsm)->fromMap(tmp);
+        else if (type == Settings::ConnectionSettings::Cdma)
+            m_connection->setting(Settings::Setting::Cdma)->fromMap(tmp);
+        else
+            qWarning() << Q_FUNC_INFO << "Unhandled setting type";
+
+        qDebug() << "New connection initialized:";
+        m_connection->printSetting();
+    } else {
+        qWarning() << Q_FUNC_INFO << "Unexpected number of args to parse";
+    }
 
     initEditor();
 }
@@ -194,7 +240,7 @@ void ConnectionDetailEditor::initTabs()
         m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
         m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
-    } else if (type == NetworkManager::Settings::ConnectionSettings::Bluetooth) {
+    } else if (type == NetworkManager::Settings::ConnectionSettings::Bluetooth) {  // Bluetooth
         BtWidget * btWidget = new BtWidget(m_connection->setting(NetworkManager::Settings::Setting::Bluetooth), this);
         m_detailEditor->tabWidget->addTab(btWidget, i18n("Bluetooth"));
         NetworkManager::Settings::BluetoothSetting * btSetting = static_cast<NetworkManager::Settings::BluetoothSetting *>(m_connection->setting(NetworkManager::Settings::Setting::Bluetooth));
@@ -209,7 +255,7 @@ void ConnectionDetailEditor::initTabs()
         m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
         IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv6), this);
         m_detailEditor->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
-    } else if (type == NetworkManager::Settings::ConnectionSettings::Vpn) {
+    } else if (type == NetworkManager::Settings::ConnectionSettings::Vpn) { // VPN
         QString error;
         VpnUiPlugin * vpnPlugin = 0;
         NetworkManager::Settings::VpnSetting *vpnSetting =

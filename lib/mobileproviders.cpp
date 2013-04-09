@@ -300,9 +300,7 @@ QVariantMap MobileProviders::getCdmaInfo(const QString & provider)
                 QDomElement e2 = n2.toElement(); // <name | username | password | sid>
 
                 if (!e2.isNull()) {
-                    if (e2.tagName().toLower() == "name") {  // FIXME: name is not really used anywhere in the interface, might be better to remove it
-                        temp.insert("name", e2.text());
-                    } if (e2.tagName().toLower() == "username") {
+                    if (e2.tagName().toLower() == "username") {
                         temp.insert("username", e2.text());
                     } else if (e2.tagName().toLower() == "password") {
                         temp.insert("password", e2.text());

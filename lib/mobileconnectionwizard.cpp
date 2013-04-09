@@ -117,7 +117,7 @@ void MobileConnectionWizard::initializePage(int id)
     case 2: // Providers Page
         country = mCountryList->currentItem()->text();
         mProvidersList->clear();
-        lineEditProvider->setText("");
+        lineEditProvider->clear();
         radioAutoProvider->setChecked(true);
 
         switch (type()) {
@@ -187,8 +187,8 @@ OUT_3:
             labelPlanLabel->hide();
             labelPlan->hide();
             labelApn->hide();
-            userApn->setText("");
-            apn = "";
+            userApn->clear();
+            apn.clear();
         } else {
             labelPlanLabel->show();
             labelPlan->show();
@@ -530,7 +530,7 @@ void MobileConnectionWizard::slotEnablePlanEditBox(const QString & text)
         return;
     }
     if (text == i18nc("Mobile Connection Wizard", "My plan is not listed...")) {
-        userApn->setText("");
+        userApn->clear();
         userApn->setEnabled(true);
     } else {
         if (mProvidersList->currentItem() != 0) {

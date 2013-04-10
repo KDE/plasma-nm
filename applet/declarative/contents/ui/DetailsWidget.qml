@@ -59,7 +59,6 @@ Item {
 
             anchors { top: parent.top; horizontalCenter: parent.horizontalCenter; topMargin: 10 }
             textFormat: Text.RichText;
-            wrapMode: Text.WordWrap;
         }
 
         PlasmaNM.TrafficMonitor {

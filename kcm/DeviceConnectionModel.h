@@ -35,16 +35,16 @@ class DeviceConnectionModel : public QStandardItemModel
     Q_OBJECT
 public:
     typedef enum {
-        DeviceUNI = Qt::UserRole + 1,
-        ConectionUNI,
-        StateRole,
-        SortRole
+        RoleIsDevice = Qt::UserRole + 1,
+        RoleDeviceUNI,
+        RoleConectionUNI,
+        RoleState,
+        RoleSort
     } DeviceRoles;
     explicit DeviceConnectionModel(QObject *parent = 0);
 
     Qt::ItemFlags flags(const QModelIndex &index) const;
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
-    bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
 
 public slots:
     void serviceOwnerChanged(const QString &serviceName, const QString &oldOwner, const QString &newOwner);
@@ -60,11 +60,11 @@ private slots:
     void changeDevice(QStandardItem *stdItem, const NetworkManager::Device::Ptr &device);
 
     void addConnection(const NetworkManager::Settings::Connection::Ptr &connection);
+    void changeConnection(QStandardItem *stdItem, const NetworkManager::Settings::Connection::Ptr &connection);
 
 private:
-    QStandardItem* findProfile(QStandardItem *parent, const QDBusObjectPath &objectPath);
-    void removeProfilesNotInList(QStandardItem *parent, const ObjectPathList &profiles);
-    int findDeviceItem(const QString &uni);
+    QStandardItem *findDeviceItem(const QString &uni);
+    QStandardItem *findConnectionItem(const QString &uni);
 };
 
 #endif // DEVICE_MODEL_H

@@ -57,8 +57,17 @@ int DeviceConnectionDelegate::calcItemHeight(const QStyleOptionViewItem &option)
 void DeviceConnectionDelegate::paint(QPainter *painter,
         const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    if (!index.isValid() && index.column() == 0){
-      return;
+    if (!index.isValid()){
+        return;
+    } else if (index.data(DeviceConnectionModel::RoleIsDevice).toBool() == false) {
+        // For some reason some styles don't honor the views SelectionRectVisible
+            // and I just hate that selection rect thing...
+            QStyleOptionViewItemV4 opt(option);
+            if (opt.state & QStyle::State_HasFocus) {
+                opt.state ^= QStyle::State_HasFocus;
+            }
+        QStyledItemDelegate::paint(painter, opt, index);
+        return;
     }
 
     QStyleOptionViewItemV4 opt(option);
@@ -102,7 +111,7 @@ void DeviceConnectionDelegate::paint(QPainter *painter,
     int textInner = 2 * UNIVERSAL_PADDING + MAIN_ICON_SIZE;
     const int itemHeight = calcItemHeight(option);
 
-    QString status = index.data(DeviceConnectionModel::StateRole).toString();
+    QString status = index.data(DeviceConnectionModel::RoleState).toString();
     QString description = index.data(Qt::DisplayRole).toString();
 
     p.setPen(foregroundColor);
@@ -171,13 +180,13 @@ void DeviceConnectionDelegate::paint(QPainter *painter,
     painter->drawPixmap(option.rect.topLeft(), pixmap);
 }
 
-QSize DeviceConnectionDelegate::sizeHint(const QStyleOptionViewItem &option,
-        const QModelIndex &index ) const
+QSize DeviceConnectionDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-    int width = (index.column() == 0) ? index.data(Qt::SizeHintRole).toSize().width() : FAV_ICON_SIZE + 2 * UNIVERSAL_PADDING;
-    QSize ret;
+    if (index.data(DeviceConnectionModel::RoleIsDevice).toBool() == false) {
+        return QStyledItemDelegate::sizeHint(option, index);
+    }
 
-    return QSize(width, calcItemHeight(option));
+    return QSize(index.data(Qt::SizeHintRole).toSize().width(), calcItemHeight(option));
 }
 
 #include "DeviceConnectionDelegate.moc"

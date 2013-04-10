@@ -52,8 +52,12 @@ DeviceConnectionModel::DeviceConnectionModel(QObject *parent) :
         addDevice(device);
     }
 
-    foreach (const Settings::Connection::Ptr &con, Settings::listConnections()) {
-        addConnection(con);
+    foreach (const Settings::Connection::Ptr &connection, Settings::listConnections()) {
+        if (connection.isNull()) {
+            kWarning() << "NULLLL";
+        }
+        kWarning() << "NULLLL" << connection->name();
+        addConnection(connection);
     }
 }
 
@@ -71,38 +75,37 @@ void DeviceConnectionModel::deviceChanged()
     if (caller) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(caller->uni());
         if (device) {
-            int row = findDeviceItem(device->uni());
-            if (row == -1) {
+            QStandardItem *stdItem = findDeviceItem(device->uni());
+            if (!stdItem) {
                 kWarning() << "Device not found" << device->uni();
                 return;
             }
-            changeDevice(item(row), device);
+            changeDevice(stdItem, device);
         }
     }
 }
 
 void DeviceConnectionModel::deviceRemoved(const QString &uni)
 {
-    kWarning() << "Device not found" << uni;
-    int row = findDeviceItem(uni);
-    kWarning() << "Device not found" << row;
-    if (row != -1) {
-        removeRow(row);
+    QStandardItem *stdItem = findDeviceItem(uni);
+    if (stdItem) {
+        removeRow(stdItem->row());
     }
 }
 
 void DeviceConnectionModel::addDevice(const NetworkManager::Device::Ptr &device)
 {
-    int row = findDeviceItem(device->uni());
-    if (row != -1) {
+    QStandardItem *stdItem = findDeviceItem(device->uni());
+    if (stdItem) {
         return;
     }
 
     connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
             this, SLOT(deviceChanged()));
 
-    QStandardItem *stdItem = new QStandardItem;
-    stdItem->setData(device->uni(), DeviceUNI);
+    stdItem = new QStandardItem;
+    stdItem->setData(true, RoleIsDevice);
+    stdItem->setData(device->uni(), RoleDeviceUNI);
     changeDevice(stdItem, device);
     appendRow(stdItem);
 }
@@ -116,7 +119,7 @@ void DeviceConnectionModel::changeDevice(QStandardItem *stdItem, const NetworkMa
     if (activeConnection) {
         connectionName = activeConnection->connection()->name();
     }
-    stdItem->setData(UiUtils::connectionStateToString(device->state(), connectionName), StateRole);
+    stdItem->setData(UiUtils::connectionStateToString(device->state(), connectionName), RoleState);
 
     switch (device->type()) {
     case NetworkManager::Device::Wifi:
@@ -141,6 +144,31 @@ void DeviceConnectionModel::changeDevice(QStandardItem *stdItem, const NetworkMa
 
 void DeviceConnectionModel::addConnection(const Settings::Connection::Ptr &connection)
 {
+    QStandardItem *stdItem = findConnectionItem(connection->path());
+    if (stdItem) {
+        return;
+    }
+
+    connect(connection.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
+            this, SLOT(deviceChanged()));
+
+    stdItem = new QStandardItem;
+    stdItem->setData(false, RoleIsDevice);
+    stdItem->setData(connection->path(), RoleConectionUNI);
+    changeConnection(stdItem, connection);
+    appendRow(stdItem);
+}
+
+void DeviceConnectionModel::changeConnection(QStandardItem *stdItem, const Settings::Connection::Ptr &connection)
+{
+    kDebug() << connection->uuid() << connection->path() << connection->name();
+    if (connection->active()) {
+        stdItem->setIcon(KIcon("network-connect"));
+    } else {
+        stdItem->setIcon(KIcon("network-disconnect"));
+    }
+
+    stdItem->setText(connection->name());
 }
 
 void DeviceConnectionModel::serviceOwnerChanged(const QString &serviceName, const QString &oldOwner, const QString &newOwner)
@@ -153,24 +181,30 @@ void DeviceConnectionModel::serviceOwnerChanged(const QString &serviceName, cons
     }
 }
 
-QStandardItem *DeviceConnectionModel::findProfile(QStandardItem *parent, const QDBusObjectPath &objectPath)
-{
-    return 0;
-}
-
-void DeviceConnectionModel::removeProfilesNotInList(QStandardItem *parent, const ObjectPathList &profiles)
-{
-}
-
-int DeviceConnectionModel::findDeviceItem(const QString &uni)
+QStandardItem *DeviceConnectionModel::findDeviceItem(const QString &uni)
 {
     for (int i = 0; i < rowCount(); ++i) {
-        if (item(i)->data(DeviceUNI).toString() == uni) {
-            return i;
+        QStandardItem *stdItem = item(i);
+        if (stdItem->data(RoleIsDevice).toBool() == true &&
+                stdItem->data(RoleDeviceUNI).toString() == uni) {
+            return stdItem;
         }
     }
 
-    return -1;
+    return 0;
+}
+
+QStandardItem *DeviceConnectionModel::findConnectionItem(const QString &uni)
+{
+    for (int i = 0; i < rowCount(); ++i) {
+        QStandardItem *stdItem = item(i);
+        if (stdItem->data(RoleIsDevice).toBool() == false &&
+                stdItem->data(RoleConectionUNI).toString() == uni) {
+            return stdItem;
+        }
+    }
+
+    return 0;
 }
 
 QVariant DeviceConnectionModel::headerData(int section, Qt::Orientation orientation, int role) const
@@ -179,17 +213,6 @@ QVariant DeviceConnectionModel::headerData(int section, Qt::Orientation orientat
         return i18n("Devices");
     }
     return QVariant();
-}
-
-bool DeviceConnectionModel::setData(const QModelIndex &index, const QVariant &value, int role)
-{
-    Q_UNUSED(value)
-    Q_UNUSED(role)
-
-
-
-    // We return false since colord will emit a DeviceChanged signal telling us about this change
-    return false;
 }
 
 Qt::ItemFlags DeviceConnectionModel::flags(const QModelIndex &index) const

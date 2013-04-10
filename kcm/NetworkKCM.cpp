@@ -81,7 +81,7 @@ NetworkKCM::NetworkKCM(QWidget *parent, const QVariantList &args) :
     connect(sortModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
             this, SLOT(showDescription()));
     sortModel->setDynamicSortFilter(true);
-    sortModel->setSortRole(DeviceConnectionModel::SortRole);
+    sortModel->setSortRole(DeviceConnectionModel::RoleSort);
     sortModel->sort(0);
     // Set the source model then connect to the selection model to get updates
     ui->devicesTV->setModel(sortModel);
@@ -137,7 +137,7 @@ void NetworkKCM::showDescription()
         ui->stackedWidget->setCurrentWidget(ui->profile_page);
     }
 
-    ui->profile->setDevice(index.data(DeviceConnectionModel::DeviceUNI).toString());
+    ui->profile->setDevice(index.data(DeviceConnectionModel::RoleDeviceUNI).toString());
 }
 
 void NetworkKCM::updateSelection()

@@ -23,7 +23,8 @@
 
 #include <config.h>
 
-#include "DeviceModel.h"
+#include "DeviceConnectionModel.h"
+#include "DeviceConnectionDelegate.h"
 #include "Description.h"
 
 #include <KMessageBox>
@@ -67,40 +68,39 @@ NetworkKCM::NetworkKCM(QWidget *parent, const QVariantList &args) :
 
     ui->setupUi(this);
     ui->infoWidget->setPixmap(KTitleWidget::InfoMessage);
-    connect(ui->addProfileBt, SIGNAL(clicked()), this, SLOT(addProfileFile()));
 
     ui->addProfileBt->setIcon(KIcon("list-add"));
-
-    connect(ui->tabWidget, SIGNAL(currentChanged(int)),
-            this, SLOT(on_tabWidget_currentChanged(int)));
-
     ui->removeProfileBt->setIcon(KIcon("list-remove"));
-    connect(ui->removeProfileBt, SIGNAL(clicked()),
-            this, SLOT(removeProfile()));
+    ui->advancedTB->setIcon(KIcon("applications-engineering"));
 
-    // Devices view setup
+    DeviceConnectionDelegate *delegate = new DeviceConnectionDelegate(this);
+    ui->devicesTV->setItemDelegate(delegate);
     QSortFilterProxyModel *sortModel = new QSortFilterProxyModel(this);
     // Connect this slot prior to defining the model
     // so we get a selection on the first item for free
     connect(sortModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
             this, SLOT(showDescription()));
     sortModel->setDynamicSortFilter(true);
-    sortModel->setSortRole(DeviceModel::SortRole);
+    sortModel->setSortRole(DeviceConnectionModel::SortRole);
     sortModel->sort(0);
     // Set the source model then connect to the selection model to get updates
     ui->devicesTV->setModel(sortModel);
     connect(ui->devicesTV->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
             this, SLOT(showDescription()));
 
-    m_deviceModel = new DeviceModel(this);
-    connect(m_deviceModel, SIGNAL(changed()), this, SLOT(updateSelection()));
-    sortModel->setSourceModel(m_deviceModel);
+    m_deviceConnectionModel = new DeviceConnectionModel(this);
+    connect(m_deviceConnectionModel, SIGNAL(changed()), this, SLOT(updateSelection()));
+    sortModel->setSourceModel(m_deviceConnectionModel);
 
     // make sure the screen is split on the half
     QList<int> sizes;
     sizes << width() / 2;
     sizes << width() / 2;
     ui->splitter->setSizes(sizes);
+
+    connect(NetworkManager::notifier(), SIGNAL(networkingEnabledChanged(bool)),
+            this, SLOT(setNetworkingEnabled(bool)));
+    setNetworkingEnabled(NetworkManager::isNetworkingEnabled());
 }
 
 NetworkKCM::~NetworkKCM()
@@ -137,20 +137,13 @@ void NetworkKCM::showDescription()
         ui->stackedWidget->setCurrentWidget(ui->profile_page);
     }
 
-    ui->profile->setDevice(index.data(DeviceModel::DeviceUNI).toString());
+    ui->profile->setDevice(index.data(DeviceConnectionModel::DeviceUNI).toString());
 }
 
 void NetworkKCM::updateSelection()
 {
-    QAbstractItemView *view;
-    if (sender() == m_deviceModel) {
-        view = ui->devicesTV;
-    } else {
-        view = ui->profilesTV;
-    }
-
-    QItemSelection selection;
-    selection = view->selectionModel()->selection();
+    QAbstractItemView *view = ui->devicesTV;
+    QItemSelection selection = view->selectionModel()->selection();
     // Make sure we have an index selected
     if (selection.indexes().isEmpty()) {
         view->selectionModel()->select(view->model()->index(0, 0),
@@ -169,29 +162,33 @@ void NetworkKCM::on_tabWidget_currentChanged(int index)
     }
 }
 
+void NetworkKCM::setNetworkingEnabled(bool enabled)
+{
+    if (enabled) {
+        ui->networkingPB->setText(i18n("Disable networking"));
+    } else {
+        ui->networkingPB->setText(i18n("Enable networking"));
+    }
+}
+
+void NetworkKCM::on_networkingPB_clicked()
+{
+    NetworkManager::setNetworkingEnabled(!NetworkManager::isNetworkingEnabled());
+}
+
 QModelIndex NetworkKCM::currentIndex() const
 {
     QModelIndex ret;
-    QAbstractItemView *view;
-    if (ui->tabWidget->currentIndex() == 0) {
-        view = ui->devicesTV;
-    } else {
-        view = ui->profilesTV;
-    }
-
+    QAbstractItemView *view = ui->devicesTV;
     if (view->model()->rowCount() == 0) {
         if (ui->stackedWidget->currentWidget() != ui->info_page) {
             ui->stackedWidget->setCurrentWidget(ui->info_page);
         }
 
-        if (ui->tabWidget->currentIndex() == 0) {
+        if (ui->stackedWidget->currentIndex() == 0) {
             // Devices is empty
-            ui->infoWidget->setText(i18n("You do not have any devices registered"));
-            ui->infoWidget->setComment(i18n("Make sure colord module on kded is running"));
-        } else {
-            // Profiles is empty
-            ui->infoWidget->setText(i18n("You do not have any profiles registered"));
-            ui->infoWidget->setComment(i18n("Add one by clicking Add Profile button"));
+            ui->infoWidget->setText(i18n("You do not have any devices or connection registered"));
+            ui->infoWidget->setComment(i18n("Make sure Network Manager is running"));
         }
 
         return ret;

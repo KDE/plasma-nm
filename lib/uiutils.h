@@ -63,25 +63,26 @@ public:
      * @param type the type of the network interface
      */
     static Solid::Device* findSolidDevice(const QString & uni);
-
+#endif
     /**
      * @return a human-readable description of the connection state of a given network interface
      * @param state The connection state
      */
     static QString connectionStateToString(NetworkManager::Device::State state, const QString &connectionName = QString());
-
+#if 0
     /**
      * @return a human-readable description of the connection state of a given interface connection
      * @param state The connection state
      */
     static QString connectionStateToString(Knm::InterfaceConnection::ActivationState state, const QString &connectionName = QString());
+#endif
 
     /**
      * @return an icon name suitable for the interface type
      * @param iface the network interface
      */
-    static QString iconName(NetworkManager::Device *iface);
-
+    static QString iconName(const NetworkManager::Device::Ptr &device);
+#if 0
     /** This method can be used to retrieve an icon size that fits into a given size.
      * The resulting size can be used to render Pixmaps from KIconLoader without
      * rescaling them (and thereby losing quality)

@@ -34,7 +34,7 @@ typedef QPair<QString, QDBusObjectPath> KindAndPath;
 namespace Ui {
     class NetworkKCM;
 }
-class DeviceModel;
+class DeviceConnectionModel;
 class NetworkKCM : public KCModule
 {
     Q_OBJECT
@@ -49,13 +49,15 @@ private slots:
     void showDescription();
     void updateSelection();
     void on_tabWidget_currentChanged(int index);
+    void setNetworkingEnabled(bool enabled);
+    void on_networkingPB_clicked();
 
 private:
     QModelIndex currentIndex() const;
     QString profilesPath() const;
 
     Ui::NetworkKCM *ui;
-    DeviceModel *m_deviceModel;
+    DeviceConnectionModel *m_deviceConnectionModel;
     QStackedLayout *m_stackedLayout;
     QWidget *m_noPrinter;
     QWidget *m_serverError;

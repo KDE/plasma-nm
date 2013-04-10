@@ -93,7 +93,8 @@ void Description::setDevice(const QString &uni)
         Settings::Connection::Ptr connection = device->activeConnection()->connection();
         if (connection) {
             active = ui->connectionCB->findData(connection->uuid());
-        }ui->connectionCB->setCurrentIndex(active);
+        }
+        ui->connectionCB->setCurrentIndex(active);
 
 
         QStringList routers;
@@ -126,9 +127,11 @@ void Description::setDevice(const QString &uni)
 
 void Description::on_disconnectPB_clicked()
 {
+    kDebug() << m_device;
     if (m_device) {
+        kDebug() << m_device->state() << NetworkManager::Device::Activated;
         if (m_device->state() == NetworkManager::Device::Activated) {
-            m_device->disconnect();
+            m_device->disconnectInterface();
         } else {
             ui->disconnectPB->setEnabled(false);
         }

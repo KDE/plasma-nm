@@ -30,22 +30,17 @@
 typedef QMap<QString, QString>  StringStringMap;
 typedef QList<QDBusObjectPath> ObjectPathList;
 
-class DeviceModel : public QStandardItemModel
+class DeviceConnectionModel : public QStandardItemModel
 {
     Q_OBJECT
 public:
     typedef enum {
         DeviceUNI = Qt::UserRole + 1,
         ConectionUNI,
-        ParentObjectPathRole,
-        IsDeviceRole,
-        SortRole,
-        FilenameRole,
-        ColorspaceRole,
-        ProfileKindRole,
-        CanRemoveProfileRole
+        StateRole,
+        SortRole
     } DeviceRoles;
-    explicit DeviceModel(QObject *parent = 0);
+    explicit DeviceConnectionModel(QObject *parent = 0);
 
     Qt::ItemFlags flags(const QModelIndex &index) const;
     QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
@@ -59,15 +54,14 @@ signals:
 
 private slots:
     void deviceAdded(const QString &uni);
-    void deviceChanged(const QString &uni);
+    void deviceChanged();
     void deviceRemoved(const QString &uni);
     void addDevice(const NetworkManager::Device::Ptr &device);
     void changeDevice(QStandardItem *stdItem, const NetworkManager::Device::Ptr &device);
 
+    void addConnection(const NetworkManager::Settings::Connection::Ptr &connection);
+
 private:
-    QStandardItem* createProfileItem(const QDBusObjectPath &objectPath,
-                                     const QDBusObjectPath &parentObjectPath,
-                                     bool checked);
     QStandardItem* findProfile(QStandardItem *parent, const QDBusObjectPath &objectPath);
     void removeProfilesNotInList(QStandardItem *parent, const ObjectPathList &profiles);
     int findDeviceItem(const QString &uni);

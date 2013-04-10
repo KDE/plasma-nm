@@ -21,12 +21,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Own
 #include "uiutils.h"
 
-#if 0
 // KDE
 #include <KDebug>
-#include <KIconLoader>
 #include <KLocale>
+#if 0
+#include <KIconLoader>
 #include <kdeversion.h>
+#endif
 
 #include <QtNetworkManager/manager.h>
 #include <QtNetworkManager/device.h>
@@ -36,7 +37,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Qt
 #include <QSizeF>
-#endif
+
 
 #include <QString>
 
@@ -79,19 +80,20 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
     }
     return deviceText;
 }
+#endif
 
-QString UiUtils::iconName(NetworkManager::Device *iface)
+QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
 {
-    if (!iface) {
-        return QString("dialog-error");
+    if (!device) {
+        return QLatin1String("dialog-error");
     }
     QString icon;
 
-    switch (iface->type()) {
+    switch (device->type()) {
         case NetworkManager::Device::Ethernet: {
             icon = "network-wired";
 
-            NetworkManager::WiredDevice *wiredIface = qobject_cast<NetworkManager::WiredDevice*>(iface);
+            NetworkManager::WiredDevice::Ptr wiredIface = device.objectCast<NetworkManager::WiredDevice>();
             if (wiredIface && wiredIface->carrier()) {
                 icon = "network-wired-activated";
             }
@@ -99,11 +101,11 @@ QString UiUtils::iconName(NetworkManager::Device *iface)
         }
         case NetworkManager::Device::Wifi: {
             QString strength = "00";
-            NetworkManager::WirelessDevice *wiface = qobject_cast<NetworkManager::WirelessDevice*>(iface);
+            NetworkManager::WirelessDevice::Ptr wiface = device.objectCast<NetworkManager::WirelessDevice>();
 
             if (wiface) {
                 QString uni = wiface->activeAccessPoint();
-                NetworkManager::AccessPoint *ap = wiface->findAccessPoint(uni);
+                NetworkManager::AccessPoint::Ptr ap = wiface->findAccessPoint(uni);
                 if (ap) {
                     int s = ap->signalStrength();
                     if (s < 13) {
@@ -134,10 +136,11 @@ QString UiUtils::iconName(NetworkManager::Device *iface)
             icon = "network-wired";
             break;
     }
-    //kDebug() << "icon:" << icon;
+    kDebug() << "icon:" << icon;
     return icon;
 }
 
+#if 0
 int UiUtils::iconSize(const QSizeF size)
 {
     int s = qMin(size.width(), size.height());
@@ -157,6 +160,8 @@ int UiUtils::iconSize(const QSizeF size)
     }
     return s;
 }
+#endif
+
 
 QString UiUtils::connectionStateToString(NetworkManager::Device::State state, const QString &connectionName)
 {
@@ -211,6 +216,7 @@ QString UiUtils::connectionStateToString(NetworkManager::Device::State state, co
     return stateString;
 }
 
+#if 0
 QString UiUtils::connectionStateToString(Knm::InterfaceConnection::ActivationState state, const QString &connectionName)
 {
     NetworkManager::Device::State s = NetworkManager::Device::UnknownState;

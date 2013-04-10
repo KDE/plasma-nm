@@ -1,5 +1,6 @@
 set(kcm_network_SRCS
-    DeviceModel.cpp
+    DeviceConnectionModel.cpp
+    DeviceConnectionDelegate.cpp
     Description.cpp
     NetworkKCM.cpp
 )
@@ -15,6 +16,7 @@ target_link_libraries(kcm_network
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
     QtNetworkManager
+    plasmanm-internal
 )
 
 install(TARGETS kcm_network DESTINATION ${PLUGIN_INSTALL_DIR})

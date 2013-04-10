@@ -242,6 +242,10 @@ void ConnectionEditor::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetI
 {
     Q_UNUSED(previous);
 
+    if (!current) {
+        return;
+    }
+
     qDebug() << "Current item" << current->text(0) << "type:" << current->data(0, Qt::UserRole).toString();
 
     if (current->data(0, Qt::UserRole).toString() == "connection") {

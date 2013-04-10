@@ -38,7 +38,7 @@ ConnectionTypeItem::ConnectionTypeItem(QTreeWidget * parent, const QString &type
         setIcon(0, KIcon("modem"));
     } else if (type == QLatin1String("bluetooth")) {
         text = i18n("Bluetooth");
-        setIcon(0, KIcon("bluetooth"));
+        setIcon(0, KIcon("preferences-system-bluetooth"));
     } else if (type == QLatin1String("bond")) {
         text = i18n("Bond");
     } else if (type == QLatin1String("bridge")) {

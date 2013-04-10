@@ -68,7 +68,7 @@ QString ModelItem::icon() const
             return "modem";
             break;
         case NetworkManager::Settings::ConnectionSettings::Bluetooth:
-            return "bluetooth";
+            return "preferences-system-bluetooth";
             break;
         case NetworkManager::Settings::ConnectionSettings::Bond:
             break;

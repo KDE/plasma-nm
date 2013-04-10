@@ -196,8 +196,7 @@ void ConnectionDetailEditor::initTabs()
 
     const NetworkManager::Settings::ConnectionSettings::ConnectionType type = m_connection->connectionType();
 
-    /*Adsl, Cdma, Gsm, Infiniband, Ipv4, Ipv6, Ppp, Pppoe, Security8021x, Serial,
-      Vpn, Wired, Wireless, WirelessSecurity, Bluetooth, OlpcMesh, Vlan, Wimax, Bond, Bridge, BridgePort;*/
+    /*Adsl, Cdma, Gsm, Infiniband, Pppoe, Vpn, Wired, Wireless, Bluetooth, OlpcMesh, Vlan, Wimax, Bond, Bridge */
     if (type == NetworkManager::Settings::ConnectionSettings::Wired) {
         WiredConnectionWidget * wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Settings::Setting::Wired), this);
         m_detailEditor->tabWidget->addTab(wiredWidget, i18n("Wired"));
@@ -250,12 +249,9 @@ void ConnectionDetailEditor::initTabs()
             m_detailEditor->tabWidget->addTab(gsmWidget, i18n("GSM"));
             PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
             m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
-            // TODO serial setting?
         }
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
         m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
-        IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv6), this);
-        m_detailEditor->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Vpn) { // VPN
         QString error;
         VpnUiPlugin * vpnPlugin = 0;

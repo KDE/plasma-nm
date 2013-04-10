@@ -68,6 +68,14 @@ void ModelVpnItem::setActiveConnection(NetworkManager::ActiveConnection* active)
     }
 }
 
+QString ModelVpnItem::specificPath() const
+{
+    if (m_active && m_vpn)
+        return m_active->specificObject();
+
+    return QString();
+}
+
 void ModelVpnItem::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state)
 {
     if (state == NetworkManager::VpnConnection::Disconnected) {

@@ -266,7 +266,7 @@ void ConnectionEditor::addConnection(QAction* action)
 
     Settings::ConnectionSettings::ConnectionType type = (Settings::ConnectionSettings::ConnectionType) action->data().toUInt();
 
-    if (type == NetworkManager::Settings::ConnectionSettings::Gsm) { // launch the mobile broadband wizard
+    if (type == NetworkManager::Settings::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
         QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::Settings::ConnectionSettings::Unknown, this);
         if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
             qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();

@@ -34,6 +34,8 @@ public:
 
     void setActiveConnection(NetworkManager::ActiveConnection * active);
 
+    QString specificPath() const;
+
 private Q_SLOTS:
     void onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state);
 

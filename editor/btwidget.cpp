@@ -22,6 +22,7 @@
 
 #include "btwidget.h"
 #include "ui_bt.h"
+#include "uiutils.h"
 
 
 BtWidget::BtWidget(NetworkManager::Settings::Setting * setting, QWidget* parent, Qt::WindowFlags f):
@@ -48,14 +49,14 @@ void BtWidget::loadConfig(NetworkManager::Settings::Setting *setting)
 {
     Q_UNUSED(setting);
 
-    m_ui->bdaddr->setText(QString::fromLatin1(m_btSetting->bluetoothAddress()));
+    m_ui->bdaddr->setText(UiUtils::macAddressAsString(m_btSetting->bluetoothAddress()));
     m_ui->type->setCurrentIndex(m_ui->type->findData(m_btSetting->profileType()));
 }
 
 QVariantMap BtWidget::setting() const
 {
     if (!m_ui->bdaddr->text().isEmpty())
-        m_btSetting->setBluetoothAddress(m_ui->bdaddr->text().toLatin1());
+        m_btSetting->setBluetoothAddress(UiUtils::macAddressFromString(m_ui->bdaddr->text()));
     m_btSetting->setProfileType(static_cast<NetworkManager::Settings::BluetoothSetting::ProfileType>(m_ui->type->itemData(m_ui->type->currentIndex()).toInt()));
 
     return m_btSetting->toMap();

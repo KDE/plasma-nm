@@ -47,11 +47,14 @@ DeviceConnectionModel::DeviceConnectionModel(QObject *parent) :
             this, SLOT(deviceAdded(QString)));
     connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
             this, SLOT(deviceRemoved(QString)));
-
     foreach (const Device::Ptr &device, NetworkManager::networkInterfaces()) {
         addDevice(device);
     }
 
+    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAdded(QString)),
+            this, SLOT(connectionAdded(QString)));
+    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionRemoved(QString)),
+            this, SLOT(connectionRemoved(QString)));
     foreach (const Settings::Connection::Ptr &connection, Settings::listConnections()) {
         if (connection.isNull()) {
             kWarning() << "NULLLL";
@@ -142,6 +145,38 @@ void DeviceConnectionModel::changeDevice(QStandardItem *stdItem, const NetworkMa
     }
 }
 
+void DeviceConnectionModel::connectionAdded(const QString &path)
+{
+    Settings::Connection::Ptr connection = Settings::findConnection(path);
+    if (connection) {
+        addConnection(connection);
+    }
+}
+
+void DeviceConnectionModel::connectionChanged()
+{
+    Settings::Connection *caller = qobject_cast<Settings::Connection*>(sender());
+    if (caller) {
+        Settings::Connection::Ptr connection = Settings::findConnection(caller->path());
+        if (connection) {
+            QStandardItem *stdItem = findConnectionItem(connection->path());
+            if (!stdItem) {
+                kWarning() << "Connection not found" << connection->path();
+                return;
+            }
+            changeConnection(stdItem, connection);
+        }
+    }
+}
+
+void DeviceConnectionModel::connectionRemoved(const QString &path)
+{
+    QStandardItem *stdItem = findConnectionItem(path);
+    if (stdItem) {
+        removeRow(stdItem->row());
+    }
+}
+
 void DeviceConnectionModel::addConnection(const Settings::Connection::Ptr &connection)
 {
     QStandardItem *stdItem = findConnectionItem(connection->path());
@@ -149,12 +184,12 @@ void DeviceConnectionModel::addConnection(const Settings::Connection::Ptr &conne
         return;
     }
 
-    connect(connection.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
-            this, SLOT(deviceChanged()));
+    connect(connection.data(), SIGNAL(updated()),
+            this, SLOT(connectionChanged()));
 
     stdItem = new QStandardItem;
     stdItem->setData(false, RoleIsDevice);
-    stdItem->setData(connection->path(), RoleConectionUNI);
+    stdItem->setData(connection->path(), RoleConectionPath);
     changeConnection(stdItem, connection);
     appendRow(stdItem);
 }
@@ -194,12 +229,12 @@ QStandardItem *DeviceConnectionModel::findDeviceItem(const QString &uni)
     return 0;
 }
 
-QStandardItem *DeviceConnectionModel::findConnectionItem(const QString &uni)
+QStandardItem *DeviceConnectionModel::findConnectionItem(const QString &path)
 {
     for (int i = 0; i < rowCount(); ++i) {
         QStandardItem *stdItem = item(i);
         if (stdItem->data(RoleIsDevice).toBool() == false &&
-                stdItem->data(RoleConectionUNI).toString() == uni) {
+                stdItem->data(RoleConectionPath).toString() == path) {
             return stdItem;
         }
     }

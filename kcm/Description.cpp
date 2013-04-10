@@ -90,9 +90,8 @@ void Description::setDevice(const QString &uni)
         }
 
         int active = -1;
-        Settings::Connection::Ptr connection = device->activeConnection()->connection();
-        if (connection) {
-            active = ui->connectionCB->findData(connection->uuid());
+        if (device->activeConnection()) {
+            active = ui->connectionCB->findData(device->activeConnection()->connection()->uuid());
         }
         ui->connectionCB->setCurrentIndex(active);
 

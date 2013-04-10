@@ -37,7 +37,7 @@ public:
     typedef enum {
         RoleIsDevice = Qt::UserRole + 1,
         RoleDeviceUNI,
-        RoleConectionUNI,
+        RoleConectionPath,
         RoleState,
         RoleSort
     } DeviceRoles;
@@ -59,12 +59,15 @@ private slots:
     void addDevice(const NetworkManager::Device::Ptr &device);
     void changeDevice(QStandardItem *stdItem, const NetworkManager::Device::Ptr &device);
 
+    void connectionAdded(const QString &uni);
+    void connectionChanged();
+    void connectionRemoved(const QString &uni);
     void addConnection(const NetworkManager::Settings::Connection::Ptr &connection);
     void changeConnection(QStandardItem *stdItem, const NetworkManager::Settings::Connection::Ptr &connection);
 
 private:
     QStandardItem *findDeviceItem(const QString &uni);
-    QStandardItem *findConnectionItem(const QString &uni);
+    QStandardItem *findConnectionItem(const QString &path);
 };
 
 #endif // DEVICE_MODEL_H

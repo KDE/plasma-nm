@@ -155,6 +155,9 @@ void ConnectionIcon::setIcons()
 
     foreach (NetworkManager::ActiveConnection * active, actives) {
         if ((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) {
+            if (active->devices().isEmpty())
+                continue;
+
             NetworkManager::Device::Type type = active->devices().first()->type();
 
             if (type == NetworkManager::Device::Wifi) {

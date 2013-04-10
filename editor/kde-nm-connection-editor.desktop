@@ -36,4 +36,4 @@ Exec=kde-nm-connection-editor
 Icon=network-defaultroute
 Type=Application
 Terminal=false
-Categories=Qt;KDE;Network
+Categories=Qt;KDE;Network;

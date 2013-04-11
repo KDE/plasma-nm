@@ -62,13 +62,30 @@ void AvailableConnectionsModel::availableConnectionChanged()
     if (device) {
         Settings::Connection::List connections = device->availableConnections();
         foreach (const Settings::Connection::Ptr &connection, connections) {
-            qWarning() << "connection" << connection->name();
-            addConnection(connection);
-//            connections.removeOne(connection);
+            qWarning() << "Connection" << connection->name();
+            if (!findConnectionItem(connection->path())) {
+                qWarning() << "New connection" << connection->name();
+                addConnection(connection);
+            }
         }
 
-        foreach (const Settings::Connection::Ptr &connection, connections) {
-//            connectionRemoved(connection->path());
+        int i = 0;
+        while (i < rowCount()) {
+            bool found = false;
+            QString path = item(i)->data(RoleConectionPath).toString();
+            foreach (const Settings::Connection::Ptr &connection, connections) {
+                if (connection->path() == path) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                qWarning() << "Remove connection" << path;
+                removeRow(i);
+            } else {
+                ++i;
+            }
         }
     }
 }

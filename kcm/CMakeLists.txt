@@ -2,6 +2,7 @@ set(kcm_network_SRCS
     AvailableConnectionsModel.cpp
     DeviceConnectionModel.cpp
     DeviceConnectionDelegate.cpp
+    DeviceConnectionSortFilterModel.cpp
     Description.cpp
     NetworkKCM.cpp
 )

@@ -198,16 +198,18 @@ void DeviceConnectionModel::connectionAdded(const QString &path)
 
 void DeviceConnectionModel::connectionChanged()
 {
-    Settings::Connection *caller = qobject_cast<Settings::Connection*>(sender());
-    if (caller) {
-        Settings::Connection::Ptr connection = Settings::findConnection(caller->path());
-        if (connection) {
-            QStandardItem *stdItem = findConnectionItem(connection->path());
-            if (!stdItem) {
-                kWarning() << "Connection not found" << connection->path();
-                return;
+    if (m_handleConnections) {
+        Settings::Connection *caller = qobject_cast<Settings::Connection*>(sender());
+        if (caller) {
+            Settings::Connection::Ptr connection = Settings::findConnection(caller->path());
+            if (connection) {
+                QStandardItem *stdItem = findConnectionItem(connection->path());
+                if (!stdItem) {
+                    kWarning() << "Connection not found" << connection->path();
+                    return;
+                }
+                changeConnection(stdItem, connection);
             }
-            changeConnection(stdItem, connection);
         }
     }
 }

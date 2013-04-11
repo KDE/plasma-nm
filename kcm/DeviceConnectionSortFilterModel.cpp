@@ -1,5 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2013 by Daniel Nicoletti <dantti12@gmail.com>           *
+ *   Copyright (C) 2012 by Daniel Nicoletti                                *
+ *   dantti12@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -16,42 +17,29 @@
  *   the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,  *
  *   Boston, MA 02110-1301, USA.                                           *
  ***************************************************************************/
+#include "DeviceConnectionSortFilterModel.h"
 
-#ifndef DESCRIPTION_H
-#define DESCRIPTION_H
+#include "DeviceConnectionModel.h"
 
-#include <QWidget>
-#include <QDBusObjectPath>
-#include <QDBusMessage>
+#include <KDebug>
 
-#include <QtNetworkManager/device.h>
-
-namespace Ui {
-    class Description;
-}
-class AvailableConnectionsModel;
-class Description : public QWidget
+DeviceConnectionSortFilterModel::DeviceConnectionSortFilterModel(QObject *parent) :
+    QSortFilterProxyModel(parent)
 {
-    Q_OBJECT
-public:
-    explicit Description(QWidget *parent = 0);
-    ~Description();
+    setDynamicSortFilter(true);
+    setSortCaseSensitivity(Qt::CaseInsensitive);
+    sort(0);
+}
 
-    int innerHeight() const;
-    void setDevice(const QString &uni);
+bool DeviceConnectionSortFilterModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+{
+    bool leftIsDevice = sourceModel()->data(left, DeviceConnectionModel::RoleIsDevice).toBool();
+    bool rightIsDevice = sourceModel()->data(right, DeviceConnectionModel::RoleIsDevice).toBool();
 
-private slots:
-    void updateState();
-    void updateActiveConnection();
-    void updateIpV4Config();
+    if (leftIsDevice != rightIsDevice) {
+        // If the left item is a device the right should move left
+        return leftIsDevice;
+    }
 
-    void on_disconnectPB_clicked();
-    void on_connectionCB_activated(int index);
-
-private:
-    Ui::Description *ui;
-    NetworkManager::Device::Ptr m_device;
-    AvailableConnectionsModel *m_availableConnectionsModel;
-};
-
-#endif // DESCRIPTION_H
+    return QSortFilterProxyModel::lessThan(left, right);
+}

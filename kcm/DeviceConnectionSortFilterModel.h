@@ -1,5 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2013 by Daniel Nicoletti <dantti12@gmail.com>           *
+ *   Copyright (C) 2012 by Daniel Nicoletti                                *
+ *   dantti12@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -16,42 +17,23 @@
  *   the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,  *
  *   Boston, MA 02110-1301, USA.                                           *
  ***************************************************************************/
+#ifndef DEVICE_CONNECTION_SORT_FILTER_MODEL_H
+#define DEVICE_CONNECTION_SORT_FILTER_MODEL_H
 
-#ifndef DESCRIPTION_H
-#define DESCRIPTION_H
+#include <QSortFilterProxyModel>
 
-#include <QWidget>
-#include <QDBusObjectPath>
-#include <QDBusMessage>
+#include <QDeclarativeItem>
 
-#include <QtNetworkManager/device.h>
+#include <kdemacros.h>
 
-namespace Ui {
-    class Description;
-}
-class AvailableConnectionsModel;
-class Description : public QWidget
+class KDE_EXPORT DeviceConnectionSortFilterModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 public:
-    explicit Description(QWidget *parent = 0);
-    ~Description();
-
-    int innerHeight() const;
-    void setDevice(const QString &uni);
-
-private slots:
-    void updateState();
-    void updateActiveConnection();
-    void updateIpV4Config();
-
-    void on_disconnectPB_clicked();
-    void on_connectionCB_activated(int index);
+    explicit DeviceConnectionSortFilterModel(QObject *parent = 0);
 
 private:
-    Ui::Description *ui;
-    NetworkManager::Device::Ptr m_device;
-    AvailableConnectionsModel *m_availableConnectionsModel;
+    bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
 };
 
-#endif // DESCRIPTION_H
+#endif // DEVICE_CONNECTION_SORT_FILTER_MODEL_H

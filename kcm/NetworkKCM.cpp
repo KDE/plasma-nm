@@ -24,6 +24,7 @@
 #include <config.h>
 
 #include "DeviceConnectionModel.h"
+#include "DeviceConnectionSortFilterModel.h"
 #include "DeviceConnectionDelegate.h"
 #include "Description.h"
 
@@ -75,14 +76,11 @@ NetworkKCM::NetworkKCM(QWidget *parent, const QVariantList &args) :
 
     DeviceConnectionDelegate *delegate = new DeviceConnectionDelegate(this);
     ui->devicesTV->setItemDelegate(delegate);
-    QSortFilterProxyModel *sortModel = new QSortFilterProxyModel(this);
+    DeviceConnectionSortFilterModel *sortModel = new DeviceConnectionSortFilterModel(this);
     // Connect this slot prior to defining the model
     // so we get a selection on the first item for free
     connect(sortModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
             this, SLOT(showDescription()));
-    sortModel->setDynamicSortFilter(true);
-    sortModel->setSortRole(DeviceConnectionModel::RoleSort);
-    sortModel->sort(0);
     // Set the source model then connect to the selection model to get updates
     ui->devicesTV->setModel(sortModel);
     connect(ui->devicesTV->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),

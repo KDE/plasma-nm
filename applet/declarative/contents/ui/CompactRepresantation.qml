@@ -78,7 +78,6 @@ Item {
              id: tooltip
              target: mouseAreaPopup
              image: connectionIcon.elementId
-             mainText: i18n("Network management")
         }
     }
 
@@ -104,6 +103,10 @@ Item {
 
         onUnsetHoverIcon: {
             hoverIcon.visible = false;
+        }
+
+        onSetTooltipIcon: {
+            tooltip.image = icon;
         }
     }
 

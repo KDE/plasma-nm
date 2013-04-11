@@ -54,6 +54,7 @@ Q_SIGNALS:
     void showConnectingIndicator();
     void setConnectionIcon(const QString & icon);
     void setHoverIcon(const QString & icon);
+    void setTooltipIcon(const QString & icon);
     void unsetHoverIcon();
 
 private:

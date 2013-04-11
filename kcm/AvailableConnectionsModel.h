@@ -17,36 +17,35 @@
  *   Boston, MA 02110-1301, USA.                                           *
  ***************************************************************************/
 
-#ifndef DESCRIPTION_H
-#define DESCRIPTION_H
+#ifndef AVAILABLECONNECTIONSMODEL_H
+#define AVAILABLECONNECTIONSMODEL_H
 
-#include <QWidget>
-#include <QDBusObjectPath>
-#include <QDBusMessage>
-
+#include <QStandardItemModel>
 #include <QtNetworkManager/device.h>
 
-namespace Ui {
-    class Description;
-}
-class AvailableConnectionsModel;
-class Description : public QWidget
+class AvailableConnectionsModel : public QStandardItemModel
 {
     Q_OBJECT
 public:
-    explicit Description(QWidget *parent = 0);
-    ~Description();
-
-    int innerHeight() const;
-    void setDevice(const QString &uni);
+    enum ConnectionRoles {
+        RoleConectionPath = Qt::UserRole + 1,
+        RoleSort
+    };
+    explicit AvailableConnectionsModel(QObject *parent = 0);
+    void setDevice(const NetworkManager::Device::Ptr &device);
 
 private slots:
-    void on_disconnectPB_clicked();
-
+    void availableConnectionChanged();
+    void connectionAdded(const QString &path);
+    void connectionChanged();
+    void connectionRemoved(const QString &path);
+    void addConnection(const NetworkManager::Settings::Connection::Ptr &connection);
+    void changeConnection(QStandardItem *stdItem, const NetworkManager::Settings::Connection::Ptr &connection);
+    
 private:
-    Ui::Description *ui;
+    QStandardItem *findConnectionItem(const QString &path);
+
     NetworkManager::Device::Ptr m_device;
-    AvailableConnectionsModel *m_availableConnectionsModel;
 };
 
-#endif // DESCRIPTION_H
+#endif // AVAILABLECONNECTIONSMODEL_H

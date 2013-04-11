@@ -34,40 +34,44 @@ class DeviceConnectionModel : public QStandardItemModel
 {
     Q_OBJECT
 public:
-    typedef enum {
+    enum DeviceRoles {
         RoleIsDevice = Qt::UserRole + 1,
         RoleDeviceUNI,
         RoleConectionPath,
         RoleState,
         RoleSort
-    } DeviceRoles;
+    };
     explicit DeviceConnectionModel(QObject *parent = 0);
 
     Qt::ItemFlags flags(const QModelIndex &index) const;
-    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
 
 public slots:
-    void serviceOwnerChanged(const QString &serviceName, const QString &oldOwner, const QString &newOwner);
+    void setHandleConnections(bool handleConnections);
 
 signals:
     void changed();
 
 private slots:
+    void initConnections();
+    void removeConnections();
+
     void deviceAdded(const QString &uni);
     void deviceChanged();
     void deviceRemoved(const QString &uni);
     void addDevice(const NetworkManager::Device::Ptr &device);
     void changeDevice(QStandardItem *stdItem, const NetworkManager::Device::Ptr &device);
 
-    void connectionAdded(const QString &uni);
+    void connectionAdded(const QString &path);
     void connectionChanged();
-    void connectionRemoved(const QString &uni);
+    void connectionRemoved(const QString &path);
     void addConnection(const NetworkManager::Settings::Connection::Ptr &connection);
     void changeConnection(QStandardItem *stdItem, const NetworkManager::Settings::Connection::Ptr &connection);
 
 private:
     QStandardItem *findDeviceItem(const QString &uni);
     QStandardItem *findConnectionItem(const QString &path);
+
+    bool m_handleConnections;
 };
 
 #endif // DEVICE_MODEL_H

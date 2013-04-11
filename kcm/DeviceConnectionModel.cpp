@@ -41,8 +41,18 @@
 using namespace NetworkManager;
 
 DeviceConnectionModel::DeviceConnectionModel(QObject *parent) :
-    QStandardItemModel(parent)
+    QStandardItemModel(parent),
+    m_handleConnections(false)
 {
+    connect(NetworkManager::notifier(), SIGNAL(serviceAppeared()),
+            this, SLOT(initConnections()));
+    connect(NetworkManager::notifier(), SIGNAL(serviceDisappeared()),
+            this, SLOT(removeConnections()));
+    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAdded(QString)),
+            this, SLOT(connectionAdded(QString)));
+    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionRemoved(QString)),
+            this, SLOT(connectionRemoved(QString)));
+
     connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)),
             this, SLOT(deviceAdded(QString)));
     connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
@@ -50,17 +60,48 @@ DeviceConnectionModel::DeviceConnectionModel(QObject *parent) :
     foreach (const Device::Ptr &device, NetworkManager::networkInterfaces()) {
         addDevice(device);
     }
+}
 
-    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAdded(QString)),
-            this, SLOT(connectionAdded(QString)));
-    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionRemoved(QString)),
-            this, SLOT(connectionRemoved(QString)));
-    foreach (const Settings::Connection::Ptr &connection, Settings::listConnections()) {
-        if (connection.isNull()) {
-            kWarning() << "NULLLL";
+void DeviceConnectionModel::setHandleConnections(bool handleConnections)
+{
+    if (m_handleConnections != handleConnections) {
+        m_handleConnections = handleConnections;
+        if (handleConnections) {
+            initConnections();
+        } else {
+            removeConnections();
         }
-        kWarning() << "NULLLL" << connection->name();
-        addConnection(connection);
+    }
+}
+
+Qt::ItemFlags DeviceConnectionModel::flags(const QModelIndex &index) const
+{
+    QStandardItem *stdItem = itemFromIndex(index);
+    if (stdItem && stdItem->isCheckable() && stdItem->checkState() == Qt::Unchecked) {
+        return Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable;
+    }
+    return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
+}
+
+
+void DeviceConnectionModel::initConnections()
+{
+    if (m_handleConnections) {
+        foreach (const Settings::Connection::Ptr &connection, Settings::listConnections()) {
+            addConnection(connection);
+        }
+    }
+}
+
+void DeviceConnectionModel::removeConnections()
+{
+    int i = 0;
+    while (i < rowCount()) {
+        if (item(i)->data(RoleIsDevice).toBool() == false) {
+            removeRow(i);
+        } else {
+            ++i;
+        }
     }
 }
 
@@ -147,9 +188,11 @@ void DeviceConnectionModel::changeDevice(QStandardItem *stdItem, const NetworkMa
 
 void DeviceConnectionModel::connectionAdded(const QString &path)
 {
-    Settings::Connection::Ptr connection = Settings::findConnection(path);
-    if (connection) {
-        addConnection(connection);
+    if (m_handleConnections) {
+        Settings::Connection::Ptr connection = Settings::findConnection(path);
+        if (connection) {
+            addConnection(connection);
+        }
     }
 }
 
@@ -171,9 +214,11 @@ void DeviceConnectionModel::connectionChanged()
 
 void DeviceConnectionModel::connectionRemoved(const QString &path)
 {
-    QStandardItem *stdItem = findConnectionItem(path);
-    if (stdItem) {
-        removeRow(stdItem->row());
+    if (m_handleConnections) {
+        QStandardItem *stdItem = findConnectionItem(path);
+        if (stdItem) {
+            removeRow(stdItem->row());
+        }
     }
 }
 
@@ -206,16 +251,6 @@ void DeviceConnectionModel::changeConnection(QStandardItem *stdItem, const Setti
     stdItem->setText(connection->name());
 }
 
-void DeviceConnectionModel::serviceOwnerChanged(const QString &serviceName, const QString &oldOwner, const QString &newOwner)
-{
-    Q_UNUSED(serviceName)
-    if (newOwner.isEmpty() || oldOwner != newOwner) {
-        // colord has quit or restarted
-        removeRows(0, rowCount());
-        emit changed();
-    }
-}
-
 QStandardItem *DeviceConnectionModel::findDeviceItem(const QString &uni)
 {
     for (int i = 0; i < rowCount(); ++i) {
@@ -240,21 +275,4 @@ QStandardItem *DeviceConnectionModel::findConnectionItem(const QString &path)
     }
 
     return 0;
-}
-
-QVariant DeviceConnectionModel::headerData(int section, Qt::Orientation orientation, int role) const
-{
-    if (section == 0 && orientation == Qt::Horizontal && role == Qt::DisplayRole) {
-        return i18n("Devices");
-    }
-    return QVariant();
-}
-
-Qt::ItemFlags DeviceConnectionModel::flags(const QModelIndex &index) const
-{
-    QStandardItem *stdItem = itemFromIndex(index);
-    if (stdItem && stdItem->isCheckable() && stdItem->checkState() == Qt::Unchecked) {
-        return Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable;
-    }
-    return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
 }

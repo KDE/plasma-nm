@@ -1,5 +1,5 @@
 /***************************************************************************
- *   Copyright (C) 2012 by Daniel Nicoletti <dantti12@gmail.com>           *
+ *   Copyright (C) 2013 by Daniel Nicoletti <dantti12@gmail.com>           *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,6 +19,8 @@
 
 #include "Description.h"
 #include "ui_Description.h"
+
+#include "AvailableConnectionsModel.h"
 
 #include <QStringBuilder>
 #include <QtDBus/QDBusInterface>
@@ -46,6 +48,9 @@ Description::Description(QWidget *parent) :
     ui(new Ui::Description)
 {
     ui->setupUi(this);
+
+    m_availableConnectionsModel = new AvailableConnectionsModel(this);
+    ui->connectionCB->setModel(m_availableConnectionsModel);
 }
 
 Description::~Description()
@@ -84,10 +89,7 @@ void Description::setDevice(const QString &uni)
         ui->statusL->setText(state);
         ui->disconnectPB->setEnabled(device->state() == Device::Activated);
 
-        ui->connectionCB->clear();
-        foreach (const Settings::Connection::Ptr &connection, device->availableConnections()) {
-            ui->connectionCB->addItem(connection->name(), connection->uuid());
-        }
+        m_availableConnectionsModel->setDevice(device);
 
         int active = -1;
         if (device->activeConnection()) {

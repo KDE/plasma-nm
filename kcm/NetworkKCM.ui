@@ -24,7 +24,7 @@
     <number>10</number>
    </property>
    <item row="1" column="0">
-    <widget class="QCheckBox" name="checkBox">
+    <widget class="QCheckBox" name="showConnectionsCB">
      <property name="text">
       <string>Show connections</string>
      </property>

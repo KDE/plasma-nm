@@ -39,6 +39,7 @@ public Q_SLOTS:
     void init();
 
 private Q_SLOTS:
+    void availableConnectionsChanged();
     void activeConnectionsChanged();
     void cablePlugged(bool plugged);
     void connectionAdded(const QString & connection);

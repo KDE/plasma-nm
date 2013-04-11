@@ -20,6 +20,7 @@
 
 #include "model.h"
 
+#include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/wireddevice.h>
 #include <QtNetworkManager/settings/802-11-wireless.h>
 
@@ -155,6 +156,26 @@ void Model::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &netwo
 
 void Model::addActiveConnection(const NetworkManager::ActiveConnection::Ptr & active)
 {
+    bool found = false;
+
+    foreach (ModelItem * item, m_connections) {
+        if (active->connection()->uuid() == item->uuid()) {
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
+        NetworkManager::Settings::Connection::Ptr connection = active->connection();
+
+        if (!device || !connection) {
+            return;
+        }
+
+        addConnection(connection, device);
+    }
+
     foreach (ModelItem * item, m_connections) {
         if (active.data()->connection()->uuid() == item->uuid()) {
             item->setActiveConnection(active);
@@ -164,6 +185,7 @@ void Model::addActiveConnection(const NetworkManager::ActiveConnection::Ptr & ac
                 dataChanged(modelIndex, modelIndex);
             }
             NMModelDebug() << "Connection " << item->name() << " has been updated by active connection";
+            found = true;
             break;
         }
     }

@@ -101,7 +101,25 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr &device)
                 SLOT(wirelessNetworkDisappeared(QString)));
     }
 
+    connect(device.data(), SIGNAL(availableConnectionChanged()),
+            SLOT(availableConnectionsChanged()));
+
    addAvailableConnectionsForDevice(device);
+}
+
+void Monitor::availableConnectionsChanged()
+{
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
+
+    if (!device) {
+        return;
+    }
+
+    foreach (const NetworkManager::Settings::Connection::Ptr & connection, device->availableConnections()) {
+       NMMonitorDebug() << "Connection " << connection->name() << " added";
+       NMMonitorSignalDebug() << "Emit signal addConnection(" << connection->name() << ")";
+       Q_EMIT addConnection(connection, device);
+    }
 }
 
 void Monitor::activeConnectionsChanged()

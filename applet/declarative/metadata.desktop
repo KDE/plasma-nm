@@ -2,6 +2,7 @@
 Name=Network Management
 Name[cs]=Správa sítě
 Name[de]=Netzwerkverwaltung
+Name[nl]=Netwerkbeheer
 Name[pt]=Gestão de Rede
 Name[pt_BR]=Gerenciamento de rede
 Name[sk]=Správa siete
@@ -11,6 +12,8 @@ Name[x-test]=xxNetwork Managementxx
 
 Comment=Network status and control
 Comment[cs]=Stav a ovládání sítě
+Comment[de]=Netzwerkstatus und -steuerung
+Comment[nl]=Netwerkstatus en besturing
 Comment[pt]=Estado e controlo da rede
 Comment[pt_BR]=Estado e controle da rede
 Comment[sk]=Správa a ovládanie siete

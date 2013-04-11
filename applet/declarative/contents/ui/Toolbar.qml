@@ -30,7 +30,6 @@ Item {
     id: toolBar;
 
     property bool expanded: false;
-    property alias enabled: toolButton.enabled;
 
     signal toolbarExpanded();
     signal enableNetworking(bool enable);

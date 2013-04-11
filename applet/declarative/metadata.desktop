@@ -12,6 +12,7 @@ Name[x-test]=xxNetwork Managementxx
 
 Comment=Network status and control
 Comment[cs]=Stav a ovládání sítě
+Comment[de]=Netzwerkstatus und -steuerung
 Comment[nl]=Netwerkstatus en besturing
 Comment[pt]=Estado e controlo da rede
 Comment[pt_BR]=Estado e controle da rede

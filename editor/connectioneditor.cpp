@@ -148,7 +148,7 @@ void ConnectionEditor::insertConnection(const NetworkManager::Settings::Connecti
 {
     Settings::ConnectionSettings::Ptr settings = connection->settings();
 
-    const QString name = settings->name();
+    const QString name = settings->id();
     QString type = Settings::ConnectionSettings::typeAsString(settings->connectionType());
     if (type == "gsm" || type == "cdma")
         type = "mobile"; // cdma+gsm meta category

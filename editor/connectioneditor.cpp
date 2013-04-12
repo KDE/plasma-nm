@@ -269,13 +269,13 @@ void ConnectionEditor::addConnection(QAction* action)
 
     if (type == NetworkManager::Settings::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
         QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::Settings::ConnectionSettings::Unknown, this);
-        if (wizard->exec() == QDialog::Accepted && wizard->getError() == MobileProviders::Success) {
-            qDebug() << "Mobile broadband wizard finished:" << wizard->type() << wizard->args();
-            ConnectionDetailEditor * editor = new ConnectionDetailEditor(wizard->type(), wizard->args(), this);
+        if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
+            qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
+            ConnectionDetailEditor * editor = new ConnectionDetailEditor(wizard.data()->type(), wizard.data()->args(), this);
             editor->exec();
         }
         if (wizard) {
-            wizard->deleteLater();
+            wizard.data()->deleteLater();
         }
     } else {
         ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, vpnType, this);

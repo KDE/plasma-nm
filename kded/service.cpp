@@ -26,6 +26,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "secretagent.h"
 
+#include <QDBusMetaType>
+
 K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManagementService>();)
 K_EXPORT_PLUGIN(NetworkManagementServiceFactory("plasmanm"))
 

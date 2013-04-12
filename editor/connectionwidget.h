@@ -40,7 +40,7 @@ public:
 
     void loadConfig(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
 
-    QVariantMapMap setting() const;
+    NMVariantMapMap setting() const;
 
 private:
     Ui::ConnectionWidget * m_widget;

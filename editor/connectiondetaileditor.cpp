@@ -130,8 +130,8 @@ void ConnectionDetailEditor::initEditor()
     if (!m_new) {
         NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(m_connection->uuid());
         if (connection) {
-            connect(connection.data(), SIGNAL(gotSecrets(QString,bool,QVariantMapMap,QString)),
-                    SLOT(gotSecrets(QString,bool, QVariantMapMap, QString)));
+            connect(connection.data(), SIGNAL(gotSecrets(QString,bool,NMVariantMapMap,QString)),
+                    SLOT(gotSecrets(QString,bool, NMVariantMapMap, QString)));
 
             switch (m_connection->connectionType()) {
                 case Settings::ConnectionSettings::Adsl:
@@ -285,7 +285,7 @@ void ConnectionDetailEditor::saveSetting()
 {
     ConnectionWidget * connectionWidget = static_cast<ConnectionWidget*>(m_detailEditor->tabWidget->widget(0));
 
-    QVariantMapMap settings = connectionWidget->setting();
+    NMVariantMapMap settings = connectionWidget->setting();
 
     for (int i = 1; i < m_detailEditor->tabWidget->count(); ++i) {
         SettingWidget * widget = static_cast<SettingWidget*>(m_detailEditor->tabWidget->widget(i));
@@ -356,7 +356,7 @@ void ConnectionDetailEditor::connectionAddComplete(const QString& id, bool succe
     qDebug() << id << " - " << success << " - " << msg;
 }
 
-void ConnectionDetailEditor::gotSecrets(const QString& id, bool success, const QVariantMapMap& secrets, const QString& msg)
+void ConnectionDetailEditor::gotSecrets(const QString& id, bool success, const NMVariantMapMap& secrets, const QString& msg)
 {
     if (id == m_connection->uuid()) {
         m_numSecrets--;

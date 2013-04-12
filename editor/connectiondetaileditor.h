@@ -48,7 +48,7 @@ public:
 private Q_SLOTS:
     void saveSetting();
     void connectionAddComplete(const QString & id, bool success, const QString & msg);
-    void gotSecrets(const QString & id, bool success, const QVariantMapMap & secrets, const QString & msg);
+    void gotSecrets(const QString & id, bool success, const NMVariantMapMap & secrets, const QString & msg);
 private:
     Ui::ConnectionDetailEditor * m_detailEditor;
     NetworkManager::Settings::ConnectionSettings::Ptr m_connection;

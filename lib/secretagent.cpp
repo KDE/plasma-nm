@@ -44,7 +44,7 @@ SecretAgent::~SecretAgent()
 {
 }
 
-QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const QDBusObjectPath &connection_path, const QString &setting_name,
+NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path, const QString &setting_name,
                                        const QStringList &hints, uint flags)
 {
     qDebug() << Q_FUNC_INFO;
@@ -65,7 +65,7 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
     const bool isVpn = (setting->type() == NetworkManager::Settings::Setting::Vpn);
 
     if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
-        QVariantMapMap result;
+        NMVariantMapMap result;
         if (isVpn) {
             QString error;
             VpnUiPlugin * vpnPlugin = 0;
@@ -119,22 +119,22 @@ QVariantMapMap SecretAgent::GetSecrets(const QVariantMapMap &connection, const Q
             delete dlg;
         }
     } else if (isVpn && userRequested) { // just return what we have
-        QVariantMapMap result;
+        NMVariantMapMap result;
         NetworkManager::Settings::VpnSetting::Ptr vpnSetting =
                 settings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
         result.insert("vpn", vpnSetting->secretsToMap());
         return result;
     }
 
-    return QVariantMapMap();
+    return NMVariantMapMap();
 }
 
-void SecretAgent::SaveSecrets(const QVariantMapMap &connection, const QDBusObjectPath &connection_path)
+void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
 
 }
 
-void SecretAgent::DeleteSecrets(const QVariantMapMap &connection, const QDBusObjectPath &connection_path)
+void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
 
 }

@@ -52,7 +52,7 @@ void ConnectionWidget::loadConfig(const NetworkManager::Settings::ConnectionSett
     Q_UNUSED(settings);
 }
 
-QVariantMapMap ConnectionWidget::setting() const
+NMVariantMapMap ConnectionWidget::setting() const
 {
     NetworkManager::Settings::ConnectionSettings settings;
 

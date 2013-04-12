@@ -34,9 +34,9 @@ public:
     virtual ~SecretAgent();
 
 public Q_SLOTS:
-    virtual QVariantMapMap GetSecrets(const QVariantMapMap&, const QDBusObjectPath&, const QString&, const QStringList&, uint);
-    virtual void SaveSecrets(const QVariantMapMap&, const QDBusObjectPath&);
-    virtual void DeleteSecrets(const QVariantMapMap &, const QDBusObjectPath &);
+    virtual NMVariantMapMap GetSecrets(const NMVariantMapMap&, const QDBusObjectPath&, const QString&, const QStringList&, uint);
+    virtual void SaveSecrets(const NMVariantMapMap&, const QDBusObjectPath&);
+    virtual void DeleteSecrets(const NMVariantMapMap &, const QDBusObjectPath &);
     virtual void CancelGetSecrets(const QDBusObjectPath &, const QString &);
 };
 

@@ -35,7 +35,8 @@ class ConnectionWidget : public QWidget
 Q_OBJECT
 
 public:
-    ConnectionWidget(const NetworkManager::Settings::ConnectionSettings::Ptr &settings = NetworkManager::Settings::ConnectionSettings::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    ConnectionWidget(const NetworkManager::Settings::ConnectionSettings::Ptr &settings = NetworkManager::Settings::ConnectionSettings::Ptr(),
+                     QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~ConnectionWidget();
 
     void loadConfig(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
@@ -43,6 +44,12 @@ public:
     NMVariantMapMap setting() const;
 
 private:
+    // list of VPN: UUID, name
+    QStringMap vpnConnections() const;
+    // list of firewalld zones
+    QStringList firewallZones() const;
+
+    void populateVpnConnections();
     Ui::ConnectionWidget * m_widget;
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
 };

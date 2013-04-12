@@ -54,6 +54,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     QAction * action = m_menu->addSeparator();
     action->setText(i18n("Hardware"));
 
+    // TODO Adsl
     action = new QAction(i18n("DSL"), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Pppoe);
     m_menu->addAction(action);

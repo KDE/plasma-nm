@@ -18,6 +18,10 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <QtNetworkManager/settings.h>
+#include <QtNetworkManager/connection.h>
+#include <QtNetworkManager/settings/connection.h>
+
 #include "connectionwidget.h"
 #include "ui_connectionwidget.h"
 
@@ -29,6 +33,16 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::Settings::ConnectionSet
     m_widget->setupUi(this);
 
     //TODO: populate firewall zones
+
+    // VPN combo
+    populateVpnConnections();
+    if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Vpn) {
+        m_widget->autoconnectVpn->setEnabled(false);
+        m_widget->vpnCombobox->setEnabled(false);
+    } else {
+        m_widget->autoconnectVpn->setEnabled(true);
+        m_widget->vpnCombobox->setEnabled(true);
+    }
 
     if (settings)
         loadConfig(settings);
@@ -47,9 +61,23 @@ void ConnectionWidget::loadConfig(const NetworkManager::Settings::ConnectionSett
         m_widget->allUsers->setChecked(false);
     }
 
-    m_widget->autoconnect->setChecked(settings->autoconnect());
+    // TODO set firewall zone
 
-    Q_UNUSED(settings);
+    const QStringList secondaries = settings->secondaries();
+    const QStringList vpnKeys = vpnConnections().keys();
+    if (!secondaries.isEmpty() && !vpnKeys.isEmpty()) {
+        foreach (const QString & vpnKey, vpnKeys) {
+            if (secondaries.contains(vpnKey)) {
+                m_widget->vpnCombobox->setCurrentIndex(m_widget->vpnCombobox->findData(vpnKey));
+                m_widget->autoconnectVpn->setChecked(true);
+                break;
+            }
+        }
+    } else {
+        m_widget->autoconnectVpn->setChecked(false);
+    }
+
+    m_widget->autoconnect->setChecked(settings->autoconnect());
 }
 
 NMVariantMapMap ConnectionWidget::setting() const
@@ -65,7 +93,42 @@ NMVariantMapMap ConnectionWidget::setting() const
         // TODO: ??
     }
 
+    if (m_widget->autoconnectVpn->isChecked() && m_widget->vpnCombobox->count() > 0) {
+        settings.setSecondaries(QStringList() << m_widget->vpnCombobox->itemData(m_widget->vpnCombobox->currentIndex()).toString());
+    }
+
     //TODO: zones
 
     return settings.toMap();
+}
+
+QStringMap ConnectionWidget::vpnConnections() const
+{
+    NetworkManager::Settings::Connection::List list = NetworkManager::Settings::listConnections();
+    QStringMap result;
+
+    foreach (const NetworkManager::Settings::Connection::Ptr & conn, list) {
+        NetworkManager::Settings::ConnectionSettings::Ptr conSet = conn->settings();
+        if (conSet->connectionType() == NetworkManager::Settings::ConnectionSettings::Vpn) {
+            //qDebug() << "Found VPN" << conSet->id() << conSet->uuid();
+            result.insert(conSet->uuid(), conSet->id());
+        }
+    }
+
+    return result;
+}
+
+QStringList ConnectionWidget::firewallZones() const
+{
+    // TODO
+    return QStringList();
+}
+
+void ConnectionWidget::populateVpnConnections()
+{
+    QMapIterator<QString,QString> it(vpnConnections());
+    while (it.hasNext()) {
+        it.next();
+        m_widget->vpnCombobox->addItem(it.value(), it.key());
+    }
 }

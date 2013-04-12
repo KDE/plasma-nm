@@ -32,7 +32,7 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::Settings::ConnectionSet
 {
     m_widget->setupUi(this);
 
-    //TODO: populate firewall zones
+    m_widget->firewallZone->addItems(firewallZones());
 
     // VPN combo
     populateVpnConnections();
@@ -61,7 +61,8 @@ void ConnectionWidget::loadConfig(const NetworkManager::Settings::ConnectionSett
         m_widget->allUsers->setChecked(false);
     }
 
-    // TODO set firewall zone
+    const QString zone = settings->zone();
+    m_widget->firewallZone->setCurrentIndex(m_widget->firewallZone->findText(zone));
 
     const QStringList secondaries = settings->secondaries();
     const QStringList vpnKeys = vpnConnections().keys();
@@ -97,7 +98,10 @@ NMVariantMapMap ConnectionWidget::setting() const
         settings.setSecondaries(QStringList() << m_widget->vpnCombobox->itemData(m_widget->vpnCombobox->currentIndex()).toString());
     }
 
-    //TODO: zones
+    const QString zone = m_widget->firewallZone->currentText();
+    if (!zone.isEmpty()) {
+        settings.setZone(zone);
+    }
 
     return settings.toMap();
 }
@@ -120,7 +124,13 @@ QStringMap ConnectionWidget::vpnConnections() const
 
 QStringList ConnectionWidget::firewallZones() const
 {
-    // TODO
+    QDBusMessage msg = QDBusMessage::createMethodCall("org.fedoraproject.FirewallD1", "/org/fedoraproject/FirewallD1", "org.fedoraproject.FirewallD1.zone",
+                                                      "getZones");
+    QDBusPendingReply<QStringList> reply = QDBusConnection::systemBus().asyncCall(msg);
+    reply.waitForFinished();
+    if (reply.isValid())
+        return reply.value();
+
     return QStringList();
 }
 

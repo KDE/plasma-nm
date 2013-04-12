@@ -91,56 +91,6 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <item>
-      <property name="text">
-       <string>Default</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">drop</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">work</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">internal</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">block</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">home</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">dmz</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">public</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">trusted</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string notr="true">external</string>
-      </property>
-     </item>
     </widget>
    </item>
    <item row="7" column="1">

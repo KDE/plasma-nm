@@ -161,8 +161,8 @@ void ConnectionEditor::insertConnection(const NetworkManager::Settings::Connecti
     QStringList actives;
 
     foreach(const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-        if (active.data()->state() == NetworkManager::ActiveConnection::Activated) {
-            actives << active.data()->connection()->uuid();
+        if (active->state() == NetworkManager::ActiveConnection::Activated) {
+            actives << active->connection()->uuid();
         }
     }
 
@@ -269,13 +269,13 @@ void ConnectionEditor::addConnection(QAction* action)
 
     if (type == NetworkManager::Settings::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
         QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::Settings::ConnectionSettings::Unknown, this);
-        if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
-            qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
-            ConnectionDetailEditor * editor = new ConnectionDetailEditor(wizard.data()->type(), wizard.data()->args(), this);
+        if (wizard->exec() == QDialog::Accepted && wizard->getError() == MobileProviders::Success) {
+            qDebug() << "Mobile broadband wizard finished:" << wizard->type() << wizard->args();
+            ConnectionDetailEditor * editor = new ConnectionDetailEditor(wizard->type(), wizard->args(), this);
             editor->exec();
         }
         if (wizard) {
-            wizard.data()->deleteLater();
+            wizard->deleteLater();
         }
     } else {
         ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, vpnType, this);

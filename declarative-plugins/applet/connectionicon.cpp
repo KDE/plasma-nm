@@ -149,14 +149,14 @@ void ConnectionIcon::setIcons()
     NetworkManager::ActiveConnection::List actives = NetworkManager::activeConnections();
 
     foreach (const NetworkManager::ActiveConnection::Ptr & active, actives) {
-        if ((active.data()->default4() || active.data()->default6()) && active.data()->state() == NetworkManager::ActiveConnection::Activated) {
-            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active.data()->devices().first());
+        if ((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) {
+            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
             if (device) {
                 NetworkManager::Device::Type type = device->type();
 
                 if (type == NetworkManager::Device::Wifi) {
                     NetworkManager::Settings::ConnectionSettings::Ptr settings;
-                    settings = active.data()->connection()->settings();
+                    settings = active->connection()->settings();
                     NetworkManager::Settings::WirelessSetting::Ptr wirelessSetting = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
                     setWirelessIcon(device, wirelessSetting->ssid());
                     connectionFound = true;

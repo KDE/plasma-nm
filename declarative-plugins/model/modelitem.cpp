@@ -200,11 +200,11 @@ void ModelItem::setActiveConnection(const NetworkManager::ActiveConnection::Ptr 
     m_active = active;
 
     if (m_active) {
-        if (m_active.data()->state() == NetworkManager::ActiveConnection::Activating) {
+        if (m_active->state() == NetworkManager::ActiveConnection::Activating) {
             m_connecting = true;
             m_connected = false;
             NMItemDebug() << name() << ": activating";
-        } else if (m_active.data()->state() == NetworkManager::ActiveConnection::Activated) {
+        } else if (m_active->state() == NetworkManager::ActiveConnection::Activated) {
             NMItemDebug() << name() << ": activated";
             m_connected = true;
             m_connecting = false;

@@ -177,7 +177,7 @@ void Model::addActiveConnection(const NetworkManager::ActiveConnection::Ptr & ac
     }
 
     foreach (ModelItem * item, m_connections) {
-        if (active.data()->connection()->uuid() == item->uuid()) {
+        if (active->connection()->uuid() == item->uuid()) {
             item->setActiveConnection(active);
             int row = m_connections.indexOf(item);
             if (row >= 0) {

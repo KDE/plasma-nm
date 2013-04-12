@@ -58,7 +58,7 @@ void ModelVpnItem::setActiveConnection(const NetworkManager::ActiveConnection::P
 {
     ModelItem::setActiveConnection(active);
 
-    if (m_active.data()->vpn()) {
+    if (m_active->vpn()) {
         m_vpn =  NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(m_active->path()));
 
         connect(m_vpn.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State)),

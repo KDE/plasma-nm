@@ -151,7 +151,7 @@ void ModelWirelessItem::setWirelessNetwork(const NetworkManager::WirelessNetwork
     m_network = network;
 
     if (m_network) {
-        m_specificPath = m_network.data()->referenceAccessPoint().data()->uni();
+        m_specificPath = m_network->referenceAccessPoint()->uni();
         m_ssid = network->ssid();
         m_previousSignal = m_signal;
         m_signal = m_network->signalStrength();

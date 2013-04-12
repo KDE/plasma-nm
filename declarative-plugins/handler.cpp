@@ -60,9 +60,9 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     NetworkManager::AccessPoint::Ptr ap;
 
     foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
-        if (dev.data()->type() == NetworkManager::Device::Wifi) {
+        if (dev->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDev = dev.objectCast<NetworkManager::WirelessDevice>();
-            ap = wifiDev.data()->findAccessPoint(specificObject);
+            ap = wifiDev->findAccessPoint(specificObject);
             if (ap) {
                 break;
             }
@@ -74,12 +74,12 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     }
 
     NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings(NetworkManager::Settings::ConnectionSettings::Wireless);
-    settings->setId(ap.data()->ssid());
+    settings->setId(ap->ssid());
     settings->setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
 
     NetworkManager::Settings::WirelessSetting::Ptr wifiSetting;
     wifiSetting = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
-    wifiSetting->setSsid(ap.data()->ssid().toUtf8());
+    wifiSetting->setSsid(ap->ssid().toUtf8());
 
     NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
 }
@@ -94,13 +94,13 @@ void Handler::deactivateConnection(const QString& connection)
     }
 
     foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-        if (active.data()->uuid() == con->uuid()) {
-            if (active.data()->vpn()) {
-                NetworkManager::deactivateConnection(active.data()->path());
+        if (active->uuid() == con->uuid()) {
+            if (active->vpn()) {
+                NetworkManager::deactivateConnection(active->path());
             } else {
-                NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active.data()->devices().first());
+                NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
                 if (device) {
-                    device.data()->disconnectInterface();
+                    device->disconnectInterface();
                 }
             }
         }

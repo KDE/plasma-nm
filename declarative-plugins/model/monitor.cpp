@@ -61,8 +61,8 @@ void Monitor::init()
             SLOT(connectionRemoved(QString)));
 
     foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-        NMMonitorDebug() << "Available active connection (" << active.data()->connection()->name() << ")";
-        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active.data()->connection()->name() << ")";
+        NMMonitorDebug() << "Available active connection (" << active->connection()->name() << ")";
+        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active->connection()->name() << ")";
         Q_EMIT addActiveConnection(active);
     }
 }
@@ -126,7 +126,7 @@ void Monitor::activeConnectionsChanged()
 {
     NMMonitorDebug() << "Active connections have been changed";
     foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active.data()->connection()->name() << ")";
+        NMMonitorSignalDebug() << "Emit signal addActiveConnection(" << active->connection()->name() << ")";
         Q_EMIT addActiveConnection(active);
     }
 }

@@ -73,8 +73,8 @@ void GlobalStatus::statusChanged(NetworkManager::Status status)
 
         QString name;
         foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-            if (active.data()->default4() || active.data()->default6()) {
-                name = active.data()->connection()->name();
+            if (active->default4() || active->default6()) {
+                name = active->connection()->name();
                 break;
             }
         }

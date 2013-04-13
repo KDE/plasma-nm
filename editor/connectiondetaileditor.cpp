@@ -126,6 +126,7 @@ ConnectionDetailEditor::~ConnectionDetailEditor()
 void ConnectionDetailEditor::initEditor()
 {
     qDBusRegisterMetaType<QStringMap>();
+    qDBusRegisterMetaType<UIntList>();
 
     if (!m_new) {
         NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(m_connection->uuid());
@@ -297,6 +298,7 @@ void ConnectionDetailEditor::saveSetting()
             settings.insert(type, widget->setting());
         }
 
+        // add 802.1x security if needed
         QVariantMap security8021x;
         if (type == NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::WirelessSecurity)) {
             WifiSecurity * wifiSecurity = static_cast<WifiSecurity*>(widget);
@@ -332,19 +334,20 @@ void ConnectionDetailEditor::saveSetting()
         }
     }
 
+    // set UUID
     if (m_new) {
         connectionSettings->setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
     } else {
         connectionSettings->setUuid(m_connection->uuid());
     }
 
-    connectionSettings->printSetting();
+    //connectionSettings->printSetting();  // debug
 
-    if (m_new) {
+    if (m_new) { // create new connection
         connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                 SLOT(connectionAddComplete(QString,bool,QString)));
         NetworkManager::Settings::addConnection(connectionSettings->toMap());
-    } else {
+    } else {  // update existing connection
         NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(connectionSettings->uuid());
 
         if (connection) {

@@ -4,8 +4,7 @@ Type=Service
 X-KDE-Library=kcm_network
 X-KDE-ParentApp=kcontrol
 X-KDE-ServiceTypes=KCModule
-X-KDE-System-Settings-Parent-Category=hardware
-X-KDE-System-Settings-Parent-Category-V2=hardware
+X-KDE-System-Settings-Parent-Category=network-and-connectivity
 
 Name=Network
-Comment=Manage network devices
+Comment=Configure network interfaces

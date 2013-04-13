@@ -185,7 +185,7 @@ void ConnectionEditor::insertConnection(const NetworkManager::Settings::Connecti
     connectionItem->setData(0, Qt::UserRole, "connection");
     connectionItem->setData(0, ConnectionItem::ConnectionIdRole, settings->uuid());
     connectionItem->setData(0, ConnectionItem::ConnectionPathRole, connection->path());
-    connectionItem->setData(1, ConnectionItem::ConnectionLastUsedRole, lastUsed);
+    connectionItem->setData(1, ConnectionItem::ConnectionLastUsedRole, settings->timestamp());
 
     m_editor->connectionsWidget->resizeColumnToContents(0);
 }
@@ -220,7 +220,7 @@ QString ConnectionEditor::formatDateRelative(const QDateTime & lastUsed) const
         }
     } else {
         lastUsedText =  i18nc("Label for last used time for a "
-                "network connection that has never been used", "Never");
+                              "network connection that has never been used", "Never");
     }
     return lastUsedText;
 }

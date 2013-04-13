@@ -29,6 +29,8 @@ public:
     enum {ConnectionIdRole = (Qt::UserRole + 1), ConnectionPathRole, ConnectionLastUsedRole};
 
     ConnectionItem(QTreeWidgetItem * parent, const QStringList & strings, bool active = false);
+
+    virtual bool operator<(const QTreeWidgetItem &other) const;
 };
 
 #endif // CONNECTIONITEM_H

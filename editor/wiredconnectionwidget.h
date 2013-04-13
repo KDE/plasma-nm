@@ -42,6 +42,9 @@ public:
 
     QVariantMap setting() const;
 
+private slots:
+    void generateRandomClonedMac();
+
 private:
     Ui::WiredConnectionWidget * m_widget;
 };

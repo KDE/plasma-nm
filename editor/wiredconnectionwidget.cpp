@@ -35,6 +35,8 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Settings::Set
     m_widget->duplexLabel->setHidden(true);
     m_widget->duplex->setHidden(true);
 
+    connect(m_widget->btnRandomMacAddr, SIGNAL(clicked()), SLOT(generateRandomClonedMac()));
+
     if (setting)
         loadConfig(setting);
 }
@@ -105,4 +107,15 @@ QVariantMap WiredConnectionWidget::setting() const
     }
 
     return wiredSetting.toMap();
+}
+
+void WiredConnectionWidget::generateRandomClonedMac()
+{
+    QByteArray mac;
+    mac.resize(6);
+    for (int i = 0; i < 6; i++) {
+        int random = qrand() % 255;
+        mac[i] = random;
+    }
+    m_widget->clonedMacAddress->setText(UiUtils::macAddressAsString(mac));
 }

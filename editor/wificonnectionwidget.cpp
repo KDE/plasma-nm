@@ -30,6 +30,8 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Settings::Setti
 {
     m_ui->setupUi(this);
 
+    connect(m_ui->btnRandomMacAddr, SIGNAL(clicked()), SLOT(generateRandomClonedMac()));
+
     if (setting)
         loadConfig(setting);
 }
@@ -96,4 +98,15 @@ QVariantMap WifiConnectionWidget::setting() const
     }
 
     return wifiSetting.toMap();
+}
+
+void WifiConnectionWidget::generateRandomClonedMac()
+{
+    QByteArray mac;
+    mac.resize(6);
+    for (int i = 0; i < 6; i++) {
+        int random = qrand() % 255;
+        mac[i] = random;
+    }
+    m_ui->clonedMacAddress->setText(UiUtils::macAddressAsString(mac));
 }

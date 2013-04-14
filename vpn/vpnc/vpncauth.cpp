@@ -91,7 +91,7 @@ void VpncAuthDialog::readSecrets()
         d->ui.leGroupPassword->setFocus(Qt::OtherFocusReason);
 }
 
-QVariantMap VpncAuthDialog::setting() const
+QVariantMap VpncAuthDialog::setting(bool agentOwned) const
 {
     Q_D(const VpncAuthDialog);
 

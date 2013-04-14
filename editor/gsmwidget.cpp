@@ -73,7 +73,7 @@ void GsmWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting
     m_ui->pin->setText(gsmSetting->pin());
 }
 
-QVariantMap GsmWidget::setting() const
+QVariantMap GsmWidget::setting(bool agentOwned) const
 {
     NetworkManager::Settings::GsmSetting gsmSetting;
     if (!m_ui->number->text().isEmpty())
@@ -83,6 +83,10 @@ QVariantMap GsmWidget::setting() const
     if (!m_ui->password->text().isEmpty())
         gsmSetting.setPassword(m_ui->password->text());
 
+    if (agentOwned) {
+        gsmSetting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+    }
+
     if (!m_ui->apn->text().isEmpty())
         gsmSetting.setApn(m_ui->apn->text());
     if (!m_ui->networkId->text().isEmpty())
@@ -91,6 +95,10 @@ QVariantMap GsmWidget::setting() const
     gsmSetting.setHomeOnly(!m_ui->roaming->isChecked());
     if (!m_ui->pin->text().isEmpty())
         gsmSetting.setPin(m_ui->pin->text());
+
+    if (agentOwned) {
+        gsmSetting.setPinFlags(NetworkManager::Settings::Setting::AgentOwned);
+    }
 
     return gsmSetting.toMap();
 }

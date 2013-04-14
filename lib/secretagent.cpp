@@ -23,6 +23,7 @@
 #include "passworddialog.h"
 #include "vpnuiplugin.h"
 
+#include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/settings/connection.h>
 #include <QtNetworkManager/settings/802-11-wireless.h>
 #include <QtNetworkManager/generic-types.h>
@@ -32,6 +33,7 @@
 #include <KPluginFactory>
 #include <KWindowSystem>
 #include <KDialog>
+#include <kwallet.h>
 
 #include <KDebug>
 
@@ -53,10 +55,32 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     qDebug() << "Hints:" << hints;
     qDebug() << "Flags:" << flags;
 
-    NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings();
-    settings->fromMap(connection);
+    NetworkManager::Settings::ConnectionSettings::Ptr connectionSettings = NetworkManager::Settings::ConnectionSettings::Ptr(new NetworkManager::Settings::ConnectionSettings());
+    connectionSettings->fromMap(connection);
 
-    NetworkManager::Settings::Setting::Ptr setting = settings->setting(NetworkManager::Settings::Setting::typeFromString(setting_name));
+    NetworkManager::Settings::Setting::Ptr setting = connectionSettings->setting(NetworkManager::Settings::Setting::typeFromString(setting_name));
+
+    if (!KWallet::Wallet::isEnabled()) {
+        kWarning() << "KWallet is disabled, please enable it. Secrets not loaded.";
+    } else {
+        KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
+
+        if (wallet) {
+            if (wallet->isOpen() && wallet->hasFolder("plasma-nm") && wallet->setFolder("plasma-nm")) {
+                QString key = connectionSettings->uuid() + ";" + setting->name();
+                QMap<QString,QString> map;
+                wallet->readMap(key, map);
+                QMap<QString, QVariant> secretsMap;
+                foreach (const QString & key, map.keys()) {
+                    secretsMap.insert(key, map.value(key));
+                }
+                setting->secretsFromMap(secretsMap);
+                wallet->deleteLater();
+            }
+        } else {
+            kWarning() << "Error opening kwallet. Secrets not loaded.";
+        }
+    }
 
     NetworkManager::SecretAgent::GetSecretsFlags secretsFlags(static_cast<int>(flags));
     const bool requestNew = secretsFlags.testFlag(RequestNew);
@@ -70,7 +94,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
             QString error;
             VpnUiPlugin * vpnPlugin = 0;
             NetworkManager::Settings::VpnSetting::Ptr vpnSetting =
-                    settings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
+                    connectionSettings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
             if (!vpnSetting) {
                 qDebug() << "Missing VPN setting!";
             } else {
@@ -101,7 +125,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
                 }
             }
         } else {
-            NetworkManager::Settings::WirelessSetting::Ptr wifi = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
+            NetworkManager::Settings::WirelessSetting::Ptr wifi = connectionSettings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
             QString ssid;
             if (wifi)
                 ssid = wifi->ssid();
@@ -121,17 +145,69 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     } else if (isVpn && userRequested) { // just return what we have
         NMVariantMapMap result;
         NetworkManager::Settings::VpnSetting::Ptr vpnSetting =
-                settings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
+                connectionSettings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
         result.insert("vpn", vpnSetting->secretsToMap());
         return result;
     }
 
-    return NMVariantMapMap();
+    return connectionSettings->toMap();
 }
 
 void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
+    Q_UNUSED(connection_path)
 
+    NetworkManager::Settings::ConnectionSettings::Ptr connectionSettings = NetworkManager::Settings::ConnectionSettings::Ptr(new NetworkManager::Settings::ConnectionSettings());
+    connectionSettings->fromMap(connection);
+
+    if (!KWallet::Wallet::isEnabled()) {
+        kWarning() << "KWallet is disabled, please enable it or set your connection as system connection. Secrets not saved.";
+        return;
+    }
+
+    KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous );
+
+    if (!wallet) {
+        kWarning() << "Error opening kwallet. Secrets not saved.";
+        return;
+    }
+
+    if (wallet->isOpen()) {
+        bool readyForWalletWrite = false;
+        if (!wallet->hasFolder("plasma-nm"))
+            wallet->createFolder("plasma-nm");
+        if (wallet->setFolder("plasma-nm")) {
+            readyForWalletWrite = true;
+        }
+        if (readyForWalletWrite) {
+            bool saved = false;
+            foreach (const QString & entry, wallet->entryList()) {
+                if (entry.startsWith(connectionSettings->uuid() + ';')) {
+                    kDebug() << "Removing entry " << entry << ")";
+                    wallet->removeEntry(entry);
+                }
+            }
+
+            foreach (const NetworkManager::Settings::Setting::Ptr & setting, connectionSettings->settings()) {
+                QMap<QString, QString> map;
+                foreach (const QString & key, setting->secretsToMap().keys()) {
+                    map.insert(key, setting->secretsToMap().value(key).toString());
+                }
+                if (!map.isEmpty()) {
+                    saved = true;
+                    QString entryName = connectionSettings->uuid() + ";" + setting->name();
+                    wallet->writeMap(entryName, map);
+                    kDebug() << "Writing entry " << entryName;
+                }
+            }
+
+            if (!saved) {
+                kWarning() << "No secret has been written to the kwallet.";
+            }
+        }
+    }
+
+    wallet->deleteLater();
 }
 
 void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)

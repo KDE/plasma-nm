@@ -57,7 +57,7 @@ void PPPWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting
     m_ui->tcpComp->setChecked(!pppSetting->noVjComp());
 }
 
-QVariantMap PPPWidget::setting() const
+QVariantMap PPPWidget::setting(bool agentOwned) const
 {
     NetworkManager::Settings::PppSetting pppSetting;
 

@@ -36,7 +36,7 @@ public:
     virtual void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
     virtual void readSecrets();
 
-    virtual QVariantMap setting() const = 0;
+    virtual QVariantMap setting(bool agentOwned = false) const = 0;
     QString type() const;
 
 private:

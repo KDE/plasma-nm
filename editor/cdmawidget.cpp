@@ -50,7 +50,7 @@ void CdmaWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &settin
     m_ui->password->setText(cdmaSetting->password());
 }
 
-QVariantMap CdmaWidget::setting() const
+QVariantMap CdmaWidget::setting(bool agentOwned) const
 {
     NetworkManager::Settings::CdmaSetting cdmaSetting;
     if (!m_ui->number->text().isEmpty())
@@ -59,6 +59,10 @@ QVariantMap CdmaWidget::setting() const
         cdmaSetting.setUsername(m_ui->username->text());
     if (!m_ui->password->text().isEmpty())
         cdmaSetting.setPassword(m_ui->password->text());
+
+    if (agentOwned) {
+        cdmaSetting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+    }
 
     return cdmaSetting.toMap();
 }

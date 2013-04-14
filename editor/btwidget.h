@@ -41,7 +41,7 @@ public:
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
-    QVariantMap setting() const;
+    QVariantMap setting(bool agentOwned = false) const;
 
 private:
     Ui::BtWidget * m_ui;

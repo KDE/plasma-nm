@@ -72,7 +72,7 @@ void WiredConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::
     }
 }
 
-QVariantMap WiredConnectionWidget::setting() const
+QVariantMap WiredConnectionWidget::setting(bool agentOwned) const
 {
     NetworkManager::Settings::WiredSetting wiredSetting;
 

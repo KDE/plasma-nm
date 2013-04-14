@@ -21,6 +21,8 @@
 #include "wifisecurity.h"
 #include "ui_wifisecurity.h"
 
+#include <QDebug>
+
 WifiSecurity::WifiSecurity(const NetworkManager::Settings::Setting::Ptr &setting, const NetworkManager::Settings::Security8021xSetting::Ptr &setting8021x,
                            QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
@@ -113,7 +115,7 @@ void WifiSecurity::loadConfig(const NetworkManager::Settings::Setting::Ptr &sett
     }
 }
 
-QVariantMap WifiSecurity::setting() const
+QVariantMap WifiSecurity::setting(bool agentOwned) const
 {
      // TODO add wep-key-type
 
@@ -136,6 +138,9 @@ QVariantMap WifiSecurity::setting() const
         else if (keyIndex == 3)
             wifiSecurity.setWepKey3(wepKey);
 
+        if (agentOwned) {
+            wifiSecurity.setWepKeyFlags(NetworkManager::Settings::Setting::AgentOwned);
+        }
         if (m_ui->wepAuth->currentIndex() == 0)
             wifiSecurity.setAuthAlg(NetworkManager::Settings::WirelessSecuritySetting::Open);
         else
@@ -145,11 +150,17 @@ QVariantMap WifiSecurity::setting() const
         wifiSecurity.setAuthAlg(NetworkManager::Settings::WirelessSecuritySetting::Leap);
         wifiSecurity.setLeapUsername(m_ui->leapUsername->text());
         wifiSecurity.setLeapPassword(m_ui->leapPassword->text());
+        if (agentOwned) {
+            wifiSecurity.setLeapPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+        }
     } else if (securityIndex == 3) {  // Dynamic WEP
         wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Ieee8021x);
     } else if (securityIndex == 4) { // WPA
         wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::WpaPsk);
         wifiSecurity.setPsk(m_ui->psk->text());
+        if (agentOwned) {
+            wifiSecurity.setPskFlags(NetworkManager::Settings::Setting::AgentOwned);
+        }
     } else if (securityIndex == 5) {  // WPA2 Enterprise
         wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::WpaEap);
     }
@@ -157,12 +168,12 @@ QVariantMap WifiSecurity::setting() const
     return wifiSecurity.toMap();
 }
 
-QVariantMap WifiSecurity::setting8021x() const
+QVariantMap WifiSecurity::setting8021x(bool agentOwned) const
 {
     if (m_ui->securityCombo->currentIndex() == 3) // Dynamic WEP
-        return m_8021xWidget->setting();
+        return m_8021xWidget->setting(agentOwned);
     else if (m_ui->securityCombo->currentIndex() == 5) // WPA2 Enterprise
-        return m_WPA2Widget->setting();
+        return m_WPA2Widget->setting(agentOwned);
 
     return QVariantMap();
 }

@@ -20,6 +20,7 @@
 
 #include "connectionwidget.h"
 #include "ui_connectionwidget.h"
+#include <KUser>
 
 ConnectionWidget::ConnectionWidget(const NetworkManager::Settings::ConnectionSettings::Ptr &settings, QWidget* parent, Qt::WindowFlags f):
     QWidget(parent, f),
@@ -43,7 +44,6 @@ void ConnectionWidget::loadConfig(const NetworkManager::Settings::ConnectionSett
     if (settings->permissions().isEmpty()) {
         m_widget->allUsers->setChecked(true);
     } else {
-        // TODO??
         m_widget->allUsers->setChecked(false);
     }
 
@@ -62,7 +62,7 @@ NMVariantMapMap ConnectionWidget::setting() const
     if (m_widget->allUsers->isChecked()) {
         settings.setPermissions(QHash<QString, QString>());
     } else {
-        // TODO: ??
+        settings.addToPermissions(KUser().loginName(), QString());
     }
 
     //TODO: zones

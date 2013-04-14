@@ -53,7 +53,7 @@ void BtWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
     m_ui->type->setCurrentIndex(m_ui->type->findData(m_btSetting->profileType()));
 }
 
-QVariantMap BtWidget::setting() const
+QVariantMap BtWidget::setting(bool agentOwned) const
 {
     if (!m_ui->bdaddr->text().isEmpty())
         m_btSetting->setBluetoothAddress(UiUtils::macAddressFromString(m_ui->bdaddr->text()));

@@ -144,7 +144,7 @@ void IPv4Widget::loadConfig(const NetworkManager::Settings::Setting::Ptr &settin
     m_ui->ipv4RequiredCB->setChecked(!m_ipv4Setting->mayFail());
 }
 
-QVariantMap IPv4Widget::setting() const
+QVariantMap IPv4Widget::setting(bool agentOwned) const
 {
     // method
     m_ipv4Setting->setMethod(static_cast<NetworkManager::Settings::Ipv4Setting::ConfigMethod>(m_ui->method->currentIndex()));

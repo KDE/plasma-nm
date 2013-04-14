@@ -43,8 +43,8 @@ public:
                  QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~WifiSecurity();
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
-    QVariantMap setting() const;
-    QVariantMap setting8021x() const;
+    QVariantMap setting(bool agentOwned = false) const;
+    QVariantMap setting8021x(bool agentOwned = false) const;
 
     bool enabled() const;
     bool enabled8021x() const;

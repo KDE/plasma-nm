@@ -69,7 +69,7 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::P
     }
 }
 
-QVariantMap WifiConnectionWidget::setting() const
+QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
 {
     NetworkManager::Settings::WirelessSetting wifiSetting;
 

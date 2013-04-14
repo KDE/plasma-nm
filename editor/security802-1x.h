@@ -36,7 +36,7 @@ class Security8021x: public QWidget
 public:
     Security8021x(const NetworkManager::Settings::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent = 0);
     virtual ~Security8021x();
-    QVariantMap setting() const;
+    QVariantMap setting(bool agentOwned = false) const;
 
 private slots:
     void setShowMD5Password(bool on);

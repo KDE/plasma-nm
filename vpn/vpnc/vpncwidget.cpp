@@ -99,7 +99,7 @@ void VpncWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &settin
     }
 }
 
-QVariantMap VpncWidget::setting() const
+QVariantMap VpncWidget::setting(bool agentOwned) const
 {
     QStringMap data;
     QStringMap secrets;

@@ -201,10 +201,6 @@ void ConnectionDetailEditor::initTabs()
         m_detailEditor->tabWidget->addTab(wiredWidget, i18n("Wired"));
         WiredSecurity * wiredSecurity = new WiredSecurity(m_connection->setting(NetworkManager::Settings::Setting::Security8021x).staticCast<NetworkManager::Settings::Security8021xSetting>(), this);
         m_detailEditor->tabWidget->addTab(wiredSecurity, i18n("802.1x Security"));
-        IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
-        m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
-        IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv6), this);
-        m_detailEditor->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Wireless) {
         WifiConnectionWidget * wifiWidget = new WifiConnectionWidget(m_connection->setting(NetworkManager::Settings::Setting::Wireless), this);
         m_detailEditor->tabWidget->addTab(wifiWidget, i18n("Wireless"));
@@ -212,33 +208,17 @@ void ConnectionDetailEditor::initTabs()
                                                        m_connection->setting(NetworkManager::Settings::Setting::Security8021x).staticCast<NetworkManager::Settings::Security8021xSetting>(),
                                                        this);
         m_detailEditor->tabWidget->addTab(wifiSecurity, i18n("Wi-Fi Security"));
-        IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
-        m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
-        IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv6), this);
-        m_detailEditor->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Pppoe) { // DSL
         PppoeWidget * pppoeWidget = new PppoeWidget(m_connection->setting(NetworkManager::Settings::Setting::Pppoe), this);
         m_detailEditor->tabWidget->addTab(pppoeWidget, i18n("DSL"));
         WiredConnectionWidget * wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Settings::Setting::Wired), this);
         m_detailEditor->tabWidget->addTab(wiredWidget, i18n("Wired"));
-        PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
-        m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
-        IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
-        m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Gsm) { // GSM
         GsmWidget * gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Settings::Setting::Gsm), this);
         m_detailEditor->tabWidget->addTab(gsmWidget, i18n("Mobile Broadband (%1)", m_connection->typeAsString(m_connection->connectionType())));
-        PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
-        m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
-        IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
-        m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Cdma) { // CDMA
         CdmaWidget * cdmaWidget = new CdmaWidget(m_connection->setting(NetworkManager::Settings::Setting::Cdma), this);
         m_detailEditor->tabWidget->addTab(cdmaWidget, i18n("Mobile Broadband (%1)", m_connection->typeAsString(m_connection->connectionType())));
-        PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
-        m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
-        IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
-        m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Bluetooth) {  // Bluetooth
         BtWidget * btWidget = new BtWidget(m_connection->setting(NetworkManager::Settings::Setting::Bluetooth), this);
         m_detailEditor->tabWidget->addTab(btWidget, i18n("Bluetooth"));
@@ -246,11 +226,8 @@ void ConnectionDetailEditor::initTabs()
         if (btSetting->profileType() == NetworkManager::Settings::BluetoothSetting::Dun) {
             GsmWidget * gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Settings::Setting::Gsm), this);
             m_detailEditor->tabWidget->addTab(gsmWidget, i18n("GSM"));
-            PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
-            m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
+
         }
-        IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
-        m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Vpn) { // VPN
         QString error;
         VpnUiPlugin * vpnPlugin = 0;
@@ -275,12 +252,23 @@ void ConnectionDetailEditor::initTabs()
                 const QString shortName = serviceType.section('.', -1);
                 SettingWidget * vpnWidget = vpnPlugin->widget(vpnSetting, this);
                 m_detailEditor->tabWidget->addTab(vpnWidget, i18n("VPN (%1)", shortName));
-                IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
-                m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
             } else {
                 qDebug() << error << ", serviceType == " << serviceType;
             }
         }
+    }
+
+    if (type == Settings::ConnectionSettings::Pppoe || type == Settings::ConnectionSettings::Cdma || type == Settings::ConnectionSettings::Gsm) {
+        PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
+        m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
+    }
+
+    IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
+    m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
+
+    if (type == Settings::ConnectionSettings::Wired || type == Settings::ConnectionSettings::Wireless) {
+        IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv6), this);
+        m_detailEditor->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
     }
 }
 
@@ -290,12 +278,18 @@ void ConnectionDetailEditor::saveSetting()
 
     NMVariantMapMap settings = connectionWidget->setting();
 
+    bool agentOwned = false;
+    if (!settings.value("connection").value("permissions").toStringList().isEmpty()) {
+        agentOwned = true;
+    }
+
+    qDebug() << "agent owned - " << agentOwned;
     for (int i = 1; i < m_detailEditor->tabWidget->count(); ++i) {
         SettingWidget * widget = static_cast<SettingWidget*>(m_detailEditor->tabWidget->widget(i));
         const QString type = widget->type();
         if (type != NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x) &&
             type != NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::WirelessSecurity)) {
-            settings.insert(type, widget->setting());
+            settings.insert(type, widget->setting(agentOwned));
         }
 
         // add 802.1x security if needed
@@ -303,16 +297,16 @@ void ConnectionDetailEditor::saveSetting()
         if (type == NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::WirelessSecurity)) {
             WifiSecurity * wifiSecurity = static_cast<WifiSecurity*>(widget);
             if (wifiSecurity->enabled()) {
-                settings.insert(type, wifiSecurity->setting());
+                settings.insert(type, wifiSecurity->setting(agentOwned));
             }
             if (wifiSecurity->enabled8021x()) {
-                security8021x = static_cast<WifiSecurity *>(widget)->setting8021x();
+                security8021x = static_cast<WifiSecurity *>(widget)->setting8021x(agentOwned);
                 settings.insert(NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x), security8021x);
             }
         } else if (type == NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x)) {
             WiredSecurity * wiredSecurity = static_cast<WiredSecurity*>(widget);
             if (wiredSecurity->enabled8021x()) {
-                security8021x = static_cast<WiredSecurity *>(widget)->setting();
+                security8021x = static_cast<WiredSecurity *>(widget)->setting(agentOwned);
                 settings.insert(NetworkManager::Settings::Setting::typeAsString(NetworkManager::Settings::Setting::Security8021x), security8021x);
             }
         }

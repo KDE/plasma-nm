@@ -40,7 +40,7 @@ public:
     WiredSecurity(const NetworkManager::Settings::Security8021xSetting::Ptr &setting8021x = NetworkManager::Settings::Security8021xSetting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~WiredSecurity();
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
-    QVariantMap setting() const;
+    QVariantMap setting(bool agentOwned = false) const;
 
     bool enabled8021x() const;
 

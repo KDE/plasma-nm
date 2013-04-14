@@ -136,7 +136,7 @@ void IPv6Widget::loadConfig(const NetworkManager::Settings::Setting::Ptr &settin
     }
 }
 
-QVariantMap IPv6Widget::setting() const
+QVariantMap IPv6Widget::setting(bool agentOwned) const
 {
     // method
     m_ipv6Setting->setMethod(static_cast<NetworkManager::Settings::Ipv6Setting::ConfigMethod>(m_ui->method->currentIndex()));

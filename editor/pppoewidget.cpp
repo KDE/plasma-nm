@@ -49,7 +49,7 @@ void PppoeWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setti
     m_ui->password->setText(pppoeSetting->password());
 }
 
-QVariantMap PppoeWidget::setting() const
+QVariantMap PppoeWidget::setting(bool agentOwned) const
 {
     NetworkManager::Settings::PppoeSetting pppoeSetting;
     if (!m_ui->service->text().isEmpty())
@@ -58,6 +58,10 @@ QVariantMap PppoeWidget::setting() const
         pppoeSetting.setUsername(m_ui->username->text());
     if (!m_ui->password->text().isEmpty())
         pppoeSetting.setPassword(m_ui->password->text());
+
+    if (agentOwned) {
+        pppoeSetting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+    }
 
     return pppoeSetting.toMap();
 }

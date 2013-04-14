@@ -21,6 +21,8 @@
 #include "security802-1x.h"
 #include "ui_802-1x.h"
 
+#include <QDebug>
+
 Security8021x::Security8021x(const NetworkManager::Settings::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent) :
     QWidget(parent),
     m_setting(setting),
@@ -133,118 +135,120 @@ void Security8021x::loadConfig()
 
 QVariantMap Security8021x::setting(bool agentOwned) const
 {
+    NetworkManager::Settings::Security8021xSetting setting;
+
     NetworkManager::Settings::Security8021xSetting::EapMethod method =
             static_cast<NetworkManager::Settings::Security8021xSetting::EapMethod>(m_ui->auth->itemData(m_ui->auth->currentIndex()).toInt());
 
-    m_setting->setEapMethods(QList<NetworkManager::Settings::Security8021xSetting::EapMethod>() << method);
+    setting.setEapMethods(QList<NetworkManager::Settings::Security8021xSetting::EapMethod>() << method);
 
     if (method == NetworkManager::Settings::Security8021xSetting::EapMethodMd5) {
         if (!m_ui->md5UserName->text().isEmpty())
-            m_setting->setIdentity(m_ui->md5UserName->text());
+            setting.setIdentity(m_ui->md5UserName->text());
         if (m_ui->cbAskMd5Password->isChecked())
-            m_setting->setPasswordFlags(NetworkManager::Settings::Setting::NotSaved);
+            setting.setPasswordFlags(NetworkManager::Settings::Setting::NotSaved);
         else if (!m_ui->md5Password->text().isEmpty())
-            m_setting->setPassword(m_ui->md5Password->text());
+            setting.setPassword(m_ui->md5Password->text());
 
         if (agentOwned && !m_ui->cbAskMd5Password->isChecked()) {
-            m_setting->setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+            setting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
         }
     } else if (method == NetworkManager::Settings::Security8021xSetting::EapMethodTls) {
         if (!m_ui->tlsIdentity->text().isEmpty())
-            m_setting->setIdentity(m_ui->tlsIdentity->text());
+            setting.setIdentity(m_ui->tlsIdentity->text());
         if (!m_ui->tlsUserCert->url().isEmpty())
-            m_setting->setClientCertificate(QFile::encodeName(m_ui->tlsUserCert->url().url()));
+            setting.setClientCertificate(QFile::encodeName(m_ui->tlsUserCert->url().url()));
         if (!m_ui->tlsCACert->url().isEmpty())
-            m_setting->setCaCertificate(QFile::encodeName(m_ui->tlsCACert->url().url()));
+            setting.setCaCertificate(QFile::encodeName(m_ui->tlsCACert->url().url()));
         if (!m_ui->tlsPrivateKey->url().isEmpty())
-            m_setting->setPrivateKey(QFile::encodeName(m_ui->tlsPrivateKey->url().url()));
+            setting.setPrivateKey(QFile::encodeName(m_ui->tlsPrivateKey->url().url()));
         if (!m_ui->tlsPrivateKeyPassword->text().isEmpty())
-            m_setting->setPrivateKeyPassword(m_ui->tlsPrivateKeyPassword->text());
+            setting.setPrivateKeyPassword(m_ui->tlsPrivateKeyPassword->text());
 
         if (agentOwned) {
-            m_setting->setPrivateKeyPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+            setting.setPrivateKeyPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
         }
     } else if (method == NetworkManager::Settings::Security8021xSetting::EapMethodLeap) {
         if (!m_ui->leapUsername->text().isEmpty())
-            m_setting->setIdentity(m_ui->leapUsername->text());
+            setting.setIdentity(m_ui->leapUsername->text());
         if (!m_ui->leapPassword->text().isEmpty())
-            m_setting->setPassword(m_ui->leapPassword->text());
+            setting.setPassword(m_ui->leapPassword->text());
 
         if (agentOwned) {
-            m_setting->setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+            setting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
         }
     } else if (method == NetworkManager::Settings::Security8021xSetting::EapMethodFast) {
         if (!m_ui->fastAnonIdentity->text().isEmpty())
-            m_setting->setAnonymousIdentity(m_ui->fastAnonIdentity->text());
+            setting.setAnonymousIdentity(m_ui->fastAnonIdentity->text());
         if (!m_ui->fastAllowPacProvisioning->isChecked()) {
-            m_setting->setPhase1FastProvisioning(NetworkManager::Settings::Security8021xSetting::FastProvisioningDisabled);
+            setting.setPhase1FastProvisioning(NetworkManager::Settings::Security8021xSetting::FastProvisioningDisabled);
         } else {
-            m_setting->setPhase1FastProvisioning(static_cast<NetworkManager::Settings::Security8021xSetting::FastProvisioning>(m_ui->pacMethod->currentIndex() + 1));
+            setting.setPhase1FastProvisioning(static_cast<NetworkManager::Settings::Security8021xSetting::FastProvisioning>(m_ui->pacMethod->currentIndex() + 1));
         }
         if (!m_ui->pacFile->text().isEmpty())
-            m_setting->setPacFile(QFile::encodeName(m_ui->pacFile->url().url()));
+            setting.setPacFile(QFile::encodeName(m_ui->pacFile->url().url()));
         if (m_ui->fastInnerAuth->currentIndex() == 0)
-            m_setting->setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodGtc);
+            setting.setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodGtc);
         else
-            m_setting->setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodMschapv2);
+            setting.setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodMschapv2);
         if (!m_ui->fastUsername->text().isEmpty())
-            m_setting->setIdentity(m_ui->fastUsername->text());
+            setting.setIdentity(m_ui->fastUsername->text());
         if (m_ui->cbAskFastPassword->isChecked())
-            m_setting->setPasswordFlags(NetworkManager::Settings::Setting::NotSaved);
+            setting.setPasswordFlags(NetworkManager::Settings::Setting::NotSaved);
         else if (!m_ui->fastPassword->text().isEmpty())
-            m_setting->setPassword(m_ui->fastPassword->text());
+            setting.setPassword(m_ui->fastPassword->text());
 
         if (agentOwned && !m_ui->cbAskFastPassword->isChecked()) {
-            m_setting->setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+            setting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
         }
     } else if (method == NetworkManager::Settings::Security8021xSetting::EapMethodTtls) {
         if (!m_ui->ttlsAnonIdentity->text().isEmpty())
-            m_setting->setAnonymousIdentity(m_ui->ttlsAnonIdentity->text());
+            setting.setAnonymousIdentity(m_ui->ttlsAnonIdentity->text());
         if (!m_ui->ttlsCACert->text().isEmpty())
-            m_setting->setCaCertificate(QFile::encodeName(m_ui->ttlsCACert->url().url()));
+            setting.setCaCertificate(QFile::encodeName(m_ui->ttlsCACert->url().url()));
         const int innerAuth = m_ui->ttlsInnerAuth->currentIndex();
         if (innerAuth == 0)
-            m_setting->setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodPap);
+            setting.setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodPap);
         else if (innerAuth == 1)
-            m_setting->setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodMschap);
+            setting.setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodMschap);
         else if (innerAuth == 2)
-            m_setting->setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodMschapv2);
+            setting.setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodMschapv2);
         else if (innerAuth == 3)
-            m_setting->setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodChap);
+            setting.setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodChap);
         if (!m_ui->ttlsUsername->text().isEmpty())
-            m_setting->setIdentity(m_ui->ttlsUsername->text());
+            setting.setIdentity(m_ui->ttlsUsername->text());
         if (m_ui->cbAskTtlsPassword->isChecked())
-            m_setting->setPasswordFlags(NetworkManager::Settings::Setting::NotSaved);
+            setting.setPasswordFlags(NetworkManager::Settings::Setting::NotSaved);
         else if (!m_ui->ttlsPassword->text().isEmpty())
-            m_setting->setPassword(m_ui->ttlsPassword->text());
+            setting.setPassword(m_ui->ttlsPassword->text());
 
         if (agentOwned && !m_ui->cbAskTtlsPassword->isChecked()) {
-            m_setting->setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+            setting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
         }
     } else if (method == NetworkManager::Settings::Security8021xSetting::EapMethodPeap) {
         if (!m_ui->peapAnonIdentity->text().isEmpty())
-            m_setting->setAnonymousIdentity(m_ui->peapAnonIdentity->text());
+            setting.setAnonymousIdentity(m_ui->peapAnonIdentity->text());
         if (!m_ui->peapCACert->text().isEmpty())
-            m_setting->setCaCertificate(QFile::encodeName(m_ui->peapCACert->url().url()));
-        m_setting->setPhase1PeapVersion(static_cast<NetworkManager::Settings::Security8021xSetting::PeapVersion>(m_ui->peapVersion->currentIndex() - 1));
+            setting.setCaCertificate(QFile::encodeName(m_ui->peapCACert->url().url()));
+        setting.setPhase1PeapVersion(static_cast<NetworkManager::Settings::Security8021xSetting::PeapVersion>(m_ui->peapVersion->currentIndex() - 1));
         const int innerAuth = m_ui->peapInnerAuth->currentIndex();
         if (innerAuth == 0)
-            m_setting->setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodMschapv2);
+            setting.setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodMschapv2);
         else if (innerAuth == 1)
-            m_setting->setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodMd5);
+            setting.setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodMd5);
         else if (innerAuth == 2)
-            m_setting->setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodGtc);
+            setting.setPhase2AuthMethod(NetworkManager::Settings::Security8021xSetting::AuthMethodGtc);
         if (m_ui->cbAskPeapPassword->isChecked())
-            m_setting->setPasswordFlags(NetworkManager::Settings::Setting::NotSaved);
+            setting.setPasswordFlags(NetworkManager::Settings::Setting::NotSaved);
         else if (!m_ui->peapPassword->text().isEmpty())
-            m_setting->setPassword(m_ui->peapPassword->text());
+            setting.setPassword(m_ui->peapPassword->text());
 
         if (agentOwned && !m_ui->cbAskPeapPassword->isChecked()) {
-            m_setting->setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+            setting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
         }
     }
 
-    return m_setting->toMap();
+    return setting.toMap();
 }
 
 void Security8021x::setShowMD5Password(bool on)

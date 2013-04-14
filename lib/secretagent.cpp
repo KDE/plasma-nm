@@ -190,6 +190,7 @@ void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObje
 
             foreach (const NetworkManager::Settings::Setting::Ptr & setting, connectionSettings->settings()) {
                 QMap<QString, QString> map;
+                qDebug() << setting->secretsToMap().keys();
                 foreach (const QString & key, setting->secretsToMap().keys()) {
                     map.insert(key, setting->secretsToMap().value(key).toString());
                 }
@@ -212,7 +213,29 @@ void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObje
 
 void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
+    if (!KWallet::Wallet::isEnabled()) {
+        kWarning() << "KWallet is disabled, please enable it. Secrets not deleted.";
+        return;
+    }
 
+    KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
+
+    if (!wallet) {
+        kWarning() << "Error opening kwallet. Secrets not deleted.";
+        return;
+    }
+
+    if( wallet->isOpen() && wallet->hasFolder("plasma-nm") && wallet->setFolder("plasma-nm")) {
+        NetworkManager::Settings::ConnectionSettings connectionSettings;
+        connectionSettings.fromMap(connection);
+
+        foreach (const QString & entry, wallet->entryList()) {
+            if (entry.startsWith(connectionSettings.uuid() + ';'))
+                wallet->removeEntry(entry);
+        }
+    }
+
+    wallet->deleteLater();
 }
 
 void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const QString &setting_name)

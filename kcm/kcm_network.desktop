@@ -7,4 +7,10 @@ X-KDE-ServiceTypes=KCModule
 X-KDE-System-Settings-Parent-Category=network-and-connectivity
 
 Name=Network
+Name[nl]=Netwerk
+Name[pt]=Rede
+Name[pt_BR]=Rede
+Name[sv]=Nätverk
+Name[uk]=Мережа
+Name[x-test]=xxNetworkxx
 Comment=Configure network interfaces

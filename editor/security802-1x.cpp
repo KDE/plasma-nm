@@ -242,6 +242,8 @@ QVariantMap Security8021x::setting(bool agentOwned) const
             setting.setPasswordFlags(NetworkManager::Settings::Setting::NotSaved);
         else if (!m_ui->peapPassword->text().isEmpty())
             setting.setPassword(m_ui->peapPassword->text());
+        if (!m_ui->peapUsername->text().isEmpty())
+            setting.setIdentity(m_ui->peapUsername->text());
 
         if (agentOwned && !m_ui->cbAskPeapPassword->isChecked()) {
             setting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);

@@ -26,6 +26,7 @@
 
 #include <kdemacros.h>
 
+class KDialog;
 class KDE_EXPORT SecretAgent : public NetworkManager::SecretAgent
 {
     Q_OBJECT
@@ -38,6 +39,14 @@ public Q_SLOTS:
     virtual void SaveSecrets(const NMVariantMapMap&, const QDBusObjectPath&);
     virtual void DeleteSecrets(const NMVariantMapMap &, const QDBusObjectPath &);
     virtual void CancelGetSecrets(const QDBusObjectPath &, const QString &);
+
+private Q_SLOTS:
+    void dialogAccepted();
+    void dialogRejected();
+    void killDialogs();
+
+private:
+    QHash<KDialog*, QDBusMessage> m_calls;
 };
 
 #endif // PLASMA_NM_SECRET_AGENT_H

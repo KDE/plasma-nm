@@ -40,6 +40,8 @@
 SecretAgent::SecretAgent(QObject* parent):
     NetworkManager::SecretAgent("org.kde.plasma-nm", parent)
 {
+    connect(NetworkManager::notifier(), SIGNAL(serviceDisappeared()),
+            this, SLOT(killDialogs()));
 }
 
 SecretAgent::~SecretAgent()
@@ -89,7 +91,6 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     const bool isVpn = (setting->type() == NetworkManager::Settings::Setting::Vpn);
 
     if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
-        NMVariantMapMap result;
         if (isVpn) {
             QString error;
             VpnUiPlugin * vpnPlugin = 0;
@@ -107,19 +108,19 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
                 if (vpnPlugin && error.isEmpty()) {
                     const QString shortName = serviceType.section('.', -1);
                     KDialog * dlg = new KDialog;
+                    connect(dlg, SIGNAL(accepted()), this, SLOT(dialogAccepted()));
+                    connect(dlg, SIGNAL(rejected()), this, SLOT(dialogRejected()));
+                    dlg->setProperty("setting_name", setting_name);
                     dlg->setMainWidget(vpnPlugin->askUser(vpnSetting));
                     dlg->setButtons(KDialog::Ok | KDialog::Cancel);
                     dlg->setCaption(i18n("VPN secrets (%1)", shortName));
+
+                    setDelayedReply(true);
+                    m_calls[dlg] = message();
+
                     dlg->show();
                     KWindowSystem::setState(dlg->winId(), NET::KeepAbove);
                     KWindowSystem::forceActiveWindow(dlg->winId());
-
-                    if (dlg->exec() == KDialog::Accepted) {
-                        result.insert(setting_name, static_cast<SettingWidget *>(dlg->mainWidget())->setting());
-                        delete dlg;
-                        return result;
-                    }
-                    delete dlg;
                 } else {
                     qDebug() << error << ", serviceType == " << serviceType;
                 }
@@ -131,16 +132,16 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
                 ssid = wifi->ssid();
 
             PasswordDialog * dlg = new PasswordDialog(setting, setting->needSecrets(requestNew), ssid);
+            connect(dlg, SIGNAL(accepted()), this, SLOT(dialogAccepted()));
+            connect(dlg, SIGNAL(rejected()), this, SLOT(dialogRejected()));
+            dlg->setProperty("setting_name", setting_name);
+
+            setDelayedReply(true);
+            m_calls[dlg] = message();
+
             dlg->show();
             KWindowSystem::setState(dlg->winId(), NET::KeepAbove);
             KWindowSystem::forceActiveWindow(dlg->winId());
-
-            if (dlg->exec() == KDialog::Accepted) {
-                result.insert(setting_name, dlg->secrets());
-                delete dlg;
-                return result;
-            }
-            delete dlg;
         }
     } else if (isVpn && userRequested) { // just return what we have
         NMVariantMapMap result;
@@ -241,4 +242,59 @@ void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusOb
 void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const QString &setting_name)
 {
 
+}
+
+void SecretAgent::dialogAccepted()
+{
+    KDialog *dialog = qobject_cast<KDialog*>(sender());
+    if (!dialog || !m_calls.contains(dialog)) {
+        if (dialog) {
+            dialog->deleteLater();
+        }
+        return;
+    }
+    QDBusMessage callMessage = m_calls.take(dialog);
+    QString setting_name = dialog->property("setting_name").toString();
+
+    NMVariantMapMap result;
+    PasswordDialog *passwordDialog = qobject_cast<PasswordDialog*>(sender());
+    if (passwordDialog) {
+        result.insert(setting_name, passwordDialog->secrets());
+    } else {
+        result.insert(setting_name, static_cast<SettingWidget *>(dialog->mainWidget())->setting());
+    }
+
+    QDBusMessage reply;
+    reply = callMessage.createReply(qVariantFromValue(result));
+    if (!QDBusConnection::systemBus().send(reply)) {
+        kWarning() << "Failed put the secret into the queue";
+    }
+}
+
+void SecretAgent::dialogRejected()
+{
+    KDialog *dialog = qobject_cast<KDialog*>(sender());
+    if (!dialog || !m_calls.contains(dialog)) {
+        if (dialog) {
+            dialog->deleteLater();
+        }
+        return;
+    }
+    QDBusMessage message = m_calls.take(dialog);
+
+    QDBusMessage reply;
+    // TODO see how to properly handle the cancel case
+    reply = message.createErrorReply(QLatin1String("org.freedesktop.NetworkManager.Cancel"),
+                                     QLatin1String("User canceled the dialog password"));
+    if (!QDBusConnection::systemBus().send(reply)) {
+        kWarning() << "Failed put the secret cancelation into the queue";
+    }
+}
+
+void SecretAgent::killDialogs()
+{
+    foreach (KDialog *dlg, m_calls.keys()) {
+        dlg->deleteLater();
+    }
+    m_calls.clear();
 }

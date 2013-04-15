@@ -191,7 +191,7 @@ void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObje
 
             foreach (const NetworkManager::Settings::Setting::Ptr & setting, connectionSettings->settings()) {
                 QMap<QString, QString> map;
-                qDebug() << setting->secretsToMap().keys();
+
                 foreach (const QString & key, setting->secretsToMap().keys()) {
                     map.insert(key, setting->secretsToMap().value(key).toString());
                 }

@@ -56,7 +56,6 @@ bool WiredSecurity::enabled8021x() const
 void WiredSecurity::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 {
     if (!setting->isNull()) {
-        qDebug() << "setting enabled";
         m_8021xWidget->setEnabled(true);
         m_ui->use8021X->setChecked(true);
     }

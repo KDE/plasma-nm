@@ -97,6 +97,11 @@ IPv4Widget::IPv4Widget(const NetworkManager::Settings::Setting::Ptr &setting, QW
 
     if (setting) {
         m_ipv4Setting = setting.staticCast<NetworkManager::Settings::Ipv4Setting>();
+
+        m_tmpIpv4Setting.setRoutes(m_ipv4Setting->routes());
+        m_tmpIpv4Setting.setNeverDefault(m_ipv4Setting->neverDefault());
+        m_tmpIpv4Setting.setIgnoreAutoRoutes(m_ipv4Setting->ignoreAutoRoutes());
+
         loadConfig(m_ipv4Setting);
     }
 
@@ -313,28 +318,19 @@ void IPv4Widget::tableViewItemChanged(QStandardItem *item)
 void IPv4Widget::slotRoutesDialog()
 {
     IpV4RoutesWidget * dlg = new IpV4RoutesWidget(this);
-    if (m_tmpIpv4Setting.isNull()) {
-        dlg->setRoutes(m_ipv4Setting->routes());
-        dlg->setNeverDefault(m_ipv4Setting->neverDefault());
-        if (m_ui->method->currentIndex() == 2) {  // manual
-            dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
-        } else {
-            dlg->setIgnoreAutoRoutes(m_ipv4Setting->ignoreAutoRoutes());
-        }
+
+    dlg->setRoutes(m_tmpIpv4Setting.routes());
+    dlg->setNeverDefault(m_tmpIpv4Setting.neverDefault());
+    if (m_ui->method->currentIndex() == 2) {  // manual
+        dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
     } else {
-        dlg->setRoutes(m_tmpIpv4Setting.routes());
-        dlg->setNeverDefault(m_tmpIpv4Setting.neverDefault());
-        if (m_ui->method->currentIndex() == 2) {  // manual
-            dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
-        } else {
-            dlg->setIgnoreAutoRoutes(m_tmpIpv4Setting.ignoreAutoRoutes());
-        }
+        dlg->setIgnoreAutoRoutes(m_tmpIpv4Setting.ignoreAutoRoutes());
     }
+
     if (dlg->exec() == QDialog::Accepted) {
         m_tmpIpv4Setting.setRoutes(dlg->routes());
         m_tmpIpv4Setting.setNeverDefault(dlg->neverDefault());
         m_tmpIpv4Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
-        m_tmpIpv4Setting.setInitialized(true);
     }
     delete dlg;
 }

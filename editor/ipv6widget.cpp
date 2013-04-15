@@ -138,8 +138,16 @@ void IPv6Widget::loadConfig(const NetworkManager::Settings::Setting::Ptr &settin
 
 QVariantMap IPv6Widget::setting(bool agentOwned) const
 {
+    Q_UNUSED(agentOwned);
+
+    NetworkManager::Settings::Ipv6Setting ipv6Setting;
+
+    ipv6Setting.setRoutes(m_tmpIpv6Setting.routes());
+    ipv6Setting.setNeverDefault(m_tmpIpv6Setting.neverDefault());
+    ipv6Setting.setIgnoreAutoRoutes(m_tmpIpv6Setting.ignoreAutoRoutes());
+
     // method
-    m_ipv6Setting->setMethod(static_cast<NetworkManager::Settings::Ipv6Setting::ConfigMethod>(m_ui->method->currentIndex()));
+    ipv6Setting.setMethod(static_cast<NetworkManager::Settings::Ipv6Setting::ConfigMethod>(m_ui->method->currentIndex()));
 
     // dns
     if (m_ui->dns->isEnabled() && !m_ui->dns->text().isEmpty()) {
@@ -150,10 +158,10 @@ QVariantMap IPv6Widget::setting(bool agentOwned) const
             if (!addr.isNull())
                 tmpAddrList.append(addr);
         }
-        m_ipv6Setting->setDns(tmpAddrList);
+        ipv6Setting.setDns(tmpAddrList);
     }
     if (m_ui->dnsSearch->isEnabled() && !m_ui->dnsSearch->text().isEmpty()) {
-        m_ipv6Setting->setDnsSearch(m_ui->dnsSearch->text().split(','));
+        ipv6Setting.setDnsSearch(m_ui->dnsSearch->text().split(','));
     }
 
     // addresses
@@ -167,20 +175,20 @@ QVariantMap IPv6Widget::setting(bool agentOwned) const
 
             list << address;
         }
-        m_ipv6Setting->setAddresses(list);
+        ipv6Setting.setAddresses(list);
     }
 
     // may-fail
     if (m_ui->ipv6RequiredCB->isEnabled()) {
-        m_ipv6Setting->setMayFail(!m_ui->ipv6RequiredCB->isChecked());
+        ipv6Setting.setMayFail(!m_ui->ipv6RequiredCB->isChecked());
     }
 
     // privacy
     if (m_ui->privacyCombo->isEnabled()) {
-        m_ipv6Setting->setPrivacy(static_cast<NetworkManager::Settings::Ipv6Setting::IPv6Privacy>(m_ui->privacyCombo->currentIndex()));
+        ipv6Setting.setPrivacy(static_cast<NetworkManager::Settings::Ipv6Setting::IPv6Privacy>(m_ui->privacyCombo->currentIndex()));
     }
 
-    return m_ipv6Setting->toMap();
+    return ipv6Setting.toMap();
 }
 
 void IPv6Widget::slotModeComboChanged(int index)
@@ -295,17 +303,28 @@ void IPv6Widget::tableViewItemChanged(QStandardItem *item)
 void IPv6Widget::slotRoutesDialog()
 {
     IpV6RoutesWidget * dlg = new IpV6RoutesWidget(this);
-    dlg->setRoutes(m_ipv6Setting->routes());
-    dlg->setNeverDefault(m_ipv6Setting->neverDefault());
-    if (m_ui->method->currentIndex() == 3) {  // manual
-        dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
+    if (m_tmpIpv6Setting.isNull()) {
+        dlg->setRoutes(m_ipv6Setting->routes());
+        dlg->setNeverDefault(m_ipv6Setting->neverDefault());
+        if (m_ui->method->currentIndex() == 3) {  // manual
+            dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
+        } else {
+            dlg->setIgnoreAutoRoutes(m_ipv6Setting->ignoreAutoRoutes());
+        }
     } else {
-        dlg->setIgnoreAutoRoutes(m_ipv6Setting->ignoreAutoRoutes());
+        dlg->setRoutes(m_tmpIpv6Setting.routes());
+        dlg->setNeverDefault(m_tmpIpv6Setting.neverDefault());
+        if (m_ui->method->currentIndex() == 3) {  // manual
+            dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
+        } else {
+            dlg->setIgnoreAutoRoutes(m_tmpIpv6Setting.ignoreAutoRoutes());
+        }
     }
     if (dlg->exec() == QDialog::Accepted) {
-        m_ipv6Setting->setRoutes(dlg->routes());
-        m_ipv6Setting->setNeverDefault(dlg->neverDefault());
-        m_ipv6Setting->setIgnoreAutoRoutes(dlg->ignoreautoroutes());
+        m_tmpIpv6Setting.setRoutes(dlg->routes());
+        m_tmpIpv6Setting.setNeverDefault(dlg->neverDefault());
+        m_tmpIpv6Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
+        m_tmpIpv6Setting.setInitialized(true);
     }
     delete dlg;
 }

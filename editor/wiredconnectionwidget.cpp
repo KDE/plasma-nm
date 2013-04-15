@@ -76,6 +76,8 @@ void WiredConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::
 
 QVariantMap WiredConnectionWidget::setting(bool agentOwned) const
 {
+    Q_UNUSED(agentOwned);
+
     NetworkManager::Settings::WiredSetting wiredSetting;
 
     if (!m_widget->macAddress->text().isEmpty() && m_widget->macAddress->text() != ":::::") {

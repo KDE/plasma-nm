@@ -59,6 +59,8 @@ void PPPWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting
 
 QVariantMap PPPWidget::setting(bool agentOwned) const
 {
+    Q_UNUSED(agentOwned);
+
     NetworkManager::Settings::PppSetting pppSetting;
 
     pppSetting.setRefuseEap(!m_ui->eap->isChecked());

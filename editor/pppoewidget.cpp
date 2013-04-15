@@ -51,6 +51,8 @@ void PppoeWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setti
 
 QVariantMap PppoeWidget::setting(bool agentOwned) const
 {
+    Q_UNUSED(agentOwned);
+
     NetworkManager::Settings::PppoeSetting pppoeSetting;
     if (!m_ui->service->text().isEmpty())
         pppoeSetting.setService(m_ui->service->text());

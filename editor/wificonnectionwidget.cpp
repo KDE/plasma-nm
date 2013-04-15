@@ -71,6 +71,8 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::P
 
 QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
 {
+    Q_UNUSED(agentOwned);
+
     NetworkManager::Settings::WirelessSetting wifiSetting;
 
     if (!m_ui->SSIDLineEdit->text().isEmpty()) {

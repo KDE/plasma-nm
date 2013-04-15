@@ -146,8 +146,16 @@ void IPv4Widget::loadConfig(const NetworkManager::Settings::Setting::Ptr &settin
 
 QVariantMap IPv4Widget::setting(bool agentOwned) const
 {
+    Q_UNUSED(agentOwned);
+
+    NetworkManager::Settings::Ipv4Setting ipv4Setting;
+
+    ipv4Setting.setRoutes(m_tmpIpv4Setting.routes());
+    ipv4Setting.setNeverDefault(m_tmpIpv4Setting.neverDefault());
+    ipv4Setting.setIgnoreAutoRoutes(m_tmpIpv4Setting.ignoreAutoRoutes());
+
     // method
-    m_ipv4Setting->setMethod(static_cast<NetworkManager::Settings::Ipv4Setting::ConfigMethod>(m_ui->method->currentIndex()));
+    ipv4Setting.setMethod(static_cast<NetworkManager::Settings::Ipv4Setting::ConfigMethod>(m_ui->method->currentIndex()));
 
     // dns
     if (m_ui->dns->isEnabled() && !m_ui->dns->text().isEmpty()) {
@@ -158,15 +166,15 @@ QVariantMap IPv4Widget::setting(bool agentOwned) const
             if (!addr.isNull())
                 tmpAddrList.append(addr);
         }
-        m_ipv4Setting->setDns(tmpAddrList);
+        ipv4Setting.setDns(tmpAddrList);
     }
     if (m_ui->dnsSearch->isEnabled() && !m_ui->dnsSearch->text().isEmpty()) {
-        m_ipv4Setting->setDnsSearch(m_ui->dnsSearch->text().split(','));
+        ipv4Setting.setDnsSearch(m_ui->dnsSearch->text().split(','));
     }
 
     // dhcp id
     if (m_ui->dhcpClientId->isEnabled() && !m_ui->dhcpClientId->text().isEmpty()) {
-        m_ipv4Setting->setDhcpClientId(m_ui->dhcpClientId->text());
+        ipv4Setting.setDhcpClientId(m_ui->dhcpClientId->text());
     }
 
     // addresses
@@ -180,16 +188,16 @@ QVariantMap IPv4Widget::setting(bool agentOwned) const
             list << address;
         }
         if (!list.isEmpty()) {
-            m_ipv4Setting->setAddresses(list);
+            ipv4Setting.setAddresses(list);
         }
     }
 
     // may-fail
     if (m_ui->ipv4RequiredCB->isEnabled()) {
-        m_ipv4Setting->setMayFail(!m_ui->ipv4RequiredCB->isChecked());
+        ipv4Setting.setMayFail(!m_ui->ipv4RequiredCB->isChecked());
     }
 
-    return m_ipv4Setting->toMap();
+    return m_tmpIpv4Setting.toMap();
 }
 
 void IPv4Widget::slotModeComboChanged(int index)
@@ -305,17 +313,28 @@ void IPv4Widget::tableViewItemChanged(QStandardItem *item)
 void IPv4Widget::slotRoutesDialog()
 {
     IpV4RoutesWidget * dlg = new IpV4RoutesWidget(this);
-    dlg->setRoutes(m_ipv4Setting->routes());
-    dlg->setNeverDefault(m_ipv4Setting->neverDefault());
-    if (m_ui->method->currentIndex() == 2) {  // manual
-        dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
+    if (m_tmpIpv4Setting.isNull()) {
+        dlg->setRoutes(m_ipv4Setting->routes());
+        dlg->setNeverDefault(m_ipv4Setting->neverDefault());
+        if (m_ui->method->currentIndex() == 2) {  // manual
+            dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
+        } else {
+            dlg->setIgnoreAutoRoutes(m_ipv4Setting->ignoreAutoRoutes());
+        }
     } else {
-        dlg->setIgnoreAutoRoutes(m_ipv4Setting->ignoreAutoRoutes());
+        dlg->setRoutes(m_tmpIpv4Setting.routes());
+        dlg->setNeverDefault(m_tmpIpv4Setting.neverDefault());
+        if (m_ui->method->currentIndex() == 2) {  // manual
+            dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
+        } else {
+            dlg->setIgnoreAutoRoutes(m_tmpIpv4Setting.ignoreAutoRoutes());
+        }
     }
     if (dlg->exec() == QDialog::Accepted) {
-        m_ipv4Setting->setRoutes(dlg->routes());
-        m_ipv4Setting->setNeverDefault(dlg->neverDefault());
-        m_ipv4Setting->setIgnoreAutoRoutes(dlg->ignoreautoroutes());
+        m_tmpIpv4Setting.setRoutes(dlg->routes());
+        m_tmpIpv4Setting.setNeverDefault(dlg->neverDefault());
+        m_tmpIpv4Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
+        m_tmpIpv4Setting.setInitialized(true);
     }
     delete dlg;
 }

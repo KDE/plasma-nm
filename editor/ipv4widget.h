@@ -57,6 +57,7 @@ private slots:
 private:
     Ui::IPv4Widget * m_ui;
     NetworkManager::Settings::Ipv4Setting::Ptr m_ipv4Setting;
+    NetworkManager::Settings::Ipv4Setting m_tmpIpv4Setting;
 
     class Private;
     Private *d;

@@ -135,7 +135,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
             KWindowSystem::setState(dlg->winId(), NET::KeepAbove);
             KWindowSystem::forceActiveWindow(dlg->winId());
 
-            if (dlg->exec() == QDialog::Accepted) {
+            if (dlg->exec() == KDialog::Accepted) {
                 result.insert(setting_name, dlg->secrets());
                 delete dlg;
                 return result;

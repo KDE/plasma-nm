@@ -21,16 +21,17 @@
 #ifndef PLASMA_NM_PASSWORDDIALOG_H
 #define PLASMA_NM_PASSWORDDIALOG_H
 
-#include <QtNetworkManager/generic-types.h>
 #include <QtNetworkManager/settings/connection.h>
 
-#include <QDialog>
+#include <KDialog>
 
 #include <kdemacros.h>
 
-#include "ui_passworddialog.h"
+namespace Ui {
+class PasswordDialog;
+}
 
-class KDE_EXPORT PasswordDialog : public QDialog
+class KDE_EXPORT PasswordDialog : public KDialog
 {
     Q_OBJECT
 public:
@@ -43,7 +44,7 @@ private slots:
     void showPassword(bool show);
 
 private:
-    Ui::PasswordDialog * m_ui;
+    Ui::PasswordDialog *ui;
     QStringList m_neededSecrets;
 };
 

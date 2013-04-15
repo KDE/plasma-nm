@@ -27,7 +27,7 @@
       <string>All users &amp;may connect to this network</string>
      </property>
      <property name="checked">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
     </widget>
    </item>

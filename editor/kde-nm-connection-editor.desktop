@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=kde-nm-connection-editor
 Name[cs]=kde-nm-connection-editor
+Name[da]=kde-nm-connection-editor
 Name[de]=KDE-NM-Verbindungseditor
 Name[mr]=केडीई-एनएम-जुळवणी-संपादक
 Name[nl]=Bewerker van verbindingen voor kde-nm
@@ -12,6 +13,7 @@ Name[tr]=kde-nm-connection-editor
 Name[uk]=Редактор з’єднань kde-nm
 Name[x-test]=xxkde-nm-connection-editorxx
 GenericName=NetworkManager connection editor for KDE
+GenericName[da]=Forbindelseseditor til NetworkManager til KDE
 GenericName[de]=KDE-Verbindungseditor für NetworkManager
 GenericName[mr]=केडीई करिता संजाळव्यवस्थापक जुळवणी संपादक
 GenericName[nl]=Bewerker van verbindingen voor KDE-NetworkManager
@@ -24,6 +26,7 @@ GenericName[uk]=Редактор з’єднань NetworkManager для KDE
 GenericName[x-test]=xxNetworkManager connection editor for KDExx
 Comment=Edit your network connections
 Comment[cs]=Upravit vaše síťová spojení
+Comment[da]=Redigér dine netværksforbindelser
 Comment[de]=Bearbeiten Sie Ihre Netzwerkverbindungen
 Comment[mr]=तुमच्या संजाळ जुळवण्या संपादित करा
 Comment[nl]=Bewerk uw netwerkverbindingen

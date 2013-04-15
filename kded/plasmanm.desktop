@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Plasma NM module
+Name[da]=Plasma NM-modul
 Name[de]=Plasma-NM-Modul
 Name[nl]=Plasma NM module
 Name[pt]=Módulo do NM para o Plasma
@@ -9,6 +10,7 @@ Name[sv]=Plasma NH-modul
 Name[uk]=Модуль керування мережею Плазми
 Name[x-test]=xxPlasma NM modulexx
 Comment=Provides secrets to the NetworkManager daemon
+Comment[da]=Giver hemmeligheder til NetworkManager-dæmonen
 Comment[nl]=Levert secrets aan de NetworkManager-daemon
 Comment[pt]=Fornece as senhas do serviço NetworkManager
 Comment[pt_BR]=Fornece as senhas do serviço NetworkManager

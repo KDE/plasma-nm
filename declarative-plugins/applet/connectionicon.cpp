@@ -146,6 +146,11 @@ void ConnectionIcon::setIcons()
         m_modemNetwork.clear();
     }
 
+    if (m_wirelessNetwork) {
+        disconnect(m_wirelessNetwork.data(), 0, this, 0);
+        m_wirelessNetwork.clear();
+    }
+
     NetworkManager::ActiveConnection::List actives = NetworkManager::activeConnections();
 
     foreach (const NetworkManager::ActiveConnection::Ptr & active, actives) {

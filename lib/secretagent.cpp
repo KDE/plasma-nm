@@ -110,7 +110,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
                     dlg->setMainWidget(vpnPlugin->askUser(vpnSetting));
                     dlg->setButtons(KDialog::Ok | KDialog::Cancel);
                     dlg->setCaption(i18n("VPN secrets (%1)", shortName));
-
+                    dlg->show();
                     KWindowSystem::setState(dlg->winId(), NET::KeepAbove);
                     KWindowSystem::forceActiveWindow(dlg->winId());
 
@@ -131,7 +131,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
                 ssid = wifi->ssid();
 
             PasswordDialog * dlg = new PasswordDialog(setting, setting->needSecrets(requestNew), ssid);
-
+            dlg->show();
             KWindowSystem::setState(dlg->winId(), NET::KeepAbove);
             KWindowSystem::forceActiveWindow(dlg->winId());
 

@@ -1,15 +1,9 @@
 set(plasmanm-internal_SRCS
     settingwidget.cpp
     vpnuiplugin.cpp
-    passworddialog.cpp
-    secretagent.cpp
     uiutils.cpp
     mobileproviders.cpp
     mobileconnectionwizard.cpp
-)
-
-kde4_add_ui_files(plasmanm-internal_SRCS
-    ui/passworddialog.ui
 )
 
 kde4_add_library(plasmanm-internal SHARED ${plasmanm-internal_SRCS})

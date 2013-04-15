@@ -85,6 +85,11 @@ IPv6Widget::IPv6Widget(const NetworkManager::Settings::Setting::Ptr &setting, QW
 
     if (setting) {
         m_ipv6Setting = setting.staticCast<NetworkManager::Settings::Ipv6Setting>();
+
+        m_tmpIpv6Setting.setRoutes(m_ipv6Setting->routes());
+        m_tmpIpv6Setting.setNeverDefault(m_ipv6Setting->neverDefault());
+        m_tmpIpv6Setting.setIgnoreAutoRoutes(m_ipv6Setting->ignoreAutoRoutes());
+
         loadConfig(m_ipv6Setting);
     }
 
@@ -303,28 +308,19 @@ void IPv6Widget::tableViewItemChanged(QStandardItem *item)
 void IPv6Widget::slotRoutesDialog()
 {
     IpV6RoutesWidget * dlg = new IpV6RoutesWidget(this);
-    if (m_tmpIpv6Setting.isNull()) {
-        dlg->setRoutes(m_ipv6Setting->routes());
-        dlg->setNeverDefault(m_ipv6Setting->neverDefault());
-        if (m_ui->method->currentIndex() == 3) {  // manual
-            dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
-        } else {
-            dlg->setIgnoreAutoRoutes(m_ipv6Setting->ignoreAutoRoutes());
-        }
+
+    dlg->setRoutes(m_tmpIpv6Setting.routes());
+    dlg->setNeverDefault(m_tmpIpv6Setting.neverDefault());
+    if (m_ui->method->currentIndex() == 3) {  // manual
+        dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
     } else {
-        dlg->setRoutes(m_tmpIpv6Setting.routes());
-        dlg->setNeverDefault(m_tmpIpv6Setting.neverDefault());
-        if (m_ui->method->currentIndex() == 3) {  // manual
-            dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
-        } else {
-            dlg->setIgnoreAutoRoutes(m_tmpIpv6Setting.ignoreAutoRoutes());
-        }
+        dlg->setIgnoreAutoRoutes(m_tmpIpv6Setting.ignoreAutoRoutes());
     }
+
     if (dlg->exec() == QDialog::Accepted) {
         m_tmpIpv6Setting.setRoutes(dlg->routes());
         m_tmpIpv6Setting.setNeverDefault(dlg->neverDefault());
         m_tmpIpv6Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
-        m_tmpIpv6Setting.setInitialized(true);
     }
     delete dlg;
 }

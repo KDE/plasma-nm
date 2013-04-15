@@ -197,7 +197,7 @@ QVariantMap IPv4Widget::setting(bool agentOwned) const
         ipv4Setting.setMayFail(!m_ui->ipv4RequiredCB->isChecked());
     }
 
-    return m_tmpIpv4Setting.toMap();
+    return ipv4Setting.toMap();
 }
 
 void IPv4Widget::slotModeComboChanged(int index)

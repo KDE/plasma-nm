@@ -127,6 +127,7 @@ void ConnectionDetailEditor::initEditor()
 {
     qDBusRegisterMetaType<QStringMap>();
     qDBusRegisterMetaType<UIntList>();
+    qDBusRegisterMetaType<UIntListList>();
 
     if (!m_new) {
         NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(m_connection->uuid());

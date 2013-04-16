@@ -22,6 +22,7 @@
 #define PLASMA_NM_PASSWORDDIALOG_H
 
 #include <QtNetworkManager/settings/connection.h>
+#include <QtNetworkManager/secretagent.h>
 
 #include <KDialog>
 
@@ -30,22 +31,36 @@
 namespace Ui {
 class PasswordDialog;
 }
-
+class SettingWidget;
 class KDE_EXPORT PasswordDialog : public KDialog
 {
     Q_OBJECT
 public:
-    explicit PasswordDialog(const NetworkManager::Settings::Setting::Ptr &setting, const QStringList & neededSecrets,
-                            const QString & ssid = QString(), QWidget *parent = 0);
+    explicit PasswordDialog(NetworkManager::SecretAgent::GetSecretsFlags flags,
+                            const QString &setting_name,
+                            QWidget *parent = 0);
     ~PasswordDialog();
-    QVariantMap secrets() const;
+    void setupGenericUi(const NetworkManager::Settings::ConnectionSettings &connectionSettings);
+    void setupVpnUi(const NetworkManager::Settings::ConnectionSettings &connectionSettings);
+
+    bool hasError() const;
+    NetworkManager::SecretAgent::Error error() const;
+    QString errorMessage() const;
+
+    NMVariantMapMap secrets() const;
 
 private slots:
     void showPassword(bool show);
 
 private:
     Ui::PasswordDialog *ui;
+    SettingWidget *vpnWidget;
+    NetworkManager::SecretAgent::GetSecretsFlags m_flags;
+    QString m_settingName;
     QStringList m_neededSecrets;
+    bool m_hasError;
+    NetworkManager::SecretAgent::Error m_error;
+    QString m_errorMessage;
 };
 
 #endif // PLASMA_NM_PASSWORDDIALOG_H

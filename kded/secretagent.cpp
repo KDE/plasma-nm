@@ -21,17 +21,14 @@
 
 #include "secretagent.h"
 #include "passworddialog.h"
-#include "vpnuiplugin.h"
 
 #include <QtNetworkManager/settings.h>
 #include <QtNetworkManager/settings/connection.h>
-#include <QtNetworkManager/settings/802-11-wireless.h>
 #include <QtNetworkManager/generic-types.h>
 #include <QtNetworkManager/settings/vpn.h>
 
 #include <QStringBuilder>
 
-#include <KServiceTypeTrader>
 #include <KPluginFactory>
 #include <KWindowSystem>
 #include <KDialog>
@@ -77,8 +74,6 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     request.hints = hints;
     request.setting_name = setting_name;
     request.message = message();
-    qDebug() << "MEssage:" << message();
-    qDebug() << "MEssage request:" << request.message;
     request.dialog = 0;
     request.wallet = 0;
     m_calls << request;
@@ -148,6 +143,7 @@ void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObje
 
 void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
+    Q_UNUSED(connection_path)
     if (!KWallet::Wallet::isEnabled()) {
         kWarning() << "KWallet is disabled, please enable it. Secrets not deleted.";
         return;
@@ -196,21 +192,8 @@ void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const
 void SecretAgent::dialogAccepted()
 {
     GetSecretsRequest request = m_calls.takeFirst();
-    qDebug() << "MEssage request:" << request.message;
 
-    NMVariantMapMap result;
-    PasswordDialog *passwordDialog = qobject_cast<PasswordDialog*>(sender());
-    if (passwordDialog) {
-        result.insert(request.setting_name, passwordDialog->secrets());
-    } else {
-        result.insert(request.setting_name, static_cast<SettingWidget *>(request.dialog->mainWidget())->setting());
-    }
-
-    QDBusMessage reply;
-    reply = request.message.createReply(qVariantFromValue(result));
-    if (!QDBusConnection::systemBus().send(reply)) {
-        kWarning() << "Failed put the secret into the queue";
-    }
+    sendSecrets(request.dialog->secrets(), request.message);
 
     sender()->deleteLater();
 
@@ -220,8 +203,6 @@ void SecretAgent::dialogAccepted()
 void SecretAgent::dialogRejected()
 {
     GetSecretsRequest request = m_calls.takeFirst();
-    qDebug() << "MEssage request:" << request.message;
-
     sendError(SecretAgent::UserCanceled,
               QLatin1String("User canceled the password dialog"),
               request.message);
@@ -248,10 +229,9 @@ void SecretAgent::proccessNext()
 
     GetSecretsRequest &request = m_calls.first();
 
-    NetworkManager::Settings::ConnectionSettings::Ptr connectionSettings = NetworkManager::Settings::ConnectionSettings::Ptr(new NetworkManager::Settings::ConnectionSettings());
-    connectionSettings->fromMap(request.connection);
+    NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
 
-    NetworkManager::Settings::Setting::Ptr setting = connectionSettings->setting(NetworkManager::Settings::Setting::typeFromString(request.setting_name));
+    NetworkManager::Settings::Setting::Ptr setting = connectionSettings.setting(request.setting_name);
 
     if (!KWallet::Wallet::isEnabled()) {
         kWarning() << "KWallet is disabled, please enable it. Secrets not loaded.";
@@ -260,7 +240,7 @@ void SecretAgent::proccessNext()
 
         if (wallet) {
             if (wallet->isOpen() && wallet->hasFolder("plasma-nm") && wallet->setFolder("plasma-nm")) {
-                QString key = connectionSettings->uuid() + ";" + setting->name();
+                QString key = connectionSettings.uuid() % QLatin1Char(';') % request.setting_name;
                 QMap<QString,QString> map;
                 wallet->readMap(key, map);
                 QVariantMap secretsMap;
@@ -281,65 +261,48 @@ void SecretAgent::proccessNext()
     const bool isVpn = (setting->type() == NetworkManager::Settings::Setting::Vpn);
 
     if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
+        PasswordDialog *dialog = new PasswordDialog(request.flags, request.setting_name);
+        connect(dialog, SIGNAL(accepted()), this, SLOT(dialogAccepted()));
+        connect(dialog, SIGNAL(rejected()), this, SLOT(dialogRejected()));
         if (isVpn) {
-            QString error;
-            VpnUiPlugin * vpnPlugin = 0;
-            NetworkManager::Settings::VpnSetting::Ptr vpnSetting =
-                    connectionSettings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
-            if (!vpnSetting) {
-                qDebug() << "Missing VPN setting!";
-            } else {
-                const QString serviceType = vpnSetting->serviceType();
-                //qDebug() << "Agent loading VPN plugin" << serviceType << "from DBUS" << calledFromDBus();
-                //vpnSetting->printSetting();
-                vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNM/VpnUiPlugin"),
-                                                                                     QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
-                                                                                     this, QVariantList(), &error);
-                if (vpnPlugin && error.isEmpty()) {
-                    const QString shortName = serviceType.section('.', -1);
-                    request.dialog = new KDialog;
-                    connect(request.dialog, SIGNAL(accepted()), this, SLOT(dialogAccepted()));
-                    connect(request.dialog, SIGNAL(rejected()), this, SLOT(dialogRejected()));
-                    request.dialog->setMainWidget(vpnPlugin->askUser(vpnSetting));
-                    request.dialog->setButtons(KDialog::Ok | KDialog::Cancel);
-                    request.dialog->setCaption(i18n("VPN secrets (%1)", shortName));
-                    request.dialog->show();
-                    KWindowSystem::setState(request.dialog->winId(), NET::KeepAbove);
-                    KWindowSystem::forceActiveWindow(request.dialog->winId());
-                } else {
-                    qDebug() << error << ", serviceType == " << serviceType;
-                }
-            }
+            dialog->setupVpnUi(connectionSettings);
         } else {
-            NetworkManager::Settings::WirelessSetting::Ptr wifi = connectionSettings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
-            QString ssid;
-            if (wifi)
-                ssid = wifi->ssid();
+            dialog->setupGenericUi(connectionSettings);
+        }
 
-            request.dialog = new PasswordDialog(setting, setting->needSecrets(requestNew), ssid);
-            connect(request.dialog, SIGNAL(accepted()), this, SLOT(dialogAccepted()));
-            connect(request.dialog, SIGNAL(rejected()), this, SLOT(dialogRejected()));
-
-            request.dialog->show();
-            KWindowSystem::setState(request.dialog->winId(), NET::KeepAbove);
-            KWindowSystem::forceActiveWindow(request.dialog->winId());
+        if (dialog->hasError()) {
+            sendError(dialog->error(),
+                      dialog->errorMessage(),
+                      request.message);
+            m_calls.removeFirst();
+            proccessNext();
+        } else {
+            dialog->show();
+            KWindowSystem::setState(dialog->winId(), NET::KeepAbove);
+            KWindowSystem::forceActiveWindow(dialog->winId());
+            request.dialog = dialog;
         }
     } else if (isVpn && userRequested) { // just return what we have
         NMVariantMapMap result;
-        NetworkManager::Settings::VpnSetting::Ptr vpnSetting =
-                connectionSettings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
+        NetworkManager::Settings::VpnSetting::Ptr vpnSetting;
+        vpnSetting = connectionSettings.setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
         result.insert("vpn", vpnSetting->secretsToMap());
 
-        QDBusMessage reply;
-        reply = request.message.createReply(qVariantFromValue(result));
-        if (!QDBusConnection::systemBus().send(reply)) {
-            kWarning() << "Failed put the secret into the queue";
-        }
+        sendSecrets(result, request.message);
     } else {
         sendError(SecretAgent::InternalError,
                   QLatin1String("Plasma-nm did not know how to handle the request"),
                   request.message);
         m_calls.removeFirst();
         proccessNext();
+    }
+}
+
+void SecretAgent::sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message)
+{
+    QDBusMessage reply;
+    reply = message.createReply(qVariantFromValue(secrets));
+    if (!QDBusConnection::systemBus().send(reply)) {
+        kWarning() << "Failed put the secret into the queue";
     }
 }

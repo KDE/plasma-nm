@@ -26,11 +26,11 @@
 
 #include <kdemacros.h>
 
-class KDialog;
 namespace KWallet {
 class Wallet;
 }
 
+class PasswordDialog;
 class GetSecretsRequest {
 public:
     inline bool operator==(const QString &other) const {
@@ -43,7 +43,7 @@ public:
     QStringList hints;
     NetworkManager::SecretAgent::GetSecretsFlags flags;
     QDBusMessage message;
-    KDialog *dialog;
+    PasswordDialog *dialog;
     KWallet::Wallet *wallet;
 };
 
@@ -67,6 +67,7 @@ private Q_SLOTS:
 
 private:
     void proccessNext();
+    void sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message);
 
     QList<GetSecretsRequest> m_calls;
 };

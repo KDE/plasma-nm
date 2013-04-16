@@ -21,22 +21,52 @@
 #include "passworddialog.h"
 #include "ui_passworddialog.h"
 
+#include <vpnuiplugin.h>
+
+#include <QtNetworkManager/settings/802-11-wireless.h>
+#include <QtNetworkManager/settings/vpn.h>
+
+#include <KServiceTypeTrader>
 #include <KIcon>
 #include <KDebug>
 
-PasswordDialog::PasswordDialog(const NetworkManager::Settings::Setting::Ptr &setting, const QStringList &neededSecrets, const QString &ssid, QWidget *parent) :
-    KDialog(parent), ui(new Ui::PasswordDialog), m_neededSecrets(neededSecrets)
+using namespace NetworkManager;
+
+PasswordDialog::PasswordDialog(SecretAgent::GetSecretsFlags flags, const QString &setting_name, QWidget *parent) :
+    KDialog(parent),
+    ui(0),
+    vpnWidget(0),
+    m_flags(flags),
+    m_settingName(setting_name)
 {
-    ui->setupUi(mainWidget());
     setWindowIcon(KIcon("dialog-password"));
+}
+
+PasswordDialog::~PasswordDialog()
+{
+    delete ui;
+}
+
+void PasswordDialog::setupGenericUi(const Settings::ConnectionSettings &connectionSettings)
+{
+    NetworkManager::Settings::Setting::Ptr setting = connectionSettings.setting(m_settingName);
+
+    ui = new Ui::PasswordDialog;
+    ui->setupUi(mainWidget());
     // TODO fix this for high DPI
     ui->labelIcon->setPixmap(KIcon("dialog-password").pixmap(32));
 
-    if (neededSecrets.isEmpty()) {
-        qWarning() << Q_FUNC_INFO << "list of secrets is empty!!!";
+    m_neededSecrets = setting->needSecrets(m_flags & SecretAgent::RequestNew);
+    if (m_neededSecrets.isEmpty()) {
+        kWarning() << "list of secrets is empty!!!";
     }
 
-    if (setting->type() == NetworkManager::Settings::Setting::WirelessSecurity || setting->type() == NetworkManager::Settings::Setting::Security8021x) {
+    NetworkManager::Settings::WirelessSetting::Ptr wifi;
+    wifi = connectionSettings.setting(Settings::Setting::Wireless).dynamicCast<Settings::WirelessSetting>();
+
+    Settings::Setting::SettingType connectionType = setting->type();
+    if (wifi && (connectionType == Settings::Setting::WirelessSecurity || connectionType == Settings::Setting::Security8021x)) {
+        QString ssid = wifi->ssid();
         ui->labelText->setText(i18n("For accessing the wireless network '%1' you need to provide a password below", ssid));
     } else {
         ui->labelText->setText(i18n("Please provide a password below"));
@@ -47,19 +77,60 @@ PasswordDialog::PasswordDialog(const NetworkManager::Settings::Setting::Ptr &set
     connect(ui->showPassword, SIGNAL(toggled(bool)), this, SLOT(showPassword(bool)));
 }
 
-PasswordDialog::~PasswordDialog()
+void PasswordDialog::setupVpnUi(const Settings::ConnectionSettings &connectionSettings)
 {
-    delete ui;
+    NetworkManager::Settings::VpnSetting::Ptr vpnSetting;
+    vpnSetting = connectionSettings.setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
+    if (!vpnSetting) {
+        qDebug() << "Missing VPN setting!";
+    } else {
+        VpnUiPlugin *vpnUiPlugin;
+        QString error;
+        const QString serviceType = vpnSetting->serviceType();
+        //qDebug() << "Agent loading VPN plugin" << serviceType << "from DBUS" << calledFromDBus();
+        //vpnSetting->printSetting();
+        vpnUiPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QLatin1String("PlasmaNM/VpnUiPlugin"),
+                                                                               QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
+                                                                               this, QVariantList(), &error);
+        if (vpnUiPlugin && error.isEmpty()) {
+            const QString shortName = serviceType.section('.', -1);
+            setCaption(i18n("VPN secrets (%1)", shortName));
+            vpnWidget = vpnUiPlugin->askUser(vpnSetting, this);
+            setMainWidget(vpnWidget);
+        } else {
+            qDebug() << error << ", serviceType == " << serviceType;
+        }
+    }
 }
 
-QVariantMap PasswordDialog::secrets() const
+bool PasswordDialog::hasError() const
 {
+    return m_hasError;
+}
+
+SecretAgent::Error PasswordDialog::error() const
+{
+    return m_error;
+}
+
+QString PasswordDialog::errorMessage() const
+{
+    return m_errorMessage;
+}
+
+NMVariantMapMap PasswordDialog::secrets() const
+{
+    NMVariantMapMap ret;
     QVariantMap result;
-
-    if (!ui->password->text().isEmpty() && !m_neededSecrets.isEmpty())
+    if (vpnWidget) {
+        result = vpnWidget->setting();
+    } else if (!ui->password->text().isEmpty() && !m_neededSecrets.isEmpty()) {
         result.insert(m_neededSecrets.first(), ui->password->text());
+    }
 
-    return result;
+    ret.insert(m_settingName, result);
+
+    return ret;
 }
 
 void PasswordDialog::showPassword(bool show)

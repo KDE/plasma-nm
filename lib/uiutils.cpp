@@ -163,6 +163,31 @@ int UiUtils::iconSize(const QSizeF size)
 #endif
 
 
+QString UiUtils::prettyInterfaceName(NetworkManager::Device::Type type, const QString &interfaceName)
+{
+    QString ret;
+    switch (type) {
+    case NetworkManager::Device::Wifi:
+        ret = i18n("Wireless Interface (%1)", interfaceName);
+        break;
+    case NetworkManager::Device::Ethernet:
+        ret = i18n("Wired Interface (%1)", interfaceName);
+        break;
+    case NetworkManager::Device::Bluetooth:
+        ret = i18n("Bluetooth (%1)", interfaceName);
+        break;
+    case NetworkManager::Device::Modem:
+        ret = i18n("Modem (%1)", interfaceName);
+        break;
+    case NetworkManager::Device::Adsl:
+        ret = i18n("ADSL (%1)", interfaceName);
+        break;
+    default:
+        ret = interfaceName;
+    }
+    return ret;
+}
+
 QString UiUtils::connectionStateToString(NetworkManager::Device::State state, const QString &connectionName)
 {
     QString stateString;

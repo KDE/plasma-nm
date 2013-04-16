@@ -1,5 +1,6 @@
 /*
     Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2013 by Daniel Nicoletti <dantti12@gmail.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -61,6 +62,9 @@ void PasswordDialog::setupGenericUi(const Settings::ConnectionSettings &connecti
     m_neededSecrets = setting->needSecrets(m_flags & SecretAgent::RequestNew);
     if (m_neededSecrets.isEmpty()) {
         kWarning() << "list of secrets is empty!!!";
+        m_hasError = true;
+        m_error = SecretAgent::InternalError;
+        m_errorMessage = QLatin1String("No secrets were requested");
     }
 
     NetworkManager::Settings::WirelessSetting::Ptr wifi;

@@ -65,6 +65,13 @@ public:
     static Solid::Device* findSolidDevice(const QString & uni);
 #endif
     /**
+     * @return a human-readable name for a given network interface according to the configured
+     * naming style
+     * @param type type of the network interface
+     * @param interfaceName name of the network interface (eg eth0)
+     */
+    static QString prettyInterfaceName(NetworkManager::Device::Type type, const QString &interfaceName);
+    /**
      * @return a human-readable description of the connection state of a given network interface
      * @param state The connection state
      */

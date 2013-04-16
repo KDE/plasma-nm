@@ -164,26 +164,7 @@ void DeviceConnectionModel::changeDevice(QStandardItem *stdItem, const NetworkMa
         connectionName = activeConnection->connection()->name();
     }
     stdItem->setData(UiUtils::connectionStateToString(device->state(), connectionName), RoleState);
-
-    switch (device->type()) {
-    case NetworkManager::Device::Wifi:
-        stdItem->setText(i18n("Wireless Interface (%1)", device->interfaceName()));
-        break;
-    case NetworkManager::Device::Ethernet:
-        stdItem->setText(i18n("Wired Interface (%1)", device->interfaceName()));
-        break;
-    case NetworkManager::Device::Bluetooth:
-        stdItem->setText(i18n("Bluetooth (%1)", device->interfaceName()));
-        break;
-    case NetworkManager::Device::Modem:
-        stdItem->setText(i18n("Modem (%1)", device->interfaceName()));
-        break;
-    case NetworkManager::Device::Adsl:
-        stdItem->setText(i18n("ADSL (%1)", device->interfaceName()));
-        break;
-    default:
-        stdItem->setText(device->interfaceName());
-    }
+    stdItem->setText(UiUtils::prettyInterfaceName(device->type(), device->interfaceName()));
 }
 
 void DeviceConnectionModel::connectionAdded(const QString &path)

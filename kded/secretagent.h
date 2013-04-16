@@ -45,14 +45,13 @@ public:
     NetworkManager::SecretAgent::GetSecretsFlags flags;
     QDBusMessage message;
     PasswordDialog *dialog;
-    KWallet::Wallet *wallet;
 };
 
 class KDE_EXPORT SecretAgent : public NetworkManager::SecretAgent
 {
     Q_OBJECT
 public:
-    SecretAgent(QObject* parent = 0);
+    explicit SecretAgent(QObject* parent = 0);
     virtual ~SecretAgent();
 
 public Q_SLOTS:
@@ -65,11 +64,21 @@ private Q_SLOTS:
     void dialogAccepted();
     void dialogRejected();
     void killDialogs();
+    void walletOpened(bool success);
+    void walletClosed();
 
 private:
-    void processNext();
+    void processNext(bool ignoreWallet = false);
+    /**
+     * @brief useWallet checks if the KWallet system is enabled
+     * and tries to open it async.
+     * @return return true if the method should use the wallet,
+     * the caller MUST always check if the wallet is opened.
+     */
+    bool useWallet();
     void sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message);
 
+    KWallet::Wallet *m_wallet;
     QList<GetSecretsRequest> m_calls;
 };
 

@@ -38,7 +38,8 @@
 #include <KDebug>
 
 SecretAgent::SecretAgent(QObject* parent):
-    NetworkManager::SecretAgent("org.kde.plasma-nm", parent)
+    NetworkManager::SecretAgent("org.kde.plasma-nm", parent),
+    m_wallet(0)
 {
     connect(NetworkManager::notifier(), SIGNAL(serviceDisappeared()),
             this, SLOT(killDialogs()));
@@ -76,7 +77,6 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     request.setting_name = setting_name;
     request.message = message();
     request.dialog = 0;
-    request.wallet = 0;
     m_calls << request;
 
     processNext();
@@ -179,7 +179,6 @@ void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const
         GetSecretsRequest request = m_calls.at(i);
         if (callId == request.callId) {
             delete request.dialog;
-            delete request.wallet;
             sendError(SecretAgent::AgentCanceled,
                       QLatin1String("Agent canceled the password dialog"),
                       request.message);
@@ -218,18 +217,30 @@ void SecretAgent::killDialogs()
 {
     foreach (const GetSecretsRequest &request, m_calls) {
         delete request.dialog;
-        delete request.wallet;
     }
     m_calls.clear();
 }
 
-void SecretAgent::processNext()
+void SecretAgent::walletOpened(bool success)
 {
-    if (m_calls.isEmpty() || m_calls.first().dialog || m_calls.first().wallet) {
+    processNext(!success);
+}
+
+void SecretAgent::walletClosed()
+{
+    if (m_wallet) {
+        m_wallet->deleteLater();
+    }
+    m_wallet = 0;
+}
+
+void SecretAgent::processNext(bool ignoreWallet)
+{
+    if (m_calls.isEmpty() || m_calls.first().dialog) {
         return;
     }
 
-    GetSecretsRequest request = m_calls.first();
+    GetSecretsRequest &request = m_calls.first();
 
     NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
 
@@ -240,24 +251,21 @@ void SecretAgent::processNext()
     const bool allowInteraction = request.flags & AllowInteraction;
     const bool isVpn = (setting->type() == NetworkManager::Settings::Setting::Vpn);
 
-    if (!requestNew) {
-        kWarning() << "TRYING opening kwallet.";
-        KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
-
-        if (wallet) {
-            if (wallet->isOpen() && wallet->hasFolder("plasma-nm") && wallet->setFolder("plasma-nm")) {
+    if (!ignoreWallet && !requestNew && useWallet()) {
+        if (m_wallet->isOpen()) {
+            if (m_wallet->hasFolder("plasma-nm") && m_wallet->setFolder("plasma-nm")) {
                 QString key = connectionSettings.uuid() % QLatin1Char(';') % request.setting_name;
                 QMap<QString,QString> map;
-                wallet->readMap(key, map);
+                m_wallet->readMap(key, map);
                 QVariantMap secretsMap;
                 foreach (const QString & key, map.keys()) {
                     secretsMap.insert(key, map.value(key));
                 }
                 setting->secretsFromMap(secretsMap);
-                wallet->deleteLater();
             }
         } else {
-            kWarning() << "Error opening kwallet. Secrets not loaded.";
+            kDebug() << "Waiting for the wallet to open";
+            return;
         }
     }
 
@@ -304,6 +312,26 @@ void SecretAgent::processNext()
         m_calls.removeFirst();
         processNext();
     }
+}
+
+bool SecretAgent::useWallet()
+{
+    if (m_wallet) {
+        return true;
+    }
+
+    if (KWallet::Wallet::isEnabled()) {
+        m_wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Asynchronous);
+        if (m_wallet) {
+            connect(m_wallet, SIGNAL(walletOpened(bool)), this, SLOT(walletOpened(bool)));
+            connect(m_wallet, SIGNAL(walletClosed()), this, SLOT(walletClosed()));
+            return true;
+        } else {
+            kWarning() << "Error opening kwallet.";
+        }
+    }
+
+    return false;
 }
 
 void SecretAgent::sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message)

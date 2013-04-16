@@ -65,6 +65,7 @@ void PasswordDialog::setupGenericUi(const Settings::ConnectionSettings &connecti
         m_hasError = true;
         m_error = SecretAgent::InternalError;
         m_errorMessage = QLatin1String("No secrets were requested");
+        return;
     }
 
     NetworkManager::Settings::WirelessSetting::Ptr wifi;

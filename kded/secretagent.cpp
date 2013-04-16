@@ -235,7 +235,13 @@ void SecretAgent::proccessNext()
 
     NetworkManager::Settings::Setting::Ptr setting = connectionSettings.setting(request.setting_name);
 
-    if (request.flags & None || request.flags & RequestNew) {
+    const bool requestNew = request.flags & RequestNew;
+    const bool userRequested = request.flags & UserRequested;
+    const bool allowInteraction = request.flags & AllowInteraction;
+    const bool isVpn = (setting->type() == NetworkManager::Settings::Setting::Vpn);
+
+    if (!requestNew) {
+        kWarning() << "TRYING opening kwallet.";
         KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
 
         if (wallet) {
@@ -254,11 +260,6 @@ void SecretAgent::proccessNext()
             kWarning() << "Error opening kwallet. Secrets not loaded.";
         }
     }
-
-    const bool requestNew = request.flags & RequestNew;
-    const bool userRequested = request.flags & UserRequested;
-    const bool allowInteraction = request.flags & AllowInteraction;
-    const bool isVpn = (setting->type() == NetworkManager::Settings::Setting::Vpn);
 
     if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
         PasswordDialog *dialog = new PasswordDialog(request.flags, request.setting_name);

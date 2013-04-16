@@ -67,7 +67,7 @@ private Q_SLOTS:
     void killDialogs();
 
 private:
-    void proccessNext();
+    void processNext();
     void sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message);
 
     QList<GetSecretsRequest> m_calls;

@@ -79,7 +79,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     request.wallet = 0;
     m_calls << request;
 
-    proccessNext();
+    processNext();
 
     return NMVariantMapMap();
 }
@@ -188,7 +188,7 @@ void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const
         }
     }
 
-    proccessNext();
+    processNext();
 }
 
 void SecretAgent::dialogAccepted()
@@ -199,7 +199,7 @@ void SecretAgent::dialogAccepted()
 
     sender()->deleteLater();
 
-    proccessNext();
+    processNext();
 }
 
 void SecretAgent::dialogRejected()
@@ -211,7 +211,7 @@ void SecretAgent::dialogRejected()
 
     sender()->deleteLater();
 
-    proccessNext();
+    processNext();
 }
 
 void SecretAgent::killDialogs()
@@ -223,13 +223,13 @@ void SecretAgent::killDialogs()
     m_calls.clear();
 }
 
-void SecretAgent::proccessNext()
+void SecretAgent::processNext()
 {
     if (m_calls.isEmpty() || m_calls.first().dialog || m_calls.first().wallet) {
         return;
     }
 
-    GetSecretsRequest &request = m_calls.first();
+    GetSecretsRequest request = m_calls.first();
 
     NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
 
@@ -276,7 +276,7 @@ void SecretAgent::proccessNext()
                       dialog->errorMessage(),
                       request.message);
             m_calls.removeFirst();
-            proccessNext();
+            processNext();
         } else {
             dialog->show();
             KWindowSystem::setState(dialog->winId(), NET::KeepAbove);
@@ -290,26 +290,26 @@ void SecretAgent::proccessNext()
         result.insert("vpn", vpnSetting->secretsToMap());
         sendSecrets(result, request.message);
         m_calls.removeFirst();
-        proccessNext();
+        processNext();
     } else if (setting->needSecrets().isEmpty()) {
         NMVariantMapMap result;
         result.insert(setting->name(), setting->secretsToMap());
         sendSecrets(result, request.message);
         m_calls.removeFirst();
-        proccessNext();
+        processNext();
     } else {
         sendError(SecretAgent::InternalError,
                   QLatin1String("Plasma-nm did not know how to handle the request"),
                   request.message);
         m_calls.removeFirst();
-        proccessNext();
+        processNext();
     }
 }
 
 void SecretAgent::sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message)
 {
     QDBusMessage reply;
-    reply = message.createReply(qVariantFromValue(secrets));
+    reply = message.createReply(QVariant::fromValue(secrets));
     if (!QDBusConnection::systemBus().send(reply)) {
         kWarning() << "Failed put the secret into the queue";
     }

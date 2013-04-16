@@ -284,11 +284,17 @@ void SecretAgent::proccessNext()
             request.dialog = dialog;
         }
     } else if (isVpn && userRequested) { // just return what we have
-        sendSecrets(connectionSettings.toMap(), request.message);
+        NMVariantMapMap result;
+        NetworkManager::Settings::VpnSetting::Ptr vpnSetting;
+        vpnSetting = connectionSettings.setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
+        result.insert("vpn", vpnSetting->secretsToMap());
+        sendSecrets(result, request.message);
         m_calls.removeFirst();
         proccessNext();
     } else if (setting->needSecrets().isEmpty()) {
-        sendSecrets(connectionSettings.toMap(), request.message);
+        NMVariantMapMap result;
+        result.insert(setting->name(), setting->secretsToMap());
+        sendSecrets(result, request.message);
         m_calls.removeFirst();
         proccessNext();
     } else {

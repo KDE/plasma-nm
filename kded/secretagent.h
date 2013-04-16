@@ -32,11 +32,22 @@ class Wallet;
 }
 
 class PasswordDialog;
-class GetSecretsRequest {
+class SecretsRequest {
 public:
+    enum Type {
+        GetSecrets,
+        SaveSecrets,
+        DeleteSecrets
+    };
+    SecretsRequest(Type _type) :
+        type(_type),
+        flags(NetworkManager::SecretAgent::None),
+        dialog(0)
+    {}
     inline bool operator==(const QString &other) const {
         return callId == other;
     }
+    Type type;
     QString callId;
     NMVariantMapMap connection;
     QDBusObjectPath connection_path;
@@ -70,16 +81,27 @@ private Q_SLOTS:
 private:
     void processNext(bool ignoreWallet = false);
     /**
+     * @brief processGetSecrets requests
+     * @param request the request we are processing
+     * @param ignoreWallet true if the code should avoid Wallet
+     * nomally if it failed to open
+     * @return true if the item was processed
+     */
+    bool processGetSecrets(SecretsRequest &request, bool ignoreWallet) const;
+    bool processSaveSecrets(SecretsRequest &request, bool ignoreWallet) const;
+    bool processDeleteSecrets(SecretsRequest &request, bool ignoreWallet) const;
+    /**
      * @brief useWallet checks if the KWallet system is enabled
      * and tries to open it async.
      * @return return true if the method should use the wallet,
      * the caller MUST always check if the wallet is opened.
      */
-    bool useWallet();
-    void sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message);
+    bool useWallet() const;
+    void sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message) const;
 
-    KWallet::Wallet *m_wallet;
-    QList<GetSecretsRequest> m_calls;
+    mutable KWallet::Wallet *m_wallet;
+    mutable PasswordDialog *m_dialog;
+    QList<SecretsRequest> m_calls;
 };
 
 #endif // PLASMA_NM_SECRET_AGENT_H

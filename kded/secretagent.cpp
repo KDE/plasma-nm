@@ -39,7 +39,8 @@
 
 SecretAgent::SecretAgent(QObject* parent):
     NetworkManager::SecretAgent("org.kde.plasma-nm", parent),
-    m_wallet(0)
+    m_wallet(0),
+    m_dialog(0)
 {
     connect(NetworkManager::notifier(), SIGNAL(serviceDisappeared()),
             this, SLOT(killDialogs()));
@@ -59,7 +60,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     qDebug() << "Flags:" << flags;
 
     QString callId = connection_path.path() % setting_name;
-    foreach (const GetSecretsRequest request, m_calls) {
+    foreach (const SecretsRequest request, m_calls) {
         if (request == callId) {
             kWarning() << "GetSecrets was called again! This should not happen, cancelling first call" << connection_path.path() << setting_name;
             CancelGetSecrets(connection_path, setting_name);
@@ -68,7 +69,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     }
 
     setDelayedReply(true);
-    GetSecretsRequest request;
+    SecretsRequest request(SecretsRequest::GetSecrets);
     request.callId = callId;
     request.connection = connection;
     request.connection_path = connection_path;
@@ -76,7 +77,6 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     request.hints = hints;
     request.setting_name = setting_name;
     request.message = message();
-    request.dialog = 0;
     m_calls << request;
 
     processNext();
@@ -86,89 +86,26 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
 
 void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
-    Q_UNUSED(connection_path)
+    setDelayedReply(true);
+    SecretsRequest request(SecretsRequest::SaveSecrets);
+    request.connection = connection;
+    request.connection_path = connection_path;
+    request.message = message();
+    m_calls << request;
 
-    NetworkManager::Settings::ConnectionSettings::Ptr connectionSettings = NetworkManager::Settings::ConnectionSettings::Ptr(new NetworkManager::Settings::ConnectionSettings());
-    connectionSettings->fromMap(connection);
-
-    if (!KWallet::Wallet::isEnabled()) {
-        kWarning() << "KWallet is disabled, please enable it or set your connection as system connection. Secrets not saved.";
-        return;
-    }
-
-    KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous );
-
-    if (!wallet) {
-        kWarning() << "Error opening kwallet. Secrets not saved.";
-        return;
-    }
-
-    if (wallet->isOpen()) {
-        bool readyForWalletWrite = false;
-        if (!wallet->hasFolder("plasma-nm"))
-            wallet->createFolder("plasma-nm");
-        if (wallet->setFolder("plasma-nm")) {
-            readyForWalletWrite = true;
-        }
-        if (readyForWalletWrite) {
-            bool saved = false;
-            foreach (const QString & entry, wallet->entryList()) {
-                if (entry.startsWith(connectionSettings->uuid() + ';')) {
-                    kDebug() << "Removing entry " << entry << ")";
-                    wallet->removeEntry(entry);
-                }
-            }
-
-            foreach (const NetworkManager::Settings::Setting::Ptr & setting, connectionSettings->settings()) {
-                QMap<QString, QString> map;
-
-                foreach (const QString & key, setting->secretsToMap().keys()) {
-                    map.insert(key, setting->secretsToMap().value(key).toString());
-                }
-                qDebug() << map;
-                if (!map.isEmpty()) {
-                    saved = true;
-                    QString entryName = connectionSettings->uuid() + ";" + setting->name();
-                    wallet->writeMap(entryName, map);
-                    kDebug() << "Writing entry " << entryName;
-                }
-            }
-
-            if (!saved) {
-                kWarning() << "No secret has been written to the kwallet.";
-            }
-        }
-    }
-
-    wallet->deleteLater();
+    processNext();
 }
 
 void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
-    Q_UNUSED(connection_path)
-    if (!KWallet::Wallet::isEnabled()) {
-        kWarning() << "KWallet is disabled, please enable it. Secrets not deleted.";
-        return;
-    }
+    setDelayedReply(true);
+    SecretsRequest request(SecretsRequest::DeleteSecrets);
+    request.connection = connection;
+    request.connection_path = connection_path;
+    request.message = message();
+    m_calls << request;
 
-    KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
-
-    if (!wallet) {
-        kWarning() << "Error opening kwallet. Secrets not deleted.";
-        return;
-    }
-
-    if( wallet->isOpen() && wallet->hasFolder("plasma-nm") && wallet->setFolder("plasma-nm")) {
-        NetworkManager::Settings::ConnectionSettings connectionSettings;
-        connectionSettings.fromMap(connection);
-
-        foreach (const QString & entry, wallet->entryList()) {
-            if (entry.startsWith(connectionSettings.uuid() + ';'))
-                wallet->removeEntry(entry);
-        }
-    }
-
-    wallet->deleteLater();
+    processNext();
 }
 
 void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const QString &setting_name)
@@ -176,8 +113,11 @@ void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const
     kDebug() << connection_path.path() << setting_name;
     QString callId = connection_path.path() % setting_name;
     for (int i = 0; i < m_calls.size(); ++i) {
-        GetSecretsRequest request = m_calls.at(i);
-        if (callId == request.callId) {
+        SecretsRequest request = m_calls.at(i);
+        if (request.type == SecretsRequest::GetSecrets && callId == request.callId) {
+            if (m_dialog == request.dialog) {
+                m_dialog = 0;
+            }
             delete request.dialog;
             sendError(SecretAgent::AgentCanceled,
                       QLatin1String("Agent canceled the password dialog"),
@@ -192,33 +132,52 @@ void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const
 
 void SecretAgent::dialogAccepted()
 {
-    GetSecretsRequest request = m_calls.takeFirst();
+    for (int i = 0; i < m_calls.size(); ++i) {
+        SecretsRequest request = m_calls[i];
+        if (request.type == SecretsRequest::GetSecrets && request.dialog == m_dialog) {
+            sendSecrets(request.dialog->secrets(), request.message);
+            m_calls.removeAt(i);
+            break;
+        }
+    }
 
-    sendSecrets(request.dialog->secrets(), request.message);
-
-    sender()->deleteLater();
+    m_dialog->deleteLater();
+    m_dialog = 0;
 
     processNext();
 }
 
 void SecretAgent::dialogRejected()
 {
-    GetSecretsRequest request = m_calls.takeFirst();
-    sendError(SecretAgent::UserCanceled,
-              QLatin1String("User canceled the password dialog"),
-              request.message);
+    for (int i = 0; i < m_calls.size(); ++i) {
+        SecretsRequest request = m_calls[i];
+        if (request.type == SecretsRequest::GetSecrets && request.dialog == m_dialog) {
+            sendError(SecretAgent::UserCanceled,
+                      QLatin1String("User canceled the password dialog"),
+                      request.message);
+            m_calls.removeAt(i);
+            break;
+        }
+    }
 
-    sender()->deleteLater();
+    m_dialog->deleteLater();
+    m_dialog = 0;
 
     processNext();
 }
 
 void SecretAgent::killDialogs()
 {
-    foreach (const GetSecretsRequest &request, m_calls) {
-        delete request.dialog;
+    int i = 0;
+    while (i < m_calls.size()) {
+        SecretsRequest request = m_calls[i];
+        if (request.type == SecretsRequest::GetSecrets) {
+            delete request.dialog;
+            m_calls.removeAt(i);
+        }
+
+        ++i;
     }
-    m_calls.clear();
 }
 
 void SecretAgent::walletOpened(bool success)
@@ -236,11 +195,38 @@ void SecretAgent::walletClosed()
 
 void SecretAgent::processNext(bool ignoreWallet)
 {
-    if (m_calls.isEmpty() || m_calls.first().dialog) {
-        return;
+    int i = 0;
+    while (i < m_calls.size()) {
+        SecretsRequest &request = m_calls[i];
+        switch (request.type) {
+        case SecretsRequest::GetSecrets:
+            if (processGetSecrets(request, ignoreWallet)) {
+                m_calls.removeAt(i);
+                continue;
+            }
+            break;
+        case SecretsRequest::SaveSecrets:
+            if (processSaveSecrets(request, ignoreWallet)) {
+                m_calls.removeAt(i);
+                continue;
+            }
+            break;
+        case SecretsRequest::DeleteSecrets:
+            if (processDeleteSecrets(request, ignoreWallet)) {
+                m_calls.removeAt(i);
+                continue;
+            }
+            break;
+        }
+        ++i;
     }
+}
 
-    GetSecretsRequest &request = m_calls.first();
+bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) const
+{
+    if (m_dialog) {
+        return false;
+    }
 
     NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
 
@@ -265,31 +251,33 @@ void SecretAgent::processNext(bool ignoreWallet)
             }
         } else {
             kDebug() << "Waiting for the wallet to open";
-            return;
+            return false;
         }
     }
 
     if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
-        PasswordDialog *dialog = new PasswordDialog(request.flags, request.setting_name);
-        connect(dialog, SIGNAL(accepted()), this, SLOT(dialogAccepted()));
-        connect(dialog, SIGNAL(rejected()), this, SLOT(dialogRejected()));
+        m_dialog = new PasswordDialog(request.flags, request.setting_name);
+        connect(m_dialog, SIGNAL(accepted()), this, SLOT(dialogAccepted()));
+        connect(m_dialog, SIGNAL(rejected()), this, SLOT(dialogRejected()));
         if (isVpn) {
-            dialog->setupVpnUi(connectionSettings);
+            m_dialog->setupVpnUi(connectionSettings);
         } else {
-            dialog->setupGenericUi(connectionSettings);
+            m_dialog->setupGenericUi(connectionSettings);
         }
 
-        if (dialog->hasError()) {
-            sendError(dialog->error(),
-                      dialog->errorMessage(),
+        if (m_dialog->hasError()) {
+            sendError(m_dialog->error(),
+                      m_dialog->errorMessage(),
                       request.message);
-            m_calls.removeFirst();
-            processNext();
+            delete m_dialog;
+            m_dialog = 0;
+            return true;
         } else {
-            dialog->show();
-            KWindowSystem::setState(dialog->winId(), NET::KeepAbove);
-            KWindowSystem::forceActiveWindow(dialog->winId());
-            request.dialog = dialog;
+            request.dialog = m_dialog;
+            m_dialog->show();
+            KWindowSystem::setState(m_dialog->winId(), NET::KeepAbove);
+            KWindowSystem::forceActiveWindow(m_dialog->winId());
+            return false;
         }
     } else if (isVpn && userRequested) { // just return what we have
         NMVariantMapMap result;
@@ -297,24 +285,96 @@ void SecretAgent::processNext(bool ignoreWallet)
         vpnSetting = connectionSettings.setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
         result.insert("vpn", vpnSetting->secretsToMap());
         sendSecrets(result, request.message);
-        m_calls.removeFirst();
-        processNext();
+        return true;
     } else if (setting->needSecrets().isEmpty()) {
         NMVariantMapMap result;
         result.insert(setting->name(), setting->secretsToMap());
         sendSecrets(result, request.message);
-        m_calls.removeFirst();
-        processNext();
+        return true;
     } else {
         sendError(SecretAgent::InternalError,
                   QLatin1String("Plasma-nm did not know how to handle the request"),
                   request.message);
-        m_calls.removeFirst();
-        processNext();
+        return true;
     }
 }
 
-bool SecretAgent::useWallet()
+bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet) const
+{
+    if (!ignoreWallet && useWallet()) {
+        if (m_wallet->isOpen()) {
+            NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
+
+            bool readyForWalletWrite = false;
+            if (!m_wallet->hasFolder("plasma-nm")) {
+                m_wallet->createFolder("plasma-nm");
+            }
+
+            if (m_wallet->setFolder("plasma-nm")) {
+                readyForWalletWrite = true;
+            }
+            if (readyForWalletWrite) {
+                bool saved = false;
+                foreach (const QString &entry, m_wallet->entryList()) {
+                    if (entry.startsWith(connectionSettings.uuid() % QLatin1Char(';'))) {
+                        kDebug() << "Removing entry " << entry << ")";
+                        m_wallet->removeEntry(entry);
+                    }
+                }
+
+                foreach (const NetworkManager::Settings::Setting::Ptr &setting, connectionSettings.settings()) {
+                    QMap<QString, QString> map;
+
+                    foreach (const QString &key, setting->secretsToMap().keys()) {
+                        map.insert(key, setting->secretsToMap().value(key).toString());
+                    }
+                    qDebug() << map;
+                    if (!map.isEmpty()) {
+                        saved = true;
+                        QString entryName = connectionSettings.uuid() % QLatin1Char(';') % setting->name();
+                        m_wallet->writeMap(entryName, map);
+                        kDebug() << "Writing entry " << entryName;
+                    }
+                }
+
+                if (!saved) {
+                    kWarning() << "No secret has been written to the kwallet.";
+                }
+            }
+        } else {
+            kDebug() << "Waiting for the wallet to open";
+            return false;
+        }
+    } else {
+        // TODO write to a file
+    }
+
+    return true;
+}
+
+bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWallet) const
+{
+    if (!ignoreWallet && useWallet()) {
+        if (m_wallet->isOpen()) {
+            if (m_wallet->hasFolder("plasma-nm") && m_wallet->setFolder("plasma-nm")) {
+                NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
+
+                foreach (const QString &entry, m_wallet->entryList()) {
+                    if (entry.startsWith(connectionSettings.uuid() % QLatin1Char(';'))) {
+                        m_wallet->removeEntry(entry);
+                    }
+                }
+            }
+        } else {
+            kDebug() << "Waiting for the wallet to open";
+            return false;
+        }
+    }
+
+    return true;
+}
+
+bool SecretAgent::useWallet() const
 {
     if (m_wallet) {
         return true;
@@ -334,7 +394,7 @@ bool SecretAgent::useWallet()
     return false;
 }
 
-void SecretAgent::sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message)
+void SecretAgent::sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message) const
 {
     QDBusMessage reply;
     reply = message.createReply(QVariant::fromValue(secrets));

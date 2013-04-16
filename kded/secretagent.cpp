@@ -235,9 +235,7 @@ void SecretAgent::proccessNext()
 
     NetworkManager::Settings::Setting::Ptr setting = connectionSettings.setting(request.setting_name);
 
-    if (!KWallet::Wallet::isEnabled()) {
-        kWarning() << "KWallet is disabled, please enable it. Secrets not loaded.";
-    } else {
+    if (request.flags & None || request.flags & RequestNew) {
         KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
 
         if (wallet) {

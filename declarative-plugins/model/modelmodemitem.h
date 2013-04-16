@@ -29,11 +29,6 @@ class ModelModemItem : public ModelItem
 {
 Q_OBJECT
 public:
-    static QString convertTypeToString(const ModemManager::ModemInterface::Type type);
-    static QString convertBandToString(const ModemManager::ModemInterface::Band band);
-    static QString convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode);
-    static QString convertAccessTechnologyToString(const ModemManager::ModemInterface::AccessTechnology tech);
-
     ModelModemItem(const NetworkManager::Device::Ptr & device, QObject * parent = 0);
     ~ModelModemItem();
 

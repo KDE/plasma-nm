@@ -534,6 +534,7 @@ QString UiUtils::wirelessBandToString(int band)
     }
     return QString();
 }
+#endif
 
 QString UiUtils::convertTypeToString(const ModemManager::ModemInterface::Type type)
 {
@@ -597,7 +598,7 @@ QString UiUtils::convertAccessTechnologyToString(const ModemManager::ModemInterf
 
     return i18nc("Unknown cellular access technology","Unknown");
 }
-#endif
+
 
 NetworkManager::ModemDevice::Capability UiUtils::modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps)
 {

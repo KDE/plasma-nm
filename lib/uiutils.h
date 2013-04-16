@@ -160,12 +160,12 @@ public:
      * @return A string representation
      */
     static QString wirelessBandToString(int band);
-
+#endif
     static QString convertTypeToString(const ModemManager::ModemInterface::Type type);
     static QString convertBandToString(const ModemManager::ModemInterface::Band band);
     static QString convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode);
     static QString convertAccessTechnologyToString(const ModemManager::ModemInterface::AccessTechnology tech);
-#endif
+
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
 
 };

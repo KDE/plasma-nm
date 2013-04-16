@@ -27,6 +27,26 @@
 #include <kdemacros.h>
 
 class KDialog;
+namespace KWallet {
+class Wallet;
+}
+
+class GetSecretsRequest {
+public:
+    inline bool operator==(const QString &other) const {
+        return callId == other;
+    }
+    QString callId;
+    NMVariantMapMap connection;
+    QDBusObjectPath connection_path;
+    QString setting_name;
+    QStringList hints;
+    NetworkManager::SecretAgent::GetSecretsFlags flags;
+    QDBusMessage message;
+    KDialog *dialog;
+    KWallet::Wallet *wallet;
+};
+
 class KDE_EXPORT SecretAgent : public NetworkManager::SecretAgent
 {
     Q_OBJECT
@@ -46,7 +66,9 @@ private Q_SLOTS:
     void killDialogs();
 
 private:
-    QHash<KDialog*, QDBusMessage> m_calls;
+    void proccessNext();
+
+    QList<GetSecretsRequest> m_calls;
 };
 
 #endif // PLASMA_NM_SECRET_AGENT_H

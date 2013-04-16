@@ -285,9 +285,11 @@ void SecretAgent::proccessNext()
     } else if (isVpn && userRequested) { // just return what we have
         sendSecrets(connectionSettings.toMap(), request.message);
         m_calls.removeFirst();
+        proccessNext();
     } else if (setting->needSecrets().isEmpty()) {
         sendSecrets(connectionSettings.toMap(), request.message);
         m_calls.removeFirst();
+        proccessNext();
     } else {
         sendError(SecretAgent::InternalError,
                   QLatin1String("Plasma-nm did not know how to handle the request"),

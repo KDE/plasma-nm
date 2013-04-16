@@ -285,8 +285,10 @@ void SecretAgent::proccessNext()
         }
     } else if (isVpn && userRequested) { // just return what we have
         sendSecrets(connectionSettings.toMap(), request.message);
+        m_calls.removeFirst();
     } else if (setting->needSecrets().isEmpty()) {
         sendSecrets(connectionSettings.toMap(), request.message);
+        m_calls.removeFirst();
     } else {
         sendError(SecretAgent::InternalError,
                   QLatin1String("Plasma-nm did not know how to handle the request"),
@@ -303,5 +305,4 @@ void SecretAgent::sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage
     if (!QDBusConnection::systemBus().send(reply)) {
         kWarning() << "Failed put the secret into the queue";
     }
-    m_calls.removeFirst();
 }

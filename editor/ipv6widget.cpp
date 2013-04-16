@@ -23,6 +23,9 @@
 #include <QItemSelection>
 #include <QNetworkAddressEntry>
 
+#include <KEditListWidget>
+#include <KDialog>
+
 #include "ipv6widget.h"
 #include "ui_ipv6.h"
 #include "ui/ipv6delegate.h"
@@ -322,5 +325,37 @@ void IPv6Widget::slotRoutesDialog()
         m_tmpIpv6Setting.setNeverDefault(dlg->neverDefault());
         m_tmpIpv6Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
     }
+    delete dlg;
+}
+
+void IPv6Widget::slotDnsServers()
+{
+    KDialog * dlg = new KDialog(this);
+    dlg->setCaption(i18n("Edit DNS servers"));
+    dlg->setButtons(KDialog::Ok | KDialog::Cancel);
+    KEditListWidget * listWidget = new KEditListWidget(dlg);
+    dlg->setMainWidget(listWidget);
+    listWidget->setItems(m_ui->dns->text().split(','));
+
+    if (dlg->exec() == KDialog::Accepted) {
+        m_ui->dns->setText(listWidget->items().join(","));
+    }
+
+    delete dlg;
+}
+
+void IPv6Widget::slotDnsDomains()
+{
+    KDialog * dlg = new KDialog(this);
+    dlg->setCaption(i18n("Edit DNS search domains"));
+    dlg->setButtons(KDialog::Ok | KDialog::Cancel);
+    KEditListWidget * listWidget = new KEditListWidget(dlg);
+    dlg->setMainWidget(listWidget);
+    listWidget->setItems(m_ui->dnsSearch->text().split(','));
+
+    if (dlg->exec() == KDialog::Accepted) {
+        m_ui->dnsSearch->setText(listWidget->items().join(","));
+    }
+
     delete dlg;
 }

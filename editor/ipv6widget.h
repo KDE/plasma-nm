@@ -48,6 +48,9 @@ private slots:
     void slotModeComboChanged(int index);
     void slotRoutesDialog();
 
+    void slotDnsServers();
+    void slotDnsDomains();
+
     void slotAddIPAddress();
     void slotRemoveIPAddress();
 

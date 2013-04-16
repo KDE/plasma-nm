@@ -23,6 +23,9 @@
 #include <QItemSelection>
 #include <QNetworkAddressEntry>
 
+#include <KEditListWidget>
+#include <KDialog>
+
 #include "ipv4widget.h"
 #include "ui_ipv4.h"
 #include "ui/ipv4delegate.h"
@@ -88,6 +91,9 @@ IPv4Widget::IPv4Widget(const NetworkManager::Settings::Setting::Ptr &setting, QW
 
     connect(m_ui->btnAdd, SIGNAL(clicked()), this, SLOT(slotAddIPAddress()));
     connect(m_ui->btnRemove, SIGNAL(clicked()), this, SLOT(slotRemoveIPAddress()));
+
+    connect(m_ui->dnsMorePushButton, SIGNAL(clicked()), SLOT(slotDnsServers()));
+    connect(m_ui->dnsSearchMorePushButton, SIGNAL(clicked()), SLOT(slotDnsDomains()));
 
     connect(m_ui->tableViewAddresses->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
             this, SLOT(selectionChanged(QItemSelection)));
@@ -332,5 +338,37 @@ void IPv4Widget::slotRoutesDialog()
         m_tmpIpv4Setting.setNeverDefault(dlg->neverDefault());
         m_tmpIpv4Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
     }
+    delete dlg;
+}
+
+void IPv4Widget::slotDnsServers()
+{
+    KDialog * dlg = new KDialog(this);
+    dlg->setCaption(i18n("Edit DNS servers"));
+    dlg->setButtons(KDialog::Ok | KDialog::Cancel);
+    KEditListWidget * listWidget = new KEditListWidget(dlg);
+    dlg->setMainWidget(listWidget);
+    listWidget->setItems(m_ui->dns->text().split(','));
+
+    if (dlg->exec() == KDialog::Accepted) {
+        m_ui->dns->setText(listWidget->items().join(","));
+    }
+
+    delete dlg;
+}
+
+void IPv4Widget::slotDnsDomains()
+{
+    KDialog * dlg = new KDialog(this);
+    dlg->setCaption(i18n("Edit DNS search domains"));
+    dlg->setButtons(KDialog::Ok | KDialog::Cancel);
+    KEditListWidget * listWidget = new KEditListWidget(dlg);
+    dlg->setMainWidget(listWidget);
+    listWidget->setItems(m_ui->dnsSearch->text().split(','));
+
+    if (dlg->exec() == KDialog::Accepted) {
+        m_ui->dnsSearch->setText(listWidget->items().join(","));
+    }
+
     delete dlg;
 }

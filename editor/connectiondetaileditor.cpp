@@ -136,7 +136,7 @@ void ConnectionDetailEditor::initEditor()
         NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(m_connection->uuid());
         if (connection) {
             connect(connection.data(), SIGNAL(gotSecrets(QString,bool,NMVariantMapMap,QString)),
-                    SLOT(gotSecrets(QString,bool, NMVariantMapMap, QString)));
+                    this, SLOT(gotSecrets(QString,bool, NMVariantMapMap, QString)), Qt::UniqueConnection);
 
             switch (m_connection->connectionType()) {
                 case Settings::ConnectionSettings::Adsl:
@@ -190,6 +190,8 @@ void ConnectionDetailEditor::initEditor()
     }
 
     connect(this, SIGNAL(accepted()), SLOT(saveSetting()));
+    connect(this, SIGNAL(accepted()), SLOT(disconnectSignals()));
+    connect(this, SIGNAL(rejected()), SLOT(disconnectSignals()));
 }
 
 void ConnectionDetailEditor::initTabs()
@@ -339,7 +341,7 @@ void ConnectionDetailEditor::saveSetting()
         connectionSettings->setUuid(m_connection->uuid());
     }
 
-    //connectionSettings->printSetting();  // debug
+    connectionSettings->printSetting();  // debug
 
     if (m_new) { // create new connection
         connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
@@ -378,5 +380,15 @@ void ConnectionDetailEditor::gotSecrets(const QString& id, bool success, const N
 
     if (!m_numSecrets) {
         initTabs();
+    }
+}
+
+void ConnectionDetailEditor::disconnectSignals()
+{
+    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(m_connection->uuid());
+
+    if (connection) {
+        disconnect(connection.data(), SIGNAL(gotSecrets(QString,bool,NMVariantMapMap,QString)),
+                this, SLOT(gotSecrets(QString,bool, NMVariantMapMap, QString)));
     }
 }

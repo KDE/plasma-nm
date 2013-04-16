@@ -46,9 +46,10 @@ public:
     virtual ~ConnectionDetailEditor();
 
 private Q_SLOTS:
-    void saveSetting();
     void connectionAddComplete(const QString & id, bool success, const QString & msg);
+    void disconnectSignals();
     void gotSecrets(const QString & id, bool success, const NMVariantMapMap & secrets, const QString & msg);
+    void saveSetting();
 private:
     Ui::ConnectionDetailEditor * m_detailEditor;
     NetworkManager::Settings::ConnectionSettings::Ptr m_connection;

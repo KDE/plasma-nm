@@ -289,6 +289,10 @@ void SecretAgent::proccessNext()
         result.insert("vpn", vpnSetting->secretsToMap());
 
         sendSecrets(result, request.message);
+    } else if (setting->needSecrets().isEmpty()) {
+        NMVariantMapMap result;
+        result.insert(setting->name(), setting->secretsToMap());
+        sendSecrets(result, request.message);
     } else {
         sendError(SecretAgent::InternalError,
                   QLatin1String("Plasma-nm did not know how to handle the request"),

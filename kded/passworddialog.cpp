@@ -37,7 +37,9 @@ PasswordDialog::PasswordDialog(SecretAgent::GetSecretsFlags flags, const QString
     ui(0),
     vpnWidget(0),
     m_flags(flags),
-    m_settingName(setting_name)
+    m_settingName(setting_name),
+    m_hasError(false),
+    m_error(SecretAgent::NoSecrets)
 {
     setWindowIcon(KIcon("dialog-password"));
 }
@@ -82,7 +84,10 @@ void PasswordDialog::setupVpnUi(const Settings::ConnectionSettings &connectionSe
     NetworkManager::Settings::VpnSetting::Ptr vpnSetting;
     vpnSetting = connectionSettings.setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
     if (!vpnSetting) {
-        qDebug() << "Missing VPN setting!";
+        kDebug() << "Missing VPN setting!";
+        m_hasError = true;
+        m_error = SecretAgent::InternalError;
+        m_errorMessage = QLatin1String("VPN settings are missing");
     } else {
         VpnUiPlugin *vpnUiPlugin;
         QString error;
@@ -98,7 +103,10 @@ void PasswordDialog::setupVpnUi(const Settings::ConnectionSettings &connectionSe
             vpnWidget = vpnUiPlugin->askUser(vpnSetting, this);
             setMainWidget(vpnWidget);
         } else {
-            qDebug() << error << ", serviceType == " << serviceType;
+            kDebug() << error << ", serviceType == " << serviceType;
+            m_hasError = true;
+            m_error = SecretAgent::InternalError;
+            m_errorMessage = error;
         }
     }
 }

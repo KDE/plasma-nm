@@ -56,6 +56,7 @@ ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::Settings::Connect
     m_new(true),
     m_vpnType(vpnType)
 {
+    setAttribute(Qt::WA_DeleteOnClose);
     m_detailEditor->setupUi(this);
 
     initEditor();
@@ -68,6 +69,7 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::Con
     m_numSecrets(0),
     m_new(true)
 {
+    setAttribute(Qt::WA_DeleteOnClose);
     m_detailEditor->setupUi(this);
 
     // parse args given from the wizard
@@ -114,6 +116,7 @@ ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::Settings::C
     m_numSecrets(0),
     m_new(false)
 {
+    setAttribute(Qt::WA_DeleteOnClose);
     m_detailEditor->setupUi(this);
 
     initEditor();
@@ -389,6 +392,6 @@ void ConnectionDetailEditor::disconnectSignals()
 
     if (connection) {
         disconnect(connection.data(), SIGNAL(gotSecrets(QString,bool,NMVariantMapMap,QString)),
-                this, SLOT(gotSecrets(QString,bool, NMVariantMapMap, QString)));
+                   this, SLOT(gotSecrets(QString,bool, NMVariantMapMap, QString)));
     }
 }

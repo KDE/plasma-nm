@@ -281,9 +281,6 @@ void ConnectionEditor::addConnection(QAction* action)
     } else {
         ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, vpnType, this);
         editor->exec();
-
-        connect(editor, SIGNAL(accepted()), SLOT(deleteLater()));
-        connect(editor, SIGNAL(rejected()), SLOT(deleteLater()));
     }
 }
 
@@ -304,9 +301,6 @@ void ConnectionEditor::editConnection()
 
     ConnectionDetailEditor * editor = new ConnectionDetailEditor(connection->settings(), this);
     editor->exec();
-
-    connect(editor, SIGNAL(accepted()), SLOT(deleteLater()));
-    connect(editor, SIGNAL(rejected()), SLOT(deleteLater()));
 }
 
 void ConnectionEditor::removeConnection()

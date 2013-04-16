@@ -81,7 +81,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
 
     proccessNext();
 
-    return connection;
+    return NMVariantMapMap();
 }
 
 void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)

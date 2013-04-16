@@ -80,7 +80,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
 
     proccessNext();
 
-    return NMVariantMapMap();
+    return connection;
 }
 
 void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
@@ -124,6 +124,7 @@ void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObje
                 foreach (const QString & key, setting->secretsToMap().keys()) {
                     map.insert(key, setting->secretsToMap().value(key).toString());
                 }
+                qDebug() << map;
                 if (!map.isEmpty()) {
                     saved = true;
                     QString entryName = connectionSettings->uuid() + ";" + setting->name();
@@ -283,16 +284,9 @@ void SecretAgent::proccessNext()
             request.dialog = dialog;
         }
     } else if (isVpn && userRequested) { // just return what we have
-        NMVariantMapMap result;
-        NetworkManager::Settings::VpnSetting::Ptr vpnSetting;
-        vpnSetting = connectionSettings.setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
-        result.insert("vpn", vpnSetting->secretsToMap());
-
-        sendSecrets(result, request.message);
+        sendSecrets(connectionSettings.toMap(), request.message);
     } else if (setting->needSecrets().isEmpty()) {
-        NMVariantMapMap result;
-        result.insert(setting->name(), setting->secretsToMap());
-        sendSecrets(result, request.message);
+        sendSecrets(connectionSettings.toMap(), request.message);
     } else {
         sendError(SecretAgent::InternalError,
                   QLatin1String("Plasma-nm did not know how to handle the request"),
@@ -309,4 +303,5 @@ void SecretAgent::sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage
     if (!QDBusConnection::systemBus().send(reply)) {
         kWarning() << "Failed put the secret into the queue";
     }
+    m_calls.removeFirst();
 }

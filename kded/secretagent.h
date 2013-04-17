@@ -97,6 +97,13 @@ private:
      * the caller MUST always check if the wallet is opened.
      */
     bool useWallet() const;
+
+    /**
+     * @brief hasSecrets verifies if the desired connection has secrets to store
+     * @param connection map with or without secrets
+     * @return true if the connection has secrets, false otherwise
+     */
+    bool hasSecrets(const NMVariantMapMap &connection) const;
     void sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message) const;
 
     mutable KWallet::Wallet *m_wallet;

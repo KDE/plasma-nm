@@ -86,8 +86,16 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
 
 void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
+    kDebug() << connection_path.path();
+
     setDelayedReply(true);
-    SecretsRequest request(SecretsRequest::SaveSecrets);
+    SecretsRequest::Type type;
+    if (hasSecrets(connection)) {
+        type = SecretsRequest::SaveSecrets;
+    } else {
+        type = SecretsRequest::DeleteSecrets;
+    }
+    SecretsRequest request(type);
     request.connection = connection;
     request.connection_path = connection_path;
     request.message = message();
@@ -98,6 +106,8 @@ void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObje
 
 void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
+    kDebug() << connection_path.path();
+
     setDelayedReply(true);
     SecretsRequest request(SecretsRequest::DeleteSecrets);
     request.connection = connection;
@@ -305,41 +315,30 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
         if (m_wallet->isOpen()) {
             NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
 
-            bool readyForWalletWrite = false;
             if (!m_wallet->hasFolder("plasma-nm")) {
                 m_wallet->createFolder("plasma-nm");
             }
 
             if (m_wallet->setFolder("plasma-nm")) {
-                readyForWalletWrite = true;
-            }
-            if (readyForWalletWrite) {
-                bool saved = false;
-                foreach (const QString &entry, m_wallet->entryList()) {
-                    if (entry.startsWith(connectionSettings.uuid() % QLatin1Char(';'))) {
-                        kDebug() << "Removing entry " << entry << ")";
-                        m_wallet->removeEntry(entry);
-                    }
-                }
-
                 foreach (const NetworkManager::Settings::Setting::Ptr &setting, connectionSettings.settings()) {
                     QMap<QString, QString> map;
-
-                    foreach (const QString &key, setting->secretsToMap().keys()) {
-                        map.insert(key, setting->secretsToMap().value(key).toString());
+                    QVariantMap secretsMap = setting->secretsToMap();
+                    QVariantMap::ConstIterator i = secretsMap.constBegin();
+                    while (i != secretsMap.constEnd()) {
+                        map.insert(i.key(), i.value().toString());
+                        ++i;
                     }
-                    qDebug() << map;
+
                     if (!map.isEmpty()) {
-                        saved = true;
                         QString entryName = connectionSettings.uuid() % QLatin1Char(';') % setting->name();
                         m_wallet->writeMap(entryName, map);
-                        kDebug() << "Writing entry " << entryName;
                     }
                 }
-
-                if (!saved) {
-                    kWarning() << "No secret has been written to the kwallet.";
-                }
+            } else {
+                sendError(SecretAgent::InternalError,
+                          QLatin1String("Could not store secrets in the wallet."),
+                          request.message);
+                return true;
             }
         } else {
             kDebug() << "Waiting for the wallet to open";
@@ -347,6 +346,10 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
         }
     } else {
         // TODO write to a file
+    }
+    QDBusMessage reply = request.message.createReply();
+    if (!QDBusConnection::systemBus().send(reply)) {
+        kWarning() << "Failed put save secrets reply into the queue";
     }
 
     return true;
@@ -358,9 +361,8 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
         if (m_wallet->isOpen()) {
             if (m_wallet->hasFolder("plasma-nm") && m_wallet->setFolder("plasma-nm")) {
                 NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
-
                 foreach (const QString &entry, m_wallet->entryList()) {
-                    if (entry.startsWith(connectionSettings.uuid() % QLatin1Char(';'))) {
+                    if (entry.startsWith(connectionSettings.uuid())) {
                         m_wallet->removeEntry(entry);
                     }
                 }
@@ -369,6 +371,10 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
             kDebug() << "Waiting for the wallet to open";
             return false;
         }
+    }
+    QDBusMessage reply = request.message.createReply();
+    if (!QDBusConnection::systemBus().send(reply)) {
+        kWarning() << "Failed put delete secrets reply into the queue";
     }
 
     return true;
@@ -388,6 +394,18 @@ bool SecretAgent::useWallet() const
             return true;
         } else {
             kWarning() << "Error opening kwallet.";
+        }
+    }
+
+    return false;
+}
+
+bool SecretAgent::hasSecrets(const NMVariantMapMap &connection) const
+{
+    NetworkManager::Settings::ConnectionSettings connectionSettings(connection);
+    foreach (const NetworkManager::Settings::Setting::Ptr &setting, connectionSettings.settings()) {
+        if (!setting->secretsToMap().isEmpty()) {
+            return true;
         }
     }
 

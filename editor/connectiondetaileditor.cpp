@@ -235,6 +235,8 @@ void ConnectionDetailEditor::initTabs()
         if (btSetting->profileType() == NetworkManager::Settings::BluetoothSetting::Dun) {
             GsmWidget * gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Settings::Setting::Gsm), this);
             m_detailEditor->tabWidget->addTab(gsmWidget, i18n("GSM"));
+            PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Settings::Setting::Ppp), this);
+            m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
 
         }
     } else if (type == NetworkManager::Settings::ConnectionSettings::Vpn) { // VPN

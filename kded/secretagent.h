@@ -42,6 +42,7 @@ public:
     SecretsRequest(Type _type) :
         type(_type),
         flags(NetworkManager::SecretAgent::None),
+        saveOffline(false),
         dialog(0)
     {}
     inline bool operator==(const QString &other) const {
@@ -54,6 +55,7 @@ public:
     QString setting_name;
     QStringList hints;
     NetworkManager::SecretAgent::GetSecretsFlags flags;
+    bool saveOffline;
     QDBusMessage message;
     PasswordDialog *dialog;
 };

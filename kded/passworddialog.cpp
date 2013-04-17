@@ -33,10 +33,11 @@
 
 using namespace NetworkManager;
 
-PasswordDialog::PasswordDialog(SecretAgent::GetSecretsFlags flags, const QString &setting_name, QWidget *parent) :
+PasswordDialog::PasswordDialog(const NMVariantMapMap &connection, SecretAgent::GetSecretsFlags flags, const QString &setting_name, QWidget *parent) :
     KDialog(parent),
     ui(0),
     vpnWidget(0),
+    m_connection(connection),
     m_flags(flags),
     m_settingName(setting_name),
     m_hasError(false),
@@ -133,7 +134,7 @@ QString PasswordDialog::errorMessage() const
 
 NMVariantMapMap PasswordDialog::secrets() const
 {
-    NMVariantMapMap ret;
+    NMVariantMapMap ret = m_connection;
     QVariantMap result;
     if (vpnWidget) {
         result = vpnWidget->setting();

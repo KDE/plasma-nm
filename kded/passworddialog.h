@@ -37,7 +37,8 @@ class KDE_EXPORT PasswordDialog : public KDialog
 {
     Q_OBJECT
 public:
-    explicit PasswordDialog(NetworkManager::SecretAgent::GetSecretsFlags flags,
+    explicit PasswordDialog(const NMVariantMapMap &connection,
+                            NetworkManager::SecretAgent::GetSecretsFlags flags,
                             const QString &setting_name,
                             QWidget *parent = 0);
     ~PasswordDialog();
@@ -56,6 +57,7 @@ private slots:
 private:
     Ui::PasswordDialog *ui;
     SettingWidget *vpnWidget;
+    NMVariantMapMap m_connection;
     NetworkManager::SecretAgent::GetSecretsFlags m_flags;
     QString m_settingName;
     QStringList m_neededSecrets;

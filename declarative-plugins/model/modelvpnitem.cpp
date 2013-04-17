@@ -68,7 +68,8 @@ void ModelVpnItem::setActiveConnection(const NetworkManager::ActiveConnection::P
 
 void ModelVpnItem::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state)
 {
-    if (state == NetworkManager::VpnConnection::Disconnected) {
+    if (state == NetworkManager::VpnConnection::Disconnected ||
+        state == NetworkManager::VpnConnection::Failed) {
         m_connecting = false;
         m_connected = false;
         m_vpn.clear();

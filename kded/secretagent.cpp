@@ -267,10 +267,19 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
                 QMap<QString,QString> map;
                 m_wallet->readMap(key, map);
                 QVariantMap secretsMap;
-                foreach (const QString & key, map.keys()) {
-                    secretsMap.insert(key, map.value(key));
+                QMap<QString,QString>::ConstIterator i = map.constBegin();
+                while (i != map.constEnd()) {
+                    secretsMap.insert(i.key(), i.value());
+                    ++i;
                 }
                 setting->secretsFromMap(secretsMap);
+
+                if (setting->needSecrets(requestNew).isEmpty()) {
+                    // Enough secrets were retrieved from storage
+                    request.connection[request.setting_name] = setting->secretsToMap();
+                    sendSecrets(request.connection, request.message);
+                    return true;
+                }
             }
         } else {
             kDebug() << "Waiting for the wallet to open";

@@ -192,8 +192,10 @@ void SecretAgent::killDialogs()
 
 void SecretAgent::walletOpened(bool success)
 {
-    m_wallet->deleteLater();
-    m_wallet = 0;
+    if (!success) {
+        m_wallet->deleteLater();
+        m_wallet = 0;
+    }
     processNext(!success);
 }
 

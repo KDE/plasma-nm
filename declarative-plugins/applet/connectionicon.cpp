@@ -171,7 +171,7 @@ void ConnectionIcon::setIcons()
                     Q_EMIT setConnectionIcon("network-wired-activated");
                     Q_EMIT setTooltipIcon("network-wired-activated");
                 } else if (type == NetworkManager::Device::Modem ||
-                            type == NetworkManager::Device::Bluetooth) {
+                           type == NetworkManager::Device::Bluetooth) {
                     connectionFound = true;
                     setModemIcon(device);
                 }

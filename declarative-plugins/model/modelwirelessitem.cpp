@@ -133,13 +133,44 @@ void ModelWirelessItem::setConnection(const NetworkManager::Settings::Connection
 void ModelWirelessItem::setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings)
 {
     ModelItem::setConnectionSettings(settings);
-
+    bool changed = false;
+    QString previousSsid;
     if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
         NetworkManager::Settings::WirelessSetting::Ptr wirelessSetting;
         wirelessSetting = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
-        m_ssid = wirelessSetting->ssid();
-        if (!wirelessSetting->security().isEmpty()) {
-            m_secure = true;
+        if (m_ssid != wirelessSetting->ssid()) {
+            if (!m_ssid.isEmpty()) {
+                changed = true;
+            }
+            previousSsid = m_ssid;
+            m_ssid = wirelessSetting->ssid();
+            if (!wirelessSetting->security().isEmpty()) {
+                m_secure = true;
+            }
+        }
+
+        if (!changed) {
+            return;
+        }
+
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePath());
+        if (!device) {
+           return;
+        }
+        NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+        if (!wifiDevice) {
+            return;
+        }
+        NetworkManager::WirelessNetwork::Ptr newWifiNetwork = wifiDevice->findNetwork(m_ssid);
+
+        if (!newWifiNetwork) {
+            setConnection(NetworkManager::Settings::Connection::Ptr());
+            NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(previousSsid);
+            if (wifiNetwork) {
+                setWirelessNetwork(wifiNetwork);
+            }
+        } else {
+            setWirelessNetwork(newWifiNetwork);
         }
     }
 

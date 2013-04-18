@@ -260,6 +260,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
     const bool allowInteraction = request.flags & AllowInteraction;
     const bool isVpn = (setting->type() == NetworkManager::Settings::Setting::Vpn);
 
+    QVariantMap secretsMap;
     if (!ignoreWallet && !requestNew && useWallet()) {
         if (m_wallet->isOpen()) {
             if (m_wallet->hasFolder("plasma-nm") && m_wallet->setFolder("plasma-nm")) {
@@ -272,18 +273,32 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
                     secretsMap.insert(i.key(), i.value());
                     ++i;
                 }
-                setting->secretsFromMap(secretsMap);
-
-                if (!isVpn && setting->needSecrets(requestNew).isEmpty()) {
-                    // Enough secrets were retrieved from storage
-                    request.connection[request.setting_name] = setting->secretsToMap();
-                    sendSecrets(request.connection, request.message);
-                    return true;
-                }
             }
         } else {
             kDebug() << "Waiting for the wallet to open";
             return false;
+        }
+    } else if (!requestNew && !m_wallet) {
+        // If the wallet is disabled fallback to plain text
+        KConfig config("plasma-nm");
+        KConfigGroup secretsGroup(&config, connectionSettings.uuid() % QLatin1Char(';') % request.setting_name);
+
+        QMap<QString,QString> map = secretsGroup.entryMap();
+        QMap<QString,QString>::ConstIterator i = map.constBegin();
+        while (i != map.constEnd()) {
+            secretsMap.insert(i.key(), i.value());
+            ++i;
+        }
+    }
+
+    if (!secretsMap.isEmpty()) {
+        setting->secretsFromMap(secretsMap);
+
+        if (!isVpn && setting->needSecrets(requestNew).isEmpty()) {
+            // Enough secrets were retrieved from storage
+            request.connection[request.setting_name] = setting->secretsToMap();
+            sendSecrets(request.connection, request.message);
+            return true;
         }
     }
 
@@ -367,8 +382,19 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
             kDebug() << "Waiting for the wallet to open";
             return false;
         }
-    } else {
-        // TODO write to a file
+    } else if (!m_wallet) {
+        NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
+
+        KConfig config("plasma-nm");
+        foreach (const NetworkManager::Settings::Setting::Ptr &setting, connectionSettings.settings()) {
+            KConfigGroup secretsGroup(&config, connectionSettings.uuid() % QLatin1Char(';') % setting->name());
+            QVariantMap secretsMap = setting->secretsToMap();
+            QVariantMap::ConstIterator i = secretsMap.constBegin();
+            while (i != secretsMap.constEnd()) {
+                secretsGroup.writeEntry(i.key(), i.value().toString());
+                ++i;
+            }
+        }
     }
 
     if (!request.saveSecretsWithoutReply) {
@@ -397,7 +423,17 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
             kDebug() << "Waiting for the wallet to open";
             return false;
         }
+    } else if (!m_wallet) {
+        NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
+
+        KConfig config("plasma-nm");
+        foreach (const QString &group, config.groupList()) {
+            if (group.startsWith(connectionSettings.uuid())) {
+                config.deleteGroup(group);
+            }
+        }
     }
+
     QDBusMessage reply = request.message.createReply();
     if (!QDBusConnection::systemBus().send(reply)) {
         kWarning() << "Failed put delete secrets reply into the queue";
@@ -421,6 +457,9 @@ bool SecretAgent::useWallet() const
         } else {
             kWarning() << "Error opening kwallet.";
         }
+    } else if (m_wallet) {
+        m_wallet->deleteLater();
+        m_wallet = 0;
     }
 
     return false;

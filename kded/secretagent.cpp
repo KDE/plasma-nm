@@ -51,7 +51,7 @@ SecretAgent::~SecretAgent()
 }
 
 NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path, const QString &setting_name,
-                                       const QStringList &hints, uint flags)
+                                        const QStringList &hints, uint flags)
 {
     qDebug() << Q_FUNC_INFO;
     qDebug() << "Path:" << connection_path.path();
@@ -274,7 +274,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
                 }
                 setting->secretsFromMap(secretsMap);
 
-                if (setting->needSecrets(requestNew).isEmpty()) {
+                if (setting->needSecrets(requestNew).isEmpty() && !isVpn) {
                     // Enough secrets were retrieved from storage
                     request.connection[request.setting_name] = setting->secretsToMap();
                     sendSecrets(request.connection, request.message);

@@ -78,7 +78,7 @@ void GlobalStatus::statusChanged(NetworkManager::Status status)
                 break;
             }
         }
-        statusMsg = i18n("Connected (via %1)").arg(name);
+        statusMsg = i18n("Connected (via %1)", name);
         connected = true;
         inProgress = false;
 

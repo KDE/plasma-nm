@@ -142,6 +142,8 @@ void ConnectionEditor::initializeConnections()
 
     foreach (const Settings::Connection::Ptr &con, Settings::listConnections()) {
         insertConnection(con);
+
+        connect(con.data(), SIGNAL(updated()), SLOT(connectionUpdated()));
     }
 }
 
@@ -348,6 +350,21 @@ void ConnectionEditor::connectionRemoved(const QString& connection)
             if (!parent->childCount()) {
                 delete parent;
             }
+            break;
+        }
+        ++it;
+    }
+}
+
+void ConnectionEditor::connectionUpdated()
+{
+    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnection(qobject_cast<NetworkManager::Settings::Connection*>(sender())->path());
+
+    QTreeWidgetItemIterator it(m_editor->connectionsWidget);
+
+    while (*it) {
+        if ((*it)->data(0, ConnectionItem::ConnectionIdRole).toString() == connection->uuid()) {
+            (*it)->setText(0, connection->name());
             break;
         }
         ++it;

@@ -50,6 +50,7 @@ private Q_SLOTS:
     void removeConnection();
     void connectionAdded(const QString & connection);
     void connectionRemoved(const QString & connection);
+    void connectionUpdated();
 
 private:
     Ui::ConnectionEditor * m_editor;

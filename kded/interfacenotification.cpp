@@ -271,7 +271,7 @@ void InterfaceNotification::stateChanged(NetworkManager::Device::State newstate,
     }
     kDebug() << text;
 
-    KNotification *notify = new KNotification("DeviceFailed");
+    KNotification *notify = new KNotification("DeviceFailed", KNotification::CloseOnTimeout, this);
     notify->setComponentData(KComponentData("plasma-nm"));
     notify->setPixmap(KIcon("task-attention").pixmap(64, 64));
     notify->setTitle(i18n("%1 - Failed to activate", identifier));

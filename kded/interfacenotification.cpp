@@ -36,6 +36,8 @@ InterfaceNotification::InterfaceNotification(QObject *parent) :
     foreach (const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
         addDevice(device);
     }
+
+    connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)), this, SLOT(deviceAdded(QString)));
 }
 
 void InterfaceNotification::deviceAdded(const QString &uni)
@@ -69,7 +71,7 @@ void InterfaceNotification::stateChanged(NetworkManager::Device::State newstate,
         return;
     case NetworkManager::Device::ConfigFailedReason:
         text = i18nc("@info:status Notification when the device failed due to ConfigFailedReason",
-                     "The device could not be configurated");
+                     "The device could not be configured");
         break;
     case NetworkManager::Device::ConfigUnavailableReason:
         text = i18nc("@info:status Notification when the device failed due to ConfigUnavailableReason",

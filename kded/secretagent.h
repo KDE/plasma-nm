@@ -42,7 +42,7 @@ public:
     SecretsRequest(Type _type) :
         type(_type),
         flags(NetworkManager::SecretAgent::None),
-        saveOffline(false),
+        saveSecretsWithoutReply(false),
         dialog(0)
     {}
     inline bool operator==(const QString &other) const {
@@ -55,7 +55,13 @@ public:
     QString setting_name;
     QStringList hints;
     NetworkManager::SecretAgent::GetSecretsFlags flags;
-    bool saveOffline;
+    /**
+     * When a user connection is called on GetSecrets,
+     * the secret agent is supposed to save the secrets
+     * typed by user, when true proccessSaveSecrets
+     * should skip the DBus reply.
+     */
+    bool saveSecretsWithoutReply;
     QDBusMessage message;
     PasswordDialog *dialog;
 };
@@ -69,7 +75,7 @@ public:
 
 public Q_SLOTS:
     virtual NMVariantMapMap GetSecrets(const NMVariantMapMap&, const QDBusObjectPath&, const QString&, const QStringList&, uint);
-    virtual void SaveSecrets(const NMVariantMapMap&, const QDBusObjectPath&);
+    virtual void SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path);
     virtual void DeleteSecrets(const NMVariantMapMap &, const QDBusObjectPath &);
     virtual void CancelGetSecrets(const QDBusObjectPath &, const QString &);
 

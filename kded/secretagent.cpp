@@ -147,11 +147,11 @@ void SecretAgent::dialogAccepted()
         if (request.type == SecretsRequest::GetSecrets && request.dialog == m_dialog) {
             NMVariantMapMap connection = request.dialog->secrets();
             sendSecrets(connection, request.message);
-            if (request.saveOffline) {
+            if (request.saveSecretsWithoutReply) {
                 SecretsRequest requestOffline(SecretsRequest::SaveSecrets);
                 requestOffline.connection = connection;
                 requestOffline.connection_path = request.connection_path;
-                requestOffline.saveOffline = true;
+                requestOffline.saveSecretsWithoutReply = true;
                 m_calls << requestOffline;
             }
 
@@ -274,7 +274,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
                 }
                 setting->secretsFromMap(secretsMap);
 
-                if (setting->needSecrets(requestNew).isEmpty() && !isVpn) {
+                if (!isVpn && setting->needSecrets(requestNew).isEmpty()) {
                     // Enough secrets were retrieved from storage
                     request.connection[request.setting_name] = setting->secretsToMap();
                     sendSecrets(request.connection, request.message);
@@ -306,7 +306,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
             return true;
         } else {
             request.dialog = m_dialog;
-            request.saveOffline = !connectionSettings.permissions().isEmpty();
+            request.saveSecretsWithoutReply = !connectionSettings.permissions().isEmpty();
             m_dialog->show();
             KWindowSystem::setState(m_dialog->winId(), NET::KeepAbove);
             KWindowSystem::forceActiveWindow(m_dialog->winId());
@@ -357,7 +357,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
                         m_wallet->writeMap(entryName, map);
                     }
                 }
-            } else if (!request.saveOffline) {
+            } else if (!request.saveSecretsWithoutReply) {
                 sendError(SecretAgent::InternalError,
                           QLatin1String("Could not store secrets in the wallet."),
                           request.message);
@@ -371,7 +371,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
         // TODO write to a file
     }
 
-    if (!request.saveOffline) {
+    if (!request.saveSecretsWithoutReply) {
         QDBusMessage reply = request.message.createReply();
         if (!QDBusConnection::systemBus().send(reply)) {
             kWarning() << "Failed put save secrets reply into the queue";

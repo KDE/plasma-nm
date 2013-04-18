@@ -45,7 +45,7 @@ ModelWirelessItem::~ModelWirelessItem()
 QString ModelWirelessItem::icon() const
 {
     if (m_signal < 13) {
-        return "network-wireless-connected-0";
+        return "network-wireless-connected-00";
     } else if (m_signal < 38) {
         return "network-wireless-connected-25";
     } else if (m_signal < 63) {

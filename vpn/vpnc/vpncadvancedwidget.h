@@ -36,7 +36,7 @@ class VpncAdvancedWidget : public QDialog
 public:
     VpncAdvancedWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget *parent = 0);
 
-    QStringMap setting() const;
+    NMStringMap setting() const;
 
 private:
     void loadConfig(const NetworkManager::Settings::VpnSetting::Ptr &setting);

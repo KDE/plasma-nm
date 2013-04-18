@@ -112,9 +112,9 @@ QVariantList VpncUiPlugin::importConnectionSettings(const QString &fileName)
         connect(decrPlugin->ciscoDecrypt, SIGNAL(finished(int,QProcess::ExitStatus)), decrPlugin, SLOT(ciscoDecryptFinished(int,QProcess::ExitStatus)));
         connect(decrPlugin->ciscoDecrypt, SIGNAL(readyReadStandardOutput()), decrPlugin, SLOT(gotciscoDecryptOutput()));
 
-        QStringMap data;
-        QStringMap secretData;
-        QStringMap ipv4Data;
+        NMStringMap data;
+        NMStringMap secretData;
+        NMStringMap ipv4Data;
 
         // gateway
         data.insert(NM_VPNC_KEY_GATEWAY, decrPlugin->readStringKeyValue(cg,"Host"));
@@ -252,8 +252,8 @@ QVariantList VpncUiPlugin::importConnectionSettings(const QString &fileName)
 
 bool VpncUiPlugin::exportConnectionSettings(Knm::Connection * connection, const QString &fileName)
 {
-    QStringMap data;
-    QStringMap secretData;
+    NMStringMap data;
+    NMStringMap secretData;
 
     Knm::VpnSetting * vpnSetting = static_cast<Knm::VpnSetting*>(connection->setting(Knm::Setting::Vpn));
     data = vpnSetting->data();

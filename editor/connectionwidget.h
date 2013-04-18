@@ -45,7 +45,7 @@ public:
 
 private:
     // list of VPN: UUID, name
-    QStringMap vpnConnections() const;
+    NMStringMap vpnConnections() const;
     // list of firewalld zones
     QStringList firewallZones() const;
 

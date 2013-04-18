@@ -95,9 +95,9 @@ void VpncAdvancedWidget::loadConfig(const NetworkManager::Settings::VpnSetting::
     m_ui->deadPeer->setChecked(ok && dpd == 0);
 }
 
-QStringMap VpncAdvancedWidget::setting() const
+NMStringMap VpncAdvancedWidget::setting() const
 {
-    QStringMap result;
+    NMStringMap result;
     if (!m_ui->domain->text().isEmpty())
         result.insert(NM_VPNC_KEY_DOMAIN, m_ui->domain->text());
 

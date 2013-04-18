@@ -128,7 +128,7 @@ ConnectionDetailEditor::~ConnectionDetailEditor()
 
 void ConnectionDetailEditor::initEditor()
 {
-    qDBusRegisterMetaType<QStringMap>();
+    qDBusRegisterMetaType<NMStringMap>();
     qDBusRegisterMetaType<UIntList>();
     qDBusRegisterMetaType<UIntListList>();
     qDBusRegisterMetaType<IpV6DBusAddressList>();

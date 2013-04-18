@@ -31,7 +31,7 @@ VpncWidget::VpncWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting,
     m_ui(new Ui::VpncWidget),
     m_setting(setting)
 {
-    qDBusRegisterMetaType<QStringMap>();
+    qDBusRegisterMetaType<NMStringMap>();
 
     m_ui->setupUi(this);
 
@@ -52,8 +52,8 @@ void VpncWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &settin
 {
     Q_UNUSED(setting);
 
-    const QStringMap data = m_setting->data();
-    const QStringMap secrets = m_setting->secrets();
+    const NMStringMap data = m_setting->data();
+    const NMStringMap secrets = m_setting->secrets();
 
     const QString gateway = data.value(NM_VPNC_KEY_GATEWAY);
     if (!gateway.isEmpty())
@@ -101,8 +101,8 @@ void VpncWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &settin
 
 QVariantMap VpncWidget::setting(bool agentOwned) const
 {
-    QStringMap data;
-    QStringMap secrets;
+    NMStringMap data;
+    NMStringMap secrets;
 
     if (!m_ui->gateway->text().isEmpty())
         data.insert(NM_VPNC_KEY_GATEWAY, m_ui->gateway->text());
@@ -175,7 +175,7 @@ void VpncWidget::showAdvanced()
 {
     VpncAdvancedWidget * adv = new VpncAdvancedWidget(m_setting, this);
     if (adv->exec() == QDialog::Accepted) {
-        QStringMap advData = adv->setting();
+        NMStringMap advData = adv->setting();
         if (!advData.isEmpty()) {
             m_setting->data().unite(advData);
         }

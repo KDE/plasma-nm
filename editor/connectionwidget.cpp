@@ -108,10 +108,10 @@ NMVariantMapMap ConnectionWidget::setting() const
     return settings.toMap();
 }
 
-QStringMap ConnectionWidget::vpnConnections() const
+NMStringMap ConnectionWidget::vpnConnections() const
 {
     NetworkManager::Settings::Connection::List list = NetworkManager::Settings::listConnections();
-    QStringMap result;
+    NMStringMap result;
 
     foreach (const NetworkManager::Settings::Connection::Ptr & conn, list) {
         NetworkManager::Settings::ConnectionSettings::Ptr conSet = conn->settings();

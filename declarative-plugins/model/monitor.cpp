@@ -157,6 +157,17 @@ void Monitor::connectionAdded(const QString& connection)
         return;
     }
 
+    if (newConnection->settings()->connectionType() == NetworkManager::Settings::ConnectionSettings::Vpn) {
+        if (NetworkManager::status() == NetworkManager::Connected ||
+            NetworkManager::status() == NetworkManager::ConnectedLinkLocal ||
+            NetworkManager::status() == NetworkManager::ConnectedSiteOnly) {
+            NMMonitorDebug() << "VPN connection " << newConnection->name() << " added";
+            NMMonitorSignalDebug() << "Emit signal addVpnConnection(" << newConnection->name() << ")";
+            Q_EMIT addVpnConnection(newConnection);
+            return;
+        }
+    }
+
     foreach (const NetworkManager::Device::Ptr &dev, m_devices) {
         foreach (const NetworkManager::Settings::Connection::Ptr &con, dev->availableConnections()) {
             qDebug() << con->name() << " == " << newConnection->name();

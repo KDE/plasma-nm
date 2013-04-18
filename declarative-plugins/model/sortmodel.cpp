@@ -21,6 +21,60 @@
 #include "sortmodel.h"
 #include "model.h"
 
+SortModel::SortedConnectionType SortModel::connectionTypeToSortedType(NetworkManager::Settings::ConnectionSettings::ConnectionType type)
+{
+    switch (type) {
+        case NetworkManager::Settings::ConnectionSettings::Unknown:
+            return SortModel::SortModel::Unknown;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Adsl:
+            return SortModel::SortModel::Adsl;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Bluetooth:
+            return SortModel::Bluetooth;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Bond:
+            return SortModel::Bond;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Bridge:
+            return SortModel::Bridge;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Cdma:
+            return SortModel::Cdma;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Gsm:
+            return SortModel::Gsm;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Infiniband:
+            return SortModel::Infiniband;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::OLPCMesh:
+            return SortModel::OLPCMesh;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Pppoe:
+            return SortModel::Pppoe;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Vlan:
+            return SortModel::Vlan;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Vpn:
+            return SortModel::Vpn;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Wimax:
+            return SortModel::Wimax;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Wired:
+            return SortModel::Wired;
+            break;
+        case NetworkManager::Settings::ConnectionSettings::Wireless:
+            return SortModel::Wireless;
+            break;
+        default:
+            return SortModel::Unknown;
+            break;
+    }
+}
+
 SortModel::SortModel(QObject* parent):
     QSortFilterProxyModel(parent)
 {
@@ -46,15 +100,13 @@ bool SortModel::lessThan(const QModelIndex& left, const QModelIndex& right) cons
 {
     bool leftConnected = sourceModel()->data(left, Model::ConnectedRole).toBool();
     QString leftName = sourceModel()->data(left, Model::NameRole).toString();
-    NetworkManager::Settings::ConnectionSettings::ConnectionType leftType;
-    leftType = (NetworkManager::Settings::ConnectionSettings::ConnectionType) sourceModel()->data(left, Model::TypeRole).toUInt();
+    SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::Settings::ConnectionSettings::ConnectionType) sourceModel()->data(left, Model::TypeRole).toUInt());
     QString leftUuid = sourceModel()->data(left, Model::UuidRole).toString();
     int leftSignal = sourceModel()->data(left, Model::SignalRole).toInt();
 
     bool rightConnected = sourceModel()->data(right, Model::ConnectedRole).toBool();
     QString rightName = sourceModel()->data(right, Model::NameRole).toString();
-    NetworkManager::Settings::ConnectionSettings::ConnectionType rightType;
-    rightType = (NetworkManager::Settings::ConnectionSettings::ConnectionType) sourceModel()->data(right, Model::TypeRole).toUInt();
+    SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::Settings::ConnectionSettings::ConnectionType) sourceModel()->data(right, Model::TypeRole).toUInt());
     QString rightUuid = sourceModel()->data(right, Model::UuidRole).toString();
     int rightSignal = sourceModel()->data(right, Model::SignalRole).toInt();
 
@@ -74,9 +126,9 @@ bool SortModel::lessThan(const QModelIndex& left, const QModelIndex& right) cons
     }
 
     if (leftType < rightType) {
-        return true;
-    } else if (leftType > rightType) {
         return false;
+    } else if (leftType > rightType) {
+        return true;
     }
 
     if (leftSignal < rightSignal) {

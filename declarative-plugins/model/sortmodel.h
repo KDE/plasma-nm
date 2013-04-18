@@ -30,6 +30,10 @@ class SortModel : public QSortFilterProxyModel
 Q_OBJECT
 Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
 public:
+    enum SortedConnectionType {Wired, Wireless, Wimax, Gsm, Cdma, Pppoe, Adsl, Infiniband, OLPCMesh, Bluetooth, Vpn, Vlan, Bridge, Bond, Unknown };
+
+    static SortedConnectionType connectionTypeToSortedType(NetworkManager::Settings::ConnectionSettings::ConnectionType type);
+
     SortModel(QObject* parent = 0);
     virtual ~SortModel();
 

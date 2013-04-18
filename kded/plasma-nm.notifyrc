@@ -1,0 +1,9 @@
+[Global]
+IconName=applications-internet
+Name=plasma-nm
+Comment=Notifies about network errors
+
+[Event/DeviceFailed]
+Name=Device failed to activate
+IconName=applications-internet
+Action=Popup

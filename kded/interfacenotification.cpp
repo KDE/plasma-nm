@@ -56,11 +56,16 @@ void InterfaceNotification::stateChanged(NetworkManager::Device::State newstate,
 {
     Q_UNUSED(oldstate)
     kDebug() << newstate << reason;
-    if (newstate != NetworkManager::Device::Failed) {
+    NetworkManager::Device *device = qobject_cast<NetworkManager::Device*>(sender());
+    if (newstate == NetworkManager::Device::Activated && m_notifications.contains(device->uni())) {
+        KNotification *notify = m_notifications.value(device->uni());
+        notify->deleteLater();
+        m_notifications.remove(device->uni());
+        return;
+    } else if (newstate != NetworkManager::Device::Failed) {
         return;
     }
 
-    NetworkManager::Device *device = qobject_cast<NetworkManager::Device*>(sender());
     QString identifier = UiUtils::prettyInterfaceName(device->type(), device->interfaceName());
     QString text;
     switch (reason) {
@@ -271,10 +276,27 @@ void InterfaceNotification::stateChanged(NetworkManager::Device::State newstate,
     }
     kDebug() << text;
 
-    KNotification *notify = new KNotification("DeviceFailed", KNotification::CloseOnTimeout, this);
-    notify->setComponentData(KComponentData("plasma-nm"));
-    notify->setPixmap(KIcon("task-attention").pixmap(64, 64));
-    notify->setTitle(i18n("%1 - Failed to activate", identifier));
-    notify->setText(text);
-    notify->sendEvent();
+    if (m_notifications.contains(device->uni())) {
+        KNotification *notify = m_notifications.value(device->uni());
+        notify->setText(text);
+        notify->update();
+    } else {
+        KNotification *notify = new KNotification("DeviceFailed", KNotification::Persistent, this);
+        connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
+        notify->setProperty("device-uni", device->uni());
+        notify->setComponentData(KComponentData("plasma-nm"));
+        notify->setPixmap(KIcon("task-attention").pixmap(64, 64));
+        notify->setTitle(i18n("%1 - Failed to activate", identifier));
+        notify->setText(text);
+        notify->sendEvent();
+        m_notifications[device->uni()] = notify;
+    }
+}
+
+void InterfaceNotification::notificationClosed()
+{
+    kDebug();
+    KNotification *notify = qobject_cast<KNotification*>(sender());
+    m_notifications.remove(notify->property("device-uni").toString());
+    notify->deleteLater();
 }

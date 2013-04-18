@@ -26,6 +26,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QtNetworkManager/device.h>
 
+class KNotification;
 class InterfaceNotification : public QObject
 {
     Q_OBJECT
@@ -36,6 +37,10 @@ private slots:
     void deviceAdded(const QString &uni);
     void addDevice(const NetworkManager::Device::Ptr &device);
     void stateChanged(NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason);
+    void notificationClosed();
+
+private:
+    QHash<QString, KNotification*> m_notifications;
 };
 
 #endif // INTERFACENOTIFICATION_H

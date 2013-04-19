@@ -23,7 +23,7 @@
 #ifndef PLASMA_NM_SECRET_AGENT_H
 #define PLASMA_NM_SECRET_AGENT_H
 
-#include <QtNetworkManager/secretagent.h>
+#include <NetworkManagerQt/secretagent.h>
 
 #include <kdemacros.h>
 

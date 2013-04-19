@@ -9,15 +9,15 @@ find_package(KDE4 "4.9.0" REQUIRED)
 include(FindPkgConfig)
 include(KDE4Defaults)
 
-pkg_check_modules(QTMODEMMANAGER REQUIRED QtModemManager)
-if (NOT QTMODEMMANAGER_FOUND)
-    message(FATAL_ERROR "ERROR: QtModemManager not found. http://projects.kde.org/libmm-qt")
-endif (NOT QTMODEMMANAGER_FOUND)
+pkg_check_modules(MODEMMANAGERQT REQUIRED ModemManagerQt)
+if (NOT MODEMMANAGERQT_FOUND)
+    message(FATAL_ERROR "ERROR: ModemManagerQt not found. http://projects.kde.org/libmm-qt")
+endif (NOT MODEMMANAGERQT_FOUND)
 
-pkg_check_modules(QTNETWORKMANAGER REQUIRED QtNetworkManager)
-if (NOT QTNETWORKMANAGER_FOUND)
-    message(FATAL_ERROR "ERROR: QtNetworkManager not found. http://projects.kde.org/libnm-qt")
-endif (NOT QTNETWORKMANAGER_FOUND)
+pkg_check_modules(NETWORKMANAGERQT REQUIRED NetworkManagerQt)
+if (NOT NETWORKMANAGERQT_FOUND)
+    message(FATAL_ERROR "ERROR: NetworkManagerQt not found. http://projects.kde.org/libnm-qt")
+endif (NOT NETWORKMANAGERQT_FOUND)
 
 set(KDE_NETWORK_VERSION "0.1.0")
 configure_file(config.h.cmake
@@ -41,8 +41,8 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/lib
                     ${QTNETWORK_INCLUDE_DIRS}
-                    ${QTMODEMMANAGER_INCLUDE_DIRS}
-                    ${QTNETWORKMANAGER_INCLUDE_DIRS}
+                    ${MODEMMANAGERQT_INCLUDE_DIRS}
+                    ${NETWORKMANAGERQT_INCLUDE_DIRS}
                     ${NETWORKMANAGER_INCLUDE_DIRS}
                     ${KDE4_INCLUDES})
 

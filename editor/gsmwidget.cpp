@@ -20,7 +20,7 @@
 
 #include <KLocalizedString>
 
-#include <QtNetworkManager/settings/gsm.h>
+#include <NetworkManagerQt/settings/gsm.h>
 
 #include "gsmwidget.h"
 #include "ui_gsm.h"

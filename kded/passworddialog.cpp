@@ -24,8 +24,8 @@
 
 #include <vpnuiplugin.h>
 
-#include <QtNetworkManager/settings/802-11-wireless.h>
-#include <QtNetworkManager/settings/vpn.h>
+#include <NetworkManagerQt/settings/802-11-wireless.h>
+#include <NetworkManagerQt/settings/vpn.h>
 
 #include <KServiceTypeTrader>
 #include <KIcon>

@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDomDocument>
 #include <QVariantMap>
 
-#include <QtNetworkManager/settings/connection.h>
+#include <NetworkManagerQt/settings/connection.h>
 
 class MobileProviders
 {

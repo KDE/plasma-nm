@@ -23,7 +23,7 @@
 
 #include "model/modelitem.h"
 
-#include <QtModemManager/modemgsmnetworkinterface.h>
+#include <ModemManagerQt/modemgsmnetworkinterface.h>
 
 class ModelModemItem : public ModelItem
 {

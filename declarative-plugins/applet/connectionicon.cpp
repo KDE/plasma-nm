@@ -20,14 +20,14 @@
 
 #include "connectionicon.h"
 
-#include <QtNetworkManager/manager.h>
-#include <QtNetworkManager/connection.h>
-#include <QtNetworkManager/device.h>
-#include <QtNetworkManager/modemdevice.h>
-#include <QtNetworkManager/wireddevice.h>
-#include <QtNetworkManager/wirelessdevice.h>
-#include <QtNetworkManager/settings/connection.h>
-#include <QtNetworkManager/settings/802-11-wireless.h>
+#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/device.h>
+#include <NetworkManagerQt/modemdevice.h>
+#include <NetworkManagerQt/wireddevice.h>
+#include <NetworkManagerQt/wirelessdevice.h>
+#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/settings/802-11-wireless.h>
 
 #include "debug.h"
 

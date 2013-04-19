@@ -23,10 +23,10 @@
 #include "secretagent.h"
 #include "passworddialog.h"
 
-#include <QtNetworkManager/settings.h>
-#include <QtNetworkManager/settings/connection.h>
-#include <QtNetworkManager/generic-types.h>
-#include <QtNetworkManager/settings/vpn.h>
+#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/generic-types.h>
+#include <NetworkManagerQt/settings/vpn.h>
 
 #include <QStringBuilder>
 

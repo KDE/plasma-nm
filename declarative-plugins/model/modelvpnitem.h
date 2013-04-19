@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_MODEL_VPN_ITEM_H
 #define PLASMA_NM_MODEL_VPN_ITEM_H
 
-#include <QtNetworkManager/vpnconnection.h>
+#include <NetworkManagerQt/vpnconnection.h>
 
 #include "model/modelitem.h"
 

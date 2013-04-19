@@ -20,9 +20,9 @@
 
 #include "modelwireditem.h"
 
-#include <QtNetworkManager/wireddevice.h>
-#include <QtNetworkManager/settings/802-3-ethernet.h>
-#include <QtNetworkManager/manager.h>
+#include <NetworkManagerQt/wireddevice.h>
+#include <NetworkManagerQt/settings/802-3-ethernet.h>
+#include <NetworkManagerQt/manager.h>
 
 #include <KLocalizedString>
 

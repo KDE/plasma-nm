@@ -18,9 +18,9 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QtNetworkManager/settings.h>
-#include <QtNetworkManager/connection.h>
-#include <QtNetworkManager/settings/connection.h>
+#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/settings/connection.h>
 
 #include "connectionwidget.h"
 #include "ui_connectionwidget.h"

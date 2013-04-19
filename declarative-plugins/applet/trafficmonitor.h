@@ -25,8 +25,8 @@
 
 #include <QGraphicsWidget>
 
-#include <QtNetworkManager/device.h>
-#include <QtNetworkManager/modemdevice.h>
+#include <NetworkManagerQt/device.h>
+#include <NetworkManagerQt/modemdevice.h>
 
 #include <Plasma/DataEngine>
 #include <Plasma/SignalPlotter>

@@ -33,9 +33,9 @@
 #include <KService>
 #include <KServiceTypeTrader>
 
-#include <QtNetworkManager/settings.h>
-#include <QtNetworkManager/connection.h>
-#include <QtNetworkManager/activeconnection.h>
+#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/activeconnection.h>
 
 using namespace NetworkManager;
 

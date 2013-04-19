@@ -21,11 +21,11 @@
 #ifndef PLASMA_NM_CONNECTION_ICON_H
 #define PLASMA_NM_CONNECTION_ICON_H
 
-#include <QtNetworkManager/manager.h>
-#include <QtNetworkManager/activeconnection.h>
-#include <QtNetworkManager/wirelessnetwork.h>
+#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/activeconnection.h>
+#include <NetworkManagerQt/wirelessnetwork.h>
 
-#include <QtModemManager/modemgsmnetworkinterface.h>
+#include <ModemManagerQt/modemgsmnetworkinterface.h>
 
 class ConnectionIcon : public QObject
 {

@@ -22,7 +22,7 @@
 #define IPV6_WIDGET_H
 
 #include <QtGui/QWidget>
-#include <QtNetworkManager/settings/ipv6.h>
+#include <NetworkManagerQt/settings/ipv6.h>
 
 #include "settingwidget.h"
 #include "ui/ipv6routeswidget.h"

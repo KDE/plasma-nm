@@ -19,10 +19,10 @@
 
 #include "AvailableConnectionsModel.h"
 
-#include <QtNetworkManager/settings/connection.h>
-#include <QtNetworkManager/activeconnection.h>
-#include <QtNetworkManager/device.h>
-#include <QtNetworkManager/settings.h>
+#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/activeconnection.h>
+#include <NetworkManagerQt/device.h>
+#include <NetworkManagerQt/settings.h>
 
 #include <KDebug>
 

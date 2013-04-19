@@ -30,8 +30,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KComboBox>
 #include <KLineEdit>
 
-#include <QtNetworkManager/manager.h>
-#include <QtNetworkManager/settings/connection.h>
+#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/settings/connection.h>
 
 #include "mobileproviders.h"
 

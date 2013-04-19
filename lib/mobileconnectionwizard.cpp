@@ -27,10 +27,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KIconLoader>
 #include <Solid/Device>
 
-#include <QtNetworkManager/modemdevice.h>
+#include <NetworkManagerQt/modemdevice.h>
 
-#include <QtModemManager/manager.h>
-#include <QtModemManager/modeminterface.h>
+#include <ModemManagerQt/manager.h>
+#include <ModemManagerQt/modeminterface.h>
 
 #include "uiutils.h"
 

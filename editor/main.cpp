@@ -23,9 +23,9 @@
 #include <KCmdLineArgs>
 #include <KUrl>
 
-#include <QtNetworkManager/settings.h>
-#include <QtNetworkManager/connection.h>
-#include <QtNetworkManager/settings/connection.h>
+#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/settings/connection.h>
 
 #include "connectioneditor.h"
 #include "connectiondetaileditor.h"

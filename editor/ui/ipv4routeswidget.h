@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QDialog>
 #include <QStyledItemDelegate>
 
-#include <QtNetworkManager/ipconfig.h>
+#include <NetworkManagerQt/ipconfig.h>
 
 class QStandardItem;
 class QItemSelection;

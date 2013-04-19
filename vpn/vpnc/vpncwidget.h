@@ -21,7 +21,7 @@
 #ifndef VPNC_WIDGET_H
 #define VPNC_WIDGET_H
 
-#include <QtNetworkManager/settings/vpn.h>
+#include <NetworkManagerQt/settings/vpn.h>
 
 #include "settingwidget.h"
 

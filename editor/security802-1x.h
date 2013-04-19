@@ -23,7 +23,7 @@
 
 #include <QWidget>
 
-#include <QtNetworkManager/settings/802-1x.h>
+#include <NetworkManagerQt/settings/802-1x.h>
 
 namespace Ui
 {

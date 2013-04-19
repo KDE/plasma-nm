@@ -18,7 +18,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QtNetworkManager/settings/ppp.h>
+#include <NetworkManagerQt/settings/ppp.h>
 
 #include "pppwidget.h"
 #include "ui_ppp.h"

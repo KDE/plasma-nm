@@ -21,10 +21,10 @@
 #ifndef PLASMA_NM_MODEL_ITEM_H
 #define PLASMA_NM_MODEL_ITEM_H
 
-#include <QtNetworkManager/activeconnection.h>
-#include <QtNetworkManager/connection.h>
-#include <QtNetworkManager/settings/connection.h>
-#include <QtNetworkManager/device.h>
+#include <NetworkManagerQt/activeconnection.h>
+#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/device.h>
 
 class ModelItem : public QObject
 {

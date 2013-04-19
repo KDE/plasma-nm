@@ -20,8 +20,8 @@
 
 #include "globalstatus.h"
 
-#include <QtNetworkManager/activeconnection.h>
-#include <QtNetworkManager/connection.h>
+#include <NetworkManagerQt/activeconnection.h>
+#include <NetworkManagerQt/connection.h>
 
 #include <KLocalizedString>
 

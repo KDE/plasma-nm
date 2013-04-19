@@ -17,7 +17,7 @@ kde4_add_plugin(kcm_network ${kcm_network_SRCS})
 target_link_libraries(kcm_network
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
-    QtNetworkManager
+    NetworkManagerQt
     plasmanm-internal
 )
 

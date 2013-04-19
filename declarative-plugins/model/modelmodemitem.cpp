@@ -22,7 +22,7 @@
 #include "modelmodemitem.h"
 #include "uiutils.h"
 
-#include <QtNetworkManager/modemdevice.h>
+#include <NetworkManagerQt/modemdevice.h>
 
 #include <KLocalizedString>
 

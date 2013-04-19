@@ -20,14 +20,14 @@
 
 #include "handler.h"
 
-#include <QtNetworkManager/manager.h>
-#include <QtNetworkManager/accesspoint.h>
-#include <QtNetworkManager/wirelessdevice.h>
-#include <QtNetworkManager/settings.h>
-#include <QtNetworkManager/settings/setting.h>
-#include <QtNetworkManager/settings/connection.h>
-#include <QtNetworkManager/settings/802-11-wireless.h>
-#include <QtNetworkManager/activeconnection.h>
+#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/accesspoint.h>
+#include <NetworkManagerQt/wirelessdevice.h>
+#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/settings/setting.h>
+#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/settings/802-11-wireless.h>
+#include <NetworkManagerQt/activeconnection.h>
 
 #include <KProcess>
 

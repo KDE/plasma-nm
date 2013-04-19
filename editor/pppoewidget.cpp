@@ -18,7 +18,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QtNetworkManager/settings/pppoe.h>
+#include <NetworkManagerQt/settings/pppoe.h>
 
 #include "pppoewidget.h"
 #include "ui_pppoe.h"

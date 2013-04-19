@@ -22,7 +22,7 @@
 #define SETTING_WIDGET_H
 
 #include <QtGui/QWidget>
-#include <QtNetworkManager/settings/setting.h>
+#include <NetworkManagerQt/settings/setting.h>
 
 #include <kdemacros.h>
 

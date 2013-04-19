@@ -20,12 +20,12 @@
 
 #include "monitor.h"
 
-#include <QtNetworkManager/settings.h>
-#include <QtNetworkManager/wireddevice.h>
-#include <QtNetworkManager/settings/802-11-wireless.h>
-#include <QtNetworkManager/connection.h>
-#include <QtNetworkManager/settings/connection.h>
-#include <QtNetworkManager/wirelessdevice.h>
+#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/wireddevice.h>
+#include <NetworkManagerQt/settings/802-11-wireless.h>
+#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/wirelessdevice.h>
 
 #include "debug.h"
 

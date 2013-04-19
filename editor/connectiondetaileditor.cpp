@@ -36,12 +36,12 @@
 
 #include <QDebug>
 
-#include <QtNetworkManager/settings.h>
-#include <QtNetworkManager/activeconnection.h>
-#include <QtNetworkManager/connection.h>
-#include <QtNetworkManager/settings/802-11-wireless.h>
-#include <QtNetworkManager/settings/vpn.h>
-#include <QtNetworkManager/generic-types.h>
+#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/activeconnection.h>
+#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/settings/802-11-wireless.h>
+#include <NetworkManagerQt/settings/vpn.h>
+#include <NetworkManagerQt/generic-types.h>
 
 #include <KPluginFactory>
 #include <KServiceTypeTrader>

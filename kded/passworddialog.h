@@ -22,8 +22,8 @@
 #ifndef PLASMA_NM_PASSWORDDIALOG_H
 #define PLASMA_NM_PASSWORDDIALOG_H
 
-#include <QtNetworkManager/settings/connection.h>
-#include <QtNetworkManager/secretagent.h>
+#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/secretagent.h>
 
 #include <KDialog>
 

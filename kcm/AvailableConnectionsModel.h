@@ -21,7 +21,7 @@
 #define AVAILABLECONNECTIONSMODEL_H
 
 #include <QStandardItemModel>
-#include <QtNetworkManager/device.h>
+#include <NetworkManagerQt/device.h>
 
 class AvailableConnectionsModel : public QStandardItemModel
 {

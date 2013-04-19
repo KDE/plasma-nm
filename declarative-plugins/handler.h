@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_HANDLER_H
 #define PLASMA_NM_HANDLER_H
 
-#include <QtNetworkManager/connection.h>
+#include <NetworkManagerQt/connection.h>
 
 class Handler : public QObject
 {

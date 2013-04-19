@@ -29,11 +29,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <kdeversion.h>
 #endif
 
-#include <QtNetworkManager/manager.h>
-#include <QtNetworkManager/device.h>
-#include <QtNetworkManager/accesspoint.h>
-#include <QtNetworkManager/wireddevice.h>
-#include <QtNetworkManager/wirelessdevice.h>
+#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/device.h>
+#include <NetworkManagerQt/accesspoint.h>
+#include <NetworkManagerQt/wireddevice.h>
+#include <NetworkManagerQt/wirelessdevice.h>
 
 // Qt
 #include <QSizeF>

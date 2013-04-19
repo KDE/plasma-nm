@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QDialog>
 
-#include <QtNetworkManager/settings/vpn.h>
+#include <NetworkManagerQt/settings/vpn.h>
 
 #include "settingwidget.h"
 

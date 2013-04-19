@@ -20,9 +20,9 @@
 
 #include "modelwirelessitem.h"
 
-#include <QtNetworkManager/wirelessdevice.h>
-#include <QtNetworkManager/settings/802-11-wireless.h>
-#include <QtNetworkManager/manager.h>
+#include <NetworkManagerQt/wirelessdevice.h>
+#include <NetworkManagerQt/settings/802-11-wireless.h>
+#include <NetworkManagerQt/manager.h>
 
 #include <KLocalizedString>
 

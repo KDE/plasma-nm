@@ -26,7 +26,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <QVariant>
 #include <QMessageBox>
 
-#include <QtNetworkManager/settings/vpn.h>
+#include <NetworkManagerQt/settings/vpn.h>
 
 #include <kdemacros.h>
 

@@ -30,9 +30,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KLocale>
 #include "nm-vpnc-service.h"
 
-#include <QtNetworkManager/connection.h>
-#include <QtNetworkManager/settings/vpn.h>
-#include <QtNetworkManager/settings/ipv4.h>
+#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/settings/vpn.h>
+#include <NetworkManagerQt/settings/ipv4.h>
 
 #include "vpncwidget.h"
 #include "vpncauth.h"

@@ -35,11 +35,11 @@
 #include <KDebug>
 #include <KMessageWidget>
 
-#include <QtNetworkManager/manager.h>
-#include <QtNetworkManager/ipconfig.h>
-#include <QtNetworkManager/settings/connection.h>
-#include <QtNetworkManager/settings.h>
-#include <QtNetworkManager/activeconnection.h>
+#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/ipconfig.h>
+#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/activeconnection.h>
 
 typedef QList<QDBusObjectPath> ObjectPathList;
 typedef QMap<QString, QString>  StringStringMap;

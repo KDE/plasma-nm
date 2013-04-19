@@ -18,7 +18,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QtNetworkManager/settings/802-3-ethernet.h>
+#include <NetworkManagerQt/settings/802-3-ethernet.h>
 
 #include "wiredconnectionwidget.h"
 #include "ui_wiredconnectionwidget.h"

@@ -24,7 +24,7 @@
 #include <QObject>
 #include <QIcon>
 
-#include <QtNetworkManager/manager.h>
+#include <NetworkManagerQt/manager.h>
 
 class GlobalStatus : public QObject
 {

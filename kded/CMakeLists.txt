@@ -14,8 +14,8 @@ kde4_add_ui_files(kded_plasmanm_SRCS
 kde4_add_plugin(kded_plasmanm ${kded_plasmanm_SRCS})
 
 target_link_libraries(kded_plasmanm
-    QtNetworkManager
-    QtModemManager
+    NetworkManagerQt
+    ModemManagerQt
     plasmanm-internal
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KDEUI_LIBS}

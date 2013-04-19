@@ -18,7 +18,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QtNetworkManager/settings/cdma.h>
+#include <NetworkManagerQt/settings/cdma.h>
 
 #include "cdmawidget.h"
 #include "ui_cdma.h"

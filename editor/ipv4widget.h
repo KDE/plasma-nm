@@ -22,7 +22,7 @@
 #define IPV4_WIDGET_H
 
 #include <QtGui/QWidget>
-#include <QtNetworkManager/settings/ipv4.h>
+#include <NetworkManagerQt/settings/ipv4.h>
 
 #include "settingwidget.h"
 #include "ui/ipv4routeswidget.h"

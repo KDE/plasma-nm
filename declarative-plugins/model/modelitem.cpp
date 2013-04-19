@@ -21,7 +21,7 @@
 #include "modelitem.h"
 
 #include <KLocalizedString>
-#include <QtNetworkManager/manager.h>
+#include <NetworkManagerQt/manager.h>
 
 #include "debug.h"
 

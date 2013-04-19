@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KDebug>
 #include <kwindowsystem.h>
 
-#include <QtModemManager/manager.h>
+#include <ModemManagerQt/manager.h>
 
 #include "pindialog.h"
 

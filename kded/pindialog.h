@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KPushButton>
 #include <Solid/Device>
 
-#include <QtModemManager/modeminterface.h>
+#include <ModemManagerQt/modeminterface.h>
 
 #include "ui_pinwidget.h"
 

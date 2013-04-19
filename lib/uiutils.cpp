@@ -564,6 +564,7 @@ QString UiUtils::convertBandToString(const ModemManager::ModemInterface::Band ba
         case ModemManager::ModemInterface::U900: return i18nc("Cellular frequency band","WCDMA 3GPP UMTS 900 MHz (Class VIII)");
         case ModemManager::ModemInterface::U17IX: return i18nc("Cellular frequency band","WCDMA 3GPP UMTS 1700 MHz (Class IX)");
         case ModemManager::ModemInterface::U19IX: return i18nc("Cellular frequency band","WCDMA 3GPP UMTS 1900 MHz (Class II)");
+        case ModemManager::ModemInterface::U2600: return i18nc("Cellular frequency band","WCDMA 3GPP UMTS 2600 MHz (Class VII)");
     }
 
     return i18nc("Unknown cellular frequency band","Unknown");
@@ -594,6 +595,8 @@ QString UiUtils::convertAccessTechnologyToString(const ModemManager::ModemInterf
         case ModemManager::ModemInterface::Hsdpa: return i18nc("Cellular access technology","HSDPA");
         case ModemManager::ModemInterface::Hsupa: return i18nc("Cellular access technology","HSUPA");
         case ModemManager::ModemInterface::Hspa: return i18nc("Cellular access technology","HSPA");
+        case ModemManager::ModemInterface::HspaPlus: return i18nc("Cellular access technology","HSPA+");
+        case ModemManager::ModemInterface::Lte: return i18nc("Cellular access technology","LTE");
     }
 
     return i18nc("Unknown cellular access technology","Unknown");

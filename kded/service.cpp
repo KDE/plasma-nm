@@ -26,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "secretagent.h"
 #include "interfacenotification.h"
+#include "modemmonitor.h"
 
 #include <QDBusMetaType>
 
@@ -45,6 +46,7 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 
     d->agent = new SecretAgent(this);
     new InterfaceNotification(this);
+    new ModemMonitor(this);
 }
 
 NetworkManagementService::~NetworkManagementService()

@@ -4,6 +4,7 @@ set(kded_plasmanm_SRCS
    secretagent.cpp
    service.cpp
    pindialog.cpp
+   modemmonitor.cpp
 )
 
 kde4_add_ui_files(kded_plasmanm_SRCS

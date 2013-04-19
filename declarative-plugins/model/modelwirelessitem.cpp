@@ -105,7 +105,7 @@ void ModelWirelessItem::updateDetailsContent()
         if (network) {
             NetworkManager::AccessPoint::Ptr ap = wireless->findAccessPoint(network->referenceAccessPoint()->uni());
 
-            m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%").arg(network->signalStrength()));
+            m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%", network->signalStrength()));
             m_details += QString(format).arg(i18n("Access point (SSID):"), network->ssid());
 
             if (ap) {

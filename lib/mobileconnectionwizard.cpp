@@ -161,10 +161,12 @@ void MobileConnectionWizard::initializePage(int id)
             }
         } else {
             if (mProvidersList->currentItem() != 0) {
-                QStringList mApns = mProviders->getApns(mProvidersList->currentItem()->text());
-                userApn->setText(mApns.at(0));
-                mPlanComboBox->insertItems(0, mApns);
-                mPlanComboBox->setItemText(0, i18nc("Mobile Connection Wizard", "Default"));
+                const QStringList mApns = mProviders->getApns(mProvidersList->currentItem()->text());
+                if (!mApns.isEmpty()) {
+                    userApn->setText(mApns.first());
+                    mPlanComboBox->insertItems(0, mApns);
+                    mPlanComboBox->setItemText(0, i18nc("Mobile Connection Wizard", "Default"));
+                }
             }
 
             mPlanComboBox->insertSeparator(1);

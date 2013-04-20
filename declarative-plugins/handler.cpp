@@ -72,6 +72,8 @@ void Handler::activateConnection(const QString& connection, const QVariant& devi
 
             if (network) {
                 NetworkManager::activateConnection(connection, selectedDevice, network->referenceAccessPoint()->uni());
+            } else {
+                NetworkManager::activateConnection(connection, selectedDevice, QString());
             }
         }
     } else {

@@ -23,6 +23,7 @@
 #include <NetworkManagerQt/manager.h>
 #include <NetworkManagerQt/connection.h>
 #include <NetworkManagerQt/device.h>
+#include <NetworkManagerQt/bluetoothdevice.h>
 #include <NetworkManagerQt/modemdevice.h>
 #include <NetworkManagerQt/wireddevice.h>
 #include <NetworkManagerQt/wirelessdevice.h>
@@ -170,10 +171,20 @@ void ConnectionIcon::setIcons()
                     NMAppletDebug() << "Emit signal setConnectionIcon(network-wired-activated)";
                     Q_EMIT setConnectionIcon("network-wired-activated");
                     Q_EMIT setTooltipIcon("network-wired-activated");
-                } else if (type == NetworkManager::Device::Modem ||
-                           type == NetworkManager::Device::Bluetooth) {
+                } else if (type == NetworkManager::Device::Modem) {
                     connectionFound = true;
                     setModemIcon(device);
+                } else if (type == NetworkManager::Device::Bluetooth) {
+                    NetworkManager::BluetoothDevice::Ptr btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
+                    if (btDevice) {
+                        connectionFound = true;
+                        if (btDevice->bluetoothCapabilities().testFlag(NetworkManager::BluetoothDevice::Dun)) {
+                            setModemIcon(device);
+                        } else {
+                            NMAppletDebug() << "Emit signal setStatiConnectionIcon(preferences-system-bluetooth)";
+                            Q_EMIT setStaticConnectionIcon("preferences-system-bluetooth");
+                        }
+                    }
                 }
             }
         }

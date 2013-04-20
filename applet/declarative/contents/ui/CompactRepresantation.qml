@@ -43,6 +43,13 @@ Item {
         visible: !connectingIndicator.running;
 
         QIconItem {
+            id: staticIcon;
+
+            anchors.fill: parent;
+            visible: false;
+        }
+
+        QIconItem {
             id: hoverIcon;
 
             width: parent.width/1.5; height: parent.height/1.5;
@@ -94,6 +101,13 @@ Item {
 
         onSetConnectionIcon: {
             connectionIcon.elementId = icon;
+            staticIcon.visible = false;
+        }
+
+        onSetStaticConnectionIcon: {
+            staticIcon.icon = QIcon(icon);
+            staticIcon.visible = true;
+            connectionIcon.elementId = "";
         }
 
         onSetHoverIcon: {

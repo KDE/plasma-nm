@@ -92,7 +92,11 @@ QString ModelItem::icon() const
         case NetworkManager::Settings::ConnectionSettings::Wimax:
             break;
         case NetworkManager::Settings::ConnectionSettings::Wired:
-            return "network-wired";
+            if (connected()) {
+                return "network-wired-activated";
+            } else {
+                return "network-wired";
+            }
             break;
         default:
             return "network-wired";

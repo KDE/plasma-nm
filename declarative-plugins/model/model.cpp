@@ -338,6 +338,7 @@ void Model::removeConnectionsByDevice(const QString& device)
 
     foreach (ModelItem * item, m_connections) {
         if (item->devicePaths().contains(device)) {
+            item->removeDevice(device);
             row  = m_connections.indexOf(item);
         }
 

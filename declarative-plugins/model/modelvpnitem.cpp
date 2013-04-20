@@ -71,6 +71,8 @@ void ModelVpnItem::setActiveConnection(const NetworkManager::ActiveConnection::P
 
         connect(m_vpn.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State)),
                 SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State)), Qt::UniqueConnection);
+        connect(m_vpn.data(), SIGNAL(bannerChanged(QString)),
+                SLOT(onBannerChanged(QString)), Qt::UniqueConnection);
     }
 
     updateDetails();
@@ -86,6 +88,13 @@ void ModelVpnItem::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         NMItemDebug() << name() << ": disconnected";
         m_active.clear();
     }
+
+    updateDetails();
+}
+
+void ModelVpnItem::onBannerChanged(const QString &banner)
+{
+    qDebug() << "VPN banner changed" << banner;
 
     updateDetails();
 }

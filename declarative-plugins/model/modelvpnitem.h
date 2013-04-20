@@ -36,6 +36,7 @@ public:
 
 private Q_SLOTS:
     void onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state);
+    void onBannerChanged(const QString & banner);
 
 protected:
     void updateDetailsContent();

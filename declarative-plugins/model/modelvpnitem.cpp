@@ -55,6 +55,10 @@ void ModelVpnItem::updateDetailsContent()
         if (vpnSetting) {
             m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
         }
+
+        if (m_vpn) {
+            m_details += QString(format).arg(i18n("Banner:"), m_vpn->banner().simplified());
+        }
     }
 }
 
@@ -63,11 +67,13 @@ void ModelVpnItem::setActiveConnection(const NetworkManager::ActiveConnection::P
     ModelItem::setActiveConnection(active);
 
     if (m_active->vpn()) {
-        m_vpn =  NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(m_active->path()));
+        m_vpn = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(m_active->path()));
 
         connect(m_vpn.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State)),
                 SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State)), Qt::UniqueConnection);
     }
+
+    updateDetails();
 }
 
 void ModelVpnItem::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state)
@@ -80,4 +86,6 @@ void ModelVpnItem::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         NMItemDebug() << name() << ": disconnected";
         m_active.clear();
     }
+
+    updateDetails();
 }

@@ -59,6 +59,8 @@ Item {
             color: theme.textColor;
             readOnly: true;
             selectByMouse: true;
+            wrapMode: TextEdit.WordWrap;
+            width: detailsView.width
 
             anchors { top: parent.top; horizontalCenter: parent.horizontalCenter; topMargin: 10 }
             textFormat: Text.RichText;

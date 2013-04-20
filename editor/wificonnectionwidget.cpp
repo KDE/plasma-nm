@@ -67,6 +67,10 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::P
     if (wifiSetting->mtu()) {
         m_ui->mtu->setValue(wifiSetting->mtu());
     }
+
+    if (wifiSetting->hidden()) {
+        m_ui->hiddenNetwork->setChecked(true);
+    }
 }
 
 QVariantMap WifiConnectionWidget::setting(bool agentOwned) const

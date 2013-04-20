@@ -53,14 +53,6 @@ void ModelBtItem::updateDetailsContent()
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
 
             if (device) {
-                QString name;
-                if (device->ipInterfaceName().isEmpty()) {
-                    name = device->interfaceName();
-                } else {
-                    name = device->ipInterfaceName();
-                }
-                m_details += QString(format).arg(i18n("System name:"), name);
-
                 if (device->ipV4Config().isValid() && connected()) {
                     QHostAddress addr = device->ipV4Config().addresses().first().ip();
                     m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
@@ -83,15 +75,12 @@ void ModelBtItem::updateDetailsContent()
 
         if (device) {
             NetworkManager::BluetoothDevice::Ptr bt = device.objectCast<NetworkManager::BluetoothDevice>();
-            m_details += QString(format).arg(i18n("Name:"), bt->name());
-
-            QString name;
-            if (device->ipInterfaceName().isEmpty()) {
-                name = device->interfaceName();
-            } else {
-                name = device->ipInterfaceName();
+            QString name = device->ipInterfaceName();
+            if (!name.isEmpty()) {
+                m_details += QString(format).arg(i18n("System name:"), name);
             }
-            m_details += QString(format).arg(i18n("System name:"), name);
+
+            m_details += QString(format).arg(i18n("Name:"), bt->name());
 
             if (device->ipV4Config().isValid() && connected()) {
                 QHostAddress addr = device->ipV4Config().addresses().first().ip();

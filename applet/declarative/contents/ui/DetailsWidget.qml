@@ -56,6 +56,7 @@ Item {
 
         TextEdit {
             id: detailsText;
+            color: theme.textColor;
             readOnly: true;
             selectByMouse: true;
 

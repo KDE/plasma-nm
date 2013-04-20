@@ -126,7 +126,6 @@ Item {
     Component {
         id: detailWidgetComponent;
         DetailsWidget {
-            //id: detailWidget;
 
             anchors {
                 left: parent.left;
@@ -139,7 +138,6 @@ Item {
                 bottomMargin: 5;
             }
             text: itemDetailInformations;
-            //visible: false;
             editable: itemUuid == "" ? false : true;
             enableTraffic: {
                 if (itemActiveDevicePath != "" && itemConnected && itemType != 11) {
@@ -168,7 +166,7 @@ Item {
         State {
             name: "Collapsed";
             when: !expanded;
-            StateChangeScript { script: priv.detailWidget.destroy(); }
+            StateChangeScript { script: if (priv.detailWidget) {priv.detailWidget.destroy()} }
         },
 
         State {

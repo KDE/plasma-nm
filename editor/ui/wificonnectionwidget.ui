@@ -188,7 +188,7 @@
     </widget>
    </item>
    <item row="7" column="1">
-    <widget class="QCheckBox" name="hidden">
+    <widget class="QCheckBox" name="hiddenNetwork">
      <property name="text">
       <string/>
      </property>

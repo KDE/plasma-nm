@@ -41,21 +41,21 @@ Item {
         svg: svgIcons;
         elementId: "network-wired";
         visible: !connectingIndicator.running;
+    }
 
-        QIconItem {
-            id: staticIcon;
+    QIconItem {
+        id: staticIcon;
 
-            anchors.fill: parent;
-            visible: false;
-        }
+        anchors.fill: parent;
+        visible: false;
+    }
 
-        QIconItem {
-            id: hoverIcon;
+    QIconItem {
+        id: hoverIcon;
 
-            width: parent.width/1.5; height: parent.height/1.5;
-            anchors { bottom: parent.bottom; right: parent.right }
-            visible: false;
-        }
+        width: parent.width/1.5; height: parent.height/1.5;
+        anchors { bottom: parent.bottom; right: parent.right }
+        visible: false;
     }
 
     PlasmaComponents.BusyIndicator {
@@ -101,13 +101,14 @@ Item {
 
         onSetConnectionIcon: {
             connectionIcon.elementId = icon;
+            connectionIcon.visible = true;
             staticIcon.visible = false;
         }
 
         onSetStaticConnectionIcon: {
             staticIcon.icon = QIcon(icon);
             staticIcon.visible = true;
-            connectionIcon.elementId = "";
+            connectionIcon.visible = false;
         }
 
         onSetHoverIcon: {

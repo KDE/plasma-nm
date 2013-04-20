@@ -99,6 +99,8 @@ QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
         wifiSetting.setMtu(m_ui->mtu->value());
     }
 
+    wifiSetting.setHidden(m_ui->hiddenNetwork->isChecked());
+
     return wifiSetting.toMap();
 }
 

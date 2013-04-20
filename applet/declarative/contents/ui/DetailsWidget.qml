@@ -52,10 +52,12 @@ Item {
         anchors { left: parent.left; right: parent.right; top: detailsSeparator.bottom; bottom: buttons.top; topMargin: 10 }
         contentHeight: trafficMonitor.height + detailsText.paintedHeight + 15;
         contentWidth: detailsView.width;
-        clip: true; interactive: false;
+        clip: true;
 
-        PlasmaComponents.Label {
+        TextEdit {
             id: detailsText;
+            readOnly: true;
+            selectByMouse: true;
 
             anchors { top: parent.top; horizontalCenter: parent.horizontalCenter; topMargin: 10 }
             textFormat: Text.RichText;

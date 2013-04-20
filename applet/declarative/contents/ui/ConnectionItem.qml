@@ -189,6 +189,6 @@ Item {
     ]
 
     transitions: Transition {
-        NumberAnimation { duration: 200; properties: "height, contentY" }
+        NumberAnimation { duration: 300; properties: "height, contentY" }
     }
 }

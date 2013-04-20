@@ -30,6 +30,11 @@ Item {
     property bool isWireless: (itemType == 14) ? true : false;
     property bool expanded: false;
 
+    Item {
+        id: priv;
+        property Item detailWidget;
+    }
+
     signal activateConnectionItem(string connectionPath, variant devicePaths, string specificObjectParameter);
     signal addAndActivateConnectionItem(variant devicePaths, string specificObjectParameter);
     signal deactivateConnectionItem(string connectionPath);
@@ -118,52 +123,62 @@ Item {
         }
     }
 
-    DetailsWidget {
-        id: detailWidget;
+    Component {
+        id: detailWidgetComponent;
+        DetailsWidget {
+            //id: detailWidget;
 
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            top: connectionTypeIcon.bottom;
-            bottom: parent.bottom;
-            topMargin: 10;
-            leftMargin: 10;
-            rightMargin: 10
-            bottomMargin: 5;
-        }
-        text: itemDetailInformations;
-        visible: false;
-        editable: itemUuid == "" ? false : true;
-        enableTraffic: {
-            if (itemActiveDevicePath != "" && itemConnected && itemType != 11) {
-                true;
-            } else {
-                false;
+            anchors {
+                left: parent.left;
+                right: parent.right;
+                top: connectionTypeIcon.bottom;
+                bottom: parent.bottom;
+                topMargin: 10;
+                leftMargin: 10;
+                rightMargin: 10
+                bottomMargin: 5;
             }
-        }
-        device: itemActiveDevicePath;
+            text: itemDetailInformations;
+            //visible: false;
+            editable: itemUuid == "" ? false : true;
+            enableTraffic: {
+                if (itemActiveDevicePath != "" && itemConnected && itemType != 11) {
+                    true;
+                } else {
+                    false;
+                }
+            }
+            device: itemActiveDevicePath;
 
-        onHideDetails: {
-            expanded = false;
-        }
+            onHideDetails: {
+                expanded = false;
+            }
 
-        onEditConnection: {
-            connectionItem.editConnectionItem(itemUuid);
-        }
+            onEditConnection: {
+                connectionItem.editConnectionItem(itemUuid);
+            }
 
-        onRemoveConnection: {
-            connectionItem.removeConnectionItem(itemName, itemConnectionPath);
+            onRemoveConnection: {
+                connectionItem.removeConnectionItem(itemName, itemConnectionPath);
+            }
         }
     }
 
     states: [
+        State {
+            name: "Collapsed";
+            when: !expanded;
+            StateChangeScript { script: priv.detailWidget.destroy(); }
+        },
+
         State {
             name: "Details";
             when: (expanded && connectionView.itemExpandable);
             PropertyChanges { target: connectionItem; height: connectionItem.ListView.view.height }
             PropertyChanges { target: connectionItem.ListView.view; interactive: false }
             PropertyChanges { target: connectionItem.ListView.view; contentY: connectionItem.y }
-            PropertyChanges { target: detailWidget; visible: true }
+            StateChangeScript { script: priv.detailWidget = detailWidgetComponent.createObject(connectionItem); }
+            //PropertyChanges { target: detailWidget; visible: true }
         },
 
         State {

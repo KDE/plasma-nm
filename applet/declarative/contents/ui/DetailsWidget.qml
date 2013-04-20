@@ -69,8 +69,8 @@ Item {
         PlasmaNM.TrafficMonitor {
             id: trafficMonitor;
 
-            height: 0;
-            visible: false;
+            height: enableTraffic ? 100 : 0;
+            visible: enableTraffic;
             anchors { top: detailsText.bottom; left: parent.left; right: parent.right }
         }
     }
@@ -121,12 +121,4 @@ Item {
             }
         }
     }
-
-    states: [
-        State {
-            name: "TrafficMonitor";
-            when: enableTraffic
-            PropertyChanges { target: trafficMonitor; height: 100; visible: true }
-        }
-    ]
 }

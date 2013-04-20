@@ -151,7 +151,7 @@ void ModelItem::updateDetails()
 {
     m_details = "<qt><table>";
     updateDetailsContent();
-    m_details += "<qt></table>";
+    m_details += "</table></qt>";
 }
 
 bool ModelItem::operator==(ModelItem* item)

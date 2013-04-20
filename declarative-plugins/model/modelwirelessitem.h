@@ -43,12 +43,13 @@ public:
 
     void setConnection(const NetworkManager::Settings::Connection::Ptr & connection);
 
-    void setWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network);
-    NetworkManager::WirelessNetwork::Ptr wirelessNetwork() const;
+    void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr & device);
+    void removeWirelessNetwork(const NetworkManager::Device::Ptr & device);
+    QMap<QString, NetworkManager::WirelessNetwork::Ptr> wirelessNetworks() const;
 
     // Object paths
 
-    QString specificPath() const;
+    QString specificParameter() const;
 
 private Q_SLOTS:
     void onAccessPointChanged(const QString & accessPoint);
@@ -59,7 +60,7 @@ protected:
     void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
 
 private:
-    NetworkManager::WirelessNetwork::Ptr m_network;
+    QMap<QString, NetworkManager::WirelessNetwork::Ptr> m_networks;
 
     QString m_ssid;
     int m_previousSignal;

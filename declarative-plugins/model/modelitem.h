@@ -39,7 +39,6 @@ public:
 
     bool connected() const;
     bool connecting() const;
-    QString deviceUdi() const;
     virtual QString icon() const;
     QString name() const;
     QString uuid() const;
@@ -63,14 +62,16 @@ public:
     virtual void setConnection(const NetworkManager::Settings::Connection::Ptr & connection);
     NetworkManager::Settings::Connection::Ptr connection() const;
 
-    void setDevice(const NetworkManager::Device::Ptr & device);
-    NetworkManager::Device::Ptr device() const;
+    virtual void addDevice(const QString & device);
+    void removeDevice(const QString & device);
+
+    QString activeDevicePath() const;
 
     // Object paths
 
     QString connectionPath() const;
-    QString devicePath() const;
-    virtual QString specificPath() const;
+    QStringList devicePaths() const;
+    virtual QString specificParameter() const;
 
 Q_SIGNALS:
     void itemChanged();
@@ -83,17 +84,15 @@ private Q_SLOTS:
 protected:
     NetworkManager::ActiveConnection::Ptr m_active;
     NetworkManager::Settings::Connection::Ptr m_connection;
-    NetworkManager::Device::Ptr m_device;
 
     bool m_connected;
     bool m_connecting;
     QString m_connectionPath;
-    QString m_deviceUdi;
-    QString m_devicePath;
+    QStringList m_devicePaths;
+    QString m_activeDevicePath;
     QString m_details;
     QString m_name;
     SectionType m_sectionType;
-    QString m_specificPath;
     QString m_uuid;
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
 

@@ -34,8 +34,8 @@ Item {
     property Component compactRepresentation: CompactRepresantation{}
 
     // Signals for handler
-    signal activateConnection(string connectionPath, string devicePath, string specificObjectPath);
-    signal addAndActivateConnection(string devicePath, string specificObjectPath);
+    signal activateConnection(string connectionPath, variant devicePaths, string specificObjectParameter);
+    signal addAndActivateConnection(variant devicePaths, string specificObjectParameter);
     signal deactivateConnection(string connectionPath);
     signal editConnection(string connectionUuid);
     signal removeConnection(string connectionPath);
@@ -112,8 +112,8 @@ Item {
             }
         }
         delegate: ConnectionItem {
-            onActivateConnectionItem: activateConnection(connectionPath, devicePath, specificObjectPath);
-            onAddAndActivateConnectionItem: addAndActivateConnection(devicePath, specificObjectPath);
+            onActivateConnectionItem: activateConnection(connectionPath, devicePaths, specificObjectParameter);
+            onAddAndActivateConnectionItem: addAndActivateConnection(devicePaths, specificObjectParameter);
             onDeactivateConnectionItem: deactivateConnection(connectionPath);
             onEditConnectionItem: {
                 editConnection(connectionUuid);

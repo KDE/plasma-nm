@@ -30,8 +30,8 @@ Item {
     property bool isWireless: (itemType == 14) ? true : false;
     property bool expanded: false;
 
-    signal activateConnectionItem(string connectionPath, string devicePath, string specificObjectPath);
-    signal addAndActivateConnectionItem(string devicePath, string specificObjectPath);
+    signal activateConnectionItem(string connectionPath, variant devicePaths, string specificObjectParameter);
+    signal addAndActivateConnectionItem(variant devicePaths, string specificObjectParameter);
     signal deactivateConnectionItem(string connectionPath);
     signal editConnectionItem(string connectionUuid);
     signal removeConnectionItem(string connectionName, string connectionPath);
@@ -83,9 +83,9 @@ Item {
         onClicked: {
             if (!itemConnected && !itemConnecting) {
                 if (itemUuid) {
-                    activateConnectionItem(itemConnectionPath, itemDevicePath, itemSpecificPath);
+                    activateConnectionItem(itemConnectionPath, itemDevicePaths, itemSpecificParameter);
                 } else {
-                    addAndActivateConnectionItem(itemDevicePath, itemSpecificPath);
+                    addAndActivateConnectionItem(itemDevicePaths, itemSpecificParameter);
                 }
             } else {
                 deactivateConnectionItem(itemConnectionPath);
@@ -135,13 +135,13 @@ Item {
         visible: false;
         editable: itemUuid == "" ? false : true;
         enableTraffic: {
-            if (itemDevicePath != "" && itemConnected) {
+            if (itemActiveDevicePath != "" && itemConnected && itemType != 11) {
                 true;
             } else {
                 false;
             }
         }
-        device: itemDevicePath;
+        device: itemActiveDevicePath;
 
         onHideDetails: {
             expanded = false;

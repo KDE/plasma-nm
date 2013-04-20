@@ -30,7 +30,6 @@
 
 ModelWirelessItem::ModelWirelessItem(const NetworkManager::Device::Ptr &device, QObject* parent):
     ModelItem(device, parent),
-    m_network(0),
     m_previousSignal(0),
     m_signal(0),
     m_secure(false)
@@ -72,46 +71,111 @@ bool ModelWirelessItem::secure() const
     return m_secure;
 }
 
-QString ModelWirelessItem::specificPath() const
+QString ModelWirelessItem::specificParameter() const
 {
-    if (m_network) {
-        return m_network->referenceAccessPoint()->uni();
-    }
-
-    return QString();
+    return m_ssid;
 }
 
 void ModelWirelessItem::updateDetailsContent()
 {
-    ModelItem::updateDetailsContent();
-
     QString format = "<tr><td align=\"right\"><b>%1</b></td><td align=\"left\">&nbsp;%2</td></tr>";
 
-    NetworkManager::Device::Ptr device = NetworkManager::findDeviceByIpFace(m_deviceUdi);
+    if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
+        m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
+    }
 
-    if (device) {
-        NetworkManager::WirelessDevice::Ptr wireless = device.objectCast<NetworkManager::WirelessDevice>();
-        if (connected()) {
-            if (wireless->bitRate() && wireless->bitRate() < 1000) {
-                m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Kb/s", wireless->bitRate()));
-            } else if (wireless->bitRate()) {
-                m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wireless->bitRate()/1000));
+    m_details += QString(format).arg("\n", "\n");
+
+    if (!connected()) {
+        foreach (const QString & path, m_devicePaths) {
+            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
+
+            if (device) {
+                QString name;
+                if (device->ipInterfaceName().isEmpty()) {
+                    name = device->interfaceName();
+                } else {
+                    name = device->ipInterfaceName();
+                }
+                m_details += QString(format).arg(i18n("System name:"), name);
+
+                if (device->ipV4Config().isValid() && connected()) {
+                    QHostAddress addr = device->ipV4Config().addresses().first().ip();
+                    m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
+                }
+
+                if (device->ipV6Config().isValid() && connected()) {
+                    QHostAddress addr = device->ipV6Config().addresses().first().ip();
+                    m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
+                }
+
+                NetworkManager::WirelessDevice::Ptr wireless = device.objectCast<NetworkManager::WirelessDevice>();
+                m_details += QString(format).arg(i18n("MAC Address:"), wireless->permanentHardwareAddress());
+
+                NetworkManager::WirelessNetwork::Ptr network = wireless->findNetwork(m_ssid);
+
+                if (network) {
+                    NetworkManager::AccessPoint::Ptr ap = network->referenceAccessPoint();
+
+                    m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%", network->signalStrength()));
+                    m_details += QString(format).arg(i18n("Access point (SSID):"), network->ssid());
+
+                    if (ap) {
+                        m_details += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
+                        m_details += QString(format).arg(i18nc("Wifi AP frequency", "Frequency:"), i18n("%1 Mhz", ap->frequency()));
+                    }
+                }
+
+                m_details += QString(format).arg("\n", "\n");
             }
         }
-        m_details += QString(format).arg(i18n("MAC Address:"), wireless->permanentHardwareAddress());
+    } else {
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_activeDevicePath);
 
-        NetworkManager::WirelessNetwork::Ptr network = wireless->findNetwork(m_ssid);
-
-        if (network) {
-            NetworkManager::AccessPoint::Ptr ap = wireless->findAccessPoint(network->referenceAccessPoint()->uni());
-
-            m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%", network->signalStrength()));
-            m_details += QString(format).arg(i18n("Access point (SSID):"), network->ssid());
-
-            if (ap) {
-                m_details += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
-                m_details += QString(format).arg(i18nc("Wifi AP frequency", "Frequency:"), i18n("%1 Mhz", ap->frequency()));
+        if (device) {
+            QString name;
+            if (device->ipInterfaceName().isEmpty()) {
+                name = device->interfaceName();
+            } else {
+                name = device->ipInterfaceName();
             }
+            m_details += QString(format).arg(i18n("System name:"), name);
+
+            if (device->ipV4Config().isValid() && connected()) {
+                QHostAddress addr = device->ipV4Config().addresses().first().ip();
+                m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
+            }
+
+            if (device->ipV6Config().isValid() && connected()) {
+                QHostAddress addr = device->ipV6Config().addresses().first().ip();
+                m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
+            }
+
+            NetworkManager::WirelessDevice::Ptr wireless = device.objectCast<NetworkManager::WirelessDevice>();
+            if (connected()) {
+                if (wireless->bitRate() && wireless->bitRate() < 1000) {
+                    m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Kb/s", wireless->bitRate()));
+                } else if (wireless->bitRate()) {
+                    m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wireless->bitRate()/1000));
+                }
+            }
+            m_details += QString(format).arg(i18n("MAC Address:"), wireless->permanentHardwareAddress());
+
+            NetworkManager::WirelessNetwork::Ptr network = wireless->findNetwork(m_ssid);
+
+            if (network) {
+                NetworkManager::AccessPoint::Ptr ap = network->referenceAccessPoint();
+
+                m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%", network->signalStrength()));
+                m_details += QString(format).arg(i18n("Access point (SSID):"), network->ssid());
+
+                if (ap) {
+                    m_details += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
+                    m_details += QString(format).arg(i18nc("Wifi AP frequency", "Frequency:"), i18n("%1 Mhz", ap->frequency()));
+                }
+            }
+
+            m_details += QString(format).arg("\n", "\n");
         }
     }
 }
@@ -121,8 +185,8 @@ void ModelWirelessItem::setConnection(const NetworkManager::Settings::Connection
     ModelItem::setConnection(connection);
 
     if (!m_connection) {
-        if (m_network) {
-            m_name = m_network->ssid();
+        if (!m_networks.isEmpty()) {
+            m_name = m_networks.value(m_devicePaths.first())->ssid();
         } else {
             m_ssid.clear();
             m_secure = false;
@@ -153,47 +217,64 @@ void ModelWirelessItem::setConnectionSettings(const NetworkManager::Settings::Co
             return;
         }
 
-        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePath());
-        if (!device) {
-           return;
-        }
-        NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
-        if (!wifiDevice) {
-            return;
-        }
-        NetworkManager::WirelessNetwork::Ptr newWifiNetwork = wifiDevice->findNetwork(m_ssid);
+        bool found = false;
+        QMap<NetworkManager::Device::Ptr,NetworkManager::WirelessNetwork::Ptr> networks;
+        foreach (const QString & path, devicePaths()) {
+            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
+            if (!device) {
+                return;
+            }
+            NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+            if (!wifiDevice) {
+                return;
+            }
+            NetworkManager::WirelessNetwork::Ptr newWifiNetwork = wifiDevice->findNetwork(m_ssid);
 
-        if (!newWifiNetwork) {
-            setConnection(NetworkManager::Settings::Connection::Ptr());
-            NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(previousSsid);
-            if (wifiNetwork) {
-                setWirelessNetwork(wifiNetwork);
+            if (newWifiNetwork) {
+                found = true;
+                networks.insert(device, newWifiNetwork);
+            }
+        }
+
+        if (found) {
+            foreach (const NetworkManager::Device::Ptr & deviceKey, networks.keys()) {
+                m_networks.clear();
+                addWirelessNetwork(networks.value(deviceKey), deviceKey);
             }
         } else {
-            setWirelessNetwork(newWifiNetwork);
+            m_ssid = previousSsid;
+            setConnection(NetworkManager::Settings::Connection::Ptr());
         }
     }
 
     updateDetails();
 }
 
-void ModelWirelessItem::setWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network)
+void ModelWirelessItem::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr & device)
 {
-    m_network = network;
+    if (m_networks.contains(device->uni()) && m_networks.value(device->uni()) == network) {
+        return;
+    }
+    m_networks.insert(device->uni(), network);
 
-    if (m_network) {
-        m_specificPath = m_network->referenceAccessPoint()->uni();
+    if (network) {
+        m_type = NetworkManager::Settings::ConnectionSettings::Wireless;
         m_ssid = network->ssid();
         m_previousSignal = m_signal;
-        m_signal = m_network->signalStrength();
-        m_type = NetworkManager::Settings::ConnectionSettings::Wireless;
+        if (network->signalStrength() > m_signal) {
+            m_signal = network->signalStrength();
+        }
 
-        if (m_device) {
-            NetworkManager::WirelessDevice::Ptr wifiDev = m_device.objectCast<NetworkManager::WirelessDevice>();
-            NetworkManager::AccessPoint::Ptr ap = wifiDev->findAccessPoint(m_network->referenceAccessPoint()->uni());
+        if (!m_devicePaths.isEmpty()) {
+            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePaths.first());
 
-            if (ap->capabilities() & NetworkManager::AccessPoint::Privacy) {
-                m_secure = true;
+            if (device) {
+                NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
+                NetworkManager::AccessPoint::Ptr ap = wifiDev->findAccessPoint(network->referenceAccessPoint()->uni());
+
+                if (ap && ap->capabilities() & NetworkManager::AccessPoint::Privacy) {
+                    m_secure = true;
+                }
             }
         }
 
@@ -201,45 +282,58 @@ void ModelWirelessItem::setWirelessNetwork(const NetworkManager::WirelessNetwork
             m_name = ssid();
         }
 
-        connect(m_network.data(), SIGNAL(signalStrengthChanged(int)),
+        connect(network.data(), SIGNAL(signalStrengthChanged(int)),
                 SLOT(onSignalStrengthChanged(int)), Qt::UniqueConnection);
-        connect(m_network.data(), SIGNAL(referenceAccessPointChanged(QString)),
+        connect(network.data(), SIGNAL(referenceAccessPointChanged(QString)),
                 SLOT(onAccessPointChanged(QString)), Qt::UniqueConnection);
-    } else {
-        m_specificPath.clear();
-        m_ssid.clear();
-        m_signal = 0;
-        m_type = NetworkManager::Settings::ConnectionSettings::Unknown;
-        m_secure = false;
     }
 
     updateDetails();
 }
 
-NetworkManager::WirelessNetwork::Ptr ModelWirelessItem::wirelessNetwork() const
+void ModelWirelessItem::removeWirelessNetwork(const NetworkManager::Device::Ptr & device)
 {
-    if (m_network) {
-        return m_network;
+    m_networks.remove(device->uni());
+    m_devicePaths.removeOne(device->uni());
+
+    foreach (const QString & key, m_networks.keys()) {
+        if (m_networks.value(key)->signalStrength() > m_signal) {
+            m_previousSignal = m_signal;
+            m_signal = m_networks.value(key)->signalStrength();
+        }
     }
 
-    return NetworkManager::WirelessNetwork::Ptr();
+    updateDetails();
+
+    emit itemChanged();
+}
+
+QMap<QString, NetworkManager::WirelessNetwork::Ptr> ModelWirelessItem::wirelessNetworks() const
+{
+    if (!m_networks.isEmpty()) {
+        return m_networks;
+    }
+
+    return QMap<QString, NetworkManager::WirelessNetwork::Ptr>();
 }
 
 void ModelWirelessItem::onAccessPointChanged(const QString& accessPoint)
 {
     updateDetails();
 
-    m_specificPath = accessPoint;
-
     emit itemChanged();
 
-    NMItemDebug() << name() << ": access point changed to " << accessPoint;
+    NMItemDebug() << name() << ": access point changed";
 }
 
 void ModelWirelessItem::onSignalStrengthChanged(int strength)
 {
-    m_previousSignal = m_signal;
-    m_signal = strength;
+    foreach (const QString & key, m_networks.keys()) {
+        if (m_networks.value(key)->signalStrength() > m_signal) {
+            m_previousSignal = m_signal;
+            m_signal = strength;
+        }
+    }
 
     updateDetails();
 

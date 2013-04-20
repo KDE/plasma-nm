@@ -49,20 +49,19 @@ private Q_SLOTS:
     void statusChanged(NetworkManager::Status status);
     void wirelessNetworkAppeared(const QString & ssid);
     void wirelessNetworkDisappeared(const QString & ssid);
+    void wirelessEnabled(bool enabled);
 Q_SIGNALS:
     void addActiveConnection(const NetworkManager::ActiveConnection::Ptr & active);
     void addConnection(const NetworkManager::Settings::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device);
     void addVpnConnection(const NetworkManager::Settings::Connection::Ptr &connection);
     void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device);
-    void removeWirelessNetwork(const QString & ssid);
+    void removeWirelessNetworks();
+    void removeWirelessNetwork(const QString & ssid, const NetworkManager::Device::Ptr &device);
     void removeConnectionsByDevice(const QString & udi);
     void removeConnection(const QString & connection);
     void removeVpnConnections();
 
 private:
-    NetworkManager::WirelessDevice::List m_wirelessDevices;
-    NetworkManager::Device::List m_devices;
-
     void addAvailableConnectionsForDevice(const NetworkManager::Device::Ptr &device);
     void addDevice(const NetworkManager::Device::Ptr &device);
 };

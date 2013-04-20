@@ -29,13 +29,14 @@ ModelItem::ModelItem(const NetworkManager::Device::Ptr &device, QObject * parent
     QObject(parent),
     m_active(0),
     m_connection(0),
-    m_device(0),
     m_connected(false),
     m_connecting(false),
     m_sectionType(ModelItem::Unknown),
     m_type(NetworkManager::Settings::ConnectionSettings::Unknown)
 {
-    setDevice(device);
+    if (device) {
+        addDevice(device->uni());
+    }
 }
 
 ModelItem::~ModelItem()
@@ -50,11 +51,6 @@ bool ModelItem::connected() const
 bool ModelItem::connecting() const
 {
     return m_connecting;
-}
-
-QString ModelItem::deviceUdi() const
-{
-    return m_deviceUdi;
 }
 
 QString ModelItem::detailInformations() const
@@ -149,33 +145,6 @@ NetworkManager::Settings::ConnectionSettings::ConnectionType ModelItem::type() c
 
 void ModelItem::updateDetailsContent()
 {
-    QString format = "<tr><td align=\"right\"><b>%1</b></td><td align=\"left\">&nbsp;%2</td></tr>";
-
-    if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
-        m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
-    }
-
-    NetworkManager::Device::Ptr device = NetworkManager::findDeviceByIpFace(m_deviceUdi);
-
-    if (device) {
-        if (device->ipV4Config().isValid() && connected()) {
-            QHostAddress addr = device->ipV4Config().addresses().first().ip();
-            m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
-        }
-
-        if (device->ipV6Config().isValid() && connected()) {
-            QHostAddress addr = device->ipV6Config().addresses().first().ip();
-            m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
-        }
-
-        QString name;
-        if (device->ipInterfaceName().isEmpty()) {
-            name = device->interfaceName();
-        } else {
-            name = device->ipInterfaceName();
-        }
-        m_details += QString(format).arg(i18n("System name:"), name);
-    }
 }
 
 void ModelItem::updateDetails()
@@ -211,6 +180,12 @@ void ModelItem::setActiveConnection(const NetworkManager::ActiveConnection::Ptr 
 
         }
 
+        NetworkManager::Device::Ptr activeDevice = NetworkManager::findNetworkInterface(m_active->devices().first());
+
+        if (activeDevice) {
+            m_activeDevicePath = activeDevice->uni();
+        }
+
         connect(m_active.data(), SIGNAL(default4Changed(bool)),
                 SLOT(onDefaultRouteChanged(bool)), Qt::UniqueConnection);
         connect(m_active.data(), SIGNAL(default6Changed(bool)),
@@ -230,24 +205,31 @@ NetworkManager::ActiveConnection::Ptr ModelItem::activeConnection() const
     return m_active;
 }
 
-void ModelItem::setDevice(const NetworkManager::Device::Ptr & device)
+void ModelItem::addDevice(const QString & device)
 {
-    m_device = device;
+    NetworkManager::Device::Ptr dev = NetworkManager::findNetworkInterface(device);
 
-    if (m_device) {
-        m_devicePath = m_device->uni();
-        m_deviceUdi = m_device->udi();
-    } else {
-        m_deviceUdi.clear();
-        m_devicePath.clear();
+    if (dev && !m_devicePaths.contains(dev->uni())) {
+        m_devicePaths << dev->uni();
     }
 
     updateDetails();
+
+    Q_EMIT itemChanged();
 }
 
-NetworkManager::Device::Ptr ModelItem::device() const
+void ModelItem::removeDevice(const QString& device)
 {
-    return m_device;
+    m_devicePaths.removeOne(device);
+
+    updateDetails();
+
+    Q_EMIT itemChanged();
+}
+
+QString ModelItem::activeDevicePath() const
+{
+    return m_activeDevicePath;
 }
 
 void ModelItem::setConnection(const NetworkManager::Settings::Connection::Ptr & connection)
@@ -288,12 +270,12 @@ QString ModelItem::connectionPath() const
     return m_connectionPath;
 }
 
-QString ModelItem::devicePath() const
+QStringList ModelItem::devicePaths() const
 {
-    return m_devicePath;
+    return m_devicePaths;
 }
 
-QString ModelItem::specificPath() const
+QString ModelItem::specificParameter() const
 {
     return QString();
 }

@@ -32,7 +32,7 @@ public:
     ModelModemItem(const NetworkManager::Device::Ptr & device, QObject * parent = 0);
     ~ModelModemItem();
 
-    void setDevice(const NetworkManager::Device::Ptr & device);
+    void addDevice(const QString & device);
 
 private Q_SLOTS:
     void modemNetworkRemoved();

@@ -344,7 +344,6 @@ void ConnectionEditor::connectionRemoved(const QString& connection)
 
     while (*it) {
         if ((*it)->data(0, ConnectionItem::ConnectionPathRole).toString() == connection) {
-            qDebug() << "found:" << connection;
             QTreeWidgetItem * parent = (*it)->parent();
             delete (*it);
             if (!parent->childCount()) {

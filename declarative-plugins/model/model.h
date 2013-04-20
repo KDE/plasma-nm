@@ -36,7 +36,7 @@ class Model : public QAbstractListModel
 Q_OBJECT
 public:
     enum ConnectionRole {NameRole = Qt::UserRole + 1, UuidRole, TypeRole, ConnectedRole, ConnectingRole, SsidRole, SignalRole, SecureRole, DeviceRole,
-                         ConnectionPathRole, DevicePathTypeRole, SpecificPathRole, ConnectionIconRole, ConnectionDetailInformationsRole, SectionRole/*, SectionStringRole*/};
+                         ConnectionPathRole, DevicePathRole, ActiveDevicePathRole, SpecificParameterRole, ConnectionIconRole, ConnectionDetailInformationsRole, SectionRole/*, SectionStringRole*/};
 
     Model(QObject* parent = 0);
     virtual ~Model();
@@ -52,10 +52,10 @@ private Q_SLOTS:
     void addVpnConnection(const NetworkManager::Settings::Connection::Ptr & connection);
     void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device);
     void removeConnection(const QString & connection);
-    void removeConnectionsByDevice(const QString & udi);
+    void removeConnectionsByDevice(const QString & device);
     void removeVpnConnections();
-    void removeWirelessNetwork(const QString & ssid);
-
+    void removeWirelessNetwork(const QString & ssid, const NetworkManager::Device::Ptr &device);
+    void removeWirelessNetworks();
 private:
     Monitor * m_monitor;
     QList<ModelItem*> m_connections;

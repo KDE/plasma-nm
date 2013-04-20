@@ -40,33 +40,76 @@ ModelWiredItem::~ModelWiredItem()
 
 void ModelWiredItem::updateDetailsContent()
 {
-    ModelItem::updateDetailsContent();
-
     QString format = "<tr><td align=\"right\"><b>%1</b></td><td align=\"left\">&nbsp;%2</td></tr>";
 
-    NetworkManager::Device::Ptr device = NetworkManager::findDeviceByIpFace(m_deviceUdi);
+    if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
+        m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
+    }
 
-    if (device) {
-        NetworkManager::WiredDevice::Ptr wired = device.objectCast<NetworkManager::WiredDevice>();
-        if (connected()) {
-            if (wired->bitRate() < 1000000) {
-                m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wired->bitRate()/1000));
-            } else {
-                m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Gb/s", wired->bitRate()/1000000));
+    m_details += QString(format).arg("\n", "\n");
+
+    if (!connected()) {
+        foreach (const QString & path, m_devicePaths) {
+            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
+
+            if (device) {
+                QString name;
+                if (device->ipInterfaceName().isEmpty()) {
+                    name = device->interfaceName();
+                } else {
+                    name = device->ipInterfaceName();
+                }
+                m_details += QString(format).arg(i18n("System name:"), name);
+
+                if (device->ipV4Config().isValid() && connected()) {
+                    QHostAddress addr = device->ipV4Config().addresses().first().ip();
+                    m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
+                }
+
+                if (device->ipV6Config().isValid() && connected()) {
+                    QHostAddress addr = device->ipV6Config().addresses().first().ip();
+                    m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
+                }
+
+                NetworkManager::WiredDevice::Ptr wired = device.objectCast<NetworkManager::WiredDevice>();
+                m_details += QString(format).arg(i18n("MAC Address:"), wired->permanentHardwareAddress());
+
+                m_details += QString(format).arg("\n", "\n");
             }
         }
-        m_details += QString(format).arg(i18n("MAC Address:"), wired->permanentHardwareAddress());
+    } else {
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_activeDevicePath);
+
+        if (device) {
+            QString name;
+            if (device->ipInterfaceName().isEmpty()) {
+                name = device->interfaceName();
+            } else {
+                name = device->ipInterfaceName();
+            }
+            m_details += QString(format).arg(i18n("System name:"), name);
+
+            if (device->ipV4Config().isValid() && connected()) {
+                QHostAddress addr = device->ipV4Config().addresses().first().ip();
+                m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
+            }
+
+            if (device->ipV6Config().isValid() && connected()) {
+                QHostAddress addr = device->ipV6Config().addresses().first().ip();
+                m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
+            }
+
+            NetworkManager::WiredDevice::Ptr wired = device.objectCast<NetworkManager::WiredDevice>();
+            if (connected()) {
+                if (wired->bitRate() < 1000000) {
+                    m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wired->bitRate()/1000));
+                } else {
+                    m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Gb/s", wired->bitRate()/1000000));
+                }
+            }
+            m_details += QString(format).arg(i18n("MAC Address:"), wired->permanentHardwareAddress());
+
+            m_details += QString(format).arg("\n", "\n");
+        }
     }
-}
-
-void ModelWiredItem::setConnection(const NetworkManager::Settings::Connection::Ptr & connection)
-{
-    ModelItem::setConnection(connection);
-}
-
-void ModelWiredItem::setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings)
-{
-    ModelItem::setConnectionSettings(settings);
-
-    updateDetails();
 }

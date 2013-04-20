@@ -124,7 +124,6 @@ Item {
             name: "TrafficMonitor";
             when: enableTraffic
             PropertyChanges { target: trafficMonitor; height: 100; visible: true }
-            PropertyChanges { target: detailsView; interactive: true }
         }
     ]
 }

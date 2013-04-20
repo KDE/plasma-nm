@@ -340,21 +340,21 @@ void Model::removeConnectionsByDevice(const QString& device)
         if (item->devicePaths().contains(device)) {
             item->removeDevice(device);
             row  = m_connections.indexOf(item);
-        }
 
-        if (row >= 0) {
-            QString name = item->name();
-            if (item->devicePaths().isEmpty()) {
-                beginRemoveRows(QModelIndex(), row, row);
-                m_connections.removeOne(item);
-                item->deleteLater();
-                endRemoveRows();
-                NMModelDebug() << "Connection " << name << " has been removed";
-                row = -1;
-            } else {
-                QModelIndex modelIndex = createIndex(row, 0);
-                dataChanged(modelIndex, modelIndex);
-                NMModelDebug() << "Device was removed from " << name;
+            if (row >= 0) {
+                QString name = item->name();
+                if (item->devicePaths().isEmpty()) {
+                    beginRemoveRows(QModelIndex(), row, row);
+                    m_connections.removeOne(item);
+                    item->deleteLater();
+                    endRemoveRows();
+                    NMModelDebug() << "Connection " << name << " has been removed";
+                    row = -1;
+                } else {
+                    QModelIndex modelIndex = createIndex(row, 0);
+                    dataChanged(modelIndex, modelIndex);
+                    NMModelDebug() << "Device was removed from " << name;
+                }
             }
         }
     }

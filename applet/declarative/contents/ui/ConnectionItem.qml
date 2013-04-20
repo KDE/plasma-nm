@@ -165,7 +165,7 @@ Item {
     states: [
         State {
             name: "Collapsed";
-            when: !expanded;
+            when: !expanded || !connectionView.itemExpandable;
             StateChangeScript { script: if (priv.detailWidget) {priv.detailWidget.destroy()} }
         },
 
@@ -176,7 +176,6 @@ Item {
             PropertyChanges { target: connectionItem.ListView.view; interactive: false }
             PropertyChanges { target: connectionItem.ListView.view; contentY: connectionItem.y }
             StateChangeScript { script: priv.detailWidget = detailWidgetComponent.createObject(connectionItem); }
-            //PropertyChanges { target: detailWidget; visible: true }
         },
 
         State {

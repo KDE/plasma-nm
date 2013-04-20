@@ -40,7 +40,6 @@ Item {
         anchors.fill: parent;
         svg: svgIcons;
         elementId: "network-wired";
-        visible: !connectingIndicator.running;
     }
 
     QIconItem {

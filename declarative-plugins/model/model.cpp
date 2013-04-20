@@ -28,6 +28,7 @@
 #include "model/modelwireditem.h"
 #include "model/modelvpnitem.h"
 #include "model/modelmodemitem.h"
+#include "model/modelbtitem.h"
 
 #include "debug.h"
 
@@ -209,6 +210,10 @@ void Model::addConnection(const NetworkManager::Settings::Connection::Ptr & conn
     } else if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Gsm ||
                settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Cdma) {
         ModelModemItem * item = new ModelModemItem(device);
+        item->setConnection(connection);
+        insertItem(item);
+    } else if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Bluetooth) {
+        ModelBtItem * item = new ModelBtItem(device);
         item->setConnection(connection);
         insertItem(item);
     } else {

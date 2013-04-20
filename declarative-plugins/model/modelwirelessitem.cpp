@@ -111,6 +111,7 @@ void ModelWirelessItem::updateDetailsContent()
 
                 NetworkManager::WirelessDevice::Ptr wireless = device.objectCast<NetworkManager::WirelessDevice>();
                 m_details += QString(format).arg(i18n("MAC Address:"), wireless->permanentHardwareAddress());
+                m_details += QString(format).arg(i18n("Driver:"), device->driver());
 
                 NetworkManager::WirelessNetwork::Ptr network = wireless->findNetwork(m_ssid);
 
@@ -160,6 +161,7 @@ void ModelWirelessItem::updateDetailsContent()
                 }
             }
             m_details += QString(format).arg(i18n("MAC Address:"), wireless->permanentHardwareAddress());
+            m_details += QString(format).arg(i18n("Driver:"), device->driver());
 
             NetworkManager::WirelessNetwork::Ptr network = wireless->findNetwork(m_ssid);
 

@@ -177,7 +177,6 @@ void ModelItem::setActiveConnection(const NetworkManager::ActiveConnection::Ptr 
             NMItemDebug() << name() << ": activated";
             m_connected = true;
             m_connecting = false;
-
         }
 
         NetworkManager::Device::Ptr activeDevice = NetworkManager::findNetworkInterface(m_active->devices().first());

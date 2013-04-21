@@ -23,6 +23,7 @@
 #include <NetworkManagerQt/activeconnection.h>
 #include <NetworkManagerQt/device.h>
 #include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/wirelessdevice.h>
 
 #include <KDebug>
 
@@ -44,7 +45,13 @@ void AvailableConnectionsModel::setDevice(const NetworkManager::Device::Ptr &dev
     removeRows(0, rowCount());
 
     if (device->type() == NetworkManager::Device::Wifi) {
-
+        NetworkManager::WirelessDevice::Ptr wifi = device.dynamicCast<NetworkManager::WirelessDevice>();
+        wifi->requestScan();
+        connect(device.data(), SIGNAL(availableConnectionChanged()),
+                this, SLOT(availableConnectionChanged()));
+        foreach (const Settings::Connection::Ptr &connection, device->availableConnections()) {
+            addConnection(connection);
+        }
     } else if (device->type() == NetworkManager::Device::Wimax) {
 
     } else {

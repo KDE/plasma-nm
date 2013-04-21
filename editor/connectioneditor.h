@@ -53,6 +53,8 @@ private Q_SLOTS:
     void connectionRemoved(const QString & connection);
     void connectionUpdated();
 
+    void aboutDialog();
+
 private:
     Ui::ConnectionEditor * m_editor;
     QMenu * m_menu;

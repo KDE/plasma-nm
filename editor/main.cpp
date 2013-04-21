@@ -30,12 +30,14 @@
 
 #include "connectioneditor.h"
 #include "connectiondetaileditor.h"
+#include "config.h"
 
 int main(int argc, char *argv[])
 {
     KAboutData about("kde-nm-connection-editor", 0, ki18n("NetworkManager connection editor for KDE"),
-                     "0.1", ki18n("Edit your network connections"),
-                     KAboutData::License_GPL, ki18n("(C) 2013 Jan Grulich and Lukáš Tinkl"));
+                     PLASMA_NM_VERSION, ki18n("Manage your network connections"),
+                     KAboutData::License_GPL, ki18n("(C) 2013 Jan Grulich and Lukáš Tinkl"),
+                     ki18n("This application allows you to create, edit and delete network connections."));
     about.addAuthor(ki18n("Jan Grulich"), ki18n("Developer"), "jgrulich@redhat.com");
     about.addAuthor(ki18n("Lukáš Tinkl"), ki18n("Developer"), "ltinkl@redhat.com");
 

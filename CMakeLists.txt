@@ -20,6 +20,7 @@ if (NOT NETWORKMANAGERQT_FOUND)
 endif (NOT NETWORKMANAGERQT_FOUND)
 
 set(KDE_NETWORK_VERSION "0.1.0")
+set(PLASMA_NM_VERSION "0.1.0")
 configure_file(config.h.cmake
                ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 

@@ -20,7 +20,7 @@
    <string>Connection Editor</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" rowspan="4">
+   <item row="0" column="0" rowspan="5">
     <widget class="QTreeWidget" name="connectionsWidget">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -123,10 +123,17 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>472</height>
+       <height>444</height>
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="4" column="1">
+    <widget class="KPushButton" name="btnAbout">
+     <property name="text">
+      <string>A&amp;bout...</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
@@ -137,6 +144,13 @@
    <header>kpushbutton.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>connectionsWidget</tabstop>
+  <tabstop>addButton</tabstop>
+  <tabstop>editButton</tabstop>
+  <tabstop>deleteButton</tabstop>
+  <tabstop>btnAbout</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

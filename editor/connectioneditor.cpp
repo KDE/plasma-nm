@@ -32,6 +32,8 @@
 #include <KMessageBox>
 #include <KService>
 #include <KServiceTypeTrader>
+#include <KAboutApplicationDialog>
+#include <KAboutData>
 
 #include <NetworkManagerQt/settings.h>
 #include <NetworkManagerQt/connection.h>
@@ -48,6 +50,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     m_editor->addButton->setIcon(KIcon("list-add"));
     m_editor->editButton->setIcon(KIcon("configure"));
     m_editor->deleteButton->setIcon(KIcon("edit-delete"));
+    m_editor->btnAbout->setIcon(KIcon("help-about"));
     setCentralWidget(tmp);
 
     setAutoSaveSettings();
@@ -134,6 +137,8 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
             SLOT(connectionAdded(QString)));
     connect(NetworkManager::Settings::notifier(), SIGNAL(connectionRemoved(QString)),
             SLOT(connectionRemoved(QString)));
+
+    connect(m_editor->btnAbout, SIGNAL(clicked()), SLOT(aboutDialog()));
 }
 
 ConnectionEditor::~ConnectionEditor()
@@ -372,4 +377,10 @@ void ConnectionEditor::connectionUpdated()
         }
         ++it;
     }
+}
+
+void ConnectionEditor::aboutDialog()
+{
+    KAboutApplicationDialog * dlg = new KAboutApplicationDialog(KGlobal::mainComponent().aboutData(), this);
+    dlg->show();
 }

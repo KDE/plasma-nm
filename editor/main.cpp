@@ -21,6 +21,7 @@
 #include <KApplication>
 #include <KAboutData>
 #include <KCmdLineArgs>
+#include <KMainWindow>
 #include <KUrl>
 
 #include <NetworkManagerQt/settings.h>
@@ -57,8 +58,13 @@ int main(int argc, char *argv[])
             editor->show();
         }
     } else {
-        ConnectionEditor * editor = new ConnectionEditor();
-        editor->show();
+        if (app.isSessionRestored()) {
+            kRestoreMainWindows<ConnectionEditor>();
+        }
+        else {
+            ConnectionEditor * editor = new ConnectionEditor();
+            editor->show();
+        }
     }
 
     return app.exec();

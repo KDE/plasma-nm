@@ -40,13 +40,17 @@
 using namespace NetworkManager;
 
 ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
-    QMainWindow(parent, flags),
+    KMainWindow(parent, flags),
     m_editor(new Ui::ConnectionEditor)
 {
-    m_editor->setupUi(this);
+    QWidget * tmp = new QWidget(this);
+    m_editor->setupUi(tmp);
     m_editor->addButton->setIcon(KIcon("list-add"));
     m_editor->editButton->setIcon(KIcon("configure"));
     m_editor->deleteButton->setIcon(KIcon("edit-delete"));
+    setCentralWidget(tmp);
+
+    setAutoSaveSettings();
 
     m_menu = new QMenu(this);
     m_menu->setSeparatorsCollapsible(false);

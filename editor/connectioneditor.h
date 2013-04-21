@@ -22,8 +22,9 @@
 #ifndef CONNECTION_EDITOR_H
 #define CONNECTION_EDITOR_H
 
-#include <QtGui/QMainWindow>
-#include <QtGui/QMenu>
+#include <QMenu>
+
+#include <KMainWindow>
 
 #include <NetworkManagerQt/connection.h>
 
@@ -34,7 +35,7 @@ class ConnectionEditor;
 
 class QTreeWidgetItem;
 
-class ConnectionEditor : public QMainWindow
+class ConnectionEditor : public KMainWindow
 {
 Q_OBJECT
 

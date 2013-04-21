@@ -1,0 +1,8 @@
+*.directory
+*~
+.*.sw[p,o]
+/build
+tags
+.swp.*
+.kdev4/
+*.kdev4

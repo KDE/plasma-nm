@@ -207,9 +207,13 @@ void ModelItem::addDevice(const QString & device)
 
     if (dev && !m_devicePaths.contains(dev->uni())) {
         m_devicePaths << dev->uni();
+        addSpecificDevice(dev);
+        updateDetails();
     }
+}
 
-    updateDetails();
+void ModelItem::addSpecificDevice(const NetworkManager::Device::Ptr& device)
+{
 }
 
 void ModelItem::removeDevice(const QString& device)

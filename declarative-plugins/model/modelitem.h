@@ -62,7 +62,7 @@ public:
     virtual void setConnection(const NetworkManager::Settings::Connection::Ptr & connection);
     NetworkManager::Settings::Connection::Ptr connection() const;
 
-    virtual void addDevice(const QString & device);
+    void addDevice(const QString & device);
     void removeDevice(const QString & device);
 
     QString activeDevicePath() const;
@@ -96,6 +96,7 @@ protected:
     QString m_uuid;
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
 
+    virtual void addSpecificDevice(const NetworkManager::Device::Ptr & device);
     virtual void updateDetails();
     virtual void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
 };

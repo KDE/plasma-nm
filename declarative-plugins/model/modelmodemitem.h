@@ -32,8 +32,6 @@ public:
     ModelModemItem(const NetworkManager::Device::Ptr & device, QObject * parent = 0);
     ~ModelModemItem();
 
-    void addDevice(const QString & device);
-
 private Q_SLOTS:
     void modemNetworkRemoved();
     void onSignalQualitychanged(uint signal);
@@ -42,6 +40,7 @@ private Q_SLOTS:
 protected:
     ModemManager::ModemGsmNetworkInterface::Ptr m_modemNetwork;
 
+    void addSpecificDevice(const NetworkManager::Device::Ptr & device);
     void updateDetails();
 };
 

@@ -33,56 +33,31 @@ ModelModemItem::ModelModemItem(const NetworkManager::Device::Ptr & device, QObje
     ModelItem(device, parent),
     m_modemNetwork(0)
 {
-    if (device) {
-        addDevice(device->uni());
-    }
+    addSpecificDevice(device);
 }
 
 ModelModemItem::~ModelModemItem()
 {
 }
 
-void ModelModemItem::addDevice(const QString & device)
+void ModelModemItem::addSpecificDevice(const NetworkManager::Device::Ptr & device)
 {
     //TODO add support for more modems
-    NetworkManager::Device::Ptr dev = NetworkManager::findNetworkInterface(device);
 
-    if (dev && !m_devicePaths.contains(dev->uni())) {
-        m_devicePaths << dev->uni();
-        NetworkManager::ModemDevice::Ptr modemDevice = dev.objectCast<NetworkManager::ModemDevice>();
+    NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
 
-        if (modemDevice) {
-            m_modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
+    if (modemDevice) {
+        m_modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
 
-            if (m_modemNetwork) {
-                connect(m_modemNetwork.data(), SIGNAL(destroyed(QObject*)),
-                        SLOT(modemNetworkRemoved()));
-                connect(m_modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
-                        SLOT(onSignalQualitychanged(uint)), Qt::UniqueConnection);
-                connect(m_modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
-                        SLOT(onAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)), Qt::UniqueConnection);
-                connect(m_modemNetwork.data(), SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
-                        SLOT(onAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)), Qt::UniqueConnection);
-            }
-        }
-    } else if (dev) {
-        /* This is weird, because we don't get the modem device for the first time so we have to check if we are
-         * trying to add the same device and if this device is finally modem device */
-        NetworkManager::ModemDevice::Ptr modemDevice = dev.objectCast<NetworkManager::ModemDevice>();
-
-        if (modemDevice) {
-            m_modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
-
-            if (m_modemNetwork) {
-                connect(m_modemNetwork.data(), SIGNAL(destroyed(QObject*)),
-                        SLOT(modemNetworkRemoved()));
-                connect(m_modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
-                        SLOT(onSignalQualitychanged(uint)), Qt::UniqueConnection);
-                connect(m_modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
-                        SLOT(onAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)), Qt::UniqueConnection);
-                connect(m_modemNetwork.data(), SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
-                        SLOT(onAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)), Qt::UniqueConnection);
-            }
+        if (m_modemNetwork) {
+            connect(m_modemNetwork.data(), SIGNAL(destroyed(QObject*)),
+                    SLOT(modemNetworkRemoved()));
+            connect(m_modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
+                    SLOT(onSignalQualitychanged(uint)), Qt::UniqueConnection);
+            connect(m_modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
+                    SLOT(onAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)), Qt::UniqueConnection);
+            connect(m_modemNetwork.data(), SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
+                    SLOT(onAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)), Qt::UniqueConnection);
         }
     }
 
@@ -91,7 +66,6 @@ void ModelModemItem::addDevice(const QString & device)
 
 void ModelModemItem::updateDetails()
 {
-    qDebug() << "MODEM DEVICES " << m_devicePaths;
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
 
     m_details = "<qt><table>";

@@ -47,7 +47,7 @@ void ModelModemItem::addDevice(const QString & device)
     //TODO add support for more modems
     NetworkManager::Device::Ptr dev = NetworkManager::findNetworkInterface(device);
 
-    if (dev && !m_devicePaths.contains(dev->udi())) {
+    if (dev && !m_devicePaths.contains(dev->uni())) {
         m_devicePaths << dev->uni();
         NetworkManager::ModemDevice::Ptr modemDevice = dev.objectCast<NetworkManager::ModemDevice>();
 
@@ -65,59 +65,52 @@ void ModelModemItem::addDevice(const QString & device)
                         SLOT(onAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)), Qt::UniqueConnection);
             }
         }
+    } else if (dev) {
+        /* This is weird, because we don't get the modem device for the first time so we have to check if we are
+         * trying to add the same device and if this device is finally modem device */
+        NetworkManager::ModemDevice::Ptr modemDevice = dev.objectCast<NetworkManager::ModemDevice>();
 
-        updateDetails();
+        if (modemDevice) {
+            m_modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
+
+            if (m_modemNetwork) {
+                connect(m_modemNetwork.data(), SIGNAL(destroyed(QObject*)),
+                        SLOT(modemNetworkRemoved()));
+                connect(m_modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
+                        SLOT(onSignalQualitychanged(uint)), Qt::UniqueConnection);
+                connect(m_modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
+                        SLOT(onAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)), Qt::UniqueConnection);
+                connect(m_modemNetwork.data(), SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
+                        SLOT(onAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)), Qt::UniqueConnection);
+            }
+        }
     }
+
+    updateDetails();
 }
 
-void ModelModemItem::updateDetailsContent()
+void ModelModemItem::updateDetails()
 {
+    qDebug() << "MODEM DEVICES " << m_devicePaths;
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
 
+    m_details = "<qt><table>";
+
+    // Prepare objects
     if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
         m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
     }
-
     m_details += QString(format).arg("\n", "\n");
 
-    if (!connected()) {
-        foreach (const QString & path, m_devicePaths) {
-            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
-
-            if (device) {
-                NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
-
-                QString name;
-                if (device->ipInterfaceName().isEmpty()) {
-                    name = device->interfaceName();
-                } else {
-                    name = device->ipInterfaceName();
-                }
-                m_details += QString(format).arg(i18n("System name:"), name);
-
-                if (device->ipV4Config().isValid() && connected()) {
-                    QHostAddress addr = device->ipV4Config().addresses().first().ip();
-                    m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
-                }
-
-                if (device->ipV6Config().isValid() && connected()) {
-                    QHostAddress addr = device->ipV6Config().addresses().first().ip();
-                    m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
-                }
-
-                m_details += QString(format).arg("\n", "\n");
-            }
-
-            if (m_modemNetwork) {
-                m_details += QString(format).arg(i18n("Operator:"), m_modemNetwork->getRegistrationInfo().operatorName);
-                m_details += QString(format).arg(i18n("Signal quality:"), QString("%1%").arg(m_modemNetwork->getSignalQuality()));
-                m_details += QString(format).arg(i18n("Access technology:"), QString("%1/%2").arg(UiUtils::convertTypeToString(m_modemNetwork->type()), UiUtils::convertAccessTechnologyToString(m_modemNetwork->getAccessTechnology())));
-                m_details += QString(format).arg(i18n("Allowed Mode"), UiUtils::convertAllowedModeToString(m_modemNetwork->getAllowedMode()));
-            }
+    foreach (const QString & path, m_devicePaths) {
+        if (m_connected && m_activeDevicePath != path) {
+            continue;
         }
-    } else {
-        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_activeDevicePath);
 
+        // Prepare objects
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
+
+        // Set details
         if (device) {
             QString name;
             if (device->ipInterfaceName().isEmpty()) {
@@ -127,15 +120,17 @@ void ModelModemItem::updateDetailsContent()
             }
             m_details += QString(format).arg(i18n("System name:"), name);
 
-            if (device->ipV4Config().isValid() && connected()) {
+            if (device->ipV4Config().isValid() && m_connected) {
                 QHostAddress addr = device->ipV4Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
             }
 
-            if (device->ipV6Config().isValid() && connected()) {
+            if (device->ipV6Config().isValid() && m_connected) {
                 QHostAddress addr = device->ipV6Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
             }
+
+            m_details += QString(format).arg("\n", "\n");
         }
 
         if (m_modemNetwork) {
@@ -145,6 +140,10 @@ void ModelModemItem::updateDetailsContent()
             m_details += QString(format).arg(i18n("Allowed Mode"), UiUtils::convertAllowedModeToString(m_modemNetwork->getAllowedMode()));
         }
     }
+
+    m_details += "</table></qt>";
+
+    Q_EMIT itemChanged();
 }
 
 void ModelModemItem::modemNetworkRemoved()
@@ -156,8 +155,6 @@ void ModelModemItem::onSignalQualitychanged(uint signal)
 {
     updateDetails();
 
-    emit itemChanged();
-
     NMItemDebug() << name() << ": signal quality changed to " << signal;
 }
 
@@ -165,16 +162,12 @@ void ModelModemItem::onAccessTechnologyChanged(ModemManager::ModemInterface::Acc
 {
     updateDetails();
 
-    emit itemChanged();
-
     NMItemDebug() << name() << ": access technology changed to " << UiUtils::convertAccessTechnologyToString(tech);
 }
 
 void ModelModemItem::onAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode)
 {
     updateDetails();
-
-    emit itemChanged();
 
     NMItemDebug() << name() << ": allowed mode changed to " << UiUtils::convertAllowedModeToString(mode);
 }

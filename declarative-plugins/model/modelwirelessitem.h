@@ -56,7 +56,7 @@ private Q_SLOTS:
     void onSignalStrengthChanged(int strength);
 
 protected:
-    void updateDetailsContent();
+    void updateDetails();
     void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
 
 private:

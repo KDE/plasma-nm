@@ -39,7 +39,7 @@ private Q_SLOTS:
     void onBannerChanged(const QString & banner);
 
 protected:
-    void updateDetailsContent();
+    void updateDetails();
 
 private:
     NetworkManager::VpnConnection::Ptr m_vpn;

@@ -96,9 +96,7 @@ protected:
     QString m_uuid;
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
 
-    void updateDetails();
-
-    virtual void updateDetailsContent();
+    virtual void updateDetails();
     virtual void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
 };
 

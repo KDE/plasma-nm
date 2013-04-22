@@ -42,7 +42,7 @@ private Q_SLOTS:
 protected:
     ModemManager::ModemGsmNetworkInterface::Ptr m_modemNetwork;
 
-    void updateDetailsContent();
+    void updateDetails();
 };
 
 #endif // PLASMA_NM_CONNECTION_MODEM_ITEM_H

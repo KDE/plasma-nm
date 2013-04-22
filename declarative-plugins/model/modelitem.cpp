@@ -147,15 +147,8 @@ NetworkManager::Settings::ConnectionSettings::ConnectionType ModelItem::type() c
     return m_type;
 }
 
-void ModelItem::updateDetailsContent()
-{
-}
-
 void ModelItem::updateDetails()
 {
-    m_details = "<qt><table>";
-    updateDetailsContent();
-    m_details += "</table></qt>";
 }
 
 bool ModelItem::operator==(ModelItem* item)
@@ -217,8 +210,6 @@ void ModelItem::addDevice(const QString & device)
     }
 
     updateDetails();
-
-    Q_EMIT itemChanged();
 }
 
 void ModelItem::removeDevice(const QString& device)
@@ -226,8 +217,6 @@ void ModelItem::removeDevice(const QString& device)
     m_devicePaths.removeOne(device);
 
     updateDetails();
-
-    Q_EMIT itemChanged();
 }
 
 QString ModelItem::activeDevicePath() const
@@ -304,7 +293,6 @@ void ModelItem::onActiveConnectionStateChanged(NetworkManager::ActiveConnection:
     updateDetails();
 
     NMItemDebug() << name() << ": state has been changed to " << state;
-    emit itemChanged();
 }
 
 void ModelItem::onConnectionUpdated()
@@ -312,8 +300,6 @@ void ModelItem::onConnectionUpdated()
     NetworkManager::Settings::Connection *connection = qobject_cast<NetworkManager::Settings::Connection*>(sender());
     if (connection) {
         setConnectionSettings(connection->settings());
-
-        emit itemChanged();
 
         NMItemDebug() << name() << ": connection changed";
     }
@@ -324,8 +310,6 @@ void ModelItem::onDefaultRouteChanged(bool defaultRoute)
     Q_UNUSED(defaultRoute);
 
     updateDetails();
-
-    emit itemChanged();
 
     NMItemDebug() << name() << ": default route changed";
 }

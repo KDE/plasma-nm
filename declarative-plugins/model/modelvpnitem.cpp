@@ -20,6 +20,7 @@
 
 #include "model/modelvpnitem.h"
 
+#include <NetworkManagerQt/settings.h>
 #include <NetworkManagerQt/settings/connection.h>
 #include <NetworkManagerQt/settings/vpn.h>
 
@@ -38,28 +39,38 @@ ModelVpnItem::~ModelVpnItem()
 {
 }
 
-void ModelVpnItem::updateDetailsContent()
+void ModelVpnItem::updateDetails()
 {
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
 
+    m_details = "<qt><table>";
+
+    // Prepare objects
+    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnection(m_connectionPath);
+    NetworkManager::Settings::ConnectionSettings::Ptr connectionSettings;
+    NetworkManager::Settings::VpnSetting::Ptr vpnSetting;
+    if (connection) {
+        connectionSettings = connection->settings();
+    }
+    if (connectionSettings) {
+        vpnSetting = connectionSettings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
+    }
+
+    // Set details
     if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
         m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
     }
-
     m_details += QString(format).arg("\n", "\n");
-
-    if (m_connection) {
-        NetworkManager::Settings::ConnectionSettings::Ptr settings = m_connection->settings();
-        NetworkManager::Settings::VpnSetting::Ptr vpnSetting;
-        vpnSetting = settings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
-        if (vpnSetting) {
-            m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
-        }
-
-        if (m_vpn) {
-            m_details += QString(format).arg(i18n("Banner:"), m_vpn->banner().simplified());
-        }
+    if (vpnSetting) {
+        m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
     }
+    if (m_vpn) {
+        m_details += QString(format).arg(i18n("Banner:"), m_vpn->banner().simplified());
+    }
+
+    m_details += "</table></qt>";
+
+    Q_EMIT itemChanged();
 }
 
 void ModelVpnItem::setActiveConnection(const NetworkManager::ActiveConnection::Ptr & active)

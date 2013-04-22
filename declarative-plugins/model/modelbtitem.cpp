@@ -39,64 +39,57 @@ ModelBtItem::~ModelBtItem()
 {
 }
 
-void ModelBtItem::updateDetailsContent()
+void ModelBtItem::updateDetails()
 {
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
 
+    m_details = "<qt><table>";
     if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
         m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
     }
 
     m_details += QString(format).arg("\n", "\n");
 
-    if (!connected()) {
-        foreach (const QString & path, m_devicePaths) {
-            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
-
-            if (device) {
-                if (device->ipV4Config().isValid() && connected()) {
-                    QHostAddress addr = device->ipV4Config().addresses().first().ip();
-                    m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
-                }
-
-                if (device->ipV6Config().isValid() && connected()) {
-                    QHostAddress addr = device->ipV6Config().addresses().first().ip();
-                    m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
-                }
-
-                NetworkManager::BluetoothDevice::Ptr bt = device.objectCast<NetworkManager::BluetoothDevice>();
-                m_details += QString(format).arg(i18n("MAC Address:"), bt->hardwareAddress());
-                m_details += QString(format).arg(i18n("Driver:"), device->driver());
-
-                m_details += QString(format).arg("\n", "\n");
-            }
+    foreach (const QString & path, m_devicePaths) {
+        if (m_connected && m_activeDevicePath != path) {
+            continue;
         }
-    } else {
-        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_activeDevicePath);
 
+        // Prepare objects
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
+        NetworkManager::BluetoothDevice::Ptr bt;
         if (device) {
-            NetworkManager::BluetoothDevice::Ptr bt = device.objectCast<NetworkManager::BluetoothDevice>();
+            bt = device.objectCast<NetworkManager::BluetoothDevice>();
+        }
+
+        // Set details
+        if (device) {
             QString name = device->ipInterfaceName();
             if (!name.isEmpty()) {
                 m_details += QString(format).arg(i18n("System name:"), name);
             }
 
-            m_details += QString(format).arg(i18n("Name:"), bt->name());
-
-            if (device->ipV4Config().isValid() && connected()) {
+            if (device->ipV4Config().isValid() && m_connected) {
                 QHostAddress addr = device->ipV4Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
             }
 
-            if (device->ipV6Config().isValid() && connected()) {
+            if (device->ipV6Config().isValid() && m_connected) {
                 QHostAddress addr = device->ipV6Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
             }
+        }
 
+        if (bt) {
+            m_details += QString(format).arg(i18n("Name:"), bt->name());
             m_details += QString(format).arg(i18n("MAC Address:"), bt->hardwareAddress());
             m_details += QString(format).arg(i18n("Driver:"), device->driver());
 
             m_details += QString(format).arg("\n", "\n");
         }
     }
+
+    m_details += "</table></qt>";
+
+    Q_EMIT itemChanged();
 }

@@ -38,47 +38,28 @@ ModelWiredItem::~ModelWiredItem()
 {
 }
 
-void ModelWiredItem::updateDetailsContent()
+void ModelWiredItem::updateDetails()
 {
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
 
+    m_details = "<qt><table>";
     if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
         m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
     }
 
     m_details += QString(format).arg("\n", "\n");
 
-    if (!connected()) {
-        foreach (const QString & path, m_devicePaths) {
-            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
-
-            if (device) {
-                QString name;
-                if (device->ipInterfaceName().isEmpty()) {
-                    name = device->interfaceName();
-                } else {
-                    name = device->ipInterfaceName();
-                }
-                m_details += QString(format).arg(i18n("System name:"), name);
-
-                if (device->ipV4Config().isValid() && connected()) {
-                    QHostAddress addr = device->ipV4Config().addresses().first().ip();
-                    m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
-                }
-
-                if (device->ipV6Config().isValid() && connected()) {
-                    QHostAddress addr = device->ipV6Config().addresses().first().ip();
-                    m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
-                }
-
-                NetworkManager::WiredDevice::Ptr wired = device.objectCast<NetworkManager::WiredDevice>();
-                m_details += QString(format).arg(i18n("MAC Address:"), wired->permanentHardwareAddress());
-
-                m_details += QString(format).arg("\n", "\n");
-            }
+    foreach (const QString & path, m_devicePaths) {
+        if (m_connected && m_activeDevicePath != path) {
+            continue;
         }
-    } else {
-        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_activeDevicePath);
+
+        // Prepare objects
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
+        NetworkManager::WiredDevice::Ptr wired;
+        if (device) {
+            wired = device.objectCast<NetworkManager::WiredDevice>();
+        }
 
         if (device) {
             QString name;
@@ -89,17 +70,18 @@ void ModelWiredItem::updateDetailsContent()
             }
             m_details += QString(format).arg(i18n("System name:"), name);
 
-            if (device->ipV4Config().isValid() && connected()) {
+            if (device->ipV4Config().isValid() && m_connected) {
                 QHostAddress addr = device->ipV4Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
             }
 
-            if (device->ipV6Config().isValid() && connected()) {
+            if (device->ipV6Config().isValid() && m_connected) {
                 QHostAddress addr = device->ipV6Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
             }
+        }
 
-            NetworkManager::WiredDevice::Ptr wired = device.objectCast<NetworkManager::WiredDevice>();
+        if (wired) {
             if (connected()) {
                 if (wired->bitRate() < 1000000) {
                     m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wired->bitRate()/1000));
@@ -108,8 +90,12 @@ void ModelWiredItem::updateDetailsContent()
                 }
             }
             m_details += QString(format).arg(i18n("MAC Address:"), wired->permanentHardwareAddress());
-
-            m_details += QString(format).arg("\n", "\n");
         }
+
+        m_details += QString(format).arg("\n", "\n");
     }
+
+    m_details += "</table></qt>";
+
+    Q_EMIT itemChanged();
 }

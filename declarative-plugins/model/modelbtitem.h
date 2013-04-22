@@ -31,7 +31,7 @@ public:
     ~ModelBtItem();
 
 protected:
-    void updateDetailsContent();
+    void updateDetails();
 
 };
 

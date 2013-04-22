@@ -31,7 +31,7 @@ public:
     ~ModelWiredItem();
 
 protected:
-    void updateDetailsContent();
+    void updateDetails();
 
 };
 

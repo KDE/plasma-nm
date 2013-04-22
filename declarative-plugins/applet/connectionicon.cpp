@@ -245,7 +245,7 @@ void ConnectionIcon::setDisconnectedIcon()
         Q_EMIT setTooltipIcon("network-wired");
     } else if (modem) {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile)";
-        Q_EMIT setConnectionIcon("network-mobile");
+        Q_EMIT setStaticConnectionIcon("phone");
         Q_EMIT setTooltipIcon("phone");
     } else if (wireless) {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-wireless-0)";

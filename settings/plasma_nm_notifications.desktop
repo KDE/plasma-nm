@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Notifications
+Comment=Configure the Network Management notifications
+Type=Service
+Exec=kcmshell4 plasma_nm_notifications
+Icon=preferences-desktop-notification
+X-KDE-ServiceTypes=KCModule
+X-KDE-Library=plasma_nm_notifications
+X-KDE-FactoryName=plasma_nm_notifications
+Categories=Qt;KDE;X-KDE-settings-system;
+Visible=false;

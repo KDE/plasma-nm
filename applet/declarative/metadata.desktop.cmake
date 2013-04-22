@@ -33,6 +33,7 @@ X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
 X-Plasma-DefaultSize=300,500
 X-Plasma-NotificationArea=true
+X-Plasma-ConfigPlugins=plasma_nm_notifications
 
 X-KDE-PluginInfo-Name=org.kde.plasma-nm
 X-KDE-PluginInfo-Category=System Information

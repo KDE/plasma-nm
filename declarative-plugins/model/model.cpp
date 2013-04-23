@@ -239,22 +239,22 @@ void Model::removeWirelessNetwork(const QString& ssid, const NetworkManager::Dev
     foreach (ModelItem * item, m_connections) {
         if (item->ssid() == ssid) {
             row  = m_connections.indexOf(item);
-        }
 
-        if (row >= 0) {
-            if (item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-                ModelWirelessItem * wifiItem = qobject_cast<ModelWirelessItem*>(item);
-                if (wifiItem) {
-                    wifiItem->removeWirelessNetwork(device);
-                    bool removed = updateItem(item, row);
+            if (row >= 0) {
+                if (item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
+                    ModelWirelessItem * wifiItem = qobject_cast<ModelWirelessItem*>(item);
+                    if (wifiItem) {
+                        wifiItem->removeWirelessNetwork(device);
+                        bool removed = updateItem(item, row);
 
-                    if (removed) {
-                        NMModelDebug() << "Wireless network " << ssid << " has been completely removed";
+                        if (removed) {
+                            NMModelDebug() << "Wireless network " << ssid << " has been completely removed";
+                        } else {
+                            NMModelDebug() << "Removed network from " << wifiItem->name() << " connection";
+                        }
                     } else {
-                        NMModelDebug() << "Removed network from " << wifiItem->name() << " connection";
+                        return;
                     }
-                } else {
-                    return;
                 }
             }
         }
@@ -268,13 +268,14 @@ void Model::removeWirelessNetworks()
     foreach (ModelItem * item, m_connections) {
         if (item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
             row  = m_connections.indexOf(item);
+
+            if (row >= 0) {
+                updateItem(item, row, true);
+                NMModelDebug() << "Wireless network " << item->ssid() << " has been completely removed";
+                row = -1;
+            }
         }
 
-        if (row >= 0) {
-            updateItem(item, row, true);
-            NMModelDebug() << "Wireless network " << item->ssid() << " has been completely removed";
-            row = -1;
-        }
     }
 }
 
@@ -333,12 +334,12 @@ void Model::removeVpnConnections()
     foreach (ModelItem * item, m_connections) {
         if (item->type() == NetworkManager::Settings::ConnectionSettings::Vpn) {
             row  = m_connections.indexOf(item);
-        }
 
-        if (row >= 0) {
-            updateItem(item, row, true);
-            NMModelDebug() << "VPN Connection " << item->name() << " has been removed";
-            row = -1;
+            if (row >= 0) {
+                updateItem(item, row, true);
+                NMModelDebug() << "VPN Connection " << item->name() << " has been removed";
+                row = -1;
+            }
         }
     }
 }

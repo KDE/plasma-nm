@@ -379,11 +379,6 @@ void Model::insertItem(ModelItem* item)
                 it->addDevice(device);
             }
 
-            int row = m_connections.indexOf(it);
-            if (row >= 0) {
-                QModelIndex modelIndex = createIndex(row, 0);
-                dataChanged(modelIndex, modelIndex);
-            }
             found = true;
             break;
         }

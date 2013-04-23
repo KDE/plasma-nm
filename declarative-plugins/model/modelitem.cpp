@@ -142,6 +142,25 @@ QString ModelItem::sectionType() const
     }
 }
 
+bool ModelItem::shouldBeRemoved() const
+{
+    if (m_devicePaths.isEmpty()) {
+        return true;
+    }
+
+    if (m_connectionPath.isEmpty()) {
+        return shouldBeRemovedSpecific();
+    }
+
+    return false;
+}
+
+bool ModelItem::shouldBeRemovedSpecific() const
+{
+    // No specific condition
+    return true;
+}
+
 NetworkManager::Settings::ConnectionSettings::ConnectionType ModelItem::type() const
 {
     return m_type;
@@ -214,6 +233,7 @@ void ModelItem::addDevice(const QString & device)
 
 void ModelItem::addSpecificDevice(const NetworkManager::Device::Ptr& device)
 {
+    Q_UNUSED(device);
 }
 
 void ModelItem::removeDevice(const QString& device)

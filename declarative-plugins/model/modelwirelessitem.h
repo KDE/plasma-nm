@@ -58,6 +58,7 @@ private Q_SLOTS:
 protected:
     void updateDetails();
     void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
+    bool shouldBeRemovedSpecific() const;
 
 private:
     QMap<QString, NetworkManager::WirelessNetwork::Ptr> m_networks;

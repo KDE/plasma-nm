@@ -76,6 +76,11 @@ QString ModelWirelessItem::specificParameter() const
     return m_ssid;
 }
 
+bool ModelWirelessItem::shouldBeRemovedSpecific() const
+{
+    return m_networks.isEmpty();
+}
+
 void ModelWirelessItem::updateDetails()
 {
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";

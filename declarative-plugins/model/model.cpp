@@ -246,22 +246,16 @@ void Model::removeWirelessNetwork(const QString& ssid, const NetworkManager::Dev
                 ModelWirelessItem * wifiItem = qobject_cast<ModelWirelessItem*>(item);
                 if (wifiItem) {
                     wifiItem->removeWirelessNetwork(device);
+                    bool removed = updateItem(item, row);
+
+                    if (removed) {
+                        NMModelDebug() << "Wireless network " << ssid << " has been completely removed";
+                    } else {
+                        NMModelDebug() << "Removed network from " << wifiItem->name() << " connection";
+                    }
                 } else {
                     return;
                 }
-                if (wifiItem->wirelessNetworks().isEmpty()) {
-                    beginRemoveRows(QModelIndex(), row, row);
-                    m_connections.removeOne(item);
-                    item->deleteLater();
-                    endRemoveRows();
-                    NMModelDebug() << "Wireless network " << ssid << " has been completely removed";
-                    row = -1;
-                } else {
-                    QModelIndex modelIndex = createIndex(row, 0);
-                    dataChanged(modelIndex, modelIndex);
-                    NMModelDebug() << "Removed network from " << wifiItem->name() << " connection";
-                }
-                break;
             }
         }
     }
@@ -277,10 +271,7 @@ void Model::removeWirelessNetworks()
         }
 
         if (row >= 0) {
-            beginRemoveRows(QModelIndex(), row, row);
-            m_connections.removeOne(item);
-            item->deleteLater();
-            endRemoveRows();
+            updateItem(item, row, true);
             NMModelDebug() << "Wireless network " << item->ssid() << " has been completely removed";
             row = -1;
         }
@@ -296,38 +287,19 @@ void Model::removeConnection(const QString& connection)
 
             /* We removed connection details, but this connection can be available
                as accesspoint, if not, we have to delete it */
-            bool remove = true;
-            if (item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-                ModelWirelessItem * wirelessItem = qobject_cast<ModelWirelessItem*>(item);
+            int row  = m_connections.indexOf(item);
 
-                if (wirelessItem && !wirelessItem->wirelessNetworks().isEmpty()) {
-                    int row  = m_connections.indexOf(item);
+            if (row >= 0 ) {
+                bool removed = updateItem(item, row);
 
-                    if (row >= 0) {
-                        int row = m_connections.indexOf(item);
-                        if (row >= 0) {
-                            QModelIndex modelIndex = createIndex(row, 0);
-                            dataChanged(modelIndex, modelIndex);
-                        }
-                        remove = false;
-                        NMModelDebug() << "Connection " << item->name() << " has been removed from known connections";
-                    }
-                }
-            }
-
-            if (remove) {
-                int row = m_connections.indexOf(item);
-                if (row >= 0) {
-                    beginRemoveRows(QModelIndex(), row, row);
-                    m_connections.removeOne(item);
-                    item->deleteLater();
-                    endRemoveRows();
-                    remove = false;
+                if (removed) {
+                    NMModelDebug() << "Connection " << item->name() << " has been removed from known connections";
+                } else {
                     NMModelDebug() << "Connection " << name << " has been removed";
                 }
-            }
 
-            break;
+                break;
+            }
         }
     }
 }
@@ -343,16 +315,10 @@ void Model::removeConnectionsByDevice(const QString& device)
 
             if (row >= 0) {
                 QString name = item->name();
-                if (item->devicePaths().isEmpty()) {
-                    beginRemoveRows(QModelIndex(), row, row);
-                    m_connections.removeOne(item);
-                    item->deleteLater();
-                    endRemoveRows();
+                bool removed = updateItem(item, row);
+                if (removed) {
                     NMModelDebug() << "Connection " << name << " has been removed";
-                    row = -1;
                 } else {
-                    QModelIndex modelIndex = createIndex(row, 0);
-                    dataChanged(modelIndex, modelIndex);
                     NMModelDebug() << "Device was removed from " << name;
                 }
             }
@@ -370,10 +336,7 @@ void Model::removeVpnConnections()
         }
 
         if (row >= 0) {
-            beginRemoveRows(QModelIndex(), row, row);
-            m_connections.removeOne(item);
-            item->deleteLater();
-            endRemoveRows();
+            updateItem(item, row, true);
             NMModelDebug() << "VPN Connection " << item->name() << " has been removed";
             row = -1;
         }
@@ -435,6 +398,21 @@ void Model::insertItem(ModelItem* item)
         NMModelDebug() << "Connection " << item->name() << " has been added";
     } else {
         delete item;
+    }
+}
+
+bool Model::updateItem(ModelItem* item, int index, bool removeDirectly)
+{
+    if (item->shouldBeRemoved() || removeDirectly) {
+        beginRemoveRows(QModelIndex(), index, index);
+        m_connections.removeOne(item);
+        item->deleteLater();
+        endRemoveRows();
+        return true;
+    } else {
+        QModelIndex modelIndex = createIndex(index, 0);
+        dataChanged(modelIndex, modelIndex);
+        return false;
     }
 }
 

@@ -46,6 +46,7 @@ public:
     virtual int signal() const;
     virtual bool secure() const;
     QString sectionType() const;
+    bool shouldBeRemoved() const;
     NetworkManager::Settings::ConnectionSettings::ConnectionType type() const;
 
     bool operator==(ModelItem * item);
@@ -99,6 +100,7 @@ protected:
     virtual void addSpecificDevice(const NetworkManager::Device::Ptr & device);
     virtual void updateDetails();
     virtual void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
+    virtual bool shouldBeRemovedSpecific() const;
 };
 
 #endif // PLASMA_NM_CONNECTION_ITEM_H

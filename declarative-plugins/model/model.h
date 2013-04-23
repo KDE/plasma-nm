@@ -56,6 +56,7 @@ private Q_SLOTS:
     void removeVpnConnections();
     void removeWirelessNetwork(const QString & ssid, const NetworkManager::Device::Ptr &device);
     void removeWirelessNetworks();
+    bool updateItem(ModelItem * item, int index, bool removeDirectly = false);
 private:
     Monitor * m_monitor;
     QList<ModelItem*> m_connections;

@@ -46,7 +46,7 @@ private Q_SLOTS:
     void modemNetworkRemoved();
     void modemSignalChanged(uint signal);
     void setIcons();
-    void setWirelessIconForSignalStrenght(int strenght);
+    void setWirelessIconForSignalStrength(int strength);
     void setIconForModem();
 
 Q_SIGNALS:

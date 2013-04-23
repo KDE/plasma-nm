@@ -380,41 +380,41 @@ void ConnectionIcon::setWirelessIcon(const NetworkManager::Device::Ptr &device, 
 
     if (m_wirelessNetwork) {
         connect(m_wirelessNetwork.data(), SIGNAL(signalStrengthChanged(int)),
-                SLOT(setWirelessIconForSignalStrenght(int)), Qt::UniqueConnection);
+                SLOT(setWirelessIconForSignalStrength(int)), Qt::UniqueConnection);
 
-        setWirelessIconForSignalStrenght(m_wirelessNetwork->signalStrength());
+        setWirelessIconForSignalStrength(m_wirelessNetwork->signalStrength());
     } else {
         setDisconnectedIcon();
     }
 }
 
-void ConnectionIcon::setWirelessIconForSignalStrenght(int strenght)
+void ConnectionIcon::setWirelessIconForSignalStrength(int strength)
 {
-    int diff = m_signal - strenght;
+    int diff = m_signal - strength;
 
     if (diff >= 10 ||
         diff <= -10) {
         int iconStrenght = 100;
 
-        if (strenght < 20) {
+        if (strength < 20) {
             iconStrenght = 20;
             Q_EMIT setTooltipIcon("network-wireless-connected-25");
-        } else if (strenght < 25) {
+        } else if (strength < 25) {
             iconStrenght = 25;
             Q_EMIT setTooltipIcon("network-wireless-connected-25");
-        } else if (strenght < 40) {
+        } else if (strength < 40) {
             iconStrenght = 40;
             Q_EMIT setTooltipIcon("network-wireless-connected-50");
-        } else if (strenght < 50) {
+        } else if (strength < 50) {
             iconStrenght = 50;
             Q_EMIT setTooltipIcon("network-wireless-connected-50");
-        } else if (strenght < 60) {
+        } else if (strength < 60) {
             iconStrenght = 60;
             Q_EMIT setTooltipIcon("network-wireless-connected-75");
-        } else if (strenght < 75) {
+        } else if (strength < 75) {
             iconStrenght = 75;
             Q_EMIT setTooltipIcon("network-wireless-connected-75");
-        } else if (strenght < 80) {
+        } else if (strength < 80) {
             iconStrenght = 80;
             Q_EMIT setTooltipIcon("network-wireless-connected-100");
         } else {

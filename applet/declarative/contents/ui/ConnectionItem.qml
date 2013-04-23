@@ -69,6 +69,7 @@ Item {
         text: itemName;
         elide: Text.ElideRight;
         font.weight: itemConnected ? Font.DemiBold : Font.Normal;
+        font.italic: itemConnecting ? true : false;
     }
 
     PlasmaComponents.ToolButton {

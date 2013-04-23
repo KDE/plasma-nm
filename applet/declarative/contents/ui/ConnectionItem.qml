@@ -165,7 +165,10 @@ Item {
     states: [
         State {
             name: "Collapsed";
-            when: !expanded || !connectionView.itemExpandable;
+            when: (!expanded || !connectionView.itemExpandable) &&
+                  !((!connectionView.activeExpanded && itemSection == i18n("Active connections")) ||
+                   (!connectionView.previousExpanded && itemSection == i18n("Previous connections")) ||
+                   (!connectionView.unknownExpanded && itemSection == i18n("Unknown connections")));
             StateChangeScript { script: if (priv.detailWidget) {priv.detailWidget.destroy()} }
         },
 
@@ -179,10 +182,12 @@ Item {
         },
 
         State {
-            name: "Hidden";
-            when: ((!connectionView.activeExpanded && itemSection == i18n("Active connections")) ||
-                   (!connectionView.previousExpanded && itemSection == i18n("Previous connections")) ||
-                   (!connectionView.unknownExpanded && itemSection == i18n("Unknown connections")))
+            name: "CollapsedHidden";
+            when: (!expanded || !connectionView.itemExpandable) &&
+                  ((!connectionView.activeExpanded && itemSection == i18n("Active connections")) ||
+                  (!connectionView.previousExpanded && itemSection == i18n("Previous connections")) ||
+                  (!connectionView.unknownExpanded && itemSection == i18n("Unknown connections")));
+            StateChangeScript { script: if (priv.detailWidget) {priv.detailWidget.destroy()} }
             PropertyChanges { target: connectionItem; height: 0; }
             PropertyChanges { target: connectionItem; visible: false; }
         }

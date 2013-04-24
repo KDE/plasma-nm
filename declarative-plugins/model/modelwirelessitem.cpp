@@ -311,6 +311,9 @@ void ModelWirelessItem::onAccessPointChanged(const QString& accessPoint)
 
 void ModelWirelessItem::onSignalStrengthChanged(int strength)
 {
+    m_previousSignal = m_signal;
+    m_signal = strength;
+
     foreach (const QString & key, m_networks.keys()) {
         if (m_networks.value(key)->signalStrength() > m_signal) {
             m_previousSignal = m_signal;

@@ -1,6 +1,7 @@
 [Global]
 IconName=applications-internet
 Name=plasma-nm
+Name[cs]=plasma-nm
 Name[de]=Plasma-NM
 Name[fi]=plasma-nm
 Name[nl]=plasma-nm
@@ -10,6 +11,7 @@ Name[sv]=Plasma NM
 Name[uk]=plasma-nm
 Name[x-test]=xxplasma-nmxx
 Comment=Notifies about network errors
+Comment[cs]=Oznamuje chyby sítě
 Comment[de]=Benachrichtigungen über Netzwerkfehler
 Comment[fi]=Ilmoittaa verkkovirheistä
 Comment[nl]=Geeft meldingen over netwerkfouten
@@ -21,6 +23,7 @@ Comment[x-test]=xxNotifies about network errorsxx
 
 [Event/DeviceFailed]
 Name=Device failed to activate
+Name[cs]=Zařízení nelze aktivovat
 Name[de]=Das Gerät kann nicht aktiviert werden
 Name[fi]=Laitteen aktivointi epäonnistui
 Name[nl]=Activeren van apparaat is mislukt

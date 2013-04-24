@@ -1,6 +1,16 @@
 [Desktop Entry]
 Name=Notifications
+Name[cs]=Oznamování
+Name[pt]=Notificações
+Name[pt_BR]=Notificações
+Name[uk]=Сповіщення
+Name[x-test]=xxNotificationsxx
 Comment=Configure the Network Management notifications
+Comment[cs]=Nastavit oznamování správy sítě
+Comment[pt]=Configurar as notificações da Gestão da Rede
+Comment[pt_BR]=Configura as notificações do gerenciamento de redes
+Comment[uk]=Налаштування сповіщень щодо керування мережею
+Comment[x-test]=xxConfigure the Network Management notificationsxx
 Type=Service
 Exec=kcmshell4 plasma_nm_notifications
 Icon=preferences-desktop-notification

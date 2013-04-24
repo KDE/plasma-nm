@@ -243,14 +243,20 @@ void ConnectionIcon::setDisconnectedIcon()
         NMAppletDebug() << "Emit signal setConnectionIcon(network-wired)";
         Q_EMIT setConnectionIcon("network-wired");
         Q_EMIT setTooltipIcon("network-wired");
+        Q_EMIT setHoverIcon("dialog-cancel");
+        return;
     } else if (modem) {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile)";
         Q_EMIT setStaticConnectionIcon("phone");
         Q_EMIT setTooltipIcon("phone");
+        Q_EMIT setHoverIcon("dialog-cancel");
+        return;
     } else if (wireless) {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-wireless-0)";
         Q_EMIT setConnectionIcon("network-wireless-0");
         Q_EMIT setTooltipIcon("network-wireless-connected-00");
+        Q_EMIT setHoverIcon("dialog-cancel");
+        return;
     }  else {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-wired)";
         Q_EMIT setConnectionIcon("network-wired");
@@ -258,8 +264,6 @@ void ConnectionIcon::setDisconnectedIcon()
         Q_EMIT setHoverIcon("dialog-error");
         return;
     }
-
-    Q_EMIT unsetHoverIcon();
 }
 
 void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)

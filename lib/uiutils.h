@@ -127,13 +127,12 @@ public:
      * @param flags the wpa flags
      */
     static QStringList wpaFlagsToStringList(NetworkManager::AccessPoint::WpaFlags flags);
-
+#endif
     /**
      * @return localized string showing a human-readable connection speed. 1000 is used as base.
      * @param bitrate bitrate of the connection per second
      */
     static QString connectionSpeed(double bitrate);
-#endif
 
     /**
      * @return String representation of a mac address.

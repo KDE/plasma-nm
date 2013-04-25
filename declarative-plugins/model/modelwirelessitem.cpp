@@ -18,13 +18,14 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "modelwirelessitem.h"
-
 #include <NetworkManagerQt/wirelessdevice.h>
 #include <NetworkManagerQt/settings/802-11-wireless.h>
 #include <NetworkManagerQt/manager.h>
 
 #include <KLocalizedString>
+
+#include "modelwirelessitem.h"
+#include "uiutils.h"
 
 #include "debug.h"
 
@@ -144,11 +145,7 @@ void ModelWirelessItem::updateDetails()
                 m_details += QString(format).arg(i18n("MAC Address:"), wireless->permanentHardwareAddress());
 
             if (m_connected && m_flags.testFlag(Model::DeviceSpeed)) {
-                if (wireless->bitRate() && wireless->bitRate() < 1000) {
-                    m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Kb/s", wireless->bitRate()));
-                } else if (wireless->bitRate()) {
-                    m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wireless->bitRate()/1000));
-                }
+                    m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wireless->bitRate()));
             }
         }
 

@@ -441,6 +441,7 @@ QStringList UiUtils::wpaFlagsToStringList(NetworkManager::AccessPoint::WpaFlags 
 
     return flagList;
 }
+#endif
 
 QString UiUtils::connectionSpeed(double bitrate)
 {
@@ -454,7 +455,7 @@ QString UiUtils::connectionSpeed(double bitrate)
     }
     return out;
 }
-#endif
+
 
 QString UiUtils::macAddressAsString(const QByteArray & ba)
 {

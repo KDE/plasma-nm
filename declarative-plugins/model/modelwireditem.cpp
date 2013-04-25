@@ -18,13 +18,14 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "modelwireditem.h"
-
 #include <NetworkManagerQt/wireddevice.h>
 #include <NetworkManagerQt/settings/802-3-ethernet.h>
 #include <NetworkManagerQt/manager.h>
 
 #include <KLocalizedString>
+
+#include "modelwireditem.h"
+#include "uiutils.h"
 
 #include "debug.h"
 
@@ -84,11 +85,7 @@ void ModelWiredItem::updateDetails()
 
         if (wired) {
             if (m_connected && m_flags.testFlag(Model::DeviceSpeed)) {
-                if (wired->bitRate() < 1000000) {
-                    m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Mb/s", wired->bitRate()/1000));
-                } else {
-                    m_details += QString(format).arg(i18n("Connection speed:"), i18n("%1 Gb/s", wired->bitRate()/1000000));
-                }
+                m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wired->bitRate()));
             }
             if (m_flags.testFlag(Model::DeviceMac))
                 m_details += QString(format).arg(i18n("MAC Address:"), wired->permanentHardwareAddress());

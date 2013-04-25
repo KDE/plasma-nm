@@ -40,6 +40,8 @@ int main(int argc, char *argv[])
                      ki18n("This application allows you to create, edit and delete network connections."));
     about.addAuthor(ki18n("Jan Grulich"), ki18n("Developer"), "jgrulich@redhat.com");
     about.addAuthor(ki18n("Lukáš Tinkl"), ki18n("Developer"), "ltinkl@redhat.com");
+    about.addCredit(ki18n("Lamarque Souza"), ki18n("libnm-qt author"), "lamarque@kde.org");
+    about.addCredit(ki18n("Daniel Nicoletti"), ki18n("various bugfixes"), "dantti12@gmail.com");
 
     KCmdLineArgs::init(argc, argv, &about);
 

@@ -98,20 +98,17 @@ QAbstractItemModel* SortModel::sourceModel() const
 
 bool SortModel::lessThan(const QModelIndex& left, const QModelIndex& right) const
 {
-    bool leftConnected = sourceModel()->data(left, Model::ConnectedRole).toBool();
-    QString leftName = sourceModel()->data(left, Model::NameRole).toString();
-    SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::Settings::ConnectionSettings::ConnectionType) sourceModel()->data(left, Model::TypeRole).toUInt());
-    QString leftUuid = sourceModel()->data(left, Model::UuidRole).toString();
-    int leftSignal = sourceModel()->data(left, Model::SignalRole).toInt();
+    const bool leftConnected = sourceModel()->data(left, Model::ConnectedRole).toBool();
+    //const QString leftName = sourceModel()->data(left, Model::NameRole).toString();
+    const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::Settings::ConnectionSettings::ConnectionType) sourceModel()->data(left, Model::TypeRole).toUInt());
+    const QString leftUuid = sourceModel()->data(left, Model::UuidRole).toString();
+    const int leftSignal = sourceModel()->data(left, Model::SignalRole).toInt();
 
-    bool rightConnected = sourceModel()->data(right, Model::ConnectedRole).toBool();
-    QString rightName = sourceModel()->data(right, Model::NameRole).toString();
-    SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::Settings::ConnectionSettings::ConnectionType) sourceModel()->data(right, Model::TypeRole).toUInt());
-    QString rightUuid = sourceModel()->data(right, Model::UuidRole).toString();
-    int rightSignal = sourceModel()->data(right, Model::SignalRole).toInt();
-
-    Q_UNUSED(leftName);
-    Q_UNUSED(rightName);
+    const bool rightConnected = sourceModel()->data(right, Model::ConnectedRole).toBool();
+    //const QString rightName = sourceModel()->data(right, Model::NameRole).toString();
+    const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::Settings::ConnectionSettings::ConnectionType) sourceModel()->data(right, Model::TypeRole).toUInt());
+    const QString rightUuid = sourceModel()->data(right, Model::UuidRole).toString();
+    const int rightSignal = sourceModel()->data(right, Model::SignalRole).toInt();
 
     if (leftConnected < rightConnected) {
         return true;

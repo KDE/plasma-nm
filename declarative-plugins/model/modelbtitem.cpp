@@ -44,7 +44,7 @@ void ModelBtItem::updateDetails()
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
 
     m_details = "<qt><table>";
-    if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
+    if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown && m_flags.testFlag(Model::ConnectionType)) {
         m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
     }
 
@@ -65,25 +65,28 @@ void ModelBtItem::updateDetails()
         // Set details
         if (device) {
             QString name = device->ipInterfaceName();
-            if (!name.isEmpty()) {
+            if (!name.isEmpty() && m_flags.testFlag(Model::DeviceSystemName)) {
                 m_details += QString(format).arg(i18n("System name:"), name);
             }
 
-            if (device->ipV4Config().isValid() && m_connected) {
+            if (device->ipV4Config().isValid() && m_connected && m_flags.testFlag(Model::DeviceIpv4Address)) {
                 QHostAddress addr = device->ipV4Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
             }
 
-            if (device->ipV6Config().isValid() && m_connected) {
+            if (device->ipV6Config().isValid() && m_connected && m_flags.testFlag(Model::DeviceIpv6Address)) {
                 QHostAddress addr = device->ipV6Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
             }
         }
 
         if (bt) {
-            m_details += QString(format).arg(i18n("Name:"), bt->name());
-            m_details += QString(format).arg(i18n("MAC Address:"), bt->hardwareAddress());
-            m_details += QString(format).arg(i18n("Driver:"), device->driver());
+            if (m_flags.testFlag(Model::BluetoothName))
+                m_details += QString(format).arg(i18n("Name:"), bt->name());
+            if (m_flags.testFlag(Model::DeviceMac))
+                m_details += QString(format).arg(i18n("MAC Address:"), bt->hardwareAddress());
+            if (m_flags.testFlag(Model::DeviceDriver))
+                m_details += QString(format).arg(i18n("Driver:"), device->driver());
 
             m_details += QString(format).arg("\n", "\n");
         }

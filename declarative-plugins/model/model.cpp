@@ -19,6 +19,7 @@
 */
 
 #include "model.h"
+#include "modelitem.h"
 
 #include <NetworkManagerQt/settings.h>
 #include <NetworkManagerQt/wireddevice.h>
@@ -148,6 +149,16 @@ QVariant Model::data(const QModelIndex& index, int role) const
     }
 
     return QVariant();
+}
+
+void Model::setDetailFlags(int flags)
+{
+    qDebug() << flags;
+    m_flags = Details(flags);
+
+    foreach (ModelItem * item, m_connections) {
+        item->setDetailFlags(m_flags);
+    }
 }
 
 void Model::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device)
@@ -388,7 +399,7 @@ void Model::insertItem(ModelItem* item)
         int index = m_connections.count();
         beginInsertRows(QModelIndex(), index, index);
         m_connections << item;
-        endInsertRows();
+        item->setDetailFlags(m_flags);
 
         connect(item, SIGNAL(itemChanged()), SLOT(onChanged()));
         NMModelDebug() << "Connection " << item->name() << " has been added";

@@ -57,14 +57,14 @@ void ModelVpnItem::updateDetails()
     }
 
     // Set details
-    if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
+    if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown && m_flags.testFlag(Model::ConnectionType)) {
         m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
     }
     m_details += QString(format).arg("\n", "\n");
-    if (vpnSetting) {
+    if (vpnSetting && m_flags.testFlag(Model::VpnPlugin)) {
         m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
     }
-    if (m_vpn) {
+    if (m_vpn && m_flags.testFlag(Model::VpnBanner)) {
         m_details += QString(format).arg(i18n("Banner:"), m_vpn->banner().simplified());
     }
 

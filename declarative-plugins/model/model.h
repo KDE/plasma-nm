@@ -28,21 +28,33 @@
 #include <NetworkManagerQt/accesspoint.h>
 #include <NetworkManagerQt/device.h>
 
-#include "modelitem.h"
+class ModelItem;
+
 #include "monitor.h"
 
 class Model : public QAbstractListModel
 {
 Q_OBJECT
 public:
+    Q_ENUMS(Detail)
     enum ConnectionRole {NameRole = Qt::UserRole + 1, UuidRole, TypeRole, ConnectedRole, ConnectingRole, SsidRole, SignalRole, SecureRole, DeviceRole,
-                         ConnectionPathRole, DevicePathRole, ActiveDevicePathRole, SpecificParameterRole, ConnectionIconRole, ConnectionDetailInformationsRole, SectionRole/*, SectionStringRole*/};
+                         ConnectionPathRole, DevicePathRole, ActiveDevicePathRole, SpecificParameterRole, ConnectionIconRole, ConnectionDetailInformationsRole, SectionRole};
+    enum Detail { None = 0,
+                  ConnectionType = 1, ConnectionState = 2,
+                  DeviceSystemName = 4, DeviceIpv4Address = 8, DeviceIpv6Address = 16, DeviceDriver = 32, DeviceMac = 64, DeviceSpeed = 128,
+                  WirelessDeviceSignal = 256, WirelessDeviceSsid = 512, WirelessDeviceBssid = 1024, WirelessDeviceFrequency = 2048,
+                  ModemOperator = 4096, ModemSignalQuality = 8192, ModemAccessTechnology = 16384, ModemAllowedMode = 32768,
+                  BluetoothName = 65536, VpnBanner = 131072, VpnPlugin = 262144 };
+    Q_DECLARE_FLAGS(Details, Detail)
 
     Model(QObject* parent = 0);
     virtual ~Model();
 
     int rowCount(const QModelIndex & parent) const;
     QVariant data(const QModelIndex & index, int role) const;
+
+public Q_SLOTS:
+    void setDetailFlags(int flags);
 
 private Q_SLOTS:
     void onChanged();
@@ -60,9 +72,10 @@ private Q_SLOTS:
 private:
     Monitor * m_monitor;
     QList<ModelItem*> m_connections;
+    Details m_flags;
 
     void insertItem(ModelItem * item);
 };
-
+Q_DECLARE_OPERATORS_FOR_FLAGS(Model::Details)
 
 #endif // PLASMA_NM_MODEL_H

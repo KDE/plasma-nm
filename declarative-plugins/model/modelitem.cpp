@@ -23,6 +23,8 @@
 #include <KLocalizedString>
 #include <NetworkManagerQt/manager.h>
 
+#include "model.h"
+
 #include "debug.h"
 
 ModelItem::ModelItem(const NetworkManager::Device::Ptr &device, QObject * parent):
@@ -104,6 +106,14 @@ QString ModelItem::icon() const
     }
 
     return "network-wired";
+}
+
+void ModelItem::setDetailFlags(Model::Details flags)
+{
+    qDebug() << flags;
+    m_flags = flags;
+
+    updateDetails();
 }
 
 QString ModelItem::name() const

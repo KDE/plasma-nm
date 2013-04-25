@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name=""/>
+
+  <group name="General">
+    <entry name="showConnectionState" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showConnectionType" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showDeviceSystemName" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showDeviceIpv4Address" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showDeviceIpv6Address" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showDeviceMacAddress" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showDeviceDriver" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showDeviceSpeed" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showWirelessDeviceSignal" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showWirelessDeviceSsid" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showWirelessDeviceBssid" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showWirelessDeviceFrequency" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showModemDeviceOperator" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showModemDeviceSignalQuality" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showModemDeviceAllowedMode" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showModemDeviceAccessTechnology" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showBluetoothName" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showVpnBanner" type="Bool">
+      <default>true</default>
+    </entry>
+    <entry name="showVpnPlugin" type="Bool">
+      <default>true</default>
+    </entry>
+  </group>
+</kcfg>

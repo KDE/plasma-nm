@@ -26,10 +26,13 @@
 #include <NetworkManagerQt/settings/connection.h>
 #include <NetworkManagerQt/device.h>
 
+#include "model.h"
+
 class ModelItem : public QObject
 {
 Q_OBJECT
 public:
+    Q_ENUMS(Detail)
     enum SectionType { Connected, Known, Unknown };
 
     explicit ModelItem(const NetworkManager::Device::Ptr &device = NetworkManager::Device::Ptr(), QObject * parent = 0);
@@ -54,6 +57,8 @@ public:
     // Detail info
 
     QString detailInformations() const;
+
+    void setDetailFlags(Model::Details flags);
 
     // Objects
 
@@ -85,6 +90,8 @@ private Q_SLOTS:
 protected:
     NetworkManager::ActiveConnection::Ptr m_active;
     NetworkManager::Settings::Connection::Ptr m_connection;
+
+    Model::Details m_flags;
 
     bool m_connected;
     bool m_connecting;

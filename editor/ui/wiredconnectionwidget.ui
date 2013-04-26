@@ -25,15 +25,12 @@
     </widget>
    </item>
    <item row="0" column="1">
-    <widget class="QLineEdit" name="macAddress">
+    <widget class="HwAddrComboBox" name="macAddress">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
-     </property>
-     <property name="inputMask">
-      <string notr="true">HH:HH:HH:HH:HH:HH;_</string>
      </property>
     </widget>
    </item>
@@ -207,6 +204,11 @@
    <class>KIntSpinBox</class>
    <extends>QSpinBox</extends>
    <header>knuminput.h</header>
+  </customwidget>
+  <customwidget>
+   <class>HwAddrComboBox</class>
+   <extends>QComboBox</extends>
+   <header>hwaddrcombobox.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

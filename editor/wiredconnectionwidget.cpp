@@ -50,7 +50,7 @@ void WiredConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::
     NetworkManager::Settings::WiredSetting::Ptr wiredSetting = setting.staticCast<NetworkManager::Settings::WiredSetting>();
 
     if (!wiredSetting->macAddress().isEmpty()) {
-        m_widget->macAddress->setText(UiUtils::macAddressAsString(wiredSetting->macAddress()));
+        m_widget->macAddress->init(NetworkManager::Device::Ethernet, UiUtils::macAddressAsString(wiredSetting->macAddress()));
     }
 
     if (!wiredSetting->clonedMacAddress().isEmpty()) {
@@ -80,8 +80,8 @@ QVariantMap WiredConnectionWidget::setting(bool agentOwned) const
 
     NetworkManager::Settings::WiredSetting wiredSetting;
 
-    if (!m_widget->macAddress->text().isEmpty() && m_widget->macAddress->text() != ":::::") {
-        wiredSetting.setMacAddress(UiUtils::macAddressFromString(m_widget->macAddress->text()));
+    if (!m_widget->macAddress->currentText().isEmpty()) {
+        wiredSetting.setMacAddress(UiUtils::macAddressFromString(m_widget->macAddress->hwAddress()));
     }
 
     if (!m_widget->clonedMacAddress->text().isEmpty() && m_widget->clonedMacAddress->text() != ":::::") {

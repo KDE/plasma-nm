@@ -57,7 +57,7 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::P
     }
 
     if (!wifiSetting->macAddress().isEmpty()) {
-        m_ui->macAddress->setText(UiUtils::macAddressAsString(wifiSetting->macAddress()));
+        m_ui->macAddress->init(NetworkManager::Device::Wifi, UiUtils::macAddressAsString(wifiSetting->macAddress()));
     }
 
     if (!wifiSetting->clonedMacAddress().isEmpty()) {
@@ -91,8 +91,8 @@ QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
         wifiSetting.setBssid(UiUtils::macAddressFromString(m_ui->BSSIDLineEdit->text()));
     }
 
-    if (!m_ui->macAddress->text().isEmpty() && m_ui->macAddress->text() != ":::::") {
-        wifiSetting.setMacAddress(UiUtils::macAddressFromString(m_ui->macAddress->text()));
+    if (!m_ui->macAddress->currentText().isEmpty()) {
+        wifiSetting.setMacAddress(UiUtils::macAddressFromString(m_ui->macAddress->hwAddress()));
     }
 
     if (!m_ui->clonedMacAddress->text().isEmpty() && m_ui->clonedMacAddress->text() != ":::::") {

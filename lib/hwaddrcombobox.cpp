@@ -114,15 +114,18 @@ void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device
 
     QString name;
     if (device->state() == NetworkManager::Device::Activated)
-        name = QString("%1 (%2)").arg(data.toString()).arg(device->ipInterfaceName());
+        name = device->ipInterfaceName();
     else
-        name = QString("%1 (%2)").arg(data.toString()).arg(device->interfaceName());
-
-    if (name == data.toString())
-        name = data.toString();  // don't duplicate the MAC addr
+        name = device->interfaceName();
 
     qDebug() << "Name:" << name;
 
-    if (!data.isNull())
-        addItem(name, data);
+    if (!data.isNull()) {
+        if (name == data.toString()) {
+            addItem(data.toString(), data);
+        }
+        else {
+            addItem(QString("%1 (%2)").arg(data.toString()).arg(name), data);
+        }
+    }
 }

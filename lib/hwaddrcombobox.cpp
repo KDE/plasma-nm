@@ -68,6 +68,8 @@ void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const 
 {
     m_initialAddress = address;
 
+    qDebug() << "Initial address:" << m_initialAddress;
+
     foreach(const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
         const NetworkManager::Device::Type type = device->type();
         if (type == deviceType) {
@@ -78,6 +80,7 @@ void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const 
     int index = findData(m_initialAddress);
     if (index == -1) {
         insertItem(0, m_initialAddress, m_initialAddress);
+        setCurrentIndex(0);
     } else {
         setCurrentIndex(index);
     }

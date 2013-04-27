@@ -57,9 +57,7 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::P
         m_ui->BSSIDLineEdit->setText(UiUtils::macAddressAsString(wifiSetting->bssid()));
     }
 
-    if (!wifiSetting->macAddress().isEmpty()) {
-        m_ui->macAddress->init(NetworkManager::Device::Wifi, UiUtils::macAddressAsString(wifiSetting->macAddress()));
-    }
+    m_ui->macAddress->init(NetworkManager::Device::Wifi, UiUtils::macAddressAsString(wifiSetting->macAddress()));
 
     if (!wifiSetting->clonedMacAddress().isEmpty()) {
         m_ui->clonedMacAddress->setText(UiUtils::macAddressAsString(wifiSetting->clonedMacAddress()));

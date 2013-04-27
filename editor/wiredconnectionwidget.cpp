@@ -48,9 +48,7 @@ void WiredConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::
 {
     NetworkManager::Settings::WiredSetting::Ptr wiredSetting = setting.staticCast<NetworkManager::Settings::WiredSetting>();
 
-    if (!wiredSetting->macAddress().isEmpty()) {
-        m_widget->macAddress->init(NetworkManager::Device::Ethernet, UiUtils::macAddressAsString(wiredSetting->macAddress()));
-    }
+    m_widget->macAddress->init(NetworkManager::Device::Ethernet, UiUtils::macAddressAsString(wiredSetting->macAddress()));
 
     if (!wiredSetting->clonedMacAddress().isEmpty()) {
         m_widget->clonedMacAddress->setText(UiUtils::macAddressAsString(wiredSetting->clonedMacAddress()));

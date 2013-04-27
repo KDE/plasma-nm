@@ -399,7 +399,7 @@ void Model::insertItem(ModelItem* item)
         beginInsertRows(QModelIndex(), index, index);
         m_connections << item;
         item->setDetailFlags(m_flags);
-
+        endInsertRows();
         connect(item, SIGNAL(itemChanged()), SLOT(onChanged()));
         NMModelDebug() << "Connection " << item->name() << " has been added";
     } else {

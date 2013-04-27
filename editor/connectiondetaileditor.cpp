@@ -32,6 +32,7 @@
 #include "gsmwidget.h"
 #include "cdmawidget.h"
 #include "btwidget.h"
+#include "infinibandwidget.h"
 #include "vpnuiplugin.h"
 
 #include <QDebug>
@@ -239,6 +240,9 @@ void ConnectionDetailEditor::initTabs()
             m_detailEditor->tabWidget->addTab(pppWidget, i18n("PPP"));
 
         }
+    } else if (type == NetworkManager::Settings::ConnectionSettings::Infiniband) { // Infiniband
+        InfinibandWidget * infinibandWidget = new InfinibandWidget(m_connection->setting(NetworkManager::Settings::Setting::Infiniband), this);
+        m_detailEditor->tabWidget->addTab(infinibandWidget, i18n("Infiniband"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Vpn) { // VPN
         QString error;
         VpnUiPlugin * vpnPlugin = 0;
@@ -277,7 +281,7 @@ void ConnectionDetailEditor::initTabs()
     IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv4), this);
     m_detailEditor->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
 
-    if (type == Settings::ConnectionSettings::Wired || type == Settings::ConnectionSettings::Wireless) {
+    if (type == Settings::ConnectionSettings::Wired || type == Settings::ConnectionSettings::Wireless || type == Settings::ConnectionSettings::Infiniband) {
         IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv6), this);
         m_detailEditor->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
     }

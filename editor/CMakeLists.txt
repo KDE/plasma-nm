@@ -25,6 +25,7 @@ set(connectioneditor_SRCS
    gsmwidget.cpp
    cdmawidget.cpp
    btwidget.cpp
+   infinibandwidget.cpp
 )
 
 kde4_add_ui_files(connectioneditor_SRCS
@@ -45,6 +46,7 @@ kde4_add_ui_files(connectioneditor_SRCS
     ui/gsm.ui
     ui/cdma.ui
     ui/bt.ui
+    ui/infiniband.ui
 )
 
 kde4_add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})

@@ -47,7 +47,7 @@ ConnectionTypeItem::ConnectionTypeItem(QTreeWidget * parent, const QString &type
         text = i18n("Mobile broadband");
         setIcon(0, KIcon("phone"));
     } else if (type == QLatin1String("infiniband")) {
-        text = i18n("InfiniBand");
+        text = i18n("Infiniband");
     } else if (type == QLatin1String("802-11-olpc-mesh")) {
         text = i18n("Olpc mesh");
     } else if (type == QLatin1String("vlan")) {

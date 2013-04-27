@@ -77,9 +77,7 @@ QVariantMap WiredConnectionWidget::setting(bool agentOwned) const
 
     NetworkManager::Settings::WiredSetting wiredSetting;
 
-    if (!m_widget->macAddress->currentText().isEmpty()) {
-        wiredSetting.setMacAddress(UiUtils::macAddressFromString(m_widget->macAddress->hwAddress()));
-    }
+    wiredSetting.setMacAddress(UiUtils::macAddressFromString(m_widget->macAddress->hwAddress()));
 
     if (!m_widget->clonedMacAddress->text().isEmpty() && m_widget->clonedMacAddress->text() != ":::::") {
         wiredSetting.setClonedMacAddress(UiUtils::macAddressFromString(m_widget->clonedMacAddress->text()));

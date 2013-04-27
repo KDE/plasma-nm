@@ -90,9 +90,7 @@ QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
         wifiSetting.setBssid(UiUtils::macAddressFromString(m_ui->BSSIDLineEdit->text()));
     }
 
-    if (!m_ui->macAddress->currentText().isEmpty()) {
-        wifiSetting.setMacAddress(UiUtils::macAddressFromString(m_ui->macAddress->hwAddress()));
-    }
+    wifiSetting.setMacAddress(UiUtils::macAddressFromString(m_ui->macAddress->hwAddress()));
 
     if (!m_ui->clonedMacAddress->text().isEmpty() && m_ui->clonedMacAddress->text() != ":::::") {
         wifiSetting.setClonedMacAddress(UiUtils::macAddressFromString(m_ui->clonedMacAddress->text()));

@@ -58,8 +58,7 @@ QVariantMap BtWidget::setting(bool agentOwned) const
 
     NetworkManager::Settings::BluetoothSetting btSetting;
 
-    if (!m_ui->bdaddr->currentText().isEmpty())
-        btSetting.setBluetoothAddress(UiUtils::macAddressFromString(m_ui->bdaddr->hwAddress()));
+    btSetting.setBluetoothAddress(UiUtils::macAddressFromString(m_ui->bdaddr->hwAddress()));
     btSetting.setProfileType(static_cast<NetworkManager::Settings::BluetoothSetting::ProfileType>(m_ui->type->itemData(m_ui->type->currentIndex()).toInt()));
 
     return btSetting.toMap();

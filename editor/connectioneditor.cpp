@@ -67,8 +67,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     m_menu->addAction(action);
     action = new QAction(i18n("InfiniBand"), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Infiniband);
-    // TODO: disabled for now
-    action->setDisabled(true);
     m_menu->addAction(action);
     action = new QAction(i18n("Mobile Broadband..."), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Gsm);

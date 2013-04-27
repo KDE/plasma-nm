@@ -153,7 +153,6 @@ QVariant Model::data(const QModelIndex& index, int role) const
 
 void Model::setDetailFlags(int flags)
 {
-    qDebug() << flags;
     m_flags = Details(flags);
 
     foreach (ModelItem * item, m_connections) {

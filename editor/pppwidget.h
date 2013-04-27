@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PPP_WIDGET_H
-#define PPP_WIDGET_H
+#ifndef PLASMA_NM_PPP_WIDGET_H
+#define PLASMA_NM_PPP_WIDGET_H
 
 #include <QtGui/QWidget>
 
@@ -47,4 +47,4 @@ private:
     Ui::PPPWidget * m_ui;
 };
 
-#endif // PPP_WIDGET_H
+#endif // PLASMA_NM_PPP_WIDGET_H

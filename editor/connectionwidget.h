@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONNECTION_WIDGET_H
-#define CONNECTION_WIDGET_H
+#ifndef PLASMA_NM_CONNECTION_WIDGET_H
+#define PLASMA_NM_CONNECTION_WIDGET_H
 
 #include <QtGui/QWidget>
 
@@ -54,4 +54,4 @@ private:
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
 };
 
-#endif // CONNECTION_WIDGET_H
+#endif // PLASMA_NM_CONNECTION_WIDGET_H

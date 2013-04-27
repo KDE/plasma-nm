@@ -18,12 +18,13 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "connectionwidget.h"
+#include "ui_connectionwidget.h"
+
 #include <NetworkManagerQt/settings.h>
 #include <NetworkManagerQt/connection.h>
 #include <NetworkManagerQt/settings/connection.h>
 
-#include "connectionwidget.h"
-#include "ui_connectionwidget.h"
 #include <KUser>
 
 ConnectionWidget::ConnectionWidget(const NetworkManager::Settings::ConnectionSettings::Ptr &settings, QWidget* parent, Qt::WindowFlags f):

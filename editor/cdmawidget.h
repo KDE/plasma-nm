@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CDMA_WIDGET_H
-#define CDMA_WIDGET_H
+#ifndef PLASMA_NM_CDMA_WIDGET_H
+#define PLASMA_NM_CDMA_WIDGET_H
 
 #include <QtGui/QWidget>
 
@@ -50,4 +50,4 @@ private:
     Ui::CdmaWidget * m_ui;
 };
 
-#endif // CDMA_WIDGET_H
+#endif // PLASMA_NM_CDMA_WIDGET_H

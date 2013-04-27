@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef WIRED_CONNECTION_WIDGET_H
-#define WIRED_CONNECTION_WIDGET_H
+#ifndef PLASMA_NM_WIRED_CONNECTION_WIDGET_H
+#define PLASMA_NM_WIRED_CONNECTION_WIDGET_H
 
 #include <QtGui/QWidget>
 
@@ -49,4 +49,4 @@ private:
     Ui::WiredConnectionWidget * m_widget;
 };
 
-#endif // WIRED_CONNECTION_WIDGET_H
+#endif // PLASMA_NM_WIRED_CONNECTION_WIDGET_H

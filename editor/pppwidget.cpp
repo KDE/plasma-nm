@@ -18,11 +18,10 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <NetworkManagerQt/settings/ppp.h>
-
 #include "pppwidget.h"
 #include "ui_ppp.h"
 
+#include <NetworkManagerQt/settings/ppp.h>
 
 PPPWidget::PPPWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

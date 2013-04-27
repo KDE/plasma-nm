@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef IPV6_WIDGET_H
-#define IPV6_WIDGET_H
+#ifndef PLASMA_NM_IPV6_WIDGET_H
+#define PLASMA_NM_IPV6_WIDGET_H
 
 #include <QtGui/QWidget>
 #include <NetworkManagerQt/settings/ipv6.h>
@@ -66,4 +66,4 @@ private:
     Private *d;
 };
 
-#endif // IPV4_WIDGET_H
+#endif // PLASMA_NM_IPV4_WIDGET_H

@@ -18,12 +18,11 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <KLocalizedString>
-
-#include "nm-vpnc-service.h"
-
 #include "vpncadvancedwidget.h"
 #include "ui_vpncadvanced.h"
+#include "nm-vpnc-service.h"
+
+#include <KLocalizedString>
 
 VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget *parent) :
     QDialog(parent),

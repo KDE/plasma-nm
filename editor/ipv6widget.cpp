@@ -18,6 +18,11 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "ipv6widget.h"
+#include "ui_ipv6.h"
+#include "ui/ipv6delegate.h"
+#include "ui/intdelegate.h"
+
 #include <QDialog>
 #include <QStandardItemModel>
 #include <QItemSelection>
@@ -25,11 +30,6 @@
 
 #include <KEditListWidget>
 #include <KDialog>
-
-#include "ipv6widget.h"
-#include "ui_ipv6.h"
-#include "ui/ipv6delegate.h"
-#include "ui/intdelegate.h"
 
 quint32 suggestNetmask(Q_IPV6ADDR ip)
 {

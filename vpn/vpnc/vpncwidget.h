@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef VPNC_WIDGET_H
-#define VPNC_WIDGET_H
+#ifndef PLASMA_NM_VPNC_WIDGET_H
+#define PLASMA_NM_VPNC_WIDGET_H
 
 #include <NetworkManagerQt/settings/vpn.h>
 
@@ -52,4 +52,4 @@ private:
     NetworkManager::Settings::VpnSetting::Ptr m_setting;
 };
 
-#endif // VPNC_WIDGET_H
+#endif // PLASMA_NM_VPNC_WIDGET_H

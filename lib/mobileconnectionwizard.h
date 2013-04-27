@@ -19,8 +19,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef MOBILECONNECTIONWIZARD_H
-#define MOBILECONNECTIONWIZARD_H
+#ifndef PLASMA_NM_MOBILE_CONNECTION_WIZARD_H
+#define PLASMA_NM_MOBILE_CONNECTION_WIZARD_H
 
 #include <QWizardPage>
 #include <QListWidget>
@@ -112,4 +112,4 @@ private:
     QLabel * labelPlan;
     QLabel * labelApn;
 };
-#endif
+#endif // PLASMA_NM_MOBILE_CONNECTION_WIZARD_H

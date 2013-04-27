@@ -110,7 +110,6 @@ QString ModelItem::icon() const
 
 void ModelItem::setDetailFlags(Model::Details flags)
 {
-    qDebug() << flags;
     m_flags = flags;
 
     updateDetails();
@@ -145,7 +144,7 @@ QString ModelItem::sectionType() const
 {
     if (m_connected) {
         return i18n("Active connections");
-    } else if (m_uuid != "") {
+    } else if (!m_uuid.isEmpty()) {
         return i18n("Previous connections");
     } else {
         return i18n("Unknown connections");
@@ -180,7 +179,7 @@ void ModelItem::updateDetails()
 {
 }
 
-bool ModelItem::operator==(ModelItem* item)
+bool ModelItem::operator==(const ModelItem* item)
 {
     if (((item->uuid() == this->uuid()) && !item->name().isEmpty() && !this->name().isEmpty()) ||
         item->name() == this->name()) {

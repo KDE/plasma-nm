@@ -18,6 +18,10 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "connectioneditor.h"
+#include "connectiondetaileditor.h"
+#include "config.h"
+
 #include <KApplication>
 #include <KAboutData>
 #include <KCmdLineArgs>
@@ -27,10 +31,6 @@
 #include <NetworkManagerQt/settings.h>
 #include <NetworkManagerQt/connection.h>
 #include <NetworkManagerQt/settings/connection.h>
-
-#include "connectioneditor.h"
-#include "connectiondetaileditor.h"
-#include "config.h"
 
 int main(int argc, char *argv[])
 {

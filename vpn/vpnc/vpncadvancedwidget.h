@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef VPNCADVANCEDWIDGET_H
-#define VPNCADVANCEDWIDGET_H
+#ifndef PLASMA_NM_VPNC_ADVANCED_WIDGET_H
+#define PLASMA_NM_VPNC_ADVANCED_WIDGET_H
 
 #include <QDialog>
 
@@ -43,4 +43,4 @@ private:
     Ui::VpncAdvancedWidget * m_ui;
 };
 
-#endif // VPNCADVANCEDWIDGET_H
+#endif // PLASMA_NM_VPNC_ADVANCED_WIDGET_H

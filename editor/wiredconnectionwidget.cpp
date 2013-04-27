@@ -18,12 +18,11 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <NetworkManagerQt/settings/802-3-ethernet.h>
-
 #include "wiredconnectionwidget.h"
 #include "ui_wiredconnectionwidget.h"
 #include "uiutils.h"
 
+#include <NetworkManagerQt/settings/802-3-ethernet.h>
 
 WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

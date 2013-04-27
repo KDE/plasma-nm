@@ -18,6 +18,10 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "ipv4widget.h"
+#include "ui_ipv4.h"
+#include "ui/ipv4delegate.h"
+
 #include <QDialog>
 #include <QStandardItemModel>
 #include <QItemSelection>
@@ -25,10 +29,6 @@
 
 #include <KEditListWidget>
 #include <KDialog>
-
-#include "ipv4widget.h"
-#include "ui_ipv4.h"
-#include "ui/ipv4delegate.h"
 
 quint32 suggestNetmask(quint32 ip)
 {

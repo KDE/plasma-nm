@@ -1,22 +1,24 @@
 /*
-Copyright 2010-2012 Lamarque Souza <lamarque@kde.org>
+    Copyright 2010-2012 Lamarque Souza <lamarque@kde.org>
 
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License as
-published by the Free Software Foundation; either version 2 of
-the License or (at your option) version 3 or any later version
-accepted by the membership of KDE e.V. (or its successor approved
-by the membership of KDE e.V.), which shall act as a proxy
-defined in Section 14 of version 3 of the license.
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License as
+    published by the Free Software Foundation; either version 2 of
+    the License or (at your option) version 3 or any later version
+    accepted by the membership of KDE e.V. (or its successor approved
+    by the membership of KDE e.V.), which shall act as a proxy
+    defined in Section 14 of version 3 of the license.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
+
+#include "mobileproviders.h"
 
 #include <QFile>
 #include <QTextStream>
@@ -24,8 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KDebug>
 #include <KLocale>
 #include <KGlobal>
-
-#include "mobileproviders.h"
 
 const QString MobileProviders::CountryCodesFile = "/usr/share/zoneinfo/iso3166.tab";
 const QString MobileProviders::ProvidersFile = "/usr/share/mobile-broadband-provider-info/serviceproviders.xml";
@@ -215,7 +215,7 @@ QStringList MobileProviders::getApns(const QString & provider)
                         mApns.insert(e2.attribute("value"), e2.firstChild());
                     }
                 } else if (!e2.isNull() && e2.tagName().toLower() == "network-id") {
-                    mNetworkIds.append(e2.attribute("mcc") + "-" + e2.attribute("mnc"));
+                    mNetworkIds.append(e2.attribute("mcc") + '-' + e2.attribute("mnc"));
                 }
 
                 n2 = n2.nextSibling();

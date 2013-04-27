@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef WIFI_SECURITY
-#define WIFI_SECURITY
+#ifndef PLASMA_NM_WIFI_SECURITY_H
+#define PLASMA_NM_WIFI_SECURITY_H
 
 #include <QtGui/QWidget>
 
@@ -62,4 +62,4 @@ private:
     NetworkManager::Settings::WirelessSecuritySetting::Ptr m_wifiSecurity;
 };
 
-#endif // WIFI_SECURITY
+#endif // PLASMA_NM_WIFI_SECURITY_H

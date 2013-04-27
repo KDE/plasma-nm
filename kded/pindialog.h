@@ -18,8 +18,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PINDIALOG_H
-#define PINDIALOG_H
+#ifndef PLASMA_NM_PIN_DIALOG_H
+#define PLASMA_NM_PIN_DIALOG_H
 
 #include <QWidget>
 
@@ -65,4 +65,4 @@ private:
     QString m_udi;
 };
 
-#endif
+#endif // PLASMA_NM_PIN_DIALOG_H

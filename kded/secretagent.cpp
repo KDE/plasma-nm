@@ -60,7 +60,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     qDebug() << "Flags:" << flags;
 
     QString callId = connection_path.path() % setting_name;
-    foreach (const SecretsRequest request, m_calls) {
+    foreach (const SecretsRequest & request, m_calls) {
         if (request == callId) {
             kWarning() << "GetSecrets was called again! This should not happen, cancelling first call" << connection_path.path() << setting_name;
             CancelGetSecrets(connection_path, setting_name);

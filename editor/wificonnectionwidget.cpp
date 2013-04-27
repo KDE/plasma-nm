@@ -18,10 +18,11 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <NetworkManagerQt/settings/802-11-wireless.h>
-
 #include "wificonnectionwidget.h"
 #include "ui_wificonnectionwidget.h"
+
+#include <NetworkManagerQt/settings/802-11-wireless.h>
+
 #include "uiutils.h"
 
 WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):

@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef BT_WIDGET_H
-#define BT_WIDGET_H
+#ifndef PLASMA_NM_BT_WIDGET_H
+#define PLASMA_NM_BT_WIDGET_H
 
 #include <QtGui/QWidget>
 
@@ -48,4 +48,4 @@ private:
     NetworkManager::Settings::BluetoothSetting::Ptr m_btSetting;
 };
 
-#endif // BT_WIDGET_H
+#endif // PLASMA_NM_BT_WIDGET_H

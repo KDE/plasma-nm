@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONNECTIONTYPEITEM_H
-#define CONNECTIONTYPEITEM_H
+#ifndef PLASMA_NM_CONNECTIONTYPE_ITEM_H
+#define PLASMA_NM_CONNECTIONTYPE_ITEM_H
 
 #include <QtGui/QTreeWidget>
 
@@ -29,4 +29,4 @@ public:
     ConnectionTypeItem(QTreeWidget * parent, const QString & type);
 };
 
-#endif // CONNECTIONTYPEITEM_H
+#endif // PLASMA_NM_CONNECTIONTYPE_ITEM_H

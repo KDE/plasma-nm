@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONNECTION_DETAIL_EDITOR_H
-#define CONNECTION_DETAIL_EDITOR_H
+#ifndef PLASMA_NM_CONNECTION_DETAIL_EDITOR_H
+#define PLASMA_NM_CONNECTION_DETAIL_EDITOR_H
 
 #include <QtGui/QDialog>
 
@@ -61,4 +61,4 @@ private:
     void initTabs();
 };
 
-#endif // CONNECTION_DETAIL_EDITOR_H
+#endif // PLASMA_NM_CONNECTION_DETAIL_EDITOR_H

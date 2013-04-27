@@ -18,12 +18,11 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <KLocalizedString>
-
 #include "btwidget.h"
 #include "ui_bt.h"
 #include "uiutils.h"
 
+#include <KLocalizedString>
 
 BtWidget::BtWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
@@ -56,7 +55,7 @@ void BtWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
 QVariantMap BtWidget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned);
-    
+
     NetworkManager::Settings::BluetoothSetting btSetting;
 
     if (!m_ui->bdaddr->currentText().isEmpty())

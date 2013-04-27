@@ -18,13 +18,12 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <KLocalizedString>
-
-#include <NetworkManagerQt/settings/gsm.h>
-
 #include "gsmwidget.h"
 #include "ui_gsm.h"
 
+#include <KLocalizedString>
+
+#include <NetworkManagerQt/settings/gsm.h>
 
 GsmWidget::GsmWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

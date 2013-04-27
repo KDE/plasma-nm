@@ -19,8 +19,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONNECTION_EDITOR_H
-#define CONNECTION_EDITOR_H
+#ifndef PLASMA_NM_CONNECTION_EDITOR_H
+#define PLASMA_NM_CONNECTION_EDITOR_H
 
 #include <QMenu>
 
@@ -64,4 +64,4 @@ private:
     QTreeWidgetItem * findTopLevelItem(const QString & type);
 };
 
-#endif // CONNECTION_EDITOR_H
+#endif // PLASMA_NM_CONNECTION_EDITOR_H

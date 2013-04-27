@@ -19,8 +19,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_PASSWORDDIALOG_H
-#define PLASMA_NM_PASSWORDDIALOG_H
+#ifndef PLASMA_NM_PASSWOR_DDIALOG_H
+#define PLASMA_NM_PASSWORD_DIALOG_H
 
 #include <NetworkManagerQt/settings/connection.h>
 #include <NetworkManagerQt/secretagent.h>
@@ -66,4 +66,4 @@ private:
     QString m_errorMessage;
 };
 
-#endif // PLASMA_NM_PASSWORDDIALOG_H
+#endif // PLASMA_NM_PASSWORD_DIALOG_H

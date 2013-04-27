@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef WIRED_SECURITY
-#define WIRED_SECURITY
+#ifndef PLASMA_NM_WIRED_SECURITY_H
+#define PLASMA_NM_WIRED_SECURITY_H
 
 #include <QtGui/QWidget>
 
@@ -50,4 +50,4 @@ private:
     NetworkManager::Settings::Security8021xSetting::Ptr m_8021xSetting;
 };
 
-#endif // WIRED_SECURITY
+#endif // PLASMA_NM_WIRED_SECURITY_H

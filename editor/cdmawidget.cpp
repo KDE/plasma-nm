@@ -18,11 +18,10 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <NetworkManagerQt/settings/cdma.h>
-
 #include "cdmawidget.h"
 #include "ui_cdma.h"
 
+#include <NetworkManagerQt/settings/cdma.h>
 
 CdmaWidget::CdmaWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

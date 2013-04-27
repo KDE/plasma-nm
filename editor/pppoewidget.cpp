@@ -18,11 +18,10 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <NetworkManagerQt/settings/pppoe.h>
-
 #include "pppoewidget.h"
 #include "ui_pppoe.h"
 
+#include <NetworkManagerQt/settings/pppoe.h>
 
 PppoeWidget::PppoeWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

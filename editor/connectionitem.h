@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONNECTIONITEM_H
-#define CONNECTIONITEM_H
+#ifndef PLASMA_NM_CONNECTION_ITEM_H
+#define PLASMA_NM_CONNECTION_ITEM_H
 
 #include <QtGui/QTreeWidget>
 
@@ -33,4 +33,4 @@ public:
     virtual bool operator<(const QTreeWidgetItem &other) const;
 };
 
-#endif // CONNECTIONITEM_H
+#endif // PLASMA_NM_CONNECTION_ITEM_H

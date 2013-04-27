@@ -18,16 +18,15 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "modelwireditem.h"
+#include "uiutils.h"
+#include "debug.h"
+
 #include <NetworkManagerQt/wireddevice.h>
 #include <NetworkManagerQt/settings/802-3-ethernet.h>
 #include <NetworkManagerQt/manager.h>
 
 #include <KLocalizedString>
-
-#include "modelwireditem.h"
-#include "uiutils.h"
-
-#include "debug.h"
 
 ModelWiredItem::ModelWiredItem(const NetworkManager::Device::Ptr &device, QObject* parent):
     ModelItem(device, parent)

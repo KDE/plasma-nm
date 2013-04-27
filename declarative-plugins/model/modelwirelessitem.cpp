@@ -17,17 +17,15 @@
     You should have received a copy of the GNU Lesser General Public
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
+#include "modelwirelessitem.h"
+#include "uiutils.h"
+#include "debug.h"
 
 #include <NetworkManagerQt/wirelessdevice.h>
 #include <NetworkManagerQt/settings/802-11-wireless.h>
 #include <NetworkManagerQt/manager.h>
 
 #include <KLocalizedString>
-
-#include "modelwirelessitem.h"
-#include "uiutils.h"
-
-#include "debug.h"
 
 ModelWirelessItem::ModelWirelessItem(const NetworkManager::Device::Ptr &device, QObject* parent):
     ModelItem(device, parent),

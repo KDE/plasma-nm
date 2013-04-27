@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SECURITY8021X_H
-#define SECURITY8021X_H
+#ifndef PLASMA_NM_SECURITY8021X_H
+#define PLASMA_NM_SECURITY8021X_H
 
 #include <QWidget>
 

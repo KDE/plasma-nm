@@ -52,7 +52,7 @@ public:
     bool shouldBeRemoved() const;
     NetworkManager::Settings::ConnectionSettings::ConnectionType type() const;
 
-    bool operator==(ModelItem * item);
+    bool operator==(const ModelItem * item);
 
     // Detail info
 

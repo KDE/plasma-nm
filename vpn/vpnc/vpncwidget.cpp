@@ -18,13 +18,12 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QDBusMetaType>
-
-#include "nm-vpnc-service.h"
 #include "vpncwidget.h"
 #include "vpncadvancedwidget.h"
 #include "ui_vpnc.h"
+#include "nm-vpnc-service.h"
 
+#include <QDBusMetaType>
 
 VpncWidget::VpncWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

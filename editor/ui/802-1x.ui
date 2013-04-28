@@ -80,7 +80,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="KLineEdit" name="md5UserName"/>
+        <widget class="QLineEdit" name="md5UserName"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_3">
@@ -131,7 +131,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="KLineEdit" name="tlsIdentity"/>
+        <widget class="QLineEdit" name="tlsIdentity"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_5">
@@ -223,7 +223,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="KLineEdit" name="leapUsername"/>
+        <widget class="QLineEdit" name="leapUsername"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_10">
@@ -260,7 +260,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="KLineEdit" name="fastAnonIdentity"/>
+        <widget class="QLineEdit" name="fastAnonIdentity"/>
        </item>
        <item row="1" column="0">
         <widget class="QCheckBox" name="fastAllowPacProvisioning">
@@ -355,7 +355,7 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="KLineEdit" name="fastUsername"/>
+        <widget class="QLineEdit" name="fastUsername"/>
        </item>
        <item row="5" column="0">
         <widget class="QLabel" name="label_15">
@@ -403,7 +403,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="KLineEdit" name="ttlsAnonIdentity"/>
+        <widget class="QLineEdit" name="ttlsAnonIdentity"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_20">
@@ -473,7 +473,7 @@
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="KLineEdit" name="ttlsUsername"/>
+        <widget class="QLineEdit" name="ttlsUsername"/>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="label_18">
@@ -521,7 +521,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="KLineEdit" name="peapAnonIdentity"/>
+        <widget class="QLineEdit" name="peapAnonIdentity"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_23">
@@ -586,7 +586,7 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="KLineEdit" name="peapUsername"/>
+        <widget class="QLineEdit" name="peapUsername"/>
        </item>
        <item row="5" column="0">
         <widget class="QLabel" name="label_21">
@@ -663,8 +663,13 @@
  <customwidgets>
   <customwidget>
    <class>KLineEdit</class>
-   <extends>KLineEdit</extends>
+   <extends>QLineEdit</extends>
    <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
    <class>KUrlRequester</class>

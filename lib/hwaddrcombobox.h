@@ -18,16 +18,16 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef HWADDRCOMBOBOX_H
-#define HWADDRCOMBOBOX_H
+#ifndef PLASMA_NM_HWADDRCOMBOBOX_H
+#define PLASMA_NM_HWADDRCOMBOBOX_H
 
-#include <QComboBox>
+#include <KComboBox>
 
 #include <kdemacros.h>
 
 #include <NetworkManagerQt/device.h>
 
-class KDE_EXPORT HwAddrComboBox : public QComboBox
+class KDE_EXPORT HwAddrComboBox : public KComboBox
 {
     Q_OBJECT
 public:
@@ -47,4 +47,4 @@ private:
     bool m_dirty;
 };
 
-#endif // HWADDRCOMBOBOX_H
+#endif // PLASMA_NM_HWADDRCOMBOBOX_H

@@ -18,10 +18,9 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "uiutils.h"
-
 #include "infinibandwidget.h"
 #include "ui_infiniband.h"
+#include "uiutils.h"
 
 #include <KLocalizedString>
 

@@ -20,7 +20,7 @@
 
 #include "connectioneditor.h"
 #include "connectiondetaileditor.h"
-#include "config.h"
+#include <config.h>
 
 #include <KApplication>
 #include <KAboutData>

@@ -18,6 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "hwaddrcombobox.h"
+
 #include <NetworkManagerQt/manager.h>
 #include <NetworkManagerQt/wireddevice.h>
 #include <NetworkManagerQt/wirelessdevice.h>
@@ -29,10 +31,8 @@
 #include <NetworkManagerQt/bridgedevice.h>
 #include <NetworkManagerQt/vlandevice.h>
 
-#include "hwaddrcombobox.h"
-
 HwAddrComboBox::HwAddrComboBox(QWidget *parent) :
-    QComboBox(parent), m_dirty(false)
+    KComboBox(parent), m_dirty(false)
 {
     setEditable(true);
     setInsertPolicy(QComboBox::NoInsert);

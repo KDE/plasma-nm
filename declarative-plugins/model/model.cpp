@@ -57,13 +57,13 @@ Model::Model(QObject* parent):
     roles[SectionRole] = "itemSection";
     setRoleNames(roles);
 
-    connect(m_monitor, SIGNAL(addWirelessNetwork(NetworkManager::WirelessNetwork::Ptr, NetworkManager::Device::Ptr)),
-            SLOT(addWirelessNetwork(NetworkManager::WirelessNetwork::Ptr, NetworkManager::Device::Ptr)));
+    connect(m_monitor, SIGNAL(addWirelessNetwork(NetworkManager::WirelessNetwork::Ptr,NetworkManager::Device::Ptr)),
+            SLOT(addWirelessNetwork(NetworkManager::WirelessNetwork::Ptr,NetworkManager::Device::Ptr)));
     connect(m_monitor, SIGNAL(addActiveConnection(NetworkManager::ActiveConnection::Ptr)),
             SLOT(addActiveConnection(NetworkManager::ActiveConnection::Ptr)));
     connect(m_monitor, SIGNAL(addConnection(NetworkManager::Settings::Connection::Ptr,NetworkManager::Device::Ptr)),
             SLOT(addConnection(NetworkManager::Settings::Connection::Ptr,NetworkManager::Device::Ptr)));
-    connect(m_monitor, SIGNAL(removeWirelessNetwork(QString, NetworkManager::Device::Ptr)),
+    connect(m_monitor, SIGNAL(removeWirelessNetwork(QString,NetworkManager::Device::Ptr)),
             SLOT(removeWirelessNetwork(QString, NetworkManager::Device::Ptr)));
     connect(m_monitor, SIGNAL(removeWirelessNetworks()),
             SLOT(removeWirelessNetworks()));

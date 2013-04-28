@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_INFI_WIDGET_H
-#define PLASMA_NM_INFI_WIDGET_H
+#ifndef PLASMA_NM_INFINIBAND_WIDGET_H
+#define PLASMA_NM_INFINIBAND_WIDGET_H
 
 #include <QtGui/QWidget>
 

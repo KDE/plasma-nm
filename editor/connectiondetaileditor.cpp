@@ -140,7 +140,7 @@ void ConnectionDetailEditor::initEditor()
         NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(m_connection->uuid());
         if (connection) {
             connect(connection.data(), SIGNAL(gotSecrets(QString,bool,NMVariantMapMap,QString)),
-                    SLOT(gotSecrets(QString,bool, NMVariantMapMap, QString)), Qt::UniqueConnection);
+                    SLOT(gotSecrets(QString,bool,NMVariantMapMap,QString)), Qt::UniqueConnection);
 
             switch (m_connection->connectionType()) {
                 case Settings::ConnectionSettings::Adsl:
@@ -398,6 +398,6 @@ void ConnectionDetailEditor::disconnectSignals()
 
     if (connection) {
         disconnect(connection.data(), SIGNAL(gotSecrets(QString,bool,NMVariantMapMap,QString)),
-                   this, SLOT(gotSecrets(QString,bool, NMVariantMapMap, QString)));
+                   this, SLOT(gotSecrets(QString,bool,NMVariantMapMap,QString)));
     }
 }

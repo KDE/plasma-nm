@@ -179,7 +179,7 @@ void ModelItem::updateDetails()
 {
 }
 
-bool ModelItem::operator==(const ModelItem* item)
+bool ModelItem::operator==(const ModelItem* item) const
 {
     if (((item->uuid() == this->uuid()) && !item->name().isEmpty() && !this->name().isEmpty()) ||
         item->name() == this->name()) {

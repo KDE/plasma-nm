@@ -18,8 +18,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_NOTIFICATION_H
-#define PLASMA_NM_NOTIFICATION_H
+#ifndef PLASMA_NM_NOTIFICATIONS_H
+#define PLASMA_NM_NOTIFICATIONS_H
 
 #include <KCModule>
 

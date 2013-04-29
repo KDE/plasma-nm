@@ -169,8 +169,8 @@ void ModelWirelessItem::setConnection(const NetworkManager::Settings::Connection
     ModelItem::setConnection(connection);
 
     if (!m_connection) {
-        if (!m_network) {
-            m_name = m_network->ssid();
+        if (m_network) {
+            m_name = m_ssid;
         } else {
             m_ssid.clear();
             m_secure = false;

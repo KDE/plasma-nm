@@ -32,8 +32,8 @@ public:
     virtual ~Handler();
 
 public Q_SLOTS:
-    void activateConnection(const QString & connection, const QVariant & devices, const QString & specificParameter);
-    void addAndActivateConnection(const QVariant & devices, const QString & specificParameter);
+    void activateConnection(const QString & connection, const QString & device, const QString & specificParameter);
+    void addAndActivateConnection(const QString & device, const QString & specificParameter);
     void deactivateConnection(const QString & connection);
     void enableNetworking(bool enable);
     void enableWireless(bool enable);

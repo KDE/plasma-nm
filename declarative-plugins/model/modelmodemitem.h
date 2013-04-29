@@ -40,7 +40,7 @@ private Q_SLOTS:
 protected:
     ModemManager::ModemGsmNetworkInterface::Ptr m_modemNetwork;
 
-    void addSpecificDevice(const NetworkManager::Device::Ptr & device);
+    void setSpecificDevice(const NetworkManager::Device::Ptr & device);
     void updateDetails();
 };
 

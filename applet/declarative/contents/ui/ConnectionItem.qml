@@ -35,8 +35,8 @@ Item {
         property Item detailWidget;
     }
 
-    signal activateConnectionItem(string connectionPath, variant devicePaths, string specificObjectParameter);
-    signal addAndActivateConnectionItem(variant devicePaths, string specificObjectParameter);
+    signal activateConnectionItem(string connectionPath, string devicePath, string specificObjectParameter);
+    signal addAndActivateConnectionItem(string devicePath, string specificObjectParameter);
     signal deactivateConnectionItem(string connectionPath);
     signal editConnectionItem(string connectionUuid);
     signal removeConnectionItem(string connectionName, string connectionPath);
@@ -89,9 +89,9 @@ Item {
         onClicked: {
             if (!itemConnected && !itemConnecting) {
                 if (itemUuid) {
-                    activateConnectionItem(itemConnectionPath, itemDevicePaths, itemSpecificParameter);
+                    activateConnectionItem(itemConnectionPath, itemDevicePath, itemSpecificParameter);
                 } else {
-                    addAndActivateConnectionItem(itemDevicePaths, itemSpecificParameter);
+                    addAndActivateConnectionItem(itemDevicePath, itemSpecificParameter);
                 }
             } else {
                 deactivateConnectionItem(itemConnectionPath);
@@ -141,13 +141,13 @@ Item {
             text: itemDetailInformations;
             editable: itemUuid == "" ? false : true;
             enableTraffic: {
-                if (itemActiveDevicePath != "" && itemConnected && itemType != 11) {
+                if (itemDevicePath != "" && itemConnected && itemType != 11) {
                     true;
                 } else {
                     false;
                 }
             }
-            device: itemActiveDevicePath;
+            device: itemDevicePath;
 
             onHideDetails: {
                 expanded = false;

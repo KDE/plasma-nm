@@ -49,9 +49,9 @@ Model::Model(QObject* parent):
     roles[SecureRole] = "itemSecure";
     roles[DeviceRole] = "itemDevice";
     roles[ConnectionPathRole] = "itemConnectionPath";
-    roles[DevicePathRole] = "itemDevicePaths";
-    roles[ActiveDevicePathRole] = "itemActiveDevicePath";
-    roles[SpecificParameterRole] = "itemSpecificParameter";
+    roles[DevicePathRole] = "itemDevicePath";
+    roles[DeviceNameRole] = "itemDeviceName";
+    roles[SpecificPathRole] = "itemSpecificParameter";
     roles[ConnectionIconRole] = "itemConnectionIcon";
     roles[ConnectionDetailInformationsRole] = "itemDetailInformations";
     roles[SectionRole] = "itemSection";
@@ -126,13 +126,13 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 return item->connectionPath();
                 break;
             case DevicePathRole:
-                return item->devicePaths();
+                return item->devicePath();
                 break;
-            case ActiveDevicePathRole:
-                return item->activeDevicePath();
+            case DeviceNameRole:
+                return item->deviceName();
                 break;
-            case SpecificParameterRole:
-                return item->specificParameter();
+            case SpecificPathRole:
+                return item->specificPath();
                 break;
             case ConnectionIconRole:
                 return item->icon();
@@ -163,7 +163,7 @@ void Model::setDetailFlags(int flags)
 void Model::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device)
 {
     ModelWirelessItem * item = new ModelWirelessItem(device);
-    item->addWirelessNetwork(network, device);
+    item->setWirelessNetwork(network);
 
     insertItem(item);
 }
@@ -247,14 +247,15 @@ void Model::removeWirelessNetwork(const QString& ssid, const NetworkManager::Dev
     int row = -1;
 
     foreach (ModelItem * item, m_connections) {
-        if (item->ssid() == ssid) {
+        if (item->ssid() == ssid &&
+            item->devicePath() == device->uni()) {
             row  = m_connections.indexOf(item);
 
             if (row >= 0) {
                 if (item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
                     ModelWirelessItem * wifiItem = qobject_cast<ModelWirelessItem*>(item);
                     if (wifiItem) {
-                        wifiItem->removeWirelessNetwork(device);
+                        wifiItem->setWirelessNetwork(NetworkManager::WirelessNetwork::Ptr());
                         bool removed = updateItem(item, row);
 
                         if (removed) {
@@ -320,8 +321,8 @@ void Model::removeConnectionsByDevice(const QString& device)
     int row = -1;
 
     foreach (ModelItem * item, m_connections) {
-        if (item->devicePaths().contains(device)) {
-            item->removeDevice(device);
+        if (item->devicePath() == device) {
+            item->removeDevice();
             row  = m_connections.indexOf(item);
 
             if (row >= 0) {
@@ -360,21 +361,19 @@ void Model::insertItem(ModelItem* item)
 
     foreach (ModelItem * it, m_connections) {
         // Check for duplicity
-        if ((!it->uuid().isEmpty() && !item->uuid().isEmpty() && it->uuid() == item->uuid()) ||
+        if (((!it->uuid().isEmpty() && !item->uuid().isEmpty() && it->uuid() == item->uuid()) ||
             (!it->name().isEmpty() && !item->name().isEmpty() && it->name() == item->name()) ||
-            (!it->ssid().isEmpty() && !item->ssid().isEmpty() && it->ssid() == item->ssid())) {
+            (!it->ssid().isEmpty() && !item->ssid().isEmpty() && it->ssid() == item->ssid())) &&
+            (it->devicePath() == item->devicePath())) {
             // Update info
             if (it->type() == NetworkManager::Settings::ConnectionSettings::Wireless &&
                 item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
                 ModelWirelessItem * wifiIt = qobject_cast<ModelWirelessItem*>(it);
                 ModelWirelessItem * wifiItem = qobject_cast<ModelWirelessItem*>(item);
                 if (wifiIt && wifiItem) {
-                    foreach (const QString & key, wifiItem->wirelessNetworks().keys()) {
-                        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(key);
-                        if (device) {
-                            NMModelDebug() << "Adding " << wifiItem->ssid() << " to " << wifiIt->name();
-                            wifiIt->addWirelessNetwork(wifiItem->wirelessNetworks().value(key), device);
-                        }
+                    if (!wifiIt->wirelessNetwork() && wifiItem->wirelessNetwork()) {
+                        NMModelDebug() << "Connection " << it->name() << " has been updated by wireless network";
+                        wifiIt->setWirelessNetwork(wifiItem->wirelessNetwork());
                     }
                 }
             }
@@ -382,11 +381,6 @@ void Model::insertItem(ModelItem* item)
             if (!it->connection() && item->connection()) {
                 NMModelDebug() << "Connection " << it->name() << " has been updated by connection";
                 it->setConnection(item->connection());
-            }
-
-            foreach (const QString & device, item->devicePaths()) {
-                NMModelDebug() << "Adding device " << device << " to " << it->name();
-                it->addDevice(device);
             }
 
             found = true;

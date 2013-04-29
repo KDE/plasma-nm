@@ -42,6 +42,7 @@ public:
 
     bool connected() const;
     bool connecting() const;
+    QString deviceName() const;
     virtual QString icon() const;
     QString name() const;
     QString uuid() const;
@@ -68,16 +69,14 @@ public:
     virtual void setConnection(const NetworkManager::Settings::Connection::Ptr & connection);
     NetworkManager::Settings::Connection::Ptr connection() const;
 
-    void addDevice(const QString & device);
-    void removeDevice(const QString & device);
-
-    QString activeDevicePath() const;
+    void setDevice(const QString & device);
+    void removeDevice();
 
     // Object paths
 
     QString connectionPath() const;
-    QStringList devicePaths() const;
-    virtual QString specificParameter() const;
+    QString devicePath() const;
+    virtual QString specificPath() const;
 
 Q_SIGNALS:
     void itemChanged();
@@ -96,18 +95,18 @@ protected:
     bool m_connected;
     bool m_connecting;
     QString m_connectionPath;
-    QStringList m_devicePaths;
-    QString m_activeDevicePath;
+    QString m_devicePath;
+    QString m_deviceName;
     QString m_details;
     QString m_name;
     SectionType m_sectionType;
     QString m_uuid;
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
 
-    virtual void addSpecificDevice(const NetworkManager::Device::Ptr & device);
     virtual void updateDetails();
     virtual void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
     virtual bool shouldBeRemovedSpecific() const;
+    virtual void setSpecificDevice(const NetworkManager::Device::Ptr & device);
 };
 
 #endif // PLASMA_NM_CONNECTION_ITEM_H

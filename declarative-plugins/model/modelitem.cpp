@@ -37,7 +37,7 @@ ModelItem::ModelItem(const NetworkManager::Device::Ptr &device, QObject * parent
     m_type(NetworkManager::Settings::ConnectionSettings::Unknown)
 {
     if (device) {
-        addDevice(device->uni());
+        setDevice(device->uni());
     }
 }
 
@@ -53,6 +53,11 @@ bool ModelItem::connected() const
 bool ModelItem::connecting() const
 {
     return m_connecting;
+}
+
+QString ModelItem::deviceName() const
+{
+    return m_deviceName;
 }
 
 QString ModelItem::detailInformations() const
@@ -153,7 +158,7 @@ QString ModelItem::sectionType() const
 
 bool ModelItem::shouldBeRemoved() const
 {
-    if (m_devicePaths.isEmpty()) {
+    if (m_devicePath.isEmpty()) {
         return true;
     }
 
@@ -204,12 +209,6 @@ void ModelItem::setActiveConnection(const NetworkManager::ActiveConnection::Ptr 
             m_connecting = false;
         }
 
-        NetworkManager::Device::Ptr activeDevice = NetworkManager::findNetworkInterface(m_active->devices().first());
-
-        if (activeDevice) {
-            m_activeDevicePath = activeDevice->uni();
-        }
-
         connect(m_active.data(), SIGNAL(default4Changed(bool)),
                 SLOT(onDefaultRouteChanged(bool)), Qt::UniqueConnection);
         connect(m_active.data(), SIGNAL(default6Changed(bool)),
@@ -229,32 +228,33 @@ NetworkManager::ActiveConnection::Ptr ModelItem::activeConnection() const
     return m_active;
 }
 
-void ModelItem::addDevice(const QString & device)
+void ModelItem::setDevice(const QString & device)
 {
     NetworkManager::Device::Ptr dev = NetworkManager::findNetworkInterface(device);
 
-    if (dev && !m_devicePaths.contains(dev->uni())) {
-        m_devicePaths << dev->uni();
-        addSpecificDevice(dev);
+    if (dev) {
+        if (dev->ipInterfaceName().isEmpty()) {
+            m_deviceName = dev->interfaceName();
+        } else {
+            m_deviceName = dev->ipInterfaceName();
+        }
+        m_devicePath = dev->uni();
+        setSpecificDevice(dev);
         updateDetails();
     }
 }
 
-void ModelItem::addSpecificDevice(const NetworkManager::Device::Ptr& device)
+void ModelItem::setSpecificDevice(const NetworkManager::Device::Ptr& device)
 {
     Q_UNUSED(device);
 }
 
-void ModelItem::removeDevice(const QString& device)
+void ModelItem::removeDevice()
 {
-    m_devicePaths.removeOne(device);
+    m_devicePath.clear();
+    m_deviceName.clear();
 
     updateDetails();
-}
-
-QString ModelItem::activeDevicePath() const
-{
-    return m_activeDevicePath;
 }
 
 void ModelItem::setConnection(const NetworkManager::Settings::Connection::Ptr & connection)
@@ -295,12 +295,12 @@ QString ModelItem::connectionPath() const
     return m_connectionPath;
 }
 
-QStringList ModelItem::devicePaths() const
+QString ModelItem::devicePath() const
 {
-    return m_devicePaths;
+    return m_devicePath;
 }
 
-QString ModelItem::specificParameter() const
+QString ModelItem::specificPath() const
 {
     return QString();
 }

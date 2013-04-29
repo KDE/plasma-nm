@@ -46,111 +46,46 @@ Handler::~Handler()
 {
 }
 
-void Handler::activateConnection(const QString& connection, const QVariant& devices, const QString& specificObject)
+void Handler::activateConnection(const QString& connection, const QString& device, const QString& specificObject)
 {
-    //TODO: implement some GUI for selecting devices
-//     QString selectedDevicePath = QInputDialog::getItem(0, "Device select", "Choose device for this connection", devices.toStringList(), 0, false);
-    QStringList availableDevicesPaths = devices.toStringList();
-    QString selectedDevicePath;
-    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
+NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
 
     if (!con) {
         NMHandlerDebug() << "Not possible to activate this connection";
         return;
     }
+        NMHandlerDebug() << "Activating " << con->name() << " connection";
 
-    NetworkManager::Settings::ConnectionSettings::Ptr connectionSettings = con->settings();
-    if (connectionSettings->connectionType() == NetworkManager::Settings::ConnectionSettings::Wired && availableDevicesPaths.count() > 1) {
-        NetworkManager::Settings::WiredSetting::Ptr wiredSetting = connectionSettings->setting(NetworkManager::Settings::Setting::Wired).staticCast<NetworkManager::Settings::WiredSetting>();
-        QString macAddress = UiUtils::macAddressAsString(wiredSetting->macAddress());
-        if (!macAddress.isEmpty()) {
-            foreach (const QString & devicePath, availableDevicesPaths) {
-                NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePath);
-                if (device && device->type() == NetworkManager::Device::Wifi) {
-                    NetworkManager::WiredDevice::Ptr wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
-                    if (wiredDevice && wiredDevice->permanentHardwareAddress() == macAddress) {
-                        selectedDevicePath = devicePath;
-                    }
-                }
-            }
-        }
-    } else if (connectionSettings->connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless && availableDevicesPaths.count() > 1) {
-        NetworkManager::Settings::WirelessSetting::Ptr wirelessSetting = connectionSettings->setting(NetworkManager::Settings::Setting::Wireless).staticCast<NetworkManager::Settings::WirelessSetting>();
-        QString macAddress = UiUtils::macAddressAsString(wirelessSetting->macAddress());
-        if (!macAddress.isEmpty()) {
-            foreach (const QString & devicePath, availableDevicesPaths) {
-                NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePath);
-                if (device && device->type() == NetworkManager::Device::Wifi) {
-                    NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
-                    if (wifiDevice && wifiDevice->permanentHardwareAddress() == macAddress) {
-                        selectedDevicePath = devicePath;
-                    }
-                }
+    NetworkManager::activateConnection(connection, device, specificObject);
+}
+
+void Handler::addAndActivateConnection(const QString& device, const QString& specificObject)
+{
+NetworkManager::AccessPoint::Ptr ap;
+
+    foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+        if (dev->type() == NetworkManager::Device::Wifi) {
+            NetworkManager::WirelessDevice::Ptr wifiDev = dev.objectCast<NetworkManager::WirelessDevice>();
+            ap = wifiDev->findAccessPoint(specificObject);
+            if (ap) {
+                break;
             }
         }
     }
 
-    if (!availableDevicesPaths.isEmpty() && selectedDevicePath.isEmpty()) {
-        selectedDevicePath = availableDevicesPaths.first();
-    }
-
-    NetworkManager::Device::Ptr selectedDevice = NetworkManager::findNetworkInterface(selectedDevicePath);
-
-    if (!selectedDevice) {
-        NMHandlerDebug() << "Not possible to activate this connection";
+    if (!ap) {
         return;
     }
 
-    NMHandlerDebug() << "Activating " << con->name() << " connection";
+    NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings(NetworkManager::Settings::ConnectionSettings::Wireless);
+    settings->setId(ap->ssid());
+    settings->setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
 
-    if (selectedDevice && selectedDevice->type() == NetworkManager::Device::Wifi) {
-        NetworkManager::WirelessDevice::Ptr wirelessDevice = selectedDevice.objectCast<NetworkManager::WirelessDevice>();
+    NetworkManager::Settings::WirelessSetting::Ptr wifiSetting;
+    wifiSetting = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
+    wifiSetting->setSsid(ap->ssid().toUtf8());
 
-        if (wirelessDevice) {
-            NetworkManager::WirelessNetwork::Ptr network = wirelessDevice->findNetwork(specificObject);
-
-            if (network) {
-                NetworkManager::activateConnection(connection, selectedDevicePath, network->referenceAccessPoint()->uni());
-            } else {
-                NetworkManager::activateConnection(connection, selectedDevicePath, QString());
-            }
-        }
-    } else {
-        NetworkManager::activateConnection(connection, selectedDevicePath, specificObject);
-    }
-}
-
-void Handler::addAndActivateConnection(const QVariant& devices, const QString& specificObject)
-{
-    //TODO: implement some GUI for selecting devices
-//     QString selectedDevicePath = QInputDialog::getItem(0, "Device select", "Choose device for this connection", devices.toStringList(), 0, false);
-    QStringList availableDevicesPaths = devices.toStringList();
-    QString selectedDevicePath;
-    if (!availableDevicesPaths.isEmpty()) {
-        selectedDevicePath = availableDevicesPaths.first();
-    }
-
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(selectedDevicePath);
-
-    if (device && device->type() == NetworkManager::Device::Wifi) {
-        NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
-
-        if (wirelessDevice) {
-            NetworkManager::WirelessNetwork::Ptr network = wirelessDevice->findNetwork(specificObject);
-
-            if (network) {
-                NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings(NetworkManager::Settings::ConnectionSettings::Wireless);
-                settings->setId(specificObject);
-                settings->setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
-
-                NetworkManager::Settings::WirelessSetting::Ptr wifiSetting;
-                wifiSetting = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
-                wifiSetting->setSsid(specificObject.toUtf8());
-
-                NetworkManager::addAndActivateConnection(settings->toMap(), selectedDevicePath, network->referenceAccessPoint()->uni());
-            }
-        }
-    }
+    NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
 }
 
 void Handler::deactivateConnection(const QString& connection)

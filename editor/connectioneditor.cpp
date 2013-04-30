@@ -88,8 +88,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 
     action = new QAction(i18n("Bond"), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Bond);
-    // TODO: disabled for now
-    action->setDisabled(true);
+    action->setDisabled(true); // TODO
     m_menu->addAction(action);
     action = new QAction(i18n("Bridge"), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Bridge);
@@ -288,7 +287,7 @@ void ConnectionEditor::addConnection(QAction* action)
             wizard.data()->deleteLater();
         }
     } else {
-        ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, vpnType, this);
+        ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, this, vpnType);
         editor->exec();
     }
 }

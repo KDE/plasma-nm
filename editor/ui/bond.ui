@@ -38,26 +38,57 @@
    <item row="2" column="0" colspan="2">
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0" rowspan="4">
-      <widget class="QListWidget" name="bonds"/>
+      <widget class="KListWidget" name="bonds">
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="uniformItemSizes">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QPushButton" name="pushButton">
+      <widget class="KPushButton" name="btnAdd">
        <property name="text">
         <string>&amp;Add...</string>
+       </property>
+       <property name="icon">
+        <iconset theme="list-add">
+         <normaloff/>
+        </iconset>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="KPushButton" name="btnEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>&amp;Edit...</string>
+       </property>
+       <property name="icon">
+        <iconset theme="configure">
+         <normaloff/>
+        </iconset>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="KPushButton" name="btnDelete">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>&amp;Delete</string>
+       </property>
+       <property name="icon">
+        <iconset theme="edit-delete">
+         <normaloff/>
+        </iconset>
        </property>
       </widget>
      </item>
@@ -202,7 +233,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_8">
          <property name="text">
-          <string>ARP &amp; targets:</string>
+          <string>ARP &amp;targets:</string>
          </property>
          <property name="buddy">
           <cstring>arpTargets</cstring>
@@ -210,7 +241,11 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="arpTargets"/>
+        <widget class="QLineEdit" name="arpTargets">
+         <property name="toolTip">
+          <string>An IP address or comma-separated list of addresses.</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -218,12 +253,24 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KListWidget</class>
+   <extends>QListWidget</extends>
+   <header>klistwidget.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>ifaceName</tabstop>
   <tabstop>bonds</tabstop>
-  <tabstop>pushButton</tabstop>
-  <tabstop>pushButton_2</tabstop>
-  <tabstop>pushButton_3</tabstop>
+  <tabstop>btnAdd</tabstop>
+  <tabstop>btnEdit</tabstop>
+  <tabstop>btnDelete</tabstop>
   <tabstop>mode</tabstop>
   <tabstop>linkMonitoring</tabstop>
   <tabstop>monitorFreq</tabstop>
@@ -232,5 +279,22 @@
   <tabstop>arpTargets</tabstop>
  </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>linkMonitoring</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>monitorStack</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>273</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>360</x>
+     <y>334</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

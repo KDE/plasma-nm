@@ -36,8 +36,11 @@ class ConnectionDetailEditor : public QDialog
 
 public:
     ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType type,
-                           const QString &vpnType,
-                           QWidget* parent = 0, Qt::WindowFlags f = 0);
+                           QWidget* parent = 0,
+                           const QString &vpnType = QString(),
+                           const QString &masterUuid = QString(),
+                           const QString &slaveType = QString(),
+                           Qt::WindowFlags f = 0);
     ConnectionDetailEditor(const NetworkManager::Settings::ConnectionSettings::Ptr &setting,
                            QWidget* parent = 0, Qt::WindowFlags f = 0);
     ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType type,
@@ -45,17 +48,26 @@ public:
                            QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~ConnectionDetailEditor();
 
+    bool isSlave() const { return !m_masterUuid.isEmpty() && !m_slaveType.isEmpty(); }
+
+    QString uuid() const { return m_connection->uuid(); }
+
+signals:
+    void connectionAdded(const QString & id, bool success, const QString & msg);
+
 private Q_SLOTS:
     void connectionAddComplete(const QString & id, bool success, const QString & msg);
     void disconnectSignals();
     void gotSecrets(const QString & id, bool success, const NMVariantMapMap & secrets, const QString & msg);
     void saveSetting();
 private:
-    Ui::ConnectionDetailEditor * m_detailEditor;
+    Ui::ConnectionDetailEditor * m_ui;
     NetworkManager::Settings::ConnectionSettings::Ptr m_connection;
     int m_numSecrets;
     bool m_new;
     QString m_vpnType;
+    QString m_masterUuid;
+    QString m_slaveType;
 
     void initEditor();
     void initTabs();

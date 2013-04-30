@@ -21,7 +21,9 @@
 #ifndef PLASMA_NM_BOND_WIDGET_H
 #define PLASMA_NM_BOND_WIDGET_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
+#include <QMenu>
+#include <QListWidgetItem>
 
 #include <NetworkManagerQt/settings/bond.h>
 
@@ -36,15 +38,21 @@ class BondWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    BondWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    BondWidget(const QString & masterUuid, const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~BondWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
+private slots:
+    void addBond(QAction * action);
+    void currentBondChanged(QListWidgetItem * current, QListWidgetItem * previous);
+
 private:
+    QString m_uuid;
     Ui::BondWidget * m_ui;
+    QMenu * m_menu;
 };
 
 #endif // PLASMA_NM_BOND_WIDGET_H

@@ -49,7 +49,7 @@ QString HwAddrComboBox::hwAddress() const
     else
         result = currentText(); // FIXME validate
 
-    qDebug() << "Result:" << currentIndex() << result;
+    //qDebug() << "Result:" << currentIndex() << result;
 
     return result;
 }
@@ -68,7 +68,7 @@ void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const 
 {
     m_initialAddress = address;
 
-    qDebug() << "Initial address:" << m_initialAddress;
+    //qDebug() << "Initial address:" << m_initialAddress;
 
     foreach(const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
         const NetworkManager::Device::Type type = device->type();
@@ -90,7 +90,7 @@ void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device
 {
     const NetworkManager::Device::Type type = device->type();
 
-    qDebug() << "Adding to combo, type:" << type;
+    //qDebug() << "Adding to combo, type:" << type;
 
     QVariant data;
     if (type == NetworkManager::Device::Ethernet) {
@@ -113,7 +113,7 @@ void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device
         data = device->as<NetworkManager::VlanDevice>()->hwAddress();
     }
 
-    qDebug() << "Data:" << data;
+    //qDebug() << "Data:" << data;
 
     QString name;
     if (device->state() == NetworkManager::Device::Activated)
@@ -121,7 +121,7 @@ void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device
     else
         name = device->interfaceName();
 
-    qDebug() << "Name:" << name;
+    //qDebug() << "Name:" << name;
 
     if (!data.isNull()) {
         if (name == data.toString()) {

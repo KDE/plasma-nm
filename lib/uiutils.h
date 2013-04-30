@@ -146,14 +146,12 @@ public:
      */
     static QByteArray macAddressFromString( const QString & s);
 
-#if 0
     /**
      * @param freq frequency of a wireless network
-     * @return The frequency translated into band (first element of the QPair) and channel. The band value is
-     * corresponding to the type enum in Knm::WirelessSetting::EnumBand
+     * @return The frequency channel.
      */
-    static QPair<int, int> findBandAndChannel(int freq);
-
+    static int findChannel(int freq);
+#if 0
     /**
      * @param band The band of a wireless network. The value corresponds to the type enum in Knm::WirelessSetting::EnumBand
      * @return A string representation
@@ -164,8 +162,11 @@ public:
     static QString convertBandToString(const ModemManager::ModemInterface::Band band);
     static QString convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode);
     static QString convertAccessTechnologyToString(const ModemManager::ModemInterface::AccessTechnology tech);
-
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
+
+private:
+    static QList<QPair<int, int> > getBFreqs();
+    static QList<QPair<int, int> > getAFreqs();
 
 };
 #endif // UIUTILS_H

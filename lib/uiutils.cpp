@@ -484,43 +484,39 @@ QByteArray UiUtils::macAddressFromString( const QString & s)
     return ba;
 }
 
-#if 0
-QPair<int, int> UiUtils::findBandAndChannel(int freq)
+int UiUtils::findChannel(int freq)
 {
-    UiUtilsPrivate *priv = s_UiUtilsPrivate;
-    QPair<int, int> pair;
-
+    int channel;
     if (freq < 2500) {
-        pair.first = Knm::WirelessSetting::EnumBand::bg;
-        pair.second = 0;
+        channel = 0;
         int i = 0;
-        QList<QPair<int, int> > bFreqs = priv->getBFreqs();
+        QList<QPair<int, int> > bFreqs = getBFreqs();
         while (i < bFreqs.size()) {
             if (bFreqs.at(i).second <= freq) {
-                pair.second = bFreqs.at(i).first;
+                channel = bFreqs.at(i).first;
             } else {
                 break;
             }
             i++;
         }
-        return pair;
+        return channel;
     }
-    pair.second = 0;
+    channel = 0;
     int i = 0;
-    QList<QPair<int, int> > aFreqs = priv->getAFreqs();
+    QList<QPair<int, int> > aFreqs = getAFreqs();
     while (i < aFreqs.size()) {
         if (aFreqs.at(i).second <= freq) {
-            pair.second = aFreqs.at(i).first;
+            channel = aFreqs.at(i).first;
         } else {
             break;
         }
         i++;
     }
 
-    pair.first = Knm::WirelessSetting::EnumBand::a;
-
-    return pair;
+    return channel;
 }
+
+#if 0
 
 QString UiUtils::wirelessBandToString(int band)
 {
@@ -616,5 +612,77 @@ NetworkManager::ModemDevice::Capability UiUtils::modemSubType(NetworkManager::Mo
         return NetworkManager::ModemDevice::Pots;
     }
     return NetworkManager::ModemDevice::NoCapability;
+}
+
+QList< QPair< int, int > > UiUtils::getBFreqs()
+{
+    QList<QPair<int, int> > freqs;
+
+    freqs.append(QPair<int, int>(1, 2412));
+    freqs.append(QPair<int, int>(2, 2417));
+    freqs.append(QPair<int, int>(3, 2422));
+    freqs.append(QPair<int, int>(4, 2427));
+    freqs.append(QPair<int, int>(5, 2432));
+    freqs.append(QPair<int, int>(6, 2437));
+    freqs.append(QPair<int, int>(7, 2442));
+    freqs.append(QPair<int, int>(8, 2447));
+    freqs.append(QPair<int, int>(9, 2452));
+    freqs.append(QPair<int, int>(10, 2457));
+    freqs.append(QPair<int, int>(11, 2462));
+    freqs.append(QPair<int, int>(12, 2467));
+    freqs.append(QPair<int, int>(13, 2472));
+    freqs.append(QPair<int, int>(14, 2484));
+
+    return freqs;
+}
+
+QList< QPair< int, int > > UiUtils::getAFreqs()
+{
+    QList<QPair<int, int> > freqs;
+
+    freqs.append(QPair<int, int>(183, 4915));
+    freqs.append(QPair<int, int>(184, 4920));
+    freqs.append(QPair<int, int>(185, 4925));
+    freqs.append(QPair<int, int>(187, 4935));
+    freqs.append(QPair<int, int>(188, 4940));
+    freqs.append(QPair<int, int>(189, 4945));
+    freqs.append(QPair<int, int>(192, 4960));
+    freqs.append(QPair<int, int>(196, 4980));
+    freqs.append(QPair<int, int>(7, 5035));
+    freqs.append(QPair<int, int>(8, 5040));
+    freqs.append(QPair<int, int>(9, 5045));
+    freqs.append(QPair<int, int>(11, 5055));
+    freqs.append(QPair<int, int>(12, 5060));
+    freqs.append(QPair<int, int>(16, 5080));
+    freqs.append(QPair<int, int>(34, 5170));
+    freqs.append(QPair<int, int>(36, 5180));
+    freqs.append(QPair<int, int>(38, 5190));
+    freqs.append(QPair<int, int>(40, 5200));
+    freqs.append(QPair<int, int>(42, 5210));
+    freqs.append(QPair<int, int>(44, 5220));
+    freqs.append(QPair<int, int>(46, 5230));
+    freqs.append(QPair<int, int>(48, 5240));
+    freqs.append(QPair<int, int>(52, 5260));
+    freqs.append(QPair<int, int>(56, 5280));
+    freqs.append(QPair<int, int>(60, 5300));
+    freqs.append(QPair<int, int>(64, 5320));
+    freqs.append(QPair<int, int>(100, 5500));
+    freqs.append(QPair<int, int>(104, 5520));
+    freqs.append(QPair<int, int>(108, 5540));
+    freqs.append(QPair<int, int>(112, 5560));
+    freqs.append(QPair<int, int>(116, 5580));
+    freqs.append(QPair<int, int>(120, 5600));
+    freqs.append(QPair<int, int>(124, 5620));
+    freqs.append(QPair<int, int>(128, 5640));
+    freqs.append(QPair<int, int>(132, 5660));
+    freqs.append(QPair<int, int>(136, 5680));
+    freqs.append(QPair<int, int>(140, 5700));
+    freqs.append(QPair<int, int>(149, 5745));
+    freqs.append(QPair<int, int>(153, 5765));
+    freqs.append(QPair<int, int>(157, 5785));
+    freqs.append(QPair<int, int>(161, 5805));
+    freqs.append(QPair<int, int>(165, 5825));
+
+    return freqs;
 }
 

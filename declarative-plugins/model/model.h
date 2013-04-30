@@ -37,8 +37,9 @@ class Model : public QAbstractListModel
 Q_OBJECT
 public:
     Q_ENUMS(Detail)
-    enum ConnectionRole {NameRole = Qt::UserRole + 1, UuidRole, TypeRole, ConnectedRole, ConnectingRole, SsidRole, SignalRole, SecureRole, DeviceRole,
-                         ConnectionPathRole, DevicePathRole, DeviceNameRole, SpecificPathRole, ConnectionIconRole, ConnectionDetailInformationsRole, SectionRole};
+    enum ItemRole {ConnectingRole = Qt::UserRole + 1, ConnectedRole, ConnectionPathRole, ConnectionIconRole, ConnectionDetailsRole,
+                   DeviceNameRole, DevicePathRole, NameRole, SecureRole, SectionRole, SignalRole, SsidRole, SpecificPathRole, UuidRole, TypeRole};
+
     enum Detail { None = 0,
                   ConnectionType = 1, ConnectionState = 2,
                   DeviceSystemName = 4, DeviceIpv4Address = 8, DeviceIpv6Address = 16, DeviceDriver = 32, DeviceMac = 64, DeviceSpeed = 128,

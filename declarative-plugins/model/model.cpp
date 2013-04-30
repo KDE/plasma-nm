@@ -39,22 +39,21 @@ Model::Model(QObject* parent):
     m_connections(QList<ModelItem*>())
 {
     QHash<int, QByteArray> roles = roleNames();
+    roles[ConnectingRole] = "itemConnecting";
+    roles[ConnectedRole] = "itemConnected";
+    roles[ConnectionPathRole] = "itemConnectionPath";
+    roles[ConnectionIconRole] = "itemConnectionIcon";
+    roles[ConnectionDetailsRole] = "itemDetails";
+    roles[DeviceNameRole] = "itemDeviceName";
+    roles[DevicePathRole] = "itemDevicePath";
     roles[NameRole] = "itemName";
+    roles[SecureRole] = "itemSecure";
+    roles[SectionRole] = "itemSection";
+    roles[SignalRole] = "itemSignal";
+    roles[SsidRole] = "itemSsid";
+    roles[SpecificPathRole] = "itemSpecificPath";
     roles[UuidRole] = "itemUuid";
     roles[TypeRole] = "itemType";
-    roles[ConnectedRole] = "itemConnected";
-    roles[ConnectingRole] = "itemConnecting";
-    roles[SsidRole] = "itemSsid";
-    roles[SignalRole] = "itemSignal";
-    roles[SecureRole] = "itemSecure";
-    roles[DeviceRole] = "itemDevice";
-    roles[ConnectionPathRole] = "itemConnectionPath";
-    roles[DevicePathRole] = "itemDevicePath";
-    roles[DeviceNameRole] = "itemDeviceName";
-    roles[SpecificPathRole] = "itemSpecificParameter";
-    roles[ConnectionIconRole] = "itemConnectionIcon";
-    roles[ConnectionDetailInformationsRole] = "itemDetailInformations";
-    roles[SectionRole] = "itemSection";
     setRoleNames(roles);
 
     connect(m_monitor, SIGNAL(addWirelessNetwork(NetworkManager::WirelessNetwork::Ptr,NetworkManager::Device::Ptr)),
@@ -98,50 +97,50 @@ QVariant Model::data(const QModelIndex& index, int role) const
         ModelItem * item = m_connections[row];
 
         switch (role) {
+            case ConnectingRole:
+                return item->connecting();
+                break;
+            case ConnectedRole:
+                return item->connected();
+                break;
+            case ConnectionPathRole:
+                return item->connectionPath();
+                break;
+            case ConnectionIconRole:
+                return item->icon();
+                break;
+            case ConnectionDetailsRole:
+                return item->details();
+                break;
+            case DeviceNameRole:
+                return item->deviceName();
+                break;
+            case DevicePathRole:
+                return item->devicePath();
+                break;
             case NameRole:
                 return item->name();
+                break;
+            case SecureRole:
+                return item->secure();
+                break;
+            case SectionRole:
+                return item->sectionType();
+                break;
+            case SignalRole:
+                return item->signal();
+                break;
+            case SsidRole:
+                return item->ssid();
+                break;
+            case SpecificPathRole:
+                return item->specificPath();
                 break;
             case UuidRole:
                 return item->uuid();
                 break;
             case TypeRole:
                 return item->type();
-                break;
-            case ConnectedRole:
-                return item->connected();
-                break;
-            case ConnectingRole:
-                return item->connecting();
-                break;
-            case SsidRole:
-                return item->ssid();
-                break;
-            case SignalRole:
-                return item->signal();
-                break;
-            case SecureRole:
-                return item->secure();
-                break;
-            case ConnectionPathRole:
-                return item->connectionPath();
-                break;
-            case DevicePathRole:
-                return item->devicePath();
-                break;
-            case DeviceNameRole:
-                return item->deviceName();
-                break;
-            case SpecificPathRole:
-                return item->specificPath();
-                break;
-            case ConnectionIconRole:
-                return item->icon();
-                break;
-            case ConnectionDetailInformationsRole:
-                return item->detailInformations();
-                break;
-            case SectionRole:
-                return item->sectionType();
                 break;
             default:
                 break;
@@ -158,14 +157,6 @@ void Model::setDetailFlags(int flags)
     foreach (ModelItem * item, m_connections) {
         item->setDetailFlags(m_flags);
     }
-}
-
-void Model::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device)
-{
-    ModelWirelessItem * item = new ModelWirelessItem(device);
-    item->setWirelessNetwork(network);
-
-    insertItem(item);
 }
 
 void Model::addActiveConnection(const NetworkManager::ActiveConnection::Ptr & active)
@@ -242,52 +233,12 @@ void Model::addVpnConnection(const NetworkManager::Settings::Connection::Ptr & c
     insertItem(item);
 }
 
-void Model::removeWirelessNetwork(const QString& ssid, const NetworkManager::Device::Ptr & device)
+void Model::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device)
 {
-    int row = -1;
+    ModelWirelessItem * item = new ModelWirelessItem(device);
+    item->setWirelessNetwork(network);
 
-    foreach (ModelItem * item, m_connections) {
-        if (item->ssid() == ssid &&
-            item->devicePath() == device->uni()) {
-            row  = m_connections.indexOf(item);
-
-            if (row >= 0) {
-                if (item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-                    ModelWirelessItem * wifiItem = qobject_cast<ModelWirelessItem*>(item);
-                    if (wifiItem) {
-                        wifiItem->setWirelessNetwork(NetworkManager::WirelessNetwork::Ptr());
-                        bool removed = updateItem(item, row);
-
-                        if (removed) {
-                            NMModelDebug() << "Wireless network " << ssid << " has been completely removed";
-                        } else {
-                            NMModelDebug() << "Removed network from " << wifiItem->name() << " connection";
-                        }
-                    } else {
-                        return;
-                    }
-                }
-            }
-        }
-    }
-}
-
-void Model::removeWirelessNetworks()
-{
-    int row = -1;
-
-    foreach (ModelItem * item, m_connections) {
-        if (item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-            row  = m_connections.indexOf(item);
-
-            if (row >= 0) {
-                updateItem(item, row, true);
-                NMModelDebug() << "Wireless network " << item->ssid() << " has been completely removed";
-                row = -1;
-            }
-        }
-
-    }
+    insertItem(item);
 }
 
 void Model::removeConnection(const QString& connection)
@@ -338,6 +289,54 @@ void Model::removeConnectionsByDevice(const QString& device)
     }
 }
 
+void Model::removeWirelessNetwork(const QString& ssid, const NetworkManager::Device::Ptr & device)
+{
+    int row = -1;
+
+    foreach (ModelItem * item, m_connections) {
+        if (item->ssid() == ssid &&
+            item->devicePath() == device->uni()) {
+            row  = m_connections.indexOf(item);
+
+            if (row >= 0) {
+                if (item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
+                    ModelWirelessItem * wifiItem = qobject_cast<ModelWirelessItem*>(item);
+                    if (wifiItem) {
+                        wifiItem->setWirelessNetwork(NetworkManager::WirelessNetwork::Ptr());
+                        bool removed = updateItem(item, row);
+
+                        if (removed) {
+                            NMModelDebug() << "Wireless network " << ssid << " has been completely removed";
+                        } else {
+                            NMModelDebug() << "Removed network from " << wifiItem->name() << " connection";
+                        }
+                    } else {
+                        return;
+                    }
+                }
+            }
+        }
+    }
+}
+
+void Model::removeWirelessNetworks()
+{
+    int row = -1;
+
+    foreach (ModelItem * item, m_connections) {
+        if (item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
+            row  = m_connections.indexOf(item);
+
+            if (row >= 0) {
+                updateItem(item, row, true);
+                NMModelDebug() << "Wireless network " << item->ssid() << " has been completely removed";
+                row = -1;
+            }
+        }
+
+    }
+}
+
 void Model::removeVpnConnections()
 {
     int row = -1;
@@ -352,6 +351,21 @@ void Model::removeVpnConnections()
                 row = -1;
             }
         }
+    }
+}
+
+bool Model::updateItem(ModelItem* item, int index, bool removeDirectly)
+{
+    if (item->shouldBeRemoved() || removeDirectly) {
+        beginRemoveRows(QModelIndex(), index, index);
+        m_connections.removeOne(item);
+        item->deleteLater();
+        endRemoveRows();
+        return true;
+    } else {
+        QModelIndex modelIndex = createIndex(index, 0);
+        dataChanged(modelIndex, modelIndex);
+        return false;
     }
 }
 
@@ -398,21 +412,6 @@ void Model::insertItem(ModelItem* item)
         NMModelDebug() << "Connection " << item->name() << " has been added";
     } else {
         delete item;
-    }
-}
-
-bool Model::updateItem(ModelItem* item, int index, bool removeDirectly)
-{
-    if (item->shouldBeRemoved() || removeDirectly) {
-        beginRemoveRows(QModelIndex(), index, index);
-        m_connections.removeOne(item);
-        item->deleteLater();
-        endRemoveRows();
-        return true;
-    } else {
-        QModelIndex modelIndex = createIndex(index, 0);
-        dataChanged(modelIndex, modelIndex);
-        return false;
     }
 }
 

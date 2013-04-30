@@ -138,7 +138,7 @@ Item {
                 rightMargin: 10
                 bottomMargin: 5;
             }
-            text: itemDetailInformations;
+            text: itemDetails;
             editable: itemUuid == "" ? false : true;
             enableTraffic: {
                 if (itemDevicePath != "" && itemConnected && itemType != 11) {

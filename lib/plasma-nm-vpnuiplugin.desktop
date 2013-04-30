@@ -10,6 +10,7 @@ Name[pt]='Plugin' de Interface VPN da Gestão de Rede
 Name[pt_BR]=Plugin de interface VPN do gerenciamento de redes
 Name[sk]=Modul pre správu siete VPN
 Name[sv]=Insticksprogram till nätverkshantering med VPN-användargränssnitt
+Name[tr]=Ağ Yönetimi VPN UI Eklentisi
 Name[uk]=Додаток графічного інтерфейсу керування мережею VPN
 Name[x-test]=xxNetwork Management VPN UI Pluginxx
 Comment=Defines KDE Network Management UI Plugins
@@ -21,6 +22,7 @@ Comment[pt]=Define os 'plugins' de interface da Gestão de Rede
 Comment[pt_BR]=Define os plugins de interface do gerenciamento de redes
 Comment[sk]=Definuje moduly pre správu siete KDE
 Comment[sv]=Definierar insticksprogram för KDE:s nätverkshantering
+Comment[tr]=KDE Ağ Yönetimi UI Eklentilerini tanımlar
 Comment[uk]=Визначає додатки інтерфейсу засобу керування мережею KDE
 Comment[x-test]=xxDefines KDE Network Management UI Pluginsxx
 

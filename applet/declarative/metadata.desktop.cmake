@@ -9,6 +9,7 @@ Name[pt]=Gestão de Rede
 Name[pt_BR]=Gerenciamento de rede
 Name[sk]=Správa siete
 Name[sv]=Nätverkshantering
+Name[tr]=Ağ Yönetimi
 Name[uk]=Керування мережею
 Name[x-test]=xxNetwork Managementxx
 
@@ -22,6 +23,7 @@ Comment[pt]=Estado e controlo da rede
 Comment[pt_BR]=Estado e controle da rede
 Comment[sk]=Správa a ovládanie siete
 Comment[sv]=Nätverksstatus och kontroll
+Comment[tr]=Ağ denetim ve durum izleme
 Comment[uk]=Стеження за станом і керування мережею
 Comment[x-test]=xxNetwork status and controlxx
 

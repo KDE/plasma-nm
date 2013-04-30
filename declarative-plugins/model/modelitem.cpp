@@ -60,7 +60,7 @@ QString ModelItem::deviceName() const
     return m_deviceName;
 }
 
-QString ModelItem::detailInformations() const
+QString ModelItem::details() const
 {
     return m_details;
 }

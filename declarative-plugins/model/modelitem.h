@@ -57,7 +57,7 @@ public:
 
     // Detail info
 
-    QString detailInformations() const;
+    QString details() const;
 
     void setDetailFlags(Model::Details flags);
 

@@ -26,6 +26,7 @@ set(connectioneditor_SRCS
    cdmawidget.cpp
    btwidget.cpp
    infinibandwidget.cpp
+   bondwidget.cpp
 )
 
 kde4_add_ui_files(connectioneditor_SRCS
@@ -47,6 +48,7 @@ kde4_add_ui_files(connectioneditor_SRCS
     ui/cdma.ui
     ui/bt.ui
     ui/infiniband.ui
+    ui/bond.ui
 )
 
 kde4_add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})

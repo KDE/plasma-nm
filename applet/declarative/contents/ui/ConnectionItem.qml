@@ -89,7 +89,7 @@ Item {
         onClicked: {
             if (!itemConnected && !itemConnecting) {
                 if (itemUuid) {
-                    activateConnectionItem(itemConnectionPath, itemDevicePath, itemSpecificParameter);
+                    activateConnectionItem(itemConnectionPath, itemDevicePath, itemSpecificPath);
                 } else {
                     addAndActivateConnectionItem(itemDevicePath, itemSpecificParameter);
                 }

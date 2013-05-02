@@ -22,6 +22,8 @@
 
 #include <QStandardItemModel>
 #include <NetworkManagerQt/device.h>
+#include <NetworkManagerQt/wirelessnetwork.h>
+#include <NetworkManagerQt/wimaxnsp.h>
 
 class AvailableConnectionsModel : public QStandardItemModel
 {
@@ -29,8 +31,18 @@ class AvailableConnectionsModel : public QStandardItemModel
 public:
     enum ConnectionRoles {
         RoleConectionPath = Qt::UserRole + 1,
-        RoleSort
+        RoleKind,
+        RoleNetworkID,
+        RoleMacAddress,
+        RoleSignalStrength,
+        RoleSecurity
     };
+
+    enum Kind {
+        Connection,
+        Network
+    };
+
     explicit AvailableConnectionsModel(QObject *parent = 0);
     void setDevice(const NetworkManager::Device::Ptr &device);
 
@@ -41,9 +53,13 @@ private slots:
     void connectionRemoved(const QString &path);
     void addConnection(const NetworkManager::Settings::Connection::Ptr &connection);
     void changeConnection(QStandardItem *stdItem, const NetworkManager::Settings::Connection::Ptr &connection);
-    
+    void addNetwork(const NetworkManager::WirelessNetwork::Ptr &network);
+    void addNspNetwork(const NetworkManager::WimaxNsp::Ptr &nsp);
+
 private:
     QStandardItem *findConnectionItem(const QString &path);
+    QStandardItem *findNetworkItem(const QString &ssid);
+    QStandardItem *findNspNetworkItem(const QString &name);
 
     NetworkManager::Device::Ptr m_device;
 };

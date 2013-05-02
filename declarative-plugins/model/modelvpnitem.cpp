@@ -65,7 +65,7 @@ void ModelVpnItem::updateDetails()
                 m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
             }
         } else if (key == "vpn:banner") {
-            if (vpnSetting) {
+            if (vpnSetting && m_vpn) {
                 m_details += QString(format).arg(i18n("Banner:"), m_vpn->banner().simplified());
             }
         }

@@ -9,3 +9,21 @@ target_link_libraries(plasma_nm_notifications ${KDE4_KDEUI_LIBS} ${KDE4_KNOTIFYC
 install(TARGETS plasma_nm_notifications DESTINATION ${PLUGIN_INSTALL_DIR})
 
 install(FILES plasma_nm_notifications.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+
+set(plasmanm_config_widgets_SRCS
+    detailkeyseditor.cpp
+    detailkeyseditordesignfactory.cpp
+)
+
+kde4_add_ui_files(plasmanm_config_widgets_SRCS
+    detailkeyswidget.ui
+)
+
+kde4_add_plugin(plasmanmwidgets SHARED
+                ${plasmanm_config_widgets_SRCS})
+
+target_link_libraries(plasmanmwidgets
+                      ${KDE4_KDEUI_LIBS}
+)
+
+install( TARGETS plasmanmwidgets DESTINATION ${PLUGIN_INSTALL_DIR}/plugins/designer )

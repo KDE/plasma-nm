@@ -409,11 +409,9 @@ void ConnectionDetailEditor::gotSecrets(const QString& id, bool success, const N
     }
 
     if (success) {
-        QMapIterator<QString, QVariantMap> i(secrets);
-        while (i.hasNext()) {
-            i.next();
-            NetworkManager::Settings::Setting::Ptr setting = m_connection->setting(NetworkManager::Settings::Setting::typeFromString(i.key()));
-            setting->secretsFromMap(secrets.value(i.key()));
+        foreach (const QString & key, secrets.keys()) {
+            NetworkManager::Settings::Setting::Ptr setting = m_connection->setting(NetworkManager::Settings::Setting::typeFromString(key));
+            setting->secretsFromMap(secrets.value(key));
         }
     } else {
         qDebug() << msg;

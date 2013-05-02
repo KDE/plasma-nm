@@ -81,6 +81,7 @@ void Monitor::addAvailableConnectionsForDevice(const NetworkManager::Device::Ptr
 
 void Monitor::addDevice(const NetworkManager::Device::Ptr &device)
 {
+    // TODO add more devices with "carrier" - infiniband, bond, bridge, vlan, adsl
     if (device->type() == NetworkManager::Device::Ethernet) {
         NMMonitorDebug() << "Available wired device " << device->interfaceName();
         NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
@@ -121,6 +122,10 @@ void Monitor::availableConnectionAppeared(const QString & connection)
 
     NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
     if (!con) {
+        return;
+    }
+
+    if (con->settings()->isSlave()) {
         return;
     }
 

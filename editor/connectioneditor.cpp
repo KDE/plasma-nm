@@ -88,7 +88,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 
     action = new QAction(i18n("Bond"), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Bond);
-    action->setDisabled(true); // TODO
     m_menu->addAction(action);
     action = new QAction(i18n("Bridge"), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Bridge);
@@ -147,6 +146,9 @@ void ConnectionEditor::initializeConnections()
     m_editor->connectionsWidget->clear();
 
     foreach (const Settings::Connection::Ptr &con, Settings::listConnections()) {
+        if (con->settings()->isSlave())
+            continue;
+
         insertConnection(con);
 
         connect(con.data(), SIGNAL(updated()), SLOT(connectionUpdated()));
@@ -340,6 +342,9 @@ void ConnectionEditor::connectionAdded(const QString& connection)
     if (!con) {
         return;
     }
+
+    if (con->settings()->isSlave())
+        return;
 
     insertConnection(con);
 }

@@ -200,6 +200,9 @@ void Model::addConnection(const NetworkManager::Settings::Connection::Ptr & conn
 {
     NetworkManager::Settings::ConnectionSettings::Ptr settings = connection->settings();
 
+    if (settings->isSlave())
+        return;
+
     if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
         ModelWirelessItem * item = new ModelWirelessItem(device);
         item->setConnection(connection);

@@ -38,7 +38,7 @@ class BondWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    BondWidget(const QString & masterUuid, const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(),
+    explicit BondWidget(const QString & masterUuid, const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(),
                QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~BondWidget();
 

@@ -23,7 +23,7 @@
     </widget>
    </item>
    <item row="0" column="1">
-    <widget class="QComboBox" name="auth">
+    <widget class="KComboBox" name="auth">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -80,7 +80,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="md5UserName"/>
+        <widget class="KLineEdit" name="md5UserName"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_3">
@@ -131,7 +131,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="tlsIdentity"/>
+        <widget class="KLineEdit" name="tlsIdentity"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_5">
@@ -223,7 +223,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="leapUsername"/>
+        <widget class="KLineEdit" name="leapUsername"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_10">
@@ -260,7 +260,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="fastAnonIdentity"/>
+        <widget class="KLineEdit" name="fastAnonIdentity"/>
        </item>
        <item row="1" column="0">
         <widget class="QCheckBox" name="fastAllowPacProvisioning">
@@ -270,7 +270,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QComboBox" name="pacMethod">
+        <widget class="KComboBox" name="pacMethod">
          <property name="enabled">
           <bool>false</bool>
          </property>
@@ -325,7 +325,7 @@
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QComboBox" name="fastInnerAuth">
+        <widget class="KComboBox" name="fastInnerAuth">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -355,7 +355,7 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QLineEdit" name="fastUsername"/>
+        <widget class="KLineEdit" name="fastUsername"/>
        </item>
        <item row="5" column="0">
         <widget class="QLabel" name="label_15">
@@ -377,7 +377,7 @@
        <item row="6" column="1">
         <widget class="QCheckBox" name="cbAskFastPassword">
          <property name="text">
-          <string>Ask for this password &amp;everytime</string>
+          <string>Ask for this password every time</string>
          </property>
         </widget>
        </item>
@@ -403,7 +403,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="ttlsAnonIdentity"/>
+        <widget class="KLineEdit" name="ttlsAnonIdentity"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_20">
@@ -433,7 +433,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QComboBox" name="ttlsInnerAuth">
+        <widget class="KComboBox" name="ttlsInnerAuth">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -473,7 +473,7 @@
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="ttlsUsername"/>
+        <widget class="KLineEdit" name="ttlsUsername"/>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="label_18">
@@ -495,7 +495,7 @@
        <item row="5" column="1">
         <widget class="QCheckBox" name="cbAskTtlsPassword">
          <property name="text">
-          <string>Ask for this password &amp;everytime</string>
+          <string>Ask for this password every time</string>
          </property>
         </widget>
        </item>
@@ -521,7 +521,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="peapAnonIdentity"/>
+        <widget class="KLineEdit" name="peapAnonIdentity"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_23">
@@ -551,7 +551,7 @@
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QComboBox" name="peapInnerAuth">
+        <widget class="KComboBox" name="peapInnerAuth">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -586,7 +586,7 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QLineEdit" name="peapUsername"/>
+        <widget class="KLineEdit" name="peapUsername"/>
        </item>
        <item row="5" column="0">
         <widget class="QLabel" name="label_21">
@@ -608,7 +608,7 @@
        <item row="6" column="1">
         <widget class="QCheckBox" name="cbAskPeapPassword">
          <property name="text">
-          <string>Ask for this password &amp;everytime</string>
+          <string>Ask for this password every time</string>
          </property>
         </widget>
        </item>
@@ -630,7 +630,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QComboBox" name="peapVersion">
+        <widget class="KComboBox" name="peapVersion">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
            <horstretch>0</horstretch>

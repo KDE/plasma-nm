@@ -32,7 +32,7 @@ class Monitor : public QObject
 {
 Q_OBJECT
 public:
-    Monitor(QObject* parent = 0);
+    explicit Monitor(QObject* parent = 0);
     virtual ~Monitor();
 
 public Q_SLOTS:

@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class SimpleIpV6AddressValidator : public QValidator
 {
 public:
-    SimpleIpV6AddressValidator(QObject *parent);
+    explicit SimpleIpV6AddressValidator(QObject *parent);
     virtual ~SimpleIpV6AddressValidator();
 
     virtual State validate(QString &, int &) const;

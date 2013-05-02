@@ -36,7 +36,7 @@ class GsmWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    GsmWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit GsmWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~GsmWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);

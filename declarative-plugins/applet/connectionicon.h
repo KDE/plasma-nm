@@ -31,7 +31,7 @@ class ConnectionIcon : public QObject
 {
 Q_OBJECT
 public:
-    ConnectionIcon(QObject* parent = 0);
+    explicit ConnectionIcon(QObject* parent = 0);
     virtual ~ConnectionIcon();
 
 public Q_SLOTS:

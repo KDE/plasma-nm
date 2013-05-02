@@ -39,7 +39,7 @@ public:
     enum ItemRole {ConnectingRole = Qt::UserRole + 1, ConnectedRole, ConnectionPathRole, ConnectionIconRole, ConnectionDetailsRole,
                    DeviceNameRole, DevicePathRole, NameRole, SecureRole, SectionRole, SignalRole, SsidRole, SpecificPathRole, UuidRole, TypeRole};
 
-    Model(QObject* parent = 0);
+    explicit Model(QObject* parent = 0);
     virtual ~Model();
 
     int rowCount(const QModelIndex & parent) const;

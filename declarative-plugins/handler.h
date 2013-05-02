@@ -28,7 +28,7 @@ class Handler : public QObject
 Q_OBJECT
 
 public:
-    Handler(QObject* parent = 0);
+    explicit Handler(QObject* parent = 0);
     virtual ~Handler();
 
 public Q_SLOTS:

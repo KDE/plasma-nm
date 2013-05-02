@@ -37,7 +37,7 @@ class IPv4Widget : public SettingWidget
     Q_OBJECT
 
 public:
-    IPv4Widget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit IPv4Widget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~IPv4Widget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);

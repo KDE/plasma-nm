@@ -30,7 +30,7 @@ class KDE_EXPORT SettingWidget : public QWidget
 {
     Q_OBJECT
 public:
-    SettingWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit SettingWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~SettingWidget();
 
     virtual void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);

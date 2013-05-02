@@ -31,7 +31,7 @@ class KDE_EXPORT HwAddrComboBox : public KComboBox
 {
     Q_OBJECT
 public:
-    HwAddrComboBox(QWidget *parent = 0);
+    explicit HwAddrComboBox(QWidget *parent = 0);
 
     void init(const NetworkManager::Device::Type &deviceType, const QString &address);
 

@@ -29,7 +29,7 @@ class ModelModemItem : public ModelItem
 {
 Q_OBJECT
 public:
-    ModelModemItem(const NetworkManager::Device::Ptr & device, QObject * parent = 0);
+    explicit ModelModemItem(const NetworkManager::Device::Ptr & device, QObject * parent = 0);
     ~ModelModemItem();
 
 private Q_SLOTS:

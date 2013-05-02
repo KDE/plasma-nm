@@ -41,7 +41,7 @@ class KDE_EXPORT VpnUiPlugin : public QObject
 public:
     enum ErrorType {NoError, NotImplemented, Error};
 
-    VpnUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
+    explicit VpnUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
     virtual ~VpnUiPlugin();
 
     virtual SettingWidget * widget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;

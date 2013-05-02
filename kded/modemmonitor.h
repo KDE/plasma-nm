@@ -37,7 +37,7 @@ class KDE_EXPORT ModemMonitor : public QObject
     Q_OBJECT
     Q_DECLARE_PRIVATE(ModemMonitor)
 public:
-    ModemMonitor(QObject * parent);
+    explicit ModemMonitor(QObject * parent);
     virtual ~ModemMonitor();
 public Q_SLOTS:
     void modemAdded(const QString&);

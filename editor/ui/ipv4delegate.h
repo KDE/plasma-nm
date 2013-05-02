@@ -28,7 +28,7 @@ class IpV4Delegate : public Delegate
 {
     Q_OBJECT
 public:
-    IpV4Delegate(QObject * parent = 0);
+    explicit IpV4Delegate(QObject * parent = 0);
     virtual ~IpV4Delegate();
 
     QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;

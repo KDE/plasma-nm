@@ -23,7 +23,7 @@
     </widget>
    </item>
    <item row="0" column="1">
-    <widget class="QComboBox" name="transport">
+    <widget class="KComboBox" name="transport">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -91,6 +91,11 @@
    <class>KIntSpinBox</class>
    <extends>QSpinBox</extends>
    <header>knuminput.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
    <class>HwAddrComboBox</class>

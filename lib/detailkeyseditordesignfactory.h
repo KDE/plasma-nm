@@ -29,7 +29,7 @@ class DetailKeysEditorDesignerFactory : public QObject, public QDesignerCustomWi
     Q_OBJECT
     Q_INTERFACES(QDesignerCustomWidgetInterface)
 public:
-    DetailKeysEditorDesignerFactory(QObject *parent = 0);
+    explicit DetailKeysEditorDesignerFactory(QObject *parent = 0);
 
     bool isContainer() const;
     QIcon icon() const;

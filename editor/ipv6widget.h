@@ -37,7 +37,7 @@ class IPv6Widget : public SettingWidget
     Q_OBJECT
 
 public:
-    IPv6Widget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit IPv6Widget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~IPv6Widget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);

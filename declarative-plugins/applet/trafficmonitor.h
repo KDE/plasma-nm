@@ -37,7 +37,7 @@ class TrafficMonitor : public QGraphicsWidget
 Q_PROPERTY(QString device READ device WRITE setDevice)
 Q_OBJECT
 public:
-    TrafficMonitor(QGraphicsItem * parent = 0);
+    explicit TrafficMonitor(QGraphicsItem * parent = 0);
     virtual ~TrafficMonitor();
 
     void setDevice(const QString & device);

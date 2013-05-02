@@ -63,7 +63,7 @@ Model::Model(QObject* parent):
     connect(m_monitor, SIGNAL(addConnection(NetworkManager::Settings::Connection::Ptr,NetworkManager::Device::Ptr)),
             SLOT(addConnection(NetworkManager::Settings::Connection::Ptr,NetworkManager::Device::Ptr)));
     connect(m_monitor, SIGNAL(removeWirelessNetwork(QString,NetworkManager::Device::Ptr)),
-            SLOT(removeWirelessNetwork(QString, NetworkManager::Device::Ptr)));
+            SLOT(removeWirelessNetwork(QString,NetworkManager::Device::Ptr)));
     connect(m_monitor, SIGNAL(removeWirelessNetworks()),
             SLOT(removeWirelessNetworks()));
     connect(m_monitor, SIGNAL(removeConnection(QString)),

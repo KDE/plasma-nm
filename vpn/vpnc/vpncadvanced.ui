@@ -29,7 +29,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="domain"/>
+       <widget class="KLineEdit" name="domain"/>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
@@ -42,7 +42,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QComboBox" name="vendor">
+       <widget class="KComboBox" name="vendor">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -71,7 +71,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QComboBox" name="encryption">
+       <widget class="KComboBox" name="encryption">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -91,7 +91,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QComboBox" name="nat">
+       <widget class="KComboBox" name="nat">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -111,7 +111,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QComboBox" name="dhGroup">
+       <widget class="KComboBox" name="dhGroup">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -131,7 +131,7 @@
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QComboBox" name="pfs">
+       <widget class="KComboBox" name="pfs">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>

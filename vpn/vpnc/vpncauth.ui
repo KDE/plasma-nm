@@ -94,7 +94,7 @@
     </widget>
    </item>
    <item row="0" column="2">
-    <widget class="QLineEdit" name="leUserName">
+    <widget class="KLineEdit" name="leUserName">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -114,7 +114,7 @@
     </widget>
    </item>
    <item row="2" column="2">
-    <widget class="QLineEdit" name="leGroupName">
+    <widget class="KLineEdit" name="leGroupName">
      <property name="enabled">
       <bool>false</bool>
      </property>

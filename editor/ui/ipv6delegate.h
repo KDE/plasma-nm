@@ -30,7 +30,7 @@ class IpV6Delegate : public Delegate
 {
     Q_OBJECT
 public:
-    IpV6Delegate(QObject * parent = 0);
+    explicit IpV6Delegate(QObject * parent = 0);
     virtual ~IpV6Delegate();
 
     QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;

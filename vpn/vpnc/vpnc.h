@@ -32,7 +32,7 @@ class KDE_EXPORT VpncUiPlugin : public VpnUiPlugin
 {
     Q_OBJECT
 public:
-    VpncUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
+    explicit VpncUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
     virtual ~VpncUiPlugin();
     virtual SettingWidget * widget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent = 0);
     virtual SettingWidget * askUser(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent = 0);

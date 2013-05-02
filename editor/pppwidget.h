@@ -36,7 +36,7 @@ class PPPWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    PPPWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit PPPWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~PPPWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);

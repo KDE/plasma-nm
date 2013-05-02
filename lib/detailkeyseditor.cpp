@@ -118,7 +118,7 @@ void DetailKeysEditor::loadAllDetailElements()
 //    m_allDetailsElements.insert("ipv4:domains", QPair<QString, QString>(i18n("IPv4 Domains"), i18n("IPv version 4 DNS domain names")));
     m_allDetailsElements.insert("ipv4:gateway", QPair<QString, QString>(i18n("IPv4 Gateway"), i18n("IP version 4 default gateway")));
 
-    // IPv4
+    // IPv6
     m_allDetailsElements.insert("ipv6:address", QPair<QString, QString>(i18n("IPv6 Address"), i18n("IP version 6 address")));
 //    m_allDetailsElements.insert("ipv6:nameservers", QPair<QString, QString>(i18n("IPv6 Name Servers"), i18n("IP version 6 Name servers")));
 //    m_allDetailsElements.insert("ipv6:domains", QPair<QString, QString>(i18n("IPv6 Domains"), i18n("IPv version 6 DNS domain names")));

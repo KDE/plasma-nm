@@ -36,7 +36,7 @@ class BtWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    BtWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit BtWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~BtWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);

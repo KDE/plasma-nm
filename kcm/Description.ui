@@ -120,7 +120,7 @@
        <item row="1" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QComboBox" name="connectionCB"/>
+          <widget class="KComboBox" name="connectionCB"/>
          </item>
          <item>
           <widget class="QPushButton" name="disconnectPB">
@@ -149,6 +149,11 @@
    <extends>QTabWidget</extends>
    <header>ktabwidget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

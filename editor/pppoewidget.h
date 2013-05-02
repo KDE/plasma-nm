@@ -36,7 +36,7 @@ class PppoeWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    PppoeWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit PppoeWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~PppoeWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);

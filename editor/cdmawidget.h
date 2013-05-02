@@ -36,7 +36,7 @@ class CdmaWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    CdmaWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit CdmaWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~CdmaWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);

@@ -34,7 +34,7 @@ class VpncWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    VpncWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit VpncWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~VpncWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);

@@ -33,7 +33,7 @@ class IpV6RoutesWidget : public QDialog
 {
     Q_OBJECT
 public:
-    IpV6RoutesWidget(QWidget * parent = 0);
+    explicit IpV6RoutesWidget(QWidget * parent = 0);
     virtual ~IpV6RoutesWidget();
 
     void setRoutes(const QList<NetworkManager::IpRoute> &list);

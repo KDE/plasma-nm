@@ -35,7 +35,7 @@ class ConnectionWidget : public QWidget
 Q_OBJECT
 
 public:
-    ConnectionWidget(const NetworkManager::Settings::ConnectionSettings::Ptr &settings = NetworkManager::Settings::ConnectionSettings::Ptr(),
+    explicit ConnectionWidget(const NetworkManager::Settings::ConnectionSettings::Ptr &settings = NetworkManager::Settings::ConnectionSettings::Ptr(),
                      QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~ConnectionWidget();
 

@@ -38,7 +38,7 @@ class WifiSecurity : public SettingWidget
 {
     Q_OBJECT
 public:
-    WifiSecurity(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(),
+    explicit WifiSecurity(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(),
                  const NetworkManager::Settings::Security8021xSetting::Ptr &setting8021x = NetworkManager::Settings::Security8021xSetting::Ptr(),
                  QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~WifiSecurity();

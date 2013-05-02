@@ -31,7 +31,7 @@ class IntDelegate : public Delegate
 {
     Q_OBJECT
 public:
-    IntDelegate(QObject * parent = 0);
+    explicit IntDelegate(QObject * parent = 0);
     IntDelegate(int min, int max, QObject * parent = 0);
     virtual ~IntDelegate();
 

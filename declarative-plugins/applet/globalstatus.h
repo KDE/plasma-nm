@@ -30,7 +30,7 @@ class GlobalStatus : public QObject
 {
 Q_OBJECT
 public:
-    GlobalStatus(QObject* parent = 0);
+    explicit GlobalStatus(QObject* parent = 0);
     virtual ~GlobalStatus();
 
 public Q_SLOTS:

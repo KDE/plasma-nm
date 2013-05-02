@@ -39,7 +39,7 @@ public:
         SaveSecrets,
         DeleteSecrets
     };
-    SecretsRequest(Type _type) :
+    explicit SecretsRequest(Type _type) :
         type(_type),
         flags(NetworkManager::SecretAgent::None),
         saveSecretsWithoutReply(false),

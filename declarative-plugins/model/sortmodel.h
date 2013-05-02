@@ -34,7 +34,7 @@ public:
 
     static SortedConnectionType connectionTypeToSortedType(NetworkManager::Settings::ConnectionSettings::ConnectionType type);
 
-    SortModel(QObject* parent = 0);
+    explicit SortModel(QObject* parent = 0);
     virtual ~SortModel();
 
     bool lessThan(const QModelIndex & left, const QModelIndex & right) const;

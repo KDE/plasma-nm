@@ -91,8 +91,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     m_menu->addAction(action);
     action = new QAction(i18n("Bridge"), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Bridge);
-    // TODO: disabled for now
-    action->setDisabled(true);
     m_menu->addAction(action);
     action = new QAction(i18n("VLAN"), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Vlan);

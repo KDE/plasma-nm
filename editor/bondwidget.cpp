@@ -27,6 +27,7 @@
 #include <NetworkManagerQt/generic-types.h>
 #include <NetworkManagerQt/connection.h>
 #include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/settings/connection.h>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -158,7 +159,7 @@ void BondWidget::addBond(QAction *action)
     qDebug() << "Master UUID:" << m_uuid;
     qDebug() << "Slave type:" << type();
 
-    ConnectionDetailEditor * bondEditor = new ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::typeFromString(action->data().toString()),
+    ConnectionDetailEditor * bondEditor = new ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType(action->data().toInt()),
                                                                      this, QString(), m_uuid, type());
     if (bondEditor->exec() == QDialog::Accepted) {
         qDebug() << "Saving slave connection";

@@ -35,6 +35,7 @@
 #include "btwidget.h"
 #include "infinibandwidget.h"
 #include "bondwidget.h"
+#include "bridgewidget.h"
 #include "vpnuiplugin.h"
 
 #include <QDebug>
@@ -261,6 +262,9 @@ void ConnectionDetailEditor::initTabs()
     } else if (type == NetworkManager::Settings::ConnectionSettings::Bond) { // Bond
         BondWidget * bondWidget = new BondWidget(uuid, m_connection->setting(NetworkManager::Settings::Setting::Bond), this);
         m_ui->tabWidget->addTab(bondWidget, i18n("Bond"));
+    } else if (type == NetworkManager::Settings::ConnectionSettings::Bridge) { // Bridge
+        BridgeWidget * bridgeWidget = new BridgeWidget(uuid, m_connection->setting(NetworkManager::Settings::Setting::Bridge), this);
+        m_ui->tabWidget->addTab(bridgeWidget, i18n("Bridge"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Vpn) { // VPN
         QString error;
         VpnUiPlugin * vpnPlugin = 0;
@@ -304,8 +308,9 @@ void ConnectionDetailEditor::initTabs()
     }
 
     // IPv6 widget
-    if ((type == Settings::ConnectionSettings::Wired || type == Settings::ConnectionSettings::Wireless ||
-            type == Settings::ConnectionSettings::Infiniband || type == Settings::ConnectionSettings::Bond) && !isSlave()) {
+    if ((type == Settings::ConnectionSettings::Wired || type == Settings::ConnectionSettings::Wireless || type == Settings::ConnectionSettings::Infiniband
+         || type == Settings::ConnectionSettings::Bond
+         || type == Settings::ConnectionSettings::Bridge) && !isSlave()) {
         IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Settings::Setting::Ipv6), this);
         m_ui->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
     }

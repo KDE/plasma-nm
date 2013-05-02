@@ -87,15 +87,9 @@ bool ModelWirelessItem::shouldBeRemovedSpecific() const
 void ModelWirelessItem::updateDetails()
 {
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
-
     m_details = "<qt><table>";
-    if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown && m_flags.testFlag(Model::ConnectionType)) {
-        m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
-    }
 
-    m_details += QString(format).arg("\n", "\n");
-
-    //Prepare objects
+    // Initialize objects
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
     NetworkManager::WirelessDevice::Ptr wireless;
     if (device) {
@@ -110,54 +104,61 @@ void ModelWirelessItem::updateDetails()
         ap = network->referenceAccessPoint();
     }
 
-    // Set details
-    if (device) {
-        QString name;
-        if (device->ipInterfaceName().isEmpty()) {
-            name = device->interfaceName();
-        } else {
-            name = device->ipInterfaceName();
-        }
-        if (m_flags.testFlag(Model::DeviceSystemName))
-            m_details += QString(format).arg(i18n("System name:"), name);
-
-        if (device->ipV4Config().isValid() && m_connected && m_flags.testFlag(Model::DeviceIpv4Address)) {
-            QHostAddress addr = device->ipV4Config().addresses().first().ip();
-            m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
-        }
-
-        if (device->ipV6Config().isValid() && m_connected && m_flags.testFlag(Model::DeviceIpv6Address)) {
-            QHostAddress addr = device->ipV6Config().addresses().first().ip();
-            m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
-        }
-
-        if (m_flags.testFlag(Model::DeviceDriver))
-            m_details += QString(format).arg(i18n("Driver:"), device->driver());
-    }
-
-    if (wireless) {
-        if (m_flags.testFlag(Model::DeviceMac))
-            m_details += QString(format).arg(i18n("MAC Address:"), wireless->permanentHardwareAddress());
-
-        if (m_connected && m_flags.testFlag(Model::DeviceSpeed)) {
+    foreach (const QString & key, m_detailKeys) {
+        if (key == "interface:type") {
+            if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
+                m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
+            }
+        } else if (key == "interface:name") {
+            if (device) {
+                QString name;
+                if (device->ipInterfaceName().isEmpty()) {
+                    name = device->interfaceName();
+                } else {
+                    name = device->ipInterfaceName();
+                }
+                m_details += QString(format).arg(i18n("System name:"), name);
+            }
+        } else if (key == "ipv4:address") {
+            if (device && device->ipV4Config().isValid() && m_connected) {
+                QHostAddress addr = device->ipV4Config().addresses().first().ip();
+                m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
+            }
+        } else if (key == "ipv6:address") {
+            if (device && device->ipV6Config().isValid() && m_connected) {
+                QHostAddress addr = device->ipV6Config().addresses().first().ip();
+                m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
+            }
+        } else if (key == "interface:driver") {
+            if (device) {
+                m_details += QString(format).arg(i18n("Driver:"), device->driver());
+            }
+        } else if (key == "interface:bitrate") {
+            if (wireless && m_connected) {
                 m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wireless->bitRate()));
+            }
+        } else if (key == "interface:hardwareaddress") {
+            if (wireless) {
+                m_details += QString(format).arg(i18n("MAC Address:"), wireless->permanentHardwareAddress());
+            }
+        } else if (key == "wireless:signal") {
+            if (network) {
+                m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%", network->signalStrength()));
+            }
+        } else if (key == "wireless:ssid") {
+            if (network) {
+                m_details += QString(format).arg(i18n("Access point (SSID):"), network->ssid());
+            }
+        } else if (key == "wireless:bssid") {
+            if (ap) {
+                m_details += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
+            }
+        } else if (key == "wireless:channel") {
+            if (ap) {
+                m_details += QString(format).arg(i18nc("Wifi AP channel and frequency", "Channel:"), i18n("%1 (%2 MHz)", UiUtils::findChannel(ap->frequency()), ap->frequency()));
+            }
         }
     }
-
-    if (network) {
-        if (m_flags.testFlag(Model::WirelessDeviceSignal))
-            m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%", network->signalStrength()));
-        if (m_flags.testFlag(Model::WirelessDeviceSsid))
-            m_details += QString(format).arg(i18n("Access point (SSID):"), network->ssid());
-    }
-
-    if (ap) {
-        if (m_flags.testFlag(Model::WirelessDeviceBssid))
-            m_details += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
-        if (m_flags.testFlag(Model::WirelessDeviceFrequency))
-            m_details += QString(format).arg(i18nc("Wifi AP channel and frequency", "Channel:"), i18n("%1 (%2 MHz)", UiUtils::findChannel(ap->frequency()), ap->frequency()));
-    }
-    m_details += QString(format).arg("\n", "\n");
 
     m_details += "</table></qt>";
 

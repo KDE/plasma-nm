@@ -113,9 +113,9 @@ QString ModelItem::icon() const
     return "network-wired";
 }
 
-void ModelItem::setDetailFlags(Model::Details flags)
+void ModelItem::setDetailKeys(const QStringList & keys)
 {
-    m_flags = flags;
+    m_detailKeys = keys;
 
     updateDetails();
 }

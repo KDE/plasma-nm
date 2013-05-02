@@ -150,12 +150,12 @@ QVariant Model::data(const QModelIndex& index, int role) const
     return QVariant();
 }
 
-void Model::setDetailFlags(int flags)
+void Model::setDetailKeys(const QStringList & keys)
 {
-    m_flags = Details(flags);
+    m_keys = keys;
 
     foreach (ModelItem * item, m_connections) {
-        item->setDetailFlags(m_flags);
+        item->setDetailKeys(m_keys);
     }
 }
 
@@ -409,7 +409,7 @@ void Model::insertItem(ModelItem* item)
         int index = m_connections.count();
         beginInsertRows(QModelIndex(), index, index);
         m_connections << item;
-        item->setDetailFlags(m_flags);
+        item->setDetailKeys(m_keys);
         endInsertRows();
         connect(item, SIGNAL(itemChanged()), SLOT(onChanged()));
         NMModelDebug() << "Connection " << item->name() << " has been added";

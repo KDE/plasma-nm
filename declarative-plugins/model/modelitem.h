@@ -59,7 +59,7 @@ public:
 
     QString details() const;
 
-    void setDetailFlags(Model::Details flags);
+    void setDetailKeys(const QStringList & keys);
 
     // Objects
 
@@ -90,14 +90,13 @@ protected:
     NetworkManager::ActiveConnection::Ptr m_active;
     NetworkManager::Settings::Connection::Ptr m_connection;
 
-    Model::Details m_flags;
-
     bool m_connected;
     bool m_connecting;
     QString m_connectionPath;
     QString m_devicePath;
     QString m_deviceName;
     QString m_details;
+    QStringList m_detailKeys;
     QString m_name;
     SectionType m_sectionType;
     QString m_uuid;

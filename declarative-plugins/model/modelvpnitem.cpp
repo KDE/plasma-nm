@@ -42,10 +42,9 @@ ModelVpnItem::~ModelVpnItem()
 void ModelVpnItem::updateDetails()
 {
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
-
     m_details = "<qt><table>";
 
-    // Prepare objects
+    // Initialize objects
     NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnection(m_connectionPath);
     NetworkManager::Settings::ConnectionSettings::Ptr connectionSettings;
     NetworkManager::Settings::VpnSetting::Ptr vpnSetting;
@@ -56,16 +55,20 @@ void ModelVpnItem::updateDetails()
         vpnSetting = connectionSettings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
     }
 
-    // Set details
-    if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown && m_flags.testFlag(Model::ConnectionType)) {
-        m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
-    }
-    m_details += QString(format).arg("\n", "\n");
-    if (vpnSetting && m_flags.testFlag(Model::VpnPlugin)) {
-        m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
-    }
-    if (m_vpn && m_flags.testFlag(Model::VpnBanner)) {
-        m_details += QString(format).arg(i18n("Banner:"), m_vpn->banner().simplified());
+    foreach (const QString & key, m_detailKeys) {
+        if (key == "interface:type") {
+            if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
+                m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
+            }
+        } else if (key == "vpn:plugin") {
+            if (vpnSetting) {
+                m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
+            }
+        } else if (key == "vpn:banner") {
+            if (vpnSetting) {
+                m_details += QString(format).arg(i18n("Banner:"), m_vpn->banner().simplified());
+            }
+        }
     }
 
     m_details += "</table></qt>";

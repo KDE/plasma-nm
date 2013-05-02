@@ -65,53 +65,54 @@ void ModelModemItem::setSpecificDevice(const NetworkManager::Device::Ptr & devic
 void ModelModemItem::updateDetails()
 {
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
-
     m_details = "<qt><table>";
 
-    // Prepare objects
-    if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown && m_flags.testFlag(Model::ConnectionType)) {
-        m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
-    }
-    m_details += QString(format).arg("\n", "\n");
-
-    // Prepare objects
+    // Initialize objects
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
 
-    // Set details
-    if (device) {
-        QString name;
-        if (device->ipInterfaceName().isEmpty()) {
-            name = device->interfaceName();
-        } else {
-            name = device->ipInterfaceName();
+    foreach (const QString & key, m_detailKeys) {
+        if (key == "interface:type") {
+            if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
+                m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
+            }
+        } else if (key == "interface:name") {
+            if (device) {
+                QString name;
+                if (device->ipInterfaceName().isEmpty()) {
+                    name = device->interfaceName();
+                } else {
+                    name = device->ipInterfaceName();
+                }
+                m_details += QString(format).arg(i18n("System name:"), name);
+            }
+        } else if (key == "ipv4:address") {
+            if (device && device->ipV4Config().isValid() && m_connected) {
+                QHostAddress addr = device->ipV4Config().addresses().first().ip();
+                m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
+            }
+        } else if (key == "ipv6:address") {
+            if (device && device->ipV6Config().isValid() && m_connected) {
+                QHostAddress addr = device->ipV6Config().addresses().first().ip();
+                m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
+            }
+        } else if (key == "mobile:operator") {
+            if (m_modemNetwork) {
+                m_details += QString(format).arg(i18n("Operator:"), m_modemNetwork->getRegistrationInfo().operatorName);
+            }
+        } else if (key == "mobile:quality") {
+            if (m_modemNetwork) {
+                m_details += QString(format).arg(i18n("Signal quality:"), QString("%1%").arg(m_modemNetwork->getSignalQuality()));
+            }
+        } else if (key == "mobile:technology") {
+            if (m_modemNetwork) {
+                m_details += QString(format).arg(i18n("Access technology:"), QString("%1/%2").arg(UiUtils::convertTypeToString(m_modemNetwork->type()), UiUtils::convertAccessTechnologyToString(m_modemNetwork->getAccessTechnology())));
+            }
+        } else if (key == "mobile:mode") {
+            if (m_modemNetwork) {
+                m_details += QString(format).arg(i18n("Allowed Mode"), UiUtils::convertAllowedModeToString(m_modemNetwork->getAllowedMode()));
+            }
         }
-        if (m_flags.testFlag(Model::DeviceSystemName))
-            m_details += QString(format).arg(i18n("System name:"), name);
-
-        if (device->ipV4Config().isValid() && m_connected && m_flags.testFlag(Model::DeviceIpv4Address)) {
-            QHostAddress addr = device->ipV4Config().addresses().first().ip();
-            m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
-        }
-
-        if (device->ipV6Config().isValid() && m_connected && m_flags.testFlag(Model::DeviceIpv6Address)) {
-            QHostAddress addr = device->ipV6Config().addresses().first().ip();
-            m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
-        }
-
-        m_details += QString(format).arg("\n", "\n");
     }
-
-    if (m_modemNetwork) {
-        if (m_flags.testFlag(Model::ModemOperator))
-            m_details += QString(format).arg(i18n("Operator:"), m_modemNetwork->getRegistrationInfo().operatorName);
-        if (m_flags.testFlag(Model::ModemSignalQuality))
-            m_details += QString(format).arg(i18n("Signal quality:"), QString("%1%").arg(m_modemNetwork->getSignalQuality()));
-        if (m_flags.testFlag(Model::ModemAccessTechnology))
-            m_details += QString(format).arg(i18n("Access technology:"), QString("%1/%2").arg(UiUtils::convertTypeToString(m_modemNetwork->type()), UiUtils::convertAccessTechnologyToString(m_modemNetwork->getAccessTechnology())));
-        if (m_flags.testFlag(Model::ModemAllowedMode))
-            m_details += QString(format).arg(i18n("Allowed Mode"), UiUtils::convertAllowedModeToString(m_modemNetwork->getAllowedMode()));
-    }
-
 
     m_details += "</table></qt>";
 

@@ -216,26 +216,9 @@ Item {
     }
 
     function configChanged() {
-        var flags = 0;
-        flags += plasmoid.readConfig("showConnectionType") == true ? PlasmaNm.Model.ConnectionType : 0;
-        flags += plasmoid.readConfig("showConnectionState") == true ? PlasmaNm.Model.ConnectionState : 0;
-        flags += plasmoid.readConfig("showDeviceSystemName") == true ? PlasmaNm.Model.DeviceSystemName : 0;
-        flags += plasmoid.readConfig("showDeviceIpv4Address") == true ? PlasmaNm.Model.DeviceIpv4Address : 0;
-        flags += plasmoid.readConfig("showDeviceIpv6Address") == true ? PlasmaNm.Model.DeviceIpv6Address : 0;
-        flags += plasmoid.readConfig("showDeviceDriver") == true ? PlasmaNm.Model.DeviceDriver : 0;
-        flags += plasmoid.readConfig("showDeviceMacAddress") == true ? PlasmaNm.Model.DeviceMac : 0;
-        flags += plasmoid.readConfig("showDeviceSpeed") == true ? PlasmaNm.Model.DeviceSpeed : 0;
-        flags += plasmoid.readConfig("showWirelessDeviceSignal") == true ? PlasmaNm.Model.WirelessDeviceSignal : 0;
-        flags += plasmoid.readConfig("showWirelessDeviceSsid") == true ? PlasmaNm.Model.WirelessDeviceSsid : 0;
-        flags += plasmoid.readConfig("showWirelessDeviceBssid") == true ? PlasmaNm.Model.WirelessDeviceBssid : 0;
-        flags += plasmoid.readConfig("showWirelessDeviceFrequency") == true ? PlasmaNm.Model.WirelessDeviceFrequency : 0;
-        flags += plasmoid.readConfig("showModemDeviceOperator") == true ? PlasmaNm.Model.ModemOperator : 0;
-        flags += plasmoid.readConfig("showModemDeviceSignalQuality") == true ? PlasmaNm.Model.ModemSignalQuality : 0;
-        flags += plasmoid.readConfig("showModemDeviceAccessTechnology") == true ? PlasmaNm.Model.ModemAccessTechnology : 0;
-        flags += plasmoid.readConfig("showModemDeviceAllowedMode") == true ? PlasmaNm.Model.ModemAllowedMode : 0;
-        flags += plasmoid.readConfig("showBluetoothName") == true ? PlasmaNm.Model.BluetoothName : 0;
-        flags += plasmoid.readConfig("showVpnBanner") == true ? PlasmaNm.Model.VpnBanner : 0;
-        flags += plasmoid.readConfig("showVpnPlugin") == true ? PlasmaNm.Model.VpnPlugin : 0;
-        connectionModel.setDetailFlags(flags);
+        var keys;
+        keys = plasmoid.readConfig("detailKeys");
+
+        connectionModel.setDetailKeys(keys);
     }
 }

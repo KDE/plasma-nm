@@ -30,7 +30,9 @@
 ConnectionWidget::ConnectionWidget(const NetworkManager::Settings::ConnectionSettings::Ptr &settings, QWidget* parent, Qt::WindowFlags f):
     QWidget(parent, f),
     m_widget(new Ui::ConnectionWidget),
-    m_type(settings->connectionType())
+    m_type(settings->connectionType()),
+    m_masterUuid(settings->master()),
+    m_slaveType(settings->slaveType())
 {
     m_widget->setupUi(this);
 
@@ -90,6 +92,8 @@ NMVariantMapMap ConnectionWidget::setting() const
 
     settings.setConnectionType(m_type);
     settings.setAutoconnect(m_widget->autoconnect->isChecked());
+    settings.setMaster(m_masterUuid);
+    settings.setSlaveType(m_slaveType);
 
     if (m_widget->allUsers->isChecked()) {
         settings.setPermissions(QHash<QString, QString>());

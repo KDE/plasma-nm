@@ -50,11 +50,6 @@ public:
 
     bool isSlave() const { return !m_masterUuid.isEmpty() && !m_slaveType.isEmpty(); }
 
-    QString uuid() const { return m_connection->uuid(); }
-
-signals:
-    void connectionAdded(const QString & id, bool success, const QString & msg);
-
 private Q_SLOTS:
     void connectionAddComplete(const QString & id, bool success, const QString & msg);
     void disconnectSignals();

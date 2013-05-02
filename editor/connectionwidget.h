@@ -52,6 +52,8 @@ private:
     void populateVpnConnections();
     Ui::ConnectionWidget * m_widget;
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
+    QString m_masterUuid;
+    QString m_slaveType;
 };
 
 #endif // PLASMA_NM_CONNECTION_WIDGET_H

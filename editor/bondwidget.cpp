@@ -26,8 +26,10 @@
 
 #include <NetworkManagerQt/generic-types.h>
 #include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/settings.h>
 
 #include <KLocalizedString>
+#include <KMessageBox>
 
 #define NM_SETTING_BOND_OPTION_MII_MONITOR "mii"
 #define NM_SETTING_BOND_OPTION_ARP_MONITOR "arp"
@@ -39,7 +41,7 @@ BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Setting
 {
     m_ui->setupUi(this);
 
-    // Add context menu
+    // Action buttons and menu
     m_menu = new QMenu(this);
     QAction * action = new QAction(i18n("Ethernet"), this);
     action->setData(NetworkManager::Settings::ConnectionSettings::Wired);
@@ -49,6 +51,8 @@ BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Setting
     m_menu->addAction(action);
     m_ui->btnAdd->setMenu(m_menu);
     connect(m_menu, SIGNAL(triggered(QAction*)), SLOT(addBond(QAction*)));
+    connect(m_ui->btnEdit, SIGNAL(clicked()), SLOT(editBond()));
+    connect(m_ui->btnDelete, SIGNAL(clicked()), SLOT(deleteBond()));
 
     // mode
     m_ui->mode->addItem(i18nc("bond mode", "Round-robin"), QLatin1String("balance-rr"));
@@ -63,7 +67,9 @@ BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Setting
     m_ui->linkMonitoring->addItem(i18nc("bond link monitoring", "ARP"), NM_SETTING_BOND_OPTION_ARP_MONITOR);
 
     // bonds
+    populateBonds();
     connect(m_ui->bonds, SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)), SLOT(currentBondChanged(QListWidgetItem*,QListWidgetItem*)));
+    connect(m_ui->bonds, SIGNAL(itemDoubleClicked(QListWidgetItem*)), SLOT(editBond()));
 
     if (setting)
         loadConfig(setting);
@@ -155,7 +161,9 @@ void BondWidget::addBond(QAction *action)
     ConnectionDetailEditor * bondEditor = new ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::typeFromString(action->data().toString()),
                                                                      this, QString(), m_uuid, type());
     if (bondEditor->exec() == QDialog::Accepted) {
-        qDebug() << "Saving slave connection:" << bondEditor->uuid();
+        qDebug() << "Saving slave connection";
+        connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
+                this, SLOT(bondAddComplete(QString,bool,QString)));
     }
 }
 
@@ -165,6 +173,74 @@ void BondWidget::currentBondChanged(QListWidgetItem *current, QListWidgetItem *p
 
     m_ui->btnEdit->setEnabled(current);
     m_ui->btnDelete->setEnabled(current);
+}
 
-    // TODO
+void BondWidget::bondAddComplete(const QString &uuid, bool success, const QString &msg)
+{
+    qDebug() << Q_FUNC_INFO << uuid << success << msg;
+
+    // find the slave connection with matching UUID
+    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(uuid);
+    if (connection && connection->settings()->master() == m_uuid && success) {
+        const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
+        QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->bonds);
+        slaveItem->setData(Qt::UserRole, uuid);
+    } else {
+        qWarning() << "Bonded connection not added:" << msg;
+    }
+
+    disconnect(NetworkManager::Settings::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
+               this, SLOT(bondAddComplete(QString,bool,QString)));
+}
+
+void BondWidget::editBond()
+{
+    QListWidgetItem * currentItem = m_ui->bonds->currentItem();
+    if (!currentItem)
+        return;
+
+    const QString uuid = currentItem->data(Qt::UserRole).toString();
+    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(uuid);
+
+    if (connection) {
+        qDebug() << "Editing bonded connection" << currentItem->text() << uuid;
+        ConnectionDetailEditor * bondEditor = new ConnectionDetailEditor(connection->settings(), this);
+        if (bondEditor->exec() == QDialog::Accepted) {
+            connect(connection.data(), SIGNAL(updated()), this, SLOT(populateBonds()));
+        }
+    }
+}
+
+void BondWidget::deleteBond()
+{
+    QListWidgetItem * currentItem = m_ui->bonds->currentItem();
+    if (!currentItem)
+        return;
+
+    const QString uuid = currentItem->data(Qt::UserRole).toString();
+    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(uuid);
+
+    if (connection) {
+        qDebug() << "About to delete bonded connection" << currentItem->text() << uuid;
+        if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->name()), i18n("Remove Connection"), KStandardGuiItem::remove(),
+                                       KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
+                == KMessageBox::Yes) {
+            connection->remove();
+            delete currentItem;
+        }
+    }
+}
+
+void BondWidget::populateBonds()
+{
+    m_ui->bonds->clear();
+
+    foreach (const NetworkManager::Settings::Connection::Ptr &connection, NetworkManager::Settings::listConnections()) {
+        NetworkManager::Settings::ConnectionSettings::Ptr settings = connection->settings();
+        if (settings->master() == m_uuid && settings->slaveType() == type()) {
+            const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
+            QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->bonds);
+            slaveItem->setData(Qt::UserRole, connection->uuid());
+        }
+    }
 }

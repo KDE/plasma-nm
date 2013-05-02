@@ -38,7 +38,8 @@ class BondWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    BondWidget(const QString & masterUuid, const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    BondWidget(const QString & masterUuid, const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(),
+               QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~BondWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
@@ -48,6 +49,12 @@ public:
 private slots:
     void addBond(QAction * action);
     void currentBondChanged(QListWidgetItem * current, QListWidgetItem * previous);
+    void bondAddComplete(const QString &uuid, bool success, const QString & msg);
+
+    void editBond();
+    void deleteBond();
+
+    void populateBonds();
 
 private:
     QString m_uuid;

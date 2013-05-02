@@ -120,7 +120,9 @@ ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::Settings::C
     m_ui(new Ui::ConnectionDetailEditor),
     m_connection(connection),
     m_numSecrets(0),
-    m_new(false)
+    m_new(false),
+    m_masterUuid(connection->master()),
+    m_slaveType(connection->slaveType())
 {
     setAttribute(Qt::WA_DeleteOnClose);
     m_ui->setupUi(this);
@@ -208,7 +210,7 @@ void ConnectionDetailEditor::initTabs()
     ConnectionWidget * connectionWidget = new ConnectionWidget(m_connection);
     m_ui->tabWidget->addTab(connectionWidget, i18n("General"));
 
-    // create/set UUID
+    // create/set UUID, need this beforehand for slave connections
     QString uuid = m_connection->uuid();
     if (QUuid(uuid).isNull()) {
         uuid = NetworkManager::Settings::ConnectionSettings::createNewUuid();
@@ -218,7 +220,7 @@ void ConnectionDetailEditor::initTabs()
 
     const NetworkManager::Settings::ConnectionSettings::ConnectionType type = m_connection->connectionType();
 
-    /*Adsl, Cdma, Gsm, Infiniband, Pppoe, Vpn, Wired, Wireless, Bluetooth, OlpcMesh, Vlan, Wimax, Bond, Bridge */
+    // setup the widget tabs
     if (type == NetworkManager::Settings::ConnectionSettings::Wired) {
         WiredConnectionWidget * wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Settings::Setting::Wired), this);
         m_ui->tabWidget->addTab(wiredWidget, i18n("Wired"));
@@ -320,7 +322,6 @@ void ConnectionDetailEditor::saveSetting()
         agentOwned = true;
     }
 
-    qDebug() << "agent owned - " << agentOwned;
     for (int i = 1; i < m_ui->tabWidget->count(); ++i) {
         SettingWidget * widget = static_cast<SettingWidget*>(m_ui->tabWidget->widget(i));
         const QString type = widget->type();
@@ -392,7 +393,6 @@ void ConnectionDetailEditor::saveSetting()
 void ConnectionDetailEditor::connectionAddComplete(const QString& id, bool success, const QString& msg)
 {
     qDebug() << id << " - " << success << " - " << msg;
-    emit connectionAdded(id, success, msg); // for slave dialogs
 }
 
 void ConnectionDetailEditor::gotSecrets(const QString& id, bool success, const NMVariantMapMap& secrets, const QString& msg)

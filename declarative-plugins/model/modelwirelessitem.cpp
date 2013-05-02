@@ -155,7 +155,7 @@ void ModelWirelessItem::updateDetails()
         if (m_flags.testFlag(Model::WirelessDeviceBssid))
             m_details += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
         if (m_flags.testFlag(Model::WirelessDeviceFrequency))
-            m_details += QString(format).arg(i18nc("Wifi AP channel and frequency", "Channel:"), i18n("%1 (%2 Mhz)", UiUtils::findChannel(ap->frequency()), ap->frequency()));
+            m_details += QString(format).arg(i18nc("Wifi AP channel and frequency", "Channel:"), i18n("%1 (%2 MHz)", UiUtils::findChannel(ap->frequency()), ap->frequency()));
     }
     m_details += QString(format).arg("\n", "\n");
 

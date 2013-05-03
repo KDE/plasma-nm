@@ -60,6 +60,14 @@ void ModelVpnItem::updateDetails()
             if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
                 m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
             }
+        } else if (key == "interface:status") {
+            QString status = i18n("Disconnected");
+            if (m_connecting) {
+                status = i18n("Connecting");
+            } else if (m_connected) {
+                status = i18n("Connected");
+            }
+            m_details += QString(format).arg(i18n("Status"), status);
         } else if (key == "vpn:plugin") {
             if (vpnSetting) {
                 m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));

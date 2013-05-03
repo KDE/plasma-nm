@@ -22,6 +22,7 @@
 #include "modelmodemitem.h"
 #include "uiutils.h"
 
+#include <ModemManagerQt/modemgsmcardinterface.h>
 #include <NetworkManagerQt/modemdevice.h>
 #include <NetworkManagerQt/manager.h>
 
@@ -69,12 +70,24 @@ void ModelModemItem::updateDetails()
 
     // Initialize objects
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
+    NetworkManager::ModemDevice::Ptr modemDevice;
+    if (device) {
+        modemDevice = device.objectCast<NetworkManager::ModemDevice>();
+    }
 
     foreach (const QString & key, m_detailKeys) {
         if (key == "interface:type") {
             if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
                 m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
             }
+        } else if (key == "interface:status") {
+            QString status = i18n("Disconnected");
+            if (m_connecting) {
+                status = i18n("Connecting");
+            } else if (m_connected) {
+                status = i18n("Connected");
+            }
+            m_details += QString(format).arg(i18n("Status"), status);
         } else if (key == "interface:name") {
             if (device) {
                 QString name;
@@ -90,10 +103,20 @@ void ModelModemItem::updateDetails()
                 QHostAddress addr = device->ipV4Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
             }
+        } else if (key == "ipv4:gateway") {
+            if (device && device->ipV4Config().isValid() && m_connected) {
+                QHostAddress addr = device->ipV4Config().addresses().first().gateway();
+                m_details += QString(format).arg(i18n("IPv4 Gateway:"), addr.toString());
+            }
         } else if (key == "ipv6:address") {
             if (device && device->ipV6Config().isValid() && m_connected) {
                 QHostAddress addr = device->ipV6Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
+            }
+        } else if (key == "ipv6:gateway") {
+            if (device && device->ipV6Config().isValid() && m_connected) {
+                QHostAddress addr = device->ipV6Config().addresses().first().gateway();
+                m_details += QString(format).arg(i18n("IPv6 Gateway:"), addr.toString());
             }
         } else if (key == "mobile:operator") {
             if (m_modemNetwork) {
@@ -110,6 +133,30 @@ void ModelModemItem::updateDetails()
         } else if (key == "mobile:mode") {
             if (m_modemNetwork) {
                 m_details += QString(format).arg(i18n("Allowed Mode"), UiUtils::convertAllowedModeToString(m_modemNetwork->getAllowedMode()));
+            }
+        } else if (key == "mobile:band") {
+            if (m_modemNetwork) {
+                m_details += QString(format).arg(i18n("Frequency Band:"), UiUtils::convertBandToString(m_modemNetwork->getBand()));
+            }
+        } else if (key == "mobile:unlock") {
+            if (m_modemNetwork) {
+                m_details += QString(format).arg(i18n("Unlock Required:"), m_modemNetwork->unlockRequired());
+            }
+        } else if (key == "mobile:imei") {
+            if (modemDevice) {
+                ModemManager::ModemGsmCardInterface::Ptr modemCard;
+                modemCard = modemDevice->getModemCardIface();
+                if (modemCard) {
+                    m_detailKeys += QString(format).arg(i18n("IMEI:"), modemCard->getImei());
+                }
+            }
+        } else if (key == "mobile:imsi") {
+            if (modemDevice) {
+                ModemManager::ModemGsmCardInterface::Ptr modemCard;
+                modemCard = modemDevice->getModemCardIface();
+                if (modemCard) {
+                    m_detailKeys += QString(format).arg(i18n("IMSI:"), modemCard->getImsi());
+                }
             }
         }
     }

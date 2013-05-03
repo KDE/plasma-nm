@@ -56,6 +56,14 @@ void ModelBtItem::updateDetails()
             if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
                 m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
             }
+        } else if (key == "interface:status") {
+            QString status = i18n("Disconnected");
+            if (m_connecting) {
+                status = i18n("Connecting");
+            } else if (m_connected) {
+                status = i18n("Connected");
+            }
+            m_details += QString(format).arg(i18n("Status"), status);
         } else if (key == "interface:name") {
             if (device) {
                 QString name = device->ipInterfaceName();
@@ -68,10 +76,20 @@ void ModelBtItem::updateDetails()
                 QHostAddress addr = device->ipV4Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
             }
+        } else if (key == "ipv4:gateway") {
+            if (device && device->ipV4Config().isValid() && m_connected) {
+                QHostAddress addr = device->ipV4Config().addresses().first().gateway();
+                m_details += QString(format).arg(i18n("IPv4 Gateway:"), addr.toString());
+            }
         } else if (key == "ipv6:address") {
             if (device && device->ipV6Config().isValid() && m_connected) {
                 QHostAddress addr = device->ipV6Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
+            }
+        } else if (key == "ipv6:gateway") {
+            if (device && device->ipV4Config().isValid() && m_connected) {
+                QHostAddress addr = device->ipV6Config().addresses().first().gateway();
+                m_details += QString(format).arg(i18n("IPv6 Gateway:"), addr.toString());
             }
         } else if (key == "bluetooth:name") {
             if (bt) {

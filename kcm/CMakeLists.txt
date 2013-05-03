@@ -1,5 +1,6 @@
 set(kcm_network_SRCS
     AvailableConnectionsModel.cpp
+    AvailableConnectionsSortModel.cpp
     AvailableConnectionsDelegate.cpp
     DeviceConnectionModel.cpp
     DeviceConnectionDelegate.cpp

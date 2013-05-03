@@ -21,6 +21,7 @@
 #include "ui_Description.h"
 
 #include "AvailableConnectionsModel.h"
+#include "AvailableConnectionsSortModel.h"
 #include "AvailableConnectionsDelegate.h"
 
 #include <uiutils.h>
@@ -56,7 +57,9 @@ Description::Description(QWidget *parent) :
     ui->connectionCB->setMaxVisibleItems(20);
     ui->connectionCB->setItemDelegate(new AvailableConnectionsDelegate(this));
     m_availableConnectionsModel = new AvailableConnectionsModel(this);
-    ui->connectionCB->setModel(m_availableConnectionsModel);
+    m_availableConnectionsSortModel = new AvailableConnectionsSortModel(this);
+    m_availableConnectionsSortModel->setSourceModel(m_availableConnectionsModel);
+    ui->connectionCB->setModel(m_availableConnectionsSortModel);
 }
 
 Description::~Description()
@@ -162,7 +165,8 @@ void Description::on_connectionCB_activated(int index)
 {
     kDebug();
     if (m_device) {
-        QStandardItem *stdItem = m_availableConnectionsModel->item(index);
+        QModelIndex modelIndex = m_availableConnectionsSortModel->mapToSource(m_availableConnectionsSortModel->index(index, 0));
+        QStandardItem *stdItem = m_availableConnectionsModel->item(modelIndex.row());
         if (stdItem) {
             QString newConnectionPath = stdItem->data(AvailableConnectionsModel::RoleConectionPath).toString();
             QString oldConnectionPath;

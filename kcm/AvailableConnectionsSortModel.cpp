@@ -1,5 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2013 by Daniel Nicoletti <dantti12@gmail.com>           *
+ *   Copyright (C) 2013 by Daniel Nicoletti                                *
+ *   dantti12@gmail.com                                                    *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -16,20 +17,29 @@
  *   the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,  *
  *   Boston, MA 02110-1301, USA.                                           *
  ***************************************************************************/
+#include "AvailableConnectionsSortModel.h"
 
-#ifndef AVAILABLE_CONNECTIONS_DELEGATE_H
-#define AVAILABLE_CONNECTIONS_DELEGATE_H
+#include "AvailableConnectionsModel.h"
 
-#include <QStyledItemDelegate>
+#include <KDebug>
 
-class AvailableConnectionsDelegate : public QStyledItemDelegate
+AvailableConnectionsSortModel::AvailableConnectionsSortModel(QObject *parent) :
+    QSortFilterProxyModel(parent)
 {
-    Q_OBJECT
-public:
-    explicit AvailableConnectionsDelegate(QObject *parent = 0);
+    setDynamicSortFilter(true);
+    setSortCaseSensitivity(Qt::CaseInsensitive);
+    sort(0);
+}
 
-    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const;
-    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const;
-};
+bool AvailableConnectionsSortModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+{
+    uint leftKind = left.data(AvailableConnectionsModel::RoleKind).toUInt();
+    uint rightKind = right.data(AvailableConnectionsModel::RoleKind).toUInt();
 
-#endif // AVAILABLE_CONNECTIONS_DELEGATE_H
+    if (leftKind != rightKind) {
+        // If the right item does not have a connection the left should move right
+        return !(rightKind & AvailableConnectionsModel::Connection);
+    }
+
+    return QSortFilterProxyModel::lessThan(left, right);
+}

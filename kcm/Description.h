@@ -30,6 +30,7 @@ namespace Ui {
     class Description;
 }
 class AvailableConnectionsModel;
+class AvailableConnectionsSortModel;
 class Description : public QWidget
 {
     Q_OBJECT
@@ -52,6 +53,7 @@ private:
     Ui::Description *ui;
     NetworkManager::Device::Ptr m_device;
     AvailableConnectionsModel *m_availableConnectionsModel;
+    AvailableConnectionsSortModel *m_availableConnectionsSortModel;
 };
 
 #endif // DESCRIPTION_H

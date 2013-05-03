@@ -187,7 +187,11 @@ void DeviceConnectionModel::connectionRemoved(const QString &path)
 {
     QStandardItem *stdItem = findConnectionItem(path);
     if (stdItem) {
-        removeRow(stdItem->row());
+        QStandardItem *stdParentItem = stdItem->parent();
+        removeRow(stdItem->row(), stdParentItem->index());
+        if (stdParentItem->rowCount() == 0) {
+            removeRow(stdParentItem->row(), stdParentItem->parent()->index());
+        }
     }
 }
 
@@ -259,10 +263,20 @@ QStandardItem *DeviceConnectionModel::findDeviceItem(const QString &uni)
 QStandardItem *DeviceConnectionModel::findConnectionItem(const QString &path)
 {
     for (int i = 0; i < rowCount(); ++i) {
-        QStandardItem *stdItem = item(i);
-        if (stdItem->data(RoleIsConnection).toBool() == true &&
-                stdItem->data(RoleConectionPath).toString() == path) {
-            return stdItem;
+        QStandardItem *stdRootItem = item(i);
+
+        if (stdRootItem->data(RoleIsConnectionParent).toBool()) {
+            for (int i = 0; i < stdRootItem->rowCount(); ++i) {
+                QStandardItem *stdParentItem = stdRootItem->child(i);
+
+                for (int i = 0; i < stdParentItem->rowCount(); ++i) {
+                    QStandardItem *stdItem = stdParentItem->child(i);
+                    if (stdItem->data(RoleConectionPath).toString() == path) {
+                        return stdItem;
+                    }
+                }
+            }
+            break;
         }
     }
 

@@ -53,10 +53,10 @@ private slots:
     void on_tabWidget_currentChanged(int index);
     void setNetworkingEnabled(bool enabled);
     void on_networkingPB_clicked();
+    void on_removeConnectionBt_clicked();
 
 private:
     QModelIndex currentIndex() const;
-    QString profilesPath() const;
 
     Ui::NetworkKCM *ui;
     DeviceConnectionSortFilterModel *m_deviceConnectionSortModel;

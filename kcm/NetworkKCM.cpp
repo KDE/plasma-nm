@@ -28,6 +28,8 @@
 #include "DeviceConnectionDelegate.h"
 #include "Description.h"
 
+#include <NetworkManagerQt/settings.h>
+
 #include <KMessageBox>
 #include <KGenericFactory>
 #include <KAboutData>
@@ -71,7 +73,7 @@ NetworkKCM::NetworkKCM(QWidget *parent, const QVariantList &args) :
     ui->infoWidget->setPixmap(KTitleWidget::InfoMessage);
 
     ui->addProfileBt->setIcon(KIcon("list-add"));
-    ui->removeProfileBt->setIcon(KIcon("list-remove"));
+    ui->removeConnectionBt->setIcon(KIcon("list-remove"));
     ui->advancedTB->setIcon(KIcon("applications-engineering"));
 
     DeviceConnectionDelegate *delegate = new DeviceConnectionDelegate(this);
@@ -143,6 +145,7 @@ void NetworkKCM::showDescription()
         ui->stackedWidget->setCurrentWidget(ui->profile_page);
     }
 
+    ui->removeConnectionBt->setEnabled(index.data(DeviceConnectionModel::RoleIsConnection).toBool());
     ui->profile->setDevice(index.data(DeviceConnectionModel::RoleDeviceUNI).toString());
 }
 
@@ -187,6 +190,29 @@ void NetworkKCM::on_networkingPB_clicked()
     NetworkManager::setNetworkingEnabled(!NetworkManager::isNetworkingEnabled());
 }
 
+void NetworkKCM::on_removeConnectionBt_clicked()
+{
+    QModelIndex index = currentIndex();
+    if (!index.data(DeviceConnectionModel::RoleIsConnection).toBool()) {
+        return;
+    }
+
+    QString uni = index.data(DeviceConnectionModel::RoleConectionPath).toString();
+    NetworkManager::Settings::Connection::Ptr connection;
+    connection = NetworkManager::Settings::findConnection(uni);
+    if (!connection) {
+        return;
+    }
+
+    int ret;
+    ret = KMessageBox::questionYesNo(this,
+                                     i18n("Are you sure you want to remove the connection: %1?", connection->name()),
+                                     i18n("Remove Connection"));
+    if (ret == KMessageBox::Yes && connection) {
+        connection->remove();
+    }
+}
+
 QModelIndex NetworkKCM::currentIndex() const
 {
     QModelIndex ret;
@@ -210,14 +236,10 @@ QModelIndex NetworkKCM::currentIndex() const
     // select the first index if the selection is not empty
     if (!selection.indexes().isEmpty()) {
         ret = selection.indexes().first();
+    } else {
+        ret = m_deviceConnectionSortModel->index(0, 0);
+        view->selectionModel()->select(ret, QItemSelectionModel::Select);
     }
 
     return ret;
-}
-
-QString NetworkKCM::profilesPath() const
-{
-    KUser user;
-    // ~/.local/share/icc/
-    return user.homeDir() % QLatin1String("/.local/share/icc/");
 }

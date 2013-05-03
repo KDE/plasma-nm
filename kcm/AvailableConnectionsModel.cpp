@@ -50,23 +50,25 @@ void AvailableConnectionsModel::setDevice(const NetworkManager::Device::Ptr &dev
     if (device->type() == NetworkManager::Device::Wifi) {
         NetworkManager::WirelessDevice::Ptr wifi = device.dynamicCast<NetworkManager::WirelessDevice>();
         wifi->requestScan();
-        connect(device.data(), SIGNAL(availableConnectionChanged()),
-                this, SLOT(availableConnectionChanged()));
+        connect(device.data(), SIGNAL(availableConnectionChanged()), SLOT(availableConnectionChanged()));
         foreach (const Settings::Connection::Ptr &connection, device->availableConnections()) {
             addConnection(connection);
         }
 
+        connect(wifi.data(), SIGNAL(networkAppeared(QString)), SLOT(networkAppeared(QString)));
+        connect(wifi.data(), SIGNAL(networkDisappeared(QString)), SLOT(networkDisappeared(QString)));
         foreach (const NetworkManager::WirelessNetwork::Ptr &network, wifi->networks()) {
             addNetwork(network);
         }
     } else if (device->type() == NetworkManager::Device::Wimax) {
         NetworkManager::WimaxDevice::Ptr wiMax = device.dynamicCast<NetworkManager::WimaxDevice>();
-        connect(device.data(), SIGNAL(availableConnectionChanged()),
-                this, SLOT(availableConnectionChanged()));
+        connect(device.data(), SIGNAL(availableConnectionChanged()), SLOT(availableConnectionChanged()));
         foreach (const Settings::Connection::Ptr &connection, device->availableConnections()) {
             addConnection(connection);
         }
 
+        connect(wiMax.data(), SIGNAL(nspAppeared(QString)), SLOT(nspAppeared(QString)));
+        connect(wiMax.data(), SIGNAL(nspDisappeared(QString)), SLOT(nspDisappeared(QString)));
         foreach (const QString &nsp, wiMax->nsps()) {
             NetworkManager::WimaxNsp::Ptr nspPtr = wiMax->findNsp(nsp);
             if (nspPtr) {
@@ -74,8 +76,7 @@ void AvailableConnectionsModel::setDevice(const NetworkManager::Device::Ptr &dev
             }
         }
     } else {
-        connect(device.data(), SIGNAL(availableConnectionChanged()),
-                this, SLOT(availableConnectionChanged()));
+        connect(device.data(), SIGNAL(availableConnectionChanged()), SLOT(availableConnectionChanged()));
         foreach (const Settings::Connection::Ptr &connection, device->availableConnections()) {
             addConnection(connection);
         }
@@ -127,22 +128,6 @@ void AvailableConnectionsModel::connectionAdded(const QString &path)
     }
 }
 
-void AvailableConnectionsModel::connectionChanged()
-{
-    Settings::Connection *caller = qobject_cast<Settings::Connection*>(sender());
-    if (caller) {
-        Settings::Connection::Ptr connection = Settings::findConnection(caller->path());
-        if (connection) {
-            QStandardItem *stdItem = findConnectionItem(connection->path());
-            if (!stdItem) {
-                kWarning() << "Connection not found" << connection->path();
-                return;
-            }
-            changeConnection(stdItem, connection);
-        }
-    }
-}
-
 void AvailableConnectionsModel::connectionRemoved(const QString &path)
 {
     QStandardItem *stdItem = findConnectionItem(path);
@@ -157,9 +142,6 @@ void AvailableConnectionsModel::addConnection(const NetworkManager::Settings::Co
     if (stdItem) {
         return;
     }
-
-    connect(connection.data(), SIGNAL(updated()),
-            this, SLOT(connectionChanged()));
 
     stdItem = new QStandardItem;
     stdItem->setData(Connection, RoleKind);
@@ -178,21 +160,27 @@ void AvailableConnectionsModel::addConnection(const NetworkManager::Settings::Co
     appendRow(stdItem);
 }
 
-void AvailableConnectionsModel::changeConnection(QStandardItem *stdItem, const NetworkManager::Settings::Connection::Ptr &connection)
+void AvailableConnectionsModel::networkAppeared(const QString &ssid)
 {
-    kDebug() << connection->uuid() << connection->path() << connection->name();/*
-    if (connection->active()) {
-        stdItem->setIcon(KIcon("network-connect"));
-    } else {
-        stdItem->setIcon(KIcon("network-disconnect"));
-    }*/
+    NetworkManager::WirelessDevice::Ptr wifi = m_device.dynamicCast<NetworkManager::WirelessDevice>();
+    if (wifi) {
+        WirelessNetwork::Ptr network = wifi->findNetwork(ssid);
+        addNetwork(network);
+    }
+}
 
-//    stdItem->setText(connection->name());
+void AvailableConnectionsModel::networkDisappeared(const QString &ssid)
+{
+    QStandardItem *stdItem = findNetworkItem(ssid);
+    if (stdItem) {
+        removeRow(stdItem->row());
+    }
 }
 
 void AvailableConnectionsModel::addNetwork(const WirelessNetwork::Ptr &network)
 {
     QStandardItem *stdItem = findNetworkItem(network->ssid());
+    connect(network.data(), SIGNAL(signalStrengthChanged(int)), SLOT(signalStrengthChanged(int)), Qt::UniqueConnection);
     if (!stdItem) {
         stdItem = new QStandardItem;
         stdItem->setData(network->ssid(), RoleNetworkID);
@@ -207,25 +195,63 @@ void AvailableConnectionsModel::addNetwork(const WirelessNetwork::Ptr &network)
     stdItem->setData(network->signalStrength(), RoleSignalStrength);
 }
 
+void AvailableConnectionsModel::signalStrengthChanged(int strength)
+{
+    WirelessNetwork *network = qobject_cast<WirelessNetwork*>(sender());
+    QStandardItem *stdItem = findNetworkItem(network->ssid());
+    if (stdItem) {
+        stdItem->setData(strength, RoleSignalStrength);
+    }
+}
+
+void AvailableConnectionsModel::nspAppeared(const QString &uni)
+{
+    NetworkManager::WimaxDevice::Ptr wimax = m_device.dynamicCast<NetworkManager::WimaxDevice>();
+    if (wimax) {
+        WimaxNsp::Ptr nsp = wimax->findNsp(uni);
+        addNspNetwork(nsp);
+    }
+}
+
+void AvailableConnectionsModel::nspDisappeared(const QString &name)
+{
+    QStandardItem *stdItem = findNetworkItem(name);
+    if (stdItem) {
+        removeRow(stdItem->row());
+    }
+}
+
 void AvailableConnectionsModel::addNspNetwork(const WimaxNsp::Ptr &nsp)
 {
     QStandardItem *stdItem = findNetworkItem(nsp->name());
+    connect(nsp.data(), SIGNAL(signalQualityChanged(uint)), SLOT(signalQualityChanged(int)), Qt::UniqueConnection);
     if (!stdItem) {
         stdItem = new QStandardItem;
         stdItem->setData(nsp->name(), RoleNetworkID);
         stdItem->setData(Network, RoleKind);
         stdItem->setText(nsp->name());
         appendRow(stdItem);
+    } else {
+        stdItem->setData(Network | Connection, RoleKind);
     }
     stdItem->setData(true, RoleSecurity);
     stdItem->setData(nsp->signalQuality(), RoleSignalStrength);
+}
+
+void AvailableConnectionsModel::signalQualityChanged(uint quality)
+{
+    WimaxNsp *nsp = qobject_cast<WimaxNsp*>(sender());
+    QStandardItem *stdItem = findNetworkItem(nsp->name());
+    if (stdItem) {
+        stdItem->setData(quality, RoleSignalStrength);
+    }
 }
 
 QStandardItem *AvailableConnectionsModel::findConnectionItem(const QString &path)
 {
     for (int i = 0; i < rowCount(); ++i) {
         QStandardItem *stdItem = item(i);
-        if (stdItem->data(RoleKind).toUInt() == Connection &&
+        if (stdItem->data(RoleKind).toUInt() & Connection &&
                 stdItem->data(RoleConectionPath).toString() == path) {
             return stdItem;
         }
@@ -234,23 +260,11 @@ QStandardItem *AvailableConnectionsModel::findConnectionItem(const QString &path
     return 0;
 }
 
-QStandardItem *AvailableConnectionsModel::findNetworkItem(const QString &ssid)
+QStandardItem *AvailableConnectionsModel::findNetworkItem(const QString &id)
 {
     for (int i = 0; i < rowCount(); ++i) {
         QStandardItem *stdItem = item(i);
-        if (stdItem->data(RoleNetworkID).toString() == ssid) {
-            return stdItem;
-        }
-    }
-
-    return 0;
-}
-
-QStandardItem *AvailableConnectionsModel::findNspNetworkItem(const QString &name)
-{
-    for (int i = 0; i < rowCount(); ++i) {
-        QStandardItem *stdItem = item(i);
-        if (stdItem->data(RoleNetworkID).toString() == name) {
+        if (stdItem->data(RoleNetworkID).toString() == id) {
             return stdItem;
         }
     }

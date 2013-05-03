@@ -52,17 +52,20 @@ public:
 private slots:
     void availableConnectionChanged();
     void connectionAdded(const QString &path);
-    void connectionChanged();
     void connectionRemoved(const QString &path);
     void addConnection(const NetworkManager::Settings::Connection::Ptr &connection);
-    void changeConnection(QStandardItem *stdItem, const NetworkManager::Settings::Connection::Ptr &connection);
+    void networkAppeared(const QString &ssid);
+    void networkDisappeared(const QString &ssid);
     void addNetwork(const NetworkManager::WirelessNetwork::Ptr &network);
+    void signalStrengthChanged(int strength);
+    void nspAppeared(const QString &uni);
+    void nspDisappeared(const QString &name);
     void addNspNetwork(const NetworkManager::WimaxNsp::Ptr &nsp);
+    void signalQualityChanged(uint quality);
 
 private:
     QStandardItem *findConnectionItem(const QString &path);
-    QStandardItem *findNetworkItem(const QString &ssid);
-    QStandardItem *findNspNetworkItem(const QString &name);
+    QStandardItem *findNetworkItem(const QString &id);
 
     NetworkManager::Device::Ptr m_device;
 };

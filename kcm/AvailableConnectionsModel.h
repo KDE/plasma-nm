@@ -33,7 +33,7 @@ class AvailableConnectionsModel : public QStandardItemModel
 public:
     enum ConnectionRoles {
         RoleConectionPath = Qt::UserRole + 1,
-        RoleKind,
+        RoleKinds,
         RoleNetworkID,
         RoleMacAddress,
         RoleSignalStrength,
@@ -41,8 +41,10 @@ public:
     };
 
     enum Kind {
-        Connection = 1 << 0,
-        Network    = 1 << 1
+        Connection      = 1 << 0,
+        Network         = 1 << 1,
+        NetworkWireless = 1 << 2,
+        NetworkNsp      = 1 << 3
     };
     Q_DECLARE_FLAGS(Kinds, Kind)
 

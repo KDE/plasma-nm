@@ -39,6 +39,8 @@
 
 #include <NetworkManagerQt/manager.h>
 #include <NetworkManagerQt/ipconfig.h>
+#include <NetworkManagerQt/settings/802-11-wireless.h>
+#include <NetworkManagerQt/settings/wimax.h>
 #include <NetworkManagerQt/settings/connection.h>
 #include <NetworkManagerQt/settings.h>
 #include <NetworkManagerQt/activeconnection.h>
@@ -169,19 +171,54 @@ void Description::on_disconnectPB_clicked()
 void Description::on_connectionCB_activated(int index)
 {
     kDebug();
-    if (m_device) {
-        QModelIndex modelIndex = m_availableConnectionsSortModel->mapToSource(m_availableConnectionsSortModel->index(index, 0));
-        QStandardItem *stdItem = m_availableConnectionsModel->item(modelIndex.row());
-        if (stdItem) {
-            QString newConnectionPath = stdItem->data(AvailableConnectionsModel::RoleConectionPath).toString();
-            QString oldConnectionPath;
-            if (m_device->activeConnection()) {
-                oldConnectionPath = m_device->activeConnection()->connection()->path();
-            }
+    QModelIndex modelIndex = m_availableConnectionsSortModel->mapToSource(m_availableConnectionsSortModel->index(index, 0));
+    if (m_device.isNull() || !modelIndex.isValid()) {
+        return;
+    }
 
-            if (newConnectionPath != oldConnectionPath) {
-                NetworkManager::activateConnection(newConnectionPath, m_device->uni(), QString());
-            }
+    QString newConnectionPath = modelIndex.data(AvailableConnectionsModel::RoleConectionPath).toString();
+    if (newConnectionPath.isEmpty()) {
+        uint kind = modelIndex.data(AvailableConnectionsModel::RoleKinds).toUInt();
+        if (kind & AvailableConnectionsModel::NetworkWireless) {
+            QByteArray ssid = modelIndex.data(AvailableConnectionsModel::RoleNetworkID).toByteArray();
+            QString name = modelIndex.data().toString();
+
+            NetworkManager::Settings::ConnectionSettings *settings;
+            settings = new NetworkManager::Settings::ConnectionSettings(NetworkManager::Settings::ConnectionSettings::Wireless);
+            settings->setId(name);
+            settings->setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
+
+            NetworkManager::Settings::WirelessSetting::Ptr wifiSetting;
+            wifiSetting = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
+            wifiSetting->setSsid(ssid);
+
+            NetworkManager::addAndActivateConnection(settings->toMap(),
+                                                     m_device->uni(),
+                                                     QString());
+        } else if (kind & AvailableConnectionsModel::NetworkNsp) {
+            QString name = modelIndex.data(AvailableConnectionsModel::RoleNetworkID).toString();
+
+            NetworkManager::Settings::ConnectionSettings *settings;
+            settings = new NetworkManager::Settings::ConnectionSettings(NetworkManager::Settings::ConnectionSettings::Wimax);
+            settings->setId(name);
+            settings->setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
+
+            NetworkManager::Settings::WimaxSetting::Ptr wimaxSetting;
+            wimaxSetting = settings->setting(NetworkManager::Settings::Setting::Wimax).dynamicCast<NetworkManager::Settings::WimaxSetting>();
+            wimaxSetting->setNetworkName(name);
+
+            NetworkManager::addAndActivateConnection(settings->toMap(),
+                                                     m_device->uni(),
+                                                     QString());
+        }
+    } else {
+        QString oldConnectionPath;
+        if (m_device->activeConnection()) {
+            oldConnectionPath = m_device->activeConnection()->connection()->path();
+        }
+
+        if (newConnectionPath != oldConnectionPath) {
+            NetworkManager::activateConnection(newConnectionPath, m_device->uni(), QString());
         }
     }
 }

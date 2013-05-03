@@ -33,8 +33,8 @@ AvailableConnectionsSortModel::AvailableConnectionsSortModel(QObject *parent) :
 
 bool AvailableConnectionsSortModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
-    uint leftKind = left.data(AvailableConnectionsModel::RoleKind).toUInt();
-    uint rightKind = right.data(AvailableConnectionsModel::RoleKind).toUInt();
+    uint leftKind = left.data(AvailableConnectionsModel::RoleKinds).toUInt();
+    uint rightKind = right.data(AvailableConnectionsModel::RoleKinds).toUInt();
 
     if (leftKind != rightKind) {
         // If the right item does not have a connection the left should move right

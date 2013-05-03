@@ -48,7 +48,7 @@ void AvailableConnectionsDelegate::paint(QPainter *painter,
     }
 
     QString name = index.data().toString();
-    uint kind = index.data(AvailableConnectionsModel::RoleKind).toUInt();
+    uint kind = index.data(AvailableConnectionsModel::RoleKinds).toUInt();
     int signal = index.data(AvailableConnectionsModel::RoleSignalStrength).toInt();
     int security = index.data(AvailableConnectionsModel::RoleSecurity).toBool();
 

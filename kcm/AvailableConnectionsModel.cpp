@@ -98,7 +98,7 @@ void AvailableConnectionsModel::availableConnectionChanged()
 
         int i = 0;
         while (i < rowCount()) {
-            Kind kind = static_cast<Kind>(item(i)->data(RoleKind).toUInt());
+            Kinds kind = static_cast<Kind>(item(i)->data(RoleKinds).toUInt());
             if (kind == Connection) {
                 bool found = false;
                 QString path = item(i)->data(RoleConectionPath).toString();
@@ -144,9 +144,8 @@ void AvailableConnectionsModel::addConnection(const NetworkManager::Settings::Co
     }
 
     stdItem = new QStandardItem;
-    stdItem->setData(Connection, RoleKind);
+    stdItem->setData(Connection, RoleKinds);
     stdItem->setData(connection->path(), RoleConectionPath);
-    stdItem->setText(connection->name());
 
     Settings::ConnectionSettings::Ptr settings = connection->settings();
     if (settings->connectionType() == Settings::ConnectionSettings::Wireless) {
@@ -155,6 +154,8 @@ void AvailableConnectionsModel::addConnection(const NetworkManager::Settings::Co
         stdItem->setData(wirelessSetting->ssid(), RoleNetworkID);
         stdItem->setData(wirelessSetting->macAddress(), RoleMacAddress);
         stdItem->setText(wirelessSetting->ssid());
+    } else {
+        stdItem->setText(connection->name());
     }
 
     appendRow(stdItem);
@@ -184,11 +185,11 @@ void AvailableConnectionsModel::addNetwork(const WirelessNetwork::Ptr &network)
     if (!stdItem) {
         stdItem = new QStandardItem;
         stdItem->setData(network->ssid(), RoleNetworkID);
-        stdItem->setData(Network, RoleKind);
+        stdItem->setData(Network | NetworkWireless, RoleKinds);
         stdItem->setText(network->ssid());
         appendRow(stdItem);
     } else {
-        stdItem->setData(Network | Connection, RoleKind);
+        stdItem->setData(Network | Connection, RoleKinds);
     }
     bool isSecure = network->referenceAccessPoint()->capabilities() & AccessPoint::Privacy;
     stdItem->setData(isSecure, RoleSecurity);
@@ -228,11 +229,11 @@ void AvailableConnectionsModel::addNspNetwork(const WimaxNsp::Ptr &nsp)
     if (!stdItem) {
         stdItem = new QStandardItem;
         stdItem->setData(nsp->name(), RoleNetworkID);
-        stdItem->setData(Network, RoleKind);
+        stdItem->setData(Network | NetworkNsp, RoleKinds);
         stdItem->setText(nsp->name());
         appendRow(stdItem);
     } else {
-        stdItem->setData(Network | Connection, RoleKind);
+        stdItem->setData(Network | Connection, RoleKinds);
     }
     stdItem->setData(true, RoleSecurity);
     stdItem->setData(nsp->signalQuality(), RoleSignalStrength);
@@ -251,7 +252,7 @@ QStandardItem *AvailableConnectionsModel::findConnectionItem(const QString &path
 {
     for (int i = 0; i < rowCount(); ++i) {
         QStandardItem *stdItem = item(i);
-        if (stdItem->data(RoleKind).toUInt() & Connection &&
+        if (stdItem->data(RoleKinds).toUInt() & Connection &&
                 stdItem->data(RoleConectionPath).toString() == path) {
             return stdItem;
         }

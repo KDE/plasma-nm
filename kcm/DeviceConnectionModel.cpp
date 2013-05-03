@@ -57,6 +57,16 @@ DeviceConnectionModel::DeviceConnectionModel(QObject *parent) :
             this, SLOT(deviceAdded(QString)));
     connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
             this, SLOT(deviceRemoved(QString)));
+
+    QStandardItem *parentItem = new QStandardItem(i18n("Network devices"));
+    parentItem->setData(true, RoleIsDeviceParent);
+    parentItem->setSelectable(false);
+    parentItem->setEnabled(false);
+    QFont font = parentItem->font();
+    font.setPointSizeF(font.pointSizeF() * 1.5);
+    parentItem->setFont(font);
+    parentItem->setFlags(Qt::NoItemFlags);
+    appendRow(parentItem);
 }
 
 void DeviceConnectionModel::init()
@@ -295,12 +305,14 @@ QStandardItem *DeviceConnectionModel::findOrCreateConnectionType(Settings::Conne
     }
 
     if (!parentItem) {
-        parentItem = new QStandardItem;
+        parentItem = new QStandardItem(i18n("Network connections"));
         parentItem->setData(true, RoleIsConnectionParent);
         parentItem->setSelectable(false);
         parentItem->setEnabled(false);
+        QFont font = parentItem->font();
+        font.setPointSizeF(font.pointSizeF() * 1.5);
+        parentItem->setFont(font);
         parentItem->setFlags(Qt::NoItemFlags);
-        parentItem->setSizeHint(QSize(0, 0));
         appendRow(parentItem);
         emit parentAdded(parentItem->index());
     }
@@ -353,6 +365,7 @@ QStandardItem *DeviceConnectionModel::findOrCreateConnectionType(Settings::Conne
         break;
     case ConnectionSettings::Vpn:
         text = i18n("VPN");
+        icon = KIcon("secure-card");
         break;
     case ConnectionSettings::Wimax:
         text = i18n("WiMAX");
@@ -363,7 +376,7 @@ QStandardItem *DeviceConnectionModel::findOrCreateConnectionType(Settings::Conne
         icon = KIcon("network-wired");
         break;
     case ConnectionSettings::Wireless:
-        text = i18n("Wi-Fi");
+        text = i18n("Wireless");
         icon = KIcon("network-wireless");
         break;
     default:

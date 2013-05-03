@@ -155,7 +155,7 @@ void NetworkKCM::updateSelection()
     QItemSelection selection = view->selectionModel()->selection();
     // Make sure we have an index selected
     if (selection.indexes().isEmpty()) {
-        view->selectionModel()->select(view->model()->index(0, 0),
+        view->selectionModel()->select(view->model()->index(1, 0),
                                        QItemSelectionModel::SelectCurrent);
     }
 }

@@ -58,21 +58,27 @@ void DeviceConnectionSortFilterModel::setShowInactiveConnections(bool show)
 
 bool DeviceConnectionSortFilterModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
+    bool leftIsDeviceParent = left.data(DeviceConnectionModel::RoleIsDeviceParent).toBool();
+    bool rightIsDeviceParent = right.data(DeviceConnectionModel::RoleIsDeviceParent).toBool();
+    if (leftIsDeviceParent != rightIsDeviceParent) {
+        // If the left item is a device parent the left should move right
+        return leftIsDeviceParent;
+    }
+
     bool leftIsDevice = left.data(DeviceConnectionModel::RoleIsDevice).toBool();
     bool rightIsDevice = right.data(DeviceConnectionModel::RoleIsDevice).toBool();
-
     if (leftIsDevice != rightIsDevice) {
-        // If the left item is a device the right should move left
+        // If the left item is a device the left should move right
         return leftIsDevice;
-    } else {
-        bool leftIsConnection = left.data(DeviceConnectionModel::RoleIsConnection).toBool();
-        if (leftIsConnection) {
-            bool leftIsConnectionActive = left.data(DeviceConnectionModel::RoleConnectionActive).toBool();
-            bool rightIsConnectionActive = right.data(DeviceConnectionModel::RoleConnectionActive).toBool();
-            if (leftIsConnectionActive != rightIsConnectionActive) {
-                // If the left item is a active connection the right should move left
-                return leftIsConnectionActive;
-            }
+    }
+
+    bool leftIsConnection = left.data(DeviceConnectionModel::RoleIsConnection).toBool();
+    if (leftIsConnection) {
+        bool leftIsConnectionActive = left.data(DeviceConnectionModel::RoleConnectionActive).toBool();
+        bool rightIsConnectionActive = right.data(DeviceConnectionModel::RoleConnectionActive).toBool();
+        if (leftIsConnectionActive != rightIsConnectionActive) {
+            // If the left item is a active connection the right should move left
+            return leftIsConnectionActive;
         }
     }
 

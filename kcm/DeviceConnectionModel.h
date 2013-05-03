@@ -36,6 +36,7 @@ class DeviceConnectionModel : public QStandardItemModel
 public:
     enum DeviceRoles {
         RoleIsDevice = Qt::UserRole + 1,
+        RoleIsDeviceParent,
         RoleIsConnection,
         RoleIsConnectionParent,
         RoleIsConnectionCategory,

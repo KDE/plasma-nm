@@ -178,8 +178,9 @@ void Description::on_connectionCB_activated(int index)
 
     QString newConnectionPath = modelIndex.data(AvailableConnectionsModel::RoleConectionPath).toString();
     if (newConnectionPath.isEmpty()) {
+        QString name = modelIndex.data().toString();
+        QDBusPendingReply<QDBusObjectPath, QDBusObjectPath> reply;
         uint kind = modelIndex.data(AvailableConnectionsModel::RoleKinds).toUInt();
-        kDebug() << kind;
         if (kind & AvailableConnectionsModel::NetworkWireless) {
             NetworkManager::WirelessDevice::Ptr wifi = m_device.dynamicCast<NetworkManager::WirelessDevice>();
             if (wifi.isNull()) {
@@ -187,7 +188,6 @@ void Description::on_connectionCB_activated(int index)
             }
 
             QByteArray ssid = modelIndex.data(AvailableConnectionsModel::RoleNetworkID).toByteArray();
-            QString name = modelIndex.data().toString();
             WirelessNetwork::Ptr network = wifi->findNetwork(ssid);
             if (network.isNull()) {
                 return;
@@ -201,17 +201,9 @@ void Description::on_connectionCB_activated(int index)
             wifiSetting = settings.setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
             wifiSetting->setSsid(ssid);
 
-            QDBusPendingReply<QDBusObjectPath, QDBusObjectPath> reply;
             reply = NetworkManager::addAndActivateConnection(settings.toMap(), m_device->uni(), network->referenceAccessPoint()->uni());
-            reply.waitForFinished();
-            if (reply.isError()) {
-                KMessageBox::error(this,
-                                   i18n("Failed to activate network %1:\n%2", name, reply.error().message()));
-                updateActiveConnection();
-            }
         } else if (kind & AvailableConnectionsModel::NetworkNsp) {
             QString uni = modelIndex.data(AvailableConnectionsModel::RoleNetworkID).toString();
-            QString name = modelIndex.data().toString();
 
             NetworkManager::Settings::ConnectionSettings settings(NetworkManager::Settings::ConnectionSettings::Wimax);
             settings.setId(name);
@@ -220,15 +212,14 @@ void Description::on_connectionCB_activated(int index)
             NetworkManager::Settings::WimaxSetting::Ptr wimaxSetting;
             wimaxSetting = settings.setting(NetworkManager::Settings::Setting::Wimax).dynamicCast<NetworkManager::Settings::WimaxSetting>();
             wimaxSetting->setNetworkName(name);
-
-            QDBusPendingReply<QDBusObjectPath, QDBusObjectPath> reply;
             reply = NetworkManager::addAndActivateConnection(settings.toMap(), m_device->uni(), uni);
-            reply.waitForFinished();
-            if (reply.isError()) {
-                KMessageBox::error(this,
-                                   i18n("Failed to activate network %1:\n%2", name, reply.error().message()));
-                updateActiveConnection();
-            }
+        }
+
+        reply.waitForFinished();
+        if (reply.isError()) {
+            KMessageBox::error(this,
+                               i18n("Failed to activate network %1:\n%2", name, reply.error().message()));
+            updateActiveConnection();
         }
     } else {
         QString oldConnectionPath;

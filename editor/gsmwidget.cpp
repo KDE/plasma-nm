@@ -63,13 +63,28 @@ void GsmWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting
         m_ui->number->setText(number);
     m_ui->username->setText(gsmSetting->username());
     m_ui->password->setText(gsmSetting->password());
-
+    if (gsmSetting->passwordFlags() == NetworkManager::Settings::Setting::None ||
+        gsmSetting->passwordFlags() == NetworkManager::Settings::Setting::AgentOwned) {
+        m_ui->passwordStorage->setCurrentIndex(0);
+    } else if (gsmSetting->passwordFlags() == NetworkManager::Settings::Setting::NotSaved) {
+        m_ui->passwordStorage->setCurrentIndex(1);
+    } else {
+        m_ui->passwordStorage->setCurrentIndex(2);
+    }
     m_ui->apn->setText(gsmSetting->apn());
     m_ui->networkId->setText(gsmSetting->networkId());
     if (gsmSetting->networkType() != NetworkManager::Settings::GsmSetting::Any)
         m_ui->type->setCurrentIndex(m_ui->type->findData(static_cast<int>(gsmSetting->networkType())));
     m_ui->roaming->setChecked(!gsmSetting->homeOnly());
     m_ui->pin->setText(gsmSetting->pin());
+    if (gsmSetting->pinFlags() == NetworkManager::Settings::Setting::None ||
+        gsmSetting->pinFlags() == NetworkManager::Settings::Setting::AgentOwned) {
+        m_ui->pinStorage->setCurrentIndex(0);
+    } else if (gsmSetting->pinFlags() == NetworkManager::Settings::Setting::NotSaved) {
+        m_ui->pinStorage->setCurrentIndex(1);
+    } else {
+        m_ui->pinStorage->setCurrentIndex(2);
+    }
 }
 
 QVariantMap GsmWidget::setting(bool agentOwned) const
@@ -81,9 +96,14 @@ QVariantMap GsmWidget::setting(bool agentOwned) const
         gsmSetting.setUsername(m_ui->username->text());
     if (!m_ui->password->text().isEmpty())
         gsmSetting.setPassword(m_ui->password->text());
-
-    if (agentOwned) {
-        gsmSetting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+    if (m_ui->passwordStorage->currentIndex() == 0) {
+        if (agentOwned) {
+            gsmSetting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+        }
+    } else if (m_ui->passwordStorage->currentIndex() == 1) {
+        gsmSetting.setPasswordFlags(NetworkManager::Settings::Setting::NotSaved);
+    } else {
+        gsmSetting.setPasswordFlags(NetworkManager::Settings::Setting::NotRequired);
     }
 
     if (!m_ui->apn->text().isEmpty())
@@ -94,9 +114,14 @@ QVariantMap GsmWidget::setting(bool agentOwned) const
     gsmSetting.setHomeOnly(!m_ui->roaming->isChecked());
     if (!m_ui->pin->text().isEmpty())
         gsmSetting.setPin(m_ui->pin->text());
-
-    if (agentOwned) {
-        gsmSetting.setPinFlags(NetworkManager::Settings::Setting::AgentOwned);
+    if (m_ui->pinStorage->currentIndex() == 0) {
+        if (agentOwned) {
+            gsmSetting.setPinFlags(NetworkManager::Settings::Setting::AgentOwned);
+        }
+    } else if (m_ui->pinStorage->currentIndex() == 1) {
+        gsmSetting.setPinFlags(NetworkManager::Settings::Setting::NotSaved);
+    } else {
+        gsmSetting.setPinFlags(NetworkManager::Settings::Setting::NotRequired);
     }
 
     return gsmSetting.toMap();

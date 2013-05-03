@@ -48,22 +48,45 @@
       <item row="1" column="1">
        <widget class="KLineEdit" name="username"/>
       </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>&amp;Password:</string>
-        </property>
-        <property name="buddy">
-         <cstring>password</cstring>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="KLineEdit" name="password">
-        <property name="passwordMode">
-         <bool>true</bool>
-        </property>
-       </widget>
+      <item row="2" column="0" colspan="2">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>&amp;Password:</string>
+          </property>
+          <property name="buddy">
+           <cstring>password</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="KLineEdit" name="password">
+          <property name="passwordMode">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="KComboBox" name="passwordStorage">
+          <item>
+           <property name="text">
+            <string>Store</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Always Ask</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Not Required</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
@@ -151,11 +174,34 @@
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="KLineEdit" name="pin">
-        <property name="passwordMode">
-         <bool>true</bool>
-        </property>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="KLineEdit" name="pin">
+          <property name="passwordMode">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="KComboBox" name="pinStorage">
+          <item>
+           <property name="text">
+            <string>Store</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Always Ask</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Not Required</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
@@ -184,14 +230,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

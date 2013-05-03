@@ -259,7 +259,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
     const bool userRequested = request.flags & UserRequested;
     const bool allowInteraction = request.flags & AllowInteraction;
     const bool isVpn = (setting->type() == NetworkManager::Settings::Setting::Vpn);
-
+    setting->printSetting();
     NMStringMap secretsMap;
     if (!ignoreWallet && !requestNew && useWallet()) {
         if (m_wallet->isOpen()) {
@@ -280,8 +280,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
 
     if (!secretsMap.isEmpty()) {
         setting->secretsFromStringMap(secretsMap);
-
-        if (!isVpn && setting->needSecrets(requestNew).isEmpty()) {
+        if ((!isVpn && setting->needSecrets(requestNew).isEmpty())) {
             // Enough secrets were retrieved from storage
             request.connection[request.setting_name] = setting->secretsToMap();
             sendSecrets(request.connection, request.message);

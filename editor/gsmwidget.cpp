@@ -63,10 +63,10 @@ void GsmWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting
         m_ui->number->setText(number);
     m_ui->username->setText(gsmSetting->username());
     m_ui->password->setText(gsmSetting->password());
-    if (gsmSetting->passwordFlags() == NetworkManager::Settings::Setting::None ||
-        gsmSetting->passwordFlags() == NetworkManager::Settings::Setting::AgentOwned) {
+    if (gsmSetting->passwordFlags().testFlag(NetworkManager::Settings::Setting::None) ||
+        gsmSetting->passwordFlags().testFlag(NetworkManager::Settings::Setting::AgentOwned)) {
         m_ui->passwordStorage->setCurrentIndex(0);
-    } else if (gsmSetting->passwordFlags() == NetworkManager::Settings::Setting::NotSaved) {
+    } else if (gsmSetting->passwordFlags().testFlag(NetworkManager::Settings::Setting::NotSaved)) {
         m_ui->passwordStorage->setCurrentIndex(1);
     } else {
         m_ui->passwordStorage->setCurrentIndex(2);

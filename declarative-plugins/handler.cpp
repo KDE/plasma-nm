@@ -48,7 +48,7 @@ Handler::~Handler()
 
 void Handler::activateConnection(const QString& connection, const QString& device, const QString& specificObject)
 {
-NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
+    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
 
     if (!con) {
         NMHandlerDebug() << "Not possible to activate this connection";
@@ -61,7 +61,7 @@ NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findCo
 
 void Handler::addAndActivateConnection(const QString& device, const QString& specificObject)
 {
-NetworkManager::AccessPoint::Ptr ap;
+    NetworkManager::AccessPoint::Ptr ap;
 
     foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
         if (dev->type() == NetworkManager::Device::Wifi) {
@@ -86,6 +86,8 @@ NetworkManager::AccessPoint::Ptr ap;
     wifiSetting->setSsid(ap->ssid().toUtf8());
 
     NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
+
+    delete settings;
 }
 
 void Handler::deactivateConnection(const QString& connection)

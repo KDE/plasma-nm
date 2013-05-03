@@ -71,7 +71,7 @@ Item {
 
             height: enableTraffic ? 100 : 0;
             visible: enableTraffic;
-            anchors { top: detailsText.bottom; left: parent.left; right: parent.right }
+            anchors { top: detailsText.bottom; left: parent.left; right: parent.right; topMargin: 10 }
         }
     }
 

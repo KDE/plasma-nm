@@ -35,8 +35,8 @@ Item {
         property Item detailWidget;
     }
 
-    signal activateConnectionItem(string connectionPath, string devicePath, string specificObjectParameter);
-    signal addAndActivateConnectionItem(string devicePath, string specificObjectParameter);
+    signal activateConnectionItem(string connectionPath, string devicePath, string specificPath);
+    signal addAndActivateConnectionItem(string devicePath, string specificPath);
     signal deactivateConnectionItem(string connectionPath);
     signal editConnectionItem(string connectionUuid);
     signal removeConnectionItem(string connectionName, string connectionPath);
@@ -91,7 +91,7 @@ Item {
                 if (itemUuid) {
                     activateConnectionItem(itemConnectionPath, itemDevicePath, itemSpecificPath);
                 } else {
-                    addAndActivateConnectionItem(itemDevicePath, itemSpecificParameter);
+                    addAndActivateConnectionItem(itemDevicePath, itemSpecificPath);
                 }
             } else {
                 deactivateConnectionItem(itemConnectionPath);

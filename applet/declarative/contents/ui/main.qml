@@ -38,8 +38,8 @@ Item {
     }
 
     // Signals for handler
-    signal activateConnection(string connectionPath, string devicePath, string specificObjectParameter);
-    signal addAndActivateConnection(string devicePath, string specificObjectParameter);
+    signal activateConnection(string connectionPath, string devicePath, string specificPath);
+    signal addAndActivateConnection(string devicePath, string specificPath);
     signal deactivateConnection(string connectionPath);
     signal editConnection(string connectionUuid);
     signal removeConnection(string connectionPath);
@@ -116,8 +116,8 @@ Item {
             }
         }
         delegate: ConnectionItem {
-            onActivateConnectionItem: activateConnection(connectionPath, devicePath, specificObjectParameter);
-            onAddAndActivateConnectionItem: addAndActivateConnection(devicePath, specificObjectParameter);
+            onActivateConnectionItem: activateConnection(connectionPath, devicePath, specificPath);
+            onAddAndActivateConnectionItem: addAndActivateConnection(devicePath, specificPath);
             onDeactivateConnectionItem: deactivateConnection(connectionPath);
             onEditConnectionItem: {
                 editConnection(connectionUuid);

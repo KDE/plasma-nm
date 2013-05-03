@@ -26,7 +26,7 @@
    <item row="1" column="0">
     <widget class="QCheckBox" name="showConnectionsCB">
      <property name="text">
-      <string>Show connections</string>
+      <string>Show inative connections</string>
      </property>
     </widget>
    </item>

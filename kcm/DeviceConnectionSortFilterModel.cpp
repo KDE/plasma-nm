@@ -33,12 +33,22 @@ DeviceConnectionSortFilterModel::DeviceConnectionSortFilterModel(QObject *parent
 
 bool DeviceConnectionSortFilterModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
-    bool leftIsDevice = sourceModel()->data(left, DeviceConnectionModel::RoleIsDevice).toBool();
-    bool rightIsDevice = sourceModel()->data(right, DeviceConnectionModel::RoleIsDevice).toBool();
+    bool leftIsDevice = left.data(DeviceConnectionModel::RoleIsDevice).toBool();
+    bool rightIsDevice = right.data(DeviceConnectionModel::RoleIsDevice).toBool();
 
     if (leftIsDevice != rightIsDevice) {
         // If the left item is a device the right should move left
         return leftIsDevice;
+    } else {
+        bool leftIsConnection = left.data(DeviceConnectionModel::RoleIsConnection).toBool();
+        if (leftIsConnection) {
+            bool leftIsConnectionActive = left.data(DeviceConnectionModel::RoleConnectionActive).toBool();
+            bool rightIsConnectionActive = right.data(DeviceConnectionModel::RoleConnectionActive).toBool();
+            if (leftIsConnectionActive != rightIsConnectionActive) {
+                // If the left item is a active connection the right should move left
+                return leftIsConnectionActive;
+            }
+        }
     }
 
     return QSortFilterProxyModel::lessThan(left, right);

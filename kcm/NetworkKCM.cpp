@@ -76,19 +76,21 @@ NetworkKCM::NetworkKCM(QWidget *parent, const QVariantList &args) :
 
     DeviceConnectionDelegate *delegate = new DeviceConnectionDelegate(this);
     ui->devicesTV->setItemDelegate(delegate);
-    DeviceConnectionSortFilterModel *sortModel = new DeviceConnectionSortFilterModel(this);
-    // Connect this slot prior to defining the model
-    // so we get a selection on the first item for free
-    connect(sortModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
-            this, SLOT(showDescription()));
-    // Set the source model then connect to the selection model to get updates
-    ui->devicesTV->setModel(sortModel);
-    connect(ui->devicesTV->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
-            this, SLOT(showDescription()));
 
     m_deviceConnectionModel = new DeviceConnectionModel(this);
-    connect(m_deviceConnectionModel, SIGNAL(changed()), this, SLOT(updateSelection()));
-    sortModel->setSourceModel(m_deviceConnectionModel);
+    connect(m_deviceConnectionModel, SIGNAL(parentAdded(QModelIndex)), this, SLOT(expandParent(QModelIndex)));
+    connect(m_deviceConnectionModel, SIGNAL(layoutChanged()), this, SLOT(updateSelection()));
+
+    m_deviceConnectionSortModel = new DeviceConnectionSortFilterModel(this);
+    m_deviceConnectionSortModel->setSourceModel(m_deviceConnectionModel);
+    // Connect this slot prior to defining the model
+    // so we get a selection on the first item for free
+    connect(m_deviceConnectionSortModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),
+            this, SLOT(showDescription()));
+    // Set the source model then connect to the selection model to get updates
+    ui->devicesTV->setModel(m_deviceConnectionSortModel);
+    connect(ui->devicesTV->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
+            this, SLOT(showDescription()));
 
     // make sure the screen is split on the half
     QList<int> sizes;
@@ -118,6 +120,7 @@ void NetworkKCM::load()
         ui->stackedWidget->setCurrentWidget(ui->profile_page);
     }
     ui->devicesTV->setFocus();
+    m_deviceConnectionModel->init();
 
     // align the tabbar to the list view
     int offset = ui->profile->innerHeight() - ui->devicesTV->viewport()->height();
@@ -150,6 +153,11 @@ void NetworkKCM::updateSelection()
         view->selectionModel()->select(view->model()->index(0, 0),
                                        QItemSelectionModel::SelectCurrent);
     }
+}
+
+void NetworkKCM::expandParent(const QModelIndex &index)
+{
+    ui->devicesTV->expand(m_deviceConnectionSortModel->mapFromSource(index));
 }
 
 void NetworkKCM::on_tabWidget_currentChanged(int index)

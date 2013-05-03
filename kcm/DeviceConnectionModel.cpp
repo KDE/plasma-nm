@@ -39,10 +39,10 @@
 #include <KIcon>
 
 using namespace NetworkManager;
+using namespace NetworkManager::Settings;
 
 DeviceConnectionModel::DeviceConnectionModel(QObject *parent) :
-    QStandardItemModel(parent),
-    m_handleConnections(false)
+    QStandardItemModel(parent)
 {
     connect(NetworkManager::notifier(), SIGNAL(serviceAppeared()),
             this, SLOT(initConnections()));
@@ -57,39 +57,31 @@ DeviceConnectionModel::DeviceConnectionModel(QObject *parent) :
             this, SLOT(deviceAdded(QString)));
     connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
             this, SLOT(deviceRemoved(QString)));
+}
+
+void DeviceConnectionModel::init()
+{
     foreach (const Device::Ptr &device, NetworkManager::networkInterfaces()) {
         addDevice(device);
     }
-}
-
-void DeviceConnectionModel::setHandleConnections(bool handleConnections)
-{
-    if (m_handleConnections != handleConnections) {
-        m_handleConnections = handleConnections;
-        if (handleConnections) {
-            initConnections();
-        } else {
-            removeConnections();
-        }
-    }
+    initConnections();
 }
 
 Qt::ItemFlags DeviceConnectionModel::flags(const QModelIndex &index) const
 {
     QStandardItem *stdItem = itemFromIndex(index);
-    if (stdItem && stdItem->isCheckable() && stdItem->checkState() == Qt::Unchecked) {
+    if (stdItem->flags() == Qt::NoItemFlags) {
+        return Qt::NoItemFlags;
+    } else if (stdItem && stdItem->isCheckable() && stdItem->checkState() == Qt::Unchecked) {
         return Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable;
     }
     return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
 }
 
-
 void DeviceConnectionModel::initConnections()
 {
-    if (m_handleConnections) {
-        foreach (const Settings::Connection::Ptr &connection, Settings::listConnections()) {
-            addConnection(connection);
-        }
+    foreach (const Settings::Connection::Ptr &connection, Settings::listConnections()) {
+        addConnection(connection);
     }
 }
 
@@ -169,39 +161,33 @@ void DeviceConnectionModel::changeDevice(QStandardItem *stdItem, const NetworkMa
 
 void DeviceConnectionModel::connectionAdded(const QString &path)
 {
-    if (m_handleConnections) {
-        Settings::Connection::Ptr connection = Settings::findConnection(path);
-        if (connection) {
-            addConnection(connection);
-        }
+    Settings::Connection::Ptr connection = Settings::findConnection(path);
+    if (connection) {
+        addConnection(connection);
     }
 }
 
 void DeviceConnectionModel::connectionChanged()
 {
-    if (m_handleConnections) {
-        Settings::Connection *caller = qobject_cast<Settings::Connection*>(sender());
-        if (caller) {
-            Settings::Connection::Ptr connection = Settings::findConnection(caller->path());
-            if (connection) {
-                QStandardItem *stdItem = findConnectionItem(connection->path());
-                if (!stdItem) {
-                    kWarning() << "Connection not found" << connection->path();
-                    return;
-                }
-                changeConnection(stdItem, connection);
+    Settings::Connection *caller = qobject_cast<Settings::Connection*>(sender());
+    if (caller) {
+        Settings::Connection::Ptr connection = Settings::findConnection(caller->path());
+        if (connection) {
+            QStandardItem *stdItem = findConnectionItem(connection->path());
+            if (!stdItem) {
+                kWarning() << "Connection not found" << connection->path();
+                return;
             }
+            changeConnection(stdItem, connection);
         }
     }
 }
 
 void DeviceConnectionModel::connectionRemoved(const QString &path)
 {
-    if (m_handleConnections) {
-        QStandardItem *stdItem = findConnectionItem(path);
-        if (stdItem) {
-            removeRow(stdItem->row());
-        }
+    QStandardItem *stdItem = findConnectionItem(path);
+    if (stdItem) {
+        removeRow(stdItem->row());
     }
 }
 
@@ -212,14 +198,16 @@ void DeviceConnectionModel::addConnection(const Settings::Connection::Ptr &conne
         return;
     }
 
+    Settings::ConnectionSettings::ConnectionType type = connection->settings()->connectionType();
+    QStandardItem *parentItem = findOrCreateConnectionType(type);
     connect(connection.data(), SIGNAL(updated()),
             this, SLOT(connectionChanged()));
 
     stdItem = new QStandardItem;
-    stdItem->setData(false, RoleIsDevice);
+    stdItem->setData(true, RoleIsConnection);
     stdItem->setData(connection->path(), RoleConectionPath);
     changeConnection(stdItem, connection);
-    appendRow(stdItem);
+    parentItem->appendRow(stdItem);
 }
 
 void DeviceConnectionModel::changeConnection(QStandardItem *stdItem, const Settings::Connection::Ptr &connection)
@@ -230,6 +218,7 @@ void DeviceConnectionModel::changeConnection(QStandardItem *stdItem, const Setti
     } else {
         stdItem->setIcon(KIcon("network-disconnect"));
     }
+    stdItem->setData(connection->active(), RoleConnectionActive);
 
     stdItem->setText(connection->name());
 }
@@ -251,11 +240,108 @@ QStandardItem *DeviceConnectionModel::findConnectionItem(const QString &path)
 {
     for (int i = 0; i < rowCount(); ++i) {
         QStandardItem *stdItem = item(i);
-        if (stdItem->data(RoleIsDevice).toBool() == false &&
+        if (stdItem->data(RoleIsConnection).toBool() == true &&
                 stdItem->data(RoleConectionPath).toString() == path) {
             return stdItem;
         }
     }
 
     return 0;
+}
+
+QStandardItem *DeviceConnectionModel::findOrCreateConnectionType(Settings::ConnectionSettings::ConnectionType type)
+{
+    QStandardItem *parentItem = 0;
+    for (int i = 0; i < rowCount(); ++i) {
+        QStandardItem *stdItem = item(i);
+        if (stdItem->data(RoleIsConnectionParent).toBool()) {
+            parentItem = stdItem;
+            break;
+        }
+    }
+
+    if (!parentItem) {
+        parentItem = new QStandardItem;
+        parentItem->setData(true, RoleIsConnectionParent);
+        parentItem->setSelectable(false);
+        parentItem->setEnabled(false);
+        parentItem->setFlags(Qt::NoItemFlags);
+        parentItem->setSizeHint(QSize(0, 0));
+        appendRow(parentItem);
+        emit parentAdded(parentItem->index());
+    }
+
+    for (int i = 0; i < parentItem->rowCount(); ++i) {
+        QStandardItem *stdItem = parentItem->child(i);
+        uint itemType = stdItem->data(RoleIsConnectionCategory).toUInt();
+        if (itemType == type ||
+                (type == ConnectionSettings::Gsm && itemType == ConnectionSettings::Cdma) ||
+                (type == ConnectionSettings::Cdma && itemType == ConnectionSettings::Gsm)) {
+            return stdItem;
+        }
+    }
+
+    QStandardItem *ret = new QStandardItem();
+    QString text;
+    KIcon icon;
+    switch (type) {
+    case ConnectionSettings::Adsl:
+        text = i18n("ADSL");
+        icon = KIcon("modem");
+        break;
+    case ConnectionSettings::Pppoe:
+        text = i18n("DSL");
+        icon = KIcon("modem");
+        break;
+    case ConnectionSettings::Bluetooth:
+        text = i18n("Bluetooth");
+        icon = KIcon("preferences-system-bluetooth");
+        break;
+    case ConnectionSettings::Bond:
+        text = i18n("Bond");
+        break;
+    case ConnectionSettings::Bridge:
+        text = i18n("Bridge");
+        break;
+    case ConnectionSettings::Gsm:
+    case ConnectionSettings::Cdma:
+        text = i18n("Mobile broadband");
+        icon = KIcon("phone");
+        break;
+    case ConnectionSettings::Infiniband:
+        text = i18n("Infiniband");
+        break;
+    case ConnectionSettings::OLPCMesh:
+        text = i18n("Olpc mesh");
+        break;
+    case ConnectionSettings::Vlan:
+        text = i18n("VLAN");
+        break;
+    case ConnectionSettings::Vpn:
+        text = i18n("VPN");
+        break;
+    case ConnectionSettings::Wimax:
+        text = i18n("WiMAX");
+        icon = KIcon("network-wireless");
+        break;
+    case ConnectionSettings::Wired:
+        text = i18n("Wired");
+        icon = KIcon("network-wired");
+        break;
+    case ConnectionSettings::Wireless:
+        text = i18n("Wi-Fi");
+        icon = KIcon("network-wireless");
+        break;
+    default:
+        text = i18n("Unknown connection type");
+        break;
+    }
+
+    ret->setText(text);
+    ret->setIcon(icon);
+    ret->setData(type, RoleIsConnectionCategory);
+    parentItem->appendRow(ret);
+    emit parentAdded(ret->index());
+
+    return ret;
 }

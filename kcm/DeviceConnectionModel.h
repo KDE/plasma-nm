@@ -36,20 +36,22 @@ class DeviceConnectionModel : public QStandardItemModel
 public:
     enum DeviceRoles {
         RoleIsDevice = Qt::UserRole + 1,
+        RoleIsConnection,
+        RoleIsConnectionParent,
+        RoleIsConnectionCategory,
         RoleDeviceUNI,
         RoleConectionPath,
         RoleState,
+        RoleConnectionActive,
         RoleSort
     };
     explicit DeviceConnectionModel(QObject *parent = 0);
+    void init();
 
     Qt::ItemFlags flags(const QModelIndex &index) const;
 
-public slots:
-    void setHandleConnections(bool handleConnections);
-
 signals:
-    void changed();
+    void parentAdded(const QModelIndex &index);
 
 private slots:
     void initConnections();
@@ -70,8 +72,7 @@ private slots:
 private:
     QStandardItem *findDeviceItem(const QString &uni);
     QStandardItem *findConnectionItem(const QString &path);
-
-    bool m_handleConnections;
+    QStandardItem *findOrCreateConnectionType(NetworkManager::Settings::ConnectionSettings::ConnectionType type);
 };
 
 #endif // DEVICE_MODEL_H

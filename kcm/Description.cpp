@@ -82,6 +82,9 @@ void Description::setDevice(const QString &uni)
         return;
     }
 
+    if (m_device) {
+        m_device->disconnect(this);
+    }
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(uni);
     m_device = device;
     if (device) {
@@ -103,8 +106,10 @@ void Description::setDevice(const QString &uni)
 
 void Description::updateState()
 {
-    ui->statusL->setText(UiUtils::connectionStateToString(m_device->state()));
-    ui->disconnectPB->setEnabled(m_device->state() == Device::Activated);
+    if (m_device) {
+        ui->statusL->setText(UiUtils::connectionStateToString(m_device->state()));
+        ui->disconnectPB->setEnabled(m_device->state() == Device::Activated);
+    }
 }
 
 void Description::updateActiveConnection()

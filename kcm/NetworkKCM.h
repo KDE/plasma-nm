@@ -35,6 +35,7 @@ namespace Ui {
     class NetworkKCM;
 }
 class DeviceConnectionModel;
+class DeviceConnectionSortFilterModel;
 class NetworkKCM : public KCModule
 {
     Q_OBJECT
@@ -48,6 +49,7 @@ public slots:
 private slots:
     void showDescription();
     void updateSelection();
+    void expandParent(const QModelIndex &index);
     void on_tabWidget_currentChanged(int index);
     void setNetworkingEnabled(bool enabled);
     void on_networkingPB_clicked();
@@ -57,6 +59,7 @@ private:
     QString profilesPath() const;
 
     Ui::NetworkKCM *ui;
+    DeviceConnectionSortFilterModel *m_deviceConnectionSortModel;
     DeviceConnectionModel *m_deviceConnectionModel;
     QStackedLayout *m_stackedLayout;
     QWidget *m_noPrinter;

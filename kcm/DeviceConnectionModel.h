@@ -39,6 +39,7 @@ public:
         RoleIsConnection,
         RoleIsConnectionParent,
         RoleIsConnectionCategory,
+        RoleIsConnectionCategoryActiveCount,
         RoleDeviceUNI,
         RoleConectionPath,
         RoleState,

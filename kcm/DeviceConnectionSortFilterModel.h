@@ -32,8 +32,15 @@ class KDE_EXPORT DeviceConnectionSortFilterModel : public QSortFilterProxyModel
 public:
     explicit DeviceConnectionSortFilterModel(QObject *parent = 0);
 
+    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const;
+
+public slots:
+    void setShowInactiveConnections(bool show);
+
 private:
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
+
+    bool m_showInactiveConnections;
 };
 
 #endif // DEVICE_CONNECTION_SORT_FILTER_MODEL_H

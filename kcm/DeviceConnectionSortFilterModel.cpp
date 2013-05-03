@@ -24,11 +24,36 @@
 #include <KDebug>
 
 DeviceConnectionSortFilterModel::DeviceConnectionSortFilterModel(QObject *parent) :
-    QSortFilterProxyModel(parent)
+    QSortFilterProxyModel(parent),
+    m_showInactiveConnections(false)
 {
     setDynamicSortFilter(true);
     setSortCaseSensitivity(Qt::CaseInsensitive);
     sort(0);
+}
+
+bool DeviceConnectionSortFilterModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
+{
+    if (m_showInactiveConnections) {
+        return true;
+    }
+
+    QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
+
+    if (index.data(DeviceConnectionModel::RoleIsConnection).toBool()) {
+        return index.data(DeviceConnectionModel::RoleConnectionActive).toBool();
+    } else if (index.data(DeviceConnectionModel::RoleIsConnectionCategory).toBool()) {
+        return index.data(DeviceConnectionModel::RoleIsConnectionCategoryActiveCount).toUInt();
+    }
+
+    // Return true if no filter was applied
+    return true;
+}
+
+void DeviceConnectionSortFilterModel::setShowInactiveConnections(bool show)
+{
+    m_showInactiveConnections = show;
+    invalidate();
 }
 
 bool DeviceConnectionSortFilterModel::lessThan(const QModelIndex &left, const QModelIndex &right) const

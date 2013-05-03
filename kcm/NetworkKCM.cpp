@@ -103,7 +103,9 @@ NetworkKCM::NetworkKCM(QWidget *parent, const QVariantList &args) :
     setNetworkingEnabled(NetworkManager::isNetworkingEnabled());
 
     connect(ui->showConnectionsCB, SIGNAL(toggled(bool)),
-            m_deviceConnectionModel, SLOT(setHandleConnections(bool)));
+            m_deviceConnectionSortModel, SLOT(setShowInactiveConnections(bool)));
+    connect(ui->showConnectionsCB, SIGNAL(toggled(bool)),
+            ui->devicesTV, SLOT(expandAll()));
 }
 
 NetworkKCM::~NetworkKCM()

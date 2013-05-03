@@ -208,17 +208,37 @@ void DeviceConnectionModel::addConnection(const Settings::Connection::Ptr &conne
     stdItem->setData(connection->path(), RoleConectionPath);
     changeConnection(stdItem, connection);
     parentItem->appendRow(stdItem);
+
+    uint count = parentItem->data(RoleIsConnectionCategoryActiveCount).toUInt();
+    if (connection->active()) {
+        parentItem->setData(++count, RoleIsConnectionCategoryActiveCount);
+        if (count == 1) {
+            emit parentAdded(parentItem->index());
+        }
+    }
 }
 
 void DeviceConnectionModel::changeConnection(QStandardItem *stdItem, const Settings::Connection::Ptr &connection)
 {
     kDebug() << connection->uuid() << connection->path() << connection->name();
-    if (connection->active()) {
-        stdItem->setIcon(KIcon("network-connect"));
-    } else {
-        stdItem->setIcon(KIcon("network-disconnect"));
+    QVariant previousActive = stdItem->data(RoleConnectionActive);
+    if (previousActive.isNull() || previousActive.toBool() != connection->active()) {
+        if (connection->active()) {
+            stdItem->setIcon(KIcon("network-connect"));
+        } else {
+            stdItem->setIcon(KIcon("network-disconnect"));
+        }
+        stdItem->setData(connection->active(), RoleConnectionActive);
+
+        if (!previousActive.isNull()) {
+            uint count = stdItem->parent()->data(RoleIsConnectionCategoryActiveCount).toUInt();
+            if (connection->active()) {
+                stdItem->parent()->setData(++count, RoleIsConnectionCategoryActiveCount);
+            } else {
+                stdItem->parent()->setData(--count, RoleIsConnectionCategoryActiveCount);
+            }
+        }
     }
-    stdItem->setData(connection->active(), RoleConnectionActive);
 
     stdItem->setText(connection->name());
 }
@@ -340,8 +360,8 @@ QStandardItem *DeviceConnectionModel::findOrCreateConnectionType(Settings::Conne
     ret->setText(text);
     ret->setIcon(icon);
     ret->setData(type, RoleIsConnectionCategory);
+    ret->setData(0, RoleIsConnectionCategoryActiveCount);
     parentItem->appendRow(ret);
-    emit parentAdded(ret->index());
 
     return ret;
 }

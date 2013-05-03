@@ -40,6 +40,7 @@
 
 #include <NetworkManagerQt/manager.h>
 #include <NetworkManagerQt/ipconfig.h>
+#include <NetworkManagerQt/WimaxDevice>
 #include <NetworkManagerQt/settings/802-11-wireless.h>
 #include <NetworkManagerQt/settings/wimax.h>
 #include <NetworkManagerQt/settings/connection.h>
@@ -180,20 +181,28 @@ void Description::on_connectionCB_activated(int index)
         uint kind = modelIndex.data(AvailableConnectionsModel::RoleKinds).toUInt();
         kDebug() << kind;
         if (kind & AvailableConnectionsModel::NetworkWireless) {
+            NetworkManager::WirelessDevice::Ptr wifi = m_device.dynamicCast<NetworkManager::WirelessDevice>();
+            if (wifi.isNull()) {
+                return;
+            }
+
             QByteArray ssid = modelIndex.data(AvailableConnectionsModel::RoleNetworkID).toByteArray();
             QString name = modelIndex.data().toString();
+            WirelessNetwork::Ptr network = wifi->findNetwork(ssid);
+            if (network.isNull()) {
+                return;
+            }
 
-            NetworkManager::Settings::ConnectionSettings *settings;
-            settings = new NetworkManager::Settings::ConnectionSettings(NetworkManager::Settings::ConnectionSettings::Wireless);
-            settings->setId(name);
-            settings->setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
+            NetworkManager::Settings::ConnectionSettings settings(NetworkManager::Settings::ConnectionSettings::Wireless);
+            settings.setId(name);
+            settings.setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
 
             NetworkManager::Settings::WirelessSetting::Ptr wifiSetting;
-            wifiSetting = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
+            wifiSetting = settings.setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
             wifiSetting->setSsid(ssid);
 
             QDBusPendingReply<QDBusObjectPath, QDBusObjectPath> reply;
-            reply = NetworkManager::addAndActivateConnection(settings->toMap(), m_device->uni(), QString());
+            reply = NetworkManager::addAndActivateConnection(settings.toMap(), m_device->uni(), network->referenceAccessPoint()->uni());
             reply.waitForFinished();
             if (reply.isError()) {
                 KMessageBox::error(this,
@@ -201,19 +210,19 @@ void Description::on_connectionCB_activated(int index)
                 updateActiveConnection();
             }
         } else if (kind & AvailableConnectionsModel::NetworkNsp) {
-            QString name = modelIndex.data(AvailableConnectionsModel::RoleNetworkID).toString();
+            QString uni = modelIndex.data(AvailableConnectionsModel::RoleNetworkID).toString();
+            QString name = modelIndex.data().toString();
 
-            NetworkManager::Settings::ConnectionSettings *settings;
-            settings = new NetworkManager::Settings::ConnectionSettings(NetworkManager::Settings::ConnectionSettings::Wimax);
-            settings->setId(name);
-            settings->setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
+            NetworkManager::Settings::ConnectionSettings settings(NetworkManager::Settings::ConnectionSettings::Wimax);
+            settings.setId(name);
+            settings.setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
 
             NetworkManager::Settings::WimaxSetting::Ptr wimaxSetting;
-            wimaxSetting = settings->setting(NetworkManager::Settings::Setting::Wimax).dynamicCast<NetworkManager::Settings::WimaxSetting>();
+            wimaxSetting = settings.setting(NetworkManager::Settings::Setting::Wimax).dynamicCast<NetworkManager::Settings::WimaxSetting>();
             wimaxSetting->setNetworkName(name);
 
             QDBusPendingReply<QDBusObjectPath, QDBusObjectPath> reply;
-            reply = NetworkManager::addAndActivateConnection(settings->toMap(), m_device->uni(), QString());
+            reply = NetworkManager::addAndActivateConnection(settings.toMap(), m_device->uni(), uni);
             reply.waitForFinished();
             if (reply.isError()) {
                 KMessageBox::error(this,

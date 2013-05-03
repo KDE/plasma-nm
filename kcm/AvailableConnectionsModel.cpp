@@ -228,7 +228,7 @@ void AvailableConnectionsModel::addNspNetwork(const WimaxNsp::Ptr &nsp)
     connect(nsp.data(), SIGNAL(signalQualityChanged(uint)), SLOT(signalQualityChanged(int)), Qt::UniqueConnection);
     if (!stdItem) {
         stdItem = new QStandardItem;
-        stdItem->setData(nsp->name(), RoleNetworkID);
+        stdItem->setData(nsp->uni(), RoleNetworkID);
         stdItem->setData(Network | NetworkNsp, RoleKinds);
         stdItem->setText(nsp->name());
         appendRow(stdItem);

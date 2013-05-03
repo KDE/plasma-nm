@@ -164,6 +164,7 @@ void AvailableConnectionsModel::addConnection(const NetworkManager::Settings::Co
     stdItem = new QStandardItem;
     stdItem->setData(Connection, RoleKind);
     stdItem->setData(connection->path(), RoleConectionPath);
+    stdItem->setText(connection->name());
 
     Settings::ConnectionSettings::Ptr settings = connection->settings();
     if (settings->connectionType() == Settings::ConnectionSettings::Wireless) {
@@ -171,9 +172,9 @@ void AvailableConnectionsModel::addConnection(const NetworkManager::Settings::Co
         wirelessSetting = settings->setting(Settings::Setting::Wireless).dynamicCast<Settings::WirelessSetting>();
         stdItem->setData(wirelessSetting->ssid(), RoleNetworkID);
         stdItem->setData(wirelessSetting->macAddress(), RoleMacAddress);
+        stdItem->setText(wirelessSetting->ssid());
     }
 
-    changeConnection(stdItem, connection);
     appendRow(stdItem);
 }
 
@@ -186,7 +187,7 @@ void AvailableConnectionsModel::changeConnection(QStandardItem *stdItem, const N
         stdItem->setIcon(KIcon("network-disconnect"));
     }*/
 
-    stdItem->setText(connection->name());
+//    stdItem->setText(connection->name());
 }
 
 void AvailableConnectionsModel::addNetwork(const WirelessNetwork::Ptr &network)
@@ -198,6 +199,8 @@ void AvailableConnectionsModel::addNetwork(const WirelessNetwork::Ptr &network)
         stdItem->setData(Network, RoleKind);
         stdItem->setText(network->ssid());
         appendRow(stdItem);
+    } else {
+        stdItem->setData(Network | Connection, RoleKind);
     }
     bool isSecure = network->referenceAccessPoint()->capabilities() & AccessPoint::Privacy;
     stdItem->setData(isSecure, RoleSecurity);

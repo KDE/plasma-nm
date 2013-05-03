@@ -21,6 +21,7 @@
 #include "ui_Description.h"
 
 #include "AvailableConnectionsModel.h"
+#include "AvailableConnectionsDelegate.h"
 
 #include <uiutils.h>
 
@@ -52,6 +53,8 @@ Description::Description(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->connectionCB->setMaxVisibleItems(20);
+    ui->connectionCB->setItemDelegate(new AvailableConnectionsDelegate(this));
     m_availableConnectionsModel = new AvailableConnectionsModel(this);
     ui->connectionCB->setModel(m_availableConnectionsModel);
 }

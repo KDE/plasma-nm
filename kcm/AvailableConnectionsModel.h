@@ -28,6 +28,8 @@
 class AvailableConnectionsModel : public QStandardItemModel
 {
     Q_OBJECT
+    Q_ENUMS(ConnectionRoles)
+    Q_ENUMS(Kind)
 public:
     enum ConnectionRoles {
         RoleConectionPath = Qt::UserRole + 1,
@@ -39,9 +41,10 @@ public:
     };
 
     enum Kind {
-        Connection,
-        Network
+        Connection = 1 << 0,
+        Network    = 1 << 1
     };
+    Q_DECLARE_FLAGS(Kinds, Kind)
 
     explicit AvailableConnectionsModel(QObject *parent = 0);
     void setDevice(const NetworkManager::Device::Ptr &device);

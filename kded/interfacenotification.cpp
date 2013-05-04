@@ -23,7 +23,7 @@
 
 #include <uiutils.h>
 
-#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/Manager>
 
 #include <KLocalizedString>
 #include <KNotification>

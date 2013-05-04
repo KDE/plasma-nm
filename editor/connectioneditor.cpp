@@ -35,9 +35,9 @@
 #include <KAboutApplicationDialog>
 #include <KAboutData>
 
-#include <NetworkManagerQt/settings.h>
-#include <NetworkManagerQt/connection.h>
-#include <NetworkManagerQt/activeconnection.h>
+#include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/ActiveConnection>
 
 using namespace NetworkManager;
 

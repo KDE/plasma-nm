@@ -21,8 +21,8 @@
 #include "model.h"
 #include "modelitem.h"
 
-#include <NetworkManagerQt/settings.h>
-#include <NetworkManagerQt/wireddevice.h>
+#include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/settings/802-11-wireless.h>
 
 #include "model/modelwirelessitem.h"

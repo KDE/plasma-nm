@@ -21,9 +21,9 @@
 #include "uiutils.h"
 #include "debug.h"
 
-#include <NetworkManagerQt/wirelessdevice.h>
+#include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/settings/802-11-wireless.h>
-#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/Manager>
 
 #include <KLocalizedString>
 

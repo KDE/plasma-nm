@@ -21,9 +21,9 @@
 #ifndef PLASMA_NM_CONNECTION_ICON_H
 #define PLASMA_NM_CONNECTION_ICON_H
 
-#include <NetworkManagerQt/manager.h>
-#include <NetworkManagerQt/activeconnection.h>
-#include <NetworkManagerQt/wirelessnetwork.h>
+#include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/ActiveConnection>
+#include <NetworkManagerQt/WirelessNetwork>
 
 #include <ModemManagerQt/modemgsmnetworkinterface.h>
 

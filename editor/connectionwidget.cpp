@@ -21,8 +21,8 @@
 #include "connectionwidget.h"
 #include "ui_connectionwidget.h"
 
-#include <NetworkManagerQt/settings.h>
-#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/settings/connection.h>
 
 #include <KUser>

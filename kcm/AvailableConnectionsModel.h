@@ -21,9 +21,9 @@
 #define AVAILABLECONNECTIONSMODEL_H
 
 #include <QStandardItemModel>
-#include <NetworkManagerQt/device.h>
-#include <NetworkManagerQt/wirelessnetwork.h>
-#include <NetworkManagerQt/wimaxnsp.h>
+#include <NetworkManagerQt/Device>
+#include <NetworkManagerQt/WirelessNetwork>
+#include <NetworkManagerQt/WimaxNsp>
 
 class AvailableConnectionsModel : public QStandardItemModel
 {

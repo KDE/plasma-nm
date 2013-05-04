@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_MODEL_WIRELESS_ITEM_H
 #define PLASMA_NM_MODEL_WIRELESS_ITEM_H
 
-#include <NetworkManagerQt/wirelessnetwork.h>
+#include <NetworkManagerQt/WirelessNetwork>
 
 #include "model/modelitem.h"
 

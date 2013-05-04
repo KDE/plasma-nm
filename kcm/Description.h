@@ -24,7 +24,7 @@
 #include <QDBusObjectPath>
 #include <QDBusMessage>
 
-#include <NetworkManagerQt/device.h>
+#include <NetworkManagerQt/Device>
 
 namespace Ui {
     class Description;

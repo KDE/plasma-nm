@@ -26,7 +26,7 @@
 
 #include <KMainWindow>
 
-#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/Connection>
 
 namespace Ui
 {

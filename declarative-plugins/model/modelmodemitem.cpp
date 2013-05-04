@@ -23,8 +23,8 @@
 #include "uiutils.h"
 
 #include <ModemManagerQt/modemgsmcardinterface.h>
-#include <NetworkManagerQt/modemdevice.h>
-#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/ModemDevice>
+#include <NetworkManagerQt/Manager>
 
 #include <KLocalizedString>
 

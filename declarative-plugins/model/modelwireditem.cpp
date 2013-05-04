@@ -22,9 +22,9 @@
 #include "uiutils.h"
 #include "debug.h"
 
-#include <NetworkManagerQt/wireddevice.h>
+#include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/settings/802-3-ethernet.h>
-#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/Manager>
 
 #include <KLocalizedString>
 

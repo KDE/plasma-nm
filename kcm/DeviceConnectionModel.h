@@ -25,7 +25,7 @@
 #include <QtDBus/QDBusObjectPath>
 #include <QtDBus/QDBusMessage>
 
-#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/Manager>
 
 typedef QMap<QString, QString>  StringStringMap;
 typedef QList<QDBusObjectPath> ObjectPathList;

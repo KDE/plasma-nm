@@ -25,7 +25,7 @@
 
 #include <kdemacros.h>
 
-#include <NetworkManagerQt/device.h>
+#include <NetworkManagerQt/Device>
 
 class KDE_EXPORT HwAddrComboBox : public KComboBox
 {

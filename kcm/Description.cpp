@@ -38,14 +38,14 @@
 #include <KMessageWidget>
 #include <KMessageBox>
 
-#include <NetworkManagerQt/manager.h>
-#include <NetworkManagerQt/ipconfig.h>
+#include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/IpConfig>
 #include <NetworkManagerQt/WimaxDevice>
 #include <NetworkManagerQt/settings/802-11-wireless.h>
 #include <NetworkManagerQt/settings/wimax.h>
 #include <NetworkManagerQt/settings/connection.h>
-#include <NetworkManagerQt/settings.h>
-#include <NetworkManagerQt/activeconnection.h>
+#include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/ActiveConnection>
 
 typedef QList<QDBusObjectPath> ObjectPathList;
 typedef QMap<QString, QString>  StringStringMap;

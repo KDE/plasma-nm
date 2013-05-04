@@ -29,11 +29,11 @@
 #include <kdeversion.h>
 #endif
 
-#include <NetworkManagerQt/manager.h>
-#include <NetworkManagerQt/device.h>
-#include <NetworkManagerQt/accesspoint.h>
-#include <NetworkManagerQt/wireddevice.h>
-#include <NetworkManagerQt/wirelessdevice.h>
+#include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/Device>
+#include <NetworkManagerQt/AccessPoint>
+#include <NetworkManagerQt/WiredDevice>
+#include <NetworkManagerQt/WirelessDevice>
 
 // Qt
 #include <QSizeF>

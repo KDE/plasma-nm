@@ -22,16 +22,16 @@
 #include "uiutils.h"
 #include "debug.h"
 
-#include <NetworkManagerQt/manager.h>
-#include <NetworkManagerQt/accesspoint.h>
-#include <NetworkManagerQt/wireddevice.h>
-#include <NetworkManagerQt/wirelessdevice.h>
-#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/AccessPoint>
+#include <NetworkManagerQt/WiredDevice>
+#include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/settings/setting.h>
 #include <NetworkManagerQt/settings/connection.h>
 #include <NetworkManagerQt/settings/802-3-ethernet.h>
 #include <NetworkManagerQt/settings/802-11-wireless.h>
-#include <NetworkManagerQt/activeconnection.h>
+#include <NetworkManagerQt/ActiveConnection>
 
 #include <QInputDialog>
 

@@ -30,7 +30,7 @@
 #include <KLocale>
 #include "nm-vpnc-service.h"
 
-#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/settings/vpn.h>
 #include <NetworkManagerQt/settings/ipv4.h>
 

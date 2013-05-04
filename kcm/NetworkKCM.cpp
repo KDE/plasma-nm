@@ -28,7 +28,7 @@
 #include "DeviceConnectionDelegate.h"
 #include "Description.h"
 
-#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/Settings>
 
 #include <KMessageBox>
 #include <KGenericFactory>

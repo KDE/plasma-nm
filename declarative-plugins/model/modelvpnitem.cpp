@@ -20,7 +20,7 @@
 
 #include "model/modelvpnitem.h"
 
-#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/settings/connection.h>
 #include <NetworkManagerQt/settings/vpn.h>
 

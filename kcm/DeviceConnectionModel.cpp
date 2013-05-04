@@ -22,9 +22,9 @@
 
 #include <uiutils.h>
 
-#include <NetworkManagerQt/settings.h>
-#include <NetworkManagerQt/connection.h>
-#include <NetworkManagerQt/activeconnection.h>
+#include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/ActiveConnection>
 
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusMetaType>

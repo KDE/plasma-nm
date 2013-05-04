@@ -28,8 +28,8 @@
 #include <KMainWindow>
 #include <KUrl>
 
-#include <NetworkManagerQt/settings.h>
-#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/settings/connection.h>
 
 int main(int argc, char *argv[])

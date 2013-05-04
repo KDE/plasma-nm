@@ -21,9 +21,9 @@
 
 #include "modelbtitem.h"
 
-#include <NetworkManagerQt/bluetoothdevice.h>
+#include <NetworkManagerQt/BluetoothDevice>
 #include <NetworkManagerQt/settings/bluetooth.h>
-#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/Manager>
 
 #include <KLocalizedString>
 

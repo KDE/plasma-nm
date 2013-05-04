@@ -29,7 +29,7 @@
 
 #include <KGlobalSettings>
 
-#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/Manager>
 
 #include "debug.h"
 

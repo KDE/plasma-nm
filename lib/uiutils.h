@@ -23,10 +23,10 @@
 
 class QSizeF;
 
-#include <NetworkManagerQt/device.h>
-#include <NetworkManagerQt/modemdevice.h>
-#include <NetworkManagerQt/wirelessdevice.h>
-#include <NetworkManagerQt/accesspoint.h>
+#include <NetworkManagerQt/Device>
+#include <NetworkManagerQt/ModemDevice>
+#include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/AccessPoint>
 
 #include <Solid/Device>
 

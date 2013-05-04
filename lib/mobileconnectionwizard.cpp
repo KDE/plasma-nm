@@ -30,7 +30,7 @@
 #include <KIconLoader>
 #include <Solid/Device>
 
-#include <NetworkManagerQt/modemdevice.h>
+#include <NetworkManagerQt/ModemDevice>
 
 #include <ModemManagerQt/manager.h>
 #include <ModemManagerQt/modeminterface.h>

@@ -24,7 +24,7 @@
 
 #include <QObject>
 
-#include <NetworkManagerQt/device.h>
+#include <NetworkManagerQt/Device>
 
 class KNotification;
 class InterfaceNotification : public QObject

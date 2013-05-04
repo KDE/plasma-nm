@@ -40,12 +40,12 @@
 
 #include <QDebug>
 
-#include <NetworkManagerQt/settings.h>
-#include <NetworkManagerQt/activeconnection.h>
-#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/ActiveConnection>
+#include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/settings/802-11-wireless.h>
 #include <NetworkManagerQt/settings/vpn.h>
-#include <NetworkManagerQt/generic-types.h>
+#include <NetworkManagerQt/GenericTypes>
 
 #include <KPluginFactory>
 #include <KServiceTypeTrader>

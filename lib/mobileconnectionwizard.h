@@ -30,7 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KComboBox>
 #include <KLineEdit>
 
-#include <NetworkManagerQt/manager.h>
+#include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/settings/connection.h>
 
 #include "mobileproviders.h"

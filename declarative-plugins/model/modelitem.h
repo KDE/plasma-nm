@@ -21,10 +21,10 @@
 #ifndef PLASMA_NM_MODEL_ITEM_H
 #define PLASMA_NM_MODEL_ITEM_H
 
-#include <NetworkManagerQt/activeconnection.h>
-#include <NetworkManagerQt/connection.h>
+#include <NetworkManagerQt/ActiveConnection>
+#include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/settings/connection.h>
-#include <NetworkManagerQt/device.h>
+#include <NetworkManagerQt/Device>
 
 #include "model.h"
 

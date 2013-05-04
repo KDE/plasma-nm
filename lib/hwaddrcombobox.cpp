@@ -20,16 +20,16 @@
 
 #include "hwaddrcombobox.h"
 
-#include <NetworkManagerQt/manager.h>
-#include <NetworkManagerQt/wireddevice.h>
-#include <NetworkManagerQt/wirelessdevice.h>
-#include <NetworkManagerQt/bluetoothdevice.h>
-#include <NetworkManagerQt/olpcmeshdevice.h>
-#include <NetworkManagerQt/wimaxdevice.h>
-#include <NetworkManagerQt/infinibanddevice.h>
-#include <NetworkManagerQt/bonddevice.h>
-#include <NetworkManagerQt/bridgedevice.h>
-#include <NetworkManagerQt/vlandevice.h>
+#include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/WiredDevice>
+#include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/BluetoothDevice>
+#include <NetworkManagerQt/OlpcMeshDevice>
+#include <NetworkManagerQt/WimaxDevice>
+#include <NetworkManagerQt/InfinibandDevice>
+#include <NetworkManagerQt/BondDevice>
+#include <NetworkManagerQt/BridgeDevice>
+#include <NetworkManagerQt/VlanDevice>
 
 HwAddrComboBox::HwAddrComboBox(QWidget *parent) :
     KComboBox(parent), m_dirty(false)

@@ -23,9 +23,9 @@
 #include "secretagent.h"
 #include "passworddialog.h"
 
-#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/settings/connection.h>
-#include <NetworkManagerQt/generic-types.h>
+#include <NetworkManagerQt/GenericTypes>
 #include <NetworkManagerQt/settings/vpn.h>
 
 #include <QStringBuilder>

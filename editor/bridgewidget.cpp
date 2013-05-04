@@ -24,9 +24,9 @@
 
 #include <QDebug>
 
-#include <NetworkManagerQt/generic-types.h>
-#include <NetworkManagerQt/connection.h>
-#include <NetworkManagerQt/settings.h>
+#include <NetworkManagerQt/GenericTypes>
+#include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/settings/connection.h>
 
 #include <KLocalizedString>

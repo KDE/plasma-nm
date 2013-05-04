@@ -23,10 +23,10 @@
 
 #include <QtCore/QAbstractListModel>
 
-#include <NetworkManagerQt/manager.h>
-#include <NetworkManagerQt/activeconnection.h>
-#include <NetworkManagerQt/accesspoint.h>
-#include <NetworkManagerQt/device.h>
+#include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/ActiveConnection>
+#include <NetworkManagerQt/AccessPoint>
+#include <NetworkManagerQt/Device>
 
 class ModelItem;
 

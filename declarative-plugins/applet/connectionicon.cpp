@@ -27,8 +27,8 @@
 #include <NetworkManagerQt/ModemDevice>
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessDevice>
-#include <NetworkManagerQt/settings/connection.h>
-#include <NetworkManagerQt/settings/802-11-wireless.h>
+#include <NetworkManagerQt/settings/Connection>
+#include <NetworkManagerQt/settings/Wireless>
 
 #include "debug.h"
 

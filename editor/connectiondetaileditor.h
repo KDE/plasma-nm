@@ -23,7 +23,7 @@
 
 #include <QtGui/QDialog>
 
-#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/settings/Connection>
 
 namespace Ui
 {

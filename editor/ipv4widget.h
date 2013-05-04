@@ -22,7 +22,7 @@
 #define PLASMA_NM_IPV4_WIDGET_H
 
 #include <QtGui/QWidget>
-#include <NetworkManagerQt/settings/ipv4.h>
+#include <NetworkManagerQt/settings/Ipv4>
 
 #include "settingwidget.h"
 #include "ui/ipv4routeswidget.h"

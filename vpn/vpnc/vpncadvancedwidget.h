@@ -23,7 +23,7 @@
 
 #include <QDialog>
 
-#include <NetworkManagerQt/settings/vpn.h>
+#include <NetworkManagerQt/settings/Vpn>
 
 namespace Ui
 {

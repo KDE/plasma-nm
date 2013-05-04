@@ -30,7 +30,7 @@
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/settings/Connection>
 
 int main(int argc, char *argv[])
 {

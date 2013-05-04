@@ -21,8 +21,8 @@
 #include "model/modelvpnitem.h"
 
 #include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/settings/connection.h>
-#include <NetworkManagerQt/settings/vpn.h>
+#include <NetworkManagerQt/settings/Connection>
+#include <NetworkManagerQt/settings/Vpn>
 
 #include <KLocalizedString>
 

@@ -21,7 +21,7 @@
 #include "pppwidget.h"
 #include "ui_ppp.h"
 
-#include <NetworkManagerQt/settings/ppp.h>
+#include <NetworkManagerQt/settings/Ppp>
 
 PPPWidget::PPPWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

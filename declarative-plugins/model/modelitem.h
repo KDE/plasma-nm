@@ -23,7 +23,7 @@
 
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/settings/Connection>
 #include <NetworkManagerQt/Device>
 
 #include "model.h"

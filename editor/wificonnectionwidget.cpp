@@ -21,7 +21,7 @@
 #include "wificonnectionwidget.h"
 #include "ui_wificonnectionwidget.h"
 
-#include <NetworkManagerQt/settings/802-11-wireless.h>
+#include <NetworkManagerQt/settings/Wireless>
 
 #include "uiutils.h"
 

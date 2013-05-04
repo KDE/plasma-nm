@@ -24,9 +24,9 @@
 #include "passworddialog.h"
 
 #include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/settings/Connection>
 #include <NetworkManagerQt/GenericTypes>
-#include <NetworkManagerQt/settings/vpn.h>
+#include <NetworkManagerQt/settings/Vpn>
 
 #include <QStringBuilder>
 

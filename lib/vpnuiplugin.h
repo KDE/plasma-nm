@@ -26,7 +26,7 @@
 #include <QVariant>
 #include <QMessageBox>
 
-#include <NetworkManagerQt/settings/vpn.h>
+#include <NetworkManagerQt/settings/Vpn>
 
 #include <kdemacros.h>
 

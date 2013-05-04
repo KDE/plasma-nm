@@ -26,7 +26,7 @@
 #include <QDomDocument>
 #include <QVariantMap>
 
-#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/settings/Connection>
 
 class MobileProviders
 {

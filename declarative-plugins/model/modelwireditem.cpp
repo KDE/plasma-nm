@@ -23,7 +23,7 @@
 #include "debug.h"
 
 #include <NetworkManagerQt/WiredDevice>
-#include <NetworkManagerQt/settings/802-3-ethernet.h>
+#include <NetworkManagerQt/settings/Ethernet>
 #include <NetworkManagerQt/Manager>
 
 #include <KLocalizedString>

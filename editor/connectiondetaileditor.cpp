@@ -43,8 +43,8 @@
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/settings/802-11-wireless.h>
-#include <NetworkManagerQt/settings/vpn.h>
+#include <NetworkManagerQt/settings/Wireless>
+#include <NetworkManagerQt/settings/Vpn>
 #include <NetworkManagerQt/GenericTypes>
 
 #include <KPluginFactory>

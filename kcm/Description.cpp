@@ -41,9 +41,9 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/IpConfig>
 #include <NetworkManagerQt/WimaxDevice>
-#include <NetworkManagerQt/settings/802-11-wireless.h>
-#include <NetworkManagerQt/settings/wimax.h>
-#include <NetworkManagerQt/settings/connection.h>
+#include <NetworkManagerQt/settings/Wireless>
+#include <NetworkManagerQt/settings/Wimax>
+#include <NetworkManagerQt/settings/Connection>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ActiveConnection>
 

@@ -23,7 +23,7 @@
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/WiredDevice>
-#include <NetworkManagerQt/settings/802-11-wireless.h>
+#include <NetworkManagerQt/settings/Wireless>
 
 #include "model/modelwirelessitem.h"
 #include "model/modelwireditem.h"

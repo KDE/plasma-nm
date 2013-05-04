@@ -23,7 +23,7 @@
 
 #include <QtGui/QWidget>
 
-#include <NetworkManagerQt/settings/setting.h>
+#include <NetworkManagerQt/settings/Setting>
 
 #include "settingwidget.h"
 

@@ -22,7 +22,7 @@
 #include "debug.h"
 
 #include <NetworkManagerQt/WirelessDevice>
-#include <NetworkManagerQt/settings/802-11-wireless.h>
+#include <NetworkManagerQt/settings/Wireless>
 #include <NetworkManagerQt/Manager>
 
 #include <KLocalizedString>

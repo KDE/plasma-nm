@@ -22,7 +22,7 @@
 #include "modelbtitem.h"
 
 #include <NetworkManagerQt/BluetoothDevice>
-#include <NetworkManagerQt/settings/bluetooth.h>
+#include <NetworkManagerQt/settings/Bluetooth>
 #include <NetworkManagerQt/Manager>
 
 #include <KLocalizedString>

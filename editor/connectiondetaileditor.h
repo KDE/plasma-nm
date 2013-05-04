@@ -36,16 +36,16 @@ class ConnectionDetailEditor : public QDialog
 
 public:
     explicit ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType type,
-                           QWidget* parent = 0,
-                           const QString &vpnType = QString(),
-                           const QString &masterUuid = QString(),
-                           const QString &slaveType = QString(),
-                           Qt::WindowFlags f = 0);
+                                    QWidget* parent = 0,
+                                    const QString &vpnType = QString(),
+                                    const QString &masterUuid = QString(),
+                                    const QString &slaveType = QString(),
+                                    Qt::WindowFlags f = 0);
     explicit ConnectionDetailEditor(const NetworkManager::Settings::ConnectionSettings::Ptr &setting,
-                           QWidget* parent = 0, Qt::WindowFlags f = 0);
-    ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType type,
-                           const QVariantList &args,
-                           QWidget* parent = 0, Qt::WindowFlags f = 0);
+                                    QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType type,
+                                    const QVariantList &args,
+                                    QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~ConnectionDetailEditor();
 
     bool isSlave() const { return !m_masterUuid.isEmpty() && !m_slaveType.isEmpty(); }

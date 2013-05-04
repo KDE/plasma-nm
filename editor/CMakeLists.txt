@@ -28,6 +28,7 @@ set(connectioneditor_SRCS
    infinibandwidget.cpp
    bondwidget.cpp
    bridgewidget.cpp
+   vlanwidget.cpp
 )
 
 kde4_add_ui_files(connectioneditor_SRCS
@@ -51,6 +52,7 @@ kde4_add_ui_files(connectioneditor_SRCS
     ui/infiniband.ui
     ui/bond.ui
     ui/bridge.ui
+    ui/vlan.ui
 )
 
 kde4_add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})

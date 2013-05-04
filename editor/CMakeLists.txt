@@ -29,6 +29,7 @@ set(connectioneditor_SRCS
    bondwidget.cpp
    bridgewidget.cpp
    vlanwidget.cpp
+   wimaxwidget.cpp
 )
 
 kde4_add_ui_files(connectioneditor_SRCS
@@ -53,6 +54,7 @@ kde4_add_ui_files(connectioneditor_SRCS
     ui/bond.ui
     ui/bridge.ui
     ui/vlan.ui
+    ui/wimax.ui
 )
 
 kde4_add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})

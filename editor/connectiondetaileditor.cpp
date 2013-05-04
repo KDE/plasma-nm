@@ -37,6 +37,7 @@
 #include "bondwidget.h"
 #include "bridgewidget.h"
 #include "vlanwidget.h"
+#include "wimaxwidget.h"
 #include "vpnuiplugin.h"
 
 #include <QDebug>
@@ -269,6 +270,9 @@ void ConnectionDetailEditor::initTabs()
     } else if (type == NetworkManager::Settings::ConnectionSettings::Vlan) { // Vlan
         VlanWidget * vlanWidget = new VlanWidget(m_connection->setting(NetworkManager::Settings::Setting::Vlan), this);
         m_ui->tabWidget->addTab(vlanWidget, i18n("Vlan"));
+    } else if (type == NetworkManager::Settings::ConnectionSettings::Wimax) { // Wimax
+        WimaxWidget * wimaxWidget = new WimaxWidget(m_connection->setting(NetworkManager::Settings::Setting::Wimax), this);
+        m_ui->tabWidget->addTab(wimaxWidget, i18n("Wimax"));
     } else if (type == NetworkManager::Settings::ConnectionSettings::Vpn) { // VPN
         QString error;
         VpnUiPlugin * vpnPlugin = 0;
@@ -312,7 +316,10 @@ void ConnectionDetailEditor::initTabs()
     }
 
     // IPv6 widget
-    if ((type == Settings::ConnectionSettings::Wired || type == Settings::ConnectionSettings::Wireless || type == Settings::ConnectionSettings::Infiniband
+    if ((type == Settings::ConnectionSettings::Wired
+         || type == Settings::ConnectionSettings::Wireless
+         || type == Settings::ConnectionSettings::Infiniband
+         || type == Settings::ConnectionSettings::Wimax
          || type == Settings::ConnectionSettings::Bond
          || type == Settings::ConnectionSettings::Bridge
          || type == Settings::ConnectionSettings::Vlan) && !isSlave()) {

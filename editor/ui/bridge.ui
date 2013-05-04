@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>Lukáš Tinkl &lt;ltinkl@redhat.com&gt;</author>
  <class>BridgeWidget</class>
  <widget class="QWidget" name="BridgeWidget">
   <property name="geometry">
@@ -264,14 +265,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
- <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
   </customwidget>
   <customwidget>
    <class>KListWidget</class>

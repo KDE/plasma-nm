@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
+ <author>Lukáš Tinkl &lt;ltinkl@redhat.com&gt;</author>
  <class>VlanWidget</class>
  <widget class="QWidget" name="VlanWidget">
   <property name="geometry">

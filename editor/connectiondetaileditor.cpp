@@ -107,7 +107,7 @@ ConnectionDetailEditor::ConnectionDetailEditor(Settings::ConnectionSettings::Con
             qWarning() << Q_FUNC_INFO << "Unhandled setting type";
 
         qDebug() << "New connection initialized:";
-        m_connection->printSetting();
+        qDebug() << *m_connection;
     } else {
         qWarning() << Q_FUNC_INFO << "Unexpected number of args to parse";
     }
@@ -380,7 +380,7 @@ void ConnectionDetailEditor::saveSetting()
         connectionSettings->setSlaveType(m_slaveType);
     }
 
-    connectionSettings->printSetting();  // debug
+    qDebug() << *connectionSettings;  // debug
 
     if (m_new) { // create new connection
         connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),

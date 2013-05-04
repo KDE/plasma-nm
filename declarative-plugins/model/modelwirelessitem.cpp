@@ -167,7 +167,7 @@ void ModelWirelessItem::updateDetails()
             if (network) {
                 m_details += QString(format).arg(i18n("Access point (SSID):"), network->ssid());
             }
-        } else if (key == "wireless:bssid") {
+        } else if (key == "wireless:accesspoint") {
             if (ap) {
                 m_details += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
             }

@@ -378,10 +378,7 @@ void Model::insertItem(ModelItem* item)
 
     foreach (ModelItem * it, m_connections) {
         // Check for duplicity
-        if (((!it->uuid().isEmpty() && !item->uuid().isEmpty() && it->uuid() == item->uuid()) ||
-            (!it->name().isEmpty() && !item->name().isEmpty() && it->name() == item->name()) ||
-            (!it->ssid().isEmpty() && !item->ssid().isEmpty() && it->ssid() == item->ssid())) &&
-            (it->devicePath() == item->devicePath())) {
+        if (it->operator==(item)) {
             // Update info
             if (it->type() == NetworkManager::Settings::ConnectionSettings::Wireless &&
                 item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {

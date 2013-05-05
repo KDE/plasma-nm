@@ -186,11 +186,13 @@ void ModelItem::updateDetails()
 
 bool ModelItem::operator==(const ModelItem* item) const
 {
-    if (((item->uuid() == this->uuid()) && !item->name().isEmpty() && !this->name().isEmpty()) ||
-        item->name() == this->name()) {
+    if (((item->uuid() == this->uuid() && !item->uuid().isEmpty() && !this->uuid().isEmpty()) ||
+         (item->name() == this->name() && !item->name().isEmpty() && !this->name().isEmpty() && item->type() == this->type()) ||
+         (item->ssid() == this->ssid() && !item->ssid().isEmpty() && !this->ssid().isEmpty())) &&
+         ((item->devicePath() == this->devicePath() && !item->devicePath().isEmpty() && !this->devicePath().isEmpty()) ||
+          (item->type() == NetworkManager::Settings::ConnectionSettings::Vpn && this->type() == NetworkManager::Settings::ConnectionSettings::Vpn))) {
         return true;
     }
-
     return false;
 }
 

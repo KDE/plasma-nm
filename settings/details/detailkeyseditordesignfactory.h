@@ -41,7 +41,4 @@ public:
     QWidget *createWidget(QWidget *parent);
 };
 
-
-
 #endif // PLASMA_NM_DETAIL_KEYS_EDITOR_DESIGN_FACTORY_H
-

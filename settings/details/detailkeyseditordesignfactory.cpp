@@ -18,11 +18,10 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "detailkeyseditordesignfactory.h"
-
 #include <QtCore/QtPlugin>
 
 #include "detailkeyseditor.h"
+#include "detailkeyseditordesignfactory.h"
 
 DetailKeysEditorDesignerFactory::DetailKeysEditorDesignerFactory(QObject *parent)
 : QObject(parent)
@@ -70,8 +69,3 @@ QWidget * DetailKeysEditorDesignerFactory::createWidget(QWidget *parent)
 }
 
 Q_EXPORT_PLUGIN2(plasmanm_config_widgets, DetailKeysEditorDesignerFactory)
-
-
-
-
-

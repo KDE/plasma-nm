@@ -22,7 +22,7 @@
 #include "detailkeyseditor.h"
 #include "ui_detailkeyswidget.h"
 
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 #include <KDebug>
 #include <QList>
 

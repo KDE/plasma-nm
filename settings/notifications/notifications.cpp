@@ -28,11 +28,11 @@
 #include <KNotifyConfigWidget>
 
 
-K_PLUGIN_FACTORY( NotificationsWidgetFactory, registerPlugin<NotificationsWidget>();)
-K_EXPORT_PLUGIN( NotificationsWidgetFactory( "plasma_nm_notifications", "plasma_applet_org.kde.plasma-nm" ) )
+K_PLUGIN_FACTORY(NotificationsWidgetFactory, registerPlugin<NotificationsWidget>();)
+K_EXPORT_PLUGIN(NotificationsWidgetFactory("plasma_nm_notifications", "plasma_applet_org.kde.plasma-nm"))
 
 NotificationsWidget::NotificationsWidget(QWidget *parent, const QVariantList &args)
-    : KCModule( NotificationsWidgetFactory::componentData(), parent, args ),
+    : KCModule(NotificationsWidgetFactory::componentData(), parent, args),
       m_notifyWidget(new KNotifyConfigWidget(this))
 {
     QHBoxLayout * layout = new QHBoxLayout(this);

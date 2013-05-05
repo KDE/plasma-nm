@@ -31,7 +31,7 @@
 #include <QDBusMetaType>
 
 K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManagementService>();)
-K_EXPORT_PLUGIN(NetworkManagementServiceFactory("plasmanm", "plasma_applet_org.kde.plasma-nm"))
+K_EXPORT_PLUGIN(NetworkManagementServiceFactory("plasmanm", "plasmanm-kded"))
 
 class NetworkManagementServicePrivate
 {

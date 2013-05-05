@@ -100,21 +100,33 @@ void ModelModemItem::updateDetails()
             }
         } else if (key == "ipv4:address") {
             if (device && device->ipV4Config().isValid() && m_connected) {
+                if (device->ipV4Config().addresses().isEmpty()) {
+                    continue;
+                }
                 QHostAddress addr = device->ipV4Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
             }
         } else if (key == "ipv4:gateway") {
             if (device && device->ipV4Config().isValid() && m_connected) {
+                if (device->ipV4Config().addresses().isEmpty()) {
+                    continue;
+                }
                 QHostAddress addr = device->ipV4Config().addresses().first().gateway();
                 m_details += QString(format).arg(i18n("IPv4 Gateway:"), addr.toString());
             }
         } else if (key == "ipv6:address") {
             if (device && device->ipV6Config().isValid() && m_connected) {
+                if (device->ipV6Config().addresses().isEmpty()) {
+                    continue;
+                }
                 QHostAddress addr = device->ipV6Config().addresses().first().ip();
                 m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
             }
         } else if (key == "ipv6:gateway") {
             if (device && device->ipV6Config().isValid() && m_connected) {
+                if (device->ipV6Config().addresses().isEmpty()) {
+                    continue;
+                }
                 QHostAddress addr = device->ipV6Config().addresses().first().gateway();
                 m_details += QString(format).arg(i18n("IPv6 Gateway:"), addr.toString());
             }

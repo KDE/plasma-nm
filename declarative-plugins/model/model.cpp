@@ -171,6 +171,10 @@ void Model::addActiveConnection(const NetworkManager::ActiveConnection::Ptr & ac
     }
 
     if (!found) {
+        if (active->devices().isEmpty()) {
+            return;
+        }
+        
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
         NetworkManager::Settings::Connection::Ptr connection = active->connection();
 

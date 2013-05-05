@@ -156,6 +156,9 @@ void ConnectionIcon::setIcons()
 
     foreach (const NetworkManager::ActiveConnection::Ptr & active, actives) {
         if ((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) {
+            if (active->devices().isEmpty()) {
+                continue;
+            }
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
             if (device) {
                 NetworkManager::Device::Type type = device->type();

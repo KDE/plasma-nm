@@ -58,6 +58,11 @@ DeviceConnectionModel::DeviceConnectionModel(QObject *parent) :
     connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
             this, SLOT(deviceRemoved(QString)));
 
+    connect(NetworkManager::notifier(), SIGNAL(activeConnectionAdded(QString)),
+            this, SLOT(activeConnectionAdded(QString)));
+    connect(NetworkManager::notifier(), SIGNAL(activeConnectionRemoved(QString)),
+            this, SLOT(activeConnectionRemoved(QString)));
+
     QStandardItem *parentItem = new QStandardItem(i18n("Network devices"));
     parentItem->setData(true, RoleIsDeviceParent);
     parentItem->setSelectable(false);
@@ -177,7 +182,7 @@ void DeviceConnectionModel::connectionAdded(const QString &path)
     }
 }
 
-void DeviceConnectionModel::connectionChanged()
+void DeviceConnectionModel::connectionUpdated()
 {
     Settings::Connection *caller = qobject_cast<Settings::Connection*>(sender());
     kWarning() << "-----" << caller;
@@ -185,19 +190,19 @@ void DeviceConnectionModel::connectionChanged()
         kWarning() << "-----" << caller->path();
         Settings::Connection::Ptr connection = Settings::findConnection(caller->path());
         if (connection) {
-            QStandardItem *stdItem = findConnectionItem(connection->path());
+            QStandardItem *stdItem = findConnectionItem(connection->path(), RoleConnectionPath);
             if (!stdItem) {
                 kWarning() << "Connection not found" << connection->path();
                 return;
             }
-            changeConnection(stdItem, connection);
+            stdItem->setText(connection->name());
         }
     }
 }
 
 void DeviceConnectionModel::connectionRemoved(const QString &path)
 {
-    QStandardItem *stdItem = findConnectionItem(path);
+    QStandardItem *stdItem = findConnectionItem(path, RoleConnectionPath);
     if (stdItem) {
         QStandardItem *stdParentItem = stdItem->parent();
         removeRow(stdItem->row(), stdParentItem->index());
@@ -207,56 +212,85 @@ void DeviceConnectionModel::connectionRemoved(const QString &path)
     }
 }
 
+void DeviceConnectionModel::activeConnectionAdded(const QString &path)
+{
+    ActiveConnection::Ptr activeConnection = NetworkManager::findActiveConnection(path);
+    if (!activeConnection) {
+        return;
+    }
+
+    Settings::Connection::Ptr connection = activeConnection->connection();
+    if (connection) {
+        QStandardItem *stdItem = findConnectionItem(connection->path(), RoleConnectionPath);
+        if (!stdItem) {
+            kWarning() << "Connection not found" << connection->path();
+            return;
+        }
+        changeConnectionActive(stdItem, activeConnection->path());
+    }
+}
+
+void DeviceConnectionModel::activeConnectionRemoved(const QString &path)
+{
+    QStandardItem *stdItem = findConnectionItem(path, RoleConnectionActivePath);
+    if (stdItem) {
+        changeConnectionActive(stdItem);
+    }
+}
+
 void DeviceConnectionModel::addConnection(const Settings::Connection::Ptr &connection)
 {
-    QStandardItem *stdItem = findConnectionItem(connection->path());
+    QStandardItem *stdItem = findConnectionItem(connection->path(), RoleConnectionPath);
     if (stdItem) {
         return;
     }
 
     Settings::ConnectionSettings::ConnectionType type = connection->settings()->connectionType();
     QStandardItem *parentItem = findOrCreateConnectionType(type);
-    connect(connection.data(), SIGNAL(activeChanged()),
-            this, SLOT(connectionChanged()));
+    connect(connection.data(), SIGNAL(updated()),
+            this, SLOT(connectionUpdated()));
 
     stdItem = new QStandardItem;
     stdItem->setData(true, RoleIsConnection);
-    stdItem->setData(connection->path(), RoleConectionPath);
-    changeConnection(stdItem, connection);
+    stdItem->setData(connection->path(), RoleConnectionPath);
+    stdItem->setIcon(KIcon("network-disconnect"));
+    stdItem->setText(connection->name());
     parentItem->appendRow(stdItem);
 
-    uint count = parentItem->data(RoleIsConnectionCategoryActiveCount).toUInt();
-//    if (connection->active()) {
-//        parentItem->setData(++count, RoleIsConnectionCategoryActiveCount);
-//        if (count == 1) {
-//            emit parentAdded(parentItem->index());
-//        }
-//    }
+    foreach (const ActiveConnection::Ptr &activeConnection, NetworkManager::activeConnections()) {
+        if (activeConnection->connection() == connection) {
+            changeConnectionActive(stdItem, activeConnection->path());
+            break;
+        }
+    }
 }
 
-void DeviceConnectionModel::changeConnection(QStandardItem *stdItem, const Settings::Connection::Ptr &connection)
+void DeviceConnectionModel::changeConnectionActive(QStandardItem *stdItem, const QString &activePath)
 {
-//    kDebug() << connection->uuid() << connection->path() << connection->name() << connection->active();
-//    QVariant previousActive = stdItem->data(RoleConnectionActive);
-//    if (previousActive.isNull() || previousActive.toBool() != connection->active()) {
-//        if (connection->active()) {
-//            stdItem->setIcon(KIcon("network-connect"));
-//        } else {
-//            stdItem->setIcon(KIcon("network-disconnect"));
-//        }
-//        stdItem->setData(connection->active(), RoleConnectionActive);
+    kDebug() << stdItem->text() << activePath;
+    QVariant previousActive = stdItem->data(RoleConnectionActivePath);
+    if (previousActive.isNull() || previousActive.toString() != activePath) {
+        if (activePath.isNull()) {
+            stdItem->setIcon(KIcon("network-connect"));
+        } else {
+            stdItem->setIcon(KIcon("network-disconnect"));
+        }
+        stdItem->setData(activePath, RoleConnectionActivePath);
 
-//        if (!previousActive.isNull()) {
-//            uint count = stdItem->parent()->data(RoleIsConnectionCategoryActiveCount).toUInt();
-//            if (connection->active()) {
-//                stdItem->parent()->setData(++count, RoleIsConnectionCategoryActiveCount);
-//            } else {
-//                stdItem->parent()->setData(--count, RoleIsConnectionCategoryActiveCount);
-//            }
-//        }
-//    }
-
-    stdItem->setText(connection->name());
+        uint count = stdItem->parent()->data(RoleIsConnectionCategoryActiveCount).toUInt();
+        if (previousActive.isNull()) {
+            stdItem->parent()->setData(++count, RoleIsConnectionCategoryActiveCount);
+            if (count == 1) {
+                emit parentAdded(stdItem->parent()->index());
+            }
+        } else {
+            if (activePath.isNull()) {
+                stdItem->parent()->setData(--count, RoleIsConnectionCategoryActiveCount);
+            } else {
+                stdItem->parent()->setData(++count, RoleIsConnectionCategoryActiveCount);
+            }
+        }
+    }
 }
 
 QStandardItem *DeviceConnectionModel::findDeviceItem(const QString &uni)
@@ -272,7 +306,7 @@ QStandardItem *DeviceConnectionModel::findDeviceItem(const QString &uni)
     return 0;
 }
 
-QStandardItem *DeviceConnectionModel::findConnectionItem(const QString &path)
+QStandardItem *DeviceConnectionModel::findConnectionItem(const QString &path, DeviceRoles role)
 {
     for (int i = 0; i < rowCount(); ++i) {
         QStandardItem *stdRootItem = item(i);
@@ -283,7 +317,7 @@ QStandardItem *DeviceConnectionModel::findConnectionItem(const QString &path)
 
                 for (int i = 0; i < stdParentItem->rowCount(); ++i) {
                     QStandardItem *stdItem = stdParentItem->child(i);
-                    if (stdItem->data(RoleConectionPath).toString() == path) {
+                    if (stdItem->data(role).toString() == path) {
                         return stdItem;
                     }
                 }

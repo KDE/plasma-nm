@@ -42,9 +42,9 @@ public:
         RoleIsConnectionCategory,
         RoleIsConnectionCategoryActiveCount,
         RoleDeviceUNI,
-        RoleConectionPath,
+        RoleConnectionPath,
         RoleState,
-        RoleConnectionActive,
+        RoleConnectionActivePath,
         RoleSort
     };
     explicit DeviceConnectionModel(QObject *parent = 0);
@@ -66,14 +66,16 @@ private slots:
     void changeDevice(QStandardItem *stdItem, const NetworkManager::Device::Ptr &device);
 
     void connectionAdded(const QString &path);
-    void connectionChanged();
+    void connectionUpdated();
     void connectionRemoved(const QString &path);
+    void activeConnectionAdded(const QString &path);
+    void activeConnectionRemoved(const QString &path);
     void addConnection(const NetworkManager::Settings::Connection::Ptr &connection);
-    void changeConnection(QStandardItem *stdItem, const NetworkManager::Settings::Connection::Ptr &connection);
+    void changeConnectionActive(QStandardItem *stdItem, const QString &activePath = QString());
 
 private:
     QStandardItem *findDeviceItem(const QString &uni);
-    QStandardItem *findConnectionItem(const QString &path);
+    QStandardItem *findConnectionItem(const QString &path, DeviceRoles role);
     QStandardItem *findOrCreateConnectionType(NetworkManager::Settings::ConnectionSettings::ConnectionType type);
 };
 

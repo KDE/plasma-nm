@@ -41,7 +41,7 @@ bool DeviceConnectionSortFilterModel::filterAcceptsRow(int source_row, const QMo
     QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
 
     if (index.data(DeviceConnectionModel::RoleIsConnection).toBool()) {
-        return index.data(DeviceConnectionModel::RoleConnectionActive).toBool();
+        return !index.data(DeviceConnectionModel::RoleConnectionActivePath).isNull();
     } else if (index.data(DeviceConnectionModel::RoleIsConnectionCategory).toBool()) {
         return index.data(DeviceConnectionModel::RoleIsConnectionCategoryActiveCount).toUInt();
     }
@@ -74,8 +74,8 @@ bool DeviceConnectionSortFilterModel::lessThan(const QModelIndex &left, const QM
 
     bool leftIsConnection = left.data(DeviceConnectionModel::RoleIsConnection).toBool();
     if (leftIsConnection) {
-        bool leftIsConnectionActive = left.data(DeviceConnectionModel::RoleConnectionActive).toBool();
-        bool rightIsConnectionActive = right.data(DeviceConnectionModel::RoleConnectionActive).toBool();
+        bool leftIsConnectionActive = !left.data(DeviceConnectionModel::RoleConnectionActivePath).isNull();
+        bool rightIsConnectionActive = !right.data(DeviceConnectionModel::RoleConnectionActivePath).isNull();
         if (leftIsConnectionActive != rightIsConnectionActive) {
             // If the left item is a active connection the right should move left
             return leftIsConnectionActive;

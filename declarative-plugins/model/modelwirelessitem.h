@@ -53,6 +53,7 @@ public:
 private Q_SLOTS:
     void onAccessPointChanged(const QString & accessPoint);
     void onSignalStrengthChanged(int strength);
+    void wirelessNetworkRemoved();
 
 protected:
     void updateDetails();

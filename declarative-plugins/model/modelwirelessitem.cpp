@@ -285,6 +285,8 @@ void ModelWirelessItem::setWirelessNetwork(const NetworkManager::WirelessNetwork
                 SLOT(onSignalStrengthChanged(int)), Qt::UniqueConnection);
         connect(m_network.data(), SIGNAL(referenceAccessPointChanged(QString)),
                 SLOT(onAccessPointChanged(QString)), Qt::UniqueConnection);
+        connect(m_network.data(), SIGNAL(destroyed(QObject*)),
+                SLOT(wirelessNetworkRemoved()));
     } else {
         m_ssid.clear();
         m_signal = 0;
@@ -317,4 +319,12 @@ void ModelWirelessItem::onSignalStrengthChanged(int strength)
     updateDetails();
 
     NMItemDebug() << name() << ": strength changed to " << strength;
+}
+
+void ModelWirelessItem::wirelessNetworkRemoved()
+{
+    m_network.clear();
+    m_ssid.clear();
+    m_signal = 0;
+    m_secure = false;
 }

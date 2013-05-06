@@ -48,6 +48,7 @@ private Q_SLOTS:
     void setIcons();
     void setWirelessIconForSignalStrength(int strength);
     void setIconForModem();
+    void wirelessNetworkRemoved();
 
 Q_SIGNALS:
     void hideConnectingIndicator();

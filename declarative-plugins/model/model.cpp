@@ -174,7 +174,7 @@ void Model::addActiveConnection(const NetworkManager::ActiveConnection::Ptr & ac
         if (active->devices().isEmpty()) {
             return;
         }
-        
+
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
         NetworkManager::Settings::Connection::Ptr connection = active->connection();
 
@@ -261,7 +261,6 @@ void Model::removeConnection(const QString& connection)
 
             if (row >= 0 ) {
                 bool removed = updateItem(item, row);
-
                 if (removed) {
                     NMModelDebug() << "Connection " << item->name() << " has been removed from known connections";
                 } else {
@@ -306,20 +305,17 @@ void Model::removeWirelessNetwork(const QString& ssid, const NetworkManager::Dev
             row  = m_connections.indexOf(item);
 
             if (row >= 0) {
-                if (item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-                    ModelWirelessItem * wifiItem = qobject_cast<ModelWirelessItem*>(item);
-                    if (wifiItem) {
-                        wifiItem->setWirelessNetwork(NetworkManager::WirelessNetwork::Ptr());
-                        bool removed = updateItem(item, row);
-
-                        if (removed) {
-                            NMModelDebug() << "Wireless network " << ssid << " has been completely removed";
-                        } else {
-                            NMModelDebug() << "Removed network from " << wifiItem->name() << " connection";
-                        }
+                ModelWirelessItem * wifiItem = qobject_cast<ModelWirelessItem*>(item);
+                if (wifiItem) {
+                    wifiItem->setWirelessNetwork(NetworkManager::WirelessNetwork::Ptr());
+                    bool removed = updateItem(item, row);
+                    if (removed) {
+                        NMModelDebug() << "Wireless network " << ssid << " has been completely removed";
                     } else {
-                        return;
+                        NMModelDebug() << "Removed network from " << wifiItem->name() << " connection";
                     }
+                } else {
+                    return;
                 }
             }
         }

@@ -35,77 +35,70 @@ public:
     Q_ENUMS(Detail)
     enum SectionType { Connected, Known, Unknown };
 
-    explicit ModelItem(const NetworkManager::Device::Ptr &device = NetworkManager::Device::Ptr(), QObject * parent = 0);
+    explicit ModelItem(const QString &device = QString(), QObject * parent = 0);
     virtual ~ModelItem();
 
     // Basic properties
-
     bool connected() const;
     bool connecting() const;
+    bool secure() const;
+    bool shouldBeRemoved() const;
+
+    QString details() const;
     QString deviceName() const;
-    virtual QString icon() const;
+    QString icon() const;
     QString name() const;
     QString uuid() const;
-    virtual QString ssid() const;
-    virtual int signal() const;
-    virtual bool secure() const;
+    QString ssid() const;
     QString sectionType() const;
-    bool shouldBeRemoved() const;
+
+    // Object paths
+    QString activeConnectionPath() const;
+    QString connectionPath() const;
+    QString devicePath() const;
+    QString specificPath() const;
+
+    int signal() const;
     NetworkManager::Settings::ConnectionSettings::ConnectionType type() const;
 
     bool operator==(const ModelItem * item) const;
 
-    // Detail info
-
-    QString details() const;
-
-    void setDetailKeys(const QStringList & keys);
+    void setDetailKeys(const QStringList &keys);
 
     // Objects
-
-    virtual void setActiveConnection(const NetworkManager::ActiveConnection::Ptr & active);
-    NetworkManager::ActiveConnection::Ptr activeConnection() const;
-
-    virtual void setConnection(const NetworkManager::Settings::Connection::Ptr & connection);
-    NetworkManager::Settings::Connection::Ptr connection() const;
-
-    void setDevice(const QString & device);
-    void removeDevice();
-
-    // Object paths
-
-    QString connectionPath() const;
-    QString devicePath() const;
-    virtual QString specificPath() const;
-
-Q_SIGNALS:
-    void itemChanged();
+    void setActiveConnection(const QString &active);
+    void setConnection(const QString &connection);
+    void setDevice(const QString &device);
+    void setWirelessNetwork(const QString &ssid);
 
 private Q_SLOTS:
-    void onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state);
-    void onConnectionUpdated();
-    void onDefaultRouteChanged(bool defaultRoute);
+//     void onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state);
+//     void onConnectionUpdated();
+//     void onDefaultRouteChanged(bool defaultRoute);
 
-protected:
-    NetworkManager::ActiveConnection::Ptr m_active;
-    NetworkManager::Settings::Connection::Ptr m_connection;
+private:
+    QString m_activePath;
+    QString m_accessPointPath;
+    QString m_connectionPath;
+    QString m_devicePath;
 
     bool m_connected;
     bool m_connecting;
-    QString m_connectionPath;
-    QString m_devicePath;
-    QString m_deviceName;
+    bool m_secure;
+
+    QString m_device;
     QString m_details;
     QStringList m_detailKeys;
     QString m_name;
-    SectionType m_sectionType;
+    QString m_ssid;
     QString m_uuid;
+
+    int m_signal;
+    SectionType m_sectionType;
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
 
-    virtual void updateDetails();
-    virtual void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
-    virtual bool shouldBeRemovedSpecific() const;
-    virtual void setSpecificDevice(const NetworkManager::Device::Ptr & device);
+    void updateDetails();
+    void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
 };
 
 #endif // PLASMA_NM_CONNECTION_ITEM_H

@@ -39,27 +39,27 @@ public Q_SLOTS:
     void init();
 
 private Q_SLOTS:
-    void availableConnectionAppeared(const QString & connection);
-    void availableConnectionDisappeared(const QString & connection);
+    void availableConnectionAppeared(const QString &connection);
+    void availableConnectionDisappeared(const QString &connection);
     void activeConnectionsChanged();
     void cablePlugged(bool plugged);
-    void connectionAdded(const QString & connection);
-    void connectionRemoved(const QString & connection);
-    void deviceAdded(const QString & device);
-    void deviceRemoved(const QString & device);
+    void connectionAdded(const QString &connection);
+    void connectionRemoved(const QString &connection);
+    void deviceAdded(const QString &device);
+    void deviceRemoved(const QString &device);
     void statusChanged(NetworkManager::Status status);
-    void wirelessNetworkAppeared(const QString & ssid);
-    void wirelessNetworkDisappeared(const QString & ssid);
+    void wirelessNetworkAppeared(const QString &ssid);
+    void wirelessNetworkDisappeared(const QString &ssid);
     void wirelessEnabled(bool enabled);
 Q_SIGNALS:
-    void addActiveConnection(const NetworkManager::ActiveConnection::Ptr & active);
-    void addConnection(const NetworkManager::Settings::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device);
-    void addVpnConnection(const NetworkManager::Settings::Connection::Ptr &connection);
-    void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device);
+    void addActiveConnection(const QString &active);
+    void addConnection(const QString &connection, const QString &device);
+    void addVpnConnection(const QString &connection);
+    void addWirelessNetwork(const QString &network, const QString &device);
     void removeWirelessNetworks();
-    void removeWirelessNetwork(const QString & ssid, const NetworkManager::Device::Ptr &device);
-    void removeConnectionsByDevice(const QString & udi);
-    void removeConnection(const QString & connection);
+    void removeWirelessNetwork(const QString &ssid, const QString &device);
+    void removeConnectionsByDevice(const QString &udi);
+    void removeConnection(const QString &connection);
     void removeVpnConnections();
 
 private:

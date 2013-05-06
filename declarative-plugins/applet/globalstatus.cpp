@@ -20,6 +20,8 @@
 
 #include "globalstatus.h"
 
+#include <QDBusConnection>
+
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>
 
@@ -78,12 +80,10 @@ void GlobalStatus::statusChanged(NetworkManager::Status status)
                 break;
             }
         }
-        statusMsg = i18n("Connected (via %1)", name);
+        statusMsg = i18n("Connected to %1", name);
         connected = true;
         inProgress = false;
-
     } else {
-
         switch (status) {
             case NetworkManager::Asleep:
                 statusMsg = i18n("Inactive");
@@ -106,7 +106,7 @@ void GlobalStatus::statusChanged(NetworkManager::Status status)
                 inProgress = true;
                 break;
             default:
-                statusMsg = i18n("Unknown");
+                statusMsg = checkUnknownReason();
                 connected = false;
                 inProgress = false;
                 break;
@@ -115,4 +115,19 @@ void GlobalStatus::statusChanged(NetworkManager::Status status)
 
     NMAppletDebug() << "Emit signal setGlobalStatus(" << statusMsg << ", " << connected << ", " << inProgress << ")";
     Q_EMIT setGlobalStatus(statusMsg, connected, inProgress);
+}
+
+
+QString GlobalStatus::checkUnknownReason() const
+{
+    // check if NM is running
+    if (!QDBusConnection::systemBus().interface()->isServiceRegistered(NM_DBUS_INTERFACE)) {
+        return i18n("NetworkManager not running");
+    }
+    // check if it has the correct version
+    else if (NetworkManager::compareVersion(0, 9, 8) == -1) {
+        return i18n("Incompatible NM version, O.9.8 required");
+    }
+
+    return i18nc("global connection state", "Unknown");
 }

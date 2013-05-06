@@ -42,6 +42,9 @@ private Q_SLOTS:
     void statusChanged(NetworkManager::Status status);
 Q_SIGNALS:
     void setGlobalStatus(const QString & status, bool connected, bool inProgress);
+
+private:
+    QString checkUnknownReason() const;
 };
 
 #endif // PLAMA_NM_GLOBAL_STATUS_H

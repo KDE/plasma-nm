@@ -18,10 +18,14 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QtCore/QtPlugin>
+#include <QtPlugin>
+
+#include <KGlobal>
 
 #include "detailkeyseditor.h"
 #include "detailkeyseditordesignfactory.h"
+
+static const KCatalogLoader loader(QLatin1String("plasma_applet_org.kde.plasma-nm"));
 
 DetailKeysEditorDesignerFactory::DetailKeysEditorDesignerFactory(QObject *parent)
 : QObject(parent)
@@ -69,3 +73,4 @@ QWidget * DetailKeysEditorDesignerFactory::createWidget(QWidget *parent)
 }
 
 Q_EXPORT_PLUGIN2(plasmanm_config_widgets, DetailKeysEditorDesignerFactory)
+

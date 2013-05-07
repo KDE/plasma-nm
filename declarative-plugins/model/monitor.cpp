@@ -166,10 +166,15 @@ void Monitor::activeConnectionAdded(const QString& active)
 {
     NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::findActiveConnection(active);
 
-    connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-            SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
-    NMMonitorDebug() << "Active connection " << activeConnection->connection()->name() << " added";
-    Q_EMIT addActiveConnection(active);
+    /* Just a prevention, the problem is when you get activeConenctionAdded() signal when NM starts (for example when you restart it)
+     * you never get this active connection from libnm-qt, because it's not valid due to missing connection property. But it still does
+     * not work properly, because the active connection is not added, and won't be added later */
+    if (activeConnection) {
+        connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
+        NMMonitorDebug() << "Active connection " << activeConnection->connection()->name() << " added";
+        Q_EMIT addActiveConnection(active);
+    }
 }
 
 void Monitor::activeConnectionRemoved(const QString& active)

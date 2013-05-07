@@ -44,8 +44,8 @@ kde4_add_ui_files(plasmanm_libeditor_SRCS
     ui/wimax.ui
 )
 
-kde4_add_library(libeditor SHARED ${plasmanm_libeditor_SRCS})
-target_link_libraries(libeditor
+kde4_add_library(plasmanm-editor SHARED ${plasmanm_libeditor_SRCS})
+target_link_libraries(plasmanm-editor
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
     ${QT_QTXML_LIBRARY}
@@ -55,4 +55,4 @@ target_link_libraries(libeditor
     plasmanm-internal
 )
 
-install(TARGETS libeditor ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS plasmanm-editor ${INSTALL_TARGETS_DEFAULT_ARGS})

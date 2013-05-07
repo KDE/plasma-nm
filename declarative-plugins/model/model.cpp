@@ -174,18 +174,15 @@ void Model::addActiveConnection(const QString& active)
     NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::findActiveConnection(active);
 
     if (!activeConnection) {
-        qDebug() << "NO ACTIVE CONNECTION";
         return;
     }
 
     if (!m_items.itemsByUuid(activeConnection->uuid()).isEmpty()) {
-        qDebug() << "CONNECTION FOUND";
         found = true;
     }
 
     if (!found) {
         if (activeConnection->devices().isEmpty()) {
-            qDebug() << "EMPTY DEVICES";
             return;
         }
 
@@ -193,11 +190,9 @@ void Model::addActiveConnection(const QString& active)
         NetworkManager::Settings::Connection::Ptr connection = activeConnection->connection();
 
         if (!device || !connection) {
-            qDebug() << "EMPTY DEVICE OR CONNECTION";
             return;
         }
 
-        qDebug() << "ADDING CONNECTION";
         addConnection(connection->path(), device->uni());
     }
 

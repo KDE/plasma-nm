@@ -18,35 +18,38 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_WIFI_CONNECTION_WIDGET_H
-#define PLASMA_NM_WIFI_CONNECTION_WIDGET_H
+#ifndef PLASMA_NM_WIRED_SECURITY_H
+#define PLASMA_NM_WIRED_SECURITY_H
 
 #include <QtGui/QWidget>
 
+#include <NetworkManagerQt/settings/8021x>
+
 #include "settingwidget.h"
+#include "security802-1x.h"
+
+#include "kdemacros.h"
 
 namespace Ui
 {
-class WifiConnectionWidget;
+class WiredSecurity;
 }
 
-class WifiConnectionWidget : public SettingWidget
+class KDE_EXPORT WiredSecurity : public SettingWidget
 {
-Q_OBJECT
-
+    Q_OBJECT
 public:
-    explicit WifiConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~WifiConnectionWidget();
-
+    explicit WiredSecurity(const NetworkManager::Settings::Security8021xSetting::Ptr &setting8021x = NetworkManager::Settings::Security8021xSetting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    virtual ~WiredSecurity();
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
-
     QVariantMap setting(bool agentOwned = false) const;
 
-private slots:
-    void generateRandomClonedMac();
+    bool enabled8021x() const;
 
 private:
-    Ui::WifiConnectionWidget * m_ui;
+    Ui::WiredSecurity * m_ui;
+    Security8021x * m_8021xWidget;
+    NetworkManager::Settings::Security8021xSetting::Ptr m_8021xSetting;
 };
 
-#endif // PLASMA_NM_WIFI_CONNECTION_WIDGET_H
+#endif // PLASMA_NM_WIRED_SECURITY_H

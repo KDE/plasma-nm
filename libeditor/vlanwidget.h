@@ -18,33 +18,35 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_PPP_WIDGET_H
-#define PLASMA_NM_PPP_WIDGET_H
+#ifndef PLASMA_NM_VLAN_WIDGET_H
+#define PLASMA_NM_VLAN_WIDGET_H
 
-#include <QtGui/QWidget>
-
-#include <NetworkManagerQt/settings/Setting>
+#include <QWidget>
 
 #include "settingwidget.h"
 
+#include "kdemacros.h"
+
 namespace Ui
 {
-class PPPWidget;
+class VlanWidget;
 }
 
-class PPPWidget : public SettingWidget
+class KDE_EXPORT VlanWidget : public SettingWidget
 {
-    Q_OBJECT
+Q_OBJECT
+
 public:
-    explicit PPPWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~PPPWidget();
+    explicit VlanWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    virtual ~VlanWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
 private:
-    Ui::PPPWidget * m_ui;
+    void fillConnections();
+    Ui::VlanWidget * m_ui;
 };
 
-#endif // PLASMA_NM_PPP_WIDGET_H
+#endif // PLASMA_NM_VLAN_WIDGET_H

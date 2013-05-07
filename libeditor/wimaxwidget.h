@@ -18,36 +18,33 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_GSM_WIDGET_H
-#define PLASMA_NM_GSM_WIDGET_H
+#ifndef PLASMA_NM_WIMAX_WIDGET_H
+#define PLASMA_NM_WIMAX_WIDGET_H
 
 #include <QtGui/QWidget>
 
-#include <NetworkManagerQt/settings/Setting>
-
 #include "settingwidget.h"
+
+#include "kdemacros.h"
 
 namespace Ui
 {
-class GsmWidget;
+class WimaxWidget;
 }
 
-class GsmWidget : public SettingWidget
+class KDE_EXPORT WimaxWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit GsmWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~GsmWidget();
+    explicit WimaxWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    virtual ~WimaxWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
-private slots:
-    void showPasswords(bool show);
-
 private:
-    Ui::GsmWidget * m_ui;
+    Ui::WimaxWidget * m_ui;
 };
 
-#endif // PLASMA_NM_GSM_WIDGET_H
+#endif // PLASMA_NM_WIMAX_WIDGET_H

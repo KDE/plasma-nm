@@ -185,9 +185,7 @@ void DeviceConnectionModel::connectionAdded(const QString &path)
 void DeviceConnectionModel::connectionUpdated()
 {
     Settings::Connection *caller = qobject_cast<Settings::Connection*>(sender());
-    kWarning() << "-----" << caller;
     if (caller) {
-        kWarning() << "-----" << caller->path();
         Settings::Connection::Ptr connection = Settings::findConnection(caller->path());
         if (connection) {
             QStandardItem *stdItem = findConnectionItem(connection->path(), RoleConnectionPath);

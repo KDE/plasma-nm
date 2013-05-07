@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_CDMA_WIDGET_H
-#define PLASMA_NM_CDMA_WIDGET_H
+#ifndef PLASMA_NM_INFINIBAND_WIDGET_H
+#define PLASMA_NM_INFINIBAND_WIDGET_H
 
 #include <QtGui/QWidget>
 
@@ -27,27 +27,26 @@
 
 #include "settingwidget.h"
 
+#include "kdemacros.h"
+
 namespace Ui
 {
-class CdmaWidget;
+class InfinibandWidget;
 }
 
-class CdmaWidget : public SettingWidget
+class KDE_EXPORT InfinibandWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit CdmaWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~CdmaWidget();
+    explicit InfinibandWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    virtual ~InfinibandWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
-private slots:
-    void showPassword(bool show);
-
 private:
-    Ui::CdmaWidget * m_ui;
+    Ui::InfinibandWidget * m_ui;
 };
 
-#endif // PLASMA_NM_CDMA_WIDGET_H
+#endif // PLASMA_NM_INFI_WIDGET_H

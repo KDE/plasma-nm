@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright (c) 2013 Lukas Tinkl <ltinkl@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,34 +18,37 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_BT_WIDGET_H
-#define PLASMA_NM_BT_WIDGET_H
+#ifndef PLASMA_NM_WIFI_CONNECTION_WIDGET_H
+#define PLASMA_NM_WIFI_CONNECTION_WIDGET_H
 
 #include <QtGui/QWidget>
 
-#include <NetworkManagerQt/settings/Bluetooth>
-
 #include "settingwidget.h"
+
+#include "kdemacros.h"
 
 namespace Ui
 {
-class BtWidget;
+class WifiConnectionWidget;
 }
 
-class BtWidget : public SettingWidget
+class KDE_EXPORT WifiConnectionWidget : public SettingWidget
 {
-    Q_OBJECT
+Q_OBJECT
+
 public:
-    explicit BtWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~BtWidget();
+    explicit WifiConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    virtual ~WifiConnectionWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
+private slots:
+    void generateRandomClonedMac();
+
 private:
-    Ui::BtWidget * m_ui;
-    NetworkManager::Settings::BluetoothSetting::Ptr m_btSetting;
+    Ui::WifiConnectionWidget * m_ui;
 };
 
-#endif // PLASMA_NM_BT_WIDGET_H
+#endif // PLASMA_NM_WIFI_CONNECTION_WIDGET_H

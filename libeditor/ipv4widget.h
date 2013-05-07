@@ -18,36 +18,54 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_WIRED_SECURITY_H
-#define PLASMA_NM_WIRED_SECURITY_H
+#ifndef PLASMA_NM_IPV4_WIDGET_H
+#define PLASMA_NM_IPV4_WIDGET_H
 
 #include <QtGui/QWidget>
-
-#include <NetworkManagerQt/settings/8021x>
+#include <NetworkManagerQt/settings/Ipv4>
 
 #include "settingwidget.h"
-#include "security802-1x.h"
+#include "ui/ipv4routeswidget.h"
+
+#include "kdemacros.h"
 
 namespace Ui
 {
-class WiredSecurity;
+class IPv4Widget;
 }
 
-class WiredSecurity : public SettingWidget
+class KDE_EXPORT IPv4Widget : public SettingWidget
 {
     Q_OBJECT
+
 public:
-    explicit WiredSecurity(const NetworkManager::Settings::Security8021xSetting::Ptr &setting8021x = NetworkManager::Settings::Security8021xSetting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~WiredSecurity();
+    explicit IPv4Widget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    virtual ~IPv4Widget();
+
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
+
     QVariantMap setting(bool agentOwned = false) const;
 
-    bool enabled8021x() const;
+private slots:
+    void slotModeComboChanged(int index);
+    void slotRoutesDialog();
+
+    void slotDnsServers();
+    void slotDnsDomains();
+
+    void slotAddIPAddress();
+    void slotRemoveIPAddress();
+
+    void selectionChanged(const QItemSelection & selected);
+    void tableViewItemChanged(QStandardItem * item);
 
 private:
-    Ui::WiredSecurity * m_ui;
-    Security8021x * m_8021xWidget;
-    NetworkManager::Settings::Security8021xSetting::Ptr m_8021xSetting;
+    Ui::IPv4Widget * m_ui;
+    NetworkManager::Settings::Ipv4Setting::Ptr m_ipv4Setting;
+    NetworkManager::Settings::Ipv4Setting m_tmpIpv4Setting;
+
+    class Private;
+    Private *d;
 };
 
-#endif // PLASMA_NM_WIRED_SECURITY_H
+#endif // PLASMA_NM_IPV4_WIDGET_H

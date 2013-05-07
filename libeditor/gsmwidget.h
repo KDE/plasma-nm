@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_PPPOE_WIDGET_H
-#define PLASMA_NM_PPPOE_WIDGET_H
+#ifndef PLASMA_NM_GSM_WIDGET_H
+#define PLASMA_NM_GSM_WIDGET_H
 
 #include <QtGui/QWidget>
 
@@ -27,27 +27,29 @@
 
 #include "settingwidget.h"
 
+#include "kdemacros.h"
+
 namespace Ui
 {
-class PppoeWidget;
+class GsmWidget;
 }
 
-class PppoeWidget : public SettingWidget
+class KDE_EXPORT GsmWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit PppoeWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~PppoeWidget();
+    explicit GsmWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    virtual ~GsmWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
 private slots:
-    void showPassword(bool show);
+    void showPasswords(bool show);
 
 private:
-    Ui::PppoeWidget * m_ui;
+    Ui::GsmWidget * m_ui;
 };
 
-#endif // PLASMA_NM_PPPOE_WIDGET_H
+#endif // PLASMA_NM_GSM_WIDGET_H

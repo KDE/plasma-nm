@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,52 +18,36 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_IPV4_WIDGET_H
-#define PLASMA_NM_IPV4_WIDGET_H
+#ifndef PLASMA_NM_BT_WIDGET_H
+#define PLASMA_NM_BT_WIDGET_H
 
 #include <QtGui/QWidget>
-#include <NetworkManagerQt/settings/Ipv4>
+
+#include <NetworkManagerQt/settings/Bluetooth>
 
 #include "settingwidget.h"
-#include "ui/ipv4routeswidget.h"
+
+#include "kdemacros.h"
 
 namespace Ui
 {
-class IPv4Widget;
+class BtWidget;
 }
 
-class IPv4Widget : public SettingWidget
+class KDE_EXPORT BtWidget : public SettingWidget
 {
     Q_OBJECT
-
 public:
-    explicit IPv4Widget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~IPv4Widget();
+    explicit BtWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    virtual ~BtWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
-private slots:
-    void slotModeComboChanged(int index);
-    void slotRoutesDialog();
-
-    void slotDnsServers();
-    void slotDnsDomains();
-
-    void slotAddIPAddress();
-    void slotRemoveIPAddress();
-
-    void selectionChanged(const QItemSelection & selected);
-    void tableViewItemChanged(QStandardItem * item);
-
 private:
-    Ui::IPv4Widget * m_ui;
-    NetworkManager::Settings::Ipv4Setting::Ptr m_ipv4Setting;
-    NetworkManager::Settings::Ipv4Setting m_tmpIpv4Setting;
-
-    class Private;
-    Private *d;
+    Ui::BtWidget * m_ui;
+    NetworkManager::Settings::BluetoothSetting::Ptr m_btSetting;
 };
 
-#endif // PLASMA_NM_IPV4_WIDGET_H
+#endif // PLASMA_NM_BT_WIDGET_H

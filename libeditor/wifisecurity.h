@@ -29,12 +29,14 @@
 #include "settingwidget.h"
 #include "security802-1x.h"
 
+#include "kdemacros.h"
+
 namespace Ui
 {
 class WifiSecurity;
 }
 
-class WifiSecurity : public SettingWidget
+class KDE_EXPORT WifiSecurity : public SettingWidget
 {
     Q_OBJECT
 public:

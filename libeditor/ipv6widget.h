@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright (c) 2013 Lukas Tinkl <ltinkl@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,33 +18,54 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_VLAN_WIDGET_H
-#define PLASMA_NM_VLAN_WIDGET_H
+#ifndef PLASMA_NM_IPV6_WIDGET_H
+#define PLASMA_NM_IPV6_WIDGET_H
 
-#include <QWidget>
+#include <QtGui/QWidget>
+#include <NetworkManagerQt/settings/Ipv6>
 
 #include "settingwidget.h"
+#include "ui/ipv6routeswidget.h"
+
+#include "kdemacros.h"
 
 namespace Ui
 {
-class VlanWidget;
+class IPv6Widget;
 }
 
-class VlanWidget : public SettingWidget
+class KDE_EXPORT IPv6Widget : public SettingWidget
 {
-Q_OBJECT
+    Q_OBJECT
 
 public:
-    explicit VlanWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~VlanWidget();
+    explicit IPv6Widget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    virtual ~IPv6Widget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
+private slots:
+    void slotModeComboChanged(int index);
+    void slotRoutesDialog();
+
+    void slotDnsServers();
+    void slotDnsDomains();
+
+    void slotAddIPAddress();
+    void slotRemoveIPAddress();
+
+    void selectionChanged(const QItemSelection & selected);
+    void tableViewItemChanged(QStandardItem * item);
+
 private:
-    void fillConnections();
-    Ui::VlanWidget * m_ui;
+    Ui::IPv6Widget * m_ui;
+    NetworkManager::Settings::Ipv6Setting::Ptr m_ipv6Setting;
+    NetworkManager::Settings::Ipv6Setting m_tmpIpv6Setting;
+
+    class Private;
+    Private *d;
 };
 
-#endif // PLASMA_NM_VLAN_WIDGET_H
+#endif // PLASMA_NM_IPV4_WIDGET_H

@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,35 +18,38 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_WIRED_CONNECTION_WIDGET_H
-#define PLASMA_NM_WIRED_CONNECTION_WIDGET_H
+#ifndef PLASMA_NM_CDMA_WIDGET_H
+#define PLASMA_NM_CDMA_WIDGET_H
 
 #include <QtGui/QWidget>
 
+#include <NetworkManagerQt/settings/Setting>
+
 #include "settingwidget.h"
+
+#include "kdemacros.h"
 
 namespace Ui
 {
-class WiredConnectionWidget;
+class CdmaWidget;
 }
 
-class WiredConnectionWidget : public SettingWidget
+class KDE_EXPORT CdmaWidget : public SettingWidget
 {
-Q_OBJECT
-
+    Q_OBJECT
 public:
-    explicit WiredConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~WiredConnectionWidget();
+    explicit CdmaWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    virtual ~CdmaWidget();
 
     void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
 private slots:
-    void generateRandomClonedMac();
+    void showPassword(bool show);
 
 private:
-    Ui::WiredConnectionWidget * m_widget;
+    Ui::CdmaWidget * m_ui;
 };
 
-#endif // PLASMA_NM_WIRED_CONNECTION_WIDGET_H
+#endif // PLASMA_NM_CDMA_WIDGET_H

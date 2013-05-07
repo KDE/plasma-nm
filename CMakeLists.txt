@@ -41,6 +41,7 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_CURRENT_BINARY_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/lib
+                    ${CMAKE_CURRENT_SOURCE_DIR}/libeditor
                     ${QTNETWORK_INCLUDE_DIRS}
                     ${MODEMMANAGERQT_INCLUDE_DIRS}
                     ${NETWORKMANAGERQT_INCLUDE_DIRS}
@@ -48,6 +49,7 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${KDE4_INCLUDES})
 
 add_subdirectory(lib)
+add_subdirectory(libeditor)
 add_subdirectory(applet)
 add_subdirectory(declarative-plugins)
 add_subdirectory(editor)

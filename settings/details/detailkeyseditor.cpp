@@ -126,7 +126,7 @@ void DetailKeysEditor::loadAllDetailElements()
 
     // Wireless
     m_allDetailsElements.insert("wireless:ssid", QPair<QString, QString>(i18n("Access Point (SSID)"), i18n("Wireless Access Point's SSID")));
-    m_allDetailsElements.insert("wireless:signal", QPair<QString, QString>(i18n("Signal Strengh"), i18n("Wireless Access Point's signal strengh")));
+    m_allDetailsElements.insert("wireless:signal", QPair<QString, QString>(i18n("Signal Strength"), i18n("Wireless Access Point's signal strength")));
     m_allDetailsElements.insert("wireless:accesspoint", QPair<QString, QString>(i18n("Access Point (MAC)"), i18n("Wireless Access Point's Hardware Address")));
     m_allDetailsElements.insert("wireless:band", QPair<QString, QString>(i18n("Wireless Band"), i18n("Wireless Frequency Band")));
     m_allDetailsElements.insert("wireless:channel", QPair<QString, QString>(i18n("Wireless Channel"), i18n("Wireless Frequency Channel")));

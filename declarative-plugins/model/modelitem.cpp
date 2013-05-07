@@ -44,8 +44,8 @@ ModelItem::ModelItem(const QString& device, QObject * parent):
     QObject(parent),
     m_connected(false),
     m_connecting(false),
-    m_signal(0),
     m_secure(false),
+    m_signal(0),
     m_sectionType(ModelItem::Unknown),
     m_type(NetworkManager::Settings::ConnectionSettings::Unknown)
 {

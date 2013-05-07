@@ -107,49 +107,34 @@ QVariant Model::data(const QModelIndex& index, int role) const
         switch (role) {
             case ConnectingRole:
                 return item->connecting();
-                break;
             case ConnectedRole:
                 return item->connected();
-                break;
             case ConnectionPathRole:
                 return item->connectionPath();
-                break;
             case ConnectionIconRole:
                 return item->icon();
-                break;
             case ConnectionDetailsRole:
                 return item->details();
-                break;
             case DeviceNameRole:
                 return item->deviceName();
-                break;
             case DevicePathRole:
                 return item->devicePath();
-                break;
             case NameRole:
                 return item->name();
-                break;
             case SecureRole:
                 return item->secure();
-                break;
             case SectionRole:
                 return item->sectionType();
-                break;
             case SignalRole:
                 return item->signal();
-                break;
             case SsidRole:
                 return item->ssid();
-                break;
             case SpecificPathRole:
                 return item->specificPath();
-                break;
             case UuidRole:
                 return item->uuid();
-                break;
             case TypeRole:
                 return item->type();
-                break;
             default:
                 break;
         }

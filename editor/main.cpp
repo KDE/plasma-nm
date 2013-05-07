@@ -60,6 +60,8 @@ int main(int argc, char *argv[])
 
             ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting);
             editor->show();
+        } else {
+            return 1;
         }
     } else {
         if (app.isSessionRestored()) {

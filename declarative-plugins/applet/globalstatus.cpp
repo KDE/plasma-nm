@@ -126,7 +126,7 @@ QString GlobalStatus::checkUnknownReason() const
     }
     // check if it has the correct version
     else if (NetworkManager::compareVersion(0, 9, 8) == -1) {
-        return i18n("Incompatible NM version, O.9.8 required");
+        return i18n("Incompatible NM version, 0.9.8 required");
     }
 
     return i18nc("global connection state", "Unknown");

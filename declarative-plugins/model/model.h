@@ -56,12 +56,15 @@ private Q_SLOTS:
     void addVpnConnection(const QString& connection);
     void addWirelessNetwork(const QString& ssid, const QString& device);
     void connectionUpdated(const QString& connection);
+    void modemPropertiesChanged(const QString& modem);
     void removeActiveConnection(const QString& active);
     void removeConnection(const QString& connection);
     void removeConnectionsByDevice(const QString& device);
     void removeVpnConnections();
     void removeWirelessNetwork(const QString& ssid,const QString& device);
     void removeWirelessNetworks();
+    void wirelessNetworkSignalChanged(const QString& ssid, int strength);
+    void wirelessNetworkApChanged(const QString& ssid, const QString& ap);
 private:
     Monitor * m_monitor;
     ModelItems m_items;

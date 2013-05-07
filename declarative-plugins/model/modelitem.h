@@ -71,7 +71,10 @@ public:
     void setWirelessNetwork(const QString& ssid);
 
 public Q_SLOTS:
+    void updateDetails();
     void updateActiveConnectionState(NetworkManager::ActiveConnection::State state);
+    void updateAccessPoint(const QString& ap);
+    void updateSignalStrenght(int strength);
 
 private:
     QString m_activePath;
@@ -94,7 +97,6 @@ private:
     SectionType m_sectionType;
     NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
 
-    void updateDetails();
     void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr& settings);
 };
 

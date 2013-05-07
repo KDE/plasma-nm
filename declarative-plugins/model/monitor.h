@@ -29,6 +29,8 @@
 #include <NetworkManagerQt/WirelessNetwork>
 #include <NetworkManagerQt/WirelessDevice>
 
+#include <ModemManagerQt/modeminterface.h>
+
 class Monitor : public QObject
 {
 Q_OBJECT
@@ -51,9 +53,14 @@ private Q_SLOTS:
     void connectionUpdated();
     void deviceAdded(const QString& device);
     void deviceRemoved(const QString& device);
+    void gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology);
+    void gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode);
+    void gsmNetworkSignalQualityChanged(uint signal);
     void statusChanged(NetworkManager::Status status);
     void wirelessNetworkAppeared(const QString& ssid);
     void wirelessNetworkDisappeared(const QString& ssid);
+    void wirelessNetworkSignalChanged(int strength);
+    void wirelessNetworkReferenceApChanged(const QString& ap);
     void wirelessEnabled(bool enabled);
 Q_SIGNALS:
     void activeConnectionStateChanged(const QString& active, NetworkManager::ActiveConnection::State state);

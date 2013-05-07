@@ -61,6 +61,12 @@ Model::Model(QObject* parent):
             SLOT(connectionUpdated(QString)));
     connect(m_monitor, SIGNAL(addWirelessNetwork(QString,QString)),
             SLOT(addWirelessNetwork(QString,QString)));
+    connect(m_monitor, SIGNAL(modemAccessTechnologyChanged(QString)),
+            SLOT(modemPropertiesChanged(QString)));
+    connect(m_monitor, SIGNAL(modemAllowedModeChanged(QString)),
+            SLOT(modemPropertiesChanged(QString)));
+    connect(m_monitor, SIGNAL(modemSignalQualityChanged(QString)),
+            SLOT(modemPropertiesChanged(QString)));
     connect(m_monitor, SIGNAL(removeActiveConnection(QString)),
             SLOT(removeActiveConnection(QString)));
     connect(m_monitor, SIGNAL(removeConnection(QString)),
@@ -73,6 +79,10 @@ Model::Model(QObject* parent):
             SLOT(removeWirelessNetwork(QString,QString)));
     connect(m_monitor, SIGNAL(removeWirelessNetworks()),
             SLOT(removeWirelessNetworks()));
+    connect(m_monitor, SIGNAL(wirelessNetworkSignalChanged(QString,int)),
+            SLOT(wirelessNetworkSignalChanged(QString,int)));
+    connect(m_monitor, SIGNAL(wirelessNetworkAccessPointChanged(QString,QString)),
+            SLOT(wirelessNetworkApChanged(QString,QString)));
 
     m_monitor->init();
 }
@@ -234,7 +244,17 @@ void Model::connectionUpdated(const QString& connection)
 {
     foreach (ModelItem * item, m_items.itemsByConnection(connection)) {
         item->setConnection(connection);
-        NMModelDebug() << "Connection changed in " << item->name();
+
+        if (updateItem(item)) {
+            NMModelDebug() << item->name() << ": Item has been changed";
+        }
+    }
+}
+
+void Model::modemPropertiesChanged(const QString& modem)
+{
+    foreach (ModelItem * item, m_items.itemsByDevice(modem)) {
+        item->updateDetails();
 
         if (updateItem(item)) {
             NMModelDebug() << "Item " << item->name() << " has been changed";
@@ -242,13 +262,13 @@ void Model::connectionUpdated(const QString& connection)
     }
 }
 
+
 void Model::removeActiveConnection(const QString& active)
 {
     ModelItem * item = m_items.itemByActiveConnection(active);
 
     if (item) {
         item->setActiveConnection(QString());
-        NMModelDebug() << "Removed active connection from " << item->name();
 
         if (updateItem(item)) {
             NMModelDebug() << "Item " << item->name() << " has been changed";
@@ -286,6 +306,16 @@ void Model::removeConnectionsByDevice(const QString& device)
     }
 }
 
+void Model::removeVpnConnections()
+{
+    foreach (ModelItem * item, m_items.itemsByType(NetworkManager::Settings::ConnectionSettings::Vpn)) {
+        QString name = item->name();
+        if (removeItem(item)) {
+            NMModelDebug() << "VPN Connection " << name << " has been removed";
+        }
+    }
+}
+
 void Model::removeWirelessNetwork(const QString& ssid, const QString& device)
 {
     foreach (ModelItem * item, m_items.itemsBySsid(ssid, device)) {
@@ -304,12 +334,24 @@ void Model::removeWirelessNetworks()
     }
 }
 
-void Model::removeVpnConnections()
+void Model::wirelessNetworkSignalChanged(const QString& ssid, int strength)
 {
-    foreach (ModelItem * item, m_items.itemsByType(NetworkManager::Settings::ConnectionSettings::Vpn)) {
-        QString name = item->name();
-        if (removeItem(item)) {
-            NMModelDebug() << "VPN Connection " << name << " has been removed";
+    foreach (ModelItem * item, m_items.itemsBySsid(ssid)) {
+        item->updateSignalStrenght(strength);
+
+        if (updateItem(item)) {
+            NMModelDebug() << "Item " << item->name() << " has been changed";
+        }
+    }
+}
+
+void Model::wirelessNetworkApChanged(const QString& ssid, const QString& ap)
+{
+    foreach (ModelItem * item, m_items.itemsBySsid(ssid)) {
+        item->updateAccessPoint(ap);
+
+        if (updateItem(item)) {
+            NMModelDebug() << "Item " << item->name() << " has been changed";
         }
     }
 }

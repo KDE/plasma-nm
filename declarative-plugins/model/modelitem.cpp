@@ -45,6 +45,7 @@ ModelItem::ModelItem(const QString& device, QObject * parent):
     m_connected(false),
     m_connecting(false),
     m_signal(0),
+    m_secure(false),
     m_sectionType(ModelItem::Unknown),
     m_type(NetworkManager::Settings::ConnectionSettings::Unknown)
 {
@@ -621,4 +622,22 @@ void ModelItem::updateActiveConnectionState(NetworkManager::ActiveConnection::St
     updateDetails();
 
     NMItemDebug() << name() << ": state has been changed to " << state;
+}
+
+void ModelItem::updateAccessPoint(const QString& ap)
+{
+    m_accessPointPath = ap;
+
+    updateDetails();
+
+    NMItemDebug() << name() << ": access point changed to " << m_accessPointPath;
+}
+
+void ModelItem::updateSignalStrenght(int strength)
+{
+    m_signal = strength;
+
+    updateDetails();
+
+    NMItemDebug() << name() << ": signal strength changed to " << m_signal;
 }

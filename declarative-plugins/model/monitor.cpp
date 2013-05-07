@@ -26,6 +26,7 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/settings/Connection>
 #include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/ModemDevice>
 
 #include "debug.h"
 
@@ -97,6 +98,10 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
         NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
 
         foreach (const NetworkManager::WirelessNetwork::Ptr& wifiNetwork, wifiDev->networks()) {
+            connect(wifiNetwork.data(), SIGNAL(signalStrengthChanged(int)),
+                    SLOT(wirelessNetworkSignalChanged(int)));
+            connect(wifiNetwork.data(), SIGNAL(referenceAccessPointChanged(QString)),
+                    SLOT(wirelessNetworkReferenceApChanged(QString)));
             NMMonitorDebug() << "Available wireless network " << wifiNetwork->ssid() << " for device " << device->interfaceName();
             Q_EMIT addWirelessNetwork(wifiNetwork->ssid(), wifiDev->uni());
         }
@@ -105,6 +110,19 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
                 SLOT(wirelessNetworkAppeared(QString)));
         connect(wifiDev.data(), SIGNAL(networkDisappeared(QString)),
                 SLOT(wirelessNetworkDisappeared(QString)));
+    } else if (device->type() == NetworkManager::Device::Modem) {
+        NMMonitorDebug() << "Available modem device " << device->interfaceName();
+        NetworkManager::ModemDevice::Ptr modemDev = device.objectCast<NetworkManager::ModemDevice>();
+
+        ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDev->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
+        if (modemNetwork) {
+            connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
+                    SIGNAL(gsmNetworkSignalQualityChanged(uint)));
+            connect(modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
+                    SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)));
+            connect(modemNetwork.data(), SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
+                    SLOT(gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)));
+        }
     }
 
     connect(device.data(), SIGNAL(availableConnectionAppeared(QString)),
@@ -163,7 +181,10 @@ void Monitor::activeConnectionRemoved(const QString& active)
 void Monitor::activeConnectionStateChanged(NetworkManager::ActiveConnection::State state)
 {
     NetworkManager::ActiveConnection *activePtr = qobject_cast<NetworkManager::ActiveConnection*>(sender());
-    NetworkManager::ActiveConnection::Ptr active = NetworkManager::findActiveConnection(activePtr->path());
+    NetworkManager::ActiveConnection::Ptr active;
+    if (activePtr) {
+        active = NetworkManager::findActiveConnection(activePtr->path());
+    }
 
     if (active) {
         Q_EMIT activeConnectionStateChanged(active->path(), state);
@@ -173,7 +194,10 @@ void Monitor::activeConnectionStateChanged(NetworkManager::ActiveConnection::Sta
 void Monitor::cablePlugged(bool plugged)
 {
     NetworkManager::Device *devicePtr = qobject_cast<NetworkManager::Device*>(sender());
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePtr->uni());
+    NetworkManager::Device::Ptr device;
+    if (devicePtr) {
+        device = NetworkManager::findNetworkInterface(devicePtr->uni());
+    }
 
     if (device) {
         if (plugged) {
@@ -249,6 +273,36 @@ void Monitor::deviceRemoved(const QString& device)
     Q_EMIT removeConnectionsByDevice(device);
 }
 
+void Monitor::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology)
+{
+    ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
+
+    if (gsmNetwork) {
+        NMMonitorDebug() << "Modem " << gsmNetwork->device() << " access technology changed to " << technology;
+        Q_EMIT modemAccessTechnologyChanged(gsmNetwork->device());
+    }
+}
+
+void Monitor::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode)
+{
+    ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
+
+    if (gsmNetwork) {
+        NMMonitorDebug() << "Modem " << gsmNetwork->device() << " allowed mode changed to " << mode;
+        Q_EMIT modemAllowedModeChanged(gsmNetwork->device());
+    }
+}
+
+void Monitor::gsmNetworkSignalQualityChanged(uint signal)
+{
+    ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
+
+    if (gsmNetwork) {
+        NMMonitorDebug() << "Modem " << gsmNetwork->device() << " signal changed to " << signal;
+        Q_EMIT modemSignalQualityChanged(gsmNetwork->device());
+    }
+}
+
 void Monitor::statusChanged(NetworkManager::Status status)
 {
     NMMonitorDebug() << "NetworkManager status changed to " << status;
@@ -288,6 +342,11 @@ void Monitor::wirelessNetworkAppeared(const QString& ssid)
         return;
     }
 
+    connect(network.data(), SIGNAL(signalStrengthChanged(int)),
+            SLOT(wirelessNetworkSignalChanged(int)));
+    connect(network.data(), SIGNAL(referenceAccessPointChanged(QString)),
+            SLOT(wirelessNetworkReferenceApChanged(QString)));
+
     NMMonitorDebug() << "Wireless network " << ssid << " appeared";
     Q_EMIT addWirelessNetwork(ssid, wirelessDevice->uni());
 }
@@ -298,6 +357,26 @@ void Monitor::wirelessNetworkDisappeared(const QString& ssid)
     if (device) {
         NMMonitorDebug() << "Wireless network " << ssid << " disappeared";
         Q_EMIT removeWirelessNetwork(ssid, device->uni());
+    }
+}
+
+void Monitor::wirelessNetworkSignalChanged(int strength)
+{
+    NetworkManager::WirelessNetwork * networkPtr = qobject_cast<NetworkManager::WirelessNetwork*>(sender());
+
+    if (networkPtr) {
+        NMMonitorDebug() << "Wireless network " << networkPtr->ssid() << " signal strength changed to " << strength;
+        Q_EMIT wirelessNetworkSignalChanged(networkPtr->ssid(), strength);
+    }
+}
+
+void Monitor::wirelessNetworkReferenceApChanged(const QString& ap)
+{
+    NetworkManager::WirelessNetwork * networkPtr = qobject_cast<NetworkManager::WirelessNetwork*>(sender());
+
+    if (networkPtr) {
+        NMMonitorDebug() << "Wireless network " << networkPtr->ssid() << " ap changed to " << ap;
+        Q_EMIT wirelessNetworkAccessPointChanged(networkPtr->ssid(), ap);
     }
 }
 

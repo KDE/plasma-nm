@@ -20,9 +20,19 @@
       <bool>false</bool>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <property name="bottomMargin">
-       <number>20</number>
-      </property>
+      <item row="0" column="0" colspan="3">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;In most cases, the provider's PPP servers will support all authentication methods. If connection fails, try disabling some of the methods.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::RichText</enum>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
       <item row="1" column="0">
        <spacer name="horizontalSpacer">
         <property name="orientation">
@@ -39,20 +49,10 @@
         </property>
        </spacer>
       </item>
-      <item row="2" column="2">
-       <widget class="QCheckBox" name="mschapv2">
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="eap">
         <property name="text">
-         <string>MSCHAPv&amp;2</string>
-        </property>
-        <property name="checked">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QCheckBox" name="chap">
-        <property name="text">
-         <string>&amp;CHAP</string>
+         <string>&amp;EAP</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -79,25 +79,22 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QCheckBox" name="eap">
+      <item row="2" column="2">
+       <widget class="QCheckBox" name="mschapv2">
         <property name="text">
-         <string>&amp;EAP</string>
+         <string>MSCHAPv&amp;2</string>
         </property>
         <property name="checked">
          <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="0" column="0" colspan="3">
-       <widget class="QLabel" name="label">
+      <item row="3" column="1">
+       <widget class="QCheckBox" name="chap">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;In most cases, the provider's PPP servers will support all authentication methods. If connection fails, try disabling some of the methods.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&amp;CHAP</string>
         </property>
-        <property name="textFormat">
-         <enum>Qt::RichText</enum>
-        </property>
-        <property name="wordWrap">
+        <property name="checked">
          <bool>true</bool>
         </property>
        </widget>
@@ -117,9 +114,6 @@
       <bool>false</bool>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <property name="bottomMargin">
-       <number>20</number>
-      </property>
       <item row="0" column="0" colspan="2">
        <widget class="QCheckBox" name="mppe">
         <property name="sizePolicy">
@@ -228,13 +222,9 @@
        </widget>
       </item>
      </layout>
-     <zorder>authGroup</zorder>
-     <zorder>echoGroup</zorder>
      <zorder>mppe</zorder>
-     <zorder>horizontalSpacer_2</zorder>
      <zorder>mppe128</zorder>
      <zorder>mppeStateful</zorder>
-     <zorder>horizontalSpacer_3</zorder>
      <zorder>bsdComp</zorder>
      <zorder>deflateComp</zorder>
      <zorder>tcpComp</zorder>
@@ -248,8 +238,8 @@
      <property name="flat">
       <bool>false</bool>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
        <widget class="QCheckBox" name="senddEcho">
         <property name="text">
          <string>Send PPP echo pac&amp;kets</string>
@@ -259,7 +249,7 @@
         </property>
        </widget>
       </item>
-      <item>
+      <item row="1" column="0">
        <spacer name="verticalSpacer">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -277,6 +267,20 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>eap</tabstop>
+  <tabstop>pap</tabstop>
+  <tabstop>chap</tabstop>
+  <tabstop>mschap</tabstop>
+  <tabstop>mschapv2</tabstop>
+  <tabstop>mppe</tabstop>
+  <tabstop>mppe128</tabstop>
+  <tabstop>mppeStateful</tabstop>
+  <tabstop>bsdComp</tabstop>
+  <tabstop>deflateComp</tabstop>
+  <tabstop>tcpComp</tabstop>
+  <tabstop>senddEcho</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

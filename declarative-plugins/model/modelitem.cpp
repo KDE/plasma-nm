@@ -585,7 +585,7 @@ void ModelItem::setWirelessNetwork(const QString& ssid)
         m_signal = network->signalStrength();
         m_type = NetworkManager::Settings::ConnectionSettings::Wireless;
 
-        if (m_name.isEmpty()) {
+        if (m_name.isEmpty() || m_connectionPath.isEmpty()) {
             m_name = m_ssid;
         }
 

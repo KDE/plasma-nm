@@ -182,6 +182,9 @@ QString UiUtils::prettyInterfaceName(NetworkManager::Device::Type type, const QS
     case NetworkManager::Device::Adsl:
         ret = i18n("ADSL (%1)", interfaceName);
         break;
+    case NetworkManager::Device::Vlan:
+        ret = i18n("VLAN (%1)", interfaceName);
+        break;
     default:
         ret = interfaceName;
     }

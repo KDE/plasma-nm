@@ -40,7 +40,7 @@
 
 #include "debug.h"
 
-ModelItem::ModelItem(const QString &device, QObject * parent):
+ModelItem::ModelItem(const QString& device, QObject * parent):
     QObject(parent),
     m_connected(false),
     m_connecting(false),
@@ -70,23 +70,6 @@ bool ModelItem::connecting() const
 bool ModelItem::secure() const
 {
     return m_secure;
-}
-
-bool ModelItem::shouldBeRemoved() const
-{
-    if (m_devicePath.isEmpty()) {
-        return true;
-    }
-
-    if (m_connectionPath.isEmpty()) {
-        if (type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-            return m_accessPointPath.isEmpty();
-        } else {
-            return true;
-        }
-    }
-
-    return false;
 }
 
 QString ModelItem::details() const
@@ -224,7 +207,7 @@ void ModelItem::updateDetails()
     // Initialize objects
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
 
-    foreach (const QString & key, m_detailKeys) {
+    foreach (const QString& key, m_detailKeys) {
         if (key == "interface:type") {
             if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
                 m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
@@ -289,7 +272,7 @@ void ModelItem::updateDetails()
             btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
         }
 
-        foreach (const QString & key, m_detailKeys) {
+        foreach (const QString& key, m_detailKeys) {
             if (key == "bluetooth:name") {
                 if (btDevice) {
                     m_details += QString(format).arg(i18n("Name:"), btDevice->name());
@@ -314,7 +297,7 @@ void ModelItem::updateDetails()
             modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
         }
 
-        foreach (const QString & key, m_detailKeys) {
+        foreach (const QString& key, m_detailKeys) {
             if (key == "mobile:operator") {
                 if (modemNetwork) {
                     m_details += QString(format).arg(i18n("Operator:"), modemNetwork->getRegistrationInfo().operatorName);
@@ -363,7 +346,7 @@ void ModelItem::updateDetails()
             wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
         }
 
-        foreach (const QString & key, m_detailKeys) {
+        foreach (const QString& key, m_detailKeys) {
             if (key == "interface:bitrate") {
                 if (wiredDevice && m_connected) {
                     m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wiredDevice->bitRate()));
@@ -388,7 +371,7 @@ void ModelItem::updateDetails()
             ap = network->referenceAccessPoint();
         }
 
-        foreach (const QString & key, m_detailKeys) {
+        foreach (const QString& key, m_detailKeys) {
             if (key == "interface:bitrate") {
                 if (wirelessDevice && m_connected) {
                     m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wirelessDevice->bitRate()));
@@ -433,7 +416,7 @@ void ModelItem::updateDetails()
             vpnConnection = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(active->path()));
         }
 
-        foreach (const QString & key, m_detailKeys) {
+        foreach (const QString& key, m_detailKeys) {
             if (key == "vpn:plugin") {
                 if (vpnSetting) {
                     m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
@@ -461,7 +444,7 @@ bool ModelItem::operator==(const ModelItem* item) const
     return false;
 }
 
-void ModelItem::setActiveConnection(const QString &active)
+void ModelItem::setActiveConnection(const QString& active)
 {
     m_activePath = active;
 
@@ -477,13 +460,6 @@ void ModelItem::setActiveConnection(const QString &active)
             m_connected = true;
             m_connecting = false;
         }
-
-//         connect(m_active.data(), SIGNAL(default4Changed(bool)),
-//                 SLOT(onDefaultRouteChanged(bool)), Qt::UniqueConnection);
-//         connect(m_active.data(), SIGNAL(default6Changed(bool)),
-//                 SLOT(onDefaultRouteChanged(bool)), Qt::UniqueConnection);
-//         connect(m_active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-//                 SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
     } else {
         m_connecting = false;
         m_connected = false;
@@ -492,7 +468,7 @@ void ModelItem::setActiveConnection(const QString &active)
     updateDetails();
 }
 
-void ModelItem::setDevice(const QString &device)
+void ModelItem::setDevice(const QString& device)
 {
     m_devicePath = device;
     NetworkManager::Device::Ptr dev = NetworkManager::findNetworkInterface(device);
@@ -511,16 +487,13 @@ void ModelItem::setDevice(const QString &device)
     }
 }
 
-void ModelItem::setConnection(const QString &connection)
+void ModelItem::setConnection(const QString& connection)
 {
     m_connectionPath = connection;
     NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(m_connectionPath);
 
     if (con) {
         setConnectionSettings(con->settings());
-
-//         connect(connection.data(), SIGNAL(updated()),
-//                 SLOT(onConnectionUpdated()), Qt::UniqueConnection);
     } else {
         m_connectionPath.clear();
         m_name.clear();
@@ -533,14 +506,14 @@ void ModelItem::setConnection(const QString &connection)
     }
 }
 
-void ModelItem::setDetailKeys(const QStringList & keys)
+void ModelItem::setDetailKeys(const QStringList& keys)
 {
     m_detailKeys = keys;
 
     updateDetails();
 }
 
-void ModelItem::setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr &settings)
+void ModelItem::setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr& settings)
 {
     m_uuid = settings->uuid();
     m_name = settings->id();
@@ -592,7 +565,7 @@ void ModelItem::setConnectionSettings(const NetworkManager::Settings::Connection
     updateDetails();
 }
 
-void ModelItem::setWirelessNetwork(const QString &ssid)
+void ModelItem::setWirelessNetwork(const QString& ssid)
 {
     m_ssid = ssid;
 
@@ -618,13 +591,6 @@ void ModelItem::setWirelessNetwork(const QString &ssid)
         if (ap && ap->capabilities() & NetworkManager::AccessPoint::Privacy) {
             m_secure = true;
         }
-/*
-        connect(m_network.data(), SIGNAL(signalStrengthChanged(int)),
-                SLOT(onSignalStrengthChanged(int)), Qt::UniqueConnection);
-        connect(m_network.data(), SIGNAL(referenceAccessPointChanged(QString)),
-                SLOT(onAccessPointChanged(QString)), Qt::UniqueConnection);
-        connect(m_network.data(), SIGNAL(destroyed(QObject*)),
-                SLOT(wirelessNetworkRemoved()));*/
     } else {
         m_ssid.clear();
         m_signal = 0;
@@ -635,44 +601,24 @@ void ModelItem::setWirelessNetwork(const QString &ssid)
     updateDetails();
 }
 
-// void ModelItem::onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state)
-// {
-//     if (state == NetworkManager::ActiveConnection::Deactivated ||
-//         state == NetworkManager::ActiveConnection::Deactivating) {
-//         NMItemDebug() << name() << ": disconnected";
-//         m_active.clear();
-//         m_connecting = false;
-//         m_connected = false;
-//     } else if (state == NetworkManager::ActiveConnection::Activated) {
-//         NMItemDebug() << name() << ": activated";
-//         m_connecting = false;
-//         m_connected = true;
-//     } else if (state == NetworkManager::ActiveConnection::Activating) {
-//         NMItemDebug() << name() << ": activating";
-//         m_connecting = true;
-//         m_connected = false;
-//     }
-//
-//     updateDetails();
-//
-//     NMItemDebug() << name() << ": state has been changed to " << state;
-// }
-//
-// void ModelItem::onConnectionUpdated()
-// {
-//     NetworkManager::Settings::Connection *connection = qobject_cast<NetworkManager::Settings::Connection*>(sender());
-//     if (connection) {
-//         setConnectionSettings(connection->settings());
-//
-//         NMItemDebug() << name() << ": connection changed";
-//     }
-// }
-//
-// void ModelItem::onDefaultRouteChanged(bool defaultRoute)
-// {
-//     Q_UNUSED(defaultRoute);
-//
-//     updateDetails();
-//
-//     NMItemDebug() << name() << ": default route changed";
-// }
+void ModelItem::updateActiveConnectionState(NetworkManager::ActiveConnection::State state)
+{
+    if (state == NetworkManager::ActiveConnection::Deactivated ||
+        state == NetworkManager::ActiveConnection::Deactivating) {
+        NMItemDebug() << name() << ": disconnected";
+        m_connecting = false;
+        m_connected = false;
+    } else if (state == NetworkManager::ActiveConnection::Activated) {
+        NMItemDebug() << name() << ": activated";
+        m_connecting = false;
+        m_connected = true;
+    } else if (state == NetworkManager::ActiveConnection::Activating) {
+        NMItemDebug() << name() << ": activating";
+        m_connecting = true;
+        m_connected = false;
+    }
+
+    updateDetails();
+
+    NMItemDebug() << name() << ": state has been changed to " << state;
+}

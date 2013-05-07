@@ -206,6 +206,12 @@ void Model::activeConnectionStateChanged(const QString& active, NetworkManager::
 
 void Model::addConnection(const QString& connection, const QString& device)
 {
+    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
+
+    if (con->settings()->isSlave()) {
+        return;
+    }
+
     ModelItem * item = new ModelItem(device);
     item->setConnection(connection);
     insertItem(item);

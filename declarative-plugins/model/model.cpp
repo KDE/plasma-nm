@@ -25,18 +25,11 @@
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/settings/Wireless>
 
-#include "model/modelwirelessitem.h"
-#include "model/modelwireditem.h"
-#include "model/modelvpnitem.h"
-#include "model/modelmodemitem.h"
-#include "model/modelbtitem.h"
-
 #include "debug.h"
 
 Model::Model(QObject* parent):
     QAbstractListModel(parent),
-    m_monitor(new Monitor(this)),
-    m_connections(QList<ModelItem*>())
+    m_monitor(new Monitor(this))
 {
     QHash<int, QByteArray> roles = roleNames();
     roles[ConnectingRole] = "itemConnecting";
@@ -56,45 +49,60 @@ Model::Model(QObject* parent):
     roles[TypeRole] = "itemType";
     setRoleNames(roles);
 
-    connect(m_monitor, SIGNAL(addWirelessNetwork(NetworkManager::WirelessNetwork::Ptr,NetworkManager::Device::Ptr)),
-            SLOT(addWirelessNetwork(NetworkManager::WirelessNetwork::Ptr,NetworkManager::Device::Ptr)));
-    connect(m_monitor, SIGNAL(addActiveConnection(NetworkManager::ActiveConnection::Ptr)),
-            SLOT(addActiveConnection(NetworkManager::ActiveConnection::Ptr)));
-    connect(m_monitor, SIGNAL(addConnection(NetworkManager::Settings::Connection::Ptr,NetworkManager::Device::Ptr)),
-            SLOT(addConnection(NetworkManager::Settings::Connection::Ptr,NetworkManager::Device::Ptr)));
-    connect(m_monitor, SIGNAL(removeWirelessNetwork(QString,NetworkManager::Device::Ptr)),
-            SLOT(removeWirelessNetwork(QString,NetworkManager::Device::Ptr)));
-    connect(m_monitor, SIGNAL(removeWirelessNetworks()),
-            SLOT(removeWirelessNetworks()));
+    connect(m_monitor, SIGNAL(addActiveConnection(QString)),
+            SLOT(addActiveConnection(QString)));
+    connect(m_monitor, SIGNAL(activeConnectionStateChanged(QString,NetworkManager::ActiveConnection::State)),
+            SLOT(activeConnectionStateChanged(QString, NetworkManager::ActiveConnection::State)));
+    connect(m_monitor, SIGNAL(addConnection(QString,QString)),
+            SLOT(addConnection(QString,QString)));
+    connect(m_monitor, SIGNAL(addVpnConnection(QString)),
+            SLOT(addVpnConnection(QString)));
+    connect(m_monitor, SIGNAL(connectionUpdated(QString)),
+            SLOT(connectionUpdated(QString)));
+    connect(m_monitor, SIGNAL(addWirelessNetwork(QString,QString)),
+            SLOT(addWirelessNetwork(QString,QString)));
+    connect(m_monitor, SIGNAL(modemAccessTechnologyChanged(QString)),
+            SLOT(modemPropertiesChanged(QString)));
+    connect(m_monitor, SIGNAL(modemAllowedModeChanged(QString)),
+            SLOT(modemPropertiesChanged(QString)));
+    connect(m_monitor, SIGNAL(modemSignalQualityChanged(QString)),
+            SLOT(modemPropertiesChanged(QString)));
+    connect(m_monitor, SIGNAL(removeActiveConnection(QString)),
+            SLOT(removeActiveConnection(QString)));
     connect(m_monitor, SIGNAL(removeConnection(QString)),
             SLOT(removeConnection(QString)));
     connect(m_monitor, SIGNAL(removeConnectionsByDevice(QString)),
             SLOT(removeConnectionsByDevice(QString)));
-    connect(m_monitor, SIGNAL(addVpnConnection(NetworkManager::Settings::Connection::Ptr)),
-            SLOT(addVpnConnection(NetworkManager::Settings::Connection::Ptr)));
     connect(m_monitor, SIGNAL(removeVpnConnections()),
             SLOT(removeVpnConnections()));
+    connect(m_monitor, SIGNAL(removeWirelessNetwork(QString,QString)),
+            SLOT(removeWirelessNetwork(QString,QString)));
+    connect(m_monitor, SIGNAL(removeWirelessNetworks()),
+            SLOT(removeWirelessNetworks()));
+    connect(m_monitor, SIGNAL(wirelessNetworkSignalChanged(QString,int)),
+            SLOT(wirelessNetworkSignalChanged(QString,int)));
+    connect(m_monitor, SIGNAL(wirelessNetworkAccessPointChanged(QString,QString)),
+            SLOT(wirelessNetworkApChanged(QString,QString)));
 
     m_monitor->init();
 }
 
 Model::~Model()
 {
-    qDeleteAll(m_connections);
 }
 
 int Model::rowCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent);
-    return m_connections.count();
+    return m_items.count();
 }
 
 QVariant Model::data(const QModelIndex& index, int role) const
 {
     int row = index.row();
 
-    if (row >= 0 && row < m_connections.count()) {
-        ModelItem * item = m_connections[row];
+    if (row >= 0 && row < m_items.count()) {
+        ModelItem * item = m_items.itemAt(row);
 
         switch (role) {
             case ConnectingRole:
@@ -150,124 +158,144 @@ QVariant Model::data(const QModelIndex& index, int role) const
     return QVariant();
 }
 
-void Model::setDetailKeys(const QStringList & keys)
+void Model::setDetailKeys(const QStringList& keys)
 {
     m_keys = keys;
 
-    foreach (ModelItem * item, m_connections) {
+    foreach (ModelItem * item, m_items.items()) {
         item->setDetailKeys(m_keys);
     }
 }
 
-void Model::addActiveConnection(const NetworkManager::ActiveConnection::Ptr & active)
+void Model::addActiveConnection(const QString& active)
 {
     bool found = false;
 
-    foreach (ModelItem * item, m_connections) {
-        if (active->connection()->uuid() == item->uuid()) {
-            found = true;
-            break;
-        }
+    NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::findActiveConnection(active);
+
+    if (!activeConnection) {
+        qDebug() << "NO ACTIVE CONNECTION";
+        return;
+    }
+
+    if (!m_items.itemsByUuid(activeConnection->uuid()).isEmpty()) {
+        qDebug() << "CONNECTION FOUND";
+        found = true;
     }
 
     if (!found) {
-        if (active->devices().isEmpty()) {
+        if (activeConnection->devices().isEmpty()) {
+            qDebug() << "EMPTY DEVICES";
             return;
         }
 
-        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
-        NetworkManager::Settings::Connection::Ptr connection = active->connection();
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(activeConnection->devices().first());
+        NetworkManager::Settings::Connection::Ptr connection = activeConnection->connection();
 
         if (!device || !connection) {
+            qDebug() << "EMPTY DEVICE OR CONNECTION";
             return;
         }
 
-        addConnection(connection, device);
+        qDebug() << "ADDING CONNECTION";
+        addConnection(connection->path(), device->uni());
     }
 
-    foreach (ModelItem * item, m_connections) {
-        if (active->connection()->uuid() == item->uuid()) {
-            item->setActiveConnection(active);
-            int row = m_connections.indexOf(item);
-            if (row >= 0) {
-                QModelIndex modelIndex = createIndex(row, 0);
-                dataChanged(modelIndex, modelIndex);
-            }
+    foreach (ModelItem * item, m_items.itemsByUuid(activeConnection->connection()->uuid())) {
+        item->setActiveConnection(active);
+
+        if (updateItem(item)) {
             NMModelDebug() << "Connection " << item->name() << " has been updated by active connection";
-            found = true;
-            break;
         }
     }
 }
 
-void Model::addConnection(const NetworkManager::Settings::Connection::Ptr & connection, const NetworkManager::Device::Ptr &device)
+void Model::activeConnectionStateChanged(const QString& active, NetworkManager::ActiveConnection::State state)
 {
-    NetworkManager::Settings::ConnectionSettings::Ptr settings = connection->settings();
+    ModelItem * item = m_items.itemByActiveConnection(active);
 
-    if (settings->isSlave())
-        return;
+    if (item) {
+        item->updateActiveConnectionState(state);
+        NMModelDebug() << "Active connection state changed in " << item->name();
 
-    if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-        ModelWirelessItem * item = new ModelWirelessItem(device);
-        item->setConnection(connection);
-        insertItem(item);
-    } else if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Wired) {
-        ModelWiredItem * item = new ModelWiredItem(device);
-        item->setConnection(connection);
-        insertItem(item);
-    } else if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Gsm ||
-               settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Cdma) {
-        ModelModemItem * item = new ModelModemItem(device);
-        item->setConnection(connection);
-        insertItem(item);
-    } else if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Bluetooth) {
-        ModelBtItem * item = new ModelBtItem(device);
-        item->setConnection(connection);
-        insertItem(item);
-    } else {
-        ModelItem * item = new ModelItem(device);
-        item->setConnection(connection);
-        insertItem(item);
+        if (updateItem(item)) {
+            NMModelDebug() << "Item " << item->name() << " has been changed";
+        }
     }
 }
 
-void Model::addVpnConnection(const NetworkManager::Settings::Connection::Ptr & connection)
+void Model::addConnection(const QString& connection, const QString& device)
 {
-    ModelVpnItem * item = new ModelVpnItem();
+    ModelItem * item = new ModelItem(device);
     item->setConnection(connection);
-
-    NMModelDebug() << "VPN Connection " << connection->name() << " has been added";
     insertItem(item);
 }
 
-void Model::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device)
+void Model::addVpnConnection(const QString& connection)
 {
-    ModelWirelessItem * item = new ModelWirelessItem(device);
-    item->setWirelessNetwork(network);
-
+    ModelItem * item = new ModelItem();
+    item->setConnection(connection);
     insertItem(item);
+}
+
+void Model::addWirelessNetwork(const QString& ssid, const QString& device)
+{
+    ModelItem * item = new ModelItem(device);
+    item->setWirelessNetwork(ssid);
+    insertItem(item);
+}
+
+void Model::connectionUpdated(const QString& connection)
+{
+    foreach (ModelItem * item, m_items.itemsByConnection(connection)) {
+        item->setConnection(connection);
+
+        if (updateItem(item)) {
+            NMModelDebug() << item->name() << ": Item has been changed";
+        }
+    }
+}
+
+void Model::modemPropertiesChanged(const QString& modem)
+{
+    foreach (ModelItem * item, m_items.itemsByDevice(modem)) {
+        item->updateDetails();
+
+        if (updateItem(item)) {
+            NMModelDebug() << "Item " << item->name() << " has been changed";
+        }
+    }
+}
+
+
+void Model::removeActiveConnection(const QString& active)
+{
+    ModelItem * item = m_items.itemByActiveConnection(active);
+
+    if (item) {
+        item->setActiveConnection(QString());
+
+        if (updateItem(item)) {
+            NMModelDebug() << "Item " << item->name() << " has been changed";
+        }
+    }
 }
 
 void Model::removeConnection(const QString& connection)
 {
-    foreach (ModelItem * item, m_connections) {
-        if (item->connectionPath() == connection) {
-            QString name = item->name();
-            item->setConnection(NetworkManager::Settings::Connection::Ptr());
+    foreach (ModelItem * item, m_items.itemsByConnection(connection)) {
+        QString name = item->name();
+        item->setConnection(QString());
 
-            /* We removed connection details, but this connection can be available
-               as accesspoint, if not, we have to delete it */
-            int row  = m_connections.indexOf(item);
-
-            if (row >= 0 ) {
-                bool removed = updateItem(item, row);
-                if (removed) {
-                    NMModelDebug() << "Connection " << item->name() << " has been removed from known connections";
-                } else {
-                    NMModelDebug() << "Connection " << name << " has been removed";
-                }
-
-                break;
+        /* We removed connection details, but this connection can be available
+            as accesspoint, if not, we have to delete it */
+        if (item->specificPath().isEmpty()) {
+            if (removeItem(item)) {
+                NMModelDebug() << "Connection " << name << " has been removed";
+            }
+        } else {
+            if (updateItem(item)) {
+                NMModelDebug() << "Connection " << name << " has been removed from known connections";
             }
         }
     }
@@ -275,154 +303,135 @@ void Model::removeConnection(const QString& connection)
 
 void Model::removeConnectionsByDevice(const QString& device)
 {
-    int row = -1;
-
-    foreach (ModelItem * item, m_connections) {
-        if (item->devicePath() == device) {
-            item->removeDevice();
-            row  = m_connections.indexOf(item);
-
-            if (row >= 0) {
-                QString name = item->name();
-                bool removed = updateItem(item, row);
-                if (removed) {
-                    NMModelDebug() << "Connection " << name << " has been removed";
-                } else {
-                    NMModelDebug() << "Device was removed from " << name;
-                }
-            }
+    foreach (ModelItem * item, m_items.itemsByDevice(device)) {
+        QString name = item->name();
+        if (removeItem(item)) {
+            NMModelDebug() << "Connection " << name << " has been removed";
         }
     }
 }
 
-void Model::removeWirelessNetwork(const QString& ssid, const NetworkManager::Device::Ptr & device)
+void Model::removeVpnConnections()
 {
-    int row = -1;
+    foreach (ModelItem * item, m_items.itemsByType(NetworkManager::Settings::ConnectionSettings::Vpn)) {
+        QString name = item->name();
+        if (removeItem(item)) {
+            NMModelDebug() << "VPN Connection " << name << " has been removed";
+        }
+    }
+}
 
-    foreach (ModelItem * item, m_connections) {
-        if (item->ssid() == ssid &&
-            item->devicePath() == device->uni()) {
-            row  = m_connections.indexOf(item);
-
-            if (row >= 0) {
-                ModelWirelessItem * wifiItem = qobject_cast<ModelWirelessItem*>(item);
-                if (wifiItem) {
-                    wifiItem->setWirelessNetwork(NetworkManager::WirelessNetwork::Ptr());
-                    bool removed = updateItem(item, row);
-                    if (removed) {
-                        NMModelDebug() << "Wireless network " << ssid << " has been completely removed";
-                    } else {
-                        NMModelDebug() << "Removed network from " << wifiItem->name() << " connection";
-                    }
-                } else {
-                    return;
-                }
-            }
+void Model::removeWirelessNetwork(const QString& ssid, const QString& device)
+{
+    foreach (ModelItem * item, m_items.itemsBySsid(ssid, device)) {
+        if (removeItem(item)) {
+            NMModelDebug() << "Wireless network " << ssid << " has been removed";
         }
     }
 }
 
 void Model::removeWirelessNetworks()
 {
-    int row = -1;
-
-    foreach (ModelItem * item, m_connections) {
-        if (item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-            row  = m_connections.indexOf(item);
-
-            if (row >= 0) {
-                updateItem(item, row, true);
-                NMModelDebug() << "Wireless network " << item->ssid() << " has been completely removed";
-                row = -1;
-            }
-        }
-
-    }
-}
-
-void Model::removeVpnConnections()
-{
-    int row = -1;
-
-    foreach (ModelItem * item, m_connections) {
-        if (item->type() == NetworkManager::Settings::ConnectionSettings::Vpn) {
-            row  = m_connections.indexOf(item);
-
-            if (row >= 0) {
-                updateItem(item, row, true);
-                NMModelDebug() << "VPN Connection " << item->name() << " has been removed";
-                row = -1;
-            }
+    foreach (ModelItem * item, m_items.itemsByType(NetworkManager::Settings::ConnectionSettings::Wireless)) {
+        if (removeItem(item)) {
+            NMModelDebug() << "Wireless network " << item->ssid() << " has been completely removed";
         }
     }
 }
 
-bool Model::updateItem(ModelItem* item, int index, bool removeDirectly)
+void Model::wirelessNetworkSignalChanged(const QString& ssid, int strength)
 {
-    if (item->shouldBeRemoved() || removeDirectly) {
-        beginRemoveRows(QModelIndex(), index, index);
-        m_connections.removeOne(item);
-        item->deleteLater();
-        endRemoveRows();
-        return true;
-    } else {
-        QModelIndex modelIndex = createIndex(index, 0);
-        dataChanged(modelIndex, modelIndex);
-        return false;
+    foreach (ModelItem * item, m_items.itemsBySsid(ssid)) {
+        item->updateSignalStrenght(strength);
+
+        if (updateItem(item)) {
+            NMModelDebug() << "Item " << item->name() << " has been changed";
+        }
     }
 }
 
-void Model::insertItem(ModelItem* item)
+void Model::wirelessNetworkApChanged(const QString& ssid, const QString& ap)
+{
+    foreach (ModelItem * item, m_items.itemsBySsid(ssid)) {
+        item->updateAccessPoint(ap);
+
+        if (updateItem(item)) {
+            NMModelDebug() << "Item " << item->name() << " has been changed";
+        }
+    }
+}
+
+void Model::insertItem(ModelItem * item)
 {
     bool found = false;
-
-    foreach (ModelItem * it, m_connections) {
+    bool updated = false;
+    foreach (ModelItem * it, m_items.items()) {
         // Check for duplicity
         if (it->operator==(item)) {
+            found = true;
+
             // Update info
-            if (it->type() == NetworkManager::Settings::ConnectionSettings::Wireless &&
-                item->type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-                ModelWirelessItem * wifiIt = qobject_cast<ModelWirelessItem*>(it);
-                ModelWirelessItem * wifiItem = qobject_cast<ModelWirelessItem*>(item);
-                if (wifiIt && wifiItem) {
-                    if (!wifiIt->wirelessNetwork() && wifiItem->wirelessNetwork()) {
-                        NMModelDebug() << "Connection " << it->name() << " has been updated by wireless network";
-                        wifiIt->setWirelessNetwork(wifiItem->wirelessNetwork());
-                    }
+            if (it->specificPath().isEmpty() && !item->specificPath().isEmpty()) {
+                NMModelDebug() << "Connection " << it->name() << " has been updated by wireless network";
+                it->setWirelessNetwork(item->ssid());
+                updated = true;
+            }
+
+            if (it->connectionPath().isEmpty() && !item->connectionPath().isEmpty()) {
+                NMModelDebug() << "Connection " << it->name() << " has been updated by connection";
+                it->setConnection(item->connectionPath());
+                updated = true;
+            }
+
+            if (updated) {
+                int row  = m_items.indexOf(it);
+
+                if (row >= 0) {
+                    QModelIndex index = createIndex(row, 0);
+                    dataChanged(index, index);
                 }
             }
 
-            if (!it->connection() && item->connection()) {
-                NMModelDebug() << "Connection " << it->name() << " has been updated by connection";
-                it->setConnection(item->connection());
-            }
-
-            found = true;
             break;
         }
     }
     // Item doesn't exist, let's add it
     if (!found) {
-        int index = m_connections.count();
+        int index = m_items.count();
         beginInsertRows(QModelIndex(), index, index);
-        m_connections << item;
+        m_items.insertItem(item);
         item->setDetailKeys(m_keys);
         endInsertRows();
-        connect(item, SIGNAL(itemChanged()), SLOT(onChanged()));
         NMModelDebug() << "Connection " << item->name() << " has been added";
     } else {
         delete item;
     }
 }
 
-void Model::onChanged()
+bool Model::removeItem(ModelItem* item)
 {
-    ModelItem * item = qobject_cast<ModelItem*>(sender());
+    int row  = m_items.indexOf(item);
 
-    int row = m_connections.indexOf(item);
+    if (row >= 0) {
+        beginRemoveRows(QModelIndex(), row, row);
+        m_items.removeItem(item);
+        item->deleteLater();
+        endRemoveRows();
+        return true;
+    }
+
+    return false;
+}
+
+bool Model::updateItem(ModelItem* item)
+{
+    int row = m_items.indexOf(item);
+
     if (row >= 0) {
         QModelIndex index = createIndex(row, 0);
         dataChanged(index, index);
-        NMModelDebug() << "Item " << item->name() << " has been changed";
+        return true;
     }
+
+    return false;
 }

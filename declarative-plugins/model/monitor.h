@@ -25,8 +25,11 @@
 #include <NetworkManagerQt/AccessPoint>
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessNetwork>
 #include <NetworkManagerQt/WirelessDevice>
+
+#include <ModemManagerQt/modeminterface.h>
 
 class Monitor : public QObject
 {
@@ -39,32 +42,49 @@ public Q_SLOTS:
     void init();
 
 private Q_SLOTS:
-    void availableConnectionAppeared(const QString & connection);
-    void availableConnectionDisappeared(const QString & connection);
-    void activeConnectionsChanged();
+    void availableConnectionAppeared(const QString& connection);
+    void availableConnectionDisappeared(const QString& connection);
+    void activeConnectionAdded(const QString& active);
+    void activeConnectionRemoved(const QString& active);
+    void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
     void cablePlugged(bool plugged);
-    void connectionAdded(const QString & connection);
-    void connectionRemoved(const QString & connection);
-    void deviceAdded(const QString & device);
-    void deviceRemoved(const QString & device);
+    void connectionAdded(const QString& connection);
+    void connectionRemoved(const QString& connection);
+    void connectionUpdated();
+    void deviceAdded(const QString& device);
+    void deviceRemoved(const QString& device);
+    void gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology);
+    void gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode);
+    void gsmNetworkSignalQualityChanged(uint signal);
     void statusChanged(NetworkManager::Status status);
-    void wirelessNetworkAppeared(const QString & ssid);
-    void wirelessNetworkDisappeared(const QString & ssid);
+    void wirelessNetworkAppeared(const QString& ssid);
+    void wirelessNetworkDisappeared(const QString& ssid);
+    void wirelessNetworkSignalChanged(int strength);
+    void wirelessNetworkReferenceApChanged(const QString& ap);
     void wirelessEnabled(bool enabled);
 Q_SIGNALS:
-    void addActiveConnection(const NetworkManager::ActiveConnection::Ptr & active);
-    void addConnection(const NetworkManager::Settings::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device);
-    void addVpnConnection(const NetworkManager::Settings::Connection::Ptr &connection);
-    void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device);
-    void removeWirelessNetworks();
-    void removeWirelessNetwork(const QString & ssid, const NetworkManager::Device::Ptr &device);
-    void removeConnectionsByDevice(const QString & udi);
-    void removeConnection(const QString & connection);
+    void activeConnectionStateChanged(const QString& active, NetworkManager::ActiveConnection::State state);
+    void addActiveConnection(const QString& active);
+    void addConnection(const QString& connection, const QString& device);
+    void addVpnConnection(const QString& connection);
+    void addWirelessNetwork(const QString& network, const QString& device);
+    void connectionUpdated(const QString& connection);
+    void modemAccessTechnologyChanged(const QString& modem);
+    void modemAllowedModeChanged(const QString& modem);
+    void modemSignalQualityChanged(const QString& modem);
+    void removeActiveConnection(const QString& active);
+    void removeConnectionsByDevice(const QString& udi);
+    void removeConnection(const QString& connection);
     void removeVpnConnections();
+    void removeWirelessNetwork(const QString& ssid, const QString& device);
+    void removeWirelessNetworks();
+    void vpnConnectionStateChanged(const QString& vpn, NetworkManager::VpnConnection::State state);
+    void wirelessNetworkSignalChanged(const QString& ssid, int signal);
+    void wirelessNetworkAccessPointChanged(const QString& ssid, const QString& ap);
 
 private:
-    void addAvailableConnectionsForDevice(const NetworkManager::Device::Ptr &device);
-    void addDevice(const NetworkManager::Device::Ptr &device);
+    void addAvailableConnectionsForDevice(const NetworkManager::Device::Ptr& device);
+    void addDevice(const NetworkManager::Device::Ptr& device);
 };
 
 #endif // PLASMA_NM_MONITOR_H

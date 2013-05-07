@@ -34,7 +34,6 @@ int monitorSignalDebugArea();
 #define NMHandlerDebug() kDebug(handlerDebugArea())
 #define NMModelDebug() kDebug(modelDebugArea())
 #define NMMonitorDebug() kDebug(monitorDebugArea())
-#define NMMonitorSignalDebug() kDebug(monitorSignalDebugArea())
 #define NMItemDebug() kDebug(itemDebugArea())
 
 #endif // DEBUG_H

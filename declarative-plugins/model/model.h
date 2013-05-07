@@ -31,6 +31,7 @@
 class ModelItem;
 
 #include "monitor.h"
+#include "modelitems.h"
 
 class Model : public QAbstractListModel
 {
@@ -42,31 +43,36 @@ public:
     explicit Model(QObject* parent = 0);
     virtual ~Model();
 
-    int rowCount(const QModelIndex & parent) const;
-    QVariant data(const QModelIndex & index, int role) const;
+    int rowCount(const QModelIndex& parent) const;
+    QVariant data(const QModelIndex& index, int role) const;
 
 public Q_SLOTS:
-    void setDetailKeys(const QStringList & keys);
+    void setDetailKeys(const QStringList& keys);
 
 private Q_SLOTS:
-    void onChanged();
-
-    void addActiveConnection(const NetworkManager::ActiveConnection::Ptr & active);
-    void addConnection(const NetworkManager::Settings::Connection::Ptr & connection, const NetworkManager::Device::Ptr &device);
-    void addVpnConnection(const NetworkManager::Settings::Connection::Ptr & connection);
-    void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::Device::Ptr &device);
-    void removeConnection(const QString & connection);
-    void removeConnectionsByDevice(const QString & device);
+    void addActiveConnection(const QString& active);
+    void activeConnectionStateChanged(const QString& active, NetworkManager::ActiveConnection::State state);
+    void addConnection(const QString& connection, const QString& device);
+    void addVpnConnection(const QString& connection);
+    void addWirelessNetwork(const QString& ssid, const QString& device);
+    void connectionUpdated(const QString& connection);
+    void modemPropertiesChanged(const QString& modem);
+    void removeActiveConnection(const QString& active);
+    void removeConnection(const QString& connection);
+    void removeConnectionsByDevice(const QString& device);
     void removeVpnConnections();
-    void removeWirelessNetwork(const QString & ssid, const NetworkManager::Device::Ptr &device);
+    void removeWirelessNetwork(const QString& ssid,const QString& device);
     void removeWirelessNetworks();
-    bool updateItem(ModelItem * item, int index, bool removeDirectly = false);
+    void wirelessNetworkSignalChanged(const QString& ssid, int strength);
+    void wirelessNetworkApChanged(const QString& ssid, const QString& ap);
 private:
     Monitor * m_monitor;
-    QList<ModelItem*> m_connections;
+    ModelItems m_items;
     QStringList m_keys;
 
     void insertItem(ModelItem * item);
+    bool removeItem(ModelItem * item);
+    bool updateItem(ModelItem * item);
 };
 
 #endif // PLASMA_NM_MODEL_H

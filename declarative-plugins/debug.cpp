@@ -50,10 +50,4 @@ int monitorDebugArea()
     return area;
 }
 
-int monitorSignalDebugArea()
-{
-    static int area = KDebug::registerArea("Plasma-nm (monitor signals)", false);
-    return area;
-}
-
 

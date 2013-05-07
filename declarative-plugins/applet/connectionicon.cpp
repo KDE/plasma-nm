@@ -388,17 +388,11 @@ void ConnectionIcon::setWirelessIcon(const NetworkManager::Device::Ptr &device, 
     if (m_wirelessNetwork) {
         connect(m_wirelessNetwork.data(), SIGNAL(signalStrengthChanged(int)),
                 SLOT(setWirelessIconForSignalStrength(int)), Qt::UniqueConnection);
-        connect(m_wirelessNetwork.data(), SIGNAL(destroyed(QObject*)),
-                SLOT(wirelessNetworkRemoved()));
+
         setWirelessIconForSignalStrength(m_wirelessNetwork->signalStrength());
     } else {
         setDisconnectedIcon();
     }
-}
-
-void ConnectionIcon::wirelessNetworkRemoved()
-{
-    m_wirelessNetwork.clear();
 }
 
 void ConnectionIcon::setWirelessIconForSignalStrength(int strength)

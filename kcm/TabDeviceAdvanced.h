@@ -17,60 +17,32 @@
  *   Boston, MA 02110-1301, USA.                                           *
  ***************************************************************************/
 
-#include "Description.h"
-#include "ui_Description.h"
+#ifndef TABDEVICEADVANCED_H
+#define TABDEVICEADVANCED_H
 
-#include "TabDeviceInfo.h"
-#include "TabDeviceAdvanced.h"
+#include <QWidget>
+#include <QStandardItemModel>
 
-#include <QStringBuilder>
-#include <QtDBus/QDBusInterface>
-#include <QtDBus/QDBusReply>
+#include <NetworkManagerQt/Device>
 
-#include <KGlobal>
-#include <KLocale>
-#include <KDateTime>
-#include <KToolInvocation>
-#include <KDebug>
-#include <KMessageWidget>
-#include <KMessageBox>
-
-#include <NetworkManagerQt/Manager>
-
-Description::Description(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Description)
-{
-    ui->setupUi(this);
+namespace Ui {
+class TabDeviceAdvanced;
 }
 
-Description::~Description()
+class TabDeviceAdvanced : public QWidget
 {
-    delete ui;
-}
+    Q_OBJECT
+    
+public:
+    explicit TabDeviceAdvanced(QWidget *parent = 0);
+    ~TabDeviceAdvanced();
 
-int Description::innerHeight() const
-{
-    return ui->tabWidget->currentWidget()->height();
-}
+    void setDevice(const NetworkManager::Device::Ptr &device);
+    
+private:
+    void addItem(const QString &key, const QString &value);
+    Ui::TabDeviceAdvanced *ui;
+    QStandardItemModel *m_model;
+};
 
-void Description::setDevice(const QString &uni)
-{
-    int i = 0;
-    while (i < ui->tabWidget->count()) {
-        ui->tabWidget->removeTab(i);
-    }
-
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(uni);
-    if (device) {
-        TabDeviceInfo *tabDeviceInfo = new TabDeviceInfo(this);
-        tabDeviceInfo->setDevice(device);
-        ui->tabWidget->addTab(tabDeviceInfo, i18n("Information"));
-
-        TabDeviceAdvanced *tabDeviceAdvanced = new TabDeviceAdvanced(this);
-        tabDeviceAdvanced->setDevice(device);
-        ui->tabWidget->addTab(tabDeviceAdvanced, i18n("Advanced"));
-    }
-}
-
-#include "Description.moc"
+#endif // TABDEVICEADVANCED_H

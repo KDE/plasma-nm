@@ -59,16 +59,15 @@ TabDeviceInfo::~TabDeviceInfo()
     delete ui;
 }
 
-void TabDeviceInfo::setDevice(const QString &uni)
+void TabDeviceInfo::setDevice(const NetworkManager::Device::Ptr &device)
 {
-    if (m_device && m_device->uni() == uni) {
+    if (m_device && m_device->uni() == device->uni()) {
         return;
     }
 
     if (m_device) {
         m_device->disconnect(this);
     }
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(uni);
     m_device = device;
     if (device) {
         connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),

@@ -38,7 +38,7 @@ public:
     explicit TabDeviceInfo(QWidget *parent = 0);
     ~TabDeviceInfo();
 
-    void setDevice(const QString &uni);
+    void setDevice(const NetworkManager::Device::Ptr &device);
 
 private slots:
     void updateState();

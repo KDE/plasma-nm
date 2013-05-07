@@ -66,7 +66,6 @@ DeviceConnectionModel::DeviceConnectionModel(QObject *parent) :
     QStandardItem *parentItem = new QStandardItem(i18n("Network devices"));
     parentItem->setData(true, RoleIsDeviceParent);
     parentItem->setSelectable(false);
-    parentItem->setEnabled(false);
     QFont font = parentItem->font();
     font.setPointSizeF(font.pointSizeF() * 1.5);
     parentItem->setFont(font);
@@ -342,7 +341,6 @@ QStandardItem *DeviceConnectionModel::findOrCreateConnectionType(Settings::Conne
         parentItem = new QStandardItem(i18n("Network connections"));
         parentItem->setData(true, RoleIsConnectionParent);
         parentItem->setSelectable(false);
-        parentItem->setEnabled(false);
         QFont font = parentItem->font();
         font.setPointSizeF(font.pointSizeF() * 1.5);
         parentItem->setFont(font);

@@ -51,6 +51,8 @@ int main(int argc, char *argv[])
 
     KApplication app;
 
+    KGlobal::insertCatalog("libplasmanm-editor");
+
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     if(args->count()) {
         NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(args->arg(0));

@@ -223,10 +223,13 @@ void ModelItem::updateDetails()
             m_details += QString(format).arg(i18n("Status"), status);
         } else if (key == "interface:name") {
             if (device) {
-                QString name = device->ipInterfaceName();
-                if (!name.isEmpty()) {
-                    m_details += QString(format).arg(i18n("System name:"), name);
+                QString name;
+                if (device->ipInterfaceName().isEmpty()) {
+                    name = device->interfaceName();
+                } else {
+                    name = device->ipInterfaceName();
                 }
+                m_details += QString(format).arg(i18n("System name:"), name);
             }
         } else if (key == "ipv4:address") {
             if (device && device->ipV4Config().isValid() && m_connected) {
@@ -481,7 +484,6 @@ void ModelItem::setDevice(const QString& device)
             m_device = dev->ipInterfaceName();
         }
         m_devicePath = dev->uni();
-//         setSpecificDevice(dev);
         updateDetails();
     } else {
         m_devicePath.clear();

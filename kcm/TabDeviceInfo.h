@@ -17,27 +17,43 @@
  *   Boston, MA 02110-1301, USA.                                           *
  ***************************************************************************/
 
-#ifndef DESCRIPTION_H
-#define DESCRIPTION_H
+#ifndef TABDEVICEINFO_H
+#define TABDEVICEINFO_H
 
 #include <QWidget>
 
+#include <NetworkManagerQt/Device>
+
 namespace Ui {
-    class Description;
+class TabDeviceInfo;
 }
-class Description : public QWidget
+
+class AvailableConnectionsModel;
+class AvailableConnectionsSortModel;
+class TabDeviceInfo : public QWidget
 {
     Q_OBJECT
+    
 public:
-    explicit Description(QWidget *parent = 0);
-    ~Description();
-
-    int innerHeight() const;
+    explicit TabDeviceInfo(QWidget *parent = 0);
+    ~TabDeviceInfo();
 
     void setDevice(const QString &uni);
 
+private slots:
+    void updateState();
+    void updateActiveConnection();
+    void updateIpV4Config();
+
+    void on_disconnectPB_clicked();
+    void on_connectionCB_activated(int index);
+
 private:
-    Ui::Description *ui;
+    Ui::TabDeviceInfo *ui;
+    NetworkManager::Device::Ptr m_device;
+    AvailableConnectionsModel *m_availableConnectionsModel;
+    AvailableConnectionsSortModel *m_availableConnectionsSortModel;
+
 };
 
-#endif // DESCRIPTION_H
+#endif // TABDEVICEINFO_H

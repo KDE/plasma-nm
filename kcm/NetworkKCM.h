@@ -74,4 +74,4 @@ private:
     QAction *m_configureAction;
 };
 
-#endif // COLORD_KCM_H
+#endif // NETWORK_KCM_H

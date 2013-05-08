@@ -72,10 +72,10 @@ Item {
     function sectionClicked() {
          if (expanded) {
             hideSection(section);
-            iconSource = "list-add";
+            expandButton.iconSource = "list-add";
         } else {
             showSection(section);
-            iconSource = "list-remove";
+            expandButton.iconSource = "list-remove";
         }
         expanded = !expanded;
     }

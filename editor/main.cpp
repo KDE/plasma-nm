@@ -68,8 +68,7 @@ int main(int argc, char *argv[])
     } else {
         if (app.isSessionRestored()) {
             kRestoreMainWindows<ConnectionEditor>();
-        }
-        else {
+        } else {
             ConnectionEditor * editor = new ConnectionEditor();
             editor->show();
         }

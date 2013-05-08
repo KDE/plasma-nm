@@ -129,7 +129,9 @@ Item {
         onWirelessEnabledChanged: enableWireless(enabled);
         onWwanEnabledChanged: enableWwan(enabled);
         onOpenEditor: {
-            expanded = false;
+            if (mainWindow.autoHideOptions) {
+                expanded = false;
+            }
             openEditorToolbar();
         }
 

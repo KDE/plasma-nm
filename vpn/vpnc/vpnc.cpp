@@ -31,8 +31,8 @@
 #include "nm-vpnc-service.h"
 
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/settings/Vpn>
-#include <NetworkManagerQt/settings/Ipv4>
+#include <NetworkManagerQt/settings/VpnSetting>
+#include <NetworkManagerQt/settings/Ipv4Setting>
 
 #include "vpncwidget.h"
 #include "vpncauth.h"

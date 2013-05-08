@@ -22,9 +22,9 @@
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/WiredDevice>
-#include <NetworkManagerQt/settings/Wireless>
+#include <NetworkManagerQt/settings/WirelessSetting>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/settings/Connection>
+#include <NetworkManagerQt/settings/ConnectionSettings>
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/ModemDevice>
 

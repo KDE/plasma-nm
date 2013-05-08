@@ -23,7 +23,7 @@
 
 #include <QtGui/QWidget>
 
-#include <NetworkManagerQt/settings/Bluetooth>
+#include <NetworkManagerQt/settings/BluetoothSetting>
 
 #include "settingwidget.h"
 

@@ -30,8 +30,8 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/VpnConnection>
 
-#include <NetworkManagerQt/settings/Vpn>
-#include <NetworkManagerQt/settings/Wireless>
+#include <NetworkManagerQt/settings/VpnSetting>
+#include <NetworkManagerQt/settings/WirelessSetting>
 
 #include <ModemManagerQt/modemgsmnetworkinterface.h>
 

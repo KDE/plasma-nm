@@ -19,11 +19,11 @@
 
 #include "AvailableConnectionsModel.h"
 
-#include <NetworkManagerQt/settings/Connection>
+#include <NetworkManagerQt/settings/ConnectionSettings>
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/settings/Wireless>
+#include <NetworkManagerQt/settings/WirelessSetting>
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WimaxDevice>
 #include <NetworkManagerQt/WimaxNsp>

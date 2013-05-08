@@ -23,7 +23,7 @@
 
 #include <QtGui/QWidget>
 
-#include <NetworkManagerQt/settings/8021x>
+#include <NetworkManagerQt/settings/Security8021xSetting>
 
 #include "settingwidget.h"
 #include "security802-1x.h"

@@ -28,9 +28,9 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/settings/Setting>
-#include <NetworkManagerQt/settings/Connection>
-#include <NetworkManagerQt/settings/Ethernet>
-#include <NetworkManagerQt/settings/Wireless>
+#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/settings/WiredSetting>
+#include <NetworkManagerQt/settings/WirelessSetting>
 #include <NetworkManagerQt/ActiveConnection>
 
 #include <QInputDialog>

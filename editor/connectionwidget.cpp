@@ -23,7 +23,7 @@
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/settings/Connection>
+#include <NetworkManagerQt/settings/ConnectionSettings>
 
 #include <KUser>
 

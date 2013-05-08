@@ -24,7 +24,7 @@
 
 #include <KLocalizedString>
 
-#include <NetworkManagerQt/settings/infiniband.h>
+#include <NetworkManagerQt/settings/InfinibandSetting>
 
 InfinibandWidget::InfinibandWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

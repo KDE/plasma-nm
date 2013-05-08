@@ -24,7 +24,7 @@
 
 #include <QDialog>
 
-#include <NetworkManagerQt/settings/Vpn>
+#include <NetworkManagerQt/settings/VpnSetting>
 
 #include "settingwidget.h"
 

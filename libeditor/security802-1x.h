@@ -23,7 +23,7 @@
 
 #include <QWidget>
 
-#include <NetworkManagerQt/settings/8021x>
+#include <NetworkManagerQt/settings/Security8021xSetting>
 
 namespace Ui
 {

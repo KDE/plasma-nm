@@ -23,7 +23,7 @@
 
 #include <KLocalizedString>
 
-#include <NetworkManagerQt/settings/Gsm>
+#include <NetworkManagerQt/settings/GsmSetting>
 
 GsmWidget::GsmWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

@@ -27,7 +27,7 @@
 #include <NetworkManagerQt/GenericTypes>
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/settings/Connection>
+#include <NetworkManagerQt/settings/ConnectionSettings>
 
 #include <KLocalizedString>
 #include <KMessageBox>

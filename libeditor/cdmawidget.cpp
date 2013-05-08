@@ -21,7 +21,7 @@
 #include "cdmawidget.h"
 #include "ui_cdma.h"
 
-#include <NetworkManagerQt/settings/Cdma>
+#include <NetworkManagerQt/settings/CdmaSetting>
 
 CdmaWidget::CdmaWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

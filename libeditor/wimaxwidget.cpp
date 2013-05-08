@@ -22,7 +22,7 @@
 #include "ui_wimax.h"
 #include "uiutils.h"
 
-#include <NetworkManagerQt/settings/Wimax>
+#include <NetworkManagerQt/settings/WimaxSetting>
 
 #include <KLocalizedString>
 

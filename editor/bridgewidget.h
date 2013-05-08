@@ -25,7 +25,7 @@
 #include <QMenu>
 #include <QListWidgetItem>
 
-#include <NetworkManagerQt/settings/Bridge>
+#include <NetworkManagerQt/settings/BridgeSetting>
 
 #include "settingwidget.h"
 

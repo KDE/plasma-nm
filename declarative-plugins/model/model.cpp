@@ -23,7 +23,7 @@
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/WiredDevice>
-#include <NetworkManagerQt/settings/Wireless>
+#include <NetworkManagerQt/settings/WirelessSetting>
 
 #include "debug.h"
 

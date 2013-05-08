@@ -31,7 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KLineEdit>
 
 #include <NetworkManagerQt/Manager>
-#include <NetworkManagerQt/settings/Connection>
+#include <NetworkManagerQt/settings/ConnectionSettings>
 
 #include "mobileproviders.h"
 

@@ -25,7 +25,7 @@
 #include <QMenu>
 #include <QListWidgetItem>
 
-#include <NetworkManagerQt/settings/Bond>
+#include <NetworkManagerQt/settings/BondSetting>
 
 #include "settingwidget.h"
 

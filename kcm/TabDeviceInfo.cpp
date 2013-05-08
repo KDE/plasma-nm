@@ -29,9 +29,9 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/IpConfig>
 #include <NetworkManagerQt/WimaxDevice>
-#include <NetworkManagerQt/settings/Wireless>
-#include <NetworkManagerQt/settings/Wimax>
-#include <NetworkManagerQt/settings/Connection>
+#include <NetworkManagerQt/settings/WirelessSetting>
+#include <NetworkManagerQt/settings/WimaxSetting>
+#include <NetworkManagerQt/settings/ConnectionSettings>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ActiveConnection>
 
@@ -142,7 +142,6 @@ void TabDeviceInfo::updateIpV4Config()
         routers << address.gateway().toString();
     }
     ui->ipv4AddressL->setText(addresses.join(QLatin1String("\n")));
-
 
     foreach (const NetworkManager::IpRoute &route, m_device->ipV4Config().routes()) {
         routers << i18n("%1/%2, nexthop %3 metric %4",

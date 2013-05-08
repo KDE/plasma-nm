@@ -22,7 +22,7 @@
 #include "ui_wiredconnectionwidget.h"
 #include "uiutils.h"
 
-#include <NetworkManagerQt/settings/Ethernet>
+#include <NetworkManagerQt/settings/WiredSetting>
 
 WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

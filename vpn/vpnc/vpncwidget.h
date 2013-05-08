@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_VPNC_WIDGET_H
 #define PLASMA_NM_VPNC_WIDGET_H
 
-#include <NetworkManagerQt/settings/Vpn>
+#include <NetworkManagerQt/settings/VpnSetting>
 
 #include "settingwidget.h"
 

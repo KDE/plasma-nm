@@ -22,7 +22,7 @@
 #include "ui_vlan.h"
 #include "uiutils.h"
 
-#include <NetworkManagerQt/settings/Vlan>
+#include <NetworkManagerQt/settings/VlanSetting>
 #include <NetworkManagerQt/Settings>
 
 VlanWidget::VlanWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):

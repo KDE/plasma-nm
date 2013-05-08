@@ -22,7 +22,7 @@
 #define PLASMA_NM_IPV6_WIDGET_H
 
 #include <QtGui/QWidget>
-#include <NetworkManagerQt/settings/Ipv6>
+#include <NetworkManagerQt/settings/Ipv6Setting>
 
 #include "settingwidget.h"
 #include "ui/ipv6routeswidget.h"

@@ -40,6 +40,9 @@ DetailKeysEditor::DetailKeysEditor(QWidget *parent)
     Q_D(DetailKeysEditor);
     d->ui.setupUi(this);
 
+    setContentsMargins(QMargins());
+    d->ui.gridLayout->setSpacing(0);
+
     loadAllDetailElements();
 
     QMap<QString, QPair<QString, QString> >::const_iterator it = m_allDetailsElements.constBegin();
@@ -77,12 +80,8 @@ DetailKeysEditor::DetailKeysEditor(const QStringList & keys, QWidget * parent)
 DetailKeysEditor::~DetailKeysEditor()
 {
     Q_D(DetailKeysEditor);
-    while (QTreeWidgetItem *item = d->ui.currentDetails->takeTopLevelItem(0)) {
-        delete item;
-    }
-    while (QTreeWidgetItem *item = d->ui.availDetails->takeTopLevelItem(0)) {
-        delete item;
-    }
+    d->ui.currentDetails->clear();
+    d->ui.availDetails->clear();
     delete d_ptr;
 }
 
@@ -150,10 +149,6 @@ void DetailKeysEditor::loadAllDetailElements()
 void DetailKeysEditor::setupCommon()
 {
     Q_D(DetailKeysEditor);
-    d->ui.arrowUp->setIcon(KIcon("arrow-up"));
-    d->ui.arrowLeft->setIcon(KIcon("arrow-left"));
-    d->ui.arrowRight->setIcon(KIcon("arrow-right"));
-    d->ui.arrowDown->setIcon(KIcon("arrow-down"));
     connect(d->ui.arrowUp, SIGNAL(clicked()), this, SLOT(upArrowClicked()));
     connect(d->ui.arrowLeft, SIGNAL(clicked()), this, SLOT(leftArrowClicked()));
     connect(d->ui.arrowRight, SIGNAL(clicked()), this, SLOT(rightArrowClicked()));

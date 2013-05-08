@@ -72,5 +72,5 @@ QWidget * DetailKeysEditorDesignerFactory::createWidget(QWidget *parent)
     return new DetailKeysEditor(parent);
 }
 
-Q_EXPORT_PLUGIN2(plasmanm_config_widgets, DetailKeysEditorDesignerFactory)
+Q_EXPORT_PLUGIN2(plasmanmwidgets, DetailKeysEditorDesignerFactory)
 

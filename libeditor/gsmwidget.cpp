@@ -44,6 +44,7 @@ GsmWidget::GsmWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWid
     m_ui->type->addItem(i18n("4G Only (LTE)"), NetworkManager::Settings::GsmSetting::Only4GLte);
 
     connect(m_ui->cbShowPasswords, SIGNAL(toggled(bool)), SLOT(showPasswords(bool)));
+    connect(m_ui->pinStorage, SIGNAL(currentIndexChanged(int)), SLOT(pinStorageChanged(int)));
 
     // TODO make the Change... button relaunch the wizard
 
@@ -131,4 +132,14 @@ void GsmWidget::showPasswords(bool show)
 {
     m_ui->password->setPasswordMode(!show);
     m_ui->pin->setPasswordMode(!show);
+}
+
+void GsmWidget::pinStorageChanged(int index)
+{
+    if (index == 1 || index == 2) {
+        m_ui->pin->setEnabled(false);
+    }
+    else {
+        m_ui->pin->setEnabled(true);
+    }
 }

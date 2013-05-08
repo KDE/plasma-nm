@@ -130,7 +130,7 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
     connect(device.data(), SIGNAL(availableConnectionDisappeared(QString)),
             SLOT(availableConnectionDisappeared(QString)));
 
-   addAvailableConnectionsForDevice(device);
+    addAvailableConnectionsForDevice(device);
 }
 
 void Monitor::availableConnectionAppeared(const QString& connection)
@@ -138,11 +138,13 @@ void Monitor::availableConnectionAppeared(const QString& connection)
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
 
     if (!device) {
+        NMMonitorDebug() << "Device not found for connection " << connection;
         return;
     }
 
     NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
     if (!con) {
+        NMMonitorDebug() << "Connection not found" << con->name();
         return;
     }
 
@@ -324,7 +326,6 @@ void Monitor::statusChanged(NetworkManager::Status status)
                 Q_EMIT addVpnConnection(con->path());
             }
         }
-
     // We have to remove all vpn connections
     } else {
         NMMonitorDebug() << "NetworkManager is not connected";

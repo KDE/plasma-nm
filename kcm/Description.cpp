@@ -51,7 +51,15 @@ Description::~Description()
 
 int Description::innerHeight() const
 {
-    return ui->tabWidget->currentWidget()->height();
+    int height;
+    if (ui->tabWidget->currentWidget()) {
+        height = ui->tabWidget->currentWidget()->height();
+    } else {
+        int tab = ui->tabWidget->addTab(new QWidget, "TabDeviceAdvanced.h");
+        height = ui->tabWidget->currentWidget()->height();
+        ui->tabWidget->removeTab(tab);
+    }
+    return height;
 }
 
 void Description::setDevice(const QString &uni)

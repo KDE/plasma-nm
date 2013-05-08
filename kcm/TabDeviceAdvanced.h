@@ -40,6 +40,7 @@ public:
     void setDevice(const NetworkManager::Device::Ptr &device);
     
 private:
+    void addDhcpItems(const QVariantMap &options);
     void addItem(const QString &key, const QString &value);
     Ui::TabDeviceAdvanced *ui;
     QStandardItemModel *m_model;

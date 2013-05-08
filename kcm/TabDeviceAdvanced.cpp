@@ -79,33 +79,55 @@ void TabDeviceAdvanced::setDevice(const NetworkManager::Device::Ptr &device)
     }
 
     if (device->dhcp4Config()) {
-        QVariantMap options = device->dhcp4Config()->options();
-        QVariantMap::ConstIterator i = options.constBegin();
-        while (i != options.constEnd()) {
-            QString name = i.key();
-            if (name == QLatin1String("broadcast_address")) {
-                addItem(i18n("Broadcast address:"), i.value().toString());
-            } else {
-                addItem(i.key(), i.value().toString());
-            }
-            ++i;
-        }
-        kDebug() << device->dhcp4Config()->options();
+        addDhcpItems(device->dhcp4Config()->options());
     }
 
     if (device->dhcp6Config()) {
-        QVariantMap options = device->dhcp6Config()->options();
-        QVariantMap::ConstIterator i = options.constBegin();
-        while (i != options.constEnd()) {
-            QString name = i.key();
-            if (name == QLatin1String("broadcast_address")) {
-                addItem(i18n("Broadcast Address:"), i.value().toString());
-            } else {
-                addItem(i.key(), i.value().toString());
-            }
-            ++i;
+        addDhcpItems(device->dhcp6Config()->options());
+    }
+}
+
+void TabDeviceAdvanced::addDhcpItems(const QVariantMap &options)
+{
+    QVariantMap::ConstIterator i = options.constBegin();
+    while (i != options.constEnd()) {
+        QString name = i.key();
+        if (name == QLatin1String("broadcast_address")) {
+            addItem(i18n("Broadcast address"), i.value().toString());
+        } else if (name == QLatin1String("dhcp_lease_time")) {
+            addItem(i18n("DHCP lease time"),
+                    KGlobal::locale()->prettyFormatDuration(i.value().toInt() * 1000));
+        } else if (name == QLatin1String("dhcp_message_type")) {
+            addItem(i18n("DHCP message type"), i.value().toString());
+        } else if (name == QLatin1String("dhcp_rebinding_time")) {
+            addItem(i18n("DHCP rebinding time"),
+                    KGlobal::locale()->prettyFormatDuration(i.value().toInt() * 1000));
+        } else if (name == QLatin1String("dhcp_renewal_time")) {
+            addItem(i18n("DHCP renewal time"),
+                    KGlobal::locale()->prettyFormatDuration(i.value().toInt() * 1000));
+        } else if (name == QLatin1String("dhcp_server_identifier")) {
+            addItem(i18n("DHCP server identifier"), i.value().toString());
+        } else if (name == QLatin1String("domain_name")) {
+            addItem(i18n("Domain name"), i.value().toString());
+        } else if (name == QLatin1String("domain_name_servers")) {
+            addItem(i18n("DNS"), i.value().toString());
+        } else if (name == QLatin1String("expiry")) {
+            QDateTime dateTime;
+            dateTime = QDateTime::fromMSecsSinceEpoch(i.value().toLongLong() * 1000);
+            addItem(i18n("Expiry"),
+                    KGlobal::locale()->formatDateTime(dateTime));
+        } else if (name == QLatin1String("ip_address")) {
+            addItem(i18n("IP Address"), i.value().toString());
+        } else if (name == QLatin1String("network_number")) {
+            addItem(i18n("Network"), i.value().toString());
+        } else if (name == QLatin1String("routers")) {
+            addItem(i18n("Routers"), i.value().toString());
+        } else if (name == QLatin1String("subnet_mask")) {
+            addItem(i18n("Subnet mask"), i.value().toString());
+        } else {
+            addItem(i.key(), i.value().toString());
         }
-        kDebug() << device->dhcp6Config()->options();
+        ++i;
     }
 }
 

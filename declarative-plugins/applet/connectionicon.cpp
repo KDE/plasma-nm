@@ -364,7 +364,11 @@ void ConnectionIcon::setIconForModem()
             result = "network-mobile-%1-hsupa";
             break;
         case ModemManager::ModemInterface::Hspa:
+        case ModemManager::ModemInterface::HspaPlus:
             result = "network-mobile-%1-hspa";
+            break;
+        case ModemManager::ModemInterface::Lte:
+            result = "network-mobile-%1-lte";
             break;
         default:
             result = "network-mobile-%1";

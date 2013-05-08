@@ -93,7 +93,7 @@ void TabDeviceInfo::setDevice(const NetworkManager::Device::Ptr &device)
             setTurnOffWifiText(NetworkManager::isWirelessEnabled());
             connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
                     this, SLOT(setTurnOffWifiText(bool)));
-        } else if (device->type() == Device::Wifi) {
+        } else if (device->type() == Device::Wimax) {
             ui->turnOff->setEnabled(NetworkManager::isWimaxHardwareEnabled());
             connect(NetworkManager::notifier(), SIGNAL(wimaxHardwareEnabledChanged(bool)),
                     ui->turnOff, SLOT(setEnabled(bool)));

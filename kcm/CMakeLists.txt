@@ -7,6 +7,7 @@ set(kcm_network_SRCS
     DeviceConnectionSortFilterModel.cpp
     TabDeviceInfo.cpp
     TabDeviceAdvanced.cpp
+    TabConnectionInfo.cpp
     Description.cpp
     NetworkKCM.cpp
 )
@@ -14,6 +15,7 @@ set(kcm_network_SRCS
 kde4_add_ui_files(kcm_network_SRCS
     TabDeviceInfo.ui
     TabDeviceAdvanced.ui
+    TabConnectionInfo.ui
     Description.ui
     NetworkKCM.ui
 )

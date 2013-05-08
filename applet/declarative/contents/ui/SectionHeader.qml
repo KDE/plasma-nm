@@ -40,6 +40,14 @@ Item {
         anchors { bottom: parent.bottom; bottomMargin: 5; left: expandButton.right; leftMargin: 5 }
         text: section;
         font.weight: Font.DemiBold;
+
+        MouseArea {
+            id: sectionLabelMouseArea
+
+            anchors.fill: parent;
+
+            onClicked: sectionClicked();
+        }
     }
 
     Rectangle {
@@ -58,15 +66,17 @@ Item {
         anchors { left: parent.left; leftMargin: 4}
         iconSource: "list-remove";
 
-        onClicked: {
-            if (expanded) {
-                hideSection(section);
-                iconSource = "list-add";
-            } else {
-                showSection(section);
-                iconSource = "list-remove";
-            }
-            expanded = !expanded;
+        onClicked: sectionClicked();
+    }
+
+    function sectionClicked() {
+         if (expanded) {
+            hideSection(section);
+            iconSource = "list-add";
+        } else {
+            showSection(section);
+            iconSource = "list-remove";
         }
+        expanded = !expanded;
     }
 }

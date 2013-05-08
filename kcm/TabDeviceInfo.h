@@ -47,6 +47,10 @@ private slots:
 
     void on_disconnectPB_clicked();
     void on_connectionCB_activated(int index);
+    void on_turnOff_clicked();
+
+    void setTurnOffWifiText(bool enabled);
+    void setTurnOffWimaxText(bool enabled);
 
 private:
     Ui::TabDeviceInfo *ui;

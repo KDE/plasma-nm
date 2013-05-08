@@ -123,7 +123,7 @@ QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
                         strength = "00";
                 }
             }
-            icon = "network-wireless-connected-" + strength;
+            icon = "network-wireless-" + strength;
             break;
         }
         case NetworkManager::Device::Bluetooth:
@@ -183,7 +183,10 @@ QString UiUtils::prettyInterfaceName(NetworkManager::Device::Type type, const QS
         ret = i18n("ADSL (%1)", interfaceName);
         break;
     case NetworkManager::Device::Vlan:
-        ret = i18n("VLAN (%1)", interfaceName);
+        ret = i18n("VLan (%1)", interfaceName);
+        break;
+    case NetworkManager::Device::Bridge:
+        ret = i18n("Bridge (%1)", interfaceName);
         break;
     default:
         ret = interfaceName;

@@ -52,7 +52,8 @@ void TabDeviceAdvanced::setDevice(const NetworkManager::Device::Ptr &device)
     addItem(i18n("Managed"), device->managed() ? i18n("Yes") : i18n("No"));
     addItem(i18n("Auto connect"), device->autoconnect() ? i18n("Yes") : i18n("No"));
     addItem(i18n("Interface name"), device->interfaceName());
-    addItem(i18n("Driver"), QString("%1 (%2)").arg(device->driver(), device->driverVersion()));
+    addItem(i18n("Driver"), device->driver());
+    addItem(i18n("Driver version"), device->driverVersion());
     if (!device->firmwareVersion().isEmpty()) {
         addItem(i18n("Firmware version"), device->firmwareVersion());
     }

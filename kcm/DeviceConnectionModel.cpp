@@ -268,9 +268,9 @@ void DeviceConnectionModel::changeConnectionActive(QStandardItem *stdItem, const
     QVariant previousActive = stdItem->data(RoleConnectionActivePath);
     if (previousActive.isNull() || previousActive.toString() != activePath) {
         if (activePath.isNull()) {
-            stdItem->setIcon(KIcon("network-connect"));
-        } else {
             stdItem->setIcon(KIcon("network-disconnect"));
+        } else {
+            stdItem->setIcon(KIcon("network-connect"));
         }
         stdItem->setData(activePath, RoleConnectionActivePath);
 

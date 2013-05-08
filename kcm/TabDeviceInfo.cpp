@@ -67,6 +67,8 @@ void TabDeviceInfo::setDevice(const NetworkManager::Device::Ptr &device)
 
     if (m_device) {
         m_device->disconnect(this);
+        NetworkManager::notifier()->disconnect(this);
+        NetworkManager::notifier()->disconnect(ui->turnOff);
     }
     m_device = device;
     if (device) {
@@ -83,6 +85,24 @@ void TabDeviceInfo::setDevice(const NetworkManager::Device::Ptr &device)
         connect(device.data(), SIGNAL(ipV4AddressChanged()),
                 this, SLOT(updateIpV4Config()));
         updateIpV4Config();
+
+        if (device->type() == Device::Wifi) {
+            ui->turnOff->setEnabled(NetworkManager::isWirelessHardwareEnabled());
+            connect(NetworkManager::notifier(), SIGNAL(wirelessHardwareEnabledChanged(bool)),
+                    ui->turnOff, SLOT(setEnabled(bool)));
+            setTurnOffWifiText(NetworkManager::isWirelessEnabled());
+            connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
+                    this, SLOT(setTurnOffWifiText(bool)));
+        } else if (device->type() == Device::Wifi) {
+            ui->turnOff->setEnabled(NetworkManager::isWimaxHardwareEnabled());
+            connect(NetworkManager::notifier(), SIGNAL(wimaxHardwareEnabledChanged(bool)),
+                    ui->turnOff, SLOT(setEnabled(bool)));
+            setTurnOffWimaxText(NetworkManager::isWimaxEnabled());
+            connect(NetworkManager::notifier(), SIGNAL(wimaxEnabledChanged(bool)),
+                    this, SLOT(setTurnOffWimaxText(bool)));
+        } else {
+            ui->turnOff->setVisible(false);
+        }
     }
 }
 
@@ -90,7 +110,16 @@ void TabDeviceInfo::updateState()
 {
     if (m_device) {
         ui->statusL->setText(UiUtils::connectionStateToString(m_device->state()));
-        ui->disconnectPB->setEnabled(m_device->state() == Device::Activated);
+        switch (m_device->state()) {
+        case Device::Disconnected:
+        case Device::Unavailable:
+        case Device::Unmanaged:
+            ui->disconnectPB->setEnabled(false);
+            break;
+        default:
+            ui->disconnectPB->setEnabled(true);
+            break;
+        }
     }
 }
 
@@ -135,14 +164,8 @@ void TabDeviceInfo::updateIpV4Config()
 
 void TabDeviceInfo::on_disconnectPB_clicked()
 {
-    kDebug() << m_device;
     if (m_device) {
-        kDebug() << m_device->state() << NetworkManager::Device::Activated;
-        if (m_device->state() == NetworkManager::Device::Activated) {
-            m_device->disconnectInterface();
-        } else {
-            ui->disconnectPB->setEnabled(false);
-        }
+        m_device->disconnectInterface();
     }
 }
 
@@ -208,5 +231,39 @@ void TabDeviceInfo::on_connectionCB_activated(int index)
         if (newConnectionPath != oldConnectionPath) {
             NetworkManager::activateConnection(newConnectionPath, m_device->uni(), QString());
         }
+    }
+}
+
+void TabDeviceInfo::on_turnOff_clicked()
+{
+    if (m_device) {
+        switch (m_device->type()) {
+        case Device::Wifi:
+            NetworkManager::setWirelessEnabled(!NetworkManager::isWirelessEnabled());
+            break;
+        case Device::Wimax:
+            NetworkManager::setWimaxEnabled(!NetworkManager::isWimaxEnabled());
+            break;
+        default:
+            break;
+        }
+    }
+}
+
+void TabDeviceInfo::setTurnOffWifiText(bool enabled)
+{
+    if (enabled) {
+        ui->turnOff->setText(i18n("Turn off WiFi"));
+    } else {
+        ui->turnOff->setText(i18n("Turn on WiFi"));
+    }
+}
+
+void TabDeviceInfo::setTurnOffWimaxText(bool enabled)
+{
+    if (enabled) {
+        ui->turnOff->setText(i18n("Turn off WiMax"));
+    } else {
+        ui->turnOff->setText(i18n("Turn on WiMax"));
     }
 }

@@ -31,6 +31,7 @@ Item {
 
     property int minimumWidth: 300;
     property int minimumHeight: 300;
+    property bool autoHideOptions: true;
     property Component compactRepresentation: CompactRepresantation{
         Component.onCompleted: {
             plasmoid.addEventListener('configChanged', mainWindow.configChanged)
@@ -48,8 +49,10 @@ Item {
     signal sectionChanged();
 
     function hideOptions() {
-        connectionView.itemExpandable = true;
-        toolbar.toolbarExpandable = false;
+        if (autoHideOptions) {
+            connectionView.itemExpandable = true;
+            toolbar.toolbarExpandable = false;
+        }
     }
 
     width: 300;
@@ -125,7 +128,9 @@ Item {
             onRemoveConnectionItem: dialog.openDialog(connectionName, connectionPath);
             onItemExpanded: {
                 connectionView.itemExpandable = true;
-                toolbar.toolbarExpandable = false;
+                if (autoHideOptions) {
+                    toolbar.toolbarExpandable = false;
+                }
             }
         }
     }
@@ -218,7 +223,7 @@ Item {
     function configChanged() {
         var keys;
         keys = plasmoid.readConfig("detailKeys");
-
         connectionModel.setDetailKeys(keys);
+        autoHideOptions = plasmoid.readConfig("autoHideOptions");
     }
 }

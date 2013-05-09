@@ -44,6 +44,8 @@ private slots:
     void updateState();
     void updateActiveConnection();
     void updateIpV4Config();
+    void updateIpV6Config();
+    void updateIpConfig(const NetworkManager::IpConfig &ipConfig, bool ipv4);
 
     void on_disconnectPB_clicked();
     void on_connectionCB_activated(int index);

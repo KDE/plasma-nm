@@ -38,6 +38,9 @@
 #include <KMessageBox>
 #include <KDebug>
 
+//
+#define DEVICE_ICON_SIZE 64
+
 using namespace NetworkManager;
 
 TabDeviceInfo::TabDeviceInfo(QWidget *parent) :
@@ -72,19 +75,19 @@ void TabDeviceInfo::setDevice(const NetworkManager::Device::Ptr &device)
     }
     m_device = device;
     if (device) {
-        connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
-                this, SLOT(updateState()));
-        updateState();
-
         m_availableConnectionsModel->setDevice(device);
 
         connect(device.data(), SIGNAL(activeConnectionChanged()),
                 this, SLOT(updateActiveConnection()));
         updateActiveConnection();
 
-        connect(device.data(), SIGNAL(ipV4AddressChanged()),
+        connect(device.data(), SIGNAL(ipV4ConfigChanged()),
                 this, SLOT(updateIpV4Config()));
         updateIpV4Config();
+
+        connect(device.data(), SIGNAL(ipV6ConfigChanged()),
+                this, SLOT(updateIpV6Config()));
+        updateIpV6Config();
 
         if (device->type() == Device::Wifi) {
             ui->turnOff->setEnabled(NetworkManager::isWirelessHardwareEnabled());
@@ -103,6 +106,11 @@ void TabDeviceInfo::setDevice(const NetworkManager::Device::Ptr &device)
         } else {
             ui->turnOff->setVisible(false);
         }
+
+        ui->deviceL->setText(UiUtils::prettyInterfaceName(device->type(), device->interfaceName()));
+        connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
+                this, SLOT(updateState()));
+        updateState();
     }
 }
 
@@ -120,6 +128,12 @@ void TabDeviceInfo::updateState()
             ui->disconnectPB->setEnabled(true);
             break;
         }
+
+        QPixmap icon = KIconLoader::global()->loadIcon(UiUtils::iconName(m_device),
+                                                       KIconLoader::NoGroup,
+                                                       DEVICE_ICON_SIZE, // a not so huge icon
+                                                       KIconLoader::DefaultState);
+        ui->iconL->setPixmap(icon);
     }
 }
 
@@ -135,30 +149,52 @@ void TabDeviceInfo::updateActiveConnection()
 
 void TabDeviceInfo::updateIpV4Config()
 {
-    QStringList routers;
+    updateIpConfig(m_device->ipV4Config(), true);
+}
+
+void TabDeviceInfo::updateIpV6Config()
+{
+    updateIpConfig(m_device->ipV6Config(), false);
+}
+
+void TabDeviceInfo::updateIpConfig(const IpConfig &ipConfig, bool ipv4)
+{
     QStringList addresses;
-    foreach (const NetworkManager::IpAddress &address, m_device->ipV4Config().addresses()) {
-        addresses << address.ip().toString() % QLatin1Char('/') % QString::number(address.prefixLength());
-        routers << address.gateway().toString();
-    }
-    ui->ipv4AddressL->setText(addresses.join(QLatin1String("\n")));
-
-    foreach (const NetworkManager::IpRoute &route, m_device->ipV4Config().routes()) {
-        routers << i18n("%1/%2, nexthop %3 metric %4",
-                        route.ip().toString(),
-                        QString::number(route.prefixLength()),
-                        route.nextHop().toString(),
-                        QString::number(route.metric()));
-    }
-    ui->ipv4RouterL->setText(routers.join(QLatin1String("\n")));
-
+    QStringList routers;
     QStringList nameservers;
-    foreach (const QHostAddress &nameserver, m_device->ipV4Config().nameservers()) {
-        nameservers << nameserver.toString();
-    }
-    ui->ipv4DnsServerL->setText(nameservers.join(QLatin1String(", ")));
+    QStringList domains;
+    if (ipConfig.isValid()) {
+        foreach (const NetworkManager::IpAddress &address, ipConfig.addresses()) {
+            addresses << address.ip().toString() % QLatin1Char('/') % QString::number(address.prefixLength());
+            routers << address.gateway().toString();
+        }
 
-    ui->ipv4SearchDomainsL->setText(m_device->ipV4Config().domains().join(QLatin1String("\n")));
+        foreach (const NetworkManager::IpRoute &route, ipConfig.routes()) {
+            routers << i18n("%1/%2, nexthop %3 metric %4",
+                            route.ip().toString(),
+                            QString::number(route.prefixLength()),
+                            route.nextHop().toString(),
+                            QString::number(route.metric()));
+        }
+
+        foreach (const QHostAddress &nameserver, ipConfig.nameservers()) {
+            nameservers << nameserver.toString();
+        }
+        domains = ipConfig.domains();
+    }
+
+    if (ipv4) {
+        ui->ipv4AddressL->setText(addresses.join(QLatin1String("\n")));
+        ui->ipv4RouterL->setText(routers.join(QLatin1String("\n")));
+        ui->ipv4DnsServerL->setText(nameservers.join(QLatin1String(", ")));
+        ui->ipv4SearchDomainsL->setText(domains.join(QLatin1String("\n")));
+    } else {
+        ui->ipv6AddressL->setText(addresses.join(QLatin1String("\n")));
+        ui->ipv6RouterL->setText(routers.join(QLatin1String("\n")));
+        ui->ipv6DnsServerL->setText(nameservers.join(QLatin1String(", ")));
+        ui->ipv6SearchDomainsL->setText(domains.join(QLatin1String("\n")));
+    }
+
 }
 
 void TabDeviceInfo::on_disconnectPB_clicked()

@@ -67,7 +67,6 @@ NetworkKCM::NetworkKCM(QWidget *parent, const QVariantList &args) :
                                ki18n("(C) 2013 Daniel Nicoletti"));
     setAboutData(aboutData);
     setButtons(NoAdditionalButton);
-    KGlobal::insertCatalog(QLatin1String("colord-kde"));
 
     ui->setupUi(this);
     ui->infoWidget->setPixmap(KTitleWidget::InfoMessage);

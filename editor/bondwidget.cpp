@@ -163,7 +163,7 @@ void BondWidget::addBond(QAction *action)
                                                                      this, QString(), m_uuid, type());
     if (bondEditor->exec() == QDialog::Accepted) {
         qDebug() << "Saving slave connection";
-        connect(NetworkManager::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
+        connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                 this, SLOT(bondAddComplete(QString,bool,QString)));
     }
 }
@@ -190,7 +190,7 @@ void BondWidget::bondAddComplete(const QString &uuid, bool success, const QStrin
         qWarning() << "Bonded connection not added:" << msg;
     }
 
-    disconnect(NetworkManager::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
+    disconnect(NetworkManager::settingsNotifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                this, SLOT(bondAddComplete(QString,bool,QString)));
 }
 

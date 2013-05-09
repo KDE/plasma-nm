@@ -115,7 +115,7 @@ void BridgeWidget::addBridge(QAction *action)
                                                                        this, QString(), m_uuid, type());
     if (bridgeEditor->exec() == QDialog::Accepted) {
         qDebug() << "Saving slave connection";
-        connect(NetworkManager::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
+        connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                 this, SLOT(bridgeAddComplete(QString,bool,QString)));
     }
 }
@@ -142,7 +142,7 @@ void BridgeWidget::bridgeAddComplete(const QString &uuid, bool success, const QS
         qWarning() << "Bridged connection not added:" << msg;
     }
 
-    disconnect(NetworkManager::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
+    disconnect(NetworkManager::settingsNotifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                this, SLOT(bridgeAddComplete(QString,bool,QString)));
 }
 

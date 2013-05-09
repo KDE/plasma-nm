@@ -102,8 +102,11 @@ void DeviceConnectionModel::removeConnections()
 {
     int i = 0;
     while (i < rowCount()) {
-        if (item(i)->data(RoleIsDevice).toBool() == false) {
+        QStandardItem *stdRootItem = item(i);
+        if (stdRootItem->data(RoleIsConnectionParent).toBool()) {
+            stdRootItem->removeRows(0, stdRootItem->rowCount());
             removeRow(i);
+            ++i;
         } else {
             ++i;
         }

@@ -136,7 +136,6 @@ Item {
         State {
             name: "Hidden"
             when: !expanded || !toolbar.toolbarExpandable
-            StateChangeScript { script: toolBar.saveState(); }
         },
 
         State {
@@ -144,7 +143,6 @@ Item {
             when: expanded && toolbar.toolbarExpandable;
             PropertyChanges { target: toolBar; height: 150 }
             PropertyChanges { target: options; visible: true }
-            StateChangeScript { script: toolBar.saveState(); }
         }
     ]
 
@@ -156,19 +154,23 @@ Item {
         if (!expanded) {
             toolbarExpanded();
             expanded = !expanded;
+            plasmoid.writeConfig("optionsExpanded", "expanded");
         // Toolbar may be set as expanded, but was closed from the item
         } else if (expanded && connectionView.itemExpandable == true && toolbar.toolbarExpandable == false) {
             toolbarExpanded();
+            plasmoid.writeConfig("optionsExpanded", "expanded");
         } else {
             expanded = !expanded;
+            plasmoid.writeConfig("optionsExpanded", "hidden");
         }
-    }
-
-    function saveState() {
-        plasmoid.writeConfig("optionsExpanded", expanded);
     }
 
     Component.onCompleted: {
         networkStatus.init();
+
+        if (plasmoid.readConfig("optionsExpanded") == "expanded") {
+            expanded = true;
+            toolbarExpanded();
+        }
     }
 }

@@ -69,7 +69,6 @@ Item {
         id: networkStatus;
 
         onSetTooltip: {
-            console.log("foo");
             tooltip.subText = text;
         }
     }

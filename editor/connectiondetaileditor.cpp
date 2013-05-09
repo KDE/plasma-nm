@@ -395,7 +395,7 @@ void ConnectionDetailEditor::saveSetting()
     qDebug() << *connectionSettings;  // debug
 
     if (m_new) { // create new connection
-        connect(NetworkManager::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
+        connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                 SLOT(connectionAddComplete(QString,bool,QString)));
         NetworkManager::addConnection(connectionSettings->toMap());
     } else {  // update existing connection

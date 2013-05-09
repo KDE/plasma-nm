@@ -123,9 +123,9 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
             SLOT(removeConnection()));
     connect(m_editor->connectionsWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
             SLOT(editConnection()));
-    connect(NetworkManager::notifier(), SIGNAL(connectionAdded(QString)),
+    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
             SLOT(connectionAdded(QString)));
-    connect(NetworkManager::notifier(), SIGNAL(connectionRemoved(QString)),
+    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
             SLOT(connectionRemoved(QString)));
 
     connect(m_editor->btnAbout, SIGNAL(clicked()), SLOT(aboutDialog()));

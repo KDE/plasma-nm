@@ -57,9 +57,9 @@ void Monitor::init()
             SLOT(deviceRemoved(QString)));
     connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
             SLOT(statusChanged(NetworkManager::Status)));
-    connect(NetworkManager::notifier(), SIGNAL(connectionAdded(QString)),
+    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
             SLOT(connectionAdded(QString)));
-    connect(NetworkManager::notifier(), SIGNAL(connectionRemoved(QString)),
+    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
             SLOT(connectionRemoved(QString)));
     connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
             SLOT(wirelessEnabled(bool)));

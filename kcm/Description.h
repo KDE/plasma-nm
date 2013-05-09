@@ -21,6 +21,8 @@
 #define DESCRIPTION_H
 
 #include <QWidget>
+#include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/Device>
 
 namespace Ui {
     class Description;
@@ -35,9 +37,12 @@ public:
     int innerHeight() const;
 
     void setDevice(const QString &uni);
+    void setConnection(const QString &path);
 
 private:
     Ui::Description *ui;
+    NetworkManager::Device::Ptr m_device;
+    NetworkManager::Connection::Ptr m_connection;
 };
 
 #endif // DESCRIPTION_H

@@ -16,7 +16,7 @@ TabConnectionInfo::~TabConnectionInfo()
 void TabConnectionInfo::setConnection(const NetworkManager::Connection::Ptr &connection)
 {
     if (connection) {
-//        NetworkManager::ConnectionSettings::Ptr settings
-//        ui->lastUsedL->setText(connection->);
+        QDateTime dateTime = connection->settings()->timestamp();
+        ui->lastUsedL->setText(KGlobal::locale()->formatDateTime(dateTime));
     }
 }

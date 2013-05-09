@@ -53,13 +53,17 @@ private slots:
 
     void setTurnOffWifiText(bool enabled);
     void setTurnOffWimaxText(bool enabled);
+    void setTurnOffWwanText(bool enabled);
+    void showIp4Config(bool show);
+    void showIp6Config(bool show);
 
 private:
     Ui::TabDeviceInfo *ui;
     NetworkManager::Device::Ptr m_device;
     AvailableConnectionsModel *m_availableConnectionsModel;
     AvailableConnectionsSortModel *m_availableConnectionsSortModel;
-
+    bool m_ip4Visible;
+    bool m_ip6Visible;
 };
 
 #endif // TABDEVICEINFO_H

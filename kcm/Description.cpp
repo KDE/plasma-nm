@@ -22,6 +22,7 @@
 
 #include "TabDeviceInfo.h"
 #include "TabDeviceAdvanced.h"
+#include "TabConnectionInfo.h"
 
 #include <QStringBuilder>
 #include <QtDBus/QDBusInterface>
@@ -36,6 +37,7 @@
 #include <KMessageBox>
 
 #include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/Settings>
 
 Description::Description(QWidget *parent) :
     QWidget(parent),
@@ -64,13 +66,16 @@ int Description::innerHeight() const
 
 void Description::setDevice(const QString &uni)
 {
-    int i = 0;
-    while (i < ui->tabWidget->count()) {
-        ui->tabWidget->removeTab(i);
-    }
-
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(uni);
-    if (device) {
+    if (device && (m_device.isNull() || m_device->uni() != uni)) {
+        m_device = device;
+        m_connection.clear();
+
+        int i = 0;
+        while (i < ui->tabWidget->count()) {
+            ui->tabWidget->removeTab(i);
+        }
+
         TabDeviceInfo *tabDeviceInfo = new TabDeviceInfo(this);
         tabDeviceInfo->setDevice(device);
         ui->tabWidget->addTab(tabDeviceInfo, i18n("Information"));
@@ -78,6 +83,24 @@ void Description::setDevice(const QString &uni)
         TabDeviceAdvanced *tabDeviceAdvanced = new TabDeviceAdvanced(this);
         tabDeviceAdvanced->setDevice(device);
         ui->tabWidget->addTab(tabDeviceAdvanced, i18n("Advanced"));
+    }
+}
+
+void Description::setConnection(const QString &path)
+{
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(path);
+    if (connection && (m_connection.isNull() || m_connection->path() != path)) {
+        m_connection = connection;
+        m_device.clear();
+
+        int i = 0;
+        while (i < ui->tabWidget->count()) {
+            ui->tabWidget->removeTab(i);
+        }
+
+        TabConnectionInfo *tabConnectionInfo = new TabConnectionInfo(this);
+        tabConnectionInfo->setConnection(connection);
+        ui->tabWidget->addTab(tabConnectionInfo, i18n("Information"));
     }
 }
 

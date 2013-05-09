@@ -38,14 +38,15 @@
 #include <KMessageBox>
 #include <KDebug>
 
-//
 #define DEVICE_ICON_SIZE 64
 
 using namespace NetworkManager;
 
 TabDeviceInfo::TabDeviceInfo(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::TabDeviceInfo)
+    ui(new Ui::TabDeviceInfo),
+    m_ip4Visible(true),
+    m_ip6Visible(true)
 {
     ui->setupUi(this);
 
@@ -103,6 +104,13 @@ void TabDeviceInfo::setDevice(const NetworkManager::Device::Ptr &device)
             setTurnOffWimaxText(NetworkManager::isWimaxEnabled());
             connect(NetworkManager::notifier(), SIGNAL(wimaxEnabledChanged(bool)),
                     this, SLOT(setTurnOffWimaxText(bool)));
+        } else if (device->type() == Device::Modem) {
+            ui->turnOff->setEnabled(NetworkManager::isWwanHardwareEnabled());
+            connect(NetworkManager::notifier(), SIGNAL(wimaxHardwareEnabledChanged(bool)),
+                    ui->turnOff, SLOT(setEnabled(bool)));
+            setTurnOffWwanText(NetworkManager::isWwanEnabled());
+            connect(NetworkManager::notifier(), SIGNAL(wwanEnabledChanged(bool)),
+                    this, SLOT(setTurnOffWwanText(bool)));
         } else {
             ui->turnOff->setVisible(false);
         }
@@ -186,13 +194,15 @@ void TabDeviceInfo::updateIpConfig(const IpConfig &ipConfig, bool ipv4)
     if (ipv4) {
         ui->ipv4AddressL->setText(addresses.join(QLatin1String("\n")));
         ui->ipv4RouterL->setText(routers.join(QLatin1String("\n")));
-        ui->ipv4DnsServerL->setText(nameservers.join(QLatin1String(", ")));
+        ui->ipv4DnsL->setText(nameservers.join(QLatin1String(", ")));
         ui->ipv4SearchDomainsL->setText(domains.join(QLatin1String("\n")));
+        showIp4Config(ipConfig.isValid());
     } else {
         ui->ipv6AddressL->setText(addresses.join(QLatin1String("\n")));
         ui->ipv6RouterL->setText(routers.join(QLatin1String("\n")));
-        ui->ipv6DnsServerL->setText(nameservers.join(QLatin1String(", ")));
+        ui->ipv6DnsL->setText(nameservers.join(QLatin1String(", ")));
         ui->ipv6SearchDomainsL->setText(domains.join(QLatin1String("\n")));
+        showIp6Config(ipConfig.isValid());
     }
 
 }
@@ -307,5 +317,48 @@ void TabDeviceInfo::setTurnOffWimaxText(bool enabled)
         ui->turnOff->setText(i18n("Turn off WiMax"));
     } else {
         ui->turnOff->setText(i18n("Turn on WiMax"));
+    }
+}
+
+void TabDeviceInfo::setTurnOffWwanText(bool enabled)
+{
+    if (enabled) {
+        ui->turnOff->setText(i18n("Turn off mobile broadband"));
+    } else {
+        ui->turnOff->setText(i18n("Turn on mobile broadband"));
+    }
+}
+
+void TabDeviceInfo::showIp4Config(bool show)
+{
+    kDebug() << m_ip4Visible << show;
+    if (m_ip4Visible != show) {
+        m_ip4Visible = show;
+        ui->ip4L->setEnabled(show);
+        ui->ip4AddressL->setEnabled(show);
+        ui->ipv4AddressL->setEnabled(show);
+        ui->ip4DnsL->setEnabled(show);
+        ui->ipv4DnsL->setEnabled(show);
+        ui->ip4RouterL->setEnabled(show);
+        ui->ipv4RouterL->setEnabled(show);
+        ui->ip4SearchDomainsL->setEnabled(show);
+        ui->ipv4SearchDomainsL->setEnabled(show);
+    }
+}
+
+void TabDeviceInfo::showIp6Config(bool show)
+{
+    kDebug() << m_ip6Visible << show;
+    if (m_ip6Visible != show) {
+        m_ip6Visible = show;
+        ui->ip6L->setEnabled(show);
+        ui->ip6AddressL->setEnabled(show);
+        ui->ipv6AddressL->setEnabled(show);
+        ui->ip6DnsL->setEnabled(show);
+        ui->ipv6DnsL->setEnabled(show);
+        ui->ip6RouterL->setEnabled(show);
+        ui->ipv6RouterL->setEnabled(show);
+        ui->ip6SearchDomainsL->setEnabled(show);
+        ui->ipv6SearchDomainsL->setEnabled(show);
     }
 }

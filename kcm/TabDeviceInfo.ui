@@ -120,7 +120,7 @@
     <widget class="KComboBox" name="connectionCB"/>
    </item>
    <item row="3" column="0" colspan="2">
-    <spacer name="verticalSpacer">
+    <spacer name="ip4spacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
@@ -133,14 +133,14 @@
     </spacer>
    </item>
    <item row="4" column="0" colspan="2">
-    <widget class="QLabel" name="label_4">
+    <widget class="QLabel" name="ip4L">
      <property name="text">
       <string>IPv4 Settings</string>
      </property>
     </widget>
    </item>
    <item row="5" column="0">
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="ip4AddressL">
      <property name="text">
       <string>Address:</string>
      </property>
@@ -154,7 +154,7 @@
     </widget>
    </item>
    <item row="6" column="0">
-    <widget class="QLabel" name="label_7">
+    <widget class="QLabel" name="ip4RouterL">
      <property name="text">
       <string>Router:</string>
      </property>
@@ -168,21 +168,21 @@
     </widget>
    </item>
    <item row="7" column="0">
-    <widget class="QLabel" name="label_9">
+    <widget class="QLabel" name="ip4DnsL">
      <property name="text">
       <string>DNS:</string>
      </property>
     </widget>
    </item>
    <item row="7" column="1">
-    <widget class="QLabel" name="ipv4DnsServerL">
+    <widget class="QLabel" name="ipv4DnsL">
      <property name="text">
       <string notr="true">dns</string>
      </property>
     </widget>
    </item>
    <item row="8" column="0">
-    <widget class="QLabel" name="label_11">
+    <widget class="QLabel" name="ip4SearchDomainsL">
      <property name="text">
       <string>Searcn Domains:</string>
      </property>
@@ -196,7 +196,7 @@
     </widget>
    </item>
    <item row="9" column="0" colspan="2">
-    <spacer name="verticalSpacer_2">
+    <spacer name="ip6Spacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
@@ -209,14 +209,14 @@
     </spacer>
    </item>
    <item row="10" column="0" colspan="2">
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="ip6L">
      <property name="text">
       <string>IPv6 Settings</string>
      </property>
     </widget>
    </item>
    <item row="11" column="0">
-    <widget class="QLabel" name="label_6">
+    <widget class="QLabel" name="ip6AddressL">
      <property name="text">
       <string>Address:</string>
      </property>
@@ -230,7 +230,7 @@
     </widget>
    </item>
    <item row="12" column="0">
-    <widget class="QLabel" name="label_10">
+    <widget class="QLabel" name="ip6RouterL">
      <property name="text">
       <string>Router:</string>
      </property>
@@ -244,21 +244,21 @@
     </widget>
    </item>
    <item row="13" column="0">
-    <widget class="QLabel" name="label_13">
+    <widget class="QLabel" name="ip6DnsL">
      <property name="text">
       <string>DNS:</string>
      </property>
     </widget>
    </item>
    <item row="13" column="1">
-    <widget class="QLabel" name="ipv6DnsServerL">
+    <widget class="QLabel" name="ipv6DnsL">
      <property name="text">
       <string notr="true">dns</string>
      </property>
     </widget>
    </item>
    <item row="14" column="0">
-    <widget class="QLabel" name="label_15">
+    <widget class="QLabel" name="ip6SearchDomainsL">
      <property name="text">
       <string>Search Domains:</string>
      </property>

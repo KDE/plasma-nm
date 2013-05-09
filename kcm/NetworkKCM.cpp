@@ -144,8 +144,14 @@ void NetworkKCM::showDescription()
         ui->stackedWidget->setCurrentWidget(ui->profile_page);
     }
 
-    ui->removeConnectionBt->setEnabled(index.data(DeviceConnectionModel::RoleIsConnection).toBool());
-    ui->profile->setDevice(index.data(DeviceConnectionModel::RoleDeviceUNI).toString());
+    bool enableRemoveConnection = false;
+    if (index.data(DeviceConnectionModel::RoleIsDevice).toBool()) {
+        ui->profile->setDevice(index.data(DeviceConnectionModel::RoleDeviceUNI).toString());
+    } else if (index.data(DeviceConnectionModel::RoleIsConnection).toBool()) {
+        ui->profile->setConnection(index.data(DeviceConnectionModel::RoleConnectionPath).toString());
+        enableRemoveConnection =true;
+    }
+    ui->removeConnectionBt->setEnabled(enableRemoveConnection);
 }
 
 void NetworkKCM::updateSelection()

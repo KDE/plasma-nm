@@ -39,8 +39,8 @@ Item {
 
     height: 30;
 
-    PlasmaNM.GlobalStatus {
-        id: globalStatus;
+    PlasmaNM.NetworkStatus {
+        id: networkStatus;
 
         onSetGlobalStatus: {
             statusLabel.text = status;
@@ -169,6 +169,6 @@ Item {
     }
 
     Component.onCompleted: {
-        globalStatus.init();
+        networkStatus.init();
     }
 }

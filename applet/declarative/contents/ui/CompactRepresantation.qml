@@ -65,11 +65,12 @@ Item {
         visible: running;
     }
 
-    PlasmaNm.GlobalStatus {
-        id: globalStatus;
+    PlasmaNm.NetworkStatus {
+        id: networkStatus;
 
-        onSetGlobalStatus: {
-            tooltip.subText = status;
+        onSetTooltip: {
+            console.log("foo");
+            tooltip.subText = text;
         }
     }
 
@@ -125,7 +126,7 @@ Item {
     }
 
     Component.onCompleted: {
-        globalStatus.init();
+        networkStatus.init();
         connectionIconProvider.init();
     }
 }

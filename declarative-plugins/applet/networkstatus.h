@@ -18,20 +18,20 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_GLOBAL_STATUS_H
-#define PLASMA_NM_GLOBAL_STATUS_H
+#ifndef PLASMA_NM_NETWORK_STATUS_H
+#define PLASMA_NM_NETWORK_STATUS_H
 
 #include <QObject>
 #include <QIcon>
 
 #include <NetworkManagerQt/Manager>
 
-class GlobalStatus : public QObject
+class NetworkStatus : public QObject
 {
 Q_OBJECT
 public:
-    explicit GlobalStatus(QObject* parent = 0);
-    virtual ~GlobalStatus();
+    explicit NetworkStatus(QObject* parent = 0);
+    virtual ~NetworkStatus();
 
 public Q_SLOTS:
     void init();
@@ -40,11 +40,13 @@ private Q_SLOTS:
     void activeConnectionsChanged();
     void defaultChanged();
     void statusChanged(NetworkManager::Status status);
+    void changeTooltip();
 Q_SIGNALS:
     void setGlobalStatus(const QString & status, bool connected, bool inProgress);
+    void setTooltip(const QString & text);
 
 private:
     QString checkUnknownReason() const;
 };
 
-#endif // PLAMA_NM_GLOBAL_STATUS_H
+#endif // PLAMA_NM_NETWORK_STATUS_H

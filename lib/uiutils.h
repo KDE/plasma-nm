@@ -36,12 +36,12 @@ class KDE_EXPORT UiUtils
 {
 public:
 
-#if 0
     /**
      * @return a human-readable description for the network interface type for use as label
      * @param type the type of the network interface
      */
-    static QString interfaceTypeLabel(const NetworkManager::Device::Type type, const NetworkManager::Device * iface);
+    static QString interfaceTypeLabel(const NetworkManager::Device::Type type, const NetworkManager::Device::Ptr iface);
+#if 0
 
     /**
      * @return a human-readable name for a given network interface according to the configured

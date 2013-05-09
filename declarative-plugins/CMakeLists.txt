@@ -1,7 +1,7 @@
 set(plasma_nm_qml_plugins_SRCS
    applet/enabledconnections.cpp
    applet/connectionicon.cpp
-   applet/globalstatus.cpp
+   applet/networkstatus.cpp
    applet/trafficmonitor.cpp
 
    model/model.cpp

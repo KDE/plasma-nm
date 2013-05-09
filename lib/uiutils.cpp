@@ -41,8 +41,7 @@
 
 #include <QString>
 
-#if 0
-QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, const NetworkManager::Device *iface)
+QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, const NetworkManager::Device::Ptr iface)
 {
     QString deviceText;
     switch (type) {
@@ -56,7 +55,7 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
             deviceText = i18nc("title of the interface widget in nm's popup", "Mobile Broadband");
             break;
         case NetworkManager::Device::Modem: {
-            const NetworkManager::ModemDevice *nmModemIface = qobject_cast<const NetworkManager::ModemDevice *>(iface);
+            const NetworkManager::ModemDevice::Ptr nmModemIface = iface.objectCast<NetworkManager::ModemDevice>();
             if (nmModemIface) {
                 switch(modemSubType(nmModemIface->currentCapabilities())) {
                     case NetworkManager::ModemDevice::Pots:
@@ -80,7 +79,6 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
     }
     return deviceText;
 }
-#endif
 
 QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
 {

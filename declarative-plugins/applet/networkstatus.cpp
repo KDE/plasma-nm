@@ -18,7 +18,9 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "globalstatus.h"
+#include "networkstatus.h"
+#include "debug.h"
+#include "uiutils.h"
 
 #include <QDBusConnection>
 
@@ -27,43 +29,48 @@
 
 #include <KLocalizedString>
 
-#include "debug.h"
 
-GlobalStatus::GlobalStatus(QObject* parent):
+
+NetworkStatus::NetworkStatus(QObject* parent):
     QObject(parent)
 {
 }
 
-GlobalStatus::~GlobalStatus()
+NetworkStatus::~NetworkStatus()
 {
 }
 
-void GlobalStatus::init()
+void NetworkStatus::init()
 {
     connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
             SLOT(statusChanged(NetworkManager::Status)));
     connect(NetworkManager::notifier(), SIGNAL(activeConnectionsChanged()),
             SLOT(activeConnectionsChanged()));
 
+    activeConnectionsChanged();
     statusChanged(NetworkManager::status());
 }
 
-void GlobalStatus::activeConnectionsChanged()
+void NetworkStatus::activeConnectionsChanged()
 {
     foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
         connect(active.data(), SIGNAL(default4Changed(bool)),
                 SLOT(defaultChanged()), Qt::UniqueConnection);
         connect(active.data(), SIGNAL(default6Changed(bool)),
                 SLOT(defaultChanged()), Qt::UniqueConnection);
+        connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                SLOT(changeTooltip()));
     }
+
+    changeTooltip();
 }
 
-void GlobalStatus::defaultChanged()
+void NetworkStatus::defaultChanged()
 {
     statusChanged(NetworkManager::status());
 }
 
-void GlobalStatus::statusChanged(NetworkManager::Status status)
+void NetworkStatus::statusChanged(NetworkManager::Status status)
 {
     QString statusMsg;
     bool connected = false;
@@ -74,10 +81,10 @@ void GlobalStatus::statusChanged(NetworkManager::Status status)
         status == NetworkManager::ConnectedSiteOnly) {
 
         QString name;
+        QString tooltip;
         foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
             if (active->default4() || active->default6()) {
                 name = active->connection()->name();
-                break;
             }
         }
         statusMsg = i18n("Connected to %1", name);
@@ -111,14 +118,61 @@ void GlobalStatus::statusChanged(NetworkManager::Status status)
                 inProgress = false;
                 break;
         }
+
+        Q_EMIT setTooltip(statusMsg);
     }
 
-    NMAppletDebug() << "Emit signal setGlobalStatus(" << statusMsg << ", " << connected << ", " << inProgress << ")";
+    NMAppletDebug() << "Emit signal setNetworkStatus(" << statusMsg << ", " << connected << ", " << inProgress << ")";
     Q_EMIT setGlobalStatus(statusMsg, connected, inProgress);
 }
 
+void NetworkStatus::changeTooltip()
+{
+    QString tooltip = "<qt>";
+    QString format = "<b>%1 - %2</b><br>%3<br><br>";
+    QString formatDefault = "<b>%1 - %2</b><br><b>%3</b><br><br>";
 
-QString GlobalStatus::checkUnknownReason() const
+    foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+        if (!active->devices().isEmpty()) {
+            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
+
+            if (device) {
+                QString devName;
+                QString conType;
+                QString status;
+                if (device->ipInterfaceName().isEmpty()) {
+                    devName = device->interfaceName();
+                } else {
+                    devName = device->ipInterfaceName();
+                }
+//                 conType = NetworkManager::ConnectionSettings::typeAsString(active->connection()->settings()->connectionType());
+                if (active->vpn()) {
+                    conType = i18n("VPN Connection");
+                } else {
+                    conType = UiUtils::interfaceTypeLabel(device->type(), device);
+                }
+                if (active->state() == NetworkManager::ActiveConnection::Activated) {
+                    status = i18n("Connected to %1").arg(active->connection()->name());
+                } else if (active->state() == NetworkManager::ActiveConnection::Activating) {
+                    status = i18n("Connecting to %1").arg(active->connection()->name());
+                }
+                if (active->default4() || active->default6()) {
+                    tooltip += QString(formatDefault).arg(devName, conType, status);
+                } else {
+                    tooltip += QString(format).arg(devName, conType, status);
+                }
+            }
+        }
+    }
+
+    tooltip += "</qt>";
+    // Remove the last two new lines
+    tooltip.replace("<br><br></qt>", "</qt>");
+
+    Q_EMIT setTooltip(tooltip);
+}
+
+QString NetworkStatus::checkUnknownReason() const
 {
     // check if NM is running
     if (!QDBusConnection::systemBus().interface()->isServiceRegistered(NM_DBUS_INTERFACE)) {

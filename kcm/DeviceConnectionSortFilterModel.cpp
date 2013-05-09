@@ -41,7 +41,9 @@ bool DeviceConnectionSortFilterModel::filterAcceptsRow(int source_row, const QMo
     QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
 
     if (index.data(DeviceConnectionModel::RoleIsConnection).toBool()) {
-        return !index.data(DeviceConnectionModel::RoleConnectionActivePath).isNull();
+        if (!index.data(DeviceConnectionModel::RoleIsVpnConnection).toBool()) {
+            return !index.data(DeviceConnectionModel::RoleConnectionActivePath).isNull();
+        }
     } else if (index.data(DeviceConnectionModel::RoleIsConnectionCategory).toBool()) {
         return index.data(DeviceConnectionModel::RoleIsConnectionCategoryActiveCount).toUInt();
     }

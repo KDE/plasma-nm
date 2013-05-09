@@ -251,17 +251,19 @@ void DeviceConnectionModel::addConnection(const Connection::Ptr &connection)
 
     stdItem = new QStandardItem;
     stdItem->setData(true, RoleIsConnection);
+    stdItem->setData(type == ConnectionSettings::Vpn, RoleIsVpnConnection);
     stdItem->setData(connection->path(), RoleConnectionPath);
-    stdItem->setIcon(KIcon("network-disconnect"));
     stdItem->setText(connection->name());
     parentItem->appendRow(stdItem);
 
+    QString activePath;
     foreach (const ActiveConnection::Ptr &activeConnection, NetworkManager::activeConnections()) {
         if (activeConnection->connection() == connection) {
-            changeConnectionActive(stdItem, activeConnection->path());
+            activePath = activeConnection->path();
             break;
         }
     }
+    changeConnectionActive(stdItem, activePath);
 }
 
 void DeviceConnectionModel::changeConnectionActive(QStandardItem *stdItem, const QString &activePath)
@@ -277,17 +279,19 @@ void DeviceConnectionModel::changeConnectionActive(QStandardItem *stdItem, const
         stdItem->setData(activePath, RoleConnectionActivePath);
 
         uint count = stdItem->parent()->data(RoleIsConnectionCategoryActiveCount).toUInt();
-        if (previousActive.isNull()) {
+        if (previousActive.isNull() && !activePath.isNull()) {
             stdItem->parent()->setData(++count, RoleIsConnectionCategoryActiveCount);
             if (count == 1) {
                 emit parentAdded(stdItem->parent()->index());
             }
-        } else {
+        } else if (!previousActive.isNull()) {
             if (activePath.isNull()) {
                 stdItem->parent()->setData(--count, RoleIsConnectionCategoryActiveCount);
             } else {
                 stdItem->parent()->setData(++count, RoleIsConnectionCategoryActiveCount);
             }
+        } else if (stdItem->data(RoleIsVpnConnection).toBool()) {
+            emit parentAdded(stdItem->parent()->index());
         }
     }
 }
@@ -364,6 +368,7 @@ QStandardItem *DeviceConnectionModel::findOrCreateConnectionType(ConnectionSetti
     QStandardItem *ret = new QStandardItem();
     QString text;
     KIcon icon;
+    DeviceRoles role = RoleIsConnectionCategory;
     switch (type) {
     case ConnectionSettings::Adsl:
         text = i18n("ADSL");
@@ -400,6 +405,7 @@ QStandardItem *DeviceConnectionModel::findOrCreateConnectionType(ConnectionSetti
     case ConnectionSettings::Vpn:
         text = i18n("VPN");
         icon = KIcon("secure-card");
+        role = RoleIsVpnConnectionCategory;
         break;
     case ConnectionSettings::Wimax:
         text = i18n("WiMAX");
@@ -420,7 +426,7 @@ QStandardItem *DeviceConnectionModel::findOrCreateConnectionType(ConnectionSetti
 
     ret->setText(text);
     ret->setIcon(icon);
-    ret->setData(type, RoleIsConnectionCategory);
+    ret->setData(type, role);
     ret->setData(0, RoleIsConnectionCategoryActiveCount);
     parentItem->appendRow(ret);
 

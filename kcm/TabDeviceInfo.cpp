@@ -176,9 +176,9 @@ void TabDeviceInfo::on_connectionCB_activated(int index)
         return;
     }
 
+    QString name = modelIndex.data().toString();
     QString newConnectionPath = modelIndex.data(AvailableConnectionsModel::RoleConectionPath).toString();
     if (newConnectionPath.isEmpty()) {
-        QString name = modelIndex.data().toString();
         QDBusPendingReply<QDBusObjectPath, QDBusObjectPath> reply;
         uint kind = modelIndex.data(AvailableConnectionsModel::RoleKinds).toUInt();
         if (kind & AvailableConnectionsModel::NetworkWireless) {
@@ -216,10 +216,10 @@ void TabDeviceInfo::on_connectionCB_activated(int index)
         }
 
         reply.waitForFinished();
+        updateActiveConnection();
         if (reply.isError()) {
             KMessageBox::error(this,
                                i18n("Failed to activate network %1:\n%2", name, reply.error().message()));
-            updateActiveConnection();
         }
     } else {
         QString oldConnectionPath;
@@ -228,7 +228,14 @@ void TabDeviceInfo::on_connectionCB_activated(int index)
         }
 
         if (newConnectionPath != oldConnectionPath) {
-            NetworkManager::activateConnection(newConnectionPath, m_device->uni(), QString());
+            QDBusPendingReply<QDBusObjectPath> reply;
+            reply = NetworkManager::activateConnection(newConnectionPath, m_device->uni(), QString());
+            reply.waitForFinished();
+            updateActiveConnection();
+            if (reply.isError()) {
+                KMessageBox::error(this,
+                                   i18n("Failed to activate network %1:\n%2", name, reply.error().message()));
+            }
         }
     }
 }

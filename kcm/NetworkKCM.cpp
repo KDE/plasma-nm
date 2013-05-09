@@ -236,7 +236,7 @@ QModelIndex NetworkKCM::currentIndex() const
     if (!selection.indexes().isEmpty()) {
         ret = selection.indexes().first();
     } else {
-        ret = m_deviceConnectionSortModel->index(0, 0);
+        ret = m_deviceConnectionSortModel->index(1, 0);
         view->selectionModel()->select(ret, QItemSelectionModel::Select);
     }
 

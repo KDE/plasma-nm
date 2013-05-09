@@ -12,5 +12,8 @@
     <entry name="autoHideOptions" type="bool">
       <default>true</default>
     </entry>
+    <entry name="optionsExpanded" type="bool">
+      <default>false</default>
+    </entry>
   </group>
 </kcfg>

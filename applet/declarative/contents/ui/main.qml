@@ -225,5 +225,9 @@ Item {
         keys = plasmoid.readConfig("detailKeys");
         connectionModel.setDetailKeys(keys);
         autoHideOptions = plasmoid.readConfig("autoHideOptions");
+
+        if (plasmoid.readConfig("optionsExpanded")) {
+            toolbar.hideOrShowOptions();
+        }
     }
 }

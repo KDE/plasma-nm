@@ -31,11 +31,11 @@ Item {
 
     property bool expanded: false;
 
-    signal toolbarExpanded();
     signal enableNetworking(bool enable);
     signal enableWireless(bool enable);
     signal enableWwan(bool enable);
     signal openEditorToolbar();
+    signal toolbarExpanded();
 
     height: 30;
 
@@ -83,15 +83,7 @@ Item {
         iconSource: "configure";
 
         onClicked: {
-            if (!expanded) {
-                toolbarExpanded();
-                expanded = !expanded;
-            // Toolbar may be set as expanded, but was closed from the item
-            } else if (expanded && connectionView.itemExpandable == true && toolbar.toolbarExpandable == false) {
-                toolbarExpanded();
-            } else {
-                expanded = !expanded;
-            }
+            hideOrShowOptions();
         }
     }
 
@@ -142,15 +134,38 @@ Item {
 
     states: [
         State {
-            name: "Options";
+            name: "Hidden"
+            when: !expanded || !toolbar.toolbarExpandable
+            StateChangeScript { script: toolBar.saveState(); }
+        },
+
+        State {
+            name: "Expanded";
             when: expanded && toolbar.toolbarExpandable;
             PropertyChanges { target: toolBar; height: 150 }
             PropertyChanges { target: options; visible: true }
+            StateChangeScript { script: toolBar.saveState(); }
         }
     ]
 
     transitions: Transition {
         NumberAnimation { duration: 300; properties: "height, visible" }
+    }
+
+    function hideOrShowOptions() {
+        if (!expanded) {
+            toolbarExpanded();
+            expanded = !expanded;
+        // Toolbar may be set as expanded, but was closed from the item
+        } else if (expanded && connectionView.itemExpandable == true && toolbar.toolbarExpandable == false) {
+            toolbarExpanded();
+        } else {
+            expanded = !expanded;
+        }
+    }
+
+    function saveState() {
+        plasmoid.writeConfig("optionsExpanded", expanded);
     }
 
     Component.onCompleted: {

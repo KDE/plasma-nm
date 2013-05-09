@@ -32,7 +32,7 @@ class DetailKeysEditorPrivate;
 class DetailKeysEditor : public QWidget
 {
 Q_OBJECT
-Q_PROPERTY(QStringList currentDetails READ currentDetails WRITE loadSelectedElements NOTIFY detailsChanged USER true)
+Q_PROPERTY(QStringList currentDetails READ currentDetails WRITE loadSelectedElements NOTIFY currentDetailsChanged USER true)
 Q_DECLARE_PRIVATE(DetailKeysEditor)
 public:
     explicit DetailKeysEditor(QWidget * parent = 0);
@@ -54,7 +54,7 @@ private:
     QMap<QString, QPair<QString, QString> > m_allDetailsElements;
 
 Q_SIGNALS:
-    void detailsChanged();
+    void currentDetailsChanged(const QStringList & keys);
 private Q_SLOTS:
     void upArrowClicked();
     void leftArrowClicked();

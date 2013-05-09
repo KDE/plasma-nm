@@ -26,6 +26,8 @@
 #include <KDebug>
 #include <QList>
 
+#include <KConfigDialogManager>
+
 #define DetailTagRole Qt::UserRole + 1
 
 class DetailKeysEditorPrivate
@@ -52,29 +54,8 @@ DetailKeysEditor::DetailKeysEditor(QWidget *parent)
     }
 
     setupCommon();
-}
 
-DetailKeysEditor::DetailKeysEditor(const QStringList & keys, QWidget * parent)
-    : QWidget(parent), d_ptr(new DetailKeysEditorPrivate)
-{
-    Q_D(DetailKeysEditor);
-    d->ui.setupUi(this);
-
-    loadAllDetailElements();
-
-    foreach (const QString & key, keys) {
-        d->ui.currentDetails->addTopLevelItem(constructItem(key));
-    }
-
-    QMap<QString, QPair<QString, QString> >::const_iterator it = m_allDetailsElements.constBegin();
-    while (it != m_allDetailsElements.constEnd()) {
-        if (!keys.contains(it.key())) {
-            d->ui.availDetails->addTopLevelItem(constructItem(it.key()));
-        }
-        ++it;
-    }
-
-    setupCommon();
+    KConfigDialogManager::changedMap()->insert("DetailKeysEditor", SIGNAL(currentDetailsChanged(const QStringList &)));
 }
 
 DetailKeysEditor::~DetailKeysEditor()
@@ -192,7 +173,7 @@ void DetailKeysEditor::upArrowClicked()
         }
     }
 
-    Q_EMIT detailsChanged();
+    Q_EMIT currentDetailsChanged(currentDetails());
 }
 
 void DetailKeysEditor::downArrowClicked()
@@ -212,7 +193,7 @@ void DetailKeysEditor::downArrowClicked()
         item->setSelected(true);
     }
 
-    Q_EMIT detailsChanged();
+    Q_EMIT currentDetailsChanged(currentDetails());
 }
 
 void DetailKeysEditor::rightArrowClicked()
@@ -224,7 +205,7 @@ void DetailKeysEditor::rightArrowClicked()
         d->ui.currentDetails->addTopLevelItem(item);
     }
 
-    Q_EMIT detailsChanged();
+    Q_EMIT currentDetailsChanged(currentDetails());
 }
 
 void DetailKeysEditor::leftArrowClicked()
@@ -236,5 +217,5 @@ void DetailKeysEditor::leftArrowClicked()
         d->ui.availDetails->addTopLevelItem(item);
     }
 
-    Q_EMIT detailsChanged();
+    Q_EMIT currentDetailsChanged(currentDetails());
 }

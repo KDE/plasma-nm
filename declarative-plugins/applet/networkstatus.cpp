@@ -128,6 +128,12 @@ void NetworkStatus::statusChanged(NetworkManager::Status status)
 
 void NetworkStatus::changeTooltip()
 {
+    if (NetworkManager::status() != NetworkManager::Connected &&
+        NetworkManager::status() != NetworkManager::ConnectedLinkLocal &&
+        NetworkManager::status() != NetworkManager::ConnectedSiteOnly) {
+        return;
+    }
+
     QString tooltip = "<qt>";
     QString format = "<b>%1 - %2</b><br>%3<br><br>";
     QString formatDefault = "<b>%1 - %2</b><br><b>%3</b><br><br>";

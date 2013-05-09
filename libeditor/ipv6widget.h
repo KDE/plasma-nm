@@ -22,7 +22,7 @@
 #define PLASMA_NM_IPV6_WIDGET_H
 
 #include <QtGui/QWidget>
-#include <NetworkManagerQt/settings/Ipv6Setting>
+#include <NetworkManagerQt/Ipv6Setting>
 
 #include "settingwidget.h"
 #include "ui/ipv6routeswidget.h"
@@ -39,10 +39,10 @@ class KDE_EXPORT IPv6Widget : public SettingWidget
     Q_OBJECT
 
 public:
-    explicit IPv6Widget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit IPv6Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~IPv6Widget();
 
-    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
@@ -61,8 +61,8 @@ private slots:
 
 private:
     Ui::IPv6Widget * m_ui;
-    NetworkManager::Settings::Ipv6Setting::Ptr m_ipv6Setting;
-    NetworkManager::Settings::Ipv6Setting m_tmpIpv6Setting;
+    NetworkManager::Ipv6Setting::Ptr m_ipv6Setting;
+    NetworkManager::Ipv6Setting m_tmpIpv6Setting;
 
     class Private;
     Private *d;

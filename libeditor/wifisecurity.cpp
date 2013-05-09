@@ -23,12 +23,12 @@
 
 #include <QDebug>
 
-WifiSecurity::WifiSecurity(const NetworkManager::Settings::Setting::Ptr &setting, const NetworkManager::Settings::Security8021xSetting::Ptr &setting8021x,
+WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const NetworkManager::Security8021xSetting::Ptr &setting8021x,
                            QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::WifiSecurity)
 {
-    m_wifiSecurity = setting.staticCast<NetworkManager::Settings::WirelessSecuritySetting>();
+    m_wifiSecurity = setting.staticCast<NetworkManager::WirelessSecuritySetting>();
 
     m_ui->setupUi(this);
 
@@ -70,46 +70,46 @@ bool WifiSecurity::enabled8021x() const
     return false;
 }
 
-void WifiSecurity::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::WirelessSecuritySetting::Ptr wifiSecurity = setting.staticCast<NetworkManager::Settings::WirelessSecuritySetting>();
+    NetworkManager::WirelessSecuritySetting::Ptr wifiSecurity = setting.staticCast<NetworkManager::WirelessSecuritySetting>();
 
-    const NetworkManager::Settings::WirelessSecuritySetting::KeyMgmt keyMgmt = wifiSecurity->keyMgmt();
-    const NetworkManager::Settings::WirelessSecuritySetting::AuthAlg authAlg = wifiSecurity->authAlg();
+    const NetworkManager::WirelessSecuritySetting::KeyMgmt keyMgmt = wifiSecurity->keyMgmt();
+    const NetworkManager::WirelessSecuritySetting::AuthAlg authAlg = wifiSecurity->authAlg();
 
     // TODO add wep-key-type
 
-    if (keyMgmt == NetworkManager::Settings::WirelessSecuritySetting::Unknown) {
+    if (keyMgmt == NetworkManager::WirelessSecuritySetting::Unknown) {
         m_ui->securityCombo->setCurrentIndex(0); // None
 
-    } else if (keyMgmt == NetworkManager::Settings::WirelessSecuritySetting::Wep) {
+    } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::Wep) {
         m_ui->securityCombo->setCurrentIndex(1);  // WEP
         const int keyIndex = static_cast<int>(wifiSecurity->wepTxKeyindex());
         setWepKey(keyIndex);
         m_ui->wepIndex->setCurrentIndex(keyIndex);
 
-        if (wifiSecurity->authAlg() == NetworkManager::Settings::WirelessSecuritySetting::Open) {
+        if (wifiSecurity->authAlg() == NetworkManager::WirelessSecuritySetting::Open) {
             m_ui->wepAuth->setCurrentIndex(0);
         }
         else {
             m_ui->wepAuth->setCurrentIndex(1);
         }
 
-    } else if (keyMgmt == NetworkManager::Settings::WirelessSecuritySetting::Ieee8021x
-               && authAlg == NetworkManager::Settings::WirelessSecuritySetting::Leap) {
+    } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x
+               && authAlg == NetworkManager::WirelessSecuritySetting::Leap) {
         m_ui->securityCombo->setCurrentIndex(2);  // LEAP
         m_ui->leapUsername->setText(wifiSecurity->leapUsername());
         m_ui->leapPassword->setText(wifiSecurity->leapPassword());
 
-    } else if (keyMgmt == NetworkManager::Settings::WirelessSecuritySetting::Ieee8021x) {
+    } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x) {
         m_ui->securityCombo->setCurrentIndex(3);  // Dynamic WEP
         // done in the widget
 
-    } else if (keyMgmt == NetworkManager::Settings::WirelessSecuritySetting::WpaPsk) {
+    } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::WpaPsk) {
         m_ui->securityCombo->setCurrentIndex(4);  // WPA
         m_ui->psk->setText(wifiSecurity->psk());
 
-    } else if (keyMgmt == NetworkManager::Settings::WirelessSecuritySetting::WpaEap) {
+    } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEap) {
         m_ui->securityCombo->setCurrentIndex(5);  // WPA2 Enterprise
         // done in the widget
     }
@@ -119,13 +119,13 @@ QVariantMap WifiSecurity::setting(bool agentOwned) const
 {
      // TODO add wep-key-type
 
-    NetworkManager::Settings::WirelessSecuritySetting wifiSecurity;
+    NetworkManager::WirelessSecuritySetting wifiSecurity;
 
     const int securityIndex = m_ui->securityCombo->currentIndex();
     if (securityIndex == 0) {
-        wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Unknown);
+        wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::Unknown);
     } else if (securityIndex == 1)  { // WEP
-        wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Wep);
+        wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
         const int keyIndex = m_ui->wepIndex->currentIndex();
         const QString wepKey = m_ui->wepKey->text();
         wifiSecurity.setWepTxKeyindex(keyIndex);
@@ -139,30 +139,30 @@ QVariantMap WifiSecurity::setting(bool agentOwned) const
             wifiSecurity.setWepKey3(wepKey);
 
         if (agentOwned) {
-            wifiSecurity.setWepKeyFlags(NetworkManager::Settings::Setting::AgentOwned);
+            wifiSecurity.setWepKeyFlags(NetworkManager::Setting::AgentOwned);
         }
         if (m_ui->wepAuth->currentIndex() == 0)
-            wifiSecurity.setAuthAlg(NetworkManager::Settings::WirelessSecuritySetting::Open);
+            wifiSecurity.setAuthAlg(NetworkManager::WirelessSecuritySetting::Open);
         else
-            wifiSecurity.setAuthAlg(NetworkManager::Settings::WirelessSecuritySetting::Shared);
+            wifiSecurity.setAuthAlg(NetworkManager::WirelessSecuritySetting::Shared);
     } else if (securityIndex == 2) { // LEAP
-        wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Ieee8021x);
-        wifiSecurity.setAuthAlg(NetworkManager::Settings::WirelessSecuritySetting::Leap);
+        wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::Ieee8021x);
+        wifiSecurity.setAuthAlg(NetworkManager::WirelessSecuritySetting::Leap);
         wifiSecurity.setLeapUsername(m_ui->leapUsername->text());
         wifiSecurity.setLeapPassword(m_ui->leapPassword->text());
         if (agentOwned) {
-            wifiSecurity.setLeapPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+            wifiSecurity.setLeapPasswordFlags(NetworkManager::Setting::AgentOwned);
         }
     } else if (securityIndex == 3) {  // Dynamic WEP
-        wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::Ieee8021x);
+        wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::Ieee8021x);
     } else if (securityIndex == 4) { // WPA
-        wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::WpaPsk);
+        wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
         wifiSecurity.setPsk(m_ui->psk->text());
         if (agentOwned) {
-            wifiSecurity.setPskFlags(NetworkManager::Settings::Setting::AgentOwned);
+            wifiSecurity.setPskFlags(NetworkManager::Setting::AgentOwned);
         }
     } else if (securityIndex == 5) {  // WPA2 Enterprise
-        wifiSecurity.setKeyMgmt(NetworkManager::Settings::WirelessSecuritySetting::WpaEap);
+        wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaEap);
     }
 
     return wifiSecurity.toMap();

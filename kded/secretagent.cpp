@@ -24,9 +24,9 @@
 #include "passworddialog.h"
 
 #include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/GenericTypes>
-#include <NetworkManagerQt/settings/VpnSetting>
+#include <NetworkManagerQt/VpnSetting>
 
 #include <QStringBuilder>
 
@@ -251,14 +251,14 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
         return false;
     }
 
-    NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
+    NetworkManager::ConnectionSettings connectionSettings(request.connection);
 
-    NetworkManager::Settings::Setting::Ptr setting = connectionSettings.setting(request.setting_name);
+    NetworkManager::Setting::Ptr setting = connectionSettings.setting(request.setting_name);
 
     const bool requestNew = request.flags & RequestNew;
     const bool userRequested = request.flags & UserRequested;
     const bool allowInteraction = request.flags & AllowInteraction;
-    const bool isVpn = (setting->type() == NetworkManager::Settings::Setting::Vpn);
+    const bool isVpn = (setting->type() == NetworkManager::Setting::Vpn);
 
     NMStringMap secretsMap;
     if (!ignoreWallet && !requestNew && useWallet()) {
@@ -315,8 +315,8 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
         }
     } else if (isVpn && userRequested) { // just return what we have
         NMVariantMapMap result;
-        NetworkManager::Settings::VpnSetting::Ptr vpnSetting;
-        vpnSetting = connectionSettings.setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
+        NetworkManager::VpnSetting::Ptr vpnSetting;
+        vpnSetting = connectionSettings.setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
         result.insert("vpn", vpnSetting->secretsToMap());
         sendSecrets(result, request.message);
         return true;
@@ -337,14 +337,14 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
 {
     if (!ignoreWallet && useWallet()) {
         if (m_wallet->isOpen()) {
-            NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
+            NetworkManager::ConnectionSettings connectionSettings(request.connection);
 
             if (!m_wallet->hasFolder("plasma-nm")) {
                 m_wallet->createFolder("plasma-nm");
             }
 
             if (m_wallet->setFolder("plasma-nm")) {
-                foreach (const NetworkManager::Settings::Setting::Ptr &setting, connectionSettings.settings()) {
+                foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
                     NMStringMap secretsMap = setting->secretsToStringMap();
                     if (!secretsMap.isEmpty()) {
                         QString entryName = connectionSettings.uuid() % QLatin1Char(';') % setting->name();
@@ -362,10 +362,10 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
             return false;
         }
     } else if (!m_wallet) {
-        NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
+        NetworkManager::ConnectionSettings connectionSettings(request.connection);
 
         KConfig config("plasma-nm");
-        foreach (const NetworkManager::Settings::Setting::Ptr &setting, connectionSettings.settings()) {
+        foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
             KConfigGroup secretsGroup(&config, connectionSettings.uuid() % QLatin1Char(';') % setting->name());
             NMStringMap secretsMap = setting->secretsToStringMap();
             NMStringMap::ConstIterator i = secretsMap.constBegin();
@@ -391,7 +391,7 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
     if (!ignoreWallet && useWallet()) {
         if (m_wallet->isOpen()) {
             if (m_wallet->hasFolder("plasma-nm") && m_wallet->setFolder("plasma-nm")) {
-                NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
+                NetworkManager::ConnectionSettings connectionSettings(request.connection);
                 foreach (const QString &entry, m_wallet->entryList()) {
                     if (entry.startsWith(connectionSettings.uuid())) {
                         m_wallet->removeEntry(entry);
@@ -403,7 +403,7 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
             return false;
         }
     } else if (!m_wallet) {
-        NetworkManager::Settings::ConnectionSettings connectionSettings(request.connection);
+        NetworkManager::ConnectionSettings connectionSettings(request.connection);
 
         KConfig config("plasma-nm");
         foreach (const QString &group, config.groupList()) {
@@ -446,8 +446,8 @@ bool SecretAgent::useWallet() const
 
 bool SecretAgent::hasSecrets(const NMVariantMapMap &connection) const
 {
-    NetworkManager::Settings::ConnectionSettings connectionSettings(connection);
-    foreach (const NetworkManager::Settings::Setting::Ptr &setting, connectionSettings.settings()) {
+    NetworkManager::ConnectionSettings connectionSettings(connection);
+    foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
         if (!setting->secretsToMap().isEmpty()) {
             return true;
         }

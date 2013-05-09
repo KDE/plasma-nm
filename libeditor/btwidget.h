@@ -23,7 +23,7 @@
 
 #include <QtGui/QWidget>
 
-#include <NetworkManagerQt/settings/BluetoothSetting>
+#include <NetworkManagerQt/BluetoothSetting>
 
 #include "settingwidget.h"
 
@@ -38,16 +38,16 @@ class KDE_EXPORT BtWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit BtWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit BtWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~BtWidget();
 
-    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
 private:
     Ui::BtWidget * m_ui;
-    NetworkManager::Settings::BluetoothSetting::Ptr m_btSetting;
+    NetworkManager::BluetoothSetting::Ptr m_btSetting;
 };
 
 #endif // PLASMA_NM_BT_WIDGET_H

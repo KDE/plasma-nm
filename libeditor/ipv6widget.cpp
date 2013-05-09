@@ -60,7 +60,7 @@ public:
 };
 
 
-IPv6Widget::IPv6Widget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::IPv6Widget),
     d(new IPv6Widget::Private())
@@ -90,7 +90,7 @@ IPv6Widget::IPv6Widget(const NetworkManager::Settings::Setting::Ptr &setting, QW
             this, SLOT(tableViewItemChanged(QStandardItem*)));
 
     if (setting) {
-        m_ipv6Setting = setting.staticCast<NetworkManager::Settings::Ipv6Setting>();
+        m_ipv6Setting = setting.staticCast<NetworkManager::Ipv6Setting>();
 
         m_tmpIpv6Setting.setRoutes(m_ipv6Setting->routes());
         m_tmpIpv6Setting.setNeverDefault(m_ipv6Setting->neverDefault());
@@ -112,7 +112,7 @@ IPv6Widget::~IPv6Widget()
     delete d;
 }
 
-void IPv6Widget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     Q_UNUSED(setting)
 
@@ -142,7 +142,7 @@ void IPv6Widget::loadConfig(const NetworkManager::Settings::Setting::Ptr &settin
     m_ui->ipv6RequiredCB->setChecked(!m_ipv6Setting->mayFail());
 
     // privacy
-    if (m_ipv6Setting->privacy() != NetworkManager::Settings::Ipv6Setting::Unknown) {
+    if (m_ipv6Setting->privacy() != NetworkManager::Ipv6Setting::Unknown) {
         m_ui->privacyCombo->setCurrentIndex(static_cast<int>(m_ipv6Setting->privacy()));
     }
 }
@@ -151,14 +151,14 @@ QVariantMap IPv6Widget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned);
 
-    NetworkManager::Settings::Ipv6Setting ipv6Setting;
+    NetworkManager::Ipv6Setting ipv6Setting;
 
     ipv6Setting.setRoutes(m_tmpIpv6Setting.routes());
     ipv6Setting.setNeverDefault(m_tmpIpv6Setting.neverDefault());
     ipv6Setting.setIgnoreAutoRoutes(m_tmpIpv6Setting.ignoreAutoRoutes());
 
     // method
-    ipv6Setting.setMethod(static_cast<NetworkManager::Settings::Ipv6Setting::ConfigMethod>(m_ui->method->currentIndex()));
+    ipv6Setting.setMethod(static_cast<NetworkManager::Ipv6Setting::ConfigMethod>(m_ui->method->currentIndex()));
 
     // dns
     if (m_ui->dns->isEnabled() && !m_ui->dns->text().isEmpty()) {
@@ -196,7 +196,7 @@ QVariantMap IPv6Widget::setting(bool agentOwned) const
 
     // privacy
     if (m_ui->privacyCombo->isEnabled()) {
-        ipv6Setting.setPrivacy(static_cast<NetworkManager::Settings::Ipv6Setting::IPv6Privacy>(m_ui->privacyCombo->currentIndex()));
+        ipv6Setting.setPrivacy(static_cast<NetworkManager::Ipv6Setting::IPv6Privacy>(m_ui->privacyCombo->currentIndex()));
     }
 
     return ipv6Setting.toMap();

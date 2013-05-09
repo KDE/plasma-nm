@@ -34,8 +34,8 @@ class KDE_EXPORT VpncUiPlugin : public VpnUiPlugin
 public:
     explicit VpncUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
     virtual ~VpncUiPlugin();
-    virtual SettingWidget * widget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent = 0);
-    virtual SettingWidget * askUser(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
 #if 0
     QString suggestedFileName(Knm::Connection *connection) const;
     QString supportedFileExtensions() const;

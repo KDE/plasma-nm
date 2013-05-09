@@ -23,7 +23,7 @@
 
 #include <QWidget>
 
-#include <NetworkManagerQt/settings/Security8021xSetting>
+#include <NetworkManagerQt/Security8021xSetting>
 
 namespace Ui
 {
@@ -34,7 +34,7 @@ class Security8021x: public QWidget
 {
     Q_OBJECT
 public:
-    Security8021x(const NetworkManager::Settings::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent = 0);
+    Security8021x(const NetworkManager::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent = 0);
     virtual ~Security8021x();
     QVariantMap setting(bool agentOwned = false) const;
 
@@ -48,7 +48,7 @@ private slots:
 
 private:
     void loadConfig();
-    NetworkManager::Settings::Security8021xSetting::Ptr m_setting;
+    NetworkManager::Security8021xSetting::Ptr m_setting;
     Ui::Security8021x * m_ui;
 };
 

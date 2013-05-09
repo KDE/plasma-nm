@@ -23,11 +23,11 @@
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/ConnectionSettings>
 
 #include <KUser>
 
-ConnectionWidget::ConnectionWidget(const NetworkManager::Settings::ConnectionSettings::Ptr &settings, QWidget* parent, Qt::WindowFlags f):
+ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr &settings, QWidget* parent, Qt::WindowFlags f):
     QWidget(parent, f),
     m_widget(new Ui::ConnectionWidget),
     m_type(settings->connectionType()),
@@ -40,7 +40,7 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::Settings::ConnectionSet
 
     // VPN combo
     populateVpnConnections();
-    if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Vpn) {
+    if (settings->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
         m_widget->autoconnectVpn->setEnabled(false);
         m_widget->vpnCombobox->setEnabled(false);
         m_widget->autoconnect->setEnabled(false);
@@ -58,7 +58,7 @@ ConnectionWidget::~ConnectionWidget()
 {
 }
 
-void ConnectionWidget::loadConfig(const NetworkManager::Settings::ConnectionSettings::Ptr &settings)
+void ConnectionWidget::loadConfig(const NetworkManager::ConnectionSettings::Ptr &settings)
 {
     if (settings->permissions().isEmpty()) {
         m_widget->allUsers->setChecked(true);
@@ -88,7 +88,7 @@ void ConnectionWidget::loadConfig(const NetworkManager::Settings::ConnectionSett
 
 NMVariantMapMap ConnectionWidget::setting() const
 {
-    NetworkManager::Settings::ConnectionSettings settings;
+    NetworkManager::ConnectionSettings settings;
 
     settings.setConnectionType(m_type);
     settings.setAutoconnect(m_widget->autoconnect->isChecked());
@@ -115,12 +115,12 @@ NMVariantMapMap ConnectionWidget::setting() const
 
 NMStringMap ConnectionWidget::vpnConnections() const
 {
-    NetworkManager::Settings::Connection::List list = NetworkManager::Settings::listConnections();
+    NetworkManager::Connection::List list = NetworkManager::listConnections();
     NMStringMap result;
 
-    foreach (const NetworkManager::Settings::Connection::Ptr & conn, list) {
-        NetworkManager::Settings::ConnectionSettings::Ptr conSet = conn->settings();
-        if (conSet->connectionType() == NetworkManager::Settings::ConnectionSettings::Vpn) {
+    foreach (const NetworkManager::Connection::Ptr & conn, list) {
+        NetworkManager::ConnectionSettings::Ptr conSet = conn->settings();
+        if (conSet->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
             //qDebug() << "Found VPN" << conSet->id() << conSet->uuid();
             result.insert(conSet->uuid(), conSet->id());
         }

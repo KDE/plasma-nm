@@ -27,12 +27,12 @@
 #include <NetworkManagerQt/GenericTypes>
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/ConnectionSettings>
 
 #include <KLocalizedString>
 #include <KMessageBox>
 
-BridgeWidget::BridgeWidget(const QString & masterUuid, const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+BridgeWidget::BridgeWidget(const QString & masterUuid, const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_uuid(masterUuid),
     m_ui(new Ui::BridgeWidget)
@@ -42,13 +42,13 @@ BridgeWidget::BridgeWidget(const QString & masterUuid, const NetworkManager::Set
     // Action buttons and menu
     m_menu = new QMenu(this);
     QAction * action = new QAction(i18n("Ethernet"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Wired);
+    action->setData(NetworkManager::ConnectionSettings::Wired);
     m_menu->addAction(action);
     action = new QAction(i18n("InfiniBand"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Infiniband);
+    action->setData(NetworkManager::ConnectionSettings::Infiniband);
     m_menu->addAction(action);
     action = new QAction(i18n("Wireless"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Wireless);
+    action->setData(NetworkManager::ConnectionSettings::Wireless);
     m_menu->addAction(action);
     m_ui->btnAdd->setMenu(m_menu);
     connect(m_menu, SIGNAL(triggered(QAction*)), SLOT(addBridge(QAction*)));
@@ -68,9 +68,9 @@ BridgeWidget::~BridgeWidget()
 {
 }
 
-void BridgeWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void BridgeWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::BridgeSetting bridgeSetting = setting.staticCast<NetworkManager::Settings::BridgeSetting>();
+    NetworkManager::BridgeSetting bridgeSetting = setting.staticCast<NetworkManager::BridgeSetting>();
 
     m_ui->ifaceName->setText(bridgeSetting.interfaceName());
     m_ui->agingTime->setValue(bridgeSetting.agingTime());
@@ -89,7 +89,7 @@ QVariantMap BridgeWidget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned)
 
-    NetworkManager::Settings::BridgeSetting setting;
+    NetworkManager::BridgeSetting setting;
     setting.setInterfaceName(m_ui->ifaceName->text());
     setting.setAgingTime(m_ui->agingTime->value());
 
@@ -111,11 +111,11 @@ void BridgeWidget::addBridge(QAction *action)
     qDebug() << "Master UUID:" << m_uuid;
     qDebug() << "Slave type:" << type();
 
-    ConnectionDetailEditor * bridgeEditor = new ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType(action->data().toInt()),
+    ConnectionDetailEditor * bridgeEditor = new ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType(action->data().toInt()),
                                                                        this, QString(), m_uuid, type());
     if (bridgeEditor->exec() == QDialog::Accepted) {
         qDebug() << "Saving slave connection";
-        connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
+        connect(NetworkManager::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                 this, SLOT(bridgeAddComplete(QString,bool,QString)));
     }
 }
@@ -133,7 +133,7 @@ void BridgeWidget::bridgeAddComplete(const QString &uuid, bool success, const QS
     qDebug() << Q_FUNC_INFO << uuid << success << msg;
 
     // find the slave connection with matching UUID
-    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(uuid);
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
     if (connection && connection->settings()->master() == m_uuid && success) {
         const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
         QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->bridges);
@@ -142,7 +142,7 @@ void BridgeWidget::bridgeAddComplete(const QString &uuid, bool success, const QS
         qWarning() << "Bridged connection not added:" << msg;
     }
 
-    disconnect(NetworkManager::Settings::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
+    disconnect(NetworkManager::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                this, SLOT(bridgeAddComplete(QString,bool,QString)));
 }
 
@@ -153,7 +153,7 @@ void BridgeWidget::editBridge()
         return;
 
     const QString uuid = currentItem->data(Qt::UserRole).toString();
-    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(uuid);
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
 
     if (connection) {
         qDebug() << "Editing bridged connection" << currentItem->text() << uuid;
@@ -171,7 +171,7 @@ void BridgeWidget::deleteBridge()
         return;
 
     const QString uuid = currentItem->data(Qt::UserRole).toString();
-    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(uuid);
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
 
     if (connection) {
         qDebug() << "About to delete bridged connection" << currentItem->text() << uuid;
@@ -188,8 +188,8 @@ void BridgeWidget::populateBridges()
 {
     m_ui->bridges->clear();
 
-    foreach (const NetworkManager::Settings::Connection::Ptr &connection, NetworkManager::Settings::listConnections()) {
-        NetworkManager::Settings::ConnectionSettings::Ptr settings = connection->settings();
+    foreach (const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
+        NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
         if (settings->master() == m_uuid && settings->slaveType() == type()) {
             const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
             QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->bridges);

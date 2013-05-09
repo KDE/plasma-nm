@@ -73,7 +73,7 @@ public:
 };
 
 
-IPv4Widget::IPv4Widget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::IPv4Widget),
     d(new IPv4Widget::Private())
@@ -102,7 +102,7 @@ IPv4Widget::IPv4Widget(const NetworkManager::Settings::Setting::Ptr &setting, QW
             this, SLOT(tableViewItemChanged(QStandardItem*)));
 
     if (setting) {
-        m_ipv4Setting = setting.staticCast<NetworkManager::Settings::Ipv4Setting>();
+        m_ipv4Setting = setting.staticCast<NetworkManager::Ipv4Setting>();
 
         m_tmpIpv4Setting.setRoutes(m_ipv4Setting->routes());
         m_tmpIpv4Setting.setNeverDefault(m_ipv4Setting->neverDefault());
@@ -124,7 +124,7 @@ IPv4Widget::~IPv4Widget()
     delete d;
 }
 
-void IPv4Widget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     Q_UNUSED(setting)
 
@@ -159,14 +159,14 @@ QVariantMap IPv4Widget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned);
 
-    NetworkManager::Settings::Ipv4Setting ipv4Setting;
+    NetworkManager::Ipv4Setting ipv4Setting;
 
     ipv4Setting.setRoutes(m_tmpIpv4Setting.routes());
     ipv4Setting.setNeverDefault(m_tmpIpv4Setting.neverDefault());
     ipv4Setting.setIgnoreAutoRoutes(m_tmpIpv4Setting.ignoreAutoRoutes());
 
     // method
-    ipv4Setting.setMethod(static_cast<NetworkManager::Settings::Ipv4Setting::ConfigMethod>(m_ui->method->currentIndex()));
+    ipv4Setting.setMethod(static_cast<NetworkManager::Ipv4Setting::ConfigMethod>(m_ui->method->currentIndex()));
 
     // dns
     if (m_ui->dns->isEnabled() && !m_ui->dns->text().isEmpty()) {

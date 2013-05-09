@@ -24,7 +24,7 @@
 
 #include <KLocalizedString>
 
-VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget *parent) :
+VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent) :
     QDialog(parent),
     m_ui(new Ui::VpncAdvancedWidget)
 {
@@ -62,7 +62,7 @@ VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::Settings::VpnSettin
     loadConfig(setting);
 }
 
-void VpncAdvancedWidget::loadConfig(const NetworkManager::Settings::VpnSetting::Ptr &setting)
+void VpncAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
 {
     m_ui->domain->setText(setting->data().value(NM_VPNC_KEY_DOMAIN));
 

@@ -23,7 +23,7 @@
 
 #include <QtGui/QWidget>
 
-#include <NetworkManagerQt/settings/Setting>
+#include <NetworkManagerQt/Setting>
 
 #include "settingwidget.h"
 
@@ -38,10 +38,10 @@ class KDE_EXPORT InfinibandWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit InfinibandWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit InfinibandWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~InfinibandWidget();
 
-    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 

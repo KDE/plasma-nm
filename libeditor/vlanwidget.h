@@ -37,10 +37,10 @@ class KDE_EXPORT VlanWidget : public SettingWidget
 Q_OBJECT
 
 public:
-    explicit VlanWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~VlanWidget();
 
-    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 

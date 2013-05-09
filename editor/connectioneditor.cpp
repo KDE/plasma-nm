@@ -63,35 +63,35 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 
     // TODO Adsl
     action = new QAction(i18n("DSL"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Pppoe);
+    action->setData(NetworkManager::ConnectionSettings::Pppoe);
     m_menu->addAction(action);
     action = new QAction(i18n("InfiniBand"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Infiniband);
+    action->setData(NetworkManager::ConnectionSettings::Infiniband);
     m_menu->addAction(action);
     action = new QAction(i18n("Mobile Broadband..."), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Gsm);
+    action->setData(NetworkManager::ConnectionSettings::Gsm);
     m_menu->addAction(action);
     action = new QAction(i18n("Wired"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Wired);
+    action->setData(NetworkManager::ConnectionSettings::Wired);
     m_menu->addAction(action);
     action = new QAction(i18n("Wireless"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Wireless);
+    action->setData(NetworkManager::ConnectionSettings::Wireless);
     m_menu->addAction(action);
     action = new QAction(i18n("WiMAX"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Wimax);
+    action->setData(NetworkManager::ConnectionSettings::Wimax);
     m_menu->addAction(action);
 
     action = m_menu->addSeparator();
     action->setText(i18n("Virtual"));
 
     action = new QAction(i18n("Bond"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Bond);
+    action->setData(NetworkManager::ConnectionSettings::Bond);
     m_menu->addAction(action);
     action = new QAction(i18n("Bridge"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Bridge);
+    action->setData(NetworkManager::ConnectionSettings::Bridge);
     m_menu->addAction(action);
     action = new QAction(i18n("VLAN"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Vlan);
+    action->setData(NetworkManager::ConnectionSettings::Vlan);
     m_menu->addAction(action);
 
     action = m_menu->addSeparator();
@@ -102,7 +102,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
         qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String);
 
         action = new QAction(service->name(), this);
-        action->setData(NetworkManager::Settings::ConnectionSettings::Vpn);
+        action->setData(NetworkManager::ConnectionSettings::Vpn);
         action->setProperty("type", service->property("X-NetworkManager-Services", QVariant::String));
         m_menu->addAction(action);
     }
@@ -123,9 +123,9 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
             SLOT(removeConnection()));
     connect(m_editor->connectionsWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
             SLOT(editConnection()));
-    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAdded(QString)),
+    connect(NetworkManager::notifier(), SIGNAL(connectionAdded(QString)),
             SLOT(connectionAdded(QString)));
-    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionRemoved(QString)),
+    connect(NetworkManager::notifier(), SIGNAL(connectionRemoved(QString)),
             SLOT(connectionRemoved(QString)));
 
     connect(m_editor->btnAbout, SIGNAL(clicked()), SLOT(aboutDialog()));
@@ -139,7 +139,7 @@ void ConnectionEditor::initializeConnections()
 {
     m_editor->connectionsWidget->clear();
 
-    foreach (const Settings::Connection::Ptr &con, Settings::listConnections()) {
+    foreach (const Connection::Ptr &con, NetworkManager::listConnections()) {
         if (con->settings()->isSlave())
             continue;
 
@@ -149,12 +149,12 @@ void ConnectionEditor::initializeConnections()
     }
 }
 
-void ConnectionEditor::insertConnection(const NetworkManager::Settings::Connection::Ptr &connection)
+void ConnectionEditor::insertConnection(const NetworkManager::Connection::Ptr &connection)
 {
-    Settings::ConnectionSettings::Ptr settings = connection->settings();
+    ConnectionSettings::Ptr settings = connection->settings();
 
     const QString name = settings->id();
-    QString type = Settings::ConnectionSettings::typeAsString(settings->connectionType());
+    QString type = ConnectionSettings::typeAsString(settings->connectionType());
     if (type == "gsm" || type == "cdma")
         type = "mobile"; // cdma+gsm meta category
 
@@ -270,10 +270,10 @@ void ConnectionEditor::addConnection(QAction* action)
     const QString vpnType = action->property("type").toString();
     qDebug() << "VPN type:" << vpnType;
 
-    Settings::ConnectionSettings::ConnectionType type = (Settings::ConnectionSettings::ConnectionType) action->data().toUInt();
+    ConnectionSettings::ConnectionType type = static_cast<ConnectionSettings::ConnectionType>(action->data().toUInt());
 
-    if (type == NetworkManager::Settings::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
-        QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::Settings::ConnectionSettings::Unknown, this);
+    if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
+        QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
         if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
             qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
             ConnectionDetailEditor * editor = new ConnectionDetailEditor(wizard.data()->type(), wizard.data()->args(), this);
@@ -297,7 +297,7 @@ void ConnectionEditor::editConnection()
         return;
     }
 
-    Settings::Connection::Ptr connection = Settings::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
+    Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
 
     if (!connection) {
         return;
@@ -316,7 +316,7 @@ void ConnectionEditor::removeConnection()
         return;
     }
 
-    Settings::Connection::Ptr connection = Settings::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
+    Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
 
     if (!connection) {
         return;
@@ -331,7 +331,7 @@ void ConnectionEditor::removeConnection()
 
 void ConnectionEditor::connectionAdded(const QString& connection)
 {
-    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
         return;
@@ -362,7 +362,7 @@ void ConnectionEditor::connectionRemoved(const QString& connection)
 
 void ConnectionEditor::connectionUpdated()
 {
-    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnection(qobject_cast<NetworkManager::Settings::Connection*>(sender())->path());
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(qobject_cast<NetworkManager::Connection*>(sender())->path());
 
     QTreeWidgetItemIterator it(m_editor->connectionsWidget);
 

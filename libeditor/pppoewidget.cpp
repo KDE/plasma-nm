@@ -21,9 +21,9 @@
 #include "pppoewidget.h"
 #include "ui_pppoe.h"
 
-#include <NetworkManagerQt/settings/PppoeSetting>
+#include <NetworkManagerQt/PppoeSetting>
 
-PppoeWidget::PppoeWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+PppoeWidget::PppoeWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::PppoeWidget)
 {
@@ -39,9 +39,9 @@ PppoeWidget::~PppoeWidget()
 {
 }
 
-void PppoeWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void PppoeWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::PppoeSetting::Ptr pppoeSetting = setting.staticCast<NetworkManager::Settings::PppoeSetting>();
+    NetworkManager::PppoeSetting::Ptr pppoeSetting = setting.staticCast<NetworkManager::PppoeSetting>();
 
     m_ui->service->setText(pppoeSetting->service());
     m_ui->username->setText(pppoeSetting->username());
@@ -52,7 +52,7 @@ QVariantMap PppoeWidget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned);
 
-    NetworkManager::Settings::PppoeSetting pppoeSetting;
+    NetworkManager::PppoeSetting pppoeSetting;
     if (!m_ui->service->text().isEmpty())
         pppoeSetting.setService(m_ui->service->text());
     if (!m_ui->username->text().isEmpty())
@@ -61,7 +61,7 @@ QVariantMap PppoeWidget::setting(bool agentOwned) const
         pppoeSetting.setPassword(m_ui->password->text());
 
     if (agentOwned) {
-        pppoeSetting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+        pppoeSetting.setPasswordFlags(NetworkManager::Setting::AgentOwned);
     }
 
     return pppoeSetting.toMap();

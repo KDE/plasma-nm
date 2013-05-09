@@ -124,7 +124,7 @@ QList< ModelItem* > ModelItems::itemsByUuid(const QString& uuid) const
     return result;
 }
 
-QList< ModelItem* > ModelItems::itemsByType(NetworkManager::Settings::ConnectionSettings::ConnectionType type) const
+QList< ModelItem* > ModelItems::itemsByType(NetworkManager::ConnectionSettings::ConnectionType type) const
 {
     QList<ModelItem*> result;
 

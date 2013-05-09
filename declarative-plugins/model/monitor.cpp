@@ -22,9 +22,9 @@
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/WiredDevice>
-#include <NetworkManagerQt/settings/WirelessSetting>
+#include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/ModemDevice>
 
@@ -57,9 +57,9 @@ void Monitor::init()
             SLOT(deviceRemoved(QString)));
     connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
             SLOT(statusChanged(NetworkManager::Status)));
-    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAdded(QString)),
+    connect(NetworkManager::notifier(), SIGNAL(connectionAdded(QString)),
             SLOT(connectionAdded(QString)));
-    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionRemoved(QString)),
+    connect(NetworkManager::notifier(), SIGNAL(connectionRemoved(QString)),
             SLOT(connectionRemoved(QString)));
     connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
             SLOT(wirelessEnabled(bool)));
@@ -77,7 +77,7 @@ void Monitor::init()
 
 void Monitor::addAvailableConnectionsForDevice(const NetworkManager::Device::Ptr& device)
 {
-    foreach (const NetworkManager::Settings::Connection::Ptr& con, device->availableConnections()) {
+    foreach (const NetworkManager::Connection::Ptr& con, device->availableConnections()) {
         connect(con.data(), SIGNAL(updated()), SLOT(connectionUpdated()), Qt::UniqueConnection);
         NMMonitorDebug() << "Available connection " << con->name() << " for device " << device->interfaceName();
         Q_EMIT addConnection(con->path(), device->uni());
@@ -142,7 +142,7 @@ void Monitor::availableConnectionAppeared(const QString& connection)
         return;
     }
 
-    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
     if (!con) {
         NMMonitorDebug() << "Connection not found" << con->name();
         return;
@@ -219,7 +219,7 @@ void Monitor::cablePlugged(bool plugged)
 
 void Monitor::connectionAdded(const QString& connection)
 {
-    NetworkManager::Settings::Connection::Ptr newConnection = NetworkManager::Settings::findConnection(connection);
+    NetworkManager::Connection::Ptr newConnection = NetworkManager::findConnection(connection);
 
     if (!newConnection) {
         NMMonitorDebug() << "The new connection has been added, but it was not found";
@@ -228,7 +228,7 @@ void Monitor::connectionAdded(const QString& connection)
 
     connect(newConnection.data(), SIGNAL(updated()), SLOT(connectionUpdated()), Qt::UniqueConnection);
 
-    if (newConnection->settings()->connectionType() == NetworkManager::Settings::ConnectionSettings::Vpn) {
+    if (newConnection->settings()->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
         if (NetworkManager::status() == NetworkManager::Connected ||
             NetworkManager::status() == NetworkManager::ConnectedLinkLocal ||
             NetworkManager::status() == NetworkManager::ConnectedSiteOnly) {
@@ -239,7 +239,7 @@ void Monitor::connectionAdded(const QString& connection)
     }
 
     foreach (const NetworkManager::Device::Ptr& dev, NetworkManager::networkInterfaces()) {
-        foreach (const NetworkManager::Settings::Connection::Ptr& con, dev->availableConnections()) {
+        foreach (const NetworkManager::Connection::Ptr& con, dev->availableConnections()) {
             if (con->uuid() == newConnection->uuid()) {
                 NMMonitorDebug() << "Connection " << con->name() << " added";
                 Q_EMIT addConnection(con->path(), dev->uni());
@@ -256,8 +256,8 @@ void Monitor::connectionRemoved(const QString& connection)
 
 void Monitor::connectionUpdated()
 {
-    NetworkManager::Settings::Connection * connectionPtr = qobject_cast<NetworkManager::Settings::Connection*>(sender());
-    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnection(connectionPtr->path());
+    NetworkManager::Connection * connectionPtr = qobject_cast<NetworkManager::Connection*>(sender());
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(connectionPtr->path());
 
     NMMonitorDebug() << "Connection " << connection->name() << " updated";
 
@@ -319,10 +319,10 @@ void Monitor::statusChanged(NetworkManager::Status status)
         status == NetworkManager::ConnectedLinkLocal ||
         status == NetworkManager::ConnectedSiteOnly) {
         NMMonitorDebug() << "NetworkManager is connected";
-        foreach (const NetworkManager::Settings::Connection::Ptr& con, NetworkManager::Settings::listConnections()) {
-            NetworkManager::Settings::ConnectionSettings::Ptr settings = con->settings();
+        foreach (const NetworkManager::Connection::Ptr& con, NetworkManager::listConnections()) {
+            NetworkManager::ConnectionSettings::Ptr settings = con->settings();
 
-            if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Vpn) {
+            if (settings->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
                 Q_EMIT addVpnConnection(con->path());
             }
         }

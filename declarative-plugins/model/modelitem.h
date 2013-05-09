@@ -23,7 +23,7 @@
 
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/Device>
 
 #include "model.h"
@@ -58,7 +58,7 @@ public:
     QString specificPath() const;
 
     int signal() const;
-    NetworkManager::Settings::ConnectionSettings::ConnectionType type() const;
+    NetworkManager::ConnectionSettings::ConnectionType type() const;
 
     bool operator==(const ModelItem * item) const;
 
@@ -95,9 +95,9 @@ private:
 
     int m_signal;
     SectionType m_sectionType;
-    NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
+    NetworkManager::ConnectionSettings::ConnectionType m_type;
 
-    void setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr& settings);
+    void setConnectionSettings(const NetworkManager::ConnectionSettings::Ptr& settings);
 };
 
 #endif // PLASMA_NM_CONNECTION_ITEM_H

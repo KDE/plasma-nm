@@ -27,10 +27,10 @@
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/settings/Setting>
-#include <NetworkManagerQt/settings/ConnectionSettings>
-#include <NetworkManagerQt/settings/WiredSetting>
-#include <NetworkManagerQt/settings/WirelessSetting>
+#include <NetworkManagerQt/Setting>
+#include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/WiredSetting>
+#include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/ActiveConnection>
 
 #include <QInputDialog>
@@ -48,7 +48,7 @@ Handler::~Handler()
 
 void Handler::activateConnection(const QString& connection, const QString& device, const QString& specificObject)
 {
-    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
         NMHandlerDebug() << "Not possible to activate this connection";
@@ -77,12 +77,12 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         return;
     }
 
-    NetworkManager::Settings::ConnectionSettings * settings = new NetworkManager::Settings::ConnectionSettings(NetworkManager::Settings::ConnectionSettings::Wireless);
+    NetworkManager::ConnectionSettings * settings = new NetworkManager::ConnectionSettings(NetworkManager::ConnectionSettings::Wireless);
     settings->setId(ap->ssid());
-    settings->setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
+    settings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
 
-    NetworkManager::Settings::WirelessSetting::Ptr wifiSetting;
-    wifiSetting = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
+    NetworkManager::WirelessSetting::Ptr wifiSetting;
+    wifiSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
     wifiSetting->setSsid(ap->ssid().toUtf8());
 
     NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
@@ -92,7 +92,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
 
 void Handler::deactivateConnection(const QString& connection)
 {
-    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
         NMHandlerDebug() << "Not possible to deactivate this connection";
@@ -145,7 +145,7 @@ void Handler::editConnection(const QString& uuid)
 
 void Handler::removeConnection(const QString& connection)
 {
-    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
         NMHandlerDebug() << "Not possible to remove this connection";

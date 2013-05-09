@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_VPNC_WIDGET_H
 #define PLASMA_NM_VPNC_WIDGET_H
 
-#include <NetworkManagerQt/settings/VpnSetting>
+#include <NetworkManagerQt/VpnSetting>
 
 #include "settingwidget.h"
 
@@ -34,10 +34,10 @@ class VpncWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit VpncWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~VpncWidget();
 
-    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
@@ -49,7 +49,7 @@ private slots:
 
 private:
     Ui::VpncWidget * m_ui;
-    NetworkManager::Settings::VpnSetting::Ptr m_setting;
+    NetworkManager::VpnSetting::Ptr m_setting;
 };
 
 #endif // PLASMA_NM_VPNC_WIDGET_H

@@ -37,10 +37,10 @@ class KDE_EXPORT WiredConnectionWidget : public SettingWidget
 Q_OBJECT
 
 public:
-    explicit WiredConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit WiredConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~WiredConnectionWidget();
 
-    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 

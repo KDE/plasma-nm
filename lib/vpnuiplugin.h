@@ -26,7 +26,7 @@
 #include <QVariant>
 #include <QMessageBox>
 
-#include <NetworkManagerQt/settings/VpnSetting>
+#include <NetworkManagerQt/VpnSetting>
 
 #include <kdemacros.h>
 
@@ -44,8 +44,8 @@ public:
     explicit VpnUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
     virtual ~VpnUiPlugin();
 
-    virtual SettingWidget * widget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;
-    virtual SettingWidget * askUser(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;
+    virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;
+    virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;
 
 #if 0
     /**

@@ -198,8 +198,8 @@ void NetworkKCM::on_removeConnectionBt_clicked()
     }
 
     QString uni = index.data(DeviceConnectionModel::RoleConnectionPath).toString();
-    NetworkManager::Settings::Connection::Ptr connection;
-    connection = NetworkManager::Settings::findConnection(uni);
+    NetworkManager::Connection::Ptr connection;
+    connection = NetworkManager::findConnection(uni);
     if (!connection) {
         return;
     }

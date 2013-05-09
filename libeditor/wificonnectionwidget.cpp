@@ -21,11 +21,11 @@
 #include "wificonnectionwidget.h"
 #include "ui_wificonnectionwidget.h"
 
-#include <NetworkManagerQt/settings/WirelessSetting>
+#include <NetworkManagerQt/WirelessSetting>
 
 #include "uiutils.h"
 
-WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::WifiConnectionWidget)
 {
@@ -41,15 +41,15 @@ WifiConnectionWidget::~WifiConnectionWidget()
 {
 }
 
-void WifiConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::WirelessSetting::Ptr wifiSetting = setting.staticCast<NetworkManager::Settings::WirelessSetting>();
+    NetworkManager::WirelessSetting::Ptr wifiSetting = setting.staticCast<NetworkManager::WirelessSetting>();
 
     if (!wifiSetting->ssid().isEmpty()) {
         m_ui->SSIDLineEdit->setText(QString::fromUtf8(wifiSetting->ssid()));
     }
 
-    if (wifiSetting->mode() != NetworkManager::Settings::WirelessSetting::Infrastructure) {
+    if (wifiSetting->mode() != NetworkManager::WirelessSetting::Infrastructure) {
         m_ui->modeComboBox->setCurrentIndex(wifiSetting->mode());
     }
 
@@ -76,14 +76,14 @@ QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned);
 
-    NetworkManager::Settings::WirelessSetting wifiSetting;
+    NetworkManager::WirelessSetting wifiSetting;
 
     if (!m_ui->SSIDLineEdit->text().isEmpty()) {
         wifiSetting.setSsid(m_ui->SSIDLineEdit->text().toUtf8());
     }
 
     if (m_ui->modeComboBox->currentIndex() != 0) {
-        wifiSetting.setMode(static_cast<NetworkManager::Settings::WirelessSetting::NetworkMode>(m_ui->modeComboBox->currentIndex()));
+        wifiSetting.setMode(static_cast<NetworkManager::WirelessSetting::NetworkMode>(m_ui->modeComboBox->currentIndex()));
     }
 
     if (!m_ui->BSSIDLineEdit->text().isEmpty() && m_ui->BSSIDLineEdit->text() != ":::::") {

@@ -22,11 +22,11 @@
 #include "ui_wimax.h"
 #include "uiutils.h"
 
-#include <NetworkManagerQt/settings/WimaxSetting>
+#include <NetworkManagerQt/WimaxSetting>
 
 #include <KLocalizedString>
 
-WimaxWidget::WimaxWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+WimaxWidget::WimaxWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::WimaxWidget)
 {
@@ -40,9 +40,9 @@ WimaxWidget::~WimaxWidget()
 {
 }
 
-void WimaxWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void WimaxWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::WimaxSetting::Ptr wimaxSetting = setting.staticCast<NetworkManager::Settings::WimaxSetting>();
+    NetworkManager::WimaxSetting::Ptr wimaxSetting = setting.staticCast<NetworkManager::WimaxSetting>();
 
     m_ui->networkName->setText(wimaxSetting->networkName());
     m_ui->macAddress->init(NetworkManager::Device::Wimax, UiUtils::macAddressAsString(wimaxSetting->macAddress()));
@@ -52,7 +52,7 @@ QVariantMap WimaxWidget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned);
 
-    NetworkManager::Settings::WimaxSetting wimaxSetting;
+    NetworkManager::WimaxSetting wimaxSetting;
 
     wimaxSetting.setNetworkName(m_ui->networkName->text());
     wimaxSetting.setMacAddress(UiUtils::macAddressFromString(m_ui->macAddress->hwAddress()));

@@ -24,15 +24,15 @@
 
 #include <KLocalizedString>
 
-BtWidget::BtWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+BtWidget::BtWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::BtWidget),
-    m_btSetting(setting.staticCast<NetworkManager::Settings::BluetoothSetting>())
+    m_btSetting(setting.staticCast<NetworkManager::BluetoothSetting>())
 {
     m_ui->setupUi(this);
 
-    m_ui->type->addItem(i18n("DUN (dial up networking)"), NetworkManager::Settings::BluetoothSetting::Dun);
-    m_ui->type->addItem(i18n("PAN (personal area network)"), NetworkManager::Settings::BluetoothSetting::Panu);
+    m_ui->type->addItem(i18n("DUN (dial up networking)"), NetworkManager::BluetoothSetting::Dun);
+    m_ui->type->addItem(i18n("PAN (personal area network)"), NetworkManager::BluetoothSetting::Panu);
 
     m_ui->type->setEnabled(false);
 
@@ -44,7 +44,7 @@ BtWidget::~BtWidget()
 {
 }
 
-void BtWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void BtWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     Q_UNUSED(setting);
 
@@ -56,10 +56,10 @@ QVariantMap BtWidget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned);
 
-    NetworkManager::Settings::BluetoothSetting btSetting;
+    NetworkManager::BluetoothSetting btSetting;
 
     btSetting.setBluetoothAddress(UiUtils::macAddressFromString(m_ui->bdaddr->hwAddress()));
-    btSetting.setProfileType(static_cast<NetworkManager::Settings::BluetoothSetting::ProfileType>(m_ui->type->itemData(m_ui->type->currentIndex()).toInt()));
+    btSetting.setProfileType(static_cast<NetworkManager::BluetoothSetting::ProfileType>(m_ui->type->itemData(m_ui->type->currentIndex()).toInt()));
 
     return btSetting.toMap();
 }

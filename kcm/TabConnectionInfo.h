@@ -16,7 +16,7 @@ public:
     explicit TabConnectionInfo(QWidget *parent = 0);
     ~TabConnectionInfo();
 
-    void setConnection(const NetworkManager::Settings::Connection::Ptr &connection);
+    void setConnection(const NetworkManager::Connection::Ptr &connection);
     
 private:
     Ui::TabConnectionInfo *ui;

@@ -24,8 +24,8 @@
 
 #include <vpnuiplugin.h>
 
-#include <NetworkManagerQt/settings/WirelessSetting>
-#include <NetworkManagerQt/settings/VpnSetting>
+#include <NetworkManagerQt/WirelessSetting>
+#include <NetworkManagerQt/VpnSetting>
 
 #include <KServiceTypeTrader>
 #include <KIcon>
@@ -51,9 +51,9 @@ PasswordDialog::~PasswordDialog()
     delete ui;
 }
 
-void PasswordDialog::setupGenericUi(const Settings::ConnectionSettings &connectionSettings)
+void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings)
 {
-    NetworkManager::Settings::Setting::Ptr setting = connectionSettings.setting(m_settingName);
+    NetworkManager::Setting::Ptr setting = connectionSettings.setting(m_settingName);
 
     ui = new Ui::PasswordDialog;
     ui->setupUi(mainWidget());
@@ -69,11 +69,11 @@ void PasswordDialog::setupGenericUi(const Settings::ConnectionSettings &connecti
         return;
     }
 
-    NetworkManager::Settings::WirelessSetting::Ptr wifi;
-    wifi = connectionSettings.setting(Settings::Setting::Wireless).dynamicCast<Settings::WirelessSetting>();
+    NetworkManager::WirelessSetting::Ptr wifi;
+    wifi = connectionSettings.setting(Setting::Wireless).dynamicCast<WirelessSetting>();
 
-    Settings::Setting::SettingType connectionType = setting->type();
-    if (wifi && (connectionType == Settings::Setting::WirelessSecurity || connectionType == Settings::Setting::Security8021x)) {
+    Setting::SettingType connectionType = setting->type();
+    if (wifi && (connectionType == Setting::WirelessSecurity || connectionType == Setting::Security8021x)) {
         QString ssid = wifi->ssid();
         ui->labelText->setText(i18n("For accessing the wireless network '%1' you need to provide a password below", ssid));
     } else {
@@ -85,10 +85,10 @@ void PasswordDialog::setupGenericUi(const Settings::ConnectionSettings &connecti
     connect(ui->showPassword, SIGNAL(toggled(bool)), this, SLOT(showPassword(bool)));
 }
 
-void PasswordDialog::setupVpnUi(const Settings::ConnectionSettings &connectionSettings)
+void PasswordDialog::setupVpnUi(const ConnectionSettings &connectionSettings)
 {
-    NetworkManager::Settings::VpnSetting::Ptr vpnSetting;
-    vpnSetting = connectionSettings.setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
+    NetworkManager::VpnSetting::Ptr vpnSetting;
+    vpnSetting = connectionSettings.setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
     if (!vpnSetting) {
         kDebug() << "Missing VPN setting!";
         m_hasError = true;

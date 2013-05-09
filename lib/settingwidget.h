@@ -22,7 +22,7 @@
 #define SETTING_WIDGET_H
 
 #include <QtGui/QWidget>
-#include <NetworkManagerQt/settings/Setting>
+#include <NetworkManagerQt/Setting>
 
 #include <kdemacros.h>
 
@@ -30,10 +30,10 @@ class KDE_EXPORT SettingWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SettingWidget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit SettingWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~SettingWidget();
 
-    virtual void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
+    virtual void loadConfig(const NetworkManager::Setting::Ptr &setting);
     virtual void readSecrets();
 
     virtual QVariantMap setting(bool agentOwned = false) const = 0;

@@ -26,7 +26,7 @@
 #include <QDomDocument>
 #include <QVariantMap>
 
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/ConnectionSettings>
 
 class MobileProviders
 {
@@ -42,7 +42,7 @@ public:
     QStringList getCountryList() const;
     QString countryFromLocale() const;
     QString getCountryName(const QString & key) { return mCountries[key]; }
-    QStringList getProvidersList(QString country, NetworkManager::Settings::ConnectionSettings::ConnectionType type);
+    QStringList getProvidersList(QString country, NetworkManager::ConnectionSettings::ConnectionType type);
     QStringList getApns(const QString & provider);
     QStringList getNetworkIds(const QString & provider);
     QVariantMap getApnInfo(const QString & apn);

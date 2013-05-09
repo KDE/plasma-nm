@@ -30,8 +30,8 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/VpnConnection>
 
-#include <NetworkManagerQt/settings/VpnSetting>
-#include <NetworkManagerQt/settings/WirelessSetting>
+#include <NetworkManagerQt/VpnSetting>
+#include <NetworkManagerQt/WirelessSetting>
 
 #include <ModemManagerQt/modemgsmnetworkinterface.h>
 
@@ -47,7 +47,7 @@ ModelItem::ModelItem(const QString& device, QObject * parent):
     m_secure(false),
     m_signal(0),
     m_sectionType(ModelItem::Unknown),
-    m_type(NetworkManager::Settings::ConnectionSettings::Unknown)
+    m_type(NetworkManager::ConnectionSettings::Unknown)
 {
     if (!device.isEmpty()) {
         setDevice(device);
@@ -86,44 +86,44 @@ QString ModelItem::deviceName() const
 QString ModelItem::icon() const
 {
     switch (m_type) {
-        case NetworkManager::Settings::ConnectionSettings::Adsl:
+        case NetworkManager::ConnectionSettings::Adsl:
             return "modem";
             break;
-        case NetworkManager::Settings::ConnectionSettings::Bluetooth:
+        case NetworkManager::ConnectionSettings::Bluetooth:
             return "preferences-system-bluetooth";
             break;
-        case NetworkManager::Settings::ConnectionSettings::Bond:
+        case NetworkManager::ConnectionSettings::Bond:
             break;
-        case NetworkManager::Settings::ConnectionSettings::Bridge:
+        case NetworkManager::ConnectionSettings::Bridge:
             break;
-        case NetworkManager::Settings::ConnectionSettings::Cdma:
+        case NetworkManager::ConnectionSettings::Cdma:
             return "phone";
             break;
-        case NetworkManager::Settings::ConnectionSettings::Gsm:
+        case NetworkManager::ConnectionSettings::Gsm:
             return "phone";
             break;
-        case NetworkManager::Settings::ConnectionSettings::Infiniband:
+        case NetworkManager::ConnectionSettings::Infiniband:
             break;
-        case NetworkManager::Settings::ConnectionSettings::OLPCMesh:
+        case NetworkManager::ConnectionSettings::OLPCMesh:
             break;
-        case NetworkManager::Settings::ConnectionSettings::Pppoe:
+        case NetworkManager::ConnectionSettings::Pppoe:
             return "modem";
             break;
-        case NetworkManager::Settings::ConnectionSettings::Vlan:
+        case NetworkManager::ConnectionSettings::Vlan:
             break;
-        case NetworkManager::Settings::ConnectionSettings::Vpn:
+        case NetworkManager::ConnectionSettings::Vpn:
             return "secure-card";
             break;
-        case NetworkManager::Settings::ConnectionSettings::Wimax:
+        case NetworkManager::ConnectionSettings::Wimax:
             break;
-        case NetworkManager::Settings::ConnectionSettings::Wired:
+        case NetworkManager::ConnectionSettings::Wired:
             if (connected()) {
                 return "network-wired-activated";
             } else {
                 return "network-wired";
             }
             break;
-        case NetworkManager::Settings::ConnectionSettings::Wireless:
+        case NetworkManager::ConnectionSettings::Wireless:
             if (m_signal < 13) {
                 return "network-wireless-connected-00";
             } else if (m_signal < 38) {
@@ -195,7 +195,7 @@ int ModelItem::signal() const
     return m_signal;
 }
 
-NetworkManager::Settings::ConnectionSettings::ConnectionType ModelItem::type() const
+NetworkManager::ConnectionSettings::ConnectionType ModelItem::type() const
 {
     return m_type;
 }
@@ -210,8 +210,8 @@ void ModelItem::updateDetails()
 
     foreach (const QString& key, m_detailKeys) {
         if (key == "interface:type") {
-            if (m_type != NetworkManager::Settings::ConnectionSettings::Unknown) {
-                m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::Settings::ConnectionSettings::typeAsString(m_type));
+            if (m_type != NetworkManager::ConnectionSettings::Unknown) {
+                m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::ConnectionSettings::typeAsString(m_type));
             }
         } else if (key == "interface:status") {
             QString status = i18n("Disconnected");
@@ -270,7 +270,7 @@ void ModelItem::updateDetails()
         }
     }
 
-    if (m_type == NetworkManager::Settings::ConnectionSettings::Bluetooth) {
+    if (m_type == NetworkManager::ConnectionSettings::Bluetooth) {
         NetworkManager::BluetoothDevice::Ptr btDevice;
         if (device) {
             btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
@@ -291,7 +291,7 @@ void ModelItem::updateDetails()
                 }
             }
         }
-    } else if (m_type == NetworkManager::Settings::ConnectionSettings::Gsm) {
+    } else if (m_type == NetworkManager::ConnectionSettings::Gsm) {
         NetworkManager::ModemDevice::Ptr modemDevice;
         ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork;
         if (device) {
@@ -344,7 +344,7 @@ void ModelItem::updateDetails()
                 }
             }
         }
-    } else if (m_type == NetworkManager::Settings::ConnectionSettings::Wired) {
+    } else if (m_type == NetworkManager::ConnectionSettings::Wired) {
         NetworkManager::WiredDevice::Ptr wiredDevice;
         if (device) {
             wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
@@ -361,7 +361,7 @@ void ModelItem::updateDetails()
                 }
             }
         }
-    } else if (m_type == NetworkManager::Settings::ConnectionSettings::Wireless) {
+    } else if (m_type == NetworkManager::ConnectionSettings::Wireless) {
         NetworkManager::WirelessDevice::Ptr wirelessDevice;
         if (device) {
             wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
@@ -402,18 +402,18 @@ void ModelItem::updateDetails()
                 }
             }
         }
-    } else if (m_type == NetworkManager::Settings::ConnectionSettings::Vpn) {
+    } else if (m_type == NetworkManager::ConnectionSettings::Vpn) {
         NetworkManager::ActiveConnection::Ptr active = NetworkManager::findActiveConnection(m_activePath);
-        NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnection(m_connectionPath);
-        NetworkManager::Settings::ConnectionSettings::Ptr connectionSettings;
-        NetworkManager::Settings::VpnSetting::Ptr vpnSetting;
+        NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_connectionPath);
+        NetworkManager::ConnectionSettings::Ptr connectionSettings;
+        NetworkManager::VpnSetting::Ptr vpnSetting;
         NetworkManager::VpnConnection::Ptr vpnConnection;
 
         if (connection) {
             connectionSettings = connection->settings();
         }
         if (connectionSettings) {
-            vpnSetting = connectionSettings->setting(NetworkManager::Settings::Setting::Vpn).dynamicCast<NetworkManager::Settings::VpnSetting>();
+            vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
         }
 
         if (active) {
@@ -442,7 +442,7 @@ bool ModelItem::operator==(const ModelItem* item) const
          (item->name() == this->name() && !item->name().isEmpty() && !this->name().isEmpty() && item->type() == this->type()) ||
          (item->ssid() == this->ssid() && !item->ssid().isEmpty() && !this->ssid().isEmpty())) &&
          ((item->devicePath() == this->devicePath() && !item->devicePath().isEmpty() && !this->devicePath().isEmpty()) ||
-          (item->type() == NetworkManager::Settings::ConnectionSettings::Vpn && this->type() == NetworkManager::Settings::ConnectionSettings::Vpn))) {
+          (item->type() == NetworkManager::ConnectionSettings::Vpn && this->type() == NetworkManager::ConnectionSettings::Vpn))) {
         return true;
     }
     return false;
@@ -493,7 +493,7 @@ void ModelItem::setDevice(const QString& device)
 void ModelItem::setConnection(const QString& connection)
 {
     m_connectionPath = connection;
-    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(m_connectionPath);
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(m_connectionPath);
 
     if (con) {
         setConnectionSettings(con->settings());
@@ -516,18 +516,18 @@ void ModelItem::setDetailKeys(const QStringList& keys)
     updateDetails();
 }
 
-void ModelItem::setConnectionSettings(const NetworkManager::Settings::ConnectionSettings::Ptr& settings)
+void ModelItem::setConnectionSettings(const NetworkManager::ConnectionSettings::Ptr& settings)
 {
     m_uuid = settings->uuid();
     m_name = settings->id();
     m_type = settings->connectionType();
 
-    if (type() == NetworkManager::Settings::ConnectionSettings::Wireless) {
+    if (type() == NetworkManager::ConnectionSettings::Wireless) {
         bool changed = false;
         QString previousSsid;
-        if (settings->connectionType() == NetworkManager::Settings::ConnectionSettings::Wireless) {
-            NetworkManager::Settings::WirelessSetting::Ptr wirelessSetting;
-            wirelessSetting = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
+        if (settings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
+            NetworkManager::WirelessSetting::Ptr wirelessSetting;
+            wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
             if (m_ssid != wirelessSetting->ssid()) {
                 if (!m_ssid.isEmpty()) {
                     changed = true;
@@ -583,7 +583,7 @@ void ModelItem::setWirelessNetwork(const QString& ssid)
         m_accessPointPath = network->referenceAccessPoint()->uni();
         m_ssid = network->ssid();
         m_signal = network->signalStrength();
-        m_type = NetworkManager::Settings::ConnectionSettings::Wireless;
+        m_type = NetworkManager::ConnectionSettings::Wireless;
 
         if (m_name.isEmpty() || m_connectionPath.isEmpty()) {
             m_name = m_ssid;
@@ -597,7 +597,7 @@ void ModelItem::setWirelessNetwork(const QString& ssid)
     } else {
         m_ssid.clear();
         m_signal = 0;
-        m_type = NetworkManager::Settings::ConnectionSettings::Unknown;
+        m_type = NetworkManager::ConnectionSettings::Unknown;
         m_secure = false;
     }
 

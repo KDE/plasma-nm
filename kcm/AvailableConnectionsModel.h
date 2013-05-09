@@ -55,7 +55,7 @@ private slots:
     void availableConnectionChanged();
     void connectionAdded(const QString &path);
     void connectionRemoved(const QString &path);
-    void addConnection(const NetworkManager::Settings::Connection::Ptr &connection);
+    void addConnection(const NetworkManager::Connection::Ptr &connection);
     void networkAppeared(const QString &ssid);
     void networkDisappeared(const QString &ssid);
     void addNetwork(const NetworkManager::WirelessNetwork::Ptr &network);

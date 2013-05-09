@@ -21,9 +21,9 @@
 #include "pppwidget.h"
 #include "ui_ppp.h"
 
-#include <NetworkManagerQt/settings/PppSetting>
+#include <NetworkManagerQt/PppSetting>
 
-PPPWidget::PPPWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+PPPWidget::PPPWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::PPPWidget)
 {
@@ -37,9 +37,9 @@ PPPWidget::~PPPWidget()
 {
 }
 
-void PPPWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void PPPWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::PppSetting::Ptr pppSetting = setting.staticCast<NetworkManager::Settings::PppSetting>();
+    NetworkManager::PppSetting::Ptr pppSetting = setting.staticCast<NetworkManager::PppSetting>();
 
     m_ui->eap->setChecked(!pppSetting->refuseEap());
     m_ui->pap->setChecked(!pppSetting->refusePap());
@@ -60,7 +60,7 @@ QVariantMap PPPWidget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned);
 
-    NetworkManager::Settings::PppSetting pppSetting;
+    NetworkManager::PppSetting pppSetting;
 
     pppSetting.setRefuseEap(!m_ui->eap->isChecked());
     pppSetting.setRefusePap(!m_ui->pap->isChecked());

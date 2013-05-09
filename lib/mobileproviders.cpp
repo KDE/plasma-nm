@@ -108,7 +108,7 @@ QString MobileProviders::countryFromLocale() const
     return lang.toUpper();
 }
 
-QStringList MobileProviders::getProvidersList(QString country, NetworkManager::Settings::ConnectionSettings::ConnectionType type)
+QStringList MobileProviders::getProvidersList(QString country, NetworkManager::ConnectionSettings::ConnectionType type)
 {
     mProvidersGsm.clear();
     mProvidersCdma.clear();
@@ -172,7 +172,7 @@ QStringList MobileProviders::getProvidersList(QString country, NetworkManager::S
         n = n.nextSibling();
     }
 
-    if (type == NetworkManager::Settings::ConnectionSettings::Gsm) {
+    if (type == NetworkManager::ConnectionSettings::Gsm) {
         return sortedGsm.values();
     }
     return sortedCdma.values();

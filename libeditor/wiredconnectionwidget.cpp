@@ -22,9 +22,9 @@
 #include "ui_wiredconnectionwidget.h"
 #include "uiutils.h"
 
-#include <NetworkManagerQt/settings/WiredSetting>
+#include <NetworkManagerQt/WiredSetting>
 
-WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_widget(new Ui::WiredConnectionWidget)
 {
@@ -44,9 +44,9 @@ WiredConnectionWidget::~WiredConnectionWidget()
 {
 }
 
-void WiredConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void WiredConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::WiredSetting::Ptr wiredSetting = setting.staticCast<NetworkManager::Settings::WiredSetting>();
+    NetworkManager::WiredSetting::Ptr wiredSetting = setting.staticCast<NetworkManager::WiredSetting>();
 
     m_widget->macAddress->init(NetworkManager::Device::Ethernet, UiUtils::macAddressAsString(wiredSetting->macAddress()));
 
@@ -63,7 +63,7 @@ void WiredConnectionWidget::loadConfig(const NetworkManager::Settings::Setting::
             m_widget->speed->setValue(wiredSetting->speed());
         }
 
-        if (wiredSetting->duplexType() == NetworkManager::Settings::WiredSetting::Full) {
+        if (wiredSetting->duplexType() == NetworkManager::WiredSetting::Full) {
             m_widget->duplex->setCurrentIndex(0);
         } else {
             m_widget->duplex->setCurrentIndex(1);
@@ -75,7 +75,7 @@ QVariantMap WiredConnectionWidget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned);
 
-    NetworkManager::Settings::WiredSetting wiredSetting;
+    NetworkManager::WiredSetting wiredSetting;
 
     wiredSetting.setMacAddress(UiUtils::macAddressFromString(m_widget->macAddress->hwAddress()));
 
@@ -97,9 +97,9 @@ QVariantMap WiredConnectionWidget::setting(bool agentOwned) const
         }
 
         if (m_widget->duplex->currentIndex() == 0) {
-            wiredSetting.setDuplexType(NetworkManager::Settings::WiredSetting::Full);
+            wiredSetting.setDuplexType(NetworkManager::WiredSetting::Full);
         } else {
-            wiredSetting.setDuplexType(NetworkManager::Settings::WiredSetting::Half);
+            wiredSetting.setDuplexType(NetworkManager::WiredSetting::Half);
         }
     }
 

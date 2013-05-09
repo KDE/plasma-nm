@@ -19,11 +19,11 @@
 
 #include "AvailableConnectionsModel.h"
 
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/settings/WirelessSetting>
+#include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WimaxDevice>
 #include <NetworkManagerQt/WimaxNsp>
@@ -51,19 +51,19 @@ void AvailableConnectionsModel::setDevice(const NetworkManager::Device::Ptr &dev
         NetworkManager::WirelessDevice::Ptr wifi = device.dynamicCast<NetworkManager::WirelessDevice>();
         wifi->requestScan();
         connect(device.data(), SIGNAL(availableConnectionChanged()), SLOT(availableConnectionChanged()));
-        foreach (const Settings::Connection::Ptr &connection, device->availableConnections()) {
+        foreach (const Connection::Ptr &connection, device->availableConnections()) {
             addConnection(connection);
         }
 
         connect(wifi.data(), SIGNAL(networkAppeared(QString)), SLOT(networkAppeared(QString)));
         connect(wifi.data(), SIGNAL(networkDisappeared(QString)), SLOT(networkDisappeared(QString)));
-        foreach (const NetworkManager::WirelessNetwork::Ptr &network, wifi->networks()) {
+        foreach (const WirelessNetwork::Ptr &network, wifi->networks()) {
             addNetwork(network);
         }
     } else if (device->type() == NetworkManager::Device::Wimax) {
         NetworkManager::WimaxDevice::Ptr wiMax = device.dynamicCast<NetworkManager::WimaxDevice>();
         connect(device.data(), SIGNAL(availableConnectionChanged()), SLOT(availableConnectionChanged()));
-        foreach (const Settings::Connection::Ptr &connection, device->availableConnections()) {
+        foreach (const Connection::Ptr &connection, device->availableConnections()) {
             addConnection(connection);
         }
 
@@ -77,7 +77,7 @@ void AvailableConnectionsModel::setDevice(const NetworkManager::Device::Ptr &dev
         }
     } else {
         connect(device.data(), SIGNAL(availableConnectionChanged()), SLOT(availableConnectionChanged()));
-        foreach (const Settings::Connection::Ptr &connection, device->availableConnections()) {
+        foreach (const Connection::Ptr &connection, device->availableConnections()) {
             addConnection(connection);
         }
     }
@@ -87,8 +87,8 @@ void AvailableConnectionsModel::availableConnectionChanged()
 {
     Device *device = qobject_cast<NetworkManager::Device*>(sender());
     if (device) {
-        Settings::Connection::List connections = device->availableConnections();
-        foreach (const Settings::Connection::Ptr &connection, connections) {
+        Connection::List connections = device->availableConnections();
+        foreach (const Connection::Ptr &connection, connections) {
             qWarning() << "Connection" << connection->name();
             if (!findConnectionItem(connection->path())) {
                 qWarning() << "New connection" << connection->name();
@@ -102,7 +102,7 @@ void AvailableConnectionsModel::availableConnectionChanged()
             if (kind == Connection) {
                 bool found = false;
                 QString path = item(i)->data(RoleConectionPath).toString();
-                foreach (const Settings::Connection::Ptr &connection, connections) {
+                foreach (const Connection::Ptr &connection, connections) {
                     if (connection->path() == path) {
                         found = true;
                         break;
@@ -122,7 +122,7 @@ void AvailableConnectionsModel::availableConnectionChanged()
 
 void AvailableConnectionsModel::connectionAdded(const QString &path)
 {
-    Settings::Connection::Ptr connection = Settings::findConnection(path);
+    Connection::Ptr connection = findConnection(path);
     if (connection) {
         addConnection(connection);
     }
@@ -136,7 +136,7 @@ void AvailableConnectionsModel::connectionRemoved(const QString &path)
     }
 }
 
-void AvailableConnectionsModel::addConnection(const NetworkManager::Settings::Connection::Ptr &connection)
+void AvailableConnectionsModel::addConnection(const NetworkManager::Connection::Ptr &connection)
 {
     QStandardItem *stdItem = findConnectionItem(connection->path());
     if (stdItem) {
@@ -147,10 +147,10 @@ void AvailableConnectionsModel::addConnection(const NetworkManager::Settings::Co
     stdItem->setData(Connection, RoleKinds);
     stdItem->setData(connection->path(), RoleConectionPath);
 
-    Settings::ConnectionSettings::Ptr settings = connection->settings();
-    if (settings->connectionType() == Settings::ConnectionSettings::Wireless) {
-        Settings::WirelessSetting::Ptr wirelessSetting;
-        wirelessSetting = settings->setting(Settings::Setting::Wireless).dynamicCast<Settings::WirelessSetting>();
+    ConnectionSettings::Ptr settings = connection->settings();
+    if (settings->connectionType() == ConnectionSettings::Wireless) {
+        WirelessSetting::Ptr wirelessSetting;
+        wirelessSetting = settings->setting(Setting::Wireless).dynamicCast<WirelessSetting>();
         stdItem->setData(wirelessSetting->ssid(), RoleNetworkID);
         stdItem->setData(wirelessSetting->macAddress(), RoleMacAddress);
         stdItem->setText(wirelessSetting->ssid());

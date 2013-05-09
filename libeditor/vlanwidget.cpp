@@ -22,10 +22,10 @@
 #include "ui_vlan.h"
 #include "uiutils.h"
 
-#include <NetworkManagerQt/settings/VlanSetting>
+#include <NetworkManagerQt/VlanSetting>
 #include <NetworkManagerQt/Settings>
 
-VlanWidget::VlanWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+VlanWidget::VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::VlanWidget)
 {
@@ -41,25 +41,25 @@ VlanWidget::~VlanWidget()
 {
 }
 
-void VlanWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void VlanWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::VlanSetting::Ptr vlanSetting = setting.staticCast<NetworkManager::Settings::VlanSetting>();
+    NetworkManager::VlanSetting::Ptr vlanSetting = setting.staticCast<NetworkManager::VlanSetting>();
 
     m_ui->parent->setCurrentIndex(m_ui->parent->findData(vlanSetting->parent()));
 
     m_ui->id->setValue(vlanSetting->id());
     m_ui->ifaceName->setText(vlanSetting->interfaceName());
 
-    m_ui->reorderHeaders->setChecked(vlanSetting->flags().testFlag(NetworkManager::Settings::VlanSetting::ReorderHeaders));
-    m_ui->gvrp->setChecked(vlanSetting->flags().testFlag(NetworkManager::Settings::VlanSetting::Gvrp));
-    m_ui->looseBinding->setChecked(vlanSetting->flags().testFlag(NetworkManager::Settings::VlanSetting::LooseBinding));
+    m_ui->reorderHeaders->setChecked(vlanSetting->flags().testFlag(NetworkManager::VlanSetting::ReorderHeaders));
+    m_ui->gvrp->setChecked(vlanSetting->flags().testFlag(NetworkManager::VlanSetting::Gvrp));
+    m_ui->looseBinding->setChecked(vlanSetting->flags().testFlag(NetworkManager::VlanSetting::LooseBinding));
 }
 
 QVariantMap VlanWidget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned);
 
-    NetworkManager::Settings::VlanSetting setting;
+    NetworkManager::VlanSetting setting;
 
     setting.setParent(m_ui->parent->itemData(m_ui->parent->currentIndex()).toString());
     setting.setId(m_ui->id->value());
@@ -68,13 +68,13 @@ QVariantMap VlanWidget::setting(bool agentOwned) const
     if (!ifaceName.isEmpty())
         setting.setInterfaceName(ifaceName);
 
-    NetworkManager::Settings::VlanSetting::Flags flags;
+    NetworkManager::VlanSetting::Flags flags;
     if (m_ui->reorderHeaders->isChecked())
-        flags |= NetworkManager::Settings::VlanSetting::ReorderHeaders;
+        flags |= NetworkManager::VlanSetting::ReorderHeaders;
     if (m_ui->gvrp->isChecked())
-        flags |= NetworkManager::Settings::VlanSetting::Gvrp;
+        flags |= NetworkManager::VlanSetting::Gvrp;
     if (m_ui->looseBinding->isChecked())
-        flags |= NetworkManager::Settings::VlanSetting::LooseBinding;
+        flags |= NetworkManager::VlanSetting::LooseBinding;
     if (flags)
         setting.setFlags(flags);
 
@@ -85,7 +85,7 @@ void VlanWidget::fillConnections()
 {
     m_ui->parent->clear();
 
-    foreach (const NetworkManager::Settings::Connection::Ptr &con, NetworkManager::Settings::listConnections()) {
+    foreach (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
         if (!con->settings()->isSlave())
             m_ui->parent->addItem(con->name(), con->uuid());
     }

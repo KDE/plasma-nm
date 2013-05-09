@@ -22,7 +22,7 @@
 #define PLASMA_NM_IPV4_WIDGET_H
 
 #include <QtGui/QWidget>
-#include <NetworkManagerQt/settings/Ipv4Setting>
+#include <NetworkManagerQt/Ipv4Setting>
 
 #include "settingwidget.h"
 #include "ui/ipv4routeswidget.h"
@@ -39,10 +39,10 @@ class KDE_EXPORT IPv4Widget : public SettingWidget
     Q_OBJECT
 
 public:
-    explicit IPv4Widget(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit IPv4Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~IPv4Widget();
 
-    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting);
 
     QVariantMap setting(bool agentOwned = false) const;
 
@@ -61,8 +61,8 @@ private slots:
 
 private:
     Ui::IPv4Widget * m_ui;
-    NetworkManager::Settings::Ipv4Setting::Ptr m_ipv4Setting;
-    NetworkManager::Settings::Ipv4Setting m_tmpIpv4Setting;
+    NetworkManager::Ipv4Setting::Ptr m_ipv4Setting;
+    NetworkManager::Ipv4Setting m_tmpIpv4Setting;
 
     class Private;
     Private *d;

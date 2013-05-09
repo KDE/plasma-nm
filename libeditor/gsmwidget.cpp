@@ -23,9 +23,9 @@
 
 #include <KLocalizedString>
 
-#include <NetworkManagerQt/settings/GsmSetting>
+#include <NetworkManagerQt/GsmSetting>
 
-GsmWidget::GsmWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::GsmWidget)
 {
@@ -35,13 +35,13 @@ GsmWidget::GsmWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWid
     m_ui->labelNetworkId->setHidden(true);
     m_ui->networkId->setHidden(true);
 
-    m_ui->type->addItem(i18nc("GSM network type", "Any"), NetworkManager::Settings::GsmSetting::Any);
-    m_ui->type->addItem(i18n("3G Only (UMTS/HSPA)"), NetworkManager::Settings::GsmSetting::Only3G);
-    m_ui->type->addItem(i18n("2G Only (GPRS/EDGE)"), NetworkManager::Settings::GsmSetting::GprsEdgeOnly);
-    m_ui->type->addItem(i18n("Prefer 3G (UMTS/HSPA)"), NetworkManager::Settings::GsmSetting::Prefer3G);
-    m_ui->type->addItem(i18n("Prefer 2G (GPRS/EDGE)"), NetworkManager::Settings::GsmSetting::Prefer2G);
-    m_ui->type->addItem(i18n("Prefer 4G (LTE)"), NetworkManager::Settings::GsmSetting::Prefer4GLte);
-    m_ui->type->addItem(i18n("4G Only (LTE)"), NetworkManager::Settings::GsmSetting::Only4GLte);
+    m_ui->type->addItem(i18nc("GSM network type", "Any"), NetworkManager::GsmSetting::Any);
+    m_ui->type->addItem(i18n("3G Only (UMTS/HSPA)"), NetworkManager::GsmSetting::Only3G);
+    m_ui->type->addItem(i18n("2G Only (GPRS/EDGE)"), NetworkManager::GsmSetting::GprsEdgeOnly);
+    m_ui->type->addItem(i18n("Prefer 3G (UMTS/HSPA)"), NetworkManager::GsmSetting::Prefer3G);
+    m_ui->type->addItem(i18n("Prefer 2G (GPRS/EDGE)"), NetworkManager::GsmSetting::Prefer2G);
+    m_ui->type->addItem(i18n("Prefer 4G (LTE)"), NetworkManager::GsmSetting::Prefer4GLte);
+    m_ui->type->addItem(i18n("4G Only (LTE)"), NetworkManager::GsmSetting::Only4GLte);
 
     connect(m_ui->cbShowPasswords, SIGNAL(toggled(bool)), SLOT(showPasswords(bool)));
     connect(m_ui->pinStorage, SIGNAL(currentIndexChanged(int)), SLOT(pinStorageChanged(int)));
@@ -56,32 +56,32 @@ GsmWidget::~GsmWidget()
 {
 }
 
-void GsmWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void GsmWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::GsmSetting::Ptr gsmSetting = setting.staticCast<NetworkManager::Settings::GsmSetting>();
+    NetworkManager::GsmSetting::Ptr gsmSetting = setting.staticCast<NetworkManager::GsmSetting>();
     const QString number = gsmSetting->number();
     if (!number.isEmpty())
         m_ui->number->setText(number);
     m_ui->username->setText(gsmSetting->username());
     m_ui->password->setText(gsmSetting->password());
-    if (gsmSetting->passwordFlags().testFlag(NetworkManager::Settings::Setting::None) ||
-        gsmSetting->passwordFlags().testFlag(NetworkManager::Settings::Setting::AgentOwned)) {
+    if (gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::None) ||
+        gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
         m_ui->passwordStorage->setCurrentIndex(0);
-    } else if (gsmSetting->passwordFlags().testFlag(NetworkManager::Settings::Setting::NotSaved)) {
+    } else if (gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::NotSaved)) {
         m_ui->passwordStorage->setCurrentIndex(1);
     } else {
         m_ui->passwordStorage->setCurrentIndex(2);
     }
     m_ui->apn->setText(gsmSetting->apn());
     m_ui->networkId->setText(gsmSetting->networkId());
-    if (gsmSetting->networkType() != NetworkManager::Settings::GsmSetting::Any)
+    if (gsmSetting->networkType() != NetworkManager::GsmSetting::Any)
         m_ui->type->setCurrentIndex(m_ui->type->findData(static_cast<int>(gsmSetting->networkType())));
     m_ui->roaming->setChecked(!gsmSetting->homeOnly());
     m_ui->pin->setText(gsmSetting->pin());
-    if (gsmSetting->pinFlags() == NetworkManager::Settings::Setting::None ||
-        gsmSetting->pinFlags() == NetworkManager::Settings::Setting::AgentOwned) {
+    if (gsmSetting->pinFlags() == NetworkManager::Setting::None ||
+        gsmSetting->pinFlags() == NetworkManager::Setting::AgentOwned) {
         m_ui->pinStorage->setCurrentIndex(0);
-    } else if (gsmSetting->pinFlags() == NetworkManager::Settings::Setting::NotSaved) {
+    } else if (gsmSetting->pinFlags() == NetworkManager::Setting::NotSaved) {
         m_ui->pinStorage->setCurrentIndex(1);
     } else {
         m_ui->pinStorage->setCurrentIndex(2);
@@ -90,7 +90,7 @@ void GsmWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting
 
 QVariantMap GsmWidget::setting(bool agentOwned) const
 {
-    NetworkManager::Settings::GsmSetting gsmSetting;
+    NetworkManager::GsmSetting gsmSetting;
     if (!m_ui->number->text().isEmpty())
         gsmSetting.setNumber(m_ui->number->text());
     if (!m_ui->username->text().isEmpty())
@@ -99,30 +99,30 @@ QVariantMap GsmWidget::setting(bool agentOwned) const
         gsmSetting.setPassword(m_ui->password->text());
     if (m_ui->passwordStorage->currentIndex() == 0) {
         if (agentOwned) {
-            gsmSetting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+            gsmSetting.setPasswordFlags(NetworkManager::Setting::AgentOwned);
         }
     } else if (m_ui->passwordStorage->currentIndex() == 1) {
-        gsmSetting.setPasswordFlags(NetworkManager::Settings::Setting::NotSaved);
+        gsmSetting.setPasswordFlags(NetworkManager::Setting::NotSaved);
     } else {
-        gsmSetting.setPasswordFlags(NetworkManager::Settings::Setting::NotRequired);
+        gsmSetting.setPasswordFlags(NetworkManager::Setting::NotRequired);
     }
 
     if (!m_ui->apn->text().isEmpty())
         gsmSetting.setApn(m_ui->apn->text());
     if (!m_ui->networkId->text().isEmpty())
         gsmSetting.setNetworkId(m_ui->networkId->text());
-    gsmSetting.setNetworkType(static_cast<NetworkManager::Settings::GsmSetting::NetworkType>(m_ui->type->itemData(m_ui->type->currentIndex()).toInt()));
+    gsmSetting.setNetworkType(static_cast<NetworkManager::GsmSetting::NetworkType>(m_ui->type->itemData(m_ui->type->currentIndex()).toInt()));
     gsmSetting.setHomeOnly(!m_ui->roaming->isChecked());
     if (!m_ui->pin->text().isEmpty())
         gsmSetting.setPin(m_ui->pin->text());
     if (m_ui->pinStorage->currentIndex() == 0) {
         if (agentOwned) {
-            gsmSetting.setPinFlags(NetworkManager::Settings::Setting::AgentOwned);
+            gsmSetting.setPinFlags(NetworkManager::Setting::AgentOwned);
         }
     } else if (m_ui->pinStorage->currentIndex() == 1) {
-        gsmSetting.setPinFlags(NetworkManager::Settings::Setting::NotSaved);
+        gsmSetting.setPinFlags(NetworkManager::Setting::NotSaved);
     } else {
-        gsmSetting.setPinFlags(NetworkManager::Settings::Setting::NotRequired);
+        gsmSetting.setPinFlags(NetworkManager::Setting::NotRequired);
     }
 
     return gsmSetting.toMap();

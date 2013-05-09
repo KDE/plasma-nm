@@ -25,7 +25,7 @@
 
 #include <QDBusMetaType>
 
-VpncWidget::VpncWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::VpncWidget),
     m_setting(setting)
@@ -47,7 +47,7 @@ VpncWidget::~VpncWidget()
 {
 }
 
-void VpncWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     Q_UNUSED(setting);
 
@@ -66,11 +66,11 @@ void VpncWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &settin
     if (!userPassword.isEmpty())
         m_ui->userPassword->setText(userPassword);
 
-    const NetworkManager::Settings::Setting::SecretFlags userPassType =
-            static_cast<NetworkManager::Settings::Setting::SecretFlags>(data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt());
-    if (userPassType.testFlag(NetworkManager::Settings::Setting::NotSaved))
+    const NetworkManager::Setting::SecretFlags userPassType =
+            static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt());
+    if (userPassType.testFlag(NetworkManager::Setting::NotSaved))
         m_ui->cboUserPasswordType->setCurrentIndex(0); // always ask
-    else if (userPassType.testFlag(NetworkManager::Settings::Setting::NotRequired))
+    else if (userPassType.testFlag(NetworkManager::Setting::NotRequired))
         m_ui->cboUserPasswordType->setCurrentIndex(2); // not required
     else
         m_ui->cboUserPasswordType->setCurrentIndex(1); // saved
@@ -83,11 +83,11 @@ void VpncWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &settin
     if (!groupPassword.isEmpty())
         m_ui->groupPassword->setText(groupPassword);
 
-    const NetworkManager::Settings::Setting::SecretFlags groupPassType =
-            static_cast<NetworkManager::Settings::Setting::SecretFlags>(data.value(NM_VPNC_KEY_SECRET"-flags").toInt());
-    if (groupPassType.testFlag(NetworkManager::Settings::Setting::NotSaved))
+    const NetworkManager::Setting::SecretFlags groupPassType =
+            static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_VPNC_KEY_SECRET"-flags").toInt());
+    if (groupPassType.testFlag(NetworkManager::Setting::NotSaved))
         m_ui->cboGroupPasswordType->setCurrentIndex(0); // always ask
-    else if (groupPassType.testFlag(NetworkManager::Settings::Setting::NotRequired))
+    else if (groupPassType.testFlag(NetworkManager::Setting::NotRequired))
         m_ui->cboGroupPasswordType->setCurrentIndex(2); // not required
     else
         m_ui->cboGroupPasswordType->setCurrentIndex(1); // saved
@@ -114,11 +114,11 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
 
     const int userPasswordTypeIndex =  m_ui->cboUserPasswordType->currentIndex();
     if (userPasswordTypeIndex == 0) // always ask
-        data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Settings::Setting::NotSaved));
+        data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
     else if (userPasswordTypeIndex == 2) // not required
-        data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Settings::Setting::NotRequired));
+        data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotRequired));
     else // none
-        data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Settings::Setting::None));
+        data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::None));
 
     if (!m_ui->group->text().isEmpty())
         data.insert(NM_VPNC_KEY_ID, m_ui->group->text());
@@ -128,11 +128,11 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
 
     const int groupPasswordTypeIndex =  m_ui->cboGroupPasswordType->currentIndex();
     if (groupPasswordTypeIndex == 0) // always ask
-        data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Settings::Setting::NotSaved));
+        data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::NotSaved));
     else if (groupPasswordTypeIndex == 2) // not required
-        data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Settings::Setting::NotRequired));
+        data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::NotRequired));
     else // none
-        data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Settings::Setting::None));
+        data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::None));
 
     if (m_ui->useHybridAuth->isChecked() && !m_ui->caFile->url().isEmpty()) {
         data.insert(NM_VPNC_KEY_AUTHMODE, "hybrid");

@@ -23,7 +23,7 @@
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/WiredDevice>
-#include <NetworkManagerQt/settings/WirelessSetting>
+#include <NetworkManagerQt/WirelessSetting>
 
 #include "debug.h"
 
@@ -172,7 +172,7 @@ void Model::addActiveConnection(const QString& active)
         }
 
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(activeConnection->devices().first());
-        NetworkManager::Settings::Connection::Ptr connection = activeConnection->connection();
+        NetworkManager::Connection::Ptr connection = activeConnection->connection();
 
         if (!device || !connection) {
             return;
@@ -206,7 +206,7 @@ void Model::activeConnectionStateChanged(const QString& active, NetworkManager::
 
 void Model::addConnection(const QString& connection, const QString& device)
 {
-    NetworkManager::Settings::Connection::Ptr con = NetworkManager::Settings::findConnection(connection);
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (con->settings()->isSlave()) {
         return;
@@ -299,7 +299,7 @@ void Model::removeConnectionsByDevice(const QString& device)
 
 void Model::removeVpnConnections()
 {
-    foreach (ModelItem * item, m_items.itemsByType(NetworkManager::Settings::ConnectionSettings::Vpn)) {
+    foreach (ModelItem * item, m_items.itemsByType(NetworkManager::ConnectionSettings::Vpn)) {
         QString name = item->name();
         if (removeItem(item)) {
             NMModelDebug() << "VPN Connection " << name << " has been removed";
@@ -318,7 +318,7 @@ void Model::removeWirelessNetwork(const QString& ssid, const QString& device)
 
 void Model::removeWirelessNetworks()
 {
-    foreach (ModelItem * item, m_items.itemsByType(NetworkManager::Settings::ConnectionSettings::Wireless)) {
+    foreach (ModelItem * item, m_items.itemsByType(NetworkManager::ConnectionSettings::Wireless)) {
         if (removeItem(item)) {
             NMModelDebug() << "Wireless network " << item->ssid() << " has been completely removed";
         }

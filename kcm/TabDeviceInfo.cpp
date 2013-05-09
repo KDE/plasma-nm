@@ -29,9 +29,9 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/IpConfig>
 #include <NetworkManagerQt/WimaxDevice>
-#include <NetworkManagerQt/settings/WirelessSetting>
-#include <NetworkManagerQt/settings/WimaxSetting>
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/WirelessSetting>
+#include <NetworkManagerQt/WimaxSetting>
+#include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ActiveConnection>
 
@@ -193,24 +193,24 @@ void TabDeviceInfo::on_connectionCB_activated(int index)
                 return;
             }
 
-            NetworkManager::Settings::ConnectionSettings settings(NetworkManager::Settings::ConnectionSettings::Wireless);
+            NetworkManager::ConnectionSettings settings(NetworkManager::ConnectionSettings::Wireless);
             settings.setId(name);
-            settings.setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
+            settings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
 
-            NetworkManager::Settings::WirelessSetting::Ptr wifiSetting;
-            wifiSetting = settings.setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
+            NetworkManager::WirelessSetting::Ptr wifiSetting;
+            wifiSetting = settings.setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
             wifiSetting->setSsid(ssid);
 
             reply = NetworkManager::addAndActivateConnection(settings.toMap(), m_device->uni(), network->referenceAccessPoint()->uni());
         } else if (kind & AvailableConnectionsModel::NetworkNsp) {
             QString uni = modelIndex.data(AvailableConnectionsModel::RoleNetworkID).toString();
 
-            NetworkManager::Settings::ConnectionSettings settings(NetworkManager::Settings::ConnectionSettings::Wimax);
+            NetworkManager::ConnectionSettings settings(NetworkManager::ConnectionSettings::Wimax);
             settings.setId(name);
-            settings.setUuid(NetworkManager::Settings::ConnectionSettings::createNewUuid());
+            settings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
 
-            NetworkManager::Settings::WimaxSetting::Ptr wimaxSetting;
-            wimaxSetting = settings.setting(NetworkManager::Settings::Setting::Wimax).dynamicCast<NetworkManager::Settings::WimaxSetting>();
+            NetworkManager::WimaxSetting::Ptr wimaxSetting;
+            wimaxSetting = settings.setting(NetworkManager::Setting::Wimax).dynamicCast<NetworkManager::WimaxSetting>();
             wimaxSetting->setNetworkName(name);
             reply = NetworkManager::addAndActivateConnection(settings.toMap(), m_device->uni(), uni);
         }

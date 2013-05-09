@@ -27,7 +27,7 @@
 #include <NetworkManagerQt/GenericTypes>
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/ConnectionSettings>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -35,7 +35,7 @@
 #define NM_SETTING_BOND_OPTION_MII_MONITOR "mii"
 #define NM_SETTING_BOND_OPTION_ARP_MONITOR "arp"
 
-BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_uuid(masterUuid),
     m_ui(new Ui::BondWidget)
@@ -45,10 +45,10 @@ BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Setting
     // Action buttons and menu
     m_menu = new QMenu(this);
     QAction * action = new QAction(i18n("Ethernet"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Wired);
+    action->setData(NetworkManager::ConnectionSettings::Wired);
     m_menu->addAction(action);
     action = new QAction(i18n("InfiniBand"), this);
-    action->setData(NetworkManager::Settings::ConnectionSettings::Infiniband);
+    action->setData(NetworkManager::ConnectionSettings::Infiniband);
     m_menu->addAction(action);
     m_ui->btnAdd->setMenu(m_menu);
     connect(m_menu, SIGNAL(triggered(QAction*)), SLOT(addBond(QAction*)));
@@ -80,9 +80,9 @@ BondWidget::~BondWidget()
 {
 }
 
-void BondWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void BondWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::BondSetting bondSetting = setting.staticCast<NetworkManager::Settings::BondSetting>();
+    NetworkManager::BondSetting bondSetting = setting.staticCast<NetworkManager::BondSetting>();
 
     m_ui->ifaceName->setText(bondSetting.interfaceName());
 
@@ -128,7 +128,7 @@ QVariantMap BondWidget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned)
 
-    NetworkManager::Settings::BondSetting setting;
+    NetworkManager::BondSetting setting;
     setting.setInterfaceName(m_ui->ifaceName->text());
 
     NMStringMap options;
@@ -159,11 +159,11 @@ void BondWidget::addBond(QAction *action)
     qDebug() << "Master UUID:" << m_uuid;
     qDebug() << "Slave type:" << type();
 
-    ConnectionDetailEditor * bondEditor = new ConnectionDetailEditor(NetworkManager::Settings::ConnectionSettings::ConnectionType(action->data().toInt()),
+    ConnectionDetailEditor * bondEditor = new ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType(action->data().toInt()),
                                                                      this, QString(), m_uuid, type());
     if (bondEditor->exec() == QDialog::Accepted) {
         qDebug() << "Saving slave connection";
-        connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
+        connect(NetworkManager::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                 this, SLOT(bondAddComplete(QString,bool,QString)));
     }
 }
@@ -181,7 +181,7 @@ void BondWidget::bondAddComplete(const QString &uuid, bool success, const QStrin
     qDebug() << Q_FUNC_INFO << uuid << success << msg;
 
     // find the slave connection with matching UUID
-    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(uuid);
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
     if (connection && connection->settings()->master() == m_uuid && success) {
         const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
         QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->bonds);
@@ -190,7 +190,7 @@ void BondWidget::bondAddComplete(const QString &uuid, bool success, const QStrin
         qWarning() << "Bonded connection not added:" << msg;
     }
 
-    disconnect(NetworkManager::Settings::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
+    disconnect(NetworkManager::notifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                this, SLOT(bondAddComplete(QString,bool,QString)));
 }
 
@@ -201,7 +201,7 @@ void BondWidget::editBond()
         return;
 
     const QString uuid = currentItem->data(Qt::UserRole).toString();
-    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(uuid);
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
 
     if (connection) {
         qDebug() << "Editing bonded connection" << currentItem->text() << uuid;
@@ -219,7 +219,7 @@ void BondWidget::deleteBond()
         return;
 
     const QString uuid = currentItem->data(Qt::UserRole).toString();
-    NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(uuid);
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
 
     if (connection) {
         qDebug() << "About to delete bonded connection" << currentItem->text() << uuid;
@@ -236,8 +236,8 @@ void BondWidget::populateBonds()
 {
     m_ui->bonds->clear();
 
-    foreach (const NetworkManager::Settings::Connection::Ptr &connection, NetworkManager::Settings::listConnections()) {
-        NetworkManager::Settings::ConnectionSettings::Ptr settings = connection->settings();
+    foreach (const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
+        NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
         if (settings->master() == m_uuid && settings->slaveType() == type()) {
             const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
             QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->bonds);

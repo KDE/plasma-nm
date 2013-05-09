@@ -37,16 +37,16 @@
 
 #define NUMBER_OF_STATIC_ENTRIES 3
 
-MobileConnectionWizard::MobileConnectionWizard(NetworkManager::Settings::ConnectionSettings::ConnectionType connectionType, QWidget * parent)
+MobileConnectionWizard::MobileConnectionWizard(NetworkManager::ConnectionSettings::ConnectionType connectionType, QWidget * parent)
     : QWizard(parent)
 {
-    if (connectionType == NetworkManager::Settings::ConnectionSettings::Unknown) {
+    if (connectionType == NetworkManager::ConnectionSettings::Unknown) {
         mInitialMethodType = false;
     } else {
         mInitialMethodType = true;
 
-        if (connectionType == NetworkManager::Settings::ConnectionSettings::Bluetooth) {
-            mType = NetworkManager::Settings::ConnectionSettings::Gsm;
+        if (connectionType == NetworkManager::ConnectionSettings::Bluetooth) {
+            mType = NetworkManager::ConnectionSettings::Gsm;
         } else {
             mType = connectionType;
         }
@@ -97,13 +97,13 @@ void MobileConnectionWizard::initializePage(int id)
             if (iface) {
                 NetworkManager::ModemDevice::Ptr nmModemIface = iface.objectCast<NetworkManager::ModemDevice>();
                 if (nmModemIface && UiUtils::modemSubType(nmModemIface->currentCapabilities()) == NetworkManager::ModemDevice::CdmaEvdo) {
-                    mType = NetworkManager::Settings::ConnectionSettings::Cdma;
+                    mType = NetworkManager::ConnectionSettings::Cdma;
                 } else {
-                    mType = NetworkManager::Settings::ConnectionSettings::Gsm;
+                    mType = NetworkManager::ConnectionSettings::Gsm;
                 }
                 /* TODO: test for Lte */
             } else {
-                mType = static_cast<NetworkManager::Settings::ConnectionSettings::ConnectionType>(mDeviceComboBox->itemData(mDeviceComboBox->currentIndex()).toUInt());
+                mType = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(mDeviceComboBox->itemData(mDeviceComboBox->currentIndex()).toUInt());
             }
         }
 
@@ -120,11 +120,11 @@ void MobileConnectionWizard::initializePage(int id)
         radioAutoProvider->setChecked(true);
 
         switch (type()) {
-        case NetworkManager::Settings::ConnectionSettings::Gsm:
-            mProvidersList->insertItems(0, mProviders->getProvidersList(country, NetworkManager::Settings::ConnectionSettings::Gsm));
+        case NetworkManager::ConnectionSettings::Gsm:
+            mProvidersList->insertItems(0, mProviders->getProvidersList(country, NetworkManager::ConnectionSettings::Gsm));
             break;
-        case NetworkManager::Settings::ConnectionSettings::Cdma:
-            mProvidersList->insertItems(0, mProviders->getProvidersList(country, NetworkManager::Settings::ConnectionSettings::Cdma));
+        case NetworkManager::ConnectionSettings::Cdma:
+            mProvidersList->insertItems(0, mProviders->getProvidersList(country, NetworkManager::ConnectionSettings::Cdma));
             break;
         default:
             break;
@@ -146,7 +146,7 @@ void MobileConnectionWizard::initializePage(int id)
     case 3: // Plans Page
         disconnect(mPlanComboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(slotEnablePlanEditBox(QString)));
         mPlanComboBox->clear();
-        if (type() != NetworkManager::Settings::ConnectionSettings::Gsm) {
+        if (type() != NetworkManager::ConnectionSettings::Gsm) {
             goto OUT_3;
         }
         if (radioManualProvider->isChecked()) {
@@ -184,7 +184,7 @@ OUT_3:
             provider = mProvidersList->currentItem()->text();
         }
 
-        if (type() == NetworkManager::Settings::ConnectionSettings::Cdma) {
+        if (type() == NetworkManager::ConnectionSettings::Cdma) {
             labelPlanLabel->hide();
             labelPlan->hide();
             labelApn->hide();
@@ -216,7 +216,7 @@ OUT_3:
 int MobileConnectionWizard::nextId() const
 {
     // Providers page
-    if (currentId() == 2 && type() != NetworkManager::Settings::ConnectionSettings::Gsm) {
+    if (currentId() == 2 && type() != NetworkManager::ConnectionSettings::Gsm) {
         // Jumps to Confirm page instead of Plans page if type != Gsm.
         return 4;
     } else {
@@ -229,11 +229,11 @@ QVariantList MobileConnectionWizard::args()
     QVariantList temp;
 
     switch (type()) {
-    case NetworkManager::Settings::ConnectionSettings::Cdma:
+    case NetworkManager::ConnectionSettings::Cdma:
         temp << provider << mProviders->getCdmaInfo(provider);
         break;
 
-    case NetworkManager::Settings::ConnectionSettings::Gsm:
+    case NetworkManager::ConnectionSettings::Gsm:
         temp << provider /*<< mProviders->getNetworkIds(provider)*/ << mProviders->getApnInfo(apn);
         break;
 
@@ -272,9 +272,9 @@ QWizardPage * MobileConnectionWizard::createIntroPage()
 
         mDeviceComboBox = new KComboBox();
         mDeviceComboBox->addItem(i18nc("Mobile Connection Wizard", "Any GSM device"));
-        mDeviceComboBox->setItemData(0, NetworkManager::Settings::ConnectionSettings::Gsm);
+        mDeviceComboBox->setItemData(0, NetworkManager::ConnectionSettings::Gsm);
         mDeviceComboBox->addItem(i18nc("Mobile Connection Wizard", "Any CDMA device"));
-        mDeviceComboBox->setItemData(1, NetworkManager::Settings::ConnectionSettings::Cdma);
+        mDeviceComboBox->setItemData(1, NetworkManager::ConnectionSettings::Cdma);
         mDeviceComboBox->insertSeparator(NUMBER_OF_STATIC_ENTRIES-1);
         label->setBuddy(mDeviceComboBox);
         layout->addWidget(mDeviceComboBox);
@@ -401,9 +401,9 @@ void MobileConnectionWizard::introRemoveAllDevices()
 {
     mDeviceComboBox->clear();
     mDeviceComboBox->addItem(i18nc("Mobile Connection Wizard", "Any GSM device"));
-    mDeviceComboBox->setItemData(0, NetworkManager::Settings::ConnectionSettings::Gsm);
+    mDeviceComboBox->setItemData(0, NetworkManager::ConnectionSettings::Gsm);
     mDeviceComboBox->addItem(i18nc("Mobile Connection Wizard", "Any CDMA device"));
-    mDeviceComboBox->setItemData(1, NetworkManager::Settings::ConnectionSettings::Cdma);
+    mDeviceComboBox->setItemData(1, NetworkManager::ConnectionSettings::Cdma);
     mDeviceComboBox->insertSeparator(NUMBER_OF_STATIC_ENTRIES-1);
     mDeviceComboBox->setCurrentIndex(0);
 }
@@ -527,7 +527,7 @@ QWizardPage * MobileConnectionWizard::createPlansPage()
 
 void MobileConnectionWizard::slotEnablePlanEditBox(const QString & text)
 {
-    if (type() != NetworkManager::Settings::ConnectionSettings::Gsm) {
+    if (type() != NetworkManager::ConnectionSettings::Gsm) {
         return;
     }
     if (text == i18nc("Mobile Connection Wizard", "My plan is not listed...")) {

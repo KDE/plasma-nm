@@ -23,8 +23,8 @@
 
 #include <QtGui/QWidget>
 
-#include <NetworkManagerQt/settings/WirelessSecuritySetting>
-#include <NetworkManagerQt/settings/Security8021xSetting>
+#include <NetworkManagerQt/WirelessSecuritySetting>
+#include <NetworkManagerQt/Security8021xSetting>
 
 #include "settingwidget.h"
 #include "security802-1x.h"
@@ -40,11 +40,11 @@ class KDE_EXPORT WifiSecurity : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit WifiSecurity(const NetworkManager::Settings::Setting::Ptr &setting = NetworkManager::Settings::Setting::Ptr(),
-                 const NetworkManager::Settings::Security8021xSetting::Ptr &setting8021x = NetworkManager::Settings::Security8021xSetting::Ptr(),
+    explicit WifiSecurity(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
+                 const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(),
                  QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~WifiSecurity();
-    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting);
     QVariantMap setting(bool agentOwned = false) const;
     QVariantMap setting8021x(bool agentOwned = false) const;
 
@@ -61,7 +61,7 @@ private:
     Ui::WifiSecurity * m_ui;
     Security8021x * m_8021xWidget;
     Security8021x * m_WPA2Widget;
-    NetworkManager::Settings::WirelessSecuritySetting::Ptr m_wifiSecurity;
+    NetworkManager::WirelessSecuritySetting::Ptr m_wifiSecurity;
 };
 
 #endif // PLASMA_NM_WIFI_SECURITY_H

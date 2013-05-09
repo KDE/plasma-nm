@@ -23,7 +23,7 @@
 
 #include <QtGui/QWidget>
 
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/ConnectionSettings>
 
 namespace Ui
 {
@@ -35,11 +35,11 @@ class ConnectionWidget : public QWidget
 Q_OBJECT
 
 public:
-    explicit ConnectionWidget(const NetworkManager::Settings::ConnectionSettings::Ptr &settings = NetworkManager::Settings::ConnectionSettings::Ptr(),
+    explicit ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr &settings = NetworkManager::ConnectionSettings::Ptr(),
                      QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~ConnectionWidget();
 
-    void loadConfig(const NetworkManager::Settings::ConnectionSettings::Ptr &settings);
+    void loadConfig(const NetworkManager::ConnectionSettings::Ptr &settings);
 
     NMVariantMapMap setting() const;
 
@@ -51,7 +51,7 @@ private:
 
     void populateVpnConnections();
     Ui::ConnectionWidget * m_widget;
-    NetworkManager::Settings::ConnectionSettings::ConnectionType m_type;
+    NetworkManager::ConnectionSettings::ConnectionType m_type;
     QString m_masterUuid;
     QString m_slaveType;
 };

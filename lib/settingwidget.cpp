@@ -20,7 +20,7 @@
 
 #include "settingwidget.h"
 
-SettingWidget::SettingWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+SettingWidget::SettingWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     QWidget(parent, f),
     m_type(setting->name())
 {
@@ -30,7 +30,7 @@ SettingWidget::~SettingWidget()
 {
 }
 
-void SettingWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void SettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     Q_UNUSED(setting);
 }

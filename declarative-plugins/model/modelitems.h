@@ -42,7 +42,7 @@ public:
     QList<ModelItem*> itemsBySsid(const QString& ssid) const;
     QList<ModelItem*> itemsBySsid(const QString& ssid, const QString& device) const;
     QList<ModelItem*> itemsByUuid(const QString& uuid) const;
-    QList<ModelItem*> itemsByType(NetworkManager::Settings::ConnectionSettings::ConnectionType type) const;
+    QList<ModelItem*> itemsByType(NetworkManager::ConnectionSettings::ConnectionType type) const;
 
     QList<ModelItem*> items() const;
 

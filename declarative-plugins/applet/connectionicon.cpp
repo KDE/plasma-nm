@@ -27,8 +27,8 @@
 #include <NetworkManagerQt/ModemDevice>
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessDevice>
-#include <NetworkManagerQt/settings/ConnectionSettings>
-#include <NetworkManagerQt/settings/WirelessSetting>
+#include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/WirelessSetting>
 
 #include "debug.h"
 
@@ -164,9 +164,9 @@ void ConnectionIcon::setIcons()
                 NetworkManager::Device::Type type = device->type();
 
                 if (type == NetworkManager::Device::Wifi) {
-                    NetworkManager::Settings::ConnectionSettings::Ptr settings;
+                    NetworkManager::ConnectionSettings::Ptr settings;
                     settings = active->connection()->settings();
-                    NetworkManager::Settings::WirelessSetting::Ptr wirelessSetting = settings->setting(NetworkManager::Settings::Setting::Wireless).dynamicCast<NetworkManager::Settings::WirelessSetting>();
+                    NetworkManager::WirelessSetting::Ptr wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
                     setWirelessIcon(device, wirelessSetting->ssid());
                     connectionFound = true;
                 } else if (type == NetworkManager::Device::Ethernet) {

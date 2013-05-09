@@ -39,7 +39,6 @@
 #include <KIcon>
 
 using namespace NetworkManager;
-using namespace NetworkManager::Settings;
 
 DeviceConnectionModel::DeviceConnectionModel(QObject *parent) :
     QStandardItemModel(parent)
@@ -48,9 +47,9 @@ DeviceConnectionModel::DeviceConnectionModel(QObject *parent) :
             this, SLOT(initConnections()));
     connect(NetworkManager::notifier(), SIGNAL(serviceDisappeared()),
             this, SLOT(removeConnections()));
-    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionAdded(QString)),
+    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
             this, SLOT(connectionAdded(QString)));
-    connect(NetworkManager::Settings::notifier(), SIGNAL(connectionRemoved(QString)),
+    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
             this, SLOT(connectionRemoved(QString)));
 
     connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)),
@@ -94,7 +93,7 @@ Qt::ItemFlags DeviceConnectionModel::flags(const QModelIndex &index) const
 
 void DeviceConnectionModel::initConnections()
 {
-    foreach (const Settings::Connection::Ptr &connection, Settings::listConnections()) {
+    foreach (const Connection::Ptr &connection, NetworkManager::listConnections()) {
         addConnection(connection);
     }
 }
@@ -175,7 +174,7 @@ void DeviceConnectionModel::changeDevice(QStandardItem *stdItem, const NetworkMa
 
 void DeviceConnectionModel::connectionAdded(const QString &path)
 {
-    Settings::Connection::Ptr connection = Settings::findConnection(path);
+    Connection::Ptr connection = NetworkManager::findConnection(path);
     if (connection) {
         addConnection(connection);
     }
@@ -183,9 +182,9 @@ void DeviceConnectionModel::connectionAdded(const QString &path)
 
 void DeviceConnectionModel::connectionUpdated()
 {
-    Settings::Connection *caller = qobject_cast<Settings::Connection*>(sender());
+    Connection *caller = qobject_cast<Connection*>(sender());
     if (caller) {
-        Settings::Connection::Ptr connection = Settings::findConnection(caller->path());
+        Connection::Ptr connection = findConnection(caller->path());
         if (connection) {
             QStandardItem *stdItem = findConnectionItem(connection->path(), RoleConnectionPath);
             if (!stdItem) {
@@ -216,7 +215,7 @@ void DeviceConnectionModel::activeConnectionAdded(const QString &path)
         return;
     }
 
-    Settings::Connection::Ptr connection = activeConnection->connection();
+    Connection::Ptr connection = activeConnection->connection();
     if (connection) {
         QStandardItem *stdItem = findConnectionItem(connection->path(), RoleConnectionPath);
         if (!stdItem) {
@@ -235,14 +234,14 @@ void DeviceConnectionModel::activeConnectionRemoved(const QString &path)
     }
 }
 
-void DeviceConnectionModel::addConnection(const Settings::Connection::Ptr &connection)
+void DeviceConnectionModel::addConnection(const Connection::Ptr &connection)
 {
     QStandardItem *stdItem = findConnectionItem(connection->path(), RoleConnectionPath);
     if (stdItem) {
         return;
     }
 
-    Settings::ConnectionSettings::ConnectionType type = connection->settings()->connectionType();
+    ConnectionSettings::ConnectionType type = connection->settings()->connectionType();
     QStandardItem *parentItem = findOrCreateConnectionType(type);
     connect(connection.data(), SIGNAL(updated()),
             this, SLOT(connectionUpdated()));
@@ -326,7 +325,7 @@ QStandardItem *DeviceConnectionModel::findConnectionItem(const QString &path, De
     return 0;
 }
 
-QStandardItem *DeviceConnectionModel::findOrCreateConnectionType(Settings::ConnectionSettings::ConnectionType type)
+QStandardItem *DeviceConnectionModel::findOrCreateConnectionType(ConnectionSettings::ConnectionType type)
 {
     QStandardItem *parentItem = 0;
     for (int i = 0; i < rowCount(); ++i) {

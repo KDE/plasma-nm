@@ -30,7 +30,7 @@
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/ConnectionSettings>
 
 int main(int argc, char *argv[])
 {
@@ -55,10 +55,10 @@ int main(int argc, char *argv[])
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     if(args->count()) {
-        NetworkManager::Settings::Connection::Ptr connection = NetworkManager::Settings::findConnectionByUuid(args->arg(0));
+        NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(args->arg(0));
 
         if (connection) {
-            NetworkManager::Settings::ConnectionSettings::Ptr connectionSetting = connection->settings();
+            NetworkManager::ConnectionSettings::Ptr connectionSetting = connection->settings();
 
             ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting);
             editor->show();

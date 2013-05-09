@@ -21,9 +21,9 @@
 #include "cdmawidget.h"
 #include "ui_cdma.h"
 
-#include <NetworkManagerQt/settings/CdmaSetting>
+#include <NetworkManagerQt/CdmaSetting>
 
-CdmaWidget::CdmaWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+CdmaWidget::CdmaWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::CdmaWidget)
 {
@@ -39,9 +39,9 @@ CdmaWidget::~CdmaWidget()
 {
 }
 
-void CdmaWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void CdmaWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::CdmaSetting::Ptr cdmaSetting = setting.staticCast<NetworkManager::Settings::CdmaSetting>();
+    NetworkManager::CdmaSetting::Ptr cdmaSetting = setting.staticCast<NetworkManager::CdmaSetting>();
     const QString number = cdmaSetting->number();
     if (!number.isEmpty())
         m_ui->number->setText(number);
@@ -51,7 +51,7 @@ void CdmaWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &settin
 
 QVariantMap CdmaWidget::setting(bool agentOwned) const
 {
-    NetworkManager::Settings::CdmaSetting cdmaSetting;
+    NetworkManager::CdmaSetting cdmaSetting;
     if (!m_ui->number->text().isEmpty())
         cdmaSetting.setNumber(m_ui->number->text());
     if (!m_ui->username->text().isEmpty())
@@ -60,7 +60,7 @@ QVariantMap CdmaWidget::setting(bool agentOwned) const
         cdmaSetting.setPassword(m_ui->password->text());
 
     if (agentOwned) {
-        cdmaSetting.setPasswordFlags(NetworkManager::Settings::Setting::AgentOwned);
+        cdmaSetting.setPasswordFlags(NetworkManager::Setting::AgentOwned);
     }
 
     return cdmaSetting.toMap();

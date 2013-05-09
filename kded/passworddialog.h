@@ -22,7 +22,7 @@
 #ifndef PLASMA_NM_PASSWOR_DDIALOG_H
 #define PLASMA_NM_PASSWORD_DIALOG_H
 
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/SecretAgent>
 
 #include <KDialog>
@@ -42,8 +42,8 @@ public:
                             const QString &setting_name,
                             QWidget *parent = 0);
     ~PasswordDialog();
-    void setupGenericUi(const NetworkManager::Settings::ConnectionSettings &connectionSettings);
-    void setupVpnUi(const NetworkManager::Settings::ConnectionSettings &connectionSettings);
+    void setupGenericUi(const NetworkManager::ConnectionSettings &connectionSettings);
+    void setupVpnUi(const NetworkManager::ConnectionSettings &connectionSettings);
 
     bool hasError() const;
     NetworkManager::SecretAgent::Error error() const;

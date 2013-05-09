@@ -23,7 +23,7 @@
 
 #include <QtGui/QWidget>
 
-#include <NetworkManagerQt/settings/Security8021xSetting>
+#include <NetworkManagerQt/Security8021xSetting>
 
 #include "settingwidget.h"
 #include "security802-1x.h"
@@ -39,9 +39,9 @@ class KDE_EXPORT WiredSecurity : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit WiredSecurity(const NetworkManager::Settings::Security8021xSetting::Ptr &setting8021x = NetworkManager::Settings::Security8021xSetting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~WiredSecurity();
-    void loadConfig(const NetworkManager::Settings::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting);
     QVariantMap setting(bool agentOwned = false) const;
 
     bool enabled8021x() const;
@@ -49,7 +49,7 @@ public:
 private:
     Ui::WiredSecurity * m_ui;
     Security8021x * m_8021xWidget;
-    NetworkManager::Settings::Security8021xSetting::Ptr m_8021xSetting;
+    NetworkManager::Security8021xSetting::Ptr m_8021xSetting;
 };
 
 #endif // PLASMA_NM_WIRED_SECURITY_H

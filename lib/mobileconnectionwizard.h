@@ -31,7 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KLineEdit>
 
 #include <NetworkManagerQt/Manager>
-#include <NetworkManagerQt/settings/ConnectionSettings>
+#include <NetworkManagerQt/ConnectionSettings>
 
 #include "mobileproviders.h"
 
@@ -40,10 +40,10 @@ class KDE_EXPORT MobileConnectionWizard : public QWizard
 Q_OBJECT
 public:
     /*
-     * Do not use NetworkManager::Settings::ConnectionSettings::Bluetooth here, use either NetworkManager::Settings::ConnectionSettings::Gsm
-     * or NetworkManager::Settings::ConnectionSettings::Cdma.
+     * Do not use NetworkManager::ConnectionSettings::Bluetooth here, use either NetworkManager::ConnectionSettings::Gsm
+     * or NetworkManager::ConnectionSettings::Cdma.
      */
-    explicit MobileConnectionWizard(NetworkManager::Settings::ConnectionSettings::ConnectionType connectionType = NetworkManager::Settings::ConnectionSettings::Unknown,
+    explicit MobileConnectionWizard(NetworkManager::ConnectionSettings::ConnectionType connectionType = NetworkManager::ConnectionSettings::Unknown,
                                     QWidget * parent = 0);
     ~MobileConnectionWizard();
 
@@ -58,7 +58,7 @@ public:
      */
     QVariantList args();
 
-    NetworkManager::Settings::ConnectionSettings::ConnectionType type() const { return mType; }
+    NetworkManager::ConnectionSettings::ConnectionType type() const { return mType; }
     MobileProviders::ErrorCodes getError();
 
 private Q_SLOTS:
@@ -84,7 +84,7 @@ private:
     QString country;
     QString provider;
     QString apn;
-    NetworkManager::Settings::ConnectionSettings::ConnectionType mType;
+    NetworkManager::ConnectionSettings::ConnectionType mType;
     bool mInitialMethodType;
 
     // Intro page

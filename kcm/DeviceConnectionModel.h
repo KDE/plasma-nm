@@ -70,13 +70,13 @@ private slots:
     void connectionRemoved(const QString &path);
     void activeConnectionAdded(const QString &path);
     void activeConnectionRemoved(const QString &path);
-    void addConnection(const NetworkManager::Settings::Connection::Ptr &connection);
+    void addConnection(const NetworkManager::Connection::Ptr &connection);
     void changeConnectionActive(QStandardItem *stdItem, const QString &activePath = QString());
 
 private:
     QStandardItem *findDeviceItem(const QString &uni);
     QStandardItem *findConnectionItem(const QString &path, DeviceRoles role);
-    QStandardItem *findOrCreateConnectionType(NetworkManager::Settings::ConnectionSettings::ConnectionType type);
+    QStandardItem *findOrCreateConnectionType(NetworkManager::ConnectionSettings::ConnectionType type);
 };
 
 #endif // DEVICE_MODEL_H

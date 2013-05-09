@@ -13,10 +13,10 @@ TabConnectionInfo::~TabConnectionInfo()
     delete ui;
 }
 
-void TabConnectionInfo::setConnection(const NetworkManager::Settings::Connection::Ptr &connection)
+void TabConnectionInfo::setConnection(const NetworkManager::Connection::Ptr &connection)
 {
     if (connection) {
-//        NetworkManager::Settings::ConnectionSettings::Ptr settings
+//        NetworkManager::ConnectionSettings::Ptr settings
 //        ui->lastUsedL->setText(connection->);
     }
 }

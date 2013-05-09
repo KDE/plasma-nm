@@ -31,8 +31,8 @@
 #include "nm-vpnc-service.h"
 
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/settings/VpnSetting>
-#include <NetworkManagerQt/settings/Ipv4Setting>
+#include <NetworkManagerQt/VpnSetting>
+#include <NetworkManagerQt/Ipv4Setting>
 
 #include "vpncwidget.h"
 #include "vpncauth.h"
@@ -52,12 +52,12 @@ VpncUiPlugin::~VpncUiPlugin()
 
 }
 
-SettingWidget * VpncUiPlugin::widget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget * VpncUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
 {
     return new VpncWidget(setting, parent);
 }
 
-SettingWidget *VpncUiPlugin::askUser(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget *VpncUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
 {
     return new VpncAuthDialog(setting, parent);
 }

@@ -24,16 +24,16 @@
 
 #include <KLocalizedString>
 
-#include <NetworkManagerQt/settings/InfinibandSetting>
+#include <NetworkManagerQt/InfinibandSetting>
 
-InfinibandWidget::InfinibandWidget(const NetworkManager::Settings::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+InfinibandWidget::InfinibandWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::InfinibandWidget)
 {
     m_ui->setupUi(this);
 
-    m_ui->transport->addItem(i18nc("infiniband transport mode", "Datagram"), NetworkManager::Settings::InfinibandSetting::Datagram);
-    m_ui->transport->addItem(i18nc("infiniband transport mode", "Connected"), NetworkManager::Settings::InfinibandSetting::Connected);
+    m_ui->transport->addItem(i18nc("infiniband transport mode", "Datagram"), NetworkManager::InfinibandSetting::Datagram);
+    m_ui->transport->addItem(i18nc("infiniband transport mode", "Connected"), NetworkManager::InfinibandSetting::Connected);
     m_ui->transport->setCurrentIndex(0);
 
     if (setting)
@@ -44,11 +44,11 @@ InfinibandWidget::~InfinibandWidget()
 {
 }
 
-void InfinibandWidget::loadConfig(const NetworkManager::Settings::Setting::Ptr &setting)
+void InfinibandWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::Settings::InfinibandSetting::Ptr infinibandSetting = setting.staticCast<NetworkManager::Settings::InfinibandSetting>();
+    NetworkManager::InfinibandSetting::Ptr infinibandSetting = setting.staticCast<NetworkManager::InfinibandSetting>();
 
-    if (infinibandSetting->transportMode() != NetworkManager::Settings::InfinibandSetting::Unknown)
+    if (infinibandSetting->transportMode() != NetworkManager::InfinibandSetting::Unknown)
         m_ui->transport->setCurrentIndex(m_ui->transport->findData(infinibandSetting->transportMode()));
     m_ui->macAddress->init(NetworkManager::Device::InfiniBand, UiUtils::macAddressAsString(infinibandSetting->macAddress()));
     if (infinibandSetting->mtu()) {
@@ -60,8 +60,8 @@ QVariantMap InfinibandWidget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned)
 
-    NetworkManager::Settings::InfinibandSetting setting;
-    setting.setTransportMode(static_cast<NetworkManager::Settings::InfinibandSetting::TransportMode>(m_ui->transport->currentIndex()));
+    NetworkManager::InfinibandSetting setting;
+    setting.setTransportMode(static_cast<NetworkManager::InfinibandSetting::TransportMode>(m_ui->transport->currentIndex()));
     setting.setMacAddress(UiUtils::macAddressFromString(m_ui->macAddress->hwAddress()));
     if (m_ui->mtu->value()) {
         setting.setMtu(m_ui->mtu->value());

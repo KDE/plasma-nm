@@ -23,7 +23,7 @@
 
 #include <QDialog>
 
-#include <NetworkManagerQt/settings/VpnSetting>
+#include <NetworkManagerQt/VpnSetting>
 
 namespace Ui
 {
@@ -34,12 +34,12 @@ class VpncAdvancedWidget : public QDialog
 {
     Q_OBJECT
 public:
-    explicit VpncAdvancedWidget(const NetworkManager::Settings::VpnSetting::Ptr &setting, QWidget *parent = 0);
+    explicit VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
 
     NMStringMap setting() const;
 
 private:
-    void loadConfig(const NetworkManager::Settings::VpnSetting::Ptr &setting);
+    void loadConfig(const NetworkManager::VpnSetting::Ptr &setting);
     Ui::VpncAdvancedWidget * m_ui;
 };
 

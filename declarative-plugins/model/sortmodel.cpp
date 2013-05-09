@@ -21,52 +21,52 @@
 #include "sortmodel.h"
 #include "model.h"
 
-SortModel::SortedConnectionType SortModel::connectionTypeToSortedType(NetworkManager::Settings::ConnectionSettings::ConnectionType type)
+SortModel::SortedConnectionType SortModel::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
 {
     switch (type) {
-        case NetworkManager::Settings::ConnectionSettings::Unknown:
+        case NetworkManager::ConnectionSettings::Unknown:
             return SortModel::SortModel::Unknown;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Adsl:
+        case NetworkManager::ConnectionSettings::Adsl:
             return SortModel::SortModel::Adsl;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Bluetooth:
+        case NetworkManager::ConnectionSettings::Bluetooth:
             return SortModel::Bluetooth;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Bond:
+        case NetworkManager::ConnectionSettings::Bond:
             return SortModel::Bond;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Bridge:
+        case NetworkManager::ConnectionSettings::Bridge:
             return SortModel::Bridge;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Cdma:
+        case NetworkManager::ConnectionSettings::Cdma:
             return SortModel::Cdma;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Gsm:
+        case NetworkManager::ConnectionSettings::Gsm:
             return SortModel::Gsm;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Infiniband:
+        case NetworkManager::ConnectionSettings::Infiniband:
             return SortModel::Infiniband;
             break;
-        case NetworkManager::Settings::ConnectionSettings::OLPCMesh:
+        case NetworkManager::ConnectionSettings::OLPCMesh:
             return SortModel::OLPCMesh;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Pppoe:
+        case NetworkManager::ConnectionSettings::Pppoe:
             return SortModel::Pppoe;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Vlan:
+        case NetworkManager::ConnectionSettings::Vlan:
             return SortModel::Vlan;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Vpn:
+        case NetworkManager::ConnectionSettings::Vpn:
             return SortModel::Vpn;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Wimax:
+        case NetworkManager::ConnectionSettings::Wimax:
             return SortModel::Wimax;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Wired:
+        case NetworkManager::ConnectionSettings::Wired:
             return SortModel::Wired;
             break;
-        case NetworkManager::Settings::ConnectionSettings::Wireless:
+        case NetworkManager::ConnectionSettings::Wireless:
             return SortModel::Wireless;
             break;
         default:
@@ -100,13 +100,13 @@ bool SortModel::lessThan(const QModelIndex& left, const QModelIndex& right) cons
 {
     const bool leftConnected = sourceModel()->data(left, Model::ConnectedRole).toBool();
     //const QString leftName = sourceModel()->data(left, Model::NameRole).toString();
-    const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::Settings::ConnectionSettings::ConnectionType) sourceModel()->data(left, Model::TypeRole).toUInt());
+    const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, Model::TypeRole).toUInt());
     const QString leftUuid = sourceModel()->data(left, Model::UuidRole).toString();
     const int leftSignal = sourceModel()->data(left, Model::SignalRole).toInt();
 
     const bool rightConnected = sourceModel()->data(right, Model::ConnectedRole).toBool();
     //const QString rightName = sourceModel()->data(right, Model::NameRole).toString();
-    const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::Settings::ConnectionSettings::ConnectionType) sourceModel()->data(right, Model::TypeRole).toUInt());
+    const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, Model::TypeRole).toUInt());
     const QString rightUuid = sourceModel()->data(right, Model::UuidRole).toString();
     const int rightSignal = sourceModel()->data(right, Model::SignalRole).toInt();
 

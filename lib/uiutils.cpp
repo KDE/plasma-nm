@@ -45,37 +45,55 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
 {
     QString deviceText;
     switch (type) {
-        case NetworkManager::Device::Ethernet:
-            deviceText = i18nc("title of the interface widget in nm's popup", "Wired Ethernet");
-            break;
-        case NetworkManager::Device::Wifi:
-            deviceText = i18nc("title of the interface widget in nm's popup", "Wireless 802.11");
-            break;
-        case NetworkManager::Device::Bluetooth:
-            deviceText = i18nc("title of the interface widget in nm's popup", "Mobile Broadband");
-            break;
-        case NetworkManager::Device::Modem: {
-            const NetworkManager::ModemDevice::Ptr nmModemIface = iface.objectCast<NetworkManager::ModemDevice>();
-            if (nmModemIface) {
-                switch(modemSubType(nmModemIface->currentCapabilities())) {
-                    case NetworkManager::ModemDevice::Pots:
-                         deviceText = i18nc("title of the interface widget in nm's popup", "Serial Modem");
-                         break;
-                    case NetworkManager::ModemDevice::GsmUmts:
-                    case NetworkManager::ModemDevice::CdmaEvdo:
-                    case NetworkManager::ModemDevice::Lte:
-                         deviceText = i18nc("title of the interface widget in nm's popup", "Mobile Broadband");
-                         break;
-                    case NetworkManager::ModemDevice::NoCapability:
-                         kWarning() << "Unhandled modem sub type: NetworkManager::ModemDevice::NoCapability";
-                         break;
-                }
+    case NetworkManager::Device::Ethernet:
+        deviceText = i18nc("title of the interface widget in nm's popup", "Wired Ethernet");
+        break;
+    case NetworkManager::Device::Wifi:
+        deviceText = i18nc("title of the interface widget in nm's popup", "Wireless 802.11");
+        break;
+    case NetworkManager::Device::Bluetooth:
+        deviceText = i18nc("title of the interface widget in nm's popup", "Bluetooth");
+        break;
+    case NetworkManager::Device::Wimax:
+        deviceText = i18nc("title of the interface widget in nm's popup", "Wimax");
+        break;
+    case NetworkManager::Device::InfiniBand:
+        deviceText = i18nc("title of the interface widget in nm's popup", "Infiniband");
+        break;
+    case NetworkManager::Device::Adsl:
+        deviceText = i18nc("title of the interface widget in nm's popup", "ADSL");
+        break;
+    case NetworkManager::Device::Bond:
+        deviceText = i18nc("title of the interface widget in nm's popup", "Virtual (bond)");
+        break;
+    case NetworkManager::Device::Bridge:
+        deviceText = i18nc("title of the interface widget in nm's popup", "Virtual (bridge)");
+        break;
+    case NetworkManager::Device::Vlan:
+        deviceText = i18nc("title of the interface widget in nm's popup", "Virtual (vlan)");
+        break;
+    case NetworkManager::Device::Modem: {
+        const NetworkManager::ModemDevice::Ptr nmModemIface = iface.objectCast<NetworkManager::ModemDevice>();
+        if (nmModemIface) {
+            switch(modemSubType(nmModemIface->currentCapabilities())) {
+            case NetworkManager::ModemDevice::Pots:
+                deviceText = i18nc("title of the interface widget in nm's popup", "Serial Modem");
+                break;
+            case NetworkManager::ModemDevice::GsmUmts:
+            case NetworkManager::ModemDevice::CdmaEvdo:
+            case NetworkManager::ModemDevice::Lte:
+                deviceText = i18nc("title of the interface widget in nm's popup", "Mobile Broadband");
+                break;
+            case NetworkManager::ModemDevice::NoCapability:
+                kWarning() << "Unhandled modem sub type: NetworkManager::ModemDevice::NoCapability";
+                break;
             }
         }
-            break;
-        default:
-            deviceText = i18nc("title of the interface widget in nm's popup", "Wired Ethernet");
-            break;
+    }
+        break;
+    default:
+        deviceText = i18nc("title of the interface widget in nm's popup", "Wired Ethernet");
+        break;
     }
     return deviceText;
 }

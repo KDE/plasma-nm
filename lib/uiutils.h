@@ -89,6 +89,9 @@ public:
      * @param iface the network interface
      */
     static QString iconName(const NetworkManager::Device::Ptr &device);
+
+    static QString iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type,
+                                                         QString &title);
 #if 0
     /** This method can be used to retrieve an icon size that fits into a given size.
      * The resulting size can be used to render Pixmaps from KIconLoader without

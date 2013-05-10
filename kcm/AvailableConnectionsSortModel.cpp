@@ -39,7 +39,32 @@ bool AvailableConnectionsSortModel::lessThan(const QModelIndex &left, const QMod
     if (leftKind != rightKind) {
         // If the right item does not have a connection the left should move right
         return !(rightKind & AvailableConnectionsModel::Connection);
+    } else if (rightKind & AvailableConnectionsModel::NetworkWireless ||
+               rightKind & AvailableConnectionsModel::NetworkNsp) {
+        int leftSignalStrength = left.data(AvailableConnectionsModel::RoleSignalStrength).toInt();
+        int rightSignalStrength = right.data(AvailableConnectionsModel::RoleSignalStrength).toInt();
+        leftSignalStrength = normalizeSignalStrength(leftSignalStrength);
+        rightSignalStrength = normalizeSignalStrength(rightSignalStrength);
+        if (leftSignalStrength != rightSignalStrength) {
+            // If the left item is more than the right one, left should move right
+            return leftSignalStrength > rightSignalStrength;
+        }
     }
 
     return QSortFilterProxyModel::lessThan(left, right);
+}
+
+int AvailableConnectionsSortModel::normalizeSignalStrength(int signalStrength) const
+{
+    if (signalStrength < 13) {
+        return 0;
+    } else if (signalStrength < 38) {
+        return 25;
+    } else if (signalStrength < 63) {
+        return 50;
+    } else if (signalStrength < 88) {
+        return 75;
+    } else {
+        return 100;
+    }
 }

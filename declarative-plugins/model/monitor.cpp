@@ -65,6 +65,8 @@ void Monitor::init()
             SLOT(wirelessEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wirelessHardwareEnabledChanged(bool)),
             SLOT(wirelessEnabled(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(serviceAppeared()),
+            SLOT(init()));
 
     foreach (const NetworkManager::ActiveConnection::Ptr& active, NetworkManager::activeConnections()) {
         connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),

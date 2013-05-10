@@ -432,7 +432,7 @@ void ModelItem::updateDetails()
         }
 
         if (active) {
-            vpnConnection = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(active->path()));
+            vpnConnection = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(active->path()), &QObject::deleteLater);
         }
 
         foreach (const QString& key, detailKeys) {

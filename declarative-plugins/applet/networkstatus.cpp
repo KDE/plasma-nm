@@ -158,9 +158,9 @@ void NetworkStatus::changeTooltip()
                     conType = UiUtils::interfaceTypeLabel(device->type(), device);
                 }
                 if (active->state() == NetworkManager::ActiveConnection::Activated) {
-                    status = i18n("Connected to %1").arg(active->connection()->name());
+                    status = i18n("Connected to %1", active->connection()->name());
                 } else if (active->state() == NetworkManager::ActiveConnection::Activating) {
-                    status = i18n("Connecting to %1").arg(active->connection()->name());
+                    status = i18n("Connecting to %1", active->connection()->name());
                 }
                 if (active->default4() || active->default6()) {
                     tooltip += QString(formatDefault).arg(devName, conType, status);

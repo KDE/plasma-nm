@@ -52,7 +52,7 @@ Model::Model(QObject* parent):
     connect(m_monitor, SIGNAL(addActiveConnection(QString)),
             SLOT(addActiveConnection(QString)));
     connect(m_monitor, SIGNAL(activeConnectionStateChanged(QString,NetworkManager::ActiveConnection::State)),
-            SLOT(activeConnectionStateChanged(QString, NetworkManager::ActiveConnection::State)));
+            SLOT(activeConnectionStateChanged(QString,NetworkManager::ActiveConnection::State)));
     connect(m_monitor, SIGNAL(addConnection(QString,QString)),
             SLOT(addConnection(QString,QString)));
     connect(m_monitor, SIGNAL(addVpnConnection(QString)),

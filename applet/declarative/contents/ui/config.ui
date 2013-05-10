@@ -54,7 +54,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="kcfg_networkSpeedUnit">
+      <widget class="KComboBox" name="kcfg_networkSpeedUnit">
        <item>
         <property name="text">
          <string>KBytes/s</string>
@@ -95,6 +95,11 @@
    <class>DetailKeysEditor</class>
    <extends>QWidget</extends>
    <header>detailkeyseditor.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

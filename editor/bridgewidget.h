@@ -38,7 +38,7 @@ class BridgeWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    BridgeWidget(const QString & masterUuid, const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
+    explicit BridgeWidget(const QString & masterUuid, const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
                  QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~BridgeWidget();
 

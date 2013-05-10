@@ -32,6 +32,7 @@ public:
 
 private:
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
+    int normalizeSignalStrength(int signalStrength) const;
 };
 
 #endif // AVAILABLE_CONNECTIONS_SORT_MODEL_H

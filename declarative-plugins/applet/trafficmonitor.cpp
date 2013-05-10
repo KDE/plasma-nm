@@ -31,6 +31,7 @@
 
 #include <NetworkManagerQt/Manager>
 
+#include "globalconfig.h"
 #include "debug.h"
 
 TrafficMonitor::TrafficMonitor(QGraphicsItem* parent):
@@ -187,7 +188,7 @@ void TrafficMonitor::updateTraffic()
     double _t;
     QString r, t;
 
-    if (m_speedUnit == 1) {
+    if (GlobalConfig().networkSpeedUnit() == GlobalConfig::KBits) {
         _r = m_rx.toInt() << 3;
         _t = m_tx.toInt() << 3;
 

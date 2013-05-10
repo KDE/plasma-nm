@@ -47,7 +47,7 @@ public:
     QVariant data(const QModelIndex& index, int role) const;
 
 public Q_SLOTS:
-    void setDetailKeys(const QStringList& keys);
+    void updateItems();
 
 private Q_SLOTS:
     void addActiveConnection(const QString& active);

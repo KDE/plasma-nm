@@ -143,12 +143,15 @@ QVariant Model::data(const QModelIndex& index, int role) const
     return QVariant();
 }
 
-void Model::setDetailKeys(const QStringList& keys)
+void Model::updateItems()
 {
-    m_keys = keys;
-
     foreach (ModelItem * item, m_items.items()) {
-        item->setDetailKeys(m_keys);
+        item->updateDetails();
+        int row = m_items.indexOf(item);
+        if (row >= 0) {
+            QModelIndex index = createIndex(row, 0);
+            dataChanged(index, index);
+        }
     }
 }
 
@@ -386,7 +389,6 @@ void Model::insertItem(ModelItem * item)
         int index = m_items.count();
         beginInsertRows(QModelIndex(), index, index);
         m_items.insertItem(item);
-        item->setDetailKeys(m_keys);
         endInsertRows();
         NMModelDebug() << "Connection " << item->name() << " has been added";
     } else {

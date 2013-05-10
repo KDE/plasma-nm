@@ -35,8 +35,12 @@
 
 #include <ModemManagerQt/modemgsmnetworkinterface.h>
 
+#include <KGlobal>
+#include <KLocale>
+
 #include "model.h"
 #include "uiutils.h"
+#include "applet/globalconfig.h"
 
 #include "debug.h"
 
@@ -205,10 +209,13 @@ void ModelItem::updateDetails()
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     m_details = "<qt><table>";
 
+    QStringList detailKeys = GlobalConfig().detailKeys();
+    GlobalConfig::NetworkSpeedUnit unit = GlobalConfig().networkSpeedUnit();
+
     // Initialize objects
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
 
-    foreach (const QString& key, m_detailKeys) {
+    foreach (const QString& key, detailKeys) {
         if (key == "interface:type") {
             if (m_type != NetworkManager::ConnectionSettings::Unknown) {
                 m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::ConnectionSettings::typeAsString(m_type));
@@ -276,7 +283,7 @@ void ModelItem::updateDetails()
             btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
         }
 
-        foreach (const QString& key, m_detailKeys) {
+        foreach (const QString& key, detailKeys) {
             if (key == "bluetooth:name") {
                 if (btDevice) {
                     m_details += QString(format).arg(i18n("Name:"), btDevice->name());
@@ -301,7 +308,7 @@ void ModelItem::updateDetails()
             modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
         }
 
-        foreach (const QString& key, m_detailKeys) {
+        foreach (const QString& key, detailKeys) {
             if (key == "mobile:operator") {
                 if (modemNetwork) {
                     m_details += QString(format).arg(i18n("Operator:"), modemNetwork->getRegistrationInfo().operatorName);
@@ -331,7 +338,7 @@ void ModelItem::updateDetails()
                     ModemManager::ModemGsmCardInterface::Ptr modemCard;
                     modemCard = modemDevice->getModemCardIface();
                     if (modemCard) {
-                        m_detailKeys += QString(format).arg(i18n("IMEI:"), modemCard->getImei());
+                        detailKeys += QString(format).arg(i18n("IMEI:"), modemCard->getImei());
                     }
                 }
             } else if (key == "mobile:imsi") {
@@ -339,7 +346,7 @@ void ModelItem::updateDetails()
                     ModemManager::ModemGsmCardInterface::Ptr modemCard;
                     modemCard = modemDevice->getModemCardIface();
                     if (modemCard) {
-                        m_detailKeys += QString(format).arg(i18n("IMSI:"), modemCard->getImsi());
+                        detailKeys += QString(format).arg(i18n("IMSI:"), modemCard->getImsi());
                     }
                 }
             }
@@ -350,10 +357,14 @@ void ModelItem::updateDetails()
             wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
         }
 
-        foreach (const QString& key, m_detailKeys) {
+        foreach (const QString& key, detailKeys) {
             if (key == "interface:bitrate") {
                 if (wiredDevice && m_connected) {
-                    m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wiredDevice->bitRate()));
+                    if (unit == GlobalConfig::KBits) {
+                        m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wiredDevice->bitRate()));
+                    } else {
+                        m_details += QString(format).arg(i18n("Connection speed:"), KGlobal::locale()->formatByteSize(wiredDevice->bitRate() * 128));
+                    }
                 }
             } else if (key == "interface:hardwareaddress") {
                 if (wiredDevice) {
@@ -375,10 +386,14 @@ void ModelItem::updateDetails()
             ap = network->referenceAccessPoint();
         }
 
-        foreach (const QString& key, m_detailKeys) {
+        foreach (const QString& key, detailKeys) {
             if (key == "interface:bitrate") {
                 if (wirelessDevice && m_connected) {
-                    m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wirelessDevice->bitRate()));
+                    if (unit == GlobalConfig::KBits) {
+                        m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wirelessDevice->bitRate()));
+                    } else {
+                        m_details += QString(format).arg(i18n("Connection speed:"), KGlobal::locale()->formatByteSize(wirelessDevice->bitRate() * 128));
+                    }
                 }
             } else if (key == "interface:hardwareaddress") {
                 if (wirelessDevice) {
@@ -420,7 +435,7 @@ void ModelItem::updateDetails()
             vpnConnection = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(active->path()));
         }
 
-        foreach (const QString& key, m_detailKeys) {
+        foreach (const QString& key, detailKeys) {
             if (key == "vpn:plugin") {
                 if (vpnSetting) {
                     m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
@@ -507,13 +522,6 @@ void ModelItem::setConnection(const QString& connection)
             m_name = m_ssid;
         }
     }
-}
-
-void ModelItem::setDetailKeys(const QStringList& keys)
-{
-    m_detailKeys = keys;
-
-    updateDetails();
 }
 
 void ModelItem::setConnectionSettings(const NetworkManager::ConnectionSettings::Ptr& settings)

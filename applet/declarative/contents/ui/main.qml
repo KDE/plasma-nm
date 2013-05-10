@@ -58,6 +58,18 @@ Item {
     width: 300;
     height: 400;
 
+    PlasmaNm.GlobalConfig {
+        id: globalConfig;
+
+        onDetailKeysChanged: {
+            connectionModel.updateItems();
+        }
+
+        onNetworkSpeedUnitChanged: {
+            connectionModel.updateItems();
+        }
+    }
+
     PlasmaNm.Handler {
             id: handler;
 
@@ -224,7 +236,10 @@ Item {
     function configChanged() {
         var keys;
         keys = plasmoid.readConfig("detailKeys");
-        connectionModel.setDetailKeys(keys);
+        globalConfig.setDetailKeys(keys);
+        var speedUnit;
+        speedUnit = plasmoid.readConfig("networkSpeedUnit");
+        globalConfig.setNetworkSpeedUnit(speedUnit);
         autoHideOptions = plasmoid.readConfig("autoHideOptions");
     }
 }

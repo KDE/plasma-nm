@@ -62,8 +62,6 @@ public:
 
     bool operator==(const ModelItem * item) const;
 
-    void setDetailKeys(const QStringList& keys);
-
     // Objects
     void setActiveConnection(const QString& active);
     void setConnection(const QString& connection);
@@ -88,7 +86,6 @@ private:
 
     QString m_device;
     QString m_details;
-    QStringList m_detailKeys;
     QString m_name;
     QString m_ssid;
     QString m_uuid;

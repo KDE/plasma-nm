@@ -15,5 +15,11 @@
     <entry name="optionsExpanded" type="String">
       <default>hidden</default>
     </entry>
+    <entry name="networkSpeedUnit" type="Enum">
+      <choices name="NetworkSpeedUnitChoices">
+        <choice name="KBytes"/>
+        <choice name="KBits"/>
+      </choices>
+   </entry>
   </group>
 </kcfg>

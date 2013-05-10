@@ -54,6 +54,7 @@ public:
 
 private:
     QList<ModelItem*> m_items;
+
 };
 
 #endif // PLASMA_NM_MODEL_ITEMS_H

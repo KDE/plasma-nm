@@ -1,17 +1,13 @@
 set(plasma_nm_qml_plugins_SRCS
-   applet/enabledconnections.cpp
    applet/connectionicon.cpp
+   applet/enabledconnections.cpp
+   applet/globalconfig.cpp
    applet/networkstatus.cpp
    applet/trafficmonitor.cpp
 
    model/model.cpp
    model/modelitem.cpp
    model/modelitems.cpp
-#    model/modelwirelessitem.cpp
-#    model/modelwireditem.cpp
-#    model/modelvpnitem.cpp
-#    model/modelmodemitem.cpp
-#    model/modelbtitem.cpp
    model/monitor.cpp
    model/sortmodel.cpp
 

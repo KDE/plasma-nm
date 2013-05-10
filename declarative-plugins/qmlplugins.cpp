@@ -24,6 +24,7 @@
 
 #include "applet/connectionicon.h"
 #include "applet/enabledconnections.h"
+#include "applet/globalconfig.h"
 #include "applet/networkstatus.h"
 #include "applet/trafficmonitor.h"
 
@@ -38,6 +39,7 @@ void QmlPlugins::registerTypes(const char* uri)
 {
     qmlRegisterType<ConnectionIcon>(uri, 0, 1, "ConnectionIcon");
     qmlRegisterType<EnabledConnections>(uri, 0, 1, "EnabledConnections");
+    qmlRegisterType<GlobalConfig>(uri, 0, 1, "GlobalConfig");
     qmlRegisterType<NetworkStatus>(uri, 0, 1, "NetworkStatus");
     qmlRegisterType<Handler>(uri, 0, 1, "Handler");
     qmlRegisterType<Model>(uri, 0, 1, "Model");

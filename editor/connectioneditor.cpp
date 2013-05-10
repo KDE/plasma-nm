@@ -138,11 +138,10 @@ ConnectionEditor::~ConnectionEditor()
 void ConnectionEditor::initializeConnections()
 {
     m_editor->connectionsWidget->clear();
-
+    
     foreach (const Connection::Ptr &con, NetworkManager::listConnections()) {
         if (con->settings()->isSlave())
             continue;
-
         insertConnection(con);
 
         connect(con.data(), SIGNAL(updated()), SLOT(connectionUpdated()));

@@ -41,6 +41,8 @@
 
 #include <QString>
 
+using namespace NetworkManager;
+
 QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, const NetworkManager::Device::Ptr iface)
 {
     QString deviceText;
@@ -152,6 +154,67 @@ QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
             break;
     }
     kDebug() << "icon:" << icon;
+    return icon;
+}
+
+QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type, QString &title)
+{
+    QString text;
+    QString icon;
+    switch (type) {
+    case ConnectionSettings::Adsl:
+        text = i18n("ADSL");
+        icon = "modem";
+        break;
+    case ConnectionSettings::Pppoe:
+        text = i18n("DSL");
+        icon = "modem";
+        break;
+    case ConnectionSettings::Bluetooth:
+        text = i18n("Bluetooth");
+        icon = "preferences-system-bluetooth";
+        break;
+    case ConnectionSettings::Bond:
+        text = i18n("Bond");
+        break;
+    case ConnectionSettings::Bridge:
+        text = i18n("Bridge");
+        break;
+    case ConnectionSettings::Gsm:
+    case ConnectionSettings::Cdma:
+        text = i18n("Mobile broadband");
+        icon = "phone";
+        break;
+    case ConnectionSettings::Infiniband:
+        text = i18n("Infiniband");
+        break;
+    case ConnectionSettings::OLPCMesh:
+        text = i18n("Olpc mesh");
+        break;
+    case ConnectionSettings::Vlan:
+        text = i18n("VLAN");
+        break;
+    case ConnectionSettings::Vpn:
+        text = i18n("VPN");
+        icon = "secure-card";
+        break;
+    case ConnectionSettings::Wimax:
+        text = i18n("WiMAX");
+        icon = "network-wireless";
+        break;
+    case ConnectionSettings::Wired:
+        text = i18n("Wired");
+        icon = "network-wired";
+        break;
+    case ConnectionSettings::Wireless:
+        text = i18n("Wireless");
+        icon = "network-wireless";
+        break;
+    default:
+        text = i18n("Unknown connection type");
+        break;
+    }
+    title = text;
     return icon;
 }
 

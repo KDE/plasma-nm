@@ -406,61 +406,10 @@ QStandardItem *DeviceConnectionModel::findOrCreateConnectionType(ConnectionSetti
 
     QStandardItem *ret = new QStandardItem();
     QString text;
-    KIcon icon;
+    KIcon icon(UiUtils::iconAndTitleForConnectionSettingsType(type, text));
     DeviceRoles role = RoleIsConnectionCategory;
-    switch (type) {
-    case ConnectionSettings::Adsl:
-        text = i18n("ADSL");
-        icon = KIcon("modem");
-        break;
-    case ConnectionSettings::Pppoe:
-        text = i18n("DSL");
-        icon = KIcon("modem");
-        break;
-    case ConnectionSettings::Bluetooth:
-        text = i18n("Bluetooth");
-        icon = KIcon("preferences-system-bluetooth");
-        break;
-    case ConnectionSettings::Bond:
-        text = i18n("Bond");
-        break;
-    case ConnectionSettings::Bridge:
-        text = i18n("Bridge");
-        break;
-    case ConnectionSettings::Gsm:
-    case ConnectionSettings::Cdma:
-        text = i18n("Mobile broadband");
-        icon = KIcon("phone");
-        break;
-    case ConnectionSettings::Infiniband:
-        text = i18n("Infiniband");
-        break;
-    case ConnectionSettings::OLPCMesh:
-        text = i18n("Olpc mesh");
-        break;
-    case ConnectionSettings::Vlan:
-        text = i18n("VLAN");
-        break;
-    case ConnectionSettings::Vpn:
-        text = i18n("VPN");
-        icon = KIcon("secure-card");
+    if (type == ConnectionSettings::Vpn) {
         role = RoleIsVpnConnectionCategory;
-        break;
-    case ConnectionSettings::Wimax:
-        text = i18n("WiMAX");
-        icon = KIcon("network-wireless");
-        break;
-    case ConnectionSettings::Wired:
-        text = i18n("Wired");
-        icon = KIcon("network-wired");
-        break;
-    case ConnectionSettings::Wireless:
-        text = i18n("Wireless");
-        icon = KIcon("network-wireless");
-        break;
-    default:
-        text = i18n("Unknown connection type");
-        break;
     }
 
     ret->setText(text);

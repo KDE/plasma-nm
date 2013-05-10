@@ -38,8 +38,12 @@ public:
 
     void setConnection(const NetworkManager::Connection::Ptr &connection);
 
+private slots:
+    void updateState();
+
 private:
     Ui::TabConnectionInfo *ui;
+    NetworkManager::Connection::Ptr m_connection;
 };
 
 #endif // TABCONNECTIONINFO_H

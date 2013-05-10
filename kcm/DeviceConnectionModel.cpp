@@ -25,6 +25,7 @@
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ActiveConnection>
+#include <NetworkManagerQt/WirelessDevice>
 
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusMetaType>
@@ -154,6 +155,16 @@ void DeviceConnectionModel::addDevice(const NetworkManager::Device::Ptr &device)
 
     connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
             this, SLOT(deviceChanged()));
+    if (device->type() == Device::Wifi) {
+        WirelessDevice::Ptr wifi = device.dynamicCast<WirelessDevice>();
+        connect(wifi.data(), SIGNAL(activeAccessPointChanged(QString)),
+                this, SLOT(activeAccessPointChanged(QString)));
+        AccessPoint::Ptr accessPoint = wifi->activeAccessPoint();
+        if (accessPoint) {
+            connect(accessPoint.data(), SIGNAL(signalStrengthChanged(int)),
+                    this, SLOT(signalStrengthChanged()), Qt::UniqueConnection);
+        }
+    }
 
     stdItem = new QStandardItem;
     stdItem->setData(true, RoleIsDevice);
@@ -294,6 +305,34 @@ void DeviceConnectionModel::changeConnectionActive(QStandardItem *stdItem, const
             emit parentAdded(stdItem->parent()->index());
         }
     }
+}
+
+void DeviceConnectionModel::signalStrengthChanged()
+{
+    NetworkManager::AccessPoint *accessPoint = qobject_cast<NetworkManager::AccessPoint*>(sender());
+    if (accessPoint) {
+        foreach (const Device::Ptr &device, NetworkManager::networkInterfaces()) {
+            if (device->type() == Device::Wifi) {
+                WirelessDevice::Ptr wifi = device.dynamicCast<WirelessDevice>();
+                if (wifi->activeAccessPoint() && wifi->activeAccessPoint()->uni() == accessPoint->uni()) {
+                    QStandardItem *stdItem = findDeviceItem(device->uni());
+                    if (!stdItem) {
+                        kWarning() << "Device not found" << device->uni();
+                        return;
+                    }
+                    changeDevice(stdItem, device);
+                }
+            }
+        }
+    }
+}
+
+void DeviceConnectionModel::activeAccessPointChanged(const QString &uni)
+{
+    WirelessDevice *wifi = qobject_cast<WirelessDevice*>(sender());
+    AccessPoint::Ptr accessPoint = wifi->findAccessPoint(uni);
+    connect(accessPoint.data(), SIGNAL(signalStrengthChanged(int)),
+            this, SLOT(signalStrengthChanged()), Qt::UniqueConnection);
 }
 
 QStandardItem *DeviceConnectionModel::findDeviceItem(const QString &uni)

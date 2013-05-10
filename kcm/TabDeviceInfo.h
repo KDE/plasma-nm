@@ -51,6 +51,8 @@ private slots:
     void on_connectionCB_activated(int index);
     void on_turnOff_clicked();
 
+    void activeAccessPointChanged(const QString &uni);
+    void signalStrengthChanged();
     void setTurnOffWifiText(bool enabled);
     void setTurnOffWimaxText(bool enabled);
     void setTurnOffWwanText(bool enabled);

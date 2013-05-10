@@ -97,6 +97,14 @@ void TabDeviceInfo::setDevice(const NetworkManager::Device::Ptr &device)
             setTurnOffWifiText(NetworkManager::isWirelessEnabled());
             connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
                     this, SLOT(setTurnOffWifiText(bool)));
+            WirelessDevice::Ptr wifi = device.objectCast<WirelessDevice>();
+            connect(wifi.data(), SIGNAL(activeAccessPointChanged(QString)),
+                    this, SLOT(activeAccessPointChanged(QString)));
+            AccessPoint::Ptr accessPoint = wifi->activeAccessPoint();
+            if (accessPoint) {
+                connect(accessPoint.data(), SIGNAL(signalStrengthChanged(int)),
+                        this, SLOT(signalStrengthChanged()), Qt::UniqueConnection);
+            }
         } else if (device->type() == Device::Wimax) {
             ui->turnOff->setEnabled(NetworkManager::isWimaxHardwareEnabled());
             connect(NetworkManager::notifier(), SIGNAL(wimaxHardwareEnabledChanged(bool)),
@@ -298,6 +306,25 @@ void TabDeviceInfo::on_turnOff_clicked()
             break;
         default:
             break;
+        }
+    }
+}
+
+void TabDeviceInfo::activeAccessPointChanged(const QString &uni)
+{
+    WirelessDevice *wifi = qobject_cast<WirelessDevice*>(sender());
+    AccessPoint::Ptr accessPoint = wifi->findAccessPoint(uni);
+    connect(accessPoint.data(), SIGNAL(signalStrengthChanged(int)),
+            this, SLOT(signalStrengthChanged()), Qt::UniqueConnection);
+}
+
+void TabDeviceInfo::signalStrengthChanged()
+{
+    NetworkManager::AccessPoint *accessPoint = qobject_cast<NetworkManager::AccessPoint*>(sender());
+    if (accessPoint) {
+        WirelessDevice::Ptr wifi = m_device.dynamicCast<WirelessDevice>();
+        if (wifi->activeAccessPoint() && wifi->activeAccessPoint()->uni() == accessPoint->uni()) {
+            updateState();
         }
     }
 }

@@ -74,6 +74,8 @@ private slots:
     void activeConnectionRemoved(const QString &path);
     void addConnection(const NetworkManager::Connection::Ptr &connection);
     void changeConnectionActive(QStandardItem *stdItem, const QString &activePath = QString());
+    void signalStrengthChanged();
+    void activeAccessPointChanged(const QString &uni);
 
 private:
     QStandardItem *findDeviceItem(const QString &uni);

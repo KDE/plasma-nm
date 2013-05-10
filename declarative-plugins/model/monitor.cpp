@@ -351,9 +351,9 @@ void Monitor::wirelessNetworkAppeared(const QString& ssid)
     }
 
     connect(network.data(), SIGNAL(signalStrengthChanged(int)),
-            SLOT(wirelessNetworkSignalChanged(int)));
+            SLOT(wirelessNetworkSignalChanged(int)), Qt::UniqueConnection);
     connect(network.data(), SIGNAL(referenceAccessPointChanged(QString)),
-            SLOT(wirelessNetworkReferenceApChanged(QString)));
+            SLOT(wirelessNetworkReferenceApChanged(QString)), Qt::UniqueConnection);
 
     NMMonitorDebug() << "Wireless network " << ssid << " appeared";
     Q_EMIT addWirelessNetwork(ssid, wirelessDevice->uni());

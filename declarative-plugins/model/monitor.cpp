@@ -48,25 +48,25 @@ void Monitor::init()
     statusChanged(NetworkManager::status());
 
     connect(NetworkManager::notifier(), SIGNAL(activeConnectionAdded(QString)),
-            SLOT(activeConnectionAdded(QString)));
+            SLOT(activeConnectionAdded(QString)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(activeConnectionRemoved(QString)),
-            SLOT(activeConnectionRemoved(QString)));
+            SLOT(activeConnectionRemoved(QString)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)),
-            SLOT(deviceAdded(QString)));
+            SLOT(deviceAdded(QString)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
-            SLOT(deviceRemoved(QString)));
+            SLOT(deviceRemoved(QString)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
-            SLOT(statusChanged(NetworkManager::Status)));
+            SLOT(statusChanged(NetworkManager::Status)), Qt::UniqueConnection);
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
-            SLOT(connectionAdded(QString)));
+            SLOT(connectionAdded(QString)), Qt::UniqueConnection);
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
-            SLOT(connectionRemoved(QString)));
+            SLOT(connectionRemoved(QString)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
-            SLOT(wirelessEnabled(bool)));
+            SLOT(wirelessEnabled(bool)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(wirelessHardwareEnabledChanged(bool)),
-            SLOT(wirelessEnabled(bool)));
+            SLOT(wirelessEnabled(bool)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(serviceAppeared()),
-            SLOT(init()));
+            SLOT(init()), Qt::UniqueConnection);
 
     foreach (const NetworkManager::ActiveConnection::Ptr& active, NetworkManager::activeConnections()) {
         connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
@@ -93,7 +93,7 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
         NMMonitorDebug() << "Available wired device " << device->interfaceName();
         NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
         connect(wiredDev.data(), SIGNAL(carrierChanged(bool)),
-                SLOT(cablePlugged(bool)));
+                SLOT(cablePlugged(bool)), Qt::UniqueConnection);
 
     } else if (device->type() == NetworkManager::Device::Wifi) {
         NMMonitorDebug() << "Available wireless device " << device->interfaceName();
@@ -101,17 +101,17 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
 
         foreach (const NetworkManager::WirelessNetwork::Ptr& wifiNetwork, wifiDev->networks()) {
             connect(wifiNetwork.data(), SIGNAL(signalStrengthChanged(int)),
-                    SLOT(wirelessNetworkSignalChanged(int)));
+                    SLOT(wirelessNetworkSignalChanged(int)), Qt::UniqueConnection);
             connect(wifiNetwork.data(), SIGNAL(referenceAccessPointChanged(QString)),
-                    SLOT(wirelessNetworkReferenceApChanged(QString)));
+                    SLOT(wirelessNetworkReferenceApChanged(QString)), Qt::UniqueConnection);
             NMMonitorDebug() << "Available wireless network " << wifiNetwork->ssid() << " for device " << device->interfaceName();
             Q_EMIT addWirelessNetwork(wifiNetwork->ssid(), wifiDev->uni());
         }
 
         connect(wifiDev.data(), SIGNAL(networkAppeared(QString)),
-                SLOT(wirelessNetworkAppeared(QString)));
+                SLOT(wirelessNetworkAppeared(QString)), Qt::UniqueConnection);
         connect(wifiDev.data(), SIGNAL(networkDisappeared(QString)),
-                SLOT(wirelessNetworkDisappeared(QString)));
+                SLOT(wirelessNetworkDisappeared(QString)), Qt::UniqueConnection);
     } else if (device->type() == NetworkManager::Device::Modem) {
         NMMonitorDebug() << "Available modem device " << device->interfaceName();
         NetworkManager::ModemDevice::Ptr modemDev = device.objectCast<NetworkManager::ModemDevice>();
@@ -119,18 +119,18 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
         ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDev->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
         if (modemNetwork) {
             connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
-                    SIGNAL(gsmNetworkSignalQualityChanged(uint)));
+                    SIGNAL(gsmNetworkSignalQualityChanged(uint)), Qt::UniqueConnection);
             connect(modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
-                    SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)));
+                    SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)), Qt::UniqueConnection);
             connect(modemNetwork.data(), SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
-                    SLOT(gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)));
+                    SLOT(gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)), Qt::UniqueConnection);
         }
     }
 
     connect(device.data(), SIGNAL(availableConnectionAppeared(QString)),
-            SLOT(availableConnectionAppeared(QString)));
+            SLOT(availableConnectionAppeared(QString)), Qt::UniqueConnection);
     connect(device.data(), SIGNAL(availableConnectionDisappeared(QString)),
-            SLOT(availableConnectionDisappeared(QString)));
+            SLOT(availableConnectionDisappeared(QString)), Qt::UniqueConnection);
 
     addAvailableConnectionsForDevice(device);
 }

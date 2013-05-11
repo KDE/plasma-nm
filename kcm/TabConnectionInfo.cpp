@@ -62,7 +62,11 @@ void TabConnectionInfo::setConnection(const NetworkManager::Connection::Ptr &con
 void TabConnectionInfo::updateState()
 {
     QDateTime dateTime = m_connection->settings()->timestamp();
-    ui->lastUsedL->setText(KGlobal::locale()->formatDateTime(dateTime));
+    if (dateTime.isValid()) {
+        ui->lastUsedL->setText(KGlobal::locale()->formatDateTime(dateTime));
+    } else {
+        ui->lastUsedL->setText(i18n("never"));
+    }
     ui->nameL->setText(m_connection->name());
     QStringList devices;
     foreach (const ActiveConnection::Ptr &activeConnection, NetworkManager::activeConnections()) {
@@ -77,10 +81,10 @@ void TabConnectionInfo::updateState()
     }
 
     if (devices.isEmpty()) {
-        ui->statusL->setText(i18n("Not active"));
+        ui->statusL->setText(i18n("not active"));
         ui->connectDisconnectPB->setText(i18n("Connect"));
     } else {
-        ui->statusL->setText(i18n("Ative on %1", devices.join(QLatin1String(", "))));
+        ui->statusL->setText(i18n("ative on %1", devices.join(QLatin1String(", "))));
         ui->connectDisconnectPB->setText(i18n("Disconnect"));
     }
 
@@ -95,4 +99,19 @@ void TabConnectionInfo::updateState()
                                                    CONNECTION_ICON_SIZE, // a not so huge icon
                                                    KIconLoader::DefaultState);
     ui->iconL->setPixmap(icon);
+}
+
+void TabConnectionInfo::on_connectDisconnectPB_clicked()
+{
+    bool disconnected = false;
+    foreach (const ActiveConnection::Ptr &activeConnection, NetworkManager::activeConnections()) {
+        if (activeConnection->connection()->path() == m_connection->path()) {
+            NetworkManager::deactivateConnection(activeConnection->path());
+            disconnected = true;
+        }
+    }
+
+    if (disconnected) {
+        // TODO find a device to activate this connection
+    }
 }

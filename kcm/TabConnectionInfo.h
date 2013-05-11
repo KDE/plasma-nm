@@ -40,6 +40,7 @@ public:
 
 private slots:
     void updateState();
+    void on_connectDisconnectPB_clicked();
 
 private:
     Ui::TabConnectionInfo *ui;

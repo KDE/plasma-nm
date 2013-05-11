@@ -84,7 +84,7 @@ void TabConnectionInfo::updateState()
         ui->statusL->setText(i18n("not active"));
         ui->connectDisconnectPB->setText(i18n("Connect"));
     } else {
-        ui->statusL->setText(i18n("ative on %1", devices.join(QLatin1String(", "))));
+        ui->statusL->setText(i18n("active on %1", devices.join(QLatin1String(", "))));
         ui->connectDisconnectPB->setText(i18n("Disconnect"));
     }
 

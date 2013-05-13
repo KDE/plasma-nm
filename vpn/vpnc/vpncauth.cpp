@@ -94,6 +94,7 @@ void VpncAuthDialog::readSecrets()
 QVariantMap VpncAuthDialog::setting(bool agentOwned) const
 {
     Q_D(const VpncAuthDialog);
+    Q_UNUSED(agentOwned)
 
     QVariantMap result;
 

@@ -100,6 +100,8 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
 QVariantMap VpncWidget::setting(bool agentOwned) const
 {
+    Q_UNUSED(agentOwned)
+
     NMStringMap data;
     NMStringMap secrets;
 

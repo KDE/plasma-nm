@@ -494,12 +494,12 @@ void ModelItem::updateDetails()
 
 bool ModelItem::operator==(const ModelItem* item) const
 {
-    if (((item->uuid() == this->uuid() && !item->uuid().isEmpty() && !this->uuid().isEmpty()) ||
-         (item->name() == this->name() && !item->name().isEmpty() && !this->name().isEmpty() && item->type() == this->type()) ||
-         (item->ssid() == this->ssid() && !item->ssid().isEmpty() && !this->ssid().isEmpty()) ||
-         (item->nspPath() == this->nspPath() && !item->nspPath().isEmpty() && !this->nspPath().isEmpty())) &&
-         ((item->devicePath() == this->devicePath() && !item->devicePath().isEmpty() && !this->devicePath().isEmpty()) ||
-          (item->type() == NetworkManager::ConnectionSettings::Vpn && this->type() == NetworkManager::ConnectionSettings::Vpn))) {
+    if (((item->uuid() == uuid() && !item->uuid().isEmpty() && !uuid().isEmpty()) ||
+         (item->name() == name() && !item->name().isEmpty() && !name().isEmpty() && item->type() == type()) ||
+         (item->ssid() == ssid() && !item->ssid().isEmpty() && !ssid().isEmpty()) ||
+         (item->nspPath() == nspPath() && !item->nspPath().isEmpty() && !nspPath().isEmpty())) &&
+         ((item->devicePath() == devicePath() && !item->devicePath().isEmpty() && !devicePath().isEmpty()) ||
+          (item->type() == NetworkManager::ConnectionSettings::Vpn && type() == NetworkManager::ConnectionSettings::Vpn))) {
         return true;
     }
     return false;

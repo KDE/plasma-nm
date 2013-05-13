@@ -34,7 +34,7 @@ namespace Ui
 class BondWidget;
 }
 
-class BondWidget : public SettingWidget
+class KDE_EXPORT BondWidget : public SettingWidget
 {
     Q_OBJECT
 public:

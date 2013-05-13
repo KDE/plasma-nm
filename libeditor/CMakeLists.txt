@@ -22,6 +22,10 @@ set(plasmanm_libeditor_SRCS
     infinibandwidget.cpp
     vlanwidget.cpp
     wimaxwidget.cpp
+    bondwidget.cpp
+    bridgewidget.cpp
+    connectiondetaileditor.cpp
+    connectionwidget.cpp
 )
 
 kde4_add_ui_files(plasmanm_libeditor_SRCS
@@ -42,6 +46,10 @@ kde4_add_ui_files(plasmanm_libeditor_SRCS
     ui/infiniband.ui
     ui/vlan.ui
     ui/wimax.ui
+    ui/bond.ui
+    ui/bridge.ui
+    ui/connectiondetaileditor.ui
+    ui/connectionwidget.ui
 )
 
 kde4_add_library(plasmanm-editor SHARED ${plasmanm_libeditor_SRCS})

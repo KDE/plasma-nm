@@ -3,18 +3,10 @@ set(connectioneditor_SRCS
    connectioneditor.cpp
    connectionitem.cpp
    connectiontypeitem.cpp
-   connectiondetaileditor.cpp
-   connectionwidget.cpp
-   bondwidget.cpp
-   bridgewidget.cpp
 )
 
 kde4_add_ui_files(connectioneditor_SRCS
     ui/connectioneditor.ui
-    ui/connectiondetaileditor.ui
-    ui/connectionwidget.ui
-    ui/bond.ui
-    ui/bridge.ui
 )
 
 kde4_add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})

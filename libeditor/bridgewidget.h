@@ -34,7 +34,7 @@ namespace Ui
 class BridgeWidget;
 }
 
-class BridgeWidget : public SettingWidget
+class KDE_EXPORT BridgeWidget : public SettingWidget
 {
     Q_OBJECT
 public:

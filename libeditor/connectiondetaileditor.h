@@ -25,12 +25,14 @@
 
 #include <NetworkManagerQt/ConnectionSettings>
 
+#include <kdemacros.h>
+
 namespace Ui
 {
 class ConnectionDetailEditor;
 }
 
-class ConnectionDetailEditor : public QDialog
+class KDE_EXPORT ConnectionDetailEditor : public QDialog
 {
     Q_OBJECT
 

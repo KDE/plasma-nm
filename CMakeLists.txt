@@ -49,7 +49,6 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${KDE4_INCLUDES})
 
 add_subdirectory(lib)
-add_subdirectory(libeditor)
 add_subdirectory(applet)
 add_subdirectory(declarative-plugins)
 add_subdirectory(editor)

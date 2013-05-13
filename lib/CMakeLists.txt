@@ -18,3 +18,5 @@ set_target_properties(plasmanm-internal PROPERTIES
 install(TARGETS plasmanm-internal ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES plasma-nm-vpnuiplugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
+
+add_subdirectory(editor)

@@ -1,3 +1,5 @@
+include_directories(${CMAKE_SOURCE_DIR}/lib/editor)
+
 set(connectioneditor_SRCS
    main.cpp
    connectioneditor.cpp

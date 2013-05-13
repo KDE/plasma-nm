@@ -59,6 +59,8 @@ Model::Model(QObject* parent):
             SLOT(addVpnConnection(QString)));
     connect(m_monitor, SIGNAL(connectionUpdated(QString)),
             SLOT(connectionUpdated(QString)));
+    connect(m_monitor, SIGNAL(addWimaxNsp(QString,QString)),
+            SLOT(addWimaxNsp(QString,QString)));
     connect(m_monitor, SIGNAL(addWirelessNetwork(QString,QString)),
             SLOT(addWirelessNetwork(QString,QString)));
     connect(m_monitor, SIGNAL(modemAccessTechnologyChanged(QString)),
@@ -75,10 +77,16 @@ Model::Model(QObject* parent):
             SLOT(removeConnectionsByDevice(QString)));
     connect(m_monitor, SIGNAL(removeVpnConnections()),
             SLOT(removeVpnConnections()));
+    connect(m_monitor, SIGNAL(removeWimaxNsp(QString,QString)),
+            SLOT(removeWimaxNsp(QString,QString)));
+    connect(m_monitor, SIGNAL(removeWimaxNsps()),
+            SLOT(removeWimaxNsps()));
     connect(m_monitor, SIGNAL(removeWirelessNetwork(QString,QString)),
             SLOT(removeWirelessNetwork(QString,QString)));
     connect(m_monitor, SIGNAL(removeWirelessNetworks()),
             SLOT(removeWirelessNetworks()));
+    connect(m_monitor, SIGNAL(wimaxNspSignalChanged(QString,int)),
+            SLOT(wimaxNspSignalChanged(QString,int)));
     connect(m_monitor, SIGNAL(wirelessNetworkSignalChanged(QString,int)),
             SLOT(wirelessNetworkSignalChanged(QString,int)));
     connect(m_monitor, SIGNAL(wirelessNetworkAccessPointChanged(QString,QString)),
@@ -227,6 +235,13 @@ void Model::addVpnConnection(const QString& connection)
     insertItem(item);
 }
 
+void Model::addWimaxNsp(const QString& nsp, const QString& device)
+{
+    ModelItem * item = new ModelItem(device);
+    item->setNsp(nsp);
+    insertItem(item);
+}
+
 void Model::addWirelessNetwork(const QString& ssid, const QString& device)
 {
     ModelItem * item = new ModelItem(device);
@@ -310,6 +325,24 @@ void Model::removeVpnConnections()
     }
 }
 
+void Model::removeWimaxNsp(const QString& nsp, const QString& device)
+{
+    foreach (ModelItem * item, m_items.itemsByNsp(nsp, device)) {
+        if (removeItem(item)) {
+            NMModelDebug() << "Wimax nsp " << nsp << " has been removed";
+        }
+    }
+}
+
+void Model::removeWimaxNsps()
+{
+    foreach (ModelItem * item, m_items.itemsByType(NetworkManager::ConnectionSettings::Wimax)) {
+        if (removeItem(item)) {
+            NMModelDebug() << "Wimax nsp " << item->ssid() << " has been completely removed";
+        }
+    }
+}
+
 void Model::removeWirelessNetwork(const QString& ssid, const QString& device)
 {
     foreach (ModelItem * item, m_items.itemsBySsid(ssid, device)) {
@@ -324,6 +357,17 @@ void Model::removeWirelessNetworks()
     foreach (ModelItem * item, m_items.itemsByType(NetworkManager::ConnectionSettings::Wireless)) {
         if (removeItem(item)) {
             NMModelDebug() << "Wireless network " << item->ssid() << " has been completely removed";
+        }
+    }
+}
+
+void Model::wimaxNspSignalChanged(const QString& nsp, int strength)
+{
+    foreach (ModelItem * item, m_items.itemsByNsp(nsp)) {
+        item->updateSignalStrenght(strength);
+
+        if (updateItem(item)) {
+            NMModelDebug() << "Item " << item->name() << " has been changed";
         }
     }
 }
@@ -362,7 +406,11 @@ void Model::insertItem(ModelItem * item)
             // Update info
             if (it->specificPath().isEmpty() && !item->specificPath().isEmpty()) {
                 NMModelDebug() << "Connection " << it->name() << " has been updated by wireless network";
-                it->setWirelessNetwork(item->ssid());
+                if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
+                    it->setWirelessNetwork(item->ssid());
+                } else if (item->type() == NetworkManager::ConnectionSettings::Wimax) {
+                    it->setNsp(item->nspPath());
+                }
                 updated = true;
             }
 

@@ -39,6 +39,8 @@ public:
     QList<ModelItem*> itemsByActiveConnection(const QString& active) const;
     QList<ModelItem*> itemsByConnection(const QString& connection) const;
     QList<ModelItem*> itemsByDevice(const QString& device) const;
+    QList<ModelItem*> itemsByNsp(const QString& nsp) const;
+    QList<ModelItem*> itemsByNsp(const QString& nsp, const QString& device) const;
     QList<ModelItem*> itemsBySsid(const QString& ssid) const;
     QList<ModelItem*> itemsBySsid(const QString& ssid, const QString& device) const;
     QList<ModelItem*> itemsByUuid(const QString& uuid) const;

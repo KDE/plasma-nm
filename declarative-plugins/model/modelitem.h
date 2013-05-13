@@ -47,6 +47,7 @@ public:
     QString deviceName() const;
     QString icon() const;
     QString name() const;
+    QString nspPath() const;
     QString uuid() const;
     QString ssid() const;
     QString sectionType() const;
@@ -66,6 +67,7 @@ public:
     void setActiveConnection(const QString& active);
     void setConnection(const QString& connection);
     void setDevice(const QString& device);
+    void setNsp(const QString& nsp);
     void setWirelessNetwork(const QString& ssid);
 
 public Q_SLOTS:
@@ -79,6 +81,7 @@ private:
     QString m_accessPointPath;
     QString m_connectionPath;
     QString m_devicePath;
+    QString m_nspPath;
 
     bool m_connected;
     bool m_connecting;
@@ -87,6 +90,7 @@ private:
     QString m_device;
     QString m_details;
     QString m_name;
+    QString m_nsp;
     QString m_ssid;
     QString m_uuid;
 

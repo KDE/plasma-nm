@@ -54,6 +54,7 @@ private Q_SLOTS:
     void activeConnectionStateChanged(const QString& active, NetworkManager::ActiveConnection::State state);
     void addConnection(const QString& connection, const QString& device);
     void addVpnConnection(const QString& connection);
+    void addWimaxNsp(const QString& nsp, const QString& device);
     void addWirelessNetwork(const QString& ssid, const QString& device);
     void connectionUpdated(const QString& connection);
     void modemPropertiesChanged(const QString& modem);
@@ -61,8 +62,11 @@ private Q_SLOTS:
     void removeConnection(const QString& connection);
     void removeConnectionsByDevice(const QString& device);
     void removeVpnConnections();
+    void removeWimaxNsp(const QString& nsp, const QString& device);
+    void removeWimaxNsps();
     void removeWirelessNetwork(const QString& ssid,const QString& device);
     void removeWirelessNetworks();
+    void wimaxNspSignalChanged(const QString& nsp, int strength);
     void wirelessNetworkSignalChanged(const QString& ssid, int strength);
     void wirelessNetworkApChanged(const QString& ssid, const QString& ap);
 private:

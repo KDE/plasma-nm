@@ -27,6 +27,7 @@ class QSizeF;
 #include <NetworkManagerQt/ModemDevice>
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/AccessPoint>
+#include <NetworkManagerQt/WimaxNsp>
 
 #include <Solid/Device>
 
@@ -166,6 +167,7 @@ public:
     static QString convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode);
     static QString convertAccessTechnologyToString(const ModemManager::ModemInterface::AccessTechnology tech);
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
+    static QString convertNspTypeToString(NetworkManager::WimaxNsp::NetworkType type);
 
 private:
     static QList<QPair<int, int> > getBFreqs();

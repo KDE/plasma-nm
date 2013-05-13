@@ -27,6 +27,7 @@
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/ModemDevice>
+#include <NetworkManagerQt/WimaxDevice>
 
 #include "debug.h"
 
@@ -61,6 +62,10 @@ void Monitor::init()
             SLOT(connectionAdded(QString)), Qt::UniqueConnection);
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
             SLOT(connectionRemoved(QString)), Qt::UniqueConnection);
+    connect(NetworkManager::notifier(), SIGNAL(wimaxEnabledChanged(bool)),
+            SLOT(wimaxEnabled(bool)), Qt::UniqueConnection);
+    connect(NetworkManager::notifier(), SIGNAL(wimaxHardwareEnabledChanged(bool)),
+            SLOT(wimaxEnabled(bool)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
             SLOT(wirelessEnabled(bool)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(wirelessHardwareEnabledChanged(bool)),
@@ -95,6 +100,25 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
         connect(wiredDev.data(), SIGNAL(carrierChanged(bool)),
                 SLOT(cablePlugged(bool)), Qt::UniqueConnection);
 
+    }  else if (device->type() == NetworkManager::Device::Wimax) {
+        NMMonitorDebug() << "Available wimax device " << device->interfaceName();
+        NetworkManager::WimaxDevice::Ptr wimaxDev = device.objectCast<NetworkManager::WimaxDevice>();
+
+        foreach (const QString & nsp, wimaxDev->nsps()) {
+            NetworkManager::WimaxNsp::Ptr wimaxNsp = wimaxDev->findNsp(nsp);
+
+            if (wimaxNsp) {
+                connect(wimaxNsp.data(), SIGNAL(signalQualityChanged(uint)),
+                        SLOT(wimaxNspSignalChanged(uint)), Qt::UniqueConnection);
+                NMMonitorDebug() << "Available wimax nsp " << wimaxNsp->name() << " for device " << device->interfaceName();
+                Q_EMIT addNspNetwork(wimaxNsp->name(), wimaxDev->uni());
+            }
+        }
+
+        connect(wimaxDev.data(), SIGNAL(nspAppeared(QString)),
+                SLOT(wimaxNspAppeared(QString)), Qt::UniqueConnection);
+        connect(wimaxDev.data(), SIGNAL(nspDisappeared(QString)),
+                SLOT(wimaxNspDisappeared(QString)));
     } else if (device->type() == NetworkManager::Device::Wifi) {
         NMMonitorDebug() << "Available wireless device " << device->interfaceName();
         NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
@@ -112,7 +136,7 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
                 SLOT(wirelessNetworkAppeared(QString)), Qt::UniqueConnection);
         connect(wifiDev.data(), SIGNAL(networkDisappeared(QString)),
                 SLOT(wirelessNetworkDisappeared(QString)), Qt::UniqueConnection);
-    } else if (device->type() == NetworkManager::Device::Modem) {
+    }else if (device->type() == NetworkManager::Device::Modem) {
         NMMonitorDebug() << "Available modem device " << device->interfaceName();
         NetworkManager::ModemDevice::Ptr modemDev = device.objectCast<NetworkManager::ModemDevice>();
 
@@ -332,6 +356,55 @@ void Monitor::statusChanged(NetworkManager::Status status)
     } else {
         NMMonitorDebug() << "NetworkManager is not connected";
         Q_EMIT removeVpnConnections();
+    }
+}
+
+void Monitor::wimaxEnabled(bool enabled)
+{
+    if (!enabled) {
+        NMMonitorDebug() << "Wimax disabled, removing all wimax networks";
+        Q_EMIT removeWimaxNsps();
+    }
+}
+
+void Monitor::wimaxNspAppeared(const QString& nsp)
+{
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
+    if (!device) {
+        return;
+    }
+    NetworkManager::WimaxDevice::Ptr wimaxDevice = device.objectCast<NetworkManager::WimaxDevice>();
+    if (!wimaxDevice) {
+        return;
+    }
+    NetworkManager::WimaxNsp::Ptr wimaxNsp = wimaxDevice->findNsp(nsp);
+    if (!wimaxNsp) {
+        return;
+    }
+
+    connect(wimaxNsp.data(), SIGNAL(signalQualityChanged(uint)),
+            SLOT(wimaxNspSignalChanged(uint)), Qt::UniqueConnection);
+
+    NMMonitorDebug() << "Wimax nsp " << wimaxNsp->uni() << " appeared";
+    Q_EMIT addWimaxNsp(wimaxNsp->uni(), wimaxDevice->uni());
+}
+
+void Monitor::wimaxNspDisappeared(const QString& nsp)
+{
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
+    if (device) {
+        NMMonitorDebug() << "Wimax nsp " << nsp << " disappeared";
+        Q_EMIT removeWimaxNsp(nsp, device->uni());
+    }
+}
+
+void Monitor::wimaxNspSignalChanged(uint strength)
+{
+    NetworkManager::WimaxNsp * wimaxNsp = qobject_cast<NetworkManager::WimaxNsp*>(sender());
+
+    if (wimaxNsp) {
+        NMMonitorDebug() << "Wimax nsp " << wimaxNsp->name() << " signal strength changed to " << strength;
+        Q_EMIT wimaxNspSignalChanged(wimaxNsp->name(), strength);
     }
 }
 

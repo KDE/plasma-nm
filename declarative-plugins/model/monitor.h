@@ -57,6 +57,10 @@ private Q_SLOTS:
     void gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode);
     void gsmNetworkSignalQualityChanged(uint signal);
     void statusChanged(NetworkManager::Status status);
+    void wimaxNspAppeared(const QString& nsp);
+    void wimaxNspDisappeared(const QString& nsp);
+    void wimaxNspSignalChanged(uint signal);
+    void wimaxEnabled(bool enabled);
     void wirelessNetworkAppeared(const QString& ssid);
     void wirelessNetworkDisappeared(const QString& ssid);
     void wirelessNetworkSignalChanged(int strength);
@@ -66,7 +70,9 @@ Q_SIGNALS:
     void activeConnectionStateChanged(const QString& active, NetworkManager::ActiveConnection::State state);
     void addActiveConnection(const QString& active);
     void addConnection(const QString& connection, const QString& device);
+    void addNspNetwork(const QString& nsp, const QString& device);
     void addVpnConnection(const QString& connection);
+    void addWimaxNsp(const QString& nsp, const QString& device);
     void addWirelessNetwork(const QString& network, const QString& device);
     void connectionUpdated(const QString& connection);
     void modemAccessTechnologyChanged(const QString& modem);
@@ -76,9 +82,12 @@ Q_SIGNALS:
     void removeConnectionsByDevice(const QString& udi);
     void removeConnection(const QString& connection);
     void removeVpnConnections();
+    void removeWimaxNsp(const QString& nsp, const QString& device);
+    void removeWimaxNsps();
     void removeWirelessNetwork(const QString& ssid, const QString& device);
     void removeWirelessNetworks();
     void vpnConnectionStateChanged(const QString& vpn, NetworkManager::VpnConnection::State state);
+    void wimaxNspSignalChanged(const QString& nsp, int strength);
     void wirelessNetworkSignalChanged(const QString& ssid, int signal);
     void wirelessNetworkAccessPointChanged(const QString& ssid, const QString& ap);
 

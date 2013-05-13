@@ -683,6 +683,17 @@ QString UiUtils::convertAccessTechnologyToString(const ModemManager::ModemInterf
     return i18nc("Unknown cellular access technology","Unknown");
 }
 
+QString UiUtils::convertNspTypeToString(WimaxNsp::NetworkType type)
+{
+    switch (type) {
+        case WimaxNsp::Unknown: return i18n("Unknown");
+        case WimaxNsp::Home: return i18n("Home");
+        case WimaxNsp::Partner: return i18n("Partner");
+        case WimaxNsp::RoamingPartner: return i18n("Roaming partner");
+    }
+
+    return i18n("Unknown");
+}
 
 NetworkManager::ModemDevice::Capability UiUtils::modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps)
 {

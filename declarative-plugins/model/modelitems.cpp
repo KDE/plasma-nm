@@ -85,6 +85,32 @@ QList< ModelItem* > ModelItems::itemsByDevice(const QString& device) const
     return result;
 }
 
+QList< ModelItem* > ModelItems::itemsByNsp(const QString& nsp) const
+{
+    QList<ModelItem*> result;
+
+    foreach (ModelItem * item, m_items) {
+        if (item->nspPath() == nsp) {
+            result << item;
+        }
+    }
+
+    return result;
+}
+
+QList< ModelItem* > ModelItems::itemsByNsp(const QString& nsp, const QString& device) const
+{
+    QList<ModelItem*> result;
+
+    foreach (ModelItem * item, m_items) {
+        if (item->nspPath() == nsp && item->devicePath() == device) {
+            result << item;
+        }
+    }
+
+    return result;
+}
+
 QList< ModelItem* > ModelItems::itemsBySsid(const QString& ssid) const
 {
     QList<ModelItem*> result;

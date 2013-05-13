@@ -26,6 +26,7 @@
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/BluetoothDevice>
 #include <NetworkManagerQt/ModemDevice>
+#include <NetworkManagerQt/WimaxDevice>
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/VpnConnection>
@@ -153,6 +154,11 @@ QString ModelItem::name() const
     return m_name;
 }
 
+QString ModelItem::nspPath() const
+{
+    return m_nspPath;
+}
+
 QString ModelItem::uuid() const
 {
     return m_uuid;
@@ -191,7 +197,13 @@ QString ModelItem::devicePath() const
 
 QString ModelItem::specificPath() const
 {
-    return m_accessPointPath;
+    if (type() == NetworkManager::ConnectionSettings::Wimax) {
+        return m_nspPath;
+    } else if (type() == NetworkManager::ConnectionSettings::Wireless) {
+        return m_accessPointPath;
+    }
+
+    return QString();
 }
 
 int ModelItem::signal() const
@@ -351,6 +363,35 @@ void ModelItem::updateDetails()
                 }
             }
         }
+    } else if (m_type == NetworkManager::ConnectionSettings::Wimax) {
+        NetworkManager::WimaxDevice::Ptr wimaxDevice;
+        NetworkManager::WimaxNsp::Ptr wimaxNsp;
+        if (device) {
+            wimaxDevice = device.objectCast<NetworkManager::WimaxDevice>();
+        }
+        if (wimaxDevice) {
+            wimaxNsp = wimaxDevice->findNsp(m_nspPath);
+        }
+
+        foreach (const QString& key, detailKeys) {
+            if (key == "wimax:bsid") {
+                if (m_connected && wimaxDevice) {
+                    m_details += QString(format).arg(i18n("Bsid:"), wimaxDevice->bsid());
+                }
+            } else if (key == "wimax:nsp") {
+                if (wimaxNsp) {
+                    m_details += QString(format).arg(i18n("NSP Name:"), wimaxNsp->name());
+                }
+            } else if (key == "wimax:signal") {
+                if (wimaxNsp) {
+                    m_details += QString(format).arg(i18n("Signal Quality:"), i18n("%1%", wimaxNsp->signalQuality()));
+                }
+            } else if (key == "wimax:type") {
+                if (wimaxNsp) {
+                    m_details += QString(format).arg(i18n("Network Type:"), UiUtils::convertNspTypeToString(wimaxNsp->networkType()));
+                }
+            }
+        }
     } else if (m_type == NetworkManager::ConnectionSettings::Wired) {
         NetworkManager::WiredDevice::Ptr wiredDevice;
         if (device) {
@@ -455,7 +496,8 @@ bool ModelItem::operator==(const ModelItem* item) const
 {
     if (((item->uuid() == this->uuid() && !item->uuid().isEmpty() && !this->uuid().isEmpty()) ||
          (item->name() == this->name() && !item->name().isEmpty() && !this->name().isEmpty() && item->type() == this->type()) ||
-         (item->ssid() == this->ssid() && !item->ssid().isEmpty() && !this->ssid().isEmpty())) &&
+         (item->ssid() == this->ssid() && !item->ssid().isEmpty() && !this->ssid().isEmpty()) ||
+         (item->nspPath() == this->nspPath() && !item->nspPath().isEmpty() && !this->nspPath().isEmpty())) &&
          ((item->devicePath() == this->devicePath() && !item->devicePath().isEmpty() && !this->devicePath().isEmpty()) ||
           (item->type() == NetworkManager::ConnectionSettings::Vpn && this->type() == NetworkManager::ConnectionSettings::Vpn))) {
         return true;
@@ -520,6 +562,8 @@ void ModelItem::setConnection(const QString& connection)
 
         if (!m_ssid.isEmpty()) {
             m_name = m_ssid;
+        } else if (!m_nsp.isEmpty()) {
+            m_name = m_nsp;
         }
     }
 }
@@ -533,44 +577,69 @@ void ModelItem::setConnectionSettings(const NetworkManager::ConnectionSettings::
     if (type() == NetworkManager::ConnectionSettings::Wireless) {
         bool changed = false;
         QString previousSsid;
-        if (settings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
-            NetworkManager::WirelessSetting::Ptr wirelessSetting;
-            wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
-            if (m_ssid != wirelessSetting->ssid()) {
-                if (!m_ssid.isEmpty()) {
-                    changed = true;
-                }
-                previousSsid = m_ssid;
-                m_ssid = wirelessSetting->ssid();
-                if (!wirelessSetting->security().isEmpty()) {
-                    m_secure = true;
-                }
+        NetworkManager::WirelessSetting::Ptr wirelessSetting;
+        wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+        if (m_ssid != wirelessSetting->ssid()) {
+            if (!m_ssid.isEmpty()) {
+                changed = true;
             }
-
-            if (!changed) {
-                return;
-            }
-
-            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePath());
-            if (!device) {
-                return;
-            }
-            NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
-            if (!wifiDevice) {
-                return;
-            }
-            NetworkManager::WirelessNetwork::Ptr newWifiNetwork = wifiDevice->findNetwork(m_ssid);
-
-            if (!newWifiNetwork) {
-                setConnection(QString());
-                NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(previousSsid);
-                if (wifiNetwork) {
-                    setWirelessNetwork(previousSsid);
-                }
-            } else {
-                setWirelessNetwork(m_ssid);
+            previousSsid = m_ssid;
+            m_ssid = wirelessSetting->ssid();
+            if (!wirelessSetting->security().isEmpty()) {
+                m_secure = true;
             }
         }
+
+        if (!changed) {
+            return;
+        }
+
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePath());
+        if (!device) {
+            return;
+        }
+        NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+        if (!wifiDevice) {
+            return;
+        }
+        NetworkManager::WirelessNetwork::Ptr newWifiNetwork = wifiDevice->findNetwork(m_ssid);
+
+        if (!newWifiNetwork) {
+            setConnection(QString());
+            NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(previousSsid);
+            if (wifiNetwork) {
+                setWirelessNetwork(previousSsid);
+            }
+        } else {
+            setWirelessNetwork(m_ssid);
+        }
+    }
+
+    updateDetails();
+}
+
+void ModelItem::setNsp(const QString& nsp)
+{
+    NetworkManager::WimaxNsp::Ptr wimaxNsp;
+    NetworkManager::WimaxDevice::Ptr wimaxDevice = NetworkManager::findNetworkInterface(m_devicePath).objectCast<NetworkManager::WimaxDevice>();
+
+    if (wimaxDevice) {
+        wimaxNsp = wimaxDevice->findNsp(nsp);
+    }
+
+    if (wimaxNsp) {
+        m_nspPath = wimaxNsp->uni();
+        m_nsp = wimaxNsp->name();
+        m_signal = wimaxNsp->signalQuality();
+        m_type = NetworkManager::ConnectionSettings::Wimax;
+
+        if (m_name.isEmpty() || m_connectionPath.isEmpty()) {
+            m_name = m_nsp;
+        }
+    } else {
+        m_nsp.clear();
+        m_signal = 0;
+        m_type = NetworkManager::ConnectionSettings::Unknown;
     }
 
     updateDetails();
@@ -578,8 +647,6 @@ void ModelItem::setConnectionSettings(const NetworkManager::ConnectionSettings::
 
 void ModelItem::setWirelessNetwork(const QString& ssid)
 {
-    m_ssid = ssid;
-
     NetworkManager::WirelessNetwork::Ptr network;
     NetworkManager::WirelessDevice::Ptr wifiDevice = NetworkManager::findNetworkInterface(m_devicePath).objectCast<NetworkManager::WirelessDevice>();
 

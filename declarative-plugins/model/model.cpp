@@ -128,7 +128,11 @@ QVariant Model::data(const QModelIndex& index, int role) const
             case DevicePathRole:
                 return item->devicePath();
             case NameRole:
-                return item->name();
+                if (m_items.itemsByName(item->name()).count() > 1) {
+                    return item->originalName();
+                } else {
+                    return item->name();
+                }
             case SecureRole:
                 return item->secure();
             case SectionRole:

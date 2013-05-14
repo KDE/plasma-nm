@@ -180,6 +180,11 @@ QString ModelItem::sectionType() const
     }
 }
 
+QString ModelItem::originalName() const
+{
+    return name() + " (" + deviceName() + ")";
+}
+
 QString ModelItem::activeConnectionPath() const
 {
     return m_activePath;

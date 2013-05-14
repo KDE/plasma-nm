@@ -85,6 +85,19 @@ QList< ModelItem* > ModelItems::itemsByDevice(const QString& device) const
     return result;
 }
 
+QList< ModelItem* > ModelItems::itemsByName(const QString& name) const
+{
+    QList<ModelItem*> result;
+
+    foreach (ModelItem * item, m_items) {
+        if (item->name() == name) {
+            result << item;
+        }
+    }
+
+    return result;
+}
+
 QList< ModelItem* > ModelItems::itemsByNsp(const QString& nsp) const
 {
     QList<ModelItem*> result;

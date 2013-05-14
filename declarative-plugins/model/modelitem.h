@@ -51,6 +51,7 @@ public:
     QString uuid() const;
     QString ssid() const;
     QString sectionType() const;
+    QString originalName() const;
 
     // Object paths
     QString activeConnectionPath() const;

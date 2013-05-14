@@ -39,6 +39,7 @@ public:
     QList<ModelItem*> itemsByActiveConnection(const QString& active) const;
     QList<ModelItem*> itemsByConnection(const QString& connection) const;
     QList<ModelItem*> itemsByDevice(const QString& device) const;
+    QList<ModelItem*> itemsByName(const QString& name) const;
     QList<ModelItem*> itemsByNsp(const QString& nsp) const;
     QList<ModelItem*> itemsByNsp(const QString& nsp, const QString& device) const;
     QList<ModelItem*> itemsBySsid(const QString& ssid) const;
@@ -56,7 +57,6 @@ public:
 
 private:
     QList<ModelItem*> m_items;
-
 };
 
 #endif // PLASMA_NM_MODEL_ITEMS_H

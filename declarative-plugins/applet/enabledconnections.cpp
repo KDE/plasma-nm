@@ -45,7 +45,7 @@ void EnabledConnections::init()
     connect(NetworkManager::notifier(), SIGNAL(wimaxEnabledChanged(bool)),
             SIGNAL(wimaxEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wimaxHardwareEnabledChanged(bool)),
-            SLOT(wimaxHwEnabled(bool)));
+            SIGNAL(wimaxHwEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wwanEnabledChanged(bool)),
             SIGNAL(wwanEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wwanHardwareEnabledChanged(bool)),

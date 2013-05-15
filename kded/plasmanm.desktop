@@ -13,6 +13,7 @@ Name[tr]=Plasma NM modülü
 Name[uk]=Модуль керування мережею Плазми
 Name[x-test]=xxPlasma NM modulexx
 Comment=Provides secrets to the NetworkManager daemon
+Comment[cs]=Poskytuje přihlašovací informace pro službu NetworkManageru
 Comment[da]=Giver hemmeligheder til NetworkManager-dæmonen
 Comment[fi]=Välittää salaisuuksia NetworkManager-palvelulle
 Comment[nl]=Levert secrets aan de NetworkManager-daemon

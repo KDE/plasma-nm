@@ -40,24 +40,18 @@ class OpenVpnSettingWidget : public SettingWidget
 public:
     explicit OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
     ~OpenVpnSettingWidget();
-    void init();
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting);
     QVariantMap setting(bool agentOwned = false) const;
 
-protected slots:
+private slots:
     void updateStartDir(const KUrl &);
-    void gotOpenVpnOutput();
-    void openVpnError(QProcess::ProcessError);
-    void openVpnFinished(int, QProcess::ExitStatus);
     void x509KeyPasswordStorageChanged(int);
     void passPasswordStorageChanged(int);
     void x509PassKeyPasswordStorageChanged(int);
     void x509PassPasswordStorageChanged(int);
-    void proxyPasswordStorageChanged(int);
     void showPasswordsToggled(bool);
-    void proxyPasswordToggled(bool);
-    void proxyTypeChanged(int);
+    void showAdvanced();
 
 private:
     class Private;

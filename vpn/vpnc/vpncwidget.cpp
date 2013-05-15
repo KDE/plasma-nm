@@ -178,7 +178,7 @@ void VpncWidget::showAdvanced()
     if (adv->exec() == QDialog::Accepted) {
         NMStringMap advData = adv->setting();
         if (!advData.isEmpty()) {
-            m_setting->data().unite(advData);
+            m_setting->setData(m_setting->data().unite(advData));
         }
     }
 

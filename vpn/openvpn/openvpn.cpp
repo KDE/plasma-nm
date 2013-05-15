@@ -137,7 +137,6 @@ OpenVpnUiPlugin::~OpenVpnUiPlugin()
 SettingWidget * OpenVpnUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
 {
     OpenVpnSettingWidget * wid = new OpenVpnSettingWidget(setting, parent);
-    wid->init();
     return wid;
 }
 

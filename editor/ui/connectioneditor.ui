@@ -90,6 +90,9 @@
      <property name="text">
       <string>&amp;Add</string>
      </property>
+     <property name="icon">
+      <iconset theme="list-add"/>
+     </property>
      <property name="autoDefault">
       <bool>false</bool>
      </property>
@@ -103,6 +106,9 @@
      <property name="text">
       <string>&amp;Edit</string>
      </property>
+     <property name="icon">
+      <iconset theme="configure"/>
+     </property>
     </widget>
    </item>
    <item row="2" column="1">
@@ -112,6 +118,9 @@
      </property>
      <property name="text">
       <string>&amp;Delete</string>
+     </property>
+     <property name="icon">
+      <iconset theme="edit-delete"/>
      </property>
     </widget>
    </item>
@@ -132,6 +141,9 @@
     <widget class="KPushButton" name="btnAbout">
      <property name="text">
       <string>A&amp;bout...</string>
+     </property>
+     <property name="icon">
+      <iconset theme="help-about"/>
      </property>
     </widget>
    </item>

@@ -47,10 +47,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 {
     QWidget * tmp = new QWidget(this);
     m_editor->setupUi(tmp);
-    m_editor->addButton->setIcon(KIcon("list-add"));
-    m_editor->editButton->setIcon(KIcon("configure"));
-    m_editor->deleteButton->setIcon(KIcon("edit-delete"));
-    m_editor->btnAbout->setIcon(KIcon("help-about"));
     setCentralWidget(tmp);
 
     setAutoSaveSettings();

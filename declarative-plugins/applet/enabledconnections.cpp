@@ -42,19 +42,27 @@ void EnabledConnections::init()
             SIGNAL(wirelessEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wirelessHardwareEnabledChanged(bool)),
             SIGNAL(wirelessHwEnabled(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(wimaxEnabledChanged(bool)),
+            SIGNAL(wimaxEnabled(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(wimaxHardwareEnabledChanged(bool)),
+            SLOT(wimaxHwEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wwanEnabledChanged(bool)),
             SIGNAL(wwanEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wwanHardwareEnabledChanged(bool)),
             SIGNAL(wwanHwEnabled(bool)));
 
-    NMAppletDebug() << "Emig signal networkingEnabled(" << NetworkManager::isNetworkingEnabled() << ")";
-    networkingEnabled(NetworkManager::isNetworkingEnabled());
-    NMAppletDebug() << "Emig signal wirelessEnabled(" << NetworkManager::isWirelessEnabled() << ")";
-    wirelessEnabled(NetworkManager::isWirelessEnabled());
-    NMAppletDebug() << "Emig signal wirelessHwEnabled(" << NetworkManager::isWirelessHardwareEnabled() << ")";
-    wirelessHwEnabled(NetworkManager::isWirelessHardwareEnabled());
-    NMAppletDebug() << "Emig signal wwanEnabled(" << NetworkManager::isWwanEnabled() << ")";
-    wwanEnabled(NetworkManager::isWwanEnabled());
-    NMAppletDebug() << "Emig signal wwanHWEnabled(" << NetworkManager::isWwanHardwareEnabled() << ")";
-    wwanHwEnabled(NetworkManager::isWwanHardwareEnabled());
+    NMAppletDebug() << "Emit signal networkingEnabled(" << NetworkManager::isNetworkingEnabled() << ")";
+    Q_EMIT networkingEnabled(NetworkManager::isNetworkingEnabled());
+    NMAppletDebug() << "Emit signal wirelessEnabled(" << NetworkManager::isWirelessEnabled() << ")";
+    Q_EMIT wirelessEnabled(NetworkManager::isWirelessEnabled());
+    NMAppletDebug() << "Emit signal wirelessHwEnabled(" << NetworkManager::isWirelessHardwareEnabled() << ")";
+    Q_EMIT wirelessHwEnabled(NetworkManager::isWirelessHardwareEnabled());
+    NMAppletDebug() << "Emit signal wimaxEnabled(" << NetworkManager::isWimaxEnabled() << ")";
+    Q_EMIT wimaxEnabled(NetworkManager::isWimaxEnabled());
+    NMAppletDebug() << "Emit signal wimaxHwEnabled(" << NetworkManager::isWimaxHardwareEnabled() << ")";
+    Q_EMIT wimaxHwEnabled(NetworkManager::isWimaxHardwareEnabled());
+    NMAppletDebug() << "Emit signal wwanEnabled(" << NetworkManager::isWwanEnabled() << ")";
+    Q_EMIT wwanEnabled(NetworkManager::isWwanEnabled());
+    NMAppletDebug() << "Emit signal wwanHWEnabled(" << NetworkManager::isWwanHardwareEnabled() << ")";
+    Q_EMIT wwanHwEnabled(NetworkManager::isWwanHardwareEnabled());
 }

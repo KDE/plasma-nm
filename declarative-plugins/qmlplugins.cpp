@@ -22,6 +22,7 @@
 
 #include <QtDeclarative/QDeclarativeItem>
 
+#include "applet/availabledevices.h"
 #include "applet/connectionicon.h"
 #include "applet/enabledconnections.h"
 #include "applet/globalconfig.h"
@@ -37,6 +38,7 @@
 
 void QmlPlugins::registerTypes(const char* uri)
 {
+    qmlRegisterType<AvailableDevices>(uri, 0, 1, "AvailableDevices");
     qmlRegisterType<ConnectionIcon>(uri, 0, 1, "ConnectionIcon");
     qmlRegisterType<EnabledConnections>(uri, 0, 1, "EnabledConnections");
     qmlRegisterType<GlobalConfig>(uri, 0, 1, "GlobalConfig");

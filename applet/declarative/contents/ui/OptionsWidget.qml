@@ -23,14 +23,17 @@ import org.kde.qtextracomponents 0.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasma.core 0.1 as PlasmaCore
+import org.kde.plasmanm 0.1 as PlasmaNM
 
 Item {
     id: optionsWidget;
 
     property alias networkingEnabled: networkingEnabled.checked;
     property alias wirelessEnabled: wirelessEnabled.checked;
+    property alias wimaxEnabled: wimaxEnabled.checked;
     property alias wwanEnabled: wwanEnabled.checked;
     property alias wirelessHwEnabled: wirelessEnabled.enabled;
+    property alias wimaxHwEnabled: wimaxEnabled.enabled;
     property alias wwanHwEnabled: wwanEnabled.enabled;
 
     signal networkingEnabledChanged(bool enabled);
@@ -38,39 +41,61 @@ Item {
     signal wwanEnabledChanged(bool enabled);
     signal openEditor();
 
-    PlasmaComponents.CheckBox {
-        id: networkingEnabled;
+    PlasmaNM.AvailableDevices {
+        id: availableDevices;
+    }
 
-        height: 15;
+    Column {
+        id: checkboxes;
+
+        spacing: 8;
         anchors { left: parent.left; right: parent.right; top: parent.top; topMargin: 10 }
-        text: i18n("Networking enabled");
 
-        onClicked: {
-            networkingEnabledChanged(checked);
+        PlasmaComponents.CheckBox {
+            id: networkingEnabled;
+
+            height: 15;
+            text: i18n("Networking enabled");
+
+            onClicked: {
+                networkingEnabledChanged(checked);
+            }
         }
-    }
 
-    PlasmaComponents.CheckBox {
-        id: wirelessEnabled;
+        PlasmaComponents.CheckBox {
+            id: wirelessEnabled;
 
-        height: 15;
-        anchors { left: parent.left; right: parent.right; top: networkingEnabled.bottom; topMargin: 10 }
-        text: i18n("Wireless enabled");
+            height: availableDevices.wirelessAvailable ? 15 : 0;
+            visible: availableDevices.wirelessAvailable;
+            text: i18n("Wireless enabled");
 
-        onClicked: {
-            wirelessEnabledChanged(checked);
+            onClicked: {
+                wirelessEnabledChanged(checked);
+            }
         }
-    }
 
-    PlasmaComponents.CheckBox {
-        id: wwanEnabled;
+        PlasmaComponents.CheckBox {
+            id: wimaxEnabled;
 
-        height: 15;
-        anchors { left: parent.left; right: parent.right; top: wirelessEnabled.bottom; topMargin: 10 }
-        text: i18n("Mobile broadband enabled");
+            height: availableDevices.wimaxAvailable ? 15 : 0;
+            visible: availableDevices.wimaxAvailable;
+            text: i18n("Wimax enabled");
 
-        onClicked: {
-            wwanEnabledChanged(checked);
+            onClicked: {
+                wimaxEnabledChanged(checked);
+            }
+        }
+
+        PlasmaComponents.CheckBox {
+            id: wwanEnabled;
+
+            height: availableDevices.wwanAvailable ? 15 : 0;
+            visible: availableDevices.wwanAvailable;
+            text: i18n("Mobile broadband enabled");
+
+            onClicked: {
+                wwanEnabledChanged(checked);
+            }
         }
     }
 
@@ -78,10 +103,14 @@ Item {
         id: openEditorButton;
 
         height: 20;
-        anchors { left: parent.left; right: parent.right; top: wwanEnabled.bottom; topMargin: 10}
+        anchors { left: parent.left; right: parent.right; top: checkboxes.bottom; topMargin: 10}
         text: i18n("Edit connections...");
         iconSource: "configure";
 
         onClicked: openEditor();
+    }
+
+    Component.onCompleted: {
+        availableDevices.init();
     }
 }

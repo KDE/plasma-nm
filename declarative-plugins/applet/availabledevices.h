@@ -18,29 +18,44 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_ENABLED_CONNECTIONS_H
-#define PLASMA_NM_ENABLED_CONNECTIONS_H
+#ifndef PLASMA_NM_AVAILABLE_DEVICES_H
+#define PLASMA_NM_AVAILABLE_DEVICES_H
 
 #include <QObject>
 
-class EnabledConnections : public QObject
+#include <NetworkManagerQt/Device>
+
+class AvailableDevices : public QObject
 {
+Q_PROPERTY(bool wirelessAvailable READ isWirelessAvailable NOTIFY wirelessAvailableChanged)
+Q_PROPERTY(bool wimaxAvailable READ isWimaxAvailable NOTIFY wimaxAvailableChanged)
+Q_PROPERTY(bool wwanAvailable READ isWwanAvailable NOTIFY wwanAvailableChanged)
 Q_OBJECT
 public:
-    explicit EnabledConnections(QObject* parent = 0);
-    virtual ~EnabledConnections();
+    explicit AvailableDevices(QObject* parent = 0);
+    virtual ~AvailableDevices();
 
 public Q_SLOTS:
     void init();
 
+    bool isWirelessAvailable() const;
+    bool isWimaxAvailable() const;
+    bool isWwanAvailable() const;
+
+private Q_SLOTS:
+    void deviceAdded(const QString& dev);
+    void deviceRemoved();
+
 Q_SIGNALS:
-    void networkingEnabled(bool enabled);
-    void wirelessEnabled(bool enabled);
-    void wirelessHwEnabled(bool enabled);
-    void wimaxEnabled(bool enabled);
-    void wimaxHwEnabled(bool enabled);
-    void wwanEnabled(bool enabled);
-    void wwanHwEnabled(bool enabled);
+    void wirelessAvailableChanged(bool available);
+    void wimaxAvailableChanged(bool available);
+    void wwanAvailableChanged(bool available);
+
+private:
+    bool m_wirelessAvailable;
+    bool m_wimaxAvailable;
+    bool m_wwanAvailable;
+
 };
 
-#endif // PLASMA_NM_ENABLED_CONNECTIONS_H
+#endif // PLASMA_NM_AVAILABLE_DEVICES_H

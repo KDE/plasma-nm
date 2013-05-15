@@ -102,6 +102,14 @@ Item {
             options.wirelessHwEnabled = enabled;
         }
 
+        onWimaxEnabled: {
+            options.wimaxEnabled = enabled;
+        }
+
+        onWimaxHwEnabled: {
+            options.wimaxHwEnabled = enabled;
+        }
+
         onWwanEnabled: {
             options.wwanEnabled = enabled;
         }
@@ -141,7 +149,7 @@ Item {
         State {
             name: "Expanded";
             when: expanded && toolbar.toolbarExpandable;
-            PropertyChanges { target: toolBar; height: 150 }
+            PropertyChanges { target: toolBar; height: options.childrenRect.height + 45 }
             PropertyChanges { target: options; visible: true }
         }
     ]

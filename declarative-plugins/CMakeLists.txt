@@ -1,4 +1,5 @@
 set(plasma_nm_qml_plugins_SRCS
+   applet/availabledevices.cpp
    applet/connectionicon.cpp
    applet/enabledconnections.cpp
    applet/globalconfig.cpp

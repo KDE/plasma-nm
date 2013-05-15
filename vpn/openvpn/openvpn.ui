@@ -215,7 +215,7 @@
          <item row="0" column="0">
           <widget class="QLabel" name="textLabel5">
            <property name="text">
-            <string>Shared Key</string>
+            <string>Shared Key:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -231,7 +231,7 @@
          <item row="2" column="0">
           <widget class="QLabel" name="textLabel6">
            <property name="text">
-            <string>Local IP</string>
+            <string>Local IP:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -247,7 +247,7 @@
          <item row="3" column="0">
           <widget class="QLabel" name="textLabel7">
            <property name="text">
-            <string>Remote IP</string>
+            <string>Remote IP:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -267,7 +267,7 @@
          <item row="1" column="0">
           <widget class="QLabel" name="label_16">
            <property name="text">
-            <string>Key Direction</string>
+            <string>Key Direction:</string>
            </property>
           </widget>
          </item>
@@ -425,7 +425,7 @@
          <item row="0" column="0">
           <widget class="QLabel" name="textLabel2_2">
            <property name="text">
-            <string>CA file</string>
+            <string>CA file:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -441,7 +441,7 @@
          <item row="1" column="0">
           <widget class="QLabel" name="textLabel3_2_2">
            <property name="text">
-            <string>Certificate</string>
+            <string>Certificate:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -457,7 +457,7 @@
          <item row="2" column="0">
           <widget class="QLabel" name="textLabel4_2">
            <property name="text">
-            <string>Key</string>
+            <string>Key:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -473,14 +473,14 @@
          <item row="3" column="0">
           <widget class="QLabel" name="label_6">
            <property name="text">
-            <string>Key password</string>
+            <string>Key password:</string>
            </property>
           </widget>
          </item>
          <item row="4" column="0">
           <widget class="QLabel" name="textLabel9_2">
            <property name="text">
-            <string comment="like in Username for athentication">Username</string>
+            <string comment="like in Username for athentication">Username:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -496,7 +496,7 @@
          <item row="5" column="0">
           <widget class="QLabel" name="label">
            <property name="text">
-            <string>Password</string>
+            <string>Password:</string>
            </property>
           </widget>
          </item>

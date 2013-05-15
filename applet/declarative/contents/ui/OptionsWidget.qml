@@ -38,6 +38,7 @@ Item {
 
     signal networkingEnabledChanged(bool enabled);
     signal wirelessEnabledChanged(bool enabled);
+    signal wimaxEnabledChanged(bool enabled);
     signal wwanEnabledChanged(bool enabled);
     signal openEditor();
 

@@ -82,6 +82,7 @@ Item {
                 mainWindow.openEditor.connect(openEditor);
                 toolbar.enableNetworking.connect(enableNetworking);
                 toolbar.enableWireless.connect(enableWireless);
+                toolbar.enableWimax.connect(enableWimax);
                 toolbar.enableWwan.connect(enableWwan);
             }
     }

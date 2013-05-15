@@ -130,6 +130,12 @@ void Handler::enableWireless(bool enable)
     NetworkManager::setWirelessEnabled(enable);
 }
 
+void Handler::enableWimax(bool enable)
+{
+    NMHandlerDebug() << "Wimax enabled: " << enable;
+    NetworkManager::setWimaxEnabled(enable);
+}
+
 void Handler::enableWwan(bool enable)
 {
     NMHandlerDebug() << "Wwan enabled: " << enable;

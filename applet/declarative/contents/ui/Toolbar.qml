@@ -33,6 +33,7 @@ Item {
 
     signal enableNetworking(bool enable);
     signal enableWireless(bool enable);
+    signal enableWimax(bool enable);
     signal enableWwan(bool enable);
     signal openEditorToolbar();
     signal toolbarExpanded();

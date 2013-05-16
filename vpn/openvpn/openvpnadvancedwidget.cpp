@@ -81,6 +81,9 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
 
     d->openvpnProcess->setProgram(openVpnBinary, args);
 
+    connect(m_ui->buttonBox, SIGNAL(accepted()), SLOT(accept()));
+    connect(m_ui->buttonBox, SIGNAL(rejected()), SLOT(reject()));
+
     loadConfig();
 }
 

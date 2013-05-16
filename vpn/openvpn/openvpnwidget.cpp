@@ -249,8 +249,8 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
     }
     data.insert( QLatin1String(NM_OPENVPN_KEY_CONNECTION_TYPE), contype);
 
-    d->setting->setData(data);
-    d->setting->setSecrets(secretData);
+    d->setting->setData(d->setting->data().unite(data));
+    d->setting->setSecrets(d->setting->secrets().unite(secretData));
 
     return d->setting->toMap();
 }
@@ -342,8 +342,8 @@ void OpenVpnSettingWidget::showAdvanced()
     if (adv->exec() == QDialog::Accepted) {
         NetworkManager::VpnSetting::Ptr advData = adv->setting();
         if (!advData.isNull()) {
-            d->setting->setData(d->setting->data().unite(advData->data()));
-            d->setting->setSecrets(d->setting->secrets().unite(advData->secrets()));
+            d->setting->setData(advData->data());
+            d->setting->setSecrets(advData->secrets());
         }
     }
 

@@ -141,7 +141,7 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
         data.insert(NM_VPNC_KEY_CA_FILE, m_ui->caFile->url().url());
     }
 
-    m_setting->setData(data);
+    m_setting->setData(m_setting->data().unite(data));
     m_setting->setSecrets(secrets);
     return m_setting->toMap();
 }
@@ -178,7 +178,7 @@ void VpncWidget::showAdvanced()
     if (adv->exec() == QDialog::Accepted) {
         NMStringMap advData = adv->setting();
         if (!advData.isEmpty()) {
-            m_setting->setData(m_setting->data().unite(advData));
+            m_setting->setData(advData);
         }
     }
 

@@ -63,6 +63,7 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
     d->ui.x509CaFile->setMode(KFile::LocalOnly);
     d->ui.x509Cert->setMode(KFile::LocalOnly);
     d->ui.x509Key->setMode(KFile::LocalOnly);
+    d->ui.passCaFile->setMode(KFile::LocalOnly);
     d->setting = setting;
 
     // use requesters' urlSelected signals to set other requester's startDirs to save clicking
@@ -124,9 +125,9 @@ void OpenVpnSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
         d->ui.pskRemoteIp->setText( dataMap[NM_OPENVPN_KEY_REMOTE_IP]);
         d->ui.pskLocalIp->setText( dataMap[NM_OPENVPN_KEY_LOCAL_IP]);
     } else if ( cType == QLatin1String( NM_OPENVPN_CONTYPE_PASSWORD ) ) {
+        d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::Password );
         d->ui.passUserName->setText( dataMap[NM_OPENVPN_KEY_USERNAME] );
         d->ui.passCaFile->setUrl(KUrl( dataMap[NM_OPENVPN_KEY_CA] ));
-        d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::Password );
     } else if ( cType == QLatin1String( NM_OPENVPN_CONTYPE_TLS ) ) {
         d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::Certificates );
         d->ui.x509CaFile->setUrl(KUrl( dataMap[NM_OPENVPN_KEY_CA] ));
@@ -310,7 +311,7 @@ void OpenVpnSettingWidget::fillOnePasswordCombo(KComboBox * combo, NetworkManage
     }
 }
 
-uint OpenVpnSettingWidget::handleOnePasswordType(const KComboBox * combo, const QString & key, NMStringMap & data) const
+uint OpenVpnSettingWidget::handleOnePasswordType(const KComboBox * combo, const QString & key, NMStringMap &data) const
 {
     uint type = combo->currentIndex();
     switch (type) {

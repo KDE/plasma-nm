@@ -116,6 +116,8 @@ void DetailKeysEditor::loadAllDetailElements()
     m_allDetailsElements.insert("wireless:accesspoint", QPair<QString, QString>(i18n("Access Point (MAC)"), i18n("Wireless Access Point's Hardware Address")));
     m_allDetailsElements.insert("wireless:band", QPair<QString, QString>(i18n("Wireless Band"), i18n("Wireless Frequency Band")));
     m_allDetailsElements.insert("wireless:channel", QPair<QString, QString>(i18n("Wireless Channel"), i18n("Wireless Frequency Channel")));
+    m_allDetailsElements.insert("wireless:security", QPair<QString, QString>(i18n("Wireless Security"), i18n("Describes the security capabilities of the access point")));
+    m_allDetailsElements.insert("wireless:mode", QPair<QString, QString>(i18n("Wireless Mode"), i18n("The operating mode of the wireless device")));
 
     // Mobile Broadband
     m_allDetailsElements.insert("mobile:operator", QPair<QString, QString>(i18n("Mobile Operator"), i18n("Mobile Operator's Name")));

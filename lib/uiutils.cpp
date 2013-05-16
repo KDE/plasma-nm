@@ -461,24 +461,23 @@ qreal UiUtils::interfaceConnectionState(const RemoteInterfaceConnection *ic)
     return 0;
 }
 
+#endif
+
 QString UiUtils::operationModeToString(NetworkManager::WirelessDevice::OperationMode mode)
 {
     QString modeString;
     switch (mode) {
-        case NetworkManager::WirelessDevice::Unassociated:
-            modeString = i18nc("wireless network operation mode", "Unassociated");
+        case NetworkManager::WirelessDevice::WirelessDevice::Unknown:
+            modeString = i18nc("wireless network operation mode", "Unknown");
             break;
         case NetworkManager::WirelessDevice::Adhoc:
             modeString = i18nc("wireless network operation mode", "Adhoc");
             break;
-        case NetworkManager::WirelessDevice::Managed:
-            modeString = i18nc("wireless network operation mode", "Managed");
+        case NetworkManager::WirelessDevice::WirelessDevice::Infra:
+            modeString = i18nc("wireless network operation mode", "Infrastructure");
             break;
-        case NetworkManager::WirelessDevice::Master:
-            modeString = i18nc("wireless network operation mode", "Master");
-            break;
-        case NetworkManager::WirelessDevice::Repeater:
-            modeString = i18nc("wireless network operation mode", "Repeater");
+        case NetworkManager::WirelessDevice::WirelessDevice::ApMode:
+            modeString = i18nc("wireless network operation mode", "Access point");
             break;
         default:
             modeString = I18N_NOOP("INCORRECT MODE FIX ME");
@@ -525,7 +524,7 @@ QStringList UiUtils::wpaFlagsToStringList(NetworkManager::AccessPoint::WpaFlags 
 
     return flagList;
 }
-#endif
+
 
 QString UiUtils::connectionSpeed(double bitrate)
 {

@@ -119,7 +119,7 @@ public:
      * @param remote interface connection
      */
     static qreal interfaceConnectionState(const RemoteInterfaceConnection *ic);
-
+#endif
     /**
      * @return a human-readable description of operation mode.
      * @param mode the operation mode
@@ -131,7 +131,7 @@ public:
      * @param flags the wpa flags
      */
     static QStringList wpaFlagsToStringList(NetworkManager::AccessPoint::WpaFlags flags);
-#endif
+
     /**
      * @return localized string showing a human-readable connection speed. 1000 is used as base.
      * @param bitrate bitrate of the connection per second

@@ -445,6 +445,10 @@ void ModelItem::updateDetails()
                 if (wirelessDevice) {
                     m_details += QString(format).arg(i18n("MAC Address:"), wirelessDevice->permanentHardwareAddress());
                 }
+            } else if (key == "wireless:mode") {
+                if (wirelessDevice) {
+                    m_details += QString(format).arg(i18n("Mode:"), UiUtils::operationModeToString(wirelessDevice->mode()));
+                }
             } else if (key == "wireless:signal") {
                 if (network) {
                     m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%", network->signalStrength()));
@@ -460,6 +464,21 @@ void ModelItem::updateDetails()
             } else if (key == "wireless:channel") {
                 if (ap) {
                     m_details += QString(format).arg(i18nc("Wifi AP channel and frequency", "Channel:"), i18n("%1 (%2 MHz)", UiUtils::findChannel(ap->frequency()), ap->frequency()));
+                }
+            } else if (key == "wireless:security") {
+                if (ap) {
+                    // TODO: improve
+                    if (!ap->capabilities()) {
+                        m_details += QString(format).arg(i18n("Security:"), i18n("Unsecured"));
+                    } else {
+                        if (ap->wpaFlags()) {
+                            m_details += QString(format).arg(i18n("Security:"), UiUtils::wpaFlagsToStringList(ap->wpaFlags()).join(", "));
+                        } else if (ap->rsnFlags()) {
+                            m_details += QString(format).arg(i18n("Security:"), UiUtils::wpaFlagsToStringList(ap->rsnFlags()).join(", "));
+                        } else {
+                            m_details += QString(format).arg(i18n("Security:"), i18n("Uknown security"));
+                        }
+                    }
                 }
             }
         }

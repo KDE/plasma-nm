@@ -139,6 +139,7 @@ ConnectionDetailEditor::~ConnectionDetailEditor()
 
 void ConnectionDetailEditor::initEditor()
 {
+    qDBusRegisterMetaType<NMVariantMapMap>();
     qDBusRegisterMetaType<NMStringMap>();
     qDBusRegisterMetaType<UIntList>();
     qDBusRegisterMetaType<UIntListList>();

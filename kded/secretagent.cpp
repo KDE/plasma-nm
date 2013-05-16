@@ -288,8 +288,6 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
         }
     }
 
-    qDebug() << Q_FUNC_INFO << "SECRETS CALL:" << request.setting_name << "hints:" << request.hints << "flags:" << request.flags;
-
     if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
         m_dialog = new PasswordDialog(request.connection, request.flags, request.setting_name);
         connect(m_dialog, SIGNAL(accepted()), this, SLOT(dialogAccepted()));

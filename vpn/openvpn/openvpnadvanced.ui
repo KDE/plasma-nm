@@ -226,6 +226,11 @@
            </item>
            <item>
             <property name="text">
+             <string>MD-4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
              <string>MD-5</string>
             </property>
            </item>

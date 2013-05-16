@@ -47,7 +47,7 @@ public:
     class EnumHashingAlgorithms
     {
     public:
-        enum HashingAlgorithms {Default = 0, None, Md5, Sha1, Sha224, Sha256, Sha384, Sha512, Ripemd160};
+        enum HashingAlgorithms {Default = 0, None, Md4, Md5, Sha1, Sha224, Sha256, Sha384, Sha512, Ripemd160};
     };
 };
 
@@ -177,6 +177,8 @@ void OpenVpnAdvancedWidget::loadConfig()
     QString hmacKeyAuth = dataMap[NM_OPENVPN_KEY_AUTH];
     if (hmacKeyAuth == QLatin1String(NM_OPENVPN_AUTH_NONE)) {
         m_ui->cboHmac->setCurrentIndex(Private::EnumHashingAlgorithms::None);
+    } else if (hmacKeyAuth == QLatin1String(NM_OPENVPN_AUTH_RSA_MD4)) {
+        m_ui->cboHmac->setCurrentIndex(Private::EnumHashingAlgorithms::Md4);
     } else if (hmacKeyAuth == QLatin1String(NM_OPENVPN_AUTH_MD5)) {
         m_ui->cboHmac->setCurrentIndex(Private::EnumHashingAlgorithms::Md5);
     } else if (hmacKeyAuth == QLatin1String(NM_OPENVPN_AUTH_SHA1)) {
@@ -290,6 +292,9 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
         break;
     case Private::EnumHashingAlgorithms::None:
         data.insert(QLatin1String(NM_OPENVPN_KEY_AUTH), QLatin1String(NM_OPENVPN_AUTH_NONE));
+        break;
+    case Private::EnumHashingAlgorithms::Md4:
+        data.insert(QLatin1String(NM_OPENVPN_KEY_AUTH), QLatin1String(NM_OPENVPN_AUTH_RSA_MD4));
         break;
     case Private::EnumHashingAlgorithms::Md5:
         data.insert(QLatin1String(NM_OPENVPN_KEY_AUTH), QLatin1String(NM_OPENVPN_AUTH_MD5));

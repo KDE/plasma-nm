@@ -349,6 +349,7 @@ void Monitor::statusChanged(NetworkManager::Status status)
             NetworkManager::ConnectionSettings::Ptr settings = con->settings();
 
             if (settings->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
+                connect(con.data(), SIGNAL(updated()), SLOT(connectionUpdated()), Qt::UniqueConnection);
                 Q_EMIT addVpnConnection(con->path());
             }
         }

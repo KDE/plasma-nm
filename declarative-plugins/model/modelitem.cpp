@@ -476,7 +476,7 @@ void ModelItem::updateDetails()
                         } else if (ap->rsnFlags()) {
                             m_details += QString(format).arg(i18n("Security:"), UiUtils::wpaFlagsToStringList(ap->rsnFlags()).join(", "));
                         } else {
-                            m_details += QString(format).arg(i18n("Security:"), i18n("Uknown security"));
+                            m_details += QString(format).arg(i18n("Security:"), i18n("Unknown security"));
                         }
                     }
                 }

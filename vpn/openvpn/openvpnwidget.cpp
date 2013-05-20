@@ -183,9 +183,9 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
     case Private::EnumConnectionType::Certificates:
         contype = QLatin1String(NM_OPENVPN_CONTYPE_TLS);
         kDebug() << "saving VPN TLS settings as urls:" << d->ui.x509CaFile->url().path() << d->ui.x509Cert->url().path() << d->ui.x509Key->url().path();
-        data.insert( QLatin1String(NM_OPENVPN_KEY_CA), d->ui.x509CaFile->url().path());
-        data.insert( QLatin1String(NM_OPENVPN_KEY_CERT), d->ui.x509Cert->url().path());
-        data.insert( QLatin1String(NM_OPENVPN_KEY_KEY), d->ui.x509Key->url().path());
+        data.insert(QLatin1String(NM_OPENVPN_KEY_CA), d->ui.x509CaFile->url().path());
+        data.insert(QLatin1String(NM_OPENVPN_KEY_CERT), d->ui.x509Cert->url().path());
+        data.insert(QLatin1String(NM_OPENVPN_KEY_KEY), d->ui.x509Key->url().path());
         // key password
         if (!d->ui.x509KeyPassword->text().isEmpty()) {
             secretData.insert(QLatin1String(NM_OPENVPN_KEY_CERTPASS), d->ui.x509KeyPassword->text());
@@ -194,9 +194,8 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
         break;
     case Private::EnumConnectionType::Psk:
         contype = QLatin1String(NM_OPENVPN_CONTYPE_STATIC_KEY);
-        data.insert( QLatin1String(NM_OPENVPN_KEY_STATIC_KEY), d->ui.pskSharedKey->url().path());
-        switch (d->ui.cmbKeyDirection->currentIndex())
-        {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY), d->ui.pskSharedKey->url().path());
+        switch (d->ui.cmbKeyDirection->currentIndex()) {
         case Private::EnumKeyDirection::None:
             break;
         case Private::EnumKeyDirection::D0:
@@ -207,18 +206,18 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
             break;
         }
         // ip addresses
-        data.insert( QLatin1String(NM_OPENVPN_KEY_REMOTE_IP), d->ui.pskRemoteIp->text());
-        data.insert( QLatin1String(NM_OPENVPN_KEY_LOCAL_IP), d->ui.pskLocalIp->text());
+        data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_IP), d->ui.pskRemoteIp->text());
+        data.insert(QLatin1String(NM_OPENVPN_KEY_LOCAL_IP), d->ui.pskLocalIp->text());
         break;
     case Private::EnumConnectionType::Password:
         contype = QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD);
         // username
         if (!d->ui.passUserName->text().isEmpty()) {
-            data.insert( QLatin1String(NM_OPENVPN_KEY_USERNAME), d->ui.passUserName->text());
+            data.insert(QLatin1String(NM_OPENVPN_KEY_USERNAME), d->ui.passUserName->text());
         }
         // password
         if (!d->ui.passPassword->text().isEmpty()) {
-            secretData.insert(QLatin1String( NM_OPENVPN_KEY_PASSWORD ), d->ui.passPassword->text());
+            secretData.insert(QLatin1String(NM_OPENVPN_KEY_PASSWORD ), d->ui.passPassword->text());
         }
         handleOnePasswordType(d->ui.passPasswordStorage, QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), data);
         // ca
@@ -248,7 +247,7 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
         handleOnePasswordType(d->ui.x509PassPasswordStorage, QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), data);
         break;
     }
-    data.insert( QLatin1String(NM_OPENVPN_KEY_CONNECTION_TYPE), contype);
+    data.insert(QLatin1String(NM_OPENVPN_KEY_CONNECTION_TYPE), contype);
 
     d->setting->setData(d->setting->data().unite(data));
     d->setting->setSecrets(d->setting->secrets().unite(secretData));

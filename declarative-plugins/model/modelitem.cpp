@@ -31,6 +31,7 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/VpnConnection>
 
+#include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/WirelessSetting>
 
@@ -463,7 +464,7 @@ void ModelItem::updateDetails()
                 }
             } else if (key == "wireless:channel") {
                 if (ap) {
-                    m_details += QString(format).arg(i18nc("Wifi AP channel and frequency", "Channel:"), i18n("%1 (%2 MHz)", UiUtils::findChannel(ap->frequency()), ap->frequency()));
+                    m_details += QString(format).arg(i18nc("Wifi AP channel and frequency", "Channel:"), i18n("%1 (%2 MHz)", NetworkManager::Utils::findChannel(ap->frequency()), ap->frequency()));
                 }
             } else if (key == "wireless:security") {
                 if (ap) {

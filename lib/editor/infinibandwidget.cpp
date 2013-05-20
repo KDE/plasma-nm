@@ -24,6 +24,7 @@
 
 #include <KLocalizedString>
 
+#include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/InfinibandSetting>
 
 InfinibandWidget::InfinibandWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
@@ -50,7 +51,7 @@ void InfinibandWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     if (infinibandSetting->transportMode() != NetworkManager::InfinibandSetting::Unknown)
         m_ui->transport->setCurrentIndex(m_ui->transport->findData(infinibandSetting->transportMode()));
-    m_ui->macAddress->init(NetworkManager::Device::InfiniBand, UiUtils::macAddressAsString(infinibandSetting->macAddress()));
+    m_ui->macAddress->init(NetworkManager::Device::InfiniBand, NetworkManager::Utils::macAddressAsString(infinibandSetting->macAddress()));
     if (infinibandSetting->mtu()) {
         m_ui->mtu->setValue(infinibandSetting->mtu());
     }
@@ -62,7 +63,7 @@ QVariantMap InfinibandWidget::setting(bool agentOwned) const
 
     NetworkManager::InfinibandSetting setting;
     setting.setTransportMode(static_cast<NetworkManager::InfinibandSetting::TransportMode>(m_ui->transport->currentIndex()));
-    setting.setMacAddress(UiUtils::macAddressFromString(m_ui->macAddress->hwAddress()));
+    setting.setMacAddress(NetworkManager::Utils::macAddressFromString(m_ui->macAddress->hwAddress()));
     if (m_ui->mtu->value()) {
         setting.setMtu(m_ui->mtu->value());
     }

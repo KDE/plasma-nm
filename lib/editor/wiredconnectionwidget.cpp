@@ -22,6 +22,7 @@
 #include "ui_wiredconnectionwidget.h"
 #include "uiutils.h"
 
+#include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/WiredSetting>
 
 WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
@@ -48,10 +49,10 @@ void WiredConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &setti
 {
     NetworkManager::WiredSetting::Ptr wiredSetting = setting.staticCast<NetworkManager::WiredSetting>();
 
-    m_widget->macAddress->init(NetworkManager::Device::Ethernet, UiUtils::macAddressAsString(wiredSetting->macAddress()));
+    m_widget->macAddress->init(NetworkManager::Device::Ethernet, NetworkManager::Utils::macAddressAsString(wiredSetting->macAddress()));
 
     if (!wiredSetting->clonedMacAddress().isEmpty()) {
-        m_widget->clonedMacAddress->setText(UiUtils::macAddressAsString(wiredSetting->clonedMacAddress()));
+        m_widget->clonedMacAddress->setText(NetworkManager::Utils::macAddressAsString(wiredSetting->clonedMacAddress()));
     }
 
     if (wiredSetting->mtu()) {
@@ -77,10 +78,10 @@ QVariantMap WiredConnectionWidget::setting(bool agentOwned) const
 
     NetworkManager::WiredSetting wiredSetting;
 
-    wiredSetting.setMacAddress(UiUtils::macAddressFromString(m_widget->macAddress->hwAddress()));
+    wiredSetting.setMacAddress(NetworkManager::Utils::macAddressFromString(m_widget->macAddress->hwAddress()));
 
     if (!m_widget->clonedMacAddress->text().isEmpty() && m_widget->clonedMacAddress->text() != ":::::") {
-        wiredSetting.setClonedMacAddress(UiUtils::macAddressFromString(m_widget->clonedMacAddress->text()));
+        wiredSetting.setClonedMacAddress(NetworkManager::Utils::macAddressFromString(m_widget->clonedMacAddress->text()));
     }
 
     if (m_widget->mtu->value()) {
@@ -114,5 +115,5 @@ void WiredConnectionWidget::generateRandomClonedMac()
         int random = qrand() % 255;
         mac[i] = random;
     }
-    m_widget->clonedMacAddress->setText(UiUtils::macAddressAsString(mac));
+    m_widget->clonedMacAddress->setText(NetworkManager::Utils::macAddressAsString(mac));
 }

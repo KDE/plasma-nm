@@ -21,6 +21,7 @@
 #include "wificonnectionwidget.h"
 #include "ui_wificonnectionwidget.h"
 
+#include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/WirelessSetting>
 
 #include "uiutils.h"
@@ -54,13 +55,13 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
     }
 
     if (!wifiSetting->bssid().isEmpty()) {
-        m_ui->BSSIDLineEdit->setText(UiUtils::macAddressAsString(wifiSetting->bssid()));
+        m_ui->BSSIDLineEdit->setText(NetworkManager::Utils::macAddressAsString(wifiSetting->bssid()));
     }
 
-    m_ui->macAddress->init(NetworkManager::Device::Wifi, UiUtils::macAddressAsString(wifiSetting->macAddress()));
+    m_ui->macAddress->init(NetworkManager::Device::Wifi, NetworkManager::Utils::macAddressAsString(wifiSetting->macAddress()));
 
     if (!wifiSetting->clonedMacAddress().isEmpty()) {
-        m_ui->clonedMacAddress->setText(UiUtils::macAddressAsString(wifiSetting->clonedMacAddress()));
+        m_ui->clonedMacAddress->setText(NetworkManager::Utils::macAddressAsString(wifiSetting->clonedMacAddress()));
     }
 
     if (wifiSetting->mtu()) {
@@ -87,13 +88,13 @@ QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
     }
 
     if (!m_ui->BSSIDLineEdit->text().isEmpty() && m_ui->BSSIDLineEdit->text() != ":::::") {
-        wifiSetting.setBssid(UiUtils::macAddressFromString(m_ui->BSSIDLineEdit->text()));
+        wifiSetting.setBssid(NetworkManager::Utils::macAddressFromString(m_ui->BSSIDLineEdit->text()));
     }
 
-    wifiSetting.setMacAddress(UiUtils::macAddressFromString(m_ui->macAddress->hwAddress()));
+    wifiSetting.setMacAddress(NetworkManager::Utils::macAddressFromString(m_ui->macAddress->hwAddress()));
 
     if (!m_ui->clonedMacAddress->text().isEmpty() && m_ui->clonedMacAddress->text() != ":::::") {
-        wifiSetting.setClonedMacAddress(UiUtils::macAddressFromString(m_ui->clonedMacAddress->text()));
+        wifiSetting.setClonedMacAddress(NetworkManager::Utils::macAddressFromString(m_ui->clonedMacAddress->text()));
     }
 
     if (m_ui->mtu->value()) {
@@ -113,5 +114,5 @@ void WifiConnectionWidget::generateRandomClonedMac()
         int random = qrand() % 255;
         mac[i] = random;
     }
-    m_ui->clonedMacAddress->setText(UiUtils::macAddressAsString(mac));
+    m_ui->clonedMacAddress->setText(NetworkManager::Utils::macAddressAsString(mac));
 }

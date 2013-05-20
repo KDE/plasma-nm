@@ -24,6 +24,8 @@
 
 #include <KLocalizedString>
 
+#include <NetworkManagerQt/Utils>
+
 BtWidget::BtWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_ui(new Ui::BtWidget),
@@ -48,7 +50,7 @@ void BtWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     Q_UNUSED(setting);
 
-    m_ui->bdaddr->init(NetworkManager::Device::Bluetooth, UiUtils::macAddressAsString(m_btSetting->bluetoothAddress()));
+    m_ui->bdaddr->init(NetworkManager::Device::Bluetooth, NetworkManager::Utils::macAddressAsString(m_btSetting->bluetoothAddress()));
     m_ui->type->setCurrentIndex(m_ui->type->findData(m_btSetting->profileType()));
 }
 
@@ -58,7 +60,7 @@ QVariantMap BtWidget::setting(bool agentOwned) const
 
     NetworkManager::BluetoothSetting btSetting;
 
-    btSetting.setBluetoothAddress(UiUtils::macAddressFromString(m_ui->bdaddr->hwAddress()));
+    btSetting.setBluetoothAddress(NetworkManager::Utils::macAddressFromString(m_ui->bdaddr->hwAddress()));
     btSetting.setProfileType(static_cast<NetworkManager::BluetoothSetting::ProfileType>(m_ui->type->itemData(m_ui->type->currentIndex()).toInt()));
 
     return btSetting.toMap();

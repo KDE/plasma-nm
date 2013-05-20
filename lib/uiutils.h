@@ -138,23 +138,6 @@ public:
      */
     static QString connectionSpeed(double bitrate);
 
-    /**
-     * @return String representation of a mac address.
-     * @param ba byte array containing the binary repesentation of the address
-     */
-    static QString macAddressAsString(const QByteArray & ba);
-
-    /**
-     * @return binary repesentation of a mac address.
-     * @param s string representation of the address
-     */
-    static QByteArray macAddressFromString( const QString & s);
-
-    /**
-     * @param freq frequency of a wireless network
-     * @return The frequency channel.
-     */
-    static int findChannel(int freq);
 #if 0
     /**
      * @param band The band of a wireless network. The value corresponds to the type enum in Knm::WirelessSetting::EnumBand
@@ -169,9 +152,6 @@ public:
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
     static QString convertNspTypeToString(NetworkManager::WimaxNsp::NetworkType type);
 
-private:
-    static QList<QPair<int, int> > getBFreqs();
-    static QList<QPair<int, int> > getAFreqs();
 
 };
 #endif // UIUTILS_H

@@ -468,18 +468,9 @@ void ModelItem::updateDetails()
                 }
             } else if (key == "wireless:security") {
                 if (ap) {
-                    // TODO: improve
-                    if (!ap->capabilities()) {
-                        m_details += QString(format).arg(i18n("Security:"), i18n("Unsecured"));
-                    } else {
-                        if (ap->wpaFlags()) {
-                            m_details += QString(format).arg(i18n("Security:"), UiUtils::wpaFlagsToStringList(ap->wpaFlags()).join(", "));
-                        } else if (ap->rsnFlags()) {
-                            m_details += QString(format).arg(i18n("Security:"), UiUtils::wpaFlagsToStringList(ap->rsnFlags()).join(", "));
-                        } else {
-                            m_details += QString(format).arg(i18n("Security:"), i18n("Unknown security"));
-                        }
-                    }
+                    NetworkManager::Utils::WirelessSecurityType security = NetworkManager::Utils::findBestWirelessSecurity(wirelessDevice->wirelessCapabilities(), true, (wirelessDevice->mode() == NetworkManager::WirelessDevice::Adhoc),
+                                                                                                                           ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
+                    m_details += QString(format).arg(i18n("Security:"), UiUtils::labelFromWirelessSecurity(security));
                 }
             }
         }

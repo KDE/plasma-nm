@@ -28,6 +28,7 @@ class QSizeF;
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/AccessPoint>
 #include <NetworkManagerQt/WimaxNsp>
+#include <NetworkManagerQt/Utils>
 
 #include <Solid/Device>
 
@@ -152,6 +153,8 @@ public:
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
     static QString convertNspTypeToString(NetworkManager::WimaxNsp::NetworkType type);
 
+    static QString shortToolTipFromWirelessSecurity(NetworkManager::Utils::WirelessSecurityType type);
+    static QString labelFromWirelessSecurity(NetworkManager::Utils::WirelessSecurityType type);
 
 };
 #endif // UIUTILS_H

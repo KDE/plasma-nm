@@ -5,6 +5,7 @@ set(plasmanm-internal_SRCS
     mobileproviders.cpp
     mobileconnectionwizard.cpp
     hwaddrcombobox.cpp
+    ssidcombobox.cpp
 )
 
 kde4_add_library(plasmanm-internal SHARED ${plasmanm-internal_SRCS})

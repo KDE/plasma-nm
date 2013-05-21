@@ -46,9 +46,7 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
 {
     NetworkManager::WirelessSetting::Ptr wifiSetting = setting.staticCast<NetworkManager::WirelessSetting>();
 
-    if (!wifiSetting->ssid().isEmpty()) {
-        m_ui->SSIDLineEdit->setText(QString::fromUtf8(wifiSetting->ssid()));
-    }
+    m_ui->SSIDCombo->init(wifiSetting->ssid());
 
     if (wifiSetting->mode() != NetworkManager::WirelessSetting::Infrastructure) {
         m_ui->modeComboBox->setCurrentIndex(wifiSetting->mode());
@@ -79,9 +77,7 @@ QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
 
     NetworkManager::WirelessSetting wifiSetting;
 
-    if (!m_ui->SSIDLineEdit->text().isEmpty()) {
-        wifiSetting.setSsid(m_ui->SSIDLineEdit->text().toUtf8());
-    }
+    wifiSetting.setSsid(m_ui->SSIDCombo->ssid().toUtf8());
 
     if (m_ui->modeComboBox->currentIndex() != 0) {
         wifiSetting.setMode(static_cast<NetworkManager::WirelessSetting::NetworkMode>(m_ui->modeComboBox->currentIndex()));

@@ -89,6 +89,7 @@ void NetworkStatus::statusChanged(NetworkManager::Status status)
         statusMsg = i18n("Connected to %1", name);
         connected = true;
         inProgress = false;
+        changeTooltip();
     } else {
         switch (status) {
             case NetworkManager::Asleep:

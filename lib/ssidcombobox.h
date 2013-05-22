@@ -27,6 +27,7 @@
 #include <kdemacros.h>
 
 #include <NetworkManagerQt/Device>
+#include <NetworkManagerQt/WirelessNetwork>
 
 class KDE_EXPORT SsidComboBox : public KComboBox
 {
@@ -43,7 +44,7 @@ private slots:
     void currentIndexChanged(int);
 
 private:
-    void addSsidsToCombo(const NetworkManager::Device::Ptr & device);
+    void addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::Ptr> &networks);
     QString m_initialSsid;
     bool m_dirty;
 };

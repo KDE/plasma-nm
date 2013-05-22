@@ -70,11 +70,34 @@ void SsidComboBox::init(const QString &ssid)
 
     //qDebug() << "Initial ssid:" << m_initialSsid;
 
+    QList<NetworkManager::WirelessNetwork::Ptr> networks;
+
     foreach(const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
-            addSsidsToCombo(device);
+            NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+
+            foreach (const NetworkManager::WirelessNetwork::Ptr & newNetwork, wifiDevice->networks()) {
+                bool found = false;
+                foreach (const NetworkManager::WirelessNetwork::Ptr & existingNetwork, networks) {
+                    if (newNetwork->ssid() == existingNetwork->ssid()) {
+                        if (newNetwork->signalStrength() > existingNetwork->signalStrength()) {
+                            networks.removeOne(existingNetwork);
+                            break;
+                        } else {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                if (!found) {
+                    networks << newNetwork;
+                }
+            }
         }
     }
+
+    qSort(networks.begin(), networks.end(), signalCompare);
+    addSsidsToCombo(networks);
 
     int index = findData(m_initialSsid);
     if (index == -1) {
@@ -85,13 +108,8 @@ void SsidComboBox::init(const QString &ssid)
     }
 }
 
-void SsidComboBox::addSsidsToCombo(const NetworkManager::Device::Ptr &device)
+void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::Ptr> &networks)
 {
-    NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
-
-    QList<NetworkManager::WirelessNetwork::Ptr> networks = wifiDevice->networks();
-    qSort(networks.begin(), networks.end(), signalCompare);
-
     foreach (const NetworkManager::WirelessNetwork::Ptr & network, networks) {
         NetworkManager::AccessPoint::Ptr accessPoint = network->referenceAccessPoint();
 

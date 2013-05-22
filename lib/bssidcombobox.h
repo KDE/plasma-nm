@@ -1,5 +1,6 @@
 /*
-    Copyright (c) 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,38 +19,36 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_WIFI_CONNECTION_WIDGET_H
-#define PLASMA_NM_WIFI_CONNECTION_WIDGET_H
+#ifndef PLASMA_NM_BSSIDCOMBOBOX_H
+#define PLASMA_NM_BSSIDCOMBOBOX_H
 
-#include <QtGui/QWidget>
+#include <KComboBox>
 
-#include "settingwidget.h"
+#include <kdemacros.h>
 
-#include "kdemacros.h"
+#include <NetworkManagerQt/Device>
+#include <NetworkManagerQt/AccessPoint>
 
-namespace Ui
+class KDE_EXPORT BssidComboBox : public KComboBox
 {
-class WifiConnectionWidget;
-}
-
-class KDE_EXPORT WifiConnectionWidget : public SettingWidget
-{
-Q_OBJECT
-
+    Q_OBJECT
 public:
-    explicit WifiConnectionWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~WifiConnectionWidget();
+    explicit BssidComboBox(QWidget *parent = 0);
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting);
+    QString bssid() const;
 
-    QVariantMap setting(bool agentOwned = false) const;
+public slots:
+    void init(const QString & bssid, const QString &ssid);
 
 private slots:
-    void generateRandomClonedMac();
-    void ssidChanged();
-private:
-    Ui::WifiConnectionWidget * m_ui;
+    void editTextChanged(const QString &);
+    void currentIndexChanged(int);
 
+private:
+    void addBssidsToCombo(const QList<NetworkManager::AccessPoint::Ptr> & aps);
+
+    QString m_initialBssid;
+    bool m_dirty;
 };
 
-#endif // PLASMA_NM_WIFI_CONNECTION_WIDGET_H
+#endif // PLASMA_NM_BSSIDCOMBOBOX_H

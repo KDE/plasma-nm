@@ -33,6 +33,8 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
     m_ui->setupUi(this);
 
     connect(m_ui->btnRandomMacAddr, SIGNAL(clicked()), SLOT(generateRandomClonedMac()));
+    connect(m_ui->SSIDCombo, SIGNAL(currentIndexChanged(int)), SLOT(ssidChanged()));
+    connect(m_ui->SSIDCombo, SIGNAL(editTextChanged(QString)), SLOT(ssidChanged()));
 
     if (setting)
         loadConfig(setting);
@@ -52,9 +54,7 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
         m_ui->modeComboBox->setCurrentIndex(wifiSetting->mode());
     }
 
-    if (!wifiSetting->bssid().isEmpty()) {
-        m_ui->BSSIDLineEdit->setText(NetworkManager::Utils::macAddressAsString(wifiSetting->bssid()));
-    }
+    m_ui->BSSIDCombo->init(wifiSetting->bssid(), wifiSetting->ssid());
 
     m_ui->macAddress->init(NetworkManager::Device::Wifi, NetworkManager::Utils::macAddressAsString(wifiSetting->macAddress()));
 
@@ -83,9 +83,7 @@ QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
         wifiSetting.setMode(static_cast<NetworkManager::WirelessSetting::NetworkMode>(m_ui->modeComboBox->currentIndex()));
     }
 
-    if (!m_ui->BSSIDLineEdit->text().isEmpty() && m_ui->BSSIDLineEdit->text() != ":::::") {
-        wifiSetting.setBssid(NetworkManager::Utils::macAddressFromString(m_ui->BSSIDLineEdit->text()));
-    }
+    wifiSetting.setBssid(m_ui->BSSIDCombo->bssid().toUtf8());
 
     wifiSetting.setMacAddress(NetworkManager::Utils::macAddressFromString(m_ui->macAddress->hwAddress()));
 
@@ -111,4 +109,9 @@ void WifiConnectionWidget::generateRandomClonedMac()
         mac[i] = random;
     }
     m_ui->clonedMacAddress->setText(NetworkManager::Utils::macAddressAsString(mac));
+}
+
+void WifiConnectionWidget::ssidChanged()
+{
+    m_ui->BSSIDCombo->init(m_ui->BSSIDCombo->bssid(), m_ui->SSIDCombo->ssid());
 }

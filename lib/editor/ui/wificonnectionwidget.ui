@@ -72,20 +72,17 @@
       <string>&amp;BSSID:</string>
      </property>
      <property name="buddy">
-      <cstring>BSSIDLineEdit</cstring>
+      <cstring>BSSIDCombo</cstring>
      </property>
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="KLineEdit" name="BSSIDLineEdit">
+    <widget class="BssidComboBox" name="BSSIDCombo">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
-     </property>
-     <property name="inputMask">
-      <string notr="true">HH:HH:HH:HH:HH:HH;_</string>
      </property>
     </widget>
    </item>
@@ -214,6 +211,10 @@
    <header>ssidcombobox.h</header>
   </customwidget>
   <customwidget>
+   <class>BssidComboBox</class>
+   <extends>QComboBox</extends>
+   <header>bssidcombobox.h</header>
+  </customwidget>  <customwidget>
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
@@ -222,7 +223,7 @@
  <tabstops>
   <tabstop>SSIDCombo</tabstop>
   <tabstop>modeComboBox</tabstop>
-  <tabstop>BSSIDLineEdit</tabstop>
+  <tabstop>BSSIDCombo</tabstop>
   <tabstop>macAddress</tabstop>
   <tabstop>clonedMacAddress</tabstop>
   <tabstop>btnRandomMacAddr</tabstop>

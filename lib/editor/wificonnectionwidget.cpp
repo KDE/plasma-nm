@@ -54,7 +54,7 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
         m_ui->modeComboBox->setCurrentIndex(wifiSetting->mode());
     }
 
-    m_ui->BSSIDCombo->init(wifiSetting->bssid(), wifiSetting->ssid());
+    m_ui->BSSIDCombo->init(NetworkManager::Utils::macAddressAsString(wifiSetting->bssid()), wifiSetting->ssid());
 
     m_ui->macAddress->init(NetworkManager::Device::Wifi, NetworkManager::Utils::macAddressAsString(wifiSetting->macAddress()));
 
@@ -83,7 +83,7 @@ QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
         wifiSetting.setMode(static_cast<NetworkManager::WirelessSetting::NetworkMode>(m_ui->modeComboBox->currentIndex()));
     }
 
-    wifiSetting.setBssid(m_ui->BSSIDCombo->bssid().toUtf8());
+    wifiSetting.setBssid(NetworkManager::Utils::macAddressFromString(m_ui->BSSIDCombo->bssid()));
 
     wifiSetting.setMacAddress(NetworkManager::Utils::macAddressFromString(m_ui->macAddress->hwAddress()));
 

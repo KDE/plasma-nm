@@ -81,7 +81,6 @@ void NetworkStatus::statusChanged(NetworkManager::Status status)
         status == NetworkManager::ConnectedSiteOnly) {
 
         QString name;
-        QString tooltip;
         foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
             if (active->default4() || active->default6()) {
                 name = active->connection()->name();

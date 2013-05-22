@@ -20,7 +20,7 @@ if (NOT NETWORKMANAGERQT_FOUND)
 endif (NOT NETWORKMANAGERQT_FOUND)
 
 set(KDE_NETWORK_VERSION "0.1.0")
-set(PLASMA_NM_VERSION "0.1.0")
+set(PLASMA_NM_VERSION "0.1")
 configure_file(config.h.cmake
                ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
@@ -41,7 +41,7 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_CURRENT_BINARY_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/lib
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libeditor
+                    ${CMAKE_CURRENT_SOURCE_DIR}/lib/editor
                     ${QTNETWORK_INCLUDE_DIRS}
                     ${MODEMMANAGERQT_INCLUDE_DIRS}
                     ${NETWORKMANAGERQT_INCLUDE_DIRS}

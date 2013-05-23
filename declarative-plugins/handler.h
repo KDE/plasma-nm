@@ -35,6 +35,7 @@ public Q_SLOTS:
     void activateConnection(const QString & connection, const QString & device, const QString & specificParameter);
     void addAndActivateConnection(const QString & device, const QString & specificParameter);
     void deactivateConnection(const QString & connection);
+    void disconnectAll();
     void enableNetworking(bool enable);
     void enableWireless(bool enable);
     void enableWimax(bool enable);

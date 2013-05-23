@@ -80,6 +80,7 @@ Item {
                 mainWindow.editConnection.connect(editConnection);
                 mainWindow.removeConnection.connect(removeConnection);
                 mainWindow.openEditor.connect(openEditor);
+                toolbar.disconnecAll.connect(disconnectAll);
                 toolbar.enableNetworking.connect(enableNetworking);
                 toolbar.enableWireless.connect(enableWireless);
                 toolbar.enableWimax.connect(enableWimax);
@@ -163,7 +164,7 @@ Item {
 
         property bool toolbarExpandable: true;
 
-        anchors { left: parent.left; right: parent.right; bottom: parent.bottom; leftMargin: 10}
+        anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
 
         onToolbarExpanded: {
             toolbarExpandable = true;

@@ -31,6 +31,7 @@ Item {
 
     property bool expanded: false;
 
+    signal disconnecAll();
     signal enableNetworking(bool enable);
     signal enableWireless(bool enable);
     signal enableWimax(bool enable);
@@ -47,18 +48,20 @@ Item {
             statusLabel.text = status;
             progressIndicator.running = inProgress;
             if (connected) {
-                statusIcon.icon = QIcon("user-online");
+                statusIcon.iconSource = "user-online";
+                statusIcon.enabled = true;
             } else {
-                statusIcon.icon = QIcon("user-offline");
+                statusIcon.iconSource = "user-offline";
+                statusIcon.enabled = false;
             }
         }
     }
 
-    QIconItem {
+    PlasmaComponents.ToolButton {
         id: statusIcon
 
-        height: 25; width: 25;
-        anchors { left: parent.left; bottom: parent.bottom; top: statusLabel.top}
+        height: 30; width: 30;
+        anchors { left: parent.left; bottom: parent.bottom; top: statusLabel.top; leftMargin: 5}
 
         PlasmaComponents.BusyIndicator {
             id: progressIndicator;
@@ -67,6 +70,8 @@ Item {
             running: false;
             visible: running;
         }
+
+        onClicked: disconnecAll();
     }
 
     PlasmaComponents.Label {
@@ -80,7 +85,7 @@ Item {
         id: toolButton;
 
         height: 30; width: 30;
-        anchors { right: parent.right; bottom: parent.bottom }
+        anchors { right: parent.right; bottom: parent.bottom; rightMargin: 5 }
         iconSource: "configure";
 
         onClicked: {

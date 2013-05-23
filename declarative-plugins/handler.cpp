@@ -118,6 +118,13 @@ void Handler::deactivateConnection(const QString& connection)
     NMHandlerDebug() << "Deactivating " << con->name() << " connection";
 }
 
+void Handler::disconnectAll()
+{
+    foreach (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+        device->disconnectInterface();
+    }
+}
+
 void Handler::enableNetworking(bool enable)
 {
     NMHandlerDebug() << "Networking enabled: " << enable;

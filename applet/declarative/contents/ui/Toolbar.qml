@@ -128,7 +128,7 @@ Item {
     OptionsWidget {
         id: options;
 
-        anchors { left: parent.left; right: parent.right }
+        anchors { left: parent.left; right: parent.right; leftMargin: 10 }
         visible: false;
 
         onNetworkingEnabledChanged: enableNetworking(enabled);

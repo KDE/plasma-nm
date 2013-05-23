@@ -245,7 +245,7 @@ void ModelItem::updateDetails()
             } else if (m_connected) {
                 status = i18n("Connected");
             }
-            m_details += QString(format).arg(i18n("Status"), status);
+            m_details += QString(format).arg(i18n("Status:"), status);
         } else if (key == "interface:name") {
             if (device) {
                 QString name;

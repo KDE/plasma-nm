@@ -28,10 +28,12 @@
 
 #include <QtGui/QTreeWidgetItem>
 
+#include <KActionCollection>
 #include <KLocale>
 #include <KMessageBox>
 #include <KService>
 #include <KServiceTypeTrader>
+#include <KStandardAction>
 #include <KAboutApplicationDialog>
 #include <KAboutData>
 
@@ -42,7 +44,7 @@
 using namespace NetworkManager;
 
 ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
-    KMainWindow(parent, flags),
+    KXmlGuiWindow(parent, flags),
     m_editor(new Ui::ConnectionEditor)
 {
     QWidget * tmp = new QWidget(this);
@@ -124,7 +126,11 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
             SLOT(connectionRemoved(QString)));
 
-    connect(m_editor->btnAbout, SIGNAL(clicked()), SLOT(aboutDialog()));
+    KStandardAction::quit(this, SLOT(close()), actionCollection());
+
+    createGUI();
+
+    setAutoSaveSettings();
 }
 
 ConnectionEditor::~ConnectionEditor()
@@ -134,7 +140,7 @@ ConnectionEditor::~ConnectionEditor()
 void ConnectionEditor::initializeConnections()
 {
     m_editor->connectionsWidget->clear();
-    
+
     foreach (const Connection::Ptr &con, NetworkManager::listConnections()) {
         if (con->settings()->isSlave())
             continue;

@@ -27,6 +27,7 @@
 #include <KCmdLineArgs>
 #include <KMainWindow>
 #include <KUrl>
+#include <KIcon>
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
@@ -61,6 +62,7 @@ int main(int argc, char *argv[])
             NetworkManager::ConnectionSettings::Ptr connectionSetting = connection->settings();
 
             ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting);
+            editor->setWindowIcon(KIcon("network-defaultroute"));
             editor->show();
         } else {
             return 1;
@@ -70,6 +72,7 @@ int main(int argc, char *argv[])
             kRestoreMainWindows<ConnectionEditor>();
         } else {
             ConnectionEditor * editor = new ConnectionEditor();
+            editor->setWindowIcon(KIcon("network-defaultroute"));
             editor->show();
         }
     }

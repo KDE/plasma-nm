@@ -24,7 +24,7 @@
 
 #include <QMenu>
 
-#include <KMainWindow>
+#include <KXmlGuiWindow>
 
 #include <NetworkManagerQt/Connection>
 
@@ -35,7 +35,7 @@ class ConnectionEditor;
 
 class QTreeWidgetItem;
 
-class ConnectionEditor : public KMainWindow
+class ConnectionEditor : public KXmlGuiWindow
 {
 Q_OBJECT
 

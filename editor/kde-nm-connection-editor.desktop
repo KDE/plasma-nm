@@ -1,3 +1,4 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=kde-nm-connection-editor
 Name[cs]=kde-nm-connection-editor

@@ -43,3 +43,8 @@ QString SettingWidget::type() const
 {
     return m_type;
 }
+
+void SettingWidget::slotCompleteChanged()
+{
+    emit completeChanged(isComplete());
+}

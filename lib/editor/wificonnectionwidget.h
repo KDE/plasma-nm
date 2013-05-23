@@ -44,12 +44,14 @@ public:
 
     QVariantMap setting(bool agentOwned = false) const;
 
+    virtual bool isComplete() const;
+
 private slots:
     void generateRandomClonedMac();
     void ssidChanged();
+
 private:
     Ui::WifiConnectionWidget * m_ui;
-
 };
 
 #endif // PLASMA_NM_WIFI_CONNECTION_WIDGET_H

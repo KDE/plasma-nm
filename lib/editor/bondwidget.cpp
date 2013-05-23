@@ -72,6 +72,8 @@ BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Setting
     connect(m_ui->bonds, SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)), SLOT(currentBondChanged(QListWidgetItem*,QListWidgetItem*)));
     connect(m_ui->bonds, SIGNAL(itemDoubleClicked(QListWidgetItem*)), SLOT(editBond()));
 
+    connect(m_ui->ifaceName, SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
+
     if (setting)
         loadConfig(setting);
 }
@@ -186,6 +188,7 @@ void BondWidget::bondAddComplete(const QString &uuid, bool success, const QStrin
         const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
         QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->bonds);
         slaveItem->setData(Qt::UserRole, uuid);
+        slotCompleteChanged();
     } else {
         qWarning() << "Bonded connection not added:" << msg;
     }
@@ -223,11 +226,12 @@ void BondWidget::deleteBond()
 
     if (connection) {
         qDebug() << "About to delete bonded connection" << currentItem->text() << uuid;
-        if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->name()), i18n("Remove Connection"), KStandardGuiItem::remove(),
-                                       KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
+        if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->name()), i18n("Remove Connection"),
+                                       KStandardGuiItem::remove(), KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
                 == KMessageBox::Yes) {
             connection->remove();
             delete currentItem;
+            slotCompleteChanged();
         }
     }
 }
@@ -244,4 +248,9 @@ void BondWidget::populateBonds()
             slaveItem->setData(Qt::UserRole, connection->uuid());
         }
     }
+}
+
+bool BondWidget::isComplete() const
+{
+    return !m_ui->ifaceName->text().isEmpty() && m_ui->bonds->count() > 0;
 }

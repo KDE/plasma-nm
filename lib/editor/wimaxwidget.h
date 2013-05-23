@@ -43,6 +43,8 @@ public:
 
     QVariantMap setting(bool agentOwned = false) const;
 
+    virtual bool isComplete() const;
+
 private:
     Ui::WimaxWidget * m_ui;
 };

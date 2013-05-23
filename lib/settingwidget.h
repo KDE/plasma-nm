@@ -39,9 +39,16 @@ public:
     virtual QVariantMap setting(bool agentOwned = false) const = 0;
     QString type() const;
 
+    virtual bool isComplete() const { return true; }
+
+protected slots:
+    void slotCompleteChanged();
+
+signals:
+    void completeChanged(bool isComplete);
+
 private:
     QString m_type;
-
 };
 
 #endif // SETTING_WIDGET_H

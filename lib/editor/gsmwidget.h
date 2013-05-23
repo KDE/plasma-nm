@@ -45,6 +45,8 @@ public:
 
     QVariantMap setting(bool agentOwned = false) const;
 
+    virtual bool isComplete() const;
+
 private slots:
     void showPasswords(bool show);
     void pinStorageChanged(int index);

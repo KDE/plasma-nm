@@ -45,6 +45,8 @@ public:
 
     QVariantMap setting(bool agentOwned = false) const;
 
+    virtual bool isComplete() const;
+
 private:
     Ui::BtWidget * m_ui;
     NetworkManager::BluetoothSetting::Ptr m_btSetting;

@@ -41,6 +41,8 @@ public:
 
     QVariantMap setting(bool agentOwned = false) const;
 
+    virtual bool isComplete() const;
+
 private slots:
     void userPasswordTypeChanged(int index);
     void groupPasswordTypeChanged(int index);

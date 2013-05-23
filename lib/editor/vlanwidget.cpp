@@ -33,6 +33,10 @@ VlanWidget::VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 
     fillConnections();
 
+    connect(m_ui->ifaceName, SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
+    connect(m_ui->parent, SIGNAL(currentIndexChanged(int)), SLOT(slotCompleteChanged()));
+    connect(m_ui->parent->lineEdit(), SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
+
     if (setting)
         loadConfig(setting);
 }
@@ -89,4 +93,9 @@ void VlanWidget::fillConnections()
         if (!con->settings()->isSlave() && con->settings()->connectionType() == NetworkManager::ConnectionSettings::Wired)
             m_ui->parent->addItem(con->name(), con->uuid());
     }
+}
+
+bool VlanWidget::isComplete() const
+{
+    return !m_ui->parent->currentText().isEmpty() || !m_ui->ifaceName->text().isEmpty();
 }

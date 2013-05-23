@@ -57,11 +57,13 @@ QString HwAddrComboBox::hwAddress() const
 void HwAddrComboBox::editTextChanged(const QString &)
 {
     m_dirty = true;
+    emit hwAddressChanged();
 }
 
 void HwAddrComboBox::currentIndexChanged(int)
 {
     m_dirty = false;
+    emit hwAddressChanged();
 }
 
 void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const QString &address)

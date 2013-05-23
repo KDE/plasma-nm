@@ -38,6 +38,8 @@ BtWidget::BtWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent,
 
     m_ui->type->setEnabled(false);
 
+    connect(m_ui->bdaddr, SIGNAL(hwAddressChanged()), SLOT(slotCompleteChanged()));
+
     if (setting)
         loadConfig(setting);
 }
@@ -64,4 +66,9 @@ QVariantMap BtWidget::setting(bool agentOwned) const
     btSetting.setProfileType(static_cast<NetworkManager::BluetoothSetting::ProfileType>(m_ui->type->itemData(m_ui->type->currentIndex()).toInt()));
 
     return btSetting.toMap();
+}
+
+bool BtWidget::isComplete() const
+{
+    return !m_ui->bdaddr->hwAddress().isEmpty();
 }

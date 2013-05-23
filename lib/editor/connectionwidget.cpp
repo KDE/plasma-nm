@@ -106,9 +106,7 @@ NMVariantMapMap ConnectionWidget::setting() const
     }
 
     const QString zone = m_widget->firewallZone->currentText();
-    if (!zone.isEmpty()) {
-        settings.setZone(zone);
-    }
+    settings.setZone(zone);
 
     return settings.toMap();
 }

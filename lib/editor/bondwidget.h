@@ -46,6 +46,8 @@ public:
 
     QVariantMap setting(bool agentOwned = false) const;
 
+    virtual bool isComplete() const;
+
 private slots:
     void addBond(QAction * action);
     void currentBondChanged(QListWidgetItem * current, QListWidgetItem * previous);

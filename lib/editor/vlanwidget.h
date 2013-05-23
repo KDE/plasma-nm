@@ -44,6 +44,8 @@ public:
 
     QVariantMap setting(bool agentOwned = false) const;
 
+    virtual bool isComplete() const;
+
 private:
     void fillConnections();
     Ui::VlanWidget * m_ui;

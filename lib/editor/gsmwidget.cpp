@@ -48,6 +48,8 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget* paren
 
     // TODO make the Change... button relaunch the wizard
 
+    connect(m_ui->apn, SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
+
     if (setting)
         loadConfig(setting);
 }
@@ -142,4 +144,9 @@ void GsmWidget::pinStorageChanged(int index)
     else {
         m_ui->pin->setEnabled(true);
     }
+}
+
+bool GsmWidget::isComplete() const
+{
+    return !m_ui->apn->text().isEmpty();
 }

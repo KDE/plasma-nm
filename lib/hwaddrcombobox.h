@@ -37,6 +37,9 @@ public:
 
     QString hwAddress() const;
 
+signals:
+    void hwAddressChanged();
+
 private slots:
     void editTextChanged(const QString &);
     void currentIndexChanged(int);

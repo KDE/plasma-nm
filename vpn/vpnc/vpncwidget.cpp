@@ -39,6 +39,8 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
     connect(m_ui->cbShowPasswords, SIGNAL(toggled(bool)), SLOT(showPasswords(bool)));
     connect(m_ui->btnAdvanced, SIGNAL(clicked()), SLOT(showAdvanced()));
 
+    connect(m_ui->gateway, SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
+
     if (m_setting)
         loadConfig(setting);
 }
@@ -146,6 +148,7 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
     return m_setting->toMap();
 }
 
+
 void VpncWidget::userPasswordTypeChanged(int index)
 {
     if (index == 0 || index == 2) {
@@ -183,4 +186,9 @@ void VpncWidget::showAdvanced()
     }
 
     delete adv;
+}
+
+bool VpncWidget::isComplete() const
+{
+    return !m_ui->gateway->text().isEmpty();
 }

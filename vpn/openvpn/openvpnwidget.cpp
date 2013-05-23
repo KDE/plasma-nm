@@ -82,6 +82,8 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
     connect(d->ui.chkShowPasswords, SIGNAL(toggled(bool)), this, SLOT(showPasswordsToggled(bool)));
     connect(d->ui.btnAdvanced, SIGNAL(clicked()), SLOT(showAdvanced()));
 
+    connect(d->ui.gateway, SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
+
     if (d->setting)
         loadConfig(d->setting);
 }
@@ -348,4 +350,10 @@ void OpenVpnSettingWidget::showAdvanced()
     }
 
     delete adv;
+}
+
+
+bool OpenVpnSettingWidget::isComplete() const
+{
+    return !d->ui.gateway->text().isEmpty();
 }

@@ -44,6 +44,8 @@ public:
     void loadConfig(const NetworkManager::Setting::Ptr &setting);
     QVariantMap setting(bool agentOwned = false) const;
 
+    virtual bool isComplete() const;
+
 private slots:
     void updateStartDir(const KUrl &);
     void x509KeyPasswordStorageChanged(int);

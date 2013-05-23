@@ -50,6 +50,12 @@ kde4_add_ui_files(plasmanm_libeditor_SRCS
     ui/bridge.ui
     ui/connectiondetaileditor.ui
     ui/connectionwidget.ui
+    ui/eapmethodleap.ui
+    ui/eapmethodpeap.ui
+    ui/eapmethodsimple.ui
+    ui/eapmethodstack.ui
+    ui/eapmethodtls.ui
+    ui/eapmethodttls.ui
 )
 
 kde4_add_library(plasmanm-editor SHARED ${plasmanm_libeditor_SRCS})

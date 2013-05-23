@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EapMethodTtls</class>
+ <widget class="QWidget" name="EapMethodTtls">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>337</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&amp;Anonymous Identity:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>leAnonIdentity</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="KLineEdit" name="leAnonIdentity"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>CA Certi&amp;ficate:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>kurCaCert</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="KUrlRequester" name="kurCaCert"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QCheckBox" name="chkUseSystemCaCerts">
+       <property name="text">
+        <string>Use Syste&amp;m CA Certs</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="lblSubjectMatch">
+       <property name="text">
+        <string>Subject Match:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="KLineEdit" name="leSubjectMatch">
+       <property name="toolTip">
+        <string>Only connect to servers whose certificate's subject matches this. For the syntax see the wpa_supplicant documentation.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="lblAltSubjectMatches">
+       <property name="text">
+        <string>Alternative Subject Matches:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="KLineEdit" name="leAltSubjectMatches">
+         <property name="toolTip">
+          <string>Only connect to servers whose certificate's alternative subject contains at least one of the entries. For the syntax see the wpa_supplicant documentation. Use ',' to separate entries.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="KPushButton" name="altSubjectMatchesMoreBtn">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="lblConnectToTheseServers">
+       <property name="text">
+        <string>Connect to these Servers:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_1">
+       <item>
+        <widget class="KLineEdit" name="leConnectToTheseServers">
+         <property name="toolTip">
+          <string>Only connect to these servers. Use ',' to separate entries.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="KPushButton" name="connectToTheseServersMoreBtn">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QFrame</extends>
+   <header>kurlrequester.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkUseSystemCaCerts</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kurCaCert</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>220</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>59</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

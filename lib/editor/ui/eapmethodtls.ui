@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EapMethodTls</class>
+ <widget class="QWidget" name="EapMethodTls">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>388</width>
+    <height>434</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&amp;Identity:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>leIdentity</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="KLineEdit" name="leIdentity"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>&amp;User Certificate:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>kurClientCert</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="KUrlRequester" name="kurClientCert">
+       <property name="toolTip">
+        <string>If your private key file is in PKCS12 format select it here and in the 'Private Key' field below.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>CA Certi&amp;ficate:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>kurCaCert</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="KUrlRequester" name="kurCaCert"/>
+     </item>
+     <item row="3" column="1">
+      <widget class="QCheckBox" name="chkUseSystemCaCerts">
+       <property name="text">
+        <string>Use Syste&amp;m CA Certs</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Private &amp;Key:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>kurPrivateKey</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="KUrlRequester" name="kurPrivateKey">
+       <property name="toolTip">
+        <string>If your private key file is in PKCS12 format select it here and in the 'User Certificate' field above.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Private Key Pass&amp;word:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>lePrivateKeyPassword</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="KLineEdit" name="lePrivateKeyPassword">
+         <property name="passwordMode">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="KComboBox" name="cmbPrivateKeyPasswordStorage">
+         <item>
+          <property name="text">
+           <string>Store</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Always Ask</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Not Required</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="lblSubjectMatch">
+       <property name="text">
+        <string>Subject Match:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="KLineEdit" name="leSubjectMatch">
+       <property name="toolTip">
+        <string>Only connect to servers whose certificate's subject matches this. For the syntax see the wpa_supplicant documentation.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="lblAltSubjectMatches">
+       <property name="text">
+        <string>Alternative Subject Matches:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="KLineEdit" name="leAltSubjectMatches">
+         <property name="toolTip">
+          <string>Only connect to servers whose certificate's alternative subject contains at least one of the entries. For the syntax see the wpa_supplicant documentation. Use ',' to separate entries.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="KPushButton" name="altSubjectMatchesMoreBtn">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="lblConnectToTheseServers">
+       <property name="text">
+        <string>Connect to these Servers:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="KLineEdit" name="leConnectToTheseServers">
+         <property name="toolTip">
+          <string>Only connect to these servers. Use ',' to separate entries.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="KPushButton" name="connectToTheseServersMoreBtn">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>1</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QFrame</extends>
+   <header>kurlrequester.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkUseSystemCaCerts</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kurCaCert</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>221</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EapMethodPeap</class>
+ <widget class="QWidget" name="EapMethodPeap">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>351</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&amp;Anonymous Identity:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>leAnonIdentity</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="KLineEdit" name="leAnonIdentity"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>CA Certi&amp;ficate:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>kurCaCert</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="KUrlRequester" name="kurCaCert"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QCheckBox" name="chkUseSystemCaCerts">
+       <property name="text">
+        <string>Use Syste&amp;m CA Certs</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>PEAP &amp;Version:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="buddy">
+        <cstring>cboPeapVersion</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="KComboBox" name="cboPeapVersion">
+       <item>
+        <property name="text">
+         <string comment="like in use Automatic configuration">Automatic</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Version 0</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Version 1</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="lblSubjectMatch">
+       <property name="text">
+        <string>Subject Match:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="KLineEdit" name="leSubjectMatch">
+       <property name="toolTip">
+        <string>Only connect to servers whose certificate subject matches this. For the syntax see the wpa_supplicant documentation.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="lblAltSubjectMatches">
+       <property name="text">
+        <string>Alternative Subject Matches:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="KLineEdit" name="leAltSubjectMatches">
+         <property name="toolTip">
+          <string>Only connect to servers whose certificate contains at least one of the entries. For the syntax see the wpa_supplicant documentation. Use ',' to separate entries.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="KPushButton" name="altSubjectMatchesMoreBtn">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="lblConnectToTheseServers">
+       <property name="text">
+        <string>Connect to these Servers:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="KLineEdit" name="leConnectToTheseServers">
+         <property name="toolTip">
+          <string>Only connect to these servers. Use ',' to separate entries.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="KPushButton" name="connectToTheseServersMoreBtn">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QFrame</extends>
+   <header>kurlrequester.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>leAnonIdentity</tabstop>
+  <tabstop>kurCaCert</tabstop>
+  <tabstop>cboPeapVersion</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkUseSystemCaCerts</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>kurCaCert</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>222</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>221</x>
+     <y>54</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

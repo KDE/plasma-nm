@@ -79,6 +79,7 @@ Item {
 
         height: 30;
         anchors { left: statusIcon.right; right: toolButton.left; bottom: parent.bottom; leftMargin: 5 }
+        elide: Text.ElideRight;
     }
 
     PlasmaComponents.ToolButton {

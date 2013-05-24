@@ -30,7 +30,7 @@ PppoeWidget::PppoeWidget(const NetworkManager::Setting::Ptr &setting, QWidget* p
     m_ui->setupUi(this);
 
     connect(m_ui->cbShowPassword, SIGNAL(toggled(bool)), SLOT(showPassword(bool)));
-    connect(m_ui->username, SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
+    connect(m_ui->username, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
     if (setting)
         loadConfig(setting);
@@ -73,7 +73,7 @@ void PppoeWidget::showPassword(bool show)
     m_ui->password->setPasswordMode(!show);
 }
 
-bool PppoeWidget::isComplete() const
+bool PppoeWidget::isValid() const
 {
     return !m_ui->username->text().isEmpty();
 }

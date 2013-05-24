@@ -119,9 +119,9 @@ IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
             SLOT(slotRoutesDialog()));
 
     // Validation
-    connect(m_ui->dns, SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
-    connect(m_ui->method, SIGNAL(currentIndexChanged(int)), SLOT(slotCompleteChanged()));
-    connect(&d->model, SIGNAL(dataChanged(QModelIndex,QModelIndex)), SLOT(slotCompleteChanged()));
+    connect(m_ui->dns, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->method, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
+    connect(&d->model, SIGNAL(dataChanged(QModelIndex,QModelIndex)), SLOT(slotWidgetChanged()));
 }
 
 IPv4Widget::~IPv4Widget()
@@ -378,7 +378,7 @@ void IPv4Widget::slotDnsDomains()
     delete dlg;
 }
 
-bool IPv4Widget::isComplete() const
+bool IPv4Widget::isValid() const
 {
     if (m_ui->method->currentIndex() == 2) {
         if (!d->model.rowCount()) {

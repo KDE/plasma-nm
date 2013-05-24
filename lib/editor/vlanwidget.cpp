@@ -33,9 +33,9 @@ VlanWidget::VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 
     fillConnections();
 
-    connect(m_ui->ifaceName, SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
-    connect(m_ui->parent, SIGNAL(currentIndexChanged(int)), SLOT(slotCompleteChanged()));
-    connect(m_ui->parent->lineEdit(), SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
+    connect(m_ui->ifaceName, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->parent, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
+    connect(m_ui->parent->lineEdit(), SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
     if (setting)
         loadConfig(setting);
@@ -95,7 +95,7 @@ void VlanWidget::fillConnections()
     }
 }
 
-bool VlanWidget::isComplete() const
+bool VlanWidget::isValid() const
 {
     return !m_ui->parent->currentText().isEmpty() || !m_ui->ifaceName->text().isEmpty();
 }

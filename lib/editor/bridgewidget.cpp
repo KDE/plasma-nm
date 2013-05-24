@@ -60,7 +60,7 @@ BridgeWidget::BridgeWidget(const QString & masterUuid, const NetworkManager::Set
     connect(m_ui->bridges, SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)), SLOT(currentBridgeChanged(QListWidgetItem*,QListWidgetItem*)));
     connect(m_ui->bridges, SIGNAL(itemDoubleClicked(QListWidgetItem*)), SLOT(editBridge()));
 
-    connect(m_ui->ifaceName, SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
+    connect(m_ui->ifaceName, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
     if (setting)
         loadConfig(setting);
@@ -140,7 +140,7 @@ void BridgeWidget::bridgeAddComplete(const QString &uuid, bool success, const QS
         const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
         QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->bridges);
         slaveItem->setData(Qt::UserRole, uuid);
-        slotCompleteChanged();
+        slotWidgetChanged();
     } else {
         qWarning() << "Bridged connection not added:" << msg;
     }
@@ -183,7 +183,7 @@ void BridgeWidget::deleteBridge()
                 == KMessageBox::Yes) {
             connection->remove();
             delete currentItem;
-            slotCompleteChanged();
+            slotWidgetChanged();
         }
     }
 }
@@ -202,7 +202,7 @@ void BridgeWidget::populateBridges()
     }
 }
 
-bool BridgeWidget::isComplete() const
+bool BridgeWidget::isValid() const
 {
     return !m_ui->ifaceName->text().isEmpty() && m_ui->bridges->count() > 0;
 }

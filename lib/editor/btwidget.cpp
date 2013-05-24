@@ -38,7 +38,7 @@ BtWidget::BtWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent,
 
     m_ui->type->setEnabled(false);
 
-    connect(m_ui->bdaddr, SIGNAL(hwAddressChanged()), SLOT(slotCompleteChanged()));
+    connect(m_ui->bdaddr, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
 
     if (setting)
         loadConfig(setting);
@@ -68,7 +68,7 @@ QVariantMap BtWidget::setting(bool agentOwned) const
     return btSetting.toMap();
 }
 
-bool BtWidget::isComplete() const
+bool BtWidget::isValid() const
 {
     return !m_ui->bdaddr->hwAddress().isEmpty();
 }

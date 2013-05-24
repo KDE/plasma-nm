@@ -44,7 +44,7 @@ QString SettingWidget::type() const
     return m_type;
 }
 
-void SettingWidget::slotCompleteChanged()
+void SettingWidget::slotWidgetChanged()
 {
-    emit completeChanged(isComplete());
+    emit widgetChanged(isValid());
 }

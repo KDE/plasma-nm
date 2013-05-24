@@ -44,7 +44,7 @@ public:
     void loadConfig(const NetworkManager::Setting::Ptr &setting);
     QVariantMap setting(bool agentOwned = false) const;
 
-    virtual bool isComplete() const;
+    virtual bool isValid() const;
 
 private slots:
     void updateStartDir(const KUrl &);

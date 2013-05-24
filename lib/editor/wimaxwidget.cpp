@@ -33,7 +33,7 @@ WimaxWidget::WimaxWidget(const NetworkManager::Setting::Ptr &setting, QWidget* p
 {
     m_ui->setupUi(this);
 
-    connect(m_ui->networkName, SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
+    connect(m_ui->networkName, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
     if (setting)
         loadConfig(setting);
@@ -63,7 +63,7 @@ QVariantMap WimaxWidget::setting(bool agentOwned) const
     return wimaxSetting.toMap();
 }
 
-bool WimaxWidget::isComplete() const
+bool WimaxWidget::isValid() const
 {
     return !m_ui->networkName->text().isEmpty();
 }

@@ -39,7 +39,7 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
     connect(m_ui->cbShowPasswords, SIGNAL(toggled(bool)), SLOT(showPasswords(bool)));
     connect(m_ui->btnAdvanced, SIGNAL(clicked()), SLOT(showAdvanced()));
 
-    connect(m_ui->gateway, SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
+    connect(m_ui->gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
     if (m_setting)
         loadConfig(setting);
@@ -188,7 +188,7 @@ void VpncWidget::showAdvanced()
     delete adv;
 }
 
-bool VpncWidget::isComplete() const
+bool VpncWidget::isValid() const
 {
     return !m_ui->gateway->text().isEmpty();
 }

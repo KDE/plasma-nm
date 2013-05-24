@@ -45,7 +45,7 @@ public:
 
     QVariantMap setting(bool agentOwned = false) const;
 
-    virtual bool isComplete() const;
+    virtual bool isValid() const;
 
 private:
     Ui::BtWidget * m_ui;

@@ -114,10 +114,10 @@ void WifiConnectionWidget::generateRandomClonedMac()
 void WifiConnectionWidget::ssidChanged()
 {
     m_ui->BSSIDCombo->init(m_ui->BSSIDCombo->bssid(), m_ui->SSIDCombo->ssid());
-    slotCompleteChanged();
+    slotWidgetChanged();
 }
 
-bool WifiConnectionWidget::isComplete() const
+bool WifiConnectionWidget::isValid() const
 {
     return !m_ui->SSIDCombo->currentText().isEmpty();
 }

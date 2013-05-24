@@ -57,7 +57,7 @@ QString HwAddrComboBox::hwAddress() const
     if (!m_dirty)
         result = itemData(currentIndex()).toString();
     else
-        result = currentText(); // FIXME validate
+        result = currentText();
 
     //qDebug() << "Result:" << currentIndex() << result;
 

@@ -70,5 +70,5 @@ QVariantMap BtWidget::setting(bool agentOwned) const
 
 bool BtWidget::isValid() const
 {
-    return !m_ui->bdaddr->hwAddress().isEmpty();
+    return m_ui->bdaddr->isValid();
 }

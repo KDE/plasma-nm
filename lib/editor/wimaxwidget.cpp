@@ -34,6 +34,7 @@ WimaxWidget::WimaxWidget(const NetworkManager::Setting::Ptr &setting, QWidget* p
     m_ui->setupUi(this);
 
     connect(m_ui->networkName, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->macAddress, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
 
     if (setting)
         loadConfig(setting);
@@ -65,5 +66,5 @@ QVariantMap WimaxWidget::setting(bool agentOwned) const
 
 bool WimaxWidget::isValid() const
 {
-    return !m_ui->networkName->text().isEmpty();
+    return !m_ui->networkName->text().isEmpty() && m_ui->macAddress->isValid();
 }

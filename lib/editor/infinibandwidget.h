@@ -45,6 +45,8 @@ public:
 
     QVariantMap setting(bool agentOwned = false) const;
 
+    virtual bool isValid() const;
+
 private:
     Ui::InfinibandWidget * m_ui;
 };

@@ -39,6 +39,9 @@ public:
 
     QString ssid() const;
 
+Q_SIGNALS:
+    void ssidChanged();
+
 private slots:
     void editTextChanged(const QString &);
     void currentIndexChanged(int);

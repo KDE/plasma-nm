@@ -36,6 +36,10 @@ public:
     explicit BssidComboBox(QWidget *parent = 0);
 
     QString bssid() const;
+    bool isValid() const;
+
+Q_SIGNALS:
+    void bssidChanged();
 
 public slots:
     void init(const QString & bssid, const QString &ssid);

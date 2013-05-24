@@ -57,11 +57,13 @@ QString SsidComboBox::ssid() const
 void SsidComboBox::editTextChanged(const QString &)
 {
     m_dirty = true;
+    emit ssidChanged();
 }
 
 void SsidComboBox::currentIndexChanged(int)
 {
     m_dirty = false;
+    emit ssidChanged();
 }
 
 void SsidComboBox::init(const QString &ssid)

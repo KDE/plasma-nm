@@ -22,6 +22,7 @@
 #include "bssidcombobox.h"
 
 #include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/WirelessDevice>
 #include <kicon.h>
 
@@ -54,14 +55,25 @@ QString BssidComboBox::bssid() const
     return result;
 }
 
+bool BssidComboBox::isValid() const
+{
+    if (bssid().isEmpty()) {
+        return true;
+    }
+
+    return NetworkManager::Utils::macAddressIsValid(bssid());
+}
+
 void BssidComboBox::editTextChanged(const QString &)
 {
     m_dirty = true;
+    emit bssidChanged();
 }
 
 void BssidComboBox::currentIndexChanged(int)
 {
     m_dirty = false;
+    emit bssidChanged();
 }
 
 void BssidComboBox::init(const QString & bssid, const QString &ssid)

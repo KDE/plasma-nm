@@ -33,9 +33,11 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
     m_ui->setupUi(this);
 
     connect(m_ui->btnRandomMacAddr, SIGNAL(clicked()), SLOT(generateRandomClonedMac()));
-    connect(m_ui->SSIDCombo, SIGNAL(currentIndexChanged(int)), SLOT(ssidChanged()));
-    connect(m_ui->SSIDCombo, SIGNAL(editTextChanged(QString)), SLOT(ssidChanged()));
+    connect(m_ui->SSIDCombo, SIGNAL(ssidChanged()), SLOT(ssidChanged()));
+
+    // Validation
     connect(m_ui->macAddress, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
+    connect(m_ui->BSSIDCombo, SIGNAL(bssidChanged()), SLOT(slotWidgetChanged()));
 
     if (setting)
         loadConfig(setting);
@@ -120,5 +122,5 @@ void WifiConnectionWidget::ssidChanged()
 
 bool WifiConnectionWidget::isValid() const
 {
-    return !m_ui->SSIDCombo->currentText().isEmpty() && m_ui->macAddress->isValid();
+    return !m_ui->SSIDCombo->currentText().isEmpty() && m_ui->macAddress->isValid() && m_ui->BSSIDCombo->isValid();
 }

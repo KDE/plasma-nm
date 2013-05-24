@@ -124,7 +124,7 @@ void WiredConnectionWidget::generateRandomClonedMac()
 
 bool WiredConnectionWidget::isValid() const
 {
-    QRegExp macAddressCheck = QRegExp("([a-zA-Z0-9][a-zA-Z0-9]:){5}[0-9a-fA-F][0-9a-fA-F]");
+    QRegExp macAddressCheck = QRegExp("([a-fA-F0-9][a-fA-F0-9]:){5}[0-9a-fA-F][0-9a-fA-F]");
 
     if (!m_widget->macAddress->hwAddress().isEmpty()) {
         if (!m_widget->macAddress->hwAddress().contains(macAddressCheck)) {

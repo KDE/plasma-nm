@@ -41,8 +41,7 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
         loadConfig(setting);
 
     // Validation
-    connect(m_widget->macAddress, SIGNAL(editTextChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_widget->macAddress, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
+    connect(m_widget->macAddress, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
     connect(m_widget->clonedMacAddress, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 }
 

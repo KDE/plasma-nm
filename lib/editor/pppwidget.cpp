@@ -54,6 +54,10 @@ void PPPWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     m_ui->bsdComp->setChecked(!pppSetting->noBsdComp());
     m_ui->deflateComp->setChecked(!pppSetting->noDeflate());
     m_ui->tcpComp->setChecked(!pppSetting->noVjComp());
+
+    if (pppSetting->lcpEchoInterval() > 0) {
+        m_ui->senddEcho->setChecked(true);
+    }
 }
 
 QVariantMap PPPWidget::setting(bool agentOwned) const
@@ -75,6 +79,11 @@ QVariantMap PPPWidget::setting(bool agentOwned) const
     pppSetting.setNoBsdComp(!m_ui->bsdComp->isChecked());
     pppSetting.setNoDeflate(!m_ui->deflateComp->isChecked());
     pppSetting.setNoVjComp(!m_ui->tcpComp->isChecked());
+
+    if (m_ui->senddEcho->isChecked()) {
+        pppSetting.setLcpEchoFailure(5);
+        pppSetting.setLcpEchoInterval(30);
+    }
 
     return pppSetting.toMap();
 }

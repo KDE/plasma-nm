@@ -45,7 +45,7 @@ protected slots:
     void slotWidgetChanged();
 
 signals:
-    void widgetChanged(bool isValid);
+    void validChanged(bool isValid);
 
 private:
     QString m_type;

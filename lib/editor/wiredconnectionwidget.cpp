@@ -124,18 +124,15 @@ void WiredConnectionWidget::generateRandomClonedMac()
 
 bool WiredConnectionWidget::isValid() const
 {
-    QRegExp macAddressCheck = QRegExp("([a-fA-F0-9][a-fA-F0-9]:){5}[0-9a-fA-F][0-9a-fA-F]");
+    if (!m_widget->macAddress->isValid()) {
+        return false;
+    }
 
-    if (!m_widget->macAddress->hwAddress().isEmpty()) {
-        if (!m_widget->macAddress->hwAddress().contains(macAddressCheck)) {
+    if (m_widget->clonedMacAddress->text() != ":::::") {
+        if (!NetworkManager::Utils::macAddressIsValid(m_widget->clonedMacAddress->text())) {
             return false;
         }
     }
 
-    if (!m_widget->clonedMacAddress->text().isEmpty()) {
-        if (!m_widget->clonedMacAddress->text().contains(macAddressCheck)) {
-            return false;
-        }
-    }
     return true;
 }

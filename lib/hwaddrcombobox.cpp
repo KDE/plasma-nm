@@ -30,6 +30,7 @@
 #include <NetworkManagerQt/BondDevice>
 #include <NetworkManagerQt/BridgeDevice>
 #include <NetworkManagerQt/VlanDevice>
+#include <NetworkManagerQt/Utils>
 
 HwAddrComboBox::HwAddrComboBox(QWidget *parent) :
     KComboBox(parent), m_dirty(false)
@@ -39,6 +40,15 @@ HwAddrComboBox::HwAddrComboBox(QWidget *parent) :
 
     connect(this, SIGNAL(editTextChanged(QString)), SLOT(editTextChanged(QString)));
     connect(this, SIGNAL(currentIndexChanged(int)), SLOT(currentIndexChanged(int)));
+}
+
+bool HwAddrComboBox::isValid() const
+{
+    if (hwAddress().isEmpty()) {
+        return true;
+    }
+
+    return NetworkManager::Utils::macAddressIsValid(hwAddress());
 }
 
 QString HwAddrComboBox::hwAddress() const

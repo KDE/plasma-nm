@@ -35,6 +35,7 @@ public:
 
     void init(const NetworkManager::Device::Type &deviceType, const QString &address);
 
+    bool isValid() const;
     QString hwAddress() const;
 
 signals:

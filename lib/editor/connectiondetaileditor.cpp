@@ -51,6 +51,7 @@
 
 #include <KPluginFactory>
 #include <KServiceTypeTrader>
+#include <QPushButton>
 
 using namespace NetworkManager;
 
@@ -228,52 +229,115 @@ void ConnectionDetailEditor::initTabs()
     if (type == NetworkManager::ConnectionSettings::Wired) {
         WiredConnectionWidget * wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Setting::Wired), this);
         m_ui->tabWidget->addTab(wiredWidget, i18n("Wired"));
+        if (!wiredWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(wiredWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
         WiredSecurity * wiredSecurity = new WiredSecurity(m_connection->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>(), this);
         m_ui->tabWidget->addTab(wiredSecurity, i18n("802.1x Security"));
+        if (!wiredSecurity->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(wiredSecurity, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     } else if (type == NetworkManager::ConnectionSettings::Wireless) {
         WifiConnectionWidget * wifiWidget = new WifiConnectionWidget(m_connection->setting(NetworkManager::Setting::Wireless), this);
         m_ui->tabWidget->addTab(wifiWidget, i18n("Wireless"));
+        if (!wifiWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(wifiWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
         WifiSecurity * wifiSecurity = new WifiSecurity(m_connection->setting(NetworkManager::Setting::WirelessSecurity),
                                                        m_connection->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>(),
                                                        this);
         m_ui->tabWidget->addTab(wifiSecurity, i18n("Wi-Fi Security"));
+        if (!wifiSecurity->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(wifiSecurity, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     } else if (type == NetworkManager::ConnectionSettings::Pppoe) { // DSL
         PppoeWidget * pppoeWidget = new PppoeWidget(m_connection->setting(NetworkManager::Setting::Pppoe), this);
         m_ui->tabWidget->addTab(pppoeWidget, i18n("DSL"));
+        if (!pppoeWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(pppoeWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
         WiredConnectionWidget * wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Setting::Wired), this);
         m_ui->tabWidget->addTab(wiredWidget, i18n("Wired"));
+        if (!wiredWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(wiredWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     } else if (type == NetworkManager::ConnectionSettings::Gsm) { // GSM
         GsmWidget * gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Setting::Gsm), this);
         m_ui->tabWidget->addTab(gsmWidget, i18n("Mobile Broadband (%1)", m_connection->typeAsString(m_connection->connectionType())));
+        if (!gsmWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(gsmWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     } else if (type == NetworkManager::ConnectionSettings::Cdma) { // CDMA
         CdmaWidget * cdmaWidget = new CdmaWidget(m_connection->setting(NetworkManager::Setting::Cdma), this);
         m_ui->tabWidget->addTab(cdmaWidget, i18n("Mobile Broadband (%1)", m_connection->typeAsString(m_connection->connectionType())));
+        if (!cdmaWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(cdmaWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     } else if (type == NetworkManager::ConnectionSettings::Bluetooth) {  // Bluetooth
         BtWidget * btWidget = new BtWidget(m_connection->setting(NetworkManager::Setting::Bluetooth), this);
         m_ui->tabWidget->addTab(btWidget, i18n("Bluetooth"));
+        if (!btWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(btWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
         NetworkManager::BluetoothSetting::Ptr btSetting = m_connection->setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
         if (btSetting->profileType() == NetworkManager::BluetoothSetting::Dun) {
             GsmWidget * gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Setting::Gsm), this);
             m_ui->tabWidget->addTab(gsmWidget, i18n("GSM"));
+            if (!gsmWidget->isValid()) {
+                m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+            }
+        connect(gsmWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
             PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Setting::Ppp), this);
             m_ui->tabWidget->addTab(pppWidget, i18n("PPP"));
-
+            if (!pppWidget->isValid()) {
+                m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+            }
+            connect(pppWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
         }
     } else if (type == NetworkManager::ConnectionSettings::Infiniband) { // Infiniband
         InfinibandWidget * infinibandWidget = new InfinibandWidget(m_connection->setting(NetworkManager::Setting::Infiniband), this);
         m_ui->tabWidget->addTab(infinibandWidget, i18n("Infiniband"));
+        if (!infinibandWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(infinibandWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     } else if (type == NetworkManager::ConnectionSettings::Bond) { // Bond
         BondWidget * bondWidget = new BondWidget(uuid, m_connection->setting(NetworkManager::Setting::Bond), this);
         m_ui->tabWidget->addTab(bondWidget, i18n("Bond"));
+        if (!bondWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(bondWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     } else if (type == NetworkManager::ConnectionSettings::Bridge) { // Bridge
         BridgeWidget * bridgeWidget = new BridgeWidget(uuid, m_connection->setting(NetworkManager::Setting::Bridge), this);
         m_ui->tabWidget->addTab(bridgeWidget, i18n("Bridge"));
+        if (!bridgeWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(bridgeWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     } else if (type == NetworkManager::ConnectionSettings::Vlan) { // Vlan
         VlanWidget * vlanWidget = new VlanWidget(m_connection->setting(NetworkManager::Setting::Vlan), this);
         m_ui->tabWidget->addTab(vlanWidget, i18n("Vlan"));
+        if (!vlanWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(vlanWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     } else if (type == NetworkManager::ConnectionSettings::Wimax) { // Wimax
         WimaxWidget * wimaxWidget = new WimaxWidget(m_connection->setting(NetworkManager::Setting::Wimax), this);
         m_ui->tabWidget->addTab(wimaxWidget, i18n("Wimax"));
+        if (!wimaxWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(wimaxWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     } else if (type == NetworkManager::ConnectionSettings::Vpn) { // VPN
         QString error;
         VpnUiPlugin * vpnPlugin = 0;
@@ -298,6 +362,10 @@ void ConnectionDetailEditor::initTabs()
                 const QString shortName = serviceType.section('.', -1);
                 SettingWidget * vpnWidget = vpnPlugin->widget(vpnSetting, this);
                 m_ui->tabWidget->addTab(vpnWidget, i18n("VPN (%1)", shortName));
+                if (!vpnWidget->isValid()) {
+                    m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+                }
+                connect(vpnWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
             } else {
                 qDebug() << error << ", serviceType == " << serviceType;
             }
@@ -308,12 +376,20 @@ void ConnectionDetailEditor::initTabs()
     if (type == ConnectionSettings::Pppoe || type == ConnectionSettings::Cdma || type == ConnectionSettings::Gsm) {
         PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Setting::Ppp), this);
         m_ui->tabWidget->addTab(pppWidget, i18n("PPP"));
+        if (!pppWidget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(pppWidget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     }
 
     // IPv4 widget
     if (!isSlave()) {
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Setting::Ipv4), this);
         m_ui->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
+        if (!ipv4Widget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(ipv4Widget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     }
 
     // IPv6 widget
@@ -326,6 +402,10 @@ void ConnectionDetailEditor::initTabs()
          || type == ConnectionSettings::Vlan) && !isSlave()) {
         IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Setting::Ipv6), this);
         m_ui->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
+        if (!ipv6Widget->isValid()) {
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        }
+        connect(ipv6Widget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
     }
 }
 
@@ -444,3 +524,22 @@ void ConnectionDetailEditor::disconnectSignals()
                    this, SLOT(gotSecrets(QString,bool,NMVariantMapMap,QString)));
     }
 }
+
+void ConnectionDetailEditor::validChanged(bool valid)
+{
+    if (!valid) {
+        m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+        return;
+    } else {
+        for (int i = 1; i < m_ui->tabWidget->count(); ++i) {
+            SettingWidget * widget = static_cast<SettingWidget*>(m_ui->tabWidget->widget(i));
+            if (!widget->isValid()) {
+                m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+                return;
+            }
+        }
+    }
+
+    m_ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
+}
+

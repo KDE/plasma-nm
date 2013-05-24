@@ -56,6 +56,7 @@ private Q_SLOTS:
     void connectionAddComplete(const QString & id, bool success, const QString & msg);
     void disconnectSignals();
     void gotSecrets(const QString & id, bool success, const NMVariantMapMap & secrets, const QString & msg);
+    void validChanged(bool valid);
     void saveSetting();
 private:
     Ui::ConnectionDetailEditor * m_ui;

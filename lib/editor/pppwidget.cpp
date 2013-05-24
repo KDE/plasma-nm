@@ -57,6 +57,8 @@ void PPPWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     if (pppSetting->lcpEchoInterval() > 0) {
         m_ui->senddEcho->setChecked(true);
+    } else {
+        m_ui->senddEcho->setChecked(false);
     }
 }
 

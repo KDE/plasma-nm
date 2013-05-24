@@ -39,6 +39,11 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
 
     if (setting)
         loadConfig(setting);
+
+    // Validation
+    connect(m_widget->macAddress, SIGNAL(editTextChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_widget->macAddress, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
+    connect(m_widget->clonedMacAddress, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 }
 
 WiredConnectionWidget::~WiredConnectionWidget()
@@ -116,4 +121,22 @@ void WiredConnectionWidget::generateRandomClonedMac()
         mac[i] = random;
     }
     m_widget->clonedMacAddress->setText(NetworkManager::Utils::macAddressAsString(mac));
+}
+
+bool WiredConnectionWidget::isValid() const
+{
+    QRegExp macAddressCheck = QRegExp("([a-zA-Z0-9][a-zA-Z0-9]:){5}[0-9a-fA-F][0-9a-fA-F]");
+
+    if (!m_widget->macAddress->hwAddress().isEmpty()) {
+        if (!m_widget->macAddress->hwAddress().contains(macAddressCheck)) {
+            return false;
+        }
+    }
+
+    if (!m_widget->clonedMacAddress->text().isEmpty()) {
+        if (!m_widget->clonedMacAddress->text().contains(macAddressCheck)) {
+            return false;
+        }
+    }
+    return true;
 }

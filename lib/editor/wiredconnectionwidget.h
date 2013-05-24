@@ -44,6 +44,8 @@ public:
 
     QVariantMap setting(bool agentOwned = false) const;
 
+    bool isValid() const;
+
 private slots:
     void generateRandomClonedMac();
 

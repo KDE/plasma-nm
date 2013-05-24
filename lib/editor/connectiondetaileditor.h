@@ -58,7 +58,10 @@ private Q_SLOTS:
     void gotSecrets(const QString & id, bool success, const NMVariantMapMap & secrets, const QString & msg);
     void validChanged(bool valid);
     void saveSetting();
+
 private:
+    void enableOKButton(bool enabled);
+
     Ui::ConnectionDetailEditor * m_ui;
     NetworkManager::ConnectionSettings::Ptr m_connection;
     int m_numSecrets;

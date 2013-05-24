@@ -117,6 +117,11 @@ IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 
     connect(m_ui->btnRoutes, SIGNAL(clicked()),
             SLOT(slotRoutesDialog()));
+
+    // Validation
+    connect(m_ui->dns, SIGNAL(textChanged(QString)), SLOT(slotCompleteChanged()));
+    connect(m_ui->method, SIGNAL(currentIndexChanged(int)), SLOT(slotCompleteChanged()));
+    connect(&d->model, SIGNAL(dataChanged(QModelIndex,QModelIndex)), SLOT(slotCompleteChanged()));
 }
 
 IPv4Widget::~IPv4Widget()
@@ -371,4 +376,36 @@ void IPv4Widget::slotDnsDomains()
     }
 
     delete dlg;
+}
+
+bool IPv4Widget::isComplete() const
+{
+    if (m_ui->method->currentIndex() == 2) {
+        if (!d->model.rowCount()) {
+            return false;
+        }
+
+        for (int i = 0, rowCount = d->model.rowCount(); i < rowCount; i++) {
+            QHostAddress ip = QHostAddress(d->model.item(i, 0)->text());
+            QHostAddress netmask = QHostAddress(d->model.item(i, 1)->text());
+            QHostAddress gateway = QHostAddress(d->model.item(i, 2)->text());
+
+            if (ip.isNull() || netmask.isNull() || (gateway.isNull() && !d->model.item(i, 2)->text().isEmpty())) {
+                return false;
+            }
+        }
+    }
+
+    if (!m_ui->dns->text().isEmpty() && (m_ui->method->currentIndex() == 0 || m_ui->method->currentIndex() == 2)) {
+        QStringList tmp = m_ui->dns->text().split(',');
+        QList<QHostAddress> tmpAddrList;
+        foreach (const QString & str, tmp) {
+            QHostAddress addr(str);
+            if (addr.isNull()) {
+                return false;
+            }
+        }
+    }
+
+    return true;
 }

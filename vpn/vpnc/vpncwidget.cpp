@@ -24,6 +24,7 @@
 #include "nm-vpnc-service.h"
 
 #include <QDBusMetaType>
+#include <QDebug>
 
 VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
@@ -104,6 +105,8 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
 {
     Q_UNUSED(agentOwned)
 
+    NetworkManager::VpnSetting setting;
+    setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_VPNC));
     NMStringMap data;
     NMStringMap secrets;
 
@@ -117,12 +120,17 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
         secrets.insert(NM_VPNC_KEY_XAUTH_PASSWORD, m_ui->userPassword->text());
 
     const int userPasswordTypeIndex =  m_ui->cboUserPasswordType->currentIndex();
-    if (userPasswordTypeIndex == 0) // always ask
+    if (userPasswordTypeIndex == 0) { // always ask
         data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
-    else if (userPasswordTypeIndex == 2) // not required
+    } else if (userPasswordTypeIndex == 2) { // not required
         data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotRequired));
-    else // none
-        data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::None));
+    } else { // none
+        if (agentOwned) {
+            data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
+        } else {
+            data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::None));
+        }
+    }
 
     if (!m_ui->group->text().isEmpty())
         data.insert(NM_VPNC_KEY_ID, m_ui->group->text());
@@ -131,21 +139,26 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
         secrets.insert(NM_VPNC_KEY_SECRET, m_ui->groupPassword->text());
 
     const int groupPasswordTypeIndex =  m_ui->cboGroupPasswordType->currentIndex();
-    if (groupPasswordTypeIndex == 0) // always ask
+    if (groupPasswordTypeIndex == 0) { // always ask
         data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::NotSaved));
-    else if (groupPasswordTypeIndex == 2) // not required
+    } else if (groupPasswordTypeIndex == 2) { // not required
         data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::NotRequired));
-    else // none
-        data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::None));
+    } else { // none
+        if (agentOwned) {
+            data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::AgentOwned));
+        } else {
+            data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::None));
+        }
+    }
 
     if (m_ui->useHybridAuth->isChecked() && !m_ui->caFile->url().isEmpty()) {
         data.insert(NM_VPNC_KEY_AUTHMODE, "hybrid");
         data.insert(NM_VPNC_KEY_CA_FILE, m_ui->caFile->url().url());
     }
 
-    m_setting->setData(m_setting->data().unite(data));
-    m_setting->setSecrets(secrets);
-    return m_setting->toMap();
+    setting.setData(data);
+    setting.setSecrets(secrets);
+    return setting.toMap();
 }
 
 

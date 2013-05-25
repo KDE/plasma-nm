@@ -174,7 +174,8 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
 
     NMStringMap data;
     NMStringMap secretData;
-
+    NetworkManager::VpnSetting setting;
+    setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_OPENVPN));
     // required settings
     data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE), d->ui.gateway->text());
 
@@ -251,10 +252,10 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
     }
     data.insert(QLatin1String(NM_OPENVPN_KEY_CONNECTION_TYPE), contype);
 
-    d->setting->setData(d->setting->data().unite(data));
-    d->setting->setSecrets(d->setting->secrets().unite(secretData));
+    setting.setData(data);
+    setting.setSecrets(secretData);
 
-    return d->setting->toMap();
+    return setting.toMap();
 }
 
 void OpenVpnSettingWidget::updateStartDir(const KUrl & url)

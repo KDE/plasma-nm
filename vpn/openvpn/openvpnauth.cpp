@@ -134,16 +134,18 @@ QVariantMap OpenVpnAuthWidget::setting(bool agentOwned) const
     Q_D(const OpenVpnAuthWidget);
     Q_UNUSED(agentOwned)
 
+    NMStringMap secrets;
     QVariantMap secretData;
     for (int i = 0; i < d->layout->rowCount() - 1; i++)
     {
         KLineEdit *le = qobject_cast<KLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && !le->text().isEmpty()) {
             QString key = le->property("nm_secrets_key").toString();
-            secretData.insert(key, le->text());
+            secrets.insert(key, le->text());
         }
     }
 
+    secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
     return secretData;
 }
 

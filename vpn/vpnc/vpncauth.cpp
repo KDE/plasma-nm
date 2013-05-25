@@ -96,16 +96,19 @@ QVariantMap VpncAuthDialog::setting(bool agentOwned) const
     Q_D(const VpncAuthDialog);
     Q_UNUSED(agentOwned)
 
+    NMStringMap secrets;
     QVariantMap result;
 
     //   user password
     if (!d->ui.leUserPassword->text().isEmpty()) {
-        result.insert(NM_VPNC_KEY_XAUTH_PASSWORD, d->ui.leUserPassword->text());
+        secrets.insert(NM_VPNC_KEY_XAUTH_PASSWORD, d->ui.leUserPassword->text());
     }
     //   group password
     if (!d->ui.leGroupPassword->text().isEmpty()) {
-        result.insert(NM_VPNC_KEY_SECRET, d->ui.leGroupPassword->text());
+        secrets.insert(NM_VPNC_KEY_SECRET, d->ui.leGroupPassword->text());
     }
+
+    result.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
 
     return result;
 }

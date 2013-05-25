@@ -114,8 +114,7 @@ void OpenVpnAuthWidget::readSecrets()
         d->layout->addRow(label, lineEdit);
     }
 
-    for (int i = 0; i < d->layout->rowCount(); i++)
-    {
+    for (int i = 0; i < d->layout->rowCount(); i++) {
         KLineEdit *le = qobject_cast<KLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && le->text().isEmpty()) {
             le->setFocus(Qt::OtherFocusReason);
@@ -136,8 +135,7 @@ QVariantMap OpenVpnAuthWidget::setting(bool agentOwned) const
 
     NMStringMap secrets;
     QVariantMap secretData;
-    for (int i = 0; i < d->layout->rowCount() - 1; i++)
-    {
+    for (int i = 0; i < d->layout->rowCount() - 1; i++) {
         KLineEdit *le = qobject_cast<KLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && !le->text().isEmpty()) {
             QString key = le->property("nm_secrets_key").toString();
@@ -152,8 +150,7 @@ QVariantMap OpenVpnAuthWidget::setting(bool agentOwned) const
 void OpenVpnAuthWidget::showPasswordsToggled(bool toggled)
 {
     Q_D(OpenVpnAuthWidget);
-    for (int i = 0; i < d->layout->rowCount() - 1; i++)
-    {
+    for (int i = 0; i < d->layout->rowCount() - 1; i++) {
         KLineEdit *le = qobject_cast<KLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le) {
             le->setPasswordMode(!toggled);

@@ -147,7 +147,8 @@ void SecretAgent::dialogAccepted()
         if (request.type == SecretsRequest::GetSecrets && request.dialog == m_dialog) {
             NMVariantMapMap connection = request.dialog->secrets();
             sendSecrets(connection, request.message);
-            if (request.saveSecretsWithoutReply) {
+            NetworkManager::ConnectionSettings connectionSettings(connection);
+            if (request.saveSecretsWithoutReply && connectionSettings.connectionType() != NetworkManager::ConnectionSettings::Vpn) {
                 SecretsRequest requestOffline(SecretsRequest::SaveSecrets);
                 requestOffline.connection = connection;
                 requestOffline.connection_path = request.connection_path;
@@ -346,6 +347,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
             if (m_wallet->setFolder("plasma-nm")) {
                 foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
                     NMStringMap secretsMap = setting->secretsToStringMap();
+
                     if (!secretsMap.isEmpty()) {
                         QString entryName = connectionSettings.uuid() % QLatin1Char(';') % setting->name();
                         m_wallet->writeMap(entryName, secretsMap);

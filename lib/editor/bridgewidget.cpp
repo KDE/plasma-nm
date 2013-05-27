@@ -44,8 +44,8 @@ BridgeWidget::BridgeWidget(const QString & masterUuid, const NetworkManager::Set
     QAction * action = new QAction(i18n("Ethernet"), this);
     action->setData(NetworkManager::ConnectionSettings::Wired);
     m_menu->addAction(action);
-    action = new QAction(i18n("InfiniBand"), this);
-    action->setData(NetworkManager::ConnectionSettings::Infiniband);
+    action = new QAction(i18n("VLAN"), this);
+    action->setData(NetworkManager::ConnectionSettings::Vlan);
     m_menu->addAction(action);
     action = new QAction(i18n("Wireless"), this);
     action->setData(NetworkManager::ConnectionSettings::Wireless);

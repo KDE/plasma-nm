@@ -165,6 +165,13 @@ void Handler::removeConnection(const QString& connection)
         return;
     }
 
+    foreach (const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
+        NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
+        if (settings->master() == con->uuid()) {
+            connection->remove();
+        }
+    }
+
     con->remove();
 }
 

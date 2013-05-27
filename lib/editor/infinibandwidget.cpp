@@ -52,7 +52,11 @@ void InfinibandWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     NetworkManager::InfinibandSetting::Ptr infinibandSetting = setting.staticCast<NetworkManager::InfinibandSetting>();
 
     if (infinibandSetting->transportMode() != NetworkManager::InfinibandSetting::Unknown)
-        m_ui->transport->setCurrentIndex(m_ui->transport->findData(infinibandSetting->transportMode()));
+        if (infinibandSetting->transportMode() == NetworkManager::InfinibandSetting::Datagram) {
+            m_ui->transport->setCurrentIndex(0);
+        } else if (infinibandSetting->transportMode() == NetworkManager::InfinibandSetting::Connected) {
+            m_ui->transport->setCurrentIndex(1);
+        }
     m_ui->macAddress->init(NetworkManager::Device::InfiniBand, NetworkManager::Utils::macAddressAsString(infinibandSetting->macAddress()));
     if (infinibandSetting->mtu()) {
         m_ui->mtu->setValue(infinibandSetting->mtu());
@@ -64,7 +68,11 @@ QVariantMap InfinibandWidget::setting(bool agentOwned) const
     Q_UNUSED(agentOwned)
 
     NetworkManager::InfinibandSetting setting;
-    setting.setTransportMode(static_cast<NetworkManager::InfinibandSetting::TransportMode>(m_ui->transport->currentIndex()));
+    if (m_ui->transport->currentIndex() == 0) {
+        setting.setTransportMode(NetworkManager::InfinibandSetting::Datagram);
+    } else {
+        setting.setTransportMode(NetworkManager::InfinibandSetting::Connected);
+    }
     setting.setMacAddress(NetworkManager::Utils::macAddressFromString(m_ui->macAddress->hwAddress()));
     if (m_ui->mtu->value()) {
         setting.setMtu(m_ui->mtu->value());

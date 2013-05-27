@@ -14,7 +14,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="SSIDLabel">
      <property name="text">
-      <string>&amp;SSID</string>
+      <string>&amp;SSID:</string>
      </property>
      <property name="buddy">
       <cstring>SSIDCombo</cstring>
@@ -66,7 +66,7 @@
      </item>
     </widget>
    </item>
-   <item row="2" column="0">
+   <item row="3" column="0">
     <widget class="QLabel" name="BSSIDLabel">
      <property name="text">
       <string>&amp;BSSID:</string>
@@ -76,7 +76,7 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
+   <item row="3" column="1">
     <widget class="BssidComboBox" name="BSSIDCombo">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -86,7 +86,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="7" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
       <string>&amp;Device MAC address:</string>
@@ -96,7 +96,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
+   <item row="7" column="1">
     <widget class="HwAddrComboBox" name="macAddress">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -106,7 +106,7 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0">
+   <item row="8" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
       <string>&amp;Cloned MAC address:</string>
@@ -116,7 +116,7 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="1">
+   <item row="8" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="KLineEdit" name="clonedMacAddress">
@@ -143,7 +143,7 @@
      </item>
     </layout>
    </item>
-   <item row="6" column="0">
+   <item row="10" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
       <string>M&amp;TU:</string>
@@ -153,7 +153,7 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="1">
+   <item row="10" column="1">
     <widget class="QSpinBox" name="mtu">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -178,23 +178,86 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="1">
+   <item row="11" column="1">
     <widget class="QCheckBox" name="hiddenNetwork">
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
-   <item row="7" column="0">
+   <item row="11" column="0">
     <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>Hidden:</string>
+      <string>&amp;Hidden:</string>
+     </property>
+     <property name="buddy">
+      <cstring>hiddenNetwork</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="bandLabel">
+     <property name="text">
+      <string>&amp;Band:</string>
+     </property>
+     <property name="buddy">
+      <cstring>band</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="KComboBox" name="band">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string extracomment="automatic band">Automatic</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>A (5 GHz)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>B/G (2.4 GHz)</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="channelLabel">
+     <property name="text">
+      <string>&amp;Channel:</string>
+     </property>
+     <property name="buddy">
+      <cstring>channel</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QComboBox" name="channel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
   <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
@@ -214,20 +277,18 @@
    <class>BssidComboBox</class>
    <extends>QComboBox</extends>
    <header>bssidcombobox.h</header>
-  </customwidget>  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
   <tabstop>SSIDCombo</tabstop>
   <tabstop>modeComboBox</tabstop>
   <tabstop>BSSIDCombo</tabstop>
+  <tabstop>band</tabstop>
   <tabstop>macAddress</tabstop>
   <tabstop>clonedMacAddress</tabstop>
   <tabstop>btnRandomMacAddr</tabstop>
   <tabstop>mtu</tabstop>
+  <tabstop>hiddenNetwork</tabstop>
  </tabstops>
  <resources/>
  <connections/>

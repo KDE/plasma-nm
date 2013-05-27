@@ -22,7 +22,8 @@
 #include "ui_wificonnectionwidget.h"
 
 #include <NetworkManagerQt/Utils>
-#include <NetworkManagerQt/WirelessSetting>
+
+#include <KDebug>
 
 #include "uiutils.h"
 
@@ -34,6 +35,8 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
 
     connect(m_ui->btnRandomMacAddr, SIGNAL(clicked()), SLOT(generateRandomClonedMac()));
     connect(m_ui->SSIDCombo, SIGNAL(ssidChanged()), SLOT(ssidChanged()));
+    connect(m_ui->modeComboBox, SIGNAL(currentIndexChanged(int)), SLOT(modeChanged(int)));
+    connect(m_ui->band, SIGNAL(currentIndexChanged(int)), SLOT(bandChanged(int)));
 
     // Validation
     connect(m_ui->macAddress, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
@@ -56,8 +59,14 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
     if (wifiSetting->mode() != NetworkManager::WirelessSetting::Infrastructure) {
         m_ui->modeComboBox->setCurrentIndex(wifiSetting->mode());
     }
+    modeChanged(wifiSetting->mode());
 
     m_ui->BSSIDCombo->init(NetworkManager::Utils::macAddressAsString(wifiSetting->bssid()), wifiSetting->ssid());
+
+    m_ui->band->setCurrentIndex(wifiSetting->band());
+    if (wifiSetting->band() != NetworkManager::WirelessSetting::Automatic) {
+        m_ui->channel->setCurrentIndex(m_ui->channel->findData(wifiSetting->channel()));
+    }
 
     m_ui->macAddress->init(NetworkManager::Device::Wifi, NetworkManager::Utils::macAddressAsString(wifiSetting->macAddress()));
 
@@ -82,11 +91,14 @@ QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
 
     wifiSetting.setSsid(m_ui->SSIDCombo->ssid().toUtf8());
 
-    if (m_ui->modeComboBox->currentIndex() != 0) {
-        wifiSetting.setMode(static_cast<NetworkManager::WirelessSetting::NetworkMode>(m_ui->modeComboBox->currentIndex()));
-    }
+    wifiSetting.setMode(static_cast<NetworkManager::WirelessSetting::NetworkMode>(m_ui->modeComboBox->currentIndex()));
 
     wifiSetting.setBssid(NetworkManager::Utils::macAddressFromString(m_ui->BSSIDCombo->bssid()));
+
+    if (wifiSetting.mode() != NetworkManager::WirelessSetting::Infrastructure && m_ui->band->currentIndex() != 0) {
+        wifiSetting.setBand((NetworkManager::WirelessSetting::FrequencyBand)m_ui->band->currentIndex());
+        wifiSetting.setChannel(m_ui->channel->itemData(m_ui->channel->currentIndex()).toUInt());
+    }
 
     wifiSetting.setMacAddress(NetworkManager::Utils::macAddressFromString(m_ui->macAddress->hwAddress()));
 
@@ -118,6 +130,57 @@ void WifiConnectionWidget::ssidChanged()
 {
     m_ui->BSSIDCombo->init(m_ui->BSSIDCombo->bssid(), m_ui->SSIDCombo->ssid());
     slotWidgetChanged();
+}
+
+void WifiConnectionWidget::modeChanged(int mode)
+{
+    if (mode == NetworkManager::WirelessSetting::Infrastructure) {
+        m_ui->BSSIDLabel->setVisible(true);
+        m_ui->BSSIDCombo->setVisible(true);
+        m_ui->bandLabel->setVisible(false);
+        m_ui->band->setVisible(false);
+        m_ui->channelLabel->setVisible(false);
+        m_ui->channel->setVisible(false);
+    } else {
+        m_ui->BSSIDLabel->setVisible(false);
+        m_ui->BSSIDCombo->setVisible(false);
+        m_ui->bandLabel->setVisible(true);
+        m_ui->band->setVisible(true);
+        m_ui->channelLabel->setVisible(true);
+        m_ui->channel->setVisible(true);
+    }
+}
+
+void WifiConnectionWidget::bandChanged(int band)
+{
+    m_ui->channel->clear();
+
+    if (band == NetworkManager::WirelessSetting::Automatic) {
+        m_ui->channel->setEnabled(false);
+    } else {
+        fillChannels((NetworkManager::WirelessSetting::FrequencyBand)band);
+        m_ui->channel->setEnabled(true);
+    }
+}
+
+void WifiConnectionWidget::fillChannels(NetworkManager::WirelessSetting::FrequencyBand band)
+{
+    QList<QPair<int, int> > channels;
+
+    if (band == NetworkManager::WirelessSetting::A) {
+        channels = NetworkManager::Utils::getAFreqs();
+    } else if (band == NetworkManager::WirelessSetting::Bg) {
+        channels = NetworkManager::Utils::getBFreqs();
+    } else {
+        kWarning() << "Unhandled band number" << band;
+        return;
+    }
+
+    QListIterator<QPair<int,int> > i(channels);
+    while (i.hasNext()) {
+        QPair<int,int> channel = i.next();
+        m_ui->channel->addItem(i18n("%1 (%2 MHz)", channel.first, channel.second), channel.first);
+    }
 }
 
 bool WifiConnectionWidget::isValid() const

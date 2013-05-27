@@ -21,7 +21,9 @@
 #ifndef PLASMA_NM_WIFI_CONNECTION_WIDGET_H
 #define PLASMA_NM_WIFI_CONNECTION_WIDGET_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
+
+#include <NetworkManagerQt/WirelessSetting>
 
 #include "settingwidget.h"
 
@@ -49,9 +51,12 @@ public:
 private slots:
     void generateRandomClonedMac();
     void ssidChanged();
+    void modeChanged(int mode);
+    void bandChanged(int band);
 
 private:
     Ui::WifiConnectionWidget * m_ui;
+    void fillChannels(NetworkManager::WirelessSetting::FrequencyBand band);
 };
 
 #endif // PLASMA_NM_WIFI_CONNECTION_WIDGET_H

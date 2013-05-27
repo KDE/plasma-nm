@@ -73,6 +73,8 @@ BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Setting
     connect(m_ui->bonds, SIGNAL(itemDoubleClicked(QListWidgetItem*)), SLOT(editBond()));
 
     connect(m_ui->ifaceName, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->arpTargets, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->linkMonitoring, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
 
     if (setting)
         loadConfig(setting);
@@ -252,5 +254,19 @@ void BondWidget::populateBonds()
 
 bool BondWidget::isValid() const
 {
+    if (m_ui->linkMonitoring->itemData(m_ui->linkMonitoring->currentIndex()).toString() == NM_SETTING_BOND_OPTION_ARP_MONITOR) {
+        QStringList ipAddresses = m_ui->arpTargets->text().split(",");
+        if (ipAddresses.isEmpty()) {
+            return false;
+        }
+
+        foreach (const QString & ip, ipAddresses) {
+            QHostAddress ipAddress(ip);
+            if (ipAddress.isNull()) {
+                return false;
+            }
+        }
+    }
+
     return !m_ui->ifaceName->text().isEmpty() && m_ui->bonds->count() > 0;
 }

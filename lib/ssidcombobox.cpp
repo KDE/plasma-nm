@@ -39,7 +39,7 @@ SsidComboBox::SsidComboBox(QWidget *parent) :
     setInsertPolicy(QComboBox::NoInsert);
 
     connect(this, SIGNAL(editTextChanged(QString)), SLOT(editTextChanged(QString)));
-    connect(this, SIGNAL(currentIndexChanged(int)), SLOT(currentIndexChanged(int)));
+    connect(this, SIGNAL(activated(int)), SLOT(currentIndexChanged(int)));
 }
 
 QString SsidComboBox::ssid() const
@@ -110,6 +110,7 @@ void SsidComboBox::init(const QString &ssid)
     } else {
         setCurrentIndex(index);
     }
+    setEditText(m_initialSsid);
 }
 
 void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::Ptr> &networks)

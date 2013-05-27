@@ -326,6 +326,12 @@ void ConnectionEditor::removeConnection()
     if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->name()), i18n("Remove Connection"), KStandardGuiItem::remove(),
                                    KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
             == KMessageBox::Yes) {
+        foreach (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
+            NetworkManager::ConnectionSettings::Ptr settings = con->settings();
+            if (settings->master() == connection->uuid()) {
+                con->remove();
+            }
+        }
         connection->remove();
     }
 }

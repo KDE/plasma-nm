@@ -51,12 +51,13 @@ void InfinibandWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     NetworkManager::InfinibandSetting::Ptr infinibandSetting = setting.staticCast<NetworkManager::InfinibandSetting>();
 
-    if (infinibandSetting->transportMode() != NetworkManager::InfinibandSetting::Unknown)
+    if (infinibandSetting->transportMode() != NetworkManager::InfinibandSetting::Unknown) {
         if (infinibandSetting->transportMode() == NetworkManager::InfinibandSetting::Datagram) {
             m_ui->transport->setCurrentIndex(0);
         } else if (infinibandSetting->transportMode() == NetworkManager::InfinibandSetting::Connected) {
             m_ui->transport->setCurrentIndex(1);
         }
+    }
     m_ui->macAddress->init(NetworkManager::Device::InfiniBand, NetworkManager::Utils::macAddressAsString(infinibandSetting->macAddress()));
     if (infinibandSetting->mtu()) {
         m_ui->mtu->setValue(infinibandSetting->mtu());

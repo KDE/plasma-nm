@@ -20,6 +20,7 @@
 */
 
 #include "ssidcombobox.h"
+#include "uiutils.h"
 
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/WirelessDevice>
@@ -63,6 +64,7 @@ void SsidComboBox::editTextChanged(const QString &)
 void SsidComboBox::currentIndexChanged(int)
 {
     m_dirty = false;
+    setEditText(ssid());
     emit ssidChanged();
 }
 
@@ -112,6 +114,17 @@ void SsidComboBox::init(const QString &ssid)
 
 void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::Ptr> &networks)
 {
+    QList<NetworkManager::WirelessDevice::Ptr> wifiDevices;
+
+    foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+        if (dev->type() == NetworkManager::Device::Wifi) {
+            wifiDevices << dev.objectCast<NetworkManager::WirelessDevice>();
+        }
+    }
+
+    QString longestSsid;
+    bool empty = true;
+
     foreach (const NetworkManager::WirelessNetwork::Ptr & network, networks) {
         NetworkManager::AccessPoint::Ptr accessPoint = network->referenceAccessPoint();
 
@@ -119,11 +132,29 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
             continue;
         }
 
-        QString text = QString("%1 (%2%)").arg(accessPoint->ssid()).arg(network->signalStrength());
-        if (accessPoint->capabilities() & NetworkManager::AccessPoint::Privacy) {
-            addItem(KIcon("object-locked"), text, QVariant::fromValue(accessPoint->ssid()));
-        } else {
-            addItem(KIcon("object-unlocked"), text, QVariant::fromValue(accessPoint->ssid()));
+        foreach (const NetworkManager::WirelessDevice::Ptr & wifiDev, wifiDevices) {
+            if (wifiDev->findNetwork(network->ssid()) == network) {
+                if (!empty) {
+                    insertSeparator(count());
+                }
+                empty = false;
+
+                if (network->ssid().length() > longestSsid.length()) {
+                    longestSsid = network->ssid();
+                }
+
+                NetworkManager::Utils::WirelessSecurityType security = NetworkManager::Utils::findBestWirelessSecurity(wifiDev->wirelessCapabilities(), true, (wifiDev->mode() == NetworkManager::WirelessDevice::Adhoc), accessPoint->capabilities(), accessPoint->wpaFlags(), accessPoint->rsnFlags());
+                if (security != NetworkManager::Utils::Unknown && security != NetworkManager::Utils::None) {
+                    QString text = QString("%1 (%2%)\nSecurity: %3\nFrequency: %4Mhz").arg(accessPoint->ssid()).arg(network->signalStrength()).arg(UiUtils::labelFromWirelessSecurity(security)).arg(accessPoint->frequency());
+                    addItem(KIcon("object-locked"), text, QVariant::fromValue(accessPoint->ssid()));
+                } else {
+                    QString text = QString("%1 (%2%)\nSecurity: Insecure\nFrequency: %3Mhz").arg(accessPoint->ssid()).arg(network->signalStrength()).arg(accessPoint->frequency());
+                    addItem(KIcon("object-unlocked"), text, QVariant::fromValue(accessPoint->ssid()));
+                }
+            }
         }
     }
+
+    QFontMetrics metrics(font());
+    setMinimumWidth(metrics.width(longestSsid));
 }

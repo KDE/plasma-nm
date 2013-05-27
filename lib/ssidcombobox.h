@@ -26,7 +26,6 @@
 
 #include <kdemacros.h>
 
-#include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/WirelessNetwork>
 
 class KDE_EXPORT SsidComboBox : public KComboBox

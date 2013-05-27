@@ -24,11 +24,14 @@
 
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/WirelessDevice>
-#include <kicon.h>
 
 #include <QtAlgorithms>
 
-bool signalCompare(const NetworkManager::WirelessNetwork::Ptr & one, const NetworkManager::WirelessNetwork::Ptr & two) {
+#include <KIcon>
+#include <KLocalizedString>
+
+bool signalCompare(const NetworkManager::WirelessNetwork::Ptr & one, const NetworkManager::WirelessNetwork::Ptr & two)
+{
     return one->signalStrength() > two->signalStrength();
 }
 
@@ -48,7 +51,7 @@ QString SsidComboBox::ssid() const
     if (!m_dirty)
         result = itemData(currentIndex()).toString();
     else
-        result = currentText(); // FIXME validate
+        result = currentText();
 
     //qDebug() << "Result:" << currentIndex() << result;
 
@@ -146,11 +149,11 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
 
                 NetworkManager::Utils::WirelessSecurityType security = NetworkManager::Utils::findBestWirelessSecurity(wifiDev->wirelessCapabilities(), true, (wifiDev->mode() == NetworkManager::WirelessDevice::Adhoc), accessPoint->capabilities(), accessPoint->wpaFlags(), accessPoint->rsnFlags());
                 if (security != NetworkManager::Utils::Unknown && security != NetworkManager::Utils::None) {
-                    QString text = QString("%1 (%2%)\nSecurity: %3\nFrequency: %4Mhz").arg(accessPoint->ssid()).arg(network->signalStrength()).arg(UiUtils::labelFromWirelessSecurity(security)).arg(accessPoint->frequency());
-                    addItem(KIcon("object-locked"), text, QVariant::fromValue(accessPoint->ssid()));
+                    QString text = i18n("%1 (%2%)\nSecurity: %3\nFrequency: %4 Mhz", accessPoint->ssid(), network->signalStrength(), UiUtils::labelFromWirelessSecurity(security), accessPoint->frequency());
+                    addItem(KIcon("object-locked"), text, accessPoint->ssid());
                 } else {
-                    QString text = QString("%1 (%2%)\nSecurity: Insecure\nFrequency: %3Mhz").arg(accessPoint->ssid()).arg(network->signalStrength()).arg(accessPoint->frequency());
-                    addItem(KIcon("object-unlocked"), text, QVariant::fromValue(accessPoint->ssid()));
+                    QString text = i18n("%1 (%2%)\nSecurity: Insecure\nFrequency: %3 Mhz", accessPoint->ssid(), network->signalStrength(), accessPoint->frequency());
+                    addItem(KIcon("object-unlocked"), text, accessPoint->ssid());
                 }
             }
         }

@@ -51,8 +51,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     m_editor->setupUi(tmp);
     setCentralWidget(tmp);
 
-    setAutoSaveSettings();
-
     m_menu = new QMenu(this);
     m_menu->setSeparatorsCollapsible(false);
 
@@ -135,6 +133,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 
 ConnectionEditor::~ConnectionEditor()
 {
+    delete m_editor;
 }
 
 void ConnectionEditor::initializeConnections()

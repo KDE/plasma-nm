@@ -24,7 +24,8 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/WirelessDevice>
-#include <kicon.h>
+
+#include <KLocalizedString>
 
 #include <QtAlgorithms>
 
@@ -39,7 +40,7 @@ BssidComboBox::BssidComboBox(QWidget *parent) :
     setInsertPolicy(QComboBox::NoInsert);
 
     connect(this, SIGNAL(editTextChanged(QString)), SLOT(editTextChanged(QString)));
-    connect(this, SIGNAL(currentIndexChanged(int)), SLOT(currentIndexChanged(int)));
+    connect(this, SIGNAL(activated(int)), SLOT(currentIndexChanged(int)));
 }
 
 QString BssidComboBox::bssid() const
@@ -73,6 +74,7 @@ void BssidComboBox::editTextChanged(const QString &)
 void BssidComboBox::currentIndexChanged(int)
 {
     m_dirty = false;
+    setEditText(bssid());
     emit bssidChanged();
 }
 
@@ -124,11 +126,17 @@ void BssidComboBox::init(const QString & bssid, const QString &ssid)
     } else {
         setCurrentIndex(index);
     }
+    setEditText(m_initialBssid);
 }
 
 void BssidComboBox::addBssidsToCombo(const QList<NetworkManager::AccessPoint::Ptr> & aps)
 {
     clear();
+
+    if (aps.isEmpty()) {
+        addItem(i18n("First select the SSID"));
+        return;
+    }
 
     foreach (const NetworkManager::AccessPoint::Ptr & ap, aps) {
         if (!ap) {

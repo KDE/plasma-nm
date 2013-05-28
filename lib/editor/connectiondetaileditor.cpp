@@ -136,6 +136,8 @@ ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::ConnectionS
 
 ConnectionDetailEditor::~ConnectionDetailEditor()
 {
+    m_connection.clear();
+    delete m_ui;
 }
 
 void ConnectionDetailEditor::initEditor()

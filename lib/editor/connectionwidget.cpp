@@ -46,9 +46,10 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
         m_widget->autoconnect->setEnabled(false);
     } else {
         m_widget->autoconnectVpn->setEnabled(true);
-        m_widget->vpnCombobox->setEnabled(true);
         m_widget->autoconnect->setEnabled(true);
     }
+
+    connect(m_widget->autoconnectVpn, SIGNAL(toggled(bool)), SLOT(autoVpnToggled(bool)));
 
     if (settings)
         loadConfig(settings);
@@ -109,6 +110,11 @@ NMVariantMapMap ConnectionWidget::setting() const
     settings.setZone(zone);
 
     return settings.toMap();
+}
+
+void ConnectionWidget::autoVpnToggled(bool on)
+{
+    m_widget->vpnCombobox->setEnabled(on);
 }
 
 NMStringMap ConnectionWidget::vpnConnections() const

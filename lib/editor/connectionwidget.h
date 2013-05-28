@@ -43,6 +43,9 @@ public:
 
     NMVariantMapMap setting() const;
 
+private slots:
+    void autoVpnToggled(bool on);
+
 private:
     // list of VPN: UUID, name
     NMStringMap vpnConnections() const;

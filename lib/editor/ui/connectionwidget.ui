@@ -55,7 +55,11 @@
     </widget>
    </item>
    <item row="4" column="0" colspan="2">
-    <widget class="KComboBox" name="vpnCombobox"/>
+    <widget class="KComboBox" name="vpnCombobox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
    </item>
    <item row="5" column="1">
     <spacer name="verticalSpacer">

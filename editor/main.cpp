@@ -52,7 +52,8 @@ int main(int argc, char *argv[])
 
     KApplication app;
 
-    KGlobal::insertCatalog("libplasmanm-editor");
+    KGlobal::insertCatalog("libplasmanm-editor");  // setting widgets
+    KGlobal::insertCatalog("plasma_applet_org.kde.plasma-nm");  // mobile wizard, UiUtils, ...
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     if(args->count()) {

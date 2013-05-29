@@ -64,6 +64,7 @@ Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &se
 
 Security8021x::~Security8021x()
 {
+    delete m_ui;
 }
 
 void Security8021x::loadConfig()

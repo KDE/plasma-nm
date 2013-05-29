@@ -48,6 +48,7 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
 
 WifiConnectionWidget::~WifiConnectionWidget()
 {
+    delete m_ui;
 }
 
 void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

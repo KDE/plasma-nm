@@ -128,6 +128,7 @@ IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 IPv4Widget::~IPv4Widget()
 {
     delete d;
+    delete m_ui;
 }
 
 void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)

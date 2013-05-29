@@ -37,6 +37,7 @@ CdmaWidget::CdmaWidget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 
 CdmaWidget::~CdmaWidget()
 {
+    delete m_ui;
 }
 
 void CdmaWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

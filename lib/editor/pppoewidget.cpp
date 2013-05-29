@@ -38,6 +38,7 @@ PppoeWidget::PppoeWidget(const NetworkManager::Setting::Ptr &setting, QWidget* p
 
 PppoeWidget::~PppoeWidget()
 {
+    delete m_ui;
 }
 
 void PppoeWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

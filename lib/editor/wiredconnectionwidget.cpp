@@ -47,6 +47,7 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
 
 WiredConnectionWidget::~WiredConnectionWidget()
 {
+    delete m_widget;
 }
 
 void WiredConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

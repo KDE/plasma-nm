@@ -43,6 +43,7 @@ VlanWidget::VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 
 VlanWidget::~VlanWidget()
 {
+    delete m_ui;
 }
 
 void VlanWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

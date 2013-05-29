@@ -57,6 +57,7 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
 
 ConnectionWidget::~ConnectionWidget()
 {
+    delete m_widget;
 }
 
 void ConnectionWidget::loadConfig(const NetworkManager::ConnectionSettings::Ptr &settings)

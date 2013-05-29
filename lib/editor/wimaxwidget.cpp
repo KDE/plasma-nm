@@ -42,6 +42,7 @@ WimaxWidget::WimaxWidget(const NetworkManager::Setting::Ptr &setting, QWidget* p
 
 WimaxWidget::~WimaxWidget()
 {
+    delete m_ui;
 }
 
 void WimaxWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

@@ -56,6 +56,7 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget* paren
 
 GsmWidget::~GsmWidget()
 {
+    delete m_ui;
 }
 
 void GsmWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

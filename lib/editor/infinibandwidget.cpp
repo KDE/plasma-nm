@@ -45,6 +45,7 @@ InfinibandWidget::InfinibandWidget(const NetworkManager::Setting::Ptr &setting, 
 
 InfinibandWidget::~InfinibandWidget()
 {
+    delete m_ui;
 }
 
 void InfinibandWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

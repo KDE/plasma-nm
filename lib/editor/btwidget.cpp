@@ -46,6 +46,7 @@ BtWidget::BtWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent,
 
 BtWidget::~BtWidget()
 {
+    delete m_ui;
 }
 
 void BtWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

@@ -116,6 +116,7 @@ IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 IPv6Widget::~IPv6Widget()
 {
     delete d;
+    delete m_ui;
 }
 
 void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)

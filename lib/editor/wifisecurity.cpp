@@ -49,6 +49,7 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
 
 WifiSecurity::~WifiSecurity()
 {
+    delete m_ui;
 }
 
 bool WifiSecurity::enabled() const

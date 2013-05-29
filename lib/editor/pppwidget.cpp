@@ -35,6 +35,7 @@ PPPWidget::PPPWidget(const NetworkManager::Setting::Ptr &setting, QWidget* paren
 
 PPPWidget::~PPPWidget()
 {
+    delete m_ui;
 }
 
 void PPPWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

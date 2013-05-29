@@ -42,6 +42,7 @@ WiredSecurity::WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &se
 
 WiredSecurity::~WiredSecurity()
 {
+    delete m_ui;
 }
 
 bool WiredSecurity::enabled8021x() const

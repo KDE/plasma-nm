@@ -82,6 +82,7 @@ BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Setting
 
 BondWidget::~BondWidget()
 {
+    delete m_ui;
 }
 
 void BondWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

@@ -68,6 +68,7 @@ BridgeWidget::BridgeWidget(const QString & masterUuid, const NetworkManager::Set
 
 BridgeWidget::~BridgeWidget()
 {
+    delete m_ui;
 }
 
 void BridgeWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

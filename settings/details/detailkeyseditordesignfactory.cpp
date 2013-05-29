@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "detailkeyseditor.h"
 #include "detailkeyseditordesignfactory.h"
+#include "detailkeyseditor.h"
 
 #include <QtPlugin>
 

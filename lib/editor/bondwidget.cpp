@@ -256,7 +256,7 @@ void BondWidget::populateBonds()
 bool BondWidget::isValid() const
 {
     if (m_ui->linkMonitoring->itemData(m_ui->linkMonitoring->currentIndex()).toString() == NM_SETTING_BOND_OPTION_ARP_MONITOR) {
-        QStringList ipAddresses = m_ui->arpTargets->text().split(",");
+        QStringList ipAddresses = m_ui->arpTargets->text().split(',');
         if (ipAddresses.isEmpty()) {
             return false;
         }

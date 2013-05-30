@@ -69,9 +69,19 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     m_menu->addAction(action);
     action = new QAction(i18n("Wired"), this);
     action->setData(NetworkManager::ConnectionSettings::Wired);
+    action->setProperty("shared", false);
+    m_menu->addAction(action);
+    action = new QAction(i18n("Wired (shared)"), this);
+    action->setData(NetworkManager::ConnectionSettings::Wired);
+    action->setProperty("shared", true);
     m_menu->addAction(action);
     action = new QAction(i18n("Wireless"), this);
     action->setData(NetworkManager::ConnectionSettings::Wireless);
+    action->setProperty("shared", false);
+    m_menu->addAction(action);
+    action = new QAction(i18n("Wireless (shared)"), this);
+    action->setData(NetworkManager::ConnectionSettings::Wireless);
+    action->setProperty("shared", true);
     m_menu->addAction(action);
     action = new QAction(i18n("WiMAX"), this);
     action->setData(NetworkManager::ConnectionSettings::Wimax);
@@ -283,7 +293,12 @@ void ConnectionEditor::addConnection(QAction* action)
             wizard.data()->deleteLater();
         }
     } else {
-        ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, this, vpnType);
+        bool shared = false;
+        if (type == ConnectionSettings::Wired || type == ConnectionSettings::Wireless) {
+            shared = action->property("shared").toBool();
+        }
+
+        ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, this, vpnType, shared);
         editor->exec();
     }
 }

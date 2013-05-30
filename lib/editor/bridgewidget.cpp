@@ -115,7 +115,7 @@ void BridgeWidget::addBridge(QAction *action)
     qDebug() << "Slave type:" << type();
 
     ConnectionDetailEditor * bridgeEditor = new ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType(action->data().toInt()),
-                                                                       this, QString(), m_uuid, type());
+                                                                       this, m_uuid, type());
     if (bridgeEditor->exec() == QDialog::Accepted) {
         qDebug() << "Saving slave connection";
         connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),

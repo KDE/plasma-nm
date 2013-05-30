@@ -165,7 +165,7 @@ void BondWidget::addBond(QAction *action)
     qDebug() << "Slave type:" << type();
 
     ConnectionDetailEditor * bondEditor = new ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType(action->data().toInt()),
-                                                                     this, QString(), m_uuid, type());
+                                                                     this, m_uuid, type());
     if (bondEditor->exec() == QDialog::Accepted) {
         qDebug() << "Saving slave connection";
         connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),

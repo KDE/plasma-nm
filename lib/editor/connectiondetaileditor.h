@@ -39,9 +39,13 @@ class KDE_EXPORT ConnectionDetailEditor : public QDialog
 public:
     explicit ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
                                     QWidget* parent = 0,
-                                    const QString &vpnType = QString(),
                                     const QString &masterUuid = QString(),
                                     const QString &slaveType = QString(),
+                                    Qt::WindowFlags f = 0);
+    explicit ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
+                                    QWidget* parent = 0,
+                                    const QString &vpnType = QString(),
+                                    bool shared = false,
                                     Qt::WindowFlags f = 0);
     explicit ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &setting,
                                     QWidget* parent = 0, Qt::WindowFlags f = 0);

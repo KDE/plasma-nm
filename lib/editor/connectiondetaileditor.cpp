@@ -57,18 +57,42 @@
 using namespace NetworkManager;
 
 ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type, QWidget* parent,
-                                               const QString &vpnType, const QString &masterUuid, const QString &slaveType, Qt::WindowFlags f):
+                                               const QString &masterUuid, const QString &slaveType, Qt::WindowFlags f):
     QDialog(parent, f),
     m_ui(new Ui::ConnectionDetailEditor),
     m_connection(new NetworkManager::ConnectionSettings(type)),
     m_numSecrets(0),
     m_new(true),
-    m_vpnType(vpnType),
     m_masterUuid(masterUuid),
     m_slaveType(slaveType)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     m_ui->setupUi(this);
+
+    initEditor();
+}
+
+ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type, QWidget* parent,
+                                               const QString &vpnType, bool shared, Qt::WindowFlags f):
+    QDialog(parent, f),
+    m_ui(new Ui::ConnectionDetailEditor),
+    m_connection(new NetworkManager::ConnectionSettings(type)),
+    m_numSecrets(0),
+    m_new(true),
+    m_vpnType(vpnType)
+{
+    setAttribute(Qt::WA_DeleteOnClose);
+    m_ui->setupUi(this);
+
+    if (shared) {
+        if (type == ConnectionSettings::Wireless) {
+            NetworkManager::WirelessSetting::Ptr wifiSetting = m_connection->setting(Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+            wifiSetting->setMode(WirelessSetting::Adhoc);
+            wifiSetting->setSsid(i18n("my_shared_connection").toUtf8());
+        }
+        NetworkManager::Ipv4Setting::Ptr ipv4Setting = m_connection->setting(Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
+        ipv4Setting->setMethod(Ipv4Setting::Shared);
+    }
 
     initEditor();
 }

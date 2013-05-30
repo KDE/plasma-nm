@@ -49,6 +49,7 @@
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/GenericTypes>
 
+#include <KUser>
 #include <KPluginFactory>
 #include <KServiceTypeTrader>
 #include <QPushButton>
@@ -214,8 +215,9 @@ void ConnectionDetailEditor::initEditor()
 
 void ConnectionDetailEditor::initTabs()
 {
-    ConnectionWidget * connectionWidget = new ConnectionWidget(m_connection);
-    m_ui->tabWidget->addTab(connectionWidget, i18n("General"));
+    if (m_new) {
+        m_connection->addToPermissions(KUser().loginName(), QString());
+    }
 
     // create/set UUID, need this beforehand for slave connections
     QString uuid = m_connection->uuid();
@@ -223,6 +225,10 @@ void ConnectionDetailEditor::initTabs()
         uuid = NetworkManager::ConnectionSettings::createNewUuid();
         m_connection->setUuid(uuid);
     }
+
+    ConnectionWidget * connectionWidget = new ConnectionWidget(m_connection);
+    m_ui->tabWidget->addTab(connectionWidget, i18n("General"));
+
     qDebug() << "Initting tabs, UUID:" << uuid;
 
     const NetworkManager::ConnectionSettings::ConnectionType type = m_connection->connectionType();

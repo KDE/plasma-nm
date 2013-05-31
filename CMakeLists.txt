@@ -19,8 +19,8 @@ if (NOT NETWORKMANAGERQT_FOUND)
     message(FATAL_ERROR "ERROR: NetworkManagerQt not found. http://projects.kde.org/libnm-qt")
 endif (NOT NETWORKMANAGERQT_FOUND)
 
-set(KDE_NETWORK_VERSION "0.1.0")
-set(PLASMA_NM_VERSION "0.1")
+set(KDE_NETWORK_VERSION "0.9.3.0")
+set(PLASMA_NM_VERSION "0.9.3.0")
 configure_file(config.h.cmake
                ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 

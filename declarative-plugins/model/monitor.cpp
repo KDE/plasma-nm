@@ -143,7 +143,7 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
         ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDev->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
         if (modemNetwork) {
             connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
-                    SIGNAL(gsmNetworkSignalQualityChanged(uint)), Qt::UniqueConnection);
+                    SLOT(gsmNetworkSignalQualityChanged(uint)), Qt::UniqueConnection);
             connect(modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
                     SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)), Qt::UniqueConnection);
             connect(modemNetwork.data(), SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
@@ -311,8 +311,17 @@ void Monitor::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::Ac
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
 
     if (gsmNetwork) {
-        NMMonitorDebug() << "Modem " << gsmNetwork->device() << " access technology changed to " << technology;
-        Q_EMIT modemAccessTechnologyChanged(gsmNetwork->device());
+        foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+            if (dev->type() == NetworkManager::Device::Modem) {
+                NetworkManager::ModemDevice::Ptr modem = dev.objectCast<NetworkManager::ModemDevice>();
+                if (modem) {
+                    if (modem->getModemNetworkIface()->device() == gsmNetwork->device()) {
+                        NMMonitorDebug() << "Modem " << modem->udi() << " access technology changed to " << technology;
+                        Q_EMIT modemAccessTechnologyChanged(modem->uni());
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -321,8 +330,17 @@ void Monitor::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::Allowed
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
 
     if (gsmNetwork) {
-        NMMonitorDebug() << "Modem " << gsmNetwork->device() << " allowed mode changed to " << mode;
-        Q_EMIT modemAllowedModeChanged(gsmNetwork->device());
+        foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+            if (dev->type() == NetworkManager::Device::Modem) {
+                NetworkManager::ModemDevice::Ptr modem = dev.objectCast<NetworkManager::ModemDevice>();
+                if (modem) {
+                    if (modem->getModemNetworkIface()->device() == gsmNetwork->device()) {
+                        NMMonitorDebug() << "Modem " << modem->udi() << " allowed mode changed to " << mode;
+                        Q_EMIT modemAllowedModeChanged(modem->uni());
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -331,8 +349,17 @@ void Monitor::gsmNetworkSignalQualityChanged(uint signal)
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
 
     if (gsmNetwork) {
-        NMMonitorDebug() << "Modem " << gsmNetwork->device() << " signal changed to " << signal;
-        Q_EMIT modemSignalQualityChanged(gsmNetwork->device());
+        foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+            if (dev->type() == NetworkManager::Device::Modem) {
+                NetworkManager::ModemDevice::Ptr modem = dev.objectCast<NetworkManager::ModemDevice>();
+                if (modem) {
+                    if (modem->getModemNetworkIface()->device() == gsmNetwork->device()) {
+                        NMMonitorDebug() << "Modem " << modem->udi() << " signal changed to " << signal;
+                        Q_EMIT modemSignalQualityChanged(modem->uni());
+                    }
+                }
+            }
+        }
     }
 }
 

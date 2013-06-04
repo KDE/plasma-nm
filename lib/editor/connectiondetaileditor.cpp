@@ -48,6 +48,8 @@
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/GenericTypes>
+#include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/Utils>
 
 #include <KUser>
 #include <KPluginFactory>
@@ -89,6 +91,18 @@ ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSetting
             NetworkManager::WirelessSetting::Ptr wifiSetting = m_connection->setting(Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
             wifiSetting->setMode(WirelessSetting::Adhoc);
             wifiSetting->setSsid(i18n("my_shared_connection").toUtf8());
+
+            foreach (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+                if (device->type() == Device::Wifi) {
+                    NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
+                    if (wifiDev) {
+                        if (wifiDev->wirelessCapabilities().testFlag(WirelessDevice::ApCap)) {
+                            wifiSetting->setMode(WirelessSetting::Ap);
+                            wifiSetting->setMacAddress(Utils::macAddressFromString(wifiDev->hardwareAddress()));
+                        }
+                    }
+                }
+            }
         }
         NetworkManager::Ipv4Setting::Ptr ipv4Setting = m_connection->setting(Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
         ipv4Setting->setMethod(Ipv4Setting::Shared);

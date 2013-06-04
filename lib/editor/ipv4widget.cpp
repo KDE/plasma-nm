@@ -399,8 +399,7 @@ bool IPv4Widget::isValid() const
     }
 
     if (!m_ui->dns->text().isEmpty() && (m_ui->method->currentIndex() == 0 || m_ui->method->currentIndex() == 2)) {
-        QStringList tmp = m_ui->dns->text().split(',');
-        QList<QHostAddress> tmpAddrList;
+        const QStringList tmp = m_ui->dns->text().split(',');
         foreach (const QString & str, tmp) {
             QHostAddress addr(str);
             if (addr.isNull()) {

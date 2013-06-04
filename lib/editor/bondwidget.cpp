@@ -91,7 +91,7 @@ void BondWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     m_ui->ifaceName->setText(bondSetting.interfaceName());
 
-    NMStringMap options = bondSetting.options();
+    const NMStringMap options = bondSetting.options();
 
     // mode
     int modeIndex = m_ui->mode->findData(options.value(NM_SETTING_BOND_OPTION_MODE));

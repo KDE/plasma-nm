@@ -51,8 +51,8 @@ VpncAuthDialog::~VpncAuthDialog()
 void VpncAuthDialog::readSecrets()
 {
     Q_D(VpncAuthDialog);
-    NMStringMap data = d->setting->data();
-    NMStringMap secrets = d->setting->secrets();
+    const NMStringMap data = d->setting->data();
+    const NMStringMap secrets = d->setting->secrets();
 
     //   username
     QString user = data.value(NM_VPNC_KEY_XAUTH_USER);

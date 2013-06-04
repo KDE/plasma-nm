@@ -66,7 +66,7 @@ void InterfaceNotification::stateChanged(NetworkManager::Device::State newstate,
         return;
     }
 
-    QString identifier = UiUtils::prettyInterfaceName(device->type(), device->interfaceName());
+    const QString identifier = UiUtils::prettyInterfaceName(device->type(), device->interfaceName());
     QString text;
     switch (reason) {
     case NetworkManager::Device::NoReason:

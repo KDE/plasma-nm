@@ -119,7 +119,7 @@ void BssidComboBox::init(const QString & bssid, const QString &ssid)
     qSort(aps.begin(), aps.end(), signalCompare);
     addBssidsToCombo(aps);
 
-    int index = findData(m_initialBssid);
+    const int index = findData(m_initialBssid);
     if (index == -1) {
         insertItem(0, m_initialBssid, m_initialBssid);
         setCurrentIndex(0);

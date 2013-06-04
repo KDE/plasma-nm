@@ -107,7 +107,7 @@ int Model::rowCount(const QModelIndex& parent) const
 
 QVariant Model::data(const QModelIndex& index, int role) const
 {
-    int row = index.row();
+    const int row = index.row();
 
     if (row >= 0 && row < m_items.count()) {
         ModelItem * item = m_items.itemAt(row);
@@ -162,7 +162,7 @@ void Model::updateItems()
         int row = m_items.indexOf(item);
         if (row >= 0) {
             QModelIndex index = createIndex(row, 0);
-            dataChanged(index, index);
+            emit dataChanged(index, index);
         }
     }
 }
@@ -429,7 +429,7 @@ void Model::insertItem(ModelItem * item)
 
                 if (row >= 0) {
                     QModelIndex index = createIndex(row, 0);
-                    dataChanged(index, index);
+                    emit dataChanged(index, index);
                 }
             }
 
@@ -438,7 +438,7 @@ void Model::insertItem(ModelItem * item)
     }
     // Item doesn't exist, let's add it
     if (!found) {
-        int index = m_items.count();
+        const int index = m_items.count();
         beginInsertRows(QModelIndex(), index, index);
         m_items.insertItem(item);
         endInsertRows();
@@ -450,7 +450,7 @@ void Model::insertItem(ModelItem * item)
 
 bool Model::removeItem(ModelItem* item)
 {
-    int row  = m_items.indexOf(item);
+    const int row = m_items.indexOf(item);
 
     if (row >= 0) {
         beginRemoveRows(QModelIndex(), row, row);
@@ -465,11 +465,11 @@ bool Model::removeItem(ModelItem* item)
 
 bool Model::updateItem(ModelItem* item)
 {
-    int row = m_items.indexOf(item);
+    const int row = m_items.indexOf(item);
 
     if (row >= 0) {
         QModelIndex index = createIndex(row, 0);
-        dataChanged(index, index);
+        emit dataChanged(index, index);
         return true;
     }
 

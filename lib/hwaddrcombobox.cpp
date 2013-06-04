@@ -89,7 +89,7 @@ void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const 
         }
     }
 
-    int index = findData(m_initialAddress);
+    const int index = findData(m_initialAddress);
     if (index == -1) {
         insertItem(0, m_initialAddress, m_initialAddress);
         setCurrentIndex(0);

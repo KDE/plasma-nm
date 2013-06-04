@@ -78,4 +78,3 @@ bool PppoeWidget::isValid() const
 {
     return !m_ui->username->text().isEmpty();
 }
-

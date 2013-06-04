@@ -338,11 +338,9 @@ void ConnectionIcon::setIconForModem()
         strength = "100";
     }
 
-    int accesstechnology = m_modemNetwork->getAccessTechnology();
-
     QString result;;
 
-    switch(accesstechnology) {
+    switch(m_modemNetwork->getAccessTechnology()) {
         case ModemManager::ModemInterface::UnknownTechnology:
         case ModemManager::ModemInterface::Gsm:
         case ModemManager::ModemInterface::GsmCompact:
@@ -401,7 +399,7 @@ void ConnectionIcon::setWirelessIcon(const NetworkManager::Device::Ptr &device, 
 
 void ConnectionIcon::setWirelessIconForSignalStrength(int strength)
 {
-    int diff = m_signal - strength;
+    const int diff = m_signal - strength;
 
     if (diff >= 10 ||
         diff <= -10) {

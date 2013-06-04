@@ -56,6 +56,7 @@ ModemMonitor::ModemMonitor(QObject * parent)
 
 ModemMonitor::~ModemMonitor()
 {
+    delete d_ptr;
 }
 
 void ModemMonitor::modemAdded(const QString & udi)

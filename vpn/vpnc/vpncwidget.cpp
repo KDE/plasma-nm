@@ -48,6 +48,7 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
 VpncWidget::~VpncWidget()
 {
+    delete m_ui;
 }
 
 void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

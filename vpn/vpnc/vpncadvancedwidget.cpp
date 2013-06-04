@@ -62,6 +62,11 @@ VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &se
     loadConfig(setting);
 }
 
+VpncAdvancedWidget::~VpncAdvancedWidget()
+{
+    delete m_ui;
+}
+
 void VpncAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
 {
     m_ui->domain->setText(setting->data().value(NM_VPNC_KEY_DOMAIN));

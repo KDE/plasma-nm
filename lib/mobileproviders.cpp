@@ -27,28 +27,20 @@
 #include <KLocale>
 #include <KGlobal>
 
-const QString MobileProviders::CountryCodesFile = "/usr/share/zoneinfo/iso3166.tab";
 const QString MobileProviders::ProvidersFile = "/usr/share/mobile-broadband-provider-info/serviceproviders.xml";
+
+bool localeAwareCompare(const QString & one, const QString & two) {
+    return one.localeAwareCompare(two) < 0;
+}
 
 MobileProviders::MobileProviders()
 {
-    QFile file(CountryCodesFile);
-    mError = Success;
-
-    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QTextStream in(&file);
-        while (!in.atEnd()) {
-            QString line = in.readLine();
-            if (line.startsWith('#')) {
-                continue;
-            }
-            QStringList pieces = line.split('\t');
-            mCountries.insert(pieces.at(0), pieces.at(1));
-        }
-        file.close();
-    } else {
-        mError = CountryCodesMissing;
+    const QStringList allCountries = KGlobal::locale()->allCountriesList();
+    foreach (const QString & cc, allCountries) {
+        //kDebug() << "Inserting" << cc.toUpper() << KGlobal::locale()->countryCodeToName(cc);
+        mCountries.insert(cc.toUpper(), KGlobal::locale()->countryCodeToName(cc));
     }
+    mError = Success;
 
     QFile file2(ProvidersFile);
 
@@ -88,24 +80,13 @@ MobileProviders::~MobileProviders()
 QStringList MobileProviders::getCountryList() const
 {
     QStringList temp = mCountries.values();
-    temp.sort();
+    qSort(temp.begin(), temp.end(), localeAwareCompare);
     return temp;
 }
 
 QString MobileProviders::countryFromLocale() const
 {
-    QString lang(qgetenv("LC_ALL"));
-
-    if (lang.isEmpty()) {
-        lang = QString(qgetenv("LANG"));
-    }
-    if (lang.contains('_')) {
-        lang = lang.section('_', 1);
-    }
-    if (lang.contains('.')) {
-        lang = lang.section('.', 0, 0);
-    }
-    return lang.toUpper();
+    return KGlobal::locale()->country().toUpper();
 }
 
 QStringList MobileProviders::getProvidersList(QString country, NetworkManager::ConnectionSettings::ConnectionType type)
@@ -323,7 +304,7 @@ QVariantMap MobileProviders::getCdmaInfo(const QString & provider)
 QString MobileProviders::getNameByLocale(const QMap<QString, QString> & localizedNames) const
 {
     QString name;
-    QStringList locales = KGlobal::locale()->languageList();
+    const QStringList locales = KGlobal::locale()->languageList();
     foreach(const QString & locale, locales) {
         QString language, country, modifier, charset;
         KLocale::splitLocale(locale, language, country, modifier, charset);

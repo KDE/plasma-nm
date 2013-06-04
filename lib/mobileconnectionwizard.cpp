@@ -79,16 +79,16 @@ void MobileConnectionWizard::initializePage(int id)
 {
     switch (id) {
     case 1: { // Country Page
-        //QString country = KGlobal::locale()->country();
         if (country.isEmpty()) {
             country = mProviders->countryFromLocale();
         }
+
         if (country.isEmpty())
             mCountryList->setCurrentRow(0);
         else {
             QList<QListWidgetItem *> items = mCountryList->findItems(mProviders->getCountryName(country), Qt::MatchExactly);
             if (!items.empty()) {
-                mCountryList->setCurrentItem(items.at(0));
+                mCountryList->setCurrentItem(items.first());
             }
         }
 

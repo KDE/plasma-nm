@@ -41,7 +41,7 @@ public:
 
     QStringList getCountryList() const;
     QString countryFromLocale() const;
-    QString getCountryName(const QString & key) { return mCountries[key]; }
+    QString getCountryName(const QString & key) const { return mCountries.value(key); }
     QStringList getProvidersList(QString country, NetworkManager::ConnectionSettings::ConnectionType type);
     QStringList getApns(const QString & provider);
     QStringList getNetworkIds(const QString & provider);

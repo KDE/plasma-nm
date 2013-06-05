@@ -568,13 +568,15 @@ void ModelItem::setConnection(const QString& connection)
     m_connectionPath = connection;
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(m_connectionPath);
 
-    if (con) {
+    if (con && !con->uuid().isEmpty() && !con->name().isEmpty()) {
         setConnectionSettings(con->settings());
     } else {
         m_connectionPath.clear();
         m_name.clear();
         m_uuid.clear();
         m_activePath.clear();
+        m_connected = false;
+        m_connecting = false;
 
         if (!m_ssid.isEmpty()) {
             m_name = m_ssid;

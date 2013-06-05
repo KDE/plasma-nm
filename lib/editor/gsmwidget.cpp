@@ -46,8 +46,6 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget* paren
     connect(m_ui->cbShowPasswords, SIGNAL(toggled(bool)), SLOT(showPasswords(bool)));
     connect(m_ui->pinStorage, SIGNAL(currentIndexChanged(int)), SLOT(pinStorageChanged(int)));
 
-    // TODO make the Change... button relaunch the wizard
-
     connect(m_ui->apn, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
     if (setting)

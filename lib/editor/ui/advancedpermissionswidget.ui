@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>481</width>
-    <height>195</height>
+    <width>620</width>
+    <height>243</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -49,8 +49,14 @@
          <height>80</height>
         </size>
        </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
        <property name="showDropIndicator" stdset="0">
         <bool>false</bool>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
        </property>
        <property name="selectionMode">
         <enum>QAbstractItemView::ExtendedSelection</enum>
@@ -110,6 +116,9 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="icon">
+        <iconset theme="arrow-right"/>
+       </property>
       </widget>
      </item>
      <item>
@@ -119,6 +128,9 @@
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="icon">
+        <iconset theme="arrow-left"/>
        </property>
       </widget>
      </item>
@@ -163,8 +175,14 @@
          <height>80</height>
         </size>
        </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
        <property name="showDropIndicator" stdset="0">
         <bool>false</bool>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
        </property>
        <property name="selectionMode">
         <enum>QAbstractItemView::ExtendedSelection</enum>

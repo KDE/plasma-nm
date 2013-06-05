@@ -139,13 +139,12 @@ public:
      */
     static QString connectionSpeed(double bitrate);
 
-#if 0
     /**
      * @param band The band of a wireless network. The value corresponds to the type enum in Knm::WirelessSetting::EnumBand
      * @return A string representation
      */
-    static QString wirelessBandToString(int band);
-#endif
+    static QString wirelessBandToString(NetworkManager::WirelessSetting::FrequencyBand band);
+
     static QString convertTypeToString(const ModemManager::ModemInterface::Type type);
     static QString convertBandToString(const ModemManager::ModemInterface::Band band);
     static QString convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode);

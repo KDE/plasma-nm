@@ -472,6 +472,10 @@ void ModelItem::updateDetails()
                                                                                                                            ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
                     m_details += QString(format).arg(i18n("Security:"), UiUtils::labelFromWirelessSecurity(security));
                 }
+            } else if (key == "wireless:band") {
+                if (ap) {
+                    m_details += QString(format).arg(i18n("Frequency band:"), UiUtils::wirelessBandToString(NetworkManager::Utils::findFrequencyBand(ap->frequency())));
+                }
             }
         }
     } else if (m_type == NetworkManager::ConnectionSettings::Vpn) {

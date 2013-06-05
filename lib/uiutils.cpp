@@ -34,6 +34,7 @@
 #include <NetworkManagerQt/AccessPoint>
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/WirelessSetting>
 
 // Qt
 #include <QSizeF>
@@ -539,25 +540,22 @@ QString UiUtils::connectionSpeed(double bitrate)
     return out;
 }
 
-
-
-
-#if 0
-
-QString UiUtils::wirelessBandToString(int band)
+QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::FrequencyBand band)
 {
-    switch (band)
-    {
-        case Knm::WirelessSetting::EnumBand::a:
+    switch (band) {
+        case NetworkManager::WirelessSetting::Automatic:
+            return QLatin1String("automatic");
+            break;
+        case NetworkManager::WirelessSetting::A:
             return QLatin1String("a");
             break;
-        case Knm::WirelessSetting::EnumBand::bg:
+        case NetworkManager::WirelessSetting::Bg:
             return QLatin1String("b/g");
             break;
     }
+
     return QString();
 }
-#endif
 
 QString UiUtils::convertTypeToString(const ModemManager::ModemInterface::Type type)
 {

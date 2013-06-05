@@ -26,6 +26,7 @@ class QSizeF;
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/ModemDevice>
 #include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/AccessPoint>
 #include <NetworkManagerQt/WimaxNsp>
 #include <NetworkManagerQt/Utils>

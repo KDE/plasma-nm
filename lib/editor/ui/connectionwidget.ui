@@ -6,12 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>407</width>
-    <height>347</height>
+    <width>586</width>
+    <height>441</height>
    </rect>
   </property>
-  <layout class="QFormLayout" name="formLayout">
-   <item row="0" column="0" colspan="2">
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="8" column="1">
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>118</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="0" colspan="3">
     <widget class="QCheckBox" name="autoconnect">
      <property name="text">
       <string>&amp;Automatically connect to this network when it is available</string>
@@ -20,6 +33,38 @@
       <bool>true</bool>
      </property>
     </widget>
+   </item>
+   <item row="2" column="1">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Minimum</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Minimum</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item row="1" column="0" colspan="2">
     <widget class="QCheckBox" name="allUsers">
@@ -31,7 +76,7 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="0" colspan="2">
+   <item row="1" column="2">
     <widget class="KPushButton" name="pushButtonPermissions">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -46,50 +91,14 @@
       <string>Fine-grained permissions editor for this connection. It lets you choose which users can activate/modify/delete this connection.</string>
      </property>
      <property name="text">
-      <string>Advanced Permissions</string>
+      <string>Advanced...</string>
+     </property>
+     <property name="icon">
+      <iconset theme="preferences-desktop-user"/>
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Minimum</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>18</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="4" column="0" colspan="2">
-    <widget class="QCheckBox" name="autoconnectVpn">
-     <property name="text">
-      <string>Automatically connect to &amp;VPN when using this connection</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="1">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Minimum</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>28</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="7" column="0">
+   <item row="6" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
       <string>&amp;Firewall zone:</string>
@@ -99,33 +108,27 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="1">
+   <item row="3" column="0" colspan="3">
+    <widget class="QCheckBox" name="autoconnectVpn">
+     <property name="text">
+      <string>Automatically connect to &amp;VPN when using this connection</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="3">
+    <widget class="KComboBox" name="vpnCombobox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="3">
     <widget class="KComboBox" name="firewallZone">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="1">
-    <spacer name="verticalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>118</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="5" column="0" colspan="2">
-    <widget class="KComboBox" name="vpnCombobox">
-     <property name="enabled">
-      <bool>false</bool>
      </property>
     </widget>
    </item>
@@ -146,6 +149,7 @@
  <tabstops>
   <tabstop>autoconnect</tabstop>
   <tabstop>allUsers</tabstop>
+  <tabstop>pushButtonPermissions</tabstop>
   <tabstop>autoconnectVpn</tabstop>
   <tabstop>vpnCombobox</tabstop>
   <tabstop>firewallZone</tabstop>

@@ -37,7 +37,6 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
 {
     m_widget->setupUi(this);
 
-    m_widget->pushButtonPermissions->setIcon(KIcon("preferences-desktop-user"));
     m_widget->firewallZone->addItems(firewallZones());
 
     // VPN combo

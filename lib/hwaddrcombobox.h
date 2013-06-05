@@ -47,6 +47,7 @@ private slots:
 
 private:
     void addAddressToCombo(const NetworkManager::Device::Ptr &device);
+    QVariant hwAddressFromDevice(const NetworkManager::Device::Ptr &device);
     QString m_initialAddress;
     bool m_dirty;
 };

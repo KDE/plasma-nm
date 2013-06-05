@@ -82,16 +82,30 @@ void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const 
 
     //qDebug() << "Initial address:" << m_initialAddress;
 
+    QString deviceName;
     foreach(const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
         const NetworkManager::Device::Type type = device->type();
         if (type == deviceType) {
+            if (address == hwAddressFromDevice(device).toString()) {
+                if (device->state() == NetworkManager::Device::Activated) {
+                    deviceName = device->ipInterfaceName();
+                } else {
+                    deviceName = device->interfaceName();
+
+                }
+            }
             addAddressToCombo(device);
         }
     }
 
     const int index = findData(m_initialAddress);
     if (index == -1) {
-        insertItem(0, m_initialAddress, m_initialAddress);
+        if (!m_initialAddress.isEmpty()) {
+            QString text = QString("%1 (%2)").arg(deviceName).arg(m_initialAddress);
+            insertItem(0, text, m_initialAddress);
+        } else {
+            insertItem(0, m_initialAddress, m_initialAddress);
+        }
         setCurrentIndex(0);
     } else {
         setCurrentIndex(index);
@@ -100,9 +114,31 @@ void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const 
 
 void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device)
 {
-    const NetworkManager::Device::Type type = device->type();
+    QVariant data = hwAddressFromDevice(device);
+    //qDebug() << "Data:" << data;
 
-    //qDebug() << "Adding to combo, type:" << type;
+    QString name;
+    if (device->state() == NetworkManager::Device::Activated)
+        name = device->ipInterfaceName();
+    else
+        name = device->interfaceName();
+
+    //qDebug() << "Name:" << name;
+
+    if (!data.isNull()) {
+        if (name == data.toString()) {
+            addItem(data.toString(), data);
+        }
+        else {
+            addItem(QString("%1 (%2)").arg(name).arg(data.toString()), data);
+        }
+    }
+}
+
+
+QVariant HwAddrComboBox::hwAddressFromDevice(const NetworkManager::Device::Ptr& device)
+{
+    const NetworkManager::Device::Type type = device->type();
 
     QVariant data;
     if (type == NetworkManager::Device::Ethernet) {
@@ -125,22 +161,5 @@ void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device
         data = device->as<NetworkManager::VlanDevice>()->hwAddress();
     }
 
-    //qDebug() << "Data:" << data;
-
-    QString name;
-    if (device->state() == NetworkManager::Device::Activated)
-        name = device->ipInterfaceName();
-    else
-        name = device->interfaceName();
-
-    //qDebug() << "Name:" << name;
-
-    if (!data.isNull()) {
-        if (name == data.toString()) {
-            addItem(data.toString(), data);
-        }
-        else {
-            addItem(QString("%1 (%2)").arg(name).arg(data.toString()), data);
-        }
-    }
+    return data;
 }

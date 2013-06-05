@@ -200,7 +200,7 @@ void Model::addActiveConnection(const QString& active)
         item->setActiveConnection(active);
 
         if (updateItem(item)) {
-            NMModelDebug() << "Connection " << item->name() << " has been updated by active connection";
+            NMModelDebug() << "Connection " << item->name() << " has been changed (active connection added)";
         }
     }
 }
@@ -214,7 +214,7 @@ void Model::activeConnectionStateChanged(const QString& active, NetworkManager::
         NMModelDebug() << "Active connection state changed in " << item->name();
 
         if (updateItem(item)) {
-            NMModelDebug() << "Item " << item->name() << " has been changed";
+            NMModelDebug() << "Item " << item->name() << " has been changed (active connection updated)";
         }
     }
 }
@@ -259,7 +259,7 @@ void Model::connectionUpdated(const QString& connection)
         item->setConnection(connection);
 
         if (updateItem(item)) {
-            NMModelDebug() << item->name() << ": Item has been changed";
+            NMModelDebug() << item->name() << ": Item has been changed (connection updated)";
         }
     }
 }
@@ -270,7 +270,7 @@ void Model::modemPropertiesChanged(const QString& modem)
         item->updateDetails();
 
         if (updateItem(item)) {
-            NMModelDebug() << "Item " << item->name() << " has been changed";
+            NMModelDebug() << "Item " << item->name() << " has been changed (modem properties updated)";
         }
     }
 }
@@ -284,7 +284,7 @@ void Model::removeActiveConnection(const QString& active)
         item->setActiveConnection(QString());
 
         if (updateItem(item)) {
-            NMModelDebug() << "Item " << item->name() << " has been changed";
+            NMModelDebug() << "Item " << item->name() << " has been changed (active connection removed)";
         }
     }
 }
@@ -314,7 +314,7 @@ void Model::removeConnectionsByDevice(const QString& device)
     foreach (ModelItem * item, m_items.itemsByDevice(device)) {
         QString name = item->name();
         if (removeItem(item)) {
-            NMModelDebug() << "Connection " << name << " has been removed";
+            NMModelDebug() << "Connection " << name << " has been removed (device removed)";
         }
     }
 }
@@ -371,7 +371,7 @@ void Model::wimaxNspSignalChanged(const QString& nsp, int strength)
         item->updateSignalStrenght(strength);
 
         if (updateItem(item)) {
-            NMModelDebug() << "Item " << item->name() << " has been changed";
+            NMModelDebug() << "Item " << item->name() << " has been changed (wimax signal changed)";
         }
     }
 }
@@ -382,7 +382,7 @@ void Model::wirelessNetworkSignalChanged(const QString& ssid, int strength)
         item->updateSignalStrenght(strength);
 
         if (updateItem(item)) {
-            NMModelDebug() << "Item " << item->name() << " has been changed";
+            NMModelDebug() << "Item " << item->name() << " has been changed (wireless signal changed)";
         }
     }
 }
@@ -393,7 +393,7 @@ void Model::wirelessNetworkApChanged(const QString& ssid, const QString& ap)
         item->updateAccessPoint(ap);
 
         if (updateItem(item)) {
-            NMModelDebug() << "Item " << item->name() << " has been changed";
+            NMModelDebug() << "Item " << item->name() << " has been changed (wireless accesspoint changed)";
         }
     }
 }

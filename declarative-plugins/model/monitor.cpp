@@ -164,13 +164,13 @@ void Monitor::availableConnectionAppeared(const QString& connection)
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
 
     if (!device) {
-        NMMonitorDebug() << "Device not found for connection " << connection;
+        NMMonitorDebug() << "New available connection appeared, but there is no device for this connection" << connection;
         return;
     }
 
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
     if (!con) {
-        NMMonitorDebug() << "Connection not found" << con->name();
+        NMMonitorDebug() << "New available connection appeared, but this connection was not found" << con->name();
         return;
     }
 
@@ -248,7 +248,7 @@ void Monitor::connectionAdded(const QString& connection)
     NetworkManager::Connection::Ptr newConnection = NetworkManager::findConnection(connection);
 
     if (!newConnection) {
-        NMMonitorDebug() << "The new connection has been added, but it was not found";
+        NMMonitorDebug() << "New connection has been added, but it was not found";
         return;
     }
 

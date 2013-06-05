@@ -38,12 +38,12 @@
     <widget class="KComboBox" name="kcfg_networkSpeedUnit">
      <item>
       <property name="text">
-       <string>KBytes/s</string>
+       <string>KBits/s</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>KBits/s</string>
+       <string>KBytes/s</string>
       </property>
      </item>
     </widget>

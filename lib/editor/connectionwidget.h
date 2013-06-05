@@ -45,6 +45,7 @@ public:
 
 private slots:
     void autoVpnToggled(bool on);
+    void openAdvancedPermissions();
 
 private:
     // list of VPN: UUID, name
@@ -54,6 +55,7 @@ private:
 
     void populateVpnConnections();
     Ui::ConnectionWidget * m_widget;
+    NetworkManager::ConnectionSettings m_tmpSetting;
     NetworkManager::ConnectionSettings::ConnectionType m_type;
     QString m_masterUuid;
     QString m_slaveType;

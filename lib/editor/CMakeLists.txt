@@ -1,5 +1,6 @@
 set(plasmanm_libeditor_SRCS
     ipv4widget.cpp
+    ui/advancedpermissionswidget.cpp
     ui/delegate.cpp
     ui/ipv4delegate.cpp
     ui/ipv4routeswidget.cpp
@@ -29,6 +30,7 @@ set(plasmanm_libeditor_SRCS
 )
 
 kde4_add_ui_files(plasmanm_libeditor_SRCS
+    ui/advancedpermissionswidget.ui
     ui/ipv4.ui
     ui/ipv4routes.ui
     ui/ipv6.ui

@@ -20,6 +20,7 @@
 
 #include "connectionwidget.h"
 #include "ui_connectionwidget.h"
+#include "ui/advancedpermissionswidget.h"
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
@@ -36,6 +37,7 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
 {
     m_widget->setupUi(this);
 
+    m_widget->pushButtonPermissions->setIcon(KIcon("preferences-desktop-user"));
     m_widget->firewallZone->addItems(firewallZones());
 
     // VPN combo
@@ -53,6 +55,11 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
 
     if (settings)
         loadConfig(settings);
+
+    m_tmpSetting.setPermissions(settings->permissions());
+
+    connect(m_widget->pushButtonPermissions, SIGNAL(clicked(bool)),
+            SLOT(openAdvancedPermissions()));
 }
 
 ConnectionWidget::~ConnectionWidget()
@@ -100,7 +107,11 @@ NMVariantMapMap ConnectionWidget::setting() const
     if (m_widget->allUsers->isChecked()) {
         settings.setPermissions(QHash<QString, QString>());
     } else {
-        settings.addToPermissions(KUser().loginName(), QString());
+        if (m_tmpSetting.permissions().isEmpty()) {
+            settings.addToPermissions(KUser().loginName(), QString());
+        } else {
+            settings.setPermissions(m_tmpSetting.permissions());
+        }
     }
 
     if (m_widget->autoconnectVpn->isChecked() && m_widget->vpnCombobox->count() > 0) {
@@ -116,6 +127,23 @@ NMVariantMapMap ConnectionWidget::setting() const
 void ConnectionWidget::autoVpnToggled(bool on)
 {
     m_widget->vpnCombobox->setEnabled(on);
+}
+
+void ConnectionWidget::openAdvancedPermissions()
+{
+    KDialog * dialog = new KDialog(this);
+    dialog->setCaption(i18nc("@title:window advanced permissions editor",
+                                "Advanced Permissions Editor"));
+    dialog->setButtons(KDialog::Ok | KDialog::Cancel);
+    AdvancedPermissionsWidget permissions(m_tmpSetting.permissions());
+    dialog->setMainWidget(&permissions);
+    if (dialog->exec() == QDialog::Accepted) {
+        m_tmpSetting.setPermissions(permissions.currentUsers());
+    }
+
+    if (dialog) {
+        dialog->deleteLater();
+    }
 }
 
 NMStringMap ConnectionWidget::vpnConnections() const

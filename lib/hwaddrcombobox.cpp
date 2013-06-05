@@ -140,7 +140,7 @@ void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device
             addItem(data.toString(), data);
         }
         else {
-            addItem(QString("%1 (%2)").arg(data.toString()).arg(name), data);
+            addItem(QString("%1 (%2)").arg(name).arg(data.toString()), data);
         }
     }
 }

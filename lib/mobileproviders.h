@@ -31,7 +31,6 @@
 class MobileProviders
 {
 public:
-    static const QString CountryCodesFile;
     static const QString ProvidersFile;
 
     enum ErrorCodes { Success, CountryCodesMissing, ProvidersMissing, ProvidersIsNull, ProvidersWrongFormat, ProvidersFormatNotSupported };
@@ -47,8 +46,8 @@ public:
     QStringList getNetworkIds(const QString & provider);
     QVariantMap getApnInfo(const QString & apn);
     QVariantMap getCdmaInfo(const QString & provider);
-    const QString getGsmNumber() { return QString("*99#"); }
-    const QString getCdmaNumber() { return QString("#777"); }
+    QString getGsmNumber() const { return QString("*99#"); }
+    QString getCdmaNumber() const { return QString("#777"); }
     inline ErrorCodes getError() { return mError; }
 
 private:

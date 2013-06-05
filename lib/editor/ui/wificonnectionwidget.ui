@@ -89,7 +89,7 @@
    <item row="7" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&amp;Device MAC address:</string>
+      <string>Restrict to device:</string>
      </property>
      <property name="buddy">
       <cstring>macAddress</cstring>

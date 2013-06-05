@@ -320,7 +320,7 @@ void IPv6Widget::tableViewItemChanged(QStandardItem *item)
 
 void IPv6Widget::slotRoutesDialog()
 {
-    IpV6RoutesWidget * dlg = new IpV6RoutesWidget(this);
+    QPointer<IpV6RoutesWidget> dlg = new IpV6RoutesWidget(this);
 
     dlg->setRoutes(m_tmpIpv6Setting.routes());
     dlg->setNeverDefault(m_tmpIpv6Setting.neverDefault());
@@ -335,12 +335,15 @@ void IPv6Widget::slotRoutesDialog()
         m_tmpIpv6Setting.setNeverDefault(dlg->neverDefault());
         m_tmpIpv6Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
     }
-    delete dlg;
+
+    if (dlg) {
+        dlg->deleteLater();
+    }
 }
 
 void IPv6Widget::slotDnsServers()
 {
-    KDialog * dlg = new KDialog(this);
+    QPointer<KDialog> dlg = new KDialog(this);
     dlg->setCaption(i18n("Edit DNS servers"));
     dlg->setButtons(KDialog::Ok | KDialog::Cancel);
     KEditListWidget * listWidget = new KEditListWidget(dlg);
@@ -351,12 +354,14 @@ void IPv6Widget::slotDnsServers()
         m_ui->dns->setText(listWidget->items().join(","));
     }
 
-    delete dlg;
+    if (dlg) {
+        dlg->deleteLater();
+    }
 }
 
 void IPv6Widget::slotDnsDomains()
 {
-    KDialog * dlg = new KDialog(this);
+    QPointer<KDialog> dlg = new KDialog(this);
     dlg->setCaption(i18n("Edit DNS search domains"));
     dlg->setButtons(KDialog::Ok | KDialog::Cancel);
     KEditListWidget * listWidget = new KEditListWidget(dlg);
@@ -367,7 +372,9 @@ void IPv6Widget::slotDnsDomains()
         m_ui->dnsSearch->setText(listWidget->items().join(","));
     }
 
-    delete dlg;
+    if (dlg) {
+        dlg->deleteLater();
+    }
 }
 
 bool IPv6Widget::isValid() const

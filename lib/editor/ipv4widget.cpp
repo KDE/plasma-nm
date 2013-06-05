@@ -330,7 +330,7 @@ void IPv4Widget::tableViewItemChanged(QStandardItem *item)
 
 void IPv4Widget::slotRoutesDialog()
 {
-    IpV4RoutesWidget * dlg = new IpV4RoutesWidget(this);
+    QPointer<IpV4RoutesWidget> dlg = new IpV4RoutesWidget(this);
 
     dlg->setRoutes(m_tmpIpv4Setting.routes());
     dlg->setNeverDefault(m_tmpIpv4Setting.neverDefault());
@@ -345,12 +345,15 @@ void IPv4Widget::slotRoutesDialog()
         m_tmpIpv4Setting.setNeverDefault(dlg->neverDefault());
         m_tmpIpv4Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
     }
-    delete dlg;
+
+    if (dlg) {
+        dlg->deleteLater();
+    }
 }
 
 void IPv4Widget::slotDnsServers()
 {
-    KDialog * dlg = new KDialog(this);
+    QPointer<KDialog> dlg = new KDialog(this);
     dlg->setCaption(i18n("Edit DNS servers"));
     dlg->setButtons(KDialog::Ok | KDialog::Cancel);
     KEditListWidget * listWidget = new KEditListWidget(dlg);
@@ -361,12 +364,14 @@ void IPv4Widget::slotDnsServers()
         m_ui->dns->setText(listWidget->items().join(","));
     }
 
-    delete dlg;
+    if (dlg) {
+        dlg->deleteLater();
+    }
 }
 
 void IPv4Widget::slotDnsDomains()
 {
-    KDialog * dlg = new KDialog(this);
+    QPointer<KDialog> dlg = new KDialog(this);
     dlg->setCaption(i18n("Edit DNS search domains"));
     dlg->setButtons(KDialog::Ok | KDialog::Cancel);
     KEditListWidget * listWidget = new KEditListWidget(dlg);
@@ -377,7 +382,9 @@ void IPv4Widget::slotDnsDomains()
         m_ui->dnsSearch->setText(listWidget->items().join(","));
     }
 
-    delete dlg;
+        if (dlg) {
+        dlg->deleteLater();
+    }
 }
 
 bool IPv4Widget::isValid() const

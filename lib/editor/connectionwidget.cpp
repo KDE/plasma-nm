@@ -130,7 +130,7 @@ void ConnectionWidget::autoVpnToggled(bool on)
 
 void ConnectionWidget::openAdvancedPermissions()
 {
-    KDialog * dialog = new KDialog(this);
+    QPointer<KDialog> dialog = new KDialog(this);
     dialog->setCaption(i18nc("@title:window advanced permissions editor",
                                 "Advanced Permissions Editor"));
     dialog->setButtons(KDialog::Ok | KDialog::Cancel);

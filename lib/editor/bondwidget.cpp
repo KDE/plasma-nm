@@ -164,12 +164,16 @@ void BondWidget::addBond(QAction *action)
     qDebug() << "Master UUID:" << m_uuid;
     qDebug() << "Slave type:" << type();
 
-    ConnectionDetailEditor * bondEditor = new ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType(action->data().toInt()),
-                                                                     this, m_uuid, type());
+    QPointer<ConnectionDetailEditor> bondEditor = new ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType(action->data().toInt()),
+                                                                             this, m_uuid, type());
     if (bondEditor->exec() == QDialog::Accepted) {
         qDebug() << "Saving slave connection";
         connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                 this, SLOT(bondAddComplete(QString,bool,QString)));
+    }
+
+    if (bondEditor) {
+        bondEditor->deleteLater();
     }
 }
 
@@ -211,9 +215,13 @@ void BondWidget::editBond()
 
     if (connection) {
         qDebug() << "Editing bonded connection" << currentItem->text() << uuid;
-        ConnectionDetailEditor * bondEditor = new ConnectionDetailEditor(connection->settings(), this);
+        QPointer<ConnectionDetailEditor> bondEditor = new ConnectionDetailEditor(connection->settings(), this);
         if (bondEditor->exec() == QDialog::Accepted) {
             connect(connection.data(), SIGNAL(updated()), this, SLOT(populateBonds()));
+        }
+
+        if (bondEditor) {
+            bondEditor->deleteLater();
         }
     }
 }

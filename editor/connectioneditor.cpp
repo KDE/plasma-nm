@@ -298,8 +298,12 @@ void ConnectionEditor::addConnection(QAction* action)
             shared = action->property("shared").toBool();
         }
 
-        ConnectionDetailEditor * editor = new ConnectionDetailEditor(type, this, vpnType, shared);
+        QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(type, this, vpnType, shared);
         editor->exec();
+
+        if (editor) {
+            editor->deleteLater();
+        }
     }
 }
 
@@ -318,8 +322,12 @@ void ConnectionEditor::editConnection()
         return;
     }
 
-    ConnectionDetailEditor * editor = new ConnectionDetailEditor(connection->settings(), this);
+    QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(connection->settings(), this);
     editor->exec();
+
+    if (editor) {
+        editor->deleteLater();
+    }
 }
 
 void ConnectionEditor::removeConnection()

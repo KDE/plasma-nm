@@ -191,7 +191,7 @@ void VpncWidget::showPasswords(bool show)
 
 void VpncWidget::showAdvanced()
 {
-    VpncAdvancedWidget * adv = new VpncAdvancedWidget(m_setting, this);
+    QPointer<VpncAdvancedWidget> adv = new VpncAdvancedWidget(m_setting, this);
     if (adv->exec() == QDialog::Accepted) {
         NMStringMap advData = adv->setting();
         if (!advData.isEmpty()) {
@@ -199,7 +199,9 @@ void VpncWidget::showAdvanced()
         }
     }
 
-    delete adv;
+    if (adv) {
+        adv->deleteLater();
+    }
 }
 
 bool VpncWidget::isValid() const

@@ -114,12 +114,16 @@ void BridgeWidget::addBridge(QAction *action)
     qDebug() << "Master UUID:" << m_uuid;
     qDebug() << "Slave type:" << type();
 
-    ConnectionDetailEditor * bridgeEditor = new ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType(action->data().toInt()),
+    QPointer<ConnectionDetailEditor> bridgeEditor = new ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType(action->data().toInt()),
                                                                        this, m_uuid, type());
     if (bridgeEditor->exec() == QDialog::Accepted) {
         qDebug() << "Saving slave connection";
         connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
                 this, SLOT(bridgeAddComplete(QString,bool,QString)));
+    }
+
+    if (bridgeEditor) {
+        bridgeEditor->deleteLater();
     }
 }
 
@@ -161,9 +165,13 @@ void BridgeWidget::editBridge()
 
     if (connection) {
         qDebug() << "Editing bridged connection" << currentItem->text() << uuid;
-        ConnectionDetailEditor * bridgeEditor = new ConnectionDetailEditor(connection->settings(), this);
+        QPointer<ConnectionDetailEditor> bridgeEditor = new ConnectionDetailEditor(connection->settings(), this);
         if (bridgeEditor->exec() == QDialog::Accepted) {
             connect(connection.data(), SIGNAL(updated()), this, SLOT(populateBridges()));
+        }
+
+        if (bridgeEditor) {
+            bridgeEditor->deleteLater();
         }
     }
 }

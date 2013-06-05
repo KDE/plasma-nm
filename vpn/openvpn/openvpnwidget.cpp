@@ -341,7 +341,7 @@ void OpenVpnSettingWidget::showPasswordsToggled(bool toggled)
 
 void OpenVpnSettingWidget::showAdvanced()
 {
-    OpenVpnAdvancedWidget * adv = new OpenVpnAdvancedWidget(d->setting, this);
+    QPointer<OpenVpnAdvancedWidget> adv = new OpenVpnAdvancedWidget(d->setting, this);
     adv->init();
     if (adv->exec() == QDialog::Accepted) {
         NetworkManager::VpnSetting::Ptr advData = adv->setting();
@@ -351,7 +351,9 @@ void OpenVpnSettingWidget::showAdvanced()
         }
     }
 
-    delete adv;
+    if (adv) {
+        adv->deleteLater();
+    }
 }
 
 

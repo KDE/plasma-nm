@@ -91,7 +91,6 @@ void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const 
                     deviceName = device->ipInterfaceName();
                 } else {
                     deviceName = device->interfaceName();
-
                 }
             }
             addAddressToCombo(device);

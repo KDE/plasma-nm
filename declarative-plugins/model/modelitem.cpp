@@ -407,11 +407,7 @@ void ModelItem::updateDetails()
         foreach (const QString& key, detailKeys) {
             if (key == "interface:bitrate") {
                 if (wiredDevice && m_connected) {
-                    if (unit == GlobalConfig::KBits) {
-                        m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wiredDevice->bitRate()));
-                    } else {
-                        m_details += QString(format).arg(i18n("Connection speed:"), KGlobal::locale()->formatByteSize(wiredDevice->bitRate() * 128));
-                    }
+                    m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wiredDevice->bitRate()));
                 }
             } else if (key == "interface:hardwareaddress") {
                 if (wiredDevice) {
@@ -436,11 +432,7 @@ void ModelItem::updateDetails()
         foreach (const QString& key, detailKeys) {
             if (key == "interface:bitrate") {
                 if (wirelessDevice && m_connected) {
-                    if (unit == GlobalConfig::KBits) {
-                        m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wirelessDevice->bitRate()));
-                    } else {
-                        m_details += QString(format).arg(i18n("Connection speed:"), KGlobal::locale()->formatByteSize(wirelessDevice->bitRate() * 128));
-                    }
+                    m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wirelessDevice->bitRate()));
                 }
             } else if (key == "interface:hardwareaddress") {
                 if (wirelessDevice) {

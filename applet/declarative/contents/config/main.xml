@@ -17,10 +17,9 @@
     </entry>
     <entry name="networkSpeedUnit" type="Enum">
       <choices name="NetworkSpeedUnitChoices">
-        <choice name="KBits"/>
         <choice name="KBytes"/>
+        <choice name="KBits"/>
       </choices>
-      <default>KBits</default>
    </entry>
   </group>
 </kcfg>

@@ -73,18 +73,18 @@ BridgeWidget::~BridgeWidget()
 
 void BridgeWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::BridgeSetting bridgeSetting = setting.staticCast<NetworkManager::BridgeSetting>();
+    NetworkManager::BridgeSetting::Ptr bridgeSetting = setting.staticCast<NetworkManager::BridgeSetting>();
 
-    m_ui->ifaceName->setText(bridgeSetting.interfaceName());
-    m_ui->agingTime->setValue(bridgeSetting.agingTime());
+    m_ui->ifaceName->setText(bridgeSetting->interfaceName());
+    m_ui->agingTime->setValue(bridgeSetting->agingTime());
 
-    const bool stp = bridgeSetting.stp();
+    const bool stp = bridgeSetting->stp();
     m_ui->stpGroup->setChecked(stp);
     if (stp) {
-        m_ui->priority->setValue(bridgeSetting.priority());
-        m_ui->forwardDelay->setValue(bridgeSetting.forwardDelay());
-        m_ui->helloTime->setValue(bridgeSetting.helloTime());
-        m_ui->maxAge->setValue(bridgeSetting.maxAge());
+        m_ui->priority->setValue(bridgeSetting->priority());
+        m_ui->forwardDelay->setValue(bridgeSetting->forwardDelay());
+        m_ui->helloTime->setValue(bridgeSetting->helloTime());
+        m_ui->maxAge->setValue(bridgeSetting->maxAge());
     }
 }
 

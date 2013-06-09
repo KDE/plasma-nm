@@ -87,11 +87,11 @@ BondWidget::~BondWidget()
 
 void BondWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    NetworkManager::BondSetting bondSetting = setting.staticCast<NetworkManager::BondSetting>();
+    NetworkManager::BondSetting::Ptr bondSetting = setting.staticCast<NetworkManager::BondSetting>();
 
-    m_ui->ifaceName->setText(bondSetting.interfaceName());
+    m_ui->ifaceName->setText(bondSetting->interfaceName());
 
-    const NMStringMap options = bondSetting.options();
+    const NMStringMap options = bondSetting->options();
 
     // mode
     int modeIndex = m_ui->mode->findData(options.value(NM_SETTING_BOND_OPTION_MODE));

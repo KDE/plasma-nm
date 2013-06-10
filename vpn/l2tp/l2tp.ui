@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Gateway</string>
+      <string>Gateway:</string>
      </property>
     </widget>
    </item>
@@ -27,7 +27,7 @@
    <item row="1" column="0">
     <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>User name</string>
+      <string>User name:</string>
      </property>
     </widget>
    </item>
@@ -37,7 +37,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>Password</string>
+      <string>Password:</string>
      </property>
     </widget>
    </item>
@@ -81,7 +81,7 @@
    <item row="4" column="0">
     <widget class="QLabel" name="label_6">
      <property name="text">
-      <string>NT Domain</string>
+      <string>NT Domain:</string>
      </property>
     </widget>
    </item>
@@ -141,6 +141,16 @@
    <header>klineedit.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>gateway</tabstop>
+  <tabstop>username</tabstop>
+  <tabstop>password</tabstop>
+  <tabstop>cboUserPasswordType</tabstop>
+  <tabstop>cbShowPassword</tabstop>
+  <tabstop>domain</tabstop>
+  <tabstop>btnIPSecSettings</tabstop>
+  <tabstop>btnPPPSettings</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

@@ -104,8 +104,6 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
 QVariantMap VpncWidget::setting(bool agentOwned) const
 {
-    Q_UNUSED(agentOwned)
-
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_VPNC));
     NMStringMap data;

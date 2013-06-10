@@ -60,7 +60,7 @@ private:
     Private * d;
     void setPasswordType(KLineEdit *, int);
     void fillOnePasswordCombo(KComboBox *, NetworkManager::Setting::SecretFlags);
-    uint handleOnePasswordType(const KComboBox *, const QString &, NMStringMap &) const;
+    uint handleOnePasswordType(const KComboBox *, const QString &, NMStringMap &, bool agentOwned) const;
 };
 
 #endif // OPENVPNWIDGET_H

@@ -180,7 +180,6 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 QVariantMap PptpSettingWidget::setting(bool agentOwned) const
 {
     Q_D(const PptpSettingWidget);
-    Q_UNUSED(agentOwned)
 
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_PPTP));
@@ -196,7 +195,7 @@ QVariantMap PptpSettingWidget::setting(bool agentOwned) const
     if (!d->ui.edt_password->text().isEmpty()) {
         secretData.insert(QLatin1String(NM_PPTP_KEY_PASSWORD), d->ui.edt_password->text());
     }
-    handleOnePasswordType(d->ui.cmbPasswordStorage, NM_PPTP_KEY_PASSWORD"-flags", data);
+    handleOnePasswordType(d->ui.cmbPasswordStorage, NM_PPTP_KEY_PASSWORD"-flags", data, agentOwned);
     if (!d->ui.edt_ntDomain->text().isEmpty()) {
         data.insert(NM_PPTP_KEY_DOMAIN,  d->ui.edt_ntDomain->text().toUtf8());
     }
@@ -289,7 +288,7 @@ void PptpSettingWidget::fillOnePasswordCombo(KComboBox * combo, NetworkManager::
     }
 }
 
-uint PptpSettingWidget::handleOnePasswordType(const KComboBox * combo, const QString & key, NMStringMap & data) const
+uint PptpSettingWidget::handleOnePasswordType(const KComboBox * combo, const QString & key, NMStringMap & data, bool agentOwned) const
 {
     const uint type = combo->currentIndex();
     switch (type) {
@@ -300,7 +299,10 @@ uint PptpSettingWidget::handleOnePasswordType(const KComboBox * combo, const QSt
             data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
             break;
         case 2:
-            data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
+            if (agentOwned)
+                data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
+            else
+                data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
             break;
     }
     return type;

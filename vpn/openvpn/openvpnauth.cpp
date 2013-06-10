@@ -138,7 +138,7 @@ QVariantMap OpenVpnAuthWidget::setting(bool agentOwned) const
     for (int i = 0; i < d->layout->rowCount() - 1; i++) {
         KLineEdit *le = qobject_cast<KLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && !le->text().isEmpty()) {
-            QString key = le->property("nm_secrets_key").toString();
+            const QString key = le->property("nm_secrets_key").toString();
             secrets.insert(key, le->text());
         }
     }

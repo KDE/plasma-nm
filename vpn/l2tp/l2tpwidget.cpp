@@ -74,7 +74,7 @@ void L2tpWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         m_ui->password->setText(userPassword);
     }
 
-    NetworkManager::Setting::SecretFlags userPassType = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_L2TP_KEY_PASSWORD"-flags").toInt());
+    const NetworkManager::Setting::SecretFlags userPassType = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_L2TP_KEY_PASSWORD"-flags").toInt());
     if (userPassType.testFlag(NetworkManager::Setting::NotSaved)) {
         m_ui->cboUserPasswordType->setCurrentIndex(1); // always ask
     } else if (userPassType.testFlag(NetworkManager::Setting::NotRequired)) {

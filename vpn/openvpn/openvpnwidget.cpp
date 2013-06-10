@@ -316,7 +316,7 @@ void OpenVpnSettingWidget::fillOnePasswordCombo(KComboBox * combo, NetworkManage
 
 uint OpenVpnSettingWidget::handleOnePasswordType(const KComboBox * combo, const QString & key, NMStringMap &data) const
 {
-    uint type = combo->currentIndex();
+    const uint type = combo->currentIndex();
     switch (type) {
     case Private::EnumPasswordStorageType::AlwaysAsk:
         data.insert(key, QString::number(NetworkManager::Setting::NotSaved));

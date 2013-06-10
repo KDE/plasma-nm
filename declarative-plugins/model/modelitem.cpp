@@ -228,7 +228,6 @@ void ModelItem::updateDetails()
     m_details = "<qt><table>";
 
     QStringList detailKeys = GlobalConfig().detailKeys();
-    GlobalConfig::NetworkSpeedUnit unit = GlobalConfig().networkSpeedUnit();
 
     // Initialize objects
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);

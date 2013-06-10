@@ -59,7 +59,7 @@ void OpenVpnAuthWidget::readSecrets()
     Q_D(OpenVpnAuthWidget);
     const NMStringMap secrets = d->setting->secrets();
     const NMStringMap dataMap = d->setting->data();
-    QString cType = dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE];
+    const QString cType = dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE];
     QLabel *label;
     KLineEdit *lineEdit;
 

@@ -55,12 +55,12 @@ void VpncAuthDialog::readSecrets()
     const NMStringMap secrets = d->setting->secrets();
 
     //   username
-    QString user = data.value(NM_VPNC_KEY_XAUTH_USER);
+    const QString user = data.value(NM_VPNC_KEY_XAUTH_USER);
     if (!user.isEmpty()) {
         d->ui.leUserName->setText(user);
     }
     //   group name
-    QString group = data.value(NM_VPNC_KEY_ID);
+    const QString group = data.value(NM_VPNC_KEY_ID);
     if (!group.isEmpty()) {
         d->ui.leGroupName->setText(group);
     }

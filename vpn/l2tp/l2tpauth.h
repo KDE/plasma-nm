@@ -18,40 +18,30 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_L2TP_WIDGET_H
-#define PLASMA_NM_L2TP_WIDGET_H
+#ifndef PLASMA_NM_L2TP_AUTH_H
+#define PLASMA_NM_L2TP_AUTH_H
 
 #include <NetworkManagerQt/VpnSetting>
 
 #include "settingwidget.h"
 
-namespace Ui
-{
-class L2tpWidget;
-}
+class L2tpAuthDialogPrivate;
 
-class L2tpWidget : public SettingWidget
+class L2tpAuthDialog : public SettingWidget
 {
     Q_OBJECT
+    Q_DECLARE_PRIVATE(L2tpAuthDialog)
 public:
-    explicit L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~L2tpWidget();
-
-    void loadConfig(const NetworkManager::Setting::Ptr &setting);
-
-    QVariantMap setting(bool agentOwned = false) const;
-
-    virtual bool isValid() const;
+    explicit L2tpAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    ~L2tpAuthDialog();
+    virtual void readSecrets();
+    virtual QVariantMap setting(bool agentOwned = false) const;
 
 private slots:
-    void userPasswordTypeChanged(int index);
-    void showPassword(bool show);
-    void showAdvanced();
+    void showPasswordsChanged(bool);
 
 private:
-    Ui::L2tpWidget * m_ui;
-    NetworkManager::VpnSetting::Ptr m_setting;
-    NetworkManager::VpnSetting::Ptr m_tmpSetting;
+    L2tpAuthDialogPrivate * d_ptr;
 };
 
-#endif // PLASMA_NM_L2TP_WIDGET_H
+#endif // PLASMA_NM_L2TP_AUTH_H

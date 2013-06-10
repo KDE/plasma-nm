@@ -19,7 +19,7 @@
 */
 
 #include "l2tpwidget.h"
-// #include "vpncadvancedwidget.h"
+#include "l2tpadvancedwidget.h"
 #include "ui_l2tp.h"
 #include "nm-l2tp-service.h"
 
@@ -39,6 +39,7 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     connect(m_ui->cboUserPasswordType, SIGNAL(currentIndexChanged(int)), SLOT(userPasswordTypeChanged(int)));
     connect(m_ui->cbShowPassword, SIGNAL(toggled(bool)), SLOT(showPassword(bool)));
+    connect(m_ui->btnIPSecSettings, SIGNAL(clicked(bool)), SLOT(showAdvanced()));
 
     connect(m_ui->gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
@@ -95,6 +96,9 @@ QVariantMap L2tpWidget::setting(bool agentOwned) const
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_L2TP));
     NMStringMap data;
+    if (!m_tmpSetting.isNull()) {
+        data = m_tmpSetting->data();
+    }
     NMStringMap secrets;
 
     if (!m_ui->gateway->text().isEmpty()) {
@@ -146,20 +150,28 @@ void L2tpWidget::showPassword(bool show)
     m_ui->password->setPasswordMode(!show);
 }
 
-// void L2tpWidget::showAdvanced()
-// {
-// //     QPointer<L2tpAdvancedWidget> adv = new L2tpAdvancedWidget(m_setting, this);
-// //     if (adv->exec() == QDialog::Accepted) {
-// //         NMStringMap advData = adv->setting();
-// //         if (!advData.isEmpty()) {
-// //             m_setting->setData(advData);
-// //         }
-// //     }
-// //
-// //     if (adv) {
-// //         adv->deleteLater();
-// //     }
-// }
+void L2tpWidget::showAdvanced()
+{
+    QPointer<L2tpAdvancedWidget> adv;
+    if (m_tmpSetting.isNull()) {
+        adv = new L2tpAdvancedWidget(m_setting, this);
+    } else {
+        adv = new L2tpAdvancedWidget(m_tmpSetting, this);
+    }
+    if (adv->exec() == QDialog::Accepted) {
+        NMStringMap advData = adv->setting();
+        if (!advData.isEmpty()) {
+            if (m_tmpSetting.isNull()) {
+                m_tmpSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
+            }
+            m_tmpSetting->setData(advData);
+        }
+    }
+
+    if (adv) {
+        adv->deleteLater();
+    }
+}
 
 bool L2tpWidget::isValid() const
 {

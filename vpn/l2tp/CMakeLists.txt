@@ -1,11 +1,11 @@
 set(l2tp_SRCS
     l2tp.cpp
     l2tpwidget.cpp
-#     l2tpauth.cpp
-#     l2tpadvancedwidget.cpp
+    l2tpauth.cpp
+    l2tpadvancedwidget.cpp
 )
 
-kde4_add_ui_files(l2tp_SRCS l2tp.ui)
+kde4_add_ui_files(l2tp_SRCS l2tp.ui l2tpadvanced.ui l2tpauth.ui)
 
 kde4_add_plugin(plasmanm_l2tpui ${l2tp_SRCS})
 

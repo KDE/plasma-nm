@@ -27,7 +27,7 @@
 #include <NetworkManagerQt/VpnSetting>
 
 #include "l2tpwidget.h"
-// #include "l2tpauth.h"
+#include "l2tpauth.h"
 
 K_PLUGIN_FACTORY(L2tpUiPluginFactory, registerPlugin<L2tpUiPlugin>();)
 K_EXPORT_PLUGIN(L2tpUiPluginFactory("plasmanm_l2tpui"))
@@ -48,6 +48,5 @@ SettingWidget * L2tpUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &sett
 
 SettingWidget *L2tpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
 {
-//     return new L2tpAuthDialog(setting, parent);
-    return 0;
+    return new L2tpAuthDialog(setting, parent);
 }

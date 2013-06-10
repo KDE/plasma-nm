@@ -52,6 +52,7 @@ private slots:
 private:
     Ui::VpncWidget * m_ui;
     NetworkManager::VpnSetting::Ptr m_setting;
+    NetworkManager::VpnSetting::Ptr m_tmpSetting;
 };
 
 #endif // PLASMA_NM_VPNC_WIDGET_H

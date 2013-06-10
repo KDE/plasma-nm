@@ -109,6 +109,9 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_VPNC));
     NMStringMap data;
+    if (!m_tmpSetting.isNull()) {
+        data = m_tmpSetting->data();
+    }
     NMStringMap secrets;
 
     if (!m_ui->gateway->text().isEmpty())
@@ -191,11 +194,19 @@ void VpncWidget::showPasswords(bool show)
 
 void VpncWidget::showAdvanced()
 {
-    QPointer<VpncAdvancedWidget> adv = new VpncAdvancedWidget(m_setting, this);
+    QPointer<VpncAdvancedWidget> adv;
+    if (m_tmpSetting.isNull()) {
+        adv = new VpncAdvancedWidget(m_setting, this);
+    } else {
+        adv = new VpncAdvancedWidget(m_tmpSetting, this);
+    }
     if (adv->exec() == QDialog::Accepted) {
         NMStringMap advData = adv->setting();
         if (!advData.isEmpty()) {
-            m_setting->setData(advData);
+            if (m_tmpSetting.isNull()) {
+                m_tmpSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
+            }
+            m_tmpSetting->setData(advData);
         }
     }
 

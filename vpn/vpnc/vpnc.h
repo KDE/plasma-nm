@@ -44,4 +44,4 @@ public:
 #endif
 };
 
-#endif // PLASMA_NM__VPNC_H
+#endif // PLASMA_NM_VPNC_H

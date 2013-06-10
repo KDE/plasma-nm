@@ -20,6 +20,7 @@
 
 #include "l2tpwidget.h"
 #include "l2tpadvancedwidget.h"
+#include "l2tppppwidget.h"
 #include "ui_l2tp.h"
 #include "nm-l2tp-service.h"
 
@@ -40,6 +41,7 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
     connect(m_ui->cboUserPasswordType, SIGNAL(currentIndexChanged(int)), SLOT(userPasswordTypeChanged(int)));
     connect(m_ui->cbShowPassword, SIGNAL(toggled(bool)), SLOT(showPassword(bool)));
     connect(m_ui->btnIPSecSettings, SIGNAL(clicked(bool)), SLOT(showAdvanced()));
+    connect(m_ui->btnPPPSettings, SIGNAL(clicked(bool)), SLOT(showPpp()));
 
     connect(m_ui->gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
@@ -94,8 +96,11 @@ QVariantMap L2tpWidget::setting(bool agentOwned) const
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_L2TP));
     NMStringMap data;
-    if (!m_tmpSetting.isNull()) {
-        data = m_tmpSetting->data();
+    if (!m_tmpPppSetting.isNull()) {
+        data = m_tmpPppSetting->data();
+    }
+    if (!m_tmpPppSetting.isNull()) {
+        data.unite(m_tmpPppSetting->data());
     }
     NMStringMap secrets;
 
@@ -151,18 +156,41 @@ void L2tpWidget::showPassword(bool show)
 void L2tpWidget::showAdvanced()
 {
     QPointer<L2tpAdvancedWidget> adv;
-    if (m_tmpSetting.isNull()) {
+    if (m_tmpAdvancedSetting.isNull()) {
         adv = new L2tpAdvancedWidget(m_setting, this);
     } else {
-        adv = new L2tpAdvancedWidget(m_tmpSetting, this);
+        adv = new L2tpAdvancedWidget(m_tmpAdvancedSetting, this);
     }
     if (adv->exec() == QDialog::Accepted) {
         NMStringMap advData = adv->setting();
         if (!advData.isEmpty()) {
-            if (m_tmpSetting.isNull()) {
-                m_tmpSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
+            if (m_tmpAdvancedSetting.isNull()) {
+                m_tmpAdvancedSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
             }
-            m_tmpSetting->setData(advData);
+            m_tmpAdvancedSetting->setData(advData);
+        }
+    }
+
+    if (adv) {
+        adv->deleteLater();
+    }
+}
+
+void L2tpWidget::showPpp()
+{
+    QPointer<L2tpPPPWidget> adv;
+    if (m_tmpPppSetting.isNull()) {
+        adv = new L2tpPPPWidget(m_setting, this);
+    } else {
+        adv = new L2tpPPPWidget(m_tmpPppSetting, this);
+    }
+    if (adv->exec() == QDialog::Accepted) {
+        NMStringMap advData = adv->setting();
+        if (!advData.isEmpty()) {
+            if (m_tmpPppSetting.isNull()) {
+                m_tmpPppSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
+            }
+            m_tmpPppSetting->setData(advData);
         }
     }
 

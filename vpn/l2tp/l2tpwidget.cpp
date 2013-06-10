@@ -97,7 +97,7 @@ QVariantMap L2tpWidget::setting(bool agentOwned) const
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_L2TP));
     NMStringMap data;
     if (!m_tmpAdvancedSetting.isNull()) {
-        data = m_tmpPppSetting->data();
+        data = m_tmpAdvancedSetting->data();
     }
     if (!m_tmpPppSetting.isNull()) {
         data.unite(m_tmpPppSetting->data());

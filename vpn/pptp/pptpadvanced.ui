@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PptpAdvanced</class>
+ <widget class="QWidget" name="PptpAdvanced">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>376</width>
+    <height>479</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="QGroupBox" name="grp_authenfication">
+     <property name="title">
+      <string>Authentication</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="lbl_auth">
+          <property name="text">
+           <string>Allow following &amp;authentication methods:</string>
+          </property>
+          <property name="buddy">
+           <cstring>listWidget</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListWidget" name="listWidget">
+          <item>
+           <property name="text">
+            <string>PAP</string>
+           </property>
+           <property name="checkState">
+            <enum>Checked</enum>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>CHAP</string>
+           </property>
+           <property name="checkState">
+            <enum>Checked</enum>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>MSCHAP</string>
+           </property>
+           <property name="checkState">
+            <enum>Checked</enum>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>MSCHAPv2</string>
+           </property>
+           <property name="checkState">
+            <enum>Checked</enum>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>EAP</string>
+           </property>
+           <property name="checkState">
+            <enum>Checked</enum>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="gb_MPPE">
+     <property name="toolTip">
+      <string>Use Microsoft Point-to-Point Encryption</string>
+     </property>
+     <property name="title">
+      <string>Use &amp;MPPE Encryption</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="lbl_MMPEcrypto">
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>&amp;Crypto:</string>
+            </property>
+            <property name="buddy">
+             <cstring>cb_MPPECrypto</cstring>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="KComboBox" name="cb_MPPECrypto">
+            <item>
+             <property name="text">
+              <string comment="like in use Any configuration">Any</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>128 bit</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>40 bit</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QCheckBox" name="cb_statefulEncryption">
+          <property name="text">
+           <string>Use &amp;stateful encryption</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="grp_cryptoAndCompression">
+     <property name="title">
+      <string>Compression</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QCheckBox" name="cb_BSD">
+          <property name="text">
+           <string>Allow &amp;BSD compression</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="cb_deflate">
+          <property name="text">
+           <string>Allow &amp;Deflate compression</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="cb_TCPheaders">
+          <property name="text">
+           <string>Allow &amp;TCP header compression</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="grp_echo">
+     <property name="title">
+      <string>Echo</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="cb_sendEcho">
+        <property name="text">
+         <string>Send PPP &amp;echo packets </string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+  <zorder>grp_authenfication</zorder>
+  <zorder>grp_echo</zorder>
+  <zorder>grp_cryptoAndCompression</zorder>
+  <zorder>gb_MPPE</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>listWidget</tabstop>
+  <tabstop>gb_MPPE</tabstop>
+  <tabstop>cb_MPPECrypto</tabstop>
+  <tabstop>cb_statefulEncryption</tabstop>
+  <tabstop>cb_BSD</tabstop>
+  <tabstop>cb_deflate</tabstop>
+  <tabstop>cb_TCPheaders</tabstop>
+  <tabstop>cb_sendEcho</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

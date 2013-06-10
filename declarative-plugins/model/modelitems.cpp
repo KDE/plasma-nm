@@ -186,7 +186,7 @@ int ModelItems::count() const
     return m_items.count();
 }
 
-int ModelItems::indexOf(ModelItem* item)
+int ModelItems::indexOf(ModelItem* item) const
 {
     return m_items.indexOf(item);
 }

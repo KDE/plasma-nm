@@ -50,7 +50,7 @@ public:
     QList<ModelItem*> items() const;
 
     int count() const;
-    int indexOf(ModelItem * item);
+    int indexOf(ModelItem * item) const;
 
     void insertItem(ModelItem * item);
     void removeItem(ModelItem * item);

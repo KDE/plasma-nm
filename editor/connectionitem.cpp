@@ -38,15 +38,15 @@ ConnectionItem::ConnectionItem(QTreeWidgetItem * parent, const QStringList & str
 bool ConnectionItem::operator<(const QTreeWidgetItem &other) const
 {
     QTreeWidget * view = treeWidget();
-    int column = view ? view->sortColumn() : 0;
+    const int column = view ? view->sortColumn() : 0;
 
     if (column == 0) { // name
-        QString a = data(column, Qt::DisplayRole).toString();
-        QString b = other.data(column, Qt::DisplayRole).toString();
+        const QString a = data(column, Qt::DisplayRole).toString();
+        const QString b = other.data(column, Qt::DisplayRole).toString();
         return (QString::localeAwareCompare(a, b) < 0);
     } else if (column == 1) { // last used
-        QDateTime a = data(1, ConnectionLastUsedRole).toDateTime();
-        QDateTime b = other.data(1, ConnectionLastUsedRole).toDateTime();
+        const QDateTime a = data(1, ConnectionLastUsedRole).toDateTime();
+        const QDateTime b = other.data(1, ConnectionLastUsedRole).toDateTime();
         return (a < b);
     }
 

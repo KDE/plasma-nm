@@ -132,7 +132,7 @@ void ConnectionWidget::openAdvancedPermissions()
 {
     QPointer<KDialog> dialog = new KDialog(this);
     dialog->setCaption(i18nc("@title:window advanced permissions editor",
-                                "Advanced Permissions Editor"));
+                             "Advanced Permissions Editor"));
     dialog->setButtons(KDialog::Ok | KDialog::Cancel);
     AdvancedPermissionsWidget permissions(m_tmpSetting.permissions());
     dialog->setMainWidget(&permissions);

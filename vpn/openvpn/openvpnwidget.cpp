@@ -320,13 +320,13 @@ uint OpenVpnSettingWidget::handleOnePasswordType(const KComboBox * combo, const 
         data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
         break;
     case Private::EnumPasswordStorageType::Store:
-        data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
-        break;
-    case Private::EnumPasswordStorageType::NotRequired:
         if (agentOwned)
             data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
         else
-            data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
+            data.insert(key, QString::number(NetworkManager::Setting::None));
+        break;
+    case Private::EnumPasswordStorageType::NotRequired:
+        data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
         break;
     }
     return type;

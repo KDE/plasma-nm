@@ -296,13 +296,13 @@ uint PptpSettingWidget::handleOnePasswordType(const KComboBox * combo, const QSt
             data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
             break;
         case 1:
-            data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
-            break;
-        case 2:
             if (agentOwned)
                 data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
             else
-                data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
+                data.insert(key, QString::number(NetworkManager::Setting::None));
+            break;
+        case 2:
+            data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
             break;
     }
     return type;

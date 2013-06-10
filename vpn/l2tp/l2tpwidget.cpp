@@ -91,8 +91,6 @@ void L2tpWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
 QVariantMap L2tpWidget::setting(bool agentOwned) const
 {
-    Q_UNUSED(agentOwned)
-
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_L2TP));
     NMStringMap data;

@@ -20,8 +20,8 @@
  *
  */
 
-#ifndef KNM_OPENVPN_SERVICE_H
-#define KNM_OPENVPN_SERVICE_H
+#ifndef NM_OPENVPN_SERVICE_H
+#define NM_OPENVPN_SERVICE_H
 
 #define NM_DBUS_SERVICE_OPENVPN    "org.freedesktop.NetworkManager.openvpn"
 #define NM_DBUS_INTERFACE_OPENVPN  "org.freedesktop.NetworkManager.openvpn"
@@ -80,4 +80,4 @@
 #define NM_OPENVPN_CONTYPE_PASSWORD     "password"
 #define NM_OPENVPN_CONTYPE_PASSWORD_TLS "password-tls"
 
-#endif /* KNM_OPENVPN_SERVICE_H */
+#endif /* NM_OPENVPN_SERVICE_H */

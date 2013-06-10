@@ -43,7 +43,7 @@ L2tpAdvancedWidget::~L2tpAdvancedWidget()
 
 void L2tpAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
 {
-    if (setting->data().value(NM_L2TP_KEY_IPSEC_ENABLE).toInt()) {
+    if (setting->data().value(NM_L2TP_KEY_IPSEC_ENABLE) == "yes") {
         m_ui->cbEnableTunnelToHost->setChecked(true);
         m_ui->gatewayId->setText(setting->data().value(NM_L2TP_KEY_IPSEC_GATEWAY_ID));
         m_ui->groupName->setText(setting->data().value(NM_L2TP_KEY_IPSEC_GROUP_NAME));
@@ -58,7 +58,7 @@ NMStringMap L2tpAdvancedWidget::setting() const
     NMStringMap result;
 
     if (m_ui->cbEnableTunnelToHost->isChecked()) {
-        result.insert(NM_L2TP_KEY_IPSEC_ENABLE, "1");
+        result.insert(NM_L2TP_KEY_IPSEC_ENABLE, "yes");
 
         if (!m_ui->gatewayId->text().isEmpty()) {
             result.insert(NM_L2TP_KEY_IPSEC_GATEWAY_ID, m_ui->gatewayId->text());
@@ -71,8 +71,6 @@ NMStringMap L2tpAdvancedWidget::setting() const
         if (!m_ui->presharedKey->text().isEmpty()) {
             result.insert(NM_L2TP_KEY_IPSEC_PSK, m_ui->presharedKey->text());
         }
-    } else {
-        result.insert(NM_L2TP_KEY_IPSEC_ENABLE, "0");
     }
 
     return result;

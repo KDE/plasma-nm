@@ -140,7 +140,7 @@ QVariantMap L2tpWidget::setting(bool agentOwned) const
 
 void L2tpWidget::userPasswordTypeChanged(int index)
 {
-    if (index == 0 || index == 1) {
+    if (index == 1 || index == 2) {
         m_ui->password->setEnabled(false);
     }
     else {

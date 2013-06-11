@@ -44,6 +44,8 @@ int main(int argc, char *argv[])
     about.addAuthor(ki18n("Lukáš Tinkl"), ki18n("Developer"), "ltinkl@redhat.com");
     about.addCredit(ki18n("Lamarque Souza"), ki18n("libnm-qt author"), "lamarque@kde.org");
     about.addCredit(ki18n("Daniel Nicoletti"), ki18n("various bugfixes"), "dantti12@gmail.com");
+    about.addCredit(ki18n("Will Stephenson"), ki18n("VPN plugins"), "wstephenson@kde.org");
+    about.addCredit(ki18n("Ilia Kats"), ki18n("VPN plugins"), "ilia-kats@gmx.net");
 
     KCmdLineArgs::init(argc, argv, &about);
 

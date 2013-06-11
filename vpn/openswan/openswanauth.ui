@@ -14,7 +14,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="groupNameLabel">
      <property name="text">
-      <string>Group name:</string>
+      <string>Group &amp;name:</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>
@@ -34,7 +34,7 @@
    <item row="1" column="0">
     <widget class="QLabel" name="userPasswordLabel">
      <property name="text">
-      <string>User &amp;Password:</string>
+      <string>User &amp;password:</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>
@@ -54,7 +54,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="groupPasswordLabel">
      <property name="text">
-      <string>&amp;Group Password:</string>
+      <string>&amp;Group password:</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>

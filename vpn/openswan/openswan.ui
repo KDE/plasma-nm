@@ -138,7 +138,7 @@
    <item row="7" column="0">
     <widget class="QLabel" name="label_6">
      <property name="text">
-      <string>Phase1 Algorithms:</string>
+      <string>Phase1 algorithms:</string>
      </property>
     </widget>
    </item>
@@ -148,7 +148,7 @@
    <item row="8" column="0">
     <widget class="QLabel" name="label_7">
      <property name="text">
-      <string>Phase2 Algorithms:</string>
+      <string>Phase2 algorithms:</string>
      </property>
     </widget>
    </item>
@@ -174,6 +174,19 @@
    <header>klineedit.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>gateway</tabstop>
+  <tabstop>groupname</tabstop>
+  <tabstop>userPassword</tabstop>
+  <tabstop>cbUsernamePasswordMode</tabstop>
+  <tabstop>groupPassword</tabstop>
+  <tabstop>cbGroupPasswordMode</tabstop>
+  <tabstop>ckShowPasswords</tabstop>
+  <tabstop>username</tabstop>
+  <tabstop>phase1</tabstop>
+  <tabstop>phase2</tabstop>
+  <tabstop>domain</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

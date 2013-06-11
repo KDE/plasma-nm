@@ -40,7 +40,7 @@ public:
 };
 
 PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-: SettingWidget(setting, parent), d_ptr(new PptpSettingWidgetPrivate)
+    : SettingWidget(setting, parent), d_ptr(new PptpSettingWidgetPrivate)
 {
     Q_D(PptpSettingWidget);
     d->ui.setupUi(this);
@@ -56,6 +56,9 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
     d->advancedDlg->setMainWidget(d->advancedWid);
 
     connect(d->ui.edt_gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+
+    if (d->setting)
+        loadConfig(d->setting);
 }
 
 PptpSettingWidget::~PptpSettingWidget()

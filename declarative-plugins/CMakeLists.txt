@@ -23,6 +23,7 @@ target_link_libraries(plasmanmplugins
     NetworkManagerQt
     ModemManagerQt
     plasmanm-internal
+    plasmanm-editor
     ${KDE4_PLASMA_LIBS}
     ${QT_QTNETWORK_LIBRARY}
     ${KDE4_KDEUI_LIBS}

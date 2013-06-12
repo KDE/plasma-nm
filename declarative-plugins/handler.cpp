@@ -21,6 +21,7 @@
 #include "handler.h"
 #include "uiutils.h"
 #include "debug.h"
+#include "lib/editor/connectiondetaileditor.h"
 
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/AccessPoint>
@@ -28,6 +29,7 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Setting>
+#include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/WiredSetting>
 #include <NetworkManagerQt/WirelessSetting>
@@ -62,10 +64,10 @@ void Handler::activateConnection(const QString& connection, const QString& devic
 void Handler::addAndActivateConnection(const QString& device, const QString& specificObject)
 {
     NetworkManager::AccessPoint::Ptr ap;
-
+    NetworkManager::WirelessDevice::Ptr wifiDev;
     foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
         if (dev->type() == NetworkManager::Device::Wifi) {
-            NetworkManager::WirelessDevice::Ptr wifiDev = dev.objectCast<NetworkManager::WirelessDevice>();
+            wifiDev = dev.objectCast<NetworkManager::WirelessDevice>();
             ap = wifiDev->findAccessPoint(specificObject);
             if (ap) {
                 break;
@@ -77,7 +79,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         return;
     }
 
-    NetworkManager::ConnectionSettings * settings = new NetworkManager::ConnectionSettings(NetworkManager::ConnectionSettings::Wireless);
+    NetworkManager::ConnectionSettings::Ptr settings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(NetworkManager::ConnectionSettings::Wireless));
     settings->setId(ap->ssid());
     settings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
 
@@ -85,9 +87,33 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     wifiSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
     wifiSetting->setSsid(ap->ssid().toUtf8());
 
-    NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
+    NetworkManager::Utils::WirelessSecurityType securityType = NetworkManager::Utils::findBestWirelessSecurity(wifiDev->wirelessCapabilities(), true, (ap->mode() == NetworkManager::AccessPoint::Adhoc), ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
+    if (securityType == NetworkManager::Utils::DynamicWep ||
+        securityType == NetworkManager::Utils::Wpa2Eap ||
+        securityType == NetworkManager::Utils::WpaEap) {
+        wifiSetting->setSecurity("802-11-wireless-security");
+        NetworkManager::WirelessSecuritySetting::Ptr wifiSecurity = settings->setting(NetworkManager::Setting::WirelessSecurity).dynamicCast<NetworkManager::WirelessSecuritySetting>();
+        if (securityType == NetworkManager::Utils::DynamicWep) {
+            wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Ieee8021x);
+        } else {
+            wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaEap);
+        }
+        QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(settings, 0, 0, true);
+        if (editor->exec() == QDialog::Accepted) {
+            NetworkManager::Connection::Ptr newConnection = NetworkManager::findConnectionByUuid(settings->uuid());
+            if (newConnection) {
+                activateConnection(newConnection->path(), device, specificObject);
+            }
+        }
 
-    delete settings;
+        if (editor) {
+            editor->deleteLater();
+        }
+    } else {
+        NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
+    }
+
+    settings.clear();
 }
 
 void Handler::deactivateConnection(const QString& connection)

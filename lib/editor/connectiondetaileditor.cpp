@@ -158,12 +158,12 @@ ConnectionDetailEditor::ConnectionDetailEditor(ConnectionSettings::ConnectionTyp
 }
 
 
-ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &connection, QWidget* parent, Qt::WindowFlags f):
+ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &connection, QWidget* parent, Qt::WindowFlags f, bool newConnection):
     QDialog(parent, f),
     m_ui(new Ui::ConnectionDetailEditor),
     m_connection(connection),
     m_numSecrets(0),
-    m_new(false),
+    m_new(newConnection),
     m_masterUuid(connection->master()),
     m_slaveType(connection->slaveType())
 {

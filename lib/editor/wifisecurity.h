@@ -51,6 +51,8 @@ public:
     bool enabled() const;
     bool enabled8021x() const;
 
+    virtual bool isValid() const;
+
 private slots:
     void slotShowWepKeyPasswordChecked(bool checked);
     void slotShowLeapPasswordChecked(bool checked);

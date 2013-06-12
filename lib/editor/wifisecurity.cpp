@@ -21,6 +21,8 @@
 #include "wifisecurity.h"
 #include "ui_wifisecurity.h"
 
+#include <NetworkManagerQt/Utils>
+
 #include <QDebug>
 
 WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const NetworkManager::Security8021xSetting::Ptr &setting8021x,
@@ -43,6 +45,14 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
 
     connect(m_ui->wepIndex, SIGNAL(currentIndexChanged(int)), SLOT(setWepKey(int)));
 
+    connect(m_ui->wepKey, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->leapUsername, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->leapPassword, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->psk, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->wepIndex, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
+    connect(m_ui->securityCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
+
+
     if (setting)
         loadConfig(setting);
 }
@@ -54,21 +64,31 @@ WifiSecurity::~WifiSecurity()
 
 bool WifiSecurity::enabled() const
 {
-    if (m_ui->securityCombo->currentIndex() != 0) {
+    return m_ui->securityCombo->currentIndex() > 0;
+}
+
+bool WifiSecurity::enabled8021x() const
+{
+    if (m_ui->securityCombo->currentIndex() == 3 || m_ui->securityCombo->currentIndex() == 5) {
         return true;
     }
 
     return false;
 }
 
-bool WifiSecurity::enabled8021x() const
+bool WifiSecurity::isValid() const
 {
-    if (m_ui->securityCombo->currentIndex() == 3 ||
-        m_ui->securityCombo->currentIndex() == 5) {
-        return true;
+    const int securityIndex = m_ui->securityCombo->currentIndex();
+
+    if (securityIndex == 1) { // WEP
+        return NetworkManager::Utils::wepKeyIsValid(m_ui->wepKey->text(), NetworkManager::WirelessSecuritySetting::Passphrase);
+    } else if (securityIndex == 2) { // LEAP
+        return !m_ui->leapUsername->text().isEmpty() && !m_ui->leapPassword->text().isEmpty();
+    } else if (securityIndex == 4) { // WPA
+        return NetworkManager::Utils::wpaPskIsValid(m_ui->psk->text());
     }
 
-    return false;
+    return true;
 }
 
 void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)

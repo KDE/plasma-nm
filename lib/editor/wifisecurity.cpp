@@ -231,6 +231,8 @@ void WifiSecurity::securityChanged(int index)
     } else {
         m_ui->stackedWidget->setCurrentIndex(index-1);
     }
+
+    KAcceleratorManager::manage(m_ui->stackedWidget->currentWidget());
 }
 
 void WifiSecurity::slotShowWepKeyPasswordChecked(bool checked)

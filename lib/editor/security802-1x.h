@@ -45,6 +45,7 @@ private slots:
     void setShowFastPassword(bool on);
     void setShowTtlsPassword(bool on);
     void setShowPeapPassword(bool on);
+    void currentAuthChanged(int index);
 
 private:
     void loadConfig();

@@ -59,6 +59,7 @@ Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &se
     }
 
     KAcceleratorManager::manage(this);
+    connect(m_ui->stackedWidget, SIGNAL(currentChanged(int)), SLOT(currentAuthChanged(int)));
 
     if (m_setting)
         loadConfig();
@@ -284,4 +285,10 @@ void Security8021x::setShowTtlsPassword(bool on)
 void Security8021x::setShowPeapPassword(bool on)
 {
     m_ui->peapPassword->setPasswordMode(!on);
+}
+
+void Security8021x::currentAuthChanged(int index)
+{
+    Q_UNUSED(index);
+    KAcceleratorManager::manage(m_ui->stackedWidget->currentWidget());
 }

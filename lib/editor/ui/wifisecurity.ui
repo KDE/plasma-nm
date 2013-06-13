@@ -30,7 +30,12 @@
      </item>
      <item>
       <property name="text">
-       <string>WEP key or passphrase</string>
+       <string>WEP key 40/128 bits (Hex or ASCII)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>WEP key 128 bits</string>
       </property>
      </item>
      <item>
@@ -67,6 +72,9 @@
    </item>
    <item row="1" column="0" colspan="2">
     <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
      <widget class="QWidget" name="securityNone"/>
      <widget class="QWidget" name="securityWep">
       <layout class="QFormLayout" name="formLayout">
@@ -255,38 +263,5 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections>
-  <connection>
-   <sender>stackedWidget</sender>
-   <signal>currentChanged(int)</signal>
-   <receiver>securityCombo</receiver>
-   <slot>setCurrentIndex(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>338</x>
-     <y>155</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>332</x>
-     <y>11</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>securityCombo</sender>
-   <signal>currentIndexChanged(int)</signal>
-   <receiver>stackedWidget</receiver>
-   <slot>setCurrentIndex(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>85</x>
-     <y>15</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>85</x>
-     <y>79</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

@@ -39,6 +39,8 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
     m_ui->stackedWidget->insertWidget(3, m_8021xWidget);
     m_ui->stackedWidget->insertWidget(5, m_WPA2Widget);
 
+    connect(m_ui->securityCombo, SIGNAL(currentIndexChanged(int)), SLOT(securityChanged(int)));
+
     connect(m_ui->cbShowWepKey, SIGNAL(toggled(bool)), SLOT(slotShowWepKeyPasswordChecked(bool)));
     connect(m_ui->cbShowLeapPassword, SIGNAL(toggled(bool)), SLOT(slotShowLeapPasswordChecked(bool)));
     connect(m_ui->cbShowPsk, SIGNAL(toggled(bool)), SLOT(slotShowPskPasswordChecked(bool)));
@@ -80,11 +82,13 @@ bool WifiSecurity::isValid() const
 {
     const int securityIndex = m_ui->securityCombo->currentIndex();
 
-    if (securityIndex == 1) { // WEP
+    if (securityIndex == 1) { // WEP Hex
+        return NetworkManager::Utils::wepKeyIsValid(m_ui->wepKey->text(), NetworkManager::WirelessSecuritySetting::Hex);
+    } else if (securityIndex == 2) { // WEP Passphrase
         return NetworkManager::Utils::wepKeyIsValid(m_ui->wepKey->text(), NetworkManager::WirelessSecuritySetting::Passphrase);
-    } else if (securityIndex == 2) { // LEAP
+    }else if (securityIndex == 3) { // LEAP
         return !m_ui->leapUsername->text().isEmpty() && !m_ui->leapPassword->text().isEmpty();
-    } else if (securityIndex == 4) { // WPA
+    } else if (securityIndex == 5) { // WPA
         return NetworkManager::Utils::wpaPskIsValid(m_ui->psk->text());
     }
 
@@ -209,6 +213,17 @@ void WifiSecurity::setWepKey(int keyIndex)
         m_ui->wepKey->setText(m_wifiSecurity->wepKey2());
     else if (keyIndex == 3)
         m_ui->wepKey->setText(m_wifiSecurity->wepKey3());
+}
+
+void WifiSecurity::securityChanged(int index)
+{
+    if (index == 0) {
+        m_ui->stackedWidget->setCurrentIndex(0);
+    } else if (index == 1 || index == 2) {
+        m_ui->stackedWidget->setCurrentIndex(1);
+    } else {
+        m_ui->stackedWidget->setCurrentIndex(index-1);
+    }
 }
 
 void WifiSecurity::slotShowWepKeyPasswordChecked(bool checked)

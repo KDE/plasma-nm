@@ -108,7 +108,12 @@ void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
         m_ui->securityCombo->setCurrentIndex(0); // None
 
     } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::Wep) {
-        m_ui->securityCombo->setCurrentIndex(1);  // WEP
+        if (wifiSecurity->wepKeyType() == NetworkManager::WirelessSecuritySetting::Hex ||
+            wifiSecurity->wepKeyType() == NetworkManager::WirelessSecuritySetting::NotSpecified) {
+            m_ui->securityCombo->setCurrentIndex(1);  // WEP Hex
+        } else {
+            m_ui->securityCombo->setCurrentIndex(2);
+        }
         const int keyIndex = static_cast<int>(wifiSecurity->wepTxKeyindex());
         setWepKey(keyIndex);
         m_ui->wepIndex->setCurrentIndex(keyIndex);
@@ -149,8 +154,13 @@ QVariantMap WifiSecurity::setting(bool agentOwned) const
     const int securityIndex = m_ui->securityCombo->currentIndex();
     if (securityIndex == 0) {
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::Unknown);
-    } else if (securityIndex == 1)  { // WEP
+    } else if (securityIndex == 1 || securityIndex == 2)  { // WEP
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
+        if (securityIndex == 1) {
+            wifiSecurity.setWepKeyType(NetworkManager::WirelessSecuritySetting::Hex);
+        } else {
+            wifiSecurity.setWepKeyType(NetworkManager::WirelessSecuritySetting::Passphrase);
+        }
         const int keyIndex = m_ui->wepIndex->currentIndex();
         const QString wepKey = m_ui->wepKey->text();
         wifiSecurity.setWepTxKeyindex(keyIndex);

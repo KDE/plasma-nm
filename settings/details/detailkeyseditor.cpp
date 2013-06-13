@@ -27,6 +27,7 @@
 #include <QList>
 
 #include <KConfigDialogManager>
+#include <KAcceleratorManager>
 
 #define DetailTagRole Qt::UserRole + 1
 
@@ -54,6 +55,8 @@ DetailKeysEditor::DetailKeysEditor(QWidget *parent)
     }
 
     setupCommon();
+
+    KAcceleratorManager::manage(this);
 
     KConfigDialogManager::changedMap()->insert("DetailKeysEditor", SIGNAL(currentDetailsChanged(const QStringList &)));
 }

@@ -15,7 +15,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&amp;Gateway:</string>
+      <string>Gateway:</string>
      </property>
      <property name="buddy">
       <cstring>gateway</cstring>
@@ -28,7 +28,7 @@
    <item row="1" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>&amp;User name:</string>
+      <string>User name:</string>
      </property>
      <property name="buddy">
       <cstring>user</cstring>
@@ -41,7 +41,7 @@
    <item row="2" column="0" colspan="2">
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>User &amp;password:</string>
+      <string>User password:</string>
      </property>
      <property name="buddy">
       <cstring>userPassword</cstring>
@@ -93,7 +93,7 @@
    <item row="3" column="0">
     <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>G&amp;roup name:</string>
+      <string>Group name:</string>
      </property>
      <property name="buddy">
       <cstring>group</cstring>
@@ -106,7 +106,7 @@
    <item row="4" column="0" colspan="2">
     <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>Group pa&amp;ssword:</string>
+      <string>Group password:</string>
      </property>
      <property name="buddy">
       <cstring>groupPassword</cstring>
@@ -158,7 +158,7 @@
    <item row="5" column="2">
     <widget class="QCheckBox" name="cbShowPasswords">
      <property name="text">
-      <string>S&amp;how passwords</string>
+      <string>Show passwords</string>
      </property>
     </widget>
    </item>
@@ -181,7 +181,7 @@
    <item row="7" column="0" colspan="3">
     <widget class="QCheckBox" name="useHybridAuth">
      <property name="text">
-      <string>Use h&amp;ybrid authentication</string>
+      <string>Use hybrid authentication</string>
      </property>
     </widget>
    </item>
@@ -226,7 +226,7 @@
      <item>
       <widget class="QPushButton" name="btnAdvanced">
        <property name="text">
-        <string>&amp;Advanced...</string>
+        <string>Advanced...</string>
        </property>
       </widget>
      </item>
@@ -236,14 +236,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
   </customwidget>
   <customwidget>
    <class>KUrlRequester</class>

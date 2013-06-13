@@ -41,6 +41,8 @@ VpncAuthDialog::VpncAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, Q
     connect(d->ui.cbShowPasswords, SIGNAL(toggled(bool)), this, SLOT(showPasswordsChanged(bool)));
 
     readSecrets();
+
+    KAcceleratorManager::manage(this);
 }
 
 VpncAuthDialog::~VpncAuthDialog()

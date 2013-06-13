@@ -35,9 +35,11 @@ WiredSecurity::WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &se
 
     m_ui->verticalLayout->addWidget(m_8021xWidget);
 
-    loadConfig(setting8021x);
-
     connect(m_ui->use8021X, SIGNAL(toggled(bool)), m_8021xWidget, SLOT(setEnabled(bool)));
+
+    KAcceleratorManager::manage(this);
+
+    loadConfig(setting8021x);
 }
 
 WiredSecurity::~WiredSecurity()

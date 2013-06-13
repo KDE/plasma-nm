@@ -24,6 +24,8 @@
 #include <QtGui/QWidget>
 #include <NetworkManagerQt/Setting>
 
+#include <KAcceleratorManager>
+
 #include <kdemacros.h>
 
 class KDE_EXPORT SettingWidget : public QWidget

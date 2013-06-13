@@ -44,6 +44,8 @@ OpenswanWidget::OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, Q
     connect(m_ui->gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
     connect(m_ui->groupname, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+
     if (m_setting)
         loadConfig(setting);
 }

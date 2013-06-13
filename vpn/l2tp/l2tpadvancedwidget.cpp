@@ -24,6 +24,7 @@
 
 #include <QDebug>
 #include <KLocalizedString>
+#include <KAcceleratorManager>
 
 L2tpAdvancedWidget::L2tpAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent) :
     QDialog(parent),
@@ -32,6 +33,8 @@ L2tpAdvancedWidget::L2tpAdvancedWidget(const NetworkManager::VpnSetting::Ptr &se
     m_ui->setupUi(this);
 
     setWindowTitle(i18n("L2TP IPsec Options"));
+
+    KAcceleratorManager::manage(this);
 
     loadConfig(setting);
 }

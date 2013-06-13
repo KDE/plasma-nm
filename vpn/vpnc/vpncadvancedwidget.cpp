@@ -23,6 +23,7 @@
 #include "nm-vpnc-service.h"
 
 #include <KLocalizedString>
+#include <KAcceleratorManager>
 
 VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent) :
     QDialog(parent),
@@ -60,6 +61,8 @@ VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &se
     m_ui->pfs->addItem(i18nc("Perfect Forward Secrecy", "DH Group 5"), NM_VPNC_PFS_DH5);
 
     loadConfig(setting);
+
+    KAcceleratorManager::manage(this);
 }
 
 VpncAdvancedWidget::~VpncAdvancedWidget()

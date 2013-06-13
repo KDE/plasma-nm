@@ -76,6 +76,9 @@ BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Setting
     connect(m_ui->arpTargets, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
     connect(m_ui->linkMonitoring, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+    KAcceleratorManager::manage(m_menu);
+
     if (setting)
         loadConfig(setting);
 }

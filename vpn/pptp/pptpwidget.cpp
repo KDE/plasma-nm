@@ -57,6 +57,8 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
 
     connect(d->ui.edt_gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+
     if (d->setting)
         loadConfig(d->setting);
 }

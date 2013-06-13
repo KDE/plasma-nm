@@ -15,7 +15,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&amp;Network name:</string>
+      <string>Network name:</string>
      </property>
      <property name="buddy">
       <cstring>networkName</cstring>

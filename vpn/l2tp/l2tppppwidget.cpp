@@ -24,6 +24,7 @@
 
 #include <QDebug>
 #include <KLocalizedString>
+#include <KAcceleratorManager>
 
 L2tpPPPWidget::L2tpPPPWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent) :
     QDialog(parent),
@@ -32,6 +33,8 @@ L2tpPPPWidget::L2tpPPPWidget(const NetworkManager::VpnSetting::Ptr &setting, QWi
     m_ui->setupUi(this);
 
     setWindowTitle(i18n("L2TP PPP Options"));
+
+    KAcceleratorManager::manage(this);
 
     loadConfig(setting);
 }

@@ -37,6 +37,8 @@ VlanWidget::VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* par
     connect(m_ui->parent, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
     connect(m_ui->parent->lineEdit(), SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+
     if (setting)
         loadConfig(setting);
 }

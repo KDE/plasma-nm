@@ -15,7 +15,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Inter&amp;face name:</string>
+      <string>Interface name:</string>
      </property>
      <property name="buddy">
       <cstring>ifaceName</cstring>
@@ -28,7 +28,7 @@
    <item row="1" column="0" colspan="3">
     <widget class="QLabel" name="label_7">
      <property name="text">
-      <string>&amp;Bridged connections:</string>
+      <string>Bridged connections:</string>
      </property>
      <property name="buddy">
       <cstring>bridges</cstring>
@@ -53,7 +53,7 @@
      <item row="0" column="1">
       <widget class="KPushButton" name="btnAdd">
        <property name="text">
-        <string>&amp;Add...</string>
+        <string>Add...</string>
        </property>
        <property name="icon">
         <iconset theme="list-add">
@@ -68,7 +68,7 @@
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>&amp;Edit...</string>
+        <string>Edit...</string>
        </property>
        <property name="icon">
         <iconset theme="configure">
@@ -83,7 +83,7 @@
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>&amp;Delete</string>
+        <string>Delete</string>
        </property>
        <property name="icon">
         <iconset theme="edit-delete">
@@ -110,7 +110,7 @@
    <item row="3" column="0" colspan="2">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>A&amp;ging time:</string>
+      <string>Aging time:</string>
      </property>
      <property name="buddy">
       <cstring>agingTime</cstring>
@@ -139,7 +139,7 @@
    <item row="4" column="0" colspan="3">
     <widget class="QGroupBox" name="stpGroup">
      <property name="title">
-      <string>Enable &amp;STP (Spanning Tree Protocol)</string>
+      <string>Enable STP (Spanning Tree Protocol)</string>
      </property>
      <property name="checkable">
       <bool>true</bool>
@@ -148,7 +148,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>&amp;Priority:</string>
+         <string>Priority:</string>
         </property>
         <property name="buddy">
          <cstring>priority</cstring>
@@ -174,7 +174,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>Fo&amp;rward delay:</string>
+         <string>Forward delay:</string>
         </property>
         <property name="buddy">
          <cstring>forwardDelay</cstring>
@@ -203,7 +203,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>&amp;Hello time:</string>
+         <string>Hello time:</string>
         </property>
         <property name="buddy">
          <cstring>helloTime</cstring>
@@ -232,7 +232,7 @@
       <item row="3" column="0">
        <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>&amp;Max age:</string>
+         <string>Max age:</string>
         </property>
         <property name="buddy">
          <cstring>maxAge</cstring>

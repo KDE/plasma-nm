@@ -36,6 +36,8 @@ WimaxWidget::WimaxWidget(const NetworkManager::Setting::Ptr &setting, QWidget* p
     connect(m_ui->networkName, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
     connect(m_ui->macAddress, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+
     if (setting)
         loadConfig(setting);
 }

@@ -85,6 +85,8 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
 
     connect(d->ui.gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+
     if (d->setting)
         loadConfig(d->setting);
 }

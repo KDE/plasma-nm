@@ -39,6 +39,8 @@ L2tpAuthDialog::L2tpAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, Q
     d->setting = setting;
     connect(d->ui.cbShowPasswords, SIGNAL(toggled(bool)), this, SLOT(showPasswordsChanged(bool)));
 
+    KAcceleratorManager::manage(this);
+
     readSecrets();
 }
 

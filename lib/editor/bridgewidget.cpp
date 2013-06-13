@@ -62,6 +62,9 @@ BridgeWidget::BridgeWidget(const QString & masterUuid, const NetworkManager::Set
 
     connect(m_ui->ifaceName, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+    KAcceleratorManager::manage(m_menu);
+
     if (setting)
         loadConfig(setting);
 }

@@ -25,6 +25,7 @@
 #include <KLocalizedString>
 #include <KProcess>
 #include <KStandardDirs>
+#include <KAcceleratorManager>
 
 class OpenVpnAdvancedWidget::Private {
 public:
@@ -84,6 +85,8 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
 
     connect(m_ui->buttonBox, SIGNAL(accepted()), SLOT(accept()));
     connect(m_ui->buttonBox, SIGNAL(rejected()), SLOT(reject()));
+
+    KAcceleratorManager::manage(this);
 
     loadConfig();
 }

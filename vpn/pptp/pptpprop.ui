@@ -31,7 +31,7 @@
         <item>
          <widget class="QLabel" name="lbl_gateway">
           <property name="text">
-           <string>&amp;Gateway:</string>
+           <string>Gateway:</string>
           </property>
           <property name="buddy">
            <cstring>edt_gateway</cstring>
@@ -71,7 +71,7 @@
              </size>
             </property>
             <property name="text">
-             <string>&amp;Login:</string>
+             <string>Login:</string>
             </property>
             <property name="buddy">
              <cstring>edt_login</cstring>
@@ -100,7 +100,7 @@
              </size>
             </property>
             <property name="text">
-             <string>&amp;Password:</string>
+             <string>Password:</string>
             </property>
             <property name="buddy">
              <cstring>edt_password</cstring>
@@ -141,7 +141,7 @@
         <item>
          <widget class="QCheckBox" name="cb_showPassword">
           <property name="text">
-           <string>&amp;Show password</string>
+           <string>Show password</string>
           </property>
          </widget>
         </item>
@@ -162,7 +162,7 @@
              </size>
             </property>
             <property name="text">
-             <string>&amp;NT Domain:</string>
+             <string>NT Domain:</string>
             </property>
             <property name="buddy">
              <cstring>edt_ntDomain</cstring>

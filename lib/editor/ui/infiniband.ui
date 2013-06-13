@@ -15,7 +15,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&amp;Transport mode:</string>
+      <string>Transport mode:</string>
      </property>
      <property name="buddy">
       <cstring>transport</cstring>
@@ -55,7 +55,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>&amp;MTU:</string>
+      <string>MTU:</string>
      </property>
      <property name="buddy">
       <cstring>mtu</cstring>

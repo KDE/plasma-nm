@@ -37,7 +37,7 @@
    <item row="1" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>&amp;Cloned MAC address:</string>
+      <string>Cloned MAC address:</string>
      </property>
      <property name="buddy">
       <cstring>clonedMacAddress</cstring>
@@ -65,7 +65,7 @@
      <item>
       <widget class="QPushButton" name="btnRandomMacAddr">
        <property name="text">
-        <string>&amp;Random...</string>
+        <string>Random...</string>
        </property>
       </widget>
      </item>
@@ -74,7 +74,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>&amp;MTU:</string>
+      <string>MTU:</string>
      </property>
      <property name="buddy">
       <cstring>mtu</cstring>
@@ -106,7 +106,7 @@
    <item row="3" column="0">
     <widget class="QLabel" name="speedLabel">
      <property name="text">
-      <string>&amp;Speed:</string>
+      <string>Speed:</string>
      </property>
      <property name="buddy">
       <cstring>speed</cstring>
@@ -138,7 +138,7 @@
    <item row="4" column="0">
     <widget class="QLabel" name="duplexLabel">
      <property name="text">
-      <string>D&amp;uplex:</string>
+      <string>Duplex:</string>
      </property>
      <property name="buddy">
       <cstring>duplex</cstring>
@@ -174,7 +174,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>&amp;Autonegotiate</string>
+      <string>Autonegotiate</string>
      </property>
      <property name="checked">
       <bool>true</bool>

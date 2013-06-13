@@ -47,6 +47,8 @@ OpenVpnAuthWidget::OpenVpnAuthWidget(const NetworkManager::VpnSetting::Ptr &sett
     setLayout(d->layout);
 
     readSecrets();
+
+    KAcceleratorManager::manage(this);
 }
 
 OpenVpnAuthWidget::~OpenVpnAuthWidget()

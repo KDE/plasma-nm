@@ -14,7 +14,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&amp;Number:</string>
+      <string>Number:</string>
      </property>
      <property name="buddy">
       <cstring>number</cstring>
@@ -31,7 +31,7 @@
    <item row="1" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>&amp;Username:</string>
+      <string>Username:</string>
      </property>
      <property name="buddy">
       <cstring>username</cstring>
@@ -44,7 +44,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>&amp;Password:</string>
+      <string>Password:</string>
      </property>
      <property name="buddy">
       <cstring>password</cstring>
@@ -61,7 +61,7 @@
    <item row="3" column="0" colspan="2">
     <widget class="QCheckBox" name="cbShowPassword">
      <property name="text">
-      <string>Sho&amp;w password</string>
+      <string>Show password</string>
      </property>
     </widget>
    </item>

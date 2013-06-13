@@ -31,6 +31,8 @@ CdmaWidget::CdmaWidget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 
     connect(m_ui->cbShowPassword, SIGNAL(toggled(bool)), SLOT(showPassword(bool)));
 
+    KAcceleratorManager::manage(this);
+
     if (setting)
         loadConfig(setting);
 }

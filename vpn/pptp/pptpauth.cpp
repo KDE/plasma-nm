@@ -38,6 +38,8 @@ PptpAuthWidget::PptpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, Q
     d->setting = setting;
     d->ui.setupUi(this);
     connect(d->ui.chkShowPassword, SIGNAL(toggled(bool)), this, SLOT(showPasswordsToggled(bool)));
+
+    KAcceleratorManager::manage(this);
 }
 
 PptpAuthWidget::~PptpAuthWidget()

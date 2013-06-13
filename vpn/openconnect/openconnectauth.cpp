@@ -115,6 +115,8 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
 
     readConfig();
     readSecrets();
+
+    KAcceleratorManager::manage(this);
 }
 
 OpenconnectAuthWidget::~OpenconnectAuthWidget()

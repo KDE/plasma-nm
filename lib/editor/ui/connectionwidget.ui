@@ -27,7 +27,7 @@
    <item row="0" column="0" colspan="3">
     <widget class="QCheckBox" name="autoconnect">
      <property name="text">
-      <string>&amp;Automatically connect to this network when it is available</string>
+      <string>Automatically connect to this network when it is available</string>
      </property>
      <property name="checked">
       <bool>true</bool>
@@ -69,7 +69,7 @@
    <item row="1" column="0" colspan="2">
     <widget class="QCheckBox" name="allUsers">
      <property name="text">
-      <string>All users &amp;may connect to this network</string>
+      <string>All users may connect to this network</string>
      </property>
      <property name="checked">
       <bool>false</bool>
@@ -94,14 +94,16 @@
       <string>Advanced...</string>
      </property>
      <property name="icon">
-      <iconset theme="preferences-desktop-user"/>
+      <iconset theme="preferences-desktop-user">
+       <normaloff/>
+      </iconset>
      </property>
     </widget>
    </item>
    <item row="6" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>&amp;Firewall zone:</string>
+      <string>Firewall zone:</string>
      </property>
      <property name="buddy">
       <cstring>firewallZone</cstring>
@@ -111,7 +113,7 @@
    <item row="3" column="0" colspan="3">
     <widget class="QCheckBox" name="autoconnectVpn">
      <property name="text">
-      <string>Automatically connect to &amp;VPN when using this connection</string>
+      <string>Automatically connect to VPN when using this connection</string>
      </property>
     </widget>
    </item>

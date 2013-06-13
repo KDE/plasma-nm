@@ -63,7 +63,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>S&amp;ecurity:</string>
+      <string>Security:</string>
      </property>
      <property name="buddy">
       <cstring>securityCombo</cstring>
@@ -81,7 +81,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>&amp;Key:</string>
+          <string>Key:</string>
          </property>
          <property name="buddy">
           <cstring>wepKey</cstring>
@@ -101,14 +101,14 @@
        <item row="1" column="1">
         <widget class="QCheckBox" name="cbShowWepKey">
          <property name="text">
-          <string>&amp;Show key</string>
+          <string>Show key</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>WEP index&amp;:</string>
+          <string>WEP index:</string>
          </property>
          <property name="buddy">
           <cstring>wepIndex</cstring>
@@ -148,7 +148,7 @@
        <item row="3" column="0">
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>Au&amp;thentication:</string>
+          <string>Authentication:</string>
          </property>
          <property name="buddy">
           <cstring>wepAuth</cstring>
@@ -182,7 +182,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_8">
          <property name="text">
-          <string>&amp;Username:</string>
+          <string>Username:</string>
          </property>
          <property name="buddy">
           <cstring>leapUsername</cstring>
@@ -195,7 +195,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_9">
          <property name="text">
-          <string>&amp;Password:</string>
+          <string>Password:</string>
          </property>
          <property name="buddy">
           <cstring>leapPassword</cstring>
@@ -212,7 +212,7 @@
        <item row="2" column="1">
         <widget class="QCheckBox" name="cbShowLeapPassword">
          <property name="text">
-          <string>&amp;Show password</string>
+          <string>Show password</string>
          </property>
         </widget>
        </item>
@@ -223,7 +223,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_10">
          <property name="text">
-          <string>&amp;Password:</string>
+          <string>Password:</string>
          </property>
          <property name="buddy">
           <cstring>psk</cstring>
@@ -240,7 +240,7 @@
        <item row="1" column="1">
         <widget class="QCheckBox" name="cbShowPsk">
          <property name="text">
-          <string>&amp;Show password</string>
+          <string>Show password</string>
          </property>
         </widget>
        </item>

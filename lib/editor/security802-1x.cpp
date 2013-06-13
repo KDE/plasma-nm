@@ -22,6 +22,7 @@
 #include "ui_802-1x.h"
 
 #include <QDebug>
+#include <KAcceleratorManager>
 
 Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent) :
     QWidget(parent),
@@ -52,11 +53,12 @@ Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &se
     if (wifiMode) {
         m_ui->auth->removeItem(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodMd5)); // MD 5
         m_ui->stackedWidget->removeWidget(m_ui->md5Page);
-    }
-    else {
+    } else {
         m_ui->auth->removeItem(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodLeap)); // LEAP
         m_ui->stackedWidget->removeWidget(m_ui->leapPage);
     }
+
+    KAcceleratorManager::manage(this);
 
     if (m_setting)
         loadConfig();

@@ -26,7 +26,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>&amp;Gateway:</string>
+         <string>Gateway:</string>
         </property>
         <property name="buddy">
          <cstring>leGateway</cstring>
@@ -39,7 +39,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>&amp;CA Certificate:</string>
+         <string>CA Certificate:</string>
         </property>
         <property name="buddy">
          <cstring>leCaCertificate</cstring>
@@ -52,7 +52,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>&amp;Proxy:</string>
+         <string>Proxy:</string>
         </property>
         <property name="buddy">
          <cstring>leProxy</cstring>
@@ -65,7 +65,7 @@
       <item row="4" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>CSD &amp;Wrapper Script:</string>
+         <string>CSD Wrapper Script:</string>
         </property>
         <property name="buddy">
          <cstring>leCsdWrapperScript</cstring>
@@ -94,7 +94,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>&amp;User Certificate:</string>
+         <string>User Certificate:</string>
         </property>
         <property name="buddy">
          <cstring>leUserCert</cstring>
@@ -104,7 +104,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>Private &amp;Key:</string>
+         <string>Private Key:</string>
         </property>
         <property name="buddy">
          <cstring>leUserPrivateKey</cstring>
@@ -120,7 +120,7 @@
       <item row="2" column="0" colspan="2">
        <widget class="QCheckBox" name="chkUseFsid">
         <property name="text">
-         <string>Use &amp;FSID for key passphrase</string>
+         <string>Use FSID for key passphrase</string>
         </property>
        </widget>
       </item>
@@ -144,14 +144,14 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
    <class>KUrlRequester</class>
    <extends>QFrame</extends>
    <header>kurlrequester.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>KLineEdit</extends>
-   <header>klineedit.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

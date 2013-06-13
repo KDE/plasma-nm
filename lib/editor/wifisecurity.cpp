@@ -54,6 +54,7 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
     connect(m_ui->wepIndex, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
     connect(m_ui->securityCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
 
     if (setting)
         loadConfig(setting);
@@ -102,8 +103,6 @@ void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const NetworkManager::WirelessSecuritySetting::KeyMgmt keyMgmt = wifiSecurity->keyMgmt();
     const NetworkManager::WirelessSecuritySetting::AuthAlg authAlg = wifiSecurity->authAlg();
 
-    // TODO add wep-key-type
-
     if (keyMgmt == NetworkManager::WirelessSecuritySetting::Unknown) {
         m_ui->securityCombo->setCurrentIndex(0); // None
 
@@ -147,8 +146,6 @@ void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
 QVariantMap WifiSecurity::setting(bool agentOwned) const
 {
-     // TODO add wep-key-type
-
     NetworkManager::WirelessSecuritySetting wifiSecurity;
 
     const int securityIndex = m_ui->securityCombo->currentIndex();

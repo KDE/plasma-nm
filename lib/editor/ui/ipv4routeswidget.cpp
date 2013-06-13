@@ -26,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QNetworkAddressEntry>
 
 #include <KDebug>
+#include <KAcceleratorManager>
 
 #include "ui_ipv4routes.h"
 
@@ -74,6 +75,8 @@ IpV4RoutesWidget::IpV4RoutesWidget(QWidget * parent)
 
     connect(d->ui.buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
     connect(d->ui.buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+
+    KAcceleratorManager::manage(this);
 }
 
 IpV4RoutesWidget::~IpV4RoutesWidget()

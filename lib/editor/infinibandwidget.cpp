@@ -39,6 +39,8 @@ InfinibandWidget::InfinibandWidget(const NetworkManager::Setting::Ptr &setting, 
 
     connect(m_ui->macAddress, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+
     if (setting)
         loadConfig(setting);
 }

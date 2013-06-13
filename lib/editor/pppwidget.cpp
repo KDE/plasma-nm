@@ -29,6 +29,8 @@ PPPWidget::PPPWidget(const NetworkManager::Setting::Ptr &setting, QWidget* paren
 {
     m_ui->setupUi(this);
 
+    KAcceleratorManager::manage(this);
+
     if (setting)
         loadConfig(setting);
 }

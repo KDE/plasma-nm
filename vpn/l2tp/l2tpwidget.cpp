@@ -45,6 +45,8 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     connect(m_ui->gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+
     if (m_setting)
         loadConfig(setting);
 }

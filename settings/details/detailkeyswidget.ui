@@ -31,7 +31,7 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Available &amp;Details</string>
+        <string>Available Details</string>
        </property>
        <property name="buddy">
         <cstring>availDetails</cstring>
@@ -201,7 +201,7 @@
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Details to &amp;Show</string>
+        <string>Details to Show</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>

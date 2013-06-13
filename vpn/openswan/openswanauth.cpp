@@ -40,6 +40,8 @@ OpenswanAuthDialog::OpenswanAuthDialog(const NetworkManager::VpnSetting::Ptr &se
     connect(d->ui.cbShowPasswords, SIGNAL(toggled(bool)), this, SLOT(showPasswordsChanged(bool)));
 
     readSecrets();
+
+    KAcceleratorManager::manage(this);
 }
 
 OpenswanAuthDialog::~OpenswanAuthDialog()

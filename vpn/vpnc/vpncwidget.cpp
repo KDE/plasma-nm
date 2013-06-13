@@ -42,6 +42,8 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     connect(m_ui->gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+
     if (m_setting)
         loadConfig(setting);
 }

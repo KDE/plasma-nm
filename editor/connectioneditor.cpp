@@ -36,6 +36,7 @@
 #include <KStandardAction>
 #include <KAboutApplicationDialog>
 #include <KAboutData>
+#include <KAcceleratorManager>
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
@@ -139,6 +140,9 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     createGUI();
 
     setAutoSaveSettings();
+
+    KAcceleratorManager::manage(this);
+    KAcceleratorManager::manage(m_menu);
 }
 
 ConnectionEditor::~ConnectionEditor()

@@ -48,6 +48,8 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget* paren
 
     connect(m_ui->apn, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+
     if (setting)
         loadConfig(setting);
 }

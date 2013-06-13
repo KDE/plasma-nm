@@ -22,7 +22,7 @@
         <item>
          <widget class="QLabel" name="lblauth">
           <property name="text">
-           <string>Allow following &amp;authentication methods:</string>
+           <string>Allow following authentication methods:</string>
           </property>
           <property name="buddy">
            <cstring>listWidget</cstring>
@@ -84,7 +84,7 @@
       <string>Use Microsoft Point-to-Point Encryption</string>
      </property>
      <property name="title">
-      <string>Use &amp;MPPE Encryption</string>
+      <string>Use MPPE Encryption</string>
      </property>
      <property name="checkable">
       <bool>true</bool>
@@ -106,7 +106,7 @@
              </size>
             </property>
             <property name="text">
-             <string>&amp;Crypto:</string>
+             <string>Crypto:</string>
             </property>
             <property name="buddy">
              <cstring>cbMPPECrypto</cstring>
@@ -141,7 +141,7 @@
         <item>
          <widget class="QCheckBox" name="cbstatefulEncryption">
           <property name="text">
-           <string>Use &amp;stateful encryption</string>
+           <string>Use stateful encryption</string>
           </property>
          </widget>
         </item>
@@ -161,7 +161,7 @@
         <item>
          <widget class="QCheckBox" name="cbBSD">
           <property name="text">
-           <string>Allow &amp;BSD compression</string>
+           <string>Allow BSD compression</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -171,7 +171,7 @@
         <item>
          <widget class="QCheckBox" name="cbdeflate">
           <property name="text">
-           <string>Allow &amp;Deflate compression</string>
+           <string>Allow Deflate compression</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -181,7 +181,7 @@
         <item>
          <widget class="QCheckBox" name="cbTCPheaders">
           <property name="text">
-           <string>Allow &amp;TCP header compression</string>
+           <string>Allow TCP header compression</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -225,7 +225,7 @@
       <item row="0" column="0">
        <widget class="QCheckBox" name="cbsendEcho">
         <property name="text">
-         <string>Send PPP &amp;echo packets </string>
+         <string>Send PPP echo packets </string>
         </property>
        </widget>
       </item>
@@ -253,6 +253,19 @@
    <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>listWidget</tabstop>
+  <tabstop>gbMPPE</tabstop>
+  <tabstop>cbMPPECrypto</tabstop>
+  <tabstop>cbstatefulEncryption</tabstop>
+  <tabstop>cbBSD</tabstop>
+  <tabstop>cbdeflate</tabstop>
+  <tabstop>cbTCPheaders</tabstop>
+  <tabstop>cbCompressionNegotiation</tabstop>
+  <tabstop>cbAddressControlCompression</tabstop>
+  <tabstop>cbsendEcho</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

@@ -40,6 +40,8 @@ BtWidget::BtWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent,
 
     connect(m_ui->bdaddr, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+
     if (setting)
         loadConfig(setting);
 }

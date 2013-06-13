@@ -14,7 +14,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="userNameLabel">
      <property name="text">
-      <string>&amp;Username:</string>
+      <string>Username:</string>
      </property>
      <property name="buddy">
       <cstring>leUserName</cstring>
@@ -31,7 +31,7 @@
    <item row="1" column="0">
     <widget class="QLabel" name="userPasswordLabel">
      <property name="text">
-      <string>User &amp;Password:</string>
+      <string>User Password:</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>
@@ -51,7 +51,7 @@
    <item row="2" column="1">
     <widget class="QCheckBox" name="cbShowPasswords">
      <property name="text">
-      <string>&amp;Show passwords</string>
+      <string>Show passwords</string>
      </property>
      <property name="checked">
       <bool>false</bool>

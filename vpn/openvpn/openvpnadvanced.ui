@@ -18,7 +18,7 @@
      </property>
      <widget class="QWidget" name="generalTab">
       <attribute name="title">
-       <string>&amp;General</string>
+       <string>General</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>
@@ -26,7 +26,7 @@
          <item>
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>Gateway &amp;Port:</string>
+            <string>Gateway Port:</string>
            </property>
            <property name="buddy">
             <cstring>sbCustomPort</cstring>
@@ -50,7 +50,7 @@
          <item>
           <widget class="QLabel" name="label_8">
            <property name="text">
-            <string>T&amp;unnel MTU</string>
+            <string>Tunnel MTU:</string>
            </property>
            <property name="buddy">
             <cstring>sbMtu</cstring>
@@ -74,7 +74,7 @@
          <item>
           <widget class="QLabel" name="label_9">
            <property name="text">
-            <string>UDP &amp;fragment size</string>
+            <string>UDP fragment size:</string>
            </property>
            <property name="buddy">
             <cstring>sbUdpFragmentSize</cstring>
@@ -98,7 +98,7 @@
          <item>
           <widget class="QCheckBox" name="chkUseCustomReneg">
            <property name="text">
-            <string>Use &amp;custom renegotiation interval</string>
+            <string>Use custom renegotiation interval</string>
            </property>
           </widget>
          </item>
@@ -117,28 +117,28 @@
        <item>
         <widget class="QCheckBox" name="chkUseLZO">
          <property name="text">
-          <string>Use &amp;LZO compression</string>
+          <string>Use LZO compression</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="chkUseTCP">
          <property name="text">
-          <string>Use &amp;TCP connection</string>
+          <string>Use TCP connection</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="chkUseTAP">
          <property name="text">
-          <string>Use T&amp;AP device</string>
+          <string>Use TAP device</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="chkMssRestrict">
          <property name="text">
-          <string>Restrict TCP &amp;maximum segment size (MSS)</string>
+          <string>Restrict TCP maximum segment size (MSS)</string>
          </property>
         </widget>
        </item>
@@ -159,7 +159,7 @@
      </widget>
      <widget class="QWidget" name="securityTab">
       <attribute name="title">
-       <string>&amp;Security</string>
+       <string>Security</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_7">
        <item>
@@ -167,7 +167,7 @@
          <item>
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>&amp;Cipher:</string>
+            <string>Cipher:</string>
            </property>
            <property name="buddy">
             <cstring>cboCipher</cstring>
@@ -199,7 +199,7 @@
          <item>
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>&amp;HMAC Authentication:</string>
+            <string>HMAC Authentication:</string>
            </property>
            <property name="buddy">
             <cstring>cboHmac</cstring>
@@ -285,7 +285,7 @@
      </widget>
      <widget class="QWidget" name="tlsTab">
       <attribute name="title">
-       <string>&amp;TLS Settings</string>
+       <string>TLS Settings</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_9">
        <item>
@@ -293,7 +293,7 @@
          <item>
           <widget class="QLabel" name="label_10">
            <property name="text">
-            <string>&amp;Subject Match:</string>
+            <string>Subject Match:</string>
            </property>
            <property name="buddy">
             <cstring>subjectMatch</cstring>
@@ -312,7 +312,7 @@
        <item>
         <widget class="QGroupBox" name="useExtraTlsAuth">
          <property name="title">
-          <string>&amp;Use additional TLS authentication</string>
+          <string>Use additional TLS authentication</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -326,7 +326,7 @@
             <item>
              <widget class="QLabel" name="textLabel4_3">
               <property name="text">
-               <string>&amp;Key:</string>
+               <string>Key:</string>
               </property>
               <property name="wordWrap">
                <bool>false</bool>
@@ -346,7 +346,7 @@
             <item>
              <widget class="QLabel" name="textLabel1">
               <property name="text">
-               <string>Key &amp;Direction:</string>
+               <string>Key Direction:</string>
               </property>
               <property name="wordWrap">
                <bool>false</bool>
@@ -397,7 +397,7 @@
      </widget>
      <widget class="QWidget" name="proxyTab">
       <attribute name="title">
-       <string>&amp;Proxies</string>
+       <string>Proxies</string>
       </attribute>
       <layout class="QFormLayout" name="formLayout_2">
        <property name="fieldGrowthPolicy">
@@ -406,7 +406,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_11">
          <property name="text">
-          <string>Proxy &amp;Type:</string>
+          <string>Proxy Type:</string>
          </property>
          <property name="buddy">
           <cstring>cmbProxyType</cstring>
@@ -447,7 +447,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_12">
          <property name="text">
-          <string>Server &amp;Address:</string>
+          <string>Server Address:</string>
          </property>
          <property name="buddy">
           <cstring>proxyServerAddress</cstring>
@@ -460,7 +460,7 @@
        <item row="2" column="0">
         <widget class="QLabel" name="label_13">
          <property name="text">
-          <string>Po&amp;rt:</string>
+          <string>Port:</string>
          </property>
          <property name="buddy">
           <cstring>sbProxyPort</cstring>
@@ -483,14 +483,14 @@
        <item row="3" column="1">
         <widget class="QCheckBox" name="chkProxyRetry">
          <property name="text">
-          <string>&amp;Retry indefinitely when errors occur</string>
+          <string>Retry indefinitely when errors occur</string>
          </property>
         </widget>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="label_14">
          <property name="text">
-          <string>Proxy &amp;Username:</string>
+          <string>Proxy Username:</string>
          </property>
          <property name="buddy">
           <cstring>proxyUsername</cstring>
@@ -500,7 +500,7 @@
        <item row="5" column="0">
         <widget class="QLabel" name="label_15">
          <property name="text">
-          <string>Proxy P&amp;assword:</string>
+          <string>Proxy Password:</string>
          </property>
          <property name="buddy">
           <cstring>proxyPassword</cstring>
@@ -513,7 +513,7 @@
        <item row="6" column="1">
         <widget class="QCheckBox" name="chkProxyShowPassword">
          <property name="text">
-          <string>&amp;Show Password</string>
+          <string>Show Password</string>
          </property>
         </widget>
        </item>

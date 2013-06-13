@@ -40,6 +40,8 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
     if (setting)
         loadConfig(setting);
 
+    KAcceleratorManager::manage(this);
+
     // Validation
     connect(m_widget->macAddress, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
     connect(m_widget->clonedMacAddress, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));

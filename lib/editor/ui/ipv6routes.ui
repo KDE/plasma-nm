@@ -113,14 +113,14 @@
    <item row="3" column="0">
     <widget class="QCheckBox" name="cbIgnoreAutoRoutes">
      <property name="text">
-      <string>Ignore &amp;automatically obtained routes</string>
+      <string>Ignore automatically obtained routes</string>
      </property>
     </widget>
    </item>
    <item row="4" column="0" colspan="2">
     <widget class="QCheckBox" name="cbNeverDefault">
      <property name="text">
-      <string>Use &amp;only for resources on this connection</string>
+      <string>Use only for resources on this connection</string>
      </property>
     </widget>
    </item>

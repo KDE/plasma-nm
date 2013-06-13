@@ -15,7 +15,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Inter&amp;face name:</string>
+      <string>Interface name:</string>
      </property>
      <property name="buddy">
       <cstring>ifaceName</cstring>
@@ -28,7 +28,7 @@
    <item row="1" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>&amp;Bonded connections:</string>
+      <string>Bonded connections:</string>
      </property>
      <property name="buddy">
       <cstring>bonds</cstring>
@@ -53,7 +53,7 @@
      <item row="0" column="1">
       <widget class="KPushButton" name="btnAdd">
        <property name="text">
-        <string>&amp;Add...</string>
+        <string>Add...</string>
        </property>
        <property name="icon">
         <iconset theme="list-add">
@@ -68,7 +68,7 @@
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>&amp;Edit...</string>
+        <string>Edit...</string>
        </property>
        <property name="icon">
         <iconset theme="configure">
@@ -83,7 +83,7 @@
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>&amp;Delete</string>
+        <string>Delete</string>
        </property>
        <property name="icon">
         <iconset theme="edit-delete">
@@ -110,7 +110,7 @@
    <item row="3" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>&amp;Mode:</string>
+      <string>Mode:</string>
      </property>
      <property name="buddy">
       <cstring>mode</cstring>
@@ -130,7 +130,7 @@
    <item row="4" column="0">
     <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>&amp;Link monitoring:</string>
+      <string>Link monitoring:</string>
      </property>
      <property name="buddy">
       <cstring>linkMonitoring</cstring>
@@ -150,7 +150,7 @@
    <item row="5" column="0">
     <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>Monitoring fre&amp;quency:</string>
+      <string>Monitoring frequency:</string>
      </property>
      <property name="buddy">
       <cstring>monitorFreq</cstring>
@@ -189,7 +189,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>Link &amp;up delay:</string>
+          <string>Link up delay:</string>
          </property>
          <property name="buddy">
           <cstring>upDelay</cstring>
@@ -209,7 +209,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_7">
          <property name="text">
-          <string>Lin&amp;k down delay:</string>
+          <string>Link down delay:</string>
          </property>
          <property name="buddy">
           <cstring>downDelay</cstring>
@@ -233,7 +233,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_8">
          <property name="text">
-          <string>ARP &amp;targets:</string>
+          <string>ARP targets:</string>
          </property>
          <property name="buddy">
           <cstring>arpTargets</cstring>
@@ -255,14 +255,19 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
   </customwidget>
   <customwidget>
    <class>KListWidget</class>

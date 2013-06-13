@@ -42,6 +42,8 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
     connect(m_ui->macAddress, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
     connect(m_ui->BSSIDCombo, SIGNAL(bssidChanged()), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+
     if (setting)
         loadConfig(setting);
 }

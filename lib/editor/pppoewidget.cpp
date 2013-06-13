@@ -32,6 +32,8 @@ PppoeWidget::PppoeWidget(const NetworkManager::Setting::Ptr &setting, QWidget* p
     connect(m_ui->cbShowPassword, SIGNAL(toggled(bool)), SLOT(showPassword(bool)));
     connect(m_ui->username, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
+    KAcceleratorManager::manage(this);
+
     if (setting)
         loadConfig(setting);
 }

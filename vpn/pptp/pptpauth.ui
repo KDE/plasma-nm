@@ -23,7 +23,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="textLabel1">
      <property name="text">
-      <string>&amp;Password:</string>
+      <string>Password:</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>
@@ -36,7 +36,7 @@
    <item row="1" column="1">
     <widget class="QCheckBox" name="chkShowPassword">
      <property name="text">
-      <string>&amp;Show password</string>
+      <string>Show password</string>
      </property>
     </widget>
    </item>

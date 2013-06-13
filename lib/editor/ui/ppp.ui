@@ -52,7 +52,7 @@
       <item row="1" column="1">
        <widget class="QCheckBox" name="eap">
         <property name="text">
-         <string>&amp;EAP</string>
+         <string>EAP</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -62,7 +62,7 @@
       <item row="1" column="2">
        <widget class="QCheckBox" name="mschap">
         <property name="text">
-         <string>&amp;MSCHAP</string>
+         <string>MSCHAP</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -72,7 +72,7 @@
       <item row="2" column="1">
        <widget class="QCheckBox" name="pap">
         <property name="text">
-         <string>&amp;PAP</string>
+         <string>PAP</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -82,7 +82,7 @@
       <item row="2" column="2">
        <widget class="QCheckBox" name="mschapv2">
         <property name="text">
-         <string>MSCHAPv&amp;2</string>
+         <string>MSCHAPv2</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -92,7 +92,7 @@
       <item row="3" column="1">
        <widget class="QCheckBox" name="chap">
         <property name="text">
-         <string>&amp;CHAP</string>
+         <string>CHAP</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -123,14 +123,14 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Use point-to-point e&amp;ncryption (MPPE)</string>
+         <string>Use point-to-point encryption (MPPE)</string>
         </property>
        </widget>
       </item>
       <item row="0" column="2">
        <widget class="QCheckBox" name="bsdComp">
         <property name="text">
-         <string>Use &amp;BSD data compression</string>
+         <string>Use BSD data compression</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -165,14 +165,14 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Require &amp;128-bit encryption</string>
+         <string>Require 128-bit encryption</string>
         </property>
        </widget>
       </item>
       <item row="1" column="2">
        <widget class="QCheckBox" name="deflateComp">
         <property name="text">
-         <string>Use &amp;Deflate data compression</string>
+         <string>Use Deflate data compression</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -207,14 +207,14 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Use &amp;stateful MPPE</string>
+         <string>Use stateful MPPE</string>
         </property>
        </widget>
       </item>
       <item row="2" column="2">
        <widget class="QCheckBox" name="tcpComp">
         <property name="text">
-         <string>Use &amp;TCP header compression</string>
+         <string>Use TCP header compression</string>
         </property>
         <property name="checked">
          <bool>true</bool>
@@ -242,7 +242,7 @@
       <item row="0" column="0">
        <widget class="QCheckBox" name="senddEcho">
         <property name="text">
-         <string>Send PPP echo pac&amp;kets</string>
+         <string>Send PPP echo packets</string>
         </property>
         <property name="checked">
          <bool>true</bool>

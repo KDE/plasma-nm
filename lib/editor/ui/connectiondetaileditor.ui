@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Connection &amp;name:</string>
+      <string>Connection name:</string>
      </property>
      <property name="buddy">
       <cstring>connectionName</cstring>
@@ -69,6 +69,7 @@
    <class>KTabWidget</class>
    <extends>QTabWidget</extends>
    <header>ktabwidget.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <tabstops>

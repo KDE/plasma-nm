@@ -27,6 +27,7 @@
 #include <NetworkManagerQt/ConnectionSettings>
 
 #include <KUser>
+#include <KAcceleratorManager>
 
 ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr &settings, QWidget* parent, Qt::WindowFlags f):
     QWidget(parent, f),
@@ -56,6 +57,8 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
         loadConfig(settings);
 
     m_tmpSetting.setPermissions(settings->permissions());
+
+    KAcceleratorManager::manage(this);
 
     connect(m_widget->pushButtonPermissions, SIGNAL(clicked(bool)),
             SLOT(openAdvancedPermissions()));

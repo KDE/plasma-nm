@@ -26,6 +26,7 @@
 #include <KLocalizedString>
 #include <KDebug>
 #include <QList>
+#include <KAcceleratorManager>
 
 #define UserTagRole Qt::UserRole + 1
 
@@ -87,6 +88,8 @@ void AdvancedPermissionsWidget::setupCommon()
     d->ui.currentUsers->sortByColumn(FullName, Qt::AscendingOrder);
     d->ui.availUsers->setSortingEnabled(true);
     d->ui.currentUsers->setSortingEnabled(true);
+
+    KAcceleratorManager::manage(this);
 }
 
 QTreeWidgetItem * AdvancedPermissionsWidget::constructItem(const KUser &user, const QString &itemData)

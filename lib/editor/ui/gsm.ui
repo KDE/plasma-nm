@@ -21,7 +21,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>&amp;Number:</string>
+         <string>Number:</string>
         </property>
         <property name="buddy">
          <cstring>number</cstring>
@@ -38,7 +38,7 @@
       <item row="1" column="0" colspan="2">
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>&amp;Username:</string>
+         <string>Username:</string>
         </property>
         <property name="buddy">
          <cstring>username</cstring>
@@ -51,7 +51,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>&amp;Password:</string>
+         <string>Password:</string>
         </property>
         <property name="buddy">
          <cstring>password</cstring>
@@ -109,14 +109,14 @@
       <item row="3" column="1" colspan="2">
        <widget class="QCheckBox" name="roaming">
         <property name="text">
-         <string>Allow &amp;roaming if home network is not available</string>
+         <string>Allow roaming if home network is not available</string>
         </property>
        </widget>
       </item>
       <item row="0" column="0">
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>&amp;APN:</string>
+         <string>APN:</string>
         </property>
         <property name="buddy">
          <cstring>apn</cstring>
@@ -126,7 +126,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="labelNetworkId">
         <property name="text">
-         <string>N&amp;etwork ID:</string>
+         <string>Network ID:</string>
         </property>
         <property name="buddy">
          <cstring>networkId</cstring>
@@ -146,7 +146,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_6">
         <property name="text">
-         <string>&amp;Type:</string>
+         <string>Type:</string>
         </property>
         <property name="buddy">
          <cstring>type</cstring>
@@ -156,7 +156,7 @@
       <item row="4" column="0">
        <widget class="QLabel" name="label_7">
         <property name="text">
-         <string>P&amp;IN:</string>
+         <string>PIN:</string>
         </property>
         <property name="buddy">
          <cstring>pin</cstring>
@@ -225,7 +225,7 @@
    <item>
     <widget class="QCheckBox" name="cbShowPasswords">
      <property name="text">
-      <string>Sho&amp;w passwords</string>
+      <string>Show passwords</string>
      </property>
     </widget>
    </item>

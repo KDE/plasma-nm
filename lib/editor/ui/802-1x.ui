@@ -15,7 +15,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&amp;Authentication:</string>
+      <string>Authentication:</string>
      </property>
      <property name="buddy">
       <cstring>auth</cstring>
@@ -64,15 +64,12 @@
    </item>
    <item row="1" column="0" colspan="2">
     <widget class="QStackedWidget" name="stackedWidget">
-     <property name="currentIndex">
-      <number>0</number>
-     </property>
      <widget class="QWidget" name="md5Page">
       <layout class="QFormLayout" name="formLayout">
        <item row="0" column="0">
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>&amp;Username:</string>
+          <string>Username:</string>
          </property>
          <property name="buddy">
           <cstring>md5UserName</cstring>
@@ -85,7 +82,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>&amp;Password:</string>
+          <string>Password:</string>
          </property>
          <property name="buddy">
           <cstring>md5Password</cstring>
@@ -102,14 +99,14 @@
        <item row="2" column="1">
         <widget class="QCheckBox" name="cbAskMd5Password">
          <property name="text">
-          <string>A&amp;sk for this password every time</string>
+          <string>Ask for this password every time</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
         <widget class="QCheckBox" name="cbShowMd5Password">
          <property name="text">
-          <string>S&amp;how password</string>
+          <string>Show password</string>
          </property>
         </widget>
        </item>
@@ -123,7 +120,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>&amp;Identity:</string>
+          <string>Identity:</string>
          </property>
          <property name="buddy">
           <cstring>tlsIdentity</cstring>
@@ -136,7 +133,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>&amp;User certificate:</string>
+          <string>User certificate:</string>
          </property>
          <property name="buddy">
           <cstring>tlsUserCert</cstring>
@@ -146,7 +143,7 @@
        <item row="2" column="0">
         <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>&amp;CA certificate:</string>
+          <string>CA certificate:</string>
          </property>
          <property name="buddy">
           <cstring>tlsCACert</cstring>
@@ -163,7 +160,7 @@
        <item row="3" column="0">
         <widget class="QLabel" name="label_7">
          <property name="text">
-          <string>&amp;Private key:</string>
+          <string>Private key:</string>
          </property>
          <property name="buddy">
           <cstring>tlsPrivateKey</cstring>
@@ -180,7 +177,7 @@
        <item row="4" column="0">
         <widget class="QLabel" name="label_8">
          <property name="text">
-          <string>Private &amp;key password:</string>
+          <string>Private key password:</string>
          </property>
          <property name="buddy">
           <cstring>tlsPrivateKeyPassword</cstring>
@@ -197,7 +194,7 @@
        <item row="5" column="1">
         <widget class="QCheckBox" name="cbShowTlsPassword">
          <property name="text">
-          <string>&amp;Show password</string>
+          <string>Show password</string>
          </property>
         </widget>
        </item>
@@ -215,7 +212,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_9">
          <property name="text">
-          <string>&amp;Username:</string>
+          <string>Username:</string>
          </property>
          <property name="buddy">
           <cstring>leapUsername</cstring>
@@ -228,7 +225,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_10">
          <property name="text">
-          <string>&amp;Password:</string>
+          <string>Password:</string>
          </property>
          <property name="buddy">
           <cstring>leapPassword</cstring>
@@ -241,7 +238,7 @@
        <item row="2" column="1">
         <widget class="QCheckBox" name="cbShowLeapPassword">
          <property name="text">
-          <string>&amp;Show password</string>
+          <string>Show password</string>
          </property>
         </widget>
        </item>
@@ -252,7 +249,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_11">
          <property name="text">
-          <string>A&amp;nonymous identity:</string>
+          <string>Anonymous identity:</string>
          </property>
          <property name="buddy">
           <cstring>fastAnonIdentity</cstring>
@@ -265,7 +262,7 @@
        <item row="1" column="0">
         <widget class="QCheckBox" name="fastAllowPacProvisioning">
          <property name="text">
-          <string>Automatic &amp;PAC provisioning</string>
+          <string>Automatic PAC provisioning</string>
          </property>
         </widget>
        </item>
@@ -317,7 +314,7 @@
        <item row="3" column="0">
         <widget class="QLabel" name="label_13">
          <property name="text">
-          <string>&amp;Inner authentication:</string>
+          <string>Inner authentication:</string>
          </property>
          <property name="buddy">
           <cstring>fastInnerAuth</cstring>
@@ -347,7 +344,7 @@
        <item row="4" column="0">
         <widget class="QLabel" name="label_14">
          <property name="text">
-          <string>&amp;Username:</string>
+          <string>Username:</string>
          </property>
          <property name="buddy">
           <cstring>fastUsername</cstring>
@@ -360,7 +357,7 @@
        <item row="5" column="0">
         <widget class="QLabel" name="label_15">
          <property name="text">
-          <string>Pass&amp;word:</string>
+          <string>Password:</string>
          </property>
          <property name="buddy">
           <cstring>fastPassword</cstring>
@@ -384,7 +381,7 @@
        <item row="7" column="1">
         <widget class="QCheckBox" name="cbShowFastPassword">
          <property name="text">
-          <string>S&amp;how password</string>
+          <string>Show password</string>
          </property>
         </widget>
        </item>
@@ -395,7 +392,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_19">
          <property name="text">
-          <string>A&amp;nonymous identity:</string>
+          <string>Anonymous identity:</string>
          </property>
          <property name="buddy">
           <cstring>fastAnonIdentity</cstring>
@@ -408,7 +405,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_20">
          <property name="text">
-          <string>&amp;CA certificate:</string>
+          <string>CA certificate:</string>
          </property>
          <property name="buddy">
           <cstring>tlsCACert</cstring>
@@ -425,7 +422,7 @@
        <item row="2" column="0">
         <widget class="QLabel" name="label_16">
          <property name="text">
-          <string>&amp;Inner authentication:</string>
+          <string>Inner authentication:</string>
          </property>
          <property name="buddy">
           <cstring>fastInnerAuth</cstring>
@@ -465,7 +462,7 @@
        <item row="3" column="0">
         <widget class="QLabel" name="label_17">
          <property name="text">
-          <string>&amp;Username:</string>
+          <string>Username:</string>
          </property>
          <property name="buddy">
           <cstring>fastUsername</cstring>
@@ -478,7 +475,7 @@
        <item row="4" column="0">
         <widget class="QLabel" name="label_18">
          <property name="text">
-          <string>Pass&amp;word:</string>
+          <string>Password:</string>
          </property>
          <property name="buddy">
           <cstring>fastPassword</cstring>
@@ -502,7 +499,7 @@
        <item row="6" column="1">
         <widget class="QCheckBox" name="cbShowTtlsPassword">
          <property name="text">
-          <string>S&amp;how password</string>
+          <string>Show password</string>
          </property>
         </widget>
        </item>
@@ -513,7 +510,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_24">
          <property name="text">
-          <string>A&amp;nonymous identity:</string>
+          <string>Anonymous identity:</string>
          </property>
          <property name="buddy">
           <cstring>fastAnonIdentity</cstring>
@@ -526,7 +523,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_23">
          <property name="text">
-          <string>&amp;CA certificate:</string>
+          <string>CA certificate:</string>
          </property>
          <property name="buddy">
           <cstring>tlsCACert</cstring>
@@ -543,7 +540,7 @@
        <item row="3" column="0">
         <widget class="QLabel" name="label_22">
          <property name="text">
-          <string>&amp;Inner authentication:</string>
+          <string>Inner authentication:</string>
          </property>
          <property name="buddy">
           <cstring>fastInnerAuth</cstring>
@@ -578,7 +575,7 @@
        <item row="4" column="0">
         <widget class="QLabel" name="label_25">
          <property name="text">
-          <string>&amp;Username:</string>
+          <string>Username:</string>
          </property>
          <property name="buddy">
           <cstring>fastUsername</cstring>
@@ -591,7 +588,7 @@
        <item row="5" column="0">
         <widget class="QLabel" name="label_21">
          <property name="text">
-          <string>Pass&amp;word:</string>
+          <string>Password:</string>
          </property>
          <property name="buddy">
           <cstring>fastPassword</cstring>
@@ -615,14 +612,14 @@
        <item row="7" column="1">
         <widget class="QCheckBox" name="cbShowPeapPassword">
          <property name="text">
-          <string>S&amp;how password</string>
+          <string>Show password</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="label_26">
          <property name="text">
-          <string>PEAP &amp;version:</string>
+          <string>PEAP version:</string>
          </property>
          <property name="buddy">
           <cstring>peapVersion</cstring>
@@ -662,14 +659,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
   </customwidget>
   <customwidget>
    <class>KUrlRequester</class>

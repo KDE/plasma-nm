@@ -384,6 +384,7 @@ void ConnectionDetailEditor::initTabs()
         }
     }
     enableOKButton(valid);
+    m_ui->tabWidget->setCurrentIndex(1);
 }
 
 void ConnectionDetailEditor::saveSetting()

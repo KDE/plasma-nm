@@ -38,6 +38,8 @@
 #include <KAboutApplicationDialog>
 #include <KAboutData>
 #include <KAcceleratorManager>
+#include <KConfig>
+#include <KConfigGroup>
 #include <KWallet/Wallet>
 
 #include <NetworkManagerQt/Settings>
@@ -179,6 +181,29 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     KAcceleratorManager::manage(this);
     KAcceleratorManager::manage(m_menu);
     KAcceleratorManager::manage(m_importMenu);
+
+    KConfig config("kde-nm-connection-editor");
+    KConfigGroup generalGroup = config.group("General");
+
+    if (generalGroup.isValid()) {
+        if (generalGroup.readEntry("FirstStart", true)) {
+            if (KWallet::Wallet::isEnabled()) {
+                KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
+
+                if (wallet && wallet->isOpen() && wallet->hasFolder("Network Management")) {
+                    if (KMessageBox::questionYesNo(this, i18n("Do you want to import secrets from the old networkmanagement applet?"), i18n("Import secrets"), KStandardGuiItem::add(),
+                                   KStandardGuiItem::no()) == KMessageBox::Yes) {
+                        importFromApplet();
+                    }
+                }
+
+                if (wallet) {
+                    delete wallet;
+                }
+            }
+            generalGroup.writeEntry("FirstStart", false);
+        }
+    }
 }
 
 ConnectionEditor::~ConnectionEditor()
@@ -405,79 +430,86 @@ void ConnectionEditor::import(QAction * action)
     if (type == SecretsFromFile) {
         // TODO
     } else if (type == SecretsFromApplet) {
-        if (KWallet::Wallet::isEnabled()) {
-            KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
-
-            if (!wallet || !wallet->isOpen()) {
-                return;
-            }
-
-            QMap<QString, QMap<QString, QString> > resultingMap;
-
-            if (wallet->hasFolder("Network Management") && wallet->setFolder("Network Management")) {
-                QMap<QString, QString> tmpMap;
-
-                foreach (const QString & entry, wallet->entryList()) {
-                    wallet->readMap(entry, tmpMap);
-
-                    // Do not recover empty values
-                    QMap<QString, QString> map;
-                    foreach (const QString & key, tmpMap.keys()) {
-                        if (!tmpMap.value(key).isEmpty()) {
-                            // Fix VPN secrets
-                            if (key == "VpnSecrets") {
-                                QString value = tmpMap.value(key);
-                                value.replace("%SEP%", "?SEP?");
-                                map.insert("secrets", value);
-                            } else {
-                                map.insert(key, tmpMap.value(key));
-                            }
-                        }
-                    }
-
-                    if (!map.isEmpty()) {
-                        // Fix UUID
-                        QString correctEntry = entry;
-                        correctEntry.replace('{',"").replace('}',"");
-                        resultingMap.insert(correctEntry, map);
-                    }
-                }
-            } else {
-                m_editor->messageWiget->setMessageType(KMessageWidget::Error);
-                m_editor->messageWiget->setText(i18n("Could not find previous applet for recovering secrets"));
-            }
-
-            if (!wallet->hasFolder("plasma-nm")) {
-                wallet->createFolder("plasma-nm");
-            }
-
-            if (wallet->hasFolder("plasma-nm") && wallet->setFolder("plasma-nm")) {
-                int count = 0;
-                foreach (const QString & entry, resultingMap.keys()) {
-                    QString connectionUuid = entry.split(';').first();
-                    connectionUuid.replace('{',"").replace('}',"");
-                    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(connectionUuid);
-
-                    if (connection) {
-                        wallet->writeMap(entry, resultingMap.value(entry));
-                        ++count;
-                    }
-                }
-
-                m_editor->messageWiget->setMessageType(KMessageWidget::Positive);
-                m_editor->messageWiget->setText(i18n("Imported %1 secrets").arg(count));
-            } else {
-                m_editor->messageWiget->setMessageType(KMessageWidget::Error);
-                m_editor->messageWiget->setText(i18n("Could not open KWallet folder for storing secrets"));
-            }
-
-            delete wallet;
-        } else {
-            m_editor->messageWiget->setMessageType(KMessageWidget::Error);
-            m_editor->messageWiget->setText(i18n("KWallet is not enabled"));
-        }
+        importFromApplet();
     } else if (type == VpnFromFile) {
         // TODO
+    }
+}
+
+void ConnectionEditor::importFromApplet()
+{
+    if (KWallet::Wallet::isEnabled()) {
+        KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
+
+        if (!wallet || !wallet->isOpen()) {
+            return;
+        }
+
+        QMap<QString, QMap<QString, QString> > resultingMap;
+
+        if (wallet->hasFolder("Network Management") && wallet->setFolder("Network Management")) {
+            QMap<QString, QString> tmpMap;
+
+            foreach (const QString & entry, wallet->entryList()) {
+                wallet->readMap(entry, tmpMap);
+
+                // Do not recover empty values
+                QMap<QString, QString> map;
+                foreach (const QString & key, tmpMap.keys()) {
+                    if (!tmpMap.value(key).isEmpty()) {
+                        // Fix VPN secrets
+                        if (key == "VpnSecrets") {
+                            QString value = tmpMap.value(key);
+                            value.replace("%SEP%", "?SEP?");
+                            map.insert("secrets", value);
+                        } else {
+                            map.insert(key, tmpMap.value(key));
+                        }
+                    }
+                }
+
+                if (!map.isEmpty()) {
+                    // Fix UUID
+                    QString correctEntry = entry;
+                    correctEntry.replace('{',"").replace('}',"");
+                    resultingMap.insert(correctEntry, map);
+                }
+            }
+        } else {
+            m_editor->messageWiget->setMessageType(KMessageWidget::Error);
+            m_editor->messageWiget->setText(i18n("Could not find previous applet for recovering secrets"));
+        }
+
+        if (!wallet->hasFolder("plasma-nm")) {
+            wallet->createFolder("plasma-nm");
+        }
+
+        if (wallet->hasFolder("plasma-nm") && wallet->setFolder("plasma-nm")) {
+            int count = 0;
+            foreach (const QString & entry, resultingMap.keys()) {
+                QString connectionUuid = entry.split(';').first();
+                connectionUuid.replace('{',"").replace('}',"");
+                NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(connectionUuid);
+
+                if (connection) {
+                    wallet->writeMap(entry, resultingMap.value(entry));
+                    ++count;
+                }
+            }
+
+            m_editor->messageWiget->setMessageType(KMessageWidget::Positive);
+            m_editor->messageWiget->setText(i18n("Imported %1 secrets").arg(count));
+        } else {
+            m_editor->messageWiget->setMessageType(KMessageWidget::Error);
+            m_editor->messageWiget->setText(i18n("Could not open KWallet folder for storing secrets"));
+        }
+
+        if (wallet) {
+            delete wallet;
+        }
+    } else {
+        m_editor->messageWiget->setMessageType(KMessageWidget::Error);
+        m_editor->messageWiget->setText(i18n("KWallet is not enabled"));
     }
 
     m_editor->messageWiget->animatedShow();

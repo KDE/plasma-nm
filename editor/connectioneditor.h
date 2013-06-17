@@ -41,7 +41,7 @@ Q_OBJECT
 
 public:
     enum ImportType { SecretsFromFile, SecretsFromApplet, VpnFromFile };
-    
+
     explicit ConnectionEditor(QWidget* parent = 0, Qt::WindowFlags flags = 0);
     virtual ~ConnectionEditor();
 
@@ -52,6 +52,7 @@ private Q_SLOTS:
     void editConnection();
     void removeConnection();
     void import(QAction * action);
+    void importFromApplet();
     void connectionAdded(const QString & connection);
     void connectionRemoved(const QString & connection);
     void connectionUpdated();

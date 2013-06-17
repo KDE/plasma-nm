@@ -124,8 +124,7 @@ QString TrafficMonitor::device() const
 
 void TrafficMonitor::resetMonitor()
 {
-    QString na = i18nc("entry not available", "not available");
-    QString format = "<b>%1:</b>&nbsp;%2";
+    const QString format = "<b>%1:</b>&nbsp;%2";
     QString temp;
 
     temp = QString("<qt><table align=\"left\" border=\"0\"><tr><td align=\"right\" width=\"50%\">");
@@ -222,10 +221,10 @@ void TrafficMonitor::updateTraffic()
     m_trafficPlotter->addSample(v);
     m_trafficPlotter->setUnit(m_rxUnit);
 
-    QString s = i18nc("traffic, e.g. n KB/s\n m KB/s", "%1 %2", r, t);
+    const QString s = i18nc("traffic, e.g. n KB/s\n m KB/s", "%1 %2", r, t);
     m_trafficPlotter->setTitle(s);
 
-    QString format = "<b>%1:</b>&nbsp;%2";
+    const QString format = "<b>%1:</b>&nbsp;%2";
     QString temp;
 
     temp = QString("<qt><table align=\"left\" border=\"0\"><tr>");

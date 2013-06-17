@@ -292,7 +292,7 @@ void Model::removeActiveConnection(const QString& active)
 void Model::removeConnection(const QString& connection)
 {
     foreach (ModelItem * item, m_items.itemsByConnection(connection)) {
-        QString name = item->name();
+        const QString name = item->name();
         item->setConnection(QString());
 
         /* We removed connection details, but this connection can be available
@@ -312,7 +312,7 @@ void Model::removeConnection(const QString& connection)
 void Model::removeConnectionsByDevice(const QString& device)
 {
     foreach (ModelItem * item, m_items.itemsByDevice(device)) {
-        QString name = item->name();
+        const QString name = item->name();
         if (removeItem(item)) {
             NMModelDebug() << "Connection " << name << " has been removed (device removed)";
         }
@@ -322,7 +322,7 @@ void Model::removeConnectionsByDevice(const QString& device)
 void Model::removeVpnConnections()
 {
     foreach (ModelItem * item, m_items.itemsByType(NetworkManager::ConnectionSettings::Vpn)) {
-        QString name = item->name();
+        const QString name = item->name();
         if (removeItem(item)) {
             NMModelDebug() << "VPN Connection " << name << " has been removed";
         }

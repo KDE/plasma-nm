@@ -465,6 +465,8 @@ void ConnectionEditor::import(QAction * action)
                 m_editor->messageWiget->setMessageType(KMessageWidget::Error);
                 m_editor->messageWiget->setText(i18n("Could not open KWallet folder for storing secrets"));
             }
+
+            delete wallet;
         } else {
             m_editor->messageWiget->setMessageType(KMessageWidget::Error);
             m_editor->messageWiget->setText(i18n("KWallet is not enabled"));

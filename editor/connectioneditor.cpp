@@ -485,7 +485,7 @@ void ConnectionEditor::connectionAdded(const QString& connection)
 
     m_editor->messageWiget->animatedShow();
     m_editor->messageWiget->setMessageType(KMessageWidget::Positive);
-    m_editor->messageWiget->setText(i18n("Connection has been %1 added").arg(con->name()));
+    m_editor->messageWiget->setText(i18n("Connection %1 has been added").arg(con->name()));
     QTimer::singleShot(5000, m_editor->messageWiget, SLOT(animatedHide()));
 
     insertConnection(con);
@@ -499,7 +499,7 @@ void ConnectionEditor::connectionRemoved(const QString& connection)
         if ((*it)->data(0, ConnectionItem::ConnectionPathRole).toString() == connection) {
             m_editor->messageWiget->animatedShow();
             m_editor->messageWiget->setMessageType(KMessageWidget::Information);
-            m_editor->messageWiget->setText(i18n("Connection has been %1 removed").arg((*it)->text(0)));
+            m_editor->messageWiget->setText(i18n("Connection %1 has been removed").arg((*it)->text(0)));
             QTimer::singleShot(5000, m_editor->messageWiget, SLOT(animatedHide()));
             QTreeWidgetItem * parent = (*it)->parent();
             delete (*it);
@@ -524,7 +524,7 @@ void ConnectionEditor::connectionUpdated()
             (*it)->setText(0, connection->name());
             m_editor->messageWiget->animatedShow();
             m_editor->messageWiget->setMessageType(KMessageWidget::Information);
-            m_editor->messageWiget->setText(i18n("Connection has been %1 updated").arg(connection->name()));
+            m_editor->messageWiget->setText(i18n("Connection %1 has been updated").arg(connection->name()));
             QTimer::singleShot(5000, m_editor->messageWiget, SLOT(animatedHide()));
             break;
         }

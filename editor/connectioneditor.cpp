@@ -191,7 +191,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
                 KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
 
                 if (wallet && wallet->isOpen() && wallet->hasFolder("Network Management")) {
-                    if (KMessageBox::questionYesNo(this, i18n("Do you want to import secrets from the old networkmanagement applet?"), i18n("Import secrets"), KStandardGuiItem::add(),
+                    if (KMessageBox::questionYesNo(this, i18n("Do you want to import secrets from older Plasma NM versions?"), i18n("Import secrets"), KStandardGuiItem::add(),
                                    KStandardGuiItem::no()) == KMessageBox::Yes) {
                         importFromApplet();
                     }

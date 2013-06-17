@@ -407,6 +407,11 @@ void ConnectionEditor::import(QAction * action)
     } else if (type == SecretsFromApplet) {
         if (KWallet::Wallet::isEnabled()) {
             KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
+
+            if (!wallet || !wallet->isOpen()) {
+                return;
+            }
+
             QMap<QString, QMap<QString, QString> > resultingMap;
 
             if (wallet->hasFolder("Network Management") && wallet->setFolder("Network Management")) {

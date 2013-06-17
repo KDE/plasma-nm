@@ -40,6 +40,8 @@ class ConnectionEditor : public KXmlGuiWindow
 Q_OBJECT
 
 public:
+    enum ImportType { SecretsFromFile, SecretsFromApplet, VpnFromFile };
+    
     explicit ConnectionEditor(QWidget* parent = 0, Qt::WindowFlags flags = 0);
     virtual ~ConnectionEditor();
 
@@ -49,6 +51,7 @@ private Q_SLOTS:
     void addConnection(QAction * action);
     void editConnection();
     void removeConnection();
+    void import(QAction * action);
     void connectionAdded(const QString & connection);
     void connectionRemoved(const QString & connection);
     void connectionUpdated();
@@ -58,6 +61,7 @@ private Q_SLOTS:
 private:
     Ui::ConnectionEditor * m_editor;
     QMenu * m_menu;
+    QMenu * m_importMenu;
 
     void insertConnection(const NetworkManager::Connection::Ptr &connection);
     QString formatDateRelative(const QDateTime & lastUsed) const;

@@ -37,6 +37,7 @@
 #include <KAboutApplicationDialog>
 #include <KAboutData>
 #include <KAcceleratorManager>
+#include <KWallet/Wallet>
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
@@ -116,6 +117,30 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 
     m_editor->addButton->setMenu(m_menu);
 
+    m_importMenu = new QMenu(this);
+    m_importMenu->setSeparatorsCollapsible(false);
+
+    action = m_importMenu->addSeparator();
+    action->setText(i18n("Secrets"));
+
+    action = new QAction(i18n("From file..."), this);
+    action->setData(SecretsFromFile);
+    action->setDisabled(true);
+    m_importMenu->addAction(action);
+    action = new QAction(i18n("From old applet"), this);
+    action->setData(SecretsFromApplet);
+    m_importMenu->addAction(action);
+
+    action = m_importMenu->addSeparator();
+    action->setText(i18n("VPN Plugin"));
+
+    action = new QAction(i18n("From file..."), this);
+    action->setData(VpnFromFile);
+    action->setDisabled(true);
+    m_importMenu->addAction(action);
+
+    m_editor->importButton->setMenu(m_importMenu);
+
     m_editor->connectionsWidget->setSortingEnabled(false);
     initializeConnections();
     m_editor->connectionsWidget->setSortingEnabled(true);
@@ -130,10 +155,16 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
             SLOT(removeConnection()));
     connect(m_editor->connectionsWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
             SLOT(editConnection()));
+    connect(m_importMenu, SIGNAL(triggered(QAction*)),
+            SLOT(import(QAction*)));
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
             SLOT(connectionAdded(QString)));
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
             SLOT(connectionRemoved(QString)));
+
+    m_editor->messageWiget->animatedHide();
+    m_editor->messageWiget->setCloseButtonVisible(false);
+    m_editor->messageWiget->setWordWrap(true);
 
     KStandardAction::quit(this, SLOT(close()), actionCollection());
 
@@ -158,13 +189,13 @@ void ConnectionEditor::initializeConnections()
         if (con->settings()->isSlave())
             continue;
         insertConnection(con);
-
-        connect(con.data(), SIGNAL(updated()), SLOT(connectionUpdated()));
     }
 }
 
 void ConnectionEditor::insertConnection(const NetworkManager::Connection::Ptr &connection)
 {
+    connect(connection.data(), SIGNAL(updated()), SLOT(connectionUpdated()));
+
     ConnectionSettings::Ptr settings = connection->settings();
 
     const QString name = settings->id();
@@ -362,6 +393,85 @@ void ConnectionEditor::removeConnection()
     }
 }
 
+void ConnectionEditor::import(QAction * action)
+{
+    ImportType type = static_cast<ImportType>(action->data().toUInt());
+
+    if (type == SecretsFromFile) {
+        // TODO
+    } else if (type == SecretsFromApplet) {
+        if (KWallet::Wallet::isEnabled()) {
+            KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
+            QMap<QString, QMap<QString, QString> > resultingMap;
+
+            if (wallet->hasFolder("Network Management") && wallet->setFolder("Network Management")) {
+                QMap<QString, QString> tmpMap;
+
+                foreach (const QString & entry, wallet->entryList()) {
+                    wallet->readMap(entry, tmpMap);
+
+                    // Do not recover empty values
+                    QMap<QString, QString> map;
+                    foreach (const QString & key, tmpMap.keys()) {
+                        if (!tmpMap.value(key).isEmpty()) {
+                            // Fix VPN secrets
+                            if (key == "VpnSecrets") {
+                                QString value = tmpMap.value(key);
+                                value.replace("%SEP%", "?SEP?");
+                                map.insert("secrets", value);
+                            } else {
+                                map.insert(key, tmpMap.value(key));
+                            }
+                        }
+                    }
+
+                    if (!map.isEmpty()) {
+                        // Fix UUID
+                        QString correctEntry = entry;
+                        correctEntry.replace('{',"").replace('}',"");
+                        resultingMap.insert(correctEntry, map);
+                    }
+                }
+            } else {
+                m_editor->messageWiget->setMessageType(KMessageWidget::Error);
+                m_editor->messageWiget->setText(i18n("Could not find previous applet for recovering secrets"));
+            }
+
+            if (!wallet->hasFolder("plasma-nm")) {
+                wallet->createFolder("plasma-nm");
+            }
+
+            if (wallet->hasFolder("plasma-nm") && wallet->setFolder("plasma-nm")) {
+                int count = 0;
+                foreach (const QString & entry, resultingMap.keys()) {
+                    QString connectionUuid = entry.split(';').first();
+                    connectionUuid.replace('{',"").replace('}',"");
+                    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(connectionUuid);
+
+                    if (connection) {
+                        wallet->writeMap(entry, resultingMap.value(entry));
+                        ++count;
+                    }
+                }
+
+                m_editor->messageWiget->setMessageType(KMessageWidget::Positive);
+                m_editor->messageWiget->setText(i18n("Imported %1 secrets").arg(count));
+            } else {
+                m_editor->messageWiget->setMessageType(KMessageWidget::Error);
+                m_editor->messageWiget->setText(i18n("Could not open KWallet folder for storing secrets"));
+            }
+        } else {
+            m_editor->messageWiget->setMessageType(KMessageWidget::Error);
+            m_editor->messageWiget->setText(i18n("KWallet is not enabled"));
+        }
+    } else if (type == VpnFromFile) {
+        // TODO
+    }
+
+    m_editor->messageWiget->animatedShow();
+    QTimer::singleShot(5000, m_editor->messageWiget, SLOT(animatedHide()));
+}
+
 void ConnectionEditor::connectionAdded(const QString& connection)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
@@ -373,6 +483,11 @@ void ConnectionEditor::connectionAdded(const QString& connection)
     if (con->settings()->isSlave())
         return;
 
+    m_editor->messageWiget->animatedShow();
+    m_editor->messageWiget->setMessageType(KMessageWidget::Positive);
+    m_editor->messageWiget->setText(i18n("Connection has been %1 added").arg(con->name()));
+    QTimer::singleShot(5000, m_editor->messageWiget, SLOT(animatedHide()));
+
     insertConnection(con);
 }
 
@@ -382,11 +497,16 @@ void ConnectionEditor::connectionRemoved(const QString& connection)
 
     while (*it) {
         if ((*it)->data(0, ConnectionItem::ConnectionPathRole).toString() == connection) {
+            m_editor->messageWiget->animatedShow();
+            m_editor->messageWiget->setMessageType(KMessageWidget::Information);
+            m_editor->messageWiget->setText(i18n("Connection has been %1 removed").arg((*it)->text(0)));
+            QTimer::singleShot(5000, m_editor->messageWiget, SLOT(animatedHide()));
             QTreeWidgetItem * parent = (*it)->parent();
             delete (*it);
             if (!parent->childCount()) {
                 delete parent;
             }
+
             break;
         }
         ++it;
@@ -402,6 +522,10 @@ void ConnectionEditor::connectionUpdated()
     while (*it) {
         if ((*it)->data(0, ConnectionItem::ConnectionIdRole).toString() == connection->uuid()) {
             (*it)->setText(0, connection->name());
+            m_editor->messageWiget->animatedShow();
+            m_editor->messageWiget->setMessageType(KMessageWidget::Information);
+            m_editor->messageWiget->setText(i18n("Connection has been %1 updated").arg(connection->name()));
+            QTimer::singleShot(5000, m_editor->messageWiget, SLOT(animatedHide()));
             break;
         }
         ++it;

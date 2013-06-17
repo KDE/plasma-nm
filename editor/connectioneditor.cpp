@@ -34,6 +34,7 @@
 #include <KService>
 #include <KServiceTypeTrader>
 #include <KStandardAction>
+#include <KAction>
 #include <KAboutApplicationDialog>
 #include <KAboutData>
 #include <KAcceleratorManager>
@@ -123,21 +124,24 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     action = m_importMenu->addSeparator();
     action->setText(i18n("Secrets"));
 
-    action = new QAction(i18n("From file..."), this);
-    action->setData(SecretsFromFile);
-    action->setDisabled(true);
-    m_importMenu->addAction(action);
-    action = new QAction(i18n("From old applet"), this);
-    action->setData(SecretsFromApplet);
-    m_importMenu->addAction(action);
+    KAction * kAction = new KAction(i18n("From file..."), this);
+    kAction->setData(SecretsFromFile);
+    kAction->setDisabled(true);
+    m_importMenu->addAction(kAction);
+    actionCollection()->addAction("import_from_file", kAction);
+    kAction = new KAction(i18n("From old applet"), this);
+    kAction->setData(SecretsFromApplet);
+    m_importMenu->addAction(kAction);
+    actionCollection()->addAction("import_from_applet", kAction);
 
     action = m_importMenu->addSeparator();
     action->setText(i18n("VPN Plugin"));
 
-    action = new QAction(i18n("From file..."), this);
-    action->setData(VpnFromFile);
-    action->setDisabled(true);
-    m_importMenu->addAction(action);
+    kAction = new KAction(i18n("From file..."), this);
+    kAction->setData(VpnFromFile);
+    kAction->setDisabled(true);
+    m_importMenu->addAction(kAction);
+    actionCollection()->addAction("import_vpn", kAction);
 
     m_editor->importButton->setMenu(m_importMenu);
 
@@ -174,6 +178,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 
     KAcceleratorManager::manage(this);
     KAcceleratorManager::manage(m_menu);
+    KAcceleratorManager::manage(m_importMenu);
 }
 
 ConnectionEditor::~ConnectionEditor()

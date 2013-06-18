@@ -8,15 +8,31 @@
 
   <MenuBar>
     <Menu name="file" >
-     <Menu name="settings">
+
+     <Menu name="secrets">
       <text>Import Secrets</text>
       <Action name="import_from_file" />
       <Action name="import_from_applet" />
      </Menu>
+
      <Menu name="vpn">
       <text>Import VPN</text>
       <Action name="import_vpn" />
      </Menu>
+
+    </Menu>
+    <Menu name="connection">
+    <text>Connection</text>
+      <Action name="add_connection" />
+      <Action name="edit_connection" />
+      <Action name="delete_connection" />
     </Menu>
   </MenuBar>
+
+  <ToolBar name="mainToolBar" >
+    <text>Main Toolbar</text>
+    <Action name="add_connection" />
+    <Action name="edit_connection" />
+    <Action name="delete_connection" />
+  </ToolBar>
 </gui>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>517</width>
-    <height>567</height>
+    <width>552</width>
+    <height>561</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,96 +19,11 @@
   <property name="windowTitle">
    <string>Connection Editor</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" colspan="2">
-    <widget class="KMessageWidget" name="messageWiget" native="true"/>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="KMessageWidget" name="messageWidget" native="true"/>
    </item>
-   <item row="1" column="1">
-    <widget class="KPushButton" name="addButton">
-     <property name="text">
-      <string>Add</string>
-     </property>
-     <property name="icon">
-      <iconset theme="list-add">
-       <normaloff/>
-      </iconset>
-     </property>
-     <property name="autoDefault">
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="KPushButton" name="editButton">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string>Edit</string>
-     </property>
-     <property name="icon">
-      <iconset theme="configure">
-       <normaloff/>
-      </iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="KPushButton" name="deleteButton">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string>Delete</string>
-     </property>
-     <property name="icon">
-      <iconset theme="edit-delete">
-       <normaloff/>
-      </iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="1">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>444</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="5" column="1">
-    <widget class="KPushButton" name="importButton">
-     <property name="text">
-      <string>Import</string>
-     </property>
-     <property name="icon">
-      <iconset theme="document-import">
-       <normaloff/>
-      </iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="1">
-    <widget class="KPushButton" name="exportButton">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string>Export</string>
-     </property>
-     <property name="icon">
-      <iconset theme="document-export">
-       <normaloff/>
-      </iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0" rowspan="6">
+   <item>
     <widget class="QTreeWidget" name="connectionsWidget">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -177,11 +92,6 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
-  <customwidget>
    <class>KMessageWidget</class>
    <extends>QWidget</extends>
    <header>kmessagewidget.h</header>
@@ -189,9 +99,6 @@
  </customwidgets>
  <tabstops>
   <tabstop>connectionsWidget</tabstop>
-  <tabstop>addButton</tabstop>
-  <tabstop>editButton</tabstop>
-  <tabstop>deleteButton</tabstop>
  </tabstops>
  <resources/>
  <connections/>

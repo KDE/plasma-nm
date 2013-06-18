@@ -35,6 +35,8 @@
 #include <KServiceTypeTrader>
 #include <KStandardAction>
 #include <KAction>
+#include <KXMLGUIFactory>
+#include <KMenu>
 #include <KAboutApplicationDialog>
 #include <KAboutData>
 #include <KAcceleratorManager>
@@ -56,8 +58,9 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     m_editor->setupUi(tmp);
     setCentralWidget(tmp);
 
-    m_menu = new QMenu(this);
-    m_menu->setSeparatorsCollapsible(false);
+    m_menu = new KActionMenu(KIcon("list-add"), i18n("Add"), this);
+    m_menu->menu()->setSeparatorsCollapsible(false);
+    m_menu->setDelayed(false);
 
     QAction * action = m_menu->addSeparator();
     action->setText(i18n("Hardware"));
@@ -118,34 +121,32 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
         m_menu->addAction(action);
     }
 
-    m_editor->addButton->setMenu(m_menu);
+    actionCollection()->addAction("add_connection", m_menu);
 
-    m_importMenu = new QMenu(this);
-    m_importMenu->setSeparatorsCollapsible(false);
+    KAction * kAction = new KAction(KIcon("configure"), i18n("Edit"), this);
+    kAction->setEnabled(false);
+    connect(kAction, SIGNAL(triggered()), SLOT(editConnection()));
+    actionCollection()->addAction("edit_connection", kAction);
 
-    action = m_importMenu->addSeparator();
-    action->setText(i18n("Secrets"));
-
-    KAction * kAction = new KAction(i18n("From file..."), this);
-    kAction->setData(SecretsFromFile);
-    kAction->setDisabled(true);
-    m_importMenu->addAction(kAction);
-    actionCollection()->addAction("import_from_file", kAction);
-    kAction = new KAction(i18n("From old applet"), this);
-    kAction->setData(SecretsFromApplet);
-    m_importMenu->addAction(kAction);
-    actionCollection()->addAction("import_from_applet", kAction);
-
-    action = m_importMenu->addSeparator();
-    action->setText(i18n("VPN Plugin"));
+    kAction = new KAction(KIcon("edit-delete"), i18n("Delete"), this);
+    kAction->setEnabled(false);
+    connect(kAction, SIGNAL(triggered()), SLOT(removeConnection()));
+    actionCollection()->addAction("delete_connection", kAction);
 
     kAction = new KAction(i18n("From file..."), this);
-    kAction->setData(VpnFromFile);
     kAction->setDisabled(true);
-    m_importMenu->addAction(kAction);
-    actionCollection()->addAction("import_vpn", kAction);
+    actionCollection()->addAction("import_from_file", kAction);
+    // connect(kAction, SIGNAL(triggered()), SLOT(importSecretsFromFile()));
 
-    m_editor->importButton->setMenu(m_importMenu);
+    kAction = new KAction(i18n("From old applet"), this);
+    actionCollection()->addAction("import_from_applet", kAction);
+    connect(kAction, SIGNAL(triggered()), SLOT(importSecretsFromApplet()));
+
+    kAction = new KAction(i18n("From file..."), this);
+    kAction->setDisabled(true);
+    actionCollection()->addAction("import_vpn", kAction);
+    // connect(kAction, SIGNAL(triggered()), SLOT(importVPN()));
+
 
     m_editor->connectionsWidget->setSortingEnabled(false);
     initializeConnections();
@@ -153,25 +154,20 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 
     connect(m_editor->connectionsWidget, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
             SLOT(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
-    connect(m_menu, SIGNAL(triggered(QAction*)),
+    connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
             SLOT(addConnection(QAction*)));
-    connect(m_editor->editButton, SIGNAL(clicked()),
-            SLOT(editConnection()));
-    connect(m_editor->deleteButton, SIGNAL(clicked()),
-            SLOT(removeConnection()));
     connect(m_editor->connectionsWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
             SLOT(editConnection()));
-    connect(m_importMenu, SIGNAL(triggered(QAction*)),
-            SLOT(import(QAction*)));
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
             SLOT(connectionAdded(QString)));
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
             SLOT(connectionRemoved(QString)));
 
-    m_editor->messageWiget->animatedHide();
-    m_editor->messageWiget->setCloseButtonVisible(false);
-    m_editor->messageWiget->setWordWrap(true);
+    m_editor->messageWidget->hide();
+    m_editor->messageWidget->setCloseButtonVisible(false);
+    m_editor->messageWidget->setWordWrap(true);
 
+    KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
     KStandardAction::quit(this, SLOT(close()), actionCollection());
 
     createGUI();
@@ -179,8 +175,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     setAutoSaveSettings();
 
     KAcceleratorManager::manage(this);
-    KAcceleratorManager::manage(m_menu);
-    KAcceleratorManager::manage(m_importMenu);
 
     KConfig config("kde-nm-connection-editor");
     KConfigGroup generalGroup = config.group("General");
@@ -193,7 +187,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
                 if (wallet && wallet->isOpen() && wallet->hasFolder("Network Management")) {
                     if (KMessageBox::questionYesNo(this, i18n("Do you want to import secrets from older Plasma NM versions?"), i18n("Import secrets"), KStandardGuiItem::add(),
                                    KStandardGuiItem::no()) == KMessageBox::Yes) {
-                        importFromApplet();
+                        importSecretsFromApplet();
                     }
                 }
 
@@ -280,17 +274,17 @@ QString ConnectionEditor::formatDateRelative(const QDateTime & lastUsed) const
             if (secondsAgo < (60 * 60 )) {
                 int minutesAgo = secondsAgo / 60;
                 lastUsedText = i18ncp(
-                        "Label for last used time for a network connection used in the last hour, as the number of minutes since usage",
-                        "One minute ago",
-                        "%1 minutes ago",
-                        minutesAgo);
+                                   "Label for last used time for a network connection used in the last hour, as the number of minutes since usage",
+                                   "One minute ago",
+                                   "%1 minutes ago",
+                                   minutesAgo);
             } else {
                 int hoursAgo = secondsAgo / (60 * 60);
                 lastUsedText = i18ncp(
-                        "Label for last used time for a network connection used in the last day, as the number of hours since usage",
-                        "One hour ago",
-                        "%1 hours ago",
-                        hoursAgo);
+                                   "Label for last used time for a network connection used in the last day, as the number of hours since usage",
+                                   "One hour ago",
+                                   "%1 hours ago",
+                                   hoursAgo);
             }
         } else if (lastUsed.daysTo(now) == 1) {
             lastUsedText = i18nc("Label for last used time for a network connection used the previous day", "Yesterday");
@@ -331,11 +325,11 @@ void ConnectionEditor::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetI
     qDebug() << "Current item" << current->text(0) << "type:" << current->data(0, Qt::UserRole).toString();
 
     if (current->data(0, Qt::UserRole).toString() == "connection") {
-        m_editor->editButton->setEnabled(true);
-        m_editor->deleteButton->setEnabled(true);
+        actionCollection()->action("edit_connection")->setEnabled(true);
+        actionCollection()->action("delete_connection")->setEnabled(true);
     } else {
-        m_editor->editButton->setDisabled(true);
-        m_editor->deleteButton->setDisabled(true);
+        actionCollection()->action("edit_connection")->setEnabled(false);
+        actionCollection()->action("delete_connection")->setEnabled(false);
     }
 }
 
@@ -423,20 +417,7 @@ void ConnectionEditor::removeConnection()
     }
 }
 
-void ConnectionEditor::import(QAction * action)
-{
-    ImportType type = static_cast<ImportType>(action->data().toUInt());
-
-    if (type == SecretsFromFile) {
-        // TODO
-    } else if (type == SecretsFromApplet) {
-        importFromApplet();
-    } else if (type == VpnFromFile) {
-        // TODO
-    }
-}
-
-void ConnectionEditor::importFromApplet()
+void ConnectionEditor::importSecretsFromApplet()
 {
     if (KWallet::Wallet::isEnabled()) {
         KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
@@ -476,8 +457,8 @@ void ConnectionEditor::importFromApplet()
                 }
             }
         } else {
-            m_editor->messageWiget->setMessageType(KMessageWidget::Error);
-            m_editor->messageWiget->setText(i18n("Could not find previous applet for recovering secrets"));
+            m_editor->messageWidget->setMessageType(KMessageWidget::Error);
+            m_editor->messageWidget->setText(i18n("Could not find previous applet for recovering secrets"));
         }
 
         if (!wallet->hasFolder("plasma-nm")) {
@@ -497,23 +478,21 @@ void ConnectionEditor::importFromApplet()
                 }
             }
 
-            m_editor->messageWiget->setMessageType(KMessageWidget::Positive);
-            m_editor->messageWiget->setText(i18n("Imported %1 secrets").arg(count));
+            m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
+            m_editor->messageWidget->setText(i18np("Imported 1 secret", "Imported %1 secrets", count));
         } else {
-            m_editor->messageWiget->setMessageType(KMessageWidget::Error);
-            m_editor->messageWiget->setText(i18n("Could not open KWallet folder for storing secrets"));
+            m_editor->messageWidget->setMessageType(KMessageWidget::Error);
+            m_editor->messageWidget->setText(i18n("Could not open KWallet folder for storing secrets"));
         }
 
-        if (wallet) {
-            delete wallet;
-        }
+        delete wallet;
     } else {
-        m_editor->messageWiget->setMessageType(KMessageWidget::Error);
-        m_editor->messageWiget->setText(i18n("KWallet is not enabled"));
+        m_editor->messageWidget->setMessageType(KMessageWidget::Error);
+        m_editor->messageWidget->setText(i18n("KWallet is not enabled"));
     }
 
-    m_editor->messageWiget->animatedShow();
-    QTimer::singleShot(5000, m_editor->messageWiget, SLOT(animatedHide()));
+    m_editor->messageWidget->animatedShow();
+    QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
 }
 
 void ConnectionEditor::connectionAdded(const QString& connection)
@@ -527,10 +506,10 @@ void ConnectionEditor::connectionAdded(const QString& connection)
     if (con->settings()->isSlave())
         return;
 
-    m_editor->messageWiget->animatedShow();
-    m_editor->messageWiget->setMessageType(KMessageWidget::Positive);
-    m_editor->messageWiget->setText(i18n("Connection %1 has been added").arg(con->name()));
-    QTimer::singleShot(5000, m_editor->messageWiget, SLOT(animatedHide()));
+    m_editor->messageWidget->animatedShow();
+    m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
+    m_editor->messageWidget->setText(i18n("Connection %1 has been added").arg(con->name()));
+    QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
 
     insertConnection(con);
 }
@@ -541,10 +520,10 @@ void ConnectionEditor::connectionRemoved(const QString& connection)
 
     while (*it) {
         if ((*it)->data(0, ConnectionItem::ConnectionPathRole).toString() == connection) {
-            m_editor->messageWiget->animatedShow();
-            m_editor->messageWiget->setMessageType(KMessageWidget::Information);
-            m_editor->messageWiget->setText(i18n("Connection %1 has been removed").arg((*it)->text(0)));
-            QTimer::singleShot(5000, m_editor->messageWiget, SLOT(animatedHide()));
+            m_editor->messageWidget->animatedShow();
+            m_editor->messageWidget->setMessageType(KMessageWidget::Information);
+            m_editor->messageWidget->setText(i18n("Connection %1 has been removed").arg((*it)->text(0)));
+            QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
             QTreeWidgetItem * parent = (*it)->parent();
             delete (*it);
             if (!parent->childCount()) {
@@ -566,10 +545,10 @@ void ConnectionEditor::connectionUpdated()
     while (*it) {
         if ((*it)->data(0, ConnectionItem::ConnectionIdRole).toString() == connection->uuid()) {
             (*it)->setText(0, connection->name());
-            m_editor->messageWiget->animatedShow();
-            m_editor->messageWiget->setMessageType(KMessageWidget::Information);
-            m_editor->messageWiget->setText(i18n("Connection %1 has been updated").arg(connection->name()));
-            QTimer::singleShot(5000, m_editor->messageWiget, SLOT(animatedHide()));
+            m_editor->messageWidget->animatedShow();
+            m_editor->messageWidget->setMessageType(KMessageWidget::Information);
+            m_editor->messageWidget->setText(i18n("Connection %1 has been updated").arg(connection->name()));
+            QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
             break;
         }
         ++it;

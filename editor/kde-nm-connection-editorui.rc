@@ -9,11 +9,10 @@
   <MenuBar>
     <Menu name="file" >
 
-     <Menu name="secrets">
+<!--     <Menu name="secrets">
       <text>Import Secrets</text>
-      <Action name="import_from_file" />
       <Action name="import_from_applet" />
-     </Menu>
+     </Menu>-->
 
      <Menu name="vpn">
       <text>Import VPN</text>

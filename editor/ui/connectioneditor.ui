@@ -24,6 +24,19 @@
     <widget class="KMessageWidget" name="messageWidget" native="true"/>
    </item>
    <item>
+    <widget class="KTreeWidgetSearchLine" name="ktreewidgetsearchline">
+     <property name="urlDropsEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="clickMessage">
+      <string>Search connections...</string>
+     </property>
+     <property name="keepParentsVisible">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QTreeWidget" name="connectionsWidget">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -92,12 +105,23 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KTreeWidgetSearchLine</class>
+   <extends>KLineEdit</extends>
+   <header>ktreewidgetsearchline.h</header>
+  </customwidget>
+  <customwidget>
    <class>KMessageWidget</class>
    <extends>QWidget</extends>
    <header>kmessagewidget.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
+  <tabstop>ktreewidgetsearchline</tabstop>
   <tabstop>connectionsWidget</tabstop>
  </tabstops>
  <resources/>

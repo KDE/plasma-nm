@@ -136,7 +136,7 @@ QStringList MobileProviders::getProvidersList(QString country, NetworkManager::C
                         }
                         n3 = n3.nextSibling();
                     }
-                    QString name = getNameByLocale(localizedProviderNames);
+                    const QString name = getNameByLocale(localizedProviderNames);
                     if (hasGsm) {
                         mProvidersGsm.insert(name, e2.firstChild());
                         sortedGsm.insert(name.toLower(), name);

@@ -31,9 +31,6 @@
      <property name="clickMessage">
       <string>Search connections...</string>
      </property>
-     <property name="keepParentsVisible">
-      <bool>false</bool>
-     </property>
     </widget>
    </item>
    <item>

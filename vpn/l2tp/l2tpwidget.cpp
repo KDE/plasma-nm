@@ -53,6 +53,8 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
 L2tpWidget::~L2tpWidget()
 {
+    m_tmpAdvancedSetting.clear();
+    m_tmpPppSetting.clear();
     delete m_ui;
 }
 

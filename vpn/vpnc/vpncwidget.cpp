@@ -50,6 +50,7 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
 VpncWidget::~VpncWidget()
 {
+    m_tmpSetting.clear();
     delete m_ui;
 }
 

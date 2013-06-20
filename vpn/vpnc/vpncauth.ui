@@ -131,6 +131,13 @@
    <header>klineedit.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>leUserName</tabstop>
+  <tabstop>leUserPassword</tabstop>
+  <tabstop>leGroupName</tabstop>
+  <tabstop>leGroupPassword</tabstop>
+  <tabstop>cbShowPasswords</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

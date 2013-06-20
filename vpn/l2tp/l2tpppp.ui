@@ -16,64 +16,60 @@
      <property name="title">
       <string>Authentication</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_3">
+     <layout class="QFormLayout" name="formLayout_5">
       <item row="0" column="0">
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <widget class="QLabel" name="lblauth">
+        <property name="text">
+         <string>Allow following authentication methods:</string>
+        </property>
+        <property name="buddy">
+         <cstring>listWidget</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QListWidget" name="listWidget">
         <item>
-         <widget class="QLabel" name="lblauth">
-          <property name="text">
-           <string>Allow following authentication methods:</string>
-          </property>
-          <property name="buddy">
-           <cstring>listWidget</cstring>
-          </property>
-         </widget>
+         <property name="text">
+          <string>PAP</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
         </item>
         <item>
-         <widget class="QListWidget" name="listWidget">
-          <item>
-           <property name="text">
-            <string>PAP</string>
-           </property>
-           <property name="checkState">
-            <enum>Checked</enum>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>CHAP</string>
-           </property>
-           <property name="checkState">
-            <enum>Checked</enum>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>MSCHAP</string>
-           </property>
-           <property name="checkState">
-            <enum>Checked</enum>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>MSCHAPv2</string>
-           </property>
-           <property name="checkState">
-            <enum>Checked</enum>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>EAP</string>
-           </property>
-           <property name="checkState">
-            <enum>Checked</enum>
-           </property>
-          </item>
-         </widget>
+         <property name="text">
+          <string>CHAP</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
         </item>
-       </layout>
+        <item>
+         <property name="text">
+          <string>MSCHAP</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>MSCHAPv2</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>EAP</string>
+         </property>
+         <property name="checkState">
+          <enum>Checked</enum>
+         </property>
+        </item>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -92,60 +88,54 @@
      <property name="checked">
       <bool>false</bool>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QLabel" name="lblMMPEcrypto">
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Crypto:</string>
-            </property>
-            <property name="buddy">
-             <cstring>cbMPPECrypto</cstring>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="KComboBox" name="cbMPPECrypto">
-            <item>
-             <property name="text">
-              <string comment="like in use Any configuration">Any</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>128 bit</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>40 bit</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
+     <layout class="QFormLayout" name="formLayout_4">
+      <item row="0" column="0">
+       <widget class="QLabel" name="lblMMPEcrypto">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Crypto:</string>
+        </property>
+        <property name="buddy">
+         <cstring>cbMPPECrypto</cstring>
+        </property>
+       </widget>
       </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item row="0" column="1">
+       <widget class="KComboBox" name="cbMPPECrypto">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <item>
-         <widget class="QCheckBox" name="cbstatefulEncryption">
-          <property name="text">
-           <string>Use stateful encryption</string>
-          </property>
-         </widget>
+         <property name="text">
+          <string comment="like in use Any configuration">Any</string>
+         </property>
         </item>
-       </layout>
+        <item>
+         <property name="text">
+          <string>128 bit</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>40 bit</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QCheckBox" name="cbstatefulEncryption">
+        <property name="text">
+         <string>Use stateful encryption</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -156,62 +146,61 @@
       <string>Compression</string>
      </property>
      <layout class="QFormLayout" name="formLayout">
-      <item row="0" column="0" colspan="2">
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QCheckBox" name="cbBSD">
-          <property name="text">
-           <string>Allow BSD compression</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="cbdeflate">
-          <property name="text">
-           <string>Allow Deflate compression</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="cbTCPheaders">
-          <property name="text">
-           <string>Allow TCP header compression</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="cbCompressionNegotiation">
-          <property name="text">
-           <string>Use protocol field compression negotiation</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-          <property name="tristate">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="cbAddressControlCompression">
-          <property name="text">
-           <string>Use Address/Control compression</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
+      <property name="labelAlignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="cbBSD">
+        <property name="text">
+         <string>Allow BSD compression</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="cbdeflate">
+        <property name="text">
+         <string>Allow Deflate compression</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="cbTCPheaders">
+        <property name="text">
+         <string>Allow TCP header compression</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QCheckBox" name="cbCompressionNegotiation">
+        <property name="text">
+         <string>Use protocol field compression negotiation</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+        <property name="tristate">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QCheckBox" name="cbAddressControlCompression">
+        <property name="text">
+         <string>Use Address/Control compression</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>

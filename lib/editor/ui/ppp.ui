@@ -6,50 +6,30 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>558</width>
-    <height>480</height>
+    <width>440</width>
+    <height>423</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QGroupBox" name="authGroup">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="title">
       <string>Authentication</string>
      </property>
-     <property name="flat">
-      <bool>false</bool>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0" colspan="3">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;In most cases, the provider's PPP servers will support all authentication methods. If connection fails, try disabling some of the methods.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::RichText</enum>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="1">
+     <layout class="QFormLayout" name="formLayout">
+      <property name="fieldGrowthPolicy">
+       <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+      </property>
+      <property name="labelAlignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <item row="0" column="0">
        <widget class="QCheckBox" name="eap">
         <property name="text">
          <string>EAP</string>
@@ -59,7 +39,7 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="2">
+      <item row="1" column="0">
        <widget class="QCheckBox" name="mschap">
         <property name="text">
          <string>MSCHAP</string>
@@ -69,7 +49,7 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
+      <item row="2" column="0">
        <widget class="QCheckBox" name="pap">
         <property name="text">
          <string>PAP</string>
@@ -79,7 +59,7 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
+      <item row="3" column="0">
        <widget class="QCheckBox" name="mschapv2">
         <property name="text">
          <string>MSCHAPv2</string>
@@ -89,7 +69,7 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
+      <item row="4" column="0">
        <widget class="QCheckBox" name="chap">
         <property name="text">
          <string>CHAP</string>
@@ -113,21 +93,18 @@
      <property name="checkable">
       <bool>false</bool>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0" colspan="2">
+     <layout class="QFormLayout" name="formLayout_2">
+      <property name="labelAlignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <item row="0" column="0">
        <widget class="QCheckBox" name="mppe">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
         <property name="text">
          <string>Use point-to-point encryption (MPPE)</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
+      <item row="4" column="0">
        <widget class="QCheckBox" name="bsdComp">
         <property name="text">
          <string>Use BSD data compression</string>
@@ -137,39 +114,7 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <spacer name="horizontalSpacer_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="1" column="1">
-       <widget class="QCheckBox" name="mppe128">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Require 128-bit encryption</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
+      <item row="5" column="0">
        <widget class="QCheckBox" name="deflateComp">
         <property name="text">
          <string>Use Deflate data compression</string>
@@ -179,39 +124,7 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <spacer name="horizontalSpacer_3">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="2" column="1">
-       <widget class="QCheckBox" name="mppeStateful">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Use stateful MPPE</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
+      <item row="6" column="0">
        <widget class="QCheckBox" name="tcpComp">
         <property name="text">
          <string>Use TCP header compression</string>
@@ -221,13 +134,33 @@
         </property>
        </widget>
       </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="mppe128">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding-left: 20px</string>
+        </property>
+        <property name="text">
+         <string>Require 128-bit encryption</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="mppeStateful">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding-left: 20px</string>
+        </property>
+        <property name="text">
+         <string>Use stateful MPPE</string>
+        </property>
+       </widget>
+      </item>
      </layout>
-     <zorder>mppe</zorder>
-     <zorder>mppe128</zorder>
-     <zorder>mppeStateful</zorder>
-     <zorder>bsdComp</zorder>
-     <zorder>deflateComp</zorder>
-     <zorder>tcpComp</zorder>
     </widget>
    </item>
    <item>
@@ -269,13 +202,11 @@
  </widget>
  <tabstops>
   <tabstop>eap</tabstop>
-  <tabstop>pap</tabstop>
-  <tabstop>chap</tabstop>
   <tabstop>mschap</tabstop>
+  <tabstop>pap</tabstop>
   <tabstop>mschapv2</tabstop>
+  <tabstop>chap</tabstop>
   <tabstop>mppe</tabstop>
-  <tabstop>mppe128</tabstop>
-  <tabstop>mppeStateful</tabstop>
   <tabstop>bsdComp</tabstop>
   <tabstop>deflateComp</tabstop>
   <tabstop>tcpComp</tabstop>

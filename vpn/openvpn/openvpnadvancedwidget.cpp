@@ -72,8 +72,8 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     connect(m_ui->cmbProxyType, SIGNAL(currentIndexChanged(int)), this, SLOT(proxyTypeChanged(int)));
 
     // start openVPN process and get its cipher list
-    QString openVpnBinary = KStandardDirs::findExe("openvpn", "/sbin:/usr/sbin");
-    QStringList args(QLatin1String("--show-ciphers"));
+    const QString openVpnBinary = KStandardDirs::findExe("openvpn", "/sbin:/usr/sbin");
+    const QStringList args(QLatin1String("--show-ciphers"));
     d->openvpnProcess = new KProcess(this);
     d->openvpnProcess->setOutputChannelMode(KProcess::OnlyStdoutChannel);
     d->openvpnProcess->setReadChannel(QProcess::StandardOutput);
@@ -117,7 +117,7 @@ void OpenVpnAdvancedWidget::openVpnFinished(int exitCode, QProcess::ExitStatus e
     m_ui->cboCipher->removeItem(0);
     if (!exitCode && exitStatus == QProcess::NormalExit) {
         m_ui->cboCipher->addItem(i18nc("@item::inlist Default openvpn cipher item", "Default"));
-        QList<QByteArray> rawOutputLines = d->openVpnCiphers.split('\n');
+        const QList<QByteArray> rawOutputLines = d->openVpnCiphers.split('\n');
         bool foundFirstSpace = false;;
         foreach (const QByteArray &cipher, rawOutputLines) {
             if (cipher.length() == 0) {
@@ -141,7 +141,7 @@ void OpenVpnAdvancedWidget::openVpnFinished(int exitCode, QProcess::ExitStatus e
     d->gotOpenVpnCiphers = true;
 
     if (d->readConfig) {
-        NMStringMap dataMap = d->setting->data();
+        const NMStringMap dataMap = d->setting->data();
         if (dataMap.contains(NM_OPENVPN_KEY_CIPHER)) {
             m_ui->cboCipher->setCurrentIndex(m_ui->cboCipher->findText(dataMap.value(NM_OPENVPN_KEY_CIPHER)));
         }
@@ -215,7 +215,7 @@ void OpenVpnAdvancedWidget::loadConfig()
     m_ui->useExtraTlsAuth->setChecked(!dataMap[NM_OPENVPN_KEY_TA].isEmpty());
     m_ui->kurlTlsAuthKey->setUrl(KUrl(dataMap[NM_OPENVPN_KEY_TA]) );
     if (dataMap.contains(NM_OPENVPN_KEY_TA_DIR)) {
-        uint tlsAuthDirection = dataMap[NM_OPENVPN_KEY_TA_DIR].toUInt();
+        const uint tlsAuthDirection = dataMap[NM_OPENVPN_KEY_TA_DIR].toUInt();
         m_ui->cboDirection->setCurrentIndex(tlsAuthDirection + 1);
     }
     // Proxies

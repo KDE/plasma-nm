@@ -199,7 +199,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 
             if (importFromWallet || importFromFiles) {
                 if (KMessageBox::questionYesNo(this, i18n("Do you want to import secrets from older Plasma NM versions?"), i18n("Import secrets"), KStandardGuiItem::add(),
-                                   KStandardGuiItem::no()) == KMessageBox::Yes) {
+                                               KStandardGuiItem::no()) == KMessageBox::Yes) {
                     if (importFromFiles) {
                         importPreviousSecretsFromFiles();
                     }
@@ -538,7 +538,7 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
 
 
         if (!wallet->hasFolder("plasma-nm")) {
-                wallet->createFolder("plasma-nm");
+            wallet->createFolder("plasma-nm");
         }
 
         if (wallet->hasFolder("plasma-nm") && wallet->setFolder("plasma-nm")) {
@@ -564,7 +564,7 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
         int count = 0;
         KConfig config("plasma-nm");
         foreach (const QString & groupName, map.keys()) {
-        KConfigGroup secretsGroup = config.group(groupName);
+            KConfigGroup secretsGroup = config.group(groupName);
             NMStringMap secretsMap = map.value(groupName);
             NMStringMap::ConstIterator i = secretsMap.constBegin();
             while (i != secretsMap.constEnd()) {

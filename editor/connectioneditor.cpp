@@ -518,7 +518,6 @@ QMap< QString, QString > ConnectionEditor::getCorrectMapWithSecrets(const QMap< 
             // Fix VPN secrets
             if (key == "VpnSecrets") {
                 QString value = map.value(key);
-                value.replace("%SEP%", "?SEP?");
                 correctMap.insert("secrets", value);
             } else {
                 correctMap.insert(key, map.value(key));

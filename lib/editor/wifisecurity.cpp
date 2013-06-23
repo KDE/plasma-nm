@@ -126,20 +126,20 @@ void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x
                && authAlg == NetworkManager::WirelessSecuritySetting::Leap) {
-        m_ui->securityCombo->setCurrentIndex(2);  // LEAP
+        m_ui->securityCombo->setCurrentIndex(3);  // LEAP
         m_ui->leapUsername->setText(wifiSecurity->leapUsername());
         m_ui->leapPassword->setText(wifiSecurity->leapPassword());
 
     } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x) {
-        m_ui->securityCombo->setCurrentIndex(3);  // Dynamic WEP
+        m_ui->securityCombo->setCurrentIndex(4);  // Dynamic WEP
         // done in the widget
 
     } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::WpaPsk) {
-        m_ui->securityCombo->setCurrentIndex(4);  // WPA
+        m_ui->securityCombo->setCurrentIndex(5);  // WPA
         m_ui->psk->setText(wifiSecurity->psk());
 
     } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEap) {
-        m_ui->securityCombo->setCurrentIndex(5);  // WPA2 Enterprise
+        m_ui->securityCombo->setCurrentIndex(6);  // WPA2 Enterprise
         // done in the widget
     }
 }
@@ -177,7 +177,7 @@ QVariantMap WifiSecurity::setting(bool agentOwned) const
             wifiSecurity.setAuthAlg(NetworkManager::WirelessSecuritySetting::Open);
         else
             wifiSecurity.setAuthAlg(NetworkManager::WirelessSecuritySetting::Shared);
-    } else if (securityIndex == 2) { // LEAP
+    } else if (securityIndex == 3) { // LEAP
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::Ieee8021x);
         wifiSecurity.setAuthAlg(NetworkManager::WirelessSecuritySetting::Leap);
         wifiSecurity.setLeapUsername(m_ui->leapUsername->text());
@@ -185,15 +185,15 @@ QVariantMap WifiSecurity::setting(bool agentOwned) const
         if (agentOwned) {
             wifiSecurity.setLeapPasswordFlags(NetworkManager::Setting::AgentOwned);
         }
-    } else if (securityIndex == 3) {  // Dynamic WEP
+    } else if (securityIndex == 4) {  // Dynamic WEP
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::Ieee8021x);
-    } else if (securityIndex == 4) { // WPA
+    } else if (securityIndex == 5) { // WPA
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
         wifiSecurity.setPsk(m_ui->psk->text());
         if (agentOwned) {
             wifiSecurity.setPskFlags(NetworkManager::Setting::AgentOwned);
         }
-    } else if (securityIndex == 5) {  // WPA2 Enterprise
+    } else if (securityIndex == 6) {  // WPA2 Enterprise
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaEap);
     }
 

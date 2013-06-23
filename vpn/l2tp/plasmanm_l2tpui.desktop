@@ -23,6 +23,7 @@ Name[sk]=L2TP
 Name[sv]=L2TP
 Name[uk]=L2TP
 Name[x-test]=xxL2TPxx
+Name[zh_CN]=L2TP
 Comment=L2TP plugin
 Comment[cs]=Modul L2TP
 Comment[fi]=L2TP-liitännäinen
@@ -33,4 +34,5 @@ Comment[sk]=Plugin L2TP
 Comment[sv]=Insticksprogram för L2TP
 Comment[uk]=Додаток L2TP
 Comment[x-test]=xxL2TP pluginxx
+Comment[zh_CN]=L2TP 插件
 

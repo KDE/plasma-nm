@@ -56,3 +56,5 @@ add_subdirectory(vpn)
 add_subdirectory(kded)
 add_subdirectory(kcm)
 add_subdirectory(settings)
+
+add_subdirectory(active)

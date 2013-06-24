@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Network Setting
+Comment=Network status and control
+Encoding=UTF-8
+Type=Service
+Icon=preferences-system-network
+X-KDE-ServiceTypes=Active/SettingsModule
+X-KDE-Library=active_settings_network
+X-KDE-PluginInfo-Author=Jan Grulich
+X-KDE-PluginInfo-Email=jgrulich@redhat.com
+X-KDE-PluginInfo-Name=org.kde.active.settings.network
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=http://plasma-active.org
+X-KDE-PluginInfo-Category=Online Services
+X-KDE-PluginInfo-License=GPL
+X-Plasma-Package=org.kde.active.settings.network
+X-Plasma-MainScript=ui/Network.qml

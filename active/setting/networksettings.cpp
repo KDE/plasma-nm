@@ -133,6 +133,7 @@ void NetworkSettings::setNetwork(uint type, const QString& path)
                     SLOT(updateStatus()), Qt::UniqueConnection);
             connect(device.data(), SIGNAL(activeConnectionChanged()),
                     SLOT(updateStatus()), Qt::UniqueConnection);
+            //TODO: icon changes
         }
     }
 
@@ -172,53 +173,40 @@ void NetworkSettings::activeConnectionAdded(const QString& active)
 
 void NetworkSettings::updateIcon()
 {
-    /* if (m_type == NetworkModelItem::Bridge) {
-        // TODO: missing Bridge icon
-        return "network-wired";
-    } else if (m_type == NetworkModelItem::Bond) {
-        // TODO: missing Bond icon
-        return "network-wired";
-    } else */if (d->type == NetworkModelItem::Ethernet) {
-        setIcon("network-wired");
-    } /*else if (m_type == NetworkModelItem::Vlan) {
-        // TODO: missing Vlan icon
-        return "network-wired";
-    } */else if (d->type == NetworkModelItem::Vpn) {
-        setIcon("secure-card");
-    } else if (d->type == NetworkModelItem::Wifi) {
-        setIcon("network-wireless");
+    if (d->type != NetworkModelItem::Vpn) {
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);
+        if (device) {
+            setIcon(UiUtils::iconName(device));
+        }
     } else {
-        setIcon("network-wired");
+        NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(d->path);
+        if (connection) {
+            QString title;
+            setIcon(UiUtils::iconAndTitleForConnectionSettingsType(connection->settings()->connectionType(), title));
+        }
     }
 }
 
 void NetworkSettings::updateName()
 {
-    /*if (m_type == NetworkModelItem::Bridge) {
-        return i18n("Bridge");
-    } else if (m_type == NetworkModelItem::Bond) {
-        return i18n("Bond");
-    } else */if (d->type == NetworkModelItem::Ethernet) {
-        setName(i18n("Ethernet"));
-    } /*else if (m_type == NetworkModelItem::Vlan) {
-        return i18n("Vlan");
-    } */else if (d->type == NetworkModelItem::Vpn) {
+    if (d->type != NetworkModelItem::Vpn) {
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);
+        if (device) {
+            setName(UiUtils::interfaceTypeLabel(device->type(), device));
+        }
+    } else {
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(d->path);
         if (connection) {
             setName(i18n("VPN %1").arg(connection->name()));
         } else {
             setName(i18n("VPN"));
         }
-    } else if (d->type == NetworkModelItem::Wifi) {
-        setName(i18n("Wifi"));
-    } else {
-        setName(i18n("Unknown"));
     }
 }
 
 void NetworkSettings::updateStatus()
 {
-    if (d->type == NetworkModelItem::Ethernet) {
+    if (d->type != NetworkModelItem::Vpn) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);
         if (device) {
             NetworkManager::ActiveConnection::Ptr activeConnection = device->activeConnection();
@@ -226,16 +214,6 @@ void NetworkSettings::updateStatus()
                 setStatus(UiUtils::connectionStateToString(device->state(), activeConnection->connection()->name()));
             } else {
                 setStatus(UiUtils::connectionStateToString(device->state()));
-            }
-        }
-    } else if (d->type == NetworkModelItem::Wifi) {
-        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);
-        if (device) {
-            NetworkManager::ActiveConnection::Ptr activeConnection = device->activeConnection();
-            if (activeConnection) {
-                setStatus(UiUtils::connectionStateToString(device->state(), activeConnection->connection()->name()));
-            } else {
-                setStatus(UiUtils::connectionStateToString(device->state(), QString()));
             }
         }
     } else if (d->type == NetworkModelItem::Vpn) {

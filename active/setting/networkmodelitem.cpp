@@ -61,26 +61,21 @@ void NetworkModelItem::setPath(const QString & path)
 
 QString NetworkModelItem::name() const
 {
-    /*if (m_type == NetworkModelItem::Bridge) {
-        return i18n("Bridge");
-    } else if (m_type == NetworkModelItem::Bond) {
-        return i18n("Bond");
-    } else */if (m_type == NetworkModelItem::Ethernet) {
-        return i18n("Ethernet");
-    } /*else if (m_type == NetworkModelItem::Vlan) {
-        return i18n("Vlan");
-    } */else if (m_type == NetworkModelItem::Vpn) {
+    if (m_type != Vpn) {
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_path);
+        if (device) {
+            return UiUtils::interfaceTypeLabel(device->type(), device);
+        }
+    } else {
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_path);
         if (connection) {
             return i18n("VPN %1").arg(connection->name());
         } else {
             return i18n("VPN");
         }
-    } else if (m_type == NetworkModelItem::Wifi) {
-        return i18n("Wifi");
     }
 
-    return i18n("Unknown");
+    return i18n("Uknown");
 }
 
 QString NetworkModelItem::icon() const

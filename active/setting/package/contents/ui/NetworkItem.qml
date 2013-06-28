@@ -43,7 +43,7 @@ PlasmaComponents.ListItem {
         width: 35; height: 35;
         anchors { left: parent.left; verticalCenter: parent.verticalCenter; leftMargin: 5 }
         svg: svgIcons;
-        elementId: itemSvgIcon;
+        elementId: itemIcon;
     }
 
     PlasmaComponents.Label {
@@ -51,6 +51,7 @@ PlasmaComponents.ListItem {
 
         anchors { left: smallNetworkIcon.right; right: parent.right; leftMargin: 5; verticalCenter: parent.verticalCenter }
         font.weight: Font.Bold;
+        elide: Text.ElideRight;
         text: itemName;
     }
 

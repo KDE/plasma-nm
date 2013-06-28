@@ -21,7 +21,11 @@
 #ifndef PLASMA_NM_SETTINGS_NETWORK_MODEL_H
 #define PLASMA_NM_SETTINGS_NETWORK_MODEL_H
 
+#include "networkmodelitem.h"
+
 #include <QAbstractListModel>
+
+#include <NetworkManagerQt/Device>
 
 class NetworkModelItem;
 
@@ -29,7 +33,7 @@ class NetworkModel : public QAbstractListModel
 {
 Q_OBJECT
 public:
-    enum ItemRole {TypeRole = Qt::UserRole + 1, NameRole, SvgIconRole, IconRole, RemovableItemRole, PathRole};
+    enum ItemRole {TypeRole = Qt::UserRole + 1, NameRole,/* StatusRole, SvgIconRole,*/ IconRole, RemovableItemRole, PathRole};
 
     explicit NetworkModel(QObject* parent = 0);
     virtual ~NetworkModel();
@@ -38,8 +42,16 @@ public:
     QVariant data(const QModelIndex& index, int role) const;
 
 private Q_SLOTS:
+    void connectionAdded(const QString & connection);
+    void connectionRemoved(const QString & connection);
+    void deviceAdded(const QString & device);
+    void deviceRemoved(const QString & device);
+    void updateItem();
 
 private:
+    void addConnection(const NetworkManager::Connection::Ptr & connection);
+    void addDevice(const NetworkManager::Device::Ptr & device);
+
     QList<NetworkModelItem*> m_networkItems;
 };
 

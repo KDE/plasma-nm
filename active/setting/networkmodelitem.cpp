@@ -19,8 +19,14 @@
 */
 
 #include "networkmodelitem.h"
+#include "uiutils.h"
 
 #include <KLocale>
+
+#include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/Connection>
+
 
 NetworkModelItem::NetworkModelItem(NetworkModelItem::NetworkType type, const QString & path, QObject* parent):
     QObject(parent),
@@ -55,16 +61,21 @@ void NetworkModelItem::setPath(const QString & path)
 
 QString NetworkModelItem::name() const
 {
-    if (m_type == NetworkModelItem::Bridge) {
+    /*if (m_type == NetworkModelItem::Bridge) {
         return i18n("Bridge");
     } else if (m_type == NetworkModelItem::Bond) {
         return i18n("Bond");
-    } else if (m_type == NetworkModelItem::Ethernet) {
+    } else */if (m_type == NetworkModelItem::Ethernet) {
         return i18n("Ethernet");
-    } else if (m_type == NetworkModelItem::Vlan) {
+    } /*else if (m_type == NetworkModelItem::Vlan) {
         return i18n("Vlan");
-    } else if (m_type == NetworkModelItem::Vpn) {
-        return i18n("Vpn");
+    } */else if (m_type == NetworkModelItem::Vpn) {
+        NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_path);
+        if (connection) {
+            return i18n("VPN %1").arg(connection->name());
+        } else {
+            return i18n("VPN");
+        }
     } else if (m_type == NetworkModelItem::Wifi) {
         return i18n("Wifi");
     }
@@ -72,46 +83,24 @@ QString NetworkModelItem::name() const
     return i18n("Unknown");
 }
 
-QString NetworkModelItem::svgIcon() const
+QString NetworkModelItem::icon() const
 {
-    if (m_type == NetworkModelItem::Bridge) {
+   /* if (m_type == NetworkModelItem::Bridge) {
         // TODO: missing Bridge icon
         return "network-wired-activated";
     } else if (m_type == NetworkModelItem::Bond) {
         // TODO: missing Bond icon
         return "network-wired-activated";
-    } else if (m_type == NetworkModelItem::Ethernet) {
+    } else */if (m_type == NetworkModelItem::Ethernet) {
         return "network-wired-activated";
-    } else if (m_type == NetworkModelItem::Vlan) {
+    } /* else if (m_type == NetworkModelItem::Vlan) {
         // TODO: missing Vlan icon
         return "network-wired-activated";
-    } else if (m_type == NetworkModelItem::Vpn) {
+    } */else if (m_type == NetworkModelItem::Vpn) {
         // TODO: missing VPN icon
         return "network-wired";
     } else if (m_type == NetworkModelItem::Wifi) {
         return "network-wireless-100";
-    }
-
-    return "network-wired";
-}
-
-QString NetworkModelItem::icon() const
-{
-    if (m_type == NetworkModelItem::Bridge) {
-        // TODO: missing Bridge icon
-        return "network-wired";
-    } else if (m_type == NetworkModelItem::Bond) {
-        // TODO: missing Bond icon
-        return "network-wired";
-    } else if (m_type == NetworkModelItem::Ethernet) {
-        return "network-wired";
-    } else if (m_type == NetworkModelItem::Vlan) {
-        // TODO: missing Vlan icon
-        return "network-wired";
-    } else if (m_type == NetworkModelItem::Vpn) {
-        return "secure-card";
-    } else if (m_type == NetworkModelItem::Wifi) {
-        return "network-wireless";
     }
 
     return "network-wired";
@@ -126,3 +115,12 @@ bool NetworkModelItem::isRemovable() const
     return true;
 }
 
+bool NetworkModelItem::operator==(const NetworkModelItem* item) const
+{
+    if (item->type() == m_type &&
+        item->path() == m_path) {
+        return true;
+    }
+
+    return false;
+}

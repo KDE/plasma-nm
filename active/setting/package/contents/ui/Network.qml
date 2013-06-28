@@ -102,9 +102,8 @@ Item {
 
                 onClicked: {
                     networksView.selectedItem = itemPath;
-                    networkTitle.text = itemName;
-                    mainNetworkIcon.icon = QIcon(itemIcon);
                     removeButton.enabled = removableItem;
+                    networkSettings.setNetwork(itemType, itemPath);
                 }
             }
         }
@@ -131,6 +130,7 @@ Item {
             width: 120;
             text: i18n("Remove");
             iconSource: "list-remove";
+            enabled: false;
         }
     }
 
@@ -144,12 +144,21 @@ Item {
 
             height: 48; width: 48;
             anchors { left: parent.left; top: parent.top }
+            icon: networkSettings.icon;
         }
 
         PlasmaExtras.Title {
             id: networkTitle;
 
-            anchors { left: mainNetworkIcon.right; right: parent.right; top: parent.top; verticalCenter: mainNetworkIcon.verticalCenter; leftMargin: 15 }
+            anchors { left: mainNetworkIcon.right; right: parent.right; top: parent.top; leftMargin: 15 }
+            text: networkSettings.name;
+        }
+
+        PlasmaComponents.Label {
+            id: statusLabel;
+
+            anchors { left: mainNetworkIcon.right; right: parent.right; top: networkTitle.bottom; leftMargin: 15 }
+            text: networkSettings.status;
         }
     }
 }

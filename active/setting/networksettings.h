@@ -22,13 +22,16 @@
 #define PLASMA_NM_NETWORK_SETTINGS_H
 
 #include <QObject>
+#include "networkmodelitem.h"
 
 class NetworkSettingsPrivate;
 
 class NetworkSettings : public QObject
 {
 Q_OBJECT
-
+Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged)
+Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
+Q_PROPERTY(QString status READ status WRITE setStatus NOTIFY statusChanged)
 Q_PROPERTY(QObject* networkModel READ networkModel WRITE setNetworkModel NOTIFY networkModelChanged)
 
 public:
@@ -37,10 +40,27 @@ public:
 
     QObject* networkModel();
 
+    QString icon() const;
+    QString name() const;
+    QString status() const;
+
 public Q_SLOTS:
+    void setIcon(const QString & icon);
+    void setName(const QString & name);
+    void setStatus(const QString & status);
     void setNetworkModel(QObject* networkModel);
+    void setNetwork(uint type, const QString & path);
+
+private Q_SLOTS:
+    void activeConnectionAdded(const QString & active);
+    void updateIcon();
+    void updateName();
+    void updateStatus();
 
 Q_SIGNALS:
+    void iconChanged();
+    void nameChanged();
+    void statusChanged();
     void networkModelChanged();
 
 private:

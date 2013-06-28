@@ -41,12 +41,14 @@ public:
 
     QString name() const;
 
-    QString svgIcon() const;
     QString icon() const;
 
     bool isRemovable() const;
 
-public Q_SLOTS:
+    bool operator==(const NetworkModelItem * item) const;
+
+Q_SIGNALS:
+    void updated();
 
 private:
     NetworkType m_type;

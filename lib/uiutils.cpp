@@ -119,7 +119,7 @@ QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
             break;
         }
         case NetworkManager::Device::Wifi: {
-            QString strength = "00";
+            QString specific = "100";
             NetworkManager::WirelessDevice::Ptr wiface = device.objectCast<NetworkManager::WirelessDevice>();
 
             if (wiface) {
@@ -127,21 +127,21 @@ QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
                 if (ap) {
                     int s = ap->signalStrength();
                     if (s < 13) {
-                        strength = "00";
+                        specific = "connected-00";
                     } else if (s < 38) {
-                        strength = "25";
+                        specific = "connected-25";
                     } else if (s < 63) {
-                        strength = "50";
+                        specific = "connected-50";
                     } else if (s < 88) {
-                        strength = "75";
+                        specific = "connected-75";
                     } else if (s >= 88) {
-                        strength = "100";
+                        specific = "connected-100";
                     }
                 } else {
-                        strength = "00";
+                        specific = "disconnected";
                 }
             }
-            icon = "network-wireless-" + strength;
+            icon = "network-wireless-" + specific;
             break;
         }
         case NetworkManager::Device::Bluetooth:

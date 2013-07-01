@@ -136,10 +136,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     connect(kAction, SIGNAL(triggered()), SLOT(removeConnection()));
     actionCollection()->addAction("delete_connection", kAction);
 
-    kAction = new KAction(i18n("From old applet"), this);
-    actionCollection()->addAction("import_from_applet", kAction);
-    connect(kAction, SIGNAL(triggered()), SLOT(importPreviousSecretsFromApplet()));
-
     kAction = new KAction(i18n("From file..."), this);
     kAction->setDisabled(true);
     actionCollection()->addAction("import_vpn", kAction);
@@ -179,41 +175,10 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 
     if (generalGroup.isValid()) {
         if (generalGroup.readEntry("FirstStart", true)) {
-            bool importFromWallet = false;
-            bool importFromFiles = false;
-            QString secretsDirectory = KStandardDirs::locateLocal("data", "networkmanagement/secrets/");
-            QDir dir(secretsDirectory);
-            if (KWallet::Wallet::isEnabled()) {
-                KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
-
-                if (wallet && wallet->isOpen() && wallet->hasFolder("Network Management")) {
-                    importFromWallet = true;
-                }
-
-                if (wallet) {
-                    delete wallet;
-                }
-            }
-
-            if (dir.exists() && !dir.entryList(QDir::Files).isEmpty()) {
-                importFromFiles = true;
-            }
-
-            if (importFromWallet || importFromFiles) {
-                if (KMessageBox::questionYesNo(this, i18n("Do you want to import secrets from older Plasma NM versions?"), i18n("Import secrets"), KStandardGuiItem::add(),
-                                               KStandardGuiItem::no()) == KMessageBox::Yes) {
-                    if (importFromFiles) {
-                        importPreviousSecretsFromFiles();
-                    }
-
-                    if (importFromWallet) {
-                        importPreviousSecretsFromWallet();
-                    }
-                }
-            }
-
-            generalGroup.writeEntry("FirstStart", false);
+            importSecretsFromPlainTextFiles();
         }
+
+        generalGroup.writeEntry("FirstStart", false);
     }
 }
 
@@ -434,98 +399,26 @@ void ConnectionEditor::removeConnection()
     }
 }
 
-void ConnectionEditor::importPreviousSecretsFromApplet()
-{
-    // TODO
-}
-
-void ConnectionEditor::importPreviousSecretsFromWallet()
-{
-    if (KWallet::Wallet::isEnabled()) {
-        KWallet::Wallet * wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Synchronous);
-
-        if (!wallet || !wallet->isOpen()) {
-            return;
-        }
-
-        QMap<QString, QMap<QString, QString> > resultingMap;
-
-        if (wallet->hasFolder("Network Management") && wallet->setFolder("Network Management")) {
-            QMap<QString, QString> tmpMap;
-
-            foreach (const QString & entry, wallet->entryList()) {
-                wallet->readMap(entry, tmpMap);
-
-                QMap<QString, QString> map = getCorrectMapWithSecrets(tmpMap);
-                if (!map.isEmpty()) {
-                    // Fix UUID
-                    QString correctEntry = entry;
-                    correctEntry.replace('{',"").replace('}',"");
-                    resultingMap.insert(correctEntry, map);
-                }
-            }
-
-            storeSecrets(resultingMap);
-
-        } else {
-            m_editor->messageWidget->setMessageType(KMessageWidget::Error);
-            m_editor->messageWidget->setText(i18n("Could not find previous applet for recovering secrets"));
-        }
-
-        delete wallet;
-    } else {
-        m_editor->messageWidget->setMessageType(KMessageWidget::Error);
-        m_editor->messageWidget->setText(i18n("KWallet is not enabled"));
-    }
-
-    m_editor->messageWidget->animatedShow();
-    QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-}
-
-void ConnectionEditor::importPreviousSecretsFromFiles()
+void ConnectionEditor::importSecretsFromPlainTextFiles()
 {
     QString secretsDirectory = KStandardDirs::locateLocal("data", "networkmanagement/secrets/");
     QDir dir(secretsDirectory);
     if (dir.exists() && !dir.entryList(QDir::Files).isEmpty()) {
         QMap<QString, QMap<QString, QString > > resultingMap;
         foreach (const QString & file, dir.entryList(QDir::Files)) {
-            KConfig config(secretsDirectory + file, KConfig::SimpleConfig);
+            KConfig config(secretsDirectory % file, KConfig::SimpleConfig);
             foreach (const QString & groupName, config.groupList()) {
                 KConfigGroup group = config.group(groupName);
-                QMap<QString, QString> map = getCorrectMapWithSecrets(group.entryMap());
+                QMap<QString, QString> map = group.entryMap();
                 if (!map.isEmpty()) {
-                    // Fix UUID
-                    QString correctEntry = file + ';' + groupName;
-                    correctEntry.replace('{',"").replace('}',"");
-                    resultingMap.insert(correctEntry, map);
+                    QString entry = file % ';' % groupName;
+                    resultingMap.insert(entry, map);
                 }
             }
         }
 
         storeSecrets(resultingMap);
     }
-
-    m_editor->messageWidget->animatedShow();
-    QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-}
-
-QMap< QString, QString > ConnectionEditor::getCorrectMapWithSecrets(const QMap< QString, QString >& map)
-{
-    // Do not recover empty values
-    QMap<QString, QString> correctMap;
-    foreach (const QString & key, map.keys()) {
-        if (!map.value(key).isEmpty()) {
-            // Fix VPN secrets
-            if (key == "VpnSecrets") {
-                QString value = map.value(key);
-                correctMap.insert("secrets", value);
-            } else {
-                correctMap.insert(key, map.value(key));
-            }
-        }
-    }
-
-    return correctMap;
 }
 
 void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString > >& map)
@@ -538,11 +431,11 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
         }
 
 
-        if (!wallet->hasFolder("plasma-nm")) {
-            wallet->createFolder("plasma-nm");
+        if (!wallet->hasFolder("Network Management")) {
+            wallet->createFolder("Network Management");
         }
 
-        if (wallet->hasFolder("plasma-nm") && wallet->setFolder("plasma-nm")) {
+        if (wallet->hasFolder("Network Management") && wallet->setFolder("Network Management")) {
             int count = 0;
             foreach (const QString & entry, map.keys()) {
                 QString connectionUuid = entry.split(';').first();
@@ -554,15 +447,8 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
                     ++count;
                 }
             }
-
-            m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
-            m_editor->messageWidget->setText(i18np("Imported 1 secret", "Imported %1 secrets", count));
-        } else {
-            m_editor->messageWidget->setMessageType(KMessageWidget::Error);
-            m_editor->messageWidget->setText(i18n("Could not open KWallet folder for storing secrets"));
         }
     } else {
-        int count = 0;
         KConfig config("plasma-nm");
         foreach (const QString & groupName, map.keys()) {
             KConfigGroup secretsGroup = config.group(groupName);
@@ -571,14 +457,10 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
             while (i != secretsMap.constEnd()) {
                 secretsGroup.writeEntry(i.key(), i.value());
                 ++i;
-                ++count;
             }
         }
-        m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
-        m_editor->messageWidget->setText(i18np("Imported 1 secret", "Imported %1 secrets", count));
     }
 }
-
 
 void ConnectionEditor::connectionAdded(const QString& connection)
 {

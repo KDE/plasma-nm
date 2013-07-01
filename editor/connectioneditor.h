@@ -50,7 +50,6 @@ private Q_SLOTS:
     void addConnection(QAction * action);
     void editConnection();
     void removeConnection();
-    void importPreviousSecretsFromApplet();
     void connectionAdded(const QString & connection);
     void connectionRemoved(const QString & connection);
     void connectionUpdated();
@@ -62,8 +61,7 @@ private:
     KActionMenu * m_menu;
 
     void insertConnection(const NetworkManager::Connection::Ptr &connection);
-    void importPreviousSecretsFromWallet();
-    void importPreviousSecretsFromFiles();
+    void importSecretsFromPlainTextFiles();
     void storeSecrets(const QMap<QString, QMap<QString, QString> > & map);
     QMap<QString, QString> getCorrectMapWithSecrets(const QMap<QString, QString> & map);
     QString formatDateRelative(const QDateTime & lastUsed) const;

@@ -166,7 +166,6 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
     return setting.toMap();
 }
 
-
 void VpncWidget::userPasswordTypeChanged(int index)
 {
     if (index == 0 || index == 2) {

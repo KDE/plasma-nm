@@ -19,38 +19,32 @@
 */
 
 import QtQuick 1.1
+import org.kde.qtextracomponents 0.1
+import org.kde.plasma.graphicswidgets 0.1 as PlasmaWidgets
 import org.kde.plasma.components 0.1 as PlasmaComponents
-import org.kde.plasma.extras 0.1 as PlasmaExtras
-import org.kde.plasma.core 0.1 as PlasmaCore
 
-PlasmaComponents.ListItem {
-    id: networkItem;
-
-    enabled: true
-    height: 64;
-
-    PlasmaCore.Svg {
-        id: svgIcons;
-
-        multipleImages: true;
-        imagePath: "icons/plasma-nm";
+Item {
+    Image {
+        source: "image://appbackgrounds/shadow-left"
+        fillMode: Image.Tile;
+        anchors { right: parent.right; top: parent.top; bottom: parent.bottom; rightMargin: -1 }
     }
 
-    PlasmaCore.SvgItem {
-        id: smallNetworkIcon;
-
-        width: 35; height: 35;
-        anchors { left: parent.left; verticalCenter: parent.verticalCenter; leftMargin: 5 }
-        svg: svgIcons;
-        elementId: itemIcon;
+    Image {
+        source: "image://appbackgrounds/shadow-right"
+        fillMode: Image.Tile;
+        anchors { left: parent.left; top: parent.top; bottom: parent.bottom; leftMargin: -1 }
     }
 
-    PlasmaComponents.Label {
-        id: networkLabel;
+    Image {
+        source: "image://appbackgrounds/shadow-bottom"
+        fillMode: Image.Tile;
+        anchors { right: parent.right; left: parent.left; top: parent.top; topMargin: -1 }
+    }
 
-        anchors { left: smallNetworkIcon.right; right: parent.right; leftMargin: 5; verticalCenter: parent.verticalCenter }
-        font.weight: Font.Bold;
-        elide: Text.ElideRight;
-        text: itemName;
+    Image {
+        source: "image://appbackgrounds/shadow-top"
+        fillMode: Image.Tile
+        anchors { right: parent.right; left: parent.left; bottom: parent.bottom; bottomMargin: -1 }
     }
 }

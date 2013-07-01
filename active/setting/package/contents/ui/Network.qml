@@ -26,6 +26,7 @@ import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasma.graphicswidgets 0.1 as PlasmaWidgets
 import org.kde.plasma.mobilecomponents 0.1 as MobileComponents
 import org.kde.active.settings 0.1
+import org.kde.plasmanm 0.1 as PlasmaNm
 
 Item {
     id: networkModule;
@@ -64,28 +65,8 @@ Item {
         source: "image://appbackgrounds/contextarea";
         fillMode: Image.Tile;
 
-        Image {
-            source: "image://appbackgrounds/shadow-left"
-            fillMode: Image.Tile;
-            anchors { right: parent.right; top: parent.top; bottom: parent.bottom; rightMargin: -1 }
-        }
-
-        Image {
-            source: "image://appbackgrounds/shadow-right"
-            fillMode: Image.Tile;
-            anchors { left: parent.left; top: parent.top; bottom: parent.bottom; leftMargin: -1 }
-        }
-
-        Image {
-            source: "image://appbackgrounds/shadow-bottom"
-            fillMode: Image.Tile;
-            anchors { right: parent.right; left: parent.left; top: parent.top; topMargin: -1 }
-        }
-
-        Image {
-            source: "image://appbackgrounds/shadow-top"
-            fillMode: Image.Tile
-            anchors { right: parent.right; left: parent.left; bottom: parent.bottom; bottomMargin: -1 }
+        Border {
+            anchors.fill: parent;
         }
 
         ListView {
@@ -97,11 +78,12 @@ Item {
             clip: true;
             interactive: false;
             model: networkSettings.networkModel;
+            currentIndex: -1;
             delegate: NetworkItem {
                 anchors { left: parent.left; right: parent.right }
-
+                checked: networksView.currentIndex == index;
                 onClicked: {
-                    networksView.selectedItem = itemPath;
+                    networksView.currentIndex = index;
                     removeButton.enabled = removableItem;
                     networkSettings.setNetwork(itemType, itemPath);
                 }
@@ -112,8 +94,8 @@ Item {
     PlasmaComponents.ButtonRow {
         id: listViewButtons;
 
-        anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
-        height: 40;
+        anchors { left: parent.left; bottom: parent.bottom }
+        height: 40; width: 250;
         exclusive: false;
 
         PlasmaComponents.Button {
@@ -161,4 +143,55 @@ Item {
             text: networkSettings.status;
         }
     }
+
+
+    PlasmaComponents.ButtonRow {
+        id: configureButton;
+
+        anchors { right: parent.right; bottom: parent.bottom; rightMargin: 10 }
+        height: 40;
+        exclusive: false;
+
+        PlasmaComponents.Button {
+            id: configureDetails;
+
+            width: 200;
+            text: i18n("Configure details to show");
+            iconSource: "configure";
+
+            onClicked: configureDetailsDialog.open();
+        }
+    }
+
+    PlasmaComponents.CommonDialog {
+        id: configureDetailsDialog
+
+        titleText: i18n("Configure details to show")
+        buttonTexts: [i18n("Save"), i18n("Close")]
+        onButtonClicked: {
+            if (index == 0) {
+                console.log("Save");
+            } else {
+                console.log("Close");
+                close();
+            }
+        }
+        content: Loader {
+            id: configureDetailsLoader;
+            height: 400; width: 450;
+        }
+        onStatusChanged: {
+            if (status == PlasmaComponents.DialogStatus.Open) {
+                configureDetailsLoader.source = "DetailsWidget.qml"
+            }
+        }
+    }
+
+    // TEST
+//     DetailsWidget {
+//         id: details;
+//
+//         anchors { verticalCenter: parent.verticalCenter; horizontalCenter: parent.horizontalCenter }
+//         width: 500; height: 500;
+//     }
 }

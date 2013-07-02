@@ -119,7 +119,7 @@ QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
             break;
         }
         case NetworkManager::Device::Wifi: {
-            QString specific = "100";
+            QString specific = "connected-100";
             NetworkManager::WirelessDevice::Ptr wiface = device.objectCast<NetworkManager::WirelessDevice>();
 
             if (wiface) {

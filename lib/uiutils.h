@@ -30,6 +30,11 @@ class QSizeF;
 #include <NetworkManagerQt/AccessPoint>
 #include <NetworkManagerQt/WimaxNsp>
 #include <NetworkManagerQt/Utils>
+#include <NetworkManagerQt/BluetoothDevice>
+#include <NetworkManagerQt/WimaxDevice>
+#include <NetworkManagerQt/WiredDevice>
+#include <NetworkManagerQt/VpnConnection>
+#include <NetworkManagerQt/VpnSetting>
 
 #include <Solid/Device>
 
@@ -156,5 +161,12 @@ public:
     static QString shortToolTipFromWirelessSecurity(NetworkManager::Utils::WirelessSecurityType type);
     static QString labelFromWirelessSecurity(NetworkManager::Utils::WirelessSecurityType type);
 
+    static QString deviceDetails(const NetworkManager::Device::Ptr & device, NetworkManager::ConnectionSettings::ConnectionType type, bool connected, bool connecting, const QStringList & keys, const QString & format);
+    static QString bluetoothDetails(const NetworkManager::BluetoothDevice::Ptr & btDevice, const QStringList & keys, const QString & format);
+    static QString modemDetails(const NetworkManager::ModemDevice::Ptr & modemDevice, const QStringList & keys, const QString & format);
+    static QString vpnDetails(const NetworkManager::VpnConnection::Ptr & vpnConnection, const NetworkManager::VpnSetting::Ptr & vpnSetting, const QStringList & keys, const QString & format);
+    static QString wimaxDetails(const NetworkManager::WimaxDevice::Ptr & wimaxDevice, const NetworkManager::WimaxNsp::Ptr & wimaxNsp, bool connected, const QStringList & keys, const QString & format);
+    static QString wiredDetails(const NetworkManager::WiredDevice::Ptr & wiredDevice, bool connected, const QStringList & keys, const QString & format);
+    static QString wirelessDetails(const NetworkManager::WirelessDevice::Ptr & wirelessDevice, const NetworkManager::WirelessNetwork::Ptr & network, const NetworkManager::AccessPoint::Ptr & ap, bool connected, const QStringList & keys, const QString & format);
 };
 #endif // UIUTILS_H

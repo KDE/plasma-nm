@@ -29,6 +29,7 @@ class NetworkSettingsPrivate;
 class NetworkSettings : public QObject
 {
 Q_OBJECT
+Q_PROPERTY(QString details READ details WRITE setDetails NOTIFY detailsChanged)
 Q_PROPERTY(QString icon READ icon WRITE setIcon NOTIFY iconChanged)
 Q_PROPERTY(QString settingName READ settingName WRITE setSettingName NOTIFY settingNameChanged)
 Q_PROPERTY(QString status READ status WRITE setStatus NOTIFY statusChanged)
@@ -40,11 +41,13 @@ public:
 
     QObject* networkModel();
 
+    QString details() const;
     QString icon() const;
     QString settingName() const;
     QString status() const;
 
 public Q_SLOTS:
+    void setDetails(const QString & details);
     void setIcon(const QString & icon);
     void setSettingName(const QString & name);
     void setStatus(const QString & status);
@@ -53,11 +56,13 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void activeConnectionAdded(const QString & active);
+    void updateDetails();
     void updateIcon();
     void updateSettingName();
     void updateStatus();
 
 Q_SIGNALS:
+    void detailsChanged();
     void iconChanged();
     void settingNameChanged();
     void statusChanged();

@@ -33,8 +33,9 @@ class NetworkSettingsPrivate {
 public:
     NetworkSettings *q;
     QObject *networkModel;
-    QString settingName;
+    QString details;
     QString icon;
+    QString settingName;
     QString status;
 
     QString path;
@@ -77,6 +78,19 @@ void NetworkSettings::setNetworkModel(QObject* networkModel)
     if ( d->networkModel != networkModel) {
         d->networkModel = networkModel;
         emit networkModelChanged();
+    }
+}
+
+QString NetworkSettings::details() const
+{
+    return d->details;
+}
+
+void NetworkSettings::setDetails(const QString& details)
+{
+    if (d->details != details) {
+        d->details = details;
+        emit detailsChanged();
     }
 }
 
@@ -136,6 +150,10 @@ void NetworkSettings::setNetwork(uint type, const QString& path)
                     SLOT(updateStatus()), Qt::UniqueConnection);
             connect(device.data(), SIGNAL(activeConnectionChanged()),
                     SLOT(updateStatus()), Qt::UniqueConnection);
+            connect(device.data(), SIGNAL(connectionStateChanged()),
+                    SLOT(updateDetails()), Qt::UniqueConnection);
+            connect(device.data(), SIGNAL(activeConnectionChanged()),
+                    SLOT(updateDetails()), Qt::UniqueConnection);
             //TODO: icon changes
         }
     }
@@ -145,6 +163,8 @@ void NetworkSettings::setNetwork(uint type, const QString& path)
             if (activeConnection && activeConnection->vpn()) {
                 connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                         SLOT(updateStatus()), Qt::UniqueConnection);
+                connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                        SLOT(updateDetails()), Qt::UniqueConnection);
             }
         }
 
@@ -152,6 +172,7 @@ void NetworkSettings::setNetwork(uint type, const QString& path)
                 SLOT(activeConnectionAdded(QString)), Qt::UniqueConnection);
     }
 
+    updateDetails();
     updateIcon();
     updateSettingName();
     updateStatus();
@@ -165,9 +186,59 @@ void NetworkSettings::activeConnectionAdded(const QString& active)
     if (activeConnection && activeConnection->vpn()) {
         connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                 SLOT(updateStatus()), Qt::UniqueConnection);
-
+        connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                SLOT(updateDetails()), Qt::UniqueConnection);
+        updateDetails();
         updateStatus();
     }
+}
+
+void NetworkSettings::updateDetails()
+{
+    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
+    QString details = "<qt><table>";
+
+    QStringList detailKeys;
+    detailKeys << "interface:status" << "interface:bitrate" << "interface:hardwareaddress" << "ipv4:address" << "ipv6:address" << "wireless:ssid" << "wireless:signal";
+    detailKeys << "wireless:security" << "mobile:operator" << "mobile:quality" << "mobile:technology" << "vpn:plugin" << "vpn:banner";
+
+    // TODO: update the changes properly
+    if (d->type != NetworkModelItem::Vpn) {
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);
+        if (device) {
+            bool connected = (device->activeConnection() && device->activeConnection()->state() == NetworkManager::ActiveConnection::Activated);
+            bool connecting = (device->activeConnection() && device->activeConnection()->state() == NetworkManager::ActiveConnection::Activating);
+            if (d->type == NetworkModelItem::Ethernet) {
+                details += UiUtils::deviceDetails(device, NetworkManager::ConnectionSettings::Wired, connected, connecting, detailKeys, format);
+                NetworkManager::WiredDevice::Ptr wiredDevice;
+                wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
+                details += UiUtils::wiredDetails(wiredDevice, connected, detailKeys, format);
+            } else if (d->type == NetworkModelItem::Modem) {
+                details += UiUtils::deviceDetails(device, NetworkManager::ConnectionSettings::Gsm, connected, connecting, detailKeys, format);
+                NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
+                details += UiUtils::modemDetails(modemDevice, detailKeys, format);
+            } else if (d->type == NetworkModelItem::Wifi) {
+                details += UiUtils::deviceDetails(device, NetworkManager::ConnectionSettings::Wireless, connected, connecting, detailKeys, format);
+                NetworkManager::WirelessDevice::Ptr wirelessDevice;
+                wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
+                QString ssid;
+                NetworkManager::AccessPoint::Ptr ap = wirelessDevice->activeAccessPoint();
+                if (ap) {
+                    ssid = wirelessDevice->activeAccessPoint()->ssid();
+                }
+                NetworkManager::WirelessNetwork::Ptr network;
+                if (wirelessDevice) {
+                    network = wirelessDevice->findNetwork(ssid);
+                }
+                details += UiUtils::wirelessDetails(wirelessDevice, network, ap, connected, detailKeys, format);
+            }
+        }
+    } else {
+        // TODO
+    }
+    details += "</table></qt>";
+
+    setDetails(details);
 }
 
 void NetworkSettings::updateIcon()

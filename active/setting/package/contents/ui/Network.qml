@@ -128,7 +128,13 @@ Item {
 
         anchors { left: parent.left; right: parent.right; top: frame.bottom; bottom: parent.bottom; leftMargin: 10; topMargin: 10 }
 
-        //TODO:
+        PlasmaComponents.Label {
+            id: detailsText;
+
+            anchors { top: parent.top; horizontalCenter: parent.horizontalCenter; topMargin: 10 }
+            textFormat: Text.RichText;
+            text: networkSettings.details;
+        }
     }
 
 

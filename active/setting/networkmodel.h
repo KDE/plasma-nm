@@ -32,21 +32,21 @@ class NetworkModelItem;
 class NetworkModel : public QAbstractListModel
 {
 Q_OBJECT
+Q_PROPERTY(int count READ count NOTIFY countChanged)
 public:
-    enum ItemRole {TypeRole = Qt::UserRole + 1, NameRole,/* StatusRole, SvgIconRole,*/ IconRole, RemovableItemRole, PathRole};
+    enum ItemRole {TypeRole = Qt::UserRole + 1, NameRole, IconRole, PathRole};
 
     explicit NetworkModel(QObject* parent = 0);
     virtual ~NetworkModel();
 
+    int count() const;
     int rowCount(const QModelIndex& parent) const;
     QVariant data(const QModelIndex& index, int role) const;
 
 private Q_SLOTS:
-    void connectionAdded(const QString & connection);
-    void connectionRemoved(const QString & connection);
-    void deviceAdded(const QString & device);
-    void deviceRemoved(const QString & device);
-    void updateItem();
+
+Q_SIGNALS:
+    void countChanged();
 
 private:
     void addConnection(const NetworkManager::Connection::Ptr & connection);

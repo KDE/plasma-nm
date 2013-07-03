@@ -33,7 +33,7 @@ class NetworkSettingsPrivate {
 public:
     NetworkSettings *q;
     QObject *networkModel;
-    QString name;
+    QString settingName;
     QString icon;
     QString status;
 
@@ -48,6 +48,8 @@ NetworkSettings::NetworkSettings()
     d = new NetworkSettingsPrivate;
     d->q = this;
     d->networkModel = 0;
+    d->settingName = i18n("Network Setting");
+    d->status = i18n("Network status and control");
 
     d->initNetwork();
     kDebug() << "NetworkSettings module loaded.";
@@ -91,16 +93,16 @@ void NetworkSettings::setIcon(const QString& icon)
     }
 }
 
-QString NetworkSettings::name() const
+QString NetworkSettings::settingName() const
 {
-    return d->name;
+    return d->settingName;
 }
 
-void NetworkSettings::setName(const QString& name)
+void NetworkSettings::setSettingName(const QString& name)
 {
-    if (d->name != name) {
-        d->name = name;
-        emit nameChanged();
+    if (d->settingName != name) {
+        d->settingName = name;
+        emit settingNameChanged();
     }
 }
 
@@ -125,6 +127,7 @@ void NetworkSettings::setNetwork(uint type, const QString& path)
     // TODO: disconnect previous
 
     if (d->type == NetworkModelItem::Ethernet ||
+        d->type == NetworkModelItem::Modem ||
         d->type == NetworkModelItem::Wifi) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
 
@@ -138,14 +141,10 @@ void NetworkSettings::setNetwork(uint type, const QString& path)
     }
 
     if (d->type == NetworkModelItem::Vpn) {
-        NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(path);
-
-        if (connection) {
-            foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
-                if (activeConnection && activeConnection->connection()->path() == connection->path()) {
-                    connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-                            SLOT(updateStatus()), Qt::UniqueConnection);
-                }
+        foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
+            if (activeConnection && activeConnection->vpn()) {
+                connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                        SLOT(updateStatus()), Qt::UniqueConnection);
             }
         }
 
@@ -154,7 +153,7 @@ void NetworkSettings::setNetwork(uint type, const QString& path)
     }
 
     updateIcon();
-    updateName();
+    updateSettingName();
     updateStatus();
 }
 
@@ -163,7 +162,7 @@ void NetworkSettings::activeConnectionAdded(const QString& active)
     NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::findActiveConnection(active);
 
     // TODO: disconnect previous
-    if (activeConnection && activeConnection->connection()->path() == d->path) {
+    if (activeConnection && activeConnection->vpn()) {
         connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                 SLOT(updateStatus()), Qt::UniqueConnection);
 
@@ -182,25 +181,28 @@ void NetworkSettings::updateIcon()
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(d->path);
         if (connection) {
             QString title;
-            setIcon(UiUtils::iconAndTitleForConnectionSettingsType(connection->settings()->connectionType(), title));
+            setIcon(UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::Vpn, title));
         }
     }
 }
 
-void NetworkSettings::updateName()
+void NetworkSettings::updateSettingName()
 {
-    if (d->type != NetworkModelItem::Vpn) {
-        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);
-        if (device) {
-            setName(UiUtils::interfaceTypeLabel(device->type(), device));
-        }
-    } else {
-        NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(d->path);
-        if (connection) {
-            setName(i18n("VPN %1").arg(connection->name()));
-        } else {
-            setName(i18n("VPN"));
-        }
+    switch (d->type) {
+    case NetworkModelItem::Ethernet:
+        setSettingName(i18n("Ethernet Setting"));
+        break;
+    case NetworkModelItem::Modem:
+        setSettingName(i18n("Modem Setting"));
+        break;
+    case NetworkModelItem::Vpn:
+        setSettingName(i18n("VPN Setting"));
+        break;
+    case NetworkModelItem::Wifi:
+        setSettingName(i18n("Wireless Setting"));
+        break;
+    default:
+        break;
     }
 }
 
@@ -217,21 +219,19 @@ void NetworkSettings::updateStatus()
             }
         }
     } else if (d->type == NetworkModelItem::Vpn) {
-        NetworkManager::Connection::Ptr vpnConnection = NetworkManager::findConnection(d->path);
-        if (vpnConnection) {
-            foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
-                if (activeConnection && activeConnection->connection()->path() == vpnConnection->path()) {
-                    if (activeConnection->state() == NetworkManager::ActiveConnection::Unknown) {
-                        setStatus(UiUtils::connectionStateToString(NetworkManager::Device::UnknownState));
-                    } else if (activeConnection->state() == NetworkManager::ActiveConnection::Activating) {
-                        setStatus(i18n("Connecting"));
-                    } else if (activeConnection->state() == NetworkManager::ActiveConnection::Activated) {
-                        setStatus(UiUtils::connectionStateToString(NetworkManager::Device::Activated));
-                    } else if (activeConnection->state() == NetworkManager::ActiveConnection::Deactivating) {
-                        setStatus(UiUtils::connectionStateToString(NetworkManager::Device::Deactivating));
-                    } else if (activeConnection->state() == NetworkManager::ActiveConnection::Deactivated) {
-                        setStatus(UiUtils::connectionStateToString(NetworkManager::Device::Disconnected));
-                    }
+        // TODO: maybe check for the case when there are two active VPN connections
+        foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
+            if (activeConnection && activeConnection->vpn()) {
+                if (activeConnection->state() == NetworkManager::ActiveConnection::Unknown) {
+                    setStatus(UiUtils::connectionStateToString(NetworkManager::Device::UnknownState));
+                } else if (activeConnection->state() == NetworkManager::ActiveConnection::Activating) {
+                    setStatus(i18n("Connecting"));
+                } else if (activeConnection->state() == NetworkManager::ActiveConnection::Activated) {
+                    setStatus(UiUtils::connectionStateToString(NetworkManager::Device::Activated) % i18n(" to %1").arg(activeConnection->connection()->name()));
+                } else if (activeConnection->state() == NetworkManager::ActiveConnection::Deactivating) {
+                    setStatus(UiUtils::connectionStateToString(NetworkManager::Device::Deactivating));
+                } else if (activeConnection->state() == NetworkManager::ActiveConnection::Deactivated) {
+                    setStatus(UiUtils::connectionStateToString(NetworkManager::Device::Disconnected));
                 }
             }
         }
@@ -239,6 +239,5 @@ void NetworkSettings::updateStatus()
         setStatus(UiUtils::connectionStateToString(NetworkManager::Device::UnknownState));
     }
 }
-
 
 #include "networksettings.moc"

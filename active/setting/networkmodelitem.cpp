@@ -61,18 +61,21 @@ void NetworkModelItem::setPath(const QString & path)
 
 QString NetworkModelItem::name() const
 {
-    if (m_type != Vpn) {
-        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_path);
-        if (device) {
-            return UiUtils::interfaceTypeLabel(device->type(), device);
-        }
-    } else {
-        NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_path);
-        if (connection) {
-            return i18n("VPN %1").arg(connection->name());
-        } else {
+    switch (m_type) {
+        case NetworkModelItem::Ethernet:
+            return i18n("Ethernet");
+            break;
+        case NetworkModelItem::Modem:
+            return i18n("Modem");
+            break;
+        case NetworkModelItem::Vpn:
             return i18n("VPN");
-        }
+            break;
+        case NetworkModelItem::Wifi:
+            return i18n("Wireless");
+            break;
+        default:
+            break;
     }
 
     return i18n("Uknown");
@@ -80,18 +83,9 @@ QString NetworkModelItem::name() const
 
 QString NetworkModelItem::icon() const
 {
-   /* if (m_type == NetworkModelItem::Bridge) {
-        // TODO: missing Bridge icon
+    if (m_type == NetworkModelItem::Ethernet) {
         return "network-wired-activated";
-    } else if (m_type == NetworkModelItem::Bond) {
-        // TODO: missing Bond icon
-        return "network-wired-activated";
-    } else */if (m_type == NetworkModelItem::Ethernet) {
-        return "network-wired-activated";
-    } /* else if (m_type == NetworkModelItem::Vlan) {
-        // TODO: missing Vlan icon
-        return "network-wired-activated";
-    } */else if (m_type == NetworkModelItem::Vpn) {
+    } else if (m_type == NetworkModelItem::Vpn) {
         // TODO: missing VPN icon
         return "network-wired";
     } else if (m_type == NetworkModelItem::Wifi) {
@@ -99,15 +93,6 @@ QString NetworkModelItem::icon() const
     }
 
     return "network-wired";
-}
-
-bool NetworkModelItem::isRemovable() const
-{
-    if (m_type == NetworkModelItem::Wifi || m_type == NetworkModelItem::Ethernet) {
-        return false;
-    }
-
-    return true;
 }
 
 bool NetworkModelItem::operator==(const NetworkModelItem* item) const

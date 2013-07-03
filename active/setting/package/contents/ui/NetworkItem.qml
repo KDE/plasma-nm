@@ -27,7 +27,7 @@ PlasmaComponents.ListItem {
     id: networkItem;
 
     enabled: true
-    height: 64;
+    width: 150;
 
     PlasmaCore.Svg {
         id: svgIcons;
@@ -36,19 +36,10 @@ PlasmaComponents.ListItem {
         imagePath: "icons/plasma-nm";
     }
 
-    PlasmaCore.SvgItem {
-        id: smallNetworkIcon;
-
-        width: 35; height: 35;
-        anchors { left: parent.left; verticalCenter: parent.verticalCenter; leftMargin: 5 }
-        svg: svgIcons;
-        elementId: itemIcon;
-    }
-
     PlasmaComponents.Label {
         id: networkLabel;
 
-        anchors { left: smallNetworkIcon.right; right: parent.right; leftMargin: 5; verticalCenter: parent.verticalCenter }
+        anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter }
         font.weight: Font.Bold;
         elide: Text.ElideRight;
         text: itemName;

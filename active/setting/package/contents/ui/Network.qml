@@ -43,25 +43,27 @@ Item {
 
     Column {
         id: titleCol
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
+        anchors.top: parent.top;
+        anchors.left: parent.left;
+        anchors.right: parent.right;
         PlasmaExtras.Title {
-            text: settingsComponent.name
-            opacity: 1
+            id: titleLabel;
+            text: networkSettings.settingName;
+            opacity: 1;
         }
         PlasmaComponents.Label {
-            id: descriptionLabel
-            text: settingsComponent.description
-            opacity: .4
+            id: descriptionLabel;
+            text: networkSettings.status;
+            opacity: .3;
         }
     }
 
     Image {
         id: frame;
 
-        anchors { left: parent.left; top: titleCol.bottom; bottom: listViewButtons.top; leftMargin: 1; topMargin: 10; bottomMargin: 10 }
-        width: 250;
+        anchors { horizontalCenter: parent.horizontalCenter; top: titleCol.bottom; topMargin: 10 }
+        width: networkSettings.networkModel.count * 150;
+        height: 48;
         source: "image://appbackgrounds/contextarea";
         fillMode: Image.Tile;
 
@@ -74,17 +76,19 @@ Item {
 
             property string selectedItem;
 
-            anchors { left: parent.left; right: parent.right; top: parent.top; bottom: parent.bottom }
+            anchors.fill: parent;
+            orientation: ListView.Horizontal;
             clip: true;
             interactive: false;
             model: networkSettings.networkModel;
+            // TODO
             currentIndex: -1;
+            highlight: PlasmaComponents.Highlight {}
             delegate: NetworkItem {
-                anchors { left: parent.left; right: parent.right }
+                anchors { top: parent.top; bottom: parent.bottom }
                 checked: networksView.currentIndex == index;
                 onClicked: {
                     networksView.currentIndex = index;
-                    removeButton.enabled = removableItem;
                     networkSettings.setNetwork(itemType, itemPath);
                 }
             }
@@ -104,6 +108,8 @@ Item {
             width: 120;
             text: i18n("Add");
             iconSource: "list-add";
+            // TODO: implement
+            enabled: false;
         }
 
         PlasmaComponents.Button {
@@ -112,6 +118,7 @@ Item {
             width: 120;
             text: i18n("Remove");
             iconSource: "list-remove";
+            // TODO: implement
             enabled: false;
         }
     }
@@ -119,29 +126,9 @@ Item {
     Item {
         id: itemContent;
 
-        anchors { left: frame.right; right: parent.right; top: titleCol.bottom; bottom: parent.bottom; leftMargin: 10; topMargin: 10 }
+        anchors { left: parent.left; right: parent.right; top: frame.bottom; bottom: parent.bottom; leftMargin: 10; topMargin: 10 }
 
-        QIconItem {
-            id: mainNetworkIcon;
-
-            height: 48; width: 48;
-            anchors { left: parent.left; top: parent.top }
-            icon: networkSettings.icon;
-        }
-
-        PlasmaExtras.Title {
-            id: networkTitle;
-
-            anchors { left: mainNetworkIcon.right; right: parent.right; top: parent.top; leftMargin: 15 }
-            text: networkSettings.name;
-        }
-
-        PlasmaComponents.Label {
-            id: statusLabel;
-
-            anchors { left: mainNetworkIcon.right; right: parent.right; top: networkTitle.bottom; leftMargin: 15 }
-            text: networkSettings.status;
-        }
+        //TODO:
     }
 
 
@@ -158,6 +145,8 @@ Item {
             width: 200;
             text: i18n("Configure details to show");
             iconSource: "configure";
+            // TODO: implement
+            enabled: false;
 
             onClicked: configureDetailsDialog.open();
         }

@@ -27,9 +27,9 @@ class NetworkModelItem : public QObject
 {
 Q_OBJECT
 public:
-    enum NetworkType { Bridge, Bond, Ethernet, Vlan, Vpn, Wifi };
+    enum NetworkType { Ethernet, Modem, Vpn, Wifi };
 
-    explicit NetworkModelItem(NetworkType type, const QString & path, QObject * parent = 0);
+    explicit NetworkModelItem(NetworkType type, const QString & path = QString(), QObject * parent = 0);
     virtual ~NetworkModelItem();
 
     // Basic properties
@@ -39,16 +39,10 @@ public:
     QString path() const;
     void setPath(const QString & path);
 
+    QString icon() const;
     QString name() const;
 
-    QString icon() const;
-
-    bool isRemovable() const;
-
     bool operator==(const NetworkModelItem * item) const;
-
-Q_SIGNALS:
-    void updated();
 
 private:
     NetworkType m_type;

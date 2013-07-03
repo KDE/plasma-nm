@@ -229,191 +229,29 @@ void ModelItem::updateDetails()
 
     QStringList detailKeys = GlobalConfig().detailKeys();
 
-    // Initialize objects
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
 
-    foreach (const QString& key, detailKeys) {
-        if (key == "interface:type") {
-            if (m_type != NetworkManager::ConnectionSettings::Unknown) {
-                m_details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::ConnectionSettings::typeAsString(m_type));
-            }
-        } else if (key == "interface:status") {
-            QString status = i18n("Disconnected");
-            if (m_connecting) {
-                status = i18n("Connecting");
-            } else if (m_connected) {
-                status = i18n("Connected");
-            }
-            m_details += QString(format).arg(i18n("Status:"), status);
-        } else if (key == "interface:name") {
-            if (device) {
-                QString name;
-                if (device->ipInterfaceName().isEmpty()) {
-                    name = device->interfaceName();
-                } else {
-                    name = device->ipInterfaceName();
-                }
-                m_details += QString(format).arg(i18n("System name:"), name);
-            }
-        } else if (key == "ipv4:address") {
-            if (device && device->ipV4Config().isValid() && m_connected) {
-                if (device->ipV4Config().addresses().isEmpty()) {
-                    continue;
-                }
-                QHostAddress addr = device->ipV4Config().addresses().first().ip();
-                m_details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
-            }
-        } else if (key == "ipv4:gateway") {
-            if (device && device->ipV4Config().isValid() && m_connected) {
-                if (device->ipV4Config().addresses().isEmpty()) {
-                    continue;
-                }
-                QHostAddress addr = device->ipV4Config().addresses().first().gateway();
-                m_details += QString(format).arg(i18n("IPv4 Gateway:"), addr.toString());
-            }
-        } else if (key == "ipv6:address") {
-            if (device && device->ipV6Config().isValid() && m_connected) {
-                if (device->ipV6Config().addresses().isEmpty()) {
-                    continue;
-                }
-                QHostAddress addr = device->ipV6Config().addresses().first().ip();
-                m_details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
-            }
-        } else if (key == "ipv6:gateway") {
-            if (device && device->ipV6Config().isValid() && m_connected) {
-                if (device->ipV6Config().addresses().isEmpty()) {
-                    continue;
-                }
-                QHostAddress addr = device->ipV6Config().addresses().first().gateway();
-                m_details += QString(format).arg(i18n("IPv6 Gateway:"), addr.toString());
-            }
-        } else if (key == "interface:driver") {
-            if (device) {
-                m_details += QString(format).arg(i18n("Driver:"), device->driver());
-            }
-        }
-    }
+    m_details += UiUtils::deviceDetails(device, m_type, m_connected, m_connecting, detailKeys, format);
 
     if (m_type == NetworkManager::ConnectionSettings::Bluetooth) {
-        NetworkManager::BluetoothDevice::Ptr btDevice;
-        if (device) {
-            btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
-        }
-
-        foreach (const QString& key, detailKeys) {
-            if (key == "bluetooth:name") {
-                if (btDevice) {
-                    m_details += QString(format).arg(i18n("Name:"), btDevice->name());
-                }
-            } else if (key == "interface:hardwareAddress") {
-                if (btDevice) {
-                    m_details += QString(format).arg(i18n("MAC Address:"), btDevice->hardwareAddress());
-                }
-            } else if (key == "interface:driver") {
-                if (btDevice) {
-                    m_details += QString(format).arg(i18n("Driver:"), device->driver());
-                }
-            }
-        }
+        NetworkManager::BluetoothDevice::Ptr btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
+        m_details += UiUtils::bluetoothDetails(btDevice, detailKeys, format);
     } else if (m_type == NetworkManager::ConnectionSettings::Gsm) {
-        NetworkManager::ModemDevice::Ptr modemDevice;
-        ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork;
-        if (device) {
-            modemDevice = device.objectCast<NetworkManager::ModemDevice>();
-        }
-        if (modemDevice) {
-            modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
-        }
-
-        foreach (const QString& key, detailKeys) {
-            if (key == "mobile:operator") {
-                if (modemNetwork) {
-                    m_details += QString(format).arg(i18n("Operator:"), modemNetwork->getRegistrationInfo().operatorName);
-                }
-            } else if (key == "mobile:quality") {
-                if (modemNetwork) {
-                    m_details += QString(format).arg(i18n("Signal quality:"), QString("%1%").arg(modemNetwork->getSignalQuality()));
-                }
-            } else if (key == "mobile:technology") {
-                if (modemNetwork) {
-                    m_details += QString(format).arg(i18n("Access technology:"), QString("%1/%2").arg(UiUtils::convertTypeToString(modemNetwork->type()), UiUtils::convertAccessTechnologyToString(modemNetwork->getAccessTechnology())));
-                }
-            } else if (key == "mobile:mode") {
-                if (modemNetwork) {
-                    m_details += QString(format).arg(i18n("Allowed Mode"), UiUtils::convertAllowedModeToString(modemNetwork->getAllowedMode()));
-                }
-            } else if (key == "mobile:band") {
-                if (modemNetwork) {
-                    m_details += QString(format).arg(i18n("Frequency Band:"), UiUtils::convertBandToString(modemNetwork->getBand()));
-                }
-            } else if (key == "mobile:unlock") {
-                if (modemNetwork) {
-                    m_details += QString(format).arg(i18n("Unlock Required:"), modemNetwork->unlockRequired());
-                }
-            } else if (key == "mobile:imei") {
-                if (modemDevice) {
-                    ModemManager::ModemGsmCardInterface::Ptr modemCard;
-                    modemCard = modemDevice->getModemCardIface();
-                    if (modemCard) {
-                        detailKeys += QString(format).arg(i18n("IMEI:"), modemCard->getImei());
-                    }
-                }
-            } else if (key == "mobile:imsi") {
-                if (modemDevice) {
-                    ModemManager::ModemGsmCardInterface::Ptr modemCard;
-                    modemCard = modemDevice->getModemCardIface();
-                    if (modemCard) {
-                        detailKeys += QString(format).arg(i18n("IMSI:"), modemCard->getImsi());
-                    }
-                }
-            }
-        }
+        NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
+        m_details += UiUtils::modemDetails(modemDevice, detailKeys, format);
     } else if (m_type == NetworkManager::ConnectionSettings::Wimax) {
-        NetworkManager::WimaxDevice::Ptr wimaxDevice;
         NetworkManager::WimaxNsp::Ptr wimaxNsp;
-        if (device) {
-            wimaxDevice = device.objectCast<NetworkManager::WimaxDevice>();
-        }
-        if (wimaxDevice) {
-            wimaxNsp = wimaxDevice->findNsp(m_nspPath);
-        }
-
-        foreach (const QString& key, detailKeys) {
-            if (key == "wimax:bsid") {
-                if (m_connected && wimaxDevice) {
-                    m_details += QString(format).arg(i18n("Bsid:"), wimaxDevice->bsid());
-                }
-            } else if (key == "wimax:nsp") {
-                if (wimaxNsp) {
-                    m_details += QString(format).arg(i18n("NSP Name:"), wimaxNsp->name());
-                }
-            } else if (key == "wimax:signal") {
-                if (wimaxNsp) {
-                    m_details += QString(format).arg(i18n("Signal Quality:"), i18n("%1%", wimaxNsp->signalQuality()));
-                }
-            } else if (key == "wimax:type") {
-                if (wimaxNsp) {
-                    m_details += QString(format).arg(i18n("Network Type:"), UiUtils::convertNspTypeToString(wimaxNsp->networkType()));
-                }
-            }
+        NetworkManager::WimaxDevice::Ptr wimaxDevice = device.objectCast<NetworkManager::WimaxDevice>();
+        wimaxNsp = wimaxDevice->findNsp(m_nspPath);
+        if (wimaxDevice && wimaxNsp) {
+            m_details += UiUtils::wimaxDetails(wimaxDevice, wimaxNsp, m_connected, detailKeys, format);
         }
     } else if (m_type == NetworkManager::ConnectionSettings::Wired) {
         NetworkManager::WiredDevice::Ptr wiredDevice;
         if (device) {
             wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
         }
-
-        foreach (const QString& key, detailKeys) {
-            if (key == "interface:bitrate") {
-                if (wiredDevice && m_connected) {
-                    m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wiredDevice->bitRate()));
-                }
-            } else if (key == "interface:hardwareaddress") {
-                if (wiredDevice) {
-                    m_details += QString(format).arg(i18n("MAC Address:"), wiredDevice->permanentHardwareAddress());
-                }
-            }
-        }
+        m_details += UiUtils::wiredDetails(wiredDevice, m_connected, detailKeys, format);
     } else if (m_type == NetworkManager::ConnectionSettings::Wireless) {
         NetworkManager::WirelessDevice::Ptr wirelessDevice;
         if (device) {
@@ -427,48 +265,7 @@ void ModelItem::updateDetails()
         if (network) {
             ap = network->referenceAccessPoint();
         }
-
-        foreach (const QString& key, detailKeys) {
-            if (key == "interface:bitrate") {
-                if (wirelessDevice && m_connected) {
-                    m_details += QString(format).arg(i18n("Connection speed:"), UiUtils::connectionSpeed(wirelessDevice->bitRate()));
-                }
-            } else if (key == "interface:hardwareaddress") {
-                if (wirelessDevice) {
-                    m_details += QString(format).arg(i18n("MAC Address:"), wirelessDevice->permanentHardwareAddress());
-                }
-            } else if (key == "wireless:mode") {
-                if (wirelessDevice) {
-                    m_details += QString(format).arg(i18n("Mode:"), UiUtils::operationModeToString(wirelessDevice->mode()));
-                }
-            } else if (key == "wireless:signal") {
-                if (network) {
-                    m_details += QString(format).arg(i18n("Signal strength:"), i18n("%1%", network->signalStrength()));
-                }
-            } else if (key == "wireless:ssid") {
-                if (network) {
-                    m_details += QString(format).arg(i18n("Access point (SSID):"), network->ssid());
-                }
-            } else if (key == "wireless:accesspoint") {
-                if (ap) {
-                    m_details += QString(format).arg(i18n("Access point (BSSID):"), ap->hardwareAddress());
-                }
-            } else if (key == "wireless:channel") {
-                if (ap) {
-                    m_details += QString(format).arg(i18nc("Wifi AP channel and frequency", "Channel:"), i18n("%1 (%2 MHz)", NetworkManager::Utils::findChannel(ap->frequency()), ap->frequency()));
-                }
-            } else if (key == "wireless:security") {
-                if (ap) {
-                    NetworkManager::Utils::WirelessSecurityType security = NetworkManager::Utils::findBestWirelessSecurity(wirelessDevice->wirelessCapabilities(), true, (wirelessDevice->mode() == NetworkManager::WirelessDevice::Adhoc),
-                                                                                                                           ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
-                    m_details += QString(format).arg(i18n("Security:"), UiUtils::labelFromWirelessSecurity(security));
-                }
-            } else if (key == "wireless:band") {
-                if (ap) {
-                    m_details += QString(format).arg(i18n("Frequency band:"), UiUtils::wirelessBandToString(NetworkManager::Utils::findFrequencyBand(ap->frequency())));
-                }
-            }
-        }
+        m_details += UiUtils::wirelessDetails(wirelessDevice, network, ap, m_connected, detailKeys, format);
     } else if (m_type == NetworkManager::ConnectionSettings::Vpn) {
         NetworkManager::ActiveConnection::Ptr active = NetworkManager::findActiveConnection(m_activePath);
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_connectionPath);
@@ -486,18 +283,7 @@ void ModelItem::updateDetails()
         if (active) {
             vpnConnection = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(active->path()), &QObject::deleteLater);
         }
-
-        foreach (const QString& key, detailKeys) {
-            if (key == "vpn:plugin") {
-                if (vpnSetting) {
-                    m_details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
-                }
-            } else if (key == "vpn:banner") {
-                if (vpnConnection) {
-                    m_details += QString(format).arg(i18n("Banner:"), vpnConnection->banner().simplified());
-                }
-            }
-        }
+        m_details += UiUtils::vpnDetails(vpnConnection, vpnSetting, detailKeys, format);
     }
 
     m_details += "</table></qt>";

@@ -206,8 +206,9 @@ void NetworkSettings::updateDetails()
     if (d->type != NetworkModelItem::Vpn) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);
         if (device) {
-            bool connected = (device->activeConnection() && device->activeConnection()->state() == NetworkManager::ActiveConnection::Activated);
-            bool connecting = (device->activeConnection() && device->activeConnection()->state() == NetworkManager::ActiveConnection::Activating);
+            bool connected = (device->state() == NetworkManager::Device::Activated);
+            bool connecting = (device->state() == NetworkManager::Device::CheckingIp || device->state() == NetworkManager::Device::ConfiguringHardware ||
+                               device->state() == NetworkManager::Device::ConfiguringIp || device->state() == NetworkManager::Device::Preparing);
             if (d->type == NetworkModelItem::Ethernet) {
                 details += UiUtils::deviceDetails(device, NetworkManager::ConnectionSettings::Wired, connected, connecting, detailKeys, format);
                 NetworkManager::WiredDevice::Ptr wiredDevice;
@@ -234,7 +235,33 @@ void NetworkSettings::updateDetails()
             }
         }
     } else {
-        // TODO
+        NetworkManager::ActiveConnection::Ptr active;
+        foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
+            qDebug() << activeConnection->vpn() << activeConnection->state();
+            if (activeConnection && activeConnection->vpn() &&
+                (activeConnection->state() == NetworkManager::ActiveConnection::Activated || activeConnection->state() == NetworkManager::ActiveConnection::Activating)) {
+                active = activeConnection;
+            }
+        }
+
+        if (active) {
+            NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(active->connection()->path());
+            NetworkManager::ConnectionSettings::Ptr connectionSettings;
+            NetworkManager::VpnSetting::Ptr vpnSetting;
+            NetworkManager::VpnConnection::Ptr vpnConnection;
+
+            if (connection) {
+                connectionSettings = connection->settings();
+            }
+            if (connectionSettings) {
+                vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+            }
+
+            if (active) {
+                vpnConnection = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(active->path()), &QObject::deleteLater);
+            }
+            details += UiUtils::vpnDetails(vpnConnection, vpnSetting, detailKeys, format);
+        }
     }
     details += "</table></qt>";
 

@@ -132,8 +132,10 @@ Item {
             id: detailsText;
 
             anchors { top: parent.top; horizontalCenter: parent.horizontalCenter; topMargin: 10 }
+            width: frame.width;
             textFormat: Text.RichText;
             text: networkSettings.details;
+            wrapMode: Text.WordWrap;
         }
     }
 

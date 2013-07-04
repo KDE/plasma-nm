@@ -22,6 +22,7 @@
 #define PLASMA_NM_NETWORK_SETTINGS_H
 
 #include <QObject>
+#include <NetworkManagerQt/ActiveConnection>
 #include "networkmodelitem.h"
 
 class NetworkSettingsPrivate;
@@ -60,6 +61,7 @@ private Q_SLOTS:
     void updateIcon();
     void updateSettingName();
     void updateStatus();
+//     void testActiveChange(NetworkManager::ActiveConnection::State state);
 
 Q_SIGNALS:
     void detailsChanged();

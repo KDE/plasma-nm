@@ -51,6 +51,7 @@ NetworkSettings::NetworkSettings()
     d->networkModel = 0;
     d->settingName = i18n("Network Setting");
     d->status = i18n("Network status and control");
+    d->type = NetworkModelItem::Undefined;
 
     d->initNetwork();
     kDebug() << "NetworkSettings module loaded.";
@@ -135,10 +136,19 @@ void NetworkSettings::setStatus(const QString& status)
 
 void NetworkSettings::setNetwork(uint type, const QString& path)
 {
+    if (d->type == NetworkModelItem::Vpn) {
+        disconnect(NetworkManager::notifier(), SIGNAL(activeConnectionAdded(QString)),
+                   this, SLOT(activeConnectionAdded(QString)));
+    } else if (d->type != NetworkModelItem::Vpn && d->type != NetworkModelItem::Undefined) {
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
+        if (device) {
+            disconnect(device.data(), SIGNAL(connectionStateChanged()));
+            disconnect(device.data(), SIGNAL(activeConnectionChanged()));
+        }
+    }
+
     d->type = (NetworkModelItem::NetworkType) type;
     d->path = path;
-
-    // TODO: disconnect previous
 
     if (d->type == NetworkModelItem::Ethernet ||
         d->type == NetworkModelItem::Modem ||
@@ -154,7 +164,6 @@ void NetworkSettings::setNetwork(uint type, const QString& path)
                     SLOT(updateDetails()), Qt::UniqueConnection);
             connect(device.data(), SIGNAL(activeConnectionChanged()),
                     SLOT(updateDetails()), Qt::UniqueConnection);
-            //TODO: icon changes
         }
     }
 
@@ -182,7 +191,6 @@ void NetworkSettings::activeConnectionAdded(const QString& active)
 {
     NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::findActiveConnection(active);
 
-    // TODO: disconnect previous
     if (activeConnection && activeConnection->vpn()) {
         connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                 SLOT(updateStatus()), Qt::UniqueConnection);

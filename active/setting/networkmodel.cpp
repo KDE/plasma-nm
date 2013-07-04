@@ -37,17 +37,6 @@ NetworkModel::NetworkModel(QObject *parent):
 
     setRoleNames(roles);
 
-//  TODO: this won't be probably necessary
-
-//     connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)),
-//             SLOT(deviceAdded(QString)));
-//     connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
-//             SLOT(deviceRemoved(QString)));
-//     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
-//             SLOT(connectionAdded(QString)));
-//     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
-//             SLOT(connectionRemoved(QString)));
-//
     bool nonVirtualDevice = false;
     NetworkModelItem *item = 0;
     foreach (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
@@ -124,86 +113,3 @@ QVariant NetworkModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-// TODO: this won't be probably necessary
-
-// void NetworkModel::connectionAdded(const QString& connection)
-// {
-//     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
-//
-//     if (con) {
-//         addConnection(con);
-//     }
-// }
-//
-// void NetworkModel::connectionRemoved(const QString& connection)
-// {
-//     foreach (NetworkModelItem * item, m_networkItems) {
-//         if (item->path() == connection) {
-//             const int row = m_networkItems.indexOf(item);
-//
-//             if (row >= 0) {
-//                 beginRemoveRows(QModelIndex(), row, row);
-//                 m_networkItems.removeAll(item);
-//                 item->deleteLater();
-//                 endRemoveRows();
-//             }
-//         }
-//     }
-// }
-
-// void NetworkModel::deviceAdded(const QString& device)
-// {
-//     NetworkManager::Device::Ptr dev = NetworkManager::findNetworkInterface(device);
-//
-//     if (dev) {
-//         addDevice(dev);
-//     }
-// }
-//
-// void NetworkModel::deviceRemoved(const QString& device)
-// {
-//     foreach (NetworkModelItem * item, m_networkItems) {
-//         if (item->path() == device) {
-//             const int row = m_networkItems.indexOf(item);
-//
-//             if (row >= 0) {
-//                 beginRemoveRows(QModelIndex(), row, row);
-//                 m_networkItems.removeAll(item);
-//                 item->deleteLater();
-//                 endRemoveRows();
-//             }
-//         }
-//     }
-// }
-
-// void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connection)
-// {
-//     if (connection->settings()->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
-//         qDebug() << "Creating vpn";
-//         const int index = m_networkItems.count();
-//         beginInsertRows(QModelIndex(), index, index);
-//         NetworkModelItem * item = new NetworkModelItem(NetworkModelItem::Vpn, connection->path());
-//         m_networkItems.push_back(item);
-//         endInsertRows();
-//     }
-// }
-//
-// void NetworkModel::addDevice(const NetworkManager::Device::Ptr& device)
-// {
-//     if (device->type() == NetworkManager::Device::Ethernet ||
-//         device->type() == NetworkManager::Device::Modem ||
-//         device->type() == NetworkManager::Device::Wifi) {
-//         const int index = m_networkItems.count();
-//         beginInsertRows(QModelIndex(), index, index);
-//         NetworkModelItem * item;
-//         if (device->type() == NetworkManager::Device::Ethernet) {
-//             qDebug() << "Creating ethernet";
-//             item = new NetworkModelItem(NetworkModelItem::Ethernet, device->uni());
-//         } else if (device->type() == NetworkManager::Device::Wifi) {
-//             qDebug() << "Creating wifi";
-//             item = new NetworkModelItem(NetworkModelItem::Wifi, device->uni());
-//         }
-//         m_networkItems.push_back(item);
-//         endInsertRows();
-//     }
-// }

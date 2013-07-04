@@ -61,7 +61,6 @@ private Q_SLOTS:
     void updateIcon();
     void updateSettingName();
     void updateStatus();
-//     void testActiveChange(NetworkManager::ActiveConnection::State state);
 
 Q_SIGNALS:
     void detailsChanged();

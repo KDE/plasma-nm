@@ -161,62 +161,60 @@ QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
 
 QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type, QString &title)
 {
-    QString text;
     QString icon;
     switch (type) {
     case ConnectionSettings::Adsl:
-        text = i18n("ADSL");
+        title = i18n("ADSL");
         icon = "modem";
         break;
     case ConnectionSettings::Pppoe:
-        text = i18n("DSL");
+        title = i18n("DSL");
         icon = "modem";
         break;
     case ConnectionSettings::Bluetooth:
-        text = i18n("Bluetooth");
+        title = i18n("Bluetooth");
         icon = "preferences-system-bluetooth";
         break;
     case ConnectionSettings::Bond:
-        text = i18n("Bond");
+        title = i18n("Bond");
         break;
     case ConnectionSettings::Bridge:
-        text = i18n("Bridge");
+        title = i18n("Bridge");
         break;
     case ConnectionSettings::Gsm:
     case ConnectionSettings::Cdma:
-        text = i18n("Mobile broadband");
+        title = i18n("Mobile broadband");
         icon = "phone";
         break;
     case ConnectionSettings::Infiniband:
-        text = i18n("Infiniband");
+        title = i18n("Infiniband");
         break;
     case ConnectionSettings::OLPCMesh:
-        text = i18n("Olpc mesh");
+        title = i18n("Olpc mesh");
         break;
     case ConnectionSettings::Vlan:
-        text = i18n("VLAN");
+        title = i18n("VLAN");
         break;
     case ConnectionSettings::Vpn:
-        text = i18n("VPN");
+        title = i18n("VPN");
         icon = "secure-card";
         break;
     case ConnectionSettings::Wimax:
-        text = i18n("WiMAX");
+        title = i18n("WiMAX");
         icon = "network-wireless";
         break;
     case ConnectionSettings::Wired:
-        text = i18n("Wired");
+        title = i18n("Wired");
         icon = "network-wired";
         break;
     case ConnectionSettings::Wireless:
-        text = i18n("Wireless");
+        title = i18n("Wireless");
         icon = "network-wireless";
         break;
     default:
-        text = i18n("Unknown connection type");
+        title = i18n("Unknown connection type");
         break;
     }
-    title = text;
     return icon;
 }
 

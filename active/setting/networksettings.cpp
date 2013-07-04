@@ -210,7 +210,7 @@ void NetworkSettings::updateDetails()
     detailKeys << "interface:status" << "interface:bitrate" << "interface:hardwareaddress" << "ipv4:address" << "ipv6:address" << "wireless:ssid" << "wireless:signal";
     detailKeys << "wireless:security" << "mobile:operator" << "mobile:quality" << "mobile:technology" << "vpn:plugin" << "vpn:banner";
 
-    // TODO: update the changes properly
+
     if (d->type != NetworkModelItem::Vpn) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);
         if (device) {
@@ -245,7 +245,6 @@ void NetworkSettings::updateDetails()
     } else {
         NetworkManager::ActiveConnection::Ptr active;
         foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
-            qDebug() << activeConnection->vpn() << activeConnection->state();
             if (activeConnection && activeConnection->vpn() &&
                 (activeConnection->state() == NetworkManager::ActiveConnection::Activated || activeConnection->state() == NetworkManager::ActiveConnection::Activating)) {
                 active = activeConnection;

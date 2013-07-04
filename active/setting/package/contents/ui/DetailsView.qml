@@ -57,8 +57,8 @@ Item {
                     text: name;
 
                     anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter }
-//                     wrapMode: Text.Wrap;
-//                     width: parent.width;
+                    wrapMode: Text.Wrap;
+                    width: parent.width;
                     font.weight: Font.Bold;
                 }
 

@@ -27,7 +27,7 @@ ListModel {
         append({"name": name, "key":key})
     }
 
-    Component.onCompleted: {
+    function init() {
         insert("interface:type", i18n("Type"));
         insert("interface:status", i18n("Connection State"));
         insert("interface:driver", i18n("Driver"));

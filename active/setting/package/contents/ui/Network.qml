@@ -153,8 +153,6 @@ Item {
             width: 200;
             text: i18n("Configure details to show");
             iconSource: "configure";
-            // TODO: implement
-            enabled: false;
 
             onClicked: configureDetailsDialog.open();
         }
@@ -167,7 +165,7 @@ Item {
         buttonTexts: [i18n("Save"), i18n("Close")]
         onButtonClicked: {
             if (index == 0) {
-                console.log("Save");
+                configureDetailsLoader.item.save();
             } else {
                 console.log("Close");
                 close();

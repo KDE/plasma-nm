@@ -22,6 +22,7 @@ import QtQuick 1.1
 import org.kde.qtextracomponents 0.1
 import org.kde.plasma.graphicswidgets 0.1 as PlasmaWidgets
 import org.kde.plasma.components 0.1 as PlasmaComponents
+import org.kde.active.settings 0.1 as ActiveSettings
 
 Item {
     id: detailsWidget;
@@ -189,5 +190,36 @@ Item {
 
             upArrow.enabled = true;
         }
+    }
+
+    ActiveSettings.ConfigGroup {
+        id: detailsConfig;
+        file: "networkactivesettingrc";
+        group: "General";
+
+    }
+    Component.onCompleted: {
+        availableDetailsModel.init();
+        var tmp = detailsConfig.readEntry("DetailKeys");
+        var keys = tmp.split(',');
+        if (keys.length == 0 || keys == "") {
+            keys = ["interface:status","interface:bitrate","interface:hardwareaddress","ipv4:address","ipv6:address","wireless:ssid","wireless:signal","wireless:security","mobile:operator","mobile:quality","mobile:technology","vpn:plugin","vpn:banner"];
+        }
+        for (var i in keys) {
+            for (var j = 0; j < availableDetailsModel.count; j++) {
+                if (availableDetailsModel.get(j).key == keys[i]) {
+                    selectedDetailsModel.insert(selectedDetailsModel.count, availableDetailsModel.get(j));
+                    availableDetailsModel.remove(j);
+                }
+            }
+        }
+    }
+
+    function save() {
+        var keysToSave = [];
+        for (var i = 0; i < selectedDetailsModel.count; i++) {
+            keysToSave.push(selectedDetailsModel.get(i).key);
+        }
+        detailsConfig.writeEntry("DetailKeys", keysToSave);
     }
 }

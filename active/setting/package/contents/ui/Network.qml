@@ -166,8 +166,8 @@ Item {
         onButtonClicked: {
             if (index == 0) {
                 configureDetailsLoader.item.save();
+                networkSettings.detailKeys = configureDetailsLoader.item.detailKeys;
             } else {
-                console.log("Close");
                 close();
             }
         }
@@ -181,12 +181,4 @@ Item {
             }
         }
     }
-
-    // TEST
-//     DetailsWidget {
-//         id: details;
-//
-//         anchors { verticalCenter: parent.verticalCenter; horizontalCenter: parent.horizontalCenter }
-//         width: 500; height: 500;
-//     }
 }

@@ -27,6 +27,8 @@ import org.kde.active.settings 0.1 as ActiveSettings
 Item {
     id: detailsWidget;
 
+    property variant detailKeys;
+
     DetailsModel {
         id: availableDetailsModel;
     }
@@ -109,7 +111,7 @@ Item {
 
             onClicked: {
                 if (selectedDetails.index != -1 && selectedDetailsModel.count != 0) {
-                    availableDetailsModel.insert(availableDetailsModel.count, selectedDetailsModel.get(selectedDetails.index));
+                    availableDetailsModel.append(selectedDetailsModel.get(selectedDetails.index));
                     selectedDetailsModel.remove(selectedDetails.index);
                 }
 
@@ -137,7 +139,7 @@ Item {
 
             onClicked: {
                 if (availableDetails.index != -1 && availableDetailsModel.count != 0) {
-                    selectedDetailsModel.insert(selectedDetailsModel.count, availableDetailsModel.get(availableDetails.index));
+                    selectedDetailsModel.append(availableDetailsModel.get(availableDetails.index));
                     availableDetailsModel.remove(availableDetails.index);
                 }
 
@@ -221,5 +223,8 @@ Item {
             keysToSave.push(selectedDetailsModel.get(i).key);
         }
         detailsConfig.writeEntry("DetailKeys", keysToSave);
+        detailKeys = keysToSave;
     }
+    // TODO: I have to change details back to the previous state when they are not saved
+    // TODO: More testing
 }

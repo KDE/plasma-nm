@@ -48,15 +48,15 @@ public:
     QString status() const;
 
 public Q_SLOTS:
-    void setDetails(const QString & details);
-    void setIcon(const QString & icon);
-    void setSettingName(const QString & name);
-    void setStatus(const QString & status);
-    void setNetworkModel(QObject* networkModel);
-    void setNetwork(uint type, const QString & path);
+    void setDetails(const QString &details);
+    void setIcon(const QString &icon);
+    void setSettingName(const QString &name);
+    void setStatus(const QString &status);
+    void setNetworkModel(QObject *networkModel);
+    void setNetwork(uint type, const QString &path);
 
 private Q_SLOTS:
-    void activeConnectionAdded(const QString & active);
+    void activeConnectionAdded(const QString &active);
     void updateDetails();
     void updateIcon();
     void updateSettingName();
@@ -71,7 +71,7 @@ Q_SIGNALS:
     void networkModelChanged();
 
 private:
-    NetworkSettingsPrivate* d;
+    NetworkSettingsPrivate *d;
 };
 
 #endif // PLASMA_NM_NETWORK_SETTINGS_H

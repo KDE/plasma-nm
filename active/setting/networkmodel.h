@@ -36,12 +36,12 @@ Q_PROPERTY(int count READ count NOTIFY countChanged)
 public:
     enum ItemRole {TypeRole = Qt::UserRole + 1, NameRole, IconRole, PathRole};
 
-    explicit NetworkModel(QObject* parent = 0);
+    explicit NetworkModel(QObject *parent = 0);
     virtual ~NetworkModel();
 
     int count() const;
-    int rowCount(const QModelIndex& parent) const;
-    QVariant data(const QModelIndex& index, int role) const;
+    int rowCount(const QModelIndex &parent) const;
+    QVariant data(const QModelIndex &index, int role) const;
 
 private Q_SLOTS:
 
@@ -49,8 +49,8 @@ Q_SIGNALS:
     void countChanged();
 
 private:
-    void addConnection(const NetworkManager::Connection::Ptr & connection);
-    void addDevice(const NetworkManager::Device::Ptr & device);
+    void addConnection(const NetworkManager::Connection::Ptr &connection);
+    void addDevice(const NetworkManager::Device::Ptr &device);
 
     QList<NetworkModelItem*> m_networkItems;
 };

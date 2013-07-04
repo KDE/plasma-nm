@@ -28,7 +28,7 @@
 #include <NetworkManagerQt/Connection>
 
 
-NetworkModelItem::NetworkModelItem(NetworkModelItem::NetworkType type, const QString & path, QObject* parent):
+NetworkModelItem::NetworkModelItem(NetworkModelItem::NetworkType type, const QString &path, QObject *parent):
     QObject(parent),
     m_type(type),
     m_path(path)
@@ -54,7 +54,7 @@ QString NetworkModelItem::path() const
     return m_path;
 }
 
-void NetworkModelItem::setPath(const QString & path)
+void NetworkModelItem::setPath(const QString &path)
 {
     m_path = path;
 }
@@ -95,7 +95,7 @@ QString NetworkModelItem::icon() const
     return "network-wired";
 }
 
-bool NetworkModelItem::operator==(const NetworkModelItem* item) const
+bool NetworkModelItem::operator==(const NetworkModelItem *item) const
 {
     if (item->type() == m_type &&
         item->path() == m_path) {

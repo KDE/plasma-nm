@@ -26,7 +26,7 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Settings>
 
-NetworkModel::NetworkModel(QObject* parent):
+NetworkModel::NetworkModel(QObject *parent):
     QAbstractListModel(parent)
 {
     QHash<int, QByteArray> roles = roleNames();
@@ -48,27 +48,27 @@ NetworkModel::NetworkModel(QObject* parent):
 //     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
 //             SLOT(connectionRemoved(QString)));
 //
-    bool physicDevice = false;
-    NetworkModelItem * item = 0;
+    bool nonVirtualDevice = false;
+    NetworkModelItem *item = 0;
     foreach (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
             item = new NetworkModelItem(NetworkModelItem::Ethernet, device->uni());
-            physicDevice = true;
+            nonVirtualDevice = true;
         } else if (device->type() == NetworkManager::Device::Modem) {
             item = new NetworkModelItem(NetworkModelItem::Modem, device->uni());
-            physicDevice = true;
+            nonVirtualDevice = true;
         } else if (device->type() == NetworkManager::Device::Wifi) {
             item = new NetworkModelItem(NetworkModelItem::Wifi, device->uni());
-            physicDevice = true;
+            nonVirtualDevice = true;
         }
 
-        if (physicDevice) {
+        if (nonVirtualDevice) {
             const int index = m_networkItems.count();
             beginInsertRows(QModelIndex(), index, index);
             m_networkItems.push_back(item);
             endInsertRows();
 
-            physicDevice = false;
+            nonVirtualDevice = false;
             item = 0;
         }
     }
@@ -90,18 +90,18 @@ int NetworkModel::count() const
     return m_networkItems.count();
 }
 
-int NetworkModel::rowCount(const QModelIndex& parent) const
+int NetworkModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return m_networkItems.count();
 }
 
-QVariant NetworkModel::data(const QModelIndex& index, int role) const
+QVariant NetworkModel::data(const QModelIndex &index, int role) const
 {
     const int row = index.row();
 
     if (row >= 0 && row < m_networkItems.count()) {
-        NetworkModelItem * item = m_networkItems.at(row);
+        NetworkModelItem *item = m_networkItems.at(row);
 
         switch (role) {
             case TypeRole:

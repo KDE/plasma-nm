@@ -196,8 +196,8 @@ Item {
         id: detailsConfig;
         file: "networkactivesettingrc";
         group: "General";
-
     }
+
     Component.onCompleted: {
         availableDetailsModel.init();
         var tmp = detailsConfig.readEntry("DetailKeys");

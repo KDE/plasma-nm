@@ -29,7 +29,7 @@ Q_OBJECT
 public:
     enum NetworkType { Undefined, Ethernet, Modem, Vpn, Wifi };
 
-    explicit NetworkModelItem(NetworkType type, const QString & path = QString(), QObject * parent = 0);
+    explicit NetworkModelItem(NetworkType type, const QString &path = QString(), QObject *parent = 0);
     virtual ~NetworkModelItem();
 
     // Basic properties
@@ -37,12 +37,12 @@ public:
     void setType(NetworkType type);
 
     QString path() const;
-    void setPath(const QString & path);
+    void setPath(const QString &path);
 
     QString icon() const;
     QString name() const;
 
-    bool operator==(const NetworkModelItem * item) const;
+    bool operator==(const NetworkModelItem *item) const;
 
 private:
     NetworkType m_type;

@@ -74,7 +74,7 @@ QObject* NetworkSettings::networkModel()
     return d->networkModel;
 }
 
-void NetworkSettings::setNetworkModel(QObject* networkModel)
+void NetworkSettings::setNetworkModel(QObject *networkModel)
 {
     if ( d->networkModel != networkModel) {
         d->networkModel = networkModel;
@@ -87,7 +87,7 @@ QString NetworkSettings::details() const
     return d->details;
 }
 
-void NetworkSettings::setDetails(const QString& details)
+void NetworkSettings::setDetails(const QString &details)
 {
     if (d->details != details) {
         d->details = details;
@@ -100,7 +100,7 @@ QString NetworkSettings::icon() const
     return d->icon;
 }
 
-void NetworkSettings::setIcon(const QString& icon)
+void NetworkSettings::setIcon(const QString &icon)
 {
     if (d->icon != icon) {
         d->icon = icon;
@@ -113,7 +113,7 @@ QString NetworkSettings::settingName() const
     return d->settingName;
 }
 
-void NetworkSettings::setSettingName(const QString& name)
+void NetworkSettings::setSettingName(const QString &name)
 {
     if (d->settingName != name) {
         d->settingName = name;
@@ -126,7 +126,7 @@ QString NetworkSettings::status() const
     return d->status;
 }
 
-void NetworkSettings::setStatus(const QString& status)
+void NetworkSettings::setStatus(const QString &status)
 {
     if (d->status != status) {
         d->status = status;
@@ -134,16 +134,14 @@ void NetworkSettings::setStatus(const QString& status)
     }
 }
 
-void NetworkSettings::setNetwork(uint type, const QString& path)
+void NetworkSettings::setNetwork(uint type, const QString &path)
 {
     if (d->type == NetworkModelItem::Vpn) {
-        disconnect(NetworkManager::notifier(), SIGNAL(activeConnectionAdded(QString)),
-                   this, SLOT(activeConnectionAdded(QString)));
-    } else if (d->type != NetworkModelItem::Vpn && d->type != NetworkModelItem::Undefined) {
+        disconnect(NetworkManager::notifier(), 0, this, 0);
+    } else if (d->type != NetworkModelItem::Undefined) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
         if (device) {
-            disconnect(device.data(), SIGNAL(connectionStateChanged()));
-            disconnect(device.data(), SIGNAL(activeConnectionChanged()));
+            disconnect(device.data(), 0, this, 0);
         }
     }
 
@@ -187,7 +185,7 @@ void NetworkSettings::setNetwork(uint type, const QString& path)
     updateStatus();
 }
 
-void NetworkSettings::activeConnectionAdded(const QString& active)
+void NetworkSettings::activeConnectionAdded(const QString &active)
 {
     NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::findActiveConnection(active);
 
@@ -203,7 +201,7 @@ void NetworkSettings::activeConnectionAdded(const QString& active)
 
 void NetworkSettings::updateDetails()
 {
-    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
+    const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details = "<qt><table>";
 
     QStringList detailKeys;
@@ -214,9 +212,9 @@ void NetworkSettings::updateDetails()
     if (d->type != NetworkModelItem::Vpn) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);
         if (device) {
-            bool connected = (device->state() == NetworkManager::Device::Activated);
-            bool connecting = (device->state() == NetworkManager::Device::CheckingIp || device->state() == NetworkManager::Device::ConfiguringHardware ||
-                               device->state() == NetworkManager::Device::ConfiguringIp || device->state() == NetworkManager::Device::Preparing);
+            const NetworkManager::Device::State state = device->state();
+            const bool connected = (state == NetworkManager::Device::Activated);
+            const bool connecting = (state >= NetworkManager::Device::CheckingIp && state <= NetworkManager::Device::Preparing);
             if (d->type == NetworkModelItem::Ethernet) {
                 details += UiUtils::deviceDetails(device, NetworkManager::ConnectionSettings::Wired, connected, connecting, detailKeys, format);
                 NetworkManager::WiredDevice::Ptr wiredDevice;

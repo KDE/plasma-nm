@@ -28,8 +28,8 @@ ListModel {
     }
 
     function init() {
-        insert("interface:type", i18n("Type"));
-        insert("interface:status", i18n("Connection State"));
+//         insert("interface:type", i18n("Type"));
+//         insert("interface:status", i18n("Connection State"));
         insert("interface:driver", i18n("Driver"));
         insert("interface:bitrate", i18n("Connection Speed"));
         insert("interface:name", i18n("System Name"));

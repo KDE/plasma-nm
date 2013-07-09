@@ -62,7 +62,7 @@ Item {
         id: frame;
 
         anchors { horizontalCenter: parent.horizontalCenter; top: titleCol.bottom; topMargin: 10 }
-        width: networkSettings.networkModel.count * 150;
+        width: networkSettings.networkModel.count * 170;
         height: 48;
         source: "image://appbackgrounds/contextarea";
         fillMode: Image.Tile;
@@ -81,8 +81,7 @@ Item {
             clip: true;
             interactive: false;
             model: networkSettings.networkModel;
-            // TODO
-            currentIndex: -1;
+            currentIndex: 0;
             highlight: PlasmaComponents.Highlight {}
             delegate: NetworkItem {
                 anchors { top: parent.top; bottom: parent.bottom }
@@ -123,10 +122,20 @@ Item {
         }
     }
 
+    PlasmaNm.Model {
+        id: connectionModel;
+    }
+
+    PlasmaNm.SortModel {
+        id: connectionSortModel;
+
+        sourceModel: connectionModel;
+    }
+
     Item {
         id: itemContent;
 
-        anchors { left: parent.left; right: parent.right; top: frame.bottom; bottom: parent.bottom; leftMargin: 10; topMargin: 10 }
+        anchors { left: parent.left; right: parent.right; top: frame.bottom; bottom: parent.bottom; topMargin: 10; bottomMargin: 50 }
 
         PlasmaComponents.Label {
             id: detailsText;
@@ -137,8 +146,35 @@ Item {
             text: networkSettings.details;
             wrapMode: Text.WordWrap;
         }
-    }
 
+        Image {
+            id: connectionsFrame;
+
+            anchors { left: parent.left; right: parent.right; top: detailsText.bottom; bottom: parent.bottom; topMargin: 10 }
+            source: "image://appbackgrounds/contextarea";
+            fillMode: Image.Tile;
+
+            Border {
+                anchors.fill: parent;
+            }
+
+            ListView {
+                id: connectionsView;
+
+                anchors.fill: parent;
+                clip: true;
+                currentIndex: 0;
+                model: connectionSortModel;
+                delegate: ConnectionItem {
+                    anchors { left: parent.left; right: parent.right }
+                    checked: connectionsView.currentIndex == index && itemConnected;
+                    onClicked: {
+                        console.log("CLICKED");
+                    }
+                }
+            }
+        }
+    }
 
     PlasmaComponents.ButtonRow {
         id: configureButton;

@@ -62,6 +62,9 @@ void NetworkModelItem::setPath(const QString &path)
 QString NetworkModelItem::name() const
 {
     switch (m_type) {
+        case NetworkModelItem::General:
+            return i18n("General");
+            break;
         case NetworkModelItem::Ethernet:
             return i18n("Ethernet");
             break;
@@ -83,13 +86,16 @@ QString NetworkModelItem::name() const
 
 QString NetworkModelItem::icon() const
 {
-    if (m_type == NetworkModelItem::Ethernet) {
+    if (m_type == NetworkModelItem::General) {
+        return "network-defaultroute";
+    } else if (m_type == NetworkModelItem::Ethernet) {
         return "network-wired-activated";
+    } else if (m_type == NetworkModelItem::Modem) {
+        return "phone";
     } else if (m_type == NetworkModelItem::Vpn) {
-        // TODO: missing VPN icon
-        return "network-wired";
+        return "secure-card";
     } else if (m_type == NetworkModelItem::Wifi) {
-        return "network-wireless-100";
+        return "network-wireless-connected-100";
     }
 
     return "network-wired";

@@ -39,6 +39,13 @@ NetworkModel::NetworkModel(QObject *parent):
 
     bool nonVirtualDevice = false;
     NetworkModelItem *item = 0;
+
+    item = new NetworkModelItem(NetworkModelItem::General, QString());
+    int index = m_networkItems.count();
+    beginInsertRows(QModelIndex(), index, index);
+    m_networkItems.push_back(item);
+    endInsertRows();
+
     foreach (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
             item = new NetworkModelItem(NetworkModelItem::Ethernet, device->uni());
@@ -52,7 +59,7 @@ NetworkModel::NetworkModel(QObject *parent):
         }
 
         if (nonVirtualDevice) {
-            const int index = m_networkItems.count();
+            index = m_networkItems.count();
             beginInsertRows(QModelIndex(), index, index);
             m_networkItems.push_back(item);
             endInsertRows();
@@ -64,7 +71,7 @@ NetworkModel::NetworkModel(QObject *parent):
 
     // Insert VPN setting at the end
     item = new NetworkModelItem(NetworkModelItem::Vpn, QString());
-    const int index = m_networkItems.count();
+    index = m_networkItems.count();
     beginInsertRows(QModelIndex(), index, index);
     m_networkItems.push_back(item);
     endInsertRows();

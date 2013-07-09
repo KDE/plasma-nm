@@ -27,7 +27,7 @@ class NetworkModelItem : public QObject
 {
 Q_OBJECT
 public:
-    enum NetworkType { Undefined, Ethernet, Modem, Vpn, Wifi };
+    enum NetworkType { Undefined, General, Ethernet, Modem, Vpn, Wifi };
 
     explicit NetworkModelItem(NetworkType type, const QString &path = QString(), QObject *parent = 0);
     virtual ~NetworkModelItem();

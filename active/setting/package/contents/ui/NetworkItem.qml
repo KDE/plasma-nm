@@ -19,6 +19,7 @@
 */
 
 import QtQuick 1.1
+import org.kde.qtextracomponents 0.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasma.core 0.1 as PlasmaCore
@@ -27,19 +28,20 @@ PlasmaComponents.ListItem {
     id: networkItem;
 
     enabled: true
-    width: 150;
+    width: 170;
 
-    PlasmaCore.Svg {
-        id: svgIcons;
+    QIconItem {
+        id: networkIcon;
 
-        multipleImages: true;
-        imagePath: "icons/plasma-nm";
+        anchors { left: parent.left; top: parent.top; bottom: parent.bottom }
+        width: 48; height: 48;
+        icon: QIcon(itemIcon);
     }
 
     PlasmaComponents.Label {
         id: networkLabel;
 
-        anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter }
+        anchors { left: networkIcon.right; verticalCenter: parent.verticalCenter }
         font.weight: Font.Bold;
         elide: Text.ElideRight;
         text: itemName;

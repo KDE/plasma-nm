@@ -134,44 +134,46 @@ Item {
         filterType: networkSettings.connectionType;
     }
 
-    Item {
-        id: itemContent;
+    PlasmaExtras.Heading {
+        id: availableConnectionsLabel;
 
-        anchors { left: parent.left; right: parent.right; top: frame.bottom; bottom: parent.bottom; topMargin: 10; bottomMargin: 50 }
+        anchors { left: parent.left; right: parent.right; top: frame.bottom; topMargin: 10 }
+        text: i18n("Available connections");
+        level: 2;
+    }
 
-        PlasmaComponents.Label {
-            id: detailsText;
+    PlasmaComponents.Label {
+        id: detailsText;
 
-            anchors { top: parent.top; horizontalCenter: parent.horizontalCenter; topMargin: 10 }
-//             width: frame.width;
-            width: parent.width;
-            textFormat: Text.RichText;
-            text: networkSettings.details;
-            wrapMode: Text.WordWrap;
+        anchors { top: availableConnectionsLabel.bottom; right: parent.right; topMargin: 10 }
+        width: parent.width/2;
+        textFormat: Text.RichText;
+        text: networkSettings.details;
+        wrapMode: Text.WordWrap;
+    }
+
+    Image {
+        id: connectionsFrame;
+
+        anchors { left: parent.left; top: availableConnectionsLabel.bottom; bottom: parent.bottom; topMargin: 10; bottomMargin: 50 }
+        width: parent.width/2;
+        source: "image://appbackgrounds/contextarea";
+        fillMode: Image.Tile;
+
+        Border {
+            anchors.fill: parent;
         }
 
-        Image {
-            id: connectionsFrame;
+        ListView {
+            id: connectionsView;
 
-            anchors { left: parent.left; right: parent.right; top: detailsText.bottom; bottom: parent.bottom; topMargin: 10 }
-            source: "image://appbackgrounds/contextarea";
-            fillMode: Image.Tile;
-
-            Border {
-                anchors.fill: parent;
-            }
-
-            ListView {
-                id: connectionsView;
-
-                anchors.fill: parent;
-                clip: true;
-                currentIndex: -1;
-                model: connectionSortModel;
-                delegate: ConnectionItem {
-                    onClicked: {
-                        console.log("CLICKED");
-                    }
+            anchors.fill: parent;
+            clip: true;
+            currentIndex: -1;
+            model: connectionSortModel;
+            delegate: ConnectionItem {
+                onClicked: {
+                    console.log("CLICKED");
                 }
             }
         }

@@ -40,6 +40,8 @@ class KDE_EXPORT WifiSecurity : public SettingWidget
 {
     Q_OBJECT
 public:
+    enum SecurityType { None = 0, WepHex, WepPassphrase, Leap, DynamicWep, WpaPsk, WpaEap };
+
     explicit WifiSecurity(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
                  const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(),
                  QWidget* parent = 0, Qt::WindowFlags f = 0);

@@ -42,9 +42,33 @@ PlasmaComponents.ListItem {
     PlasmaComponents.Label {
         id: networkLabel;
 
-        anchors { left: connectionIcon.right; right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: 10 }
+        anchors { left: connectionIcon.right; right: editButton.left; verticalCenter: parent.verticalCenter }
         font.weight: Font.Bold;
         elide: Text.ElideRight;
         text: itemName;
+    }
+
+    PlasmaComponents.ToolButton {
+        id: editButton;
+
+        anchors { right: securedIcon.left; top: parent.top; bottom: parent.bottom }
+
+        height: 48;
+        width: itemUuid.length == 0 ? 0 : 70;
+        flat: false;
+        text: i18n("Edit");
+        iconSource: "configure";
+        visible: itemUuid.length != 0;
+        // TODO
+        enabled: false;
+    }
+
+    QIconItem {
+        id: securedIcon;
+
+        anchors { right: parent.right; top: parent.top; bottom: parent.bottom }
+        width: 48; height: 48;
+        icon: QIcon("object-locked");
+        visible: itemSecure;
     }
 }

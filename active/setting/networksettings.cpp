@@ -377,8 +377,10 @@ void NetworkSettings::updateStatus()
         setStatus(i18n("Network status and control"));
     } else if (d->type == NetworkModelItem::Vpn) {
         // TODO: maybe check for the case when there are two active VPN connections
+        bool vpnFound = false;
         foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
             if (activeConnection && activeConnection->vpn()) {
+                vpnFound = true;
                 if (activeConnection->state() == NetworkManager::ActiveConnection::Unknown) {
                     setStatus(UiUtils::connectionStateToString(NetworkManager::Device::UnknownState));
                 } else if (activeConnection->state() == NetworkManager::ActiveConnection::Activating) {
@@ -391,6 +393,10 @@ void NetworkSettings::updateStatus()
                     setStatus(UiUtils::connectionStateToString(NetworkManager::Device::Disconnected));
                 }
             }
+        }
+
+        if (!vpnFound) {
+            setStatus(UiUtils::connectionStateToString(NetworkManager::Device::Disconnected));
         }
     } else if (d->type != NetworkModelItem::Undefined) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);

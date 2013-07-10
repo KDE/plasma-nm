@@ -144,6 +144,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 
     m_editor->connectionsWidget->setSortingEnabled(false);
     initializeConnections();
+    m_editor->connectionsWidget->sortByColumn(0, Qt::AscendingOrder);
     m_editor->connectionsWidget->setSortingEnabled(true);
 
     connect(m_editor->connectionsWidget, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),

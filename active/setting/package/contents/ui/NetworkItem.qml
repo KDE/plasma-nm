@@ -28,7 +28,7 @@ PlasmaComponents.ListItem {
     id: networkItem;
 
     enabled: true
-    width: 170;
+    width: 150;
 
     QIconItem {
         id: networkIcon;

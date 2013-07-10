@@ -42,7 +42,7 @@ Item {
     }
 
     Column {
-        id: titleCol
+        id: titleCol;
         anchors.top: parent.top;
         anchors.left: parent.left;
         anchors.right: parent.right;
@@ -62,7 +62,7 @@ Item {
         id: frame;
 
         anchors { horizontalCenter: parent.horizontalCenter; top: titleCol.bottom; topMargin: 10 }
-        width: networkSettings.networkModel.count * 170;
+        width: networkSettings.networkModel.count * 150;
         height: 48;
         source: "image://appbackgrounds/contextarea";
         fillMode: Image.Tile;
@@ -88,6 +88,7 @@ Item {
                 checked: networksView.currentIndex == index;
                 onClicked: {
                     networksView.currentIndex = index;
+                    connectionsView.currentIndex = -1;
                     networkSettings.setNetwork(itemType, itemPath);
                 }
             }
@@ -130,6 +131,7 @@ Item {
         id: connectionSortModel;
 
         sourceModel: connectionModel;
+        filterType: networkSettings.connectionType;
     }
 
     Item {
@@ -141,7 +143,8 @@ Item {
             id: detailsText;
 
             anchors { top: parent.top; horizontalCenter: parent.horizontalCenter; topMargin: 10 }
-            width: frame.width;
+//             width: frame.width;
+            width: parent.width;
             textFormat: Text.RichText;
             text: networkSettings.details;
             wrapMode: Text.WordWrap;
@@ -163,11 +166,10 @@ Item {
 
                 anchors.fill: parent;
                 clip: true;
-                currentIndex: 0;
+                currentIndex: -1;
                 model: connectionSortModel;
                 delegate: ConnectionItem {
                     anchors { left: parent.left; right: parent.right }
-                    checked: connectionsView.currentIndex == index && itemConnected;
                     onClicked: {
                         console.log("CLICKED");
                     }
@@ -179,7 +181,7 @@ Item {
     PlasmaComponents.ButtonRow {
         id: configureButton;
 
-        anchors { right: parent.right; bottom: parent.bottom; rightMargin: 10 }
+        anchors { right: parent.right; bottom: parent.bottom }
         height: 40;
         exclusive: false;
 

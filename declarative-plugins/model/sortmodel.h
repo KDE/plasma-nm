@@ -29,6 +29,7 @@ class SortModel : public QSortFilterProxyModel
 {
 Q_OBJECT
 Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
+Q_PROPERTY(int filterType READ filteredConnectionType WRITE setFilteredConnectionType)
 public:
     enum SortedConnectionType {Wired, Wireless, Wimax, Gsm, Cdma, Pppoe, Adsl, Infiniband, OLPCMesh, Bluetooth, Vpn, Vlan, Bridge, Bond, Unknown };
 
@@ -37,10 +38,17 @@ public:
     explicit SortModel(QObject* parent = 0);
     virtual ~SortModel();
 
+    int filteredConnectionType() const;
+    void setFilteredConnectionType(int type);
+
     bool lessThan(const QModelIndex & left, const QModelIndex & right) const;
+    bool filterAcceptsRow(int source_row, const QModelIndex & source_parent) const;
 
     void setSourceModel(QAbstractItemModel *sourceModel);
     QAbstractItemModel * sourceModel() const;
+
+private:
+    int m_type;
 };
 
 

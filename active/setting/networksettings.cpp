@@ -40,6 +40,7 @@ public:
     QString settingName;
     QString status;
 
+    NetworkManager::ConnectionSettings::ConnectionType connectionType;
     QStringList detailKeys;
     QString path;
     NetworkModelItem::NetworkType type;
@@ -51,6 +52,7 @@ NetworkSettings::NetworkSettings()
 {
     d = new NetworkSettingsPrivate;
     d->q = this;
+    d->connectionType = NetworkManager::ConnectionSettings::Unknown;
     d->networkModel = 0;
     d->settingName = i18n("Network Setting");
     d->status = i18n("Network status and control");
@@ -92,6 +94,21 @@ void NetworkSettings::setNetworkModel(QObject *networkModel)
     if ( d->networkModel != networkModel) {
         d->networkModel = networkModel;
         emit networkModelChanged();
+    }
+}
+
+int NetworkSettings::connectionType() const
+{
+    return (int) d->connectionType;
+}
+
+void NetworkSettings::setConnectionType(int type)
+{
+    NetworkManager::ConnectionSettings::ConnectionType newType = (NetworkManager::ConnectionSettings::ConnectionType) type;
+
+    if (d->connectionType != newType) {
+        d->connectionType = newType;
+        emit connectionTypeChanged();
     }
 }
 
@@ -206,6 +223,7 @@ void NetworkSettings::setNetwork(uint type, const QString &path)
                 SLOT(activeConnectionAdded(QString)), Qt::UniqueConnection);
     }
 
+    updateConnectionType();
     updateDetails();
 //     updateIcon();
     updateSettingName();
@@ -223,6 +241,21 @@ void NetworkSettings::activeConnectionAdded(const QString &active)
                 SLOT(updateDetails()), Qt::UniqueConnection);
         updateDetails();
         updateStatus();
+    }
+}
+
+void NetworkSettings::updateConnectionType()
+{
+    if (d->type == NetworkModelItem::General) {
+        setConnectionType(NetworkManager::ConnectionSettings::Unknown);
+    } else if (d->type == NetworkModelItem::Ethernet) {
+        setConnectionType(NetworkManager::ConnectionSettings::Wired);
+    } else if (d->type == NetworkModelItem::Modem) {
+        setConnectionType(NetworkManager::ConnectionSettings::Gsm);
+    } else if (d->type == NetworkModelItem::Wifi) {
+        setConnectionType(NetworkManager::ConnectionSettings::Wireless);
+    } else if (d->type == NetworkModelItem::Vpn) {
+        setConnectionType(NetworkManager::ConnectionSettings::Vpn);
     }
 }
 
@@ -259,6 +292,8 @@ void NetworkSettings::updateDetails()
                 vpnConnection = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(active->path()), &QObject::deleteLater);
             }
             details += UiUtils::vpnDetails(vpnConnection, vpnSetting, d->detailKeys, format);
+        } else {
+            // TODO
         }
     } else {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);

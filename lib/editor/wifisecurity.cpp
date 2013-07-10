@@ -72,7 +72,7 @@ bool WifiSecurity::enabled() const
 
 bool WifiSecurity::enabled8021x() const
 {
-    if (m_ui->securityCombo->currentIndex() == 3 || m_ui->securityCombo->currentIndex() == 5) {
+    if (m_ui->securityCombo->currentIndex() == 4 || m_ui->securityCombo->currentIndex() == 6) {
         return true;
     }
 
@@ -202,9 +202,9 @@ QVariantMap WifiSecurity::setting(bool agentOwned) const
 
 QVariantMap WifiSecurity::setting8021x(bool agentOwned) const
 {
-    if (m_ui->securityCombo->currentIndex() == 3) // Dynamic WEP
+    if (m_ui->securityCombo->currentIndex() == 4) // Dynamic WEP
         return m_8021xWidget->setting(agentOwned);
-    else if (m_ui->securityCombo->currentIndex() == 5) // WPA2 Enterprise
+    else if (m_ui->securityCombo->currentIndex() == 6) // WPA2 Enterprise
         return m_WPA2Widget->setting(agentOwned);
 
     return QVariantMap();

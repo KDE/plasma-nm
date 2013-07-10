@@ -108,6 +108,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         KWindowSystem::setState(editor->winId(), NET::KeepAbove);
         KWindowSystem::forceActiveWindow(editor->winId());
         connect(editor, SIGNAL(accepted()), SLOT(editDialogAccepted()));
+        connect(editor, SIGNAL(finished(int)), editor, SLOT(deleteLater()));
     } else {
         NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
     }

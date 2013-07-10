@@ -49,37 +49,33 @@ SettingWidget * PptpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &set
     return new PptpAuthWidget(setting, parent);
 }
 
-#if 0
-QString PptpUiPlugin::suggestedFileName(Knm::Connection *connection) const
+
+QString PptpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
     Q_UNUSED(connection);
-
-    // TODO : implement suggested file name
     return QString();
 }
 
 QString PptpUiPlugin::supportedFileExtensions() const
 {
-    // TODO : return supported file extensions
     return QString();
 }
 
-QVariantList PptpUiPlugin::importConnectionSettings(const QString &fileName)
+NMVariantMapMap PptpUiPlugin::importConnectionSettings(const QString &fileName)
 {
     Q_UNUSED(fileName);
 
-    // TODO : import the PPTP connection from file and return settings
+    // TODO : import the Openconnect connection from file and return settings
     mError = VpnUiPlugin::NotImplemented;
-    return QVariantList();
+    return NMVariantMapMap();
 }
 
-bool PptpUiPlugin::exportConnectionSettings(Knm::Connection * connection, const QString &fileName)
+bool PptpUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
 {
     Q_UNUSED(connection);
     Q_UNUSED(fileName);
 
-    // TODO : export PPTP connection to file
+    // TODO : export Openconnect connection to file
     mError = VpnUiPlugin::NotImplemented;
     return false;
 }
-#endif

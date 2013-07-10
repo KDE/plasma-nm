@@ -34,12 +34,11 @@ public:
     virtual ~PptpUiPlugin();
     virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
     virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
-#if 0
-    QString suggestedFileName(Knm::Connection *connection) const;
+
+    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const;
     QString supportedFileExtensions() const;
-    QVariantList importConnectionSettings(const QString &fileName);
-    bool exportConnectionSettings(Knm::Connection * connection, const QString &fileName);
-#endif
+    NMVariantMapMap importConnectionSettings(const QString &fileName);
+    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName);
 };
 
 #endif //  PLASMA_NM_PPTP_H

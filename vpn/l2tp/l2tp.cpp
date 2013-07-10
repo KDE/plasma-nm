@@ -50,3 +50,29 @@ SettingWidget *L2tpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &sett
 {
     return new L2tpAuthDialog(setting, parent);
 }
+
+QString L2tpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
+{
+    Q_UNUSED(connection);
+    return QString();
+}
+
+QString L2tpUiPlugin::supportedFileExtensions() const
+{
+    return QString();
+}
+
+NMVariantMapMap L2tpUiPlugin::importConnectionSettings(const QString &fileName)
+{
+    Q_UNUSED(fileName);
+    mError = VpnUiPlugin::NotImplemented;
+    return NMVariantMapMap();
+}
+
+bool L2tpUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
+{
+    Q_UNUSED(connection);
+    Q_UNUSED(fileName);
+    mError = VpnUiPlugin::NotImplemented;
+    return false;
+}

@@ -28,6 +28,7 @@
 #include <KStandardDirs>
 #include <KMessageBox>
 #include <KLocale>
+#include <KDebug>
 #include "nm-vpnc-service.h"
 
 #include <NetworkManagerQt/Connection>
@@ -36,6 +37,54 @@
 
 #include "vpncwidget.h"
 #include "vpncauth.h"
+
+VpncUiPluginPrivate::VpncUiPluginPrivate()
+{
+    decryptedPasswd.clear();
+    ciscoDecrypt = 0;
+}
+
+VpncUiPluginPrivate::~VpncUiPluginPrivate()
+{
+}
+
+QString VpncUiPluginPrivate::readStringKeyValue(const KConfigGroup & configGroup, const QString & key)
+{
+    const QString retValue = configGroup.readEntry(key);
+    if (retValue.isEmpty()) {
+        // String key can also start with "!" in CISCO pcf file.
+        return configGroup.readEntry('!' + key);
+    } else {
+        return retValue;
+    }
+}
+
+void VpncUiPluginPrivate::gotCiscoDecryptOutput()
+{
+    QByteArray output = ciscoDecrypt->readAll();
+    if (!output.isEmpty()) {
+        QList<QByteArray> lines = output.split('\n');
+        if (!lines.isEmpty()) {
+            decryptedPasswd = QString::fromUtf8(lines.first());
+        }
+    }
+}
+
+void VpncUiPluginPrivate::ciscoDecryptFinished(int exitCode, QProcess::ExitStatus exitStatus)
+{
+    if (exitCode || exitStatus != QProcess::NormalExit)
+        decryptedPasswd.clear();
+}
+
+void VpncUiPluginPrivate::ciscoDecryptError(QProcess::ProcessError pError)
+{
+    if (!pError) {
+        kDebug() << "Error in executing cisco-decrypt";
+        KMessageBox::error(0, i18n("Error decrypting the obfuscated password"), i18n("Error"), KMessageBox::Notify);
+    }
+    decryptedPasswd.clear();
+}
+
 
 #define NM_VPNC_LOCAL_PORT_DEFAULT 500
 
@@ -62,8 +111,7 @@ SettingWidget *VpncUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &sett
     return new VpncAuthDialog(setting, parent);
 }
 
-#if 0
-QString VpncUiPlugin::suggestedFileName(Knm::Connection *connection) const
+QString VpncUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
     return connection->name() + ".pcf";
 }
@@ -73,15 +121,15 @@ QString VpncUiPlugin::supportedFileExtensions() const
     return "*.pcf";
 }
 
-QVariantList VpncUiPlugin::importConnectionSettings(const QString &fileName)
+NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
 {
     kDebug() << "Importing Cisco VPN connection from " << fileName;
 
     VpncUiPluginPrivate * decrPlugin = 0;
-    QVariantList conSetting;
+    NMVariantMapMap result;
 
     if (!fileName.endsWith(QLatin1String(".pcf"), Qt::CaseInsensitive)) {
-        return conSetting;
+        return result;
     }
 
     mError = VpnUiPlugin::Error;
@@ -91,17 +139,17 @@ QVariantList VpncUiPlugin::importConnectionSettings(const QString &fileName)
     KSharedConfig::Ptr config = KSharedConfig::openConfig(fileName);
     if (!config) {
         mErrorMessage = i18n("File %1 could not be opened.", fileName);
-        return conSetting;
+        return result;
     }
 
     KConfigGroup cg(config, "main");   // Keys&Values are stored under [main]
     if (cg.exists()) {
         // Setup cisco-decrypt binary to decrypt the passwords
         QStringList decrArgs;
-        QString ciscoDecryptBinary = KStandardDirs::findExe("cisco-decrypt", QString::fromLocal8Bit(qgetenv("PATH")) + ":/usr/lib/vpnc");
+        const QString ciscoDecryptBinary = KStandardDirs::findExe("cisco-decrypt", QString::fromLocal8Bit(qgetenv("PATH")) + ":/usr/lib/vpnc");
         if (ciscoDecryptBinary.isEmpty()) {
             mErrorMessage = i18n("Needed executable cisco-decrypt could not be found.");
-            return QVariantList();
+            return result;
         }
 
         decrPlugin = new VpncUiPluginPrivate();
@@ -114,7 +162,7 @@ QVariantList VpncUiPlugin::importConnectionSettings(const QString &fileName)
 
         NMStringMap data;
         NMStringMap secretData;
-        NMStringMap ipv4Data;
+        QVariantMap ipv4Data;
 
         // gateway
         data.insert(NM_VPNC_KEY_GATEWAY, decrPlugin->readStringKeyValue(cg,"Host"));
@@ -138,20 +186,20 @@ QVariantList VpncUiPlugin::importConnectionSettings(const QString &fileName)
         switch (cg.readEntry("SaveUserPassword").toInt())
         {
             case 0:
-                data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(Knm::Setting::NotSaved));
+                data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
                 break;
             case 1:
-                data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(Knm::Setting::AgentOwned));
+                data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
                 break;
             case 2:
-                data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(Knm::Setting::NotRequired));
+                data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotRequired));
                 break;
         }
 
         // group password
         if (!decrPlugin->readStringKeyValue(cg,"GroupPwd").isEmpty()) {
             secretData.insert(NM_VPNC_KEY_SECRET, decrPlugin->readStringKeyValue(cg,"GroupPwd"));
-            data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(Knm::Setting::AgentOwned));
+            data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::AgentOwned));
         }
         else if (!decrPlugin->readStringKeyValue(cg,"enc_GroupPwd").isEmpty() && !ciscoDecryptBinary.isEmpty()) {
             //Decrypt the password and insert into map
@@ -161,7 +209,7 @@ QVariantList VpncUiPlugin::importConnectionSettings(const QString &fileName)
             decrPlugin->ciscoDecrypt->start();
             if (decrPlugin->ciscoDecrypt->waitForStarted() && decrPlugin->ciscoDecrypt->waitForFinished()) {
                 secretData.insert(NM_VPNC_KEY_SECRET, decrPlugin->decryptedPasswd);
-                data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(Knm::Setting::AgentOwned));
+                data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::AgentOwned));
             }
         }
 
@@ -220,44 +268,45 @@ QVariantList VpncUiPlugin::importConnectionSettings(const QString &fileName)
         }
         // EnableLocalLAN and X-NM-Routes are to be added to IPv4Setting
         if (!cg.readEntry("EnableLocalLAN").isEmpty()) {
-            ipv4Data.insert(NM_SETTING_IP4_CONFIG_NEVER_DEFAULT, cg.readEntry("EnableLocalLAN"));
+            ipv4Data.insert("never-default", cg.readEntry("EnableLocalLAN"));
         }
         if (!decrPlugin->readStringKeyValue(cg,"X-NM-Routes").isEmpty()) {
-            ipv4Data.insert(NM_SETTING_IP4_CONFIG_ROUTES, decrPlugin->readStringKeyValue(cg,"X-NM-Routes"));
+            ipv4Data.insert("X-NM-Routes", decrPlugin->readStringKeyValue(cg,"X-NM-Routes"));
         }
 
         // Set the '...-type' and '...-flags' value also
-        Knm::VpnSetting setting;
+        NetworkManager::VpnSetting setting;
         setting.setData(data);
-        // get the filled data() back
-        data.clear();
-        data = setting.data();
+        setting.setSecrets(secretData);
 
-        conSetting << Knm::VpnSetting::variantMapFromStringList(Knm::VpnSetting::stringMapToStringList(data));
-        conSetting << Knm::VpnSetting::variantMapFromStringList(Knm::VpnSetting::stringMapToStringList(secretData));
-        conSetting << decrPlugin->readStringKeyValue(cg,"Description");
+        QVariantMap conn;
+        conn.insert("id", decrPlugin->readStringKeyValue(cg,"Description"));
+        result.insert("connection", conn);
+
+        result.insert("vpn", setting.toMap());
+
         if (!ipv4Data.isEmpty()) {
-            conSetting << Knm::VpnSetting::variantMapFromStringList(Knm::VpnSetting::stringMapToStringList(ipv4Data));
+            result.insert("ipv4", ipv4Data);
         }
 
         delete decrPlugin;
     } else {
         mErrorMessage = i18n("%1: file format error.", fileName);
-        return conSetting;
+        return result;
     }
 
     mError = VpncUiPlugin::NoError;
-    return conSetting;
+    return result;
 }
 
-bool VpncUiPlugin::exportConnectionSettings(Knm::Connection * connection, const QString &fileName)
+bool VpncUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
 {
     NMStringMap data;
     NMStringMap secretData;
 
-    Knm::VpnSetting * vpnSetting = static_cast<Knm::VpnSetting*>(connection->setting(Knm::Setting::Vpn));
+    NetworkManager::VpnSetting::Ptr vpnSetting = connection->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
     data = vpnSetting->data();
-    secretData = vpnSetting->vpnSecrets();
+    secretData = vpnSetting->secrets();
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig(fileName);
     if (!config) {
@@ -279,13 +328,13 @@ bool VpncUiPlugin::exportConnectionSettings(Knm::Connection * connection, const 
     cg.writeEntry("UserPassword", "");
     cg.writeEntry("enc_GroupPwd", "");
     cg.writeEntry("enc_UserPassword", "");
-    if ((Knm::Setting::secretsTypes)data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt() & Knm::Setting::NotSaved) {
+    if ((NetworkManager::Setting::SecretFlags)data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt() & NetworkManager::Setting::NotSaved) {
         cg.writeEntry("SaveUserPassword", "0");
     }
-    if ((Knm::Setting::secretsTypes)data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt() & Knm::Setting::AgentOwned) {
+    if ((NetworkManager::Setting::SecretFlags)data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt() & NetworkManager::Setting::AgentOwned) {
         cg.writeEntry("SaveUserPassword", "1");
     }
-    if ((Knm::Setting::secretsTypes)data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt() & Knm::Setting::NotRequired) {
+    if ((NetworkManager::Setting::SecretFlags)data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt() & NetworkManager::Setting::NotRequired) {
         cg.writeEntry("SaveUserPassword", "2");
     }
     cg.writeEntry("Username", data.value(NM_VPNC_KEY_XAUTH_USER));
@@ -323,23 +372,22 @@ bool VpncUiPlugin::exportConnectionSettings(Knm::Connection * connection, const 
         cg.writeEntry("EnableNat", "1");
         cg.writeEntry("X-NM-Use-NAT-T", "1");
     }
-
     if (data.value(NM_VPNC_KEY_NAT_TRAVERSAL_MODE) == NM_VPNC_NATT_MODE_NATT_ALWAYS) {
         cg.writeEntry("EnableNat", "1");
         cg.writeEntry("X-NM-Force-NAT-T", "1");
     }
     // Export X-NM-Routes
-    Knm::Ipv4Setting *ipv4Setting = static_cast<Knm::Ipv4Setting*>(connection->setting(Knm::Setting::Ipv4));
+    NetworkManager::Ipv4Setting::Ptr ipv4Setting = connection->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
     if (!ipv4Setting->routes().isEmpty()) {
         QString routes;
-        foreach(const NetworkManager::IPv4Route &oneRoute, ipv4Setting->routes()) {
-            routes += QHostAddress(oneRoute.route()).toString() + '/' + QString::number(oneRoute.prefix()) + ' ';
+        foreach(const NetworkManager::IpRoute &route, ipv4Setting->routes()) {
+            routes += route.ip().toString() + QLatin1Char('/') + QString::number(route.prefixLength()) + QLatin1Char(' ');
         }
         cg.writeEntry("X-NM-Routes", routes.trimmed());
     }
 
+    cg.sync();
+
     mError = VpncUiPlugin::NoError;
     return true;
 }
-#endif
-

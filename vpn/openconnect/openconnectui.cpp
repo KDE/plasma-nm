@@ -49,36 +49,27 @@ SettingWidget * OpenconnectUiPlugin::askUser(const NetworkManager::VpnSetting::P
     return new OpenconnectAuthWidget(setting, parent);
 }
 
-#if 0
-KDialog::ButtonCodes OpenconnectUiPlugin::suggestAuthDialogButtons()
-{
-    return KDialog::Cancel;
-}
-
-QString OpenconnectUiPlugin::suggestedFileName(Knm::Connection *connection) const
+QString OpenconnectUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
     Q_UNUSED(connection);
-
-    // TODO : implement suggested file name
     return QString();
 }
 
 QString OpenconnectUiPlugin::supportedFileExtensions() const
 {
-    // TODO: return supported file extensions
     return QString();
 }
 
-QVariantList OpenconnectUiPlugin::importConnectionSettings(const QString &fileName)
+NMVariantMapMap OpenconnectUiPlugin::importConnectionSettings(const QString &fileName)
 {
     Q_UNUSED(fileName);
 
     // TODO : import the Openconnect connection from file and return settings
     mError = VpnUiPlugin::NotImplemented;
-    return QVariantList();
+    return NMVariantMapMap();
 }
 
-bool OpenconnectUiPlugin::exportConnectionSettings(Knm::Connection * connection, const QString &fileName)
+bool OpenconnectUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
 {
     Q_UNUSED(connection);
     Q_UNUSED(fileName);
@@ -87,4 +78,3 @@ bool OpenconnectUiPlugin::exportConnectionSettings(Knm::Connection * connection,
     mError = VpnUiPlugin::NotImplemented;
     return false;
 }
-#endif

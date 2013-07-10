@@ -225,6 +225,4 @@ Item {
         detailsConfig.writeEntry("DetailKeys", keysToSave);
         detailKeys = keysToSave;
     }
-    // TODO: I have to change details back to the previous state when they are not saved
-    // TODO: More testing
 }

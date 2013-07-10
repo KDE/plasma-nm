@@ -203,7 +203,9 @@ Item {
             if (index == 0) {
                 configureDetailsLoader.item.save();
                 networkSettings.detailKeys = configureDetailsLoader.item.detailKeys;
+                configureDetailsLoader.source = "";
             } else {
+                configureDetailsLoader.source = "";
                 close();
             }
         }

@@ -38,6 +38,7 @@
 #include <QInputDialog>
 
 #include <KProcess>
+#include <KWindowSystem>
 
 Handler::Handler(QObject* parent):
     QObject(parent)
@@ -98,17 +99,15 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         } else {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaEap);
         }
-        QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(settings, 0, 0, true);
-        if (editor->exec() == QDialog::Accepted) {
-            NetworkManager::Connection::Ptr newConnection = NetworkManager::findConnectionByUuid(settings->uuid());
-            if (newConnection) {
-                activateConnection(newConnection->path(), device, specificObject);
-            }
-        }
+        m_tmpConnectionUuid = settings->uuid();
+        m_tmpDevicePath = device;
+        m_tmpSpecificPath = specificObject;
 
-        if (editor) {
-            editor->deleteLater();
-        }
+        QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(settings, 0, 0, true);
+        editor->show();
+        KWindowSystem::setState(editor->winId(), NET::KeepAbove);
+        KWindowSystem::forceActiveWindow(editor->winId());
+        connect(editor, SIGNAL(accepted()), SLOT(editDialogAccepted()));
     } else {
         NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
     }
@@ -204,4 +203,13 @@ void Handler::removeConnection(const QString& connection)
 void Handler::openEditor()
 {
     KProcess::startDetached("kde-nm-connection-editor");
+}
+
+
+void Handler::editDialogAccepted()
+{
+    NetworkManager::Connection::Ptr newConnection = NetworkManager::findConnectionByUuid(m_tmpConnectionUuid);
+    if (newConnection) {
+        activateConnection(newConnection->path(), m_tmpDevicePath, m_tmpSpecificPath);
+    }
 }

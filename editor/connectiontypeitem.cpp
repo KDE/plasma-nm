@@ -61,7 +61,7 @@ ConnectionTypeItem::ConnectionTypeItem(QTreeWidget * parent, const QString &type
         text = i18n("Wired");
         setIcon(0, KIcon("network-wired"));
     } else if (type == QLatin1String("802-11-wireless")) {
-        text = i18n("Wi-Fi");
+        text = i18n("Wireless");
         setIcon(0, KIcon("network-wireless"));
     }
 

@@ -169,7 +169,6 @@ Item {
                 currentIndex: -1;
                 model: connectionSortModel;
                 delegate: ConnectionItem {
-                    anchors { left: parent.left; right: parent.right }
                     onClicked: {
                         console.log("CLICKED");
                     }

@@ -139,19 +139,6 @@ void NetworkSettings::setDetailKeys(const QStringList &keys)
     }
 }
 
-// QString NetworkSettings::icon() const
-// {
-//     return d->icon;
-// }
-
-// void NetworkSettings::setIcon(const QString &icon)
-// {
-//     if (d->icon != icon) {
-//         d->icon = icon;
-//         emit iconChanged();
-//     }
-// }
-
 QString NetworkSettings::settingName() const
 {
     return d->settingName;
@@ -225,7 +212,6 @@ void NetworkSettings::setNetwork(uint type, const QString &path)
 
     updateConnectionType();
     updateDetails();
-//     updateIcon();
     updateSettingName();
     updateStatus();
 }
@@ -331,22 +317,6 @@ void NetworkSettings::updateDetails()
 
     setDetails(details);
 }
-
-// void NetworkSettings::updateIcon()
-// {
-//     if (d->type != NetworkModelItem::Vpn) {
-//         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);
-//         if (device) {
-//             setIcon(UiUtils::iconName(device));
-//         }
-//     } else {
-//         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(d->path);
-//         if (connection) {
-//             QString title;
-//             setIcon(UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::Vpn, title));
-//         }
-//     }
-// }
 
 void NetworkSettings::updateSettingName()
 {

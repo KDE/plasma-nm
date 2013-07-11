@@ -30,6 +30,8 @@ PlasmaComponents.ListItem {
     enabled: true
     height: 48;
 
+    signal editConnection(string uuid);
+
     QIconItem {
         id: connectionIcon;
 
@@ -51,20 +53,21 @@ PlasmaComponents.ListItem {
     PlasmaComponents.ToolButton {
         id: editButton;
 
-        anchors { right: securedIcon.left; top: parent.top; bottom: parent.bottom }
+        anchors { right: parent.right; top: parent.top; bottom: parent.bottom }
 
-        height: 48;
         flat: false;
         iconSource: "configure";
         visible: itemUuid.length != 0;
-        // TODO
-        enabled: false;
+
+        onClicked: {
+            connectionItem.editConnection(itemUuid);
+        }
     }
 
     QIconItem {
         id: securedIcon;
 
-        anchors { right: parent.right; top: parent.top; bottom: parent.bottom }
+        anchors { right: editButton.left; top: parent.top; bottom: parent.bottom }
         width: 48; height: 48;
         icon: QIcon("object-locked");
         visible: itemSecure;

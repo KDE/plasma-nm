@@ -160,6 +160,10 @@ Item {
         wrapMode: Text.WordWrap;
     }
 
+    PlasmaNm.Handler {
+        id: handler;
+    }
+
     Image {
         id: connectionsFrame;
 
@@ -180,8 +184,21 @@ Item {
             currentIndex: -1;
             model: connectionSortModel;
             delegate: ConnectionItem {
+                checked: itemConnecting;
                 onClicked: {
-                    console.log("CLICKED");
+                    if (!itemConnected && !itemConnecting) {
+                        if (itemUuid) {
+                            handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
+                        } else {
+                            handler.addAndActivateConnection(itemDevicePath, itemSpecificPath);
+                        }
+                    } else {
+                        handler.deactivateConnection(itemConnectionPath);
+                    }
+                }
+
+                onEditConnection: {
+                    handler.editConnection(uuid);
                 }
             }
         }

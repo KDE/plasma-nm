@@ -138,11 +138,11 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     connect(kAction, SIGNAL(triggered()), SLOT(removeConnection()));
     actionCollection()->addAction("delete_connection", kAction);
 
-    kAction = new KAction(i18n("Import VPN..."), this);
+    kAction = new KAction(KIcon("document-import"), i18n("Import VPN..."), this);
     actionCollection()->addAction("import_vpn", kAction);
     connect(kAction, SIGNAL(triggered()), SLOT(importVpn()));
 
-    kAction = new KAction(i18n("Export VPN..."), this);
+    kAction = new KAction(KIcon("document-export"), i18n("Export VPN..."), this);
     actionCollection()->addAction("export_vpn", kAction);
     kAction->setEnabled(false);
     connect(kAction, SIGNAL(triggered()), SLOT(exportVpn()));

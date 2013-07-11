@@ -25,8 +25,9 @@
 #include "connectiontypeitem.h"
 #include "connectiondetaileditor.h"
 #include "mobileconnectionwizard.h"
+#include "vpnuiplugin.h"
 
-#include <QtGui/QTreeWidgetItem>
+#include <QTreeWidgetItem>
 
 #include <KActionCollection>
 #include <KLocale>
@@ -37,17 +38,17 @@
 #include <KAction>
 #include <KXMLGUIFactory>
 #include <KMenu>
-#include <KAboutApplicationDialog>
-#include <KAboutData>
 #include <KAcceleratorManager>
 #include <KConfig>
 #include <KConfigGroup>
 #include <KWallet/Wallet>
 #include <KStandardDirs>
+#include <KFileDialog>
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ActiveConnection>
+#include <NetworkManagerQt/VpnSetting>
 
 using namespace NetworkManager;
 
@@ -115,8 +116,8 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     action->setText(i18n("VPN"));
 
     const KService::List services = KServiceTypeTrader::self()->query("PlasmaNM/VpnUiPlugin");
-    foreach (KService::Ptr service, services) {
-        qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String);
+    foreach (const KService::Ptr & service, services) {
+        qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
 
         action = new QAction(service->name(), this);
         action->setData(NetworkManager::ConnectionSettings::Vpn);
@@ -136,11 +137,14 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     connect(kAction, SIGNAL(triggered()), SLOT(removeConnection()));
     actionCollection()->addAction("delete_connection", kAction);
 
-    kAction = new KAction(i18n("From file..."), this);
-    kAction->setDisabled(true);
+    kAction = new KAction(i18n("Import VPN..."), this);
     actionCollection()->addAction("import_vpn", kAction);
-    // connect(kAction, SIGNAL(triggered()), SLOT(importVPN()));
+    connect(kAction, SIGNAL(triggered()), SLOT(importVpn()));
 
+    kAction = new KAction(i18n("Export VPN..."), this);
+    actionCollection()->addAction("export_vpn", kAction);
+    kAction->setEnabled(false);
+    connect(kAction, SIGNAL(triggered()), SLOT(exportVpn()));
 
     m_editor->connectionsWidget->setSortingEnabled(false);
     initializeConnections();
@@ -251,7 +255,7 @@ QString ConnectionEditor::formatDateRelative(const QDateTime & lastUsed) const
 {
     QString lastUsedText;
     if (lastUsed.isValid()) {
-        QDateTime now = QDateTime::currentDateTime();
+        const QDateTime now = QDateTime::currentDateTime();
         if (lastUsed.daysTo(now) == 0 ) {
             int secondsAgo = lastUsed.secsTo(now);
             if (secondsAgo < (60 * 60 )) {
@@ -310,9 +314,11 @@ void ConnectionEditor::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetI
     if (current->data(0, Qt::UserRole).toString() == "connection") {
         actionCollection()->action("edit_connection")->setEnabled(true);
         actionCollection()->action("delete_connection")->setEnabled(true);
+        actionCollection()->action("export_vpn")->setEnabled(true);
     } else {
         actionCollection()->action("edit_connection")->setEnabled(false);
         actionCollection()->action("delete_connection")->setEnabled(false);
+        actionCollection()->action("export_vpn")->setEnabled(false);
     }
 }
 
@@ -402,7 +408,7 @@ void ConnectionEditor::removeConnection()
 
 void ConnectionEditor::importSecretsFromPlainTextFiles()
 {
-    QString secretsDirectory = KStandardDirs::locateLocal("data", "networkmanagement/secrets/");
+    const QString secretsDirectory = KStandardDirs::locateLocal("data", "networkmanagement/secrets/");
     QDir dir(secretsDirectory);
     if (dir.exists() && !dir.entryList(QDir::Files).isEmpty()) {
         QMap<QString, QMap<QString, QString > > resultingMap;
@@ -412,7 +418,7 @@ void ConnectionEditor::importSecretsFromPlainTextFiles()
                 KConfigGroup group = config.group(groupName);
                 QMap<QString, QString> map = group.entryMap();
                 if (!map.isEmpty()) {
-                    QString entry = file % ';' % groupName;
+                    const QString entry = file % ';' % groupName;
                     resultingMap.insert(entry, map);
                 }
             }
@@ -430,7 +436,6 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
         if (!wallet || !wallet->isOpen()) {
             return;
         }
-
 
         if (!wallet->hasFolder("Network Management")) {
             wallet->createFolder("Network Management");
@@ -476,7 +481,7 @@ void ConnectionEditor::connectionAdded(const QString& connection)
 
     m_editor->messageWidget->animatedShow();
     m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
-    m_editor->messageWidget->setText(i18n("Connection %1 has been added").arg(con->name()));
+    m_editor->messageWidget->setText(i18n("Connection %1 has been added", con->name()));
     QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
 
     insertConnection(con);
@@ -490,7 +495,7 @@ void ConnectionEditor::connectionRemoved(const QString& connection)
         if ((*it)->data(0, ConnectionItem::ConnectionPathRole).toString() == connection) {
             m_editor->messageWidget->animatedShow();
             m_editor->messageWidget->setMessageType(KMessageWidget::Information);
-            m_editor->messageWidget->setText(i18n("Connection %1 has been removed").arg((*it)->text(0)));
+            m_editor->messageWidget->setText(i18n("Connection %1 has been removed", (*it)->text(0)));
             QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
             QTreeWidgetItem * parent = (*it)->parent();
             delete (*it);
@@ -515,7 +520,7 @@ void ConnectionEditor::connectionUpdated()
             (*it)->setText(0, connection->name());
             m_editor->messageWidget->animatedShow();
             m_editor->messageWidget->setMessageType(KMessageWidget::Information);
-            m_editor->messageWidget->setText(i18n("Connection %1 has been updated").arg(connection->name()));
+            m_editor->messageWidget->setText(i18n("Connection %1 has been updated", connection->name()));
             QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
             break;
         }
@@ -523,8 +528,76 @@ void ConnectionEditor::connectionUpdated()
     }
 }
 
-void ConnectionEditor::aboutDialog()
+void ConnectionEditor::importVpn()
 {
-    KAboutApplicationDialog * dlg = new KAboutApplicationDialog(KGlobal::mainComponent().aboutData(), this);
-    dlg->show();
+    const QString filename = KFileDialog::getOpenFileName(KUrl(), QString(), this, i18n("Import VPN Connection"));
+    if (!filename.isEmpty()) {
+        QFileInfo fi(filename);
+        const QString ext = QLatin1Literal("*.") % fi.suffix();
+        qDebug() << "Importing VPN connection" << filename << "extension:" << ext;
+
+        const KService::List services = KServiceTypeTrader::self()->query("PlasmaNM/VpnUiPlugin");
+        foreach (const KService::Ptr & service, services) {
+            VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
+            if (vpnPlugin && vpnPlugin->supportedFileExtensions().contains(ext)) {
+                qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
+
+                NMVariantMapMap connection = vpnPlugin->importConnectionSettings(filename);
+                const QString conId = NetworkManager::addConnection(connection);
+                qDebug() << "Adding imported connection under id:" << conId;
+                //qDebug() << connection;
+
+                if (connection.isEmpty()) { // the "positive" part will arrive with connectionAdded
+                    m_editor->messageWidget->animatedShow();
+                    m_editor->messageWidget->setMessageType(KMessageWidget::Error);
+                    m_editor->messageWidget->setText(i18n("Importing VPN connection %1 failed\n%2", fi.fileName(), vpnPlugin->lastErrorMessage()));
+                    QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+                }
+            }
+        }
+    }
+}
+
+void ConnectionEditor::exportVpn()
+{
+    QTreeWidgetItem * currentItem = m_editor->connectionsWidget->currentItem();
+    if (!currentItem)
+        return;
+
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
+    if (!connection)
+        return;
+
+    NetworkManager::ConnectionSettings::Ptr connSettings = connection->settings();
+
+    if (connSettings->connectionType() != NetworkManager::ConnectionSettings::Vpn)
+        return;
+
+    NetworkManager::VpnSetting::Ptr vpnSetting = connSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+
+    qDebug() << "Exporting VPN connection" << connection->name() << "type:" << vpnSetting->serviceType();
+
+    QString error;
+    VpnUiPlugin * vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNM/VpnUiPlugin"),
+                                                                                       QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()),
+                                                                                       this, QVariantList(), &error);
+
+    if (vpnPlugin) {
+        const QString filename = KFileDialog::getSaveFileName(KUrl(), vpnPlugin->supportedFileExtensions(), this, i18n("Export VPN Connection"));
+        if (!filename.isEmpty()) {
+            if (!vpnPlugin->exportConnectionSettings(connSettings, filename)) {
+                m_editor->messageWidget->animatedShow();
+                m_editor->messageWidget->setMessageType(KMessageWidget::Error);
+                m_editor->messageWidget->setText(i18n("Exporting VPN connection %1 failed\n%2", connection->name(), vpnPlugin->lastErrorMessage()));
+                QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+            } else {
+                m_editor->messageWidget->animatedShow();
+                m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
+                m_editor->messageWidget->setText(i18n("VPN connection %1 exported successfully", connection->name()));
+                QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+            }
+        }
+    } else {
+        qWarning() << "Error getting VpnUiPlugin for export:" << error;
+    }
 }

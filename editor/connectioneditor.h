@@ -54,7 +54,8 @@ private Q_SLOTS:
     void connectionRemoved(const QString & connection);
     void connectionUpdated();
 
-    void aboutDialog();
+    void importVpn();
+    void exportVpn();
 
 private:
     Ui::ConnectionEditor * m_editor;

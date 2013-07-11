@@ -315,7 +315,7 @@ bool VpncUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSett
     }
     KConfigGroup cg(config,"main");
 
-    cg.writeEntry("Description", connection->name());
+    cg.writeEntry("Description", connection->id());
     cg.writeEntry("Host", data.value(NM_VPNC_KEY_GATEWAY));
     if (data.value(NM_VPNC_KEY_AUTHMODE) == QLatin1String("hybrid"))
         cg.writeEntry("AuthType", "5");

@@ -18,26 +18,26 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_SETTINGS_NETWORK_MODEL_H
-#define PLASMA_NM_SETTINGS_NETWORK_MODEL_H
+#ifndef PLASMA_NM_SETTINGS_NETWORK_SETTINGS_MODEL_H
+#define PLASMA_NM_SETTINGS_NETWORK_SETTINGS_MODEL_H
 
-#include "networkmodelitem.h"
+#include "networksettingmodelitem.h"
 
 #include <QAbstractListModel>
 
 #include <NetworkManagerQt/Device>
 
-class NetworkModelItem;
+class NetworkSettingsModelItem;
 
-class NetworkModel : public QAbstractListModel
+class NetworkSettingsModel : public QAbstractListModel
 {
 Q_OBJECT
 Q_PROPERTY(int count READ count NOTIFY countChanged)
 public:
     enum ItemRole {TypeRole = Qt::UserRole + 1, NameRole, IconRole, PathRole};
 
-    explicit NetworkModel(QObject *parent = 0);
-    virtual ~NetworkModel();
+    explicit NetworkSettingsModel(QObject *parent = 0);
+    virtual ~NetworkSettingsModel();
 
     int count() const;
     int rowCount(const QModelIndex &parent) const;
@@ -52,7 +52,7 @@ private:
     void addConnection(const NetworkManager::Connection::Ptr &connection);
     void addDevice(const NetworkManager::Device::Ptr &device);
 
-    QList<NetworkModelItem*> m_networkItems;
+    QList<NetworkSettingModelItem*> m_networkItems;
 };
 
-#endif // PLASMA_NM_SETTINGS_NETWORK_MODEL_H
+#endif // PLASMA_NM_SETTINGS_NETWORK_SETTINGS_MODEL_H

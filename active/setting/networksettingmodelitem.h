@@ -18,19 +18,19 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_SETTINGS_NETWORK_MODEL_ITEM_H
-#define PLASMA_NM_SETTINGS_NETWORK_MODEL_ITEM_H
+#ifndef PLASMA_NM_SETTINGS_NETWORK_SETTING_MODEL_ITEM_H
+#define PLASMA_NM_SETTINGS_NETWORK_SETTING_MODEL_ITEM_H
 
 #include <QObject>
 
-class NetworkModelItem : public QObject
+class NetworkSettingModelItem : public QObject
 {
 Q_OBJECT
 public:
     enum NetworkType { Undefined, General, Ethernet, Modem, Vpn, Wifi };
 
-    explicit NetworkModelItem(NetworkType type, const QString &path = QString(), QObject *parent = 0);
-    virtual ~NetworkModelItem();
+    explicit NetworkSettingModelItem(NetworkType type, const QString &path = QString(), QObject *parent = 0);
+    virtual ~NetworkSettingModelItem();
 
     // Basic properties
     NetworkType type() const;
@@ -42,11 +42,11 @@ public:
     QString icon() const;
     QString name() const;
 
-    bool operator==(const NetworkModelItem *item) const;
+    bool operator==(const NetworkSettingModelItem *item) const;
 
 private:
     NetworkType m_type;
     QString m_path;
 };
 
-#endif // PLASMA_NM_SETTINGS_NETWORK_MODEL_ITEM_H
+#endif // PLASMA_NM_SETTINGS_NETWORK_SETTING_MODEL_ITEM_H

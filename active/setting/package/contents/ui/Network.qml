@@ -59,10 +59,10 @@ Item {
     }
 
     Image {
-        id: frame;
+        id: networkSettingsBackground;
 
         anchors { horizontalCenter: parent.horizontalCenter; top: titleCol.bottom; topMargin: 10 }
-        width: networkSettings.networkModel.count * 150;
+        width: networkSettings.networkSettingsModel.count * 150;
         height: 48;
         source: "image://appbackgrounds/contextarea";
         fillMode: Image.Tile;
@@ -72,7 +72,7 @@ Item {
         }
 
         ListView {
-            id: networksView;
+            id: networksSettingsView;
 
             property string selectedItem;
 
@@ -80,32 +80,31 @@ Item {
             orientation: ListView.Horizontal;
             clip: true;
             interactive: false;
-            model: networkSettings.networkModel;
+            model: networkSettings.networkSettingsModel;
             currentIndex: 0;
             highlight: PlasmaComponents.Highlight {}
-            delegate: NetworkItem {
+            delegate: NetworkSettingItem {
                 anchors { top: parent.top; bottom: parent.bottom }
-                checked: networksView.currentIndex == index;
+                checked: networksSettingsView.currentIndex == index;
                 onClicked: {
-                    networksView.currentIndex = index;
+                    networksSettingsView.currentIndex = index;
                     connectionsView.currentIndex = -1;
-                    networkSettings.setNetwork(itemType, itemPath);
+                    networkSettings.setNetworkSetting(itemType, itemPath);
                 }
             }
         }
     }
 
     PlasmaComponents.ButtonRow {
-        id: listViewButtons;
+        id: buttons;
 
-        anchors { left: parent.left; bottom: parent.bottom }
-        height: 40; width: 250;
+        anchors { left: parent.left; right: configureDetails.left; bottom: parent.bottom }
+        height: 40;
         exclusive: false;
 
         PlasmaComponents.Button {
             id: addButton;
 
-            width: 120;
             text: i18n("Add");
             iconSource: "list-add";
             // TODO: implement
@@ -115,12 +114,21 @@ Item {
         PlasmaComponents.Button {
             id: removeButton;
 
-            width: 120;
             text: i18n("Remove");
             iconSource: "list-remove";
             // TODO: implement
             enabled: false;
         }
+    }
+
+    PlasmaComponents.Button {
+        id: configureDetails;
+
+        anchors { right: parent.right; bottom: parent.bottom; bottomMargin: 2; rightMargin: 2 }
+        text: i18n("Configure details to show");
+        iconSource: "configure";
+
+        onClicked: configureDetailsDialog.open();
     }
 
     PlasmaNm.Model {
@@ -137,7 +145,7 @@ Item {
     PlasmaExtras.Heading {
         id: availableConnectionsLabel;
 
-        anchors { left: parent.left; right: parent.right; top: frame.bottom; topMargin: 10 }
+        anchors { left: parent.left; right: parent.right; top: networkSettingsBackground.bottom; topMargin: 10 }
         text: i18n("Available connections");
         level: 2;
     }
@@ -176,24 +184,6 @@ Item {
                     console.log("CLICKED");
                 }
             }
-        }
-    }
-
-    PlasmaComponents.ButtonRow {
-        id: configureButton;
-
-        anchors { right: parent.right; bottom: parent.bottom }
-        height: 40;
-        exclusive: false;
-
-        PlasmaComponents.Button {
-            id: configureDetails;
-
-            width: 200;
-            text: i18n("Configure details to show");
-            iconSource: "configure";
-
-            onClicked: configureDetailsDialog.open();
         }
     }
 

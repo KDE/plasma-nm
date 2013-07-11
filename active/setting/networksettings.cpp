@@ -19,7 +19,7 @@
 */
 
 #include "networksettings.h"
-#include "networkmodel.h"
+#include "networksettingsmodel.h"
 #include "uiutils.h"
 
 #include <NetworkManagerQt/Manager>
@@ -34,7 +34,7 @@
 class NetworkSettingsPrivate {
 public:
     NetworkSettings *q;
-    QObject *networkModel;
+    QObject *networkSettingsModel;
     QString details;
     QString icon;
     QString settingName;
@@ -43,7 +43,7 @@ public:
     NetworkManager::ConnectionSettings::ConnectionType connectionType;
     QStringList detailKeys;
     QString path;
-    NetworkModelItem::NetworkType type;
+    NetworkSettingModelItem::NetworkType type;
 
     void initNetwork();
 };
@@ -53,10 +53,10 @@ NetworkSettings::NetworkSettings()
     d = new NetworkSettingsPrivate;
     d->q = this;
     d->connectionType = NetworkManager::ConnectionSettings::Unknown;
-    d->networkModel = 0;
+    d->networkSettingsModel = 0;
     d->settingName = i18n("Network Setting");
     d->status = i18n("Network status and control");
-    d->type = NetworkModelItem::Undefined;
+    d->type = NetworkSettingModelItem::Undefined;
 
     d->initNetwork();
 
@@ -80,20 +80,20 @@ NetworkSettings::~NetworkSettings()
 
 void NetworkSettingsPrivate::initNetwork()
 {
-    QAbstractItemModel * _networkModel = new NetworkModel(q);
-    networkModel = _networkModel;
+    QAbstractItemModel * _networkSettingsModel = new NetworkSettingsModel(q);
+    networkSettingsModel = _networkSettingsModel;
 }
 
-QObject* NetworkSettings::networkModel()
+QObject* NetworkSettings::networkSettingsModel()
 {
-    return d->networkModel;
+    return d->networkSettingsModel;
 }
 
-void NetworkSettings::setNetworkModel(QObject *networkModel)
+void NetworkSettings::setNetworkSettingsModel(QObject *networkSettingsModel)
 {
-    if ( d->networkModel != networkModel) {
-        d->networkModel = networkModel;
-        emit networkModelChanged();
+    if ( d->networkSettingsModel != networkSettingsModel) {
+        d->networkSettingsModel = networkSettingsModel;
+        emit networkSettingsModelChanged();
     }
 }
 
@@ -165,25 +165,25 @@ void NetworkSettings::setStatus(const QString &status)
     }
 }
 
-void NetworkSettings::setNetwork(uint type, const QString &path)
+void NetworkSettings::setNetworkSetting(uint type, const QString &path)
 {
-    if (d->type == NetworkModelItem::Vpn) {
+    if (d->type == NetworkSettingModelItem::Vpn) {
         disconnect(NetworkManager::notifier(), 0, this, 0);
-    } else if (d->type != NetworkModelItem::Undefined) {
+    } else if (d->type != NetworkSettingModelItem::Undefined) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
         if (device) {
             disconnect(device.data(), 0, this, 0);
         }
     }
 
-    d->type = (NetworkModelItem::NetworkType) type;
+    d->type = (NetworkSettingModelItem::NetworkType) type;
     d->path = path;
 
-    if (d->type == NetworkModelItem::General) {
+    if (d->type == NetworkSettingModelItem::General) {
         // TODO
-    } else if (d->type == NetworkModelItem::Ethernet ||
-        d->type == NetworkModelItem::Modem ||
-        d->type == NetworkModelItem::Wifi) {
+    } else if (d->type == NetworkSettingModelItem::Ethernet ||
+        d->type == NetworkSettingModelItem::Modem ||
+        d->type == NetworkSettingModelItem::Wifi) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
 
         if (device) {
@@ -196,7 +196,7 @@ void NetworkSettings::setNetwork(uint type, const QString &path)
             connect(device.data(), SIGNAL(activeConnectionChanged()),
                     SLOT(updateDetails()), Qt::UniqueConnection);
         }
-    } else if (d->type == NetworkModelItem::Vpn) {
+    } else if (d->type == NetworkSettingModelItem::Vpn) {
         foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
             if (activeConnection && activeConnection->vpn()) {
                 connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
@@ -232,15 +232,15 @@ void NetworkSettings::activeConnectionAdded(const QString &active)
 
 void NetworkSettings::updateConnectionType()
 {
-    if (d->type == NetworkModelItem::General) {
+    if (d->type == NetworkSettingModelItem::General) {
         setConnectionType(NetworkManager::ConnectionSettings::Unknown);
-    } else if (d->type == NetworkModelItem::Ethernet) {
+    } else if (d->type == NetworkSettingModelItem::Ethernet) {
         setConnectionType(NetworkManager::ConnectionSettings::Wired);
-    } else if (d->type == NetworkModelItem::Modem) {
+    } else if (d->type == NetworkSettingModelItem::Modem) {
         setConnectionType(NetworkManager::ConnectionSettings::Gsm);
-    } else if (d->type == NetworkModelItem::Wifi) {
+    } else if (d->type == NetworkSettingModelItem::Wifi) {
         setConnectionType(NetworkManager::ConnectionSettings::Wireless);
-    } else if (d->type == NetworkModelItem::Vpn) {
+    } else if (d->type == NetworkSettingModelItem::Vpn) {
         setConnectionType(NetworkManager::ConnectionSettings::Vpn);
     }
 }
@@ -250,9 +250,9 @@ void NetworkSettings::updateDetails()
     const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details = "<qt><table>";
 
-    if (d->type == NetworkModelItem::General) {
+    if (d->type == NetworkSettingModelItem::General) {
 
-    } else if (d->type == NetworkModelItem::Vpn) {
+    } else if (d->type == NetworkSettingModelItem::Vpn) {
         NetworkManager::ActiveConnection::Ptr active;
         foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
             if (activeConnection && activeConnection->vpn() &&
@@ -287,16 +287,16 @@ void NetworkSettings::updateDetails()
             const NetworkManager::Device::State state = device->state();
             const bool connected = (state == NetworkManager::Device::Activated);
             const bool connecting = (state >= NetworkManager::Device::CheckingIp && state <= NetworkManager::Device::Preparing);
-            if (d->type == NetworkModelItem::Ethernet) {
+            if (d->type == NetworkSettingModelItem::Ethernet) {
                 details += UiUtils::deviceDetails(device, NetworkManager::ConnectionSettings::Wired, connected, connecting, d->detailKeys, format);
                 NetworkManager::WiredDevice::Ptr wiredDevice;
                 wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
                 details += UiUtils::wiredDetails(wiredDevice, connected, d->detailKeys, format);
-            } else if (d->type == NetworkModelItem::Modem) {
+            } else if (d->type == NetworkSettingModelItem::Modem) {
                 details += UiUtils::deviceDetails(device, NetworkManager::ConnectionSettings::Gsm, connected, connecting, d->detailKeys, format);
                 NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
                 details += UiUtils::modemDetails(modemDevice, d->detailKeys, format);
-            } else if (d->type == NetworkModelItem::Wifi) {
+            } else if (d->type == NetworkSettingModelItem::Wifi) {
                 details += UiUtils::deviceDetails(device, NetworkManager::ConnectionSettings::Wireless, connected, connecting, d->detailKeys, format);
                 NetworkManager::WirelessDevice::Ptr wirelessDevice;
                 wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
@@ -321,19 +321,19 @@ void NetworkSettings::updateDetails()
 void NetworkSettings::updateSettingName()
 {
     switch (d->type) {
-    case NetworkModelItem::General:
+    case NetworkSettingModelItem::General:
          setSettingName(i18n("Network Setting"));
          break;
-    case NetworkModelItem::Ethernet:
+    case NetworkSettingModelItem::Ethernet:
         setSettingName(i18n("Ethernet Setting"));
         break;
-    case NetworkModelItem::Modem:
+    case NetworkSettingModelItem::Modem:
         setSettingName(i18n("Modem Setting"));
         break;
-    case NetworkModelItem::Vpn:
+    case NetworkSettingModelItem::Vpn:
         setSettingName(i18n("VPN Setting"));
         break;
-    case NetworkModelItem::Wifi:
+    case NetworkSettingModelItem::Wifi:
         setSettingName(i18n("Wireless Setting"));
         break;
     default:
@@ -343,9 +343,9 @@ void NetworkSettings::updateSettingName()
 
 void NetworkSettings::updateStatus()
 {
-    if (d->type == NetworkModelItem::General) {
+    if (d->type == NetworkSettingModelItem::General) {
         setStatus(i18n("Network status and control"));
-    } else if (d->type == NetworkModelItem::Vpn) {
+    } else if (d->type == NetworkSettingModelItem::Vpn) {
         // TODO: maybe check for the case when there are two active VPN connections
         bool vpnFound = false;
         foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
@@ -368,7 +368,7 @@ void NetworkSettings::updateStatus()
         if (!vpnFound) {
             setStatus(UiUtils::connectionStateToString(NetworkManager::Device::Disconnected));
         }
-    } else if (d->type != NetworkModelItem::Undefined) {
+    } else if (d->type != NetworkSettingModelItem::Undefined) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(d->path);
         if (device) {
             NetworkManager::ActiveConnection::Ptr activeConnection = device->activeConnection();

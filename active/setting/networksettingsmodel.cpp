@@ -18,15 +18,14 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "networkmodel.h"
-#include "networkmodelitem.h"
+#include "networksettingsmodel.h"
 
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Settings>
 
-NetworkModel::NetworkModel(QObject *parent):
+NetworkSettingsModel::NetworkSettingsModel(QObject *parent):
     QAbstractListModel(parent)
 {
     QHash<int, QByteArray> roles = roleNames();
@@ -38,9 +37,9 @@ NetworkModel::NetworkModel(QObject *parent):
     setRoleNames(roles);
 
     bool nonVirtualDevice = false;
-    NetworkModelItem *item = 0;
+    NetworkSettingModelItem *item = 0;
 
-    item = new NetworkModelItem(NetworkModelItem::General, QString());
+    item = new NetworkSettingModelItem(NetworkSettingModelItem::General, QString());
     int index = m_networkItems.count();
     beginInsertRows(QModelIndex(), index, index);
     m_networkItems.push_back(item);
@@ -48,13 +47,13 @@ NetworkModel::NetworkModel(QObject *parent):
 
     foreach (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
-            item = new NetworkModelItem(NetworkModelItem::Ethernet, device->uni());
+            item = new NetworkSettingModelItem(NetworkSettingModelItem::Ethernet, device->uni());
             nonVirtualDevice = true;
         } else if (device->type() == NetworkManager::Device::Modem) {
-            item = new NetworkModelItem(NetworkModelItem::Modem, device->uni());
+            item = new NetworkSettingModelItem(NetworkSettingModelItem::Modem, device->uni());
             nonVirtualDevice = true;
         } else if (device->type() == NetworkManager::Device::Wifi) {
-            item = new NetworkModelItem(NetworkModelItem::Wifi, device->uni());
+            item = new NetworkSettingModelItem(NetworkSettingModelItem::Wifi, device->uni());
             nonVirtualDevice = true;
         }
 
@@ -70,34 +69,34 @@ NetworkModel::NetworkModel(QObject *parent):
     }
 
     // Insert VPN setting at the end
-    item = new NetworkModelItem(NetworkModelItem::Vpn, QString());
+    item = new NetworkSettingModelItem(NetworkSettingModelItem::Vpn, QString());
     index = m_networkItems.count();
     beginInsertRows(QModelIndex(), index, index);
     m_networkItems.push_back(item);
     endInsertRows();
 }
 
-NetworkModel::~NetworkModel()
+NetworkSettingsModel::~NetworkSettingsModel()
 {
 }
 
-int NetworkModel::count() const
+int NetworkSettingsModel::count() const
 {
     return m_networkItems.count();
 }
 
-int NetworkModel::rowCount(const QModelIndex &parent) const
+int NetworkSettingsModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return m_networkItems.count();
 }
 
-QVariant NetworkModel::data(const QModelIndex &index, int role) const
+QVariant NetworkSettingsModel::data(const QModelIndex &index, int role) const
 {
     const int row = index.row();
 
     if (row >= 0 && row < m_networkItems.count()) {
-        NetworkModelItem *item = m_networkItems.at(row);
+        NetworkSettingModelItem *item = m_networkItems.at(row);
 
         switch (role) {
             case TypeRole:

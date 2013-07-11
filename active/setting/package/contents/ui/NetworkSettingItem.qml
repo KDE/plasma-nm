@@ -25,7 +25,7 @@ import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasma.core 0.1 as PlasmaCore
 
 PlasmaComponents.ListItem {
-    id: networkItem;
+    id: networkSettingItem;
 
     enabled: true
     width: 150;

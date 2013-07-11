@@ -23,7 +23,7 @@
 
 #include <QObject>
 #include <NetworkManagerQt/ActiveConnection>
-#include "networkmodelitem.h"
+#include "networksettingmodelitem.h"
 
 class NetworkSettingsPrivate;
 
@@ -35,13 +35,13 @@ Q_PROPERTY(QStringList detailKeys READ detailKeys WRITE setDetailKeys NOTIFY det
 Q_PROPERTY(QString settingName READ settingName WRITE setSettingName NOTIFY settingNameChanged)
 Q_PROPERTY(QString status READ status WRITE setStatus NOTIFY statusChanged)
 Q_PROPERTY(int connectionType READ connectionType WRITE setConnectionType NOTIFY connectionTypeChanged);
-Q_PROPERTY(QObject* networkModel READ networkModel WRITE setNetworkModel NOTIFY networkModelChanged)
+Q_PROPERTY(QObject* networkSettingsModel READ networkSettingsModel WRITE setNetworkSettingsModel NOTIFY networkSettingsModelChanged)
 
 public:
     NetworkSettings();
     virtual ~NetworkSettings();
 
-    QObject* networkModel();
+    QObject* networkSettingsModel();
 
     int connectionType() const;
     QString details() const;
@@ -55,8 +55,8 @@ public Q_SLOTS:
     void setDetailKeys(const QStringList &keys);
     void setSettingName(const QString &name);
     void setStatus(const QString &status);
-    void setNetworkModel(QObject *networkModel);
-    void setNetwork(uint type, const QString &path);
+    void setNetworkSettingsModel(QObject *networkSettingsModel);
+    void setNetworkSetting(uint type, const QString &path);
 
 private Q_SLOTS:
     void activeConnectionAdded(const QString &active);
@@ -72,7 +72,7 @@ Q_SIGNALS:
     void iconChanged();
     void settingNameChanged();
     void statusChanged();
-    void networkModelChanged();
+    void networkSettingsModelChanged();
 
 private:
     NetworkSettingsPrivate *d;

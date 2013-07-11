@@ -54,9 +54,7 @@ PlasmaComponents.ListItem {
         anchors { right: securedIcon.left; top: parent.top; bottom: parent.bottom }
 
         height: 48;
-        width: itemUuid.length == 0 ? 0 : 70;
         flat: false;
-        text: i18n("Edit");
         iconSource: "configure";
         visible: itemUuid.length != 0;
         // TODO

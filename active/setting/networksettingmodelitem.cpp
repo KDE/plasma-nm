@@ -18,7 +18,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "networkmodelitem.h"
+#include "networksettingmodelitem.h"
 #include "uiutils.h"
 
 #include <KLocale>
@@ -28,53 +28,53 @@
 #include <NetworkManagerQt/Connection>
 
 
-NetworkModelItem::NetworkModelItem(NetworkModelItem::NetworkType type, const QString &path, QObject *parent):
+NetworkSettingModelItem::NetworkSettingModelItem(NetworkSettingModelItem::NetworkType type, const QString &path, QObject *parent):
     QObject(parent),
     m_type(type),
     m_path(path)
 {
 }
 
-NetworkModelItem::~NetworkModelItem()
+NetworkSettingModelItem::~NetworkSettingModelItem()
 {
 }
 
-NetworkModelItem::NetworkType NetworkModelItem::type() const
+NetworkSettingModelItem::NetworkType NetworkSettingModelItem::type() const
 {
     return m_type;
 }
 
-void NetworkModelItem::setType(NetworkModelItem::NetworkType type)
+void NetworkSettingModelItem::setType(NetworkSettingModelItem::NetworkType type)
 {
     m_type = type;
 }
 
-QString NetworkModelItem::path() const
+QString NetworkSettingModelItem::path() const
 {
     return m_path;
 }
 
-void NetworkModelItem::setPath(const QString &path)
+void NetworkSettingModelItem::setPath(const QString &path)
 {
     m_path = path;
 }
 
-QString NetworkModelItem::name() const
+QString NetworkSettingModelItem::name() const
 {
     switch (m_type) {
-        case NetworkModelItem::General:
+        case NetworkSettingModelItem::General:
             return i18n("General");
             break;
-        case NetworkModelItem::Ethernet:
+        case NetworkSettingModelItem::Ethernet:
             return i18n("Ethernet");
             break;
-        case NetworkModelItem::Modem:
+        case NetworkSettingModelItem::Modem:
             return i18n("Modem");
             break;
-        case NetworkModelItem::Vpn:
+        case NetworkSettingModelItem::Vpn:
             return i18n("VPN");
             break;
-        case NetworkModelItem::Wifi:
+        case NetworkSettingModelItem::Wifi:
             return i18n("Wireless");
             break;
         default:
@@ -84,24 +84,24 @@ QString NetworkModelItem::name() const
     return i18n("Uknown");
 }
 
-QString NetworkModelItem::icon() const
+QString NetworkSettingModelItem::icon() const
 {
-    if (m_type == NetworkModelItem::General) {
+    if (m_type == NetworkSettingModelItem::General) {
         return "network-defaultroute";
-    } else if (m_type == NetworkModelItem::Ethernet) {
+    } else if (m_type == NetworkSettingModelItem::Ethernet) {
         return "network-wired-activated";
-    } else if (m_type == NetworkModelItem::Modem) {
+    } else if (m_type == NetworkSettingModelItem::Modem) {
         return "phone";
-    } else if (m_type == NetworkModelItem::Vpn) {
+    } else if (m_type == NetworkSettingModelItem::Vpn) {
         return "secure-card";
-    } else if (m_type == NetworkModelItem::Wifi) {
+    } else if (m_type == NetworkSettingModelItem::Wifi) {
         return "network-wireless-connected-100";
     }
 
     return "network-wired";
 }
 
-bool NetworkModelItem::operator==(const NetworkModelItem *item) const
+bool NetworkSettingModelItem::operator==(const NetworkSettingModelItem *item) const
 {
     if (item->type() == m_type &&
         item->path() == m_path) {

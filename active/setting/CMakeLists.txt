@@ -8,8 +8,8 @@ include_directories(${KDE4_INCLUDES} ../../../../components/settings)
 set(networksettings_SRCS
     networksettingsplugin.cpp
     networksettings.cpp
-    networkmodel.cpp
-    networkmodelitem.cpp
+    networksettingsmodel.cpp
+    networksettingmodelitem.cpp
 )
 
 kde4_add_plugin(active_settings_network ${networksettings_SRCS})

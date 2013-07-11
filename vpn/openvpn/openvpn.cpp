@@ -147,7 +147,7 @@ SettingWidget * OpenVpnUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &
 
 QString OpenVpnUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
-    return connection->name() + "_openvpn.conf";
+    return connection->id() + "_openvpn.conf";
 }
 
 QString OpenVpnUiPlugin::supportedFileExtensions() const

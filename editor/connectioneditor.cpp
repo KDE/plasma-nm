@@ -44,6 +44,7 @@
 #include <KWallet/Wallet>
 #include <KStandardDirs>
 #include <KFileDialog>
+#include <KShell>
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
@@ -546,13 +547,13 @@ void ConnectionEditor::importVpn()
 
                 NMVariantMapMap connection = vpnPlugin->importConnectionSettings(filename);
 
-                qDebug() << "Raw connection:" << connection;
+                //qDebug() << "Raw connection:" << connection;
 
                 NetworkManager::ConnectionSettings connectionSettings;
                 connectionSettings.fromMap(connection);
                 connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
 
-                qDebug() << "Converted connection:" << connectionSettings;
+                //qDebug() << "Converted connection:" << connectionSettings;
 
                 const QString conId = NetworkManager::addConnection(connectionSettings.toMap());
                 qDebug() << "Adding imported connection under id:" << conId;
@@ -593,7 +594,8 @@ void ConnectionEditor::exportVpn()
                                                                                        this, QVariantList(), &error);
 
     if (vpnPlugin) {
-        const QString filename = KFileDialog::getSaveFileName(KUrl(), vpnPlugin->supportedFileExtensions(), this, i18n("Export VPN Connection"));
+        const KUrl url = KUrl::fromLocalFile(KGlobalSettings::documentPath() + QDir::separator() + KShell::quoteArg(vpnPlugin->suggestedFileName(connSettings)));
+        const QString filename = KFileDialog::getSaveFileName(url, vpnPlugin->supportedFileExtensions(), this, i18n("Export VPN Connection"));
         if (!filename.isEmpty()) {
             if (!vpnPlugin->exportConnectionSettings(connSettings, filename)) {
                 m_editor->messageWidget->animatedShow();

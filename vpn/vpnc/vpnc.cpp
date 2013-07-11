@@ -113,7 +113,7 @@ SettingWidget *VpncUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &sett
 
 QString VpncUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
-    return connection->name() + ".pcf";
+    return connection->id() + ".pcf";
 }
 
 QString VpncUiPlugin::supportedFileExtensions() const

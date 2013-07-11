@@ -138,7 +138,27 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     Q_UNUSED(setting)
 
     // method
-    m_ui->method->setCurrentIndex(static_cast<int>(m_ipv4Setting->method()));
+    switch (m_ipv4Setting->method()) {
+        case NetworkManager::Ipv4Setting::Automatic:
+            if (m_ipv4Setting->ignoreAutoDns()) {
+                m_ui->method->setCurrentIndex(AutomaticOnlyIP);
+            } else {
+                m_ui->method->setCurrentIndex(Automatic);
+            }
+            break;
+        case NetworkManager::Ipv4Setting::Manual:
+            m_ui->method->setCurrentIndex(Manual);
+            break;
+        case NetworkManager::Ipv4Setting::LinkLocal:
+            m_ui->method->setCurrentIndex(LinkLocal);
+            break;
+        case NetworkManager::Ipv4Setting::Shared:
+            m_ui->method->setCurrentIndex(Shared);
+            break;
+        case NetworkManager::Ipv4Setting::Disabled:
+            m_ui->method->setCurrentIndex(Disabled);
+            break;
+    }
 
     // dns
     QStringList tmp;
@@ -175,7 +195,27 @@ QVariantMap IPv4Widget::setting(bool agentOwned) const
     ipv4Setting.setIgnoreAutoRoutes(m_tmpIpv4Setting.ignoreAutoRoutes());
 
     // method
-    ipv4Setting.setMethod(static_cast<NetworkManager::Ipv4Setting::ConfigMethod>(m_ui->method->currentIndex()));
+    switch ((MethodIndex)m_ui->method->currentIndex()) {
+        case Automatic:
+            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Automatic);
+            break;
+        case IPv4Widget::AutomaticOnlyIP:
+            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Automatic);
+            ipv4Setting.setIgnoreAutoDns(true);
+            break;
+        case Manual:
+            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Manual);
+            break;
+        case LinkLocal:
+            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::LinkLocal);
+            break;
+        case Shared:
+            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Shared);
+            break;
+        case Disabled:
+            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Disabled);
+            break;
+    }
 
     // dns
     if (m_ui->dns->isEnabled() && !m_ui->dns->text().isEmpty()) {
@@ -222,7 +262,8 @@ QVariantMap IPv4Widget::setting(bool agentOwned) const
 
 void IPv4Widget::slotModeComboChanged(int index)
 {
-    if (index == 0) {  // Automatic
+    if (index == Automatic) {  // Automatic
+        m_ui->dnsLabel->setText(i18n("Other DNS Servers:"));
         m_ui->dns->setEnabled(true);
         m_ui->dnsMorePushButton->setEnabled(true);
         m_ui->dnsSearch->setEnabled(true);
@@ -234,7 +275,21 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setVisible(false);
         m_ui->btnAdd->setVisible(false);
         m_ui->btnRemove->setVisible(false);
-    } else if (index == 2) {  // Manual
+    } else if (index == AutomaticOnlyIP) {
+        m_ui->dnsLabel->setText(i18n("DNS Servers:"));
+        m_ui->dns->setEnabled(true);
+        m_ui->dnsMorePushButton->setEnabled(true);
+        m_ui->dnsSearch->setEnabled(true);
+        m_ui->dnsSearchMorePushButton->setEnabled(true);
+        m_ui->dhcpClientId->setEnabled(true);
+        m_ui->ipv4RequiredCB->setEnabled(true);
+        m_ui->btnRoutes->setEnabled(true);
+
+        m_ui->tableViewAddresses->setVisible(false);
+        m_ui->btnAdd->setVisible(false);
+        m_ui->btnRemove->setVisible(false);
+    } else if (index == Manual) {  // Manual
+        m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(true);
         m_ui->dnsMorePushButton->setEnabled(true);
         m_ui->dnsSearch->setEnabled(true);
@@ -246,7 +301,8 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setVisible(true);
         m_ui->btnAdd->setVisible(true);
         m_ui->btnRemove->setVisible(true);
-    } else if (index == 1 || index == 3) {  // Link-local or Shared
+    } else if (index == LinkLocal || index == Shared) {  // Link-local or Shared
+        m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
         m_ui->dnsMorePushButton->setEnabled(false);
         m_ui->dnsSearch->setEnabled(false);
@@ -258,7 +314,8 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setVisible(false);
         m_ui->btnAdd->setVisible(false);
         m_ui->btnRemove->setVisible(false);
-    } else if (index == 4) {  // Disabled
+    } else if (index == Disabled) {  // Disabled
+        m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
         m_ui->dnsMorePushButton->setEnabled(false);
         m_ui->dnsSearch->setEnabled(false);
@@ -391,7 +448,7 @@ void IPv4Widget::slotDnsDomains()
 
 bool IPv4Widget::isValid() const
 {
-    if (m_ui->method->currentIndex() == 2) {
+    if (m_ui->method->currentIndex() == Manual) {
         if (!d->model.rowCount()) {
             return false;
         }
@@ -407,7 +464,7 @@ bool IPv4Widget::isValid() const
         }
     }
 
-    if (!m_ui->dns->text().isEmpty() && (m_ui->method->currentIndex() == 0 || m_ui->method->currentIndex() == 2)) {
+    if (!m_ui->dns->text().isEmpty() && (m_ui->method->currentIndex() == Automatic || m_ui->method->currentIndex() == Manual || m_ui->method->currentIndex() == AutomaticOnlyIP)) {
         const QStringList tmp = m_ui->dns->text().split(',');
         foreach (const QString & str, tmp) {
             QHostAddress addr(str);

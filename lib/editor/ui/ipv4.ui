@@ -34,7 +34,12 @@
     <widget class="KComboBox" name="method">
      <item>
       <property name="text">
-       <string>Automatic (DHCP)</string>
+       <string>Automatic</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Automatic (Only addresses)</string>
       </property>
      </item>
      <item>

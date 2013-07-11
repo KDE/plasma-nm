@@ -71,7 +71,12 @@
      </item>
      <item>
       <property name="text">
-       <string>DHCP</string>
+       <string>Automatic (Only addresses)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Automatic (Only DHCP)</string>
       </property>
      </item>
      <item>

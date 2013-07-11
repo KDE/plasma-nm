@@ -36,9 +36,10 @@ class IPv6Widget;
 
 class KDE_EXPORT IPv6Widget : public SettingWidget
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
+    enum MethodIndex { Automatic = 0, AutomaticOnlyIP, AutomaticOnlyDHCP, LinkLocal, Manual, Disabled };
+
     explicit IPv6Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~IPv6Widget();
 

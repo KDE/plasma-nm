@@ -158,7 +158,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         decrPlugin->ciscoDecrypt->setReadChannel(QProcess::StandardOutput);
         connect(decrPlugin->ciscoDecrypt, SIGNAL(error(QProcess::ProcessError)), decrPlugin, SLOT(ciscoDecryptError(QProcess::ProcessError)));
         connect(decrPlugin->ciscoDecrypt, SIGNAL(finished(int,QProcess::ExitStatus)), decrPlugin, SLOT(ciscoDecryptFinished(int,QProcess::ExitStatus)));
-        connect(decrPlugin->ciscoDecrypt, SIGNAL(readyReadStandardOutput()), decrPlugin, SLOT(gotciscoDecryptOutput()));
+        connect(decrPlugin->ciscoDecrypt, SIGNAL(readyReadStandardOutput()), decrPlugin, SLOT(gotCiscoDecryptOutput()));
 
         NMStringMap data;
         NMStringMap secretData;
@@ -258,7 +258,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         data.insert(NM_VPNC_KEY_DPD_IDLE_TIMEOUT, cg.readEntry("PeerTimeout"));
         // UseLegacyIKEPort=0 uses dynamic source IKE port instead of 500.
         if (cg.readEntry("UseLegacyIKEPort").isEmpty() || cg.readEntry("UseLegacyIKEPort").toInt() != 0) {
-            data.insert(NM_VPNC_KEY_LOCAL_PORT, QString(NM_VPNC_LOCAL_PORT_DEFAULT));
+            data.insert(NM_VPNC_KEY_LOCAL_PORT, QString::number(NM_VPNC_LOCAL_PORT_DEFAULT));
         }
         // DH Group
         data.insert(NM_VPNC_KEY_DHGROUP, decrPlugin->readStringKeyValue(cg,"DHGroup"));
@@ -276,11 +276,13 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
 
         // Set the '...-type' and '...-flags' value also
         NetworkManager::VpnSetting setting;
+        setting.setServiceType("org.freedesktop.NetworkManager.vpnc");
         setting.setData(data);
         setting.setSecrets(secretData);
 
         QVariantMap conn;
         conn.insert("id", decrPlugin->readStringKeyValue(cg,"Description"));
+        conn.insert("type", "vpn");
         result.insert("connection", conn);
 
         result.insert("vpn", setting.toMap());

@@ -495,11 +495,13 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
 
     // Set the '...-type' and '...-flags' value also
     NetworkManager::VpnSetting setting;
+    setting.setServiceType("org.freedesktop.NetworkManager.openvpn");
     setting.setData(dataMap);
     setting.setSecrets(secretData);
 
     QVariantMap conn;
     conn.insert("id", QFileInfo(fileName).completeBaseName());
+    conn.insert("type", "vpn");
     result.insert("connection", conn);
 
     result.insert("vpn", setting.toMap());

@@ -470,6 +470,8 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
 
 void ConnectionEditor::connectionAdded(const QString& connection)
 {
+    qDebug() << "Connection" << connection << "added";
+
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
@@ -543,9 +545,17 @@ void ConnectionEditor::importVpn()
                 qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
 
                 NMVariantMapMap connection = vpnPlugin->importConnectionSettings(filename);
-                const QString conId = NetworkManager::addConnection(connection);
+
+                qDebug() << "Raw connection:" << connection;
+
+                NetworkManager::ConnectionSettings connectionSettings;
+                connectionSettings.fromMap(connection);
+                connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+
+                qDebug() << "Converted connection:" << connectionSettings;
+
+                const QString conId = NetworkManager::addConnection(connectionSettings.toMap());
                 qDebug() << "Adding imported connection under id:" << conId;
-                //qDebug() << connection;
 
                 if (connection.isEmpty()) { // the "positive" part will arrive with connectionAdded
                     m_editor->messageWidget->animatedShow();

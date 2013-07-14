@@ -67,8 +67,9 @@ Item {
         PlasmaComponents.Label {
             id: networkingEnabledLabel;
 
+            anchors { right: networkingEnabled.left; rightMargin: 5 }
             height: 30;
-            text: i18n("Networking enabled");
+            text: i18n("Networking enabled:");
         }
 
         PlasmaComponents.Switch {
@@ -84,9 +85,10 @@ Item {
         PlasmaComponents.Label {
             id: wirelessEnabledLabel;
 
+            anchors { right: wirelessEnabled.left; rightMargin: 5 }
             height: availableDevices.wirelessAvailable ? 30 : 0;
             visible: availableDevices.wirelessAvailable;
-            text: i18n("Wireless enabled");
+            text: i18n("Wireless enabled:");
         }
 
         PlasmaComponents.Switch {
@@ -103,7 +105,8 @@ Item {
         PlasmaComponents.Label {
             id: wwanEnabledLabel;
 
-            text: i18n("Mobile broadband enabled");
+            anchors { right: wwanEnabled.left; rightMargin: 5 }
+            text: i18n("Mobile broadband enabled:");
             height: availableDevices.wwanAvailable ? 30 : 0;
             visible: availableDevices.wwanAvailable;
         }

@@ -42,7 +42,7 @@ PlasmaComponents.ListItem {
     PlasmaComponents.Label {
         id: networkLabel;
 
-        anchors { left: connectionIcon.right; right: securedIcon.left; verticalCenter: parent.verticalCenter }
+        anchors { left: connectionIcon.right; right: securityLabel.left; verticalCenter: parent.verticalCenter }
         font.weight: Font.Bold;
         elide: Text.ElideRight;
         text: itemName;
@@ -55,5 +55,13 @@ PlasmaComponents.ListItem {
         width: 48; height: 48;
         icon: QIcon("object-locked");
         visible: itemSecure;
+    }
+
+    PlasmaComponents.Label {
+        id: securityLabel;
+
+        anchors { right: securedIcon.left; top: parent.top; bottom: parent.bottom }
+        text: itemSecurity;
+        visible: securedIcon.visible;
     }
 }

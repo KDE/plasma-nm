@@ -41,6 +41,7 @@ Model::Model(QObject* parent):
     roles[DevicePathRole] = "itemDevicePath";
     roles[NameRole] = "itemName";
     roles[SecureRole] = "itemSecure";
+    roles[SecurityRole] = "itemSecurity";
     roles[SectionRole] = "itemSection";
     roles[SignalRole] = "itemSignal";
     roles[SsidRole] = "itemSsid";
@@ -135,6 +136,8 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 }
             case SecureRole:
                 return item->secure();
+            case SecurityRole:
+                return item->security();
             case SectionRole:
                 return item->sectionType();
             case SignalRole:

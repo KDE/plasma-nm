@@ -51,6 +51,7 @@ public:
     QString uuid() const;
     QString ssid() const;
     QString sectionType() const;
+    QString security() const;
     QString originalName() const;
 
     // Object paths
@@ -94,6 +95,7 @@ private:
     QString m_nsp;
     QString m_ssid;
     QString m_uuid;
+    QString m_security;
 
     int m_signal;
     SectionType m_sectionType;

@@ -181,6 +181,11 @@ QString ModelItem::sectionType() const
     }
 }
 
+QString ModelItem::security() const
+{
+    return m_security;
+}
+
 QString ModelItem::originalName() const
 {
     return name() + " (" + deviceName() + ')';
@@ -467,6 +472,10 @@ void ModelItem::setWirelessNetwork(const QString& ssid)
 
         if (ap && ap->capabilities() & NetworkManager::AccessPoint::Privacy) {
             m_secure = true;
+
+            NetworkManager::Utils::WirelessSecurityType security = NetworkManager::Utils::findBestWirelessSecurity(wifiDevice->wirelessCapabilities(), true, (wifiDevice->mode() == NetworkManager::WirelessDevice::Adhoc),
+                                                                                                                        ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
+            m_security = UiUtils::labelFromWirelessSecurity(security);
         }
     } else {
         m_ssid.clear();

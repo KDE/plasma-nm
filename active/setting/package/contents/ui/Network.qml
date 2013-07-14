@@ -220,10 +220,9 @@ Item {
                 property string name;
 
                 anchors { left: parent.left; right: parent.right; leftMargin: 10; rightMargin: 10 }
-                textFormat: Text.RichText;
-                wrapMode: Text.WordWrap;
                 font.weight: Font.DemiBold;
                 horizontalAlignment: Text.AlignHCenter;
+                elide: Text.ElideRight;
                 text: i18n("%1", editConnectionDialog.name);
             }
         ]

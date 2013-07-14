@@ -110,15 +110,6 @@ Item {
             // TODO: implement
             enabled: false;
         }
-
-        PlasmaComponents.Button {
-            id: removeButton;
-
-            text: i18n("Remove");
-            iconSource: "list-remove";
-            // TODO: implement
-            enabled: false;
-        }
     }
 
     PlasmaComponents.Button {
@@ -197,11 +188,73 @@ Item {
                     }
                 }
 
-                onEditConnection: {
-                    handler.editConnection(uuid);
+                onPressAndHold: {
+                    if (itemUuid != "") {
+                        editConnectionDialog.openDialog(itemName, itemUuid, itemConnectionPath);
+                    }
                 }
             }
         }
+    }
+
+    PlasmaComponents.Dialog {
+        id: editConnectionDialog;
+
+        property string path;
+        property string uuid;
+        property string name;
+
+        function openDialog(connectionName, connectionUuid, connectionPath) {
+
+            path = connectionPath;
+            uuid = connectionUuid;
+            name = connectionName;
+
+            open();
+        }
+
+        title: [
+            PlasmaComponents.Label {
+                id: dialogText;
+
+                property string name;
+
+                anchors { left: parent.left; right: parent.right; leftMargin: 10; rightMargin: 10 }
+                textFormat: Text.RichText;
+                wrapMode: Text.WordWrap;
+                font.weight: Font.DemiBold;
+                horizontalAlignment: Text.AlignHCenter;
+                text: i18n("%1", editConnectionDialog.name);
+            }
+        ]
+
+        buttons: [
+            Row {
+                PlasmaComponents.Button {
+                    id: dialogEditButton;
+
+                    height: 30;
+                    text: i18n("Remove")
+
+                    onClicked: {
+                        handler.removeConnection(editConnectionDialog.path);
+                        editConnectionDialog.accept();
+                    }
+                }
+
+                PlasmaComponents.Button {
+                    id: dialogRemoveButton;
+
+                    height: 30;
+                    text: i18n("Edit")
+
+                    onClicked: {
+                        handler.editConnection(editConnectionDialog.uuid);
+                        editConnectionDialog.accept();
+                    }
+                }
+            }
+        ]
     }
 
     PlasmaComponents.CommonDialog {

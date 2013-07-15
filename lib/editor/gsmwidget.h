@@ -50,6 +50,7 @@ public:
 private slots:
     void showPasswords(bool show);
     void pinStorageChanged(int index);
+    void passwordStorageChanged(int index);
 
 private:
     Ui::GsmWidget * m_ui;

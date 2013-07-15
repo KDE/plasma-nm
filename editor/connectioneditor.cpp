@@ -563,6 +563,8 @@ void ConnectionEditor::importVpn()
                     m_editor->messageWidget->setMessageType(KMessageWidget::Error);
                     m_editor->messageWidget->setText(i18n("Importing VPN connection %1 failed\n%2", fi.fileName(), vpnPlugin->lastErrorMessage()));
                     QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+                } else {
+                    break; // stop iterating over the plugins if the import produced at least some output
                 }
             }
         }

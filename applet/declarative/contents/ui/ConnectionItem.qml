@@ -35,11 +35,6 @@ Item {
         property Item detailWidget;
     }
 
-//     signal activateConnectionItem(string connectionPath, string devicePath, string specificPath);
-//     signal addAndActivateConnectionItem(string devicePath, string specificPath);
-//     signal deactivateConnectionItem(string connectionPath);
-//     signal editConnectionItem(string connectionUuid);
-//     signal removeConnectionItem(string connectionName, string connectionPath);
     signal itemExpanded();
 
     height: 30;

@@ -29,8 +29,8 @@ import org.kde.plasmanm 0.1 as PlasmaNm
 Item {
     id: mainWindow;
 
-    property int minimumWidth: 300;
-    property int minimumHeight: 300;
+    property int minimumWidth: 350;
+    property int minimumHeight: 450;
     property bool autoHideOptions: true;
     property Component compactRepresentation: CompactRepresantation{
         Component.onCompleted: {

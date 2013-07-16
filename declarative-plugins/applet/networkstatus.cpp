@@ -80,13 +80,7 @@ void NetworkStatus::statusChanged(NetworkManager::Status status)
         status == NetworkManager::ConnectedLinkLocal ||
         status == NetworkManager::ConnectedSiteOnly) {
 
-        QString name;
-        foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-            if (active->default4() || active->default6()) {
-                name = active->connection()->name();
-            }
-        }
-        statusMsg = i18n("Connected to %1", name);
+        statusMsg = i18n("Connected");
         connected = true;
         inProgress = false;
         changeTooltip();

@@ -41,7 +41,7 @@ Icon=network-defaultroute
 
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
-X-Plasma-DefaultSize=300,500
+X-Plasma-DefaultSize=350,450
 X-Plasma-NotificationArea=true
 X-Plasma-ConfigPlugins=plasma_nm_notifications
 

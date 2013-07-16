@@ -154,8 +154,17 @@ void ConnectionIcon::setIcons()
 
     NetworkManager::ActiveConnection::List actives = NetworkManager::activeConnections();
 
+    bool defaultRouteExists = false;
     foreach (const NetworkManager::ActiveConnection::Ptr & active, actives) {
-        if ((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) {
+        if (active->default4() || active->default6()) {
+            defaultRouteExists = true;
+            break;
+        }
+    }
+
+    foreach (const NetworkManager::ActiveConnection::Ptr & active, actives) {
+        if (((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) ||
+            (active->state() == NetworkManager::ActiveConnection::Activating && !defaultRouteExists)) {
             if (active->devices().isEmpty()) {
                 continue;
             }

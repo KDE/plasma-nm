@@ -37,19 +37,10 @@ Item {
     signal editConnection();
     signal removeConnection();
 
-    Rectangle {
-        id: detailsSeparator;
-
-        height: 2;
-        anchors { top: parent.top; left: parent.left; right: parent.right; topMargin: 5 }
-        radius: 2;
-        color: theme.highlightColor;
-    }
-
     Flickable {
         id: detailsView;
 
-        anchors { left: parent.left; right: parent.right; top: detailsSeparator.bottom; bottom: buttons.top; topMargin: 10 }
+        anchors { left: parent.left; right: parent.right; top: parent.top; bottom: buttons.top }
         contentHeight: trafficMonitor.height + detailsText.paintedHeight + 15;
         contentWidth: detailsView.width;
         clip: true;

@@ -77,13 +77,36 @@ Item {
 
         width: 30; height: 30;
         anchors { right: parent.right; top: parent.top; rightMargin: 5 }
-        iconSource: itemConnected ? "user-online" : "user-offline";
+        iconSource: "configure";
 
         PlasmaComponents.BusyIndicator {
             id: connectingIndicator;
             anchors.fill: parent;
             running: itemConnecting;
             visible: running;
+        }
+
+        onClicked: {
+            if (!expanded) {
+                itemExpanded();
+                expanded = !expanded;
+            // Item may be set as expanded, but was closed from the toolbar
+            } else if (expanded && connectionView.itemExpandable == false && toolbar.toolbarExpandable == true) {
+                itemExpanded();
+            } else {
+                expanded = !expanded;
+            }
+        }
+    }
+
+    MouseArea {
+        id: mouseAreaShowInfo;
+
+        anchors {
+            top: connectionItem.top;
+            bottom: connectionTypeIcon.bottom;
+            left: connectionItem.left;
+            right: connectButton.left;
         }
 
         onClicked: {
@@ -101,29 +124,6 @@ Item {
         }
     }
 
-    MouseArea {
-        id: mouseAreaShowInfo;
-
-        anchors {
-            top: connectionItem.top;
-            bottom: connectionTypeIcon.bottom;
-            left: connectionItem.left;
-            right: connectButton.left;
-        }
-
-        onClicked: {
-            if (!expanded) {
-                itemExpanded();
-                expanded = !expanded;
-            // Item may be set as expanded, but was closed from the toolbar
-            } else if (expanded && connectionView.itemExpandable == false && toolbar.toolbarExpandable == true) {
-                itemExpanded();
-            } else {
-                expanded = !expanded;
-            }
-        }
-    }
-
     Component {
         id: detailWidgetComponent;
         DetailsWidget {
@@ -133,7 +133,7 @@ Item {
                 right: parent.right;
                 top: connectionTypeIcon.bottom;
                 bottom: parent.bottom;
-                topMargin: 10;
+                topMargin: 5;
                 leftMargin: 10;
                 rightMargin: 10
                 bottomMargin: 5;

@@ -21,6 +21,7 @@
 #include "openvpnadvancedwidget.h"
 #include "ui_openvpnadvanced.h"
 #include "nm-openvpn-service.h"
+#include "settingwidget.h"
 
 #include <KLocalizedString>
 #include <KProcess>
@@ -35,11 +36,6 @@ public:
     bool gotOpenVpnCiphers;
     bool readConfig;
 
-    class EnumPasswordStorageType
-    {
-    public:
-        enum PasswordStorageType {AlwaysAsk = 0, Store, NotRequired};
-    };
     class EnumProxyType
     {
     public:
@@ -247,26 +243,17 @@ void OpenVpnAdvancedWidget::loadConfig()
 
 void OpenVpnAdvancedWidget::setPasswordType(KLineEdit *edit, int type)
 {
-    switch (type)
-    {
-    case Private::EnumPasswordStorageType::AlwaysAsk:
-    case Private::EnumPasswordStorageType::NotRequired:
-        edit->setEnabled(false);
-        break;
-    case Private::EnumPasswordStorageType::Store:
-        edit->setEnabled(true);
-        break;
-    }
+    edit->setEnabled(type == SettingWidget::EnumPasswordStorageType::Store);
 }
 
 void OpenVpnAdvancedWidget::fillOnePasswordCombo(KComboBox * combo, NetworkManager::Setting::SecretFlags type)
 {
     if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) {
-        combo->setCurrentIndex(Private::EnumPasswordStorageType::Store);
+        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
     } else if (type.testFlag(NetworkManager::Setting::NotRequired)) {
-        combo->setCurrentIndex(Private::EnumPasswordStorageType::NotRequired);
+        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
     } else if (type.testFlag(NetworkManager::Setting::NotSaved)) {
-        combo->setCurrentIndex(Private::EnumPasswordStorageType::AlwaysAsk);
+        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
     }
 }
 
@@ -420,13 +407,13 @@ uint OpenVpnAdvancedWidget::handleOnePasswordType(const KComboBox * combo, const
 {
     uint type = combo->currentIndex();
     switch (type) {
-    case Private::EnumPasswordStorageType::AlwaysAsk:
+    case SettingWidget::EnumPasswordStorageType::AlwaysAsk:
         data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
         break;
-    case Private::EnumPasswordStorageType::Store:
+    case SettingWidget::EnumPasswordStorageType::Store:
         data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
         break;
-    case Private::EnumPasswordStorageType::NotRequired:
+    case SettingWidget::EnumPasswordStorageType::NotRequired:
         data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
         break;
     }

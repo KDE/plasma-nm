@@ -32,6 +32,12 @@ class KDE_EXPORT SettingWidget : public QWidget
 {
     Q_OBJECT
 public:
+    class EnumPasswordStorageType
+    {
+    public:
+        enum PasswordStorageType {Store = 0, AlwaysAsk, NotRequired};
+    };
+
     explicit SettingWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~SettingWidget();
 

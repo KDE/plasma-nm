@@ -159,9 +159,6 @@
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
             <widget class="KLineEdit" name="x509KeyPassword">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
              <property name="passwordMode">
               <bool>true</bool>
              </property>
@@ -171,12 +168,12 @@
             <widget class="KComboBox" name="x509KeyPasswordStorage">
              <item>
               <property name="text">
-               <string>Always Ask</string>
+               <string>Store</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Store</string>
+               <string>Always Ask</string>
               </property>
              </item>
              <item>
@@ -381,12 +378,12 @@
             <widget class="KComboBox" name="passPasswordStorage">
              <item>
               <property name="text">
-               <string>Always Ask</string>
+               <string>Store</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Store</string>
+               <string>Always Ask</string>
               </property>
              </item>
              <item>
@@ -501,9 +498,6 @@
           <layout class="QHBoxLayout" name="horizontalLayout_12">
            <item>
             <widget class="KLineEdit" name="x509PassKeyPassword">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
              <property name="passwordMode">
               <bool>true</bool>
              </property>
@@ -513,12 +507,12 @@
             <widget class="KComboBox" name="x509PassKeyPasswordStorage">
              <item>
               <property name="text">
-               <string>Always Ask</string>
+               <string>Store</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Store</string>
+               <string>Always Ask</string>
               </property>
              </item>
              <item>
@@ -546,12 +540,12 @@
             <widget class="KComboBox" name="x509PassPasswordStorage">
              <item>
               <property name="text">
-               <string>Always Ask</string>
+               <string>Store</string>
               </property>
              </item>
              <item>
               <property name="text">
-               <string>Store</string>
+               <string>Always Ask</string>
               </property>
              </item>
              <item>

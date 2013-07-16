@@ -140,22 +140,12 @@ void GsmWidget::showPasswords(bool show)
 
 void GsmWidget::pinStorageChanged(int index)
 {
-    if (index == 1 || index == 2) {
-        m_ui->pin->setEnabled(false);
-    }
-    else {
-        m_ui->pin->setEnabled(true);
-    }
+    m_ui->pin->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
 }
 
 void GsmWidget::passwordStorageChanged(int index)
 {
-    if (index == 1 || index == 2) {
-        m_ui->password->setEnabled(false);
-    }
-    else {
-        m_ui->password->setEnabled(true);
-    }
+    m_ui->password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
 }
 
 bool GsmWidget::isValid() const

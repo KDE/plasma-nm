@@ -144,12 +144,7 @@ QVariantMap L2tpWidget::setting(bool agentOwned) const
 
 void L2tpWidget::userPasswordTypeChanged(int index)
 {
-    if (index == 1 || index == 2) {
-        m_ui->password->setEnabled(false);
-    }
-    else {
-        m_ui->password->setEnabled(true);
-    }
+    m_ui->password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
 }
 
 void L2tpWidget::showPassword(bool show)

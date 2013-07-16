@@ -121,12 +121,12 @@
            <widget class="KComboBox" name="cmbPasswordStorage">
             <item>
              <property name="text">
-              <string>Always Ask</string>
+              <string>Store</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Save</string>
+              <string>Always Ask</string>
              </property>
             </item>
             <item>

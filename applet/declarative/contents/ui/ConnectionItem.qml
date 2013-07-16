@@ -35,11 +35,11 @@ Item {
         property Item detailWidget;
     }
 
-    signal activateConnectionItem(string connectionPath, string devicePath, string specificPath);
-    signal addAndActivateConnectionItem(string devicePath, string specificPath);
-    signal deactivateConnectionItem(string connectionPath);
-    signal editConnectionItem(string connectionUuid);
-    signal removeConnectionItem(string connectionName, string connectionPath);
+//     signal activateConnectionItem(string connectionPath, string devicePath, string specificPath);
+//     signal addAndActivateConnectionItem(string devicePath, string specificPath);
+//     signal deactivateConnectionItem(string connectionPath);
+//     signal editConnectionItem(string connectionUuid);
+//     signal removeConnectionItem(string connectionName, string connectionPath);
     signal itemExpanded();
 
     height: 30;
@@ -112,12 +112,12 @@ Item {
         onClicked: {
             if (!itemConnected && !itemConnecting) {
                 if (itemUuid) {
-                    activateConnectionItem(itemConnectionPath, itemDevicePath, itemSpecificPath);
+                    handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
                 } else {
-                    addAndActivateConnectionItem(itemDevicePath, itemSpecificPath);
+                    handler.addAndActivateConnection(itemDevicePath, itemSpecificPath);
                 }
             } else {
-                deactivateConnectionItem(itemConnectionPath);
+                handler.deactivateConnection(itemConnectionPath);
             }
 
             expanded = false;
@@ -154,11 +154,11 @@ Item {
             }
 
             onEditConnection: {
-                connectionItem.editConnectionItem(itemUuid);
+                handler.editConnection(itemUuid);
             }
 
             onRemoveConnection: {
-                connectionItem.removeConnectionItem(itemName, itemConnectionPath);
+                handler.removeConnection(itemName, itemConnectionPath);
             }
         }
     }

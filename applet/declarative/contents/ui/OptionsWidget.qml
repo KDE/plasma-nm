@@ -28,18 +28,38 @@ import org.kde.plasmanm 0.1 as PlasmaNM
 Item {
     id: optionsWidget;
 
-    property alias networkingEnabled: networkingEnabled.checked;
-    property alias wirelessEnabled: wirelessEnabled.checked;
-    property alias wimaxEnabled: wimaxEnabled.checked;
-    property alias wwanEnabled: wwanEnabled.checked;
-    property alias wirelessHwEnabled: wirelessEnabled.enabled;
-    property alias wimaxHwEnabled: wimaxEnabled.enabled;
-    property alias wwanHwEnabled: wwanEnabled.enabled;
+     PlasmaNM.EnabledConnections {
+        id: enabledConnections;
 
-    signal networkingEnabledChanged(bool enabled);
-    signal wirelessEnabledChanged(bool enabled);
-    signal wimaxEnabledChanged(bool enabled);
-    signal wwanEnabledChanged(bool enabled);
+        onNetworkingEnabled: {
+            networkingEnabled.checked = enabled;
+        }
+
+        onWirelessEnabled: {
+            wirelessEnabled.checked = enabled;
+        }
+
+        onWirelessHwEnabled: {
+            wirelessEnabled.enabled = enabled;
+        }
+
+        onWimaxEnabled: {
+            wimaxEnabled.checked = enabled;
+        }
+
+        onWimaxHwEnabled: {
+            options.wimaxHwEnabled = enabled;
+        }
+
+        onWwanEnabled: {
+            wwanEnabled.checked = enabled;
+        }
+
+        onWwanHwEnabled: {
+            wwanEnabled.enabled = enabled;
+        }
+    }
+
     signal openEditor();
 
     PlasmaNM.AvailableDevices {
@@ -59,7 +79,7 @@ Item {
             text: i18n("Networking enabled");
 
             onClicked: {
-                networkingEnabledChanged(checked);
+                handler.enableNetworking(checked);
             }
         }
 
@@ -71,7 +91,7 @@ Item {
             text: i18n("Wireless enabled");
 
             onClicked: {
-                wirelessEnabledChanged(checked);
+                handler.enableWireless(checked);
             }
         }
 
@@ -83,7 +103,7 @@ Item {
             text: i18n("Wimax enabled");
 
             onClicked: {
-                wimaxEnabledChanged(checked);
+                handler.enableWimax(checked);
             }
         }
 
@@ -95,7 +115,7 @@ Item {
             text: i18n("Mobile broadband enabled");
 
             onClicked: {
-                wwanEnabledChanged(checked);
+                handler.enableWwan(checked);
             }
         }
     }
@@ -113,5 +133,6 @@ Item {
 
     Component.onCompleted: {
         availableDevices.init();
+        enabledConnections.init();
     }
 }

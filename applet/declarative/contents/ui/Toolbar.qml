@@ -31,12 +31,6 @@ Item {
 
     property bool expanded: false;
 
-    signal disconnecAll();
-    signal enableNetworking(bool enable);
-    signal enableWireless(bool enable);
-    signal enableWimax(bool enable);
-    signal enableWwan(bool enable);
-    signal openEditorToolbar();
     signal toolbarExpanded();
 
     height: 30;
@@ -71,7 +65,7 @@ Item {
             visible: running;
         }
 
-        onClicked: disconnecAll();
+        onClicked: handler.disconnectAll();
     }
 
     PlasmaComponents.Label {
@@ -94,56 +88,17 @@ Item {
         }
     }
 
-    PlasmaNM.EnabledConnections {
-        id: enabledConnections;
-
-        onNetworkingEnabled: {
-            options.networkingEnabled = enabled;
-        }
-
-        onWirelessEnabled: {
-            options.wirelessEnabled = enabled;
-        }
-
-        onWirelessHwEnabled: {
-            options.wirelessHwEnabled = enabled;
-        }
-
-        onWimaxEnabled: {
-            options.wimaxEnabled = enabled;
-        }
-
-        onWimaxHwEnabled: {
-            options.wimaxHwEnabled = enabled;
-        }
-
-        onWwanEnabled: {
-            options.wwanEnabled = enabled;
-        }
-
-        onWwanHwEnabled: {
-            options.wwanHwEnabled = enabled;
-        }
-    }
-
     OptionsWidget {
         id: options;
 
         anchors { left: parent.left; right: parent.right; leftMargin: 10 }
         visible: false;
 
-        onNetworkingEnabledChanged: enableNetworking(enabled);
-        onWirelessEnabledChanged: enableWireless(enabled);
-        onWwanEnabledChanged: enableWwan(enabled);
         onOpenEditor: {
             if (mainWindow.autoHideOptions) {
                 expanded = false;
             }
-            openEditorToolbar();
-        }
-
-        Component.onCompleted: {
-            enabledConnections.init();
+            handler.openEditor();
         }
     }
 

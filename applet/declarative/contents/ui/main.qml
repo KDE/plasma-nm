@@ -38,14 +38,6 @@ Item {
         }
     }
 
-    // Signals for handler
-    signal activateConnection(string connectionPath, string devicePath, string specificPath);
-    signal addAndActivateConnection(string devicePath, string specificPath);
-    signal deactivateConnection(string connectionPath);
-    signal editConnection(string connectionUuid);
-    signal removeConnection(string connectionPath);
-    signal openEditor();
-
     signal sectionChanged();
 
     function hideOptions() {
@@ -72,20 +64,6 @@ Item {
 
     PlasmaNm.Handler {
             id: handler;
-
-            Component.onCompleted: {
-                mainWindow.activateConnection.connect(activateConnection);
-                mainWindow.addAndActivateConnection.connect(addAndActivateConnection);
-                mainWindow.deactivateConnection.connect(deactivateConnection);
-                mainWindow.editConnection.connect(editConnection);
-                mainWindow.removeConnection.connect(removeConnection);
-                mainWindow.openEditor.connect(openEditor);
-                toolbar.disconnecAll.connect(disconnectAll);
-                toolbar.enableNetworking.connect(enableNetworking);
-                toolbar.enableWireless.connect(enableWireless);
-                toolbar.enableWimax.connect(enableWimax);
-                toolbar.enableWwan.connect(enableWwan);
-            }
     }
 
     PlasmaNm.Model {
@@ -133,13 +111,6 @@ Item {
             }
         }
         delegate: ConnectionItem {
-            onActivateConnectionItem: activateConnection(connectionPath, devicePath, specificPath);
-            onAddAndActivateConnectionItem: addAndActivateConnection(devicePath, specificPath);
-            onDeactivateConnectionItem: deactivateConnection(connectionPath);
-            onEditConnectionItem: {
-                editConnection(connectionUuid);
-            }
-            onRemoveConnectionItem: dialog.openDialog(connectionName, connectionPath);
             onItemExpanded: {
                 connectionView.itemExpandable = true;
                 if (autoHideOptions) {
@@ -169,10 +140,6 @@ Item {
         onToolbarExpanded: {
             toolbarExpandable = true;
             connectionView.itemExpandable = false;
-        }
-
-        onOpenEditorToolbar: {
-            openEditor();
         }
     }
 

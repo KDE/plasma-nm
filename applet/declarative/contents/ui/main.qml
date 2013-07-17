@@ -88,6 +88,10 @@ Item {
         anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbarSeparator.top; topMargin: 5; bottomMargin: 10 }
         clip: true
         model: connectionSortModel;
+        highlight: PlasmaComponents.Highlight{}
+        highlightMoveSpeed: 1000;
+        currentIndex: -1;
+        interactive: true;
         section.property: "itemSection";
         section.delegate: SectionHeader {
             onHideSection: {
@@ -112,6 +116,7 @@ Item {
         }
         delegate: ConnectionItem {
             onItemExpanded: {
+                connectionView.currentIndex = -1;
                 connectionView.itemExpandable = true;
                 if (autoHideOptions) {
                     plasmoid.writeConfig("optionsExpanded", "hidden");

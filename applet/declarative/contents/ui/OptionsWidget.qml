@@ -48,7 +48,7 @@ Item {
         }
 
         onWimaxHwEnabled: {
-            options.wimaxHwEnabled = enabled;
+            wimaxEnabled.enabled = enabled;
         }
 
         onWwanEnabled: {

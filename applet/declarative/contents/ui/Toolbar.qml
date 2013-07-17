@@ -42,16 +42,16 @@ Item {
             statusLabel.text = status;
             progressIndicator.running = inProgress;
             if (connected) {
-                statusIcon.iconSource = "user-online";
+                statusIcon.source = "user-online";
                 statusIcon.enabled = true;
             } else {
-                statusIcon.iconSource = "user-offline";
+                statusIcon.source = "user-offline";
                 statusIcon.enabled = false;
             }
         }
     }
 
-    PlasmaComponents.ToolButton {
+    PlasmaCore.IconItem {
         id: statusIcon
 
         height: 30; width: 30;
@@ -64,8 +64,6 @@ Item {
             running: false;
             visible: running;
         }
-
-        onClicked: handler.disconnectAll();
     }
 
     PlasmaComponents.Label {
@@ -76,16 +74,12 @@ Item {
         elide: Text.ElideRight;
     }
 
-    PlasmaComponents.ToolButton {
+    PlasmaCore.IconItem {
         id: toolButton;
 
         height: 30; width: 30;
         anchors { right: parent.right; bottom: parent.bottom; rightMargin: 5 }
-        iconSource: "configure";
-
-        onClicked: {
-            hideOrShowOptions();
-        }
+        source: "configure";
     }
 
     OptionsWidget {
@@ -99,6 +93,16 @@ Item {
                 expanded = false;
             }
             handler.openEditor();
+        }
+    }
+
+    MouseArea {
+        id: toolbarMouseArea;
+
+        anchors.fill: parent;
+
+        onClicked: {
+            hideOrShowOptions();
         }
     }
 

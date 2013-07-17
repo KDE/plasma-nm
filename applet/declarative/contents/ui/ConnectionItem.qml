@@ -37,7 +37,7 @@ Item {
 
     signal itemExpanded();
 
-    height: 30;
+    height: 35;
     anchors { left: parent.left; right: parent.right }
 
     QIconItem {
@@ -60,48 +60,53 @@ Item {
         id: connectionNameLabel;
 
         height: 30;
-        anchors { left: connectionTypeIcon.right; right: connectButton.left; top: parent.top; leftMargin: 5 }
+        anchors { left: connectionTypeIcon.right; right: parent.right; top: parent.top; leftMargin: 5; rightMargin: 30 }
         text: itemName;
         elide: Text.ElideRight;
         font.weight: itemConnected ? Font.DemiBold : Font.Normal;
         font.italic: itemConnecting ? true : false;
     }
 
-    PlasmaComponents.ToolButton {
-        id: connectButton;
+    PlasmaComponents.BusyIndicator {
+        id: connectingIndicator;
 
-        width: 30; height: 30;
-        anchors { right: parent.right; top: parent.top; rightMargin: 5 }
-        iconSource: "configure";
-
-        PlasmaComponents.BusyIndicator {
-            id: connectingIndicator;
-            anchors.fill: parent;
-            running: itemConnecting;
-            visible: running;
-        }
-
-        onClicked: {
-            if (!expanded) {
-                itemExpanded();
-                expanded = !expanded;
-            // Item may be set as expanded, but was closed from the toolbar
-            } else if (expanded && connectionView.itemExpandable == false && toolbar.toolbarExpandable == true) {
-                itemExpanded();
-            } else {
-                expanded = !expanded;
-            }
-        }
+        anchors { right: parent.right; top: parent.top; bottom: parent.bottom; rightMargin: 5 }
+        width: 30;
+        running: itemConnecting;
+        visible: running;
     }
 
     MouseArea {
-        id: mouseAreaShowInfo;
+        id: connectionItemMouseArea;
 
-        anchors {
-            top: connectionItem.top;
-            bottom: connectionTypeIcon.bottom;
-            left: connectionItem.left;
-            right: connectButton.left;
+        anchors.fill: parent;
+        hoverEnabled: true;
+
+        PlasmaCore.IconItem {
+            id: configureButton;
+
+            width: 30; height: 30;
+            anchors { right: parent.right; top: parent.top; rightMargin: 5 }
+            source: "configure";
+            visible: false;
+
+            MouseArea {
+                id: configureButtonMouseArea;
+
+                anchors.fill: parent;
+
+                onClicked: {
+                    if (!expanded) {
+                        itemExpanded();
+                        expanded = !expanded;
+                    // Item may be set as expanded, but was closed from the toolbar
+                    } else if (expanded && connectionView.itemExpandable == false && toolbar.toolbarExpandable == true) {
+                        itemExpanded();
+                    } else {
+                        expanded = !expanded;
+                    }
+                }
+            }
         }
 
         onClicked: {
@@ -116,6 +121,15 @@ Item {
             }
 
             expanded = false;
+        }
+
+        onEntered: {
+            connectionView.currentIndex = index;
+            configureButton.visible = true;
+        }
+
+        onExited: {
+            configureButton.visible = false;
         }
     }
 
@@ -146,6 +160,7 @@ Item {
 
             onHideDetails: {
                 expanded = false;
+                configureButton.visible = false;
             }
 
             onEditConnection: {
@@ -174,6 +189,8 @@ Item {
             PropertyChanges { target: connectionItem; height: connectionItem.ListView.view.height }
             PropertyChanges { target: connectionItem.ListView.view; interactive: false }
             PropertyChanges { target: connectionItem.ListView.view; contentY: connectionItem.y }
+            PropertyChanges { target: connectionItem.ListView.view; currentIndex: -1 }
+            PropertyChanges { target: connectionItemMouseArea; hoverEnabled: false }
             StateChangeScript { script: priv.detailWidget = detailWidgetComponent.createObject(connectionItem); }
         },
 

@@ -185,15 +185,15 @@ void Handler::removeConnection(const QString& connection)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
-    if (!con) {
+    if (!con || con->uuid().isEmpty()) {
         NMHandlerDebug() << "Not possible to remove this connection";
         return;
     }
 
-    foreach (const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
-        NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
+    foreach (const NetworkManager::Connection::Ptr &masterConnection, NetworkManager::listConnections()) {
+        NetworkManager::ConnectionSettings::Ptr settings = masterConnection->settings();
         if (settings->master() == con->uuid()) {
-            connection->remove();
+            masterConnection->remove();
         }
     }
 

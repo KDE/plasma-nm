@@ -36,6 +36,7 @@ Item {
     }
 
     signal itemExpanded();
+    signal removeConnectionItem(string connectionName, string connectionPath);
 
     height: 35;
     anchors { left: parent.left; right: parent.right }
@@ -168,7 +169,7 @@ Item {
             }
 
             onRemoveConnection: {
-                handler.removeConnection(itemName, itemConnectionPath);
+                connectionItem.removeConnectionItem(itemName, itemConnectionPath);
             }
         }
     }

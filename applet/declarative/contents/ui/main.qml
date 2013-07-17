@@ -123,6 +123,7 @@ Item {
                     toolbar.toolbarExpandable = false;
                 }
             }
+            onRemoveConnectionItem: dialog.openDialog(connectionName, connectionPath);
         }
     }
 
@@ -197,7 +198,7 @@ Item {
         ]
 
         onAccepted: {
-            removeConnection(path);
+            handler.removeConnection(path);
         }
     }
 

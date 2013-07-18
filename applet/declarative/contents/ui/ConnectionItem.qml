@@ -71,8 +71,8 @@ Item {
     PlasmaComponents.BusyIndicator {
         id: connectingIndicator;
 
-        anchors { right: parent.right; top: parent.top; bottom: parent.bottom; rightMargin: 5 }
-        width: 30;
+        anchors { right: parent.right; top: parent.top; rightMargin: 5 }
+        width: 30; height: 30;
         running: itemConnecting;
         visible: running;
     }

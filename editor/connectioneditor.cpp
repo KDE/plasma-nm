@@ -162,6 +162,8 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
             SLOT(connectionAdded(QString)));
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
             SLOT(connectionRemoved(QString)));
+    connect(NetworkManager::notifier(), SIGNAL(serviceDisappeared()),
+            m_editor->connectionsWidget, SLOT(clear()));
 
     m_editor->messageWidget->hide();
     m_editor->messageWidget->setCloseButtonVisible(false);

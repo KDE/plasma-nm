@@ -128,7 +128,10 @@ Item {
         text: i18n("Edit connections...");
         iconSource: "configure";
 
-        onClicked: openEditor();
+        onClicked: {
+            console.log("clicked");
+            handler.openEditor();
+        }
     }
 
     Component.onCompleted: {

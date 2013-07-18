@@ -85,21 +85,20 @@ Item {
     OptionsWidget {
         id: options;
 
-        anchors { left: parent.left; right: parent.right; leftMargin: 10 }
+        anchors { left: parent.left; right: parent.right; top: parent.top; leftMargin: 10 }
         visible: false;
 
         onOpenEditor: {
             if (mainWindow.autoHideOptions) {
                 expanded = false;
             }
-            handler.openEditor();
         }
     }
 
     MouseArea {
         id: toolbarMouseArea;
 
-        anchors.fill: parent;
+        anchors { left: parent.left; right: parent.right; bottom: parent.bottom; top: statusIcon.top }
 
         onClicked: {
             hideOrShowOptions();

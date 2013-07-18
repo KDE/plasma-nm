@@ -538,10 +538,11 @@ void ConnectionEditor::importVpn()
     // get the list of supported extensions
     const KService::List services = KServiceTypeTrader::self()->query("PlasmaNM/VpnUiPlugin");
     QString extensions;
-    foreach (const KService::Ptr & service, services) {
+    foreach (const KService::Ptr &service, services) {
         VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
         if (vpnPlugin) {
             extensions += vpnPlugin->supportedFileExtensions() % QLatin1Literal(" ");
+            delete vpnPlugin;
         }
     }
 
@@ -551,7 +552,7 @@ void ConnectionEditor::importVpn()
         const QString ext = QLatin1Literal("*.") % fi.suffix();
         qDebug() << "Importing VPN connection" << filename << "extension:" << ext;
 
-        foreach (const KService::Ptr & service, services) {
+        foreach (const KService::Ptr &service, services) {
             VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
             if (vpnPlugin && vpnPlugin->supportedFileExtensions().contains(ext)) {
                 qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
@@ -575,8 +576,11 @@ void ConnectionEditor::importVpn()
                     m_editor->messageWidget->setText(i18n("Importing VPN connection %1 failed\n%2", fi.fileName(), vpnPlugin->lastErrorMessage()));
                     QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
                 } else {
+                    delete vpnPlugin;
                     break; // stop iterating over the plugins if the import produced at least some output
                 }
+
+                delete vpnPlugin;
             }
         }
     }
@@ -630,6 +634,7 @@ void ConnectionEditor::exportVpn()
                 QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
             }
         }
+        delete vpnPlugin;
     } else {
         qWarning() << "Error getting VpnUiPlugin for export:" << error;
     }

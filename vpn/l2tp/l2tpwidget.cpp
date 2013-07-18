@@ -82,11 +82,11 @@ void L2tpWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     const NetworkManager::Setting::SecretFlags userPassType = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_L2TP_KEY_PASSWORD"-flags").toInt());
     if (userPassType.testFlag(NetworkManager::Setting::NotSaved)) {
-        m_ui->cboUserPasswordType->setCurrentIndex(1); // always ask
+        m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
     } else if (userPassType.testFlag(NetworkManager::Setting::NotRequired)) {
-        m_ui->cboUserPasswordType->setCurrentIndex(2); // not required
+        m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
     } else {
-        m_ui->cboUserPasswordType->setCurrentIndex(0); // saved
+        m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
     }
 
     const QString domain = data.value(NM_L2TP_KEY_DOMAIN);
@@ -121,11 +121,11 @@ QVariantMap L2tpWidget::setting(bool agentOwned) const
     }
 
     const int userPasswordTypeIndex =  m_ui->cboUserPasswordType->currentIndex();
-    if (userPasswordTypeIndex == 1) { // always ask
+    if (userPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {
         data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
-    } else if (userPasswordTypeIndex == 2) { // not required
+    } else if (userPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::NotRequired) {
         data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotRequired));
-    } else { // none
+    } else { // SettingWidget::EnumPasswordStorageType::Store
         if (agentOwned) {
             data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
         } else {

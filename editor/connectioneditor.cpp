@@ -535,13 +535,22 @@ void ConnectionEditor::connectionUpdated()
 
 void ConnectionEditor::importVpn()
 {
-    const QString filename = KFileDialog::getOpenFileName(KUrl(), QString(), this, i18n("Import VPN Connection"));
+    // get the list of supported extensions
+    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNM/VpnUiPlugin");
+    QString extensions;
+    foreach (const KService::Ptr & service, services) {
+        VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
+        if (vpnPlugin) {
+            extensions += vpnPlugin->supportedFileExtensions() % QLatin1Literal(" ");
+        }
+    }
+
+    const QString filename = KFileDialog::getOpenFileName(KUrl(), extensions.simplified(), this, i18n("Import VPN Connection"));
     if (!filename.isEmpty()) {
         QFileInfo fi(filename);
         const QString ext = QLatin1Literal("*.") % fi.suffix();
         qDebug() << "Importing VPN connection" << filename << "extension:" << ext;
 
-        const KService::List services = KServiceTypeTrader::self()->query("PlasmaNM/VpnUiPlugin");
         foreach (const KService::Ptr & service, services) {
             VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
             if (vpnPlugin && vpnPlugin->supportedFileExtensions().contains(ext)) {
@@ -598,7 +607,15 @@ void ConnectionEditor::exportVpn()
                                                                                        this, QVariantList(), &error);
 
     if (vpnPlugin) {
-        const KUrl url = KUrl::fromLocalFile(KGlobalSettings::documentPath() + QDir::separator() + KShell::quoteArg(vpnPlugin->suggestedFileName(connSettings)));
+        if (vpnPlugin->suggestedFileName(connSettings).isEmpty()) { // this VPN doesn't support export
+            m_editor->messageWidget->animatedShow();
+            m_editor->messageWidget->setMessageType(KMessageWidget::Error);
+            m_editor->messageWidget->setText(i18n("Export is not supported by this VPN type"));
+            QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+            return;
+        }
+
+        const KUrl url = KUrl::fromLocalFile(KGlobalSettings::documentPath() + QDir::separator() + vpnPlugin->suggestedFileName(connSettings));
         const QString filename = KFileDialog::getSaveFileName(url, vpnPlugin->supportedFileExtensions(), this, i18n("Export VPN Connection"));
         if (!filename.isEmpty()) {
             if (!vpnPlugin->exportConnectionSettings(connSettings, filename)) {

@@ -20,6 +20,7 @@ Name[x-test]=xxkde-nm-connection-editorxx
 Name[zh_CN]=kde-nm-connection-editor
 GenericName=Connection editor
 GenericName[fi]=Yhteysmuokkain
+GenericName[nl]=Bewerker van verbindingen
 GenericName[pt]=Editor de ligações
 GenericName[pt_BR]=Editor de conexão
 GenericName[sv]=Anslutningseditor

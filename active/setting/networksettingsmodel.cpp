@@ -45,16 +45,22 @@ NetworkSettingsModel::NetworkSettingsModel(QObject *parent):
     m_networkItems.push_back(item);
     endInsertRows();
 
+    bool ethernet = false;
+    bool modem = false;
+    bool wifi = false;
     foreach (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
-        if (device->type() == NetworkManager::Device::Ethernet) {
+        if (device->type() == NetworkManager::Device::Ethernet && !ethernet) {
             item = new NetworkSettingModelItem(NetworkSettingModelItem::Ethernet, device->uni());
             nonVirtualDevice = true;
-        } else if (device->type() == NetworkManager::Device::Modem) {
+            ethernet = true;
+        } else if (device->type() == NetworkManager::Device::Modem && !modem) {
             item = new NetworkSettingModelItem(NetworkSettingModelItem::Modem, device->uni());
             nonVirtualDevice = true;
-        } else if (device->type() == NetworkManager::Device::Wifi) {
+            modem = true;
+        } else if (device->type() == NetworkManager::Device::Wifi && !wifi) {
             item = new NetworkSettingModelItem(NetworkSettingModelItem::Wifi, device->uni());
             nonVirtualDevice = true;
+            wifi = true;
         }
 
         if (nonVirtualDevice) {

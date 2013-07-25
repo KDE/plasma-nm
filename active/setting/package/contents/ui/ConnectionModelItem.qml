@@ -24,44 +24,67 @@ import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasma.core 0.1 as PlasmaCore
 
-PlasmaComponents.ListItem {
-    id: connectionItem;
+Item {
 
-    enabled: true
+    property alias checked: connectionItem.checked;
+
+    signal itemSelected();
+
     height: 48;
+    anchors { left: parent.left; right: parent.right }
 
-    QIconItem {
-        id: connectionIcon;
+    Rectangle {
+        id: connectedItemBackground;
 
-        anchors { left: parent.left; top: parent.top; bottom: parent.bottom }
-        width: 48; height: 48;
-
-        icon: QIcon(itemConnectionIcon);
+        height: 48;
+        anchors { left: parent.left; right: parent.right }
+        color: "green";
+        opacity: itemConnected ? 0.2 : 0.1;
+        visible: itemConnected || itemConnecting;
     }
 
-    PlasmaComponents.Label {
-        id: networkLabel;
+    PlasmaComponents.ListItem {
+        id: connectionItem;
 
-        anchors { left: connectionIcon.right; right: securityLabel.left; verticalCenter: parent.verticalCenter }
-        font.weight: Font.Bold;
-        elide: Text.ElideRight;
-        text: itemName;
-    }
+        height: 48;
+        anchors { left: parent.left; right: parent.right }
+        enabled: true
 
-    QIconItem {
-        id: securedIcon;
+        QIconItem {
+            id: connectionIcon;
 
-        anchors { right: parent.right; top: parent.top; bottom: parent.bottom }
-        width: 48; height: 48;
-        icon: QIcon("object-locked");
-        visible: itemSecure;
-    }
+            anchors { left: parent.left; top: parent.top; bottom: parent.bottom }
+            width: 48; height: 48;
 
-    PlasmaComponents.Label {
-        id: securityLabel;
+            icon: QIcon(itemConnectionIcon);
+        }
 
-        anchors { right: securedIcon.left; top: parent.top; bottom: parent.bottom }
-        text: itemSecurity;
-        visible: securedIcon.visible;
+        PlasmaComponents.Label {
+            id: networkLabel;
+
+            anchors { left: connectionIcon.right; right: securityLabel.left; verticalCenter: parent.verticalCenter }
+            font.weight: Font.Bold;
+            elide: Text.ElideRight;
+            text: itemName;
+        }
+
+        QIconItem {
+            id: securedIcon;
+
+            anchors { right: parent.right; top: parent.top; bottom: parent.bottom }
+            width: 48; height: 48;
+            icon: QIcon("object-locked");
+            visible: itemSecure;
+        }
+
+        PlasmaComponents.Label {
+            id: securityLabel;
+
+            anchors { right: securedIcon.left; top: parent.top; bottom: parent.bottom }
+            text: itemSecurity;
+            visible: securedIcon.visible;
+        }
+
+        onClicked: itemSelected();
     }
 }

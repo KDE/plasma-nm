@@ -43,18 +43,55 @@ Item {
 
     Column {
         id: titleCol;
-        anchors.top: parent.top;
-        anchors.left: parent.left;
-        anchors.right: parent.right;
+
+        anchors {top: parent.top; left: parent.left; right: planeMode.left }
+
         PlasmaExtras.Title {
             id: titleLabel;
             text: networkSettings.settingName;
             opacity: 1;
         }
+
         PlasmaComponents.Label {
             id: descriptionLabel;
             text: networkSettings.status;
             opacity: .3;
+        }
+    }
+
+    PlasmaNm.Handler {
+        id: handler;
+    }
+
+    PlasmaNm.EnabledConnections {
+        id: enabledConnections;
+
+        onNetworkingEnabled: {
+            planeModeSwitch.checked = !enabled;
+        }
+    }
+
+    Item {
+        id: planeMode;
+
+        anchors { top: parent.top; right: parent.right }
+
+        PlasmaExtras.Title {
+            id: planeModeLabel;
+
+            anchors { right: planeModeSwitch.left; rightMargin: 8 }
+            text: i18n("Airplane Mode");
+        }
+
+        PlasmaComponents.Switch {
+            id: planeModeSwitch;
+
+            anchors { right: parent.right; rightMargin: 10 }
+            height: 30;
+
+            onClicked: {
+                handler.enableNetworking(!checked);
+            }
         }
     }
 
@@ -83,30 +120,50 @@ Item {
             model: networkSettings.networkSettingsModel;
             currentIndex: 0;
             highlight: PlasmaComponents.Highlight {}
-            delegate: NetworkSettingModelItem {
+            delegate: PlasmaComponents.ListItem {
+                id: networkSettingItem;
+
+                property variant myData: model;
+
                 anchors { top: parent.top; bottom: parent.bottom }
+                width: 150;
                 checked: networksSettingsView.currentIndex == index;
+                enabled: true
+
+                QIconItem {
+                    id: networkIcon;
+
+                    anchors { left: parent.left; top: parent.top; bottom: parent.bottom }
+                    width: 48; height: 48;
+                    icon: QIcon(itemIcon);
+                }
+
+                PlasmaComponents.Label {
+                    id: networkLabel;
+
+                    anchors { left: networkIcon.right; verticalCenter: parent.verticalCenter }
+                    font.weight: Font.Bold;
+                    elide: Text.ElideRight;
+                    text: itemName;
+                }
+
                 onClicked: {
                     networksSettingsView.currentIndex = index;
                     networkSettings.setNetworkSetting(itemType, itemPath);
-
-                    if (itemType == 1) {
-                        settingLoader.source = "GeneralSetting.qml";
-                    } else if (itemType > 1 && settingLoader.source != "NetworkSetting") {
-                        settingLoader.source = "NetworkSetting.qml";
-                    }
+                    networkSetting.resetIndex();
                 }
             }
         }
     }
 
-    Loader {
-        id: settingLoader;
+    NetworkSetting {
+        id: networkSetting;
 
         anchors { left: parent.left; right: parent.right; top: networkSettingsBackground.bottom; bottom: parent.bottom; topMargin: 10 }
     }
 
     Component.onCompleted: {
-        settingLoader.source = "GeneralSetting.qml";
+        networkSettings.setNetworkSetting(networksSettingsView.currentItem.myData.itemType, networksSettingsView.currentItem.myData.itemPath);
+        enabledConnections.init();
     }
 }

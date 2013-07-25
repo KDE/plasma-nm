@@ -26,6 +26,8 @@ import org.kde.plasmanm 0.1 as PlasmaNm
 Item {
     id: networkSetting;
 
+//     property alias item: connectionsView.currentItem;
+
     PlasmaComponents.Button {
         id: addButton;
 
@@ -36,15 +38,15 @@ Item {
         enabled: false;
     }
 
-    PlasmaComponents.Button {
-        id: configureDetails;
-
-        anchors { right: parent.right; bottom: parent.bottom; bottomMargin: 2; rightMargin: 2 }
-        text: i18n("Configure details to show");
-        iconSource: "configure";
-
-        onClicked: configureDetailsDialog.open();
-    }
+//     PlasmaComponents.Button {
+//         id: configureDetails;
+//
+//         anchors { right: parent.right; bottom: parent.bottom; bottomMargin: 2; rightMargin: 2 }
+//         text: i18n("Configure details to show");
+//         iconSource: "configure";
+//
+//         onClicked: configureDetailsDialog.open();
+//     }
 
     PlasmaNm.Model {
         id: connectionModel;
@@ -65,19 +67,15 @@ Item {
         level: 2;
     }
 
-    PlasmaComponents.Label {
-        id: detailsText;
-
-        anchors { top: availableConnectionsLabel.bottom; right: parent.right; topMargin: 10 }
-        width: parent.width/2;
-        textFormat: Text.RichText;
-        text: networkSettings.details;
-        wrapMode: Text.WordWrap;
-    }
-
-    PlasmaNm.Handler {
-        id: handler;
-    }
+//     PlasmaComponents.Label {
+//         id: detailsText;
+//
+//         anchors { top: availableConnectionsLabel.bottom; right: parent.right; topMargin: 10 }
+//         width: parent.width/2;
+//         textFormat: Text.RichText;
+//         text: networkSettings.details;
+//         wrapMode: Text.WordWrap;
+//     }
 
     Image {
         id: connectionsFrame;
@@ -96,113 +94,83 @@ Item {
 
             anchors.fill: parent;
             clip: true;
-            currentIndex: -1;
             model: connectionSortModel;
+            currentIndex: count ? 0 : -1;
+            // TODO change currentIndex according to selected item and model changes
             delegate: ConnectionModelItem {
-                checked: itemConnecting;
-                onClicked: {
-                    if (!itemConnected && !itemConnecting) {
-                        if (itemUuid) {
-                            handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
-                        } else {
-                            handler.addAndActivateConnection(itemDevicePath, itemSpecificPath);
+                        property variant myData: model;
+
+                        checked: connectionsView.currentIndex == index;
+                        onItemSelected: {
+                            connectionsView.currentIndex = index;
+                            if (connectionSetting.status == Loader.Null) {
+                                connectionSetting.source = "ConnectionSetting.qml";
+                            }
+                            connectionSetting.item.selectedItemModel = myData;
                         }
-                    } else {
-                        handler.deactivateConnection(itemConnectionPath);
-                    }
-                }
 
-                onPressAndHold: {
-                    if (itemUuid != "") {
-                        editConnectionDialog.openDialog(itemName, itemUuid, itemConnectionPath);
-                    }
-                }
+                        ListView.onRemove: {
+                            if (!connectionsView.count) {
+                                connectionSetting.source = "";
+                                connectionsView.currentIndex = -1;
+                            }
+                        }
             }
         }
     }
 
-    PlasmaComponents.Dialog {
-        id: editConnectionDialog;
+    Loader {
+        id: connectionSetting;
 
-        property string path;
-        property string uuid;
-        property string name;
-
-        function openDialog(connectionName, connectionUuid, connectionPath) {
-
-            path = connectionPath;
-            uuid = connectionUuid;
-            name = connectionName;
-
-            open();
-        }
-
-        title: [
-            PlasmaComponents.Label {
-                id: dialogText;
-
-                property string name;
-
-                anchors { left: parent.left; right: parent.right; leftMargin: 10; rightMargin: 10 }
-                font.weight: Font.DemiBold;
-                horizontalAlignment: Text.AlignHCenter;
-                elide: Text.ElideRight;
-                text: i18n("%1", editConnectionDialog.name);
-            }
-        ]
-
-        buttons: [
-            Row {
-                PlasmaComponents.Button {
-                    id: dialogEditButton;
-
-                    height: 30;
-                    text: i18n("Remove")
-
-                    onClicked: {
-                        handler.removeConnection(editConnectionDialog.path);
-                        editConnectionDialog.accept();
-                    }
-                }
-
-                PlasmaComponents.Button {
-                    id: dialogRemoveButton;
-
-                    height: 30;
-                    text: i18n("Edit")
-
-                    onClicked: {
-                        handler.editConnection(editConnectionDialog.uuid);
-                        editConnectionDialog.accept();
-                    }
-                }
-            }
-        ]
+        anchors { right: parent.right; top: availableConnectionsLabel.bottom; bottom: parent.bottom; topMargin: 10; bottomMargin: 50 }
+        width: parent.width/2;
     }
 
-    PlasmaComponents.CommonDialog {
-        id: configureDetailsDialog
+//     PlasmaComponents.CommonDialog {
+//         id: configureDetailsDialog
+//
+//         titleText: i18n("Configure details to show")
+//         buttonTexts: [i18n("Save"), i18n("Close")]
+//         onButtonClicked: {
+//             if (index == 0) {
+//                 configureDetailsLoader.item.save();
+//                 networkSettings.detailKeys = configureDetailsLoader.item.detailKeys;
+//                 configureDetailsLoader.source = "";
+//             } else {
+//                 configureDetailsLoader.source = "";
+//                 close();
+//             }
+//         }
+//         content: Loader {
+//             id: configureDetailsLoader;
+//             height: 400; width: 450;
+//         }
+//         onStatusChanged: {
+//             if (status == PlasmaComponents.DialogStatus.Open) {
+//                 configureDetailsLoader.source = "DetailsWidget.qml"
+//             }
+//         }
+//     }
 
-        titleText: i18n("Configure details to show")
-        buttonTexts: [i18n("Save"), i18n("Close")]
-        onButtonClicked: {
-            if (index == 0) {
-                configureDetailsLoader.item.save();
-                networkSettings.detailKeys = configureDetailsLoader.item.detailKeys;
-                configureDetailsLoader.source = "";
-            } else {
-                configureDetailsLoader.source = "";
-                close();
+    Component.onCompleted: {
+        if (connectionsView.count) {
+            if (connectionSetting.status == Loader.Null) {
+                connectionSetting.source = "ConnectionSetting.qml";
             }
+            connectionSetting.item.selectedItemModel = connectionsView.currentItem.myData;
         }
-        content: Loader {
-            id: configureDetailsLoader;
-            height: 400; width: 450;
-        }
-        onStatusChanged: {
-            if (status == PlasmaComponents.DialogStatus.Open) {
-                configureDetailsLoader.source = "DetailsWidget.qml"
+    }
+
+    function resetIndex() {
+        if (connectionsView.count) {
+            connectionsView.currentIndex = 0;
+            if (connectionSetting.status == Loader.Null) {
+                connectionSetting.source = "ConnectionSetting.qml";
             }
+            connectionSetting.item.selectedItemModel = connectionsView.currentItem.myData;
+        } else {
+            connectionsView.currentIndex = -1;
+            connectionSetting.source = "";
         }
     }
 }

@@ -179,9 +179,7 @@ void NetworkSettings::setNetworkSetting(uint type, const QString &path)
     d->type = (NetworkSettingModelItem::NetworkType) type;
     d->path = path;
 
-    if (d->type == NetworkSettingModelItem::General) {
-        // TODO
-    } else if (d->type == NetworkSettingModelItem::Ethernet ||
+    if (d->type == NetworkSettingModelItem::Ethernet ||
         d->type == NetworkSettingModelItem::Modem ||
         d->type == NetworkSettingModelItem::Wifi) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(path);
@@ -232,9 +230,7 @@ void NetworkSettings::activeConnectionAdded(const QString &active)
 
 void NetworkSettings::updateConnectionType()
 {
-    if (d->type == NetworkSettingModelItem::General) {
-        setConnectionType(NetworkManager::ConnectionSettings::Unknown);
-    } else if (d->type == NetworkSettingModelItem::Ethernet) {
+    if (d->type == NetworkSettingModelItem::Ethernet) {
         setConnectionType(NetworkManager::ConnectionSettings::Wired);
     } else if (d->type == NetworkSettingModelItem::Modem) {
         setConnectionType(NetworkManager::ConnectionSettings::Gsm);
@@ -250,9 +246,7 @@ void NetworkSettings::updateDetails()
     const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details = "<qt><table>";
 
-    if (d->type == NetworkSettingModelItem::General) {
-
-    } else if (d->type == NetworkSettingModelItem::Vpn) {
+    if (d->type == NetworkSettingModelItem::Vpn) {
         NetworkManager::ActiveConnection::Ptr active;
         foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
             if (activeConnection && activeConnection->vpn() &&
@@ -321,9 +315,6 @@ void NetworkSettings::updateDetails()
 void NetworkSettings::updateSettingName()
 {
     switch (d->type) {
-    case NetworkSettingModelItem::General:
-         setSettingName(i18n("Network Setting"));
-         break;
     case NetworkSettingModelItem::Ethernet:
         setSettingName(i18n("Ethernet Setting"));
         break;
@@ -343,9 +334,7 @@ void NetworkSettings::updateSettingName()
 
 void NetworkSettings::updateStatus()
 {
-    if (d->type == NetworkSettingModelItem::General) {
-        setStatus(i18n("Network status and control"));
-    } else if (d->type == NetworkSettingModelItem::Vpn) {
+    if (d->type == NetworkSettingModelItem::Vpn) {
         // TODO: maybe check for the case when there are two active VPN connections
         bool vpnFound = false;
         foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {

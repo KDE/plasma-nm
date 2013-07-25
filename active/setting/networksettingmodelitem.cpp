@@ -62,9 +62,6 @@ void NetworkSettingModelItem::setPath(const QString &path)
 QString NetworkSettingModelItem::name() const
 {
     switch (m_type) {
-        case NetworkSettingModelItem::General:
-            return i18n("General");
-            break;
         case NetworkSettingModelItem::Ethernet:
             return i18n("Ethernet");
             break;
@@ -86,9 +83,7 @@ QString NetworkSettingModelItem::name() const
 
 QString NetworkSettingModelItem::icon() const
 {
-    if (m_type == NetworkSettingModelItem::General) {
-        return "network-defaultroute";
-    } else if (m_type == NetworkSettingModelItem::Ethernet) {
+    if (m_type == NetworkSettingModelItem::Ethernet) {
         return "network-wired-activated";
     } else if (m_type == NetworkSettingModelItem::Modem) {
         return "phone";

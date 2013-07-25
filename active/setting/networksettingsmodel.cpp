@@ -37,13 +37,8 @@ NetworkSettingsModel::NetworkSettingsModel(QObject *parent):
     setRoleNames(roles);
 
     bool nonVirtualDevice = false;
+    int index = 0;
     NetworkSettingModelItem *item = 0;
-
-    item = new NetworkSettingModelItem(NetworkSettingModelItem::General, QString());
-    int index = m_networkItems.count();
-    beginInsertRows(QModelIndex(), index, index);
-    m_networkItems.push_back(item);
-    endInsertRows();
 
     bool ethernet = false;
     bool modem = false;

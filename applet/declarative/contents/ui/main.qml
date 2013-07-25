@@ -150,10 +150,10 @@ Item {
 
         anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
 
-        onToolbarExpanded: {
-            toolbarExpandable = true;
+//         onToolbarExpanded: {
+//             toolbarExpandable = true;
 //             connectionView.itemExpandable = false;
-        }
+//         }
     }
 
 //     PlasmaComponents.Dialog {

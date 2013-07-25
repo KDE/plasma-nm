@@ -31,7 +31,7 @@ Item {
 
     property bool expanded: false;
 
-    signal toolbarExpanded();
+//     signal toolbarExpanded();
 
     height: 30;
 
@@ -108,12 +108,12 @@ Item {
     states: [
         State {
             name: "Hidden"
-            when: !expanded || !toolbar.toolbarExpandable
+            when: !expanded/* || !toolbar.toolbarExpandable*/
         },
 
         State {
             name: "Expanded";
-            when: expanded && toolbar.toolbarExpandable;
+            when: expanded/* && toolbar.toolbarExpandable*/;
             PropertyChanges { target: toolBar; height: options.childrenRect.height + 45 }
             PropertyChanges { target: options; visible: true }
         }
@@ -125,12 +125,12 @@ Item {
 
     function hideOrShowOptions() {
         if (!expanded) {
-            toolbarExpanded();
+//             toolbarExpanded();
             expanded = !expanded;
             plasmoid.writeConfig("optionsExpanded", "expanded");
         // Toolbar may be set as expanded, but was closed from the item
         } else if (expanded && connectionView.itemExpandable == true && toolbar.toolbarExpandable == false) {
-            toolbarExpanded();
+//             toolbarExpanded();
             plasmoid.writeConfig("optionsExpanded", "expanded");
         } else {
             expanded = !expanded;

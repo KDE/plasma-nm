@@ -181,27 +181,39 @@ Item {
 //         }
 //     }
 
-    //  For active connection
     Item {
-        id: activeConnectionItem;
-        property Item activeConnectionSettings;
+        id: connectionItemSettings;
+        property Item connectionSettings;
     }
 
     Component {
-        id: activeConnectionComponent;
+        id: connectionComponent;
 
         Item {
             anchors { left: parent.left; right: parent.right; top: connectionTypeIcon.bottom; topMargin: 5 }
 
             PlasmaComponents.Button {
-                id: disconnectButton;
+                id: connectDisconnectButton;
 
                 anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
-                text: i18n("Disconnect");
+                text: (itemConnected || itemConnecting)? i18n("Disconnect") : i18n("Connect");
 
                 onClicked: {
-                    itemExpanded(itemConnectionPath, false);
-                    handler.deactivateConnection(itemConnectionPath);
+                    if (itemUuid) {
+                        itemExpanded(itemConnectionPath, false);
+                    } else {
+                        itemExpanded(itemName, false);
+                    }
+
+                    if (!itemConnected && !itemConnecting) {
+                        if (itemUuid) {
+                            handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
+                        } else {
+                            handler.addAndActivateConnection(itemDevicePath, itemSpecificPath);
+                        }
+                    } else {
+                        handler.deactivateConnection(itemConnectionPath);
+                    }
                 }
             }
 
@@ -211,47 +223,7 @@ Item {
                 visible: (itemDevicePath != "" && itemConnected && itemType != 1)
                 height: visible ? 100 : 0;
                 device: itemDevicePath;
-                anchors { top: disconnectButton.bottom; left: parent.left; right: parent.right; topMargin: 5 }
-            }
-        }
-    }
-
-    //  For previous connection
-    Item {
-        id: previousConnectionItem;
-        property Item previousConnectionSettings;
-    }
-
-    Component {
-        id: previousConnectionComponent;
-
-        PlasmaComponents.Button {
-            anchors { horizontalCenter: parent.horizontalCenter; top: connectionTypeIcon.bottom; topMargin: 5 }
-            text: i18n("Connect");
-
-            onClicked: {
-                itemExpanded(itemConnectionPath, false);
-                handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
-            }
-        }
-    }
-
-    //  For unknown connection
-    Item {
-        id: unknownConnectionItem;
-        property Item unknownConnectionSettings;
-    }
-
-    Component {
-        id: unknownConnectionComponent;
-
-        PlasmaComponents.Button {
-            anchors { horizontalCenter: parent.horizontalCenter; top: connectionTypeIcon.bottom; topMargin: 5 }
-            text: i18n("Connect");
-
-            onClicked: {
-                itemExpanded(itemName, false);
-                handler.addAndActivateConnection(itemDevicePath, itemSpecificPath);
+                anchors { top: connectDisconnectButton.bottom; left: parent.left; right: parent.right; topMargin: 5 }
             }
         }
     }
@@ -259,64 +231,24 @@ Item {
     states: [
         State {
             name: "Collapsed";
-            when: /*(!expanded || !connectionView.itemExpandable) &&*/
-                  !expanded && !sectionHidden();
-//             StateChangeScript { script: if (priv.detailWidget) {priv.detailWidget.destroy()} }
-                StateChangeScript { script: if (activeConnectionItem.activeConnectionSettings) {activeConnectionItem.activeConnectionSettings.destroy()} }
-                StateChangeScript { script: if (previousConnectionItem.previousConnectionSettings) {previousConnectionItem.previousConnectionSettings.destroy()} }
-                StateChangeScript { script: if (unknownConnectionItem.unknownConnectionSettings) {unknownConnectionItem.unknownConnectionSettings.destroy()} }
+            when: !expanded && !sectionHidden();
+                StateChangeScript { script: if (connectionItemSettings.connectionSettings) {connectionItemSettings.connectionSettings.destroy()} }
         },
 
         State {
             name: "CollapsedHidden";
-            when: /*(!expanded || !connectionView.itemExpandable) &&*/ sectionHidden();
-//             StateChangeScript { script: if (priv.detailWidget) {priv.detailWidget.destroy()} }
-            StateChangeScript { script: if (activeConnectionItem.activeConnectionSettings) {activeConnectionItem.activeConnectionSettings.destroy()} }
-            StateChangeScript { script: if (previousConnectionItem.previousConnectionSettings) {previousConnectionItem.previousConnectionSettings.destroy()} }
-            StateChangeScript { script: if (unknownConnectionItem.unknownConnectionSettings) {unknownConnectionItem.unknownConnectionSettings.destroy()} }
+            when: sectionHidden();
+            StateChangeScript { script: if (connectionItemSettings.connectionSettings) {connectionItemSettings.connectionSettings.destroy()} }
             PropertyChanges { target: connectionItem; height: 0; }
             PropertyChanges { target: connectionItem; visible: false; }
         },
 
         State {
-            name: "ActiveConnectionExpanded";
-            when: expanded && (itemConnected || itemConnecting) && !sectionHidden();
-            StateChangeScript { script: activeConnectionItem.activeConnectionSettings = activeConnectionComponent.createObject(connectionItem); }
+            name: "ConnectionExpanded";
+            when: expanded && !sectionHidden();
+            StateChangeScript { script: connectionItemSettings.connectionSettings = connectionComponent.createObject(connectionItem); }
             PropertyChanges { target: connectionItem; height: (itemDevicePath != "" && itemConnected && itemType != 1) ? 220 : 60; }
-            StateChangeScript { script: if (previousConnectionItem.previousConnectionSettings) {previousConnectionItem.previousConnectionSettings.destroy()} }
-            StateChangeScript { script: if (unknownConnectionItem.unknownConnectionSettings) {unknownConnectionItem.unknownConnectionSettings.destroy()} }                StateChangeScript { script: console.log("Active") }
-        },
-
-        State {
-            name: "PreviousConnectionExpanded";
-            when: expanded && !itemConnected && itemUuid != "" && !sectionHidden();
-            StateChangeScript { script: previousConnectionItem.previousConnectionSettings = previousConnectionComponent.createObject(connectionItem); }
-            PropertyChanges { target: connectionItem; height: 60; }
-            StateChangeScript { script: if (activeConnectionItem.activeConnectionSettings) {activeConnectionItem.activeConnectionSettings.destroy()} }
-            StateChangeScript { script: if (unknownConnectionItem.unknownConnectionSettings) {unknownConnectionItem.unknownConnectionSettings.destroy()} }                StateChangeScript { script: console.log("Previous") }
-        },
-
-        State {
-            name: "UknownConnectionExpanded";
-            when: expanded && !itemConnected && itemUuid == "" && !sectionHidden();
-            StateChangeScript { script: unknownConnectionItem.unknownConnectionSettings = unknownConnectionComponent.createObject(connectionItem); }
-            StateChangeScript { script: if (activeConnectionItem.activeConnectionSettings) {activeConnectionItem.activeConnectionSettings.destroy()} }
-            StateChangeScript { script: if (previousConnectionItem.previousConnectionSettings) {previousConnectionItem.previousConnectionSettings.destroy()} }
-            PropertyChanges { target: connectionItem; height: 60; }
         }
-
-//         State {
-//             name: "Details";
-//             when: (expanded && connectionView.itemExpandable);
-//             PropertyChanges { target: connectionItem; height: connectionItem.ListView.view.height }
-//             PropertyChanges { target: connectionItem.ListView.view; interactive: false }
-//             PropertyChanges { target: connectionItem.ListView.view; contentY: connectionItem.y }
-//             PropertyChanges { target: connectionItem.ListView.view; currentIndex: -1 }
-//             PropertyChanges { target: connectionItemMouseArea; hoverEnabled: false }
-//             StateChangeScript { script: priv.detailWidget = detailWidgetComponent.createObject(connectionItem); }
-//         },
-
-
     ]
 
     transitions: Transition {

@@ -135,6 +135,7 @@ Item {
                 echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
                 visible: predictableWirelessPassword();
                 height: visible ? 25 : 0;
+                placeholderText: i18n("Password...");
             }
 
             PlasmaComponents.CheckBox {
@@ -234,9 +235,9 @@ Item {
         if (itemDevicePath != "" && itemConnected && itemType != 1) {
             return 220;
         } else if (predictableWirelessPassword()) {
-            return 150;
+            return 145;
         } else {
-            return 60;
+            return 70;
         }
     }
 }

@@ -137,8 +137,6 @@ Item {
     Toolbar {
         id: toolbar;
 
-        property bool toolbarExpandable: true;
-
         anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
     }
 

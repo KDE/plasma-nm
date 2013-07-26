@@ -123,7 +123,6 @@ Item {
     PlasmaComponents.ToolButton {
         id: openEditorButton;
 
-        height: 20;
         anchors { left: parent.left; right: parent.right; top: checkboxes.bottom; topMargin: 10}
         text: i18n("Edit connections...");
         iconSource: "configure";

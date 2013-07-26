@@ -37,6 +37,7 @@
 
 #include <QInputDialog>
 
+#include <KUser>
 #include <KProcess>
 #include <KWindowSystem>
 
@@ -84,6 +85,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     settings->setId(ap->ssid());
     settings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
     settings->setAutoconnect(autoConnect);
+    settings->addToPermissions(KUser().loginName(), QString());
 
     NetworkManager::WirelessSetting::Ptr wifiSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
     wifiSetting->setInitialized(true);

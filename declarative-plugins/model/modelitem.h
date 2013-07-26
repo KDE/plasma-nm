@@ -25,6 +25,7 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/Device>
+#include <NetworkManagerQt/Utils>
 
 #include "model.h"
 
@@ -61,6 +62,7 @@ public:
 
     int signal() const;
     NetworkManager::ConnectionSettings::ConnectionType type() const;
+    NetworkManager::Utils::WirelessSecurityType securityType() const;
 
     bool operator==(const ModelItem * item) const;
 
@@ -98,6 +100,7 @@ private:
     int m_signal;
     SectionType m_sectionType;
     NetworkManager::ConnectionSettings::ConnectionType m_type;
+    NetworkManager::Utils::WirelessSecurityType m_securityType;
 
     void setConnectionSettings(const NetworkManager::ConnectionSettings::Ptr& settings);
 };

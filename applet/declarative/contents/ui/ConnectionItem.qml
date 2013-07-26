@@ -31,13 +31,7 @@ Item {
     property bool isWireless: (itemType == 14) ? true : false;
     property bool expanded: false;
 
-//     Item {
-//         id: priv;
-//         property Item detailWidget;
-//     }
-
     signal itemExpanded(string connectionPath, bool itemExpanded);
-//     signal removeConnectionItem(string connectionName, string connectionPath);
 
     height: 35;
     anchors { left: parent.left; right: parent.right }
@@ -69,61 +63,13 @@ Item {
         font.italic: itemConnecting ? true : false;
     }
 
-//     PlasmaComponents.BusyIndicator {
-//         id: connectingIndicator;
-//
-//         anchors { right: parent.right; top: parent.top; rightMargin: 5 }
-//         width: 30; height: 30;
-//         running: itemConnecting;
-//         visible: running;
-//     }
-
     MouseArea {
         id: connectionItemMouseArea;
 
         anchors.fill: parent;
         hoverEnabled: true;
 
-//         PlasmaCore.IconItem {
-//             id: configureButton;
-//
-//             width: 30; height: 30;
-//             anchors { right: parent.right; top: parent.top; rightMargin: 5 }
-//             source: "configure";
-//             visible: false;
-//
-//             MouseArea {
-//                 id: configureButtonMouseArea;
-//
-//                 anchors.fill: parent;
-//
-//                 onClicked: {
-//                     if (!expanded) {
-//                         itemExpanded();
-//                         expanded = !expanded;
-//                     // Item may be set as expanded, but was closed from the toolbar
-//                     } else if (expanded && connectionView.itemExpandable == false && toolbar.toolbarExpandable == true) {
-//                         itemExpanded();
-//                     } else {
-//                         expanded = !expanded;
-//                     }
-//                 }
-//             }
-//         }
-
         onClicked: {
-//             if (!itemConnected && !itemConnecting) {
-//                 if (itemUuid) {
-//                     handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
-//                 } else {
-//                     handler.addAndActivateConnection(itemDevicePath, itemSpecificPath);
-//                 }
-//             } else {
-//                 handler.deactivateConnection(itemConnectionPath);
-//             }
-//
-//             expanded = !expanded;
-            console.log(expanded);
             if (itemUuid != "") {
                 itemExpanded(itemConnectionPath, !expanded);
             } else {
@@ -133,53 +79,42 @@ Item {
 
         onEntered: {
             connectionView.currentIndex = index;
-//             configureButton.visible = true;
         }
-//
-//         onExited: {
-//             configureButton.visible = false;
-//         }
     }
 
-//     Component {
-//         id: detailWidgetComponent;
-//         DetailsWidget {
-//
-//             anchors {
-//                 left: parent.left;
-//                 right: parent.right;
-//                 top: connectionTypeIcon.bottom;
-//                 bottom: parent.bottom;
-//                 topMargin: 5;
-//                 leftMargin: 10;
-//                 rightMargin: 10
-//                 bottomMargin: 5;
-//             }
-//             text: itemDetails;
-//             editable: itemUuid == "" ? false : true;
-//             enableTraffic: {
-//                 if (itemDevicePath != "" && itemConnected && itemType != 11) {
-//                     true;
-//                 } else {
-//                     false;
-//                 }
-//             }
-//             device: itemDevicePath;
-//
-//             onHideDetails: {
-//                 expanded = false;
-//                 configureButton.visible = false;
-//             }
-//
-//             onEditConnection: {
-//                 handler.editConnection(itemUuid);
-//             }
-//
-//             onRemoveConnection: {
-//                 connectionItem.removeConnectionItem(itemName, itemConnectionPath);
-//             }
-//         }
-//     }
+    MouseEventListener {
+        id: leftActionArea;
+
+        anchors { right: parent.right; verticalCenter: connectionTypeIcon.verticalCenter }
+        width: theme.iconSizes.dialog*0.8;
+        height: width;
+        hoverEnabled: true;
+
+        onClicked: {
+            // TODO expand and show details
+            if (configureButton.active) {
+                console.log("clicked");
+            }
+        }
+        PlasmaComponents.BusyIndicator {
+            id: connectingIndicator;
+
+            anchors { right: parent.right; top: parent.top; rightMargin: 5 }
+            width: 30; height: 30;
+            running: itemConnecting;
+            visible: running;
+        }
+
+        PlasmaCore.IconItem {
+            id: configureButton;
+
+            width: 30; height: 30;
+            anchors { right: parent.right; top: parent.top; rightMargin: 5 }
+            source: "configure";
+            visible: connectionView.currentIndex == index && !connectingIndicator.running;
+            active: leftActionArea.containsMouse;
+        }
+    }
 
     Item {
         id: connectionItemSettings;
@@ -192,10 +127,40 @@ Item {
         Item {
             anchors { left: parent.left; right: parent.right; top: connectionTypeIcon.bottom; topMargin: 5 }
 
+            PlasmaComponents.TextField {
+                id: passwordInput;
+
+                anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
+                width: 200;
+                echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
+                visible: predictableWirelessPassword();
+                height: visible ? 25 : 0;
+            }
+
+            PlasmaComponents.CheckBox {
+                id: showPasswordCheckbox;
+
+                anchors { left: passwordInput.left; right: parent.right; top: passwordInput.bottom }
+                visible: predictableWirelessPassword();
+                height: visible ? 25 : 0;
+                checked: false;
+                text: i18n("Show password");
+            }
+
+            PlasmaComponents.CheckBox {
+                id: automaticallyConnectCheckbox;
+
+                anchors { left: passwordInput.left; right: parent.right; top: showPasswordCheckbox.bottom }
+                visible: predictableWirelessPassword();
+                height: visible ? 25 : 0;
+                checked: true;
+                text: i18n("Automatically connect");
+            }
+
             PlasmaComponents.Button {
                 id: connectDisconnectButton;
 
-                anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
+                anchors { horizontalCenter: parent.horizontalCenter; top: automaticallyConnectCheckbox.bottom }
                 text: (itemConnected || itemConnecting)? i18n("Disconnect") : i18n("Connect");
 
                 onClicked: {
@@ -209,7 +174,7 @@ Item {
                         if (itemUuid) {
                             handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
                         } else {
-                            handler.addAndActivateConnection(itemDevicePath, itemSpecificPath);
+                            handler.addAndActivateConnection(itemDevicePath, itemSpecificPath, passwordInput.text, automaticallyConnectCheckbox.checked);
                         }
                     } else {
                         handler.deactivateConnection(itemConnectionPath);
@@ -247,7 +212,7 @@ Item {
             name: "ConnectionExpanded";
             when: expanded && !sectionHidden();
             StateChangeScript { script: connectionItemSettings.connectionSettings = connectionComponent.createObject(connectionItem); }
-            PropertyChanges { target: connectionItem; height: (itemDevicePath != "" && itemConnected && itemType != 1) ? 220 : 60; }
+            PropertyChanges { target: connectionItem; height: heightForConnectionSettings() }
         }
     ]
 
@@ -259,5 +224,19 @@ Item {
         return ((!connectionView.activeExpanded && itemSection == i18n("Active connections")) ||
                 (!connectionView.previousExpanded && itemSection == i18n("Previous connections")) ||
                 (!connectionView.unknownExpanded && itemSection == i18n("Unknown connections")))
+    }
+
+    function predictableWirelessPassword() {
+        return !itemUuid && itemType == 14 && itemSecure && itemSecurityType != 2 && itemSecurityType != 5 && itemSecurityType != 7;
+    }
+
+    function heightForConnectionSettings() {
+        if (itemDevicePath != "" && itemConnected && itemType != 1) {
+            return 220;
+        } else if (predictableWirelessPassword()) {
+            return 150;
+        } else {
+            return 60;
+        }
     }
 }

@@ -31,8 +31,6 @@ Item {
 
     property bool expanded: false;
 
-//     signal toolbarExpanded();
-
     height: 30;
 
     PlasmaNM.NetworkStatus {
@@ -107,13 +105,13 @@ Item {
 
     states: [
         State {
-            name: "Hidden"
-            when: !expanded/* || !toolbar.toolbarExpandable*/
+            name: "Hidden";
+            when: !expanded;
         },
 
         State {
             name: "Expanded";
-            when: expanded/* && toolbar.toolbarExpandable*/;
+            when: expanded;
             PropertyChanges { target: toolBar; height: options.childrenRect.height + 45 }
             PropertyChanges { target: options; visible: true }
         }
@@ -125,15 +123,10 @@ Item {
 
     function hideOrShowOptions() {
         if (!expanded) {
-//             toolbarExpanded();
-            expanded = !expanded;
-            plasmoid.writeConfig("optionsExpanded", "expanded");
-        // Toolbar may be set as expanded, but was closed from the item
-        } else if (expanded && connectionView.itemExpandable == true && toolbar.toolbarExpandable == false) {
-//             toolbarExpanded();
+            expanded = true;
             plasmoid.writeConfig("optionsExpanded", "expanded");
         } else {
-            expanded = !expanded;
+            expanded = false;
             plasmoid.writeConfig("optionsExpanded", "hidden");
         }
     }
@@ -143,7 +136,6 @@ Item {
 
         if (plasmoid.readConfig("optionsExpanded") == "expanded") {
             expanded = true;
-            toolbarExpanded();
         }
     }
 }

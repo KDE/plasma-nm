@@ -18,6 +18,7 @@ Name[uk]=plasma-nm
 Name[x-test]=xxplasma-nmxx
 Name[zh_CN]=plasma-nm
 Comment=Notifies about network errors
+Comment[bs]=Obavještava o mrežnim greškama
 Comment[cs]=Oznamuje chyby sítě
 Comment[da]=Bekendtgør om netværksfejl
 Comment[de]=Benachrichtigungen über Netzwerkfehler

@@ -7,6 +7,7 @@ X-KDE-ServiceTypes=KCModule
 X-KDE-System-Settings-Parent-Category=network-and-connectivity
 
 Name=Network
+Name[bs]=Mreća
 Name[cs]=Síť
 Name[da]=Netværk
 Name[de]=Netzwerk
@@ -24,6 +25,7 @@ Name[uk]=Мережа
 Name[x-test]=xxNetworkxx
 Name[zh_CN]=网络
 Comment=Configure network interfaces
+Comment[bs]=Konfiguriši mrežne interfejse
 Comment[cs]=Nastavit síťová rozhraní
 Comment[da]=Indstil netværkskort
 Comment[de]=Netzwerkschnittstellen einrichten

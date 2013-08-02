@@ -1,6 +1,7 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=kde-nm-connection-editor
+Name[bs]=kde-nm-connection-editor
 Name[cs]=kde-nm-connection-editor
 Name[da]=kde-nm-connection-editor
 Name[de]=KDE-NM-Verbindungseditor
@@ -19,6 +20,7 @@ Name[uk]=Редактор з’єднань kde-nm
 Name[x-test]=xxkde-nm-connection-editorxx
 Name[zh_CN]=kde-nm-connection-editor
 GenericName=Connection editor
+GenericName[bs]=Uređivač veze
 GenericName[cs]=Editor spojení
 GenericName[da]=Forbindelseseditor
 GenericName[fi]=Yhteysmuokkain
@@ -31,6 +33,7 @@ GenericName[sv]=Anslutningseditor
 GenericName[uk]=Редактор з’єднань
 GenericName[x-test]=xxConnection editorxx
 Comment=Edit your network connections
+Comment[bs]=Uredi mrežne konekcije
 Comment[cs]=Upravit vaše síťová spojení
 Comment[da]=Redigér dine netværksforbindelser
 Comment[de]=Bearbeiten Sie Ihre Netzwerkverbindungen

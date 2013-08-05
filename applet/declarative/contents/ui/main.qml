@@ -111,6 +111,7 @@ Item {
                 }
             }
         }
+        
         delegate: ConnectionItem {
             expanded: (connectionView.expandedItem && ((connectionView.previouslyExpandedItem == itemConnectionPath && itemConnectionPath != "") || (itemConnectionPath == "" && connectionView.previouslyExpandedItem == itemName)))
             onItemExpanded: {
@@ -124,14 +125,17 @@ Item {
             }
         }
     }
-
-    Rectangle {
-        id: toolbarSeparator;
-
-        height: 1;
-        anchors { left: parent.left; right: parent.right; bottom: toolbar.top; bottomMargin: 2; leftMargin: 5; rightMargin: 5 }
-        radius: 2;
-        color: theme.highlightColor;
+    
+    PlasmaCore.SvgItem {
+      id: toolbarSeparator
+      svg: PlasmaCore.Svg {
+	id: lineSvg
+	imagePath: "widgets/line"
+      }
+      elementId: "horizontal-line"
+      height: lineSvg.elementSize("horizontal-line").height
+      width: parent.width
+      anchors { left: parent.left; right: parent.right; bottom: toolbar.top; bottomMargin: 2; leftMargin: 5; rightMargin: 5 }
     }
 
     Toolbar {

@@ -22,7 +22,7 @@ import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.core 0.1 as PlasmaCore
 
-Item {
+Title {
     id: sectionHeader;
 
     signal hideSection(string name);
@@ -31,15 +31,15 @@ Item {
     property bool expanded: true;
 
     anchors { left: parent.left; right: parent.right }
-    height: 25;
-
+    height: 35;
+    
     PlasmaComponents.Label {
         id: sectionLabel
 
         height: 15;
-        anchors { bottom: parent.bottom; bottomMargin: 5; left: expandButton.right; leftMargin: 5 }
+        anchors { bottom: parent.bottom; bottomMargin: 2; left: expandButton.right; leftMargin: 5 }
         text: section;
-        font.weight: Font.DemiBold;
+        font.weight: (section == "Active connections") ? Font.DemiBold : Font.Normal;
 
         MouseArea {
             id: sectionLabelMouseArea
@@ -50,25 +50,16 @@ Item {
         }
     }
 
-    Rectangle {
-        id: sectionSeparator
-
-        height: 1;
-        anchors { left: sectionLabel.right; right: parent.right; bottom: sectionLabel.bottom; leftMargin: 10; rightMargin: 10; bottomMargin: 5 }
-        radius: 2;
-        color: theme.highlightColor;
-    }
-
     PlasmaComponents.ToolButton {
         id: expandButton;
 
         height: 25; width: 25;
-        anchors { left: parent.left; leftMargin: 4}
+        anchors { left: parent.left; }
         iconSource: "list-remove";
 
         onClicked: sectionClicked();
     }
-
+    
     function sectionClicked() {
          if (expanded) {
             hideSection(section);

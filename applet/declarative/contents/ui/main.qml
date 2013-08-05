@@ -85,8 +85,8 @@ Item {
         anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbarSeparator.top; topMargin: 5; bottomMargin: 10 }
         clip: true
         model: connectionSortModel;
-        highlight: PlasmaComponents.Highlight{}
-        highlightMoveSpeed: 1000;
+//         highlight: PlasmaComponents.Highlight{}
+//         highlightMoveSpeed: 1000;
         currentIndex: -1;
         interactive: true;
         section.property: "itemSection";
@@ -111,7 +111,7 @@ Item {
                 }
             }
         }
-        
+
         delegate: ConnectionItem {
             expanded: (connectionView.expandedItem && ((connectionView.previouslyExpandedItem == itemConnectionPath && itemConnectionPath != "") || (itemConnectionPath == "" && connectionView.previouslyExpandedItem == itemName)))
             onItemExpanded: {
@@ -125,17 +125,19 @@ Item {
             }
         }
     }
-    
+
     PlasmaCore.SvgItem {
-      id: toolbarSeparator
-      svg: PlasmaCore.Svg {
-	id: lineSvg
-	imagePath: "widgets/line"
-      }
-      elementId: "horizontal-line"
-      height: lineSvg.elementSize("horizontal-line").height
-      width: parent.width
-      anchors { left: parent.left; right: parent.right; bottom: toolbar.top; bottomMargin: 2; leftMargin: 5; rightMargin: 5 }
+        id: toolbarSeparator
+
+        height: lineSvg.elementSize("horizontal-line").height;
+        width: parent.width;
+        anchors { left: parent.left; right: parent.right; bottom: toolbar.top; bottomMargin: 2; leftMargin: 5; rightMargin: 5 }
+        elementId: "horizontal-line";
+
+        svg: PlasmaCore.Svg {
+            id: lineSvg;
+            imagePath: "widgets/line";
+        }
     }
 
     Toolbar {

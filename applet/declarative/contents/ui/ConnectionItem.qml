@@ -25,7 +25,7 @@ import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasma.core 0.1 as PlasmaCore
 import org.kde.plasmanm 0.1 as PlasmaNM
 
-Item {
+PlasmaComponents.ListItem {
     id: connectionItem;
 
     property bool isWireless: (itemType == 14) ? true : false;
@@ -33,86 +33,82 @@ Item {
 
     signal itemExpanded(string connectionPath, bool itemExpanded);
 
-    height: 35;
-    anchors { left: parent.left; right: parent.right }
+    enabled: true
+    height: 40;
 
-    QIconItem {
-        id: connectionTypeIcon;
-
-        height: 30; width: 25;
-        anchors { left: parent.left; top: parent.top; leftMargin: 5 }
-        icon: QIcon(itemConnectionIcon);
-
-        QIconItem {
-            id: connectionSecurityIcon;
-            width: 15; height: 15;
-            anchors { bottom: parent.bottom; right: parent.right }
-            icon: QIcon("object-locked");
-            visible: itemSecure;
+    onClicked: {
+        if (itemUuid) {
+            itemExpanded(itemConnectionPath, !expanded);
+        } else {
+            itemExpanded(itemName, !expanded);
         }
     }
 
-    PlasmaComponents.Label {
-        id: connectionNameLabel;
+    Item {
+        id: connectionItemBasic;
 
         height: 30;
-        anchors { left: connectionTypeIcon.right; right: parent.right; top: parent.top; leftMargin: 5; rightMargin: 30 }
-        text: itemName;
-        elide: Text.ElideRight;
-        font.weight: itemConnected ? Font.DemiBold : Font.Normal;
-        font.italic: itemConnecting ? true : false;
-    }
+        anchors { left: parent.left; right: parent.right; top: parent.top }
 
-    MouseArea {
-        id: connectionItemMouseArea;
+        QIconItem {
+            id: connectionTypeIcon;
 
-        anchors.fill: parent;
-        hoverEnabled: true;
+            height: 30; width: 25;
+            anchors { left: parent.left; verticalCenter: parent.verticalCenter; leftMargin: 5 }
+            icon: QIcon(itemConnectionIcon);
 
-        onClicked: {
-            if (itemUuid != "") {
-                itemExpanded(itemConnectionPath, !expanded);
-            } else {
-                itemExpanded(itemName, !expanded);
+            QIconItem {
+                id: connectionSecurityIcon;
+                width: 15; height: 15;
+                anchors { bottom: parent.bottom; right: parent.right }
+                icon: QIcon("object-locked");
+                visible: itemSecure;
             }
         }
 
-        onEntered: {
-            connectionView.currentIndex = index;
+        PlasmaComponents.Label {
+            id: connectionNameLabel;
+
+            anchors { left: connectionTypeIcon.right; right: parent.right; verticalCenter: parent.verticalCenter; leftMargin: 5; rightMargin: 30 }
+            text: itemName;
+            elide: Text.ElideRight;
+            font.weight: itemConnected ? Font.DemiBold : Font.Normal;
+            font.italic: itemConnecting ? true : false;
         }
-    }
 
-    MouseEventListener {
-        id: leftActionArea;
+        MouseEventListener {
+            id: leftActionArea;
 
-        anchors { right: parent.right; verticalCenter: connectionTypeIcon.verticalCenter }
-        width: theme.iconSizes.dialog*0.8;
-        height: width;
-        hoverEnabled: true;
+            anchors { right: parent.right; verticalCenter: connectionTypeIcon.verticalCenter }
+            width: theme.iconSizes.dialog*0.8;
+            height: width;
+            hoverEnabled: true;
 
-        onClicked: {
-            // TODO expand and show details
-            if (configureButton.active) {
-                console.log("clicked");
+            onClicked: {
+                // TODO expand and show details
+                if (configureButton.active) {
+                    console.log("clicked");
+                }
             }
-        }
-        PlasmaComponents.BusyIndicator {
-            id: connectingIndicator;
 
-            anchors { right: parent.right; top: parent.top; rightMargin: 5 }
-            width: 30; height: 30;
-            running: itemConnecting;
-            visible: running;
-        }
+            PlasmaComponents.BusyIndicator {
+                id: connectingIndicator;
 
-        PlasmaCore.IconItem {
-            id: configureButton;
+                width: 25;
+                anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: 5 }
+                running: itemConnecting;
+                visible: running;
+            }
 
-            width: 30; height: 30;
-            anchors { right: parent.right; top: parent.top; rightMargin: 5 }
-            source: "configure";
-            visible: connectionView.currentIndex == index && !connectingIndicator.running;
-            active: leftActionArea.containsMouse;
+            PlasmaCore.IconItem {
+                id: configureButton;
+
+                width: 25;
+                anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: 5 }
+                source: "configure";
+                visible: expanded && !connectingIndicator.running;
+                active: leftActionArea.containsMouse;
+            }
         }
     }
 
@@ -125,7 +121,7 @@ Item {
         id: connectionComponent;
 
         Item {
-            anchors { left: parent.left; right: parent.right; top: connectionTypeIcon.bottom; topMargin: 5 }
+            anchors { left: parent.left; right: parent.right; top: parent.top; topMargin: 40 }
 
             PlasmaComponents.TextField {
                 id: passwordInput;
@@ -186,7 +182,7 @@ Item {
             PlasmaNM.TrafficMonitor {
                 id: trafficMonitor;
 
-                visible: (itemDevicePath != "" && itemConnected && itemType != 1)
+                visible: (itemDevicePath && itemConnected && itemType != 1)
                 height: visible ? 100 : 0;
                 device: itemDevicePath;
                 anchors { top: connectDisconnectButton.bottom; left: parent.left; right: parent.right; topMargin: 5 }
@@ -228,14 +224,18 @@ Item {
     }
 
     function predictableWirelessPassword() {
+        // Item is unknown && itemType == Wireless && itemSecurityType != DynamicWep && itemSecurityType != LEAP && itemSecurityType != WpaEap
         return !itemUuid && itemType == 14 && itemSecure && itemSecurityType != 2 && itemSecurityType != 5 && itemSecurityType != 7;
     }
 
     function heightForConnectionSettings() {
-        if (itemDevicePath != "" && itemConnected && itemType != 1) {
+        // Item is connected, have a physical device and it's not VPN → display traffic monitor
+        if (itemDevicePath && itemConnected && itemType != 11) {
             return 220;
+        // Item is wireless connection with predictable password → display password input
         } else if (predictableWirelessPassword()) {
             return 145;
+        // Otherwise display only connect/disconnect button
         } else {
             return 70;
         }

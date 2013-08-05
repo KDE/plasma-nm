@@ -32,14 +32,14 @@ Title {
 
     anchors { left: parent.left; right: parent.right }
     height: 35;
-    
+
     PlasmaComponents.Label {
         id: sectionLabel
 
         height: 15;
         anchors { bottom: parent.bottom; bottomMargin: 2; left: expandButton.right; leftMargin: 5 }
         text: section;
-        font.weight: (section == "Active connections") ? Font.DemiBold : Font.Normal;
+        font.weight: (section == i18n("Active connections")) ? Font.DemiBold : Font.Normal;
 
         MouseArea {
             id: sectionLabelMouseArea
@@ -59,7 +59,7 @@ Title {
 
         onClicked: sectionClicked();
     }
-    
+
     function sectionClicked() {
          if (expanded) {
             hideSection(section);

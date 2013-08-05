@@ -168,7 +168,7 @@ void OpenVpnSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
 
 QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
 {
-    NMStringMap data;
+    NMStringMap data = d->setting->data();
     NMStringMap secretData;
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_OPENVPN));

@@ -37,7 +37,7 @@ Title {
         id: sectionLabel
 
         height: 15;
-        anchors { bottom: parent.bottom; bottomMargin: 2; left: expandButton.right; leftMargin: 5 }
+        anchors { left: expandButton.right; verticalCenter: parent.verticalCenter; leftMargin: 5 }
         text: section;
         font.weight: (section == i18n("Active connections")) ? Font.DemiBold : Font.Normal;
 
@@ -54,7 +54,7 @@ Title {
         id: expandButton;
 
         height: 25; width: 25;
-        anchors { left: parent.left; }
+        anchors { left: parent.left; verticalCenter: parent.verticalCenter }
         iconSource: "list-remove";
 
         onClicked: sectionClicked();

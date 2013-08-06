@@ -203,7 +203,6 @@ PlasmaComponents.ListItem {
                 PlasmaComponents.Button {
                     id: editButton;
 
-                    height: 20;
                     anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
                     text: i18n("Edit");
 

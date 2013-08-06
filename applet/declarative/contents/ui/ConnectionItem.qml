@@ -200,27 +200,27 @@ PlasmaComponents.ListItem {
                 visible: detailsView;
                 height: visible ? detailsText.paintedHeight + editButton.height + 10 : 0;
 
-                PlasmaComponents.Label {
-                    id: detailsText;
-
-                    width: detailsView.width
-                    anchors { left: parent.left; right: parent.right; top: parent.top }
-                    text: itemDetails;
-                    wrapMode: TextEdit.WordWrap;
-                    textFormat: Text.RichText;
-                }
-
                 PlasmaComponents.Button {
                     id: editButton;
 
                     height: 20;
-                    anchors { horizontalCenter: parent.horizontalCenter; top: detailsText.bottom; topMargin: 5 }
+                    anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
                     text: i18n("Edit");
 
                     onClicked: {
                         itemExpanded(itemConnectionPath, false);
                         handler.editConnection(itemUuid);
                     }
+                }
+
+                PlasmaComponents.Label {
+                    id: detailsText;
+
+                    width: detailsView.width
+                    anchors { left: parent.left; right: parent.right; top: editButton.bottom; topMargin: 5 }
+                    text: itemDetails;
+                    wrapMode: TextEdit.WordWrap;
+                    textFormat: Text.RichText;
                 }
             }
         }

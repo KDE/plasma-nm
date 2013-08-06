@@ -94,7 +94,7 @@ Item {
                     connectionView.activeExpanded = false;
                 } else if (section == i18n("Previous connections")) {
                     connectionView.previousExpanded = false;
-                } else {b
+                } else {
                     connectionView.unknownExpanded = false;
                 }
             }

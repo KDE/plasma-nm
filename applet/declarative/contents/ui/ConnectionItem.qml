@@ -247,6 +247,10 @@ PlasmaComponents.ListItem {
         }
     ]
 
+    transitions: Transition {
+        NumberAnimation { duration: 300; properties: "height" }
+    }
+
     Behavior on height {
         NumberAnimation { duration: 300 }
     }

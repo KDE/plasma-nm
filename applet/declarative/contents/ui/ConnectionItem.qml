@@ -129,10 +129,25 @@ PlasmaComponents.ListItem {
                 visible: !detailsView;
                 height: visible ? heightForConnectionSettings() : 0;
 
+                // I had to move PlasmaNM.TrafficMonitor into a separated item, because it's not possible to adjust the height to 0 and the traffic monitor
+                // still occupied the space.
+                Item {
+                    id: trafficMonitor;
+
+                    anchors { top: parent.top; left: parent.left; right: parent.right }
+                    visible: (itemDevicePath && itemConnected && itemType != 11)
+                    height: visible ? 150 : 0;
+
+                    PlasmaNM.TrafficMonitor {
+                        anchors.fill: parent;
+                        device: itemDevicePath;
+                    }
+                }
+
                 PlasmaComponents.TextField {
                     id: passwordInput;
 
-                    anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
+                    anchors { horizontalCenter: parent.horizontalCenter; top: trafficMonitor.bottom }
                     width: 200;
                     echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
                     visible: predictableWirelessPassword();
@@ -184,15 +199,6 @@ PlasmaComponents.ListItem {
                         }
                     }
                 }
-
-                PlasmaNM.TrafficMonitor {
-                    id: trafficMonitor;
-
-                    visible: (itemDevicePath && itemConnected && itemType != 1)
-                    height: visible ? 100 : 0;
-                    device: itemDevicePath;
-                    anchors { top: connectDisconnectButton.bottom; left: parent.left; right: parent.right; topMargin: 5 }
-                }
             }
 
             Item {
@@ -200,26 +206,26 @@ PlasmaComponents.ListItem {
                 visible: detailsView;
                 height: visible ? detailsText.paintedHeight + editButton.height + 10 : 0;
 
+                PlasmaComponents.Label {
+                    id: detailsText;
+
+                    width: detailsView.width
+                    anchors { left: parent.left; right: parent.right; top: parent.top }
+                    text: itemDetails;
+                    wrapMode: TextEdit.WordWrap;
+                    textFormat: Text.RichText;
+                }
+
                 PlasmaComponents.Button {
                     id: editButton;
 
-                    anchors { horizontalCenter: parent.horizontalCenter; top: parent.top }
-                    text: i18n("Edit");
+                    anchors { horizontalCenter: parent.horizontalCenter; top: detailsText.bottom; topMargin: 5 }
+                    text: i18n("Edit connection");
 
                     onClicked: {
                         itemExpanded(itemConnectionPath, false);
                         handler.editConnection(itemUuid);
                     }
-                }
-
-                PlasmaComponents.Label {
-                    id: detailsText;
-
-                    width: detailsView.width
-                    anchors { left: parent.left; right: parent.right; top: editButton.bottom; topMargin: 5 }
-                    text: itemDetails;
-                    wrapMode: TextEdit.WordWrap;
-                    textFormat: Text.RichText;
                 }
             }
         }

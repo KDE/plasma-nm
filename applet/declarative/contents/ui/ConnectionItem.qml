@@ -268,8 +268,8 @@ PlasmaComponents.ListItem {
     }
 
     function predictableWirelessPassword() {
-        // Item is unknown && itemType == Wireless && itemSecurityType != DynamicWep && itemSecurityType != LEAP && itemSecurityType != WpaEap
-        return !itemUuid && itemType == 14 && itemSecure && itemSecurityType != 2 && itemSecurityType != 5 && itemSecurityType != 7;
+        // Item is unknown && itemType == Wireless && itemSecurityType != DynamicWep && itemSecurityType != LEAP && itemSecurityType != WpaEap && itemSecurityType != Wpa2Eap
+        return !itemUuid && itemType == 14 && itemSecure && itemSecurityType != 2 && itemSecurityType != 3 && itemSecurityType != 5 && itemSecurityType != 7;
     }
 
     function heightForConnectionSettings() {

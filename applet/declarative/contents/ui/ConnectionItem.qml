@@ -94,7 +94,7 @@ PlasmaComponents.ListItem {
             PlasmaComponents.BusyIndicator {
                 id: connectingIndicator;
 
-                width: 25;
+                width: 25; height: 25;
                 anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: 5 }
                 running: itemConnecting;
                 visible: running;
@@ -103,7 +103,7 @@ PlasmaComponents.ListItem {
             PlasmaCore.IconItem {
                 id: configureButton;
 
-                width: 25;
+                width: 25; height: 25;
                 anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: 5 }
                 source: "configure";
                 visible: expanded && !connectingIndicator.running;

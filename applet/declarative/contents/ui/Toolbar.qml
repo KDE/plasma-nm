@@ -31,7 +31,7 @@ Item {
 
     property bool expanded: false;
 
-    height: 30;
+    height: theme.defaultFont.mSize.height * 2;
 
     PlasmaNM.NetworkStatus {
         id: networkStatus;
@@ -49,57 +49,64 @@ Item {
         }
     }
 
-    PlasmaCore.IconItem {
-        id: statusIcon
+    Item {
+        id: toolbarLine;
 
-        height: 30; width: 30;
-        anchors { left: parent.left; bottom: parent.bottom; top: statusLabel.top; leftMargin: 5}
+        height: theme.defaultFont.mSize.height * 2;
+        anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
 
-        PlasmaComponents.BusyIndicator {
-            id: progressIndicator;
+        PlasmaCore.IconItem {
+            id: statusIcon
 
-            anchors.fill: parent;
-            running: false;
-            visible: running;
+            height: theme.smallMediumIconSize; width: height;
+            anchors { left: parent.left; verticalCenter: parent.verticalCenter; leftMargin: padding.margins.left }
+
+            PlasmaComponents.BusyIndicator {
+                id: progressIndicator;
+
+                anchors.fill: parent;
+                running: false;
+                visible: running;
+            }
         }
-    }
 
-    PlasmaComponents.Label {
-        id: statusLabel;
+        PlasmaComponents.Label {
+            id: statusLabel;
 
-        height: 30;
-        anchors { left: statusIcon.right; right: toolButton.left; bottom: parent.bottom; leftMargin: 5 }
-        elide: Text.ElideRight;
-    }
+            height: theme.defaultFont.mSize.height * 2;
+            anchors { left: statusIcon.right; right: toolButton.left; verticalCenter: parent.verticalCenter; leftMargin: padding.margins.left }
+            elide: Text.ElideRight;
+        }
 
-    PlasmaCore.IconItem {
-        id: toolButton;
+        PlasmaCore.IconItem {
+            id: toolButton;
 
-        height: 30; width: 30;
-        anchors { right: parent.right; bottom: parent.bottom; rightMargin: 5 }
-        source: "configure";
+            height: theme.smallMediumIconSize; width: height;
+            anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: padding.margins.right }
+            source: "configure";
+        }
+
+        MouseArea {
+            id: toolbarMouseArea;
+
+            anchors { fill: parent }
+
+            onClicked: {
+                hideOrShowOptions();
+            }
+        }
     }
 
     OptionsWidget {
         id: options;
 
-        anchors { left: parent.left; right: parent.right; top: parent.top; leftMargin: 10 }
+        anchors { left: parent.left; right: parent.right; top: parent.top; bottomMargin: padding.margins.bottom }
         visible: false;
 
         onOpenEditor: {
             if (mainWindow.autoHideOptions) {
                 expanded = false;
             }
-        }
-    }
-
-    MouseArea {
-        id: toolbarMouseArea;
-
-        anchors { left: parent.left; right: parent.right; bottom: parent.bottom; top: statusIcon.top }
-
-        onClicked: {
-            hideOrShowOptions();
         }
     }
 
@@ -112,7 +119,7 @@ Item {
         State {
             name: "Expanded";
             when: expanded;
-            PropertyChanges { target: toolBar; height: options.childrenRect.height + 45 }
+            PropertyChanges { target: toolBar; height: options.childrenRect.height + theme.defaultFont.mSize.height * 2 + padding.margins.top }
             PropertyChanges { target: options; visible: true }
         }
     ]

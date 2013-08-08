@@ -72,6 +72,14 @@ Item {
         sourceModel: connectionModel;
     }
 
+    PlasmaCore.FrameSvgItem {
+        id: padding
+        imagePath: "widgets/viewitem"
+        prefix: "hover"
+        opacity: 0
+        anchors.fill: parent
+    }
+
     ListView {
         id: connectionView;
 
@@ -82,7 +90,14 @@ Item {
         property bool previousExpanded: true;
         property bool unknownExpanded: true;
 
-        anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbarSeparator.top; topMargin: 5; bottomMargin: 10 }
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: parent.top;
+            bottom: toolbarSeparator.top;
+            topMargin: padding.margins.top;
+            bottomMargin: padding.margins.bottom
+        }
         clip: true
         model: connectionSortModel;
         currentIndex: -1;
@@ -129,7 +144,14 @@ Item {
 
         height: lineSvg.elementSize("horizontal-line").height;
         width: parent.width;
-        anchors { left: parent.left; right: parent.right; bottom: toolbar.top; bottomMargin: 2; leftMargin: 5; rightMargin: 5 }
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            bottom: toolbar.top;
+            bottomMargin: padding.margins.bottom/2;
+            leftMargin: padding.margins.left;
+            rightMargin: padding.margins.right;
+        }
         elementId: "horizontal-line";
 
         svg: PlasmaCore.Svg {

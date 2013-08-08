@@ -86,14 +86,21 @@ PlasmaComponents.ListItem {
         MouseEventListener {
             id: leftActionArea;
 
-            anchors { right: parent.right; verticalCenter: connectionTypeIcon.verticalCenter }
-            width: theme.smallMediumIconSize;
-            height: width;
+            anchors { right: parent.right; top: parent.top; bottom: parent.bottom }
+            width: theme.smallMediumIconSize * 2;
             hoverEnabled: expanded;
 
             onClicked: {
-                if (configureButton.active) {
-                    detailsView = !detailsView
+                if (!expanded) {
+                    if (itemUuid) {
+                        itemExpanded(itemConnectionPath, !expanded);
+                    } else {
+                        itemExpanded(itemName, !expanded);
+                    }
+                } else {
+                    if (configureButton.active) {
+                        detailsView = !detailsView
+                    }
                 }
             }
 

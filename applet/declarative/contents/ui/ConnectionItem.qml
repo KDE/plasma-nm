@@ -212,14 +212,17 @@ PlasmaComponents.ListItem {
                 visible: detailsView;
                 height: visible ? childrenRect.height : 0;
 
-                PlasmaComponents.Label {
+                TextEdit {
                     id: detailsText;
 
-                    width: detailsView.width
+                    width: detailsView.width;
                     anchors { left: parent.left; right: parent.right; top: parent.top }
-                    text: itemDetails;
+                    color: theme.textColor;
+                    readOnly: true;
+                    selectByMouse: true;
                     wrapMode: TextEdit.WordWrap;
                     textFormat: Text.RichText;
+                    text: itemDetails;
                 }
 
                 PlasmaComponents.Button {

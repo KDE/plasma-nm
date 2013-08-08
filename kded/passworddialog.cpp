@@ -74,7 +74,7 @@ void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings
 
     Setting::SettingType connectionType = setting->type();
     if (wifi && (connectionType == Setting::WirelessSecurity || connectionType == Setting::Security8021x)) {
-        QString ssid = wifi->ssid();
+        const QString ssid = wifi->ssid();
         ui->labelText->setText(i18n("For accessing the wireless network '%1' you need to provide a password below", ssid));
     } else {
         ui->labelText->setText(i18n("Please provide a password below"));

@@ -264,8 +264,8 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
     NMStringMap secretsMap;
     if (!ignoreWallet && !requestNew && useWallet()) {
         if (m_wallet->isOpen()) {
-            if (m_wallet->hasFolder("plasma-nm") && m_wallet->setFolder("plasma-nm")) {
-                QString key = connectionSettings.uuid() % QLatin1Char(';') % request.setting_name;
+            if (m_wallet->hasFolder("Network Management") && m_wallet->setFolder("Network Management")) {
+                QString key = QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % request.setting_name;
                 m_wallet->readMap(key, secretsMap);
             }
         } else {
@@ -275,7 +275,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
     } else if (!requestNew && !m_wallet) {
         // If the wallet is disabled fallback to plain text
         KConfig config("plasma-nm");
-        KConfigGroup secretsGroup(&config, connectionSettings.uuid() % QLatin1Char(';') % request.setting_name);
+        KConfigGroup secretsGroup(&config, QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % request.setting_name);
         secretsMap = secretsGroup.entryMap();
     }
 
@@ -340,16 +340,16 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
         if (m_wallet->isOpen()) {
             NetworkManager::ConnectionSettings connectionSettings(request.connection);
 
-            if (!m_wallet->hasFolder("plasma-nm")) {
-                m_wallet->createFolder("plasma-nm");
+            if (!m_wallet->hasFolder("Network Management")) {
+                m_wallet->createFolder("Network Management");
             }
 
-            if (m_wallet->setFolder("plasma-nm")) {
+            if (m_wallet->setFolder("Network Management")) {
                 foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
                     NMStringMap secretsMap = setting->secretsToStringMap();
 
                     if (!secretsMap.isEmpty()) {
-                        QString entryName = connectionSettings.uuid() % QLatin1Char(';') % setting->name();
+                        QString entryName = QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name();
                         m_wallet->writeMap(entryName, secretsMap);
                     }
                 }
@@ -365,10 +365,9 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
         }
     } else if (!m_wallet) {
         NetworkManager::ConnectionSettings connectionSettings(request.connection);
-
         KConfig config("plasma-nm");
         foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
-            KConfigGroup secretsGroup(&config, connectionSettings.uuid() % QLatin1Char(';') % setting->name());
+            KConfigGroup secretsGroup(&config, QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name());
             NMStringMap secretsMap = setting->secretsToStringMap();
             NMStringMap::ConstIterator i = secretsMap.constBegin();
             while (i != secretsMap.constEnd()) {

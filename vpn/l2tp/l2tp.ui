@@ -51,7 +51,7 @@
       <widget class="QComboBox" name="cboUserPasswordType">
        <item>
         <property name="text">
-         <string>Saved</string>
+         <string>Store</string>
         </property>
        </item>
        <item>

@@ -47,7 +47,7 @@ public:
                                     const QString &vpnType = QString(),
                                     bool shared = false,
                                     Qt::WindowFlags f = 0);
-    explicit ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &setting,
+    explicit ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &connection,
                                     QWidget* parent = 0, Qt::WindowFlags f = 0, bool newConnection = false);
     explicit ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
                                     const QVariantList &args,

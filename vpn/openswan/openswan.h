@@ -33,6 +33,11 @@ public:
     virtual ~OpenswanUiPlugin();
     virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
     virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+
+    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const;
+    QString supportedFileExtensions() const;
+    NMVariantMapMap importConnectionSettings(const QString &fileName);
+    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName);
 };
 
 #endif //  PLASMA_NM_OPENSWAN_H

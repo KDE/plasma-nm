@@ -25,6 +25,7 @@
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessSetting>
 
+#include "uiutils.h"
 #include "debug.h"
 
 Model::Model(QObject* parent):
@@ -41,7 +42,8 @@ Model::Model(QObject* parent):
     roles[DevicePathRole] = "itemDevicePath";
     roles[NameRole] = "itemName";
     roles[SecureRole] = "itemSecure";
-    roles[SecurityRole] = "itemSecurity";
+    roles[SecurityTypeRole] = "itemSecurityType";
+    roles[SecurityTypeStringRole] = "itemSecurityTypeString";
     roles[SectionRole] = "itemSection";
     roles[SignalRole] = "itemSignal";
     roles[SsidRole] = "itemSsid";
@@ -136,8 +138,10 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 }
             case SecureRole:
                 return item->secure();
-            case SecurityRole:
-                return item->security();
+            case SecurityTypeRole:
+                return item->securityType();
+            case SecurityTypeStringRole:
+                return UiUtils::labelFromWirelessSecurity(item->securityType());
             case SectionRole:
                 return item->sectionType();
             case SignalRole:

@@ -47,3 +47,33 @@ SettingWidget * OpenswanUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr 
 {
     return new OpenswanAuthDialog(setting, parent);
 }
+
+QString OpenswanUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
+{
+    Q_UNUSED(connection);
+    return QString();
+}
+
+QString OpenswanUiPlugin::supportedFileExtensions() const
+{
+    return QString();
+}
+
+NMVariantMapMap OpenswanUiPlugin::importConnectionSettings(const QString &fileName)
+{
+    Q_UNUSED(fileName);
+
+    // TODO : import the Openconnect connection from file and return settings
+    mError = VpnUiPlugin::NotImplemented;
+    return NMVariantMapMap();
+}
+
+bool OpenswanUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
+{
+    Q_UNUSED(connection);
+    Q_UNUSED(fileName);
+
+    // TODO : export Openconnect connection to file
+    mError = VpnUiPlugin::NotImplemented;
+    return false;
+}

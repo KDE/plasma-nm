@@ -101,7 +101,6 @@ void MobileConnectionWizard::initializePage(int id)
                 } else {
                     mType = NetworkManager::ConnectionSettings::Gsm;
                 }
-                /* TODO: test for Lte */
             } else {
                 mType = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(mDeviceComboBox->itemData(mDeviceComboBox->currentIndex()).toUInt());
             }

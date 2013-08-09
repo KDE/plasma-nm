@@ -31,15 +31,7 @@ Item {
 
     property bool expanded: false;
 
-    signal disconnecAll();
-    signal enableNetworking(bool enable);
-    signal enableWireless(bool enable);
-    signal enableWimax(bool enable);
-    signal enableWwan(bool enable);
-    signal openEditorToolbar();
-    signal toolbarExpanded();
-
-    height: 30;
+    height: theme.defaultFont.mSize.height * 2;
 
     PlasmaNM.NetworkStatus {
         id: networkStatus;
@@ -48,115 +40,86 @@ Item {
             statusLabel.text = status;
             progressIndicator.running = inProgress;
             if (connected) {
-                statusIcon.iconSource = "user-online";
+                statusIcon.source = "user-online";
                 statusIcon.enabled = true;
             } else {
-                statusIcon.iconSource = "user-offline";
+                statusIcon.source = "user-offline";
                 statusIcon.enabled = false;
             }
         }
     }
 
-    PlasmaComponents.ToolButton {
-        id: statusIcon
+    Item {
+        id: toolbarLine;
 
-        height: 30; width: 30;
-        anchors { left: parent.left; bottom: parent.bottom; top: statusLabel.top; leftMargin: 5}
+        height: theme.defaultFont.mSize.height * 2;
+        anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
 
-        PlasmaComponents.BusyIndicator {
-            id: progressIndicator;
+        PlasmaCore.IconItem {
+            id: statusIcon
 
-            anchors.fill: parent;
-            running: false;
-            visible: running;
+            height: theme.smallMediumIconSize; width: height;
+            anchors { left: parent.left; verticalCenter: parent.verticalCenter; leftMargin: padding.margins.left }
+
+            PlasmaComponents.BusyIndicator {
+                id: progressIndicator;
+
+                anchors.fill: parent;
+                running: false;
+                visible: running;
+            }
         }
 
-        onClicked: disconnecAll();
-    }
+        PlasmaComponents.Label {
+            id: statusLabel;
 
-    PlasmaComponents.Label {
-        id: statusLabel;
-
-        height: 30;
-        anchors { left: statusIcon.right; right: toolButton.left; bottom: parent.bottom; leftMargin: 5 }
-        elide: Text.ElideRight;
-    }
-
-    PlasmaComponents.ToolButton {
-        id: toolButton;
-
-        height: 30; width: 30;
-        anchors { right: parent.right; bottom: parent.bottom; rightMargin: 5 }
-        iconSource: "configure";
-
-        onClicked: {
-            hideOrShowOptions();
-        }
-    }
-
-    PlasmaNM.EnabledConnections {
-        id: enabledConnections;
-
-        onNetworkingEnabled: {
-            options.networkingEnabled = enabled;
+            height: theme.defaultFont.mSize.height * 2;
+            anchors { left: statusIcon.right; right: toolButton.left; verticalCenter: parent.verticalCenter; leftMargin: padding.margins.left }
+            elide: Text.ElideRight;
         }
 
-        onWirelessEnabled: {
-            options.wirelessEnabled = enabled;
+        PlasmaCore.IconItem {
+            id: toolButton;
+
+            height: theme.smallMediumIconSize; width: height;
+            anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: padding.margins.right }
+            source: "configure";
         }
 
-        onWirelessHwEnabled: {
-            options.wirelessHwEnabled = enabled;
-        }
+        MouseArea {
+            id: toolbarMouseArea;
 
-        onWimaxEnabled: {
-            options.wimaxEnabled = enabled;
-        }
+            anchors { fill: parent }
 
-        onWimaxHwEnabled: {
-            options.wimaxHwEnabled = enabled;
-        }
-
-        onWwanEnabled: {
-            options.wwanEnabled = enabled;
-        }
-
-        onWwanHwEnabled: {
-            options.wwanHwEnabled = enabled;
+            onClicked: {
+                hideOrShowOptions();
+            }
         }
     }
 
     OptionsWidget {
         id: options;
 
-        anchors { left: parent.left; right: parent.right; leftMargin: 10 }
+        anchors { left: parent.left; right: parent.right; top: parent.top; bottomMargin: padding.margins.bottom }
         visible: false;
 
-        onNetworkingEnabledChanged: enableNetworking(enabled);
-        onWirelessEnabledChanged: enableWireless(enabled);
-        onWwanEnabledChanged: enableWwan(enabled);
         onOpenEditor: {
             if (mainWindow.autoHideOptions) {
                 expanded = false;
             }
-            openEditorToolbar();
-        }
-
-        Component.onCompleted: {
-            enabledConnections.init();
         }
     }
 
     states: [
         State {
-            name: "Hidden"
-            when: !expanded || !toolbar.toolbarExpandable
+            name: "Hidden";
+            when: !expanded;
         },
 
         State {
             name: "Expanded";
-            when: expanded && toolbar.toolbarExpandable;
-            PropertyChanges { target: toolBar; height: options.childrenRect.height + 45 }
+            when: expanded;
+            PropertyChanges { target: toolBar; height: options.childrenRect.height + theme.defaultFont.mSize.height * 2 + padding.margins.top }
             PropertyChanges { target: options; visible: true }
         }
     ]
@@ -167,15 +130,10 @@ Item {
 
     function hideOrShowOptions() {
         if (!expanded) {
-            toolbarExpanded();
-            expanded = !expanded;
-            plasmoid.writeConfig("optionsExpanded", "expanded");
-        // Toolbar may be set as expanded, but was closed from the item
-        } else if (expanded && connectionView.itemExpandable == true && toolbar.toolbarExpandable == false) {
-            toolbarExpanded();
+            expanded = true;
             plasmoid.writeConfig("optionsExpanded", "expanded");
         } else {
-            expanded = !expanded;
+            expanded = false;
             plasmoid.writeConfig("optionsExpanded", "hidden");
         }
     }
@@ -185,7 +143,6 @@ Item {
 
         if (plasmoid.readConfig("optionsExpanded") == "expanded") {
             expanded = true;
-            toolbarExpanded();
         }
     }
 }

@@ -27,6 +27,8 @@
 #include <QMessageBox>
 
 #include <NetworkManagerQt/VpnSetting>
+#include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/generic-types.h>
 
 #include <kdemacros.h>
 
@@ -47,12 +49,11 @@ public:
     virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;
     virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;
 
-#if 0
     /**
      * Suggested file name to save the exported connection configuration.
      * Try not to use space, parenthesis, or any other Unix unfriendly file name character.
      */
-    virtual QString suggestedFileName(Knm::Connection *connection) const = 0;
+    virtual QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const = 0;
     /**
      * File extension to be used in KFileDialog when selecting the file to import.
      * The format is: *.<extension> [*.<extension> ...]. For instance: '*.pcf'
@@ -64,9 +65,8 @@ public:
      * If it supports the extension and import has failed it must set mError with VpnUiPlugin::Error
      * and mErrorMessage with a custom error message before returning an empty QVariantList.
      */
-    virtual QVariantList importConnectionSettings(const QString &fileName) = 0;
-    virtual bool exportConnectionSettings(Knm::Connection * connection, const QString &fileName) = 0;
-#endif
+    virtual NMVariantMapMap importConnectionSettings(const QString &fileName) = 0;
+    virtual bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) = 0;
 
     virtual QMessageBox::StandardButtons suggestedAuthDialogButtons() const;
     ErrorType lastError() const;

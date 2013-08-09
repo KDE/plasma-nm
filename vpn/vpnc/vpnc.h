@@ -28,20 +28,39 @@
 
 #include <QVariant>
 
+#include <KProcess>
+#include <KConfigGroup>
+
+class VpncUiPluginPrivate: public QObject
+{
+    Q_OBJECT
+public:
+    VpncUiPluginPrivate();
+    ~VpncUiPluginPrivate();
+    QString readStringKeyValue(const KConfigGroup & configGroup, const QString & key);
+    KProcess * ciscoDecrypt;
+    QString decryptedPasswd;
+
+protected slots:
+    void gotCiscoDecryptOutput();
+    void ciscoDecryptError(QProcess::ProcessError pError);
+    void ciscoDecryptFinished(int exitCode, QProcess::ExitStatus exitStatus);
+};
+
 class KDE_EXPORT VpncUiPlugin : public VpnUiPlugin
 {
     Q_OBJECT
+
 public:
     explicit VpncUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
     virtual ~VpncUiPlugin();
     virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
     virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
-#if 0
-    QString suggestedFileName(Knm::Connection *connection) const;
+
+    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const;
     QString supportedFileExtensions() const;
-    QVariantList importConnectionSettings(const QString &fileName);
-    bool exportConnectionSettings(Knm::Connection * connection, const QString &fileName);
-#endif
+    NMVariantMapMap importConnectionSettings(const QString &fileName);
+    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName);
 };
 
 #endif // PLASMA_NM_VPNC_H

@@ -71,7 +71,7 @@ PptpSettingWidget::~PptpSettingWidget()
 void PptpSettingWidget::passwordTypeChanged(int index)
 {
     Q_D(PptpSettingWidget);
-    d->ui.edt_password->setEnabled(index == 1);
+    d->ui.edt_password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
 }
 
 void PptpSettingWidget::setShowPassword(bool show)

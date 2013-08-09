@@ -36,9 +36,10 @@ class IPv4Widget;
 
 class KDE_EXPORT IPv4Widget : public SettingWidget
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
+    enum MethodIndex { Automatic = 0, AutomaticOnlyIP, LinkLocal, Manual, Shared, Disabled };
+
     explicit IPv4Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~IPv4Widget();
 
@@ -63,7 +64,6 @@ private slots:
 
 private:
     Ui::IPv4Widget * m_ui;
-    NetworkManager::Ipv4Setting::Ptr m_ipv4Setting;
     NetworkManager::Ipv4Setting m_tmpIpv4Setting;
 
     class Private;

@@ -81,7 +81,7 @@ Item {
             id: securityLabel;
 
             anchors { right: securedIcon.left; top: parent.top; bottom: parent.bottom }
-            text: itemSecurity;
+            text: itemSecurityTypeString;
             visible: securedIcon.visible;
         }
 

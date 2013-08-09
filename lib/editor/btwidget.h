@@ -49,7 +49,6 @@ public:
 
 private:
     Ui::BtWidget * m_ui;
-    NetworkManager::BluetoothSetting::Ptr m_btSetting;
 };
 
 #endif // PLASMA_NM_BT_WIDGET_H

@@ -45,6 +45,7 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget* paren
 
     connect(m_ui->cbShowPasswords, SIGNAL(toggled(bool)), SLOT(showPasswords(bool)));
     connect(m_ui->pinStorage, SIGNAL(currentIndexChanged(int)), SLOT(pinStorageChanged(int)));
+    connect(m_ui->passwordStorage, SIGNAL(currentIndexChanged(int)), SLOT(passwordStorageChanged(int)));
 
     connect(m_ui->apn, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 
@@ -139,12 +140,12 @@ void GsmWidget::showPasswords(bool show)
 
 void GsmWidget::pinStorageChanged(int index)
 {
-    if (index == 1 || index == 2) {
-        m_ui->pin->setEnabled(false);
-    }
-    else {
-        m_ui->pin->setEnabled(true);
-    }
+    m_ui->pin->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
+}
+
+void GsmWidget::passwordStorageChanged(int index)
+{
+    m_ui->password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
 }
 
 bool GsmWidget::isValid() const

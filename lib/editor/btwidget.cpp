@@ -28,8 +28,7 @@
 
 BtWidget::BtWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
-    m_ui(new Ui::BtWidget),
-    m_btSetting(setting.staticCast<NetworkManager::BluetoothSetting>())
+    m_ui(new Ui::BtWidget)
 {
     m_ui->setupUi(this);
 
@@ -53,10 +52,10 @@ BtWidget::~BtWidget()
 
 void BtWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    Q_UNUSED(setting);
+    NetworkManager::BluetoothSetting::Ptr btSetting = setting.staticCast<NetworkManager::BluetoothSetting>();
 
-    m_ui->bdaddr->init(NetworkManager::Device::Bluetooth, NetworkManager::Utils::macAddressAsString(m_btSetting->bluetoothAddress()));
-    m_ui->type->setCurrentIndex(m_ui->type->findData(m_btSetting->profileType()));
+    m_ui->bdaddr->init(NetworkManager::Device::Bluetooth, NetworkManager::Utils::macAddressAsString(btSetting->bluetoothAddress()));
+    m_ui->type->setCurrentIndex(m_ui->type->findData(btSetting->profileType()));
 }
 
 QVariantMap BtWidget::setting(bool agentOwned) const

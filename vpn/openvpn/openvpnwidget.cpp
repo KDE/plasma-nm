@@ -37,11 +37,6 @@ class OpenVpnSettingWidget::Private
 public:
     Ui_OpenVPNProp ui;
     NetworkManager::VpnSetting::Ptr setting;
-    class EnumPasswordStorageType
-    {
-    public:
-        enum PasswordStorageType {AlwaysAsk = 0, Store, NotRequired};
-    };
     class EnumConnectionType
     {
     public:
@@ -173,7 +168,7 @@ void OpenVpnSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
 
 QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
 {
-    NMStringMap data;
+    NMStringMap data = d->setting->data();
     NMStringMap secretData;
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_OPENVPN));
@@ -291,26 +286,17 @@ void OpenVpnSettingWidget::x509PassPasswordStorageChanged(int index)
 
 void OpenVpnSettingWidget::setPasswordType(KLineEdit *edit, int type)
 {
-    switch (type)
-    {
-    case Private::EnumPasswordStorageType::AlwaysAsk:
-    case Private::EnumPasswordStorageType::NotRequired:
-        edit->setEnabled(false);
-        break;
-    case Private::EnumPasswordStorageType::Store:
-        edit->setEnabled(true);
-        break;
-    }
+    edit->setEnabled(type == SettingWidget::EnumPasswordStorageType::Store);
 }
 
 void OpenVpnSettingWidget::fillOnePasswordCombo(KComboBox * combo, NetworkManager::Setting::SecretFlags type)
 {
     if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) {
-        combo->setCurrentIndex(Private::EnumPasswordStorageType::Store);
+        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
     } else if (type.testFlag(NetworkManager::Setting::NotRequired)) {
-        combo->setCurrentIndex(Private::EnumPasswordStorageType::NotRequired);
+        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
     } else if (type.testFlag(NetworkManager::Setting::NotSaved)) {
-        combo->setCurrentIndex(Private::EnumPasswordStorageType::AlwaysAsk);
+        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
     }
 }
 
@@ -318,16 +304,16 @@ uint OpenVpnSettingWidget::handleOnePasswordType(const KComboBox * combo, const 
 {
     const uint type = combo->currentIndex();
     switch (type) {
-    case Private::EnumPasswordStorageType::AlwaysAsk:
+    case SettingWidget::EnumPasswordStorageType::AlwaysAsk:
         data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
         break;
-    case Private::EnumPasswordStorageType::Store:
+    case SettingWidget::EnumPasswordStorageType::Store:
         if (agentOwned)
             data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
         else
             data.insert(key, QString::number(NetworkManager::Setting::None));
         break;
-    case Private::EnumPasswordStorageType::NotRequired:
+    case SettingWidget::EnumPasswordStorageType::NotRequired:
         data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
         break;
     }

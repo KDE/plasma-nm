@@ -28,18 +28,38 @@ import org.kde.plasmanm 0.1 as PlasmaNM
 Item {
     id: optionsWidget;
 
-    property alias networkingEnabled: networkingEnabled.checked;
-    property alias wirelessEnabled: wirelessEnabled.checked;
-    property alias wimaxEnabled: wimaxEnabled.checked;
-    property alias wwanEnabled: wwanEnabled.checked;
-    property alias wirelessHwEnabled: wirelessEnabled.enabled;
-    property alias wimaxHwEnabled: wimaxEnabled.enabled;
-    property alias wwanHwEnabled: wwanEnabled.enabled;
+     PlasmaNM.EnabledConnections {
+        id: enabledConnections;
 
-    signal networkingEnabledChanged(bool enabled);
-    signal wirelessEnabledChanged(bool enabled);
-    signal wimaxEnabledChanged(bool enabled);
-    signal wwanEnabledChanged(bool enabled);
+        onNetworkingEnabled: {
+            networkingEnabled.checked = enabled;
+        }
+
+        onWirelessEnabled: {
+            wirelessEnabled.checked = enabled;
+        }
+
+        onWirelessHwEnabled: {
+            wirelessEnabled.enabled = enabled;
+        }
+
+        onWimaxEnabled: {
+            wimaxEnabled.checked = enabled;
+        }
+
+        onWimaxHwEnabled: {
+            wimaxEnabled.enabled = enabled;
+        }
+
+        onWwanEnabled: {
+            wwanEnabled.checked = enabled;
+        }
+
+        onWwanHwEnabled: {
+            wwanEnabled.enabled = enabled;
+        }
+    }
+
     signal openEditor();
 
     PlasmaNM.AvailableDevices {
@@ -49,69 +69,81 @@ Item {
     Column {
         id: checkboxes;
 
-        spacing: 8;
-        anchors { left: parent.left; right: parent.right; top: parent.top; topMargin: 10 }
+        spacing: 5;
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: parent.top;
+            topMargin: padding.margins.top;
+            leftMargin: padding.margins.left;
+            bottomMargin: padding.margins.bottom;
+        }
 
         PlasmaComponents.CheckBox {
             id: networkingEnabled;
 
-            height: 15;
+            anchors { left: parent.left; right: parent.right }
             text: i18n("Networking enabled");
 
             onClicked: {
-                networkingEnabledChanged(checked);
+                handler.enableNetworking(checked);
             }
         }
 
         PlasmaComponents.CheckBox {
             id: wirelessEnabled;
 
-            height: availableDevices.wirelessAvailable ? 15 : 0;
+            height: availableDevices.wirelessAvailable ? networkingEnabled.height : 0;
+            anchors { left: parent.left; right: parent.right }
             visible: availableDevices.wirelessAvailable;
             text: i18n("Wireless enabled");
 
             onClicked: {
-                wirelessEnabledChanged(checked);
+                handler.enableWireless(checked);
             }
         }
 
         PlasmaComponents.CheckBox {
             id: wimaxEnabled;
 
-            height: availableDevices.wimaxAvailable ? 15 : 0;
+            height: availableDevices.wimaxAvailable ? networkingEnabled.height : 0;
+            anchors { left: parent.left; right: parent.right }
             visible: availableDevices.wimaxAvailable;
             text: i18n("Wimax enabled");
 
             onClicked: {
-                wimaxEnabledChanged(checked);
+                handler.enableWimax(checked);
             }
         }
 
         PlasmaComponents.CheckBox {
             id: wwanEnabled;
 
-            height: availableDevices.wwanAvailable ? 15 : 0;
+            height: availableDevices.wwanAvailable ? networkingEnabled.height : 0;
+            anchors { left: parent.left; right: parent.right }
             visible: availableDevices.wwanAvailable;
             text: i18n("Mobile broadband enabled");
 
             onClicked: {
-                wwanEnabledChanged(checked);
+                handler.enableWwan(checked);
+            }
+        }
+
+        PlasmaComponents.Button {
+            id: openEditorButton;
+
+            anchors { horizontalCenter: parent.horizontalCenter }
+            text: i18n("Edit connections...");
+
+            onClicked: {
+                console.log("clicked");
+                handler.openEditor();
             }
         }
     }
 
-    PlasmaComponents.ToolButton {
-        id: openEditorButton;
-
-        height: 20;
-        anchors { left: parent.left; right: parent.right; top: checkboxes.bottom; topMargin: 10}
-        text: i18n("Edit connections...");
-        iconSource: "configure";
-
-        onClicked: openEditor();
-    }
-
     Component.onCompleted: {
         availableDevices.init();
+        enabledConnections.init();
     }
 }

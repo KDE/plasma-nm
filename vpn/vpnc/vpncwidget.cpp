@@ -76,11 +76,11 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const NetworkManager::Setting::SecretFlags userPassType =
             static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt());
     if (userPassType.testFlag(NetworkManager::Setting::NotSaved))
-        m_ui->cboUserPasswordType->setCurrentIndex(0); // always ask
+        m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
     else if (userPassType.testFlag(NetworkManager::Setting::NotRequired))
-        m_ui->cboUserPasswordType->setCurrentIndex(2); // not required
+        m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
     else
-        m_ui->cboUserPasswordType->setCurrentIndex(1); // saved
+        m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
 
     const QString groupName = data.value(NM_VPNC_KEY_ID);
     if (!groupName.isEmpty())
@@ -93,11 +93,11 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const NetworkManager::Setting::SecretFlags groupPassType =
             static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_VPNC_KEY_SECRET"-flags").toInt());
     if (groupPassType.testFlag(NetworkManager::Setting::NotSaved))
-        m_ui->cboGroupPasswordType->setCurrentIndex(0); // always ask
+        m_ui->cboGroupPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
     else if (groupPassType.testFlag(NetworkManager::Setting::NotRequired))
-        m_ui->cboGroupPasswordType->setCurrentIndex(2); // not required
+        m_ui->cboGroupPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
     else
-        m_ui->cboGroupPasswordType->setCurrentIndex(1); // saved
+        m_ui->cboGroupPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
 
     if (data.value(NM_VPNC_KEY_AUTHMODE) == QLatin1String("hybrid")) {
         m_ui->useHybridAuth->setChecked(true);
@@ -125,9 +125,9 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
         secrets.insert(NM_VPNC_KEY_XAUTH_PASSWORD, m_ui->userPassword->text());
 
     const int userPasswordTypeIndex =  m_ui->cboUserPasswordType->currentIndex();
-    if (userPasswordTypeIndex == 0) { // always ask
+    if (userPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {
         data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
-    } else if (userPasswordTypeIndex == 2) { // not required
+    } else if (userPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::NotRequired) {
         data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotRequired));
     } else { // none
         if (agentOwned) {
@@ -144,9 +144,9 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
         secrets.insert(NM_VPNC_KEY_SECRET, m_ui->groupPassword->text());
 
     const int groupPasswordTypeIndex =  m_ui->cboGroupPasswordType->currentIndex();
-    if (groupPasswordTypeIndex == 0) { // always ask
+    if (groupPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {
         data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::NotSaved));
-    } else if (groupPasswordTypeIndex == 2) { // not required
+    } else if (groupPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::NotRequired) {
         data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::NotRequired));
     } else { // none
         if (agentOwned) {
@@ -166,25 +166,14 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
     return setting.toMap();
 }
 
-
 void VpncWidget::userPasswordTypeChanged(int index)
 {
-    if (index == 0 || index == 2) {
-        m_ui->userPassword->setEnabled(false);
-    }
-    else {
-        m_ui->userPassword->setEnabled(true);
-    }
+    m_ui->userPassword->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
 }
 
 void VpncWidget::groupPasswordTypeChanged(int index)
 {
-    if (index == 0 || index == 2) {
-        m_ui->groupPassword->setEnabled(false);
-    }
-    else {
-        m_ui->groupPassword->setEnabled(true);
-    }
+    m_ui->groupPassword->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
 }
 
 void VpncWidget::showPasswords(bool show)

@@ -154,8 +154,17 @@ void ConnectionIcon::setIcons()
 
     NetworkManager::ActiveConnection::List actives = NetworkManager::activeConnections();
 
+    bool defaultRouteExists = false;
     foreach (const NetworkManager::ActiveConnection::Ptr & active, actives) {
-        if ((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) {
+        if (active->default4() || active->default6()) {
+            defaultRouteExists = true;
+            break;
+        }
+    }
+
+    foreach (const NetworkManager::ActiveConnection::Ptr & active, actives) {
+        if (((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) ||
+            (active->state() == NetworkManager::ActiveConnection::Activating && !defaultRouteExists)) {
             if (active->devices().isEmpty()) {
                 continue;
             }
@@ -403,36 +412,36 @@ void ConnectionIcon::setWirelessIconForSignalStrength(int strength)
 
     if (diff >= 10 ||
         diff <= -10) {
-        int iconStrenght = 100;
+        int iconStrength = 100;
 
         if (strength < 20) {
-            iconStrenght = 20;
+            iconStrength = 20;
             Q_EMIT setTooltipIcon("network-wireless-connected-25");
         } else if (strength < 25) {
-            iconStrenght = 25;
+            iconStrength = 25;
             Q_EMIT setTooltipIcon("network-wireless-connected-25");
         } else if (strength < 40) {
-            iconStrenght = 40;
+            iconStrength = 40;
             Q_EMIT setTooltipIcon("network-wireless-connected-50");
         } else if (strength < 50) {
-            iconStrenght = 50;
+            iconStrength = 50;
             Q_EMIT setTooltipIcon("network-wireless-connected-50");
         } else if (strength < 60) {
-            iconStrenght = 60;
+            iconStrength = 60;
             Q_EMIT setTooltipIcon("network-wireless-connected-75");
         } else if (strength < 75) {
-            iconStrenght = 75;
+            iconStrength = 75;
             Q_EMIT setTooltipIcon("network-wireless-connected-75");
         } else if (strength < 80) {
-            iconStrenght = 80;
+            iconStrength = 80;
             Q_EMIT setTooltipIcon("network-wireless-connected-100");
         } else {
             Q_EMIT setTooltipIcon("network-wireless-connected-100");
         }
 
-        m_signal = iconStrenght;
+        m_signal = iconStrength;
 
-        QString icon = QString("network-wireless-%1").arg(iconStrenght);
+        QString icon = QString("network-wireless-%1").arg(iconStrength);
 
         NMAppletDebug() << "Emit signal setConnectionIcon(" << icon << ")";
         Q_EMIT setConnectionIcon(icon);

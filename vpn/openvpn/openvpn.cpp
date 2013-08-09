@@ -25,7 +25,9 @@
 #include <KPluginFactory>
 #include <KMessageBox>
 
-//#include <nm-setting-ip4-config.h>
+#include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/VpnSetting>
+#include <NetworkManagerQt/Ipv4Setting>
 
 #include "openvpnwidget.h"
 #include "openvpnauth.h"
@@ -35,7 +37,6 @@
 K_PLUGIN_FACTORY(OpenVpnUiPluginFactory, registerPlugin<OpenVpnUiPlugin>();)
 K_EXPORT_PLUGIN(OpenVpnUiPluginFactory("plasmanm_openvpnui"))
 
-#if 0
 #define AUTH_TAG "auth"
 #define AUTH_USER_PASS_TAG "auth-user-pass"
 #define CA_TAG "ca"
@@ -124,7 +125,6 @@ bool isEncrypted(const QString &fileName)
     inFile.close();
     return encrypted;
 }
-#endif
 
 OpenVpnUiPlugin::OpenVpnUiPlugin(QObject * parent, const QVariantList &) : VpnUiPlugin(parent)
 {
@@ -145,10 +145,9 @@ SettingWidget * OpenVpnUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &
     return new OpenVpnAuthWidget(setting, parent);
 }
 
-#if 0
-QString OpenVpnUiPlugin::suggestedFileName(Knm::Connection *connection) const
+QString OpenVpnUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
-    return connection->name() + "_openvpn.conf";
+    return connection->id() + "_openvpn.conf";
 }
 
 QString OpenVpnUiPlugin::supportedFileExtensions() const
@@ -156,19 +155,20 @@ QString OpenVpnUiPlugin::supportedFileExtensions() const
     return "*.ovpn *.conf";
 }
 
-QVariantList OpenVpnUiPlugin::importConnectionSettings(const QString &fileName)
+NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileName)
 {
+    NMVariantMapMap result;
+
     QFile impFile(fileName);
     if (!impFile.open(QFile::ReadOnly|QFile::Text)) {
         mError = VpnUiPlugin::Error;
         mErrorMessage = i18n("Could not open file");
-        return QVariantList();
+        return result;
     }
 
-    QVariantList conSetting;
     NMStringMap dataMap;
     NMStringMap secretData;
-    NMStringMap ipv4Data;
+    QVariantMap ipv4Data;
 
     QString proxy_type;
     QString proxy_user;
@@ -324,7 +324,7 @@ QVariantList OpenVpnUiPlugin::importConnectionSettings(const QString &fileName)
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_USERNAME), proxy_user);
                 if (!proxy_passwd.isEmpty()) {
                     secretData.insert(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD), proxy_passwd);
-                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags"), QString::number(Knm::Setting::NotSaved));
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags"), QString::number(NetworkManager::Setting::NotSaved));
                 }
                 proxy_set = true;
             }
@@ -445,19 +445,19 @@ QVariantList OpenVpnUiPlugin::importConnectionSettings(const QString &fileName)
         }
         // Import X-NM-Routes if present
         if (key_value[0] == "X-NM-Routes") {
-            ipv4Data.insert(NM_SETTING_IP4_CONFIG_ROUTES, key_value[1]);
+            ipv4Data.insert("X-NM-Routes", key_value[1]);
             continue;
         }
     }
     if (!have_client && !have_sk) {
         mError = VpnUiPlugin::Error;
         mErrorMessage = i18n("File %1 is not a valid OpenVPN's client configuration file", fileName);
-        return conSetting;
+        return result;
     }
     else if (!have_remote) {
         mError = VpnUiPlugin::Error;
         mErrorMessage = i18n("File %1 is not a valid OpenVPN configuration (no remote).", fileName);
-        return conSetting;
+        return result;
     }
     else {
         QString conType;
@@ -486,23 +486,35 @@ QVariantList OpenVpnUiPlugin::importConnectionSettings(const QString &fileName)
         dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CONNECTION_TYPE), conType);
         // Default secret flags to be agent-owned
         if (have_pass)
-            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), QString::number(Knm::Setting::NotSaved));
+            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), QString::number(NetworkManager::Setting::NotSaved));
         if (have_certs) {
             if (dataMap.contains(NM_OPENVPN_KEY_KEY) && isEncrypted(dataMap[NM_OPENVPN_KEY_KEY]))
-                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERTPASS"-flags"), QString::number(Knm::Setting::NotSaved));
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERTPASS"-flags"), QString::number(NetworkManager::Setting::NotSaved));
         }
     }
 
-    conSetting << Knm::VpnSetting::variantMapFromStringList(Knm::VpnSetting::stringMapToStringList(dataMap));
-    conSetting << Knm::VpnSetting::variantMapFromStringList(Knm::VpnSetting::stringMapToStringList(secretData));
-    conSetting << QFileInfo(fileName).completeBaseName(); // Connection name
+    // Set the '...-type' and '...-flags' value also
+    NetworkManager::VpnSetting setting;
+    setting.setServiceType("org.freedesktop.NetworkManager.openvpn");
+    setting.setData(dataMap);
+    setting.setSecrets(secretData);
+
+    QVariantMap conn;
+    conn.insert("id", QFileInfo(fileName).completeBaseName());
+    conn.insert("type", "vpn");
+    result.insert("connection", conn);
+
+    result.insert("vpn", setting.toMap());
+
     if (!ipv4Data.isEmpty()) {
-        conSetting << Knm::VpnSetting::variantMapFromStringList(Knm::VpnSetting::stringMapToStringList(ipv4Data));
+        result.insert("ipv4", ipv4Data);
     }
-    return conSetting;
+
+    impFile.close();
+    return result;
 }
 
-bool OpenVpnUiPlugin::exportConnectionSettings(Knm::Connection * connection, const QString &fileName)
+bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
 {
     QFile expFile(fileName);
     if (! expFile.open(QIODevice::WriteOnly | QIODevice::Text) ) {
@@ -514,9 +526,9 @@ bool OpenVpnUiPlugin::exportConnectionSettings(Knm::Connection * connection, con
     NMStringMap dataMap;
     NMStringMap secretData;
 
-    Knm::VpnSetting * vpnSetting = static_cast<Knm::VpnSetting*>(connection->setting(Knm::Setting::Vpn));
+    NetworkManager::VpnSetting::Ptr vpnSetting = connection->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
     dataMap = vpnSetting->data();
-    secretData = vpnSetting->vpnSecrets();
+    secretData = vpnSetting->secrets();
 
     QString line;
     QString cacert, user_cert, private_key;
@@ -644,7 +656,7 @@ bool OpenVpnUiPlugin::exportConnectionSettings(Knm::Connection * connection, con
         }
     }
     // Export X-NM-Routes
-    Knm::Ipv4Setting *ipv4Setting = static_cast<Knm::Ipv4Setting*>(connection->setting(Knm::Setting::Ipv4));
+    NetworkManager::Ipv4Setting::Ptr ipv4Setting = connection->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
     if (!ipv4Setting->routes().isEmpty()) {
         QString routes;
         foreach(const NetworkManager::IpRoute &route, ipv4Setting->routes()) {
@@ -666,4 +678,3 @@ bool OpenVpnUiPlugin::exportConnectionSettings(Knm::Connection * connection, con
     expFile.close();
     return true;
 }
-#endif

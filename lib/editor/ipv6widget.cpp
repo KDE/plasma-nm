@@ -90,13 +90,7 @@ IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
             this, SLOT(tableViewItemChanged(QStandardItem*)));
 
     if (setting) {
-        m_ipv6Setting = setting.staticCast<NetworkManager::Ipv6Setting>();
-
-        m_tmpIpv6Setting.setRoutes(m_ipv6Setting->routes());
-        m_tmpIpv6Setting.setNeverDefault(m_ipv6Setting->neverDefault());
-        m_tmpIpv6Setting.setIgnoreAutoRoutes(m_ipv6Setting->ignoreAutoRoutes());
-
-        loadConfig(m_ipv6Setting);
+        loadConfig(setting);
     }
 
     connect(m_ui->method, SIGNAL(currentIndexChanged(int)),
@@ -123,21 +117,45 @@ IPv6Widget::~IPv6Widget()
 
 void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    Q_UNUSED(setting)
+    NetworkManager::Ipv6Setting::Ptr ipv6Setting = setting.staticCast<NetworkManager::Ipv6Setting>();
+
+    m_tmpIpv6Setting.setRoutes(ipv6Setting->routes());
+    m_tmpIpv6Setting.setNeverDefault(ipv6Setting->neverDefault());
+    m_tmpIpv6Setting.setIgnoreAutoRoutes(ipv6Setting->ignoreAutoRoutes());
 
     // method
-    m_ui->method->setCurrentIndex(static_cast<int>(m_ipv6Setting->method()));
+    switch (ipv6Setting->method()) {
+        case NetworkManager::Ipv6Setting::Automatic:
+            if (ipv6Setting->ignoreAutoDns()) {
+                m_ui->method->setCurrentIndex(AutomaticOnlyIP);
+            } else {
+                m_ui->method->setCurrentIndex(Automatic);
+            }
+            break;
+        case NetworkManager::Ipv6Setting::Dhcp:
+            m_ui->method->setCurrentIndex(AutomaticOnlyDHCP);
+            break;
+        case NetworkManager::Ipv6Setting::Manual:
+            m_ui->method->setCurrentIndex(Manual);
+            break;
+        case NetworkManager::Ipv6Setting::LinkLocal:
+            m_ui->method->setCurrentIndex(LinkLocal);
+            break;
+        case NetworkManager::Ipv6Setting::Ignored:
+            m_ui->method->setCurrentIndex(Disabled);
+            break;
+    }
 
     // dns
     QStringList tmp;
-    foreach (const QHostAddress & addr, m_ipv6Setting->dns()) {
+    foreach (const QHostAddress & addr, ipv6Setting->dns()) {
         tmp.append(addr.toString());
     }
     m_ui->dns->setText(tmp.join(","));
-    m_ui->dnsSearch->setText(m_ipv6Setting->dnsSearch().join(","));
+    m_ui->dnsSearch->setText(ipv6Setting->dnsSearch().join(","));
 
     // addresses
-    foreach (const NetworkManager::IpAddress &address, m_ipv6Setting->addresses()) {
+    foreach (const NetworkManager::IpAddress &address, ipv6Setting->addresses()) {
         QList<QStandardItem *> item;
 
         item << new QStandardItem(address.ip().toString())
@@ -148,11 +166,11 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     }
 
     // may-fail
-    m_ui->ipv6RequiredCB->setChecked(!m_ipv6Setting->mayFail());
+    m_ui->ipv6RequiredCB->setChecked(!ipv6Setting->mayFail());
 
     // privacy
-    if (m_ipv6Setting->privacy() != NetworkManager::Ipv6Setting::Unknown) {
-        m_ui->privacyCombo->setCurrentIndex(static_cast<int>(m_ipv6Setting->privacy()));
+    if (ipv6Setting->privacy() != NetworkManager::Ipv6Setting::Unknown) {
+        m_ui->privacyCombo->setCurrentIndex(static_cast<int>(ipv6Setting->privacy()));
     }
 }
 
@@ -167,7 +185,27 @@ QVariantMap IPv6Widget::setting(bool agentOwned) const
     ipv6Setting.setIgnoreAutoRoutes(m_tmpIpv6Setting.ignoreAutoRoutes());
 
     // method
-    ipv6Setting.setMethod(static_cast<NetworkManager::Ipv6Setting::ConfigMethod>(m_ui->method->currentIndex()));
+    switch ((MethodIndex)m_ui->method->currentIndex()) {
+        case Automatic:
+            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Automatic);
+            break;
+        case AutomaticOnlyIP:
+            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Automatic);
+            ipv6Setting.setIgnoreAutoDns(true);
+            break;
+        case IPv6Widget::AutomaticOnlyDHCP:
+            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Dhcp);
+            break;
+        case Manual:
+            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Manual);
+            break;
+        case LinkLocal:
+            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::LinkLocal);
+            break;
+        case Disabled:
+            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Ignored);
+            break;
+    }
 
     // dns
     if (m_ui->dns->isEnabled() && !m_ui->dns->text().isEmpty()) {
@@ -213,7 +251,8 @@ QVariantMap IPv6Widget::setting(bool agentOwned) const
 
 void IPv6Widget::slotModeComboChanged(int index)
 {
-    if (index == 0) {  // Automatic
+    if (index == Automatic) {  // Automatic
+        m_ui->dnsLabel->setText(i18n("Other DNS Servers:"));
         m_ui->dns->setEnabled(true);
         m_ui->dnsMorePushButton->setEnabled(true);
         m_ui->dnsSearch->setEnabled(true);
@@ -225,7 +264,21 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setVisible(false);
         m_ui->btnAdd->setVisible(false);
         m_ui->btnRemove->setVisible(false);
-    } else if (index == 3) {  // Manual
+    } else if (index == AutomaticOnlyIP) {
+        m_ui->dnsLabel->setText(i18n("DNS Servers:"));
+        m_ui->dns->setEnabled(true);
+        m_ui->dnsMorePushButton->setEnabled(true);
+        m_ui->dnsSearch->setEnabled(true);
+        m_ui->dnsSearchMorePushButton->setEnabled(true);
+        m_ui->ipv6RequiredCB->setEnabled(true);
+        m_ui->privacyCombo->setEnabled(true);
+        m_ui->btnRoutes->setEnabled(true);
+
+        m_ui->tableViewAddresses->setVisible(false);
+        m_ui->btnAdd->setVisible(false);
+        m_ui->btnRemove->setVisible(false);
+    } else if (index == Manual) {  // Manual
+        m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(true);
         m_ui->dnsMorePushButton->setEnabled(true);
         m_ui->dnsSearch->setEnabled(true);
@@ -237,7 +290,8 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setVisible(true);
         m_ui->btnAdd->setVisible(true);
         m_ui->btnRemove->setVisible(true);
-    } else if (index == 1 || index == 2) {  // Link-local or DHCP
+    } else if (index == AutomaticOnlyDHCP || index == LinkLocal) {  // Link-local or DHCP
+        m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
         m_ui->dnsMorePushButton->setEnabled(false);
         m_ui->dnsSearch->setEnabled(false);
@@ -249,7 +303,8 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setVisible(false);
         m_ui->btnAdd->setVisible(false);
         m_ui->btnRemove->setVisible(false);
-    } else if (index == 4) {  // Ignored
+    } else if (index == Disabled) {  // Ignored
+        m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
         m_ui->dnsMorePushButton->setEnabled(false);
         m_ui->dnsSearch->setEnabled(false);
@@ -381,7 +436,7 @@ void IPv6Widget::slotDnsDomains()
 
 bool IPv6Widget::isValid() const
 {
-    if (m_ui->method->currentIndex() == 3) {
+    if (m_ui->method->currentIndex() == Manual) {
         if (!d->model.rowCount()) {
             return false;
         }
@@ -397,7 +452,7 @@ bool IPv6Widget::isValid() const
         }
     }
 
-    if (!m_ui->dns->text().isEmpty() && (m_ui->method->currentIndex() == 0 || m_ui->method->currentIndex() == 3)) {
+    if (!m_ui->dns->text().isEmpty() && (m_ui->method->currentIndex() == Automatic || m_ui->method->currentIndex() == Manual || m_ui->method->currentIndex() == AutomaticOnlyIP)) {
         const QStringList tmp = m_ui->dns->text().split(',');
         foreach (const QString & str, tmp) {
             QHostAddress addr(str);

@@ -102,13 +102,7 @@ IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
             this, SLOT(tableViewItemChanged(QStandardItem*)));
 
     if (setting) {
-        m_ipv4Setting = setting.staticCast<NetworkManager::Ipv4Setting>();
-
-        m_tmpIpv4Setting.setRoutes(m_ipv4Setting->routes());
-        m_tmpIpv4Setting.setNeverDefault(m_ipv4Setting->neverDefault());
-        m_tmpIpv4Setting.setIgnoreAutoRoutes(m_ipv4Setting->ignoreAutoRoutes());
-
-        loadConfig(m_ipv4Setting);
+        loadConfig(setting);
     }
 
     connect(m_ui->method, SIGNAL(currentIndexChanged(int)),
@@ -135,12 +129,16 @@ IPv4Widget::~IPv4Widget()
 
 void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    Q_UNUSED(setting)
+    NetworkManager::Ipv4Setting::Ptr ipv4Setting = setting.staticCast<NetworkManager::Ipv4Setting>();
+
+    m_tmpIpv4Setting.setRoutes(ipv4Setting->routes());
+    m_tmpIpv4Setting.setNeverDefault(ipv4Setting->neverDefault());
+    m_tmpIpv4Setting.setIgnoreAutoRoutes(ipv4Setting->ignoreAutoRoutes());
 
     // method
-    switch (m_ipv4Setting->method()) {
+    switch (ipv4Setting->method()) {
         case NetworkManager::Ipv4Setting::Automatic:
-            if (m_ipv4Setting->ignoreAutoDns()) {
+            if (ipv4Setting->ignoreAutoDns()) {
                 m_ui->method->setCurrentIndex(AutomaticOnlyIP);
             } else {
                 m_ui->method->setCurrentIndex(Automatic);
@@ -162,16 +160,16 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // dns
     QStringList tmp;
-    foreach (const QHostAddress & addr, m_ipv4Setting->dns()) {
+    foreach (const QHostAddress & addr, ipv4Setting->dns()) {
         tmp.append(addr.toString());
     }
     m_ui->dns->setText(tmp.join(","));
-    m_ui->dnsSearch->setText(m_ipv4Setting->dnsSearch().join(","));
+    m_ui->dnsSearch->setText(ipv4Setting->dnsSearch().join(","));
 
-    m_ui->dhcpClientId->setText(m_ipv4Setting->dhcpClientId());
+    m_ui->dhcpClientId->setText(ipv4Setting->dhcpClientId());
 
     // addresses
-    foreach (const NetworkManager::IpAddress &addr, m_ipv4Setting->addresses()) {
+    foreach (const NetworkManager::IpAddress &addr, ipv4Setting->addresses()) {
         QList<QStandardItem *> item;
         item << new QStandardItem(addr.ip().toString())
              << new QStandardItem(addr.netmask().toString())
@@ -181,7 +179,7 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     }
 
     // may-fail
-    m_ui->ipv4RequiredCB->setChecked(!m_ipv4Setting->mayFail());
+    m_ui->ipv4RequiredCB->setChecked(!ipv4Setting->mayFail());
 }
 
 QVariantMap IPv4Widget::setting(bool agentOwned) const

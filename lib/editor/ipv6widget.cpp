@@ -90,13 +90,7 @@ IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
             this, SLOT(tableViewItemChanged(QStandardItem*)));
 
     if (setting) {
-        m_ipv6Setting = setting.staticCast<NetworkManager::Ipv6Setting>();
-
-        m_tmpIpv6Setting.setRoutes(m_ipv6Setting->routes());
-        m_tmpIpv6Setting.setNeverDefault(m_ipv6Setting->neverDefault());
-        m_tmpIpv6Setting.setIgnoreAutoRoutes(m_ipv6Setting->ignoreAutoRoutes());
-
-        loadConfig(m_ipv6Setting);
+        loadConfig(setting);
     }
 
     connect(m_ui->method, SIGNAL(currentIndexChanged(int)),
@@ -123,12 +117,16 @@ IPv6Widget::~IPv6Widget()
 
 void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    Q_UNUSED(setting)
+    NetworkManager::Ipv6Setting::Ptr ipv6Setting = setting.staticCast<NetworkManager::Ipv6Setting>();
+
+    m_tmpIpv6Setting.setRoutes(ipv6Setting->routes());
+    m_tmpIpv6Setting.setNeverDefault(ipv6Setting->neverDefault());
+    m_tmpIpv6Setting.setIgnoreAutoRoutes(ipv6Setting->ignoreAutoRoutes());
 
     // method
-    switch (m_ipv6Setting->method()) {
+    switch (ipv6Setting->method()) {
         case NetworkManager::Ipv6Setting::Automatic:
-            if (m_ipv6Setting->ignoreAutoDns()) {
+            if (ipv6Setting->ignoreAutoDns()) {
                 m_ui->method->setCurrentIndex(AutomaticOnlyIP);
             } else {
                 m_ui->method->setCurrentIndex(Automatic);
@@ -150,14 +148,14 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // dns
     QStringList tmp;
-    foreach (const QHostAddress & addr, m_ipv6Setting->dns()) {
+    foreach (const QHostAddress & addr, ipv6Setting->dns()) {
         tmp.append(addr.toString());
     }
     m_ui->dns->setText(tmp.join(","));
-    m_ui->dnsSearch->setText(m_ipv6Setting->dnsSearch().join(","));
+    m_ui->dnsSearch->setText(ipv6Setting->dnsSearch().join(","));
 
     // addresses
-    foreach (const NetworkManager::IpAddress &address, m_ipv6Setting->addresses()) {
+    foreach (const NetworkManager::IpAddress &address, ipv6Setting->addresses()) {
         QList<QStandardItem *> item;
 
         item << new QStandardItem(address.ip().toString())
@@ -168,11 +166,11 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     }
 
     // may-fail
-    m_ui->ipv6RequiredCB->setChecked(!m_ipv6Setting->mayFail());
+    m_ui->ipv6RequiredCB->setChecked(!ipv6Setting->mayFail());
 
     // privacy
-    if (m_ipv6Setting->privacy() != NetworkManager::Ipv6Setting::Unknown) {
-        m_ui->privacyCombo->setCurrentIndex(static_cast<int>(m_ipv6Setting->privacy()));
+    if (ipv6Setting->privacy() != NetworkManager::Ipv6Setting::Unknown) {
+        m_ui->privacyCombo->setCurrentIndex(static_cast<int>(ipv6Setting->privacy()));
     }
 }
 

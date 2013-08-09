@@ -64,7 +64,6 @@ private slots:
 
 private:
     Ui::IPv6Widget * m_ui;
-    NetworkManager::Ipv6Setting::Ptr m_ipv6Setting;
     NetworkManager::Ipv6Setting m_tmpIpv6Setting;
 
     class Private;

@@ -37,6 +37,7 @@
 
 #include <QInputDialog>
 
+#include <KUser>
 #include <KProcess>
 #include <KWindowSystem>
 
@@ -62,7 +63,7 @@ void Handler::activateConnection(const QString& connection, const QString& devic
     NetworkManager::activateConnection(connection, device, specificObject);
 }
 
-void Handler::addAndActivateConnection(const QString& device, const QString& specificObject)
+void Handler::addAndActivateConnection(const QString& device, const QString& specificObject, const QString& password, bool autoConnect)
 {
     NetworkManager::AccessPoint::Ptr ap;
     NetworkManager::WirelessDevice::Ptr wifiDev;
@@ -83,19 +84,32 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     NetworkManager::ConnectionSettings::Ptr settings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(NetworkManager::ConnectionSettings::Wireless));
     settings->setId(ap->ssid());
     settings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+    settings->setAutoconnect(autoConnect);
+    settings->addToPermissions(KUser().loginName(), QString());
 
-    NetworkManager::WirelessSetting::Ptr wifiSetting;
+    NetworkManager::WirelessSetting::Ptr wifiSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+    wifiSetting->setInitialized(true);
     wifiSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
     wifiSetting->setSsid(ap->ssid().toUtf8());
 
+    NetworkManager::WirelessSecuritySetting::Ptr wifiSecurity = settings->setting(NetworkManager::Setting::WirelessSecurity).dynamicCast<NetworkManager::WirelessSecuritySetting>();
+
     NetworkManager::Utils::WirelessSecurityType securityType = NetworkManager::Utils::findBestWirelessSecurity(wifiDev->wirelessCapabilities(), true, (ap->mode() == NetworkManager::AccessPoint::Adhoc), ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
-    if (securityType == NetworkManager::Utils::DynamicWep ||
+
+    if (securityType != NetworkManager::Utils::None) {
+        wifiSecurity->setInitialized(true);
+        wifiSetting->setSecurity("802-11-wireless-security");
+    }
+
+    if (securityType == NetworkManager::Utils::Leap ||
+        securityType == NetworkManager::Utils::DynamicWep ||
         securityType == NetworkManager::Utils::Wpa2Eap ||
         securityType == NetworkManager::Utils::WpaEap) {
-        wifiSetting->setSecurity("802-11-wireless-security");
-        NetworkManager::WirelessSecuritySetting::Ptr wifiSecurity = settings->setting(NetworkManager::Setting::WirelessSecurity).dynamicCast<NetworkManager::WirelessSecuritySetting>();
-        if (securityType == NetworkManager::Utils::DynamicWep) {
+        if (securityType == NetworkManager::Utils::DynamicWep || securityType == NetworkManager::Utils::Leap) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Ieee8021x);
+            if (securityType == NetworkManager::Utils::Leap) {
+                wifiSecurity->setAuthAlg(NetworkManager::WirelessSecuritySetting::Leap);
+            }
         } else {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaEap);
         }
@@ -109,6 +123,15 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         KWindowSystem::forceActiveWindow(editor->winId());
         connect(editor, SIGNAL(accepted()), SLOT(editDialogAccepted()));
     } else {
+        if (securityType == NetworkManager::Utils::StaticWep) {
+            wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
+            wifiSecurity->setWepKey0(password);
+            wifiSecurity->setWepKeyFlags(NetworkManager::Setting::AgentOwned);
+        } else {
+            wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
+            wifiSecurity->setPsk(password);
+            wifiSecurity->setPskFlags(NetworkManager::Setting::AgentOwned);
+        }
         NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
     }
 

@@ -222,6 +222,11 @@ NetworkManager::ConnectionSettings::ConnectionType ModelItem::type() const
     return m_type;
 }
 
+NetworkManager::Utils::WirelessSecurityType ModelItem::securityType() const
+{
+    return m_securityType;
+}
+
 void ModelItem::updateDetails()
 {
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
@@ -459,9 +464,7 @@ void ModelItem::updateDetails()
                 }
             } else if (key == "wireless:security") {
                 if (ap) {
-                    NetworkManager::Utils::WirelessSecurityType security = NetworkManager::Utils::findBestWirelessSecurity(wirelessDevice->wirelessCapabilities(), true, (wirelessDevice->mode() == NetworkManager::WirelessDevice::Adhoc),
-                                                                                                                           ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
-                    m_details += QString(format).arg(i18n("Security:"), UiUtils::labelFromWirelessSecurity(security));
+                    m_details += QString(format).arg(i18n("Security:"), UiUtils::labelFromWirelessSecurity(m_securityType));
                 }
             } else if (key == "wireless:band") {
                 if (ap) {
@@ -681,12 +684,15 @@ void ModelItem::setWirelessNetwork(const QString& ssid)
 
         if (ap && ap->capabilities() & NetworkManager::AccessPoint::Privacy) {
             m_secure = true;
+            m_securityType = NetworkManager::Utils::findBestWirelessSecurity(wifiDevice->wirelessCapabilities(), true, (wifiDevice->mode() == NetworkManager::WirelessDevice::Adhoc),
+                                                                            ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
         }
     } else {
         m_ssid.clear();
         m_signal = 0;
         m_type = NetworkManager::ConnectionSettings::Unknown;
         m_secure = false;
+        m_securityType = NetworkManager::Utils::Unknown;
     }
 
     updateDetails();

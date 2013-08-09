@@ -33,7 +33,7 @@ public:
 
 public Q_SLOTS:
     void activateConnection(const QString & connection, const QString & device, const QString & specificParameter);
-    void addAndActivateConnection(const QString & device, const QString & specificParameter);
+    void addAndActivateConnection(const QString & device, const QString & specificParameter, const QString & password = QString(), bool autoConnect = false);
     void deactivateConnection(const QString & connection);
     void disconnectAll();
     void enableNetworking(bool enable);
@@ -46,7 +46,7 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void editDialogAccepted();
-    
+
 private:
     QString m_tmpConnectionUuid;
     QString m_tmpDevicePath;

@@ -42,8 +42,7 @@ Item {
 
     function hideOptions() {
         if (autoHideOptions) {
-            connectionView.itemExpandable = true;
-            toolbar.toolbarExpandable = false;
+            toolbar.expanded = false;
         }
     }
 
@@ -73,20 +72,34 @@ Item {
         sourceModel: connectionModel;
     }
 
+    PlasmaCore.FrameSvgItem {
+        id: padding
+        imagePath: "widgets/viewitem"
+        prefix: "hover"
+        opacity: 0
+        anchors.fill: parent
+    }
+
     ListView {
         id: connectionView;
 
-        property bool itemExpandable: true;
+        property bool expandedItem: false;
+        property string previouslyExpandedItem: "";
 
         property bool activeExpanded: true;
         property bool previousExpanded: true;
         property bool unknownExpanded: true;
 
-        anchors { left: parent.left; right: parent.right; top: parent.top; bottom: toolbarSeparator.top; topMargin: 5; bottomMargin: 10 }
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: parent.top;
+            bottom: toolbarSeparator.top;
+            topMargin: padding.margins.top;
+            bottomMargin: padding.margins.bottom
+        }
         clip: true
         model: connectionSortModel;
-        highlight: PlasmaComponents.Highlight{}
-        highlightMoveSpeed: 1000;
         currentIndex: -1;
         interactive: true;
         section.property: "itemSection";
@@ -111,92 +124,46 @@ Item {
                 }
             }
         }
+
         delegate: ConnectionItem {
+            expanded: (connectionView.expandedItem && ((connectionView.previouslyExpandedItem == itemConnectionPath && itemConnectionPath != "") || (itemConnectionPath == "" && connectionView.previouslyExpandedItem == itemName)))
             onItemExpanded: {
-                connectionView.currentIndex = -1;
-                connectionView.itemExpandable = true;
-                if (autoHideOptions) {
-                    plasmoid.writeConfig("optionsExpanded", "hidden");
-                    toolbar.toolbarExpandable = false;
+                if (itemExpanded) {
+                    connectionView.expandedItem = true;
+                    connectionView.previouslyExpandedItem = connectionPath;
+                } else {
+                    connectionView.expandedItem = false;
+                    connectionView.previouslyExpandedItem = "";
                 }
             }
-            onRemoveConnectionItem: dialog.openDialog(connectionName, connectionPath);
         }
     }
 
-    Rectangle {
-        id: toolbarSeparator;
+    PlasmaCore.SvgItem {
+        id: toolbarSeparator
 
-        height: 1;
-        anchors { left: parent.left; right: parent.right; bottom: toolbar.top; bottomMargin: 2; leftMargin: 5; rightMargin: 5 }
-        radius: 2;
-        color: theme.highlightColor;
+        height: lineSvg.elementSize("horizontal-line").height;
+        width: parent.width;
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            bottom: toolbar.top;
+            bottomMargin: padding.margins.bottom/2;
+            leftMargin: padding.margins.left;
+            rightMargin: padding.margins.right;
+        }
+        elementId: "horizontal-line";
+
+        svg: PlasmaCore.Svg {
+            id: lineSvg;
+            imagePath: "widgets/line";
+        }
     }
 
     Toolbar {
         id: toolbar;
 
-        property bool toolbarExpandable: true;
-
         anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
-
-        onToolbarExpanded: {
-            toolbarExpandable = true;
-            connectionView.itemExpandable = false;
-        }
-    }
-
-    PlasmaComponents.Dialog {
-        id: dialog;
-
-        property string path;
-
-        function openDialog(connectionName, connectionPath) {
-            dialogText.name = connectionName;
-            path = connectionPath;
-
-            open();
-        }
-
-        title: [
-            PlasmaComponents.Label {
-                id: dialogText;
-
-                property string name;
-
-                anchors { left: parent.left; right: parent.right; leftMargin: 10; rightMargin: 10 }
-                textFormat: Text.RichText;
-                wrapMode: Text.WordWrap;
-                font.weight: Font.DemiBold;
-                horizontalAlignment: Text.AlignHCenter;
-                text: i18n("Do you really want to remove connection %1?", name);
-            }
-        ]
-
-        buttons: [
-            Row {
-                PlasmaComponents.Button {
-                    id: confirmRemoveButton;
-
-                    height: 20; width: 150;
-                    text: i18n("Remove")
-
-                    onClicked: dialog.accept();
-                }
-                PlasmaComponents.Button {
-                    id: cancelRemoveButton;
-
-                    height: 20; width: 150;
-                    text: i18n("Cancel")
-
-                    onClicked: dialog.reject();
-                }
-            }
-        ]
-
-        onAccepted: {
-            handler.removeConnection(path);
-        }
     }
 
     Component.onCompleted: {

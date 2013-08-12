@@ -150,14 +150,14 @@ Item {
                 onClicked: {
                     networksSettingsView.currentIndex = index;
                     networkSettings.setNetworkSetting(itemType, itemPath);
-                    networkSetting.resetIndex();
+                    connectionList.resetIndex();
                 }
             }
         }
     }
 
-    NetworkSetting {
-        id: networkSetting;
+    ConnectionList {
+        id: connectionList;
 
         anchors { left: parent.left; right: parent.right; top: networkSettingsBackground.bottom; bottom: parent.bottom; topMargin: 10 }
     }

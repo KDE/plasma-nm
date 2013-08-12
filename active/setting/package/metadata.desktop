@@ -14,4 +14,4 @@ X-KDE-PluginInfo-Website=http://plasma-active.org
 X-KDE-PluginInfo-Category=Online Services
 X-KDE-PluginInfo-License=GPL
 X-Plasma-Package=org.kde.active.settings.network
-X-Plasma-MainScript=ui/Network.qml
+X-Plasma-MainScript=ui/NetworkSettings.qml

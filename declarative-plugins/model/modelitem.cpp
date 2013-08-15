@@ -229,34 +229,34 @@ NetworkManager::Utils::WirelessSecurityType ModelItem::securityType() const
 
 void ModelItem::updateDetails()
 {
-    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     m_details = "<qt><table>";
 
     QStringList detailKeys = GlobalConfig().detailKeys();
 
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_connectionPath);
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
 
-    m_details += UiUtils::deviceDetails(device, m_type, m_connected, m_connecting, detailKeys, format);
+    m_details += UiUtils::connectionDetails(device, connection, detailKeys);
 
     if (m_type == NetworkManager::ConnectionSettings::Bluetooth) {
         NetworkManager::BluetoothDevice::Ptr btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
-        m_details += UiUtils::bluetoothDetails(btDevice, detailKeys, format);
+        m_details += UiUtils::bluetoothDetails(btDevice, detailKeys);
     } else if (m_type == NetworkManager::ConnectionSettings::Gsm) {
         NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
-        m_details += UiUtils::modemDetails(modemDevice, detailKeys, format);
+        m_details += UiUtils::modemDetails(modemDevice, detailKeys);
     } else if (m_type == NetworkManager::ConnectionSettings::Wimax) {
         NetworkManager::WimaxNsp::Ptr wimaxNsp;
         NetworkManager::WimaxDevice::Ptr wimaxDevice = device.objectCast<NetworkManager::WimaxDevice>();
         wimaxNsp = wimaxDevice->findNsp(m_nspPath);
         if (wimaxDevice && wimaxNsp) {
-            m_details += UiUtils::wimaxDetails(wimaxDevice, wimaxNsp, m_connected, detailKeys, format);
+            m_details += UiUtils::wimaxDetails(wimaxDevice, wimaxNsp, connection, detailKeys);
         }
     } else if (m_type == NetworkManager::ConnectionSettings::Wired) {
         NetworkManager::WiredDevice::Ptr wiredDevice;
         if (device) {
             wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
         }
-        m_details += UiUtils::wiredDetails(wiredDevice, m_connected, detailKeys, format);
+        m_details += UiUtils::wiredDetails(wiredDevice, connection, detailKeys);
     } else if (m_type == NetworkManager::ConnectionSettings::Wireless) {
         NetworkManager::WirelessDevice::Ptr wirelessDevice;
         if (device) {
@@ -266,11 +266,7 @@ void ModelItem::updateDetails()
         if (wirelessDevice) {
             network = wirelessDevice->findNetwork(m_ssid);
         }
-        NetworkManager::AccessPoint::Ptr ap;
-        if (network) {
-            ap = network->referenceAccessPoint();
-        }
-        m_details += UiUtils::wirelessDetails(wirelessDevice, network, ap, m_connected, detailKeys, format);
+        m_details += UiUtils::wirelessDetails(wirelessDevice, network, connection, detailKeys);
     } else if (m_type == NetworkManager::ConnectionSettings::Vpn) {
         NetworkManager::ActiveConnection::Ptr active = NetworkManager::findActiveConnection(m_activePath);
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_connectionPath);
@@ -288,7 +284,7 @@ void ModelItem::updateDetails()
         if (active) {
             vpnConnection = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(active->path()), &QObject::deleteLater);
         }
-        m_details += UiUtils::vpnDetails(vpnConnection, vpnSetting, detailKeys, format);
+        m_details += UiUtils::vpnDetails(vpnConnection, vpnSetting, detailKeys);
     }
 
     m_details += "</table></qt>";
@@ -377,6 +373,10 @@ void ModelItem::setConnectionSettings(const NetworkManager::ConnectionSettings::
     m_uuid = settings->uuid();
     m_name = settings->id();
     m_type = settings->connectionType();
+
+    if (m_type == NetworkManager::ConnectionSettings::Wireless) {
+        m_securityType = NetworkManager::Utils::securityTypeFromConnectionSetting(settings);
+    }
 
     if (type() == NetworkManager::ConnectionSettings::Wireless) {
         bool changed = false;

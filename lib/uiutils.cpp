@@ -718,21 +718,33 @@ QString UiUtils::shortToolTipFromWirelessSecurity(NetworkManager::Utils::Wireles
     return tip;
 }
 
-QString UiUtils::deviceDetails(const Device::Ptr& device, ConnectionSettings::ConnectionType type, bool connected, bool connecting, const QStringList& keys, const QString& format)
+QString UiUtils::connectionDetails(const Device::Ptr& device, const Connection::Ptr& connection, const QStringList& keys)
 {
+    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
+
+    bool connected = device && connection && device->activeConnection() &&
+                     device->activeConnection()->connection() == connection && device->activeConnection()->state() == ActiveConnection::Activated;
 
     foreach (const QString& key, keys) {
         if (key == "interface:type") {
-            if (type != NetworkManager::ConnectionSettings::Unknown) {
-                details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::ConnectionSettings::typeAsString(type));
+            if (connection && connection->settings()->connectionType() != NetworkManager::ConnectionSettings::Unknown) {
+                details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::ConnectionSettings::typeAsString(connection->settings()->connectionType()));
             }
         } else if (key == "interface:status") {
-            QString status = i18n("Disconnected");
-            if (connecting) {
-                status = i18n("Connecting");
-            } else if (connected) {
-                status = i18n("Connected");
+            QString status = connectionStateToString(Device::Disconnected);
+            if (connection && device && device->activeConnection() && device->activeConnection()->connection() == connection) {
+                status = connectionStateToString(device->state());
+            } else if (connection) {
+                foreach (const ActiveConnection::Ptr & active, activeConnections()) {
+                    if (active && active->vpn() && active->connection() == connection) {
+                        if (active->state() == ActiveConnection::Activated) {
+                            status = connectionStateToString(Device::Activated);
+                        } else if (active->state() == ActiveConnection::Activating) {
+                            status = i18n("Activating");
+                        }
+                    }
+                }
             }
             details += QString(format).arg(i18n("Status:"), status);
         } else if (key == "interface:name") {
@@ -787,8 +799,9 @@ QString UiUtils::deviceDetails(const Device::Ptr& device, ConnectionSettings::Co
     return details;
 }
 
-QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QStringList& keys, const QString& format)
+QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QStringList& keys)
 {
+    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 
     foreach (const QString& key, keys) {
@@ -810,8 +823,9 @@ QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QS
     return details;
 }
 
-QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QStringList& keys, const QString& format)
+QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QStringList& keys)
 {
+    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 
     ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
@@ -863,8 +877,9 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
     return details;
 }
 
-QString UiUtils::vpnDetails(const VpnConnection::Ptr& vpnConnection, const VpnSetting::Ptr& vpnSetting, const QStringList& keys, const QString& format)
+QString UiUtils::vpnDetails(const VpnConnection::Ptr& vpnConnection, const VpnSetting::Ptr& vpnSetting, const QStringList& keys)
 {
+    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 
     foreach (const QString& key, keys) {
@@ -882,9 +897,13 @@ QString UiUtils::vpnDetails(const VpnConnection::Ptr& vpnConnection, const VpnSe
     return details;
 }
 
-QString UiUtils::wimaxDetails(const NetworkManager::WimaxDevice::Ptr& wimaxDevice, const WimaxNsp::Ptr& wimaxNsp, bool connected, const QStringList& keys, const QString& format)
+QString UiUtils::wimaxDetails(const NetworkManager::WimaxDevice::Ptr& wimaxDevice, const WimaxNsp::Ptr& wimaxNsp, const NetworkManager::Connection::Ptr& connection, const QStringList& keys)
 {
+    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
+
+    bool connected = wimaxDevice && connection && wimaxDevice->activeConnection() &&
+                     wimaxDevice->activeConnection()->connection() == connection && wimaxDevice->activeConnection()->state() == ActiveConnection::Activated;
 
     foreach (const QString& key, keys) {
         if (key == "wimax:bsid") {
@@ -909,9 +928,13 @@ QString UiUtils::wimaxDetails(const NetworkManager::WimaxDevice::Ptr& wimaxDevic
     return details;
 }
 
-QString UiUtils::wiredDetails(const WiredDevice::Ptr& wiredDevice, bool connected, const QStringList& keys, const QString& format)
+QString UiUtils::wiredDetails(const WiredDevice::Ptr& wiredDevice, const NetworkManager::Connection::Ptr& connection, const QStringList& keys)
 {
+    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
+
+    bool connected = wiredDevice && connection && wiredDevice->activeConnection() &&
+                     wiredDevice->activeConnection()->connection() == connection && wiredDevice->activeConnection()->state() == ActiveConnection::Activated;
 
     foreach (const QString& key, keys) {
         if (key == "interface:bitrate") {
@@ -928,9 +951,18 @@ QString UiUtils::wiredDetails(const WiredDevice::Ptr& wiredDevice, bool connecte
     return details;
 }
 
-QString UiUtils::wirelessDetails(const WirelessDevice::Ptr& wirelessDevice, const WirelessNetwork::Ptr& network, const AccessPoint::Ptr& ap, bool connected, const QStringList& keys, const QString& format)
+QString UiUtils::wirelessDetails(const WirelessDevice::Ptr& wirelessDevice, const WirelessNetwork::Ptr& network, const NetworkManager::Connection::Ptr& connection, const QStringList& keys)
 {
+    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
+
+    bool connected = wirelessDevice && connection && wirelessDevice->activeConnection() &&
+                     wirelessDevice->activeConnection()->connection() == connection && wirelessDevice->activeConnection()->state() == ActiveConnection::Activated;
+
+    NetworkManager::AccessPoint::Ptr ap;
+    if (network) {
+        ap = network->referenceAccessPoint();
+    }
 
     foreach (const QString& key, keys) {
         if (key == "interface:bitrate") {
@@ -962,10 +994,19 @@ QString UiUtils::wirelessDetails(const WirelessDevice::Ptr& wirelessDevice, cons
                 details += QString(format).arg(i18nc("Wifi AP channel and frequency", "Channel:"), i18n("%1 (%2 MHz)", NetworkManager::Utils::findChannel(ap->frequency()), ap->frequency()));
             }
         } else if (key == "wireless:security") {
+            NetworkManager::Utils::WirelessSecurityType security = Utils::Unknown;
             if (ap) {
-                NetworkManager::Utils::WirelessSecurityType security = NetworkManager::Utils::findBestWirelessSecurity(wirelessDevice->wirelessCapabilities(), true, (wirelessDevice->mode() == NetworkManager::WirelessDevice::Adhoc),
-                                                                                                                        ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
-                details += QString(format).arg(i18n("Security:"), UiUtils::labelFromWirelessSecurity(security));
+                security = NetworkManager::Utils::findBestWirelessSecurity(wirelessDevice->wirelessCapabilities(), true, (wirelessDevice->mode() == NetworkManager::WirelessDevice::Adhoc),
+                                                                           ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
+                if (security != Utils::Unknown) {
+                    details += QString(format).arg(i18n("Security:"), UiUtils::labelFromWirelessSecurity(security));
+                }
+            } else if (connection) {
+                // Neccessary for example for AdHoc connections
+                security = Utils::securityTypeFromConnectionSetting(connection->settings());
+                if (security != Utils::Unknown) {
+                    details += QString(format).arg(i18n("Security:"), UiUtils::labelFromWirelessSecurity(security));
+                }
             }
         } else if (key == "wireless:band") {
             if (ap) {

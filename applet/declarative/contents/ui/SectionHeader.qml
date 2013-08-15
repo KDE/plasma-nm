@@ -30,14 +30,21 @@ Title {
 
     property bool expanded: true;
 
-    anchors { left: parent.left; right: parent.right }
     height: theme.defaultFont.mSize.height * 2.5;
+    anchors {
+        left: parent.left;
+        right: parent.right;
+    }
 
     PlasmaComponents.Label {
         id: sectionLabel
 
         height: sectionHeader.height;
-        anchors { left: expandButton.right; verticalCenter: parent.verticalCenter; leftMargin: padding.margins.left }
+        anchors {
+            left: expandButton.right;
+            verticalCenter: parent.verticalCenter;
+            leftMargin: padding.margins.left
+        }
         text: section;
         font.weight: (section == i18n("Active connections")) ? Font.DemiBold : Font.Normal;
 
@@ -53,8 +60,12 @@ Title {
     PlasmaComponents.ToolButton {
         id: expandButton;
 
-        height: theme.smallMediumIconSize; width: height;
-        anchors { left: parent.left; verticalCenter: parent.verticalCenter }
+        height: theme.smallMediumIconSize;
+        width: height;
+        anchors {
+            left: parent.left;
+            verticalCenter: parent.verticalCenter
+        }
         iconSource: "list-remove";
 
         onClicked: sectionClicked();

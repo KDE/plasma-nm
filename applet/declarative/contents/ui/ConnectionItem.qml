@@ -28,9 +28,15 @@ import org.kde.plasmanm 0.1 as PlasmaNM
 PlasmaComponents.ListItem {
     id: connectionItem;
 
-    property bool isWireless: (itemType == 14) ? true : false;
     property bool expanded: false;
     property bool detailsView: false;
+
+    property bool sectionHidden: (!connectionView.activeExpanded && itemSection == i18n("Active connections")) ||
+                                 (!connectionView.previousExpanded && itemSection == i18n("Previous connections")) ||
+                                 (!connectionView.unknownExpanded && itemSection == i18n("Unknown connections"))
+    // Item is unknown && itemType == Wireless && itemSecurityType != DynamicWep && itemSecurityType != LEAP && itemSecurityType != WpaEap && itemSecurityType != Wpa2Eap
+    property bool predictableWirelessPassword: !itemUuid && itemType == 14 && itemSecure && itemSecurityType != 2 && itemSecurityType != 3 && itemSecurityType != 5 && itemSecurityType != 7;
+    property int defaultCheckboxHeight: theme.defaultFont.mSize.height * 1.6 + buttonPadding.margins.top;
 
     signal itemExpanded(string connectionPath, bool itemExpanded);
 
@@ -49,19 +55,33 @@ PlasmaComponents.ListItem {
         id: connectionItemBasic;
 
         height: theme.defaultFont.mSize.height * 1.8;
-        anchors { left: parent.left; right: parent.right; top: parent.top }
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: parent.top;
+        }
 
         QIconItem {
             id: connectionTypeIcon;
 
-            height: connectionItemBasic.height; width: height;
-            anchors { left: parent.left; verticalCenter: parent.verticalCenter; leftMargin: padding.margins.left }
+            height: connectionItemBasic.height;
+            width: height;
+            anchors {
+                left: parent.left;
+                verticalCenter: parent.verticalCenter;
+                leftMargin: padding.margins.left;
+            }
             icon: QIcon(itemConnectionIcon);
 
             QIconItem {
                 id: connectionSecurityIcon;
-                width: connectionTypeIcon.width/2; height: width;
-                anchors { bottom: parent.bottom; right: parent.right }
+
+                width: connectionTypeIcon.width/2;
+                height: width;
+                anchors {
+                    bottom: parent.bottom;
+                    right: parent.right;
+                }
                 icon: QIcon("object-locked");
                 visible: itemSecure;
             }
@@ -86,8 +106,12 @@ PlasmaComponents.ListItem {
         MouseEventListener {
             id: leftActionArea;
 
-            anchors { right: parent.right; top: parent.top; bottom: parent.bottom }
             width: theme.smallMediumIconSize * 2;
+            anchors {
+                right: parent.right;
+                top: parent.top;
+                bottom: parent.bottom;
+            }
             hoverEnabled: expanded;
 
             onClicked: {
@@ -107,8 +131,13 @@ PlasmaComponents.ListItem {
             PlasmaComponents.BusyIndicator {
                 id: connectingIndicator;
 
-                width: theme.smallMediumIconSize; height: width;
-                anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: padding.margins.right }
+                width: theme.smallMediumIconSize;
+                height: width;
+                anchors {
+                    right: parent.right;
+                    verticalCenter: parent.verticalCenter;
+                    rightMargin: padding.margins.right;
+                }
                 running: itemConnecting;
                 visible: running;
             }
@@ -116,8 +145,13 @@ PlasmaComponents.ListItem {
             PlasmaCore.IconItem {
                 id: configureButton;
 
-                width: theme.smallMediumIconSize; height: width;
-                anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: padding.margins.right }
+                width: theme.smallMediumIconSize;
+                height: width;
+                anchors {
+                    right: parent.right;
+                    verticalCenter: parent.verticalCenter;
+                    rightMargin: padding.margins.right;
+                }
                 source: "configure";
                 visible: expanded && !connectingIndicator.running;
                 active: leftActionArea.containsMouse;
@@ -135,21 +169,34 @@ PlasmaComponents.ListItem {
 
         Item {
             height: childrenRect.height;
-            anchors { left: parent.left; right: parent.right; top: parent.top; topMargin: theme.defaultFont.mSize.height * 3 }
+            anchors {
+                left: parent.left;
+                right: parent.right;
+                top: parent.top;
+                topMargin: theme.defaultFont.mSize.height * 3;
+            }
 
             Item {
-                anchors { top: parent.top; left: parent.left; right: parent.right }
-                visible: !detailsView;
                 height: childrenRect.height;
+                anchors {
+                    top: parent.top;
+                    left: parent.left;
+                    right: parent.right;
+                }
+                visible: !detailsView;
 
                 // I had to move PlasmaNM.TrafficMonitor into a separated item, because it's not possible to adjust the height to 0 and the traffic monitor
                 // still occupied the space.
                 Item {
                     id: trafficMonitor;
 
-                    anchors { top: parent.top; left: parent.left; right: parent.right }
-                    visible: (itemDevicePath && itemConnected && itemType != 11)
                     height: visible ? 150 : 0;
+                    anchors {
+                        top: parent.top;
+                        left: parent.left;
+                        right: parent.right;
+                    }
+                    visible: (itemDevicePath && itemConnected && itemType != 11)
 
                     PlasmaNM.TrafficMonitor {
                         anchors.fill: parent;
@@ -160,20 +207,27 @@ PlasmaComponents.ListItem {
                 PlasmaComponents.TextField {
                     id: passwordInput;
 
-                    anchors { horizontalCenter: parent.horizontalCenter; top: trafficMonitor.bottom }
                     width: 200;
-                    echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
-                    visible: predictableWirelessPassword();
                     height: visible ? implicitHeight : 0;
+                    anchors {
+                        horizontalCenter: parent.horizontalCenter;
+                        top: trafficMonitor.bottom;
+                    }
+                    echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
+                    visible: predictableWirelessPassword;
                     placeholderText: i18n("Password...");
                 }
 
                 PlasmaComponents.CheckBox {
                     id: showPasswordCheckbox;
 
-                    anchors { left: passwordInput.left; right: parent.right; top: passwordInput.bottom }
-                    visible: predictableWirelessPassword();
-                    height: visible ? defaultCheckboxHeight() : 0;
+                    height: visible ? defaultCheckboxHeight : 0;
+                    anchors {
+                        left: passwordInput.left;
+                        right: parent.right;
+                        top: passwordInput.bottom;
+                    }
+                    visible: predictableWirelessPassword;
                     checked: false;
                     text: i18n("Show password");
                 }
@@ -181,9 +235,13 @@ PlasmaComponents.ListItem {
                 PlasmaComponents.CheckBox {
                     id: automaticallyConnectCheckbox;
 
-                    anchors { left: passwordInput.left; right: parent.right; top: showPasswordCheckbox.bottom }
-                    visible: predictableWirelessPassword();
-                    height: visible ? defaultCheckboxHeight() : 0;
+                    height: visible ? defaultCheckboxHeight : 0;
+                    anchors {
+                        left: passwordInput.left;
+                        right: parent.right;
+                        top: showPasswordCheckbox.bottom;
+                    }
+                    visible: predictableWirelessPassword;
                     checked: true;
                     text: i18n("Automatically connect");
                 }
@@ -191,7 +249,10 @@ PlasmaComponents.ListItem {
                 PlasmaComponents.Button {
                     id: connectDisconnectButton;
 
-                    anchors { horizontalCenter: parent.horizontalCenter; top: automaticallyConnectCheckbox.bottom }
+                    anchors {
+                        horizontalCenter: parent.horizontalCenter;
+                        top: automaticallyConnectCheckbox.bottom;
+                    }
                     text: (itemConnected || itemConnecting)? i18n("Disconnect") : i18n("Connect");
 
                     onClicked: {
@@ -215,15 +276,23 @@ PlasmaComponents.ListItem {
             }
 
             Item {
-                anchors { top: parent.top; left: parent.left; right: parent.right }
-                visible: detailsView;
                 height: visible ? childrenRect.height : 0;
+                anchors {
+                    top: parent.top;
+                    left: parent.left;
+                    right: parent.right;
+                }
+                visible: detailsView;
 
                 TextEdit {
                     id: detailsText;
 
                     width: detailsView.width;
-                    anchors { left: parent.left; right: parent.right; top: parent.top }
+                    anchors {
+                        left: parent.left;
+                        right: parent.right;
+                        top: parent.top;
+                    }
                     color: theme.textColor;
                     readOnly: true;
                     selectByMouse: true;
@@ -235,7 +304,11 @@ PlasmaComponents.ListItem {
                 PlasmaComponents.Button {
                     id: editButton;
 
-                    anchors { horizontalCenter: parent.horizontalCenter; top: detailsText.bottom; topMargin: padding.margins.top }
+                    anchors {
+                        horizontalCenter: parent.horizontalCenter;
+                        top: detailsText.bottom;
+                        topMargin: padding.margins.top;
+                    }
                     text: i18n("Edit connection");
 
                     onClicked: {
@@ -250,13 +323,13 @@ PlasmaComponents.ListItem {
     states: [
         State {
             name: "Collapsed";
-            when: !expanded && !sectionHidden();
+            when: !expanded && !sectionHidden;
                 StateChangeScript { script: if (connectionItemSettings.connectionSettings) {connectionItemSettings.connectionSettings.destroy()} }
         },
 
         State {
             name: "CollapsedHidden";
-            when: sectionHidden();
+            when: sectionHidden;
             StateChangeScript { script: if (connectionItemSettings.connectionSettings) {connectionItemSettings.connectionSettings.destroy()} }
             PropertyChanges { target: connectionItem; height: 0; }
             PropertyChanges { target: connectionItem; visible: false; }
@@ -264,7 +337,7 @@ PlasmaComponents.ListItem {
 
         State {
             name: "ConnectionExpanded";
-            when: expanded && !sectionHidden();
+            when: expanded && !sectionHidden;
             StateChangeScript { script: connectionItemSettings.connectionSettings = connectionComponent.createObject(connectionItem); }
         }
     ]
@@ -275,21 +348,6 @@ PlasmaComponents.ListItem {
 
     Behavior on height {
         NumberAnimation { duration: 300 }
-    }
-
-    function sectionHidden() {
-        return ((!connectionView.activeExpanded && itemSection == i18n("Active connections")) ||
-                (!connectionView.previousExpanded && itemSection == i18n("Previous connections")) ||
-                (!connectionView.unknownExpanded && itemSection == i18n("Unknown connections")))
-    }
-
-    function predictableWirelessPassword() {
-        // Item is unknown && itemType == Wireless && itemSecurityType != DynamicWep && itemSecurityType != LEAP && itemSecurityType != WpaEap && itemSecurityType != Wpa2Eap
-        return !itemUuid && itemType == 14 && itemSecure && itemSecurityType != 2 && itemSecurityType != 3 && itemSecurityType != 5 && itemSecurityType != 7;
-    }
-
-    function defaultCheckboxHeight() {
-        return theme.defaultFont.mSize.height * 1.6 + buttonPadding.margins.top;
     }
 
     PlasmaCore.FrameSvgItem {

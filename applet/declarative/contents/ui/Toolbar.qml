@@ -53,13 +53,22 @@ Item {
         id: toolbarLine;
 
         height: theme.defaultFont.mSize.height * 2;
-        anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            bottom: parent.bottom;
+        }
 
         PlasmaCore.IconItem {
             id: statusIcon
 
-            height: theme.smallMediumIconSize; width: height;
-            anchors { left: parent.left; verticalCenter: parent.verticalCenter; leftMargin: padding.margins.left }
+            height: theme.smallMediumIconSize;
+            width: height;
+            anchors {
+                left: parent.left;
+                verticalCenter: parent.verticalCenter;
+                leftMargin: padding.margins.left;
+            }
 
             PlasmaComponents.BusyIndicator {
                 id: progressIndicator;
@@ -74,15 +83,25 @@ Item {
             id: statusLabel;
 
             height: theme.defaultFont.mSize.height * 2;
-            anchors { left: statusIcon.right; right: toolButton.left; verticalCenter: parent.verticalCenter; leftMargin: padding.margins.left }
+            anchors {
+                left: statusIcon.right;
+                right: toolButton.left;
+                verticalCenter: parent.verticalCenter;
+                leftMargin: padding.margins.left;
+            }
             elide: Text.ElideRight;
         }
 
         PlasmaCore.IconItem {
             id: toolButton;
 
-            height: theme.smallMediumIconSize; width: height;
-            anchors { right: parent.right; verticalCenter: parent.verticalCenter; rightMargin: padding.margins.right }
+            height: theme.smallMediumIconSize;
+            width: height;
+            anchors {
+                right: parent.right;
+                verticalCenter: parent.verticalCenter;
+                rightMargin: padding.margins.right;
+            }
             source: "configure";
         }
 
@@ -100,7 +119,12 @@ Item {
     OptionsWidget {
         id: options;
 
-        anchors { left: parent.left; right: parent.right; top: parent.top; bottomMargin: padding.margins.bottom }
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: parent.top;
+            bottomMargin: padding.margins.bottom;
+        }
         visible: false;
 
         onOpenEditor: {

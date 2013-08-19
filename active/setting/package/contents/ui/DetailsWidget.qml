@@ -40,7 +40,11 @@ Item {
     PlasmaComponents.Label {
         id: availableDetailsLabel;
 
-        anchors { left: availableDetails.left; top: parent.top; leftMargin: 5 }
+        anchors {
+            left: availableDetails.left;
+            top: parent.top;
+            leftMargin: 5;
+        }
         text: i18n("Available details");
         font.weight: Font.Bold;
         opacity: .8;
@@ -49,7 +53,11 @@ Item {
     PlasmaComponents.Label {
         id: selectedDetailsLabel;
 
-        anchors { left: selectedDetails.left; top: parent.top; leftMargin: 5 }
+        anchors {
+            left: selectedDetails.left;
+            top: parent.top;
+            leftMargin: 5;
+        }
         text: i18n("Selected details");
         font.weight: Font.Bold;
         opacity: .8;
@@ -58,7 +66,11 @@ Item {
     DetailsView {
         id: availableDetails;
 
-        anchors { left: parent.left; top: availableDetailsLabel.bottom; bottom: parent.bottom }
+        anchors {
+            left: parent.left;
+            top: availableDetailsLabel.bottom;
+            bottom: parent.bottom;
+        }
         width: parent.width/2 - 50;
         model: availableDetailsModel;
 
@@ -74,7 +86,11 @@ Item {
     DetailsView {
         id: selectedDetails;
 
-        anchors { right: parent.right; top: selectedDetailsLabel.bottom; bottom: parent.bottom }
+        anchors {
+            right: parent.right;
+            top: selectedDetailsLabel.bottom;
+            bottom: parent.bottom
+        }
         width: parent.width/2 - 50;
         model: selectedDetailsModel;
 
@@ -98,7 +114,10 @@ Item {
     Row {
         id: leftRightArrows;
 
-        anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter }
+        anchors {
+            horizontalCenter: parent.horizontalCenter;
+            verticalCenter: parent.verticalCenter;
+        }
         spacing: 5;
 
         PlasmaComponents.ToolButton {
@@ -132,7 +151,8 @@ Item {
         PlasmaComponents.ToolButton {
             id: rightArrow;
 
-            width: 48; height: 48;
+            width: 48;
+            height: 48;
             flat: false;
             iconSource: "go-next";
             enabled: false;
@@ -153,7 +173,10 @@ Item {
     PlasmaComponents.ToolButton {
         id: upArrow;
 
-        anchors { horizontalCenter: parent.horizontalCenter; bottom: leftRightArrows.top }
+        anchors {
+            horizontalCenter: parent.horizontalCenter;
+            bottom: leftRightArrows.top;
+        }
         width: 48; height: 48;
         flat: false;
         iconSource: "go-up";
@@ -175,8 +198,12 @@ Item {
     PlasmaComponents.ToolButton {
         id: downArrow;
 
-        anchors { horizontalCenter: parent.horizontalCenter; top: leftRightArrows.bottom }
-        width: 48; height: 48;
+        anchors {
+            horizontalCenter: parent.horizontalCenter;
+            top: leftRightArrows.bottom;
+        }
+        width: 48;
+        height: 48;
         flat: false;
         iconSource: "go-down";
         enabled: false;

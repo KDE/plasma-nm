@@ -31,7 +31,12 @@ Item {
     PlasmaComponents.Button {
         id: addButton;
 
-        anchors { left: parent.left; bottom: parent.bottom; bottomMargin: 2; leftMargin: 2 }
+        anchors {
+            left: parent.left;
+            bottom: parent.bottom;
+            bottomMargin: 2;
+            leftMargin: 2;
+        }
         text: i18n("Add");
         iconSource: "list-add";
         // TODO: implement
@@ -62,7 +67,12 @@ Item {
     PlasmaExtras.Heading {
         id: availableConnectionsLabel;
 
-        anchors { left: parent.left; right: parent.right; top: networkSettingsBackground.bottom; topMargin: 10 }
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: networkSettingsBackground.bottom;
+            topMargin: 10;
+        }
         text: i18n("Available connections");
         level: 2;
     }
@@ -80,7 +90,13 @@ Item {
     Image {
         id: connectionsFrame;
 
-        anchors { left: parent.left; top: availableConnectionsLabel.bottom; bottom: parent.bottom; topMargin: 10; bottomMargin: 50 }
+        anchors {
+            left: parent.left;
+            top: availableConnectionsLabel.bottom;
+            bottom: parent.bottom;
+            topMargin: 10;
+            bottomMargin: 50;
+        }
         width: parent.width/2;
         source: "image://appbackgrounds/contextarea";
         fillMode: Image.Tile;
@@ -108,13 +124,6 @@ Item {
                             }
                             connectionSetting.item.selectedItemModel = myData;
                         }
-
-                        ListView.onRemove: {
-                            if (!connectionsView.count) {
-                                connectionSetting.source = "";
-                                connectionsView.currentIndex = -1;
-                            }
-                        }
             }
         }
     }
@@ -122,7 +131,13 @@ Item {
     Loader {
         id: connectionSetting;
 
-        anchors { right: parent.right; top: availableConnectionsLabel.bottom; bottom: parent.bottom; topMargin: 10; bottomMargin: 50 }
+        anchors {
+            right: parent.right;
+            top: availableConnectionsLabel.bottom;
+            bottom: parent.bottom;
+            topMargin: 10;
+            bottomMargin: 50;
+        }
         width: parent.width/2;
     }
 
@@ -152,25 +167,8 @@ Item {
 //         }
 //     }
 
-    Component.onCompleted: {
-        if (connectionsView.count) {
-            if (connectionSetting.status == Loader.Null) {
-                connectionSetting.source = "ConnectionSetting.qml";
-            }
-            connectionSetting.item.selectedItemModel = connectionsView.currentItem.myData;
-        }
-    }
-
     function resetIndex() {
-        if (connectionsView.count) {
-            connectionsView.currentIndex = 0;
-            if (connectionSetting.status == Loader.Null) {
-                connectionSetting.source = "ConnectionSetting.qml";
-            }
-            connectionSetting.item.selectedItemModel = connectionsView.currentItem.myData;
-        } else {
-            connectionsView.currentIndex = -1;
-            connectionSetting.source = "";
-        }
+        connectionsView.currentIndex = -1;
+        connectionSetting.source = "";
     }
 }

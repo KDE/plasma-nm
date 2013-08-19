@@ -44,7 +44,11 @@ Item {
     Column {
         id: titleCol;
 
-        anchors {top: parent.top; left: parent.left; right: planeMode.left }
+        anchors {
+            top: parent.top;
+            left: parent.left;
+            right: planeMode.left
+        }
 
         PlasmaExtras.Title {
             id: titleLabel;
@@ -74,19 +78,28 @@ Item {
     Item {
         id: planeMode;
 
-        anchors { top: parent.top; right: parent.right }
+        anchors {
+            top: parent.top;
+            right: parent.right;
+        }
 
         PlasmaExtras.Title {
             id: planeModeLabel;
 
-            anchors { right: planeModeSwitch.left; rightMargin: 8 }
+            anchors {
+                right: planeModeSwitch.left;
+                rightMargin: 8;
+            }
             text: i18n("Airplane Mode");
         }
 
         PlasmaComponents.Switch {
             id: planeModeSwitch;
 
-            anchors { right: parent.right; rightMargin: 10 }
+            anchors {
+                right: parent.right;
+                rightMargin: 10;
+            }
             height: 30;
 
             onClicked: {
@@ -98,7 +111,11 @@ Item {
     Image {
         id: networkSettingsBackground;
 
-        anchors { horizontalCenter: parent.horizontalCenter; top: titleCol.bottom; topMargin: 10 }
+        anchors {
+            horizontalCenter: parent.horizontalCenter;
+            top: titleCol.bottom;
+            topMargin: 10;
+        }
         width: networkSettings.networkSettingsModel.count * 150;
         height: 48;
         source: "image://appbackgrounds/contextarea";
@@ -125,7 +142,10 @@ Item {
 
                 property variant myData: model;
 
-                anchors { top: parent.top; bottom: parent.bottom }
+                anchors {
+                    top: parent.top;
+                    bottom: parent.bottom;
+                }
                 width: 150;
                 checked: networksSettingsView.currentIndex == index;
                 enabled: true
@@ -133,7 +153,11 @@ Item {
                 QIconItem {
                     id: networkIcon;
 
-                    anchors { left: parent.left; top: parent.top; bottom: parent.bottom }
+                    anchors {
+                        left: parent.left;
+                        top: parent.top;
+                        bottom: parent.bottom;
+                    }
                     width: 48; height: 48;
                     icon: QIcon(itemIcon);
                 }
@@ -141,7 +165,10 @@ Item {
                 PlasmaComponents.Label {
                     id: networkLabel;
 
-                    anchors { left: networkIcon.right; verticalCenter: parent.verticalCenter }
+                    anchors {
+                        left: networkIcon.right;
+                        verticalCenter: parent.verticalCenter;
+                    }
                     font.weight: Font.Bold;
                     elide: Text.ElideRight;
                     text: itemName;
@@ -159,7 +186,13 @@ Item {
     ConnectionList {
         id: connectionList;
 
-        anchors { left: parent.left; right: parent.right; top: networkSettingsBackground.bottom; bottom: parent.bottom; topMargin: 10 }
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: networkSettingsBackground.bottom;
+            bottom: parent.bottom;
+            topMargin: 10;
+        }
     }
 
     Component.onCompleted: {

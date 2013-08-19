@@ -31,12 +31,19 @@ Item {
     Column {
         id: settingsDescription;
 
-        anchors {top: parent.top; left: parent.left; right: parent.right }
+        anchors {
+            top: parent.top;
+            left: parent.left;
+            right: parent.right;
+        }
 
         PlasmaExtras.Heading {
             id: nameLabel;
 
-            anchors { left: parent.left; right: parent.right }
+            anchors {
+                left: parent.left;
+                right: parent.right;
+            }
             text: selectedItemModel ? i18n("<b>%1</b> settings").arg(selectedItemModel.itemName) : "";
             elide: Text.ElideRight;
             horizontalAlignment: Text.AlignHCenter;
@@ -46,7 +53,10 @@ Item {
         PlasmaComponents.Label {
             id: statusLabel;
 
-            anchors { left: parent.left; right: parent.right }
+            anchors {
+                left: parent.left;
+                right: parent.right;
+            }
             text: {
                 if (selectedItemModel) {
                     if (selectedItemModel.itemConnected) {
@@ -65,10 +75,73 @@ Item {
         }
     }
 
+    PlasmaExtras.ScrollArea {
+        id: settingsScrollArea;
+
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: settingsDescription.bottom;
+            bottom: addButton.top;
+            topMargin: 10;
+            bottomMargin: 10;
+        }
+
+        // TODO: load setting
+        Flickable {
+            ConnectionSettingWidget {
+                id: connectionWidget;
+
+                anchors {
+                    left: parent.left;
+                    right: parent.right;
+                    top: parent.top
+                }
+            }
+
+            Ipv4SettingWidget {
+                id: ipv4Widget;
+
+                anchors {
+                    left: parent.left;
+                    right: parent.right;
+                    top: connectionWidget.bottom;
+                    topMargin: 100;
+                }
+            }
+        }
+    }
+
+    PlasmaComponents.Button {
+        anchors {
+            right: addButton.left;
+            bottom: parent.bottom;
+            rightMargin: 10;
+        }
+        text: "Print setting";
+
+        onClicked: {
+            //TODO do a real action
+            var resultingMap = [];
+            resultingMap.connection = connectionWidget.getSetting();
+            resultingMap.ipv4 = ipv4Widget.getSetting();
+            for (var key in resultingMap["connection"]) {
+                console.log(key + ":" + resultingMap["connection"][key]);
+            }
+            for (var key in resultingMap["ipv4"]) {
+                console.log(key + ":" + resultingMap["ipv4"][key]);
+            }
+        }
+    }
+
     PlasmaComponents.Button {
         id: addButton;
 
-        anchors { right: parent.right; bottom: parent.bottom; rightMargin: 5 }
+        anchors {
+            right: parent.right;
+            bottom: parent.bottom;
+            rightMargin: 5;
+        }
         text: {
             if (selectedItemModel) {
                 if (selectedItemModel.itemConnected || selectedItemModel.itemConnecting) {

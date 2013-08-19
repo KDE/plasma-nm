@@ -56,7 +56,10 @@ Item {
                 PlasmaComponents.Label {
                     text: name;
 
-                    anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter }
+                    anchors {
+                        horizontalCenter: parent.horizontalCenter;
+                        verticalCenter: parent.verticalCenter;
+                    }
                     wrapMode: Text.Wrap;
                     width: parent.width;
                     font.weight: Font.Bold;

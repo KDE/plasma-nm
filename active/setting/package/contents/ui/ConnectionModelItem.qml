@@ -30,13 +30,19 @@ Item {
     signal itemSelected();
 
     height: 48;
-    anchors { left: parent.left; right: parent.right }
+    anchors {
+        left: parent.left;
+        right: parent.right;
+    }
 
     Rectangle {
         id: connectedItemBackground;
 
         height: 48;
-        anchors { left: parent.left; right: parent.right }
+        anchors {
+            left: parent.left;
+            right: parent.right;
+        }
         color: "green";
         opacity: itemConnected ? 0.2 : 0.1;
         visible: itemConnected || itemConnecting;
@@ -46,14 +52,22 @@ Item {
         id: connectionItem;
 
         height: 48;
-        anchors { left: parent.left; right: parent.right }
+        anchors {
+            left: parent.left;
+            right: parent.right;
+        }
         enabled: true
 
         QIconItem {
             id: connectionIcon;
 
-            anchors { left: parent.left; top: parent.top; bottom: parent.bottom }
-            width: 48; height: 48;
+            anchors {
+                left: parent.left;
+                top: parent.top;
+                bottom: parent.bottom;
+            }
+            width: 48;
+            height: 48;
 
             icon: QIcon(itemConnectionIcon);
         }
@@ -61,7 +75,11 @@ Item {
         PlasmaComponents.Label {
             id: networkLabel;
 
-            anchors { left: connectionIcon.right; right: securityLabel.left; verticalCenter: parent.verticalCenter }
+            anchors {
+                left: connectionIcon.right;
+                right: securityLabel.left;
+                verticalCenter: parent.verticalCenter;
+            }
             font.weight: Font.Bold;
             elide: Text.ElideRight;
             text: itemName;
@@ -70,8 +88,13 @@ Item {
         QIconItem {
             id: securedIcon;
 
-            anchors { right: parent.right; top: parent.top; bottom: parent.bottom }
-            width: 48; height: 48;
+            anchors {
+                right: parent.right;
+                top: parent.top;
+                bottom: parent.bottom;
+            }
+            width: 48;
+            height: 48;
             icon: QIcon("object-locked");
             visible: itemSecure;
         }
@@ -79,7 +102,11 @@ Item {
         PlasmaComponents.Label {
             id: securityLabel;
 
-            anchors { right: securedIcon.left; top: parent.top; bottom: parent.bottom }
+            anchors {
+                right: securedIcon.left;
+                top: parent.top;
+                bottom: parent.bottom;
+            }
             text: itemSecurityTypeString;
             visible: securedIcon.visible;
         }

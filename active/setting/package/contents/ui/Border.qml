@@ -27,24 +27,44 @@ Item {
     Image {
         source: "image://appbackgrounds/shadow-left"
         fillMode: Image.Tile;
-        anchors { right: parent.right; top: parent.top; bottom: parent.bottom; rightMargin: -1 }
+        anchors {
+            right: parent.right;
+            top: parent.top;
+            bottom: parent.bottom;
+            rightMargin: -1;
+        }
     }
 
     Image {
         source: "image://appbackgrounds/shadow-right"
         fillMode: Image.Tile;
-        anchors { left: parent.left; top: parent.top; bottom: parent.bottom; leftMargin: -1 }
+        anchors {
+            left: parent.left;
+            top: parent.top;
+            bottom: parent.bottom;
+            leftMargin: -1;
+        }
     }
 
     Image {
         source: "image://appbackgrounds/shadow-bottom"
         fillMode: Image.Tile;
-        anchors { right: parent.right; left: parent.left; top: parent.top; topMargin: -1 }
+        anchors {
+            right: parent.right;
+            left: parent.left;
+            top: parent.top;
+            topMargin: -1;
+        }
     }
 
     Image {
         source: "image://appbackgrounds/shadow-top"
         fillMode: Image.Tile
-        anchors { right: parent.right; left: parent.left; bottom: parent.bottom; bottomMargin: -1 }
+        anchors {
+            right: parent.right;
+            left: parent.left;
+            bottom: parent.bottom;
+            bottomMargin: -1;
+        }
     }
 }

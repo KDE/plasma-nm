@@ -33,6 +33,8 @@ Item {
 
     property int ipv4Method: methods.AUTO;
 
+    height: childrenRect.height;
+
     PlasmaExtras.Heading {
         id: ipv4SettingLabel;
 
@@ -47,11 +49,12 @@ Item {
     Item {
         id: ipv4MethodSelection;
 
+        height: childrenRect.height;
         anchors {
             left: parent.left;
             right: parent.right;
             top: ipv4SettingLabel.bottom;
-            topMargin: 24;
+            topMargin: 12;
         }
 
         PlasmaComponents.Label {
@@ -59,7 +62,6 @@ Item {
 
             anchors {
                 right: parent.horizontalCenter;
-                verticalCenter: parent.verticalCenter;
                 rightMargin: 12;
             }
             text: i18n("Method:");
@@ -71,7 +73,6 @@ Item {
             width: 200;
             anchors {
                 left: parent.horizontalCenter;
-                verticalCenter: parent.verticalCenter;
             }
             text: i18n("Automatic");
 
@@ -106,6 +107,7 @@ Item {
             property alias dns1: ipv4Dns1Input.text;
             property alias dns2: ipv4Dns2Input.text;
 
+            height: childrenRect.height;
             anchors {
                 fill: parent;
             }
@@ -113,11 +115,12 @@ Item {
             Item {
                 id: ipv4AddressConfiguration;
 
+                height: childrenRect.height;
                 anchors {
                     top: parent.top;
                     left: parent.left;
                     right: parent.right;
-                    topMargin: 36;
+                    topMargin: 12;
                 }
 
                 PlasmaComponents.Label {
@@ -125,7 +128,6 @@ Item {
 
                     anchors {
                         right: parent.horizontalCenter;
-                        verticalCenter: parent.verticalCenter;
                         rightMargin: 12;
                     }
                     text: i18n("IP Address:");
@@ -137,150 +139,141 @@ Item {
                     width: 200;
                     anchors {
                         left: parent.horizontalCenter;
-                        verticalCenter: parent.verticalCenter;
                     }
 //                     validator: RegExpValidator { regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/ }
                     inputMask: "000.000.000.000;_";
                 }
+            }
 
-                Item {
-                    id: ipv4GatewayConfiguration;
+            Item {
+                id: ipv4GatewayConfiguration;
 
-                    anchors {
-                        top: ipv4AddressConfiguration.bottom;
-                        left: parent.left;
-                        right: parent.right;
-                        topMargin: 36;
-                    }
-
-                    PlasmaComponents.Label {
-                        id: ipv4GatewayLabel;
-
-                        anchors {
-                            right: parent.horizontalCenter;
-                            verticalCenter: parent.verticalCenter;
-                            rightMargin: 12;
-                        }
-                        text: i18n("Gateway:");
-                        horizontalAlignment: Text.AlignRight;
-                    }
-
-                    PlasmaComponents.TextField {
-                        id: ipv4GatewayInput;
-
-                        width: 200;
-                        anchors {
-                            left: parent.horizontalCenter;
-                            verticalCenter: parent.verticalCenter;
-                        }
-//                         validator: RegExpValidator { regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/ }
-                        inputMask: "000.000.000.000;_";
-                    }
+                height: childrenRect.height;
+                anchors {
+                    top: ipv4AddressConfiguration.bottom;
+                    left: parent.left;
+                    right: parent.right;
+                    topMargin: 12;
                 }
 
-                Item {
-                    id: ipv4NetmaskConfiguration;
+                PlasmaComponents.Label {
+                    id: ipv4GatewayLabel;
 
                     anchors {
-                        top: ipv4GatewayConfiguration.bottom;
-                        left: parent.left;
-                        right: parent.right;
-                        topMargin: 36;
+                        right: parent.horizontalCenter;
+                        rightMargin: 12;
                     }
-
-                    PlasmaComponents.Label {
-                        id: ipv4NetmaskLabel;
-
-                        anchors {
-                            right: parent.horizontalCenter;
-                            verticalCenter: parent.verticalCenter;
-                            rightMargin: 12;
-                        }
-                        text: i18n("Netmask:");
-                        horizontalAlignment: Text.AlignRight;
-                    }
-
-                    PlasmaComponents.TextField {
-                        id: ipv4NetmaskInput;
-
-                        width: 200;
-                        anchors {
-                            left: parent.horizontalCenter;
-                            verticalCenter: parent.verticalCenter;
-                        }
-//                         validator: RegExpValidator { regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/ }
-                        inputMask: "000.000.000.000;_";
-                    }
+                    text: i18n("Gateway:");
                 }
 
-                Item {
-                    id: ipv4Dns1Configuration;
+                PlasmaComponents.TextField {
+                    id: ipv4GatewayInput;
 
+                    width: 200;
                     anchors {
-                        top: ipv4NetmaskConfiguration.bottom;
-                        left: parent.left;
-                        right: parent.right;
-                        topMargin: 36;
+                        left: parent.horizontalCenter;
                     }
-
-                    PlasmaComponents.Label {
-                        id: ipv4Dns1Label;
-
-                        anchors {
-                            right: parent.horizontalCenter;
-                            verticalCenter: parent.verticalCenter;
-                            rightMargin: 12;
-                        }
-                        text: i18n("DNS Server 1:");
-                        horizontalAlignment: Text.AlignRight;
-                    }
-
-                    PlasmaComponents.TextField {
-                        id: ipv4Dns1Input;
-
-                        width: 200;
-                        anchors {
-                            left: parent.horizontalCenter;
-                            verticalCenter: parent.verticalCenter;
-                        }
 //                         validator: RegExpValidator { regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/ }
-                        inputMask: "000.000.000.000;_";
-                    }
+                    inputMask: "000.000.000.000;_";
+                }
+            }
+
+            Item {
+                id: ipv4NetmaskConfiguration;
+
+                height: childrenRect.height;
+                anchors {
+                    top: ipv4GatewayConfiguration.bottom;
+                    left: parent.left;
+                    right: parent.right;
+                    topMargin: 12;
                 }
 
-                Item {
-                    id: ipv4Dns2Configuration;
+                PlasmaComponents.Label {
+                    id: ipv4NetmaskLabel;
 
                     anchors {
-                        top: ipv4Dns1Configuration.bottom;
-                        left: parent.left;
-                        right: parent.right;
-                        topMargin: 36;
+                        right: parent.horizontalCenter;
+                        rightMargin: 12;
                     }
+                    text: i18n("Netmask:");
+                }
 
-                    PlasmaComponents.Label {
-                        id: ipv4Dns2Label;
+                PlasmaComponents.TextField {
+                    id: ipv4NetmaskInput;
 
-                        anchors {
-                            right: parent.horizontalCenter;
-                            verticalCenter: parent.verticalCenter;
-                            rightMargin: 12;
-                        }
-                        text: i18n("DNS Server 2:");
-                        horizontalAlignment: Text.AlignRight;
+                    width: 200;
+                    anchors {
+                        left: parent.horizontalCenter;
                     }
-
-                    PlasmaComponents.TextField {
-                        id: ipv4Dns2Input;
-
-                        width: 200;
-                        anchors {
-                            left: parent.horizontalCenter;
-                            verticalCenter: parent.verticalCenter;
-                        }
 //                         validator: RegExpValidator { regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/ }
-                        inputMask: "000.000.000.000;_";
+                    inputMask: "000.000.000.000;_";
+                }
+            }
+
+            Item {
+                id: ipv4Dns1Configuration;
+
+                height: childrenRect.height;
+                anchors {
+                    top: ipv4NetmaskConfiguration.bottom;
+                    left: parent.left;
+                    right: parent.right;
+                    topMargin: 12;
+                }
+
+                PlasmaComponents.Label {
+                    id: ipv4Dns1Label;
+
+                    anchors {
+                        right: parent.horizontalCenter;
+                        rightMargin: 12;
                     }
+                    text: i18n("DNS Server 1:");
+                }
+
+                PlasmaComponents.TextField {
+                    id: ipv4Dns1Input;
+
+                    width: 200;
+                    anchors {
+                        left: parent.horizontalCenter;
+                    }
+//                         validator: RegExpValidator { regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/ }
+                    inputMask: "000.000.000.000;_";
+                }
+            }
+
+            Item {
+                id: ipv4Dns2Configuration;
+
+                height: childrenRect.height;
+                anchors {
+                    top: ipv4Dns1Configuration.bottom;
+                    left: parent.left;
+                    right: parent.right;
+                    topMargin: 12;
+                }
+
+                PlasmaComponents.Label {
+                    id: ipv4Dns2Label;
+
+                    anchors {
+                        right: parent.horizontalCenter;
+                        rightMargin: 12;
+                    }
+                    text: i18n("DNS Server 2:");
+                }
+
+                PlasmaComponents.TextField {
+                    id: ipv4Dns2Input;
+
+                    width: 200;
+                    anchors {
+                        left: parent.horizontalCenter;
+                    }
+//                         validator: RegExpValidator { regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/ }
+                    inputMask: "000.000.000.000;_";
                 }
             }
         }
@@ -314,7 +307,10 @@ Item {
                     height: 32;
 
                     PlasmaComponents.Label {
-                        anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter }
+                        anchors {
+                            horizontalCenter: parent.horizontalCenter;
+                            verticalCenter: parent.verticalCenter;
+                        }
                         width: parent.width;
                         text: name;
                         horizontalAlignment: Text.AlignHCenter;

@@ -64,19 +64,6 @@ Item {
         filterType: networkSettings.connectionType;
     }
 
-    PlasmaExtras.Heading {
-        id: availableConnectionsLabel;
-
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            top: networkSettingsBackground.bottom;
-            topMargin: 10;
-        }
-        text: i18n("Available connections");
-        level: 2;
-    }
-
 //     PlasmaComponents.Label {
 //         id: detailsText;
 //
@@ -92,7 +79,7 @@ Item {
 
         anchors {
             left: parent.left;
-            top: availableConnectionsLabel.bottom;
+            top: parent.top;
             bottom: parent.bottom;
             topMargin: 10;
             bottomMargin: 50;
@@ -111,7 +98,6 @@ Item {
             anchors.fill: parent;
             clip: true;
             model: connectionSortModel;
-            currentIndex: count ? 0 : -1;
             // TODO change currentIndex according to selected item and model changes
             delegate: ConnectionModelItem {
                         property variant myData: model;
@@ -125,6 +111,30 @@ Item {
                             connectionSetting.item.selectedItemModel = myData;
                         }
             }
+
+            Component.onCompleted: {
+                if (count) {
+                    selectFirstItem();
+                }
+            }
+
+            onCountChanged: {
+                if (!count) {
+                    if (connectionSetting.status != Loader.Null) {
+                        connectionSetting.source = "";
+                    }
+                } else if (count == 1 || currentIndex + 1 > count) {
+                    selectFirstItem();
+                }
+            }
+
+            function selectFirstItem() {
+                currentIndex = 0;
+                if (connectionSetting.status == Loader.Null) {
+                    connectionSetting.source = "ConnectionSetting.qml";
+                }
+                connectionSetting.item.selectedItemModel = currentItem.myData;
+            }
         }
     }
 
@@ -133,7 +143,7 @@ Item {
 
         anchors {
             right: parent.right;
-            top: availableConnectionsLabel.bottom;
+            top: parent.top;
             bottom: parent.bottom;
             topMargin: 10;
             bottomMargin: 50;
@@ -168,7 +178,11 @@ Item {
 //     }
 
     function resetIndex() {
-        connectionsView.currentIndex = -1;
-        connectionSetting.source = "";
+        if (connectionsView.count) {
+            connectionsView.selectFirstItem();
+        } else {
+            connectionSetting.source = "";
+        }
+
     }
 }

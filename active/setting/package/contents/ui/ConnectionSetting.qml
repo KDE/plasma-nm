@@ -28,62 +28,14 @@ Item {
 
     anchors.fill: parent;
 
-    Column {
-        id: settingsDescription;
-
-        anchors {
-            top: parent.top;
-            left: parent.left;
-            right: parent.right;
-        }
-
-        PlasmaExtras.Heading {
-            id: nameLabel;
-
-            anchors {
-                left: parent.left;
-                right: parent.right;
-            }
-            text: selectedItemModel ? i18n("<b>%1</b> settings").arg(selectedItemModel.itemName) : "";
-            elide: Text.ElideRight;
-            horizontalAlignment: Text.AlignHCenter;
-            level: 2;
-        }
-
-        PlasmaComponents.Label {
-            id: statusLabel;
-
-            anchors {
-                left: parent.left;
-                right: parent.right;
-            }
-            text: {
-                if (selectedItemModel) {
-                    if (selectedItemModel.itemConnected) {
-                        i18n("Connected");
-                    } else if (selectedItemModel.itemConnecting) {
-                        i18n("Connecting");
-                    } else {
-                        i18n("Not connected");
-                    }
-                } else {
-                    "";
-                }
-            }
-            horizontalAlignment: Text.AlignHCenter;
-            opacity: .3;
-        }
-    }
-
     PlasmaExtras.ScrollArea {
         id: settingsScrollArea;
 
         anchors {
             left: parent.left;
             right: parent.right;
-            top: settingsDescription.bottom;
+            top: parent.top;
             bottom: addButton.top;
-            topMargin: 10;
             bottomMargin: 10;
         }
 
@@ -106,7 +58,7 @@ Item {
                     left: parent.left;
                     right: parent.right;
                     top: connectionWidget.bottom;
-                    topMargin: 100;
+                    topMargin: 24;
                 }
             }
         }
@@ -167,5 +119,10 @@ Item {
                 }
             }
         }
+    }
+
+    onSelectedItemModelChanged: {
+        // TODO: reload setting
+        console.log(selectedItemModel.itemName);
     }
 }

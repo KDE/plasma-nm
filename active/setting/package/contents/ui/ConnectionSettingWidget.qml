@@ -25,25 +25,17 @@ import org.kde.plasma.extras 0.1 as PlasmaExtras
 Item {
     id: connectionSettingWidget;
 
-    PlasmaExtras.Heading {
-        id: connectionSettingLabel;
-
-        anchors {
-            right: parent.horizontalCenter;
-            rightMargin: 12;
-        }
-        text: i18n("Connection configuration");
-        level: 3;
-    }
+    height: childrenRect.height;
 
     Item {
         id: connectionName;
 
+        height: childrenRect.height;
         anchors {
             left: parent.left;
             right: parent.right;
-            top: connectionSettingLabel.bottom;
-            topMargin: 24;
+            top: parent.top;
+            topMargin: 12;
         }
 
         PlasmaComponents.Label {
@@ -51,7 +43,6 @@ Item {
 
             anchors {
                 right: parent.horizontalCenter;
-                verticalCenter: parent.verticalCenter;
                 rightMargin: 12;
             }
             text: i18n("Connection name:");
@@ -63,7 +54,6 @@ Item {
             width: 200;
             anchors {
                 left: parent.horizontalCenter;
-                verticalCenter: parent.verticalCenter;
             }
         }
     }
@@ -71,11 +61,13 @@ Item {
     Item {
         id: automaticallyConnect;
 
+        height: childrenRect.height;
+
         anchors {
             left: parent.left;
             right: parent.right;
             top: connectionName.bottom;
-            topMargin: 36;
+            topMargin: 12;
         }
 
         PlasmaComponents.Label {
@@ -83,7 +75,6 @@ Item {
 
             anchors {
                 right: parent.horizontalCenter;
-                verticalCenter: parent.verticalCenter;
                 rightMargin: 12;
             }
             text: i18n("Automatically connect:");
@@ -94,7 +85,6 @@ Item {
 
             anchors {
                 left: parent.horizontalCenter;
-                verticalCenter: parent.verticalCenter;
             }
             checked: true;
         }

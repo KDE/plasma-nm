@@ -41,7 +41,8 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Utils>
 
-BluetoothMonitor::BluetoothMonitor(QObject * parent): QObject(parent), mobileConnectionWizard(0)
+BluetoothMonitor::BluetoothMonitor(QObject * parent)
+    : QObject(parent)
 {
     QDBusConnection::sessionBus().registerService("org.kde.plasmanm");
     QDBusConnection::sessionBus().registerObject("/org/kde/plasmanm", this, QDBusConnection::ExportScriptableContents);
@@ -53,6 +54,8 @@ BluetoothMonitor::~BluetoothMonitor()
 
 void BluetoothMonitor::addBluetoothConnection(const QString& bdAddr, const QString& service)
 {
+    qDebug() << "Adding BT connection:" << bdAddr << service;
+
     if (bdAddr.isEmpty() || service.isEmpty()) {
         return;
     }
@@ -74,7 +77,7 @@ void BluetoothMonitor::init()
         KMessageBox::sorry(0, i18n("We support 'dun' and 'nap' services only."));
         return;
     }
-//    kDebug(KDE_DEFAULT_DEBUG_AREA) << "Bdaddr == " << mBdaddr;
+    qDebug() << "Bdaddr == " << mBdaddr;
 
     /*
      * Find default bluetooth adapter registered in BlueZ.
@@ -88,7 +91,7 @@ void BluetoothMonitor::init()
         return;
     }
 
-//    kDebug(KDE_DEFAULT_DEBUG_AREA) << "Querying default adapter";
+    qDebug() << "Querying default adapter";
     QDBusReply<QDBusObjectPath> adapterPath = bluez.call(QLatin1String("DefaultAdapter"));
 
     if (!adapterPath.isValid()) {
@@ -96,7 +99,7 @@ void BluetoothMonitor::init()
         return;
     }
 
-//    kDebug(KDE_DEFAULT_DEBUG_AREA) << "Default adapter path is " << adapterPath.value().path();
+    qDebug() << "Default adapter path is " << adapterPath.value().path();
 
     /*
      * Find device path registered in BlueZ.
@@ -114,7 +117,7 @@ void BluetoothMonitor::init()
     }
 
     mDevicePath = devicePath.value().path();
-    kDebug(KDE_DEFAULT_DEBUG_AREA) << "Device path for " << mBdaddr << " is " << mDevicePath;
+    qDebug() << "Device path for " << mBdaddr << " is " << mDevicePath;
 
     /*
      * Find name registered in BlueZ.
@@ -131,10 +134,10 @@ void BluetoothMonitor::init()
     }
 
     QMap<QString, QVariant> properties = deviceProperties.value();
-//    kDebug(KDE_DEFAULT_DEBUG_AREA) << "Device properties == " << properties;
+    qDebug() << "Device properties == " << properties;
 
     if (properties.contains("Name")) {
-        kDebug(KDE_DEFAULT_DEBUG_AREA) << "Name for" << mBdaddr << "is" << properties["Name"].toString();
+        qDebug() << "Name for" << mBdaddr << "is" << properties["Name"].toString();
         mDeviceName = properties["Name"].toString();
     }
 
@@ -169,7 +172,7 @@ void BluetoothMonitor::init()
         foreach (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
             if (con && con->settings() && con->settings()->connectionType() == NetworkManager::ConnectionSettings::Bluetooth) {
                 NetworkManager::BluetoothSetting::Ptr btSetting = con->settings()->setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
-                if (btSetting->bluetoothAddress() == mBdaddr) {
+                if (NetworkManager::Utils::macAddressFromString(btSetting->bluetoothAddress()) == mBdaddr) {
                     exists = true;
                     break;
                 }
@@ -184,6 +187,8 @@ void BluetoothMonitor::init()
             btSetting->setBluetoothAddress(NetworkManager::Utils::macAddressFromString(mBdaddr));
             btSetting->setProfileType(NetworkManager::BluetoothSetting::Panu);
             btSetting->setInitialized(true);
+            qDebug() << "Adding PAN connection" << connectionSettings;
+
             NetworkManager::addConnection(connectionSettings.toMap());
         }
         return;
@@ -193,6 +198,8 @@ void BluetoothMonitor::init()
         kWarning(KDE_DEFAULT_DEBUG_AREA) << "waiting for it to be registered in ModemManager";
         return;
     }
+
+    qDebug() << "Connecting to modem's" << mDevicePath << "serial DUN port with" << mService;
 
     /*
      * Contact BlueZ to connect phone's service.
@@ -211,14 +218,17 @@ void BluetoothMonitor::init()
 
 void BluetoothMonitor::modemAdded(const QString &udi)
 {
-    kDebug(KDE_DEFAULT_DEBUG_AREA);
-    ModemManager::ModemInterface::Ptr modem;
-    modem = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::GsmNetwork);
+    qDebug() << "Modem added" << udi;
+
+    ModemManager::ModemInterface::Ptr modem = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::GsmCard);
 
     if (!modem) {
         // Try CDMA if no GSM device has been found.
         modem = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::NotGsm);
     }
+
+    qDebug() << "Found suitable modem:" << modem->udi();
+    qDebug() << "DUN device:" << mDunDevice;
 
     QStringList temp = mDunDevice.split('/');
     if (temp.count() == 3) {
@@ -250,16 +260,12 @@ void BluetoothMonitor::modemAdded(const QString &udi)
         return;
     }
 
-    if (mobileConnectionWizard) {
-        return;
-    }
-
     bool exists = false;
 
     foreach (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
         if (con && con->settings() && con->settings()->connectionType() == NetworkManager::ConnectionSettings::Bluetooth) {
             NetworkManager::BluetoothSetting::Ptr btSetting = con->settings()->setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
-            if (btSetting->bluetoothAddress() == mBdaddr) {
+            if (btSetting->bluetoothAddress() == NetworkManager::Utils::macAddressFromString(mBdaddr)) {
                 exists = true;
                 break;
             }
@@ -267,29 +273,37 @@ void BluetoothMonitor::modemAdded(const QString &udi)
     }
 
     if (!exists) {
-        QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown);
-        if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
-            qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
-            if (wizard.data()->args().count() == 2) { //GSM or CDMA
-                QVariantMap tmp = qdbus_cast<QVariantMap>(wizard.data()->args().value(1));
+        mobileConnectionWizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown);
+        if (mobileConnectionWizard.data()->exec() == QDialog::Accepted && mobileConnectionWizard.data()->getError() == MobileProviders::Success) {
+            qDebug() << "Mobile broadband wizard finished:" << mobileConnectionWizard.data()->type() << mobileConnectionWizard.data()->args();
+            if (mobileConnectionWizard.data()->args().count() == 2) { //GSM or CDMA
+                qDebug() << "Creating new PAN connection for BT device:" << mBdaddr;
+
+                QVariantMap tmp = qdbus_cast<QVariantMap>(mobileConnectionWizard.data()->args().value(1));
                 NetworkManager::ConnectionSettings connectionSettings(NetworkManager::ConnectionSettings::Bluetooth, NM_BT_CAPABILITY_DUN);
                 connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
                 connectionSettings.setId(mDeviceName);
                 NetworkManager::BluetoothSetting::Ptr btSetting = connectionSettings.setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
                 btSetting->setBluetoothAddress(NetworkManager::Utils::macAddressFromString(mBdaddr));
                 btSetting->setProfileType(NetworkManager::BluetoothSetting::Dun);
+                btSetting->setInitialized(true);
 
-                if (wizard.data()->type() == NetworkManager::ConnectionSettings::Gsm) {
+                if (mobileConnectionWizard.data()->type() == NetworkManager::ConnectionSettings::Gsm) {
                     connectionSettings.setting(NetworkManager::Setting::Gsm)->fromMap(tmp);
-                } else if (wizard.data()->type() == NetworkManager::ConnectionSettings::Cdma) {
+                    connectionSettings.setting(NetworkManager::Setting::Gsm)->setInitialized(true);
+                } else if (mobileConnectionWizard.data()->type() == NetworkManager::ConnectionSettings::Cdma) {
                     connectionSettings.setting(NetworkManager::Setting::Cdma)->fromMap(tmp);
+                    connectionSettings.setting(NetworkManager::Setting::Cdma)->setInitialized(true);
                 }
+
+                qDebug() << "Adding DUN connection" << connectionSettings;
+
                 NetworkManager::addConnection(connectionSettings.toMap());
             }
         }
 
-        if (wizard) {
-            wizard.data()->deleteLater();
+        if (mobileConnectionWizard) {
+            mobileConnectionWizard.clear();
         }
     }
 }

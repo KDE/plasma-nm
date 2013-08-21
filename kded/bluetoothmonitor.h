@@ -48,7 +48,7 @@ private:
     QString mDunDevice;
     QString mDevicePath;
     QString mDeviceName;
-    MobileConnectionWizard *mobileConnectionWizard;
+    QWeakPointer<MobileConnectionWizard> mobileConnectionWizard;
 
     QString deviceName();
 };

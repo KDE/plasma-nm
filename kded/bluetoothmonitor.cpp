@@ -186,6 +186,7 @@ void BluetoothMonitor::init()
             btSetting->setInitialized(true);
             NetworkManager::addConnection(connectionSettings.toMap());
         }
+        return;
     } else if (mService != QLatin1String("dun")) {
         mDunDevice = mService;
         kWarning(KDE_DEFAULT_DEBUG_AREA) << "device(" << mDunDevice << ") for" << mBdaddr << " passed as argument";

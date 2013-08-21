@@ -39,6 +39,7 @@
 #include <NetworkManagerQt/BluetoothSetting>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/Utils>
 
 BluetoothMonitor::BluetoothMonitor(QObject * parent): QObject(parent), mobileConnectionWizard(0)
 {
@@ -180,8 +181,9 @@ void BluetoothMonitor::init()
             connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
             connectionSettings.setId(mDeviceName);
             NetworkManager::BluetoothSetting::Ptr btSetting = connectionSettings.setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
-            btSetting->setBluetoothAddress(mBdaddr.toUtf8());
+            btSetting->setBluetoothAddress(NetworkManager::Utils::macAddressFromString(mBdaddr));
             btSetting->setProfileType(NetworkManager::BluetoothSetting::Panu);
+            btSetting->setInitialized(true);
             NetworkManager::addConnection(connectionSettings.toMap());
         }
     } else if (mService != QLatin1String("dun")) {
@@ -200,7 +202,6 @@ void BluetoothMonitor::init()
     QDBusReply<QString> reply = serial.call(QLatin1String("Connect"), mService);
     if (!reply.isValid()) {
         KMessageBox::error(0, i18n("Error activating devices's serial port: %1", reply.error().message()));
-//         kapp->quit();
         return;
     }
 
@@ -274,7 +275,7 @@ void BluetoothMonitor::modemAdded(const QString &udi)
                 connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
                 connectionSettings.setId(mDeviceName);
                 NetworkManager::BluetoothSetting::Ptr btSetting = connectionSettings.setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
-                btSetting->setBluetoothAddress(mBdaddr.toUtf8());
+                btSetting->setBluetoothAddress(NetworkManager::Utils::macAddressFromString(mBdaddr));
                 btSetting->setProfileType(NetworkManager::BluetoothSetting::Dun);
 
                 if (wizard.data()->type() == NetworkManager::ConnectionSettings::Gsm) {

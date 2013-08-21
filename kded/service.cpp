@@ -45,6 +45,8 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 {
     Q_D(NetworkManagementService);
 
+    KGlobal::insertCatalog("plasma_applet_org.kde.plasma-nm");  // mobile wizard
+
     d->agent = new SecretAgent(this);
     new InterfaceNotification(this);
     new ModemMonitor(this);

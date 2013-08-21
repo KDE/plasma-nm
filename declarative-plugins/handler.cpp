@@ -91,7 +91,9 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     wifiSetting->setInitialized(true);
     wifiSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
     wifiSetting->setSsid(ap->ssid().toUtf8());
-
+    if (ap->mode() ==NetworkManager::AccessPoint::Adhoc) {
+        wifiSetting->setMode(NetworkManager::WirelessSetting::Adhoc);
+    }
     NetworkManager::WirelessSecuritySetting::Ptr wifiSecurity = settings->setting(NetworkManager::Setting::WirelessSecurity).dynamicCast<NetworkManager::WirelessSecuritySetting>();
 
     NetworkManager::Utils::WirelessSecurityType securityType = NetworkManager::Utils::findBestWirelessSecurity(wifiDev->wirelessCapabilities(), true, (ap->mode() == NetworkManager::AccessPoint::Adhoc), ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());

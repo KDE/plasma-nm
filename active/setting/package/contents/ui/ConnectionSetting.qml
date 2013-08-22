@@ -51,13 +51,23 @@ Item {
                 }
             }
 
+            WirelessSettingWidget {
+                id: wirelessWidget;
+
+                anchors {
+                    left: parent.left;
+                    right: parent.right;
+                    top: connectionWidget.bottom;
+                    topMargin: 24;
+                }
+            }
             Ipv4SettingWidget {
                 id: ipv4Widget;
 
                 anchors {
                     left: parent.left;
                     right: parent.right;
-                    top: connectionWidget.bottom;
+                    top: wirelessWidget.bottom;
                     topMargin: 24;
                 }
             }
@@ -77,11 +87,15 @@ Item {
             var resultingMap = [];
             resultingMap.connection = connectionWidget.getSetting();
             resultingMap.ipv4 = ipv4Widget.getSetting();
+            resultingMap.wireless = wirelessWidget.getSetting();
             for (var key in resultingMap["connection"]) {
                 console.log(key + ":" + resultingMap["connection"][key]);
             }
             for (var key in resultingMap["ipv4"]) {
                 console.log(key + ":" + resultingMap["ipv4"][key]);
+            }
+            for (var key in resultingMap["wireless"]) {
+                console.log(key + ":" + resultingMap["wireless"][key]);
             }
         }
     }

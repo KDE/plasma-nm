@@ -91,7 +91,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     wifiSetting->setInitialized(true);
     wifiSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
     wifiSetting->setSsid(ap->ssid().toUtf8());
-    if (ap->mode() ==NetworkManager::AccessPoint::Adhoc) {
+    if (ap->mode() == NetworkManager::AccessPoint::Adhoc) {
         wifiSetting->setMode(NetworkManager::WirelessSetting::Adhoc);
     }
     NetworkManager::WirelessSecuritySetting::Ptr wifiSecurity = settings->setting(NetworkManager::Setting::WirelessSecurity).dynamicCast<NetworkManager::WirelessSecuritySetting>();
@@ -130,7 +130,11 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
             wifiSecurity->setWepKey0(password);
             wifiSecurity->setWepKeyFlags(NetworkManager::Setting::AgentOwned);
         } else {
-            wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
+            if (ap->mode() == NetworkManager::AccessPoint::Adhoc) {
+                wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaNone);
+            } else {
+                wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
+            }
             wifiSecurity->setPsk(password);
             wifiSecurity->setPskFlags(NetworkManager::Setting::AgentOwned);
         }

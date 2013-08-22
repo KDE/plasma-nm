@@ -166,7 +166,7 @@ Item {
 
     function loadSetting(settingMap) {
         wirelessSsidInput.text = settingMap["ssid"];
-        if (settingMap["mode"] == "infra") {
+        if (settingMap["mode"] == "infrastructure") {
             wirelessMode = modes.INFRA;
             wirelessModeSelectionCombo.text = i18n("Infrastructure");
         } else if (settingMap["mode"] == "adhoc") {
@@ -181,13 +181,13 @@ Item {
     function getSetting() {
         var settingMap = [];
 
-        settingMap.ssid = wirelessSsidInput.text;
+        settingMap["ssid"] = wirelessSsidInput.text;
         if (wirelessMode == modes.INFRA) {
-            settingMap.mode = "infra";
+            settingMap["mode"] = "infrastructure";
         } else if (wirelessMode == modes.ADHOC) {
-            settingMap.mode = "adhoc";
+            settingMap["mode"] = "adhoc";
         } else {
-            settingMap.mode = "ap";
+            settingMap["mode"] = "ap";
         }
 
         return settingMap;

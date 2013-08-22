@@ -348,6 +348,7 @@ Item {
         } else if (settingMap["method"] == "manual") {
             ipv4Method = methods.MANUAL;
             ipv4MethodSelectionCombo.text = i18n("Manual");
+            // These properties are transferred and customized from the original NMVariantMap from NM
             ipv4AddressInput.text = settingMap["address"];
             ipv4GatewayInput.text = settingMap["gateway"];
             ipv4NetmaskInput.text = settingMap["netmask"];
@@ -364,16 +365,17 @@ Item {
         var settingMap = [];
 
         if (ipv4Method == methods.AUTO) {
-            settingMap.method = "auto";
+            settingMap["method"] = "auto";
         } else if (ipv4Method == methods.SHARED) {
-            settingMap.method = "shared";
+            settingMap["method"] = "shared";
         } else {
-            settingMap.method = "manual";
-            settingMap.address = ipv4ManualConfigurationLoader.item.address;
-            settingMap.netmask = ipv4ManualConfigurationLoader.item.netmask;
-            settingMap.gateway = ipv4ManualConfigurationLoader.item.gateway;
-            settingMap.dns1 = ipv4ManualConfigurationLoader.item.dns1;
-            settingMap.dns2 = ipv4ManualConfigurationLoader.item.dns2;
+            settingMap["method"] = "manual";
+            // These properties have to be fixed in the NMVariantMap passed to NM
+            settingMap["address"] = ipv4ManualConfigurationLoader.item.address;
+            settingMap["netmask"] = ipv4ManualConfigurationLoader.item.netmask;
+            settingMap["gateway"] = ipv4ManualConfigurationLoader.item.gateway;
+            settingMap["dns1"] = ipv4ManualConfigurationLoader.item.dns1;
+            settingMap["dns2"] = ipv4ManualConfigurationLoader.item.dns2;
         }
 
         return settingMap;

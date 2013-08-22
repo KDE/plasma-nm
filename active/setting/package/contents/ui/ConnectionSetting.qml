@@ -61,13 +61,24 @@ Item {
                     topMargin: 24;
                 }
             }
+
+            WirelessSecuritySettingWidget {
+                id: wirelessSecurityWidget;
+
+                anchors {
+                    left: parent.left;
+                    right: parent.right;
+                    top: wirelessWidget.bottom;
+                }
+            }
+
             Ipv4SettingWidget {
                 id: ipv4Widget;
 
                 anchors {
                     left: parent.left;
                     right: parent.right;
-                    top: wirelessWidget.bottom;
+                    top: wirelessSecurityWidget.bottom;
                     topMargin: 24;
                 }
             }
@@ -83,19 +94,24 @@ Item {
         text: "Print setting";
 
         onClicked: {
-            //TODO do a real action
+            //TODO pass the resultingMap to NM
+            //TODO add a connection type
             var resultingMap = [];
-            resultingMap.connection = connectionWidget.getSetting();
-            resultingMap.ipv4 = ipv4Widget.getSetting();
-            resultingMap.wireless = wirelessWidget.getSetting();
+            resultingMap["connection"] = connectionWidget.getSetting();
+            resultingMap["ipv4"] = ipv4Widget.getSetting();
+            resultingMap["802-11-wireless"] = wirelessWidget.getSetting();
+            resultingMap["802-11-wireless-security"] = wirelessSecurityWidget.getSetting();
             for (var key in resultingMap["connection"]) {
                 console.log(key + ":" + resultingMap["connection"][key]);
             }
             for (var key in resultingMap["ipv4"]) {
                 console.log(key + ":" + resultingMap["ipv4"][key]);
             }
-            for (var key in resultingMap["wireless"]) {
-                console.log(key + ":" + resultingMap["wireless"][key]);
+            for (var key in resultingMap["802-11-wireless"]) {
+                console.log(key + ":" + resultingMap["802-11-wireless"][key]);
+            }
+            for (var key in resultingMap["802-11-wireless-security"]) {
+                console.log(key + ":" + resultingMap["802-11-wireless-security"][key]);
             }
         }
     }

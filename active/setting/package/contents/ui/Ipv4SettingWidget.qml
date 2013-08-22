@@ -90,6 +90,7 @@ Item {
     Loader {
         id: ipv4ManualConfigurationLoader;
 
+        height: childrenRect.height;
         anchors {
             left: parent.left;
             right: parent.right;
@@ -108,9 +109,6 @@ Item {
             property alias dns2: ipv4Dns2Input.text;
 
             height: childrenRect.height;
-            anchors {
-                fill: parent;
-            }
 
             Item {
                 id: ipv4AddressConfiguration;
@@ -285,7 +283,7 @@ Item {
 
         visualParent: ipv4MethodSelectionCombo;
         content: Item {
-            height: 100;
+            height: 96;
             width: 200;
             ListModel {
                 id: ipv4MethodsModel;

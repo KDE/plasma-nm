@@ -165,7 +165,7 @@ void ConnectionIcon::setIcons()
     foreach (const NetworkManager::ActiveConnection::Ptr & active, actives) {
         if (((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) ||
             (active->state() == NetworkManager::ActiveConnection::Activating && !defaultRouteExists)) {
-            if (active->devices().isEmpty()) {
+            if (active->vpn() || active->devices().isEmpty()) {
                 continue;
             }
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());

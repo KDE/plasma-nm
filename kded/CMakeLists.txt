@@ -5,6 +5,7 @@ set(kded_plasmanm_SRCS
    service.cpp
    pindialog.cpp
    modemmonitor.cpp
+   bluetoothmonitor.cpp
 )
 
 kde4_add_ui_files(kded_plasmanm_SRCS

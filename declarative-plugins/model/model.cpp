@@ -389,7 +389,7 @@ void Model::wirelessNetworkSignalChanged(const QString& ssid, int strength)
         item->updateSignalStrenght(strength);
 
         if (updateItem(item)) {
-            NMModelDebug() << "Item " << item->name() << " has been changed (wireless signal changed)";
+            //NMModelDebug() << "Item " << item->name() << " has been changed (wireless signal changed)";
         }
     }
 }

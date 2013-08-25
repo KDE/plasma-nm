@@ -163,7 +163,11 @@ Item {
     Toolbar {
         id: toolbar;
 
-        anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            bottom: parent.bottom;
+        }
     }
 
     Component.onCompleted: {

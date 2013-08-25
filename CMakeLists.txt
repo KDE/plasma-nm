@@ -34,6 +34,7 @@ pkg_check_modules(NETWORKMANAGER REQUIRED NetworkManager)
 add_definitions(
     ${QT_DEFINITIONS}
     ${KDE_DEFINITIONS}
+    ${NETWORKMANAGERQT_CFLAGS_OTHER}
 )
 
 include_directories(${CMAKE_SOURCE_DIR}

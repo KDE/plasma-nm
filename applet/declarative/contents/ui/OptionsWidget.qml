@@ -82,7 +82,10 @@ Item {
         PlasmaComponents.CheckBox {
             id: networkingEnabled;
 
-            anchors { left: parent.left; right: parent.right }
+            anchors {
+                left: parent.left;
+                right: parent.right;
+            }
             text: i18n("Networking enabled");
 
             onClicked: {
@@ -94,7 +97,10 @@ Item {
             id: wirelessEnabled;
 
             height: availableDevices.wirelessAvailable ? networkingEnabled.height : 0;
-            anchors { left: parent.left; right: parent.right }
+            anchors {
+                left: parent.left;
+                right: parent.right;
+            }
             visible: availableDevices.wirelessAvailable;
             text: i18n("Wireless enabled");
 
@@ -107,7 +113,10 @@ Item {
             id: wimaxEnabled;
 
             height: availableDevices.wimaxAvailable ? networkingEnabled.height : 0;
-            anchors { left: parent.left; right: parent.right }
+            anchors {
+                left: parent.left;
+                right: parent.right;
+            }
             visible: availableDevices.wimaxAvailable;
             text: i18n("Wimax enabled");
 
@@ -120,7 +129,10 @@ Item {
             id: wwanEnabled;
 
             height: availableDevices.wwanAvailable ? networkingEnabled.height : 0;
-            anchors { left: parent.left; right: parent.right }
+            anchors {
+                left: parent.left;
+                right: parent.right;
+            }
             visible: availableDevices.wwanAvailable;
             text: i18n("Mobile broadband enabled");
 
@@ -132,7 +144,7 @@ Item {
         PlasmaComponents.Button {
             id: openEditorButton;
 
-            anchors { horizontalCenter: parent.horizontalCenter }
+            anchors.horizontalCenter: parent.horizontalCenter;
             text: i18n("Edit connections...");
 
             onClicked: {

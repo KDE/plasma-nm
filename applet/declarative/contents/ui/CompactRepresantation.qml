@@ -52,8 +52,12 @@ Item {
     QIconItem {
         id: hoverIcon;
 
-        width: parent.width/1.5; height: parent.height/1.5;
-        anchors { bottom: parent.bottom; right: parent.right }
+        width: parent.width/1.5;
+        height: parent.height/1.5;
+        anchors {
+            bottom: parent.bottom;
+            right: parent.right;
+        }
         visible: false;
     }
 

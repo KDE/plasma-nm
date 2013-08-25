@@ -14,6 +14,7 @@ Name[pt_BR]=Gerenciamento de rede
 Name[sk]=Správa siete
 Name[sv]=Nätverkshantering
 Name[tr]=Ağ Yönetimi
+Name[ug]=تور باشقۇرۇش
 Name[uk]=Керування мережею
 Name[x-test]=xxNetwork Managementxx
 Name[zh_CN]=网络管理

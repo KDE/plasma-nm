@@ -354,7 +354,7 @@ void Monitor::gsmNetworkSignalQualityChanged(uint signal)
                 NetworkManager::ModemDevice::Ptr modem = dev.objectCast<NetworkManager::ModemDevice>();
                 if (modem) {
                     if (modem->getModemNetworkIface()->device() == gsmNetwork->device()) {
-                        NMMonitorDebug() << "Modem " << modem->udi() << " signal changed to " << signal;
+                        //NMMonitorDebug() << "Modem " << modem->udi() << " signal changed to " << signal;
                         Q_EMIT modemSignalQualityChanged(modem->uni());
                     }
                 }
@@ -474,7 +474,7 @@ void Monitor::wirelessNetworkSignalChanged(int strength)
     NetworkManager::WirelessNetwork * networkPtr = qobject_cast<NetworkManager::WirelessNetwork*>(sender());
 
     if (networkPtr) {
-        NMMonitorDebug() << "Wireless network " << networkPtr->ssid() << " signal strength changed to " << strength;
+        //NMMonitorDebug() << "Wireless network " << networkPtr->ssid() << " signal strength changed to " << strength;
         Q_EMIT wirelessNetworkSignalChanged(networkPtr->ssid(), strength);
     }
 }

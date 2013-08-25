@@ -528,5 +528,5 @@ void ModelItem::updateSignalStrenght(int strength)
 
     updateDetails();
 
-    NMItemDebug() << name() << ": signal strength changed to " << m_signal;
+    //NMItemDebug() << name() << ": signal strength changed to " << m_signal;
 }

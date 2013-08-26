@@ -165,8 +165,50 @@ Item {
                     anchors {
                         left: parent.horizontalCenter;
                     }
+                    echoMode: TextInput.Password;
                 }
             }
+
+            Item {
+                id: showPassword;
+
+                height: childrenRect.height;
+
+                anchors {
+                    left: parent.left;
+                    right: parent.right;
+                    top: passwordConfiguration.bottom;
+                    topMargin: 12;
+                }
+
+                PlasmaComponents.Label {
+                    id: showPassowrdLabel;
+
+                    anchors {
+                        right: parent.horizontalCenter;
+                        rightMargin: 12;
+                    }
+                    text: i18n("Show password:");
+                }
+
+                PlasmaComponents.Switch {
+                    id: showPasswordSwitch;
+
+                    anchors {
+                        left: parent.horizontalCenter;
+                    }
+                    checked: false;
+
+                    onCheckedChanged: {
+                        if (checked) {
+                            passwordInput.echoMode = TextInput.Normal;
+                        } else {
+                            passwordInput.echoMode = TextInput.Password;
+                        }
+                    }
+                }
+            }
+
         }
     }
 

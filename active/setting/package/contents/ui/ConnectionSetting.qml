@@ -22,6 +22,7 @@ import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasmanm 0.1 as PlasmaNm
+import org.kde.active.settings 0.1
 
 Item {
     property variant selectedItemModel;
@@ -155,8 +156,15 @@ Item {
         }
     }
 
+    ConnectionSettings {
+        id: connectionSettings;
+    }
+
     onSelectedItemModelChanged: {
-        // TODO: reload setting
         console.log(selectedItemModel.itemName);
+        var map = [];
+        map = connectionSettings.loadSettings(selectedItemModel.itemUuid);
+        if (map["ipv4"])
+            ipv4Widget.loadSetting(map["ipv4"]);
     }
 }

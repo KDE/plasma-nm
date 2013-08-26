@@ -18,31 +18,23 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "networksettingsplugin.h"
-#include "networksettings.h"
-#include "connectionsettings.h"
+#ifndef PLASMA_NM_CONNECTION_SETTINGS_H
+#define PLASMA_NM_CONNECTION_SETTINGS_H
 
-#include <QDeclarativeComponent>
+#include <QObject>
 
-#include <KDebug>
-#include <KPluginFactory>
+#include <NetworkManagerQt/generic-types.h>
 
-K_PLUGIN_FACTORY(NetworkSettingsFactory, registerPlugin<NetworkSettingsPlugin>();)
-K_EXPORT_PLUGIN(NetworkSettingsFactory("active_settings_network"))
-
-NetworkSettingsPlugin::NetworkSettingsPlugin(QObject *parent, const QVariantList &list) :
-    QObject(parent)
+class ConnectionSettings : public QObject
 {
-    Q_UNUSED(list)
+Q_OBJECT
+public:
+    explicit ConnectionSettings(QObject* parent = 0);
+    virtual ~ConnectionSettings();
 
-    kDebug() << "NetworkSettingsPlugin created:)";
-    qmlRegisterType<NetworkSettings>();
-    qmlRegisterType<NetworkSettings>("org.kde.active.settings", 0, 1, "NetworkSettings");
-    qmlRegisterType<ConnectionSettings>("org.kde.active.settings", 0, 1, "ConnectionSettings");
-}
+public Q_SLOTS:
+    QVariantMap loadSettings(const QString & uuid);
 
-NetworkSettingsPlugin::~NetworkSettingsPlugin()
-{
-}
+};
 
-#include "networksettingsplugin.moc"
+#endif // PLASMA_NM_CONNECTION_SETTINGS_H

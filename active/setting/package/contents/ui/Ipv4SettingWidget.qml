@@ -349,11 +349,16 @@ Item {
             ipv4Method = methods.MANUAL;
             ipv4MethodSelectionCombo.text = i18n("Manual");
             // These properties are transferred and customized from the original NMVariantMap from NM
-            ipv4AddressInput.text = settingMap["address"];
-            ipv4GatewayInput.text = settingMap["gateway"];
-            ipv4NetmaskInput.text = settingMap["netmask"];
-            ipv4Dns1Input.text = settingMap["dns1"];
-            ipv4Dns2Input.text = settingMap["dns2"];
+            if (settingMap["address"])
+                ipv4ManualConfigurationLoader.item.address = settingMap["address"];
+            if (settingMap["gateway"])
+                ipv4ManualConfigurationLoader.item.netmask = settingMap["gateway"];
+            if (settingMap["netmask"])
+                ipv4ManualConfigurationLoader.item.gateway = settingMap["netmask"];
+            if (settingMap["dns1"])
+                ipv4ManualConfigurationLoader.item.dns1 = settingMap["dns1"];
+            if (settingMap["dns2"])
+                ipv4ManualConfigurationLoader.item.dns2 = settingMap["dns2"];
         } else {
             // Default
             ipv4MethodSelectionCombo.text = i18n("Automatic");

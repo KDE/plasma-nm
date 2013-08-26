@@ -35,12 +35,16 @@ Item {
             left: parent.left;
             right: parent.right;
             top: parent.top;
-            bottom: addButton.top;
+            bottom: connectDisconnectButton.top;
             bottomMargin: 10;
         }
 
         // TODO: load setting
-        Flickable {
+        flickableItem: Flickable {
+
+            contentHeight: childrenRect.height;
+            clip: true;
+
             ConnectionSettingWidget {
                 id: connectionWidget;
 
@@ -87,7 +91,7 @@ Item {
 
     PlasmaComponents.Button {
         anchors {
-            right: addButton.left;
+            right: connectDisconnectButton.left;
             bottom: parent.bottom;
             rightMargin: 10;
         }
@@ -117,7 +121,7 @@ Item {
     }
 
     PlasmaComponents.Button {
-        id: addButton;
+        id: connectDisconnectButton;
 
         anchors {
             right: parent.right;

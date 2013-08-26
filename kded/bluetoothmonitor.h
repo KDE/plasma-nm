@@ -33,7 +33,6 @@ class BluetoothMonitor: public QObject
 Q_OBJECT
 Q_CLASSINFO("D-Bus Interface", "org.kde.plasmanm")
 public:
-    // dunDevice must be empty for PANU connections.
     explicit BluetoothMonitor(QObject * parent);
     ~BluetoothMonitor();
 
@@ -49,7 +48,5 @@ private:
     QString mDevicePath;
     QString mDeviceName;
     QWeakPointer<MobileConnectionWizard> mobileConnectionWizard;
-
-    QString deviceName();
 };
 #endif

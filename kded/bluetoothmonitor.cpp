@@ -23,12 +23,9 @@
 #include "bluetoothmonitor.h"
 #include "connectiondetaileditor.h"
 
-// #include <nm-setting-bluetooth.h>
-
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QUuid>
-#include <QTimer>
 
 #include <KDebug>
 #include <KStandardDirs>

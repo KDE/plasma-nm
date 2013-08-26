@@ -166,6 +166,12 @@ Item {
         map = connectionSettings.loadSettings(selectedItemModel.itemUuid);
         if (map["connection"])
             connectionWidget.loadSetting(map["connection"]);
+        if (map["802-11-wireless"]) {
+            wirelessWidget.loadSetting(map["802-11-wireless"]);
+            if (map["802-11-wireless-security"]) {
+                wirelessSecurityWidget.loadSetting(map["802-11-wireless-security"]);
+            }
+        }
         if (map["ipv4"])
             ipv4Widget.loadSetting(map["ipv4"]);
     }

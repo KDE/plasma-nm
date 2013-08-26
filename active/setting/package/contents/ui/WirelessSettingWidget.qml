@@ -117,6 +117,7 @@ Item {
             }
         }
     }
+    
 
     PlasmaComponents.Dialog {
         id: wirelessModeSelectionDialog;
@@ -166,15 +167,17 @@ Item {
 
     function loadSetting(settingMap) {
         wirelessSsidInput.text = settingMap["ssid"];
-        if (settingMap["mode"] == "infrastructure") {
-            wirelessMode = modes.INFRA;
-            wirelessModeSelectionCombo.text = i18n("Infrastructure");
-        } else if (settingMap["mode"] == "adhoc") {
-            wirelessMode = modes.ADHOC;
-            wirelessModeSelectionCombo.text = i18n("Ad-hoc");
-        } else if (settingMap["mode"] == "ap") {
-            wirelessMode = modes.AP;
-            wirelessModeSelectionCombo.text = i18n("AP");
+        if (settingMap["mode"]) {
+            if (settingMap["mode"] == "infrastructure") {
+                wirelessMode = modes.INFRA;
+                wirelessModeSelectionCombo.text = i18n("Infrastructure");
+            } else if (settingMap["mode"] == "adhoc") {
+                wirelessMode = modes.ADHOC;
+                wirelessModeSelectionCombo.text = i18n("Ad-hoc");
+            } else if (settingMap["mode"] == "ap") {
+                wirelessMode = modes.AP;
+                wirelessModeSelectionCombo.text = i18n("AP");
+            }
         }
     }
 

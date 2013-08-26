@@ -279,26 +279,34 @@ Item {
     ]
 
     function loadSetting(settingMap) {
-        if (settingMap["key-mgmt"] == "none") {
-            wirelessSecurity = securityTypes.WEP;
-            wirelessSecuritySelectionCombo.text = i18n("WEP");
-            passwordInput.text = settingMap["wep-key0"];
-        } else if (settingMap["key-mgmt"] == "ieee8021x") {
-            wirelessSecurity = securityTypes.DYNAMICWEP;
-            wirelessSecuritySelectionCombo.text = i18n("Dynamic WEP");
-            if (settingMap["auth-alg"] == "leap") {
-                usernameInput.text = settingMap["leap-username"];
-                passwordInput.text = settingMap["leap-password"];
+        if (settingMap["key-mgmt"]) {
+            if (settingMap["key-mgmt"] == "none") {
+                wirelessSecurity = securityTypes.WEP;
+                wirelessSecuritySelectionCombo.text = i18n("WEP");
+                if (settingMap["wep-key0"])
+                    wirelessSecurityPasswordConfigurationLoader.item.password = settingMap["wep-key0"];
+            } else if (settingMap["key-mgmt"] == "ieee8021x") {
+                wirelessSecurity = securityTypes.DYNAMICWEP;
+                wirelessSecuritySelectionCombo.text = i18n("Dynamic WEP");
+                if (settingMap["auth-alg"]) {
+                    if (settingMap["auth-alg"] == "leap") {
+                        if (settingMap["leap-username"])
+                            wirelessSecurityPasswordConfigurationLoader.item.username = settingMap["leap-username"];
+                        if (settingMap["leap-password"])
+                            wirelessSecurityPasswordConfigurationLoader.item.password = settingMap["leap-password"];
+                    }
+                }
+                // TODO implement WPA enterprise later
+            } else if (settingMap["key-mgmt"] == "wpa-none" || settingMap["key-mgmg"] == "wpa-psk") {
+                wirelessSecurity = securityTypes.WPA;
+                wirelessSecuritySelectionCombo.text = i18n("WPA/WPA2 Personal");
+                if (settingMap["psk"])
+                    wirelessSecurityPasswordConfigurationLoader.item.password = settingMap["psk"];
+            } else if (settingMap["key-mgmt"] == "wpa-eap") {
+                wirelessSecurity = securityTypes.WPAEAP;
+                wirelessSecuritySelectionCombo.text = i18n("WPA/WPA2 Enterprise");
+                // TODO implement WPA enterprise later
             }
-            // TODO implement WPA enterprise later
-        } else if (settingMap["key-mgmt"] == "wpa-none" || settingMap["key-mgmg"] == "wpa-psk") {
-            wirelessSecurity = securityTypes.WPA;
-            wirelessSecuritySelectionCombo.text = i18n("WPA/WPA2 Personal");
-            passwordInput.text = settingMap["psk"];
-        } else if (settingMap["key-mgmt"] == "wpa-eap") {
-            wirelessSecurity = securityTypes.WPAEAP;
-            wirelessSecuritySelectionCombo.text = i18n("WPA/WPA2 Enterprise");
-            // TODO implement WPA enterprise later
         }
     }
 

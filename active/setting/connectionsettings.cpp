@@ -50,7 +50,20 @@ QVariantMap ConnectionSettings::loadSettings(const QString& uuid)
         return resultingMap;
     }
 
-    NetworkManager::Ipv4Setting::Ptr ipv4Setting = connection->settings()->setting(NetworkManager::Setting::Ipv4).staticCast<NetworkManager::Ipv4Setting>();
+    NetworkManager::ConnectionSettings::Ptr connectionsettings = connection->settings();
+
+    if (!connectionsettings) {
+        return resultingMap;
+    } else {
+        QVariantMap map;
+
+        map.insert("id", connectionsettings->id());
+        map.insert("autoconnect", connectionsettings->autoconnect());
+
+        resultingMap.insert("connection", map);
+    }
+
+    NetworkManager::Ipv4Setting::Ptr ipv4Setting = connectionsettings->setting(NetworkManager::Setting::Ipv4).staticCast<NetworkManager::Ipv4Setting>();
 
     if (ipv4Setting) {
         QVariantMap map;

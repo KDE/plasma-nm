@@ -164,6 +164,8 @@ Item {
         console.log(selectedItemModel.itemName);
         var map = [];
         map = connectionSettings.loadSettings(selectedItemModel.itemUuid);
+        if (map["connection"])
+            connectionWidget.loadSetting(map["connection"]);
         if (map["ipv4"])
             ipv4Widget.loadSetting(map["ipv4"]);
     }

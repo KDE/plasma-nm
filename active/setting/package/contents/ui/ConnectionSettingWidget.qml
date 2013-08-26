@@ -92,11 +92,12 @@ Item {
 
     function loadSetting(settingMap) {
         connectionNameInput.text = settingMap["id"];
-        // This property is changed to string value
-        if (settingMap["autoconnect"] == "true") {
-            automaticallyConnectSwitch.checked = true;
-        } else {
-            automaticallyConnectSwitch.checked = false;
+        if (settingMap["autoconnect"]) {
+            if (settingMap["autoconnect"] == true) {
+                automaticallyConnectSwitch.checked = true;
+            } else {
+                automaticallyConnectSwitch.checked = false;
+            }
         }
     }
 
@@ -104,11 +105,10 @@ Item {
         var settingMap = [];
 
         settingMap["id"] = connectionNameInput.text;
-        // This property has to be changed to boolean value
         if (automaticallyConnectSwitch.checked) {
-            settingMap["autoconnect"] = "true";
+            settingMap["autoconnect"] = true;
         } else {
-            settingMap["autoconnect"] = "false";
+            settingMap["autoconnect"] = false;
         }
 
         return settingMap;

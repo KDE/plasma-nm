@@ -278,7 +278,21 @@ Item {
         }
     ]
 
+    onWirelessSecurityChanged: {
+        if (wirelessSecurity != securityTypes.NONE && wirelessSecurityPasswordConfigurationLoader.status == Loader.Ready) {
+            wirelessSecurityPasswordConfigurationLoader.item.username = "";
+            wirelessSecurityPasswordConfigurationLoader.item.password = "";
+        }
+    }
+
+    function resetSetting() {
+        wirelessSecurity = securityTypes.NONE;
+        wirelessSecuritySelectionCombo.text = i18n("None");
+    }
+
     function loadSetting(settingMap) {
+        resetSetting();
+
         if (settingMap["key-mgmt"]) {
             if (settingMap["key-mgmt"] == "none") {
                 wirelessSecurity = securityTypes.WEP;

@@ -338,7 +338,14 @@ Item {
         }
     ]
 
+    function resetSetting() {
+        ipv4Method = methods.AUTO;
+        ipv4MethodSelectionCombo.text = i18n("Automatic");
+    }
+
     function loadSetting(settingMap) {
+        resetSetting();
+
         if (settingMap["method"] == "auto") {
             ipv4Method = methods.AUTO;
             ipv4MethodSelectionCombo.text = i18n("Automatic");

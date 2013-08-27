@@ -29,6 +29,10 @@ Item {
 
     anchors.fill: parent;
 
+    ConnectionSettings {
+        id: connectionSettings;
+    }
+
     PlasmaExtras.ScrollArea {
         id: settingsScrollArea;
 
@@ -40,51 +44,30 @@ Item {
             bottomMargin: 10;
         }
 
-        // TODO: load setting
         flickableItem: Flickable {
 
             contentHeight: childrenRect.height;
             clip: true;
 
-            ConnectionSettingWidget {
-                id: connectionWidget;
+            Loader {
+                id: connectionSettingsLoader;
 
+                height: childrenRect.height;
                 anchors {
                     left: parent.left;
                     right: parent.right;
-                    top: parent.top
+                    top: parent.top;
                 }
-            }
 
-            WirelessSettingWidget {
-                id: wirelessWidget;
-
-                anchors {
-                    left: parent.left;
-                    right: parent.right;
-                    top: connectionWidget.bottom;
-                    topMargin: 24;
-                }
-            }
-
-            WirelessSecuritySettingWidget {
-                id: wirelessSecurityWidget;
-
-                anchors {
-                    left: parent.left;
-                    right: parent.right;
-                    top: wirelessWidget.bottom;
-                }
-            }
-
-            Ipv4SettingWidget {
-                id: ipv4Widget;
-
-                anchors {
-                    left: parent.left;
-                    right: parent.right;
-                    top: wirelessSecurityWidget.bottom;
-                    topMargin: 24;
+                onLoaded: {
+                    console.log("loaded");
+                    if (selectedItemModel.itemUuid) {
+                        var map = [];
+                        map = connectionSettings.loadSettings(selectedItemModel.itemUuid);
+                        item.loadSettings(map);
+                    } else {
+                        item.resetSettings();
+                    }
                 }
             }
         }
@@ -101,23 +84,9 @@ Item {
         onClicked: {
             //TODO pass the resultingMap to NM
             //TODO add a connection type
-            var resultingMap = [];
-            resultingMap["connection"] = connectionWidget.getSetting();
-            resultingMap["ipv4"] = ipv4Widget.getSetting();
-            resultingMap["802-11-wireless"] = wirelessWidget.getSetting();
-            resultingMap["802-11-wireless-security"] = wirelessSecurityWidget.getSetting();
-            for (var key in resultingMap["connection"]) {
-                console.log(key + ":" + resultingMap["connection"][key]);
-            }
-            for (var key in resultingMap["ipv4"]) {
-                console.log(key + ":" + resultingMap["ipv4"][key]);
-            }
-            for (var key in resultingMap["802-11-wireless"]) {
-                console.log(key + ":" + resultingMap["802-11-wireless"][key]);
-            }
-            for (var key in resultingMap["802-11-wireless-security"]) {
-                console.log(key + ":" + resultingMap["802-11-wireless-security"][key]);
-            }
+            //TODO do a real action
+            if (connectionSettingsLoader.status == Loader.Ready)
+                connectionSettingsLoader.item.getSettings();
         }
     }
 
@@ -156,23 +125,22 @@ Item {
         }
     }
 
-    ConnectionSettings {
-        id: connectionSettings;
-    }
+    states: [
+        State {
+            id: wirelessSetting;
+            when: selectedItemModel && selectedItemModel.itemType == 14;
+            PropertyChanges { target: connectionSettingsLoader; source: "WirelessSetting.qml" }
+        }
+    ]
 
     onSelectedItemModelChanged: {
         console.log(selectedItemModel.itemName);
-        var map = [];
-        map = connectionSettings.loadSettings(selectedItemModel.itemUuid);
-        if (map["connection"])
-            connectionWidget.loadSetting(map["connection"]);
-        if (map["802-11-wireless"]) {
-            wirelessWidget.loadSetting(map["802-11-wireless"]);
-            if (map["802-11-wireless-security"]) {
-                wirelessSecurityWidget.loadSetting(map["802-11-wireless-security"]);
-            }
+        if (selectedItemModel.itemUuid && connectionSettingsLoader.status == Loader.Ready) {
+            var map = [];
+            map = connectionSettings.loadSettings(selectedItemModel.itemUuid);
+            connectionSettingsLoader.item.loadSettings(map);
+        } else if (connectionSettingsLoader.status == Loader.Ready) {
+            connectionSettingsLoader.item.resetSettings();
         }
-        if (map["ipv4"])
-            ipv4Widget.loadSetting(map["ipv4"]);
     }
 }

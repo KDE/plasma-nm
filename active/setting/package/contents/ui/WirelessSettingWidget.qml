@@ -117,7 +117,7 @@ Item {
             }
         }
     }
-    
+
 
     PlasmaComponents.Dialog {
         id: wirelessModeSelectionDialog;
@@ -165,7 +165,15 @@ Item {
         }
     }
 
+    function resetSetting() {
+        wirelessMode = modes.INFRA;
+        wirelessModeSelectionCombo.text = i18n("Infrastructure");
+        wirelessSsidInput.text = "";
+    }
+
     function loadSetting(settingMap) {
+        resetSetting();
+        
         wirelessSsidInput.text = settingMap["ssid"];
         if (settingMap["mode"]) {
             if (settingMap["mode"] == "infrastructure") {

@@ -130,6 +130,11 @@ Item {
             id: wirelessSetting;
             when: selectedItemModel && selectedItemModel.itemType == 14;
             PropertyChanges { target: connectionSettingsLoader; source: "WirelessSetting.qml" }
+        },
+        State {
+            id: wiredSetting;
+            when: selectedItemModel && selectedItemModel.itemType == 13;
+            PropertyChanges { target: connectionSettingsLoader; source: "WiredSetting.qml" }
         }
     ]
 

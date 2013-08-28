@@ -31,11 +31,15 @@ PlasmaComponents.ListItem {
     property bool expanded: false;
     property bool detailsView: false;
 
+    // Read only properties
     property bool sectionHidden: (!connectionView.activeExpanded && itemSection == i18n("Active connections")) ||
                                  (!connectionView.previousExpanded && itemSection == i18n("Previous connections")) ||
                                  (!connectionView.unknownExpanded && itemSection == i18n("Unknown connections"))
-    // Item is unknown && itemType == Wireless && itemSecurityType != DynamicWep && itemSecurityType != LEAP && itemSecurityType != WpaEap && itemSecurityType != Wpa2Eap
-    property bool predictableWirelessPassword: !itemUuid && itemType == 14 && itemSecure && itemSecurityType != 2 && itemSecurityType != 3 && itemSecurityType != 5 && itemSecurityType != 7;
+
+    property bool predictableWirelessPassword: !itemUuid && itemType == PlasmaNM.Enums.Wireless &&
+                                                itemSecure && itemSecurityType != PlasmaNM.Enums.DynamicWep && itemSecurityType != PlasmaNM.Enums.LEAP &&
+                                                              itemSecurityType != PlasmaNM.Enums.WpaEap && itemSecurityType != PlasmaNM.Enums.Wpa2Eap;
+
     property int defaultCheckboxHeight: theme.defaultFont.mSize.height * 1.6 + buttonPadding.margins.top;
 
     signal itemExpanded(string connectionPath, bool itemExpanded);
@@ -196,7 +200,7 @@ PlasmaComponents.ListItem {
                         left: parent.left;
                         right: parent.right;
                     }
-                    visible: (itemDevicePath && itemConnected && itemType != 11)
+                    visible: (itemDevicePath && itemConnected && itemType != PlasmaNM.Enums.Vpn)
 
                     PlasmaNM.TrafficMonitor {
                         anchors.fill: parent;

@@ -13,6 +13,7 @@ set(plasma_nm_qml_plugins_SRCS
    model/sortmodel.cpp
 
    debug.cpp
+   enums.cpp
    handler.cpp
    qmlplugins.cpp
 )

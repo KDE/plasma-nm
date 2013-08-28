@@ -35,12 +35,14 @@
 #include "model/sortmodel.h"
 
 #include "handler.h"
+#include "enums.h"
 
 void QmlPlugins::registerTypes(const char* uri)
 {
     qmlRegisterType<AvailableDevices>(uri, 0, 1, "AvailableDevices");
     qmlRegisterType<ConnectionIcon>(uri, 0, 1, "ConnectionIcon");
     qmlRegisterType<EnabledConnections>(uri, 0, 1, "EnabledConnections");
+    qmlRegisterType<Enums>(uri, 0, 1, "Enums");
     qmlRegisterType<GlobalConfig>(uri, 0, 1, "GlobalConfig");
     qmlRegisterType<NetworkStatus>(uri, 0, 1, "NetworkStatus");
     qmlRegisterType<Handler>(uri, 0, 1, "Handler");

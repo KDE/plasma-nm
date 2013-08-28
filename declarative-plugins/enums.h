@@ -27,7 +27,9 @@ class Enums : public QObject
 {
 Q_OBJECT
 Q_ENUMS(ConnectionType)
+Q_ENUMS(Ipv4Method)
 Q_ENUMS(SecurityType)
+Q_ENUMS(WirelessMode)
 
 public:
     explicit Enums(QObject* parent = 0);
@@ -51,6 +53,14 @@ public:
         Wireless
     };
 
+    enum Ipv4Method {
+        Automatic = 0,
+        LinkLocal,
+        Manual,
+        Shared,
+        Disabled
+    };
+
     enum SecurityType {
         None = 0,
         StaticWep,
@@ -60,6 +70,12 @@ public:
         WpaEap,
         Wpa2Psk,
         Wpa2Eap
+    };
+
+    enum WirelessMode {
+        Infrastructure = 0,
+        Adhoc,
+        Ap
     };
 };
 

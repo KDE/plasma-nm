@@ -21,17 +21,12 @@
 import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
+import org.kde.plasmanm 0.1 as PlasmaNm
 
 Item {
     id: ipv4SettingWidget;
 
-    property variant methods: {
-        AUTO: 0,
-        MANUAL: 1,
-        SHARED: 2
-    }
-
-    property int ipv4Method: methods.AUTO;
+    property int ipv4Method: PlasmaNm.Enums.Automatic;
 
     height: childrenRect.height;
 
@@ -289,9 +284,9 @@ Item {
                 id: ipv4MethodsModel;
 
                 Component.onCompleted: {
-                    append({"name": i18n("Automatic"), "method": methods.AUTO});
-                    append({"name": i18n("Manual"), "method": methods.MANUAL});
-                    append({"name": i18n("Shared"), "method": methods.SHARED});
+                    append({"name": i18n("Automatic"), "method": PlasmaNm.Enums.Automatic});
+                    append({"name": i18n("Manual"), "method": PlasmaNm.Enums.Manual});
+                    append({"name": i18n("Shared"), "method": PlasmaNm.Enums.Shared});
                 }
             }
 
@@ -327,19 +322,19 @@ Item {
     states: [
         State {
             id: autoShared;
-            when: ipv4Method == methods.AUTO || ipv4Method == methods.SHARED;
+            when: ipv4Method == PlasmaNm.Enums.Automatic || ipv4Method == PlasmaNm.Enums.Shared;
             PropertyChanges { target: ipv4ManualConfigurationLoader; sourceComponent: undefined }
         },
 
         State {
             id: manual;
-            when: ipv4Method == methods.MANUAL;
+            when: ipv4Method == PlasmaNm.Enums.Manual;
             PropertyChanges { target: ipv4ManualConfigurationLoader; sourceComponent: ipv4ManualConfiguration }
         }
     ]
 
     function resetSetting() {
-        ipv4Method = methods.AUTO;
+        ipv4Method = PlasmaNm.Enums.Automatic;
         ipv4MethodSelectionCombo.text = i18n("Automatic");
     }
 
@@ -347,13 +342,13 @@ Item {
         resetSetting();
 
         if (settingMap["method"] == "auto") {
-            ipv4Method = methods.AUTO;
+            ipv4Method =PlasmaNm.Enums.Automatic;
             ipv4MethodSelectionCombo.text = i18n("Automatic");
         } else if (settingMap["method"] == "shared") {
-            ipv4Method = methods.SHARED;
+            ipv4Method = PlasmaNm.Enums.Shared;
             ipv4MethodSelectionCombo.text = i18n("Shared");
         } else if (settingMap["method"] == "manual") {
-            ipv4Method = methods.MANUAL;
+            ipv4Method = PlasmaNm.Enums.Manual;
             ipv4MethodSelectionCombo.text = i18n("Manual");
             // These properties are transferred and customized from the original NMVariantMap from NM
             if (settingMap["address"])
@@ -366,19 +361,15 @@ Item {
                 ipv4ManualConfigurationLoader.item.dns1 = settingMap["dns1"];
             if (settingMap["dns2"])
                 ipv4ManualConfigurationLoader.item.dns2 = settingMap["dns2"];
-        } else {
-            // Default
-            ipv4MethodSelectionCombo.text = i18n("Automatic");
-            ipv4Method = methods.AUTO;
         }
     }
 
     function getSetting() {
         var settingMap = [];
 
-        if (ipv4Method == methods.AUTO) {
+        if (ipv4Method == PlasmaNm.Enums.Automatic) {
             settingMap["method"] = "auto";
-        } else if (ipv4Method == methods.SHARED) {
+        } else if (ipv4Method == PlasmaNm.Enums.Shared) {
             settingMap["method"] = "shared";
         } else {
             settingMap["method"] = "manual";

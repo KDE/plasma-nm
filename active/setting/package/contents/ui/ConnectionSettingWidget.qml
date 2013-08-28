@@ -97,7 +97,7 @@ Item {
 
     function loadSetting(settingMap) {
         resetSetting();
-        
+
         connectionNameInput.text = settingMap["id"];
         if (settingMap["autoconnect"]) {
             if (settingMap["autoconnect"] == true) {

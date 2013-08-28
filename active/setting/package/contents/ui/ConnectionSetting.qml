@@ -129,12 +129,12 @@ Item {
     states: [
         State {
             id: wirelessSetting;
-            when: selectedItemModel && selectedItemModel.itemType == 14;
+            when: selectedItemModel && selectedItemModel.itemType == PlasmaNm.Enums.Wireless;
             PropertyChanges { target: connectionSettingsLoader; source: "WirelessSetting.qml" }
         },
         State {
             id: wiredSetting;
-            when: selectedItemModel && selectedItemModel.itemType == 13;
+            when: selectedItemModel && selectedItemModel.itemType == PlasmaNm.Enums.Wired;
             PropertyChanges { target: connectionSettingsLoader; source: "WiredSetting.qml" }
         }
     ]
@@ -150,7 +150,7 @@ Item {
             map = connectionSettings.loadSettings(selectedItemModel.itemUuid);
             connectionSettingsLoader.item.loadSettings(map);
         } else if (connectionSettingsLoader.status == Loader.Ready) {
-            if (selectedItemModel.itemType == 14) {
+            if (selectedItemModel.itemType == PlasmaNm.Enums.Wireless) {
                 // For uknown wireless connections we can pre-fill some properties
                 var connectionMap = [];
                 connectionMap["id"] = selectedItemModel.itemSsid;
@@ -160,20 +160,20 @@ Item {
                 if (selectedItemModel.itemSecure) {
                     console.log(selectedItemModel.itemSecurityType);
                     // StaticWep
-                    if (selectedItemModel.itemSecurityType == 1) {
+                    if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.StaticWep) {
                         wirelessSecurityMap["key-mgmt"] = "none";
                     // DynamicWep
-                    } else if (selectedItemModel.itemSecurityType == 2) {
+                    } else if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.DynamicWep) {
                         wirelessSecurityMap["key-mgmt"] = "ieee8021x";
                     // LEAP
-                    } else if (selectedItemModel.itemSecurityType == 3) {
+                    } else if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.Leap) {
                         wirelessSecurityMap["key-mgmt"] = "ieee8021x";
                         wirelessSecurityMap["auth-alg"] = "leap";
                     // WPA/WPA2
-                    } else if (selectedItemModel.itemSecurityType == 4 || selectedItemModel.itemSecurityType == 6) {
+                    } else if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.WpaPsk || selectedItemModel.itemSecurityType == PlasmaNm.Enums.Wpa2Psk) {
                         wirelessSecurityMap["key-mgmt"] = "wpa-psk";
                     // WPA/WPA2 Enterprise
-                    } else {
+                    } else if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.WpaEap || selectedItemModel.itemSecurityType == PlasmaNm.Enums.Wpa2Eap) {
                         wirelessSecurityMap["key-mgmt"] = "wpa-eap";
                     }
                 }

@@ -21,17 +21,12 @@
 import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
+import org.kde.plasmanm 0.1 as PlasmaNm
 
 Item {
     id: wirelessSettingWidget;
 
-    property variant modes: {
-        INFRA: 0,
-        ADHOC: 1,
-        AP: 2
-    }
-
-    property int wirelessMode: modes.INFRA;
+    property int wirelessMode: PlasmaNm.Enums.Infrastructure;
 
     height: childrenRect.height;
 
@@ -130,9 +125,9 @@ Item {
                 id: wirelessModeModel;
 
                 Component.onCompleted: {
-                    append({"name": i18n("Infrastructure"), "mode": modes.INFRA});
-                    append({"name": i18n("Ad-hoc"), "mode": modes.ADHOC});
-                    append({"name": i18n("AP"), "mode": modes.AP});
+                    append({"name": i18n("Infrastructure"), "mode": PlasmaNm.Enums.Infrastructure});
+                    append({"name": i18n("Ad-hoc"), "mode": PlasmaNm.Enums.Adhoc});
+                    append({"name": i18n("AP"), "mode": PlasmaNm.Enums.Ap});
                 }
             }
 
@@ -166,24 +161,24 @@ Item {
     }
 
     function resetSetting() {
-        wirelessMode = modes.INFRA;
+        wirelessMode = PlasmaNm.Enums.Infrastructure;
         wirelessModeSelectionCombo.text = i18n("Infrastructure");
         wirelessSsidInput.text = "";
     }
 
     function loadSetting(settingMap) {
         resetSetting();
-        
+
         wirelessSsidInput.text = settingMap["ssid"];
         if (settingMap["mode"]) {
             if (settingMap["mode"] == "infrastructure") {
-                wirelessMode = modes.INFRA;
+                wirelessMode = PlasmaNm.Enums.Infrastructure;
                 wirelessModeSelectionCombo.text = i18n("Infrastructure");
             } else if (settingMap["mode"] == "adhoc") {
-                wirelessMode = modes.ADHOC;
+                wirelessMode = PlasmaNm.Enums.Adhoc;
                 wirelessModeSelectionCombo.text = i18n("Ad-hoc");
             } else if (settingMap["mode"] == "ap") {
-                wirelessMode = modes.AP;
+                wirelessMode = PlasmaNm.Enums.Ap;
                 wirelessModeSelectionCombo.text = i18n("AP");
             }
         }
@@ -193,9 +188,9 @@ Item {
         var settingMap = [];
 
         settingMap["ssid"] = wirelessSsidInput.text;
-        if (wirelessMode == modes.INFRA) {
+        if (wirelessMode == PlasmaNm.Enums.Infrastructure) {
             settingMap["mode"] = "infrastructure";
-        } else if (wirelessMode == modes.ADHOC) {
+        } else if (wirelessMode == PlasmaNm.Enums.Adhoc) {
             settingMap["mode"] = "adhoc";
         } else {
             settingMap["mode"] = "ap";

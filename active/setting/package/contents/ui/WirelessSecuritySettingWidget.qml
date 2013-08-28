@@ -21,20 +21,12 @@
 import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
+import org.kde.plasmanm 0.1 as PlasmaNm
 
 Item {
     id: wirelessSecuritySettingWidget;
 
-    property int wirelessSecurity: securityTypes.NONE;
-
-    property variant securityTypes: {
-        NONE: 0,
-        WEP: 1,
-        LEAP: 2,
-        DYNAMICWEP: 3,
-        WPA: 4,
-        WPAEAP: 5
-    }
+    property int wirelessSecurity: PlasmaNm.Enums.None;
 
     height: childrenRect.height;
 
@@ -102,14 +94,14 @@ Item {
             Item {
                 id: usernameConfiguration;
 
-                height: wirelessSecurity == securityTypes.LEAP ? childrenRect.height : 0;
+                height: wirelessSecurity == PlasmaNm.Enums.Leap ? childrenRect.height : 0;
                 anchors {
                     top: parent.top;
                     left: parent.left;
                     right: parent.right;
-                    topMargin: wirelessSecurity == securityTypes.LEAP ? 12 : 0;
+                    topMargin: wirelessSecurity == PlasmaNm.Enums.Leap ? 12 : 0;
                 }
-                visible: wirelessSecurity == securityTypes.LEAP;
+                visible: wirelessSecurity == PlasmaNm.Enums.Leap;
 
                 PlasmaComponents.Label {
                     id: usernameLabel;
@@ -149,10 +141,8 @@ Item {
                         right: parent.horizontalCenter;
                         rightMargin: 12;
                     }
-                    text: if (wirelessSecurity == securityTypes.WEP) {
+                    text: if (wirelessSecurity == PlasmaNm.Enums.StaticWep) {
                               i18n("Key:");
-                          } else if (wirelessSecurity == securityTypes.LEAP || wirelessSecurity == securityTypes.WPA) {
-                              i18n("Password:");
                           } else {
                               i18n("Password:");
                           }
@@ -226,12 +216,12 @@ Item {
 
                 Component.onCompleted: {
                     // TODO: Disable Dynamic WEP and WPA/WPA2 Enterprise for now
-                    append({"name": i18n("None"), "security": securityTypes.NONE});
-                    append({"name": i18n("WEP"), "security": securityTypes.WEP});
-                    append({"name": i18n("LEAP"), "security": securityTypes.LEAP});
-//                     append({"name": i18n("Dynamic WEP (802.1x)"), "security": securityTypes.DYNAMICWEP});
-                    append({"name": i18n("WPA/WPA2 Personal"), "security": securityTypes.WPA});
-//                     append({"name": i18n("WPA/WPA2 Enterprise"), "security": securityTypes.WPAEAP});
+                    append({"name": i18n("None"), "security": PlasmaNm.Enums.None});
+                    append({"name": i18n("WEP"), "security": PlasmaNm.Enums.StaticWep});
+                    append({"name": i18n("LEAP"), "security": PlasmaNm.Enums.Leap});
+//                     append({"name": i18n("Dynamic WEP (802.1x)"), "security": PlasmaNm.Enums.DynamicWep});
+                    append({"name": i18n("WPA/WPA2 Personal"), "security": PlasmaNm.Enums.WpaPsk});
+//                     append({"name": i18n("WPA/WPA2 Enterprise"), "security": PlasmaNm.Enums.WpaEap});
                 }
             }
 
@@ -267,26 +257,26 @@ Item {
     states: [
         State {
             id: none;
-            when: wirelessSecurity == securityTypes.NONE;
+            when: wirelessSecurity == PlasmaNm.Enums.None;
             PropertyChanges { target: wirelessSecurityPasswordConfigurationLoader; sourceComponent: undefined }
         },
 
         State {
             id: secured;
-            when: wirelessSecurity != securityTypes.NONE;
+            when: wirelessSecurity != PlasmaNm.Enums.None;
             PropertyChanges { target: wirelessSecurityPasswordConfigurationLoader; sourceComponent: wirelessSecurityPasswordConfiguration }
         }
     ]
 
     onWirelessSecurityChanged: {
-        if (wirelessSecurity != securityTypes.NONE && wirelessSecurityPasswordConfigurationLoader.status == Loader.Ready) {
+        if (wirelessSecurity != PlasmaNm.Enums.None && wirelessSecurityPasswordConfigurationLoader.status == Loader.Ready) {
             wirelessSecurityPasswordConfigurationLoader.item.username = "";
             wirelessSecurityPasswordConfigurationLoader.item.password = "";
         }
     }
 
     function resetSetting() {
-        wirelessSecurity = securityTypes.NONE;
+        wirelessSecurity = PlasmaNm.Enums.None;
         wirelessSecuritySelectionCombo.text = i18n("None");
     }
 
@@ -295,12 +285,12 @@ Item {
 
         if (settingMap["key-mgmt"]) {
             if (settingMap["key-mgmt"] == "none") {
-                wirelessSecurity = securityTypes.WEP;
+                wirelessSecurity = PlasmaNm.Enums.StaticWep;
                 wirelessSecuritySelectionCombo.text = i18n("WEP");
                 if (settingMap["wep-key0"])
                     wirelessSecurityPasswordConfigurationLoader.item.password = settingMap["wep-key0"];
             } else if (settingMap["key-mgmt"] == "ieee8021x") {
-                wirelessSecurity = securityTypes.DYNAMICWEP;
+                wirelessSecurity = PlasmaNm.Enums.DynamicWep;
                 wirelessSecuritySelectionCombo.text = i18n("Dynamic WEP");
                 if (settingMap["auth-alg"]) {
                     if (settingMap["auth-alg"] == "leap") {
@@ -312,12 +302,12 @@ Item {
                 }
                 // TODO implement WPA enterprise later
             } else if (settingMap["key-mgmt"] == "wpa-none" || settingMap["key-mgmt"] == "wpa-psk") {
-                wirelessSecurity = securityTypes.WPA;
+                wirelessSecurity = PlasmaNm.Enums.WpaPsk;
                 wirelessSecuritySelectionCombo.text = i18n("WPA/WPA2 Personal");
                 if (settingMap["psk"])
                     wirelessSecurityPasswordConfigurationLoader.item.password = settingMap["psk"];
             } else if (settingMap["key-mgmt"] == "wpa-eap") {
-                wirelessSecurity = securityTypes.WPAEAP;
+                wirelessSecurity = PlasmaNm.Enums.WpaEap;
                 wirelessSecuritySelectionCombo.text = i18n("WPA/WPA2 Enterprise");
                 // TODO implement WPA enterprise later
             }
@@ -327,25 +317,25 @@ Item {
     function getSetting() {
         var settingMap = [];
 
-        if (wirelessSecurity == securityTypes.NONE) {
+        if (wirelessSecurity == PlasmaNm.Enums.None) {
             // nothing
-        } else if (wirelessSecurity == securityTypes.WEP) {
+        } else if (wirelessSecurity == PlasmaNm.Enums.StaticWep) {
             settingMap["key-mgmt"] = "none";
             // TODO: probably check wep-key index
             settingMap["wep-key0"] = wirelessSecurityPasswordConfigurationLoader.item.password;
-        } else if (wirelessSecurity == securityTypes.LEAP) {
+        } else if (wirelessSecurity == PlasmaNm.Enums.Leap) {
             settingMap["key-mgmt"] = "ieee8021x";
             settingMap["auth-alg"] = "leap";
             settingMap["leap-username"] = wirelessSecurityPasswordConfigurationLoader.item.username;
             settingMap["leap-password"] = wirelessSecurityPasswordConfigurationLoader.item.password;
-        } else if (wirelessSecurity == securityTypes.DYNAMICWEP) {
+        } else if (wirelessSecurity == PlasmaNm.Enums.DynamicWep) {
             settingMap["key-mgmt"] = "ieee8021x";
             // TODO implement WPA enterprise later
-        } else if (wirelessSecurity == securityTypes.WPA) {
+        } else if (wirelessSecurity == PlasmaNm.Enums.WpaPsk) {
             // Have to check whether this connection is in ad-hoc mode
             settingMap["key-mgmt"] = "wpa-psk";
             settingMap["psk"] = wirelessSecurityPasswordConfigurationLoader.item.password;
-        } else if (wirelessSecurity == securityTypes.WPAEAP) {
+        } else if (wirelessSecurity == PlasmaNm.Enums.WpaEap) {
             settingMap["key-mgmt"] = "wpa-eap";
             // TODO implement WPA enterprise later
         }

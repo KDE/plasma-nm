@@ -61,13 +61,14 @@ Item {
 
                 onLoaded: {
                     console.log("loaded");
-                    if (selectedItemModel.itemUuid) {
-                        var map = [];
-                        map = connectionSettings.loadSettings(selectedItemModel.itemUuid);
-                        item.loadSettings(map);
-                    } else {
-                        item.resetSettings();
-                    }
+                    loadSettings();
+//                     if (selectedItemModel.itemUuid) {
+//                         var map = [];
+//                         map = connectionSettings.loadSettings(selectedItemModel.itemUuid);
+//                         item.loadSettings(map);
+//                     } else {
+//                         item.resetSettings();
+//                     }
                 }
             }
         }
@@ -140,12 +141,50 @@ Item {
 
     onSelectedItemModelChanged: {
         console.log(selectedItemModel.itemName);
+        loadSettings();
+    }
+
+    function loadSettings() {
         if (selectedItemModel.itemUuid && connectionSettingsLoader.status == Loader.Ready) {
             var map = [];
             map = connectionSettings.loadSettings(selectedItemModel.itemUuid);
             connectionSettingsLoader.item.loadSettings(map);
         } else if (connectionSettingsLoader.status == Loader.Ready) {
-            connectionSettingsLoader.item.resetSettings();
+            if (selectedItemModel.itemType == 14) {
+                // For uknown wireless connections we can pre-fill some properties
+                var connectionMap = [];
+                connectionMap["id"] = selectedItemModel.itemSsid;
+                var wirelessMap = [];
+                wirelessMap["ssid"] = selectedItemModel.itemSsid;
+                var wirelessSecurityMap = [];
+                if (selectedItemModel.itemSecure) {
+                    console.log(selectedItemModel.itemSecurityType);
+                    // StaticWep
+                    if (selectedItemModel.itemSecurityType == 1) {
+                        wirelessSecurityMap["key-mgmt"] = "none";
+                    // DynamicWep
+                    } else if (selectedItemModel.itemSecurityType == 2) {
+                        wirelessSecurityMap["key-mgmt"] = "ieee8021x";
+                    // LEAP
+                    } else if (selectedItemModel.itemSecurityType == 3) {
+                        wirelessSecurityMap["key-mgmt"] = "ieee8021x";
+                        wirelessSecurityMap["auth-alg"] = "leap";
+                    // WPA/WPA2
+                    } else if (selectedItemModel.itemSecurityType == 4 || selectedItemModel.itemSecurityType == 6) {
+                        wirelessSecurityMap["key-mgmt"] = "wpa-psk";
+                    // WPA/WPA2 Enterprise
+                    } else {
+                        wirelessSecurityMap["key-mgmt"] = "wpa-eap";
+                    }
+                }
+                var settingsMap = [];
+                settingsMap["connection"] = connectionMap;
+                settingsMap["802-11-wireless"] = wirelessMap;
+                settingsMap["802-11-wireless-security"] = wirelessSecurityMap;
+                connectionSettingsLoader.item.loadSettings(settingsMap);
+            } else {
+                connectionSettingsLoader.item.resetSettings();
+            }
         }
     }
 }

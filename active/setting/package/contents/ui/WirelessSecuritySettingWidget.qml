@@ -311,7 +311,7 @@ Item {
                     }
                 }
                 // TODO implement WPA enterprise later
-            } else if (settingMap["key-mgmt"] == "wpa-none" || settingMap["key-mgmg"] == "wpa-psk") {
+            } else if (settingMap["key-mgmt"] == "wpa-none" || settingMap["key-mgmt"] == "wpa-psk") {
                 wirelessSecurity = securityTypes.WPA;
                 wirelessSecuritySelectionCombo.text = i18n("WPA/WPA2 Personal");
                 if (settingMap["psk"])

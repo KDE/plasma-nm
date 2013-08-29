@@ -185,7 +185,7 @@ Item {
     }
 
     function getSetting() {
-        var settingMap = [];
+        var settingMap = {};
 
         settingMap["ssid"] = wirelessSsidInput.text;
         if (wirelessMode == PlasmaNm.Enums.Infrastructure) {

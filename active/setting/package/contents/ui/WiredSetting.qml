@@ -21,6 +21,7 @@
 import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
+import org.kde.plasmanm 0.1 as PlasmaNm
 
 Item {
     ConnectionSettingWidget {
@@ -57,14 +58,10 @@ Item {
     }
 
     function getSettings() {
-        var resultingMap = [];
+        var resultingMap = {};
         resultingMap["connection"] = connectionWidget.getSetting();
+        resultingMap["connection"]["type"] = PlasmaNm.Enums.Wired;
         resultingMap["ipv4"] = ipv4Widget.getSetting();
-        for (var key in resultingMap["connection"]) {
-            console.log(key + ":" + resultingMap["connection"][key]);
-        }
-        for (var key in resultingMap["ipv4"]) {
-            console.log(key + ":" + resultingMap["ipv4"][key]);
-        }
+        return resultingMap;
     }
 }

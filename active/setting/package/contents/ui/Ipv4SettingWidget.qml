@@ -365,7 +365,7 @@ Item {
     }
 
     function getSetting() {
-        var settingMap = [];
+        var settingMap = {};
 
         if (ipv4Method == PlasmaNm.Enums.Automatic) {
             settingMap["method"] = "auto";

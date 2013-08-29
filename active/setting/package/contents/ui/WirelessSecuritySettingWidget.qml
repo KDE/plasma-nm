@@ -315,7 +315,7 @@ Item {
     }
 
     function getSetting() {
-        var settingMap = [];
+        var settingMap = {};
 
         if (wirelessSecurity == PlasmaNm.Enums.None) {
             // nothing

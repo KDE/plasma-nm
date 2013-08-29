@@ -60,15 +60,7 @@ Item {
                 }
 
                 onLoaded: {
-                    console.log("loaded");
                     loadSettings();
-//                     if (selectedItemModel.itemUuid) {
-//                         var map = [];
-//                         map = connectionSettings.loadSettings(selectedItemModel.itemUuid);
-//                         item.loadSettings(map);
-//                     } else {
-//                         item.resetSettings();
-//                     }
                 }
             }
         }
@@ -80,14 +72,19 @@ Item {
             bottom: parent.bottom;
             rightMargin: 10;
         }
-        text: "Print setting";
+        text: "Save setting";
 
         onClicked: {
-            //TODO pass the resultingMap to NM
-            //TODO add a connection type
-            //TODO do a real action
-            if (connectionSettingsLoader.status == Loader.Ready)
-                connectionSettingsLoader.item.getSettings();
+            if (connectionSettingsLoader.status == Loader.Ready) {
+                var map = {};
+                map = connectionSettingsLoader.item.getSettings();
+                if (selectedItemModel.itemUuid) {
+                    map["connection"]["uuid"] = selectedItemModel.itemUuid;
+                    connectionSettings.saveSettings(map, selectedItemModel.itemConnectionPath);
+                } else {
+                    connectionSettings.addConnection(map);
+                }
+            }
         }
     }
 
@@ -117,7 +114,9 @@ Item {
                     if (selectedItemModel.itemUuid) {
                         handler.activateConnection(selectedItemModel.itemConnectionPath, selectedItemModel.itemDevicePath, selectedItemModel.itemSpecificPath);
                     } else {
-                        handler.addAndActivateConnection(selectedItemModel.itemDevicePath, selectedItemModel.itemSpecificPath);
+                        var map = {};
+                        map = connectionSettingsLoader.item.getSettings();
+                        connectionSettings.addAndActivateConnection(map, selectedItemModel.itemDevicePath, selectedItemModel.itemSpecificPath);
                     }
                 } else {
                     handler.deactivateConnection(selectedItemModel.itemConnectionPath);
@@ -140,7 +139,6 @@ Item {
     ]
 
     onSelectedItemModelChanged: {
-        console.log(selectedItemModel.itemName);
         loadSettings();
     }
 

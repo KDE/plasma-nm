@@ -34,7 +34,12 @@ public:
 
 public Q_SLOTS:
     QVariantMap loadSettings(const QString & uuid);
+    void addConnection(const QVariantMap & map);
+    void addAndActivateConnection(const QVariantMap & map, const QString & device, const QString & specificPath);
+    void saveSettings(const QVariantMap & map, const QString & connection = QString());
 
+private:
+    NMVariantMapMap nmVariantMapMap(const QVariantMap & map);
 };
 
 #endif // PLASMA_NM_CONNECTION_SETTINGS_H

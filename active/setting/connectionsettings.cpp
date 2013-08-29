@@ -20,12 +20,16 @@
 
 #include <connectionsettings.h>
 
+#include <NetworkManagerQt/AccessPoint>
+#include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/Ipv4Setting>
+#include <NetworkManagerQt/Setting>
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/WirelessSecuritySetting>
+#include <NetworkManagerQt/WiredSetting>
 
 ConnectionSettings::ConnectionSettings(QObject* parent)
     : QObject(parent)
@@ -151,4 +155,174 @@ QVariantMap ConnectionSettings::loadSettings(const QString& uuid)
     return resultingMap;
 }
 
+void ConnectionSettings::addConnection(const QVariantMap& map)
+{
+//     qDebug() << "INPUT";
+//     qDebug() << map;
+//     qDebug() << "OUTPUT";
+//     qDebug() << nmVariantMapMap(map);
+    NetworkManager::addConnection(nmVariantMapMap(map));
+}
+
+void ConnectionSettings::addAndActivateConnection(const QVariantMap& map, const QString& device, const QString& specificPath)
+{
+    NetworkManager::AccessPoint::Ptr ap;
+    NetworkManager::WirelessDevice::Ptr wifiDev;
+    foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+        if (dev->type() == NetworkManager::Device::Wifi) {
+            wifiDev = dev.objectCast<NetworkManager::WirelessDevice>();
+            ap = wifiDev->findAccessPoint(specificPath);
+            if (ap) {
+                break;
+            }
+        }
+    }
+
+    if (!ap) {
+        return;
+    }
+
+    NetworkManager::ConnectionSettings connectionSettings;
+    connectionSettings.fromMap(nmVariantMapMap(map));
+
+    NetworkManager::WirelessSetting::Ptr wifiSetting = connectionSettings.setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+    if (ap->mode() == NetworkManager::AccessPoint::Adhoc) {
+        wifiSetting->setMode(NetworkManager::WirelessSetting::Adhoc);
+    }
+    NetworkManager::addAndActivateConnection(connectionSettings.toMap(), device, specificPath);
+}
+
+
+void ConnectionSettings::saveSettings(const QVariantMap& map, const QString& connection)
+{
+//     qDebug() << "INPUT";
+//     qDebug() << map;
+//     qDebug() << "OUTPUT";
+//     qDebug() << nmVariantMapMap(map);
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
+    con->update(nmVariantMapMap(map));
+}
+
+NMVariantMapMap ConnectionSettings::nmVariantMapMap(const QVariantMap& map)
+{
+    NetworkManager::ConnectionSettings connectionSettings;
+    if (map.contains("connection")) {
+        QVariantMap connectionMap = map.value("connection").toMap();
+        connectionSettings.setConnectionType((NetworkManager::ConnectionSettings::ConnectionType)connectionMap.value("type").toInt());
+        connectionSettings.setId(connectionMap.value("id").toString());
+        connectionSettings.setAutoconnect(connectionMap.value("autoconnect").toBool());
+        if (connectionMap.contains("uuid")) {
+            connectionSettings.setUuid(connectionMap.value("uuid").toString());
+        } else {
+            connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+        }
+
+        // We have to pass at least an empty wired setting
+        if (connectionSettings.connectionType() == NetworkManager::ConnectionSettings::Wired) {
+            NetworkManager::WiredSetting::Ptr wiredSetting = connectionSettings.setting(NetworkManager::Setting::Wired).staticCast<NetworkManager::WiredSetting>();
+            wiredSetting->setInitialized(true);
+        }
+    }
+
+    if (map.contains("ipv4")) {
+        NetworkManager::Ipv4Setting::Ptr ipv4Setting = connectionSettings.setting(NetworkManager::Setting::Ipv4).staticCast<NetworkManager::Ipv4Setting>();
+        QVariantMap ipv4Map = map.value("ipv4").toMap();
+        QString method = ipv4Map.value("method").toString();
+        if (method == "auto") {
+            ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Automatic);
+        } else if (method == "shared") {
+            ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Shared);
+        } else if (method == "manual") {
+            bool valid = false;
+            NetworkManager::IpAddress ipAddr;
+            QList<QHostAddress> dnsServers;
+            if (ipv4Map.contains("address") && ipv4Map.contains("netmask")) {
+                ipAddr.setIp(QHostAddress(ipv4Map.value("address").toString()));
+                ipAddr.setNetmask(QHostAddress(ipv4Map.value("netmask").toString()));
+                if (ipv4Map.contains("gateway")) {
+                    ipAddr.setGateway(QHostAddress(ipv4Map.value("gateway").toString()));
+                }
+                if (ipv4Map.contains("dns1")) {
+                    dnsServers << QHostAddress(ipv4Map.value("dns1").toString());
+                }
+                if (ipv4Map.contains("dns2")) {
+                    dnsServers << QHostAddress(ipv4Map.value("dns2").toString());
+                }
+            }
+
+            if (ipAddr.isValid()) {
+                NetworkManager::IpAddresses addresses;
+                addresses << ipAddr;
+                ipv4Setting->setAddresses(addresses);
+                valid = true;
+            }
+
+            if (!dnsServers.isEmpty()) {
+                ipv4Setting->setDns(dnsServers);
+            }
+
+            if (valid) {
+                ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Manual);
+            } else {
+                if (dnsServers.isEmpty()) {
+                    ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Automatic);
+                } else {
+                    ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Automatic);
+                    ipv4Setting->setIgnoreAutoDns(true);
+                }
+            }
+        }
+        ipv4Setting->setInitialized(true);
+    }
+
+    if (map.contains("802-11-wireless")) {
+        NetworkManager::WirelessSetting::Ptr wirelessSetting = connectionSettings.setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
+        QVariantMap wirelessMap = map.value("802-11-wireless").toMap();
+        wirelessSetting->setSsid(wirelessMap.value("ssid").toString().toUtf8());
+        if (wirelessMap.value("mode").toString() == "infrastructure") {
+            wirelessSetting->setMode(NetworkManager::WirelessSetting::Infrastructure);
+        } else if (wirelessMap.value("mode").toString() == "adhoc") {
+            wirelessSetting->setMode(NetworkManager::WirelessSetting::Adhoc);
+        } else {
+            wirelessSetting->setMode(NetworkManager::WirelessSetting::Ap);
+        }
+        if (map.contains("802-11-wireless-security")) {
+            wirelessSetting->setSecurity("802-11-wireless-security");
+        }
+        wirelessSetting->setInitialized(true);
+    }
+
+    if (map.contains("802-11-wireless-security")) {
+        NetworkManager::WirelessSecuritySetting::Ptr wirelessSecuritySetting = connectionSettings.setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
+        QVariantMap wirelessSecurityMap = map.value("802-11-wireless-security").toMap();
+        QString keymgmt = wirelessSecurityMap.value("key-mgmt").toString();
+        if (keymgmt == "none") {
+            wirelessSecuritySetting->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
+            wirelessSecuritySetting->setWepKey0(wirelessSecurityMap.value("wep-key0").toString());
+            wirelessSecuritySetting->setWepKeyFlags(NetworkManager::Setting::AgentOwned);
+        } else if (keymgmt == "ieee8021x") {
+            if (wirelessSecurityMap.contains("auth-alg") && wirelessSecurityMap.value("auth-alg").toString() == "leap") {
+                wirelessSecuritySetting->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Ieee8021x);
+                wirelessSecuritySetting->setAuthAlg(NetworkManager::WirelessSecuritySetting::Leap);
+                wirelessSecuritySetting->setLeapUsername(wirelessSecurityMap.value("leap-username").toString());
+                wirelessSecuritySetting->setLeapPassword(wirelessSecurityMap.value("leap-password").toString());
+                wirelessSecuritySetting->setLeapPasswordFlags(NetworkManager::Setting::AgentOwned);
+            }
+            // TODO
+        } else if (keymgmt == "wpa-none") {
+            wirelessSecuritySetting->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaNone);
+            wirelessSecuritySetting->setPsk(wirelessSecurityMap.value("psk").toString());
+            wirelessSecuritySetting->setPskFlags(NetworkManager::Setting::AgentOwned);
+        } else if (keymgmt == "wpa-psk") {
+            wirelessSecuritySetting->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
+            wirelessSecuritySetting->setPsk(wirelessSecurityMap.value("psk").toString());
+            wirelessSecuritySetting->setPskFlags(NetworkManager::Setting::AgentOwned);
+        } else if (keymgmt == "wpa-eap") {
+            // TODO
+        }
+        wirelessSecuritySetting->setInitialized(true);
+    }
+
+    return connectionSettings.toMap();
+}
 

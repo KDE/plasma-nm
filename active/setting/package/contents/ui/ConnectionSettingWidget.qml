@@ -100,16 +100,14 @@ Item {
 
         connectionNameInput.text = settingMap["id"];
         if (settingMap["autoconnect"]) {
-            if (settingMap["autoconnect"] == true) {
-                automaticallyConnectSwitch.checked = true;
-            } else {
-                automaticallyConnectSwitch.checked = false;
-            }
+            automaticallyConnectSwitch.checked = true;
+        } else {
+            automaticallyConnectSwitch.checked = false;
         }
     }
 
     function getSetting() {
-        var settingMap = [];
+        var settingMap = {};
 
         settingMap["id"] = connectionNameInput.text;
         if (automaticallyConnectSwitch.checked) {

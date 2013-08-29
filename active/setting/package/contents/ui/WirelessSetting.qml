@@ -21,6 +21,7 @@
 import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
+import org.kde.plasmanm 0.1 as PlasmaNm
 
 Item {
     ConnectionSettingWidget {
@@ -86,22 +87,12 @@ Item {
     }
 
     function getSettings() {
-        var resultingMap = [];
+        var resultingMap = {};
         resultingMap["connection"] = connectionWidget.getSetting();
+        resultingMap["connection"]["type"] = PlasmaNm.Enums.Wireless;
         resultingMap["ipv4"] = ipv4Widget.getSetting();
         resultingMap["802-11-wireless"] = wirelessWidget.getSetting();
         resultingMap["802-11-wireless-security"] = wirelessSecurityWidget.getSetting();
-        for (var key in resultingMap["connection"]) {
-            console.log(key + ":" + resultingMap["connection"][key]);
-        }
-        for (var key in resultingMap["ipv4"]) {
-            console.log(key + ":" + resultingMap["ipv4"][key]);
-        }
-        for (var key in resultingMap["802-11-wireless"]) {
-            console.log(key + ":" + resultingMap["802-11-wireless"][key]);
-        }
-        for (var key in resultingMap["802-11-wireless-security"]) {
-            console.log(key + ":" + resultingMap["802-11-wireless-security"][key]);
-        }
+        return resultingMap;
     }
 }

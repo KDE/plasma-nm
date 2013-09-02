@@ -37,8 +37,8 @@ Item {
         }
     }
 
-    PlasmaExtras.ScrollArea {
-        id: settingsScrollArea;
+    Loader {
+        id: connectionSettingsLoader;
 
         anchors {
             left: parent.left;
@@ -48,23 +48,8 @@ Item {
             bottomMargin: 10;
         }
 
-        flickableItem: Flickable {
-
-            contentHeight: connectionSettingsLoader.item ? connectionSettingsLoader.item.height + 10 : 0;
-
-            Loader {
-                id: connectionSettingsLoader;
-
-                anchors {
-                    top: parent.top;
-                    left: parent.left;
-                    right: parent.right;
-                }
-
-                onLoaded: {
-                    loadSettings();
-                }
-            }
+        onLoaded: {
+            loadSettings();
         }
     }
 

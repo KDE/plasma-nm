@@ -23,48 +23,52 @@ import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasmanm 0.1 as PlasmaNm
 
-Item {
-    height: childrenRect.height;
+PlasmaExtras.ScrollArea {
 
-    ConnectionSettingWidget {
-        id: connectionWidget;
+    flickableItem: Flickable {
 
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            top: parent.top
+        contentHeight: connectionWidget.height + wirelessWidget.height + wirelessSecurityWidget.height + ipv4Widget.height + 58; // + 48 (2 x topMargin) + 10
+
+        ConnectionSettingWidget {
+            id: connectionWidget;
+
+            anchors {
+                left: parent.left;
+                right: parent.right;
+                top: parent.top
+            }
         }
-    }
 
-    WirelessSettingWidget {
-        id: wirelessWidget;
+        WirelessSettingWidget {
+            id: wirelessWidget;
 
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            top: connectionWidget.bottom;
-            topMargin: 24;
+            anchors {
+                left: parent.left;
+                right: parent.right;
+                top: connectionWidget.bottom;
+                topMargin: 24;
+            }
         }
-    }
 
-    WirelessSecuritySettingWidget {
-        id: wirelessSecurityWidget;
+        WirelessSecuritySettingWidget {
+            id: wirelessSecurityWidget;
 
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            top: wirelessWidget.bottom;
+            anchors {
+                left: parent.left;
+                right: parent.right;
+                top: wirelessWidget.bottom;
+            }
         }
-    }
 
-    Ipv4SettingWidget {
-        id: ipv4Widget;
+        Ipv4SettingWidget {
+            id: ipv4Widget;
 
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            top: wirelessSecurityWidget.bottom;
-            topMargin: 24;
+            anchors {
+                left: parent.left;
+                right: parent.right;
+                top: wirelessSecurityWidget.bottom;
+                topMargin: 24;
+            }
         }
     }
 

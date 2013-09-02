@@ -23,27 +23,31 @@ import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasmanm 0.1 as PlasmaNm
 
-Item {
-    height: childrenRect.height;
+PlasmaExtras.ScrollArea {
 
-    ConnectionSettingWidget {
-        id: connectionWidget;
+    flickableItem: Flickable {
 
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            top: parent.top
+        contentHeight: connectionWidget.height + ipv4Widget.height + 34; // + 24 (topMargin) + 10
+
+        ConnectionSettingWidget {
+            id: connectionWidget;
+
+            anchors {
+                left: parent.left;
+                right: parent.right;
+                top: parent.top
+            }
         }
-    }
 
-    Ipv4SettingWidget {
-        id: ipv4Widget;
+        Ipv4SettingWidget {
+            id: ipv4Widget;
 
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            top: connectionWidget.bottom;
-            topMargin: 24;
+            anchors {
+                left: parent.left;
+                right: parent.right;
+                top: connectionWidget.bottom;
+                topMargin: 24;
+            }
         }
     }
 

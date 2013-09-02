@@ -42,6 +42,7 @@ Item {
             id: connectionNameLabel;
 
             anchors {
+                top: parent.top;
                 right: parent.horizontalCenter;
                 rightMargin: 12;
             }
@@ -53,8 +54,13 @@ Item {
 
             width: 200;
             anchors {
+                top: parent.top;
                 left: parent.horizontalCenter;
             }
+        }
+
+        Component.onCompleted: {
+            console.log(height);
         }
     }
 
@@ -74,6 +80,7 @@ Item {
             id: automaticallyConnectLabel;
 
             anchors {
+                top: parent.top;
                 right: parent.horizontalCenter;
                 rightMargin: 12;
             }
@@ -84,9 +91,14 @@ Item {
             id: automaticallyConnectSwitch;
 
             anchors {
+                top: parent.top;
                 left: parent.horizontalCenter;
             }
             checked: true;
+        }
+
+        Component.onCompleted: {
+            console.log(height);
         }
     }
 

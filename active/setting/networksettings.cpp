@@ -54,7 +54,7 @@ NetworkSettings::NetworkSettings()
     d->q = this;
     d->connectionType = NetworkManager::ConnectionSettings::Unknown;
     d->networkSettingsModel = 0;
-    d->settingName = i18n("Network Setting");
+    d->settingName = i18n("Network Settings");
     d->status = i18n("Network status and control");
     d->type = NetworkSettingModelItem::Undefined;
 
@@ -316,16 +316,16 @@ void NetworkSettings::updateSettingName()
 {
     switch (d->type) {
     case NetworkSettingModelItem::Ethernet:
-        setSettingName(i18n("Ethernet Setting"));
+        setSettingName(i18n("Ethernet Settings"));
         break;
     case NetworkSettingModelItem::Modem:
-        setSettingName(i18n("Modem Setting"));
+        setSettingName(i18n("Modem Settings"));
         break;
     case NetworkSettingModelItem::Vpn:
-        setSettingName(i18n("VPN Setting"));
+        setSettingName(i18n("VPN Settings"));
         break;
     case NetworkSettingModelItem::Wifi:
-        setSettingName(i18n("Wireless Setting"));
+        setSettingName(i18n("Wireless Settings"));
         break;
     default:
         break;

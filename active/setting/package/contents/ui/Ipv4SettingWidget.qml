@@ -37,7 +37,7 @@ Item {
             right: parent.horizontalCenter;
             rightMargin: 12;
         }
-        text: i18n("IPv4 configuration");
+        text: i18n("IPv4 Settings");
         level: 3;
     }
 
@@ -85,7 +85,7 @@ Item {
     Loader {
         id: ipv4ManualConfigurationLoader;
 
-        height: childrenRect.height;
+//         height: childrenRect.height;
         anchors {
             left: parent.left;
             right: parent.right;
@@ -134,7 +134,7 @@ Item {
                         left: parent.horizontalCenter;
                     }
 //                     validator: RegExpValidator { regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/ }
-                    inputMask: "000.000.000.000;_";
+//                     inputMask: "000.000.000.000;_";
                 }
             }
 
@@ -167,7 +167,7 @@ Item {
                         left: parent.horizontalCenter;
                     }
 //                         validator: RegExpValidator { regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/ }
-                    inputMask: "000.000.000.000;_";
+//                     inputMask: "000.000.000.000;_";
                 }
             }
 
@@ -200,7 +200,7 @@ Item {
                         left: parent.horizontalCenter;
                     }
 //                         validator: RegExpValidator { regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/ }
-                    inputMask: "000.000.000.000;_";
+//                     inputMask: "000.000.000.000;_";
                 }
             }
 
@@ -233,7 +233,7 @@ Item {
                         left: parent.horizontalCenter;
                     }
 //                         validator: RegExpValidator { regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/ }
-                    inputMask: "000.000.000.000;_";
+//                     inputMask: "000.000.000.000;_";
                 }
             }
 
@@ -266,7 +266,7 @@ Item {
                         left: parent.horizontalCenter;
                     }
 //                         validator: RegExpValidator { regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/ }
-                    inputMask: "000.000.000.000;_";
+//                     inputMask: "000.000.000.000;_";
                 }
             }
         }

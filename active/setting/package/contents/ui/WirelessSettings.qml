@@ -24,6 +24,8 @@ import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasmanm 0.1 as PlasmaNm
 
 Item {
+    height: childrenRect.height;
+
     ConnectionSettingWidget {
         id: connectionWidget;
 
@@ -65,6 +67,18 @@ Item {
             topMargin: 24;
         }
     }
+
+//     PlasmaComponents.Label {
+//         id: foo;
+//
+//         anchors {
+//             top: ipv4Widget;
+//             left: parent.left;
+//             right: parent.right;
+//             topMargin: 24;
+//         }
+//         text: "foooooooooooooooooo";
+//     }
 
     function resetSettings() {
         connectionWidget.resetSetting();

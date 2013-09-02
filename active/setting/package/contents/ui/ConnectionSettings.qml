@@ -50,17 +50,15 @@ Item {
 
         flickableItem: Flickable {
 
-            contentHeight: childrenRect.height;
-            clip: true;
+            contentHeight: connectionSettingsLoader.item ? connectionSettingsLoader.item.height + 10 : 0;
 
             Loader {
                 id: connectionSettingsLoader;
 
-                height: childrenRect.height;
                 anchors {
+                    top: parent.top;
                     left: parent.left;
                     right: parent.right;
-                    top: parent.top;
                 }
 
                 onLoaded: {
@@ -133,12 +131,12 @@ Item {
         State {
             id: wirelessSetting;
             when: selectedItemModel && selectedItemModel.itemType == PlasmaNm.Enums.Wireless;
-            PropertyChanges { target: connectionSettingsLoader; source: "WirelessSetting.qml" }
+            PropertyChanges { target: connectionSettingsLoader; source: "WirelessSettings.qml" }
         },
         State {
             id: wiredSetting;
             when: selectedItemModel && selectedItemModel.itemType == PlasmaNm.Enums.Wired;
-            PropertyChanges { target: connectionSettingsLoader; source: "WiredSetting.qml" }
+            PropertyChanges { target: connectionSettingsLoader; source: "WiredSettings.qml" }
         }
     ]
 

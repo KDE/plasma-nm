@@ -37,7 +37,7 @@ Item {
             right: parent.horizontalCenter;
             rightMargin: 12;
         }
-        text: i18n("Wireless Configuration");
+        text: i18n("Wireless Settings");
         level: 3;
     }
 

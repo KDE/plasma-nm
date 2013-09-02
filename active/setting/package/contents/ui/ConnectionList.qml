@@ -105,10 +105,10 @@ Item {
                         checked: connectionsView.currentIndex == index;
                         onItemSelected: {
                             connectionsView.currentIndex = index;
-                            if (connectionSetting.status == Loader.Null) {
-                                connectionSetting.source = "ConnectionSetting.qml";
+                            if (connectionSettings.status == Loader.Null) {
+                                connectionSettings.source = "ConnectionSettings.qml";
                             }
-                            connectionSetting.item.selectedItemModel = myData;
+                            connectionSettings.item.selectedItemModel = myData;
                         }
             }
 
@@ -120,8 +120,8 @@ Item {
 
             onCountChanged: {
                 if (!count) {
-                    if (connectionSetting.status != Loader.Null) {
-                        connectionSetting.source = "";
+                    if (connectionSettings.status != Loader.Null) {
+                        connectionSettings.source = "";
                     }
                 } else if (count == 1 || currentIndex + 1 > count) {
                     selectFirstItem();
@@ -130,16 +130,16 @@ Item {
 
             function selectFirstItem() {
                 currentIndex = 0;
-                if (connectionSetting.status == Loader.Null) {
-                    connectionSetting.source = "ConnectionSetting.qml";
+                if (connectionSettings.status == Loader.Null) {
+                    connectionSettings.source = "ConnectionSettings.qml";
                 }
-                connectionSetting.item.selectedItemModel = currentItem.myData;
+                connectionSettings.item.selectedItemModel = currentItem.myData;
             }
         }
     }
 
     Loader {
-        id: connectionSetting;
+        id: connectionSettings;
 
         anchors {
             right: parent.right;
@@ -181,7 +181,7 @@ Item {
         if (connectionsView.count) {
             connectionsView.selectFirstItem();
         } else {
-            connectionSetting.source = "";
+            connectionSettings.source = "";
         }
 
     }

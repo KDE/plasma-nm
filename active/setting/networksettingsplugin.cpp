@@ -20,7 +20,7 @@
 
 #include "networksettingsplugin.h"
 #include "networksettings.h"
-#include "connectionsettings.h"
+#include "connectionsettingshandler.h"
 
 #include <QDeclarativeComponent>
 
@@ -38,7 +38,7 @@ NetworkSettingsPlugin::NetworkSettingsPlugin(QObject *parent, const QVariantList
     kDebug() << "NetworkSettingsPlugin created:)";
     qmlRegisterType<NetworkSettings>();
     qmlRegisterType<NetworkSettings>("org.kde.active.settings", 0, 1, "NetworkSettings");
-    qmlRegisterType<ConnectionSettings>("org.kde.active.settings", 0, 1, "ConnectionSettings");
+    qmlRegisterType<ConnectionSettingsHandler>("org.kde.active.settings", 0, 1, "ConnectionSettingsHandler");
 }
 
 NetworkSettingsPlugin::~NetworkSettingsPlugin()

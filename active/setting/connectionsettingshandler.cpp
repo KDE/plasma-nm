@@ -18,7 +18,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <connectionsettings.h>
+#include "connectionsettingshandler.h"
 
 #include <NetworkManagerQt/AccessPoint>
 #include <NetworkManagerQt/WirelessDevice>
@@ -31,16 +31,16 @@
 #include <NetworkManagerQt/WirelessSecuritySetting>
 #include <NetworkManagerQt/WiredSetting>
 
-ConnectionSettings::ConnectionSettings(QObject* parent)
+ConnectionSettingsHandler::ConnectionSettingsHandler(QObject* parent)
     : QObject(parent)
 {
 }
 
-ConnectionSettings::~ConnectionSettings()
+ConnectionSettingsHandler::~ConnectionSettingsHandler()
 {
 }
 
-QVariantMap ConnectionSettings::loadSettings(const QString& uuid)
+QVariantMap ConnectionSettingsHandler::loadSettings(const QString& uuid)
 {
     QVariantMap resultingMap;
 
@@ -165,7 +165,7 @@ QVariantMap ConnectionSettings::loadSettings(const QString& uuid)
     return resultingMap;
 }
 
-void ConnectionSettings::addConnection(const QVariantMap& map)
+void ConnectionSettingsHandler::addConnection(const QVariantMap& map)
 {
 //     qDebug() << "INPUT";
 //     qDebug() << map;
@@ -174,7 +174,7 @@ void ConnectionSettings::addConnection(const QVariantMap& map)
     NetworkManager::addConnection(nmVariantMapMap(map));
 }
 
-void ConnectionSettings::addAndActivateConnection(const QVariantMap& map, const QString& device, const QString& specificPath)
+void ConnectionSettingsHandler::addAndActivateConnection(const QVariantMap& map, const QString& device, const QString& specificPath)
 {
     NetworkManager::AccessPoint::Ptr ap;
     NetworkManager::WirelessDevice::Ptr wifiDev;
@@ -202,7 +202,7 @@ void ConnectionSettings::addAndActivateConnection(const QVariantMap& map, const 
     NetworkManager::addAndActivateConnection(connectionSettings.toMap(), device, specificPath);
 }
 
-void ConnectionSettings::gotSecrets(const QString& id, bool success, const NMVariantMapMap& secrets, const QString& msg)
+void ConnectionSettingsHandler::gotSecrets(const QString& id, bool success, const NMVariantMapMap& secrets, const QString& msg)
 {
     if (success) {
         QVariantMap resultingMap;
@@ -218,7 +218,7 @@ void ConnectionSettings::gotSecrets(const QString& id, bool success, const NMVar
     }
 }
 
-void ConnectionSettings::saveSettings(const QVariantMap& map, const QString& connection)
+void ConnectionSettingsHandler::saveSettings(const QVariantMap& map, const QString& connection)
 {
 //     qDebug() << "INPUT";
 //     qDebug() << map;
@@ -228,7 +228,7 @@ void ConnectionSettings::saveSettings(const QVariantMap& map, const QString& con
     con->update(nmVariantMapMap(map));
 }
 
-NMVariantMapMap ConnectionSettings::nmVariantMapMap(const QVariantMap& map)
+NMVariantMapMap ConnectionSettingsHandler::nmVariantMapMap(const QVariantMap& map)
 {
     NetworkManager::ConnectionSettings connectionSettings;
     if (map.contains("connection")) {

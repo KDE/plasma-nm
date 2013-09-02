@@ -6,7 +6,7 @@ add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 include_directories(${KDE4_INCLUDES} ../../../../components/settings)
 
 set(networksettings_SRCS
-    connectionsettings.cpp
+    connectionsettingshandler.cpp
     networksettingsplugin.cpp
     networksettings.cpp
     networksettingsmodel.cpp

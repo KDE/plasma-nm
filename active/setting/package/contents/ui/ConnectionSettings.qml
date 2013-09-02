@@ -29,8 +29,8 @@ Item {
 
     anchors.fill: parent;
 
-    ConnectionSettings {
-        id: connectionSettings;
+    ConnectionSettingsHandler {
+        id: connectionSettingsHandler;
 
         onLoadSecrets: {
             connectionSettingsLoader.item.loadSecrets(secrets);
@@ -82,9 +82,9 @@ Item {
                 map = connectionSettingsLoader.item.getSettings();
                 if (selectedItemModel.itemUuid) {
                     map["connection"]["uuid"] = selectedItemModel.itemUuid;
-                    connectionSettings.saveSettings(map, selectedItemModel.itemConnectionPath);
+                    connectionSettingsHandler.saveSettings(map, selectedItemModel.itemConnectionPath);
                 } else {
-                    connectionSettings.addConnection(map);
+                    connectionSettingsHandler.addConnection(map);
                 }
             }
         }
@@ -118,7 +118,7 @@ Item {
                     } else {
                         var map = {};
                         map = connectionSettingsLoader.item.getSettings();
-                        connectionSettings.addAndActivateConnection(map, selectedItemModel.itemDevicePath, selectedItemModel.itemSpecificPath);
+                        connectionSettingsHandler.addAndActivateConnection(map, selectedItemModel.itemDevicePath, selectedItemModel.itemSpecificPath);
                     }
                 } else {
                     handler.deactivateConnection(selectedItemModel.itemConnectionPath);
@@ -147,7 +147,7 @@ Item {
     function loadSettings() {
         if (selectedItemModel.itemUuid && connectionSettingsLoader.status == Loader.Ready) {
             var map = [];
-            map = connectionSettings.loadSettings(selectedItemModel.itemUuid);
+            map = connectionSettingsHandler.loadSettings(selectedItemModel.itemUuid);
             connectionSettingsLoader.item.loadSettings(map);
         } else if (connectionSettingsLoader.status == Loader.Ready) {
             if (selectedItemModel.itemType == PlasmaNm.Enums.Wireless) {

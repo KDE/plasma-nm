@@ -18,19 +18,19 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_CONNECTION_SETTINGS_H
-#define PLASMA_NM_CONNECTION_SETTINGS_H
+#ifndef PLASMA_NM_CONNECTION_SETTINGS_HANDLER_H
+#define PLASMA_NM_CONNECTION_SETTINGS_HANDLER_H
 
 #include <QObject>
 
 #include <NetworkManagerQt/generic-types.h>
 
-class ConnectionSettings : public QObject
+class ConnectionSettingsHandler : public QObject
 {
 Q_OBJECT
 public:
-    explicit ConnectionSettings(QObject* parent = 0);
-    virtual ~ConnectionSettings();
+    explicit ConnectionSettingsHandler(QObject* parent = 0);
+    virtual ~ConnectionSettingsHandler();
 
 public Q_SLOTS:
     QVariantMap loadSettings(const QString & uuid);
@@ -47,4 +47,4 @@ private:
     NMVariantMapMap nmVariantMapMap(const QVariantMap & map);
 };
 
-#endif // PLASMA_NM_CONNECTION_SETTINGS_H
+#endif // PLASMA_NM_CONNECTION_SETTINGS_HANDLER_H

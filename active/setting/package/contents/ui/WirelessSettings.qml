@@ -68,18 +68,6 @@ Item {
         }
     }
 
-//     PlasmaComponents.Label {
-//         id: foo;
-//
-//         anchors {
-//             top: ipv4Widget;
-//             left: parent.left;
-//             right: parent.right;
-//             topMargin: 24;
-//         }
-//         text: "foooooooooooooooooo";
-//     }
-
     function resetSettings() {
         connectionWidget.resetSetting();
         ipv4Widget.resetSetting();

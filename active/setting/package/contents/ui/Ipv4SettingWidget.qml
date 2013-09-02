@@ -85,7 +85,6 @@ Item {
     Loader {
         id: ipv4ManualConfigurationLoader;
 
-//         height: childrenRect.height;
         anchors {
             left: parent.left;
             right: parent.right;

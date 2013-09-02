@@ -54,6 +54,9 @@ QVariantMap ConnectionSettings::loadSettings(const QString& uuid)
         return resultingMap;
     }
 
+    connect(connection.data(), SIGNAL(gotSecrets(QString,bool,NMVariantMapMap,QString)),
+            SLOT(gotSecrets(QString,bool,NMVariantMapMap,QString)), Qt::UniqueConnection);
+
     NetworkManager::ConnectionSettings::Ptr connectionsettings = connection->settings();
 
     if (!connectionsettings) {
@@ -125,23 +128,30 @@ QVariantMap ConnectionSettings::loadSettings(const QString& uuid)
                     QVariantMap wifiSecurityMap;
 
                     if (wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::Wep) {
+                        connection->secrets("802-11-wireless-security");
                         wifiSecurityMap.insert("key-mgmt", "none");
                         // TODO: maybe check wep-key index
                         wifiSecurityMap.insert("wep-key0", wirelessSecuritySetting->wepKey0());
                     } else if (wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::Ieee8021x) {
                         wifiSecurityMap.insert("key-mgmt", "ieee8021x");
                         if (wirelessSecuritySetting->authAlg() == NetworkManager::WirelessSecuritySetting::Leap) {
+                            connection->secrets("802-11-wireless-security");
                             wifiSecurityMap.insert("auth-alg", "leap");
                             wifiSecurityMap.insert("leap-username", wirelessSecuritySetting->leapUsername());
                             wifiSecurityMap.insert("leap-password", wirelessSecuritySetting->leapPassword());
+                        } else {
+                            connection->secrets("802-1x");
                         }
                     } else if (wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaNone) {
+                        connection->secrets("802-11-wireless-security");
                         wifiSecurityMap.insert("key-mgmt", "wpa-none");
                         wifiSecurityMap.insert("psk", wirelessSecuritySetting->psk());
                     } else if (wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaPsk) {
+                        connection->secrets("802-11-wireless-security");
                         wifiSecurityMap.insert("key-mgmt", "wpa-psk");
                         wifiSecurityMap.insert("psk", wirelessSecuritySetting->psk());
                     } else if (wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEap) {
+                        connection->secrets("802-1x");
                         wifiSecurityMap.insert("key-mgmt", "wpa-eap");
                         // TODO
                     }
@@ -192,6 +202,21 @@ void ConnectionSettings::addAndActivateConnection(const QVariantMap& map, const 
     NetworkManager::addAndActivateConnection(connectionSettings.toMap(), device, specificPath);
 }
 
+void ConnectionSettings::gotSecrets(const QString& id, bool success, const NMVariantMapMap& secrets, const QString& msg)
+{
+    if (success) {
+        QVariantMap resultingMap;
+
+        foreach (const QString & key, secrets.keys()) {
+            resultingMap.insert(key, secrets.value(key));
+        }
+
+        emit loadSecrets(resultingMap);
+    } else {
+        qDebug() << "Failed to retrive secrets for " << id;
+        qDebug() << "Reason: " << msg;
+    }
+}
 
 void ConnectionSettings::saveSettings(const QVariantMap& map, const QString& connection)
 {

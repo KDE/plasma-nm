@@ -31,6 +31,10 @@ Item {
 
     ConnectionSettings {
         id: connectionSettings;
+
+        onLoadSecrets: {
+            connectionSettingsLoader.item.loadSecrets(secrets);
+        }
     }
 
     PlasmaExtras.ScrollArea {

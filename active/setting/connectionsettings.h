@@ -38,6 +38,11 @@ public Q_SLOTS:
     void addAndActivateConnection(const QVariantMap & map, const QString & device, const QString & specificPath);
     void saveSettings(const QVariantMap & map, const QString & connection = QString());
 
+private Q_SLOTS:
+    void gotSecrets(const QString & id, bool success, const NMVariantMapMap & secrets, const QString & msg);
+
+Q_SIGNALS:
+    void loadSecrets(const QVariantMap & secrets);
 private:
     NMVariantMapMap nmVariantMapMap(const QVariantMap & map);
 };

@@ -314,6 +314,16 @@ Item {
         }
     }
 
+    function loadSecrets(secretsMap) {
+        if (secretsMap["wep-key0"]) {
+            wirelessSecurityPasswordConfigurationLoader.item.password = secretsMap["wep-key0"];
+        } else if (secretsMap["leap-password"]) {
+            wirelessSecurityPasswordConfigurationLoader.item.password = secretsMap["leap-password"];
+        } else if (secretsMap["psk"]) {
+            wirelessSecurityPasswordConfigurationLoader.item.password = secretsMap["psk"];
+        }
+    }
+
     function getSetting() {
         var settingMap = {};
 

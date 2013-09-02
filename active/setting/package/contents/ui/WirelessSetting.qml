@@ -86,6 +86,14 @@ Item {
             ipv4Widget.loadSetting(settingsMap["ipv4"]);
     }
 
+    function loadSecrets(secretsMap) {
+        if (secretsMap["802-11-wireless-security"]) {
+            wirelessSecurityWidget.loadSecrets(secretsMap["802-11-wireless-security"]);
+        } else if (secretsMap["802-1x"]) {
+
+        }
+    }
+
     function getSettings() {
         var resultingMap = {};
         resultingMap["connection"] = connectionWidget.getSetting();

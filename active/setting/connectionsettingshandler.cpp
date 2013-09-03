@@ -170,7 +170,7 @@ void ConnectionSettingsHandler::addConnection(const QVariantMap& map)
 //     qDebug() << "INPUT";
 //     qDebug() << map;
 //     qDebug() << "OUTPUT";
-//     qDebug() << nmVariantMapMap(map);
+    qDebug() << nmVariantMapMap(map);
     NetworkManager::addConnection(nmVariantMapMap(map));
 }
 
@@ -311,13 +311,13 @@ NMVariantMapMap ConnectionSettingsHandler::nmVariantMapMap(const QVariantMap& ma
         } else {
             wirelessSetting->setMode(NetworkManager::WirelessSetting::Ap);
         }
-        if (map.contains("802-11-wireless-security")) {
+        if (map.contains("802-11-wireless-security") && map.value("802-11-wireless-security").toMap().contains("key-mgmt")) {
             wirelessSetting->setSecurity("802-11-wireless-security");
         }
         wirelessSetting->setInitialized(true);
     }
 
-    if (map.contains("802-11-wireless-security")) {
+    if (map.contains("802-11-wireless-security") && map.value("802-11-wireless-security").toMap().contains("key-mgmt")) {
         NetworkManager::WirelessSecuritySetting::Ptr wirelessSecuritySetting = connectionSettings.setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
         QVariantMap wirelessSecurityMap = map.value("802-11-wireless-security").toMap();
         QString keymgmt = wirelessSecurityMap.value("key-mgmt").toString();

@@ -58,10 +58,6 @@ Item {
                 left: parent.horizontalCenter;
             }
         }
-
-        Component.onCompleted: {
-            console.log(height);
-        }
     }
 
     Item {
@@ -95,10 +91,6 @@ Item {
                 left: parent.horizontalCenter;
             }
             checked: true;
-        }
-
-        Component.onCompleted: {
-            console.log(height);
         }
     }
 

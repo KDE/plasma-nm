@@ -22,11 +22,16 @@ import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasmanm 0.1 as PlasmaNm
+import org.kde.active.settings 0.1
 
 Item {
     id: connectionList;
 
 //     property alias item: connectionsView.currentItem;
+
+    ConnectionSettingsHandler {
+        id: connectionSettingsDialogHandler;
+    }
 
     PlasmaComponents.Button {
         id: addButton;
@@ -39,8 +44,10 @@ Item {
         }
         text: i18n("Add");
         iconSource: "list-add";
-        // TODO: implement
-        enabled: false;
+
+        onClicked: {
+            addConnectionDialog.open();
+        }
     }
 
 //     PlasmaComponents.Button {
@@ -149,6 +156,41 @@ Item {
             bottomMargin: 50;
         }
         width: parent.width/2;
+    }
+
+    PlasmaComponents.CommonDialog {
+        id: addConnectionDialog;
+
+        titleText: i18n("Add new connection")
+        buttonTexts: [i18n("Add"), i18n("Close")]
+        onButtonClicked: {
+            if (index == 0) {
+                var map = {};
+                map = addConnectionLoader.item.getSettings();
+                connectionSettingsDialogHandler.addConnection(map);
+                addConnectionLoader.source = "";
+            } else {
+                addConnectionLoader.source = "";
+                close();
+            }
+        }
+        content: Loader {
+            id: addConnectionLoader;
+            anchors {
+                horizontalCenter: parent.horizontalCenter;
+                verticalCenter: parent.verticalCenter;
+            }
+            height: 500; width: 450;
+        }
+        onStatusChanged: {
+            if (status == PlasmaComponents.DialogStatus.Open) {
+                if (networkSettings.connectionType == PlasmaNm.Enums.Wireless) {
+                    addConnectionLoader.source = "WirelessSettings.qml"
+                } else if (networkSettings.connectionType == PlasmaNm.Enums.Wired) {
+                    addConnectionLoader.source = "WiredSettings.qml"
+                }
+            }
+        }
     }
 
 //     PlasmaComponents.CommonDialog {

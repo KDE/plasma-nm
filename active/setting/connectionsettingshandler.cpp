@@ -170,7 +170,7 @@ void ConnectionSettingsHandler::addConnection(const QVariantMap& map)
 //     qDebug() << "INPUT";
 //     qDebug() << map;
 //     qDebug() << "OUTPUT";
-    qDebug() << nmVariantMapMap(map);
+//     qDebug() << nmVariantMapMap(map);
     NetworkManager::addConnection(nmVariantMapMap(map));
 }
 

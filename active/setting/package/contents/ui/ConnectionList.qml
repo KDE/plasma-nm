@@ -102,16 +102,19 @@ Item {
         ListView {
             id: connectionsView;
 
+            property string previouslyExpandedItem: "";
+
             anchors.fill: parent;
             clip: true;
             model: connectionSortModel;
-            // TODO change currentIndex according to selected item and model changes
             delegate: ConnectionModelItem {
                         property variant myData: model;
 
-                        checked: connectionsView.currentIndex == index;
+//                         checked: ListView.isCurrentItem;
+                        checked: (connectionsView.previouslyExpandedItem == itemConnectionPath && itemConnectionPath != "") || (itemConnectionPath == "" && connectionsView.previouslyExpandedItem == itemName);
                         onItemSelected: {
-                            connectionsView.currentIndex = index;
+                            connectionsView.previouslyExpandedItem = itemUuid ? itemConnectionPath : itemName;
+//                             connectionsView.currentIndex = index;
                             if (connectionSettings.status == Loader.Null) {
                                 connectionSettings.source = "ConnectionSettings.qml";
                             }
@@ -130,6 +133,7 @@ Item {
                     if (connectionSettings.status != Loader.Null) {
                         connectionSettings.source = "";
                     }
+                    previouslyExpandedItem = "";
                 } else if (count == 1 || currentIndex + 1 > count) {
                     selectFirstItem();
                 }
@@ -141,6 +145,7 @@ Item {
                     connectionSettings.source = "ConnectionSettings.qml";
                 }
                 connectionSettings.item.selectedItemModel = currentItem.myData;
+                previouslyExpandedItem = currentItem.myData.itemUuid ? currentItem.myData.itemConnectionPath : currentItem.myData.itemName;
             }
         }
     }
@@ -225,6 +230,5 @@ Item {
         } else {
             connectionSettings.source = "";
         }
-
     }
 }

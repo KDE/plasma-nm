@@ -174,13 +174,14 @@ void NetworkStatus::changeTooltip()
 
 QString NetworkStatus::checkUnknownReason() const
 {
-    // check if NM is running
+    // Check if NetworkManager is running.
     if (!QDBusConnection::systemBus().interface()->isServiceRegistered(NM_DBUS_INTERFACE)) {
         return i18n("NetworkManager not running");
     }
-    // check if it has the correct version
-    else if (NetworkManager::compareVersion(0, 9, 8) >= 0) {
-        return i18n("Incompatible NM version, 0.9.8 required");
+
+    // Check for compatible NetworkManager version.
+    if (NetworkManager::compareVersion(0, 9, 8) < 0) {
+        return i18n("NetworkManager 0.9.8 required, found %1.", NetworkManager::version());
     }
 
     return i18nc("global connection state", "Unknown");

@@ -179,7 +179,7 @@ QString NetworkStatus::checkUnknownReason() const
         return i18n("NetworkManager not running");
     }
     // check if it has the correct version
-    else if (NetworkManager::compareVersion(0, 9, 8) == -1) {
+    else if (NetworkManager::compareVersion(0, 9, 8) >= 0) {
         return i18n("Incompatible NM version, 0.9.8 required");
     }
 

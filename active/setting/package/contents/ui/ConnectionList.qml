@@ -27,8 +27,6 @@ import org.kde.active.settings 0.1
 Item {
     id: connectionList;
 
-//     property alias item: connectionsView.currentItem;
-
     ConnectionSettingsHandler {
         id: connectionSettingsDialogHandler;
     }
@@ -63,6 +61,44 @@ Item {
 //         onClicked: configureDetailsDialog.open();
 //     }
 
+//     PlasmaComponents.Label {
+//         id: detailsText;
+//
+//         anchors { top: availableConnectionsLabel.bottom; right: parent.right; topMargin: 10 }
+//         width: parent.width/2;
+//         textFormat: Text.RichText;
+//         text: networkSettings.details;
+//         wrapMode: Text.WordWrap;
+//     }
+
+
+//     PlasmaComponents.CommonDialog {
+//         id: configureDetailsDialog
+//
+//         titleText: i18n("Configure details to show")
+//         buttonTexts: [i18n("Save"), i18n("Close")]
+//         onButtonClicked: {
+//             if (index == 0) {
+//                 configureDetailsLoader.item.save();
+//                 networkSettings.detailKeys = configureDetailsLoader.item.detailKeys;
+//                 configureDetailsLoader.source = "";
+//             } else {
+//                 configureDetailsLoader.source = "";
+//                 close();
+//             }
+//         }
+//         content: Loader {
+//             id: configureDetailsLoader;
+//             height: 400; width: 450;
+//         }
+//         onStatusChanged: {
+//             if (status == PlasmaComponents.DialogStatus.Open) {
+//                 configureDetailsLoader.source = "DetailsWidget.qml"
+//             }
+//         }
+//     }
+
+
     PlasmaNm.Model {
         id: connectionModel;
     }
@@ -74,15 +110,7 @@ Item {
         filterType: networkSettings.connectionType;
     }
 
-//     PlasmaComponents.Label {
-//         id: detailsText;
-//
-//         anchors { top: availableConnectionsLabel.bottom; right: parent.right; topMargin: 10 }
-//         width: parent.width/2;
-//         textFormat: Text.RichText;
-//         text: networkSettings.details;
-//         wrapMode: Text.WordWrap;
-//     }
+
 
     Image {
         id: connectionsFrame;
@@ -197,32 +225,6 @@ Item {
             }
         }
     }
-
-//     PlasmaComponents.CommonDialog {
-//         id: configureDetailsDialog
-//
-//         titleText: i18n("Configure details to show")
-//         buttonTexts: [i18n("Save"), i18n("Close")]
-//         onButtonClicked: {
-//             if (index == 0) {
-//                 configureDetailsLoader.item.save();
-//                 networkSettings.detailKeys = configureDetailsLoader.item.detailKeys;
-//                 configureDetailsLoader.source = "";
-//             } else {
-//                 configureDetailsLoader.source = "";
-//                 close();
-//             }
-//         }
-//         content: Loader {
-//             id: configureDetailsLoader;
-//             height: 400; width: 450;
-//         }
-//         onStatusChanged: {
-//             if (status == PlasmaComponents.DialogStatus.Open) {
-//                 configureDetailsLoader.source = "DetailsWidget.qml"
-//             }
-//         }
-//     }
 
     function resetIndex() {
         if (connectionsView.count) {

@@ -331,7 +331,6 @@ Item {
             // nothing
         } else if (wirelessSecurity == PlasmaNm.Enums.StaticWep) {
             settingMap["key-mgmt"] = "none";
-            // TODO: probably check wep-key index
             settingMap["wep-key0"] = wirelessSecurityPasswordConfigurationLoader.item.password;
         } else if (wirelessSecurity == PlasmaNm.Enums.Leap) {
             settingMap["key-mgmt"] = "ieee8021x";

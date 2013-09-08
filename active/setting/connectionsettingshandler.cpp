@@ -130,7 +130,6 @@ QVariantMap ConnectionSettingsHandler::loadSettings(const QString& uuid)
                     if (wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::Wep) {
                         connection->secrets("802-11-wireless-security");
                         wifiSecurityMap.insert("key-mgmt", "none");
-                        // TODO: maybe check wep-key index
                         wifiSecurityMap.insert("wep-key0", wirelessSecuritySetting->wepKey0());
                     } else if (wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::Ieee8021x) {
                         wifiSecurityMap.insert("key-mgmt", "ieee8021x");

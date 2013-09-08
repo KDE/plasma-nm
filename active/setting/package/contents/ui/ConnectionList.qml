@@ -44,6 +44,9 @@ Item {
         }
         text: i18n("Add");
         iconSource: "list-add";
+        enabled: networkSettings.connectionType == PlasmaNm.Enums.Wireless ||
+                 networkSettings.connectionType == PlasmaNm.Enums.Wired ||
+                 networkSettings.connectionType == PlasmaNm.Enums.Gsm
 
         onClicked: {
             addConnectionDialog.open();

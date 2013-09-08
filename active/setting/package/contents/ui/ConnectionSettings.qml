@@ -59,7 +59,18 @@ Item {
             bottom: parent.bottom;
             rightMargin: 10;
         }
-        text: "Save setting";
+        text: if (selectedItemModel) {
+                  if (selectedItemModel.itemUuid)
+                      i18n("Save");
+                  else
+                      i18n("Add");
+              } else {
+                  "";
+              }
+
+        enabled: selectedItemModel && (selectedItemModel.itemType == PlasmaNm.Enums.Wireless ||
+                                       selectedItemModel.itemType == PlasmaNm.Enums.Wired ||
+                                       selectedItemModel.itemType == PlasmaNm.Enums.Gsm)
 
         onClicked: {
             if (connectionSettingsLoader.status == Loader.Ready) {

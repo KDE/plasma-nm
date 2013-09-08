@@ -151,6 +151,7 @@ Item {
             connectionSettingsLoader.item.loadSettings(map);
         } else if (connectionSettingsLoader.status == Loader.Ready) {
             if (selectedItemModel.itemType == PlasmaNm.Enums.Wireless) {
+                connectionSettingsLoader.item.resetSettings();
                 // For uknown wireless connections we can pre-fill some properties
                 var connectionMap = [];
                 connectionMap["id"] = selectedItemModel.itemSsid;

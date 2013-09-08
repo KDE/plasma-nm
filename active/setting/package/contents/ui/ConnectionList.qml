@@ -105,7 +105,7 @@ Item {
         ListView {
             id: connectionsView;
 
-            property string previouslyExpandedItem: "";
+            property string previouslySelectedItem: "";
 
             anchors.fill: parent;
             clip: true;
@@ -113,10 +113,10 @@ Item {
             delegate: ConnectionModelItem {
                         property variant myData: model;
 
-                        checked: (connectionsView.previouslyExpandedItem == itemConnectionPath && itemConnectionPath != "") ||
-                                 (itemConnectionPath == "" && connectionsView.previouslyExpandedItem == itemName);
+                        checked: (connectionsView.previouslySelectedItem == itemConnectionPath && itemConnectionPath != "") ||
+                                 (itemConnectionPath == "" && connectionsView.previouslySelectedItem == itemName);
                         onItemSelected: {
-                            connectionsView.previouslyExpandedItem = itemUuid ? itemConnectionPath : itemName;
+                            connectionsView.previouslySelectedItem = itemUuid ? itemConnectionPath : itemName;
                             if (connectionSettings.status == Loader.Null) {
                                 connectionSettings.source = "ConnectionSettings.qml";
                             }
@@ -135,7 +135,7 @@ Item {
                     if (connectionSettings.status != Loader.Null) {
                         connectionSettings.source = "";
                     }
-                    previouslyExpandedItem = "";
+                    previouslySelectedItem = "";
                 }
             }
 
@@ -145,7 +145,7 @@ Item {
                     connectionSettings.source = "ConnectionSettings.qml";
                 }
                 connectionSettings.item.selectedItemModel = currentItem.myData;
-                previouslyExpandedItem = currentItem.myData.itemUuid ? currentItem.myData.itemConnectionPath : currentItem.myData.itemName;
+                previouslySelectedItem = currentItem.myData.itemUuid ? currentItem.myData.itemConnectionPath : currentItem.myData.itemName;
             }
         }
     }

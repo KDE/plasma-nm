@@ -68,9 +68,13 @@ Item {
                   "";
               }
 
-        enabled: selectedItemModel && (selectedItemModel.itemType == PlasmaNm.Enums.Wireless ||
-                                       selectedItemModel.itemType == PlasmaNm.Enums.Wired ||
-                                       selectedItemModel.itemType == PlasmaNm.Enums.Gsm)
+        enabled: if (selectedItemModel) {
+                    (selectedItemModel.itemType == PlasmaNm.Enums.Wireless ||
+                     selectedItemModel.itemType == PlasmaNm.Enums.Wired ||
+                     selectedItemModel.itemType == PlasmaNm.Enums.Gsm)
+                } else {
+                    false;
+                }
 
         onClicked: {
             if (connectionSettingsLoader.status == Loader.Ready) {

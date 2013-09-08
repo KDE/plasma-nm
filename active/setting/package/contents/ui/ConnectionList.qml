@@ -113,11 +113,10 @@ Item {
             delegate: ConnectionModelItem {
                         property variant myData: model;
 
-//                         checked: ListView.isCurrentItem;
-                        checked: (connectionsView.previouslyExpandedItem == itemConnectionPath && itemConnectionPath != "") || (itemConnectionPath == "" && connectionsView.previouslyExpandedItem == itemName);
+                        checked: (connectionsView.previouslyExpandedItem == itemConnectionPath && itemConnectionPath != "") ||
+                                 (itemConnectionPath == "" && connectionsView.previouslyExpandedItem == itemName);
                         onItemSelected: {
                             connectionsView.previouslyExpandedItem = itemUuid ? itemConnectionPath : itemName;
-//                             connectionsView.currentIndex = index;
                             if (connectionSettings.status == Loader.Null) {
                                 connectionSettings.source = "ConnectionSettings.qml";
                             }
@@ -137,8 +136,6 @@ Item {
                         connectionSettings.source = "";
                     }
                     previouslyExpandedItem = "";
-                } else if (count == 1 || currentIndex + 1 > count) {
-                    selectFirstItem();
                 }
             }
 

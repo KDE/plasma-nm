@@ -395,15 +395,18 @@ void ModelItem::setConnectionSettings(const NetworkManager::ConnectionSettings::
         }
 
         if (!changed) {
+            updateDetails();
             return;
         }
 
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePath());
         if (!device) {
+            updateDetails();
             return;
         }
         NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
         if (!wifiDevice) {
+            updateDetails();
             return;
         }
         NetworkManager::WirelessNetwork::Ptr newWifiNetwork = wifiDevice->findNetwork(m_ssid);
@@ -476,11 +479,14 @@ void ModelItem::setWirelessNetwork(const QString& ssid)
                                                                             ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
         }
     } else {
-        m_ssid.clear();
+        m_accessPointPath.clear();
+        if (m_connectionPath.isEmpty()) {
+            m_ssid.clear();
+            m_type = NetworkManager::ConnectionSettings::Unknown;
+            m_secure = false;
+            m_securityType = NetworkManager::Utils::Unknown;
+        }
         m_signal = 0;
-        m_type = NetworkManager::ConnectionSettings::Unknown;
-        m_secure = false;
-        m_securityType = NetworkManager::Utils::Unknown;
     }
 
     updateDetails();

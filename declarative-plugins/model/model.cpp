@@ -353,8 +353,21 @@ void Model::removeWimaxNsps()
 void Model::removeWirelessNetwork(const QString& ssid, const QString& device)
 {
     foreach (ModelItem * item, m_items.itemsBySsid(ssid, device)) {
-        if (removeItem(item)) {
-            NMModelDebug() << "Wireless network " << ssid << " has been removed";
+        NetworkManager::AccessPoint::Ptr accessPoint;
+        NetworkManager::WirelessDevice::Ptr wirelessDevice = NetworkManager::findNetworkInterface(item->devicePath()).objectCast<NetworkManager::WirelessDevice>();
+        if (wirelessDevice) {
+            accessPoint = wirelessDevice->findAccessPoint(item->specificPath());
+        }
+        if (accessPoint && accessPoint->mode() == NetworkManager::AccessPoint::Adhoc &&
+            NetworkManager::isWirelessEnabled() && NetworkManager::isWirelessHardwareEnabled()) {
+            item->setWirelessNetwork(QString());
+            if (updateItem(item)) {
+                NMModelDebug() << "Wireless network " << ssid << " has been removed";
+            }
+        } else {
+            if (removeItem(item)) {
+                NMModelDebug() << "Wireless network " << ssid << " has been completely removed";
+            }
         }
     }
 }

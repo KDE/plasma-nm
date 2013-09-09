@@ -343,7 +343,7 @@ PlasmaComponents.ListItem {
             name: "ConnectionExpanded";
             when: expanded && !sectionHidden;
             StateChangeScript { script: connectionItemSettings.connectionSettings = connectionComponent.createObject(connectionItem); }
-            PropertyChanges { target: connectionItem.ListView.view; currentIndex: index }
+//             PropertyChanges { target: connectionItem.ListView.view; currentIndex: index }
         }
     ]
 

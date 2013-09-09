@@ -172,7 +172,7 @@ Item {
                 }
 
                 PlasmaComponents.Label {
-                    id: showPassowrdLabel;
+                    id: showPasswordLabel;
 
                     anchors {
                         right: parent.horizontalCenter;

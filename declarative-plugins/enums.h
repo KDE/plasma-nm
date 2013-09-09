@@ -27,6 +27,7 @@ class Enums : public QObject
 {
 Q_OBJECT
 Q_ENUMS(ConnectionType)
+Q_ENUMS(GsmNetworkType)
 Q_ENUMS(Ipv4Method)
 Q_ENUMS(SecurityType)
 Q_ENUMS(WirelessMode)
@@ -51,6 +52,16 @@ public:
         Wimax,
         Wired,
         Wireless
+    };
+
+    enum GsmNetworkType {
+        Any = 0,
+        Only3G,
+        Only2G,
+        Prefer3G,
+        Prefer2G,
+        Prefer4G,
+        Only4G
     };
 
     enum Ipv4Method {

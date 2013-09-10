@@ -25,6 +25,7 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/GsmSetting>
 #include <NetworkManagerQt/Ipv4Setting>
 #include <NetworkManagerQt/Setting>
 #include <NetworkManagerQt/WirelessSetting>
@@ -108,56 +109,28 @@ QVariantMap ConnectionSettingsHandler::loadSettings(const QString& uuid)
         NetworkManager::WirelessSetting::Ptr wirelessSetting = connectionsettings->setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
 
         if (wirelessSetting) {
-            QVariantMap wirelessMap;
-
-            wirelessMap.insert("ssid", wirelessSetting->ssid());
-            if (wirelessSetting->mode() == NetworkManager::WirelessSetting::Infrastructure) {
-                wirelessMap.insert("mode", "infrastructure");
-            } else if (wirelessSetting->mode() == NetworkManager::WirelessSetting::Adhoc) {
-                wirelessMap.insert("mode", "adhoc");
-            } else if (wirelessSetting->mode() == NetworkManager::WirelessSetting::Ap) {
-                wirelessMap.insert("mode", "ap");
-            }
-
+            QVariantMap wirelessMap = wirelessSetting->toMap();
             resultingMap.insert("802-11-wireless", wirelessMap);
 
             if (wirelessSetting->security() == "802-11-wireless-security") {
                 NetworkManager::WirelessSecuritySetting::Ptr wirelessSecuritySetting = connectionsettings->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
 
                 if (wirelessSecuritySetting) {
-                    QVariantMap wifiSecurityMap;
-
-                    if (wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::Wep) {
-                        connection->secrets("802-11-wireless-security");
-                        wifiSecurityMap.insert("key-mgmt", "none");
-                        wifiSecurityMap.insert("wep-key0", wirelessSecuritySetting->wepKey0());
-                    } else if (wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::Ieee8021x) {
-                        wifiSecurityMap.insert("key-mgmt", "ieee8021x");
-                        if (wirelessSecuritySetting->authAlg() == NetworkManager::WirelessSecuritySetting::Leap) {
-                            connection->secrets("802-11-wireless-security");
-                            wifiSecurityMap.insert("auth-alg", "leap");
-                            wifiSecurityMap.insert("leap-username", wirelessSecuritySetting->leapUsername());
-                            wifiSecurityMap.insert("leap-password", wirelessSecuritySetting->leapPassword());
-                        } else {
-                            connection->secrets("802-1x");
-                        }
-                    } else if (wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaNone) {
-                        connection->secrets("802-11-wireless-security");
-                        wifiSecurityMap.insert("key-mgmt", "wpa-none");
-                        wifiSecurityMap.insert("psk", wirelessSecuritySetting->psk());
-                    } else if (wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaPsk) {
-                        connection->secrets("802-11-wireless-security");
-                        wifiSecurityMap.insert("key-mgmt", "wpa-psk");
-                        wifiSecurityMap.insert("psk", wirelessSecuritySetting->psk());
-                    } else if (wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEap) {
-                        connection->secrets("802-1x");
-                        wifiSecurityMap.insert("key-mgmt", "wpa-eap");
-                        // TODO
-                    }
-
+                    QVariantMap wifiSecurityMap = wirelessSecuritySetting->toMap();
+                    connection->secrets("802-11-wireless-security");
                     resultingMap.insert("802-11-wireless-security", wifiSecurityMap);
                 }
             }
+        }
+    }
+
+    if (connectionsettings->connectionType() == NetworkManager::ConnectionSettings::Gsm) {
+        NetworkManager::GsmSetting::Ptr gsmSetting = connectionsettings->setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
+
+        if (gsmSetting) {
+            QVariantMap gsmMap = gsmSetting->toMap();
+            connection->secrets("gsm");
+            resultingMap.insert("gsm", gsmMap);
         }
     }
 
@@ -302,49 +275,23 @@ NMVariantMapMap ConnectionSettingsHandler::nmVariantMapMap(const QVariantMap& ma
     if (map.contains("802-11-wireless")) {
         NetworkManager::WirelessSetting::Ptr wirelessSetting = connectionSettings.setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
         QVariantMap wirelessMap = map.value("802-11-wireless").toMap();
-        wirelessSetting->setSsid(wirelessMap.value("ssid").toString().toUtf8());
-        if (wirelessMap.value("mode").toString() == "infrastructure") {
-            wirelessSetting->setMode(NetworkManager::WirelessSetting::Infrastructure);
-        } else if (wirelessMap.value("mode").toString() == "adhoc") {
-            wirelessSetting->setMode(NetworkManager::WirelessSetting::Adhoc);
-        } else {
-            wirelessSetting->setMode(NetworkManager::WirelessSetting::Ap);
-        }
-        if (map.contains("802-11-wireless-security") && map.value("802-11-wireless-security").toMap().contains("key-mgmt")) {
-            wirelessSetting->setSecurity("802-11-wireless-security");
-        }
+        wirelessSetting->fromMap(wirelessMap);
         wirelessSetting->setInitialized(true);
     }
 
     if (map.contains("802-11-wireless-security") && map.value("802-11-wireless-security").toMap().contains("key-mgmt")) {
+        NetworkManager::WirelessSetting::Ptr wirelessSetting = connectionSettings.setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
+        wirelessSetting->setSecurity("802-11-wireless-security");
         NetworkManager::WirelessSecuritySetting::Ptr wirelessSecuritySetting = connectionSettings.setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
         QVariantMap wirelessSecurityMap = map.value("802-11-wireless-security").toMap();
-        QString keymgmt = wirelessSecurityMap.value("key-mgmt").toString();
-        if (keymgmt == "none") {
-            wirelessSecuritySetting->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
-            wirelessSecuritySetting->setWepKey0(wirelessSecurityMap.value("wep-key0").toString());
-            wirelessSecuritySetting->setWepKeyFlags(NetworkManager::Setting::AgentOwned);
-        } else if (keymgmt == "ieee8021x") {
-            if (wirelessSecurityMap.contains("auth-alg") && wirelessSecurityMap.value("auth-alg").toString() == "leap") {
-                wirelessSecuritySetting->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Ieee8021x);
-                wirelessSecuritySetting->setAuthAlg(NetworkManager::WirelessSecuritySetting::Leap);
-                wirelessSecuritySetting->setLeapUsername(wirelessSecurityMap.value("leap-username").toString());
-                wirelessSecuritySetting->setLeapPassword(wirelessSecurityMap.value("leap-password").toString());
-                wirelessSecuritySetting->setLeapPasswordFlags(NetworkManager::Setting::AgentOwned);
-            }
-            // TODO
-        } else if (keymgmt == "wpa-none") {
-            wirelessSecuritySetting->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaNone);
-            wirelessSecuritySetting->setPsk(wirelessSecurityMap.value("psk").toString());
-            wirelessSecuritySetting->setPskFlags(NetworkManager::Setting::AgentOwned);
-        } else if (keymgmt == "wpa-psk") {
-            wirelessSecuritySetting->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
-            wirelessSecuritySetting->setPsk(wirelessSecurityMap.value("psk").toString());
-            wirelessSecuritySetting->setPskFlags(NetworkManager::Setting::AgentOwned);
-        } else if (keymgmt == "wpa-eap") {
-            // TODO
-        }
+        wirelessSecuritySetting->fromMap(wirelessSecurityMap);
         wirelessSecuritySetting->setInitialized(true);
+    }
+
+    if (map.contains("gsm")) {
+        NetworkManager::GsmSetting::Ptr gsmSetting = connectionSettings.setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
+        QVariantMap gsmMap = map.value("gsm").toMap();
+        gsmSetting->fromMap(gsmMap);
     }
 
     return connectionSettings.toMap();

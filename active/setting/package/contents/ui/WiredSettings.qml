@@ -27,7 +27,7 @@ PlasmaExtras.ScrollArea {
 
     flickableItem: Flickable {
 
-        contentHeight: connectionWidget.height + ipv4Widget.height + 34; // + 24 (topMargin) + 10
+        contentHeight: connectionWidget.height + ipv4Widget.height + gsmWidget.height + 34; // + 24 (topMargin) + 10
 
         ConnectionSettingWidget {
             id: connectionWidget;

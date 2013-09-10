@@ -362,4 +362,106 @@ Item {
             }
         }
     }
+
+    function resetSetting() {
+        gsmNumberInput.text = "*99#";
+        gsmUsernameInput.text = "";
+        gsmPasswordInput.text = "";
+        gsmApnInput.text = "";
+        gsmTypeSelectionCombo.text = i18n("Any");
+        gsmType = PlasmaNm.Enums.Any;
+        gsmHomeOnlySwitch.checked = false;
+        gsmPinInput.text = "";
+        gsmShowPasswords.checked = false;
+    }
+
+    function loadSetting(settingMap) {
+        resetSetting();
+
+        if (settingMap["number"]) {
+            gsmNumberInput.text = settingMap["number"];
+        }
+        if (settingMap["username"]) {
+            gsmUsernameInput.text = settingMap["username"];
+        }
+        if (settingMap["password"]) {
+            gsmPasswordInput.text = settingMap["password"];
+        }
+        if (settingMap["apn"]) {
+            gsmApnInput.text = settingMap["apn"];
+        }
+        if (settingMap["pin"]) {
+            gsmPinInput.text = settingMap["pin"];
+        }
+        if (settingMap["network-type"] >= 0) {
+            if (settingMap["network-type"] == 0) {
+                gsmTypeSelectionCombo.text = i18n("3G Only (UMTS/HSPA)");
+                gsmType = PlasmaNm.Enums.Only3G;
+            } else if (settingMap["network-type"] == 1) {
+                gsmTypeSelectionCombo.text = i18n("2G Only (GPRS/EDGE)");
+                gsmType = PlasmaNm.Enums.Only2G;
+            } else if (settingMap["network-type"] == 2) {
+                gsmTypeSelectionCombo.text = i18n("Prefer 3G (UMTS/HSPA)");
+                gsmType = PlasmaNm.Enums.Prefer3G;
+            } else if (settingMap["network-type"] == 3) {
+                gsmTypeSelectionCombo.text = i18n("Prefer 2G (GPRS/EDGE)");
+                gsmType = PlasmaNm.Enums.Prefer2G;
+            } else if (settingMap["network-type"] == 4) {
+                gsmTypeSelectionCombo.text = i18n("Prefer 4G (LTE)");
+                gsmType = PlasmaNm.Enums.Prefer4G;
+            } else if (settingMap["network-type"] == 5) {
+                gsmTypeSelectionCombo.text = i18n("4G Only (LTE)");
+                gsmType = PlasmaNm.Enums.Only4G;
+            }
+        }
+        if (settingMap["home-only"]) {
+            gsmHomeOnlySwitch.checked = true;
+        }
+    }
+
+    function loadSecrets(secretsMap) {
+        if (secretsMap["password"]) {
+            gsmPasswordInput.text = secretsMap["password"];
+        } else if (secretsMap["pin"]) {
+            gsmPinInput.text = secretsMap["pin"];
+        }
+    }
+
+    function getSetting() {
+        var settingMap = {};
+
+        if (gsmNumberInput.text) {
+            settingMap["number"] = gsmNumberInput.text;
+        }
+        if (gsmUsernameInput.text) {
+            settingMap["username"] = gsmUsernameInput.text;
+        }
+        if (gsmPasswordInput.text) {
+            settingMap["password"] = gsmPasswordInput.text;
+        }
+        if (gsmApnInput.text) {
+            settingMap["apn"] = gsmApnInput.text;
+        }
+        if (gsmPinInput.text) {
+            settingMap["pin"] = gsmPinInput.text;
+        }
+        if (gsmType == PlasmaNm.Enums.Only3G) {
+            settingMap["network-type"] = 0;
+        } else if (gsmType == PlasmaNm.Enums.Only2G) {
+            settingMap["network-type"] = 1;
+        } else if (gsmType == PlasmaNm.Enums.Prefer3G) {
+            settingMap["network-type"] = 2;
+        } else if (gsmType == PlasmaNm.Enums.Prefer2G) {
+            settingMap["network-type"] = 3;
+        } else if (gsmType == PlasmaNm.Enums.Prefer4G) {
+            settingMap["network-type"] = 4;
+        } else if (gsmType == PlasmaNm.Enums.Only4G) {
+            settingMap["network-type"] = 5;
+        }
+        if (gsmHomeOnlySwitch.checked == true) {
+            settingMap["home-ony"] = true;
+        }
+
+        return settingMap;
+    }
 }

@@ -2,9 +2,8 @@ project(plasma-nm)
 
 cmake_minimum_required(VERSION 2.6)
 
-find_package(KDE4 REQUIRED)
-find_package(NetworkManager "0.9.8" REQUIRED)
 find_package(KDE4 "4.9.0" REQUIRED)
+find_package(NetworkManager "0.9.8" REQUIRED)
 
 include(FindPkgConfig)
 include(KDE4Defaults)
@@ -19,8 +18,8 @@ if (NOT NETWORKMANAGERQT_FOUND)
     message(FATAL_ERROR "ERROR: NetworkManagerQt not found. http://projects.kde.org/libnm-qt")
 endif (NOT NETWORKMANAGERQT_FOUND)
 
-set(KDE_NETWORK_VERSION "0.9.3.0")
-set(PLASMA_NM_VERSION "0.9.3.0")
+set(KDE_NETWORK_VERSION "0.9.3.1")
+set(PLASMA_NM_VERSION "0.9.3.1")
 configure_file(config.h.cmake
                ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 

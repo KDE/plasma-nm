@@ -27,7 +27,7 @@ PlasmaExtras.ScrollArea {
 
     flickableItem: Flickable {
 
-        contentHeight: connectionWidget.height + ipv4Widget.height; // + 24 (topMargin) + 10
+        contentHeight: connectionWidget.height + ipv4Widget.height + gsmWidget.height + 34; // + 24 (topMargin) + 10
 
         ConnectionSettingWidget {
             id: connectionWidget;
@@ -39,13 +39,24 @@ PlasmaExtras.ScrollArea {
             }
         }
 
+        GsmSettingWidget {
+            id: gsmWidget;
+
+            anchors {
+                left: parent.left;
+                right: parent.right;
+                top: connectionWidget.bottom;
+                topMargin: 24;
+            }
+        }
+
         Ipv4SettingWidget {
             id: ipv4Widget;
 
             anchors {
                 left: parent.left;
                 right: parent.right;
-                top: connectionWidget.bottom;
+                top: gsmWidget.bottom;
                 topMargin: 24;
             }
         }
@@ -61,13 +72,17 @@ PlasmaExtras.ScrollArea {
             connectionWidget.loadSetting(settingsMap["connection"]);
         if (settingsMap["ipv4"])
             ipv4Widget.loadSetting(settingsMap["ipv4"]);
+        if (settingsMap["gsm"])
+            connectionWidget.loadSetting(settingsMap["gsm"]);
     }
 
     function getSettings() {
         var resultingMap = {};
         resultingMap["connection"] = connectionWidget.getSetting();
-        resultingMap["connection"]["type"] = PlasmaNm.Enums.Wired;
+        resultingMap["connection"]["type"] = PlasmaNm.Enums.Gsm;
         resultingMap["ipv4"] = ipv4Widget.getSetting();
+        resultingMap["gsm"] = gsmWidget.getSetting();
+
         return resultingMap;
     }
 }

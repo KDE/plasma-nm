@@ -292,6 +292,7 @@ NMVariantMapMap ConnectionSettingsHandler::nmVariantMapMap(const QVariantMap& ma
         NetworkManager::GsmSetting::Ptr gsmSetting = connectionSettings.setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
         QVariantMap gsmMap = map.value("gsm").toMap();
         gsmSetting->fromMap(gsmMap);
+        gsmSetting->setInitialized(true);
     }
 
     return connectionSettings.toMap();

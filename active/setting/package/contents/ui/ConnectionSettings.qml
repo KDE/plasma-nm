@@ -137,6 +137,11 @@ Item {
             id: wiredSetting;
             when: selectedItemModel && selectedItemModel.itemType == PlasmaNm.Enums.Wired;
             PropertyChanges { target: connectionSettingsLoader; source: "WiredSettings.qml" }
+        },
+        State {
+            id: gsmSetting;
+            when: selectedItemModel && selectedItemModel.itemType == PlasmaNm.Enums.Gsm;
+            PropertyChanges { target: connectionSettingsLoader; source: "GsmSettings.qml" }
         }
     ]
 

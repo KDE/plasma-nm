@@ -21,7 +21,6 @@
 import QtQuick 1.1
 import org.kde.qtextracomponents 0.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
-import org.kde.active.settings 0.1 as ActiveSettings
 import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasma.graphicswidgets 0.1 as PlasmaWidgets
 import org.kde.plasma.mobilecomponents 0.1 as MobileComponents

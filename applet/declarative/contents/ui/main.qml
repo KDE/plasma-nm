@@ -32,7 +32,7 @@ Item {
     property int minimumWidth: 300;
     property int minimumHeight: 300;
     property bool autoHideOptions: true;
-    property Component compactRepresentation: CompactRepresantation{
+    property Component compactRepresentation: CompactRepresentation {
         Component.onCompleted: {
             plasmoid.addEventListener('configChanged', mainWindow.configChanged)
         }

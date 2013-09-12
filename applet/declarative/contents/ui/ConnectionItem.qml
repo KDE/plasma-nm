@@ -169,7 +169,59 @@ PlasmaComponents.ListItem {
     }
 
     Component {
-        id: connectionComponent;
+        id: connectionConnectedComponent;
+
+        Item {
+            height: childrenRect.height;
+            anchors {
+                left: parent.left;
+                right: parent.right;
+                top: parent.top;
+                topMargin: theme.defaultFont.mSize.height * 3;
+            }
+            // I had to move PlasmaNM.TrafficMonitor into a separated item, because it's not possible to adjust the height to 0 and the traffic monitor
+            // still occupied the space.
+            Item {
+                id: trafficMonitor;
+
+                height: visible ? 150 : 0;
+                anchors {
+                    top: parent.top;
+                    left: parent.left;
+                    right: parent.right;
+                }
+                visible: (itemDevicePath && itemConnected && itemType != PlasmaNM.Enums.Vpn)
+
+                PlasmaNM.TrafficMonitor {
+                    anchors.fill: parent;
+                    device: itemDevicePath;
+                }
+            }
+
+            PlasmaComponents.Button {
+                id: disconnectButton;
+
+                anchors {
+                    horizontalCenter: parent.horizontalCenter;
+                    top: trafficMonitor.bottom;
+                }
+                text: i18n("Disconnect");
+
+                onClicked: {
+                    if (itemUuid) {
+                        itemExpanded(itemConnectionPath, false);
+                    } else {
+                        itemExpanded(itemName, false);
+                    }
+
+                    handler.deactivateConnection(itemConnectionPath);
+                }
+            }
+        }
+    }
+
+    Component {
+        id: connectionDisconnectedComponent;
 
         Item {
             height: childrenRect.height;
@@ -180,103 +232,86 @@ PlasmaComponents.ListItem {
                 topMargin: theme.defaultFont.mSize.height * 3;
             }
 
-            Item {
-                height: childrenRect.height;
+            PlasmaComponents.TextField {
+                id: passwordInput;
+
+                width: 200;
+                height: visible ? implicitHeight : 0;
                 anchors {
+                    horizontalCenter: parent.horizontalCenter;
                     top: parent.top;
-                    left: parent.left;
+                }
+                echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
+                visible: predictableWirelessPassword;
+                placeholderText: i18n("Password...");
+            }
+
+            PlasmaComponents.CheckBox {
+                id: showPasswordCheckbox;
+
+                height: visible ? defaultCheckboxHeight : 0;
+                anchors {
+                    left: passwordInput.left;
                     right: parent.right;
+                    top: passwordInput.bottom;
                 }
-                visible: !detailsView;
+                visible: predictableWirelessPassword;
+                checked: false;
+                text: i18n("Show password");
+            }
 
-                // I had to move PlasmaNM.TrafficMonitor into a separated item, because it's not possible to adjust the height to 0 and the traffic monitor
-                // still occupied the space.
-                Item {
-                    id: trafficMonitor;
+            PlasmaComponents.CheckBox {
+                id: automaticallyConnectCheckbox;
 
-                    height: visible ? 150 : 0;
-                    anchors {
-                        top: parent.top;
-                        left: parent.left;
-                        right: parent.right;
-                    }
-                    visible: (itemDevicePath && itemConnected && itemType != PlasmaNM.Enums.Vpn)
-
-                    PlasmaNM.TrafficMonitor {
-                        anchors.fill: parent;
-                        device: itemDevicePath;
-                    }
+                height: visible ? defaultCheckboxHeight : 0;
+                anchors {
+                    left: passwordInput.left;
+                    right: parent.right;
+                    top: showPasswordCheckbox.bottom;
                 }
+                visible: predictableWirelessPassword;
+                checked: true;
+                text: i18n("Automatically connect");
+            }
 
-                PlasmaComponents.TextField {
-                    id: passwordInput;
+            PlasmaComponents.Button {
+                id: connectButton;
 
-                    width: 200;
-                    height: visible ? implicitHeight : 0;
-                    anchors {
-                        horizontalCenter: parent.horizontalCenter;
-                        top: trafficMonitor.bottom;
-                    }
-                    echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
-                    visible: predictableWirelessPassword;
-                    placeholderText: i18n("Password...");
+                anchors {
+                    horizontalCenter: parent.horizontalCenter;
+                    top: automaticallyConnectCheckbox.bottom;
                 }
+                text: i18n("Connect");
 
-                PlasmaComponents.CheckBox {
-                    id: showPasswordCheckbox;
-
-                    height: visible ? defaultCheckboxHeight : 0;
-                    anchors {
-                        left: passwordInput.left;
-                        right: parent.right;
-                        top: passwordInput.bottom;
+                onClicked: {
+                    if (itemUuid) {
+                        itemExpanded(itemConnectionPath, false);
+                    } else {
+                        itemExpanded(itemName, false);
                     }
-                    visible: predictableWirelessPassword;
-                    checked: false;
-                    text: i18n("Show password");
-                }
 
-                PlasmaComponents.CheckBox {
-                    id: automaticallyConnectCheckbox;
-
-                    height: visible ? defaultCheckboxHeight : 0;
-                    anchors {
-                        left: passwordInput.left;
-                        right: parent.right;
-                        top: showPasswordCheckbox.bottom;
-                    }
-                    visible: predictableWirelessPassword;
-                    checked: true;
-                    text: i18n("Automatically connect");
-                }
-
-                PlasmaComponents.Button {
-                    id: connectDisconnectButton;
-
-                    anchors {
-                        horizontalCenter: parent.horizontalCenter;
-                        top: automaticallyConnectCheckbox.bottom;
-                    }
-                    text: (itemConnected || itemConnecting)? i18n("Disconnect") : i18n("Connect");
-
-                    onClicked: {
+                    if (!itemConnected && !itemConnecting) {
                         if (itemUuid) {
-                            itemExpanded(itemConnectionPath, false);
+                            handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
                         } else {
-                            itemExpanded(itemName, false);
-                        }
-
-                        if (!itemConnected && !itemConnecting) {
-                            if (itemUuid) {
-                                handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
-                            } else {
-                                handler.addAndActivateConnection(itemDevicePath, itemSpecificPath, passwordInput.text, automaticallyConnectCheckbox.checked);
-                            }
-                        } else {
-                            handler.deactivateConnection(itemConnectionPath);
+                            handler.addAndActivateConnection(itemDevicePath, itemSpecificPath, passwordInput.text, automaticallyConnectCheckbox.checked);
                         }
                     }
                 }
+            }
+        }
+    }
+
+    Component {
+        id: connectionDetailsComponent;
+
+        Item {
+            height: childrenRect.height;
+            anchors {
+                left: parent.left;
+                right: parent.right;
+                top: parent.top;
+                topMargin: theme.defaultFont.mSize.height * 3;
             }
 
             Item {
@@ -342,13 +377,20 @@ PlasmaComponents.ListItem {
         State {
             name: "ConnectionExpanded";
             when: expanded && !sectionHidden;
-            StateChangeScript { script: connectionItemSettings.connectionSettings = connectionComponent.createObject(connectionItem); }
+            StateChangeScript { script: createContent(); }
 //             PropertyChanges { target: connectionItem.ListView.view; currentIndex: index }
         }
     ]
 
     transitions: Transition {
         NumberAnimation { duration: 300; properties: "height" }
+    }
+
+    function createContent() {
+        if (itemConnected || itemConnecting)
+            connectionItemSettings.connectionSettings = connectionConnectedComponent.createObject(connectionItem);
+        else
+            connectionItemSettings.connectionSettings = connectionDisconnectedComponent.createObject(connectionItem);
     }
 
     Behavior on height {
@@ -367,6 +409,18 @@ PlasmaComponents.ListItem {
     onExpandedChanged: {
         if (!expanded) {
             detailsView = false;
+        }
+    }
+
+    onDetailsViewChanged: {
+        if (detailsView) {
+            if (connectionItemSettings.connectionSettings)
+                connectionItemSettings.connectionSettings.destroy()
+            connectionItemSettings.connectionSettings = connectionDetailsComponent.createObject(connectionItem);
+        } else {
+            if (connectionItemSettings.connectionSettings)
+                connectionItemSettings.connectionSettings.destroy()
+            createContent();
         }
     }
 }

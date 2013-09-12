@@ -102,6 +102,7 @@ Item {
         model: connectionSortModel;
         currentIndex: -1;
         interactive: true;
+        boundsBehavior: Flickable.StopAtBounds;
         section.property: "itemSection";
         section.delegate: SectionHeader {
             onHideSection: {

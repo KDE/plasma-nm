@@ -80,14 +80,16 @@ Item {
         anchors {
             top: parent.top;
             right: parent.right;
+            verticalCenter: titleCol.verticalCenter;
         }
 
-        PlasmaExtras.Title {
+        PlasmaComponents.Label {
             id: planeModeLabel;
 
             anchors {
                 right: planeModeSwitch.left;
                 rightMargin: 8;
+                verticalCenter: parent.verticalCenter;
             }
             text: i18n("Airplane Mode");
         }
@@ -98,6 +100,7 @@ Item {
             anchors {
                 right: parent.right;
                 rightMargin: 10;
+                verticalCenter: parent.verticalCenter;
             }
             height: 30;
 

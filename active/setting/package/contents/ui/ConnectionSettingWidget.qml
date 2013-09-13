@@ -82,8 +82,8 @@ Item {
             text: i18n("Automatically connect:");
         }
 
-        PlasmaComponents.Switch {
-            id: automaticallyConnectSwitch;
+        PlasmaComponents.CheckBox {
+            id: automaticallyConnectCheckbox;
 
             anchors {
                 top: parent.top;
@@ -95,7 +95,7 @@ Item {
 
     function resetSetting() {
         connectionNameInput.text = "";
-        automaticallyConnectSwitch.checked = true;
+        automaticallyConnectCheckbox.checked = true;
     }
 
     function loadSetting(settingMap) {
@@ -103,9 +103,9 @@ Item {
 
         connectionNameInput.text = settingMap["id"];
         if (settingMap["autoconnect"]) {
-            automaticallyConnectSwitch.checked = true;
+            automaticallyConnectCheckbox.checked = true;
         } else {
-            automaticallyConnectSwitch.checked = false;
+            automaticallyConnectCheckbox.checked = false;
         }
     }
 
@@ -113,7 +113,7 @@ Item {
         var settingMap = {};
 
         settingMap["id"] = connectionNameInput.text;
-        if (automaticallyConnectSwitch.checked) {
+        if (automaticallyConnectCheckbox.checked) {
             settingMap["autoconnect"] = true;
         } else {
             settingMap["autoconnect"] = false;

@@ -181,8 +181,8 @@ Item {
                     text: i18n("Show password:");
                 }
 
-                PlasmaComponents.Switch {
-                    id: showPasswordSwitch;
+                PlasmaComponents.CheckBox {
+                    id: showPasswordCheckbox;
 
                     anchors {
                         left: parent.horizontalCenter;

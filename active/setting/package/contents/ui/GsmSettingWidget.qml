@@ -280,8 +280,8 @@ Item {
             text: i18n("Allow only home networks:");
         }
 
-        PlasmaComponents.Switch {
-            id: gsmHomeOnlySwitch;
+        PlasmaComponents.CheckBox {
+            id: gsmHomeOnlyCheckbox;
 
             anchors {
                 left: parent.horizontalCenter;
@@ -344,8 +344,8 @@ Item {
             text: i18n("Show passwords:");
         }
 
-        PlasmaComponents.Switch {
-            id: gsmShowPasswordsSwitch;
+        PlasmaComponents.CheckBox {
+            id: gsmShowPasswordsCheckbox;
 
             anchors {
                 left: parent.horizontalCenter;
@@ -370,7 +370,7 @@ Item {
         gsmApnInput.text = "";
         gsmTypeSelectionCombo.text = i18n("Any");
         gsmType = PlasmaNm.Enums.Any;
-        gsmHomeOnlySwitch.checked = false;
+        gsmHomeOnlyCheckbox.checked = false;
         gsmPinInput.text = "";
         gsmShowPasswords.checked = false;
     }
@@ -415,7 +415,7 @@ Item {
             }
         }
         if (settingMap["home-only"]) {
-            gsmHomeOnlySwitch.checked = true;
+            gsmHomeOnlyCheckbox.checked = true;
         }
     }
 
@@ -458,7 +458,7 @@ Item {
         } else if (gsmType == PlasmaNm.Enums.Only4G) {
             settingMap["network-type"] = 5;
         }
-        if (gsmHomeOnlySwitch.checked == true) {
+        if (gsmHomeOnlyCheckbox.checked == true) {
             settingMap["home-ony"] = true;
         }
 

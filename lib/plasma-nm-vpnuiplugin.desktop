@@ -4,6 +4,7 @@ X-KDE-ServiceType=PlasmaNM/VpnUiPlugin
 Name=Network Management VPN UI Plugin
 Name[cs]=VPN UI modul pro správu sítě
 Name[da]=VPN UI-plugin til netværkshåndtering
+Name[de]=Netzwerkverwaltung VPN-Modul
 Name[el]=Πρόσθετο VPN UI της διαχείρισης δικτύων
 Name[fi]=Verkonhallinnan VPN-käyttöliittymäliitännäinen
 Name[fr]=Module externe d'interface utilisateur VPN de gestion de réseau

@@ -372,7 +372,7 @@ Item {
         gsmType = PlasmaNm.Enums.Any;
         gsmHomeOnlyCheckbox.checked = false;
         gsmPinInput.text = "";
-        gsmShowPasswords.checked = false;
+        gsmShowPasswordsCheckbox.checked = false;
     }
 
     function loadSetting(settingMap) {
@@ -422,7 +422,9 @@ Item {
     function loadSecrets(secretsMap) {
         if (secretsMap["password"]) {
             gsmPasswordInput.text = secretsMap["password"];
-        } else if (secretsMap["pin"]) {
+        }
+
+        if (secretsMap["pin"]) {
             gsmPinInput.text = secretsMap["pin"];
         }
     }

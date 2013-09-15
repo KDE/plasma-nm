@@ -64,6 +64,13 @@ PlasmaExtras.ScrollArea {
     function resetSettings() {
         connectionWidget.resetSetting();
         ipv4Widget.resetSetting();
+        gsmWidget.resetSetting();
+    }
+
+    function loadSecrets(secretsMap) {
+        if (secretsMap["gsm"]) {
+            gsmWidget.loadSecrets(secretsMap["gsm"]);
+        }
     }
 
     function loadSettings(settingsMap) {
@@ -72,7 +79,7 @@ PlasmaExtras.ScrollArea {
         if (settingsMap["ipv4"])
             ipv4Widget.loadSetting(settingsMap["ipv4"]);
         if (settingsMap["gsm"])
-            connectionWidget.loadSetting(settingsMap["gsm"]);
+            gsmWidget.loadSetting(settingsMap["gsm"]);
     }
 
     function getSettings() {

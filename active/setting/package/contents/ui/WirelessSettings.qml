@@ -95,7 +95,7 @@ PlasmaExtras.ScrollArea {
         if (secretsMap["802-11-wireless-security"]) {
             wirelessSecurityWidget.loadSecrets(secretsMap["802-11-wireless-security"]);
         } else if (secretsMap["802-1x"]) {
-
+            // TODO
         }
     }
 

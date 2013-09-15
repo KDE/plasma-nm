@@ -110,95 +110,102 @@ Item {
         }
     }
 
-    Image {
-        id: networkSettingsBackground;
+    PlasmaComponents.TabBar {
+        id: tabBar;
 
         anchors {
             horizontalCenter: parent.horizontalCenter;
             top: titleCol.bottom;
             topMargin: 10;
         }
-        width: networkSettings.networkSettingsModel.count * 150;
-        height: 48;
-        source: "image://appbackgrounds/contextarea";
-        fillMode: Image.Tile;
 
-        Border {
-            anchors.fill: parent;
+        PlasmaNm.AvailableDevices {
+            id: availableDevices;
         }
 
-        ListView {
-            id: networksSettingsView;
+        PlasmaComponents.TabButton {
+            id: wirelessTabButton;
 
-            property string selectedItem;
+            property int type: PlasmaNm.Enums.Wireless;
 
-            anchors.fill: parent;
-            orientation: ListView.Horizontal;
-            clip: true;
-            interactive: false;
-            model: networkSettings.networkSettingsModel;
-            currentIndex: 0;
-            highlight: PlasmaComponents.Highlight {}
-            delegate: PlasmaComponents.ListItem {
-                id: networkSettingItem;
+            tab: connectionList;
+            text: i18n("Wireless");
+            visible: availableDevices.wirelessAvailable;
+        }
 
-                property variant myData: model;
+        PlasmaComponents.TabButton {
+            id: modemTabButton;
 
-                anchors {
-                    top: parent.top;
-                    bottom: parent.bottom;
-                }
-                width: 150;
-                checked: networksSettingsView.currentIndex == index;
-                enabled: true
+            property int type: PlasmaNm.Enums.Gsm;
 
-                QIconItem {
-                    id: networkIcon;
+            tab: connectionList;
+            text: i18n("Modem");
+            visible: availableDevices.wwanAvailable;
+        }
 
-                    anchors {
-                        left: parent.left;
-                        top: parent.top;
-                        bottom: parent.bottom;
-                    }
-                    width: 48; height: 48;
-                    icon: QIcon(itemIcon);
-                }
+        PlasmaComponents.TabButton {
+            id: wiredTabButton;
 
-                PlasmaComponents.Label {
-                    id: networkLabel;
+            property int type: PlasmaNm.Enums.Wired;
 
-                    anchors {
-                        left: networkIcon.right;
-                        verticalCenter: parent.verticalCenter;
-                    }
-                    font.weight: Font.Bold;
-                    elide: Text.ElideRight;
-                    text: itemName;
-                }
+            tab: connectionList;
+            text: i18n("Ethernet");
+            visible: availableDevices.wiredAvailable;
+        }
 
-                onClicked: {
-                    networksSettingsView.currentIndex = index;
-                    networkSettings.setNetworkSetting(itemType, itemPath);
-                    connectionList.resetIndex();
-                }
+        PlasmaComponents.TabButton {
+            id: vpnTabButton;
+
+            property int type: PlasmaNm.Enums.Vpn;
+
+            tab: connectionList;
+            text: i18n("VPN");
+        }
+
+        onCurrentTabChanged: {
+            setNetworkSetting();
+            connectionList.resetIndex();
+        }
+
+        Component.onCompleted: {
+            availableDevices.init();
+            setNetworkSetting();
+        }
+
+        function setNetworkSetting() {
+            if (currentTab.type == PlasmaNm.Enums.Wireless) {
+                networkSettings.setNetworkSetting(PlasmaNm.Enums.Wireless, availableDevices.wirelessDevicePath);
+            } else if (currentTab.type == PlasmaNm.Enums.Gsm) {
+                networkSettings.setNetworkSetting(PlasmaNm.Enums.Gsm, availableDevices.wwanDevicePath);
+
+            } else if (currentTab.type == PlasmaNm.Enums.Wired) {
+                networkSettings.setNetworkSetting(PlasmaNm.Enums.Wired, availableDevices.wiredDevicePath);
+
+            } else if (currentTab.type == PlasmaNm.Enums.Vpn) {
+                networkSettings.setNetworkSetting(PlasmaNm.Enums.Vpn);
             }
         }
     }
 
-    ConnectionList {
-        id: connectionList;
+    PlasmaComponents.TabGroup {
+        id: tabContent;
 
         anchors {
             left: parent.left;
             right: parent.right;
-            top: networkSettingsBackground.bottom;
+            top: tabBar.bottom;
             bottom: parent.bottom;
             topMargin: 10;
+        }
+
+        ConnectionList {
+            id: connectionList;
+
+            anchors.fill: parent;
         }
     }
 
     Component.onCompleted: {
-        networkSettings.setNetworkSetting(networksSettingsView.currentItem.myData.itemType, networksSettingsView.currentItem.myData.itemPath);
         enabledConnections.init();
     }
 }

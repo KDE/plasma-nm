@@ -109,8 +109,6 @@ Item {
         filterType: networkSettings.connectionType;
     }
 
-
-
     Image {
         id: connectionsFrame;
 
@@ -217,9 +215,11 @@ Item {
         onStatusChanged: {
             if (status == PlasmaComponents.DialogStatus.Open) {
                 if (networkSettings.connectionType == PlasmaNm.Enums.Wireless) {
-                    addConnectionLoader.source = "WirelessSettings.qml"
+                    addConnectionLoader.source = "WirelessSettings.qml";
                 } else if (networkSettings.connectionType == PlasmaNm.Enums.Wired) {
-                    addConnectionLoader.source = "WiredSettings.qml"
+                    addConnectionLoader.source = "WiredSettings.qml";
+                } else if (networkSettings.connectionType == PlasmaNm.Enums.Gsm) {
+                    addConnectionLoader.source = "GsmSettings.qml";
                 }
             }
         }

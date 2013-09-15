@@ -9,8 +9,6 @@ set(networksettings_SRCS
     connectionsettingshandler.cpp
     networksettingsplugin.cpp
     networksettings.cpp
-    networksettingsmodel.cpp
-    networksettingmodelitem.cpp
 )
 
 kde4_add_plugin(active_settings_network ${networksettings_SRCS})

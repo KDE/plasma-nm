@@ -21,6 +21,7 @@ Name[zh_CN]=Plasma NM 模块
 Comment=Provides secrets to the NetworkManager daemon
 Comment[cs]=Poskytuje přihlašovací informace pro službu NetworkManageru
 Comment[da]=Giver hemmeligheder til NetworkManager-dæmonen
+Comment[de]=Stellt dem NetworkManager-Dienst vertrauliche Daten zur Verfügung
 Comment[el]=Παρέχει κωδικούς ασφαλείας στον δαίμονας NetworkManager
 Comment[fi]=Välittää salaisuuksia NetworkManager-palvelulle
 Comment[fr]=Fournit des mots de passe pour le démon NetworkManager

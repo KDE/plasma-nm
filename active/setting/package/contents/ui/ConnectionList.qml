@@ -109,6 +109,20 @@ Item {
         filterType: networkSettings.connectionType;
     }
 
+    ConnectionSettings {
+        id: connectionSettings;
+
+        width: parent.width/2;
+        anchors {
+            right: parent.right;
+            top: parent.top;
+            bottom: parent.bottom;
+            topMargin: 10;
+            bottomMargin: 50;
+        }
+        visible: connectionsView.count && connectionsView.previouslySelectedItem;
+    }
+
     Image {
         id: connectionsFrame;
 
@@ -135,6 +149,7 @@ Item {
             anchors.fill: parent;
             clip: true;
             model: connectionSortModel;
+            currentIndex: 0;
             delegate: ConnectionModelItem {
                         property variant myData: model;
 
@@ -142,10 +157,7 @@ Item {
                                  (itemConnectionPath == "" && connectionsView.previouslySelectedItem == itemName);
                         onItemSelected: {
                             connectionsView.previouslySelectedItem = itemUuid ? itemConnectionPath : itemName;
-                            if (connectionSettings.status == Loader.Null) {
-                                connectionSettings.source = "ConnectionSettings.qml";
-                            }
-                            connectionSettings.item.selectedItemModel = myData;
+                            connectionSettings.selectedItemModel = myData;
                         }
             }
 
@@ -157,35 +169,16 @@ Item {
 
             onCountChanged: {
                 if (!count) {
-                    if (connectionSettings.status != Loader.Null) {
-                        connectionSettings.source = "";
-                    }
                     previouslySelectedItem = "";
                 }
             }
 
             function selectFirstItem() {
                 currentIndex = 0;
-                if (connectionSettings.status == Loader.Null) {
-                    connectionSettings.source = "ConnectionSettings.qml";
-                }
-                connectionSettings.item.selectedItemModel = currentItem.myData;
+                connectionSettings.selectedItemModel = currentItem.myData;
                 previouslySelectedItem = currentItem.myData.itemUuid ? currentItem.myData.itemConnectionPath : currentItem.myData.itemName;
             }
         }
-    }
-
-    Loader {
-        id: connectionSettings;
-
-        anchors {
-            right: parent.right;
-            top: parent.top;
-            bottom: parent.bottom;
-            topMargin: 10;
-            bottomMargin: 50;
-        }
-        width: parent.width/2;
     }
 
     PlasmaComponents.CommonDialog {
@@ -228,8 +221,6 @@ Item {
     function resetIndex() {
         if (connectionsView.count) {
             connectionsView.selectFirstItem();
-        } else {
-            connectionSettings.source = "";
         }
     }
 }

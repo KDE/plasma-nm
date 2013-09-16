@@ -170,6 +170,7 @@ Item {
         Component.onCompleted: {
             availableDevices.init();
             setNetworkSetting();
+            connectionList.resetIndex();
         }
 
         function setNetworkSetting() {
@@ -177,7 +178,6 @@ Item {
                 networkSettings.setNetworkSetting(PlasmaNm.Enums.Wireless, availableDevices.wirelessDevicePath);
             } else if (currentTab.type == PlasmaNm.Enums.Gsm) {
                 networkSettings.setNetworkSetting(PlasmaNm.Enums.Gsm, availableDevices.wwanDevicePath);
-
             } else if (currentTab.type == PlasmaNm.Enums.Wired) {
                 networkSettings.setNetworkSetting(PlasmaNm.Enums.Wired, availableDevices.wiredDevicePath);
 

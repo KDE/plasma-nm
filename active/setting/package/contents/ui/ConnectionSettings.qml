@@ -26,8 +26,6 @@ import org.kde.active.settings 0.1
 Item {
     property variant selectedItemModel;
 
-    anchors.fill: parent;
-
     ConnectionSettingsHandler {
         id: connectionSettingsHandler;
 

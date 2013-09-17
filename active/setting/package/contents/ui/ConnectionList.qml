@@ -46,7 +46,9 @@ Item {
                  networkSettings.connectionType == PlasmaNm.Enums.Gsm
 
         onClicked: {
-            addConnectionDialog.open();
+            connectionSettings.selectedItemModel = undefined;
+            connectionsView.previouslySelectedItem = "";
+            connectionsView.currentIndex = -1;
         }
     }
 
@@ -120,7 +122,11 @@ Item {
             topMargin: 10;
             bottomMargin: 50;
         }
-        visible: connectionsView.count && connectionsView.previouslySelectedItem;
+
+        // TODO: Select newly added connection
+        onConnectionAdded: {
+            connectionsView.selectFirstItem();
+        }
     }
 
     Image {
@@ -153,66 +159,44 @@ Item {
             delegate: ConnectionModelItem {
                         property variant myData: model;
 
-                        checked: (connectionsView.previouslySelectedItem == itemConnectionPath && itemConnectionPath != "") ||
-                                 (itemConnectionPath == "" && connectionsView.previouslySelectedItem == itemName);
+                        checked: (connectionsView.previouslySelectedItem == itemSsid && networkSettings.connectionType == PlasmaNm.Enums.Wireless) ||
+                                 (connectionsView.previouslySelectedItem == itemConnectionPath && networkSettings.connectionType != PlasmaNm.Enums.Wireless);
+
                         onItemSelected: {
-                            connectionsView.previouslySelectedItem = itemUuid ? itemConnectionPath : itemName;
+                            connectionsView.previouslySelectedItem = networkSettings.connectionType == PlasmaNm.Enums.Wireless ? itemSsid : itemConnectionPath;
+                            // Just to make sure that connection settings will be loaded after the model is sorted
+                            if (connectionSettings.selectedItemModel == myData) {
+                                connectionSettings.selectedItemModel = undefined;
+                            }
                             connectionSettings.selectedItemModel = myData;
+                        }
+
+                        // When we removed previously selected connection
+                        ListView.onRemove: {
+                            if (checked) {
+                                connectionsView.selectFirstItem();
+                            }
                         }
             }
 
             Component.onCompleted: {
-                if (count) {
-                    selectFirstItem();
-                }
+                selectFirstItem();
             }
 
             onCountChanged: {
+                // When there is no available connection
                 if (!count) {
-                    previouslySelectedItem = "";
+                    connectionSettings.selectedItemModel = undefined;
+                    connectionsView.previouslySelectedItem = "";
+                    connectionsView.currentIndex = -1;
                 }
             }
 
             function selectFirstItem() {
-                currentIndex = 0;
-                connectionSettings.selectedItemModel = currentItem.myData;
-                previouslySelectedItem = currentItem.myData.itemUuid ? currentItem.myData.itemConnectionPath : currentItem.myData.itemName;
-            }
-        }
-    }
-
-    PlasmaComponents.CommonDialog {
-        id: addConnectionDialog;
-
-        titleText: i18n("Add new connection")
-        buttonTexts: [i18n("Add"), i18n("Close")]
-        onButtonClicked: {
-            if (index == 0) {
-                var map = {};
-                map = addConnectionLoader.item.getSettings();
-                connectionSettingsDialogHandler.addConnection(map);
-                addConnectionLoader.source = "";
-            } else {
-                addConnectionLoader.source = "";
-                close();
-            }
-        }
-        content: Loader {
-            id: addConnectionLoader;
-            anchors {
-                horizontalCenter: parent.horizontalCenter;
-                verticalCenter: parent.verticalCenter;
-            }
-            height: 500; width: 450;
-        }
-        onStatusChanged: {
-            if (status == PlasmaComponents.DialogStatus.Open) {
-                if (networkSettings.connectionType == PlasmaNm.Enums.Wireless) {
-                    addConnectionLoader.source = "WirelessSettings.qml";
-                } else if (networkSettings.connectionType == PlasmaNm.Enums.Wired) {
-                    addConnectionLoader.source = "WiredSettings.qml";
-                } else if (networkSettings.connectionType == PlasmaNm.Enums.Gsm) {
-                    addConnectionLoader.source = "GsmSettings.qml";
+                if (count) {
+                    currentIndex = 0;
+                    connectionSettings.selectedItemModel = currentItem.myData;
+                    connectionsView.previouslySelectedItem = networkSettings.connectionType == PlasmaNm.Enums.Wireless ? currentItem.myData.itemSsid : currentItem.myData.itemConnectionPath;
                 }
             }
         }

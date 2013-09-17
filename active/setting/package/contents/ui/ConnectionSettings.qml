@@ -26,6 +26,8 @@ import org.kde.active.settings 0.1
 Item {
     property variant selectedItemModel;
 
+    signal connectionAdded();
+
     ConnectionSettingsHandler {
         id: connectionSettingsHandler;
 
@@ -62,26 +64,19 @@ Item {
                   else
                       i18n("Add");
               } else {
-                  "";
+                  i18n("Add");
               }
-
-        enabled: if (selectedItemModel) {
-                    (selectedItemModel.itemType == PlasmaNm.Enums.Wireless ||
-                     selectedItemModel.itemType == PlasmaNm.Enums.Wired ||
-                     selectedItemModel.itemType == PlasmaNm.Enums.Gsm)
-                } else {
-                    false;
-                }
 
         onClicked: {
             if (connectionSettingsLoader.status == Loader.Ready) {
                 var map = {};
                 map = connectionSettingsLoader.item.getSettings();
-                if (selectedItemModel.itemUuid) {
+                if (selectedItemModel && selectedItemModel.itemUuid) {
                     map["connection"]["uuid"] = selectedItemModel.itemUuid;
                     connectionSettingsHandler.saveSettings(map, selectedItemModel.itemConnectionPath);
                 } else {
                     connectionSettingsHandler.addConnection(map);
+                    connectionAdded();
                 }
             }
         }
@@ -95,17 +90,24 @@ Item {
             bottom: parent.bottom;
             rightMargin: 5;
         }
-        text: {
-            if (selectedItemModel) {
-                if (selectedItemModel.itemConnected || selectedItemModel.itemConnecting) {
-                    i18n("Disconnect");
-                } else {
-                    i18n("Connect");
-                }
-            } else {
-                "";
-            }
-        }
+        text: if (selectedItemModel) {
+                  if (selectedItemModel.itemConnected || selectedItemModel.itemConnecting) {
+                      i18n("Disconnect");
+                  } else {
+                      i18n("Connect");
+                  }
+              } else {
+                  i18n("Connect");
+              }
+
+
+        enabled: if (selectedItemModel) {
+                    (selectedItemModel.itemType == PlasmaNm.Enums.Wireless ||
+                     selectedItemModel.itemType == PlasmaNm.Enums.Wired ||
+                     selectedItemModel.itemType == PlasmaNm.Enums.Gsm)
+                 } else {
+                    false;
+                 }
 
         onClicked: {
             if (selectedItemModel) {
@@ -127,17 +129,17 @@ Item {
     states: [
         State {
             id: wirelessSetting;
-            when: selectedItemModel && selectedItemModel.itemType == PlasmaNm.Enums.Wireless;
+            when: networkSettings.connectionType == PlasmaNm.Enums.Wireless;
             PropertyChanges { target: connectionSettingsLoader; source: "WirelessSettings.qml" }
         },
         State {
             id: wiredSetting;
-            when: selectedItemModel && selectedItemModel.itemType == PlasmaNm.Enums.Wired;
+            when: networkSettings.connectionType == PlasmaNm.Enums.Wired;
             PropertyChanges { target: connectionSettingsLoader; source: "WiredSettings.qml" }
         },
         State {
             id: gsmSetting;
-            when: selectedItemModel && selectedItemModel.itemType == PlasmaNm.Enums.Gsm;
+            when: networkSettings.connectionType == PlasmaNm.Enums.Gsm;
             PropertyChanges { target: connectionSettingsLoader; source: "GsmSettings.qml" }
         }
     ]
@@ -147,47 +149,51 @@ Item {
     }
 
     function loadSettings() {
-        if (selectedItemModel.itemUuid && connectionSettingsLoader.status == Loader.Ready) {
-            var map = {};
-            map = connectionSettingsHandler.loadSettings(selectedItemModel.itemUuid);
-            connectionSettingsLoader.item.loadSettings(map);
-        } else if (connectionSettingsLoader.status == Loader.Ready) {
-            if (selectedItemModel.itemType == PlasmaNm.Enums.Wireless) {
-                connectionSettingsLoader.item.resetSettings();
-                // For uknown wireless connections we can pre-fill some properties
-                var connectionMap = [];
-                connectionMap["id"] = selectedItemModel.itemSsid;
-                var wirelessMap = [];
-                wirelessMap["ssid"] = selectedItemModel.itemSsid;
-                var wirelessSecurityMap = [];
-                if (selectedItemModel.itemSecure) {
-                    console.log(selectedItemModel.itemSecurityType);
-                    // StaticWep
-                    if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.StaticWep) {
-                        wirelessSecurityMap["key-mgmt"] = "none";
-                    // DynamicWep
-                    } else if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.DynamicWep) {
-                        wirelessSecurityMap["key-mgmt"] = "ieee8021x";
-                    // LEAP
-                    } else if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.Leap) {
-                        wirelessSecurityMap["key-mgmt"] = "ieee8021x";
-                        wirelessSecurityMap["auth-alg"] = "leap";
-                    // WPA/WPA2
-                    } else if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.WpaPsk || selectedItemModel.itemSecurityType == PlasmaNm.Enums.Wpa2Psk) {
-                        wirelessSecurityMap["key-mgmt"] = "wpa-psk";
-                    // WPA/WPA2 Enterprise
-                    } else if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.WpaEap || selectedItemModel.itemSecurityType == PlasmaNm.Enums.Wpa2Eap) {
-                        wirelessSecurityMap["key-mgmt"] = "wpa-eap";
+        if (selectedItemModel) {
+            if (selectedItemModel.itemUuid && connectionSettingsLoader.status == Loader.Ready) {
+                var map = {};
+                map = connectionSettingsHandler.loadSettings(selectedItemModel.itemUuid);
+                connectionSettingsLoader.item.loadSettings(map);
+            } else if (connectionSettingsLoader.status == Loader.Ready) {
+                if (selectedItemModel.itemType == PlasmaNm.Enums.Wireless) {
+                    connectionSettingsLoader.item.resetSettings();
+                    // For uknown wireless connections we can pre-fill some properties
+                    var connectionMap = [];
+                    connectionMap["id"] = selectedItemModel.itemSsid;
+                    connectionMap["autoconnect"] = true;
+                    var wirelessMap = [];
+                    wirelessMap["ssid"] = selectedItemModel.itemSsid;
+                    var wirelessSecurityMap = [];
+                    if (selectedItemModel.itemSecure) {
+                        // StaticWep
+                        if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.StaticWep) {
+                            wirelessSecurityMap["key-mgmt"] = "none";
+                        // DynamicWep
+                        } else if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.DynamicWep) {
+                            wirelessSecurityMap["key-mgmt"] = "ieee8021x";
+                        // LEAP
+                        } else if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.Leap) {
+                            wirelessSecurityMap["key-mgmt"] = "ieee8021x";
+                            wirelessSecurityMap["auth-alg"] = "leap";
+                        // WPA/WPA2
+                        } else if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.WpaPsk || selectedItemModel.itemSecurityType == PlasmaNm.Enums.Wpa2Psk) {
+                            wirelessSecurityMap["key-mgmt"] = "wpa-psk";
+                        // WPA/WPA2 Enterprise
+                        } else if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.WpaEap || selectedItemModel.itemSecurityType == PlasmaNm.Enums.Wpa2Eap) {
+                            wirelessSecurityMap["key-mgmt"] = "wpa-eap";
+                        }
                     }
+                    var settingsMap = [];
+                    settingsMap["connection"] = connectionMap;
+                    settingsMap["802-11-wireless"] = wirelessMap;
+                    settingsMap["802-11-wireless-security"] = wirelessSecurityMap;
+                    connectionSettingsLoader.item.loadSettings(settingsMap);
+                } else {
+                    connectionSettingsLoader.item.resetSettings();
                 }
-                var settingsMap = [];
-                settingsMap["connection"] = connectionMap;
-                settingsMap["802-11-wireless"] = wirelessMap;
-                settingsMap["802-11-wireless-security"] = wirelessSecurityMap;
-                connectionSettingsLoader.item.loadSettings(settingsMap);
-            } else {
-                connectionSettingsLoader.item.resetSettings();
             }
+        } else {
+            connectionSettingsLoader.item.resetSettings();
         }
     }
 }

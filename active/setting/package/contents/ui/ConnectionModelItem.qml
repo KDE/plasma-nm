@@ -111,9 +111,4 @@ Item {
 
         onClicked: itemSelected();
     }
-
-    onCheckedChanged: {
-        if (checked)
-            itemSelected();
-    }
 }

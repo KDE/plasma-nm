@@ -331,8 +331,10 @@ void DeviceConnectionModel::activeAccessPointChanged(const QString &uni)
 {
     WirelessDevice *wifi = qobject_cast<WirelessDevice*>(sender());
     AccessPoint::Ptr accessPoint = wifi->findAccessPoint(uni);
-    connect(accessPoint.data(), SIGNAL(signalStrengthChanged(int)),
-            this, SLOT(signalStrengthChanged()), Qt::UniqueConnection);
+    if (accessPoint) {
+        connect(accessPoint.data(), SIGNAL(signalStrengthChanged(int)),
+                this, SLOT(signalStrengthChanged()), Qt::UniqueConnection);
+    }
 }
 
 QStandardItem *DeviceConnectionModel::findDeviceItem(const QString &uni)

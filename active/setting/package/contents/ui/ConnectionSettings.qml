@@ -193,7 +193,9 @@ Item {
                 }
             }
         } else {
-            connectionSettingsLoader.item.resetSettings();
+            if (connectionSettingsLoader.status == Loader.Ready) {
+                connectionSettingsLoader.item.resetSettings();
+            }
         }
     }
 }

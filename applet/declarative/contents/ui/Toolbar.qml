@@ -28,7 +28,7 @@ Item {
 
     property bool expanded: false;
 
-    height: theme.defaultFont.mSize.height * 2;
+    height: theme.defaultFont.mSize.height * 1.8;
 
     PlasmaNM.NetworkStatus {
         id: networkStatus;

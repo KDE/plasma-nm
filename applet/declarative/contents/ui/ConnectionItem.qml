@@ -44,7 +44,7 @@ PlasmaComponents.ListItem {
     signal itemExpanded(string connectionPath, bool itemExpanded);
 
     enabled: true
-    height: theme.defaultFont.mSize.height * 2.8 + ((!connectionItemSettings.connectionSettings || !expanded) ? 0 : connectionItemSettings.connectionSettings.childrenRect.height + padding.margins.top);
+    height: theme.defaultFont.mSize.height * 2.6 + ((connectionItemSettings.status != Loader.Ready || !expanded) ? 0 : connectionItemSettings.item.childrenRect.height + padding.margins.top);
 
     onClicked: {
         if (itemUuid) {
@@ -162,9 +162,15 @@ PlasmaComponents.ListItem {
         }
     }
 
-    Item {
+    Loader {
         id: connectionItemSettings;
-        property Item connectionSettings;
+
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: parent.top;
+            topMargin: theme.defaultFont.mSize.height * 2.2;
+        }
     }
 
     Component {
@@ -173,10 +179,7 @@ PlasmaComponents.ListItem {
         Item {
             height: childrenRect.height;
             anchors {
-                left: parent.left;
-                right: parent.right;
-                top: parent.top;
-                topMargin: theme.defaultFont.mSize.height * 3;
+                fill: parent;
             }
             // I had to move PlasmaNM.TrafficMonitor into a separated item, because it's not possible to adjust the height to 0 and the traffic monitor
             // still occupied the space.
@@ -225,10 +228,7 @@ PlasmaComponents.ListItem {
         Item {
             height: childrenRect.height;
             anchors {
-                left: parent.left;
-                right: parent.right;
-                top: parent.top;
-                topMargin: theme.defaultFont.mSize.height * 3;
+                fill: parent;
             }
 
             PlasmaComponents.TextField {
@@ -307,10 +307,7 @@ PlasmaComponents.ListItem {
         Item {
             height: childrenRect.height;
             anchors {
-                left: parent.left;
-                right: parent.right;
-                top: parent.top;
-                topMargin: theme.defaultFont.mSize.height * 3;
+                fill: parent;
             }
 
             Item {
@@ -362,13 +359,13 @@ PlasmaComponents.ListItem {
         State {
             name: "Collapsed";
             when: !expanded && !sectionHidden;
-            StateChangeScript { script: if (connectionItemSettings.connectionSettings) {connectionItemSettings.connectionSettings.destroy()} }
+            StateChangeScript { script: if (connectionItemSettings.status == Loader.Ready) {connectionItemSettings.sourceComponent = undefined} }
         },
 
         State {
             name: "CollapsedHidden";
             when: sectionHidden;
-            StateChangeScript { script: if (connectionItemSettings.connectionSettings) {connectionItemSettings.connectionSettings.destroy()} }
+            StateChangeScript { script: if (connectionItemSettings.status == Loader.Ready) {connectionItemSettings.sourceComponent = undefined} }
             PropertyChanges { target: connectionItem; height: 0; }
             PropertyChanges { target: connectionItem; visible: false; }
         },
@@ -377,7 +374,6 @@ PlasmaComponents.ListItem {
             name: "ConnectionExpanded";
             when: expanded && !sectionHidden;
             StateChangeScript { script: createContent(); }
-//             PropertyChanges { target: connectionItem.ListView.view; currentIndex: index }
         }
     ]
 
@@ -387,9 +383,9 @@ PlasmaComponents.ListItem {
 
     function createContent() {
         if (itemConnected || itemConnecting)
-            connectionItemSettings.connectionSettings = connectionConnectedComponent.createObject(connectionItem);
+            connectionItemSettings.sourceComponent = connectionConnectedComponent;
         else
-            connectionItemSettings.connectionSettings = connectionDisconnectedComponent.createObject(connectionItem);
+            connectionItemSettings.sourceComponent = connectionDisconnectedComponent;
     }
 
     Behavior on height {
@@ -413,12 +409,12 @@ PlasmaComponents.ListItem {
 
     onDetailsViewChanged: {
         if (detailsView) {
-            if (connectionItemSettings.connectionSettings)
-                connectionItemSettings.connectionSettings.destroy()
-            connectionItemSettings.connectionSettings = connectionDetailsComponent.createObject(connectionItem);
+            if (connectionItemSettings.status == Loader.Ready)
+                connectionItemSettings.sourceComponent = undefined;
+            connectionItemSettings.sourceComponent = connectionDetailsComponent;
         } else {
-            if (connectionItemSettings.connectionSettings)
-                connectionItemSettings.connectionSettings.destroy()
+            if (connectionItemSettings.status == Loader.Ready)
+                connectionItemSettings.sourceComponent = undefined;
             createContent();
         }
     }

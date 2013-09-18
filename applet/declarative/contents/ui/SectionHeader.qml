@@ -29,7 +29,7 @@ Title {
 
     property bool expanded: true;
 
-    height: theme.defaultFont.mSize.height * 2.5;
+    height: theme.defaultFont.mSize.height * 2.3;
     anchors {
         left: parent.left;
         right: parent.right;

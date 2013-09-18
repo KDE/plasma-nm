@@ -129,8 +129,15 @@ Item {
                 if (itemExpanded) {
                     connectionView.expandedItem = true;
                     connectionView.previouslyExpandedItem = connectionPath;
+                    connectionView.currentIndex = index;
                 } else {
                     connectionView.expandedItem = false;
+                    connectionView.previouslyExpandedItem = "";
+                }
+            }
+
+            ListView.onRemove: {
+                if (ListView.isCurrentItem) {
                     connectionView.previouslyExpandedItem = "";
                 }
             }

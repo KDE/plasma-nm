@@ -21,6 +21,8 @@
 import QtQuick 1.1
 import org.kde.qtextracomponents 0.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
+import org.kde.plasma.core 0.1 as PlasmaCore
+import org.kde.plasmanm 0.1 as PlasmaNm
 
 Item {
     property alias checked: connectionItem.checked;
@@ -56,7 +58,14 @@ Item {
         }
         enabled: true
 
-        QIconItem {
+        PlasmaCore.Svg {
+            id: svgIcons;
+
+            multipleImages: true;
+            imagePath: "icons/plasma-nm";
+        }
+
+        Item {
             id: connectionIcon;
 
             anchors {
@@ -64,10 +73,25 @@ Item {
                 top: parent.top;
                 bottom: parent.bottom;
             }
-            width: 48;
+            width: 32;
             height: 48;
 
-            icon: QIcon(itemConnectionIcon);
+            PlasmaCore.SvgItem {
+                id: svgConnectionIcon;
+
+                anchors.fill: parent;
+                svg: svgIcons;
+                elementId: itemConnectionIcon;
+                visible: itemType != PlasmaNm.Enums.Vpn && itemType != PlasmaNm.Enums.Adsl && itemType != PlasmaNm.Enums.Pppoe;
+            }
+
+            QIconItem {
+                id: pngConnectionIcon;
+
+                anchors.fill: parent;
+                icon: QIcon("secure-card");
+                visible: !svgConnectionIcon.visible;
+            }
         }
 
         PlasmaComponents.Label {
@@ -77,6 +101,7 @@ Item {
                 left: connectionIcon.right;
                 right: securityLabel.left;
                 verticalCenter: parent.verticalCenter;
+                leftMargin: 10;
             }
             font.weight: Font.Bold;
             elide: Text.ElideRight;

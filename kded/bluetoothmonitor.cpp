@@ -23,12 +23,9 @@
 #include "bluetoothmonitor.h"
 #include "connectiondetaileditor.h"
 
-// #include <nm-setting-bluetooth.h>
-
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QUuid>
-#include <QTimer>
 
 #include <KDebug>
 #include <KStandardDirs>
@@ -273,7 +270,7 @@ void BluetoothMonitor::modemAdded(const QString &udi)
     }
 
     if (!exists) {
-        mobileConnectionWizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown);
+        mobileConnectionWizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Bluetooth);
         if (mobileConnectionWizard.data()->exec() == QDialog::Accepted && mobileConnectionWizard.data()->getError() == MobileProviders::Success) {
             qDebug() << "Mobile broadband wizard finished:" << mobileConnectionWizard.data()->type() << mobileConnectionWizard.data()->args();
             if (mobileConnectionWizard.data()->args().count() == 2) { //GSM or CDMA

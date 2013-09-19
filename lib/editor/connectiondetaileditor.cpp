@@ -181,14 +181,6 @@ ConnectionDetailEditor::~ConnectionDetailEditor()
 
 void ConnectionDetailEditor::initEditor()
 {
-    qDBusRegisterMetaType<NMVariantMapMap>();
-    qDBusRegisterMetaType<NMStringMap>();
-    qDBusRegisterMetaType<UIntList>();
-    qDBusRegisterMetaType<UIntListList>();
-    qDBusRegisterMetaType<IpV6DBusAddressList>();
-    qDBusRegisterMetaType<IpV6DBusRouteList>();
-    qDBusRegisterMetaType<IpV6DBusNameservers>();
-
     if (!m_new) {
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(m_connection->uuid());
         if (connection) {

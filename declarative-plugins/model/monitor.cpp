@@ -354,8 +354,8 @@ void Monitor::gsmNetworkSignalQualityChanged(uint signal)
                 NetworkManager::ModemDevice::Ptr modem = dev.objectCast<NetworkManager::ModemDevice>();
                 if (modem) {
                     if (modem->getModemNetworkIface()->device() == gsmNetwork->device()) {
-                        //NMMonitorDebug() << "Modem " << modem->udi() << " signal changed to " << signal;
-                        Q_EMIT modemSignalQualityChanged(modem->uni());
+                        NMMonitorDebug() << "Modem " << modem->udi() << " signal changed to " << signal;
+                        Q_EMIT modemSignalQualityChanged(gsmNetwork->getSignalQuality(), modem->uni());
                     }
                 }
             }

@@ -58,6 +58,7 @@ private Q_SLOTS:
     void addWirelessNetwork(const QString& ssid, const QString& device);
     void connectionUpdated(const QString& connection);
     void modemPropertiesChanged(const QString& modem);
+    void modemSignalQualityChanged(uint signal, const QString& modem);
     void removeActiveConnection(const QString& active);
     void removeConnection(const QString& connection);
     void removeConnectionsByDevice(const QString& device);

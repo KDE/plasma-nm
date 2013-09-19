@@ -163,21 +163,31 @@ void ConnectionIcon::setIcons()
     }
 
     foreach (const NetworkManager::ActiveConnection::Ptr & active, actives) {
-        if (((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) ||
-            (active->state() == NetworkManager::ActiveConnection::Activating && !defaultRouteExists)) {
+        if (((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) || !defaultRouteExists) {
+
             if (active->vpn() || active->devices().isEmpty()) {
                 continue;
             }
+
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
             if (device) {
                 NetworkManager::Device::Type type = device->type();
 
                 if (type == NetworkManager::Device::Wifi) {
-                    NetworkManager::ConnectionSettings::Ptr settings;
-                    settings = active->connection()->settings();
-                    NetworkManager::WirelessSetting::Ptr wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
-                    setWirelessIcon(device, wirelessSetting->ssid());
-                    connectionFound = true;
+                    NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+                    if (!wifiDevice) {
+                        continue;
+                    }
+                    if (wifiDevice->mode() == NetworkManager::WirelessDevice::Adhoc) {
+                        setWirelessIconForSignalStrength(100);
+                        connectionFound = true;
+                    } else {
+                        NetworkManager::AccessPoint::Ptr ap = wifiDevice->findAccessPoint(active->specificObject());
+                        if (ap) {
+                            setWirelessIcon(device, ap->ssid());
+                            connectionFound = true;
+                        }
+                    }
                 } else if (type == NetworkManager::Device::Ethernet) {
                     connectionFound = true;
                     NMAppletDebug() << "Emit signal setConnectionIcon(network-wired-activated)";
@@ -193,8 +203,9 @@ void ConnectionIcon::setIcons()
                         if (btDevice->bluetoothCapabilities().testFlag(NetworkManager::BluetoothDevice::Dun)) {
                             setModemIcon(device);
                         } else {
-                            NMAppletDebug() << "Emit signal setStatiConnectionIcon(preferences-system-bluetooth)";
-                            Q_EMIT setStaticConnectionIcon("preferences-system-bluetooth");
+                            NMAppletDebug() << "Emit signal setConnectionIcon(bluetooth)";
+                            Q_EMIT setConnectionIcon("bluetooth");
+                            Q_EMIT setTooltipIcon("preferences-system-bluetooth");
                         }
                     }
                 }
@@ -259,7 +270,7 @@ void ConnectionIcon::setDisconnectedIcon()
         return;
     } else if (modem) {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile)";
-        Q_EMIT setStaticConnectionIcon("phone");
+        Q_EMIT setConnectionIcon("network-mobile");
         Q_EMIT setTooltipIcon("phone");
         Q_EMIT setHoverIcon("dialog-cancel");
         return;

@@ -70,9 +70,9 @@ Model::Model(QObject* parent):
             SLOT(modemPropertiesChanged(QString)));
     connect(m_monitor, SIGNAL(modemAllowedModeChanged(QString)),
             SLOT(modemPropertiesChanged(QString)));
-    connect(m_monitor, SIGNAL(modemSignalQualityChanged(QString)),
-            SLOT(modemPropertiesChanged(QString)));
-    connect(m_monitor, SIGNAL(removeActiveConnection(QString)),
+    connect(m_monitor, SIGNAL(modemSignalQualityChanged(uint, QString)),
+            SLOT(modemSignalQualityChanged(uint, QString)));
+    connect(m_monitor, SIGNAL(removeActiveConnection(uint, QString)),
             SLOT(removeActiveConnection(QString)));
     connect(m_monitor, SIGNAL(removeConnection(QString)),
             SLOT(removeConnection(QString)));
@@ -282,6 +282,17 @@ void Model::modemPropertiesChanged(const QString& modem)
     }
 }
 
+void Model::modemSignalQualityChanged(uint signal, const QString& modem)
+{
+    qDebug() << "Modem signal quality changed";
+    foreach (ModelItem * item, m_items.itemsByDevice(modem)) {
+        item->updateSignalStrenght(signal);
+
+        if (updateItem(item)) {
+            //NMModelDebug() << "Item " << item->name() << " has been changed (modem signal changed)";
+        }
+    }
+}
 
 void Model::removeActiveConnection(const QString& active)
 {
@@ -357,8 +368,21 @@ void Model::removeWimaxNsps()
 void Model::removeWirelessNetwork(const QString& ssid, const QString& device)
 {
     foreach (ModelItem * item, m_items.itemsBySsid(ssid, device)) {
-        if (removeItem(item)) {
-            NMModelDebug() << "Wireless network " << ssid << " has been removed";
+        NetworkManager::AccessPoint::Ptr accessPoint;
+        NetworkManager::WirelessDevice::Ptr wirelessDevice = NetworkManager::findNetworkInterface(item->devicePath()).objectCast<NetworkManager::WirelessDevice>();
+        if (wirelessDevice) {
+            accessPoint = wirelessDevice->findAccessPoint(item->specificPath());
+        }
+        if (accessPoint && accessPoint->mode() == NetworkManager::AccessPoint::Adhoc &&
+            NetworkManager::isWirelessEnabled() && NetworkManager::isWirelessHardwareEnabled()) {
+            item->setWirelessNetwork(QString());
+            if (updateItem(item)) {
+                NMModelDebug() << "Wireless network " << ssid << " has been removed";
+            }
+        } else {
+            if (removeItem(item)) {
+                NMModelDebug() << "Wireless network " << ssid << " has been completely removed";
+            }
         }
     }
 }

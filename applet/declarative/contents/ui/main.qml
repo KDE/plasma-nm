@@ -19,10 +19,7 @@
 */
 
 import QtQuick 1.1
-import org.kde.qtextracomponents 0.1
-import org.kde.plasma.graphicswidgets 0.1 as PlasmaWidgets
 import org.kde.plasma.components 0.1 as PlasmaComponents
-import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasma.core 0.1 as PlasmaCore
 import org.kde.plasmanm 0.1 as PlasmaNm
 
@@ -32,7 +29,7 @@ Item {
     property int minimumWidth: 300;
     property int minimumHeight: 300;
     property bool autoHideOptions: true;
-    property Component compactRepresentation: CompactRepresantation{
+    property Component compactRepresentation: CompactRepresentation {
         Component.onCompleted: {
             plasmoid.addEventListener('configChanged', mainWindow.configChanged)
         }
@@ -102,6 +99,7 @@ Item {
         model: connectionSortModel;
         currentIndex: -1;
         interactive: true;
+        boundsBehavior: Flickable.StopAtBounds;
         section.property: "itemSection";
         section.delegate: SectionHeader {
             onHideSection: {
@@ -131,8 +129,15 @@ Item {
                 if (itemExpanded) {
                     connectionView.expandedItem = true;
                     connectionView.previouslyExpandedItem = connectionPath;
+                    connectionView.currentIndex = index;
                 } else {
                     connectionView.expandedItem = false;
+                    connectionView.previouslyExpandedItem = "";
+                }
+            }
+
+            ListView.onRemove: {
+                if (ListView.isCurrentItem) {
                     connectionView.previouslyExpandedItem = "";
                 }
             }

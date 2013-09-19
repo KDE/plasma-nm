@@ -96,17 +96,45 @@ QString ModelItem::icon() const
             return "modem";
             break;
         case NetworkManager::ConnectionSettings::Bluetooth:
-            return "preferences-system-bluetooth";
+            if (connected()) {
+                return "bluetooth";
+            } else {
+                return "bluetooth-inactive";
+            }
             break;
         case NetworkManager::ConnectionSettings::Bond:
             break;
         case NetworkManager::ConnectionSettings::Bridge:
             break;
         case NetworkManager::ConnectionSettings::Cdma:
-            return "phone";
+            if (m_signal == 0 ) {
+                return "network-mobile-0";
+            } else if (m_signal < 20) {
+                return "network-mobile-20";
+            } else if (m_signal < 40) {
+                return "network-mobile-40";
+            } else if (m_signal < 60) {
+                return "network-mobile-60";
+            } else if (m_signal < 80) {
+                return "network-mobile-80";
+            } else {
+                return "network-mobile-100";
+            }
             break;
         case NetworkManager::ConnectionSettings::Gsm:
-            return "phone";
+            if (m_signal == 0 ) {
+                return "network-mobile-0";
+            } else if (m_signal < 20) {
+                return "network-mobile-20";
+            } else if (m_signal < 40) {
+                return "network-mobile-40";
+            } else if (m_signal < 60) {
+                return "network-mobile-60";
+            } else if (m_signal < 80) {
+                return "network-mobile-80";
+            } else {
+                return "network-mobile-100";
+            }
             break;
         case NetworkManager::ConnectionSettings::Infiniband:
             break;
@@ -130,16 +158,24 @@ QString ModelItem::icon() const
             }
             break;
         case NetworkManager::ConnectionSettings::Wireless:
-            if (m_signal < 13) {
-                return "network-wireless-connected-00";
-            } else if (m_signal < 38) {
-                return "network-wireless-connected-25";
-            } else if (m_signal < 63) {
-                return "network-wireless-connected-50";
-            } else if (m_signal < 88) {
-                return "network-wireless-connected-75";
+            if (m_signal == 0 ) {
+                return "network-wireless-00";
+            } else if (m_signal < 20) {
+                return "network-wireless-20";
+            } else if (m_signal < 25) {
+                return "network-wireless-25";
+            } else if (m_signal < 40) {
+                return "network-wireless-40";
+            } else if (m_signal < 50) {
+                return "network-wireless-50";
+            } else if (m_signal < 60) {
+                return "network-wireless-60";
+            } else if (m_signal < 75) {
+                return "network-wireless-75";
+            } else if (m_signal < 80) {
+                return "network-wireless-80";
             } else {
-                return "network-wireless-connected-100";
+                return "network-wireless-100";
             }
             break;
         default:

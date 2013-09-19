@@ -77,7 +77,7 @@ Q_SIGNALS:
     void connectionUpdated(const QString& connection);
     void modemAccessTechnologyChanged(const QString& modem);
     void modemAllowedModeChanged(const QString& modem);
-    void modemSignalQualityChanged(const QString& modem);
+    void modemSignalQualityChanged(uint signal, const QString & modem);
     void removeActiveConnection(const QString& active);
     void removeConnectionsByDevice(const QString& udi);
     void removeConnection(const QString& connection);

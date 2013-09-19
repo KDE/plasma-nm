@@ -64,7 +64,14 @@ PlasmaComponents.ListItem {
             top: parent.top;
         }
 
-        QIconItem {
+        PlasmaCore.Svg {
+            id: svgIcons;
+
+            multipleImages: true;
+            imagePath: "icons/plasma-nm";
+        }
+
+        Item {
             id: connectionTypeIcon;
 
             height: connectionItemBasic.height;
@@ -74,19 +81,35 @@ PlasmaComponents.ListItem {
                 verticalCenter: parent.verticalCenter;
                 leftMargin: padding.margins.left;
             }
-            icon: QIcon(itemConnectionIcon);
+
+            PlasmaCore.SvgItem {
+                id: svgConnectionTypeIcon;
+
+                anchors.fill: parent;
+                svg: svgIcons;
+                elementId: itemConnectionIcon;
+                visible: itemType != PlasmaNM.Enums.Vpn && itemType != PlasmaNM.Enums.Adsl && itemType != PlasmaNM.Enums.Pppoe;
+
+                QIconItem {
+                    id: connectionSecurityIcon;
+
+                    width: connectionTypeIcon.width/2;
+                    height: width;
+                    anchors {
+                        bottom: parent.bottom;
+                        right: parent.right;
+                    }
+                    icon: QIcon("object-locked");
+                    visible: itemSecure;
+                }
+            }
 
             QIconItem {
-                id: connectionSecurityIcon;
+                id: pngConnectionTypeIcon;
 
-                width: connectionTypeIcon.width/2;
-                height: width;
-                anchors {
-                    bottom: parent.bottom;
-                    right: parent.right;
-                }
-                icon: QIcon("object-locked");
-                visible: itemSecure;
+                anchors.fill: parent;
+                icon: QIcon("secure-card");
+                visible: !svgConnectionTypeIcon.visible;
             }
         }
 

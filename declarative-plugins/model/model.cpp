@@ -68,9 +68,9 @@ Model::Model(QObject* parent):
             SLOT(modemPropertiesChanged(QString)));
     connect(m_monitor, SIGNAL(modemAllowedModeChanged(QString)),
             SLOT(modemPropertiesChanged(QString)));
-    connect(m_monitor, SIGNAL(modemSignalQualityChanged(QString)),
-            SLOT(modemPropertiesChanged(QString)));
-    connect(m_monitor, SIGNAL(removeActiveConnection(QString)),
+    connect(m_monitor, SIGNAL(modemSignalQualityChanged(uint, QString)),
+            SLOT(modemSignalQualityChanged(uint, QString)));
+    connect(m_monitor, SIGNAL(removeActiveConnection(uint, QString)),
             SLOT(removeActiveConnection(QString)));
     connect(m_monitor, SIGNAL(removeConnection(QString)),
             SLOT(removeConnection(QString)));
@@ -278,6 +278,17 @@ void Model::modemPropertiesChanged(const QString& modem)
     }
 }
 
+void Model::modemSignalQualityChanged(uint signal, const QString& modem)
+{
+    qDebug() << "Modem signal quality changed";
+    foreach (ModelItem * item, m_items.itemsByDevice(modem)) {
+        item->updateSignalStrenght(signal);
+
+        if (updateItem(item)) {
+            //NMModelDebug() << "Item " << item->name() << " has been changed (modem signal changed)";
+        }
+    }
+}
 
 void Model::removeActiveConnection(const QString& active)
 {

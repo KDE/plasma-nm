@@ -203,8 +203,9 @@ void ConnectionIcon::setIcons()
                         if (btDevice->bluetoothCapabilities().testFlag(NetworkManager::BluetoothDevice::Dun)) {
                             setModemIcon(device);
                         } else {
-                            NMAppletDebug() << "Emit signal setStatiConnectionIcon(preferences-system-bluetooth)";
-                            Q_EMIT setStaticConnectionIcon("preferences-system-bluetooth");
+                            NMAppletDebug() << "Emit signal setConnectionIcon(bluetooth)";
+                            Q_EMIT setConnectionIcon("bluetooth");
+                            Q_EMIT setTooltipIcon("preferences-system-bluetooth");
                         }
                     }
                 }
@@ -269,7 +270,7 @@ void ConnectionIcon::setDisconnectedIcon()
         return;
     } else if (modem) {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile)";
-        Q_EMIT setStaticConnectionIcon("phone");
+        Q_EMIT setConnectionIcon("network-mobile");
         Q_EMIT setTooltipIcon("phone");
         Q_EMIT setHoverIcon("dialog-cancel");
         return;

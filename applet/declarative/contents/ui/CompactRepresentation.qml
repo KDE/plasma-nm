@@ -108,12 +108,6 @@ Item {
             staticIcon.visible = false;
         }
 
-        onSetStaticConnectionIcon: {
-            staticIcon.icon = QIcon(icon);
-            staticIcon.visible = true;
-            connectionIcon.visible = false;
-        }
-
         onSetHoverIcon: {
             hoverIcon.visible = true;
             hoverIcon.icon = QIcon(icon);

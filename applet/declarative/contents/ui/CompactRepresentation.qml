@@ -65,7 +65,7 @@ Item {
         id: connectingIndicator;
 
         anchors.fill: parent;
-        running: false
+        running: false;
         visible: running;
     }
 
@@ -78,16 +78,16 @@ Item {
     }
 
     MouseArea {
-        id: mouseAreaPopup
+        id: mouseAreaPopup;
 
-        anchors.fill: parent
-        hoverEnabled: true
-        onClicked: plasmoid.togglePopup()
+        anchors.fill: parent;
+        hoverEnabled: true;
+        onClicked: plasmoid.togglePopup();
 
         PlasmaCore.ToolTip {
-             id: tooltip
-             target: mouseAreaPopup
-             image: connectionIcon.elementId
+            id: tooltip;
+            target: mouseAreaPopup;
+            image: connectionIcon.elementId;
         }
     }
 

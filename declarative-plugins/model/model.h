@@ -37,8 +37,8 @@ class Model : public QAbstractListModel
 {
 Q_OBJECT
 public:
-    enum ItemRole {ConnectingRole = Qt::UserRole + 1, ConnectedRole, ConnectionPathRole, ConnectionIconRole, ConnectionDetailsRole,
-                   DeviceNameRole, DevicePathRole, NameRole, SecureRole, SecurityTypeRole, SectionRole, SignalRole, SsidRole, SpecificPathRole, UuidRole, TypeRole};
+    enum ItemRole {ConnectionStateRole = Qt::UserRole + 1, ConnectionPathRole, ConnectionIconRole, ConnectionDetailsRole,
+                   DeviceNameRole, DevicePathRole, NameRole, SecurityTypeRole, SectionRole, SignalRole, SsidRole, SpecificPathRole, UuidRole, TypeRole};
 
     explicit Model(QObject* parent = 0);
     virtual ~Model();
@@ -60,6 +60,7 @@ private Q_SLOTS:
     void modemPropertiesChanged(const QString& modem);
     void modemSignalQualityChanged(uint signal, const QString& modem);
     void removeActiveConnection(const QString& active);
+    void removeAvailableConnection(const QString& connection, const QString& device);
     void removeConnection(const QString& connection);
     void removeConnectionsByDevice(const QString& device);
     void removeVpnConnections();

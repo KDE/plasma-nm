@@ -39,11 +39,6 @@ public:
     explicit ModelItem(const QString& device = QString(), QObject * parent = 0);
     virtual ~ModelItem();
 
-    // Basic properties
-    bool connected() const;
-    bool connecting() const;
-    bool secure() const;
-
     QString details() const;
     QString deviceName() const;
     QString icon() const;
@@ -61,6 +56,7 @@ public:
     QString specificPath() const;
 
     int signal() const;
+    NetworkManager::ActiveConnection::State connectionState() const;
     NetworkManager::ConnectionSettings::ConnectionType type() const;
     NetworkManager::Utils::WirelessSecurityType securityType() const;
 
@@ -86,19 +82,17 @@ private:
     QString m_devicePath;
     QString m_nspPath;
 
-    bool m_connected;
-    bool m_connecting;
-    bool m_secure;
-
     QString m_device;
     QString m_details;
     QString m_name;
     QString m_nsp;
     QString m_ssid;
     QString m_uuid;
+    QString m_uni;
 
     int m_signal;
     SectionType m_sectionType;
+    NetworkManager::ActiveConnection::State m_connectionState;
     NetworkManager::ConnectionSettings::ConnectionType m_type;
     NetworkManager::Utils::WirelessSecurityType m_securityType;
 

@@ -144,7 +144,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     settings.clear();
 }
 
-void Handler::deactivateConnection(const QString& connection)
+void Handler::deactivateConnection(const QString& connection, const QString& device)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
@@ -154,7 +154,8 @@ void Handler::deactivateConnection(const QString& connection)
     }
 
     foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-        if (active->uuid() == con->uuid()) {
+        if (active->uuid() == con->uuid() && ((!active->devices().isEmpty() && active->devices().first() == device) ||
+                                               active->vpn())) {
             if (active->vpn()) {
                 NetworkManager::deactivateConnection(active->path());
             } else {

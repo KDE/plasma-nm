@@ -98,12 +98,12 @@ QAbstractItemModel* SortModel::sourceModel() const
 
 bool SortModel::lessThan(const QModelIndex& left, const QModelIndex& right) const
 {
-    const bool leftConnected = sourceModel()->data(left, Model::ConnectedRole).toBool();
+    const bool leftConnected = sourceModel()->data(left, Model::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
     const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, Model::TypeRole).toUInt());
     const QString leftUuid = sourceModel()->data(left, Model::UuidRole).toString();
     const int leftSignal = sourceModel()->data(left, Model::SignalRole).toInt();
 
-    const bool rightConnected = sourceModel()->data(right, Model::ConnectedRole).toBool();
+    const bool rightConnected = sourceModel()->data(right, Model::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
     const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, Model::TypeRole).toUInt());
     const QString rightUuid = sourceModel()->data(right, Model::UuidRole).toString();
     const int rightSignal = sourceModel()->data(right, Model::SignalRole).toInt();

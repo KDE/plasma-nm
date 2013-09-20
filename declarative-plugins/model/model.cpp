@@ -32,15 +32,13 @@ Model::Model(QObject* parent):
     m_monitor(new Monitor(this))
 {
     QHash<int, QByteArray> roles = roleNames();
-    roles[ConnectingRole] = "itemConnecting";
-    roles[ConnectedRole] = "itemConnected";
+    roles[ConnectionStateRole] = "itemConnectionState";
     roles[ConnectionPathRole] = "itemConnectionPath";
     roles[ConnectionIconRole] = "itemConnectionIcon";
     roles[ConnectionDetailsRole] = "itemDetails";
     roles[DeviceNameRole] = "itemDeviceName";
     roles[DevicePathRole] = "itemDevicePath";
     roles[NameRole] = "itemName";
-    roles[SecureRole] = "itemSecure";
     roles[SecurityTypeRole] = "itemSecurityType";
     roles[SectionRole] = "itemSection";
     roles[SignalRole] = "itemSignal";
@@ -72,6 +70,8 @@ Model::Model(QObject* parent):
             SLOT(modemSignalQualityChanged(uint, QString)));
     connect(m_monitor, SIGNAL(removeActiveConnection(uint, QString)),
             SLOT(removeActiveConnection(QString)));
+    connect(m_monitor, SIGNAL(removeAvailableConnection(QString,QString)),
+            SLOT(removeAvailableConnection(QString,QString)));
     connect(m_monitor, SIGNAL(removeConnection(QString)),
             SLOT(removeConnection(QString)));
     connect(m_monitor, SIGNAL(removeConnectionsByDevice(QString)),
@@ -114,10 +114,8 @@ QVariant Model::data(const QModelIndex& index, int role) const
         ModelItem * item = m_items.itemAt(row);
 
         switch (role) {
-            case ConnectingRole:
-                return item->connecting();
-            case ConnectedRole:
-                return item->connected();
+            case ConnectionStateRole:
+                return item->connectionState();
             case ConnectionPathRole:
                 return item->connectionPath();
             case ConnectionIconRole:
@@ -134,8 +132,6 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 } else {
                     return item->name();
                 }
-            case SecureRole:
-                return item->secure();
             case SecurityTypeRole:
                 return item->securityType();
             case SectionRole:
@@ -200,10 +196,13 @@ void Model::addActiveConnection(const QString& active)
     }
 
     foreach (ModelItem * item, m_items.itemsByUuid(activeConnection->connection()->uuid())) {
-        item->setActiveConnection(active);
+        if ((!activeConnection->devices().isEmpty() && activeConnection->devices().first() == item->devicePath()) ||
+            (item->type() == NetworkManager::ConnectionSettings::Vpn)) {
+            item->setActiveConnection(active);
 
-        if (updateItem(item)) {
-            NMModelDebug() << "Connection " << item->name() << " has been changed (active connection added)";
+            if (updateItem(item)) {
+                NMModelDebug() << "Connection " << item->name() << " has been changed (active connection added)";
+            }
         }
     }
 }
@@ -299,6 +298,28 @@ void Model::removeActiveConnection(const QString& active)
 
         if (updateItem(item)) {
             NMModelDebug() << "Item " << item->name() << " has been changed (active connection removed)";
+        }
+    }
+}
+
+void Model::removeAvailableConnection(const QString& connection, const QString& device)
+{
+    foreach (ModelItem * item, m_items.itemsByConnection(connection)) {
+        if (item->devicePath() == device) {
+            const QString name = item->name();
+            item->setConnection(QString());
+
+            /* We removed connection details, but this connection can be available
+                as accesspoint, if not, we have to delete it */
+            if (item->specificPath().isEmpty()) {
+                if (removeItem(item)) {
+                    NMModelDebug() << "Connection " << name << " has been removed";
+                }
+            } else {
+                if (updateItem(item)) {
+                    NMModelDebug() << "Connection " << name << " has been removed from known connections";
+                }
+            }
         }
     }
 }

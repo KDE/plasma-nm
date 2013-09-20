@@ -36,21 +36,21 @@ PlasmaComponents.ListItem {
                                  (!connectionView.unknownExpanded && itemSection == i18n("Unknown connections"))
 
     property bool predictableWirelessPassword: !itemUuid && itemType == PlasmaNM.Enums.Wireless &&
-                                                itemSecure && itemSecurityType != PlasmaNM.Enums.DynamicWep && itemSecurityType != PlasmaNM.Enums.LEAP &&
-                                                              itemSecurityType != PlasmaNM.Enums.WpaEap && itemSecurityType != PlasmaNM.Enums.Wpa2Eap;
+                                                itemSecurityType != PlasmaNM.Enums.None && itemSecurityType != PlasmaNM.Enums.DynamicWep && itemSecurityType != PlasmaNM.Enums.LEAP &&
+                                                                                           itemSecurityType != PlasmaNM.Enums.WpaEap && itemSecurityType != PlasmaNM.Enums.Wpa2Eap;
 
     property int defaultCheckboxHeight: theme.defaultFont.mSize.height * 1.6 + buttonPadding.margins.top;
 
-    signal itemExpanded(string connectionPath, bool itemExpanded);
+    signal itemExpanded(string connectionPath, string devicePath, bool itemExpanded);
 
     enabled: true
     height: theme.defaultFont.mSize.height * 2.6 + ((connectionItemSettings.status != Loader.Ready || !expanded) ? 0 : connectionItemSettings.item.childrenRect.height + padding.margins.top);
 
     onClicked: {
         if (itemUuid) {
-            itemExpanded(itemConnectionPath, !expanded);
+            itemExpanded(itemConnectionPath, itemDevicePath, !expanded);
         } else {
-            itemExpanded(itemName, !expanded);
+            itemExpanded(itemSsid, itemDevicePath, !expanded);
         }
     }
 
@@ -100,7 +100,7 @@ PlasmaComponents.ListItem {
                         right: parent.right;
                     }
                     icon: QIcon("object-locked");
-                    visible: itemSecure;
+                    visible: itemSecurityType != PlasmaNM.Enums.None;
                 }
             }
 
@@ -125,8 +125,8 @@ PlasmaComponents.ListItem {
             }
             text: itemName;
             elide: Text.ElideRight;
-            font.weight: itemConnected ? Font.DemiBold : Font.Normal;
-            font.italic: itemConnecting ? true : false;
+            font.weight: itemConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal;
+            font.italic: itemConnectionState == PlasmaNM.Enums.Activating ? true : false;
         }
 
         MouseEventListener {
@@ -143,9 +143,9 @@ PlasmaComponents.ListItem {
             onClicked: {
                 if (!expanded) {
                     if (itemUuid) {
-                        itemExpanded(itemConnectionPath, !expanded);
+                        itemExpanded(itemConnectionPath, itemDevicePath, !expanded);
                     } else {
-                        itemExpanded(itemName, !expanded);
+                        itemExpanded(itemSsid, itemDevicePath, !expanded);
                     }
                 } else {
                     if (configureButton.active) {
@@ -164,7 +164,7 @@ PlasmaComponents.ListItem {
                     verticalCenter: parent.verticalCenter;
                     rightMargin: padding.margins.right;
                 }
-                running: itemConnecting;
+                running: itemConnectionState == PlasmaNM.Enums.Activating;
                 visible: running;
             }
 
@@ -215,7 +215,7 @@ PlasmaComponents.ListItem {
                     left: parent.left;
                     right: parent.right;
                 }
-                visible: (itemDevicePath && itemConnected && itemType != PlasmaNM.Enums.Vpn)
+                visible: (itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn)
 
                 PlasmaNM.TrafficMonitor {
                     anchors.fill: parent;
@@ -234,12 +234,12 @@ PlasmaComponents.ListItem {
 
                 onClicked: {
                     if (itemUuid) {
-                        itemExpanded(itemConnectionPath, false);
+                        itemExpanded(itemConnectionPath, itemDevicePath, false);
                     } else {
-                        itemExpanded(itemName, false);
+                        itemExpanded(itemSsid, itemDevicePath, false);
                     }
 
-                    handler.deactivateConnection(itemConnectionPath);
+                    handler.deactivateConnection(itemConnectionPath, itemDevicePath);
                 }
             }
         }
@@ -307,12 +307,12 @@ PlasmaComponents.ListItem {
 
                 onClicked: {
                     if (itemUuid) {
-                        itemExpanded(itemConnectionPath, false);
+                        itemExpanded(itemConnectionPath, itemDevicePath, false);
                     } else {
-                        itemExpanded(itemName, false);
+                        itemExpanded(itemSsid, itemDevicePath, false);
                     }
 
-                    if (!itemConnected && !itemConnecting) {
+                    if (itemConnectionState != PlasmaNM.Enums.Activated && itemConnectionState != PlasmaNM.Enums.Activating) {
                         if (itemUuid) {
                             handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
                         } else {
@@ -370,7 +370,7 @@ PlasmaComponents.ListItem {
                     text: i18n("Edit connection");
 
                     onClicked: {
-                        itemExpanded(itemConnectionPath, false);
+                        itemExpanded(itemConnectionPath, itemDevicePath, false);
                         handler.editConnection(itemUuid);
                     }
                 }
@@ -405,7 +405,7 @@ PlasmaComponents.ListItem {
     }
 
     function createContent() {
-        if (itemConnected || itemConnecting)
+        if (itemConnectionState == PlasmaNM.Enums.Activated || itemConnectionState == PlasmaNM.Enums.Activating)
             connectionItemSettings.sourceComponent = connectionConnectedComponent;
         else
             connectionItemSettings.sourceComponent = connectionDisconnectedComponent;

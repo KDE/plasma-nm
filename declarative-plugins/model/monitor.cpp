@@ -186,8 +186,15 @@ void Monitor::availableConnectionAppeared(const QString& connection)
 
 void Monitor::availableConnectionDisappeared(const QString& connection)
 {
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
+
+    if (!device) {
+        Q_EMIT removeConnection(connection);
+        return;
+    }
+
     NMMonitorDebug() << "Remove previously available connection " << connection;
-    Q_EMIT removeConnection(connection);
+    Q_EMIT removeAvailableConnection(connection, device->uni());
 }
 
 void Monitor::activeConnectionAdded(const QString& active)

@@ -116,7 +116,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     action = m_menu->addSeparator();
     action->setText(i18n("VPN"));
 
-    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNM/VpnUiPlugin");
+    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
     foreach (const KService::Ptr & service, services) {
         qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
 
@@ -536,7 +536,7 @@ void ConnectionEditor::connectionUpdated()
 void ConnectionEditor::importVpn()
 {
     // get the list of supported extensions
-    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNM/VpnUiPlugin");
+    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
     QString extensions;
     foreach (const KService::Ptr &service, services) {
         VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
@@ -606,7 +606,7 @@ void ConnectionEditor::exportVpn()
     qDebug() << "Exporting VPN connection" << connection->name() << "type:" << vpnSetting->serviceType();
 
     QString error;
-    VpnUiPlugin * vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNM/VpnUiPlugin"),
+    VpnUiPlugin * vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNetworkManagement/VpnUiPlugin"),
                                                                                        QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()),
                                                                                        this, QVariantList(), &error);
 

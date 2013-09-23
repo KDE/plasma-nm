@@ -329,7 +329,7 @@ void ConnectionDetailEditor::initTabs()
                 serviceType = vpnSetting->serviceType();
             //qDebug() << "Editor loading VPN plugin" << serviceType;
             //vpnSetting->printSetting();
-            vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNM/VpnUiPlugin"),
+            vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNetworkManagement/VpnUiPlugin"),
                                                                                  QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
                                                                                  this, QVariantList(), &error);
             if (vpnPlugin && error.isEmpty()) {

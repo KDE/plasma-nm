@@ -815,10 +815,6 @@ QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QS
             if (btDevice) {
                 details += QString(format).arg(i18n("MAC Address:"), btDevice->hardwareAddress());
             }
-        } else if (key == "interface:driver") {
-            if (btDevice) {
-                details += QString(format).arg(i18n("Driver:"), btDevice->driver());
-            }
         }
     }
 

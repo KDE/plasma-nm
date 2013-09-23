@@ -32,7 +32,7 @@
 #include <QDBusMetaType>
 
 K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManagementService>();)
-K_EXPORT_PLUGIN(NetworkManagementServiceFactory("plasmanetworkmanagement", "plasmanetworkmanagement-kded"))
+K_EXPORT_PLUGIN(NetworkManagementServiceFactory("networkmanagement", "plasmanetworkmanagement-kded"))
 
 class NetworkManagementServicePrivate
 {

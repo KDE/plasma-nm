@@ -45,6 +45,7 @@ Model::Model(QObject* parent):
     roles[SsidRole] = "itemSsid";
     roles[SpecificPathRole] = "itemSpecificPath";
     roles[UuidRole] = "itemUuid";
+    roles[UniRole] = "itemUni";
     roles[TypeRole] = "itemType";
     setRoleNames(roles);
 
@@ -144,6 +145,8 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 return item->specificPath();
             case UuidRole:
                 return item->uuid();
+            case UniRole:
+                return item->uni();
             case TypeRole:
                 return item->type();
             default:

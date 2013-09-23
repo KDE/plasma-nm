@@ -82,7 +82,6 @@ Item {
 
         property bool expandedItem: false;
         property string previouslyExpandedItem: "";
-        property string previouslyExpandedItemDevice: "";
 
         property bool activeExpanded: true;
         property bool previousExpanded: true;
@@ -125,24 +124,21 @@ Item {
         }
 
         delegate: ConnectionItem {
-            expanded: (connectionView.expandedItem && connectionView.previouslyExpandedItemDevice == itemDevicePath && ((connectionView.previouslyExpandedItem == itemConnectionPath && itemConnectionPath != "") || (itemConnectionPath == "" && connectionView.previouslyExpandedItem == itemSsid)))
+            expanded: connectionView.expandedItem && connectionView.previouslyExpandedItem == itemUni;
             onItemExpanded: {
                 if (itemExpanded) {
                     connectionView.expandedItem = true;
-                    connectionView.previouslyExpandedItem = connectionPath;
-                    connectionView.previouslyExpandedItemDevice = devicePath;
+                    connectionView.previouslyExpandedItem = itemUni;;
                     connectionView.currentIndex = index;
                 } else {
                     connectionView.expandedItem = false;
                     connectionView.previouslyExpandedItem = "";
-                    connectionView.previouslyExpandedItemDevice = "";
                 }
             }
 
             ListView.onRemove: {
                 if (ListView.isCurrentItem) {
                     connectionView.previouslyExpandedItem = "";
-                    connectionView.previouslyExpandedItemDevice = "";
                 }
             }
         }

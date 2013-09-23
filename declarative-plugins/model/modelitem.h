@@ -48,6 +48,7 @@ public:
     QString ssid() const;
     QString sectionType() const;
     QString originalName() const;
+    QString uni() const;
 
     // Object paths
     QString activeConnectionPath() const;
@@ -88,7 +89,6 @@ private:
     QString m_nsp;
     QString m_ssid;
     QString m_uuid;
-    QString m_uni;
 
     int m_signal;
     SectionType m_sectionType;

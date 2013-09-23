@@ -41,17 +41,13 @@ PlasmaComponents.ListItem {
 
     property int defaultCheckboxHeight: theme.defaultFont.mSize.height * 1.6 + buttonPadding.margins.top;
 
-    signal itemExpanded(string connectionPath, string devicePath, bool itemExpanded);
+    signal itemExpanded(string itemUni, bool itemExpanded);
 
     enabled: true
     height: theme.defaultFont.mSize.height * 2.6 + ((connectionItemSettings.status != Loader.Ready || !expanded) ? 0 : connectionItemSettings.item.childrenRect.height + padding.margins.top);
 
     onClicked: {
-        if (itemUuid) {
-            itemExpanded(itemConnectionPath, itemDevicePath, !expanded);
-        } else {
-            itemExpanded(itemSsid, itemDevicePath, !expanded);
-        }
+        itemExpanded(itemUni, !expanded);
     }
 
     Item {
@@ -142,11 +138,7 @@ PlasmaComponents.ListItem {
 
             onClicked: {
                 if (!expanded) {
-                    if (itemUuid) {
-                        itemExpanded(itemConnectionPath, itemDevicePath, !expanded);
-                    } else {
-                        itemExpanded(itemSsid, itemDevicePath, !expanded);
-                    }
+                    itemExpanded(itemUni, !expanded);
                 } else {
                     if (configureButton.active) {
                         detailsView = !detailsView
@@ -233,11 +225,7 @@ PlasmaComponents.ListItem {
                 text: i18n("Disconnect");
 
                 onClicked: {
-                    if (itemUuid) {
-                        itemExpanded(itemConnectionPath, itemDevicePath, false);
-                    } else {
-                        itemExpanded(itemSsid, itemDevicePath, false);
-                    }
+                    itemExpanded(itemUni, false);
 
                     handler.deactivateConnection(itemConnectionPath, itemDevicePath);
                 }
@@ -306,11 +294,7 @@ PlasmaComponents.ListItem {
                 text: i18n("Connect");
 
                 onClicked: {
-                    if (itemUuid) {
-                        itemExpanded(itemConnectionPath, itemDevicePath, false);
-                    } else {
-                        itemExpanded(itemSsid, itemDevicePath, false);
-                    }
+                    itemExpanded(itemUni, false);
 
                     if (itemConnectionState != PlasmaNM.Enums.Activated && itemConnectionState != PlasmaNM.Enums.Activating) {
                         if (itemUuid) {
@@ -370,7 +354,7 @@ PlasmaComponents.ListItem {
                     text: i18n("Edit connection");
 
                     onClicked: {
-                        itemExpanded(itemConnectionPath, itemDevicePath, false);
+                        itemExpanded(itemUni, false);
                         handler.editConnection(itemUuid);
                     }
                 }

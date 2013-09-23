@@ -211,6 +211,15 @@ QString ModelItem::originalName() const
     return name() + " (" + deviceName() + ')';
 }
 
+QString ModelItem::uni() const
+{
+    if (m_type == NetworkManager::ConnectionSettings::Wireless) {
+        return m_ssid + '%' + m_devicePath;
+    } else {
+        return m_connectionPath + '%' + m_devicePath;
+    }
+}
+
 QString ModelItem::activeConnectionPath() const
 {
     return m_activePath;

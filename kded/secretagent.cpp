@@ -38,7 +38,7 @@
 #include <KDebug>
 
 SecretAgent::SecretAgent(QObject* parent):
-    NetworkManager::SecretAgent("org.kde.plasma-networkmanagement", parent),
+    NetworkManager::SecretAgent("org.kde.networkmanagement", parent),
     m_wallet(0),
     m_dialog(0)
 {

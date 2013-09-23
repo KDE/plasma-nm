@@ -29,7 +29,7 @@
 
 
 K_PLUGIN_FACTORY(NotificationsWidgetFactory, registerPlugin<NotificationsWidget>();)
-K_EXPORT_PLUGIN(NotificationsWidgetFactory("plasma_networkmanagement_notifications", "plasma_applet_org.kde.plasma-networkmanagement"))
+K_EXPORT_PLUGIN(NotificationsWidgetFactory("plasma_networkmanagement_notifications", "plasma_applet_org.kde.networkmanagement"))
 
 NotificationsWidget::NotificationsWidget(QWidget *parent, const QVariantList &args)
     : KCModule(NotificationsWidgetFactory::componentData(), parent, args),

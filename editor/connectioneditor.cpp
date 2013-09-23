@@ -458,7 +458,7 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
             }
         }
     } else {
-        KConfig config("plasma-nm");
+        KConfig config("plasma-networkmanagement");
         foreach (const QString & groupName, map.keys()) {
             KConfigGroup secretsGroup = config.group(groupName);
             NMStringMap secretsMap = map.value(groupName);

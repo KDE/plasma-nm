@@ -22,7 +22,7 @@ import QtQuick 1.1
 import org.kde.qtextracomponents 0.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.core 0.1 as PlasmaCore
-import org.kde.plasmanm 0.1 as PlasmaNM
+import org.kde.networkmanagement 0.1 as PlasmaNM
 
 PlasmaComponents.ListItem {
     id: connectionItem;
@@ -64,7 +64,7 @@ PlasmaComponents.ListItem {
             id: svgIcons;
 
             multipleImages: true;
-            imagePath: "icons/plasma-nm";
+            imagePath: "icons/plasma-networkmanagement";
         }
 
         Item {

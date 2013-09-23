@@ -27,7 +27,7 @@
 
 
 K_PLUGIN_FACTORY(OpenswanUiPluginFactory, registerPlugin<OpenswanUiPlugin>(); )
-K_EXPORT_PLUGIN(OpenswanUiPluginFactory("plasmanm_openswanui"))
+K_EXPORT_PLUGIN(OpenswanUiPluginFactory("plasmanetworkmanagement_openswanui"))
 
 OpenswanUiPlugin::OpenswanUiPlugin(QObject * parent, const QVariantList &):
     VpnUiPlugin(parent)

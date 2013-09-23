@@ -35,7 +35,7 @@
 #include "nm-openvpn-service.h"
 
 K_PLUGIN_FACTORY(OpenVpnUiPluginFactory, registerPlugin<OpenVpnUiPlugin>();)
-K_EXPORT_PLUGIN(OpenVpnUiPluginFactory("plasmanm_openvpnui"))
+K_EXPORT_PLUGIN(OpenVpnUiPluginFactory("plasmanetworkmanagement_openvpnui"))
 
 #define AUTH_TAG "auth"
 #define AUTH_USER_PASS_TAG "auth-user-pass"

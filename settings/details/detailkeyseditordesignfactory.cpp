@@ -25,7 +25,7 @@
 
 #include <KGlobal>
 
-static const KCatalogLoader loader(QLatin1String("plasma_applet_org.kde.plasma-nm"));
+static const KCatalogLoader loader(QLatin1String("plasma_applet_org.kde.plasma-networkmanagement"));
 
 DetailKeysEditorDesignerFactory::DetailKeysEditorDesignerFactory(QObject *parent)
 : QObject(parent)
@@ -72,5 +72,5 @@ QWidget * DetailKeysEditorDesignerFactory::createWidget(QWidget *parent)
     return new DetailKeysEditor(parent);
 }
 
-Q_EXPORT_PLUGIN2(plasmanmwidgets, DetailKeysEditorDesignerFactory)
+Q_EXPORT_PLUGIN2(plasmanetworkmanagementwidgets, DetailKeysEditorDesignerFactory)
 

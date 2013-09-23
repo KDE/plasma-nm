@@ -1,8 +1,8 @@
-set(plasma_nm_notifications_SRCS
+set(plasma_networkmanagement_notifications_SRCS
    notifications.cpp
 )
 
-kde4_add_plugin(networkmanagement_notifications ${plasma_nm_notifications_SRCS})
+kde4_add_plugin(networkmanagement_notifications ${plasma_networkmanagement_notifications_SRCS})
 
 target_link_libraries(networkmanagement_notifications ${KDE4_KDEUI_LIBS} ${KDE4_KNOTIFYCONFIG_LIBRARY})
 

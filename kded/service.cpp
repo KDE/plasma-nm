@@ -32,7 +32,7 @@
 #include <QDBusMetaType>
 
 K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManagementService>();)
-K_EXPORT_PLUGIN(NetworkManagementServiceFactory("plasmanm", "plasmanm-kded"))
+K_EXPORT_PLUGIN(NetworkManagementServiceFactory("plasmanetworkmanagement", "plasmanetworkmanagement-kded"))
 
 class NetworkManagementServicePrivate
 {
@@ -45,7 +45,7 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 {
     Q_D(NetworkManagementService);
 
-    KGlobal::insertCatalog("plasma_applet_org.kde.plasma-nm");  // mobile wizard
+    KGlobal::insertCatalog("plasma_applet_org.kde.plasma-networkmanagement");  // mobile wizard
 
     d->agent = new SecretAgent(this);
     new InterfaceNotification(this);

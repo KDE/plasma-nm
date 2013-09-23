@@ -48,9 +48,9 @@ X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
 X-Plasma-DefaultSize=350,450
 X-Plasma-NotificationArea=true
-X-Plasma-ConfigPlugins=plasma_nm_notifications
+X-Plasma-ConfigPlugins=networkmanagement_notifications
 
-X-KDE-PluginInfo-Name=org.kde.plasma-nm
+X-KDE-PluginInfo-Name=org.kde.networkmanagement
 X-KDE-PluginInfo-Category=System Information
 X-KDE-PluginInfo-Author=Jan Grulich, Lukáš Tinkl
 X-KDE-PluginInfo-Email=jgrulich@redhat.com

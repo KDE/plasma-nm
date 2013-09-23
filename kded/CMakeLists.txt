@@ -26,5 +26,5 @@ target_link_libraries(kded_plasmanm
 
 install(TARGETS kded_plasmanm DESTINATION ${PLUGIN_INSTALL_DIR})
 
-install(FILES plasmanm.desktop DESTINATION ${SERVICES_INSTALL_DIR}/kded)
-install(FILES plasma-nm.notifyrc DESTINATION ${DATA_INSTALL_DIR}/plasma-nm)
+install(FILES networkmanagement.desktop DESTINATION ${SERVICES_INSTALL_DIR}/kded)
+install(FILES plasma-nm.notifyrc DESTINATION ${DATA_INSTALL_DIR}/plasma-networkmanagement)

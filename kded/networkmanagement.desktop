@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Plasma NM module
+Name=Plasma Networkmanagement module
 Name[bs]=Plasma NM modul
 Name[cs]=Modul NM pro Plasmu
 Name[da]=Plasma NM-modul
@@ -39,8 +39,8 @@ Comment[zh_CN]=为 NetworkManager 守护程序提供密码
 Type=Service
 X-KDE-ServiceTypes=KDEDModule
 X-KDE-ModuleType=Library
-X-KDE-Library=plasmanm
-X-KDE-DBus-ModuleName=plasmanm
+X-KDE-Library=networkmanagement
+X-KDE-DBus-ModuleName=networkmanagement
 X-KDE-Kded-autoload=true
 X-KDE-Kded-load-on-demand=true
 X-KDE-Kded-phase=1

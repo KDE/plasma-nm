@@ -30,5 +30,5 @@ target_link_libraries(plasmanmplugins
     ${KDE4_KDEUI_LIBS}
     ${QT_QTDECLARATIVE_LIBRARY})
 
-install(TARGETS plasmanmplugins DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/plasmanm)
-install(FILES qmldir DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/plasmanm)
+install(TARGETS plasmanmplugins DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/networkmanagement)
+install(FILES qmldir DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/networkmanagement)

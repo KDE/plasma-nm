@@ -1,23 +1,6 @@
 [Global]
 IconName=applications-internet
-Name=plasma-nm
-Name[cs]=plasma-nm
-Name[da]=plasma-nm
-Name[de]=Plasma-NM
-Name[el]=plasma-nm
-Name[fi]=plasma-nm
-Name[fr]=plasma-nm
-Name[hu]=plasma-nm
-Name[nl]=plasma-nm
-Name[pl]=plasma-nm
-Name[pt]=plasma-nm
-Name[pt_BR]=plasma-nm
-Name[sk]=plasma-nm
-Name[sv]=Plasma NM
-Name[tr]=plasma-nm
-Name[uk]=plasma-nm
-Name[x-test]=xxplasma-nmxx
-Name[zh_CN]=plasma-nm
+Name=networkmanagement
 Comment=Notifies about network errors
 Comment[bs]=Obavještava o mrežnim greškama
 Comment[cs]=Oznamuje chyby sítě

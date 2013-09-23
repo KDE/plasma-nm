@@ -36,7 +36,7 @@ NotificationsWidget::NotificationsWidget(QWidget *parent, const QVariantList &ar
       m_notifyWidget(new KNotifyConfigWidget(this))
 {
     QHBoxLayout * layout = new QHBoxLayout(this);
-    m_notifyWidget->setApplication("plasma-networkmanagement"); // name of the .notifyrc file
+    m_notifyWidget->setApplication("networkmanagement"); // name of the .notifyrc file
     layout->addWidget(m_notifyWidget);
     setLayout(layout);
 

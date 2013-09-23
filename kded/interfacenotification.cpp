@@ -1,6 +1,7 @@
 /*
     Copyright 2009 Will Stephenson <wstephenson@kde.org>
     Copyright 2013 by Daniel Nicoletti <dantti12@gmail.com>
+    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -33,11 +34,19 @@
 InterfaceNotification::InterfaceNotification(QObject *parent) :
     QObject(parent)
 {
+    // devices
     foreach (const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
         addDevice(device);
     }
 
     connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)), this, SLOT(deviceAdded(QString)));
+
+    // connections
+    foreach (const NetworkManager::ActiveConnection::Ptr &ac, NetworkManager::activeConnections()) {
+        addActiveConnection(ac);
+    }
+
+    connect(NetworkManager::notifier(), SIGNAL(activeConnectionAdded(QString)), this, SLOT(addActiveConnection(QString)));
 }
 
 void InterfaceNotification::deviceAdded(const QString &uni)
@@ -293,9 +302,95 @@ void InterfaceNotification::stateChanged(NetworkManager::Device::State newstate,
     }
 }
 
+void InterfaceNotification::addActiveConnection(const QString &path)
+{
+    NetworkManager::ActiveConnection::Ptr ac = NetworkManager::findActiveConnection(path);
+    if (ac->isValid()) {
+        addActiveConnection(ac);
+    }
+}
+
+void InterfaceNotification::addActiveConnection(const NetworkManager::ActiveConnection::Ptr &ac)
+{
+    if (ac->vpn()) {
+        connect(ac.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State)),
+                this, SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State)));
+    } else {
+        connect(ac.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
+    }
+}
+
+void InterfaceNotification::onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state)
+{
+    NetworkManager::ActiveConnection *ac = qobject_cast<NetworkManager::ActiveConnection*>(sender());
+
+    const QString acName = ac->connection()->name();
+    QString text;
+    if (state == NetworkManager::ActiveConnection::Activated) {
+        text = i18n("New connection %1 activated", acName);
+    } else if (state == NetworkManager::ActiveConnection::Deactivated) {
+        text = i18n("Connection %1 deactivated", acName);
+    } else {
+        kDebug() << "Unhandled active connection state change: " << state;
+        return;
+    }
+
+    const QString nId = ac->path();
+    if (m_notifications.contains(nId)) {
+        KNotification *notify = m_notifications.value(nId);
+        notify->setText(text);
+        notify->update();
+    } else {
+        KNotification *notify = new KNotification("AcStateChanged", KNotification::Persistent, this);
+        connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
+        notify->setProperty("device-uni", nId);
+        notify->setComponentData(KComponentData("plasma-nm"));  // TODO rename
+        notify->setPixmap(KIcon("task-attention").pixmap(64, 64));
+        notify->setTitle(i18n("%1 - Changed State", acName));
+        notify->setText(text);
+        notify->sendEvent();
+        m_notifications[nId] = notify;
+    }
+}
+
+void InterfaceNotification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state)
+{
+    NetworkManager::VpnConnection *vpn = qobject_cast<NetworkManager::VpnConnection*>(sender());
+
+    const QString vpnName = vpn->connection()->name();
+    QString text;
+    if (state == NetworkManager::VpnConnection::Activated) {
+        text = i18n("VPN connection %1 activated", vpnName);
+    } else if (state == NetworkManager::VpnConnection::Failed) {
+        text = i18n("VPN connection %1 failed", vpnName);
+    } else if (state == NetworkManager::VpnConnection::Disconnected) {
+        text = i18n("VPN connection %1 disconnected", vpnName);
+    } else {
+        kDebug() << "Unhandled VPN connection state change: " << state;
+        return;
+    }
+
+    const QString nId = vpn->path();
+    if (m_notifications.contains(nId)) {
+        KNotification *notify = m_notifications.value(nId);
+        notify->setText(text);
+        notify->update();
+    } else {
+        KNotification *notify = new KNotification("VpnStateChanged", KNotification::Persistent, this);
+        connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
+        notify->setProperty("device-uni", nId);
+        notify->setComponentData(KComponentData("plasma-nm"));  // TODO rename
+        notify->setPixmap(KIcon("task-attention").pixmap(64, 64));
+        notify->setTitle(i18n("%1 - Changed State", vpnName));
+        notify->setText(text);
+        notify->sendEvent();
+        m_notifications[nId] = notify;
+    }
+}
+
 void InterfaceNotification::notificationClosed()
 {
-    kDebug();
     KNotification *notify = qobject_cast<KNotification*>(sender());
     m_notifications.remove(notify->property("device-uni").toString());
     notify->deleteLater();

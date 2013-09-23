@@ -25,6 +25,7 @@
 #include <QObject>
 
 #include <NetworkManagerQt/Device>
+#include <NetworkManagerQt/VpnConnection>
 
 class KNotification;
 class InterfaceNotification : public QObject
@@ -37,6 +38,12 @@ private slots:
     void deviceAdded(const QString &uni);
     void addDevice(const NetworkManager::Device::Ptr &device);
     void stateChanged(NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason);
+
+    void addActiveConnection(const QString & path);
+    void addActiveConnection(const NetworkManager::ActiveConnection::Ptr & ac);
+    void onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state);
+    void onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state);
+
     void notificationClosed();
 
 private:

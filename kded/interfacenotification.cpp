@@ -329,9 +329,9 @@ void InterfaceNotification::onActiveConnectionStateChanged(NetworkManager::Activ
     const QString acName = ac->connection()->name();
     QString text;
     if (state == NetworkManager::ActiveConnection::Activated) {
-        text = i18n("New connection %1 activated", acName);
+        text = i18n("Connection '%1' activated.", acName);
     } else if (state == NetworkManager::ActiveConnection::Deactivated) {
-        text = i18n("Connection %1 deactivated", acName);
+        text = i18n("Connection '%1' deactivated.", acName);
     } else {
         kDebug() << "Unhandled active connection state change: " << state;
         return;
@@ -363,14 +363,56 @@ void InterfaceNotification::onVpnConnectionStateChanged(NetworkManager::VpnConne
     const QString vpnName = vpn->connection()->name();
     QString text;
     if (state == NetworkManager::VpnConnection::Activated) {
-        text = i18n("VPN connection %1 activated", vpnName);
+        text = i18n("VPN connection '%1' activated.", vpnName);
     } else if (state == NetworkManager::VpnConnection::Failed) {
-        text = i18n("VPN connection %1 failed", vpnName);
+        text = i18n("VPN connection '%1' failed.", vpnName);
     } else if (state == NetworkManager::VpnConnection::Disconnected) {
-        text = i18n("VPN connection %1 disconnected", vpnName);
+        text = i18n("VPN connection '%1' disconnected.", vpnName);
     } else {
         kDebug() << "Unhandled VPN connection state change: " << state;
         return;
+    }
+
+    QString reasonText;
+    switch (reason) {
+    case NetworkManager::VpnConnection::UserDisconnectedReason:
+        reasonText = i18n("The VPN connection changed state because the user disconnected it.");
+        break;
+    case NetworkManager::VpnConnection::DeviceDisconnectedReason:
+        reasonText = i18n("The VPN connection changed state because the device it was using was disconnected.");
+        break;
+    case NetworkManager::VpnConnection::ServiceStoppedReason:
+        reasonText = i18n("The service providing the VPN connection was stopped.");
+        break;
+    case NetworkManager::VpnConnection::IpConfigInvalidReason:
+        reasonText = i18n("The IP config of the VPN connection was invalid.");
+        break;
+    case NetworkManager::VpnConnection::ConnectTimeoutReason:
+        reasonText = i18n("The connection attempt to the VPN service timed out.");
+        break;
+    case NetworkManager::VpnConnection::ServiceStartTimeoutReason:
+        reasonText = i18n("A timeout occurred while starting the service providing the VPN connection.");
+        break;
+    case NetworkManager::VpnConnection::ServiceStartFailedReason:
+        reasonText = i18n("Starting the service starting the service providing the VPN connection failed.");
+        break;
+    case NetworkManager::VpnConnection::NoSecretsReason:
+        reasonText = i18n("Necessary secrets for the VPN connection were not provided.");
+        break;
+    case NetworkManager::VpnConnection::LoginFailedReason:
+        reasonText = i18n("Authentication to the VPN server failed.");
+        break;
+    case NetworkManager::VpnConnection::ConnectionRemovedReason:
+        reasonText = i18n("The connection was deleted from settings.");
+        break;
+    default:
+    case NetworkManager::VpnConnection::UnknownReason:
+    case NetworkManager::VpnConnection::NoneReason:
+        break;
+    }
+
+    if (!reasonText.isEmpty()) {
+        text += "<br><br>" + reasonText;
     }
 
     const QString nId = vpn->path();

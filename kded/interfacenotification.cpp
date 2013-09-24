@@ -313,8 +313,9 @@ void InterfaceNotification::addActiveConnection(const QString &path)
 void InterfaceNotification::addActiveConnection(const NetworkManager::ActiveConnection::Ptr &ac)
 {
     if (ac->vpn()) {
-        connect(ac.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State)),
-                this, SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State)));
+        NetworkManager::VpnConnection::Ptr vpnConnection = ac.objectCast<NetworkManager::VpnConnection>();
+        connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State, NetworkManager::VpnConnection::StateChangeReason)),
+                this, SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State, NetworkManager::VpnConnection::StateChangeReason)));
     } else {
         connect(ac.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                 this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
@@ -354,8 +355,9 @@ void InterfaceNotification::onActiveConnectionStateChanged(NetworkManager::Activ
     }
 }
 
-void InterfaceNotification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state)
+void InterfaceNotification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
 {
+    Q_UNUSED(reason)
     NetworkManager::VpnConnection *vpn = qobject_cast<NetworkManager::VpnConnection*>(sender());
 
     const QString vpnName = vpn->connection()->name();

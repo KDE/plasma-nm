@@ -42,7 +42,7 @@ private slots:
     void addActiveConnection(const QString & path);
     void addActiveConnection(const NetworkManager::ActiveConnection::Ptr & ac);
     void onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state);
-    void onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state);
+    void onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason);
 
     void notificationClosed();
 

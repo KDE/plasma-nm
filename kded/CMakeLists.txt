@@ -1,5 +1,5 @@
 set(kded_plasmanm_SRCS
-   interfacenotification.cpp
+   notification.cpp
    passworddialog.cpp
    secretagent.cpp
    service.cpp

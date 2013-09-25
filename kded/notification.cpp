@@ -21,7 +21,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "interfacenotification.h"
+#include "notification.h"
 
 #include <uiutils.h>
 
@@ -32,7 +32,7 @@
 #include <KIcon>
 #include <KDebug>
 
-InterfaceNotification::InterfaceNotification(QObject *parent) :
+Notification::Notification(QObject *parent) :
     QObject(parent)
 {
     // devices
@@ -50,19 +50,19 @@ InterfaceNotification::InterfaceNotification(QObject *parent) :
     connect(NetworkManager::notifier(), SIGNAL(activeConnectionAdded(QString)), this, SLOT(addActiveConnection(QString)));
 }
 
-void InterfaceNotification::deviceAdded(const QString &uni)
+void Notification::deviceAdded(const QString &uni)
 {
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(uni);
     addDevice(device);
 }
 
-void InterfaceNotification::addDevice(const NetworkManager::Device::Ptr &device)
+void Notification::addDevice(const NetworkManager::Device::Ptr &device)
 {
     connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
             this, SLOT(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)));
 }
 
-void InterfaceNotification::stateChanged(NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason)
+void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason)
 {
     Q_UNUSED(oldstate)
     kDebug() << newstate << reason;
@@ -303,7 +303,7 @@ void InterfaceNotification::stateChanged(NetworkManager::Device::State newstate,
     }
 }
 
-void InterfaceNotification::addActiveConnection(const QString &path)
+void Notification::addActiveConnection(const QString &path)
 {
     NetworkManager::ActiveConnection::Ptr ac = NetworkManager::findActiveConnection(path);
     if (ac->isValid()) {
@@ -311,7 +311,7 @@ void InterfaceNotification::addActiveConnection(const QString &path)
     }
 }
 
-void InterfaceNotification::addActiveConnection(const NetworkManager::ActiveConnection::Ptr &ac)
+void Notification::addActiveConnection(const NetworkManager::ActiveConnection::Ptr &ac)
 {
     if (ac->vpn()) {
         NetworkManager::VpnConnection::Ptr vpnConnection = ac.objectCast<NetworkManager::VpnConnection>();
@@ -323,7 +323,7 @@ void InterfaceNotification::addActiveConnection(const NetworkManager::ActiveConn
     }
 }
 
-void InterfaceNotification::onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state)
+void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state)
 {
     NetworkManager::ActiveConnection *ac = qobject_cast<NetworkManager::ActiveConnection*>(sender());
 
@@ -365,7 +365,7 @@ void InterfaceNotification::onActiveConnectionStateChanged(NetworkManager::Activ
     }
 }
 
-void InterfaceNotification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
+void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
 {
     NetworkManager::VpnConnection *vpn = qobject_cast<NetworkManager::VpnConnection*>(sender());
 
@@ -446,7 +446,7 @@ void InterfaceNotification::onVpnConnectionStateChanged(NetworkManager::VpnConne
     }
 }
 
-void InterfaceNotification::notificationClosed()
+void Notification::notificationClosed()
 {
     KNotification *notify = qobject_cast<KNotification*>(sender());
     m_notifications.remove(notify->property("uni").toString());

@@ -1,6 +1,8 @@
 /*
     Copyright 2009 Will Stephenson <wstephenson@kde.org>
     Copyright 2013 by Daniel Nicoletti <dantti12@gmail.com>
+    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -19,8 +21,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_INTERFACE_NOTIFICATION_H
-#define PLASMA_NM_INTERFACE_NOTIFICATION_H
+#ifndef PLASMA_NM_NOTIFICATION_H
+#define PLASMA_NM_NOTIFICATION_H
 
 #include <QObject>
 
@@ -28,11 +30,11 @@
 #include <NetworkManagerQt/VpnConnection>
 
 class KNotification;
-class InterfaceNotification : public QObject
+class Notification : public QObject
 {
     Q_OBJECT
 public:
-    explicit InterfaceNotification(QObject *parent = 0);
+    explicit Notification(QObject *parent = 0);
 
 private slots:
     void deviceAdded(const QString &uni);
@@ -50,4 +52,4 @@ private:
     QHash<QString, KNotification*> m_notifications;
 };
 
-#endif // PLASMA_NM_INTERFACE_NOTIFICATION_H
+#endif // PLASMA_NM_NOTIFICATION_H

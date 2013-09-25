@@ -25,7 +25,7 @@
 #include <KPluginFactory>
 
 #include "secretagent.h"
-#include "interfacenotification.h"
+#include "notification.h"
 #include "modemmonitor.h"
 #include "bluetoothmonitor.h"
 
@@ -48,7 +48,7 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
     KGlobal::insertCatalog("plasma_applet_org.kde.plasma-nm");  // mobile wizard
 
     d->agent = new SecretAgent(this);
-    new InterfaceNotification(this);
+    new Notification(this);
     new ModemMonitor(this);
     new BluetoothMonitor(this);
 }

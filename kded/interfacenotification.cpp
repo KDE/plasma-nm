@@ -357,7 +357,6 @@ void InterfaceNotification::onActiveConnectionStateChanged(NetworkManager::Activ
 
 void InterfaceNotification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
 {
-    Q_UNUSED(reason)
     NetworkManager::VpnConnection *vpn = qobject_cast<NetworkManager::VpnConnection*>(sender());
 
     const QString vpnName = vpn->connection()->name();

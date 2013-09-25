@@ -2,6 +2,7 @@
     Copyright 2009 Will Stephenson <wstephenson@kde.org>
     Copyright 2013 by Daniel Nicoletti <dantti12@gmail.com>
     Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -292,10 +293,10 @@ void InterfaceNotification::stateChanged(NetworkManager::Device::State newstate,
     } else {
         KNotification *notify = new KNotification("DeviceFailed", KNotification::Persistent, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
-        notify->setProperty("device-uni", device->uni());
+        notify->setProperty("uni", device->uni());
         notify->setComponentData(KComponentData("plasma-nm"));
-        notify->setPixmap(KIcon("task-attention").pixmap(64, 64));
-        notify->setTitle(i18n("%1 - Failed to activate", identifier));
+        notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        notify->setTitle(identifier);
         notify->setText(text);
         notify->sendEvent();
         m_notifications[device->uni()] = notify;
@@ -340,15 +341,24 @@ void InterfaceNotification::onActiveConnectionStateChanged(NetworkManager::Activ
     const QString nId = ac->path();
     if (m_notifications.contains(nId)) {
         KNotification *notify = m_notifications.value(nId);
+        if (state == NetworkManager::ActiveConnection::Activated) {
+            notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
+        } else {
+            notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        }
         notify->setText(text);
         notify->update();
     } else {
         KNotification *notify = new KNotification("AcStateChanged", KNotification::Persistent, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
-        notify->setProperty("device-uni", nId);
+        notify->setProperty("uni", nId);
         notify->setComponentData(KComponentData("plasma-nm"));  // TODO rename
-        notify->setPixmap(KIcon("task-attention").pixmap(64, 64));
-        notify->setTitle(i18n("%1 - Changed State", acName));
+        if (state == NetworkManager::ActiveConnection::Activated) {
+            notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
+        } else {
+            notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        }
+        notify->setTitle(acName);
         notify->setText(text);
         notify->sendEvent();
         m_notifications[nId] = notify;
@@ -372,37 +382,36 @@ void InterfaceNotification::onVpnConnectionStateChanged(NetworkManager::VpnConne
         return;
     }
 
-    QString reasonText;
     switch (reason) {
     case NetworkManager::VpnConnection::UserDisconnectedReason:
-        reasonText = i18n("The VPN connection changed state because the user disconnected it.");
+        text = i18n("The VPN connection changed state because the user disconnected it.");
         break;
     case NetworkManager::VpnConnection::DeviceDisconnectedReason:
-        reasonText = i18n("The VPN connection changed state because the device it was using was disconnected.");
+        text = i18n("The VPN connection changed state because the device it was using was disconnected.");
         break;
     case NetworkManager::VpnConnection::ServiceStoppedReason:
-        reasonText = i18n("The service providing the VPN connection was stopped.");
+        text = i18n("The service providing the VPN connection was stopped.");
         break;
     case NetworkManager::VpnConnection::IpConfigInvalidReason:
-        reasonText = i18n("The IP config of the VPN connection was invalid.");
+        text = i18n("The IP config of the VPN connection was invalid.");
         break;
     case NetworkManager::VpnConnection::ConnectTimeoutReason:
-        reasonText = i18n("The connection attempt to the VPN service timed out.");
+        text = i18n("The connection attempt to the VPN service timed out.");
         break;
     case NetworkManager::VpnConnection::ServiceStartTimeoutReason:
-        reasonText = i18n("A timeout occurred while starting the service providing the VPN connection.");
+        text = i18n("A timeout occurred while starting the service providing the VPN connection.");
         break;
     case NetworkManager::VpnConnection::ServiceStartFailedReason:
-        reasonText = i18n("Starting the service starting the service providing the VPN connection failed.");
+        text = i18n("Starting the service starting the service providing the VPN connection failed.");
         break;
     case NetworkManager::VpnConnection::NoSecretsReason:
-        reasonText = i18n("Necessary secrets for the VPN connection were not provided.");
+        text = i18n("Necessary secrets for the VPN connection were not provided.");
         break;
     case NetworkManager::VpnConnection::LoginFailedReason:
-        reasonText = i18n("Authentication to the VPN server failed.");
+        text = i18n("Authentication to the VPN server failed.");
         break;
     case NetworkManager::VpnConnection::ConnectionRemovedReason:
-        reasonText = i18n("The connection was deleted from settings.");
+        text = i18n("The connection was deleted from settings.");
         break;
     default:
     case NetworkManager::VpnConnection::UnknownReason:
@@ -410,22 +419,27 @@ void InterfaceNotification::onVpnConnectionStateChanged(NetworkManager::VpnConne
         break;
     }
 
-    if (!reasonText.isEmpty()) {
-        text += "<br><br>" + reasonText;
-    }
-
     const QString nId = vpn->path();
     if (m_notifications.contains(nId)) {
         KNotification *notify = m_notifications.value(nId);
+        if (state == NetworkManager::VpnConnection::Activated) {
+            notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
+        } else {
+            notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        }
         notify->setText(text);
         notify->update();
     } else {
         KNotification *notify = new KNotification("VpnStateChanged", KNotification::Persistent, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
-        notify->setProperty("device-uni", nId);
+        notify->setProperty("uni", nId);
         notify->setComponentData(KComponentData("plasma-nm"));  // TODO rename
-        notify->setPixmap(KIcon("task-attention").pixmap(64, 64));
-        notify->setTitle(i18n("%1 - Changed State", vpnName));
+        if (state == NetworkManager::VpnConnection::Activated) {
+            notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
+        } else {
+            notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        }
+        notify->setTitle(vpnName);
         notify->setText(text);
         notify->sendEvent();
         m_notifications[nId] = notify;
@@ -435,6 +449,6 @@ void InterfaceNotification::onVpnConnectionStateChanged(NetworkManager::VpnConne
 void InterfaceNotification::notificationClosed()
 {
     KNotification *notify = qobject_cast<KNotification*>(sender());
-    m_notifications.remove(notify->property("device-uni").toString());
+    m_notifications.remove(notify->property("uni").toString());
     notify->deleteLater();
 }

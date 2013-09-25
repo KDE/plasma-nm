@@ -62,10 +62,24 @@ Action=Popup
 
 [Event/AcStateChanged]
 Name=Active connection state changed
+Name[de]=Active-Verbindungsstatus wurde geändert
+Name[nl]=Actieve verbindingsstatus is gewijzigd
+Name[pt]=O estado da ligação activa mudou
+Name[pt_BR]=O estado da conexão ativa foi alterado
+Name[sv]=Aktiv anslutningsstatus ändrad
+Name[uk]=Змінено стан активного з’єднання
+Name[x-test]=xxActive connection state changedxx
 IconName=applications-internet
 Action=Popup
 
 [Event/VpnStateChanged]
 Name=VPN connection state changed
+Name[de]=VPN-Verbindungsstatus wurde geändert
+Name[nl]=Verbindingsstatus van VPN is gewijzigd
+Name[pt]=O estado da ligação VPN mudou
+Name[pt_BR]=O estado da conexão VPN foi alterado
+Name[sv]=VPN-anslutningsstatus ändrad
+Name[uk]=Змінено стан з’єднання VPN
+Name[x-test]=xxVPN connection state changedxx
 IconName=applications-internet
 Action=Popup

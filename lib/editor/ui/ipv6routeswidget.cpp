@@ -131,10 +131,22 @@ QList<NetworkManager::IpRoute> IpV6RoutesWidget::routes()
 
     for (int i = 0, rowCount = d->model.rowCount(); i < rowCount; i++) {
         NetworkManager::IpRoute route;
-        route.setIp(QHostAddress(d->model.item(i, 0)->text()));
-        route.setNextHop(QHostAddress(d->model.item(i, 2)->text()));
-        route.setPrefixLength(d->model.item(i, 1)->text().toUInt());
-        route.setMetric(d->model.item(i, 3)->text().toUInt());
+        QStandardItem *item = d->model.item(i,0);
+        if (item) {
+            route.setIp(QHostAddress(item->text()));
+        }
+        item = d->model.item(i, 2);
+        if (item) {
+            route.setNextHop(QHostAddress(item->text()));
+        }
+        item = d->model.item(i, 1);
+        if (item) {
+            route.setPrefixLength(item->text().toInt());
+        }
+        item = d->model.item(i, 3);
+        if (item) {
+            route.setMetric(item->text().toUInt());
+        }
 
         list << route;
     }

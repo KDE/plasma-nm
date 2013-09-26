@@ -30,7 +30,7 @@
 #include "l2tpauth.h"
 
 K_PLUGIN_FACTORY(L2tpUiPluginFactory, registerPlugin<L2tpUiPlugin>();)
-K_EXPORT_PLUGIN(L2tpUiPluginFactory("plasmanm_l2tpui"))
+K_EXPORT_PLUGIN(L2tpUiPluginFactory("plasmanetworkmanagement_l2tpui"))
 
 L2tpUiPlugin::L2tpUiPlugin(QObject * parent, const QVariantList &):
     VpnUiPlugin(parent)

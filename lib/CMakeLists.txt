@@ -1,4 +1,4 @@
-set(plasmanm-internal_SRCS
+set(plasmanetworkmanagement-internal_SRCS
     settingwidget.cpp
     vpnuiplugin.cpp
     uiutils.cpp
@@ -9,11 +9,11 @@ set(plasmanm-internal_SRCS
     bssidcombobox.cpp
 )
 
-kde4_add_library(plasmanm-internal SHARED ${plasmanm-internal_SRCS})
-target_link_libraries(plasmanm-internal NetworkManagerQt ModemManagerQt ${KDE4_SOLID_LIBS} ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${QT_QTXML_LIBRARY} ${QT_QTNETWORK_LIBRARY})
+kde4_add_library(plasmanetworkmanagement-internal SHARED ${plasmanetworkmanagement-internal_SRCS})
+target_link_libraries(plasmanetworkmanagement-internal NetworkManagerQt ModemManagerQt ${KDE4_SOLID_LIBS} ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${QT_QTXML_LIBRARY} ${QT_QTNETWORK_LIBRARY})
 
-install(TARGETS plasmanm-internal ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS plasmanetworkmanagement-internal ${INSTALL_TARGETS_DEFAULT_ARGS})
 
-install(FILES plasma-nm-vpnuiplugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
+install(FILES plasma-networkmanagement-vpnuiplugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
 
 add_subdirectory(editor)

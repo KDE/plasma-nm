@@ -21,7 +21,7 @@
 import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.core 0.1 as PlasmaCore
-import org.kde.plasmanm 0.1 as PlasmaNm
+import org.kde.networkmanagement 0.1 as PlasmaNM
 
 Item {
     id: mainWindow;
@@ -43,7 +43,7 @@ Item {
         }
     }
 
-    PlasmaNm.GlobalConfig {
+    PlasmaNM.GlobalConfig {
         id: globalConfig;
 
         onDetailKeysChanged: {
@@ -55,15 +55,15 @@ Item {
         }
     }
 
-    PlasmaNm.Handler {
+    PlasmaNM.Handler {
             id: handler;
     }
 
-    PlasmaNm.Model {
+    PlasmaNM.Model {
         id: connectionModel;
     }
 
-    PlasmaNm.SortModel {
+    PlasmaNM.SortModel {
         id: connectionSortModel;
 
         sourceModel: connectionModel;

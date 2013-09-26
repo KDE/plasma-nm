@@ -38,7 +38,7 @@
 #include <KDebug>
 
 SecretAgent::SecretAgent(QObject* parent):
-    NetworkManager::SecretAgent("org.kde.plasma-nm", parent),
+    NetworkManager::SecretAgent("org.kde.networkmanagement", parent),
     m_wallet(0),
     m_dialog(0)
 {
@@ -274,7 +274,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
         }
     } else if (!requestNew && !m_wallet) {
         // If the wallet is disabled fallback to plain text
-        KConfig config("plasma-nm");
+        KConfig config("plasma-networkmanagement");
         KConfigGroup secretsGroup(&config, QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % request.setting_name);
         secretsMap = secretsGroup.entryMap();
     }
@@ -365,7 +365,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
         }
     } else if (!m_wallet) {
         NetworkManager::ConnectionSettings connectionSettings(request.connection);
-        KConfig config("plasma-nm");
+        KConfig config("plasma-networkmanagement");
         foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
             KConfigGroup secretsGroup(&config, QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name());
             NMStringMap secretsMap = setting->secretsToStringMap();
@@ -391,7 +391,7 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
 {
     if (!ignoreWallet && useWallet()) {
         if (m_wallet->isOpen()) {
-            if (m_wallet->hasFolder("plasma-nm") && m_wallet->setFolder("plasma-nm")) {
+            if (m_wallet->hasFolder("plasma-networkmanagement") && m_wallet->setFolder("plasma-networkmanagement")) {
                 NetworkManager::ConnectionSettings connectionSettings(request.connection);
                 foreach (const QString &entry, m_wallet->entryList()) {
                     if (entry.startsWith(connectionSettings.uuid())) {
@@ -406,7 +406,7 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
     } else if (!m_wallet) {
         NetworkManager::ConnectionSettings connectionSettings(request.connection);
 
-        KConfig config("plasma-nm");
+        KConfig config("plasma-networkmanagement");
         foreach (const QString &group, config.groupList()) {
             if (group.startsWith(connectionSettings.uuid())) {
                 config.deleteGroup(group);

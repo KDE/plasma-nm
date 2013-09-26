@@ -41,8 +41,8 @@
 BluetoothMonitor::BluetoothMonitor(QObject * parent)
     : QObject(parent)
 {
-    QDBusConnection::sessionBus().registerService("org.kde.plasmanm");
-    QDBusConnection::sessionBus().registerObject("/org/kde/plasmanm", this, QDBusConnection::ExportScriptableContents);
+    QDBusConnection::sessionBus().registerService("org.kde.plasmanetworkmanagement");
+    QDBusConnection::sessionBus().registerObject("/org/kde/plasmanetworkmanagement", this, QDBusConnection::ExportScriptableContents);
 }
 
 BluetoothMonitor::~BluetoothMonitor()

@@ -31,7 +31,7 @@
 class BluetoothMonitor: public QObject
 {
 Q_OBJECT
-Q_CLASSINFO("D-Bus Interface", "org.kde.plasmanm")
+Q_CLASSINFO("D-Bus Interface", "org.kde.plasmanetworkmanagement")
 public:
     explicit BluetoothMonitor(QObject * parent);
     ~BluetoothMonitor();

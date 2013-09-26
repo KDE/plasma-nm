@@ -1,12 +1,12 @@
 [Desktop Entry]
 Type=Service
 Icon=
-ServiceTypes=PlasmaNM/VpnUiPlugin
-X-KDE-Library=plasmanm_pptpui
+ServiceTypes=PlasmaNetworkManagement/VpnUiPlugin
+X-KDE-Library=plasmanetworkmanagement_pptpui
 X-NetworkManager-Services=org.freedesktop.NetworkManager.pptp
 X-KDE-PluginInfo-Author=Lukáš Tinkl
 X-KDE-PluginInfo-Email=ltinkl@redhat.com
-X-KDE-PluginInfo-Name=plasmanm_pptpui
+X-KDE-PluginInfo-Name=plasmanetworkmanagement_pptpui
 X-KDE-PluginInfo-Version=0.1
 X-KDE-PluginInfo-Website=
 X-KDE-PluginInfo-Category=VPNService

@@ -25,12 +25,12 @@ if (OPENCONNECT_FOUND)
 
         kde4_add_ui_files(openconnect_SRCS openconnectprop.ui openconnectauth.ui)
 
-        kde4_add_plugin(plasmanm_openconnectui ${openconnect_SRCS})
+        kde4_add_plugin(plasmanetworkmanagement_openconnectui ${openconnect_SRCS})
 
-        target_link_libraries(plasmanm_openconnectui plasmanm-internal NetworkManagerQt ${KDE4_KIO_LIBS} ${OPENCONNECT_LIBRARIES} ${maybe_OPENSSL_LIBRARIES})
-        install(TARGETS plasmanm_openconnectui  DESTINATION ${PLUGIN_INSTALL_DIR})
+        target_link_libraries(plasmanetworkmanagement_openconnectui plasmanetworkmanagement-internal NetworkManagerQt ${KDE4_KIO_LIBS} ${OPENCONNECT_LIBRARIES} ${maybe_OPENSSL_LIBRARIES})
+        install(TARGETS plasmanetworkmanagement_openconnectui  DESTINATION ${PLUGIN_INSTALL_DIR})
 
-        install( FILES plasmanm_openconnectui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
+        install( FILES plasmanetworkmanagement_openconnectui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
     else()
         message("ERROR: OpenConnection version '${OPENCONNECT_VERSION}' does not match minimum required (${MINIMUM_OPENCONNECT_VERSION_REQUIRED})")
         message("OpenConnect plugin will not be built")

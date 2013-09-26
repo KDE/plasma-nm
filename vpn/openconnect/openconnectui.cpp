@@ -27,7 +27,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include "openconnectauth.h"
 
 K_PLUGIN_FACTORY(OpenconnectUiPluginFactory, registerPlugin<OpenconnectUiPlugin>();)
-K_EXPORT_PLUGIN(OpenconnectUiPluginFactory("plasmanm_openconnectui"))
+K_EXPORT_PLUGIN(OpenconnectUiPluginFactory("plasmanetworkmanagement_openconnectui"))
 
 OpenconnectUiPlugin::OpenconnectUiPlugin(QObject * parent, const QVariantList &) : VpnUiPlugin(parent)
 {

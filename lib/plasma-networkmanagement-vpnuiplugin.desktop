@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=ServiceType
-X-KDE-ServiceType=PlasmaNM/VpnUiPlugin
+X-KDE-ServiceType=PlasmaNetworkManagement/VpnUiPlugin
 Name=Network Management VPN UI Plugin
 Name[cs]=VPN UI modul pro správu sítě
 Name[da]=VPN UI-plugin til netværkshåndtering

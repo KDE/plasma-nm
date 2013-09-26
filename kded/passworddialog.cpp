@@ -100,7 +100,7 @@ void PasswordDialog::setupVpnUi(const ConnectionSettings &connectionSettings)
         const QString serviceType = vpnSetting->serviceType();
         //qDebug() << "Agent loading VPN plugin" << serviceType << "from DBUS" << calledFromDBus();
         //vpnSetting->printSetting();
-        vpnUiPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QLatin1String("PlasmaNM/VpnUiPlugin"),
+        vpnUiPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QLatin1String("PlasmaNetworkManagement/VpnUiPlugin"),
                                                                                QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
                                                                                this, QVariantList(), &error);
         if (vpnUiPlugin && error.isEmpty()) {

@@ -433,7 +433,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         KNotification *notify = new KNotification("VpnStateChanged", KNotification::Persistent, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
         notify->setProperty("uni", nId);
-        notify->setComponentData(KComponentData("networkmanagement"));  // TODO rename
+        notify->setComponentData(KComponentData("networkmanagement"));
         if (state == NetworkManager::VpnConnection::Activated) {
             notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
         } else {

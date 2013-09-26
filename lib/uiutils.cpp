@@ -796,7 +796,7 @@ QString UiUtils::connectionDetails(const Device::Ptr& device, const Connection::
                     continue;
                 }
                 QHostAddress addr = device->ipV6Config().addresses().first().gateway();
-                if (!addr.isNull() || addr.toString() == "::") {
+                if (!addr.isNull() && addr.toString() != "::") {
                     details += QString(format).arg(i18n("IPv6 Gateway:"), addr.toString());
                 }
             }

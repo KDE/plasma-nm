@@ -153,6 +153,7 @@ Item {
             if (selectedItemModel.itemUuid && connectionSettingsLoader.status == Loader.Ready) {
                 var map = {};
                 map = connectionSettingsHandler.loadSettings(selectedItemModel.itemUuid);
+                connectionSettingsLoader.item.resetSettings();
                 connectionSettingsLoader.item.loadSettings(map);
             } else if (connectionSettingsLoader.status == Loader.Ready) {
                 if (selectedItemModel.itemType == PlasmaNm.Enums.Wireless) {

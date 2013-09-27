@@ -20,6 +20,7 @@
 */
 
 #include "pindialog.h"
+#include "config.h"
 
 #include <QIntValidator>
 
@@ -33,7 +34,7 @@ PinDialog::PinDialog(ModemManager::ModemInterface *modem, const Type type, QWidg
 {
     if (modem) {
         m_udi = modem->udi();
-#ifdef WITH_MODEMMANAGERQT
+#ifdef MODEMMANAGERQT_ONE
         m_name = modem->device();
 #else
         m_name = modem->masterDevice();

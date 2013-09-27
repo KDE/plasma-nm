@@ -297,7 +297,7 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
 {
     QString desc;
 
-#ifdef WITH_MODEMMANAGERQT
+#ifdef MODEMMANAGERQT_ONE
     ModemManager::ModemInterface modem(device->udi());
     if (modem.isValid()) {
         if (modem.powerState() == MM_MODEM_POWER_STATE_ON) {

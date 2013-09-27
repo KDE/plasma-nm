@@ -33,7 +33,11 @@ PinDialog::PinDialog(ModemManager::ModemInterface *modem, const Type type, QWidg
 {
     if (modem) {
         m_udi = modem->udi();
+#ifdef WITH_MODEMMANAGERQT
+        m_name = modem->device();
+#else
         m_name = modem->masterDevice();
+#endif
         foreach (const Solid::Device &d, Solid::Device::allDevices()) {
             if (d.udi().contains(m_name, Qt::CaseInsensitive)) {
                 m_name = d.product();

@@ -40,6 +40,8 @@ class QSizeF;
 
 #include <kdemacros.h>
 
+#include "config.h"
+
 class KDE_EXPORT UiUtils
 {
 public:
@@ -151,10 +153,18 @@ public:
      */
     static QString wirelessBandToString(NetworkManager::WirelessSetting::FrequencyBand band);
 
+#ifdef MODEMMANAGERQT_ONE
+    #include <ModemManager/ModemManager.h>
+    static QString convertTypeToString(ModemManager::ModemInterface::InterfaceType type);
+    static QString convertBandsToString(const QList<MMModemBand> & band);
+    static QString convertAllowedModeToString(MMModemMode mode);
+    static QString convertAccessTechnologyToString(ModemManager::ModemInterface::AccessTechnologies tech);
+#else
     static QString convertTypeToString(const ModemManager::ModemInterface::Type type);
     static QString convertBandToString(const ModemManager::ModemInterface::Band band);
     static QString convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode);
     static QString convertAccessTechnologyToString(const ModemManager::ModemInterface::AccessTechnology tech);
+#endif
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
     static QString convertNspTypeToString(NetworkManager::WimaxNsp::NetworkType type);
 
@@ -163,7 +173,11 @@ public:
 
     static QString connectionDetails(const NetworkManager::Device::Ptr & device, const NetworkManager::Connection::Ptr & connection, const QStringList & keys);
     static QString bluetoothDetails(const NetworkManager::BluetoothDevice::Ptr & btDevice, const QStringList & keys);
+#ifdef MODEMMANAGERQT_ONE
     static QString modemDetails(const NetworkManager::ModemDevice::Ptr & modemDevice, const QStringList & keys);
+#else
+    static QString modemDetails(const NetworkManager::ModemDevice::Ptr & modemDevice, const QStringList & keys);
+#endif
     static QString vpnDetails(const NetworkManager::VpnConnection::Ptr & vpnConnection, const NetworkManager::VpnSetting::Ptr & vpnSetting, const QStringList & keys);
     static QString wimaxDetails(const NetworkManager::WimaxDevice::Ptr & wimaxDevice, const NetworkManager::WimaxNsp::Ptr & wimaxNsp, const NetworkManager::Connection::Ptr & connection, const QStringList & keys);
     static QString wiredDetails(const NetworkManager::WiredDevice::Ptr & wiredDevice, const NetworkManager::Connection::Ptr & connection, const QStringList & keys);

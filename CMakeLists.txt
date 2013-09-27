@@ -12,6 +12,7 @@ pkg_check_modules(MODEMMANAGERQT REQUIRED ModemManagerQt)
 if (NOT MODEMMANAGERQT_FOUND)
     message(FATAL_ERROR "ERROR: ModemManagerQt not found. http://projects.kde.org/libmm-qt")
 endif (NOT MODEMMANAGERQT_FOUND)
+pkg_check_modules(MODEMMANAGER ModemManager)
 
 pkg_check_modules(NETWORKMANAGERQT REQUIRED NetworkManagerQt)
 if (NOT NETWORKMANAGERQT_FOUND)
@@ -20,7 +21,10 @@ endif (NOT NETWORKMANAGERQT_FOUND)
 
 set(KDE_NETWORK_VERSION "0.9.3.1")
 set(PLASMA_NM_VERSION "0.9.3.1")
-set(MODEMMANAGERQT_VERSION ${MODEMMANAGERQT_VERSION})
+
+if (${MODEMMANAGERQT_VERSION} VERSION_GREATER 0.7.990)
+    set(MODEMMANAGERQT_ONE 1)
+endif()
 
 configure_file(config.h.cmake
                ${CMAKE_CURRENT_BINARY_DIR}/config.h )
@@ -45,6 +49,7 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/lib
                     ${CMAKE_CURRENT_SOURCE_DIR}/lib/editor
                     ${QTNETWORK_INCLUDE_DIRS}
+                    ${MODEMMANAGER_INCLUDE_DIRS}
                     ${MODEMMANAGERQT_INCLUDE_DIRS}
                     ${NETWORKMANAGERQT_INCLUDE_DIRS}
                     ${NETWORKMANAGER_INCLUDE_DIRS}

@@ -31,6 +31,8 @@
 
 #include <ModemManagerQt/modeminterface.h>
 
+#include "config.h"
+
 class Monitor : public QObject
 {
 Q_OBJECT
@@ -53,8 +55,13 @@ private Q_SLOTS:
     void connectionUpdated();
     void deviceAdded(const QString& device);
     void deviceRemoved(const QString& device);
+#ifdef WITH_MODEMMANAGERQT
+    void gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnologies technology);
+    void gsmNetworkCurrentModesChanged();
+#else
     void gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology);
     void gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode);
+#endif
     void gsmNetworkSignalQualityChanged(uint signal);
     void statusChanged(NetworkManager::Status status);
     void wimaxNspAppeared(const QString& nsp);

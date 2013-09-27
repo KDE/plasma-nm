@@ -27,6 +27,8 @@
 
 #include <ModemManagerQt/modemgsmnetworkinterface.h>
 
+#include "config.h"
+
 class ConnectionIcon : public QObject
 {
 Q_OBJECT
@@ -58,9 +60,13 @@ Q_SIGNALS:
     void unsetHoverIcon();
 
 private:
-    int m_signal;
+    uint m_signal;
     NetworkManager::WirelessNetwork::Ptr m_wirelessNetwork;
+#ifdef MODEMMANAGERQT_ONE
+    ModemManager::ModemInterface::Ptr m_modemNetwork;
+#else
     ModemManager::ModemGsmNetworkInterface::Ptr m_modemNetwork;
+#endif
 
     void setDisconnectedIcon();
     void setModemIcon(const NetworkManager::Device::Ptr & device);

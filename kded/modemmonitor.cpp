@@ -29,7 +29,6 @@
 #include <KDebug>
 
 #include <ModemManagerQt/manager.h>
-#include <ModemManagerQt/modemgsmcardinterface.h>
 
 #include "pindialog.h"
 
@@ -45,9 +44,7 @@ ModemMonitor::ModemMonitor(QObject * parent)
     Q_D(ModemMonitor);
     d->dialog.clear();
 
-    QObject::connect(ModemManager::notifier(),
-                     SIGNAL(modemAdded(QString)),
-                     this, SLOT(modemAdded(QString)));
+    QObject::connect(ModemManager::notifier(), SIGNAL(modemAdded(QString)), SLOT(modemAdded(QString)));
 
     foreach (const ModemManager::ModemInterface::Ptr &iface, ModemManager::modemInterfaces()) {
         modemAdded(iface->udi());
@@ -59,6 +56,86 @@ ModemMonitor::~ModemMonitor()
     delete d_ptr;
 }
 
+#ifdef MODEMMANAGERQT_ONE
+void ModemMonitor::modemAdded(const QString & udi)
+{
+    Q_D(ModemMonitor);
+    qRegisterMetaType<MMModemLock>();
+
+    ModemManager::ModemInterface modem(udi);
+    ModemManager::ModemSimCardInterface * sim;
+    if (modem.isValid()) {
+        sim = new ModemManager::ModemSimCardInterface(modem.simPath().path(), this);
+    } else {
+        return;
+    }
+
+    connect(sim, SIGNAL(unlockRequiredChanged(MMModemLock)), SLOT(requestPin(MMModemLock)));
+
+    if (d->dialog || modem.unlockRequired() == MM_MODEM_LOCK_NONE || modem.unlockRequired() == MM_MODEM_LOCK_UNKNOWN) {
+        return;
+    }
+
+    // Using queued invocation to prevent kded stalling here until user enters the pin.
+    QMetaObject::invokeMethod(&modem, "unlockRequiredChanged", Qt::QueuedConnection,
+                              Q_ARG(MMModemLock, modem.unlockRequired()));
+}
+
+void ModemMonitor::requestPin(MMModemLock lock)
+{
+    Q_D(ModemMonitor);
+    kDebug() << "unlockRequired == " << lock;
+    if (lock == MM_MODEM_LOCK_NONE || lock == MM_MODEM_LOCK_UNKNOWN) {
+        return;
+    }
+
+    ModemManager::ModemSimCardInterface * modem = qobject_cast<ModemManager::ModemSimCardInterface *>(sender());
+    if (!modem) {
+        return;
+    }
+
+    if (d->dialog) {
+        kDebug() << "PinDialog already running";
+        return;
+    }
+
+    if (lock == MM_MODEM_LOCK_SIM_PIN) {
+        d->dialog = new PinDialog(modem, PinDialog::Pin);
+    } else if (lock == MM_MODEM_LOCK_SIM_PUK) {
+        d->dialog = new PinDialog(modem, PinDialog::PinPuk);
+    } else {
+        // TODO handle other lock types?
+        kWarning() << "Unhandled unlock request for '" << lock << "'";
+        return;
+    }
+
+    if (d->dialog.data()->exec() != QDialog::Accepted) {
+        goto OUT;
+    }
+
+    kDebug() << "Sending unlock code";
+
+    {
+        QDBusPendingCallWatcher *watcher = 0;
+
+        if (d->dialog.data()->type() == PinDialog::Pin) {
+            QDBusPendingCall reply = modem->sendPin(d->dialog.data()->pin());
+            watcher = new QDBusPendingCallWatcher(reply, modem);
+        } else if (d->dialog.data()->type() == PinDialog::PinPuk) {
+            QDBusPendingCall reply = modem->sendPuk(d->dialog.data()->puk(), d->dialog.data()->pin());
+            watcher = new QDBusPendingCallWatcher(reply, modem);
+        }
+
+        connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), SLOT(onSendPinArrived(QDBusPendingCallWatcher*)));
+    }
+
+OUT:
+    if(d->dialog) {
+        d->dialog.data()->deleteLater();
+    }
+    d->dialog.clear();
+}
+#else
 void ModemMonitor::modemAdded(const QString & udi)
 {
     Q_D(ModemMonitor);
@@ -140,6 +217,7 @@ OUT:
     }
     d->dialog.clear();
 }
+#endif
 
 void ModemMonitor::onSendPinArrived(QDBusPendingCallWatcher * watcher)
 {
@@ -155,4 +233,3 @@ void ModemMonitor::onSendPinArrived(QDBusPendingCallWatcher * watcher)
 
     watcher->deleteLater();
 }
-

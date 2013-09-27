@@ -297,7 +297,29 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
 {
     QString desc;
 
-    ModemManager::ModemInterface::Ptr modem = ModemManager::findModemInterface(device->udi(), ModemManager::ModemInterface::GsmCard);
+#ifdef WITH_MODEMMANAGERQT
+    ModemManager::ModemInterface modem(device->udi());
+    if (modem.isValid()) {
+        if (modem.powerState() == MM_MODEM_POWER_STATE_ON) {
+            desc.append(modem.manufacturer());
+            desc.append(" ");
+            desc.append(modem.model());
+        } else {
+            QString deviceName = modem.device();
+            foreach (const Solid::Device &d, Solid::Device::allDevices()) {
+                if (d.udi().contains(deviceName, Qt::CaseInsensitive)) {
+                    deviceName = d.product();
+                    if (!deviceName.startsWith(d.vendor())) {
+                        deviceName = d.vendor() + ' ' + deviceName;
+                    }
+                    desc.append(deviceName);
+                    break;
+                }
+            }
+        }
+    }
+#else
+    ModemManager::ModemInterface modem = ModemManager::findModemInterface(device->udi(), ModemManager::ModemInterface::GsmCard);
     if (modem) {
         if (modem->enabled()) {
             desc.append(modem->getInfo().manufacturer);
@@ -317,6 +339,7 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
             }
         }
     }
+#endif
 
     NetworkManager::ModemDevice::Ptr nmModemIface = device.objectCast<NetworkManager::ModemDevice>();
     if (!nmModemIface) {

@@ -1,23 +1,5 @@
 [Desktop Entry]
 Name=Plasma Networkmanagement module
-Name[bs]=Plasma NM modul
-Name[cs]=Modul NM pro Plasmu
-Name[da]=Plasma NM-modul
-Name[de]=Plasma-NM-Modul
-Name[el]=Άρθρωμα Plasma NM
-Name[fi]=Plasma NM -moduuli
-Name[fr]=Module NM pour Plasma
-Name[hu]=Plasma NM modul
-Name[nl]=Plasma NM module
-Name[pl]=Moduł Plazmy: Menadżer Sieci
-Name[pt]=Módulo do NM para o Plasma
-Name[pt_BR]=Módulo do NM para o Plasma
-Name[sk]=Plasma NM modul
-Name[sv]=Plasma NH-modul
-Name[tr]=Plasma NM modülü
-Name[uk]=Модуль керування мережею Плазми
-Name[x-test]=xxPlasma NM modulexx
-Name[zh_CN]=Plasma NM 模块
 Comment=Provides secrets to the NetworkManager daemon
 Comment[cs]=Poskytuje přihlašovací informace pro službu NetworkManageru
 Comment[da]=Giver hemmeligheder til NetworkManager-dæmonen

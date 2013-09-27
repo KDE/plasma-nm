@@ -74,8 +74,16 @@ void Monitor::init()
             SLOT(init()), Qt::UniqueConnection);
 
     foreach (const NetworkManager::ActiveConnection::Ptr& active, NetworkManager::activeConnections()) {
-        connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-                SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
+        if (active->vpn()) {
+            NetworkManager::VpnConnection::Ptr vpnConnection = active.objectCast<NetworkManager::VpnConnection>();
+            if (vpnConnection) {
+                connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
+                        SLOT(vpnConnectionStateChanged(NetworkManager::VpnConnection::State, NetworkManager::VpnConnection::StateChangeReason)));
+            }
+        } else {
+            connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                    SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
+        }
         NMMonitorDebug() << "Available active connection (" << active->connection()->name() << ")";
 
         Q_EMIT addActiveConnection(active->path());
@@ -217,8 +225,16 @@ void Monitor::activeConnectionAdded(const QString& active)
      * you never get this active connection from libnm-qt, because it's not valid due to missing connection property. But it still does
      * not work properly, because the active connection is not added, and won't be added later */
     if (activeConnection) {
-        connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-                SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
+        if (activeConnection->vpn()) {
+            NetworkManager::VpnConnection::Ptr vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
+            if (vpnConnection) {
+                connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
+                        SLOT(vpnConnectionStateChanged(NetworkManager::VpnConnection::State, NetworkManager::VpnConnection::StateChangeReason)));
+            }
+        } else {
+            connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                    SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
+        }
         NMMonitorDebug() << "Active connection " << activeConnection->connection()->name() << " added";
         Q_EMIT addActiveConnection(active);
     }
@@ -240,6 +256,30 @@ void Monitor::activeConnectionStateChanged(NetworkManager::ActiveConnection::Sta
 
     if (active) {
         Q_EMIT activeConnectionStateChanged(active->path(), state);
+    }
+}
+
+void Monitor::vpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
+{
+    Q_UNUSED(reason)
+
+    NetworkManager::ActiveConnection *activePtr = qobject_cast<NetworkManager::ActiveConnection*>(sender());
+    NetworkManager::ActiveConnection::Ptr active;
+    if (activePtr) {
+        active = NetworkManager::findActiveConnection(activePtr->path());
+    }
+
+    if (active) {
+        if (state == NetworkManager::VpnConnection::Prepare ||
+            state == NetworkManager::VpnConnection::NeedAuth ||
+            state == NetworkManager::VpnConnection::Connecting ||
+            state == NetworkManager::VpnConnection::GettingIpConfig) {
+            Q_EMIT activeConnectionStateChanged(active->path(), NetworkManager::ActiveConnection::Activating);
+        } else if (state == NetworkManager::VpnConnection::Activated) {
+            Q_EMIT activeConnectionStateChanged(active->path(), NetworkManager::ActiveConnection::Activated);
+        } else {
+            Q_EMIT activeConnectionStateChanged(active->path(), NetworkManager::ActiveConnection::Deactivated);
+        }
     }
 }
 

@@ -64,6 +64,7 @@ private Q_SLOTS:
 #endif
     void gsmNetworkSignalQualityChanged(uint signal);
     void statusChanged(NetworkManager::Status status);
+    void vpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason);
     void wimaxNspAppeared(const QString& nsp);
     void wimaxNspDisappeared(const QString& nsp);
     void wimaxNspSignalChanged(uint signal);

@@ -55,7 +55,7 @@ private Q_SLOTS:
     void connectionUpdated();
     void deviceAdded(const QString& device);
     void deviceRemoved(const QString& device);
-#ifdef WITH_MODEMMANAGERQT
+#ifdef MODEMMANAGERQT_ONE
     void gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnologies technology);
     void gsmNetworkCurrentModesChanged();
 #else

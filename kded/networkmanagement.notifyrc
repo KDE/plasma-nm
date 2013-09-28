@@ -1,6 +1,13 @@
 [Global]
 IconName=applications-internet
 Name=networkmanagement
+Name[cs]=networkmanagement
+Name[nl]=netwerkbeheer
+Name[pt]=Gestão de Rede
+Name[pt_BR]=networkmanagement
+Name[sv]=nätverkshantering
+Name[uk]=Керування мережею
+Name[x-test]=xxnetworkmanagementxx
 Comment=Notifies about network errors
 Comment[bs]=Obavještava o mrežnim greškama
 Comment[cs]=Oznamuje chyby sítě
@@ -45,6 +52,7 @@ Action=Popup
 
 [Event/AcStateChanged]
 Name=Active connection state changed
+Name[cs]=Stav aktivního spojení byl změněn
 Name[de]=Active-Verbindungsstatus wurde geändert
 Name[nl]=Actieve verbindingsstatus is gewijzigd
 Name[pt]=O estado da ligação activa mudou
@@ -57,6 +65,7 @@ Action=Popup
 
 [Event/VpnStateChanged]
 Name=VPN connection state changed
+Name[cs]=Stav spojení VPN byl změněn
 Name[de]=VPN-Verbindungsstatus wurde geändert
 Name[nl]=Verbindingsstatus van VPN is gewijzigd
 Name[pt]=O estado da ligação VPN mudou

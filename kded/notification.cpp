@@ -402,7 +402,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         text = i18n("A timeout occurred while starting the service providing the VPN connection.");
         break;
     case NetworkManager::VpnConnection::ServiceStartFailedReason:
-        text = i18n("Starting the service starting the service providing the VPN connection failed.");
+        text = i18n("Starting the service providing the VPN connection failed.");
         break;
     case NetworkManager::VpnConnection::NoSecretsReason:
         text = i18n("Necessary secrets for the VPN connection were not provided.");

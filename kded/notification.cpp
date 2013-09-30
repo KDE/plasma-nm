@@ -306,7 +306,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
 void Notification::addActiveConnection(const QString &path)
 {
     NetworkManager::ActiveConnection::Ptr ac = NetworkManager::findActiveConnection(path);
-    if (ac->isValid()) {
+    if (ac && ac->isValid()) {
         addActiveConnection(ac);
     }
 }

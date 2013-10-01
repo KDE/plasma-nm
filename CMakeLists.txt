@@ -8,10 +8,19 @@ find_package(NetworkManager "0.9.8" REQUIRED)
 include(FindPkgConfig)
 include(KDE4Defaults)
 
-pkg_check_modules(MODEMMANAGERQT REQUIRED ModemManagerQt)
-if (NOT MODEMMANAGERQT_FOUND)
-    message(FATAL_ERROR "ERROR: ModemManagerQt not found. http://projects.kde.org/libmm-qt")
-endif (NOT MODEMMANAGERQT_FOUND)
+if (DISABLE_MODEMMANAGERQT)
+    message(STATUS "Disabling ModemManagerQt support")
+    set(WITH_MODEMMANAGERQT 0)
+else()
+    pkg_check_modules(MODEMMANAGERQT ModemManagerQt)
+    if (MODEMMANAGERQT_FOUND)
+        message(STATUS "Enabling ModemManagerQt support")
+        set(WITH_MODEMMANAGERQT 1)
+    else()
+        message(STATUS "ModemManagerQt not found")
+        set(WITH_MODEMMANAGERQT 0)
+    endif()
+endif()
 
 pkg_check_modules(NETWORKMANAGERQT REQUIRED NetworkManagerQt)
 if (NOT NETWORKMANAGERQT_FOUND)
@@ -33,6 +42,7 @@ pkg_check_modules(QTNETWORK REQUIRED QtNetwork)
 pkg_check_modules(NETWORKMANAGER REQUIRED NetworkManager)
 
 add_definitions(
+    -DWITH_MODEMMANAGERQT=${WITH_MODEMMANAGERQT}
     ${QT_DEFINITIONS}
     ${KDE_DEFINITIONS}
     ${NETWORKMANAGERQT_CFLAGS_OTHER}
@@ -45,7 +55,9 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/lib
                     ${CMAKE_CURRENT_SOURCE_DIR}/lib/editor
                     ${QTNETWORK_INCLUDE_DIRS}
-                    ${MODEMMANAGERQT_INCLUDE_DIRS}
+                    if (MODEMMANAGERQT_FOUND)
+                        ${MODEMMANAGERQT_INCLUDE_DIRS}
+                    endif()
                     ${NETWORKMANAGERQT_INCLUDE_DIRS}
                     ${NETWORKMANAGER_INCLUDE_DIRS}
                     ${KDE4_INCLUDES})

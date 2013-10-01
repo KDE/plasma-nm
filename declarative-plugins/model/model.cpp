@@ -63,12 +63,14 @@ Model::Model(QObject* parent):
             SLOT(addWimaxNsp(QString,QString)));
     connect(m_monitor, SIGNAL(addWirelessNetwork(QString,QString)),
             SLOT(addWirelessNetwork(QString,QString)));
+#if WITH_MODEMMANAGERQT
     connect(m_monitor, SIGNAL(modemAccessTechnologyChanged(QString)),
             SLOT(modemPropertiesChanged(QString)));
     connect(m_monitor, SIGNAL(modemAllowedModeChanged(QString)),
             SLOT(modemPropertiesChanged(QString)));
     connect(m_monitor, SIGNAL(modemSignalQualityChanged(uint, QString)),
             SLOT(modemSignalQualityChanged(uint, QString)));
+#endif
     connect(m_monitor, SIGNAL(removeActiveConnection(uint, QString)),
             SLOT(removeActiveConnection(QString)));
     connect(m_monitor, SIGNAL(removeAvailableConnection(QString,QString)),
@@ -268,7 +270,7 @@ void Model::connectionUpdated(const QString& connection)
         }
     }
 }
-
+#if WITH_MODEMMANAGERQT
 void Model::modemPropertiesChanged(const QString& modem)
 {
     foreach (ModelItem * item, m_items.itemsByDevice(modem)) {
@@ -291,7 +293,7 @@ void Model::modemSignalQualityChanged(uint signal, const QString& modem)
         }
     }
 }
-
+#endif
 void Model::removeActiveConnection(const QString& active)
 {
     ModelItem * item = m_items.itemByActiveConnection(active);

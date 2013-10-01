@@ -34,8 +34,10 @@
 
 ConnectionIcon::ConnectionIcon(QObject* parent):
     QObject(parent),
-    m_signal(0),
-    m_modemNetwork(0)
+    m_signal(0)
+#if WITH_MODEMMANAGERQT
+    ,m_modemNetwork(0)
+#endif
 {
 }
 
@@ -141,12 +143,12 @@ void ConnectionIcon::setIcons()
     bool vpnFound = false;
 
     m_signal = 0;
-
+#if WITH_MODEMMANAGERQT
     if (m_modemNetwork) {
         disconnect(m_modemNetwork.data(), 0, this, 0);
         m_modemNetwork.clear();
     }
-
+#endif
     if (m_wirelessNetwork) {
         disconnect(m_wirelessNetwork.data(), 0, this, 0);
         m_wirelessNetwork.clear();
@@ -195,13 +197,23 @@ void ConnectionIcon::setIcons()
                     Q_EMIT setTooltipIcon("network-wired-activated");
                 } else if (type == NetworkManager::Device::Modem) {
                     connectionFound = true;
+#if WITH_MODEMMANAGERQT
                     setModemIcon(device);
+#else
+                    Q_EMIT setConnectionIcon("network-mobile-0");
+                    Q_EMIT setTooltipIcon("phone");
+#endif
                 } else if (type == NetworkManager::Device::Bluetooth) {
                     NetworkManager::BluetoothDevice::Ptr btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
                     if (btDevice) {
                         connectionFound = true;
                         if (btDevice->bluetoothCapabilities().testFlag(NetworkManager::BluetoothDevice::Dun)) {
+#if WITH_MODEMMANAGERQT
                             setModemIcon(device);
+#else
+                            Q_EMIT setConnectionIcon("network-mobile-0");
+                            Q_EMIT setTooltipIcon("phone");
+#endif
                         } else {
                             NMAppletDebug() << "Emit signal setConnectionIcon(bluetooth)";
                             Q_EMIT setConnectionIcon("bluetooth");
@@ -270,7 +282,7 @@ void ConnectionIcon::setDisconnectedIcon()
         return;
     } else if (modem) {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile)";
-        Q_EMIT setConnectionIcon("network-mobile");
+        Q_EMIT setConnectionIcon("network-mobile-0");
         Q_EMIT setTooltipIcon("phone");
         Q_EMIT setHoverIcon("dialog-cancel");
         return;
@@ -288,7 +300,7 @@ void ConnectionIcon::setDisconnectedIcon()
         return;
     }
 }
-
+#if WITH_MODEMMANAGERQT
 void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
 {
     NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
@@ -314,7 +326,7 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
         setIconForModem();
     } else {
         NMAppletDebug() << "Emit signal setConnectionIcon(network-mobile)";
-        Q_EMIT setConnectionIcon("network-mobile");
+        Q_EMIT setConnectionIcon("network-mobile-0");
         Q_EMIT setTooltipIcon("phone");
         return;
     }
@@ -397,7 +409,7 @@ void ConnectionIcon::setIconForModem()
     Q_EMIT setConnectionIcon(QString(result).arg(strength));
     Q_EMIT setTooltipIcon("phone");
 }
-
+#endif
 void ConnectionIcon::setWirelessIcon(const NetworkManager::Device::Ptr &device, const QString& ssid)
 {
     NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();

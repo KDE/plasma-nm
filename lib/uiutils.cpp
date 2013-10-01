@@ -557,7 +557,7 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
 
     return QString();
 }
-
+#if WITH_MODEMMANAGERQT
 QString UiUtils::convertTypeToString(const ModemManager::ModemInterface::Type type)
 {
     switch (type) {
@@ -623,7 +623,7 @@ QString UiUtils::convertAccessTechnologyToString(const ModemManager::ModemInterf
 
     return i18nc("Unknown cellular access technology","Unknown");
 }
-
+#endif
 QString UiUtils::convertNspTypeToString(WimaxNsp::NetworkType type)
 {
     switch (type) {
@@ -832,9 +832,9 @@ QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QS
 
 QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QStringList& keys)
 {
+#if WITH_MODEMMANAGERQT
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
-
     ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
 
     foreach (const QString& key, keys) {
@@ -882,6 +882,11 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
     }
 
     return details;
+#else
+    Q_UNUSED(modemDevice)
+    Q_UNUSED(keys)
+    return QString();
+#endif
 }
 
 QString UiUtils::vpnDetails(const VpnConnection::Ptr& vpnConnection, const VpnSetting::Ptr& vpnSetting, const QStringList& keys)

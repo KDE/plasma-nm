@@ -26,7 +26,9 @@
 
 #include "secretagent.h"
 #include "notification.h"
+#if WITH_MODEMMANAGERQT
 #include "modemmonitor.h"
+#endif
 #include "bluetoothmonitor.h"
 
 #include <QDBusMetaType>
@@ -49,7 +51,9 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 
     d->agent = new SecretAgent(this);
     new Notification(this);
+#if WITH_MODEMMANAGERQT
     new ModemMonitor(this);
+#endif
     new BluetoothMonitor(this);
 }
 

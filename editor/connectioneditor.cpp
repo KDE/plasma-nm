@@ -77,9 +77,11 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     action = new QAction(i18n("InfiniBand"), this);
     action->setData(NetworkManager::ConnectionSettings::Infiniband);
     m_menu->addAction(action);
+#if WITH_MODEMMANAGERQT
     action = new QAction(i18n("Mobile Broadband..."), this);
     action->setData(NetworkManager::ConnectionSettings::Gsm);
     m_menu->addAction(action);
+#endif
     action = new QAction(i18n("Wired"), this);
     action->setData(NetworkManager::ConnectionSettings::Wired);
     action->setProperty("shared", false);
@@ -334,6 +336,7 @@ void ConnectionEditor::addConnection(QAction* action)
     ConnectionSettings::ConnectionType type = static_cast<ConnectionSettings::ConnectionType>(action->data().toUInt());
 
     if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
+#if WITH_MODEMMANAGERQT
         QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
         if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
             qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
@@ -343,6 +346,7 @@ void ConnectionEditor::addConnection(QAction* action)
         if (wizard) {
             wizard.data()->deleteLater();
         }
+#endif
     } else {
         bool shared = false;
         if (type == ConnectionSettings::Wired || type == ConnectionSettings::Wireless) {

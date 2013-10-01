@@ -63,7 +63,7 @@ Model::Model(QObject* parent):
             SLOT(addWimaxNsp(QString,QString)));
     connect(m_monitor, SIGNAL(addWirelessNetwork(QString,QString)),
             SLOT(addWirelessNetwork(QString,QString)));
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
     connect(m_monitor, SIGNAL(modemAccessTechnologyChanged(QString)),
             SLOT(modemPropertiesChanged(QString)));
     connect(m_monitor, SIGNAL(modemAllowedModeChanged(QString)),
@@ -270,7 +270,7 @@ void Model::connectionUpdated(const QString& connection)
         }
     }
 }
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
 void Model::modemPropertiesChanged(const QString& modem)
 {
     foreach (ModelItem * item, m_items.itemsByDevice(modem)) {

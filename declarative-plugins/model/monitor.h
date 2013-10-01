@@ -28,7 +28,7 @@
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessNetwork>
 #include <NetworkManagerQt/WirelessDevice>
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/modeminterface.h>
 #endif
 class Monitor : public QObject
@@ -53,7 +53,7 @@ private Q_SLOTS:
     void connectionUpdated();
     void deviceAdded(const QString& device);
     void deviceRemoved(const QString& device);
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
     void gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology);
     void gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode);
     void gsmNetworkSignalQualityChanged(uint signal);
@@ -78,7 +78,7 @@ Q_SIGNALS:
     void addWimaxNsp(const QString& nsp, const QString& device);
     void addWirelessNetwork(const QString& network, const QString& device);
     void connectionUpdated(const QString& connection);
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
     void modemAccessTechnologyChanged(const QString& modem);
     void modemAllowedModeChanged(const QString& modem);
     void modemSignalQualityChanged(uint signal, const QString & modem);

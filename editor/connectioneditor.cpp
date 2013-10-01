@@ -77,7 +77,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     action = new QAction(i18n("InfiniBand"), this);
     action->setData(NetworkManager::ConnectionSettings::Infiniband);
     m_menu->addAction(action);
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
     action = new QAction(i18n("Mobile Broadband..."), this);
     action->setData(NetworkManager::ConnectionSettings::Gsm);
     m_menu->addAction(action);
@@ -336,7 +336,7 @@ void ConnectionEditor::addConnection(QAction* action)
     ConnectionSettings::ConnectionType type = static_cast<ConnectionSettings::ConnectionType>(action->data().toUInt());
 
     if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
         QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
         if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
             qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();

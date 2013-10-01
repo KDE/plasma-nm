@@ -144,10 +144,10 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
                 SLOT(wirelessNetworkAppeared(QString)), Qt::UniqueConnection);
         connect(wifiDev.data(), SIGNAL(networkDisappeared(QString)),
                 SLOT(wirelessNetworkDisappeared(QString)), Qt::UniqueConnection);
-    }else if (device->type() == NetworkManager::Device::Modem) {
+    } else if (device->type() == NetworkManager::Device::Modem) {
         NMMonitorDebug() << "Available modem device " << device->interfaceName();
         NetworkManager::ModemDevice::Ptr modemDev = device.objectCast<NetworkManager::ModemDevice>();
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
         ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDev->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
         if (modemNetwork) {
             connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
@@ -353,7 +353,7 @@ void Monitor::deviceRemoved(const QString& device)
     NMMonitorDebug() << "Device " << device << " removed";
     Q_EMIT removeConnectionsByDevice(device);
 }
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
 void Monitor::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology)
 {
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());

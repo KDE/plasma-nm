@@ -1,17 +1,23 @@
-set(plasmanetworkmanagement-internal_SRCS
-    settingwidget.cpp
-    vpnuiplugin.cpp
-    uiutils.cpp
-    hwaddrcombobox.cpp
-    ssidcombobox.cpp
-    bssidcombobox.cpp
-)
-
-if (WITH_MODEMMANAGERQT)
-set(plasmanetworkmanagement-internal_SRCS
-    mobileproviders.cpp
-   mobileconnectionwizard.cpp
-)
+if (MODEMMANAGERQT_FOUND)
+    set(plasmanetworkmanagement-internal_SRCS
+        settingwidget.cpp
+        vpnuiplugin.cpp
+        uiutils.cpp
+        hwaddrcombobox.cpp
+        ssidcombobox.cpp
+        bssidcombobox.cpp
+        mobileproviders.cpp
+        mobileconnectionwizard.cpp
+    )
+else()
+    set(plasmanetworkmanagement-internal_SRCS
+        settingwidget.cpp
+        vpnuiplugin.cpp
+        uiutils.cpp
+        hwaddrcombobox.cpp
+        ssidcombobox.cpp
+        bssidcombobox.cpp
+    )
 endif()
 
 kde4_add_library(plasmanetworkmanagement-internal SHARED ${plasmanetworkmanagement-internal_SRCS})

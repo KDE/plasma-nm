@@ -150,7 +150,7 @@ public:
      * @return A string representation
      */
     static QString wirelessBandToString(NetworkManager::WirelessSetting::FrequencyBand band);
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
     static QString convertTypeToString(const ModemManager::ModemInterface::Type type);
     static QString convertBandToString(const ModemManager::ModemInterface::Band band);
     static QString convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode);

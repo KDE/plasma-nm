@@ -1,24 +1,29 @@
-set(kded_networkmanagement_SRCS
-    notification.cpp
-    passworddialog.cpp
-    secretagent.cpp
-    service.cpp
-    bluetoothmonitor.cpp
-)
+if (MODEMMANAGERQT_FOUND)
+    set(kded_networkmanagement_SRCS
+        notification.cpp
+        passworddialog.cpp
+        secretagent.cpp
+        service.cpp
+        bluetoothmonitor.cpp
+        modemmonitor.cpp
+        pindialog.cpp
+    )
+    kde4_add_ui_files(kded_networkmanagement_SRCS
+        pinwidget.ui
+        passworddialog.ui
 
-kde4_add_ui_files(kded_networkmanagement_SRCS
-    passworddialog.ui
-    pinwidget.ui
-)
-
-if (WITH_MODEMMANAGERQT)
-set(kded_networkmanagement_SRCS
-    modemmonitor.cpp
-    pindialog.cpp
-)
-kde4_add_ui_files(kded_networkmanagement_SRCS
-    pinwidget.ui
-)
+    )
+else()
+    set(kded_networkmanagement_SRCS
+        notification.cpp
+        passworddialog.cpp
+        secretagent.cpp
+        service.cpp
+        bluetoothmonitor.cpp
+    )
+    kde4_add_ui_files(kded_networkmanagement_SRCS
+        passworddialog.ui
+    )
 endif()
 
 kde4_add_plugin(kded_networkmanagement ${kded_networkmanagement_SRCS})

@@ -557,7 +557,7 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
 
     return QString();
 }
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
 QString UiUtils::convertTypeToString(const ModemManager::ModemInterface::Type type)
 {
     switch (type) {
@@ -832,7 +832,7 @@ QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QS
 
 QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QStringList& keys)
 {
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
     ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();

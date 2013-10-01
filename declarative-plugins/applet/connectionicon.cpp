@@ -35,7 +35,7 @@
 ConnectionIcon::ConnectionIcon(QObject* parent):
     QObject(parent),
     m_signal(0)
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
     ,m_modemNetwork(0)
 #endif
 {
@@ -143,7 +143,7 @@ void ConnectionIcon::setIcons()
     bool vpnFound = false;
 
     m_signal = 0;
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
     if (m_modemNetwork) {
         disconnect(m_modemNetwork.data(), 0, this, 0);
         m_modemNetwork.clear();
@@ -197,7 +197,7 @@ void ConnectionIcon::setIcons()
                     Q_EMIT setTooltipIcon("network-wired-activated");
                 } else if (type == NetworkManager::Device::Modem) {
                     connectionFound = true;
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
                     setModemIcon(device);
 #else
                     Q_EMIT setConnectionIcon("network-mobile-0");
@@ -208,7 +208,7 @@ void ConnectionIcon::setIcons()
                     if (btDevice) {
                         connectionFound = true;
                         if (btDevice->bluetoothCapabilities().testFlag(NetworkManager::BluetoothDevice::Dun)) {
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
                             setModemIcon(device);
 #else
                             Q_EMIT setConnectionIcon("network-mobile-0");
@@ -300,7 +300,7 @@ void ConnectionIcon::setDisconnectedIcon()
         return;
     }
 }
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
 void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
 {
     NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();

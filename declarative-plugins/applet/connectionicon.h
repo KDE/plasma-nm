@@ -24,7 +24,7 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/WirelessNetwork>
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/modemgsmnetworkinterface.h>
 #endif
 class ConnectionIcon : public QObject
@@ -45,7 +45,7 @@ private Q_SLOTS:
     void deviceRemoved(const QString & device);
     void setIcons();
     void setWirelessIconForSignalStrength(int strength);
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
     void modemNetworkRemoved();
     void modemSignalChanged(uint signal);
     void setIconForModem();
@@ -64,7 +64,7 @@ private:
 
     void setDisconnectedIcon();
     void setWirelessIcon(const NetworkManager::Device::Ptr & device, const QString & ssid);
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
     ModemManager::ModemGsmNetworkInterface::Ptr m_modemNetwork;
     void setModemIcon(const NetworkManager::Device::Ptr & device);
 #endif

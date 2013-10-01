@@ -22,7 +22,7 @@
 
 #ifndef PLASMA_NM_BLUETOOTH_MONITOR_H
 #define PLASMA_NM_BLUETOOTH_MONITOR_H
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
 #include "../lib/mobileconnectionwizard.h"
 #include <ModemManagerQt/manager.h>
 #endif
@@ -40,7 +40,7 @@ public Q_SLOTS:
     Q_SCRIPTABLE void addBluetoothConnection(const QString & bdAddr, const QString & service);
 private Q_SLOTS:
     void init();
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
     void modemAdded(const QString &udi);
 #endif
 private:
@@ -49,7 +49,7 @@ private:
     QString mDunDevice;
     QString mDevicePath;
     QString mDeviceName;
-#if WITH_MODEMMANAGERQT
+#if WITH_MODEMMANAGER_SUPPORT
     QWeakPointer<MobileConnectionWizard> mobileConnectionWizard;
 #endif
 };

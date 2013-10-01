@@ -8,17 +8,17 @@ find_package(NetworkManager "0.9.8" REQUIRED)
 include(FindPkgConfig)
 include(KDE4Defaults)
 
-if (DISABLE_MODEMMANAGERQT)
-    message(STATUS "Disabling ModemManagerQt support")
-    set(WITH_MODEMMANAGERQT 0)
+if (DISABLE_MODEMMANAGER_SUPPORT)
+    message(STATUS "Disabling ModemManager support")
+    set(WITH_MODEMMANAGER_SUPPORT 0)
 else()
     pkg_check_modules(MODEMMANAGERQT ModemManagerQt)
     if (MODEMMANAGERQT_FOUND)
-        message(STATUS "Enabling ModemManagerQt support")
-        set(WITH_MODEMMANAGERQT 1)
+        message(STATUS "Enabling ModemManager support")
+        set(WITH_MODEMMANAGER_SUPPORT 1)
     else()
         message(STATUS "ModemManagerQt not found")
-        set(WITH_MODEMMANAGERQT 0)
+        set(WITH_MODEMMANAGER_SUPPORT 0)
     endif()
 endif()
 
@@ -42,7 +42,7 @@ pkg_check_modules(QTNETWORK REQUIRED QtNetwork)
 pkg_check_modules(NETWORKMANAGER REQUIRED NetworkManager)
 
 add_definitions(
-    -DWITH_MODEMMANAGERQT=${WITH_MODEMMANAGERQT}
+    -DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT}
     ${QT_DEFINITIONS}
     ${KDE_DEFINITIONS}
     ${NETWORKMANAGERQT_CFLAGS_OTHER}

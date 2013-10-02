@@ -352,6 +352,7 @@ PlasmaComponents.ListItem {
                         topMargin: padding.margins.top;
                     }
                     text: i18n("Edit connection");
+                    enabled: itemUuid;
 
                     onClicked: {
                         itemExpanded(itemUni, false);

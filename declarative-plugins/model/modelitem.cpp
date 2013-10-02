@@ -35,8 +35,6 @@
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/WirelessSetting>
 
-#include <ModemManagerQt/modemgsmnetworkinterface.h>
-
 #include <KGlobal>
 #include <KLocale>
 

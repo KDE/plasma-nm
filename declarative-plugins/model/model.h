@@ -57,8 +57,10 @@ private Q_SLOTS:
     void addWimaxNsp(const QString& nsp, const QString& device);
     void addWirelessNetwork(const QString& ssid, const QString& device);
     void connectionUpdated(const QString& connection);
+#if WITH_MODEMMANAGER_SUPPORT
     void modemPropertiesChanged(const QString& modem);
     void modemSignalQualityChanged(uint signal, const QString& modem);
+#endif
     void removeActiveConnection(const QString& active);
     void removeAvailableConnection(const QString& connection, const QString& device);
     void removeConnection(const QString& connection);

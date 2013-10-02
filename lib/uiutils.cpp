@@ -37,6 +37,13 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+#include <ModemManagerQt/modemgsmnetworkinterface.h>
+#include <ModemManagerQt/modemcdmainterface.h>
+#endif
+#endif
+
 // Qt
 #include <QSizeF>
 #include <QHostAddress>
@@ -558,6 +565,7 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
     return QString();
 }
 
+#if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
 QString UiUtils::convertTypeToString(ModemManager::ModemInterface::InterfaceType type)
 {
@@ -679,6 +687,7 @@ QString UiUtils::convertAccessTechnologyToString(const ModemManager::ModemInterf
 
     return i18nc("Unknown cellular access technology","Unknown");
 }
+#endif
 #endif
 
 QString UiUtils::convertNspTypeToString(WimaxNsp::NetworkType type)
@@ -887,14 +896,14 @@ QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QS
     return details;
 }
 
-#ifdef MODEMMANAGERQT_ONE
-#include <ModemManagerQt/modemcdmainterface.h>
+
 
 QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QStringList& keys)
 {
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
-
     ModemManager::ModemInterface::Ptr modemNetwork = modemDevice->getModemNetworkIface();
     ModemManager::Modem3gppInterface::Ptr gsmNet = modemNetwork.objectCast<ModemManager::Modem3gppInterface>();
     ModemManager::ModemCdmaInterface::Ptr cdmaNet = modemNetwork.objectCast<ModemManager::ModemCdmaInterface>();
@@ -940,15 +949,7 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
             }
         }
     }
-
-    return details;
-}
 #else
-QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QStringList& keys)
-{
-    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
-    QString details;
-
     ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
 
     foreach (const QString& key, keys) {
@@ -994,10 +995,14 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
             }
         }
     }
-
-    return details;
-}
 #endif
+    return details;
+#else
+    Q_UNUSED(modemDevice)
+    Q_UNUSED(keys)
+    return QString();
+#endif
+}
 
 QString UiUtils::vpnDetails(const VpnConnection::Ptr& vpnConnection, const VpnSetting::Ptr& vpnSetting, const QStringList& keys)
 {

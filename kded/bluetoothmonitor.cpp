@@ -61,8 +61,10 @@ void BluetoothMonitor::addBluetoothConnection(const QString& bdAddr, const QStri
     mBdaddr = bdAddr;
     mService = service.toLower();
     if (mService == "dun") {
+#if WITH_MODEMMANAGER_SUPPORT
         connect(ModemManager::notifier(), SIGNAL(modemAdded(QString)),
                 SLOT(modemAdded(QString)));
+#endif
     }
     init();
 }
@@ -213,7 +215,7 @@ void BluetoothMonitor::init()
 
     mDunDevice = reply.value();
 }
-
+#if WITH_MODEMMANAGER_SUPPORT
 void BluetoothMonitor::modemAdded(const QString &udi)
 {
     qDebug() << "Modem added" << udi;
@@ -323,3 +325,4 @@ void BluetoothMonitor::modemAdded(const QString &udi)
         }
     }
 }
+#endif

@@ -36,7 +36,11 @@ class QSizeF;
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/VpnSetting>
 
-#include <Solid/Device>
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+#include <ModemManager/ModemManager.h>
+#endif
+#endif
 
 #include <kdemacros.h>
 
@@ -67,12 +71,6 @@ public:
      * @param interfaceNamingStyle name style to use when generating the name
      */
     static QString interfaceNameLabel(const QString & uni, const KNetworkManagerServicePrefs::InterfaceNamingChoices interfaceNamingStyle);
-
-    /**
-     * @return a Solid::Device from a NetworkManager uni. The returned object must be deleted after use
-     * @param type the type of the network interface
-     */
-    static Solid::Device* findSolidDevice(const QString & uni);
 #endif
     /**
      * @return a human-readable name for a given network interface according to the configured
@@ -153,8 +151,8 @@ public:
      */
     static QString wirelessBandToString(NetworkManager::WirelessSetting::FrequencyBand band);
 
+#if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
-    #include <ModemManager/ModemManager.h>
     static QString convertTypeToString(ModemManager::ModemInterface::InterfaceType type);
     static QString convertBandsToString(const QList<MMModemBand> & band);
     static QString convertAllowedModeToString(MMModemMode mode);
@@ -165,6 +163,7 @@ public:
     static QString convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode);
     static QString convertAccessTechnologyToString(const ModemManager::ModemInterface::AccessTechnology tech);
 #endif
+#endif
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
     static QString convertNspTypeToString(NetworkManager::WimaxNsp::NetworkType type);
 
@@ -173,11 +172,7 @@ public:
 
     static QString connectionDetails(const NetworkManager::Device::Ptr & device, const NetworkManager::Connection::Ptr & connection, const QStringList & keys);
     static QString bluetoothDetails(const NetworkManager::BluetoothDevice::Ptr & btDevice, const QStringList & keys);
-#ifdef MODEMMANAGERQT_ONE
     static QString modemDetails(const NetworkManager::ModemDevice::Ptr & modemDevice, const QStringList & keys);
-#else
-    static QString modemDetails(const NetworkManager::ModemDevice::Ptr & modemDevice, const QStringList & keys);
-#endif
     static QString vpnDetails(const NetworkManager::VpnConnection::Ptr & vpnConnection, const NetworkManager::VpnSetting::Ptr & vpnSetting, const QStringList & keys);
     static QString wimaxDetails(const NetworkManager::WimaxDevice::Ptr & wimaxDevice, const NetworkManager::WimaxNsp::Ptr & wimaxNsp, const NetworkManager::Connection::Ptr & connection, const QStringList & keys);
     static QString wiredDetails(const NetworkManager::WiredDevice::Ptr & wiredDevice, const NetworkManager::Connection::Ptr & connection, const QStringList & keys);

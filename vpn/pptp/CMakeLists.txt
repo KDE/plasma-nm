@@ -8,7 +8,7 @@ kde4_add_ui_files(pptp_SRCS pptpprop.ui pptpadvanced.ui pptpauth.ui)
 
 kde4_add_plugin(plasmanetworkmanagement_pptpui ${pptp_SRCS})
 
-target_link_libraries(plasmanetworkmanagement_pptpui NetworkManagerQt ${KDE4_KIO_LIBS} plasmanetworkmanagement-internal)
+target_link_libraries(plasmanetworkmanagement_pptpui ${NETWORKMANAGERQT_LDFLAGS} ${KDE4_KIO_LIBS} plasmanetworkmanagement-internal)
 
 install(TARGETS plasmanetworkmanagement_pptpui  DESTINATION ${PLUGIN_INSTALL_DIR})
 

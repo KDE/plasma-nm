@@ -21,8 +21,8 @@ set(plasma_networkmanagement_qml_plugins_SRCS
 kde4_add_library(plasmanetworkmanagementplugins SHARED ${plasma_networkmanagement_qml_plugins_SRCS})
 
 target_link_libraries(plasmanetworkmanagementplugins
-    NetworkManagerQt
-    ModemManagerQt
+    ${NETWORKMANAGERQT_LDFLAGS}
+    ${MODEMMANAGERQT_LDFLAGS}
     plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
     ${KDE4_PLASMA_LIBS}

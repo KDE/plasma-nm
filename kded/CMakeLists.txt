@@ -29,8 +29,8 @@ endif()
 kde4_add_plugin(kded_networkmanagement ${kded_networkmanagement_SRCS})
 
 target_link_libraries(kded_networkmanagement
-    NetworkManagerQt
-    ModemManagerQt
+    ${NETWORKMANAGERQT_LDFLAGS}
+    ${MODEMMANAGERQT_LDFLAGS}
     plasmanetworkmanagement-internal
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KDEUI_LIBS}

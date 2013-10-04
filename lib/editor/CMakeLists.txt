@@ -60,8 +60,8 @@ target_link_libraries(plasmanetworkmanagement-editor
     ${KDE4_KIO_LIBS}
     ${QT_QTXML_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
-    NetworkManagerQt
-    ModemManagerQt
+    ${NETWORKMANAGERQT_LDFLAGS}
+    ${MODEMMANAGERQT_LDFLAGS}
     plasmanetworkmanagement-internal
 )
 

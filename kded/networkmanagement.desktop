@@ -8,6 +8,7 @@ Name[nl]=Plasma module voor netwerkbeheer
 Name[pt]=Módulo de Gestão de Rede do Plasma
 Name[pt_BR]=Módulo do Networkmanagement para o Plasma
 Name[sv]=Plasma nätverkshanteringsmodul
+Name[tr]=Plasma Ağ yönetimi modülü
 Name[uk]=Модуль керування мережею Плазми
 Name[x-test]=xxPlasma Networkmanagement modulexx
 Comment=Provides secrets to the NetworkManager daemon

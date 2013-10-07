@@ -34,6 +34,7 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
 #else
 PinDialog::PinDialog(ModemManager::ModemInterface *modem, const Type type, QWidget *parent)
 #endif
+    : KDialog(parent), m_type(type)
 {
     if (modem) {
 #ifdef MODEMMANAGERQT_ONE

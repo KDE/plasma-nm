@@ -26,10 +26,10 @@
 
 #include "secretagent.h"
 #include "notification.h"
-// #if WITH_MODEMMANAGER_SUPPORT
-// #include "modemmonitor.h"
-// #endif
-// #include "bluetoothmonitor.h"
+#if WITH_MODEMMANAGER_SUPPORT
+#include "modemmonitor.h"
+#endif
+#include "bluetoothmonitor.h"
 
 #include <QDBusMetaType>
 
@@ -51,11 +51,10 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 
     d->agent = new SecretAgent(this);
     new Notification(this);
-    //TODO
-// #if WITH_MODEMMANAGER_SUPPORT
-//     new ModemMonitor(this);
-// #endif
-//     new BluetoothMonitor(this);
+#if WITH_MODEMMANAGER_SUPPORT
+    new ModemMonitor(this);
+#endif
+    new BluetoothMonitor(this);
 }
 
 NetworkManagementService::~NetworkManagementService()

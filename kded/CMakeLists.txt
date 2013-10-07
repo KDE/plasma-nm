@@ -4,13 +4,12 @@ if (MODEMMANAGERQT_FOUND)
         passworddialog.cpp
         secretagent.cpp
         service.cpp
-#         // TODO: port to MM1
-#         bluetoothmonitor.cpp
-#         modemmonitor.cpp
-#         pindialog.cpp
+        bluetoothmonitor.cpp
+        modemmonitor.cpp
+        pindialog.cpp
     )
     kde4_add_ui_files(kded_networkmanagement_SRCS
-#         pinwidget.ui
+        pinwidget.ui
         passworddialog.ui
 
     )

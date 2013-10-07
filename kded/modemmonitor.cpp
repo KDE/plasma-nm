@@ -29,13 +29,11 @@
 #include <KDebug>
 
 #include <ModemManagerQt/manager.h>
-#if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/modemdevice.h>
 #include <ModemManagerQt/modem.h>
 #include <ModemManagerQt/sim.h>
-#endif
 #endif
 
 #include "pindialog.h"
@@ -53,7 +51,6 @@ ModemMonitor::ModemMonitor(QObject * parent)
     d->dialog.clear();
 
     QObject::connect(ModemManager::notifier(), SIGNAL(modemAdded(QString)), SLOT(modemAdded(QString)));
-#if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
     foreach (const ModemManager::ModemDevice::Ptr &iface, ModemManager::modemDevices()) {
         modemAdded(iface->uni());
@@ -62,7 +59,6 @@ ModemMonitor::ModemMonitor(QObject * parent)
     foreach (const ModemManager::ModemInterface::Ptr &iface, ModemManager::modemInterfaces()) {
         modemAdded(iface->udi());
     }
-#endif
 #endif
 }
 
@@ -97,8 +93,8 @@ void ModemMonitor::modemAdded(const QString & udi)
 
     if (modemInterface) {
         // Using queued invocation to prevent kded stalling here until user enters the pin.
-        QMetaObject::invokeMethod(&modemInterface, "unlockRequiredChanged", Qt::QueuedConnection,
-                                Q_ARG(MMModemLock, modemInterface.unlockRequired()));
+        QMetaObject::invokeMethod(modemInterface.data(), "unlockRequiredChanged", Qt::QueuedConnection,
+                                Q_ARG(MMModemLock, modemInterface->unlockRequired()));
     }
 }
 
@@ -120,14 +116,29 @@ void ModemMonitor::requestPin(MMModemLock lock)
         return;
     }
 
-    if (lock == MM_MODEM_LOCK_SIM_PIN) {
-        d->dialog = new PinDialog(sim, PinDialog::Pin);
-    } else if (lock == MM_MODEM_LOCK_SIM_PUK) {
-        d->dialog = new PinDialog(sim, PinDialog::PinPuk);
-    } else {
-        // TODO handle other lock types?
-        kWarning() << "Unhandled unlock request for '" << lock << "'";
-        return;
+    ModemManager::Modem::Ptr modem;
+
+    foreach (ModemManager::ModemDevice::Ptr modemDevice, ModemManager::modemDevices()) {
+        if (modemDevice) {
+            ModemManager::Modem::Ptr modemTmp = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
+
+            if (modem && modem->simPath() == sim->uni()) {
+                modem = modemTmp;
+                break;
+            }
+        }
+    }
+
+    if (modem) {
+        if (lock == MM_MODEM_LOCK_SIM_PIN) {
+            d->dialog = new PinDialog(modem.data(), PinDialog::Pin);
+        } else if (lock == MM_MODEM_LOCK_SIM_PUK) {
+            d->dialog = new PinDialog(modem.data(), PinDialog::PinPuk);
+        } else {
+            // TODO handle other lock types?
+            kWarning() << "Unhandled unlock request for '" << lock << "'";
+            return;
+        }
     }
 
     if (d->dialog.data()->exec() != QDialog::Accepted) {

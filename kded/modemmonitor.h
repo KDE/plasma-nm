@@ -25,11 +25,9 @@
 #include <QObject>
 #include <QDBusPendingCallWatcher>
 
-#if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
 #include <ModemManager/ModemManager.h>
+#ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/modem.h>
-#endif
 #endif
 #include <kdemacros.h>
 

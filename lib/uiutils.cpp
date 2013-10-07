@@ -583,18 +583,23 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
 QString UiUtils::convertBandsToString(const QList<MMModemBand> &band)
 {
     // TODO
+    Q_UNUSED(band);
 
     return i18nc("Unknown cellular frequency band","Unknown");
 }
 
-QString UiUtils::convertAllowedModeToString(MMModemMode mode)
+QString UiUtils::convertAllowedModeToString(ModemManager::Modem::ModemModes modes)
 {
-    switch (mode) {
-        case MM_MODEM_MODE_ANY: return i18nc("Gsm modes (2G/3G/any)","Any");
-        case MM_MODEM_MODE_CS: return i18nc("Gsm modes (2G/3G/any)","GSM");
-        case MM_MODEM_MODE_2G: return i18nc("Gsm modes (2G/3G/any)","GPRS/Edge");
-        case MM_MODEM_MODE_3G: return i18nc("Gsm modes (2G/3G/any)","UMTS/HSxPA");
-        case MM_MODEM_MODE_4G: return i18nc("Gsm modes (2G/3G/any)","LTE");
+    if (modes.testFlag(MM_MODEM_MODE_4G)) {
+        return i18nc("Gsm modes (2G/3G/any)","LTE");
+    } else if (modes.testFlag(MM_MODEM_MODE_3G)) {
+        return i18nc("Gsm modes (2G/3G/any)","UMTS/HSxPA");
+    } else if (modes.testFlag(MM_MODEM_MODE_2G)) {
+        return i18nc("Gsm modes (2G/3G/any)","GPRS/Edge");
+    } else if (modes.testFlag(MM_MODEM_MODE_CS)) {
+        return i18nc("Gsm modes (2G/3G/any)","GSM");
+    } else if (modes.testFlag(MM_MODEM_MODE_ANY)) {
+        return i18nc("Gsm modes (2G/3G/any)","Any");
     }
 
     return i18nc("Gsm modes (2G/3G/any)","Any");
@@ -602,24 +607,40 @@ QString UiUtils::convertAllowedModeToString(MMModemMode mode)
 
 QString UiUtils::convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech)
 {
-    switch (tech) {
-        case MM_MODEM_ACCESS_TECHNOLOGY_ANY: i18nc("Any cellular access technology","Any");
-        case MM_MODEM_ACCESS_TECHNOLOGY_UNKNOWN: return i18nc("Unknown cellular access technology","Unknown");
-        case MM_MODEM_ACCESS_TECHNOLOGY_POTS: return i18nc("Analog wireline modem","Analog");
-        case MM_MODEM_ACCESS_TECHNOLOGY_GSM: return i18nc("Cellular access technology","GSM");
-        case MM_MODEM_ACCESS_TECHNOLOGY_GSM_COMPACT: return i18nc("Cellular access technology","Compact GSM");
-        case MM_MODEM_ACCESS_TECHNOLOGY_GPRS: return i18nc("Cellular access technology","GPRS");
-        case MM_MODEM_ACCESS_TECHNOLOGY_EDGE: return i18nc("Cellular access technology","EDGE");
-        case MM_MODEM_ACCESS_TECHNOLOGY_UMTS: return i18nc("Cellular access technology","UMTS");
-        case MM_MODEM_ACCESS_TECHNOLOGY_HSDPA: return i18nc("Cellular access technology","HSDPA");
-        case MM_MODEM_ACCESS_TECHNOLOGY_HSUPA: return i18nc("Cellular access technology","HSUPA");
-        case MM_MODEM_ACCESS_TECHNOLOGY_HSPA: return i18nc("Cellular access technology","HSPA");
-        case MM_MODEM_ACCESS_TECHNOLOGY_HSPA_PLUS: return i18nc("Cellular access technology","HSPA+");
-        case MM_MODEM_ACCESS_TECHNOLOGY_1XRTT: return i18nc("Cellular access technology","CDMA2000 1xRTT");
-        case MM_MODEM_ACCESS_TECHNOLOGY_EVDO0: return i18nc("Cellular access technology","CDMA2000 EVDO revision 0");
-        case MM_MODEM_ACCESS_TECHNOLOGY_EVDOA: return i18nc("Cellular access technology","CDMA2000 EVDO revision A");
-        case MM_MODEM_ACCESS_TECHNOLOGY_EVDOB: return i18nc("Cellular access technology","CDMA2000 EVDO revision B");
-        case MM_MODEM_ACCESS_TECHNOLOGY_LTE: return i18nc("Cellular access technology","LTE");
+    if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_LTE)) {
+        return i18nc("Cellular access technology","LTE");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EVDOB)) {
+        return i18nc("Cellular access technology","CDMA2000 EVDO revision B");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EVDOA)) {
+        return i18nc("Cellular access technology","CDMA2000 EVDO revision A");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EVDO0)) {
+        return i18nc("Cellular access technology","CDMA2000 EVDO revision 0");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_1XRTT)) {
+        return i18nc("Cellular access technology","CDMA2000 1xRTT");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_HSPA_PLUS)) {
+        return i18nc("Cellular access technology","HSPA+");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_HSPA)) {
+        return i18nc("Cellular access technology","HSPA");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_HSUPA)) {
+        return i18nc("Cellular access technology","HSUPA");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_HSDPA)) {
+        return i18nc("Cellular access technology","HSDPA");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_UMTS)) {
+        return i18nc("Cellular access technology","UMTS");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EDGE)) {
+        return i18nc("Cellular access technology","EDGE");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_GPRS)) {
+        return i18nc("Cellular access technology","GPRS");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_GSM_COMPACT)) {
+        return i18nc("Cellular access technology","Compact GSM");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_GSM)) {
+        return i18nc("Cellular access technology","GSM");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_POTS)) {
+        return i18nc("Analog wireline modem","Analog");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_UNKNOWN)) {
+        return i18nc("Unknown cellular access technology","Unknown");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_ANY)) {
+        return i18nc("Any cellular access technology","Any");
     }
 
     return i18nc("Unknown cellular access technology","Unknown");
@@ -913,12 +934,9 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
 
     ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(modemDevice->udi());
     if (modem) {
-        qDebug() << "MODEM";
         modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
         gsmNet = modem->interface(ModemManager::ModemDevice::GsmInterface).objectCast<ModemManager::Modem3gpp>();
         cdmaNet = modem->interface(ModemManager::ModemDevice::CdmaInterface).objectCast<ModemManager::ModemCdma>();
-    } else {
-        qDebug() << "NO MODEM";
     }
 
     foreach (const QString& key, keys) {

@@ -156,7 +156,7 @@ public:
 #ifdef MODEMMANAGERQT_ONE
 //     static QString convertTypeToString(ModemManager::ModemDevice::InterfaceType type);
     static QString convertBandsToString(const QList<MMModemBand> & band);
-    static QString convertAllowedModeToString(MMModemMode mode);
+    static QString convertAllowedModeToString(ModemManager::Modem::ModemModes mode);
     static QString convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech);
 #else
     static QString convertTypeToString(const ModemManager::ModemInterface::Type type);

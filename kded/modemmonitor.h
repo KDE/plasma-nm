@@ -25,8 +25,12 @@
 #include <QObject>
 #include <QDBusPendingCallWatcher>
 
-#include <ModemManagerQt/modemgsmcardinterface.h>
-
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+#include <ModemManager/ModemManager.h>
+#include <ModemManagerQt/modem.h>
+#endif
+#endif
 #include <kdemacros.h>
 
 #include "config.h"

@@ -149,7 +149,7 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
         NetworkManager::ModemDevice::Ptr modemDev = device.objectCast<NetworkManager::ModemDevice>();
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
-        ModemManager::ModemInterface::Ptr modemNetwork = modemDev->getModemNetworkIface();
+        ModemManager::Modem::Ptr modemNetwork = modemDev->getModemNetworkIface();
         if (modemDev->isValid()) {
             connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
                     SLOT(gsmNetworkSignalQualityChanged(uint)), Qt::UniqueConnection);
@@ -368,13 +368,13 @@ void Monitor::deviceRemoved(const QString& device)
 
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
-void Monitor::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnologies technology)
+void Monitor::gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies technology)
 #else
 void Monitor::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology)
 #endif
 {
 #ifdef MODEMMANAGERQT_ONE
-    ModemManager::ModemInterface * gsmNetwork = qobject_cast<ModemManager::ModemInterface*>(sender());
+    ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
 #else
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
 #endif
@@ -401,7 +401,7 @@ void Monitor::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::Allowed
 #endif
 {
 #ifdef MODEMMANAGERQT_ONE
-    ModemManager::ModemInterface * gsmNetwork = qobject_cast<ModemManager::ModemInterface*>(sender());
+    ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
 #else
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
 #endif
@@ -424,7 +424,7 @@ void Monitor::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::Allowed
 void Monitor::gsmNetworkSignalQualityChanged(uint signal)
 {
 #ifdef MODEMMANAGERQT_ONE
-    ModemManager::ModemInterface * gsmNetwork = qobject_cast<ModemManager::ModemInterface*>(sender());
+    ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
 #else
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
 #endif

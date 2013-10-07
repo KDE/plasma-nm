@@ -25,7 +25,7 @@
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/WirelessNetwork>
 #if WITH_MODEMMANAGER_SUPPORT
-#include <ModemManagerQt/modemgsmnetworkinterface.h>
+#include <ModemManagerQt/modem.h>
 #include "config.h"
 #endif
 
@@ -68,7 +68,7 @@ private:
     void setWirelessIcon(const NetworkManager::Device::Ptr & device, const QString & ssid);
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
-    ModemManager::ModemInterface::Ptr m_modemNetwork;
+    ModemManager::Modem::Ptr m_modemNetwork;
 #else
     ModemManager::ModemGsmNetworkInterface::Ptr m_modemNetwork;
 #endif

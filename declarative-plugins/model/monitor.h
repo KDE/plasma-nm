@@ -29,7 +29,7 @@
 #include <NetworkManagerQt/WirelessNetwork>
 #include <NetworkManagerQt/WirelessDevice>
 #if WITH_MODEMMANAGER_SUPPORT
-#include <ModemManagerQt/modeminterface.h>
+#include <ModemManagerQt/modem.h>
 #include "config.h"
 #endif
 class Monitor : public QObject
@@ -56,7 +56,7 @@ private Q_SLOTS:
     void deviceRemoved(const QString& device);
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
-    void gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnologies technology);
+    void gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies technology);
     void gsmNetworkCurrentModesChanged();
 #else
     void gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology);

@@ -39,6 +39,7 @@ class QSizeF;
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
 #include <ModemManager/ModemManager.h>
+#include <ModemManagerQt/modem.h>
 #endif
 #endif
 
@@ -153,10 +154,10 @@ public:
 
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
-    static QString convertTypeToString(ModemManager::ModemInterface::InterfaceType type);
+//     static QString convertTypeToString(ModemManager::ModemDevice::InterfaceType type);
     static QString convertBandsToString(const QList<MMModemBand> & band);
     static QString convertAllowedModeToString(MMModemMode mode);
-    static QString convertAccessTechnologyToString(ModemManager::ModemInterface::AccessTechnologies tech);
+    static QString convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech);
 #else
     static QString convertTypeToString(const ModemManager::ModemInterface::Type type);
     static QString convertBandToString(const ModemManager::ModemInterface::Band band);

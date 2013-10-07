@@ -221,7 +221,8 @@ void BluetoothMonitor::modemAdded(const QString &udi)
     qDebug() << "Modem added" << udi;
 
 #ifdef MODEMMANAGERQT_ONE
-    ModemManager::ModemInterface::Ptr modem = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::Gsm);
+    ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(udi);
+    ModemManager::Modem::Ptr modem = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::Gsm);
 
     if (!modem) {
         // Try CDMA if no GSM device has been found.

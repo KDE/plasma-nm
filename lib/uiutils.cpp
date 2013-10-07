@@ -39,8 +39,11 @@
 
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
-#include <ModemManagerQt/modemgsmnetworkinterface.h>
-#include <ModemManagerQt/modemcdmainterface.h>
+#include <ModemManagerQt/manager.h>
+#include <ModemManagerQt/modem.h>
+#include <ModemManagerQt/modemdevice.h>
+#include <ModemManagerQt/modem3gpp.h>
+#include <ModemManagerQt/modemcdma.h>
 #endif
 #endif
 
@@ -567,15 +570,15 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
 
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
-QString UiUtils::convertTypeToString(ModemManager::ModemInterface::InterfaceType type)
-{
-    switch (type) {
-        case ModemManager::ModemInterface::Gsm: return i18nc("Gsm cellular type","Gsm");
-        case ModemManager::ModemInterface::Cdma: return i18nc("Cdma cellular type","Cdma");
-    }
-
-    return i18nc("Unknown cellular type","Unknown");
-}
+// QString UiUtils::convertTypeToString(ModemManager::Modem::InterfaceType type)
+// {
+//     switch (type) {
+//         case ModemManager::ModemInterface::Gsm: return i18nc("Gsm cellular type","Gsm");
+//         case ModemManager::ModemInterface::Cdma: return i18nc("Cdma cellular type","Cdma");
+//     }
+//
+//     return i18nc("Unknown cellular type","Unknown");
+// }
 
 QString UiUtils::convertBandsToString(const QList<MMModemBand> &band)
 {
@@ -597,7 +600,7 @@ QString UiUtils::convertAllowedModeToString(MMModemMode mode)
     return i18nc("Gsm modes (2G/3G/any)","Any");
 }
 
-QString UiUtils::convertAccessTechnologyToString(ModemManager::ModemInterface::AccessTechnologies tech)
+QString UiUtils::convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech)
 {
     switch (tech) {
         case MM_MODEM_ACCESS_TECHNOLOGY_ANY: i18nc("Any cellular access technology","Any");
@@ -904,9 +907,19 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
 #ifdef MODEMMANAGERQT_ONE
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
-    ModemManager::ModemInterface::Ptr modemNetwork = modemDevice->getModemNetworkIface();
-    ModemManager::Modem3gppInterface::Ptr gsmNet = modemNetwork.objectCast<ModemManager::Modem3gppInterface>();
-    ModemManager::ModemCdmaInterface::Ptr cdmaNet = modemNetwork.objectCast<ModemManager::ModemCdmaInterface>();
+    ModemManager::Modem::Ptr modemNetwork;
+    ModemManager::Modem3gpp::Ptr gsmNet;
+    ModemManager::ModemCdma::Ptr cdmaNet;
+
+    ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(modemDevice->udi());
+    if (modem) {
+        qDebug() << "MODEM";
+        modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
+        gsmNet = modem->interface(ModemManager::ModemDevice::GsmInterface).objectCast<ModemManager::Modem3gpp>();
+        cdmaNet = modem->interface(ModemManager::ModemDevice::CdmaInterface).objectCast<ModemManager::ModemCdma>();
+    } else {
+        qDebug() << "NO MODEM";
+    }
 
     foreach (const QString& key, keys) {
         if (key == "mobile:operator") {
@@ -941,7 +954,7 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
             }
         } else if (key == "mobile:imsi") {
             if (modemDevice) {
-                ModemManager::ModemSimCardInterface::Ptr simCard;
+                ModemManager::Sim::Ptr simCard;
                 simCard = modemDevice->getModemCardIface();
                 if (simCard) {
                     details += QString(format).arg(i18n("IMSI:"), simCard->imsi());

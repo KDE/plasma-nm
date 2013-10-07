@@ -28,9 +28,11 @@
 #include <kwindowsystem.h>
 
 #include <ModemManagerQt/manager.h>
-
+#ifdef MODEMMANAGERQT_ONE
+PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *parent)
+#else
 PinDialog::PinDialog(ModemManager::ModemInterface *modem, const Type type, QWidget *parent)
-    : KDialog(parent), m_type(type)
+#endif
 {
     if (modem) {
         m_udi = modem->udi();

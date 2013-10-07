@@ -158,6 +158,7 @@ public:
     static QString convertBandsToString(const QList<MMModemBand> & band);
     static QString convertAllowedModeToString(ModemManager::Modem::ModemModes mode);
     static QString convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech);
+    static QString convertLockReasonToString(MMModemLock reason);
 #else
     static QString convertTypeToString(const ModemManager::ModemInterface::Type type);
     static QString convertBandToString(const ModemManager::ModemInterface::Band band);

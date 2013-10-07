@@ -645,6 +645,49 @@ QString UiUtils::convertAccessTechnologyToString(ModemManager::Modem::AccessTech
 
     return i18nc("Unknown cellular access technology","Unknown");
 }
+
+QString UiUtils::convertLockReasonToString(MMModemLock reason)
+{
+    switch (reason) {
+    case MM_MODEM_LOCK_NONE:
+        return i18nc("possible SIM lock reason", "Modem is unlocked.");
+    case MM_MODEM_LOCK_SIM_PIN:
+        return i18nc("possible SIM lock reason", "SIM requires the PIN code.");
+    case MM_MODEM_LOCK_SIM_PIN2:
+        return i18nc("possible SIM lock reason", "SIM requires the PIN2 code.");
+    case MM_MODEM_LOCK_SIM_PUK:
+        return i18nc("possible SIM lock reason", "SIM requires the PUK code.");
+    case MM_MODEM_LOCK_SIM_PUK2:
+        return i18nc("possible SIM lock reason", "SIM requires the PUK2 code.");
+    case MM_MODEM_LOCK_PH_SP_PIN:
+        return i18nc("possible SIM lock reason", "Modem requires the service provider PIN code.");
+    case MM_MODEM_LOCK_PH_SP_PUK:
+        return i18nc("possible SIM lock reason", "Modem requires the service provider PUK code.");
+    case MM_MODEM_LOCK_PH_NET_PIN:
+        return i18nc("possible SIM lock reason", "Modem requires the network PIN code.");
+    case MM_MODEM_LOCK_PH_NET_PUK:
+        return i18nc("possible SIM lock reason", "Modem requires the network PUK code.");
+    case MM_MODEM_LOCK_PH_SIM_PIN:
+        return i18nc("possible SIM lock reason", "Modem requires the PIN code.");
+    case MM_MODEM_LOCK_PH_CORP_PIN:
+        return i18nc("possible SIM lock reason", "Modem requires the corporate PIN code.");
+    case MM_MODEM_LOCK_PH_CORP_PUK:
+        return i18nc("possible SIM lock reason", "Modem requires the corporate PUK code.");
+    case MM_MODEM_LOCK_PH_FSIM_PIN:
+        return i18nc("possible SIM lock reason", "Modem requires the PH-FSIM PIN code.");
+    case MM_MODEM_LOCK_PH_FSIM_PUK:
+        return i18nc("possible SIM lock reason", "Modem requires the PH-FSIM PUK code.");
+    case MM_MODEM_LOCK_PH_NETSUB_PIN:
+        return i18nc("possible SIM lock reason", "Modem requires the network subset PIN code.");
+    case MM_MODEM_LOCK_PH_NETSUB_PUK:
+        return i18nc("possible SIM lock reason", "Modem requires the network subset PUK code.");
+    case MM_MODEM_LOCK_UNKNOWN:
+    default:
+        return i18nc("possible SIM lock reason", "Lock reason unknown.");
+    }
+}
+
+
 #else
 QString UiUtils::convertTypeToString(const ModemManager::ModemInterface::Type type)
 {
@@ -963,7 +1006,7 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
             }
         } else if (key == "mobile:unlock") {
             if (modemNetwork) {
-                details += QString(format).arg(i18n("Unlock Required:"), modemNetwork->unlockRequired()); // TODO convert
+                details += QString(format).arg(i18n("Unlock Required:"), UiUtils::convertLockReasonToString(modemNetwork->unlockRequired()));
             }
         } else if (key == "mobile:imei") {
             if (modemNetwork) {

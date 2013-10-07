@@ -875,7 +875,6 @@ QString UiUtils::connectionDetails(const Device::Ptr& device, const Connection::
                     continue;
                 }
                 QHostAddress addr = device->ipV6Config().addresses().first().ip();
-                qDebug() << addr.toString();
                 if (!addr.isNull()) {
                     details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
                 }

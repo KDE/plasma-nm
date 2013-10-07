@@ -318,7 +318,7 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
     if (m_modemNetwork) {
         connect(m_modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
                 SLOT(modemSignalChanged(uint)), Qt::UniqueConnection);
-        connect(m_modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnologies)),
+        connect(m_modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::Modem::AccessTechnologies)),
                 SLOT(setIconForModem()), Qt::UniqueConnection);
         connect(m_modemNetwork.data(), SIGNAL(destroyed(QObject*)),
                 SLOT(modemNetworkRemoved()));

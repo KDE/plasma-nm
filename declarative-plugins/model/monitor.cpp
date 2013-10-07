@@ -153,8 +153,8 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
         if (modemDev->isValid()) {
             connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
                     SLOT(gsmNetworkSignalQualityChanged(uint)), Qt::UniqueConnection);
-            connect(modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnologies)),
-                    SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnologies)), Qt::UniqueConnection);
+            connect(modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::Modem::AccessTechnologies)),
+                    SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies)), Qt::UniqueConnection);
             connect(modemNetwork.data(), SIGNAL(currentModesChanged()),
                     SLOT(gsmNetworkCurrentModesChanged()), Qt::UniqueConnection);
         }

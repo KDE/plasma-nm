@@ -71,11 +71,9 @@ ModemMonitor::~ModemMonitor()
 void ModemMonitor::modemAdded(const QString & udi)
 {
     Q_D(ModemMonitor);
-    qRegisterMetaType<MMModemLock>();
 
     ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(udi);
     ModemManager::Modem::Ptr modem;
-    ModemManager::Sim::Ptr sim;
     if (modemDevice) {
         modem = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
     } else {

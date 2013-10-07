@@ -78,9 +78,6 @@ void ModemMonitor::modemAdded(const QString & udi)
     ModemManager::Sim::Ptr sim;
     if (modemDevice) {
         modem = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
-        if (modem) {
-            sim = ModemManager::findSim(modem->simPath());
-        }
     } else {
         return;
     }
@@ -106,8 +103,8 @@ void ModemMonitor::requestPin(MMModemLock lock)
         return;
     }
 
-    ModemManager::Sim::Ptr sim = ModemManager::findSim(qobject_cast<ModemManager::Modem *>(sender())->uni());
-    if (!sim) {
+    ModemManager::Modem *modem = qobject_cast<ModemManager::Modem *>(sender());
+    if (!modem) {
         return;
     }
 
@@ -116,29 +113,14 @@ void ModemMonitor::requestPin(MMModemLock lock)
         return;
     }
 
-    ModemManager::Modem::Ptr modem;
-
-    foreach (ModemManager::ModemDevice::Ptr modemDevice, ModemManager::modemDevices()) {
-        if (modemDevice) {
-            ModemManager::Modem::Ptr modemTmp = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
-
-            if (modem && modem->simPath() == sim->uni()) {
-                modem = modemTmp;
-                break;
-            }
-        }
-    }
-
-    if (modem) {
-        if (lock == MM_MODEM_LOCK_SIM_PIN) {
-            d->dialog = new PinDialog(modem.data(), PinDialog::Pin);
-        } else if (lock == MM_MODEM_LOCK_SIM_PUK) {
-            d->dialog = new PinDialog(modem.data(), PinDialog::PinPuk);
-        } else {
-            // TODO handle other lock types?
-            kWarning() << "Unhandled unlock request for '" << lock << "'";
-            return;
-        }
+    if (lock == MM_MODEM_LOCK_SIM_PIN) {
+        d->dialog = new PinDialog(modem, PinDialog::Pin);
+    } else if (lock == MM_MODEM_LOCK_SIM_PUK) {
+        d->dialog = new PinDialog(modem, PinDialog::PinPuk);
+    } else {
+        // TODO handle other lock types?
+        kWarning() << "Unhandled unlock request for '" << lock << "'";
+        return;
     }
 
     if (d->dialog.data()->exec() != QDialog::Accepted) {
@@ -148,6 +130,12 @@ void ModemMonitor::requestPin(MMModemLock lock)
     kDebug() << "Sending unlock code";
 
     {
+        ModemManager::Sim::Ptr sim = ModemManager::findSim(modem->simPath());
+
+        if (!sim) {
+            return;
+        }
+
         QDBusPendingCallWatcher *watcher = 0;
 
         if (d->dialog.data()->type() == PinDialog::Pin) {

@@ -5,11 +5,19 @@ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_MODULE_PATH})
 macro_optional_find_package(OpenConnect ${MINIMUM_OPENCONNECT_VERSION_REQUIRED})
 if (OPENCONNECT_FOUND)
     if (${OPENCONNECT_VERSION} VERSION_LESS "3.99")
-        macro_optional_find_package(OpenSSL)
-        macro_log_feature(OPENSSL_FOUND "OpenSSL headers" "Encryption suite" "http://www.openssl.org" FALSE "" "Needed for OpenConnect support in Network Management")
-        if (OPENSSL_FOUND)
+#         macro_optional_find_package(OpenSSL)
+#         macro_log_feature(OpenSSL_FOUND "OpenSSL headers" "Encryption suite" "http://www.openssl.org" FALSE "" "Needed for OpenConnect support in Network Management")
+        find_package(OpenSSL)
+        set_package_properties(OpenSSL PROPERTIES
+                            DESCRIPTION "Encryption suite"
+                            URL "http://www.openssl.org"
+                            TYPE OPTIONAL
+                            )
+
+
+        if (OpenSSL_FOUND)
             set (MINIMUM_OPENCONNECT_VERSION_REQUIRED "3.03")
-            set (maybe_OPENSSL_LIBRARIES ${OPENSSL_LIBRARIES})
+            set (maybe_OPENSSL_LIBRARIES ${OpenSSL_LIBRARIES})
         endif()
     endif()
 

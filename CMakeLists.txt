@@ -27,8 +27,20 @@ find_package(Qt5DBus REQUIRED NO_MODULE)
 find_package(Qt5Quick REQUIRED NO_MODULE)
 find_package(Qt5Widgets REQUIRED NO_MODULE)
 find_package(Qt5X11Extras REQUIRED NO_MODULE)
+find_package(Qt5Network REQUIRED NO_MODULE)
+find_package(Qt5Test REQUIRED NO_MODULE)
+
+include_directories(${Qt5Widgets_INCLUDE_DIRS}
+                    ${Qt5DBus_INCLUDE_DIRS}
+                    ${Qt5Core_INCLUDE_DIRS}
+                    ${Qt5Quick_INCLUDE_DIRS}
+                    ${Qt5Network_INCLUDE_DIRS}
+                    ${Qt5Test_INCLUDE_DIRS}
+                    )
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
+add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_STRICT_ITERATORS -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_KEYWORDS)
 
 # Load CMake, Compiler and InstallDirs settings from KF5 and the following are already somewhat "done" tier1/tier2 libs from kdelibs:
 find_package(KF5 MODULE REQUIRED COMPONENTS CMake Compiler InstallDirs

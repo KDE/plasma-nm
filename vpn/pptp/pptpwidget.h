@@ -40,7 +40,7 @@ public:
     virtual QVariantMap setting(bool agentOwned = false) const;
     virtual bool isValid() const;
 
-private slots:
+private Q_SLOTS:
     void doAdvancedDialog();
     void passwordTypeChanged(int);
     void setShowPassword(bool);

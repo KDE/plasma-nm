@@ -72,5 +72,4 @@ QWidget * DetailKeysEditorDesignerFactory::createWidget(QWidget *parent)
     return new DetailKeysEditor(parent);
 }
 
-Q_EXPORT_PLUGIN2(plasmanetworkmanagementwidgets, DetailKeysEditorDesignerFactory)
-
+//Q_EXPORT_PLUGIN2(plasmanetworkmanagementwidgets, DetailKeysEditorDesignerFactory)

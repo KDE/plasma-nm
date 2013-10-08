@@ -40,10 +40,10 @@ public:
 
     virtual QVariantMap setting(bool agentOwned = false) const;
 
-public slots:
+public Q_SLOTS:
     void setVisible(bool);
 
-private slots:
+private Q_SLOTS:
     void showPasswordsChanged(bool show);
 
 private:

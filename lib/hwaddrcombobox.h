@@ -38,10 +38,10 @@ public:
     bool isValid() const;
     QString hwAddress() const;
 
-signals:
+Q_SIGNALS:
     void hwAddressChanged();
 
-private slots:
+private Q_SLOTS:
     void editTextChanged(const QString &);
     void currentIndexChanged(int);
 

@@ -48,7 +48,7 @@ public:
 
     virtual bool isValid() const;
 
-private slots:
+private Q_SLOTS:
     void addBond(QAction * action);
     void currentBondChanged(QListWidgetItem * current, QListWidgetItem * previous);
     void bondAddComplete(const QString &uuid, bool success, const QString & msg);

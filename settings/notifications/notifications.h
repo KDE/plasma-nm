@@ -32,7 +32,7 @@ public:
     explicit NotificationsWidget(QWidget * parent = 0, const QVariantList & args = QVariantList());
     virtual ~NotificationsWidget();
 
-public slots:
+public Q_SLOTS:
     virtual void save();
 
 private:

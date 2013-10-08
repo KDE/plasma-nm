@@ -40,7 +40,7 @@ public:
 
     void setDevice(const NetworkManager::Device::Ptr &device);
 
-private slots:
+private Q_SLOTS:
     void updateState();
     void updateActiveConnection();
     void updateIpV4Config();

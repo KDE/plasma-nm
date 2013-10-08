@@ -34,7 +34,7 @@ public:
 
     bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const;
 
-public slots:
+public Q_SLOTS:
     void setShowInactiveConnections(bool show);
 
 private:

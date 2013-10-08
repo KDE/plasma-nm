@@ -43,10 +43,10 @@ public:
     NetworkKCM(QWidget *parent, const QVariantList &args);
     ~NetworkKCM();
 
-public slots:
+public Q_SLOTS:
     void load();
 
-private slots:
+private Q_SLOTS:
     void showDescription();
     void updateSelection();
     void expandParent(const QModelIndex &index);

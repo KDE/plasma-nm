@@ -41,7 +41,7 @@ public:
     KProcess * ciscoDecrypt;
     QString decryptedPasswd;
 
-protected slots:
+protected Q_SLOTS:
     void gotCiscoDecryptOutput();
     void ciscoDecryptError(QProcess::ProcessError pError);
     void ciscoDecryptFinished(int exitCode, QProcess::ExitStatus exitStatus);

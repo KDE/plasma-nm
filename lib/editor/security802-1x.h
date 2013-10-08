@@ -38,7 +38,7 @@ public:
     virtual ~Security8021x();
     QVariantMap setting(bool agentOwned = false) const;
 
-private slots:
+private Q_SLOTS:
     void setShowMD5Password(bool on);
     void setShowTlsPrivateKeyPassword(bool on);
     void setShowLeapPassword(bool on);

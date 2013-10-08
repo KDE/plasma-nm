@@ -36,7 +36,7 @@ class Notification : public QObject
 public:
     explicit Notification(QObject *parent = 0);
 
-private slots:
+private Q_SLOTS:
     void deviceAdded(const QString &uni);
     void addDevice(const NetworkManager::Device::Ptr &device);
     void stateChanged(NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason);

@@ -46,7 +46,7 @@ public:
 
     bool isValid() const;
 
-private slots:
+private Q_SLOTS:
     void generateRandomClonedMac();
 
 private:

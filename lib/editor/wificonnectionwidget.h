@@ -48,7 +48,7 @@ public:
 
     virtual bool isValid() const;
 
-private slots:
+private Q_SLOTS:
     void generateRandomClonedMac();
     void ssidChanged();
     void modeChanged(int mode);

@@ -51,7 +51,7 @@ public:
     explicit AvailableConnectionsModel(QObject *parent = 0);
     void setDevice(const NetworkManager::Device::Ptr &device);
 
-private slots:
+private Q_SLOTS:
     void availableConnectionChanged();
     void connectionAdded(const QString &path);
     void connectionRemoved(const QString &path);

@@ -46,7 +46,7 @@ public:
 
     virtual bool isValid() const;
 
-private slots:
+private Q_SLOTS:
     void updateStartDir(const KUrl &);
     void x509KeyPasswordStorageChanged(int);
     void passPasswordStorageChanged(int);

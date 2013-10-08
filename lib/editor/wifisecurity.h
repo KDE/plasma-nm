@@ -57,7 +57,7 @@ public:
 
     virtual bool isValid() const;
 
-private slots:
+private Q_SLOTS:
     void securityChanged(int index);
     void slotShowWepKeyPasswordChecked(bool checked);
     void slotShowLeapPasswordChecked(bool checked);

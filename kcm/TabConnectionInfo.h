@@ -38,7 +38,7 @@ public:
 
     void setConnection(const NetworkManager::Connection::Ptr &connection);
 
-private slots:
+private Q_SLOTS:
     void updateState();
     void on_connectDisconnectPB_clicked();
 

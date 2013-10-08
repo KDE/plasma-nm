@@ -38,7 +38,7 @@ public:
 
     virtual QVariantMap setting(bool agentOwned = false) const;
 
-private slots:
+private Q_SLOTS:
     void showPasswordsToggled(bool);
 
 private:

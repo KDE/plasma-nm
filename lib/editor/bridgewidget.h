@@ -48,7 +48,7 @@ public:
 
     virtual bool isValid() const;
 
-private slots:
+private Q_SLOTS:
     void addBridge(QAction * action);
     void currentBridgeChanged(QListWidgetItem * current, QListWidgetItem * previous);
     void bridgeAddComplete(const QString &uuid, bool success, const QString & msg);

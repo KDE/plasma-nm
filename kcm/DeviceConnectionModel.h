@@ -54,10 +54,10 @@ public:
 
     Qt::ItemFlags flags(const QModelIndex &index) const;
 
-signals:
+Q_SIGNALS:
     void parentAdded(const QModelIndex &index);
 
-private slots:
+private Q_SLOTS:
     void initConnections();
     void removeConnections();
 

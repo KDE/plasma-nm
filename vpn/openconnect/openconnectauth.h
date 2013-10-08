@@ -51,7 +51,7 @@ private:
     void addFormInfo(const QString &, const QString &);
     void deleteAllFromLayout(QLayout *);
 
-private slots:
+private Q_SLOTS:
     void writeNewConfig(const QString &);
     void validatePeerCert(const QString &, const QString &, const QString &, bool*);
     void processAuthForm(struct oc_auth_form *);

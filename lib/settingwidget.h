@@ -49,10 +49,10 @@ public:
 
     virtual bool isValid() const { return true; }
 
-protected slots:
+protected Q_SLOTS:
     void slotWidgetChanged();
 
-signals:
+Q_SIGNALS:
     void validChanged(bool isValid);
 
 private:

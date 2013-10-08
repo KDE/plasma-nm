@@ -45,7 +45,7 @@ class KDE_EXPORT ModemMonitor : public QObject
 public:
     explicit ModemMonitor(QObject * parent);
     virtual ~ModemMonitor();
-private slots:
+private Q_SLOTS:
     void modemAdded(const QString&);
 #ifdef MODEMMANAGERQT_ONE
     void requestPin(MMModemLock lock);

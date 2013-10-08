@@ -41,10 +41,10 @@ public:
 Q_SIGNALS:
     void bssidChanged();
 
-public slots:
+public Q_SLOTS:
     void init(const QString & bssid, const QString &ssid);
 
-private slots:
+private Q_SLOTS:
     void editTextChanged(const QString &);
     void currentIndexChanged(int);
 

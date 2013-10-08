@@ -55,7 +55,7 @@ public:
     ~OpenconnectAuthWorkerThread();
     struct openconnect_info* getOpenconnectInfo();
 
-signals:
+Q_SIGNALS:
     void validatePeerCert(const QString &, const QString &, const QString &, bool*);
     void processAuthForm(struct oc_auth_form *);
     void updateLog(const QString &, const int&);

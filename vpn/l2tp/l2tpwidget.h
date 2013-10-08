@@ -43,7 +43,7 @@ public:
 
     virtual bool isValid() const;
 
-private slots:
+private Q_SLOTS:
     void userPasswordTypeChanged(int index);
     void showPassword(bool show);
     void showAdvanced();

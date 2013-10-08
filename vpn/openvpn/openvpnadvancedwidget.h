@@ -44,7 +44,7 @@ public:
 
     NetworkManager::VpnSetting::Ptr setting() const;
 
-private slots:
+private Q_SLOTS:
     void gotOpenVpnOutput();
     void openVpnError(QProcess::ProcessError);
     void openVpnFinished(int, QProcess::ExitStatus);

@@ -38,7 +38,7 @@ public:
     virtual void readSecrets();
     virtual QVariantMap setting(bool agentOwned = false) const;
 
-protected slots:
+protected Q_SLOTS:
     void showPasswordsToggled(bool);
 
 private:

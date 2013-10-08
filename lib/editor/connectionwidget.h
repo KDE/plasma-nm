@@ -43,7 +43,7 @@ public:
 
     NMVariantMapMap setting() const;
 
-private slots:
+private Q_SLOTS:
     void autoVpnToggled(bool on);
     void openAdvancedPermissions();
 

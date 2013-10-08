@@ -25,13 +25,13 @@
 #include <QObject>
 #include <QDBusPendingCallWatcher>
 
+#include "config.h"
+
 #ifdef MODEMMANAGERQT_ONE
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/modem.h>
 #endif
 #include <kdemacros.h>
-
-#include "config.h"
 
 class ModemMonitorPrivate;
 

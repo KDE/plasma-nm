@@ -28,6 +28,9 @@
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessNetwork>
 #include <NetworkManagerQt/WirelessDevice>
+
+#include "config.h"
+
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/modem.h>
@@ -35,8 +38,6 @@
 #include <ModemManagerQt/modeminterface.h>
 #endif
 #endif
-
-#include "config.h"
 
 class Monitor : public QObject
 {

@@ -21,6 +21,8 @@
 #ifndef PLASMA_NM_CONNECTION_ICON_H
 #define PLASMA_NM_CONNECTION_ICON_H
 
+#include "config.h"
+
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/WirelessNetwork>
@@ -31,8 +33,6 @@
 #include <ModemManagerQt/modemgsmnetworkinterface.h>
 #endif
 #endif
-
-#include "config.h"
 
 class ConnectionIcon : public QObject
 {

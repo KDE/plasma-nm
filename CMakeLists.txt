@@ -61,7 +61,7 @@ add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_STRICT_ITERATORS -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_KEYWORDS)
 
-
+set(DISABLE_MODEMMANAGER_SUPPORT 1)
 
 if (DISABLE_MODEMMANAGER_SUPPORT)
     message(STATUS "Disabling ModemManager support")
@@ -71,6 +71,7 @@ else()
     if (MODEMMANAGERQT_FOUND)
         message(STATUS "Enabling ModemManager support")
         set(WITH_MODEMMANAGER_SUPPORT 1)
+        set(MODEMMANAGERQT_LIBRARY ModemManagerQt)
     else()
         message(STATUS "ModemManagerQt not found")
         set(WITH_MODEMMANAGER_SUPPORT 0)

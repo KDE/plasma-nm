@@ -28,7 +28,7 @@ class DetailKeysEditorDesignerFactory : public QObject, public QDesignerCustomWi
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QDesignerCustomWidgetInterface")
-    //Q_INTERFACES(QDesignerCustomWidgetInterface)
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
 public:
     explicit DetailKeysEditorDesignerFactory(QObject *parent = 0);
 

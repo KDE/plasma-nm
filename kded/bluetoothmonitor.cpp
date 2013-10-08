@@ -22,6 +22,7 @@
 
 #include "bluetoothmonitor.h"
 #include "connectiondetaileditor.h"
+#include "config.h"
 
 #include <QDBusInterface>
 #include <QDBusReply>
@@ -37,6 +38,11 @@
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Utils>
+
+#ifdef MODEMMANAGERQT_ONE
+#include <ModemManagerQt/modem.h>
+#include <ModemManagerQt/modemdevice.h>
+#endif
 
 BluetoothMonitor::BluetoothMonitor(QObject * parent)
     : QObject(parent)
@@ -219,14 +225,23 @@ void BluetoothMonitor::modemAdded(const QString &udi)
 {
     qDebug() << "Modem added" << udi;
 
+#ifdef MODEMMANAGERQT_ONE
+    ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(udi);
+    ModemManager::Modem::Ptr modem = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
+
+#else
     ModemManager::ModemInterface::Ptr modem = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::GsmCard);
 
     if (!modem) {
         // Try CDMA if no GSM device has been found.
         modem = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::NotGsm);
     }
-
+#endif
+#ifdef MODEMMANAGERQT_ONE
+    qDebug() << "Found suitable modem:" << modemDevice->uni();
+#else
     qDebug() << "Found suitable modem:" << modem->udi();
+#endif
     qDebug() << "DUN device:" << mDunDevice;
 
     QStringList temp = mDunDevice.split('/');
@@ -235,6 +250,7 @@ void BluetoothMonitor::modemAdded(const QString &udi)
     }
 
     if (!modem || modem->device() != mDunDevice) {
+
         if (modem) {
             KMessageBox::error(0, i18n("Device %1 is not the one we want (%2)", modem->device(), mDunDevice));
         } else {
@@ -244,6 +260,14 @@ void BluetoothMonitor::modemAdded(const QString &udi)
     }
 
     NetworkManager::ConnectionSettings::ConnectionType type;
+#ifdef MODEMMANAGERQT_ONE
+    if (modemDevice->isGsmModem())
+        type = NetworkManager::ConnectionSettings::Gsm;
+    else if (modemDevice->isCdmaModem())
+        type = NetworkManager::ConnectionSettings::Cdma;
+    else
+        type = NetworkManager::ConnectionSettings::Unknown;
+#else
     switch (modem->type()) {
         case ModemManager::ModemInterface::GsmType:
             type = NetworkManager::ConnectionSettings::Gsm;
@@ -254,6 +278,7 @@ void BluetoothMonitor::modemAdded(const QString &udi)
         default:
             type = NetworkManager::ConnectionSettings::Unknown;
     }
+#endif
 
     if (type == NetworkManager::ConnectionSettings::Unknown) {
         return;

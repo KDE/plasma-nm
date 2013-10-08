@@ -19,6 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "config.h"
 #include "pindialog.h"
 
 #include <QIntValidator>
@@ -28,12 +29,21 @@
 
 #include <ModemManagerQt/manager.h>
 
+#ifdef MODEMMANAGERQT_ONE
+PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *parent)
+#else
 PinDialog::PinDialog(ModemManager::ModemInterface *modem, const Type type, QWidget *parent)
+#endif
     : KDialog(parent), m_type(type)
 {
     if (modem) {
+#ifdef MODEMMANAGERQT_ONE
+        m_udi = modem->uni();
+        m_name = modem->device();
+#else
         m_udi = modem->udi();
         m_name = modem->masterDevice();
+#endif
         foreach (const Solid::Device &d, Solid::Device::allDevices()) {
             if (d.udi().contains(m_name, Qt::CaseInsensitive)) {
                 m_name = d.product();

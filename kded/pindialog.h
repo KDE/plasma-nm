@@ -28,8 +28,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KPushButton>
 #include <Solid/Device>
 
+#ifdef MODEMMANAGERQT_ONE
+#include <ModemManagerQt/modem.h>
+#else
 #include <ModemManagerQt/modeminterface.h>
-
+#endif
 #include "ui_pinwidget.h"
 
 class PinWidget;
@@ -40,8 +43,11 @@ class PinDialog : public KDialog
 public:
     enum Type {Pin, PinPuk};
     enum ErrorCode {PinCodeTooShort, PinCodesDoNotMatch, PukCodeTooShort};
-
+#ifdef MODEMMANAGERQT_ONE
+    explicit PinDialog(ModemManager::Modem *modem, const Type type = Pin, QWidget *parent=0);
+#else
     explicit PinDialog(ModemManager::ModemInterface *modem, const Type type = Pin, QWidget *parent=0);
+#endif
     ~PinDialog();
 
     Type type() const;

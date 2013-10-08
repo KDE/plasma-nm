@@ -148,6 +148,17 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
         NMMonitorDebug() << "Available modem device " << device->interfaceName();
         NetworkManager::ModemDevice::Ptr modemDev = device.objectCast<NetworkManager::ModemDevice>();
 #if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+        ModemManager::Modem::Ptr modemNetwork = modemDev->getModemNetworkIface();
+        if (modemDev->isValid()) {
+            connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
+                    SLOT(gsmNetworkSignalQualityChanged(uint)), Qt::UniqueConnection);
+            connect(modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::Modem::AccessTechnologies)),
+                    SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies)), Qt::UniqueConnection);
+            connect(modemNetwork.data(), SIGNAL(currentModesChanged()),
+                    SLOT(gsmNetworkCurrentModesChanged()), Qt::UniqueConnection);
+        }
+#else
         ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDev->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
         if (modemNetwork) {
             connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
@@ -157,6 +168,7 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
             connect(modemNetwork.data(), SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
                     SLOT(gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)), Qt::UniqueConnection);
         }
+#endif
 #endif
     }
 
@@ -353,10 +365,19 @@ void Monitor::deviceRemoved(const QString& device)
     NMMonitorDebug() << "Device " << device << " removed";
     Q_EMIT removeConnectionsByDevice(device);
 }
+
 #if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+void Monitor::gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies technology)
+#else
 void Monitor::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology)
+#endif
 {
+#ifdef MODEMMANAGERQT_ONE
+    ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
+#else
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
+#endif
 
     if (gsmNetwork) {
         foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
@@ -373,9 +394,17 @@ void Monitor::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::Ac
     }
 }
 
+#ifdef MODEMMANAGERQT_ONE
+void Monitor::gsmNetworkCurrentModesChanged()
+#else
 void Monitor::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode)
+#endif
 {
+#ifdef MODEMMANAGERQT_ONE
+    ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
+#else
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
+#endif
 
     if (gsmNetwork) {
         foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
@@ -383,7 +412,7 @@ void Monitor::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::Allowed
                 NetworkManager::ModemDevice::Ptr modem = dev.objectCast<NetworkManager::ModemDevice>();
                 if (modem) {
                     if (modem->getModemNetworkIface()->device() == gsmNetwork->device()) {
-                        NMMonitorDebug() << "Modem " << modem->udi() << " allowed mode changed to " << mode;
+                        NMMonitorDebug() << "Modem " << modem->udi() << " allowed modes changed";
                         Q_EMIT modemAllowedModeChanged(modem->uni());
                     }
                 }
@@ -394,7 +423,11 @@ void Monitor::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::Allowed
 
 void Monitor::gsmNetworkSignalQualityChanged(uint signal)
 {
+#ifdef MODEMMANAGERQT_ONE
+    ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
+#else
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
+#endif
 
     if (gsmNetwork) {
         foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
@@ -403,7 +436,11 @@ void Monitor::gsmNetworkSignalQualityChanged(uint signal)
                 if (modem) {
                     if (modem->getModemNetworkIface()->device() == gsmNetwork->device()) {
                         NMMonitorDebug() << "Modem " << modem->udi() << " signal changed to " << signal;
+#ifdef MODEMMANAGERQT_ONE
+                        Q_EMIT modemSignalQualityChanged(gsmNetwork->signalQuality().signal, modem->uni());
+#else
                         Q_EMIT modemSignalQualityChanged(gsmNetwork->getSignalQuality(), modem->uni());
+#endif
                     }
                 }
             }

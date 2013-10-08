@@ -37,7 +37,12 @@
 
 #include <KGlobal>
 #include <KLocale>
-
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+#include <ModemManagerQt/manager.h>
+#include <ModemManagerQt/modem.h>
+#endif
+#endif
 #include "model.h"
 #include "uiutils.h"
 #include "applet/globalconfig.h"
@@ -366,6 +371,20 @@ void ModelItem::setDevice(const QString& device)
             m_device = dev->ipInterfaceName();
         }
         m_devicePath = dev->uni();
+
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+        if (dev->type() == NetworkManager::Device::Modem) {
+            ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(dev->udi());
+            if (modemDevice) {
+                ModemManager::Modem::Ptr modemInterface = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
+                if (modemInterface) {
+                    updateSignalStrenght(modemInterface->signalQuality().signal);
+                }
+            }
+        }
+#endif
+#endif
         updateDetails();
     } else {
         m_devicePath.clear();

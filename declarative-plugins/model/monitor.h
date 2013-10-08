@@ -28,9 +28,17 @@
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessNetwork>
 #include <NetworkManagerQt/WirelessDevice>
+
+#include "config.h"
+
 #if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+#include <ModemManagerQt/modem.h>
+#else
 #include <ModemManagerQt/modeminterface.h>
 #endif
+#endif
+
 class Monitor : public QObject
 {
 Q_OBJECT
@@ -54,8 +62,13 @@ private Q_SLOTS:
     void deviceAdded(const QString& device);
     void deviceRemoved(const QString& device);
 #if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+    void gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies technology);
+    void gsmNetworkCurrentModesChanged();
+#else
     void gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology);
     void gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode);
+#endif
     void gsmNetworkSignalQualityChanged(uint signal);
 #endif
     void statusChanged(NetworkManager::Status status);

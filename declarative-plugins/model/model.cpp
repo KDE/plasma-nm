@@ -71,7 +71,7 @@ Model::Model(QObject* parent):
     connect(m_monitor, SIGNAL(modemSignalQualityChanged(uint, QString)),
             SLOT(modemSignalQualityChanged(uint, QString)));
 #endif
-    connect(m_monitor, SIGNAL(removeActiveConnection(uint, QString)),
+    connect(m_monitor, SIGNAL(removeActiveConnection(QString)),
             SLOT(removeActiveConnection(QString)));
     connect(m_monitor, SIGNAL(removeAvailableConnection(QString,QString)),
             SLOT(removeAvailableConnection(QString,QString)));

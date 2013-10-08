@@ -22,7 +22,7 @@
 #include "uiutils.h"
 
 // KDE
-#include <KDebug>
+#include <QDebug>
 #include <KLocale>
 #if 0
 #include <KIconLoader>
@@ -99,7 +99,7 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
                 deviceText = i18nc("title of the interface widget in nm's popup", "Mobile Broadband");
                 break;
             case NetworkManager::ModemDevice::NoCapability:
-                kWarning() << "Unhandled modem sub type: NetworkManager::ModemDevice::NoCapability";
+                qWarning() << "Unhandled modem sub type: NetworkManager::ModemDevice::NoCapability";
                 break;
             }
         }
@@ -165,7 +165,7 @@ QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
             icon = "network-wired";
             break;
     }
-    kDebug() << "icon:" << icon;
+    qDebug() << "icon:" << icon;
     return icon;
 }
 

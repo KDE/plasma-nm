@@ -24,7 +24,7 @@
 
 #include <KUser>
 #include <KLocalizedString>
-#include <KDebug>
+#include <QDebug>
 #include <QList>
 #include <KAcceleratorManager>
 

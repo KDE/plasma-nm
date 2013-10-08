@@ -23,7 +23,7 @@
 #include <QFile>
 #include <QTextStream>
 
-#include <KDebug>
+#include <QDebug>
 #include <KLocale>
 #include <KGlobal>
 
@@ -37,7 +37,7 @@ MobileProviders::MobileProviders()
 {
     const QStringList allCountries = KGlobal::locale()->allCountriesList();
     foreach (const QString & cc, allCountries) {
-        //kDebug() << "Inserting" << cc.toUpper() << KGlobal::locale()->countryCodeToName(cc);
+        //qDebug() << "Inserting" << cc.toUpper() << KGlobal::locale()->countryCodeToName(cc);
         mCountries.insert(cc.toUpper(), KGlobal::locale()->countryCodeToName(cc));
     }
     mError = Success;
@@ -49,18 +49,18 @@ MobileProviders::MobileProviders()
             docElement = mDocProviders.documentElement();
 
             if (docElement.isNull()) {
-                kDebug() << ProvidersFile << ": document is null";
+                qDebug() << ProvidersFile << ": document is null";
                 mError = ProvidersIsNull;
             } else {
                 if (docElement.isNull() || docElement.tagName() != "serviceproviders") {
-                    kDebug() << ProvidersFile << ": wrong format";
+                    qDebug() << ProvidersFile << ": wrong format";
                     mError = ProvidersWrongFormat;
                 } else {
                     if (docElement.attribute("format") != "2.0") {
-                        kDebug() << ProvidersFile << ": mobile broadband provider database format '" << docElement.attribute("format") << "' not supported.";
+                        qDebug() << ProvidersFile << ": mobile broadband provider database format '" << docElement.attribute("format") << "' not supported.";
                         mError = ProvidersFormatNotSupported;
                     } else {
-                        //kDebug() << "Everything is alright so far";
+                        //qDebug() << "Everything is alright so far";
                     }
                 }
             }
@@ -68,7 +68,7 @@ MobileProviders::MobileProviders()
 
         file2.close();
     } else {
-        kDebug() << "Error opening providers file" << ProvidersFile;
+        qDebug() << "Error opening providers file" << ProvidersFile;
         mError = ProvidersMissing;
     }
 }
@@ -186,7 +186,7 @@ QStringList MobileProviders::getApns(const QString & provider)
                             e3.tagName().toLower() == "usage" &&
                             !e3.attribute("type").isNull() &&
                             e3.attribute("type").toLower() != "internet") {
-                            //kDebug() << "apn" << e2.attribute("value") << "ignored because of usage" << e3.attribute("type");
+                            //qDebug() << "apn" << e2.attribute("value") << "ignored because of usage" << e3.attribute("type");
                             isInternet = false;
                             break;
                         }

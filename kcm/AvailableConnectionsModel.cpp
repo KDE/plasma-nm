@@ -28,7 +28,7 @@
 #include <NetworkManagerQt/WimaxDevice>
 #include <NetworkManagerQt/WimaxNsp>
 
-#include <KDebug>
+#include <QDebug>
 
 using namespace NetworkManager;
 

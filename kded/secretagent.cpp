@@ -35,7 +35,7 @@
 #include <KDialog>
 #include <KWallet/Wallet>
 
-#include <KDebug>
+#include <QDebug>
 
 SecretAgent::SecretAgent(QObject* parent):
     NetworkManager::SecretAgent("org.kde.networkmanagement", parent),
@@ -62,7 +62,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     QString callId = connection_path.path() % setting_name;
     foreach (const SecretsRequest & request, m_calls) {
         if (request == callId) {
-            kWarning() << "GetSecrets was called again! This should not happen, cancelling first call" << connection_path.path() << setting_name;
+            qWarning() << "GetSecrets was called again! This should not happen, cancelling first call" << connection_path.path() << setting_name;
             CancelGetSecrets(connection_path, setting_name);
             break;
         }
@@ -86,7 +86,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
 
 void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
-    kDebug() << connection_path.path();
+    qDebug() << connection_path.path();
 
     setDelayedReply(true);
     SecretsRequest::Type type;
@@ -106,7 +106,7 @@ void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObje
 
 void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
-    kDebug() << connection_path.path();
+    qDebug() << connection_path.path();
 
     setDelayedReply(true);
     SecretsRequest request(SecretsRequest::DeleteSecrets);
@@ -120,7 +120,7 @@ void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusOb
 
 void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const QString &setting_name)
 {
-    kDebug() << connection_path.path() << setting_name;
+    qDebug() << connection_path.path() << setting_name;
     QString callId = connection_path.path() % setting_name;
     for (int i = 0; i < m_calls.size(); ++i) {
         SecretsRequest request = m_calls.at(i);
@@ -269,7 +269,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
                 m_wallet->readMap(key, secretsMap);
             }
         } else {
-            kDebug() << "Waiting for the wallet to open";
+            qDebug() << "Waiting for the wallet to open";
             return false;
         }
     } else if (!requestNew && !m_wallet) {
@@ -360,7 +360,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
                 return true;
             }
         } else {
-            kDebug() << "Waiting for the wallet to open";
+            qDebug() << "Waiting for the wallet to open";
             return false;
         }
     } else if (!m_wallet) {
@@ -380,7 +380,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
     if (!request.saveSecretsWithoutReply) {
         QDBusMessage reply = request.message.createReply();
         if (!QDBusConnection::systemBus().send(reply)) {
-            kWarning() << "Failed put save secrets reply into the queue";
+            qWarning() << "Failed put save secrets reply into the queue";
         }
     }
 
@@ -400,7 +400,7 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
                 }
             }
         } else {
-            kDebug() << "Waiting for the wallet to open";
+            qDebug() << "Waiting for the wallet to open";
             return false;
         }
     } else if (!m_wallet) {
@@ -416,7 +416,7 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
 
     QDBusMessage reply = request.message.createReply();
     if (!QDBusConnection::systemBus().send(reply)) {
-        kWarning() << "Failed put delete secrets reply into the queue";
+        qWarning() << "Failed put delete secrets reply into the queue";
     }
 
     return true;
@@ -435,7 +435,7 @@ bool SecretAgent::useWallet() const
             connect(m_wallet, SIGNAL(walletClosed()), this, SLOT(walletClosed()));
             return true;
         } else {
-            kWarning() << "Error opening kwallet.";
+            qWarning() << "Error opening kwallet.";
         }
     } else if (m_wallet) {
         m_wallet->deleteLater();
@@ -462,6 +462,6 @@ void SecretAgent::sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage
     QDBusMessage reply;
     reply = message.createReply(QVariant::fromValue(secrets));
     if (!QDBusConnection::systemBus().send(reply)) {
-        kWarning() << "Failed put the secret into the queue";
+        qWarning() << "Failed put the secret into the queue";
     }
 }

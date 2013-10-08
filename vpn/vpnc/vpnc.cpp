@@ -28,7 +28,7 @@
 #include <KStandardDirs>
 #include <KMessageBox>
 #include <KLocale>
-#include <KDebug>
+#include <QDebug>
 #include "nm-vpnc-service.h"
 
 #include <NetworkManagerQt/Connection>
@@ -79,7 +79,7 @@ void VpncUiPluginPrivate::ciscoDecryptFinished(int exitCode, QProcess::ExitStatu
 void VpncUiPluginPrivate::ciscoDecryptError(QProcess::ProcessError pError)
 {
     if (!pError) {
-        kDebug() << "Error in executing cisco-decrypt";
+        qDebug() << "Error in executing cisco-decrypt";
         KMessageBox::error(0, i18n("Error decrypting the obfuscated password"), i18n("Error"), KMessageBox::Notify);
     }
     decryptedPasswd.clear();
@@ -123,7 +123,7 @@ QString VpncUiPlugin::supportedFileExtensions() const
 
 NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
 {
-    kDebug() << "Importing Cisco VPN connection from " << fileName;
+    qDebug() << "Importing Cisco VPN connection from " << fileName;
 
     VpncUiPluginPrivate * decrPlugin = 0;
     NMVariantMapMap result;

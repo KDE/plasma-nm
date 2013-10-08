@@ -23,7 +23,7 @@
 
 #include <QIntValidator>
 
-#include <KDebug>
+#include <QDebug>
 #include <kwindowsystem.h>
 
 #include <ModemManagerQt/manager.h>

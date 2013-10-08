@@ -23,7 +23,7 @@
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessDevice>
 
-#include <KDebug>
+#include <QDebug>
 
 TabDeviceAdvanced::TabDeviceAdvanced(QWidget *parent) :
     QWidget(parent),

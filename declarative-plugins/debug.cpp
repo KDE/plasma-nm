@@ -19,7 +19,7 @@
 */
 
 #include "debug.h"
-
+#if 0
 int appletDebugArea()
 {
     static int area = KDebug::registerArea("Plasma-nm (applet)", false);
@@ -49,5 +49,7 @@ int monitorDebugArea()
     static int area = KDebug::registerArea("Plasma-nm (monitor)", false);
     return area;
 }
+
+#endif
 
 

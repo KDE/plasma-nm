@@ -23,7 +23,7 @@
 
 #include <NetworkManagerQt/Utils>
 
-#include <KDebug>
+#include <QDebug>
 
 #include "uiutils.h"
 
@@ -175,7 +175,7 @@ void WifiConnectionWidget::fillChannels(NetworkManager::WirelessSetting::Frequen
     } else if (band == NetworkManager::WirelessSetting::Bg) {
         channels = NetworkManager::Utils::getBFreqs();
     } else {
-        kWarning() << "Unhandled band number" << band;
+        qWarning() << "Unhandled band number" << band;
         return;
     }
 

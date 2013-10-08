@@ -21,7 +21,7 @@
 
 #include "AvailableConnectionsModel.h"
 
-#include <KDebug>
+#include <QDebug>
 
 AvailableConnectionsSortModel::AvailableConnectionsSortModel(QObject *parent) :
     QSortFilterProxyModel(parent)

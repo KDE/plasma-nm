@@ -21,19 +21,21 @@
 #ifndef PLASMA_NM_DEBUG_H
 #define PLASMA_NM_DEBUG_H
 
-#include <KDebug>
+#include <QDebug>
 
+#if 0
 int appletDebugArea();
 int itemDebugArea();
 int handlerDebugArea();
 int modelDebugArea();
 int monitorDebugArea();
 int monitorSignalDebugArea();
+#endif
 
-#define NMAppletDebug() kDebug(appletDebugArea())
-#define NMHandlerDebug() kDebug(handlerDebugArea())
-#define NMModelDebug() kDebug(modelDebugArea())
-#define NMMonitorDebug() kDebug(monitorDebugArea())
-#define NMItemDebug() kDebug(itemDebugArea())
+#define NMAppletDebug() qDebug()
+#define NMHandlerDebug() qDebug()
+#define NMModelDebug() qDebug()
+#define NMMonitorDebug() qDebug()
+#define NMItemDebug() qDebug()
 
 #endif // DEBUG_H

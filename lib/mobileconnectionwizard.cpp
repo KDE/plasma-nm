@@ -25,7 +25,7 @@
 #include <QVBoxLayout>
 
 #include <KLocale>
-#include <KDebug>
+#include <QDebug>
 #include <KGlobal>
 #include <KIconLoader>
 #include <Solid/Device>

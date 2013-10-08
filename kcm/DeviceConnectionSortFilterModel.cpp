@@ -21,7 +21,7 @@
 
 #include "DeviceConnectionModel.h"
 
-#include <KDebug>
+#include <QDebug>
 
 DeviceConnectionSortFilterModel::DeviceConnectionSortFilterModel(QObject *parent) :
     QSortFilterProxyModel(parent),

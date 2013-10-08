@@ -25,7 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStandardItemModel>
 #include <QNetworkAddressEntry>
 
-#include <KDebug>
+#include <QDebug>
 #include <KAcceleratorManager>
 
 #include "ui_ipv6routes.h"
@@ -115,7 +115,7 @@ void IpV6RoutesWidget::setRoutes(const QList<NetworkManager::IpRoute> &list)
     d->model.removeRows(0, d->model.rowCount());
     foreach (const NetworkManager::IpRoute &route, list) {
         QList<QStandardItem *> item;
-        kDebug() << route.ip();
+        qDebug() << route.ip();
         item << new QStandardItem(route.ip().toString())
              << new QStandardItem(QString::number(route.prefixLength(), 10))
              << new QStandardItem(route.nextHop().toString())
@@ -185,7 +185,7 @@ void IpV6RoutesWidget::removeRoute()
 
 void IpV6RoutesWidget::selectionChanged(const QItemSelection & selected)
 {
-    kDebug() << "selectionChanged";
+    qDebug() << "selectionChanged";
     d->ui.pushButtonRemove->setEnabled(!selected.isEmpty());
 }
 

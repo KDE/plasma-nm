@@ -32,7 +32,7 @@
 #include <KLocale>
 #include <KDateTime>
 #include <KToolInvocation>
-#include <KDebug>
+#include <QDebug>
 #include <KMessageWidget>
 #include <KMessageBox>
 

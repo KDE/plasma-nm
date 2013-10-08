@@ -24,7 +24,7 @@
 
 #include <QDBusMetaType>
 
-#include <KDebug>
+#include <QDebug>
 #include <KProcess>
 #include <KStandardDirs>
 #include <KUrlRequester>
@@ -181,7 +181,7 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
     {
     case Private::EnumConnectionType::Certificates:
         contype = QLatin1String(NM_OPENVPN_CONTYPE_TLS);
-        kDebug() << "saving VPN TLS settings as urls:" << d->ui.x509CaFile->url().path() << d->ui.x509Cert->url().path() << d->ui.x509Key->url().path();
+        qDebug() << "saving VPN TLS settings as urls:" << d->ui.x509CaFile->url().path() << d->ui.x509Cert->url().path() << d->ui.x509Key->url().path();
         data.insert(QLatin1String(NM_OPENVPN_KEY_CA), d->ui.x509CaFile->url().path());
         data.insert(QLatin1String(NM_OPENVPN_KEY_CERT), d->ui.x509Cert->url().path());
         data.insert(QLatin1String(NM_OPENVPN_KEY_KEY), d->ui.x509Key->url().path());

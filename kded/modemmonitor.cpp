@@ -26,7 +26,7 @@
 #include <KLocale>
 #include <KMessageBox>
 #include <kdeversion.h>
-#include <KDebug>
+#include <QDebug>
 
 #include <ModemManagerQt/manager.h>
 #ifdef MODEMMANAGERQT_ONE
@@ -98,7 +98,7 @@ void ModemMonitor::modemAdded(const QString & udi)
 void ModemMonitor::requestPin(MMModemLock lock)
 {
     Q_D(ModemMonitor);
-    kDebug() << "unlockRequired == " << lock;
+    qDebug() << "unlockRequired == " << lock;
     if (lock == MM_MODEM_LOCK_NONE || lock == MM_MODEM_LOCK_UNKNOWN) {
         return;
     }
@@ -109,7 +109,7 @@ void ModemMonitor::requestPin(MMModemLock lock)
     }
 
     if (d->dialog) {
-        kDebug() << "PinDialog already running";
+        qDebug() << "PinDialog already running";
         return;
     }
 
@@ -119,7 +119,7 @@ void ModemMonitor::requestPin(MMModemLock lock)
         d->dialog = new PinDialog(modem, PinDialog::PinPuk);
     } else {
         // TODO handle other lock types?
-        kWarning() << "Unhandled unlock request for '" << lock << "'";
+        qWarning() << "Unhandled unlock request for '" << lock << "'";
         return;
     }
 
@@ -127,7 +127,7 @@ void ModemMonitor::requestPin(MMModemLock lock)
         goto OUT;
     }
 
-    kDebug() << "Sending unlock code";
+    qDebug() << "Sending unlock code";
 
     {
         ModemManager::Sim::Ptr sim = ModemManager::findSim(modem->simPath());
@@ -187,7 +187,7 @@ void ModemMonitor::modemAdded(const QString & udi)
 void ModemMonitor::requestPin(const QString & unlockRequired)
 {
     Q_D(ModemMonitor);
-    kDebug() << "unlockRequired == " << unlockRequired;
+    qDebug() << "unlockRequired == " << unlockRequired;
     if (unlockRequired.isEmpty()) {
         return;
     }
@@ -198,7 +198,7 @@ void ModemMonitor::requestPin(const QString & unlockRequired)
     }
 
     if (d->dialog) {
-        kDebug() << "PinDialog already running";
+        qDebug() << "PinDialog already running";
         return;
     }
 
@@ -207,7 +207,7 @@ void ModemMonitor::requestPin(const QString & unlockRequired)
     } else if (unlockRequired == QLatin1String("sim-puk")) {
         d->dialog = new PinDialog(modem, PinDialog::PinPuk);
     } else {
-        kWarning() << "Unhandled unlock request for '" << unlockRequired << "'";
+        qWarning() << "Unhandled unlock request for '" << unlockRequired << "'";
         return;
     }
 
@@ -215,7 +215,7 @@ void ModemMonitor::requestPin(const QString & unlockRequired)
         goto OUT;
     }
 
-    kDebug() << "Sending unlock code";
+    qDebug() << "Sending unlock code";
 
     {
         QDBusPendingCallWatcher *watcher = 0;

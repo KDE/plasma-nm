@@ -33,7 +33,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <KDialogButtonBox>
 #include <KPushButton>
 #include <KComboBox>
-#include <KDebug>
+#include <QDebug>
 #include <QDomDocument>
 #include <QMutex>
 #include <QWaitCondition>
@@ -269,7 +269,7 @@ void OpenconnectAuthWidget::connectHost()
     i = d->ui.cmbHosts->itemData(i).toInt();
     const VPNHost &host = d->hosts.at(i);
     if (openconnect_parse_url(d->vpninfo, host.address.toAscii().data())) {
-        kWarning() << "Failed to parse server URL" << host.address;
+        qWarning() << "Failed to parse server URL" << host.address;
         openconnect_set_hostname(d->vpninfo, strdup(host.address.toAscii().data()));
     }
     if (!openconnect_get_urlpath(d->vpninfo) && !host.group.isEmpty())

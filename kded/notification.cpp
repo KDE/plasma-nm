@@ -30,7 +30,7 @@
 #include <KLocalizedString>
 #include <KNotification>
 #include <KIcon>
-#include <KDebug>
+#include <QDebug>
 
 Notification::Notification(QObject *parent) :
     QObject(parent)
@@ -65,7 +65,7 @@ void Notification::addDevice(const NetworkManager::Device::Ptr &device)
 void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason)
 {
     Q_UNUSED(oldstate)
-    kDebug() << newstate << reason;
+    qDebug() << newstate << reason;
     NetworkManager::Device *device = qobject_cast<NetworkManager::Device*>(sender());
     if (newstate == NetworkManager::Device::Activated && m_notifications.contains(device->uni())) {
         KNotification *notify = m_notifications.value(device->uni());
@@ -284,7 +284,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
     case NetworkManager::Device::Reserved:
         return;
     }
-    kDebug() << text;
+    qDebug() << text;
 
     if (m_notifications.contains(device->uni())) {
         KNotification *notify = m_notifications.value(device->uni());
@@ -334,7 +334,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
     } else if (state == NetworkManager::ActiveConnection::Deactivated) {
         text = i18n("Connection '%1' deactivated.", acName);
     } else {
-        kDebug() << "Unhandled active connection state change: " << state;
+        qDebug() << "Unhandled active connection state change: " << state;
         return;
     }
 
@@ -378,7 +378,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
     } else if (state == NetworkManager::VpnConnection::Disconnected) {
         text = i18n("VPN connection '%1' disconnected.", vpnName);
     } else {
-        kDebug() << "Unhandled VPN connection state change: " << state;
+        qDebug() << "Unhandled VPN connection state change: " << state;
         return;
     }
 

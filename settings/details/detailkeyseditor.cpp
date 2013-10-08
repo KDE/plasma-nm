@@ -23,7 +23,7 @@
 #include "ui_detailkeyswidget.h"
 
 #include <KLocalizedString>
-#include <KDebug>
+#include <QDebug>
 #include <QList>
 
 #include <KConfigDialogManager>

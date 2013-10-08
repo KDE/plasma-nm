@@ -28,7 +28,7 @@
 #include <QDBusReply>
 #include <QUuid>
 
-#include <KDebug>
+#include <QDebug>
 #include <KStandardDirs>
 #include <KLocale>
 #include <KMessageBox>

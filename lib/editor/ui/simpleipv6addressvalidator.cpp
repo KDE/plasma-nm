@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "simpleipv6addressvalidator.h"
 
-#include <KDebug>
+#include <QDebug>
 #include <QStringList>
 
 SimpleIpV6AddressValidator::SimpleIpV6AddressValidator(QObject *parent)
@@ -63,7 +63,7 @@ QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value)
     foreach(QString part, addrParts) { // krazy:exclude=foreach
         if (part.isEmpty() && i < number) {
             if (emptypresent) {
-                //kDebug() << "part.isEmpty()";
+                //qDebug() << "part.isEmpty()";
                 return QValidator::Invalid;
             }
             else if (!emptypresent)

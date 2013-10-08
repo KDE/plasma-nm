@@ -25,7 +25,7 @@
 
 #include <QtGui/QPainter>
 
-#include <KDebug>
+#include <QDebug>
 #include <KIconLoader>
 
 #define FAV_ICON_SIZE 24

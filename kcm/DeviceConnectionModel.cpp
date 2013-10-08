@@ -34,7 +34,7 @@
 #include <QtDBus/QDBusReply>
 #include <QStringBuilder>
 
-#include <KDebug>
+#include <QDebug>
 #include <KLocale>
 #include <KDateTime>
 #include <KIcon>
@@ -130,7 +130,7 @@ void DeviceConnectionModel::deviceChanged()
         if (device) {
             QStandardItem *stdItem = findDeviceItem(device->uni());
             if (!stdItem) {
-                kWarning() << "Device not found" << device->uni();
+                qWarning() << "Device not found" << device->uni();
                 return;
             }
             changeDevice(stdItem, device);
@@ -202,7 +202,7 @@ void DeviceConnectionModel::connectionUpdated()
         if (connection) {
             QStandardItem *stdItem = findConnectionItem(connection->path(), RoleConnectionPath);
             if (!stdItem) {
-                kWarning() << "Connection not found" << connection->path();
+                qWarning() << "Connection not found" << connection->path();
                 return;
             }
             stdItem->setText(connection->name());
@@ -233,7 +233,7 @@ void DeviceConnectionModel::activeConnectionAdded(const QString &path)
     if (connection) {
         QStandardItem *stdItem = findConnectionItem(connection->path(), RoleConnectionPath);
         if (!stdItem) {
-            kWarning() << "Connection not found" << connection->path();
+            qWarning() << "Connection not found" << connection->path();
             return;
         }
         changeConnectionActive(stdItem, activeConnection->path());
@@ -279,7 +279,7 @@ void DeviceConnectionModel::addConnection(const Connection::Ptr &connection)
 
 void DeviceConnectionModel::changeConnectionActive(QStandardItem *stdItem, const QString &activePath)
 {
-    kDebug() << stdItem->text() << activePath;
+    qDebug() << stdItem->text() << activePath;
     QVariant previousActive = stdItem->data(RoleConnectionActivePath);
     if (previousActive.isNull() || previousActive.toString() != activePath) {
         if (activePath.isNull()) {
@@ -317,7 +317,7 @@ void DeviceConnectionModel::signalStrengthChanged()
                 if (wifi->activeAccessPoint() && wifi->activeAccessPoint()->uni() == accessPoint->uni()) {
                     QStandardItem *stdItem = findDeviceItem(device->uni());
                     if (!stdItem) {
-                        kWarning() << "Device not found" << device->uni();
+                        qWarning() << "Device not found" << device->uni();
                         return;
                     }
                     changeDevice(stdItem, device);

@@ -36,7 +36,7 @@
 #include <NetworkManagerQt/ActiveConnection>
 
 #include <KMessageBox>
-#include <KDebug>
+#include <QDebug>
 
 #define DEVICE_ICON_SIZE 64
 
@@ -224,7 +224,7 @@ void TabDeviceInfo::on_disconnectPB_clicked()
 
 void TabDeviceInfo::on_connectionCB_activated(int index)
 {
-    kDebug();
+    qDebug();
     QModelIndex modelIndex = m_availableConnectionsSortModel->mapToSource(m_availableConnectionsSortModel->index(index, 0));
     if (m_device.isNull() || !modelIndex.isValid()) {
         return;
@@ -360,7 +360,7 @@ void TabDeviceInfo::setTurnOffWwanText(bool enabled)
 
 void TabDeviceInfo::showIp4Config(bool show)
 {
-    kDebug() << m_ip4Visible << show;
+    qDebug() << m_ip4Visible << show;
     if (m_ip4Visible != show) {
         m_ip4Visible = show;
         ui->ip4L->setEnabled(show);
@@ -377,7 +377,7 @@ void TabDeviceInfo::showIp4Config(bool show)
 
 void TabDeviceInfo::showIp6Config(bool show)
 {
-    kDebug() << m_ip6Visible << show;
+    qDebug() << m_ip6Visible << show;
     if (m_ip6Visible != show) {
         m_ip6Visible = show;
         ui->ip6L->setEnabled(show);

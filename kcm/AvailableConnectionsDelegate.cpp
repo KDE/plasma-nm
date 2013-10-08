@@ -26,7 +26,7 @@
 
 #include <KIcon>
 
-#include <KDebug>
+#include <QDebug>
 
 #define UNIVERSAL_PADDING 4
 

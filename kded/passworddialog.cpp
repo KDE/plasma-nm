@@ -29,7 +29,7 @@
 
 #include <KServiceTypeTrader>
 #include <KIcon>
-#include <KDebug>
+#include <QDebug>
 
 using namespace NetworkManager;
 
@@ -62,7 +62,7 @@ void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings
 
     m_neededSecrets = setting->needSecrets(m_flags & SecretAgent::RequestNew);
     if (m_neededSecrets.isEmpty()) {
-        kWarning() << "list of secrets is empty!!!";
+        qWarning() << "list of secrets is empty!!!";
         m_hasError = true;
         m_error = SecretAgent::InternalError;
         m_errorMessage = QLatin1String("No secrets were requested");
@@ -90,7 +90,7 @@ void PasswordDialog::setupVpnUi(const ConnectionSettings &connectionSettings)
     NetworkManager::VpnSetting::Ptr vpnSetting;
     vpnSetting = connectionSettings.setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
     if (!vpnSetting) {
-        kDebug() << "Missing VPN setting!";
+        qDebug() << "Missing VPN setting!";
         m_hasError = true;
         m_error = SecretAgent::InternalError;
         m_errorMessage = QLatin1String("VPN settings are missing");
@@ -109,7 +109,7 @@ void PasswordDialog::setupVpnUi(const ConnectionSettings &connectionSettings)
             vpnWidget = vpnUiPlugin->askUser(vpnSetting, this);
             setMainWidget(vpnWidget);
         } else {
-            kDebug() << error << ", serviceType == " << serviceType;
+            qDebug() << error << ", serviceType == " << serviceType;
             m_hasError = true;
             m_error = SecretAgent::InternalError;
             m_errorMessage = error;

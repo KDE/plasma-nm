@@ -28,6 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KPushButton>
 #include <Solid/Device>
 
+#include "config.h"
+
 #ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/modem.h>
 #else

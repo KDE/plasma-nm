@@ -230,7 +230,7 @@ void BluetoothMonitor::modemAdded(const QString &udi)
     ModemManager::Modem::Ptr modem = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
 
 #else
-    ModemManager::ModemInterface::Ptr modemDevice = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::GsmCard);
+    ModemManager::ModemInterface::Ptr modem = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::GsmCard);
 
     if (!modem) {
         // Try CDMA if no GSM device has been found.

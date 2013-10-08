@@ -34,6 +34,8 @@
 #include <ModemManagerQt/modemdevice.h>
 #include <ModemManagerQt/modem.h>
 #include <ModemManagerQt/sim.h>
+#else
+#include <ModemManagerQt/modemgsmcardinterface.h>
 #endif
 
 #include "pindialog.h"

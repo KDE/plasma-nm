@@ -967,9 +967,9 @@ QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QS
 QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QStringList& keys)
 {
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
+#ifdef MODEMMANAGERQT_ONE
     ModemManager::Modem::Ptr modemNetwork;
     ModemManager::Modem3gpp::Ptr gsmNet;
     ModemManager::ModemCdma::Ptr cdmaNet;

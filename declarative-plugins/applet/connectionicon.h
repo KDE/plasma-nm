@@ -25,9 +25,14 @@
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/WirelessNetwork>
 #if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/modem.h>
-#include "config.h"
+#else
+#include <ModemManagerQt/modemgsmnetworkinterface.h>
 #endif
+#endif
+
+#include "config.h"
 
 class ConnectionIcon : public QObject
 {

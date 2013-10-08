@@ -23,7 +23,7 @@
 
 // KDE
 #include <QDebug>
-#include <KLocale>
+#include <KLocalizedString>
 #if 0
 #include <KIconLoader>
 #include <kdeversion.h>

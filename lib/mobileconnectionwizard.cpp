@@ -24,7 +24,7 @@
 
 #include <QVBoxLayout>
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <QDebug>
 #include <KGlobal>
 #include <KIconLoader>

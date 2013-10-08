@@ -1,12 +1,53 @@
 project(plasma-networkmanagement)
 
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.6 FATAL_ERROR)
 
-find_package(KDE4 "4.9.0" REQUIRED)
+#find_package(KDE4 "4.9.0" REQUIRED)
 find_package(NetworkManager "0.9.8" REQUIRED)
 
 include(FindPkgConfig)
-include(KDE4Defaults)
+#include(KDE4Defaults)
+
+################# set KDE specific information #################
+
+find_package(ECM 0.0.8 REQUIRED NO_MODULE)
+
+include(CMakePackageConfigHelpers)
+include(FeatureSummary)
+include(WriteBasicConfigVersionFile)
+
+# where to look first for cmake modules, before ${CMAKE_ROOT}/Modules/ is checked
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
+
+include(ECMOptionalAddSubdirectory)
+
+set(QT_MIN_VERSION "5.2.0")
+find_package(Qt5Core REQUIRED NO_MODULE)
+find_package(Qt5DBus REQUIRED NO_MODULE)
+find_package(Qt5Quick REQUIRED NO_MODULE)
+find_package(Qt5Widgets REQUIRED NO_MODULE)
+find_package(Qt5X11Extras REQUIRED NO_MODULE)
+
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
+
+# Load CMake, Compiler and InstallDirs settings from KF5 and the following are already somewhat "done" tier1/tier2 libs from kdelibs:
+find_package(KF5 MODULE REQUIRED COMPONENTS CMake Compiler InstallDirs
+    KIdleTime ItemModels KWidgetsAddons KWindowSystem KCodecs KArchive KCoreAddons Solid ThreadWeaver
+    KConfig KAuth KJS KWallet KDBusAddons Sonnet
+    KI18n KGuiAddons KService KConfigWidgets ItemViews KNotifications KIconThemes KStyle KCompletion KJobWidgets KTextWidgets XmlGui KCrash
+    KBookmarks KUnitConversion KDE4Attic KCMUtils Kross)
+
+find_package(Plasma REQUIRED NO_MODULE)
+find_package(KDeclarative REQUIRED NO_MODULE)
+
+find_package(KInit)
+
+# needed for set_package_properties macro
+find_package(KDELibs4 REQUIRED NO_MODULE)
+find_package(KDE4Support REQUIRED NO_MODULE)
+find_package(Qt5Transitional MODULE)
+
+
 
 if (DISABLE_MODEMMANAGER_SUPPORT)
     message(STATUS "Disabling ModemManager support")
@@ -38,10 +79,20 @@ configure_file(config.h.cmake
                ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR} ${CMAKE_MODULE_PATH})
-macro_optional_find_package(MobileBroadbandProviderInfo)
-macro_log_feature(MOBILEBROADBANDPROVIDERINFO_FOUND "mobile-broadband-provider-info" "Database of mobile broadband service providers" "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders" FALSE "" "Needed for Mobile Connection Wizard support in Broadband Modem Management")
 
-pkg_check_modules(QTNETWORK REQUIRED QtNetwork)
+
+find_package(MobileBroadbandProviderInfo)
+set_package_properties(MobileBroadbandProviderInfo PROPERTIES
+                       DESCRIPTION "Database of mobile broadband service providers"
+                       URL "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders"
+                       TYPE OPTIONAL
+                      )
+
+
+#macro_optional_find_package(MobileBroadbandProviderInfo)
+#macro_log_feature(MOBILEBROADBANDPROVIDERINFO_FOUND "mobile-broadband-provider-info" "Database of mobile broadband service providers" "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders" FALSE "" "Needed for Mobile Connection Wizard support in Broadband Modem Management")
+
+#pkg_check_modules(QTNETWORK REQUIRED QtNetwork)
 pkg_check_modules(NETWORKMANAGER REQUIRED NetworkManager)
 
 add_definitions(
@@ -59,12 +110,13 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/lib/editor
                     ${QTNETWORK_INCLUDE_DIRS}
                     ${MODEMMANAGER_INCLUDE_DIRS}
-                    if (MODEMMANAGERQT_FOUND)
-                        ${MODEMMANAGERQT_INCLUDE_DIRS}
-                    endif()
                     ${NETWORKMANAGERQT_INCLUDE_DIRS}
                     ${NETWORKMANAGER_INCLUDE_DIRS}
                     ${KDE4_INCLUDES})
+
+if (MODEMMANAGERQT_FOUND)
+    include_directories(${MODEMMANAGERQT_INCLUDE_DIRS})
+endif()
 
 add_subdirectory(lib)
 add_subdirectory(applet)

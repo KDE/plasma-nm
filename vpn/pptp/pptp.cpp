@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "pptpwidget.h"
 #include "pptpauth.h"
 
-K_PLUGIN_FACTORY(PptpUiPluginFactory, registerPlugin<PptpUiPlugin>();)
+K_PLUGIN_FACTORY_WITH_JSON(PptpUiPluginFactory, "plasmanetworkmanagement_pptpui.json", registerPlugin<PptpUiPlugin>();)
 
 PptpUiPlugin::PptpUiPlugin(QObject * parent, const QVariantList &) : VpnUiPlugin(parent)
 {

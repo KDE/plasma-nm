@@ -4,11 +4,24 @@ set(pptp_SRCS
    pptpauth.cpp
    )
 
-kde4_add_ui_files(pptp_SRCS pptpprop.ui pptpadvanced.ui pptpauth.ui)
+qt5_wrap_ui(pptp_SRCS pptpprop.ui pptpadvanced.ui pptpauth.ui)
 
-kde4_add_plugin(plasmanetworkmanagement_pptpui ${pptp_SRCS})
+plasma_add_plugin(plasmanetworkmanagement_pptpui ${pptp_SRCS})
 
-target_link_libraries(plasmanetworkmanagement_pptpui ${NETWORKMANAGERQT_LDFLAGS} ${KDE4_KIO_LIBS} plasmanetworkmanagement-internal)
+target_link_libraries(plasmanetworkmanagement_pptpui
+    plasmanetworkmanagement-internal
+    ${NETWORKMANAGERQT_LDFLAGS}
+    Qt5::Widgets
+    Qt5::Network
+    Qt5::DBus
+    KF5::KService
+    KF5::KCompletion
+    KF5::KI18n
+    KF5::KWidgetsAddons
+    KF5::KIOWidgets
+    KF5::KCoreAddons
+    ${KDE4Support_LIBRARIES}
+)
 
 install(TARGETS plasmanetworkmanagement_pptpui  DESTINATION ${PLUGIN_INSTALL_DIR})
 

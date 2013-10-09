@@ -79,3 +79,5 @@ bool PptpUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSett
     mError = VpnUiPlugin::NotImplemented;
     return false;
 }
+
+#include "pptp.moc"

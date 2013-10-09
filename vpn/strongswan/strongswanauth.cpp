@@ -24,6 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QString>
 #include <QProcessEnvironment>
 
+#include <KLocalizedString>
+
 #include "strongswanauth.h"
 #include "ui_strongswanauth.h"
 #include "nm-strongswan-service.h"

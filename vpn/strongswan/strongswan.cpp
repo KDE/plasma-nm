@@ -81,4 +81,6 @@ bool StrongswanUiPlugin::exportConnectionSettings(const NetworkManager::Connecti
     return false;
 }
 
+#include "strongswan.moc"
+
 // vim: sw=4 sts=4 et tw=100

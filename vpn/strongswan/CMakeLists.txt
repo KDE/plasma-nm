@@ -4,11 +4,20 @@ set(strongswan_SRCS
    strongswanauth.cpp
    )
 
-kde4_add_ui_files(strongswan_SRCS strongswanprop.ui strongswanauth.ui)
+qt5_wrap_ui(strongswan_SRCS strongswanprop.ui strongswanauth.ui)
 
-kde4_add_plugin(plasmanetworkmanagement_strongswanui ${strongswan_SRCS})
+plasma_add_plugin(plasmanetworkmanagement_strongswanui ${strongswan_SRCS})
 
-target_link_libraries(plasmanetworkmanagement_strongswanui ${NETWORKMANAGERQT_LDFLAGS} ${KDE4_KIO_LIBS} plasmanetworkmanagement-internal)
+target_link_libraries(plasmanetworkmanagement_strongswanui
+    Qt5::Widgets
+    KF5::KService
+    KF5::KI18n
+    #KF5::KDE4Attic
+    KF5::KIOWidgets
+    ${KDE4Support_LIBRARIES}
+    ${NETWORKMANAGERQT_LDFLAGS}
+    plasmanetworkmanagement-internal
+)
 
 install(TARGETS plasmanetworkmanagement_strongswanui  DESTINATION ${PLUGIN_INSTALL_DIR})
 

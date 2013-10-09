@@ -26,6 +26,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "nm-strongswan-service.h"
 #include "ui_strongswanprop.h"
 
+#include <KUrl>
+
 class StrongswanSettingWidgetPrivate
 {
 public:

@@ -85,19 +85,19 @@ PinDialog::PinDialog(ModemManager::ModemInterface *modem, const Type type, QWidg
     if (isPukDialog()) {
         QString pukType;
         if (m_type == PinDialog::SimPuk) {
-            pukType = "SIM PUK";
+            pukType = i18n("SIM PUK");
         } else if (m_type == PinDialog::SimPuk2) {
-            pukType = "SIM PUK2";
+            pukType = i18n("SIM PUK2");
         } else if (m_type == PinDialog::ModemServiceProviderPuk) {
-            pukType = "Service provider PUK";
+            pukType = i18n("Service provider PUK");
         } else if (m_type == PinDialog::ModemNetworkPuk) {
-            pukType = "Network PUK";
+            pukType = i18n("Network PUK");
         } else if (m_type == PinDialog::ModemCorporatePuk) {
-            pukType = "Corporate PUK";
+            pukType = i18n("Corporate PUK");
         } else if (m_type == PinDialog::ModemPhFsimPuk) {
-            pukType = "PH-FSIM PUK";
+            pukType = i18n("PH-FSIM PUK");
         } else {
-            pukType = "Network Subset PUK";
+            pukType = i18n("Network Subset PUK");
         }
 
         setWindowTitle(i18n("%1 unlock required", pukType));
@@ -116,21 +116,21 @@ PinDialog::PinDialog(ModemManager::ModemInterface *modem, const Type type, QWidg
     } else if (isPinDialog()) {
         QString pinType;
         if (m_type == PinDialog::SimPin) {
-            pinType = "SIM PIN";
+            pinType = i18n("SIM PIN");
         } else if (m_type == PinDialog::SimPin2) {
-            pinType = "SIM PIN2";
+            pinType = i18n("SIM PIN2");
         } else if (m_type == PinDialog::ModemServiceProviderPin) {
-            pinType = "Service provider PIN";
+            pinType = i18n("Service provider PIN");
         } else if (m_type == PinDialog::ModemNetworkPin) {
-            pinType = "Network PIN";
+            pinType = i18n("Network PIN");
         } else if (m_type == PinDialog::ModemPin) {
-            pinType = "PIN";
+            pinType = i18n("PIN");
         } else if (m_type == PinDialog::ModemCorporatePin) {
-            pinType = "Corporate PIN";
+            pinType = i18n("Corporate PIN");
         } else if (m_type == PinDialog::ModemPhFsimPin) {
-            pinType = "PH-FSIM PIN";
+            pinType = i18n("PH-FSIM PIN");
         } else {
-            pinType = "Network Subset PIN";
+            pinType = i18n("Network Subset PIN");
         }
         setWindowTitle(i18n("%1 unlock required", pinType));
         ui->title->setText(i18n("%1 Unlock Required", pinType));

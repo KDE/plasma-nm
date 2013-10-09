@@ -30,6 +30,7 @@
 
 #include <KEditListWidget>
 #include <KDialog>
+#include <KLocalizedString>
 
 quint32 suggestNetmask(Q_IPV6ADDR ip)
 {

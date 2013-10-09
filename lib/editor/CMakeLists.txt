@@ -29,7 +29,7 @@ set(plasmanetworkmanagement_libeditor_SRCS
     connectionwidget.cpp
 )
 
-kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
+qt5_wrap_ui(plasmanetworkmanagement_libeditor_SRCS
     ui/advancedpermissionswidget.ui
     ui/ipv4.ui
     ui/ipv4routes.ui

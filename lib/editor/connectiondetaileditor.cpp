@@ -52,6 +52,7 @@
 #include <NetworkManagerQt/Utils>
 
 #include <KUser>
+#include <KLocalizedString>
 #include <KPluginFactory>
 #include <KServiceTypeTrader>
 #include <QPushButton>

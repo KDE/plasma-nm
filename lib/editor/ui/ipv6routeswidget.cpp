@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "ipv6routeswidget.h"
 
 #include <KLineEdit>
+#include <KLocalizedString>
 #include <QStandardItem>
 #include <QStandardItemModel>
 #include <QNetworkAddressEntry>

@@ -22,6 +22,7 @@
 #include "ui_wificonnectionwidget.h"
 
 #include <NetworkManagerQt/Utils>
+#include <KLocalizedString>
 
 #include <QDebug>
 

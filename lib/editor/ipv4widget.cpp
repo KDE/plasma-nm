@@ -29,6 +29,7 @@
 
 #include <KEditListWidget>
 #include <KDialog>
+#include <KLocalizedString>
 
 quint32 suggestNetmask(quint32 ip)
 {

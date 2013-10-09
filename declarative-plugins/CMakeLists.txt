@@ -26,11 +26,12 @@ target_link_libraries(plasmanetworkmanagementplugins
     plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
     Qt5::Quick
+    Qt5::DBus
+    Qt5::Network
     KF5::plasma
     KF5::KI18n
     KF5::KWindowSystem
-    ${QT_QTNETWORK_LIBRARY}
-    ${QT_QTDECLARATIVE_LIBRARY})
+)
 
 install(TARGETS plasmanetworkmanagementplugins DESTINATION ${QML_INSTALL_DIR}/org/kde/networkmanagement)
 install(FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/networkmanagement)

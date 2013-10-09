@@ -30,7 +30,6 @@
 #include "l2tpauth.h"
 
 K_PLUGIN_FACTORY(L2tpUiPluginFactory, registerPlugin<L2tpUiPlugin>();)
-K_EXPORT_PLUGIN(L2tpUiPluginFactory("plasmanetworkmanagement_l2tpui"))
 
 L2tpUiPlugin::L2tpUiPlugin(QObject * parent, const QVariantList &):
     VpnUiPlugin(parent)
@@ -76,3 +75,5 @@ bool L2tpUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSett
     mError = VpnUiPlugin::NotImplemented;
     return false;
 }
+
+#include "l2tp.moc"

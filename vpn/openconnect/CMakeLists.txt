@@ -50,7 +50,7 @@ if (OPENCONNECT_FOUND)
             ${KDE4Support_LIBRARIES}
             ${maybe_OPENSSL_LIBRARIES}
         )
-        install(TARGETS plasmanetworkmanagement_openconnectui  DESTINATION ${PLUGIN_INSTALL_DIR})
+        install(TARGETS plasmanetworkmanagement_openconnectui  DESTINATION ${PLUGIN_INSTALL_DIR}/plasmanetworkmanagement/vpnuiplugin)
 
         install( FILES plasmanetworkmanagement_openconnectui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
     else()

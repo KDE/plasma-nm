@@ -4,7 +4,7 @@ set(plasma_networkmanagement_qml_plugins_SRCS
    applet/enabledconnections.cpp
    applet/globalconfig.cpp
    applet/networkstatus.cpp
-   applet/trafficmonitor.cpp
+   #applet/trafficmonitor.cpp
 
    model/model.cpp
    model/modelitem.cpp
@@ -25,9 +25,10 @@ target_link_libraries(plasmanetworkmanagementplugins
     ${MODEMMANAGERQT_LDFLAGS}
     plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
-    ${KDE4_PLASMA_LIBS}
+    KF5::plasma
+    KF5::KI18n
+    KF5::KWindowSystem
     ${QT_QTNETWORK_LIBRARY}
-    ${KDE4_KDEUI_LIBS}
     ${QT_QTDECLARATIVE_LIBRARY})
 
 install(TARGETS plasmanetworkmanagementplugins DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/networkmanagement)

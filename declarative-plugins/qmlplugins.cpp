@@ -27,7 +27,7 @@
 #include "applet/enabledconnections.h"
 #include "applet/globalconfig.h"
 #include "applet/networkstatus.h"
-#include "applet/trafficmonitor.h"
+//#include "applet/trafficmonitor.h"
 
 #include "model/modelitem.h"
 #include "model/monitor.h"
@@ -58,7 +58,7 @@ void QmlPlugins::registerTypes(const char* uri)
     // @uri org.kde.plasmanetworkmanagement.SortModel
     qmlRegisterType<SortModel>(uri, 0, 1, "SortModel");
     // @uri org.kde.plasmanetworkmanagement.TrafficMonitor
-    qmlRegisterType<TrafficMonitor>(uri, 0, 1, "TrafficMonitor");
+    //qmlRegisterType<TrafficMonitor>(uri, 0, 1, "TrafficMonitor");
 }
 
-Q_EXPORT_PLUGIN2(plasmanetworkmanagement, QmlPlugins)
+//Q_EXPORT_PLUGIN2(plasmanetworkmanagement, QmlPlugins)

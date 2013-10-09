@@ -25,6 +25,7 @@ target_link_libraries(plasmanetworkmanagementplugins
     ${MODEMMANAGERQT_LDFLAGS}
     plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
+    Qt5::Quick
     KF5::plasma
     KF5::KI18n
     KF5::KWindowSystem

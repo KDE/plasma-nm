@@ -21,9 +21,9 @@
 #ifndef PLASMA_NM_QML_PLUGINS_H
 #define PLASMA_NM_QML_PLUGINS_H
 
-#include <QtDeclarative/QDeclarativeExtensionPlugin>
+#include <QtQml/QQmlExtensionPlugin>
 
-class QmlPlugins : public QDeclarativeExtensionPlugin
+class QmlPlugins : public QQmlExtensionPlugin
 {
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
     public:

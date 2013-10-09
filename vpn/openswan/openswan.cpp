@@ -27,7 +27,6 @@
 
 
 K_PLUGIN_FACTORY(OpenswanUiPluginFactory, registerPlugin<OpenswanUiPlugin>(); )
-K_EXPORT_PLUGIN(OpenswanUiPluginFactory("plasmanetworkmanagement_openswanui"))
 
 OpenswanUiPlugin::OpenswanUiPlugin(QObject * parent, const QVariantList &):
     VpnUiPlugin(parent)
@@ -77,3 +76,5 @@ bool OpenswanUiPlugin::exportConnectionSettings(const NetworkManager::Connection
     mError = VpnUiPlugin::NotImplemented;
     return false;
 }
+
+#include "openswan.moc"

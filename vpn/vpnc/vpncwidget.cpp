@@ -23,6 +23,8 @@
 #include "ui_vpnc.h"
 #include "nm-vpnc-service.h"
 
+#include <KUrl>
+
 #include <QDBusMetaType>
 #include <QDebug>
 

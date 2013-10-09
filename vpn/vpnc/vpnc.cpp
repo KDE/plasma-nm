@@ -27,7 +27,7 @@
 #include <KSharedConfig>
 #include <KStandardDirs>
 #include <KMessageBox>
-#include <KLocale>
+#include <KLocalizedString>
 #include <QDebug>
 #include "nm-vpnc-service.h"
 
@@ -393,3 +393,5 @@ bool VpncUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSett
     mError = VpncUiPlugin::NoError;
     return true;
 }
+
+#include "vpnc.moc"

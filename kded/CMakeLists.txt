@@ -8,7 +8,7 @@ if (MODEMMANAGERQT_FOUND)
         modemmonitor.cpp
         pindialog.cpp
     )
-    kde4_add_ui_files(kded_networkmanagement_SRCS
+    qt5_wrap_ui(kded_networkmanagement_SRCS
         pinwidget.ui
         passworddialog.ui
 
@@ -21,20 +21,20 @@ else()
         service.cpp
         bluetoothmonitor.cpp
     )
-    kde4_add_ui_files(kded_networkmanagement_SRCS
+    qt5_wrap_ui(kded_networkmanagement_SRCS
         passworddialog.ui
     )
 endif()
 
-kde4_add_plugin(kded_networkmanagement ${kded_networkmanagement_SRCS})
+plasma_add_plugin(kded_networkmanagement ${kded_networkmanagement_SRCS})
 
 target_link_libraries(kded_networkmanagement
     ${NETWORKMANAGERQT_LDFLAGS}
     ${MODEMMANAGERQT_LDFLAGS}
     plasmanetworkmanagement-internal
-    ${KDE4_KDECORE_LIBS}
+    
     ${KDE4_KDEUI_LIBS}
-    ${KDE4_SOLID_LIBS}
+    KF5::Solid
 )
 
 install(TARGETS kded_networkmanagement DESTINATION ${PLUGIN_INSTALL_DIR})

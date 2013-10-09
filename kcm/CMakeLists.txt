@@ -12,7 +12,7 @@ set(kcm_network_SRCS
     NetworkKCM.cpp
 )
 
-kde4_add_ui_files(kcm_network_SRCS
+qt5_wrap_ui(kcm_network_SRCS
     TabDeviceInfo.ui
     TabDeviceAdvanced.ui
     TabConnectionInfo.ui
@@ -20,7 +20,7 @@ kde4_add_ui_files(kcm_network_SRCS
     NetworkKCM.ui
 )
 
-kde4_add_plugin(kcm_network ${kcm_network_SRCS})
+plasma_add_plugin(kcm_network ${kcm_network_SRCS})
 
 target_link_libraries(kcm_network
     ${KDE4_KDEUI_LIBS}

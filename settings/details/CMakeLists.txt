@@ -3,7 +3,7 @@ set(plasmanetworkmanagement_config_widgets_SRCS
     detailkeyseditordesignfactory.cpp
 )
 
-kde4_add_ui_files(plasmanetworkmanagement_config_widgets_SRCS
+qt5_wrap_ui(plasmanetworkmanagement_config_widgets_SRCS
     detailkeyswidget.ui
 )
 

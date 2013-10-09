@@ -27,6 +27,7 @@
 #include <KProcess>
 #include <KStandardDirs>
 #include <KAcceleratorManager>
+#include <KUrl>
 
 class OpenVpnAdvancedWidget::Private {
 public:

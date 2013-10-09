@@ -23,6 +23,7 @@
 
 #include <QStringBuilder>
 #include <KPluginFactory>
+#include <KLocalizedString>
 #include <KMessageBox>
 
 #include <NetworkManagerQt/Connection>
@@ -35,7 +36,6 @@
 #include "nm-openvpn-service.h"
 
 K_PLUGIN_FACTORY(OpenVpnUiPluginFactory, registerPlugin<OpenVpnUiPlugin>();)
-K_EXPORT_PLUGIN(OpenVpnUiPluginFactory("plasmanetworkmanagement_openvpnui"))
 
 #define AUTH_TAG "auth"
 #define AUTH_USER_PASS_TAG "auth-user-pass"
@@ -678,3 +678,5 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
     expFile.close();
     return true;
 }
+
+#include "openvpn.moc"

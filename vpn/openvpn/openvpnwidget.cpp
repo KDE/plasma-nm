@@ -29,6 +29,7 @@
 #include <KStandardDirs>
 #include <KUrlRequester>
 #include <KLineEdit>
+#include <KUrl>
 
 #include "nm-openvpn-service.h"
 

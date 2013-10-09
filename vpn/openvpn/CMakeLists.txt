@@ -5,9 +5,9 @@ set(openvpn_SRCS
     openvpnadvancedwidget.cpp
 )
 
-kde4_add_ui_files(openvpn_SRCS openvpn.ui openvpnauth.ui openvpnadvanced.ui)
+qt5_wrap_ui(openvpn_SRCS openvpn.ui openvpnauth.ui openvpnadvanced.ui)
 
-kde4_add_plugin(plasmanetworkmanagement_openvpnui ${openvpn_SRCS})
+plasma_add_plugin(plasmanetworkmanagement_openvpnui ${openvpn_SRCS})
 
 target_link_libraries(plasmanetworkmanagement_openvpnui plasmanetworkmanagement-internal ${NETWORKMANAGERQT_LDFLAGS} ${KDE4_KIO_LIBS})
 

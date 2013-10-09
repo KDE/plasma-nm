@@ -27,7 +27,7 @@
 #include <QCheckBox>
 
 #include <KLineEdit>
-#include <KLocale>
+#include <KLocalizedString>
 
 #include "nm-openvpn-service.h"
 

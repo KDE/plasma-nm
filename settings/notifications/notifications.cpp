@@ -29,10 +29,9 @@
 
 
 K_PLUGIN_FACTORY(NotificationsWidgetFactory, registerPlugin<NotificationsWidget>();)
-K_EXPORT_PLUGIN(NotificationsWidgetFactory("networkmanagement_notifications", "plasma_applet_org.kde.networkmanagement"))
 
 NotificationsWidget::NotificationsWidget(QWidget *parent, const QVariantList &args)
-    : KCModule(NotificationsWidgetFactory::componentData(), parent, args),
+    : KCModule(parent, args),
       m_notifyWidget(new KNotifyConfigWidget(this))
 {
     QHBoxLayout * layout = new QHBoxLayout(this);

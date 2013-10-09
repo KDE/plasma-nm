@@ -1,2 +1,2 @@
 add_subdirectory(details)
-add_subdirectory(notifications)
+#add_subdirectory(notifications)

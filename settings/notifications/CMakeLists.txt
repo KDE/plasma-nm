@@ -2,9 +2,9 @@ set(plasma_networkmanagement_notifications_SRCS
    notifications.cpp
 )
 
-kde4_add_plugin(networkmanagement_notifications ${plasma_networkmanagement_notifications_SRCS})
+plasma_add_plugin(networkmanagement_notifications ${plasma_networkmanagement_notifications_SRCS})
 
-target_link_libraries(networkmanagement_notifications ${KDE4_KDEUI_LIBS} ${KDE4_KNOTIFYCONFIG_LIBRARY})
+target_link_libraries(networkmanagement_notifications KF5::KNotifyConfig)
 
 install(TARGETS networkmanagement_notifications DESTINATION ${PLUGIN_INSTALL_DIR})
 install(FILES networkmanagement_notifications.desktop DESTINATION ${SERVICES_INSTALL_DIR})

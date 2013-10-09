@@ -294,7 +294,8 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         KNotification *notify = new KNotification("DeviceFailed", KNotification::Persistent, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
         notify->setProperty("uni", device->uni());
-        notify->setComponentData(KComponentData("networkmanagement"));
+#warning "port away from KComponentData"
+        //notify->setComponentData(KComponentData("networkmanagement"));
         notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
         notify->setTitle(identifier);
         notify->setText(text);
@@ -352,7 +353,8 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         KNotification *notify = new KNotification("AcStateChanged", KNotification::Persistent, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
         notify->setProperty("uni", nId);
-        notify->setComponentData(KComponentData("networkmanagement"));
+#warning "port away from KComponentData"
+        //notify->setComponentData(KComponentData("networkmanagement"));
         if (state == NetworkManager::ActiveConnection::Activated) {
             notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
         } else {
@@ -433,7 +435,8 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         KNotification *notify = new KNotification("VpnStateChanged", KNotification::Persistent, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
         notify->setProperty("uni", nId);
-        notify->setComponentData(KComponentData("networkmanagement"));
+#warning "port away from KComponentData"
+        //notify->setComponentData(KComponentData("networkmanagement"));
         if (state == NetworkManager::VpnConnection::Activated) {
             notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
         } else {

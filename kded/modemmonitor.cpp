@@ -34,7 +34,7 @@
 #include <ModemManagerQt/modemdevice.h>
 #include <ModemManagerQt/modem.h>
 #include <ModemManagerQt/sim.h>
-#else
+#elif WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/modemgsmcardinterface.h>
 #endif
 

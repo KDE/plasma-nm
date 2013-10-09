@@ -23,6 +23,7 @@
 #include "service.h"
 
 #include <KPluginFactory>
+#include <KGlobal>
 
 #include "secretagent.h"
 #include "notification.h"
@@ -34,7 +35,6 @@
 #include <QDBusMetaType>
 
 K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManagementService>();)
-K_EXPORT_PLUGIN(NetworkManagementServiceFactory("networkmanagement", "plasmanetworkmanagement-kded"))
 
 class NetworkManagementServicePrivate
 {
@@ -47,7 +47,8 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 {
     Q_D(NetworkManagementService);
 
-    KGlobal::insertCatalog("plasma_applet_org.kde.networkmanagement");  // mobile wizard
+#warning "port translatin catalog away from KGlobal::insertCatalog"
+    //KGlobal::insertCatalog("plasma_applet_org.kde.networkmanagement");  // mobile wizard
 
     d->agent = new SecretAgent(this);
     new Notification(this);
@@ -61,3 +62,5 @@ NetworkManagementService::~NetworkManagementService()
 {
     delete d_ptr;
 }
+
+#include "service.moc"

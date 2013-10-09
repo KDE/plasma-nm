@@ -30,7 +30,7 @@
 
 #include <QDebug>
 #include <KStandardDirs>
-#include <KLocale>
+#include <KLocalizedString>
 #include <KMessageBox>
 
 #include <NetworkManagerQt/ConnectionSettings>
@@ -116,8 +116,8 @@ void BluetoothMonitor::init()
     QDBusReply<QDBusObjectPath> devicePath = adapter.call(QLatin1String("FindDevice"), mBdaddr);
 
     if (!devicePath.isValid()) {
-        kWarning(KDE_DEFAULT_DEBUG_AREA) << mBdaddr << " is not registered in default bluetooth adapter, it may be in another adapter.";
-        kWarning(KDE_DEFAULT_DEBUG_AREA) << mBdaddr << " waiting for it to be registered in ModemManager";
+        qWarning() << mBdaddr << " is not registered in default bluetooth adapter, it may be in another adapter.";
+        qWarning() << mBdaddr << " waiting for it to be registered in ModemManager";
         return;
     }
 
@@ -199,8 +199,8 @@ void BluetoothMonitor::init()
         return;
     } else if (mService != QLatin1String("dun")) {
         mDunDevice = mService;
-        kWarning(KDE_DEFAULT_DEBUG_AREA) << "device(" << mDunDevice << ") for" << mBdaddr << " passed as argument";
-        kWarning(KDE_DEFAULT_DEBUG_AREA) << "waiting for it to be registered in ModemManager";
+        qWarning() << "device(" << mDunDevice << ") for" << mBdaddr << " passed as argument";
+        qWarning() << "waiting for it to be registered in ModemManager";
         return;
     }
 

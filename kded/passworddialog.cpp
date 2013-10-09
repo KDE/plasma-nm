@@ -28,6 +28,7 @@
 #include <NetworkManagerQt/VpnSetting>
 
 #include <KServiceTypeTrader>
+#include <KLocalizedString>
 #include <KIcon>
 #include <QDebug>
 

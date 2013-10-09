@@ -38,7 +38,7 @@
 #include <NetworkManagerQt/WirelessSetting>
 
 #if WITH_MODEMMANAGER_SUPPORT
-#if MODEMMANAGERQT_ONE
+#ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/manager.h>
 #include <ModemManagerQt/modem.h>
 #include <ModemManagerQt/modemdevice.h>
@@ -568,7 +568,7 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
     return QString();
 }
 
-#if WITH_MODEMMANAGER_SUPPORT
+//#if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
 // QString UiUtils::convertTypeToString(ModemManager::Modem::InterfaceType type)
 // {
@@ -688,7 +688,8 @@ QString UiUtils::convertLockReasonToString(MMModemLock reason)
 }
 
 
-#else
+#elif WITH_MODEMMANAGER_SUPPORT
+
 QString UiUtils::convertTypeToString(const ModemManager::ModemInterface::Type type)
 {
     switch (type) {
@@ -755,7 +756,7 @@ QString UiUtils::convertAccessTechnologyToString(const ModemManager::ModemInterf
     return i18nc("Unknown cellular access technology","Unknown");
 }
 #endif
-#endif
+//#endif
 
 QString UiUtils::convertNspTypeToString(WimaxNsp::NetworkType type)
 {

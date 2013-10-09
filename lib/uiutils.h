@@ -37,10 +37,10 @@ class QSizeF;
 #include <NetworkManagerQt/VpnSetting>
 
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
+//#ifdef MODEMMANAGERQT_ONE
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/modem.h>
-#endif
+//#endif
 #endif
 
 #include <kdemacros.h>

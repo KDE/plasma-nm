@@ -21,7 +21,7 @@
 #ifndef SETTING_WIDGET_H
 #define SETTING_WIDGET_H
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 #include <NetworkManagerQt/Setting>
 
 #include <KAcceleratorManager>

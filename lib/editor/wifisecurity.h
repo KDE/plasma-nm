@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_WIFI_SECURITY_H
 #define PLASMA_NM_WIFI_SECURITY_H
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 
 #include <NetworkManagerQt/WirelessSecuritySetting>
 #include <NetworkManagerQt/Security8021xSetting>

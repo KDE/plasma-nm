@@ -35,8 +35,10 @@
 #include <ModemManagerQt/manager.h>
 #ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/modem.h>
-#elif WITH_MODEMMANAGER_SUPPORT
+#else
+#if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/modeminterface.h>
+#endif
 #endif
 
 #define NUMBER_OF_STATIC_ENTRIES 3
@@ -301,7 +303,7 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
 {
     QString desc;
 
-#if MODEMMANAGERQT_ONE
+#ifdef MODEMMANAGERQT_ONE
     ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(device->udi());
     if (modem) {
         ModemManager::Modem::Ptr modemInterface = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();

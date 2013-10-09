@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_BT_WIDGET_H
 #define PLASMA_NM_BT_WIDGET_H
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 
 #include <NetworkManagerQt/BluetoothSetting>
 

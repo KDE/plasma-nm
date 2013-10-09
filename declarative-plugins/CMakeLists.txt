@@ -31,5 +31,5 @@ target_link_libraries(plasmanetworkmanagementplugins
     ${QT_QTNETWORK_LIBRARY}
     ${QT_QTDECLARATIVE_LIBRARY})
 
-install(TARGETS plasmanetworkmanagementplugins DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/networkmanagement)
-install(FILES qmldir DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/networkmanagement)
+install(TARGETS plasmanetworkmanagementplugins DESTINATION ${QML_INSTALL_DIR}/org/kde/networkmanagement)
+install(FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/networkmanagement)

@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_CONNECTION_DETAIL_EDITOR_H
 #define PLASMA_NM_CONNECTION_DETAIL_EDITOR_H
 
-#include <QtGui/QDialog>
+#include <QtWidgets/QDialog>
 
 #include <NetworkManagerQt/ConnectionSettings>
 

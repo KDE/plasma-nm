@@ -27,9 +27,6 @@ target_link_libraries(kde-nm-connection-editor
     KF5::KCompletion
     KF5::KI18n
     KF5::KWidgetsAddons
-    #KF5::KDBusAddons
-    #KF5::KNotifications
-    #KF5::KWallet
     KF5::KDE4Attic
     KF5::KFile
     KF5::KIOWidgets

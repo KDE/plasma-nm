@@ -18,10 +18,10 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 1.1
-import org.kde.qtextracomponents 0.1
-import org.kde.plasma.components 0.1 as PlasmaComponents
-import org.kde.plasma.core 0.1 as PlasmaCore
+import QtQuick 2.0
+import org.kde.qtextracomponents 2.0
+import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.networkmanagement 0.1 as PlasmaNM
 
 PlasmaComponents.ListItem {
@@ -39,12 +39,12 @@ PlasmaComponents.ListItem {
                                                 itemSecurityType != PlasmaNM.Enums.None && itemSecurityType != PlasmaNM.Enums.DynamicWep && itemSecurityType != PlasmaNM.Enums.LEAP &&
                                                                                            itemSecurityType != PlasmaNM.Enums.WpaEap && itemSecurityType != PlasmaNM.Enums.Wpa2Eap;
 
-    property int defaultCheckboxHeight: theme.defaultFont.mSize.height * 1.6 + buttonPadding.margins.top;
+    property int defaultCheckboxHeight: theme.mSize(theme.defaultFont).height * 1.6 + buttonPadding.margins.top;
 
     signal itemExpanded(string itemUni, bool itemExpanded);
 
     enabled: true
-    height: theme.defaultFont.mSize.height * 2.6 + ((connectionItemSettings.status != Loader.Ready || !expanded) ? 0 : connectionItemSettings.item.childrenRect.height + padding.margins.top);
+    height: theme.mSize(theme.defaultFont).height * 2.6 + ((connectionItemSettings.status != Loader.Ready || !expanded) ? 0 : connectionItemSettings.item.childrenRect.height + padding.margins.top);
 
     onClicked: {
         itemExpanded(itemUni, !expanded);
@@ -53,7 +53,7 @@ PlasmaComponents.ListItem {
     Item {
         id: connectionItemBasic;
 
-        height: theme.defaultFont.mSize.height * 1.8;
+        height: theme.mSize(theme.defaultFont).height * 1.8;
         anchors {
             left: parent.left;
             right: parent.right;
@@ -184,7 +184,7 @@ PlasmaComponents.ListItem {
             left: parent.left;
             right: parent.right;
             top: parent.top;
-            topMargin: theme.defaultFont.mSize.height * 2.2;
+            topMargin: theme.mSize(theme.defaultFont).height * 2.2;
         }
     }
 

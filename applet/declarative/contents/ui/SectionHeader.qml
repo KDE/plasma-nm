@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 1.1
-import org.kde.plasma.components 0.1 as PlasmaComponents
+import QtQuick 2.0
+import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Title {
     id: sectionHeader;
@@ -29,7 +29,7 @@ Title {
 
     property bool expanded: true;
 
-    height: theme.defaultFont.mSize.height * 2.3;
+    height: theme.mSize(theme.defaultFont).height * 2.3;
     anchors {
         left: parent.left;
         right: parent.right;

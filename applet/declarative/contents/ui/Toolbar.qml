@@ -18,9 +18,9 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 1.1
-import org.kde.plasma.components 0.1 as PlasmaComponents
-import org.kde.plasma.core 0.1 as PlasmaCore
+import QtQuick 2.0
+import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.networkmanagement 0.1 as PlasmaNM
 
 Item {
@@ -28,7 +28,7 @@ Item {
 
     property bool expanded: false;
 
-    height: theme.defaultFont.mSize.height * 1.8;
+    height: theme.mSize(theme.defaultFont).height * 1.8;
 
     PlasmaNM.NetworkStatus {
         id: networkStatus;
@@ -49,7 +49,7 @@ Item {
     Item {
         id: toolbarLine;
 
-        height: theme.defaultFont.mSize.height * 2;
+        height: theme.mSize(theme.defaultFont).height * 2;
         anchors {
             left: parent.left;
             right: parent.right;
@@ -79,7 +79,7 @@ Item {
         PlasmaComponents.Label {
             id: statusLabel;
 
-            height: theme.defaultFont.mSize.height * 2;
+            height: theme.mSize(theme.defaultFont).height * 2;
             anchors {
                 left: statusIcon.right;
                 right: toolButton.left;
@@ -140,7 +140,7 @@ Item {
         State {
             name: "Expanded";
             when: expanded;
-            PropertyChanges { target: toolBar; height: options.childrenRect.height + theme.defaultFont.mSize.height * 2 + padding.margins.top }
+            PropertyChanges { target: toolBar; height: options.childrenRect.height + theme.mSize(theme.defaultFont).height * 2 + padding.margins.top }
             PropertyChanges { target: options; visible: true }
         }
     ]

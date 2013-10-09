@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 1.1
-import org.kde.plasma.components 0.1 as PlasmaComponents
+import QtQuick 2.0
+import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.networkmanagement 0.1 as PlasmaNM
 
 Item {

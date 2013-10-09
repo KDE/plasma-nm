@@ -88,7 +88,7 @@ void VpncUiPluginPrivate::ciscoDecryptError(QProcess::ProcessError pError)
 
 #define NM_VPNC_LOCAL_PORT_DEFAULT 500
 
-K_PLUGIN_FACTORY(VpncUiPluginFactory, registerPlugin<VpncUiPlugin>();)
+K_PLUGIN_FACTORY_WITH_JSON(VpncUiPluginFactory, "plasmanetworkmanagement_vpncui.json", registerPlugin<VpncUiPlugin>();)
 
 VpncUiPlugin::VpncUiPlugin(QObject * parent, const QVariantList &) : VpnUiPlugin(parent)
 {

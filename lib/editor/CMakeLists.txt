@@ -56,12 +56,16 @@ kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
 
 kde4_add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})
 target_link_libraries(plasmanetworkmanagement-editor
-    ${KDE4_KDEUI_LIBS}
-    ${KDE4_KIO_LIBS}
+    ${QT_QTWIDGETS_LIBRARY}
     ${QT_QTXML_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
     ${NETWORKMANAGERQT_LDFLAGS}
     ${MODEMMANAGERQT_LDFLAGS}
+    KF5::KService
+    KF5::KI18n
+    KF5::KDE4Attic
+    KF5::KIOWidgets
+    ${KDE4Support_LIBRARIES}
     plasmanetworkmanagement-internal
 )
 

@@ -23,7 +23,8 @@
 #include <config.h>
 
 #include <KApplication>
-#include <KAboutData>
+#include <KGlobal>
+#include <k4aboutdata.h>
 #include <KCmdLineArgs>
 #include <KMainWindow>
 #include <KUrl>
@@ -35,9 +36,9 @@
 
 int main(int argc, char *argv[])
 {
-    KAboutData about("kde-nm-connection-editor", 0, ki18n("Connection editor"),
+    K4AboutData about("kde-nm-connection-editor", 0, ki18n("Connection editor"),
                      PLASMA_NM_VERSION, ki18n("Manage your network connections"),
-                     KAboutData::License_GPL, ki18n("(C) 2013 Jan Grulich and Lukáš Tinkl"),
+                     K4AboutData::License_GPL, ki18n("(C) 2013 Jan Grulich and Lukáš Tinkl"),
                      ki18n("This application allows you to create, edit and delete network connections.\n\nUsing NM version: %1")
                      .subs(NetworkManager::version()));
     about.addAuthor(ki18n("Jan Grulich"), ki18n("Developer"), "jgrulich@redhat.com");
@@ -55,8 +56,9 @@ int main(int argc, char *argv[])
 
     KApplication app;
 
-    KGlobal::insertCatalog("libplasmanetworkmanagement-editor");  // setting widgets
-    KGlobal::insertCatalog("plasma_applet_org.kde.networkmanagement");  // mobile wizard, UiUtils, ...
+#warning "Translations for kde-nm-connection-editor disabled"
+    //KGlobal::insertCatalog("libplasmanetworkmanagement-editor");  // setting widgets
+    //KGlobal::insertCatalog("plasma_applet_org.kde.networkmanagement");  // mobile wizard, UiUtils, ...
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     if(args->count()) {

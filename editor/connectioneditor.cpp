@@ -31,6 +31,10 @@
 
 #include <KActionCollection>
 #include <KLocale>
+#include <KGlobal>
+#include <KGlobalSettings>
+#include <KIcon>
+#include <KLocalizedString>
 #include <KMessageBox>
 #include <KService>
 #include <KServiceTypeTrader>
@@ -45,6 +49,7 @@
 #include <KStandardDirs>
 #include <KFileDialog>
 #include <KShell>
+#include <KUrl>
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>

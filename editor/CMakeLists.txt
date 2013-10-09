@@ -9,7 +9,7 @@ set(connectioneditor_SRCS
 
 kde4_add_app_icon(connectioneditor_SRCS "${KDE4_INSTALL_DIR}/share/icons/oxygen/*/devices/network-defaultroute.png" )
 
-kde4_add_ui_files(connectioneditor_SRCS
+qt5_wrap_ui(connectioneditor_SRCS
     ui/connectioneditor.ui
 )
 

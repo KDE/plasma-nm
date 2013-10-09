@@ -38,7 +38,7 @@
 #include <NetworkManagerQt/WirelessSetting>
 
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
+#if MODEMMANAGERQT_ONE
 #include <ModemManagerQt/manager.h>
 #include <ModemManagerQt/modem.h>
 #include <ModemManagerQt/modemdevice.h>

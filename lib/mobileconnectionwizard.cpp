@@ -35,7 +35,7 @@
 #include <ModemManagerQt/manager.h>
 #ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/modem.h>
-#else
+#elif WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/modeminterface.h>
 #endif
 
@@ -301,7 +301,7 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
 {
     QString desc;
 
-#ifdef MODEMMANAGERQT_ONE
+#if MODEMMANAGERQT_ONE
     ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(device->udi());
     if (modem) {
         ModemManager::Modem::Ptr modemInterface = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
@@ -323,7 +323,7 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
             }
         }
     }
-#else
+#elif WITH_MODEMMANAGER_SUPPORT
     ModemManager::ModemInterface::Ptr modem = ModemManager::findModemInterface(device->udi(), ModemManager::ModemInterface::GsmCard);
     if (modem) {
         if (modem->enabled()) {

@@ -26,6 +26,7 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
 
+#include <KDialog>
 #include <KUser>
 #include <KAcceleratorManager>
 

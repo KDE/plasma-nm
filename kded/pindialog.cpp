@@ -301,7 +301,7 @@ bool PinDialog::isPinDialog() const
             m_type == PinDialog::ModemPhFsimPin ||
             m_type == PinDialog::ModemNetworkSubsetPin);
 #else
-    return m_type == PinPuk;
+    return m_type == Pin;
 #endif
 }
 

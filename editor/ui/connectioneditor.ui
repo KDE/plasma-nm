@@ -25,10 +25,7 @@
    </item>
    <item>
     <widget class="KTreeWidgetSearchLine" name="ktreewidgetsearchline">
-     <property name="urlDropsEnabled">
-      <bool>false</bool>
-     </property>
-     <property name="clickMessage">
+     <property name="placeholderText">
       <string>Search connections...</string>
      </property>
     </widget>

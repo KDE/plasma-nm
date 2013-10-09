@@ -22,7 +22,7 @@
 
 #include <QtCore/QDateTime>
 #include <KIcon>
-#include <KLocale>
+#include <KLocalizedString>
 
 ConnectionTypeItem::ConnectionTypeItem(QTreeWidget * parent, const QString &type):
     QTreeWidgetItem(parent)

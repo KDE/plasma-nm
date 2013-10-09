@@ -13,9 +13,29 @@ qt5_wrap_ui(connectioneditor_SRCS
     ui/connectioneditor.ui
 )
 
-kde4_add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})
+add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})
 
-target_link_libraries(kde-nm-connection-editor plasmanetworkmanagement-internal plasmanetworkmanagement-editor ${NETWORKMANAGERQT_LDFLAGS} ${MODEMMANAGERQT_LDFLAGS} ${QT_QTCORE_LIBRARY} ${QT_QTDBUS_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
+target_link_libraries(kde-nm-connection-editor
+    plasmanetworkmanagement-internal
+    plasmanetworkmanagement-editor
+    ${NETWORKMANAGERQT_LDFLAGS}
+    ${MODEMMANAGERQT_LDFLAGS}
+    Qt5::Widgets
+    Qt5::Network
+    Qt5::DBus
+    KF5::KService
+    KF5::KCompletion
+    KF5::KI18n
+    KF5::KWidgetsAddons
+    #KF5::KDBusAddons
+    #KF5::KNotifications
+    #KF5::KWallet
+    KF5::KDE4Attic
+    KF5::KFile
+    KF5::KIOWidgets
+    KF5::KCoreAddons
+    ${KDE4Support_LIBRARIES}
+)
 
 install(TARGETS kde-nm-connection-editor DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS kde-nm-connection-editor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

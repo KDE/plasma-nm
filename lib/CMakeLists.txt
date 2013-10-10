@@ -1,4 +1,4 @@
-if (MODEMMANAGERQT_FOUND)
+if (WITH_MODEMMANAGER_SUPPORT)
     set(plasmanetworkmanagement-internal_SRCS
         settingwidget.cpp
         vpnuiplugin.cpp
@@ -25,6 +25,7 @@ kde4_add_library(plasmanetworkmanagement-internal SHARED ${plasmanetworkmanageme
 target_link_libraries(plasmanetworkmanagement-internal
     ${NETWORKMANAGERQT_LDFLAGS}
     ${MODEMMANAGERQT_LDFLAGS}
+    ${MODEMMANAGERQT_LIBRARY}
     KF5::Solid
     KF5::KCompletion
     KF5::KI18n
@@ -33,8 +34,6 @@ target_link_libraries(plasmanetworkmanagement-internal
     ${KDE4Support_LIBRARIES}
     ${QT_QTXML_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
-    ${MODEMMANAGERQT_LIBRARY}
-    #ModemManagerQt
 )
 
 install(TARGETS plasmanetworkmanagement-internal ${INSTALL_TARGETS_DEFAULT_ARGS})

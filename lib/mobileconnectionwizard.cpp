@@ -36,9 +36,7 @@
 #ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/modem.h>
 #else
-#if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/modeminterface.h>
-#endif
 #endif
 
 #define NUMBER_OF_STATIC_ENTRIES 3

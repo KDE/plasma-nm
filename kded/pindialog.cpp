@@ -24,7 +24,12 @@
 #include <QIntValidator>
 
 #include <QDebug>
-#include <kwindowsystem.h>
+#include <KWindowSystem>
+#include <KGlobalSettings>
+#include <KIcon>
+#include <KIconLoader>
+#include <KLocalizedString>
+
 
 #include <ModemManagerQt/manager.h>
 

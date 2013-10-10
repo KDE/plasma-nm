@@ -32,10 +32,12 @@ target_link_libraries(kded_networkmanagement
     plasmanetworkmanagement-internal
     ${NETWORKMANAGERQT_LDFLAGS}
     ${MODEMMANAGERQT_LDFLAGS}
+    ${MODEMMANAGERQT_LIBRARY}
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus
     KF5::KService
+    KF5::Solid
     KF5::KCompletion
     KF5::KI18n
     KF5::KWidgetsAddons

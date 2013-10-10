@@ -23,7 +23,7 @@
 
 #include <QDBusPendingReply>
 
-#include <KLocale>
+#include <KLocalizedString>
 #include <KMessageBox>
 #include <kdeversion.h>
 #include <QDebug>

@@ -1,5 +1,7 @@
 project(plasma-networkmanagement)
 
+set(DISABLE_MODEMMANAGER_SUPPORT 1)
+
 cmake_minimum_required(VERSION 2.8.6 FATAL_ERROR)
 
 #find_package(KDE4 "4.9.0" REQUIRED)
@@ -61,11 +63,11 @@ add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_STRICT_ITERATORS -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_KEYWORDS)
 
-set(DISABLE_MODEMMANAGER_SUPPORT 1)
-
 if (DISABLE_MODEMMANAGER_SUPPORT)
     message(STATUS "Disabling ModemManager support")
     set(WITH_MODEMMANAGER_SUPPORT 0)
+    set(MODEMMANAGERQT_FOUND false)
+    set(MODEMMANAGERQT_LIBRARY "")
 else()
     pkg_check_modules(MODEMMANAGERQT ModemManagerQt)
     if (MODEMMANAGERQT_FOUND)

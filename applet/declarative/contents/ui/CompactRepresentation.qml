@@ -82,7 +82,7 @@ Item {
 
         anchors.fill: parent;
         hoverEnabled: true;
-        onClicked: plasmoid.togglePopup();
+        onClicked: plasmoid.expanded = !plasmoid.expanded;
 
         PlasmaCore.ToolTip {
             id: tooltip;

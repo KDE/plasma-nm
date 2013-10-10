@@ -23,6 +23,7 @@ kde4_add_library(plasmanetworkmanagementplugins SHARED ${plasma_networkmanagemen
 target_link_libraries(plasmanetworkmanagementplugins
     ${NETWORKMANAGERQT_LDFLAGS}
     ${MODEMMANAGERQT_LDFLAGS}
+    ${MODEMMANAGERQT_LIBRARY}
     plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
     Qt5::Quick

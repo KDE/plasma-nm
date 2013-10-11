@@ -23,6 +23,9 @@
       <string>Authentication</string>
      </property>
      <layout class="QFormLayout" name="formLayout">
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
       <property name="fieldGrowthPolicy">
        <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
       </property>
@@ -94,6 +97,9 @@
       <bool>false</bool>
      </property>
      <layout class="QFormLayout" name="formLayout_2">
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
       <property name="labelAlignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>

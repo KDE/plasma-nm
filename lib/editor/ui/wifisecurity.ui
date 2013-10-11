@@ -78,6 +78,9 @@
      <widget class="QWidget" name="securityNone"/>
      <widget class="QWidget" name="securityWep">
       <layout class="QFormLayout" name="formLayout">
+       <property name="verticalSpacing">
+         <number>0</number>
+       </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_2">
          <property name="text">
@@ -179,6 +182,9 @@
      </widget>
      <widget class="QWidget" name="securityLeap">
       <layout class="QFormLayout" name="formLayout_3">
+        <property name="verticalSpacing">
+        <number>0</number>
+        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_8">
          <property name="text">
@@ -220,6 +226,9 @@
      </widget>
      <widget class="QWidget" name="securityWpaPersonal">
       <layout class="QFormLayout" name="formLayout_4">
+        <property name="verticalSpacing">
+        <number>0</number>
+        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_10">
          <property name="text">

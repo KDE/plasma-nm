@@ -23,6 +23,10 @@
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessDevice>
 
+#include <KGlobal>
+#include <KLocalizedString>
+#include <KLocale>
+
 #include <QDebug>
 
 TabDeviceAdvanced::TabDeviceAdvanced(QWidget *parent) :

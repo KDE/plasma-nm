@@ -30,6 +30,7 @@
 
 #include <KGlobal>
 #include <KLocale>
+#include <KLocalizedString>
 #include <KDateTime>
 #include <KToolInvocation>
 #include <QDebug>

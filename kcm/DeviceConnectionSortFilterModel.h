@@ -22,7 +22,7 @@
 
 #include <QSortFilterProxyModel>
 
-#include <QDeclarativeItem>
+//#include <QDeclarativeItem>
 
 #include <kdemacros.h>
 

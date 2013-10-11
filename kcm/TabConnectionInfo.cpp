@@ -26,6 +26,11 @@
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Manager>
 
+#include <KGlobal>
+#include <KLocalizedString>
+#include <KLocale>
+#include <KIconLoader>
+
 #define CONNECTION_ICON_SIZE 64
 
 using namespace NetworkManager;

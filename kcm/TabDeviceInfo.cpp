@@ -35,7 +35,9 @@
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ActiveConnection>
 
+#include <KIconLoader>
 #include <KMessageBox>
+#include <KLocalizedString>
 #include <QDebug>
 
 #define DEVICE_ICON_SIZE 64

@@ -22,8 +22,6 @@
 
 #include <QSortFilterProxyModel>
 
-#include <QDeclarativeItem>
-
 class AvailableConnectionsSortModel : public QSortFilterProxyModel
 {
     Q_OBJECT

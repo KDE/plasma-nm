@@ -32,7 +32,7 @@
 
 #include <KMessageBox>
 #include <KGenericFactory>
-#include <KAboutData>
+#include <k4aboutdata.h>
 #include <KFileDialog>
 #include <KMimeType>
 #include <KIcon>
@@ -54,18 +54,18 @@ K_PLUGIN_FACTORY(NetworkKCMFactory, registerPlugin<NetworkKCM>();)
 K_EXPORT_PLUGIN(NetworkKCMFactory("kcm_network"))
 
 NetworkKCM::NetworkKCM(QWidget *parent, const QVariantList &args) :
-    KCModule(NetworkKCMFactory::componentData(), parent, args),
+    KCModule(parent, args),
     ui(new Ui::NetworkKCM)
 {
-    KAboutData *aboutData;
-    aboutData = new KAboutData("kcm_network",
+    K4AboutData *aboutData;
+    aboutData = new K4AboutData("kcm_network",
                                "kcm_network",
                                ki18n("Network settings"),
                                KDE_NETWORK_VERSION,
                                ki18n("Network settings"),
-                               KAboutData::License_GPL,
+                               K4AboutData::License_GPL,
                                ki18n("(C) 2013 Daniel Nicoletti"));
-    setAboutData(aboutData);
+    //setAboutData(aboutData);
     setButtons(NoAdditionalButton);
 
     ui->setupUi(this);
@@ -248,3 +248,5 @@ QModelIndex NetworkKCM::currentIndex() const
 
     return ret;
 }
+
+#include "NetworkKCM.moc"

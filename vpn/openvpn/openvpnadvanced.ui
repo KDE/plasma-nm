@@ -397,6 +397,9 @@
        <string>Proxies</string>
       </attribute>
       <layout class="QFormLayout" name="formLayout_2">
+        <property name="verticalSpacing">
+        <number>0</number>
+        </property>
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>

@@ -20,6 +20,9 @@
       <string comment="like in General settings">General</string>
      </property>
      <layout class="QFormLayout" name="formLayout">
+    <property name="verticalSpacing">
+    <number>0</number>
+    </property>
       <property name="fieldGrowthPolicy">
        <enum>QFormLayout::ExpandingFieldsGrow</enum>
       </property>
@@ -91,6 +94,9 @@
       <string>Certificate Authentication</string>
      </property>
      <layout class="QFormLayout" name="formLayout_2">
+    <property name="verticalSpacing">
+    <number>0</number>
+    </property>
       <item row="0" column="0">
        <widget class="QLabel" name="label_5">
         <property name="text">

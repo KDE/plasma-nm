@@ -17,6 +17,9 @@
       <string>Authentication</string>
      </property>
      <layout class="QFormLayout" name="formLayout">
+    <property name="verticalSpacing">
+    <number>0</number>
+    </property>
       <item row="0" column="0">
        <widget class="QLabel" name="lbl_auth">
         <property name="text">
@@ -89,6 +92,9 @@
       <bool>false</bool>
      </property>
      <layout class="QFormLayout" name="formLayout_2">
+    <property name="verticalSpacing">
+    <number>0</number>
+    </property>
       <item row="0" column="0">
        <widget class="QLabel" name="lbl_MMPEcrypto">
         <property name="maximumSize">
@@ -146,6 +152,9 @@
       <string>Compression</string>
      </property>
      <layout class="QFormLayout" name="formLayout_3">
+    <property name="verticalSpacing">
+    <number>0</number>
+    </property>
       <property name="labelAlignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
@@ -188,6 +197,9 @@
       <string>Echo</string>
      </property>
      <layout class="QFormLayout" name="formLayout_4">
+    <property name="verticalSpacing">
+    <number>0</number>
+    </property>
       <item row="0" column="0">
        <widget class="QCheckBox" name="cb_sendEcho">
         <property name="text">

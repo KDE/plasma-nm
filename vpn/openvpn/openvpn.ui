@@ -27,6 +27,9 @@
    </item>
    <item row="0" column="0" colspan="3">
     <layout class="QFormLayout" name="formLayout">
+    <property name="verticalSpacing">
+    <number>0</number>
+    </property>
      <item row="0" column="0">
       <widget class="QLabel" name="textLabel3">
        <property name="text">
@@ -100,6 +103,9 @@
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <layout class="QFormLayout" name="formLayout_3">
+    <property name="verticalSpacing">
+    <number>0</number>
+    </property>
          <item row="0" column="0">
           <widget class="QLabel" name="textLabel2">
            <property name="text">
@@ -206,6 +212,9 @@
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <layout class="QFormLayout" name="formLayout_4">
+    <property name="verticalSpacing">
+    <number>0</number>
+    </property>
          <item row="0" column="0">
           <widget class="QLabel" name="textLabel5">
            <property name="text">
@@ -314,6 +323,9 @@
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <layout class="QFormLayout" name="formLayout_5">
+    <property name="verticalSpacing">
+    <number>0</number>
+    </property>
          <item row="0" column="0">
           <widget class="QLabel" name="textLabel8">
            <property name="text">
@@ -416,6 +428,9 @@
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
         <layout class="QFormLayout" name="formLayout_6">
+    <property name="verticalSpacing">
+    <number>0</number>
+    </property>
          <item row="0" column="0">
           <widget class="QLabel" name="textLabel2_2">
            <property name="text">

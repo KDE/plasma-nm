@@ -13,7 +13,7 @@ qt5_wrap_ui(connectioneditor_SRCS
     ui/connectioneditor.ui
 )
 
-add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})
+kde4_add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})
 
 target_link_libraries(kde-nm-connection-editor
     plasmanetworkmanagement-internal
@@ -28,9 +28,11 @@ target_link_libraries(kde-nm-connection-editor
     KF5::KI18n
     KF5::KWidgetsAddons
     KF5::KDE4Attic
-    KF5::KFile
+    ${KDE4_KIO_LIBS}
     KF5::KIOWidgets
     KF5::KCoreAddons
+    KF5::KWallet
+    KF5::ItemViews
     ${KDE4Support_LIBRARIES}
 )
 

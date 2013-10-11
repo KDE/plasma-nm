@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_CONNECTIONTYPE_ITEM_H
 #define PLASMA_NM_CONNECTIONTYPE_ITEM_H
 
-#include <QtGui/QTreeWidget>
+#include <QtWidgets/QTreeWidget>
 
 class ConnectionTypeItem : public QTreeWidgetItem
 {

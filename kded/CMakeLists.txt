@@ -1,4 +1,4 @@
-if (MODEMMANAGERQT_FOUND)
+if (WITH_MODEMMANAGER_SUPPORT)
     set(kded_networkmanagement_SRCS
         notification.cpp
         passworddialog.cpp

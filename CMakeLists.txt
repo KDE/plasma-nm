@@ -16,6 +16,10 @@ else()
     if (MODEMMANAGERQT_FOUND)
         message(STATUS "Enabling ModemManager support")
         set(WITH_MODEMMANAGER_SUPPORT 1)
+
+        if (${MODEMMANAGERQT_VERSION} VERSION_GREATER 0.7.990)
+            set(MODEMMANAGERQT_ONE 1)
+        endif()
     else()
         message(STATUS "ModemManagerQt not found")
         set(WITH_MODEMMANAGER_SUPPORT 0)
@@ -29,10 +33,6 @@ endif (NOT NETWORKMANAGERQT_FOUND)
 
 set(KDE_NETWORK_VERSION "0.9.3.1")
 set(PLASMA_NM_VERSION "0.9.3.1")
-
-if (${MODEMMANAGERQT_VERSION} VERSION_GREATER 0.7.990)
-    set(MODEMMANAGERQT_ONE 1)
-endif()
 
 configure_file(config.h.cmake
                ${CMAKE_CURRENT_BINARY_DIR}/config.h )

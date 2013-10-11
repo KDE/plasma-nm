@@ -1,4 +1,4 @@
-if (MODEMMANAGERQT_FOUND)
+if (WITH_MODEMMANAGER_SUPPORT)
     set(plasmanetworkmanagement-internal_SRCS
         settingwidget.cpp
         vpnuiplugin.cpp

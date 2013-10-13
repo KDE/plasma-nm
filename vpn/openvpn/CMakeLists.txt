@@ -1,3 +1,7 @@
+
+# Needed to build this module
+remove_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
+
 set(openvpn_SRCS
     openvpn.cpp
     openvpnwidget.cpp
@@ -9,9 +13,14 @@ qt5_wrap_ui(openvpn_SRCS openvpn.ui openvpnauth.ui openvpnadvanced.ui)
 
 kservice_desktop_to_json(plasmanetworkmanagement_openvpnui.desktop)
 
-plasma_add_plugin(plasmanetworkmanagement_openvpnui ${openvpn_SRCS})
+kde4_add_plugin(plasmanetworkmanagement_openvpnui ${openvpn_SRCS})
 
-target_link_libraries(plasmanetworkmanagement_openvpnui plasmanetworkmanagement-internal ${NETWORKMANAGERQT_LDFLAGS} ${KDE4_KIO_LIBS})
+target_link_libraries(plasmanetworkmanagement_openvpnui
+    plasmanetworkmanagement-internal
+    ${NETWORKMANAGERQT_LDFLAGS}
+    KF5::KIOCore
+    KF5::KIOWidgets
+)
 
 install(TARGETS plasmanetworkmanagement_openvpnui  DESTINATION ${PLUGIN_INSTALL_DIR}/plasmanetworkmanagement/vpnuiplugin)
 

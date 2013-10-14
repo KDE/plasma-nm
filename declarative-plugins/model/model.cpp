@@ -230,7 +230,7 @@ void Model::addConnection(const QString& connection, const QString& device)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
-    if (con->settings()->isSlave()) {
+    if (con->settings()->isSlave() || con->name().isEmpty() || con->uuid().isEmpty()) {
         return;
     }
 

@@ -392,10 +392,8 @@ void Model::removeWirelessNetwork(const QString& ssid, const QString& device)
     foreach (ModelItem * item, m_items.itemsBySsid(ssid, device)) {
         NetworkManager::AccessPoint::Ptr accessPoint;
         NetworkManager::WirelessDevice::Ptr wirelessDevice = NetworkManager::findNetworkInterface(item->devicePath()).objectCast<NetworkManager::WirelessDevice>();
-        if (wirelessDevice) {
-            accessPoint = wirelessDevice->findAccessPoint(item->specificPath());
-        }
-        if (accessPoint && accessPoint->mode() == NetworkManager::AccessPoint::Adhoc &&
+
+        if (wirelessDevice && (wirelessDevice->mode() == NetworkManager::WirelessDevice::Adhoc || wirelessDevice->mode() == NetworkManager::WirelessDevice::ApMode) &&
             NetworkManager::isWirelessEnabled() && NetworkManager::isWirelessHardwareEnabled()) {
             item->setWirelessNetwork(QString());
             if (updateItem(item)) {

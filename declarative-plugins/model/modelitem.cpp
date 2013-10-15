@@ -151,6 +151,17 @@ QString ModelItem::icon() const
             break;
         case NetworkManager::ConnectionSettings::Wireless:
             if (m_signal == 0 ) {
+                if (!m_connectionPath.isEmpty()) {
+                    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(m_connectionPath);
+                    if (con) {
+                        NetworkManager::WirelessSetting::Ptr wirelessSetting;
+                        wirelessSetting = con->settings()->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+                        if (wirelessSetting && (wirelessSetting->mode() == NetworkManager::WirelessSetting::Adhoc ||
+                                                wirelessSetting->mode() == NetworkManager::WirelessSetting::Ap)) {
+                            return "network-wireless-100";
+                        }
+                    }
+                }
                 return "network-wireless-00";
             } else if (m_signal < 20) {
                 return "network-wireless-20";

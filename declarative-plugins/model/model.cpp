@@ -396,7 +396,10 @@ void Model::removeWirelessNetwork(const QString& ssid, const QString& device)
             accessPoint = wirelessDevice->findAccessPoint(item->specificPath());
         }
 
-        if (accessPoint && (accessPoint->mode() == NetworkManager::AccessPoint::Adhoc || wirelessDevice->mode() == NetworkManager::WirelessDevice::ApMode) &&
+        // When accesspoint in ad-hoc mode dissapears, we should remove the item only when there is no connection. Similar case is when
+        // a wireless device is in AP mode, but in this case there could be only one visible AP and this should always be associated with some connection.
+        if (accessPoint && ((accessPoint->mode() == NetworkManager::AccessPoint::Adhoc && !item->connectionPath().isEmpty()) ||
+                            wirelessDevice->mode() == NetworkManager::WirelessDevice::ApMode) &&
             NetworkManager::isWirelessEnabled() && NetworkManager::isWirelessHardwareEnabled()) {
             item->setWirelessNetwork(QString());
             if (updateItem(item)) {

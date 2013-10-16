@@ -129,8 +129,8 @@ void NetworkStatus::changeTooltip()
     }
 
     QString tooltip = "<qt>";
-    QString format = "<b>%1 - %2</b><br>%3<br><br>";
-    QString formatDefault = "<b>%1 - %2</b><br><b>%3</b><br><br>";
+    const QString format = "<b>%1 - %2</b><br>%3<br><br>";
+    const QString formatDefault = "<b>%1 - %2</b><br><b>%3</b><br><br>";
 
     foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
         if (!active->devices().isEmpty()) {
@@ -145,7 +145,6 @@ void NetworkStatus::changeTooltip()
                 } else {
                     devName = device->ipInterfaceName();
                 }
-//                 conType = NetworkManager::ConnectionSettings::typeAsString(active->connection()->settings()->connectionType());
                 if (active->vpn()) {
                     conType = i18n("VPN Connection");
                 } else {

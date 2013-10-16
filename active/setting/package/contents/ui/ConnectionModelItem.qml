@@ -22,7 +22,7 @@ import QtQuick 1.1
 import org.kde.qtextracomponents 0.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.core 0.1 as PlasmaCore
-import org.kde.plasmanm 0.1 as PlasmaNm
+import org.kde.networkmanagement 0.1 as PlasmaNm
 
 Item {
     property alias checked: connectionItem.checked;
@@ -44,8 +44,8 @@ Item {
             right: parent.right;
         }
         color: "green";
-        opacity: itemConnected ? 0.2 : 0.1;
-        visible: itemConnected || itemConnecting;
+        opacity: itemConnectionState == PlasmaNm.Enums.Activated ? 0.2 : 0.1;
+        visible: itemConnectionState == PlasmaNm.Enums.Activated || itemConnectionState == PlasmaNm.Enums.Activating;
     }
 
     PlasmaComponents.ListItem {
@@ -62,7 +62,7 @@ Item {
             id: svgIcons;
 
             multipleImages: true;
-            imagePath: "icons/plasma-nm";
+            imagePath: "icons/plasma-networkmanagement";
         }
 
         Item {
@@ -119,7 +119,7 @@ Item {
             width: 48;
             height: 48;
             icon: QIcon("object-locked");
-            visible: itemSecure;
+            visible: itemSecurityType != PlasmaNm.Enums.None;
         }
 
         PlasmaComponents.Label {

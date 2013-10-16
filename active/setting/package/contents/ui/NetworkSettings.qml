@@ -25,7 +25,7 @@ import org.kde.plasma.extras 0.1 as PlasmaExtras
 import org.kde.plasma.graphicswidgets 0.1 as PlasmaWidgets
 import org.kde.plasma.mobilecomponents 0.1 as MobileComponents
 import org.kde.active.settings 0.1
-import org.kde.plasmanm 0.1 as PlasmaNm
+import org.kde.networkmanagement 0.1 as PlasmaNm
 
 Item {
     id: networkModule;

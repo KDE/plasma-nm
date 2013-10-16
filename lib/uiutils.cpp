@@ -37,6 +37,16 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+#include <ModemManagerQt/manager.h>
+#include <ModemManagerQt/modem.h>
+#include <ModemManagerQt/modemdevice.h>
+#include <ModemManagerQt/modem3gpp.h>
+#include <ModemManagerQt/modemcdma.h>
+#endif
+#endif
+
 // Qt
 #include <QSizeF>
 #include <QHostAddress>
@@ -556,6 +566,127 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
     return QString();
 }
 
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+// QString UiUtils::convertTypeToString(ModemManager::Modem::InterfaceType type)
+// {
+//     switch (type) {
+//         case ModemManager::ModemInterface::Gsm: return i18nc("Gsm cellular type","Gsm");
+//         case ModemManager::ModemInterface::Cdma: return i18nc("Cdma cellular type","Cdma");
+//     }
+//
+//     return i18nc("Unknown cellular type","Unknown");
+// }
+
+QString UiUtils::convertBandsToString(const QList<MMModemBand> &band)
+{
+    // TODO
+    Q_UNUSED(band);
+
+    return i18nc("Unknown cellular frequency band","Unknown");
+}
+
+QString UiUtils::convertAllowedModeToString(ModemManager::Modem::ModemModes modes)
+{
+    if (modes.testFlag(MM_MODEM_MODE_4G)) {
+        return i18nc("Gsm modes (2G/3G/any)","LTE");
+    } else if (modes.testFlag(MM_MODEM_MODE_3G)) {
+        return i18nc("Gsm modes (2G/3G/any)","UMTS/HSxPA");
+    } else if (modes.testFlag(MM_MODEM_MODE_2G)) {
+        return i18nc("Gsm modes (2G/3G/any)","GPRS/Edge");
+    } else if (modes.testFlag(MM_MODEM_MODE_CS)) {
+        return i18nc("Gsm modes (2G/3G/any)","GSM");
+    } else if (modes.testFlag(MM_MODEM_MODE_ANY)) {
+        return i18nc("Gsm modes (2G/3G/any)","Any");
+    }
+
+    return i18nc("Gsm modes (2G/3G/any)","Any");
+}
+
+QString UiUtils::convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech)
+{
+    if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_LTE)) {
+        return i18nc("Cellular access technology","LTE");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EVDOB)) {
+        return i18nc("Cellular access technology","CDMA2000 EVDO revision B");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EVDOA)) {
+        return i18nc("Cellular access technology","CDMA2000 EVDO revision A");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EVDO0)) {
+        return i18nc("Cellular access technology","CDMA2000 EVDO revision 0");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_1XRTT)) {
+        return i18nc("Cellular access technology","CDMA2000 1xRTT");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_HSPA_PLUS)) {
+        return i18nc("Cellular access technology","HSPA+");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_HSPA)) {
+        return i18nc("Cellular access technology","HSPA");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_HSUPA)) {
+        return i18nc("Cellular access technology","HSUPA");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_HSDPA)) {
+        return i18nc("Cellular access technology","HSDPA");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_UMTS)) {
+        return i18nc("Cellular access technology","UMTS");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EDGE)) {
+        return i18nc("Cellular access technology","EDGE");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_GPRS)) {
+        return i18nc("Cellular access technology","GPRS");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_GSM_COMPACT)) {
+        return i18nc("Cellular access technology","Compact GSM");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_GSM)) {
+        return i18nc("Cellular access technology","GSM");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_POTS)) {
+        return i18nc("Analog wireline modem","Analog");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_UNKNOWN)) {
+        return i18nc("Unknown cellular access technology","Unknown");
+    } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_ANY)) {
+        return i18nc("Any cellular access technology","Any");
+    }
+
+    return i18nc("Unknown cellular access technology","Unknown");
+}
+
+QString UiUtils::convertLockReasonToString(MMModemLock reason)
+{
+    switch (reason) {
+    case MM_MODEM_LOCK_NONE:
+        return i18nc("possible SIM lock reason", "Modem is unlocked.");
+    case MM_MODEM_LOCK_SIM_PIN:
+        return i18nc("possible SIM lock reason", "SIM requires the PIN code.");
+    case MM_MODEM_LOCK_SIM_PIN2:
+        return i18nc("possible SIM lock reason", "SIM requires the PIN2 code.");
+    case MM_MODEM_LOCK_SIM_PUK:
+        return i18nc("possible SIM lock reason", "SIM requires the PUK code.");
+    case MM_MODEM_LOCK_SIM_PUK2:
+        return i18nc("possible SIM lock reason", "SIM requires the PUK2 code.");
+    case MM_MODEM_LOCK_PH_SP_PIN:
+        return i18nc("possible SIM lock reason", "Modem requires the service provider PIN code.");
+    case MM_MODEM_LOCK_PH_SP_PUK:
+        return i18nc("possible SIM lock reason", "Modem requires the service provider PUK code.");
+    case MM_MODEM_LOCK_PH_NET_PIN:
+        return i18nc("possible SIM lock reason", "Modem requires the network PIN code.");
+    case MM_MODEM_LOCK_PH_NET_PUK:
+        return i18nc("possible SIM lock reason", "Modem requires the network PUK code.");
+    case MM_MODEM_LOCK_PH_SIM_PIN:
+        return i18nc("possible SIM lock reason", "Modem requires the PIN code.");
+    case MM_MODEM_LOCK_PH_CORP_PIN:
+        return i18nc("possible SIM lock reason", "Modem requires the corporate PIN code.");
+    case MM_MODEM_LOCK_PH_CORP_PUK:
+        return i18nc("possible SIM lock reason", "Modem requires the corporate PUK code.");
+    case MM_MODEM_LOCK_PH_FSIM_PIN:
+        return i18nc("possible SIM lock reason", "Modem requires the PH-FSIM PIN code.");
+    case MM_MODEM_LOCK_PH_FSIM_PUK:
+        return i18nc("possible SIM lock reason", "Modem requires the PH-FSIM PUK code.");
+    case MM_MODEM_LOCK_PH_NETSUB_PIN:
+        return i18nc("possible SIM lock reason", "Modem requires the network subset PIN code.");
+    case MM_MODEM_LOCK_PH_NETSUB_PUK:
+        return i18nc("possible SIM lock reason", "Modem requires the network subset PUK code.");
+    case MM_MODEM_LOCK_UNKNOWN:
+    default:
+        return i18nc("possible SIM lock reason", "Lock reason unknown.");
+    }
+}
+
+
+#else
 QString UiUtils::convertTypeToString(const ModemManager::ModemInterface::Type type)
 {
     switch (type) {
@@ -621,6 +752,8 @@ QString UiUtils::convertAccessTechnologyToString(const ModemManager::ModemInterf
 
     return i18nc("Unknown cellular access technology","Unknown");
 }
+#endif
+#endif
 
 QString UiUtils::convertNspTypeToString(WimaxNsp::NetworkType type)
 {
@@ -763,7 +896,9 @@ QString UiUtils::connectionDetails(const Device::Ptr& device, const Connection::
                     continue;
                 }
                 QHostAddress addr = device->ipV4Config().addresses().first().ip();
-                details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
+                if (!addr.isNull()) {
+                    details += QString(format).arg(i18n("IPv4 Address:"), addr.toString());
+                }
             }
         } else if (key == "ipv4:gateway") {
             if (device && device->ipV4Config().isValid() && connected) {
@@ -771,7 +906,9 @@ QString UiUtils::connectionDetails(const Device::Ptr& device, const Connection::
                     continue;
                 }
                 QHostAddress addr = device->ipV4Config().addresses().first().gateway();
-                details += QString(format).arg(i18n("IPv4 Gateway:"), addr.toString());
+                if (!addr.isNull()) {
+                    details += QString(format).arg(i18n("IPv4 Gateway:"), addr.toString());
+                }
             }
         } else if (key == "ipv6:address") {
             if (device && device->ipV6Config().isValid() && connected) {
@@ -779,7 +916,9 @@ QString UiUtils::connectionDetails(const Device::Ptr& device, const Connection::
                     continue;
                 }
                 QHostAddress addr = device->ipV6Config().addresses().first().ip();
-                details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
+                if (!addr.isNull()) {
+                    details += QString(format).arg(i18n("IPv6 Address:"), addr.toString());
+                }
             }
         } else if (key == "ipv6:gateway") {
             if (device && device->ipV6Config().isValid() && connected) {
@@ -787,7 +926,9 @@ QString UiUtils::connectionDetails(const Device::Ptr& device, const Connection::
                     continue;
                 }
                 QHostAddress addr = device->ipV6Config().addresses().first().gateway();
-                details += QString(format).arg(i18n("IPv6 Gateway:"), addr.toString());
+                if (!addr.isNull() && addr.toString() != "::") {
+                    details += QString(format).arg(i18n("IPv6 Gateway:"), addr.toString());
+                }
             }
         } else if (key == "interface:driver") {
             if (device) {
@@ -813,21 +954,73 @@ QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QS
             if (btDevice) {
                 details += QString(format).arg(i18n("MAC Address:"), btDevice->hardwareAddress());
             }
-        } else if (key == "interface:driver") {
-            if (btDevice) {
-                details += QString(format).arg(i18n("Driver:"), btDevice->driver());
-            }
         }
     }
 
     return details;
 }
 
+
+
 QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QStringList& keys)
 {
+#if WITH_MODEMMANAGER_SUPPORT
     QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
+#ifdef MODEMMANAGERQT_ONE
+    ModemManager::Modem::Ptr modemNetwork;
+    ModemManager::Modem3gpp::Ptr gsmNet;
+    ModemManager::ModemCdma::Ptr cdmaNet;
 
+    ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(modemDevice->udi());
+    if (modem) {
+        modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
+        gsmNet = modem->interface(ModemManager::ModemDevice::GsmInterface).objectCast<ModemManager::Modem3gpp>();
+        cdmaNet = modem->interface(ModemManager::ModemDevice::CdmaInterface).objectCast<ModemManager::ModemCdma>();
+    }
+
+    foreach (const QString& key, keys) {
+        if (key == "mobile:operator") {
+            if (gsmNet) {
+                details += QString(format).arg(i18n("Operator:"), gsmNet->operatorName());
+            } else if (cdmaNet) {
+                details += QString(format).arg(i18n("Network ID:"), cdmaNet->nid());
+            }
+        } else if (key == "mobile:quality") {
+            if (modemNetwork) {
+                details += QString(format).arg(i18n("Signal Quality:"), QString("%1%").arg(modemNetwork->signalQuality().signal));
+            }
+        } else if (key == "mobile:technology") {
+            if (modemNetwork) {
+                details += QString(format).arg(i18n("Access Technology:"), UiUtils::convertAccessTechnologyToString(modemNetwork->accessTechnologies()));
+            }
+        } else if (key == "mobile:mode") {
+            if (modemNetwork) {
+                details += QString(format).arg(i18n("Allowed Mode:"), UiUtils::convertAllowedModeToString(modemNetwork->currentModes().allowed));
+            }
+        } else if (key == "mobile:band") {
+            if (modemNetwork) {
+                details += QString(format).arg(i18n("Frequency Bands:"), UiUtils::convertBandsToString(modemNetwork->currentBands()));
+            }
+        } else if (key == "mobile:unlock") {
+            if (modemNetwork) {
+                details += QString(format).arg(i18n("Unlock Required:"), UiUtils::convertLockReasonToString(modemNetwork->unlockRequired()));
+            }
+        } else if (key == "mobile:imei") {
+            if (modemNetwork) {
+                details += QString(format).arg(i18n("IMEI:"), modemNetwork->equipmentIdentifier());
+            }
+        } else if (key == "mobile:imsi") {
+            if (modemDevice) {
+                ModemManager::Sim::Ptr simCard;
+                simCard = modemDevice->getModemCardIface();
+                if (simCard) {
+                    details += QString(format).arg(i18n("IMSI:"), simCard->imsi());
+                }
+            }
+        }
+    }
+#else
     ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
 
     foreach (const QString& key, keys) {
@@ -837,15 +1030,15 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
             }
         } else if (key == "mobile:quality") {
             if (modemNetwork) {
-                details += QString(format).arg(i18n("Signal quality:"), QString("%1%").arg(modemNetwork->getSignalQuality()));
+                details += QString(format).arg(i18n("Signal Quality:"), QString("%1%").arg(modemNetwork->getSignalQuality()));
             }
         } else if (key == "mobile:technology") {
             if (modemNetwork) {
-                details += QString(format).arg(i18n("Access technology:"), QString("%1/%2").arg(UiUtils::convertTypeToString(modemNetwork->type()), UiUtils::convertAccessTechnologyToString(modemNetwork->getAccessTechnology())));
+                details += QString(format).arg(i18n("Access Technology:"), QString("%1/%2").arg(UiUtils::convertTypeToString(modemNetwork->type()), UiUtils::convertAccessTechnologyToString(modemNetwork->getAccessTechnology())));
             }
         } else if (key == "mobile:mode") {
             if (modemNetwork) {
-                details += QString(format).arg(i18n("Allowed Mode"), UiUtils::convertAllowedModeToString(modemNetwork->getAllowedMode()));
+                details += QString(format).arg(i18n("Allowed Mode:"), UiUtils::convertAllowedModeToString(modemNetwork->getAllowedMode()));
             }
         } else if (key == "mobile:band") {
             if (modemNetwork) {
@@ -873,8 +1066,13 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
             }
         }
     }
-
+#endif
     return details;
+#else
+    Q_UNUSED(modemDevice)
+    Q_UNUSED(keys)
+    return QString();
+#endif
 }
 
 QString UiUtils::vpnDetails(const VpnConnection::Ptr& vpnConnection, const VpnSetting::Ptr& vpnSetting, const QStringList& keys)

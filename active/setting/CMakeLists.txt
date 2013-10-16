@@ -14,7 +14,7 @@ set(networksettings_SRCS
 kde4_add_plugin(active_settings_network ${networksettings_SRCS})
 target_link_libraries(active_settings_network
     NetworkManagerQt
-    plasmanm-internal
+    plasmanetworkmanagement-internal
     ${KDE4_PLASMA_LIBS}
     ${QT_QTNETWORK_LIBRARY}
     ${KDE4_KDEUI_LIBS}

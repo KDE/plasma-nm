@@ -1,4 +1,4 @@
-set(plasmanm_libeditor_SRCS
+set(plasmanetworkmanagement_libeditor_SRCS
     ipv4widget.cpp
     ui/advancedpermissionswidget.cpp
     ui/delegate.cpp
@@ -29,7 +29,7 @@ set(plasmanm_libeditor_SRCS
     connectionwidget.cpp
 )
 
-kde4_add_ui_files(plasmanm_libeditor_SRCS
+kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
     ui/advancedpermissionswidget.ui
     ui/ipv4.ui
     ui/ipv4routes.ui
@@ -54,15 +54,15 @@ kde4_add_ui_files(plasmanm_libeditor_SRCS
     ui/connectionwidget.ui
 )
 
-kde4_add_library(plasmanm-editor SHARED ${plasmanm_libeditor_SRCS})
-target_link_libraries(plasmanm-editor
+kde4_add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})
+target_link_libraries(plasmanetworkmanagement-editor
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
     ${QT_QTXML_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
-    NetworkManagerQt
-    ModemManagerQt
-    plasmanm-internal
+    ${NETWORKMANAGERQT_LDFLAGS}
+    ${MODEMMANAGERQT_LDFLAGS}
+    plasmanetworkmanagement-internal
 )
 
-install(TARGETS plasmanm-editor ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS plasmanetworkmanagement-editor ${INSTALL_TARGETS_DEFAULT_ARGS})

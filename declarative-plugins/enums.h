@@ -31,10 +31,20 @@ Q_ENUMS(GsmNetworkType)
 Q_ENUMS(Ipv4Method)
 Q_ENUMS(SecurityType)
 Q_ENUMS(WirelessMode)
+Q_ENUMS(ConnectionStatus)
+Q_ENUMS(SecurityType)
 
 public:
     explicit Enums(QObject* parent = 0);
     virtual ~Enums();
+
+    enum ConnectionStatus {
+        UknownState = 0,
+        Activating,
+        Activated,
+        Deactivating,
+        Deactivated
+    };
 
     enum ConnectionType {
         Unknown = 0,

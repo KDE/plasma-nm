@@ -27,7 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KPluginFactory>
 
 K_PLUGIN_FACTORY(StrongswanUiPluginFactory, registerPlugin<StrongswanUiPlugin>();)
-K_EXPORT_PLUGIN(StrongswanUiPluginFactory("plasmanm_strongswanui"))
+K_EXPORT_PLUGIN(StrongswanUiPluginFactory("plasmanetworkmanagement_strongswanui"))
 
 StrongswanUiPlugin::StrongswanUiPlugin(QObject * parent, const QVariantList &)
     : VpnUiPlugin(parent)

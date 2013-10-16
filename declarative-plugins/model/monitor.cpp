@@ -74,8 +74,16 @@ void Monitor::init()
             SLOT(init()), Qt::UniqueConnection);
 
     foreach (const NetworkManager::ActiveConnection::Ptr& active, NetworkManager::activeConnections()) {
-        connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-                SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
+        if (active->vpn()) {
+            NetworkManager::VpnConnection::Ptr vpnConnection = active.objectCast<NetworkManager::VpnConnection>();
+            if (vpnConnection) {
+                connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
+                        SLOT(vpnConnectionStateChanged(NetworkManager::VpnConnection::State, NetworkManager::VpnConnection::StateChangeReason)));
+            }
+        } else {
+            connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                    SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
+        }
         NMMonitorDebug() << "Available active connection (" << active->connection()->name() << ")";
 
         Q_EMIT addActiveConnection(active->path());
@@ -136,10 +144,21 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
                 SLOT(wirelessNetworkAppeared(QString)), Qt::UniqueConnection);
         connect(wifiDev.data(), SIGNAL(networkDisappeared(QString)),
                 SLOT(wirelessNetworkDisappeared(QString)), Qt::UniqueConnection);
-    }else if (device->type() == NetworkManager::Device::Modem) {
+    } else if (device->type() == NetworkManager::Device::Modem) {
         NMMonitorDebug() << "Available modem device " << device->interfaceName();
         NetworkManager::ModemDevice::Ptr modemDev = device.objectCast<NetworkManager::ModemDevice>();
-
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+        ModemManager::Modem::Ptr modemNetwork = modemDev->getModemNetworkIface();
+        if (modemDev->isValid()) {
+            connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
+                    SLOT(gsmNetworkSignalQualityChanged(uint)), Qt::UniqueConnection);
+            connect(modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::Modem::AccessTechnologies)),
+                    SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies)), Qt::UniqueConnection);
+            connect(modemNetwork.data(), SIGNAL(currentModesChanged()),
+                    SLOT(gsmNetworkCurrentModesChanged()), Qt::UniqueConnection);
+        }
+#else
         ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDev->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
         if (modemNetwork) {
             connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
@@ -149,6 +168,8 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
             connect(modemNetwork.data(), SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
                     SLOT(gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)), Qt::UniqueConnection);
         }
+#endif
+#endif
     }
 
     connect(device.data(), SIGNAL(availableConnectionAppeared(QString)),
@@ -186,8 +207,15 @@ void Monitor::availableConnectionAppeared(const QString& connection)
 
 void Monitor::availableConnectionDisappeared(const QString& connection)
 {
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
+
+    if (!device) {
+        Q_EMIT removeConnection(connection);
+        return;
+    }
+
     NMMonitorDebug() << "Remove previously available connection " << connection;
-    Q_EMIT removeConnection(connection);
+    Q_EMIT removeAvailableConnection(connection, device->uni());
 }
 
 void Monitor::activeConnectionAdded(const QString& active)
@@ -198,8 +226,16 @@ void Monitor::activeConnectionAdded(const QString& active)
      * you never get this active connection from libnm-qt, because it's not valid due to missing connection property. But it still does
      * not work properly, because the active connection is not added, and won't be added later */
     if (activeConnection) {
-        connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-                SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
+        if (activeConnection->vpn()) {
+            NetworkManager::VpnConnection::Ptr vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
+            if (vpnConnection) {
+                connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
+                        SLOT(vpnConnectionStateChanged(NetworkManager::VpnConnection::State, NetworkManager::VpnConnection::StateChangeReason)));
+            }
+        } else {
+            connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                    SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
+        }
         NMMonitorDebug() << "Active connection " << activeConnection->connection()->name() << " added";
         Q_EMIT addActiveConnection(active);
     }
@@ -221,6 +257,30 @@ void Monitor::activeConnectionStateChanged(NetworkManager::ActiveConnection::Sta
 
     if (active) {
         Q_EMIT activeConnectionStateChanged(active->path(), state);
+    }
+}
+
+void Monitor::vpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
+{
+    Q_UNUSED(reason)
+
+    NetworkManager::ActiveConnection *activePtr = qobject_cast<NetworkManager::ActiveConnection*>(sender());
+    NetworkManager::ActiveConnection::Ptr active;
+    if (activePtr) {
+        active = NetworkManager::findActiveConnection(activePtr->path());
+    }
+
+    if (active) {
+        if (state == NetworkManager::VpnConnection::Prepare ||
+            state == NetworkManager::VpnConnection::NeedAuth ||
+            state == NetworkManager::VpnConnection::Connecting ||
+            state == NetworkManager::VpnConnection::GettingIpConfig) {
+            Q_EMIT activeConnectionStateChanged(active->path(), NetworkManager::ActiveConnection::Activating);
+        } else if (state == NetworkManager::VpnConnection::Activated) {
+            Q_EMIT activeConnectionStateChanged(active->path(), NetworkManager::ActiveConnection::Activated);
+        } else {
+            Q_EMIT activeConnectionStateChanged(active->path(), NetworkManager::ActiveConnection::Deactivated);
+        }
     }
 }
 
@@ -306,9 +366,18 @@ void Monitor::deviceRemoved(const QString& device)
     Q_EMIT removeConnectionsByDevice(device);
 }
 
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+void Monitor::gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies technology)
+#else
 void Monitor::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology)
+#endif
 {
+#ifdef MODEMMANAGERQT_ONE
+    ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
+#else
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
+#endif
 
     if (gsmNetwork) {
         foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
@@ -325,9 +394,17 @@ void Monitor::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::Ac
     }
 }
 
+#ifdef MODEMMANAGERQT_ONE
+void Monitor::gsmNetworkCurrentModesChanged()
+#else
 void Monitor::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode)
+#endif
 {
+#ifdef MODEMMANAGERQT_ONE
+    ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
+#else
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
+#endif
 
     if (gsmNetwork) {
         foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
@@ -335,7 +412,7 @@ void Monitor::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::Allowed
                 NetworkManager::ModemDevice::Ptr modem = dev.objectCast<NetworkManager::ModemDevice>();
                 if (modem) {
                     if (modem->getModemNetworkIface()->device() == gsmNetwork->device()) {
-                        NMMonitorDebug() << "Modem " << modem->udi() << " allowed mode changed to " << mode;
+                        NMMonitorDebug() << "Modem " << modem->udi() << " allowed modes changed";
                         Q_EMIT modemAllowedModeChanged(modem->uni());
                     }
                 }
@@ -346,7 +423,11 @@ void Monitor::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::Allowed
 
 void Monitor::gsmNetworkSignalQualityChanged(uint signal)
 {
+#ifdef MODEMMANAGERQT_ONE
+    ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
+#else
     ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
+#endif
 
     if (gsmNetwork) {
         foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
@@ -355,14 +436,18 @@ void Monitor::gsmNetworkSignalQualityChanged(uint signal)
                 if (modem) {
                     if (modem->getModemNetworkIface()->device() == gsmNetwork->device()) {
                         NMMonitorDebug() << "Modem " << modem->udi() << " signal changed to " << signal;
+#ifdef MODEMMANAGERQT_ONE
+                        Q_EMIT modemSignalQualityChanged(gsmNetwork->signalQuality().signal, modem->uni());
+#else
                         Q_EMIT modemSignalQualityChanged(gsmNetwork->getSignalQuality(), modem->uni());
+#endif
                     }
                 }
             }
         }
     }
 }
-
+#endif
 void Monitor::statusChanged(NetworkManager::Status status)
 {
     NMMonitorDebug() << "NetworkManager status changed to " << status;

@@ -1,4 +1,4 @@
-set(plasma_nm_qml_plugins_SRCS
+set(plasma_networkmanagement_qml_plugins_SRCS
    applet/availabledevices.cpp
    applet/connectionicon.cpp
    applet/enabledconnections.cpp
@@ -18,17 +18,17 @@ set(plasma_nm_qml_plugins_SRCS
    qmlplugins.cpp
 )
 
-kde4_add_library(plasmanmplugins SHARED ${plasma_nm_qml_plugins_SRCS})
+kde4_add_library(plasmanetworkmanagementplugins SHARED ${plasma_networkmanagement_qml_plugins_SRCS})
 
-target_link_libraries(plasmanmplugins
-    NetworkManagerQt
-    ModemManagerQt
-    plasmanm-internal
-    plasmanm-editor
+target_link_libraries(plasmanetworkmanagementplugins
+    ${NETWORKMANAGERQT_LDFLAGS}
+    ${MODEMMANAGERQT_LDFLAGS}
+    plasmanetworkmanagement-internal
+    plasmanetworkmanagement-editor
     ${KDE4_PLASMA_LIBS}
     ${QT_QTNETWORK_LIBRARY}
     ${KDE4_KDEUI_LIBS}
     ${QT_QTDECLARATIVE_LIBRARY})
 
-install(TARGETS plasmanmplugins DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/plasmanm)
-install(FILES qmldir DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/plasmanm)
+install(TARGETS plasmanetworkmanagementplugins DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/networkmanagement)
+install(FILES qmldir DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/networkmanagement)

@@ -33,15 +33,13 @@ Model::Model(QObject* parent):
     m_monitor(new Monitor(this))
 {
     QHash<int, QByteArray> roles = roleNames();
-    roles[ConnectingRole] = "itemConnecting";
-    roles[ConnectedRole] = "itemConnected";
+    roles[ConnectionStateRole] = "itemConnectionState";
     roles[ConnectionPathRole] = "itemConnectionPath";
     roles[ConnectionIconRole] = "itemConnectionIcon";
     roles[ConnectionDetailsRole] = "itemDetails";
     roles[DeviceNameRole] = "itemDeviceName";
     roles[DevicePathRole] = "itemDevicePath";
     roles[NameRole] = "itemName";
-    roles[SecureRole] = "itemSecure";
     roles[SecurityTypeRole] = "itemSecurityType";
     roles[SecurityTypeStringRole] = "itemSecurityTypeString";
     roles[SectionRole] = "itemSection";
@@ -49,6 +47,7 @@ Model::Model(QObject* parent):
     roles[SsidRole] = "itemSsid";
     roles[SpecificPathRole] = "itemSpecificPath";
     roles[UuidRole] = "itemUuid";
+    roles[UniRole] = "itemUni";
     roles[TypeRole] = "itemType";
     setRoleNames(roles);
 
@@ -66,14 +65,18 @@ Model::Model(QObject* parent):
             SLOT(addWimaxNsp(QString,QString)));
     connect(m_monitor, SIGNAL(addWirelessNetwork(QString,QString)),
             SLOT(addWirelessNetwork(QString,QString)));
+#if WITH_MODEMMANAGER_SUPPORT
     connect(m_monitor, SIGNAL(modemAccessTechnologyChanged(QString)),
             SLOT(modemPropertiesChanged(QString)));
     connect(m_monitor, SIGNAL(modemAllowedModeChanged(QString)),
             SLOT(modemPropertiesChanged(QString)));
     connect(m_monitor, SIGNAL(modemSignalQualityChanged(uint, QString)),
             SLOT(modemSignalQualityChanged(uint, QString)));
-    connect(m_monitor, SIGNAL(removeActiveConnection(uint, QString)),
+#endif
+    connect(m_monitor, SIGNAL(removeActiveConnection(QString)),
             SLOT(removeActiveConnection(QString)));
+    connect(m_monitor, SIGNAL(removeAvailableConnection(QString,QString)),
+            SLOT(removeAvailableConnection(QString,QString)));
     connect(m_monitor, SIGNAL(removeConnection(QString)),
             SLOT(removeConnection(QString)));
     connect(m_monitor, SIGNAL(removeConnectionsByDevice(QString)),
@@ -116,10 +119,8 @@ QVariant Model::data(const QModelIndex& index, int role) const
         ModelItem * item = m_items.itemAt(row);
 
         switch (role) {
-            case ConnectingRole:
-                return item->connecting();
-            case ConnectedRole:
-                return item->connected();
+            case ConnectionStateRole:
+                return item->connectionState();
             case ConnectionPathRole:
                 return item->connectionPath();
             case ConnectionIconRole:
@@ -136,8 +137,6 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 } else {
                     return item->name();
                 }
-            case SecureRole:
-                return item->secure();
             case SecurityTypeRole:
                 return item->securityType();
             case SecurityTypeStringRole:
@@ -152,6 +151,8 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 return item->specificPath();
             case UuidRole:
                 return item->uuid();
+            case UniRole:
+                return item->uni();
             case TypeRole:
                 return item->type();
             default:
@@ -204,10 +205,13 @@ void Model::addActiveConnection(const QString& active)
     }
 
     foreach (ModelItem * item, m_items.itemsByUuid(activeConnection->connection()->uuid())) {
-        item->setActiveConnection(active);
+        if ((!activeConnection->devices().isEmpty() && activeConnection->devices().first() == item->devicePath()) ||
+            (item->type() == NetworkManager::ConnectionSettings::Vpn)) {
+            item->setActiveConnection(active);
 
-        if (updateItem(item)) {
-            NMModelDebug() << "Connection " << item->name() << " has been changed (active connection added)";
+            if (updateItem(item)) {
+                NMModelDebug() << "Connection " << item->name() << " has been changed (active connection added)";
+            }
         }
     }
 }
@@ -230,7 +234,7 @@ void Model::addConnection(const QString& connection, const QString& device)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
-    if (con->settings()->isSlave()) {
+    if (con->settings()->isSlave() || con->name().isEmpty() || con->uuid().isEmpty()) {
         return;
     }
 
@@ -270,7 +274,7 @@ void Model::connectionUpdated(const QString& connection)
         }
     }
 }
-
+#if WITH_MODEMMANAGER_SUPPORT
 void Model::modemPropertiesChanged(const QString& modem)
 {
     foreach (ModelItem * item, m_items.itemsByDevice(modem)) {
@@ -293,7 +297,7 @@ void Model::modemSignalQualityChanged(uint signal, const QString& modem)
         }
     }
 }
-
+#endif
 void Model::removeActiveConnection(const QString& active)
 {
     ModelItem * item = m_items.itemByActiveConnection(active);
@@ -303,6 +307,28 @@ void Model::removeActiveConnection(const QString& active)
 
         if (updateItem(item)) {
             NMModelDebug() << "Item " << item->name() << " has been changed (active connection removed)";
+        }
+    }
+}
+
+void Model::removeAvailableConnection(const QString& connection, const QString& device)
+{
+    foreach (ModelItem * item, m_items.itemsByConnection(connection)) {
+        if (item->devicePath() == device) {
+            const QString name = item->name();
+            item->setConnection(QString());
+
+            /* We removed connection details, but this connection can be available
+                as accesspoint, if not, we have to delete it */
+            if (item->specificPath().isEmpty()) {
+                if (removeItem(item)) {
+                    NMModelDebug() << "Connection " << name << " has been removed";
+                }
+            } else {
+                if (updateItem(item)) {
+                    NMModelDebug() << "Connection " << name << " has been removed from known connections";
+                }
+            }
         }
     }
 }
@@ -373,7 +399,8 @@ void Model::removeWirelessNetwork(const QString& ssid, const QString& device)
         if (wirelessDevice) {
             accessPoint = wirelessDevice->findAccessPoint(item->specificPath());
         }
-        if (accessPoint && accessPoint->mode() == NetworkManager::AccessPoint::Adhoc &&
+
+        if (accessPoint && (accessPoint->mode() == NetworkManager::AccessPoint::Adhoc || wirelessDevice->mode() == NetworkManager::WirelessDevice::ApMode) &&
             NetworkManager::isWirelessEnabled() && NetworkManager::isWirelessHardwareEnabled()) {
             item->setWirelessNetwork(QString());
             if (updateItem(item)) {

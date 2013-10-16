@@ -20,7 +20,7 @@
 
 import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
-import org.kde.plasmanm 0.1 as PlasmaNm
+import org.kde.networkmanagement 0.1 as PlasmaNm
 import org.kde.active.settings 0.1
 
 Item {
@@ -91,7 +91,7 @@ Item {
             rightMargin: 5;
         }
         text: if (selectedItemModel) {
-                  if (selectedItemModel.itemConnected || selectedItemModel.itemConnecting) {
+                  if (selectedItemModel.itemConnectionState == PlasmaNm.Enums.Activated || selectedItemModel.itemConnectionState == PlasmaNm.Enums.Activating) {
                       i18n("Disconnect");
                   } else {
                       i18n("Connect");
@@ -111,7 +111,7 @@ Item {
 
         onClicked: {
             if (selectedItemModel) {
-                if (!selectedItemModel.itemConnected && !selectedItemModel.itemConnecting) {
+                if (selectedItemModel.itemConnectionState != PlasmaNm.Enums.Activated && selectedItemModel.itemConnectionState != PlasmaNm.Enums.Activating) {
                     if (selectedItemModel.itemUuid) {
                         handler.activateConnection(selectedItemModel.itemConnectionPath, selectedItemModel.itemDevicePath, selectedItemModel.itemSpecificPath);
                     } else {
@@ -120,7 +120,7 @@ Item {
                         connectionSettingsHandler.addAndActivateConnection(map, selectedItemModel.itemDevicePath, selectedItemModel.itemSpecificPath);
                     }
                 } else {
-                    handler.deactivateConnection(selectedItemModel.itemConnectionPath);
+                    handler.deactivateConnection(selectedItemModel.itemConnectionPath, selectedItemModel.itemDevicePath);
                 }
             }
         }
@@ -165,7 +165,7 @@ Item {
                     var wirelessMap = [];
                     wirelessMap["ssid"] = selectedItemModel.itemSsid;
                     var wirelessSecurityMap = [];
-                    if (selectedItemModel.itemSecure) {
+                    if (selectedItemModel.itemSecurityType != PlasmaNm.Enums.None) {
                         // StaticWep
                         if (selectedItemModel.itemSecurityType == PlasmaNm.Enums.StaticWep) {
                             wirelessSecurityMap["key-mgmt"] = "none";

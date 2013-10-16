@@ -33,7 +33,11 @@
 #include <NetworkManagerQt/ModemDevice>
 
 #include <ModemManagerQt/manager.h>
+#ifdef MODEMMANAGERQT_ONE
+#include <ModemManagerQt/modem.h>
+#else
 #include <ModemManagerQt/modeminterface.h>
+#endif
 
 #define NUMBER_OF_STATIC_ENTRIES 3
 
@@ -297,6 +301,29 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
 {
     QString desc;
 
+#ifdef MODEMMANAGERQT_ONE
+    ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(device->udi());
+    if (modem) {
+        ModemManager::Modem::Ptr modemInterface = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
+        if (modemInterface->powerState() == MM_MODEM_POWER_STATE_ON) {
+            desc.append(modemInterface->manufacturer());
+            desc.append(" ");
+            desc.append(modemInterface->model());
+        } else {
+            QString deviceName = modemInterface->device();
+            foreach (const Solid::Device &d, Solid::Device::allDevices()) {
+                if (d.udi().contains(deviceName, Qt::CaseInsensitive)) {
+                    deviceName = d.product();
+                    if (!deviceName.startsWith(d.vendor())) {
+                        deviceName = d.vendor() + ' ' + deviceName;
+                    }
+                    desc.append(deviceName);
+                    break;
+                }
+            }
+        }
+    }
+#else
     ModemManager::ModemInterface::Ptr modem = ModemManager::findModemInterface(device->udi(), ModemManager::ModemInterface::GsmCard);
     if (modem) {
         if (modem->enabled()) {
@@ -317,6 +344,7 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
             }
         }
     }
+#endif
 
     NetworkManager::ModemDevice::Ptr nmModemIface = device.objectCast<NetworkManager::ModemDevice>();
     if (!nmModemIface) {

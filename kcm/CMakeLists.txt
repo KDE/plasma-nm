@@ -26,8 +26,8 @@ target_link_libraries(kcm_network
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
     NetworkManagerQt
-    plasmanm-internal
-    plasmanm-editor
+    plasmanetworkmanagement-internal
+    plasmanetworkmanagement-editor
 )
 
 install(TARGETS kcm_network DESTINATION ${PLUGIN_INSTALL_DIR})

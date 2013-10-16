@@ -22,16 +22,16 @@
 
 #ifndef PLASMA_NM_BLUETOOTH_MONITOR_H
 #define PLASMA_NM_BLUETOOTH_MONITOR_H
-
+#if WITH_MODEMMANAGER_SUPPORT
 #include "../lib/mobileconnectionwizard.h"
-
-#include <QDBusObjectPath>
 #include <ModemManagerQt/manager.h>
+#endif
+#include <QDBusObjectPath>
 
 class BluetoothMonitor: public QObject
 {
 Q_OBJECT
-Q_CLASSINFO("D-Bus Interface", "org.kde.plasmanm")
+Q_CLASSINFO("D-Bus Interface", "org.kde.plasmanetworkmanagement")
 public:
     explicit BluetoothMonitor(QObject * parent);
     ~BluetoothMonitor();
@@ -40,13 +40,17 @@ public Q_SLOTS:
     Q_SCRIPTABLE void addBluetoothConnection(const QString & bdAddr, const QString & service);
 private Q_SLOTS:
     void init();
+#if WITH_MODEMMANAGER_SUPPORT
     void modemAdded(const QString &udi);
+#endif
 private:
     QString mBdaddr;
     QString mService;
     QString mDunDevice;
     QString mDevicePath;
     QString mDeviceName;
+#if WITH_MODEMMANAGER_SUPPORT
     QWeakPointer<MobileConnectionWizard> mobileConnectionWizard;
+#endif
 };
 #endif

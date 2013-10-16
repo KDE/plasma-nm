@@ -1,6 +1,8 @@
 /*
     Copyright 2009 Will Stephenson <wstephenson@kde.org>
     Copyright 2013 by Daniel Nicoletti <dantti12@gmail.com>
+    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -19,7 +21,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "interfacenotification.h"
+#include "notification.h"
 
 #include <uiutils.h>
 
@@ -30,29 +32,37 @@
 #include <KIcon>
 #include <KDebug>
 
-InterfaceNotification::InterfaceNotification(QObject *parent) :
+Notification::Notification(QObject *parent) :
     QObject(parent)
 {
+    // devices
     foreach (const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
         addDevice(device);
     }
 
     connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)), this, SLOT(deviceAdded(QString)));
+
+    // connections
+    foreach (const NetworkManager::ActiveConnection::Ptr &ac, NetworkManager::activeConnections()) {
+        addActiveConnection(ac);
+    }
+
+    connect(NetworkManager::notifier(), SIGNAL(activeConnectionAdded(QString)), this, SLOT(addActiveConnection(QString)));
 }
 
-void InterfaceNotification::deviceAdded(const QString &uni)
+void Notification::deviceAdded(const QString &uni)
 {
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(uni);
     addDevice(device);
 }
 
-void InterfaceNotification::addDevice(const NetworkManager::Device::Ptr &device)
+void Notification::addDevice(const NetworkManager::Device::Ptr &device)
 {
     connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
             this, SLOT(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)));
 }
 
-void InterfaceNotification::stateChanged(NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason)
+void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason)
 {
     Q_UNUSED(oldstate)
     kDebug() << newstate << reason;
@@ -283,20 +293,162 @@ void InterfaceNotification::stateChanged(NetworkManager::Device::State newstate,
     } else {
         KNotification *notify = new KNotification("DeviceFailed", KNotification::Persistent, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
-        notify->setProperty("device-uni", device->uni());
-        notify->setComponentData(KComponentData("plasma-nm"));
-        notify->setPixmap(KIcon("task-attention").pixmap(64, 64));
-        notify->setTitle(i18n("%1 - Failed to activate", identifier));
+        notify->setProperty("uni", device->uni());
+        notify->setComponentData(KComponentData("networkmanagement"));
+        notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        notify->setTitle(identifier);
         notify->setText(text);
         notify->sendEvent();
         m_notifications[device->uni()] = notify;
     }
 }
 
-void InterfaceNotification::notificationClosed()
+void Notification::addActiveConnection(const QString &path)
 {
-    kDebug();
+    NetworkManager::ActiveConnection::Ptr ac = NetworkManager::findActiveConnection(path);
+    if (ac && ac->isValid()) {
+        addActiveConnection(ac);
+    }
+}
+
+void Notification::addActiveConnection(const NetworkManager::ActiveConnection::Ptr &ac)
+{
+    if (ac->vpn()) {
+        NetworkManager::VpnConnection::Ptr vpnConnection = ac.objectCast<NetworkManager::VpnConnection>();
+        connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State, NetworkManager::VpnConnection::StateChangeReason)),
+                this, SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State, NetworkManager::VpnConnection::StateChangeReason)));
+    } else {
+        connect(ac.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
+    }
+}
+
+void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state)
+{
+    NetworkManager::ActiveConnection *ac = qobject_cast<NetworkManager::ActiveConnection*>(sender());
+
+    const QString acName = ac->connection()->name();
+    QString text;
+    if (state == NetworkManager::ActiveConnection::Activated) {
+        text = i18n("Connection '%1' activated.", acName);
+    } else if (state == NetworkManager::ActiveConnection::Deactivated) {
+        text = i18n("Connection '%1' deactivated.", acName);
+    } else {
+        kDebug() << "Unhandled active connection state change: " << state;
+        return;
+    }
+
+    const QString nId = ac->path();
+    if (m_notifications.contains(nId)) {
+        KNotification *notify = m_notifications.value(nId);
+        if (state == NetworkManager::ActiveConnection::Activated) {
+            notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
+        } else {
+            notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        }
+        notify->setText(text);
+        notify->update();
+    } else {
+        KNotification *notify = new KNotification("AcStateChanged", KNotification::Persistent, this);
+        connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
+        notify->setProperty("uni", nId);
+        notify->setComponentData(KComponentData("networkmanagement"));
+        if (state == NetworkManager::ActiveConnection::Activated) {
+            notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
+        } else {
+            notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        }
+        notify->setTitle(acName);
+        notify->setText(text);
+        notify->sendEvent();
+        m_notifications[nId] = notify;
+    }
+}
+
+void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
+{
+    NetworkManager::VpnConnection *vpn = qobject_cast<NetworkManager::VpnConnection*>(sender());
+
+    const QString vpnName = vpn->connection()->name();
+    QString text;
+    if (state == NetworkManager::VpnConnection::Activated) {
+        text = i18n("VPN connection '%1' activated.", vpnName);
+    } else if (state == NetworkManager::VpnConnection::Failed) {
+        text = i18n("VPN connection '%1' failed.", vpnName);
+    } else if (state == NetworkManager::VpnConnection::Disconnected) {
+        text = i18n("VPN connection '%1' disconnected.", vpnName);
+    } else {
+        kDebug() << "Unhandled VPN connection state change: " << state;
+        return;
+    }
+
+    switch (reason) {
+    case NetworkManager::VpnConnection::UserDisconnectedReason:
+        text = i18n("The VPN connection changed state because the user disconnected it.");
+        break;
+    case NetworkManager::VpnConnection::DeviceDisconnectedReason:
+        text = i18n("The VPN connection changed state because the device it was using was disconnected.");
+        break;
+    case NetworkManager::VpnConnection::ServiceStoppedReason:
+        text = i18n("The service providing the VPN connection was stopped.");
+        break;
+    case NetworkManager::VpnConnection::IpConfigInvalidReason:
+        text = i18n("The IP config of the VPN connection was invalid.");
+        break;
+    case NetworkManager::VpnConnection::ConnectTimeoutReason:
+        text = i18n("The connection attempt to the VPN service timed out.");
+        break;
+    case NetworkManager::VpnConnection::ServiceStartTimeoutReason:
+        text = i18n("A timeout occurred while starting the service providing the VPN connection.");
+        break;
+    case NetworkManager::VpnConnection::ServiceStartFailedReason:
+        text = i18n("Starting the service providing the VPN connection failed.");
+        break;
+    case NetworkManager::VpnConnection::NoSecretsReason:
+        text = i18n("Necessary secrets for the VPN connection were not provided.");
+        break;
+    case NetworkManager::VpnConnection::LoginFailedReason:
+        text = i18n("Authentication to the VPN server failed.");
+        break;
+    case NetworkManager::VpnConnection::ConnectionRemovedReason:
+        text = i18n("The connection was deleted from settings.");
+        break;
+    default:
+    case NetworkManager::VpnConnection::UnknownReason:
+    case NetworkManager::VpnConnection::NoneReason:
+        break;
+    }
+
+    const QString nId = vpn->path();
+    if (m_notifications.contains(nId)) {
+        KNotification *notify = m_notifications.value(nId);
+        if (state == NetworkManager::VpnConnection::Activated) {
+            notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
+        } else {
+            notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        }
+        notify->setText(text);
+        notify->update();
+    } else {
+        KNotification *notify = new KNotification("VpnStateChanged", KNotification::Persistent, this);
+        connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
+        notify->setProperty("uni", nId);
+        notify->setComponentData(KComponentData("networkmanagement"));
+        if (state == NetworkManager::VpnConnection::Activated) {
+            notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
+        } else {
+            notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        }
+        notify->setTitle(vpnName);
+        notify->setText(text);
+        notify->sendEvent();
+        m_notifications[nId] = notify;
+    }
+}
+
+void Notification::notificationClosed()
+{
     KNotification *notify = qobject_cast<KNotification*>(sender());
-    m_notifications.remove(notify->property("device-uni").toString());
+    m_notifications.remove(notify->property("uni").toString());
     notify->deleteLater();
 }

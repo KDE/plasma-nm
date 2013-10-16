@@ -25,14 +25,16 @@
 #include <KPluginFactory>
 
 #include "secretagent.h"
-#include "interfacenotification.h"
+#include "notification.h"
+#if WITH_MODEMMANAGER_SUPPORT
 #include "modemmonitor.h"
+#endif
 #include "bluetoothmonitor.h"
 
 #include <QDBusMetaType>
 
 K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManagementService>();)
-K_EXPORT_PLUGIN(NetworkManagementServiceFactory("plasmanm", "plasmanm-kded"))
+K_EXPORT_PLUGIN(NetworkManagementServiceFactory("networkmanagement", "plasmanetworkmanagement-kded"))
 
 class NetworkManagementServicePrivate
 {
@@ -45,11 +47,13 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 {
     Q_D(NetworkManagementService);
 
-    KGlobal::insertCatalog("plasma_applet_org.kde.plasma-nm");  // mobile wizard
+    KGlobal::insertCatalog("plasma_applet_org.kde.networkmanagement");  // mobile wizard
 
     d->agent = new SecretAgent(this);
-    new InterfaceNotification(this);
+    new Notification(this);
+#if WITH_MODEMMANAGER_SUPPORT
     new ModemMonitor(this);
+#endif
     new BluetoothMonitor(this);
 }
 

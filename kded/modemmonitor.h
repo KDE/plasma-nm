@@ -25,12 +25,18 @@
 #include <QObject>
 #include <QDBusPendingCallWatcher>
 
+#include "config.h"
+
+#ifdef MODEMMANAGERQT_ONE
+#include <ModemManager/ModemManager.h>
+#include <ModemManagerQt/modem.h>
+#endif
 #include <kdemacros.h>
 
 class ModemMonitorPrivate;
 
 /**
- * Monitors network hardware and maintains NetworkInterfaceActivatableProviders for them
+ * Monitors modem hardware and provides a PIN unlock dialog
  */
 class KDE_EXPORT ModemMonitor : public QObject
 {
@@ -39,9 +45,13 @@ class KDE_EXPORT ModemMonitor : public QObject
 public:
     explicit ModemMonitor(QObject * parent);
     virtual ~ModemMonitor();
-public Q_SLOTS:
+private slots:
     void modemAdded(const QString&);
+#ifdef MODEMMANAGERQT_ONE
+    void requestPin(MMModemLock lock);
+#else
     void requestPin(const QString &);
+#endif
     void onSendPinArrived(QDBusPendingCallWatcher *);
 private:
     ModemMonitorPrivate * d_ptr;

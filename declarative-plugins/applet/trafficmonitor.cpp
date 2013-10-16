@@ -186,6 +186,7 @@ void TrafficMonitor::updateTraffic()
     double _r;
     double _t;
     QString r, t;
+    int precision = 0;
 
     if (GlobalConfig().networkSpeedUnit() == GlobalConfig::KBits) {
         _r = m_rx.toInt() << 3;
@@ -197,15 +198,17 @@ void TrafficMonitor::updateTraffic()
             m_rxUnit = i18n("MBit/s");
             _r /= 1000;
             _t /= 1000;
+            precision = 2;
         } else {
             m_rxUnit = i18n("GBit/s");
             _r /= 1000000;
             _t /= 1000000;
+            precision = 2;
         }
 
         m_txUnit = m_rxUnit;
-        r = QString("%1 %2").arg(QString::number(_r, 'f', 0), m_rxUnit);
-        t = QString("%1 %2").arg(QString::number(_t, 'f', 0), m_txUnit);
+        r = QString("%1 %2").arg(QString::number(_r, 'f', precision), m_rxUnit);
+        t = QString("%1 %2").arg(QString::number(_t, 'f', precision), m_txUnit);
     } else {
         _r = m_rx.toDouble();
         _t = m_tx.toDouble();

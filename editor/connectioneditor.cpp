@@ -77,9 +77,11 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     action = new QAction(i18n("InfiniBand"), this);
     action->setData(NetworkManager::ConnectionSettings::Infiniband);
     m_menu->addAction(action);
+#if WITH_MODEMMANAGER_SUPPORT
     action = new QAction(i18n("Mobile Broadband..."), this);
     action->setData(NetworkManager::ConnectionSettings::Gsm);
     m_menu->addAction(action);
+#endif
     action = new QAction(i18n("Wired"), this);
     action->setData(NetworkManager::ConnectionSettings::Wired);
     action->setProperty("shared", false);
@@ -116,7 +118,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     action = m_menu->addSeparator();
     action->setText(i18n("VPN"));
 
-    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNM/VpnUiPlugin");
+    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
     foreach (const KService::Ptr & service, services) {
         qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
 
@@ -334,6 +336,7 @@ void ConnectionEditor::addConnection(QAction* action)
     ConnectionSettings::ConnectionType type = static_cast<ConnectionSettings::ConnectionType>(action->data().toUInt());
 
     if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
+#if WITH_MODEMMANAGER_SUPPORT
         QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
         if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
             qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
@@ -343,6 +346,7 @@ void ConnectionEditor::addConnection(QAction* action)
         if (wizard) {
             wizard.data()->deleteLater();
         }
+#endif
     } else {
         bool shared = false;
         if (type == ConnectionSettings::Wired || type == ConnectionSettings::Wireless) {
@@ -458,7 +462,7 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
             }
         }
     } else {
-        KConfig config("plasma-nm");
+        KConfig config("plasma-networkmanagement");
         foreach (const QString & groupName, map.keys()) {
             KConfigGroup secretsGroup = config.group(groupName);
             NMStringMap secretsMap = map.value(groupName);
@@ -536,7 +540,7 @@ void ConnectionEditor::connectionUpdated()
 void ConnectionEditor::importVpn()
 {
     // get the list of supported extensions
-    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNM/VpnUiPlugin");
+    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
     QString extensions;
     foreach (const KService::Ptr &service, services) {
         VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
@@ -606,7 +610,7 @@ void ConnectionEditor::exportVpn()
     qDebug() << "Exporting VPN connection" << connection->name() << "type:" << vpnSetting->serviceType();
 
     QString error;
-    VpnUiPlugin * vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNM/VpnUiPlugin"),
+    VpnUiPlugin * vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNetworkManagement/VpnUiPlugin"),
                                                                                        QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()),
                                                                                        this, QVariantList(), &error);
 

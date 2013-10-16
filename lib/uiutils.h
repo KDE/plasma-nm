@@ -36,9 +36,16 @@ class QSizeF;
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/VpnSetting>
 
-#include <Solid/Device>
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+#include <ModemManager/ModemManager.h>
+#include <ModemManagerQt/modem.h>
+#endif
+#endif
 
 #include <kdemacros.h>
+
+#include "config.h"
 
 class KDE_EXPORT UiUtils
 {
@@ -65,12 +72,6 @@ public:
      * @param interfaceNamingStyle name style to use when generating the name
      */
     static QString interfaceNameLabel(const QString & uni, const KNetworkManagerServicePrefs::InterfaceNamingChoices interfaceNamingStyle);
-
-    /**
-     * @return a Solid::Device from a NetworkManager uni. The returned object must be deleted after use
-     * @param type the type of the network interface
-     */
-    static Solid::Device* findSolidDevice(const QString & uni);
 #endif
     /**
      * @return a human-readable name for a given network interface according to the configured
@@ -151,10 +152,20 @@ public:
      */
     static QString wirelessBandToString(NetworkManager::WirelessSetting::FrequencyBand band);
 
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+//     static QString convertTypeToString(ModemManager::ModemDevice::InterfaceType type);
+    static QString convertBandsToString(const QList<MMModemBand> & band);
+    static QString convertAllowedModeToString(ModemManager::Modem::ModemModes mode);
+    static QString convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech);
+    static QString convertLockReasonToString(MMModemLock reason);
+#else
     static QString convertTypeToString(const ModemManager::ModemInterface::Type type);
     static QString convertBandToString(const ModemManager::ModemInterface::Band band);
     static QString convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode);
     static QString convertAccessTechnologyToString(const ModemManager::ModemInterface::AccessTechnology tech);
+#endif
+#endif
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
     static QString convertNspTypeToString(NetworkManager::WimaxNsp::NetworkType type);
 

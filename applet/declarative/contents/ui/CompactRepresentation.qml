@@ -22,7 +22,7 @@ import QtQuick 1.1
 import org.kde.qtextracomponents 0.1
 import org.kde.plasma.core 0.1 as PlasmaCore
 import org.kde.plasma.components 0.1 as PlasmaComponents
-import org.kde.plasmanm 0.1 as PlasmaNm
+import org.kde.networkmanagement 0.1 as PlasmaNM
 
 Item {
     id: panelIconWidget;
@@ -31,7 +31,7 @@ Item {
         id: svgIcons;
 
         multipleImages: true;
-        imagePath: "icons/plasma-nm";
+        imagePath: "icons/plasma-networkmanagement";
     }
 
     PlasmaCore.SvgItem {
@@ -69,7 +69,7 @@ Item {
         visible: running;
     }
 
-    PlasmaNm.NetworkStatus {
+    PlasmaNM.NetworkStatus {
         id: networkStatus;
 
         onSetTooltip: {
@@ -91,7 +91,7 @@ Item {
         }
     }
 
-    PlasmaNm.ConnectionIcon {
+    PlasmaNM.ConnectionIcon {
         id: connectionIconProvider;
 
         onHideConnectingIndicator: {

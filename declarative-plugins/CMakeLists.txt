@@ -29,7 +29,6 @@ target_link_libraries(plasmanetworkmanagementplugins
     Qt5::Quick
     Qt5::DBus
     Qt5::Network
-    KF5::plasma
     KF5::KI18n
     KF5::KWindowSystem
 )

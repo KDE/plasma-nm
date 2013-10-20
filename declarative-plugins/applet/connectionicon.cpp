@@ -166,12 +166,24 @@ void ConnectionIcon::setIcons()
 
     foreach (const NetworkManager::ActiveConnection::Ptr & active, actives) {
         if (((active->default4() || active->default6()) && active->state() == NetworkManager::ActiveConnection::Activated) || !defaultRouteExists) {
+            NetworkManager::ActiveConnection::Ptr activeConnection;
+            if (active->vpn()) {
+                NetworkManager::ActiveConnection::Ptr activeTmp;
+                activeTmp = NetworkManager::findActiveConnection(active->specificObject());
+                if (activeTmp) {
+                    activeConnection = activeTmp;
+                }
 
-            if (active->vpn() || active->devices().isEmpty()) {
+                vpnFound = true;
+                NMAppletDebug() << "Emit signal setHoverIcon(object-locked)";
+                Q_EMIT setHoverIcon("object-locked");
+            } else {
+                activeConnection = active;
+            }
+            if (activeConnection->devices().isEmpty()) {
                 continue;
             }
-
-            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
+            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(activeConnection->devices().first());
             if (device) {
                 NetworkManager::Device::Type type = device->type();
 
@@ -184,7 +196,7 @@ void ConnectionIcon::setIcons()
                         setWirelessIconForSignalStrength(100);
                         connectionFound = true;
                     } else {
-                        NetworkManager::AccessPoint::Ptr ap = wifiDevice->findAccessPoint(active->specificObject());
+                        NetworkManager::AccessPoint::Ptr ap = wifiDevice->findAccessPoint(activeConnection->specificObject());
                         if (ap) {
                             setWirelessIcon(device, ap->ssid());
                             connectionFound = true;
@@ -222,9 +234,7 @@ void ConnectionIcon::setIcons()
                     }
                 }
             }
-        }
-
-        if (active->vpn() && active->state() == NetworkManager::ActiveConnection::Activated) {
+        } else if (active->vpn() && active->state() == NetworkManager::ActiveConnection::Activated) {
             vpnFound = true;
             NMAppletDebug() << "Emit signal setHoverIcon(object-locked)";
             Q_EMIT setHoverIcon("object-locked");

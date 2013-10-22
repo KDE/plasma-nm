@@ -145,7 +145,6 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
     KConfigGroup cg(config, "main");   // Keys&Values are stored under [main]
     if (cg.exists()) {
         // Setup cisco-decrypt binary to decrypt the passwords
-        QStringList decrArgs;
         const QString ciscoDecryptBinary = KStandardDirs::findExe("cisco-decrypt", QString::fromLocal8Bit(qgetenv("PATH")) + ":/usr/lib/vpnc");
         if (ciscoDecryptBinary.isEmpty()) {
             mErrorMessage = i18n("Needed executable cisco-decrypt could not be found.");
@@ -174,11 +173,11 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         }
         else if (!decrPlugin->readStringKeyValue(cg,"enc_UserPassword").isEmpty() && !ciscoDecryptBinary.isEmpty()) {
             // Decrypt the password and insert into map
-            decrArgs.clear();
-            decrArgs << decrPlugin->readStringKeyValue(cg,"enc_UserPassword");
-            decrPlugin->ciscoDecrypt->setProgram(ciscoDecryptBinary, decrArgs);
+            decrPlugin->ciscoDecrypt->setProgram(ciscoDecryptBinary);
             decrPlugin->ciscoDecrypt->start();
-            if (decrPlugin->ciscoDecrypt->waitForStarted() && decrPlugin->ciscoDecrypt->waitForFinished()) {
+            decrPlugin->ciscoDecrypt->waitForStarted();
+            decrPlugin->ciscoDecrypt->write(decrPlugin->readStringKeyValue(cg,"enc_UserPassword").toUtf8());
+            if (decrPlugin->ciscoDecrypt->waitForFinished()) {
                 secretData.insert(NM_VPNC_KEY_XAUTH_PASSWORD, decrPlugin->decryptedPasswd);
             }
         }
@@ -203,11 +202,11 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         }
         else if (!decrPlugin->readStringKeyValue(cg,"enc_GroupPwd").isEmpty() && !ciscoDecryptBinary.isEmpty()) {
             //Decrypt the password and insert into map
-            decrArgs.clear();
-            decrArgs << decrPlugin->readStringKeyValue(cg,"enc_GroupPwd");
-            decrPlugin->ciscoDecrypt->setProgram(ciscoDecryptBinary, decrArgs);
+            decrPlugin->ciscoDecrypt->setProgram(ciscoDecryptBinary);
             decrPlugin->ciscoDecrypt->start();
-            if (decrPlugin->ciscoDecrypt->waitForStarted() && decrPlugin->ciscoDecrypt->waitForFinished()) {
+            decrPlugin->ciscoDecrypt->waitForStarted();
+            decrPlugin->ciscoDecrypt->write(decrPlugin->readStringKeyValue(cg,"enc_GroupPwd").toUtf8());
+            if (decrPlugin->ciscoDecrypt->waitForFinished()) {
                 secretData.insert(NM_VPNC_KEY_SECRET, decrPlugin->decryptedPasswd);
                 data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::AgentOwned));
             }

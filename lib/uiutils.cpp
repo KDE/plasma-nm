@@ -570,16 +570,6 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
 
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
-// QString UiUtils::convertTypeToString(ModemManager::Modem::InterfaceType type)
-// {
-//     switch (type) {
-//         case ModemManager::ModemInterface::Gsm: return i18nc("Gsm cellular type","Gsm");
-//         case ModemManager::ModemInterface::Cdma: return i18nc("Cdma cellular type","Cdma");
-//     }
-//
-//     return i18nc("Unknown cellular type","Unknown");
-// }
-
 QString UiUtils::convertBandsToString(const QList<MMModemBand> &band)
 {
     // TODO

@@ -846,8 +846,8 @@ QString UiUtils::connectionDetails(const Device::Ptr& device, const Connection::
     const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 
-    bool connected = device && connection && device->activeConnection() &&
-                     device->activeConnection()->connection() == connection && device->activeConnection()->state() == ActiveConnection::Activated;
+    const bool connected = device && connection && device->activeConnection() &&
+                           device->activeConnection()->connection() == connection && device->activeConnection()->state() == ActiveConnection::Activated;
 
     foreach (const QString& key, keys) {
         if (key == "interface:type") {
@@ -1121,8 +1121,8 @@ QString UiUtils::wiredDetails(const WiredDevice::Ptr& wiredDevice, const Network
     const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 
-    bool connected = wiredDevice && connection && wiredDevice->activeConnection() &&
-                     wiredDevice->activeConnection()->connection() == connection && wiredDevice->activeConnection()->state() == ActiveConnection::Activated;
+    const bool connected = wiredDevice && connection && wiredDevice->activeConnection() &&
+                           wiredDevice->activeConnection()->connection() == connection && wiredDevice->activeConnection()->state() == ActiveConnection::Activated;
 
     foreach (const QString& key, keys) {
         if (key == "interface:bitrate") {
@@ -1144,8 +1144,8 @@ QString UiUtils::wirelessDetails(const WirelessDevice::Ptr& wirelessDevice, cons
     const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 
-    bool connected = wirelessDevice && connection && wirelessDevice->activeConnection() &&
-                     wirelessDevice->activeConnection()->connection() == connection && wirelessDevice->activeConnection()->state() == ActiveConnection::Activated;
+    const bool connected = wirelessDevice && connection && wirelessDevice->activeConnection() &&
+                           wirelessDevice->activeConnection()->connection() == connection && wirelessDevice->activeConnection()->state() == ActiveConnection::Activated;
 
     NetworkManager::AccessPoint::Ptr ap;
     if (network) {

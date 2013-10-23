@@ -676,8 +676,6 @@ QString UiUtils::convertLockReasonToString(MMModemLock reason)
         return i18nc("possible SIM lock reason", "Lock reason unknown.");
     }
 }
-
-
 #else
 QString UiUtils::convertTypeToString(const ModemManager::ModemInterface::Type type)
 {
@@ -845,7 +843,7 @@ QString UiUtils::shortToolTipFromWirelessSecurity(NetworkManager::Utils::Wireles
 
 QString UiUtils::connectionDetails(const Device::Ptr& device, const Connection::Ptr& connection, const QStringList& keys)
 {
-    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
+    const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 
     bool connected = device && connection && device->activeConnection() &&
@@ -934,7 +932,7 @@ QString UiUtils::connectionDetails(const Device::Ptr& device, const Connection::
 
 QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QStringList& keys)
 {
-    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
+    const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 
     foreach (const QString& key, keys) {
@@ -957,7 +955,7 @@ QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QS
 QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QStringList& keys)
 {
 #if WITH_MODEMMANAGER_SUPPORT
-    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
+    const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 #ifdef MODEMMANAGERQT_ONE
     ModemManager::Modem::Ptr modemNetwork;
@@ -1069,7 +1067,7 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
 
 QString UiUtils::vpnDetails(const VpnConnection::Ptr& vpnConnection, const VpnSetting::Ptr& vpnSetting, const QStringList& keys)
 {
-    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
+    const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 
     foreach (const QString& key, keys) {
@@ -1089,11 +1087,11 @@ QString UiUtils::vpnDetails(const VpnConnection::Ptr& vpnConnection, const VpnSe
 
 QString UiUtils::wimaxDetails(const NetworkManager::WimaxDevice::Ptr& wimaxDevice, const WimaxNsp::Ptr& wimaxNsp, const NetworkManager::Connection::Ptr& connection, const QStringList& keys)
 {
-    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
+    const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 
-    bool connected = wimaxDevice && connection && wimaxDevice->activeConnection() &&
-                     wimaxDevice->activeConnection()->connection() == connection && wimaxDevice->activeConnection()->state() == ActiveConnection::Activated;
+    const bool connected = wimaxDevice && connection && wimaxDevice->activeConnection() &&
+                           wimaxDevice->activeConnection()->connection() == connection && wimaxDevice->activeConnection()->state() == ActiveConnection::Activated;
 
     foreach (const QString& key, keys) {
         if (key == "wimax:bsid") {
@@ -1120,7 +1118,7 @@ QString UiUtils::wimaxDetails(const NetworkManager::WimaxDevice::Ptr& wimaxDevic
 
 QString UiUtils::wiredDetails(const WiredDevice::Ptr& wiredDevice, const NetworkManager::Connection::Ptr& connection, const QStringList& keys)
 {
-    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
+    const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 
     bool connected = wiredDevice && connection && wiredDevice->activeConnection() &&
@@ -1143,7 +1141,7 @@ QString UiUtils::wiredDetails(const WiredDevice::Ptr& wiredDevice, const Network
 
 QString UiUtils::wirelessDetails(const WirelessDevice::Ptr& wirelessDevice, const WirelessNetwork::Ptr& network, const NetworkManager::Connection::Ptr& connection, const QStringList& keys)
 {
-    QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
+    const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
 
     bool connected = wirelessDevice && connection && wirelessDevice->activeConnection() &&
@@ -1207,4 +1205,3 @@ QString UiUtils::wirelessDetails(const WirelessDevice::Ptr& wirelessDevice, cons
 
     return details;
 }
-

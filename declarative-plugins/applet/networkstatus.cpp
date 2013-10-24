@@ -29,18 +29,8 @@
 
 #include <KLocalizedString>
 
-
-
-NetworkStatus::NetworkStatus(QObject* parent):
-    QObject(parent)
-{
-}
-
-NetworkStatus::~NetworkStatus()
-{
-}
-
-void NetworkStatus::init()
+NetworkStatus::NetworkStatus(QObject* parent)
+    : QObject(parent)
 {
     connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
             SLOT(statusChanged(NetworkManager::Status)));
@@ -51,6 +41,20 @@ void NetworkStatus::init()
     statusChanged(NetworkManager::status());
 }
 
+NetworkStatus::~NetworkStatus()
+{
+}
+
+QString NetworkStatus::activeConnections() const
+{
+    return m_activeConnections;
+}
+
+QString NetworkStatus::networkStatus() const
+{
+    return m_networkStatus;
+}
+
 void NetworkStatus::activeConnectionsChanged()
 {
     foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
@@ -59,10 +63,10 @@ void NetworkStatus::activeConnectionsChanged()
         connect(active.data(), SIGNAL(default6Changed(bool)),
                 SLOT(defaultChanged()), Qt::UniqueConnection);
         connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-                SLOT(changeTooltip()));
+                SLOT(changeActiveConnections()));
     }
 
-    changeTooltip();
+    changeActiveConnections();
 }
 
 void NetworkStatus::defaultChanged()
@@ -72,55 +76,40 @@ void NetworkStatus::defaultChanged()
 
 void NetworkStatus::statusChanged(NetworkManager::Status status)
 {
-    QString statusMsg;
-    bool connected = false;
-    bool inProgress = false;
-
     if (status == NetworkManager::Connected ||
         status == NetworkManager::ConnectedLinkLocal ||
         status == NetworkManager::ConnectedSiteOnly) {
 
-        statusMsg = i18n("Connected");
-        connected = true;
-        inProgress = false;
-        changeTooltip();
+        m_networkStatus = i18n("Connected");
+        changeActiveConnections();
     } else {
         switch (status) {
             case NetworkManager::Asleep:
-                statusMsg = i18n("Inactive");
-                connected = false;
-                inProgress = false;
+                m_networkStatus = i18n("Inactive");
                 break;
             case NetworkManager::Disconnected:
-                statusMsg = i18n("Disconnected");
-                connected = false;
-                inProgress = false;
+                m_networkStatus = i18n("Disconnected");
                 break;
             case NetworkManager::Disconnecting:
-                statusMsg = i18n("Disconnecting");
-                connected = true;
-                inProgress = true;
+                m_networkStatus = i18n("Disconnecting");
                 break;
             case NetworkManager::Connecting:
-                statusMsg = i18n("Connecting");
-                connected = false;
-                inProgress = true;
+                m_networkStatus = i18n("Connecting");
                 break;
             default:
-                statusMsg = checkUnknownReason();
-                connected = false;
-                inProgress = false;
+                m_networkStatus = checkUnknownReason();
                 break;
         }
 
-        Q_EMIT setTooltip(statusMsg);
+        m_activeConnections = m_networkStatus;
+        Q_EMIT activeConnectionsChanged(m_activeConnections);
     }
 
-    NMAppletDebug() << "Emit signal setNetworkStatus(" << statusMsg << ", " << connected << ", " << inProgress << ")";
-    Q_EMIT setGlobalStatus(statusMsg, connected, inProgress);
+    NMAppletDebug() << "Emit signal networkStatusChanged(" << m_networkStatus << ")";
+    Q_EMIT networkStatusChanged(m_networkStatus);
 }
 
-void NetworkStatus::changeTooltip()
+void NetworkStatus::changeActiveConnections()
 {
     if (NetworkManager::status() != NetworkManager::Connected &&
         NetworkManager::status() != NetworkManager::ConnectedLinkLocal &&
@@ -128,7 +117,7 @@ void NetworkStatus::changeTooltip()
         return;
     }
 
-    QString tooltip = "<qt>";
+    QString activeConnections = "<qt>";
     const QString format = "<b>%1 - %2</b><br>%3<br><br>";
     const QString formatDefault = "<b>%1 - %2</b><br><b>%3</b><br><br>";
 
@@ -156,19 +145,20 @@ void NetworkStatus::changeTooltip()
                     status = i18n("Connecting to %1", active->connection()->name());
                 }
                 if (active->default4() || active->default6()) {
-                    tooltip += QString(formatDefault).arg(devName, conType, status);
+                    activeConnections += QString(formatDefault).arg(devName, conType, status);
                 } else {
-                    tooltip += QString(format).arg(devName, conType, status);
+                    activeConnections += QString(format).arg(devName, conType, status);
                 }
             }
         }
     }
 
-    tooltip += "</qt>";
+    activeConnections += "</qt>";
     // Remove the last two new lines
-    tooltip.replace("<br><br></qt>", "</qt>");
+    activeConnections.replace("<br><br></qt>", "</qt>");
 
-    Q_EMIT setTooltip(tooltip);
+    m_activeConnections = activeConnections;
+    Q_EMIT activeConnectionsChanged(activeConnections);
 }
 
 QString NetworkStatus::checkUnknownReason() const

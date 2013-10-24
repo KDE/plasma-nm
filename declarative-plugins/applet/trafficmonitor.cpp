@@ -34,10 +34,10 @@
 #include "globalconfig.h"
 #include "debug.h"
 
-TrafficMonitor::TrafficMonitor(QGraphicsItem* parent):
-    QGraphicsWidget(parent, 0),
-    m_device(0),
-    m_updateEnabled(false)
+TrafficMonitor::TrafficMonitor(QGraphicsItem* parent)
+    : QGraphicsWidget(parent, 0)
+    , m_device(0)
+    , m_updateEnabled(false)
 {
     QGraphicsLinearLayout * layout = new QGraphicsLinearLayout(this);
     layout->setOrientation(Qt::Vertical);

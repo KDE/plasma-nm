@@ -49,13 +49,13 @@
 
 #include "debug.h"
 
-ModelItem::ModelItem(const QString& device, QObject * parent):
-    QObject(parent),
-    m_signal(0),
-    m_sectionType(ModelItem::Unknown),
-    m_connectionState(NetworkManager::ActiveConnection::Unknown),
-    m_type(NetworkManager::ConnectionSettings::Unknown),
-    m_securityType(NetworkManager::Utils::None)
+ModelItem::ModelItem(const QString& device, QObject * parent)
+    : QObject(parent)
+    , m_signal(0)
+    , m_sectionType(ModelItem::Unknown)
+    , m_connectionState(NetworkManager::ActiveConnection::Unknown)
+    , m_type(NetworkManager::ConnectionSettings::Unknown)
+    , m_securityType(NetworkManager::Utils::None)
 {
     if (!device.isEmpty()) {
         setDevice(device);

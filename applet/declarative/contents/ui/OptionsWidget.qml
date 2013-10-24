@@ -25,39 +25,11 @@ import org.kde.networkmanagement 0.1 as PlasmaNM
 Item {
     id: optionsWidget;
 
-     PlasmaNM.EnabledConnections {
-        id: enabledConnections;
-
-        onNetworkingEnabled: {
-            networkingEnabled.checked = enabled;
-        }
-
-        onWirelessEnabled: {
-            wirelessEnabled.checked = enabled;
-        }
-
-        onWirelessHwEnabled: {
-            wirelessEnabled.enabled = enabled;
-        }
-
-        onWimaxEnabled: {
-            wimaxEnabled.checked = enabled;
-        }
-
-        onWimaxHwEnabled: {
-            wimaxEnabled.enabled = enabled;
-        }
-
-        onWwanEnabled: {
-            wwanEnabled.checked = enabled;
-        }
-
-        onWwanHwEnabled: {
-            wwanEnabled.enabled = enabled;
-        }
-    }
-
     signal openEditor();
+
+    PlasmaNM.EnabledConnections {
+        id: enabledConnections;
+    }
 
     PlasmaNM.AvailableDevices {
         id: availableDevices;
@@ -84,6 +56,7 @@ Item {
                 right: parent.right;
             }
             text: i18n("Networking enabled");
+            checked: enabledConnections.networkingEnabled;
 
             onClicked: {
                 handler.enableNetworking(checked);
@@ -93,13 +66,15 @@ Item {
         PlasmaComponents.CheckBox {
             id: wirelessEnabled;
 
-            height: availableDevices.wirelessAvailable ? networkingEnabled.height : 0;
+            height: availableDevices.wirelessDeviceAvailable ? networkingEnabled.height : 0;
             anchors {
                 left: parent.left;
                 right: parent.right;
             }
-            visible: availableDevices.wirelessAvailable;
             text: i18n("Wireless enabled");
+            visible: availableDevices.wirelessDeviceAvailable;
+            checked: enabledConnections.wirelessEnabled;
+            enabled: enabledConnections.wirelessHwEnabled;
 
             onClicked: {
                 handler.enableWireless(checked);
@@ -109,13 +84,15 @@ Item {
         PlasmaComponents.CheckBox {
             id: wimaxEnabled;
 
-            height: availableDevices.wimaxAvailable ? networkingEnabled.height : 0;
+            height: availableDevices.wimaxDeviceAvailable ? networkingEnabled.height : 0;
             anchors {
                 left: parent.left;
                 right: parent.right;
             }
-            visible: availableDevices.wimaxAvailable;
             text: i18n("Wimax enabled");
+            visible: availableDevices.wimaxDeviceAvailable;
+            checked: enabledConnections.wimaxEnabled;
+            enabled: enabledConnections.wimaxHwEnabled;
 
             onClicked: {
                 handler.enableWimax(checked);
@@ -125,13 +102,15 @@ Item {
         PlasmaComponents.CheckBox {
             id: wwanEnabled;
 
-            height: availableDevices.wwanAvailable ? networkingEnabled.height : 0;
+            height: availableDevices.modemDeviceAvailable ? networkingEnabled.height : 0;
             anchors {
                 left: parent.left;
                 right: parent.right;
             }
-            visible: availableDevices.wwanAvailable;
             text: i18n("Mobile broadband enabled");
+            visible: availableDevices.modemDeviceAvailable;
+            checked: enabledConnections.wwanEnabled;
+            enabled: enabledConnections.wwanHwEnabled;
 
             onClicked: {
                 handler.enableWwan(checked);
@@ -149,10 +128,5 @@ Item {
                 handler.openEditor();
             }
         }
-    }
-
-    Component.onCompleted: {
-        availableDevices.init();
-        enabledConnections.init();
     }
 }

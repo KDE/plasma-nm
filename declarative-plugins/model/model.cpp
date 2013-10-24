@@ -27,9 +27,9 @@
 
 #include "debug.h"
 
-Model::Model(QObject* parent):
-    QAbstractListModel(parent),
-    m_monitor(new Monitor(this))
+Model::Model(QObject* parent)
+    : QAbstractListModel(parent)
+    , m_monitor(new Monitor(this))
 {
     QHash<int, QByteArray> roles = roleNames();
     roles[ConnectionStateRole] = "itemConnectionState";

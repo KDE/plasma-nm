@@ -21,7 +21,8 @@
 #include "modelitems.h"
 #include "modelitem.h"
 
-ModelItems::ModelItems(QObject* parent): QObject(parent)
+ModelItems::ModelItems(QObject* parent)
+    : QObject(parent)
 {
 }
 

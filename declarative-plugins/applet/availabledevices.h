@@ -27,35 +27,56 @@
 
 class AvailableDevices : public QObject
 {
-Q_PROPERTY(bool wirelessAvailable READ isWirelessAvailable NOTIFY wirelessAvailableChanged)
-Q_PROPERTY(bool wimaxAvailable READ isWimaxAvailable NOTIFY wimaxAvailableChanged)
-Q_PROPERTY(bool wwanAvailable READ isWwanAvailable NOTIFY wwanAvailableChanged)
+/**
+ * Return true when there is present wired device
+ */
+Q_PROPERTY(bool wiredDeviceAvailable READ isWiredDeviceAvailable NOTIFY wiredDeviceAvailableChanged)
+/**
+ * Return true when there is present wireless device
+ */
+Q_PROPERTY(bool wirelessDeviceAvailable READ isWirelessDeviceAvailable NOTIFY wirelessDeviceAvailableChanged)
+/**
+ * Return true when there is present wimax device
+ */
+Q_PROPERTY(bool wimaxDeviceAvailable READ isWimaxDeviceAvailable NOTIFY wimaxDeviceAvailableChanged)
+/**
+ * Return true when there is present modem device
+ */
+Q_PROPERTY(bool modemDeviceAvailable READ isModemDeviceAvailable NOTIFY modemDeviceAvailableChanged)
+/**
+ * Return true when there is present bluetooth device
+ * Bluetooth device is visible for NetworkManager only when there is some Bluetooth connection
+ */
+Q_PROPERTY(bool bluetoothDeviceAvailable READ isBluetoothDeviceAvailable NOTIFY bluetoothDeviceAvailableChanged)
 Q_OBJECT
 public:
     explicit AvailableDevices(QObject* parent = 0);
     virtual ~AvailableDevices();
 
 public Q_SLOTS:
-    void init();
-
-    bool isWirelessAvailable() const;
-    bool isWimaxAvailable() const;
-    bool isWwanAvailable() const;
+    bool isWiredDeviceAvailable() const;
+    bool isWirelessDeviceAvailable() const;
+    bool isWimaxDeviceAvailable() const;
+    bool isModemDeviceAvailable() const;
+    bool isBluetoothDeviceAvailable() const;
 
 private Q_SLOTS:
     void deviceAdded(const QString& dev);
     void deviceRemoved();
 
 Q_SIGNALS:
-    void wirelessAvailableChanged(bool available);
-    void wimaxAvailableChanged(bool available);
-    void wwanAvailableChanged(bool available);
+    void wiredDeviceAvailableChanged(bool available);
+    void wirelessDeviceAvailableChanged(bool available);
+    void wimaxDeviceAvailableChanged(bool available);
+    void modemDeviceAvailableChanged(bool available);
+    void bluetoothDeviceAvailableChanged(bool available);
 
 private:
-    bool m_wirelessAvailable;
-    bool m_wimaxAvailable;
-    bool m_wwanAvailable;
-
+    bool m_wiredDeviceAvailable;
+    bool m_wirelessDeviceAvailable;
+    bool m_wimaxDeviceAvailable;
+    bool m_modemDeviceAvailable;
+    bool m_bluetoothDeviceAvailable;
 };
 
 #endif // PLASMA_NM_AVAILABLE_DEVICES_H

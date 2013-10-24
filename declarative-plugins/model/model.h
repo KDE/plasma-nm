@@ -37,8 +37,70 @@ class Model : public QAbstractListModel
 {
 Q_OBJECT
 public:
-    enum ItemRole {ConnectionStateRole = Qt::UserRole + 1, ConnectionPathRole, ConnectionIconRole, ConnectionDetailsRole,
-                   DeviceNameRole, DevicePathRole, NameRole, SecurityTypeRole, SectionRole, SignalRole, SsidRole, SpecificPathRole, UuidRole, UniRole, TypeRole};
+    enum ItemRole {
+        /**
+         * Connection state, one of Unknown, Active, Activating, Deactivating, Deactivated
+         */
+        ConnectionStateRole = Qt::UserRole + 1,
+        /**
+         * D-bus path of the connection associated with this item
+         */
+        ConnectionPathRole,
+        /**
+         * SVG icon of the item from plasma-nm icon set, except icons for VPN, Adsl, Pppoe (for these we don't have SVG icons)
+         */
+        ConnectionIconRole,
+        /**
+         * Formated info about the connection, i.e IPv4 addresses, SSID etc.
+         */
+        ConnectionDetailsRole,
+        /**
+         * Device name of the device associated with this item
+         */
+        DeviceNameRole,
+        /**
+         * D-bus path of the device associated with this item
+         */
+        DevicePathRole,
+        /**
+         * Item name, it uses the name of associated connection or the name of associated AP (when there is no connection)
+         */
+        NameRole,
+        /**
+         * Item security, one of None, StaticWep, DynamicWep, Leap, WpaPsk, WpaEap, Wpa2Psk, Wpa2Eap
+         */
+        SecurityTypeRole,
+        /**
+         * Item section name, one of Active connections (the item is activated), Previous connections (there is some associated connection)
+         * or Uknown connections (for available accesspoints without associated connections)
+         */
+        SectionRole,
+        /**
+         * Item signal strength, used only for wireless and gsm/cdma connections
+         */
+        SignalRole,
+        /**
+         * Item ssid, used only for wireless connections
+         */
+        SsidRole,
+        /**
+         * Used only for wireless (D-bus path of the associated AP) and wimax connections (D-bus path of the associated NSP)
+         */
+        SpecificPathRole,
+        /**
+         * Item uuid, valid only for items with associated connection
+         */
+        UuidRole,
+        /**
+         * Item unique identifier
+         * For wireless connections is "ssid%devicePath", for the rest is "connectionName%devicePath"
+         */
+        UniRole,
+        /**
+         * Connection type of the item
+         */
+        TypeRole
+    };
 
     explicit Model(QObject* parent = 0);
     virtual ~Model();

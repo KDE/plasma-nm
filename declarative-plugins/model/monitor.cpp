@@ -31,8 +31,8 @@
 
 #include "debug.h"
 
-Monitor::Monitor(QObject* parent):
-    QObject(parent)
+Monitor::Monitor(QObject* parent)
+    : QObject(parent)
 {
 }
 

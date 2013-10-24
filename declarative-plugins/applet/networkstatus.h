@@ -28,24 +28,36 @@
 
 class NetworkStatus : public QObject
 {
+/**
+ * Returns a formated list of active connections or NM status when there is no active connection
+ */
+Q_PROPERTY(QString activeConnections READ activeConnections NOTIFY activeConnectionsChanged)
+/**
+ * Returns the current status of NetworkManager
+ */
+Q_PROPERTY(QString networkStatus READ networkStatus NOTIFY networkStatusChanged)
 Q_OBJECT
 public:
     explicit NetworkStatus(QObject* parent = 0);
     virtual ~NetworkStatus();
 
-public Q_SLOTS:
-    void init();
+    QString activeConnections() const;
+    QString networkStatus() const;
 
 private Q_SLOTS:
     void activeConnectionsChanged();
     void defaultChanged();
     void statusChanged(NetworkManager::Status status);
-    void changeTooltip();
+    void changeActiveConnections();
+
 Q_SIGNALS:
-    void setGlobalStatus(const QString & status, bool connected, bool inProgress);
-    void setTooltip(const QString & text);
+    void activeConnectionsChanged(const QString & activeConnections);
+    void networkStatusChanged(const QString & status);
 
 private:
+    QString m_activeConnections;
+    QString m_networkStatus;
+
     QString checkUnknownReason() const;
 };
 

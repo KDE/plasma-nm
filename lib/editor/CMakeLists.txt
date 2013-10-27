@@ -59,11 +59,11 @@ target_link_libraries(plasmanetworkmanagement-editor
     ${QT_QTWIDGETS_LIBRARY}
     ${QT_QTXML_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}
+    Qt5::DBus
     ${NETWORKMANAGERQT_LDFLAGS}
     ${MODEMMANAGERQT_LDFLAGS}
     KF5::KService
     KF5::KI18n
-    KF5::KDE4Attic
     KF5::KIOWidgets
     ${KDE4Support_LIBRARIES}
     plasmanetworkmanagement-internal

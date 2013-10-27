@@ -27,6 +27,14 @@ import org.kde.networkmanagement 0.1 as PlasmaNM
 Item {
     id: panelIconWidget;
 
+    PlasmaNM.NetworkStatus {
+        id: networkStatus;
+    }
+
+    PlasmaNM.ConnectionIcon {
+        id: connectionIconProvider;
+    }
+
     PlasmaCore.Svg {
         id: svgIcons;
 
@@ -39,14 +47,7 @@ Item {
 
         anchors.fill: parent;
         svg: svgIcons;
-        elementId: "network-wired";
-    }
-
-    QIconItem {
-        id: staticIcon;
-
-        anchors.fill: parent;
-        visible: false;
+        elementId: connectionIconProvider.connectionSvgIcon;
     }
 
     QIconItem {
@@ -58,23 +59,15 @@ Item {
             bottom: parent.bottom;
             right: parent.right;
         }
-        visible: false;
+        icon: connectionIconProvider.connectionIndicatorIcon;
     }
 
     PlasmaComponents.BusyIndicator {
         id: connectingIndicator;
 
         anchors.fill: parent;
-        running: false;
+        running: connectionIconProvider.connecting;
         visible: running;
-    }
-
-    PlasmaNM.NetworkStatus {
-        id: networkStatus;
-
-        onSetTooltip: {
-            tooltip.subText = text;
-        }
     }
 
     MouseArea {
@@ -87,43 +80,8 @@ Item {
         PlasmaCore.ToolTip {
             id: tooltip;
             target: mouseAreaPopup;
-            image: connectionIcon.elementId;
+            image: connectionIconProvider.connectionPixmapIcon;
+            subText: networkStatus.activeConnections;
         }
-    }
-
-    PlasmaNM.ConnectionIcon {
-        id: connectionIconProvider;
-
-        onHideConnectingIndicator: {
-            connectingIndicator.running = false;
-        }
-
-        onShowConnectingIndicator: {
-            connectingIndicator.running = true;
-        }
-
-        onSetConnectionIcon: {
-            connectionIcon.elementId = icon;
-            connectionIcon.visible = true;
-            staticIcon.visible = false;
-        }
-
-        onSetHoverIcon: {
-            hoverIcon.visible = true;
-            hoverIcon.icon = QIcon(icon);
-        }
-
-        onUnsetHoverIcon: {
-            hoverIcon.visible = false;
-        }
-
-        onSetTooltipIcon: {
-            tooltip.image = icon;
-        }
-    }
-
-    Component.onCompleted: {
-        networkStatus.init();
-        connectionIconProvider.init();
     }
 }

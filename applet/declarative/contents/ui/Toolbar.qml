@@ -32,18 +32,6 @@ Item {
 
     PlasmaNM.NetworkStatus {
         id: networkStatus;
-
-        onSetGlobalStatus: {
-            statusLabel.text = status;
-            progressIndicator.running = inProgress;
-            if (connected) {
-                statusIcon.source = "user-online";
-                statusIcon.enabled = true;
-            } else {
-                statusIcon.source = "user-offline";
-                statusIcon.enabled = false;
-            }
-        }
     }
 
     Item {
@@ -66,14 +54,7 @@ Item {
                 verticalCenter: parent.verticalCenter;
                 leftMargin: padding.margins.left;
             }
-
-            PlasmaComponents.BusyIndicator {
-                id: progressIndicator;
-
-                anchors.fill: parent;
-                running: false;
-                visible: running;
-            }
+            source: (networkStatus.networkStatus == i18n("Connected") || networkStatus.networkStatus == "Connected") ? "user-online" : "user-offline";
         }
 
         PlasmaComponents.Label {
@@ -87,6 +68,7 @@ Item {
                 leftMargin: padding.margins.left;
             }
             elide: Text.ElideRight;
+            text: networkStatus.networkStatus;
         }
 
         PlasmaCore.IconItem {
@@ -160,8 +142,6 @@ Item {
     }
 
     Component.onCompleted: {
-        networkStatus.init();
-
         if (plasmoid.readConfig("optionsExpanded") == "expanded") {
             expanded = true;
         }

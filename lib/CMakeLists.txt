@@ -30,7 +30,6 @@ target_link_libraries(plasmanetworkmanagement-internal
     KF5::KCompletion
     KF5::KI18n
     KF5::KIconThemes
-    KF5::KDE4Attic
     ${KDE4Support_LIBRARIES}
     ${QT_QTXML_LIBRARY}
     ${QT_QTNETWORK_LIBRARY}

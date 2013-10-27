@@ -21,6 +21,7 @@
 import QtQuick 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.networkmanagement 0.1 as PlasmaNM
 
 Item {
@@ -77,16 +78,7 @@ Item {
         anchors.fill: parent
     }
 
-    ListView {
-        id: connectionView;
-
-        property bool expandedItem: false;
-        property string previouslyExpandedItem: "";
-
-        property bool activeExpanded: true;
-        property bool previousExpanded: true;
-        property bool unknownExpanded: true;
-
+    PlasmaExtras.ScrollArea {
         anchors {
             left: parent.left;
             right: parent.right;
@@ -95,50 +87,64 @@ Item {
             topMargin: padding.margins.top;
             bottomMargin: padding.margins.bottom
         }
-        clip: true
-        model: connectionSortModel;
-        currentIndex: -1;
-        interactive: true;
-        boundsBehavior: Flickable.StopAtBounds;
-        section.property: "itemSection";
-        section.delegate: SectionHeader {
-            onHideSection: {
-                if (section == i18n("Active connections")) {
-                    connectionView.activeExpanded = false;
-                } else if (section == i18n("Previous connections")) {
-                    connectionView.previousExpanded = false;
-                } else {
-                    connectionView.unknownExpanded = false;
+
+        ListView {
+            id: connectionView;
+
+            property bool expandedItem: false;
+            property string previouslyExpandedItem: "";
+
+            property bool activeExpanded: true;
+            property bool previousExpanded: true;
+            property bool unknownExpanded: true;
+
+            anchors.fill: parent;
+
+            clip: true
+            model: connectionSortModel;
+            currentIndex: -1;
+            interactive: true;
+            boundsBehavior: Flickable.StopAtBounds;
+            section.property: "itemSection";
+            section.delegate: SectionHeader {
+                onHideSection: {
+                    if (section == i18n("Active connections")) {
+                        connectionView.activeExpanded = false;
+                    } else if (section == i18n("Previous connections")) {
+                        connectionView.previousExpanded = false;
+                    } else {
+                        connectionView.unknownExpanded = false;
+                    }
+                }
+
+                onShowSection: {
+                    if (section == i18n("Active connections")) {
+                        connectionView.activeExpanded = true;
+                    } else if (section == i18n("Previous connections")) {
+                        connectionView.previousExpanded = true;
+                    } else {
+                        connectionView.unknownExpanded = true;
+                    }
                 }
             }
 
-            onShowSection: {
-                if (section == i18n("Active connections")) {
-                    connectionView.activeExpanded = true;
-                } else if (section == i18n("Previous connections")) {
-                    connectionView.previousExpanded = true;
-                } else {
-                    connectionView.unknownExpanded = true;
+            delegate: ConnectionItem {
+                expanded: connectionView.expandedItem && connectionView.previouslyExpandedItem == itemUni;
+                onItemExpanded: {
+                    if (itemExpanded) {
+                        connectionView.expandedItem = true;
+                        connectionView.previouslyExpandedItem = itemUni;;
+                        connectionView.currentIndex = index;
+                    } else {
+                        connectionView.expandedItem = false;
+                        connectionView.previouslyExpandedItem = "";
+                    }
                 }
-            }
-        }
 
-        delegate: ConnectionItem {
-            expanded: connectionView.expandedItem && connectionView.previouslyExpandedItem == itemUni;
-            onItemExpanded: {
-                if (itemExpanded) {
-                    connectionView.expandedItem = true;
-                    connectionView.previouslyExpandedItem = itemUni;;
-                    connectionView.currentIndex = index;
-                } else {
-                    connectionView.expandedItem = false;
-                    connectionView.previouslyExpandedItem = "";
-                }
-            }
-
-            ListView.onRemove: {
-                if (ListView.isCurrentItem) {
-                    connectionView.previouslyExpandedItem = "";
+                ListView.onRemove: {
+                    if (ListView.isCurrentItem) {
+                        connectionView.previouslyExpandedItem = "";
+                    }
                 }
             }
         }

@@ -30,7 +30,6 @@ target_link_libraries(kcm_network
     KF5::KI18n
     KF5::KIconThemes
     KF5::KService
-    KF5::KDE4Attic
     KF5::KWidgetsAddons
 
     ${KDE4_KIO_LIBS}

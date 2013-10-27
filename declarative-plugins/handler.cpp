@@ -41,8 +41,8 @@
 #include <KProcess>
 #include <KWindowSystem>
 
-Handler::Handler(QObject* parent):
-    QObject(parent)
+Handler::Handler(QObject* parent)
+    : QObject(parent)
 {
 }
 

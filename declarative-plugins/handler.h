@@ -32,15 +32,47 @@ public:
     virtual ~Handler();
 
 public Q_SLOTS:
+    /**
+     * Activates given connection
+     * @connection - d-bus path of the connection you want to activate
+     * @device - d-bus path of the device where the connection should be activated
+     * @specificParameter - d-bus path of the specific object you want to use for this activation, i.e access point
+     */
     void activateConnection(const QString & connection, const QString & device, const QString & specificParameter);
+    /**
+     * Adds and activates a new wireless connection
+     * @device - d-bus path of the wireless device where the connection should be activated
+     * @specificParameter - d-bus path of the accesspoint you want to connect to
+     * @password - pre-filled password which should be used for the new wireless connection
+     * @autoConnect - boolean value whether this connection should be activated automatically when it's available
+     *
+     * Works automatically for wireless connections with WEP/WPA security, for wireless connections with WPA/WPA
+     * it will open the connection editor for advanced configuration.
+     * */
     void addAndActivateConnection(const QString & device, const QString & specificParameter, const QString & password = QString(), bool autoConnect = false);
+    /**
+     * Deactivates given connection
+     * @connection - d-bus path of the connection you want to deactivate
+     * @device - d-bus path of the connection where the connection is activated
+     */
     void deactivateConnection(const QString & connection, const QString & device);
+    /**
+     * Disconnects all connections
+     */
     void disconnectAll();
     void enableNetworking(bool enable);
     void enableWireless(bool enable);
     void enableWimax(bool enable);
     void enableWwan(bool enable);
+    /**
+     * Opens connection editor for given connection
+     * @uuid - uuid of the connection you want to edit
+     */
     void editConnection(const QString & uuid);
+    /**
+     * Removes given connection
+     * @connection - d-bus path of the connection you want to edit
+     */
     void removeConnection(const QString & connection);
     void openEditor();
 

@@ -75,8 +75,8 @@ SortModel::SortedConnectionType SortModel::connectionTypeToSortedType(NetworkMan
     }
 }
 
-SortModel::SortModel(QObject* parent):
-    QSortFilterProxyModel(parent)
+SortModel::SortModel(QObject* parent)
+    : QSortFilterProxyModel(parent)
 {
     setDynamicSortFilter(true);
     sort(0, Qt::DescendingOrder);

@@ -47,7 +47,7 @@ find_package(KF5 MODULE REQUIRED COMPONENTS CMake Compiler InstallDirs
     KIdleTime ItemModels KWidgetsAddons KWindowSystem KCodecs KArchive KCoreAddons Solid ThreadWeaver
     KConfig KAuth KJS KWallet KDBusAddons Sonnet
     KI18n KGuiAddons KService KConfigWidgets ItemViews KNotifications KIconThemes KStyle KCompletion KJobWidgets KTextWidgets XmlGui KCrash
-    KBookmarks KUnitConversion KDE4Attic KCMUtils Kross)
+    KBookmarks KUnitConversion KCMUtils Kross)
 
 find_package(Plasma REQUIRED NO_MODULE)
 find_package(KDeclarative REQUIRED NO_MODULE)
@@ -89,9 +89,8 @@ if (NOT NETWORKMANAGERQT_FOUND)
     message(FATAL_ERROR "ERROR: NetworkManagerQt not found. http://projects.kde.org/libnm-qt")
 endif (NOT NETWORKMANAGERQT_FOUND)
 
-set(KDE_NETWORK_VERSION "0.9.3.1")
-set(PLASMA_NM_VERSION "0.9.3.1")
-
+set(KDE_NETWORK_VERSION "0.9.3.2")
+set(PLASMA_NM_VERSION "0.9.3.2")
 
 configure_file(config.h.cmake
                ${CMAKE_CURRENT_BINARY_DIR}/config.h )
@@ -144,3 +143,6 @@ add_subdirectory(vpn)
 add_subdirectory(kded)
 add_subdirectory(kcm)
 add_subdirectory(settings)
+
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+

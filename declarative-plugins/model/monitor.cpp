@@ -31,8 +31,8 @@
 
 #include "debug.h"
 
-Monitor::Monitor(QObject* parent):
-    QObject(parent)
+Monitor::Monitor(QObject* parent)
+    : QObject(parent)
 {
 }
 
@@ -108,7 +108,7 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
         connect(wiredDev.data(), SIGNAL(carrierChanged(bool)),
                 SLOT(cablePlugged(bool)), Qt::UniqueConnection);
 
-    }  else if (device->type() == NetworkManager::Device::Wimax) {
+    } else if (device->type() == NetworkManager::Device::Wimax) {
         NMMonitorDebug() << "Available wimax device " << device->interfaceName();
         NetworkManager::WimaxDevice::Ptr wimaxDev = device.objectCast<NetworkManager::WimaxDevice>();
 

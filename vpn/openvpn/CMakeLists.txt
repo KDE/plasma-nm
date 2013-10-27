@@ -18,6 +18,7 @@ kde4_add_plugin(plasmanetworkmanagement_openvpnui ${openvpn_SRCS})
 target_link_libraries(plasmanetworkmanagement_openvpnui
     plasmanetworkmanagement-internal
     ${NETWORKMANAGERQT_LDFLAGS}
+    Qt5::DBus
     KF5::KIOCore
     KF5::KIOWidgets
 )

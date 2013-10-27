@@ -220,6 +220,7 @@ void BluetoothMonitor::init()
 
     mDunDevice = reply.value();
 }
+
 #if WITH_MODEMMANAGER_SUPPORT
 void BluetoothMonitor::modemAdded(const QString &udi)
 {

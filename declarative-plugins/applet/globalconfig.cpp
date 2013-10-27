@@ -35,15 +35,15 @@ GlobalConfig* GlobalConfig::instance()
 }
 
 // This is called from instance()
-GlobalConfig::GlobalConfig(void *dummy):
-    QObject()
+GlobalConfig::GlobalConfig(void *dummy)
+    : QObject()
 {
     Q_UNUSED(dummy);
 }
 
 // This one is called when instantiated in QML
-GlobalConfig::GlobalConfig():
-    QObject()
+GlobalConfig::GlobalConfig()
+    : QObject()
 {
     GlobalConfig *singleton = instance();
 

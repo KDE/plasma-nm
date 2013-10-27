@@ -14,7 +14,6 @@ target_link_libraries(plasmanetworkmanagement_strongswanui
     Qt5::Widgets
     KF5::KService
     KF5::KI18n
-    #KF5::KDE4Attic
     KF5::KIOWidgets
     ${KDE4Support_LIBRARIES}
     ${NETWORKMANAGERQT_LDFLAGS}

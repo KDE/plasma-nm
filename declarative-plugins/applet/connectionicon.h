@@ -36,17 +36,40 @@
 
 class ConnectionIcon : public QObject
 {
+/**
+ * Returns true when NetworkManager is trying to activate some connection
+ */
+Q_PROPERTY(bool connecting READ connecting NOTIFY connectingChanged)
+/**
+ * Returns an elementId of SVG icon in plasma-nm icon set for the main active connection
+ */
+Q_PROPERTY(QString connectionSvgIcon READ connectionSvgIcon NOTIFY connectionSvgIconChanged)
+/**
+ * Returns a pixmap icon name from Oxygen icon set for the main active connection
+ */
+Q_PROPERTY(QString connectionPixmapIcon READ connectionPixmapIcon NOTIFY connectionPixmapIconChanged)
+/**
+ * Returns a pixmap icon name from Oxygen icon set which should be used as an indicator of NM status
+ * Current indicators:
+ * 1) object-locked - indicates active VPN connection
+ * 2) dialog-cancel - indicates no active connection
+ * 3) dialog-error - indicates that NetworkManager is not active
+ */
+Q_PROPERTY(QString connectionIndicatorIcon READ connectionIndicatorIcon NOTIFY connectionIndicatorIconChanged)
 Q_OBJECT
 public:
     explicit ConnectionIcon(QObject* parent = 0);
     virtual ~ConnectionIcon();
 
-public Q_SLOTS:
-    void init();
+    bool connecting() const;
+    QString connectionSvgIcon() const;
+    QString connectionIndicatorIcon() const;
+    QString connectionPixmapIcon() const;
 
 private Q_SLOTS:
     void activeConnectionsChanged();
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
+    void activeConnectionDestroyed();
     void carrierChanged(bool carrier);
     void deviceAdded(const QString & device);
     void deviceRemoved(const QString & device);
@@ -58,16 +81,19 @@ private Q_SLOTS:
     void setIconForModem();
 #endif
 Q_SIGNALS:
-    void hideConnectingIndicator();
-    void showConnectingIndicator();
-    void setConnectionIcon(const QString & icon);
-    void setHoverIcon(const QString & icon);
-    void setTooltipIcon(const QString & icon);
-    void unsetHoverIcon();
+    void connectingChanged(bool connecting);
+    void connectionSvgIconChanged(const QString & icon);
+    void connectionIndicatorIconChanged(const QString & icon);
+    void connectionPixmapIconChanged(const QString & icon);
 
 private:
     uint m_signal;
     NetworkManager::WirelessNetwork::Ptr m_wirelessNetwork;
+
+    bool m_connecting;
+    QString m_connectionSvgIcon;
+    QString m_connectionIndicatorIcon;
+    QString m_connectionPixmapIcon;
 
     void setDisconnectedIcon();
     void setWirelessIcon(const NetworkManager::Device::Ptr & device, const QString & ssid);

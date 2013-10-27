@@ -25,44 +25,116 @@
 
 #include "debug.h"
 
-EnabledConnections::EnabledConnections(QObject* parent):
-    QObject(parent)
+EnabledConnections::EnabledConnections(QObject* parent)
+    : QObject(parent)
+    , m_networkingEnabled(NetworkManager::isNetworkingEnabled())
+    , m_wirelessEnabled(NetworkManager::isWirelessEnabled())
+    , m_wirelessHwEnabled(NetworkManager::isWirelessHardwareEnabled())
+    , m_wimaxEnabled(NetworkManager::isWimaxEnabled())
+    , m_wimaxHwEnabled(NetworkManager::isWimaxHardwareEnabled())
+    , m_wwanEnabled(NetworkManager::isWwanEnabled())
+    , m_wwanHwEnabled(NetworkManager::isWwanHardwareEnabled())
 {
+    connect(NetworkManager::notifier(), SIGNAL(networkingEnabledChanged(bool)),
+            SLOT(onNetworkingEnabled(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
+            SLOT(onWirelessEnabled(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(wirelessHardwareEnabledChanged(bool)),
+            SLOT(onWirelessHwEnabled(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(wimaxEnabledChanged(bool)),
+            SLOT(onWimaxEnabled(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(wimaxHardwareEnabledChanged(bool)),
+            SLOT(onWimaxHwEnabled(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(wwanEnabledChanged(bool)),
+            SLOT(onWwanEnabled(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(wwanHardwareEnabledChanged(bool)),
+            SLOT(onWwanHwEnabled(bool)));
 }
 
 EnabledConnections::~EnabledConnections()
 {
 }
 
-void EnabledConnections::init()
+bool EnabledConnections::isNetworkingEnabled() const
 {
-    connect(NetworkManager::notifier(), SIGNAL(networkingEnabledChanged(bool)),
-            SIGNAL(networkingEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
-            SIGNAL(wirelessEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wirelessHardwareEnabledChanged(bool)),
-            SIGNAL(wirelessHwEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wimaxEnabledChanged(bool)),
-            SIGNAL(wimaxEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wimaxHardwareEnabledChanged(bool)),
-            SIGNAL(wimaxHwEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wwanEnabledChanged(bool)),
-            SIGNAL(wwanEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wwanHardwareEnabledChanged(bool)),
-            SIGNAL(wwanHwEnabled(bool)));
+    return m_networkingEnabled;
+}
 
-    NMAppletDebug() << "Emit signal networkingEnabled(" << NetworkManager::isNetworkingEnabled() << ")";
-    Q_EMIT networkingEnabled(NetworkManager::isNetworkingEnabled());
-    NMAppletDebug() << "Emit signal wirelessEnabled(" << NetworkManager::isWirelessEnabled() << ")";
-    Q_EMIT wirelessEnabled(NetworkManager::isWirelessEnabled());
-    NMAppletDebug() << "Emit signal wirelessHwEnabled(" << NetworkManager::isWirelessHardwareEnabled() << ")";
-    Q_EMIT wirelessHwEnabled(NetworkManager::isWirelessHardwareEnabled());
-    NMAppletDebug() << "Emit signal wimaxEnabled(" << NetworkManager::isWimaxEnabled() << ")";
-    Q_EMIT wimaxEnabled(NetworkManager::isWimaxEnabled());
-    NMAppletDebug() << "Emit signal wimaxHwEnabled(" << NetworkManager::isWimaxHardwareEnabled() << ")";
-    Q_EMIT wimaxHwEnabled(NetworkManager::isWimaxHardwareEnabled());
-    NMAppletDebug() << "Emit signal wwanEnabled(" << NetworkManager::isWwanEnabled() << ")";
-    Q_EMIT wwanEnabled(NetworkManager::isWwanEnabled());
-    NMAppletDebug() << "Emit signal wwanHWEnabled(" << NetworkManager::isWwanHardwareEnabled() << ")";
-    Q_EMIT wwanHwEnabled(NetworkManager::isWwanHardwareEnabled());
+bool EnabledConnections::isWirelessEnabled() const
+{
+    return m_wirelessEnabled;
+}
+
+bool EnabledConnections::isWirelessHwEnabled() const
+{
+    return m_wirelessHwEnabled;
+}
+
+bool EnabledConnections::isWimaxEnabled() const
+{
+    return m_wimaxEnabled;
+}
+
+bool EnabledConnections::isWimaxHwEnabled() const
+{
+    return m_wimaxHwEnabled;
+}
+
+bool EnabledConnections::isWwanEnabled() const
+{
+    return m_wwanEnabled;
+}
+
+bool EnabledConnections::isWwanHwEnabled() const
+{
+    return m_wwanHwEnabled;
+}
+
+void EnabledConnections::onNetworkingEnabled(bool enabled)
+{
+    m_networkingEnabled = enabled;
+    NMAppletDebug() << "Emit signal networkingEnabled(" << enabled << ")";
+    Q_EMIT networkingEnabled(enabled);
+}
+
+void EnabledConnections::onWirelessEnabled(bool enabled)
+{
+    m_wirelessEnabled = enabled;
+    NMAppletDebug() << "Emit signal wirelessEnabled(" << enabled << ")";
+    Q_EMIT wirelessEnabled(enabled);
+}
+
+void EnabledConnections::onWirelessHwEnabled(bool enabled)
+{
+    m_wirelessHwEnabled = enabled;
+    NMAppletDebug() << "Emit signal wirelessHwEnabled(" << enabled << ")";
+    Q_EMIT wirelessHwEnabled(enabled);
+}
+
+void EnabledConnections::onWimaxEnabled(bool enabled)
+{
+    m_wimaxEnabled = true;
+    NMAppletDebug() << "Emit signal wimaxEnabled(" << enabled << ")";
+    Q_EMIT wimaxEnabled(enabled);
+}
+
+void EnabledConnections::onWimaxHwEnabled(bool enabled)
+{
+    m_wimaxHwEnabled = enabled;
+    NMAppletDebug() << "Emit signal wimaxHwEnabled(" << enabled << ")";
+    Q_EMIT wimaxHwEnabled(enabled);
+}
+
+void EnabledConnections::onWwanEnabled(bool enabled)
+{
+    m_wwanEnabled = true;
+    NMAppletDebug() << "Emit signal wwanEnabled(" << enabled << ")";
+    Q_EMIT wwanEnabled(enabled);
+}
+
+void EnabledConnections::onWwanHwEnabled(bool enabled)
+{
+    m_wwanHwEnabled = enabled;
+    NMAppletDebug() << "Emit signal wwanHWEnabled(" << enabled << ")";
+    Q_EMIT wwanHwEnabled(enabled);
 }

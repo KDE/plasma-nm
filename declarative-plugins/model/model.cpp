@@ -27,9 +27,9 @@
 
 #include "debug.h"
 
-Model::Model(QObject* parent):
-    QAbstractListModel(parent),
-    m_monitor(new Monitor(this))
+Model::Model(QObject* parent)
+    : QAbstractListModel(parent)
+    , m_monitor(new Monitor(this))
 {
     QHash<int, QByteArray> roles = roleNames();
     roles[ConnectionStateRole] = "itemConnectionState";
@@ -230,7 +230,7 @@ void Model::addConnection(const QString& connection, const QString& device)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
-    if (con->settings()->isSlave()) {
+    if (con->settings()->isSlave() || con->name().isEmpty() || con->uuid().isEmpty()) {
         return;
     }
 
@@ -395,7 +395,11 @@ void Model::removeWirelessNetwork(const QString& ssid, const QString& device)
         if (wirelessDevice) {
             accessPoint = wirelessDevice->findAccessPoint(item->specificPath());
         }
-        if (accessPoint && accessPoint->mode() == NetworkManager::AccessPoint::Adhoc &&
+
+        // When accesspoint in ad-hoc mode dissapears, we should remove the item only when there is no connection. Similar case is when
+        // a wireless device is in AP mode, but in this case there could be only one visible AP and this should always be associated with some connection.
+        if (accessPoint && ((accessPoint->mode() == NetworkManager::AccessPoint::Adhoc && !item->connectionPath().isEmpty()) ||
+                            wirelessDevice->mode() == NetworkManager::WirelessDevice::ApMode) &&
             NetworkManager::isWirelessEnabled() && NetworkManager::isWirelessHardwareEnabled()) {
             item->setWirelessNetwork(QString());
             if (updateItem(item)) {

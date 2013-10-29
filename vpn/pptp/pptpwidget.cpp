@@ -284,12 +284,12 @@ QVariantMap PptpSettingWidget::setting(bool agentOwned) const
 
 void PptpSettingWidget::fillOnePasswordCombo(KComboBox * combo, NetworkManager::Setting::SecretFlags type)
 {
-    if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) {
-        combo->setCurrentIndex(1);
-    } else if (type.testFlag(NetworkManager::Setting::NotRequired)) {
-        combo->setCurrentIndex(2);
-    } else if (type.testFlag(NetworkManager::Setting::NotSaved)) {
+    if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) { // store
         combo->setCurrentIndex(0);
+    } else if (type.testFlag(NetworkManager::Setting::NotRequired)) { // not required
+        combo->setCurrentIndex(2);
+    } else if (type.testFlag(NetworkManager::Setting::NotSaved)) { // always ask
+        combo->setCurrentIndex(1);
     }
 }
 
@@ -297,17 +297,17 @@ uint PptpSettingWidget::handleOnePasswordType(const KComboBox * combo, const QSt
 {
     const uint type = combo->currentIndex();
     switch (type) {
-        case 0:
-            data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
-            break;
         case 1:
+            data.insert(key, QString::number(NetworkManager::Setting::NotSaved)); // always ask
+            break;
+        case 0:
             if (agentOwned)
-                data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
+                data.insert(key, QString::number(NetworkManager::Setting::AgentOwned)); // store
             else
                 data.insert(key, QString::number(NetworkManager::Setting::None));
             break;
         case 2:
-            data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
+            data.insert(key, QString::number(NetworkManager::Setting::NotRequired)); // not required
             break;
     }
     return type;

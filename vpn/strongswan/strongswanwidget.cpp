@@ -201,7 +201,7 @@ void StrongswanSettingWidget::fillOnePasswordCombo(KComboBox * combo, const QStr
 {
     if (data.contains(key)) {
         if (data.value(key) == NM_STRONGSWAN_PW_TYPE_SAVE) {
-            combo->setCurrentIndex(1);
+            combo->setCurrentIndex(0);
         } else if (data.value(key) == NM_STRONGSWAN_PW_TYPE_UNUSED) {
             combo->setCurrentIndex(2);
         }
@@ -214,10 +214,10 @@ uint StrongswanSettingWidget::handleOnePasswordType(const KComboBox * combo, con
 {
     const uint type = combo->currentIndex();
     switch (type) {
-        case 0:
+        case 1:
             data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
             break;
-        case 1:
+        case 0:
             if (agentOwned)
                 data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
             else

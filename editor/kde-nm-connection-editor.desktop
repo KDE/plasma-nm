@@ -67,3 +67,4 @@ Icon=network-defaultroute
 Type=Application
 Terminal=false
 Categories=Qt;KDE;Network;
+NoDisplay=true

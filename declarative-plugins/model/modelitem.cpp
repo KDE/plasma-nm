@@ -227,7 +227,7 @@ QString ModelItem::originalName() const
 
 QString ModelItem::uni() const
 {
-    if (m_type == NetworkManager::ConnectionSettings::Wireless) {
+    if (m_type == NetworkManager::ConnectionSettings::Wireless && m_uuid.isEmpty()) {
         return m_ssid + '%' + m_devicePath;
     } else {
         return m_connectionPath + '%' + m_devicePath;
@@ -344,9 +344,7 @@ bool ModelItem::operator==(const ModelItem* item) const
         if (item->devicePath() == devicePath() && item->uuid() == uuid()) {
             return true;
         }
-    }
-
-    if (item->type() == NetworkManager::ConnectionSettings::Wireless && type() == NetworkManager::ConnectionSettings::Wireless) {
+    } else if (item->type() == NetworkManager::ConnectionSettings::Wireless && type() == NetworkManager::ConnectionSettings::Wireless) {
         if (item->ssid() == ssid() && item->devicePath() == devicePath()) {
             return true;
         }
@@ -439,12 +437,17 @@ void ModelItem::setConnectionSettings(const NetworkManager::ConnectionSettings::
         QString previousSsid;
         NetworkManager::WirelessSetting::Ptr wirelessSetting;
         wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+
         if (m_ssid != wirelessSetting->ssid()) {
-            if (!m_ssid.isEmpty()) {
-                changed = true;
-            }
+            changed = true;
             previousSsid = m_ssid;
             m_ssid = wirelessSetting->ssid();
+        }
+
+        if (wirelessSetting->mode() == NetworkManager::WirelessSetting::Adhoc ||
+            wirelessSetting->mode() == NetworkManager::WirelessSetting::Ap) {
+            updateDetails();
+            return;
         }
 
         if (!changed) {
@@ -457,13 +460,14 @@ void ModelItem::setConnectionSettings(const NetworkManager::ConnectionSettings::
             updateDetails();
             return;
         }
+
         NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
         if (!wifiDevice) {
             updateDetails();
             return;
         }
-        NetworkManager::WirelessNetwork::Ptr newWifiNetwork = wifiDevice->findNetwork(m_ssid);
 
+        NetworkManager::WirelessNetwork::Ptr newWifiNetwork = wifiDevice->findNetwork(m_ssid);
         if (!newWifiNetwork) {
             setConnection(QString());
             NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(previousSsid);
@@ -566,5 +570,5 @@ void ModelItem::updateSignalStrenght(int strength)
 
     updateDetails();
 
-    //NMItemDebug() << name() << ": signal strength changed to " << m_signal;
+    NMItemDebug() << name() << ": signal strength changed to " << m_signal;
 }

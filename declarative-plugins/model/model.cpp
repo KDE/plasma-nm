@@ -459,22 +459,11 @@ void Model::insertItem(ModelItem * item)
 {
     bool found = false;
     bool updated = false;
+
     foreach (ModelItem * it, m_items.items()) {
-        // Check for duplicity
+        // Check whether the items are equal, it means they have same UUID or SSID
         if (it->operator==(item)) {
             found = true;
-
-            // Update info
-            if (it->specificPath().isEmpty() && !item->specificPath().isEmpty()) {
-                NMModelDebug() << "Connection " << it->name() << " has been updated by wireless network";
-                if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
-                    it->setWirelessNetwork(item->ssid());
-                } else if (item->type() == NetworkManager::ConnectionSettings::Wimax) {
-                    it->setNsp(item->nspPath());
-                }
-                updated = true;
-            }
-
             if (it->connectionPath().isEmpty() && !item->connectionPath().isEmpty()) {
                 NMModelDebug() << "Connection " << it->name() << " has been updated by connection";
                 it->setConnection(item->connectionPath());
@@ -489,8 +478,6 @@ void Model::insertItem(ModelItem * item)
                     emit dataChanged(index, index);
                 }
             }
-
-            break;
         }
     }
     // Item doesn't exist, let's add it

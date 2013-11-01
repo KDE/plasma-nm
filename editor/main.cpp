@@ -46,6 +46,7 @@ int main(int argc, char *argv[])
     about.addCredit(ki18n("Daniel Nicoletti"), ki18n("various bugfixes"), "dantti12@gmail.com");
     about.addCredit(ki18n("Will Stephenson"), ki18n("VPN plugins"), "wstephenson@kde.org");
     about.addCredit(ki18n("Ilia Kats"), ki18n("VPN plugins"), "ilia-kats@gmx.net");
+    about.setProductName("plasma-nm/editor");
 
     KCmdLineArgs::init(argc, argv, &about);
 

@@ -427,6 +427,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
             KLineEdit *le = new KLineEdit(this);
             if (opt->type == OC_FORM_OPT_PASSWORD) {
                 le->setPasswordMode(true);
+                le->setText(value);
                 passwordnumber++;
             }
             else {

@@ -224,6 +224,19 @@ void ConnectionEditor::insertConnection(const NetworkManager::Connection::Ptr &c
         return;
     }
 
+    if (type == "vpn") { // check if the corresponding VPN plugin is installed
+        NetworkManager::VpnSetting::Ptr vpnSetting = connection->settings()->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+        qDebug() << "CHECKING VPN" << connection->name() << "type:" << vpnSetting->serviceType();
+
+        // get the list of supported VPN service types
+        const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin",
+                                                                          QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()));
+        if (services.isEmpty()) {
+            qDebug() << "VPN" << vpnSetting->serviceType() << "not found, skipping";
+            return;
+        }
+    }
+
     QStringList actives;
 
     foreach(const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {

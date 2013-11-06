@@ -391,11 +391,14 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
 {
     if (!ignoreWallet && useWallet()) {
         if (m_wallet->isOpen()) {
-            if (m_wallet->hasFolder("plasma-networkmanagement") && m_wallet->setFolder("plasma-networkmanagement")) {
+            if (m_wallet->hasFolder("Network Management") && m_wallet->setFolder("Network Management")) {
                 NetworkManager::ConnectionSettings connectionSettings(request.connection);
-                foreach (const QString &entry, m_wallet->entryList()) {
-                    if (entry.startsWith(connectionSettings.uuid())) {
-                        m_wallet->removeEntry(entry);
+                foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
+                    QString entryName = QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name();
+                    foreach (const QString &entry, m_wallet->entryList()) {
+                        if (entry.startsWith(entryName)) {
+                            m_wallet->removeEntry(entryName);
+                        }
                     }
                 }
             }
@@ -407,9 +410,11 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
         NetworkManager::ConnectionSettings connectionSettings(request.connection);
 
         KConfig config("plasma-networkmanagement");
-        foreach (const QString &group, config.groupList()) {
-            if (group.startsWith(connectionSettings.uuid())) {
-                config.deleteGroup(group);
+        foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
+            foreach (const QString &group, config.groupList()) {
+                if (group.startsWith(QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name())) {
+                    config.deleteGroup(group);
+                }
             }
         }
     }

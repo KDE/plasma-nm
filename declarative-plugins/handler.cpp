@@ -37,8 +37,12 @@
 
 #include <QInputDialog>
 
+#include <KNotification>
 #include <KUser>
+#include <KIcon>
 #include <KProcess>
+#include <KService>
+#include <KServiceTypeTrader>
 #include <KWindowSystem>
 
 Handler::Handler(QObject* parent)
@@ -58,7 +62,27 @@ void Handler::activateConnection(const QString& connection, const QString& devic
         NMHandlerDebug() << "Not possible to activate this connection";
         return;
     }
-        NMHandlerDebug() << "Activating " << con->name() << " connection";
+    NMHandlerDebug() << "Activating " << con->name() << " connection";
+
+    if (con->settings()->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
+        NetworkManager::VpnSetting::Ptr vpnSetting = con->settings()->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
+        if (vpnSetting) {
+            NMHandlerDebug() << "Checking VPN" << con->name() << "type:" << vpnSetting->serviceType();
+            // get the list of supported VPN service types
+            const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin",
+                                                                          QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()));
+            if (services.isEmpty()) {
+                NMHandlerDebug() << "VPN" << vpnSetting->serviceType() << "not found, skipping";
+                KNotification *notification = new KNotification("MissingVpnPlugin", KNotification::Persistent, this);
+                notification->setComponentData(KComponentData("networkmanagement"));
+                notification->setTitle(con->name());
+                notification->setText(i18n("Missing VPN plugin"));
+                notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+                notification->sendEvent();
+                return;
+            }
+        }
+    }
 
     NetworkManager::activateConnection(connection, device, specificObject);
 }

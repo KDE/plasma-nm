@@ -102,3 +102,8 @@ Name[x-test]=xxVPN connection state changedxx
 Name[zh_CN]=VPN 连接状态改变
 IconName=applications-internet
 Action=Popup
+
+[Event/MissingVpnPlugin]
+Name=Missing VPN plugin
+IconName=applications-internet
+Action=Popup

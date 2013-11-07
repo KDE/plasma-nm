@@ -5,16 +5,33 @@ Plasma applet written in QML for managing network connections
 
 Dependencies:
 -------------
-  - libnm-qt (NM/0.9 branch)
-    → requires NetworkManager 0.9.8+
+  * libnm-qt - 0.9.0.1 (git NM/0.9 branch)
+    - requires NetworkManager 0.9.8+
+    - requires libmm-qt 0.5.1 (MM/0.5 branch) if you want ModemManager support
+
+      or
+
+  * libnm-qt (git master branch)
+    - requires NetworkManager 0.9.8+
+    - requires libmm-qt (master branch with MM 1.0+ support) if you want ModemManager support
 
 Optional dependencies:
 ---------------------
-  - libmm-qt (MM/0.5 branch)
-    → requires ModemManager 0.5 - 0.6 (ModemManager 0.7+ is not supported yet)
+  * libmm-qt - 0.5.1 (git MM/0.5 branch)
+    - requires ModemManager 0.5 - 0.6
 
-  Plasma-nm is compiled with ModemManager support by default when libmm-qt is found,
-  when you want to explicitly disable ModemManager support, use -DDISABLE_MODEMMANAGER_SUPPORT=true cmake parameter.
+      or
+
+  * libmm-qt (git master branch)
+    - requires ModemManager 1.0+
+    - Plasma-nm is compiled with ModemManager support by default when libmm-qt is found,
+      when you want to explicitly disable ModemManager support, use -DDISABLE_MODEMMANAGER_SUPPORT=true cmake parameter.
+
+  * openconnect
+    - if you want to build the OpenConnect VPN plugin
+
+  * NetworkManager-openvpn|openconnect|openswan|l2tp|strongswan|pptp|vpnc
+    - these are runtime dependencies for VPN plugins
 
 Compiling:
 ----------
@@ -37,3 +54,4 @@ NetworkManager specification:
 ------------------------------
 http://projects.gnome.org/NetworkManager/developers/api/09/spec.html
 http://projects.gnome.org/NetworkManager/developers/api/09/ref-settings.html
+https://developer.gnome.org/ModemManager/unstable/

@@ -192,8 +192,7 @@ void OpenconnectAuthWidget::readSecrets()
     }
 
     if (!d->secrets["xmlconfig"].isEmpty()) {
-
-        QByteArray config = QByteArray::fromBase64(d->secrets["xmlconfig"].toAscii());
+        const QByteArray config = QByteArray::fromBase64(d->secrets["xmlconfig"].toAscii());
 
         QCryptographicHash hash(QCryptographicHash::Sha1);
         hash.addData(config.data(), config.size());
@@ -289,7 +288,7 @@ QVariantMap OpenconnectAuthWidget::setting(bool agentOwned) const
 
     secrets.unite(d->secrets);
     QString host(openconnect_get_hostname(d->vpninfo));
-    QString port = QString::number(openconnect_get_port(d->vpninfo));
+    const QString port = QString::number(openconnect_get_port(d->vpninfo));
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_GATEWAY), host + ':' + port);
 
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_COOKIE), QLatin1String(openconnect_get_cookie(d->vpninfo)));
@@ -541,7 +540,7 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
 void OpenconnectAuthWidget::formLoginClicked()
 {
     Q_D(OpenconnectAuthWidget);
-    int lastIndex = d->ui.loginBoxLayout->count() - 1;
+    const int lastIndex = d->ui.loginBoxLayout->count() - 1;
     QLayout *layout = d->ui.loginBoxLayout->itemAt(lastIndex - 2)->layout();
     struct oc_auth_form *form = (struct oc_auth_form *) d->ui.loginBoxLayout->itemAt(lastIndex)->widget()->property("openconnect_form").value<quintptr>();
 
@@ -550,7 +549,7 @@ void OpenconnectAuthWidget::formLoginClicked()
         QWidget *widget = item->widget();
         if (widget && widget->property("openconnect_opt").isValid()) {
             struct oc_form_opt *opt = (struct oc_form_opt *) widget->property("openconnect_opt").value<quintptr>();
-            QString key = QString("form:%1:%2").arg(QLatin1String(form->auth_id)).arg(QLatin1String(opt->name));
+            const QString key = QString("form:%1:%2").arg(QLatin1String(form->auth_id)).arg(QLatin1String(opt->name));
             if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {
                 KLineEdit *le = qobject_cast<KLineEdit*>(widget);
                 QByteArray text = le->text().toUtf8();
@@ -634,7 +633,7 @@ void OpenconnectAuthWidget::viewServerLogToggled(bool toggled)
 void OpenconnectAuthWidget::passwordModeToggled(bool toggled)
 {
     Q_D(OpenconnectAuthWidget);
-    int lastIndex = d->ui.loginBoxLayout->count() - 1;
+    const int lastIndex = d->ui.loginBoxLayout->count() - 1;
     QLayout *layout = d->ui.loginBoxLayout->itemAt(lastIndex - 2)->layout();
     for (int i = 0; i < layout->count(); i++) {
         QLayoutItem *item = layout->itemAt(i);

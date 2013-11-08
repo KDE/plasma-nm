@@ -60,6 +60,11 @@ QString OpenconnectUiPlugin::supportedFileExtensions() const
     return QString();
 }
 
+QMessageBox::StandardButtons OpenconnectUiPlugin::suggestedAuthDialogButtons() const
+{
+    return QMessageBox::Close;
+}
+
 NMVariantMapMap OpenconnectUiPlugin::importConnectionSettings(const QString &fileName)
 {
     Q_UNUSED(fileName);

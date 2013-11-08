@@ -36,10 +36,11 @@ public:
     virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
     virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
 
-    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const;
-    QString supportedFileExtensions() const;
-    NMVariantMapMap importConnectionSettings(const QString &fileName);
-    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName);
+    virtual QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const;
+    virtual QString supportedFileExtensions() const;
+    virtual QMessageBox::StandardButtons suggestedAuthDialogButtons() const;
+    virtual NMVariantMapMap importConnectionSettings(const QString &fileName);
+    virtual bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName);
 };
 
 #endif //  OPENCONNECT_UI_H

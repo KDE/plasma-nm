@@ -105,5 +105,12 @@ Action=Popup
 
 [Event/MissingVpnPlugin]
 Name=Missing VPN plugin
+Name[de]=Fehlendes VPN-Modul
+Name[fi]=Puuttuva VPN-liitännäinen
+Name[nl]=VPN-plug-in ontbreekt
+Name[pt]='Plugin' de VPN em falta
+Name[sv]=Saknar VPN-insticksprogram
+Name[uk]=Не вистачає додатка VPN
+Name[x-test]=xxMissing VPN pluginxx
 IconName=applications-internet
 Action=Popup

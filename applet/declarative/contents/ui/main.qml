@@ -82,7 +82,7 @@ Item {
         id: connectionView;
 
         property bool expandedItem: false;
-        property string previouslyExpandedItem: "";
+        property variant previouslyExpandedItems: [];
 
         property bool activeExpanded: true;
         property bool previousExpanded: true;
@@ -126,23 +126,50 @@ Item {
         }
 
         delegate: ConnectionItem {
-            expanded: connectionView.expandedItem && connectionView.previouslyExpandedItem == itemUni;
+            expanded: connectionView.expandedItem && connectionView.containItem(itemUni);
             onItemExpanded: {
                 if (itemExpanded) {
                     connectionView.expandedItem = true;
-                    connectionView.previouslyExpandedItem = itemUni;;
+                    connectionView.addItem(itemUni);
                     connectionView.currentIndex = index;
                 } else {
-                    connectionView.expandedItem = false;
-                    connectionView.previouslyExpandedItem = "";
+                    connectionView.removeItem(itemUni);
+                    if (connectionView.previouslyExpandedItems.length == 0) {
+                        connectionView.expandedItem = false;
+                    }
                 }
             }
 
             ListView.onRemove: {
                 if (ListView.isCurrentItem) {
-                    connectionView.previouslyExpandedItem = "";
+                    connectionView.removeItem(itemUni);
                 }
             }
+        }
+
+        function addItem(item) {
+            var currentItems = previouslyExpandedItems;
+            currentItems[currentItems.length] = item;
+            previouslyExpandedItems = currentItems;
+        }
+
+        function removeItem(item) {
+            var tmpItems = [];
+            for (var i = 0; i < previouslyExpandedItems.length; i++) {
+                if (previouslyExpandedItems[i] != item) {
+                    tmpItems[tmpItems.length] = previouslyExpandedItems[i];
+                }
+            }
+            previouslyExpandedItems = tmpItems;
+        }
+
+        function containItem(item) {
+            for (var i = 0; i < previouslyExpandedItems.length; i++) {
+                if (previouslyExpandedItems[i] == item) {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 

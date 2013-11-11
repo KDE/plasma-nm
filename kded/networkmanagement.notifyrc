@@ -105,6 +105,7 @@ Action=Popup
 
 [Event/MissingVpnPlugin]
 Name=Missing VPN plugin
+Name[da]=Mangler VPN-plugin
 Name[de]=Fehlendes VPN-Modul
 Name[fi]=Puuttuva VPN-liitännäinen
 Name[nl]=VPN-plug-in ontbreekt

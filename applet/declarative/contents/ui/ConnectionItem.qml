@@ -44,7 +44,7 @@ PlasmaComponents.ListItem {
     signal itemExpanded(string itemUni, bool itemExpanded);
 
     enabled: true
-    height: theme.defaultFont.mSize.height * 2.6 + ((connectionItemSettings.status != Loader.Ready || !expanded) ? 0 : connectionItemSettings.item.childrenRect.height + padding.margins.top);
+    height: sizes.itemSize + ((connectionItemSettings.status != Loader.Ready || !expanded) ? 0 : connectionItemSettings.item.childrenRect.height + padding.margins.top);
 
     onClicked: {
         itemExpanded(itemUni, !expanded);
@@ -53,11 +53,11 @@ PlasmaComponents.ListItem {
     Item {
         id: connectionItemBasic;
 
-        height: theme.defaultFont.mSize.height * 1.8;
         anchors {
             left: parent.left;
             right: parent.right;
             top: parent.top;
+            bottom: parent.bottom;
         }
 
         PlasmaCore.Svg {
@@ -70,12 +70,11 @@ PlasmaComponents.ListItem {
         Item {
             id: connectionTypeIcon;
 
-            height: connectionItemBasic.height;
+            height: sizes.iconSize;
             width: height;
             anchors {
                 left: parent.left;
                 verticalCenter: parent.verticalCenter;
-                leftMargin: padding.margins.left;
             }
 
             PlasmaCore.SvgItem {
@@ -121,14 +120,14 @@ PlasmaComponents.ListItem {
             }
             text: itemName;
             elide: Text.ElideRight;
-            font.weight: itemConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal;
+//             font.weight: itemConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal;
             font.italic: itemConnectionState == PlasmaNM.Enums.Activating ? true : false;
         }
 
         MouseEventListener {
             id: leftActionArea;
 
-            width: theme.smallMediumIconSize * 2;
+            width: sizes.iconSize * 2;
             anchors {
                 right: parent.right;
                 top: parent.top;
@@ -149,7 +148,7 @@ PlasmaComponents.ListItem {
             PlasmaComponents.BusyIndicator {
                 id: connectingIndicator;
 
-                width: theme.smallMediumIconSize;
+                width: sizes.iconSize;
                 height: width;
                 anchors {
                     right: parent.right;
@@ -163,7 +162,7 @@ PlasmaComponents.ListItem {
             PlasmaCore.IconItem {
                 id: configureButton;
 
-                width: theme.smallMediumIconSize;
+                width: sizes.iconSize;
                 height: width;
                 anchors {
                     right: parent.right;
@@ -183,8 +182,8 @@ PlasmaComponents.ListItem {
         anchors {
             left: parent.left;
             right: parent.right;
-            top: parent.top;
-            topMargin: theme.defaultFont.mSize.height * 2.2;
+            top: connectionItemBasic.bottom;
+            topMargin: padding.margins.top;
         }
     }
 
@@ -382,6 +381,7 @@ PlasmaComponents.ListItem {
             name: "ConnectionExpanded";
             when: expanded && !sectionHidden;
             StateChangeScript { script: createContent(); }
+            AnchorChanges { target: connectionItemBasic; anchors.bottom: undefined; }
         }
     ]
 

@@ -38,14 +38,11 @@ Item {
     Column {
         id: checkboxes;
 
-        spacing: 5;
         anchors {
             left: parent.left;
             right: parent.right;
             top: parent.top;
-            topMargin: padding.margins.top;
             leftMargin: padding.margins.left;
-            bottomMargin: padding.margins.bottom;
         }
 
         PlasmaComponents.CheckBox {

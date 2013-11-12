@@ -28,7 +28,7 @@ Item {
 
     property bool expanded: false;
 
-    height: theme.defaultFont.mSize.height * 1.8;
+    height: sizes.itemSize;
 
     PlasmaNM.NetworkStatus {
         id: networkStatus;
@@ -37,7 +37,7 @@ Item {
     Item {
         id: toolbarLine;
 
-        height: theme.defaultFont.mSize.height * 2;
+        height: sizes.itemSize;
         anchors {
             left: parent.left;
             right: parent.right;
@@ -47,7 +47,7 @@ Item {
         PlasmaCore.IconItem {
             id: statusIcon
 
-            height: theme.smallMediumIconSize;
+            height: sizes.iconSize;
             width: height;
             anchors {
                 left: parent.left;
@@ -60,10 +60,9 @@ Item {
         PlasmaComponents.Label {
             id: statusLabel;
 
-            height: theme.defaultFont.mSize.height * 2;
+            height: sizes.itemSize;
             anchors {
                 left: statusIcon.right;
-                right: toolButton.left;
                 verticalCenter: parent.verticalCenter;
                 leftMargin: padding.margins.left;
             }
@@ -74,7 +73,7 @@ Item {
         PlasmaCore.IconItem {
             id: toolButton;
 
-            height: theme.smallMediumIconSize;
+            height: sizes.iconSize;
             width: height;
             anchors {
                 right: parent.right;
@@ -102,7 +101,6 @@ Item {
             left: parent.left;
             right: parent.right;
             top: parent.top;
-            bottomMargin: padding.margins.bottom;
         }
         visible: false;
 
@@ -122,7 +120,7 @@ Item {
         State {
             name: "Expanded";
             when: expanded;
-            PropertyChanges { target: toolBar; height: options.childrenRect.height + theme.defaultFont.mSize.height * 2 + padding.margins.top }
+            PropertyChanges { target: toolBar; height: options.childrenRect.height + sizes.itemSize + padding.margins.top }
             PropertyChanges { target: options; visible: true }
         }
     ]

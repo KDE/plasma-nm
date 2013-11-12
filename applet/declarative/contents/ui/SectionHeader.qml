@@ -29,7 +29,7 @@ Title {
 
     property bool expanded: true;
 
-    height: theme.defaultFont.mSize.height * 2.3;
+    height: sizes.itemSize;
     anchors {
         left: parent.left;
         right: parent.right;
@@ -45,7 +45,6 @@ Title {
             leftMargin: padding.margins.left
         }
         text: section;
-        font.weight: (section == i18n("Active connections")) ? Font.DemiBold : Font.Normal;
 
         MouseArea {
             id: sectionLabelMouseArea
@@ -59,7 +58,7 @@ Title {
     PlasmaComponents.ToolButton {
         id: expandButton;
 
-        height: theme.smallMediumIconSize;
+        height: sizes.iconSize;
         width: height;
         anchors {
             left: parent.left;

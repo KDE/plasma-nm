@@ -81,8 +81,8 @@ Item {
     Item {
         id: sizes;
 
-        property int itemSize: theme.defaultFont.mSize.height * 2;
         property int iconSize: theme.iconSizes.toolbar;
+        property int itemSize: iconSize + padding.margins.top + padding.margins.bottom;
     }
 
     ListView {
@@ -99,7 +99,7 @@ Item {
             left: parent.left;
             right: parent.right;
             top: parent.top;
-            bottom: toolbar.top;
+            bottom: toolbarSeparator.top;
             topMargin: padding.margins.top;
             bottomMargin: padding.margins.bottom
         }
@@ -180,26 +180,26 @@ Item {
         }
     }
 
-//     PlasmaCore.SvgItem {
-//         id: toolbarSeparator
-//
-//         height: lineSvg.elementSize("horizontal-line").height;
-//         width: parent.width;
-//         anchors {
-//             left: parent.left;
-//             right: parent.right;
-//             bottom: toolbar.top;
-//             bottomMargin: padding.margins.bottom/2;
-//             leftMargin: padding.margins.left;
-//             rightMargin: padding.margins.right;
-//         }
-//         elementId: "horizontal-line";
-//
-//         svg: PlasmaCore.Svg {
-//             id: lineSvg;
-//             imagePath: "widgets/line";
-//         }
-//     }
+    PlasmaCore.SvgItem {
+        id: toolbarSeparator
+
+        height: lineSvg.elementSize("horizontal-line").height;
+        width: parent.width;
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            bottom: toolbar.top;
+            bottomMargin: padding.margins.bottom/2;
+            leftMargin: padding.margins.left;
+            rightMargin: padding.margins.right;
+        }
+        elementId: "horizontal-line";
+
+        svg: PlasmaCore.Svg {
+            id: lineSvg;
+            imagePath: "widgets/line";
+        }
+    }
 
     Toolbar {
         id: toolbar;

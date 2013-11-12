@@ -82,7 +82,7 @@ Item {
         id: sizes;
 
         property int itemSize: theme.defaultFont.mSize.height * 2;
-        property int iconSize: theme.smallMediumIconSize;
+        property int iconSize: theme.iconSizes.toolbar;
     }
 
     ListView {

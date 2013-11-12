@@ -325,7 +325,7 @@ void IPv6Widget::slotAddIPAddress()
     item << new QStandardItem << new QStandardItem << new QStandardItem;
     d->model.appendRow(item);
 
-    int rowCount = d->model.rowCount();
+    const int rowCount = d->model.rowCount();
     if (rowCount > 0) {
         m_ui->tableViewAddresses->selectRow(rowCount - 1);
 
@@ -360,14 +360,14 @@ void IPv6Widget::tableViewItemChanged(QStandardItem *item)
         return;
     }
 
-    int column = item->column();
+    const int column = item->column();
     if (column == 0) { // ip
         int row = item->row();
 
         QStandardItem *netmaskItem = d->model.item(row, column + 1); // netmask
         if (netmaskItem && netmaskItem->text().isEmpty()) {
             QHostAddress addr(item->text());
-            quint32 netmask = suggestNetmask(addr.toIPv6Address());
+            const quint32 netmask = suggestNetmask(addr.toIPv6Address());
             if (netmask) {
                 netmaskItem->setText(QString::number(netmask,10));
             }
@@ -409,8 +409,8 @@ void IPv6Widget::slotDnsServers()
 
     if (dlg->exec() == KDialog::Accepted) {
         QString text = listWidget->items().join(",");
-        if (text.lastIndexOf(',') == text.length()-1) {
-            text.remove(text.length()-1, 1);
+        if (text.endsWith(',')) {
+            text.chop(1);
         }
         m_ui->dns->setText(text);
     }
@@ -431,8 +431,8 @@ void IPv6Widget::slotDnsDomains()
 
     if (dlg->exec() == KDialog::Accepted) {
         QString text = listWidget->items().join(",");
-        if (text.lastIndexOf(',') == text.length()-1) {
-            text.remove(text.length()-1, 1);
+        if (text.endsWith(',')) {
+            text.chop(1);
         }
         m_ui->dnsSearch->setText(text);
     }
@@ -451,7 +451,7 @@ bool IPv6Widget::isValid() const
 
         for (int i = 0, rowCount = d->model.rowCount(); i < rowCount; i++) {
             QHostAddress ip = QHostAddress(d->model.item(i, 0)->text());
-            int prefix = d->model.item(i,1)->text().toInt();
+            const int prefix = d->model.item(i,1)->text().toInt();
             QHostAddress gateway = QHostAddress(d->model.item(i, 2)->text());
 
             if (ip.isNull() || !(prefix >= 1 && prefix <= 128) || (gateway.isNull() && !d->model.item(i, 2)->text().isEmpty())) {

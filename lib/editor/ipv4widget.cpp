@@ -418,7 +418,11 @@ void IPv4Widget::slotDnsServers()
     listWidget->setItems(m_ui->dns->text().split(','));
 
     if (dlg->exec() == KDialog::Accepted) {
-        m_ui->dns->setText(listWidget->items().join(","));
+        QString text = listWidget->items().join(",");
+        if (text.lastIndexOf(',') == text.length()-1) {
+            text.remove(text.length()-1, 1);
+        }
+        m_ui->dns->setText(text);
     }
 
     if (dlg) {
@@ -436,7 +440,11 @@ void IPv4Widget::slotDnsDomains()
     listWidget->setItems(m_ui->dnsSearch->text().split(','));
 
     if (dlg->exec() == KDialog::Accepted) {
-        m_ui->dnsSearch->setText(listWidget->items().join(","));
+        QString text = listWidget->items().join(",");
+        if (text.lastIndexOf(',') == text.length()-1) {
+            text.remove(text.length()-1, 1);
+        }
+        m_ui->dnsSearch->setText(text);
     }
 
     if (dlg) {

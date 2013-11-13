@@ -154,8 +154,6 @@ public:
 
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
-//     static QString convertTypeToString(ModemManager::ModemDevice::InterfaceType type);
-    static QString convertBandsToString(const QList<MMModemBand> & band);
     static QString convertAllowedModeToString(ModemManager::Modem::ModemModes mode);
     static QString convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech);
     static QString convertLockReasonToString(MMModemLock reason);

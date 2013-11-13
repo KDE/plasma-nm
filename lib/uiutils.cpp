@@ -570,14 +570,6 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
 
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
-QString UiUtils::convertBandsToString(const QList<MMModemBand> &band)
-{
-    // TODO
-    Q_UNUSED(band);
-
-    return i18nc("Unknown cellular frequency band","Unknown");
-}
-
 QString UiUtils::convertAllowedModeToString(ModemManager::Modem::ModemModes modes)
 {
     if (modes.testFlag(MM_MODEM_MODE_4G)) {

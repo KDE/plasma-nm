@@ -152,7 +152,11 @@ void ModemMonitor::requestPin(MMModemLock lock)
     kDebug() << "Sending unlock code";
 
     {
-        ModemManager::Sim::Ptr sim = ModemManager::findSim(modem->simPath());
+        ModemManager::Sim::Ptr sim;
+        ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(modem->uni());
+        if (modemDevice && modemDevice->sims().count()) {
+            sim = modemDevice->sims().first();
+        }
 
         if (!sim) {
             return;

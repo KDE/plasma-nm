@@ -988,10 +988,6 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
             if (modemNetwork) {
                 details += QString(format).arg(i18n("Allowed Mode:"), UiUtils::convertAllowedModeToString(modemNetwork->currentModes().allowed));
             }
-        } else if (key == "mobile:band") {
-            if (modemNetwork) {
-                details += QString(format).arg(i18n("Frequency Bands:"), UiUtils::convertBandsToString(modemNetwork->currentBands()));
-            }
         } else if (key == "mobile:unlock") {
             if (modemNetwork) {
                 details += QString(format).arg(i18n("Unlock Required:"), UiUtils::convertLockReasonToString(modemNetwork->unlockRequired()));

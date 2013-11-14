@@ -78,6 +78,13 @@ Item {
         anchors.fill: parent
     }
 
+    Item {
+        id: sizes;
+
+        property int iconSize: theme.iconSizes.toolbar;
+        property int itemSize: iconSize + padding.margins.top + padding.margins.bottom;
+    }
+
     ListView {
         id: connectionView;
 

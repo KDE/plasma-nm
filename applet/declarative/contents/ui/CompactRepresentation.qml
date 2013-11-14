@@ -53,8 +53,8 @@ Item {
     QIconItem {
         id: hoverIcon;
 
-        width: parent.width/1.5;
-        height: parent.height/1.5;
+        width: parent.width/2;
+        height: parent.height/2;
         anchors {
             bottom: parent.bottom;
             right: parent.right;

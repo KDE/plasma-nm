@@ -233,7 +233,7 @@ void ConnectionIcon::setIcons()
                         setWirelessIconForSignalStrength(100);
                         connectionFound = true;
                     } else {
-                        NetworkManager::AccessPoint::Ptr ap = wifiDevice->findAccessPoint(activeConnection->specificObject());
+                        NetworkManager::AccessPoint::Ptr ap = wifiDevice->activeAccessPoint();
                         if (ap) {
                             setWirelessIcon(device, ap->ssid());
                             connectionFound = true;

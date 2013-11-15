@@ -21,12 +21,13 @@
 import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 
-Title {
+PlasmaComponents.ListItem {
     id: sectionHeader;
 
     signal hideSection(string name);
     signal showSection(string name);
 
+    sectionDelegate: true;
     property bool expanded: true;
 
     height: sizes.itemSize;

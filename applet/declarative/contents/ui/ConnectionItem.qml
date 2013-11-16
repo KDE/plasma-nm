@@ -280,7 +280,7 @@ PlasmaComponents.ListItem {
                 }
                 visible: predictableWirelessPassword;
                 checked: true;
-                text: i18n("Automatically connect");
+                text: i18n("Connect automatically");
             }
 
             PlasmaComponents.Button {

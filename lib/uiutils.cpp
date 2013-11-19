@@ -1178,7 +1178,7 @@ QString UiUtils::wirelessDetails(const WirelessDevice::Ptr& wirelessDevice, cons
                     details += QString(format).arg(i18n("Security:"), UiUtils::labelFromWirelessSecurity(security));
                 }
             } else if (connection) {
-                // Neccessary for example for AdHoc connections
+                // Necessary for example for AdHoc connections
                 security = Utils::securityTypeFromConnectionSetting(connection->settings());
                 if (security != Utils::Unknown) {
                     details += QString(format).arg(i18n("Security:"), UiUtils::labelFromWirelessSecurity(security));

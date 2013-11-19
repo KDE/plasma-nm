@@ -78,7 +78,7 @@ void Monitor::init()
             NetworkManager::VpnConnection::Ptr vpnConnection = active.objectCast<NetworkManager::VpnConnection>();
             if (vpnConnection) {
                 connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
-                        SLOT(vpnConnectionStateChanged(NetworkManager::VpnConnection::State, NetworkManager::VpnConnection::StateChangeReason)));
+                        SLOT(vpnConnectionStateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)));
             }
         } else {
             connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
@@ -230,7 +230,7 @@ void Monitor::activeConnectionAdded(const QString& active)
             NetworkManager::VpnConnection::Ptr vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
             if (vpnConnection) {
                 connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
-                        SLOT(vpnConnectionStateChanged(NetworkManager::VpnConnection::State, NetworkManager::VpnConnection::StateChangeReason)));
+                        SLOT(vpnConnectionStateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)));
             }
         } else {
             connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),

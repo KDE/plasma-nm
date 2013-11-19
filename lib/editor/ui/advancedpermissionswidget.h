@@ -34,7 +34,7 @@ class AdvancedPermissionsWidget : public QWidget
 Q_OBJECT
 Q_DECLARE_PRIVATE(AdvancedPermissionsWidget)
 public:
-    AdvancedPermissionsWidget(QWidget *parent=0);
+    explicit AdvancedPermissionsWidget(QWidget *parent=0);
     AdvancedPermissionsWidget(const QHash<QString,QString>&, QWidget *parent=0);
     ~AdvancedPermissionsWidget();
 

@@ -4,11 +4,7 @@ set(DISABLE_MODEMMANAGER_SUPPORT 1)
 
 cmake_minimum_required(VERSION 2.8.6 FATAL_ERROR)
 
-#find_package(KDE4 "4.9.0" REQUIRED)
-find_package(NetworkManager "0.9.8" REQUIRED)
-
 include(FindPkgConfig)
-#include(KDE4Defaults)
 
 ################# set KDE specific information #################
 
@@ -33,7 +29,6 @@ find_package(Qt5Core REQUIRED NO_MODULE)
 find_package(Qt5DBus REQUIRED NO_MODULE)
 find_package(Qt5Quick REQUIRED NO_MODULE)
 find_package(Qt5Widgets REQUIRED NO_MODULE)
-#find_package(Qt5X11Extras REQUIRED NO_MODULE)
 find_package(Qt5Designer REQUIRED NO_MODULE)
 find_package(Qt5Network REQUIRED NO_MODULE)
 find_package(Qt5Test REQUIRED NO_MODULE)

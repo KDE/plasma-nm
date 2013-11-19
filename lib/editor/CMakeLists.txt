@@ -54,18 +54,18 @@ qt5_wrap_ui(plasmanetworkmanagement_libeditor_SRCS
     ui/connectionwidget.ui
 )
 
-kde4_add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})
+add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})
 target_link_libraries(plasmanetworkmanagement-editor
     ${QT_QTWIDGETS_LIBRARY}
-    ${QT_QTXML_LIBRARY}
-    ${QT_QTNETWORK_LIBRARY}
+    Qt5::Xml
+    Qt5::Network
     Qt5::DBus
     ${NETWORKMANAGERQT_LDFLAGS}
     ${MODEMMANAGERQT_LDFLAGS}
     KF5::KService
     KF5::KI18n
     KF5::KIOWidgets
-    ${KDE4Support_LIBRARIES}
+    KF5::KDE4Support
     plasmanetworkmanagement-internal
 )
 

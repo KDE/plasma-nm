@@ -13,7 +13,7 @@ qt5_wrap_ui(openvpn_SRCS openvpn.ui openvpnauth.ui openvpnadvanced.ui)
 
 kservice_desktop_to_json(plasmanetworkmanagement_openvpnui.desktop)
 
-kde4_add_plugin(plasmanetworkmanagement_openvpnui ${openvpn_SRCS})
+plasma_add_plugin(plasmanetworkmanagement_openvpnui ${openvpn_SRCS})
 
 target_link_libraries(plasmanetworkmanagement_openvpnui
     plasmanetworkmanagement-internal

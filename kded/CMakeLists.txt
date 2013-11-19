@@ -47,7 +47,7 @@ target_link_libraries(kded_networkmanagement
     KF5::KWindowSystem
     KF5::KIOWidgets
     KF5::KCoreAddons
-    ${KDE4Support_LIBRARIES}
+    KF5::KDE4Support
 )
 
 install(TARGETS kded_networkmanagement DESTINATION ${PLUGIN_INSTALL_DIR})

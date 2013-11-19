@@ -20,7 +20,7 @@ else()
     )
 endif()
 
-kde4_add_library(plasmanetworkmanagement-internal SHARED ${plasmanetworkmanagement-internal_SRCS})
+add_library(plasmanetworkmanagement-internal SHARED ${plasmanetworkmanagement-internal_SRCS})
 
 target_link_libraries(plasmanetworkmanagement-internal
     ${NETWORKMANAGERQT_LDFLAGS}
@@ -30,9 +30,9 @@ target_link_libraries(plasmanetworkmanagement-internal
     KF5::KCompletion
     KF5::KI18n
     KF5::KIconThemes
-    ${KDE4Support_LIBRARIES}
-    ${QT_QTXML_LIBRARY}
-    ${QT_QTNETWORK_LIBRARY}
+    KF5::KDE4Support
+    Qt5::Xml
+    Qt5::Network
 )
 
 install(TARGETS plasmanetworkmanagement-internal ${INSTALL_TARGETS_DEFAULT_ARGS})

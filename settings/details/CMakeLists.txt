@@ -15,7 +15,7 @@ target_link_libraries(plasmanetworkmanagementwidgets
         KF5::KI18n
         KF5::KConfigWidgets
         KF5::KWidgetsAddons
-        ${KDE4Support_LIBRARIES}
+	KF5::KDE4Support
 )
 
 install( TARGETS plasmanetworkmanagementwidgets DESTINATION ${PLUGIN_INSTALL_DIR}/plugins/designer )

@@ -24,7 +24,7 @@ target_link_libraries(plasmanetworkmanagement_l2tpui
     KF5::KWidgetsAddons
     KF5::KIOWidgets
     KF5::KCoreAddons
-    ${KDE4Support_LIBRARIES}
+    KF5::KDE4Support
 )
 
 install(TARGETS plasmanetworkmanagement_l2tpui  DESTINATION ${PLUGIN_INSTALL_DIR}/plasmanetworkmanagement/vpnuiplugin)

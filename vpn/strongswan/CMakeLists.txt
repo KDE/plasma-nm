@@ -15,7 +15,7 @@ target_link_libraries(plasmanetworkmanagement_strongswanui
     KF5::KService
     KF5::KI18n
     KF5::KIOWidgets
-    ${KDE4Support_LIBRARIES}
+    KF5::KDE4Support
     ${NETWORKMANAGERQT_LDFLAGS}
     plasmanetworkmanagement-internal
 )

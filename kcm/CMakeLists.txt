@@ -20,7 +20,7 @@ qt5_wrap_ui(kcm_network_SRCS
     NetworkKCM.ui
 )
 
-kde4_add_plugin(kcm_network ${kcm_network_SRCS})
+plasma_add_plugin(kcm_network ${kcm_network_SRCS})
 
 target_link_libraries(kcm_network
     Qt5::Widgets
@@ -32,9 +32,9 @@ target_link_libraries(kcm_network
     KF5::KService
     KF5::KWidgetsAddons
 
-    ${KDE4_KIO_LIBS}
+    KF5::KIOCore KF5::KIOWidgets
     #NetworkManagerQt
-    ${KDE4Support_LIBRARIES}
+    KF5::KDE4Support
 
     ${NETWORKMANAGERQT_LDFLAGS}
     plasmanetworkmanagement-internal

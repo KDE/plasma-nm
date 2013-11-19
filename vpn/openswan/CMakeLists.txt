@@ -22,7 +22,7 @@ target_link_libraries(plasmanetworkmanagement_openswanui
     KF5::KWidgetsAddons
     KF5::KIOWidgets
     KF5::KCoreAddons
-    ${KDE4Support_LIBRARIES}
+    KF5::KDE4Support
 )
 
 install(TARGETS plasmanetworkmanagement_openswanui  DESTINATION ${PLUGIN_INSTALL_DIR}/plasmanetworkmanagement/vpnuiplugin)

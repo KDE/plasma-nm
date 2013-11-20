@@ -29,7 +29,6 @@ Item {
 
     property int minimumWidth: 300;
     property int minimumHeight: 300;
-    property bool autoHideOptions: true;
     property Component compactRepresentation: CompactRepresentation {
         Component.onCompleted: {
             plasmoid.addEventListener('configChanged', mainWindow.configChanged)
@@ -37,12 +36,6 @@ Item {
     }
 
     signal sectionChanged();
-
-//     function hideOptions() {
-//         if (autoHideOptions) {
-//             toolbar.expanded = false;
-//         }
-//     }
 
     PlasmaNM.GlobalConfig {
         id: globalConfig;
@@ -92,21 +85,10 @@ Item {
         ListView {
             id: connectionView;
 
-//         property bool expandedItem: false;
-//         property variant previouslyExpandedItems: [];
-//
             property bool activeExpanded: true;
             property bool previousExpanded: true;
             property bool unknownExpanded: true;
 
-//         anchors {
-//             left: parent.left;
-//             right: parent.right;
-//             top: parent.top;
-//             bottom: toolbarSeparator.top;
-//             topMargin: padding.margins.top;
-//             bottomMargin: padding.margins.bottom
-//         }
             anchors.fill: parent;
 
             clip: true
@@ -138,52 +120,12 @@ Item {
             }
 
             delegate: ConnectionItem {
-//             expanded: connectionView.expandedItem && connectionView.containItem(itemUni);
-//             onItemExpanded: {
-//                 if (itemExpanded) {
-//                     connectionView.expandedItem = true;
-//                     connectionView.addItem(itemUni);
-//                     connectionView.currentIndex = index;
-//                 } else {
-//                     connectionView.removeItem(itemUni);
-//                     if (connectionView.previouslyExpandedItems.length == 0) {
-//                         connectionView.expandedItem = false;
-//                     }
-//                 }
-//             }
-//
-//             ListView.onRemove: {
-//                 if (ListView.isCurrentItem) {
-//                     connectionView.removeItem(itemUni);
-//                 }
-//             }
+                    anchors {
+                        left: parent.left;
+                        right: parent.right;
+                    }
             }
         }
-
-//         function addItem(item) {
-//             var currentItems = previouslyExpandedItems;
-//             currentItems[currentItems.length] = item;
-//             previouslyExpandedItems = currentItems;
-//         }
-//
-//         function removeItem(item) {
-//             var tmpItems = [];
-//             for (var i = 0; i < previouslyExpandedItems.length; i++) {
-//                 if (previouslyExpandedItems[i] != item) {
-//                     tmpItems[tmpItems.length] = previouslyExpandedItems[i];
-//                 }
-//             }
-//             previouslyExpandedItems = tmpItems;
-//         }
-//
-//         function containItem(item) {
-//             for (var i = 0; i < previouslyExpandedItems.length; i++) {
-//                 if (previouslyExpandedItems[i] == item) {
-//                     return true;
-//                 }
-//             }
-//             return false;
-//         }
     }
 
 //     PlasmaCore.SvgItem {
@@ -219,7 +161,6 @@ Item {
 
     Component.onCompleted: {
         configChanged();
-        plasmoid.popupEvent.connect(mainWindow.hideOptions);
         plasmoid.addEventListener('configChanged', mainWindow.configChanged)
     }
 
@@ -230,6 +171,5 @@ Item {
         var speedUnit;
         speedUnit = plasmoid.readConfig("networkSpeedUnit");
         globalConfig.setNetworkSpeedUnit(speedUnit);
-//         autoHideOptions = plasmoid.readConfig("autoHideOptions");
     }
 }

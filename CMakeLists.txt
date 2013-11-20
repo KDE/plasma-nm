@@ -72,7 +72,7 @@ add_subdirectory(declarative-plugins)
 add_subdirectory(editor)
 add_subdirectory(vpn)
 add_subdirectory(kded)
-#add_subdirectory(kcm)
+add_subdirectory(kcm)
 add_subdirectory(settings)
 
 macro_display_feature_log()

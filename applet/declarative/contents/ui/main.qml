@@ -85,15 +85,19 @@ Item {
         property int itemSize: iconSize + padding.margins.top + padding.margins.bottom;
     }
 
-    ListView {
-        id: connectionView;
+    PlasmaExtras.ScrollArea {
+
+        anchors.fill: parent;
+
+        ListView {
+            id: connectionView;
 
 //         property bool expandedItem: false;
 //         property variant previouslyExpandedItems: [];
 //
-        property bool activeExpanded: true;
-        property bool previousExpanded: true;
-        property bool unknownExpanded: true;
+            property bool activeExpanded: true;
+            property bool previousExpanded: true;
+            property bool unknownExpanded: true;
 
 //         anchors {
 //             left: parent.left;
@@ -103,37 +107,37 @@ Item {
 //             topMargin: padding.margins.top;
 //             bottomMargin: padding.margins.bottom
 //         }
-        anchors.fill: parent;
+            anchors.fill: parent;
 
-        clip: true
-        model: connectionSortModel;
-        currentIndex: -1;
-        interactive: true;
-        boundsBehavior: Flickable.StopAtBounds;
-        section.property: "itemSection";
-        section.delegate: SectionHeader {
-            onHideSection: {
-                if (section == i18n("Active connections")) {
-                    connectionView.activeExpanded = false;
-                } else if (section == i18n("Previous connections")) {
-                    connectionView.previousExpanded = false;
-                } else {
-                    connectionView.unknownExpanded = false;
+            clip: true
+            model: connectionSortModel;
+            currentIndex: -1;
+            interactive: true;
+            boundsBehavior: Flickable.StopAtBounds;
+            section.property: "itemSection";
+            section.delegate: SectionHeader {
+                onHideSection: {
+                    if (section == i18n("Active connections")) {
+                        connectionView.activeExpanded = false;
+                    } else if (section == i18n("Previous connections")) {
+                        connectionView.previousExpanded = false;
+                    } else {
+                        connectionView.unknownExpanded = false;
+                    }
+                }
+
+                onShowSection: {
+                    if (section == i18n("Active connections")) {
+                        connectionView.activeExpanded = true;
+                    } else if (section == i18n("Previous connections")) {
+                        connectionView.previousExpanded = true;
+                    } else {
+                        connectionView.unknownExpanded = true;
+                    }
                 }
             }
 
-            onShowSection: {
-                if (section == i18n("Active connections")) {
-                    connectionView.activeExpanded = true;
-                } else if (section == i18n("Previous connections")) {
-                    connectionView.previousExpanded = true;
-                } else {
-                    connectionView.unknownExpanded = true;
-                }
-            }
-        }
-
-        delegate: ConnectionItem {
+            delegate: ConnectionItem {
 //             expanded: connectionView.expandedItem && connectionView.containItem(itemUni);
 //             onItemExpanded: {
 //                 if (itemExpanded) {
@@ -153,6 +157,7 @@ Item {
 //                     connectionView.removeItem(itemUni);
 //                 }
 //             }
+            }
         }
 
 //         function addItem(item) {

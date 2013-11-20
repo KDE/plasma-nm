@@ -154,8 +154,8 @@ void ModemMonitor::requestPin(MMModemLock lock)
     {
         ModemManager::Sim::Ptr sim;
         ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(modem->uni());
-        if (modemDevice && !modemDevice->sims().isEmpty()) {
-            sim = modemDevice->sims().first();
+        if (modemDevice && modemDevice->sim()) {
+            sim = modemDevice->sim();
         }
 
         if (!sim) {

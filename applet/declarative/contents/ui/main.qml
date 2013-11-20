@@ -91,9 +91,9 @@ Item {
 //         property bool expandedItem: false;
 //         property variant previouslyExpandedItems: [];
 //
-//         property bool activeExpanded: true;
-//         property bool previousExpanded: true;
-//         property bool unknownExpanded: true;
+        property bool activeExpanded: true;
+        property bool previousExpanded: true;
+        property bool unknownExpanded: true;
 
 //         anchors {
 //             left: parent.left;

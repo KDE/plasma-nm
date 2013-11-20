@@ -31,9 +31,9 @@ PlasmaComponents.ListItem {
 //     property bool detailsView: false;
 //
 //     // Read only properties
-//     property bool sectionHidden: (!connectionView.activeExpanded && itemSection == i18n("Active connections")) ||
-//                                  (!connectionView.previousExpanded && itemSection == i18n("Previous connections")) ||
-//                                  (!connectionView.unknownExpanded && itemSection == i18n("Unknown connections"))
+    property bool sectionHidden: (!connectionView.activeExpanded && itemSection == i18n("Active connections")) ||
+                                 (!connectionView.previousExpanded && itemSection == i18n("Previous connections")) ||
+                                 (!connectionView.unknownExpanded && itemSection == i18n("Unknown connections"))
 //
 //     property bool predictableWirelessPassword: !itemUuid && itemType == PlasmaNM.Enums.Wireless &&
 //                                                 itemSecurityType != PlasmaNM.Enums.None && itemSecurityType != PlasmaNM.Enums.DynamicWep && itemSecurityType != PlasmaNM.Enums.LEAP &&
@@ -115,6 +115,7 @@ PlasmaComponents.ListItem {
                 visible: !svgConnectionTypeIcon.visible;
             }
         }
+
         PlasmaComponents.Label {
             id: connectionNameLabel;
 
@@ -438,28 +439,27 @@ PlasmaComponents.ListItem {
 //         }
 //     }
 
-//     states: [
+    states: [
 //         State {
 //             name: "Collapsed";
 //             when: !expanded && !sectionHidden;
 //             StateChangeScript { script: if (connectionItemSettings.status == Loader.Ready) {connectionItemSettings.sourceComponent = undefined} }
 //         },
-//
-//         State {
-//             name: "CollapsedHidden";
-//             when: sectionHidden;
-//             StateChangeScript { script: if (connectionItemSettings.status == Loader.Ready) {connectionItemSettings.sourceComponent = undefined} }
-//             PropertyChanges { target: connectionItem; height: 0; }
-//             PropertyChanges { target: connectionItem; visible: false; }
-//         },
-//
+
+        State {
+            name: "CollapsedHidden";
+            when: sectionHidden;
+            PropertyChanges { target: connectionItem; height: 0; }
+            PropertyChanges { target: connectionItem; visible: false; }
+        }
+
 //         State {
 //             name: "ConnectionExpanded";
 //             when: expanded && !sectionHidden;
 //             StateChangeScript { script: createContent(); }
 //             AnchorChanges { target: connectionItemBasic; anchors.bottom: undefined; }
 //         }
-//     ]
+    ]
 //
 //     transitions: Transition {
 //         NumberAnimation { duration: 300; properties: "height" }

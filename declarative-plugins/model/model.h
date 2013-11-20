@@ -71,6 +71,10 @@ public:
          */
         SecurityTypeRole,
         /**
+         * Item security returned as a string
+         */
+        SecurityTypeStringRole,
+        /**
          * Item section name, one of Active connections (the item is activated), Previous connections (there is some associated connection)
          * or Uknown connections (for available accesspoints without associated connections)
          */

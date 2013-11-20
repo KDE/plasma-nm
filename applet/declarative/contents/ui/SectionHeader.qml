@@ -30,7 +30,7 @@ PlasmaComponents.ListItem {
     sectionDelegate: true;
     property bool expanded: true;
 
-    height: sizes.itemSize;
+    height: Math.max(expandButton.height, sectionLabel.height) + padding.margins.top + padding.margins.bottom;
     anchors {
         left: parent.left;
         right: parent.right;
@@ -39,7 +39,7 @@ PlasmaComponents.ListItem {
     PlasmaComponents.Label {
         id: sectionLabel
 
-        height: sectionHeader.height;
+        height: paintedHeight;
         anchors {
             left: expandButton.right;
             verticalCenter: parent.verticalCenter;

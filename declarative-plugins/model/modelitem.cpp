@@ -53,7 +53,7 @@ ModelItem::ModelItem(const QString& device, QObject * parent)
     : QObject(parent)
     , m_signal(0)
     , m_sectionType(ModelItem::Unknown)
-    , m_connectionState(NetworkManager::ActiveConnection::Unknown)
+    , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
     , m_type(NetworkManager::ConnectionSettings::Unknown)
     , m_securityType(NetworkManager::Utils::None)
 {
@@ -362,7 +362,7 @@ void ModelItem::setActiveConnection(const QString& active)
     if (activeConnection) {
         m_connectionState = activeConnection->state();
     } else {
-        m_connectionState = NetworkManager::ActiveConnection::Unknown;
+        m_connectionState = NetworkManager::ActiveConnection::Deactivated;
     }
 
     updateDetails();
@@ -412,7 +412,7 @@ void ModelItem::setConnection(const QString& connection)
         m_name.clear();
         m_uuid.clear();
         m_activePath.clear();
-        m_connectionState = NetworkManager::ActiveConnection::Unknown;
+        m_connectionState = NetworkManager::ActiveConnection::Deactivated;
 
         if (!m_ssid.isEmpty()) {
             m_name = m_ssid;

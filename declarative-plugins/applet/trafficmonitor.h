@@ -35,6 +35,7 @@
 class TrafficMonitor : public QGraphicsWidget
 {
 Q_PROPERTY(QString device READ device WRITE setDevice)
+Q_PROPERTY(qreal height READ height NOTIFY heightChanged)
 Q_OBJECT
 public:
     explicit TrafficMonitor(QGraphicsItem * parent = 0);
@@ -42,6 +43,8 @@ public:
 
     void setDevice(const QString & device);
     QString device() const;
+
+    qreal height() const;
 
 public Q_SLOTS:
     void dataUpdated(const QString & sourceName, const Plasma::DataEngine::Data & data);
@@ -72,6 +75,9 @@ private:
 
     bool m_updateEnabled;
     int m_speedUnit;
+
+Q_SIGNALS:
+    void heightChanged();
 };
 
 #endif // PLASMA_NM_TRAFFIC_MONITOR_H

@@ -200,7 +200,7 @@ PlasmaComponents.ListItem {
             Item {
                 id: trafficMonitor;
 
-                height: visible ? 150 : 0;
+                height: visible ? trafficMonitorWidget.height : 0;
                 anchors {
                     top: parent.top;
                     left: parent.left;
@@ -209,6 +209,7 @@ PlasmaComponents.ListItem {
                 visible: (itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn)
 
                 PlasmaNM.TrafficMonitor {
+                    id: trafficMonitorWidget;
                     anchors.fill: parent;
                     device: itemDevicePath;
                 }
@@ -220,6 +221,7 @@ PlasmaComponents.ListItem {
                 anchors {
                     horizontalCenter: parent.horizontalCenter;
                     top: trafficMonitor.bottom;
+                    topMargin: padding.margins.top;
                 }
                 text: i18n("Disconnect");
 

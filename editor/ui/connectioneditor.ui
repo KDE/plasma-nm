@@ -41,6 +41,12 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QTreeView::item {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}</string>
+     </property>
      <property name="editTriggers">
       <set>QAbstractItemView::NoEditTriggers</set>
      </property>

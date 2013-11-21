@@ -25,10 +25,10 @@
    </item>
    <item>
     <widget class="KTreeWidgetSearchLine" name="ktreewidgetsearchline">
-     <property name="urlDropsEnabled">
+     <property name="urlDropsEnabled" stdset="0">
       <bool>false</bool>
      </property>
-     <property name="clickMessage">
+     <property name="clickMessage" stdset="0">
       <string>Search connections...</string>
      </property>
     </widget>
@@ -41,17 +41,20 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QTreeView::item {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}</string>
+     </property>
      <property name="editTriggers">
       <set>QAbstractItemView::NoEditTriggers</set>
      </property>
      <property name="alternatingRowColors">
       <bool>true</bool>
      </property>
-     <property name="indentation">
-      <number>15</number>
-     </property>
      <property name="uniformRowHeights">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="sortingEnabled">
       <bool>true</bool>

@@ -31,8 +31,6 @@ ConnectionItem::ConnectionItem(QTreeWidgetItem * parent, const QStringList & str
     } else {
         setIcon(0, KIcon("user-offline"));
     }
-
-    setSizeHint(0, QSize(150, 20));
 }
 
 bool ConnectionItem::operator<(const QTreeWidgetItem &other) const

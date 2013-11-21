@@ -72,6 +72,8 @@ TrafficMonitor::TrafficMonitor(QGraphicsItem* parent)
     setLayout(layout);
 
     Plasma::DataEngineManager::self()->loadEngine("systemmonitor");
+
+    connect(m_traffic, SIGNAL(heightChanged()), this, SIGNAL(heightChanged()));
 }
 
 TrafficMonitor::~TrafficMonitor()
@@ -120,6 +122,11 @@ QString TrafficMonitor::device() const
         return m_device->uni();
 
     return QString();
+}
+
+qreal TrafficMonitor::height() const
+{
+    return m_trafficPlotter->geometry().height() + m_traffic->geometry().height() + 5;
 }
 
 void TrafficMonitor::resetMonitor()

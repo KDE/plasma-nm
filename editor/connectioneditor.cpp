@@ -61,6 +61,8 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     m_editor->setupUi(tmp);
     setCentralWidget(tmp);
 
+    m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
+
     m_editor->ktreewidgetsearchline->setTreeWidget(m_editor->connectionsWidget);
 
     m_menu = new KActionMenu(KIcon("list-add"), i18n("Add"), this);

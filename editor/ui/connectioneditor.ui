@@ -25,10 +25,10 @@
    </item>
    <item>
     <widget class="KTreeWidgetSearchLine" name="ktreewidgetsearchline">
-     <property name="urlDropsEnabled">
+     <property name="urlDropsEnabled" stdset="0">
       <bool>false</bool>
      </property>
-     <property name="clickMessage">
+     <property name="clickMessage" stdset="0">
       <string>Search connections...</string>
      </property>
     </widget>
@@ -47,11 +47,8 @@
      <property name="alternatingRowColors">
       <bool>true</bool>
      </property>
-     <property name="indentation">
-      <number>15</number>
-     </property>
      <property name="uniformRowHeights">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="sortingEnabled">
       <bool>true</bool>

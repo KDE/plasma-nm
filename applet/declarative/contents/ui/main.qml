@@ -29,6 +29,7 @@ Item {
 
     property int minimumWidth: 300;
     property int minimumHeight: 300;
+    property bool showSections: true;
     property Component compactRepresentation: CompactRepresentation {
         Component.onCompleted: {
             plasmoid.addEventListener('configChanged', mainWindow.configChanged)
@@ -101,7 +102,7 @@ Item {
             currentIndex: -1;
             interactive: true;
             boundsBehavior: Flickable.StopAtBounds;
-            section.property: "itemSection";
+            section.property: showSections ? "itemSection" : "";
             section.delegate: SectionHeader {
                 onHideSection: {
                     if (section == i18n("Active connections")) {
@@ -136,6 +137,8 @@ Item {
             right: parent.right;
             top: parent.top;
         }
+
+        sectionDelegate: !showSections;
     }
 
     Component.onCompleted: {

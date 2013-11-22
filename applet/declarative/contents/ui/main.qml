@@ -80,7 +80,12 @@ Item {
 
     PlasmaExtras.ScrollArea {
 
-        anchors.fill: parent;
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: toolbar.bottom;
+            bottom: parent.bottom;
+        }
 
         ListView {
             id: connectionView;
@@ -119,45 +124,19 @@ Item {
                 }
             }
 
-            delegate: ConnectionItem {
-                    anchors {
-                        left: parent.left;
-                        right: parent.right;
-                    }
-            }
+            delegate: ConnectionItem { }
         }
     }
 
-//     PlasmaCore.SvgItem {
-//         id: toolbarSeparator
-//
-//         height: lineSvg.elementSize("horizontal-line").height;
-//         width: parent.width;
-//         anchors {
-//             left: parent.left;
-//             right: parent.right;
-//             bottom: toolbar.top;
-//             bottomMargin: padding.margins.bottom/2;
-//             leftMargin: padding.margins.left;
-//             rightMargin: padding.margins.right;
-//         }
-//         elementId: "horizontal-line";
-//
-//         svg: PlasmaCore.Svg {
-//             id: lineSvg;
-//             imagePath: "widgets/line";
-//         }
-//     }
-//
-//     Toolbar {
-//         id: toolbar;
-//
-//         anchors {
-//             left: parent.left;
-//             right: parent.right;
-//             bottom: parent.bottom;
-//         }
-//     }
+    Toolbar {
+        id: toolbar;
+
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: parent.top;
+        }
+    }
 
     Component.onCompleted: {
         configChanged();

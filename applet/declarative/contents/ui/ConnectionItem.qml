@@ -44,9 +44,9 @@ PlasmaComponents.ListItem {
                 else Math.max(connectionIcon.height, connectionNameLabel.height);
 
         anchors {
-            top: parent.top
             left: parent.left
             right: parent.right
+            top: parent.top
         }
 
         PlasmaCore.Svg {
@@ -62,8 +62,8 @@ PlasmaComponents.ListItem {
             width: sizes.iconSize;
             height: width;
             anchors {
-                verticalCenter: parent.verticalCenter
                 left: parent.left
+                verticalCenter: parent.verticalCenter
             }
 
             PlasmaCore.SvgItem {
@@ -119,10 +119,10 @@ PlasmaComponents.ListItem {
 
             height: paintedHeight
             anchors {
+                bottom: parent.bottom;
                 left: connectionIcon.right;
                 leftMargin: padding.margins.left;
                 right: connectingIndicator.left;
-                bottom: parent.bottom;
             }
             visible: displayStatusLabel;
 
@@ -148,8 +148,8 @@ PlasmaComponents.ListItem {
             height: width;
             anchors {
                 right: parent.right;
-                verticalCenter: parent.verticalCenter;
                 rightMargin: padding.margins.right;
+                verticalCenter: parent.verticalCenter;
             }
             running: itemConnectionState == PlasmaNM.Enums.Activating;
             visible: running;

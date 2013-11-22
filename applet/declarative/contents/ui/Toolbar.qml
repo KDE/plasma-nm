@@ -23,125 +23,48 @@ import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.core 0.1 as PlasmaCore
 import org.kde.networkmanagement 0.1 as PlasmaNM
 
-Item {
-    id: toolBar;
-
-    property bool expanded: false;
-
-    height: sizes.itemSize;
+PlasmaComponents.ListItem {
 
     PlasmaNM.NetworkStatus {
         id: networkStatus;
     }
 
-    Item {
-        id: toolbarLine;
+    height: Math.max(statusIcon.height, statusLabel.height) + padding.margins.top + padding.margins.bottom;
+    enabled: true;
 
-        height: sizes.itemSize;
+    PlasmaCore.IconItem {
+        id: statusIcon;
+
+        height: sizes.iconSize;
+        width: height;
         anchors {
             left: parent.left;
-            right: parent.right;
-            bottom: parent.bottom;
+            verticalCenter: parent.verticalCenter
         }
-
-        PlasmaCore.IconItem {
-            id: statusIcon
-
-            height: sizes.iconSize;
-            width: height;
-            anchors {
-                left: parent.left;
-                verticalCenter: parent.verticalCenter;
-                leftMargin: padding.margins.left;
-            }
-            source: (networkStatus.networkStatus == i18n("Connected") || networkStatus.networkStatus == "Connected") ? "user-online" : "user-offline";
-        }
-
-        PlasmaComponents.Label {
-            id: statusLabel;
-
-            height: sizes.itemSize;
-            anchors {
-                left: statusIcon.right;
-                verticalCenter: parent.verticalCenter;
-                leftMargin: padding.margins.left;
-            }
-            elide: Text.ElideRight;
-            text: networkStatus.networkStatus;
-        }
-
-        PlasmaCore.IconItem {
-            id: toolButton;
-
-            height: sizes.iconSize;
-            width: height;
-            anchors {
-                right: parent.right;
-                verticalCenter: parent.verticalCenter;
-                rightMargin: padding.margins.right;
-            }
-            source: "configure";
-        }
-
-        MouseArea {
-            id: toolbarMouseArea;
-
-            anchors { fill: parent }
-
-            onClicked: {
-                hideOrShowOptions();
-            }
-        }
+        source: (networkStatus.networkStatus == i18n("Connected") || networkStatus.networkStatus == "Connected") ? "user-online" : "user-offline";
     }
 
-    OptionsWidget {
-        id: options;
+    PlasmaComponents.Label {
+        id: statusLabel
 
+        height: paintedHeight;
         anchors {
-            left: parent.left;
+            left: statusIcon.right;
+            leftMargin: padding.margins.left;
+            verticalCenter: parent.verticalCenter;
+        }
+        text: networkStatus.networkStatus;
+    }
+
+    PlasmaCore.IconItem {
+        id: configureButton;
+
+        height: sizes.iconSize;
+        width: height;
+        anchors {
             right: parent.right;
-            top: parent.top;
+            verticalCenter: parent.verticalCenter;
         }
-        visible: false;
-
-        onOpenEditor: {
-            if (mainWindow.autoHideOptions) {
-                expanded = false;
-            }
-        }
-    }
-
-    states: [
-        State {
-            name: "Hidden";
-            when: !expanded;
-        },
-
-        State {
-            name: "Expanded";
-            when: expanded;
-            PropertyChanges { target: toolBar; height: options.childrenRect.height + sizes.itemSize + padding.margins.top }
-            PropertyChanges { target: options; visible: true }
-        }
-    ]
-
-    transitions: Transition {
-        NumberAnimation { duration: 300; properties: "height, visible" }
-    }
-
-    function hideOrShowOptions() {
-        if (!expanded) {
-            expanded = true;
-            plasmoid.writeConfig("optionsExpanded", "expanded");
-        } else {
-            expanded = false;
-            plasmoid.writeConfig("optionsExpanded", "hidden");
-        }
-    }
-
-    Component.onCompleted: {
-        if (plasmoid.readConfig("optionsExpanded") == "expanded") {
-            expanded = true;
-        }
+        source: "configure";
     }
 }

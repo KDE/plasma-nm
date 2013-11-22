@@ -42,6 +42,7 @@ PlasmaComponents.ListItem {
         height: paintedHeight;
         anchors {
             left: expandButton.right;
+            right: parent.right;
             verticalCenter: parent.verticalCenter;
             leftMargin: padding.margins.left
         }

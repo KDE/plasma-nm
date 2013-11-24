@@ -47,7 +47,7 @@ find_package(KF5 CONFIG REQUIRED
     KIdleTime ItemModels KWidgetsAddons KWindowSystem KCodecs KArchive KCoreAddons Solid ThreadWeaver
     KConfig KAuth KJS KWallet KDBusAddons Sonnet
     KI18n KGuiAddons KService KConfigWidgets ItemViews KNotifications KIconThemes KStyle KCompletion KJobWidgets KTextWidgets XmlGui KCrash
-    KBookmarks KUnitConversion KCMUtils Kross)
+    KBookmarks KUnitConversion KCMUtils)
 
 find_package(Plasma REQUIRED NO_MODULE)
 find_package(KDeclarative REQUIRED NO_MODULE)
@@ -55,7 +55,6 @@ find_package(KDeclarative REQUIRED NO_MODULE)
 find_package(KInit)
 
 # needed for set_package_properties macro
-find_package(KDELibs4 REQUIRED NO_MODULE)
 find_package(KDE4Support REQUIRED NO_MODULE)
 find_package(Qt5Transitional MODULE)
 

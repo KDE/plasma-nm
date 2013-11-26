@@ -211,9 +211,9 @@ void ConnectionIcon::setIcons()
                 }
 
                 vpnFound = true;
-                m_connectionIndicatorIcon = "object-locked";
-                NMAppletDebug() << "Emit signal connectionIndicatorIconChanged(object-locked)";
-                Q_EMIT connectionIndicatorIconChanged("object-locked");
+                m_connectionIndicatorIcon = "-locked";
+                NMAppletDebug() << "Emit signal connectionIndicatorIconChanged(locked)";
+                Q_EMIT connectionIndicatorIconChanged("-locked");
             } else {
                 activeConnection = active;
             }
@@ -283,9 +283,9 @@ void ConnectionIcon::setIcons()
             }
         } else if (active->vpn() && active->state() == NetworkManager::ActiveConnection::Activated) {
             vpnFound = true;
-            m_connectionIndicatorIcon = "object-locked";
-            NMAppletDebug() << "Emit signal connectionIndicatorIconChanged(object-locked)";
-            Q_EMIT connectionIndicatorIconChanged("object-locked");
+            m_connectionIndicatorIcon = "-locked";
+            NMAppletDebug() << "Emit signal connectionIndicatorIconChanged(locked)";
+            Q_EMIT connectionIndicatorIconChanged("locked");
         }
     }
 
@@ -571,35 +571,31 @@ void ConnectionIcon::setWirelessIconForSignalStrength(int strength)
         diff <= -10) {
         int iconStrength = 100;
 
-        if (strength < 20) {
+        if (strength == 0) {
+            iconStrength = 0;
+            m_connectionPixmapIcon = "network-wireless-connected-00";
+            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-00");
+        } else if (strength < 20) {
             iconStrength = 20;
-            m_connectionPixmapIcon = "network-wireless-connected-25";
-            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-25");
+            m_connectionPixmapIcon = "network-wireless-connected-20";
+            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-20");
         } else if (strength < 25) {
             iconStrength = 25;
-            m_connectionPixmapIcon = "network-wireless-connected-25";
-            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-25");
+            m_connectionPixmapIcon = "network-wireless-connected-20";
+            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-20");
         } else if (strength < 40) {
             iconStrength = 40;
-            m_connectionPixmapIcon = "network-wireless-connected-50";
-            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-50");
-        } else if (strength < 50) {
-            iconStrength = 50;
-            m_connectionPixmapIcon = "network-wireless-connected-50";
-            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-50");
+            m_connectionPixmapIcon = "network-wireless-connected-40";
+            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-40");
         } else if (strength < 60) {
             iconStrength = 60;
-            m_connectionPixmapIcon = "network-wireless-connected-75";
-            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-75");
-        } else if (strength < 75) {
-            iconStrength = 75;
-            m_connectionPixmapIcon = "network-wireless-connected-75";
-            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-75");
+            m_connectionPixmapIcon = "network-wireless-connected-60";
+            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-60");
         } else if (strength < 80) {
             iconStrength = 80;
-            m_connectionPixmapIcon = "network-wireless-connected-100";
-            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-100");
-        } else {
+            m_connectionPixmapIcon = "network-wireless-connected-80";
+            Q_EMIT connectionPixmapIconChanged("network-wireless-connected-80");
+        } else if (strength < 100) {
             m_connectionPixmapIcon = "network-wireless-connected-100";
             Q_EMIT connectionPixmapIconChanged("network-wireless-connected-100");
         }

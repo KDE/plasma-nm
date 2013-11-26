@@ -56,7 +56,7 @@ PlasmaComponents.ListItem {
             imagePath: "icons/plasma-networkmanagement";
         }
 
-        Item {
+        PlasmaCore.SvgItem {
             id: connectionIcon;
 
             width: sizes.iconSize;
@@ -65,36 +65,8 @@ PlasmaComponents.ListItem {
                 left: parent.left
                 verticalCenter: parent.verticalCenter
             }
-
-            PlasmaCore.SvgItem {
-                id: svgConnectionTypeIcon;
-
-                anchors.fill: parent;
-                svg: svgIcons;
-                elementId: itemConnectionIcon;
-                visible: itemType != PlasmaNM.Enums.Vpn && itemType != PlasmaNM.Enums.Adsl && itemType != PlasmaNM.Enums.Pppoe;
-
-                QIconItem {
-                    id: connectionSecurityIcon;
-
-                    width: connectionIcon.width/2;
-                    height: width;
-                    anchors {
-                        bottom: parent.bottom;
-                        right: parent.right;
-                    }
-                    icon: QIcon("object-locked");
-                    visible: itemSecurityType != PlasmaNM.Enums.None;
-                }
-            }
-
-            QIconItem {
-                id: pngConnectionTypeIcon;
-
-                anchors.fill: parent;
-                icon: QIcon("secure-card");
-                visible: !svgConnectionTypeIcon.visible;
-            }
+            svg: svgIcons;
+            elementId: itemConnectionIcon;
         }
 
         PlasmaComponents.Label {

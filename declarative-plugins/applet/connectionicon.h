@@ -49,11 +49,10 @@ Q_PROPERTY(QString connectionSvgIcon READ connectionSvgIcon NOTIFY connectionSvg
  */
 Q_PROPERTY(QString connectionPixmapIcon READ connectionPixmapIcon NOTIFY connectionPixmapIconChanged)
 /**
- * Returns a pixmap icon name from Oxygen icon set which should be used as an indicator of NM status
  * Current indicators:
- * 1) object-locked - indicates active VPN connection
- * 2) dialog-cancel - indicates no active connection
- * 3) dialog-error - indicates that NetworkManager is not active
+ * 1) -locked - indicates active VPN connection
+ * 2) dialog-cancel - indicates no active connection // TODO
+ * 3) dialog-error - indicates that NetworkManager is not active // TODO
  */
 Q_PROPERTY(QString connectionIndicatorIcon READ connectionIndicatorIcon NOTIFY connectionIndicatorIconChanged)
 Q_OBJECT

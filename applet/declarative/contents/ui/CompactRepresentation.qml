@@ -47,19 +47,7 @@ Item {
 
         anchors.fill: parent;
         svg: svgIcons;
-        elementId: connectionIconProvider.connectionSvgIcon;
-    }
-
-    QIconItem {
-        id: hoverIcon;
-
-        width: parent.width/2;
-        height: parent.height/2;
-        anchors {
-            bottom: parent.bottom;
-            right: parent.right;
-        }
-        icon: connectionIconProvider.connectionIndicatorIcon;
+        elementId: connectionIconProvider.connectionSvgIcon + connectionIconProvider.connectionIndicatorIcon;
     }
 
     PlasmaComponents.BusyIndicator {

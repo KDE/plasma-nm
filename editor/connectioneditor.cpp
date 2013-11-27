@@ -139,6 +139,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 
     kAction = new KAction(KIcon("edit-delete"), i18n("Delete"), this);
     kAction->setEnabled(false);
+    kAction->setShortcut(Qt::Key_Delete);
     connect(kAction, SIGNAL(triggered()), SLOT(removeConnection()));
     actionCollection()->addAction("delete_connection", kAction);
 

@@ -30,6 +30,7 @@ Item {
     property int minimumWidth: 300;
     property int minimumHeight: 300;
     property bool showSections: true;
+    property bool showSectionLabels: true;
     property Component compactRepresentation: CompactRepresentation {
         Component.onCompleted: {
             plasmoid.addEventListener('configChanged', mainWindow.configChanged)
@@ -153,5 +154,7 @@ Item {
         var speedUnit;
         speedUnit = plasmoid.readConfig("networkSpeedUnit");
         globalConfig.setNetworkSpeedUnit(speedUnit);
+        showSections = plasmoid.readConfig("showSections");
+        showSectionLabels = plasmoid.readConfig("showSectionLabels");
     }
 }

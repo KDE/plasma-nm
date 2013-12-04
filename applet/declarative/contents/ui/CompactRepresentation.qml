@@ -47,7 +47,7 @@ Item {
 
         anchors.fill: parent;
         svg: svgIcons;
-        elementId: connectionIconProvider.connectionSvgIcon + connectionIconProvider.connectionIndicatorIcon;
+        elementId: connectionIconProvider.connectionIcon
     }
 
     PlasmaComponents.BusyIndicator {
@@ -68,7 +68,7 @@ Item {
         PlasmaCore.ToolTip {
             id: tooltip;
             target: mouseAreaPopup;
-            image: connectionIconProvider.connectionPixmapIcon;
+            image: connectionIconProvider.connectionTooltipIcon;
             subText: networkStatus.activeConnections;
         }
     }

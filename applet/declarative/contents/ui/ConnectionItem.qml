@@ -30,8 +30,7 @@ PlasmaComponents.ListItem {
     property bool sectionHidden: (!connectionView.activeExpanded && itemSection == i18n("Active connections")) ||
                                  (!connectionView.previousExpanded && itemSection == i18n("Previous connections")) ||
                                  (!connectionView.unknownExpanded && itemSection == i18n("Unknown connections"))
-    property bool displayCategories: true;
-    property bool displayStatusLabel: displayCategories ||
+    property bool displayStatusLabel: mainWindow.showSectionLabels ||
                                       (itemConnectionState != PlasmaNM.Enums.Activated && itemType == PlasmaNM.Enums.Wireless && itemSecurityType != PlasmaNM.Enums.None);
 
     enabled: true
@@ -100,7 +99,7 @@ PlasmaComponents.ListItem {
 
             font.pointSize: theme.smallestFont.pointSize;
             color: "#99"+(theme.textColor.toString().substr(1))
-            text:   if (displayCategories) {
+            text:   if (mainWindow.showSectionLabels) {
                         if (itemConnectionState == PlasmaNM.Enums.Activated) i18n("Connected");
                         else if (itemConnectionState == PlasmaNM.Enums.Activating) i18n("Connecting");
                         else if (itemUuid && itemSecurityType != PlasmaNM.Enums.None) i18n("Saved") + ", " + i18n("Security") + ": " + itemSecurityString;

@@ -9,11 +9,11 @@
     <entry name="detailKeys" type="StringList">
       <default>interface:type,interface:status,interface:bitrate,interface:name,interface:hardwareaddress,ipv4:address,wireless:ssid,wireless:signal,wireless:channel,wireless:security,mobile:operator,mobile:quality,mobile:technology,bluetooth:name,vpn:plugin,vpn:banner</default>
     </entry>
-    <entry name="autoHideOptions" type="Bool">
-      <default>true</default>
+    <entry name="showSections" type="Bool">
+        <default>true</default>
     </entry>
-    <entry name="optionsExpanded" type="String">
-      <default>hidden</default>
+    <entry name="showSectionLabels" type="Bool">
+        <default>true</default>
     </entry>
     <entry name="networkSpeedUnit" type="Enum">
       <choices name="NetworkSpeedUnitChoices">

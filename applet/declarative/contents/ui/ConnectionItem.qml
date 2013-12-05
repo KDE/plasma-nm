@@ -120,7 +120,6 @@ PlasmaComponents.ListItem {
             }
             text: itemName;
             elide: Text.ElideRight;
-//             font.weight: itemConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal;
             font.italic: itemConnectionState == PlasmaNM.Enums.Activating ? true : false;
         }
 
@@ -255,6 +254,9 @@ PlasmaComponents.ListItem {
                 echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
                 visible: predictableWirelessPassword;
                 placeholderText: i18n("Password...");
+                onAccepted: {
+                    connectButton.clicked();
+                }
             }
 
             PlasmaComponents.CheckBox {

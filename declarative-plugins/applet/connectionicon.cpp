@@ -219,11 +219,10 @@ void ConnectionIcon::modemSignalChanged(uint signal)
 
 void ConnectionIcon::networkingEnabledChanged(bool enabled)
 {
-    // TODO unavailable icon
     if (!enabled) {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-wired)";
-        m_connectionIcon = "network-wired";
-        Q_EMIT connectionIconChanged("network-wired");
+        NMAppletDebug() << "Emit signal connectionIconChanged(network-unavailable)";
+        m_connectionIcon = "network-unavailable";
+        Q_EMIT connectionIconChanged("network-unavailable");
     }
 }
 
@@ -354,10 +353,9 @@ void ConnectionIcon::setDisconnectedIcon()
 {
     if (NetworkManager::status() == NetworkManager::Unknown ||
         NetworkManager::status() == NetworkManager::Asleep) {
-        // TODO unavailable icon
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-wired)";
-        m_connectionIcon = "network-wired";
-        Q_EMIT connectionIconChanged("network-wired");
+        NMAppletDebug() << "Emit signal connectionIconChanged(network-unavailable)";
+        m_connectionIcon = "network-unavailable";
+        Q_EMIT connectionIconChanged("network-unavailable");
         return;
     }
 
@@ -382,33 +380,32 @@ void ConnectionIcon::setDisconnectedIcon()
         }
     }
 
-    // TODO available icon
     if (wired) {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-wired)";
-        m_connectionIcon = "network-wired";
+        NMAppletDebug() << "Emit signal connectionIconChanged(network-wired-available)";
+        m_connectionIcon = "network-wired-available";
         m_connectionTooltipIcon = "network-wired";
-        Q_EMIT connectionIconChanged("network-wired");
+        Q_EMIT connectionIconChanged("network-wired-available");
         Q_EMIT connectionTooltipIconChanged("network-wired");
         return;
     } else if (modem) {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-mobile-0)";
-        m_connectionIcon = "network-mobile-0";
+        NMAppletDebug() << "Emit signal connectionIconChanged(network-mobile-available)";
+        m_connectionIcon = "network-mobile-available";
         m_connectionTooltipIcon = "phone";
-        Q_EMIT connectionIconChanged("network-mobile-0");
+        Q_EMIT connectionIconChanged("network-mobile-available");
         Q_EMIT connectionTooltipIconChanged("phone");
         return;
     } else if (wireless) {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-wireless-0)";
-        m_connectionIcon = "network-wireless-0";
+        NMAppletDebug() << "Emit signal connectionIconChanged(network-wireless-available)";
+        m_connectionIcon = "network-wireless-available";
         m_connectionTooltipIcon = "network-wireless-connected-00";
-        Q_EMIT connectionIconChanged("network-wireless-0");
+        Q_EMIT connectionIconChanged("network-wireless-available");
         Q_EMIT connectionTooltipIconChanged("network-wireless-connected-00");
         return;
     }  else {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-wired)";
-        m_connectionIcon = "network-wired";
+        NMAppletDebug() << "Emit signal connectionIconChanged(network-unavailable)";
+        m_connectionIcon = "network-unavailable";
         m_connectionTooltipIcon = "network-wired";
-        Q_EMIT connectionIconChanged("network-wired");
+        Q_EMIT connectionIconChanged("network-unavailable");
         Q_EMIT connectionTooltipIconChanged("network-wired");
     }
 }

@@ -85,16 +85,12 @@ Item {
         anchors {
             left: parent.left;
             right: parent.right;
-            top: toolbar.bottom;
+            top: parent.top;
             bottom: parent.bottom;
         }
 
         ListView {
             id: connectionView;
-
-            property bool activeExpanded: true;
-            property bool previousExpanded: true;
-            property bool unknownExpanded: true;
 
             anchors.fill: parent;
 
@@ -104,43 +100,22 @@ Item {
             interactive: true;
             boundsBehavior: Flickable.StopAtBounds;
             section.property: showSections ? "itemSection" : "";
-            section.delegate: SectionHeader {
-                onHideSection: {
-                    if (section == i18n("Active connections")) {
-                        connectionView.activeExpanded = false;
-                    } else if (section == i18n("Previous connections")) {
-                        connectionView.previousExpanded = false;
-                    } else {
-                        connectionView.unknownExpanded = false;
-                    }
-                }
-
-                onShowSection: {
-                    if (section == i18n("Active connections")) {
-                        connectionView.activeExpanded = true;
-                    } else if (section == i18n("Previous connections")) {
-                        connectionView.previousExpanded = true;
-                    } else {
-                        connectionView.unknownExpanded = true;
-                    }
-                }
-            }
-
+            section.delegate: SectionHeader { }
             delegate: ConnectionItem { }
         }
     }
 
-    Toolbar {
-        id: toolbar;
-
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            top: parent.top;
-        }
-
-        sectionDelegate: !showSections;
-    }
+//     Toolbar {
+//         id: toolbar;
+//
+//         anchors {
+//             left: parent.left;
+//             right: parent.right;
+//             top: parent.top;
+//         }
+//
+//         sectionDelegate: !showSections;
+//     }
 
     Component.onCompleted: {
         configChanged();

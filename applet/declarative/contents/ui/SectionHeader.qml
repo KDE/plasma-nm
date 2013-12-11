@@ -24,13 +24,10 @@ import org.kde.plasma.components 0.1 as PlasmaComponents
 PlasmaComponents.ListItem {
     id: sectionHeader;
 
-    signal hideSection(string name);
-    signal showSection(string name);
-
     sectionDelegate: true;
-    property bool expanded: true;
 
-    height: Math.max(expandButton.height, sectionLabel.height) + padding.margins.top + padding.margins.bottom;
+    height: Math.max(sizes.iconSize, sectionLabel.height) + padding.margins.top + padding.margins.bottom;
+
     anchors {
         left: parent.left;
         right: parent.right;
@@ -41,44 +38,11 @@ PlasmaComponents.ListItem {
 
         height: paintedHeight;
         anchors {
-            left: expandButton.right;
+            left: parent.left;
             right: parent.right;
             verticalCenter: parent.verticalCenter;
-            leftMargin: padding.margins.left;
         }
         text: section;
-
-        MouseArea {
-            id: sectionLabelMouseArea
-
-            anchors.fill: parent;
-
-            onClicked: sectionClicked();
-        }
-    }
-
-    PlasmaComponents.ToolButton {
-        id: expandButton;
-
-        height: sizes.iconSize;
-        width: height;
-        anchors {
-            left: parent.left;
-            verticalCenter: parent.verticalCenter
-        }
-        iconSource: "list-remove";
-
-        onClicked: sectionClicked();
-    }
-
-    function sectionClicked() {
-         if (expanded) {
-            hideSection(section);
-            expandButton.iconSource = "list-add";
-        } else {
-            showSection(section);
-            expandButton.iconSource = "list-remove";
-        }
-        expanded = !expanded;
+        font.weight: Font.DemiBold;
     }
 }

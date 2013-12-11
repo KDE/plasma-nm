@@ -209,10 +209,8 @@ QString ModelItem::sectionType() const
 {
     if (connectionState() == NetworkManager::ActiveConnection::Activated) {
         return i18n("Active connections");
-    } else if (!m_uuid.isEmpty()) {
-        return i18n("Previous connections");
-    } else {
-        return i18n("Unknown connections");
+    }  else {
+        return i18n("Available connections");
     }
 }
 

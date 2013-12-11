@@ -44,18 +44,18 @@ include_directories(${Qt5Widgets_INCLUDE_DIRS}
 
 # Load CMake, Compiler and InstallDirs settings from KF5 and the following are already somewhat "done" tier1/tier2 libs from kdelibs:
 find_package(KF5 CONFIG REQUIRED 
-    KIdleTime ItemModels KWidgetsAddons KWindowSystem KCodecs KArchive KCoreAddons Solid ThreadWeaver
-    KConfig KAuth KJS KWallet KDBusAddons Sonnet
-    KI18n KGuiAddons KService KConfigWidgets ItemViews KNotifications KIconThemes KStyle KCompletion KJobWidgets KTextWidgets XmlGui KCrash
-    KBookmarks KUnitConversion KCMUtils)
+    IdleTime ItemModels WidgetsAddons WindowSystem Codecs Archive CoreAddons Solid ThreadWeaver
+    Config Auth JS Wallet DBusAddons Sonnet
+    I18n GuiAddons Service ConfigWidgets ItemViews Notifications IconThemes Style Completion JobWidgets TextWidgets XmlGui Crash
+    Bookmarks UnitConversion KCMUtils)
 
-find_package(Plasma REQUIRED NO_MODULE)
-find_package(KDeclarative REQUIRED NO_MODULE)
+find_package(KF5Plasma REQUIRED NO_MODULE)
+find_package(KF5Declarative REQUIRED NO_MODULE)
 
-find_package(KInit)
+find_package(KF5Init)
 
 # needed for set_package_properties macro
-find_package(KDE4Support REQUIRED NO_MODULE)
+find_package(KF5KDE4Support REQUIRED NO_MODULE)
 find_package(Qt5Transitional MODULE)
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)

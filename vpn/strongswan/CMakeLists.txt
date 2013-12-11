@@ -12,8 +12,8 @@ plasma_add_plugin(plasmanetworkmanagement_strongswanui ${strongswan_SRCS})
 
 target_link_libraries(plasmanetworkmanagement_strongswanui
     Qt5::Widgets
-    KF5::KService
-    KF5::KI18n
+    KF5::Service
+    KF5::I18n
     KF5::KIOWidgets
     KF5::KDE4Support
     ${NETWORKMANAGERQT_LDFLAGS}

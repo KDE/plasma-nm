@@ -16,12 +16,12 @@ target_link_libraries(plasmanetworkmanagement_pptpui
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus
-    KF5::KService
-    KF5::KCompletion
-    KF5::KI18n
-    KF5::KWidgetsAddons
+    KF5::Service
+    KF5::Completion
+    KF5::I18n
+    KF5::WidgetsAddons
     KF5::KIOWidgets
-    KF5::KCoreAddons
+    KF5::CoreAddons
     KF5::KDE4Support
 )
 

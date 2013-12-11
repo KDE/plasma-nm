@@ -29,8 +29,8 @@ target_link_libraries(plasmanetworkmanagementplugins
     Qt5::Quick
     Qt5::DBus
     Qt5::Network
-    KF5::KI18n
-    KF5::KWindowSystem
+    KF5::I18n
+    KF5::WindowSystem
 )
 
 install(TARGETS plasmanetworkmanagementplugins DESTINATION ${QML_INSTALL_DIR}/org/kde/networkmanagement)

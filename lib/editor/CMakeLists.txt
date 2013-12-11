@@ -62,8 +62,8 @@ target_link_libraries(plasmanetworkmanagement-editor
     Qt5::DBus
     ${NETWORKMANAGERQT_LDFLAGS}
     ${MODEMMANAGERQT_LDFLAGS}
-    KF5::KService
-    KF5::KI18n
+    KF5::Service
+    KF5::I18n
     KF5::KIOWidgets
     KF5::KDE4Support
     plasmanetworkmanagement-internal

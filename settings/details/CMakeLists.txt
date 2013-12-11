@@ -12,9 +12,9 @@ plasma_add_plugin(plasmanetworkmanagementwidgets SHARED
 
 target_link_libraries(plasmanetworkmanagementwidgets
         Qt5::Widgets
-        KF5::KI18n
-        KF5::KConfigWidgets
-        KF5::KWidgetsAddons
+        KF5::I18n
+        KF5::ConfigWidgets
+        KF5::WidgetsAddons
 	KF5::KDE4Support
 )
 

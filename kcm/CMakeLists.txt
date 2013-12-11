@@ -26,11 +26,11 @@ target_link_libraries(kcm_network
     Qt5::Widgets
     Qt5::DBus
     Qt5::Network
-    KF5::KConfigWidgets
-    KF5::KI18n
-    KF5::KIconThemes
-    KF5::KService
-    KF5::KWidgetsAddons
+    KF5::ConfigWidgets
+    KF5::I18n
+    KF5::IconThemes
+    KF5::Service
+    KF5::WidgetsAddons
 
     KF5::KIOCore KF5::KIOWidgets
     #NetworkManagerQt

@@ -27,9 +27,9 @@ target_link_libraries(plasmanetworkmanagement-internal
     ${MODEMMANAGERQT_LDFLAGS}
     ${MODEMMANAGERQT_LIBRARY}
     KF5::Solid
-    KF5::KCompletion
-    KF5::KI18n
-    KF5::KIconThemes
+    KF5::Completion
+    KF5::I18n
+    KF5::IconThemes
     KF5::KDE4Support
     Qt5::Xml
     Qt5::Network

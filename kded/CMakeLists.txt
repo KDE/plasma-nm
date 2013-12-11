@@ -36,17 +36,17 @@ target_link_libraries(kded_networkmanagement
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus
-    KF5::KService
+    KF5::Service
     KF5::Solid
-    KF5::KCompletion
-    KF5::KI18n
-    KF5::KWidgetsAddons
-    KF5::KDBusAddons
-    KF5::KNotifications
-    KF5::KWallet
-    KF5::KWindowSystem
+    KF5::Completion
+    KF5::I18n
+    KF5::WidgetsAddons
+    KF5::DBusAddons
+    KF5::Notifications
+    KF5::Wallet
+    KF5::WindowSystem
     KF5::KIOWidgets
-    KF5::KCoreAddons
+    KF5::CoreAddons
     KF5::KDE4Support
 )
 

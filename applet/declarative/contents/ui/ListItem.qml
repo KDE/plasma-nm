@@ -18,7 +18,6 @@
  */
 
 import QtQuick 1.0
-import org.kde.qtextracomponents 0.1
 import org.kde.plasma.core 0.1 as PlasmaCore
 
 /**
@@ -97,6 +96,7 @@ Item {
         }
         Behavior on opacity { NumberAnimation { duration: 200 } }
     }
+
     PlasmaCore.SvgItem {
         svg: PlasmaCore.Svg {imagePath: "widgets/listitem"}
         elementId: "separator"
@@ -109,24 +109,18 @@ Item {
         visible: listItem.sectionDelegate || (typeof(index) != "undefined" && index > 0 && !listItem.checked && !itemMouse.pressed)
     }
 
-    MouseEventListener {
+    MouseArea {
         id: itemMouse
         property bool changeBackgroundOnPress: !listItem.checked && !listItem.sectionDelegate
-        property bool pressed: false;
         anchors.fill: background
         enabled: false
         hoverEnabled: true
 
         onClicked: listItem.clicked()
         onPressAndHold: listItem.pressAndHold()
-        onPressed: {
-            if (changeBackgroundOnPress) background.prefix = "pressed"
-            pressed = true;
-        }
-        onReleased: {
-            if (changeBackgroundOnPress) background.prefix = "normal"
-            pressed = false;
-        }
+        onPressed: if (changeBackgroundOnPress) background.prefix = "pressed"
+        onReleased: if (changeBackgroundOnPress) background.prefix = "normal"
+        onCanceled: if (changeBackgroundOnPress) background.prefix = "normal"
 
         Item {
             id: paddingItem

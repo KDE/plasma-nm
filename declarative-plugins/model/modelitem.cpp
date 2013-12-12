@@ -382,7 +382,7 @@ void ModelItem::setDevice(const QString& device)
             if (modemDevice) {
                 ModemManager::Modem::Ptr modemInterface = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
                 if (modemInterface) {
-                    updateSignalStrenght(modemInterface->signalQuality().signal);
+                    updateSignalStrength(modemInterface->signalQuality().signal);
                 }
             }
         }
@@ -558,7 +558,7 @@ void ModelItem::updateAccessPoint(const QString& ap)
     NMItemDebug() << name() << ": access point changed to " << m_accessPointPath;
 }
 
-void ModelItem::updateSignalStrenght(int strength)
+void ModelItem::updateSignalStrength(int strength)
 {
     m_signal = strength;
 

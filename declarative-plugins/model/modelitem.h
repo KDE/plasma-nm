@@ -74,7 +74,7 @@ public Q_SLOTS:
     void updateDetails();
     void updateActiveConnectionState(NetworkManager::ActiveConnection::State state);
     void updateAccessPoint(const QString& ap);
-    void updateSignalStrenght(int strength);
+    void updateSignalStrength(int strength);
 
 private:
     QString m_activePath;

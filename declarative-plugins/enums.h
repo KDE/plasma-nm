@@ -35,7 +35,7 @@ public:
     virtual ~Enums();
 
     enum ConnectionStatus {
-        UknownState = 0,
+        UnknownState = 0,
         Activating,
         Activated,
         Deactivating,

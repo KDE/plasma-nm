@@ -290,7 +290,7 @@ void Model::modemSignalQualityChanged(uint signal, const QString& modem)
 {
     qDebug() << "Modem signal quality changed";
     foreach (ModelItem * item, m_items.itemsByDevice(modem)) {
-        item->updateSignalStrenght(signal);
+        item->updateSignalStrength(signal);
 
         if (updateItem(item)) {
             //NMModelDebug() << "Item " << item->name() << " has been changed (modem signal changed)";
@@ -429,7 +429,7 @@ void Model::removeWirelessNetworks()
 void Model::wimaxNspSignalChanged(const QString& nsp, int strength)
 {
     foreach (ModelItem * item, m_items.itemsByNsp(nsp)) {
-        item->updateSignalStrenght(strength);
+        item->updateSignalStrength(strength);
 
         if (updateItem(item)) {
             NMModelDebug() << "Item " << item->name() << " has been changed (wimax signal changed)";
@@ -440,7 +440,7 @@ void Model::wimaxNspSignalChanged(const QString& nsp, int strength)
 void Model::wirelessNetworkSignalChanged(const QString& ssid, int strength)
 {
     foreach (ModelItem * item, m_items.itemsBySsid(ssid)) {
-        item->updateSignalStrenght(strength);
+        item->updateSignalStrength(strength);
 
         if (updateItem(item)) {
             //NMModelDebug() << "Item " << item->name() << " has been changed (wireless signal changed)";

@@ -87,15 +87,23 @@ ListItem {
         font.pointSize: theme.smallestFont.pointSize;
         color: "#99"+(theme.textColor.toString().substr(1))
         text:   if (mainWindow.showSectionLabels) {
-                    if (itemConnectionState == PlasmaNM.Enums.Activated) i18n("Connected");
-                    else if (itemConnectionState == PlasmaNM.Enums.Activating) i18n("Connecting");
-                    else if (itemUuid && itemSecurityType != PlasmaNM.Enums.None) i18n("Last time connected") + ", " + i18n("Security") + ": " + itemSecurityString;
-                    else if (itemUuid) i18n("Last time connected");
-                    else if (itemSecurityType != PlasmaNM.Enums.None) i18n("Unknown") + ", " + i18n("Security") + ": " + itemSecurityString;
-                    else i18n("Unknown");
+                    if (itemConnectionState == PlasmaNM.Enums.Activated)
+                        i18n("Connected");
+                    else if (itemConnectionState == PlasmaNM.Enums.Activating)
+                        i18n("Connecting");
+                    else if (itemUuid && itemSecurityType != PlasmaNM.Enums.None)
+                        i18n("Recently connected") + ", " + i18n("Security: %1", itemSecurityString);
+                    else if (itemUuid)
+                        i18n("Recently connected");
+                    else if (itemSecurityType != PlasmaNM.Enums.None)
+                        i18n("Unknown") + ", " + i18n("Security: %1", itemSecurityString);
+                    else
+                        i18n("Unknown");
                 } else {
-                    if (itemSecurityType != PlasmaNM.Enums.None) i18n("Security") + ": " + itemSecurityString;
-                    else i18n("None");
+                    if (itemSecurityType != PlasmaNM.Enums.None)
+                        i18n("Security: %1", itemSecurityString);
+                    else
+                        i18n("None");
                 }
         elide: Text.ElideRight;
     }
@@ -122,8 +130,10 @@ ListItem {
             verticalCenter: parent.verticalCenter;
             right: parent.right;
         }
-        text: if (itemConnectionState == PlasmaNM.Enums.Deactivated) i18n("Connect");
-              else i18n("Disconnect");
+        text: if (itemConnectionState == PlasmaNM.Enums.Deactivated)
+                  i18n("Connect");
+              else
+                  i18n("Disconnect");
         visible: connectionItem.containsMouse;
 
         onClicked: {

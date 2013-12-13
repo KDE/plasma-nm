@@ -175,8 +175,4 @@ ListItem {
             }
         }
     }
-
-    Component.onCompleted: {
-        console.log(itemSection);
-    }
 }

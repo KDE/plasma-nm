@@ -37,7 +37,6 @@ Model::Model(QObject* parent)
     roles[ConnectionPathRole] = "itemConnectionPath";
     roles[ConnectionIconRole] = "itemConnectionIcon";
     roles[ConnectionDetailsRole] = "itemDetails";
-//     roles[DeviceNameRole] = "itemDeviceName";
     roles[DevicePathRole] = "itemDevicePath";
     roles[LastUsedRole] = "itemLastUsed";
     roles[NameRole] = "itemName";
@@ -131,8 +130,6 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 return item->icon();
             case ConnectionDetailsRole:
                 return item->details();
-//             case DeviceNameRole:
-//                 return item->deviceName();
             case DevicePathRole:
                 return item->devicePath();
             case LastUsedRole:

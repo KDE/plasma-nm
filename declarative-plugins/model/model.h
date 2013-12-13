@@ -54,10 +54,6 @@ public:
          * Formated info about the connection, i.e IPv4 addresses, SSID etc.
          */
         ConnectionDetailsRole,
-//         /**
-//          * Device name of the device associated with this item
-//          */
-//         DeviceNameRole,
         /**
          * D-bus path of the device associated with this item
          */

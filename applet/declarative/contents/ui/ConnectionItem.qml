@@ -87,8 +87,11 @@ ListItem {
         font.pointSize: theme.smallestFont.pointSize;
         color: "#99"+(theme.textColor.toString().substr(1))
         text:   if (mainWindow.showSectionLabels) {
-                    if (itemConnectionState == PlasmaNM.Enums.Activated)
+                    if (itemConnectionState == PlasmaNM.Enums.Activated &&
+                        (itemType == PlasmaNM.Enums.Wireless || itemType == PlasmaNM.Enums.Wired))
                         i18n("Connected") + ", " + i18n("Speed: %1", itemSpeed);
+                    else if (itemConnectionState == PlasmaNM.Enums.Activated)
+                        i18n("Connected");
                     else if (itemConnectionState == PlasmaNM.Enums.Activating)
                         i18n("Connecting");
                     else if (itemUuid && itemSecurityType != PlasmaNM.Enums.None)

@@ -65,7 +65,6 @@ private:
     void importSecretsFromPlainTextFiles();
     void storeSecrets(const QMap<QString, QMap<QString, QString> > & map);
     QMap<QString, QString> getCorrectMapWithSecrets(const QMap<QString, QString> & map);
-    QString formatDateRelative(const QDateTime & lastUsed) const;
     QTreeWidgetItem * findTopLevelItem(const QString & type);
 };
 

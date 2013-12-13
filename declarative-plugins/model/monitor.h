@@ -55,6 +55,7 @@ private Q_SLOTS:
     void activeConnectionAdded(const QString& active);
     void activeConnectionRemoved(const QString& active);
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
+    void bitrateChanged(int bitrate);
     void cablePlugged(bool plugged);
     void connectionAdded(const QString& connection);
     void connectionRemoved(const QString& connection);
@@ -90,6 +91,7 @@ Q_SIGNALS:
     void addVpnConnection(const QString& connection);
     void addWimaxNsp(const QString& nsp, const QString& device);
     void addWirelessNetwork(const QString& network, const QString& device);
+    void bitrateChanged(int bitrate, const QString& device);
     void connectionUpdated(const QString& connection);
 #if WITH_MODEMMANAGER_SUPPORT
     void modemAccessTechnologyChanged(const QString& modem);

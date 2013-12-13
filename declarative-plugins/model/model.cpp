@@ -37,13 +37,15 @@ Model::Model(QObject* parent)
     roles[ConnectionPathRole] = "itemConnectionPath";
     roles[ConnectionIconRole] = "itemConnectionIcon";
     roles[ConnectionDetailsRole] = "itemDetails";
-    roles[DeviceNameRole] = "itemDeviceName";
+//     roles[DeviceNameRole] = "itemDeviceName";
     roles[DevicePathRole] = "itemDevicePath";
+    roles[LastUsedRole] = "itemLastUsed";
     roles[NameRole] = "itemName";
     roles[SectionRole] = "itemSection";
     roles[SignalRole] = "itemSignal";
     roles[SsidRole] = "itemSsid";
     roles[SpecificPathRole] = "itemSpecificPath";
+    roles[SpeedRole] = "itemSpeed";
     roles[SecurityTypeRole] = "itemSecurityType";
     roles[SecurityTypeStringRole] = "itemSecurityString";
     roles[UuidRole] = "itemUuid";
@@ -65,6 +67,8 @@ Model::Model(QObject* parent)
             SLOT(addWimaxNsp(QString,QString)));
     connect(m_monitor, SIGNAL(addWirelessNetwork(QString,QString)),
             SLOT(addWirelessNetwork(QString,QString)));
+    connect(m_monitor, SIGNAL(bitrateChanged(int,QString)),
+            SLOT(bitrateChanged(int, QString)));
 #if WITH_MODEMMANAGER_SUPPORT
     connect(m_monitor, SIGNAL(modemAccessTechnologyChanged(QString)),
             SLOT(modemPropertiesChanged(QString)));
@@ -127,10 +131,12 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 return item->icon();
             case ConnectionDetailsRole:
                 return item->details();
-            case DeviceNameRole:
-                return item->deviceName();
+//             case DeviceNameRole:
+//                 return item->deviceName();
             case DevicePathRole:
                 return item->devicePath();
+            case LastUsedRole:
+                return item->lastUsed();
             case NameRole:
                 if (m_items.itemsByName(item->name()).count() > 1) {
                     return item->originalName();
@@ -149,6 +155,8 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 return item->ssid();
             case SpecificPathRole:
                 return item->specificPath();
+            case SpeedRole:
+                return item->speed();
             case UuidRole:
                 return item->uuid();
             case UniRole:
@@ -262,6 +270,17 @@ void Model::addWirelessNetwork(const QString& ssid, const QString& device)
     ModelItem * item = new ModelItem(device);
     item->setWirelessNetwork(ssid);
     insertItem(item);
+}
+
+void Model::bitrateChanged(int bitrate, const QString& device)
+{
+    foreach (ModelItem * item, m_items.itemsByDevice(device)) {
+        item->updateBitrate(bitrate);
+
+        if (updateItem(item)) {
+            NMModelDebug() << "Item " << item->name() << " has been changed (bitrate changed)";
+        }
+    }
 }
 
 void Model::connectionUpdated(const QString& connection)

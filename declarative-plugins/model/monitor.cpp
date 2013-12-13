@@ -107,6 +107,8 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
         NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
         connect(wiredDev.data(), SIGNAL(carrierChanged(bool)),
                 SLOT(cablePlugged(bool)), Qt::UniqueConnection);
+        connect(wiredDev.data(), SIGNAL(bitRateChanged(int)),
+                SLOT(bitrateChanged(int)));
 
     } else if (device->type() == NetworkManager::Device::Wimax) {
         NMMonitorDebug() << "Available wimax device " << device->interfaceName();
@@ -130,7 +132,8 @@ void Monitor::addDevice(const NetworkManager::Device::Ptr& device)
     } else if (device->type() == NetworkManager::Device::Wifi) {
         NMMonitorDebug() << "Available wireless device " << device->interfaceName();
         NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
-
+        connect(wifiDev.data(), SIGNAL(bitRateChanged(int)),
+                SLOT(bitrateChanged(int)));
         foreach (const NetworkManager::WirelessNetwork::Ptr& wifiNetwork, wifiDev->networks()) {
             connect(wifiNetwork.data(), SIGNAL(signalStrengthChanged(int)),
                     SLOT(wirelessNetworkSignalChanged(int)), Qt::UniqueConnection);
@@ -260,27 +263,17 @@ void Monitor::activeConnectionStateChanged(NetworkManager::ActiveConnection::Sta
     }
 }
 
-void Monitor::vpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
+void Monitor::bitrateChanged(int bitrate)
 {
-    Q_UNUSED(reason)
-
-    NetworkManager::ActiveConnection *activePtr = qobject_cast<NetworkManager::ActiveConnection*>(sender());
-    NetworkManager::ActiveConnection::Ptr active;
-    if (activePtr) {
-        active = NetworkManager::findActiveConnection(activePtr->path());
+    NetworkManager::Device *devicePtr = qobject_cast<NetworkManager::Device*>(sender());
+    NetworkManager::Device::Ptr device;
+    if (devicePtr) {
+        device = NetworkManager::findNetworkInterface(devicePtr->uni());
     }
 
-    if (active) {
-        if (state == NetworkManager::VpnConnection::Prepare ||
-            state == NetworkManager::VpnConnection::NeedAuth ||
-            state == NetworkManager::VpnConnection::Connecting ||
-            state == NetworkManager::VpnConnection::GettingIpConfig) {
-            Q_EMIT activeConnectionStateChanged(active->path(), NetworkManager::ActiveConnection::Activating);
-        } else if (state == NetworkManager::VpnConnection::Activated) {
-            Q_EMIT activeConnectionStateChanged(active->path(), NetworkManager::ActiveConnection::Activated);
-        } else {
-            Q_EMIT activeConnectionStateChanged(active->path(), NetworkManager::ActiveConnection::Deactivated);
-        }
+    if (device) {
+        NMMonitorDebug() << "Bitrate changed " << device->interfaceName() ;
+        Q_EMIT bitrateChanged(bitrate, device->uni());
     }
 }
 
@@ -469,6 +462,30 @@ void Monitor::statusChanged(NetworkManager::Status status)
     } else {
         NMMonitorDebug() << "NetworkManager is not connected";
         Q_EMIT removeVpnConnections();
+    }
+}
+
+void Monitor::vpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
+{
+    Q_UNUSED(reason)
+
+    NetworkManager::ActiveConnection *activePtr = qobject_cast<NetworkManager::ActiveConnection*>(sender());
+    NetworkManager::ActiveConnection::Ptr active;
+    if (activePtr) {
+        active = NetworkManager::findActiveConnection(activePtr->path());
+    }
+
+    if (active) {
+        if (state == NetworkManager::VpnConnection::Prepare ||
+            state == NetworkManager::VpnConnection::NeedAuth ||
+            state == NetworkManager::VpnConnection::Connecting ||
+            state == NetworkManager::VpnConnection::GettingIpConfig) {
+            Q_EMIT activeConnectionStateChanged(active->path(), NetworkManager::ActiveConnection::Activating);
+        } else if (state == NetworkManager::VpnConnection::Activated) {
+            Q_EMIT activeConnectionStateChanged(active->path(), NetworkManager::ActiveConnection::Activated);
+        } else {
+            Q_EMIT activeConnectionStateChanged(active->path(), NetworkManager::ActiveConnection::Deactivated);
+        }
     }
 }
 

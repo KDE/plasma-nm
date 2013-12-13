@@ -47,21 +47,25 @@ public:
          */
         ConnectionPathRole,
         /**
-         * SVG icon of the item from plasma-nm icon set, except icons for VPN, Adsl, Pppoe (for these we don't have SVG icons)
+         * SVG icon of the item from plasma-nm icon set
          */
         ConnectionIconRole,
         /**
          * Formated info about the connection, i.e IPv4 addresses, SSID etc.
          */
         ConnectionDetailsRole,
-        /**
-         * Device name of the device associated with this item
-         */
-        DeviceNameRole,
+//         /**
+//          * Device name of the device associated with this item
+//          */
+//         DeviceNameRole,
         /**
          * D-bus path of the device associated with this item
          */
         DevicePathRole,
+        /**
+         * The last time when the connection was used
+         */
+        LastUsedRole,
         /**
          * Item name, it uses the name of associated connection or the name of associated AP (when there is no connection)
          */
@@ -75,8 +79,7 @@ public:
          */
         SecurityTypeStringRole,
         /**
-         * Item section name, one of Active connections (the item is activated), Previous connections (there is some associated connection)
-         * or Uknown connections (for available accesspoints without associated connections)
+         * Item section name, one of Active connections or Available connections
          */
         SectionRole,
         /**
@@ -87,6 +90,10 @@ public:
          * Item ssid, used only for wireless connections
          */
         SsidRole,
+        /**
+         * Item speed, only for wired and wireless connections
+         */
+        SpeedRole,
         /**
          * Used only for wireless (D-bus path of the associated AP) and wimax connections (D-bus path of the associated NSP)
          */
@@ -122,6 +129,7 @@ private Q_SLOTS:
     void addVpnConnection(const QString& connection);
     void addWimaxNsp(const QString& nsp, const QString& device);
     void addWirelessNetwork(const QString& ssid, const QString& device);
+    void bitrateChanged(int bitrate, const QString& device);
     void connectionUpdated(const QString& connection);
 #if WITH_MODEMMANAGER_SUPPORT
     void modemPropertiesChanged(const QString& modem);

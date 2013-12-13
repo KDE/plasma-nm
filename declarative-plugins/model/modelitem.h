@@ -34,29 +34,28 @@ class ModelItem : public QObject
 Q_OBJECT
 public:
     Q_ENUMS(Detail)
-    enum SectionType { Connected, Known, Unknown };
-
     explicit ModelItem(const QString& device = QString(), QObject * parent = 0);
     virtual ~ModelItem();
 
     QString details() const;
-    QString deviceName() const;
     QString icon() const;
+    QString lastUsed() const;
     QString name() const;
-    QString nspPath() const;
-    QString uuid() const;
-    QString ssid() const;
-    QString sectionType() const;
     QString originalName() const;
+    int signal() const;
+    QString sectionType() const;
+    QString speed() const;
+    QString ssid() const;
     QString uni() const;
+    QString uuid() const;
 
     // Object paths
     QString activeConnectionPath() const;
     QString connectionPath() const;
     QString devicePath() const;
+    QString nspPath() const;
     QString specificPath() const;
 
-    int signal() const;
     NetworkManager::ActiveConnection::State connectionState() const;
     NetworkManager::ConnectionSettings::ConnectionType type() const;
     NetworkManager::Utils::WirelessSecurityType securityType() const;
@@ -71,9 +70,10 @@ public:
     void setWirelessNetwork(const QString& ssid);
 
 public Q_SLOTS:
-    void updateDetails();
-    void updateActiveConnectionState(NetworkManager::ActiveConnection::State state);
     void updateAccessPoint(const QString& ap);
+    void updateActiveConnectionState(NetworkManager::ActiveConnection::State state);
+    void updateBitrate(int bitrate);
+    void updateDetails();
     void updateSignalStrength(int strength);
 
 private:
@@ -81,20 +81,20 @@ private:
     QString m_accessPointPath;
     QString m_connectionPath;
     QString m_devicePath;
-    QString m_nspPath;
-
     QString m_device;
     QString m_details;
     QString m_name;
+    QString m_nspPath;
     QString m_nsp;
     QString m_ssid;
     QString m_uuid;
 
-    int m_signal;
-    SectionType m_sectionType;
+    int m_bitrate;
     NetworkManager::ActiveConnection::State m_connectionState;
-    NetworkManager::ConnectionSettings::ConnectionType m_type;
+    QDateTime m_lastUsed;
     NetworkManager::Utils::WirelessSecurityType m_securityType;
+    int m_signal;
+    NetworkManager::ConnectionSettings::ConnectionType m_type;
 
     void setConnectionSettings(const NetworkManager::ConnectionSettings::Ptr& settings);
 };

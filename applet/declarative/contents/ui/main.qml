@@ -30,7 +30,6 @@ Item {
     property int minimumWidth: 300;
     property int minimumHeight: 300;
     property bool showSections: true;
-    property bool showSectionLabels: true;
     property Component compactRepresentation: CompactRepresentation {
         Component.onCompleted: {
             plasmoid.addEventListener('configChanged', mainWindow.configChanged)
@@ -80,20 +79,25 @@ Item {
         property int itemSize: iconSize + padding.margins.top + padding.margins.bottom;
     }
 
-    PlasmaExtras.ScrollArea {
+//     PlasmaExtras.ScrollArea {
 
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            top: parent.top;
-            bottom: parent.bottom;
-        }
+//         anchors {
+//             left: parent.left;
+//             right: parent.right;
+//             top: parent.top;
+//             bottom: parent.bottom;
+//         }
 
         ListView {
             id: connectionView;
 
-            anchors.fill: parent;
-
+//             anchors.fill: parent;
+            anchors {
+                left: parent.left;
+                right: parent.right;
+                top: parent.top;
+                bottom: parent.bottom;
+            }
             clip: true
             model: connectionSortModel;
             currentIndex: -1;
@@ -101,8 +105,14 @@ Item {
             boundsBehavior: Flickable.StopAtBounds;
             section.property: showSections ? "itemSection" : "";
             section.delegate: SectionHeader { }
-            delegate: ConnectionItem { }
-        }
+            delegate: ConnectionItem {
+                onExpandedChanged: {
+                    if (expanded) {
+                        connectionView.currentIndex = index;
+                    }
+                }
+            }
+//         }
     }
 
 //     Toolbar {
@@ -130,6 +140,5 @@ Item {
         speedUnit = plasmoid.readConfig("networkSpeedUnit");
         globalConfig.setNetworkSpeedUnit(speedUnit);
         showSections = plasmoid.readConfig("showSections");
-        showSectionLabels = plasmoid.readConfig("showSectionLabels");
     }
 }

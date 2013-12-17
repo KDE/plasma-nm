@@ -27,67 +27,74 @@ import org.kde.networkmanagement 0.1 as PlasmaNM
 ListItem {
     id: connectionItem;
 
-    property bool displayStatusLabel: mainWindow.showSectionLabels ||
-                                      (itemConnectionState != PlasmaNM.Enums.Activated && itemType == PlasmaNM.Enums.Wireless && itemSecurityType != PlasmaNM.Enums.None);
+    property bool expanded: false;
 
     enabled: true
+    height: if (expanded) connectionItemBase.height + connectionItemDetails.height + padding.margins.top + padding.margins.bottom;
+            else connectionItemBase.height + padding.margins.top + padding.margins.bottom;
 
-    height: if (displayStatusLabel) Math.max(connectionIcon.height, connectionNameLabel.height + connectionStatusLabel.height) + padding.margins.top + padding.margins.bottom;
-            else Math.max(connectionIcon.height, connectionNameLabel.height) + padding.margins.top + padding.margins.bottom;
+    Item {
+        id: connectionItemBase;
 
-    PlasmaCore.SvgItem {
-        id: connectionIcon;
+        height: Math.max(connectionIcon.height, connectionNameLabel.height + connectionStatusLabel.height);
 
-        width: sizes.iconSize;
-        height: width;
         anchors {
-            left: parent.left
-            verticalCenter: parent.verticalCenter
+            left: parent.left;
+            right: parent.right;
+            top: parent.top;
         }
-        svg: svgNetworkIcons;
-        elementId: itemConnectionIcon;
 
-        PlasmaCore.Svg {
-            id: svgNetworkIcons;
+        PlasmaCore.SvgItem {
+            id: connectionIcon;
 
-            multipleImages: true;
-            imagePath: "icons/plasma-networkmanagement";
+            width: sizes.iconSize;
+            height: width;
+            anchors {
+                left: parent.left
+                verticalCenter: parent.verticalCenter
+            }
+            svg: svgNetworkIcons;
+            elementId: itemConnectionIcon;
+
+            PlasmaCore.Svg {
+                id: svgNetworkIcons;
+
+                multipleImages: true;
+                imagePath: "icons/plasma-networkmanagement";
+            }
         }
-    }
 
-    PlasmaComponents.Label {
-        id: connectionNameLabel;
+        PlasmaComponents.Label {
+            id: connectionNameLabel;
 
-        height: paintedHeight;
-        anchors {
-            left: connectionIcon.right;
-            leftMargin: padding.margins.left;
-            right: !connectionItem.containsMouse ? connectingIndicator.left : configButton.left;
-            top: displayStatusLabel ? parent.top : undefined;
-            topMargin: displayStatusLabel ? 0 : padding.margins.top;
+            height: paintedHeight;
+            anchors {
+                left: connectionIcon.right;
+                leftMargin: padding.margins.left;
+                right: !connectionItem.containsMouse ? connectingIndicator.left : configButton.left;
+                top: parent.top;
+                topMargin: 0;
+            }
+            text: itemName;
+            elide: Text.ElideRight;
+            font.weight: itemConnectionState == PlasmaNM.Enums.Activated || itemUuid ? Font.DemiBold : Font.Normal;
+            font.italic: itemConnectionState == PlasmaNM.Enums.Activating ? true : false;
         }
-        text: itemName;
-        elide: Text.ElideRight;
-        font.weight: itemConnectionState == PlasmaNM.Enums.Activated || itemUuid ? Font.DemiBold : Font.Normal;
-        font.italic: itemConnectionState == PlasmaNM.Enums.Activating ? true : false;
-    }
 
-    PlasmaComponents.Label {
-        id: connectionStatusLabel;
+        PlasmaComponents.Label {
+            id: connectionStatusLabel;
 
-        height: paintedHeight;
-        anchors {
-            bottom: parent.bottom;
-            left: connectionIcon.right;
-            leftMargin: padding.margins.left;
-            right: !connectionItem.containsMouse ? connectingIndicator.left : configButton.left;
-        }
-        visible: displayStatusLabel;
+            height: paintedHeight;
+            anchors {
+                left: connectionIcon.right;
+                leftMargin: padding.margins.left;
+                right: !connectionItem.containsMouse ? connectingIndicator.left : configButton.left;
+                top: connectionNameLabel.bottom;
+            }
 
-        font.pointSize: theme.smallestFont.pointSize;
-        color: "#99"+(theme.textColor.toString().substr(1))
-        text:   if (mainWindow.showSectionLabels) {
-                    if (itemConnectionState == PlasmaNM.Enums.Activated &&
+            font.pointSize: theme.smallestFont.pointSize;
+            color: "#99"+(theme.textColor.toString().substr(1))
+            text:   if (itemConnectionState == PlasmaNM.Enums.Activated &&
                         (itemType == PlasmaNM.Enums.Wireless || itemType == PlasmaNM.Enums.Wired))
                         i18n("Connected") + ", " + i18n("Speed: %1", itemSpeed);
                     else if (itemConnectionState == PlasmaNM.Enums.Activated)
@@ -97,85 +104,215 @@ ListItem {
                     else if (itemUuid && itemSecurityType != PlasmaNM.Enums.None)
                         i18n("Last used: %1", itemLastUsed) + ", " + i18n("Security: %1", itemSecurityString);
                     else if (itemUuid)
-                         i18n("Last used: %1", itemLastUsed);
+                        i18n("Last used: %1", itemLastUsed);
                     else if (itemSecurityType != PlasmaNM.Enums.None)
                         i18n("Never used") + ", " + i18n("Security: %1", itemSecurityString);
                     else
                         i18n("Never used");
-                } else {
-                    if (itemSecurityType != PlasmaNM.Enums.None)
-                        i18n("Security: %1", itemSecurityString);
-                    else
-                        i18n("None");
-                }
-        elide: Text.ElideRight;
-    }
-
-    PlasmaComponents.BusyIndicator {
-        id: connectingIndicator;
-
-        width: sizes.iconSize;
-        height: width;
-        anchors {
-            right: parent.right;
-            rightMargin: padding.margins.right;
-            verticalCenter: parent.verticalCenter;
-        }
-        running: itemConnectionState == PlasmaNM.Enums.Activating;
-        visible: running && !connectionItem.containsMouse;
-    }
-
-    PlasmaComponents.Button {
-        id: stateChangeButton;
-
-        implicitWidth: minimumWidth + padding.margins.left + padding.margins.right;
-        anchors {
-            verticalCenter: parent.verticalCenter;
-            right: parent.right;
-        }
-        text: if (itemConnectionState == PlasmaNM.Enums.Deactivated)
-                  i18n("Connect");
-              else
-                  i18n("Disconnect");
-        visible: connectionItem.containsMouse;
-
-        onClicked: {
-            if (itemConnectionState == PlasmaNM.Enums.Deactivated)
-                handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
-            else
-                handler.deactivateConnection(itemConnectionPath, itemDevicePath);
-        }
-    }
-
-    PlasmaCore.SvgItem {
-        id: configButton;
-
-        height: sizes.iconSize;
-        width: height;
-        anchors {
-            verticalCenter: parent.verticalCenter;
-            right: stateChangeButton.left;
-            rightMargin: padding.margins.right;
-        }
-        svg: svgNotificationIcons;
-        elementId: configButtonMouse.containsMouse ? "notification-inactive" : "notification-active";
-        visible: connectionItem.containsMouse;
-
-        PlasmaCore.Svg {
-            id: svgNotificationIcons;
-
-            multipleImages: true;
-            imagePath: "icons/notification";
+            elide: Text.ElideRight;
         }
 
-        MouseArea {
-            id: configButtonMouse;
-            anchors.fill: parent;
-            hoverEnabled: true;
+        PlasmaComponents.BusyIndicator {
+            id: connectingIndicator;
+
+            width: sizes.iconSize;
+            height: width;
+            anchors {
+                right: parent.right;
+                rightMargin: padding.margins.right;
+                verticalCenter: parent.verticalCenter;
+            }
+            running: itemConnectionState == PlasmaNM.Enums.Activating;
+            visible: running && !connectionItem.containsMouse;
+        }
+
+        PlasmaComponents.Button {
+            id: stateChangeButton;
+
+            implicitWidth: minimumWidth + padding.margins.left + padding.margins.right;
+            anchors {
+                verticalCenter: parent.verticalCenter;
+                right: parent.right;
+            }
+            text: if (itemConnectionState == PlasmaNM.Enums.Deactivated)
+                    i18n("Connect");
+                else
+                    i18n("Disconnect");
+            visible: connectionItem.containsMouse;
 
             onClicked: {
-                // TODO
+                expanded = false;
+                if (itemConnectionState == PlasmaNM.Enums.Deactivated)
+                    handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
+                else
+                    handler.deactivateConnection(itemConnectionPath, itemDevicePath);
             }
         }
+
+        PlasmaCore.SvgItem {
+            id: configButton;
+
+            height: sizes.iconSize;
+            width: height;
+            anchors {
+                verticalCenter: parent.verticalCenter;
+                right: stateChangeButton.left;
+                rightMargin: padding.margins.right;
+            }
+            svg: svgNotificationIcons;
+            elementId: configButtonMouse.containsMouse ? "notification-inactive" : "notification-active";
+            visible: connectionItem.containsMouse;
+
+            PlasmaCore.Svg {
+                id: svgNotificationIcons;
+
+                multipleImages: true;
+                imagePath: "icons/notification";
+            }
+
+            MouseArea {
+                id: configButtonMouse;
+                anchors.fill: parent;
+                hoverEnabled: true;
+
+                onClicked: {
+                    expanded = !expanded;
+                }
+            }
+        }
+    }
+
+    Loader {
+        id: connectionItemDetails;
+
+        anchors {
+            left: parent.left;
+//             leftMargin: sizes.iconSize + padding.margins.left;
+            right: parent.right;
+            top: connectionItemBase.bottom;
+            topMargin: padding.margins.top;
+        }
+    }
+
+    Component {
+        id: connectionItemDetailsComponent;
+
+        Item {
+            height: childrenRect.height + padding.margins.top;
+
+            // TODO only background, not necessary to use ListItem
+            PlasmaComponents.ListItem {
+                id: connectionDetailsBackground;
+
+                PlasmaComponents.TabBar {
+                    id: connectionItemDetailsTabBar;
+
+                    anchors {
+                        left: parent.left;
+                        right: parent.right;
+                        top: parent.top;
+                    }
+
+                    PlasmaComponents.TabButton {
+                        id: speedTabButton;
+                        text: i18n("Speed");
+                        visible: itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn
+                    }
+
+                    PlasmaComponents.TabButton {
+                        id: detailsTabButton;
+                        text: i18n("Details");
+                    }
+
+                    Component.onCompleted: {
+                        if (!speedTabButton.visible) {
+                            currentTab = detailsTabButton;
+                        }
+                    }
+                }
+
+                Item {
+                    id: connectionItemDetailsContent;
+
+                    height: if (connectionItemDetailsTabBar.currentTab == speedTabButton) trafficMonitorTab.height;
+                            else detailsTextTab.height;
+                    anchors {
+                        left: parent.left;
+                        right: parent.right;
+                        top: connectionItemDetailsTabBar.bottom;
+                    }
+
+                    TrafficMonitor {
+                        id: trafficMonitorTab;
+                        anchors {
+                            left: parent.left;
+                            right: parent.right;
+                            top: parent.top;
+                        }
+                        device: itemDevicePath;
+                        visible: connectionItemDetailsTabBar.currentTab == speedTabButton &&
+                                itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn
+                    }
+
+                    TextEdit {
+                        id: detailsTextTab;
+
+                        height: implicitHeight;
+                        anchors {
+                            left: parent.left;
+                            right: parent.right;
+                            top: parent.top;
+                        }
+                        color: theme.textColor;
+                        readOnly: true;
+                        selectByMouse: true;
+                        wrapMode: TextEdit.WordWrap;
+                        textFormat: Text.RichText;
+                        text: itemDetails;
+                        visible: connectionItemDetailsTabBar.currentTab == detailsTabButton
+                    }
+                }
+            }
+
+            PlasmaComponents.Button {
+                id: editConnectionButton;
+
+                height: !visible ? 0 : implicitHeight;
+                implicitWidth: minimumWidth + padding.margins.left + padding.margins.right;
+                anchors {
+//                     horizontalCenter: parent.horizontalCenter;
+                    left: parent.left;
+                    top: connectionDetailsBackground.bottom;
+                    topMargin: padding.margins.top;
+                }
+                text: i18n("Open configuration");
+                visible: itemUuid;
+
+                onClicked: {
+                    handler.editConnection(itemUuid);
+                }
+            }
+        }
+    }
+
+    states: [
+        State {
+            name: "collapsed";
+            when: !expanded;
+            StateChangeScript { script: if (connectionItemDetails.status == Loader.Ready) {connectionItemDetails.sourceComponent = undefined} }
+        },
+
+        State {
+            name: "expanded";
+            when: expanded;
+            StateChangeScript { script: createContent(); }
+            PropertyChanges { target: configButton; visible: true; }
+            PropertyChanges { target: stateChangeButton; visible: true; }
+            PropertyChanges { target: connectionItem; enabled: false; }
+        }
+    ]
+
+    function createContent() {
+        connectionItemDetails.sourceComponent = connectionItemDetailsComponent;
     }
 }

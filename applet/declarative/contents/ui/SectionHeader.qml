@@ -38,8 +38,7 @@ PlasmaComponents.ListItem {
 
         height: paintedHeight;
         anchors {
-            left: parent.left;
-            right: parent.right;
+            horizontalCenter: parent.horizontalCenter;
             verticalCenter: parent.verticalCenter;
         }
         text: section;

@@ -12,9 +12,6 @@
     <entry name="showSections" type="Bool">
         <default>true</default>
     </entry>
-    <entry name="showSectionLabels" type="Bool">
-        <default>true</default>
-    </entry>
     <entry name="networkSpeedUnit" type="Enum">
       <choices name="NetworkSpeedUnitChoices">
         <choice name="KBytes"/>

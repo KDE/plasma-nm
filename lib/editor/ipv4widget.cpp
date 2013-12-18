@@ -269,7 +269,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->dhcpClientId->setEnabled(true);
         m_ui->ipv4RequiredCB->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
-
+        m_ui->tableViewAddresses->setEnabled(false);
         m_ui->tableViewAddresses->setVisible(false);
         m_ui->btnAdd->setVisible(false);
         m_ui->btnRemove->setVisible(false);
@@ -282,7 +282,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->dhcpClientId->setEnabled(true);
         m_ui->ipv4RequiredCB->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
-
+        m_ui->tableViewAddresses->setEnabled(false);
         m_ui->tableViewAddresses->setVisible(false);
         m_ui->btnAdd->setVisible(false);
         m_ui->btnRemove->setVisible(false);
@@ -295,7 +295,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->dhcpClientId->setEnabled(false);
         m_ui->ipv4RequiredCB->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
-
+        m_ui->tableViewAddresses->setEnabled(true);
         m_ui->tableViewAddresses->setVisible(true);
         m_ui->btnAdd->setVisible(true);
         m_ui->btnRemove->setVisible(true);
@@ -308,7 +308,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->dhcpClientId->setEnabled(false);
         m_ui->ipv4RequiredCB->setEnabled(true);
         m_ui->btnRoutes->setEnabled(false);
-
+        m_ui->tableViewAddresses->setEnabled(false);
         m_ui->tableViewAddresses->setVisible(false);
         m_ui->btnAdd->setVisible(false);
         m_ui->btnRemove->setVisible(false);
@@ -321,7 +321,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->dhcpClientId->setEnabled(false);
         m_ui->ipv4RequiredCB->setEnabled(false);
         m_ui->btnRoutes->setEnabled(false);
-
+        m_ui->tableViewAddresses->setEnabled(false);
         m_ui->tableViewAddresses->setVisible(false);
         m_ui->btnAdd->setVisible(false);
         m_ui->btnRemove->setVisible(false);

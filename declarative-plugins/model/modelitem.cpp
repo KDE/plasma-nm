@@ -177,7 +177,7 @@ QString ModelItem::icon() const
 
 QString ModelItem::lastUsed() const
 {
-    return UiUtils::formatDateRelative(m_lastUsed);
+    return UiUtils::formatLastUsedDateRelative(m_lastUsed);
 }
 
 QString ModelItem::name() const

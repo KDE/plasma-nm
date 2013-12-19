@@ -178,5 +178,6 @@ public:
     static QString wiredDetails(const NetworkManager::WiredDevice::Ptr & wiredDevice, const NetworkManager::Connection::Ptr & connection, const QStringList & keys);
     static QString wirelessDetails(const NetworkManager::WirelessDevice::Ptr & wirelessDevice, const NetworkManager::WirelessNetwork::Ptr & network, const NetworkManager::Connection::Ptr & connection, const QStringList & keys);
     static QString formatDateRelative(const QDateTime & lastUsed);
+    static QString formatLastUsedDateRelative(const QDateTime & lastUsed);
 };
 #endif // UIUTILS_H

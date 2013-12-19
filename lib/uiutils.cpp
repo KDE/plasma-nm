@@ -1228,3 +1228,36 @@ QString UiUtils::formatDateRelative(const QDateTime & lastUsed)
     }
     return lastUsedText;
 }
+
+QString UiUtils::formatLastUsedDateRelative(const QDateTime & lastUsed)
+{
+    QString lastUsedText;
+    if (lastUsed.isValid()) {
+        const QDateTime now = QDateTime::currentDateTime();
+        if (lastUsed.daysTo(now) == 0 ) {
+            int secondsAgo = lastUsed.secsTo(now);
+            if (secondsAgo < (60 * 60 )) {
+                int minutesAgo = secondsAgo / 60;
+                lastUsedText = i18ncp(
+                                   "Label for last used time for a network connection used in the last hour, as the number of minutes since usage",
+                                   "Last used one minute ago",
+                                   "%1 minutes ago",
+                                   minutesAgo);
+            } else {
+                int hoursAgo = secondsAgo / (60 * 60);
+                lastUsedText = i18ncp(
+                                   "Label for last used time for a network connection used in the last day, as the number of hours since usage",
+                                   "Last used one hour ago",
+                                   "%1 hours ago",
+                                   hoursAgo);
+            }
+        } else if (lastUsed.daysTo(now) == 1) {
+            lastUsedText = i18nc("Label for last used time for a network connection used the previous day", "Last used yesterday");
+        } else {
+            lastUsedText = i18n("Last used on %1", KGlobal::locale()->formatDate(lastUsed.date(), KLocale::ShortDate));
+        }
+    } else {
+        lastUsedText =  i18nc("Label for last used time for a "
+                              "network connection that has never been used", "Never used");
+    }
+    return lastUsedText;}

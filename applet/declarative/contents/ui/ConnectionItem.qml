@@ -96,17 +96,17 @@ ListItem {
             color: "#99"+(theme.textColor.toString().substr(1))
             text:   if (itemConnectionState == PlasmaNM.Enums.Activated &&
                         (itemType == PlasmaNM.Enums.Wireless || itemType == PlasmaNM.Enums.Wired))
-                        i18n("Connected") + ", " + i18n("Speed: %1", itemSpeed);
+                        i18n("Connected") + ", " + itemSpeed;
                     else if (itemConnectionState == PlasmaNM.Enums.Activated)
                         i18n("Connected");
                     else if (itemConnectionState == PlasmaNM.Enums.Activating)
                         i18n("Connecting");
                     else if (itemUuid && itemSecurityType != PlasmaNM.Enums.None)
-                        i18n("Last used: %1", itemLastUsed) + ", " + i18n("Security: %1", itemSecurityString);
+                        itemLastUsed + ", " + itemSecurityString;
                     else if (itemUuid)
-                        i18n("Last used: %1", itemLastUsed);
+                       itemLastUsed;
                     else if (itemSecurityType != PlasmaNM.Enums.None)
-                        i18n("Never used") + ", " + i18n("Security: %1", itemSecurityString);
+                        i18n("Never used") + ", " + itemSecurityString;
                     else
                         i18n("Never used");
             elide: Text.ElideRight;

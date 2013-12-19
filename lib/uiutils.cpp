@@ -1241,14 +1241,14 @@ QString UiUtils::formatLastUsedDateRelative(const QDateTime & lastUsed)
                 lastUsedText = i18ncp(
                                    "Label for last used time for a network connection used in the last hour, as the number of minutes since usage",
                                    "Last used one minute ago",
-                                   "%1 minutes ago",
+                                   "Last used %1 minutes ago",
                                    minutesAgo);
             } else {
                 int hoursAgo = secondsAgo / (60 * 60);
                 lastUsedText = i18ncp(
                                    "Label for last used time for a network connection used in the last day, as the number of hours since usage",
                                    "Last used one hour ago",
-                                   "%1 hours ago",
+                                   "Last used %1 hours ago",
                                    hoursAgo);
             }
         } else if (lastUsed.daysTo(now) == 1) {

@@ -520,7 +520,7 @@ void ModelItem::updateBitrate(int bitrate)
 
     updateDetails();
 
-    NMItemDebug() << name() << ": bitrate updated to " << m_signal;
+//     NMItemDebug() << name() << ": bitrate updated to " << m_signal;
 }
 
 void ModelItem::updateDetails()
@@ -592,5 +592,5 @@ void ModelItem::updateSignalStrength(int strength)
 
     updateDetails();
 
-    NMItemDebug() << name() << ": signal strength changed to " << m_signal;
+//     NMItemDebug() << name() << ": signal strength changed to " << m_signal;
 }

@@ -275,7 +275,7 @@ void Model::bitrateChanged(int bitrate, const QString& device)
         item->updateBitrate(bitrate);
 
         if (updateItem(item)) {
-            NMModelDebug() << "Item " << item->name() << " has been changed (bitrate changed)";
+//             NMModelDebug() << "Item " << item->name() << " has been changed (bitrate changed)";
         }
     }
 }

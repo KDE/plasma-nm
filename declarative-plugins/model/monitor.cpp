@@ -272,6 +272,7 @@ void Monitor::bitrateChanged(int bitrate)
     }
 
     if (device) {
+//
         NMMonitorDebug() << "Bitrate changed " << device->interfaceName() ;
         Q_EMIT bitrateChanged(bitrate, device->uni());
     }

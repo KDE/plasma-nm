@@ -161,11 +161,11 @@ QVariantMap Security8021x::setting(bool agentOwned) const
         if (!m_ui->tlsIdentity->text().isEmpty())
             setting.setIdentity(m_ui->tlsIdentity->text());
         if (!m_ui->tlsUserCert->url().isEmpty())
-            setting.setClientCertificate(QFile::encodeName(m_ui->tlsUserCert->url().url()));
+            setting.setClientCertificate(QFile::encodeName(m_ui->tlsUserCert->url().url()).append('\0'));
         if (!m_ui->tlsCACert->url().isEmpty())
-            setting.setCaCertificate(QFile::encodeName(m_ui->tlsCACert->url().url()));
+            setting.setCaCertificate(QFile::encodeName(m_ui->tlsCACert->url().url()).append('\0'));
         if (!m_ui->tlsPrivateKey->url().isEmpty())
-            setting.setPrivateKey(QFile::encodeName(m_ui->tlsPrivateKey->url().url()));
+            setting.setPrivateKey(QFile::encodeName(m_ui->tlsPrivateKey->url().url()).append('\0'));
         if (!m_ui->tlsPrivateKeyPassword->text().isEmpty())
             setting.setPrivateKeyPassword(m_ui->tlsPrivateKeyPassword->text());
 
@@ -190,7 +190,7 @@ QVariantMap Security8021x::setting(bool agentOwned) const
             setting.setPhase1FastProvisioning(static_cast<NetworkManager::Security8021xSetting::FastProvisioning>(m_ui->pacMethod->currentIndex() + 1));
         }
         if (!m_ui->pacFile->text().isEmpty())
-            setting.setPacFile(QFile::encodeName(m_ui->pacFile->url().url()));
+            setting.setPacFile(QFile::encodeName(m_ui->pacFile->url().url()).append('\0'));
         if (m_ui->fastInnerAuth->currentIndex() == 0)
             setting.setPhase2AuthMethod(NetworkManager::Security8021xSetting::AuthMethodGtc);
         else
@@ -209,7 +209,7 @@ QVariantMap Security8021x::setting(bool agentOwned) const
         if (!m_ui->ttlsAnonIdentity->text().isEmpty())
             setting.setAnonymousIdentity(m_ui->ttlsAnonIdentity->text());
         if (!m_ui->ttlsCACert->text().isEmpty())
-            setting.setCaCertificate(QFile::encodeName(m_ui->ttlsCACert->url().url()));
+            setting.setCaCertificate(QFile::encodeName(m_ui->ttlsCACert->url().url()).append('\0'));
         const int innerAuth = m_ui->ttlsInnerAuth->currentIndex();
         if (innerAuth == 0)
             setting.setPhase2AuthMethod(NetworkManager::Security8021xSetting::AuthMethodPap);
@@ -233,7 +233,7 @@ QVariantMap Security8021x::setting(bool agentOwned) const
         if (!m_ui->peapAnonIdentity->text().isEmpty())
             setting.setAnonymousIdentity(m_ui->peapAnonIdentity->text());
         if (!m_ui->peapCACert->text().isEmpty())
-            setting.setCaCertificate(QFile::encodeName(m_ui->peapCACert->url().url()));
+            setting.setCaCertificate(QFile::encodeName(m_ui->peapCACert->url().url()).append('\0'));
         setting.setPhase1PeapVersion(static_cast<NetworkManager::Security8021xSetting::PeapVersion>(m_ui->peapVersion->currentIndex() - 1));
         const int innerAuth = m_ui->peapInnerAuth->currentIndex();
         if (innerAuth == 0)

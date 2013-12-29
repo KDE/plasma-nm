@@ -293,7 +293,7 @@ void ConnectionIcon::setIcons()
 
     if (connection) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(connection->devices().first());
-         if (device) {
+        if (device) {
             NetworkManager::Device::Type type = device->type();
             if (type == NetworkManager::Device::Wifi) {
                 NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
@@ -342,6 +342,12 @@ void ConnectionIcon::setIcons()
                         Q_EMIT connectionTooltipIconChanged("preferences-system-bluetooth");
                     }
                 }
+            } else {
+                NMAppletDebug() << "Emit signal connectionIconChanged(network-wired-activated)";
+                m_connectionIcon = "network-wired-activated";
+                m_connectionTooltipIcon = "network-wired-activated";
+                Q_EMIT connectionIconChanged("network-wired-activated");
+                Q_EMIT connectionTooltipIconChanged("network-wired-activated");
             }
         }
     } else {

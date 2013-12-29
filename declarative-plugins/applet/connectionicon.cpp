@@ -279,6 +279,13 @@ void ConnectionIcon::setIcons()
                             Q_EMIT connectionPixmapIconChanged("preferences-system-bluetooth");
                         }
                     }
+                } else {
+                    connectionFound = true;
+                    m_connectionSvgIcon = "network-wired-activated";
+                    NMAppletDebug() << "Emit signal connectionSvgIconChanged(network-wired-activated)";
+                    Q_EMIT connectionSvgIconChanged("network-wired-activated");
+                    m_connectionPixmapIcon = "network-wired-activated";
+                    Q_EMIT connectionPixmapIconChanged("network-wired-activated");
                 }
             }
         } else if (active->vpn() && active->state() == NetworkManager::ActiveConnection::Activated) {

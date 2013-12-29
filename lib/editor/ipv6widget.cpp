@@ -170,7 +170,7 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // privacy
     if (ipv6Setting->privacy() != NetworkManager::Ipv6Setting::Unknown) {
-        m_ui->privacyCombo->setCurrentIndex(static_cast<int>(ipv6Setting->privacy()));
+        m_ui->privacyCombo->setCurrentIndex(static_cast<int>(ipv6Setting->privacy()) + 1);
     }
 }
 
@@ -242,8 +242,8 @@ QVariantMap IPv6Widget::setting(bool agentOwned) const
     }
 
     // privacy
-    if (m_ui->privacyCombo->isEnabled()) {
-        ipv6Setting.setPrivacy(static_cast<NetworkManager::Ipv6Setting::IPv6Privacy>(m_ui->privacyCombo->currentIndex()));
+    if (m_ui->privacyCombo->isEnabled() && m_ui->privacyCombo->currentIndex()) {
+        ipv6Setting.setPrivacy(static_cast<NetworkManager::Ipv6Setting::IPv6Privacy>(m_ui->privacyCombo->currentIndex() - 1));
     }
 
     return ipv6Setting.toMap();

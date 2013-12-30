@@ -170,7 +170,7 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // privacy
     if (ipv6Setting->privacy() != NetworkManager::Ipv6Setting::Unknown) {
-        m_ui->privacyCombo->setCurrentIndex(static_cast<int>(ipv6Setting->privacy()));
+        m_ui->privacyCombo->setCurrentIndex(static_cast<int>(ipv6Setting->privacy()) + 1);
     }
 }
 
@@ -242,8 +242,8 @@ QVariantMap IPv6Widget::setting(bool agentOwned) const
     }
 
     // privacy
-    if (m_ui->privacyCombo->isEnabled()) {
-        ipv6Setting.setPrivacy(static_cast<NetworkManager::Ipv6Setting::IPv6Privacy>(m_ui->privacyCombo->currentIndex()));
+    if (m_ui->privacyCombo->isEnabled() && m_ui->privacyCombo->currentIndex()) {
+        ipv6Setting.setPrivacy(static_cast<NetworkManager::Ipv6Setting::IPv6Privacy>(m_ui->privacyCombo->currentIndex() - 1));
     }
 
     return ipv6Setting.toMap();
@@ -260,7 +260,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->ipv6RequiredCB->setEnabled(true);
         m_ui->privacyCombo->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
-
+        m_ui->tableViewAddresses->setEnabled(false);
         m_ui->tableViewAddresses->setVisible(false);
         m_ui->btnAdd->setVisible(false);
         m_ui->btnRemove->setVisible(false);
@@ -273,7 +273,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->ipv6RequiredCB->setEnabled(true);
         m_ui->privacyCombo->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
-
+        m_ui->tableViewAddresses->setEnabled(false);
         m_ui->tableViewAddresses->setVisible(false);
         m_ui->btnAdd->setVisible(false);
         m_ui->btnRemove->setVisible(false);
@@ -286,7 +286,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->ipv6RequiredCB->setEnabled(true);
         m_ui->privacyCombo->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
-
+        m_ui->tableViewAddresses->setEnabled(true);
         m_ui->tableViewAddresses->setVisible(true);
         m_ui->btnAdd->setVisible(true);
         m_ui->btnRemove->setVisible(true);
@@ -299,7 +299,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->ipv6RequiredCB->setEnabled(true);
         m_ui->privacyCombo->setEnabled(true);
         m_ui->btnRoutes->setEnabled(false);
-
+        m_ui->tableViewAddresses->setEnabled(false);
         m_ui->tableViewAddresses->setVisible(false);
         m_ui->btnAdd->setVisible(false);
         m_ui->btnRemove->setVisible(false);
@@ -312,7 +312,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->ipv6RequiredCB->setEnabled(false);
         m_ui->privacyCombo->setEnabled(false);
         m_ui->btnRoutes->setEnabled(false);
-
+        m_ui->tableViewAddresses->setEnabled(false);
         m_ui->tableViewAddresses->setVisible(false);
         m_ui->btnAdd->setVisible(false);
         m_ui->btnRemove->setVisible(false);

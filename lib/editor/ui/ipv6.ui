@@ -330,6 +330,11 @@
     <widget class="KComboBox" name="privacyCombo">
      <item>
       <property name="text">
+       <string>Default</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string comment="privacy disabled">Disabled</string>
       </property>
      </item>

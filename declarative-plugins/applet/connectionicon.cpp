@@ -341,6 +341,13 @@ void ConnectionIcon::setIcons()
                         Q_EMIT connectionIconChanged("bluetooth");
                         Q_EMIT connectionTooltipIconChanged("preferences-system-bluetooth");
                     }
+                } else {
+                    connectionFound = true;
+                    m_connectionSvgIcon = "network-wired-activated";
+                    NMAppletDebug() << "Emit signal connectionSvgIconChanged(network-wired-activated)";
+                    Q_EMIT connectionSvgIconChanged("network-wired-activated");
+                    m_connectionPixmapIcon = "network-wired-activated";
+                    Q_EMIT connectionPixmapIconChanged("network-wired-activated");
                 }
             } else {
                 NMAppletDebug() << "Emit signal connectionIconChanged(network-wired-activated)";

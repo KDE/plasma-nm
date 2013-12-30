@@ -36,7 +36,6 @@ Q_PROPERTY(QStringList currentDetails READ currentDetails WRITE loadSelectedElem
 Q_DECLARE_PRIVATE(DetailKeysEditor)
 public:
     explicit DetailKeysEditor(QWidget * parent = 0);
-    explicit DetailKeysEditor(const QStringList &, QWidget *parent = 0);
     ~DetailKeysEditor();
 
     QStringList currentDetails();

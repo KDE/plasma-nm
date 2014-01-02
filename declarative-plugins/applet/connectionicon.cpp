@@ -328,11 +328,11 @@ void ConnectionIcon::setIcons()
 #if WITH_MODEMMANAGER_SUPPORT
                         setModemIcon(device);
 #else
-                    NMAppletDebug() << "Emit signal connectionIconChanged(network-mobile-0)";
-                    m_connectionIcon = "network-mobile-0";
-                    m_connectionTooltipIcon = "phone";
-                    Q_EMIT connectionIconChanged("network-mobile-0");
-                    Q_EMIT connectionTooltipIconChanged("phone");
+                        NMAppletDebug() << "Emit signal connectionIconChanged(network-mobile-0)";
+                        m_connectionIcon = "network-mobile-0";
+                        m_connectionTooltipIcon = "phone";
+                        Q_EMIT connectionIconChanged("network-mobile-0");
+                        Q_EMIT connectionTooltipIconChanged("phone");
 #endif
                     } else {
                         NMAppletDebug() << "Emit signal connectionIconChanged(bluetooth)";
@@ -341,13 +341,6 @@ void ConnectionIcon::setIcons()
                         Q_EMIT connectionIconChanged("bluetooth");
                         Q_EMIT connectionTooltipIconChanged("preferences-system-bluetooth");
                     }
-                } else {
-                    connectionFound = true;
-                    m_connectionSvgIcon = "network-wired-activated";
-                    NMAppletDebug() << "Emit signal connectionSvgIconChanged(network-wired-activated)";
-                    Q_EMIT connectionSvgIconChanged("network-wired-activated");
-                    m_connectionPixmapIcon = "network-wired-activated";
-                    Q_EMIT connectionPixmapIconChanged("network-wired-activated");
                 }
             } else {
                 NMAppletDebug() << "Emit signal connectionIconChanged(network-wired-activated)";

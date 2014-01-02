@@ -45,9 +45,20 @@ public:
 NetworkManagementService::NetworkManagementService(QObject * parent, const QVariantList&)
         : KDEDModule(parent), d_ptr(new NetworkManagementServicePrivate)
 {
-    Q_D(NetworkManagementService);
-
     KGlobal::insertCatalog("plasma_applet_org.kde.networkmanagement");  // mobile wizard
+
+    QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.kde.plasma-desktop", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
+    connect(watcher, SIGNAL(serviceRegistered(QString)), SLOT(finishInitialization()));
+}
+
+NetworkManagementService::~NetworkManagementService()
+{
+    delete d_ptr;
+}
+
+void NetworkManagementService::finishInitialization()
+{
+    Q_D(NetworkManagementService);
 
     d->agent = new SecretAgent(this);
     new Notification(this);
@@ -57,7 +68,3 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
     new BluetoothMonitor(this);
 }
 
-NetworkManagementService::~NetworkManagementService()
-{
-    delete d_ptr;
-}

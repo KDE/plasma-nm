@@ -32,6 +32,8 @@
 #include "bluetoothmonitor.h"
 
 #include <QDBusMetaType>
+#include <QDBusServiceWatcher>
+#include <QDBusConnection>
 
 K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManagementService>();)
 K_EXPORT_PLUGIN(NetworkManagementServiceFactory("networkmanagement", "plasmanetworkmanagement-kded"))

@@ -38,6 +38,8 @@ class KDE_EXPORT NetworkManagementService : public KDEDModule
 public:
     NetworkManagementService(QObject * parent, const QVariantList&);
     virtual ~NetworkManagementService();
+private Q_SLOTS:
+   void finishInitialization();
 private:
     NetworkManagementServicePrivate * d_ptr;
 };

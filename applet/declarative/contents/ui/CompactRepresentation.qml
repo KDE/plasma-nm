@@ -45,43 +45,45 @@ Item {
     PlasmaCore.SvgItem {
         id: connectionIcon;
 
-        anchors.fill: parent;
+        anchors.centerIn: parent
+        width: Math.min(parent.width, parent.height)
+        height: width
         svg: svgIcons;
         elementId: connectionIconProvider.connectionSvgIcon;
-    }
 
-    QIconItem {
-        id: hoverIcon;
+        QIconItem {
+            id: hoverIcon;
 
-        width: parent.width/2;
-        height: parent.height/2;
-        anchors {
-            bottom: parent.bottom;
-            right: parent.right;
+            width: parent.width/2;
+            height: parent.height/2;
+            anchors {
+                bottom: parent.bottom;
+                right: parent.right;
+            }
+            icon: connectionIconProvider.connectionIndicatorIcon;
         }
-        icon: connectionIconProvider.connectionIndicatorIcon;
-    }
 
-    PlasmaComponents.BusyIndicator {
-        id: connectingIndicator;
+        PlasmaComponents.BusyIndicator {
+            id: connectingIndicator;
 
-        anchors.fill: parent;
-        running: connectionIconProvider.connecting;
-        visible: running;
-    }
+            anchors.fill: parent;
+            running: connectionIconProvider.connecting;
+            visible: running;
+        }
 
-    MouseArea {
-        id: mouseAreaPopup;
+        MouseArea {
+            id: mouseAreaPopup;
 
-        anchors.fill: parent;
-        hoverEnabled: true;
-        onClicked: plasmoid.togglePopup();
+            anchors.fill: parent;
+            hoverEnabled: true;
+            onClicked: plasmoid.togglePopup();
 
-        PlasmaCore.ToolTip {
-            id: tooltip;
-            target: mouseAreaPopup;
-            image: connectionIconProvider.connectionPixmapIcon;
-            subText: networkStatus.activeConnections;
+            PlasmaCore.ToolTip {
+                id: tooltip;
+                target: mouseAreaPopup;
+                image: connectionIconProvider.connectionPixmapIcon;
+                subText: networkStatus.activeConnections;
+            }
         }
     }
 }

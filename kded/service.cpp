@@ -49,8 +49,13 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 {
     KGlobal::insertCatalog("plasma_applet_org.kde.networkmanagement");  // mobile wizard
 
-    QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.kde.plasma-desktop", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
-    connect(watcher, SIGNAL(serviceRegistered(QString)), SLOT(finishInitialization()));
+    QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasma-desktop");
+    if (reply.value()) {
+        doInitialization();
+    } else {
+        QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.kde.plasma-desktop", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
+        connect(watcher, SIGNAL(serviceRegistered(QString)), SLOT(finishInitialization()));
+    }
 }
 
 NetworkManagementService::~NetworkManagementService()
@@ -60,10 +65,15 @@ NetworkManagementService::~NetworkManagementService()
 
 void NetworkManagementService::finishInitialization()
 {
-    Q_D(NetworkManagementService);
-
     QDBusServiceWatcher * watcher = static_cast<QDBusServiceWatcher*>(sender());
     disconnect(watcher, SIGNAL(serviceRegistered(QString)), this,  SLOT(finishInitialization()));
+
+    doInitialization();
+}
+
+void NetworkManagementService::doInitialization()
+{
+    Q_D(NetworkManagementService);
 
     d->agent = new SecretAgent(this);
     new Notification(this);

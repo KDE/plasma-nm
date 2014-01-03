@@ -42,6 +42,8 @@ private Q_SLOTS:
    void finishInitialization();
 private:
     NetworkManagementServicePrivate * d_ptr;
+
+    void doInitialization();
 };
 
 #endif // PLASMANM_KDED_SERVICE_H

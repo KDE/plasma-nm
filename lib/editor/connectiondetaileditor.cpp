@@ -181,6 +181,8 @@ ConnectionDetailEditor::~ConnectionDetailEditor()
 
 void ConnectionDetailEditor::initEditor()
 {
+    enableOKButton(false);
+
     if (!m_new) {
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(m_connection->uuid());
         if (connection) {

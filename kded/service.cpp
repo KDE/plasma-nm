@@ -62,6 +62,9 @@ void NetworkManagementService::finishInitialization()
 {
     Q_D(NetworkManagementService);
 
+    QDBusServiceWatcher * watcher = static_cast<QDBusServiceWatcher*>(sender());
+    disconnect(watcher, SIGNAL(serviceRegistered(QString)), this,  SLOT(finishInitialization()));
+
     d->agent = new SecretAgent(this);
     new Notification(this);
 #if WITH_MODEMMANAGER_SUPPORT

@@ -96,6 +96,9 @@
    </item>
    <item row="1" column="0" colspan="3">
     <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
      <widget class="QWidget" name="page">
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
@@ -367,7 +370,7 @@
            <item>
             <widget class="KLineEdit" name="passPassword">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="passwordMode">
               <bool>true</bool>
@@ -529,7 +532,7 @@
            <item>
             <widget class="KLineEdit" name="x509PassPassword">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="passwordMode">
               <bool>true</bool>

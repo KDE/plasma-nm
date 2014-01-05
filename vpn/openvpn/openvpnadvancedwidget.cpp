@@ -235,7 +235,7 @@ void OpenVpnAdvancedWidget::loadConfig()
 
     NetworkManager::Setting::SecretFlags type;
     type = (NetworkManager::Setting::SecretFlags)dataMap[NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags"].toInt();
-    if (type & NetworkManager::Setting::AgentOwned || type & NetworkManager::Setting::None) {
+    if (!(type & NetworkManager::Setting::NotSaved || type & NetworkManager::Setting::NotRequired)) {
         m_ui->proxyPassword->setText(secrets.value(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD));
     }
     fillOnePasswordCombo(m_ui->proxyPasswordStorage, type);

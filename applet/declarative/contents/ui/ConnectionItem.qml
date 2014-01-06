@@ -27,10 +27,14 @@ import org.kde.networkmanagement 0.1 as PlasmaNM
 ListItem {
     id: connectionItem;
 
-    property bool expanded: false;
+    property bool predictableWirelessPassword: !itemUuid && itemType == PlasmaNM.Enums.Wireless &&
+                                                itemSecurityType != PlasmaNM.Enums.None && itemSecurityType != PlasmaNM.Enums.DynamicWep && itemSecurityType != PlasmaNM.Enums.LEAP &&
+                                                                                           itemSecurityType != PlasmaNM.Enums.WpaEap && itemSecurityType != PlasmaNM.Enums.Wpa2Eap;
+    property bool visibleDetails: false;
+    property bool visiblePasswordDialog: false;
 
     enabled: true
-    height: if (expanded) connectionItemBase.height + connectionItemDetails.height + padding.margins.top + padding.margins.bottom;
+    height: if (visibleDetails || visiblePasswordDialog) connectionItemBase.height + expandableComponentLoader.height + padding.margins.top + padding.margins.bottom;
             else connectionItemBase.height + padding.margins.top + padding.margins.bottom;
 
     Item {
@@ -141,11 +145,23 @@ ListItem {
             visible: connectionItem.containsMouse;
 
             onClicked: {
-                expanded = false;
-                if (itemConnectionState == PlasmaNM.Enums.Deactivated)
-                    handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
-                else
-                    handler.deactivateConnection(itemConnectionPath, itemDevicePath);
+                visibleDetails = false;
+                if (itemUuid || !predictableWirelessPassword || visiblePasswordDialog) {
+                    if (itemConnectionState == PlasmaNM.Enums.Deactivated) {
+                        if (!predictableWirelessPassword && !itemUuid) {
+                            handler.addAndActivateConnection(itemDevicePath, itemSpecificPath);
+                        } else if (visiblePasswordDialog) {
+                            handler.addAndActivateConnection(itemDevicePath, itemSpecificPath, expandableComponentLoader.item.password, expandableComponentLoader.item.autoconnect);
+                            visiblePasswordDialog = false;
+                        } else {
+                            handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
+                        }
+                    } else {
+                        handler.deactivateConnection(itemConnectionPath, itemDevicePath);
+                    }
+                } else if (predictableWirelessPassword) {
+                    visiblePasswordDialog = true;
+                }
             }
         }
 
@@ -176,18 +192,34 @@ ListItem {
                 hoverEnabled: true;
 
                 onClicked: {
-                    expanded = !expanded;
+                    visiblePasswordDialog = false;
+                    visibleDetails = !visibleDetails;
                 }
+            }
+        }
+
+        PlasmaComponents.ToolButton {
+            height: sizes.iconSize;
+            width: height;
+            anchors {
+                verticalCenter: parent.verticalCenter;
+                right: configButton.left;
+                rightMargin: padding.margins.right;
+            }
+            iconSource: "window-close";
+            visible: visiblePasswordDialog;
+
+            onClicked: {
+                visiblePasswordDialog = !visiblePasswordDialog;
             }
         }
     }
 
     Loader {
-        id: connectionItemDetails;
+        id: expandableComponentLoader;
 
         anchors {
             left: parent.left;
-//             leftMargin: sizes.iconSize + padding.margins.left;
             right: parent.right;
             top: connectionItemBase.bottom;
             topMargin: padding.margins.top;
@@ -195,82 +227,78 @@ ListItem {
     }
 
     Component {
-        id: connectionItemDetailsComponent;
+        id: detailsComponent;
 
         Item {
             height: childrenRect.height + padding.margins.top;
 
-            // TODO only background, not necessary to use ListItem
-            PlasmaComponents.ListItem {
-                id: connectionDetailsBackground;
+            PlasmaComponents.TabBar {
+                id: detailsTabBar;
 
-                PlasmaComponents.TabBar {
-                    id: connectionItemDetailsTabBar;
+                anchors {
+                    left: parent.left;
+                    right: parent.right;
+                    top: parent.top;
+                }
 
+                PlasmaComponents.TabButton {
+                    id: speedTabButton;
+                    text: i18n("Speed");
+                    visible: itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn
+                }
+
+                PlasmaComponents.TabButton {
+                    id: detailsTabButton;
+                    text: i18n("Details");
+                }
+
+                Component.onCompleted: {
+                    if (!speedTabButton.visible) {
+                        currentTab = detailsTabButton;
+                    }
+                }
+            }
+
+            Item {
+                id: detailsContent;
+
+                height: if (detailsTabBar.currentTab == speedTabButton) trafficMonitorTab.height;
+                        else detailsTextTab.height;
+
+                anchors {
+                    left: parent.left;
+                    right: parent.right;
+                    top: detailsTabBar.bottom;
+                }
+
+                TrafficMonitor {
+                    id: trafficMonitorTab;
                     anchors {
                         left: parent.left;
                         right: parent.right;
                         top: parent.top;
                     }
-
-                    PlasmaComponents.TabButton {
-                        id: speedTabButton;
-                        text: i18n("Speed");
-                        visible: itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn
-                    }
-
-                    PlasmaComponents.TabButton {
-                        id: detailsTabButton;
-                        text: i18n("Details");
-                    }
-
-                    Component.onCompleted: {
-                        if (!speedTabButton.visible) {
-                            currentTab = detailsTabButton;
-                        }
-                    }
+                    device: itemDevicePath;
+                    visible: detailsTabBar.currentTab == speedTabButton &&
+                            itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn
                 }
 
-                Item {
-                    id: connectionItemDetailsContent;
+                TextEdit {
+                    id: detailsTextTab;
 
-                    height: if (connectionItemDetailsTabBar.currentTab == speedTabButton) trafficMonitorTab.height;
-                            else detailsTextTab.height;
+                    height: implicitHeight;
                     anchors {
                         left: parent.left;
                         right: parent.right;
-                        top: connectionItemDetailsTabBar.bottom;
+                        top: parent.top;
                     }
-
-                    TrafficMonitor {
-                        id: trafficMonitorTab;
-                        anchors {
-                            left: parent.left;
-                            right: parent.right;
-                            top: parent.top;
-                        }
-                        device: itemDevicePath;
-                        visible: connectionItemDetailsTabBar.currentTab == speedTabButton &&
-                                itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn
-                    }
-
-                    TextEdit {
-                        id: detailsTextTab;
-
-                        height: implicitHeight;
-                        anchors {
-                            left: parent.left;
-                            right: parent.right;
-                            top: parent.top;
-                        }
-                        color: theme.textColor;
-                        readOnly: true;
-                        selectByMouse: true;
-                        wrapMode: TextEdit.WordWrap;
-                        textFormat: Text.RichText;
-                        text: itemDetails;
-                        visible: connectionItemDetailsTabBar.currentTab == detailsTabButton
-                    }
+                    color: theme.textColor;
+                    readOnly: true;
+                    selectByMouse: true;
+                    wrapMode: TextEdit.WordWrap;
+                    textFormat: Text.RichText;
+                    text: itemDetails;
+                    visible: detailsTabBar.currentTab == detailsTabButton
                 }
             }
 
@@ -280,9 +308,8 @@ ListItem {
                 height: !visible ? 0 : implicitHeight;
                 implicitWidth: minimumWidth + padding.margins.left + padding.margins.right;
                 anchors {
-//                     horizontalCenter: parent.horizontalCenter;
                     left: parent.left;
-                    top: connectionDetailsBackground.bottom;
+                    top: detailsContent.bottom;
                     topMargin: padding.margins.top;
                 }
                 text: i18n("Open configuration");
@@ -295,16 +322,67 @@ ListItem {
         }
     }
 
+    Component {
+        id: passwordDialogComponent;
+
+        Item {
+            height: childrenRect.height + padding.margins.top;
+
+            property alias password: passwordInput.text;
+            property alias autoconnect: automaticallyConnectCheckbox.checked;
+
+            PlasmaComponents.TextField {
+                id: passwordInput;
+
+                width: 200;
+                height: implicitHeight;
+                anchors {
+                    horizontalCenter: parent.horizontalCenter;
+                    top: parent.top;
+                }
+                echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
+                placeholderText: i18n("Password...");
+                onAccepted: {
+                    connectButton.clicked();
+                }
+            }
+
+            PlasmaComponents.CheckBox {
+                id: showPasswordCheckbox;
+
+                anchors {
+                    left: passwordInput.left;
+                    right: parent.right;
+                    top: passwordInput.bottom;
+                }
+                checked: false;
+                text: i18n("Show password");
+            }
+
+            PlasmaComponents.CheckBox {
+                id: automaticallyConnectCheckbox;
+
+                anchors {
+                    left: passwordInput.left;
+                    right: parent.right;
+                    top: showPasswordCheckbox.bottom;
+                }
+                checked: true;
+                text: i18n("Connect automatically");
+            }
+        }
+    }
+
     states: [
         State {
             name: "collapsed";
-            when: !expanded;
-            StateChangeScript { script: if (connectionItemDetails.status == Loader.Ready) {connectionItemDetails.sourceComponent = undefined} }
+            when: !(visibleDetails || visiblePasswordDialog);
+            StateChangeScript { script: if (expandableComponentLoader.status == Loader.Ready) {expandableComponentLoader.sourceComponent = undefined} }
         },
 
         State {
             name: "expanded";
-            when: expanded;
+            when: visibleDetails || visiblePasswordDialog;
             StateChangeScript { script: createContent(); }
             PropertyChanges { target: configButton; visible: true; }
             PropertyChanges { target: stateChangeButton; visible: true; }
@@ -313,6 +391,10 @@ ListItem {
     ]
 
     function createContent() {
-        connectionItemDetails.sourceComponent = connectionItemDetailsComponent;
+        if (visibleDetails) {
+            expandableComponentLoader.sourceComponent = detailsComponent;
+        } else if (visiblePasswordDialog) {
+            expandableComponentLoader.sourceComponent = passwordDialogComponent;
+        }
     }
 }

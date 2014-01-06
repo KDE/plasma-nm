@@ -106,10 +106,10 @@ Item {
             section.property: showSections ? "itemSection" : "";
             section.delegate: SectionHeader { }
             delegate: ConnectionItem {
-                onExpandedChanged: {
-                    if (expanded) {
-                        connectionView.currentIndex = index;
-                    }
+                onStateChanged: {
+                   if (state == "expanded") {
+                       connectionView.currentIndex = index;
+                   }
                 }
             }
 //         }

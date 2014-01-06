@@ -343,7 +343,7 @@ ListItem {
                 echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
                 placeholderText: i18n("Password...");
                 onAccepted: {
-                    connectButton.clicked();
+                    stateChangeButton.clicked();
                 }
             }
 

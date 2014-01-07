@@ -159,6 +159,26 @@ ListItem {
                 }
             }
 
+            PlasmaCore.IconItem {
+                id: configureButton;
+
+                height: sizes.iconSize;
+                width: itemUuid ? height: 0;
+                source: "configure";
+                visible: connectionItem.containsMouse;
+                active: configureButtonMouse.containsMouse;
+
+                MouseArea {
+                    id: configureButtonMouse;
+                    anchors.fill: parent;
+                    hoverEnabled: true;
+
+                    onClicked: {
+                        handler.editConnection(itemUuid);
+                    }
+                }
+            }
+
             PlasmaComponents.Button {
                 id: stateChangeButton;
 
@@ -232,9 +252,11 @@ ListItem {
 
                 anchors {
                     left: parent.left;
+                    right: parent.right;
                     top: detailsSeparator.bottom;
                     topMargin: padding.margins.top;
                 }
+                visible: itemConnectionState == PlasmaNM.Enums.Activated;
 
                 PlasmaComponents.TabButton {
                     id: speedTabButton;
@@ -254,22 +276,6 @@ ListItem {
                 }
             }
 
-            PlasmaComponents.Button {
-                id: configureButton;
-
-                implicitWidth: minimumWidth + padding.margins.left + padding.margins.right;
-                anchors {
-                    right: parent.right;
-                    top: detailsSeparator.bottom;
-                    topMargin: padding.margins.top;
-                }
-                text: i18n("Configure");
-                onClicked: {
-                    visibleDetails = false;
-                    handler.editConnection(itemUuid);
-                }
-            }
-
             Item {
                 id: detailsContent;
 
@@ -279,7 +285,8 @@ ListItem {
                 anchors {
                     left: parent.left;
                     right: parent.right;
-                    top: detailsTabBar.bottom;
+                    top: itemConnectionState == PlasmaNM.Enums.Activated ? detailsTabBar.bottom : detailsSeparator.bottom;
+                    topMargin: padding.margins.top;
                 }
 
                 TrafficMonitor {
@@ -356,31 +363,6 @@ ListItem {
                 placeholderText: i18n("Password...");
                 onAccepted: {
                     stateChangeButton.clicked();
-                }
-            }
-
-            PlasmaCore.IconItem {
-                id: closePasswordDialogButton;
-
-                height: sizes.iconSize;
-                width: height;
-                anchors {
-                    right: parent.right;
-                    top: passwordSeparator.bottom;
-                    topMargin: padding.margins.top;
-                }
-                source: "window-close";
-                active: closePasswordDialogButtonMouse.containsMouse;
-                visible: visiblePasswordDialog;
-
-                MouseArea {
-                    id: closePasswordDialogButtonMouse;
-                    anchors.fill: parent;
-                    hoverEnabled: true;
-
-                    onClicked: {
-                        visiblePasswordDialog = !visiblePasswordDialog;
-                    }
                 }
             }
 

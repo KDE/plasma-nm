@@ -256,12 +256,12 @@ ListItem {
                     top: detailsSeparator.bottom;
                     topMargin: padding.margins.top;
                 }
-                visible: itemConnectionState == PlasmaNM.Enums.Activated;
+                visible: itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn;
 
                 PlasmaComponents.TabButton {
                     id: speedTabButton;
                     text: i18n("Speed");
-                    visible: itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn
+                    visible: itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn;
                 }
 
                 PlasmaComponents.TabButton {
@@ -285,7 +285,7 @@ ListItem {
                 anchors {
                     left: parent.left;
                     right: parent.right;
-                    top: itemConnectionState == PlasmaNM.Enums.Activated ? detailsTabBar.bottom : detailsSeparator.bottom;
+                    top: detailsTabBar.visible ? detailsTabBar.bottom : detailsSeparator.bottom;
                     topMargin: padding.margins.top;
                 }
 

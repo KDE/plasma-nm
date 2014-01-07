@@ -367,7 +367,7 @@
            <item>
             <widget class="KLineEdit" name="passPassword">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="passwordMode">
               <bool>true</bool>
@@ -529,7 +529,7 @@
            <item>
             <widget class="KLineEdit" name="x509PassPassword">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="passwordMode">
               <bool>true</bool>

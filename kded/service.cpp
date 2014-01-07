@@ -34,6 +34,8 @@
 #include <QDBusMetaType>
 #include <QDBusServiceWatcher>
 #include <QDBusConnection>
+#include <QDBusConnectionInterface>
+#include <QDBusReply>
 
 K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManagementService>();)
 K_EXPORT_PLUGIN(NetworkManagementServiceFactory("networkmanagement", "plasmanetworkmanagement-kded"))
@@ -82,4 +84,3 @@ void NetworkManagementService::doInitialization()
 #endif
     new BluetoothMonitor(this);
 }
-

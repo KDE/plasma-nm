@@ -205,7 +205,6 @@ void ConnectionIcon::modemNetworkRemoved()
 {
     m_modemNetwork.clear();
 }
-#endif
 
 void ConnectionIcon::modemSignalChanged(uint signal)
 {
@@ -218,7 +217,7 @@ void ConnectionIcon::modemSignalChanged(uint signal)
         setIconForModem();
     }
 }
-
+#endif
 void ConnectionIcon::networkingEnabledChanged(bool enabled)
 {
     if (!enabled) {

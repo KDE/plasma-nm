@@ -200,10 +200,12 @@ void ConnectionIcon::deviceRemoved(const QString& device)
     }
 }
 
+#if WITH_MODEMMANAGER_SUPPORT
 void ConnectionIcon::modemNetworkRemoved()
 {
     m_modemNetwork.clear();
 }
+#endif
 
 void ConnectionIcon::modemSignalChanged(uint signal)
 {

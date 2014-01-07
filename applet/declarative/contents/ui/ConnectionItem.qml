@@ -75,7 +75,7 @@ ListItem {
             anchors {
                 left: connectionIcon.right;
                 leftMargin: padding.margins.left;
-                right: !connectionItem.containsMouse ? connectingIndicator.left : configButton.left;
+                right: !connectionItem.containsMouse ? connectingIndicator.left : buttonRow.left;
                 top: parent.top;
                 topMargin: 0;
             }
@@ -92,7 +92,7 @@ ListItem {
             anchors {
                 left: connectionIcon.right;
                 leftMargin: padding.margins.left;
-                right: !connectionItem.containsMouse ? connectingIndicator.left : configButton.left;
+                right: !connectionItem.containsMouse ? connectingIndicator.left : buttonRow.left;
                 top: connectionNameLabel.bottom;
             }
 
@@ -130,87 +130,64 @@ ListItem {
             visible: running && !connectionItem.containsMouse;
         }
 
-        PlasmaComponents.Button {
-            id: stateChangeButton;
+        Row {
+            id: buttonRow;
 
-            implicitWidth: minimumWidth + padding.margins.left + padding.margins.right;
             anchors {
                 verticalCenter: parent.verticalCenter;
                 right: parent.right;
             }
-            text: if (itemConnectionState == PlasmaNM.Enums.Deactivated)
-                    i18n("Connect");
-                else
-                    i18n("Disconnect");
-            visible: connectionItem.containsMouse;
+            spacing: 5;
 
-            onClicked: {
-                visibleDetails = false;
-                if (itemUuid || !predictableWirelessPassword || visiblePasswordDialog) {
-                    if (itemConnectionState == PlasmaNM.Enums.Deactivated) {
-                        if (!predictableWirelessPassword && !itemUuid) {
-                            handler.addAndActivateConnection(itemDevicePath, itemSpecificPath);
-                        } else if (visiblePasswordDialog) {
-                            handler.addAndActivateConnection(itemDevicePath, itemSpecificPath, expandableComponentLoader.item.password, expandableComponentLoader.item.autoconnect);
-                            visiblePasswordDialog = false;
-                        } else {
-                            handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
-                        }
-                    } else {
-                        handler.deactivateConnection(itemConnectionPath, itemDevicePath);
+            PlasmaCore.IconItem {
+                id: openDetailsButton;
+
+                height: sizes.iconSize;
+                width: height;
+                source: openDetailsButtonMouse.containsMouse ? "notification-inactive" : "notification-active";
+                visible: connectionItem.containsMouse;
+
+                MouseArea {
+                    id: openDetailsButtonMouse;
+                    anchors.fill: parent;
+                    hoverEnabled: true;
+
+                    onClicked: {
+                        visiblePasswordDialog = false;
+                        visibleDetails = !visibleDetails;
                     }
-                } else if (predictableWirelessPassword) {
-                    visiblePasswordDialog = true;
                 }
             }
-        }
 
-        PlasmaCore.SvgItem {
-            id: configButton;
+            PlasmaComponents.Button {
+                id: stateChangeButton;
 
-            height: sizes.iconSize;
-            width: height;
-            anchors {
-                verticalCenter: parent.verticalCenter;
-                right: stateChangeButton.left;
-                rightMargin: padding.margins.right;
-            }
-            svg: svgNotificationIcons;
-            elementId: configButtonMouse.containsMouse ? "notification-inactive" : "notification-active";
-            visible: connectionItem.containsMouse;
-
-            PlasmaCore.Svg {
-                id: svgNotificationIcons;
-
-                multipleImages: true;
-                imagePath: "icons/notification";
-            }
-
-            MouseArea {
-                id: configButtonMouse;
-                anchors.fill: parent;
-                hoverEnabled: true;
+                implicitWidth: minimumWidth + padding.margins.left + padding.margins.right;
+                text:if (itemConnectionState == PlasmaNM.Enums.Deactivated)
+                        i18n("Connect");
+                    else
+                        i18n("Disconnect");
+                visible: connectionItem.containsMouse;
 
                 onClicked: {
-                    visiblePasswordDialog = false;
-                    visibleDetails = !visibleDetails;
+                    visibleDetails = false;
+                    if (itemUuid || !predictableWirelessPassword || visiblePasswordDialog) {
+                        if (itemConnectionState == PlasmaNM.Enums.Deactivated) {
+                            if (!predictableWirelessPassword && !itemUuid) {
+                                handler.addAndActivateConnection(itemDevicePath, itemSpecificPath);
+                            } else if (visiblePasswordDialog) {
+                                handler.addAndActivateConnection(itemDevicePath, itemSpecificPath, expandableComponentLoader.item.password, expandableComponentLoader.item.autoconnect);
+                                visiblePasswordDialog = false;
+                            } else {
+                                handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
+                            }
+                        } else {
+                            handler.deactivateConnection(itemConnectionPath, itemDevicePath);
+                        }
+                    } else if (predictableWirelessPassword) {
+                        visiblePasswordDialog = true;
+                    }
                 }
-            }
-        }
-
-        PlasmaComponents.ToolButton {
-            height: sizes.iconSize;
-            width: height;
-            anchors {
-                verticalCenter: parent.verticalCenter;
-                right: configButton.left;
-                rightMargin: padding.margins.right;
-            }
-            iconSource: "window-close";
-            visible: visiblePasswordDialog;
-
-            onClicked: {
-                visiblePasswordDialog = !visiblePasswordDialog;
             }
         }
     }
@@ -232,13 +209,31 @@ ListItem {
         Item {
             height: childrenRect.height + padding.margins.top;
 
+            PlasmaCore.SvgItem {
+                id: detailsSeparator;
+
+                height: lineSvg.elementSize("horizontal-line").height;
+                width: parent.width;
+                anchors {
+                    left: parent.left;
+                    right: parent.right;
+                    top: parent.top;
+                }
+                elementId: "horizontal-line";
+
+                svg: PlasmaCore.Svg {
+                    id: lineSvg;
+                    imagePath: "widgets/line";
+                }
+            }
+
             PlasmaComponents.TabBar {
                 id: detailsTabBar;
 
                 anchors {
                     left: parent.left;
-                    right: parent.right;
-                    top: parent.top;
+                    top: detailsSeparator.bottom;
+                    topMargin: padding.margins.top;
                 }
 
                 PlasmaComponents.TabButton {
@@ -256,6 +251,22 @@ ListItem {
                     if (!speedTabButton.visible) {
                         currentTab = detailsTabButton;
                     }
+                }
+            }
+
+            PlasmaComponents.Button {
+                id: configureButton;
+
+                implicitWidth: minimumWidth + padding.margins.left + padding.margins.right;
+                anchors {
+                    right: parent.right;
+                    top: detailsSeparator.bottom;
+                    topMargin: padding.margins.top;
+                }
+                text: i18n("Configure");
+                onClicked: {
+                    visibleDetails = false;
+                    handler.editConnection(itemUuid);
                 }
             }
 
@@ -301,24 +312,6 @@ ListItem {
                     visible: detailsTabBar.currentTab == detailsTabButton
                 }
             }
-
-            PlasmaComponents.Button {
-                id: editConnectionButton;
-
-                height: !visible ? 0 : implicitHeight;
-                implicitWidth: minimumWidth + padding.margins.left + padding.margins.right;
-                anchors {
-                    left: parent.left;
-                    top: detailsContent.bottom;
-                    topMargin: padding.margins.top;
-                }
-                text: i18n("Open configuration");
-                visible: itemUuid;
-
-                onClicked: {
-                    handler.editConnection(itemUuid);
-                }
-            }
         }
     }
 
@@ -331,6 +324,24 @@ ListItem {
             property alias password: passwordInput.text;
             property alias autoconnect: automaticallyConnectCheckbox.checked;
 
+            PlasmaCore.SvgItem {
+                id: passwordSeparator;
+
+                height: lineSvg.elementSize("horizontal-line").height;
+                width: parent.width;
+                anchors {
+                    left: parent.left;
+                    right: parent.right;
+                    top: parent.top;
+                }
+                elementId: "horizontal-line";
+
+                svg: PlasmaCore.Svg {
+                    id: lineSvg;
+                    imagePath: "widgets/line";
+                }
+            }
+
             PlasmaComponents.TextField {
                 id: passwordInput;
 
@@ -338,12 +349,38 @@ ListItem {
                 height: implicitHeight;
                 anchors {
                     horizontalCenter: parent.horizontalCenter;
-                    top: parent.top;
+                    top: passwordSeparator.bottom;
+                    topMargin: padding.margins.top;
                 }
                 echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
                 placeholderText: i18n("Password...");
                 onAccepted: {
                     stateChangeButton.clicked();
+                }
+            }
+
+            PlasmaCore.IconItem {
+                id: closePasswordDialogButton;
+
+                height: sizes.iconSize;
+                width: height;
+                anchors {
+                    right: parent.right;
+                    top: passwordSeparator.bottom;
+                    topMargin: padding.margins.top;
+                }
+                source: "window-close";
+                active: closePasswordDialogButtonMouse.containsMouse;
+                visible: visiblePasswordDialog;
+
+                MouseArea {
+                    id: closePasswordDialogButtonMouse;
+                    anchors.fill: parent;
+                    hoverEnabled: true;
+
+                    onClicked: {
+                        visiblePasswordDialog = !visiblePasswordDialog;
+                    }
                 }
             }
 
@@ -384,7 +421,7 @@ ListItem {
             name: "expanded";
             when: visibleDetails || visiblePasswordDialog;
             StateChangeScript { script: createContent(); }
-            PropertyChanges { target: configButton; visible: true; }
+            PropertyChanges { target: openDetailsButton; visible: true; }
             PropertyChanges { target: stateChangeButton; visible: true; }
             PropertyChanges { target: connectionItem; enabled: false; }
         }

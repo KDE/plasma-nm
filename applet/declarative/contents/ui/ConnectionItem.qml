@@ -144,6 +144,9 @@ ListItem {
 
                 height: sizes.iconSize;
                 width: height;
+                anchors {
+                    verticalCenter: parent.verticalCenter;
+                }
                 source: openDetailsButtonMouse.containsMouse ? "notification-inactive" : "notification-active";
                 visible: connectionItem.containsMouse;
 
@@ -164,6 +167,9 @@ ListItem {
 
                 height: sizes.iconSize;
                 width: itemUuid ? height: 0;
+                anchors {
+                    verticalCenter: parent.verticalCenter;
+                }
                 source: "configure";
                 visible: connectionItem.containsMouse;
                 active: configureButtonMouse.containsMouse;
@@ -196,7 +202,7 @@ ListItem {
                             if (!predictableWirelessPassword && !itemUuid) {
                                 handler.addAndActivateConnection(itemDevicePath, itemSpecificPath);
                             } else if (visiblePasswordDialog) {
-                                handler.addAndActivateConnection(itemDevicePath, itemSpecificPath, expandableComponentLoader.item.password, expandableComponentLoader.item.autoconnect);
+                                handler.addAndActivateConnection(itemDevicePath, itemSpecificPath, expandableComponentLoader.item.password);
                                 visiblePasswordDialog = false;
                             } else {
                                 handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
@@ -329,7 +335,6 @@ ListItem {
             height: childrenRect.height + padding.margins.top;
 
             property alias password: passwordInput.text;
-            property alias autoconnect: automaticallyConnectCheckbox.checked;
 
             PlasmaCore.SvgItem {
                 id: passwordSeparator;
@@ -376,18 +381,6 @@ ListItem {
                 }
                 checked: false;
                 text: i18n("Show password");
-            }
-
-            PlasmaComponents.CheckBox {
-                id: automaticallyConnectCheckbox;
-
-                anchors {
-                    left: passwordInput.left;
-                    right: parent.right;
-                    top: showPasswordCheckbox.bottom;
-                }
-                checked: true;
-                text: i18n("Connect automatically");
             }
         }
     }

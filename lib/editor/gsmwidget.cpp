@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2013, 2014 Lukas Tinkl <ltinkl@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -63,6 +63,7 @@ GsmWidget::~GsmWidget()
 void GsmWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     NetworkManager::GsmSetting::Ptr gsmSetting = setting.staticCast<NetworkManager::GsmSetting>();
+
     const QString number = gsmSetting->number();
     if (!number.isEmpty())
         m_ui->number->setText(number);
@@ -70,11 +71,11 @@ void GsmWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     m_ui->password->setText(gsmSetting->password());
     if (gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::None) ||
         gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
-        m_ui->passwordStorage->setCurrentIndex(0);
+        m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
     } else if (gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::NotSaved)) {
-        m_ui->passwordStorage->setCurrentIndex(1);
+        m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
     } else {
-        m_ui->passwordStorage->setCurrentIndex(2);
+        m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
     }
     m_ui->apn->setText(gsmSetting->apn());
     m_ui->networkId->setText(gsmSetting->networkId());
@@ -84,11 +85,11 @@ void GsmWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     m_ui->pin->setText(gsmSetting->pin());
     if (gsmSetting->pinFlags() == NetworkManager::Setting::None ||
         gsmSetting->pinFlags() == NetworkManager::Setting::AgentOwned) {
-        m_ui->pinStorage->setCurrentIndex(0);
+        m_ui->pinStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
     } else if (gsmSetting->pinFlags() == NetworkManager::Setting::NotSaved) {
-        m_ui->pinStorage->setCurrentIndex(1);
+        m_ui->pinStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
     } else {
-        m_ui->pinStorage->setCurrentIndex(2);
+        m_ui->pinStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
     }
 }
 
@@ -101,11 +102,11 @@ QVariantMap GsmWidget::setting(bool agentOwned) const
         gsmSetting.setUsername(m_ui->username->text());
     if (!m_ui->password->text().isEmpty())
         gsmSetting.setPassword(m_ui->password->text());
-    if (m_ui->passwordStorage->currentIndex() == 0) {
+    if (m_ui->passwordStorage->currentIndex() == SettingWidget::EnumPasswordStorageType::Store) {
         if (agentOwned) {
             gsmSetting.setPasswordFlags(NetworkManager::Setting::AgentOwned);
         }
-    } else if (m_ui->passwordStorage->currentIndex() == 1) {
+    } else if (m_ui->passwordStorage->currentIndex() == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {
         gsmSetting.setPasswordFlags(NetworkManager::Setting::NotSaved);
     } else {
         gsmSetting.setPasswordFlags(NetworkManager::Setting::NotRequired);
@@ -119,11 +120,11 @@ QVariantMap GsmWidget::setting(bool agentOwned) const
     gsmSetting.setHomeOnly(!m_ui->roaming->isChecked());
     if (!m_ui->pin->text().isEmpty())
         gsmSetting.setPin(m_ui->pin->text());
-    if (m_ui->pinStorage->currentIndex() == 0) {
+    if (m_ui->pinStorage->currentIndex() == SettingWidget::EnumPasswordStorageType::Store) {
         if (agentOwned) {
             gsmSetting.setPinFlags(NetworkManager::Setting::AgentOwned);
         }
-    } else if (m_ui->pinStorage->currentIndex() == 1) {
+    } else if (m_ui->pinStorage->currentIndex() == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {
         gsmSetting.setPinFlags(NetworkManager::Setting::NotSaved);
     } else {
         gsmSetting.setPinFlags(NetworkManager::Setting::NotRequired);

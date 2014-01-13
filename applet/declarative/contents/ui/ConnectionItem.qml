@@ -335,6 +335,7 @@ ListItem {
             height: childrenRect.height + padding.margins.top;
 
             property alias password: passwordInput.text;
+            property alias passwordFocus: passwordInput
 
             PlasmaCore.SvgItem {
                 id: passwordSeparator;
@@ -407,6 +408,7 @@ ListItem {
             expandableComponentLoader.sourceComponent = detailsComponent;
         } else if (visiblePasswordDialog) {
             expandableComponentLoader.sourceComponent = passwordDialogComponent;
+            expandableComponentLoader.item.passwordFocus.forceActiveFocus();
         }
     }
 }

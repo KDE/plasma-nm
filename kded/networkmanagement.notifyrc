@@ -118,6 +118,7 @@ Action=Popup
 
 [Event/MissingVpnPlugin]
 Name=Missing VPN plugin
+Name[ca]=Manca el connector VPN
 Name[cs]=Chybějící modul VPN
 Name[da]=Mangler VPN-plugin
 Name[de]=Fehlendes VPN-Modul

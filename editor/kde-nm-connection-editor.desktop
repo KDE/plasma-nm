@@ -2,6 +2,7 @@
 [Desktop Entry]
 Name=kde-nm-connection-editor
 Name[bs]=kde-nm-connection-editor
+Name[ca]=kde-nm-connection-editor
 Name[cs]=kde-nm-connection-editor
 Name[da]=kde-nm-connection-editor
 Name[de]=KDE-NM-Verbindungseditor
@@ -25,6 +26,7 @@ Name[x-test]=xxkde-nm-connection-editorxx
 Name[zh_CN]=kde-nm-connection-editor
 GenericName=Connection editor
 GenericName[bs]=Uređivač veze
+GenericName[ca]=Editor de la connexió
 GenericName[cs]=Editor spojení
 GenericName[da]=Forbindelseseditor
 GenericName[de]=Verbindungs-Editor
@@ -47,6 +49,7 @@ GenericName[x-test]=xxConnection editorxx
 GenericName[zh_CN]=连接编辑器
 Comment=Edit your network connections
 Comment[bs]=Uredi mrežne konekcije
+Comment[ca]=Edita les vostres connexions de xarxa
 Comment[cs]=Upravit vaše síťová spojení
 Comment[da]=Redigér dine netværksforbindelser
 Comment[de]=Bearbeiten Sie Ihre Netzwerkverbindungen

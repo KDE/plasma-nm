@@ -22,7 +22,7 @@
 #include "connectiondetaileditor.h"
 #include <config.h>
 
-#include <KUniqueApplication>
+#include <KApplication>
 #include <KAboutData>
 #include <KCmdLineArgs>
 #include <KMainWindow>
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     options.add("+[uuid]", ki18n("Edit connection"));
     KCmdLineArgs::addCmdLineOptions(options);
 
-    KUniqueApplication app;
+    KApplication app;
 
     KGlobal::insertCatalog("libplasmanetworkmanagement-editor");  // setting widgets
     KGlobal::insertCatalog("plasma_applet_org.kde.networkmanagement");  // mobile wizard, UiUtils, ...

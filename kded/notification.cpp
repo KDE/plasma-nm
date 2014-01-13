@@ -291,7 +291,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         notify->setText(text);
         notify->update();
     } else {
-        KNotification *notify = new KNotification("DeviceFailed", KNotification::Persistent, this);
+        KNotification *notify = new KNotification("DeviceFailed", KNotification::CloseOnTimeout, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
         notify->setProperty("uni", device->uni());
         notify->setComponentData(KComponentData("networkmanagement"));
@@ -349,7 +349,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         notify->setText(text);
         notify->update();
     } else {
-        KNotification *notify = new KNotification("AcStateChanged", KNotification::Persistent, this);
+        KNotification *notify = new KNotification("AcStateChanged", KNotification::CloseOnTimeout, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
         notify->setProperty("uni", nId);
         notify->setComponentData(KComponentData("networkmanagement"));
@@ -430,7 +430,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         notify->setText(text);
         notify->update();
     } else {
-        KNotification *notify = new KNotification("VpnStateChanged", KNotification::Persistent, this);
+        KNotification *notify = new KNotification("VpnStateChanged", KNotification::CloseOnTimeout, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
         notify->setProperty("uni", nId);
         notify->setComponentData(KComponentData("networkmanagement"));

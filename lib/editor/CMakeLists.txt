@@ -27,6 +27,7 @@ set(plasmanetworkmanagement_libeditor_SRCS
     bridgewidget.cpp
     connectiondetaileditor.cpp
     connectionwidget.cpp
+    teamwidget.cpp
 )
 
 kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
@@ -52,6 +53,7 @@ kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
     ui/bridge.ui
     ui/connectiondetaileditor.ui
     ui/connectionwidget.ui
+    ui/team.ui
 )
 
 kde4_add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})

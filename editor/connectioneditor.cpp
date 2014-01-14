@@ -116,6 +116,9 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     action = new QAction(i18n("VLAN"), this);
     action->setData(NetworkManager::ConnectionSettings::Vlan);
     m_menu->addAction(action);
+    action = new QAction(i18n("Team"), this);
+    action->setData(NetworkManager::ConnectionSettings::Team);
+    m_menu->addAction(action);
 
     action = m_menu->addSeparator();
     action->setText(i18n("VPN"));

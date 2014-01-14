@@ -1,6 +1,6 @@
 /*
     Copyright 2013 Jan Grulich <jgrulich@redhat.com>
-    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2013, 2014 Lukas Tinkl <ltinkl@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -38,6 +38,7 @@
 #include <bridgewidget.h>
 #include <vlanwidget.h>
 #include <wimaxwidget.h>
+#include <teamwidget.h>
 #include "vpnuiplugin.h"
 
 #include <QDebug>
@@ -311,6 +312,9 @@ void ConnectionDetailEditor::initTabs()
     } else if (type == NetworkManager::ConnectionSettings::Vlan) { // Vlan
         VlanWidget * vlanWidget = new VlanWidget(m_connection->setting(NetworkManager::Setting::Vlan), this);
         m_ui->tabWidget->addTab(vlanWidget, i18n("Vlan"));
+    } else if (type == NetworkManager::ConnectionSettings::Team) { // Team
+        TeamWidget * teamWidget = new TeamWidget(uuid, m_connection->setting(NetworkManager::Setting::Team), this);
+        m_ui->tabWidget->addTab(teamWidget, i18n("Team"));
     } else if (type == NetworkManager::ConnectionSettings::Wimax) { // Wimax
         WimaxWidget * wimaxWidget = new WimaxWidget(m_connection->setting(NetworkManager::Setting::Wimax), this);
         m_ui->tabWidget->addTab(wimaxWidget, i18n("Wimax"));
@@ -361,6 +365,7 @@ void ConnectionDetailEditor::initTabs()
          || type == ConnectionSettings::Wireless
          || type == ConnectionSettings::Infiniband
          || type == ConnectionSettings::Wimax
+         || type == ConnectionSettings::Team
          || type == ConnectionSettings::Bond
          || type == ConnectionSettings::Bridge
          || type == ConnectionSettings::Vlan) && !isSlave()) {

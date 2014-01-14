@@ -29,7 +29,7 @@ endif()
 pkg_check_modules(NETWORKMANAGERQT REQUIRED NetworkManagerQt)
 if (NOT NETWORKMANAGERQT_FOUND)
     message(FATAL_ERROR "ERROR: NetworkManagerQt not found. http://projects.kde.org/libnm-qt")
-endif (NOT NETWORKMANAGERQT_FOUND)
+endif()
 
 set(PLASMA_NM_VERSION "0.9.3.3-git")
 

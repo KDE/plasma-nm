@@ -27,8 +27,13 @@ set(plasmanetworkmanagement_libeditor_SRCS
     bridgewidget.cpp
     connectiondetaileditor.cpp
     connectionwidget.cpp
-    teamwidget.cpp
 )
+
+if (${NETWORKMANAGERQT_VERSION} VERSION_GREATER 0.9.8.9)
+set(plasmanetworkmanagement_libeditor_SRCS
+    ${plasmanetworkmanagement_libeditor_SRCS}
+    teamwidget.cpp)
+endif()
 
 kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
     ui/advancedpermissionswidget.ui
@@ -53,8 +58,11 @@ kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
     ui/bridge.ui
     ui/connectiondetaileditor.ui
     ui/connectionwidget.ui
-    ui/team.ui
 )
+
+if (${NETWORKMANAGERQT_VERSION} VERSION_GREATER 0.9.8.9)
+    kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS ui/team.ui)
+endif()
 
 kde4_add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})
 target_link_libraries(plasmanetworkmanagement-editor

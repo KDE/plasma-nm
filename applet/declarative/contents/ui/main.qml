@@ -79,53 +79,40 @@ Item {
         property int itemSize: iconSize + padding.margins.top + padding.margins.bottom;
     }
 
-//     PlasmaExtras.ScrollArea {
+    Toolbar {
+        id: toolbar;
 
-//         anchors {
-//             left: parent.left;
-//             right: parent.right;
-//             top: parent.top;
-//             bottom: parent.bottom;
-//         }
-
-        ListView {
-            id: connectionView;
-
-//             anchors.fill: parent;
-            anchors {
-                left: parent.left;
-                right: parent.right;
-                top: parent.top;
-                bottom: parent.bottom;
-            }
-            clip: true
-            model: connectionSortModel;
-            currentIndex: -1;
-            interactive: true;
-            boundsBehavior: Flickable.StopAtBounds;
-            section.property: showSections ? "itemSection" : "";
-            section.delegate: SectionHeader { }
-            delegate: ConnectionItem {
-                onStateChanged: {
-                   if (state == "expanded") {
-                       connectionView.currentIndex = index;
-                   }
-                }
-            }
-//         }
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: parent.top;
+        }
     }
 
-//     Toolbar {
-//         id: toolbar;
-//
-//         anchors {
-//             left: parent.left;
-//             right: parent.right;
-//             top: parent.top;
-//         }
-//
-//         sectionDelegate: !showSections;
-//     }
+    ListView {
+        id: connectionView;
+
+        anchors {
+            bottom: parent.bottom;
+            left: parent.left;
+            right: parent.right;
+            top: toolbar.bottom;
+        }
+        clip: true
+        model: connectionSortModel;
+        currentIndex: -1;
+        interactive: true;
+        boundsBehavior: Flickable.StopAtBounds;
+        section.property: showSections ? "itemSection" : "";
+        section.delegate: Header { text: section }
+        delegate: ConnectionItem {
+            onStateChanged: {
+                if (state == "expanded") {
+                    connectionView.currentIndex = index;
+                }
+            }
+        }
+    }
 
     Component.onCompleted: {
         configChanged();

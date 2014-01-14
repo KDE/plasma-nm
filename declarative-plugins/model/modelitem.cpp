@@ -155,8 +155,6 @@ QString ModelItem::icon() const
                 return (m_securityType == NetworkManager::Utils::None) ? "network-wireless-0" : "network-wireless-0-locked";
             } else if (m_signal < 20) {
                 return (m_securityType == NetworkManager::Utils::None) ? "network-wireless-20" : "network-wireless-20-locked";
-            } else if (m_signal < 25) {
-                return (m_securityType == NetworkManager::Utils::None) ? "network-wireless-25" : "network-wireless-25-locked";
             } else if (m_signal < 40) {
                 return (m_securityType == NetworkManager::Utils::None) ? "network-wireless-40" : "network-wireless-40-locked";
             } else if (m_signal < 60) {
@@ -232,8 +230,6 @@ QString ModelItem::uni() const
         return m_connectionPath + '%' + m_devicePath;
     }
 }
-
-
 
 QString ModelItem::activeConnectionPath() const
 {

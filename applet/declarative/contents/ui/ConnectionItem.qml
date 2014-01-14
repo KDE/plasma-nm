@@ -51,8 +51,6 @@ ListItem {
         PlasmaCore.SvgItem {
             id: connectionIcon;
 
-            width: sizes.iconSize;
-            height: width;
             anchors {
                 left: parent.left
                 verticalCenter: parent.verticalCenter

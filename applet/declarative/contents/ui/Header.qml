@@ -22,11 +22,12 @@ import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 
 PlasmaComponents.ListItem {
-    id: sectionHeader;
+    id: header;
 
+    property alias text: headerLabel.text;
+
+    height: Math.max(sizes.iconSize, headerLabel.height) + padding.margins.top + padding.margins.bottom;
     sectionDelegate: true;
-
-    height: Math.max(sizes.iconSize, sectionLabel.height) + padding.margins.top + padding.margins.bottom;
 
     anchors {
         left: parent.left;
@@ -34,14 +35,13 @@ PlasmaComponents.ListItem {
     }
 
     PlasmaComponents.Label {
-        id: sectionLabel
+        id: headerLabel
 
         height: paintedHeight;
         anchors {
             horizontalCenter: parent.horizontalCenter;
             verticalCenter: parent.verticalCenter;
         }
-        text: section;
         font.weight: Font.DemiBold;
     }
 }

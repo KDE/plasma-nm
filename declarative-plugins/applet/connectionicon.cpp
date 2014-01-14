@@ -394,19 +394,19 @@ void ConnectionIcon::setDisconnectedIcon()
         Q_EMIT connectionIconChanged("network-wired-available");
         Q_EMIT connectionTooltipIconChanged("network-wired");
         return;
-    } else if (modem) {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-mobile-available)";
-        m_connectionIcon = "network-mobile-available";
-        m_connectionTooltipIcon = "phone";
-        Q_EMIT connectionIconChanged("network-mobile-available");
-        Q_EMIT connectionTooltipIconChanged("phone");
-        return;
     } else if (wireless) {
         NMAppletDebug() << "Emit signal connectionIconChanged(network-wireless-available)";
         m_connectionIcon = "network-wireless-available";
         m_connectionTooltipIcon = "network-wireless-connected-00";
         Q_EMIT connectionIconChanged("network-wireless-available");
         Q_EMIT connectionTooltipIconChanged("network-wireless-connected-00");
+        return;
+    } else if (modem) {
+        NMAppletDebug() << "Emit signal connectionIconChanged(network-mobile-available)";
+        m_connectionIcon = "network-mobile-available";
+        m_connectionTooltipIcon = "phone";
+        Q_EMIT connectionIconChanged("network-mobile-available");
+        Q_EMIT connectionTooltipIconChanged("phone");
         return;
     }  else {
         NMAppletDebug() << "Emit signal connectionIconChanged(network-unavailable)";
@@ -599,10 +599,6 @@ void ConnectionIcon::setWirelessIconForSignalStrength(int strength)
             Q_EMIT connectionTooltipIconChanged("network-wireless-connected-00");
         } else if (strength < 20) {
             iconStrength = 20;
-            m_connectionTooltipIcon = "network-wireless-connected-20";
-            Q_EMIT connectionTooltipIconChanged("network-wireless-connected-20");
-        } else if (strength < 25) {
-            iconStrength = 25;
             m_connectionTooltipIcon = "network-wireless-connected-20";
             Q_EMIT connectionTooltipIconChanged("network-wireless-connected-20");
         } else if (strength < 40) {

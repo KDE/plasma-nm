@@ -23,48 +23,118 @@ import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.core 0.1 as PlasmaCore
 import org.kde.networkmanagement 0.1 as PlasmaNM
 
-PlasmaComponents.ListItem {
+Item {
+    id: toolbar;
 
-    PlasmaNM.NetworkStatus {
-        id: networkStatus;
+    height: sizes.iconSize + padding.margins.top + padding.margins.bottom;
+
+    PlasmaCore.Svg {
+        id: svgNetworkIcons;
+
+        multipleImages: true;
+        imagePath: "icons/plasma-networkmanagement";
     }
 
-    height: Math.max(statusIcon.height, statusLabel.height) + padding.margins.top + padding.margins.bottom;
-    enabled: true;
+    PlasmaComponents.ListItem {
+        id: plane;
 
-    PlasmaCore.IconItem {
-        id: statusIcon;
-
-        height: sizes.iconSize;
-        width: height;
+        height: sizes.iconSize + padding.margins.top + padding.margins.bottom;
+        width: parent.width/4;
         anchors {
             left: parent.left;
-            verticalCenter: parent.verticalCenter
+            top: parent.top;
         }
-        source: (networkStatus.networkStatus == i18n("Connected") || networkStatus.networkStatus == "Connected") ? "user-online" : "user-offline";
+        enabled: true;
+
+        PlasmaCore.SvgItem {
+            anchors {
+                horizontalCenter: parent.horizontalCenter;
+                verticalCenter: parent.verticalCenter;
+            }
+            svg: svgNetworkIcons;
+            elementId: "plane-mode";
+        }
     }
 
-    PlasmaComponents.Label {
-        id: statusLabel
+    PlasmaComponents.ListItem {
+        id: wifi;
 
-        height: paintedHeight;
+        property bool switchEnabled: true;
+
+        height: sizes.iconSize + padding.margins.top + padding.margins.bottom;
+        width: parent.width/4;
         anchors {
-            left: statusIcon.right;
-            leftMargin: padding.margins.left;
-            verticalCenter: parent.verticalCenter;
+            left: plane.right;
+            leftMargin: 2;
+            top: parent.top;
         }
-        text: networkStatus.networkStatus;
+        enabled: true;
+
+        PlasmaCore.SvgItem {
+            anchors {
+                horizontalCenter: parent.horizontalCenter;
+                verticalCenter: parent.verticalCenter;
+            }
+            svg: svgNetworkIcons;
+            elementId: wifi.switchEnabled ? "network-wireless-100" : "network-wireless-0";
+        }
+
+        onClicked: {
+            switchEnabled = !switchEnabled;
+        }
     }
 
-    PlasmaCore.IconItem {
-        id: configureButton;
+    PlasmaComponents.ListItem {
+        id: modem;
 
-        height: sizes.iconSize;
-        width: height;
+        property bool switchEnabled: true;
+
+        height: sizes.iconSize + padding.margins.top + padding.margins.bottom;
+        width: parent.width/4;
         anchors {
+            left: wifi.right;
+            leftMargin: 2;
+            top: parent.top;
+        }
+        enabled: true;
+
+        PlasmaCore.SvgItem {
+            anchors {
+                horizontalCenter: parent.horizontalCenter;
+                verticalCenter: parent.verticalCenter;
+            }
+            svg: svgNetworkIcons;
+            elementId: modem.switchEnabled ? "network-mobile-100" : "network-mobile";
+        }
+
+        onClicked: {
+            switchEnabled = !switchEnabled;
+        }
+    }
+
+    PlasmaComponents.ListItem {
+        id: configuration;
+
+        height: sizes.iconSize + padding.margins.top + padding.margins.bottom;
+        width: parent.width/4;
+        anchors {
+            left: modem.right;
+            leftMargin: 2;
             right: parent.right;
-            verticalCenter: parent.verticalCenter;
+            top: parent.top;
         }
-        source: "configure";
+        enabled: true;
+
+        PlasmaCore.IconItem {
+            anchors {
+                horizontalCenter: parent.horizontalCenter;
+                verticalCenter: parent.verticalCenter;
+            }
+            source: "configure";
+        }
+
+        onClicked: {
+            handler.openEditor();
+        }
     }
 }

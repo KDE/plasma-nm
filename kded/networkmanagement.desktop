@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Plasma Networkmanagement module
+Name[ca]=Mòdul de Plasma per a la Gestió de la xarxa
 Name[cs]=Modul Plasma Networkmanagement
 Name[da]=Plasma netværkshåndteringsmodul
 Name[de]=Plasma-Netzwerkverwaltungsmodul
@@ -20,6 +21,7 @@ Name[uk]=Модуль керування мережею Плазми
 Name[x-test]=xxPlasma Networkmanagement modulexx
 Name[zh_CN]=Plasma 网络管理模块
 Comment=Provides secrets to the NetworkManager daemon
+Comment[ca]=Proporciona secrets al dimoni NetworkManager
 Comment[cs]=Poskytuje přihlašovací informace pro službu NetworkManageru
 Comment[da]=Giver hemmeligheder til NetworkManager-dæmonen
 Comment[de]=Stellt dem NetworkManager-Dienst vertrauliche Daten zur Verfügung

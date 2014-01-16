@@ -55,7 +55,7 @@ QValidator::State SimpleIpV4AddressValidator::checkWithInputMask(QString &value,
 QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value, QList<int> &tetrads) const
 {
     QStringList temp;
-    QStringList addrParts = value.split(QLatin1Char('.'));
+    const QStringList addrParts = value.split(QLatin1Char('.'));
     int i = 0;
     // fill in the list with invalid values
     tetrads << -1 << -1 << -1 << -1;
@@ -91,8 +91,7 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
         // not all tetrads are filled... continue
         //kDebug() << "QValidator::Intermediate";
         return QValidator::Intermediate;
-    }
-    else {
+    } else {
         //kDebug() << "QValidator::Acceptable";
         return QValidator::Acceptable;
     }

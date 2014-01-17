@@ -32,7 +32,7 @@ Item {
     signal clicked();
 
     height: switchButtonIcon.height + padding.margins.top + padding.margins.bottom;
-    width: switchButtonCheckbox.width + switchButtonIcon.width + padding.margins.left * 3 + padding.margins.right;
+    width: switchButtonCheckbox.width + switchButtonIcon.width + padding.margins.left * 2 + padding.margins.right;
 
     PlasmaCore.FrameSvgItem {
         id: switchButtonBackground;

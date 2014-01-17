@@ -26,9 +26,7 @@ import org.kde.networkmanagement 0.1 as PlasmaNM
 Item {
     id: toolbar;
 
-    property int buttonWidth: parent.width / 5;
-
-    height: sizes.iconSize + padding.margins.top + padding.margins.bottom;
+    height: wifiSwitchButton.height;
 
     PlasmaNM.EnabledConnections {
         id: enabledConnections;
@@ -82,6 +80,49 @@ Item {
 
             onClicked: {
                 handler.enableNetworking(checked);
+            }
+        }
+    }
+
+    PlasmaCore.FrameSvgItem {
+        id: openEditorButtonBackground;
+
+        imagePath: "widgets/listitem"
+        prefix: "normal"
+
+        width: openEditorButtonIcon.width + padding.margins.left + padding.margins.right;
+        anchors {
+            bottom: parent.bottom;
+            right: parent.right;
+            top: parent.top;
+        }
+
+        PlasmaCore.IconItem {
+            id: openEditorButtonIcon;
+            anchors {
+                fill: parent
+                bottomMargin: padding.margins.bottom
+                leftMargin: padding.margins.left
+                rightMargin: padding.margins.right
+                topMargin: padding.margins.top
+            }
+            source: "configure";
+        }
+
+        MouseArea {
+            anchors.fill: parent;
+            hoverEnabled: true;
+
+            onEntered: {
+                openEditorButtonBackground.prefix = "pressed";
+            }
+
+            onExited: {
+                openEditorButtonBackground.prefix = "normal";
+            }
+
+            onClicked: {
+               handler.openEditor();
             }
         }
     }

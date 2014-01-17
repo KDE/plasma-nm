@@ -26,115 +26,59 @@ import org.kde.networkmanagement 0.1 as PlasmaNM
 Item {
     id: toolbar;
 
+    property int buttonWidth: parent.width / 5;
+
     height: sizes.iconSize + padding.margins.top + padding.margins.bottom;
 
-    PlasmaCore.Svg {
-        id: svgNetworkIcons;
-
-        multipleImages: true;
-        imagePath: "icons/plasma-networkmanagement";
+    PlasmaNM.EnabledConnections {
+        id: enabledConnections;
     }
 
-    PlasmaComponents.ListItem {
-        id: plane;
+    PlasmaNM.AvailableDevices {
+        id: availableDevices;
+    }
 
-        height: sizes.iconSize + padding.margins.top + padding.margins.bottom;
-        width: parent.width/4;
+    Row {
         anchors {
+            bottom: parent.bottom;
             left: parent.left;
             top: parent.top;
         }
-        enabled: true;
+        spacing: 3;
 
-        PlasmaCore.SvgItem {
-            anchors {
-                horizontalCenter: parent.horizontalCenter;
-                verticalCenter: parent.verticalCenter;
+        SwitchButton {
+            id: wifiSwitchButton;
+
+            checked: enabledConnections.wirelessEnabled;
+            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && enabledConnections.networkingEnabled;
+            icon: "network-wireless-100";
+
+            onClicked: {
+                handler.enableWireless(checked);
             }
-            svg: svgNetworkIcons;
-            elementId: "plane-mode";
         }
-    }
 
-    PlasmaComponents.ListItem {
-        id: wifi;
+        SwitchButton {
+            id: wwanSwitchButton;
 
-        property bool switchEnabled: true;
+            checked: enabledConnections.wwanEnabled;
+            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && enabledConnections.networkingEnabled;
+            icon: "network-mobile-100";
 
-        height: sizes.iconSize + padding.margins.top + padding.margins.bottom;
-        width: parent.width/4;
-        anchors {
-            left: plane.right;
-            leftMargin: 2;
-            top: parent.top;
-        }
-        enabled: true;
-
-        PlasmaCore.SvgItem {
-            anchors {
-                horizontalCenter: parent.horizontalCenter;
-                verticalCenter: parent.verticalCenter;
+            onClicked: {
+                handler.enableWwan(checked);
             }
-            svg: svgNetworkIcons;
-            elementId: wifi.switchEnabled ? "network-wireless-100" : "network-wireless-0";
         }
 
-        onClicked: {
-            switchEnabled = !switchEnabled;
-        }
-    }
+        SwitchButton {
+            id: planeModeSwitchButton;
 
-    PlasmaComponents.ListItem {
-        id: modem;
+            checked: enabledConnections.networkingEnabled;
+            icon: "network-unavailable";
 
-        property bool switchEnabled: true;
-
-        height: sizes.iconSize + padding.margins.top + padding.margins.bottom;
-        width: parent.width/4;
-        anchors {
-            left: wifi.right;
-            leftMargin: 2;
-            top: parent.top;
-        }
-        enabled: true;
-
-        PlasmaCore.SvgItem {
-            anchors {
-                horizontalCenter: parent.horizontalCenter;
-                verticalCenter: parent.verticalCenter;
+            onClicked: {
+                handler.enableNetworking(checked);
             }
-            svg: svgNetworkIcons;
-            elementId: modem.switchEnabled ? "network-mobile-100" : "network-mobile";
-        }
-
-        onClicked: {
-            switchEnabled = !switchEnabled;
-        }
-    }
-
-    PlasmaComponents.ListItem {
-        id: configuration;
-
-        height: sizes.iconSize + padding.margins.top + padding.margins.bottom;
-        width: parent.width/4;
-        anchors {
-            left: modem.right;
-            leftMargin: 2;
-            right: parent.right;
-            top: parent.top;
-        }
-        enabled: true;
-
-        PlasmaCore.IconItem {
-            anchors {
-                horizontalCenter: parent.horizontalCenter;
-                verticalCenter: parent.verticalCenter;
-            }
-            source: "configure";
-        }
-
-        onClicked: {
-            handler.openEditor();
         }
     }
 }

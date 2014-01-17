@@ -57,13 +57,6 @@ ListItem {
             }
             svg: svgNetworkIcons;
             elementId: itemConnectionIcon;
-
-            PlasmaCore.Svg {
-                id: svgNetworkIcons;
-
-                multipleImages: true;
-                imagePath: "icons/plasma-networkmanagement";
-            }
         }
 
         PlasmaComponents.Label {

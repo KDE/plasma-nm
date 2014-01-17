@@ -64,6 +64,13 @@ Item {
         sourceModel: connectionModel;
     }
 
+    PlasmaCore.Svg {
+        id: svgNetworkIcons;
+
+        multipleImages: true;
+        imagePath: "icons/plasma-networkmanagement";
+    }
+
     PlasmaCore.FrameSvgItem {
         id: padding
         imagePath: "widgets/viewitem"

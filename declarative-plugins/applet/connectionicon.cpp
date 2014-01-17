@@ -62,6 +62,8 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
             SLOT(wwanEnabledChanged(bool)));
     connect(NetworkManager::notifier(), SIGNAL(networkingEnabledChanged(bool)),
             SLOT(networkingEnabledChanged(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
+            SLOT(statusChanged(NetworkManager::Status)));
 
     foreach (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
@@ -229,10 +231,15 @@ void ConnectionIcon::networkingEnabledChanged(bool enabled)
 
 void ConnectionIcon::primaryConnectionChanged(const QString& connection)
 {
-    if (connection.isEmpty()) {
-        setDisconnectedIcon();
-    } else {
+    if (!connection.isEmpty()) {
         setIcons();
+    }
+}
+
+void ConnectionIcon::statusChanged(NetworkManager::Status status)
+{
+    if (status == NetworkManager::Disconnected) {
+        setDisconnectedIcon();
     }
 }
 

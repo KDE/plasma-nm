@@ -116,9 +116,8 @@ QString ConnectionIcon::connectionTooltipIcon() const
 
 void ConnectionIcon::activatingConnectionChanged(const QString& connection)
 {
-    if (connection != "/") {
-        setIcons();
-    }
+    Q_UNUSED(connection);
+    setIcons();
 }
 
 void ConnectionIcon::activeConnectionAdded(const QString &activeConnection)

@@ -71,6 +71,7 @@ private Q_SLOTS:
     void modemSignalChanged(uint signal);
 #endif
     void statusChanged(NetworkManager::Status status);
+    void setIconForModem();
     void setWirelessIconForSignalStrength(int strength);
     void vpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason);
     void wirelessEnabledChanged(bool enabled);
@@ -99,7 +100,6 @@ private:
     ModemManager::ModemGsmNetworkInterface::Ptr m_modemNetwork;
 #endif
     void setModemIcon(const NetworkManager::Device::Ptr & device);
-    void setIconForModem();
 #endif
 };
 

@@ -259,6 +259,17 @@ void Handler::openEditor()
     KProcess::startDetached("kde-nm-connection-editor");
 }
 
+void Handler::requestScan()
+{
+    foreach (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
+        if (device->type() == NetworkManager::Device::Wifi) {
+            NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+            if (wifiDevice) {
+                wifiDevice->requestScan();
+            }
+        }
+    }
+}
 
 void Handler::editDialogAccepted()
 {

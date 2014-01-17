@@ -75,6 +75,7 @@ public Q_SLOTS:
      */
     void removeConnection(const QString & connection);
     void openEditor();
+    void requestScan();
 
 private Q_SLOTS:
     void editDialogAccepted();

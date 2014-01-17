@@ -54,7 +54,9 @@ Item {
             icon: "network-wireless-100";
 
             onClicked: {
-                handler.enableWireless(checked);
+                if (enabled) {
+                    handler.enableWireless(checked);
+                }
             }
         }
 
@@ -66,7 +68,9 @@ Item {
             icon: "network-mobile-100";
 
             onClicked: {
-                handler.enableWwan(checked);
+                if (enabled) {
+                    handler.enableWwan(checked);
+                }
             }
         }
 

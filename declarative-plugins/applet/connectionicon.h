@@ -57,6 +57,7 @@ public:
     QString connectionTooltipIcon() const;
 
 private Q_SLOTS:
+    void connectivityChanged();
     void activatingConnectionChanged(const QString & connection);
     void activeConnectionAdded(const QString & activeConnection);
     void activeConnectionDestroyed();
@@ -87,6 +88,7 @@ private:
 
     bool m_connecting;
     bool m_vpn;
+    bool m_limited;
     QString m_connectionIcon;
     QString m_connectionTooltipIcon;
 

@@ -38,10 +38,13 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
     , m_wirelessNetwork(0)
     , m_connecting(false)
     , m_vpn(false)
+    , m_limited(false)
 #if WITH_MODEMMANAGER_SUPPORT
     , m_modemNetwork(0)
 #endif
 {
+    connectivityChanged();
+
     connect(NetworkManager::notifier(), SIGNAL(primaryConnectionChanged(QString)),
             SLOT(primaryConnectionChanged(QString)));
     connect(NetworkManager::notifier(), SIGNAL(activatingConnectionChanged(QString)),
@@ -64,6 +67,8 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
             SLOT(networkingEnabledChanged(bool)));
     connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
             SLOT(statusChanged(NetworkManager::Status)));
+    connect(NetworkManager::notifier(), SIGNAL(connectivityChanged()),
+            SLOT(connectivityChanged()));
 
     foreach (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
@@ -103,15 +108,28 @@ bool ConnectionIcon::connecting() const
 
 QString ConnectionIcon::connectionIcon() const
 {
-    if (m_vpn ) {
+    if (m_vpn) {
         return m_connectionIcon + "-locked";
     }
+
+    if (m_limited) {
+        return m_connectionIcon + "-limited";
+    }
+
     return m_connectionIcon;
 }
 
 QString ConnectionIcon::connectionTooltipIcon() const
 {
     return m_connectionTooltipIcon;
+}
+
+void ConnectionIcon::connectivityChanged()
+{
+    NetworkManager::Connectivity conn = NetworkManager::checkConnectivity();
+    m_limited = (conn == NetworkManager::Portal || conn == NetworkManager::Limited);
+    qDebug() << "CONNECTIVITY CHANGED, LIMITED?" << m_limited;
+    setIcons();
 }
 
 void ConnectionIcon::activatingConnectionChanged(const QString& connection)
@@ -131,9 +149,9 @@ void ConnectionIcon::activeConnectionAdded(const QString &activeConnection)
         }
         if ((active->state() == NetworkManager::ActiveConnection::Activating) ||
             (vpnConnection && (vpnConnection->state() == NetworkManager::VpnConnection::Prepare ||
-                               vpnConnection->state()  == NetworkManager::VpnConnection::NeedAuth ||
-                               vpnConnection->state()  == NetworkManager::VpnConnection::Connecting ||
-                               vpnConnection->state()  == NetworkManager::VpnConnection::GettingIpConfig))) {
+                               vpnConnection->state() == NetworkManager::VpnConnection::NeedAuth ||
+                               vpnConnection->state() == NetworkManager::VpnConnection::Connecting ||
+                               vpnConnection->state() == NetworkManager::VpnConnection::GettingIpConfig))) {
             connect(active.data(), SIGNAL(destroyed(QObject*)),
                     SLOT(activeConnectionDestroyed()));
             if (vpnConnection) {
@@ -219,6 +237,7 @@ void ConnectionIcon::modemSignalChanged(uint signal)
     }
 }
 #endif
+
 void ConnectionIcon::networkingEnabledChanged(bool enabled)
 {
     if (!enabled) {
@@ -422,6 +441,7 @@ void ConnectionIcon::setDisconnectedIcon()
         Q_EMIT connectionTooltipIconChanged("network-wired");
     }
 }
+
 #if WITH_MODEMMANAGER_SUPPORT
 void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
 {
@@ -497,7 +517,7 @@ void ConnectionIcon::setIconForModem()
         strength = "100";
     }
 
-    QString result;;
+    QString result;
 
 #ifdef MODEMMANAGERQT_ONE
     switch(m_modemNetwork->accessTechnologies()) {
@@ -572,6 +592,7 @@ void ConnectionIcon::setIconForModem()
     Q_EMIT connectionTooltipIconChanged("phone");
 }
 #endif
+
 void ConnectionIcon::setWirelessIcon(const NetworkManager::Device::Ptr &device, const QString& ssid)
 {
     NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
@@ -595,8 +616,7 @@ void ConnectionIcon::setWirelessIconForSignalStrength(int strength)
 {
     const int diff = m_signal - strength;
 
-    if (diff >= 10 ||
-        diff <= -10) {
+    if (diff >= 10 || diff <= -10) {
         int iconStrength = 100;
 
         if (strength == 0) {

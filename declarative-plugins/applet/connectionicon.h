@@ -57,12 +57,12 @@ public:
     QString connectionTooltipIcon() const;
 
 private Q_SLOTS:
-    void connectivityChanged();
     void activatingConnectionChanged(const QString & connection);
     void activeConnectionAdded(const QString & activeConnection);
     void activeConnectionDestroyed();
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
     void carrierChanged(bool carrier);
+    void connectivityChanged();
     void deviceAdded(const QString & device);
     void deviceRemoved(const QString & device);
     void networkingEnabledChanged(bool enabled);
@@ -87,8 +87,8 @@ private:
     NetworkManager::WirelessNetwork::Ptr m_wirelessNetwork;
 
     bool m_connecting;
-    bool m_vpn;
     bool m_limited;
+    bool m_vpn;
     QString m_connectionIcon;
     QString m_connectionTooltipIcon;
 

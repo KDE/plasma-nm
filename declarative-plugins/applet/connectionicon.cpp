@@ -37,24 +37,28 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
     , m_signal(0)
     , m_wirelessNetwork(0)
     , m_connecting(false)
-    , m_vpn(false)
     , m_limited(false)
+    , m_vpn(false)
 #if WITH_MODEMMANAGER_SUPPORT
     , m_modemNetwork(0)
 #endif
 {
-    connectivityChanged();
-
     connect(NetworkManager::notifier(), SIGNAL(primaryConnectionChanged(QString)),
             SLOT(primaryConnectionChanged(QString)));
     connect(NetworkManager::notifier(), SIGNAL(activatingConnectionChanged(QString)),
             SLOT(activatingConnectionChanged(QString)));
     connect(NetworkManager::notifier(), SIGNAL(activeConnectionAdded(QString)),
             SLOT(activeConnectionAdded(QString)));
+    connect(NetworkManager::notifier(), SIGNAL(connectivityChanged()),
+            SLOT(connectivityChanged()));
     connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)),
             SLOT(deviceAdded(QString)));
     connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
             SLOT(deviceRemoved(QString)));
+    connect(NetworkManager::notifier(), SIGNAL(networkingEnabledChanged(bool)),
+            SLOT(networkingEnabledChanged(bool)));
+    connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
+            SLOT(statusChanged(NetworkManager::Status)));
     connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
             SLOT(wirelessEnabledChanged(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wirelessHardwareEnabledChanged(bool)),
@@ -63,12 +67,6 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
             SLOT(wwanEnabledChanged(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wwanHardwareEnabledChanged(bool)),
             SLOT(wwanEnabledChanged(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(networkingEnabledChanged(bool)),
-            SLOT(networkingEnabledChanged(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
-            SLOT(statusChanged(NetworkManager::Status)));
-    connect(NetworkManager::notifier(), SIGNAL(connectivityChanged()),
-            SLOT(connectivityChanged()));
 
     foreach (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
@@ -94,7 +92,7 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
         }
     }
 
-    setIcons();
+    connectivityChanged();
 }
 
 ConnectionIcon::~ConnectionIcon()
@@ -122,14 +120,6 @@ QString ConnectionIcon::connectionIcon() const
 QString ConnectionIcon::connectionTooltipIcon() const
 {
     return m_connectionTooltipIcon;
-}
-
-void ConnectionIcon::connectivityChanged()
-{
-    NetworkManager::Connectivity conn = NetworkManager::checkConnectivity();
-    m_limited = (conn == NetworkManager::Portal || conn == NetworkManager::Limited);
-    qDebug() << "CONNECTIVITY CHANGED, LIMITED?" << m_limited;
-    setIcons();
 }
 
 void ConnectionIcon::activatingConnectionChanged(const QString& connection)
@@ -193,6 +183,13 @@ void ConnectionIcon::carrierChanged(bool carrier)
     if (NetworkManager::status() == NetworkManager::Disconnected) {
         setDisconnectedIcon();
     }
+}
+
+void ConnectionIcon::connectivityChanged()
+{
+    NetworkManager::Connectivity conn = NetworkManager::checkConnectivity();
+    m_limited = (conn == NetworkManager::Portal || conn == NetworkManager::Limited);
+    setIcons();
 }
 
 void ConnectionIcon::deviceAdded(const QString& device)

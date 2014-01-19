@@ -48,7 +48,7 @@ Item {
             id: wifiSwitchButton;
 
             checked: enabledConnections.wirelessEnabled;
-            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !enabledConnections.networkingEnabled;
+            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && enabledConnections.networkingEnabled;
             icon: "network-wireless-100";
 
             onClicked: {
@@ -62,7 +62,7 @@ Item {
             id: wwanSwitchButton;
 
             checked: enabledConnections.wwanEnabled;
-            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !enabledConnections.networkingEnabled;
+            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && enabledConnections.networkingEnabled;
             icon: "network-mobile-100";
 
             onClicked: {
@@ -79,7 +79,7 @@ Item {
             icon: "network-unavailable";
 
             onClicked: {
-                handler.enableNetworking(checked);
+                handler.enableNetworking(!checked);
             }
         }
     }

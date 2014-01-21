@@ -307,15 +307,27 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
         wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
         // Check whether is there already an access point in the model for this connection, so we can only extend it
         if (m_list.contains(NetworkItemsList::Ssid, wirelessSetting->ssid())) {
+            bool apFound = false;
             foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, wirelessSetting->ssid())) {
-                item->setConnectionPath(connection->path());
-                item->setLastUsed(settings->timestamp());
-                item->setName(settings->id());
-                item->setType(settings->connectionType());
-                item->setUuid(settings->uuid());
-                updateItem(item);
+                // Applicable only to APs without connection
+                if (item->connectionPath().isEmpty()) {
+                    // FIXME find a proper way how to compare configurations
+                    NetworkManager::Utils::WirelessSecurityType securityType = NetworkManager::Utils::securityTypeFromConnectionSetting(settings);
+                    // TODO check more properties???
+                    if (item->securityType() == securityType && item->mode() == wirelessSetting->mode()) {
+                        apFound = true;
+                        item->setConnectionPath(connection->path());
+                        item->setLastUsed(settings->timestamp());
+                        item->setName(settings->id());
+                        item->setType(settings->connectionType());
+                        item->setUuid(settings->uuid());
+                        updateItem(item);
+                    }
+                }
             }
-            return;
+            if (apFound) {
+                return;
+            }
         }
     }
 
@@ -329,12 +341,9 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
         item->setUuid(settings->uuid());
 
         if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
+            item->setMode(wirelessSetting->mode());
             item->setSecurityType(NetworkManager::Utils::securityTypeFromConnectionSetting(settings));
             item->setSsid(wirelessSetting->ssid());
-            if (wirelessSetting->mode() == NetworkManager::WirelessSetting::Adhoc ||
-                wirelessSetting->mode() == NetworkManager::WirelessSetting::Ap) {
-                item->setShared(true);
-            }
         }
         item->updateDetails();
         const int index = m_list.count();
@@ -382,7 +391,7 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
 
     bool connectionFound = false;
     // Check whether there is an available connection for this network, because it's possible that some
-    // connection has same SSID, but it might not be available due to specified BSSID or device
+    // connection has same SSID, but it might not be available due to specified BSSID/Security or device
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, network->ssid())) {
         foreach (const NetworkManager::Connection::Ptr connection, device->availableConnections()) {
             if (item->connectionPath() == connection->path()) {
@@ -393,6 +402,13 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
                     item->setDeviceName(device->ipInterfaceName());
                 }
                 item->setDevicePath(device->uni());
+                if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Infra) {
+                    item->setMode(NetworkManager::WirelessSetting::Infrastructure);
+                } else if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Adhoc) {
+                    item->setMode(NetworkManager::WirelessSetting::Adhoc);
+                } else if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::ApMode) {
+                    item->setMode(NetworkManager::WirelessSetting::Ap);
+                }
                 item->setSignal(network->signalStrength());
                 item->setSpecificPath(network->referenceAccessPoint()->uni());
                 updateItem(item);
@@ -408,6 +424,13 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
             item->setDeviceName(device->ipInterfaceName());
         }
         item->setDevicePath(device->uni());
+        if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Infra) {
+            item->setMode(NetworkManager::WirelessSetting::Infrastructure);
+        } else if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Adhoc) {
+            item->setMode(NetworkManager::WirelessSetting::Adhoc);
+        } else if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::ApMode) {
+            item->setMode(NetworkManager::WirelessSetting::Ap);
+        }
         item->setName(network->ssid());
         item->setSignal(network->signalStrength());
         item->setSpecificPath(network->referenceAccessPoint()->uni());
@@ -428,13 +451,6 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
     }
 }
 
-void NetworkModel::updateItems()
-{
-    foreach (NetworkModelItem * item, m_list.items()) {
-        updateItem(item);
-    }
-}
-
 void NetworkModel::updateItem(NetworkModelItem * item)
 {
     const int row = m_list.indexOf(item);
@@ -443,6 +459,13 @@ void NetworkModel::updateItem(NetworkModelItem * item)
         item->updateDetails();
         QModelIndex index = createIndex(row, 0);
         emit dataChanged(index, index);
+    }
+}
+
+void NetworkModel::updateItems()
+{
+    foreach (NetworkModelItem * item, m_list.items()) {
+        updateItem(item);
     }
 }
 
@@ -606,13 +629,8 @@ void NetworkModel::connectionUpdated()
             if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
                 NetworkManager::WirelessSetting::Ptr wirelessSetting;
                 wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+                item->setMode(wirelessSetting->mode());
                 item->setSecurityType(NetworkManager::Utils::securityTypeFromConnectionSetting(settings));
-                if (wirelessSetting->mode() == NetworkManager::WirelessSetting::Adhoc ||
-                    wirelessSetting->mode() == NetworkManager::WirelessSetting::Ap) {
-                    item->setShared(true);
-                } else {
-                    item->setShared(false);
-                }
                 item->setSsid(wirelessSetting->ssid());
             }
             updateItem(item);
@@ -728,6 +746,7 @@ void NetworkModel::wirelessNetworkDisappeared(const QString& ssid)
             } else {
                 item->setDeviceName(QString());
                 item->setDevicePath(QString());
+                item->setMode(NetworkManager::WirelessSetting::Infrastructure);
                 item->setSignal(0);
                 item->setSpecificPath(QString());
             }

@@ -48,9 +48,9 @@ NetworkModelItem::NetworkModelItem(QObject * parent)
     : QObject(parent)
     , m_bitrate(0)
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
+    , m_mode(NetworkManager::WirelessSetting::Infrastructure)
     , m_securityType(NetworkManager::Utils::None)
     , m_signal(0)
-    , m_shared(false)
     , m_type(NetworkManager::ConnectionSettings::Unknown)
 {
 }
@@ -185,7 +185,7 @@ QString NetworkModelItem::icon() const
             break;
         case NetworkManager::ConnectionSettings::Wireless:
             if (m_signal == 0 ) {
-                if (m_shared) {
+                if (m_mode == NetworkManager::WirelessSetting::Adhoc || m_mode == NetworkManager::WirelessSetting::Ap) {
                     return (m_securityType == NetworkManager::Utils::None) ? "network-wireless-100" : "network-wireless-100-locked";
                 }
                 return (m_securityType == NetworkManager::Utils::None) ? "network-wireless-0" : "network-wireless-0-locked";
@@ -217,6 +217,16 @@ QString NetworkModelItem::lastUsed() const
 void NetworkModelItem::setLastUsed(const QDateTime& lastUsed)
 {
     m_lastUsed = lastUsed;
+}
+
+NetworkManager::WirelessSetting::NetworkMode NetworkModelItem::mode() const
+{
+    return m_mode;
+}
+
+void NetworkModelItem::setMode(const NetworkManager::WirelessSetting::NetworkMode mode)
+{
+    m_mode = mode;
 }
 
 QString NetworkModelItem::name() const
@@ -261,11 +271,6 @@ int NetworkModelItem::signal() const
 void NetworkModelItem::setSignal(int signal)
 {
     m_signal = signal;
-}
-
-void NetworkModelItem::setShared(bool shared)
-{
-    m_shared = shared;
 }
 
 QString NetworkModelItem::specificPath() const

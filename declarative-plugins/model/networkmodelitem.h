@@ -58,6 +58,9 @@ public:
     QString lastUsed() const;
     void setLastUsed(const QDateTime& lastUsed);
 
+    NetworkManager::WirelessSetting::NetworkMode mode() const;
+    void setMode(const NetworkManager::WirelessSetting::NetworkMode mode);
+
     QString name() const;
     void setName(const QString& name);
 
@@ -67,8 +70,6 @@ public:
 
     int signal() const;
     void setSignal(int signal);
-
-    void setShared(bool shared);
 
     QString specificPath() const;
     void setSpecificPath(const QString& path);
@@ -104,11 +105,11 @@ private:
     QString m_deviceName;
     QString m_details;
     QDateTime m_lastUsed;
+    NetworkManager::WirelessSetting::NetworkMode m_mode;
     QString m_name;
     QString m_nsp;
     NetworkManager::Utils::WirelessSecurityType m_securityType;
     int m_signal;
-    bool m_shared;
     QString m_specificPath;
     QString m_ssid;
     NetworkManager::ConnectionSettings::ConnectionType m_type;

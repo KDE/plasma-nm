@@ -70,6 +70,8 @@ public:
     int rowCount(const QModelIndex& parent) const;
     QVariant data(const QModelIndex& index, int role) const;
 
+public Q_SLOTS:
+    void updateItems();
 private Q_SLOTS:
     void activeConnectionAdded(const QString& activeConnection);
     void activeConnectionRemoved(const QString& activeConnection);

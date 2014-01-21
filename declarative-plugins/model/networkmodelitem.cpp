@@ -344,6 +344,10 @@ bool NetworkModelItem::operator==(const NetworkModelItem* item) const
 
 void NetworkModelItem::updateDetails()
 {
+    if (m_devicePath.isEmpty()) {
+        return;
+    }
+
     m_details = "<qt><table>";
 
     QStringList detailKeys = GlobalConfig().detailKeys();

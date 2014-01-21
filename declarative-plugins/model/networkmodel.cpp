@@ -336,7 +336,7 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
                 item->setShared(true);
             }
         }
-
+        item->updateDetails();
         const int index = m_list.count();
         beginInsertRows(QModelIndex(), index, index);
         m_list.insertItem(item);
@@ -420,10 +420,18 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
                                                                                   ap->capabilities(), ap->wpaFlags(), ap->rsnFlags()));
         }
 
+        item->updateDetails();
         const int index = m_list.count();
         beginInsertRows(QModelIndex(), index, index);
         m_list.insertItem(item);
         endInsertRows();
+    }
+}
+
+void NetworkModel::updateItems()
+{
+    foreach (NetworkModelItem * item, m_list.items()) {
+        updateItem(item);
     }
 }
 
@@ -432,6 +440,7 @@ void NetworkModel::updateItem(NetworkModelItem * item)
     const int row = m_list.indexOf(item);
 
     if (row >= 0) {
+        item->updateDetails();
         QModelIndex index = createIndex(row, 0);
         emit dataChanged(index, index);
     }
@@ -743,6 +752,9 @@ void NetworkModel::wirelessNetworkSignalChanged(int signal)
 {
     NetworkManager::WirelessNetwork * networkPtr = qobject_cast<NetworkManager::WirelessNetwork*>(sender());
     if (networkPtr) {
+        // TODO remove debug
+        qDebug() << "Wireless network " << networkPtr->ssid() << " signal changed - " << signal;
+
         // FIXME not sure about it, might be wrong when using more wireless cards
         foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, networkPtr->ssid())) {
             item->setSignal(signal);

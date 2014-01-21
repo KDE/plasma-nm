@@ -312,7 +312,7 @@ ListItem {
                     selectByMouse: true;
                     wrapMode: TextEdit.WordWrap;
                     textFormat: Text.RichText;
-                    text: details;
+                    text: ConnectionDetails;
                     visible: detailsTabBar.currentTab == detailsTabButton
                 }
             }

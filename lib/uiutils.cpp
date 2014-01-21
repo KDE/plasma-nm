@@ -943,8 +943,6 @@ QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QS
     return details;
 }
 
-
-
 QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QStringList& keys)
 {
 #if WITH_MODEMMANAGER_SUPPORT

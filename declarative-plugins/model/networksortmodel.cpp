@@ -18,95 +18,103 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "sortmodel.h"
-#include "model.h"
+#include "networksortmodel.h"
+#include "networkmodel.h"
 
-SortModel::SortedConnectionType SortModel::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
+NetworkSortModel::SortedConnectionType NetworkSortModel::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
 {
     switch (type) {
         case NetworkManager::ConnectionSettings::Unknown:
-            return SortModel::SortModel::Unknown;
+            return NetworkSortModel::NetworkSortModel::Unknown;
             break;
         case NetworkManager::ConnectionSettings::Adsl:
-            return SortModel::SortModel::Adsl;
+            return NetworkSortModel::NetworkSortModel::Adsl;
             break;
         case NetworkManager::ConnectionSettings::Bluetooth:
-            return SortModel::Bluetooth;
+            return NetworkSortModel::Bluetooth;
             break;
         case NetworkManager::ConnectionSettings::Bond:
-            return SortModel::Bond;
+            return NetworkSortModel::Bond;
             break;
         case NetworkManager::ConnectionSettings::Bridge:
-            return SortModel::Bridge;
+            return NetworkSortModel::Bridge;
             break;
         case NetworkManager::ConnectionSettings::Cdma:
-            return SortModel::Cdma;
+            return NetworkSortModel::Cdma;
             break;
         case NetworkManager::ConnectionSettings::Gsm:
-            return SortModel::Gsm;
+            return NetworkSortModel::Gsm;
             break;
         case NetworkManager::ConnectionSettings::Infiniband:
-            return SortModel::Infiniband;
+            return NetworkSortModel::Infiniband;
             break;
         case NetworkManager::ConnectionSettings::OLPCMesh:
-            return SortModel::OLPCMesh;
+            return NetworkSortModel::OLPCMesh;
             break;
         case NetworkManager::ConnectionSettings::Pppoe:
-            return SortModel::Pppoe;
+            return NetworkSortModel::Pppoe;
             break;
         case NetworkManager::ConnectionSettings::Vlan:
-            return SortModel::Vlan;
+            return NetworkSortModel::Vlan;
             break;
         case NetworkManager::ConnectionSettings::Vpn:
-            return SortModel::Vpn;
+            return NetworkSortModel::Vpn;
             break;
         case NetworkManager::ConnectionSettings::Wimax:
-            return SortModel::Wimax;
+            return NetworkSortModel::Wimax;
             break;
         case NetworkManager::ConnectionSettings::Wired:
-            return SortModel::Wired;
+            return NetworkSortModel::Wired;
             break;
         case NetworkManager::ConnectionSettings::Wireless:
-            return SortModel::Wireless;
+            return NetworkSortModel::Wireless;
             break;
         default:
-            return SortModel::Unknown;
+            return NetworkSortModel::Unknown;
             break;
     }
 }
 
-SortModel::SortModel(QObject* parent)
+NetworkSortModel::NetworkSortModel(QObject* parent)
     : QSortFilterProxyModel(parent)
 {
     setDynamicSortFilter(true);
     sort(0, Qt::DescendingOrder);
 }
 
-SortModel::~SortModel()
+NetworkSortModel::~NetworkSortModel()
 {
 }
 
-void SortModel::setSourceModel(QAbstractItemModel* sourceModel)
+void NetworkSortModel::setSourceModel(QAbstractItemModel* sourceModel)
 {
     QSortFilterProxyModel::setSourceModel(sourceModel);
 }
 
-QAbstractItemModel* SortModel::sourceModel() const
+QAbstractItemModel* NetworkSortModel::sourceModel() const
 {
     return QSortFilterProxyModel::sourceModel();
 }
 
-bool SortModel::lessThan(const QModelIndex& left, const QModelIndex& right) const
+bool NetworkSortModel::lessThan(const QModelIndex& left, const QModelIndex& right) const
 {
-    const bool leftConnected = sourceModel()->data(left, Model::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
-    const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, Model::TypeRole).toUInt());
-    const QString leftUuid = sourceModel()->data(left, Model::UuidRole).toString();
-    const int leftSignal = sourceModel()->data(left, Model::SignalRole).toInt();
+    const bool leftAvailable = sourceModel()->data(left, NetworkModel::AvailableRole).toBool();
+    const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
+    const QString leftUuid = sourceModel()->data(left, NetworkModel::UuidRole).toString();
+    const int leftSignal = sourceModel()->data(left, NetworkModel::SignalRole).toInt();
 
-    const bool rightConnected = sourceModel()->data(right, Model::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
-    const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, Model::TypeRole).toUInt());
-    const QString rightUuid = sourceModel()->data(right, Model::UuidRole).toString();
-    const int rightSignal = sourceModel()->data(right, Model::SignalRole).toInt();
+    const bool rightAvailable = sourceModel()->data(right, NetworkModel::AvailableRole).toBool();
+    const bool rightConnected = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
+    const QString rightUuid = sourceModel()->data(right, NetworkModel::UuidRole).toString();
+    const int rightSignal = sourceModel()->data(right, NetworkModel::SignalRole).toInt();
+
+    if (leftAvailable < rightAvailable) {
+        return true;
+    } else if (leftAvailable > rightAvailable) {
+        return false;
+    }
 
     if (leftConnected < rightConnected) {
         return true;

@@ -54,11 +54,11 @@ Item {
             id: handler;
     }
 
-    PlasmaNM.Model {
+    PlasmaNM.NetworkModel {
         id: connectionModel;
     }
 
-    PlasmaNM.SortModel {
+    PlasmaNM.NetworkSortModel {
         id: connectionSortModel;
 
         sourceModel: connectionModel;
@@ -110,7 +110,7 @@ Item {
         currentIndex: -1;
         interactive: true;
         boundsBehavior: Flickable.StopAtBounds;
-        section.property: showSections ? "itemSection" : "";
+        section.property: showSections ? "Section" : "";
         section.delegate: Header { text: section }
         delegate: ConnectionItem {
             onStateChanged: {

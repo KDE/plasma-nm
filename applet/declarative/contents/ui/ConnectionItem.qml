@@ -27,9 +27,9 @@ import org.kde.networkmanagement 0.1 as PlasmaNM
 ListItem {
     id: connectionItem;
 
-    property bool predictableWirelessPassword: !itemUuid && itemType == PlasmaNM.Enums.Wireless &&
-                                                itemSecurityType != PlasmaNM.Enums.None && itemSecurityType != PlasmaNM.Enums.DynamicWep && itemSecurityType != PlasmaNM.Enums.LEAP &&
-                                                                                           itemSecurityType != PlasmaNM.Enums.WpaEap && itemSecurityType != PlasmaNM.Enums.Wpa2Eap;
+    property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
+                                                SecurityType != PlasmaNM.Enums.None && SecurityType != PlasmaNM.Enums.DynamicWep && SecurityType != PlasmaNM.Enums.LEAP &&
+                                                                                       SecurityType != PlasmaNM.Enums.WpaEap && SecurityType != PlasmaNM.Enums.Wpa2Eap;
     property bool visibleDetails: false;
     property bool visiblePasswordDialog: false;
 
@@ -40,7 +40,7 @@ ListItem {
     Item {
         id: connectionItemBase;
 
-        height: Math.max(connectionIcon.height, connectionNameLabel.height + connectionStatusLabel.height);
+        height: Math.max(connectionSvgIcon.height, connectionNameLabel.height + connectionStatusLabel.height);
 
         anchors {
             left: parent.left;
@@ -49,14 +49,14 @@ ListItem {
         }
 
         PlasmaCore.SvgItem {
-            id: connectionIcon;
+            id: connectionSvgIcon;
 
             anchors {
                 left: parent.left
                 verticalCenter: parent.verticalCenter
             }
             svg: svgNetworkIcons;
-            elementId: itemConnectionIcon;
+            elementId: ConnectionIcon;
         }
 
         PlasmaComponents.Label {
@@ -64,16 +64,16 @@ ListItem {
 
             height: paintedHeight;
             anchors {
-                left: connectionIcon.right;
+                left: connectionSvgIcon.right;
                 leftMargin: padding.margins.left;
                 right: !connectionItem.containsMouse ? connectingIndicator.left : buttonRow.left;
                 top: parent.top;
                 topMargin: 0;
             }
-            text: itemName;
+            text: Name;
             elide: Text.ElideRight;
-            font.weight: itemConnectionState == PlasmaNM.Enums.Activated || itemUuid ? Font.DemiBold : Font.Normal;
-            font.italic: itemConnectionState == PlasmaNM.Enums.Activating ? true : false;
+            font.weight: ConnectionState == PlasmaNM.Enums.Activated || Uuid ? Font.DemiBold : Font.Normal;
+            font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false;
         }
 
         PlasmaComponents.Label {
@@ -81,7 +81,7 @@ ListItem {
 
             height: paintedHeight;
             anchors {
-                left: connectionIcon.right;
+                left: connectionSvgIcon.right;
                 leftMargin: padding.margins.left;
                 right: !connectionItem.containsMouse ? connectingIndicator.left : buttonRow.left;
                 top: connectionNameLabel.bottom;
@@ -89,19 +89,19 @@ ListItem {
 
             font.pointSize: theme.smallestFont.pointSize;
             color: "#99"+(theme.textColor.toString().substr(1))
-            text:   if (itemConnectionState == PlasmaNM.Enums.Activated &&
-                        (itemType == PlasmaNM.Enums.Wireless || itemType == PlasmaNM.Enums.Wired))
-                        i18n("Connected") + ", " + itemSpeed;
-                    else if (itemConnectionState == PlasmaNM.Enums.Activated)
+            text:   if (ConnectionState == PlasmaNM.Enums.Activated &&
+                        (Type == PlasmaNM.Enums.Wireless || Type == PlasmaNM.Enums.Wired))
+                        i18n("Connected") + ", " + Speed;
+                    else if (ConnectionState == PlasmaNM.Enums.Activated)
                         i18n("Connected");
-                    else if (itemConnectionState == PlasmaNM.Enums.Activating)
+                    else if (ConnectionState == PlasmaNM.Enums.Activating)
                         i18n("Connecting");
-                    else if (itemUuid && itemSecurityType != PlasmaNM.Enums.None)
-                        itemLastUsed + ", " + itemSecurityString;
-                    else if (itemUuid)
-                       itemLastUsed;
-                    else if (itemSecurityType != PlasmaNM.Enums.None)
-                        i18n("Never used") + ", " + itemSecurityString;
+                    else if (Uuid && SecurityType != PlasmaNM.Enums.None)
+                        LastUsed + ", " + SecurityTypeString;
+                    else if (Uuid)
+                       LastUsed;
+                    else if (SecurityType != PlasmaNM.Enums.None)
+                        i18n("Never used") + ", " + SecurityTypeString;
                     else
                         i18n("Never used");
             elide: Text.ElideRight;
@@ -117,7 +117,7 @@ ListItem {
                 rightMargin: padding.margins.right;
                 verticalCenter: parent.verticalCenter;
             }
-            running: itemConnectionState == PlasmaNM.Enums.Activating;
+            running: ConnectionState == PlasmaNM.Enums.Activating;
             visible: running && !connectionItem.containsMouse;
         }
 
@@ -157,7 +157,7 @@ ListItem {
                 id: configureButton;
 
                 height: sizes.iconSize;
-                width: itemUuid ? height: 0;
+                width: Uuid ? height: 0;
                 anchors {
                     verticalCenter: parent.verticalCenter;
                 }
@@ -171,7 +171,7 @@ ListItem {
                     hoverEnabled: true;
 
                     onClicked: {
-                        handler.editConnection(itemUuid);
+                        handler.editConnection(Uuid);
                     }
                 }
             }
@@ -180,7 +180,7 @@ ListItem {
                 id: stateChangeButton;
 
                 implicitWidth: minimumWidth + padding.margins.left + padding.margins.right;
-                text:if (itemConnectionState == PlasmaNM.Enums.Deactivated)
+                text:if (ConnectionState == PlasmaNM.Enums.Deactivated)
                         i18n("Connect");
                     else
                         i18n("Disconnect");
@@ -188,18 +188,18 @@ ListItem {
 
                 onClicked: {
                     visibleDetails = false;
-                    if (itemUuid || !predictableWirelessPassword || visiblePasswordDialog) {
-                        if (itemConnectionState == PlasmaNM.Enums.Deactivated) {
-                            if (!predictableWirelessPassword && !itemUuid) {
-                                handler.addAndActivateConnection(itemDevicePath, itemSpecificPath);
+                    if (Uuid || !predictableWirelessPassword || visiblePasswordDialog) {
+                        if (ConnectionState == PlasmaNM.Enums.Deactivated) {
+                            if (!predictableWirelessPassword && !Uuid) {
+                                handler.addAndActivateConnection(DevicePath, SpecificPath);
                             } else if (visiblePasswordDialog) {
-                                handler.addAndActivateConnection(itemDevicePath, itemSpecificPath, expandableComponentLoader.item.password);
+                                handler.addAndActivateConnection(DevicePath, SpecificPath, expandableComponentLoader.item.password);
                                 visiblePasswordDialog = false;
                             } else {
-                                handler.activateConnection(itemConnectionPath, itemDevicePath, itemSpecificPath);
+                                handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
                             }
                         } else {
-                            handler.deactivateConnection(itemConnectionPath, itemDevicePath);
+                            handler.deactivateConnection(ConnectionPath, DevicePath);
                         }
                     } else if (predictableWirelessPassword) {
                         visiblePasswordDialog = true;
@@ -253,12 +253,12 @@ ListItem {
                     top: detailsSeparator.bottom;
                     topMargin: padding.margins.top;
                 }
-                visible: itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn;
+                visible: DevicePath && ConnectionState == PlasmaNM.Enums.Activated && Type != PlasmaNM.Enums.Vpn;
 
                 PlasmaComponents.TabButton {
                     id: speedTabButton;
                     text: i18n("Speed");
-                    visible: itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn;
+                    visible: DevicePath && ConnectionState == PlasmaNM.Enums.Activated && Type != PlasmaNM.Enums.Vpn;
                 }
 
                 PlasmaComponents.TabButton {
@@ -293,9 +293,9 @@ ListItem {
                         right: parent.right;
                         top: parent.top;
                     }
-                    device: itemDevicePath;
+                    device: DevicePath;
                     visible: detailsTabBar.currentTab == speedTabButton &&
-                            itemDevicePath && itemConnectionState == PlasmaNM.Enums.Activated && itemType != PlasmaNM.Enums.Vpn
+                            DevicePath && ConnectionState == PlasmaNM.Enums.Activated && Type != PlasmaNM.Enums.Vpn
                 }
 
                 TextEdit {
@@ -312,7 +312,7 @@ ListItem {
                     selectByMouse: true;
                     wrapMode: TextEdit.WordWrap;
                     textFormat: Text.RichText;
-                    text: itemDetails;
+                    text: details;
                     visible: detailsTabBar.currentTab == detailsTabButton
                 }
             }

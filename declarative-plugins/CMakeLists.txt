@@ -6,11 +6,10 @@ set(plasma_networkmanagement_qml_plugins_SRCS
    applet/networkstatus.cpp
    applet/trafficmonitor.cpp
 
-   model/model.cpp
-   model/modelitem.cpp
-   model/modelitems.cpp
-   model/monitor.cpp
-   model/sortmodel.cpp
+   model/networkmodel.cpp
+   model/networkmodelitem.cpp
+   model/networkitemslist.cpp
+   model/networksortmodel.cpp
 
    debug.cpp
    enums.cpp

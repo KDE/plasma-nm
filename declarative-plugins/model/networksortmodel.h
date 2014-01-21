@@ -23,9 +23,9 @@
 
 #include <QSortFilterProxyModel>
 
-#include "modelitem.h"
+#include "networkmodelitem.h"
 
-class SortModel : public QSortFilterProxyModel
+class NetworkSortModel : public QSortFilterProxyModel
 {
 Q_OBJECT
 Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
@@ -34,8 +34,8 @@ public:
 
     static SortedConnectionType connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type);
 
-    explicit SortModel(QObject* parent = 0);
-    virtual ~SortModel();
+    explicit NetworkSortModel(QObject* parent = 0);
+    virtual ~NetworkSortModel();
 
     bool lessThan(const QModelIndex & left, const QModelIndex & right) const;
 

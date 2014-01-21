@@ -78,7 +78,6 @@ private Q_SLOTS:
     void availableConnectionAppeared(const QString& connection);
     void availableConnectionDisappeared(const QString& connection);
     void bitrateChanged(int bitrate);
-//     void cablePluggedChanged(bool plugged);
     void connectionAdded(const QString& connection);
     void connectionRemoved(const QString& connection);
     void connectionUpdated();
@@ -95,11 +94,10 @@ private Q_SLOTS:
     void gsmNetworkSignalQualityChanged(uint signal);
 #endif
     void statusChanged(NetworkManager::Status status);
-    void wirelessEnabled(bool enabled);
-    void wirelessNetworkAppeared(const QString& network);
-    void wirelessNetworkDisappeared(const QString& network);
+    void wirelessNetworkAppeared(const QString& ssid);
+    void wirelessNetworkDisappeared(const QString& ssid);
     void wirelessNetworkSignalChanged(int signal);
-//     void wirelessNetworkReferenceApChanged(const QString& accessPoint);
+    void wirelessNetworkReferenceApChanged(const QString& accessPoint);
 
     void initialize();
 

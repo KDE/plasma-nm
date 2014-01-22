@@ -605,8 +605,7 @@ void NetworkModel::bitrateChanged(int bitrate)
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
 
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, device->uni())) {
-        if ((item->connectionState() == NetworkManager::ActiveConnection::Activated || item->connectionState() == NetworkManager::ActiveConnection::Activating) &&
-            (item->type() == NetworkManager::ConnectionSettings::Wired || item->type() == NetworkManager::ConnectionSettings::Wireless)) {
+        if (item->type() == NetworkManager::ConnectionSettings::Wired || item->type() == NetworkManager::ConnectionSettings::Wireless) {
             item->setSpeed(bitrate);
             updateItem(item);
         }

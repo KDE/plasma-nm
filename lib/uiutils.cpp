@@ -338,6 +338,39 @@ QString UiUtils::connectionStateToString(NetworkManager::Device::State state, co
     return stateString;
 }
 
+QString UiUtils::vpnConnectionStateToString(VpnConnection::State state)
+{
+    QString stateString;
+    switch (state) {
+        case VpnConnection::Unknown:
+            stateString = i18nc("The state of the VPN connection is unknown", "Unknown");
+            break;
+        case VpnConnection::Prepare:
+            stateString = i18nc("The VPN connection is preparing to connect", "Preparing to connect");
+            break;
+        case VpnConnection::NeedAuth:
+            stateString = i18nc("The VPN connection needs authorization credentials", "Needs authorization");
+            break;
+        case VpnConnection::Connecting:
+            stateString = i18nc("The VPN connection is being established", "Connecting");
+            break;
+        case VpnConnection::GettingIpConfig:
+            stateString = i18nc("The VPN connection is getting an IP address", "Setting network address");
+            break;
+        case VpnConnection::Activated:
+            stateString = i18nc("The VPN connection is active", "Activated");
+            break;
+        case VpnConnection::Failed:
+            stateString = i18nc("The VPN connection failed", "Failed");
+            break;
+        case VpnConnection::Disconnected:
+            stateString = i18nc("The VPN connection is disconnected", "Failed");
+            break;
+        default:
+            stateString = i18nc("interface state", "Error: Invalid state");    }
+    return stateString;
+}
+
 #if 0
 QString UiUtils::connectionStateToString(Knm::InterfaceConnection::ActivationState state, const QString &connectionName)
 {

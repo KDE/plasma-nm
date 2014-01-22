@@ -54,6 +54,7 @@ public:
         ConnectionPathRole,
         ConnectionStateRole,
         DevicePathRole,
+        DeviceStateRole,
         LastUsedRole,
         NameRole,
         SecurityTypeRole,
@@ -65,7 +66,8 @@ public:
         SpecificPathRole,
         TypeRole,
         UuidRole,
-        UniRole
+        UniRole,
+        VpnState
     };
 
     int rowCount(const QModelIndex& parent) const;
@@ -86,6 +88,7 @@ private Q_SLOTS:
     void connectionUpdated();
     void deviceAdded(const QString& device);
     void deviceRemoved(const QString& device);
+    void deviceStateChanged(NetworkManager::Device::State state, NetworkManager::Device::State oldState, NetworkManager::Device::StateChangeReason reason);
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
     void gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies technology);

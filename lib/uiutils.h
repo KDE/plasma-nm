@@ -85,6 +85,8 @@ public:
      * @param state The connection state
      */
     static QString connectionStateToString(NetworkManager::Device::State state, const QString &connectionName = QString());
+
+    static QString vpnConnectionStateToString(NetworkManager::VpnConnection::State state);
 #if 0
     /**
      * @return a human-readable description of the connection state of a given interface connection

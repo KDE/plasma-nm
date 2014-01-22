@@ -53,6 +53,9 @@ public:
     void setDeviceName(const QString& name);
     void setDevicePath(const QString& path);
 
+    QString deviceState() const;
+    void setDeviceState(const NetworkManager::Device::State state);
+
     QString icon() const;
 
     QString lastUsed() const;
@@ -91,6 +94,9 @@ public:
     QString uuid() const;
     void setUuid(const QString& uuid);
 
+    QString vpnState() const;
+    void setVpnState(NetworkManager::VpnConnection::State state);
+
     bool operator==(const NetworkModelItem * item) const;
 
 public Q_SLOTS:
@@ -103,6 +109,7 @@ private:
     NetworkManager::ActiveConnection::State m_connectionState;
     QString m_devicePath;
     QString m_deviceName;
+    NetworkManager::Device::State m_deviceState;
     QString m_details;
     QDateTime m_lastUsed;
     NetworkManager::WirelessSetting::NetworkMode m_mode;
@@ -114,6 +121,7 @@ private:
     QString m_ssid;
     NetworkManager::ConnectionSettings::ConnectionType m_type;
     QString m_uuid;
+    NetworkManager::VpnConnection::State m_vpnState;
 };
 
 #endif // PLASMA_NM_MODEL_NETWORK_MODEL_ITEM_H

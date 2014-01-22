@@ -41,6 +41,7 @@ NetworkModel::NetworkModel(QObject* parent)
     roles[ConnectionPathRole] = "ConnectionPath";
     roles[ConnectionStateRole] = "ConnectionState";
     roles[DevicePathRole] = "DevicePath";
+    roles[DeviceStateRole] = "DeviceState";
     roles[LastUsedRole] = "LastUsed";
     roles[NameRole] = "Name";
     roles[SectionRole] = "Section";
@@ -53,6 +54,7 @@ NetworkModel::NetworkModel(QObject* parent)
     roles[TypeRole] = "Type";
     roles[UuidRole] = "Uuid";
     roles[UniRole] = "Uni";
+    roles[VpnState] = "VpnState";
     setRoleNames(roles);
 
     initialize();
@@ -130,6 +132,8 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
             SLOT(availableConnectionAppeared(QString)), Qt::UniqueConnection);
     connect(device.data(), SIGNAL(availableConnectionDisappeared(QString)),
             SLOT(availableConnectionDisappeared(QString)), Qt::UniqueConnection);
+    connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
+            SLOT(deviceStateChanged(NetworkManager::Device::State, NetworkManager::Device::State, NetworkManager::Device::StateChangeReason)));
 
     if (device->type() == NetworkManager::Device::Ethernet) {
         NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
@@ -200,6 +204,8 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->connectionState();
             case DevicePathRole:
                 return item->devicePath();
+            case DeviceStateRole:
+                return item->deviceState();
             case LastUsedRole:
                 return item->lastUsed();
             case NameRole:
@@ -229,6 +235,8 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->uuid();
             case UniRole:
                 return item->uni();
+            case VpnState:
+                return item->vpnState();
             default:
                 break;
         }
@@ -250,7 +258,6 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
     initializeSignals(activeConnection);
 
     NetworkManager::Connection::Ptr connection = activeConnection->connection();
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(activeConnection->devices().first());
 
     // Check whether we have a base connection
     if (m_list.returnItems(NetworkItemsList::Uuid, connection->uuid()).isEmpty()) {
@@ -262,32 +269,21 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::NetworkItemsList::Uuid, connection->uuid())) {
         item->setActiveConnectionPath(activeConnection->path());
         item->setConnectionState(activeConnection->state());
-        // Some properties make sense to display only for active connections, like connection speed etc.
-        // TODO: device state
-        if (device && device->type() == NetworkManager::Device::Ethernet) {
-            NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
-            if (wiredDev) {
-                item->setSpeed(wiredDev->bitRate());
+        if (activeConnection->vpn()) {
+            NetworkManager::VpnConnection::Ptr vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
+            NetworkManager::VpnConnection::State state = vpnConnection->state();
+            if (state == NetworkManager::VpnConnection::Prepare ||
+                state == NetworkManager::VpnConnection::NeedAuth ||
+                state == NetworkManager::VpnConnection::Connecting ||
+                state == NetworkManager::VpnConnection::GettingIpConfig) {
+                item->setConnectionState(NetworkManager::ActiveConnection::Activating);
+            } else if (state == NetworkManager::VpnConnection::Activated) {
+                item->setConnectionState(NetworkManager::ActiveConnection::Activated);
+            } else {
+                item->setConnectionState(NetworkManager::ActiveConnection::Deactivated);
             }
-        } else if (device && device->type() == NetworkManager::Device::Wifi) {
-            NetworkManager::WirelessDevice::Ptr wirelessDev = device.objectCast<NetworkManager::WirelessDevice>();
-            if (wirelessDev) {
-                item->setSpeed(wirelessDev->bitRate());
-            }
+            item->setVpnState(state);
         }
-#if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
-        if (device && device->type() == NetworkManager::Device::Modem) {
-            ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(device->udi());
-            if (modemDevice) {
-                ModemManager::Modem::Ptr modemInterface = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
-                if (modemInterface) {
-                    item->setSignal(modemInterface->signalQuality().signal);
-                }
-            }
-        }
-#endif
-#endif
         updateItem(item);
     }
 }
@@ -381,6 +377,33 @@ void NetworkModel::addDevice(const NetworkManager::Device::Ptr& device)
                 item->setDeviceName(device->ipInterfaceName());
             }
             item->setDevicePath(device->uni());
+            item->setDeviceState(device->state());
+            item->setDeviceState(device->state());
+
+            if (device->type() == NetworkManager::Device::Ethernet) {
+                NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
+                if (wiredDev) {
+                    item->setSpeed(wiredDev->bitRate());
+                }
+            } else if (device->type() == NetworkManager::Device::Wifi) {
+                NetworkManager::WirelessDevice::Ptr wirelessDev = device.objectCast<NetworkManager::WirelessDevice>();
+                if (wirelessDev) {
+                    item->setSpeed(wirelessDev->bitRate());
+                }
+            }
+#if WITH_MODEMMANAGER_SUPPORT
+#ifdef MODEMMANAGERQT_ONE
+            if (device->type() == NetworkManager::Device::Modem) {
+                ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(device->udi());
+                if (modemDevice) {
+                    ModemManager::Modem::Ptr modemInterface = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
+                    if (modemInterface) {
+                        item->setSignal(modemInterface->signalQuality().signal);
+                    }
+                }
+            }
+#endif
+#endif
             updateItem(item);
         }
     }
@@ -528,6 +551,7 @@ void NetworkModel::activeVpnConnectionStateChanged(NetworkManager::VpnConnection
             } else {
                 item->setConnectionState(NetworkManager::ActiveConnection::Deactivated);
             }
+            item->setVpnState(state);
             updateItem(item);
         }
     }
@@ -548,6 +572,7 @@ void NetworkModel::availableConnectionAppeared(const QString& connection)
         }
         item->setDevicePath(device->uni());
 
+        // TODO: test whether there is an available AP only
         // When a connection is a wireless connection (not AP and ad-hoc connection), then there must exists an available access point
         if (item->type() == NetworkManager::ConnectionSettings::Wireless && item->mode() == NetworkManager::WirelessSetting::Infrastructure) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
@@ -689,7 +714,22 @@ void NetworkModel::deviceRemoved(const QString& device)
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, device)) {
         item->setDeviceName(QString());
         item->setDevicePath(QString());
+        item->setDeviceState(NetworkManager::Device::UnknownState);
         updateItem(item);
+    }
+}
+
+void NetworkModel::deviceStateChanged(NetworkManager::Device::State state, NetworkManager::Device::State oldState, NetworkManager::Device::StateChangeReason reason)
+{
+    Q_UNUSED(oldState);
+    Q_UNUSED(reason);
+
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
+
+    if (device) {
+        foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, device->uni())) {
+            item->setDeviceState(state);
+        }
     }
 }
 

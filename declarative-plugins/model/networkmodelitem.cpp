@@ -48,10 +48,12 @@ NetworkModelItem::NetworkModelItem(QObject * parent)
     : QObject(parent)
     , m_bitrate(0)
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
+    , m_deviceState(NetworkManager::Device::UnknownState)
     , m_mode(NetworkManager::WirelessSetting::Infrastructure)
     , m_securityType(NetworkManager::Utils::None)
     , m_signal(0)
     , m_type(NetworkManager::ConnectionSettings::Unknown)
+    , m_vpnState(NetworkManager::VpnConnection::Unknown)
 {
 }
 
@@ -113,6 +115,16 @@ void NetworkModelItem::setDeviceName(const QString& name)
 void NetworkModelItem::setDevicePath(const QString& path)
 {
     m_devicePath = path;
+}
+
+QString NetworkModelItem::deviceState() const
+{
+    return UiUtils::connectionStateToString(m_deviceState);
+}
+
+void NetworkModelItem::setDeviceState(const NetworkManager::Device::State state)
+{
+    m_deviceState = state;
 }
 
 QString NetworkModelItem::icon() const
@@ -330,6 +342,16 @@ QString NetworkModelItem::uuid() const
 void NetworkModelItem::setUuid(const QString& uuid)
 {
     m_uuid = uuid;
+}
+
+QString NetworkModelItem::vpnState() const
+{
+    return UiUtils::vpnConnectionStateToString(m_vpnState);
+}
+
+void NetworkModelItem::setVpnState(NetworkManager::VpnConnection::State state)
+{
+    m_vpnState = state;
 }
 
 bool NetworkModelItem::operator==(const NetworkModelItem* item) const

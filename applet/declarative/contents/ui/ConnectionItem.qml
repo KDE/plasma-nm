@@ -95,7 +95,7 @@ ListItem {
                     else if (ConnectionState == PlasmaNM.Enums.Activated)
                         i18n("Connected");
                     else if (ConnectionState == PlasmaNM.Enums.Activating)
-                        i18n("Connecting");
+                        Type == PlasmaNM.Enums.Vpn ? VpnState : DeviceState;
                     else if (Uuid && SecurityType != PlasmaNM.Enums.None)
                         LastUsed + ", " + SecurityTypeString;
                     else if (Uuid)

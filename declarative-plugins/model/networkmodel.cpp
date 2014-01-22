@@ -699,10 +699,7 @@ void NetworkModel::deviceRemoved(const QString& device)
 
     // Make all items unavailable
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, device)) {
-        item->setDeviceName(QString());
-        item->setDevicePath(QString());
-        item->setDeviceState(NetworkManager::Device::UnknownState);
-        updateItem(item);
+        availableConnectionDisappeared(item->connectionPath());
     }
 }
 

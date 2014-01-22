@@ -313,8 +313,9 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
                 if (item->connectionPath().isEmpty()) {
                     // FIXME find a proper way how to compare configurations
                     NetworkManager::Utils::WirelessSecurityType securityType = NetworkManager::Utils::securityTypeFromConnectionSetting(settings);
-                    // TODO check more properties???
-                    if (item->securityType() == securityType && item->mode() == wirelessSetting->mode()) {
+                    NetworkManager::Utils::WirelessSecurityType alternativeSecurityType = alternativeWirelessSecurity(securityType);
+                    // TODO check more properties??? - device, bssid???
+                    if ((item->securityType() == securityType || item->securityType() == alternativeSecurityType) && item->mode() == wirelessSetting->mode()) {
                         apFound = true;
                         item->setConnectionPath(connection->path());
                         item->setLastUsed(settings->timestamp());
@@ -390,29 +391,38 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
     initializeSignals(network);
 
     bool connectionFound = false;
-    // Check whether there is an available connection for this network, because it's possible that some
-    // connection has same SSID, but it might not be available due to specified BSSID/Security or device
+    NetworkManager::WirelessSetting::NetworkMode mode = NetworkManager::WirelessSetting::Infrastructure;
+    NetworkManager::Utils::WirelessSecurityType securityType = NetworkManager::Utils::Unknown;
+    NetworkManager::AccessPoint::Ptr ap = network->referenceAccessPoint();
+    if (ap && ap->capabilities() & NetworkManager::AccessPoint::Privacy) {
+        securityType = NetworkManager::Utils::findBestWirelessSecurity(device->wirelessCapabilities(), true, (device->mode() == NetworkManager::WirelessDevice::Adhoc),
+                                                                       ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
+        if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Infra) {
+            mode = NetworkManager::WirelessSetting::Infrastructure;
+        } else if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Adhoc) {
+            mode = NetworkManager::WirelessSetting::Adhoc;
+        } else if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::ApMode) {
+            mode = NetworkManager::WirelessSetting::Ap;
+        }
+    }
+    // Check whether there is an available connection for this network. It's possible that some
+    // connection has same SSID, but it might not be available due to specified properties like mode, security etc.
+    // FIXME find a proper way how to compare configurations
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, network->ssid())) {
-        foreach (const NetworkManager::Connection::Ptr connection, device->availableConnections()) {
-            if (item->connectionPath() == connection->path()) {
-                connectionFound = true;
-                if (device->ipInterfaceName().isEmpty()) {
-                    item->setDeviceName(device->interfaceName());
-                } else {
-                    item->setDeviceName(device->ipInterfaceName());
-                }
-                item->setDevicePath(device->uni());
-                if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Infra) {
-                    item->setMode(NetworkManager::WirelessSetting::Infrastructure);
-                } else if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Adhoc) {
-                    item->setMode(NetworkManager::WirelessSetting::Adhoc);
-                } else if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::ApMode) {
-                    item->setMode(NetworkManager::WirelessSetting::Ap);
-                }
-                item->setSignal(network->signalStrength());
-                item->setSpecificPath(network->referenceAccessPoint()->uni());
-                updateItem(item);
+        // TODO check more properties??? - device, bssid???
+        NetworkManager::Utils::WirelessSecurityType alternativeSecurityType = alternativeWirelessSecurity(item->securityType());
+        if ((item->securityType() == securityType || alternativeSecurityType == securityType) && item->mode() == mode) {
+            connectionFound = true;
+            if (device->ipInterfaceName().isEmpty()) {
+                item->setDeviceName(device->interfaceName());
+            } else {
+                item->setDeviceName(device->ipInterfaceName());
             }
+            item->setDevicePath(device->uni());
+            item->setMode(mode);
+            item->setSignal(network->signalStrength());
+            item->setSpecificPath(network->referenceAccessPoint()->uni());
+            updateItem(item);
         }
     }
 
@@ -424,24 +434,13 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
             item->setDeviceName(device->ipInterfaceName());
         }
         item->setDevicePath(device->uni());
-        if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Infra) {
-            item->setMode(NetworkManager::WirelessSetting::Infrastructure);
-        } else if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Adhoc) {
-            item->setMode(NetworkManager::WirelessSetting::Adhoc);
-        } else if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::ApMode) {
-            item->setMode(NetworkManager::WirelessSetting::Ap);
-        }
+        item->setMode(mode);
         item->setName(network->ssid());
         item->setSignal(network->signalStrength());
         item->setSpecificPath(network->referenceAccessPoint()->uni());
         item->setSsid(network->ssid());
         item->setType(NetworkManager::ConnectionSettings::Wireless);
-
-        NetworkManager::AccessPoint::Ptr ap = network->referenceAccessPoint();
-        if (ap && ap->capabilities() & NetworkManager::AccessPoint::Privacy) {
-            item->setSecurityType(NetworkManager::Utils::findBestWirelessSecurity(device->wirelessCapabilities(), true, (device->mode() == NetworkManager::WirelessDevice::Adhoc),
-                                                                                  ap->capabilities(), ap->wpaFlags(), ap->rsnFlags()));
-        }
+        item->setSecurityType(securityType);
 
         item->updateDetails();
         const int index = m_list.count();
@@ -780,4 +779,18 @@ void NetworkModel::wirelessNetworkSignalChanged(int signal)
             updateItem(item);
         }
     }
+}
+
+NetworkManager::Utils::WirelessSecurityType NetworkModel::alternativeWirelessSecurity(const NetworkManager::Utils::WirelessSecurityType type)
+{
+    if (type == NetworkManager::Utils::WpaPsk) {
+        return NetworkManager::Utils::Wpa2Psk;
+    } else if (type == NetworkManager::Utils::WpaEap) {
+        return NetworkManager::Utils::Wpa2Eap;
+    } else if (type == NetworkManager::Utils::Wpa2Psk) {
+        return NetworkManager::Utils::WpaPsk;
+    } else if (type == NetworkManager::Utils::Wpa2Eap) {
+        return NetworkManager::Utils::WpaEap;
+    }
+    return type;
 }

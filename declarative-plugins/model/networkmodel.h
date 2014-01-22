@@ -29,6 +29,7 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/Utils>
 
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
@@ -116,6 +117,8 @@ private:
     void initializeSignals(const NetworkManager::Device::Ptr& device);
     void initializeSignals(const NetworkManager::WirelessNetwork::Ptr& network);
     void updateItem(NetworkModelItem * item);
+
+    NetworkManager::Utils::WirelessSecurityType alternativeWirelessSecurity(const NetworkManager::Utils::WirelessSecurityType type);
 };
 
 #endif // PLASMA_NM_NETWORK_MODEL_H

@@ -547,6 +547,14 @@ void NetworkModel::availableConnectionAppeared(const QString& connection)
             item->setDeviceName(device->ipInterfaceName());
         }
         item->setDevicePath(device->uni());
+
+        // When a connection is a wireless connection (not AP and ad-hoc connection), then there must exists an available access point
+        if (item->type() == NetworkManager::ConnectionSettings::Wireless && item->mode() == NetworkManager::WirelessSetting::Infrastructure) {
+            NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+            NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(item->ssid());
+            item->setSignal(wifiNetwork->signalStrength());
+            item->setSpecificPath(wifiNetwork->referenceAccessPoint()->uni());
+        }
         updateItem(item);
     }
 }

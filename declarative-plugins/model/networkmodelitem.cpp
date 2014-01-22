@@ -371,7 +371,7 @@ bool NetworkModelItem::operator==(const NetworkModelItem* item) const
 
 void NetworkModelItem::updateDetails()
 {
-    if (m_devicePath.isEmpty()) {
+    if (!available()) {
         return;
     }
 

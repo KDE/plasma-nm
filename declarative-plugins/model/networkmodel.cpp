@@ -596,14 +596,35 @@ void NetworkModel::connectionRemoved(const QString& connection)
     // TODO remove debug
     qDebug() << "Removing connection " << connection;
 
+    bool connectionFound = false;
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Connection, connection)) {
         // When the item type is wireless, we can remove only the connection and leave it as an available access point
         if (item->type() == NetworkManager::ConnectionSettings::Wireless && !item->devicePath().isEmpty()) {
-            item->setConnectionPath(QString());
-            item->setLastUsed(QDateTime());
-            item->setName(item->ssid());
-            item->setUuid(QString());
-            updateItem(item);
+            // Remove it entirely when there is another connection with the same configuration and for the same device
+            foreach (NetworkModelItem * secondItem, m_list.items()) {
+                if (item->devicePath() == secondItem->devicePath() &&
+                    item->mode() == secondItem->mode() &&
+                    item->securityType() == secondItem->securityType() &&
+                    item->ssid() == secondItem->ssid()) {
+                    connectionFound = true;
+                }
+            }
+
+            if (!connectionFound) {
+                item->setConnectionPath(QString());
+                item->setLastUsed(QDateTime());
+                item->setName(item->ssid());
+                item->setUuid(QString());
+                updateItem(item);
+            } else {
+                const int row = m_list.indexOf(item);
+                if (row >= 0) {
+                    beginRemoveRows(QModelIndex(), row, row);
+                    m_list.removeItem(item);
+                    item->deleteLater();
+                    endRemoveRows();
+                }
+            }
         } else {
             const int row = m_list.indexOf(item);
             if (row >= 0) {

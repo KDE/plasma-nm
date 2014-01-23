@@ -179,9 +179,7 @@ QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList:
             if (item->type() == typeParameter) {
                 result << item;
             }
-            break;
         }
     }
-
     return result;
 }

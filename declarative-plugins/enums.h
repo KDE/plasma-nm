@@ -28,6 +28,7 @@ class Enums : public QObject
 Q_OBJECT
 Q_ENUMS(ConnectionStatus)
 Q_ENUMS(ConnectionType)
+Q_ENUMS(FilterType)
 Q_ENUMS(SecurityType)
 
 public:
@@ -58,6 +59,12 @@ public:
         Wimax,
         Wired,
         Wireless
+    };
+
+    enum FilterType {
+        All = 0,   // All connections and available access points
+        Available, // Only available connections and access points
+        Editable   // All connections
     };
 
     enum SecurityType {

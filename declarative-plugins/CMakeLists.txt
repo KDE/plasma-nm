@@ -9,6 +9,7 @@ set(plasma_networkmanagement_qml_plugins_SRCS
    model/networkmodel.cpp
    model/networkmodelitem.cpp
    model/networkitemslist.cpp
+   model/networkfiltermodel.cpp
    model/networksortmodel.cpp
 
    debug.cpp

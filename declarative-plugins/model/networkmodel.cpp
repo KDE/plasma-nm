@@ -62,9 +62,7 @@ NetworkModel::NetworkModel(QObject* parent)
 
 NetworkModel::~NetworkModel()
 {
-    // TODO: do not update shared connections with its access points
     // TODO: split an item when a wireless connection becomes unavailable
-    // TODO: merge AP and connection when a wireless connection becomes available
 }
 
 

@@ -44,10 +44,5 @@ int modelDebugArea()
     return area;
 }
 
-int monitorDebugArea()
-{
-    static int area = KDebug::registerArea("Plasma-nm (monitor)", false);
-    return area;
-}
 
 

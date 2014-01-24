@@ -58,10 +58,17 @@ Item {
         id: connectionModel;
     }
 
+    PlasmaNM.NetworkFilterModel {
+        id: connectionFilterModel;
+
+        sourceModel: connectionModel;
+        filterType: PlasmaNM.Enums.Available;
+    }
+
     PlasmaNM.NetworkSortModel {
         id: connectionSortModel;
 
-        sourceModel: connectionModel;
+        sourceModel: connectionFilterModel;
     }
 
     PlasmaCore.Svg {

@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,13 +18,34 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#ifndef PLASMA_NM_NETWORK_FILTER_MODEL_H
+#define PLASMA_NM_NETWORK_FILTER_MODEL_H
+
+#include <QSortFilterProxyModel>
+
 #include "enums.h"
+#include "networkmodelitem.h"
 
-Enums::Enums(QObject* parent)
-    : QObject(parent)
+class NetworkFilterModel : public QSortFilterProxyModel
 {
-}
+Q_OBJECT
+Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
+Q_PROPERTY(Enums::FilterType filterType READ filterType WRITE setFilterType)
+public:
+    explicit NetworkFilterModel(QObject* parent = 0);
+    virtual ~NetworkFilterModel();
 
-Enums::~Enums()
-{
-}
+    Enums::FilterType filterType() const;
+    void setFilterType(Enums::FilterType type);
+
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
+
+    void setSourceModel(QAbstractItemModel *sourceModel);
+    QAbstractItemModel * sourceModel() const;
+
+private:
+    Enums::FilterType m_filterType;
+};
+
+
+#endif // PLASMA_NM_NETWORK_FILTER_MODEL_H

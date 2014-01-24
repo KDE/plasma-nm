@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_SORT_MODEL_H
-#define PLASMA_NM_SORT_MODEL_H
+#ifndef PLASMA_NM_NETWORK_SORT_MODEL_H
+#define PLASMA_NM_NETWORK_SORT_MODEL_H
 
 #include <QSortFilterProxyModel>
 
@@ -37,11 +37,11 @@ public:
     explicit NetworkSortModel(QObject* parent = 0);
     virtual ~NetworkSortModel();
 
-    bool lessThan(const QModelIndex & left, const QModelIndex & right) const;
+    bool lessThan(const QModelIndex& left, const QModelIndex& right) const;
 
     void setSourceModel(QAbstractItemModel *sourceModel);
     QAbstractItemModel * sourceModel() const;
 };
 
 
-#endif // PLASMA_NM_SORT_MODEL_H
+#endif // PLASMA_NM_NETWORK_SORT_MODEL_H

@@ -31,6 +31,7 @@
 
 #include "model/networkmodel.h"
 #include "model/networksortmodel.h"
+#include "model/networkfiltermodel.h"
 
 #include "handler.h"
 #include "enums.h"
@@ -51,9 +52,11 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<NetworkStatus>(uri, 0, 1, "NetworkStatus");
     // @uri org.kde.networkmanagement.Handler
     qmlRegisterType<Handler>(uri, 0, 1, "Handler");
-    // @uri org.kde.networkmanagement.Model
+    // @uri org.kde.networkmanagement.NetworkModel
     qmlRegisterType<NetworkModel>(uri, 0, 1, "NetworkModel");
-    // @uri org.kde.networkmanagement.SortModel
+    // @uri org.kde.networkmanagement.NetworkFilterModel
+    qmlRegisterType<NetworkFilterModel>(uri, 0, 1, "NetworkFilterModel");
+    // @uri org.kde.networkmanagement.NetworkSortModel
     qmlRegisterType<NetworkSortModel>(uri, 0, 1, "NetworkSortModel");
     // @uri org.kde.networkmanagement.TrafficMonitor
     qmlRegisterType<TrafficMonitor>(uri, 0, 1, "TrafficMonitor");

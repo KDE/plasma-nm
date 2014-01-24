@@ -98,13 +98,13 @@ QAbstractItemModel* NetworkSortModel::sourceModel() const
 
 bool NetworkSortModel::lessThan(const QModelIndex& left, const QModelIndex& right) const
 {
-    const bool leftAvailable = sourceModel()->data(left, NetworkModel::AvailableRole).toBool();
+    const bool leftAvailable = (NetworkModelItem::ItemType)sourceModel()->data(left, NetworkModel::ItemTypeRole).toUInt() != NetworkModelItem::UnavailableConnection;
     const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
     const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
     const QString leftUuid = sourceModel()->data(left, NetworkModel::UuidRole).toString();
     const int leftSignal = sourceModel()->data(left, NetworkModel::SignalRole).toInt();
 
-    const bool rightAvailable = sourceModel()->data(right, NetworkModel::AvailableRole).toBool();
+    const bool rightAvailable = (NetworkModelItem::ItemType)sourceModel()->data(right, NetworkModel::ItemTypeRole).toUInt() != NetworkModelItem::UnavailableConnection;
     const bool rightConnected = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
     const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
     const QString rightUuid = sourceModel()->data(right, NetworkModel::UuidRole).toString();

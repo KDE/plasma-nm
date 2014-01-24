@@ -71,12 +71,6 @@ void NetworkModelItem::setActiveConnectionPath(const QString& path)
     m_activeConnectionPath = path;
 }
 
-bool NetworkModelItem::available() const
-{
-    return (!m_devicePath.isEmpty() ||
-            (NetworkManager::status() == NetworkManager::Connected && m_type == NetworkManager::ConnectionSettings::Vpn));
-}
-
 QString NetworkModelItem::connectionPath() const
 {
     return m_connectionPath;
@@ -219,6 +213,19 @@ QString NetworkModelItem::icon() const
     }
 
     return "network-wired";
+}
+
+NetworkModelItem::ItemType NetworkModelItem::itemType() const
+{
+    if (!m_devicePath.isEmpty() ||
+        (NetworkManager::status() == NetworkManager::Connected && m_type == NetworkManager::ConnectionSettings::Vpn)) {
+        if (m_connectionPath.isEmpty() && m_type == NetworkManager::ConnectionSettings::Wireless) {
+            return NetworkModelItem::AvailableAccessPoint;
+        } else {
+            return NetworkModelItem::AvailableConnection;
+        }
+    }
+    return NetworkModelItem::UnavailableConnection;
 }
 
 QString NetworkModelItem::lastUsed() const
@@ -371,7 +378,7 @@ bool NetworkModelItem::operator==(const NetworkModelItem* item) const
 
 void NetworkModelItem::updateDetails()
 {
-    if (!available()) {
+    if (itemType() == NetworkModelItem::UnavailableConnection) {
         return;
     }
 

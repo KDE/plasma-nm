@@ -33,13 +33,14 @@ class NetworkModelItem : public QObject
 {
 Q_OBJECT
 public:
+
+    enum ItemType { UnavailableConnection, AvailableConnection, AvailableAccessPoint };
+
     explicit NetworkModelItem(QObject * parent = 0);
     virtual ~NetworkModelItem();
 
     QString activeConnectionPath() const;
     void setActiveConnectionPath(const QString& path);
-
-    bool available() const;
 
     QString connectionPath() const;
     void setConnectionPath(const QString& path);
@@ -57,6 +58,8 @@ public:
     void setDeviceState(const NetworkManager::Device::State state);
 
     QString icon() const;
+
+    ItemType itemType() const;
 
     QString lastUsed() const;
     void setLastUsed(const QDateTime& lastUsed);

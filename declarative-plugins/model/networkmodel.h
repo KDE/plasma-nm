@@ -48,13 +48,13 @@ public:
     virtual ~NetworkModel();
 
     enum ItemRole {
-        AvailableRole = Qt::UserRole + 1,
-        ConnectionDetailsRole,
+        ConnectionDetailsRole = Qt::UserRole + 1,
         ConnectionIconRole,
         ConnectionPathRole,
         ConnectionStateRole,
         DevicePathRole,
         DeviceStateRole,
+        ItemTypeRole,
         LastUsedRole,
         NameRole,
         SecurityTypeRole,

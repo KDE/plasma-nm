@@ -218,7 +218,9 @@ QString NetworkModelItem::icon() const
 NetworkModelItem::ItemType NetworkModelItem::itemType() const
 {
     if (!m_devicePath.isEmpty() ||
-        (NetworkManager::status() == NetworkManager::Connected && m_type == NetworkManager::ConnectionSettings::Vpn)) {
+        ((NetworkManager::status() == NetworkManager::Connected ||
+          NetworkManager::status() == NetworkManager::ConnectedLinkLocal ||
+          NetworkManager::status() == NetworkManager::ConnectedSiteOnly) && m_type == NetworkManager::ConnectionSettings::Vpn)) {
         if (m_connectionPath.isEmpty() && m_type == NetworkManager::ConnectionSettings::Wireless) {
             return NetworkModelItem::AvailableAccessPoint;
         } else {

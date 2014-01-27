@@ -267,7 +267,7 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
     }
 
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::NetworkItemsList::Uuid, connection->uuid())) {
-        if (device && device->uni() == item->devicePath()) {
+        if ((device && device->uni() == item->devicePath()) || item->type() == NetworkManager::ConnectionSettings::Vpn) {
             item->setActiveConnectionPath(activeConnection->path());
             item->setConnectionState(activeConnection->state());
             if (activeConnection->vpn()) {

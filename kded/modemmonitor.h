@@ -31,14 +31,14 @@
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/modem.h>
 #endif
-#include <kdemacros.h>
+#include "plasmanm_export.h"
 
 class ModemMonitorPrivate;
 
 /**
  * Monitors modem hardware and provides a PIN unlock dialog
  */
-class KDE_EXPORT ModemMonitor : public QObject
+class PLASMA_NM_EXPORT ModemMonitor : public QObject
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(ModemMonitor)

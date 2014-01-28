@@ -9,7 +9,7 @@ kde4_add_ui_files(vpnc_SRCS vpnc.ui vpncadvanced.ui vpncauth.ui)
 
 kde4_add_plugin(plasmanetworkmanagement_vpncui ${vpnc_SRCS})
 
-target_link_libraries(plasmanetworkmanagement_vpncui plasmanetworkmanagement-internal ${NETWORKMANAGERQT_LDFLAGS} ${KDE4_KIO_LIBS})
+target_link_libraries(plasmanetworkmanagement_vpncui plasmanetworkmanagement-editor ${NETWORKMANAGERQT_LDFLAGS} ${KDE4_KIO_LIBS})
 
 install(TARGETS plasmanetworkmanagement_vpncui  DESTINATION ${PLUGIN_INSTALL_DIR})
 

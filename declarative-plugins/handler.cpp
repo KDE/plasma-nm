@@ -21,7 +21,7 @@
 #include "handler.h"
 #include "uiutils.h"
 #include "debug.h"
-#include "lib/editor/connectiondetaileditor.h"
+#include "connectiondetaileditor.h"
 
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/AccessPoint>

@@ -61,12 +61,6 @@ public:
         Wireless
     };
 
-    enum FilterType {
-        All = 0,   // All connections and available access points
-        Available, // Only available connections and access points
-        Editable   // All connections
-    };
-
     enum SecurityType {
         None = 0,
         StaticWep,

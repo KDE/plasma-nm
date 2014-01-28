@@ -22,10 +22,11 @@
 #define PLASMA_NM_L2TP_H
 
 #include "vpnuiplugin.h"
+#include "plasmanm_export.h"
 
 #include <QVariant>
 
-class KDE_EXPORT L2tpUiPlugin : public VpnUiPlugin
+class PLASMA_NM_EXPORT L2tpUiPlugin : public VpnUiPlugin
 {
     Q_OBJECT
 public:

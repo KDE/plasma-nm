@@ -1,6 +1,6 @@
 project(plasma-networkmanagement)
 
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8)
 
 find_package(KDE4 "4.9.0" REQUIRED)
 find_package(NetworkManager "0.9.8" REQUIRED)
@@ -54,8 +54,8 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_BINARY_DIR}
                     ${CMAKE_CURRENT_BINARY_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}
-                    ${CMAKE_CURRENT_SOURCE_DIR}/lib
-                    ${CMAKE_CURRENT_SOURCE_DIR}/lib/editor
+                    ${CMAKE_CURRENT_SOURCE_DIR}/libs
+                    ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/
                     ${QTNETWORK_INCLUDE_DIRS}
                     ${MODEMMANAGER_INCLUDE_DIRS}
                     if (MODEMMANAGERQT_FOUND)
@@ -65,12 +65,12 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${NETWORKMANAGER_INCLUDE_DIRS}
                     ${KDE4_INCLUDES})
 
-add_subdirectory(lib)
 add_subdirectory(applet)
 add_subdirectory(declarative-plugins)
 add_subdirectory(editor)
-add_subdirectory(vpn)
 add_subdirectory(kded)
+add_subdirectory(libs)
+add_subdirectory(vpn)
 add_subdirectory(settings)
 
 macro_display_feature_log()

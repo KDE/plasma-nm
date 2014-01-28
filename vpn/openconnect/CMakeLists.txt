@@ -27,7 +27,7 @@ if (OPENCONNECT_FOUND)
 
         kde4_add_plugin(plasmanetworkmanagement_openconnectui ${openconnect_SRCS})
 
-        target_link_libraries(plasmanetworkmanagement_openconnectui plasmanetworkmanagement-internal NetworkManagerQt ${KDE4_KIO_LIBS} ${OPENCONNECT_LIBRARIES} ${maybe_OPENSSL_LIBRARIES})
+        target_link_libraries(plasmanetworkmanagement_openconnectui plasmanetworkmanagement-editor NetworkManagerQt ${KDE4_KIO_LIBS} ${OPENCONNECT_LIBRARIES} ${maybe_OPENSSL_LIBRARIES})
         install(TARGETS plasmanetworkmanagement_openconnectui  DESTINATION ${PLUGIN_INSTALL_DIR})
 
         install( FILES plasmanetworkmanagement_openconnectui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})

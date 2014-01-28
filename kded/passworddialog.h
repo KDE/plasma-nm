@@ -27,13 +27,13 @@
 
 #include <KDialog>
 
-#include <kdemacros.h>
+#include "plasmanm_export.h"
 
 namespace Ui {
 class PasswordDialog;
 }
 class SettingWidget;
-class KDE_EXPORT PasswordDialog : public KDialog
+class PLASMA_NM_EXPORT PasswordDialog : public KDialog
 {
     Q_OBJECT
 public:

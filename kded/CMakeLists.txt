@@ -1,3 +1,5 @@
+include_directories(${CMAKE_SOURCE_DIR}/libs/editor/widgets)
+
 if (WITH_MODEMMANAGER_SUPPORT)
     set(kded_networkmanagement_SRCS
         notification.cpp
@@ -29,9 +31,10 @@ endif()
 kde4_add_plugin(kded_networkmanagement ${kded_networkmanagement_SRCS})
 
 target_link_libraries(kded_networkmanagement
+    plasmanetworkmanagement-internal
+    plasmanetworkmanagement-editor
     ${NETWORKMANAGERQT_LDFLAGS}
     ${MODEMMANAGERQT_LDFLAGS}
-    plasmanetworkmanagement-internal
     ${KDE4_KDECORE_LIBS}
     ${KDE4_KDEUI_LIBS}
     ${KDE4_SOLID_LIBS}

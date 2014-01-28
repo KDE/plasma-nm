@@ -42,7 +42,7 @@ Item {
         id: globalConfig;
 
         onDetailKeysChanged: {
-            connectionModel.updateItems();
+            connectionModel.setDetails(globalConfig.detailKeys);
         }
 
         onNetworkSpeedUnitChanged: {
@@ -62,7 +62,7 @@ Item {
         id: connectionFilterModel;
 
         sourceModel: connectionModel;
-        filterType: PlasmaNM.Enums.Available;
+        filterType: 2; // Available connections
     }
 
     PlasmaNM.NetworkSortModel {
@@ -130,6 +130,7 @@ Item {
 
     Component.onCompleted: {
         configChanged();
+        connectionModel.setDetails(globalConfig.detailKeys);
         plasmoid.addEventListener('configChanged', mainWindow.configChanged)
     }
 

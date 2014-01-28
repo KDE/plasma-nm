@@ -1,4 +1,6 @@
-include_directories(${CMAKE_SOURCE_DIR}/lib/editor)
+include_directories(${CMAKE_SOURCE_DIR}/libs/editor
+                    ${CMAKE_SOURCE_DIR}/libs/editor/widgets
+                    ${CMAKE_SOURCE_DIR}/libs/models)
 
 set(connectioneditor_SRCS
    main.cpp
@@ -15,7 +17,17 @@ kde4_add_ui_files(connectioneditor_SRCS
 
 kde4_add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})
 
-target_link_libraries(kde-nm-connection-editor plasmanetworkmanagement-internal plasmanetworkmanagement-editor ${NETWORKMANAGERQT_LDFLAGS} ${MODEMMANAGERQT_LDFLAGS} ${QT_QTCORE_LIBRARY} ${QT_QTDBUS_LIBRARY} ${QT_QTNETWORK_LIBRARY} ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
+target_link_libraries(kde-nm-connection-editor
+    plasmanetworkmanagement-internal
+    plasmanetworkmanagement-editor
+    ${NETWORKMANAGERQT_LDFLAGS}
+    ${MODEMMANAGERQT_LDFLAGS}
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTDBUS_LIBRARY}
+    ${QT_QTNETWORK_LIBRARY}
+    ${KDE4_KDEUI_LIBS}
+    ${KDE4_KIO_LIBS}
+)
 
 install(TARGETS kde-nm-connection-editor DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS kde-nm-connection-editor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

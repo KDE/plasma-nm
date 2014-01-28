@@ -22,16 +22,16 @@
 
 #include <QtDeclarative>
 
-#include "applet/availabledevices.h"
-#include "applet/connectionicon.h"
-#include "applet/enabledconnections.h"
-#include "applet/globalconfig.h"
-#include "applet/networkstatus.h"
-#include "applet/trafficmonitor.h"
+#include "availabledevices.h"
+#include "connectionicon.h"
+#include "enabledconnections.h"
+#include "globalconfig.h"
+#include "networkstatus.h"
+#include "trafficmonitor.h"
 
-#include "model/networkmodel.h"
-#include "model/networksortmodel.h"
-#include "model/networkfiltermodel.h"
+#include "networkfiltermodel.h"
+#include "networkmodel.h"
+#include "networksortmodel.h"
 
 #include "handler.h"
 #include "enums.h"

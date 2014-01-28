@@ -43,9 +43,6 @@ public:
 
     bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
 
-    void setSourceModel(QAbstractItemModel *sourceModel);
-    QAbstractItemModel * sourceModel() const;
-
 private:
     FilterType m_filterType;
 };

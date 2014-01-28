@@ -63,16 +63,6 @@ void NetworkFilterModel::setFilterType(NetworkFilterModel::FilterType type)
     sort(0, Qt::DescendingOrder);
 }
 
-void NetworkFilterModel::setSourceModel(QAbstractItemModel* sourceModel)
-{
-    QSortFilterProxyModel::setSourceModel(sourceModel);
-}
-
-QAbstractItemModel* NetworkFilterModel::sourceModel() const
-{
-    return QSortFilterProxyModel::sourceModel();
-}
-
 bool NetworkFilterModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
 {
     if (m_filterType == NetworkFilterModel::All) {

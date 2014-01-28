@@ -18,6 +18,9 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <QIcon>
+#include <QFont>
+
 #include <KLocalizedString>
 
 #include "connectioneditorproxymodel.h"
@@ -72,16 +75,30 @@ QVariant ConnectionEditorProxyModel::data(const QModelIndex& index, int role) co
     const QModelIndex sourceIndex = sourceModel()->index(index.row(), 0);
     const QString connectionName = sourceModel()->data(sourceIndex, NetworkModel::NameRole).toString();
     const QString lastUsed = sourceModel()->data(sourceIndex, NetworkModel::LastUsedRole).toString();
+    const bool isActivated = (NetworkManager::ActiveConnection::State) sourceModel()->data(sourceIndex, NetworkModel::ConnectionStateRole).toInt()
+                             == NetworkManager::ActiveConnection::Activated;
+    const int column = index.column();
 
     if (role == Qt::DisplayRole) {
-        switch (index.column()) {
+        switch (column) {
         case 0:
             return connectionName;
         case 1:
             return lastUsed;
         }
-    } else
+    } else if (role == Qt::DecorationRole) {
+        if (column == 0) {
+            return QIcon::fromTheme(sourceModel()->data(sourceIndex, NetworkModel::ConnectionIconRole).toString()); // FIXME use the actual SVG icons
+        }
+    } else if (role == Qt::FontRole) {
+        if (column == 0 && isActivated) {
+            QFont f;
+            f.setBold(true);
+            return f;
+        }
+    } else {
         return sourceModel()->data(sourceIndex, role);
+    }
 
     return QVariant();
 }

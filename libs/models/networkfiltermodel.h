@@ -23,7 +23,6 @@
 
 #include <QSortFilterProxyModel>
 
-#include "networkmodelitem.h"
 #include "plasmanm_export.h"
 
 class PLASMA_NM_EXPORT NetworkFilterModel : public QSortFilterProxyModel

@@ -62,8 +62,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     m_editor->setupUi(tmp);
     setCentralWidget(tmp);
 
-    m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
-
     m_menu = new KActionMenu(KIcon("list-add"), i18n("Add"), this);
     m_menu->menu()->setSeparatorsCollapsible(false);
     m_menu->setDelayed(false);
@@ -212,6 +210,8 @@ void ConnectionEditor::initializeConnections()
 
     m_editor->connectionsWidget->setModel(filterModel);
     m_editor->ktreewidgetsearchline->setProxy(filterModel);  // FIXME doesn't seem to work
+
+    m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
 }
 
 void ConnectionEditor::insertConnection(const NetworkManager::Connection::Ptr &connection)

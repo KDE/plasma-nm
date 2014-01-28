@@ -19,6 +19,7 @@
 */
 
 #include "networkfiltermodel.h"
+#include "networkmodelitem.h"
 #include "networkmodel.h"
 
 NetworkFilterModel::NetworkFilterModel(QObject* parent)

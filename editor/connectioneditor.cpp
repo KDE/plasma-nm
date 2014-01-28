@@ -64,9 +64,9 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     m_editor->setupUi(tmp);
     setCentralWidget(tmp);
 
-    //     m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
+    m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
     //
-    //    m_editor->ktreewidgetsearchline->setTreeWidget(m_editor->connectionsWidget);
+    //    m_editor->ktreewidgetsearchline->setTreeWidget(m_editor->connectionsWidget);  // TODO reenable with the sort/filter model
     //
     m_menu = new KActionMenu(KIcon("list-add"), i18n("Add"), this);
     m_menu->menu()->setSeparatorsCollapsible(false);
@@ -169,17 +169,13 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
             SLOT(slotItemClicked(QModelIndex)));
     connect(m_editor->connectionsWidget, SIGNAL(doubleClicked(QModelIndex)),
             SLOT(slotItemDoubleClicked(QModelIndex)));
-    //     connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
-    //             SLOT(addConnection(QAction*)));
-    connect(m_editor->connectionsWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
-            SLOT(editConnection()));
-    //     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
-    //             SLOT(connectionAdded(QString)));
-    //     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
-    //             SLOT(connectionRemoved(QString)));
-    //     connect(NetworkManager::notifier(), SIGNAL(serviceDisappeared()),
-    //             m_editor->connectionsWidget, SLOT(clear()));
-    //
+    connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
+            SLOT(addConnection(QAction*)));
+    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
+            SLOT(connectionAdded(QString)));
+    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
+            SLOT(connectionRemoved(QString)));
+
     m_editor->messageWidget->hide();
     m_editor->messageWidget->setCloseButtonVisible(false);
     m_editor->messageWidget->setWordWrap(true);
@@ -304,7 +300,7 @@ void ConnectionEditor::slotItemClicked(const QModelIndex &index)
     if (!index.isValid())
         return;
 
-    qDebug() << "Double clicked item" << index.data(NetworkModel::UuidRole).toString();
+    qDebug() << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
 
     if (index.parent().isValid()) { // category
         actionCollection()->action("edit_connection")->setEnabled(true);
@@ -345,37 +341,41 @@ void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
 
 void ConnectionEditor::addConnection(QAction* action)
 {
-//     qDebug() << "ADDING new connection" << action->data().toUInt();
-//     const QString vpnType = action->property("type").toString();
-//     qDebug() << "VPN type:" << vpnType;
-//
-//     ConnectionSettings::ConnectionType type = static_cast<ConnectionSettings::ConnectionType>(action->data().toUInt());
-//
-//     if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
-// #if WITH_MODEMMANAGER_SUPPORT
-//         QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
-//         if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
-//             qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
-//             QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(wizard.data()->type(), wizard.data()->args(), this);
-//             editor->exec();
-//         }
-//         if (wizard) {
-//             wizard.data()->deleteLater();
-//         }
-// #endif
-//     } else {
-//         bool shared = false;
-//         if (type == ConnectionSettings::Wired || type == ConnectionSettings::Wireless) {
-//             shared = action->property("shared").toBool();
-//         }
-//
-//         QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(type, this, vpnType, shared);
-//         editor->exec();
-//
-//         if (editor) {
-//             editor->deleteLater();
-//         }
-//     }
+     qDebug() << "ADDING new connection" << action->data().toUInt();
+     const QString vpnType = action->property("type").toString();
+     qDebug() << "VPN type:" << vpnType;
+
+     ConnectionSettings::ConnectionType type = static_cast<ConnectionSettings::ConnectionType>(action->data().toUInt());
+
+     if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
+#if WITH_MODEMMANAGER_SUPPORT
+         QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
+         if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
+             qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
+             QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(wizard.data()->type(), wizard.data()->args(), this);
+             editor->exec();
+
+             if (editor) {
+                 editor->deleteLater();
+             }
+         }
+         if (wizard) {
+             wizard.data()->deleteLater();
+         }
+#endif
+     } else {
+         bool shared = false;
+         if (type == ConnectionSettings::Wired || type == ConnectionSettings::Wireless) {
+             shared = action->property("shared").toBool();
+         }
+
+         QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(type, this, vpnType, shared);
+         editor->exec();
+
+         if (editor) {
+             editor->deleteLater();
+         }
+     }
 }
 
 void ConnectionEditor::editConnection()
@@ -390,30 +390,28 @@ void ConnectionEditor::editConnection()
 
 void ConnectionEditor::removeConnection()
 {
-//     QTreeWidgetItem * currentItem = m_editor->connectionsWidget->currentItem();
-//
-//     if (currentItem->data(0, Qt::UserRole).toString() != "connection") {
-//         qDebug() << "clicked on the root item which is not removable";
-//         return;
-//     }
-//
-//     Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
-//
-//     if (!connection) {
-//         return;
-//     }
-//
-//     if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->name()), i18n("Remove Connection"), KStandardGuiItem::remove(),
-//                                    KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
-//             == KMessageBox::Yes) {
-//         foreach (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
-//             NetworkManager::ConnectionSettings::Ptr settings = con->settings();
-//             if (settings->master() == connection->uuid()) {
-//                 con->remove();
-//             }
-//         }
-//         connection->remove();
-//     }
+    const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
+
+    if (!currentIndex.isValid() || currentIndex.parent().isValid())
+        return;
+
+    Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentIndex.data(NetworkModel::UuidRole).toString());
+
+    if (!connection) {
+        return;
+    }
+
+    if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->name()), i18n("Remove Connection"), KStandardGuiItem::remove(),
+                                   KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
+            == KMessageBox::Yes) {
+        foreach (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
+            NetworkManager::ConnectionSettings::Ptr settings = con->settings();
+            if (settings->master() == connection->uuid()) {
+                con->remove();
+            }
+        }
+        connection->remove();
+    }
 }
 
 void ConnectionEditor::importSecretsFromPlainTextFiles()
@@ -480,23 +478,21 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
 
 void ConnectionEditor::connectionAdded(const QString& connection)
 {
-//     qDebug() << "Connection" << connection << "added";
-//
-//     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
-//
-//     if (!con) {
-//         return;
-//     }
-//
-//     if (con->settings()->isSlave())
-//         return;
-//
-//     m_editor->messageWidget->animatedShow();
-//     m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
-//     m_editor->messageWidget->setText(i18n("Connection %1 has been added", con->name()));
-//     QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-//
-//     insertConnection(con);
+     qDebug() << "Connection" << connection << "added";
+
+     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
+
+     if (!con) {
+         return;
+     }
+
+     if (con->settings()->isSlave())
+         return;
+
+     m_editor->messageWidget->animatedShow();
+     m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
+     m_editor->messageWidget->setText(i18n("Connection %1 has been added", con->name()));
+     QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
 }
 
 void ConnectionEditor::connectionRemoved(const QString& connection)
@@ -519,6 +515,8 @@ void ConnectionEditor::connectionRemoved(const QString& connection)
 //         }
 //         ++it;
 //     }
+
+    qDebug() << "Connection" << connection << "has been removed";
 }
 
 void ConnectionEditor::connectionUpdated()

@@ -67,7 +67,8 @@ public:
         TypeRole,
         UuidRole,
         UniRole,
-        VpnState
+        VpnState,
+        SlaveRole
     };
 
     int rowCount(const QModelIndex& parent) const;

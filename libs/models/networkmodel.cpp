@@ -54,6 +54,7 @@ NetworkModel::NetworkModel(QObject* parent)
     roles[UuidRole] = "Uuid";
     roles[UniRole] = "Uni";
     roles[VpnState] = "VpnState";
+    roles[SlaveRole] = "SlaveRole";
     setRoleNames(roles);
 
     initialize();
@@ -117,6 +118,8 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->uni();
             case VpnState:
                 return item->vpnState();
+            case SlaveRole:
+                return item->isSlave();
             default:
                 break;
         }
@@ -424,6 +427,7 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
         item->setName(settings->id());
         item->setType(settings->connectionType());
         item->setUuid(settings->uuid());
+        item->setSlave(settings->isSlave());
 
         if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
             item->setMode(wirelessSetting->mode());

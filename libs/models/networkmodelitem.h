@@ -102,6 +102,9 @@ public:
     QString vpnState() const;
     void setVpnState(NetworkManager::VpnConnection::State state);
 
+    bool isSlave() const;
+    void setSlave(bool slave);
+
     bool operator==(const NetworkModelItem * item) const;
 
 public Q_SLOTS:
@@ -128,6 +131,7 @@ private:
     NetworkManager::ConnectionSettings::ConnectionType m_type;
     QString m_uuid;
     NetworkManager::VpnConnection::State m_vpnState;
+    bool m_isSlave;
 };
 
 #endif // PLASMA_NM_MODEL_NETWORK_MODEL_ITEM_H

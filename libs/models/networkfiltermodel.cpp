@@ -82,6 +82,7 @@ bool NetworkFilterModel::filterAcceptsRow(int source_row, const QModelIndex& sou
     const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
 
     NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
+    const bool isSlave = sourceModel()->data(index, NetworkModel::SlaveRole).toBool();
 
     if (m_filterType == NetworkFilterModel::AvailableConnections) {
         if (itemType == NetworkModelItem::AvailableConnection ||
@@ -90,6 +91,9 @@ bool NetworkFilterModel::filterAcceptsRow(int source_row, const QModelIndex& sou
         }
         return false;
     } else if (m_filterType == NetworkFilterModel::EditableConnections) {
+        if (isSlave) {
+            return false;
+        }
         if (itemType == NetworkModelItem::UnavailableConnection ||
             itemType == NetworkModelItem::AvailableConnection) {
             return true;

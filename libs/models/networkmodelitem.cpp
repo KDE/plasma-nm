@@ -53,6 +53,7 @@ NetworkModelItem::NetworkModelItem(QObject * parent)
     , m_signal(0)
     , m_type(NetworkManager::ConnectionSettings::Unknown)
     , m_vpnState(NetworkManager::VpnConnection::Unknown)
+    , m_isSlave(false)
 {
 }
 
@@ -365,6 +366,16 @@ QString NetworkModelItem::vpnState() const
 void NetworkModelItem::setVpnState(NetworkManager::VpnConnection::State state)
 {
     m_vpnState = state;
+}
+
+bool NetworkModelItem::isSlave() const
+{
+    return m_isSlave;
+}
+
+void NetworkModelItem::setSlave(bool slave)
+{
+    m_isSlave = slave;
 }
 
 bool NetworkModelItem::operator==(const NetworkModelItem* item) const

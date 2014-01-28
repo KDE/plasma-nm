@@ -25,6 +25,7 @@
 // #include "connectiontypeitem.h"
 #include "connectiondetaileditor.h"
 #include "connectioneditorproxymodel.h"
+#include "networkmodel.h"
 #include "mobileconnectionwizard.h"
 #include "uiutils.h"
 #include "vpnuiplugin.h"
@@ -63,126 +64,128 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     m_editor->setupUi(tmp);
     setCentralWidget(tmp);
 
-//     m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
-//
-//     m_editor->ktreewidgetsearchline->setTreeWidget(m_editor->connectionsWidget);
-//
-//     m_menu = new KActionMenu(KIcon("list-add"), i18n("Add"), this);
-//     m_menu->menu()->setSeparatorsCollapsible(false);
-//     m_menu->setDelayed(false);
-//
-//     QAction * action = m_menu->addSeparator();
-//     action->setText(i18n("Hardware"));
-//
-//     // TODO Adsl
-//     action = new QAction(i18n("DSL"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Pppoe);
-//     m_menu->addAction(action);
-//     action = new QAction(i18n("InfiniBand"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Infiniband);
-//     m_menu->addAction(action);
-// #if WITH_MODEMMANAGER_SUPPORT
-//     action = new QAction(i18n("Mobile Broadband..."), this);
-//     action->setData(NetworkManager::ConnectionSettings::Gsm);
-//     m_menu->addAction(action);
-// #endif
-//     action = new QAction(i18n("Wired"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Wired);
-//     action->setProperty("shared", false);
-//     m_menu->addAction(action);
-//     action = new QAction(i18n("Wired (shared)"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Wired);
-//     action->setProperty("shared", true);
-//     m_menu->addAction(action);
-//     action = new QAction(i18n("Wireless"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Wireless);
-//     action->setProperty("shared", false);
-//     m_menu->addAction(action);
-//     action = new QAction(i18n("Wireless (shared)"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Wireless);
-//     action->setProperty("shared", true);
-//     m_menu->addAction(action);
-//     action = new QAction(i18n("WiMAX"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Wimax);
-//     m_menu->addAction(action);
-//
-//     action = m_menu->addSeparator();
-//     action->setText(i18n("Virtual"));
-//
-//     action = new QAction(i18n("Bond"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Bond);
-//     m_menu->addAction(action);
-//     action = new QAction(i18n("Bridge"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Bridge);
-//     m_menu->addAction(action);
-//     action = new QAction(i18n("VLAN"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Vlan);
-//     m_menu->addAction(action);
-// #if NM_CHECK_VERSION(0, 9, 9)
-//     action = new QAction(i18n("Team"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Team);
-//     m_menu->addAction(action);
-// #endif
-//
-//     action = m_menu->addSeparator();
-//     action->setText(i18n("VPN"));
-//
-//     const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
-//     foreach (const KService::Ptr & service, services) {
-//         qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
-//
-//         action = new QAction(service->name(), this);
-//         action->setData(NetworkManager::ConnectionSettings::Vpn);
-//         action->setProperty("type", service->property("X-NetworkManager-Services", QVariant::String));
-//         m_menu->addAction(action);
-//     }
-//
-//     actionCollection()->addAction("add_connection", m_menu);
-//
-//     KAction * kAction = new KAction(KIcon("configure"), i18n("Edit"), this);
-//     kAction->setEnabled(false);
-//     connect(kAction, SIGNAL(triggered()), SLOT(editConnection()));
-//     actionCollection()->addAction("edit_connection", kAction);
-//
-//     kAction = new KAction(KIcon("edit-delete"), i18n("Delete"), this);
-//     kAction->setEnabled(false);
-//     kAction->setShortcut(Qt::Key_Delete);
-//     connect(kAction, SIGNAL(triggered()), SLOT(removeConnection()));
-//     actionCollection()->addAction("delete_connection", kAction);
-//
-//     kAction = new KAction(KIcon("document-import"), i18n("Import VPN..."), this);
-//     actionCollection()->addAction("import_vpn", kAction);
-//     connect(kAction, SIGNAL(triggered()), SLOT(importVpn()));
-//
-//     kAction = new KAction(KIcon("document-export"), i18n("Export VPN..."), this);
-//     actionCollection()->addAction("export_vpn", kAction);
-//     kAction->setEnabled(false);
-//     connect(kAction, SIGNAL(triggered()), SLOT(exportVpn()));
-//
-//     m_editor->connectionsWidget->setSortingEnabled(false);
+    //     m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
+    //
+    //    m_editor->ktreewidgetsearchline->setTreeWidget(m_editor->connectionsWidget);
+    //
+    m_menu = new KActionMenu(KIcon("list-add"), i18n("Add"), this);
+    m_menu->menu()->setSeparatorsCollapsible(false);
+    m_menu->setDelayed(false);
+
+    QAction * action = m_menu->addSeparator();
+    action->setText(i18n("Hardware"));
+
+    // TODO Adsl
+    action = new QAction(i18n("DSL"), this);
+    action->setData(NetworkManager::ConnectionSettings::Pppoe);
+    m_menu->addAction(action);
+    action = new QAction(i18n("InfiniBand"), this);
+    action->setData(NetworkManager::ConnectionSettings::Infiniband);
+    m_menu->addAction(action);
+#if WITH_MODEMMANAGER_SUPPORT
+    action = new QAction(i18n("Mobile Broadband..."), this);
+    action->setData(NetworkManager::ConnectionSettings::Gsm);
+    m_menu->addAction(action);
+#endif
+    action = new QAction(i18n("Wired"), this);
+    action->setData(NetworkManager::ConnectionSettings::Wired);
+    action->setProperty("shared", false);
+    m_menu->addAction(action);
+    action = new QAction(i18n("Wired (shared)"), this);
+    action->setData(NetworkManager::ConnectionSettings::Wired);
+    action->setProperty("shared", true);
+    m_menu->addAction(action);
+    action = new QAction(i18n("Wireless"), this);
+    action->setData(NetworkManager::ConnectionSettings::Wireless);
+    action->setProperty("shared", false);
+    m_menu->addAction(action);
+    action = new QAction(i18n("Wireless (shared)"), this);
+    action->setData(NetworkManager::ConnectionSettings::Wireless);
+    action->setProperty("shared", true);
+    m_menu->addAction(action);
+    action = new QAction(i18n("WiMAX"), this);
+    action->setData(NetworkManager::ConnectionSettings::Wimax);
+    m_menu->addAction(action);
+
+    action = m_menu->addSeparator();
+    action->setText(i18n("Virtual"));
+
+    action = new QAction(i18n("Bond"), this);
+    action->setData(NetworkManager::ConnectionSettings::Bond);
+    m_menu->addAction(action);
+    action = new QAction(i18n("Bridge"), this);
+    action->setData(NetworkManager::ConnectionSettings::Bridge);
+    m_menu->addAction(action);
+    action = new QAction(i18n("VLAN"), this);
+    action->setData(NetworkManager::ConnectionSettings::Vlan);
+    m_menu->addAction(action);
+#if NM_CHECK_VERSION(0, 9, 9)
+    action = new QAction(i18n("Team"), this);
+    action->setData(NetworkManager::ConnectionSettings::Team);
+    m_menu->addAction(action);
+#endif
+
+    action = m_menu->addSeparator();
+    action->setText(i18n("VPN"));
+
+    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
+    foreach (const KService::Ptr & service, services) {
+        qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
+
+        action = new QAction(service->name(), this);
+        action->setData(NetworkManager::ConnectionSettings::Vpn);
+        action->setProperty("type", service->property("X-NetworkManager-Services", QVariant::String));
+        m_menu->addAction(action);
+    }
+
+    actionCollection()->addAction("add_connection", m_menu);
+
+    KAction * kAction = new KAction(KIcon("configure"), i18n("Edit"), this);
+    kAction->setEnabled(false);
+    connect(kAction, SIGNAL(triggered()), SLOT(editConnection()));
+    actionCollection()->addAction("edit_connection", kAction);
+
+    kAction = new KAction(KIcon("edit-delete"), i18n("Delete"), this);
+    kAction->setEnabled(false);
+    kAction->setShortcut(Qt::Key_Delete);
+    connect(kAction, SIGNAL(triggered()), SLOT(removeConnection()));
+    actionCollection()->addAction("delete_connection", kAction);
+
+    kAction = new KAction(KIcon("document-import"), i18n("Import VPN..."), this);
+    actionCollection()->addAction("import_vpn", kAction);
+    connect(kAction, SIGNAL(triggered()), SLOT(importVpn()));
+
+    kAction = new KAction(KIcon("document-export"), i18n("Export VPN..."), this);
+    actionCollection()->addAction("export_vpn", kAction);
+    kAction->setEnabled(false);
+    connect(kAction, SIGNAL(triggered()), SLOT(exportVpn()));
+
+    m_editor->connectionsWidget->setSortingEnabled(false);
     initializeConnections();
-//     m_editor->connectionsWidget->sortByColumn(0, Qt::AscendingOrder);
-//     m_editor->connectionsWidget->setSortingEnabled(true);
-//
-//     connect(m_editor->connectionsWidget, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
-//             SLOT(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
-//     connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
-//             SLOT(addConnection(QAction*)));
-//     connect(m_editor->connectionsWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
-//             SLOT(editConnection()));
-//     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
-//             SLOT(connectionAdded(QString)));
-//     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
-//             SLOT(connectionRemoved(QString)));
-//     connect(NetworkManager::notifier(), SIGNAL(serviceDisappeared()),
-//             m_editor->connectionsWidget, SLOT(clear()));
-//
-//     m_editor->messageWidget->hide();
-//     m_editor->messageWidget->setCloseButtonVisible(false);
-//     m_editor->messageWidget->setWordWrap(true);
-//
-//     KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
-//     KStandardAction::quit(this, SLOT(close()), actionCollection());
+    m_editor->connectionsWidget->sortByColumn(0, Qt::AscendingOrder);
+    m_editor->connectionsWidget->setSortingEnabled(true);
+
+    connect(m_editor->connectionsWidget, SIGNAL(clicked(QModelIndex)),
+            SLOT(slotItemClicked(QModelIndex)));
+    connect(m_editor->connectionsWidget, SIGNAL(doubleClicked(QModelIndex)),
+            SLOT(slotItemDoubleClicked(QModelIndex)));
+    //     connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
+    //             SLOT(addConnection(QAction*)));
+    connect(m_editor->connectionsWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
+            SLOT(editConnection()));
+    //     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
+    //             SLOT(connectionAdded(QString)));
+    //     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
+    //             SLOT(connectionRemoved(QString)));
+    //     connect(NetworkManager::notifier(), SIGNAL(serviceDisappeared()),
+    //             m_editor->connectionsWidget, SLOT(clear()));
+    //
+    m_editor->messageWidget->hide();
+    m_editor->messageWidget->setCloseButtonVisible(false);
+    m_editor->messageWidget->setWordWrap(true);
+
+    KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
+    KStandardAction::quit(this, SLOT(close()), actionCollection());
 
     createGUI();
 
@@ -296,25 +299,48 @@ void ConnectionEditor::insertConnection(const NetworkManager::Connection::Ptr &c
 //     return 0;
 // }
 
-void ConnectionEditor::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous)
+void ConnectionEditor::slotItemClicked(const QModelIndex &index)
 {
-//     Q_UNUSED(previous);
-//
-//     if (!current) {
-//         return;
-//     }
-//
-//     qDebug() << "Current item" << current->text(0) << "type:" << current->data(0, Qt::UserRole).toString();
-//
-//     if (current->data(0, Qt::UserRole).toString() == "connection") {
-//         actionCollection()->action("edit_connection")->setEnabled(true);
-//         actionCollection()->action("delete_connection")->setEnabled(true);
-//         actionCollection()->action("export_vpn")->setEnabled(true);
-//     } else {
-//         actionCollection()->action("edit_connection")->setEnabled(false);
-//         actionCollection()->action("delete_connection")->setEnabled(false);
-//         actionCollection()->action("export_vpn")->setEnabled(false);
-//     }
+    if (!index.isValid())
+        return;
+
+    qDebug() << "Double clicked item" << index.data(NetworkModel::UuidRole).toString();
+
+    if (index.parent().isValid()) { // category
+        actionCollection()->action("edit_connection")->setEnabled(true);
+        actionCollection()->action("delete_connection")->setEnabled(true);
+        actionCollection()->action("export_vpn")->setEnabled(true);
+    } else {                       //connection
+        actionCollection()->action("edit_connection")->setEnabled(true);
+        actionCollection()->action("delete_connection")->setEnabled(true);
+        actionCollection()->action("export_vpn")->setEnabled(true);
+    }
+}
+
+void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
+{
+    if (!index.isValid())
+        return;
+
+    qDebug() << "Double clicked item" << index.data(NetworkModel::UuidRole).toString();
+
+    if (index.parent().isValid()) { // category
+        qDebug() << "double clicked on the root item which is not editable";
+        return;
+    }
+
+    Connection::Ptr connection = NetworkManager::findConnectionByUuid(index.data(NetworkModel::UuidRole).toString());
+
+    if (!connection) {
+        return;
+    }
+
+    QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(connection->settings(), this);
+    editor->exec();
+
+    if (editor) {
+        editor->deleteLater();
+    }
 }
 
 void ConnectionEditor::addConnection(QAction* action)
@@ -354,25 +380,12 @@ void ConnectionEditor::addConnection(QAction* action)
 
 void ConnectionEditor::editConnection()
 {
-//     QTreeWidgetItem * currentItem = m_editor->connectionsWidget->currentItem();
-//
-//     if (currentItem->data(0, Qt::UserRole).toString() != "connection") {
-//         qDebug() << "clicked on the root item which is not editable";
-//         return;
-//     }
-//
-//     Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
-//
-//     if (!connection) {
-//         return;
-//     }
-//
-//     QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(connection->settings(), this);
-//     editor->exec();
-//
-//     if (editor) {
-//         editor->deleteLater();
-//     }
+    const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
+
+    if (!currentIndex.isValid() || currentIndex.parent().isValid())
+        return;
+
+    slotItemDoubleClicked(currentIndex);
 }
 
 void ConnectionEditor::removeConnection()

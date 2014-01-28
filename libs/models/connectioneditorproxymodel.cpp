@@ -70,20 +70,19 @@ QVariant ConnectionEditorProxyModel::headerData(int section, Qt::Orientation ori
 
 QVariant ConnectionEditorProxyModel::data(const QModelIndex& index, int role) const
 {
-    if (role != Qt::DisplayRole) {
-        return QVariant();
-    }
-
     const QModelIndex sourceIndex = sourceModel()->index(index.row(), 0);
     const QString connectionName = sourceModel()->data(sourceIndex, NetworkModel::NameRole).toString();
     const QString lastUsed = sourceModel()->data(sourceIndex, NetworkModel::LastUsedRole).toString();
 
-    switch (index.column()) {
+    if (role == Qt::DisplayRole) {
+        switch (index.column()) {
         case 0:
             return connectionName;
         case 1:
             return lastUsed;
-    }
+        }
+    } else
+        return sourceModel()->data(sourceIndex, role);
 
     return QVariant();
 }

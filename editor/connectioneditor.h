@@ -46,7 +46,8 @@ public:
 
 private Q_SLOTS:
     void initializeConnections();
-    void currentItemChanged(QTreeWidgetItem * current, QTreeWidgetItem * previous);
+    void slotItemClicked(const QModelIndex & index);
+    void slotItemDoubleClicked(const QModelIndex & index);
     void addConnection(QAction * action);
     void editConnection();
     void removeConnection();

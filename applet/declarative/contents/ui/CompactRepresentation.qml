@@ -77,10 +77,10 @@ Item {
         hoverEnabled: true;
         onClicked: plasmoid.expanded = !plasmoid.expanded;
 
-        PlasmaCore.ToolTip {
+        PlasmaCore.ToolTipArea {
             id: tooltip;
-            target: mouseAreaPopup;
-            image: connectionIconProvider.connectionPixmapIcon;
+            anchors.fill: mouseAreaPopup
+            icon: connectionIconProvider.connectionPixmapIcon;
             subText: networkStatus.activeConnections;
         }
     }

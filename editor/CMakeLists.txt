@@ -5,8 +5,6 @@ include_directories(${CMAKE_SOURCE_DIR}/libs/editor
 set(connectioneditor_SRCS
    main.cpp
    connectioneditor.cpp
-   connectionitem.cpp
-   connectiontypeitem.cpp
 )
 
 kde4_add_app_icon(connectioneditor_SRCS "${KDE4_INSTALL_DIR}/share/icons/oxygen/*/devices/network-defaultroute.png" )
@@ -24,7 +22,6 @@ target_link_libraries(kde-nm-connection-editor
     ${MODEMMANAGERQT_LDFLAGS}
     ${QT_QTCORE_LIBRARY}
     ${QT_QTDBUS_LIBRARY}
-    ${QT_QTNETWORK_LIBRARY}
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
 )

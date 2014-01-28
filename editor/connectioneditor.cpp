@@ -28,8 +28,6 @@
 #include "uiutils.h"
 #include "vpnuiplugin.h"
 
-#include <QTreeWidgetItem>
-
 #include <KActionCollection>
 #include <KLocale>
 #include <KMessageBox>
@@ -270,22 +268,6 @@ void ConnectionEditor::insertConnection(const NetworkManager::Connection::Ptr &c
 //
 //     m_editor->connectionsWidget->resizeColumnToContents(0);
 }
-
-// QTreeWidgetItem* ConnectionEditor::findTopLevelItem(const QString& type)
-// {
-//     QTreeWidgetItemIterator it(m_editor->connectionsWidget);
-//
-//     while (*it) {
-//         if ((*it)->data(0, Qt::UserRole).toString() == type) {
-//             qDebug() << "found:" << type;
-//             return (*it);
-//         }
-//         ++it;
-//     }
-//
-//     qWarning() << "didn't find type" << type;
-//     return 0;
-// }
 
 void ConnectionEditor::slotItemClicked(const QModelIndex &index)
 {

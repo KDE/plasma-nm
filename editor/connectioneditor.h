@@ -66,7 +66,6 @@ private:
     void importSecretsFromPlainTextFiles();
     void storeSecrets(const QMap<QString, QMap<QString, QString> > & map);
     QMap<QString, QString> getCorrectMapWithSecrets(const QMap<QString, QString> & map);
-//     QTreeWidgetItem * findTopLevelItem(const QString & type);
 };
 
 #endif // PLASMA_NM_CONNECTION_EDITOR_H

@@ -776,7 +776,7 @@ void NetworkModel::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterfac
 #ifdef MODEMMANAGERQT_ONE
 #else
 #endif
-    // TODO
+    // TODO implement
     Q_UNUSED(technology);
 }
 
@@ -789,7 +789,7 @@ void NetworkModel::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::Al
 #ifdef MODEMMANAGERQT_ONE
 #else
 #endif
-    // TODO
+    // TODO implement
 }
 
 void NetworkModel::gsmNetworkSignalQualityChanged(uint signal)
@@ -801,7 +801,7 @@ void NetworkModel::gsmNetworkSignalQualityChanged(uint signal)
 #ifdef MODEMMANAGERQT_ONE
 #else
 #endif
-    // TODO
+    // TODO implement
     Q_UNUSED(signal);
 }
 #endif
@@ -810,7 +810,7 @@ void NetworkModel::statusChanged(NetworkManager::Status status)
 {
     Q_UNUSED(status);
 
-    // This have probably effect only for VPN connections
+    // This has probably effect only for VPN connections
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Type, NetworkManager::ConnectionSettings::Vpn)) {
         updateItem(item);
     }

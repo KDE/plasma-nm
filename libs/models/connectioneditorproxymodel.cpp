@@ -18,6 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <KLocalizedString>
+
 #include "connectioneditorproxymodel.h"
 
 #include "networkmodel.h"
@@ -33,6 +35,10 @@ ConnectionEditorProxyModel::ConnectionEditorProxyModel(QObject* parent)
     filterModel->setSourceModel(baseModel);
 
     setSourceModel(baseModel);
+}
+
+ConnectionEditorProxyModel::~ConnectionEditorProxyModel()
+{
 }
 
 Qt::ItemFlags ConnectionEditorProxyModel::flags(const QModelIndex& index) const
@@ -53,9 +59,9 @@ QVariant ConnectionEditorProxyModel::headerData(int section, Qt::Orientation ori
     if (orientation == Qt::Horizontal && role == Qt::DisplayRole) {
         switch (section) {
             case 0:
-                return tr("Connection name");
+                return i18n("Connection name");
             case 1:
-                return tr("Last used");
+                return i18n("Last used");
         }
     }
 

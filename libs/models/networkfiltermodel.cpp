@@ -75,11 +75,11 @@ QAbstractItemModel* NetworkFilterModel::sourceModel() const
 
 bool NetworkFilterModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
 {
-    QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
-
     if (m_filterType == NetworkFilterModel::All) {
         return true;
     }
+
+    const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
 
     NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
 

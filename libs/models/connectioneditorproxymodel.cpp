@@ -24,15 +24,14 @@
 
 #include "networkmodel.h"
 #include "networkmodelitem.h"
-#include "networkfiltermodel.h"
 
 ConnectionEditorProxyModel::ConnectionEditorProxyModel(QObject* parent)
     : QIdentityProxyModel(parent)
 {
     NetworkModel * baseModel = new NetworkModel(this);
-    NetworkFilterModel * filterModel = new NetworkFilterModel(this);
-    filterModel->setFilterType(NetworkFilterModel::EditableConnections);
-    filterModel->setSourceModel(baseModel);
+    NetworkFilterModel * m_filterModel = new NetworkFilterModel(this);
+    m_filterModel->setFilterType(NetworkFilterModel::EditableConnections);
+    m_filterModel->setSourceModel(baseModel);
 
     setSourceModel(baseModel);
 }
@@ -99,4 +98,9 @@ QModelIndex ConnectionEditorProxyModel::mapToSource(const QModelIndex& proxyInde
     }
 
     return QIdentityProxyModel::mapToSource(proxyIndex);
+}
+
+NetworkFilterModel *ConnectionEditorProxyModel::filterModel() const
+{
+    return m_filterModel;
 }

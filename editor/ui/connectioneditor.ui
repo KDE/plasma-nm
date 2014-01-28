@@ -24,7 +24,7 @@
     <widget class="KMessageWidget" name="messageWidget" native="true"/>
    </item>
    <item>
-    <widget class="KTreeWidgetSearchLine" name="ktreewidgetsearchline">
+    <widget class="KFilterProxySearchLine" name="ktreewidgetsearchline">
      <property name="urlDropsEnabled" stdset="0">
       <bool>false</bool>
      </property>
@@ -70,9 +70,9 @@
    <header>klineedit.h</header>
   </customwidget>
   <customwidget>
-   <class>KTreeWidgetSearchLine</class>
+   <class>KFilterProxySearchLine</class>
    <extends>KLineEdit</extends>
-   <header>ktreewidgetsearchline.h</header>
+   <header>kfilterproxysearchline.h</header>
   </customwidget>
   <customwidget>
    <class>KMessageWidget</class>

@@ -21,8 +21,6 @@
 
 #include "ui_connectioneditor.h"
 #include "connectioneditor.h"
-// #include "connectionitem.h"
-// #include "connectiontypeitem.h"
 #include "connectiondetaileditor.h"
 #include "connectioneditorproxymodel.h"
 #include "networkmodel.h"
@@ -48,6 +46,7 @@
 #include <KStandardDirs>
 #include <KFileDialog>
 #include <KShell>
+#include <KFilterProxySearchLine>
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
@@ -65,9 +64,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     setCentralWidget(tmp);
 
     m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
-    //
-    //    m_editor->ktreewidgetsearchline->setTreeWidget(m_editor->connectionsWidget);  // TODO reenable with the sort/filter model
-    //
+
     m_menu = new KActionMenu(KIcon("list-add"), i18n("Add"), this);
     m_menu->menu()->setSeparatorsCollapsible(false);
     m_menu->setDelayed(false);
@@ -210,6 +207,8 @@ void ConnectionEditor::initializeConnections()
 {
     ConnectionEditorProxyModel * model = new ConnectionEditorProxyModel(this);
     m_editor->connectionsWidget->setModel(model);
+
+    m_editor->ktreewidgetsearchline->setProxy(model->filterModel());  // FIXME doesn't seem to work
 }
 
 void ConnectionEditor::insertConnection(const NetworkManager::Connection::Ptr &connection)

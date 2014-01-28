@@ -59,24 +59,25 @@ NetworkFilterModel::FilterType NetworkFilterModel::filterType() const
 void NetworkFilterModel::setFilterType(NetworkFilterModel::FilterType type)
 {
     m_filterType = type;
-    filterChanged();
+    invalidateFilter();
     sort(0, Qt::DescendingOrder);
 }
 
 bool NetworkFilterModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
 {
+    const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
+
+    const bool isSlave = sourceModel()->data(index, NetworkModel::SlaveRole).toBool();
+    if (isSlave) {
+        return false;
+    }
+
     if (m_filterType == NetworkFilterModel::All) {
         return true;
     }
 
-    const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
-
     NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
-    const bool isSlave = sourceModel()->data(index, NetworkModel::SlaveRole).toBool();
 
-    if (isSlave) {
-        return false;
-    }
 
     if (m_filterType == NetworkFilterModel::AvailableConnections) {
         if (itemType == NetworkModelItem::AvailableConnection ||

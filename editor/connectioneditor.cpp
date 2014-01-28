@@ -27,6 +27,7 @@
 #include "mobileconnectionwizard.h"
 #include "uiutils.h"
 #include "vpnuiplugin.h"
+#include "networkfiltermodel.h"
 
 #include <KActionCollection>
 #include <KLocale>
@@ -204,9 +205,13 @@ ConnectionEditor::~ConnectionEditor()
 void ConnectionEditor::initializeConnections()
 {
     ConnectionEditorProxyModel * model = new ConnectionEditorProxyModel(this);
-    m_editor->connectionsWidget->setModel(model);
 
-    m_editor->ktreewidgetsearchline->setProxy(model->filterModel());  // FIXME doesn't seem to work
+    NetworkFilterModel * filterModel = new NetworkFilterModel(this);
+    filterModel->setFilterType(NetworkFilterModel::EditableConnections);
+    filterModel->setSourceModel(model);
+
+    m_editor->connectionsWidget->setModel(filterModel);
+    m_editor->ktreewidgetsearchline->setProxy(filterModel);  // FIXME doesn't seem to work
 }
 
 void ConnectionEditor::insertConnection(const NetworkManager::Connection::Ptr &connection)

@@ -38,9 +38,6 @@ public:
     virtual ~NetworkSortModel();
 
     bool lessThan(const QModelIndex& left, const QModelIndex& right) const;
-
-    void setSourceModel(QAbstractItemModel *sourceModel);
-    QAbstractItemModel * sourceModel() const;
 };
 
 

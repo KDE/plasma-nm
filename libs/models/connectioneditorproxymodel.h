@@ -24,8 +24,6 @@
 #include <QIdentityProxyModel>
 #include <QModelIndex>
 
-#include "networkfiltermodel.h"
-
 #include "plasmanm_export.h"
 
 class PLASMA_NM_EXPORT ConnectionEditorProxyModel : public QIdentityProxyModel
@@ -44,11 +42,6 @@ public:
     QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const;
 
     QModelIndex mapToSource(const QModelIndex &proxyIndex) const;
-
-    NetworkFilterModel * filterModel() const;
-
-private:
-    NetworkFilterModel * m_filterModel;
 };
 
 #endif // PLASMA_NM_CONNECTION_EDITOR_PROXY_MODEL_H

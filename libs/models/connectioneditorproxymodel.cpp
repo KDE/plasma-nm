@@ -32,10 +32,6 @@ ConnectionEditorProxyModel::ConnectionEditorProxyModel(QObject* parent)
     : QIdentityProxyModel(parent)
 {
     NetworkModel * baseModel = new NetworkModel(this);
-    NetworkFilterModel * m_filterModel = new NetworkFilterModel(this);
-    m_filterModel->setFilterType(NetworkFilterModel::EditableConnections);
-    m_filterModel->setSourceModel(baseModel);
-
     setSourceModel(baseModel);
 }
 
@@ -105,7 +101,7 @@ QVariant ConnectionEditorProxyModel::data(const QModelIndex& index, int role) co
 
 QModelIndex ConnectionEditorProxyModel::index(int row, int column, const QModelIndex& parent) const
 {
-    return createIndex(row, column, 0);
+    return createIndex(row, column);
 }
 
 QModelIndex ConnectionEditorProxyModel::mapToSource(const QModelIndex& proxyIndex) const
@@ -117,7 +113,3 @@ QModelIndex ConnectionEditorProxyModel::mapToSource(const QModelIndex& proxyInde
     return QIdentityProxyModel::mapToSource(proxyIndex);
 }
 
-NetworkFilterModel *ConnectionEditorProxyModel::filterModel() const
-{
-    return m_filterModel;
-}

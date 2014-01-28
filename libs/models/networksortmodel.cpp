@@ -86,16 +86,6 @@ NetworkSortModel::~NetworkSortModel()
 {
 }
 
-void NetworkSortModel::setSourceModel(QAbstractItemModel* sourceModel)
-{
-    QSortFilterProxyModel::setSourceModel(sourceModel);
-}
-
-QAbstractItemModel* NetworkSortModel::sourceModel() const
-{
-    return QSortFilterProxyModel::sourceModel();
-}
-
 bool NetworkSortModel::lessThan(const QModelIndex& left, const QModelIndex& right) const
 {
     const bool leftAvailable = (NetworkModelItem::ItemType)sourceModel()->data(left, NetworkModel::ItemTypeRole).toUInt() != NetworkModelItem::UnavailableConnection;

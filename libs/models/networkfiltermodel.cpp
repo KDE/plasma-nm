@@ -26,7 +26,8 @@ NetworkFilterModel::NetworkFilterModel(QObject* parent)
     , m_filterType(NetworkFilterModel::All)
 {
     setDynamicSortFilter(true);
-    setFilterRole(NetworkModel::ItemTypeRole);
+    setSortCaseSensitivity(Qt::CaseInsensitive);
+    setSortLocaleAware(true);
     sort(0, Qt::DescendingOrder);
 }
 
@@ -37,17 +38,17 @@ NetworkFilterModel::~NetworkFilterModel()
 void NetworkFilterModel::setFilterType(int type)
 {
     switch (type) {
-        case 0:
-            setFilterType(NetworkFilterModel::All);
-            break;
-        case 1:
-            setFilterType(NetworkFilterModel::EditableConnections);
-            break;
-        case 2:
-            setFilterType(NetworkFilterModel::AvailableConnections);
-            break;
-        default:
-            setFilterType(NetworkFilterModel::All);
+    case 0:
+        setFilterType(NetworkFilterModel::All);
+        break;
+    case 1:
+        setFilterType(NetworkFilterModel::EditableConnections);
+        break;
+    case 2:
+        setFilterType(NetworkFilterModel::AvailableConnections);
+        break;
+    default:
+        setFilterType(NetworkFilterModel::All);
     }
 }
 
@@ -94,4 +95,17 @@ bool NetworkFilterModel::filterAcceptsRow(int source_row, const QModelIndex& sou
     }
 
     return false;
+}
+
+bool NetworkFilterModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+{
+    if (m_filterType == NetworkFilterModel::EditableConnections && sourceModel()) { // special sorting case, only for editor
+        if (sortColumn() == 1) {
+            const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStamp).toDateTime();
+            const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStamp).toDateTime();
+            return leftDate < rightDate;
+        }
+    }
+
+    return QSortFilterProxyModel::lessThan(left, right);
 }

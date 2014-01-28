@@ -64,6 +64,7 @@ public:
     ItemType itemType() const;
 
     QString lastUsed() const;
+    QDateTime timestamp() const;
     void setLastUsed(const QDateTime& lastUsed);
 
     NetworkManager::WirelessSetting::NetworkMode mode() const;

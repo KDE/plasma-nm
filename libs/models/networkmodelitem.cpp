@@ -240,6 +240,11 @@ QString NetworkModelItem::lastUsed() const
     return UiUtils::formatLastUsedDateRelative(m_lastUsed);
 }
 
+QDateTime NetworkModelItem::timestamp() const
+{
+    return m_lastUsed;
+}
+
 void NetworkModelItem::setLastUsed(const QDateTime& lastUsed)
 {
     m_lastUsed = lastUsed;

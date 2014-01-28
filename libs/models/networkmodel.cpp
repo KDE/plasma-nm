@@ -55,6 +55,7 @@ NetworkModel::NetworkModel(QObject* parent)
     roles[UniRole] = "Uni";
     roles[VpnState] = "VpnState";
     roles[SlaveRole] = "SlaveRole";
+    roles[TimeStamp] = "TimeStamp";
     setRoleNames(roles);
 
     initialize();
@@ -89,6 +90,8 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->itemType();
             case LastUsedRole:
                 return item->lastUsed();
+            case TimeStamp:
+                return item->timestamp();
             case NameRole:
                 // TODO duplicate items (i.e two wireless cards)??
 //                 if (m_list.returnItems(NetworkItemsList::Name, item->name()).count() > 1) {

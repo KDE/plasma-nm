@@ -41,7 +41,9 @@ public:
     void setFilterType(int type);
     void setFilterType(FilterType type);
 
+protected:
     bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
+    bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
 
 private:
     FilterType m_filterType;

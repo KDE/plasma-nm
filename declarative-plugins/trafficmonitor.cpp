@@ -32,7 +32,6 @@
 #include <NetworkManagerQt/Manager>
 
 #include "globalconfig.h"
-#include "debug.h"
 
 TrafficMonitor::TrafficMonitor(QGraphicsItem* parent)
     : QGraphicsWidget(parent, 0)
@@ -149,7 +148,7 @@ void TrafficMonitor::resetMonitor()
 
 void TrafficMonitor::dataUpdated(const QString& sourceName, const Plasma::DataEngine::Data& data)
 {
-//     NMAppletDebug() << "dataUpdated: " << sourceName;
+//     kDebug()() << "dataUpdated: " << sourceName;
 
     if (sourceName == m_txSource) {
         m_tx = data["value"].toString();

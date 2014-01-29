@@ -18,10 +18,9 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "connectiondetaileditor.h"
 #include "handler.h"
 #include "uiutils.h"
-#include "debug.h"
-#include "connectiondetaileditor.h"
 
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/AccessPoint>
@@ -40,6 +39,7 @@
 #include <KNotification>
 #include <KUser>
 #include <KIcon>
+#include <KDebug>
 #include <KProcess>
 #include <KService>
 #include <KServiceTypeTrader>
@@ -59,20 +59,19 @@ void Handler::activateConnection(const QString& connection, const QString& devic
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
-        NMHandlerDebug() << "Not possible to activate this connection";
+        kWarning() << "Not possible to activate this connection";
         return;
     }
-    NMHandlerDebug() << "Activating " << con->name() << " connection";
 
     if (con->settings()->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
         NetworkManager::VpnSetting::Ptr vpnSetting = con->settings()->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
         if (vpnSetting) {
-            NMHandlerDebug() << "Checking VPN" << con->name() << "type:" << vpnSetting->serviceType();
+            kWarning() << "Checking VPN" << con->name() << "type:" << vpnSetting->serviceType();
             // get the list of supported VPN service types
             const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin",
                                                                           QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()));
             if (services.isEmpty()) {
-                NMHandlerDebug() << "VPN" << vpnSetting->serviceType() << "not found, skipping";
+                kWarning() << "VPN" << vpnSetting->serviceType() << "not found, skipping";
                 KNotification *notification = new KNotification("MissingVpnPlugin", KNotification::Persistent, this);
                 notification->setComponentData(KComponentData("networkmanagement"));
                 notification->setTitle(con->name());
@@ -173,7 +172,7 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
-        NMHandlerDebug() << "Not possible to deactivate this connection";
+        kWarning() << "Not possible to deactivate this connection";
         return;
     }
 
@@ -193,8 +192,6 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
             }
         }
     }
-
-    NMHandlerDebug() << "Deactivating " << con->name() << " connection";
 }
 
 void Handler::disconnectAll()
@@ -206,25 +203,21 @@ void Handler::disconnectAll()
 
 void Handler::enableNetworking(bool enable)
 {
-    NMHandlerDebug() << "Networking enabled: " << enable;
     NetworkManager::setNetworkingEnabled(enable);
 }
 
 void Handler::enableWireless(bool enable)
 {
-    NMHandlerDebug() << "Wireless enabled: " << enable;
     NetworkManager::setWirelessEnabled(enable);
 }
 
 void Handler::enableWimax(bool enable)
 {
-    NMHandlerDebug() << "Wimax enabled: " << enable;
     NetworkManager::setWimaxEnabled(enable);
 }
 
 void Handler::enableWwan(bool enable)
 {
-    NMHandlerDebug() << "Wwan enabled: " << enable;
     NetworkManager::setWwanEnabled(enable);
 }
 
@@ -240,7 +233,7 @@ void Handler::removeConnection(const QString& connection)
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con || con->uuid().isEmpty()) {
-        NMHandlerDebug() << "Not possible to remove this connection";
+        kWarning() << "Not possible to remove connection " << connection;
         return;
     }
 

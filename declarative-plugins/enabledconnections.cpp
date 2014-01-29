@@ -23,8 +23,6 @@
 
 #include <NetworkManagerQt/Manager>
 
-#include "debug.h"
-
 EnabledConnections::EnabledConnections(QObject* parent)
     : QObject(parent)
     , m_networkingEnabled(NetworkManager::isNetworkingEnabled())
@@ -93,48 +91,41 @@ bool EnabledConnections::isWwanHwEnabled() const
 void EnabledConnections::onNetworkingEnabled(bool enabled)
 {
     m_networkingEnabled = enabled;
-    NMAppletDebug() << "Emit signal networkingEnabled(" << enabled << ")";
     Q_EMIT networkingEnabled(enabled);
 }
 
 void EnabledConnections::onWirelessEnabled(bool enabled)
 {
     m_wirelessEnabled = enabled;
-    NMAppletDebug() << "Emit signal wirelessEnabled(" << enabled << ")";
     Q_EMIT wirelessEnabled(enabled);
 }
 
 void EnabledConnections::onWirelessHwEnabled(bool enabled)
 {
     m_wirelessHwEnabled = enabled;
-    NMAppletDebug() << "Emit signal wirelessHwEnabled(" << enabled << ")";
     Q_EMIT wirelessHwEnabled(enabled);
 }
 
 void EnabledConnections::onWimaxEnabled(bool enabled)
 {
     m_wimaxEnabled = true;
-    NMAppletDebug() << "Emit signal wimaxEnabled(" << enabled << ")";
     Q_EMIT wimaxEnabled(enabled);
 }
 
 void EnabledConnections::onWimaxHwEnabled(bool enabled)
 {
     m_wimaxHwEnabled = enabled;
-    NMAppletDebug() << "Emit signal wimaxHwEnabled(" << enabled << ")";
     Q_EMIT wimaxHwEnabled(enabled);
 }
 
 void EnabledConnections::onWwanEnabled(bool enabled)
 {
     m_wwanEnabled = true;
-    NMAppletDebug() << "Emit signal wwanEnabled(" << enabled << ")";
     Q_EMIT wwanEnabled(enabled);
 }
 
 void EnabledConnections::onWwanHwEnabled(bool enabled)
 {
     m_wwanHwEnabled = enabled;
-    NMAppletDebug() << "Emit signal wwanHWEnabled(" << enabled << ")";
     Q_EMIT wwanHwEnabled(enabled);
 }

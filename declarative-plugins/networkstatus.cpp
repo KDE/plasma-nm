@@ -19,7 +19,6 @@
 */
 
 #include "networkstatus.h"
-#include "debug.h"
 #include "uiutils.h"
 
 #include <QDBusConnection>
@@ -112,7 +111,6 @@ void NetworkStatus::statusChanged(NetworkManager::Status status)
         Q_EMIT activeConnectionsChanged(m_activeConnections);
     }
 
-    NMAppletDebug() << "Emit signal networkStatusChanged(" << m_networkStatus << ")";
     Q_EMIT networkStatusChanged(m_networkStatus);
 }
 

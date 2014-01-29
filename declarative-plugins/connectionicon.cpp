@@ -30,8 +30,6 @@
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/WirelessSetting>
 
-#include "debug.h"
-
 ConnectionIcon::ConnectionIcon(QObject* parent)
     : QObject(parent)
     , m_signal(0)
@@ -151,7 +149,6 @@ void ConnectionIcon::activeConnectionAdded(const QString &activeConnection)
                 connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                         SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
             }
-            NMAppletDebug() << "Emit signal connectingChanged(true)";
             m_connecting = true;
             Q_EMIT connectingChanged(true);
         }
@@ -164,7 +161,6 @@ void ConnectionIcon::activeConnectionStateChanged(NetworkManager::ActiveConnecti
         state == NetworkManager::ActiveConnection::Deactivating ||
         state == NetworkManager::ActiveConnection::Activated ||
         state == NetworkManager::ActiveConnection::Unknown) {
-        NMAppletDebug() << "Emit signal connectingChanged(false)";
         m_connecting = false;
         Q_EMIT connectingChanged(false);
     }
@@ -172,7 +168,6 @@ void ConnectionIcon::activeConnectionStateChanged(NetworkManager::ActiveConnecti
 
 void ConnectionIcon::activeConnectionDestroyed()
 {
-    NMAppletDebug() << "Emit signal connectingChanged(false)";
     m_connecting = false;
     Q_EMIT connectingChanged(false);
 }
@@ -238,7 +233,6 @@ void ConnectionIcon::modemSignalChanged(uint signal)
 void ConnectionIcon::networkingEnabledChanged(bool enabled)
 {
     if (!enabled) {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-unavailable)";
         m_connectionIcon = "network-unavailable";
         Q_EMIT connectionIconChanged("network-unavailable");
     }
@@ -264,7 +258,6 @@ void ConnectionIcon::vpnConnectionStateChanged(NetworkManager::VpnConnection::St
     if (state == NetworkManager::VpnConnection::Activated ||
         state == NetworkManager::VpnConnection::Failed ||
         state == NetworkManager::VpnConnection::Disconnected) {
-        NMAppletDebug() << "Emit signal connectingChanged(false)";
         m_connecting = false;
         Q_EMIT connectingChanged(false);
     }
@@ -329,7 +322,6 @@ void ConnectionIcon::setIcons()
                     }
                 }
             } else if (type == NetworkManager::Device::Ethernet) {
-                NMAppletDebug() << "Emit signal connectionIconChanged(network-wired-activated)";
                 m_connectionIcon = "network-wired-activated";
                 m_connectionTooltipIcon = "network-wired-activated";
                 Q_EMIT connectionIconChanged("network-wired-activated");
@@ -338,7 +330,6 @@ void ConnectionIcon::setIcons()
 #if WITH_MODEMMANAGER_SUPPORT
                 setModemIcon(device);
 #else
-                NMAppletDebug() << "Emit signal connectionIconChanged(network-mobile-0)";
                 m_connectionIcon = "network-mobile-0";
                 m_connectionTooltipIcon = "phone";
                 Q_EMIT connectionIconChanged("network-mobile-0");
@@ -351,14 +342,12 @@ void ConnectionIcon::setIcons()
 #if WITH_MODEMMANAGER_SUPPORT
                         setModemIcon(device);
 #else
-                        NMAppletDebug() << "Emit signal connectionIconChanged(network-mobile-0)";
                         m_connectionIcon = "network-mobile-0";
                         m_connectionTooltipIcon = "phone";
                         Q_EMIT connectionIconChanged("network-mobile-0");
                         Q_EMIT connectionTooltipIconChanged("phone");
 #endif
                     } else {
-                        NMAppletDebug() << "Emit signal connectionIconChanged(bluetooth)";
                         m_connectionIcon = "bluetooth";
                         m_connectionTooltipIcon = "preferences-system-bluetooth";
                         Q_EMIT connectionIconChanged("bluetooth");
@@ -366,7 +355,6 @@ void ConnectionIcon::setIcons()
                     }
                 }
             } else {
-                NMAppletDebug() << "Emit signal connectionIconChanged(network-wired-activated)";
                 m_connectionIcon = "network-wired-activated";
                 m_connectionTooltipIcon = "network-wired-activated";
                 Q_EMIT connectionIconChanged("network-wired-activated");
@@ -382,7 +370,6 @@ void ConnectionIcon::setDisconnectedIcon()
 {
     if (NetworkManager::status() == NetworkManager::Unknown ||
         NetworkManager::status() == NetworkManager::Asleep) {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-unavailable)";
         m_connectionIcon = "network-unavailable";
         Q_EMIT connectionIconChanged("network-unavailable");
         return;
@@ -410,28 +397,24 @@ void ConnectionIcon::setDisconnectedIcon()
     }
 
     if (wired) {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-wired-available)";
         m_connectionIcon = "network-wired-available";
         m_connectionTooltipIcon = "network-wired";
         Q_EMIT connectionIconChanged("network-wired-available");
         Q_EMIT connectionTooltipIconChanged("network-wired");
         return;
     } else if (wireless) {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-wireless-available)";
         m_connectionIcon = "network-wireless-available";
         m_connectionTooltipIcon = "network-wireless-connected-00";
         Q_EMIT connectionIconChanged("network-wireless-available");
         Q_EMIT connectionTooltipIconChanged("network-wireless-connected-00");
         return;
     } else if (modem) {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-mobile-available)";
         m_connectionIcon = "network-mobile-available";
         m_connectionTooltipIcon = "phone";
         Q_EMIT connectionIconChanged("network-mobile-available");
         Q_EMIT connectionTooltipIconChanged("phone");
         return;
     }  else {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-unavailable)";
         m_connectionIcon = "network-unavailable";
         m_connectionTooltipIcon = "network-wired";
         Q_EMIT connectionIconChanged("network-unavailable");
@@ -446,7 +429,6 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
 
     if (!modemDevice) {
         m_connectionIcon = "network-mobile-100";
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-mobile-100)";
         Q_EMIT connectionIconChanged("network-mobile-100");
 
         return;
@@ -480,7 +462,6 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
         setIconForModem();
 #endif
     } else {
-        NMAppletDebug() << "Emit signal connectionIconChanged(network-mobile)";
         m_connectionIcon = "network-mobile-0";
         Q_EMIT connectionIconChanged("network-mobile-0");
         m_connectionTooltipIcon = "phone";
@@ -582,7 +563,6 @@ void ConnectionIcon::setIconForModem()
             break;
     }
 #endif
-    NMAppletDebug() << "Emit signal connectionIconChanged(" << QString(result).arg(strength) << ")";
     m_connectionIcon = QString(result).arg(strength);
     m_connectionTooltipIcon = "phone";
     Q_EMIT connectionIconChanged(QString(result).arg(strength));
@@ -645,7 +625,6 @@ void ConnectionIcon::setWirelessIconForSignalStrength(int strength)
 
         QString icon = QString("network-wireless-%1").arg(iconStrength);
 
-        NMAppletDebug() << "Emit signal connectionIconChanged(" << icon << ")";
         m_connectionIcon = icon;
         Q_EMIT connectionIconChanged(icon);
     }

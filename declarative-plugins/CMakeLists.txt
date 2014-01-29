@@ -4,7 +4,6 @@ include_directories(${CMAKE_SOURCE_DIR}/libs
 set(plasma_networkmanagement_qml_plugins_SRCS
    availabledevices.cpp
    connectionicon.cpp
-   debug.cpp
    enabledconnections.cpp
    enums.cpp
    globalconfig.cpp

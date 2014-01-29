@@ -22,6 +22,7 @@
 #include <QFont>
 
 #include <KLocalizedString>
+#include <KIcon>
 
 #include "connectioneditorproxymodel.h"
 
@@ -84,7 +85,11 @@ QVariant ConnectionEditorProxyModel::data(const QModelIndex& index, int role) co
         }
     } else if (role == Qt::DecorationRole) {
         if (column == 0) {
-            return QIcon::fromTheme(sourceModel()->data(sourceIndex, NetworkModel::ConnectionIconRole).toString()); // FIXME use the actual SVG icons
+            if (isActivated) {
+                return KIcon("user-online");
+            } else {
+                return KIcon("user-offline");
+            }
         }
     } else if (role == Qt::FontRole) {
         if (column == 0 && isActivated) {

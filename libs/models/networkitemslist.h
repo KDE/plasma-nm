@@ -50,8 +50,8 @@ public:
     int indexOf(NetworkModelItem * item) const;
     NetworkModelItem * itemAt(int index) const;
     QList<NetworkModelItem*> items() const;
-    QList<NetworkModelItem*> returnItems(const FilterType type, const QString& parameter, const QString& additionalParameter = QString());
-    QList<NetworkModelItem*> returnItems(const FilterType type, NetworkManager::ConnectionSettings::ConnectionType typeParameter);
+    QList<NetworkModelItem*> returnItems(const FilterType type, const QString& parameter, const QString& additionalParameter = QString()) const;
+    QList<NetworkModelItem*> returnItems(const FilterType type, NetworkManager::ConnectionSettings::ConnectionType typeParameter) const;
 
     void insertItem(NetworkModelItem * item);
     void removeItem(NetworkModelItem * item);

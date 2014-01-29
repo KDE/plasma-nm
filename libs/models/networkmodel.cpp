@@ -64,7 +64,6 @@ NetworkModel::NetworkModel(QObject* parent)
 
 NetworkModel::~NetworkModel()
 {
-    // TODO: split an item when a wireless connection becomes unavailable
 }
 
 QVariant NetworkModel::data(const QModelIndex& index, int role) const
@@ -94,12 +93,11 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
             case LastUsedDateOnlyRole:
                 return UiUtils::formatDateRelative(item->timestamp());
             case NameRole:
-                // TODO duplicate items (i.e two wireless cards)??
-//                 if (m_list.returnItems(NetworkItemsList::Name, item->name()).count() > 1) {
-//                     return item->originalName();
-//                 } else {
-                return item->name();
-//                 }
+                if (m_list.returnItems(NetworkItemsList::Name, item->name()).count() > 1) {
+                    return item->originalName();
+                } else {
+                    return item->name();
+                }
             case SectionRole:
                 return item->sectionType();
             case SignalRole:

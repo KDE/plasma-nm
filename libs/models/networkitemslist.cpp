@@ -109,7 +109,7 @@ void NetworkItemsList::removeItem(NetworkModelItem* item)
     m_items.removeAll(item);
 }
 
-QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList::FilterType type, const QString& parameter, const QString& additionalParameter)
+QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList::FilterType type, const QString& parameter, const QString& additionalParameter) const
 {
     QList<NetworkModelItem*> result;
 
@@ -170,7 +170,7 @@ QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList:
     return result;
 }
 
-QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList::FilterType type, NetworkManager::ConnectionSettings::ConnectionType typeParameter)
+QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList::FilterType type, NetworkManager::ConnectionSettings::ConnectionType typeParameter) const
 {
     QList<NetworkModelItem*> result;
 

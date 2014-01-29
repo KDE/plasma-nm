@@ -51,9 +51,9 @@ NetworkModelItem::NetworkModelItem(QObject * parent)
     , m_mode(NetworkManager::WirelessSetting::Infrastructure)
     , m_securityType(NetworkManager::Utils::None)
     , m_signal(0)
+    , m_slave(false)
     , m_type(NetworkManager::ConnectionSettings::Unknown)
     , m_vpnState(NetworkManager::VpnConnection::Unknown)
-    , m_isSlave(false)
 {
 }
 
@@ -235,21 +235,6 @@ NetworkModelItem::ItemType NetworkModelItem::itemType() const
     return NetworkModelItem::UnavailableConnection;
 }
 
-QString NetworkModelItem::lastUsed() const
-{
-    return UiUtils::formatLastUsedDateRelative(m_lastUsed);
-}
-
-QDateTime NetworkModelItem::timestamp() const
-{
-    return m_lastUsed;
-}
-
-void NetworkModelItem::setLastUsed(const QDateTime& lastUsed)
-{
-    m_lastUsed = lastUsed;
-}
-
 NetworkManager::WirelessSetting::NetworkMode NetworkModelItem::mode() const
 {
     return m_mode;
@@ -304,6 +289,16 @@ void NetworkModelItem::setSignal(int signal)
     m_signal = signal;
 }
 
+bool NetworkModelItem::slave() const
+{
+    return m_slave;
+}
+
+void NetworkModelItem::setSlave(bool slave)
+{
+    m_slave = slave;
+}
+
 QString NetworkModelItem::specificPath() const
 {
     return m_specificPath;
@@ -339,6 +334,16 @@ NetworkManager::ConnectionSettings::ConnectionType NetworkModelItem::type() cons
     return m_type;
 }
 
+QDateTime NetworkModelItem::timestamp() const
+{
+    return m_timestamp;
+}
+
+void NetworkModelItem::setTimestamp(const QDateTime& date)
+{
+    m_timestamp = date;
+}
+
 void NetworkModelItem::setType(NetworkManager::ConnectionSettings::ConnectionType type)
 {
     m_type = type;
@@ -371,16 +376,6 @@ QString NetworkModelItem::vpnState() const
 void NetworkModelItem::setVpnState(NetworkManager::VpnConnection::State state)
 {
     m_vpnState = state;
-}
-
-bool NetworkModelItem::isSlave() const
-{
-    return m_isSlave;
-}
-
-void NetworkModelItem::setSlave(bool slave)
-{
-    m_isSlave = slave;
 }
 
 bool NetworkModelItem::operator==(const NetworkModelItem* item) const

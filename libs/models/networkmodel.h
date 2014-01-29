@@ -56,20 +56,21 @@ public:
         DeviceStateRole,
         ItemTypeRole,
         LastUsedRole,
+        LastUsedDateOnlyRole,
         NameRole,
         SecurityTypeRole,
         SecurityTypeStringRole,
         SectionRole,
         SignalRole,
+        SlaveRole,
         SsidRole,
         SpeedRole,
         SpecificPathRole,
+        TimeStamp,
         TypeRole,
         UuidRole,
         UniRole,
         VpnState,
-        SlaveRole,
-        TimeStamp
     };
 
     int rowCount(const QModelIndex& parent) const;

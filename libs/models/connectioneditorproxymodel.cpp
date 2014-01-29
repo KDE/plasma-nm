@@ -71,7 +71,7 @@ QVariant ConnectionEditorProxyModel::data(const QModelIndex& index, int role) co
 {
     const QModelIndex sourceIndex = sourceModel()->index(index.row(), 0);
     const QString connectionName = sourceModel()->data(sourceIndex, NetworkModel::NameRole).toString();
-    const QString lastUsed = sourceModel()->data(sourceIndex, NetworkModel::LastUsedRole).toString();
+    const QString lastUsed = sourceModel()->data(sourceIndex, NetworkModel::LastUsedDateOnlyRole).toString();
     const bool isActivated = (NetworkManager::ActiveConnection::State) sourceModel()->data(sourceIndex, NetworkModel::ConnectionStateRole).toInt()
                              == NetworkManager::ActiveConnection::Activated;
     const int column = index.column();

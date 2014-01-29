@@ -42,20 +42,21 @@ NetworkModel::NetworkModel(QObject* parent)
     roles[DeviceStateRole] = "DeviceState";
     roles[ItemTypeRole] = "ItemType";
     roles[LastUsedRole] = "LastUsed";
+    roles[LastUsedDateOnlyRole] = "LastUsedDateOnly";
     roles[NameRole] = "Name";
     roles[SectionRole] = "Section";
     roles[SignalRole] = "Signal";
+    roles[SlaveRole] = "Slave";
     roles[SsidRole] = "Ssid";
     roles[SpecificPathRole] = "SpecificPath";
     roles[SpeedRole] = "Speed";
     roles[SecurityTypeRole] = "SecurityType";
     roles[SecurityTypeStringRole] = "SecurityTypeString";
+    roles[TimeStamp] = "TimeStamp";
     roles[TypeRole] = "Type";
     roles[UuidRole] = "Uuid";
     roles[UniRole] = "Uni";
     roles[VpnState] = "VpnState";
-    roles[SlaveRole] = "SlaveRole";
-    roles[TimeStamp] = "TimeStamp";
     setRoleNames(roles);
 
     initialize();
@@ -89,9 +90,9 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
             case ItemTypeRole:
                 return item->itemType();
             case LastUsedRole:
-                return item->lastUsed();
-            case TimeStamp:
-                return item->timestamp();
+                return UiUtils::formatLastUsedDateRelative(item->timestamp());
+            case LastUsedDateOnlyRole:
+                return UiUtils::formatDateRelative(item->timestamp());
             case NameRole:
                 // TODO duplicate items (i.e two wireless cards)??
 //                 if (m_list.returnItems(NetworkItemsList::Name, item->name()).count() > 1) {
@@ -103,6 +104,8 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->sectionType();
             case SignalRole:
                 return item->signal();
+            case SlaveRole:
+                return item->slave();
             case SsidRole:
                 return item->ssid();
             case SpecificPathRole:
@@ -113,6 +116,8 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->securityType();
             case SecurityTypeStringRole:
                 return UiUtils::labelFromWirelessSecurity(item->securityType());
+            case TimeStamp:
+                return item->timestamp();
             case TypeRole:
                 return item->type();
             case UuidRole:
@@ -121,8 +126,6 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->uni();
             case VpnState:
                 return item->vpnState();
-            case SlaveRole:
-                return item->isSlave();
             default:
                 break;
         }
@@ -406,8 +409,8 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
 
                         if (apFound) {
                             item->setConnectionPath(connection->path());
-                            item->setLastUsed(settings->timestamp());
                             item->setName(settings->id());
+                            item->setTimestamp(settings->timestamp());
                             item->setType(settings->connectionType());
                             item->setUuid(settings->uuid());
                             updateItem(item);
@@ -426,11 +429,12 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
     if (!m_list.contains(NetworkItemsList::Connection, connection->path())) {
         NetworkModelItem * item = new NetworkModelItem();
         item->setConnectionPath(connection->path());
-        item->setLastUsed(settings->timestamp());
         item->setName(settings->id());
+        item->setTimestamp(settings->timestamp());
         item->setType(settings->connectionType());
         item->setUuid(settings->uuid());
         item->setSlave(settings->isSlave());
+
 
         if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
             item->setMode(wirelessSetting->mode());
@@ -691,8 +695,9 @@ void NetworkModel::connectionRemoved(const QString& connection)
 
             if (!remove) {
                 item->setConnectionPath(QString());
-                item->setLastUsed(QDateTime());
                 item->setName(item->ssid());
+                item->setSlave(false);
+                item->setTimestamp(QDateTime());
                 item->setUuid(QString());
                 updateItem(item);
             }
@@ -720,8 +725,8 @@ void NetworkModel::connectionUpdated()
         NetworkManager::ConnectionSettings::Ptr settings = connectionPtr->settings();
         foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Connection, connectionPtr->path())) {
             item->setConnectionPath(connectionPtr->path());
-            item->setLastUsed(settings->timestamp());
             item->setName(settings->id());
+            item->setTimestamp(settings->timestamp());
             item->setType(settings->connectionType());
             item->setUuid(settings->uuid());
 

@@ -63,10 +63,6 @@ public:
 
     ItemType itemType() const;
 
-    QString lastUsed() const;
-    QDateTime timestamp() const;
-    void setLastUsed(const QDateTime& lastUsed);
-
     NetworkManager::WirelessSetting::NetworkMode mode() const;
     void setMode(const NetworkManager::WirelessSetting::NetworkMode mode);
 
@@ -77,8 +73,14 @@ public:
 
     QString sectionType() const;
 
+    NetworkManager::Utils::WirelessSecurityType securityType() const;
+    void setSecurityType(NetworkManager::Utils::WirelessSecurityType type);
+
     int signal() const;
     void setSignal(int signal);
+
+    bool slave() const;
+    void setSlave(bool slave);
 
     QString specificPath() const;
     void setSpecificPath(const QString& path);
@@ -89,11 +91,11 @@ public:
     QString ssid() const;
     void setSsid(const QString& ssid);
 
+    QDateTime timestamp() const;
+    void setTimestamp(const QDateTime& date);
+
     NetworkManager::ConnectionSettings::ConnectionType type() const;
     void setType(NetworkManager::ConnectionSettings::ConnectionType type);
-
-    NetworkManager::Utils::WirelessSecurityType securityType() const;
-    void setSecurityType(NetworkManager::Utils::WirelessSecurityType type);
 
     QString uni() const;
 
@@ -102,9 +104,6 @@ public:
 
     QString vpnState() const;
     void setVpnState(NetworkManager::VpnConnection::State state);
-
-    bool isSlave() const;
-    void setSlave(bool slave);
 
     bool operator==(const NetworkModelItem * item) const;
 
@@ -121,18 +120,18 @@ private:
     NetworkManager::Device::State m_deviceState;
     QString m_details;
     QStringList m_detailsList;
-    QDateTime m_lastUsed;
     NetworkManager::WirelessSetting::NetworkMode m_mode;
     QString m_name;
     QString m_nsp;
     NetworkManager::Utils::WirelessSecurityType m_securityType;
     int m_signal;
+    bool m_slave;
     QString m_specificPath;
     QString m_ssid;
+    QDateTime m_timestamp;
     NetworkManager::ConnectionSettings::ConnectionType m_type;
     QString m_uuid;
     NetworkManager::VpnConnection::State m_vpnState;
-    bool m_isSlave;
 };
 
 #endif // PLASMA_NM_MODEL_NETWORK_MODEL_ITEM_H

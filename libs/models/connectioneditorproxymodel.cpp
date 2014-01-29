@@ -98,7 +98,7 @@ QVariant ConnectionEditorProxyModel::data(const QModelIndex& index, int role) co
             return f;
         }
     } else {
-        return sourceModel()->data(sourceIndex, role);
+        return sourceModel()->data(index, role);
     }
 
     return QVariant();
@@ -117,4 +117,3 @@ QModelIndex ConnectionEditorProxyModel::mapToSource(const QModelIndex& proxyInde
 
     return QIdentityProxyModel::mapToSource(proxyIndex);
 }
-

@@ -69,30 +69,37 @@ bool NetworkFilterModel::filterAcceptsRow(int source_row, const QModelIndex& sou
 {
     const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
 
+    // slaves are always filtered-out
     const bool isSlave = sourceModel()->data(index, NetworkModel::SlaveRole).toBool();
     if (isSlave) {
         return false;
     }
 
-    if (m_filterType == NetworkFilterModel::All) {
-        return true;
-    }
-
-    NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
-
-
-    if (m_filterType == NetworkFilterModel::AvailableConnections) {
-        if (itemType == NetworkModelItem::AvailableConnection ||
-            itemType == NetworkModelItem::AvailableAccessPoint) {
+    const QString pattern = filterRegExp().pattern();
+    if (!pattern.isEmpty()) {  // filtering on data (connection name), wildcard-only
+        const QString data = sourceModel()->data(index, Qt::DisplayRole).toString();
+        //qDebug() << "Filtering " << data << "with pattern" << pattern;
+        return data.contains(pattern, Qt::CaseInsensitive);
+    } else {  // filtering on connection type
+        if (m_filterType == NetworkFilterModel::All) {
             return true;
         }
-        return false;
-    } else if (m_filterType == NetworkFilterModel::EditableConnections) {
-        if (itemType == NetworkModelItem::UnavailableConnection ||
-            itemType == NetworkModelItem::AvailableConnection) {
-            return true;
+
+        NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
+
+        if (m_filterType == NetworkFilterModel::AvailableConnections) {
+            if (itemType == NetworkModelItem::AvailableConnection ||
+                    itemType == NetworkModelItem::AvailableAccessPoint) {
+                return true;
+            }
+            return false;
+        } else if (m_filterType == NetworkFilterModel::EditableConnections) {
+            if (itemType == NetworkModelItem::UnavailableConnection ||
+                    itemType == NetworkModelItem::AvailableConnection) {
+                return true;
+            }
+            return false;
         }
-        return false;
     }
 
     return false;

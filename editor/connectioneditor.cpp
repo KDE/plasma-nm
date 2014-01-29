@@ -457,21 +457,21 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
 
 void ConnectionEditor::connectionAdded(const QString& connection)
 {
-     qDebug() << "Connection" << connection << "added";
+    qDebug() << "Connection" << connection << "added";
 
-     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
-     if (!con) {
-         return;
-     }
+    if (!con) {
+        return;
+    }
 
-     if (con->settings()->isSlave())
-         return;
+    if (con->settings()->isSlave())
+        return;
 
-     m_editor->messageWidget->animatedShow();
-     m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
-     m_editor->messageWidget->setText(i18n("Connection %1 has been added", con->name()));
-     QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+    m_editor->messageWidget->animatedShow();
+    m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
+    m_editor->messageWidget->setText(i18n("Connection %1 has been added", con->name()));
+    QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
 }
 
 void ConnectionEditor::connectionRemoved(const QString& connection)

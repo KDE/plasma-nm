@@ -60,6 +60,8 @@ private slots:
 
     void populateTeams();
 
+    void importConfig();
+
 private:
     QString m_uuid;
     Ui::TeamWidget * m_ui;

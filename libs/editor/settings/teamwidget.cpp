@@ -23,6 +23,7 @@
 #include "connectiondetaileditor.h"
 
 #include <QDebug>
+#include <QDesktopServices>
 
 #include <NetworkManagerQt/GenericTypes>
 #include <NetworkManagerQt/Connection>
@@ -31,6 +32,7 @@
 
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KFileDialog>
 
 TeamWidget::TeamWidget(const QString & masterUuid, const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
@@ -57,6 +59,8 @@ TeamWidget::TeamWidget(const QString & masterUuid, const NetworkManager::Setting
     connect(m_menu, SIGNAL(triggered(QAction*)), SLOT(addTeam(QAction*)));
     connect(m_ui->btnEdit, SIGNAL(clicked()), SLOT(editTeam()));
     connect(m_ui->btnDelete, SIGNAL(clicked()), SLOT(deleteTeam()));
+
+    connect(m_ui->btnImport, SIGNAL(clicked()), SLOT(importConfig()));
 
     // teams
     populateTeams();
@@ -195,6 +199,21 @@ void TeamWidget::populateTeams()
             const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
             QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->teams);
             slaveItem->setData(Qt::UserRole, connection->uuid());
+        }
+    }
+}
+
+void TeamWidget::importConfig()
+{
+    const QString filename = KFileDialog::getOpenFileName(QDesktopServices::storageLocation(QDesktopServices::HomeLocation),
+                                                          QLatin1String("text/plain"), this, i18n("Select file to import"));
+    if (!filename.isEmpty()) {
+        //qDebug() << "Importing" << filename;
+        QFile file(filename);
+        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QTextStream stream(&file);
+            m_ui->config->setPlainText(stream.readAll());
+            file.close();
         }
     }
 }

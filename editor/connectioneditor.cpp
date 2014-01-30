@@ -214,68 +214,6 @@ void ConnectionEditor::initializeConnections()
     m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
 }
 
-void ConnectionEditor::insertConnection(const NetworkManager::Connection::Ptr &connection)
-{
-#if 0
-     connect(connection.data(), SIGNAL(updated()), SLOT(connectionUpdated()));
-
-     ConnectionSettings::Ptr settings = connection->settings();
-
-     const QString name = settings->id();
-     QString type = ConnectionSettings::typeAsString(settings->connectionType());
-     if (type == "gsm" || type == "cdma")
-         type = "mobile"; // cdma+gsm meta category
-
-     // Can't continue if name or type are empty
-     if (name.isEmpty() || type.isEmpty()) {
-         return;
-     }
-
-     if (type == "vpn") { // check if the corresponding VPN plugin is installed
-         NetworkManager::VpnSetting::Ptr vpnSetting = connection->settings()->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
-         qDebug() << "CHECKING VPN" << connection->name() << "type:" << vpnSetting->serviceType();
-
-         // get the list of supported VPN service types
-         const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin",
-                                                                           QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()));
-         if (services.isEmpty()) {
-             qDebug() << "VPN" << vpnSetting->serviceType() << "not found, skipping";
-             return;
-         }
-     }
-
-     QStringList actives;
-
-     foreach(const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-         if (active->state() == NetworkManager::ActiveConnection::Activated) {
-             actives << active->connection()->uuid();
-         }
-     }
-
-     const bool active = actives.contains(settings->uuid());
-     const QString lastUsed = UiUtils::formatDateRelative(settings->timestamp());
-
-     QStringList params;
-     params << name;
-     params << lastUsed;
-
-     // Create a root item if this type doesn't exist
-     if (!findTopLevelItem(type)) {
-         qDebug() << "creating toplevel item" << type;
-         (void) new ConnectionTypeItem(m_editor->connectionsWidget, type);
-     }
-
-     QTreeWidgetItem * item = findTopLevelItem(type);
-     ConnectionItem * connectionItem = new ConnectionItem(item, params, active);
-     connectionItem->setData(0, Qt::UserRole, "connection");
-     connectionItem->setData(0, ConnectionItem::ConnectionIdRole, settings->uuid());
-     connectionItem->setData(0, ConnectionItem::ConnectionPathRole, connection->path());
-     connectionItem->setData(1, ConnectionItem::ConnectionLastUsedRole, settings->timestamp());
-
-     m_editor->connectionsWidget->resizeColumnToContents(0);
-#endif
-}
-
 void ConnectionEditor::slotItemClicked(const QModelIndex &index)
 {
     if (!index.isValid())
@@ -474,30 +412,6 @@ void ConnectionEditor::connectionAdded(const QString& connection)
     m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
     m_editor->messageWidget->setText(i18n("Connection %1 has been added", con->name()));
     QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-}
-
-void ConnectionEditor::connectionRemoved(const QString& connection)
-{
-//     QTreeWidgetItemIterator it(m_editor->connectionsWidget);
-//
-//     while (*it) {
-//         if ((*it)->data(0, ConnectionItem::ConnectionPathRole).toString() == connection) {
-//             m_editor->messageWidget->animatedShow();
-//             m_editor->messageWidget->setMessageType(KMessageWidget::Information);
-//             m_editor->messageWidget->setText(i18n("Connection %1 has been removed", (*it)->text(0)));
-//             QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-//             QTreeWidgetItem * parent = (*it)->parent();
-//             delete (*it);
-//             if (!parent->childCount()) {
-//                 delete parent;
-//             }
-//
-//             break;
-//         }
-//         ++it;
-//     }
-
-    qDebug() << "Connection" << connection << "has been removed";
 }
 
 void ConnectionEditor::importVpn()

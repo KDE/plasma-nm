@@ -52,7 +52,6 @@ private Q_SLOTS:
     void editConnection();
     void removeConnection();
     void connectionAdded(const QString & connection);
-    void connectionRemoved(const QString & connection);
 
     void importVpn();
     void exportVpn();
@@ -61,7 +60,6 @@ private:
     Ui::ConnectionEditor * m_editor;
     KActionMenu * m_menu;
 
-    void insertConnection(const NetworkManager::Connection::Ptr &connection);
     void importSecretsFromPlainTextFiles();
     void storeSecrets(const QMap<QString, QMap<QString, QString> > & map);
     QMap<QString, QString> getCorrectMapWithSecrets(const QMap<QString, QString> & map);

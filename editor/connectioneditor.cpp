@@ -28,6 +28,7 @@
 #include "uiutils.h"
 #include "vpnuiplugin.h"
 #include "networkfiltermodel.h"
+#include <networkmodelitem.h>
 
 #include <KActionCollection>
 #include <KLocale>
@@ -54,14 +55,57 @@
 
 using namespace NetworkManager;
 
-ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
-    KXmlGuiWindow(parent, flags),
-    m_editor(new Ui::ConnectionEditor)
+ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
+    : KXmlGuiWindow(parent, flags)
+    , m_editor(new Ui::ConnectionEditor)
+    , m_handler(new Handler(this))
 {
     QWidget * tmp = new QWidget(this);
     m_editor->setupUi(tmp);
     setCentralWidget(tmp);
 
+    m_editor->connectionsWidget->setSortingEnabled(false);
+    m_editor->connectionsWidget->sortByColumn(0, Qt::AscendingOrder);
+    m_editor->connectionsWidget->setSortingEnabled(true);
+    m_editor->connectionsWidget->setContextMenuPolicy(Qt::CustomContextMenu);
+
+    m_editor->messageWidget->hide();
+    m_editor->messageWidget->setCloseButtonVisible(false);
+    m_editor->messageWidget->setWordWrap(true);
+
+    initializeConnections();
+    initializeMenu();
+
+    connect(m_editor->connectionsWidget, SIGNAL(clicked(QModelIndex)),
+            SLOT(slotItemClicked(QModelIndex)));
+    connect(m_editor->connectionsWidget, SIGNAL(doubleClicked(QModelIndex)),
+            SLOT(slotItemDoubleClicked(QModelIndex)));
+    connect(m_editor->connectionsWidget, SIGNAL(customContextMenuRequested(QPoint)),
+            SLOT(slotContextMenuRequested(QPoint)));
+    connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
+            SLOT(addConnection(QAction*)));
+    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
+            SLOT(connectionAdded(QString)));
+
+    KConfig config("kde-nm-connection-editor");
+    KConfigGroup generalGroup = config.group("General");
+
+    if (generalGroup.isValid()) {
+        if (generalGroup.readEntry("FirstStart", true)) {
+            importSecretsFromPlainTextFiles();
+        }
+
+        generalGroup.writeEntry("FirstStart", false);
+    }
+}
+
+ConnectionEditor::~ConnectionEditor()
+{
+    delete m_editor;
+}
+
+void ConnectionEditor::initializeMenu()
+{
     m_menu = new KActionMenu(KIcon("list-add"), i18n("Add"), this);
     m_menu->menu()->setSeparatorsCollapsible(false);
     m_menu->setDelayed(false);
@@ -154,26 +198,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     kAction->setEnabled(false);
     connect(kAction, SIGNAL(triggered()), SLOT(exportVpn()));
 
-    m_editor->connectionsWidget->setSortingEnabled(false);
-    initializeConnections();
-    m_editor->connectionsWidget->sortByColumn(0, Qt::AscendingOrder);
-    m_editor->connectionsWidget->setSortingEnabled(true);
-
-    connect(m_editor->connectionsWidget, SIGNAL(clicked(QModelIndex)),
-            SLOT(slotItemClicked(QModelIndex)));
-    connect(m_editor->connectionsWidget, SIGNAL(doubleClicked(QModelIndex)),
-            SLOT(slotItemDoubleClicked(QModelIndex)));
-    connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
-            SLOT(addConnection(QAction*)));
-    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
-            SLOT(connectionAdded(QString)));
-    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
-            SLOT(connectionRemoved(QString)));
-
-    m_editor->messageWidget->hide();
-    m_editor->messageWidget->setCloseButtonVisible(false);
-    m_editor->messageWidget->setWordWrap(true);
-
     KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
     KStandardAction::quit(this, SLOT(close()), actionCollection());
 
@@ -182,22 +206,101 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     setAutoSaveSettings();
 
     KAcceleratorManager::manage(this);
+}
 
-    KConfig config("kde-nm-connection-editor");
-    KConfigGroup generalGroup = config.group("General");
+void ConnectionEditor::addConnection(QAction* action)
+{
+    qDebug() << "ADDING new connection" << action->data().toUInt();
+    const QString vpnType = action->property("type").toString();
+    qDebug() << "VPN type:" << vpnType;
 
-    if (generalGroup.isValid()) {
-        if (generalGroup.readEntry("FirstStart", true)) {
-            importSecretsFromPlainTextFiles();
+    ConnectionSettings::ConnectionType type = static_cast<ConnectionSettings::ConnectionType>(action->data().toUInt());
+
+    if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
+#if WITH_MODEMMANAGER_SUPPORT
+        QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
+        if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
+            qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
+            QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(wizard.data()->type(), wizard.data()->args(), this);
+            editor->exec();
+
+            if (editor) {
+                editor->deleteLater();
+            }
+        }
+        if (wizard) {
+            wizard.data()->deleteLater();
+        }
+#endif
+    } else {
+        bool shared = false;
+        if (type == ConnectionSettings::Wired || type == ConnectionSettings::Wireless) {
+            shared = action->property("shared").toBool();
         }
 
-        generalGroup.writeEntry("FirstStart", false);
+        QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(type, this, vpnType, shared);
+        editor->exec();
+
+        if (editor) {
+            editor->deleteLater();
+        }
     }
 }
 
-ConnectionEditor::~ConnectionEditor()
+void ConnectionEditor::connectionAdded(const QString& connection)
 {
-    delete m_editor;
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
+
+    if (!con) {
+        return;
+    }
+
+    if (con->settings()->isSlave())
+        return;
+
+    m_editor->messageWidget->animatedShow();
+    m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
+    m_editor->messageWidget->setText(i18n("Connection %1 has been added", con->name()));
+    QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+}
+
+void ConnectionEditor::connectConnection()
+{
+    const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
+
+    if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
+        return;
+    }
+
+    QString connectionPath = currentIndex.data(NetworkModel::ConnectionPathRole).toString();
+    QString devicePath = currentIndex.data(NetworkModel::DevicePathRole).toString();
+    QString specificPath = currentIndex.data(NetworkModel::SpecificPathRole).toString();
+
+    m_handler->activateConnection(connectionPath, devicePath, specificPath);
+}
+
+void ConnectionEditor::disconnectConnection()
+{
+    const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
+
+    if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
+        return;
+    }
+
+    QString connectionPath = currentIndex.data(NetworkModel::ConnectionPathRole).toString();
+    QString devicePath = currentIndex.data(NetworkModel::DevicePathRole).toString();
+    m_handler->deactivateConnection(connectionPath, devicePath);
+}
+
+void ConnectionEditor::editConnection()
+{
+    const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
+
+    if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
+        return;
+    }
+
+    slotItemDoubleClicked(currentIndex);
 }
 
 void ConnectionEditor::initializeConnections()
@@ -214,105 +317,13 @@ void ConnectionEditor::initializeConnections()
     m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
 }
 
-void ConnectionEditor::slotItemClicked(const QModelIndex &index)
-{
-    if (!index.isValid())
-        return;
-
-    qDebug() << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
-
-    if (index.parent().isValid()) { // category
-        actionCollection()->action("edit_connection")->setEnabled(true);
-        actionCollection()->action("delete_connection")->setEnabled(true);
-        actionCollection()->action("export_vpn")->setEnabled(true);
-    } else {                       //connection
-        actionCollection()->action("edit_connection")->setEnabled(true);
-        actionCollection()->action("delete_connection")->setEnabled(true);
-        actionCollection()->action("export_vpn")->setEnabled(true);
-    }
-}
-
-void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
-{
-    if (!index.isValid())
-        return;
-
-    qDebug() << "Double clicked item" << index.data(NetworkModel::UuidRole).toString();
-
-    if (index.parent().isValid()) { // category
-        qDebug() << "double clicked on the root item which is not editable";
-        return;
-    }
-
-    Connection::Ptr connection = NetworkManager::findConnectionByUuid(index.data(NetworkModel::UuidRole).toString());
-
-    if (!connection) {
-        return;
-    }
-
-    QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(connection->settings(), this);
-    editor->exec();
-
-    if (editor) {
-        editor->deleteLater();
-    }
-}
-
-void ConnectionEditor::addConnection(QAction* action)
-{
-     qDebug() << "ADDING new connection" << action->data().toUInt();
-     const QString vpnType = action->property("type").toString();
-     qDebug() << "VPN type:" << vpnType;
-
-     ConnectionSettings::ConnectionType type = static_cast<ConnectionSettings::ConnectionType>(action->data().toUInt());
-
-     if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
-#if WITH_MODEMMANAGER_SUPPORT
-         QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
-         if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
-             qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
-             QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(wizard.data()->type(), wizard.data()->args(), this);
-             editor->exec();
-
-             if (editor) {
-                 editor->deleteLater();
-             }
-         }
-         if (wizard) {
-             wizard.data()->deleteLater();
-         }
-#endif
-     } else {
-         bool shared = false;
-         if (type == ConnectionSettings::Wired || type == ConnectionSettings::Wireless) {
-             shared = action->property("shared").toBool();
-         }
-
-         QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(type, this, vpnType, shared);
-         editor->exec();
-
-         if (editor) {
-             editor->deleteLater();
-         }
-     }
-}
-
-void ConnectionEditor::editConnection()
-{
-    const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
-
-    if (!currentIndex.isValid() || currentIndex.parent().isValid())
-        return;
-
-    slotItemDoubleClicked(currentIndex);
-}
-
 void ConnectionEditor::removeConnection()
 {
     const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
 
-    if (!currentIndex.isValid() || currentIndex.parent().isValid())
+    if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
         return;
+    }
 
     Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentIndex.data(NetworkModel::UuidRole).toString());
 
@@ -331,6 +342,60 @@ void ConnectionEditor::removeConnection()
         }
         connection->remove();
     }
+}
+
+void ConnectionEditor::slotContextMenuRequested(const QPoint& point)
+{
+    QMenu * menu = new QMenu(this);
+
+    QModelIndex index = m_editor->connectionsWidget->currentIndex();
+    bool isActive = (NetworkManager::ActiveConnection::State)index.data(NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    bool isAvailable = (NetworkModelItem::ItemType)index.data(NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::AvailableConnection;
+
+    if (isAvailable && !isActive) {
+        menu->addAction(KIcon("user-online"), i18n("Connect"), this, SLOT(connectConnection()));
+    } else if (isAvailable && isActive) {
+        menu->addAction(KIcon("user-offline"), i18n("Disconnect"), this, SLOT(disconnectConnection()));
+    }
+    menu->addAction(KIcon("configure"), i18n("Edit"), this, SLOT(editConnection()));
+    menu->addAction(KIcon("edit-delete"), i18n("Delete"), this, SLOT(removeConnection()));
+    menu->exec(QCursor::pos());
+}
+
+void ConnectionEditor::slotItemClicked(const QModelIndex &index)
+{
+    if (!index.isValid()) {
+        return;
+    }
+
+    qDebug() << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
+
+    if (index.parent().isValid()) { // category
+        actionCollection()->action("edit_connection")->setEnabled(true);
+        actionCollection()->action("delete_connection")->setEnabled(true);
+        actionCollection()->action("export_vpn")->setEnabled(true);
+    } else {                       //connection
+        actionCollection()->action("edit_connection")->setEnabled(true);
+        actionCollection()->action("delete_connection")->setEnabled(true);
+        actionCollection()->action("export_vpn")->setEnabled(true);
+    }
+}
+
+void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
+{
+    if (!index.isValid()) {
+        return;
+    }
+
+    qDebug() << "Double clicked item" << index.data(NetworkModel::UuidRole).toString();
+
+    if (index.parent().isValid()) { // category
+        qDebug() << "double clicked on the root item which is not editable";
+        return;
+    }
+
+    QString uuid = index.data(NetworkModel::UuidRole).toString();
+    m_handler->editConnection(uuid);
 }
 
 void ConnectionEditor::importSecretsFromPlainTextFiles()
@@ -395,25 +460,6 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
     }
 }
 
-void ConnectionEditor::connectionAdded(const QString& connection)
-{
-    qDebug() << "Connection" << connection << "added";
-
-    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
-
-    if (!con) {
-        return;
-    }
-
-    if (con->settings()->isSlave())
-        return;
-
-    m_editor->messageWidget->animatedShow();
-    m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
-    m_editor->messageWidget->setText(i18n("Connection %1 has been added", con->name()));
-    QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-}
-
 void ConnectionEditor::importVpn()
 {
     // get the list of supported extensions
@@ -471,12 +517,14 @@ void ConnectionEditor::exportVpn()
 {
     const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
 
-    if (!currentIndex.isValid() || currentIndex.parent().isValid())
+    if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
         return;
+    }
 
     Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentIndex.data(NetworkModel::UuidRole).toString());
-    if (!connection)
+    if (!connection) {
         return;
+    }
 
     NetworkManager::ConnectionSettings::Ptr connSettings = connection->settings();
 

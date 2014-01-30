@@ -6,6 +6,7 @@ set(plasmanetworkmanagement-internal_SRCS
     models/networkmodelitem.cpp
     models/networksortmodel.cpp
 
+    handler.cpp
     uiutils.cpp
 )
 

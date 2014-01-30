@@ -23,7 +23,9 @@
 
 #include <NetworkManagerQt/Connection>
 
-class Handler : public QObject
+#include "plasmanm_export.h"
+
+class PLASMA_NM_EXPORT Handler : public QObject
 {
 Q_OBJECT
 

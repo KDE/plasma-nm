@@ -45,11 +45,11 @@ if (WITH_MODEMMANAGER_SUPPORT)
         mobileproviders.cpp)
 endif()
 
-# if (${NETWORKMANAGERQT_VERSION} VERSION_GREATER 0.9.8.9)
-# set(plasmanetworkmanagement_libeditor_SRCS
-#     ${plasmanetworkmanagement_libeditor_SRCS}
-#     settings/teamwidget.cpp)
-# endif()
+if (${NETWORKMANAGERQT_VERSION} VERSION_GREATER 0.9.8.9)
+set(plasmanetworkmanagement_libeditor_SRCS
+    ${plasmanetworkmanagement_libeditor_SRCS}
+    settings/teamwidget.cpp)
+endif()
 
 kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
     settings/ui/802-1x.ui

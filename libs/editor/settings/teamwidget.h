@@ -25,6 +25,8 @@
 #include <QMenu>
 #include <QListWidgetItem>
 
+#include "settingwidget.h"
+
 #include <NetworkManagerQt/TeamSetting>
 
 #include "plasmanm_export.h"

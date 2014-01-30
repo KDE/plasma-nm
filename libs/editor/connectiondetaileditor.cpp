@@ -39,9 +39,9 @@
 #include "settings/bridgewidget.h"
 #include "settings/vlanwidget.h"
 #include "settings/wimaxwidget.h"
-// #if NM_CHECK_VERSION(0, 9, 9)
-// #include "settings/teamwidget.h"
-// #endif
+#if NM_CHECK_VERSION(0, 9, 9)
+#include "settings/teamwidget.h"
+#endif
 #include "vpnuiplugin.h"
 
 #include <QDebug>
@@ -315,11 +315,11 @@ void ConnectionDetailEditor::initTabs()
     } else if (type == NetworkManager::ConnectionSettings::Vlan) { // Vlan
         VlanWidget * vlanWidget = new VlanWidget(m_connection->setting(NetworkManager::Setting::Vlan), this);
         m_ui->tabWidget->addTab(vlanWidget, i18n("Vlan"));
-// #if NM_CHECK_VERSION(0, 9, 9)
-//     } else if (type == NetworkManager::ConnectionSettings::Team) { // Team
-//         TeamWidget * teamWidget = new TeamWidget(uuid, m_connection->setting(NetworkManager::Setting::Team), this);
-//         m_ui->tabWidget->addTab(teamWidget, i18n("Team"));
-// #endif
+#if NM_CHECK_VERSION(0, 9, 9)
+    } else if (type == NetworkManager::ConnectionSettings::Team) { // Team
+        TeamWidget * teamWidget = new TeamWidget(uuid, m_connection->setting(NetworkManager::Setting::Team), this);
+        m_ui->tabWidget->addTab(teamWidget, i18n("Team"));
+#endif
     } else if (type == NetworkManager::ConnectionSettings::Wimax) { // Wimax
         WimaxWidget * wimaxWidget = new WimaxWidget(m_connection->setting(NetworkManager::Setting::Wimax), this);
         m_ui->tabWidget->addTab(wimaxWidget, i18n("Wimax"));
@@ -370,9 +370,9 @@ void ConnectionDetailEditor::initTabs()
          || type == ConnectionSettings::Wireless
          || type == ConnectionSettings::Infiniband
          || type == ConnectionSettings::Wimax
-//      #if NM_CHECK_VERSION(0, 9, 9)
-//          || type == ConnectionSettings::Team
-//      #endif
+     #if NM_CHECK_VERSION(0, 9, 9)
+         || type == ConnectionSettings::Team
+     #endif
          || type == ConnectionSettings::Bond
          || type == ConnectionSettings::Bridge
          || type == ConnectionSettings::Vlan) && !isSlave()) {

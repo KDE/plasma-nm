@@ -76,7 +76,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     initializeConnections();
     initializeMenu();
 
-    connect(m_editor->connectionsWidget, SIGNAL(clicked(QModelIndex)),
+    connect(m_editor->connectionsWidget, SIGNAL(pressed(QModelIndex)),
             SLOT(slotItemClicked(QModelIndex)));
     connect(m_editor->connectionsWidget, SIGNAL(doubleClicked(QModelIndex)),
             SLOT(slotItemDoubleClicked(QModelIndex)));
@@ -344,21 +344,21 @@ void ConnectionEditor::removeConnection()
     }
 }
 
-void ConnectionEditor::slotContextMenuRequested(const QPoint& point)
+void ConnectionEditor::slotContextMenuRequested(const QPoint&)
 {
     QMenu * menu = new QMenu(this);
 
     QModelIndex index = m_editor->connectionsWidget->currentIndex();
-    bool isActive = (NetworkManager::ActiveConnection::State)index.data(NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
-    bool isAvailable = (NetworkModelItem::ItemType)index.data(NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::AvailableConnection;
+    const bool isActive = (NetworkManager::ActiveConnection::State)index.data(NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const bool isAvailable = (NetworkModelItem::ItemType)index.data(NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::AvailableConnection;
 
     if (isAvailable && !isActive) {
         menu->addAction(KIcon("user-online"), i18n("Connect"), this, SLOT(connectConnection()));
     } else if (isAvailable && isActive) {
         menu->addAction(KIcon("user-offline"), i18n("Disconnect"), this, SLOT(disconnectConnection()));
     }
-    menu->addAction(KIcon("configure"), i18n("Edit"), this, SLOT(editConnection()));
-    menu->addAction(KIcon("edit-delete"), i18n("Delete"), this, SLOT(removeConnection()));
+    menu->addAction(actionCollection()->action("edit_connection"));
+    menu->addAction(actionCollection()->action("delete_connection"));
     menu->exec(QCursor::pos());
 }
 
@@ -394,7 +394,7 @@ void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
         return;
     }
 
-    QString uuid = index.data(NetworkModel::UuidRole).toString();
+    const QString uuid = index.data(NetworkModel::UuidRole).toString();
     m_handler->editConnection(uuid);
 }
 

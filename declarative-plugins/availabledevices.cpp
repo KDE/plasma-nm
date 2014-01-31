@@ -93,6 +93,12 @@ void AvailableDevices::deviceAdded(const QString& dev)
         } else if (device->type() == NetworkManager::Device::Wimax && !m_wimaxDeviceAvailable) {
             m_wimaxDeviceAvailable = true;
             Q_EMIT wimaxDeviceAvailableChanged(true);
+        } else if (device->type() == NetworkManager::Device::Ethernet && !m_wiredDeviceAvailable) {
+            m_wiredDeviceAvailable = true;
+            Q_EMIT wiredDeviceAvailableChanged(true);
+        } else if (device->type() == NetworkManager::Device::Bluetooth && !m_bluetoothDeviceAvailable) {
+            m_bluetoothDeviceAvailable = true;
+            Q_EMIT bluetoothDeviceAvailableChanged(true);
         }
     }
 }

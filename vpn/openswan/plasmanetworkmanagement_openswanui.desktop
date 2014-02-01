@@ -37,6 +37,7 @@ Name[uk]=OpenSwan
 Name[x-test]=xxOpenSwanxx
 Name[zh_CN]=OpenSwan
 Comment=OpenSwan Plugin
+Comment[bs]=OpenSwan dodatak
 Comment[ca]=Connector d'OpenSwan
 Comment[cs]=Modul OpenSwan
 Comment[da]=OpenSwan-plugin

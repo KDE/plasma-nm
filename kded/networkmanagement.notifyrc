@@ -1,6 +1,7 @@
 [Global]
 IconName=applications-internet
 Name=networkmanagement
+Name[bs]=networkmanagement
 Name[ca]=Gestió de la xarxa
 Name[cs]=networkmanagement
 Name[da]=netværkshåndtering
@@ -47,6 +48,7 @@ Comment[zh_CN]=提示网络错误
 
 [Event/DeviceFailed]
 Name=Device failed to activate
+Name[bs]=Uređaj se nije uspio aktivirati
 Name[ca]=El dispositiu ha fallat en activar-se
 Name[cs]=Zařízení nelze aktivovat
 Name[da]=Enheden kunne ikke aktivere
@@ -73,6 +75,7 @@ Action=Popup
 
 [Event/AcStateChanged]
 Name=Active connection state changed
+Name[bs]=Aktivno stanje konekcije je promijenjeno
 Name[ca]=L'estat de la connexió activa ha canviat
 Name[cs]=Stav aktivního spojení byl změněn
 Name[da]=Tilstand ændret for aktiv forbindelse
@@ -98,6 +101,7 @@ Action=Popup
 
 [Event/VpnStateChanged]
 Name=VPN connection state changed
+Name[bs]=VPN stanje konekcije je promijenjeno
 Name[ca]=L'estat de la connexió VPN ha canviat
 Name[cs]=Stav spojení VPN byl změněn
 Name[da]=Tilstand ændret for VPN-forbindelse

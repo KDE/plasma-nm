@@ -159,7 +159,7 @@ void IpV6RoutesWidget::addRoute()
     item << new QStandardItem << new QStandardItem << new QStandardItem;
     d->model.appendRow(item);
 
-    int rowCount = d->model.rowCount();
+    const int rowCount = d->model.rowCount();
     if (rowCount > 0) {
         d->ui.tableViewAddresses->selectRow(rowCount - 1);
 
@@ -197,7 +197,7 @@ void IpV6RoutesWidget::tableViewItemChanged(QStandardItem *item)
         return;
     }
 
-    int column = item->column();
+    const int column = item->column();
     if (column == 0) { // ip
         int row = item->row();
 

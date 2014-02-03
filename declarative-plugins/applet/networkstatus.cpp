@@ -76,31 +76,38 @@ void NetworkStatus::defaultChanged()
 
 void NetworkStatus::statusChanged(NetworkManager::Status status)
 {
-    if (status == NetworkManager::Connected ||
-        status == NetworkManager::ConnectedLinkLocal ||
-        status == NetworkManager::ConnectedSiteOnly) {
+    switch (status) {
+        case NetworkManager::ConnectedLinkLocal:
+            m_networkStatus = i18n("Connected");
+            break;
+        case NetworkManager::ConnectedSiteOnly:
+            m_networkStatus = i18n("Connected");
+            break;
+        case NetworkManager::Connected:
+            m_networkStatus = i18n("Connected");
+            break;
+        case NetworkManager::Asleep:
+            m_networkStatus = i18n("Inactive");
+            break;
+        case NetworkManager::Disconnected:
+            m_networkStatus = i18n("Disconnected");
+            break;
+        case NetworkManager::Disconnecting:
+            m_networkStatus = i18n("Disconnecting");
+            break;
+        case NetworkManager::Connecting:
+            m_networkStatus = i18n("Connecting");
+            break;
+        default:
+            m_networkStatus = checkUnknownReason();
+            break;
+    }
 
-        m_networkStatus = i18n("Connected");
+    if (status == NetworkManager::ConnectedLinkLocal ||
+        status == NetworkManager::ConnectedSiteOnly ||
+        status == NetworkManager::Connected) {
         changeActiveConnections();
     } else {
-        switch (status) {
-            case NetworkManager::Asleep:
-                m_networkStatus = i18n("Inactive");
-                break;
-            case NetworkManager::Disconnected:
-                m_networkStatus = i18n("Disconnected");
-                break;
-            case NetworkManager::Disconnecting:
-                m_networkStatus = i18n("Disconnecting");
-                break;
-            case NetworkManager::Connecting:
-                m_networkStatus = i18n("Connecting");
-                break;
-            default:
-                m_networkStatus = checkUnknownReason();
-                break;
-        }
-
         m_activeConnections = m_networkStatus;
         Q_EMIT activeConnectionsChanged(m_activeConnections);
     }

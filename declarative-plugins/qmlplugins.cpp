@@ -39,25 +39,25 @@
 
 void QmlPlugins::registerTypes(const char* uri)
 {
-    // @uri org.kde.plasmanetworkmanagement.AvailableDevices
+    // @uri org.kde.networkmanagement.AvailableDevices
     qmlRegisterType<AvailableDevices>(uri, 0, 1, "AvailableDevices");
-    // @uri org.kde.plasmanetworkmanagement.ConnectionIcon
+    // @uri org.kde.networkmanagement.ConnectionIcon
     qmlRegisterType<ConnectionIcon>(uri, 0, 1, "ConnectionIcon");
-    // @uri org.kde.plasmanetworkmanagement.EnabledConnections
+    // @uri org.kde.networkmanagement.EnabledConnections
     qmlRegisterType<EnabledConnections>(uri, 0, 1, "EnabledConnections");
-    // @uri org.kde.plasmanetworkmanagement.Enums
+    // @uri org.kde.networkmanagement.Enums
     qmlRegisterUncreatableType<Enums>(uri, 0, 1, "Enums", "You cannot create Enums on yourself");
-    // @uri org.kde.plasmanetworkmanagement.GlobalConfig
+    // @uri org.kde.networkmanagement.GlobalConfig
     qmlRegisterType<GlobalConfig>(uri, 0, 1, "GlobalConfig");
-    // @uri org.kde.plasmanetworkmanagement.NetworkStatus
+    // @uri org.kde.networkmanagement.NetworkStatus
     qmlRegisterType<NetworkStatus>(uri, 0, 1, "NetworkStatus");
-    // @uri org.kde.plasmanetworkmanagement.Handler
+    // @uri org.kde.networkmanagement.Handler
     qmlRegisterType<Handler>(uri, 0, 1, "Handler");
-    // @uri org.kde.plasmanetworkmanagement.Model
+    // @uri org.kde.networkmanagement.Model
     qmlRegisterType<Model>(uri, 0, 1, "Model");
-    // @uri org.kde.plasmanetworkmanagement.SortModel
+    // @uri org.kde.networkmanagement.SortModel
     qmlRegisterType<SortModel>(uri, 0, 1, "SortModel");
-    // @uri org.kde.plasmanetworkmanagement.TrafficMonitor
+    // @uri org.kde.networkmanagement.TrafficMonitor
     qmlRegisterType<TrafficMonitor>(uri, 0, 1, "TrafficMonitor");
 }
 

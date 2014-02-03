@@ -20,6 +20,7 @@
 
 #include "model.h"
 #include "modelitem.h"
+#include "uiutils.h"
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/WiredDevice>
@@ -36,14 +37,16 @@ Model::Model(QObject* parent)
     roles[ConnectionPathRole] = "itemConnectionPath";
     roles[ConnectionIconRole] = "itemConnectionIcon";
     roles[ConnectionDetailsRole] = "itemDetails";
-    roles[DeviceNameRole] = "itemDeviceName";
     roles[DevicePathRole] = "itemDevicePath";
+    roles[LastUsedRole] = "itemLastUsed";
     roles[NameRole] = "itemName";
-    roles[SecurityTypeRole] = "itemSecurityType";
     roles[SectionRole] = "itemSection";
     roles[SignalRole] = "itemSignal";
     roles[SsidRole] = "itemSsid";
     roles[SpecificPathRole] = "itemSpecificPath";
+    roles[SpeedRole] = "itemSpeed";
+    roles[SecurityTypeRole] = "itemSecurityType";
+    roles[SecurityTypeStringRole] = "itemSecurityString";
     roles[UuidRole] = "itemUuid";
     roles[UniRole] = "itemUni";
     roles[TypeRole] = "itemType";
@@ -63,6 +66,8 @@ Model::Model(QObject* parent)
             SLOT(addWimaxNsp(QString,QString)));
     connect(m_monitor, SIGNAL(addWirelessNetwork(QString,QString)),
             SLOT(addWirelessNetwork(QString,QString)));
+    connect(m_monitor, SIGNAL(bitrateChanged(int,QString)),
+            SLOT(bitrateChanged(int, QString)));
 #if WITH_MODEMMANAGER_SUPPORT
     connect(m_monitor, SIGNAL(modemAccessTechnologyChanged(QString)),
             SLOT(modemPropertiesChanged(QString)));
@@ -125,10 +130,10 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 return item->icon();
             case ConnectionDetailsRole:
                 return item->details();
-            case DeviceNameRole:
-                return item->deviceName();
             case DevicePathRole:
                 return item->devicePath();
+            case LastUsedRole:
+                return item->lastUsed();
             case NameRole:
                 if (m_items.itemsByName(item->name()).count() > 1) {
                     return item->originalName();
@@ -137,6 +142,8 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 }
             case SecurityTypeRole:
                 return item->securityType();
+            case SecurityTypeStringRole:
+                return UiUtils::labelFromWirelessSecurity(item->securityType());
             case SectionRole:
                 return item->sectionType();
             case SignalRole:
@@ -145,6 +152,8 @@ QVariant Model::data(const QModelIndex& index, int role) const
                 return item->ssid();
             case SpecificPathRole:
                 return item->specificPath();
+            case SpeedRole:
+                return item->speed();
             case UuidRole:
                 return item->uuid();
             case UniRole:
@@ -260,6 +269,17 @@ void Model::addWirelessNetwork(const QString& ssid, const QString& device)
     insertItem(item);
 }
 
+void Model::bitrateChanged(int bitrate, const QString& device)
+{
+    foreach (ModelItem * item, m_items.itemsByDevice(device)) {
+        item->updateBitrate(bitrate);
+
+        if (updateItem(item)) {
+//             NMModelDebug() << "Item " << item->name() << " has been changed (bitrate changed)";
+        }
+    }
+}
+
 void Model::connectionUpdated(const QString& connection)
 {
     foreach (ModelItem * item, m_items.itemsByConnection(connection)) {
@@ -286,7 +306,7 @@ void Model::modemSignalQualityChanged(uint signal, const QString& modem)
 {
     qDebug() << "Modem signal quality changed";
     foreach (ModelItem * item, m_items.itemsByDevice(modem)) {
-        item->updateSignalStrenght(signal);
+        item->updateSignalStrength(signal);
 
         if (updateItem(item)) {
             //NMModelDebug() << "Item " << item->name() << " has been changed (modem signal changed)";
@@ -425,7 +445,7 @@ void Model::removeWirelessNetworks()
 void Model::wimaxNspSignalChanged(const QString& nsp, int strength)
 {
     foreach (ModelItem * item, m_items.itemsByNsp(nsp)) {
-        item->updateSignalStrenght(strength);
+        item->updateSignalStrength(strength);
 
         if (updateItem(item)) {
             NMModelDebug() << "Item " << item->name() << " has been changed (wimax signal changed)";
@@ -436,7 +456,7 @@ void Model::wimaxNspSignalChanged(const QString& nsp, int strength)
 void Model::wirelessNetworkSignalChanged(const QString& ssid, int strength)
 {
     foreach (ModelItem * item, m_items.itemsBySsid(ssid)) {
-        item->updateSignalStrenght(strength);
+        item->updateSignalStrength(strength);
 
         if (updateItem(item)) {
             //NMModelDebug() << "Item " << item->name() << " has been changed (wireless signal changed)";

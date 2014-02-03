@@ -34,7 +34,7 @@ SimpleIpV6AddressValidator::~SimpleIpV6AddressValidator()
 
 QValidator::State SimpleIpV6AddressValidator::validate(QString &address, int &pos) const
 {
-    if(QValidator::Invalid == checkWithInputMask(address, pos)) {
+    if (QValidator::Invalid == checkWithInputMask(address, pos)) {
         return QValidator::Invalid;
     }
 
@@ -50,10 +50,9 @@ QValidator::State SimpleIpV6AddressValidator::checkWithInputMask(QString &value,
 
 QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value) const
 {
-    QStringList addrParts = value.split(QLatin1Char(':'));
+    const QStringList addrParts = value.split(QLatin1Char(':'));
     int number = addrParts.size();
-    if (number > 8)
-    {
+    if (number > 8) {
         return QValidator::Invalid;
     }
 
@@ -79,6 +78,7 @@ QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value)
             return QValidator::Invalid;
         }
     }
+
     if (number < 8 && !emptypresent)
         return QValidator::Intermediate;
 

@@ -24,124 +24,79 @@ import org.kde.plasma.core 0.1 as PlasmaCore
 import org.kde.networkmanagement 0.1 as PlasmaNM
 
 Item {
-    id: toolBar;
+    id: toolbar;
 
-    property bool expanded: false;
+    height: wifiSwitchButton.height;
 
-    height: sizes.itemSize;
-
-    PlasmaNM.NetworkStatus {
-        id: networkStatus;
+    PlasmaNM.EnabledConnections {
+        id: enabledConnections;
     }
 
-    Item {
-        id: toolbarLine;
+    PlasmaNM.AvailableDevices {
+        id: availableDevices;
+    }
 
-        height: sizes.itemSize;
+    Row {
         anchors {
-            left: parent.left;
-            right: parent.right;
             bottom: parent.bottom;
+            left: parent.left;
+            top: parent.top;
         }
+        spacing: 3;
 
-        PlasmaCore.IconItem {
-            id: statusIcon
+        SwitchButton {
+            id: wifiSwitchButton;
 
-            height: sizes.iconSize;
-            width: height;
-            anchors {
-                left: parent.left;
-                verticalCenter: parent.verticalCenter;
-                leftMargin: padding.margins.left;
-            }
-            source: (networkStatus.networkStatus == i18n("Connected") || networkStatus.networkStatus == "Connected") ? "user-online" : "user-offline";
-        }
-
-        PlasmaComponents.Label {
-            id: statusLabel;
-
-            height: sizes.itemSize;
-            anchors {
-                left: statusIcon.right;
-                verticalCenter: parent.verticalCenter;
-                leftMargin: padding.margins.left;
-            }
-            elide: Text.ElideRight;
-            text: networkStatus.networkStatus;
-        }
-
-        PlasmaCore.IconItem {
-            id: toolButton;
-
-            height: sizes.iconSize;
-            width: height;
-            anchors {
-                right: parent.right;
-                verticalCenter: parent.verticalCenter;
-                rightMargin: padding.margins.right;
-            }
-            source: "configure";
-        }
-
-        MouseArea {
-            id: toolbarMouseArea;
-
-            anchors { fill: parent }
+            checked: enabledConnections.wirelessEnabled;
+            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && enabledConnections.networkingEnabled;
+            icon: "network-wireless-100";
 
             onClicked: {
-                hideOrShowOptions();
+                if (enabled) {
+                    handler.enableWireless(checked);
+                }
+            }
+        }
+
+        SwitchButton {
+            id: wwanSwitchButton;
+
+            checked: enabledConnections.wwanEnabled;
+            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && enabledConnections.networkingEnabled;
+            icon: "network-mobile-100";
+
+            onClicked: {
+                if (enabled) {
+                    handler.enableWwan(checked);
+                }
+            }
+        }
+
+        SwitchButton {
+            id: planeModeSwitchButton;
+
+            checked: !enabledConnections.networkingEnabled;
+            icon: "network-unavailable";
+
+            onClicked: {
+                handler.enableNetworking(!checked);
             }
         }
     }
 
-    OptionsWidget {
-        id: options;
+    PlasmaComponents.Button {
+        id: openEditorButton
 
         anchors {
-            left: parent.left;
+            bottom: parent.bottom;
             right: parent.right;
             top: parent.top;
         }
-        visible: false;
 
-        onOpenEditor: {
-            if (mainWindow.autoHideOptions) {
-                expanded = false;
-            }
-        }
-    }
+        iconSource: "configure";
 
-    states: [
-        State {
-            name: "Hidden";
-            when: !expanded;
-        },
-
-        State {
-            name: "Expanded";
-            when: expanded;
-            PropertyChanges { target: toolBar; height: options.childrenRect.height + sizes.itemSize + padding.margins.top }
-            PropertyChanges { target: options; visible: true }
-        }
-    ]
-
-    transitions: Transition {
-        NumberAnimation { duration: 300; properties: "height, visible" }
-    }
-
-    function hideOrShowOptions() {
-        if (!expanded) {
-            expanded = true;
-            plasmoid.writeConfig("optionsExpanded", "expanded");
-        } else {
-            expanded = false;
-            plasmoid.writeConfig("optionsExpanded", "hidden");
-        }
-    }
-
-    Component.onCompleted: {
-        if (plasmoid.readConfig("optionsExpanded") == "expanded") {
-            expanded = true;
+        onClicked: {
+            handler.openEditor();
         }
     }
 }

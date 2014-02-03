@@ -87,7 +87,7 @@ void Handler::activateConnection(const QString& connection, const QString& devic
     NetworkManager::activateConnection(connection, device, specificObject);
 }
 
-void Handler::addAndActivateConnection(const QString& device, const QString& specificObject, const QString& password, bool autoConnect)
+void Handler::addAndActivateConnection(const QString& device, const QString& specificObject, const QString& password)
 {
     NetworkManager::AccessPoint::Ptr ap;
     NetworkManager::WirelessDevice::Ptr wifiDev;
@@ -108,7 +108,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     NetworkManager::ConnectionSettings::Ptr settings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(NetworkManager::ConnectionSettings::Wireless));
     settings->setId(ap->ssid());
     settings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
-    settings->setAutoconnect(autoConnect);
+    settings->setAutoconnect(true);
     settings->addToPermissions(KUser().loginName(), QString());
 
     NetworkManager::WirelessSetting::Ptr wifiSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
@@ -259,6 +259,17 @@ void Handler::openEditor()
     KProcess::startDetached("kde-nm-connection-editor");
 }
 
+void Handler::requestScan()
+{
+    foreach (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
+        if (device->type() == NetworkManager::Device::Wifi) {
+            NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+            if (wifiDevice) {
+                wifiDevice->requestScan();
+            }
+        }
+    }
+}
 
 void Handler::editDialogAccepted()
 {

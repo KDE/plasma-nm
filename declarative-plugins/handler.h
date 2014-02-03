@@ -49,7 +49,7 @@ public Q_SLOTS:
      * Works automatically for wireless connections with WEP/WPA security, for wireless connections with WPA/WPA
      * it will open the connection editor for advanced configuration.
      * */
-    void addAndActivateConnection(const QString & device, const QString & specificParameter, const QString & password = QString(), bool autoConnect = false);
+    void addAndActivateConnection(const QString & device, const QString & specificParameter, const QString & password = QString());
     /**
      * Deactivates given connection
      * @connection - d-bus path of the connection you want to deactivate
@@ -75,6 +75,7 @@ public Q_SLOTS:
      */
     void removeConnection(const QString & connection);
     void openEditor();
+    void requestScan();
 
 private Q_SLOTS:
     void editDialogAccepted();

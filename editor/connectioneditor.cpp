@@ -26,6 +26,7 @@
 #include "connectiondetaileditor.h"
 #include "mobileconnectionwizard.h"
 #include "vpnuiplugin.h"
+#include "uiutils.h"
 
 #include <QTreeWidgetItem>
 
@@ -254,7 +255,7 @@ void ConnectionEditor::insertConnection(const NetworkManager::Connection::Ptr &c
     }
 
     const bool active = actives.contains(settings->uuid());
-    const QString lastUsed = formatDateRelative(settings->timestamp());
+    const QString lastUsed = UiUtils::formatDateRelative(settings->timestamp());
 
     QStringList params;
     params << name;
@@ -274,41 +275,6 @@ void ConnectionEditor::insertConnection(const NetworkManager::Connection::Ptr &c
     connectionItem->setData(1, ConnectionItem::ConnectionLastUsedRole, settings->timestamp());
 
     m_editor->connectionsWidget->resizeColumnToContents(0);
-}
-
-
-QString ConnectionEditor::formatDateRelative(const QDateTime & lastUsed) const
-{
-    QString lastUsedText;
-    if (lastUsed.isValid()) {
-        const QDateTime now = QDateTime::currentDateTime();
-        if (lastUsed.daysTo(now) == 0 ) {
-            int secondsAgo = lastUsed.secsTo(now);
-            if (secondsAgo < (60 * 60 )) {
-                int minutesAgo = secondsAgo / 60;
-                lastUsedText = i18ncp(
-                                   "Label for last used time for a network connection used in the last hour, as the number of minutes since usage",
-                                   "One minute ago",
-                                   "%1 minutes ago",
-                                   minutesAgo);
-            } else {
-                int hoursAgo = secondsAgo / (60 * 60);
-                lastUsedText = i18ncp(
-                                   "Label for last used time for a network connection used in the last day, as the number of hours since usage",
-                                   "One hour ago",
-                                   "%1 hours ago",
-                                   hoursAgo);
-            }
-        } else if (lastUsed.daysTo(now) == 1) {
-            lastUsedText = i18nc("Label for last used time for a network connection used the previous day", "Yesterday");
-        } else {
-            lastUsedText = KGlobal::locale()->formatDate(lastUsed.date(), KLocale::ShortDate);
-        }
-    } else {
-        lastUsedText =  i18nc("Label for last used time for a "
-                              "network connection that has never been used", "Never");
-    }
-    return lastUsedText;
 }
 
 QTreeWidgetItem* ConnectionEditor::findTopLevelItem(const QString& type)

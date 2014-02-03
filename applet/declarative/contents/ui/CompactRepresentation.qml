@@ -49,19 +49,7 @@ Item {
         width: Math.min(parent.width, parent.height)
         height: width
         svg: svgIcons;
-        elementId: connectionIconProvider.connectionSvgIcon;
-
-        QIconItem {
-            id: hoverIcon;
-
-            width: parent.width/2;
-            height: parent.height/2;
-            anchors {
-                bottom: parent.bottom;
-                right: parent.right;
-            }
-            icon: connectionIconProvider.connectionIndicatorIcon;
-        }
+        elementId: connectionIconProvider.connectionIcon
 
         PlasmaComponents.BusyIndicator {
             id: connectingIndicator;
@@ -81,7 +69,7 @@ Item {
             PlasmaCore.ToolTip {
                 id: tooltip;
                 target: mouseAreaPopup;
-                image: connectionIconProvider.connectionPixmapIcon;
+                image: connectionIconProvider.connectionTooltipIcon;
                 subText: networkStatus.activeConnections;
             }
         }

@@ -20,64 +20,29 @@
 
 import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
+import org.kde.plasma.core 0.1 as PlasmaCore
 
 PlasmaComponents.ListItem {
-    id: sectionHeader;
+    id: header;
 
-    signal hideSection(string name);
-    signal showSection(string name);
+    property alias text: headerLabel.text;
 
+    height: Math.max(sizes.iconSize, headerLabel.height) + padding.margins.top + padding.margins.bottom;
     sectionDelegate: true;
-    property bool expanded: true;
 
-    height: sizes.itemSize;
     anchors {
         left: parent.left;
         right: parent.right;
     }
 
     PlasmaComponents.Label {
-        id: sectionLabel
+        id: headerLabel
 
-        height: sectionHeader.height;
+        height: paintedHeight;
         anchors {
-            left: expandButton.right;
+            horizontalCenter: parent.horizontalCenter;
             verticalCenter: parent.verticalCenter;
-            leftMargin: padding.margins.left
         }
-        text: section;
-
-        MouseArea {
-            id: sectionLabelMouseArea
-
-            anchors.fill: parent;
-
-            onClicked: sectionClicked();
-        }
-    }
-
-    PlasmaComponents.ToolButton {
-        id: expandButton;
-
-        height: sizes.iconSize;
-        width: height;
-        anchors {
-            left: parent.left;
-            verticalCenter: parent.verticalCenter
-        }
-        iconSource: "list-remove";
-
-        onClicked: sectionClicked();
-    }
-
-    function sectionClicked() {
-         if (expanded) {
-            hideSection(section);
-            expandButton.iconSource = "list-add";
-        } else {
-            showSection(section);
-            expandButton.iconSource = "list-remove";
-        }
-        expanded = !expanded;
+        font.weight: Font.DemiBold;
     }
 }

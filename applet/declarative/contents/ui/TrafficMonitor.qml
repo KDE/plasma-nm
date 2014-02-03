@@ -18,58 +18,22 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_ENUMS_H
-#define PLASMA_NM_ENUMS_H
+import QtQuick 1.1
+import org.kde.qtextracomponents 0.1
+import org.kde.plasma.components 0.1 as PlasmaComponents
+import org.kde.plasma.core 0.1 as PlasmaCore
+import org.kde.networkmanagement 0.1 as PlasmaNM
 
-#include <QObject>
+Item {
+    id: trafficMonitor;
 
-class Enums : public QObject
-{
-Q_OBJECT
-Q_ENUMS(ConnectionStatus)
-Q_ENUMS(ConnectionType)
-Q_ENUMS(SecurityType)
+    property alias device: trafficMonitorWidget.device;
 
-public:
-    explicit Enums(QObject* parent = 0);
-    virtual ~Enums();
+    height: visible ? trafficMonitorWidget.height : 0;
 
-    enum ConnectionStatus {
-        UnknownState = 0,
-        Activating,
-        Activated,
-        Deactivating,
-        Deactivated
-    };
-
-    enum ConnectionType {
-        Unknown = 0,
-        Adsl,
-        Bluetooth,
-        Bond,
-        Bridge,
-        Cdma,
-        Gsm,
-        Infiniband,
-        OLPCMesh,
-        Pppoe,
-        Vlan,
-        Vpn,
-        Wimax,
-        Wired,
-        Wireless
-    };
-
-    enum SecurityType {
-        None = 0,
-        StaticWep,
-        DynamicWep,
-        Leap,
-        WpaPsk,
-        WpaEap,
-        Wpa2Psk,
-        Wpa2Eap
-    };
-};
-
-#endif // PLASMA_NM_ENUMS_H
+    PlasmaNM.TrafficMonitor {
+        id: trafficMonitorWidget;
+        anchors.fill: parent;
+        device: itemDevicePath;
+    }
+}

@@ -31,7 +31,7 @@ Item {
 
     signal clicked();
 
-    height: slider.height + padding.margins.top + padding.margins.bottom;
+    height: slider.height + padding.margins.top;
     width: slider.width + switchButtonIcon.width + padding.margins.left * 2 + padding.margins.right;
 
     PlasmaCore.FrameSvgItem {

@@ -85,20 +85,38 @@ Item {
     }
 
     PlasmaComponents.Button {
-        id: openEditorButton
+        id: openEditorButton;
 
         anchors {
             bottom: parent.bottom;
-            bottomMargin: padding.margins.bottom;
+            bottomMargin: padding.margins.bottom/2;
             right: parent.right;
             rightMargin: padding.margins.right;
             top: parent.top;
-            topMargin: padding.margins.top;
+            topMargin: padding.margins.top/2;
         }
         iconSource: "configure";
 
         onClicked: {
             handler.openEditor();
+        }
+    }
+
+    PlasmaComponents.Button {
+        id: refreshButton;
+
+        anchors {
+            bottom: parent.bottom;
+            bottomMargin: padding.margins.bottom/2;
+            right: openEditorButton.left;
+            rightMargin: padding.margins.right;
+            top: parent.top;
+            topMargin: padding.margins.top/2;
+        }
+        iconSource: "view-refresh";
+
+        onClicked: {
+            handler.requestScan();
         }
     }
 }

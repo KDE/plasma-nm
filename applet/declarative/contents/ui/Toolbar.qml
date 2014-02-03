@@ -89,10 +89,12 @@ Item {
 
         anchors {
             bottom: parent.bottom;
+            bottomMargin: padding.margins.bottom;
             right: parent.right;
+            rightMargin: padding.margins.right;
             top: parent.top;
+            topMargin: padding.margins.top;
         }
-
         iconSource: "configure";
 
         onClicked: {

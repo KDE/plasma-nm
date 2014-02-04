@@ -48,8 +48,8 @@ TrafficMonitor::TrafficMonitor(QGraphicsItem* parent)
 
     m_trafficPlotter = new Plasma::SignalPlotter(this);
     m_trafficPlotter->setFont(KGlobalSettings::smallestReadableFont());
-    m_trafficPlotter->addPlot(m_txColor);
     m_trafficPlotter->addPlot(m_rxColor);
+    m_trafficPlotter->addPlot(m_txColor);
     m_trafficPlotter->setThinFrame(true);
     m_trafficPlotter->setShowLabels(true);
     m_trafficPlotter->setShowTopBar(true);
@@ -143,8 +143,8 @@ void TrafficMonitor::resetMonitor()
 
     m_trafficPlotter->removePlot(0);
     m_trafficPlotter->removePlot(1);
-    m_trafficPlotter->addPlot(m_txColor);
     m_trafficPlotter->addPlot(m_rxColor);
+    m_trafficPlotter->addPlot(m_txColor);
 }
 
 void TrafficMonitor::dataUpdated(const QString& sourceName, const Plasma::DataEngine::Data& data)

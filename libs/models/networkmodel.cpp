@@ -783,36 +783,80 @@ void NetworkModel::gsmNetworkAccessTechnologyChanged(ModemManager::Modem::Access
 void NetworkModel::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology)
 #endif
 {
-#ifdef MODEMMANAGERQT_ONE
-#else
-#endif
-    // TODO implement
     Q_UNUSED(technology);
+#ifdef MODEMMANAGERQT_ONE
+    ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
+#else
+    ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
+#endif
+    if (gsmNetwork) {
+        foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+            if (dev->type() == NetworkManager::Device::Modem) {
+                NetworkManager::ModemDevice::Ptr modem = dev.objectCast<NetworkManager::ModemDevice>();
+                if (modem) {
+                    if (modem->getModemNetworkIface()->device() == gsmNetwork->device()) {
+                        // TODO store access technology internally?
+                        foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, modem->uni())) {
+                            updateItem(item);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 #ifdef MODEMMANAGERQT_ONE
 void NetworkModel::gsmNetworkCurrentModesChanged()
+{
 #else
 void NetworkModel::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode)
-#endif
 {
-#ifdef MODEMMANAGERQT_ONE
-#else
+    Q_UNUSED(mode);
 #endif
-    // TODO implement
+#ifdef MODEMMANAGERQT_ONE
+    ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
+#else
+    ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
+#endif
+    if (gsmNetwork) {
+        foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+            if (dev->type() == NetworkManager::Device::Modem) {
+                NetworkManager::ModemDevice::Ptr modem = dev.objectCast<NetworkManager::ModemDevice>();
+                if (modem) {
+                    if (modem->getModemNetworkIface()->device() == gsmNetwork->device()) {
+                        foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, modem->uni())) {
+                            updateItem(item);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 void NetworkModel::gsmNetworkSignalQualityChanged(uint signal)
 {
 #ifdef MODEMMANAGERQT_ONE
+    ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
 #else
+    ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
 #endif
-
-#ifdef MODEMMANAGERQT_ONE
-#else
-#endif
-    // TODO implement
-    Q_UNUSED(signal);
+    if (gsmNetwork) {
+        foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+            if (dev->type() == NetworkManager::Device::Modem) {
+                NetworkManager::ModemDevice::Ptr modem = dev.objectCast<NetworkManager::ModemDevice>();
+                if (modem) {
+                    if (modem->getModemNetworkIface()->device() == gsmNetwork->device()) {
+                        foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, modem->uni())) {
+                            item->setSignal(signal);
+                            updateItem(item);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 #endif
 

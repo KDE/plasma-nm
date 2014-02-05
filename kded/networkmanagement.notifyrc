@@ -1,6 +1,8 @@
 [Global]
 IconName=applications-internet
 Name=networkmanagement
+Name[bs]=networkmanagement
+Name[ca]=Gestió de la xarxa
 Name[cs]=networkmanagement
 Name[da]=netværkshåndtering
 Name[de]=Netzwerkverwaltung
@@ -22,6 +24,7 @@ Name[x-test]=xxnetworkmanagementxx
 Name[zh_CN]=网络管理
 Comment=Notifies about network errors
 Comment[bs]=Obavještava o mrežnim greškama
+Comment[ca]=Notifica quant als errors de la xarxa
 Comment[cs]=Oznamuje chyby sítě
 Comment[da]=Bekendtgør om netværksfejl
 Comment[de]=Benachrichtigungen über Netzwerkfehler
@@ -45,6 +48,8 @@ Comment[zh_CN]=提示网络错误
 
 [Event/DeviceFailed]
 Name=Device failed to activate
+Name[bs]=Uređaj se nije uspio aktivirati
+Name[ca]=El dispositiu ha fallat en activar-se
 Name[cs]=Zařízení nelze aktivovat
 Name[da]=Enheden kunne ikke aktivere
 Name[de]=Das Gerät kann nicht aktiviert werden
@@ -70,6 +75,8 @@ Action=Popup
 
 [Event/AcStateChanged]
 Name=Active connection state changed
+Name[bs]=Aktivno stanje konekcije je promijenjeno
+Name[ca]=L'estat de la connexió activa ha canviat
 Name[cs]=Stav aktivního spojení byl změněn
 Name[da]=Tilstand ændret for aktiv forbindelse
 Name[de]=Active-Verbindungsstatus wurde geändert
@@ -94,6 +101,8 @@ Action=Popup
 
 [Event/VpnStateChanged]
 Name=VPN connection state changed
+Name[bs]=VPN stanje konekcije je promijenjeno
+Name[ca]=L'estat de la connexió VPN ha canviat
 Name[cs]=Stav spojení VPN byl změněn
 Name[da]=Tilstand ændret for VPN-forbindelse
 Name[de]=VPN-Verbindungsstatus wurde geändert
@@ -126,6 +135,7 @@ Name[el]=Λείπει το πρόσθετο VPN
 Name[es]=Falta complemento VPN 
 Name[fi]=Puuttuva VPN-liitännäinen
 Name[fr]=Module VPN manquant
+Name[hu]=Hiányzó VPN bővítmény
 Name[nl]=VPN-plug-in ontbreekt
 Name[pt]='Plugin' de VPN em falta
 Name[pt_BR]=Plugin de VPN ausente

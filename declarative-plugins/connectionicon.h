@@ -70,9 +70,9 @@ private Q_SLOTS:
 #if WITH_MODEMMANAGER_SUPPORT
     void modemNetworkRemoved();
     void modemSignalChanged(uint signal);
+    void setIconForModem();
 #endif
     void statusChanged(NetworkManager::Status status);
-    void setIconForModem();
     void setWirelessIconForSignalStrength(int strength);
     void vpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason);
     void wirelessEnabledChanged(bool enabled);

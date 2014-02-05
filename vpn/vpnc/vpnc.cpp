@@ -199,8 +199,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         if (!decrPlugin->readStringKeyValue(cg,"GroupPwd").isEmpty()) {
             secretData.insert(NM_VPNC_KEY_SECRET, decrPlugin->readStringKeyValue(cg,"GroupPwd"));
             data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::AgentOwned));
-        }
-        else if (!decrPlugin->readStringKeyValue(cg,"enc_GroupPwd").isEmpty() && !ciscoDecryptBinary.isEmpty()) {
+        } else if (!decrPlugin->readStringKeyValue(cg,"enc_GroupPwd").isEmpty() && !ciscoDecryptBinary.isEmpty()) {
             //Decrypt the password and insert into map
             decrPlugin->ciscoDecrypt->setProgram(ciscoDecryptBinary);
             decrPlugin->ciscoDecrypt->start();
@@ -323,10 +322,8 @@ bool VpncUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSett
     else
         cg.writeEntry("AuthType", "1");
     cg.writeEntry("GroupName", data.value(NM_VPNC_KEY_ID));
-    //cg.writeEntry("GroupPwd", secretData.value(NM_VPNC_KEY_SECRET));
-    //cg.writeEntry("UserPassword", secretData.value(NM_VPNC_KEY_XAUTH_PASSWORD));
-    cg.writeEntry("GroupPwd", "");
-    cg.writeEntry("UserPassword", "");
+    cg.writeEntry("GroupPwd", secretData.value(NM_VPNC_KEY_SECRET));
+    cg.writeEntry("UserPassword", secretData.value(NM_VPNC_KEY_XAUTH_PASSWORD));
     cg.writeEntry("enc_GroupPwd", "");
     cg.writeEntry("enc_UserPassword", "");
     if ((NetworkManager::Setting::SecretFlags)data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt() & NetworkManager::Setting::NotSaved) {

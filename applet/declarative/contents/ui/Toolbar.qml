@@ -128,7 +128,7 @@ Item {
     ]
 
     transitions: Transition {
-        NumberAnimation { duration: 300; properties: "height, visible" }
+        NumberAnimation { duration: units.longDuration; properties: "height, visible" }
     }
 
     function hideOrShowOptions() {

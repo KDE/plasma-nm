@@ -386,7 +386,7 @@ PlasmaComponents.ListItem {
     ]
 
     transitions: Transition {
-        NumberAnimation { duration: 300; properties: "height" }
+        NumberAnimation { duration: units.longDuration; properties: "height" }
     }
 
     function createContent() {
@@ -397,7 +397,7 @@ PlasmaComponents.ListItem {
     }
 
     Behavior on height {
-        NumberAnimation { duration: 300 }
+        NumberAnimation { duration: units.longDuration }
     }
 
     PlasmaCore.FrameSvgItem {

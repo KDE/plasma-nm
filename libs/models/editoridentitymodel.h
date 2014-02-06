@@ -1,5 +1,5 @@
 /*
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,35 +18,30 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_NETWORK_FILTER_MODEL_H
-#define PLASMA_NM_NETWORK_FILTER_MODEL_H
+#ifndef PLASMA_NM_EDITOR_IDENTITY_MODEL_H
+#define PLASMA_NM_EDITOR_IDENTITY_MODEL_H
 
-#include <QSortFilterProxyModel>
+#include <QIdentityProxyModel>
+#include <QModelIndex>
 
 #include "plasmanm_export.h"
 
-class PLASMA_NM_EXPORT NetworkFilterModel : public QSortFilterProxyModel
+class PLASMA_NM_EXPORT EditorIdentityModel : public QIdentityProxyModel
 {
 Q_OBJECT
-Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
-Q_PROPERTY(int filterType READ filterType WRITE setFilterType)
+
 public:
-    enum FilterType { All = 0, EditableConnections, AvailableConnections };
+    explicit EditorIdentityModel(QObject* parent = 0);
+    virtual ~EditorIdentityModel();
 
-    explicit NetworkFilterModel(QObject* parent = 0);
-    virtual ~NetworkFilterModel();
+    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
+    Qt::ItemFlags flags(const QModelIndex &index) const;
 
-    FilterType filterType() const;
-    void setFilterType(int type);
-    void setFilterType(FilterType type);
+    int columnCount(const QModelIndex& parent = QModelIndex()) const;
+    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const;
 
-protected:
-    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
-    bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
-
-private:
-    FilterType m_filterType;
+    QModelIndex mapToSource(const QModelIndex &proxyIndex) const;
 };
 
-
-#endif // PLASMA_NM_NETWORK_FILTER_MODEL_H
+#endif // PLASMA_NM_EDITOR_IDENTITY_MODEL_H

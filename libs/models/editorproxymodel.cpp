@@ -18,13 +18,12 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "networkfiltermodel.h"
+#include "editorproxymodel.h"
 #include "networkmodelitem.h"
 #include "networkmodel.h"
 
-NetworkFilterModel::NetworkFilterModel(QObject* parent)
+EditorProxyModel::EditorProxyModel(QObject* parent)
     : QSortFilterProxyModel(parent)
-    , m_filterType(NetworkFilterModel::All)
 {
     setDynamicSortFilter(true);
     setSortCaseSensitivity(Qt::CaseInsensitive);
@@ -32,40 +31,11 @@ NetworkFilterModel::NetworkFilterModel(QObject* parent)
     sort(0, Qt::DescendingOrder);
 }
 
-NetworkFilterModel::~NetworkFilterModel()
+EditorProxyModel::~EditorProxyModel()
 {
 }
 
-void NetworkFilterModel::setFilterType(int type)
-{
-    switch (type) {
-    case 0:
-        setFilterType(NetworkFilterModel::All);
-        break;
-    case 1:
-        setFilterType(NetworkFilterModel::EditableConnections);
-        break;
-    case 2:
-        setFilterType(NetworkFilterModel::AvailableConnections);
-        break;
-    default:
-        setFilterType(NetworkFilterModel::All);
-    }
-}
-
-NetworkFilterModel::FilterType NetworkFilterModel::filterType() const
-{
-    return m_filterType;
-}
-
-void NetworkFilterModel::setFilterType(NetworkFilterModel::FilterType type)
-{
-    m_filterType = type;
-    invalidateFilter();
-    sort(0, Qt::DescendingOrder);
-}
-
-bool NetworkFilterModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
+bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
 {
     const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
 
@@ -75,39 +45,25 @@ bool NetworkFilterModel::filterAcceptsRow(int source_row, const QModelIndex& sou
         return false;
     }
 
+    NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
+    if (itemType != NetworkModelItem::UnavailableConnection &&
+        itemType != NetworkModelItem::AvailableConnection) {
+        return false;
+    }
+
     const QString pattern = filterRegExp().pattern();
     if (!pattern.isEmpty()) {  // filtering on data (connection name), wildcard-only
         const QString data = sourceModel()->data(index, Qt::DisplayRole).toString();
         //qDebug() << "Filtering " << data << "with pattern" << pattern;
         return data.contains(pattern, Qt::CaseInsensitive);
-    } else {  // filtering on connection type
-        if (m_filterType == NetworkFilterModel::All) {
-            return true;
-        }
-
-        NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
-
-        if (m_filterType == NetworkFilterModel::AvailableConnections) {
-            if (itemType == NetworkModelItem::AvailableConnection ||
-                    itemType == NetworkModelItem::AvailableAccessPoint) {
-                return true;
-            }
-            return false;
-        } else if (m_filterType == NetworkFilterModel::EditableConnections) {
-            if (itemType == NetworkModelItem::UnavailableConnection ||
-                    itemType == NetworkModelItem::AvailableConnection) {
-                return true;
-            }
-            return false;
-        }
     }
 
-    return false;
+    return true;
 }
 
-bool NetworkFilterModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+bool EditorProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
-    if (m_filterType == NetworkFilterModel::EditableConnections && sourceModel()) { // special sorting case, only for editor
+    if (sourceModel()) { // special sorting case, only for editor
         if (sortColumn() == 1) {
             const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStamp).toDateTime();
             const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStamp).toDateTime();

@@ -57,18 +57,10 @@ Item {
     PlasmaNM.NetworkModel {
         id: connectionModel;
     }
-
-    PlasmaNM.NetworkFilterModel {
-        id: connectionFilterModel;
+    PlasmaNM.AppletProxyModel {
+        id: appletProxyModel;
 
         sourceModel: connectionModel;
-        filterType: 2; // Available connections
-    }
-
-    PlasmaNM.NetworkSortModel {
-        id: connectionSortModel;
-
-        sourceModel: connectionFilterModel;
     }
 
     PlasmaCore.Svg {
@@ -113,7 +105,7 @@ Item {
             top: toolbar.bottom;
         }
         clip: true
-        model: connectionSortModel;
+        model: appletProxyModel;
         currentIndex: -1;
         interactive: true;
         boundsBehavior: Flickable.StopAtBounds;

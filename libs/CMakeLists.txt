@@ -1,10 +1,10 @@
 set(plasmanetworkmanagement-internal_SRCS
-    models/connectioneditorproxymodel.cpp
-    models/networkfiltermodel.cpp
+    models/appletproxymodel.cpp
+    models/editoridentitymodel.cpp
+    models/editorproxymodel.cpp
     models/networkitemslist.cpp
     models/networkmodel.cpp
     models/networkmodelitem.cpp
-    models/networksortmodel.cpp
 
     handler.cpp
     uiutils.cpp

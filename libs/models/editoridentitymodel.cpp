@@ -24,36 +24,36 @@
 #include <KLocalizedString>
 #include <KIcon>
 
-#include "connectioneditorproxymodel.h"
+#include "editoridentitymodel.h"
 
 #include "networkmodel.h"
 #include "networkmodelitem.h"
 
-ConnectionEditorProxyModel::ConnectionEditorProxyModel(QObject* parent)
+EditorIdentityModel::EditorIdentityModel(QObject* parent)
     : QIdentityProxyModel(parent)
 {
     NetworkModel * baseModel = new NetworkModel(this);
     setSourceModel(baseModel);
 }
 
-ConnectionEditorProxyModel::~ConnectionEditorProxyModel()
+EditorIdentityModel::~EditorIdentityModel()
 {
 }
 
-Qt::ItemFlags ConnectionEditorProxyModel::flags(const QModelIndex& index) const
+Qt::ItemFlags EditorIdentityModel::flags(const QModelIndex& index) const
 {
     const QModelIndex mappedProxyIndex = index.sibling(index.row(), 0);
     return QIdentityProxyModel::flags(mappedProxyIndex) | Qt::ItemIsEnabled | Qt::ItemIsSelectable;
 }
 
-int ConnectionEditorProxyModel::columnCount(const QModelIndex& parent) const
+int EditorIdentityModel::columnCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent);
 
     return 2;
 }
 
-QVariant ConnectionEditorProxyModel::headerData(int section, Qt::Orientation orientation, int role) const
+QVariant EditorIdentityModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
     if (orientation == Qt::Horizontal && role == Qt::DisplayRole) {
         switch (section) {
@@ -67,7 +67,7 @@ QVariant ConnectionEditorProxyModel::headerData(int section, Qt::Orientation ori
     return QIdentityProxyModel::headerData(section, orientation, role);
 }
 
-QVariant ConnectionEditorProxyModel::data(const QModelIndex& index, int role) const
+QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
 {
     const QModelIndex sourceIndex = sourceModel()->index(index.row(), 0);
     const QString connectionName = sourceModel()->data(sourceIndex, NetworkModel::NameRole).toString();
@@ -104,12 +104,12 @@ QVariant ConnectionEditorProxyModel::data(const QModelIndex& index, int role) co
     return QVariant();
 }
 
-QModelIndex ConnectionEditorProxyModel::index(int row, int column, const QModelIndex& parent) const
+QModelIndex EditorIdentityModel::index(int row, int column, const QModelIndex& parent) const
 {
     return createIndex(row, column);
 }
 
-QModelIndex ConnectionEditorProxyModel::mapToSource(const QModelIndex& proxyIndex) const
+QModelIndex EditorIdentityModel::mapToSource(const QModelIndex& proxyIndex) const
 {
     if (proxyIndex.column() > 0) {
         return QModelIndex();

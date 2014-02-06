@@ -22,12 +22,12 @@
 #include "ui_connectioneditor.h"
 #include "connectioneditor.h"
 #include "connectiondetaileditor.h"
-#include "connectioneditorproxymodel.h"
+#include "editoridentitymodel.h"
+#include "editorproxymodel.h"
 #include "networkmodel.h"
 #include "mobileconnectionwizard.h"
 #include "uiutils.h"
 #include "vpnuiplugin.h"
-#include "networkfiltermodel.h"
 #include <networkmodelitem.h>
 
 #include <KActionCollection>
@@ -305,10 +305,9 @@ void ConnectionEditor::editConnection()
 
 void ConnectionEditor::initializeConnections()
 {
-    ConnectionEditorProxyModel * model = new ConnectionEditorProxyModel(this);
+    EditorIdentityModel * model = new EditorIdentityModel(this);
 
-    NetworkFilterModel * filterModel = new NetworkFilterModel(this);
-    filterModel->setFilterType(NetworkFilterModel::EditableConnections);
+    EditorProxyModel * filterModel = new EditorProxyModel(this);
     filterModel->setSourceModel(model);
 
     m_editor->connectionsWidget->setModel(filterModel);

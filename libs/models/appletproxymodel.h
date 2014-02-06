@@ -18,14 +18,14 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_NETWORK_SORT_MODEL_H
-#define PLASMA_NM_NETWORK_SORT_MODEL_H
+#ifndef PLASMA_NM_APPLET_PROXY_MODEL_H
+#define PLASMA_NM_APPLET_PROXY_MODEL_H
 
 #include <QSortFilterProxyModel>
 
 #include "networkmodelitem.h"
 
-class PLASMA_NM_EXPORT NetworkSortModel : public QSortFilterProxyModel
+class PLASMA_NM_EXPORT AppletProxyModel : public QSortFilterProxyModel
 {
 Q_OBJECT
 Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
@@ -34,11 +34,14 @@ public:
 
     static SortedConnectionType connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type);
 
-    explicit NetworkSortModel(QObject* parent = 0);
-    virtual ~NetworkSortModel();
+    explicit AppletProxyModel(QObject* parent = 0);
+    virtual ~AppletProxyModel();
 
+protected:
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
     bool lessThan(const QModelIndex& left, const QModelIndex& right) const;
+
 };
 
 
-#endif // PLASMA_NM_NETWORK_SORT_MODEL_H
+#endif // PLASMA_NM_APPLET_PROXY_MODEL_H

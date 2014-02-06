@@ -29,9 +29,8 @@
 #include "networkstatus.h"
 #include "trafficmonitor.h"
 
-#include "networkfiltermodel.h"
+#include "appletproxymodel.h"
 #include "networkmodel.h"
-#include "networksortmodel.h"
 
 #include "handler.h"
 #include "enums.h"
@@ -54,10 +53,8 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<Handler>(uri, 0, 1, "Handler");
     // @uri org.kde.networkmanagement.NetworkModel
     qmlRegisterType<NetworkModel>(uri, 0, 1, "NetworkModel");
-    // @uri org.kde.networkmanagement.NetworkFilterModel
-    qmlRegisterType<NetworkFilterModel>(uri, 0, 1, "NetworkFilterModel");
-    // @uri org.kde.networkmanagement.NetworkSortModel
-    qmlRegisterType<NetworkSortModel>(uri, 0, 1, "NetworkSortModel");
+    // @uri org.kde.networkmanagement.AppletProxyModel
+    qmlRegisterType<AppletProxyModel>(uri, 0, 1, "AppletProxyModel");
     // @uri org.kde.networkmanagement.TrafficMonitor
     qmlRegisterType<TrafficMonitor>(uri, 0, 1, "TrafficMonitor");
 }

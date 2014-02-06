@@ -18,75 +18,95 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "networksortmodel.h"
+#include "appletproxymodel.h"
 #include "networkmodel.h"
 
-NetworkSortModel::SortedConnectionType NetworkSortModel::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
+AppletProxyModel::SortedConnectionType AppletProxyModel::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
 {
     switch (type) {
         case NetworkManager::ConnectionSettings::Unknown:
-            return NetworkSortModel::NetworkSortModel::Unknown;
+            return AppletProxyModel::AppletProxyModel::Unknown;
             break;
         case NetworkManager::ConnectionSettings::Adsl:
-            return NetworkSortModel::NetworkSortModel::Adsl;
+            return AppletProxyModel::AppletProxyModel::Adsl;
             break;
         case NetworkManager::ConnectionSettings::Bluetooth:
-            return NetworkSortModel::Bluetooth;
+            return AppletProxyModel::Bluetooth;
             break;
         case NetworkManager::ConnectionSettings::Bond:
-            return NetworkSortModel::Bond;
+            return AppletProxyModel::Bond;
             break;
         case NetworkManager::ConnectionSettings::Bridge:
-            return NetworkSortModel::Bridge;
+            return AppletProxyModel::Bridge;
             break;
         case NetworkManager::ConnectionSettings::Cdma:
-            return NetworkSortModel::Cdma;
+            return AppletProxyModel::Cdma;
             break;
         case NetworkManager::ConnectionSettings::Gsm:
-            return NetworkSortModel::Gsm;
+            return AppletProxyModel::Gsm;
             break;
         case NetworkManager::ConnectionSettings::Infiniband:
-            return NetworkSortModel::Infiniband;
+            return AppletProxyModel::Infiniband;
             break;
         case NetworkManager::ConnectionSettings::OLPCMesh:
-            return NetworkSortModel::OLPCMesh;
+            return AppletProxyModel::OLPCMesh;
             break;
         case NetworkManager::ConnectionSettings::Pppoe:
-            return NetworkSortModel::Pppoe;
+            return AppletProxyModel::Pppoe;
             break;
         case NetworkManager::ConnectionSettings::Vlan:
-            return NetworkSortModel::Vlan;
+            return AppletProxyModel::Vlan;
             break;
         case NetworkManager::ConnectionSettings::Vpn:
-            return NetworkSortModel::Vpn;
+            return AppletProxyModel::Vpn;
             break;
         case NetworkManager::ConnectionSettings::Wimax:
-            return NetworkSortModel::Wimax;
+            return AppletProxyModel::Wimax;
             break;
         case NetworkManager::ConnectionSettings::Wired:
-            return NetworkSortModel::Wired;
+            return AppletProxyModel::Wired;
             break;
         case NetworkManager::ConnectionSettings::Wireless:
-            return NetworkSortModel::Wireless;
+            return AppletProxyModel::Wireless;
             break;
         default:
-            return NetworkSortModel::Unknown;
+            return AppletProxyModel::Unknown;
             break;
     }
 }
 
-NetworkSortModel::NetworkSortModel(QObject* parent)
+AppletProxyModel::AppletProxyModel(QObject* parent)
     : QSortFilterProxyModel(parent)
 {
     setDynamicSortFilter(true);
     sort(0, Qt::DescendingOrder);
 }
 
-NetworkSortModel::~NetworkSortModel()
+AppletProxyModel::~AppletProxyModel()
 {
 }
 
-bool NetworkSortModel::lessThan(const QModelIndex& left, const QModelIndex& right) const
+bool AppletProxyModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
+{
+    const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
+
+    // slaves are always filtered-out
+    const bool isSlave = sourceModel()->data(index, NetworkModel::SlaveRole).toBool();
+    if (isSlave) {
+        return false;
+    }
+
+    NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
+
+    if (itemType == NetworkModelItem::AvailableConnection ||
+        itemType == NetworkModelItem::AvailableAccessPoint) {
+        return true;
+    }
+
+    return false;
+}
+
+bool AppletProxyModel::lessThan(const QModelIndex& left, const QModelIndex& right) const
 {
     const bool leftAvailable = (NetworkModelItem::ItemType)sourceModel()->data(left, NetworkModel::ItemTypeRole).toUInt() != NetworkModelItem::UnavailableConnection;
     const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;

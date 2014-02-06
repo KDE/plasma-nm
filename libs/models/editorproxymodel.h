@@ -1,5 +1,5 @@
 /*
-    Copyright 2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,30 +18,25 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_CONNECTION_EDITOR_PROXY_MODEL_H
-#define PLASMA_NM_CONNECTION_EDITOR_PROXY_MODEL_H
+#ifndef PLASMA_NM_EDITOR_PROXY_MODEL_H
+#define PLASMA_NM_EDITOR_PROXY_MODEL_H
 
-#include <QIdentityProxyModel>
-#include <QModelIndex>
+#include <QSortFilterProxyModel>
 
 #include "plasmanm_export.h"
 
-class PLASMA_NM_EXPORT ConnectionEditorProxyModel : public QIdentityProxyModel
+class PLASMA_NM_EXPORT EditorProxyModel : public QSortFilterProxyModel
 {
 Q_OBJECT
-
+Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
 public:
-    explicit ConnectionEditorProxyModel(QObject* parent = 0);
-    virtual ~ConnectionEditorProxyModel();
+    explicit EditorProxyModel(QObject* parent = 0);
+    virtual ~EditorProxyModel();
 
-    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
-    Qt::ItemFlags flags(const QModelIndex &index) const;
-
-    int columnCount(const QModelIndex& parent = QModelIndex()) const;
-    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const;
-
-    QModelIndex mapToSource(const QModelIndex &proxyIndex) const;
+protected:
+    bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
+    bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
 };
 
-#endif // PLASMA_NM_CONNECTION_EDITOR_PROXY_MODEL_H
+
+#endif // PLASMA_NM_EDITOR_PROXY_MODEL_H

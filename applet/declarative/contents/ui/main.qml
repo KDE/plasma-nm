@@ -18,7 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.0
+import QtQuick 2.1
+import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
@@ -27,14 +28,11 @@ import org.kde.networkmanagement 0.1 as PlasmaNM
 Item {
     id: mainWindow;
 
-    property int minimumWidth: 300;
-    property int minimumHeight: 300;
+    Plasmoid.switchWidth: units.gridUnit * 25
+    Plasmoid.switchHeight: units.gridUnit * 25
+    Plasmoid.compactRepresentation: CompactRepresentation { }
+
     property bool autoHideOptions: true;
-    property Component compactRepresentation: CompactRepresentation {
-        Component.onCompleted: {
-            plasmoid.addEventListener('configChanged', mainWindow.configChanged)
-        }
-    }
 
     signal sectionChanged();
 

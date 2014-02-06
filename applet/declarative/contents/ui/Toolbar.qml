@@ -77,7 +77,7 @@ Item {
 
             checked: !enabledConnections.networkingEnabled;
             // TODO another icon
-            icon: checked ? "network-wired-on" : "network-wired-off";
+            icon: checked ? "flightmode-on" : "flightmode-off";
 
             onClicked: {
                 handler.enableNetworking(!checked);

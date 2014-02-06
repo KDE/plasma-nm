@@ -28,7 +28,7 @@ ListItem {
     id: connectionItem;
 
     property bool predictableWirelessPassword: !itemUuid && itemType == PlasmaNM.Enums.Wireless &&
-                                                itemSecurityType != PlasmaNM.Enums.None && itemSecuritype != PlasmaNM.Enums.UnknownSecurity &&
+                                                itemSecurityType != PlasmaNM.Enums.None && itemSecurityType != PlasmaNM.Enums.UnknownSecurity &&
                                                 itemSecurityType != PlasmaNM.Enums.DynamicWep && itemSecurityType != PlasmaNM.Enums.LEAP &&
                                                 itemSecurityType != PlasmaNM.Enums.WpaEap && itemSecurityType != PlasmaNM.Enums.Wpa2Eap;
     property bool visibleDetails: false;

@@ -73,6 +73,8 @@ QString ModelItem::details() const
 
 QString ModelItem::icon() const
 {
+    const bool insecure = m_securityType == NetworkManager::Utils::None ||
+                          m_securityType == NetworkManager::Utils::Unknown;
     switch (m_type) {
         case NetworkManager::ConnectionSettings::Adsl:
             return "network-mobile-100";
@@ -152,17 +154,17 @@ QString ModelItem::icon() const
                         }
                     }
                 }
-                return (m_securityType == NetworkManager::Utils::None) ? "network-wireless-0" : "network-wireless-0-locked";
+                return insecure ? "network-wireless-0" : "network-wireless-0-locked";
             } else if (m_signal < 20) {
-                return (m_securityType == NetworkManager::Utils::None) ? "network-wireless-20" : "network-wireless-20-locked";
+                return insecure ? "network-wireless-20" : "network-wireless-20-locked";
             } else if (m_signal < 40) {
-                return (m_securityType == NetworkManager::Utils::None) ? "network-wireless-40" : "network-wireless-40-locked";
+                return insecure ? "network-wireless-40" : "network-wireless-40-locked";
             } else if (m_signal < 60) {
-                return (m_securityType == NetworkManager::Utils::None) ? "network-wireless-60" : "network-wireless-60-locked";
+                return insecure ? "network-wireless-60" : "network-wireless-60-locked";
             } else if (m_signal < 80) {
-                return (m_securityType == NetworkManager::Utils::None) ? "network-wireless-80" : "network-wireless-80-locked";
+                return insecure ? "network-wireless-80" : "network-wireless-80-locked";
             } else {
-                return (m_securityType == NetworkManager::Utils::None) ? "network-wireless-100" : "network-wireless-100-locked";
+                return insecure ? "network-wireless-100" : "network-wireless-100-locked";
             }
             break;
         default:

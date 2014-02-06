@@ -28,8 +28,9 @@ ListItem {
     id: connectionItem;
 
     property bool predictableWirelessPassword: !itemUuid && itemType == PlasmaNM.Enums.Wireless &&
-                                                itemSecurityType != PlasmaNM.Enums.None && itemSecurityType != PlasmaNM.Enums.DynamicWep && itemSecurityType != PlasmaNM.Enums.LEAP &&
-                                                                                           itemSecurityType != PlasmaNM.Enums.WpaEap && itemSecurityType != PlasmaNM.Enums.Wpa2Eap;
+                                                itemSecurityType != PlasmaNM.Enums.None && itemSecuritype != PlasmaNM.Enums.UnknownSecurity &&
+                                                itemSecurityType != PlasmaNM.Enums.DynamicWep && itemSecurityType != PlasmaNM.Enums.LEAP &&
+                                                itemSecurityType != PlasmaNM.Enums.WpaEap && itemSecurityType != PlasmaNM.Enums.Wpa2Eap;
     property bool visibleDetails: false;
     property bool visiblePasswordDialog: false;
 
@@ -96,7 +97,7 @@ ListItem {
                         i18n("Connected");
                     else if (itemConnectionState == PlasmaNM.Enums.Activating)
                         i18n("Connecting");
-                    else if (itemUuid && itemSecurityType != PlasmaNM.Enums.None)
+                    else if (itemUuid && itemSecurityType != PlasmaNM.Enums.None && itemSecurityType != PlasmaNM.Enums.UnknownSecurity)
                         itemLastUsed + ", " + itemSecurityString;
                     else if (itemUuid)
                        itemLastUsed;

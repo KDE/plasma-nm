@@ -43,7 +43,7 @@ public:
     };
 
     enum ConnectionType {
-        Unknown = 0,
+        UnknownConnectionType = 0,
         Adsl,
         Bluetooth,
         Bond,
@@ -61,6 +61,7 @@ public:
     };
 
     enum SecurityType {
+        UnknownSecurity = -1,
         None = 0,
         StaticWep,
         DynamicWep,

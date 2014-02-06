@@ -46,8 +46,7 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
     }
 
     NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
-    if (itemType != NetworkModelItem::UnavailableConnection &&
-        itemType != NetworkModelItem::AvailableConnection) {
+    if (itemType == NetworkModelItem::AvailableAccessPoint) {
         return false;
     }
 

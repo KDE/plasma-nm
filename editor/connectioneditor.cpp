@@ -272,9 +272,9 @@ void ConnectionEditor::connectConnection()
         return;
     }
 
-    QString connectionPath = currentIndex.data(NetworkModel::ConnectionPathRole).toString();
-    QString devicePath = currentIndex.data(NetworkModel::DevicePathRole).toString();
-    QString specificPath = currentIndex.data(NetworkModel::SpecificPathRole).toString();
+    const QString connectionPath = currentIndex.data(NetworkModel::ConnectionPathRole).toString();
+    const QString devicePath = currentIndex.data(NetworkModel::DevicePathRole).toString();
+    const QString specificPath = currentIndex.data(NetworkModel::SpecificPathRole).toString();
 
     m_handler->activateConnection(connectionPath, devicePath, specificPath);
 }
@@ -287,8 +287,8 @@ void ConnectionEditor::disconnectConnection()
         return;
     }
 
-    QString connectionPath = currentIndex.data(NetworkModel::ConnectionPathRole).toString();
-    QString devicePath = currentIndex.data(NetworkModel::DevicePathRole).toString();
+    const QString connectionPath = currentIndex.data(NetworkModel::ConnectionPathRole).toString();
+    const QString devicePath = currentIndex.data(NetworkModel::DevicePathRole).toString();
     m_handler->deactivateConnection(connectionPath, devicePath);
 }
 

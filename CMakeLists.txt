@@ -83,7 +83,7 @@ else()
     endif()
 endif()
 
-pkg_check_modules(NETWORKMANAGERQT REQUIRED NetworkManagerQt)
+pkg_check_modules(NETWORKMANAGERQT REQUIRED NetworkManagerQt5)
 if (NOT NETWORKMANAGERQT_FOUND)
     message(FATAL_ERROR "ERROR: NetworkManagerQt not found. http://projects.kde.org/libnm-qt")
 endif (NOT NETWORKMANAGERQT_FOUND)

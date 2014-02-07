@@ -40,33 +40,6 @@ ListItem {
             else
                 connectionItemBase.height + padding.margins.top + padding.margins.bottom;
 
-    function itemText() {
-        if (itemConnectionState == PlasmaNM.Enums.Activating) {
-            return i18n("Connecting");
-        } else if (itemConnectionState == PlasmaNM.Enums.Deactivating) {
-            return i18n("Disconnecting");
-        } else if (itemConnectionState == PlasmaNM.Enums.Deactivated) {
-            var result = itemLastUsed;
-            if (itemSecurityType > PlasmaNM.Enums.None)
-                result += ", " + itemSecurityString;
-
-            if (itemType == PlasmaNM.Enums.Wireless)
-                result += ", " + i18n("Strength: %1%", itemSignal);
-
-            return result;
-        } else if (itemConnectionState == PlasmaNM.Enums.Activated) {
-            if (itemType == PlasmaNM.Enums.Wired) {
-                return i18n("Connected") + ", " + i18n("Speed: %1", itemSpeed);
-            } else if (itemType == PlasmaNM.Enums.Wireless) {
-                return i18n("Connected") + ", " + i18n("Speed: %1", itemSpeed) + ", " + i18n("Strength: %1%", itemSignal);
-            } else if (itemType == PlasmaNM.Enums.Gsm || itemType == PlasmaNM.Enums.Cdma) {
-                // TODO
-            } else {
-                return i18n("Connected");
-            }
-        }
-    }
-
     Item {
         id: connectionItemBase;
 
@@ -416,6 +389,33 @@ ListItem {
         } else if (visiblePasswordDialog) {
             expandableComponentLoader.sourceComponent = passwordDialogComponent;
             expandableComponentLoader.item.passwordFocus.forceActiveFocus();
+        }
+    }
+
+    function itemText() {
+        if (itemConnectionState == PlasmaNM.Enums.Activating) {
+            return i18n("Connecting");
+        } else if (itemConnectionState == PlasmaNM.Enums.Deactivating) {
+            return i18n("Disconnecting");
+        } else if (itemConnectionState == PlasmaNM.Enums.Deactivated) {
+            var result = itemLastUsed;
+            if (itemSecurityType > PlasmaNM.Enums.None)
+                result += ", " + itemSecurityString;
+
+//             if (itemType == PlasmaNM.Enums.Wireless)
+//                 result += ", " + i18n("Strength: %1%", itemSignal);
+
+            return result;
+        } else if (itemConnectionState == PlasmaNM.Enums.Activated) {
+            if (itemType == PlasmaNM.Enums.Wired) {
+                return i18n("Connected") + ", " + itemSpeed;
+            } else if (itemType == PlasmaNM.Enums.Wireless) {
+                return i18n("Connected") + ", " + itemSpeed/* + ", " + i18n("Strength: %1%", itemSignal);*/
+            } else if (itemType == PlasmaNM.Enums.Gsm || itemType == PlasmaNM.Enums.Cdma) {
+                // TODO
+            } else {
+                return i18n("Connected");
+            }
         }
     }
 }

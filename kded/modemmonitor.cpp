@@ -164,23 +164,18 @@ void ModemMonitor::requestPin(MMModemLock lock)
 
         QDBusPendingCallWatcher *watcher = 0;
 
-        if (d->dialog.data()->type() == PinDialog::SimPin ||
-            d->dialog.data()->type() == PinDialog::SimPin2 ||
-            d->dialog.data()->type() == PinDialog::ModemServiceProviderPin ||
-            d->dialog.data()->type() == PinDialog::ModemNetworkPin ||
-            d->dialog.data()->type() == PinDialog::ModemPin ||
-            d->dialog.data()->type() == PinDialog::ModemCorporatePin ||
-            d->dialog.data()->type() == PinDialog::ModemPhFsimPin ||
-            d->dialog.data()->type() == PinDialog::ModemNetworkSubsetPin) {
+        PinDialog::Type type = d->dialog.data()->type();
+
+        if (type == PinDialog::SimPin || type == PinDialog::SimPin2 ||
+            type == PinDialog::ModemServiceProviderPin || type == PinDialog::ModemNetworkPin ||
+            type == PinDialog::ModemPin || type == PinDialog::ModemCorporatePin ||
+            type == PinDialog::ModemPhFsimPin || type == PinDialog::ModemNetworkSubsetPin) {
             QDBusPendingCall reply = sim->sendPin(d->dialog.data()->pin());
             watcher = new QDBusPendingCallWatcher(reply, sim.data());
-        } else if (d->dialog.data()->type() == PinDialog::SimPuk ||
-            d->dialog.data()->type() == PinDialog::SimPuk2 ||
-            d->dialog.data()->type() == PinDialog::ModemServiceProviderPuk ||
-            d->dialog.data()->type() == PinDialog::ModemNetworkPuk ||
-            d->dialog.data()->type() == PinDialog::ModemCorporatePuk ||
-            d->dialog.data()->type() == PinDialog::ModemPhFsimPuk ||
-            d->dialog.data()->type() == PinDialog::ModemNetworkSubsetPuk) {
+        } else if (type == PinDialog::SimPuk ||
+            type == PinDialog::SimPuk2 || type == PinDialog::ModemServiceProviderPuk ||
+            type == PinDialog::ModemNetworkPuk || type == PinDialog::ModemCorporatePuk ||
+            type == PinDialog::ModemPhFsimPuk || type == PinDialog::ModemNetworkSubsetPuk) {
             QDBusPendingCall reply = sim->sendPuk(d->dialog.data()->puk(), d->dialog.data()->pin());
             watcher = new QDBusPendingCallWatcher(reply, sim.data());
         }

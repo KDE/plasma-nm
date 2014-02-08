@@ -119,7 +119,7 @@ ListItem {
             }
             spacing: 5;
 
-            PlasmaCore.IconItem {
+            PlasmaCore.SvgItem {
                 id: openDetailsButton;
 
                 height: sizes.iconSize;
@@ -127,8 +127,9 @@ ListItem {
                 anchors {
                     verticalCenter: parent.verticalCenter;
                 }
-                source: openDetailsButtonMouse.containsMouse ? "notification-inactive" : "notification-active";
                 visible: connectionItem.containsMouse;
+                svg: svgNetworkIcons;
+                elementId: "showinfo";
 
                 MouseArea {
                     id: openDetailsButtonMouse;
@@ -142,7 +143,7 @@ ListItem {
                 }
             }
 
-            PlasmaCore.IconItem {
+            PlasmaCore.SvgItem {
                 id: configureButton;
 
                 height: sizes.iconSize;
@@ -150,9 +151,9 @@ ListItem {
                 anchors {
                     verticalCenter: parent.verticalCenter;
                 }
-                source: "configure";
+                svg: svgNetworkIcons;
+                elementId: "edit";
                 visible: connectionItem.containsMouse;
-                active: configureButtonMouse.containsMouse;
 
                 MouseArea {
                     id: configureButtonMouse;

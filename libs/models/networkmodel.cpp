@@ -40,6 +40,7 @@ NetworkModel::NetworkModel(QObject* parent)
     roles[ConnectionStateRole] = "ConnectionState";
     roles[DevicePathRole] = "DevicePath";
     roles[DeviceStateRole] = "DeviceState";
+    roles[DownloadRole] = "Download";
     roles[ItemTypeRole] = "ItemType";
     roles[LastUsedRole] = "LastUsed";
     roles[LastUsedDateOnlyRole] = "LastUsedDateOnly";
@@ -52,10 +53,11 @@ NetworkModel::NetworkModel(QObject* parent)
     roles[SpeedRole] = "Speed";
     roles[SecurityTypeRole] = "SecurityType";
     roles[SecurityTypeStringRole] = "SecurityTypeString";
-    roles[TimeStamp] = "TimeStamp";
+    roles[TimeStampRole] = "TimeStamp";
     roles[TypeRole] = "Type";
-    roles[UuidRole] = "Uuid";
     roles[UniRole] = "Uni";
+    roles[UploadRole] = "Upload";
+    roles[UuidRole] = "Uuid";
     roles[VpnState] = "VpnState";
     setRoleNames(roles);
 
@@ -86,6 +88,8 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->devicePath();
             case DeviceStateRole:
                 return item->deviceState();
+            case DownloadRole:
+                return item->download();
             case ItemTypeRole:
                 return item->itemType();
             case LastUsedRole:
@@ -114,14 +118,16 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->securityType();
             case SecurityTypeStringRole:
                 return UiUtils::labelFromWirelessSecurity(item->securityType());
-            case TimeStamp:
+            case TimeStampRole:
                 return item->timestamp();
             case TypeRole:
                 return item->type();
-            case UuidRole:
-                return item->uuid();
             case UniRole:
                 return item->uni();
+            case UploadRole:
+                return item->upload();
+            case UuidRole:
+                return item->uuid();
             case VpnState:
                 return item->vpnState();
             default:
@@ -441,6 +447,9 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
         }
         item->setDetailsList(m_detailsList);
         item->updateDetails();
+
+        connect(item, SIGNAL(itemUpdated()), SLOT(onItemUpdated()));
+
         const int index = m_list.count();
         beginInsertRows(QModelIndex(), index, index);
         m_list.insertItem(item);
@@ -536,10 +545,21 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
 
         item->setDetailsList(m_detailsList);
         item->updateDetails();
+
+        connect(item, SIGNAL(itemUpdated()), SLOT(onItemUpdated()));
+
         const int index = m_list.count();
         beginInsertRows(QModelIndex(), index, index);
         m_list.insertItem(item);
         endInsertRows();
+    }
+}
+
+void NetworkModel::onItemUpdated()
+{
+    NetworkModelItem * item = static_cast<NetworkModelItem*>(sender());
+    if (item) {
+        updateItem(item);
     }
 }
 

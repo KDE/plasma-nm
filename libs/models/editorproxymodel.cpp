@@ -64,8 +64,8 @@ bool EditorProxyModel::lessThan(const QModelIndex &left, const QModelIndex &righ
 {
     if (sourceModel()) { // special sorting case, only for editor
         if (sortColumn() == 1) {
-            const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStamp).toDateTime();
-            const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStamp).toDateTime();
+            const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStampRole).toDateTime();
+            const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStampRole).toDateTime();
             return leftDate < rightDate;
         }
     }

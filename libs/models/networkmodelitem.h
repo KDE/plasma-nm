@@ -27,6 +27,8 @@
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/Utils>
 
+#include <Plasma/DataEngine>
+
 #include "networkmodel.h"
 #include "plasmanm_export.h"
 
@@ -58,6 +60,8 @@ public:
 
     QString deviceState() const;
     void setDeviceState(const NetworkManager::Device::State state);
+
+    QString download() const;
 
     QString icon() const;
 
@@ -99,6 +103,8 @@ public:
 
     QString uni() const;
 
+    QString upload() const;
+
     QString uuid() const;
     void setUuid(const QString& uuid);
 
@@ -108,9 +114,17 @@ public:
     bool operator==(const NetworkModelItem * item) const;
 
 public Q_SLOTS:
+    void dataUpdated(const QString & sourceName, const Plasma::DataEngine::Data & data);
     void updateDetails();
 
+Q_SIGNALS:
+    void itemUpdated();
+
 private:
+    void initializeDataEngine();
+    void removeDataEngine();
+    void setUpdateEnabled(bool enabled);
+
     QString m_activeConnectionPath;
     int m_bitrate;
     QString m_connectionPath;
@@ -120,6 +134,10 @@ private:
     NetworkManager::Device::State m_deviceState;
     QString m_details;
     QStringList m_detailsList;
+    QString m_download;
+    QString m_downloadSource;
+    QString m_downloadUnit;
+    Plasma::DataEngine * m_engine;
     NetworkManager::WirelessSetting::NetworkMode m_mode;
     QString m_name;
     QString m_nsp;
@@ -130,6 +148,10 @@ private:
     QString m_ssid;
     QDateTime m_timestamp;
     NetworkManager::ConnectionSettings::ConnectionType m_type;
+    QString m_upload;
+    QString m_uploadSource;
+    QString m_uploadUnit;
+    bool m_updateEnabled;
     QString m_uuid;
     NetworkManager::VpnConnection::State m_vpnState;
 };

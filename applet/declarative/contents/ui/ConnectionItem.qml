@@ -91,7 +91,7 @@ ListItem {
             color: "#99"+(theme.textColor.toString().substr(1))
             text:   if (ConnectionState == PlasmaNM.Enums.Activated &&
                         (Type == PlasmaNM.Enums.Wireless || Type == PlasmaNM.Enums.Wired))
-                        i18n("Connected") + ", " + Speed;
+                        i18n("Connected") + ", " + "⬇ " + Download + ", " + "⬆ " + Upload;
                     else if (ConnectionState == PlasmaNM.Enums.Activated)
                         i18n("Connected");
                     else if (ConnectionState == PlasmaNM.Enums.Activating)

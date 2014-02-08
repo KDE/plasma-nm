@@ -54,6 +54,7 @@ public:
         ConnectionStateRole,
         DevicePathRole,
         DeviceStateRole,
+        DownloadRole,
         ItemTypeRole,
         LastUsedRole,
         LastUsedDateOnlyRole,
@@ -66,10 +67,11 @@ public:
         SsidRole,
         SpeedRole,
         SpecificPathRole,
-        TimeStamp,
+        TimeStampRole,
         TypeRole,
-        UuidRole,
         UniRole,
+        UuidRole,
+        UploadRole,
         VpnState,
     };
 
@@ -78,6 +80,7 @@ public:
 
 public Q_SLOTS:
     void setDetails(const QStringList& list);
+    void onItemUpdated();
     void updateItems();
 
 private Q_SLOTS:

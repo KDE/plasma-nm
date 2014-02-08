@@ -1274,16 +1274,16 @@ QString UiUtils::formatLastUsedDateRelative(const QDateTime & lastUsed)
     if (lastUsed.isValid()) {
         const QDateTime now = QDateTime::currentDateTime();
         if (lastUsed.daysTo(now) == 0 ) {
-            int secondsAgo = lastUsed.secsTo(now);
+            const int secondsAgo = lastUsed.secsTo(now);
             if (secondsAgo < (60 * 60 )) {
-                int minutesAgo = secondsAgo / 60;
+                const int minutesAgo = secondsAgo / 60;
                 lastUsedText = i18ncp(
                                    "Label for last used time for a network connection used in the last hour, as the number of minutes since usage",
                                    "Last used one minute ago",
                                    "Last used %1 minutes ago",
                                    minutesAgo);
             } else {
-                int hoursAgo = secondsAgo / (60 * 60);
+                const int hoursAgo = secondsAgo / (60 * 60);
                 lastUsedText = i18ncp(
                                    "Label for last used time for a network connection used in the last day, as the number of hours since usage",
                                    "Last used one hour ago",
@@ -1299,4 +1299,5 @@ QString UiUtils::formatLastUsedDateRelative(const QDateTime & lastUsed)
         lastUsedText =  i18nc("Label for last used time for a "
                               "network connection that has never been used", "Never used");
     }
-    return lastUsedText;}
+    return lastUsedText;
+}

@@ -1,5 +1,6 @@
 /*
     Copyright 2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2014 Lukáš Tinkl <ltinkl@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -23,6 +24,8 @@
 
 #include <KLocalizedString>
 #include <KIcon>
+
+#include "uiutils.h"
 
 #include "editoridentitymodel.h"
 
@@ -57,10 +60,10 @@ QVariant EditorIdentityModel::headerData(int section, Qt::Orientation orientatio
 {
     if (orientation == Qt::Horizontal && role == Qt::DisplayRole) {
         switch (section) {
-            case 0:
-                return i18n("Connection name");
-            case 1:
-                return i18n("Last used");
+        case 0:
+            return i18n("Connection name");
+        case 1:
+            return i18n("Last used");
         }
     }
 
@@ -74,6 +77,9 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
     const QString lastUsed = sourceModel()->data(sourceIndex, NetworkModel::LastUsedDateOnlyRole).toString();
     const bool isActivated = (NetworkManager::ActiveConnection::State) sourceModel()->data(sourceIndex, NetworkModel::ConnectionStateRole).toInt()
                              == NetworkManager::ActiveConnection::Activated;
+    NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(sourceModel()->data(sourceIndex, NetworkModel::TypeRole).toInt());
+    QString tooltip;
+    QString iconName = UiUtils::iconAndTitleForConnectionSettingsType(type, tooltip);
     const int column = index.column();
 
     if (role == Qt::DisplayRole) {
@@ -85,11 +91,7 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
         }
     } else if (role == Qt::DecorationRole) {
         if (column == 0) {
-            if (isActivated) {
-                return KIcon("user-online");
-            } else {
-                return KIcon("user-offline");
-            }
+            return KIcon(iconName);
         }
     } else if (role == Qt::FontRole) {
         if (column == 0 && isActivated) {

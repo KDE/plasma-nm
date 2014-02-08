@@ -113,6 +113,7 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
     return deviceText;
 }
 
+#if 0
 QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
 {
     if (!device) {
@@ -169,6 +170,7 @@ QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
     kDebug() << "icon:" << icon;
     return icon;
 }
+#endif
 
 QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type, QString &title)
 {

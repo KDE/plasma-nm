@@ -92,13 +92,14 @@ public:
      * @param state The connection state
      */
     static QString connectionStateToString(Knm::InterfaceConnection::ActivationState state, const QString &connectionName = QString());
-#endif
+
 
     /**
      * @return an icon name suitable for the interface type
      * @param iface the network interface
      */
     static QString iconName(const NetworkManager::Device::Ptr &device);
+#endif
 
     static QString iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type,
                                                          QString &title);

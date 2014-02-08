@@ -161,20 +161,6 @@ QString NetworkModelItem::icon() const
         case NetworkManager::ConnectionSettings::Bridge:
             break;
         case NetworkManager::ConnectionSettings::Cdma:
-            if (m_signal == 0 ) {
-                return "network-mobile-0";
-            } else if (m_signal < 20) {
-                return "network-mobile-20";
-            } else if (m_signal < 40) {
-                return "network-mobile-40";
-            } else if (m_signal < 60) {
-                return "network-mobile-60";
-            } else if (m_signal < 80) {
-                return "network-mobile-80";
-            } else {
-                return "network-mobile-100";
-            }
-            break;
         case NetworkManager::ConnectionSettings::Gsm:
             if (m_signal == 0 ) {
                 return "network-mobile-0";
@@ -432,7 +418,7 @@ void NetworkModelItem::updateDetails()
     if (m_type == NetworkManager::ConnectionSettings::Bluetooth) {
         NetworkManager::BluetoothDevice::Ptr btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
         m_details += UiUtils::bluetoothDetails(btDevice, m_detailsList);
-    } else if (m_type == NetworkManager::ConnectionSettings::Gsm) {
+    } else if (m_type == NetworkManager::ConnectionSettings::Gsm || m_type == NetworkManager::ConnectionSettings::Cdma) {
         NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
         m_details += UiUtils::modemDetails(modemDevice, m_detailsList);
     } else if (m_type == NetworkManager::ConnectionSettings::Wimax) {

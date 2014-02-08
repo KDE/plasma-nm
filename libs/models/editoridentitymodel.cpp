@@ -93,6 +93,9 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
         if (column == 0) {
             return KIcon(iconName);
         }
+    } else if (role == Qt::ToolTipRole) {
+        if (column == 0)
+            return tooltip;
     } else if (role == Qt::FontRole) {
         if (column == 0 && isActivated) {
             QFont f;

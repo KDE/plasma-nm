@@ -8,9 +8,9 @@ set(l2tp_SRCS
 
 qt5_wrap_ui(l2tp_SRCS l2tp.ui l2tpadvanced.ui l2tpauth.ui l2tpppp.ui)
 
-kservice_desktop_to_json(plasmanetworkmanagement_l2tpui.desktop)
-
 plasma_add_plugin(plasmanetworkmanagement_l2tpui ${l2tp_SRCS})
+
+kservice_desktop_to_json(plasmanetworkmanagement_l2tpui plasmanetworkmanagement_l2tpui.desktop)
 
 target_link_libraries(plasmanetworkmanagement_l2tpui
     plasmanetworkmanagement-internal

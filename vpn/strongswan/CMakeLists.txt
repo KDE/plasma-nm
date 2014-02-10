@@ -6,9 +6,9 @@ set(strongswan_SRCS
 
 qt5_wrap_ui(strongswan_SRCS strongswanprop.ui strongswanauth.ui)
 
-kservice_desktop_to_json(plasmanetworkmanagement_strongswanui.desktop)
-
 plasma_add_plugin(plasmanetworkmanagement_strongswanui ${strongswan_SRCS})
+
+kservice_desktop_to_json(plasmanetworkmanagement_strongswanui plasmanetworkmanagement_strongswanui.desktop)
 
 target_link_libraries(plasmanetworkmanagement_strongswanui
     Qt5::Widgets

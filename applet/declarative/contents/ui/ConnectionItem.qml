@@ -129,7 +129,7 @@ ListItem {
                 }
                 visible: connectionItem.containsMouse;
                 svg: svgNetworkIcons;
-                elementId: "showinfo";
+                elementId: openDetailsButtonMouse.containsMouse ? "showinfo-hover" : "showinfo";
 
                 MouseArea {
                     id: openDetailsButtonMouse;
@@ -161,7 +161,7 @@ ListItem {
                     verticalCenter: parent.verticalCenter;
                 }
                 svg: svgNetworkIcons;
-                elementId: "edit";
+                elementId: configureButtonMouse.containsMouse ? "edit-hover" : "edit";
                 visible: connectionItem.containsMouse;
 
                 MouseArea {

@@ -119,7 +119,7 @@ ListItem {
                 verticalCenter: parent.verticalCenter;
                 right: parent.right;
             }
-            spacing: 5;
+            spacing: 8;
 
             PlasmaCore.SvgItem {
                 id: openDetailsButton;
@@ -131,11 +131,20 @@ ListItem {
                 }
                 visible: connectionItem.containsMouse;
                 svg: svgNetworkIcons;
-                elementId: "showinfo";
+                elementId: openDetailsButtonMouse.containsMouse ? "showinfo-hover" : "showinfo";
 
                 MouseArea {
                     id: openDetailsButtonMouse;
-                    anchors.fill: parent;
+                    anchors {
+                        bottom: parent.bottom;
+                        left: parent.left;
+                        right: parent.right;
+                        top: parent.top;
+                        bottomMargin: -4;
+                        leftMargin: -4;
+                        rightMargin: -4;
+                        topMargin: -4;
+                    }
                     hoverEnabled: true;
 
                     onClicked: {
@@ -154,12 +163,21 @@ ListItem {
                     verticalCenter: parent.verticalCenter;
                 }
                 svg: svgNetworkIcons;
-                elementId: "edit";
+                elementId: configureButtonMouse.containsMouse ? "edit-hover" : "edit";
                 visible: connectionItem.containsMouse;
 
                 MouseArea {
                     id: configureButtonMouse;
-                    anchors.fill: parent;
+                    anchors {
+                        bottom: parent.bottom;
+                        left: parent.left;
+                        right: parent.right;
+                        top: parent.top;
+                        bottomMargin: -4;
+                        leftMargin: -4;
+                        rightMargin: -4;
+                        topMargin: -4;
+                    }
                     hoverEnabled: true;
 
                     onClicked: {

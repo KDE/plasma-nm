@@ -656,16 +656,33 @@ void NetworkModel::availableConnectionDisappeared(const QString& connection)
     qDebug() << "Removing available connection " << connection;
 
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Connection, connection)) {
+        QString devicePath = item->devicePath();
+        QString specificPath = item->specificPath();
         item->setDeviceName(QString());
         item->setDevicePath(QString());
         item->setDeviceState(NetworkManager::Device::UnknownState);
         item->setSignal(0);
         item->setSpecificPath(QString());
         item->setSpeed(0);
+        // Check whether the connection is still available as an access point, this happens
+        // when we change its properties, like ssid, bssid, security etc.
+        if (item->type() == NetworkManager::ConnectionSettings::Wireless && !specificPath.isEmpty()) {
+            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePath);
+            if (device && device->type() == NetworkManager::Device::Wifi) {
+                NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+                if (wifiDevice) {
+                    NetworkManager::AccessPoint::Ptr ap = wifiDevice->findAccessPoint(specificPath);
+                    if (ap) {
+                        NetworkManager::WirelessNetwork::Ptr network = wifiDevice->findNetwork(ap->ssid());
+                        if (network) {
+                            addWirelessNetwork(network, wifiDevice);
+                        }
+                    }
+                }
+            }
+        }
         updateItem(item);
     }
-
-    // TODO split the item to a connection and access point ???
 }
 
 void NetworkModel::bitrateChanged(int bitrate)

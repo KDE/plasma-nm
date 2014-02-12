@@ -49,7 +49,7 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
             SLOT(activatingConnectionChanged(QString)));
     connect(NetworkManager::notifier(), SIGNAL(activeConnectionAdded(QString)),
             SLOT(activeConnectionAdded(QString)));
-    connect(NetworkManager::notifier(), SIGNAL(connectivityChanged()),
+    connect(NetworkManager::notifier(), SIGNAL(connectivityChanged(NetworkManager::Connectivity)),
             SLOT(connectivityChanged()));
     connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)),
             SLOT(deviceAdded(QString)));

@@ -260,7 +260,10 @@ void NetworkModelItem::setName(const QString& name)
 
 QString NetworkModelItem::originalName() const
 {
-    return name() + " (" + m_deviceName + ')';
+    if (m_deviceName.isEmpty()) {
+        return m_name;
+    }
+    return m_name + " (" + m_deviceName + ')';
 }
 
 QString NetworkModelItem::sectionType() const

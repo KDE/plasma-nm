@@ -25,7 +25,9 @@
 #include <QObject>
 #include <QStringList>
 
-class GlobalConfig : public QObject
+#include "plasmanm_export.h"
+
+class PLASMA_NM_EXPORT GlobalConfig : public QObject
 {
 Q_OBJECT
 

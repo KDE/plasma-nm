@@ -42,7 +42,7 @@ Item {
         id: globalConfig;
 
         onDetailKeysChanged: {
-            connectionModel.setDetails(globalConfig.detailKeys);
+            connectionModel.updateItems();
         }
 
         onNetworkSpeedUnitChanged: {
@@ -122,7 +122,6 @@ Item {
 
     Component.onCompleted: {
         configChanged();
-        connectionModel.setDetails(globalConfig.detailKeys);
         plasmoid.addEventListener('configChanged', mainWindow.configChanged)
     }
 

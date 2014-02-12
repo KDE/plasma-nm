@@ -79,7 +79,6 @@ public:
     QVariant data(const QModelIndex& index, int role) const;
 
 public Q_SLOTS:
-    void setDetails(const QStringList& list);
     void onItemUpdated();
     void updateItems();
 
@@ -116,7 +115,6 @@ private Q_SLOTS:
     void initialize();
 
 private:
-    QStringList m_detailsList;
     NetworkItemsList m_list;
 
     void addActiveConnection(const NetworkManager::ActiveConnection::Ptr& activeConnection);

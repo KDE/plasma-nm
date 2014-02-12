@@ -144,15 +144,6 @@ int NetworkModel::rowCount(const QModelIndex& parent) const
     return m_list.count();
 }
 
-void NetworkModel::setDetails(const QStringList& list)
-{
-    m_detailsList = list;
-    foreach (NetworkModelItem * item, m_list.items()) {
-        item->setDetailsList(m_detailsList);
-        updateItem(item);
-    }
-}
-
 void NetworkModel::initialize()
 {
     // Initialize existing connections
@@ -445,7 +436,6 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
             item->setSecurityType(NetworkManager::Utils::securityTypeFromConnectionSetting(settings));
             item->setSsid(wirelessSetting->ssid());
         }
-        item->setDetailsList(m_detailsList);
         item->updateDetails();
 
         connect(item, SIGNAL(itemUpdated()), SLOT(onItemUpdated()));
@@ -543,7 +533,6 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
         item->setType(NetworkManager::ConnectionSettings::Wireless);
         item->setSecurityType(securityType);
 
-        item->setDetailsList(m_detailsList);
         item->updateDetails();
 
         connect(item, SIGNAL(itemUpdated()), SLOT(onItemUpdated()));
@@ -577,7 +566,6 @@ void NetworkModel::updateItem(NetworkModelItem * item)
 void NetworkModel::updateItems()
 {
     foreach (NetworkModelItem * item, m_list.items()) {
-        item->setDetailsList(m_detailsList);
         updateItem(item);
     }
 }
@@ -953,8 +941,7 @@ void NetworkModel::wirelessNetworkReferenceApChanged(const QString& accessPoint)
     NetworkManager::WirelessNetwork * networkPtr = qobject_cast<NetworkManager::WirelessNetwork*>(sender());
 
     if (networkPtr) {
-        // FIXME not sure about it, might be wrong when using more wireless cards
-        foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, networkPtr->ssid())) {
+        foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, networkPtr->ssid(), networkPtr->device())) {
             item->setSpecificPath(accessPoint);
             updateItem(item);
         }
@@ -968,8 +955,7 @@ void NetworkModel::wirelessNetworkSignalChanged(int signal)
         // TODO remove debug
         qDebug() << "Wireless network " << networkPtr->ssid() << " signal changed - " << signal;
 
-        // FIXME not sure about it, might be wrong when using more wireless cards
-        foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, networkPtr->ssid())) {
+        foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, networkPtr->ssid(), networkPtr->device())) {
             item->setSignal(signal);
             updateItem(item);
         }

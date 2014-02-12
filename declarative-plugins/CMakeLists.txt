@@ -6,7 +6,6 @@ set(plasma_networkmanagement_qml_plugins_SRCS
    connectionicon.cpp
    enabledconnections.cpp
    enums.cpp
-   globalconfig.cpp
    networkstatus.cpp
    trafficmonitor.cpp
    qmlplugins.cpp

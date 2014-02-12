@@ -18,6 +18,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "globalconfig.h"
 #include "networkmodelitem.h"
 #include "uiutils.h"
 
@@ -105,11 +106,6 @@ void NetworkModelItem::setConnectionState(NetworkManager::ActiveConnection::Stat
 QString NetworkModelItem::details() const
 {
     return m_details;
-}
-
-void NetworkModelItem::setDetailsList(const QStringList& list)
-{
-    m_detailsList = list;
 }
 
 QString NetworkModelItem::devicePath() const
@@ -413,30 +409,32 @@ void NetworkModelItem::updateDetails()
 
     m_details = "<qt><table>";
 
+    QStringList detailsList = GlobalConfig().detailKeys();
+
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_connectionPath);
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
 
-    m_details += UiUtils::connectionDetails(device, connection, m_detailsList);
+    m_details += UiUtils::connectionDetails(device, connection, detailsList);
 
     if (m_type == NetworkManager::ConnectionSettings::Bluetooth) {
         NetworkManager::BluetoothDevice::Ptr btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
-        m_details += UiUtils::bluetoothDetails(btDevice, m_detailsList);
+        m_details += UiUtils::bluetoothDetails(btDevice, detailsList);
     } else if (m_type == NetworkManager::ConnectionSettings::Gsm || m_type == NetworkManager::ConnectionSettings::Cdma) {
         NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
-        m_details += UiUtils::modemDetails(modemDevice, m_detailsList);
+        m_details += UiUtils::modemDetails(modemDevice, detailsList);
     } else if (m_type == NetworkManager::ConnectionSettings::Wimax) {
         NetworkManager::WimaxNsp::Ptr wimaxNsp;
         NetworkManager::WimaxDevice::Ptr wimaxDevice = device.objectCast<NetworkManager::WimaxDevice>();
         wimaxNsp = wimaxDevice->findNsp(m_specificPath);
         if (wimaxDevice && wimaxNsp) {
-            m_details += UiUtils::wimaxDetails(wimaxDevice, wimaxNsp, connection, m_detailsList);
+            m_details += UiUtils::wimaxDetails(wimaxDevice, wimaxNsp, connection, detailsList);
         }
     } else if (m_type == NetworkManager::ConnectionSettings::Wired) {
         NetworkManager::WiredDevice::Ptr wiredDevice;
         if (device) {
             wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
         }
-        m_details += UiUtils::wiredDetails(wiredDevice, connection, m_detailsList);
+        m_details += UiUtils::wiredDetails(wiredDevice, connection, detailsList);
     } else if (m_type == NetworkManager::ConnectionSettings::Wireless) {
         NetworkManager::WirelessDevice::Ptr wirelessDevice;
         if (device) {
@@ -446,7 +444,7 @@ void NetworkModelItem::updateDetails()
         if (wirelessDevice) {
             network = wirelessDevice->findNetwork(m_ssid);
         }
-        m_details += UiUtils::wirelessDetails(wirelessDevice, network, connection, m_detailsList);
+        m_details += UiUtils::wirelessDetails(wirelessDevice, network, connection, detailsList);
     } else if (m_type == NetworkManager::ConnectionSettings::Vpn) {
         NetworkManager::ActiveConnection::Ptr active = NetworkManager::findActiveConnection(m_activeConnectionPath);
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_connectionPath);
@@ -464,7 +462,7 @@ void NetworkModelItem::updateDetails()
         if (active) {
             vpnConnection = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(active->path()), &QObject::deleteLater);
         }
-        m_details += UiUtils::vpnDetails(vpnConnection, vpnSetting, m_detailsList);
+        m_details += UiUtils::vpnDetails(vpnConnection, vpnSetting, detailsList);
     }
 
     m_details += "</table></qt>";

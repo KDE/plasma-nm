@@ -111,6 +111,7 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
 
 QModelIndex EditorIdentityModel::index(int row, int column, const QModelIndex& parent) const
 {
+    Q_UNUSED(parent);
     return createIndex(row, column);
 }
 

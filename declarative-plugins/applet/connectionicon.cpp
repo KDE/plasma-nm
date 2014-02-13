@@ -187,7 +187,7 @@ void ConnectionIcon::carrierChanged(bool carrier)
 
 void ConnectionIcon::connectivityChanged()
 {
-    NetworkManager::Connectivity conn = NetworkManager::checkConnectivity();
+    NetworkManager::Connectivity conn = NetworkManager::connectivity();
     m_limited = (conn == NetworkManager::Portal || conn == NetworkManager::Limited);
     setIcons();
 }

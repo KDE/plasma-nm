@@ -47,7 +47,7 @@ Item {
         SwitchButton {
             id: wifiSwitchButton;
 
-            checked: enabledConnections.wirelessEnabled;
+            checked: enabled && enabledConnections.wirelessEnabled;
             enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && enabledConnections.networkingEnabled;
             icon: checked ? "network-wireless-on" : "network-wireless-off";
 
@@ -61,7 +61,7 @@ Item {
         SwitchButton {
             id: wwanSwitchButton;
 
-            checked: enabledConnections.wwanEnabled;
+            checked: enabled && enabledConnections.wwanEnabled;
             enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && enabledConnections.networkingEnabled;
             icon: checked ? "network-mobile-on" : "network-mobile-off";
 

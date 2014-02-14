@@ -48,6 +48,7 @@ if (OPENCONNECT_FOUND)
             KF5::KIOWidgets
             KF5::CoreAddons
             KF5::KDE4Support
+            ${OPENCONNECT_LIBRARIES}
             ${maybe_OPENSSL_LIBRARIES}
         )
         install(TARGETS plasmanetworkmanagement_openconnectui  DESTINATION ${PLUGIN_INSTALL_DIR}/plasmanetworkmanagement/vpnuiplugin)

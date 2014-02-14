@@ -24,12 +24,14 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include "ui_openconnectauth.h"
 
 #include <KDialog>
+#include <KLocalizedString>
 #include <QPushButton>
 #include <QString>
 #include <QLabel>
 #include <QEventLoop>
 #include <QFormLayout>
 #include <KLineEdit>
+#include <KIcon>
 #include <KDialogButtonBox>
 #include <KPushButton>
 #include <KComboBox>

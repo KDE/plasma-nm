@@ -21,6 +21,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "openconnectwidget.h"
 #include <KDialog>
+#include <KUrl>
 
 #include "ui_openconnectprop.h"
 

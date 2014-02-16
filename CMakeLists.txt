@@ -46,7 +46,7 @@ include_directories(${Qt5Widgets_INCLUDE_DIRS}
 find_package(KF5 CONFIG REQUIRED 
     IdleTime ItemModels WidgetsAddons WindowSystem Codecs Archive CoreAddons Solid ThreadWeaver
     Config Auth JS Wallet DBusAddons Sonnet
-    I18n GuiAddons Service ConfigWidgets ItemViews Notifications IconThemes Style Completion JobWidgets TextWidgets XmlGui Crash
+    I18n GuiAddons Service ConfigWidgets ItemViews Notifications IconThemes Completion JobWidgets TextWidgets XmlGui Crash
     Bookmarks UnitConversion KCMUtils)
 
 find_package(KF5Plasma REQUIRED NO_MODULE)

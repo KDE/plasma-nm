@@ -26,13 +26,13 @@ Item {
     id: switchButton;
 
     property alias icon: switchButtonIcon.elementId;
-    property bool checked: false;
-    property bool enabled: true;
+    property alias checked: switchButtonCheckbox.checked;
+    property alias enabled: switchButtonCheckbox.enabled;
 
     signal clicked();
 
-    height: slider.height + padding.margins.top;
-    width: slider.width + switchButtonIcon.width + padding.margins.left * 2 + padding.margins.right;
+    height: switchButtonIcon.height + padding.margins.top + padding.margins.bottom;
+    width: switchButtonCheckbox.width + switchButtonIcon.width + padding.margins.left * 3 + padding.margins.right;
 
     PlasmaCore.FrameSvgItem {
         id: switchButtonBackground;
@@ -45,55 +45,13 @@ Item {
             fill: parent;
         }
 
-        PlasmaCore.FrameSvgItem {
-            id: slider;
-            imagePath: "widgets/slider";
-            prefix: "groove";
-            height: width * 2;
-            width: theme.defaultFont.mSize.height;
+        PlasmaComponents.CheckBox {
+            id: switchButtonCheckbox;
+
             anchors {
                 left: parent.left;
                 leftMargin: padding.margins.right;
                 verticalCenter: parent.verticalCenter;
-            }
-
-            PlasmaCore.FrameSvgItem {
-                id: highlight;
-                imagePath: "widgets/slider";
-                prefix: "groove-highlight";
-                anchors.fill: parent;
-
-                opacity: switchButton.checked ? 1 : 0
-                Behavior on opacity {
-                    PropertyAnimation { duration: 100 }
-                }
-            }
-
-            PlasmaCore.FrameSvgItem {
-                imagePath: "widgets/button";
-                prefix: "shadow";
-                anchors {
-                    fill: button;
-                    leftMargin: -margins.left;
-                    topMargin: -margins.top;
-                    rightMargin: -margins.right;
-                    bottomMargin: -margins.bottom;
-                }
-            }
-
-            PlasmaCore.FrameSvgItem {
-                id: button;
-                imagePath: "widgets/button";
-                prefix: "normal";
-                anchors {
-                    left: parent.left;
-                    right: parent.right;
-                }
-                height: width;
-                y: switchButton.checked ? 0 : height;
-                Behavior on y {
-                    PropertyAnimation { duration: 100 }
-                }
             }
         }
 
@@ -101,7 +59,7 @@ Item {
             id: switchButtonIcon;
 
             anchors {
-                left: slider.right;
+                left: switchButtonCheckbox.right;
                 leftMargin: padding.margins.left;
                 verticalCenter: parent.verticalCenter;
             }
@@ -111,7 +69,6 @@ Item {
         MouseArea {
             anchors.fill: parent;
             hoverEnabled: true;
-            enabled: switchButton.enabled;
 
             onEntered: {
                 switchButtonBackground.prefix = "pressed";
@@ -123,7 +80,7 @@ Item {
 
             onClicked: {
                 if (switchButton.enabled) {
-                    switchButton.checked = !switchButton.checked;
+                    switchButtonCheckbox.checked = !switchButtonCheckbox.checked;
                 }
                 switchButton.clicked();
             }

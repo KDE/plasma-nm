@@ -58,6 +58,8 @@ Item {
         PlasmaCore.SvgItem {
             id: switchButtonIcon;
 
+            width: sizes.iconSize;
+            height: width;
             anchors {
                 left: switchButtonCheckbox.right;
                 leftMargin: padding.margins.left;

@@ -65,6 +65,7 @@ public Q_SLOTS:
     void enableWireless(bool enable);
     void enableWimax(bool enable);
     void enableWwan(bool enable);
+    void enableBt(bool enable);
     /**
      * Opens connection editor for given connection
      * @uuid - uuid of the connection you want to edit
@@ -85,6 +86,9 @@ private:
     QString m_tmpConnectionUuid;
     QString m_tmpDevicePath;
     QString m_tmpSpecificPath;
+
+    bool isBtEnabled();
+    bool m_btEnabled;
 };
 
 #endif // PLASMA_NM_HANDLER_H

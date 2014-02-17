@@ -48,6 +48,8 @@
 Handler::Handler(QObject* parent)
     : QObject(parent)
 {
+    m_btEnabled = isBtEnabled();
+    NMHandlerDebug() << "BT initially enabled" << m_btEnabled;
 }
 
 Handler::~Handler()
@@ -209,7 +211,7 @@ void Handler::enableAirplaneMode(bool enable)
     enableWimax(!enable);
     enableWireless(!enable);
     enableWwan(!enable);
-    // TODO bluetooth
+    enableBt(!enable);
 }
 
 void Handler::enableNetworking(bool enable)
@@ -234,6 +236,57 @@ void Handler::enableWwan(bool enable)
 {
     NMHandlerDebug() << "Wwan enabled: " << enable;
     NetworkManager::setWwanEnabled(enable);
+}
+
+bool Handler::isBtEnabled()
+{
+    bool result = false;
+
+    QDBusInterface managerIface("org.bluez", "/", "org.freedesktop.DBus.ObjectManager", QDBusConnection::systemBus(), this);
+    QDBusReply<QMap<QDBusObjectPath, NMVariantMapMap> > reply = managerIface.call("GetManagedObjects");
+    if (reply.isValid()) {
+        foreach(const QDBusObjectPath &path, reply.value().keys()) {
+            const QString objPath = path.path();
+            //qDebug() << "inspecting path" << objPath;
+            const QStringList interfaces = reply.value().value(path).keys();
+            //qDebug() << "interfaces:" << interfaces;
+            if (interfaces.contains("org.bluez.Adapter1")) {
+                QDBusInterface adapterIface("org.bluez", objPath, "org.bluez.Adapter1", QDBusConnection::systemBus(), this);
+                const bool adapterEnabled = adapterIface.property("Powered").toBool();
+                //qDebug() << "Adapter" << objPath << "enabled:" << adapterEnabled;
+                result |= adapterEnabled;
+            }
+        }
+    } else {
+        NMHandlerDebug() << "Failed to enumerate BT adapters";
+    }
+
+    return result;
+}
+
+void Handler::enableBt(bool enable)
+{
+    const bool wasEnabled = isBtEnabled();
+
+    QDBusInterface managerIface("org.bluez", "/", "org.freedesktop.DBus.ObjectManager", QDBusConnection::systemBus(), this);
+    QDBusReply<QMap<QDBusObjectPath, NMVariantMapMap> > reply = managerIface.call("GetManagedObjects");
+    if (reply.isValid()) {
+        foreach(const QDBusObjectPath &path, reply.value().keys()) {
+            const QString objPath = path.path();
+            //qDebug() << "inspecting path" << objPath;
+            const QStringList interfaces = reply.value().value(path).keys();
+            //qDebug() << "interfaces:" << interfaces;
+            if (interfaces.contains("org.bluez.Adapter1")) {
+                QDBusInterface adapterIface("org.bluez", objPath, "org.bluez.Adapter1", QDBusConnection::systemBus(), this);
+                //qDebug() << "Enabling adapter:" << objPath << (enable && m_btEnabled);
+                adapterIface.setProperty("Powered", enable && m_btEnabled);
+            }
+        }
+    } else {
+        NMHandlerDebug() << "Failed to enumerate BT adapters";
+    }
+
+    m_btEnabled = wasEnabled;
 }
 
 void Handler::editConnection(const QString& uuid)

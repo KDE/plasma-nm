@@ -48,7 +48,7 @@ Item {
             id: wifiSwitchButton;
 
             checked: enabled && enabledConnections.wirelessEnabled;
-            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && enabledConnections.networkingEnabled;
+            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !enabledConnections.airplaneModeEnabled;
             icon: checked ? "network-wireless-on" : "network-wireless-off";
 
             onClicked: {
@@ -62,7 +62,7 @@ Item {
             id: wwanSwitchButton;
 
             checked: enabled && enabledConnections.wwanEnabled;
-            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && enabledConnections.networkingEnabled;
+            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !enabledConnections.airplaneModeEnabled;
             icon: checked ? "network-mobile-on" : "network-mobile-off";
 
             onClicked: {
@@ -75,12 +75,12 @@ Item {
         SwitchButton {
             id: planeModeSwitchButton;
 
-            checked: !enabledConnections.networkingEnabled;
+            checked: enabledConnections.airplaneModeEnabled;
             // TODO another icon
             icon: checked ? "flightmode-on" : "flightmode-off";
 
             onClicked: {
-                handler.enableNetworking(!checked);
+                handler.enableAirplaneMode(checked);
             }
         }
     }

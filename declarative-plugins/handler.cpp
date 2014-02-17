@@ -204,6 +204,14 @@ void Handler::disconnectAll()
     }
 }
 
+void Handler::enableAirplaneMode(bool enable)
+{
+    enableWimax(!enable);
+    enableWireless(!enable);
+    enableWwan(!enable);
+    // TODO bluetooth
+}
+
 void Handler::enableNetworking(bool enable)
 {
     NMHandlerDebug() << "Networking enabled: " << enable;

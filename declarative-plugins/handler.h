@@ -60,6 +60,7 @@ public Q_SLOTS:
      * Disconnects all connections
      */
     void disconnectAll();
+    void enableAirplaneMode(bool enable);
     void enableNetworking(bool enable);
     void enableWireless(bool enable);
     void enableWimax(bool enable);

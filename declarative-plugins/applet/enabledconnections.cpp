@@ -35,10 +35,6 @@ EnabledConnections::EnabledConnections(QObject* parent)
     , m_wwanEnabled(NetworkManager::isWwanEnabled())
     , m_wwanHwEnabled(NetworkManager::isWwanHardwareEnabled())
 {
-    m_airplaneModeEnabled = (!m_wimaxEnabled || !m_wimaxHwEnabled) &&
-                            (!m_wirelessEnabled || !m_wirelessHwEnabled) &&
-                            (!m_wwanEnabled || !m_wwanHwEnabled);
-    // TODO check bluetooth
     connect(NetworkManager::notifier(), SIGNAL(networkingEnabledChanged(bool)),
             SLOT(onNetworkingEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
@@ -57,11 +53,6 @@ EnabledConnections::EnabledConnections(QObject* parent)
 
 EnabledConnections::~EnabledConnections()
 {
-}
-
-bool EnabledConnections::isAirplaneModeEnabled() const
-{
-    return m_airplaneModeEnabled;
 }
 
 bool EnabledConnections::isNetworkingEnabled() const
@@ -99,15 +90,6 @@ bool EnabledConnections::isWwanHwEnabled() const
     return m_wwanHwEnabled;
 }
 
-void EnabledConnections::recheckAirplaneMode()
-{
-    m_airplaneModeEnabled = (!m_wimaxEnabled || !m_wimaxHwEnabled) &&
-                            (!m_wirelessEnabled || !m_wirelessHwEnabled) &&
-                            (!m_wwanEnabled || !m_wwanHwEnabled);
-    NMAppletDebug() << "Emit signal airplaneModeEnabled(" << m_airplaneModeEnabled << ")";
-    Q_EMIT airplaneModeEnabled(m_airplaneModeEnabled);
-}
-
 void EnabledConnections::onNetworkingEnabled(bool enabled)
 {
     m_networkingEnabled = enabled;
@@ -120,7 +102,6 @@ void EnabledConnections::onWirelessEnabled(bool enabled)
     m_wirelessEnabled = enabled;
     NMAppletDebug() << "Emit signal wirelessEnabled(" << enabled << ")";
     Q_EMIT wirelessEnabled(enabled);
-    recheckAirplaneMode();
 }
 
 void EnabledConnections::onWirelessHwEnabled(bool enabled)
@@ -128,7 +109,6 @@ void EnabledConnections::onWirelessHwEnabled(bool enabled)
     m_wirelessHwEnabled = enabled;
     NMAppletDebug() << "Emit signal wirelessHwEnabled(" << enabled << ")";
     Q_EMIT wirelessHwEnabled(enabled);
-    recheckAirplaneMode();
 }
 
 void EnabledConnections::onWimaxEnabled(bool enabled)
@@ -136,7 +116,6 @@ void EnabledConnections::onWimaxEnabled(bool enabled)
     m_wimaxEnabled = enabled;
     NMAppletDebug() << "Emit signal wimaxEnabled(" << enabled << ")";
     Q_EMIT wimaxEnabled(enabled);
-    recheckAirplaneMode();
 }
 
 void EnabledConnections::onWimaxHwEnabled(bool enabled)
@@ -144,7 +123,6 @@ void EnabledConnections::onWimaxHwEnabled(bool enabled)
     m_wimaxHwEnabled = enabled;
     NMAppletDebug() << "Emit signal wimaxHwEnabled(" << enabled << ")";
     Q_EMIT wimaxHwEnabled(enabled);
-    recheckAirplaneMode();
 }
 
 void EnabledConnections::onWwanEnabled(bool enabled)
@@ -152,7 +130,6 @@ void EnabledConnections::onWwanEnabled(bool enabled)
     m_wwanEnabled = enabled;
     NMAppletDebug() << "Emit signal wwanEnabled(" << enabled << ")";
     Q_EMIT wwanEnabled(enabled);
-    recheckAirplaneMode();
 }
 
 void EnabledConnections::onWwanHwEnabled(bool enabled)
@@ -160,5 +137,4 @@ void EnabledConnections::onWwanHwEnabled(bool enabled)
     m_wwanHwEnabled = enabled;
     NMAppletDebug() << "Emit signal wwanHWEnabled(" << enabled << ")";
     Q_EMIT wwanHwEnabled(enabled);
-    recheckAirplaneMode();
 }

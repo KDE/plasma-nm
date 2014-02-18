@@ -37,6 +37,7 @@ GlobalConfig* GlobalConfig::instance()
 // This is called from instance()
 GlobalConfig::GlobalConfig(void *dummy)
     : QObject()
+    , m_airplaneMode(false)
 {
     Q_UNUSED(dummy);
 }
@@ -44,9 +45,12 @@ GlobalConfig::GlobalConfig(void *dummy)
 // This one is called when instantiated in QML
 GlobalConfig::GlobalConfig()
     : QObject()
+    , m_airplaneMode(false)
 {
     GlobalConfig *singleton = instance();
 
+    connect(singleton, SIGNAL(airplaneModeEnabledChanged()),
+            this, SIGNAL(airplaneModeEnabledChanged()));
     connect(singleton, SIGNAL(detailKeysChanged()),
             this, SIGNAL(detailKeysChanged()));
     connect(singleton, SIGNAL(networkSpeedUnitChanged()),
@@ -55,6 +59,28 @@ GlobalConfig::GlobalConfig()
 
 GlobalConfig::~GlobalConfig()
 {
+}
+
+bool GlobalConfig::airplaneModeEnabled() const
+{
+    if (this != s_instance) {
+        return s_instance->airplaneModeEnabled();
+    }
+
+    return m_airplaneMode;
+}
+
+void GlobalConfig::setAirplaneModeEnabled(bool enabled)
+{
+    if (this != s_instance) {
+        s_instance->setAirplaneModeEnabled(enabled);
+        return;
+    }
+
+    if (m_airplaneMode != enabled) {
+        m_airplaneMode = enabled;
+        Q_EMIT airplaneModeEnabledChanged();
+    }
 }
 
 QStringList GlobalConfig::detailKeys() const

@@ -48,13 +48,11 @@ Item {
             id: wifiSwitchButton;
 
             checked: enabled && enabledConnections.wirelessEnabled;
-            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !enabledConnections.airplaneModeEnabled;
+            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !globalConfig.airplaneModeEnabled;
             icon: checked ? "network-wireless-on" : "network-wireless-off";
 
             onClicked: {
-                if (enabled) {
-                    handler.enableWireless(checked);
-                }
+                handler.enableWireless(!checked);
             }
         }
 
@@ -62,25 +60,23 @@ Item {
             id: wwanSwitchButton;
 
             checked: enabled && enabledConnections.wwanEnabled;
-            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !enabledConnections.airplaneModeEnabled;
+            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !globalConfig.airplaneModeEnabled;
             icon: checked ? "network-mobile-on" : "network-mobile-off";
 
             onClicked: {
-                if (enabled) {
-                    handler.enableWwan(checked);
-                }
+                handler.enableWwan(!checked);
             }
         }
 
         SwitchButton {
             id: planeModeSwitchButton;
 
-            checked: enabledConnections.airplaneModeEnabled;
-            // TODO another icon
+            checked: globalConfig.airplaneModeEnabled;
             icon: checked ? "flightmode-on" : "flightmode-off";
 
             onClicked: {
-                handler.enableAirplaneMode(checked);
+                handler.enableAirplaneMode(!checked);
+                globalConfig.setAirplaneModeEnabled(!checked);
             }
         }
     }

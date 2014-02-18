@@ -26,10 +26,6 @@
 class EnabledConnections : public QObject
 {
 /**
- * Indicates if airplane mode is currently enabled or not
- */
-Q_PROPERTY(bool airplaneModeEnabled READ isAirplaneModeEnabled NOTIFY airplaneModeEnabled);
-/**
  * Indicates if overall networking is currently enabled or not
  */
 Q_PROPERTY(bool networkingEnabled READ isNetworkingEnabled NOTIFY networkingEnabled)
@@ -62,7 +58,6 @@ public:
     explicit EnabledConnections(QObject* parent = 0);
     virtual ~EnabledConnections();
 
-    bool isAirplaneModeEnabled() const;
     bool isNetworkingEnabled() const;
     bool isWirelessEnabled() const;
     bool isWirelessHwEnabled() const;
@@ -72,7 +67,6 @@ public:
     bool isWwanHwEnabled() const;
 
 public Q_SLOTS:
-    void recheckAirplaneMode();
     void onNetworkingEnabled(bool enabled);
     void onWirelessEnabled(bool enabled);
     void onWirelessHwEnabled(bool enabled);
@@ -82,7 +76,6 @@ public Q_SLOTS:
     void onWwanHwEnabled(bool enabled);
 
 Q_SIGNALS:
-    void airplaneModeEnabled(bool enabled);
     void networkingEnabled(bool enabled);
     void wirelessEnabled(bool enabled);
     void wirelessHwEnabled(bool enabled);
@@ -92,7 +85,6 @@ Q_SIGNALS:
     void wwanHwEnabled(bool enabled);
 
 private:
-    bool m_airplaneModeEnabled;
     bool m_networkingEnabled;
     bool m_wirelessEnabled;
     bool m_wirelessHwEnabled;

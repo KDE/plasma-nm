@@ -82,9 +82,8 @@ Item {
 
             onClicked: {
                 if (switchButton.enabled) {
-                    switchButtonCheckbox.checked = !switchButtonCheckbox.checked;
+                    switchButton.clicked();
                 }
-                switchButton.clicked();
             }
         }
     }

@@ -429,9 +429,9 @@ ListItem {
             return result;
         } else if (itemConnectionState == PlasmaNM.Enums.Activated) {
             if (itemType == PlasmaNM.Enums.Wired) {
-                return i18n("Connected") + ", " + itemSpeed;
+                return i18n("Connected");/* + ", " + itemSpeed;*/
             } else if (itemType == PlasmaNM.Enums.Wireless) {
-                return i18n("Connected") + ", " + itemSpeed/* + ", " + i18n("Strength: %1%", itemSignal);*/
+                return i18n("Connected")/* + ", " + itemSpeed + ", " + i18n("Strength: %1%", itemSignal);*/
             } else if (itemType == PlasmaNM.Enums.Gsm || itemType == PlasmaNM.Enums.Cdma) {
                 // TODO
             } else {

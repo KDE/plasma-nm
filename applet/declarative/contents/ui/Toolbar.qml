@@ -36,6 +36,11 @@ Item {
         id: availableDevices;
     }
 
+    PlasmaCore.Svg {
+        id: lineSvg;
+        imagePath: "widgets/line";
+    }
+
     Row {
         anchors {
             bottom: parent.bottom;
@@ -56,6 +61,13 @@ Item {
             }
         }
 
+        PlasmaCore.SvgItem {
+            width: lineSvg.elementSize("vertical-line").width;
+            height: parent.height;
+            elementId: "vertical-line";
+            svg: lineSvg;
+        }
+
         SwitchButton {
             id: wwanSwitchButton;
 
@@ -66,6 +78,13 @@ Item {
             onClicked: {
                 handler.enableWwan(!checked);
             }
+        }
+
+        PlasmaCore.SvgItem {
+            width: lineSvg.elementSize("vertical-line").width;
+            height: parent.height;
+            elementId: "vertical-line";
+            svg: lineSvg;
         }
 
         SwitchButton {
@@ -81,7 +100,7 @@ Item {
         }
     }
 
-    PlasmaComponents.Button {
+    PlasmaComponents.ToolButton {
         id: openEditorButton;
 
         anchors {
@@ -99,7 +118,7 @@ Item {
         }
     }
 
-    PlasmaComponents.Button {
+    PlasmaComponents.ToolButton {
         id: refreshButton;
 
         anchors {

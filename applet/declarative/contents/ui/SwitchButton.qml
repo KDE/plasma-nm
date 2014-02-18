@@ -34,56 +34,35 @@ Item {
     height: switchButtonIcon.height + padding.margins.top + padding.margins.bottom;
     width: switchButtonCheckbox.width + switchButtonIcon.width + padding.margins.left * 3 + padding.margins.right;
 
-    PlasmaCore.FrameSvgItem {
-        id: switchButtonBackground;
-
-        imagePath: "widgets/listitem"
-        prefix: "normal"
-        opacity: switchButton.enabled ? 1 : 0.4;
+    PlasmaComponents.CheckBox {
+        id: switchButtonCheckbox;
 
         anchors {
-            fill: parent;
+            left: parent.left;
+            leftMargin: padding.margins.right;
+            verticalCenter: parent.verticalCenter;
         }
+    }
 
-        PlasmaComponents.CheckBox {
-            id: switchButtonCheckbox;
+    PlasmaCore.SvgItem {
+        id: switchButtonIcon;
 
-            anchors {
-                left: parent.left;
-                leftMargin: padding.margins.right;
-                verticalCenter: parent.verticalCenter;
-            }
+        width: sizes.iconSize;
+        height: width;
+        anchors {
+            left: switchButtonCheckbox.right;
+            leftMargin: padding.margins.left;
+            verticalCenter: parent.verticalCenter;
         }
+        svg: svgNetworkIcons;
+    }
 
-        PlasmaCore.SvgItem {
-            id: switchButtonIcon;
+    MouseArea {
+        anchors.fill: parent;
 
-            width: sizes.iconSize;
-            height: width;
-            anchors {
-                left: switchButtonCheckbox.right;
-                leftMargin: padding.margins.left;
-                verticalCenter: parent.verticalCenter;
-            }
-            svg: svgNetworkIcons;
-        }
-
-        MouseArea {
-            anchors.fill: parent;
-            hoverEnabled: true;
-
-            onEntered: {
-                switchButtonBackground.prefix = "pressed";
-            }
-
-            onExited: {
-                switchButtonBackground.prefix = "normal";
-            }
-
-            onClicked: {
-                if (switchButton.enabled) {
-                    switchButton.clicked();
-                }
+        onClicked: {
+            if (switchButton.enabled) {
+                switchButton.clicked();
             }
         }
     }

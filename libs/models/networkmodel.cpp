@@ -378,6 +378,7 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
 
     initializeSignals(connection);
 
+    bool apFoundGlobal = false;
     NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
     NetworkManager::WirelessSetting::Ptr wirelessSetting;
     if (settings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
@@ -403,6 +404,8 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
                         }
 
                         if (apFound) {
+                            apFound = false;
+                            apFoundGlobal = true;
                             item->setConnectionPath(connection->path());
                             item->setName(settings->id());
                             item->setTimestamp(settings->timestamp());
@@ -414,7 +417,7 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
                 }
             }
 
-            if (apFound) {
+            if (apFoundGlobal) {
                 return;
             }
         }

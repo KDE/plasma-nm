@@ -930,10 +930,12 @@ void NetworkModel::wirelessNetworkDisappeared(const QString& ssid)
                 }
             // Remove only AP and device from the item and leave it as an unavailable connection
             } else {
-                item->setDeviceName(QString());
-                item->setDevicePath(QString());
+                if (item->mode() == NetworkManager::WirelessSetting::Infrastructure) {
+                    item->setDeviceName(QString());
+                    item->setDevicePath(QString());
+                    item->setSpecificPath(QString());
+                }
                 item->setSignal(0);
-                item->setSpecificPath(QString());
             }
         }
     }

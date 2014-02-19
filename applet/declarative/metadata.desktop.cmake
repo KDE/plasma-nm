@@ -60,10 +60,10 @@ X-Plasma-ConfigPlugins=networkmanagement_notifications
 
 X-KDE-PluginInfo-Name=org.kde.networkmanagement
 X-KDE-PluginInfo-Category=System Information
-X-KDE-PluginInfo-Author=Jan Grulich, Lukáš Tinkl
-X-KDE-PluginInfo-Email=jgrulich@redhat.com
+X-KDE-PluginInfo-Author=Jan Grulich,Lukáš Tinkl
+X-KDE-PluginInfo-Email=jgrulich@redhat.com,ltinkl@redhat.com
 X-KDE-PluginInfo-Version=@PLASMA_NM_VERSION@
-X-KDE-PluginInfo-Website=
+X-KDE-PluginInfo-Website=https://projects.kde.org/plasma-nm
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=true
 X-KDE-ServiceTypes=Plasma/Applet,Plasma/PopupApplet

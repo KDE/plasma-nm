@@ -30,17 +30,18 @@
 class PLASMA_NM_EXPORT GlobalConfig : public QObject
 {
 Q_OBJECT
-
+Q_PROPERTY(bool airplaneModeEnabled
+           READ airplaneModeEnabled
+           WRITE setAirplaneModeEnabled
+           NOTIFY airplaneModeEnabledChanged)
 Q_PROPERTY(QStringList detailKeys
            READ detailKeys
            WRITE setDetailKeys
            NOTIFY detailKeysChanged)
-
 Q_PROPERTY(NetworkSpeedUnit networkSpeedUnit
            READ networkSpeedUnit
            WRITE setNetworkSpeedUnit
            NOTIFY networkSpeedUnitChanged)
-
 public:
     enum NetworkSpeedUnit { KBytes, KBits };
     Q_ENUMS(NetworkSpeedUnit)
@@ -49,6 +50,9 @@ public:
     virtual ~GlobalConfig();
 
 public Q_SLOTS:
+    bool airplaneModeEnabled() const;
+    void setAirplaneModeEnabled(bool enabled);
+
     QStringList detailKeys() const;
     void setDetailKeys(const QStringList& keys);
 
@@ -56,6 +60,7 @@ public Q_SLOTS:
     void setNetworkSpeedUnit(NetworkSpeedUnit unit);
 
 Q_SIGNALS:
+    void airplaneModeEnabledChanged();
     void detailKeysChanged();
     void networkSpeedUnitChanged();
 
@@ -63,6 +68,7 @@ private:
     explicit GlobalConfig(void *dummy);
     GlobalConfig * instance();
 
+    bool m_airplaneMode;
     QStringList m_keys;
     NetworkSpeedUnit m_unit;
 };

@@ -36,6 +36,11 @@ Item {
         id: availableDevices;
     }
 
+    PlasmaCore.Svg {
+        id: lineSvg;
+        imagePath: "widgets/line";
+    }
+
     Row {
         anchors {
             bottom: parent.bottom;
@@ -47,45 +52,55 @@ Item {
         SwitchButton {
             id: wifiSwitchButton;
 
-            checked: enabledConnections.wirelessEnabled;
-            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && enabledConnections.networkingEnabled;
+            checked: enabled && enabledConnections.wirelessEnabled;
+            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !globalConfig.airplaneModeEnabled;
             icon: checked ? "network-wireless-on" : "network-wireless-off";
 
             onClicked: {
-                if (enabled) {
-                    handler.enableWireless(checked);
-                }
+                handler.enableWireless(!checked);
             }
+        }
+
+        PlasmaCore.SvgItem {
+            width: lineSvg.elementSize("vertical-line").width;
+            height: parent.height;
+            elementId: "vertical-line";
+            svg: lineSvg;
         }
 
         SwitchButton {
             id: wwanSwitchButton;
 
-            checked: enabledConnections.wwanEnabled;
-            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && enabledConnections.networkingEnabled;
+            checked: enabled && enabledConnections.wwanEnabled;
+            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !globalConfig.airplaneModeEnabled;
             icon: checked ? "network-mobile-on" : "network-mobile-off";
 
             onClicked: {
-                if (enabled) {
-                    handler.enableWwan(checked);
-                }
+                handler.enableWwan(!checked);
             }
+        }
+
+        PlasmaCore.SvgItem {
+            width: lineSvg.elementSize("vertical-line").width;
+            height: parent.height;
+            elementId: "vertical-line";
+            svg: lineSvg;
         }
 
         SwitchButton {
             id: planeModeSwitchButton;
 
-            checked: !enabledConnections.networkingEnabled;
-            // TODO another icon
+            checked: globalConfig.airplaneModeEnabled;
             icon: checked ? "flightmode-on" : "flightmode-off";
 
             onClicked: {
-                handler.enableNetworking(!checked);
+                handler.enableAirplaneMode(!checked);
+                globalConfig.setAirplaneModeEnabled(!checked);
             }
         }
     }
 
-    PlasmaComponents.Button {
+    PlasmaComponents.ToolButton {
         id: openEditorButton;
 
         anchors {
@@ -103,7 +118,7 @@ Item {
         }
     }
 
-    PlasmaComponents.Button {
+    PlasmaComponents.ToolButton {
         id: refreshButton;
 
         anchors {

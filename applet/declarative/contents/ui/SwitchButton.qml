@@ -26,105 +26,42 @@ Item {
     id: switchButton;
 
     property alias icon: switchButtonIcon.elementId;
-    property bool checked: false;
-    property bool enabled: true;
+    property alias checked: switchButtonCheckbox.checked;
+    property alias enabled: switchButtonCheckbox.enabled;
 
     signal clicked();
 
-    height: slider.height + padding.margins.top;
-    width: slider.width + switchButtonIcon.width + padding.margins.left * 2 + padding.margins.right;
+    height: switchButtonIcon.height + padding.margins.top + padding.margins.bottom;
+    width: switchButtonCheckbox.width + switchButtonIcon.width + padding.margins.left * 3 + padding.margins.right;
 
-    PlasmaCore.FrameSvgItem {
-        id: switchButtonBackground;
-
-        imagePath: "widgets/listitem"
-        prefix: "normal"
-        opacity: switchButton.enabled ? 1 : 0.4;
+    PlasmaComponents.CheckBox {
+        id: switchButtonCheckbox;
 
         anchors {
-            fill: parent;
+            left: parent.left;
+            leftMargin: padding.margins.right;
+            verticalCenter: parent.verticalCenter;
         }
+    }
 
-        PlasmaCore.FrameSvgItem {
-            id: slider;
-            imagePath: "widgets/slider";
-            prefix: "groove";
-            height: width * 2;
-            width: theme.defaultFont.mSize.height;
-            anchors {
-                left: parent.left;
-                leftMargin: padding.margins.right;
-                verticalCenter: parent.verticalCenter;
-            }
+    PlasmaCore.SvgItem {
+        id: switchButtonIcon;
 
-            PlasmaCore.FrameSvgItem {
-                id: highlight;
-                imagePath: "widgets/slider";
-                prefix: "groove-highlight";
-                anchors.fill: parent;
-
-                opacity: switchButton.checked ? 1 : 0
-                Behavior on opacity {
-                    PropertyAnimation { duration: 100 }
-                }
-            }
-
-            PlasmaCore.FrameSvgItem {
-                imagePath: "widgets/button";
-                prefix: "shadow";
-                anchors {
-                    fill: button;
-                    leftMargin: -margins.left;
-                    topMargin: -margins.top;
-                    rightMargin: -margins.right;
-                    bottomMargin: -margins.bottom;
-                }
-            }
-
-            PlasmaCore.FrameSvgItem {
-                id: button;
-                imagePath: "widgets/button";
-                prefix: "normal";
-                anchors {
-                    left: parent.left;
-                    right: parent.right;
-                }
-                height: width;
-                y: switchButton.checked ? 0 : height;
-                Behavior on y {
-                    PropertyAnimation { duration: 100 }
-                }
-            }
+        width: sizes.iconSize;
+        height: width;
+        anchors {
+            left: switchButtonCheckbox.right;
+            leftMargin: padding.margins.left;
+            verticalCenter: parent.verticalCenter;
         }
+        svg: svgNetworkIcons;
+    }
 
-        PlasmaCore.SvgItem {
-            id: switchButtonIcon;
+    MouseArea {
+        anchors.fill: parent;
 
-            anchors {
-                left: slider.right;
-                leftMargin: padding.margins.left;
-                verticalCenter: parent.verticalCenter;
-            }
-            svg: svgNetworkIcons;
-        }
-
-        MouseArea {
-            anchors.fill: parent;
-            hoverEnabled: true;
-            enabled: switchButton.enabled;
-
-            onEntered: {
-                switchButtonBackground.prefix = "pressed";
-            }
-
-            onExited: {
-                switchButtonBackground.prefix = "normal";
-            }
-
-            onClicked: {
-                if (switchButton.enabled) {
-                    switchButton.checked = !switchButton.checked;
-                }
+        onClicked: {
+            if (switchButton.enabled) {
                 switchButton.clicked();
             }
         }

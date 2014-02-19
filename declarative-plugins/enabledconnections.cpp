@@ -108,7 +108,7 @@ void EnabledConnections::onWirelessHwEnabled(bool enabled)
 
 void EnabledConnections::onWimaxEnabled(bool enabled)
 {
-    m_wimaxEnabled = true;
+    m_wimaxEnabled = enabled;
     Q_EMIT wimaxEnabled(enabled);
 }
 
@@ -120,7 +120,7 @@ void EnabledConnections::onWimaxHwEnabled(bool enabled)
 
 void EnabledConnections::onWwanEnabled(bool enabled)
 {
-    m_wwanEnabled = true;
+    m_wwanEnabled = enabled;
     Q_EMIT wwanEnabled(enabled);
 }
 

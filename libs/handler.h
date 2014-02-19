@@ -62,6 +62,8 @@ public Q_SLOTS:
      * Disconnects all connections
      */
     void disconnectAll();
+    void enableAirplaneMode(bool enable);
+    void enableBt(bool enable);
     void enableNetworking(bool enable);
     void enableWireless(bool enable);
     void enableWimax(bool enable);
@@ -83,9 +85,15 @@ private Q_SLOTS:
     void editDialogAccepted();
 
 private:
+    bool m_tmpBluetoothEnabled;
+    bool m_tmpWimaxEnabled;
+    bool m_tmpWirelessEnabled;
+    bool m_tmpWwanEnabled;
     QString m_tmpConnectionUuid;
     QString m_tmpDevicePath;
     QString m_tmpSpecificPath;
+
+    bool isBtEnabled();
 };
 
 #endif // PLASMA_NM_HANDLER_H

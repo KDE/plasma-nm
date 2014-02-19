@@ -47,6 +47,10 @@
 
 Handler::Handler(QObject* parent)
     : QObject(parent)
+    , m_tmpBluetoothEnabled(isBtEnabled())
+    , m_tmpWimaxEnabled(NetworkManager::isWimaxEnabled())
+    , m_tmpWirelessEnabled(NetworkManager::isWirelessEnabled())
+    , m_tmpWwanEnabled(NetworkManager::isWwanEnabled())
 {
 }
 
@@ -201,6 +205,33 @@ void Handler::disconnectAll()
     }
 }
 
+void Handler::enableAirplaneMode(bool enable)
+{
+    if (enable) {
+        m_tmpBluetoothEnabled = isBtEnabled();
+        m_tmpWimaxEnabled = NetworkManager::isWimaxEnabled();
+        m_tmpWirelessEnabled = NetworkManager::isWirelessEnabled();
+        m_tmpWwanEnabled = NetworkManager::isWwanEnabled();
+        enableBt(false);
+        enableWimax(false);
+        enableWireless(false);
+        enableWwan(false);
+    } else {
+        if (m_tmpBluetoothEnabled) {
+            enableBt(true);
+        }
+        if (m_tmpWimaxEnabled) {
+            enableWimax(true);
+        }
+        if (m_tmpWirelessEnabled) {
+            enableWireless(true);
+        }
+        if (m_tmpWwanEnabled) {
+            enableWwan(true);
+        }
+    }
+}
+
 void Handler::enableNetworking(bool enable)
 {
     NetworkManager::setNetworkingEnabled(enable);
@@ -219,6 +250,53 @@ void Handler::enableWimax(bool enable)
 void Handler::enableWwan(bool enable)
 {
     NetworkManager::setWwanEnabled(enable);
+}
+
+bool Handler::isBtEnabled()
+{
+    bool result = false;
+
+    QDBusInterface managerIface("org.bluez", "/", "org.freedesktop.DBus.ObjectManager", QDBusConnection::systemBus(), this);
+    QDBusReply<QMap<QDBusObjectPath, NMVariantMapMap> > reply = managerIface.call("GetManagedObjects");
+    if (reply.isValid()) {
+        foreach(const QDBusObjectPath &path, reply.value().keys()) {
+            const QString objPath = path.path();
+            //qDebug() << "inspecting path" << objPath;
+            const QStringList interfaces = reply.value().value(path).keys();
+            //qDebug() << "interfaces:" << interfaces;
+            if (interfaces.contains("org.bluez.Adapter1")) {
+                QDBusInterface adapterIface("org.bluez", objPath, "org.bluez.Adapter1", QDBusConnection::systemBus(), this);
+                const bool adapterEnabled = adapterIface.property("Powered").toBool();
+                //qDebug() << "Adapter" << objPath << "enabled:" << adapterEnabled;
+                result |= adapterEnabled;
+            }
+        }
+    } else {
+        qDebug() << "Failed to enumerate BT adapters";
+    }
+
+    return result;
+}
+
+void Handler::enableBt(bool enable)
+{
+    QDBusInterface managerIface("org.bluez", "/", "org.freedesktop.DBus.ObjectManager", QDBusConnection::systemBus(), this);
+    QDBusReply<QMap<QDBusObjectPath, NMVariantMapMap> > reply = managerIface.call("GetManagedObjects");
+    if (reply.isValid()) {
+        foreach(const QDBusObjectPath &path, reply.value().keys()) {
+            const QString objPath = path.path();
+            //qDebug() << "inspecting path" << objPath;
+            const QStringList interfaces = reply.value().value(path).keys();
+            //qDebug() << "interfaces:" << interfaces;
+            if (interfaces.contains("org.bluez.Adapter1")) {
+                QDBusInterface adapterIface("org.bluez", objPath, "org.bluez.Adapter1", QDBusConnection::systemBus(), this);
+                //qDebug() << "Enabling adapter:" << objPath << (enable && m_btEnabled);
+                adapterIface.setProperty("Powered", enable);
+            }
+        }
+    } else {
+        qDebug() << "Failed to enumerate BT adapters";
+    }
 }
 
 void Handler::editConnection(const QString& uuid)

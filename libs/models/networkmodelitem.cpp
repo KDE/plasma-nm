@@ -49,7 +49,6 @@
 
 NetworkModelItem::NetworkModelItem(QObject * parent)
     : QObject(parent)
-    , m_bitrate(0)
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
     , m_deviceState(NetworkManager::Device::UnknownState)
     , m_engine(0)
@@ -309,16 +308,6 @@ QString NetworkModelItem::specificPath() const
 void NetworkModelItem::setSpecificPath(const QString& path)
 {
     m_specificPath = path;
-}
-
-QString NetworkModelItem::speed() const
-{
-    return UiUtils::connectionSpeed(m_bitrate);
-}
-
-void NetworkModelItem::setSpeed(int speed)
-{
-    m_bitrate = speed;
 }
 
 QString NetworkModelItem::ssid() const

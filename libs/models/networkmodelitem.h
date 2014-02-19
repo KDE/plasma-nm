@@ -88,9 +88,6 @@ public:
     QString specificPath() const;
     void setSpecificPath(const QString& path);
 
-    QString speed() const;
-    void setSpeed(int speed);
-
     QString ssid() const;
     void setSsid(const QString& ssid);
 
@@ -125,7 +122,6 @@ private:
     void setUpdateEnabled(bool enabled);
 
     QString m_activeConnectionPath;
-    int m_bitrate;
     QString m_connectionPath;
     NetworkManager::ActiveConnection::State m_connectionState;
     QString m_devicePath;

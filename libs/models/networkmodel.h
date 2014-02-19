@@ -65,7 +65,6 @@ public:
         SignalRole,
         SlaveRole,
         SsidRole,
-        SpeedRole,
         SpecificPathRole,
         TimeStampRole,
         TypeRole,
@@ -89,7 +88,6 @@ private Q_SLOTS:
     void activeVpnConnectionStateChanged(NetworkManager::VpnConnection::State state,NetworkManager::VpnConnection::StateChangeReason reason);
     void availableConnectionAppeared(const QString& connection);
     void availableConnectionDisappeared(const QString& connection);
-    void bitrateChanged(int bitrate);
     void connectionAdded(const QString& connection);
     void connectionRemoved(const QString& connection);
     void connectionUpdated();

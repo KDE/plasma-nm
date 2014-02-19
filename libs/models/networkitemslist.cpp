@@ -122,7 +122,13 @@ QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList:
                 break;
             case NetworkItemsList::Connection:
                 if (item->connectionPath() == parameter) {
-                    result << item;
+                    if (additionalParameter.isEmpty()) {
+                        result << item;
+                    } else {
+                        if (item->devicePath() == additionalParameter) {
+                            result << item;
+                        }
+                    }
                 }
                 break;
             case NetworkItemsList::Device:

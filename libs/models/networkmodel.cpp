@@ -50,7 +50,6 @@ NetworkModel::NetworkModel(QObject* parent)
     roles[SlaveRole] = "Slave";
     roles[SsidRole] = "Ssid";
     roles[SpecificPathRole] = "SpecificPath";
-    roles[SpeedRole] = "Speed";
     roles[SecurityTypeRole] = "SecurityType";
     roles[SecurityTypeStringRole] = "SecurityTypeString";
     roles[TimeStampRole] = "TimeStamp";
@@ -112,8 +111,6 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->ssid();
             case SpecificPathRole:
                 return item->specificPath();
-            case SpeedRole:
-                return item->speed();
             case SecurityTypeRole:
                 return item->securityType();
             case SecurityTypeStringRole:
@@ -212,14 +209,8 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
     connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
             SLOT(deviceStateChanged(NetworkManager::Device::State, NetworkManager::Device::State, NetworkManager::Device::StateChangeReason)));
 
-    if (device->type() == NetworkManager::Device::Ethernet) {
-        NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
-        connect(wiredDev.data(), SIGNAL(bitRateChanged(int)),
-                SLOT(bitrateChanged(int)));
-    } else if (device->type() == NetworkManager::Device::Wifi) {
+    if (device->type() == NetworkManager::Device::Wifi) {
         NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
-        connect(wifiDev.data(), SIGNAL(bitRateChanged(int)),
-                SLOT(bitrateChanged(int)));
         connect(wifiDev.data(), SIGNAL(networkAppeared(QString)),
                 SLOT(wirelessNetworkAppeared(QString)));
         connect(wifiDev.data(), SIGNAL(networkDisappeared(QString)),
@@ -313,17 +304,6 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
         }
         item->setDevicePath(device->uni());
         item->setDeviceState(device->state());
-        if (device->type() == NetworkManager::Device::Ethernet) {
-            NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
-            if (wiredDev) {
-                item->setSpeed(wiredDev->bitRate());
-            }
-        } else if (device->type() == NetworkManager::Device::Wifi) {
-            NetworkManager::WirelessDevice::Ptr wirelessDev = device.objectCast<NetworkManager::WirelessDevice>();
-            if (wirelessDev) {
-                item->setSpeed(wirelessDev->bitRate());
-            }
-        }
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
         if (device->type() == NetworkManager::Device::Modem) {
@@ -654,7 +634,6 @@ void NetworkModel::availableConnectionDisappeared(const QString& connection)
         item->setDeviceState(NetworkManager::Device::UnknownState);
         item->setSignal(0);
         item->setSpecificPath(QString());
-        item->setSpeed(0);
         // Check whether the connection is still available as an access point, this happens
         // when we change its properties, like ssid, bssid, security etc.
         if (item->type() == NetworkManager::ConnectionSettings::Wireless && !specificPath.isEmpty()) {
@@ -673,18 +652,6 @@ void NetworkModel::availableConnectionDisappeared(const QString& connection)
             }
         }
         updateItem(item);
-    }
-}
-
-void NetworkModel::bitrateChanged(int bitrate)
-{
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
-
-    foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, device->uni())) {
-        if (item->type() == NetworkManager::ConnectionSettings::Wired || item->type() == NetworkManager::ConnectionSettings::Wireless) {
-            item->setSpeed(bitrate);
-            updateItem(item);
-        }
     }
 }
 

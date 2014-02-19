@@ -936,6 +936,7 @@ void NetworkModel::wirelessNetworkDisappeared(const QString& ssid)
                     item->setSpecificPath(QString());
                 }
                 item->setSignal(0);
+                updateItem(item);
             }
         }
     }

@@ -294,6 +294,9 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
 
 void NetworkModel::addAvailableConnection(const QString& connection, const NetworkManager::Device::Ptr& device)
 {
+    // TODO remove debug
+    qDebug() << "Add available connection " << connection;
+
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Connection, connection)) {
         // TODO: check whether the item is already associated with some device, in that case the connection
         //       is available for more devices
@@ -337,9 +340,11 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
                 }
             }
 
+            // FIXME? shouldn't happen
             if (!apFound) {
                 NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
                 NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(item->ssid());
+                // TODO what next?
             }
         }
         updateItem(item);
@@ -627,31 +632,50 @@ void NetworkModel::availableConnectionDisappeared(const QString& connection)
     qDebug() << "Removing available connection " << connection;
 
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Connection, connection)) {
+        bool available = false;
         QString devicePath = item->devicePath();
         QString specificPath = item->specificPath();
-        item->setDeviceName(QString());
-        item->setDevicePath(QString());
-        item->setDeviceState(NetworkManager::Device::UnknownState);
-        item->setSignal(0);
-        item->setSpecificPath(QString());
-        // Check whether the connection is still available as an access point, this happens
-        // when we change its properties, like ssid, bssid, security etc.
-        if (item->type() == NetworkManager::ConnectionSettings::Wireless && !specificPath.isEmpty()) {
-            NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePath);
-            if (device && device->type() == NetworkManager::Device::Wifi) {
-                NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
-                if (wifiDevice) {
-                    NetworkManager::AccessPoint::Ptr ap = wifiDevice->findAccessPoint(specificPath);
-                    if (ap) {
-                        NetworkManager::WirelessNetwork::Ptr network = wifiDevice->findNetwork(ap->ssid());
-                        if (network) {
-                            addWirelessNetwork(network, wifiDevice);
+
+        // We have to check whether the connection is still available, because it might be
+        // presented in the model for more devices and we don't want to remove it for all of them.
+
+        // Check whether the device is still available
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePath);
+        if (device) {
+            // Check whether the connection is still listed as available
+            foreach (const NetworkManager::Connection::Ptr & connection, device->availableConnections()) {
+                if (connection->path() == item->connectionPath()) {
+                    available = true;
+                    break;
+                }
+            }
+        }
+
+        if (!available) {
+            item->setDeviceName(QString());
+            item->setDevicePath(QString());
+            item->setDeviceState(NetworkManager::Device::UnknownState);
+            item->setSignal(0);
+            item->setSpecificPath(QString());
+            // Check whether the connection is still available as an access point, this happens
+            // when we change its properties, like ssid, bssid, security etc.
+            if (item->type() == NetworkManager::ConnectionSettings::Wireless && !specificPath.isEmpty()) {
+                if (device && device->type() == NetworkManager::Device::Wifi) {
+                    NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+                    if (wifiDevice) {
+                        NetworkManager::AccessPoint::Ptr ap = wifiDevice->findAccessPoint(specificPath);
+                        if (ap) {
+                            NetworkManager::WirelessNetwork::Ptr network = wifiDevice->findNetwork(ap->ssid());
+                            if (network) {
+                                addWirelessNetwork(network, wifiDevice);
+                            }
                         }
                     }
                 }
             }
+            updateItem(item);
         }
-        updateItem(item);
+        available = false;
     }
 }
 

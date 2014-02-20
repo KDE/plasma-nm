@@ -55,7 +55,7 @@ Item {
             checked: enabled && enabledConnections.wirelessEnabled;
             enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !globalConfig.airplaneModeEnabled;
             icon: checked ? "network-wireless-on" : "network-wireless-off";
-            tooltipText: checked ? "Wireless enabled" : "Wireless disabled";
+            tooltipText: checked ? i18n("Wireless enabled") : i18n("Wireless disabled");
 
             onClicked: {
                 handler.enableWireless(!checked);
@@ -75,7 +75,7 @@ Item {
             checked: enabled && enabledConnections.wwanEnabled;
             enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !globalConfig.airplaneModeEnabled;
             icon: checked ? "network-mobile-on" : "network-mobile-off";
-            tooltipText: checked ? "Mobile broadband enabled" : "Mobile broadband disabled";
+            tooltipText: checked ? i18n("Mobile broadband enabled") : i18n("Mobile broadband disabled");
 
             onClicked: {
                 handler.enableWwan(!checked);
@@ -94,7 +94,7 @@ Item {
 
             checked: globalConfig.airplaneModeEnabled;
             icon: checked ? "flightmode-on" : "flightmode-off";
-            tooltipText: checked ? "Airplane mode enabled" : "Airplane mode disabled";
+            tooltipText: checked ? i18n("Airplane mode enabled") : i18n("Airplane mode disabled");
 
             onClicked: {
                 handler.enableAirplaneMode(!checked);

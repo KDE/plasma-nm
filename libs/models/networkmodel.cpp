@@ -41,6 +41,8 @@ NetworkModel::NetworkModel(QObject* parent)
     roles[DevicePathRole] = "DevicePath";
     roles[DeviceStateRole] = "DeviceState";
     roles[DownloadRole] = "Download";
+    roles[DuplicateRole] = "Duplicate";
+    roles[ItemUniqueNameRole] = "ItemUniqueName";
     roles[ItemTypeRole] = "ItemType";
     roles[LastUsedRole] = "LastUsed";
     roles[LastUsedDateOnlyRole] = "LastUsedDateOnly";
@@ -89,6 +91,14 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->deviceState();
             case DownloadRole:
                 return item->download();
+            case DuplicateRole:
+                return item->duplicate();
+            case ItemUniqueNameRole:
+                if (m_list.returnItems(NetworkItemsList::Name, item->name()).count() > 1) {
+                    return item->originalName();
+                } else {
+                    return item->name();
+                }
             case ItemTypeRole:
                 return item->itemType();
             case LastUsedRole:
@@ -96,11 +106,7 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
             case LastUsedDateOnlyRole:
                 return UiUtils::formatDateRelative(item->timestamp());
             case NameRole:
-                if (m_list.returnItems(NetworkItemsList::Name, item->name()).count() > 1) {
-                    return item->originalName();
-                } else {
-                    return item->name();
-                }
+                return item->name();
             case SectionRole:
                 return item->sectionType();
             case SignalRole:
@@ -297,9 +303,14 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
     // TODO remove debug
     qDebug() << "Add available connection " << connection;
 
+    checkAndCreateDuplicate(connection, device);
+
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Connection, connection)) {
-        // TODO: check whether the item is already associated with some device, in that case the connection
-        //       is available for more devices
+        // The item is already associated with another device
+        if (item->itemType() != NetworkModelItem::NetworkModelItem::UnavailableConnection) {
+            continue;
+        }
+
         if (device->ipInterfaceName().isEmpty()) {
             item->setDeviceName(device->interfaceName());
         } else {
@@ -348,6 +359,7 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
             }
         }
         updateItem(item);
+        break;
     }
 }
 
@@ -491,12 +503,6 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
             }
             if (setting && (setting->macAddress().isEmpty() || NetworkManager::Utils::macAddressAsString(setting->macAddress()) == device->hardwareAddress())) {
                 connectionFound = true;
-                if (device->ipInterfaceName().isEmpty()) {
-                    item->setDeviceName(device->interfaceName());
-                } else {
-                    item->setDeviceName(device->ipInterfaceName());
-                }
-                item->setDevicePath(device->uni());
                 item->setMode(mode);
                 item->setSignal(network->signalStrength());
                 item->setSpecificPath(network->referenceAccessPoint()->uni());
@@ -520,7 +526,6 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
         item->setSsid(network->ssid());
         item->setType(NetworkManager::ConnectionSettings::Wireless);
         item->setSecurityType(securityType);
-
         item->updateDetails();
 
         connect(item, SIGNAL(itemUpdated()), SLOT(onItemUpdated()));
@@ -528,6 +533,37 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
         const int index = m_list.count();
         beginInsertRows(QModelIndex(), index, index);
         m_list.insertItem(item);
+        endInsertRows();
+    }
+}
+
+void NetworkModel::checkAndCreateDuplicate(const QString& connection, const NetworkManager::Device::Ptr& device)
+{
+    Q_UNUSED(device)
+    bool createDuplicate = false;
+    NetworkModelItem * originalItem = 0;
+
+    foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Connection, connection)) {
+        if (!item->duplicate()) {
+            originalItem = item;
+        }
+
+        if (!item->duplicate() && item->itemType() == NetworkModelItem::AvailableConnection) {
+            createDuplicate = true;
+        }
+    }
+
+    if (createDuplicate) {
+        // TODO remove debug
+        qDebug() << "Creating duplicate of " << originalItem->originalName();
+        NetworkModelItem * duplicatedItem = new NetworkModelItem(originalItem);
+        duplicatedItem->updateDetails();
+
+        connect(duplicatedItem, SIGNAL(itemUpdated()), SLOT(onItemUpdated()));
+
+        const int index = m_list.count();
+        beginInsertRows(QModelIndex(), index, index);
+        m_list.insertItem(duplicatedItem);
         endInsertRows();
     }
 }
@@ -673,7 +709,17 @@ void NetworkModel::availableConnectionDisappeared(const QString& connection)
                     }
                 }
             }
-            updateItem(item);
+            if (item->duplicate()) {
+                const int row = m_list.indexOf(item);
+                if (row >= 0) {
+                    beginRemoveRows(QModelIndex(), row, row);
+                    m_list.removeItem(item);
+                    item->deleteLater();
+                    endRemoveRows();
+                }
+            } else {
+                updateItem(item);
+            }
         }
         available = false;
     }

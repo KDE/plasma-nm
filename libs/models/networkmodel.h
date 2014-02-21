@@ -55,6 +55,8 @@ public:
         DevicePathRole,
         DeviceStateRole,
         DownloadRole,
+        DuplicateRole,
+        ItemUniqueNameRole,
         ItemTypeRole,
         LastUsedRole,
         LastUsedDateOnlyRole,
@@ -120,6 +122,7 @@ private:
     void addConnection(const NetworkManager::Connection::Ptr& connection);
     void addDevice(const NetworkManager::Device::Ptr& device);
     void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr& network, const NetworkManager::WirelessDevice::Ptr& device);
+    void checkAndCreateDuplicate(const QString& connection, const NetworkManager::Device::Ptr& device);
     void initializeSignals();
     void initializeSignals(const NetworkManager::ActiveConnection::Ptr& activeConnection);
     void initializeSignals(const NetworkManager::Connection::Ptr& connection);

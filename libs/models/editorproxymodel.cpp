@@ -41,7 +41,9 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
 
     // slaves are always filtered-out
     const bool isSlave = sourceModel()->data(index, NetworkModel::SlaveRole).toBool();
-    if (isSlave) {
+    const bool isDuplicate = sourceModel()->data(index, NetworkModel::DuplicateRole).toBool();
+
+    if (isSlave || isDuplicate) {
         return false;
     }
 

@@ -40,6 +40,7 @@ public:
     enum ItemType { UnavailableConnection, AvailableConnection, AvailableAccessPoint };
 
     explicit NetworkModelItem(QObject * parent = 0);
+    NetworkModelItem(const NetworkModelItem * item, QObject* parent = 0);
     virtual ~NetworkModelItem();
 
     QString activeConnectionPath() const;
@@ -61,6 +62,8 @@ public:
     void setDeviceState(const NetworkManager::Device::State state);
 
     QString download() const;
+
+    bool duplicate() const;
 
     QString icon() const;
 
@@ -131,6 +134,7 @@ private:
     QString m_download;
     QString m_downloadSource;
     QString m_downloadUnit;
+    bool m_duplicate;
     Plasma::DataEngine * m_engine;
     NetworkManager::WirelessSetting::NetworkMode m_mode;
     QString m_name;

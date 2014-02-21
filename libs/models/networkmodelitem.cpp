@@ -47,10 +47,11 @@
 #endif
 #endif
 
-NetworkModelItem::NetworkModelItem(QObject * parent)
+NetworkModelItem::NetworkModelItem(QObject* parent)
     : QObject(parent)
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
     , m_deviceState(NetworkManager::Device::UnknownState)
+    , m_duplicate(false)
     , m_engine(0)
     , m_mode(NetworkManager::WirelessSetting::Infrastructure)
     , m_securityType(NetworkManager::Utils::None)
@@ -58,6 +59,24 @@ NetworkModelItem::NetworkModelItem(QObject * parent)
     , m_slave(false)
     , m_type(NetworkManager::ConnectionSettings::Unknown)
     , m_updateEnabled(false)
+    , m_vpnState(NetworkManager::VpnConnection::Unknown)
+{
+}
+
+NetworkModelItem::NetworkModelItem(const NetworkModelItem* item, QObject* parent)
+    : QObject(parent)
+    , m_connectionPath(item->connectionPath())
+    , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
+    , m_duplicate(true)
+    , m_engine(0)
+    , m_mode(item->mode())
+    , m_name(item->name())
+    , m_securityType(item->securityType())
+    , m_slave(item->slave())
+    , m_ssid(item->ssid())
+    , m_timestamp(item->timestamp())
+    , m_type(item->type())
+    , m_uuid(item->uuid())
     , m_vpnState(NetworkManager::VpnConnection::Unknown)
 {
 }
@@ -136,6 +155,11 @@ QString NetworkModelItem::download() const
 {
     double download = m_download.toDouble();
     return KGlobal::locale()->formatByteSize(download*1024) + "/s";
+}
+
+bool NetworkModelItem::duplicate() const
+{
+    return m_duplicate;
 }
 
 QString NetworkModelItem::icon() const

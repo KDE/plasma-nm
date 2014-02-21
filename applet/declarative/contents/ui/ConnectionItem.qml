@@ -75,7 +75,7 @@ ListItem {
                 top: parent.top;
                 topMargin: 0;
             }
-            text: Name;
+            text: ItemUniqueName;
             elide: Text.ElideRight;
             font.weight: ConnectionState == PlasmaNM.Enums.Activated || Uuid ? Font.DemiBold : Font.Normal;
             font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false;

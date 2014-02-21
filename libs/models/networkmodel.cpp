@@ -745,13 +745,15 @@ void NetworkModel::connectionRemoved(const QString& connection)
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Connection, connection)) {
         // When the item type is wireless, we can remove only the connection and leave it as an available access point
         if (item->type() == NetworkManager::ConnectionSettings::Wireless && !item->devicePath().isEmpty()) {
-            // Remove it entirely when there is another connection with the same configuration and for the same device
             foreach (NetworkModelItem * secondItem, m_list.items()) {
-                if (item->connectionPath() != secondItem->connectionPath() &&
-                    item->devicePath() == secondItem->devicePath() &&
-                    item->mode() == secondItem->mode() &&
-                    item->securityType() == secondItem->securityType() &&
-                    item->ssid() == secondItem->ssid()) {
+                // Remove it entirely when there is another connection with the same configuration and for the same device
+                // or it's a shared connection
+                if ((item->mode() != NetworkManager::WirelessSetting::Infrastructure) ||
+                    (item->connectionPath() != secondItem->connectionPath() &&
+                     item->devicePath() == secondItem->devicePath() &&
+                     item->mode() == secondItem->mode() &&
+                     item->securityType() == secondItem->securityType() &&
+                     item->ssid() == secondItem->ssid())) {
                     remove = true;
                 }
             }

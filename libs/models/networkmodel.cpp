@@ -351,11 +351,13 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
                 }
             }
 
-            // FIXME? shouldn't happen
             if (!apFound) {
                 NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
                 NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(item->ssid());
-                // TODO what next?
+                if (wifiNetwork) {
+                    item->setSignal(wifiNetwork->signalStrength());
+                    item->setSpecificPath(wifiNetwork->referenceAccessPoint()->uni());
+                }
             }
         }
         updateItem(item);
@@ -375,49 +377,10 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
 
     initializeSignals(connection);
 
-    bool apFoundGlobal = false;
     NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
     NetworkManager::WirelessSetting::Ptr wirelessSetting;
     if (settings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
         wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
-        // Check whether is there already an access point in the model for this connection, so we can only extend it
-        if (m_list.contains(NetworkItemsList::Ssid, wirelessSetting->ssid())) {
-            bool apFound = false;
-            foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, wirelessSetting->ssid())) {
-                // Applicable only to APs without connection
-                if (item->itemType() == NetworkModelItem::AvailableAccessPoint) {
-                    // FIXME find a proper way how to compare configurations
-                    NetworkManager::Utils::WirelessSecurityType securityType = NetworkManager::Utils::securityTypeFromConnectionSetting(settings);
-                    NetworkManager::Utils::WirelessSecurityType alternativeSecurityType = alternativeWirelessSecurity(securityType);
-                    // TODO check more properties??? - bssid???
-                    if ((item->securityType() == securityType || item->securityType() == alternativeSecurityType) && item->mode() == wirelessSetting->mode()) {
-                        if (!wirelessSetting->macAddress().isEmpty()) {
-                            NetworkManager::WirelessDevice::Ptr device = NetworkManager::findNetworkInterface(item->devicePath()).objectCast<NetworkManager::WirelessDevice>();
-                            if (device && NetworkManager::Utils::macAddressAsString(wirelessSetting->macAddress()) == device->hardwareAddress()) {
-                                apFound = true;
-                            }
-                        } else {
-                            apFound = true;
-                        }
-
-                        if (apFound) {
-                            apFound = false;
-                            apFoundGlobal = true;
-                            item->setConnectionPath(connection->path());
-                            item->setName(settings->id());
-                            item->setTimestamp(settings->timestamp());
-                            item->setType(settings->connectionType());
-                            item->setUuid(settings->uuid());
-                            updateItem(item);
-                        }
-                    }
-                }
-            }
-
-            if (apFoundGlobal) {
-                return;
-            }
-        }
     }
 
     // Check whether the connection is already in the model to avoid duplicates, but this shouldn't happen
@@ -473,7 +436,6 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
 
     initializeSignals(network);
 
-    bool connectionFound = false;
     NetworkManager::WirelessSetting::NetworkMode mode = NetworkManager::WirelessSetting::Infrastructure;
     NetworkManager::Utils::WirelessSecurityType securityType = NetworkManager::Utils::Unknown;
     NetworkManager::AccessPoint::Ptr ap = network->referenceAccessPoint();
@@ -488,53 +450,29 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
             mode = NetworkManager::WirelessSetting::Ap;
         }
     }
-    // Check whether there is an available connection for this network. It's possible that some
-    // connection has same SSID, but it might not be available due to specified properties like mode, security etc.
-    // FIXME find a proper way how to compare configurations
-    foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, network->ssid())) {
-        // TODO check more properties??? - bssid???
-        NetworkManager::Utils::WirelessSecurityType alternativeSecurityType = alternativeWirelessSecurity(item->securityType());
-        if ((item->securityType() == securityType || alternativeSecurityType == securityType) &&
-            item->mode() == mode && item->itemType() == NetworkModelItem::UnavailableConnection) {
-            NetworkManager::WirelessSetting::Ptr setting;
-            NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(item->connectionPath());
-            if (connection) {
-                setting = connection->settings()->setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
-            }
-            if (setting && (setting->macAddress().isEmpty() || NetworkManager::Utils::macAddressAsString(setting->macAddress()) == device->hardwareAddress())) {
-                connectionFound = true;
-                item->setMode(mode);
-                item->setSignal(network->signalStrength());
-                item->setSpecificPath(network->referenceAccessPoint()->uni());
-                updateItem(item);
-            }
-        }
+
+    NetworkModelItem * item = new NetworkModelItem();
+    if (device->ipInterfaceName().isEmpty()) {
+        item->setDeviceName(device->interfaceName());
+    } else {
+        item->setDeviceName(device->ipInterfaceName());
     }
+    item->setDevicePath(device->uni());
+    item->setMode(mode);
+    item->setName(network->ssid());
+    item->setSignal(network->signalStrength());
+    item->setSpecificPath(network->referenceAccessPoint()->uni());
+    item->setSsid(network->ssid());
+    item->setType(NetworkManager::ConnectionSettings::Wireless);
+    item->setSecurityType(securityType);
+    item->updateDetails();
 
-    if (!connectionFound) {
-        NetworkModelItem * item = new NetworkModelItem();
-        if (device->ipInterfaceName().isEmpty()) {
-            item->setDeviceName(device->interfaceName());
-        } else {
-            item->setDeviceName(device->ipInterfaceName());
-        }
-        item->setDevicePath(device->uni());
-        item->setMode(mode);
-        item->setName(network->ssid());
-        item->setSignal(network->signalStrength());
-        item->setSpecificPath(network->referenceAccessPoint()->uni());
-        item->setSsid(network->ssid());
-        item->setType(NetworkManager::ConnectionSettings::Wireless);
-        item->setSecurityType(securityType);
-        item->updateDetails();
+    connect(item, SIGNAL(itemUpdated()), SLOT(onItemUpdated()));
 
-        connect(item, SIGNAL(itemUpdated()), SLOT(onItemUpdated()));
-
-        const int index = m_list.count();
-        beginInsertRows(QModelIndex(), index, index);
-        m_list.insertItem(item);
-        endInsertRows();
-    }
+    const int index = m_list.count();
+    beginInsertRows(QModelIndex(), index, index);
+    m_list.insertItem(item);
+    endInsertRows();
 }
 
 void NetworkModel::checkAndCreateDuplicate(const QString& connection, const NetworkManager::Device::Ptr& device)

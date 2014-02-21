@@ -416,17 +416,19 @@ ListItem {
 
     function itemText() {
         if (ConnectionState == PlasmaNM.Enums.Activating) {
-            return i18n("Connecting");
+            if (Type == PlasmaNM.Enums.Vpn)
+                return VpnState;
+            else
+                return DeviceState;
         } else if (ConnectionState == PlasmaNM.Enums.Deactivating) {
-            return i18n("Disconnecting");
+            if (Type == PlasmaNM.Enums.Vpn)
+                return VpnState;
+            else
+                return DeviceState;
         } else if (ConnectionState == PlasmaNM.Enums.Deactivated) {
             var result = LastUsed;
             if (SecurityType > PlasmaNM.Enums.None)
                 result += ", " + SecurityTypeString;
-
-//             if (itemType == PlasmaNM.Enums.Wireless)
-//                 result += ", " + i18n("Strength: %1%", itemSignal);
-
             return result;
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
             if (Type == PlasmaNM.Enums.Wired) {

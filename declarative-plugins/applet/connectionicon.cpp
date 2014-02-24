@@ -314,27 +314,23 @@ void ConnectionIcon::setIcons()
         connection = NetworkManager::primaryConnection();
     }
 
-    if (connection) {
-        NetworkManager::Device::Ptr device;
-        NetworkManager::ActiveConnection::Ptr activeConnection;
-
-        if (connection->vpn()) {
-            activeConnection = NetworkManager::findActiveConnection(connection->specificObject());
-
-            if (!activeConnection && connection->devices().isEmpty()) {
-                setDisconnectedIcon();
-                return;
+    // Workaround, because PrimaryConnection is kinda broken in NM 0.9.8.x and
+    // doesn't work correctly with some VPN connections. This shouldn't be necessary
+    // for NM 0.9.9.0 or the upcoming bugfix release NM 0.9.8.10
+    if (!connection) {
+        foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
+            if ((activeConnection->default4() || activeConnection->default6()) && activeConnection->vpn()) {
+                NetworkManager::ActiveConnection::Ptr baseActiveConnection;
+                baseActiveConnection = NetworkManager::findActiveConnection(activeConnection->specificObject());
+                if (baseActiveConnection) {
+                    connection = baseActiveConnection;
+                }
             }
-        } else {
-            activeConnection = connection;
         }
+    }
 
-        if (activeConnection->devices().isEmpty()) {
-            setDisconnectedIcon();
-            return;
-        }
-
-        device = NetworkManager::findNetworkInterface(activeConnection->devices().first());
+    if (connection && !connection->devices().isEmpty()) {
+        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(connection->devices().first());
 
         if (device) {
             NetworkManager::Device::Type type = device->type();

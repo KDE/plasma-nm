@@ -37,15 +37,8 @@
 
 class ConnectionIcon : public QObject
 {
-/**
- *
- */
 Q_PROPERTY(bool connecting READ connecting NOTIFY connectingChanged)
-/**
- *
- */
 Q_PROPERTY(QString connectionIcon READ connectionIcon NOTIFY connectionIconChanged)
-
 Q_PROPERTY(QString connectionTooltipIcon READ connectionIcon NOTIFY connectionTooltipIconChanged)
 Q_OBJECT
 public:

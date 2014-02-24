@@ -20,14 +20,14 @@
 
 #include "connectionicon.h"
 
-#include <NetworkManagerQt/Manager>
-#include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/BluetoothDevice>
+#include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/Device>
+#include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/ModemDevice>
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessDevice>
-#include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/WirelessSetting>
 
 ConnectionIcon::ConnectionIcon(QObject* parent)
@@ -308,7 +308,27 @@ void ConnectionIcon::setIcons()
     }
 
     if (connection) {
-        NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(connection->devices().first());
+        NetworkManager::Device::Ptr device;
+        NetworkManager::ActiveConnection::Ptr activeConnection;
+
+        if (connection->vpn()) {
+            activeConnection = NetworkManager::findActiveConnection(connection->specificObject());
+
+            if (!activeConnection && connection->devices().isEmpty()) {
+                setDisconnectedIcon();
+                return;
+            }
+        } else {
+            activeConnection = connection;
+        }
+
+        if (activeConnection->devices().isEmpty()) {
+            setDisconnectedIcon();
+            return;
+        }
+
+        device = NetworkManager::findNetworkInterface(activeConnection->devices().first());
+
         if (device) {
             NetworkManager::Device::Type type = device->type();
             if (type == NetworkManager::Device::Wifi) {

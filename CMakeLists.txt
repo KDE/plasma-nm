@@ -3,10 +3,21 @@ project(plasma-networkmanagement)
 cmake_minimum_required(VERSION 2.8)
 
 find_package(KDE4 "4.9.0" REQUIRED)
-find_package(NetworkManager "0.9.8" REQUIRED)
+find_package(NetworkManager "0.9.8.4" REQUIRED)
 
 include(FindPkgConfig)
 include(KDE4Defaults)
+
+set(PLASMA_NM_VERSION "0.9.3.3")
+
+pkg_check_modules(NETWORKMANAGERQT REQUIRED NetworkManagerQt)
+if (NOT NETWORKMANAGERQT_FOUND)
+    message(FATAL_ERROR "ERROR: NetworkManagerQt not found. http://projects.kde.org/libnm-qt")
+elseif(${NETWORKMANAGER_VERSION} VERSION_EQUAL 0.9.9.0 AND ${NETWORKMANAGERQT_VERSION} VERSION_LESS 0.9.9.1)
+    message(FATAL_ERROR "ERROR: NetworkManagerQt required version is 0.9.9.1. http://projects.kde.org/libnm-qt")
+elseif(${NETWORKMANAGERQT_VERSION} VERSION_LESS 0.9.8.1)
+    message(FATAL_ERROR "ERROR: NetworkManagerQt required version is 0.9.8.1. http://projects.kde.org/libnm-qt")
+endif()
 
 if (DISABLE_MODEMMANAGER_SUPPORT)
     message(STATUS "Disabling ModemManager support")
@@ -26,20 +37,11 @@ else()
     endif()
 endif()
 
-pkg_check_modules(NETWORKMANAGERQT REQUIRED NetworkManagerQt)
-if (NOT NETWORKMANAGERQT_FOUND)
-    message(FATAL_ERROR "ERROR: NetworkManagerQt not found. http://projects.kde.org/libnm-qt")
-endif()
-
-set(PLASMA_NM_VERSION "0.9.3.3-git")
-
-configure_file(config.h.cmake
-               ${CMAKE_CURRENT_BINARY_DIR}/config.h )
-
+configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR} ${CMAKE_MODULE_PATH})
+
 macro_optional_find_package(MobileBroadbandProviderInfo)
 macro_log_feature(MOBILEBROADBANDPROVIDERINFO_FOUND "mobile-broadband-provider-info" "Database of mobile broadband service providers" "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders" FALSE "" "Needed for Mobile Connection Wizard support in Broadband Modem Management")
-
 pkg_check_modules(QTNETWORK REQUIRED QtNetwork)
 pkg_check_modules(NETWORKMANAGER REQUIRED NetworkManager)
 
@@ -57,8 +59,8 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/
                     ${QTNETWORK_INCLUDE_DIRS}
-                    ${MODEMMANAGER_INCLUDE_DIRS}
                     if (MODEMMANAGERQT_FOUND)
+                        ${MODEMMANAGER_INCLUDE_DIRS}
                         ${MODEMMANAGERQT_INCLUDE_DIRS}
                     endif()
                     ${NETWORKMANAGERQT_INCLUDE_DIRS}

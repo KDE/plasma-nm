@@ -28,6 +28,7 @@ Item {
     property alias icon: switchButtonIcon.elementId;
     property alias checked: switchButtonCheckbox.checked;
     property alias enabled: switchButtonCheckbox.enabled;
+    property alias tooltipText: switchButtonTooltip.mainText;
 
     signal clicked();
 
@@ -58,7 +59,14 @@ Item {
     }
 
     MouseArea {
+        id: switchButtonMouseArea;
+
         anchors.fill: parent;
+
+        PlasmaCore.ToolTip {
+            id: switchButtonTooltip;
+            target: switchButtonMouseArea;
+        }
 
         onClicked: {
             if (switchButton.enabled) {

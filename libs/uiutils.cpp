@@ -591,16 +591,16 @@ QString UiUtils::formatDateRelative(const QDateTime & lastUsed)
     if (lastUsed.isValid()) {
         const QDateTime now = QDateTime::currentDateTime();
         if (lastUsed.daysTo(now) == 0 ) {
-            int secondsAgo = lastUsed.secsTo(now);
+            const int secondsAgo = lastUsed.secsTo(now);
             if (secondsAgo < (60 * 60 )) {
-                int minutesAgo = secondsAgo / 60;
+                const int minutesAgo = secondsAgo / 60;
                 lastUsedText = i18ncp(
                                    "Label for last used time for a network connection used in the last hour, as the number of minutes since usage",
                                    "One minute ago",
                                    "%1 minutes ago",
                                    minutesAgo);
             } else {
-                int hoursAgo = secondsAgo / (60 * 60);
+                const int hoursAgo = secondsAgo / (60 * 60);
                 lastUsedText = i18ncp(
                                    "Label for last used time for a network connection used in the last day, as the number of hours since usage",
                                    "One hour ago",

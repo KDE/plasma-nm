@@ -141,7 +141,7 @@ void BssidComboBox::addBssidsToCombo(const QList<NetworkManager::AccessPoint::Pt
             continue;
         }
 
-        QString text = QString("%1 (%2%)").arg(ap->hardwareAddress()).arg(ap->signalStrength());
+        const QString text = QString("%1 (%2%)").arg(ap->hardwareAddress()).arg(ap->signalStrength());
         addItem(text, QVariant::fromValue(ap->hardwareAddress()));
     }
 }

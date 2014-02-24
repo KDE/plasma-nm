@@ -113,7 +113,7 @@ void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const 
 
 void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device)
 {
-    QVariant data = hwAddressFromDevice(device);
+    const QVariant data = hwAddressFromDevice(device);
     //qDebug() << "Data:" << data;
 
     QString name;

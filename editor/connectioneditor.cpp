@@ -73,6 +73,8 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     m_editor->messageWidget->setCloseButtonVisible(false);
     m_editor->messageWidget->setWordWrap(true);
 
+    m_editor->ktreewidgetsearchline->lineEdit()->setClickMessage(i18n("Type here to search connections..."));
+
     initializeConnections();
     initializeMenu();
 
@@ -370,13 +372,16 @@ void ConnectionEditor::slotItemClicked(const QModelIndex &index)
     qDebug() << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
 
     if (index.parent().isValid()) { // category
-        actionCollection()->action("edit_connection")->setEnabled(true);
-        actionCollection()->action("delete_connection")->setEnabled(true);
-        actionCollection()->action("export_vpn")->setEnabled(true);
+        actionCollection()->action("edit_connection")->setEnabled(false);
+        actionCollection()->action("delete_connection")->setEnabled(false);
+        actionCollection()->action("export_vpn")->setEnabled(false);
+        actionCollection()->action("export_vpn")->setEnabled(false);
     } else {                       //connection
         actionCollection()->action("edit_connection")->setEnabled(true);
         actionCollection()->action("delete_connection")->setEnabled(true);
-        actionCollection()->action("export_vpn")->setEnabled(true);
+        const bool isVpn = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(index.data(NetworkModel::TypeRole).toUInt()) ==
+                           NetworkManager::ConnectionSettings::Vpn;
+        actionCollection()->action("export_vpn")->setEnabled(isVpn);
     }
 }
 

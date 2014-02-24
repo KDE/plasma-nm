@@ -29,7 +29,7 @@
       <bool>false</bool>
      </property>
      <property name="clickMessage" stdset="0">
-      <string>Search connections...</string>
+      <string/>
      </property>
     </widget>
    </item>

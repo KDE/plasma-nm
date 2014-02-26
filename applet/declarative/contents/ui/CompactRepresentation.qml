@@ -38,7 +38,7 @@ Item {
         id: svgIcons;
 
         multipleImages: true;
-        imagePath: "icons/plasma-networkmanagement";
+        imagePath: "icons/plasma-networkmanagement2";
     }
 
     PlasmaCore.SvgItem {

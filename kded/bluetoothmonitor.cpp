@@ -79,7 +79,7 @@ void BluetoothMonitor::init()
     QRegExp rx("dun|rfcomm?|nap");
 
     if (rx.indexIn(mService) < 0) {
-        KMessageBox::sorry(0, i18n("We support 'dun' and 'nap' services only."));
+        KMessageBox::sorry(0, i18n("Only 'dun' and 'nap' services are supported."));
         return;
     }
     qDebug() << "Bdaddr == " << mBdaddr;
@@ -92,7 +92,7 @@ void BluetoothMonitor::init()
                          QLatin1String("org.bluez.Manager"), QDBusConnection::systemBus());
 
     if (!bluez.isValid()) {
-        KMessageBox::error(0, i18n("Could not contact bluetooth manager (BlueZ)."));
+        KMessageBox::error(0, i18n("Could not contact Bluetooth manager (BlueZ)."));
         return;
     }
 
@@ -100,7 +100,7 @@ void BluetoothMonitor::init()
     QDBusReply<QDBusObjectPath> adapterPath = bluez.call(QLatin1String("DefaultAdapter"));
 
     if (!adapterPath.isValid()) {
-        KMessageBox::error(0, i18n("Default bluetooth adapter not found: %1", adapterPath.error().message()));
+        KMessageBox::error(0, i18n("Default Bluetooth adapter not found: %1", adapterPath.error().message()));
         return;
     }
 
@@ -253,7 +253,7 @@ void BluetoothMonitor::modemAdded(const QString &udi)
     if (!modem || modem->device() != mDunDevice) {
 
         if (modem) {
-            KMessageBox::error(0, i18n("Device %1 is not the one we want (%2)", modem->device(), mDunDevice));
+            KMessageBox::error(0, i18n("Device %1 is not the wanted one (%2)", modem->device(), mDunDevice));
         } else {
             KMessageBox::error(0, i18n("Device for serial port %1 (%2) not found.", mDunDevice, udi));
         }

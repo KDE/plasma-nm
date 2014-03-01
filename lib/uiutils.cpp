@@ -70,7 +70,7 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
         deviceText = i18nc("title of the interface widget in nm's popup", "Bluetooth");
         break;
     case NetworkManager::Device::Wimax:
-        deviceText = i18nc("title of the interface widget in nm's popup", "Wimax");
+        deviceText = i18nc("title of the interface widget in nm's popup", "WiMAX");
         break;
     case NetworkManager::Device::InfiniBand:
         deviceText = i18nc("title of the interface widget in nm's popup", "Infiniband");
@@ -578,7 +578,7 @@ QString UiUtils::convertAllowedModeToString(ModemManager::Modem::ModemModes mode
     } else if (modes.testFlag(MM_MODEM_MODE_3G)) {
         return i18nc("Gsm modes (2G/3G/any)","UMTS/HSxPA");
     } else if (modes.testFlag(MM_MODEM_MODE_2G)) {
-        return i18nc("Gsm modes (2G/3G/any)","GPRS/Edge");
+        return i18nc("Gsm modes (2G/3G/any)","GPRS/EDGE");
     } else if (modes.testFlag(MM_MODEM_MODE_CS)) {
         return i18nc("Gsm modes (2G/3G/any)","GSM");
     } else if (modes.testFlag(MM_MODEM_MODE_ANY)) {
@@ -674,8 +674,8 @@ QString UiUtils::convertTypeToString(const ModemManager::ModemInterface::Type ty
 {
     switch (type) {
         case ModemManager::ModemInterface::UnknownType: return i18nc("Unknown cellular type","Unknown");
-        case ModemManager::ModemInterface::GsmType: return i18nc("Gsm cellular type","Gsm");
-        case ModemManager::ModemInterface::CdmaType: return i18nc("Cdma cellular type","Cdma");
+        case ModemManager::ModemInterface::GsmType: return i18nc("GSM cellular type","GSM");
+        case ModemManager::ModemInterface::CdmaType: return i18nc("CDMA cellular type","CDMA");
     }
 
     return i18nc("Unknown cellular type","Unknown");

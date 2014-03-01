@@ -321,7 +321,7 @@ void ConnectionDetailEditor::initTabs()
 #endif
     } else if (type == NetworkManager::ConnectionSettings::Wimax) { // Wimax
         WimaxWidget * wimaxWidget = new WimaxWidget(m_connection->setting(NetworkManager::Setting::Wimax), this);
-        m_ui->tabWidget->addTab(wimaxWidget, i18n("Wimax"));
+        m_ui->tabWidget->addTab(wimaxWidget, i18n("WiMAX"));
     } else if (type == NetworkManager::ConnectionSettings::Vpn) { // VPN
         QString error;
         VpnUiPlugin * vpnPlugin = 0;

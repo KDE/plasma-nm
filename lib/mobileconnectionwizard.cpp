@@ -477,7 +477,7 @@ QWizardPage * MobileConnectionWizard::createProvidersPage()
     connect(mProvidersList, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(slotCheckProviderList()));
     layout->addWidget(mProvidersList);
 
-    radioManualProvider = new QRadioButton(i18nc("Mobile Connection Wizard", "I can't find my provider and I wish to enter it &manually:"));
+    radioManualProvider = new QRadioButton(i18nc("Mobile Connection Wizard", "I cannot find my provider and I wish to enter it &manually:"));
     layout->addWidget(radioManualProvider);
     connect(radioManualProvider, SIGNAL(toggled(bool)), this, SLOT(slotEnableProviderEdit(bool)));
 

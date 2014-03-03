@@ -8,7 +8,7 @@ kde4_add_ui_files(openswan_SRCS openswan.ui openswanauth.ui)
 
 kde4_add_plugin(plasmanetworkmanagement_openswanui ${openswan_SRCS})
 
-target_link_libraries(plasmanetworkmanagement_openswanui plasmanetworkmanagement-internal ${NETWORKMANAGERQT_LDFLAGS} ${KDE4_KIO_LIBS})
+target_link_libraries(plasmanetworkmanagement_openswanui plasmanetworkmanagement-editor ${NETWORKMANAGERQT_LDFLAGS} ${KDE4_KIO_LIBS})
 
 install(TARGETS plasmanetworkmanagement_openswanui  DESTINATION ${PLUGIN_INSTALL_DIR})
 

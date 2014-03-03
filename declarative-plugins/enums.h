@@ -28,6 +28,7 @@ class Enums : public QObject
 Q_OBJECT
 Q_ENUMS(ConnectionStatus)
 Q_ENUMS(ConnectionType)
+Q_ENUMS(FilterType)
 Q_ENUMS(SecurityType)
 
 public:

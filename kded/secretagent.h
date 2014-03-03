@@ -25,7 +25,7 @@
 
 #include <NetworkManagerQt/SecretAgent>
 
-#include <kdemacros.h>
+#include "plasmanm_export.h"
 
 namespace KWallet {
 class Wallet;
@@ -66,7 +66,7 @@ public:
     PasswordDialog *dialog;
 };
 
-class KDE_EXPORT SecretAgent : public NetworkManager::SecretAgent
+class PLASMA_NM_EXPORT SecretAgent : public NetworkManager::SecretAgent
 {
     Q_OBJECT
 public:

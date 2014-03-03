@@ -1,3 +1,5 @@
+include_directories(${CMAKE_SOURCE_DIR}/libs/editor/widgets)
+
 add_subdirectory(vpnc)
 add_subdirectory(openvpn)
 add_subdirectory(l2tp)

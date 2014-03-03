@@ -1,33 +1,27 @@
+include_directories(${CMAKE_SOURCE_DIR}/libs
+                    ${CMAKE_SOURCE_DIR}/libs/models)
+
 set(plasma_networkmanagement_qml_plugins_SRCS
-   applet/availabledevices.cpp
-   applet/connectionicon.cpp
-   applet/enabledconnections.cpp
-   applet/globalconfig.cpp
-   applet/networkstatus.cpp
-   applet/trafficmonitor.cpp
-
-   model/model.cpp
-   model/modelitem.cpp
-   model/modelitems.cpp
-   model/monitor.cpp
-   model/sortmodel.cpp
-
-   debug.cpp
+   availabledevices.cpp
+   connectionicon.cpp
+   enabledconnections.cpp
    enums.cpp
-   handler.cpp
+   networkstatus.cpp
+   trafficmonitor.cpp
    qmlplugins.cpp
 )
 
 kde4_add_library(plasmanetworkmanagementplugins SHARED ${plasma_networkmanagement_qml_plugins_SRCS})
 
 target_link_libraries(plasmanetworkmanagementplugins
-    ${NETWORKMANAGERQT_LDFLAGS}
-    ${MODEMMANAGERQT_LDFLAGS}
     plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
+    ${NETWORKMANAGERQT_LDFLAGS}
+    ${MODEMMANAGERQT_LDFLAGS}
     ${KDE4_PLASMA_LIBS}
-    ${QT_QTNETWORK_LIBRARY}
+    ${KDE4_KDECORE_LIBS}
     ${KDE4_KDEUI_LIBS}
+    ${QT_QTNETWORK_LIBRARY}
     ${QT_QTDECLARATIVE_LIBRARY})
 
 install(TARGETS plasmanetworkmanagementplugins DESTINATION ${IMPORTS_INSTALL_DIR}/org/kde/networkmanagement)

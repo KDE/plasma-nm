@@ -22,17 +22,15 @@
 
 #include <QtDeclarative>
 
-#include "applet/availabledevices.h"
-#include "applet/connectionicon.h"
-#include "applet/enabledconnections.h"
-#include "applet/globalconfig.h"
-#include "applet/networkstatus.h"
-#include "applet/trafficmonitor.h"
+#include "availabledevices.h"
+#include "connectionicon.h"
+#include "enabledconnections.h"
+#include "globalconfig.h"
+#include "networkstatus.h"
+#include "trafficmonitor.h"
 
-#include "model/modelitem.h"
-#include "model/monitor.h"
-#include "model/model.h"
-#include "model/sortmodel.h"
+#include "appletproxymodel.h"
+#include "networkmodel.h"
 
 #include "handler.h"
 #include "enums.h"
@@ -53,10 +51,10 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<NetworkStatus>(uri, 0, 1, "NetworkStatus");
     // @uri org.kde.networkmanagement.Handler
     qmlRegisterType<Handler>(uri, 0, 1, "Handler");
-    // @uri org.kde.networkmanagement.Model
-    qmlRegisterType<Model>(uri, 0, 1, "Model");
-    // @uri org.kde.networkmanagement.SortModel
-    qmlRegisterType<SortModel>(uri, 0, 1, "SortModel");
+    // @uri org.kde.networkmanagement.NetworkModel
+    qmlRegisterType<NetworkModel>(uri, 0, 1, "NetworkModel");
+    // @uri org.kde.networkmanagement.AppletProxyModel
+    qmlRegisterType<AppletProxyModel>(uri, 0, 1, "AppletProxyModel");
     // @uri org.kde.networkmanagement.TrafficMonitor
     qmlRegisterType<TrafficMonitor>(uri, 0, 1, "TrafficMonitor");
 }

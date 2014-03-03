@@ -23,7 +23,7 @@
 #ifndef PLASMA_NM_BLUETOOTH_MONITOR_H
 #define PLASMA_NM_BLUETOOTH_MONITOR_H
 #if WITH_MODEMMANAGER_SUPPORT
-#include "../lib/mobileconnectionwizard.h"
+#include "mobileconnectionwizard.h"
 #include <ModemManagerQt/manager.h>
 #endif
 #include <QDBusObjectPath>

@@ -52,12 +52,11 @@ Item {
             id: handler;
     }
 
-    PlasmaNM.Model {
+    PlasmaNM.NetworkModel {
         id: connectionModel;
     }
-
-    PlasmaNM.SortModel {
-        id: connectionSortModel;
+    PlasmaNM.AppletProxyModel {
+        id: appletProxyModel;
 
         sourceModel: connectionModel;
     }
@@ -104,11 +103,11 @@ Item {
             top: toolbar.bottom;
         }
         clip: true
-        model: connectionSortModel;
+        model: appletProxyModel;
         currentIndex: -1;
         interactive: true;
         boundsBehavior: Flickable.StopAtBounds;
-        section.property: showSections ? "itemSection" : "";
+        section.property: showSections ? "Section" : "";
         section.delegate: Header { text: section }
         delegate: ConnectionItem {
             onStateChanged: {

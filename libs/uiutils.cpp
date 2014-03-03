@@ -87,9 +87,11 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
     case NetworkManager::Device::Vlan:
         deviceText = i18nc("title of the interface widget in nm's popup", "Virtual (vlan)");
         break;
+#if NM_CHECK_VERSION(0, 9, 9)
     case NetworkManager::Device::Team:
         deviceText = i18nc("title of the interface widget in nm's popup", "Virtual (team)");
         break;
+#endif
     case NetworkManager::Device::Modem: {
         const NetworkManager::ModemDevice::Ptr nmModemIface = iface.objectCast<NetworkManager::ModemDevice>();
         if (nmModemIface) {
@@ -228,9 +230,11 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
         text = i18n("Wireless");
         icon = "network-wireless";
         break;
+#if NM_CHECK_VERSION(0, 9, 9)
     case ConnectionSettings::Team:
         text = i18n("Team");
         break;
+#endif
     default:
         text = i18n("Unknown connection type");
         break;

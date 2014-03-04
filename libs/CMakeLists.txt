@@ -6,6 +6,7 @@ set(plasmanetworkmanagement-internal_SRCS
     models/networkmodel.cpp
     models/networkmodelitem.cpp
 
+    debug.cpp
     globalconfig.cpp
     handler.cpp
     uiutils.cpp

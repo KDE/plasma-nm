@@ -18,6 +18,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "debug.h"
 #include "networkmodel.h"
 #include "networkmodelitem.h"
 #include "uiutils.h"
@@ -289,7 +290,7 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
                 item->setVpnState(state);
             }
             updateItem(item);
-            kDebug() << "Item " << item->name() << ": active connection state changed to " << item->connectionState();
+            nmDebug() << "Item " << item->name() << ": active connection state changed to " << item->connectionState();
         }
     }
 }
@@ -311,7 +312,7 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
         }
         item->setDevicePath(device->uni());
         item->setDeviceState(device->state());
-        kDebug() << "Item " << item->name() << ": device changed to " << item->devicePath();
+        nmDebug() << "Item " << item->name() << ": device changed to " << item->devicePath();
 #if WITH_MODEMMANAGER_SUPPORT
 #ifdef MODEMMANAGERQT_ONE
         if (device->type() == NetworkManager::Device::Modem) {
@@ -320,7 +321,7 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
                 ModemManager::Modem::Ptr modemInterface = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
                 if (modemInterface) {
                     item->setSignal(modemInterface->signalQuality().signal);
-                    kDebug() << "Item " << item->name() << ": signal changed to " << item->signal();
+                    nmDebug() << "Item " << item->name() << ": signal changed to " << item->signal();
                 }
             }
         }
@@ -336,7 +337,7 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
                     item->setSpecificPath(secondItem->specificPath());
                     apFound = true;
                     const int row = m_list.indexOf(secondItem);
-                    kDebug() << "Access point " << secondItem->name() << ": merged to " << item->name() << " connection";
+                    nmDebug() << "Access point " << secondItem->name() << ": merged to " << item->name() << " connection";
                     if (row >= 0) {
                         beginRemoveRows(QModelIndex(), row, row);
                         m_list.removeItem(secondItem);
@@ -400,7 +401,7 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
         beginInsertRows(QModelIndex(), index, index);
         m_list.insertItem(item);
         endInsertRows();
-        kDebug() << "New connection " << item->name() << " added";
+        nmDebug() << "New connection " << item->name() << " added";
     }
 }
 
@@ -461,7 +462,7 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
     beginInsertRows(QModelIndex(), index, index);
     m_list.insertItem(item);
     endInsertRows();
-    kDebug() << "New wireless network " << item->name() << " added";
+    nmDebug() << "New wireless network " << item->name() << " added";
 }
 
 void NetworkModel::checkAndCreateDuplicate(const QString& connection, const NetworkManager::Device::Ptr& device)
@@ -535,7 +536,7 @@ void NetworkModel::activeConnectionRemoved(const QString& activeConnection)
         item->setConnectionState(NetworkManager::ActiveConnection::Deactivated);
         item->setVpnState(NetworkManager::VpnConnection::Disconnected);
         updateItem(item);
-        kDebug() << "Item " << item->name() << ": active connection removed";
+        nmDebug() << "Item " << item->name() << ": active connection removed";
     }
 }
 
@@ -546,7 +547,7 @@ void NetworkModel::activeConnectionStateChanged(NetworkManager::ActiveConnection
         foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::ActiveConnection, activePtr->path())) {
             item->setConnectionState(state);
             updateItem(item);
-            kDebug() << "Item " << item->name() << ": active connection changed to " << item->connectionState();
+            nmDebug() << "Item " << item->name() << ": active connection changed to " << item->connectionState();
         }
     }
 }
@@ -570,7 +571,7 @@ void NetworkModel::activeVpnConnectionStateChanged(NetworkManager::VpnConnection
             }
             item->setVpnState(state);
             updateItem(item);
-            kDebug() << "Item " << item->name() << ": active connection changed to " << item->connectionState();
+            nmDebug() << "Item " << item->name() << ": active connection changed to " << item->connectionState();
         }
     }
 }
@@ -609,7 +610,7 @@ void NetworkModel::availableConnectionDisappeared(const QString& connection)
             item->setDeviceState(NetworkManager::Device::UnknownState);
             item->setSignal(0);
             item->setSpecificPath(QString());
-            kDebug() << "Item " << item->name() << " removed as available connection";
+            nmDebug() << "Item " << item->name() << " removed as available connection";
             // Check whether the connection is still available as an access point, this happens
             // when we change its properties, like ssid, bssid, security etc.
             if (item->type() == NetworkManager::ConnectionSettings::Wireless && !specificPath.isEmpty()) {
@@ -629,7 +630,7 @@ void NetworkModel::availableConnectionDisappeared(const QString& connection)
             if (item->duplicate()) {
                 const int row = m_list.indexOf(item);
                 if (row >= 0) {
-                    kDebug() << "Duplicate item " << item->name() << " removed completely";
+                    nmDebug() << "Duplicate item " << item->name() << " removed completely";
                     beginRemoveRows(QModelIndex(), row, row);
                     m_list.removeItem(item);
                     item->deleteLater();
@@ -677,7 +678,7 @@ void NetworkModel::connectionRemoved(const QString& connection)
                 item->setTimestamp(QDateTime());
                 item->setUuid(QString());
                 updateItem(item);
-                kDebug() << "Item " << item->name() << ": connection removed";
+                nmDebug() << "Item " << item->name() << ": connection removed";
             }
         } else {
             remove = true;
@@ -686,7 +687,7 @@ void NetworkModel::connectionRemoved(const QString& connection)
         if (remove) {
             const int row = m_list.indexOf(item);
             if (row >= 0) {
-                kDebug() << "Item " << item->name() << " removed completely";
+                nmDebug() << "Item " << item->name() << " removed completely";
                 beginRemoveRows(QModelIndex(), row, row);
                 m_list.removeItem(item);
                 item->deleteLater();
@@ -717,7 +718,7 @@ void NetworkModel::connectionUpdated()
                 item->setSsid(wirelessSetting->ssid());
             }
             updateItem(item);
-            kDebug() << "Item " << item->name() << ": connection updated";
+            nmDebug() << "Item " << item->name() << ": connection updated";
         }
     }
 }
@@ -749,7 +750,7 @@ void NetworkModel::deviceStateChanged(NetworkManager::Device::State state, Netwo
         foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, device->uni())) {
             item->setDeviceState(state);
             updateItem(item);
-            kDebug() << "Item " << item->name() << ": device state changed to " << item->deviceState();
+            nmDebug() << "Item " << item->name() << ": device state changed to " << item->deviceState();
         }
     }
 }
@@ -842,7 +843,7 @@ void NetworkModel::statusChanged(NetworkManager::Status status)
 {
     Q_UNUSED(status);
 
-    kDebug() << "NetworkManager state changed to " << status;
+    nmDebug() << "NetworkManager state changed to " << status;
     // This has probably effect only for VPN connections
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Type, NetworkManager::ConnectionSettings::Vpn)) {
         updateItem(item);
@@ -868,7 +869,7 @@ void NetworkModel::wirelessNetworkDisappeared(const QString& ssid)
             if (item->itemType() == NetworkModelItem::AvailableAccessPoint) {
                 const int row = m_list.indexOf(item);
                 if (row >= 0) {
-                    kDebug() << "Wireless network " << item->name() << " removed completely";
+                    nmDebug() << "Wireless network " << item->name() << " removed completely";
                     beginRemoveRows(QModelIndex(), row, row);
                     m_list.removeItem(item);
                     item->deleteLater();
@@ -883,7 +884,7 @@ void NetworkModel::wirelessNetworkDisappeared(const QString& ssid)
                 }
                 item->setSignal(0);
                 updateItem(item);
-                kDebug() << "Item " << item->name() << ": wireless network removed";
+                nmDebug() << "Item " << item->name() << ": wireless network removed";
             }
         }
     }
@@ -908,7 +909,7 @@ void NetworkModel::wirelessNetworkSignalChanged(int signal)
         foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, networkPtr->ssid(), networkPtr->device())) {
             item->setSignal(signal);
             updateItem(item);
-//             kDebug() << "Wireless network " << item->name() << ": signal changed to " << item->signal();
+//             nmDebug() << "Wireless network " << item->name() << ": signal changed to " << item->signal();
         }
     }
 }

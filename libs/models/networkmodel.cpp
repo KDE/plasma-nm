@@ -467,7 +467,6 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
 
 void NetworkModel::checkAndCreateDuplicate(const QString& connection, const NetworkManager::Device::Ptr& device)
 {
-    Q_UNUSED(device)
     bool createDuplicate = false;
     NetworkModelItem * originalItem = 0;
 
@@ -476,7 +475,7 @@ void NetworkModel::checkAndCreateDuplicate(const QString& connection, const Netw
             originalItem = item;
         }
 
-        if (!item->duplicate() && item->itemType() == NetworkModelItem::AvailableConnection) {
+        if (!item->duplicate() && item->itemType() == NetworkModelItem::AvailableConnection && item->devicePath() != device->uni()) {
             createDuplicate = true;
         }
     }

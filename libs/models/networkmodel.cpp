@@ -864,8 +864,8 @@ void NetworkModel::wirelessNetworkDisappeared(const QString& ssid)
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
     if (device) {
         foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, ssid, device->uni())) {
-            // Remove the entire item, because it's only AP
-            if (item->itemType() == NetworkModelItem::AvailableAccessPoint) {
+            // Remove the entire item, because it's only AP or it's a duplicated available connection
+            if (item->itemType() == NetworkModelItem::AvailableAccessPoint || item->duplicate()) {
                 const int row = m_list.indexOf(item);
                 if (row >= 0) {
                     nmDebug() << "Wireless network " << item->name() << " removed completely";

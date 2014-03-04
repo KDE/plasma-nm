@@ -171,19 +171,19 @@ void NetworkModel::initialize()
 void NetworkModel::initializeSignals()
 {
     connect(NetworkManager::notifier(), SIGNAL(activeConnectionAdded(QString)),
-            SLOT(activeConnectionAdded(QString)));
+            SLOT(activeConnectionAdded(QString)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(activeConnectionRemoved(QString)),
-            SLOT(activeConnectionRemoved(QString)));
+            SLOT(activeConnectionRemoved(QString)), Qt::UniqueConnection);
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
-            SLOT(connectionAdded(QString)));
+            SLOT(connectionAdded(QString)), Qt::UniqueConnection);
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
-            SLOT(connectionRemoved(QString)));
+            SLOT(connectionRemoved(QString)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)),
-            SLOT(deviceAdded(QString)));
+            SLOT(deviceAdded(QString)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
-            SLOT(deviceRemoved(QString)));
+            SLOT(deviceRemoved(QString)), Qt::UniqueConnection);
     connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
-            SLOT(statusChanged(NetworkManager::Status)));
+            SLOT(statusChanged(NetworkManager::Status)), Qt::UniqueConnection);
 }
 
 void NetworkModel::initializeSignals(const NetworkManager::ActiveConnection::Ptr& activeConnection)
@@ -192,34 +192,34 @@ void NetworkModel::initializeSignals(const NetworkManager::ActiveConnection::Ptr
         NetworkManager::VpnConnection::Ptr vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
         if (vpnConnection) {
             connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
-                    SLOT(activeVpnConnectionStateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)));
+                    SLOT(activeVpnConnectionStateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)), Qt::UniqueConnection);
         }
     } else {
         connect(activeConnection.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-                SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)));
+                SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
     }
 }
 
 void NetworkModel::initializeSignals(const NetworkManager::Connection::Ptr& connection)
 {
-    connect(connection.data(), SIGNAL(updated()), SLOT(connectionUpdated()));
+    connect(connection.data(), SIGNAL(updated()), SLOT(connectionUpdated()), Qt::UniqueConnection);
 }
 
 void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
 {
     connect(device.data(), SIGNAL(availableConnectionAppeared(QString)),
-            SLOT(availableConnectionAppeared(QString)));
+            SLOT(availableConnectionAppeared(QString)), Qt::UniqueConnection);
     connect(device.data(), SIGNAL(availableConnectionDisappeared(QString)),
-            SLOT(availableConnectionDisappeared(QString)));
+            SLOT(availableConnectionDisappeared(QString)), Qt::UniqueConnection);
     connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
-            SLOT(deviceStateChanged(NetworkManager::Device::State, NetworkManager::Device::State, NetworkManager::Device::StateChangeReason)));
+            SLOT(deviceStateChanged(NetworkManager::Device::State, NetworkManager::Device::State, NetworkManager::Device::StateChangeReason)), Qt::UniqueConnection);
 
     if (device->type() == NetworkManager::Device::Wifi) {
         NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
         connect(wifiDev.data(), SIGNAL(networkAppeared(QString)),
-                SLOT(wirelessNetworkAppeared(QString)));
+                SLOT(wirelessNetworkAppeared(QString)), Qt::UniqueConnection);
         connect(wifiDev.data(), SIGNAL(networkDisappeared(QString)),
-                SLOT(wirelessNetworkDisappeared(QString)));
+                SLOT(wirelessNetworkDisappeared(QString)), Qt::UniqueConnection);
     }
 #if WITH_MODEMMANAGER_SUPPORT
     else if (device->type() == NetworkManager::Device::Modem) {
@@ -228,11 +228,11 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
         ModemManager::Modem::Ptr modemNetwork = modemDev->getModemNetworkIface();
         if (modemDev->isValid()) {
             connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
-                    SLOT(gsmNetworkSignalQualityChanged(uint)));
+                    SLOT(gsmNetworkSignalQualityChanged(uint)), Qt::UniqueConnection);
             connect(modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::Modem::AccessTechnologies)),
-                    SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies)));
+                    SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies)), Qt::UniqueConnection);
             connect(modemNetwork.data(), SIGNAL(currentModesChanged()),
-                    SLOT(gsmNetworkCurrentModesChanged()));
+                    SLOT(gsmNetworkCurrentModesChanged()), Qt::UniqueConnection);
         }
 #else
         ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDev->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
@@ -240,9 +240,9 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
             connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
                     SLOT(gsmNetworkSignalQualityChanged(uint)));
             connect(modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
-                    SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)));
+                    SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)), Qt::UniqueConnection);
             connect(modemNetwork.data(), SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
-                    SLOT(gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)));
+                    SLOT(gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)), Qt::UniqueConnection);
         }
 #endif
     }
@@ -252,9 +252,9 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
 void NetworkModel::initializeSignals(const NetworkManager::WirelessNetwork::Ptr& network)
 {
     connect(network.data(), SIGNAL(signalStrengthChanged(int)),
-            SLOT(wirelessNetworkSignalChanged(int)));
+            SLOT(wirelessNetworkSignalChanged(int)), Qt::UniqueConnection);
     connect(network.data(), SIGNAL(referenceAccessPointChanged(QString)),
-            SLOT(wirelessNetworkReferenceApChanged(QString)));
+            SLOT(wirelessNetworkReferenceApChanged(QString)), Qt::UniqueConnection);
 }
 
 void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::Ptr& activeConnection)

@@ -81,6 +81,10 @@ TrafficMonitor::~TrafficMonitor()
 
 void TrafficMonitor::setDevice(const QString& device)
 {
+    if (m_device && m_device->uni() == device) {
+        return;
+    }
+
     if (device.isEmpty()) {
         resetMonitor();
         setUpdateEnabled(false);
@@ -148,8 +152,6 @@ void TrafficMonitor::resetMonitor()
 
 void TrafficMonitor::dataUpdated(const QString& sourceName, const Plasma::DataEngine::Data& data)
 {
-//     kDebug()() << "dataUpdated: " << sourceName;
-
     if (sourceName == m_txSource) {
         m_tx = data["value"].toString();
         m_txUnit = data["units"].toString();
@@ -158,7 +160,6 @@ void TrafficMonitor::dataUpdated(const QString& sourceName, const Plasma::DataEn
         m_rxUnit = data["units"].toString();
     } else if (sourceName == m_rxTotalSource) {
         m_rxTotal = data["value"].toString().toLong();
-        QString _srx = QString("%1Total").arg(m_rxSource);
     } else if (sourceName == m_txTotalSource) {
         m_txTotal = data["value"].toString().toLong();
     }

@@ -434,9 +434,9 @@ ListItem {
             if (Type == PlasmaNM.Enums.Wired) {
                 return i18n("Connected") + ", ⬇ " + Download + ", ⬆ " + Upload;
             } else if (Type == PlasmaNM.Enums.Wireless) {
-                return i18n("Connected") + ", ⬇ " + Download + ", ⬆ " + Upload;/* + ", " + i18n("Strength: %1%", itemSignal);*/
+                return i18n("Connected") + ", ⬇ " + Download + ", ⬆ " + Upload;
             } else if (Type == PlasmaNM.Enums.Gsm || Type == PlasmaNM.Enums.Cdma) {
-                // TODO
+                return i18n("Connected") + ", ⬇ " + Download + ", ⬆ " + Upload;
             } else {
                 return i18n("Connected");
             }

@@ -486,10 +486,8 @@ void NetworkModelItem::dataUpdated(const QString& sourceName, const Plasma::Data
 {
     if (sourceName == m_uploadSource) {
         m_upload = data["value"].toString();
-        m_uploadUnit = data["units"].toString();
     } else if (sourceName == m_downloadSource) {
         m_download = data["value"].toString();
-        m_downloadUnit = data["units"].toString();
     }
     Q_EMIT itemUpdated();
 }

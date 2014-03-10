@@ -133,7 +133,6 @@ private:
     QString m_details;
     QString m_download;
     QString m_downloadSource;
-    QString m_downloadUnit;
     bool m_duplicate;
     Plasma::DataEngine * m_engine;
     NetworkManager::WirelessSetting::NetworkMode m_mode;
@@ -148,7 +147,6 @@ private:
     NetworkManager::ConnectionSettings::ConnectionType m_type;
     QString m_upload;
     QString m_uploadSource;
-    QString m_uploadUnit;
     bool m_updateEnabled;
     QString m_uuid;
     NetworkManager::VpnConnection::State m_vpnState;

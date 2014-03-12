@@ -145,5 +145,6 @@ Name[sv]=Saknar VPN-insticksprogram
 Name[tr]=VPN eklentisi eksik
 Name[uk]=Не вистачає додатка VPN
 Name[x-test]=xxMissing VPN pluginxx
+Name[zh_CN]=缺少 OpenVPN 插件
 IconName=applications-internet
 Action=Popup

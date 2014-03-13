@@ -61,14 +61,6 @@ public:
      * @param uni uni of the network interface
      */
     static QString interfaceNameLabel(const QString & uni);
-
-    /**
-     * @return a human-readable name for a given network interface according to the configured
-     * naming style
-     * @param uni uni of the network interface
-     * @param interfaceNamingStyle name style to use when generating the name
-     */
-    static QString interfaceNameLabel(const QString & uni, const KNetworkManagerServicePrefs::InterfaceNamingChoices interfaceNamingStyle);
 #endif
     /**
      * @return a human-readable name for a given network interface according to the configured
@@ -84,50 +76,9 @@ public:
     static QString connectionStateToString(NetworkManager::Device::State state, const QString &connectionName = QString());
 
     static QString vpnConnectionStateToString(NetworkManager::VpnConnection::State state);
-#if 0
-    /**
-     * @return a human-readable description of the connection state of a given interface connection
-     * @param state The connection state
-     */
-    static QString connectionStateToString(Knm::InterfaceConnection::ActivationState state, const QString &connectionName = QString());
-
-
-    /**
-     * @return an icon name suitable for the interface type
-     * @param iface the network interface
-     */
-    static QString iconName(const NetworkManager::Device::Ptr &device);
-#endif
 
     static QString iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type,
                                                          QString &title);
-#if 0
-    /** This method can be used to retrieve an icon size that fits into a given size.
-     * The resulting size can be used to render Pixmaps from KIconLoader without
-     * rescaling them (and thereby losing quality)
-     *
-     * @return a size available in KIconLoader.
-     * @param size The size of the rect it should fit in
-     */
-    static int iconSize(const QSizeF size);
-
-    /** This method can be used to retrieve the progress of a connection attempt
-     * as a qreal, for painting progress bars.
-     *
-     * @return the progress between 0 (disconnected) and 1 (activated).
-     * @param interface the network interface
-     */
-    static qreal interfaceState(const NetworkManager::Device *interface);
-
-    /** This method can be used to retrieve the progress of a connection attempt
-     * as a qreal, for painting progress bars. This is mostly used by VPN connections,
-     * which do not have NetworkManager::Device associated to them.
-     *
-     * @return the progress between 0 (unknown) and 1 (activated).
-     * @param remote interface connection
-     */
-    static qreal interfaceConnectionState(const RemoteInterfaceConnection *ic);
-#endif
     /**
      * @return a human-readable description of operation mode.
      * @param mode the operation mode

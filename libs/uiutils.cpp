@@ -25,10 +25,6 @@
 #include <KDebug>
 #include <KLocale>
 #include <KGlobal>
-#if 0
-#include <KIconLoader>
-#include <kdeversion.h>
-#endif
 
 #include <NetworkManagerQt/BluetoothDevice>
 #include <NetworkManagerQt/Manager>
@@ -241,29 +237,6 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
     return icon;
 }
 
-#if 0
-int UiUtils::iconSize(const QSizeF size)
-{
-    int s = qMin(size.width(), size.height());
-    // return the biggest fitting icon size from KIconLoader
-    if (s >= KIconLoader::SizeEnormous) { // 128
-        s = KIconLoader::SizeEnormous;
-    } else if (s >= KIconLoader::SizeHuge) { // 64
-        s = KIconLoader::SizeHuge;
-    } else if (s >= KIconLoader::SizeLarge) { // 48
-        s = KIconLoader::SizeLarge;
-    } else if (s >= KIconLoader::SizeMedium) { // 32
-        s = KIconLoader::SizeMedium;
-    } else if (s >= KIconLoader::SizeSmallMedium) { // 22
-        s = KIconLoader::SizeSmallMedium;
-    } else { // 16
-        s = KIconLoader::SizeSmall;
-    }
-    return s;
-}
-#endif
-
-
 QString UiUtils::prettyInterfaceName(NetworkManager::Device::Type type, const QString &interfaceName)
 {
     QString ret;
@@ -380,144 +353,6 @@ QString UiUtils::vpnConnectionStateToString(VpnConnection::State state)
             stateString = i18nc("interface state", "Error: Invalid state");    }
     return stateString;
 }
-
-#if 0
-QString UiUtils::connectionStateToString(Knm::InterfaceConnection::ActivationState state, const QString &connectionName)
-{
-    NetworkManager::Device::State s = NetworkManager::Device::UnknownState;
-
-    switch(state) {
-    case Knm::InterfaceConnection::Unknown:
-        s = NetworkManager::Device::UnknownState;
-        break;
-    case Knm::InterfaceConnection::Activating:
-        s = NetworkManager::Device::ConfiguringHardware;
-        break;
-    case Knm::InterfaceConnection::Activated:
-        s = NetworkManager::Device::Activated;
-        break;
-    }
-
-    return connectionStateToString(s, connectionName);
-}
-
-Solid::Device* UiUtils::findSolidDevice(const QString & uni)
-{
-    NetworkManager::Device * iface = NetworkManager::findNetworkInterface(uni);
-
-    if (!iface) {
-        return 0;
-    }
-
-    QList<Solid::Device> list = Solid::Device::listFromQuery(QString::fromLatin1("NetworkInterface.ifaceName == '%1'").arg(iface->interfaceName()));
-    QList<Solid::Device>::iterator it = list.begin();
-
-    if (it != list.end()) {
-        Solid::Device* dev = new Solid::Device(*it);
-        return dev;
-    }
-
-    return 0;
-}
-
-QString UiUtils::interfaceNameLabel(const QString & uni, const KNetworkManagerServicePrefs::InterfaceNamingChoices interfaceNamingStyle)
-{
-    QString label;
-    NetworkManager::Device * iface = NetworkManager::findNetworkInterface(uni);
-
-    switch (interfaceNamingStyle) {
-        case KNetworkManagerServicePrefs::SystemNames:
-            if (iface) {
-                label = iface->interfaceName();
-            }
-            break;
-        case KNetworkManagerServicePrefs::VendorProductNames: {
-            Solid::Device* dev = findSolidDevice(uni);
-            if (dev) {
-                if (!dev->vendor().isEmpty() && !dev->product().isEmpty()) {
-                    label = i18nc("Format for <Vendor> <Product>", "%1 - %2", dev->vendor(), dev->product());
-                }
-                delete dev;
-            }
-            break;
-        }
-        case KNetworkManagerServicePrefs::TypeNames:
-        default:
-            break;
-    }
-
-    if (label.isEmpty()) {
-        // if we don't get sensible information from Solid,
-        // let's try to use the type of the interface
-        if (iface) {
-            label = UiUtils::interfaceTypeLabel(iface->type(), iface);
-        }
-    }
-    return label;
-}
-
-QString UiUtils::interfaceNameLabel(const QString & uni)
-{
-    return interfaceNameLabel(uni, static_cast<KNetworkManagerServicePrefs::InterfaceNamingChoices>(KNetworkManagerServicePrefs::self()->interfaceNamingStyle()));
-}
-
-qreal UiUtils::interfaceState(const NetworkManager::Device *interface)
-{
-    if (!interface) {
-        return 0;
-    }
-
-    // from libs/types.h
-    switch (interface->state()) {
-        case NetworkManager::Device::Preparing:
-            return 0.15;
-            break;
-        case NetworkManager::Device::ConfiguringHardware:
-            return 0.30;
-            break;
-        case NetworkManager::Device::NeedAuth:
-            return 0.45;
-            break;
-        case NetworkManager::Device::ConfiguringIp:
-            return 0.60;
-            break;
-        case NetworkManager::Device::CheckingIp:
-            return 0.75;
-            break;
-        case NetworkManager::Device::WaitingForSecondaries:
-            return 0.90;
-            break;
-        case NetworkManager::Device::Activated:
-            return 1.0;
-            break;
-        default:
-            return 0;
-            break;
-    }
-    return 0;
-}
-
-qreal UiUtils::interfaceConnectionState(const RemoteInterfaceConnection *ic)
-{
-    if (!ic) {
-        return 0;
-    }
-    switch (ic->activationState()) {
-    case Knm::InterfaceConnection::Activating:
-        return 0.33;
-        break;
-    case Knm::InterfaceConnection::Activated:
-        return 1.0;
-        break;
-    case Knm::InterfaceConnection::Unknown:
-    default:
-        return 0;
-        break;
-    }
-    return 0;
-}
-
-#endif
 
 QString UiUtils::operationModeToString(NetworkManager::WirelessDevice::OperationMode mode)
 {

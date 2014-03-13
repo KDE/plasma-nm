@@ -59,7 +59,7 @@ public:
     {
         if (obj)
             return static_cast<OpenconnectAuthWorkerThread*>(obj)->processAuthFormP(form);
-        return -1;
+        return OC_FORM_RESULT_ERR;
     }
     static void writeProgress(void *obj, int level, const char *str, ...)
     {
@@ -181,9 +181,11 @@ int OpenconnectAuthWorkerThread::processAuthFormP(struct oc_auth_form *form)
     m_waitForUserInput->wait(m_mutex);
     m_mutex->unlock();
     if (*m_userDecidedToQuit)
-        return -1;
+        return OC_FORM_RESULT_CANCELLED;
 
-    return 0;
+    // TODO : If group changed, return OC_FORM_RESULT_NEWGROUP
+
+    return OC_FORM_RESULT_OK;
 }
 
 void OpenconnectAuthWorkerThread::writeProgress(int level, const char *fmt, va_list argPtr)

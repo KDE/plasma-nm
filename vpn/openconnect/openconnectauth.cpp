@@ -414,7 +414,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
     int passwordnumber = 0;
     bool focusSet = false;
     for (opt = form->opts; opt; opt = opt->next) {
-        if (opt->type == OC_FORM_OPT_HIDDEN)
+        if (opt->type == OC_FORM_OPT_HIDDEN || IGNORE_OPT(opt))
             continue;
         QLabel *text = new QLabel(this);
         text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
@@ -441,9 +441,20 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
             KComboBox *cmb = new KComboBox(this);
             struct oc_form_opt_select *sopt = reinterpret_cast<oc_form_opt_select *>(opt);
             for (int i = 0; i < sopt->nr_choices; i++) {
-                cmb->addItem(QString::fromUtf8(sopt->choices[i].label), QString::fromUtf8(sopt->choices[i].name));
-                if (value == QString::fromUtf8(sopt->choices[i].name))
+                cmb->addItem(QString::fromUtf8(FORMCHOICE(sopt, i)->label),
+                             QString::fromUtf8(FORMCHOICE(sopt, i)->name));
+                if (value == QString::fromUtf8(FORMCHOICE(sopt, i)->name)) {
                     cmb->setCurrentIndex(i);
+                    if (sopt == AUTHGROUP_OPT(form) &&
+                        i != AUTHGROUP_SELECTION(form)) {
+                        // XXX: Immediately return OC_FORM_RESULT_NEWGROUP to
+                        //      change group
+                    }
+                }
+            }
+            if (sopt == AUTHGROUP_OPT(form)) {
+                // TODO: Hook up signal when the KComboBox entry changes, to
+                //       return OC_FORM_RESULT_NEWGROUP
             }
             widget = qobject_cast<QWidget*>(cmb);
         }
@@ -540,6 +551,7 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
 void OpenconnectAuthWidget::formLoginClicked()
 {
     Q_D(OpenconnectAuthWidget);
+    /// XXX: This, or something like it, needs to be called when the KComboBox for the auth group changes too.
     const int lastIndex = d->ui.loginBoxLayout->count() - 1;
     QLayout *layout = d->ui.loginBoxLayout->itemAt(lastIndex - 2)->layout();
     struct oc_auth_form *form = (struct oc_auth_form *) d->ui.loginBoxLayout->itemAt(lastIndex)->widget()->property("openconnect_form").value<quintptr>();

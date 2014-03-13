@@ -40,6 +40,25 @@ struct x509_st;
 #define OPENCONNECT_OPENSSL
 #endif
 
+#if OPENCONNECT_CHECK_VER(3,0)
+#define NEWGROUP_SUPPORTED	1
+#define AUTHGROUP_OPT(form)	(void *)(form)->authgroup_opt
+#define AUTHGROUP_SELECTION(form) (form)->authgroup_selection
+#define FORMCHOICE(sopt, i)	((sopt)->choices[i])
+#define IGNORE_OPT(opt)		((opt)->flags & OC_FORM_OPT_IGNORE)
+#else
+#define NEWGROUP_SUPPORTED	0
+#define AUTHGROUP_OPT(form)	NULL
+#define AUTHGROUP_SELECTION(form) 0
+#define FORMCHOICE(sopt, i)	(&(sopt)->choices[i])
+#define IGNORE_OPT(opt)		0
+
+#define OC_FORM_RESULT_ERR	-1
+#define OC_FORM_RESULT_OK	0
+#define OC_FORM_RESULT_CANCELLED 1
+#define OC_FORM_RESULT_NEWGROUP	2
+#endif
+
 #include <QThread>
 
 class QMutex;

@@ -27,6 +27,8 @@ else()
     if (MODEMMANAGERQT_FOUND)
         message(STATUS "Enabling ModemManager support")
         set(WITH_MODEMMANAGER_SUPPORT 1)
+        macro_optional_find_package(MobileBroadbandProviderInfo)
+        macro_log_feature(MOBILEBROADBANDPROVIDERINFO_FOUND "mobile-broadband-provider-info" "Database of mobile broadband service providers" "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders" FALSE "" "Needed for Mobile Connection Wizard support in Broadband Modem Management")
     else()
         message(STATUS "ModemManagerQt not found")
         set(WITH_MODEMMANAGER_SUPPORT 0)
@@ -36,10 +38,8 @@ endif()
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR} ${CMAKE_MODULE_PATH})
 
-macro_optional_find_package(MobileBroadbandProviderInfo)
-macro_log_feature(MOBILEBROADBANDPROVIDERINFO_FOUND "mobile-broadband-provider-info" "Database of mobile broadband service providers" "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders" FALSE "" "Needed for Mobile Connection Wizard support in Broadband Modem Management")
-pkg_check_modules(QTNETWORK REQUIRED QtNetwork)
 pkg_check_modules(NETWORKMANAGER REQUIRED NetworkManager)
+pkg_check_modules(QTNETWORK REQUIRED QtNetwork)
 
 add_definitions(
     -DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT}

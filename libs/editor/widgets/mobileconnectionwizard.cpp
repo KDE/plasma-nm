@@ -33,11 +33,7 @@
 #include <NetworkManagerQt/ModemDevice>
 
 #include <ModemManagerQt/manager.h>
-#ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/modem.h>
-#else
-#include <ModemManagerQt/modeminterface.h>
-#endif
 
 #define NUMBER_OF_STATIC_ENTRIES 3
 
@@ -301,7 +297,6 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
 {
     QString desc;
 
-#ifdef MODEMMANAGERQT_ONE
     ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(device->udi());
     if (modem) {
         ModemManager::Modem::Ptr modemInterface = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
@@ -323,28 +318,6 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
             }
         }
     }
-#else
-    ModemManager::ModemInterface::Ptr modem = ModemManager::findModemInterface(device->udi(), ModemManager::ModemInterface::GsmCard);
-    if (modem) {
-        if (modem->enabled()) {
-            desc.append(modem->getInfo().manufacturer);
-            desc.append(" ");
-            desc.append(modem->getInfo().model);
-        } else {
-            QString deviceName = modem->masterDevice();
-            foreach (const Solid::Device &d, Solid::Device::allDevices()) {
-                if (d.udi().contains(deviceName, Qt::CaseInsensitive)) {
-                    deviceName = d.product();
-                    if (!deviceName.startsWith(d.vendor())) {
-                        deviceName = d.vendor() + ' ' + deviceName;
-                    }
-                    desc.append(deviceName);
-                    break;
-                }
-            }
-        }
-    }
-#endif
 
     NetworkManager::ModemDevice::Ptr nmModemIface = device.objectCast<NetworkManager::ModemDevice>();
     if (!nmModemIface) {

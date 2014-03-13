@@ -450,7 +450,6 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
         return;
     }
 
-#ifdef MODEMMANAGERQT_ONE
     m_modemNetwork = modemDevice->getModemNetworkIface();
 
     if (m_modemNetwork) {
@@ -463,20 +462,6 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
 
         m_signal = m_modemNetwork->signalQuality().signal;
         setIconForModem();
-#else
-    m_modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
-
-    if (m_modemNetwork) {
-        connect(m_modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
-                SLOT(modemSignalChanged(uint)), Qt::UniqueConnection);
-        connect(m_modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
-                SLOT(setIconForModem()), Qt::UniqueConnection);
-        connect(m_modemNetwork.data(), SIGNAL(destroyed(QObject*)),
-                SLOT(modemNetworkRemoved()));
-
-        m_signal = m_modemNetwork->getSignalQuality();
-        setIconForModem();
-#endif
     } else {
         m_connectionIcon = "network-mobile-0";
         Q_EMIT connectionIconChanged("network-mobile-0");
@@ -489,11 +474,7 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
 void ConnectionIcon::setIconForModem()
 {
     if (!m_signal) {
-#ifdef MODEMMANAGERQT_ONE
         m_signal = m_modemNetwork->signalQuality().signal;
-#else
-        m_signal = m_modemNetwork->getSignalQuality();
-#endif
     }
     QString strength = "00";
 
@@ -513,7 +494,6 @@ void ConnectionIcon::setIconForModem()
 
     QString result;
 
-#ifdef MODEMMANAGERQT_ONE
     switch(m_modemNetwork->accessTechnologies()) {
     case MM_MODEM_ACCESS_TECHNOLOGY_GSM:
     case MM_MODEM_ACCESS_TECHNOLOGY_GSM_COMPACT:
@@ -545,40 +525,7 @@ void ConnectionIcon::setIconForModem()
         result = "network-mobile-%1";
         break;
     }
-#else
-    switch(m_modemNetwork->getAccessTechnology()) {
-        case ModemManager::ModemInterface::UnknownTechnology:
-        case ModemManager::ModemInterface::Gsm:
-        case ModemManager::ModemInterface::GsmCompact:
-            result = "network-mobile-%1";
-            break;
-        case ModemManager::ModemInterface::Gprs:
-            result = "network-mobile-%1-gprs";
-            break;
-        case ModemManager::ModemInterface::Edge:
-            result = "network-mobile-%1-edge";
-            break;
-        case ModemManager::ModemInterface::Umts:
-            result = "network-mobile-%1-umts";
-            break;
-        case ModemManager::ModemInterface::Hsdpa:
-            result = "network-mobile-%1-hsdpa";
-            break;
-        case ModemManager::ModemInterface::Hsupa:
-            result = "network-mobile-%1-hsupa";
-            break;
-        case ModemManager::ModemInterface::Hspa:
-        case ModemManager::ModemInterface::HspaPlus:
-            result = "network-mobile-%1-hspa";
-            break;
-        case ModemManager::ModemInterface::Lte:
-            result = "network-mobile-%1-lte";
-            break;
-        default:
-            result = "network-mobile-%1";
-            break;
-    }
-#endif
+
     m_connectionIcon = QString(result).arg(strength);
     m_connectionTooltipIcon = "phone";
     Q_EMIT connectionIconChanged(QString(result).arg(strength));

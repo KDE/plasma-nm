@@ -127,9 +127,7 @@ void DetailKeysEditor::loadAllDetailElements()
     m_allDetailsElements.insert("mobile:operator", QPair<QString, QString>(i18n("Mobile Operator"), i18n("Mobile Operator's Name")));
     m_allDetailsElements.insert("mobile:quality", QPair<QString, QString>(i18n("Mobile Signal Quality"), i18n("Mobile Signal Quality")));
     m_allDetailsElements.insert("mobile:technology", QPair<QString, QString>(i18n("Mobile Access Technology"), i18n("Mobile Access Technology")));
-#ifndef MODEMMANAGERQT_ONE
-    m_allDetailsElements.insert("mobile:band", QPair<QString, QString>(i18n("Mobile Frequency Band"), i18n("Mobile Frequency Band")));
-#endif
+
     m_allDetailsElements.insert("mobile:mode", QPair<QString, QString>(i18n("Mobile Allowed Mode"), i18n("Mobile Allowed Mode")));
     m_allDetailsElements.insert("mobile:unlock", QPair<QString, QString>(i18n("Mobile Unlock Required"), i18n("Mobile Master Device")));
     m_allDetailsElements.insert("mobile:imei", QPair<QString, QString>(i18n("Mobile Device IMEI"), i18n("Mobile Device Serial Number")));

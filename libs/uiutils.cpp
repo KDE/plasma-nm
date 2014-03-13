@@ -39,13 +39,11 @@
 #include <NetworkManagerQt/WirelessSetting>
 
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/manager.h>
 #include <ModemManagerQt/modem.h>
 #include <ModemManagerQt/modemdevice.h>
 #include <ModemManagerQt/modem3gpp.h>
 #include <ModemManagerQt/modemcdma.h>
-#endif
 #endif
 
 // Qt
@@ -615,7 +613,6 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
 }
 
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
 QString UiUtils::convertAllowedModeToString(ModemManager::Modem::ModemModes modes)
 {
     if (modes.testFlag(MM_MODEM_MODE_4G)) {
@@ -714,73 +711,6 @@ QString UiUtils::convertLockReasonToString(MMModemLock reason)
         return i18nc("possible SIM lock reason", "Lock reason unknown.");
     }
 }
-#else
-QString UiUtils::convertTypeToString(const ModemManager::ModemInterface::Type type)
-{
-    switch (type) {
-        case ModemManager::ModemInterface::UnknownType: return i18nc("Unknown cellular type","Unknown");
-        case ModemManager::ModemInterface::GsmType: return i18nc("GSM cellular type","GSM");
-        case ModemManager::ModemInterface::CdmaType: return i18nc("CDMA cellular type","CDMA");
-    }
-
-    return i18nc("Unknown cellular type","Unknown");
-}
-
-QString UiUtils::convertBandToString(const ModemManager::ModemInterface::Band band)
-{
-    switch (band) {
-        case ModemManager::ModemInterface::UnknownBand: return i18nc("Unknown cellular frequency band","Unknown");
-        case ModemManager::ModemInterface::AnyBand: return i18nc("Any cellular frequency band","Any");
-        case ModemManager::ModemInterface::Egsm: return i18nc("Cellular frequency band","GSM/GPRS/EDGE 900 MHz");
-        case ModemManager::ModemInterface::Dcs: return i18nc("Cellular frequency band","GSM/GPRS/EDGE 1800 MHz");
-        case ModemManager::ModemInterface::Pcs: return i18nc("Cellular frequency band","GSM/GPRS/EDGE 1900 MHz");
-        case ModemManager::ModemInterface::G850: return i18nc("Cellular frequency band","GSM/GPRS/EDGE 850 MHz");
-        case ModemManager::ModemInterface::U2100: return i18nc("Cellular frequency band","WCDMA 2100 MHz (Class I)");
-        case ModemManager::ModemInterface::U1800: return i18nc("Cellular frequency band","WCDMA 3GPP 1800 MHz (Class III)");
-        case ModemManager::ModemInterface::U17IV: return i18nc("Cellular frequency band","WCDMA 3GPP AWS 1700/2100 MHz (Class IV)");
-        case ModemManager::ModemInterface::U800: return i18nc("Cellular frequency band","WCDMA 3GPP UMTS 800 MHz (Class VI)");
-        case ModemManager::ModemInterface::U850: return i18nc("Cellular frequency band","WCDMA 3GPP UMTS 850 MHz (Class V)");
-        case ModemManager::ModemInterface::U900: return i18nc("Cellular frequency band","WCDMA 3GPP UMTS 900 MHz (Class VIII)");
-        case ModemManager::ModemInterface::U17IX: return i18nc("Cellular frequency band","WCDMA 3GPP UMTS 1700 MHz (Class IX)");
-        case ModemManager::ModemInterface::U19IX: return i18nc("Cellular frequency band","WCDMA 3GPP UMTS 1900 MHz (Class II)");
-        case ModemManager::ModemInterface::U2600: return i18nc("Cellular frequency band","WCDMA 3GPP UMTS 2600 MHz (Class VII)");
-    }
-
-    return i18nc("Unknown cellular frequency band","Unknown");
-}
-
-QString UiUtils::convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode)
-{
-    switch (mode) {
-        case ModemManager::ModemInterface::AnyModeAllowed: return i18nc("Allowed Gsm modes (2G/3G/any)","Any");
-        case ModemManager::ModemInterface::Prefer2g: return i18nc("Allowed Gsm modes (2G/3G/any)","Prefer 2G");
-        case ModemManager::ModemInterface::Prefer3g: return i18nc("Allowed Gsm modes (2G/3G/any)","Prefer 3G");
-        case ModemManager::ModemInterface::UseOnly2g: return i18nc("Allowed Gsm modes (2G/3G/any)","Only 2G");
-        case ModemManager::ModemInterface::UseOnly3g: return i18nc("Allowed Gsm modes (2G/3G/any)","Only 3G");
-    }
-
-    return i18nc("Allowed Gsm modes (2G/3G/any)","Any");
-}
-
-QString UiUtils::convertAccessTechnologyToString(const ModemManager::ModemInterface::AccessTechnology tech)
-{
-    switch (tech) {
-        case ModemManager::ModemInterface::UnknownTechnology: return i18nc("Unknown cellular access technology","Unknown");
-        case ModemManager::ModemInterface::Gsm: return i18nc("Cellular access technology","GSM");
-        case ModemManager::ModemInterface::GsmCompact: return i18nc("Cellular access technology","Compact GSM");
-        case ModemManager::ModemInterface::Gprs: return i18nc("Cellular access technology","GPRS");
-        case ModemManager::ModemInterface::Edge: return i18nc("Cellular access technology","EDGE");
-        case ModemManager::ModemInterface::Umts: return i18nc("Cellular access technology","UMTS");
-        case ModemManager::ModemInterface::Hsdpa: return i18nc("Cellular access technology","HSDPA");
-        case ModemManager::ModemInterface::Hsupa: return i18nc("Cellular access technology","HSUPA");
-        case ModemManager::ModemInterface::Hspa: return i18nc("Cellular access technology","HSPA");
-        case ModemManager::ModemInterface::HspaPlus: return i18nc("Cellular access technology","HSPA+");
-        case ModemManager::ModemInterface::Lte: return i18nc("Cellular access technology","LTE");
-    }
-
-    return i18nc("Unknown cellular access technology","Unknown");
-}
-#endif
 #endif
 
 QString UiUtils::convertNspTypeToString(WimaxNsp::NetworkType type)
@@ -993,7 +923,6 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
 #if WITH_MODEMMANAGER_SUPPORT
     const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
-#ifdef MODEMMANAGERQT_ONE
     ModemManager::Modem::Ptr modemNetwork;
     ModemManager::Modem3gpp::Ptr gsmNet;
     ModemManager::ModemCdma::Ptr cdmaNet;
@@ -1042,53 +971,6 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
             }
         }
     }
-#else
-    ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDevice->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
-
-    foreach (const QString& key, keys) {
-        if (key == "mobile:operator") {
-            if (modemNetwork) {
-                details += QString(format).arg(i18n("Operator:"), modemNetwork->getRegistrationInfo().operatorName);
-            }
-        } else if (key == "mobile:quality") {
-            if (modemNetwork) {
-                details += QString(format).arg(i18n("Signal Quality:"), QString("%1%").arg(modemNetwork->getSignalQuality()));
-            }
-        } else if (key == "mobile:technology") {
-            if (modemNetwork) {
-                details += QString(format).arg(i18n("Access Technology:"), QString("%1/%2").arg(UiUtils::convertTypeToString(modemNetwork->type()), UiUtils::convertAccessTechnologyToString(modemNetwork->getAccessTechnology())));
-            }
-        } else if (key == "mobile:mode") {
-            if (modemNetwork) {
-                details += QString(format).arg(i18n("Allowed Mode:"), UiUtils::convertAllowedModeToString(modemNetwork->getAllowedMode()));
-            }
-        } else if (key == "mobile:band") {
-            if (modemNetwork) {
-                details += QString(format).arg(i18n("Frequency Band:"), UiUtils::convertBandToString(modemNetwork->getBand()));
-            }
-        } else if (key == "mobile:unlock") {
-            if (modemNetwork) {
-                details += QString(format).arg(i18n("Unlock Required:"), modemNetwork->unlockRequired());
-            }
-        } else if (key == "mobile:imei") {
-            if (modemDevice) {
-                ModemManager::ModemGsmCardInterface::Ptr modemCard;
-                modemCard = modemDevice->getModemCardIface();
-                if (modemCard) {
-                    details += QString(format).arg(i18n("IMEI:"), modemCard->getImei());
-                }
-            }
-        } else if (key == "mobile:imsi") {
-            if (modemDevice) {
-                ModemManager::ModemGsmCardInterface::Ptr modemCard;
-                modemCard = modemDevice->getModemCardIface();
-                if (modemCard) {
-                    details += QString(format).arg(i18n("IMSI:"), modemCard->getImsi());
-                }
-            }
-        }
-    }
-#endif
     return details;
 #else
     Q_UNUSED(modemDevice)

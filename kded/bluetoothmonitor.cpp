@@ -39,7 +39,7 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Utils>
 
-#ifdef MODEMMANAGERQT_ONE
+#if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/modem.h>
 #include <ModemManagerQt/modemdevice.h>
 #endif
@@ -226,23 +226,10 @@ void BluetoothMonitor::modemAdded(const QString &udi)
 {
     qDebug() << "Modem added" << udi;
 
-#ifdef MODEMMANAGERQT_ONE
     ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(udi);
     ModemManager::Modem::Ptr modem = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
 
-#else
-    ModemManager::ModemInterface::Ptr modem = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::GsmCard);
-
-    if (!modem) {
-        // Try CDMA if no GSM device has been found.
-        modem = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::NotGsm);
-    }
-#endif
-#ifdef MODEMMANAGERQT_ONE
     qDebug() << "Found suitable modem:" << modemDevice->uni();
-#else
-    qDebug() << "Found suitable modem:" << modem->udi();
-#endif
     qDebug() << "DUN device:" << mDunDevice;
 
     QStringList temp = mDunDevice.split('/');
@@ -261,25 +248,12 @@ void BluetoothMonitor::modemAdded(const QString &udi)
     }
 
     NetworkManager::ConnectionSettings::ConnectionType type;
-#ifdef MODEMMANAGERQT_ONE
     if (modemDevice->isGsmModem())
         type = NetworkManager::ConnectionSettings::Gsm;
     else if (modemDevice->isCdmaModem())
         type = NetworkManager::ConnectionSettings::Cdma;
     else
         type = NetworkManager::ConnectionSettings::Unknown;
-#else
-    switch (modem->type()) {
-        case ModemManager::ModemInterface::GsmType:
-            type = NetworkManager::ConnectionSettings::Gsm;
-            break;
-        case ModemManager::ModemInterface::CdmaType:
-            type = NetworkManager::ConnectionSettings::Cdma;
-            break;
-        default:
-            type = NetworkManager::ConnectionSettings::Unknown;
-    }
-#endif
 
     if (type == NetworkManager::ConnectionSettings::Unknown) {
         return;

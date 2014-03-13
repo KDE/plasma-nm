@@ -37,10 +37,8 @@ class QSizeF;
 #include <NetworkManagerQt/VpnSetting>
 
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/modem.h>
-#endif
 #endif
 
 #include "plasmanm_export.h"
@@ -155,16 +153,9 @@ public:
     static QString wirelessBandToString(NetworkManager::WirelessSetting::FrequencyBand band);
 
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
     static QString convertAllowedModeToString(ModemManager::Modem::ModemModes mode);
     static QString convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech);
     static QString convertLockReasonToString(MMModemLock reason);
-#else
-    static QString convertTypeToString(const ModemManager::ModemInterface::Type type);
-    static QString convertBandToString(const ModemManager::ModemInterface::Band band);
-    static QString convertAllowedModeToString(const ModemManager::ModemInterface::AllowedMode mode);
-    static QString convertAccessTechnologyToString(const ModemManager::ModemInterface::AccessTechnology tech);
-#endif
 #endif
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
     static QString convertNspTypeToString(NetworkManager::WimaxNsp::NetworkType type);

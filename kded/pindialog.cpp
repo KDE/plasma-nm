@@ -28,21 +28,12 @@
 
 #include <ModemManagerQt/manager.h>
 
-#ifdef MODEMMANAGERQT_ONE
 PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *parent)
-#else
-PinDialog::PinDialog(ModemManager::ModemInterface *modem, const Type type, QWidget *parent)
-#endif
     : KDialog(parent), m_type(type)
 {
     if (modem) {
-#ifdef MODEMMANAGERQT_ONE
         m_udi = modem->uni();
         m_name = modem->device();
-#else
-        m_udi = modem->udi();
-        m_name = modem->masterDevice();
-#endif
         foreach (const Solid::Device &d, Solid::Device::allDevices()) {
             if (d.udi().contains(m_name, Qt::CaseInsensitive)) {
                 m_name = d.product();
@@ -81,7 +72,7 @@ PinDialog::PinDialog(ModemManager::ModemInterface *modem, const Type type, QWidg
     setDefaultButton(KDialog::Ok);
     button(KDialog::Ok)->setText(i18nc("As in 'Unlock cell phone with this pin code'", "Unlock"));
     setMainWidget(w);
-#ifdef MODEMMANAGERQT_ONE
+
     if (isPukDialog()) {
         QString pukType;
         if (m_type == PinDialog::SimPuk) {
@@ -144,35 +135,7 @@ PinDialog::PinDialog(ModemManager::ModemInterface *modem, const Type type, QWidg
         ui->pin2Label->hide();
         ui->pin2->hide();
     }
-#else
-    if (isPukDialog()) {
-        setWindowTitle(i18n("SIM PUK unlock required"));
-        ui->title->setText(i18n("SIM PUK Unlock Required"));
-        ui->prompt->setText(i18n("The mobile broadband device '%1' requires a SIM PUK code before it can be used.", m_name));
-        ui->pukLabel->setText(i18n("PUK code:"));
-        ui->pinLabel->setText(i18n("New PIN code:"));
-        ui->pin2Label->setText(i18n("Re-enter new PIN code:"));
-        ui->chkShowPass->setText(i18n("Show PIN/PUK code"));
 
-        ui->puk->setFocus();
-        ui->pukLabel->show();
-        ui->puk->show();
-        ui->pin2Label->show();
-        ui->pin2->show();
-    } else if (isPinDialog()) {
-        setWindowTitle(i18n("SIM PIN unlock required"));
-        ui->title->setText(i18n("SIM PIN Unlock Required"));
-        ui->prompt->setText(i18n("The mobile broadband device '%1' requires a SIM PIN code before it can be used.", m_name));
-        ui->pinLabel->setText(i18n("PIN code:"));
-        ui->chkShowPass->setText(i18n("Show PIN code"));
-
-        ui->pin->setFocus();
-        ui->pukLabel->hide();
-        ui->puk->hide();
-        ui->pin2Label->hide();
-        ui->pin2->hide();
-    }
-#endif
     ui->puk->clear();
     ui->pin->clear();
     ui->pin2->clear();
@@ -291,7 +254,6 @@ void PinDialog::accept()
 
 bool PinDialog::isPinDialog() const
 {
-#ifdef MODEMMANAGERQT_ONE
     return (m_type == PinDialog::SimPin ||
             m_type == PinDialog::SimPin2 ||
             m_type == PinDialog::ModemServiceProviderPin ||
@@ -300,9 +262,6 @@ bool PinDialog::isPinDialog() const
             m_type == PinDialog::ModemCorporatePin ||
             m_type == PinDialog::ModemPhFsimPin ||
             m_type == PinDialog::ModemNetworkSubsetPin);
-#else
-    return m_type == Pin;
-#endif
 }
 
 bool PinDialog::isPukDialog() const

@@ -27,10 +27,9 @@
 
 #include "config.h"
 
-#ifdef MODEMMANAGERQT_ONE
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/modem.h>
-#endif
+
 #include "plasmanm_export.h"
 
 class ModemMonitorPrivate;
@@ -47,11 +46,7 @@ public:
     virtual ~ModemMonitor();
 private slots:
     void modemAdded(const QString&);
-#ifdef MODEMMANAGERQT_ONE
     void requestPin(MMModemLock lock);
-#else
-    void requestPin(const QString &);
-#endif
     void onSendPinArrived(QDBusPendingCallWatcher *);
 private:
     ModemMonitorPrivate * d_ptr;

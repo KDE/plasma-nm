@@ -25,6 +25,7 @@
 #include "handler.h"
 
 #include <QMenu>
+#include <QModelIndex>
 
 #include <KXmlGuiWindow>
 #include <KActionMenu>

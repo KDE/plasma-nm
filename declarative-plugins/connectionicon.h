@@ -28,11 +28,7 @@
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessNetwork>
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/modem.h>
-#else
-#include <ModemManagerQt/modemgsmnetworkinterface.h>
-#endif
 #endif
 
 class ConnectionIcon : public QObject
@@ -89,11 +85,7 @@ private:
     void setIcons();
     void setWirelessIcon(const NetworkManager::Device::Ptr & device, const QString & ssid);
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
     ModemManager::Modem::Ptr m_modemNetwork;
-#else
-    ModemManager::ModemGsmNetworkInterface::Ptr m_modemNetwork;
-#endif
     void setModemIcon(const NetworkManager::Device::Ptr & device);
 #endif
 };

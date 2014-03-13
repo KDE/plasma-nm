@@ -41,10 +41,8 @@
 #include <Plasma/DataEngineManager>
 
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/manager.h>
 #include <ModemManagerQt/modem.h>
-#endif
 #endif
 
 NetworkModelItem::NetworkModelItem(QObject* parent)

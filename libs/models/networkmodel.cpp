@@ -24,10 +24,8 @@
 #include "uiutils.h"
 
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/manager.h>
 #include <ModemManagerQt/modem.h>
-#endif
 #endif
 #include <NetworkManagerQt/Settings>
 
@@ -224,7 +222,6 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
 #if WITH_MODEMMANAGER_SUPPORT
     else if (device->type() == NetworkManager::Device::Modem) {
         NetworkManager::ModemDevice::Ptr modemDev = device.objectCast<NetworkManager::ModemDevice>();
-#ifdef MODEMMANAGERQT_ONE
         ModemManager::Modem::Ptr modemNetwork = modemDev->getModemNetworkIface();
         if (modemDev->isValid()) {
             connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
@@ -234,17 +231,6 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
             connect(modemNetwork.data(), SIGNAL(currentModesChanged()),
                     SLOT(gsmNetworkCurrentModesChanged()), Qt::UniqueConnection);
         }
-#else
-        ModemManager::ModemGsmNetworkInterface::Ptr modemNetwork = modemDev->getModemNetworkIface().objectCast<ModemManager::ModemGsmNetworkInterface>();
-        if (modemNetwork) {
-            connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
-                    SLOT(gsmNetworkSignalQualityChanged(uint)));
-            connect(modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)),
-                    SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology)), Qt::UniqueConnection);
-            connect(modemNetwork.data(), SIGNAL(allowedModeChanged(ModemManager::ModemInterface::AllowedMode)),
-                    SLOT(gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode)), Qt::UniqueConnection);
-        }
-#endif
     }
 #endif
 }
@@ -314,7 +300,6 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
         item->setDeviceState(device->state());
         nmDebug() << "Item " << item->name() << ": device changed to " << item->devicePath();
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
         if (device->type() == NetworkManager::Device::Modem) {
             ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(device->udi());
             if (modemDevice) {
@@ -325,7 +310,6 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
                 }
             }
         }
-#endif
 #endif
         if (item->type() == NetworkManager::ConnectionSettings::Wireless && item->mode() == NetworkManager::WirelessSetting::Infrastructure) {
             bool apFound = false;
@@ -755,18 +739,10 @@ void NetworkModel::deviceStateChanged(NetworkManager::Device::State state, Netwo
 }
 
 #if WITH_MODEMMANAGER_SUPPORT
-#ifdef MODEMMANAGERQT_ONE
 void NetworkModel::gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies technology)
-#else
-void NetworkModel::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterface::AccessTechnology technology)
-#endif
 {
     Q_UNUSED(technology);
-#ifdef MODEMMANAGERQT_ONE
     ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
-#else
-    ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
-#endif
     if (gsmNetwork) {
         foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
             if (dev->type() == NetworkManager::Device::Modem) {
@@ -784,19 +760,9 @@ void NetworkModel::gsmNetworkAccessTechnologyChanged(ModemManager::ModemInterfac
     }
 }
 
-#ifdef MODEMMANAGERQT_ONE
 void NetworkModel::gsmNetworkCurrentModesChanged()
 {
-#else
-void NetworkModel::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::AllowedMode mode)
-{
-    Q_UNUSED(mode);
-#endif
-#ifdef MODEMMANAGERQT_ONE
     ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
-#else
-    ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
-#endif
     if (gsmNetwork) {
         foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
             if (dev->type() == NetworkManager::Device::Modem) {
@@ -815,11 +781,7 @@ void NetworkModel::gsmNetworkAllowedModeChanged(ModemManager::ModemInterface::Al
 
 void NetworkModel::gsmNetworkSignalQualityChanged(uint signal)
 {
-#ifdef MODEMMANAGERQT_ONE
     ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
-#else
-    ModemManager::ModemGsmNetworkInterface * gsmNetwork = qobject_cast<ModemManager::ModemGsmNetworkInterface*>(sender());
-#endif
     if (gsmNetwork) {
         foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
             if (dev->type() == NetworkManager::Device::Modem) {

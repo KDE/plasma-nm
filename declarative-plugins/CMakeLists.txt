@@ -1,29 +1,22 @@
+include_directories(${CMAKE_SOURCE_DIR}/libs
+                    ${CMAKE_SOURCE_DIR}/libs/models)
+
 set(plasma_networkmanagement_qml_plugins_SRCS
-   applet/availabledevices.cpp
-   applet/connectionicon.cpp
-   applet/enabledconnections.cpp
-   applet/globalconfig.cpp
-   applet/networkstatus.cpp
-   #applet/trafficmonitor.cpp
-
-   model/model.cpp
-   model/modelitem.cpp
-   model/modelitems.cpp
-   model/monitor.cpp
-   model/sortmodel.cpp
-
-   debug.cpp
+   availabledevices.cpp
+   connectionicon.cpp
+   enabledconnections.cpp
    enums.cpp
-   handler.cpp
+   networkstatus.cpp
+#    trafficmonitor.cpp
    qmlplugins.cpp
 )
 
 add_library(plasmanetworkmanagementplugins SHARED ${plasma_networkmanagement_qml_plugins_SRCS})
 
 target_link_libraries(plasmanetworkmanagementplugins
-    ${NETWORKMANAGERQT_LDFLAGS}
-    ${MODEMMANAGERQT_LDFLAGS}
-    ${MODEMMANAGERQT_LIBRARY}
+    ${NETWORKMANAGERQT5_LDFLAGS}
+    ${MODEMMANAGERQT5_LDFLAGS}
+    ${MODEMMANAGERQT5_LIBRARY}
     plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
     Qt5::Quick

@@ -1,21 +1,21 @@
 /*
-Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
+    Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
 
-This library is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) version 3, or any
-later version accepted by the membership of KDE e.V. (or its
-successor approved by the membership of KDE e.V.), which shall
-act as a proxy defined in Section 6 of version 3 of the license.
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) version 3, or any
+    later version accepted by the membership of KDE e.V. (or its
+    successor approved by the membership of KDE e.V.), which shall
+    act as a proxy defined in Section 6 of version 3 of the license.
 
-This library is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
 
-You should have received a copy of the GNU Lesser General Public
-License along with this library.  If not, see <http://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #ifndef OPENCONNECTAUTHWORKERTHREAD_H
@@ -38,6 +38,25 @@ extern "C" {
 struct x509_st;
 #define OPENCONNECT_X509 struct x509_st
 #define OPENCONNECT_OPENSSL
+#endif
+
+#if OPENCONNECT_CHECK_VER(3,0)
+#define NEWGROUP_SUPPORTED	1
+#define AUTHGROUP_OPT(form)	(void *)(form)->authgroup_opt
+#define AUTHGROUP_SELECTION(form) (form)->authgroup_selection
+#define FORMCHOICE(sopt, i)	((sopt)->choices[i])
+#define IGNORE_OPT(opt)		((opt)->flags & OC_FORM_OPT_IGNORE)
+#else
+#define NEWGROUP_SUPPORTED	0
+#define AUTHGROUP_OPT(form)	NULL
+#define AUTHGROUP_SELECTION(form) 0
+#define FORMCHOICE(sopt, i)	(&(sopt)->choices[i])
+#define IGNORE_OPT(opt)		0
+
+#define OC_FORM_RESULT_ERR	-1
+#define OC_FORM_RESULT_OK	0
+#define OC_FORM_RESULT_CANCELLED 1
+#define OC_FORM_RESULT_NEWGROUP	2
 #endif
 
 #include <QThread>

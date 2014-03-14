@@ -37,7 +37,8 @@ if (OPENCONNECT_FOUND)
 
         target_link_libraries(plasmanetworkmanagement_openconnectui
             plasmanetworkmanagement-internal
-            ${NETWORKMANAGERQT_LDFLAGS}
+            plasmanetworkmanagement-editor
+            ${NETWORKMANAGERQT5_LDFLAGS}
             Qt5::Widgets
             Qt5::Network
             Qt5::DBus
@@ -52,7 +53,6 @@ if (OPENCONNECT_FOUND)
             ${maybe_OPENSSL_LIBRARIES}
         )
         install(TARGETS plasmanetworkmanagement_openconnectui  DESTINATION ${PLUGIN_INSTALL_DIR}/plasmanetworkmanagement/vpnuiplugin)
-
         install( FILES plasmanetworkmanagement_openconnectui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
     else()
         message("ERROR: OpenConnection version '${OPENCONNECT_VERSION}' does not match minimum required (${MINIMUM_OPENCONNECT_VERSION_REQUIRED})")

@@ -1,3 +1,5 @@
+include_directories(${CMAKE_SOURCE_DIR}/libs/editor/widgets)
+
 if (WITH_MODEMMANAGER_SUPPORT)
     set(kded_networkmanagement_SRCS
         notification.cpp
@@ -30,9 +32,10 @@ plasma_add_plugin(kded_networkmanagement ${kded_networkmanagement_SRCS})
 
 target_link_libraries(kded_networkmanagement
     plasmanetworkmanagement-internal
-    ${NETWORKMANAGERQT_LDFLAGS}
-    ${MODEMMANAGERQT_LDFLAGS}
-    ${MODEMMANAGERQT_LIBRARY}
+    plasmanetworkmanagement-editor
+    ${NETWORKMANAGERQT5_LDFLAGS}
+    ${MODEMMANAGERQT5_LDFLAGS}
+    ${MODEMMANAGERQT5_LIBRARY}
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus

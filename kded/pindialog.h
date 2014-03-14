@@ -30,11 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config.h"
 
-#ifdef MODEMMANAGERQT_ONE
 #include <ModemManagerQt/modem.h>
-#else
-#include <ModemManagerQt/modeminterface.h>
-#endif
 #include "ui_pinwidget.h"
 
 class PinWidget;
@@ -43,7 +39,6 @@ class PinDialog : public KDialog
 {
     Q_OBJECT
 public:
-#ifdef MODEMMANAGERQT_ONE
     enum Type {
         SimPin,
         SimPin2,
@@ -61,15 +56,9 @@ public:
         ModemNetworkSubsetPin,
         ModemNetworkSubsetPuk
     };
-#else
-    enum Type {Pin, PinPuk};
-#endif
     enum ErrorCode {PinCodeTooShort, PinCodesDoNotMatch, PukCodeTooShort};
-#ifdef MODEMMANAGERQT_ONE
+
     explicit PinDialog(ModemManager::Modem *modem, const Type type = SimPin, QWidget *parent=0);
-#else
-    explicit PinDialog(ModemManager::ModemInterface *modem, const Type type = Pin, QWidget *parent=0);
-#endif
     ~PinDialog();
 
     Type type() const;

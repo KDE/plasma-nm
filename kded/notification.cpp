@@ -291,7 +291,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         notify->setText(text);
         notify->update();
     } else {
-        KNotification *notify = new KNotification("DeviceFailed", KNotification::Persistent, this);
+        KNotification *notify = new KNotification("DeviceFailed", KNotification::CloseOnTimeout, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
         notify->setProperty("uni", device->uni());
 #warning "port away from KComponentData"
@@ -316,8 +316,8 @@ void Notification::addActiveConnection(const NetworkManager::ActiveConnection::P
 {
     if (ac->vpn()) {
         NetworkManager::VpnConnection::Ptr vpnConnection = ac.objectCast<NetworkManager::VpnConnection>();
-        connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State, NetworkManager::VpnConnection::StateChangeReason)),
-                this, SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State, NetworkManager::VpnConnection::StateChangeReason)));
+        connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
+                this, SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)));
     } else {
         connect(ac.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                 this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
@@ -350,7 +350,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         notify->setText(text);
         notify->update();
     } else {
-        KNotification *notify = new KNotification("AcStateChanged", KNotification::Persistent, this);
+        KNotification *notify = new KNotification("AcStateChanged", KNotification::CloseOnTimeout, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
         notify->setProperty("uni", nId);
 #warning "port away from KComponentData"
@@ -432,7 +432,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         notify->setText(text);
         notify->update();
     } else {
-        KNotification *notify = new KNotification("VpnStateChanged", KNotification::Persistent, this);
+        KNotification *notify = new KNotification("VpnStateChanged", KNotification::CloseOnTimeout, this);
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
         notify->setProperty("uni", nId);
 #warning "port away from KComponentData"

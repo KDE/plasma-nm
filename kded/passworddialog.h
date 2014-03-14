@@ -19,7 +19,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_PASSWOR_DDIALOG_H
+#ifndef PLASMA_NM_PASSWORD_DIALOG_H
 #define PLASMA_NM_PASSWORD_DIALOG_H
 
 #include <NetworkManagerQt/ConnectionSettings>
@@ -27,13 +27,13 @@
 
 #include <KDialog>
 
-#include <kdemacros.h>
+#include "plasmanm_export.h"
 
 namespace Ui {
 class PasswordDialog;
 }
 class SettingWidget;
-class KDE_EXPORT PasswordDialog : public KDialog
+class PLASMA_NM_EXPORT PasswordDialog : public KDialog
 {
     Q_OBJECT
 public:

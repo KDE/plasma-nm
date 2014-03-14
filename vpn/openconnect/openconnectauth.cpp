@@ -1,22 +1,22 @@
 /*
-Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
-Copyright 2013 Lukáš Tinkl <ltinkl@redhat.com>
+    Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
+    Copyright 2013 Lukáš Tinkl <ltinkl@redhat.com>
 
-This library is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) version 3, or any
-later version accepted by the membership of KDE e.V. (or its
-successor approved by the membership of KDE e.V.), which shall
-act as a proxy defined in Section 6 of version 3 of the license.
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) version 3, or any
+    later version accepted by the membership of KDE e.V. (or its
+    successor approved by the membership of KDE e.V.), which shall
+    act as a proxy defined in Section 6 of version 3 of the license.
 
-This library is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
 
-You should have received a copy of the GNU Lesser General Public
-License along with this library.  If not, see <http://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "openconnectauth.h"
@@ -194,8 +194,7 @@ void OpenconnectAuthWidget::readSecrets()
     }
 
     if (!d->secrets["xmlconfig"].isEmpty()) {
-
-        QByteArray config = QByteArray::fromBase64(d->secrets["xmlconfig"].toAscii());
+        const QByteArray config = QByteArray::fromBase64(d->secrets["xmlconfig"].toAscii());
 
         QCryptographicHash hash(QCryptographicHash::Sha1);
         hash.addData(config.data(), config.size());
@@ -291,7 +290,7 @@ QVariantMap OpenconnectAuthWidget::setting(bool agentOwned) const
 
     secrets.unite(d->secrets);
     QString host(openconnect_get_hostname(d->vpninfo));
-    QString port = QString::number(openconnect_get_port(d->vpninfo));
+    const QString port = QString::number(openconnect_get_port(d->vpninfo));
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_GATEWAY), host + ':' + port);
 
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_COOKIE), QLatin1String(openconnect_get_cookie(d->vpninfo)));
@@ -417,7 +416,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
     int passwordnumber = 0;
     bool focusSet = false;
     for (opt = form->opts; opt; opt = opt->next) {
-        if (opt->type == OC_FORM_OPT_HIDDEN)
+        if (opt->type == OC_FORM_OPT_HIDDEN || IGNORE_OPT(opt))
             continue;
         QLabel *text = new QLabel(this);
         text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
@@ -429,6 +428,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
             KLineEdit *le = new KLineEdit(this);
             if (opt->type == OC_FORM_OPT_PASSWORD) {
                 le->setPasswordMode(true);
+                le->setText(value);
                 passwordnumber++;
             }
             else {
@@ -443,9 +443,20 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
             KComboBox *cmb = new KComboBox(this);
             struct oc_form_opt_select *sopt = reinterpret_cast<oc_form_opt_select *>(opt);
             for (int i = 0; i < sopt->nr_choices; i++) {
-                cmb->addItem(QString::fromUtf8(sopt->choices[i].label), QString::fromUtf8(sopt->choices[i].name));
-                if (value == QString::fromUtf8(sopt->choices[i].name))
+                cmb->addItem(QString::fromUtf8(FORMCHOICE(sopt, i)->label),
+                             QString::fromUtf8(FORMCHOICE(sopt, i)->name));
+                if (value == QString::fromUtf8(FORMCHOICE(sopt, i)->name)) {
                     cmb->setCurrentIndex(i);
+                    if (sopt == AUTHGROUP_OPT(form) &&
+                        i != AUTHGROUP_SELECTION(form)) {
+                        // XXX: Immediately return OC_FORM_RESULT_NEWGROUP to
+                        //      change group
+                    }
+                }
+            }
+            if (sopt == AUTHGROUP_OPT(form)) {
+                // TODO: Hook up signal when the KComboBox entry changes, to
+                //       return OC_FORM_RESULT_NEWGROUP
             }
             widget = qobject_cast<QWidget*>(cmb);
         }
@@ -542,7 +553,8 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
 void OpenconnectAuthWidget::formLoginClicked()
 {
     Q_D(OpenconnectAuthWidget);
-    int lastIndex = d->ui.loginBoxLayout->count() - 1;
+    /// XXX: This, or something like it, needs to be called when the KComboBox for the auth group changes too.
+    const int lastIndex = d->ui.loginBoxLayout->count() - 1;
     QLayout *layout = d->ui.loginBoxLayout->itemAt(lastIndex - 2)->layout();
     struct oc_auth_form *form = (struct oc_auth_form *) d->ui.loginBoxLayout->itemAt(lastIndex)->widget()->property("openconnect_form").value<quintptr>();
 
@@ -551,7 +563,7 @@ void OpenconnectAuthWidget::formLoginClicked()
         QWidget *widget = item->widget();
         if (widget && widget->property("openconnect_opt").isValid()) {
             struct oc_form_opt *opt = (struct oc_form_opt *) widget->property("openconnect_opt").value<quintptr>();
-            QString key = QString("form:%1:%2").arg(QLatin1String(form->auth_id)).arg(QLatin1String(opt->name));
+            const QString key = QString("form:%1:%2").arg(QLatin1String(form->auth_id)).arg(QLatin1String(opt->name));
             if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {
                 KLineEdit *le = qobject_cast<KLineEdit*>(widget);
                 QByteArray text = le->text().toUtf8();
@@ -635,7 +647,7 @@ void OpenconnectAuthWidget::viewServerLogToggled(bool toggled)
 void OpenconnectAuthWidget::passwordModeToggled(bool toggled)
 {
     Q_D(OpenconnectAuthWidget);
-    int lastIndex = d->ui.loginBoxLayout->count() - 1;
+    const int lastIndex = d->ui.loginBoxLayout->count() - 1;
     QLayout *layout = d->ui.loginBoxLayout->itemAt(lastIndex - 2)->layout();
     for (int i = 0; i < layout->count(); i++) {
         QLayoutItem *item = layout->itemAt(i);

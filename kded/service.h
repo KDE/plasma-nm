@@ -25,21 +25,26 @@
 #define PLASMANM_KDED_SERVICE_H
 
 #include <KDEDModule>
-#include <kdemacros.h>
+
+#include "plasmanm_export.h"
 
 #include <QVariant>
 
 class NetworkManagementServicePrivate;
 
-class KDE_EXPORT NetworkManagementService : public KDEDModule
+class PLASMA_NM_EXPORT NetworkManagementService : public KDEDModule
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(NetworkManagementService)
 public:
     NetworkManagementService(QObject * parent, const QVariantList&);
     virtual ~NetworkManagementService();
+private Q_SLOTS:
+   void finishInitialization();
 private:
     NetworkManagementServicePrivate * d_ptr;
+
+    void doInitialization();
 };
 
 #endif // PLASMANM_KDED_SERVICE_H

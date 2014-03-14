@@ -24,126 +24,118 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.networkmanagement 0.1 as PlasmaNM
 
 Item {
-    id: toolBar;
+    id: toolbar;
 
-    property bool expanded: false;
+    height: wifiSwitchButton.height;
 
-    height: theme.mSize(theme.defaultFont).height * 1.8;
-
-    PlasmaNM.NetworkStatus {
-        id: networkStatus;
+    PlasmaNM.EnabledConnections {
+        id: enabledConnections;
     }
 
-    Item {
-        id: toolbarLine;
+    PlasmaNM.AvailableDevices {
+        id: availableDevices;
+    }
 
-        height: theme.mSize(theme.defaultFont).height * 2;
+    PlasmaCore.Svg {
+        id: lineSvg;
+        imagePath: "widgets/line";
+    }
+
+    Row {
         anchors {
-            left: parent.left;
-            right: parent.right;
             bottom: parent.bottom;
+            left: parent.left;
+            top: parent.top;
         }
+        spacing: 3;
 
-        PlasmaCore.IconItem {
-            id: statusIcon
+        SwitchButton {
+            id: wifiSwitchButton;
 
-            height: theme.smallMediumIconSize;
-            width: height;
-            anchors {
-                left: parent.left;
-                verticalCenter: parent.verticalCenter;
-                leftMargin: padding.margins.left;
-            }
-            source: (networkStatus.networkStatus == i18n("Connected") || networkStatus.networkStatus == "Connected") ? "user-online" : "user-offline";
-        }
-
-        PlasmaComponents.Label {
-            id: statusLabel;
-
-            height: theme.mSize(theme.defaultFont).height * 2;
-            anchors {
-                left: statusIcon.right;
-                right: toolButton.left;
-                verticalCenter: parent.verticalCenter;
-                leftMargin: padding.margins.left;
-            }
-            elide: Text.ElideRight;
-            text: networkStatus.networkStatus;
-        }
-
-        PlasmaCore.IconItem {
-            id: toolButton;
-
-            height: theme.smallMediumIconSize;
-            width: height;
-            anchors {
-                right: parent.right;
-                verticalCenter: parent.verticalCenter;
-                rightMargin: padding.margins.right;
-            }
-            source: "configure";
-        }
-
-        MouseArea {
-            id: toolbarMouseArea;
-
-            anchors { fill: parent }
+            checked: enabled && enabledConnections.wirelessEnabled;
+            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !globalConfig.airplaneModeEnabled;
+            icon: checked ? "network-wireless-on" : "network-wireless-off";
+//             tooltipText: checked ? i18n("Wireless enabled") : i18n("Wireless disabled");
 
             onClicked: {
-                hideOrShowOptions();
+                handler.enableWireless(!checked);
+            }
+        }
+
+        PlasmaCore.SvgItem {
+            width: lineSvg.elementSize("vertical-line").width;
+            height: parent.height;
+            elementId: "vertical-line";
+            svg: lineSvg;
+        }
+
+        SwitchButton {
+            id: wwanSwitchButton;
+
+            checked: enabled && enabledConnections.wwanEnabled;
+            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !globalConfig.airplaneModeEnabled;
+            icon: checked ? "network-mobile-on" : "network-mobile-off";
+//             tooltipText: checked ? i18n("Mobile broadband enabled") : i18n("Mobile broadband disabled");
+
+            onClicked: {
+                handler.enableWwan(!checked);
+            }
+        }
+
+        PlasmaCore.SvgItem {
+            width: lineSvg.elementSize("vertical-line").width;
+            height: parent.height;
+            elementId: "vertical-line";
+            svg: lineSvg;
+        }
+
+        SwitchButton {
+            id: planeModeSwitchButton;
+
+            checked: globalConfig.airplaneModeEnabled;
+            icon: checked ? "flightmode-on" : "flightmode-off";
+//             tooltipText: checked ? i18n("Airplane mode enabled") : i18n("Airplane mode disabled");
+
+            onClicked: {
+                handler.enableAirplaneMode(!checked);
+                globalConfig.setAirplaneModeEnabled(!checked);
             }
         }
     }
 
-    OptionsWidget {
-        id: options;
+    PlasmaComponents.ToolButton {
+        id: openEditorButton;
 
         anchors {
-            left: parent.left;
+            bottom: parent.bottom;
+            bottomMargin: padding.margins.bottom/2;
             right: parent.right;
+            rightMargin: padding.margins.right;
             top: parent.top;
-            bottomMargin: padding.margins.bottom;
+            topMargin: padding.margins.top/2;
         }
-        visible: false;
+        iconSource: "configure";
 
-        onOpenEditor: {
-            if (mainWindow.autoHideOptions) {
-                expanded = false;
-            }
+        onClicked: {
+            handler.openEditor();
         }
     }
 
-    states: [
-        State {
-            name: "Hidden";
-            when: !expanded;
-        },
+    PlasmaComponents.ToolButton {
+        id: refreshButton;
 
-        State {
-            name: "Expanded";
-            when: expanded;
-            PropertyChanges { target: toolBar; height: options.childrenRect.height + theme.mSize(theme.defaultFont).height * 2 + padding.margins.top }
-            PropertyChanges { target: options; visible: true }
+        anchors {
+            bottom: parent.bottom;
+            bottomMargin: padding.margins.bottom/2;
+            right: openEditorButton.left;
+            rightMargin: padding.margins.right;
+            top: parent.top;
+            topMargin: padding.margins.top/2;
         }
-    ]
+        iconSource: "view-refresh";
 
-    transitions: Transition {
-        NumberAnimation { duration: units.longDuration; properties: "height, visible" }
-    }
-
-    function hideOrShowOptions() {
-        if (!expanded) {
-            expanded = true;
-            plasmoid.writeConfig("optionsExpanded", "expanded");
-        } else {
-            expanded = false;
-            plasmoid.writeConfig("optionsExpanded", "hidden");
-        }
-    }
-
-    Component.onCompleted: {
-        if (plasmoid.readConfig("optionsExpanded") == "expanded") {
-            expanded = true;
+        onClicked: {
+            handler.requestScan();
         }
     }
 }

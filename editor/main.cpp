@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 {
     K4AboutData about("kde-nm-connection-editor", 0, ki18n("Connection editor"),
                      PLASMA_NM_VERSION, ki18n("Manage your network connections"),
-                     K4AboutData::License_GPL, ki18n("(C) 2013 Jan Grulich and Lukáš Tinkl"),
+                     K4AboutData::License_GPL, ki18n("(C) 2013-2014 Jan Grulich and Lukáš Tinkl"),
                      ki18n("This application allows you to create, edit and delete network connections.\n\nUsing NM version: %1")
                      .subs(NetworkManager::version()));
     about.addAuthor(ki18n("Jan Grulich"), ki18n("Developer"), "jgrulich@redhat.com");
@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
     about.addCredit(ki18n("Daniel Nicoletti"), ki18n("various bugfixes"), "dantti12@gmail.com");
     about.addCredit(ki18n("Will Stephenson"), ki18n("VPN plugins"), "wstephenson@kde.org");
     about.addCredit(ki18n("Ilia Kats"), ki18n("VPN plugins"), "ilia-kats@gmx.net");
+    about.setProductName("plasma-nm/editor");
 
     KCmdLineArgs::init(argc, argv, &about);
 

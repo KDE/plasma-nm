@@ -43,11 +43,11 @@ include_directories(${Qt5Widgets_INCLUDE_DIRS}
                     )
 
 # Load CMake, Compiler and InstallDirs settings from KF5 and the following are already somewhat "done" tier1/tier2 libs from kdelibs:
-find_package(KF5 CONFIG REQUIRED 
+find_package(KF5 CONFIG REQUIRED
     IdleTime ItemModels WidgetsAddons WindowSystem Codecs Archive CoreAddons Solid ThreadWeaver
     Config Auth JS Wallet DBusAddons Sonnet
     I18n GuiAddons Service ConfigWidgets ItemViews Notifications IconThemes Completion JobWidgets TextWidgets XmlGui Crash
-    Bookmarks UnitConversion KCMUtils)
+    Bookmarks UnitConversion KCMUtils Plasma)
 
 find_package(KF5Plasma REQUIRED NO_MODULE)
 find_package(KF5Declarative REQUIRED NO_MODULE)
@@ -62,34 +62,39 @@ add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_STRICT_ITERATORS -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_KEYWORDS)
 
+pkg_check_modules(NETWORKMANAGERQT5 REQUIRED NetworkManagerQt5)
+# if (NOT NETWORKMANAGERQT_FOUND)
+#     message(FATAL_ERROR "ERROR: NetworkManagerQt not found. http://projects.kde.org/libnm-qt")
+# elseif(${NETWORKMANAGER_VERSION} VERSION_EQUAL 0.9.9.0 AND ${NETWORKMANAGERQT_VERSION} VERSION_LESS 0.9.9.1)
+#     message(FATAL_ERROR "ERROR: NetworkManagerQt required version is 0.9.9.1. http://projects.kde.org/libnm-qt")
+# elseif(${NETWORKMANAGERQT_VERSION} VERSION_LESS 0.9.8.1)
+#     message(FATAL_ERROR "ERROR: NetworkManagerQt required version is 0.9.8.1. http://projects.kde.org/libnm-qt")
+# endif()
+
 if (DISABLE_MODEMMANAGER_SUPPORT)
     message(STATUS "Disabling ModemManager support")
     set(WITH_MODEMMANAGER_SUPPORT 0)
-    set(MODEMMANAGERQT_FOUND false)
-    set(MODEMMANAGERQT_LIBRARY "")
+    set(MODEMMANAGERQT5_FOUND false)
+    set(MODEMMANAGERQT5_LIBRARY "")
 else()
     pkg_check_modules(MODEMMANAGERQT ModemManagerQt)
-    if (MODEMMANAGERQT_FOUND)
+    if (MODEMMANAGERQT5_FOUND)
         message(STATUS "Enabling ModemManager support")
         set(WITH_MODEMMANAGER_SUPPORT 1)
-        set(MODEMMANAGERQT_LIBRARY ModemManagerQt)
-        if (${MODEMMANAGERQT_VERSION} VERSION_GREATER 0.7.990)
-            message(STATUS "Building against ModemManager 1")
-            set(MODEMMANAGERQT_ONE 1)
-        endif()
+        set(MODEMMANAGERQT5_LIBRARY ModemManagerQt5)
     else()
         message(STATUS "ModemManagerQt not found")
         set(WITH_MODEMMANAGER_SUPPORT 0)
     endif()
 endif()
 
-pkg_check_modules(NETWORKMANAGERQT REQUIRED NetworkManagerQt5)
-if (NOT NETWORKMANAGERQT_FOUND)
+pkg_check_modules(NETWORKMANAGERQT5 REQUIRED NetworkManagerQt5)
+if (NOT NETWORKMANAGERQT5_FOUND)
     message(FATAL_ERROR "ERROR: NetworkManagerQt not found. http://projects.kde.org/libnm-qt")
-endif (NOT NETWORKMANAGERQT_FOUND)
+endif (NOT NETWORKMANAGERQT5_FOUND)
 
-set(KDE_NETWORK_VERSION "0.9.3.2")
-set(PLASMA_NM_VERSION "0.9.3.2")
+set(KDE_NETWORK_VERSION "1.0.0")
+set(PLASMA_NM_VERSION "1.0.0")
 
 configure_file(config.h.cmake
                ${CMAKE_CURRENT_BINARY_DIR}/config.h )
@@ -104,18 +109,21 @@ set_package_properties(MobileBroadbandProviderInfo PROPERTIES
                        TYPE OPTIONAL
                       )
 
+configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR} ${CMAKE_MODULE_PATH})
 
-#macro_optional_find_package(MobileBroadbandProviderInfo)
-#macro_log_feature(MOBILEBROADBANDPROVIDERINFO_FOUND "mobile-broadband-provider-info" "Database of mobile broadband service providers" "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders" FALSE "" "Needed for Mobile Connection Wizard support in Broadband Modem Management")
-
-#pkg_check_modules(QTNETWORK REQUIRED QtNetwork)
+if (MODEMMANAGERQT5_FOUND)
+    macro_optional_find_package(MobileBroadbandProviderInfo)
+    macro_log_feature(MOBILEBROADBANDPROVIDERINFO_FOUND "mobile-broadband-provider-info" "Database of mobile broadband service providers" "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders" FALSE "" "Needed for Mobile Connection Wizard support in Broadband Modem Management")
+endif()
 pkg_check_modules(NETWORKMANAGER REQUIRED NetworkManager)
+pkg_check_modules(QTNETWORK REQUIRED QtNetwork)
 
 add_definitions(
     -DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT}
     ${QT_DEFINITIONS}
     ${KDE_DEFINITIONS}
-    ${NETWORKMANAGERQT_CFLAGS_OTHER}
+    ${NETWORKMANAGERQT5_CFLAGS_OTHER}
 )
 
 if (DISABLE_MODEMMANAGER_SUPPORT)
@@ -126,25 +134,23 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_BINARY_DIR}
                     ${CMAKE_CURRENT_BINARY_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}
-                    ${CMAKE_CURRENT_SOURCE_DIR}/lib
-                    ${CMAKE_CURRENT_SOURCE_DIR}/lib/editor
+                    ${CMAKE_CURRENT_SOURCE_DIR}/libs
+                    ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/
                     ${QTNETWORK_INCLUDE_DIRS}
-                    ${MODEMMANAGER_INCLUDE_DIRS}
-                    ${NETWORKMANAGERQT_INCLUDE_DIRS}
+                    if (MODEMMANAGERQT5_FOUND)
+                        ${MODEMMANAGER_INCLUDE_DIRS}
+                        ${MODEMMANAGERQT5_INCLUDE_DIRS}
+                    endif()
+                    ${NETWORKMANAGERQT5_INCLUDE_DIRS}
                     ${NETWORKMANAGER_INCLUDE_DIRS}
                     ${KDE4_INCLUDES})
 
-if (MODEMMANAGERQT_FOUND)
-    include_directories(${MODEMMANAGERQT_INCLUDE_DIRS})
-endif()
-
-add_subdirectory(lib)
 add_subdirectory(applet)
 add_subdirectory(declarative-plugins)
-add_subdirectory(editor)
-add_subdirectory(vpn)
+# add_subdirectory(editor)
 add_subdirectory(kded)
-add_subdirectory(kcm)
+add_subdirectory(libs)
+# add_subdirectory(vpn)
 add_subdirectory(settings)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

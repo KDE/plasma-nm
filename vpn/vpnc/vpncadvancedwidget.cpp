@@ -39,7 +39,7 @@ VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &se
 
     // encryption
     m_ui->encryption->addItem(i18nc("VPNC encryption method", "Secure (default)"));
-    m_ui->encryption->addItem(i18nc("VPNC encryption method", "Weak (use with caution)"), NM_VPNC_KEY_SINGLE_DES);
+    m_ui->encryption->addItem(i18nc("VPNC encryption method", "Weak (DES encryption, use with caution)"), NM_VPNC_KEY_SINGLE_DES);
     m_ui->encryption->addItem(i18nc("VPNC encryption method", "None (completely insecure)"), NM_VPNC_KEY_NO_ENCRYPTION);
 
     // NAT traversal

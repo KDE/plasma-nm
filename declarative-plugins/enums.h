@@ -28,6 +28,7 @@ class Enums : public QObject
 Q_OBJECT
 Q_ENUMS(ConnectionStatus)
 Q_ENUMS(ConnectionType)
+Q_ENUMS(FilterType)
 Q_ENUMS(SecurityType)
 
 public:
@@ -35,7 +36,7 @@ public:
     virtual ~Enums();
 
     enum ConnectionStatus {
-        UknownState = 0,
+        UnknownState = 0,
         Activating,
         Activated,
         Deactivating,
@@ -43,7 +44,7 @@ public:
     };
 
     enum ConnectionType {
-        Unknown = 0,
+        UnknownConnectionType = 0,
         Adsl,
         Bluetooth,
         Bond,
@@ -61,6 +62,7 @@ public:
     };
 
     enum SecurityType {
+        UnknownSecurity = -1,
         None = 0,
         StaticWep,
         DynamicWep,

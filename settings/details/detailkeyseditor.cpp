@@ -19,6 +19,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "config.h"
 #include "detailkeyseditor.h"
 #include "ui_detailkeyswidget.h"
 
@@ -108,10 +109,10 @@ void DetailKeysEditor::loadAllDetailElements()
     m_allDetailsElements.insert("ipv6:gateway", QPair<QString, QString>(i18n("IPv6 Gateway"), i18n("IP version 6 default gateway")));
 
     // Wimax
-    m_allDetailsElements.insert("wimax:bsid", QPair<QString, QString>(i18n("Wimax Bsid"), i18n("The ID of the serving base station as received from the network")));
-    m_allDetailsElements.insert("wimax:nsp", QPair<QString, QString>(i18n("Wimax Nsp"), i18n("The name of the NSP")));
-    m_allDetailsElements.insert("wimax:signal", QPair<QString, QString>(i18n("Wimax Signal"), i18n("The current signal quality of the NSP, in percent.")));
-    m_allDetailsElements.insert("wimax:type", QPair<QString, QString>(i18n("Wimax NSP Type"), i18n("The network type of the NSP.")));
+    m_allDetailsElements.insert("wimax:bsid", QPair<QString, QString>(i18n("WiMAX Bsid"), i18n("The ID of the serving base station as received from the network")));
+    m_allDetailsElements.insert("wimax:nsp", QPair<QString, QString>(i18n("WiMAX NSP"), i18n("The name of the NSP")));
+    m_allDetailsElements.insert("wimax:signal", QPair<QString, QString>(i18n("WiMAX Signal"), i18n("The current signal quality of the NSP, in percent.")));
+    m_allDetailsElements.insert("wimax:type", QPair<QString, QString>(i18n("WiMAX NSP Type"), i18n("The network type of the NSP.")));
 
     // Wireless
     m_allDetailsElements.insert("wireless:ssid", QPair<QString, QString>(i18n("Access Point (SSID)"), i18n("Wireless Access Point's SSID")));
@@ -126,7 +127,7 @@ void DetailKeysEditor::loadAllDetailElements()
     m_allDetailsElements.insert("mobile:operator", QPair<QString, QString>(i18n("Mobile Operator"), i18n("Mobile Operator's Name")));
     m_allDetailsElements.insert("mobile:quality", QPair<QString, QString>(i18n("Mobile Signal Quality"), i18n("Mobile Signal Quality")));
     m_allDetailsElements.insert("mobile:technology", QPair<QString, QString>(i18n("Mobile Access Technology"), i18n("Mobile Access Technology")));
-    m_allDetailsElements.insert("mobile:band", QPair<QString, QString>(i18n("Mobile Frequency Band"), i18n("Mobile Frequency Band")));
+
     m_allDetailsElements.insert("mobile:mode", QPair<QString, QString>(i18n("Mobile Allowed Mode"), i18n("Mobile Allowed Mode")));
     m_allDetailsElements.insert("mobile:unlock", QPair<QString, QString>(i18n("Mobile Unlock Required"), i18n("Mobile Master Device")));
     m_allDetailsElements.insert("mobile:imei", QPair<QString, QString>(i18n("Mobile Device IMEI"), i18n("Mobile Device Serial Number")));

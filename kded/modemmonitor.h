@@ -27,18 +27,17 @@
 
 #include "config.h"
 
-#ifdef MODEMMANAGERQT_ONE
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/modem.h>
-#endif
-#include <kdemacros.h>
+
+#include "plasmanm_export.h"
 
 class ModemMonitorPrivate;
 
 /**
  * Monitors modem hardware and provides a PIN unlock dialog
  */
-class KDE_EXPORT ModemMonitor : public QObject
+class PLASMA_NM_EXPORT ModemMonitor : public QObject
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(ModemMonitor)
@@ -47,11 +46,7 @@ public:
     virtual ~ModemMonitor();
 private Q_SLOTS:
     void modemAdded(const QString&);
-#ifdef MODEMMANAGERQT_ONE
     void requestPin(MMModemLock lock);
-#else
-    void requestPin(const QString &);
-#endif
     void onSendPinArrived(QDBusPendingCallWatcher *);
 private:
     ModemMonitorPrivate * d_ptr;

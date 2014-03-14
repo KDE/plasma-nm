@@ -25,6 +25,7 @@
 #define PLASMA_NM_VPNC_H
 
 #include "vpnuiplugin.h"
+#include "plasmanm_export.h"
 
 #include <QVariant>
 
@@ -47,7 +48,7 @@ protected Q_SLOTS:
     void ciscoDecryptFinished(int exitCode, QProcess::ExitStatus exitStatus);
 };
 
-class KDE_EXPORT VpncUiPlugin : public VpnUiPlugin
+class PLASMA_NM_EXPORT VpncUiPlugin : public VpnUiPlugin
 {
     Q_OBJECT
 

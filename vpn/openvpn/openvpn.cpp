@@ -191,7 +191,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         if (line.isEmpty())
             continue;
         key_value.clear();
-        key_value << line.split(QRegExp("\\s")); // Split at whitespace
+        key_value << line.split(QRegExp("\\s+")); // Split at one or more whitespaces
 
         if (key_value[0] == CLIENT_TAG || key_value[0] == TLS_CLIENT_TAG) {
             have_client = true;

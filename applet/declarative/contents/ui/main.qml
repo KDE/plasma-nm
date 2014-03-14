@@ -28,19 +28,29 @@ import org.kde.networkmanagement 0.1 as PlasmaNM
 Item {
     id: mainWindow;
 
-    Plasmoid.switchWidth: units.gridUnit * 25
-    Plasmoid.switchHeight: units.gridUnit * 25
-    Plasmoid.compactRepresentation: CompactRepresentation { }
+    property int minimumWidth: 300;
+    property int minimumHeight: 300;
+    property bool showSections: false;
 
-    property bool autoHideOptions: true;
-
-    signal sectionChanged();
-
-    function hideOptions() {
-        if (autoHideOptions) {
-            toolbar.expanded = false;
-        }
+    PlasmaNM.NetworkStatus {
+        id: networkStatus;
     }
+
+    PlasmaNM.ConnectionIcon {
+        id: connectionIconProvider;
+    }
+
+    Plasmoid.toolTipMainText: ""
+    Plasmoid.toolTipSubText: networkStatus.activeConnections
+    Plasmoid.icon: connectionIconProvider.connectionTooltipIcon
+
+    Plasmoid.compactRepresentation: CompactRepresentation { }
+//         Component.onCompleted: {
+//             plasmoid.addEventListener('configChanged', mainWindow.configChanged)
+//         }
+//     }
+
+//     signal sectionChanged();
 
     PlasmaNM.GlobalConfig {
         id: globalConfig;
@@ -54,134 +64,15 @@ Item {
         }
     }
 
-    PlasmaNM.Handler {
-            id: handler;
+    Plasmoid.fullRepresentation: PopupDialog {
+        id: dialogItem;
+
+        anchors.fill: parent;
+        focus: true;
     }
-
-    PlasmaNM.Model {
-        id: connectionModel;
-    }
-
-    PlasmaNM.SortModel {
-        id: connectionSortModel;
-
-        sourceModel: connectionModel;
-    }
-
-    PlasmaCore.FrameSvgItem {
-        id: padding
-        imagePath: "widgets/viewitem"
-        prefix: "hover"
-        opacity: 0
-        anchors.fill: parent
-    }
-
-    PlasmaExtras.ScrollArea {
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            top: parent.top;
-            bottom: toolbarSeparator.top;
-            topMargin: padding.margins.top;
-            bottomMargin: padding.margins.bottom
-        }
-
-        ListView {
-            id: connectionView;
-
-            property bool expandedItem: false;
-            property string previouslyExpandedItem: "";
-
-            property bool activeExpanded: true;
-            property bool previousExpanded: true;
-            property bool unknownExpanded: true;
-
-            anchors.fill: parent;
-
-            clip: true
-            model: connectionSortModel;
-            currentIndex: -1;
-            interactive: true;
-            boundsBehavior: Flickable.StopAtBounds;
-            section.property: "itemSection";
-            section.delegate: SectionHeader {
-                onHideSection: {
-                    if (section == i18n("Active connections")) {
-                        connectionView.activeExpanded = false;
-                    } else if (section == i18n("Previous connections")) {
-                        connectionView.previousExpanded = false;
-                    } else {
-                        connectionView.unknownExpanded = false;
-                    }
-                }
-
-                onShowSection: {
-                    if (section == i18n("Active connections")) {
-                        connectionView.activeExpanded = true;
-                    } else if (section == i18n("Previous connections")) {
-                        connectionView.previousExpanded = true;
-                    } else {
-                        connectionView.unknownExpanded = true;
-                    }
-                }
-            }
-
-            delegate: ConnectionItem {
-                expanded: connectionView.expandedItem && connectionView.previouslyExpandedItem == itemUni;
-                onItemExpanded: {
-                    if (itemExpanded) {
-                        connectionView.expandedItem = true;
-                        connectionView.previouslyExpandedItem = itemUni;;
-                        connectionView.currentIndex = index;
-                    } else {
-                        connectionView.expandedItem = false;
-                        connectionView.previouslyExpandedItem = "";
-                    }
-                }
-
-                ListView.onRemove: {
-                    if (ListView.isCurrentItem) {
-                        connectionView.previouslyExpandedItem = "";
-                    }
-                }
-            }
-        }
-    }
-
-    PlasmaCore.SvgItem {
-        id: toolbarSeparator
-
-        height: lineSvg.elementSize("horizontal-line").height;
-        width: parent.width;
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            bottom: toolbar.top;
-            bottomMargin: padding.margins.bottom/2;
-            leftMargin: padding.margins.left;
-            rightMargin: padding.margins.right;
-        }
-        elementId: "horizontal-line";
-
-        svg: PlasmaCore.Svg {
-            id: lineSvg;
-            imagePath: "widgets/line";
-        }
-    }
-
-    Toolbar {
-        id: toolbar;
-
-        anchors {
-            left: parent.left;
-            right: parent.right;
-            bottom: parent.bottom;
-        }
-    }
-
+/*
     Component.onCompleted: {
         configChanged();
-        plasmoid.popupEvent.connect(mainWindow.hideOptions);
         plasmoid.addEventListener('configChanged', mainWindow.configChanged)
     }
 
@@ -192,6 +83,6 @@ Item {
         var speedUnit;
         speedUnit = plasmoid.readConfig("networkSpeedUnit");
         globalConfig.setNetworkSpeedUnit(speedUnit);
-        autoHideOptions = plasmoid.readConfig("autoHideOptions");
-    }
+        showSections = plasmoid.readConfig("showSections");
+    }*/
 }

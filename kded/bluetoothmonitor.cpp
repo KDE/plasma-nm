@@ -39,7 +39,7 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Utils>
 
-#ifdef MODEMMANAGERQT_ONE
+#if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/modem.h>
 #include <ModemManagerQt/modemdevice.h>
 #endif
@@ -79,7 +79,7 @@ void BluetoothMonitor::init()
     QRegExp rx("dun|rfcomm?|nap");
 
     if (rx.indexIn(mService) < 0) {
-        KMessageBox::sorry(0, i18n("We support 'dun' and 'nap' services only."));
+        KMessageBox::sorry(0, i18n("Only 'dun' and 'nap' services are supported."));
         return;
     }
     qDebug() << "Bdaddr == " << mBdaddr;
@@ -92,7 +92,7 @@ void BluetoothMonitor::init()
                          QLatin1String("org.bluez.Manager"), QDBusConnection::systemBus());
 
     if (!bluez.isValid()) {
-        KMessageBox::error(0, i18n("Could not contact bluetooth manager (BlueZ)."));
+        KMessageBox::error(0, i18n("Could not contact Bluetooth manager (BlueZ)."));
         return;
     }
 
@@ -100,7 +100,7 @@ void BluetoothMonitor::init()
     QDBusReply<QDBusObjectPath> adapterPath = bluez.call(QLatin1String("DefaultAdapter"));
 
     if (!adapterPath.isValid()) {
-        KMessageBox::error(0, i18n("Default bluetooth adapter not found: %1", adapterPath.error().message()));
+        KMessageBox::error(0, i18n("Default Bluetooth adapter not found: %1", adapterPath.error().message()));
         return;
     }
 
@@ -226,23 +226,10 @@ void BluetoothMonitor::modemAdded(const QString &udi)
 {
     qDebug() << "Modem added" << udi;
 
-#ifdef MODEMMANAGERQT_ONE
     ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(udi);
     ModemManager::Modem::Ptr modem = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
 
-#else
-    ModemManager::ModemInterface::Ptr modem = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::GsmCard);
-
-    if (!modem) {
-        // Try CDMA if no GSM device has been found.
-        modem = ModemManager::findModemInterface(udi, ModemManager::ModemInterface::NotGsm);
-    }
-#endif
-#ifdef MODEMMANAGERQT_ONE
     qDebug() << "Found suitable modem:" << modemDevice->uni();
-#else
-    qDebug() << "Found suitable modem:" << modem->udi();
-#endif
     qDebug() << "DUN device:" << mDunDevice;
 
     QStringList temp = mDunDevice.split('/');
@@ -253,7 +240,7 @@ void BluetoothMonitor::modemAdded(const QString &udi)
     if (!modem || modem->device() != mDunDevice) {
 
         if (modem) {
-            KMessageBox::error(0, i18n("Device %1 is not the one we want (%2)", modem->device(), mDunDevice));
+            KMessageBox::error(0, i18n("Device %1 is not the wanted one (%2)", modem->device(), mDunDevice));
         } else {
             KMessageBox::error(0, i18n("Device for serial port %1 (%2) not found.", mDunDevice, udi));
         }
@@ -261,25 +248,12 @@ void BluetoothMonitor::modemAdded(const QString &udi)
     }
 
     NetworkManager::ConnectionSettings::ConnectionType type;
-#ifdef MODEMMANAGERQT_ONE
     if (modemDevice->isGsmModem())
         type = NetworkManager::ConnectionSettings::Gsm;
     else if (modemDevice->isCdmaModem())
         type = NetworkManager::ConnectionSettings::Cdma;
     else
         type = NetworkManager::ConnectionSettings::Unknown;
-#else
-    switch (modem->type()) {
-        case ModemManager::ModemInterface::GsmType:
-            type = NetworkManager::ConnectionSettings::Gsm;
-            break;
-        case ModemManager::ModemInterface::CdmaType:
-            type = NetworkManager::ConnectionSettings::Cdma;
-            break;
-        default:
-            type = NetworkManager::ConnectionSettings::Unknown;
-    }
-#endif
 
     if (type == NetworkManager::ConnectionSettings::Unknown) {
         return;

@@ -26,7 +26,11 @@
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/GenericTypes>
+#include <NetworkManagerQt/GsmSetting>
+#include <NetworkManagerQt/Security8021xSetting>
 #include <NetworkManagerQt/VpnSetting>
+#include <NetworkManagerQt/WirelessSecuritySetting>
+#include <NetworkManagerQt/WirelessSetting>
 
 #include <QStringBuilder>
 
@@ -147,13 +151,54 @@ void SecretAgent::dialogAccepted()
         if (request.type == SecretsRequest::GetSecrets && request.dialog == m_dialog) {
             NMVariantMapMap connection = request.dialog->secrets();
             sendSecrets(connection, request.message);
-            NetworkManager::ConnectionSettings connectionSettings(connection);
-            if (request.saveSecretsWithoutReply && connectionSettings.connectionType() != NetworkManager::ConnectionSettings::Vpn) {
-                SecretsRequest requestOffline(SecretsRequest::SaveSecrets);
-                requestOffline.connection = connection;
-                requestOffline.connection_path = request.connection_path;
-                requestOffline.saveSecretsWithoutReply = true;
-                m_calls << requestOffline;
+            NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(connection));
+            NetworkManager::ConnectionSettings::Ptr completeConnectionSettings;
+            NetworkManager::Connection::Ptr con = NetworkManager::findConnectionByUuid(connectionSettings->uuid());
+            if (con) {
+                completeConnectionSettings = con->settings();
+            } else {
+                completeConnectionSettings = connectionSettings;
+            }
+            if (request.saveSecretsWithoutReply && completeConnectionSettings->connectionType() != NetworkManager::ConnectionSettings::Vpn) {
+                bool requestOffline = true;
+                if (completeConnectionSettings->connectionType() == NetworkManager::ConnectionSettings::Gsm) {
+                    NetworkManager::GsmSetting::Ptr gsmSetting = completeConnectionSettings->setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
+                    if (gsmSetting) {
+                        if (gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::NotSaved) ||
+                            gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::NotRequired)) {
+                            requestOffline = false;
+                        } else if (gsmSetting->pinFlags().testFlag(NetworkManager::Setting::NotSaved) ||
+                                   gsmSetting->pinFlags().testFlag(NetworkManager::Setting::NotRequired)) {
+                            requestOffline = false;
+                        }
+                    }
+                } else if (completeConnectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
+                    NetworkManager::WirelessSetting::Ptr wirelessSetting = completeConnectionSettings->setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
+                    if (wirelessSetting && !wirelessSetting->security().isEmpty()) {
+                        NetworkManager::WirelessSecuritySetting::Ptr wirelessSecuritySetting = completeConnectionSettings->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
+                        if (wirelessSecuritySetting && wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEap) {
+                            NetworkManager::Security8021xSetting::Ptr security8021xSetting = completeConnectionSettings->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>();
+                            if (security8021xSetting) {
+                                if (security8021xSetting->eapMethods().contains(NetworkManager::Security8021xSetting::EapMethodFast) ||
+                                    security8021xSetting->eapMethods().contains(NetworkManager::Security8021xSetting::EapMethodTtls) ||
+                                    security8021xSetting->eapMethods().contains(NetworkManager::Security8021xSetting::EapMethodPeap)) {
+                                    if (security8021xSetting->passwordFlags().testFlag(NetworkManager::Setting::NotSaved) ||
+                                        security8021xSetting->passwordFlags().testFlag(NetworkManager::Setting::NotRequired)) {
+                                        requestOffline = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (requestOffline) {
+                    SecretsRequest requestOffline(SecretsRequest::SaveSecrets);
+                    requestOffline.connection = connection;
+                    requestOffline.connection_path = request.connection_path;
+                    requestOffline.saveSecretsWithoutReply = true;
+                    m_calls << requestOffline;
+                }
             }
 
             m_calls.removeAt(i);
@@ -391,11 +436,14 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
 {
     if (!ignoreWallet && useWallet()) {
         if (m_wallet->isOpen()) {
-            if (m_wallet->hasFolder("plasma-networkmanagement") && m_wallet->setFolder("plasma-networkmanagement")) {
+            if (m_wallet->hasFolder("Network Management") && m_wallet->setFolder("Network Management")) {
                 NetworkManager::ConnectionSettings connectionSettings(request.connection);
-                foreach (const QString &entry, m_wallet->entryList()) {
-                    if (entry.startsWith(connectionSettings.uuid())) {
-                        m_wallet->removeEntry(entry);
+                foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
+                    QString entryName = QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name();
+                    foreach (const QString &entry, m_wallet->entryList()) {
+                        if (entry.startsWith(entryName)) {
+                            m_wallet->removeEntry(entryName);
+                        }
                     }
                 }
             }
@@ -407,9 +455,11 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
         NetworkManager::ConnectionSettings connectionSettings(request.connection);
 
         KConfig config("plasma-networkmanagement");
-        foreach (const QString &group, config.groupList()) {
-            if (group.startsWith(connectionSettings.uuid())) {
-                config.deleteGroup(group);
+        foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
+            foreach (const QString &group, config.groupList()) {
+                if (group.startsWith(QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name())) {
+                    config.deleteGroup(group);
+                }
             }
         }
     }

@@ -1,23 +1,23 @@
 /*
-Copyright 2009 Will Stephenson <wstephenson@kde.org>
-Copyright 2009 Pavel Andreev <apavelm@gmail.com>
-Copyright 2013 Lukáš Tinkl <ltinkl@redhat.com>
+    Copyright 2009 Will Stephenson <wstephenson@kde.org>
+    Copyright 2009 Pavel Andreev <apavelm@gmail.com>
+    Copyright 2013 Lukáš Tinkl <ltinkl@redhat.com>
 
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License as
-published by the Free Software Foundation; either version 2 of
-the License or (at your option) version 3 or any later version
-accepted by the membership of KDE e.V. (or its successor approved
-by the membership of KDE e.V.), which shall act as a proxy
-defined in Section 14 of version 3 of the license.
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License as
+    published by the Free Software Foundation; either version 2 of
+    the License or (at your option) version 3 or any later version
+    accepted by the membership of KDE e.V. (or its successor approved
+    by the membership of KDE e.V.), which shall act as a proxy
+    defined in Section 14 of version 3 of the license.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "pptpwidget.h"
@@ -284,12 +284,12 @@ QVariantMap PptpSettingWidget::setting(bool agentOwned) const
 
 void PptpSettingWidget::fillOnePasswordCombo(KComboBox * combo, NetworkManager::Setting::SecretFlags type)
 {
-    if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) {
-        combo->setCurrentIndex(1);
-    } else if (type.testFlag(NetworkManager::Setting::NotRequired)) {
-        combo->setCurrentIndex(2);
-    } else if (type.testFlag(NetworkManager::Setting::NotSaved)) {
+    if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) { // store
         combo->setCurrentIndex(0);
+    } else if (type.testFlag(NetworkManager::Setting::NotRequired)) { // not required
+        combo->setCurrentIndex(2);
+    } else if (type.testFlag(NetworkManager::Setting::NotSaved)) { // always ask
+        combo->setCurrentIndex(1);
     }
 }
 
@@ -297,17 +297,17 @@ uint PptpSettingWidget::handleOnePasswordType(const KComboBox * combo, const QSt
 {
     const uint type = combo->currentIndex();
     switch (type) {
-        case 0:
-            data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
-            break;
         case 1:
+            data.insert(key, QString::number(NetworkManager::Setting::NotSaved)); // always ask
+            break;
+        case 0:
             if (agentOwned)
-                data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
+                data.insert(key, QString::number(NetworkManager::Setting::AgentOwned)); // store
             else
                 data.insert(key, QString::number(NetworkManager::Setting::None));
             break;
         case 2:
-            data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
+            data.insert(key, QString::number(NetworkManager::Setting::NotRequired)); // not required
             break;
     }
     return type;

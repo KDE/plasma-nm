@@ -1,13 +1,13 @@
-include_directories(${CMAKE_SOURCE_DIR}/lib/editor)
+include_directories(${CMAKE_SOURCE_DIR}/libs/editor
+                    ${CMAKE_SOURCE_DIR}/libs/editor/widgets
+                    ${CMAKE_SOURCE_DIR}/libs/models)
 
 set(connectioneditor_SRCS
    main.cpp
    connectioneditor.cpp
-   connectionitem.cpp
-   connectiontypeitem.cpp
 )
 
-kde4_add_app_icon(connectioneditor_SRCS "${KDE4_INSTALL_DIR}/share/icons/oxygen/*/devices/network-defaultroute.png" )
+# add_app_icon(connectioneditor_SRCS "${KDE4_INSTALL_DIR}/share/icons/oxygen/*/devices/network-defaultroute.png" )
 
 qt5_wrap_ui(connectioneditor_SRCS
     ui/connectioneditor.ui
@@ -18,8 +18,8 @@ add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})
 target_link_libraries(kde-nm-connection-editor
     plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
-    ${NETWORKMANAGERQT_LDFLAGS}
-    ${MODEMMANAGERQT_LDFLAGS}
+    ${NETWORKMANAGERQT5_LDFLAGS}
+    ${MODEMMANAGERQT5_LDFLAGS}
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus

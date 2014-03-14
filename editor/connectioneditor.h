@@ -22,7 +22,10 @@
 #ifndef PLASMA_NM_CONNECTION_EDITOR_H
 #define PLASMA_NM_CONNECTION_EDITOR_H
 
+#include "handler.h"
+
 #include <QMenu>
+#include <QModelIndex>
 
 #include <KXmlGuiWindow>
 #include <KActionMenu>
@@ -45,28 +48,27 @@ public:
     virtual ~ConnectionEditor();
 
 private Q_SLOTS:
-    void initializeConnections();
-    void currentItemChanged(QTreeWidgetItem * current, QTreeWidgetItem * previous);
     void addConnection(QAction * action);
-    void editConnection();
-    void removeConnection();
     void connectionAdded(const QString & connection);
-    void connectionRemoved(const QString & connection);
-    void connectionUpdated();
-
-    void importVpn();
+    void connectConnection();
+    void disconnectConnection();
+    void editConnection();
     void exportVpn();
+    void importVpn();
+    void initializeConnections();
+    void removeConnection();
+    void slotContextMenuRequested(const QPoint& point);
+    void slotItemClicked(const QModelIndex& index);
+    void slotItemDoubleClicked(const QModelIndex& index);
 
 private:
     Ui::ConnectionEditor * m_editor;
+    Handler * m_handler;
     KActionMenu * m_menu;
 
-    void insertConnection(const NetworkManager::Connection::Ptr &connection);
+    void initializeMenu();
     void importSecretsFromPlainTextFiles();
     void storeSecrets(const QMap<QString, QMap<QString, QString> > & map);
-    QMap<QString, QString> getCorrectMapWithSecrets(const QMap<QString, QString> & map);
-    QString formatDateRelative(const QDateTime & lastUsed) const;
-    QTreeWidgetItem * findTopLevelItem(const QString & type);
 };
 
 #endif // PLASMA_NM_CONNECTION_EDITOR_H

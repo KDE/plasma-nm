@@ -1,21 +1,21 @@
 /*
-Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
+    Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
 
-This library is free software; you can redistribute it and/or
-modify it under the terms of the GNU Lesser General Public
-License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) version 3, or any
-later version accepted by the membership of KDE e.V. (or its
-successor approved by the membership of KDE e.V.), which shall
-act as a proxy defined in Section 6 of version 3 of the license.
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) version 3, or any
+    later version accepted by the membership of KDE e.V. (or its
+    successor approved by the membership of KDE e.V.), which shall
+    act as a proxy defined in Section 6 of version 3 of the license.
 
-This library is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Lesser General Public License for more details.
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
 
-You should have received a copy of the GNU Lesser General Public
-License along with this library.  If not, see <http://www.gnu.org/licenses/>.
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "openconnectauthworkerthread.h"
@@ -59,7 +59,7 @@ public:
     {
         if (obj)
             return static_cast<OpenconnectAuthWorkerThread*>(obj)->processAuthFormP(form);
-        return -1;
+        return OC_FORM_RESULT_ERR;
     }
     static void writeProgress(void *obj, int level, const char *str, ...)
     {
@@ -181,9 +181,11 @@ int OpenconnectAuthWorkerThread::processAuthFormP(struct oc_auth_form *form)
     m_waitForUserInput->wait(m_mutex);
     m_mutex->unlock();
     if (*m_userDecidedToQuit)
-        return -1;
+        return OC_FORM_RESULT_CANCELLED;
 
-    return 0;
+    // TODO : If group changed, return OC_FORM_RESULT_NEWGROUP
+
+    return OC_FORM_RESULT_OK;
 }
 
 void OpenconnectAuthWorkerThread::writeProgress(int level, const char *fmt, va_list argPtr)

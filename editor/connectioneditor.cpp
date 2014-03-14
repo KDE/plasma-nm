@@ -1,6 +1,6 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
     Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -19,15 +19,16 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "connectioneditor.h"
 #include "ui_connectioneditor.h"
-#include "connectionitem.h"
-#include "connectiontypeitem.h"
+#include "connectioneditor.h"
 #include "connectiondetaileditor.h"
+#include "editoridentitymodel.h"
+#include "editorproxymodel.h"
+#include "networkmodel.h"
 #include "mobileconnectionwizard.h"
+#include "uiutils.h"
 #include "vpnuiplugin.h"
-
-#include <QTreeWidgetItem>
+#include <networkmodelitem.h>
 
 #include <KActionCollection>
 #include <KLocale>
@@ -50,6 +51,7 @@
 #include <KFileDialog>
 #include <KShell>
 #include <KUrl>
+#include <KFilterProxySearchLine>
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
@@ -58,16 +60,59 @@
 
 using namespace NetworkManager;
 
-ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
-    KXmlGuiWindow(parent, flags),
-    m_editor(new Ui::ConnectionEditor)
+ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
+    : KXmlGuiWindow(parent, flags)
+    , m_editor(new Ui::ConnectionEditor)
+    , m_handler(new Handler(this))
 {
     QWidget * tmp = new QWidget(this);
     m_editor->setupUi(tmp);
     setCentralWidget(tmp);
 
-    m_editor->ktreewidgetsearchline->setTreeWidget(m_editor->connectionsWidget);
+    m_editor->connectionsWidget->setSortingEnabled(false);
+    m_editor->connectionsWidget->sortByColumn(0, Qt::AscendingOrder);
+    m_editor->connectionsWidget->setSortingEnabled(true);
+    m_editor->connectionsWidget->setContextMenuPolicy(Qt::CustomContextMenu);
 
+    m_editor->messageWidget->hide();
+    m_editor->messageWidget->setCloseButtonVisible(false);
+    m_editor->messageWidget->setWordWrap(true);
+
+//     m_editor->ktreewidgetsearchline->lineEdit()->setClickMessage(i18n("Type here to search connections..."));
+
+    initializeConnections();
+    initializeMenu();
+
+    connect(m_editor->connectionsWidget, SIGNAL(pressed(QModelIndex)),
+            SLOT(slotItemClicked(QModelIndex)));
+    connect(m_editor->connectionsWidget, SIGNAL(doubleClicked(QModelIndex)),
+            SLOT(slotItemDoubleClicked(QModelIndex)));
+    connect(m_editor->connectionsWidget, SIGNAL(customContextMenuRequested(QPoint)),
+            SLOT(slotContextMenuRequested(QPoint)));
+    connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
+            SLOT(addConnection(QAction*)));
+    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
+            SLOT(connectionAdded(QString)));
+
+    KConfig config("kde-nm-connection-editor");
+    KConfigGroup generalGroup = config.group("General");
+
+    if (generalGroup.isValid()) {
+        if (generalGroup.readEntry("FirstStart", true)) {
+            importSecretsFromPlainTextFiles();
+        }
+
+        generalGroup.writeEntry("FirstStart", false);
+    }
+}
+
+ConnectionEditor::~ConnectionEditor()
+{
+    delete m_editor;
+}
+
+void ConnectionEditor::initializeMenu()
+{
     m_menu = new KActionMenu(KIcon("list-add"), i18n("Add"), this);
     m_menu->menu()->setSeparatorsCollapsible(false);
     m_menu->setDelayed(false);
@@ -119,6 +164,11 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     action = new QAction(i18n("VLAN"), this);
     action->setData(NetworkManager::ConnectionSettings::Vlan);
     m_menu->addAction(action);
+#if NM_CHECK_VERSION(0, 9, 9)
+    action = new QAction(i18n("Team"), this);
+    action->setData(NetworkManager::ConnectionSettings::Team);
+    m_menu->addAction(action);
+#endif
 
     action = m_menu->addSeparator();
     action->setText(i18n("VPN"));
@@ -135,13 +185,14 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
 
     actionCollection()->addAction("add_connection", m_menu);
 
-    KAction * kAction = new KAction(KIcon("configure"), i18n("Edit"), this);
+    KAction * kAction = new KAction(KIcon("configure"), i18n("Edit..."), this);
     kAction->setEnabled(false);
     connect(kAction, SIGNAL(triggered()), SLOT(editConnection()));
     actionCollection()->addAction("edit_connection", kAction);
 
     kAction = new KAction(KIcon("edit-delete"), i18n("Delete"), this);
     kAction->setEnabled(false);
+    kAction->setShortcut(Qt::Key_Delete);
     connect(kAction, SIGNAL(triggered()), SLOT(removeConnection()));
     actionCollection()->addAction("delete_connection", kAction);
 
@@ -154,28 +205,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     kAction->setEnabled(false);
     connect(kAction, SIGNAL(triggered()), SLOT(exportVpn()));
 
-    m_editor->connectionsWidget->setSortingEnabled(false);
-    initializeConnections();
-    m_editor->connectionsWidget->sortByColumn(0, Qt::AscendingOrder);
-    m_editor->connectionsWidget->setSortingEnabled(true);
-
-    connect(m_editor->connectionsWidget, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
-            SLOT(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
-    connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
-            SLOT(addConnection(QAction*)));
-    connect(m_editor->connectionsWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)),
-            SLOT(editConnection()));
-    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
-            SLOT(connectionAdded(QString)));
-    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionRemoved(QString)),
-            SLOT(connectionRemoved(QString)));
-    connect(NetworkManager::notifier(), SIGNAL(serviceDisappeared()),
-            m_editor->connectionsWidget, SLOT(clear()));
-
-    m_editor->messageWidget->hide();
-    m_editor->messageWidget->setCloseButtonVisible(false);
-    m_editor->messageWidget->setWordWrap(true);
-
     KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
     KStandardAction::quit(this, SLOT(close()), actionCollection());
 
@@ -184,152 +213,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags):
     setAutoSaveSettings();
 
     KAcceleratorManager::manage(this);
-
-    KConfig config("kde-nm-connection-editor");
-    KConfigGroup generalGroup = config.group("General");
-
-    if (generalGroup.isValid()) {
-        if (generalGroup.readEntry("FirstStart", true)) {
-            importSecretsFromPlainTextFiles();
-        }
-
-        generalGroup.writeEntry("FirstStart", false);
-    }
-}
-
-ConnectionEditor::~ConnectionEditor()
-{
-    delete m_editor;
-}
-
-void ConnectionEditor::initializeConnections()
-{
-    m_editor->connectionsWidget->clear();
-
-    foreach (const Connection::Ptr &con, NetworkManager::listConnections()) {
-        if (con->settings()->isSlave())
-            continue;
-        insertConnection(con);
-    }
-}
-
-void ConnectionEditor::insertConnection(const NetworkManager::Connection::Ptr &connection)
-{
-    connect(connection.data(), SIGNAL(updated()), SLOT(connectionUpdated()));
-
-    ConnectionSettings::Ptr settings = connection->settings();
-
-    const QString name = settings->id();
-    QString type = ConnectionSettings::typeAsString(settings->connectionType());
-    if (type == "gsm" || type == "cdma")
-        type = "mobile"; // cdma+gsm meta category
-
-    // Can't continue if name or type are empty
-    if (name.isEmpty() || type.isEmpty()) {
-        return;
-    }
-
-    QStringList actives;
-
-    foreach(const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-        if (active->state() == NetworkManager::ActiveConnection::Activated) {
-            actives << active->connection()->uuid();
-        }
-    }
-
-    const bool active = actives.contains(settings->uuid());
-    const QString lastUsed = formatDateRelative(settings->timestamp());
-
-    QStringList params;
-    params << name;
-    params << lastUsed;
-
-    // Create a root item if this type doesn't exist
-    if (!findTopLevelItem(type)) {
-        qDebug() << "creating toplevel item" << type;
-        (void) new ConnectionTypeItem(m_editor->connectionsWidget, type);
-    }
-
-    QTreeWidgetItem * item = findTopLevelItem(type);
-    ConnectionItem * connectionItem = new ConnectionItem(item, params, active);
-    connectionItem->setData(0, Qt::UserRole, "connection");
-    connectionItem->setData(0, ConnectionItem::ConnectionIdRole, settings->uuid());
-    connectionItem->setData(0, ConnectionItem::ConnectionPathRole, connection->path());
-    connectionItem->setData(1, ConnectionItem::ConnectionLastUsedRole, settings->timestamp());
-
-    m_editor->connectionsWidget->resizeColumnToContents(0);
-}
-
-
-QString ConnectionEditor::formatDateRelative(const QDateTime & lastUsed) const
-{
-    QString lastUsedText;
-    if (lastUsed.isValid()) {
-        const QDateTime now = QDateTime::currentDateTime();
-        if (lastUsed.daysTo(now) == 0 ) {
-            int secondsAgo = lastUsed.secsTo(now);
-            if (secondsAgo < (60 * 60 )) {
-                int minutesAgo = secondsAgo / 60;
-                lastUsedText = i18ncp(
-                                   "Label for last used time for a network connection used in the last hour, as the number of minutes since usage",
-                                   "One minute ago",
-                                   "%1 minutes ago",
-                                   minutesAgo);
-            } else {
-                int hoursAgo = secondsAgo / (60 * 60);
-                lastUsedText = i18ncp(
-                                   "Label for last used time for a network connection used in the last day, as the number of hours since usage",
-                                   "One hour ago",
-                                   "%1 hours ago",
-                                   hoursAgo);
-            }
-        } else if (lastUsed.daysTo(now) == 1) {
-            lastUsedText = i18nc("Label for last used time for a network connection used the previous day", "Yesterday");
-        } else {
-            lastUsedText = KGlobal::locale()->formatDate(lastUsed.date(), KLocale::ShortDate);
-        }
-    } else {
-        lastUsedText =  i18nc("Label for last used time for a "
-                              "network connection that has never been used", "Never");
-    }
-    return lastUsedText;
-}
-
-QTreeWidgetItem* ConnectionEditor::findTopLevelItem(const QString& type)
-{
-    QTreeWidgetItemIterator it(m_editor->connectionsWidget);
-
-    while (*it) {
-        if ((*it)->data(0, Qt::UserRole).toString() == type) {
-            qDebug() << "found:" << type;
-            return (*it);
-        }
-        ++it;
-    }
-
-    qWarning() << "didn't find type" << type;
-    return 0;
-}
-
-void ConnectionEditor::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous)
-{
-    Q_UNUSED(previous);
-
-    if (!current) {
-        return;
-    }
-
-    qDebug() << "Current item" << current->text(0) << "type:" << current->data(0, Qt::UserRole).toString();
-
-    if (current->data(0, Qt::UserRole).toString() == "connection") {
-        actionCollection()->action("edit_connection")->setEnabled(true);
-        actionCollection()->action("delete_connection")->setEnabled(true);
-        actionCollection()->action("export_vpn")->setEnabled(true);
-    } else {
-        actionCollection()->action("edit_connection")->setEnabled(false);
-        actionCollection()->action("delete_connection")->setEnabled(false);
-        actionCollection()->action("export_vpn")->setEnabled(false);
-    }
 }
 
 void ConnectionEditor::addConnection(QAction* action)
@@ -345,8 +228,12 @@ void ConnectionEditor::addConnection(QAction* action)
         QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
         if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
             qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
-            ConnectionDetailEditor * editor = new ConnectionDetailEditor(wizard.data()->type(), wizard.data()->args(), this);
+            QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(wizard.data()->type(), wizard.data()->args(), this);
             editor->exec();
+
+            if (editor) {
+                editor->deleteLater();
+            }
         }
         if (wizard) {
             wizard.data()->deleteLater();
@@ -367,39 +254,84 @@ void ConnectionEditor::addConnection(QAction* action)
     }
 }
 
+void ConnectionEditor::connectionAdded(const QString& connection)
+{
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
+
+    if (!con) {
+        return;
+    }
+
+    if (con->settings()->isSlave())
+        return;
+
+    m_editor->messageWidget->animatedShow();
+    m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
+    m_editor->messageWidget->setText(i18n("Connection %1 has been added", con->name()));
+    QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+}
+
+void ConnectionEditor::connectConnection()
+{
+    const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
+
+    if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
+        return;
+    }
+
+    const QString connectionPath = currentIndex.data(NetworkModel::ConnectionPathRole).toString();
+    const QString devicePath = currentIndex.data(NetworkModel::DevicePathRole).toString();
+    const QString specificPath = currentIndex.data(NetworkModel::SpecificPathRole).toString();
+
+    m_handler->activateConnection(connectionPath, devicePath, specificPath);
+}
+
+void ConnectionEditor::disconnectConnection()
+{
+    const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
+
+    if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
+        return;
+    }
+
+    const QString connectionPath = currentIndex.data(NetworkModel::ConnectionPathRole).toString();
+    const QString devicePath = currentIndex.data(NetworkModel::DevicePathRole).toString();
+    m_handler->deactivateConnection(connectionPath, devicePath);
+}
+
 void ConnectionEditor::editConnection()
 {
-    QTreeWidgetItem * currentItem = m_editor->connectionsWidget->currentItem();
+    const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
 
-    if (currentItem->data(0, Qt::UserRole).toString() != "connection") {
-        qDebug() << "clicked on the root item which is not editable";
+    if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
         return;
     }
 
-    Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
+    slotItemDoubleClicked(currentIndex);
+}
 
-    if (!connection) {
-        return;
-    }
+void ConnectionEditor::initializeConnections()
+{
+    EditorIdentityModel * model = new EditorIdentityModel(this);
 
-    QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(connection->settings(), this);
-    editor->exec();
+    EditorProxyModel * filterModel = new EditorProxyModel(this);
+    filterModel->setSourceModel(model);
 
-    if (editor) {
-        editor->deleteLater();
-    }
+    m_editor->connectionsWidget->setModel(filterModel);
+//     m_editor->ktreewidgetsearchline->setProxy(filterModel);
+
+//     m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
 }
 
 void ConnectionEditor::removeConnection()
 {
-    QTreeWidgetItem * currentItem = m_editor->connectionsWidget->currentItem();
+    const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
 
-    if (currentItem->data(0, Qt::UserRole).toString() != "connection") {
-        qDebug() << "clicked on the root item which is not removable";
+    if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
         return;
     }
 
-    Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
+    Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentIndex.data(NetworkModel::UuidRole).toString());
 
     if (!connection) {
         return;
@@ -416,6 +348,63 @@ void ConnectionEditor::removeConnection()
         }
         connection->remove();
     }
+}
+
+void ConnectionEditor::slotContextMenuRequested(const QPoint&)
+{
+    QMenu * menu = new QMenu(this);
+
+    QModelIndex index = m_editor->connectionsWidget->currentIndex();
+    const bool isActive = (NetworkManager::ActiveConnection::State)index.data(NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const bool isAvailable = (NetworkModelItem::ItemType)index.data(NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::AvailableConnection;
+
+    if (isAvailable && !isActive) {
+        menu->addAction(KIcon("user-online"), i18n("Connect"), this, SLOT(connectConnection()));
+    } else if (isAvailable && isActive) {
+        menu->addAction(KIcon("user-offline"), i18n("Disconnect"), this, SLOT(disconnectConnection()));
+    }
+    menu->addAction(actionCollection()->action("edit_connection"));
+    menu->addAction(actionCollection()->action("delete_connection"));
+    menu->exec(QCursor::pos());
+}
+
+void ConnectionEditor::slotItemClicked(const QModelIndex &index)
+{
+    if (!index.isValid()) {
+        return;
+    }
+
+    qDebug() << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
+
+    if (index.parent().isValid()) { // category
+        actionCollection()->action("edit_connection")->setEnabled(false);
+        actionCollection()->action("delete_connection")->setEnabled(false);
+        actionCollection()->action("export_vpn")->setEnabled(false);
+        actionCollection()->action("export_vpn")->setEnabled(false);
+    } else {                       //connection
+        actionCollection()->action("edit_connection")->setEnabled(true);
+        actionCollection()->action("delete_connection")->setEnabled(true);
+        const bool isVpn = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(index.data(NetworkModel::TypeRole).toUInt()) ==
+                           NetworkManager::ConnectionSettings::Vpn;
+        actionCollection()->action("export_vpn")->setEnabled(isVpn);
+    }
+}
+
+void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
+{
+    if (!index.isValid()) {
+        return;
+    }
+
+    qDebug() << "Double clicked item" << index.data(NetworkModel::UuidRole).toString();
+
+    if (index.parent().isValid()) { // category
+        qDebug() << "double clicked on the root item which is not editable";
+        return;
+    }
+
+    const QString uuid = index.data(NetworkModel::UuidRole).toString();
+    m_handler->editConnection(uuid);
 }
 
 void ConnectionEditor::importSecretsFromPlainTextFiles()
@@ -480,68 +469,6 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
     }
 }
 
-void ConnectionEditor::connectionAdded(const QString& connection)
-{
-    qDebug() << "Connection" << connection << "added";
-
-    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
-
-    if (!con) {
-        return;
-    }
-
-    if (con->settings()->isSlave())
-        return;
-
-    m_editor->messageWidget->animatedShow();
-    m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
-    m_editor->messageWidget->setText(i18n("Connection %1 has been added", con->name()));
-    QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-
-    insertConnection(con);
-}
-
-void ConnectionEditor::connectionRemoved(const QString& connection)
-{
-    QTreeWidgetItemIterator it(m_editor->connectionsWidget);
-
-    while (*it) {
-        if ((*it)->data(0, ConnectionItem::ConnectionPathRole).toString() == connection) {
-            m_editor->messageWidget->animatedShow();
-            m_editor->messageWidget->setMessageType(KMessageWidget::Information);
-            m_editor->messageWidget->setText(i18n("Connection %1 has been removed", (*it)->text(0)));
-            QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-            QTreeWidgetItem * parent = (*it)->parent();
-            delete (*it);
-            if (!parent->childCount()) {
-                delete parent;
-            }
-
-            break;
-        }
-        ++it;
-    }
-}
-
-void ConnectionEditor::connectionUpdated()
-{
-    NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(qobject_cast<NetworkManager::Connection*>(sender())->path());
-
-    QTreeWidgetItemIterator it(m_editor->connectionsWidget);
-
-    while (*it) {
-        if ((*it)->data(0, ConnectionItem::ConnectionIdRole).toString() == connection->uuid()) {
-            (*it)->setText(0, connection->name());
-            m_editor->messageWidget->animatedShow();
-            m_editor->messageWidget->setMessageType(KMessageWidget::Information);
-            m_editor->messageWidget->setText(i18n("Connection %1 has been updated", connection->name()));
-            QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-            break;
-        }
-        ++it;
-    }
-}
-
 void ConnectionEditor::importVpn()
 {
     // get the list of supported extensions
@@ -597,13 +524,16 @@ void ConnectionEditor::importVpn()
 
 void ConnectionEditor::exportVpn()
 {
-    QTreeWidgetItem * currentItem = m_editor->connectionsWidget->currentItem();
-    if (!currentItem)
-        return;
+    const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
 
-    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentItem->data(0, ConnectionItem::ConnectionIdRole).toString());
-    if (!connection)
+    if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
         return;
+    }
+
+    Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentIndex.data(NetworkModel::UuidRole).toString());
+    if (!connection) {
+        return;
+    }
 
     NetworkManager::ConnectionSettings::Ptr connSettings = connection->settings();
 

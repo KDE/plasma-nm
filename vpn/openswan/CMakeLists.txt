@@ -12,7 +12,8 @@ kservice_desktop_to_json(plasmanetworkmanagement_openswanui plasmanetworkmanagem
 
 target_link_libraries(plasmanetworkmanagement_openswanui
     plasmanetworkmanagement-internal
-    ${NETWORKMANAGERQT_LDFLAGS}
+    plasmanetworkmanagement-editor
+    ${NETWORKMANAGERQT5_LDFLAGS}
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus

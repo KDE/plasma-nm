@@ -27,14 +27,6 @@ import org.kde.networkmanagement 0.1 as PlasmaNM
 Item {
     id: panelIconWidget;
 
-    PlasmaNM.NetworkStatus {
-        id: networkStatus;
-    }
-
-    PlasmaNM.ConnectionIcon {
-        id: connectionIconProvider;
-    }
-
     PlasmaCore.Svg {
         id: svgIcons;
 
@@ -45,43 +37,18 @@ Item {
     PlasmaCore.SvgItem {
         id: connectionIcon;
 
-        anchors.fill: parent;
+        anchors.centerIn: parent
+        width: Math.min(parent.width, parent.height)
+        height: width
         svg: svgIcons;
-        elementId: connectionIconProvider.connectionSvgIcon;
-    }
+        elementId: connectionIconProvider.connectionIcon
 
-    QIconItem {
-        id: hoverIcon;
+        PlasmaComponents.BusyIndicator {
+            id: connectingIndicator;
 
-        width: parent.width/1.5;
-        height: parent.height/1.5;
-        anchors {
-            bottom: parent.bottom;
-            right: parent.right;
-        }
-        icon: connectionIconProvider.connectionIndicatorIcon;
-    }
-
-    PlasmaComponents.BusyIndicator {
-        id: connectingIndicator;
-
-        anchors.fill: parent;
-        running: connectionIconProvider.connecting;
-        visible: running;
-    }
-
-    MouseArea {
-        id: mouseAreaPopup;
-
-        anchors.fill: parent;
-        hoverEnabled: true;
-        onClicked: plasmoid.expanded = !plasmoid.expanded;
-
-        PlasmaCore.ToolTipArea {
-            id: tooltip;
-            anchors.fill: mouseAreaPopup
-            icon: connectionIconProvider.connectionPixmapIcon;
-            subText: networkStatus.activeConnections;
+            anchors.fill: parent;
+            running: connectionIconProvider.connecting;
+            visible: running;
         }
     }
 }

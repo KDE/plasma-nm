@@ -159,11 +159,6 @@ void ConnectionEditor::initializeMenu()
     action = new QAction(i18n("VLAN"), this);
     action->setData(NetworkManager::ConnectionSettings::Vlan);
     m_menu->addAction(action);
-#if NM_CHECK_VERSION(0, 9, 9)
-    action = new QAction(i18n("Team"), this);
-    action->setData(NetworkManager::ConnectionSettings::Team);
-    m_menu->addAction(action);
-#endif
 
     action = m_menu->addSeparator();
     action->setText(i18n("VPN"));

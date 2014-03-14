@@ -45,12 +45,6 @@ if (WITH_MODEMMANAGER_SUPPORT)
         mobileproviders.cpp)
 endif()
 
-if (${NETWORKMANAGERQT_VERSION} VERSION_GREATER 0.9.8.9)
-set(plasmanetworkmanagement_libeditor_SRCS
-    ${plasmanetworkmanagement_libeditor_SRCS}
-    settings/teamwidget.cpp)
-endif()
-
 kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
     settings/ui/802-1x.ui
     settings/ui/bond.ui
@@ -64,7 +58,6 @@ kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
     settings/ui/ipv6.ui
     settings/ui/ppp.ui
     settings/ui/pppoe.ui
-    settings/ui/team.ui
     settings/ui/vlan.ui
     settings/ui/wificonnectionwidget.ui
     settings/ui/wifisecurity.ui
@@ -78,10 +71,6 @@ kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
 
     connectiondetaileditor.ui
 )
-
-# if (${NETWORKMANAGERQT_VERSION} VERSION_GREATER 0.9.8.9)
-#     kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS widgets/ui/team.ui)
-# endif()
 
 kde4_add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})
 target_link_libraries(plasmanetworkmanagement-editor

@@ -37,7 +37,7 @@ PlasmaComponents.ListItem {
 
     property int iconSize: units.iconSizes.medium;
 
-    enabled: true
+    enabled: true;
     height: if (visibleDetails || visiblePasswordDialog)
                 connectionItemBase.height + expandableComponentLoader.height + padding.margins.top + padding.margins.bottom;
             else
@@ -200,10 +200,12 @@ PlasmaComponents.ListItem {
             PlasmaComponents.Button {
                 id: stateChangeButton;
 
-                implicitWidth: minimumWidth + padding.margins.left + padding.margins.right;
-                text:if (ConnectionState == PlasmaNM.Enums.Deactivated)
+                anchors {
+                    verticalCenter: parent.verticalCenter;
+                }
+                text: if (ConnectionState == PlasmaNM.Enums.Deactivated)
                         i18n("Connect");
-                    else
+                      else
                         i18n("Disconnect");
                 visible: connectionItemMouseArea.containsMouse;
 

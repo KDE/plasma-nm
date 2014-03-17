@@ -28,6 +28,7 @@
 #include <NetworkManagerQt/Utils>
 
 #include <Plasma/DataEngine>
+#include <Plasma/DataEngineConsumer>
 
 #include "networkmodel.h"
 #include "plasmanm_export.h"
@@ -135,6 +136,7 @@ private:
     QString m_downloadSource;
     bool m_duplicate;
     Plasma::DataEngine * m_engine;
+    Plasma::DataEngineConsumer * m_dataEngineConsumer;
     NetworkManager::WirelessSetting::NetworkMode m_mode;
     QString m_name;
     QString m_nsp;

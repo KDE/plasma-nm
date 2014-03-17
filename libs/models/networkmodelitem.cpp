@@ -38,8 +38,6 @@
 #include <KLocale>
 #include <KLocalizedString>
 
-// #include <Plasma/DataEngineManager>
-
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/manager.h>
 #include <ModemManagerQt/modem.h>
@@ -51,6 +49,7 @@ NetworkModelItem::NetworkModelItem(QObject* parent)
     , m_deviceState(NetworkManager::Device::UnknownState)
     , m_duplicate(false)
     , m_engine(0)
+    , m_dataEngineConsumer(new Plasma::DataEngineConsumer)
     , m_mode(NetworkManager::WirelessSetting::Infrastructure)
     , m_securityType(NetworkManager::Utils::None)
     , m_signal(0)
@@ -492,8 +491,7 @@ void NetworkModelItem::dataUpdated(const QString& sourceName, const Plasma::Data
 
 void NetworkModelItem::initializeDataEngine()
 {
-    /*
-    Plasma::DataEngineManager::self()->loadEngine("systemmonitor");
+    m_engine = m_dataEngineConsumer->dataEngine("systemmonitor");
 
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
     if (!device) {
@@ -509,12 +507,6 @@ void NetworkModelItem::initializeDataEngine()
     m_downloadSource = QString("network/interfaces/%1/receiver/data").arg(interfaceName);
     m_uploadSource = QString("network/interfaces/%1/transmitter/data").arg(interfaceName);
 
-    Plasma::DataEngine * engine = Plasma::DataEngineManager::self()->engine("systemmonitor");
-    if (engine->isValid() && engine->query(m_downloadSource).empty()) {
-        Plasma::DataEngineManager::self()->unloadEngine("systemmonitor");
-        Plasma::DataEngineManager::self()->loadEngine("systemmonitor");
-    }*/
-
     setUpdateEnabled(true);
 }
 
@@ -525,19 +517,19 @@ void NetworkModelItem::removeDataEngine()
 
 void NetworkModelItem::setUpdateEnabled(bool enabled)
 {
-//     Plasma::DataEngine * engine = Plasma::DataEngineManager::self()->engine("systemmonitor");
-//     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
-//     if (engine->isValid()) {
-//         int interval = 2000;
-//         if (enabled) {
-//             if (device) {
-//                 engine->connectSource(m_downloadSource, this, interval);
-//                 engine->connectSource(m_uploadSource, this, interval);
-//             }
-//         } else {
-//             engine->disconnectSource(m_downloadSource, this);
-//             engine->disconnectSource(m_uploadSource, this);
-//         }
-//     }
-//     m_updateEnabled = enabled;
+    Plasma::DataEngine * engine = m_dataEngineConsumer->dataEngine("systemmonitor");
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
+    if (engine->isValid()) {
+        int interval = 2000;
+        if (enabled) {
+            if (device) {
+                engine->connectSource(m_downloadSource, this, interval);
+                engine->connectSource(m_uploadSource, this, interval);
+            }
+        } else {
+            engine->disconnectSource(m_downloadSource, this);
+            engine->disconnectSource(m_uploadSource, this);
+        }
+    }
+    m_updateEnabled = enabled;
 }

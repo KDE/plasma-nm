@@ -47,7 +47,6 @@ Item {
             left: parent.left;
             top: parent.top;
         }
-        spacing: 3;
 
         SwitchButton {
             id: wifiSwitchButton;
@@ -55,18 +54,10 @@ Item {
             checked: enabled && enabledConnections.wirelessEnabled;
             enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !globalConfig.airplaneModeEnabled;
             icon: checked ? "network-wireless-on" : "network-wireless-off";
-//             tooltipText: checked ? i18n("Wireless enabled") : i18n("Wireless disabled");
 
             onClicked: {
                 handler.enableWireless(!checked);
             }
-        }
-
-        PlasmaCore.SvgItem {
-            width: lineSvg.elementSize("vertical-line").width;
-            height: parent.height;
-            elementId: "vertical-line";
-            svg: lineSvg;
         }
 
         SwitchButton {
@@ -75,18 +66,10 @@ Item {
             checked: enabled && enabledConnections.wwanEnabled;
             enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !globalConfig.airplaneModeEnabled;
             icon: checked ? "network-mobile-on" : "network-mobile-off";
-//             tooltipText: checked ? i18n("Mobile broadband enabled") : i18n("Mobile broadband disabled");
 
             onClicked: {
                 handler.enableWwan(!checked);
             }
-        }
-
-        PlasmaCore.SvgItem {
-            width: lineSvg.elementSize("vertical-line").width;
-            height: parent.height;
-            elementId: "vertical-line";
-            svg: lineSvg;
         }
 
         SwitchButton {
@@ -94,7 +77,6 @@ Item {
 
             checked: globalConfig.airplaneModeEnabled;
             icon: checked ? "flightmode-on" : "flightmode-off";
-//             tooltipText: checked ? i18n("Airplane mode enabled") : i18n("Airplane mode disabled");
 
             onClicked: {
                 handler.enableAirplaneMode(!checked);

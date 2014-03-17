@@ -46,12 +46,6 @@ FocusScope {
         anchors.fill: parent
     }
 
-    Item {
-        id: sizes;
-
-        property int iconSize: units.iconSizes.medium;
-        property int itemSize: iconSize + padding.margins.top + padding.margins.bottom;
-    }
 
     Toolbar {
         id: toolbar;

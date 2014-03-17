@@ -35,6 +35,8 @@ ListItem {
     property bool visibleDetails: false;
     property bool visiblePasswordDialog: false;
 
+    property int iconSize: units.iconSizes.medium;
+
     enabled: true
     height: if (visibleDetails || visiblePasswordDialog)
                 connectionItemBase.height + expandableComponentLoader.height + padding.margins.top + padding.margins.bottom;
@@ -62,7 +64,7 @@ ListItem {
         PlasmaCore.SvgItem {
             id: connectionSvgIcon;
 
-            width: sizes.iconSize;
+            width: iconSize;
             height: width;
             anchors {
                 left: parent.left
@@ -110,7 +112,7 @@ ListItem {
         PlasmaComponents.BusyIndicator {
             id: connectingIndicator;
 
-            width: sizes.iconSize;
+            width: iconSize;
             height: width;
             anchors {
                 right: parent.right;
@@ -133,7 +135,7 @@ ListItem {
             PlasmaCore.SvgItem {
                 id: openDetailsButton;
 
-                height: sizes.iconSize;
+                height: iconSize;
                 width: height;
                 anchors {
                     verticalCenter: parent.verticalCenter;
@@ -166,7 +168,7 @@ ListItem {
             PlasmaCore.SvgItem {
                 id: configureButton;
 
-                height: sizes.iconSize;
+                height: iconSize;
                 width: Uuid ? height: 0;
                 anchors {
                     verticalCenter: parent.verticalCenter;
@@ -441,11 +443,11 @@ ListItem {
             return result;
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
             if (Type == PlasmaNM.Enums.Wired) {
-                return i18n("Connected") + ", â¬‡ " + Download + ", â¬† " + Upload;
+                return i18n("Connected") + ", ⬇ " + Download + ", ⬆ " + Upload;
             } else if (Type == PlasmaNM.Enums.Wireless) {
-                return i18n("Connected") + ", â¬‡ " + Download + ", â¬† " + Upload;
+                return i18n("Connected") + ", ⬇ " + Download + ", ⬆ " + Upload;
             } else if (Type == PlasmaNM.Enums.Gsm || Type == PlasmaNM.Enums.Cdma) {
-                return i18n("Connected") + ", â¬‡ " + Download + ", â¬† " + Upload;
+                return i18n("Connected") + ", ⬇ " + Download + ", ⬆ " + Upload;
             } else {
                 return i18n("Connected");
             }

@@ -32,35 +32,6 @@
 NetworkModel::NetworkModel(QObject* parent)
     : QAbstractListModel(parent)
 {
-    QHash<int, QByteArray> roles = roleNames();
-    roles[ConnectionDetailsRole] = "ConnectionDetails";
-    roles[ConnectionIconRole] = "ConnectionIcon";
-    roles[ConnectionPathRole] = "ConnectionPath";
-    roles[ConnectionStateRole] = "ConnectionState";
-    roles[DevicePathRole] = "DevicePath";
-    roles[DeviceStateRole] = "DeviceState";
-    roles[DownloadRole] = "Download";
-    roles[DuplicateRole] = "Duplicate";
-    roles[ItemUniqueNameRole] = "ItemUniqueName";
-    roles[ItemTypeRole] = "ItemType";
-    roles[LastUsedRole] = "LastUsed";
-    roles[LastUsedDateOnlyRole] = "LastUsedDateOnly";
-    roles[NameRole] = "Name";
-    roles[SectionRole] = "Section";
-    roles[SignalRole] = "Signal";
-    roles[SlaveRole] = "Slave";
-    roles[SsidRole] = "Ssid";
-    roles[SpecificPathRole] = "SpecificPath";
-    roles[SecurityTypeRole] = "SecurityType";
-    roles[SecurityTypeStringRole] = "SecurityTypeString";
-    roles[TimeStampRole] = "TimeStamp";
-    roles[TypeRole] = "Type";
-    roles[UniRole] = "Uni";
-    roles[UploadRole] = "Upload";
-    roles[UuidRole] = "Uuid";
-    roles[VpnState] = "VpnState";
-    setRoleNames(roles);
-
     initialize();
 }
 
@@ -144,6 +115,39 @@ int NetworkModel::rowCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent);
     return m_list.count();
+}
+
+QHash< int, QByteArray > NetworkModel::roleNames() const
+{
+    QHash<int, QByteArray> roles = QAbstractListModel::roleNames();
+    roles[ConnectionDetailsRole] = "ConnectionDetails";
+    roles[ConnectionIconRole] = "ConnectionIcon";
+    roles[ConnectionPathRole] = "ConnectionPath";
+    roles[ConnectionStateRole] = "ConnectionState";
+    roles[DevicePathRole] = "DevicePath";
+    roles[DeviceStateRole] = "DeviceState";
+    roles[DownloadRole] = "Download";
+    roles[DuplicateRole] = "Duplicate";
+    roles[ItemUniqueNameRole] = "ItemUniqueName";
+    roles[ItemTypeRole] = "ItemType";
+    roles[LastUsedRole] = "LastUsed";
+    roles[LastUsedDateOnlyRole] = "LastUsedDateOnly";
+    roles[NameRole] = "Name";
+    roles[SectionRole] = "Section";
+    roles[SignalRole] = "Signal";
+    roles[SlaveRole] = "Slave";
+    roles[SsidRole] = "Ssid";
+    roles[SpecificPathRole] = "SpecificPath";
+    roles[SecurityTypeRole] = "SecurityType";
+    roles[SecurityTypeStringRole] = "SecurityTypeString";
+    roles[TimeStampRole] = "TimeStamp";
+    roles[TypeRole] = "Type";
+    roles[UniRole] = "Uni";
+    roles[UploadRole] = "Upload";
+    roles[UuidRole] = "Uuid";
+    roles[VpnState] = "VpnState";
+
+    return roles;
 }
 
 void NetworkModel::initialize()

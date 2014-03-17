@@ -32,6 +32,7 @@ FocusScope {
     PlasmaNM.NetworkModel {
         id: connectionModel;
     }
+
     PlasmaNM.AppletProxyModel {
         id: appletProxyModel;
 
@@ -45,7 +46,6 @@ FocusScope {
         opacity: 0
         anchors.fill: parent
     }
-
 
     Toolbar {
         id: toolbar;
@@ -71,7 +71,6 @@ FocusScope {
         currentIndex: -1;
         interactive: true;
         boundsBehavior: Flickable.StopAtBounds;
-        section.property: showSections ? "Section" : "";
         section.delegate: Header { text: section }
         delegate: ConnectionItem {
             onStateChanged: {

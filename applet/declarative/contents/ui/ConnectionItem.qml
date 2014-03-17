@@ -25,7 +25,7 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.networkmanagement 0.1 as PlasmaNM
 
 
-ListItem {
+PlasmaComponents.ListItem {
     id: connectionItem;
 
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
@@ -81,7 +81,7 @@ ListItem {
             anchors {
                 left: connectionSvgIcon.right;
                 leftMargin: padding.margins.left;
-                right: !connectionItem.containsMouse ? connectingIndicator.left : buttonRow.left;
+                right: !connectionItemMouseArea.containsMouse ? connectingIndicator.left : buttonRow.left;
                 top: parent.top;
                 topMargin: 0;
             }
@@ -98,7 +98,7 @@ ListItem {
             anchors {
                 left: connectionSvgIcon.right;
                 leftMargin: padding.margins.left;
-                right: !connectionItem.containsMouse ? connectingIndicator.left : buttonRow.left;
+                right: !connectionItemMouseArea.containsMouse ? connectingIndicator.left : buttonRow.left;
                 top: connectionNameLabel.bottom;
             }
 
@@ -120,7 +120,7 @@ ListItem {
                 verticalCenter: parent.verticalCenter;
             }
             running: ConnectionState == PlasmaNM.Enums.Activating;
-            visible: running && !connectionItem.containsMouse;
+            visible: running && !connectionItemMouseArea.containsMouse;
         }
 
         Row {
@@ -140,7 +140,7 @@ ListItem {
                 anchors {
                     verticalCenter: parent.verticalCenter;
                 }
-                visible: connectionItem.containsMouse;
+                visible: connectionItemMouseArea.containsMouse;
                 svg: svgNetworkIcons;
                 elementId: openDetailsButtonMouse.containsMouse ? "showinfo-hover" : "showinfo";
 
@@ -175,7 +175,7 @@ ListItem {
                 }
                 svg: svgNetworkIcons;
                 elementId: configureButtonMouse.containsMouse ? "edit-hover" : "edit";
-                visible: connectionItem.containsMouse;
+                visible: connectionItemMouseArea.containsMouse;
 
                 MouseArea {
                     id: configureButtonMouse;
@@ -205,7 +205,7 @@ ListItem {
                         i18n("Connect");
                     else
                         i18n("Disconnect");
-                visible: connectionItem.containsMouse;
+                visible: connectionItemMouseArea.containsMouse;
 
                 onClicked: {
                     visibleDetails = false;
@@ -228,6 +228,16 @@ ListItem {
                 }
             }
         }
+    }
+
+    MouseArea {
+        id: connectionItemMouseArea;
+
+        anchors {
+            fill: parent;
+        }
+        hoverEnabled: true;
+        propagateComposedEvents: true
     }
 
     Loader {
@@ -265,8 +275,10 @@ ListItem {
                 }
             }
 
-            PlasmaComponents.TabBar {
-                id: detailsTabBar;
+            Item {
+                id: detailsContent;
+
+                height: detailsText.height;
 
                 anchors {
                     left: parent.left;
@@ -274,54 +286,9 @@ ListItem {
                     top: detailsSeparator.bottom;
                     topMargin: padding.margins.top;
                 }
-                visible: DevicePath && ConnectionState == PlasmaNM.Enums.Activated && Type != PlasmaNM.Enums.Vpn;
-
-//                 PlasmaComponents.TabButton {
-//                     id: speedTabButton;
-//                     text: i18n("Speed");
-//                     visible: DevicePath && ConnectionState == PlasmaNM.Enums.Activated && Type != PlasmaNM.Enums.Vpn;
-//                 }
-
-                PlasmaComponents.TabButton {
-                    id: detailsTabButton;
-                    text: i18n("Details");
-                }
-
-                Component.onCompleted: {
-//                     if (!speedTabButton.visible) {
-                        currentTab = detailsTabButton;
-//                     }
-                }
-            }
-
-            Item {
-                id: detailsContent;
-
-//                 height: if (detailsTabBar.currentTab == speedTabButton) trafficMonitorTab.height;
-//                         else detailsTextTab.height;
-                height: detailsTextTab.height;
-
-                anchors {
-                    left: parent.left;
-                    right: parent.right;
-                    top: detailsTabBar.visible ? detailsTabBar.bottom : detailsSeparator.bottom;
-                    topMargin: padding.margins.top;
-                }
-
-//                 TrafficMonitor {
-//                     id: trafficMonitorTab;
-//                     anchors {
-//                         left: parent.left;
-//                         right: parent.right;
-//                         top: parent.top;
-//                     }
-//                     device: DevicePath;
-//                     visible: detailsTabBar.currentTab == speedTabButton &&
-//                              DevicePath && ConnectionState == PlasmaNM.Enums.Activated && Type != PlasmaNM.Enums.Vpn
-//                 }
 
                 TextEdit {
-                    id: detailsTextTab;
+                    id: detailsText;
 
                     height: implicitHeight;
                     anchors {
@@ -335,7 +302,6 @@ ListItem {
                     wrapMode: TextEdit.WordWrap;
                     textFormat: Text.RichText;
                     text: ConnectionDetails;
-                    visible: detailsTabBar.currentTab == detailsTabButton
                 }
             }
         }

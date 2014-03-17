@@ -74,6 +74,7 @@ public:
 
     int rowCount(const QModelIndex& parent) const;
     QVariant data(const QModelIndex& index, int role) const;
+    virtual QHash< int, QByteArray > roleNames() const;
 
 public Q_SLOTS:
     void onItemUpdated();
@@ -104,7 +105,6 @@ private Q_SLOTS:
     void wirelessNetworkReferenceApChanged(const QString& accessPoint);
 
     void initialize();
-
 private:
     NetworkItemsList m_list;
 

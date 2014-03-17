@@ -30,7 +30,6 @@ Item {
 
     property int minimumWidth: 300;
     property int minimumHeight: 300;
-    property bool showSections: false;
 
     PlasmaNM.NetworkStatus {
         id: networkStatus;
@@ -52,6 +51,7 @@ Item {
 
 //     signal sectionChanged();
 
+//  TODO
     PlasmaNM.GlobalConfig {
         id: globalConfig;
 
@@ -70,6 +70,8 @@ Item {
         anchors.fill: parent;
         focus: true;
     }
+
+    // TODO
 /*
     Component.onCompleted: {
         configChanged();
@@ -83,6 +85,5 @@ Item {
         var speedUnit;
         speedUnit = plasmoid.readConfig("networkSpeedUnit");
         globalConfig.setNetworkSpeedUnit(speedUnit);
-        showSections = plasmoid.readConfig("showSections");
     }*/
 }

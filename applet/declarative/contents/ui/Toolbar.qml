@@ -48,6 +48,7 @@ Item {
             top: parent.top;
         }
 
+        // TODO - missing global config
         SwitchButton {
             id: wifiSwitchButton;
 

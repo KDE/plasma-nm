@@ -18,7 +18,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// #include "connectiondetaileditor.h"
+#include "connectiondetaileditor.h"
 #include "handler.h"
 #include "uiutils.h"
 
@@ -75,6 +75,7 @@ void Handler::activateConnection(const QString& connection, const QString& devic
             const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin",
                                                                           QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()));
             if (services.isEmpty()) {
+                // TODO
                 kWarning() << "VPN" << vpnSetting->serviceType() << "not found, skipping";
 //                 KNotification *notification = new KNotification("MissingVpnPlugin", KNotification::Persistent, this);
 //                 notification->setComponentData(KComponentData("networkmanagement"));
@@ -146,6 +147,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         m_tmpDevicePath = device;
         m_tmpSpecificPath = specificObject;
 
+        // TODO
 //         QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(settings, 0, 0, true);
 //         editor->show();
 //         KWindowSystem::setState(editor->winId(), NET::KeepAbove);

@@ -117,7 +117,6 @@ if (MODEMMANAGERQT5_FOUND)
     macro_log_feature(MOBILEBROADBANDPROVIDERINFO_FOUND "mobile-broadband-provider-info" "Database of mobile broadband service providers" "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders" FALSE "" "Needed for Mobile Connection Wizard support in Broadband Modem Management")
 endif()
 pkg_check_modules(NETWORKMANAGER REQUIRED NetworkManager)
-pkg_check_modules(QTNETWORK REQUIRED QtNetwork)
 
 add_definitions(
     -DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT}
@@ -136,7 +135,6 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/
-                    ${QTNETWORK_INCLUDE_DIRS}
                     if (MODEMMANAGERQT5_FOUND)
                         ${MODEMMANAGER_INCLUDE_DIRS}
                         ${MODEMMANAGERQT5_INCLUDE_DIRS}

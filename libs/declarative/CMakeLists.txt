@@ -1,5 +1,4 @@
-include_directories(${CMAKE_SOURCE_DIR}/libs
-                    ${CMAKE_SOURCE_DIR}/libs/models)
+include_directories(${CMAKE_SOURCE_DIR}/libs/models)
 
 set(plasma_networkmanagement_qml_plugins_SRCS
    availabledevices.cpp

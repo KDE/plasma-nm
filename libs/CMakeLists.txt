@@ -31,4 +31,5 @@ target_link_libraries(plasmanetworkmanagement-internal
 
 install(TARGETS plasmanetworkmanagement-internal ${INSTALL_TARGETS_DEFAULT_ARGS})
 
+add_subdirectory(declarative)
 add_subdirectory(editor)

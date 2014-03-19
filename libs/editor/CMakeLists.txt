@@ -14,7 +14,6 @@ set(plasmanetworkmanagement_libeditor_SRCS
     settings/pppwidget.cpp
     settings/security802-1x.cpp
     settings/vlanwidget.cpp
-    settings/teamwidget.cpp
     settings/wificonnectionwidget.cpp
     settings/wifisecurity.cpp
     settings/wimaxwidget.cpp
@@ -44,6 +43,12 @@ if (WITH_MODEMMANAGER_SUPPORT)
         ${plasmanetworkmanagement_libeditor_SRCS}
         widgets/mobileconnectionwizard.cpp
         mobileproviders.cpp)
+endif()
+
+if (${NETWORKMANAGER_VERSION} VERSION_EQUAL 0.9.9.0 OR ${NETWORKMANAGER_VERSION} VERSION_GREATER 0.9.9.0)
+set(plasmanetworkmanagement_libeditor_SRCS
+    ${plasmanetworkmanagement_libeditor_SRCS}
+    settings/teamwidget.cpp)
 endif()
 
 qt5_wrap_ui(plasmanetworkmanagement_libeditor_SRCS

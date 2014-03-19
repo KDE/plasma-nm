@@ -21,13 +21,8 @@
 #ifndef PLASMA_NM_DEBUG_H
 #define PLASMA_NM_DEBUG_H
 
-#include <KDebug>
+#include <QLoggingCategory>
 
-int debugArea();
-int rawDataDebugArea();
-
-#define nmDebug() kDebug(debugArea())
-#define nmWarning() kWarning(debugArea())
-#define nmRawDebug() kDebug(rawDataDebugArea())
+Q_DECLARE_LOGGING_CATEGORY(PLASMA_NM)
 
 #endif // PLASMA_NM_DEBUG_H

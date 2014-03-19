@@ -20,14 +20,4 @@
 
 #include "debug.h"
 
-int debugArea()
-{
-    static int area = KDebug::registerArea("Plasma-nm", false);
-    return area;
-}
-
-int rawDataDebugArea()
-{
-    static int rd_area = KDebug::registerArea("Plasma-nm (raw data)", false);
-    return rd_area;
-}
+Q_LOGGING_CATEGORY(PLASMA_NM, "plasma-nm")

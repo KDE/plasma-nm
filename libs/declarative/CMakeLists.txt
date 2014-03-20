@@ -25,5 +25,5 @@ target_link_libraries(plasmanetworkmanagementplugins
     KF5::WindowSystem
 )
 
-install(TARGETS plasmanetworkmanagementplugins DESTINATION ${QML_INSTALL_DIR}/org/kde/networkmanagement)
-install(FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/networkmanagement)
+install(TARGETS plasmanetworkmanagementplugins DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/networkmanagement)
+install(FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/networkmanagement)

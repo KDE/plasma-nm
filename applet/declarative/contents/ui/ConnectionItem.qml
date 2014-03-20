@@ -87,7 +87,7 @@ PlasmaComponents.ListItem {
             }
             text: ItemUniqueName;
             elide: Text.ElideRight;
-            font.weight: ConnectionState == PlasmaNM.Enums.Activated || Uuid ? Font.DemiBold : Font.Normal;
+            font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal;
             font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false;
         }
 
@@ -103,7 +103,7 @@ PlasmaComponents.ListItem {
             }
 
             font.pointSize: theme.smallestFont.pointSize;
-            color: "#99"+(theme.textColor.toString().substr(1))
+            opacity: 0.6
             text: itemText();
 
             elide: Text.ElideRight;
@@ -132,6 +132,8 @@ PlasmaComponents.ListItem {
             }
             spacing: 8;
 
+            visible: connectionItemMouseArea.containsMouse
+
             PlasmaCore.SvgItem {
                 id: openDetailsButton;
 
@@ -140,7 +142,6 @@ PlasmaComponents.ListItem {
                 anchors {
                     verticalCenter: parent.verticalCenter;
                 }
-                visible: connectionItemMouseArea.containsMouse;
                 svg: svgNetworkIcons;
                 elementId: openDetailsButtonMouse.containsMouse ? "showinfo-hover" : "showinfo";
 
@@ -175,7 +176,6 @@ PlasmaComponents.ListItem {
                 }
                 svg: svgNetworkIcons;
                 elementId: configureButtonMouse.containsMouse ? "edit-hover" : "edit";
-                visible: connectionItemMouseArea.containsMouse;
 
                 MouseArea {
                     id: configureButtonMouse;
@@ -207,7 +207,6 @@ PlasmaComponents.ListItem {
                         i18n("Connect");
                       else
                         i18n("Disconnect");
-                visible: connectionItemMouseArea.containsMouse;
 
                 onClicked: {
                     visibleDetails = false;

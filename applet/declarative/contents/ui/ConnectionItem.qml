@@ -122,7 +122,9 @@ ListItem {
             }
             spacing: 8;
 
-            visible: connectionItemMouseArea.containsMouse;
+            opacity: connectionItemMouseArea.containsMouse ? 1 : 0
+            visible: opacity == 0
+            Behavior on opacity { NumberAnimation { duration: 300 } }
 
             PlasmaCore.SvgItem {
                 id: openDetailsButton;

@@ -21,7 +21,7 @@
 import QtQuick 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as Components
-import org.kde.networkmanagement 0.1 as PlasmaNM
+import org.kde.plasma.networkmanagement 0.1 as PlasmaNM
 
 FocusScope {
 

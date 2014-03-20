@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 
 #warning "Translations for kde-nm-connection-editor disabled"
     //KGlobal::insertCatalog("libplasmanetworkmanagement-editor");  // setting widgets
-    //KGlobal::insertCatalog("plasma_applet_org.kde.networkmanagement");  // mobile wizard, UiUtils, ...
+    //KGlobal::insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard, UiUtils, ...
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     if(args->count()) {

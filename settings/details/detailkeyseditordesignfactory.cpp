@@ -25,7 +25,7 @@
 
 #include <KGlobal>
 
-//static const KCatalogLoader loader(QLatin1String("plasma_applet_org.kde.networkmanagement"));
+//static const KCatalogLoader loader(QLatin1String("plasma_applet_org.kde.plasma.networkmanagement"));
 
 DetailKeysEditorDesignerFactory::DetailKeysEditorDesignerFactory(QObject *parent)
 : QObject(parent)

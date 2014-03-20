@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Network Management
+Name=Networks
 Name[bs]=Upravljanje mrežom
 Name[ca]=Gestió de la xarxa
 Name[cs]=Správa sítě

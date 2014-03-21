@@ -30,7 +30,7 @@ Item {
 
     property int minimumWidth: 300;
     property int minimumHeight: 300;
-    property bool showSections: false;
+    property bool showSections: true;
 
     PlasmaNM.NetworkStatus {
         id: networkStatus;

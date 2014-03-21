@@ -127,42 +127,10 @@ ListItem {
             Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
 
             PlasmaCore.SvgItem {
-                id: openDetailsButton;
-
-                height: sizes.iconSize;
-                width: height;
-                anchors {
-                    verticalCenter: parent.verticalCenter;
-                }
-                svg: svgNetworkIcons;
-                elementId: openDetailsButtonMouse.containsMouse ? "showinfo-hover" : "showinfo";
-
-                MouseArea {
-                    id: openDetailsButtonMouse;
-                    anchors {
-                        bottom: parent.bottom;
-                        left: parent.left;
-                        right: parent.right;
-                        top: parent.top;
-                        bottomMargin: -4;
-                        leftMargin: -4;
-                        rightMargin: -4;
-                        topMargin: -4;
-                    }
-                    hoverEnabled: true;
-
-                    onClicked: {
-                        visiblePasswordDialog = false;
-                        visibleDetails = !visibleDetails;
-                    }
-                }
-            }
-
-            PlasmaCore.SvgItem {
                 id: configureButton;
 
                 height: sizes.iconSize;
-                width: Uuid ? height: 0;
+                width: height;
                 anchors {
                     verticalCenter: parent.verticalCenter;
                 }
@@ -185,6 +153,35 @@ ListItem {
 
                     onClicked: {
                         handler.editConnection(Uuid);
+                    }
+                }
+            }
+
+            PlasmaCore.SvgItem {
+                id: openDetailsButton;
+
+                height: iconSize;
+                width: height;
+                anchors {
+                    verticalCenter: parent.verticalCenter;
+                }
+                svg: svgNetworkIcons;
+                elementId: openDetailsButtonMouse.containsMouse ? "showinfo-hover" : "showinfo";
+
+                MouseArea {
+                    id: openDetailsButtonMouse;
+                    anchors {
+                        bottom: parent.bottom;
+                        left: parent.left;
+                        right: parent.right;
+                        top: parent.top;
+                        margins: -4;
+                    }
+                    hoverEnabled: true;
+
+                    onClicked: {
+                        visiblePasswordDialog = false;
+                        visibleDetails = !visibleDetails;
                     }
                 }
             }

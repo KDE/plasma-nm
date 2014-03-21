@@ -82,8 +82,7 @@ PlasmaComponents.ListItem {
                 left: connectionSvgIcon.right;
                 leftMargin: padding.margins.left;
                 right: !connectionItemMouseArea.containsMouse ? connectingIndicator.left : buttonRow.left;
-                top: parent.top;
-                topMargin: 0;
+                bottom: connectionSvgIcon.verticalCenter
             }
             text: ItemUniqueName;
             elide: Text.ElideRight;

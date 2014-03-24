@@ -55,7 +55,9 @@ int main(int argc, char *argv[])
     options.add("+[uuid]", ki18n("Edit connection"));
     KCmdLineArgs::addCmdLineOptions(options);
 
-    KApplication app;
+    QApplication app(KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv());
+    app.setApplicationName("kde-nm-connection-editor");
+    app.setApplicationVersion(PLASMA_NM_VERSION);
 
 #warning "Translations for kde-nm-connection-editor disabled"
     //KGlobal::insertCatalog("libplasmanetworkmanagement-editor");  // setting widgets
@@ -75,13 +77,9 @@ int main(int argc, char *argv[])
             return 1;
         }
     } else {
-        if (app.isSessionRestored()) {
-            kRestoreMainWindows<ConnectionEditor>();
-        } else {
-            ConnectionEditor * editor = new ConnectionEditor();
-            editor->setWindowIcon(KIcon("network-defaultroute"));
-            editor->show();
-        }
+        ConnectionEditor * editor = new ConnectionEditor();
+        editor->setWindowIcon(KIcon("network-defaultroute"));
+        editor->show();
     }
 
     return app.exec();

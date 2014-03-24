@@ -29,7 +29,7 @@
 #include <KStandardDirs>
 #include <KUrlRequester>
 #include <KLineEdit>
-#include <KUrl>
+#include <QUrl>
 
 #include "nm-openvpn-service.h"
 
@@ -69,7 +69,7 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
     requesters << d->ui.x509CaFile << d->ui.x509Cert << d->ui.x509Key << d->ui.pskSharedKey << d->ui.passCaFile
                << d->ui.x509PassCaFile << d->ui.x509PassCert << d->ui.x509PassKey;
     foreach (const KUrlRequester * requester, requesters) {
-        connect(requester, SIGNAL(urlSelected(KUrl)), this, SLOT(updateStartDir(KUrl)));
+        connect(requester, SIGNAL(urlSelected(QUrl)), this, SLOT(updateStartDir(QUrl)));
     }
 
     connect(d->ui.x509KeyPasswordStorage, SIGNAL(currentIndexChanged(int)), this, SLOT(x509KeyPasswordStorageChanged(int)));
@@ -104,9 +104,9 @@ void OpenVpnSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
     if ( cType == QLatin1String( NM_OPENVPN_CONTYPE_PASSWORD_TLS ) ) {
         d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::CertsPassword);
         d->ui.x509PassUsername->setText( dataMap[NM_OPENVPN_KEY_USERNAME]);
-        d->ui.x509PassCaFile->setUrl( KUrl(dataMap[NM_OPENVPN_KEY_CA]) );
-        d->ui.x509PassCert->setUrl(KUrl( dataMap[NM_OPENVPN_KEY_CERT] ));
-        d->ui.x509PassKey->setUrl(KUrl( dataMap[NM_OPENVPN_KEY_KEY] ));
+        d->ui.x509PassCaFile->setUrl( QUrl::fromLocalFile(dataMap[NM_OPENVPN_KEY_CA]) );
+        d->ui.x509PassCert->setUrl(QUrl::fromLocalFile( dataMap[NM_OPENVPN_KEY_CERT] ));
+        d->ui.x509PassKey->setUrl(QUrl::fromLocalFile( dataMap[NM_OPENVPN_KEY_KEY] ));
     } else if ( cType == QLatin1String( NM_OPENVPN_CONTYPE_STATIC_KEY ) ) {
         d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::Psk );
         d->ui.pskSharedKey->setText( dataMap[NM_OPENVPN_KEY_STATIC_KEY]);
@@ -128,12 +128,12 @@ void OpenVpnSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
     } else if ( cType == QLatin1String( NM_OPENVPN_CONTYPE_PASSWORD ) ) {
         d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::Password );
         d->ui.passUserName->setText( dataMap[NM_OPENVPN_KEY_USERNAME] );
-        d->ui.passCaFile->setUrl(KUrl( dataMap[NM_OPENVPN_KEY_CA] ));
+        d->ui.passCaFile->setUrl(QUrl::fromLocalFile( dataMap[NM_OPENVPN_KEY_CA] ));
     } else if ( cType == QLatin1String( NM_OPENVPN_CONTYPE_TLS ) ) {
         d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::Certificates );
-        d->ui.x509CaFile->setUrl(KUrl( dataMap[NM_OPENVPN_KEY_CA] ));
-        d->ui.x509Cert->setUrl(KUrl( dataMap[NM_OPENVPN_KEY_CERT] ));
-        d->ui.x509Key->setUrl(KUrl( dataMap[NM_OPENVPN_KEY_KEY] ));
+        d->ui.x509CaFile->setUrl(QUrl::fromLocalFile( dataMap[NM_OPENVPN_KEY_CA] ));
+        d->ui.x509Cert->setUrl(QUrl::fromLocalFile( dataMap[NM_OPENVPN_KEY_CERT] ));
+        d->ui.x509Key->setUrl(QUrl::fromLocalFile( dataMap[NM_OPENVPN_KEY_KEY] ));
     }
 
     d->ui.gateway->setText( dataMap[NM_OPENVPN_KEY_REMOTE] );
@@ -255,13 +255,13 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
     return setting.toMap();
 }
 
-void OpenVpnSettingWidget::updateStartDir(const KUrl & url)
+void OpenVpnSettingWidget::updateStartDir(const QUrl & url)
 {
     QList<KUrlRequester *> requesters;
     requesters << d->ui.x509CaFile << d->ui.x509Cert << d->ui.x509Key << d->ui.pskSharedKey << d->ui.passCaFile << d->ui.x509PassCaFile
                << d->ui.x509PassCert << d->ui.x509PassKey;
     foreach (KUrlRequester * requester, requesters) {
-        requester->setStartDir(KUrl(url.directory()));
+        requester->setStartDir(QUrl(url.url(QUrl::RemoveFilename | QUrl::StripTrailingSlash)));
     }
 }
 

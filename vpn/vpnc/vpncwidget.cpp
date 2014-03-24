@@ -23,7 +23,7 @@
 #include "ui_vpnc.h"
 #include "nm-vpnc-service.h"
 
-#include <KUrl>
+#include <QUrl>
 
 #include <QDBusMetaType>
 #include <QDebug>
@@ -103,7 +103,7 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     if (data.value(NM_VPNC_KEY_AUTHMODE) == QLatin1String("hybrid")) {
         m_ui->useHybridAuth->setChecked(true);
-        m_ui->caFile->setUrl(KUrl(data.value(NM_VPNC_KEY_CA_FILE)));
+        m_ui->caFile->setUrl(QUrl(data.value(NM_VPNC_KEY_CA_FILE)));
     }
 }
 

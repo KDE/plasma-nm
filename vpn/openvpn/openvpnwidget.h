@@ -30,7 +30,7 @@
 
 #include <NetworkManagerQt/VpnSetting>
 
-class KUrl;
+class QUrl;
 class KLineEdit;
 class KComboBox;
 
@@ -47,7 +47,7 @@ public:
     virtual bool isValid() const;
 
 private Q_SLOTS:
-    void updateStartDir(const KUrl &);
+    void updateStartDir(const QUrl &);
     void x509KeyPasswordStorageChanged(int);
     void passPasswordStorageChanged(int);
     void x509PassKeyPasswordStorageChanged(int);

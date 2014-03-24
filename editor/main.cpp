@@ -27,7 +27,7 @@
 #include <k4aboutdata.h>
 #include <KCmdLineArgs>
 #include <KMainWindow>
-#include <KUrl>
+#include <QUrl>
 #include <KIcon>
 
 #include <NetworkManagerQt/Settings>

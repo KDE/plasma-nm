@@ -27,7 +27,7 @@
 #include <KProcess>
 #include <KStandardDirs>
 #include <KAcceleratorManager>
-#include <KUrl>
+#include <QUrl>
 
 class OpenVpnAdvancedWidget::Private {
 public:
@@ -210,7 +210,7 @@ void OpenVpnAdvancedWidget::loadConfig()
         m_ui->subjectMatch->setText(dataMap[NM_OPENVPN_KEY_TLS_REMOTE]);
     }
     m_ui->useExtraTlsAuth->setChecked(!dataMap[NM_OPENVPN_KEY_TA].isEmpty());
-    m_ui->kurlTlsAuthKey->setUrl(KUrl(dataMap[NM_OPENVPN_KEY_TA]) );
+    m_ui->kurlTlsAuthKey->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENVPN_KEY_TA]) );
     if (dataMap.contains(NM_OPENVPN_KEY_TA_DIR)) {
         const uint tlsAuthDirection = dataMap[NM_OPENVPN_KEY_TA_DIR].toUInt();
         m_ui->cboDirection->setCurrentIndex(tlsAuthDirection + 1);
@@ -322,7 +322,7 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
         data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE), m_ui->subjectMatch->text());
     }
     if (m_ui->useExtraTlsAuth->isChecked()) {
-        KUrl tlsAuthKeyUrl = m_ui->kurlTlsAuthKey->url();
+        QUrl tlsAuthKeyUrl = m_ui->kurlTlsAuthKey->url();
         if (!tlsAuthKeyUrl.isEmpty()) {
             data.insert(QLatin1String(NM_OPENVPN_KEY_TA), tlsAuthKeyUrl.path());
         }

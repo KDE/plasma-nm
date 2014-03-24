@@ -21,7 +21,7 @@
 
 #include "openconnectwidget.h"
 #include <KDialog>
-#include <KUrl>
+#include <QUrl>
 
 #include "ui_openconnectprop.h"
 
@@ -64,12 +64,12 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
     const NMStringMap dataMap = d->setting->data();
 
     d->ui.leGateway->setText(dataMap[NM_OPENCONNECT_KEY_GATEWAY]);
-    d->ui.leCaCertificate->setUrl(KUrl(dataMap[NM_OPENCONNECT_KEY_CACERT]));
+    d->ui.leCaCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_CACERT]));
     d->ui.leProxy->setText(dataMap[NM_OPENCONNECT_KEY_PROXY]);
     d->ui.chkAllowTrojan->setChecked(dataMap[NM_OPENCONNECT_KEY_CSD_ENABLE] == "yes");
-    d->ui.leCsdWrapperScript->setUrl(KUrl(dataMap[NM_OPENCONNECT_KEY_CSD_WRAPPER]));
-    d->ui.leUserCert->setUrl(KUrl(dataMap[NM_OPENCONNECT_KEY_USERCERT]));
-    d->ui.leUserPrivateKey->setUrl(KUrl(dataMap[NM_OPENCONNECT_KEY_PRIVKEY]));
+    d->ui.leCsdWrapperScript->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_CSD_WRAPPER]));
+    d->ui.leUserCert->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_USERCERT]));
+    d->ui.leUserPrivateKey->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_PRIVKEY]));
     d->ui.chkUseFsid->setChecked(dataMap[NM_OPENCONNECT_KEY_PEM_PASSPHRASE_FSID] == "yes");
 }
 

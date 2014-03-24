@@ -50,7 +50,7 @@
 #include <KStandardDirs>
 #include <KFileDialog>
 #include <KShell>
-#include <KUrl>
+#include <QUrl>
 #include <KFilterProxySearchLine>
 
 #include <NetworkManagerQt/Settings>
@@ -482,7 +482,7 @@ void ConnectionEditor::importVpn()
         }
     }
 
-    const QString filename = KFileDialog::getOpenFileName(KUrl(), extensions.simplified(), this, i18n("Import VPN Connection"));
+    const QString filename = KFileDialog::getOpenFileName(QUrl(), extensions.simplified(), this, i18n("Import VPN Connection"));
     if (!filename.isEmpty()) {
         QFileInfo fi(filename);
         const QString ext = QLatin1Literal("*.") % fi.suffix();
@@ -558,7 +558,7 @@ void ConnectionEditor::exportVpn()
             return;
         }
 
-        const KUrl url = KUrl::fromLocalFile(KGlobalSettings::documentPath() + QDir::separator() + vpnPlugin->suggestedFileName(connSettings));
+        const QUrl url = QUrl::fromLocalFile(KGlobalSettings::documentPath() + QDir::separator() + vpnPlugin->suggestedFileName(connSettings));
         const QString filename = KFileDialog::getSaveFileName(url, vpnPlugin->supportedFileExtensions(), this, i18n("Export VPN Connection"));
         if (!filename.isEmpty()) {
             if (!vpnPlugin->exportConnectionSettings(connSettings, filename)) {

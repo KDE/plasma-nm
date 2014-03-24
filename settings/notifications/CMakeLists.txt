@@ -2,7 +2,7 @@ set(plasma_networkmanagement_notifications_SRCS
    notifications.cpp
 )
 
-plasma_add_plugin(networkmanagement_notifications ${plasma_networkmanagement_notifications_SRCS})
+add_library(networkmanagement_notifications ${plasma_networkmanagement_notifications_SRCS})
 
 target_link_libraries(networkmanagement_notifications KF5::NotifyConfig)
 

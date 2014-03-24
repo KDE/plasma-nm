@@ -7,7 +7,7 @@ set(vpnc_SRCS
 
 qt5_wrap_ui(vpnc_SRCS vpnc.ui vpncadvanced.ui vpncauth.ui)
 
-plasma_add_plugin(plasmanetworkmanagement_vpncui ${vpnc_SRCS})
+add_library(plasmanetworkmanagement_vpncui ${vpnc_SRCS})
 
 kservice_desktop_to_json(plasmanetworkmanagement_vpncui plasmanetworkmanagement_vpncui.desktop)
 

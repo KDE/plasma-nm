@@ -6,7 +6,7 @@ set(openswan_SRCS
 
 qt5_wrap_ui(openswan_SRCS openswan.ui openswanauth.ui)
 
-plasma_add_plugin(plasmanetworkmanagement_openswanui ${openswan_SRCS})
+add_library(plasmanetworkmanagement_openswanui ${openswan_SRCS})
 
 kservice_desktop_to_json(plasmanetworkmanagement_openswanui plasmanetworkmanagement_openswanui.desktop)
 

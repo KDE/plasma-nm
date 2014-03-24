@@ -6,7 +6,7 @@ set(pptp_SRCS
 
 qt5_wrap_ui(pptp_SRCS pptpprop.ui pptpadvanced.ui pptpauth.ui)
 
-plasma_add_plugin(plasmanetworkmanagement_pptpui ${pptp_SRCS})
+add_library(plasmanetworkmanagement_pptpui ${pptp_SRCS})
 
 kservice_desktop_to_json(plasmanetworkmanagement_pptpui plasmanetworkmanagement_pptpui.desktop)
 

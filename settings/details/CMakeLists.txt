@@ -7,7 +7,7 @@ qt5_wrap_ui(plasmanetworkmanagement_config_widgets_SRCS
     detailkeyswidget.ui
 )
 
-plasma_add_plugin(plasmanetworkmanagementwidgets SHARED
+add_library(plasmanetworkmanagementwidgets SHARED
                 ${plasmanetworkmanagement_config_widgets_SRCS})
 
 target_link_libraries(plasmanetworkmanagementwidgets

@@ -33,7 +33,7 @@ if (OPENCONNECT_FOUND)
 
         qt5_wrap_ui(openconnect_SRCS openconnectprop.ui openconnectauth.ui)
 
-        plasma_add_plugin(plasmanetworkmanagement_openconnectui ${openconnect_SRCS})
+        add_library(plasmanetworkmanagement_openconnectui ${openconnect_SRCS})
 
         target_link_libraries(plasmanetworkmanagement_openconnectui
             plasmanetworkmanagement-internal

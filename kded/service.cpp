@@ -55,13 +55,13 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
     //KGlobal::insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard
 
 
-    QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasma-desktop");
-    if (reply.value()) {
+//     QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasma-desktop");
+//     if (reply.value()) {
         doInitialization();
-    } else {
-        QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.kde.plasma-desktop", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
-        connect(watcher, SIGNAL(serviceRegistered(QString)), SLOT(finishInitialization()));
-    }
+//     } else {
+//         QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.kde.plasma-desktop", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
+//         connect(watcher, SIGNAL(serviceRegistered(QString)), SLOT(finishInitialization()));
+//     }
 }
 
 NetworkManagementService::~NetworkManagementService()

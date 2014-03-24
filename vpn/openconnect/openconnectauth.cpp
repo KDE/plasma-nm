@@ -527,9 +527,13 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
 
         QPointer<QDialog> dialog = new QDialog(this);
         dialog.data()->setWindowModality(Qt::WindowModal);
-        QVBoxLayout * layout = new QVBoxLayout(dialog);
-        layout->addWidget(widget);
-        dialog->setLayout(layout);
+        dialog->setLayout(new QVBoxLayout);
+        QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
+        connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));
+        connect(buttons, SIGNAL(rejected()), dialog, SLOT(reject()));
+        dialog->layout()->addWidget(widget);
+        dialog->layout()->addWidget(buttons);
+
         if(dialog.data()->exec() == QDialog::Accepted) {
             d->certificateFingerprints.append(fingerprint);
             *accepted = true;

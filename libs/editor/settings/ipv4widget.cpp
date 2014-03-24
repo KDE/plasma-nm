@@ -23,6 +23,7 @@
 #include "ipv4delegate.h"
 
 #include <QDialog>
+#include <QDialogButtonBox>
 #include <QStandardItemModel>
 #include <QItemSelection>
 #include <QNetworkAddressEntry>
@@ -410,15 +411,18 @@ void IPv4Widget::slotRoutesDialog()
 
 void IPv4Widget::slotDnsServers()
 {
-    QPointer<QDialog> dlg = new QDialog(this);
-    dlg->setWindowTitle(i18n("Edit DNS servers"));
-    KEditListWidget * listWidget = new KEditListWidget(dlg);
-    QVBoxLayout * layout = new QVBoxLayout(dlg);
-    layout->addWidget(listWidget);
-    dlg->setLayout(layout);
+    QPointer<QDialog> dialog = new QDialog(this);
+    dialog->setWindowTitle(i18n("Edit DNS servers"));
+    dialog->setLayout(new QVBoxLayout);
+    QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
+    connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));
+    connect(buttons, SIGNAL(rejected()), dialog, SLOT(reject()));
+    KEditListWidget * listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dns->text().split(','));
+    dialog->layout()->addWidget(listWidget);
+    dialog->layout()->addWidget(buttons);
 
-    if (dlg->exec() == QDialog::Accepted) {
+    if (dialog->exec() == QDialog::Accepted) {
         QString text = listWidget->items().join(",");
         if (text.endsWith(',')) {
             text.chop(1);
@@ -426,22 +430,25 @@ void IPv4Widget::slotDnsServers()
         m_ui->dns->setText(text);
     }
 
-    if (dlg) {
-        dlg->deleteLater();
+    if (dialog) {
+        dialog->deleteLater();
     }
 }
 
 void IPv4Widget::slotDnsDomains()
 {
-    QPointer<QDialog> dlg = new QDialog(this);
-    dlg->setWindowTitle(i18n("Edit DNS search domains"));
-    KEditListWidget * listWidget = new KEditListWidget(dlg);
-    QVBoxLayout * layout = new QVBoxLayout(dlg);
-    layout->addWidget(listWidget);
-    dlg->setLayout(layout);
+    QPointer<QDialog> dialog = new QDialog(this);
+    dialog->setWindowTitle(i18n("Edit DNS search domains"));
+    dialog->setLayout(new QVBoxLayout);
+    QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
+    connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));
+    connect(buttons, SIGNAL(rejected()), dialog, SLOT(reject()));
+    KEditListWidget * listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dnsSearch->text().split(','));
+    dialog->layout()->addWidget(listWidget);
+    dialog->layout()->addWidget(buttons);
 
-    if (dlg->exec() == QDialog::Accepted) {
+    if (dialog->exec() == QDialog::Accepted) {
         QString text = listWidget->items().join(",");
         if (text.endsWith(',')) {
             text.chop(1);
@@ -449,8 +456,8 @@ void IPv4Widget::slotDnsDomains()
         m_ui->dnsSearch->setText(text);
     }
 
-    if (dlg) {
-        dlg->deleteLater();
+    if (dialog) {
+        dialog->deleteLater();
     }
 }
 

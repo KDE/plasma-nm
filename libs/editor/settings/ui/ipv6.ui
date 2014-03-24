@@ -153,7 +153,7 @@
       </widget>
      </item>
      <item>
-      <widget class="KPushButton" name="dnsMorePushButton">
+      <widget class="QPushButton" name="dnsMorePushButton">
        <property name="toolTip">
         <string>Edit DNS the list of servers</string>
        </property>
@@ -198,7 +198,7 @@
       </widget>
      </item>
      <item>
-      <widget class="KPushButton" name="dnsSearchMorePushButton">
+      <widget class="QPushButton" name="dnsSearchMorePushButton">
        <property name="toolTip">
         <string>Edit the list of DNS domains being searched</string>
        </property>
@@ -362,11 +362,6 @@
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

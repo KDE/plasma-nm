@@ -33,7 +33,7 @@
 #include <KLineEdit>
 #include <KIcon>
 #include <QDialogButtonBox>
-#include <KPushButton>
+#include <QPushButton>
 #include <KComboBox>
 #include <QDebug>
 #include <QDomDocument>

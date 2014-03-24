@@ -25,7 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QDialog>
 #include <KLocale>
-#include <KPushButton>
+#include <QPushButton>
 #include <Solid/Device>
 
 #include "config.h"

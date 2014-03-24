@@ -77,7 +77,7 @@
     </widget>
    </item>
    <item row="1" column="2">
-    <widget class="KPushButton" name="pushButtonPermissions">
+    <widget class="QPushButton" name="pushButtonPermissions">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -147,11 +147,6 @@
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

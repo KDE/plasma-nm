@@ -38,7 +38,7 @@
    <item row="2" column="0" colspan="2">
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0" rowspan="4">
-      <widget class="KListWidget" name="teams">
+      <widget class="QListWidget" name="teams">
        <property name="editTriggers">
         <set>QAbstractItemView::NoEditTriggers</set>
        </property>
@@ -51,7 +51,7 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="KPushButton" name="btnAdd">
+      <widget class="QPushButton" name="btnAdd">
        <property name="text">
         <string>Add...</string>
        </property>
@@ -63,7 +63,7 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="KPushButton" name="btnEdit">
+      <widget class="QPushButton" name="btnEdit">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -78,7 +78,7 @@
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="KPushButton" name="btnDelete">
+      <widget class="QPushButton" name="btnDelete">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -131,16 +131,6 @@
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KPushButton</class>
-   <extends>QPushButton</extends>
-   <header>kpushbutton.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KListWidget</class>
-   <extends>QListWidget</extends>
-   <header>klistwidget.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QWidget>
 
-#include <KDialog>
+#include <QDialog>
 #include <KLocale>
 #include <KPushButton>
 #include <Solid/Device>
@@ -35,7 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class PinWidget;
 
-class PinDialog : public KDialog
+class PinDialog : public QDialog
 {
     Q_OBJECT
 public:

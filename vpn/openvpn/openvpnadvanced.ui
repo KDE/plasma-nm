@@ -12,7 +12,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="KTabWidget" name="tabWidget">
+    <widget class="QTabWidget" name="tabWidget">
      <widget class="QWidget" name="generalTab">
       <attribute name="title">
        <string>General</string>
@@ -55,7 +55,7 @@
           </widget>
          </item>
          <item>
-          <widget class="KIntSpinBox" name="sbMtu">
+          <widget class="QSpinBox" name="sbMtu">
            <property name="specialValueText">
             <string comment="like in use Automatic configuration">Automatic</string>
            </property>
@@ -79,7 +79,7 @@
           </widget>
          </item>
          <item>
-          <widget class="KIntSpinBox" name="sbUdpFragmentSize">
+          <widget class="QSpinBox" name="sbUdpFragmentSize">
            <property name="specialValueText">
             <string comment="like in use Automatic configuration">Automatic</string>
            </property>
@@ -100,7 +100,7 @@
           </widget>
          </item>
          <item>
-          <widget class="KIntSpinBox" name="sbCustomReneg">
+          <widget class="QSpinBox" name="sbCustomReneg">
            <property name="enabled">
             <bool>false</bool>
            </property>
@@ -468,7 +468,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="KIntSpinBox" name="sbProxyPort">
+        <widget class="QSpinBox" name="sbProxyPort">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
            <horstretch>0</horstretch>
@@ -575,20 +575,9 @@
    <header>klineedit.h</header>
   </customwidget>
   <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
-  </customwidget>
-  <customwidget>
    <class>KUrlRequester</class>
    <extends>QFrame</extends>
    <header>kurlrequester.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KTabWidget</class>
-   <extends>QTabWidget</extends>
-   <header>ktabwidget.h</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <tabstops>

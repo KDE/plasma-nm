@@ -20,7 +20,7 @@
 */
 
 #include "openconnectwidget.h"
-#include <KDialog>
+#include <QDialog>
 #include <QUrl>
 
 #include "ui_openconnectprop.h"

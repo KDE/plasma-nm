@@ -34,7 +34,7 @@
 #include <ModemManagerQt/manager.h>
 
 PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *parent)
-    : KDialog(parent), m_type(type)
+    : QDialog(parent), m_type(type)
 {
     if (modem) {
         m_udi = modem->uni();
@@ -73,9 +73,9 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     ui->gridLayout->addWidget(pixmapLabel, 0, 0);
     pixmapLabel->setPixmap(KIcon("dialog-password").pixmap(KIconLoader::SizeHuge));
 
-    setButtons(KDialog::Ok | KDialog::Cancel);
-    setDefaultButton(KDialog::Ok);
-    button(KDialog::Ok)->setText(i18nc("As in 'Unlock cell phone with this pin code'", "Unlock"));
+    setButtons(QDialog::Ok | QDialog::Cancel);
+    setDefaultButton(QDialog::Ok);
+    button(QDialog::Ok)->setText(i18nc("As in 'Unlock cell phone with this pin code'", "Unlock"));
     setMainWidget(w);
 
     if (isPukDialog()) {

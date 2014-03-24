@@ -35,7 +35,7 @@
 using namespace NetworkManager;
 
 PasswordDialog::PasswordDialog(const NMVariantMapMap &connection, SecretAgent::GetSecretsFlags flags, const QString &setting_name, QWidget *parent) :
-    KDialog(parent),
+    QDialog(parent),
     ui(0),
     vpnWidget(0),
     m_connection(connection),
@@ -57,7 +57,7 @@ void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings
     NetworkManager::Setting::Ptr setting = connectionSettings.setting(m_settingName);
 
     ui = new Ui::PasswordDialog;
-    ui->setupUi(mainWidget());
+    ui->setupUi(this);
     // TODO fix this for high DPI
     ui->labelIcon->setPixmap(KIcon("dialog-password").pixmap(32));
 
@@ -106,9 +106,11 @@ void PasswordDialog::setupVpnUi(const ConnectionSettings &connectionSettings)
                                                                                this, QVariantList(), &error);
         if (vpnUiPlugin && error.isEmpty()) {
             const QString shortName = serviceType.section('.', -1);
-            setCaption(i18n("VPN secrets (%1)", shortName));
+            setWindowTitle(i18n("VPN secrets (%1)", shortName));
             vpnWidget = vpnUiPlugin->askUser(vpnSetting, this);
-            setMainWidget(vpnWidget);
+            QVBoxLayout * layout = new QVBoxLayout(this);
+            layout->addWidget(vpnWidget);
+            setLayout(layout);
         } else {
             qDebug() << error << ", serviceType == " << serviceType;
             m_hasError = true;

@@ -21,7 +21,7 @@
 */
 
 #include "pptpwidget.h"
-#include <KDialog>
+#include <QDialog>
 
 #include "ui_pptpprop.h"
 #include "ui_pptpadvanced.h"
@@ -35,7 +35,7 @@ public:
     Ui_PptpProp ui;
     Ui_PptpAdvanced advUi;
     NetworkManager::VpnSetting::Ptr setting;
-    KDialog * advancedDlg;
+    QDialog * advancedDlg;
     QWidget * advancedWid;
 };
 
@@ -50,10 +50,12 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
     connect(d->ui.btnAdvanced, SIGNAL(clicked()), this, SLOT(doAdvancedDialog()));
     connect (d->ui.cmbPasswordStorage, SIGNAL(currentIndexChanged(int)), this, SLOT(passwordTypeChanged(int)));
     connect(d->ui.cb_showPassword, SIGNAL(toggled(bool)), this, SLOT(setShowPassword(bool)));
-    d->advancedDlg = new KDialog(this);
+    d->advancedDlg = new QDialog(this);
     d->advancedWid = new QWidget(this);
     d->advUi.setupUi(d->advancedWid);
-    d->advancedDlg->setMainWidget(d->advancedWid);
+    QVBoxLayout * layout = new QVBoxLayout(d->advancedDlg);
+    layout->addWidget(d->advancedWid);
+    d->advancedDlg->setLayout(layout);
 
     connect(d->ui.edt_gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 

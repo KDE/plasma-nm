@@ -28,7 +28,7 @@
     <widget class="KLineEdit" name="connectionName"/>
    </item>
    <item row="1" column="0" colspan="3">
-    <widget class="KTabWidget" name="tabWidget">
+    <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
       <number>-1</number>
      </property>
@@ -64,12 +64,6 @@
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KTabWidget</class>
-   <extends>QTabWidget</extends>
-   <header>ktabwidget.h</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <tabstops>

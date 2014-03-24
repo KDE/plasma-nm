@@ -25,7 +25,7 @@
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/SecretAgent>
 
-#include <KDialog>
+#include <QDialog>
 
 #include "plasmanm_export.h"
 
@@ -33,7 +33,7 @@ namespace Ui {
 class PasswordDialog;
 }
 class SettingWidget;
-class PLASMA_NM_EXPORT PasswordDialog : public KDialog
+class PLASMA_NM_EXPORT PasswordDialog : public QDialog
 {
     Q_OBJECT
 public:

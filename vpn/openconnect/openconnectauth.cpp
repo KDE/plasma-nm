@@ -23,7 +23,7 @@
 #include "openconnectauthworkerthread.h"
 #include "ui_openconnectauth.h"
 
-#include <KDialog>
+#include <QDialog>
 #include <KLocalizedString>
 #include <QPushButton>
 #include <QString>
@@ -32,7 +32,7 @@
 #include <QFormLayout>
 #include <KLineEdit>
 #include <KIcon>
-#include <KDialogButtonBox>
+#include <QDialogButtonBox>
 #include <KPushButton>
 #include <KComboBox>
 #include <QDebug>
@@ -240,7 +240,7 @@ void OpenconnectAuthWidget::readSecrets()
 
 void OpenconnectAuthWidget::acceptDialog()
 {
-    KDialog *dialog = qobject_cast<KDialog*>(parentWidget());
+    QDialog *dialog = qobject_cast<QDialog*>(parentWidget());
     if (dialog) {
         dialog->accept();
     }
@@ -470,7 +470,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
     d->ui.loginBoxLayout->addWidget(togglePasswordMode);
     if (passwordnumber == 0)
         togglePasswordMode->setVisible(false);
-    KDialogButtonBox *box = new KDialogButtonBox(this);
+    QDialogButtonBox *box = new QDialogButtonBox(this);
     QPushButton *btn = box->addButton(QDialogButtonBox::Ok);
     btn->setText(i18n("Login"));
     btn->setDefault(true);
@@ -525,11 +525,12 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
         infoText->setWordWrap(true);
         certificate->setText(peerCert);
 
-        QWeakPointer<KDialog> dialog = new KDialog(this);
+        QPointer<QDialog> dialog = new QDialog(this);
         dialog.data()->setWindowModality(Qt::WindowModal);
-        dialog.data()->setButtons(KDialog::Yes | KDialog::No);
-        dialog.data()->setMainWidget(widget);
-        if(dialog.data()->exec() == KDialog::Yes) {
+        QVBoxLayout * layout = new QVBoxLayout(dialog);
+        layout->addWidget(widget);
+        dialog->setLayout(layout);
+        if(dialog.data()->exec() == QDialog::Accepted) {
             d->certificateFingerprints.append(fingerprint);
             *accepted = true;
         } else {

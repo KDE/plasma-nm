@@ -66,7 +66,7 @@
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="KIntSpinBox" name="mtu">
+    <widget class="QSpinBox" name="mtu">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -94,11 +94,6 @@
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
   </customwidget>
   <customwidget>
    <class>HwAddrComboBox</class>

@@ -28,7 +28,6 @@
 #include <QNetworkAddressEntry>
 
 #include <KEditListWidget>
-#include <KDialog>
 #include <KLocalizedString>
 
 quint32 suggestNetmask(quint32 ip)
@@ -411,14 +410,15 @@ void IPv4Widget::slotRoutesDialog()
 
 void IPv4Widget::slotDnsServers()
 {
-    QPointer<KDialog> dlg = new KDialog(this);
-    dlg->setCaption(i18n("Edit DNS servers"));
-    dlg->setButtons(KDialog::Ok | KDialog::Cancel);
+    QPointer<QDialog> dlg = new QDialog(this);
+    dlg->setWindowTitle(i18n("Edit DNS servers"));
     KEditListWidget * listWidget = new KEditListWidget(dlg);
-    dlg->setMainWidget(listWidget);
+    QVBoxLayout * layout = new QVBoxLayout(dlg);
+    layout->addWidget(listWidget);
+    dlg->setLayout(layout);
     listWidget->setItems(m_ui->dns->text().split(','));
 
-    if (dlg->exec() == KDialog::Accepted) {
+    if (dlg->exec() == QDialog::Accepted) {
         QString text = listWidget->items().join(",");
         if (text.endsWith(',')) {
             text.chop(1);
@@ -433,14 +433,15 @@ void IPv4Widget::slotDnsServers()
 
 void IPv4Widget::slotDnsDomains()
 {
-    QPointer<KDialog> dlg = new KDialog(this);
-    dlg->setCaption(i18n("Edit DNS search domains"));
-    dlg->setButtons(KDialog::Ok | KDialog::Cancel);
+    QPointer<QDialog> dlg = new QDialog(this);
+    dlg->setWindowTitle(i18n("Edit DNS search domains"));
     KEditListWidget * listWidget = new KEditListWidget(dlg);
-    dlg->setMainWidget(listWidget);
+    QVBoxLayout * layout = new QVBoxLayout(dlg);
+    layout->addWidget(listWidget);
+    dlg->setLayout(layout);
     listWidget->setItems(m_ui->dnsSearch->text().split(','));
 
-    if (dlg->exec() == KDialog::Accepted) {
+    if (dlg->exec() == QDialog::Accepted) {
         QString text = listWidget->items().join(",");
         if (text.endsWith(',')) {
             text.chop(1);

@@ -23,7 +23,7 @@
 #include "ui_strongswanauth.h"
 #include "nm-strongswan-service.h"
 
-#include <KDialog>
+#include <QDialog>
 #include <KMessageBox>
 #include <QString>
 #include <QProcessEnvironment>
@@ -96,7 +96,7 @@ void StrongswanAuthWidget::setVisible(bool visible)
 
 void StrongswanAuthWidget::acceptDialog()
 {
-    KDialog *dialog = qobject_cast<KDialog*>(parentWidget());
+    QDialog *dialog = qobject_cast<QDialog*>(parentWidget());
     if (dialog) {
         dialog->accept();
     }

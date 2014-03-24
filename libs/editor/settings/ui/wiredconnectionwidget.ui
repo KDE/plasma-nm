@@ -85,7 +85,7 @@
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="KIntSpinBox" name="mtu">
+    <widget class="QSpinBox" name="mtu">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -117,7 +117,7 @@
     </widget>
    </item>
    <item row="3" column="1">
-    <widget class="KIntSpinBox" name="speed">
+    <widget class="QSpinBox" name="speed">
      <property name="sizePolicy">
       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -212,11 +212,6 @@
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KIntSpinBox</class>
-   <extends>QSpinBox</extends>
-   <header>knuminput.h</header>
   </customwidget>
   <customwidget>
    <class>HwAddrComboBox</class>

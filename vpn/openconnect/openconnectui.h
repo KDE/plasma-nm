@@ -25,7 +25,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include "vpnuiplugin.h"
 
 #include <QVariant>
-#include <KDialog>
+#include <QDialog>
 
 class OpenconnectUiPlugin : public VpnUiPlugin
 {

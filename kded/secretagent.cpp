@@ -33,10 +33,11 @@
 #include <NetworkManagerQt/WirelessSetting>
 
 #include <QStringBuilder>
+#include <QDialog>
 
+#include <KConfigGroup>
 #include <KPluginFactory>
 #include <KWindowSystem>
-#include <KDialog>
 #include <KWallet/Wallet>
 
 #include <QDebug>

@@ -26,7 +26,9 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
 
-#include <KDialog>
+#include <QDialog>
+#include <QVBoxLayout>
+
 #include <KUser>
 #include <KAcceleratorManager>
 #include <KLocalizedString>
@@ -137,12 +139,13 @@ void ConnectionWidget::autoVpnToggled(bool on)
 
 void ConnectionWidget::openAdvancedPermissions()
 {
-    QPointer<KDialog> dialog = new KDialog(this);
-    dialog->setCaption(i18nc("@title:window advanced permissions editor",
+    QPointer<QDialog> dialog = new QDialog(this);
+    dialog->setWindowTitle(i18nc("@title:window advanced permissions editor",
                              "Advanced Permissions Editor"));
-    dialog->setButtons(KDialog::Ok | KDialog::Cancel);
     AdvancedPermissionsWidget permissions(m_tmpSetting.permissions());
-    dialog->setMainWidget(&permissions);
+    QVBoxLayout * layout = new QVBoxLayout(dialog);
+    layout->addWidget(dialog);
+    dialog->setLayout(layout);
     if (dialog->exec() == QDialog::Accepted) {
         m_tmpSetting.setPermissions(permissions.currentUsers());
     }

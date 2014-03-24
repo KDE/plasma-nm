@@ -2,6 +2,7 @@
 Name=Network Management
 Name[bs]=Upravljanje mrežom
 Name[ca]=Gestió de la xarxa
+Name[ca@valencia]=Gestió de la xarxa
 Name[cs]=Správa sítě
 Name[da]=Netværkshåndtering
 Name[de]=Netzwerkverwaltung
@@ -28,6 +29,7 @@ Name[zh_CN]=网络管理
 Comment=Network status and control
 Comment[bs]=Alat za kontrolu i prikaz stanja mreže
 Comment[ca]=Control i estat de la xarxa
+Comment[ca@valencia]=Control i estat de la xarxa
 Comment[cs]=Stav a ovládání sítě
 Comment[da]=Status og kontrol over netværk
 Comment[de]=Netzwerkstatus und -steuerung

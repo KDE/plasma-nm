@@ -2,6 +2,7 @@
 Name=Notifications
 Name[bs]=Napomene
 Name[ca]=Notificacions
+Name[ca@valencia]=Notificacions
 Name[cs]=Oznamování
 Name[da]=Bekendtgørelser
 Name[de]=Benachrichtigungen
@@ -27,6 +28,7 @@ Name[zh_CN]=通知
 Comment=Configure the Network Management notifications
 Comment[bs]=Konfiguriši notifikacije za upravljanje mrežom
 Comment[ca]=Configura les notificacions del Gestor de la xarxa
+Comment[ca@valencia]=Configura les notificacions del Gestor de la xarxa
 Comment[cs]=Nastavit oznamování správy sítě
 Comment[da]=Indstil bekendtgørelser for netværkshåndtering
 Comment[de]=Einrichtung der Benachrichtigungen für die Netzwerkverwaltung

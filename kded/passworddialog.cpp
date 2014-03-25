@@ -84,6 +84,8 @@ void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings
     ui->password->setPasswordMode(true);
     ui->password->setFocus();
     connect(ui->showPassword, SIGNAL(toggled(bool)), this, SLOT(showPassword(bool)));
+    connect(ui->buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(ui->buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 }
 
 void PasswordDialog::setupVpnUi(const ConnectionSettings &connectionSettings)

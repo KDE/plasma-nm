@@ -15,6 +15,7 @@ set(plasmanetworkmanagement-internal_SRCS
 kde4_add_library(plasmanetworkmanagement-internal SHARED ${plasmanetworkmanagement-internal_SRCS})
 
 target_link_libraries(plasmanetworkmanagement-internal
+    plasmanetworkmanagement-editor
     ${NETWORKMANAGERQT_LDFLAGS}
     ${MODEMMANAGERQT_LDFLAGS}
     ${KDE4_PLASMA_LIBS}

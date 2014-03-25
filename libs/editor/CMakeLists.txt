@@ -36,6 +36,8 @@ set(plasmanetworkmanagement_libeditor_SRCS
     simpleipv4addressvalidator.cpp
     simpleipv6addressvalidator.cpp
     vpnuiplugin.cpp
+
+    ../uiutils.cpp
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
@@ -74,7 +76,6 @@ kde4_add_ui_files(plasmanetworkmanagement_libeditor_SRCS
 
 kde4_add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})
 target_link_libraries(plasmanetworkmanagement-editor
-    plasmanetworkmanagement-internal
     ${KDE4_KDEUI_LIBS}
     ${KDE4_KIO_LIBS}
     ${KDE4_SOLID_LIBS}

@@ -147,12 +147,11 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         m_tmpDevicePath = device;
         m_tmpSpecificPath = specificObject;
 
-        // TODO
-//         QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(settings, 0, 0, true);
-//         editor->show();
-//         KWindowSystem::setState(editor->winId(), NET::KeepAbove);
-//         KWindowSystem::forceActiveWindow(editor->winId());
-//         connect(editor, SIGNAL(accepted()), SLOT(editDialogAccepted()));
+        QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(settings, 0, 0, true);
+        editor->show();
+        KWindowSystem::setState(editor->winId(), NET::KeepAbove);
+        KWindowSystem::forceActiveWindow(editor->winId());
+        connect(editor, SIGNAL(accepted()), SLOT(editDialogAccepted()));
     } else {
         if (securityType == NetworkManager::Utils::StaticWep) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);

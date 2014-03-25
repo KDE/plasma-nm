@@ -15,6 +15,7 @@ set(plasmanetworkmanagement-internal_SRCS
 add_library(plasmanetworkmanagement-internal SHARED ${plasmanetworkmanagement-internal_SRCS})
 
 target_link_libraries(plasmanetworkmanagement-internal
+    plasmanetworkmanagement-editor
     ${NETWORKMANAGERQT5_LDFLAGS}
     ${MODEMMANAGERQT5_LDFLAGS}
     ${MODEMMANAGERQT5_LIBRARY}

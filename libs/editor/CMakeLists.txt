@@ -36,6 +36,8 @@ set(plasmanetworkmanagement_libeditor_SRCS
     simpleipv4addressvalidator.cpp
     simpleipv6addressvalidator.cpp
     vpnuiplugin.cpp
+
+    ../uiutils.cpp
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
@@ -82,7 +84,6 @@ qt5_wrap_ui(plasmanetworkmanagement_libeditor_SRCS
 
 add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})
 target_link_libraries(plasmanetworkmanagement-editor
-    plasmanetworkmanagement-internal
     ${NETWORKMANAGERQT5_LDFLAGS}
     ${MODEMMANAGERQT5_LDFLAGS}
     Qt5::Widgets

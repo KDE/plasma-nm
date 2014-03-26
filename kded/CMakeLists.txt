@@ -28,7 +28,7 @@ else()
     )
 endif()
 
-add_library(kded_networkmanagement ${kded_networkmanagement_SRCS})
+add_library(kded_networkmanagement MODULE ${kded_networkmanagement_SRCS})
 
 target_link_libraries(kded_networkmanagement
     plasmanetworkmanagement-internal

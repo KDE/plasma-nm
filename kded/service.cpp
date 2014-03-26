@@ -54,7 +54,6 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 #warning "port translatin catalog away from KGlobal::insertCatalog"
     //KGlobal::insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard
 
-
 //     QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasma-desktop");
 //     if (reply.value()) {
         doInitialization();
@@ -81,6 +80,7 @@ void NetworkManagementService::doInitialization()
 {
     Q_D(NetworkManagementService);
 
+    qDebug() << "Doing inicialization";
     d->agent = new SecretAgent(this);
     new Notification(this);
 #if WITH_MODEMMANAGER_SUPPORT

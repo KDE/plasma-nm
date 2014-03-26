@@ -47,7 +47,7 @@ PlasmaComponents.ListItem {
         id: svgNetworkIcons;
 
         multipleImages: true;
-        imagePath: "icons/plasma-networkmanagement";
+        imagePath: "icons/network";
     }
 
     Item {

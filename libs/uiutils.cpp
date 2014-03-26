@@ -797,9 +797,9 @@ QString UiUtils::modemDetails(const ModemDevice::Ptr& modemDevice, const QString
                 details += QString(format).arg(i18n("IMEI:"), modemNetwork->equipmentIdentifier());
             }
         } else if (key == "mobile:imsi") {
-            if (modemDevice) {
+            if (modem) {
                 ModemManager::Sim::Ptr simCard;
-                simCard = modemDevice->getModemCardIface();
+                simCard = modem->sim();
                 if (simCard) {
                     details += QString(format).arg(i18n("IMSI:"), simCard->imsi());
                 }

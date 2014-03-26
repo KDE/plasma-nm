@@ -30,6 +30,11 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 
+#if WITH_MODEMMANAGER_SUPPORT
+#include <ModemManagerQt/manager.h>
+#include <ModemManagerQt/modem.h>
+#endif
+
 ConnectionIcon::ConnectionIcon(QObject* parent)
     : QObject(parent)
     , m_signal(0)
@@ -450,7 +455,13 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
         return;
     }
 
-    m_modemNetwork = modemDevice->getModemNetworkIface();
+    ModemManager::Modem::Ptr m_modemNetwork;
+    ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(device->udi());
+    if (modem) {
+        if (modem->hasInterface(ModemManager::ModemDevice::ModemInterface)) {
+            m_modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
+        }
+    }
 
     if (m_modemNetwork) {
         connect(m_modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),

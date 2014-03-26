@@ -1,8 +1,5 @@
 project(plasma-networkmanagement)
 
-# TODO
-set(DISABLE_MODEMMANAGER_SUPPORT 1)
-
 cmake_minimum_required(VERSION 2.8.6 FATAL_ERROR)
 set(QT_MIN_VERSION "5.2.0")
 

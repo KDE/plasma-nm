@@ -50,9 +50,8 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
         }
     }
 
-    QWidget *w = new QWidget();
     ui = new Ui::PinWidget();
-    ui->setupUi(w);
+    ui->setupUi(this);
     ui->pin->setPasswordMode(true);
 
     QIntValidator * validator = new QIntValidator(this);
@@ -68,15 +67,13 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     QRect desktop = KGlobalSettings::desktopGeometry(topLevelWidget());
     setMinimumWidth(qMin(1000, qMax(sizeHint().width(), desktop.width() / 4)));
 
-    pixmapLabel = new QLabel(mainWidget());
+    pixmapLabel = new QLabel(this);
     pixmapLabel->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     ui->gridLayout->addWidget(pixmapLabel, 0, 0);
     pixmapLabel->setPixmap(KIcon("dialog-password").pixmap(KIconLoader::SizeHuge));
 
-    setButtons(QDialog::Ok | QDialog::Cancel);
-    setDefaultButton(QDialog::Ok);
-    button(QDialog::Ok)->setText(i18nc("As in 'Unlock cell phone with this pin code'", "Unlock"));
-    setMainWidget(w);
+    connect(ui->buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+    connect(ui->buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 
     if (isPukDialog()) {
         QString pukType;

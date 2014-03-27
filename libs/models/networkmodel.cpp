@@ -511,7 +511,7 @@ void NetworkModel::accessPointSignalStrengthChanged(int signal)
             if (item->specificPath() == apPtr->uni()) {
                 item->setSignal(signal);
                 updateItem(item);
-                nmDebug() << "AccessPoint " << item->name() << ": signal changed to " << item->signal();
+                qCDebug(PLASMA_NM) << "AccessPoint " << item->name() << ": signal changed to " << item->signal();
             }
         }
     }

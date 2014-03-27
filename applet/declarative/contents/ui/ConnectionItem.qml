@@ -122,9 +122,9 @@ ListItem {
             }
             spacing: 8;
 
-            opacity: connectionItemMouseArea.containsMouse ? 1 : 0
+            opacity: connectionItem.containsMouse ? 1 : 0
             visible: opacity != 0
-            Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
+            Behavior on opacity { NumberAnimation { duration: 100 } }
 
             PlasmaCore.SvgItem {
                 id: configureButton;
@@ -160,7 +160,7 @@ ListItem {
             PlasmaCore.SvgItem {
                 id: openDetailsButton;
 
-                height: iconSize;
+                height: sizes.iconSize;
                 width: height;
                 anchors {
                     verticalCenter: parent.verticalCenter;

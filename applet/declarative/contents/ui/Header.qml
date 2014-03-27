@@ -26,7 +26,7 @@ PlasmaComponents.ListItem {
 
     property alias text: headerLabel.text;
 
-    height: Math.max(sizes.iconSize, headerLabel.height) + padding.margins.top + padding.margins.bottom;
+    height: headerLabel.height + padding.margins.top + padding.margins.bottom;
     sectionDelegate: true;
 
     anchors {

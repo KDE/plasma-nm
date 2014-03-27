@@ -322,14 +322,9 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
         }
 #endif
         if (item->type() == NetworkManager::ConnectionSettings::Wireless && item->mode() == NetworkManager::WirelessSetting::Infrastructure) {
-            bool apFound = false;
-            // Check whether is there an available access point for this connection and remove it, because it should be part of the connection
+            // Find an accesspoint which could be removed, because it will be merged with a connection
             foreach (NetworkModelItem * secondItem, m_list.returnItems(NetworkItemsList::Ssid, item->ssid())) {
-                if (secondItem->itemType() == NetworkModelItem::AvailableAccessPoint &&
-                    secondItem->devicePath() == item->devicePath()) {
-                    item->setSignal(secondItem->signal());
-                    item->setSpecificPath(secondItem->specificPath());
-                    apFound = true;
+                if (secondItem->itemType() == NetworkModelItem::AvailableAccessPoint && secondItem->devicePath() == item->devicePath()) {
                     const int row = m_list.indexOf(secondItem);
                     qCDebug(PLASMA_NM) << "Access point " << secondItem->name() << ": merged to " << item->name() << " connection";
                     if (row >= 0) {
@@ -342,14 +337,9 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
                 }
             }
 
-            if (!apFound) {
-                NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
-                NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(item->ssid());
-                if (wifiNetwork) {
-                    item->setSignal(wifiNetwork->signalStrength());
-                    item->setSpecificPath(wifiNetwork->referenceAccessPoint()->uni());
-                }
-            }
+            NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+            NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(item->ssid());
+            updateFromWirelessNetwork(item, wifiNetwork);
         }
         updateItem(item);
         break;
@@ -510,6 +500,20 @@ void NetworkModel::updateItems()
 {
     foreach (NetworkModelItem * item, m_list.items()) {
         updateItem(item);
+    }
+}
+
+void NetworkModel::accessPointSignalStrengthChanged(int signal)
+{
+    NetworkManager::AccessPoint * apPtr = qobject_cast<NetworkManager::AccessPoint*>(sender());
+    if (apPtr) {
+        foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, apPtr->ssid())) {
+            if (item->specificPath() == apPtr->uni()) {
+                item->setSignal(signal);
+                updateItem(item);
+                nmDebug() << "AccessPoint " << item->name() << ": signal changed to " << item->signal();
+            }
+        }
     }
 }
 
@@ -709,6 +713,7 @@ void NetworkModel::connectionUpdated()
                 item->setMode(wirelessSetting->mode());
                 item->setSecurityType(NetworkManager::Utils::securityTypeFromConnectionSetting(settings));
                 item->setSsid(wirelessSetting->ssid());
+                // TODO check whether BSSID has changed and update the wireless info
             }
             updateItem(item);
             qCDebug(PLASMA_NM) << "Item " << item->name() << ": connection updated";
@@ -876,8 +881,16 @@ void NetworkModel::wirelessNetworkReferenceApChanged(const QString& accessPoint)
 
     if (networkPtr) {
         foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, networkPtr->ssid(), networkPtr->device())) {
-            item->setSpecificPath(accessPoint);
-            updateItem(item);
+            NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(item->connectionPath());
+            if (connection) {
+                NetworkManager::WirelessSetting::Ptr wirelessSetting = connection->settings()->setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
+                if (wirelessSetting) {
+                    if (wirelessSetting->bssid().isEmpty()) {
+                        item->setSpecificPath(accessPoint);
+                        updateItem(item);
+                    }
+                }
+            }
         }
     }
 }
@@ -887,9 +900,11 @@ void NetworkModel::wirelessNetworkSignalChanged(int signal)
     NetworkManager::WirelessNetwork * networkPtr = qobject_cast<NetworkManager::WirelessNetwork*>(sender());
     if (networkPtr) {
         foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Ssid, networkPtr->ssid(), networkPtr->device())) {
-            item->setSignal(signal);
-            updateItem(item);
-//             qCDebug(PLASMA_NM) << "Wireless network " << item->name() << ": signal changed to " << item->signal();
+            if (item->specificPath() == networkPtr->referenceAccessPoint()->uni()) {
+                item->setSignal(signal);
+                updateItem(item);
+//              qCDebug(PLASMA_NM) << "Wireless network " << item->name() << ": signal changed to " << item->signal();
+            }
         }
     }
 }
@@ -906,4 +921,28 @@ NetworkManager::Utils::WirelessSecurityType NetworkModel::alternativeWirelessSec
         return NetworkManager::Utils::WpaEap;
     }
     return type;
+}
+
+void NetworkModel::updateFromWirelessNetwork(NetworkModelItem* item, const NetworkManager::WirelessNetwork::Ptr network)
+{
+    // Check whether the connection is associated with some concrete AP
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(item->connectionPath());
+    if (connection) {
+        NetworkManager::WirelessSetting::Ptr wirelessSetting = connection->settings()->setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
+        if (wirelessSetting) {
+            if (!wirelessSetting->bssid().isEmpty()) {
+                foreach (const NetworkManager::AccessPoint::Ptr ap, network->accessPoints()) {
+                    if (ap->hardwareAddress() == NetworkManager::Utils::macAddressAsString(wirelessSetting->bssid())) {
+                        item->setSignal(ap->signalStrength());
+                        item->setSpecificPath(ap->uni());
+                        // We need to watch this AP for signal changes
+                        connect(ap.data(), SIGNAL(signalStrengthChanged(int)), SLOT(accessPointSignalStrengthChanged(int)), Qt::UniqueConnection);
+                    }
+                }
+            } else {
+                item->setSignal(network->signalStrength());
+                item->setSpecificPath(network->referenceAccessPoint()->uni());
+            }
+        }
+    }
 }

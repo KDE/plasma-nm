@@ -888,7 +888,7 @@ QString UiUtils::wiredDetails(const WiredDevice::Ptr& wiredDevice, const Network
     return details;
 }
 
-QString UiUtils::wirelessDetails(const WirelessDevice::Ptr& wirelessDevice, const WirelessNetwork::Ptr& network, const NetworkManager::Connection::Ptr& connection, const QStringList& keys)
+QString UiUtils::wirelessDetails(const WirelessDevice::Ptr& wirelessDevice, const AccessPoint::Ptr& ap, const NetworkManager::Connection::Ptr& connection, const QStringList& keys)
 {
     const QString format = "<tr><td align=\"right\" width=\"50%\"><b>%1</b></td><td align=\"left\" width=\"50%\">&nbsp;%2</td></tr>";
     QString details;
@@ -896,10 +896,6 @@ QString UiUtils::wirelessDetails(const WirelessDevice::Ptr& wirelessDevice, cons
     const bool connected = wirelessDevice && connection && wirelessDevice->activeConnection() &&
                            wirelessDevice->activeConnection()->connection() == connection && wirelessDevice->activeConnection()->state() == ActiveConnection::Activated;
 
-    NetworkManager::AccessPoint::Ptr ap;
-    if (network) {
-        ap = network->referenceAccessPoint();
-    }
 
     foreach (const QString& key, keys) {
         if (key == "interface:bitrate") {
@@ -915,12 +911,12 @@ QString UiUtils::wirelessDetails(const WirelessDevice::Ptr& wirelessDevice, cons
                 details += QString(format).arg(i18n("Mode:"), UiUtils::operationModeToString(wirelessDevice->mode()));
             }
         } else if (key == "wireless:signal") {
-            if (network) {
-                details += QString(format).arg(i18n("Signal strength:"), i18n("%1%", network->signalStrength()));
+            if (ap) {
+                details += QString(format).arg(i18n("Signal strength:"), i18n("%1%", ap->signalStrength()));
             }
         } else if (key == "wireless:ssid") {
-            if (network) {
-                details += QString(format).arg(i18n("Access point (SSID):"), network->ssid());
+            if (ap) {
+                details += QString(format).arg(i18n("Access point (SSID):"), ap->ssid());
             }
         } else if (key == "wireless:accesspoint") {
             if (ap) {

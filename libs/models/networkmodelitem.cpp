@@ -450,11 +450,11 @@ void NetworkModelItem::updateDetails()
         if (device) {
             wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
         }
-        NetworkManager::WirelessNetwork::Ptr network;
+        NetworkManager::AccessPoint::Ptr ap;
         if (wirelessDevice) {
-            network = wirelessDevice->findNetwork(m_ssid);
+            ap = wirelessDevice->findAccessPoint(m_specificPath);
         }
-        m_details += UiUtils::wirelessDetails(wirelessDevice, network, connection, detailsList);
+        m_details += UiUtils::wirelessDetails(wirelessDevice, ap, connection, detailsList);
     } else if (m_type == NetworkManager::ConnectionSettings::Vpn) {
         NetworkManager::ActiveConnection::Ptr active = NetworkManager::findActiveConnection(m_activeConnectionPath);
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_connectionPath);

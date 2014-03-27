@@ -8,6 +8,8 @@ set(PLASMA_NM_VERSION_MINOR 0)
 set(PLASMA_NM_VERSION_PATCH 0)
 set(PLASMA_NM_VERSION ${PLASMA_NM_VERSION_MAJOR}.${PLASMA_NM_VERSION_MINOR}.${PLASMA_NM_VERSION_PATCH} )
 
+# With CMake older than version 3.1 pkg_check_modules ignores CMAKE_PREFIX_PATH
+set(PKG_CONFIG_USE_CMAKE_PREFIX_PATH ON)
 include(FindPkgConfig)
 
 ################# set KDE specific information #################

@@ -62,13 +62,6 @@ Item {
             }
         }
 
-        PlasmaCore.SvgItem {
-            width: lineSvg.elementSize("vertical-line").width;
-            height: parent.height;
-            elementId: "vertical-line";
-            svg: lineSvg;
-        }
-
         SwitchButton {
             id: wwanSwitchButton;
 
@@ -80,13 +73,6 @@ Item {
             onClicked: {
                 handler.enableWwan(!checked);
             }
-        }
-
-        PlasmaCore.SvgItem {
-            width: lineSvg.elementSize("vertical-line").width;
-            height: parent.height;
-            elementId: "vertical-line";
-            svg: lineSvg;
         }
 
         SwitchButton {

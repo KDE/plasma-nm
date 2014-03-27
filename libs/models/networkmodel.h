@@ -80,6 +80,7 @@ public Q_SLOTS:
     void updateItems();
 
 private Q_SLOTS:
+    void accessPointSignalStrengthChanged(int signal);
     void activeConnectionAdded(const QString& activeConnection);
     void activeConnectionRemoved(const QString& activeConnection);
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
@@ -120,6 +121,7 @@ private:
     void initializeSignals(const NetworkManager::Device::Ptr& device);
     void initializeSignals(const NetworkManager::WirelessNetwork::Ptr& network);
     void updateItem(NetworkModelItem * item);
+    void updateFromWirelessNetwork(NetworkModelItem * item, const NetworkManager::WirelessNetwork::Ptr network);
 
     NetworkManager::Utils::WirelessSecurityType alternativeWirelessSecurity(const NetworkManager::Utils::WirelessSecurityType type);
 };

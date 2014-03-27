@@ -55,6 +55,7 @@ Item {
             checked: enabled && enabledConnections.wirelessEnabled;
             enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !globalConfig.airplaneModeEnabled;
             icon: checked ? "network-wireless-on" : "network-wireless-off";
+            visible: availableDevices.wirelessDeviceAvailable;
 
             onClicked: {
                 handler.enableWireless(!checked);
@@ -67,6 +68,7 @@ Item {
             checked: enabled && enabledConnections.wwanEnabled;
             enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !globalConfig.airplaneModeEnabled;
             icon: checked ? "network-mobile-on" : "network-mobile-off";
+            visible: availableDevices.modemDeviceAvailable;
 
             onClicked: {
                 handler.enableWwan(!checked);

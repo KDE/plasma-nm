@@ -107,6 +107,7 @@ ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSetting
         }
         NetworkManager::Ipv4Setting::Ptr ipv4Setting = m_connection->setting(Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
         ipv4Setting->setMethod(Ipv4Setting::Shared);
+        m_connection->setAutoconnect(false);
     }
 
     initEditor();

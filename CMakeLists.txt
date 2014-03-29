@@ -89,13 +89,16 @@ include_directories(${CMAKE_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/
-                    if (MODEMMANAGERQT5_FOUND)
-                        ${MODEMMANAGER_INCLUDE_DIRS}
-                        ${MODEMMANAGERQT5_INCLUDE_DIRS}
-                    endif()
                     ${NETWORKMANAGER_INCLUDE_DIRS}
                     ${NETWORKMANAGERQT5_INCLUDE_DIRS}
                     ${Qt5Designer_INCLUDE_DIRS})
+
+if (MODEMMANAGERQT5_FOUND)
+include_directories(
+      ${MODEMMANAGER_INCLUDE_DIRS}
+      ${MODEMMANAGERQT5_INCLUDE_DIRS}
+)
+endif()
 
 add_subdirectory(applet)
 add_subdirectory(editor)

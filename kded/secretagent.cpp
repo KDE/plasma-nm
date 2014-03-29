@@ -36,6 +36,7 @@
 #include <QDialog>
 
 #include <KConfigGroup>
+#include <KConfig>
 #include <KPluginFactory>
 #include <KWindowSystem>
 #include <KWallet/Wallet>

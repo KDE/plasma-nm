@@ -180,6 +180,9 @@
    </item>
    <item row="11" column="1">
     <widget class="QCheckBox" name="hiddenNetwork">
+     <property name="toolTip">
+      <string>Mark this if you want to create a connection for a hidden network</string>
+     </property>
      <property name="text">
       <string/>
      </property>
@@ -187,8 +190,11 @@
    </item>
    <item row="11" column="0">
     <widget class="QLabel" name="label_4">
+     <property name="toolTip">
+      <string>Mark this if you want to create a connection for a hidden network</string>
+     </property>
      <property name="text">
-      <string>Hidden:</string>
+      <string>Hidden network:</string>
      </property>
      <property name="buddy">
       <cstring>hiddenNetwork</cstring>

@@ -18,11 +18,11 @@ add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})
 target_link_libraries(kde-nm-connection-editor
     plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
-    ${NETWORKMANAGERQT5_LDFLAGS}
-    ${MODEMMANAGERQT5_LDFLAGS}
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus
+    KF5::NetworkManagerQt
+    KF5::ModemManagerQt
     KF5::Service
     KF5::Completion
     KF5::I18n

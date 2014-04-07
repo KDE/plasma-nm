@@ -14,10 +14,10 @@ kservice_desktop_to_json(plasmanetworkmanagement_vpncui plasmanetworkmanagement_
 target_link_libraries(plasmanetworkmanagement_vpncui
     plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
-    ${NETWORKMANAGERQT5_LDFLAGS}
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus
+    KF5::NetworkManagerQt
     KF5::Service
     KF5::Completion
     KF5::I18n

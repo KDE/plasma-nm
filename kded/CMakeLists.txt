@@ -33,12 +33,11 @@ add_library(kded_networkmanagement MODULE ${kded_networkmanagement_SRCS})
 target_link_libraries(kded_networkmanagement
     plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
-    ${NETWORKMANAGERQT5_LDFLAGS}
-    ${MODEMMANAGERQT5_LDFLAGS}
-    ${MODEMMANAGERQT5_LIBRARY}
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus
+    KF5::NetworkManagerQt
+    KF5::ModemManagerQt
     KF5::Service
     KF5::Solid
     KF5::Completion

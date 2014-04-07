@@ -18,8 +18,8 @@ kservice_desktop_to_json(plasmanetworkmanagement_openvpnui plasmanetworkmanageme
 target_link_libraries(plasmanetworkmanagement_openvpnui
     plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
-    ${NETWORKMANAGERQT5_LDFLAGS}
     Qt5::DBus
+    KF5::NetworkManagerQt
     KF5::KIOCore
     KF5::KIOWidgets
 )

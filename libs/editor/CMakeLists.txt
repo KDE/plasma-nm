@@ -84,11 +84,11 @@ qt5_wrap_ui(plasmanetworkmanagement_libeditor_SRCS
 
 add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})
 target_link_libraries(plasmanetworkmanagement-editor
-    ${NETWORKMANAGERQT5_LDFLAGS}
-    ${MODEMMANAGERQT5_LDFLAGS}
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus
+    KF5::NetworkManagerQt
+    KF5::ModemManagerQt
     KF5::Service
     KF5::Completion
     KF5::I18n

@@ -24,12 +24,6 @@
 #include <NetworkManagerQt/Connection>
 
 #include "plasmanm_export.h"
-#include "config.h"
-
-#if !WITH_MODEMMANAGER_SUPPORT
-typedef QMap<QDBusObjectPath, NMVariantMapMap> NMDBusObjectVariantMapMap;
-Q_DECLARE_METATYPE(NMDBusObjectVariantMapMap)
-#endif
 
 class PLASMA_NM_EXPORT Handler : public QObject
 {

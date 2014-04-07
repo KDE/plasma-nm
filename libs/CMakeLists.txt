@@ -16,9 +16,8 @@ add_library(plasmanetworkmanagement-internal SHARED ${plasmanetworkmanagement-in
 
 target_link_libraries(plasmanetworkmanagement-internal
     plasmanetworkmanagement-editor
-    ${NETWORKMANAGERQT5_LDFLAGS}
-    ${MODEMMANAGERQT5_LDFLAGS}
-    ${MODEMMANAGERQT5_LIBRARY}
+    KF5::NetworkManagerQt
+    KF5::ModemManagerQt
     KF5::Solid
     KF5::Completion
     KF5::I18n

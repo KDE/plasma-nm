@@ -160,7 +160,7 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
 
     if (m_ui->useHybridAuth->isChecked() && !m_ui->caFile->url().isEmpty()) {
         data.insert(NM_VPNC_KEY_AUTHMODE, "hybrid");
-        data.insert(NM_VPNC_KEY_CA_FILE, m_ui->caFile->url().url());
+        data.insert(NM_VPNC_KEY_CA_FILE, m_ui->caFile->url().toLocalFile());
     }
 
     setting.setData(data);

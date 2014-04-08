@@ -74,10 +74,10 @@ public:
     virtual ~SecretAgent();
 
 public Q_SLOTS:
-    virtual NMVariantMapMap GetSecrets(const NMVariantMapMap&, const QDBusObjectPath&, const QString&, const QStringList&, uint);
-    virtual void SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path);
-    virtual void DeleteSecrets(const NMVariantMapMap &, const QDBusObjectPath &);
-    virtual void CancelGetSecrets(const QDBusObjectPath &, const QString &);
+    virtual NMVariantMapMap GetSecrets(const NMVariantMapMap&, const QDBusObjectPath&, const QString&, const QStringList&, uint) Q_DECL_OVERRIDE;
+    virtual void SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path) Q_DECL_OVERRIDE;
+    virtual void DeleteSecrets(const NMVariantMapMap &, const QDBusObjectPath &) Q_DECL_OVERRIDE;
+    virtual void CancelGetSecrets(const QDBusObjectPath &, const QString &) Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void dialogAccepted();

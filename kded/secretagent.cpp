@@ -65,7 +65,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     qDebug() << "Hints:" << hints;
     qDebug() << "Flags:" << flags;
 
-    QString callId = connection_path.path() % setting_name;
+    const QString callId = connection_path.path() % setting_name;
     foreach (const SecretsRequest & request, m_calls) {
         if (request == callId) {
             qWarning() << "GetSecrets was called again! This should not happen, cancelling first call" << connection_path.path() << setting_name;

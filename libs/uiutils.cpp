@@ -24,7 +24,6 @@
 // KDE
 #include <KDebug>
 #include <KLocale>
-#include <KGlobal>
 
 #include <NetworkManagerQt/BluetoothDevice>
 #include <NetworkManagerQt/Manager>
@@ -976,7 +975,7 @@ QString UiUtils::formatDateRelative(const QDateTime & lastUsed)
         } else if (lastUsed.daysTo(now) == 1) {
             lastUsedText = i18nc("Label for last used time for a network connection used the previous day", "Yesterday");
         } else {
-            lastUsedText = KGlobal::locale()->formatDate(lastUsed.date(), KLocale::ShortDate);
+            lastUsedText = KLocale::global()->formatDate(lastUsed.date(), KLocale::ShortDate);
         }
     } else {
         lastUsedText =  i18nc("Label for last used time for a "
@@ -1010,7 +1009,7 @@ QString UiUtils::formatLastUsedDateRelative(const QDateTime & lastUsed)
         } else if (lastUsed.daysTo(now) == 1) {
             lastUsedText = i18nc("Label for last used time for a network connection used the previous day", "Last used yesterday");
         } else {
-            lastUsedText = i18n("Last used on %1", KGlobal::locale()->formatDate(lastUsed.date(), KLocale::ShortDate));
+            lastUsedText = i18n("Last used on %1", KLocale::global()->formatDate(lastUsed.date(), KLocale::ShortDate));
         }
     } else {
         lastUsedText =  i18nc("Label for last used time for a "

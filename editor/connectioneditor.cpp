@@ -78,7 +78,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     m_editor->messageWidget->setCloseButtonVisible(false);
     m_editor->messageWidget->setWordWrap(true);
 
-//     m_editor->ktreewidgetsearchline->lineEdit()->setClickMessage(i18n("Type here to search connections..."));
+    //m_editor->ktreewidgetsearchline->lineEdit()->setClickMessage(i18n("Type here to search connections..."));
 
     initializeConnections();
     initializeMenu();

@@ -38,6 +38,9 @@
 #include <QDBusConnectionInterface>
 #include <QDBusReply>
 
+#define TRANSLATION_DOMAIN "plasmanetworkmanagement-kded"
+#include <KLocalizedString>
+
 K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManagementService>();)
 
 class NetworkManagementServicePrivate
@@ -51,8 +54,9 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 {
     Q_D(NetworkManagementService);
 
+    KLocalizedString::setApplicationDomain("plasmanetworkmanagement-kded");
 #warning "port translatin catalog away from KGlobal::insertCatalog"
-    //KGlobal::insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard
+    KGlobal::locale()->insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard
 
 //     QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasma-desktop");
 //     if (reply.value()) {
@@ -80,7 +84,7 @@ void NetworkManagementService::doInitialization()
 {
     Q_D(NetworkManagementService);
 
-    qDebug() << "Doing inicialization";
+    qDebug() << "Doing initialization";
     d->agent = new SecretAgent(this);
     new Notification(this);
 #if WITH_MODEMMANAGER_SUPPORT

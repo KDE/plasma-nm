@@ -8,7 +8,8 @@ find_package(NetworkManager "0.9.8.4" REQUIRED)
 include(FindPkgConfig)
 include(KDE4Defaults)
 
-set(PLASMA_NM_VERSION "0.9.3.4-git")
+set(PLASMA_NM_VERSION 0.9.3.4)
+set(PLASMA_NM_STRING_VERSION "${PLASMA_NM_VERSION}")
 
 pkg_check_modules(NETWORKMANAGERQT REQUIRED NetworkManagerQt)
 if (NOT NETWORKMANAGERQT_FOUND)
@@ -25,7 +26,6 @@ else()
     if (MODEMMANAGERQT_FOUND)
         message(STATUS "Enabling ModemManager support")
         set(WITH_MODEMMANAGER_SUPPORT 1)
-
     else()
         message(STATUS "ModemManagerQt not found")
         set(WITH_MODEMMANAGER_SUPPORT 0)
@@ -39,30 +39,21 @@ if (MODEMMANAGERQT_FOUND)
     macro_optional_find_package(MobileBroadbandProviderInfo)
     macro_log_feature(MOBILEBROADBANDPROVIDERINFO_FOUND "mobile-broadband-provider-info" "Database of mobile broadband service providers" "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders" FALSE "" "Needed for Mobile Connection Wizard support in Broadband Modem Management")
 endif()
-pkg_check_modules(NETWORKMANAGER REQUIRED NetworkManager)
-pkg_check_modules(QTNETWORK REQUIRED QtNetwork)
 
 add_definitions(
     -DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT}
-    ${QT_DEFINITIONS}
-    ${KDE_DEFINITIONS}
-    ${NETWORKMANAGERQT_CFLAGS_OTHER}
-)
+    ${NETWORKMANAGERQT_CFLAGS_OTHER})
 
-include_directories(${CMAKE_SOURCE_DIR}
-                    ${CMAKE_BINARY_DIR}
-                    ${CMAKE_CURRENT_BINARY_DIR}
+include_directories(${CMAKE_CURRENT_BINARY_DIR} # for config.h
                     ${CMAKE_CURRENT_SOURCE_DIR}
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/
-                    ${QTNETWORK_INCLUDE_DIRS}
-                    if (MODEMMANAGERQT_FOUND)
-                        ${MODEMMANAGER_INCLUDE_DIRS}
-                        ${MODEMMANAGERQT_INCLUDE_DIRS}
-                    endif()
-                    ${NETWORKMANAGERQT_INCLUDE_DIRS}
                     ${NETWORKMANAGER_INCLUDE_DIRS}
                     ${KDE4_INCLUDES})
+
+if (MODEMMANAGERQT_FOUND)
+    include_directories(${MODEMMANAGERQT_INCLUDE_DIRS})
+endif()
 
 add_subdirectory(applet)
 add_subdirectory(editor)

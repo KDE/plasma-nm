@@ -36,7 +36,7 @@
 int main(int argc, char *argv[])
 {
     KAboutData about("kde-nm-connection-editor", 0, ki18n("Connection editor"),
-                     PLASMA_NM_VERSION, ki18n("Manage your network connections"),
+                     PLASMA_NM_VERSION_STRING, ki18n("Manage your network connections"),
                      KAboutData::License_GPL, ki18n("(C) 2013-2014 Jan Grulich and Lukáš Tinkl"),
                      ki18n("This application allows you to create, edit and delete network connections.\n\nUsing NM version: %1")
                      .subs(NetworkManager::version()));

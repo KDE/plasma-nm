@@ -101,7 +101,7 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     if (data.value(NM_VPNC_KEY_AUTHMODE) == QLatin1String("hybrid")) {
         m_ui->useHybridAuth->setChecked(true);
-        m_ui->caFile->setUrl(KUrl(data.value(NM_VPNC_KEY_CA_FILE)));
+        m_ui->caFile->setUrl(KUrl::fromPath(data.value(NM_VPNC_KEY_CA_FILE)));
     }
 }
 
@@ -158,7 +158,7 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
 
     if (m_ui->useHybridAuth->isChecked() && !m_ui->caFile->url().isEmpty()) {
         data.insert(NM_VPNC_KEY_AUTHMODE, "hybrid");
-        data.insert(NM_VPNC_KEY_CA_FILE, m_ui->caFile->url().url());
+        data.insert(NM_VPNC_KEY_CA_FILE, m_ui->caFile->url().toLocalFile());
     }
 
     setting.setData(data);

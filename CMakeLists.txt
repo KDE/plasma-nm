@@ -6,10 +6,6 @@ set(QT_MIN_VERSION "5.2.0")
 set(PLASMA_NM_VERSION 1.0.0)
 set(PLASMA_NM_STRING_VERSION "${PLASMA_NM_VERSION}")
 
-# With CMake older than version 3.1 pkg_check_modules ignores CMAKE_PREFIX_PATH
-set(PKG_CONFIG_USE_CMAKE_PREFIX_PATH ON)
-include(FindPkgConfig)
-
 ################# set KDE specific information #################
 
 find_package(ECM 0.0.12 REQUIRED NO_MODULE)
@@ -18,12 +14,10 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_D
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings)
-include(CMakePackageConfigHelpers)
-include(FeatureSummary)
-include(WriteBasicConfigVersionFile)
-include(ECMOptionalAddSubdirectory)
 
-pkg_check_modules(NETWORKMANAGER REQUIRED NetworkManager)
+include(ECMPackageConfigHelpers)
+include(ECMOptionalAddSubdirectory)
+include(FeatureSummary)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Core
@@ -47,6 +41,14 @@ find_package(KF5ModemManagerQt)
 set_package_properties(KF5ModemManagerQt PROPERTIES
                        TYPE OPTIONAL)
 
+find_package(NetworkManager)
+set_package_properties(NetworkManager PROPERTIES
+                       TYPE REQUIRED)
+
+find_package(ModemManager)
+set_package_properties(ModemManager PROPERTIES
+                       TYPE OPTIONAL)
+
 find_package(MobileBroadbandProviderInfo)
 set_package_properties(MobileBroadbandProviderInfo PROPERTIES
                        DESCRIPTION "Database of mobile broadband service providers"
@@ -57,11 +59,11 @@ if (DISABLE_MODEMMANAGER_SUPPORT)
     message(STATUS "Disabling ModemManager support")
     set(WITH_MODEMMANAGER_SUPPORT 0)
 else()
-    if (KF5ModemManagerQt_FOUND)
+    if (KF5ModemManagerQt_FOUND AND ModemManager_FOUND)
         message(STATUS "Enabling ModemManager support")
         set(WITH_MODEMMANAGER_SUPPORT 1)
     else()
-        message(STATUS "ModemManagerQt not found")
+        message(STATUS "ModemManager or ModemManagerQt not found")
         set(WITH_MODEMMANAGER_SUPPORT 0)
     endif()
 endif()
@@ -81,7 +83,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR} # for config.h
                     ${NETWORKMANAGER_INCLUDE_DIRS})
 
 if (WITH_MODEMMANAGER_SUPPORT)
-    pkg_check_modules(MODEMMANAGER REQUIRED ModemManager>=1.0)
     include_directories(${MODEMMANAGER_INCLUDE_DIRS})
 endif()
 

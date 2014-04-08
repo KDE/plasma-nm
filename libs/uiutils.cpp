@@ -169,7 +169,7 @@ QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
 QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type, QString &title)
 {
     QString text;
-    QString icon;
+    QString icon = "network-wired";
     switch (type) {
     case ConnectionSettings::Adsl:
         text = i18n("ADSL");

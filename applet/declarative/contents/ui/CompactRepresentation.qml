@@ -51,4 +51,9 @@ Item {
             visible: running;
         }
     }
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: plasmoid.expanded = !plasmoid.expanded
+    }
 }

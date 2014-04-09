@@ -22,10 +22,9 @@
 
 #include <QFile>
 #include <QTextStream>
-
 #include <QDebug>
+
 #include <KLocale>
-#include <KGlobal>
 
 const QString MobileProviders::ProvidersFile = "/usr/share/mobile-broadband-provider-info/serviceproviders.xml";
 
@@ -35,10 +34,10 @@ bool localeAwareCompare(const QString & one, const QString & two) {
 
 MobileProviders::MobileProviders()
 {
-    const QStringList allCountries = KGlobal::locale()->allCountriesList();
+    const QStringList allCountries = KLocale::global()->allCountriesList();
     foreach (const QString & cc, allCountries) {
-        //qDebug() << "Inserting" << cc.toUpper() << KGlobal::locale()->countryCodeToName(cc);
-        mCountries.insert(cc.toUpper(), KGlobal::locale()->countryCodeToName(cc));
+        //qDebug() << "Inserting" << cc.toUpper() << KLocale::global()->countryCodeToName(cc);
+        mCountries.insert(cc.toUpper(), KLocale::global()->countryCodeToName(cc));
     }
     mError = Success;
 
@@ -86,7 +85,7 @@ QStringList MobileProviders::getCountryList() const
 
 QString MobileProviders::countryFromLocale() const
 {
-    return KGlobal::locale()->country().toUpper();
+    return KLocale::global()->country().toUpper();
 }
 
 QStringList MobileProviders::getProvidersList(QString country, NetworkManager::ConnectionSettings::ConnectionType type)
@@ -304,7 +303,7 @@ QVariantMap MobileProviders::getCdmaInfo(const QString & provider)
 QString MobileProviders::getNameByLocale(const QMap<QString, QString> & localizedNames) const
 {
     QString name;
-    const QStringList locales = KGlobal::locale()->languageList();
+    const QStringList locales = KLocale::global()->languageList();
     foreach(const QString & locale, locales) {
         QString language, country, modifier, charset;
         KLocale::splitLocale(locale, language, country, modifier, charset);

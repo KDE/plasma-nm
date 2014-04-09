@@ -34,7 +34,6 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 
-#include <KGlobal>
 #include <KLocale>
 #include <KLocalizedString>
 
@@ -151,7 +150,7 @@ void NetworkModelItem::setDeviceState(const NetworkManager::Device::State state)
 QString NetworkModelItem::download() const
 {
     double download = m_download.toDouble();
-    return KGlobal::locale()->formatByteSize(download*1024) + "/s";
+    return KLocale::global()->formatByteSize(download*1024) + "/s";
 }
 
 bool NetworkModelItem::duplicate() const
@@ -373,7 +372,7 @@ QString NetworkModelItem::uni() const
 QString NetworkModelItem::upload() const
 {
     double upload = m_upload.toDouble();
-    return KGlobal::locale()->formatByteSize(upload*1024) + "/s";
+    return KLocale::global()->formatByteSize(upload*1024) + "/s";
 }
 
 QString NetworkModelItem::uuid() const

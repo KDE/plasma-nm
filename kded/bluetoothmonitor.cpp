@@ -29,7 +29,6 @@
 #include <QUuid>
 
 #include <QDebug>
-#include <KStandardDirs>
 #include <KLocalizedString>
 #include <KMessageBox>
 

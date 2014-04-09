@@ -27,6 +27,7 @@
 #include <QLabel>
 #include <QGraphicsLinearLayout>
 
+#include <KLocale>
 #include <KGlobalSettings>
 
 #include <NetworkManagerQt/Manager>
@@ -220,9 +221,9 @@ void TrafficMonitor::updateTraffic()
         _r = m_rx.toDouble();
         _t = m_tx.toDouble();
 
-        r = KGlobal::locale()->formatByteSize(_r*1024);
+        r = KLocale::global()->formatByteSize(_r*1024);
         r.append("/s");
-        t = KGlobal::locale()->formatByteSize(_t*1024);
+        t = KLocale::global()->formatByteSize(_t*1024);
         t.append("/s");
     }
 
@@ -240,10 +241,10 @@ void TrafficMonitor::updateTraffic()
     temp = QString("<qt><table align=\"left\" border=\"0\"><tr>");
     temp += QString("<td width=\"20pt\" bgcolor=\"%1\">&nbsp;&nbsp;").arg(m_rxColor.name());
     temp += QString("</td><td width=\"50%\">");
-    temp += QString(format).arg(i18n("Received"), KGlobal::locale()->formatByteSize(m_rxTotal*1000, 2));
+    temp += QString(format).arg(i18n("Received"), KLocale::global()->formatByteSize(m_rxTotal*1000, 2));
     temp += QString("&nbsp;&nbsp;</td></tr><tr><td width=\"20pt\" bgcolor=\"%1\">&nbsp;&nbsp;").arg(m_txColor.name());
     temp += QString("</td><td width=\"50%\">");
-    temp += QString(format).arg(i18n("Transmitted"), KGlobal::locale()->formatByteSize(m_txTotal*1000, 2));
+    temp += QString(format).arg(i18n("Transmitted"), KLocale::global()->formatByteSize(m_txTotal*1000, 2));
     temp += QString("</td></tr></table></qt>");
     m_traffic->setText(temp);
 }

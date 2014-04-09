@@ -23,11 +23,12 @@
 #include "nm-openvpn-service.h"
 #include "settingwidget.h"
 
+#include <QStandardPaths>
+#include <QUrl>
+
 #include <KLocalizedString>
 #include <KProcess>
-#include <KStandardDirs>
 #include <KAcceleratorManager>
-#include <QUrl>
 
 class OpenVpnAdvancedWidget::Private {
 public:
@@ -69,7 +70,7 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     connect(m_ui->cmbProxyType, SIGNAL(currentIndexChanged(int)), this, SLOT(proxyTypeChanged(int)));
 
     // start openVPN process and get its cipher list
-    const QString openVpnBinary = KStandardDirs::findExe("openvpn", "/sbin:/usr/sbin");
+    const QString openVpnBinary = QStandardPaths::findExecutable("openvpn", QStringList() << "/sbin" << "/usr/sbin");
     const QStringList args(QLatin1String("--show-ciphers"));
     d->openvpnProcess = new KProcess(this);
     d->openvpnProcess->setOutputChannelMode(KProcess::OnlyStdoutChannel);

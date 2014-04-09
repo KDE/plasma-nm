@@ -30,10 +30,12 @@
 #include "vpnuiplugin.h"
 #include <networkmodelitem.h>
 
+#include <QUrl>
+#include <QStandardPaths>
+
 #include <KActionCollection>
 #include <KLocale>
 #include <KGlobal>
-#include <KGlobalSettings>
 #include <KIcon>
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -42,15 +44,12 @@
 #include <KStandardAction>
 #include <KAction>
 #include <KXMLGUIFactory>
-#include <KMenu>
 #include <KAcceleratorManager>
 #include <KConfig>
 #include <KConfigGroup>
 #include <KWallet/Wallet>
-#include <KStandardDirs>
 #include <KFileDialog>
 #include <KShell>
-#include <QUrl>
 #include <KFilterProxySearchLine>
 
 #include <NetworkManagerQt/Settings>
@@ -409,7 +408,7 @@ void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
 
 void ConnectionEditor::importSecretsFromPlainTextFiles()
 {
-    const QString secretsDirectory = KStandardDirs::locateLocal("data", "networkmanagement/secrets/");
+    const QString secretsDirectory = QStandardPaths::locate(QStandardPaths::DataLocation, "networkmanagement/secrets/", QStandardPaths::LocateDirectory);
     QDir dir(secretsDirectory);
     if (dir.exists() && !dir.entryList(QDir::Files).isEmpty()) {
         QMap<QString, QMap<QString, QString > > resultingMap;
@@ -558,7 +557,7 @@ void ConnectionEditor::exportVpn()
             return;
         }
 
-        const QUrl url = QUrl::fromLocalFile(KGlobalSettings::documentPath() + QDir::separator() + vpnPlugin->suggestedFileName(connSettings));
+        const QUrl url = QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + QDir::separator() + vpnPlugin->suggestedFileName(connSettings));
         const QString filename = KFileDialog::getSaveFileName(url, vpnPlugin->supportedFileExtensions(), this, i18n("Export VPN Connection"));
         if (!filename.isEmpty()) {
             if (!vpnPlugin->exportConnectionSettings(connSettings, filename)) {

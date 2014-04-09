@@ -28,7 +28,7 @@
 
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/ConnectionSettings>
-#include <NetworkManagerQt/generic-types.h>
+#include <NetworkManagerQt/generictypes.h>
 
 #include <kdemacros.h>
 

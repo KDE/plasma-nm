@@ -23,9 +23,11 @@
 
 #include "vpnc.h"
 
+#include <QStandardPaths>
+#include <QFile>
+
 #include <KPluginFactory>
 #include <KSharedConfig>
-#include <KStandardDirs>
 #include <KMessageBox>
 #include <KLocalizedString>
 #include <QDebug>
@@ -147,7 +149,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
     KConfigGroup cg(config, "main");   // Keys&Values are stored under [main]
     if (cg.exists()) {
         // Setup cisco-decrypt binary to decrypt the passwords
-        const QString ciscoDecryptBinary = KStandardDirs::findExe("cisco-decrypt", QString::fromLocal8Bit(qgetenv("PATH")) + ":/usr/lib/vpnc");
+        const QString ciscoDecryptBinary = QStandardPaths::findExecutable("cisco-decrypt", QStringList() << QFile::decodeName(qgetenv("PATH")) << "/usr/lib/vpnc");
         if (ciscoDecryptBinary.isEmpty()) {
             mErrorMessage = i18n("Needed executable cisco-decrypt could not be found.");
             return result;

@@ -26,7 +26,6 @@
 
 #include <QDebug>
 #include <KProcess>
-#include <KStandardDirs>
 #include <KUrlRequester>
 #include <KLineEdit>
 #include <QUrl>

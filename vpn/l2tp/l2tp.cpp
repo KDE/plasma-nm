@@ -18,16 +18,17 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "l2tp.h"
-
 #include <KPluginFactory>
-#include <KLocale>
-#include "nm-l2tp-service.h"
 
 #include <NetworkManagerQt/VpnSetting>
 
+#include "nm-l2tp-service.h"
+#include "l2tp.h"
 #include "l2tpwidget.h"
 #include "l2tpauth.h"
+
+#define TRANSLATION_DOMAIN "plasmanetworkmanagement_l2tpui"
+#include <KLocalizedString>
 
 K_PLUGIN_FACTORY_WITH_JSON(L2tpUiPluginFactory, "plasmanetworkmanagement_l2tpui.json", registerPlugin<L2tpUiPlugin>();)
 

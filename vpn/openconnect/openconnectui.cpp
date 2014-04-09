@@ -26,16 +26,17 @@
 #include "openconnectwidget.h"
 #include "openconnectauth.h"
 
+#define TRANSLATION_DOMAIN "plasmanetworkmanagement_openconnectui"
+#include <KLocalizedString>
+
 K_PLUGIN_FACTORY(OpenconnectUiPluginFactory, registerPlugin<OpenconnectUiPlugin>();)
 
 OpenconnectUiPlugin::OpenconnectUiPlugin(QObject * parent, const QVariantList &) : VpnUiPlugin(parent)
 {
-
 }
 
 OpenconnectUiPlugin::~OpenconnectUiPlugin()
 {
-
 }
 
 SettingWidget * OpenconnectUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)

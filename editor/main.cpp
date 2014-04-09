@@ -60,8 +60,8 @@ int main(int argc, char *argv[])
     app.setApplicationVersion(PLASMA_NM_VERSION_STRING);
 
 #warning "Translations for kde-nm-connection-editor disabled"
-    //KGlobal::insertCatalog("libplasmanetworkmanagement-editor");  // setting widgets
-    //KGlobal::insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard, UiUtils, ...
+    KGlobal::locale()->insertCatalog("libplasmanetworkmanagement-editor");  // setting widgets
+    KGlobal::locale()->insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard, UiUtils, ...
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     if(args->count()) {

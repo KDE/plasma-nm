@@ -24,6 +24,7 @@
 
 #include <QDebug>
 #include <QDesktopServices>
+#include <QFileDialog>
 
 #include <NetworkManagerQt/GenericTypes>
 #include <NetworkManagerQt/Connection>
@@ -32,7 +33,6 @@
 
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KFileDialog>
 
 TeamWidget::TeamWidget(const QString & masterUuid, const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
@@ -205,8 +205,8 @@ void TeamWidget::populateTeams()
 
 void TeamWidget::importConfig()
 {
-    const QString filename = KFileDialog::getOpenFileName(QDesktopServices::storageLocation(QDesktopServices::HomeLocation),
-                                                          QLatin1String("text/plain"), this, i18n("Select file to import"));
+    const QString filename = QFileDialog::getOpenFileName(this, i18n("Select file to import"), QDesktopServices::storageLocation(QDesktopServices::HomeLocation),
+                                                          "text/plain");
     if (!filename.isEmpty()) {
         //qDebug() << "Importing" << filename;
         QFile file(filename);

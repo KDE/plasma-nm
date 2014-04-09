@@ -32,6 +32,7 @@
 
 #include <QUrl>
 #include <QStandardPaths>
+#include <QFileDialog>
 
 #include <KActionCollection>
 #include <KLocale>
@@ -48,7 +49,6 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <KWallet/Wallet>
-#include <KFileDialog>
 #include <KShell>
 #include <KFilterProxySearchLine>
 
@@ -481,7 +481,7 @@ void ConnectionEditor::importVpn()
         }
     }
 
-    const QString filename = KFileDialog::getOpenFileName(QUrl(), extensions.simplified(), this, i18n("Import VPN Connection"));
+    const QString filename = QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), extensions.simplified());
     if (!filename.isEmpty()) {
         QFileInfo fi(filename);
         const QString ext = QLatin1Literal("*.") % fi.suffix();
@@ -557,8 +557,8 @@ void ConnectionEditor::exportVpn()
             return;
         }
 
-        const QUrl url = QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + QDir::separator() + vpnPlugin->suggestedFileName(connSettings));
-        const QString filename = KFileDialog::getSaveFileName(url, vpnPlugin->supportedFileExtensions(), this, i18n("Export VPN Connection"));
+        const QString url = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + QDir::separator() + vpnPlugin->suggestedFileName(connSettings);
+        const QString filename = QFileDialog::getSaveFileName(this, i18n("Export VPN Connection"), url, vpnPlugin->supportedFileExtensions());
         if (!filename.isEmpty()) {
             if (!vpnPlugin->exportConnectionSettings(connSettings, filename)) {
                 m_editor->messageWidget->animatedShow();

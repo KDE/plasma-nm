@@ -45,26 +45,23 @@ K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManageme
 
 class NetworkManagementServicePrivate
 {
-public:
+    public:
     SecretAgent * agent;
 };
 
 NetworkManagementService::NetworkManagementService(QObject * parent, const QVariantList&)
-        : KDEDModule(parent), d_ptr(new NetworkManagementServicePrivate)
+    : KDEDModule(parent), d_ptr(new NetworkManagementServicePrivate)
 {
-    Q_D(NetworkManagementService);
-
-    KLocalizedString::setApplicationDomain("plasmanetworkmanagement-kded");
 #warning "port translatin catalog away from KGlobal::insertCatalog"
     KGlobal::locale()->insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard
 
-//     QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasma-desktop");
-//     if (reply.value()) {
+    QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasma_shell");
+    if (reply.value()) {
         doInitialization();
-//     } else {
-//         QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.kde.plasma-desktop", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
-//         connect(watcher, SIGNAL(serviceRegistered(QString)), SLOT(finishInitialization()));
-//     }
+    } else {
+        QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.kde.plasma_shell", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
+        connect(watcher, SIGNAL(serviceRegistered(QString)), SLOT(finishInitialization()));
+    }
 }
 
 NetworkManagementService::~NetworkManagementService()
@@ -75,7 +72,7 @@ NetworkManagementService::~NetworkManagementService()
 void NetworkManagementService::finishInitialization()
 {
     QDBusServiceWatcher * watcher = static_cast<QDBusServiceWatcher*>(sender());
-    disconnect(watcher, SIGNAL(serviceRegistered(QString)), this,  SLOT(finishInitialization()));
+    disconnect(watcher, SIGNAL(serviceRegistered(QString)), this, SLOT(finishInitialization()));
 
     doInitialization();
 }

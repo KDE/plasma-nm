@@ -48,8 +48,7 @@ SecretAgent::SecretAgent(QObject* parent):
     m_wallet(0),
     m_dialog(0)
 {
-    connect(NetworkManager::notifier(), SIGNAL(serviceDisappeared()),
-            this, SLOT(killDialogs()));
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::serviceDisappeared, this, &SecretAgent::killDialogs);
 }
 
 SecretAgent::~SecretAgent()
@@ -338,8 +337,8 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
 
     if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
         m_dialog = new PasswordDialog(request.connection, request.flags, request.setting_name);
-        connect(m_dialog, SIGNAL(accepted()), this, SLOT(dialogAccepted()));
-        connect(m_dialog, SIGNAL(rejected()), this, SLOT(dialogRejected()));
+        connect(m_dialog, &PasswordDialog::accepted, this, &SecretAgent::dialogAccepted);
+        connect(m_dialog, &PasswordDialog::rejected, this, &SecretAgent::dialogRejected);
         if (isVpn) {
             m_dialog->setupVpnUi(connectionSettings);
         } else {
@@ -483,8 +482,8 @@ bool SecretAgent::useWallet() const
     if (KWallet::Wallet::isEnabled()) {
         m_wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Asynchronous);
         if (m_wallet) {
-            connect(m_wallet, SIGNAL(walletOpened(bool)), this, SLOT(walletOpened(bool)));
-            connect(m_wallet, SIGNAL(walletClosed()), this, SLOT(walletClosed()));
+            connect(m_wallet, &KWallet::Wallet::walletOpened, this, &SecretAgent::walletOpened);
+            connect(m_wallet, &KWallet::Wallet::walletClosed, this, &SecretAgent::walletClosed);
             return true;
         } else {
             qWarning() << "Error opening kwallet.";

@@ -22,14 +22,13 @@
 #include "pindialog.h"
 
 #include <QIntValidator>
-
 #include <QDebug>
+#include <QDesktopWidget>
+
 #include <KWindowSystem>
-#include <KGlobalSettings>
 #include <KIcon>
 #include <KIconLoader>
 #include <KLocalizedString>
-
 
 #include <ModemManagerQt/manager.h>
 
@@ -64,7 +63,7 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     ui->puk->setValidator(validator2);
 
     ui->errorMessage->setHidden(true);
-    QRect desktop = KGlobalSettings::desktopGeometry(topLevelWidget());
+    QRect desktop = QApplication::desktop()->screenGeometry(topLevelWidget());
     setMinimumWidth(qMin(1000, qMax(sizeHint().width(), desktop.width() / 4)));
 
     pixmapLabel = new QLabel(this);
@@ -72,8 +71,8 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     ui->gridLayout->addWidget(pixmapLabel, 0, 0);
     pixmapLabel->setPixmap(KIcon("dialog-password").pixmap(KIconLoader::SizeHuge));
 
-    connect(ui->buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(ui->buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &PinDialog::accept);
+    connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &PinDialog::reject);
 
     if (isPukDialog()) {
         QString pukType;
@@ -149,8 +148,8 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     KWindowSystem::activateWindow(winId());
 
     move((desktop.width() - width()) / 2, (desktop.height() - height()) / 2);
-    connect(ui->chkShowPass, SIGNAL(toggled(bool)), this, SLOT(chkShowPassToggled(bool)));
-    connect(ModemManager::notifier(), SIGNAL(modemRemoved(QString)), SLOT(modemRemoved(QString)));
+    connect(ui->chkShowPass, &QCheckBox::toggled, this, &PinDialog::chkShowPassToggled);
+    connect(ModemManager::notifier(), &ModemManager::Notifier::modemRemoved, this, &PinDialog::modemRemoved);
 }
 
 PinDialog::~PinDialog()

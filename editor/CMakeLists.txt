@@ -22,7 +22,6 @@ target_link_libraries(kde-nm-connection-editor
     Qt5::Network
     Qt5::DBus
     KF5::NetworkManagerQt
-    KF5::ModemManagerQt
     KF5::Service
     KF5::Completion
     KF5::I18n
@@ -35,6 +34,10 @@ target_link_libraries(kde-nm-connection-editor
     KF5::XmlGui
     KF5::KDE4Support
 )
+
+if (WITH_MODEMMANAGER_SUPPORT)
+    target_link_libraries(kde-nm-connection-editor KF5::ModemManagerQt)
+endif()
 
 install(TARGETS kde-nm-connection-editor DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS kde-nm-connection-editor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})

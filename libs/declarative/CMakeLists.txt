@@ -19,10 +19,13 @@ target_link_libraries(plasmanetworkmanagementplugins
     Qt5::DBus
     Qt5::Network
     KF5::NetworkManagerQt
-    KF5::ModemManagerQt
     KF5::I18n
     KF5::WindowSystem
 )
+
+if (WITH_MODEMMANAGER_SUPPORT)
+    target_link_libraries(plasmanetworkmanagementplugins KF5::ModemManagerQt)
+endif()
 
 install(TARGETS plasmanetworkmanagementplugins DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/networkmanagement)
 install(FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/networkmanagement)

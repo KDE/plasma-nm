@@ -37,7 +37,6 @@ target_link_libraries(kded_networkmanagement
     Qt5::Network
     Qt5::DBus
     KF5::NetworkManagerQt
-    KF5::ModemManagerQt
     KF5::Service
     KF5::Solid
     KF5::Completion
@@ -51,6 +50,10 @@ target_link_libraries(kded_networkmanagement
     KF5::CoreAddons
     KF5::KDE4Support
 )
+
+if (WITH_MODEMMANAGER_SUPPORT)
+    target_link_libraries(kded_networkmanagement KF5::ModemManagerQt)
+endif()
 
 install(TARGETS kded_networkmanagement DESTINATION ${PLUGIN_INSTALL_DIR})
 

@@ -20,14 +20,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ipv6routeswidget.h"
 
-#include <KLineEdit>
-#include <KLocalizedString>
+#include <QDebug>
 #include <QStandardItem>
 #include <QStandardItemModel>
 #include <QNetworkAddressEntry>
 
-#include <QDebug>
 #include <KAcceleratorManager>
+#include <KLineEdit>
+#include <KLocalizedString>
 
 #include "ui_ipv6routes.h"
 

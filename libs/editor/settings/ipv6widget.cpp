@@ -30,7 +30,6 @@
 #include <QNetworkAddressEntry>
 
 #include <KEditListWidget>
-#include <QDialog>
 #include <KLocalizedString>
 
 quint32 suggestNetmask(Q_IPV6ADDR ip)

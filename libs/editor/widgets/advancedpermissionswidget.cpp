@@ -44,7 +44,7 @@ AdvancedPermissionsWidget::AdvancedPermissionsWidget(QWidget *parent):
     d->ui.setupUi(this);
 
     foreach (const KUser &user, KUser::allUsers()) {
-        if (user.uid() >= 1000 && user.loginName() != QLatin1String("nobody"))
+        if (user.userId().nativeId() >= 1000 && user.loginName() != QLatin1String("nobody"))
             d->ui.availUsers->addTopLevelItem(constructItem(user));
     }
     setupCommon();
@@ -59,7 +59,7 @@ AdvancedPermissionsWidget::AdvancedPermissionsWidget(const QHash<QString,QString
 
     foreach (const KUser &user, KUser::allUsers()) {
         const QString name = user.loginName();
-        if (!users.contains(name) && user.uid() >= 1000 && user.loginName() != QLatin1String("nobody"))
+        if (!users.contains(name) && user.userId().nativeId() >= 1000 && user.loginName() != QLatin1String("nobody"))
             d->ui.availUsers->addTopLevelItem(constructItem(user));
         else if (users.contains(name))
             d->ui.currentUsers->addTopLevelItem(constructItem(user, users.value(name)));

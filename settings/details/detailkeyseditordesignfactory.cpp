@@ -23,9 +23,8 @@
 
 #include <QtPlugin>
 
-#include <KGlobal>
-
-//static const KCatalogLoader loader(QLatin1String("plasma_applet_org.kde.plasma.networkmanagement"));
+#define TRANSLATION_DOMAIN "plasma_applet_org.kde.plasma.networkmanagement"
+#include <KLocalizedString>
 
 DetailKeysEditorDesignerFactory::DetailKeysEditorDesignerFactory(QObject *parent)
 : QObject(parent)

@@ -21,8 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "ipv6delegate.h"
 
 #include <KLineEdit>
-#include <QStandardItem>
-#include <QStandardItemModel>
 
 #include "simpleipv6addressvalidator.h"
 

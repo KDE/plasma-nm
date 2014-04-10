@@ -23,10 +23,9 @@
 #include "uiutils.h"
 
 #include <QVBoxLayout>
+#include <QDebug>
 
 #include <KLocalizedString>
-#include <QDebug>
-#include <KGlobal>
 #include <KIconLoader>
 #include <Solid/Device>
 

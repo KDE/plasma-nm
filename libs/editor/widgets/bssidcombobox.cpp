@@ -27,8 +27,6 @@
 
 #include <KLocalizedString>
 
-#include <QtAlgorithms>
-
 bool signalCompare(const NetworkManager::AccessPoint::Ptr & one, const NetworkManager::AccessPoint::Ptr & two) {
     return one->signalStrength() > two->signalStrength();
 }

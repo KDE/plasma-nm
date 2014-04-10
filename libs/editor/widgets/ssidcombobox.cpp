@@ -25,8 +25,6 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/WirelessDevice>
 
-#include <QtAlgorithms>
-
 #include <KIcon>
 #include <KLocalizedString>
 

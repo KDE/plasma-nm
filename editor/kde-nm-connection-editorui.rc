@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gui name="kde-nm-connection-editor"
-     version="3"
+     version="4"
      xmlns="http://www.kde.org/standards/kxmlgui/1.0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://www.kde.org/standards/kxmlgui/1.0
@@ -8,6 +8,7 @@
 
   <MenuBar>
     <Menu name="file" >
+    <text>File</text>
       <Action name="import_vpn" />
       <Action name="export_vpn" />
     </Menu>

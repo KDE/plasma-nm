@@ -36,7 +36,6 @@
 
 #include <KActionCollection>
 #include <KLocale>
-#include <KGlobal>
 #include <KIcon>
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -67,6 +66,8 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     QWidget * tmp = new QWidget(this);
     m_editor->setupUi(tmp);
     setCentralWidget(tmp);
+
+    setWindowTitle(i18n("Connection editor")); // TODO this shouldn't be necessary
 
     m_editor->connectionsWidget->setSortingEnabled(false);
     m_editor->connectionsWidget->sortByColumn(0, Qt::AscendingOrder);

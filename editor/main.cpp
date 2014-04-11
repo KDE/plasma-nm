@@ -22,13 +22,13 @@
 #include "connectiondetaileditor.h"
 #include <config.h>
 
-#include <KApplication>
 #include <KGlobal>
-#include <k4aboutdata.h>
-#include <KCmdLineArgs>
-#include <KMainWindow>
-#include <QUrl>
 #include <KIcon>
+#include <KAboutData>
+
+#include <QApplication>
+#include <QUrl>
+#include <QCommandLineParser>
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
@@ -36,49 +36,49 @@
 
 int main(int argc, char *argv[])
 {
-    K4AboutData about("kde-nm-connection-editor", 0, ki18n("Connection editor"),
-                     PLASMA_NM_VERSION_STRING, ki18n("Manage your network connections"),
-                     K4AboutData::License_GPL, ki18n("(C) 2013-2014 Jan Grulich and Lukáš Tinkl"),
-                     ki18n("This application allows you to create, edit and delete network connections.\n\nUsing NM version: %1")
-                     .subs(NetworkManager::version()));
-    about.addAuthor(ki18n("Jan Grulich"), ki18n("Developer"), "jgrulich@redhat.com");
-    about.addAuthor(ki18n("Lukáš Tinkl"), ki18n("Developer"), "ltinkl@redhat.com");
-    about.addCredit(ki18n("Lamarque Souza"), ki18n("libnm-qt author"), "lamarque@kde.org");
-    about.addCredit(ki18n("Daniel Nicoletti"), ki18n("various bugfixes"), "dantti12@gmail.com");
-    about.addCredit(ki18n("Will Stephenson"), ki18n("VPN plugins"), "wstephenson@kde.org");
-    about.addCredit(ki18n("Ilia Kats"), ki18n("VPN plugins"), "ilia-kats@gmx.net");
+    QApplication app(argc, argv);
+    app.setWindowIcon(KIcon("network-defaultroute"));
+
+    KAboutData about("kde-nm-connection-editor", "kde-nm-connection-editor", i18n("Connection editor"),
+                     PLASMA_NM_VERSION_STRING, i18n("Manage your network connections"),
+                     KAboutData::License_GPL, i18n("(C) 2013-2014 Jan Grulich and Lukáš Tinkl"),
+                     i18n("This application allows you to create, edit and delete network connections.\n\nUsing NM version: %1", NetworkManager::version()));
+    about.addAuthor(i18n("Jan Grulich"), i18n("Developer"), "jgrulich@redhat.com");
+    about.addAuthor(i18n("Lukáš Tinkl"), i18n("Developer"), "ltinkl@redhat.com");
+    about.addCredit(i18n("Lamarque Souza"), i18n("libnm-qt author"), "lamarque@kde.org");
+    about.addCredit(i18n("Daniel Nicoletti"), i18n("various bugfixes"), "dantti12@gmail.com");
+    about.addCredit(i18n("Will Stephenson"), i18n("VPN plugins"), "wstephenson@kde.org");
+    about.addCredit(i18n("Ilia Kats"), i18n("VPN plugins"), "ilia-kats@gmx.net");
     about.setProductName("plasma-nm/editor");
 
-    KCmdLineArgs::init(argc, argv, &about);
+    KAboutData::setApplicationData(about);
 
-    KCmdLineOptions options;
-    options.add("+[uuid]", ki18n("Edit connection"));
-    KCmdLineArgs::addCmdLineOptions(options);
-
-    QApplication app(KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv());
-    app.setApplicationName("kde-nm-connection-editor");
-    app.setApplicationVersion(PLASMA_NM_VERSION_STRING);
+    QCommandLineParser parser;
+    about.setupCommandLine(&parser);
+    parser.addPositionalArgument("uuid", i18n("Edit connection"), "[uuid]");
+    parser.addHelpOption();
+    parser.addVersionOption();
 
 #warning "Translations for kde-nm-connection-editor disabled"
     KGlobal::locale()->insertCatalog("libplasmanetworkmanagement-editor");  // setting widgets
     KGlobal::locale()->insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard, UiUtils, ...
 
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    if(args->count()) {
-        NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(args->arg(0));
+    parser.process(app);
+
+    const QStringList args = parser.positionalArguments();
+    if (!args.isEmpty()) {
+        NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(args.first());
 
         if (connection) {
             NetworkManager::ConnectionSettings::Ptr connectionSetting = connection->settings();
 
             ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting);
-            editor->setWindowIcon(KIcon("network-defaultroute"));
             editor->show();
         } else {
             return 1;
         }
     } else {
         ConnectionEditor * editor = new ConnectionEditor();
-        editor->setWindowIcon(KIcon("network-defaultroute"));
         editor->show();
     }
 

@@ -8,7 +8,6 @@
 
   <MenuBar>
     <Menu name="file" >
-    <text>File</text>
       <Action name="import_vpn" />
       <Action name="export_vpn" />
     </Menu>

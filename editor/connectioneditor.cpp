@@ -67,8 +67,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     m_editor->setupUi(tmp);
     setCentralWidget(tmp);
 
-    setWindowTitle(i18n("Connection editor")); // TODO this shouldn't be necessary
-
     m_editor->connectionsWidget->setSortingEnabled(false);
     m_editor->connectionsWidget->sortByColumn(0, Qt::AscendingOrder);
     m_editor->connectionsWidget->setSortingEnabled(true);
@@ -78,7 +76,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     m_editor->messageWidget->setCloseButtonVisible(false);
     m_editor->messageWidget->setWordWrap(true);
 
-    //m_editor->ktreewidgetsearchline->lineEdit()->setClickMessage(i18n("Type here to search connections..."));
+    m_editor->ktreewidgetsearchline->lineEdit()->setPlaceholderText(i18n("Type here to search connections..."));
 
     initializeConnections();
     initializeMenu();
@@ -318,9 +316,9 @@ void ConnectionEditor::initializeConnections()
     filterModel->setSourceModel(model);
 
     m_editor->connectionsWidget->setModel(filterModel);
-//     m_editor->ktreewidgetsearchline->setProxy(filterModel);
+    m_editor->ktreewidgetsearchline->setProxy(filterModel);
 
-//     m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
+    m_editor->connectionsWidget->header()->setSectionResizeMode(0, QHeaderView::Stretch);
 }
 
 void ConnectionEditor::removeConnection()

@@ -23,13 +23,10 @@
    <item>
     <widget class="KMessageWidget" name="messageWidget" native="true"/>
    </item>
-<!--   <item>
-    <widget class="KTreeWidgetSearchLine" name="ktreewidgetsearchline">
-     <property name="placeholderText">
-      <string>Search connections...</string>
-     </property>
+   <item>
+    <widget class="KFilterProxySearchLine" name="ktreewidgetsearchline">
     </widget>
-   </item>-->
+   </item>
    <item>
     <widget class="QTreeView" name="connectionsWidget">
      <property name="sizePolicy">
@@ -69,7 +66,7 @@
   </customwidget>
   <customwidget>
    <class>KFilterProxySearchLine</class>
-   <extends>KLineEdit</extends>
+   <extends>QLineEdit</extends>
    <header>kfilterproxysearchline.h</header>
   </customwidget>
   <customwidget>

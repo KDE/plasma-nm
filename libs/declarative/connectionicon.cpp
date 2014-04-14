@@ -455,7 +455,6 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
         return;
     }
 
-    ModemManager::Modem::Ptr m_modemNetwork;
     ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(device->udi());
     if (modem) {
         if (modem->hasInterface(ModemManager::ModemDevice::ModemInterface)) {

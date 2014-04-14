@@ -369,9 +369,9 @@ void ConnectionIcon::setIcons()
                         Q_EMIT connectionTooltipIconChanged("phone");
 #endif
                     } else {
-                        m_connectionIcon = "bluetooth";
+                        m_connectionIcon = "network-bluetooth-activated";
                         m_connectionTooltipIcon = "preferences-system-bluetooth";
-                        Q_EMIT connectionIconChanged("bluetooth");
+                        Q_EMIT connectionIconChanged("network-bluetooth-activated");
                         Q_EMIT connectionTooltipIconChanged("preferences-system-bluetooth");
                     }
                 }

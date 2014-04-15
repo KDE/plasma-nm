@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -48,17 +48,16 @@ Item {
             top: parent.top;
         }
 
-        // TODO - missing global config
         SwitchButton {
             id: wifiSwitchButton;
 
             checked: enabled && enabledConnections.wirelessEnabled;
-            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !globalConfig.airplaneModeEnabled;
-            icon: checked ? "network-wireless-on" : "network-wireless-off";
+            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled;
+            icon: enabled ? "network-wireless-on" : "network-wireless-off";
             visible: availableDevices.wirelessDeviceAvailable;
 
             onClicked: {
-                handler.enableWireless(!checked);
+                handler.enableWireless(checked);
             }
         }
 
@@ -66,24 +65,27 @@ Item {
             id: wwanSwitchButton;
 
             checked: enabled && enabledConnections.wwanEnabled;
-            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !globalConfig.airplaneModeEnabled;
-            icon: checked ? "network-mobile-on" : "network-mobile-off";
+            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled;
+            icon: enabled ? "network-mobile-on" : "network-mobile-off";
             visible: availableDevices.modemDeviceAvailable;
 
             onClicked: {
-                handler.enableWwan(!checked);
+                handler.enableWwan(checked);
             }
         }
 
         SwitchButton {
             id: planeModeSwitchButton;
 
-            checked: globalConfig.airplaneModeEnabled;
-            icon: checked ? "flightmode-on" : "flightmode-off";
+            property bool airplaneModeEnabled: false;
+
+            checked: airplaneModeEnabled;
+            icon: airplaneModeEnabled ? "flightmode-on" : "flightmode-off";
 
             onClicked: {
-                handler.enableAirplaneMode(!checked);
-                globalConfig.setAirplaneModeEnabled(!checked);
+                handler.enableAirplaneMode(checked);
+                airplaneModeEnabled = !airplaneModeEnabled;
+                console.log(airplaneModeEnabled);
             }
         }
     }
@@ -99,6 +101,7 @@ Item {
             top: parent.top;
             topMargin: padding.margins.top/2;
         }
+
         iconSource: "configure";
 
         onClicked: {
@@ -117,6 +120,7 @@ Item {
             top: parent.top;
             topMargin: padding.margins.top/2;
         }
+
         iconSource: "view-refresh";
 
         onClicked: {

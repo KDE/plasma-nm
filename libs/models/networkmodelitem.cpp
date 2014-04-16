@@ -453,6 +453,9 @@ void NetworkModelItem::updateDetails()
         NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
         m_details << i18n("Access point (SSID)") << m_ssid;
         m_details << i18n("Signal strength") << i18n("%1%", m_signal);
+        if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
+            m_details << i18n("Security type") << UiUtils::labelFromWirelessSecurity(m_securityType);
+        }
         if (wirelessDevice) {
             if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
                 m_details << i18n("Connection speed") << UiUtils::connectionSpeed(wirelessDevice->bitRate());

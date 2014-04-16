@@ -526,8 +526,7 @@ void NetworkModelItem::dataUpdated(const QString& sourceName, const Plasma::Data
     } else if (sourceName == m_downloadSource) {
         m_download = data["value"].toString();
     }
-    // TODO
-//     Q_EMIT itemUpdated();
+    Q_EMIT itemUpdated();
 }
 
 void NetworkModelItem::initializeDataEngine()

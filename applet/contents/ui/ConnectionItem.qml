@@ -184,7 +184,7 @@ PlasmaComponents.ListItem {
                 anchors {
                     left: parent.left;
                     leftMargin: units.iconSizes.medium + padding.margins.left;
-                    right: configureButton.visible ? configureButton.left : parent.right;
+                    right: configureButton.visible && Uuid ? configureButton.left : parent.right;
                     top: detailsSeparator.bottom;
                     topMargin: padding.margins.top;
                 }

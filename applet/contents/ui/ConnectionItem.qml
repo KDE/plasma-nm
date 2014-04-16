@@ -34,7 +34,7 @@ PlasmaComponents.ListItem {
     property bool visibleDetails: false;
     property bool visiblePasswordDialog: false;
 
-    property int baseHeight: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + padding.margins.top + padding.margins.bottom;
+    property int baseHeight: connectionItemBase.height + padding.margins.top + padding.margins.bottom;
 
     height: (visibleDetails || visiblePasswordDialog) ? baseHeight + expandableComponentLoader.height : baseHeight;
     checked: ListView.isCurrentItem;
@@ -47,85 +47,97 @@ PlasmaComponents.ListItem {
         imagePath: "icons/network";
     }
 
-    PlasmaCore.SvgItem {
-        id: connectionSvgIcon;
+    Item {
+        id: connectionItemBase;
 
         anchors {
-            left: parent.left
+            left: parent.left;
+            right: parent.right;
             top: parent.top;
         }
 
-        height: units.iconSizes.medium;
-        width: height;
-        svg: svgNetworkIcons;
-        elementId: ConnectionIcon;
-    }
+        height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height);
 
-    PlasmaComponents.Label {
-        id: connectionNameLabel;
+        PlasmaCore.SvgItem {
+            id: connectionSvgIcon;
 
-        anchors {
-            left: connectionSvgIcon.right;
-            leftMargin: padding.margins.left;
-            right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
-            bottom: connectionSvgIcon.verticalCenter
+            anchors {
+                left: parent.left
+                verticalCenter: parent.verticalCenter
+            }
+
+            height: units.iconSizes.medium;
+            width: height;
+            svg: svgNetworkIcons;
+            elementId: ConnectionIcon;
         }
 
-        height: paintedHeight;
-        elide: Text.ElideRight;
-        font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal;
-        font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false;
-        text: ItemUniqueName;
-    }
+        PlasmaComponents.Label {
+            id: connectionNameLabel;
 
-    PlasmaComponents.Label {
-        id: connectionStatusLabel;
+            anchors {
+                left: connectionSvgIcon.right;
+                leftMargin: padding.margins.left;
+                right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
+                bottom: connectionSvgIcon.verticalCenter
+            }
 
-        anchors {
-            left: connectionSvgIcon.right;
-            leftMargin: padding.margins.left;
-            right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
-            top: connectionNameLabel.bottom;
+            height: paintedHeight;
+            elide: Text.ElideRight;
+            font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal;
+            font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false;
+            text: ItemUniqueName;
         }
 
-        height: paintedHeight;
-        elide: Text.ElideRight;
-        font.pointSize: theme.smallestFont.pointSize;
-        opacity: 0.6;
-        text: itemText();
-    }
+        PlasmaComponents.Label {
+            id: connectionStatusLabel;
 
-    PlasmaComponents.BusyIndicator {
-        id: connectingIndicator;
+            anchors {
+                left: connectionSvgIcon.right;
+                leftMargin: padding.margins.left;
+                right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
+                top: connectionNameLabel.bottom;
+            }
 
-        anchors {
-            right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
-            rightMargin: padding.margins.right;
-            verticalCenter: connectionSvgIcon.verticalCenter;
+            height: paintedHeight;
+            elide: Text.ElideRight;
+            font.pointSize: theme.smallestFont.pointSize;
+            opacity: 0.6;
+            text: itemText();
         }
 
-        height: units.iconSizes.medium;
-        width: height;
-        running: ConnectionState == PlasmaNM.Enums.Activating;
-        visible: running && !stateChangeButton.visible;
-    }
+        PlasmaComponents.BusyIndicator {
+            id: connectingIndicator;
 
-    PlasmaComponents.Button {
-        id: stateChangeButton;
+            anchors {
+                right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
+                rightMargin: padding.margins.right;
+                verticalCenter: connectionSvgIcon.verticalCenter;
+            }
 
-        anchors {
-            right: parent.right;
-            rightMargin: padding.margins.right;
-            verticalCenter: connectionSvgIcon.verticalCenter;
+            height: units.iconSizes.medium;
+            width: height;
+            running: ConnectionState == PlasmaNM.Enums.Activating;
+            visible: running && !stateChangeButton.visible;
         }
 
-        opacity: connectionItem.containsMouse ? 1 : 0
-        visible: opacity != 0
-        text: (ConnectionState == PlasmaNM.Enums.Deactivated) ? i18n("Connect") : i18n("Disconnect");
+        PlasmaComponents.Button {
+            id: stateChangeButton;
 
-        Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
+            anchors {
+                right: parent.right;
+                rightMargin: padding.margins.right;
+                verticalCenter: connectionSvgIcon.verticalCenter;
+            }
 
-        onClicked: changeState();
+            opacity: connectionItem.containsMouse ? 1 : 0
+            visible: opacity != 0
+            text: (ConnectionState == PlasmaNM.Enums.Deactivated) ? i18n("Connect") : i18n("Disconnect");
+
+            Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
+
+            onClicked: changeState();
+        }
     }
 
     Loader {
@@ -134,7 +146,7 @@ PlasmaComponents.ListItem {
         anchors {
             left: parent.left;
             right: parent.right;
-            top: connectionSvgIcon.bottom;
+            top: connectionItemBase.bottom;
             topMargin: padding.margins.top;
         }
     }

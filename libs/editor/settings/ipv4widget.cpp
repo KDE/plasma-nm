@@ -367,23 +367,23 @@ void IPv4Widget::selectionChanged(const QItemSelection & selected)
 void IPv4Widget::tableViewItemChanged(QStandardItem *item)
 {
     if (item->text().isEmpty()) {
-         return;
-     }
+        return;
+    }
 
-     const int column = item->column();
-     if (column == 0) { // ip
-         int row = item->row();
+    const int column = item->column();
+    if (column == 0) { // ip
+        int row = item->row();
 
-         QStandardItem *netmaskItem = d->model.item(row, column + 1); // netmask
-         if (netmaskItem && netmaskItem->text().isEmpty()) {
-             QHostAddress addr(item->text());
-             const quint32 netmask = suggestNetmask(addr.toIPv4Address());
-             if (netmask) {
-                 QHostAddress v(netmask);
-                 netmaskItem->setText(v.toString());
-             }
-         }
-     }
+        QStandardItem *netmaskItem = d->model.item(row, column + 1); // netmask
+        if (netmaskItem && netmaskItem->text().isEmpty()) {
+            QHostAddress addr(item->text());
+            const quint32 netmask = suggestNetmask(addr.toIPv4Address());
+            if (netmask) {
+                QHostAddress v(netmask);
+                netmaskItem->setText(v.toString());
+            }
+        }
+    }
 }
 
 void IPv4Widget::slotRoutesDialog()
@@ -418,7 +418,7 @@ void IPv4Widget::slotDnsServers()
     connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));
     connect(buttons, SIGNAL(rejected()), dialog, SLOT(reject()));
     KEditListWidget * listWidget = new KEditListWidget(dialog);
-    listWidget->setItems(m_ui->dns->text().split(','));
+    listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(" ", ""));
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
 
@@ -444,7 +444,7 @@ void IPv4Widget::slotDnsDomains()
     connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));
     connect(buttons, SIGNAL(rejected()), dialog, SLOT(reject()));
     KEditListWidget * listWidget = new KEditListWidget(dialog);
-    listWidget->setItems(m_ui->dnsSearch->text().split(','));
+    listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(" ", ""));
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
 

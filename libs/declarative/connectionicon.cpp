@@ -77,15 +77,12 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
     }
 
     foreach (NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
+        activeConnectionAdded(activeConnection->path());
         if (activeConnection->vpn()) {
             NetworkManager::VpnConnection::Ptr vpnConnection;
             vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
-            if (vpnConnection) {
-                connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
-                        SLOT(vpnConnectionStateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)), Qt::UniqueConnection);
-                if (vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
-                    m_vpn = true;
-                }
+            if (vpnConnection && vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
+                m_vpn = true;
             }
         }
     }

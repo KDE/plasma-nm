@@ -366,23 +366,23 @@ void IPv4Widget::selectionChanged(const QItemSelection & selected)
 void IPv4Widget::tableViewItemChanged(QStandardItem *item)
 {
     if (item->text().isEmpty()) {
-         return;
-     }
+        return;
+    }
 
-     const int column = item->column();
-     if (column == 0) { // ip
-         int row = item->row();
+    const int column = item->column();
+    if (column == 0) { // ip
+        int row = item->row();
 
-         QStandardItem *netmaskItem = d->model.item(row, column + 1); // netmask
-         if (netmaskItem && netmaskItem->text().isEmpty()) {
-             QHostAddress addr(item->text());
-             const quint32 netmask = suggestNetmask(addr.toIPv4Address());
-             if (netmask) {
-                 QHostAddress v(netmask);
-                 netmaskItem->setText(v.toString());
-             }
-         }
-     }
+        QStandardItem *netmaskItem = d->model.item(row, column + 1); // netmask
+        if (netmaskItem && netmaskItem->text().isEmpty()) {
+            QHostAddress addr(item->text());
+            const quint32 netmask = suggestNetmask(addr.toIPv4Address());
+            if (netmask) {
+                QHostAddress v(netmask);
+                netmaskItem->setText(v.toString());
+            }
+        }
+    }
 }
 
 void IPv4Widget::slotRoutesDialog()
@@ -415,7 +415,7 @@ void IPv4Widget::slotDnsServers()
     dlg->setButtons(KDialog::Ok | KDialog::Cancel);
     KEditListWidget * listWidget = new KEditListWidget(dlg);
     dlg->setMainWidget(listWidget);
-    listWidget->setItems(m_ui->dns->text().split(','));
+    listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(" ", ""));
 
     if (dlg->exec() == KDialog::Accepted) {
         QString text = listWidget->items().join(",");
@@ -437,7 +437,7 @@ void IPv4Widget::slotDnsDomains()
     dlg->setButtons(KDialog::Ok | KDialog::Cancel);
     KEditListWidget * listWidget = new KEditListWidget(dlg);
     dlg->setMainWidget(listWidget);
-    listWidget->setItems(m_ui->dnsSearch->text().split(','));
+    listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(" ", ""));
 
     if (dlg->exec() == KDialog::Accepted) {
         QString text = listWidget->items().join(",");

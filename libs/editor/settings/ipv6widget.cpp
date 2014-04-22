@@ -405,7 +405,7 @@ void IPv6Widget::slotDnsServers()
     dlg->setButtons(KDialog::Ok | KDialog::Cancel);
     KEditListWidget * listWidget = new KEditListWidget(dlg);
     dlg->setMainWidget(listWidget);
-    listWidget->setItems(m_ui->dns->text().split(','));
+    listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(" ", ""));
 
     if (dlg->exec() == KDialog::Accepted) {
         QString text = listWidget->items().join(",");
@@ -427,7 +427,7 @@ void IPv6Widget::slotDnsDomains()
     dlg->setButtons(KDialog::Ok | KDialog::Cancel);
     KEditListWidget * listWidget = new KEditListWidget(dlg);
     dlg->setMainWidget(listWidget);
-    listWidget->setItems(m_ui->dnsSearch->text().split(','));
+    listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(" ", ""));
 
     if (dlg->exec() == KDialog::Accepted) {
         QString text = listWidget->items().join(",");

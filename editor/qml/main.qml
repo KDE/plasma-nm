@@ -21,7 +21,7 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.1
 import QtQuick.Layouts 1.1
-// import QtQuick.Dialogs 1.0
+import QtQuick.Dialogs 1.1
 // import org.kde.plasma.plasmoid 2.0
 // import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
@@ -40,11 +40,22 @@ ApplicationWindow {
     title: i18n("Connection editor");
     visible: true;
 
+    MessageDialog {
+        id: removeDialog;
+        title: i18n("Remove Connection");
+        text: i18n("Are you sure you want to remove this connection?");
+        standardButtons: StandardButton.Yes | StandardButton.No;
+        icon: StandardIcon.Question;
+        onYes: {
+            handler.removeConnection(connectionView.selectedConnectionPath);
+        }
+    }
+
     Action {
         id: addAction;
 
         iconName: "list-add";
-        shortcut: StandardKey.Insert;
+        shortcut: StandardKey.New;
         text: i18n("Add");
 
         onTriggered: {
@@ -56,7 +67,7 @@ ApplicationWindow {
         id: editAction;
 
         iconName: "configure"
-        shortcut: StandardKey.Edit;
+        //shortcut: StandardKey.Edit;
         enabled: connectionView.currentRow != -1;
         text: i18n("Edit");
 
@@ -74,7 +85,7 @@ ApplicationWindow {
         text: i18n("Remove");
 
         onTriggered: {
-            handler.removeConnection(connectionView.selectedConnectionPath);
+            removeDialog.open();
         }
     }
 

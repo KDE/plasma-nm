@@ -41,6 +41,9 @@ ConnectionEditor::ConnectionEditor(QObject* parent)
     foreach (const KService::Ptr & service, services) {
         m_vpnPlugins.insert(service->name(), service->property("X-NetworkManager-Services", QVariant::String).toString());
     }
+
+    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
+            SLOT(connectionAdded(QString)));
 }
 
 ConnectionEditor::~ConnectionEditor()
@@ -93,6 +96,11 @@ void ConnectionEditor::addVpnConnection(const QString& plugin)
 QStringList ConnectionEditor::availableVpnPlugins() const
 {
     return m_vpnPlugins.keys();
+}
+
+QString ConnectionEditor::statusBarText() const
+{
+    return m_statusBarText;
 }
 
 // void ConnectionEditor::importSecretsFromPlainTextFiles()
@@ -195,11 +203,9 @@ void ConnectionEditor::importVpn()
                 qDebug() << "Adding imported connection under id:" << conId;
 
                 if (connection.isEmpty()) { // the "positive" part will arrive with connectionAdded
-                    // TODO display error
-//                     m_editor->messageWidget->animatedShow();
-//                     m_editor->messageWidget->setMessageType(KMessageWidget::Error);
-//                     m_editor->messageWidget->setText(i18n("Importing VPN connection %1 failed\n%2", fi.fileName(), vpnPlugin->lastErrorMessage()));
-//                     QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+                    m_statusBarText = i18n("Importing VPN connection %1 failed\n%2", fi.fileName(), vpnPlugin->lastErrorMessage());
+                    QTimer::singleShot(5000, this, SLOT(resetStatusBarText()));
+                    Q_EMIT statusBarTextChanged();
                 } else {
                     delete vpnPlugin;
                     break; // stop iterating over the plugins if the import produced at least some output
@@ -234,11 +240,9 @@ void ConnectionEditor::exportVpn(const QString& connectionUuid)
 
     if (vpnPlugin) {
         if (vpnPlugin->suggestedFileName(connSettings).isEmpty()) { // this VPN doesn't support export
-            // TODO display error
-//             m_editor->messageWidget->animatedShow();
-//             m_editor->messageWidget->setMessageType(KMessageWidget::Error);
-//             m_editor->messageWidget->setText(i18n("Export is not supported by this VPN type"));
-//             QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+            m_statusBarText = i18n("Export is not supported by this VPN type");
+            QTimer::singleShot(5000, this, SLOT(resetStatusBarText()));
+            Q_EMIT statusBarTextChanged();
             return;
         }
 
@@ -246,20 +250,40 @@ void ConnectionEditor::exportVpn(const QString& connectionUuid)
         const QString filename = QFileDialog::getSaveFileName(0, i18n("Export VPN Connection"), url, vpnPlugin->supportedFileExtensions());
         if (!filename.isEmpty()) {
             // TODO display error/success
-//             if (!vpnPlugin->exportConnectionSettings(connSettings, filename)) {
-//                 m_editor->messageWidget->animatedShow();
-//                 m_editor->messageWidget->setMessageType(KMessageWidget::Error);
-//                 m_editor->messageWidget->setText(i18n("Exporting VPN connection %1 failed\n%2", connection->name(), vpnPlugin->lastErrorMessage()));
-//                 QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-//             } else {
-//                 m_editor->messageWidget->animatedShow();
-//                 m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
-//                 m_editor->messageWidget->setText(i18n("VPN connection %1 exported successfully", connection->name()));
-//                 QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-//             }
+            if (!vpnPlugin->exportConnectionSettings(connSettings, filename)) {
+                m_statusBarText = i18n("Exporting VPN connection %1 failed\n%2", connection->name(), vpnPlugin->lastErrorMessage());
+                QTimer::singleShot(5000, this, SLOT(resetStatusBarText()));
+                Q_EMIT statusBarTextChanged();
+            } else {
+                m_statusBarText = i18n("VPN connection %1 exported successfully", connection->name());
+                QTimer::singleShot(5000, this, SLOT(resetStatusBarText()));
+                Q_EMIT statusBarTextChanged();
+            }
         }
         delete vpnPlugin;
     } else {
         qWarning() << "Error getting VpnUiPlugin for export:" << error;
     }
+}
+
+void ConnectionEditor::connectionAdded(const QString& connection)
+{
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
+
+    if (!con) {
+        return;
+    }
+
+    if (con->settings()->isSlave())
+        return;
+
+    m_statusBarText = i18n("Connection %1 has been added", con->name());
+    QTimer::singleShot(5000, this, SLOT(resetStatusBarText()));
+    Q_EMIT statusBarTextChanged();
+}
+
+void ConnectionEditor::resetStatusBarText()
+{
+    m_statusBarText = QString();
+    Q_EMIT statusBarTextChanged();
 }

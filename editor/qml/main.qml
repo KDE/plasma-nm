@@ -279,4 +279,10 @@ ApplicationWindow {
             }
         }
     }
+
+    statusBar: StatusBar {
+        RowLayout {
+            Text { text: connectionEditor.statusBarText }
+        }
+    }
 }

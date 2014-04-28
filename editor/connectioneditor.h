@@ -30,7 +30,7 @@ class ConnectionEditor : public QObject
 {
 Q_OBJECT
 Q_PROPERTY(QStringList availableVpnPlugins READ availableVpnPlugins)
-
+Q_PROPERTY(QString statusBarText READ statusBarText NOTIFY statusBarTextChanged)
 public:
     explicit ConnectionEditor(QObject* parent = 0);
     virtual ~ConnectionEditor();
@@ -40,8 +40,16 @@ public:
     Q_INVOKABLE void exportVpn(const QString& connectionUuid);
     Q_INVOKABLE void importVpn();
     QStringList availableVpnPlugins() const;
+    QString statusBarText() const;
 
+Q_SIGNALS:
+    void statusBarTextChanged();
+
+private Q_SLOTS:
+    void connectionAdded(const QString& connection);
+    void resetStatusBarText();
 private:
+    QString m_statusBarText;
     QMap<QString, QString> m_vpnPlugins;
 //     void importSecretsFromPlainTextFiles();
 //     void storeSecrets(const QMap<QString, QMap<QString, QString> > & map);

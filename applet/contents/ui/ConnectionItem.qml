@@ -214,12 +214,12 @@ PlasmaComponents.ListItem {
                             topMargin: padding.margins.top;
                         }
 
-                        elide: (index > 2 ) ? Text.ElideNone : Text.ElideRight;
                         height: paintedHeight;
                         font.pointSize: theme.smallestFont.pointSize;
                         opacity: 0.6;
                         textFormat: Text.StyledText;
                         text: "<b>" + ConnectionDetails[index*2] + "</b>: " + ConnectionDetails[(index*2)+1];
+                        wrapMode: Text.Wrap;
                     }
                 }
             }

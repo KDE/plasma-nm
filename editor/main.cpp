@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,51 +18,43 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "connectioneditor.h"
-#include "connectiondetaileditor.h"
-#include <config.h>
+#include <QApplication>
+#include <QQmlApplicationEngine>
+#include <QCommandLineParser>
+#include <QtQml/QtQml>
 
 #include <KGlobal>
-#include <KIcon>
-#include <KAboutData>
-
-#include <QApplication>
-#include <QUrl>
-#include <QCommandLineParser>
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
 
+#include "connectioneditor.h"
+#include "connectiondetaileditor.h"
+
+void prependEnv(const char *env, const QByteArray &value)
+{
+    QByteArray values = qgetenv(env);
+    if (!values.contains(value + ":")) {
+        values = value + ":" + values;
+    }
+    qputenv(env, values);
+}
+
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    app.setWindowIcon(KIcon("network-defaultroute"));
 
-    KAboutData about("kde-nm-connection-editor", "kde-nm-connection-editor", i18n("Connection editor"),
-                     PLASMA_NM_VERSION_STRING, i18n("Manage your network connections"),
-                     KAboutData::License_GPL, i18n("(C) 2013-2014 Jan Grulich and Lukáš Tinkl"),
-                     i18n("This application allows you to create, edit and delete network connections.\n\nUsing NM version: %1", NetworkManager::version()));
-    about.addAuthor(i18n("Jan Grulich"), i18n("Developer"), "jgrulich@redhat.com");
-    about.addAuthor(i18n("Lukáš Tinkl"), i18n("Developer"), "ltinkl@redhat.com");
-    about.addCredit(i18n("Lamarque Souza"), i18n("libnm-qt author"), "lamarque@kde.org");
-    about.addCredit(i18n("Daniel Nicoletti"), i18n("various bugfixes"), "dantti12@gmail.com");
-    about.addCredit(i18n("Will Stephenson"), i18n("VPN plugins"), "wstephenson@kde.org");
-    about.addCredit(i18n("Ilia Kats"), i18n("VPN plugins"), "ilia-kats@gmx.net");
-    about.setProductName("plasma-nm/editor");
-
-    KAboutData::setApplicationData(about);
+    prependEnv("XDG_DATA_DIRS", "/opt/kde5/share");
+    // FIXME: OUCH!
+    prependEnv("QML2_IMPORT_PATH", "/usr/lib64/qml");
+    prependEnv("QML2_IMPORT_PATH", "/opt/kde5/lib64/qml");
+    // FIXME:
 
     QCommandLineParser parser;
-    about.setupCommandLine(&parser);
     parser.addPositionalArgument("uuid", i18n("Edit connection"), "[uuid]");
     parser.addHelpOption();
     parser.addVersionOption();
-
-#warning "Translations for kde-nm-connection-editor disabled"
-    KGlobal::locale()->insertCatalog("libplasmanetworkmanagement-editor");  // setting widgets
-    KGlobal::locale()->insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard, UiUtils, ...
-
     parser.process(app);
 
     const QStringList args = parser.positionalArguments();
@@ -78,8 +70,10 @@ int main(int argc, char *argv[])
             return 1;
         }
     } else {
-        ConnectionEditor * editor = new ConnectionEditor();
-        editor->show();
+        qmlRegisterType<ConnectionEditor>("ConnectionEditor", 0, 1, "ConnectionEditor");
+        // FIXME
+        QQmlApplicationEngine * engine = new QQmlApplicationEngine("/opt/kde5/share/kde-nm-connection-editor/qml/main.qml");
+
     }
 
     return app.exec();

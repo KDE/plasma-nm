@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
     Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
 
     This library is free software; you can redistribute it and/or
@@ -22,53 +22,29 @@
 #ifndef PLASMA_NM_CONNECTION_EDITOR_H
 #define PLASMA_NM_CONNECTION_EDITOR_H
 
-#include "handler.h"
+#include <QObject>
 
-#include <QMenu>
-#include <QModelIndex>
+#include <NetworkManagerQt/ConnectionSettings>
 
-#include <KXmlGuiWindow>
-#include <KActionMenu>
-
-#include <NetworkManagerQt/Connection>
-
-namespace Ui
-{
-class ConnectionEditor;
-}
-
-class QTreeWidgetItem;
-
-class ConnectionEditor : public KXmlGuiWindow
+class ConnectionEditor : public QObject
 {
 Q_OBJECT
+Q_PROPERTY(QStringList availableVpnPlugins READ availableVpnPlugins)
 
 public:
-    explicit ConnectionEditor(QWidget* parent = 0, Qt::WindowFlags flags = 0);
+    explicit ConnectionEditor(QObject* parent = 0);
     virtual ~ConnectionEditor();
 
-private Q_SLOTS:
-    void addConnection(QAction * action);
-    void connectionAdded(const QString & connection);
-    void connectConnection();
-    void disconnectConnection();
-    void editConnection();
-    void exportVpn();
-    void importVpn();
-    void initializeConnections();
-    void removeConnection();
-    void slotContextMenuRequested(const QPoint& point);
-    void slotItemClicked(const QModelIndex& index);
-    void slotItemDoubleClicked(const QModelIndex& index);
+    Q_INVOKABLE void addConnection(uint connectionType, bool shared);
+    Q_INVOKABLE void addVpnConnection(const QString& plugin);
+//     Q_INVOKABLE void exportVpn();
+//     Q_INVOKABLE void importVpn();
+    QStringList availableVpnPlugins() const;
 
 private:
-    Ui::ConnectionEditor * m_editor;
-    Handler * m_handler;
-    KActionMenu * m_menu;
-
-    void initializeMenu();
-    void importSecretsFromPlainTextFiles();
-    void storeSecrets(const QMap<QString, QMap<QString, QString> > & map);
+    QMap<QString, QString> m_vpnPlugins;
+//     void importSecretsFromPlainTextFiles();
+//     void storeSecrets(const QMap<QString, QMap<QString, QString> > & map);
 };
 
 #endif // PLASMA_NM_CONNECTION_EDITOR_H

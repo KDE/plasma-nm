@@ -23,6 +23,8 @@
 #include "networkmodelitem.h"
 #include "uiutils.h"
 
+#include <KLocalizedString>
+
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/manager.h>
 #include <ModemManagerQt/modem.h>
@@ -47,8 +49,15 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
 
     if (row >= 0 && row < m_list.count()) {
         NetworkModelItem * item = m_list.itemAt(row);
-
+        QStringList editorData;
+        QStringList editorSection;
         switch (role) {
+            case AppletSectionRole:
+                    if (item->connectionState() == NetworkManager::ActiveConnection::Activated) {
+                        return i18n("Active connections");
+                    }  else {
+                        return i18n("Available connections");
+                    }
             case ConnectionDetailsRole:
                 return item->details();
             case ConnectionIconRole:
@@ -79,8 +88,6 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return UiUtils::formatDateRelative(item->timestamp());
             case NameRole:
                 return item->name();
-            case SectionRole:
-                return item->sectionType();
             case SignalRole:
                 return item->signal();
             case SlaveRole:
@@ -97,6 +104,10 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->timestamp();
             case TypeRole:
                 return item->type();
+            case TypeStringRole:
+                return UiUtils::titleForConnectionSettingsType(item->type());
+            case TypeIconRole:
+                return UiUtils::iconForConnectionSettingsType(item->type());
             case UniRole:
                 return item->uni();
             case UploadRole:
@@ -122,6 +133,7 @@ int NetworkModel::rowCount(const QModelIndex& parent) const
 QHash< int, QByteArray > NetworkModel::roleNames() const
 {
     QHash<int, QByteArray> roles = QAbstractListModel::roleNames();
+    roles[AppletSectionRole] = "AppletSection";
     roles[ConnectionDetailsRole] = "ConnectionDetails";
     roles[ConnectionIconRole] = "ConnectionIcon";
     roles[ConnectionPathRole] = "ConnectionPath";
@@ -135,7 +147,6 @@ QHash< int, QByteArray > NetworkModel::roleNames() const
     roles[LastUsedRole] = "LastUsed";
     roles[LastUsedDateOnlyRole] = "LastUsedDateOnly";
     roles[NameRole] = "Name";
-    roles[SectionRole] = "Section";
     roles[SignalRole] = "Signal";
     roles[SlaveRole] = "Slave";
     roles[SsidRole] = "Ssid";
@@ -144,6 +155,8 @@ QHash< int, QByteArray > NetworkModel::roleNames() const
     roles[SecurityTypeStringRole] = "SecurityTypeString";
     roles[TimeStampRole] = "TimeStamp";
     roles[TypeRole] = "Type";
+    roles[TypeStringRole] = "TypeString";
+    roles[TypeIconRole] = "TypeIcon";
     roles[UniRole] = "Uni";
     roles[UploadRole] = "Upload";
     roles[UuidRole] = "Uuid";

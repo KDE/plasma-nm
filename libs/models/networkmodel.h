@@ -44,7 +44,8 @@ public:
     virtual ~NetworkModel();
 
     enum ItemRole {
-        ConnectionDetailsRole = Qt::UserRole + 1,
+        AppletSectionRole = Qt::UserRole + 1,
+        ConnectionDetailsRole,
         ConnectionIconRole,
         ConnectionPathRole,
         ConnectionStateRole,
@@ -59,13 +60,14 @@ public:
         NameRole,
         SecurityTypeRole,
         SecurityTypeStringRole,
-        SectionRole,
         SignalRole,
         SlaveRole,
         SsidRole,
         SpecificPathRole,
         TimeStampRole,
         TypeRole,
+        TypeIconRole,
+        TypeStringRole,
         UniRole,
         UuidRole,
         UploadRole,

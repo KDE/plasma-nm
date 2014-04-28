@@ -107,7 +107,7 @@ void TeamWidget::addTeam(QAction *action)
     qDebug() << "Slave type:" << type();
 
     QPointer<ConnectionDetailEditor> teamEditor = new ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType(action->data().toInt()),
-                                                                               this, m_uuid, type());
+                                                                             m_uuid, type(), this);
     if (teamEditor->exec() == QDialog::Accepted) {
         qDebug() << "Saving slave connection";
         connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),

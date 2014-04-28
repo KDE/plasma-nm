@@ -1,6 +1,6 @@
 set(plasmanetworkmanagement-internal_SRCS
     models/appletproxymodel.cpp
-    models/editoridentitymodel.cpp
+#     models/editoridentitymodel.cpp
     models/editorproxymodel.cpp
     models/networkitemslist.cpp
     models/networkmodel.cpp

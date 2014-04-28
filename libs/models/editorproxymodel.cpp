@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -19,8 +19,61 @@
 */
 
 #include "editorproxymodel.h"
-#include "networkmodelitem.h"
 #include "networkmodel.h"
+
+EditorProxyModel::SortedConnectionType EditorProxyModel::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
+{
+    switch (type) {
+        case NetworkManager::ConnectionSettings::Unknown:
+            return EditorProxyModel::EditorProxyModel::Unknown;
+            break;
+        case NetworkManager::ConnectionSettings::Adsl:
+            return EditorProxyModel::EditorProxyModel::Adsl;
+            break;
+        case NetworkManager::ConnectionSettings::Bluetooth:
+            return EditorProxyModel::Bluetooth;
+            break;
+        case NetworkManager::ConnectionSettings::Bond:
+            return EditorProxyModel::Bond;
+            break;
+        case NetworkManager::ConnectionSettings::Bridge:
+            return EditorProxyModel::Bridge;
+            break;
+        case NetworkManager::ConnectionSettings::Cdma:
+            return EditorProxyModel::Cdma;
+            break;
+        case NetworkManager::ConnectionSettings::Gsm:
+            return EditorProxyModel::Gsm;
+            break;
+        case NetworkManager::ConnectionSettings::Infiniband:
+            return EditorProxyModel::Infiniband;
+            break;
+        case NetworkManager::ConnectionSettings::OLPCMesh:
+            return EditorProxyModel::OLPCMesh;
+            break;
+        case NetworkManager::ConnectionSettings::Pppoe:
+            return EditorProxyModel::Pppoe;
+            break;
+        case NetworkManager::ConnectionSettings::Vlan:
+            return EditorProxyModel::Vlan;
+            break;
+        case NetworkManager::ConnectionSettings::Vpn:
+            return EditorProxyModel::Vpn;
+            break;
+        case NetworkManager::ConnectionSettings::Wimax:
+            return EditorProxyModel::Wimax;
+            break;
+        case NetworkManager::ConnectionSettings::Wired:
+            return EditorProxyModel::Wired;
+            break;
+        case NetworkManager::ConnectionSettings::Wireless:
+            return EditorProxyModel::Wireless;
+            break;
+        default:
+            return EditorProxyModel::Unknown;
+            break;
+    }
+}
 
 EditorProxyModel::EditorProxyModel(QObject* parent)
     : QSortFilterProxyModel(parent)
@@ -33,6 +86,75 @@ EditorProxyModel::EditorProxyModel(QObject* parent)
 
 EditorProxyModel::~EditorProxyModel()
 {
+}
+
+void EditorProxyModel::setSortOrder(Qt::SortOrder order)
+{
+    sort(0, order);
+}
+
+void EditorProxyModel::setSortRole(const QByteArray& role)
+{
+    QSortFilterProxyModel::setSortRole(roleKey(role));
+}
+
+QByteArray EditorProxyModel::sortRole() const
+{
+    return roleNames().value(QSortFilterProxyModel::sortRole());
+}
+
+QString EditorProxyModel::filterString() const
+{
+    return filterRegExp().pattern();
+}
+
+void EditorProxyModel::setFilterString(const QString& filter)
+{
+    setFilterRegExp(QRegExp(filter, filterCaseSensitivity()));
+}
+
+QVariant EditorProxyModel::get(int row, const QString& role)
+{
+    QModelIndex index = EditorProxyModel::index(row, 0);
+
+    if (role == QLatin1String("ConnectionPath")) {
+        return data(index, NetworkModel::ConnectionPathRole);
+    } else if (role == QLatin1String("ConnectionState")) {
+        return data(index, NetworkModel::ConnectionStateRole);
+    } else if (role == QLatin1String("DevicePath")) {
+        return data(index, NetworkModel::DevicePathRole);
+    } else if (role == QLatin1String("ItemType")) {
+        return data(index, NetworkModel::ItemTypeRole);
+    } else if (role == QLatin1String("Name")) {
+        return data(index, NetworkModel::NameRole);
+    } else if (role == QLatin1String("TypeIcon")) {
+        return data(index, NetworkModel::TypeIconRole);
+    } else if (role == QLatin1String("SpecificPath")) {
+        return data(index, NetworkModel::SpecificPathRole);
+    } else if (role == QLatin1String("Uuid")) {
+        return data(index, NetworkModel::UuidRole);
+    }
+
+    return QVariant();
+}
+
+int EditorProxyModel::roleKey(const QByteArray &role) const
+{
+    QHash<int, QByteArray> roles = roleNames();
+    QHashIterator<int, QByteArray> it(roles);
+    while (it.hasNext()) {
+        it.next();
+        if (it.value() == role)
+            return it.key();
+    }
+    return -1;
+}
+
+QHash<int, QByteArray> EditorProxyModel::roleNames() const
+{
+    if (QAbstractItemModel *source = sourceModel())
+        return source->roleNames();
+    return QHash<int, QByteArray>();
 }
 
 bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
@@ -54,7 +176,7 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
 
     const QString pattern = filterRegExp().pattern();
     if (!pattern.isEmpty()) {  // filtering on data (connection name), wildcard-only
-        const QString data = sourceModel()->data(index, Qt::DisplayRole).toString();
+        const QString data = sourceModel()->data(index, NetworkModel::NameRole).toString();
         //qDebug() << "Filtering " << data << "with pattern" << pattern;
         return data.contains(pattern, Qt::CaseInsensitive);
     }
@@ -64,12 +186,13 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
 
 bool EditorProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
-    if (sourceModel()) { // special sorting case, only for editor
-        if (sortColumn() == 1) {
-            const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStampRole).toDateTime();
-            const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStampRole).toDateTime();
-            return leftDate < rightDate;
-        }
+    const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
+    const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
+
+    if (sortOrder() == Qt::DescendingOrder && leftType != rightType) {
+        return (leftType > rightType);
+    } else if (leftType != rightType) {
+        return (leftType < rightType);
     }
 
     return QSortFilterProxyModel::lessThan(left, right);

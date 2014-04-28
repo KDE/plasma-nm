@@ -71,7 +71,7 @@ FocusScope {
         currentIndex: -1;
         interactive: true;
         boundsBehavior: Flickable.StopAtBounds;
-        section.property: showSections ? "Section" : "";
+        section.property: showSections ? "AppletSection" : "";
         section.delegate: Header { text: section }
         delegate: ConnectionItem {
             onStateChanged: {

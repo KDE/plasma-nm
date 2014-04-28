@@ -77,8 +77,10 @@ public:
 
     static QString vpnConnectionStateToString(NetworkManager::VpnConnection::State state);
 
-    static QString iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type,
-                                                         QString &title);
+    static QString titleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type);
+
+    static QString iconForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type);
+
     /**
      * @return a human-readable description of operation mode.
      * @param mode the operation mode

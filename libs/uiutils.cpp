@@ -170,22 +170,18 @@ QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
 }
 #endif
 
-QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type, QString &title)
+QString UiUtils::titleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type)
 {
     QString text;
-    QString icon;
     switch (type) {
     case ConnectionSettings::Adsl:
         text = i18n("ADSL");
-        icon = "modem";
         break;
     case ConnectionSettings::Pppoe:
         text = i18n("DSL");
-        icon = "modem";
         break;
     case ConnectionSettings::Bluetooth:
         text = i18n("Bluetooth");
-        icon = "preferences-system-bluetooth";
         break;
     case ConnectionSettings::Bond:
         text = i18n("Bond");
@@ -196,7 +192,6 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
     case ConnectionSettings::Gsm:
     case ConnectionSettings::Cdma:
         text = i18n("Mobile broadband");
-        icon = "phone";
         break;
     case ConnectionSettings::Infiniband:
         text = i18n("Infiniband");
@@ -209,19 +204,15 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
         break;
     case ConnectionSettings::Vpn:
         text = i18n("VPN");
-        icon = "secure-card";
         break;
     case ConnectionSettings::Wimax:
         text = i18n("WiMAX");
-        icon = "network-wireless";
         break;
     case ConnectionSettings::Wired:
         text = i18n("Wired");
-        icon = "network-wired";
         break;
     case ConnectionSettings::Wireless:
         text = i18n("Wireless");
-        icon = "network-wireless";
         break;
 #if NM_CHECK_VERSION(0, 9, 9)
     case ConnectionSettings::Team:
@@ -232,8 +223,63 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
         text = i18n("Unknown connection type");
         break;
     }
-    title = text;
-    return icon;
+    return text;
+}
+
+QString UiUtils::iconForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type)
+{
+    QString text;
+    switch (type) {
+    case ConnectionSettings::Adsl:
+        text = i18n("network-mobile-100");
+        break;
+    case ConnectionSettings::Pppoe:
+        text = i18n("network-mobile-100");
+        break;
+    case ConnectionSettings::Bluetooth:
+        text = i18n("network-bluetooth");
+        break;
+    case ConnectionSettings::Bond:
+        text = i18n("network-wired");
+        break;
+    case ConnectionSettings::Bridge:
+        text = i18n("network-wired");
+        break;
+    case ConnectionSettings::Gsm:
+    case ConnectionSettings::Cdma:
+        text = i18n("network-mobile-100");
+        break;
+    case ConnectionSettings::Infiniband:
+        text = i18n("network-wired");
+        break;
+    case ConnectionSettings::OLPCMesh:
+        text = i18n("network-wired");
+        break;
+    case ConnectionSettings::Vlan:
+        text = i18n("network-wired");
+        break;
+    case ConnectionSettings::Vpn:
+        text = i18n("network-vpn");
+        break;
+    case ConnectionSettings::Wimax:
+        text = i18n("network-wireless-100");
+        break;
+    case ConnectionSettings::Wired:
+        text = i18n("network-wired");
+        break;
+    case ConnectionSettings::Wireless:
+        text = i18n("network-wireless-100");
+        break;
+#if NM_CHECK_VERSION(0, 9, 9)
+    case ConnectionSettings::Team:
+        text = i18n("network-wired");
+        break;
+#endif
+    default:
+        text = i18n("network-wired");
+        break;
+    }
+    return text;
 }
 
 QString UiUtils::prettyInterfaceName(NetworkManager::Device::Type type, const QString &interfaceName)

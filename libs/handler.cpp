@@ -147,7 +147,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         m_tmpDevicePath = device;
         m_tmpSpecificPath = specificObject;
 
-        QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(settings, 0, 0, true);
+        QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(settings, true);
         editor->show();
         KWindowSystem::setState(editor->winId(), NET::KeepAbove);
         KWindowSystem::forceActiveWindow(editor->winId());

@@ -79,7 +79,7 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
                              == NetworkManager::ActiveConnection::Activated;
     NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(sourceModel()->data(sourceIndex, NetworkModel::TypeRole).toInt());
     QString tooltip;
-    QString iconName = UiUtils::iconAndTitleForConnectionSettingsType(type, tooltip);
+    QString iconName = "foo";
     const int column = index.column();
 
     if (role == Qt::DisplayRole) {

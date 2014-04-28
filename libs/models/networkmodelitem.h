@@ -78,8 +78,6 @@ public:
 
     QString originalName() const;
 
-    QString sectionType() const;
-
     NetworkManager::Utils::WirelessSecurityType securityType() const;
     void setSecurityType(NetworkManager::Utils::WirelessSecurityType type);
 

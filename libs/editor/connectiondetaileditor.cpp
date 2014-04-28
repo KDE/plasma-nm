@@ -63,15 +63,15 @@
 
 using namespace NetworkManager;
 
-ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type, QWidget* parent,
-                                               const QString &masterUuid, const QString &slaveType, Qt::WindowFlags f):
-    QDialog(parent, f),
-    m_ui(new Ui::ConnectionDetailEditor),
-    m_connection(new NetworkManager::ConnectionSettings(type)),
-    m_numSecrets(0),
-    m_new(true),
-    m_masterUuid(masterUuid),
-    m_slaveType(slaveType)
+ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
+                                               const QString &masterUuid, const QString &slaveType, QWidget* parent, Qt::WindowFlags f)
+    : QDialog(parent, f)
+    , m_ui(new Ui::ConnectionDetailEditor)
+    , m_connection(new NetworkManager::ConnectionSettings(type))
+    , m_numSecrets(0)
+    , m_new(true)
+    , m_masterUuid(masterUuid)
+    , m_slaveType(slaveType)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     m_ui->setupUi(this);
@@ -79,14 +79,14 @@ ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSetting
     initEditor();
 }
 
-ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type, QWidget* parent,
-                                               const QString &vpnType, bool shared, Qt::WindowFlags f):
-    QDialog(parent, f),
-    m_ui(new Ui::ConnectionDetailEditor),
-    m_connection(new NetworkManager::ConnectionSettings(type)),
-    m_numSecrets(0),
-    m_new(true),
-    m_vpnType(vpnType)
+ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
+                                               const QString &vpnType, bool shared, QWidget* parent, Qt::WindowFlags f)
+    : QDialog(parent, f)
+    , m_ui(new Ui::ConnectionDetailEditor)
+    , m_connection(new NetworkManager::ConnectionSettings(type))
+    , m_numSecrets(0)
+    , m_new(true)
+    , m_vpnType(vpnType)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     m_ui->setupUi(this);
@@ -117,12 +117,12 @@ ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSetting
     initEditor();
 }
 
-ConnectionDetailEditor::ConnectionDetailEditor(ConnectionSettings::ConnectionType type, const QVariantList &args, QWidget *parent, Qt::WindowFlags f):
-    QDialog(parent, f),
-    m_ui(new Ui::ConnectionDetailEditor),
-    m_connection(new NetworkManager::ConnectionSettings(type)),
-    m_numSecrets(0),
-    m_new(true)
+ConnectionDetailEditor::ConnectionDetailEditor(ConnectionSettings::ConnectionType type, const QVariantList &args, QWidget *parent, Qt::WindowFlags f)
+    : QDialog(parent, f)
+    , m_ui(new Ui::ConnectionDetailEditor)
+    , m_connection(new NetworkManager::ConnectionSettings(type))
+    , m_numSecrets(0)
+    , m_new(true)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     m_ui->setupUi(this);
@@ -164,14 +164,14 @@ ConnectionDetailEditor::ConnectionDetailEditor(ConnectionSettings::ConnectionTyp
 }
 
 
-ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &connection, QWidget* parent, Qt::WindowFlags f, bool newConnection):
-    QDialog(parent, f),
-    m_ui(new Ui::ConnectionDetailEditor),
-    m_connection(connection),
-    m_numSecrets(0),
-    m_new(newConnection),
-    m_masterUuid(connection->master()),
-    m_slaveType(connection->slaveType())
+ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &connection, bool newConnection, QWidget* parent, Qt::WindowFlags f)
+    : QDialog(parent, f)
+    , m_ui(new Ui::ConnectionDetailEditor)
+    , m_connection(connection)
+    , m_numSecrets(0)
+    , m_new(newConnection)
+    , m_masterUuid(connection->master())
+    , m_slaveType(connection->slaveType())
 {
     setAttribute(Qt::WA_DeleteOnClose);
     m_ui->setupUi(this);

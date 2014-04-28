@@ -78,7 +78,6 @@ AppletProxyModel::SortedConnectionType AppletProxyModel::connectionTypeToSortedT
 AppletProxyModel::AppletProxyModel(QObject* parent)
     : QSortFilterProxyModel(parent)
 {
-    // TODO
     setDynamicSortFilter(true);
     sort(0, Qt::DescendingOrder);
 }

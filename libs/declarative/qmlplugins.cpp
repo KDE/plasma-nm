@@ -30,6 +30,7 @@
 // #include "trafficmonitor.h"
 
 #include "appletproxymodel.h"
+#include "editorproxymodel.h"
 #include "networkmodel.h"
 
 #include "handler.h"
@@ -55,6 +56,8 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<NetworkModel>(uri, 0, 1, "NetworkModel");
     // @uri org.kde.plasma.networkmanagement.AppletProxyModel
     qmlRegisterType<AppletProxyModel>(uri, 0, 1, "AppletProxyModel");
+    // @uri org.kde.plasma.networkmanagement.AppletProxyModel
+    qmlRegisterType<EditorProxyModel>(uri, 0, 1, "EditorProxyModel");
     // @uri org.kde.plasma.networkmanagement.TrafficMonitor
 //     qmlRegisterType<TrafficMonitor>(uri, 0, 1, "TrafficMonitor");
 }

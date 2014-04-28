@@ -23,17 +23,37 @@
 
 #include <QSortFilterProxyModel>
 
-#include "plasmanm_export.h"
+#include "networkmodelitem.h"
 
 class PLASMA_NM_EXPORT EditorProxyModel : public QSortFilterProxyModel
 {
 Q_OBJECT
 Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
+Q_PROPERTY(QByteArray sortRole READ sortRole WRITE setSortRole)
+Q_PROPERTY(Qt::SortOrder sortOrder READ sortOrder WRITE setSortOrder)
+Q_PROPERTY(QString filterString READ filterString WRITE setFilterString)
+
 public:
+    enum SortedConnectionType {Wired, Wireless, Wimax, Gsm, Cdma, Pppoe, Adsl, Infiniband, OLPCMesh, Bluetooth, Vpn, Vlan, Bridge, Bond, Unknown };
+
+    static SortedConnectionType connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type);
+
     explicit EditorProxyModel(QObject* parent = 0);
     virtual ~EditorProxyModel();
 
+    QByteArray sortRole() const;
+    void setSortRole(const QByteArray& role);
+    void setSortOrder(Qt::SortOrder order);
+
+    QString filterString() const;
+    void setFilterString(const QString& filter);
+
+    Q_INVOKABLE QVariant get(int row, const QString& role);
+
 protected:
+    int roleKey(const QByteArray &role) const;
+    QHash<int, QByteArray> roleNames() const;
+
     bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
 };

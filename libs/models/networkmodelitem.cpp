@@ -281,15 +281,6 @@ QString NetworkModelItem::originalName() const
     return m_name + " (" + m_deviceName + ')';
 }
 
-QString NetworkModelItem::sectionType() const
-{
-    if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
-        return i18n("Active connections");
-    }  else {
-        return i18n("Available connections");
-    }
-}
-
 NetworkManager::Utils::WirelessSecurityType NetworkModelItem::securityType() const
 {
     return m_securityType;

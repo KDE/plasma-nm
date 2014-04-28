@@ -38,17 +38,17 @@ class PLASMA_NM_EXPORT ConnectionDetailEditor : public QDialog
 
 public:
     explicit ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
-                                    QWidget* parent = 0,
                                     const QString &masterUuid = QString(),
                                     const QString &slaveType = QString(),
+                                    QWidget* parent = 0,
                                     Qt::WindowFlags f = 0);
     explicit ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
-                                    QWidget* parent = 0,
                                     const QString &vpnType = QString(),
                                     bool shared = false,
+                                    QWidget* parent = 0,
                                     Qt::WindowFlags f = 0);
     explicit ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &connection,
-                                    QWidget* parent = 0, Qt::WindowFlags f = 0, bool newConnection = false);
+                                    bool newConnection = false, QWidget* parent = 0, Qt::WindowFlags f = 0);
     explicit ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
                                     const QVariantList &args,
                                     QWidget* parent = 0, Qt::WindowFlags f = 0);

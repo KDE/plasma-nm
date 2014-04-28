@@ -43,7 +43,7 @@ ApplicationWindow {
     MessageDialog {
         id: removeDialog;
         title: i18n("Remove Connection");
-        text: i18n("Are you sure you want to remove this connection?");
+        text: i18n("Are you sure you want to remove connection '%1'?", editorProxyModel.get(connectionView.currentRow, "Name"));
         standardButtons: StandardButton.Yes | StandardButton.No;
         icon: StandardIcon.Question;
         onYes: {
@@ -85,6 +85,7 @@ ApplicationWindow {
         text: i18n("Remove");
 
         onTriggered: {
+            console.log("Removing " + editorProxyModel.get(connectionView.currentRow, "Name"));
             removeDialog.open();
         }
     }

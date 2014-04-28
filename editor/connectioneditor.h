@@ -37,8 +37,8 @@ public:
 
     Q_INVOKABLE void addConnection(uint connectionType, bool shared);
     Q_INVOKABLE void addVpnConnection(const QString& plugin);
-//     Q_INVOKABLE void exportVpn();
-//     Q_INVOKABLE void importVpn();
+    Q_INVOKABLE void exportVpn(const QString& connectionUuid);
+    Q_INVOKABLE void importVpn();
     QStringList availableVpnPlugins() const;
 
 private:

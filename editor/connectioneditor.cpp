@@ -22,9 +22,17 @@
 #include "connectioneditor.h"
 #include "connectiondetaileditor.h"
 #include "mobileconnectionwizard.h"
+#include "vpnuiplugin.h"
 
+#include <KLocale>
 #include <KService>
 #include <KServiceTypeTrader>
+
+#include <QFileDialog>
+
+#include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/Settings>
 
 ConnectionEditor::ConnectionEditor(QObject* parent)
     : QObject(parent)
@@ -149,98 +157,95 @@ QStringList ConnectionEditor::availableVpnPlugins() const
 //     }
 // }
 
-// void ConnectionEditor::importVpn()
-// {
-//     // get the list of supported extensions
-//     const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
-//     QString extensions;
-//     foreach (const KService::Ptr &service, services) {
-//         VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
-//         if (vpnPlugin) {
-//             extensions += vpnPlugin->supportedFileExtensions() % QLatin1Literal(" ");
-//             delete vpnPlugin;
-//         }
-//     }
-//
-//     const QString filename = QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), extensions.simplified());
-//     if (!filename.isEmpty()) {
-//         QFileInfo fi(filename);
-//         const QString ext = QLatin1Literal("*.") % fi.suffix();
-//         qDebug() << "Importing VPN connection" << filename << "extension:" << ext;
-//
-//         foreach (const KService::Ptr &service, services) {
-//             VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
-//             if (vpnPlugin && vpnPlugin->supportedFileExtensions().contains(ext)) {
-//                 qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
-//
-//                 NMVariantMapMap connection = vpnPlugin->importConnectionSettings(filename);
-//
-//                 //qDebug() << "Raw connection:" << connection;
-//
-//                 NetworkManager::ConnectionSettings connectionSettings;
-//                 connectionSettings.fromMap(connection);
-//                 connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
-//
-//                 //qDebug() << "Converted connection:" << connectionSettings;
-//
-//                 const QString conId = NetworkManager::addConnection(connectionSettings.toMap());
-//                 qDebug() << "Adding imported connection under id:" << conId;
-//
-//                 if (connection.isEmpty()) { // the "positive" part will arrive with connectionAdded
+void ConnectionEditor::importVpn()
+{
+    // get the list of supported extensions
+    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
+    QString extensions;
+    foreach (const KService::Ptr &service, services) {
+        VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
+        if (vpnPlugin) {
+            extensions += vpnPlugin->supportedFileExtensions() % QLatin1Literal(" ");
+            delete vpnPlugin;
+        }
+    }
+
+    const QString filename = QFileDialog::getOpenFileName(0, i18n("Import VPN Connection"), QDir::homePath(), extensions.simplified());
+    if (!filename.isEmpty()) {
+        QFileInfo fi(filename);
+        const QString ext = QLatin1Literal("*.") % fi.suffix();
+        qDebug() << "Importing VPN connection" << filename << "extension:" << ext;
+
+        foreach (const KService::Ptr &service, services) {
+            VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
+            if (vpnPlugin && vpnPlugin->supportedFileExtensions().contains(ext)) {
+                qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
+
+                NMVariantMapMap connection = vpnPlugin->importConnectionSettings(filename);
+
+                //qDebug() << "Raw connection:" << connection;
+
+                NetworkManager::ConnectionSettings connectionSettings;
+                connectionSettings.fromMap(connection);
+                connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+
+                //qDebug() << "Converted connection:" << connectionSettings;
+
+                const QString conId = NetworkManager::addConnection(connectionSettings.toMap());
+                qDebug() << "Adding imported connection under id:" << conId;
+
+                if (connection.isEmpty()) { // the "positive" part will arrive with connectionAdded
+                    // TODO display error
 //                     m_editor->messageWidget->animatedShow();
 //                     m_editor->messageWidget->setMessageType(KMessageWidget::Error);
 //                     m_editor->messageWidget->setText(i18n("Importing VPN connection %1 failed\n%2", fi.fileName(), vpnPlugin->lastErrorMessage()));
 //                     QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-//                 } else {
-//                     delete vpnPlugin;
-//                     break; // stop iterating over the plugins if the import produced at least some output
-//                 }
-//
-//                 delete vpnPlugin;
-//             }
-//         }
-//     }
-// }
+                } else {
+                    delete vpnPlugin;
+                    break; // stop iterating over the plugins if the import produced at least some output
+                }
 
-// void ConnectionEditor::exportVpn()
-// {
-//     const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
-//
-//     if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
-//         return;
-//     }
-//
-//     Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentIndex.data(NetworkModel::UuidRole).toString());
-//     if (!connection) {
-//         return;
-//     }
-//
-//     NetworkManager::ConnectionSettings::Ptr connSettings = connection->settings();
-//
-//     if (connSettings->connectionType() != NetworkManager::ConnectionSettings::Vpn)
-//         return;
-//
-//     NetworkManager::VpnSetting::Ptr vpnSetting = connSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
-//
-//     qDebug() << "Exporting VPN connection" << connection->name() << "type:" << vpnSetting->serviceType();
-//
-//     QString error;
-//     VpnUiPlugin * vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNetworkManagement/VpnUiPlugin"),
-//                                                                                        QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()),
-//                                                                                        this, QVariantList(), &error);
-//
-//     if (vpnPlugin) {
-//         if (vpnPlugin->suggestedFileName(connSettings).isEmpty()) { // this VPN doesn't support export
+                delete vpnPlugin;
+            }
+        }
+    }
+}
+
+void ConnectionEditor::exportVpn(const QString& connectionUuid)
+{
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(connectionUuid);
+    if (!connection) {
+        return;
+    }
+
+    NetworkManager::ConnectionSettings::Ptr connSettings = connection->settings();
+
+    if (connSettings->connectionType() != NetworkManager::ConnectionSettings::Vpn)
+        return;
+
+    NetworkManager::VpnSetting::Ptr vpnSetting = connSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+
+    qDebug() << "Exporting VPN connection" << connection->name() << "type:" << vpnSetting->serviceType();
+
+    QString error;
+    VpnUiPlugin * vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNetworkManagement/VpnUiPlugin"),
+                                                                                       QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()),
+                                                                                       this, QVariantList(), &error);
+
+    if (vpnPlugin) {
+        if (vpnPlugin->suggestedFileName(connSettings).isEmpty()) { // this VPN doesn't support export
+            // TODO display error
 //             m_editor->messageWidget->animatedShow();
 //             m_editor->messageWidget->setMessageType(KMessageWidget::Error);
 //             m_editor->messageWidget->setText(i18n("Export is not supported by this VPN type"));
 //             QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
-//             return;
-//         }
-//
-//         const QString url = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + QDir::separator() + vpnPlugin->suggestedFileName(connSettings);
-//         const QString filename = QFileDialog::getSaveFileName(this, i18n("Export VPN Connection"), url, vpnPlugin->supportedFileExtensions());
-//         if (!filename.isEmpty()) {
+            return;
+        }
+
+        const QString url = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + QDir::separator() + vpnPlugin->suggestedFileName(connSettings);
+        const QString filename = QFileDialog::getSaveFileName(0, i18n("Export VPN Connection"), url, vpnPlugin->supportedFileExtensions());
+        if (!filename.isEmpty()) {
+            // TODO display error/success
 //             if (!vpnPlugin->exportConnectionSettings(connSettings, filename)) {
 //                 m_editor->messageWidget->animatedShow();
 //                 m_editor->messageWidget->setMessageType(KMessageWidget::Error);
@@ -252,9 +257,9 @@ QStringList ConnectionEditor::availableVpnPlugins() const
 //                 m_editor->messageWidget->setText(i18n("VPN connection %1 exported successfully", connection->name()));
 //                 QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
 //             }
-//         }
-//         delete vpnPlugin;
-//     } else {
-//         qWarning() << "Error getting VpnUiPlugin for export:" << error;
-//     }
-// }
+        }
+        delete vpnPlugin;
+    } else {
+        qWarning() << "Error getting VpnUiPlugin for export:" << error;
+    }
+}

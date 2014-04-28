@@ -28,7 +28,6 @@ import QtQuick.Layouts 1.1
 import org.kde.plasma.core 2.0 as PlasmaCore
 // import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.1 as PlasmaNM
-import ConnectionEditor 0.1
 
 Window {
     id: addConnectionDialog;
@@ -39,10 +38,6 @@ Window {
     modality: Qt.ApplicationModal;
     flags: Qt.Dialog;
     title: i18n("Add a new connection");
-
-    ConnectionEditor {
-        id: connectionEditor;
-    }
 
     Text {
         id: dialogHeadline;

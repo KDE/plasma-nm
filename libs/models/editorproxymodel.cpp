@@ -121,16 +121,8 @@ QVariant EditorProxyModel::get(int row, const QString& role)
         return data(index, NetworkModel::ConnectionPathRole);
     } else if (role == QLatin1String("ConnectionState")) {
         return data(index, NetworkModel::ConnectionStateRole);
-    } else if (role == QLatin1String("DevicePath")) {
-        return data(index, NetworkModel::DevicePathRole);
-    } else if (role == QLatin1String("ItemType")) {
-        return data(index, NetworkModel::ItemTypeRole);
-    } else if (role == QLatin1String("Name")) {
-        return data(index, NetworkModel::NameRole);
-    } else if (role == QLatin1String("TypeIcon")) {
-        return data(index, NetworkModel::TypeIconRole);
-    } else if (role == QLatin1String("SpecificPath")) {
-        return data(index, NetworkModel::SpecificPathRole);
+    } else if (role == QLatin1String("Type")) {
+        return data(index, NetworkModel::TypeRole);
     } else if (role == QLatin1String("Uuid")) {
         return data(index, NetworkModel::UuidRole);
     }

@@ -49,8 +49,6 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
 
     if (row >= 0 && row < m_list.count()) {
         NetworkModelItem * item = m_list.itemAt(row);
-        QStringList editorData;
-        QStringList editorSection;
         switch (role) {
             case AppletSectionRole:
                     if (item->connectionState() == NetworkManager::ActiveConnection::Activated) {

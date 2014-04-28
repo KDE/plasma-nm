@@ -27,6 +27,7 @@ import QtQuick.Layouts 1.1
 import org.kde.plasma.core 2.0 as PlasmaCore
 // import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.1 as PlasmaNM
+import ConnectionEditor 0.1
 
 ApplicationWindow {
     id: mainWindow;
@@ -77,11 +78,40 @@ ApplicationWindow {
         }
     }
 
+    Action {
+        id: importVpnAction;
+
+        iconName: "document-import";
+        text: i18n("Import VPN");
+
+        onTriggered: {
+            connectionEditor.importVpn();
+        }
+    }
+
+    Action {
+        id: exportVpnAction;
+
+        enabled: connectionView.selectedConnectionType == PlasmaNM.Enums.Vpn;
+        iconName: "document-export";
+        text: i18n("Export VPN");
+
+        onTriggered: {
+            connectionEditor.exportVpn(connectionView.selectedConnectionUuid);
+        }
+    }
+
     menuBar: MenuBar {
         Menu {
             title: i18n("File");
 
-            // TODO import/export VPN
+            MenuItem {
+                action: importVpnAction;
+            }
+
+            MenuItem {
+                action: exportVpnAction;
+            }
 
             MenuItem {
                 text: i18n("Close");
@@ -115,6 +145,10 @@ ApplicationWindow {
         }
     }
 
+    ConnectionEditor {
+        id: connectionEditor;
+    }
+
     PlasmaNM.Handler {
         id: handler;
     }
@@ -126,10 +160,10 @@ ApplicationWindow {
     PlasmaNM.EditorProxyModel {
         id: editorProxyModel;
 
+        filterString: searchBar.text;
         sourceModel: connectionModel;
         sortRole: connectionView.getColumn(connectionView.sortIndicatorColumn).role;
         sortOrder: connectionView.sortIndicatorOrder;
-        filterString: searchBar.text;
     }
 
     Dialog {
@@ -139,7 +173,6 @@ ApplicationWindow {
     SystemPalette { id: myPalette; colorGroup: SystemPalette.Active }
 
     GroupBox {
-
         anchors.fill: parent;
 
         TextField {
@@ -156,10 +189,9 @@ ApplicationWindow {
         TableView {
             id: connectionView;
 
-            property string selectedConnectionDevicePath;
             property string selectedConnectionPath;
-            property string selectedConnectionSpecificPath;
             property string selectedConnectionUuid;
+            property int selectedConnectionType;
 
             anchors {
                 bottom: parent.bottom;
@@ -170,43 +202,7 @@ ApplicationWindow {
 
             model: editorProxyModel;
 
-            TableViewColumn {
-                role: "Name";
-                title: i18n("Connection name");
-                width: 300
-
-//                 delegate: Item {
-//                     PlasmaCore.IconItem {
-//                         id: stateIcon;
-//
-//                         anchors {
-//                             left: parent.left;
-//                             leftMargin: 5;
-//                             verticalCenter: parent.verticalCenter;
-//                         }
-//                         width: units.iconSizes.small;
-//                         height: units.iconSizes.small;
-//
-//                         source: model.get(styleData.row, "ConnectionState") == PlasmaNM.Enums.Activated ? "user-online" : "user-offline";
-//                         active: true;
-//                         smooth: true;
-//                     }
-//
-//                     Text {
-//                         anchors {
-//                             left: stateIcon.right;
-//                             leftMargin: 8;
-//                             verticalCenter: parent.verticalCenter;
-//                         }
-//
-//
-//                         color: styleData.textColor
-//                         elide: styleData.elideMode
-//                         text: styleData.value
-//                     }
-//                 }
-            }
-
+            TableViewColumn { role: "Name"; title: i18n("Connection name"); width: 300 }
             TableViewColumn { role: "LastUsedDateOnly"; title: i18n("Last used") }
 
             section.property: "TypeString";
@@ -268,12 +264,12 @@ ApplicationWindow {
                 color: styleData.selected ? myPalette.highlight : (styleData.alternate ? myPalette.midlight : myPalette.light);
             }
 
+            backgroundVisible: false;
             sortIndicatorVisible: true;
 
             onClicked: {
-                selectedConnectionDevicePath = model.get(row, "DevicePath");
                 selectedConnectionPath = model.get(row, "ConnectionPath");
-                selectedConnectionSpecificPath = model.get(row, "SpecificPath");
+                selectedConnectionType = model.get(row, "Type");
                 selectedConnectionUuid = model.get(row, "Uuid");
                 console.log("Connection " + model.get(row, "Name") + " selected");
             }

@@ -125,6 +125,8 @@ QVariant EditorProxyModel::get(int row, const QString& role)
         return data(index, NetworkModel::TypeRole);
     } else if (role == QLatin1String("Uuid")) {
         return data(index, NetworkModel::UuidRole);
+    } else if (role == QLatin1String("Name")) {
+        return data(index, NetworkModel::NameRole);
     }
 
     return QVariant();

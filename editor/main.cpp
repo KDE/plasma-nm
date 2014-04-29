@@ -71,9 +71,10 @@ int main(int argc, char *argv[])
         }
     } else {
         qmlRegisterType<ConnectionEditor>("ConnectionEditor", 0, 1, "ConnectionEditor");
-        // FIXME
-        QQmlApplicationEngine * engine = new QQmlApplicationEngine("/opt/kde5/share/kde-nm-connection-editor/qml/main.qml");
-
+        QString qmlPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                    QLatin1String("kde-nm-connection-editor/qml/main.qml"),
+                                                    QStandardPaths::LocateFile);
+        QQmlApplicationEngine * engine = new QQmlApplicationEngine(qmlPath);
     }
 
     return app.exec();

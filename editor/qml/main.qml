@@ -113,6 +113,14 @@ ApplicationWindow {
         }
     }
 
+    Action {
+        id: quitAction;
+        text: i18n("&Quit");
+        iconName: "application-exit";
+        shortcut: StandardKey.Quit;
+        onTriggered: Qt.quit();
+    }
+
     menuBar: MenuBar {
         Menu {
             title: i18n("File");
@@ -126,9 +134,7 @@ ApplicationWindow {
             }
 
             MenuItem {
-                text: i18n("Close");
-                shortcut: StandardKey.Quit;
-                onTriggered: Qt.quit();
+                action: quitAction;
             }
         }
 

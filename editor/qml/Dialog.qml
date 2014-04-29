@@ -53,7 +53,7 @@ Window {
 
         font.pointSize: theme.defaultFont.pointSize * 1.5;
         font.weight: Font.DemiBold;
-        text: i18n("Select a connection type");
+        text: i18n("Select the connection type");
     }
 
     Text {
@@ -68,8 +68,8 @@ Window {
             topMargin: 8;
         }
 
-        text: i18n("Select a connection type you would like to create.\n\nIf you are trying to create" +
-                   " a new VPN connection which is not listed here, it's possible you don't have installed correct VPN plugin.");
+        text: i18n("Select the connection type you would like to create.\n\nIf you are trying to create" +
+                   " a new VPN connection which is not listed here, it's possible you don't have the correct VPN plugin installed.");
         wrapMode: Text.WordWrap;
     }
 

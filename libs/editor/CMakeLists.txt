@@ -98,7 +98,7 @@ target_link_libraries(plasmanetworkmanagement-editor
     KF5::Wallet
     KF5::ItemViews
     KF5::XmlGui
-    KF5::KDE4Support
+    KF5::KDELibs4Support
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)

@@ -48,7 +48,7 @@ target_link_libraries(kded_networkmanagement
     KF5::WindowSystem
     KF5::KIOWidgets
     KF5::CoreAddons
-    KF5::KDE4Support
+    KF5::KDELibs4Support
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
@@ -58,4 +58,4 @@ endif()
 install(TARGETS kded_networkmanagement DESTINATION ${PLUGIN_INSTALL_DIR})
 
 install(FILES networkmanagement.desktop DESTINATION ${SERVICES_INSTALL_DIR}/kded)
-install(FILES networkmanagement.notifyrc DESTINATION ${DATA_INSTALL_DIR}/networkmanagement)
+install(FILES networkmanagement.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})

@@ -18,7 +18,6 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "globalconfig.h"
 #include "networkmodelitem.h"
 #include "uiutils.h"
 
@@ -40,6 +39,9 @@
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/manager.h>
 #include <ModemManagerQt/modem.h>
+#include <ModemManagerQt/modemdevice.h>
+#include <ModemManagerQt/modem3gpp.h>
+#include <ModemManagerQt/modemcdma.h>
 #endif
 
 NetworkModelItem::NetworkModelItem(QObject* parent)
@@ -117,7 +119,7 @@ void NetworkModelItem::setConnectionState(NetworkManager::ActiveConnection::Stat
     }
 }
 
-QString NetworkModelItem::details() const
+QStringList NetworkModelItem::details() const
 {
     return m_details;
 }
@@ -403,54 +405,74 @@ bool NetworkModelItem::operator==(const NetworkModelItem* item) const
 
 void NetworkModelItem::updateDetails()
 {
+    m_details.clear();
+
     if (itemType() == NetworkModelItem::UnavailableConnection) {
         return;
     }
 
-    m_details = "<qt><table>";
-
-    QStringList detailsList = GlobalConfig().detailKeys();
-
-    NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_connectionPath);
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
 
-    m_details += UiUtils::connectionDetails(device, connection, detailsList);
+    // Get IPv[46]Address
+    if (device && device->ipV4Config().isValid() && m_connectionState == NetworkManager::ActiveConnection::Activated) {
+        if (!device->ipV4Config().addresses().isEmpty()) {
+            QHostAddress addr = device->ipV4Config().addresses().first().ip();
+            if (!addr.isNull()) {
+                m_details << i18n("IPv4 Address") << addr.toString();
+            }
+        }
+    }
 
-    if (m_type == NetworkManager::ConnectionSettings::Bluetooth) {
-        NetworkManager::BluetoothDevice::Ptr btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
-        m_details += UiUtils::bluetoothDetails(btDevice, detailsList);
-    } else if (m_type == NetworkManager::ConnectionSettings::Gsm || m_type == NetworkManager::ConnectionSettings::Cdma) {
-        NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
-        m_details += UiUtils::modemDetails(modemDevice, detailsList);
-    } else if (m_type == NetworkManager::ConnectionSettings::Wimax) {
-        NetworkManager::WimaxNsp::Ptr wimaxNsp;
-        NetworkManager::WimaxDevice::Ptr wimaxDevice = device.objectCast<NetworkManager::WimaxDevice>();
-        wimaxNsp = wimaxDevice->findNsp(m_specificPath);
-        if (wimaxDevice && wimaxNsp) {
-            m_details += UiUtils::wimaxDetails(wimaxDevice, wimaxNsp, connection, detailsList);
+    if (device && device->ipV6Config().isValid() && m_connectionState == NetworkManager::ActiveConnection::Activated) {
+        if (!device->ipV6Config().addresses().isEmpty()) {
+            QHostAddress addr = device->ipV6Config().addresses().first().ip();
+            if (!addr.isNull()) {
+                m_details << i18n("IPv6 Address") << addr.toString();
+            }
         }
-    } else if (m_type == NetworkManager::ConnectionSettings::Wired) {
-        NetworkManager::WiredDevice::Ptr wiredDevice;
-        if (device) {
-            wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
+    }
+
+    if (m_type == NetworkManager::ConnectionSettings::Wired) {
+        NetworkManager::WiredDevice::Ptr wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
+        if (wiredDevice) {
+            if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
+                m_details << i18n("Connection speed") << UiUtils::connectionSpeed(wiredDevice->bitRate());
+            }
+            m_details << i18n("MAC Address") << wiredDevice->permanentHardwareAddress();
         }
-        m_details += UiUtils::wiredDetails(wiredDevice, connection, detailsList);
     } else if (m_type == NetworkManager::ConnectionSettings::Wireless) {
-        NetworkManager::WirelessDevice::Ptr wirelessDevice;
-        if (device) {
-            wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
+        NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
+        m_details << i18n("Access point (SSID)") << m_ssid;
+        m_details << i18n("Signal strength") << i18n("%1%", m_signal);
+        if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
+            m_details << i18n("Security type") << UiUtils::labelFromWirelessSecurity(m_securityType);
         }
-        NetworkManager::AccessPoint::Ptr ap;
         if (wirelessDevice) {
-            ap = wirelessDevice->findAccessPoint(m_specificPath);
+            if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
+                m_details << i18n("Connection speed") << UiUtils::connectionSpeed(wirelessDevice->bitRate());
+            }
+            m_details << i18n("MAC Address") << wirelessDevice->permanentHardwareAddress();
         }
-        m_details += UiUtils::wirelessDetails(wirelessDevice, ap, connection, detailsList);
+    } else if (m_type == NetworkManager::ConnectionSettings::Gsm || m_type == NetworkManager::ConnectionSettings::Cdma) {
+#if WITH_MODEMMANAGER_SUPPORT
+        NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
+        ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(modemDevice->udi());
+        ModemManager::Modem::Ptr modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
+
+        if (m_type == NetworkManager::ConnectionSettings::Gsm) {
+            ModemManager::Modem3gpp::Ptr gsmNet = modem->interface(ModemManager::ModemDevice::GsmInterface).objectCast<ModemManager::Modem3gpp>();
+            m_details << i18n("Operator") << gsmNet->operatorName();
+        } else {
+            ModemManager::ModemCdma::Ptr cdmaNet = modem->interface(ModemManager::ModemDevice::CdmaInterface).objectCast<ModemManager::ModemCdma>();
+            m_details << i18n("Network ID") << QString("%1%").arg(cdmaNet->nid());
+        }
+        m_details << i18n("Signal Quality") << QString("%1%").arg(modemNetwork->signalQuality().signal);
+        m_details << i18n("Access Technology") << UiUtils::convertAccessTechnologyToString(modemNetwork->accessTechnologies());
+#endif
     } else if (m_type == NetworkManager::ConnectionSettings::Vpn) {
-        NetworkManager::ActiveConnection::Ptr active = NetworkManager::findActiveConnection(m_activeConnectionPath);
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_connectionPath);
         NetworkManager::ConnectionSettings::Ptr connectionSettings;
         NetworkManager::VpnSetting::Ptr vpnSetting;
-        NetworkManager::VpnConnection::Ptr vpnConnection;
 
         if (connection) {
             connectionSettings = connection->settings();
@@ -459,13 +481,35 @@ void NetworkModelItem::updateDetails()
             vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
         }
 
-        if (active) {
-            vpnConnection = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(active->path()), &QObject::deleteLater);
+        if (vpnSetting) {
+            m_details << i18n("VPN plugin") << vpnSetting->serviceType().section('.', -1);
         }
-        m_details += UiUtils::vpnDetails(vpnConnection, vpnSetting, detailsList);
-    }
 
-    m_details += "</table></qt>";
+        if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
+            NetworkManager::ActiveConnection::Ptr active = NetworkManager::findActiveConnection(m_activeConnectionPath);
+            NetworkManager::VpnConnection::Ptr vpnConnection;
+
+            if (active) {
+                vpnConnection = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(active->path()), &QObject::deleteLater);
+            }
+
+            if (vpnConnection) {
+                m_details << i18n("Banner") << vpnConnection->banner().simplified();
+            }
+        }
+    } else if (m_type == NetworkManager::ConnectionSettings::Bluetooth) {
+        // TODO
+//      Bluetooth
+//      - Bluetooth HW address
+//      - BT name
+//      - BT capabilities
+    } else if (m_type == NetworkManager::ConnectionSettings::Wimax) {
+        // TODO
+//      Wimax
+//      - MAC address
+//      - NSP
+//      - Signal
+    }
 }
 
 
@@ -476,7 +520,6 @@ void NetworkModelItem::dataUpdated(const QString& sourceName, const Plasma::Data
     } else if (sourceName == m_downloadSource) {
         m_download = data["value"].toString();
     }
-    // TODO
     Q_EMIT itemUpdated();
 }
 

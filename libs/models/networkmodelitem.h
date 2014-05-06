@@ -53,7 +53,7 @@ public:
     NetworkManager::ActiveConnection::State connectionState() const;
     void setConnectionState(NetworkManager::ActiveConnection::State state);
 
-    QString details() const;
+    QStringList details() const;
 
     QString devicePath() const;
     void setDeviceName(const QString& name);
@@ -129,7 +129,7 @@ private:
     QString m_devicePath;
     QString m_deviceName;
     NetworkManager::Device::State m_deviceState;
-    QString m_details;
+    QStringList m_details;
     QString m_download;
     QString m_downloadSource;
     bool m_duplicate;

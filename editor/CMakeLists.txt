@@ -21,7 +21,7 @@ target_link_libraries(kde-nm-connection-editor
     KF5::I18n
     KF5::Plasma
     KF5::Service  # Plasma dependency
-    KF5::KDE4Support # Plasma dependency
+    KF5::KDELibs4Support # Plasma dependency
 )
 
 install(TARGETS kde-nm-connection-editor ${INSTALL_TARGETS_DEFAULT_ARGS})

@@ -1,5 +1,6 @@
 /*
     Copyright 2008-2010 Sebastian Kügler <sebas@kde.org>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -116,13 +117,6 @@ public:
     static QString shortToolTipFromWirelessSecurity(NetworkManager::Utils::WirelessSecurityType type);
     static QString labelFromWirelessSecurity(NetworkManager::Utils::WirelessSecurityType type);
 
-    static QString connectionDetails(const NetworkManager::Device::Ptr & device, const NetworkManager::Connection::Ptr & connection, const QStringList & keys);
-    static QString bluetoothDetails(const NetworkManager::BluetoothDevice::Ptr & btDevice, const QStringList & keys);
-    static QString modemDetails(const NetworkManager::ModemDevice::Ptr & modemDevice, const QStringList & keys);
-    static QString vpnDetails(const NetworkManager::VpnConnection::Ptr & vpnConnection, const NetworkManager::VpnSetting::Ptr & vpnSetting, const QStringList & keys);
-    static QString wimaxDetails(const NetworkManager::WimaxDevice::Ptr & wimaxDevice, const NetworkManager::WimaxNsp::Ptr & wimaxNsp, const NetworkManager::Connection::Ptr & connection, const QStringList & keys);
-    static QString wiredDetails(const NetworkManager::WiredDevice::Ptr & wiredDevice, const NetworkManager::Connection::Ptr & connection, const QStringList & keys);
-    static QString wirelessDetails(const NetworkManager::WirelessDevice::Ptr & wirelessDevice, const NetworkManager::AccessPoint::Ptr & network, const NetworkManager::Connection::Ptr & connection, const QStringList & keys);
     static QString formatDateRelative(const QDateTime & lastUsed);
     static QString formatLastUsedDateRelative(const QDateTime & lastUsed);
 };

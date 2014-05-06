@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -28,8 +28,6 @@ import org.kde.plasma.networkmanagement 0.1 as PlasmaNM
 Item {
     id: mainWindow;
 
-    property int minimumWidth: 300;
-    property int minimumHeight: 300;
     property bool showSections: true;
 
     PlasmaNM.NetworkStatus {
@@ -41,29 +39,10 @@ Item {
     }
 
     Plasmoid.toolTipMainText: ""
-    Plasmoid.toolTipSubText: networkStatus.activeConnections
-    Plasmoid.icon: connectionIconProvider.connectionTooltipIcon
+    Plasmoid.toolTipSubText: networkStatus.activeConnections;
+    Plasmoid.icon: connectionIconProvider.connectionTooltipIcon;
 
     Plasmoid.compactRepresentation: CompactRepresentation { }
-//         Component.onCompleted: {
-//             plasmoid.addEventListener('configChanged', mainWindow.configChanged)
-//         }
-//     }
-
-//     signal sectionChanged();
-
-//  TODO
-    PlasmaNM.GlobalConfig {
-        id: globalConfig;
-
-        onDetailKeysChanged: {
-            connectionModel.updateItems();
-        }
-
-        onNetworkSpeedUnitChanged: {
-            connectionModel.updateItems();
-        }
-    }
 
     Plasmoid.fullRepresentation: PopupDialog {
         id: dialogItem;
@@ -71,20 +50,4 @@ Item {
         anchors.fill: parent;
         focus: true;
     }
-
-    // TODO
-/*
-    Component.onCompleted: {
-        configChanged();
-        plasmoid.addEventListener('configChanged', mainWindow.configChanged)
-    }
-
-    function configChanged() {
-        var keys;
-        keys = plasmoid.readConfig("detailKeys");
-        globalConfig.setDetailKeys(keys);
-        var speedUnit;
-        speedUnit = plasmoid.readConfig("networkSpeedUnit");
-        globalConfig.setNetworkSpeedUnit(speedUnit);
-    }*/
 }

@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -19,41 +19,61 @@
 */
 
 import QtQuick 2.0
-import org.kde.kquickcontrolsaddons 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.1 as PlasmaNM
 
-Item {
-    id: panelIconWidget;
+FocusScope {
 
-    PlasmaCore.Svg {
-        id: svgIcons;
-
-        multipleImages: true;
-        imagePath: "icons/network";
+    PlasmaNM.Handler {
+        id: handler;
     }
 
-    PlasmaCore.SvgItem {
-        id: connectionIcon;
+    PlasmaNM.NetworkModel {
+        id: connectionModel;
+    }
 
-        anchors.centerIn: parent
-        width: Math.min(parent.width, parent.height)
-        height: width
-        svg: svgIcons;
-        elementId: connectionIconProvider.connectionIcon
+    PlasmaNM.AppletProxyModel {
+        id: appletProxyModel;
 
-        PlasmaComponents.BusyIndicator {
-            id: connectingIndicator;
+        sourceModel: connectionModel;
+    }
 
-            anchors.fill: parent;
-            running: connectionIconProvider.connecting;
-            visible: running;
+    PlasmaCore.FrameSvgItem {
+        id: padding
+
+        imagePath: "widgets/viewitem"
+        prefix: "hover"
+        opacity: 0
+        anchors.fill: parent
+    }
+
+    Toolbar {
+        id: toolbar;
+
+        anchors {
+            left: parent.left;
+            right: parent.right;
+            top: parent.top;
         }
     }
 
-    MouseArea {
-        anchors.fill: parent
-        onClicked: plasmoid.expanded = !plasmoid.expanded
+    ListView {
+        id: connectionView;
+
+        anchors {
+            bottom: parent.bottom;
+            left: parent.left;
+            right: parent.right;
+            top: toolbar.bottom;
+        }
+
+        clip: true
+        model: appletProxyModel;
+        currentIndex: -1;
+        boundsBehavior: Flickable.StopAtBounds;
+        section.property: showSections ? "AppletSection" : "";
+        section.delegate: Header { text: section }
+        delegate: ConnectionItem { }
     }
 }

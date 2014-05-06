@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -24,7 +24,6 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.1 as PlasmaNM
 
-
 PlasmaComponents.ListItem {
     id: connectionItem;
 
@@ -35,13 +34,11 @@ PlasmaComponents.ListItem {
     property bool visibleDetails: false;
     property bool visiblePasswordDialog: false;
 
-    property int iconSize: units.iconSizes.medium;
+    property int baseHeight: connectionItemBase.height + padding.margins.top + padding.margins.bottom;
 
+    height: (visibleDetails || visiblePasswordDialog) ? baseHeight + expandableComponentLoader.height : baseHeight;
+    checked: ListView.isCurrentItem;
     enabled: true;
-    height: if (visibleDetails || visiblePasswordDialog)
-                connectionItemBase.height + expandableComponentLoader.height + padding.margins.top + padding.margins.bottom;
-            else
-                connectionItemBase.height + padding.margins.top + padding.margins.bottom;
 
     PlasmaCore.Svg {
         id: svgNetworkIcons;
@@ -53,23 +50,24 @@ PlasmaComponents.ListItem {
     Item {
         id: connectionItemBase;
 
-        height: Math.max(connectionSvgIcon.height, connectionNameLabel.height + connectionStatusLabel.height);
-
         anchors {
             left: parent.left;
             right: parent.right;
             top: parent.top;
         }
 
+        height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height);
+
         PlasmaCore.SvgItem {
             id: connectionSvgIcon;
 
-            width: iconSize;
-            height: width;
             anchors {
                 left: parent.left
                 verticalCenter: parent.verticalCenter
             }
+
+            height: units.iconSizes.medium;
+            width: height;
             svg: svgNetworkIcons;
             elementId: ConnectionIcon;
         }
@@ -77,166 +75,69 @@ PlasmaComponents.ListItem {
         PlasmaComponents.Label {
             id: connectionNameLabel;
 
-            height: paintedHeight;
             anchors {
                 left: connectionSvgIcon.right;
                 leftMargin: padding.margins.left;
-                right: !connectionItemMouseArea.containsMouse ? connectingIndicator.left : buttonRow.left;
+                right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
                 bottom: connectionSvgIcon.verticalCenter
             }
-            text: ItemUniqueName;
+
+            height: paintedHeight;
             elide: Text.ElideRight;
             font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal;
             font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false;
+            text: ItemUniqueName;
         }
 
         PlasmaComponents.Label {
             id: connectionStatusLabel;
 
-            height: paintedHeight;
             anchors {
                 left: connectionSvgIcon.right;
                 leftMargin: padding.margins.left;
-                right: !connectionItemMouseArea.containsMouse ? connectingIndicator.left : buttonRow.left;
+                right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
                 top: connectionNameLabel.bottom;
             }
 
-            font.pointSize: theme.smallestFont.pointSize;
-            opacity: 0.6
-            text: itemText();
-
+            height: paintedHeight;
             elide: Text.ElideRight;
+            font.pointSize: theme.smallestFont.pointSize;
+            opacity: 0.6;
+            text: itemText();
         }
 
         PlasmaComponents.BusyIndicator {
             id: connectingIndicator;
 
-            width: iconSize;
-            height: width;
+            anchors {
+                right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
+                rightMargin: padding.margins.right;
+                verticalCenter: connectionSvgIcon.verticalCenter;
+            }
+
+            height: units.iconSizes.medium;
+            width: height;
+            running: ConnectionState == PlasmaNM.Enums.Activating;
+            visible: running && !stateChangeButton.visible;
+        }
+
+        PlasmaComponents.Button {
+            id: stateChangeButton;
+
             anchors {
                 right: parent.right;
                 rightMargin: padding.margins.right;
-                verticalCenter: parent.verticalCenter;
+                verticalCenter: connectionSvgIcon.verticalCenter;
             }
-            running: ConnectionState == PlasmaNM.Enums.Activating;
-            visible: running && !connectionItemMouseArea.containsMouse;
-        }
 
-        Row {
-            id: buttonRow;
-
-            anchors {
-                verticalCenter: parent.verticalCenter;
-                right: parent.right;
-            }
-            spacing: 8;
-
-            opacity: connectionItemMouseArea.containsMouse ? 1 : 0
+            opacity: connectionItem.containsMouse ? 1 : 0
             visible: opacity != 0
+            text: (ConnectionState == PlasmaNM.Enums.Deactivated) ? i18n("Connect") : i18n("Disconnect");
+
             Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
 
-            PlasmaCore.SvgItem {
-                id: configureButton;
-
-                height: iconSize;
-                width: Uuid ? height: 0;
-                anchors {
-                    verticalCenter: parent.verticalCenter;
-                }
-                svg: svgNetworkIcons;
-                elementId: configureButtonMouse.containsMouse ? "edit-hover" : "edit";
-
-                MouseArea {
-                    id: configureButtonMouse;
-                    anchors {
-                        bottom: parent.bottom;
-                        left: parent.left;
-                        right: parent.right;
-                        top: parent.top;
-                        bottomMargin: -4;
-                        leftMargin: -4;
-                        rightMargin: -4;
-                        topMargin: -4;
-                    }
-                    hoverEnabled: true;
-
-                    onClicked: {
-                        handler.editConnection(Uuid);
-                    }
-                }
-            }
-
-            PlasmaCore.SvgItem {
-                id: openDetailsButton;
-
-                height: iconSize;
-                width: height;
-                anchors {
-                    verticalCenter: parent.verticalCenter;
-                }
-                svg: svgNetworkIcons;
-                elementId: openDetailsButtonMouse.containsMouse ? "showinfo-hover" : "showinfo";
-
-                MouseArea {
-                    id: openDetailsButtonMouse;
-                    anchors {
-                        bottom: parent.bottom;
-                        left: parent.left;
-                        right: parent.right;
-                        top: parent.top;
-                        margins: -4;
-                    }
-                    hoverEnabled: true;
-
-                    onClicked: {
-                        visiblePasswordDialog = false;
-                        visibleDetails = !visibleDetails;
-                    }
-                }
-            }
-
-            PlasmaComponents.Button {
-                id: stateChangeButton;
-
-                anchors {
-                    verticalCenter: parent.verticalCenter;
-                }
-                text: if (ConnectionState == PlasmaNM.Enums.Deactivated)
-                        i18n("Connect");
-                      else
-                        i18n("Disconnect");
-
-                onClicked: {
-                    visibleDetails = false;
-                    if (Uuid || !predictableWirelessPassword || visiblePasswordDialog) {
-                        if (ConnectionState == PlasmaNM.Enums.Deactivated) {
-                            if (!predictableWirelessPassword && !Uuid) {
-                                handler.addAndActivateConnection(DevicePath, SpecificPath);
-                            } else if (visiblePasswordDialog) {
-                                handler.addAndActivateConnection(DevicePath, SpecificPath, expandableComponentLoader.item.password);
-                                visiblePasswordDialog = false;
-                            } else {
-                                handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
-                            }
-                        } else {
-                            handler.deactivateConnection(ConnectionPath, DevicePath);
-                        }
-                    } else if (predictableWirelessPassword) {
-                        visiblePasswordDialog = true;
-                    }
-                }
-            }
+            onClicked: changeState();
         }
-    }
-
-    MouseArea {
-        id: connectionItemMouseArea;
-
-        anchors {
-            fill: parent;
-        }
-        hoverEnabled: true;
-        propagateComposedEvents: true
     }
 
     Loader {
@@ -254,53 +155,92 @@ PlasmaComponents.ListItem {
         id: detailsComponent;
 
         Item {
-            height: childrenRect.height + padding.margins.top;
+            height: childrenRect.height + padding.margins.bottom;
 
             PlasmaCore.SvgItem {
                 id: detailsSeparator;
 
-                height: lineSvg.elementSize("horizontal-line").height;
-                width: parent.width;
                 anchors {
                     left: parent.left;
                     right: parent.right;
                     top: parent.top;
                 }
-                elementId: "horizontal-line";
 
+                height: lineSvg.elementSize("horizontal-line").height;
+                width: parent.width;
+                elementId: "horizontal-line";
                 svg: PlasmaCore.Svg {
                     id: lineSvg;
                     imagePath: "widgets/line";
                 }
             }
 
-            Item {
-                id: detailsContent;
-
-                height: detailsText.height;
+            Column {
+                id: details;
 
                 anchors {
                     left: parent.left;
+                    leftMargin: units.iconSizes.medium;
                     right: parent.right;
                     top: detailsSeparator.bottom;
                     topMargin: padding.margins.top;
                 }
 
-                TextEdit {
-                    id: detailsText;
+                Repeater {
+                    id: repeater;
 
-                    height: implicitHeight;
-                    anchors {
-                        left: parent.left;
-                        right: parent.right;
-                        top: parent.top;
+                    property int longestString: 0;
+
+                    model: ConnectionDetails.length/2;
+
+                    Item {
+                        anchors {
+                            left: parent.left;
+                            right: parent.right;
+                            topMargin: padding.margins.top;
+                        }
+
+                        height: Math.max(detailNameLabel.height, detailValueLabel.height);
+
+                        PlasmaComponents.Label {
+                            id: detailNameLabel;
+
+                            anchors {
+                                left: parent.left;
+                                leftMargin: repeater.longestString - paintedWidth + padding.margins.left;
+                                verticalCenter: parent.verticalCenter;
+                            }
+
+                            height: paintedHeight;
+                            font.pointSize: theme.smallestFont.pointSize;
+                            horizontalAlignment: Text.AlignRight;
+                            opacity: 0.6;
+                            text: "<b>" + ConnectionDetails[index*2] + "</b>: &nbsp";
+
+                            Component.onCompleted: {
+                                if (paintedWidth > repeater.longestString) {
+                                    repeater.longestString = paintedWidth;
+                                }
+                            }
+                        }
+
+                        PlasmaComponents.Label {
+                            id: detailValueLabel;
+
+                            anchors {
+                                left: detailNameLabel.right;
+                                right: parent.right;
+                                verticalCenter: parent.verticalCenter;
+                            }
+
+                            height: paintedHeight;
+                            elide: Text.ElideRight;
+                            font.pointSize: theme.smallestFont.pointSize;
+                            opacity: 0.6;
+                            text: ConnectionDetails[(index*2)+1];
+                            textFormat: Text.StyledText;
+                        }
                     }
-                    color: theme.textColor;
-                    readOnly: true;
-                    selectByMouse: true;
-                    wrapMode: TextEdit.WordWrap;
-                    textFormat: Text.RichText;
-                    text: ConnectionDetails;
                 }
             }
         }
@@ -358,6 +298,7 @@ PlasmaComponents.ListItem {
                     right: parent.right;
                     top: passwordInput.bottom;
                 }
+
                 checked: false;
                 text: i18n("Show password");
             }
@@ -372,12 +313,16 @@ PlasmaComponents.ListItem {
         },
 
         State {
-            name: "expanded";
-            when: visibleDetails || visiblePasswordDialog;
+            name: "expandedDetails";
+            when: visibleDetails;
             StateChangeScript { script: createContent(); }
-            PropertyChanges { target: openDetailsButton; visible: true; }
-            PropertyChanges { target: stateChangeButton; visible: true; }
-            PropertyChanges { target: connectionItem; enabled: false; }
+        },
+
+        State {
+            name: "expandedPasswordDialog";
+            when: visiblePasswordDialog;
+            StateChangeScript { script: createContent(); }
+            PropertyChanges { target: stateChangeButton; opacity: 1; }
         }
     ]
 
@@ -387,6 +332,26 @@ PlasmaComponents.ListItem {
         } else if (visiblePasswordDialog) {
             expandableComponentLoader.sourceComponent = passwordDialogComponent;
             expandableComponentLoader.item.passwordFocus.forceActiveFocus();
+        }
+    }
+
+    function changeState() {
+        visibleDetails = false;
+        if (Uuid || !predictableWirelessPassword || visiblePasswordDialog) {
+            if (ConnectionState == PlasmaNM.Enums.Deactivated) {
+                if (!predictableWirelessPassword && !Uuid) {
+                    handler.addAndActivateConnection(DevicePath, SpecificPath);
+                } else if (visiblePasswordDialog) {
+                    handler.addAndActivateConnection(DevicePath, SpecificPath, expandableComponentLoader.item.password);
+                    visiblePasswordDialog = false;
+                } else {
+                    handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
+                }
+            } else {
+                handler.deactivateConnection(ConnectionPath, DevicePath);
+            }
+        } else if (predictableWirelessPassword) {
+            visiblePasswordDialog = true;
         }
     }
 
@@ -416,6 +381,24 @@ PlasmaComponents.ListItem {
             } else {
                 return i18n("Connected");
             }
+        }
+    }
+
+    onStateChanged: {
+        if (state == "expandedPasswordDialog" || state == "expandedDetails") {
+            ListView.view.currentIndex = index;
+        }
+    }
+
+    onClicked: {
+        if (visiblePasswordDialog) {
+            visiblePasswordDialog = false;
+        } else {
+            visibleDetails = !visibleDetails;
+        }
+
+        if (!visibleDetails) {
+            ListView.view.currentIndex = -1;
         }
     }
 }

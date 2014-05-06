@@ -39,8 +39,8 @@ Item {
     }
 
     Plasmoid.toolTipMainText: ""
-    Plasmoid.toolTipSubText: networkStatus.activeConnections
-    Plasmoid.icon: connectionIconProvider.connectionTooltipIcon
+    Plasmoid.toolTipSubText: networkStatus.activeConnections;
+    Plasmoid.icon: connectionIconProvider.connectionTooltipIcon;
 
     Plasmoid.compactRepresentation: CompactRepresentation { }
 

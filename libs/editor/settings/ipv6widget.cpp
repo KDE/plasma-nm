@@ -408,7 +408,7 @@ void IPv6Widget::slotDnsServers()
     connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));
     connect(buttons, SIGNAL(rejected()), dialog, SLOT(reject()));
     KEditListWidget * listWidget = new KEditListWidget(dialog);
-    listWidget->setItems(m_ui->dns->text().split(','));
+    listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(" ", ""));
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
 
@@ -434,7 +434,7 @@ void IPv6Widget::slotDnsDomains()
     connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));
     connect(buttons, SIGNAL(rejected()), dialog, SLOT(reject()));
     KEditListWidget * listWidget = new KEditListWidget(dialog);
-    listWidget->setItems(m_ui->dnsSearch->text().split(','));
+    listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(" ", ""));
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
 

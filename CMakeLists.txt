@@ -1,6 +1,6 @@
 project(plasma-networkmanagement)
 
-cmake_minimum_required(VERSION 2.8.6 FATAL_ERROR)
+cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 set(QT_MIN_VERSION "5.2.0")
 
 set(PLASMA_NM_VERSION 1.0.0)
@@ -22,16 +22,16 @@ include(FeatureSummary)
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Core
     DBus
-    Designer
+#     Designer
     Network
     Test
     Quick
     Widgets
 )
 
-find_package(KF5 CONFIG REQUIRED
+find_package(KF5 REQUIRED
     I18n WindowSystem Service Completion WidgetsAddons KIO CoreAddons Wallet ItemViews XmlGui
-    ConfigWidgets IconThemes Solid DBusAddons Notifications Plasma Declarative Init KDE4Support)
+    ConfigWidgets IconThemes Solid DBusAddons Notifications Plasma Declarative Init KDELibs4Support)
 
 find_package(KF5NetworkManagerQt)
 set_package_properties(KF5NetworkManagerQt PROPERTIES

@@ -41,7 +41,7 @@ Item {
         width: Math.min(parent.width, parent.height)
         height: width
         svg: svgIcons;
-        elementId: connectionIconProvider.connectionIcon
+        elementId: connectionIconProvider.connectionIcon;
 
         PlasmaComponents.BusyIndicator {
             id: connectingIndicator;

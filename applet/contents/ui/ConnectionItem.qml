@@ -175,51 +175,108 @@ PlasmaComponents.ListItem {
                 }
             }
 
-            PlasmaComponents.Button {
-                id: configureButton;
-
-                anchors {
-                    right: parent.right;
-                    rightMargin: padding.margins.right;
-                    top: detailsSeparator.bottom;
-                    topMargin: padding.margins.top;
-                }
-
-                opacity: connectionItem.containsMouse && Uuid ? 1 : 0
-                visible: opacity != 0
-                text: i18n("Configure");
-
-                Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
-
-                onClicked: {
-                    handler.editConnection(Uuid);
-                }
-            }
+//             PlasmaComponents.Button {
+//                 id: configureButton;
+//
+//                 anchors {
+//                     right: parent.right;
+//                     rightMargin: padding.margins.right;
+//                     top: detailsSeparator.bottom;
+//                     topMargin: padding.margins.top;
+//                 }
+//
+//                 opacity: connectionItem.containsMouse && Uuid ? 1 : 0
+//                 visible: opacity != 0
+//                 text: i18n("Configure");
+//
+//                 Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
+//
+//                 onClicked: {
+//                     handler.editConnection(Uuid);
+//                 }
+//             }
 
             Column {
+                id: details;
+
                 anchors {
                     left: parent.left;
-                    leftMargin: units.iconSizes.medium + padding.margins.left;
-                    right: configureButton.visible && Uuid ? configureButton.left : parent.right;
+                    leftMargin: units.iconSizes.medium;
+                    right: parent.right;
                     top: detailsSeparator.bottom;
                     topMargin: padding.margins.top;
                 }
 
                 Repeater {
+                    id: repeater;
+
+                    property int longestString: 0;
+
                     model: ConnectionDetails.length/2;
-                    PlasmaComponents.Label {
+
+                    Item {
                         anchors {
                             left: parent.left;
                             right: parent.right;
                             topMargin: padding.margins.top;
                         }
 
-                        height: paintedHeight;
-                        font.pointSize: theme.smallestFont.pointSize;
-                        opacity: 0.6;
-                        textFormat: Text.StyledText;
-                        text: "<b>" + ConnectionDetails[index*2] + "</b>: " + ConnectionDetails[(index*2)+1];
-                        wrapMode: Text.Wrap;
+                        height: Math.max(detailNameLabel.height, detailValueLabel.height);
+//                         height: background.height;
+
+//                         PlasmaCore.FrameSvgItem {
+//                             id : background
+//
+//                             anchors {
+//                                 left: parent.left;
+//                                 right: parent.right;
+//                                 verticalCenter: parent.verticalCenter;
+//                             }
+//
+//                             height: Math.max(detailNameLabel.paintedHeight, detailValueLabel.paintedHeight) + padding.margins.top;
+//                             imagePath: "widgets/listitem"
+//                             prefix: "section";
+//                             visible: index % 2 == 0;
+//                         }
+
+                        PlasmaComponents.Label {
+                            id: detailNameLabel;
+
+                            anchors {
+                                left: parent.left;
+                                leftMargin: repeater.longestString - paintedWidth + padding.margins.left;
+                                verticalCenter: parent.verticalCenter;
+                            }
+
+                            height: paintedHeight;
+                            font.pointSize: theme.smallestFont.pointSize;
+                            horizontalAlignment: Text.AlignRight;
+                            opacity: 0.6;
+                            text: "<b>" + ConnectionDetails[index*2] + "</b>: ";
+
+                            Component.onCompleted: {
+                                if (paintedWidth > repeater.longestString) {
+                                    repeater.longestString = paintedWidth;
+                                }
+                            }
+                        }
+
+                        PlasmaComponents.Label {
+                            id: detailValueLabel;
+
+                            anchors {
+                                left: detailNameLabel.right;
+                                right: parent.right;
+                                verticalCenter: parent.verticalCenter;
+                            }
+
+                            height: paintedHeight;
+                            elide: Text.ElideRight;
+                            font.pointSize: theme.smallestFont.pointSize;
+                            opacity: 0.6;
+                            text: ConnectionDetails[(index*2)+1];
+                            textFormat: Text.StyledText;
+                        }
                     }
                 }
             }

@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -20,13 +20,13 @@
 
 import QtQuick 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as Components
+import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.1 as PlasmaNM
 
 FocusScope {
 
     PlasmaNM.Handler {
-            id: handler;
+        id: handler;
     }
 
     PlasmaNM.NetworkModel {
@@ -41,6 +41,7 @@ FocusScope {
 
     PlasmaCore.FrameSvgItem {
         id: padding
+
         imagePath: "widgets/viewitem"
         prefix: "hover"
         opacity: 0
@@ -66,19 +67,13 @@ FocusScope {
             right: parent.right;
             top: toolbar.bottom;
         }
+
         clip: true
         model: appletProxyModel;
         currentIndex: -1;
-        interactive: true;
         boundsBehavior: Flickable.StopAtBounds;
         section.property: showSections ? "Section" : "";
         section.delegate: Header { text: section }
-        delegate: ConnectionItem {
-            onStateChanged: {
-                if (state == "expanded") {
-                    connectionView.currentIndex = index;
-                }
-            }
-        }
+        delegate: ConnectionItem { }
     }
 }

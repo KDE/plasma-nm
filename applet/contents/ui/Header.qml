@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -26,22 +26,23 @@ PlasmaComponents.ListItem {
 
     property alias text: headerLabel.text;
 
-    height: headerLabel.height + padding.margins.top + padding.margins.bottom;
-    sectionDelegate: true;
-
     anchors {
         left: parent.left;
         right: parent.right;
     }
 
-    PlasmaComponents.Label {
-        id: headerLabel
+    height: headerLabel.height + padding.margins.top + padding.margins.bottom;
+    sectionDelegate: true;
 
-        height: paintedHeight;
+    PlasmaComponents.Label {
+        id: headerLabel;
+
         anchors {
             horizontalCenter: parent.horizontalCenter;
             verticalCenter: parent.verticalCenter;
         }
+
+        height: paintedHeight;
         font.weight: Font.DemiBold;
     }
 }

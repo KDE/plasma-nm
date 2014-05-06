@@ -25,7 +25,6 @@
 #include "availabledevices.h"
 #include "connectionicon.h"
 #include "enabledconnections.h"
-#include "globalconfig.h"
 #include "networkstatus.h"
 // #include "trafficmonitor.h"
 
@@ -45,8 +44,6 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<EnabledConnections>(uri, 0, 1, "EnabledConnections");
     // @uri org.kde.plasma.networkmanagement.Enums
     qmlRegisterUncreatableType<Enums>(uri, 0, 1, "Enums", "You cannot create Enums on yourself");
-    // @uri org.kde.plasma.networkmanagement.GlobalConfig
-    qmlRegisterType<GlobalConfig>(uri, 0, 1, "GlobalConfig");
     // @uri org.kde.plasma.networkmanagement.NetworkStatus
     qmlRegisterType<NetworkStatus>(uri, 0, 1, "NetworkStatus");
     // @uri org.kde.plasma.networkmanagement.Handler

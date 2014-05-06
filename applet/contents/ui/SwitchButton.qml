@@ -38,16 +38,22 @@ Item {
         id: svgNetworkIcons;
 
         multipleImages: true;
-        imagePath: "icons/plasma-networkmanagement";
+        imagePath: "icons/network";
     }
 
     PlasmaComponents.CheckBox {
         id: switchButtonCheckbox;
 
         anchors {
+            bottomMargin: padding.margins.bottom
             left: parent.left;
             leftMargin: padding.margins.right;
+            topMargin: padding.margins.top
             verticalCenter: parent.verticalCenter;
+        }
+
+        onClicked: {
+            switchButton.clicked();
         }
     }
 
@@ -59,18 +65,7 @@ Item {
             leftMargin: padding.margins.left;
             verticalCenter: parent.verticalCenter;
         }
+
         svg: svgNetworkIcons;
-    }
-
-    MouseArea {
-        id: switchButtonMouseArea;
-
-        anchors.fill: parent;
-
-        onClicked: {
-            if (switchButton.enabled) {
-                switchButton.clicked();
-            }
-        }
     }
 }

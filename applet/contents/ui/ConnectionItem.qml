@@ -175,27 +175,6 @@ PlasmaComponents.ListItem {
                 }
             }
 
-//             PlasmaComponents.Button {
-//                 id: configureButton;
-//
-//                 anchors {
-//                     right: parent.right;
-//                     rightMargin: padding.margins.right;
-//                     top: detailsSeparator.bottom;
-//                     topMargin: padding.margins.top;
-//                 }
-//
-//                 opacity: connectionItem.containsMouse && Uuid ? 1 : 0
-//                 visible: opacity != 0
-//                 text: i18n("Configure");
-//
-//                 Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
-//
-//                 onClicked: {
-//                     handler.editConnection(Uuid);
-//                 }
-//             }
-
             Column {
                 id: details;
 
@@ -222,22 +201,6 @@ PlasmaComponents.ListItem {
                         }
 
                         height: Math.max(detailNameLabel.height, detailValueLabel.height);
-//                         height: background.height;
-
-//                         PlasmaCore.FrameSvgItem {
-//                             id : background
-//
-//                             anchors {
-//                                 left: parent.left;
-//                                 right: parent.right;
-//                                 verticalCenter: parent.verticalCenter;
-//                             }
-//
-//                             height: Math.max(detailNameLabel.paintedHeight, detailValueLabel.paintedHeight) + padding.margins.top;
-//                             imagePath: "widgets/listitem"
-//                             prefix: "section";
-//                             visible: index % 2 == 0;
-//                         }
 
                         PlasmaComponents.Label {
                             id: detailNameLabel;
@@ -252,7 +215,7 @@ PlasmaComponents.ListItem {
                             font.pointSize: theme.smallestFont.pointSize;
                             horizontalAlignment: Text.AlignRight;
                             opacity: 0.6;
-                            text: "<b>" + ConnectionDetails[index*2] + "</b>: ";
+                            text: "<b>" + ConnectionDetails[index*2] + "</b>: &nbsp";
 
                             Component.onCompleted: {
                                 if (paintedWidth > repeater.longestString) {
@@ -353,10 +316,6 @@ PlasmaComponents.ListItem {
             name: "expandedDetails";
             when: visibleDetails;
             StateChangeScript { script: createContent(); }
-//             PropertyChanges { target: stateChangeButton; opacity: 1 }
-//             PropertyChanges { target: connectionItem; height: connectionView.height }
-//             PropertyChanges { target: connectionItem.ListView.view; explicit: true; contentY: connectionItem.y }
-//             PropertyChanges { target: connectionItem.ListView.view; interactive: false }
         },
 
         State {

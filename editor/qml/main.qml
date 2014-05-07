@@ -279,7 +279,7 @@ ApplicationWindow {
 
             rowDelegate: Rectangle {
                 height: units.iconSizes.medium;
-                color: styleData.selected ? myPalette.highlight : (styleData.alternate ? myPalette.midlight : myPalette.light);
+                color: styleData.selected ? Qt.lighter(myPalette.highlight, 1.3) : (styleData.alternate ? myPalette.midlight : myPalette.light);
             }
 
             backgroundVisible: false;

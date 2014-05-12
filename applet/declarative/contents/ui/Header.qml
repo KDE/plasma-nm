@@ -37,11 +37,27 @@ PlasmaComponents.ListItem {
     PlasmaComponents.Label {
         id: headerLabel
 
-        height: paintedHeight;
         anchors {
             horizontalCenter: parent.horizontalCenter;
             verticalCenter: parent.verticalCenter;
         }
         font.weight: Font.DemiBold;
+    }
+
+    PlasmaComponents.ToolButton {
+        id: refreshButton;
+
+        anchors {
+            right: parent.right;
+            rightMargin: padding.margins.right;
+            verticalCenter: parent.verticalCenter;
+        }
+
+        iconSource: "view-refresh";
+        visible: header.text == i18n("Available connections");
+
+        onClicked: {
+            handler.requestScan();
+        }
     }
 }

@@ -108,22 +108,4 @@ Item {
             handler.openEditor();
         }
     }
-
-    PlasmaComponents.ToolButton {
-        id: refreshButton;
-
-        anchors {
-            bottom: parent.bottom;
-            bottomMargin: padding.margins.bottom/2;
-            right: openEditorButton.left;
-            rightMargin: padding.margins.right;
-            top: parent.top;
-            topMargin: padding.margins.top/2;
-        }
-        iconSource: "view-refresh";
-
-        onClicked: {
-            handler.requestScan();
-        }
-    }
 }

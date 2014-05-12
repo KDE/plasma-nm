@@ -45,4 +45,24 @@ PlasmaComponents.ListItem {
         height: paintedHeight;
         font.weight: Font.DemiBold;
     }
+
+    PlasmaComponents.ToolButton {
+        id: refreshButton;
+
+        anchors {
+            bottom: parent.bottom;
+            bottomMargin: -padding.margins.bottom + 2;
+            right: parent.right;
+            rightMargin: padding.margins.right;
+            top: parent.top;
+            topMargin: -padding.margins.top + 2;
+        }
+
+        iconSource: "view-refresh";
+        visible: header.text == i18n("Available connections");
+
+        onClicked: {
+            handler.requestScan();
+        }
+    }
 }

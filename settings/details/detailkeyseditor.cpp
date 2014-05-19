@@ -89,8 +89,6 @@ void DetailKeysEditor::loadSelectedElements(const QStringList& keys)
 
 void DetailKeysEditor::loadAllDetailElements()
 {
-    m_allDetailsElements.insert("interface:type", QPair<QString, QString>(i18n("Type"), i18n("Interface type")));
-    m_allDetailsElements.insert("interface:status", QPair<QString, QString>(i18n("Connection State"), i18n("Connection state")));
     m_allDetailsElements.insert("interface:driver", QPair<QString, QString>(i18n("Driver"), i18n("Device driver")));
     m_allDetailsElements.insert("interface:bitrate", QPair<QString, QString>(i18n("Connection Speed"), i18n("Connection speed")));
     m_allDetailsElements.insert("interface:name", QPair<QString, QString>(i18n("System Name"), i18n("System Name")));

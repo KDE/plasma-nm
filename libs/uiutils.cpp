@@ -643,27 +643,7 @@ QString UiUtils::connectionDetails(const Device::Ptr& device, const Connection::
                            device->activeConnection()->connection() == connection && device->activeConnection()->state() == ActiveConnection::Activated;
 
     foreach (const QString& key, keys) {
-        if (key == "interface:type") {
-            if (connection && connection->settings()->connectionType() != NetworkManager::ConnectionSettings::Unknown) {
-                details += QString(format).arg(i18nc("type of network device", "Type:"), NetworkManager::ConnectionSettings::typeAsString(connection->settings()->connectionType()));
-            }
-        } else if (key == "interface:status") {
-            QString status = connectionStateToString(Device::Disconnected);
-            if (connection && device && device->activeConnection() && device->activeConnection()->connection() == connection) {
-                status = connectionStateToString(device->state());
-            } else if (connection) {
-                foreach (const ActiveConnection::Ptr & active, activeConnections()) {
-                    if (active && active->vpn() && active->connection() == connection) {
-                        if (active->state() == ActiveConnection::Activated) {
-                            status = connectionStateToString(Device::Activated);
-                        } else if (active->state() == ActiveConnection::Activating) {
-                            status = i18n("Activating");
-                        }
-                    }
-                }
-            }
-            details += QString(format).arg(i18n("Status:"), status);
-        } else if (key == "interface:name") {
+        if (key == "interface:name") {
             if (device) {
                 QString name;
                 if (device->ipInterfaceName().isEmpty()) {

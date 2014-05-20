@@ -99,6 +99,7 @@ private Q_SLOTS:
     void gsmNetworkCurrentModesChanged();
     void gsmNetworkSignalQualityChanged(uint signal);
 #endif
+    void ipConfigChanged();
     void statusChanged(NetworkManager::Status status);
     void wirelessNetworkAppeared(const QString& ssid);
     void wirelessNetworkDisappeared(const QString& ssid);

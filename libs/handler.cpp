@@ -304,7 +304,7 @@ void Handler::editConnection(const QString& uuid)
 {
     QStringList args;
     args << uuid;
-    KProcess::startDetached("kde-nm-connection-editor", args);
+    KProcess::startDetached("kde5-nm-connection-editor", args);
 }
 
 void Handler::removeConnection(const QString& connection)
@@ -328,7 +328,7 @@ void Handler::removeConnection(const QString& connection)
 
 void Handler::openEditor()
 {
-    KProcess::startDetached("kde-nm-connection-editor");
+    KProcess::startDetached("kde5-nm-connection-editor");
 }
 
 void Handler::requestScan()

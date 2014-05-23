@@ -11,8 +11,8 @@ add_library(plasmanetworkmanagement_strongswanui ${strongswan_SRCS})
 kservice_desktop_to_json(plasmanetworkmanagement_strongswanui plasmanetworkmanagement_strongswanui.desktop)
 
 target_link_libraries(plasmanetworkmanagement_strongswanui
-    plasmanetworkmanagement-editor
-    plasmanetworkmanagement-internal
+    plasmanm_internal
+    plasmanm_editor
     Qt5::Widgets
     KF5::Service
     KF5::I18n

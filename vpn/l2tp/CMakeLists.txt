@@ -13,8 +13,8 @@ add_library(plasmanetworkmanagement_l2tpui ${l2tp_SRCS})
 kservice_desktop_to_json(plasmanetworkmanagement_l2tpui plasmanetworkmanagement_l2tpui.desktop)
 
 target_link_libraries(plasmanetworkmanagement_l2tpui
-    plasmanetworkmanagement-internal
-    plasmanetworkmanagement-editor
+    plasmanm_internal
+    plasmanm_editor
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus

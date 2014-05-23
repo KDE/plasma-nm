@@ -92,7 +92,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
             SLOT(connectionAdded(QString)));
 
-    KConfig config("kde-nm-connection-editor");
+    KConfig config("kde5-nm-connection-editor");
     KConfigGroup generalGroup = config.group("General");
 
     if (generalGroup.isValid()) {

@@ -1,6 +1,6 @@
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/widgets)
 
-set(plasmanetworkmanagement_libeditor_SRCS
+set(plasmanm_editor_SRCS
     settings/bondwidget.cpp
     settings/bridgewidget.cpp
     settings/btwidget.cpp
@@ -41,19 +41,19 @@ set(plasmanetworkmanagement_libeditor_SRCS
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
-    set(plasmanetworkmanagement_libeditor_SRCS
-        ${plasmanetworkmanagement_libeditor_SRCS}
+    set(plasmanm_editor_SRCS
+        ${plasmanm_editor_SRCS}
         widgets/mobileconnectionwizard.cpp
         mobileproviders.cpp)
 endif()
 
 if (${NETWORKMANAGER_VERSION} VERSION_EQUAL 0.9.9.0 OR ${NETWORKMANAGER_VERSION} VERSION_GREATER 0.9.9.0)
-set(plasmanetworkmanagement_libeditor_SRCS
-    ${plasmanetworkmanagement_libeditor_SRCS}
+set(plasmanm_editor_SRCS
+    ${plasmanm_editor_SRCS}
     settings/teamwidget.cpp)
 endif()
 
-qt5_wrap_ui(plasmanetworkmanagement_libeditor_SRCS
+qt5_wrap_ui(plasmanm_editor_SRCS
     settings/ui/802-1x.ui
     settings/ui/bond.ui
     settings/ui/bridge.ui
@@ -82,8 +82,8 @@ qt5_wrap_ui(plasmanetworkmanagement_libeditor_SRCS
     connectiondetaileditor.ui
 )
 
-add_library(plasmanetworkmanagement-editor SHARED ${plasmanetworkmanagement_libeditor_SRCS})
-target_link_libraries(plasmanetworkmanagement-editor
+add_library(plasmanm_editor SHARED ${plasmanm_editor_SRCS})
+target_link_libraries(plasmanm_editor
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus
@@ -102,8 +102,8 @@ target_link_libraries(plasmanetworkmanagement-editor
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
-    target_link_libraries(plasmanetworkmanagement-editor KF5::ModemManagerQt)
+    target_link_libraries(plasmanm_editor KF5::ModemManagerQt)
 endif()
 
-install(TARGETS plasmanetworkmanagement-editor ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS plasmanm_editor ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES plasma-networkmanagement-vpnuiplugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})

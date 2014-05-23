@@ -1,6 +1,6 @@
 include_directories(${CMAKE_SOURCE_DIR}/libs/models)
 
-set(plasma_networkmanagement_qml_plugins_SRCS
+set(plasmanm_qml_plugins_SRCS
    availabledevices.cpp
    connectionicon.cpp
    enabledconnections.cpp
@@ -10,11 +10,11 @@ set(plasma_networkmanagement_qml_plugins_SRCS
    qmlplugins.cpp
 )
 
-add_library(plasmanetworkmanagementplugins SHARED ${plasma_networkmanagement_qml_plugins_SRCS})
+add_library(plasmanm_qmlplugins SHARED ${plasmanm_qml_plugins_SRCS})
 
-target_link_libraries(plasmanetworkmanagementplugins
-    plasmanetworkmanagement-internal
-    plasmanetworkmanagement-editor
+target_link_libraries(plasmanm_qmlplugins
+    plasmanm_internal
+    plasmanm_editor
     Qt5::Quick
     Qt5::DBus
     Qt5::Network
@@ -24,8 +24,8 @@ target_link_libraries(plasmanetworkmanagementplugins
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
-    target_link_libraries(plasmanetworkmanagementplugins KF5::ModemManagerQt)
+    target_link_libraries(plasmanm_qmlplugins KF5::ModemManagerQt)
 endif()
 
-install(TARGETS plasmanetworkmanagementplugins DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/networkmanagement)
+install(TARGETS plasmanm_qmlplugins DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/networkmanagement)
 install(FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/plasma/networkmanagement)

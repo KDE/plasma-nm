@@ -1,4 +1,4 @@
-set(plasmanetworkmanagement-internal_SRCS
+set(plasmanm_internal_SRCS
     models/appletproxymodel.cpp
     models/editoridentitymodel.cpp
     models/editorproxymodel.cpp
@@ -11,10 +11,10 @@ set(plasmanetworkmanagement-internal_SRCS
     uiutils.cpp
 )
 
-add_library(plasmanetworkmanagement-internal SHARED ${plasmanetworkmanagement-internal_SRCS})
+add_library(plasmanm_internal SHARED ${plasmanm_internal_SRCS})
 
-target_link_libraries(plasmanetworkmanagement-internal
-    plasmanetworkmanagement-editor
+target_link_libraries(plasmanm_internal
+    plasmanm_editor
     KF5::NetworkManagerQt
     KF5::Solid
     KF5::Completion
@@ -28,10 +28,10 @@ target_link_libraries(plasmanetworkmanagement-internal
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
-    target_link_libraries(plasmanetworkmanagement-internal KF5::ModemManagerQt)
+    target_link_libraries(plasmanm_internal KF5::ModemManagerQt)
 endif()
 
-install(TARGETS plasmanetworkmanagement-internal ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS plasmanm_internal ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 add_subdirectory(declarative)
 add_subdirectory(editor)

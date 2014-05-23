@@ -31,8 +31,8 @@ endif()
 add_library(kded_networkmanagement MODULE ${kded_networkmanagement_SRCS})
 
 target_link_libraries(kded_networkmanagement
-    plasmanetworkmanagement-internal
-    plasmanetworkmanagement-editor
+    plasmanm_internal
+    plasmanm_editor
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus

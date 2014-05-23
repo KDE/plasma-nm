@@ -16,8 +16,8 @@ add_library(plasmanetworkmanagement_openvpnui ${openvpn_SRCS})
 kservice_desktop_to_json(plasmanetworkmanagement_openvpnui plasmanetworkmanagement_openvpnui.desktop)
 
 target_link_libraries(plasmanetworkmanagement_openvpnui
-    plasmanetworkmanagement-internal
-    plasmanetworkmanagement-editor
+    plasmanm_internal
+    plasmanm_editor
     Qt5::DBus
     KF5::NetworkManagerQt
     KF5::KIOCore

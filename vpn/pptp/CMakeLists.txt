@@ -11,8 +11,8 @@ add_library(plasmanetworkmanagement_pptpui ${pptp_SRCS})
 kservice_desktop_to_json(plasmanetworkmanagement_pptpui plasmanetworkmanagement_pptpui.desktop)
 
 target_link_libraries(plasmanetworkmanagement_pptpui
-    plasmanetworkmanagement-internal
-    plasmanetworkmanagement-editor
+    plasmanm_internal
+    plasmanm_editor
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus

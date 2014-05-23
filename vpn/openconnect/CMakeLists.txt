@@ -36,8 +36,8 @@ if (OPENCONNECT_FOUND)
         add_library(plasmanetworkmanagement_openconnectui ${openconnect_SRCS})
 
         target_link_libraries(plasmanetworkmanagement_openconnectui
-            plasmanetworkmanagement-internal
-            plasmanetworkmanagement-editor
+            plasmanm_internal
+            plasmanm_editor
             ${NETWORKMANAGERQT5_LDFLAGS}
             Qt5::Widgets
             Qt5::Network

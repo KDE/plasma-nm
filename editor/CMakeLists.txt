@@ -7,17 +7,15 @@ set(connectioneditor_SRCS
    connectioneditor.cpp
 )
 
-# add_app_icon(connectioneditor_SRCS "${KDE4_INSTALL_DIR}/share/icons/oxygen/*/devices/network-defaultroute.png" )
-
 qt5_wrap_ui(connectioneditor_SRCS
     ui/connectioneditor.ui
 )
 
-add_executable(kde-nm-connection-editor ${connectioneditor_SRCS})
+add_executable(kde5-nm-connection-editor ${connectioneditor_SRCS})
 
-target_link_libraries(kde-nm-connection-editor
-    plasmanetworkmanagement-internal
-    plasmanetworkmanagement-editor
+target_link_libraries(kde5-nm-connection-editor
+    plasmanm_internal
+    plasmanm_editor
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus
@@ -36,9 +34,9 @@ target_link_libraries(kde-nm-connection-editor
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
-    target_link_libraries(kde-nm-connection-editor KF5::ModemManagerQt)
+    target_link_libraries(kde5-nm-connection-editor KF5::ModemManagerQt)
 endif()
 
-install(TARGETS kde-nm-connection-editor DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS kde-nm-connection-editor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES kde-nm-connection-editorui.rc  DESTINATION ${DATA_INSTALL_DIR}/kde-nm-connection-editor)
+install(TARGETS kde5-nm-connection-editor DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(PROGRAMS kde5-nm-connection-editor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES kde5-nm-connection-editorui.rc  DESTINATION ${DATA_INSTALL_DIR}/kde5-nm-connection-editor)

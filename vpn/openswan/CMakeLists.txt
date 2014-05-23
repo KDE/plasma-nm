@@ -11,8 +11,8 @@ add_library(plasmanetworkmanagement_openswanui ${openswan_SRCS})
 kservice_desktop_to_json(plasmanetworkmanagement_openswanui plasmanetworkmanagement_openswanui.desktop)
 
 target_link_libraries(plasmanetworkmanagement_openswanui
-    plasmanetworkmanagement-internal
-    plasmanetworkmanagement-editor
+    plasmanm_internal
+    plasmanm_editor
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus

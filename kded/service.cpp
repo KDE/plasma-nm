@@ -55,7 +55,7 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 #warning "port translatin catalog away from KGlobal::insertCatalog"
     KGlobal::locale()->insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard
 
-    QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasma_shell");
+    QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasmashell");
     if (reply.value()) {
         doInitialization();
     } else {

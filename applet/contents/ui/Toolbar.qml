@@ -95,7 +95,7 @@ Item {
 
         anchors {
             right: parent.right;
-            rightMargin: padding.margins.right;
+            rightMargin: units.gridUnit / 2;
             verticalCenter: parent.verticalCenter;
         }
 

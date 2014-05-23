@@ -31,7 +31,7 @@ PlasmaComponents.ListItem {
         right: parent.right;
     }
 
-    height: headerLabel.height + padding.margins.top + padding.margins.bottom;
+    height: headerLabel.height + units.gridUnit;
     sectionDelegate: true;
 
     PlasmaComponents.Label {
@@ -51,11 +51,11 @@ PlasmaComponents.ListItem {
 
         anchors {
             bottom: parent.bottom;
-            bottomMargin: -padding.margins.bottom + 2;
+            bottomMargin: -units.gridUnit / 3;
             right: parent.right;
-            rightMargin: padding.margins.right;
+            rightMargin: units.gridUnit / 2;
             top: parent.top;
-            topMargin: -padding.margins.top + 2;
+            topMargin: -units.gridUnit / 3;
         }
 
         iconSource: "view-refresh";

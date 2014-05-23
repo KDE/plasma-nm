@@ -39,15 +39,6 @@ FocusScope {
         sourceModel: connectionModel;
     }
 
-    PlasmaCore.FrameSvgItem {
-        id: padding
-
-        imagePath: "widgets/viewitem"
-        prefix: "hover"
-        opacity: 0
-        anchors.fill: parent
-    }
-
     Toolbar {
         id: toolbar;
 

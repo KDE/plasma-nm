@@ -34,18 +34,11 @@ PlasmaComponents.ListItem {
     property bool visibleDetails: false;
     property bool visiblePasswordDialog: false;
 
-    property int baseHeight: connectionItemBase.height + padding.margins.top + padding.margins.bottom;
+    property int baseHeight: connectionItemBase.height + units.gridUnit;
 
     height: (visibleDetails || visiblePasswordDialog) ? baseHeight + expandableComponentLoader.height : baseHeight;
     checked: ListView.isCurrentItem;
     enabled: true;
-
-    PlasmaCore.Svg {
-        id: svgNetworkIcons;
-
-        multipleImages: true;
-        imagePath: "icons/network";
-    }
 
     Item {
         id: connectionItemBase;
@@ -62,24 +55,24 @@ PlasmaComponents.ListItem {
             id: connectionSvgIcon;
 
             anchors {
-                left: parent.left
-                verticalCenter: parent.verticalCenter
+                left: parent.left;
+                verticalCenter: parent.verticalCenter;
             }
 
             height: units.iconSizes.medium;
             width: height;
-            svg: svgNetworkIcons;
             elementId: ConnectionIcon;
+            svg: PlasmaCore.Svg { multipleImages: true; imagePath: "icons/network" }
         }
 
         PlasmaComponents.Label {
             id: connectionNameLabel;
 
             anchors {
+                bottom: connectionSvgIcon.verticalCenter;
                 left: connectionSvgIcon.right;
-                leftMargin: padding.margins.left;
+                leftMargin: units.gridUnit / 2;
                 right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
-                bottom: connectionSvgIcon.verticalCenter
             }
 
             height: paintedHeight;
@@ -94,7 +87,7 @@ PlasmaComponents.ListItem {
 
             anchors {
                 left: connectionSvgIcon.right;
-                leftMargin: padding.margins.left;
+                leftMargin: units.gridUnit / 2;
                 right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
                 top: connectionNameLabel.bottom;
             }
@@ -111,7 +104,7 @@ PlasmaComponents.ListItem {
 
             anchors {
                 right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
-                rightMargin: padding.margins.right;
+                rightMargin: units.gridUnit / 2;
                 verticalCenter: connectionSvgIcon.verticalCenter;
             }
 
@@ -126,12 +119,12 @@ PlasmaComponents.ListItem {
 
             anchors {
                 right: parent.right;
-                rightMargin: padding.margins.right;
+                rightMargin: units.gridUnit / 2;
                 verticalCenter: connectionSvgIcon.verticalCenter;
             }
 
-            opacity: connectionItem.containsMouse ? 1 : 0
-            visible: opacity != 0
+            opacity: connectionItem.containsMouse ? 1 : 0;
+            visible: opacity != 0;
             text: (ConnectionState == PlasmaNM.Enums.Deactivated) ? i18n("Connect") : i18n("Disconnect");
 
             Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
@@ -147,7 +140,7 @@ PlasmaComponents.ListItem {
             left: parent.left;
             right: parent.right;
             top: connectionItemBase.bottom;
-            topMargin: padding.margins.top;
+            topMargin: units.gridUnit / 2;
         }
     }
 
@@ -155,7 +148,7 @@ PlasmaComponents.ListItem {
         id: detailsComponent;
 
         Item {
-            height: childrenRect.height + padding.margins.bottom;
+            height: childrenRect.height + units.gridUnit / 2;
 
             PlasmaCore.SvgItem {
                 id: detailsSeparator;
@@ -169,10 +162,7 @@ PlasmaComponents.ListItem {
                 height: lineSvg.elementSize("horizontal-line").height;
                 width: parent.width;
                 elementId: "horizontal-line";
-                svg: PlasmaCore.Svg {
-                    id: lineSvg;
-                    imagePath: "widgets/line";
-                }
+                svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
             }
 
             Column {
@@ -183,7 +173,7 @@ PlasmaComponents.ListItem {
                     leftMargin: units.iconSizes.medium;
                     right: parent.right;
                     top: detailsSeparator.bottom;
-                    topMargin: padding.margins.top;
+                    topMargin: units.gridUnit / 2;
                 }
 
                 Repeater {
@@ -191,13 +181,13 @@ PlasmaComponents.ListItem {
 
                     property int longestString: 0;
 
-                    model: ConnectionDetails.length/2;
+                    model: ConnectionDetails.length / 2;
 
                     Item {
                         anchors {
                             left: parent.left;
                             right: parent.right;
-                            topMargin: padding.margins.top;
+                            topMargin: units.gridUnit / 2;
                         }
 
                         height: Math.max(detailNameLabel.height, detailValueLabel.height);
@@ -207,7 +197,7 @@ PlasmaComponents.ListItem {
 
                             anchors {
                                 left: parent.left;
-                                leftMargin: repeater.longestString - paintedWidth + padding.margins.left;
+                                leftMargin: repeater.longestString - paintedWidth + units.gridUnit / 2;
                                 verticalCenter: parent.verticalCenter;
                             }
 
@@ -250,7 +240,7 @@ PlasmaComponents.ListItem {
         id: passwordDialogComponent;
 
         Item {
-            height: childrenRect.height + padding.margins.top;
+            height: childrenRect.height + units.gridUnit / 2;
 
             property alias password: passwordInput.text;
             property alias passwordFocus: passwordInput
@@ -258,31 +248,27 @@ PlasmaComponents.ListItem {
             PlasmaCore.SvgItem {
                 id: passwordSeparator;
 
-                height: lineSvg.elementSize("horizontal-line").height;
-                width: parent.width;
                 anchors {
                     left: parent.left;
                     right: parent.right;
                     top: parent.top;
                 }
+                height: lineSvg.elementSize("horizontal-line").height;
+                width: parent.width;
                 elementId: "horizontal-line";
-
-                svg: PlasmaCore.Svg {
-                    id: lineSvg;
-                    imagePath: "widgets/line";
-                }
+                svg: PlasmaCore.Svg { imagePath: "widgets/line" }
             }
 
             PlasmaComponents.TextField {
                 id: passwordInput;
 
-                width: 200;
-                height: implicitHeight;
                 anchors {
                     horizontalCenter: parent.horizontalCenter;
                     top: passwordSeparator.bottom;
-                    topMargin: padding.margins.top;
+                    topMargin: units.gridUnit / 2;
                 }
+                height: implicitHeight;
+                width: 200;
                 echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
                 placeholderText: i18n("Password...");
                 onAccepted: {

@@ -27,21 +27,15 @@ import org.kde.plasma.networkmanagement 0.1 as PlasmaNM
 Item {
     id: panelIconWidget;
 
-    PlasmaCore.Svg {
-        id: svgIcons;
-
-        multipleImages: true;
-        imagePath: "icons/network";
-    }
-
     PlasmaCore.SvgItem {
         id: connectionIcon;
 
-        anchors.centerIn: parent
-        width: Math.min(parent.width, parent.height)
-        height: width
-        svg: svgIcons;
+        anchors.centerIn: parent;
+        height: width;
+        width: Math.min(parent.width, parent.height);
+
         elementId: connectionIconProvider.connectionIcon;
+        svg: PlasmaCore.Svg { multipleImages: true; imagePath: "icons/network" }
 
         PlasmaComponents.BusyIndicator {
             id: connectingIndicator;
@@ -53,7 +47,7 @@ Item {
     }
 
     MouseArea {
-        anchors.fill: parent
-        onClicked: plasmoid.expanded = !plasmoid.expanded
+        anchors.fill: parent;
+        onClicked: plasmoid.expanded = !plasmoid.expanded;
     }
 }

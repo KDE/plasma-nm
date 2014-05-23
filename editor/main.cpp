@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 
     KAboutData about("kde5-nm-connection-editor", i18n("Connection editor"),
                      PLASMA_NM_VERSION_STRING, i18n("Manage your network connections"),
-                     KAboutData::License_GPL, i18n("(C) 2013-2014 Jan Grulich and Lukáš Tinkl"),
+                     KAboutLicense::GPL, i18n("(C) 2013-2014 Jan Grulich and Lukáš Tinkl"),
                      i18n("This application allows you to create, edit and delete network connections.\n\nUsing NM version: %1", NetworkManager::version()));
     about.addAuthor(i18n("Jan Grulich"), i18n("Developer"), "jgrulich@redhat.com");
     about.addAuthor(i18n("Lukáš Tinkl"), i18n("Developer"), "ltinkl@redhat.com");

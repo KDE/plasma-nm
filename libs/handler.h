@@ -24,7 +24,7 @@
 #include <NetworkManagerQt/Connection>
 
 #include "plasmanm_export.h"
-#include "config.h"
+#include <config.h>
 
 #if !WITH_MODEMMANAGER_SUPPORT
 typedef QMap<QDBusObjectPath, NMVariantMapMap> NMDBusObjectVariantMapMap;

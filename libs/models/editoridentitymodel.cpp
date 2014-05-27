@@ -19,18 +19,16 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "editoridentitymodel.h"
+#include "networkmodel.h"
+#include "networkmodelitem.h"
+#include "uiutils.h"
+
 #include <QIcon>
 #include <QFont>
 
 #include <KLocalizedString>
 #include <KIcon>
-
-#include "uiutils.h"
-
-#include "editoridentitymodel.h"
-
-#include "networkmodel.h"
-#include "networkmodelitem.h"
 
 EditorIdentityModel::EditorIdentityModel(QObject* parent)
     : QIdentityProxyModel(parent)

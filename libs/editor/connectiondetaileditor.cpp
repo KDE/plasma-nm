@@ -261,7 +261,7 @@ void ConnectionDetailEditor::initTabs()
     }
 
     ConnectionWidget * connectionWidget = new ConnectionWidget(m_connection);
-    m_ui->tabWidget->addTab(connectionWidget, i18n("General"));
+    m_ui->tabWidget->addTab(connectionWidget, i18nc("General", "General configuration"));
 
     qDebug() << "Initting tabs, UUID:" << uuid;
 

@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "networkmodelitem.h"
 #include "networkitemslist.h"
+#include "networkmodelitem.h"
 
 NetworkItemsList::NetworkItemsList(QObject* parent)
     : QObject(parent)

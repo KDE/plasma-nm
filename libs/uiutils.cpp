@@ -541,13 +541,13 @@ QString UiUtils::convertLockReasonToString(MMModemLock reason)
 QString UiUtils::convertNspTypeToString(WimaxNsp::NetworkType type)
 {
     switch (type) {
-        case WimaxNsp::Unknown: return i18n("Unknown");
+        case WimaxNsp::Unknown: return i18nc("Unknown", "Unknown Wimax NSP type");
         case WimaxNsp::Home: return i18n("Home");
         case WimaxNsp::Partner: return i18n("Partner");
         case WimaxNsp::RoamingPartner: return i18n("Roaming partner");
     }
 
-    return i18n("Unknown");
+    return i18nc("Unknown", "Unknown Wimax NSP type");
 }
 
 NetworkManager::ModemDevice::Capability UiUtils::modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps)
@@ -711,7 +711,7 @@ QString UiUtils::bluetoothDetails(const BluetoothDevice::Ptr& btDevice, const QS
     foreach (const QString& key, keys) {
         if (key == "bluetooth:name") {
             if (btDevice) {
-                details += QString(format).arg(i18n("Name:"), btDevice->name());
+                details += QString(format).arg(i18nc("Name", "Bluetooth name"), btDevice->name());
             }
         } else if (key == "interface:hardwareAddress") {
             if (btDevice) {

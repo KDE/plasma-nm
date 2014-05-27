@@ -19,9 +19,9 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "config.h"
 #include "detailkeyseditor.h"
 #include "ui_detailkeyswidget.h"
+#include <config.h>
 
 #include <KLocalizedString>
 #include <KDebug>

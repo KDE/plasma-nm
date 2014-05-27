@@ -42,7 +42,7 @@ class QSizeF;
 #endif
 
 #include "plasmanm_export.h"
-#include "config.h"
+#include <config.h>
 
 class PLASMA_NM_EXPORT UiUtils
 {

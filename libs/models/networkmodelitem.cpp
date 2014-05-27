@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "globalconfig.h"
 #include "networkmodelitem.h"
+#include "globalconfig.h"
 #include "uiutils.h"
 
 #include <NetworkManagerQt/BluetoothDevice>

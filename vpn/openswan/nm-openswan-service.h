@@ -18,8 +18,8 @@
  * (C) Copyright 2010 Red Hat, Inc.
  */
 
-#ifndef NM_OPENSWAN_PLUGIN_H
-#define NM_OPENSWAN_PLUGIN_H
+#ifndef NM_OPENSWAN_SERVICE_H
+#define NM_OPENSWAN_SERVICE_H
 
 #define NM_DBUS_SERVICE_OPENSWAN    "org.freedesktop.NetworkManager.openswan"
 #define NM_DBUS_INTERFACE_OPENSWAN  "org.freedesktop.NetworkManager.openswan"
@@ -43,4 +43,4 @@
 #define NM_OPENSWAN_PW_TYPE_ASK    "ask"
 #define NM_OPENSWAN_PW_TYPE_UNUSED "unused"
 
-#endif /* NM_OPENSWAN_PLUGIN_H */
+#endif /* NM_OPENSWAN_SERVICE_H */

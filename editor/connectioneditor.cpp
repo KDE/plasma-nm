@@ -19,8 +19,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "ui_connectioneditor.h"
 #include "connectioneditor.h"
+#include "ui_connectioneditor.h"
 #include "connectiondetaileditor.h"
 #include "editoridentitymodel.h"
 #include "editorproxymodel.h"
@@ -148,7 +148,7 @@ void ConnectionEditor::initializeMenu()
     m_menu->addAction(action);
 
     action = m_menu->addSeparator();
-    action->setText(i18n("Virtual"));
+    action->setText(i18nc("Virtual", "Virtual hardware devices, eg Bridge, Bond"));
 
     action = new QAction(i18n("Bond"), this);
     action->setData(NetworkManager::ConnectionSettings::Bond);

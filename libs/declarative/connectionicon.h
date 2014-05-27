@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_CONNECTION_ICON_H
 #define PLASMA_NM_CONNECTION_ICON_H
 
-#include "config.h"
+#include <config.h>
 
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/ActiveConnection>

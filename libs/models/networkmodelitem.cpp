@@ -19,6 +19,7 @@
 */
 
 #include "networkmodelitem.h"
+#include "globalconfig.h"
 #include "uiutils.h"
 
 #include <NetworkManagerQt/BluetoothDevice>

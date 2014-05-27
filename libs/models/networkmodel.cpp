@@ -18,9 +18,9 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "debug.h"
 #include "networkmodel.h"
 #include "networkmodelitem.h"
+#include "debug.h"
 #include "uiutils.h"
 
 #if WITH_MODEMMANAGER_SUPPORT
@@ -220,7 +220,7 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
     connect(device.data(), SIGNAL(ipV6ConfigChanged()),
             SLOT(ipConfigChanged()), Qt::UniqueConnection);
     connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
-            SLOT(deviceStateChanged(NetworkManager::Device::State, NetworkManager::Device::State, NetworkManager::Device::StateChangeReason)), Qt::UniqueConnection);
+            SLOT(deviceStateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)), Qt::UniqueConnection);
 
     if (device->type() == NetworkManager::Device::Wifi) {
         NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();

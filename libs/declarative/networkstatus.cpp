@@ -77,25 +77,25 @@ void NetworkStatus::statusChanged(NetworkManager::Status status)
 {
     switch (status) {
         case NetworkManager::ConnectedLinkLocal:
-            m_networkStatus = i18n("Connected");
+            m_networkStatus = i18nc("Connected", "A network device is connected, but there is only link-local connectivity");
             break;
         case NetworkManager::ConnectedSiteOnly:
-            m_networkStatus = i18n("Connected");
+            m_networkStatus = i18nc("Connected", "A network device is connected, but there is only site-local connectivity");
             break;
         case NetworkManager::Connected:
-            m_networkStatus = i18n("Connected");
+            m_networkStatus = i18nc("Connected", "A network device is connected, with global network connectivity");
             break;
         case NetworkManager::Asleep:
-            m_networkStatus = i18n("Inactive");
+            m_networkStatus = i18nc("Inactive", "Networking is inactive and all devices are disabled");
             break;
         case NetworkManager::Disconnected:
-            m_networkStatus = i18n("Disconnected");
+            m_networkStatus = i18nc("Disconnected", "There is no active network connection");
             break;
         case NetworkManager::Disconnecting:
-            m_networkStatus = i18n("Disconnecting");
+            m_networkStatus = i18nc("Disconnecting", "Network connections are being cleaned up");
             break;
         case NetworkManager::Connecting:
-            m_networkStatus = i18n("Connecting");
+            m_networkStatus = i18nc("Connecting", "A network device is connecting to a network and there is no other available network connection");
             break;
         default:
             m_networkStatus = checkUnknownReason();

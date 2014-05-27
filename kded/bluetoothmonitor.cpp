@@ -22,7 +22,7 @@
 
 #include "bluetoothmonitor.h"
 #include "connectiondetaileditor.h"
-#include "config.h"
+#include <config.h>
 
 #include <QDBusInterface>
 #include <QDBusReply>

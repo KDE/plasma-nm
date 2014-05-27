@@ -25,7 +25,7 @@
 #include <QObject>
 #include <QDBusPendingCallWatcher>
 
-#include "config.h"
+#include <config.h>
 
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/modem.h>

@@ -20,8 +20,8 @@
  * (C) Copyright 2008 Red Hat, Inc.
  */
 
-#ifndef NM_L2TP_PLUGIN_H
-#define NM_L2TP_PLUGIN_H
+#ifndef NM_L2TP_SERVICE_H
+#define NM_L2TP_SERVICE_H
 
 #define NM_DBUS_SERVICE_L2TP_PPP    "org.freedesktop.NetworkManager.l2tp-ppp"
 #define NM_DBUS_PATH_L2TP_PPP       "/org/freedesktop/NetworkManager/l2tp/ppp"
@@ -58,4 +58,4 @@
 #define NM_L2TP_KEY_IPSEC_GROUP_NAME  "ipsec-group-name"
 #define NM_L2TP_KEY_IPSEC_PSK         "ipsec-psk"
 
-#endif /* NM_L2TP_PLUGIN_H */
+#endif /* NM_L2TP_SERVICE_H */

@@ -23,7 +23,7 @@
 
 #include <QtCore/QAbstractListModel>
 
-#include "config.h"
+#include <config.h>
 #include "networkitemslist.h"
 #include "plasmanm_export.h"
 

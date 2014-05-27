@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "connectiondetaileditor.h"
 #include "handler.h"
+#include "connectiondetaileditor.h"
 #include "uiutils.h"
 
 #include <NetworkManagerQt/Manager>

@@ -1,1 +1,3 @@
+module org.kde.plasma.networkmanagement
+
 plugin plasmanm_qmlplugins

@@ -256,7 +256,7 @@ PlasmaComponents.ListItem {
                 height: lineSvg.elementSize("horizontal-line").height;
                 width: parent.width;
                 elementId: "horizontal-line";
-                svg: PlasmaCore.Svg { imagePath: "widgets/line" }
+                svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
             }
 
             PlasmaComponents.TextField {

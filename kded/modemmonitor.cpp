@@ -88,7 +88,8 @@ void ModemMonitor::requestPin(MMModemLock lock)
 {
     Q_D(ModemMonitor);
     kDebug() << "unlockRequired == " << lock;
-    if (lock == MM_MODEM_LOCK_NONE || lock == MM_MODEM_LOCK_UNKNOWN) {
+    // Handle just SIM-PIN and SIM-PUK, because some other types may cause problems and they are not also handled by nm-applet
+    if (lock == MM_MODEM_LOCK_NONE || lock == MM_MODEM_LOCK_UNKNOWN || (lock != MM_MODEM_LOCK_SIM_PIN && lock != MM_MODEM_LOCK_SIM_PUK)) {
         return;
     }
 

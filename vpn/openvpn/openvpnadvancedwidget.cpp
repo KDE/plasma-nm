@@ -58,7 +58,7 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     m_ui->setupUi(this);
     m_ui->kurlTlsAuthKey->setMode(KFile::LocalOnly);
 
-    setWindowTitle(i18n("@title:Advanced OpenVPN properties"));
+    setWindowTitle(i18nc("@title: window advanced openvpn properties", "Advanced OpenVPN properties"));
 
     d->openvpnProcess = 0;
     d->gotOpenVpnCiphers = false;

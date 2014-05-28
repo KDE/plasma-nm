@@ -22,7 +22,6 @@ include(FeatureSummary)
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Core
     DBus
-#     Designer
     Network
     Test
     Quick
@@ -79,7 +78,6 @@ add_definitions(-DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT})
 include_directories(${CMAKE_CURRENT_BINARY_DIR} # for config.h
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/
-#                     ${Qt5Designer_INCLUDE_DIRS}
                     ${NETWORKMANAGER_INCLUDE_DIRS})
 
 if (WITH_MODEMMANAGER_SUPPORT)

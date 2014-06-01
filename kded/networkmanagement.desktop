@@ -2,6 +2,7 @@
 Name=Plasma Networkmanagement module
 Name[cs]=Modul Plasma Networkmanagement
 Name[nl]=Plasma module voor netwerkbeheer
+Name[pl]=Moduł zarządzania siecią Plazmy
 Name[pt]=Módulo de Gestão de Rede do Plasma
 Name[sk]=Modul Plasma správa siete
 Name[sv]=Plasma nätverkshanteringsmodul
@@ -10,6 +11,7 @@ Name[x-test]=xxPlasma Networkmanagement modulexx
 Comment=Provides secrets to the NetworkManager daemon
 Comment[cs]=Poskytuje přihlašovací informace pro službu NetworkManageru
 Comment[nl]=Levert secrets aan de NetworkManager-daemon
+Comment[pl]=Dostarcza danych poufnych do usługi Zarządzania Sieci
 Comment[pt]=Fornece as senhas do serviço NetworkManager
 Comment[sk]=Poskytuje tajnosti k démonu NetworkManager
 Comment[sv]=Tillhandahåller hemligheter till nätverkshanteringsdemonen

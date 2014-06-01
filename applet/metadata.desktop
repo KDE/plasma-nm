@@ -2,6 +2,7 @@
 Name=Networks
 Name[cs]=Sítě
 Name[nl]=Netwerken
+Name[pl]=Sieci
 Name[pt]=Redes
 Name[sk]=Siete
 Name[sv]=Nätverk
@@ -11,6 +12,7 @@ Name[x-test]=xxNetworksxx
 Comment=Network status and control
 Comment[cs]=Stav a ovládání sítě
 Comment[nl]=Netwerkstatus en besturing
+Comment[pl]=Stan i sterowanie siecią
 Comment[pt]=Estado e controlo da rede
 Comment[sk]=Správa a ovládanie siete
 Comment[sv]=Nätverksstatus och kontroll

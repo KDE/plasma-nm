@@ -2,6 +2,7 @@
 Name=Notifications
 Name[cs]=Oznamování
 Name[nl]=Meldingen
+Name[pl]=Powiadomienia
 Name[pt]=Notificações
 Name[sk]=Pripomienky
 Name[sv]=Underrättelser
@@ -10,6 +11,7 @@ Name[x-test]=xxNotificationsxx
 Comment=Configure the Network Management notifications
 Comment[cs]=Nastavit oznamování správy sítě
 Comment[nl]=Stel de meldingen van netwerkbeheer in
+Comment[pl]=Ustawienia powiadomień zarządzania siecią
 Comment[pt]=Configurar as notificações da Gestão da Rede
 Comment[sk]=Nastaviť upozornenia správy siete
 Comment[sv]=Anpassa underrättelser för nätverkshantering

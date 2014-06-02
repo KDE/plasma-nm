@@ -251,8 +251,13 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
 {
     initializeSignals(activeConnection);
 
+    NetworkManager::Device::Ptr device;
     NetworkManager::Connection::Ptr connection = activeConnection->connection();
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(activeConnection->devices().first());
+
+    // Not necessary to have device for VPN connections
+    if (activeConnection && !activeConnection->vpn() && !activeConnection->devices().isEmpty()) {
+        device = NetworkManager::findNetworkInterface(activeConnection->devices().first());
+    }
 
     // Check whether we have a base connection
     if (!m_list.contains(NetworkItemsList::Uuid, connection->uuid())) {

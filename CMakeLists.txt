@@ -49,6 +49,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR} # for config.h
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/
                     ${NETWORKMANAGER_INCLUDE_DIRS}
+                    ${NETWORKMANAGERQT_INCLUDE_DIRS}
                     ${KDE4_INCLUDES})
 
 if (MODEMMANAGERQT_FOUND)

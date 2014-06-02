@@ -346,7 +346,9 @@ ListItem {
                 if (!predictableWirelessPassword && !Uuid) {
                     handler.addAndActivateConnection(DevicePath, SpecificPath);
                 } else if (visiblePasswordDialog) {
-                    handler.addAndActivateConnection(DevicePath, SpecificPath, expandableComponentLoader.item.password);
+                    if (expandableComponentLoader.item.password != "") {
+                        handler.addAndActivateConnection(DevicePath, SpecificPath, expandableComponentLoader.item.password);
+                    }
                     visiblePasswordDialog = false;
                 } else {
                     handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);

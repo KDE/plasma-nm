@@ -19,6 +19,7 @@
 */
 
 import QtQuick 2.0
+import QtQuick.Controls 1.1 as QtQuickControls
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.1 as PlasmaNM
@@ -49,8 +50,9 @@ FocusScope {
         }
     }
 
-    ListView {
-        id: connectionView;
+
+    QtQuickControls.ScrollView {
+        id: scrollView;
 
         anchors {
             bottom: parent.bottom;
@@ -59,12 +61,17 @@ FocusScope {
             top: toolbar.bottom;
         }
 
-        clip: true
-        model: appletProxyModel;
-        currentIndex: -1;
-        boundsBehavior: Flickable.StopAtBounds;
-        section.property: showSections ? "Section" : "";
-        section.delegate: Header { text: section }
-        delegate: ConnectionItem { }
+        ListView {
+            id: connectionView;
+
+            anchors.fill: parent;
+            clip: true
+            model: appletProxyModel;
+            currentIndex: -1;
+            boundsBehavior: Flickable.StopAtBounds;
+            section.property: showSections ? "Section" : "";
+            section.delegate: Header { text: section }
+            delegate: ConnectionItem { }
+        }
     }
 }

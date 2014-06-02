@@ -330,8 +330,10 @@ PlasmaComponents.ListItem {
                 } else if (visiblePasswordDialog) {
                     if (expandableComponentLoader.item.password != "") {
                         handler.addAndActivateConnection(DevicePath, SpecificPath, expandableComponentLoader.item.password);
+                        visiblePasswordDialog = false;
+                    } else {
+                        connectionItem.clicked();
                     }
-                    visiblePasswordDialog = false;
                 } else {
                     handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
                 }

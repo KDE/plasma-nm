@@ -110,12 +110,14 @@ bool AppletProxyModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 {
     const bool leftAvailable = (NetworkModelItem::ItemType)sourceModel()->data(left, NetworkModel::ItemTypeRole).toUInt() != NetworkModelItem::UnavailableConnection;
     const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const QString leftName = sourceModel()->data(left, NetworkModel::NameRole).toString();
     const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
     const QString leftUuid = sourceModel()->data(left, NetworkModel::UuidRole).toString();
     const int leftSignal = sourceModel()->data(left, NetworkModel::SignalRole).toInt();
 
     const bool rightAvailable = (NetworkModelItem::ItemType)sourceModel()->data(right, NetworkModel::ItemTypeRole).toUInt() != NetworkModelItem::UnavailableConnection;
     const bool rightConnected = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const QString rightName = sourceModel()->data(right, NetworkModel::NameRole).toString();
     const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
     const QString rightUuid = sourceModel()->data(right, NetworkModel::UuidRole).toString();
     const int rightSignal = sourceModel()->data(right, NetworkModel::SignalRole).toInt();
@@ -146,9 +148,13 @@ bool AppletProxyModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 
     if (leftSignal < rightSignal) {
         return true;
-    } else {
+    } else if (leftSignal > rightSignal) {
         return false;
     }
 
-    return false;
+    if (QString::localeAwareCompare(leftName, rightName) > 0) {
+        return true;
+    } else {
+        return false;
+    }
 }

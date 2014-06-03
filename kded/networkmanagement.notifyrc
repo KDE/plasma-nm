@@ -71,6 +71,12 @@ Action=Popup
 Name=Missing VPN plugin
 Name[cs]=Chybějící modul VPN
 Name[es]=Falta el complemento VPN
+Name[da]=Mangler VPN-plugin
+Name[de]=Fehlendes VPN-Modul
+Name[el]=Λείπει το πρόσθετο VPN
+Name[fi]=Puuttuva VPN-liitännäinen
+Name[fr]=Module VPN manquant
+Name[hu]=Hiányzó VPN bővítmény
 Name[nl]=VPN-plug-in ontbreekt
 Name[pl]=Brak wtyczki VPN
 Name[pt]='Plugin' de VPN em falta
@@ -79,5 +85,10 @@ Name[sk]=Chýba VPN plugin
 Name[sv]=Saknar VPN-insticksprogram
 Name[uk]=Не вистачає додатка VPN
 Name[x-test]=xxMissing VPN pluginxx
+IconName=applications-internet
+Action=Popup
+
+[Event/DBusError]
+Name=DBus error
 IconName=applications-internet
 Action=Popup

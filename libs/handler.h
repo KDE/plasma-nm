@@ -36,6 +36,17 @@ class PLASMA_NM_EXPORT Handler : public QObject
 Q_OBJECT
 
 public:
+    enum HandlerAction {
+        ActivateConnection,
+        AddAndActivateConnection,
+        AddConnection,
+        DeactivateConnection,
+        EditConnection,
+        UpdateConnection,
+        RemoveConnection,
+        RequestScan
+    };
+
     explicit Handler(QObject* parent = 0);
     virtual ~Handler();
 
@@ -89,6 +100,7 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void editDialogAccepted();
+    void replyFinished(QDBusPendingCallWatcher * watcher);
 
 private:
     bool m_tmpBluetoothEnabled;

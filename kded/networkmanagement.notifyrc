@@ -132,7 +132,7 @@ Name[cs]=Chybějící modul VPN
 Name[da]=Mangler VPN-plugin
 Name[de]=Fehlendes VPN-Modul
 Name[el]=Λείπει το πρόσθετο VPN
-Name[es]=Falta complemento VPN 
+Name[es]=Falta complemento VPN
 Name[fi]=Puuttuva VPN-liitännäinen
 Name[fr]=Module VPN manquant
 Name[hu]=Hiányzó VPN bővítmény
@@ -146,5 +146,10 @@ Name[tr]=VPN eklentisi eksik
 Name[uk]=Не вистачає додатка VPN
 Name[x-test]=xxMissing VPN pluginxx
 Name[zh_CN]=缺少 OpenVPN 插件
+IconName=applications-internet
+Action=Popup
+
+[Event/DBusError]
+Name=DBus error
 IconName=applications-internet
 Action=Popup

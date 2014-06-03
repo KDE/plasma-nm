@@ -35,6 +35,7 @@
 #include <NetworkManagerQt/ActiveConnection>
 
 #include <QInputDialog>
+#include <QDBusError>
 
 #include <KNotification>
 #include <KUser>
@@ -76,7 +77,7 @@ void Handler::activateConnection(const QString& connection, const QString& devic
                                                                           QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()));
             if (services.isEmpty()) {
                 kWarning() << "VPN" << vpnSetting->serviceType() << "not found, skipping";
-                KNotification *notification = new KNotification("MissingVpnPlugin", KNotification::Persistent, this);
+                KNotification *notification = new KNotification("MissingVpnPlugin", KNotification::CloseOnTimeout, this);
                 notification->setComponentData(KComponentData("networkmanagement"));
                 notification->setTitle(con->name());
                 notification->setText(i18n("Missing VPN plugin"));
@@ -87,7 +88,10 @@ void Handler::activateConnection(const QString& connection, const QString& devic
         }
     }
 
-    NetworkManager::activateConnection(connection, device, specificObject);
+    QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::activateConnection(connection, device, specificObject);
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    watcher->setProperty("action", Handler::ActivateConnection);
+    connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
 }
 
 void Handler::addAndActivateConnection(const QString& device, const QString& specificObject, const QString& password)
@@ -165,7 +169,10 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
             wifiSecurity->setPsk(password);
             wifiSecurity->setPskFlags(NetworkManager::Setting::AgentOwned);
         }
-        NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
+        QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
+        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+        watcher->setProperty("action", Handler::AddAndActivateConnection);
+        connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
     }
 
     settings.clear();
@@ -336,7 +343,10 @@ void Handler::requestScan()
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
             if (wifiDevice) {
-                wifiDevice->requestScan();
+                QDBusPendingReply<> reply = wifiDevice->requestScan();
+                QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+                watcher->setProperty("action", Handler::RequestScan);
+                connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
             }
         }
     }
@@ -347,5 +357,32 @@ void Handler::editDialogAccepted()
     NetworkManager::Connection::Ptr newConnection = NetworkManager::findConnectionByUuid(m_tmpConnectionUuid);
     if (newConnection) {
         activateConnection(newConnection->path(), m_tmpDevicePath, m_tmpSpecificPath);
+    }
+}
+
+void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
+{
+    QDBusPendingReply<QDBusObjectPath> reply = *watcher;
+    if (reply.isError() || !reply.isValid()) {
+        Handler::HandlerAction action = (Handler::HandlerAction)watcher->property("action").toUInt();
+        QString error = reply.error().message();
+        KNotification *notification = new KNotification("DBusError", KNotification::CloseOnTimeout, this);
+        notification->setComponentData(KComponentData("networkmanagement"));
+        switch (action) {
+            case Handler::ActivateConnection:
+                notification->setTitle(i18n("Error when activating connection"));
+                break;
+            case Handler::AddAndActivateConnection:
+                notification->setTitle(i18n("Error when adding new connection"));
+                break;
+            case Handler::RequestScan:
+                notification->setTitle(i18n("Error when requesting scan"));
+                break;
+            default:
+                break;
+        }
+        notification->setText(error);
+        notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        notification->sendEvent();
     }
 }

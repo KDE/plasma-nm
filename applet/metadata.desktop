@@ -31,6 +31,7 @@ X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
 
 X-Plasma-NotificationArea=true
+X-Plasma-DBusActivationService=org.freedesktop.NetworkManager
 X-Plasma-ConfigPlugins=networkmanagement_notifications
 
 X-KDE-PluginInfo-Name=org.kde.plasma.networkmanagement

@@ -348,7 +348,9 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
 
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
             NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(item->ssid());
-            updateFromWirelessNetwork(item, wifiNetwork);
+            if (wifiNetwork) {
+                updateFromWirelessNetwork(item, wifiNetwork);
+            }
         }
         updateItem(item);
         break;
@@ -944,7 +946,7 @@ NetworkManager::Utils::WirelessSecurityType NetworkModel::alternativeWirelessSec
     return type;
 }
 
-void NetworkModel::updateFromWirelessNetwork(NetworkModelItem* item, const NetworkManager::WirelessNetwork::Ptr network)
+void NetworkModel::updateFromWirelessNetwork(NetworkModelItem* item, const NetworkManager::WirelessNetwork::Ptr& network)
 {
     // Check whether the connection is associated with some concrete AP
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(item->connectionPath());

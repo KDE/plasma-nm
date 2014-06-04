@@ -122,7 +122,7 @@ private:
     void initializeSignals(const NetworkManager::Device::Ptr& device);
     void initializeSignals(const NetworkManager::WirelessNetwork::Ptr& network);
     void updateItem(NetworkModelItem * item);
-    void updateFromWirelessNetwork(NetworkModelItem * item, const NetworkManager::WirelessNetwork::Ptr network);
+    void updateFromWirelessNetwork(NetworkModelItem * item, const NetworkManager::WirelessNetwork::Ptr& network);
 
     NetworkManager::Utils::WirelessSecurityType alternativeWirelessSecurity(const NetworkManager::Utils::WirelessSecurityType type);
 };

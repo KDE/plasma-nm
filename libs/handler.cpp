@@ -92,6 +92,7 @@ void Handler::activateConnection(const QString& connection, const QString& devic
     QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::activateConnection(connection, device, specificObject);
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", Handler::ActivateConnection);
+    watcher->setProperty("connection", con->name());
     connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
 }
 
@@ -173,6 +174,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
         QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
         watcher->setProperty("action", Handler::AddAndActivateConnection);
+        watcher->setProperty("connection", settings->name());
         connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
     }
 
@@ -365,25 +367,33 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
 {
     QDBusPendingReply<QDBusObjectPath> reply = *watcher;
     if (reply.isError() || !reply.isValid()) {
-        Handler::HandlerAction action = (Handler::HandlerAction)watcher->property("action").toUInt();
+        KNotification *notification = 0;
         QString error = reply.error().message();
-        KNotification *notification = new KNotification("DBusError", KNotification::CloseOnTimeout, this);
-        notification->setComponentData(KComponentData("networkmanagement"));
+        Handler::HandlerAction action = (Handler::HandlerAction)watcher->property("action").toUInt();
         switch (action) {
             case Handler::ActivateConnection:
-                notification->setTitle(i18n("Error when activating connection"));
+                notification = new KNotification("FailedToActivateConnection", KNotification::CloseOnTimeout, this);
+                notification->setComponentData(KComponentData("networkmanagement"));
+                notification->setTitle(i18n("Failed to activate %1", watcher->property("connection").toString()));
                 break;
             case Handler::AddAndActivateConnection:
-                notification->setTitle(i18n("Error when adding new connection"));
+                notification = new KNotification("FailedToAddConnection", KNotification::CloseOnTimeout, this);
+                notification->setComponentData(KComponentData("networkmanagement"));
+                notification->setTitle(i18n("Failed to add %1", watcher->property("connection").toString()));
                 break;
             case Handler::RequestScan:
-                notification->setTitle(i18n("Error when requesting scan"));
+                notification = new KNotification("FailedToRequestScan", KNotification::CloseOnTimeout, this);
+                notification->setComponentData(KComponentData("networkmanagement"));
+                notification->setTitle(i18n("Failed to request scan"));
                 break;
             default:
                 break;
         }
-        notification->setText(error);
-        notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
-        notification->sendEvent();
+
+        if (notification) {
+            notification->setText(error);
+            notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+            notification->sendEvent();
+        }
     }
 }

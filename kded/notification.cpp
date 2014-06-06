@@ -327,55 +327,52 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
 {
     NetworkManager::ActiveConnection *ac = qobject_cast<NetworkManager::ActiveConnection*>(sender());
 
+    QString eventId, text;
     const QString acName = ac->connection()->name();
-    QString text;
+    const QString connectionId = ac->path();
+
     if (state == NetworkManager::ActiveConnection::Activated) {
+        eventId = "ConnectionActivated";
         text = i18n("Connection '%1' activated.", acName);
     } else if (state == NetworkManager::ActiveConnection::Deactivated) {
+        eventId = "ConnectionDeactivated";
         text = i18n("Connection '%1' deactivated.", acName);
     } else {
         kDebug() << "Unhandled active connection state change: " << state;
         return;
     }
 
-    const QString nId = ac->path();
-    if (m_notifications.contains(nId)) {
-        KNotification *notify = m_notifications.value(nId);
-        if (state == NetworkManager::ActiveConnection::Activated) {
-            notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
-        } else {
-            notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
-        }
-        notify->setText(text);
-        notify->update();
+    KNotification *notify = new KNotification(eventId, KNotification::CloseOnTimeout, this);
+    connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
+    notify->setProperty("uni", connectionId);
+    notify->setComponentData(KComponentData("networkmanagement"));
+    if (state == NetworkManager::ActiveConnection::Activated) {
+        notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
     } else {
-        KNotification *notify = new KNotification("AcStateChanged", KNotification::CloseOnTimeout, this);
-        connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
-        notify->setProperty("uni", nId);
-        notify->setComponentData(KComponentData("networkmanagement"));
-        if (state == NetworkManager::ActiveConnection::Activated) {
-            notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
-        } else {
-            notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
-        }
-        notify->setTitle(acName);
-        notify->setText(text);
-        notify->sendEvent();
-        m_notifications[nId] = notify;
+        notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
     }
+    notify->setTitle(acName);
+    notify->setText(text);
+    notify->sendEvent();
+    m_notifications[connectionId] = notify;
 }
 
 void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
 {
     NetworkManager::VpnConnection *vpn = qobject_cast<NetworkManager::VpnConnection*>(sender());
 
+    QString eventId, text;
     const QString vpnName = vpn->connection()->name();
-    QString text;
+    const QString connectionId = vpn->path();
+
     if (state == NetworkManager::VpnConnection::Activated) {
+        eventId = "ConnectionActivated";
         text = i18n("VPN connection '%1' activated.", vpnName);
     } else if (state == NetworkManager::VpnConnection::Failed) {
+        eventId = "FailedToActivateConnection";
         text = i18n("VPN connection '%1' failed.", vpnName);
     } else if (state == NetworkManager::VpnConnection::Disconnected) {
+        eventId = "ConnectionDeactivated";
         text = i18n("VPN connection '%1' disconnected.", vpnName);
     } else {
         kDebug() << "Unhandled VPN connection state change: " << state;
@@ -419,31 +416,19 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         break;
     }
 
-    const QString nId = vpn->path();
-    if (m_notifications.contains(nId)) {
-        KNotification *notify = m_notifications.value(nId);
-        if (state == NetworkManager::VpnConnection::Activated) {
-            notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
-        } else {
-            notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
-        }
-        notify->setText(text);
-        notify->update();
+    KNotification *notify = new KNotification(eventId, KNotification::CloseOnTimeout, this);
+    connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
+    notify->setProperty("uni", connectionId);
+    notify->setComponentData(KComponentData("networkmanagement"));
+    if (state == NetworkManager::VpnConnection::Activated) {
+        notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
     } else {
-        KNotification *notify = new KNotification("VpnStateChanged", KNotification::CloseOnTimeout, this);
-        connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
-        notify->setProperty("uni", nId);
-        notify->setComponentData(KComponentData("networkmanagement"));
-        if (state == NetworkManager::VpnConnection::Activated) {
-            notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
-        } else {
-            notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
-        }
-        notify->setTitle(vpnName);
-        notify->setText(text);
-        notify->sendEvent();
-        m_notifications[nId] = notify;
+        notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
     }
+    notify->setTitle(vpnName);
+    notify->setText(text);
+    notify->sendEvent();
+    m_notifications[connectionId] = notify;
 }
 
 void Notification::notificationClosed()

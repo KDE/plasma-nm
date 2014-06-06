@@ -46,82 +46,33 @@ Comment[uk]=Сповіщає про помилки у роботі мережі
 Comment[x-test]=xxNotifies about network errorsxx
 Comment[zh_CN]=提示网络错误
 
+[Event/ConnectionActivated]
+Name=Connection activated
+IconName=applications-internet
+Action=Popup
+
+[Event/ConnectionDeactivated]
+Name=Connection deactivated
+IconName=applications-internet
+Action=Popup
+
 [Event/DeviceFailed]
-Name=Device failed to activate
-Name[bs]=Uređaj se nije uspio aktivirati
-Name[ca]=El dispositiu ha fallat en activar-se
-Name[cs]=Zařízení nelze aktivovat
-Name[da]=Enheden kunne ikke aktivere
-Name[de]=Das Gerät kann nicht aktiviert werden
-Name[el]=Η συσκευή απέτυχε να ενεργοποιηθεί
-Name[es]=El dispositivo fallo al activarse
-Name[fi]=Laitteen aktivointi epäonnistui
-Name[fr]=Impossible d'activer le périphérique
-Name[hu]=Nem sikerült aktiválni az eszközt
-Name[nl]=Activeren van apparaat is mislukt
-Name[pl]=Nie udało się aktywować urządzenia
-Name[pt]=Não foi possível activar o dispositivo
-Name[pt_BR]=Não foi possível ativar o dispositivo
-Name[ro]=Activarea dispozitivului a eșuat
-Name[sk]=Zlyhala aktivácia zariadenia
-Name[sl]=Naprave ni bilo mogoče omogočiti
-Name[sv]=Aktivering av enheten misslyckades
-Name[tr]=Aygıt etkinleştirilemedi
-Name[uk]=Не вдалося задіяти пристрій
-Name[x-test]=xxDevice failed to activatexx
-Name[zh_CN]=设备激活失败
+Name=Device failed
 IconName=applications-internet
 Action=Popup
 
-[Event/AcStateChanged]
-Name=Active connection state changed
-Name[bs]=Aktivno stanje konekcije je promijenjeno
-Name[ca]=L'estat de la connexió activa ha canviat
-Name[cs]=Stav aktivního spojení byl změněn
-Name[da]=Tilstand ændret for aktiv forbindelse
-Name[de]=Active-Verbindungsstatus wurde geändert
-Name[el]=Η κατάστασης της ενεργής σύνδεσης άλλαξε
-Name[es]=El estado de la conexión activa ha cambiado
-Name[fi]=Aktiivisen yhteyden tila muuttui
-Name[fr]=L'état de la connexion active a changé
-Name[hu]=Az aktív kapcsolatállapot megváltozott
-Name[nl]=Actieve verbindingsstatus is gewijzigd
-Name[pt]=O estado da ligação activa mudou
-Name[pt_BR]=O estado da conexão ativa foi alterado
-Name[ro]=Starea conexiunii active s-a schimbat
-Name[sk]=Aktívny stav pripojenia zmenený
-Name[sl]=Stanje dejavne povezave se je spremenilo
-Name[sv]=Aktiv anslutningsstatus ändrad
-Name[tr]=Etkin bağlantı durumu değişti
-Name[uk]=Змінено стан активного з’єднання
-Name[x-test]=xxActive connection state changedxx
-Name[zh_CN]=活动连接状态改变
+[Event/FailedToActivateConnection]
+Name=Failed to activate connection
 IconName=applications-internet
 Action=Popup
 
-[Event/VpnStateChanged]
-Name=VPN connection state changed
-Name[bs]=VPN stanje konekcije je promijenjeno
-Name[ca]=L'estat de la connexió VPN ha canviat
-Name[cs]=Stav spojení VPN byl změněn
-Name[da]=Tilstand ændret for VPN-forbindelse
-Name[de]=VPN-Verbindungsstatus wurde geändert
-Name[el]=Η κατάστασης της σύνδεσης VPN άλλαξε
-Name[es]=El estado de la conexión VPN ha cambiado
-Name[fi]=VPN-yhteyden tila muuttui
-Name[fr]=L'état de la connexion VPN a changé
-Name[hu]=A VPN kapcsolatállapot megváltozott
-Name[nl]=Verbindingsstatus van VPN is gewijzigd
-Name[pt]=O estado da ligação VPN mudou
-Name[pt_BR]=O estado da conexão VPN foi alterado
-Name[ro]=Starea conexiunii VPN s-a schimbat
-Name[sk]=Stav pripojenia VPN zmenený
-Name[sl]=Stanje povezave VPN se je spremenilo
-Name[sv]=VPN-anslutningsstatus ändrad
-Name[tr]=VPN bağlantısı durumu değişti
-Name[uk]=Змінено стан з’єднання VPN
-Name[x-test]=xxVPN connection state changedxx
-Name[zh_CN]=VPN 连接状态改变
+[Event/FailedToAddConnection]
+Name=Failed to add connection
+IconName=applications-internet
+Action=Popup
+
+[Event/FailedToRequestScan]
+Name=Failed to request scan
 IconName=applications-internet
 Action=Popup
 
@@ -146,10 +97,5 @@ Name[tr]=VPN eklentisi eksik
 Name[uk]=Не вистачає додатка VPN
 Name[x-test]=xxMissing VPN pluginxx
 Name[zh_CN]=缺少 OpenVPN 插件
-IconName=applications-internet
-Action=Popup
-
-[Event/DBusError]
-Name=DBus error
 IconName=applications-internet
 Action=Popup

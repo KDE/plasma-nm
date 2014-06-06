@@ -39,11 +39,6 @@ public:
     enum HandlerAction {
         ActivateConnection,
         AddAndActivateConnection,
-        AddConnection,
-        DeactivateConnection,
-        EditConnection,
-        UpdateConnection,
-        RemoveConnection,
         RequestScan
     };
 

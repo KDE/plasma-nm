@@ -38,6 +38,7 @@
 #include <QDBusError>
 
 #include <KNotification>
+#include <KLocalizedString>
 #include <KUser>
 #include <KIcon>
 #include <KDebug>
@@ -79,7 +80,7 @@ void Handler::activateConnection(const QString& connection, const QString& devic
                 // TODO
                 kWarning() << "VPN" << vpnSetting->serviceType() << "not found, skipping";
                 KNotification *notification = new KNotification("MissingVpnPlugin", KNotification::CloseOnTimeout, this);
-                notification->setComponentData("networkmanagement");
+                notification->setComponentName("networkmanagement");
                 notification->setTitle(con->name());
                 notification->setText(i18n("Missing VPN plugin"));
                 notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
@@ -373,17 +374,17 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
         switch (action) {
             case Handler::ActivateConnection:
                 notification = new KNotification("FailedToActivateConnection", KNotification::CloseOnTimeout, this);
-                notification->setComponentData(KComponentData("networkmanagement"));
+                notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to activate %1", watcher->property("connection").toString()));
                 break;
             case Handler::AddAndActivateConnection:
                 notification = new KNotification("FailedToAddConnection", KNotification::CloseOnTimeout, this);
-                notification->setComponentData(KComponentData("networkmanagement"));
+                notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to add %1", watcher->property("connection").toString()));
                 break;
             case Handler::RequestScan:
                 notification = new KNotification("FailedToRequestScan", KNotification::CloseOnTimeout, this);
-                notification->setComponentData(KComponentData("networkmanagement"));
+                notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to request scan"));
                 break;
             default:

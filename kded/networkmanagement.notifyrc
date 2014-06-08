@@ -24,31 +24,67 @@ Comment[x-test]=xxNotifies about network errorsxx
 
 [Event/ConnectionActivated]
 Name=Connection activated
+Name[nl]=Verbinding geactiveerd
+Name[pl]=Nawiązano połączenie
+Name[pt]=Ligação activada
+Name[sk]=Pripojenie aktivované
+Name[uk]=З’єднання задіяно
+Name[x-test]=xxConnection activatedxx
 IconName=applications-internet
 Action=Popup
 
 [Event/ConnectionDeactivated]
 Name=Connection deactivated
+Name[nl]=Verbinding gedeactiveerd
+Name[pl]=Zerwano połączenie
+Name[pt]=Ligação desactivada
+Name[sk]=Pripojenie deaktivované
+Name[uk]=З’єднання вимкнено
+Name[x-test]=xxConnection deactivatedxx
 IconName=applications-internet
 Action=Popup
 
 [Event/DeviceFailed]
 Name=Device failed
+Name[nl]=Apparaat is mislukt
+Name[pl]=Niepowodzenie urządzenia
+Name[pt]=Não foi possível activar o dispositivo
+Name[sk]=Zariadenie zlyhalo
+Name[uk]=Помилка пристрою
+Name[x-test]=xxDevice failedxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToActivateConnection]
 Name=Failed to activate connection
+Name[nl]=Activeren van verbinding is mislukt
+Name[pl]=Nieudane nawiązywanie połączenia
+Name[pt]=Não foi possível activar a ligação
+Name[sk]=Zlyhalo aktivovanie pripojenia
+Name[uk]=Не вдалося задіяти з’єднання
+Name[x-test]=xxFailed to activate connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToAddConnection]
 Name=Failed to add connection
+Name[nl]=Toevoegen van verbinding is mislukt
+Name[pl]=Nieudane dodawanie połączenia
+Name[pt]=Não foi possível adicionar a ligação
+Name[sk]=Zlyhalo pridanie pripojenia
+Name[uk]=Не вдалося додати з’єднання
+Name[x-test]=xxFailed to add connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToRequestScan]
 Name=Failed to request scan
+Name[nl]=Scan uitvoeren is mislukt
+Name[pl]=Nieudane żądanie przeszukiwania
+Name[pt]=Não foi possível pedir a sondagem
+Name[sk]=Zlyhalo vyžiadanie prehľadania
+Name[uk]=Не вдалося виконати запит щодо сканування
+Name[x-test]=xxFailed to request scanxx
 IconName=applications-internet
 Action=Popup
 

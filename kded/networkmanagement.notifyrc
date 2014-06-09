@@ -46,6 +46,16 @@ Name[x-test]=xxConnection deactivatedxx
 IconName=applications-internet
 Action=Popup
 
+[Event/ConnectionAdded]
+Name=Connection added
+IconName=applications-internet
+Action=None
+
+[Event/ConnectionUpdated]
+Name=Connection updated
+IconName=applications-internet
+Action=None
+
 [Event/DeviceFailed]
 Name=Device failed
 Name[nl]=Apparaat is mislukt
@@ -91,6 +101,16 @@ Name[pt_BR]=Ocorreu um erro ao solicitar uma verificação
 Name[sk]=Zlyhalo vyžiadanie prehľadania
 Name[uk]=Не вдалося виконати запит щодо сканування
 Name[x-test]=xxFailed to request scanxx
+IconName=applications-internet
+Action=Popup
+
+[Event/FailedToGetSecrets]
+Name=Failed to get secrets
+IconName=applications-internet
+Action=Popup
+
+[Event/FailedToUpdateConnection]
+Name=Failed to update connection
 IconName=applications-internet
 Action=Popup
 

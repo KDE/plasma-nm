@@ -22,6 +22,7 @@
 #define PLASMA_NM_CONNECTION_DETAIL_EDITOR_H
 
 #include <QtWidgets/QDialog>
+#include <QDBusPendingCallWatcher>
 
 #include <NetworkManagerQt/ConnectionSettings>
 
@@ -35,8 +36,9 @@ class ConnectionDetailEditor;
 class PLASMA_NM_EXPORT ConnectionDetailEditor : public QDialog
 {
     Q_OBJECT
-
 public:
+    enum Action { AddConnection, GetSecrets, UpdateConnection };
+
     explicit ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
                                     QWidget* parent = 0,
                                     const QString &masterUuid = QString(),
@@ -57,18 +59,14 @@ public:
     bool isSlave() const { return !m_masterUuid.isEmpty() && !m_slaveType.isEmpty(); }
 
 private Q_SLOTS:
-    void connectionAddComplete(const QString & id, bool success, const QString & msg);
-    void disconnectSignals();
-    void gotSecrets(const QString & id, bool success, const NMVariantMapMap & secrets, const QString & msg);
+    void replyFinished(QDBusPendingCallWatcher *watcher);
     void validChanged(bool valid);
     void saveSetting();
-
 private:
     void enableOKButton(bool enabled);
 
     Ui::ConnectionDetailEditor * m_ui;
     NetworkManager::ConnectionSettings::Ptr m_connection;
-    int m_numSecrets;
     bool m_new;
     QString m_vpnType;
     QString m_masterUuid;

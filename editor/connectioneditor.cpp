@@ -501,8 +501,8 @@ void ConnectionEditor::importVpn()
 
                 //qDebug() << "Converted connection:" << connectionSettings;
 
-                const QString conId = NetworkManager::addConnection(connectionSettings.toMap());
-                qDebug() << "Adding imported connection under id:" << conId;
+                QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(connectionSettings.toMap());
+//                 qDebug() << "Adding imported connection under id:" << conId;
 
                 if (connection.isEmpty()) { // the "positive" part will arrive with connectionAdded
                     m_editor->messageWidget->animatedShow();

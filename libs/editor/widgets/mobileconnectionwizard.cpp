@@ -196,7 +196,7 @@ OUT_3:
 
             if (mPlanComboBox->currentText() == i18nc("Mobile Connection Wizard", "My plan is not listed...")) {
                 labelPlan->setText("    " + userApn->text());
-                labelApn->setText("    " + i18nc("Mobile Connection Wizard", "APN") + ": " + userApn->text());
+                labelApn->setText("    " + i18nc("Mobile Connection Wizard", "APN: %1", userApn->text()));
                 apn = userApn->text();
             } else {
                 int i = mPlanComboBox->currentIndex();
@@ -204,7 +204,7 @@ OUT_3:
 
                 QStringList mApns = mProviders->getApns(mProvidersList->currentItem()->text());
                 labelPlan->setText("    " + mPlanComboBox->currentText());
-                labelApn->setText("    " + i18nc("Mobile Connection Wizard", "APN") + ": " + mApns.at(i));
+                labelApn->setText("    " + i18nc("Mobile Connection Wizard", "APN: %1", mApns.at(i)));
                 apn = mApns.at(i);
             }
         }

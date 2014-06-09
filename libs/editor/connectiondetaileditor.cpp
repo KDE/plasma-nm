@@ -501,7 +501,7 @@ void ConnectionDetailEditor::replyFinished(QDBusPendingCallWatcher *watcher)
             KNotification *notification = new KNotification("ConnectionAdded", KNotification::CloseOnTimeout, this);
             notification->setComponentName("networkmanagement");
             notification->setTitle(watcher->property("connection").toString());
-            notification->setText(i18n("Connection %1 has been added", watcher->property("connection")));
+            notification->setText(i18n("Connection %1 has been added", watcher->property("connection").toString()));
             notification->setPixmap(KIcon("dialog-information").pixmap(64, 64));
             notification->sendEvent();
         } else {
@@ -535,7 +535,7 @@ void ConnectionDetailEditor::replyFinished(QDBusPendingCallWatcher *watcher)
             KNotification *notification = new KNotification("ConnectionUpdated", KNotification::CloseOnTimeout, this);
             notification->setComponentName("networkmanagement");
             notification->setTitle(watcher->property("connection").toString());
-            notification->setText(i18n("Connection %1 has been updated", watcher->property("connection")));
+            notification->setText(i18n("Connection %1 has been updated", watcher->property("connection").toString()));
             notification->setPixmap(KIcon("dialog-information").pixmap(64, 64));
             notification->sendEvent();
         } else {

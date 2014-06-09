@@ -362,12 +362,11 @@ PlasmaComponents.ListItem {
                 result += ", " + SecurityTypeString;
             return result;
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
-            if (Type == PlasmaNM.Enums.Wired) {
-                return i18n("Connected") + ", ⬇ " + Download + ", ⬆ " + Upload;
-            } else if (Type == PlasmaNM.Enums.Wireless) {
-                return i18n("Connected") + ", ⬇ " + Download + ", ⬆ " + Upload;
-            } else if (Type == PlasmaNM.Enums.Gsm || Type == PlasmaNM.Enums.Cdma) {
-                return i18n("Connected") + ", ⬇ " + Download + ", ⬆ " + Upload;
+            if (Type == PlasmaNM.Enums.Wired ||
+                Type == PlasmaNM.Enums.Wireless ||
+                Type == PlasmaNM.Enums.Gsm ||
+                Type == PlasmaNM.Enums.Cdma) {
+                return i18n("Connected, ⬇ %1, ⬆ %2", Download, Upload);
             } else {
                 return i18n("Connected");
             }

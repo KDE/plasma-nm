@@ -191,22 +191,27 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
         return;
     }
 
+    QDBusPendingReply<> reply;
     foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
         if (active->uuid() == con->uuid() && ((!active->devices().isEmpty() && active->devices().first() == device) ||
                                                active->vpn())) {
             if (active->vpn()) {
-                NetworkManager::deactivateConnection(active->path());
+                reply = NetworkManager::deactivateConnection(active->path());
             } else {
                 if (active->devices().isEmpty()) {
-                    NetworkManager::deactivateConnection(connection);
+                    reply = NetworkManager::deactivateConnection(connection);
                 }
                 NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
                 if (device) {
-                    device->disconnectInterface();
+                    reply = device->disconnectInterface();
                 }
             }
         }
     }
+
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    watcher->setProperty("action", Handler::DeactivateConnection);
+    connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
 }
 
 void Handler::disconnectAll()
@@ -329,11 +334,17 @@ void Handler::removeConnection(const QString& connection)
     foreach (const NetworkManager::Connection::Ptr &masterConnection, NetworkManager::listConnections()) {
         NetworkManager::ConnectionSettings::Ptr settings = masterConnection->settings();
         if (settings->master() == con->uuid()) {
-            masterConnection->remove();
+            QDBusPendingReply<> reply = masterConnection->remove();
+            QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+            watcher->setProperty("action", Handler::RemoveConnection);
+            connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
         }
     }
 
-    con->remove();
+    QDBusPendingReply<> reply = con->remove();
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    watcher->setProperty("action", Handler::RemoveConnection);
+    connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
 }
 
 void Handler::openEditor()
@@ -366,7 +377,7 @@ void Handler::editDialogAccepted()
 
 void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
 {
-    QDBusPendingReply<QDBusObjectPath> reply = *watcher;
+    QDBusPendingReply<> reply = *watcher;
     if (reply.isError() || !reply.isValid()) {
         KNotification *notification = 0;
         QString error = reply.error().message();
@@ -382,6 +393,16 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
                 notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to add %1", watcher->property("connection").toString()));
                 break;
+            case Handler::DeactivateConnection:
+                notification = new KNotification("FailedToDeactivateConnection", KNotification::CloseOnTimeout, this);
+                notification->setComponentName("networkmanagement");
+                notification->setTitle(i18n("Failed to deactivate %1", watcher->property("connection").toString()));
+                break;
+            case Handler::RemoveConnection:
+                notification = new KNotification("FailedToRemoveConnection", KNotification::CloseOnTimeout, this);
+                notification->setComponentName("networkmanagement");
+                notification->setTitle(i18n("Failed to remove %1", watcher->property("connection").toString()));
+                break;
             case Handler::RequestScan:
                 notification = new KNotification("FailedToRequestScan", KNotification::CloseOnTimeout, this);
                 notification->setComponentName("networkmanagement");
@@ -394,6 +415,25 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
         if (notification) {
             notification->setText(error);
             notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+            notification->sendEvent();
+        }
+    } else {
+        KNotification *notification = 0;
+        Handler::HandlerAction action = (Handler::HandlerAction)watcher->property("action").toUInt();
+
+        switch (action) {
+            case Handler::RemoveConnection:
+                notification = new KNotification("ConnectionRemoved", KNotification::CloseOnTimeout, this);
+                notification->setComponentName("networkmanagement");
+                notification->setTitle(watcher->property("connection").toString());
+                notification->setText(i18n("Connection %1 has been removed", watcher->property("connection").toString()));
+                break;
+            default:
+                break;
+        }
+
+        if (notification) {
+            notification->setPixmap(KIcon("dialog-information").pixmap(64, 64));
             notification->sendEvent();
         }
     }

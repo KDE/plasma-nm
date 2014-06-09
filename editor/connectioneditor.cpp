@@ -341,10 +341,10 @@ void ConnectionEditor::removeConnection()
         foreach (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
             NetworkManager::ConnectionSettings::Ptr settings = con->settings();
             if (settings->master() == connection->uuid()) {
-                con->remove();
+                m_handler->removeConnection(con->path());
             }
         }
-        connection->remove();
+        m_handler->removeConnection(connection->path());
     }
 }
 

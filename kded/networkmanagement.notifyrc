@@ -51,6 +51,11 @@ Name=Connection added
 IconName=applications-internet
 Action=None
 
+[Event/ConnectionRemoved]
+Name=Connection removed
+IconName=applications-internet
+Action=None
+
 [Event/ConnectionUpdated]
 Name=Connection updated
 IconName=applications-internet
@@ -89,6 +94,16 @@ Name[pt_BR]=Ocorreu um erro ao adicionar uma conexão
 Name[sk]=Zlyhalo pridanie pripojenia
 Name[uk]=Не вдалося додати з’єднання
 Name[x-test]=xxFailed to add connectionxx
+IconName=applications-internet
+Action=Popup
+
+[Event/FailedToDeactivateConnection]
+Name=Failed to deactivate connection
+IconName=applications-internet
+Action=Popup
+
+[Event/FailedToRemoveConnection]
+Name=Failed to remove connection
 IconName=applications-internet
 Action=Popup
 

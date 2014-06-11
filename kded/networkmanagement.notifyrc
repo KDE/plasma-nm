@@ -48,16 +48,28 @@ Action=Popup
 
 [Event/ConnectionAdded]
 Name=Connection added
+Name[nl]=Verbinding toegevoegd
+Name[pt]=Ligação adicionada
+Name[uk]=Додано з’єднання
+Name[x-test]=xxConnection addedxx
 IconName=applications-internet
 Action=None
 
 [Event/ConnectionRemoved]
 Name=Connection removed
+Name[nl]=Verbinding verwijderd
+Name[pt]=Ligação removida
+Name[uk]=Вилучено з’єднання
+Name[x-test]=xxConnection removedxx
 IconName=applications-internet
 Action=None
 
 [Event/ConnectionUpdated]
 Name=Connection updated
+Name[nl]=Verbinding bijgewerkt
+Name[pt]=Ligação actualizada
+Name[uk]=Оновлено з’єднання
+Name[x-test]=xxConnection updatedxx
 IconName=applications-internet
 Action=None
 
@@ -99,11 +111,19 @@ Action=Popup
 
 [Event/FailedToDeactivateConnection]
 Name=Failed to deactivate connection
+Name[nl]=Deactiveren van verbinding is mislukt
+Name[pt]=Não foi possível desactivar a ligação
+Name[uk]=Не вдалося вимкнути з’єднання
+Name[x-test]=xxFailed to deactivate connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToRemoveConnection]
 Name=Failed to remove connection
+Name[nl]=Verwijderen van verbinding is mislukt
+Name[pt]=Não foi possível remover a ligação
+Name[uk]=Не вдалося вилучити з’єднання
+Name[x-test]=xxFailed to remove connectionxx
 IconName=applications-internet
 Action=Popup
 
@@ -121,11 +141,19 @@ Action=Popup
 
 [Event/FailedToGetSecrets]
 Name=Failed to get secrets
+Name[nl]=Geheimen ophalen is mislukt
+Name[pt]=Não foi possível obter as senhas
+Name[uk]=Не вдалося отримати дані для розпізнавання
+Name[x-test]=xxFailed to get secretsxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToUpdateConnection]
 Name=Failed to update connection
+Name[nl]=Bijwerken van verbinding is mislukt
+Name[pt]=Não foi possível actualizar a ligação
+Name[uk]=Не вдалося оновити з’єднання
+Name[x-test]=xxFailed to update connectionxx
 IconName=applications-internet
 Action=Popup
 

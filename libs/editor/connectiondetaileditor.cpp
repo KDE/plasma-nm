@@ -154,7 +154,6 @@ void ConnectionDetailEditor::initEditor()
             }
 
             if (hasSecrets) {
-                qDebug() << "Getting secrets ";
                 QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
                 watcher->setProperty("connection", connection->name());
                 connect(watcher, &QDBusPendingCallWatcher::finished, this, &ConnectionDetailEditor::replyFinished);
@@ -397,13 +396,17 @@ void ConnectionDetailEditor::replyFinished(QDBusPendingCallWatcher *watcher)
             setting->secretsFromMap(secrets.value(key));
         }
     } else {
-        KNotification *notification = new KNotification("FailedToGetSecrets", KNotification::CloseOnTimeout, this);
+        KNotification *notification = new KNotification("FailedToGetSecrets", KNotification::CloseOnTimeout);
         notification->setComponentName("networkmanagement");
         notification->setTitle(i18n("Failed to get secrets for %1", watcher->property("connection").toString()));
         notification->setText(reply.error().message());
         notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
         notification->sendEvent();
+
+        connect(this, SIGNAL(accepted()), notification, SLOT(close()));
+        connect(this, SIGNAL(rejected()), notification, SLOT(close()));
     }
+
     initTabs();
 }
 

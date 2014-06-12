@@ -19,25 +19,20 @@
 */
 
 #include "connectioneditor.h"
-#include "connectiondetaileditor.h"
 #include <config.h>
 
-#include <KGlobal>
-#include <KIcon>
 #include <KAboutData>
+#include <KLocalizedString>
 
 #include <QApplication>
-#include <QUrl>
 #include <QCommandLineParser>
 
-#include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/Manager>
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    app.setWindowIcon(KIcon("network-defaultroute"));
+    app.setWindowIcon(QIcon::fromTheme("network-defaultroute"));
 
     KAboutData about("kde5-nm-connection-editor", i18n("Connection editor"),
                      PLASMA_NM_VERSION_STRING, i18n("Manage your network connections"),
@@ -53,34 +48,12 @@ int main(int argc, char *argv[])
 
     KAboutData::setApplicationData(about);
 
-    QCommandLineParser parser;
-    about.setupCommandLine(&parser);
-    parser.addPositionalArgument("uuid", i18n("Edit connection"), "[uuid]");
-    parser.addHelpOption();
-    parser.addVersionOption();
-
 #warning "Translations for kde5-nm-connection-editor disabled"
-    KGlobal::locale()->insertCatalog("libplasmanm_editor");  // setting widgets
-    KGlobal::locale()->insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard, UiUtils, ...
+//     KGlobal::locale()->insertCatalog("libplasmanm_editor");  // setting widgets
+//     KGlobal::locale()->insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard, UiUtils, ...
 
-    parser.process(app);
-
-    const QStringList args = parser.positionalArguments();
-    if (!args.isEmpty()) {
-        NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(args.first());
-
-        if (connection) {
-            NetworkManager::ConnectionSettings::Ptr connectionSetting = connection->settings();
-
-            ConnectionDetailEditor * editor = new ConnectionDetailEditor(connectionSetting);
-            editor->show();
-        } else {
-            return 1;
-        }
-    } else {
-        ConnectionEditor * editor = new ConnectionEditor();
-        editor->show();
-    }
+    ConnectionEditor * editor = new ConnectionEditor();
+    editor->show();
 
     return app.exec();
 }

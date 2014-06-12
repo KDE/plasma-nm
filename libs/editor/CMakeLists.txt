@@ -1,19 +1,19 @@
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/widgets)
 
 set(plasmanm_editor_SRCS
-    settings/bondwidget.cpp
-    settings/bridgewidget.cpp
+#     settings/bondwidget.cpp
+#     settings/bridgewidget.cpp
     settings/btwidget.cpp
     settings/cdmawidget.cpp
     settings/connectionwidget.cpp
     settings/gsmwidget.cpp
-    settings/infinibandwidget.cpp
+#     settings/infinibandwidget.cpp
     settings/ipv4widget.cpp
     settings/ipv6widget.cpp
     settings/pppoewidget.cpp
     settings/pppwidget.cpp
     settings/security802-1x.cpp
-    settings/vlanwidget.cpp
+#     settings/vlanwidget.cpp
     settings/wificonnectionwidget.cpp
     settings/wifisecurity.cpp
     settings/wimaxwidget.cpp
@@ -47,27 +47,27 @@ if (WITH_MODEMMANAGER_SUPPORT)
         mobileproviders.cpp)
 endif()
 
-if (${NETWORKMANAGER_VERSION} VERSION_EQUAL 0.9.9.0 OR ${NETWORKMANAGER_VERSION} VERSION_GREATER 0.9.9.0)
-set(plasmanm_editor_SRCS
-    ${plasmanm_editor_SRCS}
-    settings/teamwidget.cpp)
-endif()
+# if (${NETWORKMANAGER_VERSION} VERSION_EQUAL 0.9.9.0 OR ${NETWORKMANAGER_VERSION} VERSION_GREATER 0.9.9.0)
+# set(plasmanm_editor_SRCS
+#     ${plasmanm_editor_SRCS}
+#     settings/teamwidget.cpp)
+# endif()
 
 qt5_wrap_ui(plasmanm_editor_SRCS
     settings/ui/802-1x.ui
-    settings/ui/bond.ui
-    settings/ui/bridge.ui
+#     settings/ui/bond.ui
+#     settings/ui/bridge.ui
     settings/ui/bt.ui
     settings/ui/cdma.ui
     settings/ui/connectionwidget.ui
     settings/ui/gsm.ui
-    settings/ui/infiniband.ui
+#     settings/ui/infiniband.ui
     settings/ui/ipv4.ui
     settings/ui/ipv6.ui
     settings/ui/ppp.ui
     settings/ui/pppoe.ui
-    settings/ui/team.ui
-    settings/ui/vlan.ui
+#     settings/ui/team.ui
+#     settings/ui/vlan.ui
     settings/ui/team.ui
     settings/ui/wificonnectionwidget.ui
     settings/ui/wifisecurity.ui

@@ -37,41 +37,32 @@ class PLASMA_NM_EXPORT ConnectionDetailEditor : public QDialog
 {
     Q_OBJECT
 public:
-    enum Action { AddConnection, GetSecrets, UpdateConnection };
+    // TODO virtual connections
+//     explicit ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
+//                                     QWidget* parent = 0,
+//                                     const QString &masterUuid = QString(),
+//                                     const QString &slaveType = QString(),
+//                                     Qt::WindowFlags f = 0);
+       explicit ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &connection,
+                                       bool newConnection = false, QWidget* parent = 0, Qt::WindowFlags f = 0);
 
-    explicit ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
-                                    QWidget* parent = 0,
-                                    const QString &masterUuid = QString(),
-                                    const QString &slaveType = QString(),
-                                    Qt::WindowFlags f = 0);
-    explicit ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
-                                    QWidget* parent = 0,
-                                    const QString &vpnType = QString(),
-                                    bool shared = false,
-                                    Qt::WindowFlags f = 0);
-    explicit ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &connection,
-                                    QWidget* parent = 0, Qt::WindowFlags f = 0, bool newConnection = false);
-    explicit ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
-                                    const QVariantList &args,
-                                    QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~ConnectionDetailEditor();
 
-    bool isSlave() const { return !m_masterUuid.isEmpty() && !m_slaveType.isEmpty(); }
+    NMVariantMapMap setting();
 
 private Q_SLOTS:
     void replyFinished(QDBusPendingCallWatcher *watcher);
     void validChanged(bool valid);
-    void saveSetting();
 private:
-    void enableOKButton(bool enabled);
-
-    Ui::ConnectionDetailEditor * m_ui;
     NetworkManager::ConnectionSettings::Ptr m_connection;
     bool m_new;
-    QString m_vpnType;
-    QString m_masterUuid;
-    QString m_slaveType;
+    Ui::ConnectionDetailEditor * m_ui;
+//     QString m_vpnType;
+//     QString m_masterUuid;
+//     QString m_slaveType;
+//     bool isSlave() const;
 
+    void enableOKButton(bool enabled);
     void initEditor();
     void initTabs();
 };

@@ -19,44 +19,44 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+
 #include "connectioneditor.h"
-#include "ui_connectioneditor.h"
 #include "connectiondetaileditor.h"
 #include "editoridentitymodel.h"
 #include "editorproxymodel.h"
 #include "networkmodel.h"
 #include "mobileconnectionwizard.h"
 #include "uiutils.h"
+#include "ui_connectioneditor.h"
 #include "vpnuiplugin.h"
 #include <networkmodelitem.h>
 
-#include <QUrl>
-#include <QStandardPaths>
 #include <QFileDialog>
+#include <QStandardPaths>
+#include <QUrl>
 
+#include <KAcceleratorManager>
+#include <KAction>
 #include <KActionCollection>
-#include <KLocale>
+#include <KConfig>
+#include <KConfigGroup>
 #include <KIcon>
+#include <KFilterProxySearchLine>
+#include <KLocale>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KService>
 #include <KServiceTypeTrader>
-#include <KStandardAction>
-#include <KAction>
-#include <KXMLGUIFactory>
-#include <KAcceleratorManager>
-#include <KConfig>
-#include <KConfigGroup>
-#include <KWallet/Wallet>
 #include <KShell>
-#include <KFilterProxySearchLine>
+#include <KStandardAction>
+#include <KXMLGUIFactory>
+#include <KWallet/Wallet>
 
-#include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ActiveConnection>
+#include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/Ipv4Setting>
+#include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/VpnSetting>
-
-using namespace NetworkManager;
 
 ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     : KXmlGuiWindow(parent, flags)
@@ -150,23 +150,24 @@ void ConnectionEditor::initializeMenu()
     action->setData(NetworkManager::ConnectionSettings::Wimax);
     m_menu->addAction(action);
 
-    action = m_menu->addSeparator();
-    action->setText(i18nc("Virtual", "Virtual hardware devices, eg Bridge, Bond"));
-
-    action = new QAction(i18n("Bond"), this);
-    action->setData(NetworkManager::ConnectionSettings::Bond);
-    m_menu->addAction(action);
-    action = new QAction(i18n("Bridge"), this);
-    action->setData(NetworkManager::ConnectionSettings::Bridge);
-    m_menu->addAction(action);
-    action = new QAction(i18n("VLAN"), this);
-    action->setData(NetworkManager::ConnectionSettings::Vlan);
-    m_menu->addAction(action);
-#if NM_CHECK_VERSION(0, 9, 9)
-    action = new QAction(i18n("Team"), this);
-    action->setData(NetworkManager::ConnectionSettings::Team);
-    m_menu->addAction(action);
-#endif
+    // TODO virtual connections
+//     action = m_menu->addSeparator();
+//     action->setText(i18nc("Virtual", "Virtual hardware devices, eg Bridge, Bond"));
+//
+//     action = new QAction(i18n("Bond"), this);
+//     action->setData(NetworkManager::ConnectionSettings::Bond);
+//     m_menu->addAction(action);
+//     action = new QAction(i18n("Bridge"), this);
+//     action->setData(NetworkManager::ConnectionSettings::Bridge);
+//     m_menu->addAction(action);
+//     action = new QAction(i18n("VLAN"), this);
+//     action->setData(NetworkManager::ConnectionSettings::Vlan);
+//     m_menu->addAction(action);
+// #if NM_CHECK_VERSION(0, 9, 9)
+//     action = new QAction(i18n("Team"), this);
+//     action->setData(NetworkManager::ConnectionSettings::Team);
+//     m_menu->addAction(action);
+// #endif
 
     action = m_menu->addSeparator();
     action->setText(i18n("VPN"));
@@ -215,40 +216,94 @@ void ConnectionEditor::initializeMenu()
 
 void ConnectionEditor::addConnection(QAction* action)
 {
-    qDebug() << "ADDING new connection" << action->data().toUInt();
+    NetworkManager::ConnectionSettings::Ptr connectionSettings;
+    NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(action->data().toUInt());
     const QString vpnType = action->property("type").toString();
-    qDebug() << "VPN type:" << vpnType;
 
-    ConnectionSettings::ConnectionType type = static_cast<ConnectionSettings::ConnectionType>(action->data().toUInt());
+    qDebug() << "Adding new connection of type " << type;
+    if (type == NetworkManager::ConnectionSettings::Vpn) {
+        qDebug() << "VPN type: " << vpnType;
+    }
+
 
     if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
 #if WITH_MODEMMANAGER_SUPPORT
         QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
         if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
             qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
-            QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(wizard.data()->type(), wizard.data()->args(), this);
-            editor->exec();
 
-            if (editor) {
-                editor->deleteLater();
+            if (wizard.data()->args().count() == 2) {
+                QVariantMap tmp = qdbus_cast<QVariantMap>(wizard.data()->args().value(1));
+
+#if 0 // network IDs are not used yet and seem to break the setting
+        if (args.count() == 3) { // gsm specific
+            QStringList networkIds = args.value(1).toStringList();
+            if (!networkIds.isEmpty())
+                tmp.insert("network-id", networkIds.first());
+        }
+#endif
+                connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(wizard.data()->type()));
+                connectionSettings->setId(wizard.data()->args().value(0).toString());
+                if (wizard.data()->type() == NetworkManager::ConnectionSettings::Gsm) {
+                    connectionSettings->setting(NetworkManager::Setting::Gsm)->fromMap(tmp);
+                } else if (wizard.data()->type() == NetworkManager::ConnectionSettings::Cdma) {
+                    connectionSettings->setting(NetworkManager::Setting::Cdma)->fromMap(tmp);
+                } else {
+                    qWarning() << Q_FUNC_INFO << "Unhandled setting type";
+                }
+            } else {
+                qWarning() << Q_FUNC_INFO << "Unexpected number of args to parse";
             }
         }
+
         if (wizard) {
             wizard.data()->deleteLater();
         }
+
 #endif
     } else {
-        bool shared = false;
-        if (type == ConnectionSettings::Wired || type == ConnectionSettings::Wireless) {
-            shared = action->property("shared").toBool();
-        }
+        connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(type));
 
-        QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(type, this, vpnType, shared);
-        editor->exec();
+        if (type == NetworkManager::ConnectionSettings::Wired || type == NetworkManager::ConnectionSettings::Wireless) {
+            bool shared = action->property("shared").toBool();
+            if (shared) {
+                if (type == NetworkManager::ConnectionSettings::Wireless) {
+                    NetworkManager::WirelessSetting::Ptr wifiSetting = connectionSettings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+                    wifiSetting->setMode(NetworkManager::WirelessSetting::Adhoc);
+                    wifiSetting->setSsid(i18n("my_shared_connection").toUtf8());
 
-        if (editor) {
-            editor->deleteLater();
+                    foreach (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+                        if (device->type() == NetworkManager::Device::Wifi) {
+                            NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
+                            if (wifiDev) {
+                                if (wifiDev->wirelessCapabilities().testFlag(NetworkManager::WirelessDevice::ApCap)) {
+                                    wifiSetting->setMode(NetworkManager::WirelessSetting::Ap);
+                                    wifiSetting->setMacAddress(NetworkManager::Utils::macAddressFromString(wifiDev->hardwareAddress()));
+                                }
+                            }
+                        }
+                    }
+                }
+
+                NetworkManager::Ipv4Setting::Ptr ipv4Setting = connectionSettings->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
+                ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Shared);
+                connectionSettings->setAutoconnect(false);
+            }
         }
+    }
+
+    // Generate new UUID
+    connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+
+    QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(connectionSettings, true);
+
+    if (editor->exec() == QDialog::Accepted) {
+        qDebug() << editor->setting();
+        m_handler->addConnection(editor->setting());
+    }
+
+    if (editor) {
+        editor->deleteLater();
     }
 }
 
@@ -329,7 +384,7 @@ void ConnectionEditor::removeConnection()
         return;
     }
 
-    Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentIndex.data(NetworkModel::UuidRole).toString());
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentIndex.data(NetworkModel::UuidRole).toString());
 
     if (!connection) {
         return;
@@ -401,8 +456,17 @@ void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
         return;
     }
 
-    const QString uuid = index.data(NetworkModel::UuidRole).toString();
-    m_handler->editConnection(uuid);
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(index.data(NetworkModel::UuidRole).toString());
+
+    QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(connection->settings(), false);
+
+    if (editor->exec() == QDialog::Accepted) {
+        m_handler->updateConnection(connection, editor->setting());
+    }
+
+    if (editor) {
+        editor->deleteLater();
+    }
 }
 
 void ConnectionEditor::importSecretsFromPlainTextFiles()
@@ -501,7 +565,7 @@ void ConnectionEditor::importVpn()
 
                 //qDebug() << "Converted connection:" << connectionSettings;
 
-                QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(connectionSettings.toMap());
+                m_handler->addConnection(connectionSettings.toMap());
 //                 qDebug() << "Adding imported connection under id:" << conId;
 
                 if (connection.isEmpty()) { // the "positive" part will arrive with connectionAdded
@@ -528,7 +592,7 @@ void ConnectionEditor::exportVpn()
         return;
     }
 
-    Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentIndex.data(NetworkModel::UuidRole).toString());
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentIndex.data(NetworkModel::UuidRole).toString());
     if (!connection) {
         return;
     }

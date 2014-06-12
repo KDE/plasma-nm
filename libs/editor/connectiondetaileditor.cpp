@@ -22,39 +22,39 @@
 #include "connectiondetaileditor.h"
 #include "ui_connectiondetaileditor.h"
 
-#include "settings/connectionwidget.h"
-#include "settings/wiredconnectionwidget.h"
-#include "settings/wificonnectionwidget.h"
-#include "settings/ipv4widget.h"
-#include "settings/ipv6widget.h"
-#include "settings/wifisecurity.h"
-#include "settings/wiredsecurity.h"
-#include "settings/pppwidget.h"
-#include "settings/pppoewidget.h"
-#include "settings/gsmwidget.h"
-#include "settings/cdmawidget.h"
-#include "settings/btwidget.h"
-#include "settings/infinibandwidget.h"
 #include "settings/bondwidget.h"
 #include "settings/bridgewidget.h"
+#include "settings/btwidget.h"
+#include "settings/cdmawidget.h"
+#include "settings/connectionwidget.h"
+#include "settings/gsmwidget.h"
+#include "settings/infinibandwidget.h"
+#include "settings/ipv4widget.h"
+#include "settings/ipv6widget.h"
+#include "settings/pppwidget.h"
+#include "settings/pppoewidget.h"
 #include "settings/vlanwidget.h"
+#include "settings/wificonnectionwidget.h"
+#include "settings/wifisecurity.h"
+#include "settings/wiredconnectionwidget.h"
+#include "settings/wiredsecurity.h"
 #include "settings/wimaxwidget.h"
 #if NM_CHECK_VERSION(0, 9, 9)
 #include "settings/teamwidget.h"
 #endif
 #include "vpnuiplugin.h"
 
-#include <QDebug>
-#include <QPushButton>
-
-#include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/WirelessSetting>
-#include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/GenericTypes>
-#include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/Utils>
+#include <NetworkManagerQt/WirelessSetting>
+#include <NetworkManagerQt/WirelessDevice>
+
+#include <QDebug>
+#include <QPushButton>
 
 #include <KIcon>
 #include <KUser>
@@ -63,116 +63,29 @@
 #include <KPluginFactory>
 #include <KServiceTypeTrader>
 
+// TODO virtual connections
+// ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type, QWidget* parent,
+//                                                const QString &masterUuid, const QString &slaveType, Qt::WindowFlags f):
+//     QDialog(parent, f),
+//     m_ui(new Ui::ConnectionDetailEditor),
+//     m_connection(new NetworkManager::ConnectionSettings(type)),
+//     m_new(true),
+//     m_masterUuid(masterUuid),
+//     m_slaveType(slaveType)
+// {
+//     setAttribute(Qt::WA_DeleteOnClose);
+//     m_ui->setupUi(this);
+//
+//     initEditor();
+// }
 
-using namespace NetworkManager;
-
-ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type, QWidget* parent,
-                                               const QString &masterUuid, const QString &slaveType, Qt::WindowFlags f):
-    QDialog(parent, f),
-    m_ui(new Ui::ConnectionDetailEditor),
-    m_connection(new NetworkManager::ConnectionSettings(type)),
-    m_new(true),
-    m_masterUuid(masterUuid),
-    m_slaveType(slaveType)
+ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr& connection,
+                                               bool newConnection, QWidget* parent, Qt::WindowFlags f)
+    : QDialog(parent, f)
+    , m_connection(connection)
+    , m_new(newConnection)
+    , m_ui(new Ui::ConnectionDetailEditor)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
-    m_ui->setupUi(this);
-
-    initEditor();
-}
-
-ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type, QWidget* parent,
-                                               const QString &vpnType, bool shared, Qt::WindowFlags f):
-    QDialog(parent, f),
-    m_ui(new Ui::ConnectionDetailEditor),
-    m_connection(new NetworkManager::ConnectionSettings(type)),
-    m_new(true),
-    m_vpnType(vpnType)
-{
-    setAttribute(Qt::WA_DeleteOnClose);
-    m_ui->setupUi(this);
-
-    if (shared) {
-        if (type == ConnectionSettings::Wireless) {
-            NetworkManager::WirelessSetting::Ptr wifiSetting = m_connection->setting(Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
-            wifiSetting->setMode(WirelessSetting::Adhoc);
-            wifiSetting->setSsid(i18n("my_shared_connection").toUtf8());
-
-            foreach (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
-                if (device->type() == Device::Wifi) {
-                    NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
-                    if (wifiDev) {
-                        if (wifiDev->wirelessCapabilities().testFlag(WirelessDevice::ApCap)) {
-                            wifiSetting->setMode(WirelessSetting::Ap);
-                            wifiSetting->setMacAddress(Utils::macAddressFromString(wifiDev->hardwareAddress()));
-                        }
-                    }
-                }
-            }
-        }
-        NetworkManager::Ipv4Setting::Ptr ipv4Setting = m_connection->setting(Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
-        ipv4Setting->setMethod(Ipv4Setting::Shared);
-        m_connection->setAutoconnect(false);
-    }
-
-    initEditor();
-}
-
-ConnectionDetailEditor::ConnectionDetailEditor(ConnectionSettings::ConnectionType type, const QVariantList &args, QWidget *parent, Qt::WindowFlags f):
-    QDialog(parent, f),
-    m_ui(new Ui::ConnectionDetailEditor),
-    m_connection(new NetworkManager::ConnectionSettings(type)),
-    m_new(true)
-{
-    setAttribute(Qt::WA_DeleteOnClose);
-    m_ui->setupUi(this);
-
-    // parse args given from the wizard
-    qDebug() << "Editing new mobile connection, number of args:" << args.count();
-    foreach(const QVariant & arg, args) {
-        qDebug() << "Argument:" << arg;
-    }
-
-    if (args.count() == 2) { //GSM or CDMA
-        QVariantMap tmp = qdbus_cast<QVariantMap>(args.value(1));
-
-#if 0 // network IDs are not used yet and seem to break the setting
-        if (args.count() == 3) { // gsm specific
-            QStringList networkIds = args.value(1).toStringList();
-            if (!networkIds.isEmpty())
-                tmp.insert("network-id", networkIds.first());
-        }
-#endif
-
-        m_connection->setConnectionType(type);
-        m_connection->setId(args.value(0).toString());
-        qDebug() << "New " << m_connection->typeAsString(m_connection->connectionType()) << "connection initializing with:" << tmp;
-        if (type == ConnectionSettings::Gsm)
-            m_connection->setting(Setting::Gsm)->fromMap(tmp);
-        else if (type == ConnectionSettings::Cdma)
-            m_connection->setting(Setting::Cdma)->fromMap(tmp);
-        else
-            qWarning() << Q_FUNC_INFO << "Unhandled setting type";
-
-        qDebug() << "New connection initialized:";
-        qDebug() << *m_connection;
-    } else {
-        qWarning() << Q_FUNC_INFO << "Unexpected number of args to parse";
-    }
-
-    initEditor();
-}
-
-
-ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &connection, QWidget* parent, Qt::WindowFlags f, bool newConnection):
-    QDialog(parent, f),
-    m_ui(new Ui::ConnectionDetailEditor),
-    m_connection(connection),
-    m_new(newConnection),
-    m_masterUuid(connection->master()),
-    m_slaveType(connection->slaveType())
-{
-    setAttribute(Qt::WA_DeleteOnClose);
     m_ui->setupUi(this);
 
     initEditor();
@@ -195,42 +108,43 @@ void ConnectionDetailEditor::initEditor()
             QDBusPendingReply<NMVariantMapMap> reply;
             NetworkManager::WirelessSecuritySetting::Ptr wifiSecuritySetting;
 
+            // TODO check whether there are some secrets to be requested to avoid unecessary errors
             switch (m_connection->connectionType()) {
-                case ConnectionSettings::Adsl:
+                case NetworkManager::ConnectionSettings::Adsl:
                     hasSecrets = true;
                     reply = connection->secrets("adsl");
                     break;
-                case ConnectionSettings::Bluetooth:
+                case NetworkManager::ConnectionSettings::Bluetooth:
                     hasSecrets = true;
                     reply = connection->secrets("gsm");
                     break;
-                case ConnectionSettings::Cdma:
+                case NetworkManager::ConnectionSettings::Cdma:
                     hasSecrets = true;
                     reply = connection->secrets("cdma");
                     break;
-                case ConnectionSettings::Gsm:
+                case NetworkManager::ConnectionSettings::Gsm:
                     hasSecrets = true;
                     reply = connection->secrets("gsm");
                     break;
-                case ConnectionSettings::Pppoe:
+                case NetworkManager::ConnectionSettings::Pppoe:
                     hasSecrets = true;
                     reply = connection->secrets("pppoe");
                     break;
-                case ConnectionSettings::Wired:
+                case NetworkManager::ConnectionSettings::Wired:
                     hasSecrets = true;
                     reply = connection->secrets("802-1x");
                     break;
-                case ConnectionSettings::Wireless:
+                case NetworkManager::ConnectionSettings::Wireless:
                     hasSecrets = true;
                     wifiSecuritySetting = connection->settings()->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
-                    if (wifiSecuritySetting->keyMgmt() == WirelessSecuritySetting::WpaEap ||
-                        wifiSecuritySetting->keyMgmt() == WirelessSecuritySetting::WirelessSecuritySetting::Ieee8021x) {
+                    if (wifiSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEap ||
+                        wifiSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WirelessSecuritySetting::Ieee8021x) {
                         reply = connection->secrets("802-1x");
                     } else {
                         reply = connection->secrets("802-11-wireless-security");
                     }
                     break;
-                case ConnectionSettings::Vpn:
+                case NetworkManager::ConnectionSettings::Vpn:
                     hasSecrets = true;
                     reply = connection->secrets("vpn");
                     break;
@@ -240,8 +154,8 @@ void ConnectionDetailEditor::initEditor()
             }
 
             if (hasSecrets) {
+                qDebug() << "Getting secrets ";
                 QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-                watcher->setProperty("action", GetSecrets);
                 watcher->setProperty("connection", connection->name());
                 connect(watcher, &QDBusPendingCallWatcher::finished, this, &ConnectionDetailEditor::replyFinished);
             }
@@ -257,8 +171,6 @@ void ConnectionDetailEditor::initEditor()
         setWindowTitle(i18n("Edit Connection '%1'", m_connection->id()));
         m_ui->connectionName->setText(m_connection->id());
     }
-
-    connect(this, SIGNAL(accepted()), SLOT(saveSetting()));
 }
 
 void ConnectionDetailEditor::initTabs()
@@ -267,17 +179,18 @@ void ConnectionDetailEditor::initTabs()
         m_connection->addToPermissions(KUser().loginName(), QString());
     }
 
-    // create/set UUID, need this beforehand for slave connections
-    QString uuid = m_connection->uuid();
-    if (QUuid(uuid).isNull()) {
-        uuid = NetworkManager::ConnectionSettings::createNewUuid();
-        m_connection->setUuid(uuid);
-    }
+    // TODO virtual connections
+//     // create/set UUID, need this beforehand for slave connections
+//     QString uuid = m_connection->uuid();
+//     if (QUuid(uuid).isNull()) {
+//         uuid = NetworkManager::ConnectionSettings::createNewUuid();
+//         m_connection->setUuid(uuid);
+//     }
 
     ConnectionWidget * connectionWidget = new ConnectionWidget(m_connection);
     m_ui->tabWidget->addTab(connectionWidget, i18nc("General", "General configuration"));
 
-    qDebug() << "Initting tabs, UUID:" << uuid;
+    qDebug() << "Initting tabs, UUID:" << m_connection->uuid();
 
     const NetworkManager::ConnectionSettings::ConnectionType type = m_connection->connectionType();
 
@@ -315,7 +228,9 @@ void ConnectionDetailEditor::initTabs()
             PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Setting::Ppp), this);
             m_ui->tabWidget->addTab(pppWidget, i18n("PPP"));
         }
-    } else if (type == NetworkManager::ConnectionSettings::Infiniband) { // Infiniband
+
+    // TODO virtual connections
+    /* } else if (type == NetworkManager::ConnectionSettings::Infiniband) { // Infiniband
         InfinibandWidget * infinibandWidget = new InfinibandWidget(m_connection->setting(NetworkManager::Setting::Infiniband), this);
         m_ui->tabWidget->addTab(infinibandWidget, i18n("Infiniband"));
     } else if (type == NetworkManager::ConnectionSettings::Bond) { // Bond
@@ -332,6 +247,8 @@ void ConnectionDetailEditor::initTabs()
         TeamWidget * teamWidget = new TeamWidget(uuid, m_connection->setting(NetworkManager::Setting::Team), this);
         m_ui->tabWidget->addTab(teamWidget, i18n("Team"));
 #endif
+    } */
+
     } else if (type == NetworkManager::ConnectionSettings::Wimax) { // Wimax
         WimaxWidget * wimaxWidget = new WimaxWidget(m_connection->setting(NetworkManager::Setting::Wimax), this);
         m_ui->tabWidget->addTab(wimaxWidget, i18n("WiMAX"));
@@ -343,13 +260,7 @@ void ConnectionDetailEditor::initTabs()
         if (!vpnSetting) {
             qDebug() << "Missing VPN setting!";
         } else {
-            QString serviceType;
-            if (m_new && !m_vpnType.isEmpty()) {
-                serviceType = m_vpnType;
-                vpnSetting->setServiceType(serviceType);
-            }
-            else
-                serviceType = vpnSetting->serviceType();
+            QString serviceType = vpnSetting->serviceType();
             //qDebug() << "Editor loading VPN plugin" << serviceType;
             //vpnSetting->printSetting();
             vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNetworkManagement/VpnUiPlugin"),
@@ -366,28 +277,30 @@ void ConnectionDetailEditor::initTabs()
     }
 
     // PPP widget
-    if (type == ConnectionSettings::Pppoe || type == ConnectionSettings::Cdma || type == ConnectionSettings::Gsm) {
+    if (type == NetworkManager::ConnectionSettings::Pppoe || type == NetworkManager::ConnectionSettings::Cdma || type == NetworkManager::ConnectionSettings::Gsm) {
         PPPWidget * pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Setting::Ppp), this);
         m_ui->tabWidget->addTab(pppWidget, i18n("PPP"));
     }
 
-    // IPv4 widget
-    if (!isSlave()) {
+    // TODO virtual connections
+//     IPv4 widget
+//     if (!isSlave()) {
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Setting::Ipv4), this);
         m_ui->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
-    }
+//     }
 
+    // TODO virtual connections
     // IPv6 widget
-    if ((type == ConnectionSettings::Wired
-         || type == ConnectionSettings::Wireless
-         || type == ConnectionSettings::Infiniband
-         || type == ConnectionSettings::Wimax
-     #if NM_CHECK_VERSION(0, 9, 9)
+    if (type == NetworkManager::ConnectionSettings::Wired
+         || type == NetworkManager::ConnectionSettings::Wireless
+//          || type == ConnectionSettings::Infiniband
+         || type == NetworkManager::ConnectionSettings::Wimax
+    /* #if NM_CHECK_VERSION(0, 9, 9)
          || type == ConnectionSettings::Team
      #endif
          || type == ConnectionSettings::Bond
          || type == ConnectionSettings::Bridge
-         || type == ConnectionSettings::Vlan) && !isSlave()) {
+         || type == ConnectionSettings::Vlan) && !isSlave()*/) {
         IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Setting::Ipv6), this);
         m_ui->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
     }
@@ -407,7 +320,7 @@ void ConnectionDetailEditor::initTabs()
     KAcceleratorManager::manage(this);
 }
 
-void ConnectionDetailEditor::saveSetting()
+NMVariantMapMap ConnectionDetailEditor::setting()
 {
     ConnectionWidget * connectionWidget = static_cast<ConnectionWidget*>(m_ui->tabWidget->widget(0));
 
@@ -446,14 +359,16 @@ void ConnectionDetailEditor::saveSetting()
         }
     }
 
-    NetworkManager::ConnectionSettings * connectionSettings = new NetworkManager::ConnectionSettings(m_connection->connectionType());
+    // Set properties which are not returned from setting widgets
+    NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(m_connection->connectionType()));
 
     connectionSettings->fromMap(settings);
     connectionSettings->setId(m_ui->connectionName->text());
+    connectionSettings->setUuid(m_connection->uuid());
 
-    if (connectionSettings->connectionType() == ConnectionSettings::Wireless) {
-        NetworkManager::WirelessSecuritySetting::Ptr securitySetting = connectionSettings->setting(Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
-        NetworkManager::WirelessSetting::Ptr wirelessSetting = connectionSettings->setting(Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
+    if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
+        NetworkManager::WirelessSecuritySetting::Ptr securitySetting = connectionSettings->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
+        NetworkManager::WirelessSetting::Ptr wirelessSetting = connectionSettings->setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
 
         if (securitySetting && wirelessSetting) {
             if (securitySetting->keyMgmt() != NetworkManager::WirelessSecuritySetting::WirelessSecuritySetting::Unknown) {
@@ -462,91 +377,34 @@ void ConnectionDetailEditor::saveSetting()
         }
     }
 
-    // set UUID
-    connectionSettings->setUuid(m_connection->uuid());
-
+    // TODO virtual connections
     // set master & slave type
-    if (isSlave()) {
-        connectionSettings->setMaster(m_masterUuid);
-        connectionSettings->setSlaveType(m_slaveType);
-    }
+//     if (isSlave()) {
+//         connectionSettings->setMaster(m_masterUuid);
+//         connectionSettings->setSlaveType(m_slaveType);
+//     }
 
-    qDebug() << *connectionSettings;  // debug
-
-    if (m_new) { // create new connection
-        QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(connectionSettings->toMap());
-        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-        watcher->setProperty("action", AddConnection);
-        watcher->setProperty("connection", connectionSettings->name());
-        connect(watcher, &QDBusPendingCallWatcher::finished, this, &ConnectionDetailEditor::replyFinished);
-    } else {  // update existing connection
-        NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(connectionSettings->uuid());
-        if (connection) {
-            QDBusPendingReply<> reply = connection->update(connectionSettings->toMap());
-            QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-            watcher->setProperty("action", UpdateConnection);
-            watcher->setProperty("connection", connectionSettings->name());
-            connect(watcher, &QDBusPendingCallWatcher::finished, this, &ConnectionDetailEditor::replyFinished);
-        }
-    }
+    return connectionSettings->toMap();
 }
 
 void ConnectionDetailEditor::replyFinished(QDBusPendingCallWatcher *watcher)
 {
-    Action action = (Action)watcher->property("action").toUInt();
-
-    if (action == ConnectionDetailEditor::AddConnection) {
-        QDBusPendingReply<QDBusObjectPath> reply = *watcher;
-        if (reply.isValid()) {
-            KNotification *notification = new KNotification("ConnectionAdded", KNotification::CloseOnTimeout, this);
-            notification->setComponentName("networkmanagement");
-            notification->setTitle(watcher->property("connection").toString());
-            notification->setText(i18n("Connection %1 has been added", watcher->property("connection").toString()));
-            notification->setPixmap(KIcon("dialog-information").pixmap(64, 64));
-            notification->sendEvent();
-        } else {
-            KNotification *notification = new KNotification("FailedToAddConnection", KNotification::CloseOnTimeout, this);
-            notification->setComponentName("networkmanagement");
-            notification->setTitle(i18n("Failed to add connection %1", watcher->property("connection").toString()));
-            notification->setText(reply.error().message());
-            notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
-            notification->sendEvent();
+    QDBusPendingReply<NMVariantMapMap> reply = *watcher;
+    if (reply.isValid()) {
+        NMVariantMapMap secrets = reply.argumentAt<0>();
+        foreach (const QString & key, secrets.keys()) {
+            NetworkManager::Setting::Ptr setting = m_connection->setting(NetworkManager::Setting::typeFromString(key));
+            setting->secretsFromMap(secrets.value(key));
         }
-    } else if (action == ConnectionDetailEditor::GetSecrets) {
-        QDBusPendingReply<NMVariantMapMap> reply = *watcher;
-        if (reply.isValid()) {
-            NMVariantMapMap secrets = reply.argumentAt<0>();
-            foreach (const QString & key, secrets.keys()) {
-                NetworkManager::Setting::Ptr setting = m_connection->setting(NetworkManager::Setting::typeFromString(key));
-                setting->secretsFromMap(secrets.value(key));
-            }
-        } else {
-            KNotification *notification = new KNotification("FailedToGetSecrets", KNotification::CloseOnTimeout, this);
-            notification->setComponentName("networkmanagement");
-            notification->setTitle(i18n("Failed to get secrets for %1", watcher->property("connection").toString()));
-            notification->setText(reply.error().message());
-            notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
-            notification->sendEvent();
-        }
-        initTabs();
-    } else if (action == ConnectionDetailEditor::UpdateConnection) {
-        QDBusPendingReply<> reply = *watcher;
-        if (reply.isValid()) {
-            KNotification *notification = new KNotification("ConnectionUpdated", KNotification::CloseOnTimeout, this);
-            notification->setComponentName("networkmanagement");
-            notification->setTitle(watcher->property("connection").toString());
-            notification->setText(i18n("Connection %1 has been updated", watcher->property("connection").toString()));
-            notification->setPixmap(KIcon("dialog-information").pixmap(64, 64));
-            notification->sendEvent();
-        } else {
-            KNotification *notification = new KNotification("FailedToUpdateConnection", KNotification::CloseOnTimeout, this);
-            notification->setComponentName("networkmanagement");
-            notification->setTitle(i18n("Failed to update connection %1", watcher->property("connection").toString()));
-            notification->setText(reply.error().message());
-            notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
-            notification->sendEvent();
-        }
+    } else {
+        KNotification *notification = new KNotification("FailedToGetSecrets", KNotification::CloseOnTimeout, this);
+        notification->setComponentName("networkmanagement");
+        notification->setTitle(i18n("Failed to get secrets for %1", watcher->property("connection").toString()));
+        notification->setText(reply.error().message());
+        notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        notification->sendEvent();
     }
+    initTabs();
 }
 
 void ConnectionDetailEditor::validChanged(bool valid)

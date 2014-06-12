@@ -35,9 +35,11 @@ public:
     enum HandlerAction {
         ActivateConnection,
         AddAndActivateConnection,
+        AddConnection,
         DeactivateConnection,
         RemoveConnection,
-        RequestScan
+        RequestScan,
+        UpdateConnection
     };
 
     explicit Handler(QObject* parent = 0);
@@ -50,7 +52,7 @@ public Q_SLOTS:
      * @device - d-bus path of the device where the connection should be activated
      * @specificParameter - d-bus path of the specific object you want to use for this activation, i.e access point
      */
-    void activateConnection(const QString & connection, const QString & device, const QString & specificParameter);
+    void activateConnection(const QString &connection, const QString &device, const QString &specificParameter);
     /**
      * Adds and activates a new wireless connection
      * @device - d-bus path of the wireless device where the connection should be activated
@@ -61,13 +63,18 @@ public Q_SLOTS:
      * Works automatically for wireless connections with WEP/WPA security, for wireless connections with WPA/WPA
      * it will open the connection editor for advanced configuration.
      * */
-    void addAndActivateConnection(const QString & device, const QString & specificParameter, const QString & password = QString());
+    void addAndActivateConnection(const QString &device, const QString &specificParameter, const QString &password = QString());
+    /**
+     * Adds a new connection
+     * @map - NMVariantMapMap with connection settings
+     */
+    void addConnection(const NMVariantMapMap &map);
     /**
      * Deactivates given connection
      * @connection - d-bus path of the connection you want to deactivate
      * @device - d-bus path of the connection where the connection is activated
      */
-    void deactivateConnection(const QString & connection, const QString & device);
+    void deactivateConnection(const QString &connection, const QString &device);
     /**
      * Disconnects all connections
      */
@@ -78,21 +85,26 @@ public Q_SLOTS:
     void enableWireless(bool enable);
     void enableWimax(bool enable);
     void enableWwan(bool enable);
-    /**
-     * Opens connection editor for given connection
-     * @uuid - uuid of the connection you want to edit
-     */
-    void editConnection(const QString & uuid);
+//     /**
+//      * Opens connection editor for given connection
+//      * @uuid - uuid of the connection you want to edit
+//      */
+//     void editConnection(const QString & uuid);
     /**
      * Removes given connection
      * @connection - d-bus path of the connection you want to edit
      */
     void removeConnection(const QString & connection);
+    /**
+     * Updates given connection
+     * @connection - connection which should be updated
+     * @map - NMVariantMapMap with new connection settings
+     */
+    void updateConnection(const NetworkManager::Connection::Ptr &connection, const NMVariantMapMap &map);
     void openEditor();
     void requestScan();
 
 private Q_SLOTS:
-    void editDialogAccepted();
     void replyFinished(QDBusPendingCallWatcher * watcher);
 
 private:

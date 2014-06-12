@@ -153,11 +153,18 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         m_tmpDevicePath = device;
         m_tmpSpecificPath = specificObject;
 
-        QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(settings, 0, 0, true);
+        QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(settings, true);
         editor->show();
         KWindowSystem::setState(editor->winId(), NET::KeepAbove);
         KWindowSystem::forceActiveWindow(editor->winId());
-        connect(editor, SIGNAL(accepted()), SLOT(editDialogAccepted()));
+
+        if (editor->exec() == QDialog::Accepted) {
+            addConnection(editor->setting());
+        }
+
+        if (editor) {
+            editor->deleteLater();
+        }
     } else {
         if (securityType == NetworkManager::Utils::StaticWep) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
@@ -180,6 +187,15 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     }
 
     settings.clear();
+}
+
+void Handler::addConnection(const NMVariantMapMap& map)
+{
+    QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(map);
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    watcher->setProperty("action", AddConnection);
+    watcher->setProperty("connection", map.value("connection").value("id"));
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
 void Handler::deactivateConnection(const QString& connection, const QString& device)
@@ -315,12 +331,12 @@ void Handler::enableBt(bool enable)
     }
 }
 
-void Handler::editConnection(const QString& uuid)
-{
-    QStringList args;
-    args << uuid;
-    KProcess::startDetached("kde5-nm-connection-editor", args);
-}
+// void Handler::editConnection(const QString& uuid)
+// {
+//     QStringList args;
+//     args << uuid;
+//     KProcess::startDetached("kde5-nm-connection-editor", args);
+// }
 
 void Handler::removeConnection(const QString& connection)
 {
@@ -347,6 +363,15 @@ void Handler::removeConnection(const QString& connection)
     connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
 }
 
+void Handler::updateConnection(const NetworkManager::Connection::Ptr& connection, const NMVariantMapMap& map)
+{
+    QDBusPendingReply<> reply = connection->update(map);
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    watcher->setProperty("action", UpdateConnection);
+    watcher->setProperty("connection", connection->name());
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
+}
+
 void Handler::openEditor()
 {
     KProcess::startDetached("kde5-nm-connection-editor");
@@ -364,14 +389,6 @@ void Handler::requestScan()
                 connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
             }
         }
-    }
-}
-
-void Handler::editDialogAccepted()
-{
-    NetworkManager::Connection::Ptr newConnection = NetworkManager::findConnectionByUuid(m_tmpConnectionUuid);
-    if (newConnection) {
-        activateConnection(newConnection->path(), m_tmpDevicePath, m_tmpSpecificPath);
     }
 }
 
@@ -393,6 +410,11 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
                 notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to add %1", watcher->property("connection").toString()));
                 break;
+            case Handler::AddConnection:
+                notification = new KNotification("FailedToAddConnection", KNotification::CloseOnTimeout, this);
+                notification->setComponentName("networkmanagement");
+                notification->setTitle(i18n("Failed to add connection %1", watcher->property("connection").toString()));
+                break;
             case Handler::DeactivateConnection:
                 notification = new KNotification("FailedToDeactivateConnection", KNotification::CloseOnTimeout, this);
                 notification->setComponentName("networkmanagement");
@@ -408,6 +430,10 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
                 notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to request scan"));
                 break;
+            case Handler::UpdateConnection:
+                notification = new KNotification("FailedToUpdateConnection", KNotification::CloseOnTimeout, this);
+                notification->setComponentName("networkmanagement");
+                notification->setTitle(i18n("Failed to update connection %1", watcher->property("connection").toString()));
             default:
                 break;
         }
@@ -422,12 +448,23 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
         Handler::HandlerAction action = (Handler::HandlerAction)watcher->property("action").toUInt();
 
         switch (action) {
+            case Handler::AddConnection:
+                notification = new KNotification("ConnectionAdded", KNotification::CloseOnTimeout, this);
+                notification->setComponentName("networkmanagement");
+                notification->setTitle(watcher->property("connection").toString());
+                notification->setText(i18n("Connection %1 has been added", watcher->property("connection").toString()));
+                break;
             case Handler::RemoveConnection:
                 notification = new KNotification("ConnectionRemoved", KNotification::CloseOnTimeout, this);
                 notification->setComponentName("networkmanagement");
                 notification->setTitle(watcher->property("connection").toString());
                 notification->setText(i18n("Connection %1 has been removed", watcher->property("connection").toString()));
                 break;
+            case Handler::UpdateConnection:
+                notification = new KNotification("ConnectionUpdated", KNotification::CloseOnTimeout, this);
+                notification->setComponentName("networkmanagement");
+                notification->setTitle(watcher->property("connection").toString());
+                notification->setText(i18n("Connection %1 has been updated", watcher->property("connection").toString()));
             default:
                 break;
         }

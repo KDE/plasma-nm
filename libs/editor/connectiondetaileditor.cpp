@@ -45,8 +45,12 @@
 #include "vpnuiplugin.h"
 
 #include <NetworkManagerQt/ActiveConnection>
+#include <NetworkManagerQt/AdslSetting>
 #include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/CdmaSetting>
 #include <NetworkManagerQt/GenericTypes>
+#include <NetworkManagerQt/GsmSetting>
+#include <NetworkManagerQt/PppoeSetting>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/Utils>
@@ -106,57 +110,72 @@ void ConnectionDetailEditor::initEditor()
         if (connection) {
             bool hasSecrets = false;
             QDBusPendingReply<NMVariantMapMap> reply;
-            NetworkManager::WirelessSecuritySetting::Ptr wifiSecuritySetting;
 
-            // TODO check whether there are some secrets to be requested to avoid unecessary errors
-            switch (m_connection->connectionType()) {
-                case NetworkManager::ConnectionSettings::Adsl:
+            if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Adsl) {
+                NetworkManager::AdslSetting::Ptr adslSetting = connection->settings()->setting(NetworkManager::Setting::Adsl).staticCast<NetworkManager::AdslSetting>();
+                if (adslSetting && !adslSetting->needSecrets().isEmpty()) {
                     hasSecrets = true;
                     reply = connection->secrets("adsl");
-                    break;
-                case NetworkManager::ConnectionSettings::Bluetooth:
+                }
+            } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Bluetooth) {
+                NetworkManager::GsmSetting::Ptr gsmSetting = connection->settings()->setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
+                if (gsmSetting && !gsmSetting->needSecrets().isEmpty()) {
                     hasSecrets = true;
                     reply = connection->secrets("gsm");
-                    break;
-                case NetworkManager::ConnectionSettings::Cdma:
+                }
+            } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Cdma) {
+                NetworkManager::CdmaSetting::Ptr cdmaSetting = connection->settings()->setting(NetworkManager::Setting::Cdma).staticCast<NetworkManager::CdmaSetting>();
+                if (cdmaSetting && !cdmaSetting->needSecrets().isEmpty()) {
                     hasSecrets = true;
                     reply = connection->secrets("cdma");
-                    break;
-                case NetworkManager::ConnectionSettings::Gsm:
+                }
+            } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Gsm) {
+                NetworkManager::GsmSetting::Ptr gsmSetting = connection->settings()->setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
+                if (gsmSetting && !gsmSetting->needSecrets().isEmpty()) {
                     hasSecrets = true;
                     reply = connection->secrets("gsm");
-                    break;
-                case NetworkManager::ConnectionSettings::Pppoe:
+                }
+            } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Pppoe) {
+                NetworkManager::PppoeSetting::Ptr pppoeSetting = connection->settings()->setting(NetworkManager::Setting::Pppoe).staticCast<NetworkManager::PppoeSetting>();
+                if (pppoeSetting && !pppoeSetting->needSecrets().isEmpty()) {
                     hasSecrets = true;
                     reply = connection->secrets("pppoe");
-                    break;
-                case NetworkManager::ConnectionSettings::Wired:
+                }
+            } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Wired) {
+                NetworkManager::Security8021xSetting::Ptr securitySetting = connection->settings()->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>();
+                if (securitySetting && !securitySetting->needSecrets().isEmpty()) {
                     hasSecrets = true;
                     reply = connection->secrets("802-1x");
-                    break;
-                case NetworkManager::ConnectionSettings::Wireless:
-                    hasSecrets = true;
-                    wifiSecuritySetting = connection->settings()->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
-                    if (wifiSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEap ||
-                        wifiSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WirelessSecuritySetting::Ieee8021x) {
+                }
+            } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
+                NetworkManager::WirelessSecuritySetting::Ptr wifiSecuritySetting = connection->settings()->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
+                if (wifiSecuritySetting &&
+                    (wifiSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEap ||
+                    wifiSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WirelessSecuritySetting::Ieee8021x)) {
+                    NetworkManager::Security8021xSetting::Ptr securitySetting = connection->settings()->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>();
+                    if (securitySetting && !securitySetting->needSecrets().isEmpty()) {
+                        hasSecrets = true;
                         reply = connection->secrets("802-1x");
-                    } else {
+                    }
+                } else {
+                    if (!wifiSecuritySetting->needSecrets().isEmpty()) {
+                        hasSecrets = true;
                         reply = connection->secrets("802-11-wireless-security");
                     }
-                    break;
-                case NetworkManager::ConnectionSettings::Vpn:
-                    hasSecrets = true;
-                    reply = connection->secrets("vpn");
-                    break;
-                default:
-                    initTabs();
-                    break;
+                }
+            } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
+                hasSecrets = true;
+                reply = connection->secrets("vpn");
+            } else {
+                initTabs();
             }
 
             if (hasSecrets) {
                 QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
                 watcher->setProperty("connection", connection->name());
                 connect(watcher, &QDBusPendingCallWatcher::finished, this, &ConnectionDetailEditor::replyFinished);
+            } else {
+                initTabs();
             }
         }
     } else {

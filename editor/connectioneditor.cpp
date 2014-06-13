@@ -427,7 +427,7 @@ void ConnectionEditor::slotItemClicked(const QModelIndex &index)
         return;
     }
 
-    qDebug() << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
+//     qDebug() << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
 
     if (index.parent().isValid()) { // category
         actionCollection()->action("edit_connection")->setEnabled(false);
@@ -449,7 +449,7 @@ void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
         return;
     }
 
-    qDebug() << "Double clicked item" << index.data(NetworkModel::UuidRole).toString();
+//     qDebug() << "Double clicked item" << index.data(NetworkModel::UuidRole).toString();
 
     if (index.parent().isValid()) { // category
         qDebug() << "double clicked on the root item which is not editable";

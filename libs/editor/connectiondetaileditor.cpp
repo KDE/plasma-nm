@@ -208,7 +208,7 @@ void ConnectionDetailEditor::initTabs()
     ConnectionWidget * connectionWidget = new ConnectionWidget(m_connection);
     m_ui->tabWidget->addTab(connectionWidget, i18nc("General", "General configuration"));
 
-    qDebug() << "Initting tabs, UUID:" << m_connection->uuid();
+//     qDebug() << "Initting tabs, UUID:" << m_connection->uuid();
 
     const NetworkManager::ConnectionSettings::ConnectionType type = m_connection->connectionType();
 

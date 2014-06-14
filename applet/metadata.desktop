@@ -1,27 +1,7 @@
 [Desktop Entry]
 Name=Networks
-Name[cs]=Sítě
-Name[es]=Redes
-Name[nl]=Netwerken
-Name[pl]=Sieci
-Name[pt]=Redes
-Name[pt_BR]=Redes
-Name[sk]=Siete
-Name[sv]=Nätverk
-Name[uk]=Мережі
-Name[x-test]=xxNetworksxx
 
 Comment=Network status and control
-Comment[cs]=Stav a ovládání sítě
-Comment[es]=Estado y control de redes
-Comment[nl]=Netwerkstatus en besturing
-Comment[pl]=Stan i sterowanie siecią
-Comment[pt]=Estado e controlo da rede
-Comment[pt_BR]=Estado e controle da rede
-Comment[sk]=Správa a ovládanie siete
-Comment[sv]=Nätverksstatus och kontroll
-Comment[uk]=Стеження за станом і керування мережею
-Comment[x-test]=xxNetwork status and controlxx
 
 Icon=network-defaultroute
 Type=Service

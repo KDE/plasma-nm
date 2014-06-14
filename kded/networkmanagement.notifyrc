@@ -1,214 +1,74 @@
 [Global]
 IconName=applications-internet
 Name=networkmanagement
-Name[cs]=networkmanagement
-Name[es]=Gestión de redes
-Name[nl]=netwerkbeheer
-Name[pl]=zarządzanie siecią
-Name[pt]=Gestão de Rede
-Name[pt_BR]=networkmanagement
-Name[sk]=správa siete
-Name[sv]=nätverkshantering
-Name[uk]=Керування мережею
-Name[x-test]=xxnetworkmanagementxx
 Comment=Notifies about network errors
-Comment[cs]=Oznamuje chyby sítě
-Comment[es]=Notifica sobre errores de red
-Comment[nl]=Geeft meldingen over netwerkfouten
-Comment[pl]=Powiadamia o błędach sieci
-Comment[pt]=Notificações de erros na rede
-Comment[pt_BR]=Notificações de erros na rede
-Comment[sk]=Upozorní na sieťové chyby
-Comment[sv]=Underrättar om nätverksfel
-Comment[uk]=Сповіщає про помилки у роботі мережі
-Comment[x-test]=xxNotifies about network errorsxx
 
 [Event/ConnectionActivated]
 Name=Connection activated
-Name[es]=Conexión activada
-Name[nl]=Verbinding geactiveerd
-Name[pl]=Nawiązano połączenie
-Name[pt]=Ligação activada
-Name[pt_BR]=Conexão ativada
-Name[sk]=Pripojenie aktivované
-Name[sv]=Anslutning aktiverad
-Name[uk]=З’єднання задіяно
-Name[x-test]=xxConnection activatedxx
 IconName=applications-internet
 Action=Popup
 
 [Event/ConnectionDeactivated]
 Name=Connection deactivated
-Name[es]=Conexión desactivada
-Name[nl]=Verbinding gedeactiveerd
-Name[pl]=Zerwano połączenie
-Name[pt]=Ligação desactivada
-Name[pt_BR]=Conexão desativada
-Name[sk]=Pripojenie deaktivované
-Name[sv]=Anslutning inaktiverad
-Name[uk]=З’єднання вимкнено
-Name[x-test]=xxConnection deactivatedxx
 IconName=applications-internet
 Action=Popup
 
 [Event/ConnectionAdded]
 Name=Connection added
-Name[es]=Conexión añadida
-Name[nl]=Verbinding toegevoegd
-Name[pl]=Dodano połączenie
-Name[pt]=Ligação adicionada
-Name[pt_BR]=Conexão adicionada
-Name[sv]=Anslutning tillagd
-Name[uk]=Додано з’єднання
-Name[x-test]=xxConnection addedxx
 IconName=applications-internet
 Action=None
 
 [Event/ConnectionRemoved]
 Name=Connection removed
-Name[es]=Conexión eliminada
-Name[nl]=Verbinding verwijderd
-Name[pl]=Usunięto połączenie
-Name[pt]=Ligação removida
-Name[pt_BR]=Conexão removida
-Name[sv]=Anslutning borttagen
-Name[uk]=Вилучено з’єднання
-Name[x-test]=xxConnection removedxx
 IconName=applications-internet
 Action=None
 
 [Event/ConnectionUpdated]
 Name=Connection updated
-Name[es]=Conexión actualizada
-Name[nl]=Verbinding bijgewerkt
-Name[pl]=Uaktualniono połączenie
-Name[pt]=Ligação actualizada
-Name[pt_BR]=Conexão atualizada
-Name[sv]=Anslutning uppdaterad
-Name[uk]=Оновлено з’єднання
-Name[x-test]=xxConnection updatedxx
 IconName=applications-internet
 Action=None
 
 [Event/DeviceFailed]
 Name=Device failed
-Name[es]=El dispositivo ha fallado
-Name[nl]=Apparaat is mislukt
-Name[pl]=Niepowodzenie urządzenia
-Name[pt]=Não foi possível activar o dispositivo
-Name[pt_BR]=Falha no dispositivo
-Name[sk]=Zariadenie zlyhalo
-Name[sv]=Enhet misslyckades
-Name[uk]=Помилка пристрою
-Name[x-test]=xxDevice failedxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToActivateConnection]
 Name=Failed to activate connection
-Name[es]=La activación de la conexión ha fallado
-Name[nl]=Activeren van verbinding is mislukt
-Name[pl]=Nieudane nawiązywanie połączenia
-Name[pt]=Não foi possível activar a ligação
-Name[pt_BR]=Ocorreu um erro ao ativar a conexão
-Name[sk]=Zlyhalo aktivovanie pripojenia
-Name[sv]=Aktivering av anslutningen misslyckades
-Name[uk]=Не вдалося задіяти з’єднання
-Name[x-test]=xxFailed to activate connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToAddConnection]
 Name=Failed to add connection
-Name[es]=Ha ocurrido un error al añadir la conexión
-Name[nl]=Toevoegen van verbinding is mislukt
-Name[pl]=Nieudane dodawanie połączenia
-Name[pt]=Não foi possível adicionar a ligação
-Name[pt_BR]=Ocorreu um erro ao adicionar uma conexão
-Name[sk]=Zlyhalo pridanie pripojenia
-Name[sv]=Tillägg av anslutning misslyckades
-Name[uk]=Не вдалося додати з’єднання
-Name[x-test]=xxFailed to add connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToDeactivateConnection]
 Name=Failed to deactivate connection
-Name[es]=La desactivación de la conexión ha fallado
-Name[nl]=Deactiveren van verbinding is mislukt
-Name[pl]=Nieudane wyłączanie połączenia
-Name[pt]=Não foi possível desactivar a ligação
-Name[pt_BR]=Ocorreu um erro ao desativar a conexão
-Name[sv]=Inaktivering av anslutningen misslyckades
-Name[uk]=Не вдалося вимкнути з’єднання
-Name[x-test]=xxFailed to deactivate connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToRemoveConnection]
 Name=Failed to remove connection
-Name[es]=La eliminación de la conexión ha fallado
-Name[nl]=Verwijderen van verbinding is mislukt
-Name[pl]=Nieudane usuwanie połączenia
-Name[pt]=Não foi possível remover a ligação
-Name[pt_BR]=Ocorreu um erro ao remover a conexão
-Name[sv]=Borttagning av enheten misslyckades
-Name[uk]=Не вдалося вилучити з’єднання
-Name[x-test]=xxFailed to remove connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToRequestScan]
 Name=Failed to request scan
-Name[es]=La petición de la exploración ha fallado
-Name[nl]=Scan uitvoeren is mislukt
-Name[pl]=Nieudane żądanie przeszukiwania
-Name[pt]=Não foi possível pedir a sondagem
-Name[pt_BR]=Ocorreu um erro ao solicitar uma verificação
-Name[sk]=Zlyhalo vyžiadanie prehľadania
-Name[sv]=Misslyckades begäran sökning
-Name[uk]=Не вдалося виконати запит щодо сканування
-Name[x-test]=xxFailed to request scanxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToGetSecrets]
 Name=Failed to get secrets
-Name[es]=La obtención de claves secretas ha fallado
-Name[nl]=Geheimen ophalen is mislukt
-Name[pl]=Nieudane uzyskiwanie danych poufnych
-Name[pt]=Não foi possível obter as senhas
-Name[pt_BR]=Ocorreu um erro ao obter as senhas
-Name[sv]=Misslyckades hämta hemligheter
-Name[uk]=Не вдалося отримати дані для розпізнавання
-Name[x-test]=xxFailed to get secretsxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToUpdateConnection]
 Name=Failed to update connection
-Name[es]=La actualización de la conexión ha fallado
-Name[nl]=Bijwerken van verbinding is mislukt
-Name[pl]=Nieudane uaktualnianie połączenia
-Name[pt]=Não foi possível actualizar a ligação
-Name[pt_BR]=Ocorreu um erro ao atualizar a conexão
-Name[sv]=Misslyckades uppdatera enheten
-Name[uk]=Не вдалося оновити з’єднання
-Name[x-test]=xxFailed to update connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/MissingVpnPlugin]
 Name=Missing VPN plugin
-Name[cs]=Chybějící modul VPN
-Name[es]=Falta el complemento VPN
-Name[nl]=VPN-plug-in ontbreekt
-Name[pl]=Brak wtyczki VPN
-Name[pt]='Plugin' de VPN em falta
-Name[pt_BR]=Plugin de VPN ausente
-Name[sk]=Chýba VPN plugin
-Name[sv]=Saknar VPN-insticksprogram
-Name[uk]=Не вистачає додатка VPN
-Name[x-test]=xxMissing VPN pluginxx
 IconName=applications-internet
 Action=Popup

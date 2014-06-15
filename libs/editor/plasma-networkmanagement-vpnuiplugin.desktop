@@ -2,7 +2,17 @@
 Type=ServiceType
 X-KDE-ServiceType=PlasmaNetworkManagement/VpnUiPlugin
 Name=Network Management VPN UI Plugin
+Name[es]=Complemento de la interfaz de usuario de gestión de redes
+Name[nl]=Netwerkbeheer VPN UI-plugin
+Name[sv]=Insticksprogram till nätverkshantering med VPN-användargränssnitt
+Name[uk]=Додаток графічного інтерфейсу керування мережею VPN
+Name[x-test]=xxNetwork Management VPN UI Pluginxx
 Comment=Defines KDE Network Management UI Plugins
+Comment[es]=Define los complementos de la interfaz de usuario de la gestión de redes de KDE
+Comment[nl]=Definieert KDE netwerkbeheer UI-plugins
+Comment[sv]=Definierar insticksprogram för KDE:s nätverkshantering
+Comment[uk]=Визначає додатки інтерфейсу засобу керування мережею KDE
+Comment[x-test]=xxDefines KDE Network Management UI Pluginsxx
 
 [PropertyDef::X-NetworkManager-Services]
 Type=QString

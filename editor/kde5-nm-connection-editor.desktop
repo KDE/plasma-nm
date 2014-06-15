@@ -1,8 +1,23 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=kde5-nm-connection-editor
+Name[es]=kde5-nm-connection-editor
+Name[nl]=Bewerker van verbindingen voor kde5-nm
+Name[sv]=kde5-nm-connection-editor
+Name[uk]=Редактор з’єднань kde5-nm
+Name[x-test]=xxkde5-nm-connection-editorxx
 GenericName=Connection editor
+GenericName[es]=Editor de conexiones
+GenericName[nl]=Bewerker van verbindingen
+GenericName[sv]=Anslutningseditor
+GenericName[uk]=Редактор з’єднань
+GenericName[x-test]=xxConnection editorxx
 Comment=Edit your network connections
+Comment[es]=Editar las conexiones de red
+Comment[nl]=Bewerk uw netwerkverbindingen
+Comment[sv]=Redigera dina nätverksanslutningar
+Comment[uk]=Редагування ваших записів з’єднань з мережею
+Comment[x-test]=xxEdit your network connectionsxx
 Exec=kde5-nm-connection-editor
 Icon=network-defaultroute
 Type=Application

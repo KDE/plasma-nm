@@ -1,6 +1,16 @@
 [Desktop Entry]
 Name=Notifications
+Name[es]=Notificaciones
+Name[nl]=Meldingen
+Name[sv]=Underrättelser
+Name[uk]=Сповіщення
+Name[x-test]=xxNotificationsxx
 Comment=Configure the Network Management notifications
+Comment[es]=Configurar las notificaciones de la gestión de redes
+Comment[nl]=Stel de meldingen van netwerkbeheer in
+Comment[sv]=Anpassa underrättelser för nätverkshantering
+Comment[uk]=Налаштування сповіщень щодо керування мережею
+Comment[x-test]=xxConfigure the Network Management notificationsxx
 Type=Service
 Exec=kcmshell4 networkmanagement_notifications
 Icon=preferences-desktop-notification

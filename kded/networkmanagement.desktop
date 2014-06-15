@@ -1,6 +1,16 @@
 [Desktop Entry]
 Name=Plasma Networkmanagement module
+Name[es]=Modulo de gestión de redes de Plasma
+Name[nl]=Plasma module voor netwerkbeheer
+Name[sv]=Plasma nätverkshanteringsmodul
+Name[uk]=Модуль керування мережею Плазми
+Name[x-test]=xxPlasma Networkmanagement modulexx
 Comment=Provides secrets to the NetworkManager daemon
+Comment[es]=Proporciona contraseñas al demonio de NetworkManager
+Comment[nl]=Levert secrets aan de NetworkManager-daemon
+Comment[sv]=Tillhandahåller hemligheter till nätverkshanteringsdemonen
+Comment[uk]=Надає реєстраційні дані фоновій службі NetworkManager
+Comment[x-test]=xxProvides secrets to the NetworkManager daemonxx
 Type=Service
 X-KDE-ServiceTypes=KDEDModule
 X-KDE-ModuleType=Library

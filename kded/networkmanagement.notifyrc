@@ -1,33 +1,11 @@
 [Global]
 IconName=applications-internet
-Name=networkmanagement
-Name[ca]=Gestió de la xarxa
-Name[cs]=networkmanagement
-Name[es]=networkmanagement
-Name[fr]=networkmanagement
-Name[nds]=Nettwarkpleegmoduul
-Name[nl]=netwerkbeheer
-Name[pl]=zarządzanie siecią
-Name[pt]=Gestão de Rede
-Name[pt_BR]=networkmanagement
-Name[sk]=správa siete
-Name[sv]=nätverkshantering
-Name[uk]=Керування мережею
-Name[x-test]=xxnetworkmanagementxx
-Comment=Notifies about network errors
-Comment[ca]=Notifica quant als errors de la xarxa
-Comment[cs]=Oznamuje chyby sítě
-Comment[es]=Notifica sobre errores de red
-Comment[fr]=Notifie les erreurs de réseau
-Comment[nds]=Gifft över Nettwarkfehlers Bescheed
-Comment[nl]=Geeft meldingen over netwerkfouten
-Comment[pl]=Powiadamia o błędach sieci
-Comment[pt]=Notificações de erros na rede
-Comment[pt_BR]=Notificações de erros na rede
-Comment[sk]=Upozorní na sieťové chyby
-Comment[sv]=Underrättar om nätverksfel
-Comment[uk]=Сповіщає про помилки у роботі мережі
-Comment[x-test]=xxNotifies about network errorsxx
+Name=Network management
+Name[cs]=Správa sítě
+Name[x-test]=xxNetwork Managementxx
+Comment=Network management
+Comment[cs]=Správa sítě
+Comment[x-test]=xxNetwork managementxx
 
 [Event/ConnectionActivated]
 Name=Connection activated
@@ -63,7 +41,7 @@ Action=Popup
 
 [Event/ConnectionAdded]
 Name=Connection added
-Name[ca]=S'ha afegit una connexió 
+Name[ca]=S'ha afegit una connexió
 Name[es]=Conexión añadida
 Name[nds]=Verbinnen toföögt
 Name[nl]=Verbinding toegevoegd

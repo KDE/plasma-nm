@@ -198,7 +198,7 @@ void ConnectionEditor::initializeMenu()
     KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
     KStandardAction::quit(this, SLOT(close()), actionCollection());
 
-    createGUI();
+    setupGUI(QSize(480, 480));
 
     setAutoSaveSettings();
 

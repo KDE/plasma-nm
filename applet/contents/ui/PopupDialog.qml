@@ -18,11 +18,11 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.0
-import QtQuick.Controls 1.1 as QtQuickControls
+import QtQuick 2.2
+import QtQuick.Controls 1.2 as QtQuickControls
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.networkmanagement 0.1 as PlasmaNM
+import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 FocusScope {
 
@@ -49,7 +49,6 @@ FocusScope {
             top: parent.top;
         }
     }
-
 
     QtQuickControls.ScrollView {
         id: scrollView;

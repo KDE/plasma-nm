@@ -54,15 +54,7 @@ public:
      * @param type the type of the network interface
      */
     static QString interfaceTypeLabel(const NetworkManager::Device::Type type, const NetworkManager::Device::Ptr iface);
-#if 0
 
-    /**
-     * @return a human-readable name for a given network interface according to the configured
-     * naming style
-     * @param uni uni of the network interface
-     */
-    static QString interfaceNameLabel(const QString & uni);
-#endif
     /**
      * @return a human-readable name for a given network interface according to the configured
      * naming style
@@ -70,6 +62,7 @@ public:
      * @param interfaceName name of the network interface (eg eth0)
      */
     static QString prettyInterfaceName(NetworkManager::Device::Type type, const QString &interfaceName);
+
     /**
      * @return a human-readable description of the connection state of a given network interface
      * @param state The connection state

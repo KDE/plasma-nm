@@ -18,7 +18,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.0
+import QtQuick 2.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 PlasmaComponents.ListItem {

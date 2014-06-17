@@ -88,7 +88,6 @@ add_subdirectory(applet)
 add_subdirectory(editor)
 add_subdirectory(kded)
 add_subdirectory(libs)
-add_subdirectory(settings)
 add_subdirectory(vpn)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

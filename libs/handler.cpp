@@ -1,5 +1,5 @@
 /*
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -77,7 +77,6 @@ void Handler::activateConnection(const QString& connection, const QString& devic
             const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin",
                                                                           QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()));
             if (services.isEmpty()) {
-                // TODO
                 kWarning() << "VPN" << vpnSetting->serviceType() << "not found, skipping";
                 KNotification *notification = new KNotification("MissingVpnPlugin", KNotification::CloseOnTimeout, this);
                 notification->setComponentName("networkmanagement");

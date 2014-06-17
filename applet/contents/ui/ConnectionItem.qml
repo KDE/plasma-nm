@@ -18,11 +18,11 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.0
+import QtQuick 2.2
 import org.kde.kquickcontrolsaddons 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.networkmanagement 0.1 as PlasmaNM
+import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 PlasmaComponents.ListItem {
     id: connectionItem;

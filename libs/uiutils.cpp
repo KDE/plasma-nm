@@ -112,65 +112,6 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
     return deviceText;
 }
 
-#if 0
-QString UiUtils::iconName(const NetworkManager::Device::Ptr &device)
-{
-    if (!device) {
-        return QLatin1String("dialog-error");
-    }
-    QString icon;
-
-    switch (device->type()) {
-        case NetworkManager::Device::Ethernet: {
-            icon = "network-wired";
-
-            NetworkManager::WiredDevice::Ptr wiredIface = device.objectCast<NetworkManager::WiredDevice>();
-            if (wiredIface && wiredIface->carrier()) {
-                icon = "network-wired-activated";
-            }
-            break;
-        }
-        case NetworkManager::Device::Wifi: {
-            QString strength = "00";
-            NetworkManager::WirelessDevice::Ptr wiface = device.objectCast<NetworkManager::WirelessDevice>();
-
-            if (wiface) {
-                NetworkManager::AccessPoint::Ptr ap = wiface->activeAccessPoint();
-                if (ap) {
-                    int s = ap->signalStrength();
-                    if (s < 13) {
-                        strength = "00";
-                    } else if (s < 38) {
-                        strength = "25";
-                    } else if (s < 63) {
-                        strength = "50";
-                    } else if (s < 88) {
-                        strength = "75";
-                    } else if (s >= 88) {
-                        strength = "100";
-                    }
-                } else {
-                        strength = "00";
-                }
-            }
-            icon = "network-wireless-" + strength;
-            break;
-        }
-        case NetworkManager::Device::Bluetooth:
-            icon = "preferences-system-bluetooth";
-            break;
-        case NetworkManager::Device::Modem:
-            icon = "phone";
-            break;
-        default:
-            icon = "network-wired";
-            break;
-    }
-    kDebug() << "icon:" << icon;
-    return icon;
-}
-#endif
-
 QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type, QString &title)
 {
     QString text;

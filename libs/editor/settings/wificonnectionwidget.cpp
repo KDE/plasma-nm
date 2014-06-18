@@ -32,6 +32,8 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
     SettingWidget(setting, parent, f),
     m_ui(new Ui::WifiConnectionWidget)
 {
+    qsrand(QTime::currentTime().msec());
+
     m_ui->setupUi(this);
 
     connect(m_ui->btnRandomMacAddr, SIGNAL(clicked()), SLOT(generateRandomClonedMac()));

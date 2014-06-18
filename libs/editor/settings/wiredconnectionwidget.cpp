@@ -29,6 +29,8 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
     SettingWidget(setting, parent, f),
     m_widget(new Ui::WiredConnectionWidget)
 {
+    qsrand(QTime::currentTime().msec());
+
     m_widget->setupUi(this);
     m_widget->speedLabel->setHidden(true);
     m_widget->speed->setHidden(true);

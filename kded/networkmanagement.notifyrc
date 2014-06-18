@@ -15,6 +15,7 @@ Name[fr]=networkmanagement
 Name[hu]=hálózatkezelés
 Name[it]=gestione di rete
 Name[lt]=tinklo valdymas
+Name[nds]=Nettwarkpleegmoduul
 Name[nl]=netwerkbeheer
 Name[pl]=zarządzanie siecią
 Name[pt]=Gestão de Rede
@@ -42,6 +43,7 @@ Comment[fr]=Notifie les erreurs de réseau
 Comment[hu]=Értesít a hálózati hibákról
 Comment[it]=Notifica gli errori di rete
 Comment[lt]=Praneša apie tinklo klaidas
+Comment[nds]=Gifft över Nettwarkfehlers Bescheed
 Comment[nl]=Geeft meldingen over netwerkfouten
 Comment[pl]=Powiadamia o błędach sieci
 Comment[pt]=Notificações de erros na rede
@@ -57,8 +59,13 @@ Comment[zh_CN]=提示网络错误
 
 [Event/ConnectionActivated]
 Name=Connection activated
+Name[ca]=Connexió activada
+Name[fi]=Yhteys muodostettu
+Name[nds]=Verbinnen anmaakt
 Name[nl]=Verbinding geactiveerd
 Name[pt]=Ligação activada
+Name[pt_BR]=Conexão ativada
+Name[sv]=Anslutning aktiverad
 Name[uk]=З’єднання задіяно
 Name[x-test]=xxConnection activatedxx
 IconName=applications-internet
@@ -66,8 +73,13 @@ Action=Popup
 
 [Event/ConnectionDeactivated]
 Name=Connection deactivated
+Name[ca]=Connexió desactivada
+Name[fi]=Yhteys katkaistu
+Name[nds]=Verbinnen utmaakt
 Name[nl]=Verbinding gedeactiveerd
 Name[pt]=Ligação desactivada
+Name[pt_BR]=Conexão desativada
+Name[sv]=Anslutning nerkopplad
 Name[uk]=З’єднання вимкнено
 Name[x-test]=xxConnection deactivatedxx
 IconName=applications-internet
@@ -75,8 +87,13 @@ Action=Popup
 
 [Event/DeviceFailed]
 Name=Device failed
+Name[ca]=El dispositiu ha fallat
+Name[fi]=Laite lakkasi toimimasta
+Name[nds]=Reedschap-Fehler
 Name[nl]=Apparaat is mislukt
 Name[pt]=Não foi possível activar o dispositivo
+Name[pt_BR]=Falha no dispositivo
+Name[sv]=Enhet misslyckades
 Name[uk]=Помилка пристрою
 Name[x-test]=xxDevice failedxx
 IconName=applications-internet
@@ -84,8 +101,13 @@ Action=Popup
 
 [Event/FailedToActivateConnection]
 Name=Failed to activate connection
+Name[ca]=Ha fallat en activar la connexió
+Name[fi]=Yhteyden muodostaminen epäonnistui
+Name[nds]=Verbinnen lett sik nich anmaken
 Name[nl]=Activeren van verbinding is mislukt
 Name[pt]=Não foi possível activar a ligação
+Name[pt_BR]=Ocorreu um erro ao ativar a conexão
+Name[sv]=Aktivering av anslutning misslyckades
 Name[uk]=Не вдалося задіяти з’єднання
 Name[x-test]=xxFailed to activate connectionxx
 IconName=applications-internet
@@ -93,8 +115,13 @@ Action=Popup
 
 [Event/FailedToAddConnection]
 Name=Failed to add connection
+Name[ca]=Ha fallat en afegir la connexió
+Name[fi]=Yhteyden lisääminen epäonnistui
+Name[nds]=Verbinnen lett sik nich tofögen
 Name[nl]=Toevoegen van verbinding is mislukt
 Name[pt]=Não foi possível adicionar a ligação
+Name[pt_BR]=Ocorreu um erro ao adicionar a conexão
+Name[sv]=Tillägg av anslutning misslyckades
 Name[uk]=Не вдалося додати з’єднання
 Name[x-test]=xxFailed to add connectionxx
 IconName=applications-internet
@@ -102,8 +129,13 @@ Action=Popup
 
 [Event/FailedToRequestScan]
 Name=Failed to request scan
+Name[ca]=Ha fallat en demanar escanejar
+Name[fi]=Verkkojen hakemispyyntö epäonnistui
+Name[nds]=Dörkieken lett sik nich anfragen
 Name[nl]=Scan uitvoeren is mislukt
 Name[pt]=Não foi possível pedir a sondagem
+Name[pt_BR]=Ocorreu um erro ao solicitar a verificação
+Name[sv]=Begäran om sökning misslyckades
 Name[uk]=Не вдалося виконати запит щодо сканування
 Name[x-test]=xxFailed to request scanxx
 IconName=applications-internet
@@ -124,6 +156,7 @@ Name[fr]=Module VPN manquant
 Name[hu]=Hiányzó VPN bővítmény
 Name[it]=Estensione VPN mancante
 Name[lt]=Trūksta VPN įskiepio
+Name[nds]=VPN-Moduul fehlt
 Name[nl]=VPN-plug-in ontbreekt
 Name[pl]=Brak wtyczki VPN
 Name[pt]='Plugin' de VPN em falta

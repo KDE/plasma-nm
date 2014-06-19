@@ -1,3 +1,5 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-libs\")
+
 set(plasmanm_internal_SRCS
     models/appletproxymodel.cpp
     models/editoridentitymodel.cpp

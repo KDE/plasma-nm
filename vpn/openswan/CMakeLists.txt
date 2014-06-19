@@ -1,10 +1,12 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-openswanui\")
+
 set(openswan_SRCS
     openswan.cpp
     openswanwidget.cpp
     openswanauth.cpp
 )
 
-qt5_wrap_ui(openswan_SRCS openswan.ui openswanauth.ui)
+ki18n_wrap_ui(openswan_SRCS openswan.ui openswanauth.ui)
 
 add_library(plasmanetworkmanagement_openswanui ${openswan_SRCS})
 

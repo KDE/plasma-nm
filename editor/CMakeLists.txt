@@ -7,7 +7,7 @@ set(connectioneditor_SRCS
    connectioneditor.cpp
 )
 
-qt5_wrap_ui(connectioneditor_SRCS
+ki18n_wrap_ui(connectioneditor_SRCS
     ui/connectioneditor.ui
 )
 

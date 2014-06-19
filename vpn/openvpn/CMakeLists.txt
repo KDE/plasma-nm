@@ -1,3 +1,4 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-openvpnui\")
 
 # Needed to build this module
 remove_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
@@ -9,7 +10,7 @@ set(openvpn_SRCS
     openvpnadvancedwidget.cpp
 )
 
-qt5_wrap_ui(openvpn_SRCS openvpn.ui openvpnauth.ui openvpnadvanced.ui)
+ki18n_wrap_ui(openvpn_SRCS openvpn.ui openvpnauth.ui openvpnadvanced.ui)
 
 add_library(plasmanetworkmanagement_openvpnui ${openvpn_SRCS})
 

@@ -38,9 +38,6 @@
 #include <QDBusConnectionInterface>
 #include <QDBusReply>
 
-#define TRANSLATION_DOMAIN "plasmanetworkmanagement-kded"
-#include <KLocalizedString>
-
 K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManagementService>();)
 
 class NetworkManagementServicePrivate
@@ -52,9 +49,6 @@ class NetworkManagementServicePrivate
 NetworkManagementService::NetworkManagementService(QObject * parent, const QVariantList&)
     : KDEDModule(parent), d_ptr(new NetworkManagementServicePrivate)
 {
-#warning "port translatin catalog away from KGlobal::insertCatalog"
-    KGlobal::locale()->insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard
-
     QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasmashell");
     if (reply.value()) {
         doInitialization();

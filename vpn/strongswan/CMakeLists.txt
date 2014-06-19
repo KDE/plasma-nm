@@ -1,10 +1,12 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-strongswanui\")
+
 set(strongswan_SRCS
    strongswan.cpp
    strongswanwidget.cpp
    strongswanauth.cpp
    )
 
-qt5_wrap_ui(strongswan_SRCS strongswanprop.ui strongswanauth.ui)
+ki18n_wrap_ui(strongswan_SRCS strongswanprop.ui strongswanauth.ui)
 
 add_library(plasmanetworkmanagement_strongswanui ${strongswan_SRCS})
 

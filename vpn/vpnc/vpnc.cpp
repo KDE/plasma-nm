@@ -40,9 +40,6 @@
 #include "vpncwidget.h"
 #include "vpncauth.h"
 
-#define TRANSLATION_DOMAIN "plasmanetworkmanagement_vpncui"
-#include <KLocalizedString>
-
 VpncUiPluginPrivate::VpncUiPluginPrivate()
 {
     decryptedPasswd.clear();

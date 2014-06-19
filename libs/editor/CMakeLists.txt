@@ -53,7 +53,7 @@ endif()
 #     settings/teamwidget.cpp)
 # endif()
 
-qt5_wrap_ui(plasmanm_editor_SRCS
+ki18n_wrap_ui(plasmanm_editor_SRCS
     settings/ui/802-1x.ui
 #     settings/ui/bond.ui
 #     settings/ui/bridge.ui

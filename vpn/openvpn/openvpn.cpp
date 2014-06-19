@@ -35,9 +35,6 @@
 
 #include "nm-openvpn-service.h"
 
-#define TRANSLATION_DOMAIN "plasmanetworkmanagement_openvpnui"
-#include <KLocalizedString>
-
 K_PLUGIN_FACTORY_WITH_JSON(OpenVpnUiPluginFactory, "plasmanetworkmanagement_openvpnui.json", registerPlugin<OpenVpnUiPlugin>();)
 
 #define AUTH_TAG "auth"

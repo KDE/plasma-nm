@@ -1,3 +1,5 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-kded\")
+
 include_directories(${CMAKE_SOURCE_DIR}/libs/editor/widgets)
 
 if (WITH_MODEMMANAGER_SUPPORT)
@@ -10,7 +12,7 @@ if (WITH_MODEMMANAGER_SUPPORT)
         modemmonitor.cpp
         pindialog.cpp
     )
-    qt5_wrap_ui(kded_networkmanagement_SRCS
+    ki18n_wrap_ui(kded_networkmanagement_SRCS
         pinwidget.ui
         passworddialog.ui
 
@@ -23,7 +25,7 @@ else()
         service.cpp
         bluetoothmonitor.cpp
     )
-    qt5_wrap_ui(kded_networkmanagement_SRCS
+    ki18n_wrap_ui(kded_networkmanagement_SRCS
         passworddialog.ui
     )
 endif()

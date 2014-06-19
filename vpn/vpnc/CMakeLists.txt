@@ -1,3 +1,5 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-vpncui\")
+
 set(vpnc_SRCS
     vpnc.cpp
     vpncwidget.cpp
@@ -5,7 +7,7 @@ set(vpnc_SRCS
     vpncauth.cpp
 )
 
-qt5_wrap_ui(vpnc_SRCS vpnc.ui vpncadvanced.ui vpncauth.ui)
+ki18n_wrap_ui(vpnc_SRCS vpnc.ui vpncadvanced.ui vpncauth.ui)
 
 add_library(plasmanetworkmanagement_vpncui ${vpnc_SRCS})
 

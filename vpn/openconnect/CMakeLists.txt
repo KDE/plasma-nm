@@ -1,3 +1,5 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-openconnectui\")
+
 set (MINIMUM_OPENCONNECT_VERSION_REQUIRED "3.99")
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_MODULE_PATH})
@@ -31,7 +33,7 @@ if (OPENCONNECT_FOUND)
         openconnectauthworkerthread.cpp
         )
 
-        qt5_wrap_ui(openconnect_SRCS openconnectprop.ui openconnectauth.ui)
+        ki18n_wrap_ui(openconnect_SRCS openconnectprop.ui openconnectauth.ui)
 
         add_library(plasmanetworkmanagement_openconnectui ${openconnect_SRCS})
 

@@ -1,10 +1,12 @@
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-pptpui\")
+
 set(pptp_SRCS
    pptp.cpp
    pptpwidget.cpp
    pptpauth.cpp
    )
 
-qt5_wrap_ui(pptp_SRCS pptpprop.ui pptpadvanced.ui pptpauth.ui)
+ki18n_wrap_ui(pptp_SRCS pptpprop.ui pptpadvanced.ui pptpauth.ui)
 
 add_library(plasmanetworkmanagement_pptpui ${pptp_SRCS})
 

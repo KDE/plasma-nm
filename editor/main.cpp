@@ -31,6 +31,8 @@
 
 int main(int argc, char *argv[])
 {
+    KLocalizedString::setApplicationDomain("kde5-nm-connection-editor");
+
     QApplication app(argc, argv);
     app.setWindowIcon(QIcon::fromTheme("network-defaultroute"));
 
@@ -47,10 +49,6 @@ int main(int argc, char *argv[])
     about.setProductName("plasma-nm/editor");
 
     KAboutData::setApplicationData(about);
-
-#warning "Translations for kde5-nm-connection-editor disabled"
-//     KGlobal::locale()->insertCatalog("libplasmanm_editor");  // setting widgets
-//     KGlobal::locale()->insertCatalog("plasma_applet_org.kde.plasma.networkmanagement");  // mobile wizard, UiUtils, ...
 
     ConnectionEditor * editor = new ConnectionEditor();
     editor->show();

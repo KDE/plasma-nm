@@ -26,9 +26,6 @@
 
 #include <KPluginFactory>
 
-#define TRANSLATION_DOMAIN "plasmanetworkmanagement_strongswanui"
-#include <KLocalizedString>
-
 K_PLUGIN_FACTORY_WITH_JSON(StrongswanUiPluginFactory, "plasmanetworkmanagement_strongswanui.json", registerPlugin<StrongswanUiPlugin>();)
 
 StrongswanUiPlugin::StrongswanUiPlugin(QObject * parent, const QVariantList &)

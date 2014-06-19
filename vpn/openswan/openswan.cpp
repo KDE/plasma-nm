@@ -25,9 +25,6 @@
 #include "openswanwidget.h"
 #include "openswanauth.h"
 
-#define TRANSLATION_DOMAIN "plasmanetworkmanagement_openswanui"
-#include <KLocalizedString>
-
 K_PLUGIN_FACTORY_WITH_JSON(OpenswanUiPluginFactory, "plasmanetworkmanagement_openswanui.json", registerPlugin<OpenswanUiPlugin>(); )
 
 OpenswanUiPlugin::OpenswanUiPlugin(QObject * parent, const QVariantList &):

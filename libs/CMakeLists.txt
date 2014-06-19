@@ -22,7 +22,6 @@ target_link_libraries(plasmanm_internal
     KF5::Completion
     KF5::I18n
     KF5::IconThemes
-    KF5::KDELibs4Support
     KF5::Plasma
     KF5::Notifications
     Qt5::Xml

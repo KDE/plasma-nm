@@ -30,7 +30,6 @@ target_link_libraries(kde5-nm-connection-editor
     KF5::Wallet
     KF5::ItemViews
     KF5::XmlGui
-    KF5::KDELibs4Support
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)

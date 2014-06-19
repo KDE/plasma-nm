@@ -23,7 +23,6 @@
 #include "uiutils.h"
 
 // KDE
-#include <KDebug>
 #include <KLocale>
 
 #include <NetworkManagerQt/BluetoothDevice>
@@ -99,7 +98,7 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
                 deviceText = i18nc("title of the interface widget in nm's popup", "Mobile Broadband");
                 break;
             case NetworkManager::ModemDevice::NoCapability:
-                kWarning() << "Unhandled modem sub type: NetworkManager::ModemDevice::NoCapability";
+                qWarning() << "Unhandled modem sub type: NetworkManager::ModemDevice::NoCapability";
                 break;
             }
         }
@@ -492,7 +491,7 @@ QString UiUtils::convertLockReasonToString(MMModemLock reason)
 QString UiUtils::convertNspTypeToString(WimaxNsp::NetworkType type)
 {
     switch (type) {
-        case WimaxNsp::Unknown: return i18nc("Unknown", "Unknown Wimax NSP type");
+        case WimaxNsp::Unknown: return i18nc("unknown Wimax NSP type", "Unknown");
         case WimaxNsp::Home: return i18n("Home");
         case WimaxNsp::Partner: return i18n("Partner");
         case WimaxNsp::RoamingPartner: return i18n("Roaming partner");

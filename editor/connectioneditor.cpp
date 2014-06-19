@@ -34,15 +34,14 @@
 #include <QFileDialog>
 #include <QStandardPaths>
 #include <QUrl>
+#include <QAction>
+#include <QIcon>
 
 #include <KAcceleratorManager>
-#include <KAction>
 #include <KActionCollection>
 #include <KConfig>
 #include <KConfigGroup>
-#include <KIcon>
 #include <KFilterProxySearchLine>
-#include <KLocale>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KService>
@@ -111,7 +110,7 @@ ConnectionEditor::~ConnectionEditor()
 
 void ConnectionEditor::initializeMenu()
 {
-    m_menu = new KActionMenu(KIcon("list-add"), i18n("Add"), this);
+    m_menu = new KActionMenu(QIcon::fromTheme("list-add"), i18n("Add"), this);
     m_menu->menu()->setSeparatorsCollapsible(false);
     m_menu->setDelayed(false);
 
@@ -184,22 +183,22 @@ void ConnectionEditor::initializeMenu()
 
     actionCollection()->addAction("add_connection", m_menu);
 
-    KAction * kAction = new KAction(KIcon("configure"), i18n("Edit..."), this);
+    QAction * kAction = new QAction(QIcon::fromTheme("configure"), i18n("Edit..."), this);
     kAction->setEnabled(false);
     connect(kAction, SIGNAL(triggered()), SLOT(editConnection()));
     actionCollection()->addAction("edit_connection", kAction);
 
-    kAction = new KAction(KIcon("edit-delete"), i18n("Delete"), this);
+    kAction = new QAction(QIcon::fromTheme("edit-delete"), i18n("Delete"), this);
     kAction->setEnabled(false);
-    kAction->setShortcut(Qt::Key_Delete);
+    kAction->setShortcut(QKeySequence::Delete);
     connect(kAction, SIGNAL(triggered()), SLOT(removeConnection()));
     actionCollection()->addAction("delete_connection", kAction);
 
-    kAction = new KAction(KIcon("document-import"), i18n("Import VPN..."), this);
+    kAction = new QAction(QIcon::fromTheme("document-import"), i18n("Import VPN..."), this);
     actionCollection()->addAction("import_vpn", kAction);
     connect(kAction, SIGNAL(triggered()), SLOT(importVpn()));
 
-    kAction = new KAction(KIcon("document-export"), i18n("Export VPN..."), this);
+    kAction = new QAction(QIcon::fromTheme("document-export"), i18n("Export VPN..."), this);
     actionCollection()->addAction("export_vpn", kAction);
     kAction->setEnabled(false);
     connect(kAction, SIGNAL(triggered()), SLOT(exportVpn()));
@@ -412,9 +411,9 @@ void ConnectionEditor::slotContextMenuRequested(const QPoint&)
     const bool isAvailable = (NetworkModelItem::ItemType)index.data(NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::AvailableConnection;
 
     if (isAvailable && !isActive) {
-        menu->addAction(KIcon("user-online"), i18n("Connect"), this, SLOT(connectConnection()));
+        menu->addAction(QIcon::fromTheme("user-online"), i18n("Connect"), this, SLOT(connectConnection()));
     } else if (isAvailable && isActive) {
-        menu->addAction(KIcon("user-offline"), i18n("Disconnect"), this, SLOT(disconnectConnection()));
+        menu->addAction(QIcon::fromTheme("user-offline"), i18n("Disconnect"), this, SLOT(disconnectConnection()));
     }
     menu->addAction(actionCollection()->action("edit_connection"));
     menu->addAction(actionCollection()->action("delete_connection"));

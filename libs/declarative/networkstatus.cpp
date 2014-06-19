@@ -150,9 +150,9 @@ void NetworkStatus::changeActiveConnections()
                     status = i18n("Connecting to %1", active->connection()->name());
                 }
                 if (active->default4() || active->default6()) {
-                    activeConnections += QString(formatDefault).arg(devName, conType, status);
+                    activeConnections += formatDefault.arg(devName, conType, status);
                 } else {
-                    activeConnections += QString(format).arg(devName, conType, status);
+                    activeConnections += format.arg(devName, conType, status);
                 }
             }
         }

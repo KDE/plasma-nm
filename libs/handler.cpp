@@ -36,11 +36,11 @@
 
 #include <QInputDialog>
 #include <QDBusError>
+#include <QIcon>
 
 #include <KNotification>
 #include <KLocalizedString>
 #include <KUser>
-#include <KIcon>
 #include <KDebug>
 #include <KProcess>
 #include <KService>
@@ -82,7 +82,7 @@ void Handler::activateConnection(const QString& connection, const QString& devic
                 notification->setComponentName("networkmanagement");
                 notification->setTitle(con->name());
                 notification->setText(i18n("Missing VPN plugin"));
-                notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+                notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(64, 64));
                 notification->sendEvent();
                 return;
             }
@@ -439,7 +439,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
 
         if (notification) {
             notification->setText(error);
-            notification->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+            notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(64, 64));
             notification->sendEvent();
         }
     } else {
@@ -469,7 +469,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
         }
 
         if (notification) {
-            notification->setPixmap(KIcon("dialog-information").pixmap(64, 64));
+            notification->setPixmap(QIcon::fromTheme("dialog-information").pixmap(64, 64));
             notification->sendEvent();
         }
     }

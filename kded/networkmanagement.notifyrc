@@ -1,7 +1,21 @@
 [Global]
 IconName=applications-internet
 Name=Network management
+Name[es]=Gestión de redes
+Name[nl]=Netwerkbeheer
+Name[pt_BR]=Gerenciamento de redes
+Name[sk]=Správa siete
+Name[sv]=Nätverkshantering
+Name[uk]=Керування мережею
+Name[x-test]=xxNetwork managementxx
 Comment=Network management
+Comment[es]=Gestión de redes
+Comment[nl]=Netwerkbeheer
+Comment[pt_BR]=Gerenciamento de redes
+Comment[sk]=Správa siete
+Comment[sv]=Nätverkshantering
+Comment[uk]=Керування мережею
+Comment[x-test]=xxNetwork managementxx
 
 [Event/ConnectionActivated]
 Name=Connection activated

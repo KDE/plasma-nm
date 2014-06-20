@@ -83,6 +83,15 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
     if (role == Qt::DisplayRole) {
         switch (column) {
         case 0:
+            if (type == NetworkManager::ConnectionSettings::Infiniband ||
+                type == NetworkManager::ConnectionSettings::Bond ||
+                type == NetworkManager::ConnectionSettings::Bridge ||
+#if NM_CHECK_VERSION(0, 9, 9)
+                type == NetworkManager::ConnectionSettings::Team ||
+#endif
+                type == NetworkManager::ConnectionSettings::Vlan) {
+                return QString(connectionName + " (" + NetworkManager::ConnectionSettings::typeAsString(type) + ")");
+            }
             return connectionName;
         case 1:
             return lastUsed;

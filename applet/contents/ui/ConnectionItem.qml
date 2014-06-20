@@ -27,16 +27,17 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 PlasmaComponents.ListItem {
     id: connectionItem;
 
+    property bool expanded: visibleDetails || visiblePasswordDialog;
+    property bool visibleDetails: false;
+    property bool visiblePasswordDialog: false;
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
                                                (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
                                                 SecurityType == PlasmaNM.Enums.Wpa2Psk);
 
-    property bool visibleDetails: false;
-    property bool visiblePasswordDialog: false;
 
-    property int baseHeight: connectionItemBase.height + units.gridUnit;
+    property int baseHeight;
 
-    height: (visibleDetails || visiblePasswordDialog) ? baseHeight + expandableComponentLoader.height : baseHeight;
+    height: expanded ? baseHeight + expandableComponentLoader.height : baseHeight;
     checked: ListView.isCurrentItem;
     enabled: true;
 
@@ -46,7 +47,8 @@ PlasmaComponents.ListItem {
         anchors {
             left: parent.left;
             right: parent.right;
-            top: parent.top;
+            top: expanded ? parent.top : undefined;
+            verticalCenter: expanded ? undefined : parent.verticalCenter;
         }
 
         height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height);
@@ -131,6 +133,10 @@ PlasmaComponents.ListItem {
 
             onClicked: changeState();
         }
+
+        Component.onCompleted: {
+            baseHeight = connectionItemBase.height + units.gridUnit / 3;
+        }
     }
 
     Loader {
@@ -140,7 +146,7 @@ PlasmaComponents.ListItem {
             left: parent.left;
             right: parent.right;
             top: connectionItemBase.bottom;
-            topMargin: units.gridUnit / 2;
+            topMargin: units.gridUnit / 3;
         }
     }
 
@@ -148,7 +154,7 @@ PlasmaComponents.ListItem {
         id: detailsComponent;
 
         Item {
-            height: childrenRect.height + units.gridUnit / 2;
+            height: childrenRect.height + units.gridUnit / 3;
 
             PlasmaCore.SvgItem {
                 id: detailsSeparator;

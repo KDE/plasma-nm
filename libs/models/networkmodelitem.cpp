@@ -233,7 +233,11 @@ QString NetworkModelItem::icon() const
             }
             break;
         default:
-            return "network-wired";
+            if (connectionState() == NetworkManager::ActiveConnection::Activated) {
+                return "network-wired-activated";
+            } else {
+                return "network-wired";
+            }
             break;
     }
 

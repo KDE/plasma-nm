@@ -247,6 +247,7 @@ QString NetworkModelItem::icon() const
 NetworkModelItem::ItemType NetworkModelItem::itemType() const
 {
     if (!m_devicePath.isEmpty() ||
+        m_type == NetworkManager::ConnectionSettings::Bond || 
         ((NetworkManager::status() == NetworkManager::Connected ||
           NetworkManager::status() == NetworkManager::ConnectedLinkLocal ||
           NetworkManager::status() == NetworkManager::ConnectedSiteOnly) && m_type == NetworkManager::ConnectionSettings::Vpn)) {

@@ -229,6 +229,7 @@ void BondWidget::editBond()
         qDebug() << "Editing bonded connection" << currentItem->text() << uuid;
         QPointer<ConnectionDetailEditor> bondEditor = new ConnectionDetailEditor(connection->settings(), this);
         if (bondEditor->exec() == QDialog::Accepted) {
+            connection->update(bondEditor->setting());
             connect(connection.data(), SIGNAL(updated()), this, SLOT(populateBonds()));
         }
 

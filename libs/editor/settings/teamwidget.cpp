@@ -25,6 +25,7 @@
 #include <QDebug>
 #include <QDesktopServices>
 #include <QFileDialog>
+#include <QDBusPendingReply>
 
 #include <NetworkManagerQt/GenericTypes>
 #include <NetworkManagerQt/Connection>
@@ -106,12 +107,21 @@ void TeamWidget::addTeam(QAction *action)
     qDebug() << "Master UUID:" << m_uuid;
     qDebug() << "Slave type:" << type();
 
-    QPointer<ConnectionDetailEditor> teamEditor = new ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType(action->data().toInt()),
-                                                                               this, m_uuid, type());
+    NetworkManager::ConnectionSettings::ConnectionType connectionType = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(action->data().toInt());
+    NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(connectionType));
+    connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+    connectionSettings->setMaster(m_uuid);
+    connectionSettings->setSlaveType(type());
+    connectionSettings->setAutoconnect(false);
+
+    QPointer<ConnectionDetailEditor> teamEditor = new ConnectionDetailEditor(connectionSettings, true);
+
     if (teamEditor->exec() == QDialog::Accepted) {
         qDebug() << "Saving slave connection";
-        connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
-                this, SLOT(teamAddComplete(QString,bool,QString)));
+        qDebug() << teamEditor->setting();
+        QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(teamEditor->setting());
+        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+        connect(watcher, &QDBusPendingCallWatcher::finished, this, &TeamWidget::teamAddComplete);
     }
 
     if (teamEditor) {
@@ -127,23 +137,22 @@ void TeamWidget::currentTeamChanged(QListWidgetItem *current, QListWidgetItem *p
     m_ui->btnDelete->setEnabled(current);
 }
 
-void TeamWidget::teamAddComplete(const QString &uuid, bool success, const QString &msg)
+void TeamWidget::teamAddComplete(QDBusPendingCallWatcher * watcher)
 {
-    qDebug() << Q_FUNC_INFO << uuid << success << msg;
+    QDBusPendingReply<QDBusObjectPath> reply = *watcher;
 
-    // find the slave connection with matching UUID
-    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
-    if (connection && connection->settings()->master() == m_uuid && success) {
-        const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
-        QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->teams);
-        slaveItem->setData(Qt::UserRole, uuid);
-        slotWidgetChanged();
+    if (reply.isValid()) {
+        // find the slave connection with matching UUID
+        NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(reply.value().path());
+        if (connection && connection->settings()->master() == m_uuid) {
+            const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
+            QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->teams);
+            slaveItem->setData(Qt::UserRole, connection->uuid());
+            slotWidgetChanged();
+        }
     } else {
-        qWarning() << "Teamed connection not added:" << msg;
+        qWarning() << "Teamed connection not added:" << reply.error().message();
     }
-
-    disconnect(NetworkManager::settingsNotifier(), SIGNAL(connectionAddComplete(QString,bool,QString)),
-               this, SLOT(teamAddComplete(QString,bool,QString)));
 }
 
 void TeamWidget::editTeam()
@@ -159,6 +168,7 @@ void TeamWidget::editTeam()
         qDebug() << "Editing teamed connection" << currentItem->text() << uuid;
         QPointer<ConnectionDetailEditor> teamEditor = new ConnectionDetailEditor(connection->settings(), this);
         if (teamEditor->exec() == QDialog::Accepted) {
+            connection->update(teamEditor->setting());
             connect(connection.data(), SIGNAL(updated()), this, SLOT(populateTeams()));
         }
 

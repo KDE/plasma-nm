@@ -250,6 +250,9 @@ NetworkModelItem::ItemType NetworkModelItem::itemType() const
         m_type == NetworkManager::ConnectionSettings::Bond ||
         m_type == NetworkManager::ConnectionSettings::Bridge ||
         m_type == NetworkManager::ConnectionSettings::Vlan ||
+#if NM_CHECK_VERSION(0, 9, 9)
+        m_type == NetworkManager::ConnectionSettings::Team ||
+#endif
         ((NetworkManager::status() == NetworkManager::Connected ||
           NetworkManager::status() == NetworkManager::ConnectedLinkLocal ||
           NetworkManager::status() == NetworkManager::ConnectedSiteOnly) && m_type == NetworkManager::ConnectionSettings::Vpn)) {

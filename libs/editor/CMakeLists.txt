@@ -47,11 +47,11 @@ if (WITH_MODEMMANAGER_SUPPORT)
         mobileproviders.cpp)
 endif()
 
-# if (${NETWORKMANAGER_VERSION} VERSION_EQUAL 0.9.9.0 OR ${NETWORKMANAGER_VERSION} VERSION_GREATER 0.9.9.0)
-# set(plasmanm_editor_SRCS
-#     ${plasmanm_editor_SRCS}
-#     settings/teamwidget.cpp)
-# endif()
+if (${NETWORKMANAGER_VERSION} VERSION_EQUAL 0.9.9.0 OR ${NETWORKMANAGER_VERSION} VERSION_GREATER 0.9.9.0)
+set(plasmanm_editor_SRCS
+    ${plasmanm_editor_SRCS}
+    settings/teamwidget.cpp)
+endif()
 
 ki18n_wrap_ui(plasmanm_editor_SRCS
     settings/ui/802-1x.ui
@@ -66,7 +66,7 @@ ki18n_wrap_ui(plasmanm_editor_SRCS
     settings/ui/ipv6.ui
     settings/ui/ppp.ui
     settings/ui/pppoe.ui
-#     settings/ui/team.ui
+    settings/ui/team.ui
     settings/ui/vlan.ui
     settings/ui/team.ui
     settings/ui/wificonnectionwidget.ui

@@ -24,6 +24,7 @@
 #include <QWidget>
 #include <QMenu>
 #include <QListWidgetItem>
+#include <QDBusPendingCallWatcher>
 
 #include "settingwidget.h"
 
@@ -53,7 +54,7 @@ public:
 private slots:
     void addTeam(QAction * action);
     void currentTeamChanged(QListWidgetItem * current, QListWidgetItem * previous);
-    void teamAddComplete(const QString &uuid, bool success, const QString & msg);
+    void teamAddComplete(QDBusPendingCallWatcher * watcher);
 
     void editTeam();
     void deleteTeam();

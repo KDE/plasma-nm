@@ -162,7 +162,7 @@ void BridgeWidget::bridgeAddComplete(QDBusPendingCallWatcher * watcher)
             slotWidgetChanged();
         }
     } else {
-        qWarning() << "Bonded connection not added:" << reply.error().message();
+        qWarning() << "Bridged connection not added:" << reply.error().message();
     }
 }
 

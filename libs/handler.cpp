@@ -433,6 +433,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
                 notification = new KNotification("FailedToUpdateConnection", KNotification::CloseOnTimeout, this);
                 notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to update connection %1", watcher->property("connection").toString()));
+                break;
             default:
                 break;
         }
@@ -464,6 +465,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
                 notification->setComponentName("networkmanagement");
                 notification->setTitle(watcher->property("connection").toString());
                 notification->setText(i18n("Connection %1 has been updated", watcher->property("connection").toString()));
+                break;
             default:
                 break;
         }

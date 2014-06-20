@@ -155,9 +155,9 @@ void ConnectionEditor::initializeMenu()
     action = new QAction(i18n("Bond"), this);
     action->setData(NetworkManager::ConnectionSettings::Bond);
     m_menu->addAction(action);
-//     action = new QAction(i18n("Bridge"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Bridge);
-//     m_menu->addAction(action);
+    action = new QAction(i18n("Bridge"), this);
+    action->setData(NetworkManager::ConnectionSettings::Bridge);
+    m_menu->addAction(action);
 //     action = new QAction(i18n("VLAN"), this);
 //     action->setData(NetworkManager::ConnectionSettings::Vlan);
 //     m_menu->addAction(action);

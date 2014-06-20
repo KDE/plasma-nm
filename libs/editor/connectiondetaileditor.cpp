@@ -227,10 +227,10 @@ void ConnectionDetailEditor::initTabs()
     } else if (type == NetworkManager::ConnectionSettings::Bond) { // Bond
         BondWidget * bondWidget = new BondWidget(m_connection->uuid(), m_connection->setting(NetworkManager::Setting::Bond), this);
         m_ui->tabWidget->addTab(bondWidget, i18n("Bond"));
-    /*} else if (type == NetworkManager::ConnectionSettings::Bridge) { // Bridge
+    } else if (type == NetworkManager::ConnectionSettings::Bridge) { // Bridge
         BridgeWidget * bridgeWidget = new BridgeWidget(m_connection->uuid(), m_connection->setting(NetworkManager::Setting::Bridge), this);
         m_ui->tabWidget->addTab(bridgeWidget, i18n("Bridge"));
-    } else if (type == NetworkManager::ConnectionSettings::Vlan) { // Vlan
+    /*} else if (type == NetworkManager::ConnectionSettings::Vlan) { // Vlan
         VlanWidget * vlanWidget = new VlanWidget(m_connection->setting(NetworkManager::Setting::Vlan), this);
         m_ui->tabWidget->addTab(vlanWidget, i18n("Vlan"));
 #if NM_CHECK_VERSION(0, 9, 9)

@@ -24,6 +24,7 @@
 #include <QWidget>
 #include <QMenu>
 #include <QListWidgetItem>
+#include <QDBusPendingCallWatcher>
 
 #include <NetworkManagerQt/BridgeSetting>
 
@@ -52,7 +53,7 @@ public:
 private Q_SLOTS:
     void addBridge(QAction * action);
     void currentBridgeChanged(QListWidgetItem * current, QListWidgetItem * previous);
-    void bridgeAddComplete(const QString &uuid, bool success, const QString & msg);
+    void bridgeAddComplete(QDBusPendingCallWatcher * watcher);
 
     void editBridge();
     void deleteBridge();

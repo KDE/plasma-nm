@@ -37,13 +37,7 @@ class PLASMA_NM_EXPORT ConnectionDetailEditor : public QDialog
 {
     Q_OBJECT
 public:
-    // TODO virtual connections
-//     explicit ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type,
-//                                     QWidget* parent = 0,
-//                                     const QString &masterUuid = QString(),
-//                                     const QString &slaveType = QString(),
-//                                     Qt::WindowFlags f = 0);
-       explicit ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &connection,
+    explicit ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &connection,
                                        bool newConnection = false, QWidget* parent = 0, Qt::WindowFlags f = 0);
 
     virtual ~ConnectionDetailEditor();
@@ -57,10 +51,6 @@ private:
     NetworkManager::ConnectionSettings::Ptr m_connection;
     bool m_new;
     Ui::ConnectionDetailEditor * m_ui;
-//     QString m_vpnType;
-//     QString m_masterUuid;
-//     QString m_slaveType;
-//     bool isSlave() const;
 
     void enableOKButton(bool enabled);
     void initEditor();

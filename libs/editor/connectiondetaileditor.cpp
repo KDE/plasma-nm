@@ -67,22 +67,6 @@
 #include <KPluginFactory>
 #include <KServiceTypeTrader>
 
-// TODO virtual connections
-// ConnectionDetailEditor::ConnectionDetailEditor(NetworkManager::ConnectionSettings::ConnectionType type, QWidget* parent,
-//                                                const QString &masterUuid, const QString &slaveType, Qt::WindowFlags f):
-//     QDialog(parent, f),
-//     m_ui(new Ui::ConnectionDetailEditor),
-//     m_connection(new NetworkManager::ConnectionSettings(type)),
-//     m_new(true),
-//     m_masterUuid(masterUuid),
-//     m_slaveType(slaveType)
-// {
-//     setAttribute(Qt::WA_DeleteOnClose);
-//     m_ui->setupUi(this);
-//
-//     initEditor();
-// }
-
 ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr& connection,
                                                bool newConnection, QWidget* parent, Qt::WindowFlags f)
     : QDialog(parent, f)
@@ -166,8 +150,6 @@ void ConnectionDetailEditor::initEditor()
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
                 hasSecrets = true;
                 reply = connection->secrets("vpn");
-            } else {
-                initTabs();
             }
 
             if (hasSecrets) {
@@ -196,14 +178,6 @@ void ConnectionDetailEditor::initTabs()
     if (m_new) {
         m_connection->addToPermissions(KUser().loginName(), QString());
     }
-
-    // TODO virtual connections
-//     // create/set UUID, need this beforehand for slave connections
-//     QString uuid = m_connection->uuid();
-//     if (QUuid(uuid).isNull()) {
-//         uuid = NetworkManager::ConnectionSettings::createNewUuid();
-//         m_connection->setUuid(uuid);
-//     }
 
     ConnectionWidget * connectionWidget = new ConnectionWidget(m_connection);
     m_ui->tabWidget->addTab(connectionWidget, i18nc("General", "General configuration"));
@@ -247,26 +221,23 @@ void ConnectionDetailEditor::initTabs()
             m_ui->tabWidget->addTab(pppWidget, i18n("PPP"));
         }
 
-    // TODO virtual connections
-    /* } else if (type == NetworkManager::ConnectionSettings::Infiniband) { // Infiniband
+    } else if (type == NetworkManager::ConnectionSettings::Infiniband) { // Infiniband
         InfinibandWidget * infinibandWidget = new InfinibandWidget(m_connection->setting(NetworkManager::Setting::Infiniband), this);
         m_ui->tabWidget->addTab(infinibandWidget, i18n("Infiniband"));
     } else if (type == NetworkManager::ConnectionSettings::Bond) { // Bond
-        BondWidget * bondWidget = new BondWidget(uuid, m_connection->setting(NetworkManager::Setting::Bond), this);
+        BondWidget * bondWidget = new BondWidget(m_connection->uuid(), m_connection->setting(NetworkManager::Setting::Bond), this);
         m_ui->tabWidget->addTab(bondWidget, i18n("Bond"));
-    } else if (type == NetworkManager::ConnectionSettings::Bridge) { // Bridge
-        BridgeWidget * bridgeWidget = new BridgeWidget(uuid, m_connection->setting(NetworkManager::Setting::Bridge), this);
+    /*} else if (type == NetworkManager::ConnectionSettings::Bridge) { // Bridge
+        BridgeWidget * bridgeWidget = new BridgeWidget(m_connection->uuid(), m_connection->setting(NetworkManager::Setting::Bridge), this);
         m_ui->tabWidget->addTab(bridgeWidget, i18n("Bridge"));
     } else if (type == NetworkManager::ConnectionSettings::Vlan) { // Vlan
         VlanWidget * vlanWidget = new VlanWidget(m_connection->setting(NetworkManager::Setting::Vlan), this);
         m_ui->tabWidget->addTab(vlanWidget, i18n("Vlan"));
 #if NM_CHECK_VERSION(0, 9, 9)
     } else if (type == NetworkManager::ConnectionSettings::Team) { // Team
-        TeamWidget * teamWidget = new TeamWidget(uuid, m_connection->setting(NetworkManager::Setting::Team), this);
+        TeamWidget * teamWidget = new TeamWidget(m_connection->uuid(), m_connection->setting(NetworkManager::Setting::Team), this);
         m_ui->tabWidget->addTab(teamWidget, i18n("Team"));
-#endif
-    } */
-
+#endif*/
     } else if (type == NetworkManager::ConnectionSettings::Wimax) { // Wimax
         WimaxWidget * wimaxWidget = new WimaxWidget(m_connection->setting(NetworkManager::Setting::Wimax), this);
         m_ui->tabWidget->addTab(wimaxWidget, i18n("WiMAX"));
@@ -302,23 +273,23 @@ void ConnectionDetailEditor::initTabs()
 
     // TODO virtual connections
 //     IPv4 widget
-//     if (!isSlave()) {
+    if (!m_connection->isSlave()) {
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Setting::Ipv4), this);
         m_ui->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
-//     }
+    }
 
     // TODO virtual connections
     // IPv6 widget
-    if (type == NetworkManager::ConnectionSettings::Wired
+    if ((type == NetworkManager::ConnectionSettings::Wired
          || type == NetworkManager::ConnectionSettings::Wireless
-//          || type == ConnectionSettings::Infiniband
+         || type == NetworkManager::ConnectionSettings::Infiniband
          || type == NetworkManager::ConnectionSettings::Wimax
-    /* #if NM_CHECK_VERSION(0, 9, 9)
-         || type == ConnectionSettings::Team
+    #if NM_CHECK_VERSION(0, 9, 9)
+         || type == NetworkManager::ConnectionSettings::Team
      #endif
-         || type == ConnectionSettings::Bond
-         || type == ConnectionSettings::Bridge
-         || type == ConnectionSettings::Vlan) && !isSlave()*/) {
+         || type == NetworkManager::ConnectionSettings::Bond
+         || type == NetworkManager::ConnectionSettings::Bridge
+         || type == NetworkManager::ConnectionSettings::Vlan) && !m_connection->isSlave()) {
         IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Setting::Ipv6), this);
         m_ui->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
     }
@@ -394,13 +365,6 @@ NMVariantMapMap ConnectionDetailEditor::setting()
             }
         }
     }
-
-    // TODO virtual connections
-    // set master & slave type
-//     if (isSlave()) {
-//         connectionSettings->setMaster(m_masterUuid);
-//         connectionSettings->setSlaveType(m_slaveType);
-//     }
 
     return connectionSettings->toMap();
 }

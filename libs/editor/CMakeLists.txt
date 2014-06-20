@@ -1,13 +1,13 @@
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/widgets)
 
 set(plasmanm_editor_SRCS
-#     settings/bondwidget.cpp
+    settings/bondwidget.cpp
 #     settings/bridgewidget.cpp
     settings/btwidget.cpp
     settings/cdmawidget.cpp
     settings/connectionwidget.cpp
     settings/gsmwidget.cpp
-#     settings/infinibandwidget.cpp
+    settings/infinibandwidget.cpp
     settings/ipv4widget.cpp
     settings/ipv6widget.cpp
     settings/pppoewidget.cpp
@@ -55,13 +55,13 @@ endif()
 
 ki18n_wrap_ui(plasmanm_editor_SRCS
     settings/ui/802-1x.ui
-#     settings/ui/bond.ui
+    settings/ui/bond.ui
 #     settings/ui/bridge.ui
     settings/ui/bt.ui
     settings/ui/cdma.ui
     settings/ui/connectionwidget.ui
     settings/ui/gsm.ui
-#     settings/ui/infiniband.ui
+    settings/ui/infiniband.ui
     settings/ui/ipv4.ui
     settings/ui/ipv6.ui
     settings/ui/ppp.ui

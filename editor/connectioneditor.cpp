@@ -149,13 +149,12 @@ void ConnectionEditor::initializeMenu()
     action->setData(NetworkManager::ConnectionSettings::Wimax);
     m_menu->addAction(action);
 
-    // TODO virtual connections
-//     action = m_menu->addSeparator();
-//     action->setText(i18nc("Virtual", "Virtual hardware devices, eg Bridge, Bond"));
-//
-//     action = new QAction(i18n("Bond"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Bond);
-//     m_menu->addAction(action);
+    action = m_menu->addSeparator();
+    action->setText(i18nc("Virtual", "Virtual hardware devices, eg Bridge, Bond"));
+
+    action = new QAction(i18n("Bond"), this);
+    action->setData(NetworkManager::ConnectionSettings::Bond);
+    m_menu->addAction(action);
 //     action = new QAction(i18n("Bridge"), this);
 //     action->setData(NetworkManager::ConnectionSettings::Bridge);
 //     m_menu->addAction(action);

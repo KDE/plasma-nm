@@ -24,6 +24,7 @@
 #include <QWidget>
 #include <QMenu>
 #include <QListWidgetItem>
+#include <QDBusPendingCallWatcher>
 
 #include <NetworkManagerQt/BondSetting>
 
@@ -52,7 +53,7 @@ public:
 private Q_SLOTS:
     void addBond(QAction * action);
     void currentBondChanged(QListWidgetItem * current, QListWidgetItem * previous);
-    void bondAddComplete(const QString &uuid, bool success, const QString & msg);
+    void bondAddComplete(QDBusPendingCallWatcher * watcher);
 
     void editBond();
     void deleteBond();

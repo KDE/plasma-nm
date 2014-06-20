@@ -266,7 +266,7 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
     }
 
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::NetworkItemsList::Uuid, connection->uuid())) {
-        if ((device && device->uni() == item->devicePath()) || item->type() == NetworkManager::ConnectionSettings::Vpn) {
+        if (((device && device->uni() == item->devicePath()) || item->devicePath().isEmpty()) || item->type() == NetworkManager::ConnectionSettings::Vpn) {
             item->setActiveConnectionPath(activeConnection->path());
             item->setConnectionState(activeConnection->state());
             if (activeConnection->vpn()) {
@@ -296,7 +296,7 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
 
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Connection, connection)) {
         // The item is already associated with another device
-        if (item->itemType() != NetworkModelItem::NetworkModelItem::UnavailableConnection) {
+        if (!item->devicePath().isEmpty()) {
             continue;
         }
 
@@ -371,7 +371,6 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
         item->setType(settings->connectionType());
         item->setUuid(settings->uuid());
         item->setSlave(settings->isSlave());
-
 
         if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
             item->setMode(wirelessSetting->mode());
@@ -460,7 +459,7 @@ void NetworkModel::checkAndCreateDuplicate(const QString& connection, const Netw
             originalItem = item;
         }
 
-        if (!item->duplicate() && item->itemType() == NetworkModelItem::AvailableConnection && item->devicePath() != device->uni()) {
+        if (!item->duplicate() && item->itemType() == NetworkModelItem::AvailableConnection && (item->devicePath() != device->uni() && !item->devicePath().isEmpty())) {
             createDuplicate = true;
         }
     }

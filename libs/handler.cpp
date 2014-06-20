@@ -346,13 +346,11 @@ void Handler::removeConnection(const QString& connection)
         return;
     }
 
-    foreach (const NetworkManager::Connection::Ptr &masterConnection, NetworkManager::listConnections()) {
-        NetworkManager::ConnectionSettings::Ptr settings = masterConnection->settings();
+    // Remove slave connections
+    foreach (const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
+        NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
         if (settings->master() == con->uuid()) {
-            QDBusPendingReply<> reply = masterConnection->remove();
-            QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-            watcher->setProperty("action", Handler::RemoveConnection);
-            connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
+            connection->remove();
         }
     }
 

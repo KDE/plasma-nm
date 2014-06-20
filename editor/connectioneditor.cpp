@@ -158,9 +158,9 @@ void ConnectionEditor::initializeMenu()
     action = new QAction(i18n("Bridge"), this);
     action->setData(NetworkManager::ConnectionSettings::Bridge);
     m_menu->addAction(action);
-//     action = new QAction(i18n("VLAN"), this);
-//     action->setData(NetworkManager::ConnectionSettings::Vlan);
-//     m_menu->addAction(action);
+    action = new QAction(i18n("VLAN"), this);
+    action->setData(NetworkManager::ConnectionSettings::Vlan);
+    m_menu->addAction(action);
 // #if NM_CHECK_VERSION(0, 9, 9)
 //     action = new QAction(i18n("Team"), this);
 //     action->setData(NetworkManager::ConnectionSettings::Team);

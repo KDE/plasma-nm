@@ -230,9 +230,10 @@ void ConnectionDetailEditor::initTabs()
     } else if (type == NetworkManager::ConnectionSettings::Bridge) { // Bridge
         BridgeWidget * bridgeWidget = new BridgeWidget(m_connection->uuid(), m_connection->setting(NetworkManager::Setting::Bridge), this);
         m_ui->tabWidget->addTab(bridgeWidget, i18n("Bridge"));
-    /*} else if (type == NetworkManager::ConnectionSettings::Vlan) { // Vlan
+   } else if (type == NetworkManager::ConnectionSettings::Vlan) { // Vlan
         VlanWidget * vlanWidget = new VlanWidget(m_connection->setting(NetworkManager::Setting::Vlan), this);
         m_ui->tabWidget->addTab(vlanWidget, i18n("Vlan"));
+        /*
 #if NM_CHECK_VERSION(0, 9, 9)
     } else if (type == NetworkManager::ConnectionSettings::Team) { // Team
         TeamWidget * teamWidget = new TeamWidget(m_connection->uuid(), m_connection->setting(NetworkManager::Setting::Team), this);

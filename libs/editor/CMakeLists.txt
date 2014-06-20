@@ -13,7 +13,7 @@ set(plasmanm_editor_SRCS
     settings/pppoewidget.cpp
     settings/pppwidget.cpp
     settings/security802-1x.cpp
-#     settings/vlanwidget.cpp
+    settings/vlanwidget.cpp
     settings/wificonnectionwidget.cpp
     settings/wifisecurity.cpp
     settings/wimaxwidget.cpp
@@ -67,7 +67,7 @@ ki18n_wrap_ui(plasmanm_editor_SRCS
     settings/ui/ppp.ui
     settings/ui/pppoe.ui
 #     settings/ui/team.ui
-#     settings/ui/vlan.ui
+    settings/ui/vlan.ui
     settings/ui/team.ui
     settings/ui/wificonnectionwidget.ui
     settings/ui/wifisecurity.ui

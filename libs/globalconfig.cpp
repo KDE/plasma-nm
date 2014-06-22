@@ -38,6 +38,7 @@ GlobalConfig* GlobalConfig::instance()
 GlobalConfig::GlobalConfig(void *dummy)
     : QObject()
     , m_airplaneMode(false)
+    , m_unit(KBytes)
 {
     Q_UNUSED(dummy);
 }
@@ -46,6 +47,7 @@ GlobalConfig::GlobalConfig(void *dummy)
 GlobalConfig::GlobalConfig()
     : QObject()
     , m_airplaneMode(false)
+    , m_unit(KBytes)
 {
     GlobalConfig *singleton = instance();
 

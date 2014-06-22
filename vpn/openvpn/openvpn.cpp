@@ -1,6 +1,7 @@
 /*
     Copyright 2008 Will Stephenson <wstephenson@kde.org>
     Copyright 2011-2012 Rajeesh K Nambiar <rajeeshknambiar@gmail.com>
+    Copyright 2012-2014 Lamarque V. Souza <lamarque@kde.org>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -34,6 +35,9 @@
 
 #include "nm-openvpn-service.h"
 
+//#include <nm-setting-ip4-config.h>
+#define NM_SETTING_IP4_CONFIG_NEVER_DEFAULT "never-default"
+
 K_PLUGIN_FACTORY(OpenVpnUiPluginFactory, registerPlugin<OpenVpnUiPlugin>();)
 K_EXPORT_PLUGIN(OpenVpnUiPluginFactory("plasmanetworkmanagement_openvpnui"))
 
@@ -64,6 +68,7 @@ K_EXPORT_PLUGIN(OpenVpnUiPluginFactory("plasmanetworkmanagement_openvpnui"))
 #define TLS_CLIENT_TAG "tls-client"
 #define TLS_REMOTE_TAG "tls-remote"
 #define TUNMTU_TAG "tun-mtu"
+#define REDIRECT_GATEWAY "redirect-gateway"
 
 #define PROC_TYPE_TAG "Proc-Type: 4,ENCRYPTED"
 #define PKCS8_TAG "-----BEGIN ENCRYPTED PRIVATE KEY-----"
@@ -178,6 +183,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
     bool proxy_set = false;
     bool have_pass = false;
     bool have_sk = false;
+    bool have_redirect_gateway = false;
 
     QTextStream in(&impFile);
     while (!in.atEnd()) {
@@ -443,11 +449,21 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             }
             continue;
         }
+        if (key_value[0] == REDIRECT_GATEWAY) {
+            have_redirect_gateway = true;
+            continue;
+        }
         // Import X-NM-Routes if present
         if (key_value[0] == "X-NM-Routes") {
             ipv4Data.insert("X-NM-Routes", key_value[1]);
             continue;
         }
+    }
+    // NetworkManager set vpn connections as default route by default. If the
+    // imported file does not contain "redirect-gateway" entry then set the
+    // connection as never default.
+    if (!have_redirect_gateway) {
+        ipv4Data.insert(NM_SETTING_IP4_CONFIG_NEVER_DEFAULT, "true");
     }
     if (!have_client && !have_sk) {
         mError = VpnUiPlugin::Error;
@@ -655,8 +671,13 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
             }
         }
     }
-    // Export X-NM-Routes
+    // Export never default setting.
     NetworkManager::Ipv4Setting::Ptr ipv4Setting = connection->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
+    if (!ipv4Setting->neverDefault()) {
+        line = QString(REDIRECT_GATEWAY) + '\n';
+        expFile.write(line.toLatin1());
+    }
+    // Export X-NM-Routes
     if (!ipv4Setting->routes().isEmpty()) {
         QString routes;
         foreach(const NetworkManager::IpRoute &route, ipv4Setting->routes()) {

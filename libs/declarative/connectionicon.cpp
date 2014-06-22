@@ -265,6 +265,13 @@ void ConnectionIcon::vpnConnectionStateChanged(NetworkManager::VpnConnection::St
     } else if (state == NetworkManager::VpnConnection::Failed ||
                state == NetworkManager::VpnConnection::Disconnected) {
         m_vpn = false;
+
+        foreach (const NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
+            if (activeConnection->vpn() && activeConnection->state() == NetworkManager::ActiveConnection::Activated) {
+                m_vpn = true;
+            }
+        }
+
         setIcons();
     }
 }

@@ -500,7 +500,9 @@ void NetworkModelItem::updateDetails()
     } else if (m_type == NetworkManager::ConnectionSettings::Wireless) {
         NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
         m_details << i18n("Access point (SSID)") << m_ssid;
-        m_details << i18n("Signal strength") << QString("%1%").arg(m_signal);
+        if (m_mode == NetworkManager::WirelessSetting::Infrastructure) {
+            m_details << i18n("Signal strength") << QString("%1%").arg(m_signal);
+        }
         if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
             m_details << i18n("Security type") << UiUtils::labelFromWirelessSecurity(m_securityType);
         }

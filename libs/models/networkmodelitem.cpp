@@ -206,6 +206,19 @@ QString NetworkModelItem::icon() const
             return "network-vpn";
             break;
         case NetworkManager::ConnectionSettings::Wimax:
+            if (m_signal == 0 ) {
+                return "network-wireless-0";
+            } else if (m_signal < 20) {
+                return "network-wireless-20";
+            } else if (m_signal < 40) {
+                return "network-wireless-40";
+            } else if (m_signal < 60) {
+                return "network-wireless-60";
+            } else if (m_signal < 80) {
+                return "network-wireless-80";
+            } else {
+                return "network-wireless-100";
+            }
             break;
         case NetworkManager::ConnectionSettings::Wired:
             if (connectionState() == NetworkManager::ActiveConnection::Activated) {
@@ -233,15 +246,14 @@ QString NetworkModelItem::icon() const
             }
             break;
         default:
-            if (connectionState() == NetworkManager::ActiveConnection::Activated) {
-                return "network-wired-activated";
-            } else {
-                return "network-wired";
-            }
             break;
     }
 
-    return "network-wired";
+    if (connectionState() == NetworkManager::ActiveConnection::Activated) {
+        return "network-wired-activated";
+    } else {
+        return "network-wired";
+    }
 }
 
 NetworkModelItem::ItemType NetworkModelItem::itemType() const
@@ -250,7 +262,7 @@ NetworkModelItem::ItemType NetworkModelItem::itemType() const
         m_type == NetworkManager::ConnectionSettings::Bond ||
         m_type == NetworkManager::ConnectionSettings::Bridge ||
         m_type == NetworkManager::ConnectionSettings::Vlan ||
-#if NM_CHECK_VERSION(0, 9, 9)
+#if NM_CHECK_VERSION(0, 9, 10)
         m_type == NetworkManager::ConnectionSettings::Team ||
 #endif
         ((NetworkManager::status() == NetworkManager::Connected ||
@@ -258,6 +270,8 @@ NetworkModelItem::ItemType NetworkModelItem::itemType() const
           NetworkManager::status() == NetworkManager::ConnectedSiteOnly) && m_type == NetworkManager::ConnectionSettings::Vpn)) {
         if (m_connectionPath.isEmpty() && m_type == NetworkManager::ConnectionSettings::Wireless) {
             return NetworkModelItem::AvailableAccessPoint;
+        } else if (m_connectionPath.isEmpty() && m_type == NetworkManager::ConnectionSettings::Wimax) {
+            return NetworkModelItem::AvailableNsp;
         } else {
             return NetworkModelItem::AvailableConnection;
         }
@@ -283,6 +297,16 @@ QString NetworkModelItem::name() const
 void NetworkModelItem::setName(const QString& name)
 {
     m_name = name;
+}
+
+QString NetworkModelItem::nsp() const
+{
+    return m_nsp;
+}
+
+void NetworkModelItem::setNsp(const QString& nsp)
+{
+    m_nsp = nsp;
 }
 
 QString NetworkModelItem::originalName() const
@@ -376,6 +400,8 @@ QString NetworkModelItem::uni() const
 {
     if (m_type == NetworkManager::ConnectionSettings::Wireless && m_uuid.isEmpty()) {
         return m_ssid + '%' + m_devicePath;
+    } else if (m_type == NetworkManager::ConnectionSettings::Wimax && m_uuid.isEmpty()) {
+        return m_nsp + '%' + m_devicePath;
     } else {
         return m_connectionPath + '%' + m_devicePath;
     }
@@ -415,6 +441,10 @@ bool NetworkModelItem::operator==(const NetworkModelItem* item) const
         }
     } else if (item->type() == NetworkManager::ConnectionSettings::Wireless && type() == NetworkManager::ConnectionSettings::Wireless) {
         if (item->ssid() == ssid() && item->devicePath() == devicePath()) {
+            return true;
+        }
+    } else if (item->type() == NetworkManager::ConnectionSettings::Wimax && type() == NetworkManager::ConnectionSettings::Wimax) {
+        if (item->nsp() == nsp() && item->devicePath() == devicePath()) {
             return true;
         }
     }
@@ -462,7 +492,7 @@ void NetworkModelItem::updateDetails()
     } else if (m_type == NetworkManager::ConnectionSettings::Wireless) {
         NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
         m_details << i18n("Access point (SSID)") << m_ssid;
-        m_details << i18n("Signal strength") << i18n("%1%", m_signal);
+        m_details << i18n("Signal strength") << QString("%1%").arg(m_signal);
         if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
             m_details << i18n("Security type") << UiUtils::labelFromWirelessSecurity(m_securityType);
         }
@@ -517,20 +547,31 @@ void NetworkModelItem::updateDetails()
             }
         }
     } else if (m_type == NetworkManager::ConnectionSettings::Bluetooth) {
-        // TODO
-//      Bluetooth
-//      - Bluetooth HW address
-//      - BT name
-//      - BT capabilities
+        NetworkManager::BluetoothDevice::Ptr bluetoothDevice = device.objectCast<NetworkManager::BluetoothDevice>();
+        if (bluetoothDevice) {
+            m_details << i18n("Name") << bluetoothDevice->name();
+            if (bluetoothDevice->bluetoothCapabilities() == NetworkManager::BluetoothDevice::Pan) {
+                m_details << i18n("Capabilities") << "PAN";
+            } else if (bluetoothDevice->bluetoothCapabilities() == NetworkManager::BluetoothDevice::Dun) {
+                m_details << i18n("Capabilities") << "DUN";
+            }
+            m_details << i18n("MAC Address") << bluetoothDevice->hardwareAddress();
+
+        }
     } else if (m_type == NetworkManager::ConnectionSettings::Wimax) {
-        // TODO
-//      Wimax
-//      - MAC address
-//      - NSP
-//      - Signal
+        NetworkManager::WimaxDevice::Ptr wimaxDevice = device.objectCast<NetworkManager::WimaxDevice>();
+        if (wimaxDevice) {
+            NetworkManager::WimaxNsp::Ptr wimaxNsp = wimaxDevice->findNsp(m_specificPath);
+            m_details << i18n("NSP Name") << m_nsp;
+            m_details << i18n("Signal Strength") << QString("%1%").arg(m_signal);
+            if (wimaxNsp) {
+                m_details << i18n("Network Type");
+            }
+            m_details << i18n("Bsid") << wimaxDevice->bsid();
+            m_details << i18n("MAC Address") << wimaxDevice->hardwareAddress();
+        }
     }
 }
-
 
 void NetworkModelItem::dataUpdated(const QString& sourceName, const Plasma::DataEngine::Data& data)
 {

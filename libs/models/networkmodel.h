@@ -30,6 +30,7 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/WimaxDevice>
 #include <NetworkManagerQt/Utils>
 
 #if WITH_MODEMMANAGER_SUPPORT
@@ -57,6 +58,7 @@ public:
         LastUsedRole,
         LastUsedDateOnlyRole,
         NameRole,
+        NspRole,
         SecurityTypeRole,
         SecurityTypeStringRole,
         SectionRole,
@@ -101,6 +103,9 @@ private Q_SLOTS:
 #endif
     void ipConfigChanged();
     void statusChanged(NetworkManager::Status status);
+    void wimaxNspAppeared(const QString& nsp);
+    void wimaxNspDisappeared(const QString& nsp);
+    void wimaxNspSignalChanged(uint signal);
     void wirelessNetworkAppeared(const QString& ssid);
     void wirelessNetworkDisappeared(const QString& ssid);
     void wirelessNetworkSignalChanged(int signal);
@@ -114,14 +119,17 @@ private:
     void addAvailableConnection(const QString& connection, const NetworkManager::Device::Ptr& device);
     void addConnection(const NetworkManager::Connection::Ptr& connection);
     void addDevice(const NetworkManager::Device::Ptr& device);
+    void addWimaxNsp(const NetworkManager::WimaxNsp::Ptr& nsp, const NetworkManager::WimaxDevice::Ptr& device);
     void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr& network, const NetworkManager::WirelessDevice::Ptr& device);
     void checkAndCreateDuplicate(const QString& connection, const NetworkManager::Device::Ptr& device);
     void initializeSignals();
     void initializeSignals(const NetworkManager::ActiveConnection::Ptr& activeConnection);
     void initializeSignals(const NetworkManager::Connection::Ptr& connection);
     void initializeSignals(const NetworkManager::Device::Ptr& device);
+    void initializeSignals(const NetworkManager::WimaxNsp::Ptr& nsp);
     void initializeSignals(const NetworkManager::WirelessNetwork::Ptr& network);
     void updateItem(NetworkModelItem * item);
+    void updateFromWimaxNsp(NetworkModelItem * item, const NetworkManager::WimaxNsp::Ptr& nsp);
     void updateFromWirelessNetwork(NetworkModelItem * item, const NetworkManager::WirelessNetwork::Ptr& network);
 
     NetworkManager::Utils::WirelessSecurityType alternativeWirelessSecurity(const NetworkManager::Utils::WirelessSecurityType type);

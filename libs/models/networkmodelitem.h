@@ -38,7 +38,7 @@ class PLASMA_NM_EXPORT NetworkModelItem : public QObject
 Q_OBJECT
 public:
 
-    enum ItemType { UnavailableConnection, AvailableConnection, AvailableAccessPoint };
+    enum ItemType { UnavailableConnection, AvailableConnection, AvailableAccessPoint, AvailableNsp };
 
     explicit NetworkModelItem(QObject * parent = 0);
     explicit NetworkModelItem(const NetworkModelItem * item, QObject* parent = 0);
@@ -75,6 +75,9 @@ public:
 
     QString name() const;
     void setName(const QString& name);
+
+    QString nsp() const;
+    void setNsp(const QString& nsp);
 
     QString originalName() const;
 

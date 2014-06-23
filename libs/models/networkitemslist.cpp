@@ -56,7 +56,7 @@ bool NetworkItemsList::contains(const NetworkItemsList::FilterType type, const Q
                 }
                 break;
             case NetworkItemsList::Nsp:
-                if (item->specificPath() == parameter) {
+                if (item->nsp() == parameter) {
                     return true;
                 }
                 break;
@@ -142,7 +142,7 @@ QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList:
                 }
                 break;
             case NetworkItemsList::Nsp:
-                if (item->specificPath() == parameter) {
+                if (item->nsp() == parameter) {
                     if (additionalParameter.isEmpty()) {
                         result << item;
                     } else {

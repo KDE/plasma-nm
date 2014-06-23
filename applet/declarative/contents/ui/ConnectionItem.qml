@@ -378,7 +378,8 @@ ListItem {
                 result += ", " + SecurityTypeString;
             return result;
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
-            if (Type == PlasmaNM.Enums.Wired ||
+            if (Type == PlasmaNM.Enums.Wimax ||
+                Type == PlasmaNM.Enums.Wired ||
                 Type == PlasmaNM.Enums.Wireless ||
                 Type == PlasmaNM.Enums.Gsm ||
                 Type == PlasmaNM.Enums.Cdma) {

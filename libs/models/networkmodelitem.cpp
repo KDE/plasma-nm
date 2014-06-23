@@ -206,6 +206,19 @@ QString NetworkModelItem::icon() const
             return "network-vpn";
             break;
         case NetworkManager::ConnectionSettings::Wimax:
+            if (m_signal == 0 ) {
+                return "network-wireless-0";
+            } else if (m_signal < 20) {
+                return "network-wireless-20";
+            } else if (m_signal < 40) {
+                return "network-wireless-40";
+            } else if (m_signal < 60) {
+                return "network-wireless-60";
+            } else if (m_signal < 80) {
+                return "network-wireless-80";
+            } else {
+                return "network-wireless-100";
+            }
             break;
         case NetworkManager::ConnectionSettings::Wired:
             if (connectionState() == NetworkManager::ActiveConnection::Activated) {
@@ -233,15 +246,14 @@ QString NetworkModelItem::icon() const
             }
             break;
         default:
-            if (connectionState() == NetworkManager::ActiveConnection::Activated) {
-                return "network-wired-activated";
-            } else {
-                return "network-wired";
-            }
             break;
     }
 
-    return "network-wired";
+    if (connectionState() == NetworkManager::ActiveConnection::Activated) {
+        return "network-wired-activated";
+    } else {
+        return "network-wired";
+    }
 }
 
 NetworkModelItem::ItemType NetworkModelItem::itemType() const
@@ -255,6 +267,8 @@ NetworkModelItem::ItemType NetworkModelItem::itemType() const
           NetworkManager::status() == NetworkManager::ConnectedSiteOnly) && m_type == NetworkManager::ConnectionSettings::Vpn)) {
         if (m_connectionPath.isEmpty() && m_type == NetworkManager::ConnectionSettings::Wireless) {
             return NetworkModelItem::AvailableAccessPoint;
+        } else if (m_connectionPath.isEmpty() && m_type == NetworkManager::ConnectionSettings::Wimax) {
+            return NetworkModelItem::AvailableNsp;
         } else {
             return NetworkModelItem::AvailableConnection;
         }
@@ -280,6 +294,16 @@ QString NetworkModelItem::name() const
 void NetworkModelItem::setName(const QString& name)
 {
     m_name = name;
+}
+
+QString NetworkModelItem::nsp() const
+{
+    return m_nsp;
+}
+
+void NetworkModelItem::setNsp(const QString& nsp)
+{
+    m_nsp = nsp;
 }
 
 QString NetworkModelItem::originalName() const
@@ -373,6 +397,8 @@ QString NetworkModelItem::uni() const
 {
     if (m_type == NetworkManager::ConnectionSettings::Wireless && m_uuid.isEmpty()) {
         return m_ssid + '%' + m_devicePath;
+    } else if (m_type == NetworkManager::ConnectionSettings::Wimax && m_uuid.isEmpty()) {
+        return m_nsp + '%' + m_devicePath;
     } else {
         return m_connectionPath + '%' + m_devicePath;
     }
@@ -412,6 +438,10 @@ bool NetworkModelItem::operator==(const NetworkModelItem* item) const
         }
     } else if (item->type() == NetworkManager::ConnectionSettings::Wireless && type() == NetworkManager::ConnectionSettings::Wireless) {
         if (item->ssid() == ssid() && item->devicePath() == devicePath()) {
+            return true;
+        }
+    } else if (item->type() == NetworkManager::ConnectionSettings::Wimax && type() == NetworkManager::ConnectionSettings::Wimax) {
+        if (item->nsp() == nsp() && item->devicePath() == devicePath()) {
             return true;
         }
     }
@@ -485,7 +515,6 @@ void NetworkModelItem::updateDetails()
 
     m_details += "</table></qt>";
 }
-
 
 void NetworkModelItem::dataUpdated(const QString& sourceName, const Plasma::DataEngine::Data& data)
 {

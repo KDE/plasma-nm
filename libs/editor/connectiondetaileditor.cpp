@@ -39,7 +39,7 @@
 #include "settings/wiredconnectionwidget.h"
 #include "settings/wiredsecurity.h"
 #include "settings/wimaxwidget.h"
-#if NM_CHECK_VERSION(0, 9, 9)
+#if NM_CHECK_VERSION(0, 9, 10)
 #include "settings/teamwidget.h"
 #endif
 #include "vpnuiplugin.h"
@@ -233,7 +233,7 @@ void ConnectionDetailEditor::initTabs()
    } else if (type == NetworkManager::ConnectionSettings::Vlan) { // Vlan
         VlanWidget * vlanWidget = new VlanWidget(m_connection->setting(NetworkManager::Setting::Vlan), this);
         m_ui->tabWidget->addTab(vlanWidget, i18n("Vlan"));
-#if NM_CHECK_VERSION(0, 9, 9)
+#if NM_CHECK_VERSION(0, 9, 10)
     } else if (type == NetworkManager::ConnectionSettings::Team) { // Team
         TeamWidget * teamWidget = new TeamWidget(m_connection->uuid(), m_connection->setting(NetworkManager::Setting::Team), this);
         m_ui->tabWidget->addTab(teamWidget, i18n("Team"));
@@ -284,7 +284,7 @@ void ConnectionDetailEditor::initTabs()
          || type == NetworkManager::ConnectionSettings::Wireless
          || type == NetworkManager::ConnectionSettings::Infiniband
          || type == NetworkManager::ConnectionSettings::Wimax
-    #if NM_CHECK_VERSION(0, 9, 9)
+    #if NM_CHECK_VERSION(0, 9, 10)
          || type == NetworkManager::ConnectionSettings::Team
      #endif
          || type == NetworkManager::ConnectionSettings::Bond

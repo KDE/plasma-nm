@@ -54,6 +54,11 @@ AppletProxyModel::SortedConnectionType AppletProxyModel::connectionTypeToSortedT
         case NetworkManager::ConnectionSettings::Pppoe:
             return AppletProxyModel::Pppoe;
             break;
+#if NM_CHECK_VERSION(0, 9, 10)
+        case NetworkManager::ConnectionSettings::Team:
+            return AppletProxyModel::Team;
+            break;
+#endif
         case NetworkManager::ConnectionSettings::Vlan:
             return AppletProxyModel::Vlan;
             break;
@@ -78,7 +83,6 @@ AppletProxyModel::SortedConnectionType AppletProxyModel::connectionTypeToSortedT
 AppletProxyModel::AppletProxyModel(QObject* parent)
     : QSortFilterProxyModel(parent)
 {
-    // TODO
     setDynamicSortFilter(true);
     sort(0, Qt::DescendingOrder);
 }

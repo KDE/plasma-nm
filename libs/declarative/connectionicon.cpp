@@ -272,8 +272,11 @@ void ConnectionIcon::vpnConnectionStateChanged(NetworkManager::VpnConnection::St
         m_vpn = false;
 
         foreach (const NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
-            if (activeConnection->vpn() && activeConnection->state() == NetworkManager::ActiveConnection::Activated) {
-                m_vpn = true;
+            if (activeConnection->vpn()) {
+                NetworkManager::VpnConnection::Ptr vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
+                if (vpnConnection && vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
+                    m_vpn = true;
+                }
             }
         }
 

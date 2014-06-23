@@ -21,11 +21,19 @@
 #include "networkmodelitem.h"
 #include "uiutils.h"
 
+#include <NetworkManagerQt/AdslDevice>
 #include <NetworkManagerQt/BluetoothDevice>
+#include <NetworkManagerQt/BondDevice>
+#include <NetworkManagerQt/BridgeDevice>
+#include <NetworkManagerQt/InfinibandDevice>
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/ModemDevice>
 #include <NetworkManagerQt/Settings>
+#if NM_CHECK_VERSION (0, 9, 10)
+#include <NetworkManagerQt/TeamDevice>
+#endif
 #include <NetworkManagerQt/Utils>
+#include <NetworkManagerQt/VlanDevice>
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/WimaxDevice>
@@ -570,7 +578,43 @@ void NetworkModelItem::updateDetails()
             m_details << i18n("Bsid") << wimaxDevice->bsid();
             m_details << i18n("MAC Address") << wimaxDevice->hardwareAddress();
         }
+    } else if (m_type == NetworkManager::ConnectionSettings::Infiniband) {
+        NetworkManager::InfinibandDevice::Ptr infinibandDevice = device.objectCast<NetworkManager::InfinibandDevice>();
+        m_details << i18n("Type") << i18n("Infiniband");
+        if (infinibandDevice) {
+            m_details << i18n("MAC Address") << infinibandDevice->hwAddress();
+        }
+    } else if (m_type == NetworkManager::ConnectionSettings::Bond) {
+        NetworkManager::BondDevice::Ptr bondDevice = device.objectCast<NetworkManager::BondDevice>();
+        m_details << i18n("Type") << i18n("Bond");
+        if (bondDevice) {
+            m_details << i18n("MAC Address") << bondDevice->hwAddress();
+        }
+    } else if (m_type == NetworkManager::ConnectionSettings::Bridge) {
+        NetworkManager::BridgeDevice::Ptr bridgeDevice = device.objectCast<NetworkManager::BridgeDevice>();
+        m_details << i18n("Type") << i18n("Bridge");
+        if (bridgeDevice) {
+            m_details << i18n("MAC Address") << bridgeDevice->hwAddress();
+        }
+    } else if (m_type == NetworkManager::ConnectionSettings::Vlan) {
+        NetworkManager::VlanDevice::Ptr vlanDevice = device.objectCast<NetworkManager::VlanDevice>();
+        m_details << i18n("Type") << i18n("Vlan");
+        if (vlanDevice) {
+            m_details << i18n("Vlan ID") << QString("%1%").arg(vlanDevice->vlanId());
+            m_details << i18n("MAC Address") << vlanDevice->hwAddress();
+        }
+    } else if (m_type == NetworkManager::ConnectionSettings::Adsl) {
+        m_details << i18n("Type") << i18n("Adsl");
     }
+#if NM_CHECK_VERSION (0, 9, 10)
+      else if (m_type == NetworkManager::ConnectionSettings::Team) {
+        NetworkManager::TeamDevice::Ptr teamDevice = device.objectCast<NetworkManager::TeamDevice>();
+        m_details << i18n("Type") << i18n("Team");
+        if (teamDevice) {
+            m_details << i18n("MAC Address") << teamDevice->hwAddress();
+        }
+    }
+#endif
 }
 
 void NetworkModelItem::dataUpdated(const QString& sourceName, const Plasma::DataEngine::Data& data)

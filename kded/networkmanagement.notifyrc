@@ -60,6 +60,7 @@ Comment[zh_CN]=提示网络错误
 [Event/ConnectionActivated]
 Name=Connection activated
 Name[ca]=Connexió activada
+Name[cs]=Spojení aktivováno
 Name[fi]=Yhteys muodostettu
 Name[hu]=Kapcsolat aktiválva
 Name[nds]=Verbinnen anmaakt
@@ -77,6 +78,7 @@ Action=Popup
 [Event/ConnectionDeactivated]
 Name=Connection deactivated
 Name[ca]=Connexió desactivada
+Name[cs]=Spojení deaktivováno
 Name[fi]=Yhteys katkaistu
 Name[hu]=Kapcsolat deaktiválva
 Name[nds]=Verbinnen utmaakt
@@ -94,6 +96,7 @@ Action=Popup
 [Event/DeviceFailed]
 Name=Device failed
 Name[ca]=El dispositiu ha fallat
+Name[cs]=Zařízení selhalo
 Name[fi]=Laite lakkasi toimimasta
 Name[hu]=Az eszköz meghiúsult
 Name[nds]=Reedschap-Fehler
@@ -111,6 +114,7 @@ Action=Popup
 [Event/FailedToActivateConnection]
 Name=Failed to activate connection
 Name[ca]=Ha fallat en activar la connexió
+Name[cs]=Spojení nelze aktivovat
 Name[fi]=Yhteyden muodostaminen epäonnistui
 Name[hu]=Nem sikerült aktiválni a kapcsolatot
 Name[nds]=Verbinnen lett sik nich anmaken

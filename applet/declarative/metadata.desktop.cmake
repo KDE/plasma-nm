@@ -4,6 +4,7 @@ Name[bg]=Управление на мрежа
 Name[bs]=Upravljanje mrežom
 Name[ca]=Gestió de la xarxa
 Name[ca@valencia]=Gestió de la xarxa
+Name[cs]=Správa sítě
 Name[da]=Netværkshåndtering
 Name[de]=Netzwerkverwaltung
 Name[el]=Διαχείριση δικτύων

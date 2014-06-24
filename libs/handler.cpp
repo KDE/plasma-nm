@@ -357,6 +357,7 @@ void Handler::removeConnection(const QString& connection)
     QDBusPendingReply<> reply = con->remove();
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", Handler::RemoveConnection);
+    watcher->setProperty("connection", con->name());
     connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
 }
 

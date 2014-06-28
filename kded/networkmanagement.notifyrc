@@ -162,7 +162,7 @@ Action=Popup
 [Event/FailedToAddConnection]
 Name=Failed to add connection
 Name[ca]=Ha fallat en afegir la connexió
-Name[es]=La adición de la conexión ha fallado
+Name[es]=Ha ocurrido un fallo al añadir la conexión
 Name[fi]=Yhteyden lisääminen epäonnistui
 Name[hu]=Nem sikerült hozzáadni a kapcsolatot
 Name[nds]=Verbinnen lett sik nich tofögen

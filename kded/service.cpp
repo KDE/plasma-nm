@@ -53,7 +53,7 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
     if (reply.value()) {
         doInitialization();
     } else {
-        QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.kde.plasma_shell", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
+        QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.kde.plasmashell", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
         connect(watcher, SIGNAL(serviceRegistered(QString)), SLOT(finishInitialization()));
     }
 }

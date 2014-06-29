@@ -474,4 +474,6 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
             notification->sendEvent();
         }
     }
+
+    watcher->deleteLater();
 }

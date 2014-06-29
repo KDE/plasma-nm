@@ -2,6 +2,8 @@
 IconName=applications-internet
 Name=Network management
 Name[ca]=Gestió de la xarxa
+Name[de]=Netzwerkverwaltung
+Name[en_GB]=Network management
 Name[es]=Gestión de redes
 Name[fi]=Verkonhallinta
 Name[nds]=Nettwarkpleeg
@@ -16,6 +18,8 @@ Name[uk]=Керування мережею
 Name[x-test]=xxNetwork managementxx
 Comment=Network management
 Comment[ca]=Gestió de la xarxa
+Comment[de]=Netzwerkverwaltung
+Comment[en_GB]=Network management
 Comment[es]=Gestión de redes
 Comment[fi]=Verkonhallinta
 Comment[nds]=Nettwarkpleeg
@@ -32,6 +36,8 @@ Comment[x-test]=xxNetwork managementxx
 [Event/ConnectionActivated]
 Name=Connection activated
 Name[ca]=Connexió activada
+Name[de]=Verbindung aktiviert
+Name[en_GB]=Connection activated
 Name[es]=Conexión activada
 Name[fi]=Yhteys muodostettu
 Name[hu]=Kapcsolat aktiválva
@@ -51,6 +57,8 @@ Action=Popup
 [Event/ConnectionDeactivated]
 Name=Connection deactivated
 Name[ca]=Connexió desactivada
+Name[de]=Verbindung deaktiviert
+Name[en_GB]=Connection deactivated
 Name[es]=Conexión desactivada
 Name[fi]=Yhteys katkaistu
 Name[hu]=Kapcsolat deaktiválva
@@ -70,6 +78,8 @@ Action=Popup
 [Event/ConnectionAdded]
 Name=Connection added
 Name[ca]=S'ha afegit una connexió 
+Name[de]=Verbindung hinzugefügt
+Name[en_GB]=Connection added
 Name[es]=Conexión añadida
 Name[fi]=Yhteys lisätty
 Name[nds]=Verbinnen toföögt
@@ -88,6 +98,8 @@ Action=None
 [Event/ConnectionRemoved]
 Name=Connection removed
 Name[ca]=S'ha eliminat una connexió
+Name[de]=Verbindung entfernt
+Name[en_GB]=Connection removed
 Name[es]=Conexión eliminada
 Name[fi]=Yhteys poistettu
 Name[nds]=Verbinnen wegmaakt
@@ -106,6 +118,8 @@ Action=None
 [Event/ConnectionUpdated]
 Name=Connection updated
 Name[ca]=S'ha actualitzat una connexió
+Name[de]=Verbindung aktualisiert
+Name[en_GB]=Connection updated
 Name[es]=Conexión actualizada
 Name[fi]=Yhteys päivitetty
 Name[nds]=Verbinnen opfrischt
@@ -124,6 +138,7 @@ Action=None
 [Event/DeviceFailed]
 Name=Device failed
 Name[ca]=El dispositiu ha fallat
+Name[en_GB]=Device failed
 Name[es]=El dispositivo ha fallado
 Name[fi]=Laite lakkasi toimimasta
 Name[hu]=Az eszköz meghiúsult
@@ -143,6 +158,8 @@ Action=Popup
 [Event/FailedToActivateConnection]
 Name=Failed to activate connection
 Name[ca]=Ha fallat en activar la connexió
+Name[de]=Die Verbindung kann nicht aktiviert werden
+Name[en_GB]=Failed to activate connection
 Name[es]=La activación de la conexión ha fallado
 Name[fi]=Yhteyden muodostaminen epäonnistui
 Name[hu]=Nem sikerült aktiválni a kapcsolatot
@@ -162,6 +179,8 @@ Action=Popup
 [Event/FailedToAddConnection]
 Name=Failed to add connection
 Name[ca]=Ha fallat en afegir la connexió
+Name[de]=Die Verbindung kann nicht hinzugefügt werden
+Name[en_GB]=Failed to add connection
 Name[es]=Ha ocurrido un fallo al añadir la conexión
 Name[fi]=Yhteyden lisääminen epäonnistui
 Name[hu]=Nem sikerült hozzáadni a kapcsolatot
@@ -181,6 +200,8 @@ Action=Popup
 [Event/FailedToDeactivateConnection]
 Name=Failed to deactivate connection
 Name[ca]=Ha fallat en desactivar la connexió
+Name[de]=Die Verbindung kann nicht deaktiviert werden
+Name[en_GB]=Failed to deactivate connection
 Name[es]=La desactivación de la conexión ha fallado
 Name[fi]=Yhteyden katkaiseminen epäonnistui
 Name[nds]=Verbinnen lett sik nich utmaken
@@ -199,6 +220,8 @@ Action=Popup
 [Event/FailedToRemoveConnection]
 Name=Failed to remove connection
 Name[ca]=Ha fallat en eliminar la connexió
+Name[de]=Die Verbindung kann nicht entfernt werden
+Name[en_GB]=Failed to remove connection
 Name[es]=La eliminación de la conexión ha fallado
 Name[fi]=Yhteyden poisto epäonnistui
 Name[nds]=Verbinnen lett sik nich wegmaken
@@ -217,6 +240,7 @@ Action=Popup
 [Event/FailedToRequestScan]
 Name=Failed to request scan
 Name[ca]=Ha fallat en demanar escanejar
+Name[en_GB]=Failed to request scan
 Name[es]=La petición de la exploración ha fallado
 Name[fi]=Verkkojen hakemispyyntö epäonnistui
 Name[hu]=Nem sikerült a pásztázás kérése
@@ -236,6 +260,7 @@ Action=Popup
 [Event/FailedToGetSecrets]
 Name=Failed to get secrets
 Name[ca]=Ha fallat en obtenir els secrets
+Name[en_GB]=Failed to get secrets
 Name[es]=La obtención de claves secretas ha fallado
 Name[fi]=Salaisuuksien saaminen epäonnistui
 Name[nds]=Anmellinformatschonen laat sik nich halen
@@ -254,6 +279,8 @@ Action=Popup
 [Event/FailedToUpdateConnection]
 Name=Failed to update connection
 Name[ca]=Ha fallat en actualitzar la connexió
+Name[de]=Die Verbindung kann nicht aktualisiert werden
+Name[en_GB]=Failed to update connection
 Name[es]=La actualización de la conexión ha fallado
 Name[fi]=Yhteyden päivittäminen epäonnistui
 Name[nds]=Verbinnen lett sik nich opfrischen
@@ -278,6 +305,7 @@ Name[cs]=Chybějící modul VPN
 Name[da]=Mangler VPN-plugin
 Name[de]=Fehlendes VPN-Modul
 Name[el]=Λείπει το πρόσθετο VPN
+Name[en_GB]=Missing VPN plugin
 Name[es]=Falta el complemento VPN
 Name[fi]=Puuttuva VPN-liitännäinen
 Name[fr]=Module VPN manquant

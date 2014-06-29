@@ -2,6 +2,8 @@
 Name=Networks
 Name[ca]=Xarxes
 Name[cs]=Sítě
+Name[de]=Netzwerke
+Name[en_GB]=Networks
 Name[es]=Redes
 Name[fi]=Verkot
 Name[nds]=Nettwarken
@@ -24,6 +26,7 @@ Comment[cs]=Stav a ovládání sítě
 Comment[da]=Status og kontrol over netværk
 Comment[de]=Netzwerkstatus und -steuerung
 Comment[el]=Κατάσταση δικτύου και έλεγχος
+Comment[en_GB]=Network status and control
 Comment[es]=Estado y control de redes
 Comment[fi]=Verkon tila ja hallinta
 Comment[fr]=État et contrôle du réseau

@@ -47,7 +47,7 @@ if (WITH_MODEMMANAGER_SUPPORT)
         mobileproviders.cpp)
 endif()
 
-if (${NETWORKMANAGER_VERSION} VERSION_EQUAL 0.9.9.0 OR ${NETWORKMANAGER_VERSION} VERSION_GREATER 0.9.9.0)
+if (${NETWORKMANAGER_VERSION} VERSION_EQUAL 0.9.10.0 OR ${NETWORKMANAGER_VERSION} VERSION_GREATER 0.9.10.0)
 set(plasmanm_editor_SRCS
     ${plasmanm_editor_SRCS}
     settings/teamwidget.cpp)

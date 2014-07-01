@@ -3,8 +3,10 @@ project(plasma-networkmanagement)
 cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 set(QT_MIN_VERSION "5.2.0")
 
-set(PLASMA_NM_VERSION 1.0.0)
-set(PLASMA_NM_STRING_VERSION "${PLASMA_NM_VERSION}")
+set(PLASMANM_VERSION_MAJOR 4)
+set(PLASMANM_VERSION_MINOR 97)
+set(PLASMANM_VERSION_PATCH 0)
+set(PLASMANM_VERSION_STRING "${PLASMANM_VERSION_MAJOR}.${PLASMANM_VERSION_MINOR}.${PLASMANM_VERSION_PATCH}" )
 
 ################# set KDE specific information #################
 

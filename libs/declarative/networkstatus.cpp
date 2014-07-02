@@ -77,25 +77,25 @@ void NetworkStatus::statusChanged(NetworkManager::Status status)
 {
     switch (status) {
         case NetworkManager::ConnectedLinkLocal:
-            m_networkStatus = i18nc("Connected", "A network device is connected, but there is only link-local connectivity");
+            m_networkStatus = i18nc("A network device is connected, but there is only link-local connectivity", "Connected");
             break;
         case NetworkManager::ConnectedSiteOnly:
-            m_networkStatus = i18nc("Connected", "A network device is connected, but there is only site-local connectivity");
+            m_networkStatus = i18nc("A network device is connected, but there is only site-local connectivity", "Connected");
             break;
         case NetworkManager::Connected:
-            m_networkStatus = i18nc("Connected", "A network device is connected, with global network connectivity");
+            m_networkStatus = i18nc("A network device is connected, with global network connectivity", "Connected");
             break;
         case NetworkManager::Asleep:
-            m_networkStatus = i18nc("Inactive", "Networking is inactive and all devices are disabled");
+            m_networkStatus = i18nc("Networking is inactive and all devices are disabled", "Inactive");
             break;
         case NetworkManager::Disconnected:
-            m_networkStatus = i18nc("Disconnected", "There is no active network connection");
+            m_networkStatus = i18nc("There is no active network connection", "Disconnected");
             break;
         case NetworkManager::Disconnecting:
-            m_networkStatus = i18nc("Disconnecting", "Network connections are being cleaned up");
+            m_networkStatus = i18nc("Network connections are being cleaned up", "Disconnecting");
             break;
         case NetworkManager::Connecting:
-            m_networkStatus = i18nc("Connecting", "A network device is connecting to a network and there is no other available network connection");
+            m_networkStatus = i18nc("A network device is connecting to a network and there is no other available network connection", "Connecting");
             break;
         default:
             m_networkStatus = checkUnknownReason();

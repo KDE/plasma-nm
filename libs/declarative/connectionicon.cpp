@@ -110,7 +110,7 @@ QString ConnectionIcon::connectionIcon() const
         return m_connectionIcon + "-locked";
     }
 
-    if (m_limited) {
+    if (m_limited && !m_connectionIcon.contains("available")) {
         return m_connectionIcon + "-limited";
     }
 

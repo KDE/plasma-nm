@@ -101,7 +101,7 @@ bool ConnectionIcon::connecting() const
 
 QString ConnectionIcon::connectionIcon() const
 {
-    if (m_vpn) {
+    if (m_vpn && !m_connectionIcon.contains("available")) {
         return m_connectionIcon + "-locked";
     }
 
@@ -401,6 +401,9 @@ void ConnectionIcon::setDisconnectedIcon()
     bool wired = false;
     bool wireless = false;
     bool modem = false;
+
+    m_limited = false;
+    m_vpn = false;
 
     foreach (const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {

@@ -25,6 +25,7 @@
 #include <QStringBuilder>
 #include <KPluginFactory>
 #include <KMessageBox>
+#include <KStandardDirs>
 
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/VpnSetting>
@@ -68,7 +69,19 @@ K_EXPORT_PLUGIN(OpenVpnUiPluginFactory("plasmanetworkmanagement_openvpnui"))
 #define TLS_CLIENT_TAG "tls-client"
 #define TLS_REMOTE_TAG "tls-remote"
 #define TUNMTU_TAG "tun-mtu"
-#define REDIRECT_GATEWAY "redirect-gateway"
+#define REDIRECT_GATEWAY_TAG "redirect-gateway"
+#define KEY_DIRECTION_TAG "key-direction"
+
+#define BEGIN_KEY_CA_TAG "<ca>"
+#define END_KEY_CA_TAG "</ca>"
+#define BEGIN_KEY_CERT_TAG "<cert>"
+#define END_KEY_CERT_TAG "</cert>"
+#define BEGIN_KEY_KEY_TAG "<key>"
+#define END_KEY_KEY_TAG "</key>"
+#define BEGIN_KEY_SECRET_TAG "<secret>"
+#define END_KEY_SECRET_TAG "</secret>"
+#define BEGIN_TLS_AUTH_TAG "<tls-auth>"
+#define END_TLS_AUTH_TAG "</tls_auth>"
 
 #define PROC_TYPE_TAG "Proc-Type: 4,ENCRYPTED"
 #define PKCS8_TAG "-----BEGIN ENCRYPTED PRIVATE KEY-----"
@@ -171,6 +184,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         return result;
     }
 
+    const QString connectionName = QFileInfo(fileName).completeBaseName();
     NMStringMap dataMap;
     NMStringMap secretData;
     QVariantMap ipv4Data;
@@ -184,6 +198,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
     bool have_pass = false;
     bool have_sk = false;
     bool have_redirect_gateway = false;
+    int key_direction = -1;
 
     QTextStream in(&impFile);
     while (!in.atEnd()) {
@@ -449,10 +464,63 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             }
             continue;
         }
-        if (key_value[0] == REDIRECT_GATEWAY) {
+        if (key_value[0] == REDIRECT_GATEWAY_TAG) {
             have_redirect_gateway = true;
             continue;
         }
+        if (key_value[0] == KEY_DIRECTION_TAG) {
+            if (key_value.count() == 2) {
+                key_direction = key_value[1].toInt();
+            }
+
+            if (key_direction != 0 && key_direction != 1) {
+                KMessageBox::information(0, i18n("Invalid argument in option: %1", line));
+                key_direction = -1;
+            }
+            continue;
+        }
+
+        if (key_value[0] == BEGIN_KEY_CA_TAG) {
+            const QString caAbsolutePath = saveFile(in, QLatin1String(END_KEY_CA_TAG), connectionName + "_ca.crt");
+            if (!caAbsolutePath.isEmpty()) {
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CA), caAbsolutePath);
+            }
+            continue;
+        } else if (key_value[0] == BEGIN_KEY_CERT_TAG) {
+            const QString certAbsolutePath = saveFile(in, QLatin1String(END_KEY_CERT_TAG), connectionName + "_cert.crt");
+            if (!certAbsolutePath.isEmpty()) {
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERT), certAbsolutePath);
+            }
+            continue;
+        } else if (key_value[0] == BEGIN_KEY_KEY_TAG) {
+            const QString keyAbsolutePath = saveFile(in, QLatin1String(END_KEY_KEY_TAG), connectionName + ".key");
+            if (!keyAbsolutePath.isEmpty()) {
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_KEY), keyAbsolutePath);
+            }
+            continue;
+        } else if (key_value[0] == BEGIN_KEY_SECRET_TAG) {
+            const QString secretAbsolutePath = saveFile(in, QLatin1String(END_KEY_SECRET_TAG), connectionName + "_secret.key");
+            if (!secretAbsolutePath.isEmpty()) {
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_KEY), secretAbsolutePath);
+                have_sk = true;
+
+                if (key_direction > -1) {
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY_DIRECTION), QString().setNum(key_direction));
+                }
+            }
+            continue;
+        } else if (key_value[0] == BEGIN_TLS_AUTH_TAG) {
+            const QString tlsAuthAbsolutePath = saveFile(in, QLatin1String(END_TLS_AUTH_TAG), connectionName + "_tls_auth.key");
+            if (!tlsAuthAbsolutePath.isEmpty()) {
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA), tlsAuthAbsolutePath);
+
+                if (key_direction > -1) {
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA_DIR), QString().setNum(key_direction));
+                }
+            }
+            continue;
+        }
+
         // Import X-NM-Routes if present
         if (key_value[0] == "X-NM-Routes") {
             ipv4Data.insert("X-NM-Routes", key_value[1]);
@@ -516,7 +584,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
     setting.setSecrets(secretData);
 
     QVariantMap conn;
-    conn.insert("id", QFileInfo(fileName).completeBaseName());
+    conn.insert("id", connectionName);
     conn.insert("type", "vpn");
     result.insert("connection", conn);
 
@@ -528,6 +596,33 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
 
     impFile.close();
     return result;
+}
+
+QString OpenVpnUiPlugin::saveFile(QTextStream &in, const QString &endTag, const QString &fileName)
+{
+    const QString certificatesDirectory = KStandardDirs::locateLocal("data", "networkmanagement/certificates/");
+    const QString absoluteFilePath = certificatesDirectory + fileName;
+    QFile outFile(absoluteFilePath);
+
+    QDir().mkpath(certificatesDirectory);
+    if (!outFile.open(QFile::WriteOnly | QFile::Text)) {
+        KMessageBox::information(0, i18n("Error saving file %1: %2", absoluteFilePath, outFile.errorString()));
+        return QString();
+    }
+
+    QTextStream out(&outFile);
+    while (!in.atEnd()) {
+        const QString line = in.readLine();
+
+        if (line.indexOf(endTag) >= 0) {
+            break;
+        }
+
+        out << line << "\n";
+    }
+
+    outFile.close();
+    return absoluteFilePath;
 }
 
 bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
@@ -674,7 +769,7 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
     // Export never default setting.
     NetworkManager::Ipv4Setting::Ptr ipv4Setting = connection->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
     if (!ipv4Setting->neverDefault()) {
-        line = QString(REDIRECT_GATEWAY) + '\n';
+        line = QString(REDIRECT_GATEWAY_TAG) + '\n';
         expFile.write(line.toLatin1());
     }
     // Export X-NM-Routes

@@ -38,6 +38,9 @@ public:
     QString supportedFileExtensions() const;
     NMVariantMapMap importConnectionSettings(const QString &fileName);
     bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName);
+
+private:
+    QString saveFile(QTextStream &in, const QString &endTag, const QString &fileName);
 };
 
 #endif //  PLASMANM_OPENVPN_H

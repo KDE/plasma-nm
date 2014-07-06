@@ -24,6 +24,7 @@
 #include "vpnuiplugin.h"
 
 #include <QVariant>
+#include <QTextStream>
 
 class OpenVpnUiPlugin : public VpnUiPlugin
 {

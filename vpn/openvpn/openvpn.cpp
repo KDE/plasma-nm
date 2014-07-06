@@ -764,8 +764,8 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
         line = QString(REDIRECT_GATEWAY_TAG) + '\n';
         expFile.write(line.toLatin1());
     }
+    
     // Export X-NM-Routes
-    NetworkManager::Ipv4Setting::Ptr ipv4Setting = connection->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
     if (!ipv4Setting->routes().isEmpty()) {
         QString routes;
         foreach(const NetworkManager::IpRoute &route, ipv4Setting->routes()) {

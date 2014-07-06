@@ -1,6 +1,7 @@
 /*
     Copyright 2008 Will Stephenson <wstephenson@kde.org>
     Copyright 2011-2012 Rajeesh K Nambiar <rajeeshknambiar@gmail.com>
+    Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
     Copyright 2012-2014 Lamarque V. Souza <lamarque@kde.org>
 
     This program is free software; you can redistribute it and/or
@@ -390,22 +391,26 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         }
         if (key_value[0] == CA_TAG && key_value.count() > 1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
-            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CA), unQuote(key_value[1], fileName));
+            const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
+            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CA), absoluteFilePath);
             continue;
         }
         if (key_value[0] == CERT_TAG && key_value.count() > 1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
-            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERT), unQuote(key_value[1], fileName));
+            const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
+            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERT), absoluteFilePath);
             continue;
         }
         if (key_value[0] == KEY_TAG && key_value.count() > 1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
-            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_KEY), unQuote(key_value[1], fileName));
+            const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
+            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_KEY), absoluteFilePath);
             continue;
         }
         if (key_value[0] == SECRET_TAG && key_value.count() > 1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
-            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY), unQuote(key_value[1], fileName));
+            const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
+            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY), absoluteFilePath);
             if (key_value.count() > 2) {
                 key_value[2] = key_value[1];
                 if (!key_value[2].isEmpty() && (key_value[2].toLong() == 0 ||key_value[2].toLong() == 1))
@@ -416,7 +421,8 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         }
         if (key_value[0] == TLS_AUTH_TAG && key_value.count() >1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
-            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA), unQuote(key_value[1], fileName));
+            const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
+            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA), absoluteFilePath);
             if (key_value.count() > 2) {
                 key_value[2] = key_value[1];
                 if (!key_value[2].isEmpty() && (key_value[2].toLong() == 0 ||key_value[2].toLong() == 1))
@@ -481,25 +487,25 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         }
 
         if (key_value[0] == BEGIN_KEY_CA_TAG) {
-            const QString caAbsolutePath = saveFile(in, QLatin1String(END_KEY_CA_TAG), connectionName + "_ca.crt");
+            const QString caAbsolutePath = saveFile(in, QLatin1String(END_KEY_CA_TAG), connectionName, "ca.crt");
             if (!caAbsolutePath.isEmpty()) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CA), caAbsolutePath);
             }
             continue;
         } else if (key_value[0] == BEGIN_KEY_CERT_TAG) {
-            const QString certAbsolutePath = saveFile(in, QLatin1String(END_KEY_CERT_TAG), connectionName + "_cert.crt");
+            const QString certAbsolutePath = saveFile(in, QLatin1String(END_KEY_CERT_TAG), connectionName, "cert.crt");
             if (!certAbsolutePath.isEmpty()) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERT), certAbsolutePath);
             }
             continue;
         } else if (key_value[0] == BEGIN_KEY_KEY_TAG) {
-            const QString keyAbsolutePath = saveFile(in, QLatin1String(END_KEY_KEY_TAG), connectionName + ".key");
+            const QString keyAbsolutePath = saveFile(in, QLatin1String(END_KEY_KEY_TAG), connectionName, "private.key");
             if (!keyAbsolutePath.isEmpty()) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_KEY), keyAbsolutePath);
             }
             continue;
         } else if (key_value[0] == BEGIN_KEY_SECRET_TAG) {
-            const QString secretAbsolutePath = saveFile(in, QLatin1String(END_KEY_SECRET_TAG), connectionName + "_secret.key");
+            const QString secretAbsolutePath = saveFile(in, QLatin1String(END_KEY_SECRET_TAG), connectionName, "secret.key");
             if (!secretAbsolutePath.isEmpty()) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_KEY), secretAbsolutePath);
                 have_sk = true;
@@ -510,7 +516,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             }
             continue;
         } else if (key_value[0] == BEGIN_TLS_AUTH_TAG) {
-            const QString tlsAuthAbsolutePath = saveFile(in, QLatin1String(END_TLS_AUTH_TAG), connectionName + "_tls_auth.key");
+            const QString tlsAuthAbsolutePath = saveFile(in, QLatin1String(END_TLS_AUTH_TAG), connectionName, "tls_auth.key");
             if (!tlsAuthAbsolutePath.isEmpty()) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA), tlsAuthAbsolutePath);
 
@@ -598,10 +604,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
     return result;
 }
 
-QString OpenVpnUiPlugin::saveFile(QTextStream &in, const QString &endTag, const QString &fileName)
+QString OpenVpnUiPlugin::saveFile(QTextStream &in, const QString &endTag, const QString &connectionName, const QString &fileName)
 {
-    const QString certificatesDirectory = KStandardDirs::locateLocal("data", "networkmanagement/certificates/");
-    const QString absoluteFilePath = certificatesDirectory + fileName;
+    const QString certificatesDirectory = KStandardDirs::locateLocal("data", "networkmanagement/certificates/" + connectionName);
+    const QString absoluteFilePath = certificatesDirectory + '/' + fileName;
     QFile outFile(absoluteFilePath);
 
     QDir().mkpath(certificatesDirectory);
@@ -622,6 +628,21 @@ QString OpenVpnUiPlugin::saveFile(QTextStream &in, const QString &endTag, const 
     }
 
     outFile.close();
+    return absoluteFilePath;
+}
+
+QString OpenVpnUiPlugin::tryToCopyToCertificatesDirectory(const QString &connectionName, const QString &sourceFilePath)
+{
+    const QString certificatesDirectory = KStandardDirs::locateLocal("data", "networkmanagement/certificates/");
+    const QString absoluteFilePath = certificatesDirectory + connectionName + '_' + QFileInfo(sourceFilePath).completeBaseName();
+    QFile sourceFile(sourceFilePath);
+
+    QDir().mkpath(certificatesDirectory);
+    if (!sourceFile.copy(absoluteFilePath)) {
+        KMessageBox::information(0, i18n("Error copying file to %1: %2", absoluteFilePath, sourceFile.errorString()));
+        return sourceFilePath;
+    }
+
     return absoluteFilePath;
 }
 

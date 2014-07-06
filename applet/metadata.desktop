@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Networks
+Name[ar]=شبكات
 Name[ca]=Xarxes
 Name[cs]=Sítě
 Name[de]=Netzwerke
@@ -13,11 +14,16 @@ Name[pt]=Redes
 Name[pt_BR]=Redes
 Name[sk]=Siete
 Name[sl]=Omrežja
+Name[sr]=Мреже
+Name[sr@ijekavian]=Мреже
+Name[sr@ijekavianlatin]=Mreže
+Name[sr@latin]=Mreže
 Name[sv]=Nätverk
 Name[uk]=Мережі
 Name[x-test]=xxNetworksxx
 
 Comment=Network status and control
+Comment[ar]=تحكم وحالة الشبكة
 Comment[bg]=Състояние и контрол на мрежата
 Comment[bs]=Alat za kontrolu i prikaz stanja mreže
 Comment[ca]=Control i estat de la xarxa
@@ -41,6 +47,10 @@ Comment[pt_BR]=Estado e controle da rede
 Comment[ro]=Starea și controlul rețelei
 Comment[sk]=Správa a ovládanie siete
 Comment[sl]=Stanje omrežja in nadzor
+Comment[sr]=Стање и управљање мрежом
+Comment[sr@ijekavian]=Стање и управљање мрежом
+Comment[sr@ijekavianlatin]=Stanje i upravljanje mrežom
+Comment[sr@latin]=Stanje i upravljanje mrežom
 Comment[sv]=Nätverksstatus och kontroll
 Comment[tr]=Ağ denetim ve durum izleme
 Comment[uk]=Стеження за станом і керування мережею

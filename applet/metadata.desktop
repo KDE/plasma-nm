@@ -57,7 +57,7 @@ Comment[uk]=Стеження за станом і керування мереж�
 Comment[x-test]=xxNetwork status and controlxx
 Comment[zh_CN]=网络状态和控制
 
-Icon=network-defaultroute
+Icon=preferences-system-network
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet,Plasma/PopupApplet
 

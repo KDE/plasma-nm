@@ -21,12 +21,14 @@
 */
 
 #include "pptpwidget.h"
-#include <QDialog>
 
 #include "ui_pptpprop.h"
 #include "ui_pptpadvanced.h"
 
 #include <QString>
+#include <QDialog>
+#include <QDialogButtonBox>
+
 #include "nm-pptp-service.h"
 
 class PptpSettingWidgetPrivate
@@ -56,6 +58,10 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
     QVBoxLayout * layout = new QVBoxLayout(d->advancedDlg);
     layout->addWidget(d->advancedWid);
     d->advancedDlg->setLayout(layout);
+    QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, d->advancedDlg);
+    connect(buttons, SIGNAL(accepted()), d->advancedDlg, SLOT(accept()));
+    connect(buttons, SIGNAL(rejected()), d->advancedDlg, SLOT(reject()));
+    layout->addWidget(buttons);
 
     connect(d->ui.edt_gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
 

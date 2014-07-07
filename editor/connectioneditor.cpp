@@ -148,7 +148,7 @@ void ConnectionEditor::initializeMenu()
     m_menu->addAction(action);
 
     action = m_menu->addSeparator();
-    action->setText(i18nc("Virtual", "Virtual hardware devices, eg Bridge, Bond"));
+    action->setText(i18nc("Virtual hardware devices, eg Bridge, Bond", "Virtual"));
 
     action = new QAction(i18n("Bond"), this);
     action->setData(NetworkManager::ConnectionSettings::Bond);

@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     KLocalizedString::setApplicationDomain("kde5-nm-connection-editor");
 
     QApplication app(argc, argv);
-    app.setWindowIcon(QIcon::fromTheme("network-defaultroute"));
+    app.setWindowIcon(QIcon::fromTheme("preferences-system-network"));
 
     KAboutData about("kde5-nm-connection-editor", i18n("Connection editor"),
                      PLASMA_NM_VERSION_STRING, i18n("Manage your network connections"),

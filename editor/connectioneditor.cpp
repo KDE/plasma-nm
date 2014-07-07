@@ -219,10 +219,6 @@ void ConnectionEditor::addConnection(QAction* action)
     const QString vpnType = action->property("type").toString();
 
     qDebug() << "Adding new connection of type " << type;
-    if (type == NetworkManager::ConnectionSettings::Vpn) {
-        qDebug() << "VPN type: " << vpnType;
-    }
-
 
     if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
 #if WITH_MODEMMANAGER_SUPPORT
@@ -261,6 +257,12 @@ void ConnectionEditor::addConnection(QAction* action)
 #endif
     } else {
         connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(type));
+
+        if (type == NetworkManager::ConnectionSettings::Vpn) {
+            NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+            vpnSetting->setServiceType(vpnType);
+            qDebug() << "VPN type: " << vpnType;
+        }
 
         if (type == NetworkManager::ConnectionSettings::Wired || type == NetworkManager::ConnectionSettings::Wireless) {
             bool shared = action->property("shared").toBool();

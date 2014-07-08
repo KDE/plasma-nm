@@ -277,8 +277,20 @@ PlasmaComponents.ListItem {
                 width: 200;
                 echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
                 placeholderText: i18n("Password...");
+                validator: RegExpValidator {
+                                regExp: if (SecurityType == PlasmaNM.Enums.StaticWep) {
+                                            /^(?:[\x20-\x7F]{5}|[0-9a-fA-F]{10}|[\x20-\x7F]{13}|[0-9a-fA-F]{26}){1}$/
+                                        } else {
+                                            /^(?:[\x20-\x7F]{8,64}){1}$/
+                                        }
+                                }
+
                 onAccepted: {
                     stateChangeButton.clicked();
+                }
+
+                onAcceptableInputChanged: {
+                    stateChangeButton.enabled = acceptableInput;
                 }
             }
 
@@ -293,6 +305,14 @@ PlasmaComponents.ListItem {
 
                 checked: false;
                 text: i18n("Show password");
+            }
+
+            Component.onCompleted: {
+                stateChangeButton.enabled = false;
+            }
+
+            Component.onDestruction: {
+                stateChangeButton.enabled = true;
             }
         }
     }

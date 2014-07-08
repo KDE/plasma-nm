@@ -84,6 +84,7 @@ NetworkModelItem::NetworkModelItem(const NetworkModelItem* item, QObject* parent
     , m_type(item->type())
     , m_uuid(item->uuid())
     , m_vpnState(NetworkManager::VpnConnection::Unknown)
+    , m_dataEngineConsumer(new Plasma::DataEngineConsumer)
 {
 }
 

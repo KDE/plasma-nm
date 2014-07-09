@@ -75,6 +75,7 @@ NetworkModelItem::NetworkModelItem(const NetworkModelItem* item, QObject* parent
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
     , m_duplicate(true)
     , m_engine(0)
+    , m_dataEngineConsumer(new Plasma::DataEngineConsumer)
     , m_mode(item->mode())
     , m_name(item->name())
     , m_securityType(item->securityType())
@@ -84,7 +85,6 @@ NetworkModelItem::NetworkModelItem(const NetworkModelItem* item, QObject* parent
     , m_type(item->type())
     , m_uuid(item->uuid())
     , m_vpnState(NetworkManager::VpnConnection::Unknown)
-    , m_dataEngineConsumer(new Plasma::DataEngineConsumer)
 {
 }
 

@@ -34,10 +34,9 @@ PlasmaComponents.ListItem {
                                                (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
                                                 SecurityType == PlasmaNM.Enums.Wpa2Psk);
 
+    property int baseHeight: connectionItemBase.height;
 
-    property int baseHeight;
-
-    height: expanded ? baseHeight + expandableComponentLoader.height : baseHeight;
+    height: expanded ? baseHeight + expandableComponentLoader.height + Math.round(units.gridUnit / 3) : baseHeight;
     checked: ListView.isCurrentItem;
     enabled: true;
 
@@ -47,11 +46,12 @@ PlasmaComponents.ListItem {
         anchors {
             left: parent.left;
             right: parent.right;
-            top: expanded ? parent.top : undefined;
-            verticalCenter: expanded ? undefined : parent.verticalCenter;
+            top: parent.top;
+            // Reset top margin from PlasmaComponents.ListItem
+            topMargin: -Math.round(units.gridUnit / 2);
         }
 
-        height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height);
+        height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(units.gridUnit / 2);
 
         PlasmaCore.SvgItem {
             id: connectionSvgIcon;
@@ -89,7 +89,7 @@ PlasmaComponents.ListItem {
 
             anchors {
                 left: connectionSvgIcon.right;
-                leftMargin: units.gridUnit / 2;
+                leftMargin: Math.round(units.gridUnit / 2);
                 right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
                 top: connectionNameLabel.bottom;
             }
@@ -106,7 +106,7 @@ PlasmaComponents.ListItem {
 
             anchors {
                 right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
-                rightMargin: units.gridUnit / 2;
+                rightMargin: Math.round(units.gridUnit / 2);
                 verticalCenter: connectionSvgIcon.verticalCenter;
             }
 
@@ -121,7 +121,7 @@ PlasmaComponents.ListItem {
 
             anchors {
                 right: parent.right;
-                rightMargin: units.gridUnit / 2;
+                rightMargin: Math.round(units.gridUnit / 2);
                 verticalCenter: connectionSvgIcon.verticalCenter;
             }
 
@@ -133,10 +133,6 @@ PlasmaComponents.ListItem {
 
             onClicked: changeState();
         }
-
-        Component.onCompleted: {
-            baseHeight = connectionItemBase.height + units.gridUnit / 3;
-        }
     }
 
     Loader {
@@ -146,7 +142,6 @@ PlasmaComponents.ListItem {
             left: parent.left;
             right: parent.right;
             top: connectionItemBase.bottom;
-            topMargin: units.gridUnit / 3;
         }
     }
 
@@ -154,7 +149,7 @@ PlasmaComponents.ListItem {
         id: detailsComponent;
 
         Item {
-            height: childrenRect.height + units.gridUnit / 3;
+            height: childrenRect.height;
 
             PlasmaCore.SvgItem {
                 id: detailsSeparator;
@@ -179,7 +174,7 @@ PlasmaComponents.ListItem {
                     leftMargin: units.iconSizes.medium;
                     right: parent.right;
                     top: detailsSeparator.bottom;
-                    topMargin: units.gridUnit / 2;
+                    topMargin: Math.round(units.gridUnit / 3);
                 }
 
                 Repeater {
@@ -193,7 +188,7 @@ PlasmaComponents.ListItem {
                         anchors {
                             left: parent.left;
                             right: parent.right;
-                            topMargin: units.gridUnit / 2;
+                            topMargin: Math.round(units.gridUnit / 3);
                         }
 
                         height: Math.max(detailNameLabel.height, detailValueLabel.height);
@@ -203,7 +198,7 @@ PlasmaComponents.ListItem {
 
                             anchors {
                                 left: parent.left;
-                                leftMargin: repeater.longestString - paintedWidth + units.gridUnit / 2;
+                                leftMargin: repeater.longestString - paintedWidth + Math.round(units.gridUnit / 2);
                                 verticalCenter: parent.verticalCenter;
                             }
 
@@ -246,7 +241,7 @@ PlasmaComponents.ListItem {
         id: passwordDialogComponent;
 
         Item {
-            height: childrenRect.height + units.gridUnit / 2;
+            height: childrenRect.height;
 
             property alias password: passwordInput.text;
             property alias passwordFocus: passwordInput
@@ -271,7 +266,7 @@ PlasmaComponents.ListItem {
                 anchors {
                     horizontalCenter: parent.horizontalCenter;
                     top: passwordSeparator.bottom;
-                    topMargin: units.gridUnit / 2;
+                    topMargin: Math.round(units.gridUnit / 3);
                 }
                 height: implicitHeight;
                 width: 200;

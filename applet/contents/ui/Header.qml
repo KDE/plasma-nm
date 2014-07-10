@@ -20,6 +20,7 @@
 
 import QtQuick 2.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.core 2.0 as PlasmaCore
 
 PlasmaComponents.ListItem {
     id: header;
@@ -46,23 +47,61 @@ PlasmaComponents.ListItem {
         font.weight: Font.DemiBold;
     }
 
-    PlasmaComponents.ToolButton {
+    PlasmaCore.FrameSvgItem {
+        id: buttonFrame;
+
+        anchors {
+            fill: refreshButton;
+            bottomMargin: -Math.round(units.gridUnit / 3);
+            leftMargin: -Math.round(units.gridUnit / 3);
+            rightMargin: -Math.round(units.gridUnit / 3);
+            topMargin: -Math.round(units.gridUnit / 3);
+        }
+
+        width: height;
+        imagePath: "widgets/button"
+        prefix: "normal"
+        visible: header.text == i18n("Available connections") && refreshButtonMouseArea.containsMouse;
+    }
+
+    PlasmaCore.SvgItem {
         id: refreshButton;
 
         anchors {
             bottom: parent.bottom;
-            bottomMargin: -units.gridUnit / 3;
             right: parent.right;
-            rightMargin: units.gridUnit / 2;
+            rightMargin: Math.round(units.gridUnit / 2);
             top: parent.top;
-            topMargin: -units.gridUnit / 3;
         }
 
-        iconSource: "view-refresh";
+        width: height;
+        elementId: "view-refresh"
         visible: header.text == i18n("Available connections");
+        svg: PlasmaCore.FrameSvg { imagePath: "icons/view" }
 
-        onClicked: {
-            handler.requestScan();
+        RotationAnimation {
+            id: animation;
+
+            direction: RotationAnimation.Clockwise
+            duration: 1000;
+            from: 0;
+            to: 720;
+            target: refreshButton;
+            // Workaround for warning message about non-existing property "rotation"
+            // BUG: https://bugreports.qt-project.org/browse/QTBUG-22141
+            property: "rotation";
+        }
+
+        MouseArea {
+            id: refreshButtonMouseArea;
+
+            anchors.fill: parent;
+            hoverEnabled: true;
+
+            onClicked: {
+                handler.requestScan();
+                animation.start();
+            }
         }
     }
 }

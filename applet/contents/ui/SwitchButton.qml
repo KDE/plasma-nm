@@ -31,7 +31,7 @@ Item {
 
     signal clicked();
 
-    height: switchButtonIcon.height + units.gridUnit / 2;
+    height: switchButtonIcon.height + Math.round(units.gridUnit / 2);
     width: switchButtonCheckbox.width + switchButtonIcon.width + units.gridUnit;
 
     PlasmaCore.Svg {
@@ -45,10 +45,10 @@ Item {
         id: switchButtonCheckbox;
 
         anchors {
-            bottomMargin: units.gridUnit / 3;
+            bottomMargin: Math.round(units.gridUnit / 3);
             left: parent.left;
-            leftMargin: units.gridUnit / 2;
-            topMargin: units.gridUnit / 3;
+            leftMargin: Math.round(units.gridUnit / 2);
+            topMargin: Math.round(units.gridUnit / 3);
             verticalCenter: parent.verticalCenter;
         }
 
@@ -62,7 +62,7 @@ Item {
 
         anchors {
             left: switchButtonCheckbox.right;
-            leftMargin: units.gridUnit / 2;
+            leftMargin: Math.round(units.gridUnit / 2);
             verticalCenter: parent.verticalCenter;
         }
 

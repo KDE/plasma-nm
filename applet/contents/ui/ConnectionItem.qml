@@ -73,7 +73,7 @@ PlasmaComponents.ListItem {
             anchors {
                 bottom: connectionSvgIcon.verticalCenter;
                 left: connectionSvgIcon.right;
-                leftMargin: units.gridUnit / 2;
+                leftMargin: Math.round(units.gridUnit / 2);
                 right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
             }
 

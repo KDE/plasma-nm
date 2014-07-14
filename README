@@ -5,8 +5,8 @@ Plasma applet written in QML for managing network connections
 
 Dependencies:
 -------------
-  * libnm-qt - 0.9.8.1 (git NM/0.9.8 branch) or newer version
-    - requires NetworkManager 0.9.8+
+  * libnm-qt - 0.9.8.2 (git NM/0.9.8 branch) or newer version
+    - requires NetworkManager 0.9.8.4+, but NetworkManager 0.9.8.10 is recommended
     - requires libmm-qt 1.0.x (MM/1.0 branch) if you want ModemManager support or newer version
 
 Optional dependencies:

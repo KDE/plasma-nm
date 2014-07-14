@@ -39,6 +39,7 @@
 #include <QWaitCondition>
 #include <QCryptographicHash>
 #include <QFile>
+#include <QTimer>
 
 #include "nm-openconnect-service.h"
 

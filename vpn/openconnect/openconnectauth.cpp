@@ -95,7 +95,6 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
     connect(d->ui.cmbLogLevel, SIGNAL(currentIndexChanged(int)), this, SLOT(logLevelChanged(int)));
     connect(d->ui.viewServerLog, SIGNAL(toggled(bool)), this, SLOT(viewServerLogToggled(bool)));
     connect(d->ui.btnConnect, SIGNAL(clicked()), this, SLOT(connectHost()));
-    connect(d->ui.cmbHosts, SIGNAL(currentIndexChanged(int)), this, SLOT(connectHost()));
 
     d->ui.cmbLogLevel->setCurrentIndex(OpenconnectAuthWidgetPrivate::Debug);
     d->ui.btnConnect->setIcon(KIcon("network-connect"));
@@ -115,6 +114,9 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
 
     readConfig();
     readSecrets();
+
+    // This might be set by readSecrets() so don't connect it until now
+    connect(d->ui.cmbHosts, SIGNAL(currentIndexChanged(int)), this, SLOT(connectHost()));
 
     KAcceleratorManager::manage(this);
 }
@@ -228,8 +230,9 @@ void OpenconnectAuthWidget::readSecrets()
 
     if (d->secrets["autoconnect"] == "yes") {
         d->ui.chkAutoconnect->setChecked(true);
-        connectHost();
+        QTimer::singleShot(0, this, SLOT(connectHost()));
     }
+
     if (!d->secrets["certsigs"].isEmpty()) {
         d->certificateFingerprints.append(d->secrets["certsigs"].split('\t'));
     }

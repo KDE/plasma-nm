@@ -93,7 +93,7 @@ Name[da]=Forbindelse deaktiveret
 Name[de]=Verbindung deaktiviert
 Name[en_GB]=Connection deactivated
 Name[es]=Conexión desactivada
-Name[et]=Ühendus 
+Name[et]=Ühendus
 Name[fi]=Yhteys katkaistu
 Name[hu]=Kapcsolat deaktiválva
 Name[nds]=Verbinnen utmaakt
@@ -199,7 +199,7 @@ Name[sv]=Begäran om sökning misslyckades
 Name[uk]=Не вдалося виконати запит щодо сканування
 Name[x-test]=xxFailed to request scanxx
 IconName=applications-internet
-Action=Popup
+Action=None
 
 [Event/MissingVpnPlugin]
 Name=Missing VPN plugin
@@ -211,7 +211,7 @@ Name[da]=Mangler VPN-plugin
 Name[de]=Fehlendes VPN-Modul
 Name[el]=Λείπει το πρόσθετο VPN
 Name[en_GB]=Missing VPN plugin
-Name[es]=Falta complemento VPN 
+Name[es]=Falta complemento VPN
 Name[et]=VPN-i plugin puudub
 Name[fi]=Puuttuva VPN-liitännäinen
 Name[fr]=Module VPN manquant

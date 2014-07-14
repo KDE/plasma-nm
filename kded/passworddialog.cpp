@@ -110,8 +110,12 @@ void PasswordDialog::setupVpnUi(const ConnectionSettings &connectionSettings)
             const QString shortName = serviceType.section('.', -1);
             setWindowTitle(i18n("VPN secrets (%1)", shortName));
             vpnWidget = vpnUiPlugin->askUser(vpnSetting, this);
+            QDialogButtonBox * box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, this);
+            connect(box, &QDialogButtonBox::accepted, this, &PasswordDialog::accept);
+            connect(box, &QDialogButtonBox::rejected, this, &PasswordDialog::reject);
             QVBoxLayout * layout = new QVBoxLayout(this);
             layout->addWidget(vpnWidget);
+            layout->addWidget(box);
             setLayout(layout);
         } else {
             qDebug() << error << ", serviceType == " << serviceType;

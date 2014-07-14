@@ -27,16 +27,16 @@ import org.kde.networkmanagement 0.1 as PlasmaNM
 ListItem {
     id: connectionItem;
 
+    property bool expanded: visibleDetails || visiblePasswordDialog;
+    property bool visibleDetails: false;
+    property bool visiblePasswordDialog: false;
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
                                                (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
                                                 SecurityType == PlasmaNM.Enums.Wpa2Psk);
 
-    property bool visibleDetails: false;
-    property bool visiblePasswordDialog: false;
+    property int baseHeight: connectionItemBase.height + Math.round(units.gridUnit / 3);
 
-    property int baseHeight: connectionItemBase.height + padding.margins.top + padding.margins.bottom;
-
-    height: (visibleDetails || visiblePasswordDialog) ? baseHeight + expandableComponentLoader.height : baseHeight;
+    height: expanded ? baseHeight + expandableComponentLoader.height : baseHeight;
     enabled: true;
 
     PlasmaCore.Svg {
@@ -53,9 +53,11 @@ ListItem {
             left: parent.left;
             right: parent.right;
             top: parent.top;
+            // Reset top margin from PlasmaComponents.ListItem
+            topMargin: -Math.round(units.gridUnit / 2);
         }
 
-        height: Math.max(theme.iconSizes.toolbar, connectionNameLabel.height + connectionStatusLabel.height)
+        height: Math.max(theme.iconSizes.toolbar, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(units.gridUnit / 2);
 
         PlasmaCore.SvgItem {
             id: connectionSvgIcon;
@@ -76,7 +78,7 @@ ListItem {
 
             anchors {
                 left: connectionSvgIcon.right;
-                leftMargin: padding.margins.left;
+                leftMargin: Math.round(units.gridUnit / 2);
                 right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
                 bottom: connectionSvgIcon.verticalCenter
             }
@@ -93,7 +95,7 @@ ListItem {
 
             anchors {
                 left: connectionSvgIcon.right;
-                leftMargin: padding.margins.left;
+                leftMargin: Math.round(units.gridUnit / 2);
                 right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
                 top: connectionNameLabel.bottom;
             }
@@ -110,7 +112,7 @@ ListItem {
 
             anchors {
                 right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
-                rightMargin: padding.margins.right;
+                rightMargin: Math.round(units.gridUnit / 2);
                 verticalCenter: connectionSvgIcon.verticalCenter;
             }
 
@@ -125,7 +127,7 @@ ListItem {
 
             anchors {
                 right: parent.right;
-                rightMargin: padding.margins.right;
+                rightMargin: Math.round(units.gridUnit / 2);
                 verticalCenter: connectionSvgIcon.verticalCenter;
             }
 
@@ -146,7 +148,6 @@ ListItem {
             left: parent.left;
             right: parent.right;
             top: connectionItemBase.bottom;
-            topMargin: padding.margins.top;
         }
     }
 
@@ -154,7 +155,7 @@ ListItem {
         id: detailsComponent;
 
         Item {
-            height: childrenRect.height + padding.margins.top;
+            height: childrenRect.height;
 
             PlasmaCore.SvgItem {
                 id: detailsSeparator;
@@ -181,7 +182,7 @@ ListItem {
                     left: parent.left;
                     right: parent.right;
                     top: detailsSeparator.bottom;
-                    topMargin: padding.margins.top;
+                    topMargin: Math.round(units.gridUnit / 3);
                 }
                 visible: DevicePath && ConnectionState == PlasmaNM.Enums.Activated && Type != PlasmaNM.Enums.Vpn;
 
@@ -213,7 +214,7 @@ ListItem {
                     left: parent.left;
                     right: parent.right;
                     top: detailsTabBar.visible ? detailsTabBar.bottom : detailsSeparator.bottom;
-                    topMargin: padding.margins.top;
+                    topMargin: Math.round(units.gridUnit / 3);
                 }
 
                 TrafficMonitor {
@@ -255,7 +256,7 @@ ListItem {
         id: passwordDialogComponent;
 
         Item {
-            height: childrenRect.height + padding.margins.top;
+            height: childrenRect.height;
 
             property alias password: passwordInput.text;
             property alias passwordFocus: passwordInput
@@ -286,7 +287,7 @@ ListItem {
                 anchors {
                     horizontalCenter: parent.horizontalCenter;
                     top: passwordSeparator.bottom;
-                    topMargin: padding.margins.top;
+                    topMargin: Math.round(units.gridUnit / 3);
                 }
                 echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
                 placeholderText: i18n("Password...");

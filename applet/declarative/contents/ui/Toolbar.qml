@@ -95,12 +95,9 @@ Item {
         id: openEditorButton;
 
         anchors {
-            bottom: parent.bottom;
-            bottomMargin: padding.margins.bottom/2;
             right: parent.right;
-            rightMargin: padding.margins.right;
-            top: parent.top;
-            topMargin: padding.margins.top/2;
+            rightMargin: Math.round(units.gridUnit / 2);
+            verticalCenter: parent.verticalCenter;
         }
         iconSource: "configure";
 

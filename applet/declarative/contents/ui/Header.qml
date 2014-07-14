@@ -26,7 +26,7 @@ PlasmaComponents.ListItem {
 
     property alias text: headerLabel.text;
 
-    height: headerLabel.height + padding.margins.top + padding.margins.bottom;
+    height: headerLabel.height + units.gridUnit;
     sectionDelegate: true;
 
     anchors {
@@ -41,6 +41,7 @@ PlasmaComponents.ListItem {
             horizontalCenter: parent.horizontalCenter;
             verticalCenter: parent.verticalCenter;
         }
+
         font.weight: Font.DemiBold;
     }
 

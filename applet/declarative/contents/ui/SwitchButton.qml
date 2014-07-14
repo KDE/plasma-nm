@@ -32,8 +32,8 @@ Item {
 
     signal clicked();
 
-    height: switchButtonIcon.height + padding.margins.top + padding.margins.bottom;
-    width: switchButtonCheckbox.width + switchButtonIcon.width + padding.margins.left * 3 + padding.margins.right;
+    height: switchButtonIcon.height + Math.round(units.gridUnit / 2);
+    width: switchButtonCheckbox.width + switchButtonIcon.width + units.gridUnit;
 
     PlasmaComponents.CheckBox {
         id: switchButtonCheckbox;

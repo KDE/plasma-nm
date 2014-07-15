@@ -48,7 +48,7 @@ PlasmaComponents.ListItem {
             right: parent.right;
             top: parent.top;
             // Reset top margin from PlasmaComponents.ListItem
-            topMargin: -Math.round(units.gridUnit / 2);
+            topMargin: -Math.round(units.gridUnit / 3);
         }
 
         height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(units.gridUnit / 2);

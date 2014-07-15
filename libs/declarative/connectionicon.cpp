@@ -141,7 +141,8 @@ void ConnectionIcon::activeConnectionAdded(const QString &activeConnection)
             (vpnConnection && (vpnConnection->state() == NetworkManager::VpnConnection::Prepare ||
                                vpnConnection->state() == NetworkManager::VpnConnection::NeedAuth ||
                                vpnConnection->state() == NetworkManager::VpnConnection::Connecting ||
-                               vpnConnection->state() == NetworkManager::VpnConnection::GettingIpConfig))) {
+                               vpnConnection->state() == NetworkManager::VpnConnection::GettingIpConfig ||
+                               vpnConnection->state() == NetworkManager::VpnConnection::Activated))) {
             connect(active.data(), SIGNAL(destroyed(QObject*)),
                     SLOT(activeConnectionDestroyed()));
             if (vpnConnection) {
@@ -151,7 +152,11 @@ void ConnectionIcon::activeConnectionAdded(const QString &activeConnection)
                 connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                         SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
             }
-            m_connecting = true;
+            if (vpnConnection && vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
+                m_vpn = true;
+            } else {
+                m_connecting = true;
+            }
             Q_EMIT connectingChanged(true);
         }
     }

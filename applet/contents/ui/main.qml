@@ -20,15 +20,28 @@
 
 import QtQuick 2.2
 import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import QtQuick.Layouts 1.1
 
 Item {
     id: mainWindow;
 
     property bool showSections: true;
+
+    Plasmoid.toolTipMainText: "";
+    Plasmoid.toolTipSubText: networkStatus.activeConnections;
+    Plasmoid.icon: connectionIconProvider.connectionTooltipIcon;
+
+    Plasmoid.switchWidth: units.gridUnit * 10;
+    Plasmoid.switchHeight: units.gridUnit * 10;
+
+    Plasmoid.compactRepresentation: CompactRepresentation { }
+    Plasmoid.fullRepresentation: PopupDialog {
+        id: dialogItem;
+
+        anchors.fill: parent;
+        focus: true;
+    }
 
     PlasmaNM.NetworkStatus {
         id: networkStatus;
@@ -36,18 +49,5 @@ Item {
 
     PlasmaNM.ConnectionIcon {
         id: connectionIconProvider;
-    }
-
-    Plasmoid.toolTipMainText: ""
-    Plasmoid.toolTipSubText: networkStatus.activeConnections;
-    Plasmoid.icon: connectionIconProvider.connectionTooltipIcon;
-
-    Plasmoid.compactRepresentation: CompactRepresentation { }
-
-    Plasmoid.fullRepresentation: PopupDialog {
-        id: dialogItem;
-
-        anchors.fill: parent;
-        focus: true;
     }
 }

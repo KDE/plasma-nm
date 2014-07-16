@@ -254,6 +254,7 @@ PlasmaComponents.ListItem {
                     right: parent.right;
                     top: parent.top;
                 }
+
                 height: lineSvg.elementSize("horizontal-line").height;
                 width: parent.width;
                 elementId: "horizontal-line";
@@ -268,6 +269,7 @@ PlasmaComponents.ListItem {
                     top: passwordSeparator.bottom;
                     topMargin: Math.round(units.gridUnit / 3);
                 }
+
                 height: implicitHeight;
                 width: 200;
                 echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password

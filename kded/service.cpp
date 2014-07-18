@@ -49,13 +49,13 @@ class NetworkManagementServicePrivate
 NetworkManagementService::NetworkManagementService(QObject * parent, const QVariantList&)
     : KDEDModule(parent), d_ptr(new NetworkManagementServicePrivate)
 {
-    QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasmashell");
-    if (reply.value()) {
-        doInitialization();
-    } else {
-        QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.kde.plasmashell", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
-        connect(watcher, SIGNAL(serviceRegistered(QString)), SLOT(finishInitialization()));
-    }
+//     QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasmashell");
+//     if (reply.value()) {
+    doInitialization();
+//     } else {
+//         QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.kde.plasmashell", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
+//         connect(watcher, SIGNAL(serviceRegistered(QString)), SLOT(finishInitialization()));
+//     }
 }
 
 NetworkManagementService::~NetworkManagementService()
@@ -65,8 +65,8 @@ NetworkManagementService::~NetworkManagementService()
 
 void NetworkManagementService::finishInitialization()
 {
-    QDBusServiceWatcher * watcher = static_cast<QDBusServiceWatcher*>(sender());
-    disconnect(watcher, SIGNAL(serviceRegistered(QString)), this, SLOT(finishInitialization()));
+//     QDBusServiceWatcher * watcher = static_cast<QDBusServiceWatcher*>(sender());
+//     disconnect(watcher, SIGNAL(serviceRegistered(QString)), this, SLOT(finishInitialization()));
 
     doInitialization();
 }
@@ -75,7 +75,6 @@ void NetworkManagementService::doInitialization()
 {
     Q_D(NetworkManagementService);
 
-    qDebug() << "Doing initialization";
     d->agent = new SecretAgent(this);
     new Notification(this);
 #if WITH_MODEMMANAGER_SUPPORT

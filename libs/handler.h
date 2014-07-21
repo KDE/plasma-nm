@@ -80,11 +80,13 @@ public Q_SLOTS:
     void enableWireless(bool enable);
     void enableWimax(bool enable);
     void enableWwan(bool enable);
+
     /**
      * Opens connection editor for given connection
      * @uuid - uuid of the connection you want to edit
      */
     void editConnection(const QString & uuid);
+
     /**
      * Removes given connection
      * @connection - d-bus path of the connection you want to edit

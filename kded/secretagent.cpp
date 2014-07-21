@@ -35,8 +35,6 @@
 #include <QStringBuilder>
 #include <QDialog>
 
-#include <KConfigGroup>
-#include <KConfig>
 #include <KPluginFactory>
 #include <KWindowSystem>
 #include <KWallet/Wallet>
@@ -252,7 +250,7 @@ void SecretAgent::walletOpened(bool success)
         m_wallet->deleteLater();
         m_wallet = 0;
     }
-    processNext(!success);
+    processNext();
 }
 
 void SecretAgent::walletClosed()
@@ -263,26 +261,26 @@ void SecretAgent::walletClosed()
     m_wallet = 0;
 }
 
-void SecretAgent::processNext(bool ignoreWallet)
+void SecretAgent::processNext()
 {
     int i = 0;
     while (i < m_calls.size()) {
         SecretsRequest &request = m_calls[i];
         switch (request.type) {
         case SecretsRequest::GetSecrets:
-            if (processGetSecrets(request, ignoreWallet)) {
+            if (processGetSecrets(request)) {
                 m_calls.removeAt(i);
                 continue;
             }
             break;
         case SecretsRequest::SaveSecrets:
-            if (processSaveSecrets(request, ignoreWallet)) {
+            if (processSaveSecrets(request)) {
                 m_calls.removeAt(i);
                 continue;
             }
             break;
         case SecretsRequest::DeleteSecrets:
-            if (processDeleteSecrets(request, ignoreWallet)) {
+            if (processDeleteSecrets(request)) {
                 m_calls.removeAt(i);
                 continue;
             }
@@ -292,7 +290,7 @@ void SecretAgent::processNext(bool ignoreWallet)
     }
 }
 
-bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) const
+bool SecretAgent::processGetSecrets(SecretsRequest &request) const
 {
     if (m_dialog) {
         return false;
@@ -308,7 +306,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
     const bool isVpn = (setting->type() == NetworkManager::Setting::Vpn);
 
     NMStringMap secretsMap;
-    if (!ignoreWallet && !requestNew && useWallet()) {
+    if (!requestNew && useWallet()) {
         if (m_wallet->isOpen()) {
             if (m_wallet->hasFolder("Network Management") && m_wallet->setFolder("Network Management")) {
                 QString key = QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % request.setting_name;
@@ -318,11 +316,6 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
             qDebug() << "Waiting for the wallet to open";
             return false;
         }
-    } else if (!requestNew && !m_wallet) {
-        // If the wallet is disabled fallback to plain text
-        KConfig config("plasma-networkmanagement");
-        KConfigGroup secretsGroup(&config, QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % request.setting_name);
-        secretsMap = secretsGroup.entryMap();
     }
 
     if (!secretsMap.isEmpty()) {
@@ -380,9 +373,9 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request, bool ignoreWallet) 
     }
 }
 
-bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet) const
+bool SecretAgent::processSaveSecrets(SecretsRequest &request) const
 {
-    if (!ignoreWallet && useWallet()) {
+    if (useWallet()) {
         if (m_wallet->isOpen()) {
             NetworkManager::ConnectionSettings connectionSettings(request.connection);
 
@@ -409,18 +402,6 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
             qDebug() << "Waiting for the wallet to open";
             return false;
         }
-    } else if (!m_wallet) {
-        NetworkManager::ConnectionSettings connectionSettings(request.connection);
-        KConfig config("plasma-networkmanagement");
-        foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
-            KConfigGroup secretsGroup(&config, QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name());
-            NMStringMap secretsMap = setting->secretsToStringMap();
-            NMStringMap::ConstIterator i = secretsMap.constBegin();
-            while (i != secretsMap.constEnd()) {
-                secretsGroup.writeEntry(i.key(), i.value());
-                ++i;
-            }
-        }
     }
 
     if (!request.saveSecretsWithoutReply) {
@@ -433,9 +414,9 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request, bool ignoreWallet)
     return true;
 }
 
-bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWallet) const
+bool SecretAgent::processDeleteSecrets(SecretsRequest &request) const
 {
-    if (!ignoreWallet && useWallet()) {
+    if (useWallet()) {
         if (m_wallet->isOpen()) {
             if (m_wallet->hasFolder("Network Management") && m_wallet->setFolder("Network Management")) {
                 NetworkManager::ConnectionSettings connectionSettings(request.connection);
@@ -451,17 +432,6 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request, bool ignoreWalle
         } else {
             qDebug() << "Waiting for the wallet to open";
             return false;
-        }
-    } else if (!m_wallet) {
-        NetworkManager::ConnectionSettings connectionSettings(request.connection);
-
-        KConfig config("plasma-networkmanagement");
-        foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
-            foreach (const QString &group, config.groupList()) {
-                if (group.startsWith(QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name())) {
-                    config.deleteGroup(group);
-                }
-            }
         }
     }
 

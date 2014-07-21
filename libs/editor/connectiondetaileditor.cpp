@@ -66,6 +66,7 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 #include <KServiceTypeTrader>
+#include <KWallet/Wallet>
 
 ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr& connection,
                                                bool newConnection, QWidget* parent, Qt::WindowFlags f)
@@ -316,7 +317,8 @@ NMVariantMapMap ConnectionDetailEditor::setting()
     NMVariantMapMap settings = connectionWidget->setting();
 
     bool agentOwned = false;
-    if (!settings.value("connection").value("permissions").toStringList().isEmpty()) {
+    // We can store secrets into KWallet if KWallet is enabled and permissions list is not empty
+    if (!settings.value("connection").value("permissions").toStringList().isEmpty() && KWallet::Wallet::isEnabled()) {
         agentOwned = true;
     }
 

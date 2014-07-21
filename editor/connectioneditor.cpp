@@ -292,6 +292,11 @@ void ConnectionEditor::addConnection(QAction* action)
         }
     }
 
+    // In case that mobile broadband wizard has not been finished
+    if (!connectionSettings) {
+        return;
+    }
+
     // Generate new UUID
     connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
 

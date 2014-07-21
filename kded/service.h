@@ -3,6 +3,7 @@
     Copyright 2009 Will Stephenson <wstephenson@kde.org>
     Copyright 2012 Lamarque V. Souza <lamarque@kde.org>
     Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -39,12 +40,13 @@ class PLASMA_NM_EXPORT NetworkManagementService : public KDEDModule
 public:
     NetworkManagementService(QObject * parent, const QVariantList&);
     virtual ~NetworkManagementService();
-private Q_SLOTS:
-   void finishInitialization();
+public Q_SLOTS:
+    void doInitializeNotifications();
+
 private:
     NetworkManagementServicePrivate * d_ptr;
 
-    void doInitialization();
+    void initializeNotifications();
 };
 
 #endif // PLASMANM_KDED_SERVICE_H

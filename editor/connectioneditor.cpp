@@ -517,17 +517,6 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
                 }
             }
         }
-    } else {
-        KConfig config("plasma-networkmanagement");
-        foreach (const QString & groupName, map.keys()) {
-            KConfigGroup secretsGroup = config.group(groupName);
-            NMStringMap secretsMap = map.value(groupName);
-            NMStringMap::ConstIterator i = secretsMap.constBegin();
-            while (i != secretsMap.constEnd()) {
-                secretsGroup.writeEntry(i.key(), i.value());
-                ++i;
-            }
-        }
     }
 }
 

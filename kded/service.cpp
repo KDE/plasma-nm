@@ -2,6 +2,7 @@
     Copyright 2009 Dario Freddi <drf54321@gmail.com>
     Copyright 2009 Will Stephenson <wstephenson@kde.org>
     Copyright 2011-2012 Lamarque V. Souza <lamarque@kde.org>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -44,18 +45,29 @@ class NetworkManagementServicePrivate
 {
     public:
     SecretAgent * agent;
+    BluetoothMonitor * bluetoothMonitor;
+    ModemMonitor * modemMonitor;
+    Notification * notification;
 };
 
 NetworkManagementService::NetworkManagementService(QObject * parent, const QVariantList&)
     : KDEDModule(parent), d_ptr(new NetworkManagementServicePrivate)
 {
-//     QDBusReply<bool> reply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.plasmashell");
-//     if (reply.value()) {
-    doInitialization();
-//     } else {
-//         QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.kde.plasmashell", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
-//         connect(watcher, SIGNAL(serviceRegistered(QString)), SLOT(finishInitialization()));
-//     }
+    Q_D(NetworkManagementService);
+
+    QDBusReply<bool> notificationsReply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.freedesktop.Notifications");
+    if (notificationsReply.value()) {
+        initializeNotifications();
+    } else {
+        QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.freedesktop.Notifications", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
+        connect(watcher, &QDBusServiceWatcher::serviceRegistered, this, &NetworkManagementService::doInitializeNotifications);
+    }
+
+#if WITH_MODEMMANAGER_SUPPORT
+    d->modemMonitor = new ModemMonitor(this);
+#endif
+    d->bluetoothMonitor = new BluetoothMonitor(this);
+    d->agent = new SecretAgent(this);
 }
 
 NetworkManagementService::~NetworkManagementService()
@@ -63,24 +75,19 @@ NetworkManagementService::~NetworkManagementService()
     delete d_ptr;
 }
 
-void NetworkManagementService::finishInitialization()
+void NetworkManagementService::doInitializeNotifications()
 {
-//     QDBusServiceWatcher * watcher = static_cast<QDBusServiceWatcher*>(sender());
-//     disconnect(watcher, SIGNAL(serviceRegistered(QString)), this, SLOT(finishInitialization()));
+    QDBusServiceWatcher * watcher = static_cast<QDBusServiceWatcher*>(sender());
+    watcher->deleteLater();
 
-    doInitialization();
+    initializeNotifications();
 }
 
-void NetworkManagementService::doInitialization()
+void NetworkManagementService::initializeNotifications()
 {
     Q_D(NetworkManagementService);
 
-    d->agent = new SecretAgent(this);
-    new Notification(this);
-#if WITH_MODEMMANAGER_SUPPORT
-    new ModemMonitor(this);
-#endif
-    new BluetoothMonitor(this);
+    d->notification = new Notification(this);
 }
 
 #include "service.moc"

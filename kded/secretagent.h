@@ -87,7 +87,7 @@ private Q_SLOTS:
     void walletClosed();
 
 private:
-    void processNext(bool ignoreWallet = false);
+    void processNext();
     /**
      * @brief processGetSecrets requests
      * @param request the request we are processing
@@ -95,9 +95,9 @@ private:
      * nomally if it failed to open
      * @return true if the item was processed
      */
-    bool processGetSecrets(SecretsRequest &request, bool ignoreWallet) const;
-    bool processSaveSecrets(SecretsRequest &request, bool ignoreWallet) const;
-    bool processDeleteSecrets(SecretsRequest &request, bool ignoreWallet) const;
+    bool processGetSecrets(SecretsRequest &request) const;
+    bool processSaveSecrets(SecretsRequest &request) const;
+    bool processDeleteSecrets(SecretsRequest &request) const;
     /**
      * @brief useWallet checks if the KWallet system is enabled
      * and tries to open it async.

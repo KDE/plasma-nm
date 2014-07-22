@@ -75,6 +75,7 @@ public:
     OpenconnectAuthWorkerThread *worker;
     QList<VPNHost> hosts;
     bool userQuit;
+    bool formGroupChanged;
     int cancelPipes[2];
     QList<QPair<QString, int> > serverLog;
 
@@ -89,6 +90,8 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
     d->setting = setting;
     d->ui.setupUi(this);
     d->userQuit = false;
+    d->formGroupChanged = false;
+
     if (pipe2(d->cancelPipes, O_NONBLOCK|O_CLOEXEC)) {
         // Should never happen. Just don't do real cancellation if it does
         d->cancelPipes[0] = -1;
@@ -103,7 +106,7 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
     d->ui.btnConnect->setIcon(KIcon("network-connect"));
     d->ui.viewServerLog->setChecked(false);
 
-    d->worker = new OpenconnectAuthWorkerThread(&d->mutex, &d->workerWaiting, &d->userQuit, d->cancelPipes[0]);
+    d->worker = new OpenconnectAuthWorkerThread(&d->mutex, &d->workerWaiting, &d->userQuit, &d->formGroupChanged, d->cancelPipes[0]);
 
     // gets the pointer to struct openconnect_info (defined in openconnect.h), which contains data that OpenConnect needs,
     // and which needs to be populated with settings we get from NM, like host, certificate or private key
@@ -453,14 +456,12 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
                     cmb->setCurrentIndex(i);
                     if (sopt == AUTHGROUP_OPT(form) &&
                         i != AUTHGROUP_SELECTION(form)) {
-                        // XXX: Immediately return OC_FORM_RESULT_NEWGROUP to
-                        //      change group
+                        QTimer::singleShot(0, this, SLOT(formGroupChanged()));
                     }
                 }
             }
             if (sopt == AUTHGROUP_OPT(form)) {
-                // TODO: Hook up signal when the KComboBox entry changes, to
-                //       return OC_FORM_RESULT_NEWGROUP
+                connect(cmb, SIGNAL(currentIndexChanged(int)), this, SLOT(formGroupChanged()));
             }
             widget = qobject_cast<QWidget*>(cmb);
         }
@@ -556,13 +557,21 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
     d->mutex.unlock();
 }
 
+void OpenconnectAuthWidget::formGroupChanged()
+{
+    Q_D(OpenconnectAuthWidget);
+
+    d->formGroupChanged = true;
+    formLoginClicked();
+}
+
 // Writes the user input from the form into the oc_auth_form structs we got from
 // libopenconnect, and wakes the worker thread up to try to log in and obtain a
 // cookie with this data
 void OpenconnectAuthWidget::formLoginClicked()
 {
     Q_D(OpenconnectAuthWidget);
-    /// XXX: This, or something like it, needs to be called when the KComboBox for the auth group changes too.
+
     const int lastIndex = d->ui.loginBoxLayout->count() - 1;
     QLayout *layout = d->ui.loginBoxLayout->itemAt(lastIndex - 2)->layout();
     struct oc_auth_form *form = (struct oc_auth_form *) d->ui.loginBoxLayout->itemAt(lastIndex)->widget()->property("openconnect_form").value<quintptr>();

@@ -72,8 +72,8 @@ public:
     }
 };
 
-OpenconnectAuthWorkerThread::OpenconnectAuthWorkerThread(QMutex *mutex, QWaitCondition *waitForUserInput, bool *userDecidedToQuit, int cancelFd)
-    : QThread(), m_mutex(mutex), m_waitForUserInput(waitForUserInput), m_userDecidedToQuit(userDecidedToQuit)
+OpenconnectAuthWorkerThread::OpenconnectAuthWorkerThread(QMutex *mutex, QWaitCondition *waitForUserInput, bool *userDecidedToQuit, bool *formGroupChanged, int cancelFd)
+	: QThread(), m_mutex(mutex), m_waitForUserInput(waitForUserInput), m_userDecidedToQuit(userDecidedToQuit), m_formGroupChanged(formGroupChanged)
 {
     m_openconnectInfo = openconnect_vpninfo_new((char*)"OpenConnect VPN Agent (PlasmaNM - running on KDE)",
                                                 OpenconnectAuthStaticWrapper::validatePeerCert,
@@ -177,14 +177,15 @@ int OpenconnectAuthWorkerThread::processAuthFormP(struct oc_auth_form *form)
         return -1;
 
     m_mutex->lock();
+    *m_formGroupChanged = false;
     emit processAuthForm(form);
     m_waitForUserInput->wait(m_mutex);
     m_mutex->unlock();
     if (*m_userDecidedToQuit)
         return OC_FORM_RESULT_CANCELLED;
 
-    // TODO : If group changed, return OC_FORM_RESULT_NEWGROUP
-
+    if (*m_formGroupChanged)
+        return OC_FORM_RESULT_NEWGROUP;
     return OC_FORM_RESULT_OK;
 }
 

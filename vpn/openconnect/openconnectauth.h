@@ -58,6 +58,7 @@ private slots:
     void updateLog(const QString &, const int &);
     void logLevelChanged(int);
     void formLoginClicked();
+    void formGroupChanged();
     void workerFinished(const int&);
     void viewServerLogToggled(bool);
     void passwordModeToggled(bool);

@@ -70,7 +70,7 @@ class OpenconnectAuthWorkerThread : public QThread
     Q_OBJECT
     friend class OpenconnectAuthStaticWrapper;
 public:
-    OpenconnectAuthWorkerThread(QMutex *, QWaitCondition *, bool *, int);
+    OpenconnectAuthWorkerThread(QMutex *, QWaitCondition *, bool *, bool *, int);
     ~OpenconnectAuthWorkerThread();
     struct openconnect_info* getOpenconnectInfo();
 
@@ -93,6 +93,7 @@ private:
     QMutex *m_mutex;
     QWaitCondition *m_waitForUserInput;
     bool *m_userDecidedToQuit;
+    bool *m_formGroupChanged;
     struct openconnect_info *m_openconnectInfo;
 };
 

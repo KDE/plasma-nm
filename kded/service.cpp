@@ -46,7 +46,9 @@ class NetworkManagementServicePrivate
     public:
     SecretAgent * agent;
     BluetoothMonitor * bluetoothMonitor;
+#if WITH_MODEMMANAGER_SUPPORT
     ModemMonitor * modemMonitor;
+#endif
     Notification * notification;
 };
 

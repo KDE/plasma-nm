@@ -60,6 +60,10 @@ VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &se
     m_ui->pfs->addItem(i18nc("Perfect Forward Secrecy", "DH Group 2"), NM_VPNC_PFS_DH2);
     m_ui->pfs->addItem(i18nc("Perfect Forward Secrecy", "DH Group 5"), NM_VPNC_PFS_DH5);
 
+    // localport
+    m_ui->localport->setRange(0, 65535, 1);
+    m_ui->localport->setValue(0);
+
     loadConfig(setting);
 
     KAcceleratorManager::manage(this);
@@ -98,6 +102,16 @@ void VpncAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setti
         m_ui->pfs->setCurrentIndex(m_ui->pfs->findData(pfs));
 
     bool ok = false;
+
+    const QString localport = setting->data().value(NM_VPNC_KEY_LOCAL_PORT);
+    if (!localport.isEmpty()) {
+        const uint localportNum = localport.toUInt(&ok);
+        if (ok && localportNum <= 65535) {
+            m_ui->localport->setValue(localportNum);
+        }
+    }
+
+
     const uint dpd = setting->data().value(NM_VPNC_KEY_DPD_IDLE_TIMEOUT).toUInt(&ok);
     m_ui->deadPeer->setChecked(ok && dpd == 0);
 }
@@ -123,6 +137,8 @@ NMStringMap VpncAdvancedWidget::setting() const
     result.insert(NM_VPNC_KEY_DHGROUP, m_ui->dhGroup->itemData(m_ui->dhGroup->currentIndex()).toString());
 
     result.insert(NM_VPNC_KEY_PERFECT_FORWARD, m_ui->pfs->itemData(m_ui->pfs->currentIndex()).toString());
+
+    result.insert(NM_VPNC_KEY_LOCAL_PORT, QString::number(m_ui->localport->value()));
 
     if (m_ui->deadPeer->isChecked())
         result.insert(NM_VPNC_KEY_DPD_IDLE_TIMEOUT, "0");

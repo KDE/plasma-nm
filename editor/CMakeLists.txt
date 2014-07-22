@@ -38,4 +38,4 @@ endif()
 
 install(TARGETS kde5-nm-connection-editor DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS kde5-nm-connection-editor.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES kde5-nm-connection-editorui.rc  DESTINATION ${DATA_INSTALL_DIR}/kde5-nm-connection-editor)
+install(FILES kde5-nm-connection-editorui.rc  DESTINATION ${KXMLGUI_INSTALL_DIR}/kde5-nm-connection-editor)

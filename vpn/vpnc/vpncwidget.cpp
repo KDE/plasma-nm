@@ -46,6 +46,15 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     KAcceleratorManager::manage(this);
 
+    m_advancedWidget = new VpncAdvancedWidget(m_setting, this);
+    NMStringMap advData = m_advancedWidget->setting();
+    if (!advData.isEmpty()) {
+        if (m_tmpSetting.isNull()) {
+            m_tmpSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
+        }
+        m_tmpSetting->setData(advData);
+    }
+
     if (m_setting)
         loadConfig(setting);
 }
@@ -53,6 +62,7 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 VpncWidget::~VpncWidget()
 {
     m_tmpSetting.clear();
+    m_advancedWidget->deleteLater();
     delete m_ui;
 }
 
@@ -112,10 +122,11 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_VPNC));
     NMStringMap data;
+    NMStringMap secrets;
+
     if (!m_tmpSetting.isNull()) {
         data = m_tmpSetting->data();
     }
-    NMStringMap secrets;
 
     if (!m_ui->gateway->text().isEmpty())
         data.insert(NM_VPNC_KEY_GATEWAY, m_ui->gateway->text());
@@ -186,24 +197,12 @@ void VpncWidget::showPasswords(bool show)
 
 void VpncWidget::showAdvanced()
 {
-    QPointer<VpncAdvancedWidget> adv;
-    if (m_tmpSetting.isNull()) {
-        adv = new VpncAdvancedWidget(m_setting, this);
-    } else {
-        adv = new VpncAdvancedWidget(m_tmpSetting, this);
-    }
-    if (adv->exec() == QDialog::Accepted) {
-        NMStringMap advData = adv->setting();
+    m_advancedWidget->loadConfig(m_tmpSetting);
+    if (m_advancedWidget->exec() == QDialog::Accepted) {
+        NMStringMap advData = m_advancedWidget->setting();
         if (!advData.isEmpty()) {
-            if (m_tmpSetting.isNull()) {
-                m_tmpSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
-            }
             m_tmpSetting->setData(advData);
         }
-    }
-
-    if (adv) {
-        adv->deleteLater();
     }
 }
 

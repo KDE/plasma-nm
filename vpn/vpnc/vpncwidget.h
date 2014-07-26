@@ -23,7 +23,10 @@
 
 #include <NetworkManagerQt/VpnSetting>
 
+#include <QPointer>
+
 #include "settingwidget.h"
+#include "vpncadvancedwidget.h"
 
 namespace Ui
 {
@@ -53,6 +56,7 @@ private:
     Ui::VpncWidget * m_ui;
     NetworkManager::VpnSetting::Ptr m_setting;
     NetworkManager::VpnSetting::Ptr m_tmpSetting;
+    QPointer<VpncAdvancedWidget> m_advancedWidget;
 };
 
 #endif // PLASMA_NM_VPNC_WIDGET_H

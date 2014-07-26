@@ -38,9 +38,9 @@ public:
     ~VpncAdvancedWidget();
 
     NMStringMap setting() const;
+    void loadConfig(const NetworkManager::VpnSetting::Ptr &setting);
 
 private:
-    void loadConfig(const NetworkManager::VpnSetting::Ptr &setting);
     Ui::VpncAdvancedWidget * m_ui;
 };
 

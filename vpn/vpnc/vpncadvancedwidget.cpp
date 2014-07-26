@@ -111,7 +111,6 @@ void VpncAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setti
         }
     }
 
-
     const uint dpd = setting->data().value(NM_VPNC_KEY_DPD_IDLE_TIMEOUT).toUInt(&ok);
     m_ui->deadPeer->setChecked(ok && dpd == 0);
 }

@@ -631,8 +631,7 @@ QString OpenVpnUiPlugin::tryToCopyToCertificatesDirectory(const QString &connect
 
     QDir().mkpath(certificatesDirectory);
     if (!sourceFile.copy(absoluteFilePath)) {
-        // FIXME: uncomment this when we are ok to introduce new translatable strings.
-        //KMessageBox::information(0, i18n("Error copying file to %1: %2", absoluteFilePath, sourceFile.errorString()));
+        KMessageBox::information(0, i18n("Error copying file to %1: %2", absoluteFilePath, sourceFile.errorString()));
         return sourceFilePath;
     }
 

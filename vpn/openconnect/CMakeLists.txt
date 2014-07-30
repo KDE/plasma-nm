@@ -1,4 +1,4 @@
-add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-openconnectui\")
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_openconnectui\")
 
 set (MINIMUM_OPENCONNECT_VERSION_REQUIRED "3.99")
 

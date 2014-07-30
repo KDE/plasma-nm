@@ -1,4 +1,4 @@
-add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-vpncui\")
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_vpncui\")
 
 set(vpnc_SRCS
     vpnc.cpp

@@ -1,4 +1,4 @@
-add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-openswanui\")
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_openswanui\")
 
 set(openswan_SRCS
     openswan.cpp

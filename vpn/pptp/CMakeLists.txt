@@ -1,4 +1,4 @@
-add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-pptpui\")
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_pptpui\")
 
 set(pptp_SRCS
    pptp.cpp

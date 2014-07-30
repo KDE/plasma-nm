@@ -1,4 +1,4 @@
-add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-strongswanui\")
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_strongswanui\")
 
 set(strongswan_SRCS
    strongswan.cpp

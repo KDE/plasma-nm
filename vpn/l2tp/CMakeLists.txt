@@ -1,4 +1,4 @@
-add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-l2tpui\")
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_l2tpui\")
 
 set(l2tp_SRCS
     l2tp.cpp

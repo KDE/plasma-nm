@@ -1,4 +1,4 @@
-add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-openvpnui\")
+add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_openvpnui\")
 
 # Needed to build this module
 remove_definitions(-DQT_USE_FAST_OPERATOR_PLUS)

@@ -26,14 +26,13 @@
 #include <NetworkManagerQt/BluetoothSetting>
 
 #include "settingwidget.h"
-#include "plasmanm_export.h"
 
 namespace Ui
 {
 class BtWidget;
 }
 
-class PLASMA_NM_EXPORT BtWidget : public SettingWidget
+class Q_DECL_EXPORT BtWidget : public SettingWidget
 {
     Q_OBJECT
 public:

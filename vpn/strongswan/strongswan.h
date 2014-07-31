@@ -27,7 +27,7 @@
 
 #include <QVariant>
 
-class StrongswanUiPlugin : public VpnUiPlugin
+class Q_DECL_EXPORT StrongswanUiPlugin : public VpnUiPlugin
 {
 Q_OBJECT
 public:

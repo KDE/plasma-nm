@@ -28,14 +28,13 @@
 
 #include "settingwidget.h"
 #include "security802-1x.h"
-#include "plasmanm_export.h"
 
 namespace Ui
 {
 class WifiSecurity;
 }
 
-class PLASMA_NM_EXPORT WifiSecurity : public SettingWidget
+class Q_DECL_EXPORT WifiSecurity : public SettingWidget
 {
     Q_OBJECT
 public:

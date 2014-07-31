@@ -24,14 +24,13 @@
 #include <QtWidgets/QWidget>
 
 #include "settingwidget.h"
-#include "plasmanm_export.h"
 
 namespace Ui
 {
 class WimaxWidget;
 }
 
-class PLASMA_NM_EXPORT WimaxWidget : public SettingWidget
+class Q_DECL_EXPORT WimaxWidget : public SettingWidget
 {
     Q_OBJECT
 public:

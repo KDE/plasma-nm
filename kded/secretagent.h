@@ -25,13 +25,12 @@
 
 #include <NetworkManagerQt/SecretAgent>
 
-#include "plasmanm_export.h"
-
 namespace KWallet {
 class Wallet;
 }
 
 class PasswordDialog;
+
 class SecretsRequest {
 public:
     enum Type {
@@ -66,7 +65,7 @@ public:
     PasswordDialog *dialog;
 };
 
-class PLASMA_NM_EXPORT SecretAgent : public NetworkManager::SecretAgent
+class Q_DECL_EXPORT SecretAgent : public NetworkManager::SecretAgent
 {
     Q_OBJECT
 public:

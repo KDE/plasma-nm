@@ -26,14 +26,13 @@
 #include <NetworkManagerQt/Setting>
 
 #include "settingwidget.h"
-#include "plasmanm_export.h"
 
 namespace Ui
 {
 class CdmaWidget;
 }
 
-class PLASMA_NM_EXPORT CdmaWidget : public SettingWidget
+class Q_DECL_EXPORT CdmaWidget : public SettingWidget
 {
     Q_OBJECT
 public:

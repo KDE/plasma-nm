@@ -24,14 +24,13 @@
 #include <QWidget>
 
 #include "settingwidget.h"
-#include "plasmanm_export.h"
 
 namespace Ui
 {
 class VlanWidget;
 }
 
-class PLASMA_NM_EXPORT VlanWidget : public SettingWidget
+class Q_DECL_EXPORT VlanWidget : public SettingWidget
 {
 Q_OBJECT
 

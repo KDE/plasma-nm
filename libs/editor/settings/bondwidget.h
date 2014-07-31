@@ -29,14 +29,13 @@
 #include <NetworkManagerQt/BondSetting>
 
 #include "settingwidget.h"
-#include "plasmanm_export.h"
 
 namespace Ui
 {
 class BondWidget;
 }
 
-class PLASMA_NM_EXPORT BondWidget : public SettingWidget
+class Q_DECL_EXPORT BondWidget : public SettingWidget
 {
     Q_OBJECT
 public:

@@ -50,7 +50,6 @@ target_link_libraries(kded_networkmanagement
     KF5::WindowSystem
     KF5::KIOWidgets
     KF5::CoreAddons
-    KF5::KDELibs4Support
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)

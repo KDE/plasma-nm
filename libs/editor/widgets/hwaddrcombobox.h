@@ -23,11 +23,9 @@
 
 #include <KComboBox>
 
-#include "plasmanm_export.h"
-
 #include <NetworkManagerQt/Device>
 
-class PLASMA_NM_EXPORT HwAddrComboBox : public KComboBox
+class Q_DECL_EXPORT HwAddrComboBox : public KComboBox
 {
     Q_OBJECT
 public:

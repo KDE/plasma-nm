@@ -26,14 +26,13 @@
 #include <NetworkManagerQt/WirelessSetting>
 
 #include "settingwidget.h"
-#include "plasmanm_export.h"
 
 namespace Ui
 {
 class WifiConnectionWidget;
 }
 
-class PLASMA_NM_EXPORT WifiConnectionWidget : public SettingWidget
+class Q_DECL_EXPORT WifiConnectionWidget : public SettingWidget
 {
 Q_OBJECT
 

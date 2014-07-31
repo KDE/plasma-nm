@@ -27,7 +27,7 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #include <QVariant>
 #include <QDialog>
 
-class OpenconnectUiPlugin : public VpnUiPlugin
+class Q_DECL_EXPORT OpenconnectUiPlugin : public VpnUiPlugin
 {
     Q_OBJECT
 public:

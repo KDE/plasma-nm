@@ -26,14 +26,13 @@
 
 #include "settingwidget.h"
 #include "ipv6routeswidget.h"
-#include "plasmanm_export.h"
 
 namespace Ui
 {
 class IPv6Widget;
 }
 
-class PLASMA_NM_EXPORT IPv6Widget : public SettingWidget
+class Q_DECL_EXPORT IPv6Widget : public SettingWidget
 {
 Q_OBJECT
 public:

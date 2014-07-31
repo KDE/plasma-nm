@@ -30,13 +30,12 @@
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/generictypes.h>
 
-#include "plasmanm_export.h"
 #include "settingwidget.h"
 
 /**
  * Plugin for UI elements for VPN configuration
  */
-class PLASMA_NM_EXPORT VpnUiPlugin : public QObject
+class Q_DECL_EXPORT VpnUiPlugin : public QObject
 {
     Q_OBJECT
 public:

@@ -24,9 +24,7 @@
 #include <QIdentityProxyModel>
 #include <QModelIndex>
 
-#include "plasmanm_export.h"
-
-class PLASMA_NM_EXPORT EditorIdentityModel : public QIdentityProxyModel
+class Q_DECL_EXPORT EditorIdentityModel : public QIdentityProxyModel
 {
 Q_OBJECT
 

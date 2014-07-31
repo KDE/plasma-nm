@@ -25,7 +25,6 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/WirelessDevice>
 
-#include <KIcon>
 #include <KLocalizedString>
 
 bool signalCompare(const NetworkManager::WirelessNetwork::Ptr & one, const NetworkManager::WirelessNetwork::Ptr & two)
@@ -148,10 +147,10 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
                 NetworkManager::Utils::WirelessSecurityType security = NetworkManager::Utils::findBestWirelessSecurity(wifiDev->wirelessCapabilities(), true, (wifiDev->mode() == NetworkManager::WirelessDevice::Adhoc), accessPoint->capabilities(), accessPoint->wpaFlags(), accessPoint->rsnFlags());
                 if (security != NetworkManager::Utils::Unknown && security != NetworkManager::Utils::None) {
                     const QString text = i18n("%1 (%2%)\nSecurity: %3\nFrequency: %4 Mhz", accessPoint->ssid(), network->signalStrength(), UiUtils::labelFromWirelessSecurity(security), accessPoint->frequency());
-                    addItem(KIcon("object-locked"), text, accessPoint->ssid());
+                    addItem(QIcon::fromTheme("object-locked"), text, accessPoint->ssid());
                 } else {
                     const QString text = i18n("%1 (%2%)\nSecurity: Insecure\nFrequency: %3 Mhz", accessPoint->ssid(), network->signalStrength(), accessPoint->frequency());
-                    addItem(KIcon("object-unlocked"), text, accessPoint->ssid());
+                    addItem(QIcon::fromTheme("object-unlocked"), text, accessPoint->ssid());
                 }
             }
         }

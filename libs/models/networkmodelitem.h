@@ -31,9 +31,8 @@
 #include <Plasma/DataEngineConsumer>
 
 #include "networkmodel.h"
-#include "plasmanm_export.h"
 
-class PLASMA_NM_EXPORT NetworkModelItem : public QObject
+class Q_DECL_EXPORT NetworkModelItem : public QObject
 {
 Q_OBJECT
 public:

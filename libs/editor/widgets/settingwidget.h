@@ -26,9 +26,7 @@
 
 #include <KAcceleratorManager>
 
-#include "plasmanm_export.h"
-
-class PLASMA_NM_EXPORT SettingWidget : public QWidget
+class Q_DECL_EXPORT SettingWidget : public QWidget
 {
     Q_OBJECT
 public:

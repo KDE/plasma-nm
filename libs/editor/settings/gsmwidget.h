@@ -26,14 +26,13 @@
 #include <NetworkManagerQt/Setting>
 
 #include "settingwidget.h"
-#include "plasmanm_export.h"
 
 namespace Ui
 {
 class GsmWidget;
 }
 
-class PLASMA_NM_EXPORT GsmWidget : public SettingWidget
+class Q_DECL_EXPORT GsmWidget : public SettingWidget
 {
     Q_OBJECT
 public:

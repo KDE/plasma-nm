@@ -29,14 +29,13 @@
 #include <NetworkManagerQt/BridgeSetting>
 
 #include "settingwidget.h"
-#include "plasmanm_export.h"
 
 namespace Ui
 {
 class BridgeWidget;
 }
 
-class PLASMA_NM_EXPORT BridgeWidget : public SettingWidget
+class Q_DECL_EXPORT BridgeWidget : public SettingWidget
 {
     Q_OBJECT
 public:

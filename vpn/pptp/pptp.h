@@ -26,7 +26,7 @@
 
 #include <QVariant>
 
-class PptpUiPlugin : public VpnUiPlugin
+class Q_DECL_EXPORT PptpUiPlugin : public VpnUiPlugin
 {
 Q_OBJECT
 public:

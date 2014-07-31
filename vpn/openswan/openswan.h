@@ -25,7 +25,7 @@
 
 #include <QVariant>
 
-class OpenswanUiPlugin : public VpnUiPlugin
+class Q_DECL_EXPORT OpenswanUiPlugin : public VpnUiPlugin
 {
     Q_OBJECT
 public:

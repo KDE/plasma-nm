@@ -26,9 +26,7 @@
 
 #include <NetworkManagerQt/WirelessNetwork>
 
-#include "plasmanm_export.h"
-
-class PLASMA_NM_EXPORT SsidComboBox : public KComboBox
+class Q_DECL_EXPORT SsidComboBox : public KComboBox
 {
     Q_OBJECT
 public:

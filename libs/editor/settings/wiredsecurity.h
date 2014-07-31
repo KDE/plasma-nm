@@ -27,14 +27,13 @@
 
 #include "settingwidget.h"
 #include "security802-1x.h"
-#include "plasmanm_export.h"
 
 namespace Ui
 {
 class WiredSecurity;
 }
 
-class PLASMA_NM_EXPORT WiredSecurity : public SettingWidget
+class Q_DECL_EXPORT WiredSecurity : public SettingWidget
 {
     Q_OBJECT
 public:

@@ -27,13 +27,11 @@
 
 #include <KDEDModule>
 
-#include "plasmanm_export.h"
-
 #include <QVariant>
 
 class NetworkManagementServicePrivate;
 
-class PLASMA_NM_EXPORT NetworkManagementService : public KDEDModule
+class Q_DECL_EXPORT NetworkManagementService : public KDEDModule
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(NetworkManagementService)

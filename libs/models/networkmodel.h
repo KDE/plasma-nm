@@ -25,7 +25,6 @@
 
 #include <config.h>
 #include "networkitemslist.h"
-#include "plasmanm_export.h"
 
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/VpnConnection>
@@ -37,7 +36,7 @@
 #include <ModemManagerQt/modem.h>
 #endif
 
-class PLASMA_NM_EXPORT NetworkModel : public QAbstractListModel
+class Q_DECL_EXPORT NetworkModel : public QAbstractListModel
 {
 Q_OBJECT
 public:

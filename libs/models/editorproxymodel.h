@@ -23,9 +23,7 @@
 
 #include <QSortFilterProxyModel>
 
-#include "plasmanm_export.h"
-
-class PLASMA_NM_EXPORT EditorProxyModel : public QSortFilterProxyModel
+class Q_DECL_EXPORT EditorProxyModel : public QSortFilterProxyModel
 {
 Q_OBJECT
 Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)

@@ -27,13 +27,13 @@
 
 #include <QDialog>
 
-#include "plasmanm_export.h"
-
 namespace Ui {
 class PasswordDialog;
 }
+
 class SettingWidget;
-class PLASMA_NM_EXPORT PasswordDialog : public QDialog
+
+class Q_DECL_EXPORT PasswordDialog : public QDialog
 {
     Q_OBJECT
 public:

@@ -24,12 +24,10 @@
 
 #include <KComboBox>
 
-#include "plasmanm_export.h"
-
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/AccessPoint>
 
-class PLASMA_NM_EXPORT BssidComboBox : public KComboBox
+class Q_DECL_EXPORT BssidComboBox : public KComboBox
 {
     Q_OBJECT
 public:

@@ -24,14 +24,13 @@
 #include <QtWidgets/QWidget>
 
 #include "settingwidget.h"
-#include "plasmanm_export.h"
 
 namespace Ui
 {
 class WiredConnectionWidget;
 }
 
-class PLASMA_NM_EXPORT WiredConnectionWidget : public SettingWidget
+class Q_DECL_EXPORT WiredConnectionWidget : public SettingWidget
 {
 Q_OBJECT
 

@@ -25,7 +25,7 @@
 
 #include "networkmodelitem.h"
 
-class PLASMA_NM_EXPORT AppletProxyModel : public QSortFilterProxyModel
+class Q_DECL_EXPORT AppletProxyModel : public QSortFilterProxyModel
 {
 Q_OBJECT
 Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)

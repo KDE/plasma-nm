@@ -26,14 +26,12 @@
 
 #include <NetworkManagerQt/ConnectionSettings>
 
-#include "plasmanm_export.h"
-
 namespace Ui
 {
 class ConnectionDetailEditor;
 }
 
-class PLASMA_NM_EXPORT ConnectionDetailEditor : public QDialog
+class Q_DECL_EXPORT ConnectionDetailEditor : public QDialog
 {
     Q_OBJECT
 public:

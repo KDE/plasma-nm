@@ -30,14 +30,12 @@
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/modem.h>
 
-#include "plasmanm_export.h"
-
 class ModemMonitorPrivate;
 
 /**
  * Monitors modem hardware and provides a PIN unlock dialog
  */
-class PLASMA_NM_EXPORT ModemMonitor : public QObject
+class Q_DECL_EXPORT ModemMonitor : public QObject
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(ModemMonitor)

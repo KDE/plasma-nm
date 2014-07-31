@@ -29,7 +29,7 @@
 #include <QVariant>
 #include <QTextStream>
 
-class OpenVpnUiPlugin : public VpnUiPlugin
+class Q_DECL_EXPORT OpenVpnUiPlugin : public VpnUiPlugin
 {
 Q_OBJECT
 public:

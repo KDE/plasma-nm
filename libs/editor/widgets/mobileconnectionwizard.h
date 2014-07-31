@@ -34,10 +34,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <NetworkManagerQt/ConnectionSettings>
 
 #include "mobileproviders.h"
-#include "plasmanm_export.h"
 
-//class KF5_EXPORT MobileConnectionWizard : public QWizard
-class PLASMA_NM_EXPORT MobileConnectionWizard : public QWizard
+class Q_DECL_EXPORT MobileConnectionWizard : public QWizard
 {
 Q_OBJECT
 public:

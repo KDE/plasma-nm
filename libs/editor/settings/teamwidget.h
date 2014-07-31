@@ -35,7 +35,7 @@ namespace Ui
 class TeamWidget;
 }
 
-class PLASMA_NM_EXPORT TeamWidget : public SettingWidget
+class Q_DECL_EXPORT TeamWidget : public SettingWidget
 {
     Q_OBJECT
 public:

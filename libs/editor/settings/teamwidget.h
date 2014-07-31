@@ -30,8 +30,6 @@
 
 #include <NetworkManagerQt/TeamSetting>
 
-#include "plasmanm_export.h"
-
 namespace Ui
 {
 class TeamWidget;

@@ -29,6 +29,7 @@
 #include <KMessageBox>
 #include <KLocale>
 #include <KDebug>
+#include <KUrl>
 #include "nm-vpnc-service.h"
 
 #include <NetworkManagerQt/Connection>
@@ -279,7 +280,12 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         setting.setSecrets(secretData);
 
         QVariantMap conn;
-        conn.insert("id", decrPlugin->readStringKeyValue(cg,"Description"));
+        if (decrPlugin->readStringKeyValue(cg,"Description").isEmpty()) {
+            KUrl name = fileName;
+            conn.insert("id", name.fileName().remove(QLatin1String(".pcf"), Qt::CaseInsensitive));
+        } else {
+            conn.insert("id", decrPlugin->readStringKeyValue(cg,"Description"));
+        }
         conn.insert("type", "vpn");
         result.insert("connection", conn);
 

@@ -22,7 +22,6 @@
 #define PLASMA_NM_NETWORK_STATUS_H
 
 #include <QObject>
-#include <QIcon>
 
 #include <NetworkManagerQt/Manager>
 

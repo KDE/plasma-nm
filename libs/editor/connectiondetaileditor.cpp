@@ -66,6 +66,7 @@
 #include <KPluginFactory>
 #include <KServiceTypeTrader>
 #include <KWallet/KWallet>
+#include <KIconLoader>
 
 ConnectionDetailEditor::ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr& connection,
                                                bool newConnection, QWidget* parent, Qt::WindowFlags f)
@@ -384,7 +385,7 @@ void ConnectionDetailEditor::replyFinished(QDBusPendingCallWatcher *watcher)
         notification->setComponentName("networkmanagement");
         notification->setTitle(i18n("Failed to get secrets for %1", watcher->property("connection").toString()));
         notification->setText(reply.error().message());
-        notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(64, 64));
+        notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
         notification->sendEvent();
 
         connect(this, SIGNAL(accepted()), notification, SLOT(close()));

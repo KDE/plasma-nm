@@ -31,7 +31,7 @@
 #include <QEventLoop>
 #include <QFormLayout>
 #include <KLineEdit>
-#include <KIcon>
+#include <QIcon>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <KComboBox>
@@ -42,6 +42,7 @@
 #include <QCryptographicHash>
 #include <QFile>
 #include <QTimer>
+#include <KIconLoader>
 
 #include "nm-openconnect-service.h"
 
@@ -103,7 +104,7 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
     connect(d->ui.btnConnect, SIGNAL(clicked()), this, SLOT(connectHost()));
 
     d->ui.cmbLogLevel->setCurrentIndex(OpenconnectAuthWidgetPrivate::Debug);
-    d->ui.btnConnect->setIcon(KIcon("network-connect"));
+    d->ui.btnConnect->setIcon(QIcon::fromTheme("network-connect"));
     d->ui.viewServerLog->setChecked(false);
 
     d->worker = new OpenconnectAuthWorkerThread(&d->mutex, &d->workerWaiting, &d->userQuit, &d->formGroupChanged, d->cancelPipes[0]);
@@ -393,7 +394,7 @@ void OpenconnectAuthWidget::addFormInfo(const QString &iconName, const QString &
     text->setWordWrap(false);
     layout->addWidget(text);
 
-    icon->setPixmap(KIcon(iconName).pixmap(QSize(16,16)));
+    icon->setPixmap(QIcon::fromTheme(iconName).pixmap(KIconLoader::SizeSmall));
     text->setText(message);
 
     d->ui.loginBoxLayout->addLayout(layout);
@@ -524,7 +525,7 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
 
         verticalLayout->addWidget(certificate);
 
-        icon->setPixmap(KIcon("dialog-information").pixmap(QSize(48,48)));
+        icon->setPixmap(QIcon::fromTheme("dialog-information").pixmap(KIconLoader::SizeLarge));
         infoText->setText(i18n("Check failed for certificate from VPN server \"%1\".\n"
                                "Reason: %2\nAccept it anyway?", openconnect_get_hostname(d->vpninfo),reason));
         infoText->setWordWrap(true);

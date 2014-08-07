@@ -29,7 +29,9 @@
 
 #include <KServiceTypeTrader>
 #include <KLocalizedString>
-#include <KIcon>
+#include <KIconLoader>
+
+#include <QIcon>
 #include <QDebug>
 
 using namespace NetworkManager;
@@ -44,7 +46,7 @@ PasswordDialog::PasswordDialog(const NMVariantMapMap &connection, SecretAgent::G
     m_hasError(false),
     m_error(SecretAgent::NoSecrets)
 {
-    setWindowIcon(KIcon("dialog-password"));
+    setWindowIcon(QIcon::fromTheme("dialog-password"));
 }
 
 PasswordDialog::~PasswordDialog()
@@ -59,7 +61,7 @@ void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings
     ui = new Ui::PasswordDialog;
     ui->setupUi(this);
     // TODO fix this for high DPI
-    ui->labelIcon->setPixmap(KIcon("dialog-password").pixmap(32));
+    ui->labelIcon->setPixmap(QIcon::fromTheme("dialog-password").pixmap(KIconLoader::SizeMedium));
 
     m_neededSecrets = setting->needSecrets(m_flags & SecretAgent::RequestNew);
     if (m_neededSecrets.isEmpty()) {

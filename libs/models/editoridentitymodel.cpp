@@ -28,7 +28,6 @@
 #include <QFont>
 
 #include <KLocalizedString>
-#include <KIcon>
 
 EditorIdentityModel::EditorIdentityModel(QObject* parent)
     : QIdentityProxyModel(parent)
@@ -98,7 +97,7 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
         }
     } else if (role == Qt::DecorationRole) {
         if (column == 0) {
-            return KIcon(iconName);
+            return QIcon::fromTheme(iconName);
         }
     } else if (role == Qt::ToolTipRole) {
         if (column == 0)

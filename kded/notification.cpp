@@ -29,7 +29,9 @@
 
 #include <KLocalizedString>
 #include <KNotification>
-#include <KIcon>
+#include <KIconLoader>
+
+#include <QIcon>
 #include <QDebug>
 
 Notification::Notification(QObject *parent) :
@@ -295,7 +297,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
         notify->setProperty("uni", device->uni());
         notify->setComponentName("networkmanagement");
-        notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        notify->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
         notify->setTitle(identifier);
         notify->setText(text);
         notify->sendEvent();
@@ -347,9 +349,9 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
     notify->setProperty("uni", connectionId);
     notify->setComponentName("networkmanagement");
     if (state == NetworkManager::ActiveConnection::Activated) {
-        notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
+        notify->setPixmap(QIcon::fromTheme("dialog-information").pixmap(KIconLoader::SizeHuge));
     } else {
-        notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        notify->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
     }
     notify->setTitle(acName);
     notify->setText(text);
@@ -421,9 +423,9 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
     notify->setProperty("uni", connectionId);
     notify->setComponentName("networkmanagement");
     if (state == NetworkManager::VpnConnection::Activated) {
-        notify->setPixmap(KIcon("dialog-information").pixmap(64, 64));
+        notify->setPixmap(QIcon::fromTheme("dialog-information").pixmap(KIconLoader::SizeHuge));
     } else {
-        notify->setPixmap(KIcon("dialog-warning").pixmap(64, 64));
+        notify->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
     }
     notify->setTitle(vpnName);
     notify->setText(text);

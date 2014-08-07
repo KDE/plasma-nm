@@ -24,7 +24,6 @@
 #include "service.h"
 
 #include <KPluginFactory>
-#include <KGlobal>
 
 #include "secretagent.h"
 #include "notification.h"

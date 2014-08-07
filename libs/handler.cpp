@@ -21,6 +21,7 @@
 #include "handler.h"
 #include "connectiondetaileditor.h"
 #include "uiutils.h"
+#include "debug.h"
 
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/AccessPoint>
@@ -34,18 +35,17 @@
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/ActiveConnection>
 
-#include <QInputDialog>
 #include <QDBusError>
 #include <QIcon>
 
 #include <KNotification>
 #include <KLocalizedString>
 #include <KUser>
-#include <KDebug>
 #include <KProcess>
 #include <KService>
 #include <KServiceTypeTrader>
 #include <KWindowSystem>
+#include <KIconLoader>
 
 Handler::Handler(QObject* parent)
     : QObject(parent)
@@ -65,24 +65,24 @@ void Handler::activateConnection(const QString& connection, const QString& devic
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
-        kWarning() << "Not possible to activate this connection";
+        qWarning() << "Not possible to activate this connection";
         return;
     }
 
     if (con->settings()->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
         NetworkManager::VpnSetting::Ptr vpnSetting = con->settings()->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
         if (vpnSetting) {
-            kWarning() << "Checking VPN" << con->name() << "type:" << vpnSetting->serviceType();
+            qWarning() << "Checking VPN" << con->name() << "type:" << vpnSetting->serviceType();
             // get the list of supported VPN service types
             const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin",
-                                                                          QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()));
+                                                                              QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()));
             if (services.isEmpty()) {
-                kWarning() << "VPN" << vpnSetting->serviceType() << "not found, skipping";
+                qWarning() << "VPN" << vpnSetting->serviceType() << "not found, skipping";
                 KNotification *notification = new KNotification("MissingVpnPlugin", KNotification::CloseOnTimeout, this);
                 notification->setComponentName("networkmanagement");
                 notification->setTitle(con->name());
                 notification->setText(i18n("Missing VPN plugin"));
-                notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(64, 64));
+                notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
                 notification->sendEvent();
                 return;
             }
@@ -202,7 +202,7 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
-        kWarning() << "Not possible to deactivate this connection";
+        qWarning() << "Not possible to deactivate this connection";
         return;
     }
 
@@ -292,18 +292,18 @@ bool Handler::isBtEnabled()
     if (reply.isValid()) {
         foreach(const QDBusObjectPath &path, reply.value().keys()) {
             const QString objPath = path.path();
-            //qDebug() << "inspecting path" << objPath;
+            qCDebug(PLASMA_NM) << "inspecting path" << objPath;
             const QStringList interfaces = reply.value().value(path).keys();
-            //qDebug() << "interfaces:" << interfaces;
+            qCDebug(PLASMA_NM) << "interfaces:" << interfaces;
             if (interfaces.contains("org.bluez.Adapter1")) {
                 QDBusInterface adapterIface("org.bluez", objPath, "org.bluez.Adapter1", QDBusConnection::systemBus(), this);
                 const bool adapterEnabled = adapterIface.property("Powered").toBool();
-                //qDebug() << "Adapter" << objPath << "enabled:" << adapterEnabled;
+                qCDebug(PLASMA_NM) << "Adapter" << objPath << "enabled:" << adapterEnabled;
                 result |= adapterEnabled;
             }
         }
     } else {
-        qDebug() << "Failed to enumerate BT adapters";
+        qCDebug(PLASMA_NM) << "Failed to enumerate BT adapters";
     }
 
     return result;
@@ -316,17 +316,17 @@ void Handler::enableBt(bool enable)
     if (reply.isValid()) {
         foreach(const QDBusObjectPath &path, reply.value().keys()) {
             const QString objPath = path.path();
-            //qDebug() << "inspecting path" << objPath;
+            qCDebug(PLASMA_NM) << "inspecting path" << objPath;
             const QStringList interfaces = reply.value().value(path).keys();
-            //qDebug() << "interfaces:" << interfaces;
+            qCDebug(PLASMA_NM) << "interfaces:" << interfaces;
             if (interfaces.contains("org.bluez.Adapter1")) {
                 QDBusInterface adapterIface("org.bluez", objPath, "org.bluez.Adapter1", QDBusConnection::systemBus(), this);
-                //qDebug() << "Enabling adapter:" << objPath << (enable && m_btEnabled);
+                qCDebug(PLASMA_NM) << "Enabling adapter:" << objPath << enable;
                 adapterIface.setProperty("Powered", enable);
             }
         }
     } else {
-        qDebug() << "Failed to enumerate BT adapters";
+        qCDebug(PLASMA_NM) << "Failed to enumerate BT adapters";
     }
 }
 
@@ -342,7 +342,7 @@ void Handler::removeConnection(const QString& connection)
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con || con->uuid().isEmpty()) {
-        kWarning() << "Not possible to remove connection " << connection;
+        qWarning() << "Not possible to remove connection " << connection;
         return;
     }
 
@@ -439,7 +439,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
 
         if (notification) {
             notification->setText(error);
-            notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(64, 64));
+            notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
             notification->sendEvent();
         }
     } else {
@@ -470,7 +470,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
         }
 
         if (notification) {
-            notification->setPixmap(QIcon::fromTheme("dialog-information").pixmap(64, 64));
+            notification->setPixmap(QIcon::fromTheme("dialog-information").pixmap(KIconLoader::SizeHuge));
             notification->sendEvent();
         }
     }

@@ -27,9 +27,9 @@
    </item>
    <item row="0" column="0" colspan="3">
     <layout class="QFormLayout" name="formLayout">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+     <property name="verticalSpacing">
+      <number>0</number>
+     </property>
      <item row="0" column="0">
       <widget class="QLabel" name="textLabel3">
        <property name="text">
@@ -47,7 +47,11 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="KLineEdit" name="gateway"/>
+      <widget class="QLineEdit" name="gateway">
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="labelConnectionType">
@@ -66,7 +70,7 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="KComboBox" name="cmbConnectionType">
+      <widget class="QComboBox" name="cmbConnectionType">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -99,13 +103,16 @@
    </item>
    <item row="1" column="0" colspan="3">
     <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
      <widget class="QWidget" name="page">
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <layout class="QFormLayout" name="formLayout_3">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+         <property name="verticalSpacing">
+          <number>0</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="textLabel2">
            <property name="text">
@@ -141,7 +148,7 @@
          <item row="2" column="0">
           <widget class="QLabel" name="textLabel4">
            <property name="text">
-            <string>Key:</string>
+            <string>&amp;Key:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -164,14 +171,14 @@
          <item row="3" column="1">
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="KLineEdit" name="x509KeyPassword">
-             <property name="passwordMode">
-              <bool>true</bool>
+            <widget class="QLineEdit" name="x509KeyPassword">
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="KComboBox" name="x509KeyPasswordStorage">
+            <widget class="QComboBox" name="x509KeyPasswordStorage">
              <item>
               <property name="text">
                <string>Store</string>
@@ -212,13 +219,13 @@
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <layout class="QFormLayout" name="formLayout_4">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+         <property name="verticalSpacing">
+          <number>0</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="textLabel5">
            <property name="text">
-            <string>Shared Key:</string>
+            <string>Shared &amp;Key:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -245,12 +252,16 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="KLineEdit" name="pskLocalIp"/>
+          <widget class="QLineEdit" name="pskLocalIp">
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
          <item row="3" column="0">
           <widget class="QLabel" name="textLabel7">
            <property name="text">
-            <string>Remote IP:</string>
+            <string>Re&amp;mote IP:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -261,9 +272,9 @@
           </widget>
          </item>
          <item row="3" column="1">
-          <widget class="KLineEdit" name="pskRemoteIp">
-           <property name="text">
-            <string/>
+          <widget class="QLineEdit" name="pskRemoteIp">
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -275,7 +286,7 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="KComboBox" name="cmbKeyDirection">
+          <widget class="QComboBox" name="cmbKeyDirection">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -287,7 +298,7 @@
            </property>
            <item>
             <property name="text">
-             <string comment="like in None setting selected">None</string>
+             <string comment="No &quot;Key Direction&quot;">None</string>
             </property>
            </item>
            <item>
@@ -323,9 +334,9 @@
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <layout class="QFormLayout" name="formLayout_5">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+         <property name="verticalSpacing">
+          <number>0</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="textLabel8">
            <property name="text">
@@ -348,7 +359,7 @@
          <item row="1" column="0">
           <widget class="QLabel" name="textLabel9">
            <property name="text">
-            <string comment="like in Username for athentication">Username:</string>
+            <string comment="like in Username for athentication">Userna&amp;me:</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -362,7 +373,11 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="KLineEdit" name="passUserName"/>
+          <widget class="QLineEdit" name="passUserName">
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_2">
@@ -377,17 +392,17 @@
          <item row="2" column="1">
           <layout class="QHBoxLayout" name="horizontalLayout_11">
            <item>
-            <widget class="KLineEdit" name="passPassword">
+            <widget class="QLineEdit" name="passPassword">
              <property name="enabled">
               <bool>true</bool>
              </property>
-             <property name="passwordMode">
-              <bool>true</bool>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="KComboBox" name="passPasswordStorage">
+            <widget class="QComboBox" name="passPasswordStorage">
              <item>
               <property name="text">
                <string>Store</string>
@@ -428,9 +443,9 @@
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
         <layout class="QFormLayout" name="formLayout_6">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+         <property name="verticalSpacing">
+          <number>0</number>
+         </property>
          <item row="0" column="0">
           <widget class="QLabel" name="textLabel2_2">
            <property name="text">
@@ -466,7 +481,7 @@
          <item row="2" column="0">
           <widget class="QLabel" name="textLabel4_2">
            <property name="text">
-            <string>Key:</string>
+            <string>&amp;Key:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -489,7 +504,7 @@
          <item row="4" column="0">
           <widget class="QLabel" name="textLabel9_2">
            <property name="text">
-            <string comment="like in Username for athentication">Username:</string>
+            <string comment="like in Username for athentication">Userna&amp;me:</string>
            </property>
            <property name="wordWrap">
             <bool>false</bool>
@@ -500,7 +515,11 @@
           </widget>
          </item>
          <item row="4" column="1">
-          <widget class="KLineEdit" name="x509PassUsername"/>
+          <widget class="QLineEdit" name="x509PassUsername">
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
          </item>
          <item row="5" column="0">
           <widget class="QLabel" name="label">
@@ -512,14 +531,14 @@
          <item row="3" column="1">
           <layout class="QHBoxLayout" name="horizontalLayout_12">
            <item>
-            <widget class="KLineEdit" name="x509PassKeyPassword">
-             <property name="passwordMode">
-              <bool>true</bool>
+            <widget class="QLineEdit" name="x509PassKeyPassword">
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="KComboBox" name="x509PassKeyPasswordStorage">
+            <widget class="QComboBox" name="x509PassKeyPasswordStorage">
              <item>
               <property name="text">
                <string>Store</string>
@@ -542,17 +561,17 @@
          <item row="5" column="1">
           <layout class="QHBoxLayout" name="horizontalLayout_13">
            <item>
-            <widget class="KLineEdit" name="x509PassPassword">
+            <widget class="QLineEdit" name="x509PassPassword">
              <property name="enabled">
               <bool>true</bool>
              </property>
-             <property name="passwordMode">
-              <bool>true</bool>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="KComboBox" name="x509PassPasswordStorage">
+            <widget class="QComboBox" name="x509PassPasswordStorage">
              <item>
               <property name="text">
                <string>Store</string>
@@ -609,18 +628,8 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>KUrlRequester</class>
-   <extends>QFrame</extends>
+   <extends>QWidget</extends>
    <header>kurlrequester.h</header>
   </customwidget>
  </customwidgets>

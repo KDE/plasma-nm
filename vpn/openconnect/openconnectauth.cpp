@@ -30,11 +30,11 @@
 #include <QLabel>
 #include <QEventLoop>
 #include <QFormLayout>
-#include <KLineEdit>
+#include <QLineEdit>
 #include <QIcon>
 #include <QDialogButtonBox>
 #include <QPushButton>
-#include <KComboBox>
+#include <QComboBox>
 #include <QDebug>
 #include <QDomDocument>
 #include <QMutex>
@@ -42,6 +42,7 @@
 #include <QCryptographicHash>
 #include <QFile>
 #include <QTimer>
+#include <QPointer>
 #include <KIconLoader>
 
 #include "nm-openconnect-service.h"
@@ -433,9 +434,9 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
         const QString key = QString("form:%1:%2").arg(QLatin1String(form->auth_id)).arg(QLatin1String(opt->name));
         const QString value = d->secrets.value(key);
         if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {
-            KLineEdit *le = new KLineEdit(this);
+            QLineEdit *le = new QLineEdit(this);
             if (opt->type == OC_FORM_OPT_PASSWORD) {
-                le->setPasswordMode(true);
+                le->setEchoMode(QLineEdit::Normal);
                 le->setText(value);
                 passwordnumber++;
             }
@@ -448,15 +449,13 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
             }
             widget = qobject_cast<QWidget*>(le);
         } else if (opt->type == OC_FORM_OPT_SELECT) {
-            KComboBox *cmb = new KComboBox(this);
+            QComboBox *cmb = new QComboBox(this);
             struct oc_form_opt_select *sopt = reinterpret_cast<oc_form_opt_select *>(opt);
             for (int i = 0; i < sopt->nr_choices; i++) {
-                cmb->addItem(QString::fromUtf8(FORMCHOICE(sopt, i)->label),
-                             QString::fromUtf8(FORMCHOICE(sopt, i)->name));
+                cmb->addItem(QString::fromUtf8(FORMCHOICE(sopt, i)->label), QString::fromUtf8(FORMCHOICE(sopt, i)->name));
                 if (value == QString::fromUtf8(FORMCHOICE(sopt, i)->name)) {
                     cmb->setCurrentIndex(i);
-                    if (sopt == AUTHGROUP_OPT(form) &&
-                        i != AUTHGROUP_SELECTION(form)) {
+                    if (sopt == AUTHGROUP_OPT(form) && i != AUTHGROUP_SELECTION(form)) {
                         QTimer::singleShot(0, this, SLOT(formGroupChanged()));
                     }
                 }
@@ -584,17 +583,15 @@ void OpenconnectAuthWidget::formLoginClicked()
             struct oc_form_opt *opt = (struct oc_form_opt *) widget->property("openconnect_opt").value<quintptr>();
             const QString key = QString("form:%1:%2").arg(QLatin1String(form->auth_id)).arg(QLatin1String(opt->name));
             if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {
-                KLineEdit *le = qobject_cast<KLineEdit*>(widget);
-                QByteArray text = le->text().toUtf8();
-                opt->value = strdup(text.data());
-                if (opt->type == OC_FORM_OPT_TEXT) {
+                QLineEdit *le = qobject_cast<QLineEdit*>(widget);
+                opt->value = qstrdup(le->text().toUtf8().constData());
+                if (opt->type == OC_FORM_OPT_TEXT) { //FIXME shouldn't this be OC_FORM_OPT_PASSWORD?
                     d->secrets.insert(key,le->text());
                 }
             } else if (opt->type == OC_FORM_OPT_SELECT) {
-                KComboBox *cbo = qobject_cast<KComboBox*>(widget);
-                QByteArray text = cbo->itemData(cbo->currentIndex()).toString().toAscii();
-                opt->value = strdup(text.data());
-                d->secrets.insert(key,cbo->itemData(cbo->currentIndex()).toString());
+                QComboBox *cbo = qobject_cast<QComboBox*>(widget);
+                opt->value = qstrdup(cbo->currentData().toString().toUtf8().constData());
+                d->secrets.insert(key, cbo->currentData().toString());
             }
         }
     }
@@ -674,8 +671,12 @@ void OpenconnectAuthWidget::passwordModeToggled(bool toggled)
         if (widget && widget->property("openconnect_opt").isValid()) {
             struct oc_form_opt *opt = (struct oc_form_opt *) widget->property("openconnect_opt").value<quintptr>();
             if (opt->type == OC_FORM_OPT_PASSWORD) {
-                KLineEdit *le = qobject_cast<KLineEdit*>(widget);
-                le->setPasswordMode(!toggled);
+                QLineEdit *le = qobject_cast<QLineEdit*>(widget);
+                if (toggled) {
+                    le->setEchoMode(QLineEdit::Normal);
+                } else {
+                    le->setEchoMode(QLineEdit::Password);
+                }
             }
         }
     }

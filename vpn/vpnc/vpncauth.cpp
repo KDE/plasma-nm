@@ -118,6 +118,11 @@ QVariantMap VpncAuthDialog::setting(bool agentOwned) const
 void VpncAuthDialog::showPasswordsChanged(bool show)
 {
     Q_D(VpncAuthDialog);
-    d->ui.leUserPassword->setPasswordMode(!show);
-    d->ui.leGroupPassword->setPasswordMode(!show);
+    if (show) {
+        d->ui.leUserPassword->setEchoMode(QLineEdit::Normal);
+        d->ui.leGroupPassword->setEchoMode(QLineEdit::Normal);
+    } else {
+        d->ui.leUserPassword->setEchoMode(QLineEdit::Password);
+        d->ui.leGroupPassword->setEchoMode(QLineEdit::Password);
+    }
 }

@@ -18,9 +18,9 @@
       <string>Identification</string>
      </property>
      <layout class="QFormLayout" name="formLayout">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
       <item row="0" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
@@ -32,12 +32,12 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="KLineEdit" name="domain"/>
+       <widget class="QLineEdit" name="domain"/>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>Vendor:</string>
+         <string>&amp;Vendor:</string>
         </property>
         <property name="buddy">
          <cstring>vendor</cstring>
@@ -45,7 +45,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="KComboBox" name="vendor">
+       <widget class="QComboBox" name="vendor">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -59,20 +59,20 @@
    </item>
    <item>
     <widget class="QGroupBox" name="groupBox_2">
-    <property name="title">
+     <property name="title">
       <string>Transport and Security</string>
      </property>
      <layout class="QFormLayout" name="formLayout_2">
-    <property name="fieldGrowthPolicy">
+      <property name="fieldGrowthPolicy">
        <enum>QFormLayout::ExpandingFieldsGrow</enum>
-    </property>
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+      </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
       <item row="0" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>Encryption method:</string>
+         <string>Encryption &amp;method:</string>
         </property>
         <property name="buddy">
          <cstring>encryption</cstring>
@@ -80,7 +80,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="KComboBox" name="encryption">
+       <widget class="QComboBox" name="encryption">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -100,7 +100,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="KComboBox" name="nat">
+       <widget class="QComboBox" name="nat">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -112,7 +112,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>IKE DH Group:</string>
+         <string>I&amp;KE DH Group:</string>
         </property>
         <property name="buddy">
          <cstring>dhGroup</cstring>
@@ -120,7 +120,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="KComboBox" name="dhGroup">
+       <widget class="QComboBox" name="dhGroup">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -140,7 +140,7 @@
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="KComboBox" name="pfs">
+       <widget class="QComboBox" name="pfs">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -173,7 +173,7 @@
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="KIntNumInput" name="localport">
+       <widget class="QSpinBox" name="localport">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -185,6 +185,9 @@
         </property>
         <property name="specialValueText">
          <string>Random</string>
+        </property>
+        <property name="maximum">
+         <number>65535</number>
         </property>
        </widget>
       </item>
@@ -200,23 +203,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KIntNumInput</class>
-   <extends>QWidget</extends>
-   <header>knuminput.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections>
   <connection>

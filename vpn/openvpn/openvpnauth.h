@@ -39,7 +39,7 @@ public:
     virtual QVariantMap setting(bool agentOwned = false) const;
 
 protected Q_SLOTS:
-    void showPasswordsToggled(bool);
+    void showPasswordsToggled(bool show);
 
 private:
     OpenVpnAuthWidgetPrivate * d_ptr;

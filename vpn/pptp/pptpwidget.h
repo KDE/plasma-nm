@@ -26,7 +26,7 @@
 
 #include <NetworkManagerQt/VpnSetting>
 
-class KComboBox;
+class QComboBox;
 class PptpSettingWidgetPrivate;
 
 class PptpSettingWidget : public SettingWidget
@@ -47,8 +47,8 @@ private Q_SLOTS:
 
 private:
     PptpSettingWidgetPrivate * d_ptr;
-    void fillOnePasswordCombo(KComboBox *, NetworkManager::Setting::SecretFlags);
-    uint handleOnePasswordType(const KComboBox *, const QString &, NMStringMap &, bool agentOwned) const;
+    void fillOnePasswordCombo(QComboBox *, NetworkManager::Setting::SecretFlags);
+    uint handleOnePasswordType(const QComboBox *, const QString &, NMStringMap &, bool agentOwned) const;
 };
 
 #endif // PPTPWIDGET_H

@@ -63,8 +63,11 @@ QVariantMap PptpAuthWidget::setting(bool agentOwned) const
     return secretData;
 }
 
-void PptpAuthWidget::showPasswordsToggled(bool toggled)
+void PptpAuthWidget::showPasswordsToggled(bool show)
 {
     Q_D(PptpAuthWidget);
-    d->ui.lePassword->setPasswordMode(!toggled);
+    if (show)
+        d->ui.lePassword->setEchoMode(QLineEdit::Normal);
+    else
+        d->ui.lePassword->setEchoMode(QLineEdit::Password);
 }

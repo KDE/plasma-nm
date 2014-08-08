@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>376</width>
+    <width>365</width>
     <height>479</height>
    </rect>
   </property>
@@ -17,13 +17,13 @@
       <string>Authentication</string>
      </property>
      <layout class="QFormLayout" name="formLayout">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
       <item row="0" column="0">
        <widget class="QLabel" name="lbl_auth">
         <property name="text">
-         <string>Allow following authentication methods:</string>
+         <string>Allow following authentication &amp;methods:</string>
         </property>
         <property name="buddy">
          <cstring>listWidget</cstring>
@@ -92,9 +92,9 @@
       <bool>false</bool>
      </property>
      <layout class="QFormLayout" name="formLayout_2">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
       <item row="0" column="0">
        <widget class="QLabel" name="lbl_MMPEcrypto">
         <property name="maximumSize">
@@ -104,7 +104,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Crypto:</string>
+         <string>Cr&amp;ypto:</string>
         </property>
         <property name="buddy">
          <cstring>cb_MPPECrypto</cstring>
@@ -112,7 +112,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="KComboBox" name="cb_MPPECrypto">
+       <widget class="QComboBox" name="cb_MPPECrypto">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -152,11 +152,11 @@
       <string>Compression</string>
      </property>
      <layout class="QFormLayout" name="formLayout_3">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
       <property name="labelAlignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="verticalSpacing">
+       <number>0</number>
       </property>
       <item row="0" column="0">
        <widget class="QCheckBox" name="cb_BSD">
@@ -197,9 +197,9 @@
       <string>Echo</string>
      </property>
      <layout class="QFormLayout" name="formLayout_4">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
       <item row="0" column="0">
        <widget class="QCheckBox" name="cb_sendEcho">
         <property name="text">
@@ -216,13 +216,6 @@
   <zorder>grp_cryptoAndCompression</zorder>
   <zorder>gb_MPPE</zorder>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
- </customwidgets>
  <tabstops>
   <tabstop>listWidget</tabstop>
   <tabstop>gb_MPPE</tabstop>

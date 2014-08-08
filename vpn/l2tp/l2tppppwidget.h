@@ -45,4 +45,3 @@ private:
 };
 
 #endif // PLASMA_NM_L2TP_PPP_WIDGET_H
-

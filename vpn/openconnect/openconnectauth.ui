@@ -42,7 +42,7 @@
       </widget>
      </item>
      <item>
-      <widget class="KComboBox" name="cmbHosts"/>
+      <widget class="QComboBox" name="cmbHosts"/>
      </item>
      <item>
       <widget class="QPushButton" name="btnConnect">
@@ -127,7 +127,7 @@
          </widget>
         </item>
         <item>
-         <widget class="KComboBox" name="cmbLogLevel">
+         <widget class="QComboBox" name="cmbLogLevel">
           <item>
            <property name="text">
             <string>Error</string>
@@ -179,13 +179,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

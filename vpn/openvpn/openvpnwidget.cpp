@@ -23,12 +23,13 @@
 #include "openvpnadvancedwidget.h"
 
 #include <QDBusMetaType>
-
 #include <QDebug>
+#include <QLineEdit>
+#include <QUrl>
+#include <QPointer>
+
 #include <KProcess>
 #include <KUrlRequester>
-#include <KLineEdit>
-#include <QUrl>
 
 #include "nm-openvpn-service.h"
 
@@ -284,12 +285,12 @@ void OpenVpnSettingWidget::x509PassPasswordStorageChanged(int index)
     setPasswordType(d->ui.x509PassPassword, index);
 }
 
-void OpenVpnSettingWidget::setPasswordType(KLineEdit *edit, int type)
+void OpenVpnSettingWidget::setPasswordType(QLineEdit *edit, int type)
 {
     edit->setEnabled(type == SettingWidget::EnumPasswordStorageType::Store);
 }
 
-void OpenVpnSettingWidget::fillOnePasswordCombo(KComboBox * combo, NetworkManager::Setting::SecretFlags type)
+void OpenVpnSettingWidget::fillOnePasswordCombo(QComboBox * combo, NetworkManager::Setting::SecretFlags type)
 {
     if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) {
         combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
@@ -300,7 +301,7 @@ void OpenVpnSettingWidget::fillOnePasswordCombo(KComboBox * combo, NetworkManage
     }
 }
 
-uint OpenVpnSettingWidget::handleOnePasswordType(const KComboBox * combo, const QString & key, NMStringMap &data, bool agentOwned) const
+uint OpenVpnSettingWidget::handleOnePasswordType(const QComboBox * combo, const QString & key, NMStringMap &data, bool agentOwned) const
 {
     const uint type = combo->currentIndex();
     switch (type) {
@@ -320,12 +321,19 @@ uint OpenVpnSettingWidget::handleOnePasswordType(const KComboBox * combo, const 
     return type;
 }
 
-void OpenVpnSettingWidget::showPasswordsToggled(bool toggled)
+void OpenVpnSettingWidget::showPasswordsToggled(bool show)
 {
-    d->ui.x509KeyPassword->setPasswordMode(!toggled);
-    d->ui.passPassword->setPasswordMode(!toggled);
-    d->ui.x509PassKeyPassword->setPasswordMode(!toggled);
-    d->ui.x509PassPassword->setPasswordMode(!toggled);
+    if (show) {
+        d->ui.x509KeyPassword->setEchoMode(QLineEdit::Normal);
+        d->ui.passPassword->setEchoMode(QLineEdit::Normal);
+        d->ui.x509PassKeyPassword->setEchoMode(QLineEdit::Normal);
+        d->ui.x509PassPassword->setEchoMode(QLineEdit::Normal);
+    } else {
+        d->ui.x509KeyPassword->setEchoMode(QLineEdit::Password);
+        d->ui.passPassword->setEchoMode(QLineEdit::Password);
+        d->ui.x509PassKeyPassword->setEchoMode(QLineEdit::Password);
+        d->ui.x509PassPassword->setEchoMode(QLineEdit::Password);
+    }
 }
 
 void OpenVpnSettingWidget::showAdvanced()

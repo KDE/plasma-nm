@@ -128,5 +128,8 @@ QVariantMap StrongswanAuthWidget::setting(bool agentOwned) const
 void StrongswanAuthWidget::showPasswordsChanged(bool show)
 {
     Q_D(StrongswanAuthWidget);
-    d->ui.password->setPasswordMode(!show);
+    if (show)
+        d->ui.password->setEchoMode(QLineEdit::Normal);
+    else
+        d->ui.password->setEchoMode(QLineEdit::Password);
 }

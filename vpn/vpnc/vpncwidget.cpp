@@ -191,8 +191,13 @@ void VpncWidget::groupPasswordTypeChanged(int index)
 
 void VpncWidget::showPasswords(bool show)
 {
-    m_ui->userPassword->setPasswordMode(!show);
-    m_ui->groupPassword->setPasswordMode(!show);
+    if (show) {
+        m_ui->userPassword->setEchoMode(QLineEdit::Normal);
+        m_ui->groupPassword->setEchoMode(QLineEdit::Normal);
+    } else {
+        m_ui->userPassword->setEchoMode(QLineEdit::Password);
+        m_ui->groupPassword->setEchoMode(QLineEdit::Password);
+    }
 }
 
 void VpncWidget::showAdvanced()

@@ -95,5 +95,8 @@ QVariantMap L2tpAuthDialog::setting(bool agentOwned) const
 void L2tpAuthDialog::showPasswordsChanged(bool show)
 {
     Q_D(L2tpAuthDialog);
-    d->ui.leUserPassword->setPasswordMode(!show);
+    if (show)
+        d->ui.leUserPassword->setEchoMode(QLineEdit::Normal);
+    else
+        d->ui.leUserPassword->setEchoMode(QLineEdit::Password);
 }

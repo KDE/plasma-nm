@@ -20,9 +20,9 @@
       <string>Gateway</string>
      </property>
      <layout class="QFormLayout" name="formLayout">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
       <item row="0" column="0">
        <widget class="QLabel" name="textLabel3">
         <property name="text">
@@ -37,7 +37,11 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="KLineEdit" name="leGateway"/>
+       <widget class="QLineEdit" name="leGateway">
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_3">
@@ -59,7 +63,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="KComboBox" name="cmbMethod">
+       <widget class="QComboBox" name="cmbMethod">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
           <horstretch>0</horstretch>
@@ -104,11 +108,11 @@
         </property>
         <widget class="QWidget" name="page_4">
          <layout class="QFormLayout" name="formLayout_4">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
           <property name="fieldGrowthPolicy">
            <enum>QFormLayout::ExpandingFieldsGrow</enum>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
           </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_4">
@@ -140,14 +144,14 @@
           <item row="2" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <widget class="KLineEdit" name="lePrivateKeyPassword">
-              <property name="passwordMode">
-               <bool>true</bool>
+             <widget class="QLineEdit" name="lePrivateKeyPassword">
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="KComboBox" name="cboPrivateKeyPassOptions">
+             <widget class="QComboBox" name="cboPrivateKeyPassOptions">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -180,9 +184,9 @@
         </widget>
         <widget class="QWidget" name="page_3">
          <layout class="QFormLayout" name="formLayout_3">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label">
             <property name="text">
@@ -197,9 +201,9 @@
         </widget>
         <widget class="QWidget" name="page_2">
          <layout class="QFormLayout" name="formLayout_5">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_8">
             <property name="text">
@@ -210,10 +214,14 @@
           <item row="0" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
-             <widget class="KLineEdit" name="lePin"/>
+             <widget class="QLineEdit" name="lePin">
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
+              </property>
+             </widget>
             </item>
             <item>
-             <widget class="KComboBox" name="cboPinOptions">
+             <widget class="QComboBox" name="cboPinOptions">
               <property name="sizeAdjustPolicy">
                <enum>QComboBox::AdjustToContents</enum>
               </property>
@@ -240,11 +248,11 @@
         </widget>
         <widget class="QWidget" name="page">
          <layout class="QFormLayout" name="formLayout_2">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
           <property name="fieldGrowthPolicy">
            <enum>QFormLayout::ExpandingFieldsGrow</enum>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
           </property>
           <item row="0" column="0">
            <widget class="QLabel" name="label_5">
@@ -257,19 +265,19 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="KLineEdit" name="leUserName"/>
+           <widget class="QLineEdit" name="leUserName">
+            <property name="clearButtonEnabled">
+             <bool>true</bool>
+            </property>
+           </widget>
           </item>
           <item row="1" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
-             <widget class="KLineEdit" name="leUserPassword">
-              <property name="passwordMode">
-               <bool>true</bool>
-              </property>
-             </widget>
+             <widget class="QLineEdit" name="leUserPassword"/>
             </item>
             <item>
-             <widget class="KComboBox" name="cboUserPassOptions">
+             <widget class="QComboBox" name="cboUserPassOptions">
               <item>
                <property name="text">
                 <string>Store</string>
@@ -306,7 +314,7 @@
       <item>
        <widget class="QCheckBox" name="cbShowPasswords">
         <property name="text">
-         <string>&amp;Show passwords</string>
+         <string>Show passwords</string>
         </property>
         <property name="checked">
          <bool>false</bool>
@@ -373,18 +381,8 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>KUrlRequester</class>
-   <extends>QFrame</extends>
+   <extends>QWidget</extends>
    <header>kurlrequester.h</header>
   </customwidget>
  </customwidgets>
@@ -403,54 +401,6 @@
     <hint type="destinationlabel">
      <x>231</x>
      <y>186</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cbShowPasswords</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>leUserPassword</receiver>
-   <slot>setPasswordMode(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>331</x>
-     <y>169</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>313</x>
-     <y>108</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cbShowPasswords</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>lePrivateKeyPassword</receiver>
-   <slot>setPasswordMode(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>236</x>
-     <y>243</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>246</x>
-     <y>212</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cbShowPasswords</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>lePin</receiver>
-   <slot>setPasswordMode(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>236</x>
-     <y>243</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>194</x>
-     <y>160</y>
     </hint>
    </hints>
   </connection>

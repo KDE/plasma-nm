@@ -50,7 +50,6 @@ if (OPENCONNECT_FOUND)
             KF5::WidgetsAddons
             KF5::KIOWidgets
             KF5::CoreAddons
-            KF5::KDELibs4Support
             ${OPENCONNECT_LIBRARIES}
             ${maybe_OPENSSL_LIBRARIES}
         )

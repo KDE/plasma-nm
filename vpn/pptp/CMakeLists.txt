@@ -25,7 +25,6 @@ target_link_libraries(plasmanetworkmanagement_pptpui
     KF5::WidgetsAddons
     KF5::KIOWidgets
     KF5::CoreAddons
-    KF5::KDELibs4Support
 )
 
 install(TARGETS plasmanetworkmanagement_pptpui  DESTINATION ${PLUGIN_INSTALL_DIR})

@@ -11,13 +11,13 @@
    </rect>
   </property>
   <layout class="QFormLayout" name="formLayout">
-    <property name="verticalSpacing">
+   <property name="verticalSpacing">
     <number>0</number>
-    </property>
+   </property>
    <item row="0" column="0">
     <widget class="QLabel" name="userNameLabel">
      <property name="text">
-      <string>Username:</string>
+      <string>Userna&amp;me:</string>
      </property>
      <property name="buddy">
       <cstring>leUserName</cstring>
@@ -25,7 +25,7 @@
     </widget>
    </item>
    <item row="0" column="1">
-    <widget class="KLineEdit" name="leUserName">
+    <widget class="QLineEdit" name="leUserName">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -45,9 +45,9 @@
     </widget>
    </item>
    <item row="1" column="1">
-    <widget class="KLineEdit" name="leUserPassword">
-     <property name="passwordMode">
-      <bool>true</bool>
+    <widget class="QLineEdit" name="leUserPassword">
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
      </property>
     </widget>
    </item>
@@ -63,13 +63,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

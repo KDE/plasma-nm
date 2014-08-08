@@ -26,6 +26,7 @@
 
 #include <NetworkManagerQt/Setting>
 
+#include <QPointer>
 #include <QDBusMetaType>
 #include <QDebug>
 
@@ -149,7 +150,10 @@ void L2tpWidget::userPasswordTypeChanged(int index)
 
 void L2tpWidget::showPassword(bool show)
 {
-    m_ui->password->setPasswordMode(!show);
+    if (show)
+        m_ui->password->setEchoMode(QLineEdit::Normal);
+    else
+        m_ui->password->setEchoMode(QLineEdit::Password);
 }
 
 void L2tpWidget::showAdvanced()

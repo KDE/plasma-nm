@@ -39,7 +39,11 @@
          </widget>
         </item>
         <item>
-         <widget class="KLineEdit" name="edt_gateway"/>
+         <widget class="QLineEdit" name="edt_gateway">
+          <property name="clearButtonEnabled">
+           <bool>true</bool>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -79,7 +83,11 @@
            </widget>
           </item>
           <item>
-           <widget class="KLineEdit" name="edt_login"/>
+           <widget class="QLineEdit" name="edt_login">
+            <property name="clearButtonEnabled">
+             <bool>true</bool>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -108,17 +116,17 @@
            </widget>
           </item>
           <item>
-           <widget class="KLineEdit" name="edt_password">
+           <widget class="QLineEdit" name="edt_password">
             <property name="enabled">
              <bool>true</bool>
             </property>
-            <property name="passwordMode">
-             <bool>true</bool>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="KComboBox" name="cmbPasswordStorage">
+           <widget class="QComboBox" name="cmbPasswordStorage">
             <item>
              <property name="text">
               <string>Store</string>
@@ -162,7 +170,7 @@
              </size>
             </property>
             <property name="text">
-             <string>NT Domain:</string>
+             <string>NT Do&amp;main:</string>
             </property>
             <property name="buddy">
              <cstring>edt_ntDomain</cstring>
@@ -170,7 +178,11 @@
            </widget>
           </item>
           <item>
-           <widget class="KLineEdit" name="edt_ntDomain"/>
+           <widget class="QLineEdit" name="edt_ntDomain">
+            <property name="clearButtonEnabled">
+             <bool>true</bool>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -221,18 +233,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
- </customwidgets>
  <tabstops>
   <tabstop>edt_gateway</tabstop>
   <tabstop>edt_login</tabstop>

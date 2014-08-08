@@ -23,7 +23,7 @@
     </widget>
    </item>
    <item row="0" column="2">
-    <widget class="KLineEdit" name="gateway"/>
+    <widget class="QLineEdit" name="gateway"/>
    </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label_2">
@@ -36,7 +36,7 @@
     </widget>
    </item>
    <item row="1" column="2">
-    <widget class="KLineEdit" name="user"/>
+    <widget class="QLineEdit" name="user"/>
    </item>
    <item row="2" column="0" colspan="2">
     <widget class="QLabel" name="label_3">
@@ -51,20 +51,17 @@
    <item row="2" column="2">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="KLineEdit" name="userPassword">
+      <widget class="QLineEdit" name="userPassword">
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="passwordMode">
-        <bool>true</bool>
-       </property>
       </widget>
      </item>
      <item>
-      <widget class="KComboBox" name="cboUserPasswordType">
+      <widget class="QComboBox" name="cboUserPasswordType">
        <item>
         <property name="text">
          <string>Store</string>
@@ -95,7 +92,7 @@
     </widget>
    </item>
    <item row="3" column="2">
-    <widget class="KLineEdit" name="group"/>
+    <widget class="QLineEdit" name="group"/>
    </item>
    <item row="4" column="0" colspan="2">
     <widget class="QLabel" name="label_5">
@@ -110,20 +107,17 @@
    <item row="4" column="2">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="KLineEdit" name="groupPassword">
+      <widget class="QLineEdit" name="groupPassword">
        <property name="sizePolicy">
         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="passwordMode">
-        <bool>true</bool>
-       </property>
       </widget>
      </item>
      <item>
-      <widget class="KComboBox" name="cboGroupPasswordType">
+      <widget class="QComboBox" name="cboGroupPasswordType">
        <item>
         <property name="text">
          <string>Store</string>
@@ -223,16 +217,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
   <customwidget>
    <class>KUrlRequester</class>
    <extends>QFrame</extends>

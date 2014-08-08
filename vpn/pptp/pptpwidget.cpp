@@ -85,7 +85,10 @@ void PptpSettingWidget::passwordTypeChanged(int index)
 void PptpSettingWidget::setShowPassword(bool show)
 {
     Q_D(PptpSettingWidget);
-    d->ui.edt_password->setPasswordMode(!show);
+    if (show)
+        d->ui.edt_password->setEchoMode(QLineEdit::Normal);
+    else
+        d->ui.edt_password->setEchoMode(QLineEdit::Password);
 }
 
 void PptpSettingWidget::doAdvancedDialog()
@@ -203,14 +206,14 @@ QVariantMap PptpSettingWidget::setting(bool agentOwned) const
     NMStringMap data;
     NMStringMap secretData;
 
-    data.insert(NM_PPTP_KEY_GATEWAY,  d->ui.edt_gateway->text().toUtf8());
-    data.insert(NM_PPTP_KEY_USER, d->ui.edt_login->text().toUtf8());
+    data.insert(NM_PPTP_KEY_GATEWAY,  d->ui.edt_gateway->text());
+    data.insert(NM_PPTP_KEY_USER, d->ui.edt_login->text());
     if (!d->ui.edt_password->text().isEmpty()) {
         secretData.insert(QLatin1String(NM_PPTP_KEY_PASSWORD), d->ui.edt_password->text());
     }
     handleOnePasswordType(d->ui.cmbPasswordStorage, NM_PPTP_KEY_PASSWORD"-flags", data, agentOwned);
     if (!d->ui.edt_ntDomain->text().isEmpty()) {
-        data.insert(NM_PPTP_KEY_DOMAIN,  d->ui.edt_ntDomain->text().toUtf8());
+        data.insert(NM_PPTP_KEY_DOMAIN,  d->ui.edt_ntDomain->text());
     }
 
     // Advanced dialog settings
@@ -290,7 +293,7 @@ QVariantMap PptpSettingWidget::setting(bool agentOwned) const
     return setting.toMap();
 }
 
-void PptpSettingWidget::fillOnePasswordCombo(KComboBox * combo, NetworkManager::Setting::SecretFlags type)
+void PptpSettingWidget::fillOnePasswordCombo(QComboBox * combo, NetworkManager::Setting::SecretFlags type)
 {
     if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) { // store
         combo->setCurrentIndex(0);
@@ -301,7 +304,7 @@ void PptpSettingWidget::fillOnePasswordCombo(KComboBox * combo, NetworkManager::
     }
 }
 
-uint PptpSettingWidget::handleOnePasswordType(const KComboBox * combo, const QString & key, NMStringMap & data, bool agentOwned) const
+uint PptpSettingWidget::handleOnePasswordType(const QComboBox *combo, const QString & key, NMStringMap & data, bool agentOwned) const
 {
     const uint type = combo->currentIndex();
     switch (type) {

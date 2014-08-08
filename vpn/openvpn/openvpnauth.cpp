@@ -25,8 +25,8 @@
 #include <QFormLayout>
 #include <QLabel>
 #include <QCheckBox>
+#include <QLineEdit>
 
-#include <KLineEdit>
 #include <KLocalizedString>
 
 #include "nm-openvpn-service.h"
@@ -63,7 +63,7 @@ void OpenVpnAuthWidget::readSecrets()
     const NMStringMap dataMap = d->setting->data();
     const QString cType = dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE];
     QLabel *label;
-    KLineEdit *lineEdit;
+    QLineEdit *lineEdit;
 
     NetworkManager::Setting::SecretFlags certType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_CERTPASS"-flags").toInt();
     NetworkManager::Setting::SecretFlags passType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_PASSWORD"-flags").toInt();
@@ -72,16 +72,16 @@ void OpenVpnAuthWidget::readSecrets()
     if (cType == QLatin1String(NM_OPENVPN_CONTYPE_TLS) && !(certType.testFlag(NetworkManager::Setting::NotRequired))) {
         label = new QLabel(this);
         label->setText(i18n("Key Password:"));
-        lineEdit = new KLineEdit(this);
-        lineEdit->setPasswordMode(true);
+        lineEdit = new QLineEdit(this);
+        lineEdit->setEchoMode(QLineEdit::Password);
         lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_CERTPASS));
         lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_CERTPASS)));
         d->layout->addRow(label, lineEdit);
     } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD) && !(passType.testFlag(NetworkManager::Setting::NotRequired))) {
         label = new QLabel(this);
         label->setText(i18n("Password:"));
-        lineEdit = new KLineEdit(this);
-        lineEdit->setPasswordMode(true);
+        lineEdit = new QLineEdit(this);
+        lineEdit->setEchoMode(QLineEdit::Password);
         lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_PASSWORD));
         lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)));
         d->layout->addRow(label, lineEdit);
@@ -89,8 +89,8 @@ void OpenVpnAuthWidget::readSecrets()
         if (!(passType.testFlag(NetworkManager::Setting::NotRequired))) {
             label = new QLabel(this);
             label->setText(i18n("Password:"));
-            lineEdit = new KLineEdit(this);
-            lineEdit->setPasswordMode(true);
+            lineEdit = new QLineEdit(this);
+            lineEdit->setEchoMode(QLineEdit::Password);
             lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_PASSWORD));
             lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)));
             d->layout->addRow(label, lineEdit);
@@ -98,8 +98,8 @@ void OpenVpnAuthWidget::readSecrets()
         if (!(certType.testFlag(NetworkManager::Setting::NotRequired))) {
             label = new QLabel(this);
             label->setText(i18n("Key Password:"));
-            lineEdit = new KLineEdit(this);
-            lineEdit->setPasswordMode(true);
+            lineEdit = new QLineEdit(this);
+            lineEdit->setEchoMode(QLineEdit::Password);
             lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_CERTPASS));
             lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_CERTPASS)));
             d->layout->addRow(label, lineEdit);
@@ -109,15 +109,15 @@ void OpenVpnAuthWidget::readSecrets()
     if (dataMap.contains(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags") && !(proxyType.testFlag(NetworkManager::Setting::NotRequired))) {
         label = new QLabel(this);
         label->setText(i18n("Proxy Password:"));
-        lineEdit = new KLineEdit(this);
-        lineEdit->setPasswordMode(true);
+        lineEdit = new QLineEdit(this);
+        lineEdit->setEchoMode(QLineEdit::Password);
         lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD));
         lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD)));
         d->layout->addRow(label, lineEdit);
     }
 
     for (int i = 0; i < d->layout->rowCount(); i++) {
-        KLineEdit *le = qobject_cast<KLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+        QLineEdit *le = qobject_cast<QLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && le->text().isEmpty()) {
             le->setFocus(Qt::OtherFocusReason);
             break;
@@ -125,7 +125,7 @@ void OpenVpnAuthWidget::readSecrets()
     }
 
     QCheckBox *showPasswords = new QCheckBox(this);
-    showPasswords->setText(i18n("&Show password"));
+    showPasswords->setText(i18n("Show passwords"));
     d->layout->addRow(showPasswords);
     connect(showPasswords, SIGNAL(toggled(bool)), this, SLOT(showPasswordsToggled(bool)));
 }
@@ -138,7 +138,7 @@ QVariantMap OpenVpnAuthWidget::setting(bool agentOwned) const
     NMStringMap secrets;
     QVariantMap secretData;
     for (int i = 0; i < d->layout->rowCount() - 1; i++) {
-        KLineEdit *le = qobject_cast<KLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+        QLineEdit *le = qobject_cast<QLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && !le->text().isEmpty()) {
             const QString key = le->property("nm_secrets_key").toString();
             secrets.insert(key, le->text());
@@ -149,13 +149,16 @@ QVariantMap OpenVpnAuthWidget::setting(bool agentOwned) const
     return secretData;
 }
 
-void OpenVpnAuthWidget::showPasswordsToggled(bool toggled)
+void OpenVpnAuthWidget::showPasswordsToggled(bool show)
 {
     Q_D(OpenVpnAuthWidget);
     for (int i = 0; i < d->layout->rowCount() - 1; i++) {
-        KLineEdit *le = qobject_cast<KLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+        QLineEdit *le = qobject_cast<QLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le) {
-            le->setPasswordMode(!toggled);
+            if (show)
+                le->setEchoMode(QLineEdit::Normal);
+            else
+                le->setEchoMode(QLineEdit::Password);
         }
     }
 }

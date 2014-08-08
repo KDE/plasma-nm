@@ -217,8 +217,13 @@ void OpenswanWidget::groupPasswordTypeChanged(int index)
 
 void OpenswanWidget::showPassword(bool show)
 {
-    m_ui->userPassword->setPasswordMode(!show);
-    m_ui->groupPassword->setPasswordMode(!show);
+    if (show) {
+        m_ui->userPassword->setEchoMode(QLineEdit::Normal);
+        m_ui->groupPassword->setEchoMode(QLineEdit::Normal);
+    } else {
+        m_ui->userPassword->setEchoMode(QLineEdit::Password);
+        m_ui->groupPassword->setEchoMode(QLineEdit::Password);
+    }
 }
 
 bool OpenswanWidget::isValid() const

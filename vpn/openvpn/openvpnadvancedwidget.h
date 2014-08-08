@@ -24,9 +24,6 @@
 #include <QDialog>
 #include <QProcess>
 
-#include <KLineEdit>
-#include <KComboBox>
-
 #include <NetworkManagerQt/VpnSetting>
 
 namespace Ui
@@ -34,6 +31,8 @@ namespace Ui
 class OpenVpnAdvancedWidget;
 }
 
+class QComboBox;
+class QLineEdit;
 class OpenVpnAdvancedWidget : public QDialog
 {
     Q_OBJECT
@@ -50,14 +49,14 @@ private Q_SLOTS:
     void openVpnFinished(int, QProcess::ExitStatus);
 
     void proxyPasswordStorageChanged(int);
-    void proxyPasswordToggled(bool);
+    void proxyPasswordToggled(bool show);
     void proxyTypeChanged(int);
 
 private:
     void loadConfig();
-    void setPasswordType(KLineEdit *edit, int type);
-    void fillOnePasswordCombo(KComboBox * combo, NetworkManager::Setting::SecretFlags type);
-    uint handleOnePasswordType(const KComboBox * combo, const QString & key, NMStringMap & data) const;
+    void setPasswordType(QLineEdit *edit, int type);
+    void fillOnePasswordCombo(QComboBox *combo, NetworkManager::Setting::SecretFlags type);
+    uint handleOnePasswordType(const QComboBox *combo, const QString & key, NMStringMap & data) const;
     Ui::OpenVpnAdvancedWidget * m_ui;
     class Private;
     Private * d;

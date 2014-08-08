@@ -25,6 +25,7 @@
 
 #include <QStandardPaths>
 #include <QUrl>
+#include <QComboBox>
 
 #include <KLocalizedString>
 #include <KProcess>
@@ -243,12 +244,12 @@ void OpenVpnAdvancedWidget::loadConfig()
     fillOnePasswordCombo(m_ui->proxyPasswordStorage, type);
 }
 
-void OpenVpnAdvancedWidget::setPasswordType(KLineEdit *edit, int type)
+void OpenVpnAdvancedWidget::setPasswordType(QLineEdit *edit, int type)
 {
     edit->setEnabled(type == SettingWidget::EnumPasswordStorageType::Store);
 }
 
-void OpenVpnAdvancedWidget::fillOnePasswordCombo(KComboBox * combo, NetworkManager::Setting::SecretFlags type)
+void OpenVpnAdvancedWidget::fillOnePasswordCombo(QComboBox * combo, NetworkManager::Setting::SecretFlags type)
 {
     if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) {
         combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
@@ -366,9 +367,12 @@ void OpenVpnAdvancedWidget::proxyPasswordStorageChanged(int index)
     setPasswordType(m_ui->proxyPassword, index);
 }
 
-void OpenVpnAdvancedWidget::proxyPasswordToggled(bool toggled)
+void OpenVpnAdvancedWidget::proxyPasswordToggled(bool show)
 {
-    m_ui->proxyPassword->setPasswordMode(!toggled);
+    if (show)
+        m_ui->proxyPassword->setEchoMode(QLineEdit::Normal);
+    else
+        m_ui->proxyPassword->setEchoMode(QLineEdit::Password);
 }
 
 void OpenVpnAdvancedWidget::proxyTypeChanged(int type)
@@ -405,7 +409,7 @@ void OpenVpnAdvancedWidget::proxyTypeChanged(int type)
     }
 }
 
-uint OpenVpnAdvancedWidget::handleOnePasswordType(const KComboBox * combo, const QString & key, NMStringMap & data) const
+uint OpenVpnAdvancedWidget::handleOnePasswordType(const QComboBox * combo, const QString & key, NMStringMap & data) const
 {
     uint type = combo->currentIndex();
     switch (type) {

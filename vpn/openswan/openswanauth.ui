@@ -11,13 +11,13 @@
    </rect>
   </property>
   <layout class="QFormLayout" name="formLayout">
-    <property name="verticalSpacing">
+   <property name="verticalSpacing">
     <number>0</number>
-    </property>
+   </property>
    <item row="0" column="0">
     <widget class="QLabel" name="groupNameLabel">
      <property name="text">
-      <string>Group name:</string>
+      <string>Group na&amp;me:</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>
@@ -28,7 +28,7 @@
     </widget>
    </item>
    <item row="0" column="1">
-    <widget class="KLineEdit" name="leGroupName">
+    <widget class="QLineEdit" name="leGroupName">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -48,9 +48,9 @@
     </widget>
    </item>
    <item row="1" column="1">
-    <widget class="KLineEdit" name="leUserPassword">
-     <property name="passwordMode">
-      <bool>true</bool>
+    <widget class="QLineEdit" name="leUserPassword">
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
      </property>
     </widget>
    </item>
@@ -68,9 +68,9 @@
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="KLineEdit" name="leGroupPassword">
-     <property name="passwordMode">
-      <bool>true</bool>
+    <widget class="QLineEdit" name="leGroupPassword">
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
      </property>
     </widget>
    </item>
@@ -86,13 +86,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

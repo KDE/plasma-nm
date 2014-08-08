@@ -31,8 +31,8 @@
 #include <NetworkManagerQt/VpnSetting>
 
 class QUrl;
-class KLineEdit;
-class KComboBox;
+class QLineEdit;
+class QComboBox;
 
 class OpenVpnSettingWidget : public SettingWidget
 {
@@ -52,15 +52,15 @@ private Q_SLOTS:
     void passPasswordStorageChanged(int);
     void x509PassKeyPasswordStorageChanged(int);
     void x509PassPasswordStorageChanged(int);
-    void showPasswordsToggled(bool);
+    void showPasswordsToggled(bool show);
     void showAdvanced();
 
 private:
     class Private;
     Private * d;
-    void setPasswordType(KLineEdit *, int);
-    void fillOnePasswordCombo(KComboBox *, NetworkManager::Setting::SecretFlags);
-    uint handleOnePasswordType(const KComboBox *, const QString &, NMStringMap &, bool agentOwned) const;
+    void setPasswordType(QLineEdit *, int);
+    void fillOnePasswordCombo(QComboBox *, NetworkManager::Setting::SecretFlags);
+    uint handleOnePasswordType(const QComboBox *, const QString &, NMStringMap &, bool agentOwned) const;
 };
 
 #endif // OPENVPNWIDGET_H

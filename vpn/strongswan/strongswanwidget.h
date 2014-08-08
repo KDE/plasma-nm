@@ -27,7 +27,7 @@
 
 #include <NetworkManagerQt/VpnSetting>
 
-class KComboBox;
+class QComboBox;
 class StrongswanSettingWidgetPrivate;
 
 class StrongswanSettingWidget : public SettingWidget
@@ -50,8 +50,8 @@ protected Q_SLOTS:
     void methodChanged(int);
     void showPasswordsChanged(bool show);
 private:
-    void fillOnePasswordCombo(KComboBox * combo, const QString & key, const NMStringMap & data, bool hasPassword);
-    uint handleOnePasswordType(const KComboBox * combo, const QString & key, NMStringMap & data, bool agentOwned) const;
+    void fillOnePasswordCombo(QComboBox * combo, const QString & key, const NMStringMap & data, bool hasPassword);
+    uint handleOnePasswordType(const QComboBox * combo, const QString & key, NMStringMap & data, bool agentOwned) const;
     StrongswanSettingWidgetPrivate * const d_ptr;
 };
 

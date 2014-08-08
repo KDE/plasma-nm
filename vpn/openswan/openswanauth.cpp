@@ -109,6 +109,11 @@ QVariantMap OpenswanAuthDialog::setting(bool agentOwned) const
 void OpenswanAuthDialog::showPasswordsChanged(bool show)
 {
     Q_D(OpenswanAuthDialog);
-    d->ui.leUserPassword->setPasswordMode(!show);
-    d->ui.leGroupPassword->setPasswordMode(!show);
+    if (show) {
+        d->ui.leUserPassword->setEchoMode(QLineEdit::Normal);
+        d->ui.leGroupPassword->setEchoMode(QLineEdit::Normal);
+    } else {
+        d->ui.leUserPassword->setEchoMode(QLineEdit::Password);
+        d->ui.leGroupPassword->setEchoMode(QLineEdit::Password);
+    }
 }

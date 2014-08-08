@@ -39,7 +39,7 @@ public:
     virtual QVariantMap setting(bool agentOwned = false) const;
 
 private Q_SLOTS:
-    void showPasswordsToggled(bool);
+    void showPasswordsToggled(bool show);
 
 private:
     PptpAuthWidgetPrivate * d_ptr;

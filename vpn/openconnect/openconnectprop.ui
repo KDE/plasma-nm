@@ -37,7 +37,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="KLineEdit" name="leGateway"/>
+       <widget class="QLineEdit" name="leGateway"/>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label">
@@ -63,7 +63,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="KLineEdit" name="leProxy"/>
+       <widget class="QLineEdit" name="leProxy"/>
       </item>
       <item row="4" column="0">
        <widget class="QLabel" name="label_3">
@@ -149,11 +149,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
   <customwidget>
    <class>KUrlRequester</class>
    <extends>QFrame</extends>

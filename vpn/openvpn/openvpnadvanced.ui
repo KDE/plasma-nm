@@ -13,6 +13,9 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
      <widget class="QWidget" name="generalTab">
       <attribute name="title">
        <string>General</string>
@@ -47,7 +50,7 @@
          <item>
           <widget class="QLabel" name="label_8">
            <property name="text">
-            <string>Tunnel MTU:</string>
+            <string>Tunnel &amp;MTU:</string>
            </property>
            <property name="buddy">
             <cstring>sbMtu</cstring>
@@ -71,7 +74,7 @@
          <item>
           <widget class="QLabel" name="label_9">
            <property name="text">
-            <string>UDP fragment size:</string>
+            <string>UDP fragment si&amp;ze:</string>
            </property>
            <property name="buddy">
             <cstring>sbUdpFragmentSize</cstring>
@@ -172,7 +175,7 @@
           </widget>
          </item>
          <item>
-          <widget class="KComboBox" name="cboCipher">
+          <widget class="QComboBox" name="cboCipher">
            <property name="enabled">
             <bool>false</bool>
            </property>
@@ -196,7 +199,7 @@
          <item>
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>HMAC Authentication:</string>
+            <string>H&amp;MAC Authentication:</string>
            </property>
            <property name="buddy">
             <cstring>cboHmac</cstring>
@@ -290,7 +293,7 @@
          <item>
           <widget class="QLabel" name="label_10">
            <property name="text">
-            <string>Subject Match:</string>
+            <string>Subject &amp;Match:</string>
            </property>
            <property name="buddy">
             <cstring>subjectMatch</cstring>
@@ -298,9 +301,12 @@
           </widget>
          </item>
          <item>
-          <widget class="KLineEdit" name="subjectMatch">
+          <widget class="QLineEdit" name="subjectMatch">
            <property name="whatsThis">
             <string>Connect only to servers whose certificate matches the given subject. Example: /CN=myvpn.company.com</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -397,11 +403,11 @@
        <string>Proxies</string>
       </attribute>
       <layout class="QFormLayout" name="formLayout_2">
-        <property name="verticalSpacing">
-        <number>0</number>
-        </property>
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
+       <property name="verticalSpacing">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_11">
@@ -447,7 +453,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_12">
          <property name="text">
-          <string>Server Address:</string>
+          <string>Ser&amp;ver Address:</string>
          </property>
          <property name="buddy">
           <cstring>proxyServerAddress</cstring>
@@ -455,7 +461,11 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="KLineEdit" name="proxyServerAddress"/>
+        <widget class="QLineEdit" name="proxyServerAddress">
+         <property name="clearButtonEnabled">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="label_13">
@@ -490,7 +500,7 @@
        <item row="4" column="0">
         <widget class="QLabel" name="label_14">
          <property name="text">
-          <string>Proxy Username:</string>
+          <string>Proxy Userna&amp;me:</string>
          </property>
          <property name="buddy">
           <cstring>proxyUsername</cstring>
@@ -508,7 +518,14 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="KLineEdit" name="proxyUsername"/>
+        <widget class="QLineEdit" name="proxyUsername">
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+         <property name="clearButtonEnabled">
+          <bool>true</bool>
+         </property>
+        </widget>
        </item>
        <item row="6" column="1">
         <widget class="QCheckBox" name="chkProxyShowPassword">
@@ -520,12 +537,9 @@
        <item row="5" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout_14">
          <item>
-          <widget class="KLineEdit" name="proxyPassword">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="passwordMode">
-            <bool>true</bool>
+          <widget class="QLineEdit" name="proxyPassword">
+           <property name="echoMode">
+            <enum>QLineEdit::Password</enum>
            </property>
           </widget>
          </item>
@@ -570,13 +584,8 @@
    <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>KUrlRequester</class>
-   <extends>QFrame</extends>
+   <extends>QWidget</extends>
    <header>kurlrequester.h</header>
   </customwidget>
  </customwidgets>

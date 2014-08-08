@@ -198,7 +198,7 @@ QVariantMap StrongswanSettingWidget::setting(bool agentOwned) const
     return setting.toMap();
 }
 
-void StrongswanSettingWidget::fillOnePasswordCombo(KComboBox * combo, const QString & key, const NMStringMap & data, bool hasPassword)
+void StrongswanSettingWidget::fillOnePasswordCombo(QComboBox * combo, const QString & key, const NMStringMap & data, bool hasPassword)
 {
     if (data.contains(key)) {
         if (data.value(key) == NM_STRONGSWAN_PW_TYPE_SAVE) {
@@ -211,7 +211,7 @@ void StrongswanSettingWidget::fillOnePasswordCombo(KComboBox * combo, const QStr
     }
 }
 
-uint StrongswanSettingWidget::handleOnePasswordType(const KComboBox * combo, const QString & key, NMStringMap & data, bool agentOwned) const
+uint StrongswanSettingWidget::handleOnePasswordType(const QComboBox * combo, const QString & key, NMStringMap & data, bool agentOwned) const
 {
     const uint type = combo->currentIndex();
     switch (type) {
@@ -240,6 +240,13 @@ bool StrongswanSettingWidget::isValid() const
 void StrongswanSettingWidget::showPasswordsChanged(bool show)
 {
     Q_D(StrongswanSettingWidget);
-    d->ui.lePrivateKeyPassword->setPasswordMode(!show);
-    d->ui.leUserPassword->setPasswordMode(!show);
+    if (show) {
+        d->ui.lePrivateKeyPassword->setEchoMode(QLineEdit::Normal);
+        d->ui.leUserPassword->setEchoMode(QLineEdit::Normal);
+        d->ui.lePin->setEchoMode(QLineEdit::Normal);
+    } else {
+        d->ui.lePrivateKeyPassword->setEchoMode(QLineEdit::Password);
+        d->ui.leUserPassword->setEchoMode(QLineEdit::Password);
+        d->ui.lePin->setEchoMode(QLineEdit::Password);
+    }
 }

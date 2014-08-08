@@ -10,7 +10,7 @@ set(openvpn_SRCS
     openvpnadvancedwidget.cpp
 )
 
-ki18n_wrap_ui(openvpn_SRCS openvpn.ui openvpnauth.ui openvpnadvanced.ui)
+ki18n_wrap_ui(openvpn_SRCS openvpn.ui openvpnadvanced.ui)
 
 add_library(plasmanetworkmanagement_openvpnui ${openvpn_SRCS})
 

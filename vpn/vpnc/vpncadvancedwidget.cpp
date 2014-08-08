@@ -60,10 +60,6 @@ VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &se
     m_ui->pfs->addItem(i18nc("Perfect Forward Secrecy", "DH Group 2"), NM_VPNC_PFS_DH2);
     m_ui->pfs->addItem(i18nc("Perfect Forward Secrecy", "DH Group 5"), NM_VPNC_PFS_DH5);
 
-    // localport
-    m_ui->localport->setRange(0, 65535, 1);
-    m_ui->localport->setValue(0);
-
     loadConfig(setting);
 
     KAcceleratorManager::manage(this);

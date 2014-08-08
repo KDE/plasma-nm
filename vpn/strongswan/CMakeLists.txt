@@ -19,7 +19,6 @@ target_link_libraries(plasmanetworkmanagement_strongswanui
     KF5::Service
     KF5::I18n
     KF5::KIOWidgets
-    KF5::KDELibs4Support
     KF5::NetworkManagerQt
 )
 

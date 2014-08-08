@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
     about.addCredit(i18n("Will Stephenson"), i18n("VPN plugins"), "wstephenson@kde.org");
     about.addCredit(i18n("Ilia Kats"), i18n("VPN plugins"), "ilia-kats@gmx.net");
     about.setProductName("plasma-nm/editor");
+    about.setProgramIconName("preferences-system-network");
 
     KAboutData::setApplicationData(about);
 

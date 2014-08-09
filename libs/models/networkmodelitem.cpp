@@ -574,7 +574,7 @@ void NetworkModelItem::updateDetails()
         if (wimaxDevice) {
             NetworkManager::WimaxNsp::Ptr wimaxNsp = wimaxDevice->findNsp(m_specificPath);
             m_details << i18n("NSP Name") << m_nsp;
-            m_details << i18n("Signal Strength") << QString("%1%").arg(m_signal);
+            m_details << i18n("Signal Strength") << QString("%1").arg(m_signal);
             if (wimaxNsp) {
                 m_details << i18n("Network Type");
             }
@@ -603,7 +603,7 @@ void NetworkModelItem::updateDetails()
         NetworkManager::VlanDevice::Ptr vlanDevice = device.objectCast<NetworkManager::VlanDevice>();
         m_details << i18n("Type") << i18n("Vlan");
         if (vlanDevice) {
-            m_details << i18n("Vlan ID") << QString("%1%").arg(vlanDevice->vlanId());
+            m_details << i18n("Vlan ID") << QString("%1").arg(vlanDevice->vlanId());
             m_details << i18n("MAC Address") << vlanDevice->hwAddress();
         }
     } else if (m_type == NetworkManager::ConnectionSettings::Adsl) {

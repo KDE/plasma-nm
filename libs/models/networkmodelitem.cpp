@@ -524,7 +524,7 @@ void NetworkModelItem::updateDetails()
             m_details << i18n("Operator") << gsmNet->operatorName();
         } else {
             ModemManager::ModemCdma::Ptr cdmaNet = modem->interface(ModemManager::ModemDevice::CdmaInterface).objectCast<ModemManager::ModemCdma>();
-            m_details << i18n("Network ID") << QString("%1%").arg(cdmaNet->nid());
+            m_details << i18n("Network ID") << QString("%1").arg(cdmaNet->nid());
         }
         m_details << i18n("Signal Quality") << QString("%1%").arg(modemNetwork->signalQuality().signal);
         m_details << i18n("Access Technology") << UiUtils::convertAccessTechnologyToString(modemNetwork->accessTechnologies());
@@ -574,7 +574,7 @@ void NetworkModelItem::updateDetails()
         if (wimaxDevice) {
             NetworkManager::WimaxNsp::Ptr wimaxNsp = wimaxDevice->findNsp(m_specificPath);
             m_details << i18n("NSP Name") << m_nsp;
-            m_details << i18n("Signal Strength") << QString("%1").arg(m_signal);
+            m_details << i18n("Signal Strength") << QString("%1%").arg(m_signal);
             if (wimaxNsp) {
                 m_details << i18n("Network Type");
             }

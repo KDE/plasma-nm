@@ -83,7 +83,6 @@ void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings
         ui->labelText->setText(i18n("Please provide the password for activating connection '%1'", connectionSettings.name()));
     }
 
-    ui->password->setPasswordMode(true);
     ui->password->setFocus();
     connect(ui->showPassword, &QCheckBox::toggled, this, &PasswordDialog::showPassword);
     connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &PasswordDialog::accept);
@@ -160,5 +159,8 @@ NMVariantMapMap PasswordDialog::secrets() const
 
 void PasswordDialog::showPassword(bool show)
 {
-    ui->password->setPasswordMode(!show);
+    if (show)
+        ui->password->setEchoMode(QLineEdit::Normal);
+    else
+        ui->password->setEchoMode(QLineEdit::Password);
 }

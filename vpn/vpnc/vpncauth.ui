@@ -14,7 +14,16 @@
    <string>VPNCAuthentication</string>
   </property>
   <layout class="QGridLayout">
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item row="1" column="0">
@@ -45,6 +54,9 @@
    </item>
    <item row="1" column="2">
     <widget class="QLineEdit" name="leUserPassword">
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
     </widget>
    </item>
    <item row="5" column="1">
@@ -65,6 +77,9 @@
    </item>
    <item row="3" column="2">
     <widget class="QLineEdit" name="leGroupPassword">
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
     </widget>
    </item>
    <item row="4" column="2">

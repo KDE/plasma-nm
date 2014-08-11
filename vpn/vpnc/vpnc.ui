@@ -58,6 +58,9 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
       </widget>
      </item>
      <item>
@@ -113,6 +116,9 @@
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
        </property>
       </widget>
      </item>
@@ -173,7 +179,7 @@
       <bool>false</bool>
      </property>
      <property name="text">
-      <string>CA &amp;file:</string>
+      <string>CA file:</string>
      </property>
      <property name="buddy">
       <cstring>caFile</cstring>
@@ -219,7 +225,7 @@
  <customwidgets>
   <customwidget>
    <class>KUrlRequester</class>
-   <extends>QFrame</extends>
+   <extends>QWidget</extends>
    <header>kurlrequester.h</header>
   </customwidget>
  </customwidgets>

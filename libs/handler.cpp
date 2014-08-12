@@ -364,7 +364,7 @@ void Handler::editDialogAccepted()
 
 void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
 {
-    QDBusPendingReply<QDBusObjectPath> reply = *watcher;
+    QDBusPendingReply<> reply = *watcher;
     if (reply.isError() || !reply.isValid()) {
         KNotification *notification = 0;
         QString error = reply.error().message();

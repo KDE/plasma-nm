@@ -46,6 +46,7 @@
 #include <KService>
 #include <KServiceTypeTrader>
 #include <KWindowSystem>
+#include <KWallet/Wallet>
 
 Handler::Handler(QObject* parent)
     : QObject(parent)
@@ -168,7 +169,9 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         if (securityType == NetworkManager::Utils::StaticWep) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
             wifiSecurity->setWepKey0(password);
-            wifiSecurity->setWepKeyFlags(NetworkManager::Setting::AgentOwned);
+            if (KWallet::Wallet::isEnabled()) {
+                wifiSecurity->setWepKeyFlags(NetworkManager::Setting::AgentOwned);
+            }
         } else {
             if (ap->mode() == NetworkManager::AccessPoint::Adhoc) {
                 wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaNone);
@@ -176,7 +179,9 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
                 wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
             }
             wifiSecurity->setPsk(password);
-            wifiSecurity->setPskFlags(NetworkManager::Setting::AgentOwned);
+            if (KWallet::Wallet::isEnabled()) {
+                wifiSecurity->setPskFlags(NetworkManager::Setting::AgentOwned);
+            }
         }
         QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
         QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);

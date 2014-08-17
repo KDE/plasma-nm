@@ -424,7 +424,10 @@ void ConnectionIcon::setDisconnectedIcon()
         } else if (device->type() == NetworkManager::Device::Wifi &&
                    NetworkManager::isWirelessEnabled() &&
                    NetworkManager::isWirelessHardwareEnabled()) {
-            wireless = true;
+            NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+            if (!wifiDevice->accessPoints().isEmpty()) {
+                wireless = true;
+            }
         } else if (device->type() == NetworkManager::Device::Modem &&
                    NetworkManager::isWwanEnabled() &&
                    NetworkManager::isWwanHardwareEnabled()) {

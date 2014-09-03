@@ -37,9 +37,11 @@
 #include <KPluginFactory>
 #include <KWindowSystem>
 #include <KDialog>
-#include <KWallet/Wallet>
-
 #include <KDebug>
+#include <KConfig>
+#include <KConfigGroup>
+#include <KWallet/Wallet>
+#include <QDebug>
 
 SecretAgent::SecretAgent(QObject* parent):
     NetworkManager::SecretAgent("org.kde.networkmanagement", parent),
@@ -48,6 +50,9 @@ SecretAgent::SecretAgent(QObject* parent):
 {
     connect(NetworkManager::notifier(), SIGNAL(serviceDisappeared()),
             this, SLOT(killDialogs()));
+
+    // We have to import secrets previously stored in plaintext files
+    importSecretsFromPlainTextFiles();
 }
 
 SecretAgent::~SecretAgent()
@@ -485,5 +490,74 @@ void SecretAgent::sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage
     reply = message.createReply(QVariant::fromValue(secrets));
     if (!QDBusConnection::systemBus().send(reply)) {
         kWarning() << "Failed put the secret into the queue";
+    }
+}
+
+void SecretAgent::importSecretsFromPlainTextFiles()
+{
+    KConfig config(QLatin1String("plasma-networkmanagement"), KConfig::SimpleConfig);
+
+    // No action is required when the list of secrets is empty
+    if (!config.groupList().isEmpty()) {
+        foreach (const QString &groupName, config.groupList()) {
+            QString loadedUuid = groupName.split(';').first().remove('{').remove('}');
+            QString loadedSettingType = groupName.split(';').last();
+            NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(loadedUuid);
+            if (connection) {
+                NetworkManager::Setting::SecretFlags secretFlags = KWallet::Wallet::isEnabled() ? NetworkManager::Setting::AgentOwned : NetworkManager::Setting::None;
+                QMap<QString, QString> secrets = config.entryMap(groupName);
+                NMVariantMapMap settings = connection->settings()->toMap();
+
+                foreach (const QString &setting, settings.keys()) {
+                    if (setting == QLatin1String("vpn")) {
+                        NetworkManager::VpnSetting::Ptr vpnSetting = connection->settings()->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
+                        if (vpnSetting) {
+                            // Add loaded secrets from the config file
+                            vpnSetting->secretsFromStringMap(secrets);
+
+                            NMStringMap vpnData = vpnSetting->data();
+                            // Reset flags, we can't save secrets to our secret agent when KWallet is not enabled, because
+                            // we dropped support for plaintext files, therefore they need to be stored to NetworkManager
+                            foreach (const QString &key, vpnData.keys()) {
+                                if (key.endsWith(QLatin1String("-flags"))) {
+                                    vpnData.insert(key, QString::number((int)secretFlags));
+                                }
+                            }
+
+                            vpnSetting->setData(vpnData);
+                            settings.insert(setting, vpnSetting->toMap());
+                            connection->update(settings);
+                        }
+                    } else {
+                        if (setting == loadedSettingType) {
+                            QVariantMap tmpSetting = settings.value(setting);
+                            // Reset flags, we can't save secrets to our secret agent when KWallet is not enabled, because
+                            // we dropped support for plaintext files, therefore they need to be stored to NetworkManager
+                            foreach (const QString &key, tmpSetting.keys()) {
+                                if (key.endsWith(QLatin1String("-flags"))) {
+                                    tmpSetting.insert(key, (int)secretFlags);
+                                }
+                            }
+
+                            // Add loaded secrets from the config file
+                            QMap<QString, QString>::const_iterator it = secrets.begin();
+                            QMap<QString, QString>::const_iterator end = secrets.end();
+                            for (; it != end; ++it) {
+                                tmpSetting.insert(it.key(), it.value());
+                            }
+
+                            // Replace the old setting with the new one
+                            settings.insert(setting, tmpSetting);
+                            // Update the connection which re-saves secrets
+                            connection->update(settings);
+                        }
+                    }
+                }
+            }
+
+            // Remove the group
+            KConfigGroup group(&config, groupName);
+            group.deleteGroup();
+        }
     }
 }

@@ -116,6 +116,9 @@ private:
     mutable KWallet::Wallet *m_wallet;
     mutable PasswordDialog *m_dialog;
     QList<SecretsRequest> m_calls;
+
+    void importSecretsFromPlainTextFiles();
+
 };
 
 #endif // PLASMA_NM_SECRET_AGENT_H

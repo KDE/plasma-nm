@@ -35,18 +35,18 @@ class NetworkManagementServicePrivate;
 
 class PLASMA_NM_EXPORT NetworkManagementService : public KDEDModule
 {
+    Q_CLASSINFO("D-Bus Interface", "org.kde.plasmanetworkmanagement")
     Q_OBJECT
     Q_DECLARE_PRIVATE(NetworkManagementService)
 public:
     NetworkManagementService(QObject * parent, const QVariantList&);
     virtual ~NetworkManagementService();
+
 public Q_SLOTS:
-    void doInitializeNotifications();
+    Q_SCRIPTABLE void init();
 
 private:
     NetworkManagementServicePrivate * d_ptr;
-
-    void initializeNotifications();
 };
 
 #endif // PLASMANM_KDED_SERVICE_H

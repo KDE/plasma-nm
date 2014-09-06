@@ -21,6 +21,8 @@
 #ifndef PLASMA_NM_HANDLER_H
 #define PLASMA_NM_HANDLER_H
 
+#include <QDBusInterface>
+
 #include <NetworkManagerQt/Connection>
 
 #include "plasmanm_export.h"
@@ -118,6 +120,7 @@ private:
     QString m_tmpSpecificPath;
 
     bool isBtEnabled();
+    QDBusInterface m_agentIface;
 };
 
 #endif // PLASMA_NM_HANDLER_H

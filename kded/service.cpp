@@ -57,19 +57,13 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 {
     Q_D(NetworkManagementService);
 
-    QDBusReply<bool> notificationsReply = QDBusConnection::sessionBus().interface()->isServiceRegistered("org.freedesktop.Notifications");
-    if (notificationsReply.value()) {
-        initializeNotifications();
-    } else {
-        QDBusServiceWatcher * watcher = new QDBusServiceWatcher("org.freedesktop.Notifications", QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
-        connect(watcher, SIGNAL(serviceRegistered()), this, SLOT(doInitializeNotifications()));
-    }
+    d->agent = Q_NULLPTR;
+    d->notification = Q_NULLPTR;
 
 #if WITH_MODEMMANAGER_SUPPORT
-    d->modemMonitor = new ModemMonitor(this);
+    d->modemMonitor = Q_NULLPTR;
 #endif
-    d->bluetoothMonitor = new BluetoothMonitor(this);
-    d->agent = new SecretAgent(this);
+    d->bluetoothMonitor = Q_NULLPTR;
 }
 
 NetworkManagementService::~NetworkManagementService()
@@ -77,17 +71,25 @@ NetworkManagementService::~NetworkManagementService()
     delete d_ptr;
 }
 
-void NetworkManagementService::doInitializeNotifications()
-{
-    QDBusServiceWatcher * watcher = static_cast<QDBusServiceWatcher*>(sender());
-    watcher->deleteLater();
-
-    initializeNotifications();
-}
-
-void NetworkManagementService::initializeNotifications()
+void NetworkManagementService::init()
 {
     Q_D(NetworkManagementService);
 
-    d->notification = new Notification(this);
+    if (!d->agent) {
+        d->agent = new SecretAgent(this);
+    }
+
+    if (!d->notification) {
+        d->notification = new Notification(this);
+    }
+
+#if WITH_MODEMMANAGER_SUPPORT
+    if (!d->modemMonitor) {
+        d->modemMonitor = new ModemMonitor(this);
+    }
+#endif
+
+    if (!d->bluetoothMonitor) {
+        d->bluetoothMonitor = new BluetoothMonitor(this);
+    }
 }

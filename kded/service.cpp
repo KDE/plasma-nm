@@ -62,7 +62,7 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 #if WITH_MODEMMANAGER_SUPPORT
     d->modemMonitor = Q_NULLPTR;
 #endif
-    d->bluetoothMonitor = new Q_NULLPTR;
+    d->bluetoothMonitor = Q_NULLPTR;
 }
 
 NetworkManagementService::~NetworkManagementService()

@@ -53,7 +53,7 @@ Handler::Handler(QObject* parent)
     , m_tmpWimaxEnabled(NetworkManager::isWimaxEnabled())
     , m_tmpWirelessEnabled(NetworkManager::isWirelessEnabled())
     , m_tmpWwanEnabled(NetworkManager::isWwanEnabled())
-    , m_agentIface(QStringLiteral("org.kde.kded5"), QStringLiteral("/modules/networkmanagement"),
+    , m_agentIface(QStringLiteral("org.kde.kded"), QStringLiteral("/modules/networkmanagement"),
                    QStringLiteral("org.kde.plasmanetworkmanagement"))
 {
     m_agentIface.call(QStringLiteral("init"));

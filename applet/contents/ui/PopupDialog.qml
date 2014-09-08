@@ -24,10 +24,6 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 FocusScope {
 
-    PlasmaNM.Handler {
-        id: handler;
-    }
-
     PlasmaNM.NetworkModel {
         id: connectionModel;
     }

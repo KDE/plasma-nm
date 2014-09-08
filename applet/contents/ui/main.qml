@@ -50,4 +50,8 @@ Item {
     PlasmaNM.ConnectionIcon {
         id: connectionIconProvider;
     }
+
+    PlasmaNM.Handler {
+        id: handler;
+    }
 }

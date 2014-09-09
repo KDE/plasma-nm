@@ -547,41 +547,6 @@ QString UiUtils::labelFromWirelessSecurity(NetworkManager::Utils::WirelessSecuri
     return tip;
 }
 
-QString UiUtils::shortToolTipFromWirelessSecurity(NetworkManager::Utils::WirelessSecurityType type)
-{
-    QString tip;
-    switch (type) {
-        case NetworkManager::Utils::None:
-            tip = i18nc("@info:tooltip no security", "Insecure");
-            break;
-        case NetworkManager::Utils::StaticWep:
-            tip = i18nc("@info:tooltip WEP security", "WEP");
-            break;
-        case NetworkManager::Utils::Leap:
-            tip = i18nc("@info:tooltip LEAP security", "LEAP");
-            break;
-        case NetworkManager::Utils::DynamicWep:
-            tip = i18nc("@info:tooltip Dynamic WEP security", "Dynamic WEP");
-            break;
-        case NetworkManager::Utils::WpaPsk:
-            tip = i18nc("@info:tooltip WPA-PSK security", "WPA-PSK");
-            break;
-        case NetworkManager::Utils::WpaEap:
-            tip = i18nc("@info:tooltip WPA-EAP security", "WPA-EAP");
-            break;
-        case NetworkManager::Utils::Wpa2Psk:
-            tip = i18nc("@info:tooltip WPA2-PSK security", "WPA2-PSK");
-            break;
-        case NetworkManager::Utils::Wpa2Eap:
-            tip = i18nc("@info:tooltip WPA2-EAP security", "WPA2-EAP");
-            break;
-        default:
-            tip = i18nc("@info:tooltip unknown security", "Unknown security type");
-            break;
-    }
-    return tip;
-}
-
 QString UiUtils::formatDateRelative(const QDateTime & lastUsed)
 {
     QString lastUsedText;

@@ -50,7 +50,7 @@ TeamWidget::TeamWidget(const QString & masterUuid, const NetworkManager::Setting
     action = new QAction(i18n("Infiniband"), this);
     action->setData(NetworkManager::ConnectionSettings::Infiniband);
     m_menu->addAction(action);
-    action = new QAction(i18n("Wireless"), this);
+    action = new QAction(i18n("Wi-Fi"), this);
     action->setData(NetworkManager::ConnectionSettings::Wireless);
     m_menu->addAction(action);
     action = new QAction(i18n("VLAN"), this);

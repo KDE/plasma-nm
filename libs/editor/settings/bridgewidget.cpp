@@ -48,7 +48,7 @@ BridgeWidget::BridgeWidget(const QString & masterUuid, const NetworkManager::Set
     action = new QAction(i18n("VLAN"), this);
     action->setData(NetworkManager::ConnectionSettings::Vlan);
     m_menu->addAction(action);
-    action = new QAction(i18n("Wireless"), this);
+    action = new QAction(i18n("Wi-Fi"), this);
     action->setData(NetworkManager::ConnectionSettings::Wireless);
     m_menu->addAction(action);
     m_ui->btnAdd->setMenu(m_menu);

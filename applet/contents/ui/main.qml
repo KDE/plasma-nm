@@ -28,7 +28,7 @@ Item {
 
     property bool showSections: true;
 
-    Plasmoid.toolTipMainText: "";
+    Plasmoid.toolTipMainText: i18n("Networks");
     Plasmoid.toolTipSubText: networkStatus.activeConnections;
     Plasmoid.icon: connectionIconProvider.connectionTooltipIcon;
 

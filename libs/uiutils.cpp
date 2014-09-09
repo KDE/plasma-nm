@@ -53,11 +53,8 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
 {
     QString deviceText;
     switch (type) {
-    case NetworkManager::Device::Ethernet:
-        deviceText = i18nc("title of the interface widget in nm's popup", "Wired Ethernet");
-        break;
     case NetworkManager::Device::Wifi:
-        deviceText = i18nc("title of the interface widget in nm's popup", "Wireless 802.11");
+        deviceText = i18nc("title of the interface widget in nm's popup", "Wi-Fi");
         break;
     case NetworkManager::Device::Bluetooth:
         deviceText = i18nc("title of the interface widget in nm's popup", "Bluetooth");
@@ -104,6 +101,7 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
         }
     }
         break;
+    case NetworkManager::Device::Ethernet:
     default:
         deviceText = i18nc("title of the interface widget in nm's popup", "Wired Ethernet");
         break;
@@ -157,11 +155,11 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
         icon = "network-wireless";
         break;
     case ConnectionSettings::Wired:
-        text = i18n("Wired");
+        text = i18n("Wired Ethernet");
         icon = "network-wired";
         break;
     case ConnectionSettings::Wireless:
-        text = i18n("Wireless");
+        text = i18n("Wi-Fi");
         icon = "network-wireless";
         break;
 #if NM_CHECK_VERSION(0, 9, 10)

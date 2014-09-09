@@ -129,19 +129,19 @@ void ConnectionEditor::initializeMenu()
     action->setData(NetworkManager::ConnectionSettings::Gsm);
     m_menu->addAction(action);
 #endif
-    action = new QAction(i18n("Wired"), this);
+    action = new QAction(i18n("Wired Ethernet"), this);
     action->setData(NetworkManager::ConnectionSettings::Wired);
     action->setProperty("shared", false);
     m_menu->addAction(action);
-    action = new QAction(i18n("Wired (shared)"), this);
+    action = new QAction(i18n("Wired Ethernet (shared)"), this);
     action->setData(NetworkManager::ConnectionSettings::Wired);
     action->setProperty("shared", true);
     m_menu->addAction(action);
-    action = new QAction(i18n("Wireless"), this);
+    action = new QAction(i18n("Wi-Fi"), this);
     action->setData(NetworkManager::ConnectionSettings::Wireless);
     action->setProperty("shared", false);
     m_menu->addAction(action);
-    action = new QAction(i18n("Wireless (shared)"), this);
+    action = new QAction(i18n("Wi-Fi (shared)"), this);
     action->setData(NetworkManager::ConnectionSettings::Wireless);
     action->setProperty("shared", true);
     m_menu->addAction(action);

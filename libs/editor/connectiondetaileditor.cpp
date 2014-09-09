@@ -195,11 +195,11 @@ void ConnectionDetailEditor::initTabs()
         m_ui->tabWidget->addTab(wiredSecurity, i18n("802.1x Security"));
     } else if (type == NetworkManager::ConnectionSettings::Wireless) {
         WifiConnectionWidget * wifiWidget = new WifiConnectionWidget(m_connection->setting(NetworkManager::Setting::Wireless), this);
-        m_ui->tabWidget->addTab(wifiWidget, i18n("Wireless"));
+        m_ui->tabWidget->addTab(wifiWidget, i18n("Wi-Fi"));
         WifiSecurity * wifiSecurity = new WifiSecurity(m_connection->setting(NetworkManager::Setting::WirelessSecurity),
                                                        m_connection->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>(),
                                                        this);
-        m_ui->tabWidget->addTab(wifiSecurity, i18n("Wireless Security"));
+        m_ui->tabWidget->addTab(wifiSecurity, i18n("Wi-Fi Security"));
     } else if (type == NetworkManager::ConnectionSettings::Pppoe) { // DSL
         PppoeWidget * pppoeWidget = new PppoeWidget(m_connection->setting(NetworkManager::Setting::Pppoe), this);
         m_ui->tabWidget->addTab(pppoeWidget, i18n("DSL"));

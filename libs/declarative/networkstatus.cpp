@@ -123,24 +123,18 @@ void NetworkStatus::changeActiveConnections()
     }
 
     QString activeConnections = "<qt>";
-    const QString format = "<b>%1 - %2</b><br>%3<br><br>";
-    const QString formatDefault = "<b>%1 - %2</b><br><b>%3</b><br><br>";
+    const QString format = "<b>%1</b><br>%2<br><br>";
+    const QString formatDefault = "<b>%1</b><br><b>%2</b><br><br>";
 
     foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
         if (!active->devices().isEmpty()) {
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
 
             if (device) {
-                QString devName;
                 QString conType;
                 QString status;
-                if (device->ipInterfaceName().isEmpty()) {
-                    devName = device->interfaceName();
-                } else {
-                    devName = device->ipInterfaceName();
-                }
                 if (active->vpn()) {
-                    conType = i18n("VPN Connection");
+                    conType = i18n("VPN");
                 } else {
                     conType = UiUtils::interfaceTypeLabel(device->type(), device);
                 }
@@ -150,9 +144,9 @@ void NetworkStatus::changeActiveConnections()
                     status = i18n("Connecting to %1", active->connection()->name());
                 }
                 if (active->default4() || active->default6()) {
-                    activeConnections += formatDefault.arg(devName, conType, status);
+                    activeConnections += formatDefault.arg(conType, status);
                 } else {
-                    activeConnections += format.arg(devName, conType, status);
+                    activeConnections += format.arg(conType, status);
                 }
             }
         }

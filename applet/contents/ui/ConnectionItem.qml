@@ -29,7 +29,6 @@ PlasmaComponents.ListItem {
     id: connectionItem;
 
     property int baseHeight: connectionItemBase.height;
-    property string downloadSpeed: KCoreAddons.Format.formatByteSize(0);
     property bool expanded: visibleDetails || visiblePasswordDialog;
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
                                                (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
@@ -40,7 +39,6 @@ PlasmaComponents.ListItem {
                               Type == PlasmaNM.Enums.Wireless ||
                               Type == PlasmaNM.Enums.Gsm ||
                               Type == PlasmaNM.Enums.Cdma);
-    property string uploadSpeed: KCoreAddons.Format.formatByteSize(0);
     property bool visibleDetails: false;
     property bool visiblePasswordDialog: false;
 
@@ -57,14 +55,6 @@ PlasmaComponents.ListItem {
         engine: "systemmonitor";
         connectedSources: showSpeed && plasmoid.expanded ? [downloadSource, uploadSource] : [];
         interval: 2000;
-
-        onNewData: {
-            if (sourceName == downloadSource && data.value != undefined) {
-                connectionItem.downloadSpeed = KCoreAddons.Format.formatByteSize(data.value * 1024);
-            } else if (sourceName == uploadSource && data.value != undefined) {
-                connectionItem.uploadSpeed = KCoreAddons.Format.formatByteSize(data.value * 1024);
-            }
-        }
     }
 
     Item {
@@ -412,8 +402,10 @@ PlasmaComponents.ListItem {
                 result += ", " + SecurityTypeString;
             return result;
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
-            if (showSpeed) {
-                return i18n("Connected, ⬇ %1/s, ⬆ %2/s", downloadSpeed, uploadSpeed);
+            if (showSpeed && dataSource.data && dataSource.data[dataSource.downloadSource] && dataSource.data[dataSource.uploadSource]) {
+                return i18n("Connected, ⬇ %1/s, ⬆ %2/s",
+                            KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.downloadSource].value * 1024 || 0),
+                            KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.uploadSource].value * 1024 || 0))
             } else {
                 return i18n("Connected");
             }

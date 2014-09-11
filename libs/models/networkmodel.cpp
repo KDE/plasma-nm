@@ -38,9 +38,9 @@ NetworkModel::NetworkModel(QObject* parent)
     roles[ConnectionIconRole] = "ConnectionIcon";
     roles[ConnectionPathRole] = "ConnectionPath";
     roles[ConnectionStateRole] = "ConnectionState";
+    roles[DeviceNameRole] = "DeviceName";
     roles[DevicePathRole] = "DevicePath";
     roles[DeviceStateRole] = "DeviceState";
-    roles[DownloadRole] = "Download";
     roles[DuplicateRole] = "Duplicate";
     roles[ItemUniqueNameRole] = "ItemUniqueName";
     roles[ItemTypeRole] = "ItemType";
@@ -58,7 +58,6 @@ NetworkModel::NetworkModel(QObject* parent)
     roles[TimeStampRole] = "TimeStamp";
     roles[TypeRole] = "Type";
     roles[UniRole] = "Uni";
-    roles[UploadRole] = "Upload";
     roles[UuidRole] = "Uuid";
     roles[VpnState] = "VpnState";
     setRoleNames(roles);
@@ -86,12 +85,12 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->connectionPath();
             case ConnectionStateRole:
                 return item->connectionState();
+            case DeviceNameRole:
+                return item->deviceName();
             case DevicePathRole:
                 return item->devicePath();
             case DeviceStateRole:
                 return item->deviceState();
-            case DownloadRole:
-                return item->download();
             case DuplicateRole:
                 return item->duplicate();
             case ItemUniqueNameRole:
@@ -130,8 +129,6 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->type();
             case UniRole:
                 return item->uni();
-            case UploadRole:
-                return item->upload();
             case UuidRole:
                 return item->uuid();
             case VpnState:
@@ -433,8 +430,6 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
 
         item->updateDetails();
 
-        connect(item, SIGNAL(itemUpdated()), SLOT(onItemUpdated()));
-
         const int index = m_list.count();
         beginInsertRows(QModelIndex(), index, index);
         m_list.insertItem(item);
@@ -486,8 +481,6 @@ void NetworkModel::addWimaxNsp(const NetworkManager::WimaxNsp::Ptr& nsp, const N
     item->setType(NetworkManager::ConnectionSettings::Wimax);
     item->updateDetails();
 
-    connect(item, SIGNAL(itemUpdated()), SLOT(onItemUpdated()));
-
     const int index = m_list.count();
     beginInsertRows(QModelIndex(), index, index);
     m_list.insertItem(item);
@@ -529,8 +522,6 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
     item->setSecurityType(securityType);
     item->updateDetails();
 
-    connect(item, SIGNAL(itemUpdated()), SLOT(onItemUpdated()));
-
     const int index = m_list.count();
     beginInsertRows(QModelIndex(), index, index);
     m_list.insertItem(item);
@@ -556,8 +547,6 @@ void NetworkModel::checkAndCreateDuplicate(const QString& connection, const Netw
     if (createDuplicate) {
         NetworkModelItem * duplicatedItem = new NetworkModelItem(originalItem);
         duplicatedItem->updateDetails();
-
-        connect(duplicatedItem, SIGNAL(itemUpdated()), SLOT(onItemUpdated()));
 
         const int index = m_list.count();
         beginInsertRows(QModelIndex(), index, index);

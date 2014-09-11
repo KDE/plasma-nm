@@ -49,9 +49,9 @@ public:
         ConnectionIconRole,
         ConnectionPathRole,
         ConnectionStateRole,
+        DeviceNameRole,
         DevicePathRole,
         DeviceStateRole,
-        DownloadRole,
         DuplicateRole,
         ItemUniqueNameRole,
         ItemTypeRole,
@@ -70,7 +70,6 @@ public:
         TypeRole,
         UniRole,
         UuidRole,
-        UploadRole,
         VpnState,
     };
 

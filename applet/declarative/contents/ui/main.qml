@@ -27,6 +27,7 @@ Item {
 
     property int minimumWidth: 300;
     property int minimumHeight: 300;
+    property bool isExpanded: false;
     property bool showSections: true;
     property Component compactRepresentation: CompactRepresentation {
         Component.onCompleted: {
@@ -121,6 +122,7 @@ Item {
     Component.onCompleted: {
         configChanged();
         plasmoid.addEventListener('configChanged', mainWindow.configChanged)
+        plasmoid.popupEvent.connect(popupEventSlot)
     }
 
     function configChanged() {
@@ -131,5 +133,9 @@ Item {
         speedUnit = plasmoid.readConfig("networkSpeedUnit");
         globalConfig.setNetworkSpeedUnit(speedUnit);
         showSections = plasmoid.readConfig("showSections");
+    }
+
+    function popupEventSlot(popped) {
+        isExpanded = popped;
     }
 }

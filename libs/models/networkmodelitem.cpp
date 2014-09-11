@@ -50,13 +50,11 @@ NetworkModelItem::NetworkModelItem(QObject* parent)
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
     , m_deviceState(NetworkManager::Device::UnknownState)
     , m_duplicate(false)
-    , m_engine(0)
     , m_mode(NetworkManager::WirelessSetting::Infrastructure)
     , m_securityType(NetworkManager::Utils::None)
     , m_signal(0)
     , m_slave(false)
     , m_type(NetworkManager::ConnectionSettings::Unknown)
-    , m_updateEnabled(false)
     , m_vpnState(NetworkManager::VpnConnection::Unknown)
 {
 }
@@ -66,7 +64,6 @@ NetworkModelItem::NetworkModelItem(const NetworkModelItem* item, QObject* parent
     , m_connectionPath(item->connectionPath())
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
     , m_duplicate(true)
-    , m_engine(0)
     , m_mode(item->mode())
     , m_name(item->name())
     , m_securityType(item->securityType())
@@ -111,12 +108,6 @@ NetworkManager::ActiveConnection::State NetworkModelItem::connectionState() cons
 void NetworkModelItem::setConnectionState(NetworkManager::ActiveConnection::State state)
 {
     m_connectionState = state;
-
-    if (m_connectionState == NetworkManager::ActiveConnection::Activated && !m_devicePath.isEmpty()) {
-        initializeDataEngine();
-    } else {
-        removeDataEngine();
-    }
 }
 
 QString NetworkModelItem::details() const
@@ -127,6 +118,11 @@ QString NetworkModelItem::details() const
 QString NetworkModelItem::devicePath() const
 {
     return m_devicePath;
+}
+
+QString NetworkModelItem::deviceName() const
+{
+    return m_deviceName;
 }
 
 void NetworkModelItem::setDeviceName(const QString& name)
@@ -147,12 +143,6 @@ QString NetworkModelItem::deviceState() const
 void NetworkModelItem::setDeviceState(const NetworkManager::Device::State state)
 {
     m_deviceState = state;
-}
-
-QString NetworkModelItem::download() const
-{
-    double download = m_download.toDouble();
-    return KGlobal::locale()->formatByteSize(download*1024) + "/s";
 }
 
 bool NetworkModelItem::duplicate() const
@@ -404,12 +394,6 @@ QString NetworkModelItem::uni() const
     }
 }
 
-QString NetworkModelItem::upload() const
-{
-    double upload = m_upload.toDouble();
-    return KGlobal::locale()->formatByteSize(upload*1024) + "/s";
-}
-
 QString NetworkModelItem::uuid() const
 {
     return m_uuid;
@@ -514,65 +498,4 @@ void NetworkModelItem::updateDetails()
     }
 
     m_details += "</table></qt>";
-}
-
-void NetworkModelItem::dataUpdated(const QString& sourceName, const Plasma::DataEngine::Data& data)
-{
-    if (sourceName == m_uploadSource) {
-        m_upload = data["value"].toString();
-    } else if (sourceName == m_downloadSource) {
-        m_download = data["value"].toString();
-    }
-    Q_EMIT itemUpdated();
-}
-
-void NetworkModelItem::initializeDataEngine()
-{
-    Plasma::DataEngineManager::self()->loadEngine("systemmonitor");
-
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
-    if (!device) {
-        removeDataEngine();
-        return;
-    }
-
-    QString interfaceName = device->ipInterfaceName();
-    if (interfaceName.isEmpty()) {
-        interfaceName = device->interfaceName();
-    }
-
-    m_downloadSource = QString("network/interfaces/%1/receiver/data").arg(interfaceName);
-    m_uploadSource = QString("network/interfaces/%1/transmitter/data").arg(interfaceName);
-
-    Plasma::DataEngine * engine = Plasma::DataEngineManager::self()->engine("systemmonitor");
-    if (engine->isValid() && engine->query(m_downloadSource).empty()) {
-        Plasma::DataEngineManager::self()->unloadEngine("systemmonitor");
-        Plasma::DataEngineManager::self()->loadEngine("systemmonitor");
-    }
-
-    setUpdateEnabled(true);
-}
-
-void NetworkModelItem::removeDataEngine()
-{
-    setUpdateEnabled(false);
-}
-
-void NetworkModelItem::setUpdateEnabled(bool enabled)
-{
-    Plasma::DataEngine * engine = Plasma::DataEngineManager::self()->engine("systemmonitor");
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
-    if (engine->isValid()) {
-        int interval = 2000;
-        if (enabled) {
-            if (device) {
-                engine->connectSource(m_downloadSource, this, interval);
-                engine->connectSource(m_uploadSource, this, interval);
-            }
-        } else {
-            engine->disconnectSource(m_downloadSource, this);
-            engine->disconnectSource(m_uploadSource, this);
-        }
-    }
-    m_updateEnabled = enabled;
 }

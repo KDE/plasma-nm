@@ -21,29 +21,47 @@
 import QtQuick 1.1
 import org.kde.plasma.components 0.1 as PlasmaComponents
 import org.kde.plasma.core 0.1 as PlasmaCore
+import org.kde.locale 0.1 as KLocale
 import org.kde.networkmanagement 0.1 as PlasmaNM
-
 
 ListItem {
     id: connectionItem;
 
+    property int baseHeight: connectionItemBase.height + Math.round(units.gridUnit / 3);
     property bool expanded: visibleDetails || visiblePasswordDialog;
-    property bool visibleDetails: false;
-    property bool visiblePasswordDialog: false;
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
                                                (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
                                                 SecurityType == PlasmaNM.Enums.Wpa2Psk);
-
-    property int baseHeight: connectionItemBase.height + Math.round(units.gridUnit / 3);
+    property bool showSpeed: ConnectionState == PlasmaNM.Enums.Activated &&
+                             (Type == PlasmaNM.Enums.Wimax ||
+                              Type == PlasmaNM.Enums.Wired ||
+                              Type == PlasmaNM.Enums.Wireless ||
+                              Type == PlasmaNM.Enums.Gsm ||
+                              Type == PlasmaNM.Enums.Cdma);
+    property bool visibleDetails: false;
+    property bool visiblePasswordDialog: false;
 
     height: expanded ? baseHeight + expandableComponentLoader.height : baseHeight;
     enabled: true;
+
+    KLocale.Locale { id: locale }
 
     PlasmaCore.Svg {
         id: svgNetworkIcons;
 
         multipleImages: true;
         imagePath: "icons/plasma-networkmanagement2";
+    }
+
+    PlasmaCore.DataSource {
+        id: dataSource;
+
+        property string downloadSource: "network/interfaces/" + DeviceName + "/receiver/data";
+        property string uploadSource: "network/interfaces/" + DeviceName + "/transmitter/data";
+
+        engine: "systemmonitor";
+        connectedSources: showSpeed && mainWindow.isExpanded ? [downloadSource, uploadSource] : [];
+        interval: 2000;
     }
 
     Item {
@@ -399,12 +417,10 @@ ListItem {
                 result += ", " + SecurityTypeString;
             return result;
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
-            if (Type == PlasmaNM.Enums.Wimax ||
-                Type == PlasmaNM.Enums.Wired ||
-                Type == PlasmaNM.Enums.Wireless ||
-                Type == PlasmaNM.Enums.Gsm ||
-                Type == PlasmaNM.Enums.Cdma) {
-                return i18n("Connected, ⬇ %1, ⬆ %2", Download, Upload);
+            if (showSpeed && dataSource.data && dataSource.data[dataSource.downloadSource] && dataSource.data[dataSource.uploadSource]) {
+                return i18n("Connected, ⬇ %1/s, ⬆ %2/s",
+                            locale.formatByteSize(dataSource.data[dataSource.downloadSource].value * 1024 || 0),
+                            locale.formatByteSize(dataSource.data[dataSource.uploadSource].value * 1024 || 0))
             } else {
                 return i18n("Connected");
             }

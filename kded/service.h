@@ -43,8 +43,14 @@ public:
 public Q_SLOTS:
     Q_SCRIPTABLE void init();
 
+Q_SIGNALS:
+    Q_SCRIPTABLE void registered();
+
+private Q_SLOTS:
+    void slotRegistered(const QDBusObjectPath &path);
+
 private:
-    NetworkManagementServicePrivate * d_ptr;
+    NetworkManagementServicePrivate * const d_ptr;
 };
 
 #endif // PLASMANM_KDED_SERVICE_H

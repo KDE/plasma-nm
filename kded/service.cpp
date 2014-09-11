@@ -64,6 +64,8 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
     d->modemMonitor = 0;
 #endif
     d->bluetoothMonitor = 0;
+
+    connect(this, SIGNAL(slotRegistered(QDBusObjectPath)), this, SLOT(slotRegistered(QDBusObjectPath)));
 }
 
 NetworkManagementService::~NetworkManagementService()
@@ -93,3 +95,11 @@ void NetworkManagementService::init()
         d->bluetoothMonitor = new BluetoothMonitor(this);
     }
 }
+void NetworkManagementService::slotRegistered(const QDBusObjectPath &path)
+{
+    if (path.path() == QLatin1String("/modules/networkmanagement")) {
+        Q_EMIT registered();
+    }
+}
+
+#include "service.moc"

@@ -99,6 +99,7 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void editDialogAccepted();
+    void initKdedModule();
     void replyFinished(QDBusPendingCallWatcher * watcher);
 
 private:

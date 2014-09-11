@@ -540,8 +540,8 @@ void SecretAgent::importSecretsFromPlainTextFiles()
                             }
 
                             // Add loaded secrets from the config file
-                            QMap<QString, QString>::const_iterator it = secrets.begin();
-                            QMap<QString, QString>::const_iterator end = secrets.end();
+                            QMap<QString, QString>::const_iterator it = secrets.constBegin();
+                            QMap<QString, QString>::const_iterator end = secrets.constEnd();
                             for (; it != end; ++it) {
                                 tmpSetting.insert(it.key(), it.value());
                             }

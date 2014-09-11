@@ -57,7 +57,9 @@ Handler::Handler(QObject* parent)
     , m_agentIface(QStringLiteral("org.kde.kded5"), QStringLiteral("/modules/networkmanagement"),
                    QStringLiteral("org.kde.plasmanetworkmanagement"))
 {
-    m_agentIface.call(QStringLiteral("init"));
+    initKdedModule();
+    QDBusConnection::sessionBus().connect(m_agentIface.service(), m_agentIface.path(), m_agentIface.interface(), QStringLiteral("registered"),
+                                          this, SLOT(initKdedModule()));
 }
 
 Handler::~Handler()
@@ -396,6 +398,11 @@ void Handler::requestScan()
             }
         }
     }
+}
+
+void Handler::initKdedModule()
+{
+    m_agentIface.call(QStringLiteral("init"));
 }
 
 void Handler::replyFinished(QDBusPendingCallWatcher * watcher)

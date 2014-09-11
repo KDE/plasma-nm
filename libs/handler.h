@@ -108,6 +108,7 @@ public Q_SLOTS:
     void requestScan();
 
 private Q_SLOTS:
+    void initKdedModule();
     void replyFinished(QDBusPendingCallWatcher * watcher);
 
 private:

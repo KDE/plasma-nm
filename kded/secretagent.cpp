@@ -42,10 +42,11 @@
 #include <KWallet/Wallet>
 #include <QDebug>
 
-SecretAgent::SecretAgent(QObject* parent):
-    NetworkManager::SecretAgent("org.kde.plasma.networkmanagement", parent),
-    m_wallet(0),
-    m_dialog(0)
+SecretAgent::SecretAgent(QObject* parent)
+    : NetworkManager::SecretAgent("org.kde.plasma.networkmanagement", parent)
+    , m_openWalletFailed(false)
+    , m_wallet(0)
+    , m_dialog(0)
 {
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::serviceDisappeared, this, &SecretAgent::killDialogs);
 
@@ -251,9 +252,13 @@ void SecretAgent::killDialogs()
 void SecretAgent::walletOpened(bool success)
 {
     if (!success) {
+        m_openWalletFailed = true;
         m_wallet->deleteLater();
         m_wallet = 0;
+    } else {
+        m_openWalletFailed = false;
     }
+
     processNext();
 }
 
@@ -451,6 +456,13 @@ bool SecretAgent::useWallet() const
 {
     if (m_wallet) {
         return true;
+    }
+
+    /* If opening of KWallet failed before, we should not try to open it again and
+     * we should return false instead */
+    if (m_openWalletFailed) {
+        m_openWalletFailed = false;
+        return false;
     }
 
     if (KWallet::Wallet::isEnabled()) {

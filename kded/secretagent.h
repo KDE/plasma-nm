@@ -114,6 +114,7 @@ private:
     bool hasSecrets(const NMVariantMapMap &connection) const;
     void sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message) const;
 
+    mutable bool m_openWalletFailed;
     mutable KWallet::Wallet *m_wallet;
     mutable PasswordDialog *m_dialog;
     QList<SecretsRequest> m_calls;

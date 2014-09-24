@@ -65,7 +65,7 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 #endif
     d->bluetoothMonitor = 0;
 
-    connect(this, SIGNAL(slotRegistered(QDBusObjectPath)), this, SLOT(slotRegistered(QDBusObjectPath)));
+    connect(this, SIGNAL(moduleRegistered(QDBusObjectPath)), this, SLOT(slotRegistered(QDBusObjectPath)));
 }
 
 NetworkManagementService::~NetworkManagementService()

@@ -22,15 +22,18 @@ import QtQuick 2.2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
-Item {
+MouseArea {
     id: panelIconWidget;
+
+    anchors.fill: parent
+    onClicked: plasmoid.expanded = !plasmoid.expanded
 
     PlasmaCore.SvgItem {
         id: connectionIcon;
 
         anchors.centerIn: parent;
-        height: width;
-        width: Math.min(parent.width, parent.height);
+        width: units.roundToIconSize(Math.min(parent.width, parent.height))
+        height: width
 
         elementId: connectionIconProvider.connectionIcon;
         svg: PlasmaCore.Svg { multipleImages: true; imagePath: "icons/network" }
@@ -42,10 +45,5 @@ Item {
             running: connectionIconProvider.connecting;
             visible: running;
         }
-    }
-
-    MouseArea {
-        anchors.fill: parent;
-        onClicked: plasmoid.expanded = !plasmoid.expanded;
     }
 }

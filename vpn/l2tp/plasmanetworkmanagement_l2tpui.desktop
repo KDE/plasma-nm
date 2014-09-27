@@ -50,7 +50,6 @@ Name[tr]=L2TP
 Name[uk]=L2TP
 Name[x-test]=xxL2TPxx
 Name[zh_CN]=L2TP
-Name[zh_TW]=L2TP
 Comment=L2TP plugin
 Comment[ar]=ملحق L2TP
 Comment[bg]=Приставка за L2TP
@@ -88,5 +87,4 @@ Comment[tr]=L2TP eklentisi
 Comment[uk]=Додаток L2TP
 Comment[x-test]=xxL2TP pluginxx
 Comment[zh_CN]=L2TP 插件
-Comment[zh_TW]=L2TP 外掛程式
 

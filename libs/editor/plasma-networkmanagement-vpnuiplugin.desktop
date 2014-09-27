@@ -39,7 +39,6 @@ Name[ug]=تور باشقۇرۇش VPN UI قىستۇرمىسى
 Name[uk]=Додаток графічного інтерфейсу керування мережею VPN
 Name[x-test]=xxNetwork Management VPN UI Pluginxx
 Name[zh_CN]=网络管理 VPN 用户界面插件
-Name[zh_TW]=網路管理 VPN 使用者介面外掛程式
 Comment=Defines KDE Network Management UI Plugins
 Comment[ar]=تعريف ملاحق واجهة مستخدم إدارة الشبكات في كدي
 Comment[bs]=Definiše KDE dodatke za upravljanje mrežom
@@ -77,7 +76,6 @@ Comment[tr]=KDE Ağ Yönetimi UI Eklentilerini tanımlar
 Comment[uk]=Визначає додатки інтерфейсу засобу керування мережею KDE
 Comment[x-test]=xxDefines KDE Network Management UI Pluginsxx
 Comment[zh_CN]=定义 KDE 网络管理用户界面插件
-Comment[zh_TW]=定義 KDE 網路管理介面外掛程式
 
 [PropertyDef::X-NetworkManager-Services]
 Type=QString

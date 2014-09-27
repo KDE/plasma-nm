@@ -52,7 +52,6 @@ Name[ug]=OpenVPN
 Name[uk]=OpenVPN
 Name[x-test]=xxOpenVPNxx
 Name[zh_CN]=OpenVPN
-Name[zh_TW]=OpenVPN
 Comment=OpenVPN plugin
 Comment[ar]=ملحق OpenVPN
 Comment[bg]=Приставка за OpenVPN
@@ -92,5 +91,4 @@ Comment[ug]=OpenVPN قىستۇرمىسى
 Comment[uk]=Додаток OpenVPN
 Comment[x-test]=xxOpenVPN pluginxx
 Comment[zh_CN]=OpenVPN 插件
-Comment[zh_TW]=OpenVPN 外掛程式
 

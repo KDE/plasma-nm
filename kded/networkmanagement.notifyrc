@@ -28,6 +28,7 @@ Name[sr@latin]=Upravljanje mrežom
 Name[sv]=Nätverkshantering
 Name[uk]=Керування мережею
 Name[x-test]=xxNetwork managementxx
+Name[zh_TW]=網路管理
 Comment=Network management
 Comment[ar]=إدارة الشبكات
 Comment[ca]=Gestió de la xarxa
@@ -56,6 +57,7 @@ Comment[sr@latin]=Upravljanje mrežom
 Comment[sv]=Nätverkshantering
 Comment[uk]=Керування мережею
 Comment[x-test]=xxNetwork managementxx
+Comment[zh_TW]=網路管理
 
 [Event/ConnectionActivated]
 Name=Connection activated
@@ -86,6 +88,7 @@ Name[sr@latin]=Veza aktivirana
 Name[sv]=Anslutning aktiverad
 Name[uk]=З’єднання задіяно
 Name[x-test]=xxConnection activatedxx
+Name[zh_TW]=連線已啟動
 IconName=applications-internet
 Action=Popup
 
@@ -118,6 +121,7 @@ Name[sr@latin]=Veza deaktivirana
 Name[sv]=Anslutning inaktiverad
 Name[uk]=З’єднання вимкнено
 Name[x-test]=xxConnection deactivatedxx
+Name[zh_TW]=連線已中止
 IconName=applications-internet
 Action=Popup
 
@@ -150,6 +154,7 @@ Name[sr@latin]=Veza dodata
 Name[sv]=Anslutning  har lagts till
 Name[uk]=Додано з’єднання
 Name[x-test]=xxConnection addedxx
+Name[zh_TW]=連線已新增
 IconName=applications-internet
 Action=None
 
@@ -182,6 +187,7 @@ Name[sr@latin]=Veza uklonjena
 Name[sv]=Anslutning borttagen
 Name[uk]=Вилучено з’єднання
 Name[x-test]=xxConnection removedxx
+Name[zh_TW]=連線已移除
 IconName=applications-internet
 Action=None
 
@@ -214,6 +220,7 @@ Name[sr@latin]=Veza ažurirana
 Name[sv]=Anslutning uppdaterad
 Name[uk]=Оновлено з’єднання
 Name[x-test]=xxConnection updatedxx
+Name[zh_TW]=連線已更新
 IconName=applications-internet
 Action=None
 
@@ -246,6 +253,7 @@ Name[sr@latin]=Uređaj propao
 Name[sv]=Enhet misslyckades
 Name[uk]=Помилка пристрою
 Name[x-test]=xxDevice failedxx
+Name[zh_TW]=裝置失敗
 IconName=applications-internet
 Action=Popup
 
@@ -278,6 +286,7 @@ Name[sr@latin]=Propalo aktiviranje veze
 Name[sv]=Aktivering av anslutningen misslyckades
 Name[uk]=Не вдалося задіяти з’єднання
 Name[x-test]=xxFailed to activate connectionxx
+Name[zh_TW]=啟動連線失敗
 IconName=applications-internet
 Action=Popup
 
@@ -309,6 +318,7 @@ Name[sr@latin]=Propalo dodavanje veze
 Name[sv]=Tillägg av anslutning misslyckades
 Name[uk]=Не вдалося додати з’єднання
 Name[x-test]=xxFailed to add connectionxx
+Name[zh_TW]=新增連線失敗
 IconName=applications-internet
 Action=Popup
 
@@ -341,6 +351,7 @@ Name[sr@latin]=Propalo deaktiviranje veze
 Name[sv]=Inaktivering av anslutningen misslyckades
 Name[uk]=Не вдалося вимкнути з’єднання
 Name[x-test]=xxFailed to deactivate connectionxx
+Name[zh_TW]=中止連線失敗
 IconName=applications-internet
 Action=Popup
 
@@ -373,6 +384,7 @@ Name[sr@latin]=Propalo uklanjanje veze
 Name[sv]=Borttagning av anslutning misslyckades
 Name[uk]=Не вдалося вилучити з’єднання
 Name[x-test]=xxFailed to remove connectionxx
+Name[zh_TW]=移除連線失敗
 IconName=applications-internet
 Action=Popup
 
@@ -403,6 +415,7 @@ Name[sr@latin]=Propalo zahtevanje skeniranja
 Name[sv]=Misslyckades begära sökning
 Name[uk]=Не вдалося виконати запит щодо сканування
 Name[x-test]=xxFailed to request scanxx
+Name[zh_TW]=請求掃描失敗
 IconName=applications-internet
 Action=Popup
 
@@ -434,6 +447,7 @@ Name[sr@latin]=Propalo dobavljanje tajni
 Name[sv]=Misslyckades hämta hemligheter
 Name[uk]=Не вдалося отримати дані для розпізнавання
 Name[x-test]=xxFailed to get secretsxx
+Name[zh_TW]=取得密碼失敗
 IconName=applications-internet
 Action=Popup
 
@@ -466,6 +480,7 @@ Name[sr@latin]=Propalo ažuriranje veze
 Name[sv]=Misslyckades uppdatera anslutning
 Name[uk]=Не вдалося оновити з’єднання
 Name[x-test]=xxFailed to update connectionxx
+Name[zh_TW]=更新連線失敗
 IconName=applications-internet
 Action=Popup
 
@@ -506,5 +521,6 @@ Name[tr]=VPN eklentisi eksik
 Name[uk]=Не вистачає додатка VPN
 Name[x-test]=xxMissing VPN pluginxx
 Name[zh_CN]=缺少 OpenVPN 插件
+Name[zh_TW]=遺失 VPN 外掛程式
 IconName=applications-internet
 Action=Popup

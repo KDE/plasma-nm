@@ -42,7 +42,7 @@ protected Q_SLOTS:
     void showPasswordsToggled(bool show);
 
 private:
-    OpenVpnAuthWidgetPrivate * d_ptr;
+    OpenVpnAuthWidgetPrivate * const d_ptr;
 };
 
 #endif // OPENVPNAUTH_H

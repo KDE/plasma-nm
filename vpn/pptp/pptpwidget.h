@@ -46,7 +46,7 @@ private Q_SLOTS:
     void setShowPassword(bool);
 
 private:
-    PptpSettingWidgetPrivate * d_ptr;
+    PptpSettingWidgetPrivate * const d_ptr;
     void fillOnePasswordCombo(QComboBox *, NetworkManager::Setting::SecretFlags);
     uint handleOnePasswordType(const QComboBox *, const QString &, NMStringMap &, bool agentOwned) const;
 };

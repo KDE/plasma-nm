@@ -59,7 +59,7 @@ private:
     uint handleOnePasswordType(const QComboBox *combo, const QString & key, NMStringMap & data) const;
     Ui::OpenVpnAdvancedWidget * m_ui;
     class Private;
-    Private * d;
+    Private * const d;
 };
 
 #endif // PLASMA_NM_OPENVPN_ADVANCED_WIDGET_H

@@ -42,7 +42,7 @@ private Q_SLOTS:
     void showPasswordsToggled(bool show);
 
 private:
-    PptpAuthWidgetPrivate * d_ptr;
+    PptpAuthWidgetPrivate * const d_ptr;
 };
 
 #endif // PPTPAUTH_H

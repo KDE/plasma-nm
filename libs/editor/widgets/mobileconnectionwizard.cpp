@@ -31,8 +31,8 @@
 
 #include <NetworkManagerQt/ModemDevice>
 
-#include <ModemManagerQt/manager.h>
-#include <ModemManagerQt/modem.h>
+#include <ModemManagerQt/Manager>
+#include <ModemManagerQt/Modem>
 
 #define NUMBER_OF_STATIC_ENTRIES 3
 

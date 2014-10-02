@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_NETWORK_MODEL_H
 #define PLASMA_NM_NETWORK_MODEL_H
 
-#include <QtCore/QAbstractListModel>
+#include <QAbstractListModel>
 
 #include <config.h>
 #include "networkitemslist.h"

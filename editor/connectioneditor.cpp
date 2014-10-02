@@ -46,7 +46,6 @@
 #include <KMessageBox>
 #include <KService>
 #include <KServiceTypeTrader>
-#include <KShell>
 #include <KStandardAction>
 #include <KXMLGUIFactory>
 #include <KWallet/Wallet>
@@ -189,9 +188,9 @@ void ConnectionEditor::initializeMenu()
 
     kAction = new QAction(QIcon::fromTheme("edit-delete"), i18n("Delete"), this);
     kAction->setEnabled(false);
-    kAction->setShortcut(QKeySequence::Delete);
     connect(kAction, SIGNAL(triggered()), SLOT(removeConnection()));
     actionCollection()->addAction("delete_connection", kAction);
+    actionCollection()->setDefaultShortcut(kAction, QKeySequence::Delete);
 
     kAction = new QAction(QIcon::fromTheme("document-import"), i18n("Import VPN..."), this);
     actionCollection()->addAction("import_vpn", kAction);

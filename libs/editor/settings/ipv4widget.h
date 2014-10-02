@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_IPV4_WIDGET_H
 #define PLASMA_NM_IPV4_WIDGET_H
 
-#include <QtWidgets/QWidget>
+#include <QWidget>
 #include <NetworkManagerQt/Ipv4Setting>
 
 #include "settingwidget.h"
@@ -65,7 +65,7 @@ private:
     NetworkManager::Ipv4Setting m_tmpIpv4Setting;
 
     class Private;
-    Private *d;
+    Private * const d;
 };
 
 #endif // PLASMA_NM_IPV4_WIDGET_H

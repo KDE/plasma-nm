@@ -36,7 +36,8 @@
 
 using namespace NetworkManager;
 
-PasswordDialog::PasswordDialog(const NMVariantMapMap &connection, SecretAgent::GetSecretsFlags flags, const QString &setting_name, QWidget *parent) :
+PasswordDialog::PasswordDialog(const NMVariantMapMap &connection, SecretAgent::GetSecretsFlags flags,
+                               const QString &setting_name, QWidget *parent) :
     QDialog(parent),
     ui(0),
     vpnWidget(0),
@@ -56,7 +57,7 @@ PasswordDialog::~PasswordDialog()
 
 void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings)
 {
-    NetworkManager::Setting::Ptr setting = connectionSettings.setting(m_settingName);
+    Setting::Ptr setting = connectionSettings.setting(m_settingName);
 
     ui = new Ui::PasswordDialog;
     ui->setupUi(this);
@@ -72,8 +73,7 @@ void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings
         return;
     }
 
-    NetworkManager::WirelessSetting::Ptr wifi;
-    wifi = connectionSettings.setting(Setting::Wireless).dynamicCast<WirelessSetting>();
+    WirelessSetting::Ptr wifi = connectionSettings.setting(Setting::Wireless).dynamicCast<WirelessSetting>();
 
     Setting::SettingType connectionType = setting->type();
     if (wifi && (connectionType == Setting::WirelessSecurity || connectionType == Setting::Security8021x)) {
@@ -91,8 +91,7 @@ void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings
 
 void PasswordDialog::setupVpnUi(const ConnectionSettings &connectionSettings)
 {
-    NetworkManager::VpnSetting::Ptr vpnSetting;
-    vpnSetting = connectionSettings.setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+    NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings.setting(Setting::Vpn).dynamicCast<VpnSetting>();
     if (!vpnSetting) {
         qDebug() << "Missing VPN setting!";
         m_hasError = true;

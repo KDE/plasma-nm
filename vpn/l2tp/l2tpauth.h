@@ -41,7 +41,7 @@ private Q_SLOTS:
     void showPasswordsChanged(bool);
 
 private:
-    L2tpAuthDialogPrivate * d_ptr;
+    L2tpAuthDialogPrivate * const d_ptr;
 };
 
 #endif // PLASMA_NM_L2TP_AUTH_H

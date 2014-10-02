@@ -38,10 +38,10 @@ public:
     AdvancedPermissionsWidget(const QHash<QString,QString>&, QWidget *parent=0);
     ~AdvancedPermissionsWidget();
 
-    QHash<QString,QString> currentUsers();
+    QHash<QString,QString> currentUsers() const;
 
 protected:
-    AdvancedPermissionsWidgetPrivate *d_ptr;
+    AdvancedPermissionsWidgetPrivate * const d_ptr;
 
 private:
     enum Columns {FullName = 0, LoginName = 1};

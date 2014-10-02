@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_QML_PLUGINS_H
 #define PLASMA_NM_QML_PLUGINS_H
 
-#include <QtQml/QQmlExtensionPlugin>
+#include <QQmlExtensionPlugin>
 
 class QmlPlugins : public QQmlExtensionPlugin
 {

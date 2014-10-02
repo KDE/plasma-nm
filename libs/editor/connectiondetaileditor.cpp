@@ -63,7 +63,6 @@
 #include <KUser>
 #include <KNotification>
 #include <KLocalizedString>
-#include <KPluginFactory>
 #include <KServiceTypeTrader>
 #include <KWallet/KWallet>
 #include <KIconLoader>

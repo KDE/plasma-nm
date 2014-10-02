@@ -46,7 +46,7 @@ public:
     virtual QVariantMap setting(bool agentOwned = false) const;
 
 private:
-    OpenconnectAuthWidgetPrivate * d_ptr;
+    OpenconnectAuthWidgetPrivate * const d_ptr;
     void acceptDialog();
     void addFormInfo(const QString &, const QString &);
     void deleteAllFromLayout(QLayout *);

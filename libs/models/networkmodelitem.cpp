@@ -41,7 +41,6 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 
-#include <KLocale>
 #include <KLocalizedString>
 
 #if WITH_MODEMMANAGER_SUPPORT

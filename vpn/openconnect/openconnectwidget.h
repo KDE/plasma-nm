@@ -40,7 +40,7 @@ public:
     virtual bool isValid() const;
 
 private:
-    OpenconnectSettingWidgetPrivate * d_ptr;
+    OpenconnectSettingWidgetPrivate * const d_ptr;
 };
 
 #endif // OPENCONNECTWIDGET_H

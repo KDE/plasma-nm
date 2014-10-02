@@ -111,9 +111,9 @@ QTreeWidgetItem * AdvancedPermissionsWidget::constructItem(const KUser &user, co
     return item;
 }
 
-QHash<QString, QString> AdvancedPermissionsWidget::currentUsers()
+QHash<QString, QString> AdvancedPermissionsWidget::currentUsers() const
 {
-    Q_D(AdvancedPermissionsWidget);
+    Q_D(const AdvancedPermissionsWidget);
     QHash<QString, QString> permissions;
     const int itemNumber = d->ui.currentUsers->topLevelItemCount();
     for (int i = 0; i < itemNumber; i++) {

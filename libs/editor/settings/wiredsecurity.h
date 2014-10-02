@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_WIRED_SECURITY_H
 #define PLASMA_NM_WIRED_SECURITY_H
 
-#include <QtWidgets/QWidget>
+#include <QWidget>
 
 #include <NetworkManagerQt/Security8021xSetting>
 

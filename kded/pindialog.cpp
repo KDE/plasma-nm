@@ -69,7 +69,7 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     pixmapLabel = new QLabel(this);
     pixmapLabel->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     ui->gridLayout->addWidget(pixmapLabel, 0, 0);
-    pixmapLabel->setPixmap(QIcon::fromTheme("dialog-password").pixmap(KIconLoader::SizeHuge));
+    pixmapLabel->setPixmap(QIcon::fromTheme("dialog-password").pixmap(KIconLoader::SizeMedium));
 
     connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &PinDialog::accept);
     connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &PinDialog::reject);

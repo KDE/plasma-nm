@@ -42,7 +42,7 @@ private Q_SLOTS:
     void showPasswordsChanged(bool);
 
 private:
-    VpncAuthDialogPrivate * d_ptr;
+    VpncAuthDialogPrivate * const d_ptr;
 };
 
 #endif // PLASMA_NM_VPNC_AUTH_H

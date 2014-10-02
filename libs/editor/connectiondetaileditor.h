@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_CONNECTION_DETAIL_EDITOR_H
 #define PLASMA_NM_CONNECTION_DETAIL_EDITOR_H
 
-#include <QtWidgets/QDialog>
+#include <QDialog>
 #include <QDBusPendingCallWatcher>
 
 #include <NetworkManagerQt/ConnectionSettings>
@@ -36,7 +36,7 @@ class Q_DECL_EXPORT ConnectionDetailEditor : public QDialog
     Q_OBJECT
 public:
     explicit ConnectionDetailEditor(const NetworkManager::ConnectionSettings::Ptr &connection,
-                                       bool newConnection = false, QWidget* parent = 0, Qt::WindowFlags f = 0);
+                                    bool newConnection = false, QWidget* parent = 0, Qt::WindowFlags f = 0);
 
     virtual ~ConnectionDetailEditor();
 

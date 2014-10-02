@@ -41,7 +41,7 @@ private Q_SLOTS:
     void showPasswordsChanged(bool);
 
 private:
-    OpenswanAuthDialogPrivate * d_ptr;
+    OpenswanAuthDialogPrivate * const d_ptr;
 };
 
 #endif // PLASMA_NM_OPENSWAN_AUTH_H

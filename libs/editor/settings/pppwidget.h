@@ -21,7 +21,7 @@
 #ifndef PLASMA_NM_PPP_WIDGET_H
 #define PLASMA_NM_PPP_WIDGET_H
 
-#include <QtWidgets/QWidget>
+#include <QWidget>
 
 #include <NetworkManagerQt/Setting>
 

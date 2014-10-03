@@ -28,15 +28,12 @@ MouseArea {
     anchors.fill: parent
     onClicked: plasmoid.expanded = !plasmoid.expanded
 
-    PlasmaCore.SvgItem {
+    PlasmaCore.IconItem {
         id: connectionIcon;
 
-        anchors.centerIn: parent;
-        width: units.roundToIconSize(Math.min(parent.width, parent.height))
-        height: width
+        anchors.fill: parent
 
-        elementId: connectionIconProvider.connectionIcon;
-        svg: PlasmaCore.Svg { multipleImages: true; imagePath: "icons/network" }
+        source: connectionIconProvider.connectionIcon;
 
         PlasmaComponents.BusyIndicator {
             id: connectingIndicator;

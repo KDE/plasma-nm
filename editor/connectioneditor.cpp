@@ -113,11 +113,10 @@ void ConnectionEditor::initializeMenu()
     m_menu->menu()->setSeparatorsCollapsible(false);
     m_menu->setDelayed(false);
 
-    QAction * action = m_menu->addSeparator();
-    action->setText(i18n("Hardware"));
+    m_menu->menu()->addSection(i18n("Hardware"));
 
     // TODO Adsl
-    action = new QAction(i18n("DSL"), this);
+    QAction * action = new QAction(i18n("DSL"), this);
     action->setData(NetworkManager::ConnectionSettings::Pppoe);
     m_menu->addAction(action);
     action = new QAction(i18n("InfiniBand"), this);
@@ -148,8 +147,7 @@ void ConnectionEditor::initializeMenu()
     action->setData(NetworkManager::ConnectionSettings::Wimax);
     m_menu->addAction(action);
 
-    action = m_menu->addSeparator();
-    action->setText(i18nc("Virtual hardware devices, eg Bridge, Bond", "Virtual"));
+    m_menu->menu()->addSection(i18nc("Virtual hardware devices, eg Bridge, Bond", "Virtual"));
 
     action = new QAction(i18n("Bond"), this);
     action->setData(NetworkManager::ConnectionSettings::Bond);
@@ -166,8 +164,7 @@ void ConnectionEditor::initializeMenu()
     m_menu->addAction(action);
 #endif
 
-    action = m_menu->addSeparator();
-    action->setText(i18n("VPN"));
+    m_menu->menu()->addSection(i18n("VPN"));
 
     const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
     foreach (const KService::Ptr & service, services) {

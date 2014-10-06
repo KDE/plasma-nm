@@ -188,6 +188,7 @@ void ConnectionDetailEditor::initTabs()
     const NetworkManager::ConnectionSettings::ConnectionType type = m_connection->connectionType();
 
     // setup the widget tabs
+    QString serviceType;
     if (type == NetworkManager::ConnectionSettings::Wired) {
         WiredConnectionWidget * wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Setting::Wired), this);
         m_ui->tabWidget->addTab(wiredWidget, i18n("Wired"));
@@ -250,7 +251,7 @@ void ConnectionDetailEditor::initTabs()
         if (!vpnSetting) {
             qDebug() << "Missing VPN setting!";
         } else {
-            QString serviceType = vpnSetting->serviceType();
+            serviceType = vpnSetting->serviceType();
             //qDebug() << "Editor loading VPN plugin" << serviceType;
             //vpnSetting->printSetting();
             vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNetworkManagement/VpnUiPlugin"),
@@ -290,7 +291,8 @@ void ConnectionDetailEditor::initTabs()
      #endif
          || type == NetworkManager::ConnectionSettings::Bond
          || type == NetworkManager::ConnectionSettings::Bridge
-         || type == NetworkManager::ConnectionSettings::Vlan) && !m_connection->isSlave()) {
+         || type == NetworkManager::ConnectionSettings::Vlan
+         || (type == NetworkManager::ConnectionSettings::Vpn && serviceType == QLatin1String("org.freedesktop.NetworkManager.openvpn"))) && !m_connection->isSlave()) {
         IPv6Widget * ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Setting::Ipv6), this);
         m_ui->tabWidget->addTab(ipv6Widget, i18n("IPv6"));
     }

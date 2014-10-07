@@ -567,41 +567,34 @@ void ConnectionIcon::setWirelessIcon(const NetworkManager::Device::Ptr &device, 
 
 void ConnectionIcon::setWirelessIconForSignalStrength(int strength)
 {
-    const int diff = m_signal - strength;
-
-    if (diff >= 10 || diff <= -10) {
-        int iconStrength = 100;
-
-        if (strength == 0) {
-            iconStrength = 0;
-            m_connectionTooltipIcon = "network-wireless-connected-00";
-            Q_EMIT connectionTooltipIconChanged("network-wireless-connected-00");
-        } else if (strength < 20) {
-            iconStrength = 20;
-            m_connectionTooltipIcon = "network-wireless-connected-20";
-            Q_EMIT connectionTooltipIconChanged("network-wireless-connected-20");
-        } else if (strength < 40) {
-            iconStrength = 40;
-            m_connectionTooltipIcon = "network-wireless-connected-40";
-            Q_EMIT connectionTooltipIconChanged("network-wireless-connected-40");
-        } else if (strength < 60) {
-            iconStrength = 60;
-            m_connectionTooltipIcon = "network-wireless-connected-60";
-            Q_EMIT connectionTooltipIconChanged("network-wireless-connected-60");
-        } else if (strength < 80) {
-            iconStrength = 80;
-            m_connectionTooltipIcon = "network-wireless-connected-80";
-            Q_EMIT connectionTooltipIconChanged("network-wireless-connected-80");
-        } else if (strength < 100) {
-            m_connectionTooltipIcon = "network-wireless-connected-100";
-            Q_EMIT connectionTooltipIconChanged("network-wireless-connected-100");
-        }
-
-        m_signal = iconStrength;
-
-        QString icon = QString("network-wireless-%1").arg(iconStrength);
-
-        m_connectionIcon = icon;
-        Q_EMIT connectionIconChanged(icon);
+    int iconStrength = 100;
+    if (strength == 0) {
+        iconStrength = 0;
+        m_connectionTooltipIcon = "network-wireless-connected-00";
+        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-00");
+    } else if (strength < 20) {
+        iconStrength = 20;
+        m_connectionTooltipIcon = "network-wireless-connected-20";
+        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-20");
+    } else if (strength < 40) {
+        iconStrength = 40;
+        m_connectionTooltipIcon = "network-wireless-connected-40";
+        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-40");
+    } else if (strength < 60) {
+        iconStrength = 60;
+        m_connectionTooltipIcon = "network-wireless-connected-60";
+        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-60");
+    } else if (strength < 80) {
+        iconStrength = 80;
+        m_connectionTooltipIcon = "network-wireless-connected-80";
+        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-80");
+    } else if (strength < 100) {
+        m_connectionTooltipIcon = "network-wireless-connected-100";
+        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-100");
     }
+
+    QString icon = QString("network-wireless-%1").arg(iconStrength);
+
+    m_connectionIcon = icon;
+    Q_EMIT connectionIconChanged(icon);
 }

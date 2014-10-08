@@ -534,7 +534,7 @@ void NetworkModelItem::updateDetails()
                 vpnConnection = NetworkManager::VpnConnection::Ptr(new NetworkManager::VpnConnection(active->path()), &QObject::deleteLater);
             }
 
-            if (vpnConnection) {
+            if (vpnConnection && !vpnConnection->banner().isEmpty()) {
                 m_details << i18n("Banner") << vpnConnection->banner().simplified();
             }
         }

@@ -182,6 +182,15 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         return result;
     }
 
+    bool copyCertificates;
+    KMessageBox::ButtonCode buttonCode;
+    if (KMessageBox::shouldBeShownYesNo(QLatin1String("copyCertificatesDialog"), buttonCode)) {
+        copyCertificates = KMessageBox::questionYesNo(0, i18n("Do you want to copy your certificates to %1?", KStandardDirs::locateLocal("data", "networkmanagement/certificates/")),
+                                   i18n("Copy certificates"), KStandardGuiItem::yes(), KStandardGuiItem::no(), QLatin1String("copyCertificatesDialog")) == KMessageBox::Yes;
+    } else {
+        copyCertificates = buttonCode == KMessageBox::Yes;
+    }
+
     const QString connectionName = QFileInfo(fileName).completeBaseName();
     NMStringMap dataMap;
     NMStringMap secretData;
@@ -388,26 +397,42 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         }
         if (key_value[0] == CA_TAG && key_value.count() > 1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
-            const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
-            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CA), absoluteFilePath);
+            if (copyCertificates) {
+                const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CA), absoluteFilePath);
+            } else {
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CA), unQuote(key_value[1], fileName));
+            }
             continue;
         }
         if (key_value[0] == CERT_TAG && key_value.count() > 1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
-            const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
-            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERT), absoluteFilePath);
+            if (copyCertificates) {
+                const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERT), absoluteFilePath);
+            } else {
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERT), unQuote(key_value[1], fileName));
+            }
             continue;
         }
         if (key_value[0] == KEY_TAG && key_value.count() > 1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
-            const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
-            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_KEY), absoluteFilePath);
+            if (copyCertificates) {
+                const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_KEY), absoluteFilePath);
+            } else {
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_KEY), unQuote(key_value[1], fileName));
+            }
             continue;
         }
         if (key_value[0] == SECRET_TAG && key_value.count() > 1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
-            const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
-            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY), absoluteFilePath);
+            if (copyCertificates) {
+                const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY), absoluteFilePath);
+            } else {
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY), unQuote(key_value[1], fileName));
+            }
             if (key_value.count() > 2) {
                 key_value[2] = key_value[1];
                 if (!key_value[2].isEmpty() && (key_value[2].toLong() == 0 ||key_value[2].toLong() == 1))
@@ -418,8 +443,12 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         }
         if (key_value[0] == TLS_AUTH_TAG && key_value.count() >1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
-            const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
-            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA), absoluteFilePath);
+            if (copyCertificates) {
+                const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA), absoluteFilePath);
+            } else {
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA), unQuote(key_value[1], fileName));
+            }
             if (key_value.count() > 2) {
                 key_value[2] = key_value[1];
                 if (!key_value[2].isEmpty() && (key_value[2].toLong() == 0 ||key_value[2].toLong() == 1))
@@ -626,12 +655,13 @@ QString OpenVpnUiPlugin::saveFile(QTextStream &in, const QString &endTag, const 
 QString OpenVpnUiPlugin::tryToCopyToCertificatesDirectory(const QString &connectionName, const QString &sourceFilePath)
 {
     const QString certificatesDirectory = KStandardDirs::locateLocal("data", "networkmanagement/certificates/");
-    const QString absoluteFilePath = certificatesDirectory + connectionName + '_' + QFileInfo(sourceFilePath).completeBaseName();
+    const QString absoluteFilePath = certificatesDirectory + connectionName + '_' + QFileInfo(sourceFilePath).fileName();
+
     QFile sourceFile(sourceFilePath);
 
     QDir().mkpath(certificatesDirectory);
     if (!sourceFile.copy(absoluteFilePath)) {
-        KMessageBox::information(0, i18n("Error copying file to %1: %2", absoluteFilePath, sourceFile.errorString()));
+        KMessageBox::information(0, i18n("Error copying certificate to %1: %2", absoluteFilePath, sourceFile.errorString()));
         return sourceFilePath;
     }
 

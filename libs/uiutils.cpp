@@ -736,7 +736,7 @@ QString UiUtils::vpnDetails(const VpnConnection::Ptr& vpnConnection, const VpnSe
                 details += QString(format).arg(i18n("VPN plugin:"), vpnSetting->serviceType().section('.', -1));
             }
         } else if (key == "vpn:banner") {
-            if (vpnConnection) {
+            if (vpnConnection && !vpnConnection->banner().isEmpty()) {
                 details += QString(format).arg(i18n("Banner:"), vpnConnection->banner().simplified());
             }
         }

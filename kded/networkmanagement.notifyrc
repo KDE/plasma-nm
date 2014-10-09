@@ -392,6 +392,7 @@ Action=Popup
 Name=Failed to request scan
 Name[ar]=فشل في مسح الطلب
 Name[ca]=Ha fallat en demanar escanejar
+Name[de]=Anforderung zum Durchsuchen fehlgeschlagen
 Name[en_GB]=Failed to request scan
 Name[es]=La petición de la exploración ha fallado
 Name[fi]=Verkkojen hakemispyyntö epäonnistui

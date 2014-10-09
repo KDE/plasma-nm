@@ -211,6 +211,7 @@ Name=Failed to request scan
 Name[ca]=Ha fallat en demanar escanejar
 Name[cs]=Vyžádání skenu selhalo
 Name[da]=Kunne ikke anmode om scanning
+Name[de]=Anforderung zum Durchsuchen fehlgeschlagen
 Name[en_GB]=Failed to request scan
 Name[es]=La petición de la exploración ha fallado
 Name[et]=Uurimise nõudmine nurjus

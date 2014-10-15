@@ -14,7 +14,6 @@ Name[et]=Võrguhaldus
 Name[fi]=Verkonhallinta
 Name[fr]=Gestion du réseau
 Name[hu]=Hálózatkezelés
-Name[it]=Gestione di rete
 Name[ko]=네트워크 관리
 Name[lt]=Tinklo valdymas
 Name[nb]=Nettverksstyring

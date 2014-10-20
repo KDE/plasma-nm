@@ -68,7 +68,6 @@ private:
 
     Ui::ConnectionDetailEditor * m_ui;
     NetworkManager::ConnectionSettings::Ptr m_connection;
-    int m_numSecrets;
     bool m_new;
     QString m_vpnType;
     QString m_masterUuid;

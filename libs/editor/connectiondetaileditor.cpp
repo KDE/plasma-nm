@@ -135,7 +135,8 @@ void ConnectionDetailEditor::initEditor()
                 NetworkManager::WirelessSecuritySetting::Ptr wifiSecuritySetting = connection->settings()->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
                 if (wifiSecuritySetting &&
                     (wifiSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEap ||
-                    wifiSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WirelessSecuritySetting::Ieee8021x)) {
+                    (wifiSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WirelessSecuritySetting::Ieee8021x &&
+                     wifiSecuritySetting->authAlg() != NetworkManager::WirelessSecuritySetting::Leap))) {
                     NetworkManager::Security8021xSetting::Ptr securitySetting = connection->settings()->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>();
                     if (securitySetting && !securitySetting->needSecrets().isEmpty()) {
                         hasSecrets = true;

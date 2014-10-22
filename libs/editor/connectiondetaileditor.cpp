@@ -194,7 +194,7 @@ void ConnectionDetailEditor::initEditor()
             connect(connection.data(), SIGNAL(gotSecrets(QString,bool,NMVariantMapMap,QString)),
                     SLOT(gotSecrets(QString,bool,NMVariantMapMap,QString)), Qt::UniqueConnection);
 
-           if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Adsl) {
+            if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Adsl) {
                 NetworkManager::AdslSetting::Ptr adslSetting = connection->settings()->setting(NetworkManager::Setting::Adsl).staticCast<NetworkManager::AdslSetting>();
                 if (adslSetting && !adslSetting->needSecrets().isEmpty()) {
                     hasSecrets = true;
@@ -502,7 +502,9 @@ void ConnectionDetailEditor::gotSecrets(const QString& id, bool success, const N
     if (id == m_connection->uuid() && success) {
         foreach (const QString & key, secrets.keys()) {
             NetworkManager::Setting::Ptr setting = m_connection->setting(NetworkManager::Setting::typeFromString(key));
-            setting->secretsFromMap(secrets.value(key));
+            if (setting) {
+                setting->secretsFromMap(secrets.value(key));
+            }
         }
     }
 

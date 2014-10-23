@@ -159,6 +159,7 @@ void MobileConnectionWizard::initializePage(int id)
         } else {
             if (mProvidersList->currentItem() != 0) {
                 const QStringList mApns = mProviders->getApns(mProvidersList->currentItem()->text());
+
                 if (!mApns.isEmpty()) {
                     userApn->setText(mApns.first());
                     mPlanComboBox->insertItems(0, mApns);
@@ -166,7 +167,9 @@ void MobileConnectionWizard::initializePage(int id)
                 }
             }
 
-            mPlanComboBox->insertSeparator(1);
+            if (mPlanComboBox->count()) {
+                mPlanComboBox->insertSeparator(1);
+            }
             mPlanComboBox->addItem(i18nc("Mobile Connection Wizard", "My plan is not listed..."));
         }
 OUT_3:

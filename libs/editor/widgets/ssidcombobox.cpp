@@ -50,7 +50,7 @@ QString SsidComboBox::ssid() const
     else
         result = currentText();
 
-    //qDebug() << "Result:" << currentIndex() << result;
+    // qCDebug(PLASMA_NM) << "Result:" << currentIndex() << result;
 
     return result;
 }
@@ -72,7 +72,7 @@ void SsidComboBox::init(const QString &ssid)
 {
     m_initialSsid = ssid;
 
-    //qDebug() << "Initial ssid:" << m_initialSsid;
+    // qCDebug(PLASMA_NM) << "Initial ssid:" << m_initialSsid;
 
     QList<NetworkManager::WirelessNetwork::Ptr> networks;
 

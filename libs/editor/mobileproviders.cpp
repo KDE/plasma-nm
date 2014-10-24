@@ -18,11 +18,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "debug.h"
 #include "mobileproviders.h"
 
 #include <QFile>
 #include <QTextStream>
-#include <QDebug>
 
 #include <KLocale>
 
@@ -36,7 +36,7 @@ MobileProviders::MobileProviders()
 {
     const QStringList allCountries = KLocale::global()->allCountriesList();
     foreach (const QString & cc, allCountries) {
-        //qDebug() << "Inserting" << cc.toUpper() << KLocale::global()->countryCodeToName(cc);
+        // qCDebug(PLASMA_NM) << "Inserting" << cc.toUpper() << KLocale::global()->countryCodeToName(cc);
         mCountries.insert(cc.toUpper(), KLocale::global()->countryCodeToName(cc));
     }
     mError = Success;
@@ -48,18 +48,18 @@ MobileProviders::MobileProviders()
             docElement = mDocProviders.documentElement();
 
             if (docElement.isNull()) {
-                qDebug() << ProvidersFile << ": document is null";
+                qCWarning(PLASMA_NM) << ProvidersFile << ": document is null";
                 mError = ProvidersIsNull;
             } else {
                 if (docElement.isNull() || docElement.tagName() != "serviceproviders") {
-                    qDebug() << ProvidersFile << ": wrong format";
+                    qCWarning(PLASMA_NM) << ProvidersFile << ": wrong format";
                     mError = ProvidersWrongFormat;
                 } else {
                     if (docElement.attribute("format") != "2.0") {
-                        qDebug() << ProvidersFile << ": mobile broadband provider database format '" << docElement.attribute("format") << "' not supported.";
+                        qCWarning(PLASMA_NM) << ProvidersFile << ": mobile broadband provider database format '" << docElement.attribute("format") << "' not supported.";
                         mError = ProvidersFormatNotSupported;
                     } else {
-                        //qDebug() << "Everything is alright so far";
+                        // qCDebug(PLASMA_NM) << "Everything is alright so far";
                     }
                 }
             }
@@ -67,7 +67,7 @@ MobileProviders::MobileProviders()
 
         file2.close();
     } else {
-        qDebug() << "Error opening providers file" << ProvidersFile;
+        qCWarning(PLASMA_NM) << "Error opening providers file" << ProvidersFile;
         mError = ProvidersMissing;
     }
 }
@@ -185,7 +185,7 @@ QStringList MobileProviders::getApns(const QString & provider)
                             e3.tagName().toLower() == "usage" &&
                             !e3.attribute("type").isNull() &&
                             e3.attribute("type").toLower() != "internet") {
-                            //qDebug() << "apn" << e2.attribute("value") << "ignored because of usage" << e3.attribute("type");
+                            // qCDebug(PLASMA_NM) << "apn" << e2.attribute("value") << "ignored because of usage" << e3.attribute("type");
                             isInternet = false;
                             break;
                         }

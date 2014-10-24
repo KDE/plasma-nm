@@ -22,7 +22,6 @@
 #include "pindialog.h"
 
 #include <QIntValidator>
-#include <QDebug>
 #include <QDesktopWidget>
 #include <QIcon>
 

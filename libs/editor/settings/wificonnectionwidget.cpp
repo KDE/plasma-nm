@@ -18,13 +18,12 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "debug.h"
 #include "wificonnectionwidget.h"
 #include "ui_wificonnectionwidget.h"
 
 #include <NetworkManagerQt/Utils>
 #include <KLocalizedString>
-
-#include <QDebug>
 
 #include "uiutils.h"
 
@@ -178,7 +177,7 @@ void WifiConnectionWidget::fillChannels(NetworkManager::WirelessSetting::Frequen
     } else if (band == NetworkManager::WirelessSetting::Bg) {
         channels = NetworkManager::Utils::getBFreqs();
     } else {
-        qWarning() << "Unhandled band number" << band;
+        qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unhandled band number" << band;
         return;
     }
 

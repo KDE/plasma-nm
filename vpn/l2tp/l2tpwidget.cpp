@@ -28,7 +28,6 @@
 
 #include <QPointer>
 #include <QDBusMetaType>
-#include <QDebug>
 
 L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

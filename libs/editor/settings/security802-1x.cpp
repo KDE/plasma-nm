@@ -21,7 +21,6 @@
 #include "security802-1x.h"
 #include "ui_802-1x.h"
 
-#include <QDebug>
 #include <KAcceleratorManager>
 
 Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent) :

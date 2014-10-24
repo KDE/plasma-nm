@@ -21,8 +21,6 @@
 #include "wiredsecurity.h"
 #include "ui_wiredsecurity.h"
 
-#include <QDebug>
-
 WiredSecurity::WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &setting8021x, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting8021x, parent, f),
     m_ui(new Ui::WiredSecurity),

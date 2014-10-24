@@ -23,6 +23,8 @@
 #include "openconnectauthworkerthread.h"
 #include "ui_openconnectauth.h"
 
+#include "debug.h"
+
 #include <QDialog>
 #include <KLocalizedString>
 #include <QPushButton>
@@ -35,7 +37,6 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QComboBox>
-#include <QDebug>
 #include <QDomDocument>
 #include <QMutex>
 #include <QWaitCondition>
@@ -279,7 +280,7 @@ void OpenconnectAuthWidget::connectHost()
     i = d->ui.cmbHosts->itemData(i).toInt();
     const VPNHost &host = d->hosts.at(i);
     if (openconnect_parse_url(d->vpninfo, host.address.toAscii().data())) {
-        qWarning() << "Failed to parse server URL" << host.address;
+        qCWarning(PLASMA_NM) << "Failed to parse server URL" << host.address;
         openconnect_set_hostname(d->vpninfo, strdup(host.address.toAscii().data()));
     }
     if (!openconnect_get_urlpath(d->vpninfo) && !host.group.isEmpty())

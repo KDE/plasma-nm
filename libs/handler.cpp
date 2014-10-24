@@ -71,19 +71,19 @@ void Handler::activateConnection(const QString& connection, const QString& devic
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
-        qWarning() << "Not possible to activate this connection";
+        qCWarning(PLASMA_NM) << "Not possible to activate this connection";
         return;
     }
 
     if (con->settings()->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
         NetworkManager::VpnSetting::Ptr vpnSetting = con->settings()->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
         if (vpnSetting) {
-            qWarning() << "Checking VPN" << con->name() << "type:" << vpnSetting->serviceType();
+            qCDebug(PLASMA_NM) << "Checking VPN" << con->name() << "type:" << vpnSetting->serviceType();
             // get the list of supported VPN service types
             const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin",
                                                                               QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()));
             if (services.isEmpty()) {
-                qWarning() << "VPN" << vpnSetting->serviceType() << "not found, skipping";
+                qCWarning(PLASMA_NM) << "VPN" << vpnSetting->serviceType() << "not found, skipping";
                 KNotification *notification = new KNotification("MissingVpnPlugin", KNotification::CloseOnTimeout, this);
                 notification->setComponentName("networkmanagement");
                 notification->setTitle(con->name());
@@ -212,7 +212,7 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
-        qWarning() << "Not possible to deactivate this connection";
+        qCWarning(PLASMA_NM) << "Not possible to deactivate this connection";
         return;
     }
 
@@ -352,7 +352,7 @@ void Handler::removeConnection(const QString& connection)
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con || con->uuid().isEmpty()) {
-        qWarning() << "Not possible to remove connection " << connection;
+        qCWarning(PLASMA_NM) << "Not possible to remove connection " << connection;
         return;
     }
 

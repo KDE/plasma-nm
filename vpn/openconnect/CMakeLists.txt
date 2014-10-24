@@ -27,6 +27,7 @@ if (OPENCONNECT_FOUND)
         ${OPENCONNECT_VERSION} VERSION_EQUAL ${MINIMUM_OPENCONNECT_VERSION_REQUIRED})
 
         set(openconnect_SRCS
+        ../../libs/debug.cpp
         openconnectui.cpp
         openconnectwidget.cpp
         openconnectauth.cpp

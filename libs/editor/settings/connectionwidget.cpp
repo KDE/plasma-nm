@@ -168,7 +168,7 @@ NMStringMap ConnectionWidget::vpnConnections() const
     foreach (const NetworkManager::Connection::Ptr & conn, list) {
         NetworkManager::ConnectionSettings::Ptr conSet = conn->settings();
         if (conSet->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
-            //qDebug() << "Found VPN" << conSet->id() << conSet->uuid();
+            // qCDebug(PLASMA_NM) << "Found VPN" << conSet->id() << conSet->uuid();
             result.insert(conSet->uuid(), conSet->id());
         }
     }

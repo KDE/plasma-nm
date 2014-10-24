@@ -26,7 +26,6 @@
 #include <QUrl>
 
 #include <QDBusMetaType>
-#include <QDebug>
 
 VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

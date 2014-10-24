@@ -23,8 +23,6 @@
 
 #include <NetworkManagerQt/Utils>
 
-#include <QDebug>
-
 WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const NetworkManager::Security8021xSetting::Ptr &setting8021x,
                            QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

@@ -20,7 +20,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "simpleipv4addressvalidator.h"
 
-#include <QDebug>
 #include <QStringList>
 
 SimpleIpV4AddressValidator::SimpleIpV4AddressValidator(QObject *parent)
@@ -64,7 +63,7 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
     foreach(const QString &part, addrParts) {
         if (part.isEmpty()) {
             if (i != (addrParts.size() - 1)) {
-                //qDebug() << "part.isEmpty()";
+                // qCDebug(PLASMA_NM) << "part.isEmpty()";
                 return QValidator::Invalid;
             }
             // the last tetrad can be empty, continue...
@@ -74,7 +73,7 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
         tetrads[i] = part.toInt();
 
         if (tetrads[i] > 255) {
-            //qDebug() << "tetrads[i] > 255";
+            // qCDebug(PLASMA_NM) << "tetrads[i] > 255";
             return QValidator::Invalid;
         }
 
@@ -89,11 +88,11 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
 
     if (i < 4) {
         // not all tetrads are filled... continue
-        //qDebug() << "QValidator::Intermediate";
+        // qCDebug(PLASMA_NM) << "QValidator::Intermediate";
         return QValidator::Intermediate;
     }
     else {
-        //qDebug() << "QValidator::Acceptable";
+        // qCDebug(PLASMA_NM) << "QValidator::Acceptable";
         return QValidator::Acceptable;
     }
 }

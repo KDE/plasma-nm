@@ -22,6 +22,8 @@
 // Own
 #include "uiutils.h"
 
+#include "debug.h"
+
 // KDE
 #include <KLocalizedString>
 
@@ -95,7 +97,7 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
                 deviceText = i18nc("title of the interface widget in nm's popup", "Mobile Broadband");
                 break;
             case NetworkManager::ModemDevice::NoCapability:
-                qWarning() << "Unhandled modem sub type: NetworkManager::ModemDevice::NoCapability";
+                qCWarning(PLASMA_NM) << "Unhandled modem sub type: NetworkManager::ModemDevice::NoCapability";
                 break;
             }
         }

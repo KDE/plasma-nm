@@ -1,6 +1,7 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_vpncui\")
 
 set(vpnc_SRCS
+    ../../libs/debug.cpp
     vpnc.cpp
     vpncwidget.cpp
     vpncadvancedwidget.cpp

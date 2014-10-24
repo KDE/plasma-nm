@@ -19,14 +19,13 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "debug.h"
 #include "modemmonitor.h"
 
 #include <QDBusPendingReply>
 
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <kdeversion.h>
-#include <QDebug>
 
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/manager.h>
@@ -87,7 +86,7 @@ void ModemMonitor::modemAdded(const QString & udi)
 void ModemMonitor::requestPin(MMModemLock lock)
 {
     Q_D(ModemMonitor);
-    qDebug() << "unlockRequired == " << lock;
+    qCDebug(PLASMA_NM) << "unlockRequired == " << lock;
     // Handle just SIM-PIN and SIM-PUK, because some other types may cause problems and they are not also handled by nm-applet
     if (lock == MM_MODEM_LOCK_NONE || lock == MM_MODEM_LOCK_UNKNOWN || (lock != MM_MODEM_LOCK_SIM_PIN && lock != MM_MODEM_LOCK_SIM_PUK)) {
         return;
@@ -99,7 +98,7 @@ void ModemMonitor::requestPin(MMModemLock lock)
     }
 
     if (d->dialog) {
-        qDebug() << "PinDialog already running";
+        qCDebug(PLASMA_NM) << "PinDialog already running";
         return;
     }
 
@@ -139,7 +138,7 @@ void ModemMonitor::requestPin(MMModemLock lock)
         goto OUT;
     }
 
-    qDebug() << "Sending unlock code";
+    qCDebug(PLASMA_NM) << "Sending unlock code";
 
     {
         ModemManager::Sim::Ptr sim;

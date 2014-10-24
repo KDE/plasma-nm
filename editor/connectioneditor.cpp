@@ -22,6 +22,8 @@
 
 #include "connectioneditor.h"
 #include "connectiondetaileditor.h"
+
+#include "debug.h"
 #include "editoridentitymodel.h"
 #include "editorproxymodel.h"
 #include "networkmodel.h"
@@ -29,6 +31,7 @@
 #include "uiutils.h"
 #include "ui_connectioneditor.h"
 #include "vpnuiplugin.h"
+
 #include <networkmodelitem.h>
 
 #include <QFileDialog>
@@ -100,6 +103,9 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
 
         generalGroup.writeEntry("FirstStart", false);
     }
+
+    QLoggingCategory::setFilterRules(QStringLiteral("plasma-nm.debug = false"));
+    QLoggingCategory::setFilterRules(QStringLiteral("plasma-nm.warning = true"));
 }
 
 ConnectionEditor::~ConnectionEditor()
@@ -168,7 +174,7 @@ void ConnectionEditor::initializeMenu()
 
     const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
     foreach (const KService::Ptr & service, services) {
-        qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
+        qCDebug(PLASMA_NM) << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
 
         action = new QAction(service->name(), this);
         action->setData(NetworkManager::ConnectionSettings::Vpn);
@@ -214,13 +220,13 @@ void ConnectionEditor::addConnection(QAction* action)
     NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(action->data().toUInt());
     const QString vpnType = action->property("type").toString();
 
-    qDebug() << "Adding new connection of type " << type;
+    // qCDebug(PLASMA_NM) << "Adding new connection of type " << type;
 
     if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
 #if WITH_MODEMMANAGER_SUPPORT
         QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
         if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
-            qDebug() << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
+            qCDebug(PLASMA_NM) << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
 
             if (wizard.data()->args().count() == 2) {
                 QVariantMap tmp = qdbus_cast<QVariantMap>(wizard.data()->args().value(1));
@@ -239,10 +245,10 @@ void ConnectionEditor::addConnection(QAction* action)
                 } else if (wizard.data()->type() == NetworkManager::ConnectionSettings::Cdma) {
                     connectionSettings->setting(NetworkManager::Setting::Cdma)->fromMap(tmp);
                 } else {
-                    qWarning() << Q_FUNC_INFO << "Unhandled setting type";
+                    qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unhandled setting type";
                 }
             } else {
-                qWarning() << Q_FUNC_INFO << "Unexpected number of args to parse";
+                qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unexpected number of args to parse";
             }
         }
 
@@ -257,7 +263,7 @@ void ConnectionEditor::addConnection(QAction* action)
         if (type == NetworkManager::ConnectionSettings::Vpn) {
             NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
             vpnSetting->setServiceType(vpnType);
-            qDebug() << "VPN type: " << vpnType;
+            // qCDebug(PLASMA_NM) << "VPN type: " << vpnType;
         }
 
         if (type == NetworkManager::ConnectionSettings::Wired || type == NetworkManager::ConnectionSettings::Wireless) {
@@ -299,7 +305,11 @@ void ConnectionEditor::addConnection(QAction* action)
     QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(connectionSettings, true);
 
     if (editor->exec() == QDialog::Accepted) {
-        qDebug() << editor->setting();
+        if (type == NetworkManager::ConnectionSettings::Vpn) {
+            qCDebug(PLASMA_NM) << "Adding new connection of type " << vpnType;
+        } else {
+            qCDebug(PLASMA_NM) << "Adding new connection of type " << NetworkManager::ConnectionSettings::typeAsString(type);
+        }
         m_handler->addConnection(editor->setting());
     }
 
@@ -428,7 +438,7 @@ void ConnectionEditor::slotItemClicked(const QModelIndex &index)
         return;
     }
 
-//     qDebug() << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
+    // qCDebug(PLASMA_NM) << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
 
     if (index.parent().isValid()) { // category
         actionCollection()->action("edit_connection")->setEnabled(false);
@@ -450,10 +460,10 @@ void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
         return;
     }
 
-//     qDebug() << "Double clicked item" << index.data(NetworkModel::UuidRole).toString();
+    // qCDebug(PLASMA_NM) << "Double clicked item" << index.data(NetworkModel::UuidRole).toString();
 
     if (index.parent().isValid()) { // category
-        qDebug() << "double clicked on the root item which is not editable";
+        // qCDebug(PLASMA_NM) << "double clicked on the root item which is not editable";
         return;
     }
 
@@ -538,25 +548,25 @@ void ConnectionEditor::importVpn()
     if (!filename.isEmpty()) {
         QFileInfo fi(filename);
         const QString ext = QLatin1Literal("*.") % fi.suffix();
-        qDebug() << "Importing VPN connection" << filename << "extension:" << ext;
+        qCDebug(PLASMA_NM) << "Importing VPN connection " << filename << "extension:" << ext;
 
         foreach (const KService::Ptr &service, services) {
             VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
             if (vpnPlugin && vpnPlugin->supportedFileExtensions().contains(ext)) {
-                qDebug() << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
+                qCDebug(PLASMA_NM) << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
 
                 NMVariantMapMap connection = vpnPlugin->importConnectionSettings(filename);
 
-                //qDebug() << "Raw connection:" << connection;
+                // qCDebug(PLASMA_NM) << "Raw connection:" << connection;
 
                 NetworkManager::ConnectionSettings connectionSettings;
                 connectionSettings.fromMap(connection);
                 connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
 
-                //qDebug() << "Converted connection:" << connectionSettings;
+                // qCDebug(PLASMA_NM) << "Converted connection:" << connectionSettings;
 
                 m_handler->addConnection(connectionSettings.toMap());
-//                 qDebug() << "Adding imported connection under id:" << conId;
+                // qCDebug(PLASMA_NM) << "Adding imported connection under id:" << conId;
 
                 if (connection.isEmpty()) { // the "positive" part will arrive with connectionAdded
                     m_editor->messageWidget->animatedShow();
@@ -594,7 +604,7 @@ void ConnectionEditor::exportVpn()
 
     NetworkManager::VpnSetting::Ptr vpnSetting = connSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
 
-    qDebug() << "Exporting VPN connection" << connection->name() << "type:" << vpnSetting->serviceType();
+    qCDebug(PLASMA_NM) << "Exporting VPN connection" << connection->name() << "type:" << vpnSetting->serviceType();
 
     QString error;
     VpnUiPlugin * vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNetworkManagement/VpnUiPlugin"),
@@ -627,6 +637,6 @@ void ConnectionEditor::exportVpn()
         }
         delete vpnPlugin;
     } else {
-        qWarning() << "Error getting VpnUiPlugin for export:" << error;
+        qCWarning(PLASMA_NM) << "Error getting VpnUiPlugin for export:" << error;
     }
 }

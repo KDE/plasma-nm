@@ -20,7 +20,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ipv6routeswidget.h"
 
-#include <QDebug>
 #include <QStandardItem>
 #include <QStandardItemModel>
 #include <QNetworkAddressEntry>
@@ -116,7 +115,7 @@ void IpV6RoutesWidget::setRoutes(const QList<NetworkManager::IpRoute> &list)
     d->model.removeRows(0, d->model.rowCount());
     foreach (const NetworkManager::IpRoute &route, list) {
         QList<QStandardItem *> item;
-        qDebug() << route.ip();
+        // qCDebug(PLASMA_NM) << route.ip();
         item << new QStandardItem(route.ip().toString())
              << new QStandardItem(QString::number(route.prefixLength(), 10))
              << new QStandardItem(route.nextHop().toString())
@@ -186,7 +185,7 @@ void IpV6RoutesWidget::removeRoute()
 
 void IpV6RoutesWidget::selectionChanged(const QItemSelection & selected)
 {
-    qDebug() << "selectionChanged";
+    // qCDebug(PLASMA_NM) << "selectionChanged";
     d->ui.pushButtonRemove->setEnabled(!selected.isEmpty());
 }
 

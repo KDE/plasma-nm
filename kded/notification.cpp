@@ -21,6 +21,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "debug.h"
 #include "notification.h"
 
 #include <uiutils.h>
@@ -32,7 +33,6 @@
 #include <KIconLoader>
 
 #include <QIcon>
-#include <QDebug>
 
 Notification::Notification(QObject *parent) :
     QObject(parent)
@@ -67,7 +67,7 @@ void Notification::addDevice(const NetworkManager::Device::Ptr &device)
 void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason)
 {
     Q_UNUSED(oldstate)
-    qDebug() << newstate << reason;
+
     NetworkManager::Device *device = qobject_cast<NetworkManager::Device*>(sender());
     if (newstate == NetworkManager::Device::Activated && m_notifications.contains(device->uni())) {
         KNotification *notify = m_notifications.value(device->uni());
@@ -286,7 +286,6 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
     case NetworkManager::Device::Reserved:
         return;
     }
-    qDebug() << text;
 
     if (m_notifications.contains(device->uni())) {
         KNotification *notify = m_notifications.value(device->uni());
@@ -340,7 +339,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         eventId = "ConnectionDeactivated";
         text = i18n("Connection '%1' deactivated.", acName);
     } else {
-        qDebug() << "Unhandled active connection state change: " << state;
+        qCWarning(PLASMA_NM) << "Unhandled active connection state change: " << state;
         return;
     }
 
@@ -377,7 +376,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         eventId = "ConnectionDeactivated";
         text = i18n("VPN connection '%1' disconnected.", vpnName);
     } else {
-        qDebug() << "Unhandled VPN connection state change: " << state;
+        qCWarning(PLASMA_NM) << "Unhandled VPN connection state change: " << state;
         return;
     }
 

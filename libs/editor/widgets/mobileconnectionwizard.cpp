@@ -23,7 +23,6 @@
 #include "uiutils.h"
 
 #include <QVBoxLayout>
-#include <QDebug>
 
 #include <KLocalizedString>
 #include <KIconLoader>

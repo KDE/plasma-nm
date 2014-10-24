@@ -22,13 +22,13 @@
 
 #include "bluetoothmonitor.h"
 #include "connectiondetaileditor.h"
+#include "debug.h"
 #include <config.h>
 
 #include <QDBusInterface>
 #include <QDBusReply>
 #include <QUuid>
 
-#include <QDebug>
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -56,7 +56,7 @@ BluetoothMonitor::~BluetoothMonitor()
 
 void BluetoothMonitor::addBluetoothConnection(const QString& bdAddr, const QString& service)
 {
-    qDebug() << "Adding BT connection:" << bdAddr << service;
+    qCDebug(PLASMA_NM) << "Adding BT connection:" << bdAddr << service;
 
     if (bdAddr.isEmpty() || service.isEmpty()) {
         return;
@@ -80,7 +80,7 @@ void BluetoothMonitor::init()
         KMessageBox::sorry(0, i18n("Only 'dun' and 'nap' services are supported."));
         return;
     }
-    qDebug() << "Bdaddr == " << mBdaddr;
+    qCDebug(PLASMA_NM) << "Bdaddr == " << mBdaddr;
 
     /*
      * Find default bluetooth adapter registered in BlueZ.
@@ -94,7 +94,7 @@ void BluetoothMonitor::init()
         return;
     }
 
-    qDebug() << "Querying default adapter";
+    qCDebug(PLASMA_NM) << "Querying default adapter";
     QDBusReply<QDBusObjectPath> adapterPath = bluez.call(QLatin1String("DefaultAdapter"));
 
     if (!adapterPath.isValid()) {
@@ -102,7 +102,7 @@ void BluetoothMonitor::init()
         return;
     }
 
-    qDebug() << "Default adapter path is " << adapterPath.value().path();
+    qCDebug(PLASMA_NM) << "Default adapter path is " << adapterPath.value().path();
 
     /*
      * Find device path registered in BlueZ.
@@ -114,13 +114,13 @@ void BluetoothMonitor::init()
     QDBusReply<QDBusObjectPath> devicePath = adapter.call(QLatin1String("FindDevice"), mBdaddr);
 
     if (!devicePath.isValid()) {
-        qWarning() << mBdaddr << " is not registered in default bluetooth adapter, it may be in another adapter.";
-        qWarning() << mBdaddr << " waiting for it to be registered in ModemManager";
+        qCWarning(PLASMA_NM) << mBdaddr << " is not registered in default bluetooth adapter, it may be in another adapter.";
+        qCWarning(PLASMA_NM) << mBdaddr << " waiting for it to be registered in ModemManager";
         return;
     }
 
     mDevicePath = devicePath.value().path();
-    qDebug() << "Device path for " << mBdaddr << " is " << mDevicePath;
+    qCDebug(PLASMA_NM) << "Device path for " << mBdaddr << " is " << mDevicePath;
 
     /*
      * Find name registered in BlueZ.
@@ -137,10 +137,10 @@ void BluetoothMonitor::init()
     }
 
     QMap<QString, QVariant> properties = deviceProperties.value();
-    qDebug() << "Device properties == " << properties;
+    qCDebug(PLASMA_NM) << "Device properties == " << properties;
 
     if (properties.contains("Name")) {
-        qDebug() << "Name for" << mBdaddr << "is" << properties["Name"].toString();
+        qCDebug(PLASMA_NM) << "Name for" << mBdaddr << "is" << properties["Name"].toString();
         mDeviceName = properties["Name"].toString();
     }
 
@@ -190,19 +190,19 @@ void BluetoothMonitor::init()
             btSetting->setBluetoothAddress(NetworkManager::Utils::macAddressFromString(mBdaddr));
             btSetting->setProfileType(NetworkManager::BluetoothSetting::Panu);
             btSetting->setInitialized(true);
-            qDebug() << "Adding PAN connection" << connectionSettings;
+            qCDebug(PLASMA_NM) << "Adding PAN connection" << connectionSettings;
 
             NetworkManager::addConnection(connectionSettings.toMap());
         }
         return;
     } else if (mService != QLatin1String("dun")) {
         mDunDevice = mService;
-        qWarning() << "device(" << mDunDevice << ") for" << mBdaddr << " passed as argument";
-        qWarning() << "waiting for it to be registered in ModemManager";
+        qCWarning(PLASMA_NM) << "device(" << mDunDevice << ") for" << mBdaddr << " passed as argument";
+        qCWarning(PLASMA_NM) << "waiting for it to be registered in ModemManager";
         return;
     }
 
-    qDebug() << "Connecting to modem's" << mDevicePath << "serial DUN port with" << mService;
+    qCDebug(PLASMA_NM) << "Connecting to modem's" << mDevicePath << "serial DUN port with" << mService;
 
     /*
      * Contact BlueZ to connect phone's service.
@@ -222,13 +222,13 @@ void BluetoothMonitor::init()
 #if WITH_MODEMMANAGER_SUPPORT
 void BluetoothMonitor::modemAdded(const QString &udi)
 {
-    qDebug() << "Modem added" << udi;
+    qCDebug(PLASMA_NM) << "Modem added" << udi;
 
     ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(udi);
     ModemManager::Modem::Ptr modem = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
 
-    qDebug() << "Found suitable modem:" << modemDevice->uni();
-    qDebug() << "DUN device:" << mDunDevice;
+    qCDebug(PLASMA_NM) << "Found suitable modem:" << modemDevice->uni();
+    qCDebug(PLASMA_NM) << "DUN device:" << mDunDevice;
 
     QStringList temp = mDunDevice.split('/');
     if (temp.count() == 3) {
@@ -272,9 +272,9 @@ void BluetoothMonitor::modemAdded(const QString &udi)
     if (!exists) {
         mobileConnectionWizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Bluetooth);
         if (mobileConnectionWizard.data()->exec() == QDialog::Accepted && mobileConnectionWizard.data()->getError() == MobileProviders::Success) {
-            qDebug() << "Mobile broadband wizard finished:" << mobileConnectionWizard.data()->type() << mobileConnectionWizard.data()->args();
+            qCDebug(PLASMA_NM) << "Mobile broadband wizard finished:" << mobileConnectionWizard.data()->type() << mobileConnectionWizard.data()->args();
             if (mobileConnectionWizard.data()->args().count() == 2) { //GSM or CDMA
-                qDebug() << "Creating new PAN connection for BT device:" << mBdaddr;
+                qCDebug(PLASMA_NM) << "Creating new PAN connection for BT device:" << mBdaddr;
 
                 QVariantMap tmp = qdbus_cast<QVariantMap>(mobileConnectionWizard.data()->args().value(1));
                 NetworkManager::ConnectionSettings connectionSettings(NetworkManager::ConnectionSettings::Bluetooth, NM_BT_CAPABILITY_DUN);
@@ -293,7 +293,7 @@ void BluetoothMonitor::modemAdded(const QString &udi)
                     connectionSettings.setting(NetworkManager::Setting::Cdma)->setInitialized(true);
                 }
 
-                qDebug() << "Adding DUN connection" << connectionSettings;
+                qCDebug(PLASMA_NM) << "Adding DUN connection" << connectionSettings;
 
                 NetworkManager::addConnection(connectionSettings.toMap());
             }

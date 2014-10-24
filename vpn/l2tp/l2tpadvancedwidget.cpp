@@ -22,7 +22,6 @@
 #include "ui_l2tpadvanced.h"
 #include "nm-l2tp-service.h"
 
-#include <QDebug>
 #include <KLocalizedString>
 #include <KAcceleratorManager>
 

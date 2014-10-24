@@ -19,11 +19,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "debug.h"
 #include "openvpnwidget.h"
 #include "openvpnadvancedwidget.h"
 
 #include <QDBusMetaType>
-#include <QDebug>
 #include <QLineEdit>
 #include <QUrl>
 #include <QPointer>
@@ -182,7 +182,7 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
     {
     case Private::EnumConnectionType::Certificates:
         contype = QLatin1String(NM_OPENVPN_CONTYPE_TLS);
-        qDebug() << "saving VPN TLS settings as urls:" << d->ui.x509CaFile->url().path() << d->ui.x509Cert->url().path() << d->ui.x509Key->url().path();
+        // qCDebug(PLASMA_NM) << "saving VPN TLS settings as urls:" << d->ui.x509CaFile->url().path() << d->ui.x509Cert->url().path() << d->ui.x509Key->url().path();
         data.insert(QLatin1String(NM_OPENVPN_KEY_CA), d->ui.x509CaFile->url().path());
         data.insert(QLatin1String(NM_OPENVPN_KEY_CERT), d->ui.x509Cert->url().path());
         data.insert(QLatin1String(NM_OPENVPN_KEY_KEY), d->ui.x509Key->url().path());

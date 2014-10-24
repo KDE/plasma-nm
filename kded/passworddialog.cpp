@@ -19,6 +19,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "debug.h"
 #include "passworddialog.h"
 #include "ui_passworddialog.h"
 
@@ -32,7 +33,6 @@
 #include <KIconLoader>
 
 #include <QIcon>
-#include <QDebug>
 
 using namespace NetworkManager;
 
@@ -66,7 +66,7 @@ void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings
 
     m_neededSecrets = setting->needSecrets(m_flags & SecretAgent::RequestNew);
     if (m_neededSecrets.isEmpty()) {
-        qWarning() << "list of secrets is empty!!!";
+        qCWarning(PLASMA_NM) << "list of secrets is empty!!!";
         m_hasError = true;
         m_error = SecretAgent::InternalError;
         m_errorMessage = QLatin1String("No secrets were requested");
@@ -93,7 +93,7 @@ void PasswordDialog::setupVpnUi(const ConnectionSettings &connectionSettings)
 {
     NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings.setting(Setting::Vpn).dynamicCast<VpnSetting>();
     if (!vpnSetting) {
-        qDebug() << "Missing VPN setting!";
+        qCWarning(PLASMA_NM) << "Missing VPN setting!";
         m_hasError = true;
         m_error = SecretAgent::InternalError;
         m_errorMessage = QLatin1String("VPN settings are missing");
@@ -101,8 +101,8 @@ void PasswordDialog::setupVpnUi(const ConnectionSettings &connectionSettings)
         VpnUiPlugin *vpnUiPlugin;
         QString error;
         const QString serviceType = vpnSetting->serviceType();
-        //qDebug() << "Agent loading VPN plugin" << serviceType << "from DBUS" << calledFromDBus();
-        //vpnSetting->printSetting();
+        // qCDebug(PLASMA_NM) << "Agent loading VPN plugin" << serviceType << "from DBUS" << calledFromDBus();
+        // vpnSetting->printSetting();
         vpnUiPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QLatin1String("PlasmaNetworkManagement/VpnUiPlugin"),
                                                                                QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
                                                                                this, QVariantList(), &error);
@@ -118,7 +118,7 @@ void PasswordDialog::setupVpnUi(const ConnectionSettings &connectionSettings)
             layout->addWidget(box);
             setLayout(layout);
         } else {
-            qDebug() << error << ", serviceType == " << serviceType;
+            qCWarning(PLASMA_NM) << error << ", serviceType == " << serviceType;
             m_hasError = true;
             m_error = SecretAgent::InternalError;
             m_errorMessage = error;

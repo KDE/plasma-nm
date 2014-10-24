@@ -59,7 +59,7 @@ QString HwAddrComboBox::hwAddress() const
     else
         result = currentText();
 
-    //qDebug() << "Result:" << currentIndex() << result;
+    // qCDebug(PLASMA_NM)() << "Result:" << currentIndex() << result;
 
     return result;
 }
@@ -80,7 +80,7 @@ void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const 
 {
     m_initialAddress = address;
 
-    //qDebug() << "Initial address:" << m_initialAddress;
+    // qCDebug(PLASMA_NM) << "Initial address:" << m_initialAddress;
 
     QString deviceName;
     foreach(const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
@@ -114,7 +114,7 @@ void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const 
 void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device)
 {
     const QVariant data = hwAddressFromDevice(device);
-    //qDebug() << "Data:" << data;
+    // qCDebug(PLASMA_NM) << "Data:" << data;
 
     QString name;
     if (device->state() == NetworkManager::Device::Activated)
@@ -122,7 +122,7 @@ void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device
     else
         name = device->interfaceName();
 
-    //qDebug() << "Name:" << name;
+    // qCDebug(PLASMA_NM) << "Name:" << name;
 
     if (!data.isNull()) {
         if (name == data.toString()) {

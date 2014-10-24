@@ -21,8 +21,8 @@
 #include "bridgewidget.h"
 #include "ui_bridge.h"
 #include "connectiondetaileditor.h"
+#include "debug.h"
 
-#include <QDebug>
 #include <QDBusPendingReply>
 
 #include <NetworkManagerQt/GenericTypes>
@@ -114,9 +114,9 @@ QVariantMap BridgeWidget::setting(bool agentOwned) const
 
 void BridgeWidget::addBridge(QAction *action)
 {
-    qDebug() << "Adding bridged connection:" << action->data();
-    qDebug() << "Master UUID:" << m_uuid;
-    qDebug() << "Slave type:" << type();
+    qCDebug(PLASMA_NM) << "Adding bridged connection:" << action->data();
+    qCDebug(PLASMA_NM) << "Master UUID:" << m_uuid;
+    qCDebug(PLASMA_NM) << "Slave type:" << type();
 
     NetworkManager::ConnectionSettings::ConnectionType connectionType = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(action->data().toInt());
     NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(connectionType));
@@ -128,8 +128,8 @@ void BridgeWidget::addBridge(QAction *action)
     QPointer<ConnectionDetailEditor> bridgeEditor = new ConnectionDetailEditor(connectionSettings, true);
 
     if (bridgeEditor->exec() == QDialog::Accepted) {
-        qDebug() << "Saving slave connection";
-        qDebug() << bridgeEditor->setting();
+        qCDebug(PLASMA_NM) << "Saving slave connection";
+        // qCDebug(PLASMA_NM) << bridgeEditor->setting();
         QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(bridgeEditor->setting());
         QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
         connect(watcher, &QDBusPendingCallWatcher::finished, this, &BridgeWidget::bridgeAddComplete);
@@ -162,7 +162,7 @@ void BridgeWidget::bridgeAddComplete(QDBusPendingCallWatcher * watcher)
             slotWidgetChanged();
         }
     } else {
-        qWarning() << "Bridged connection not added:" << reply.error().message();
+        qCWarning(PLASMA_NM) << "Bridged connection not added:" << reply.error().message();
     }
 }
 
@@ -176,7 +176,7 @@ void BridgeWidget::editBridge()
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
 
     if (connection) {
-        qDebug() << "Editing bridged connection" << currentItem->text() << uuid;
+        qCDebug(PLASMA_NM) << "Editing bridged connection" << currentItem->text() << uuid;
         QPointer<ConnectionDetailEditor> bridgeEditor = new ConnectionDetailEditor(connection->settings(), this);
         if (bridgeEditor->exec() == QDialog::Accepted) {
             connection->update(bridgeEditor->setting());
@@ -199,7 +199,7 @@ void BridgeWidget::deleteBridge()
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
 
     if (connection) {
-        qDebug() << "About to delete bridged connection" << currentItem->text() << uuid;
+        // qCDebug(PLASMA_NM) << "About to delete bridged connection" << currentItem->text() << uuid;
         if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->name()), i18n("Remove Connection"), KStandardGuiItem::remove(),
                                        KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
                 == KMessageBox::Yes) {

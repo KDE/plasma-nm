@@ -22,7 +22,6 @@
 #include "ui_l2tpppp.h"
 #include "nm-l2tp-service.h"
 
-#include <QDebug>
 #include <KLocalizedString>
 #include <KAcceleratorManager>
 
@@ -178,6 +177,5 @@ NMStringMap L2tpPPPWidget::setting() const
         result.insert(NM_L2TP_KEY_LCP_ECHO_INTERVAL, "30");
     }
 
-    qDebug() << "RESULT - " << result;
     return result;
 }

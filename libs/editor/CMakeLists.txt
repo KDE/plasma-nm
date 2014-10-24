@@ -37,6 +37,7 @@ set(plasmanm_editor_SRCS
     simpleipv6addressvalidator.cpp
     vpnuiplugin.cpp
 
+    ../debug.cpp
     ../uiutils.cpp
 )
 

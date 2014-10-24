@@ -22,6 +22,7 @@
 #include "connectiondetaileditor.h"
 #include "ui_connectiondetaileditor.h"
 
+#include "debug.h"
 #include "settings/bondwidget.h"
 #include "settings/bridgewidget.h"
 #include "settings/btwidget.h"
@@ -57,7 +58,6 @@
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/WirelessDevice>
 
-#include <QDebug>
 #include <QPushButton>
 
 #include <KUser>
@@ -183,7 +183,7 @@ void ConnectionDetailEditor::initTabs()
     ConnectionWidget * connectionWidget = new ConnectionWidget(m_connection);
     m_ui->tabWidget->addTab(connectionWidget, i18nc("General", "General configuration"));
 
-//     qDebug() << "Initting tabs, UUID:" << m_connection->uuid();
+    // qCDebug(PLASMA_NM) << "Initting tabs, UUID:" << m_connection->uuid();
 
     const NetworkManager::ConnectionSettings::ConnectionType type = m_connection->connectionType();
 
@@ -249,11 +249,11 @@ void ConnectionDetailEditor::initTabs()
         NetworkManager::VpnSetting::Ptr vpnSetting =
                 m_connection->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
         if (!vpnSetting) {
-            qDebug() << "Missing VPN setting!";
+            qCWarning(PLASMA_NM) << "Missing VPN setting!";
         } else {
             serviceType = vpnSetting->serviceType();
-            //qDebug() << "Editor loading VPN plugin" << serviceType;
-            //vpnSetting->printSetting();
+            // qCDebug(PLASMA_NM) << "Editor loading VPN plugin" << serviceType;
+            // vpnSetting->printSetting();
             vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNetworkManagement/VpnUiPlugin"),
                                                                                  QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
                                                                                  this, QVariantList(), &error);
@@ -262,7 +262,7 @@ void ConnectionDetailEditor::initTabs()
                 SettingWidget * vpnWidget = vpnPlugin->widget(vpnSetting, this);
                 m_ui->tabWidget->addTab(vpnWidget, i18n("VPN (%1)", shortName));
             } else {
-                qDebug() << error << ", serviceType == " << serviceType;
+                qCWarning(PLASMA_NM) << error << ", serviceType == " << serviceType;
             }
         }
     }

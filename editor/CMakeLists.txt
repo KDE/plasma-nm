@@ -3,8 +3,9 @@ include_directories(${CMAKE_SOURCE_DIR}/libs/editor
                     ${CMAKE_SOURCE_DIR}/libs/models)
 
 set(connectioneditor_SRCS
-   main.cpp
+   ../libs/debug.cpp
    connectioneditor.cpp
+   main.cpp
 )
 
 ki18n_wrap_ui(connectioneditor_SRCS

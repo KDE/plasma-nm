@@ -25,7 +25,6 @@
 #include <NetworkManagerQt/Setting>
 
 #include <QDBusMetaType>
-#include <QDebug>
 
 OpenswanWidget::OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),

@@ -4,6 +4,7 @@ include_directories(${CMAKE_SOURCE_DIR}/libs/editor/widgets)
 
 if (WITH_MODEMMANAGER_SUPPORT)
     set(kded_networkmanagement_SRCS
+        ../libs/debug.cpp
         notification.cpp
         passworddialog.cpp
         secretagent.cpp
@@ -19,6 +20,7 @@ if (WITH_MODEMMANAGER_SUPPORT)
     )
 else()
     set(kded_networkmanagement_SRCS
+        ../libs/debug.cpp
         notification.cpp
         passworddialog.cpp
         secretagent.cpp

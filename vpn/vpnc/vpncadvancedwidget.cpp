@@ -117,9 +117,9 @@ NMStringMap VpncAdvancedWidget::setting() const
     if (!m_ui->domain->text().isEmpty())
         result.insert(NM_VPNC_KEY_DOMAIN, m_ui->domain->text());
 
-    result.insert(NM_VPNC_KEY_VENDOR, m_ui->vendor->itemData(m_ui->vendor->currentIndex()).toString());
+    result.insert(NM_VPNC_KEY_VENDOR, m_ui->vendor->currentData().toString());
 
-    const QString encData = m_ui->encryption->itemData(m_ui->encryption->currentIndex()).toString();
+    const QString encData = m_ui->encryption->currentData().toString();
     if (!encData.isEmpty()) {
         if (encData == NM_VPNC_KEY_SINGLE_DES)
             result.insert(NM_VPNC_KEY_SINGLE_DES, "yes");
@@ -127,11 +127,11 @@ NMStringMap VpncAdvancedWidget::setting() const
             result.insert(NM_VPNC_KEY_NO_ENCRYPTION, "yes");
     }
 
-    result.insert(NM_VPNC_KEY_NAT_TRAVERSAL_MODE, m_ui->nat->itemData(m_ui->nat->currentIndex()).toString());
+    result.insert(NM_VPNC_KEY_NAT_TRAVERSAL_MODE, m_ui->nat->currentData().toString());
 
-    result.insert(NM_VPNC_KEY_DHGROUP, m_ui->dhGroup->itemData(m_ui->dhGroup->currentIndex()).toString());
+    result.insert(NM_VPNC_KEY_DHGROUP, m_ui->dhGroup->currentData().toString());
 
-    result.insert(NM_VPNC_KEY_PERFECT_FORWARD, m_ui->pfs->itemData(m_ui->pfs->currentIndex()).toString());
+    result.insert(NM_VPNC_KEY_PERFECT_FORWARD, m_ui->pfs->currentData().toString());
 
     result.insert(NM_VPNC_KEY_LOCAL_PORT, QString::number(m_ui->localport->value()));
 

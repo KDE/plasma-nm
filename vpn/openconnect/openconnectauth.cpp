@@ -436,13 +436,10 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
         const QString value = d->secrets.value(key);
         if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {
             QLineEdit *le = new QLineEdit(this);
+            le->setText(value);
             if (opt->type == OC_FORM_OPT_PASSWORD) {
-                le->setEchoMode(QLineEdit::Normal);
-                le->setText(value);
+                le->setEchoMode(QLineEdit::Password);
                 passwordnumber++;
-            }
-            else {
-                le->setText(value);
             }
             if (!focusSet && le->text().isEmpty()) {
                 le->setFocus(Qt::OtherFocusReason);
@@ -586,7 +583,7 @@ void OpenconnectAuthWidget::formLoginClicked()
             if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {
                 QLineEdit *le = qobject_cast<QLineEdit*>(widget);
                 opt->value = qstrdup(le->text().toUtf8().constData());
-                if (opt->type == OC_FORM_OPT_TEXT) { //FIXME shouldn't this be OC_FORM_OPT_PASSWORD?
+                if (opt->type == OC_FORM_OPT_PASSWORD) {
                     d->secrets.insert(key,le->text());
                 }
             } else if (opt->type == OC_FORM_OPT_SELECT) {

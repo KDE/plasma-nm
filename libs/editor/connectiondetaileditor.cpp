@@ -395,6 +395,7 @@ void ConnectionDetailEditor::replyFinished(QDBusPendingCallWatcher *watcher)
     }
 
     initTabs();
+    watcher->deleteLater();
 }
 
 void ConnectionDetailEditor::validChanged(bool valid)

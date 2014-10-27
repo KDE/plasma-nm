@@ -5,7 +5,7 @@ set(QT_MIN_VERSION "5.2.0")
 
 set(PROJECT_VERSION "5.1.0")
 set(PROJECT_VERSION_MAJOR 5)
-set(PLASMANM_VERSION_STRING PROJECT_VERSION )
+set(PLASMANM_VERSION_STRING ${PROJECT_VERSION} )
 
 ################# set KDE specific information #################
 

@@ -503,7 +503,9 @@ void NetworkModelItem::updateDetails()
 
         if (m_type == NetworkManager::ConnectionSettings::Gsm) {
             ModemManager::Modem3gpp::Ptr gsmNet = modem->interface(ModemManager::ModemDevice::GsmInterface).objectCast<ModemManager::Modem3gpp>();
-            m_details << i18n("Operator") << gsmNet->operatorName();
+            if (gsmNet) {
+                m_details << i18n("Operator") << gsmNet->operatorName();
+            }
         } else {
             ModemManager::ModemCdma::Ptr cdmaNet = modem->interface(ModemManager::ModemDevice::CdmaInterface).objectCast<ModemManager::ModemCdma>();
             m_details << i18n("Network ID") << QString("%1").arg(cdmaNet->nid());

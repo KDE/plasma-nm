@@ -497,20 +497,27 @@ void NetworkModelItem::updateDetails()
     } else if (m_type == NetworkManager::ConnectionSettings::Gsm || m_type == NetworkManager::ConnectionSettings::Cdma) {
 #if WITH_MODEMMANAGER_SUPPORT
         NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
-        ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(modemDevice->udi());
-        ModemManager::Modem::Ptr modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
+        if (modemDevice) {
+            ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(modemDevice->udi());
+            if (modem) {
+                ModemManager::Modem::Ptr modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
 
-        if (m_type == NetworkManager::ConnectionSettings::Gsm) {
-            ModemManager::Modem3gpp::Ptr gsmNet = modem->interface(ModemManager::ModemDevice::GsmInterface).objectCast<ModemManager::Modem3gpp>();
-            if (gsmNet) {
-                m_details << i18n("Operator") << gsmNet->operatorName();
+                if (m_type == NetworkManager::ConnectionSettings::Gsm) {
+                    ModemManager::Modem3gpp::Ptr gsmNet = modem->interface(ModemManager::ModemDevice::GsmInterface).objectCast<ModemManager::Modem3gpp>();
+                    if (gsmNet) {
+                        m_details << i18n("Operator") << gsmNet->operatorName();
+                    }
+                } else {
+                    ModemManager::ModemCdma::Ptr cdmaNet = modem->interface(ModemManager::ModemDevice::CdmaInterface).objectCast<ModemManager::ModemCdma>();
+                    m_details << i18n("Network ID") << QString("%1").arg(cdmaNet->nid());
+                }
+
+                if (modemNetwork) {
+                    m_details << i18n("Signal Quality") << QString("%1%").arg(modemNetwork->signalQuality().signal);
+                    m_details << i18n("Access Technology") << UiUtils::convertAccessTechnologyToString(modemNetwork->accessTechnologies());
+                }
             }
-        } else {
-            ModemManager::ModemCdma::Ptr cdmaNet = modem->interface(ModemManager::ModemDevice::CdmaInterface).objectCast<ModemManager::ModemCdma>();
-            m_details << i18n("Network ID") << QString("%1").arg(cdmaNet->nid());
         }
-        m_details << i18n("Signal Quality") << QString("%1%").arg(modemNetwork->signalQuality().signal);
-        m_details << i18n("Access Technology") << UiUtils::convertAccessTechnologyToString(modemNetwork->accessTechnologies());
 #endif
     } else if (m_type == NetworkManager::ConnectionSettings::Vpn) {
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_connectionPath);

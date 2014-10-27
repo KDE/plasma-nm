@@ -880,7 +880,7 @@ void NetworkModel::gsmNetworkAccessTechnologyChanged(ModemManager::Modem::Access
                         ModemManager::Modem::Ptr modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
                         if (modemNetwork && modemNetwork->device() == gsmNetwork->device()) {
                             // TODO store access technology internally?
-                            foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, modem->uni())) {
+                            foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, dev->uni())) {
                                 updateItem(item);
                             }
                         }
@@ -902,7 +902,7 @@ void NetworkModel::gsmNetworkCurrentModesChanged()
                     if (modem->hasInterface(ModemManager::ModemDevice::ModemInterface)) {
                         ModemManager::Modem::Ptr modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
                         if (modemNetwork && modemNetwork->device() == gsmNetwork->device()) {
-                            foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, modem->uni())) {
+                            foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, dev->uni())) {
                                 updateItem(item);
                             }
                         }
@@ -924,7 +924,7 @@ void NetworkModel::gsmNetworkSignalQualityChanged(uint signal)
                     if (modem->hasInterface(ModemManager::ModemDevice::ModemInterface)) {
                         ModemManager::Modem::Ptr modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
                         if (modemNetwork && modemNetwork->device() == gsmNetwork->device()) {
-                            foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, modem->uni())) {
+                            foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, dev->uni())) {
                                 item->setSignal(signal);
                                 updateItem(item);
                             }

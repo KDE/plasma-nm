@@ -214,6 +214,8 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
             SLOT(ipConfigChanged()), Qt::UniqueConnection);
     connect(device.data(), SIGNAL(ipV6ConfigChanged()),
             SLOT(ipConfigChanged()), Qt::UniqueConnection);
+    connect(device.data(), SIGNAL(ipInterfaceChanged()),
+            SLOT(ipInterfaceChanged()));
     connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
             SLOT(deviceStateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)), Qt::UniqueConnection);
 
@@ -912,6 +914,7 @@ void NetworkModel::gsmNetworkSignalQualityChanged(uint signal)
         }
     }
 }
+
 #endif
 
 void NetworkModel::ipConfigChanged()
@@ -922,6 +925,20 @@ void NetworkModel::ipConfigChanged()
         foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, device->uni())) {
             updateItem(item);
 //             nmDebug() << "Item " << item->name() << ": device ipconfig changed";
+        }
+    }
+}
+
+void NetworkModel::ipInterfaceChanged()
+{
+    NetworkManager::Device * device = qobject_cast<NetworkManager::Device*>(sender());
+    if (device) {
+        foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, device->uni())) {
+            if (device->ipInterfaceName().isEmpty()) {
+                item->setDeviceName(device->interfaceName());
+            } else {
+                item->setDeviceName(device->ipInterfaceName());
+            }
         }
     }
 }

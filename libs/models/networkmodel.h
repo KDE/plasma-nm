@@ -100,6 +100,7 @@ private Q_SLOTS:
     void gsmNetworkSignalQualityChanged(uint signal);
 #endif
     void ipConfigChanged();
+    void ipInterfaceChanged();
     void statusChanged(NetworkManager::Status status);
     void wimaxNspAppeared(const QString& nsp);
     void wimaxNspDisappeared(const QString& nsp);

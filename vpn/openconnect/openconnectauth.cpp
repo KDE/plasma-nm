@@ -393,7 +393,7 @@ void OpenconnectAuthWidget::addFormInfo(const QString &iconName, const QString &
 
     QLabel *text = new QLabel(this);
     text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-    text->setWordWrap(false);
+    text->setWordWrap(true);
     layout->addWidget(text);
 
     icon->setPixmap(QIcon::fromTheme(iconName).pixmap(KIconLoader::SizeSmall));

@@ -355,9 +355,11 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
             }
 
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
-            NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(item->ssid());
-            if (wifiNetwork) {
-                updateFromWirelessNetwork(item, wifiNetwork);
+            if (wifiDevice) {
+                NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(item->ssid());
+                if (wifiNetwork) {
+                    updateFromWirelessNetwork(item, wifiNetwork);
+                }
             }
         }
 

@@ -96,7 +96,7 @@ QStringList MobileProviders::getProvidersList(QString country, NetworkManager::C
     QDomNode n = docElement.firstChild();
 
     // country is a country name and we parse country codes.
-    if (country.length() > 2) {
+    if (!mCountries.key(country).isNull()) {
         country = mCountries.key(country);
     }
     QMap<QString, QString> sortedGsm;

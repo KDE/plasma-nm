@@ -99,7 +99,7 @@ void Handler::activateConnection(const QString& connection, const QString& devic
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", Handler::ActivateConnection);
     watcher->setProperty("connection", con->name());
-    connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
 void Handler::addAndActivateConnection(const QString& device, const QString& specificObject, const QString& password)
@@ -192,7 +192,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
         watcher->setProperty("action", Handler::AddAndActivateConnection);
         watcher->setProperty("connection", settings->name());
-        connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
+        connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
     }
 
     settings.clear();
@@ -236,7 +236,7 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
 
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", Handler::DeactivateConnection);
-    connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
 void Handler::disconnectAll()
@@ -368,7 +368,7 @@ void Handler::removeConnection(const QString& connection)
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", Handler::RemoveConnection);
     watcher->setProperty("connection", con->name());
-    connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
 void Handler::updateConnection(const NetworkManager::Connection::Ptr& connection, const NMVariantMapMap& map)
@@ -415,37 +415,30 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
         switch (action) {
             case Handler::ActivateConnection:
                 notification = new KNotification("FailedToActivateConnection", KNotification::CloseOnTimeout, this);
-                notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to activate %1", watcher->property("connection").toString()));
                 break;
             case Handler::AddAndActivateConnection:
                 notification = new KNotification("FailedToAddConnection", KNotification::CloseOnTimeout, this);
-                notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to add %1", watcher->property("connection").toString()));
                 break;
             case Handler::AddConnection:
                 notification = new KNotification("FailedToAddConnection", KNotification::CloseOnTimeout, this);
-                notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to add connection %1", watcher->property("connection").toString()));
                 break;
             case Handler::DeactivateConnection:
                 notification = new KNotification("FailedToDeactivateConnection", KNotification::CloseOnTimeout, this);
-                notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to deactivate %1", watcher->property("connection").toString()));
                 break;
             case Handler::RemoveConnection:
                 notification = new KNotification("FailedToRemoveConnection", KNotification::CloseOnTimeout, this);
-                notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to remove %1", watcher->property("connection").toString()));
                 break;
             case Handler::RequestScan:
                 notification = new KNotification("FailedToRequestScan", KNotification::CloseOnTimeout, this);
-                notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to request scan"));
                 break;
             case Handler::UpdateConnection:
                 notification = new KNotification("FailedToUpdateConnection", KNotification::CloseOnTimeout, this);
-                notification->setComponentName("networkmanagement");
                 notification->setTitle(i18n("Failed to update connection %1", watcher->property("connection").toString()));
                 break;
             default:
@@ -453,6 +446,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
         }
 
         if (notification) {
+            notification->setComponentName("networkmanagement");
             notification->setText(error);
             notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
             notification->sendEvent();
@@ -464,20 +458,14 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
         switch (action) {
             case Handler::AddConnection:
                 notification = new KNotification("ConnectionAdded", KNotification::CloseOnTimeout, this);
-                notification->setComponentName("networkmanagement");
-                notification->setTitle(watcher->property("connection").toString());
                 notification->setText(i18n("Connection %1 has been added", watcher->property("connection").toString()));
                 break;
             case Handler::RemoveConnection:
                 notification = new KNotification("ConnectionRemoved", KNotification::CloseOnTimeout, this);
-                notification->setComponentName("networkmanagement");
-                notification->setTitle(watcher->property("connection").toString());
                 notification->setText(i18n("Connection %1 has been removed", watcher->property("connection").toString()));
                 break;
             case Handler::UpdateConnection:
                 notification = new KNotification("ConnectionUpdated", KNotification::CloseOnTimeout, this);
-                notification->setComponentName("networkmanagement");
-                notification->setTitle(watcher->property("connection").toString());
                 notification->setText(i18n("Connection %1 has been updated", watcher->property("connection").toString()));
                 break;
             default:
@@ -485,6 +473,8 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
         }
 
         if (notification) {
+            notification->setComponentName("networkmanagement");
+            notification->setTitle(watcher->property("connection").toString());
             notification->setPixmap(QIcon::fromTheme("dialog-information").pixmap(KIconLoader::SizeHuge));
             notification->sendEvent();
         }

@@ -511,11 +511,13 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
             return;
         }
 
-        if (!wallet->hasFolder("Network Management")) {
-            wallet->createFolder("Network Management");
+        const QString folderName(QStringLiteral("Network Management"));
+
+        if (!wallet->hasFolder(folderName)) {
+            wallet->createFolder(folderName);
         }
 
-        if (wallet->hasFolder("Network Management") && wallet->setFolder("Network Management")) {
+        if (wallet->hasFolder(folderName) && wallet->setFolder(folderName)) {
             int count = 0;
             foreach (const QString & entry, map.keys()) {
                 QString connectionUuid = entry.split(';').first();
@@ -539,7 +541,7 @@ void ConnectionEditor::importVpn()
     foreach (const KService::Ptr &service, services) {
         VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
         if (vpnPlugin) {
-            extensions += vpnPlugin->supportedFileExtensions() % QLatin1Literal(" ");
+            extensions += vpnPlugin->supportedFileExtensions() % QStringLiteral(" ");
             delete vpnPlugin;
         }
     }
@@ -547,7 +549,7 @@ void ConnectionEditor::importVpn()
     const QString filename = QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), extensions.simplified());
     if (!filename.isEmpty()) {
         QFileInfo fi(filename);
-        const QString ext = QLatin1Literal("*.") % fi.suffix();
+        const QString ext = QStringLiteral("*.") % fi.suffix();
         qCDebug(PLASMA_NM) << "Importing VPN connection " << filename << "extension:" << ext;
 
         foreach (const KService::Ptr &service, services) {
@@ -607,8 +609,8 @@ void ConnectionEditor::exportVpn()
     qCDebug(PLASMA_NM) << "Exporting VPN connection" << connection->name() << "type:" << vpnSetting->serviceType();
 
     QString error;
-    VpnUiPlugin * vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNetworkManagement/VpnUiPlugin"),
-                                                                                       QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()),
+    VpnUiPlugin * vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QStringLiteral("PlasmaNetworkManagement/VpnUiPlugin"),
+                                                                                       QStringLiteral("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()),
                                                                                        this, QVariantList(), &error);
 
     if (vpnPlugin) {

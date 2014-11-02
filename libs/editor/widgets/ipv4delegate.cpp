@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ipv4delegate.h"
 
-#include <KLineEdit>
+#include <QLineEdit>
 
 #include "simpleipv4addressvalidator.h"
 
@@ -29,7 +29,7 @@ IpV4Delegate::~IpV4Delegate() {}
 
 QWidget * IpV4Delegate::createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const
 {
-    KLineEdit *editor = new KLineEdit(parent);
+    QLineEdit *editor = new QLineEdit(parent);
     editor->setValidator(new SimpleIpV4AddressValidator(editor));
 
     return editor;

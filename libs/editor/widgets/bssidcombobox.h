@@ -22,12 +22,12 @@
 #ifndef PLASMA_NM_BSSIDCOMBOBOX_H
 #define PLASMA_NM_BSSIDCOMBOBOX_H
 
-#include <KComboBox>
+#include <QComboBox>
 
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/AccessPoint>
 
-class Q_DECL_EXPORT BssidComboBox : public KComboBox
+class Q_DECL_EXPORT BssidComboBox : public QComboBox
 {
     Q_OBJECT
 public:

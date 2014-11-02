@@ -32,7 +32,7 @@ bool signalCompare(const NetworkManager::AccessPoint::Ptr & one, const NetworkMa
 }
 
 BssidComboBox::BssidComboBox(QWidget *parent) :
-    KComboBox(parent), m_dirty(false)
+    QComboBox(parent), m_dirty(false)
 {
     setEditable(true);
     setInsertPolicy(QComboBox::NoInsert);

@@ -18,18 +18,15 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "ipv4routeswidget.h"
-
-#include <KLineEdit>
-#include <KLocalizedString>
 #include <QStandardItem>
 #include <QStandardItemModel>
 #include <QNetworkAddressEntry>
 
 #include <KAcceleratorManager>
+#include <KLocalizedString>
 
 #include "ui_ipv4routes.h"
-
+#include "ipv4routeswidget.h"
 #include "ipv4delegate.h"
 #include "intdelegate.h"
 

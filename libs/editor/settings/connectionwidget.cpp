@@ -142,7 +142,7 @@ void ConnectionWidget::openAdvancedPermissions()
 {
     QPointer<QDialog> dialog = new QDialog(this);
     dialog->setWindowTitle(i18nc("@title:window advanced permissions editor",
-                             "Advanced Permissions Editor"));
+                                 "Advanced Permissions Editor"));
     dialog->setLayout(new QVBoxLayout);
     QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
     connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));

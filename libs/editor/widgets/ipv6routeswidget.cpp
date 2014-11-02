@@ -18,20 +18,18 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "ipv6routeswidget.h"
-
 #include <QStandardItem>
 #include <QStandardItemModel>
 #include <QNetworkAddressEntry>
 
 #include <KAcceleratorManager>
-#include <KLineEdit>
 #include <KLocalizedString>
 
 #include "ui_ipv6routes.h"
 
 #include "ipv6delegate.h"
 #include "intdelegate.h"
+#include "ipv6routeswidget.h"
 
 class IpV6RoutesWidget::Private
 {

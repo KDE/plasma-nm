@@ -82,5 +82,4 @@ QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value)
         return QValidator::Intermediate;
 
     return QValidator::Acceptable;
-
 }

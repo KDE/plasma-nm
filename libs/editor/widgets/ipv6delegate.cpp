@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "ipv6delegate.h"
 
-#include <KLineEdit>
+#include <QLineEdit>
 
 #include "simpleipv6addressvalidator.h"
 
@@ -29,7 +29,7 @@ IpV6Delegate::~IpV6Delegate() {}
 
 QWidget * IpV6Delegate::createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const
 {
-    KLineEdit *editor = new KLineEdit(parent);
+    QLineEdit *editor = new QLineEdit(parent);
     editor->setValidator(new SimpleIpV6AddressValidator(editor));
 
     return editor;

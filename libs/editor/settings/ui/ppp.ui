@@ -23,14 +23,14 @@
       <string>Authentication</string>
      </property>
      <layout class="QFormLayout" name="formLayout">
-      <property name="verticalSpacing">
-       <number>0</number>
-      </property>
       <property name="fieldGrowthPolicy">
        <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
       </property>
       <property name="labelAlignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="verticalSpacing">
+       <number>0</number>
       </property>
       <item row="0" column="0">
        <widget class="QCheckBox" name="eap">
@@ -97,11 +97,11 @@
       <bool>false</bool>
      </property>
      <layout class="QFormLayout" name="formLayout_2">
-      <property name="verticalSpacing">
-       <number>0</number>
-      </property>
       <property name="labelAlignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="verticalSpacing">
+       <number>0</number>
       </property>
       <item row="0" column="0">
        <widget class="QCheckBox" name="mppe">
@@ -213,6 +213,8 @@
   <tabstop>mschapv2</tabstop>
   <tabstop>chap</tabstop>
   <tabstop>mppe</tabstop>
+  <tabstop>mppe128</tabstop>
+  <tabstop>mppeStateful</tabstop>
   <tabstop>bsdComp</tabstop>
   <tabstop>deflateComp</tabstop>
   <tabstop>tcpComp</tabstop>

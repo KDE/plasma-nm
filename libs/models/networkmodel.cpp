@@ -231,9 +231,7 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
                 SLOT(wirelessNetworkAppeared(QString)), Qt::UniqueConnection);
         connect(wifiDev.data(), SIGNAL(networkDisappeared(QString)),
                 SLOT(wirelessNetworkDisappeared(QString)), Qt::UniqueConnection);
-    }
-
-    if (device->type() == NetworkManager::Device::Wimax) {
+    } else if (device->type() == NetworkManager::Device::Wimax) {
         NetworkManager::WimaxDevice::Ptr wimaxDev = device.objectCast<NetworkManager::WimaxDevice>();
         connect(wimaxDev.data(), SIGNAL(nspAppeared(QString)),
                 SLOT(wimaxNspAppeared(QString)));
@@ -371,9 +369,7 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
                     updateFromWirelessNetwork(item, wifiNetwork);
                 }
             }
-        }
-
-        if (item->type() == NetworkManager::ConnectionSettings::Wimax) {
+        } else if (item->type() == NetworkManager::ConnectionSettings::Wimax) {
             // Find a nsp which could be removed, because it will be merged with a connection
             foreach (NetworkModelItem * secondItem, m_list.returnItems(NetworkItemsList::Nsp, item->nsp())) {
                 if (secondItem->itemType() == NetworkModelItem::AvailableNsp && secondItem->devicePath() == item->devicePath()) {
@@ -416,9 +412,7 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
 
     if (settings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
         wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
-    }
-
-    if (settings->connectionType() == NetworkManager::ConnectionSettings::Wimax) {
+    } else if (settings->connectionType() == NetworkManager::ConnectionSettings::Wimax) {
         wimaxSetting = settings->setting(NetworkManager::Setting::Wimax).dynamicCast<NetworkManager::WimaxSetting>();
     }
 
@@ -436,9 +430,7 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
             item->setMode(wirelessSetting->mode());
             item->setSecurityType(NetworkManager::Utils::securityTypeFromConnectionSetting(settings));
             item->setSsid(wirelessSetting->ssid());
-        }
-
-        if (item->type() == NetworkManager::ConnectionSettings::Wimax) {
+        } else if (item->type() == NetworkManager::ConnectionSettings::Wimax) {
             item->setNsp(wimaxSetting->networkName());
         }
 
@@ -461,9 +453,7 @@ void NetworkModel::addDevice(const NetworkManager::Device::Ptr& device)
         foreach (const NetworkManager::WirelessNetwork::Ptr& wifiNetwork, wifiDev->networks()) {
             addWirelessNetwork(wifiNetwork, wifiDev);
         }
-    }
-
-    if (device->type() == NetworkManager::Device::Wimax) {
+    } else if (device->type() == NetworkManager::Device::Wimax) {
         NetworkManager::WimaxDevice::Ptr wimaxDev = device.objectCast<NetworkManager::WimaxDevice>();
         foreach (const QString & nsp, wimaxDev->nsps()) {
             NetworkManager::WimaxNsp::Ptr wimaxNsp = wimaxDev->findNsp(nsp);
@@ -499,7 +489,8 @@ void NetworkModel::addWimaxNsp(const NetworkManager::WimaxNsp::Ptr& nsp, const N
     beginInsertRows(QModelIndex(), index, index);
     m_list.insertItem(item);
     endInsertRows();
-    qCDebug(PLASMA_NM) << "New wireless network " << item->name() << " added";}
+    qCDebug(PLASMA_NM) << "New wireless network " << item->name() << " added";
+}
 
 void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr& network, const NetworkManager::WirelessDevice::Ptr& device)
 {
@@ -508,7 +499,7 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
     NetworkManager::WirelessSetting::NetworkMode mode = NetworkManager::WirelessSetting::Infrastructure;
     NetworkManager::Utils::WirelessSecurityType securityType = NetworkManager::Utils::Unknown;
     NetworkManager::AccessPoint::Ptr ap = network->referenceAccessPoint();
-    if (ap && ap->capabilities() & NetworkManager::AccessPoint::Privacy) {
+    if (ap && ap->capabilities().testFlag(NetworkManager::AccessPoint::Privacy)) {
         securityType = NetworkManager::Utils::findBestWirelessSecurity(device->wirelessCapabilities(), true, (device->mode() == NetworkManager::WirelessDevice::Adhoc),
                                                                        ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
         if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Infra) {
@@ -675,8 +666,8 @@ void NetworkModel::availableConnectionDisappeared(const QString& connection)
 {
     foreach (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Connection, connection)) {
         bool available = false;
-        QString devicePath = item->devicePath();
-        QString specificPath = item->specificPath();
+        const QString devicePath = item->devicePath();
+        const QString specificPath = item->specificPath();
 
         // We have to check whether the connection is still available, because it might be
         // presented in the model for more devices and we don't want to remove it for all of them.
@@ -715,10 +706,7 @@ void NetworkModel::availableConnectionDisappeared(const QString& connection)
                         }
                     }
                 }
-            }
-
-            // Same for Wimax
-            if (item->type() == NetworkManager::ConnectionSettings::Wimax && !specificPath.isEmpty()) {
+            } else if (item->type() == NetworkManager::ConnectionSettings::Wimax && !specificPath.isEmpty()) { // Same for Wimax
                 if (device && device->type() == NetworkManager::Device::Wimax) {
                     NetworkManager::WimaxDevice::Ptr wimaxDevice = device.objectCast<NetworkManager::WimaxDevice>();
                     if (wimaxDevice) {
@@ -771,6 +759,7 @@ void NetworkModel::connectionRemoved(const QString& connection)
                      item->securityType() == secondItem->securityType() &&
                      item->ssid() == secondItem->ssid())) {
                     remove = true;
+                    break;
                 }
             }
 
@@ -820,9 +809,7 @@ void NetworkModel::connectionUpdated()
                 item->setSecurityType(NetworkManager::Utils::securityTypeFromConnectionSetting(settings));
                 item->setSsid(wirelessSetting->ssid());
                 // TODO check whether BSSID has changed and update the wireless info
-            }
-
-            if (item->type() == NetworkManager::ConnectionSettings::Wimax) {
+            } else if (item->type() == NetworkManager::ConnectionSettings::Wimax) {
                 NetworkManager::WimaxSetting::Ptr wimaxSetting;
                 wimaxSetting = settings->setting(NetworkManager::Setting::Wimax).dynamicCast<NetworkManager::WimaxSetting>();
                 item->setNsp(wimaxSetting->networkName());

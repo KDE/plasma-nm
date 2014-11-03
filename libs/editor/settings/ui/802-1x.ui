@@ -67,7 +67,7 @@
      <widget class="QWidget" name="md5Page">
       <layout class="QFormLayout" name="formLayout">
        <property name="verticalSpacing">
-         <number>0</number>
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_2">
@@ -117,11 +117,11 @@
      </widget>
      <widget class="QWidget" name="tlsPage">
       <layout class="QFormLayout" name="formLayout_2">
-       <property name="verticalSpacing">
-        <number>0</number>
-       </property>
        <property name="fieldGrowthPolicy">
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
+       </property>
+       <property name="verticalSpacing">
+        <number>0</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_4">
@@ -255,9 +255,9 @@
      </widget>
      <widget class="QWidget" name="fastPage">
       <layout class="QFormLayout" name="formLayout_4">
-      <property name="verticalSpacing">
-       <number>0</number>
-      </property>
+       <property name="verticalSpacing">
+        <number>0</number>
+       </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_11">
          <property name="text">
@@ -401,9 +401,9 @@
      </widget>
      <widget class="QWidget" name="ttlsPage">
       <layout class="QFormLayout" name="formLayout_5">
-      <property name="verticalSpacing">
-       <number>0</number>
-      </property>
+       <property name="verticalSpacing">
+        <number>0</number>
+       </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_19">
          <property name="text">
@@ -522,9 +522,9 @@
      </widget>
      <widget class="QWidget" name="peapPage">
       <layout class="QFormLayout" name="formLayout_6">
-      <property name="verticalSpacing">
-       <number>0</number>
-      </property>
+       <property name="verticalSpacing">
+        <number>0</number>
+       </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_24">
          <property name="text">
@@ -677,21 +677,61 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
-  <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
   </customwidget>
   <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
    <class>KUrlRequester</class>
-   <extends>QFrame</extends>
+   <extends>QWidget</extends>
    <header>kurlrequester.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>auth</tabstop>
+  <tabstop>md5UserName</tabstop>
+  <tabstop>md5Password</tabstop>
+  <tabstop>cbAskMd5Password</tabstop>
+  <tabstop>cbShowMd5Password</tabstop>
+  <tabstop>tlsIdentity</tabstop>
+  <tabstop>tlsUserCert</tabstop>
+  <tabstop>tlsCACert</tabstop>
+  <tabstop>tlsPrivateKey</tabstop>
+  <tabstop>tlsPrivateKeyPassword</tabstop>
+  <tabstop>cbShowTlsPassword</tabstop>
+  <tabstop>leapUsername</tabstop>
+  <tabstop>leapPassword</tabstop>
+  <tabstop>cbShowLeapPassword</tabstop>
+  <tabstop>fastAnonIdentity</tabstop>
+  <tabstop>fastAllowPacProvisioning</tabstop>
+  <tabstop>pacMethod</tabstop>
+  <tabstop>pacFile</tabstop>
+  <tabstop>fastInnerAuth</tabstop>
+  <tabstop>fastUsername</tabstop>
+  <tabstop>fastPassword</tabstop>
+  <tabstop>cbAskFastPassword</tabstop>
+  <tabstop>cbShowFastPassword</tabstop>
+  <tabstop>ttlsAnonIdentity</tabstop>
+  <tabstop>ttlsCACert</tabstop>
+  <tabstop>ttlsInnerAuth</tabstop>
+  <tabstop>ttlsUsername</tabstop>
+  <tabstop>ttlsPassword</tabstop>
+  <tabstop>cbAskTtlsPassword</tabstop>
+  <tabstop>cbShowTtlsPassword</tabstop>
+  <tabstop>peapAnonIdentity</tabstop>
+  <tabstop>peapCACert</tabstop>
+  <tabstop>peapVersion</tabstop>
+  <tabstop>peapInnerAuth</tabstop>
+  <tabstop>peapUsername</tabstop>
+  <tabstop>peapPassword</tabstop>
+  <tabstop>cbAskPeapPassword</tabstop>
+  <tabstop>cbShowPeapPassword</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

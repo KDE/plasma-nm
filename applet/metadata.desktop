@@ -12,6 +12,7 @@ Name[hu]=Hálózatok
 Name[ia]=Retes
 Name[it]=Reti
 Name[ko]=네트워크
+Name[lt]=Tinklai
 Name[nb]=Nettverk
 Name[nds]=Nettwarken
 Name[nl]=Netwerken
@@ -28,6 +29,7 @@ Name[sr@latin]=Mreže
 Name[sv]=Nätverk
 Name[uk]=Мережі
 Name[x-test]=xxNetworksxx
+Name[zh_CN]=网络
 Name[zh_TW]=網路
 
 Comment=Network status and control

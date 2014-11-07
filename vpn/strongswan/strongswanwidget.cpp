@@ -97,17 +97,17 @@ void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &set
         d->ui.leGateway->setText(gateway);
     }
     // Certificate
-    d->ui.leGatewayCertificate->setUrl(QUrl::fromUserInput(dataMap[NM_STRONGSWAN_CERTIFICATE]) );
+    d->ui.leGatewayCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_STRONGSWAN_CERTIFICATE]) );
 
     // Authentication
     const QString method = dataMap[NM_STRONGSWAN_METHOD];
     if (method == QLatin1String(NM_STRONGSWAN_AUTH_KEY)) {
         d->ui.cmbMethod->setCurrentIndex(StrongswanSettingWidgetPrivate::PrivateKey);
-        d->ui.leAuthPrivatekeyCertificate->setUrl(QUrl::fromUserInput(dataMap[NM_STRONGSWAN_USERCERT]));
-        d->ui.leAuthPrivatekeyKey->setUrl(QUrl::fromUserInput(dataMap[NM_STRONGSWAN_USERKEY]));
+        d->ui.leAuthPrivatekeyCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_STRONGSWAN_USERCERT]));
+        d->ui.leAuthPrivatekeyKey->setUrl(QUrl::fromLocalFile(dataMap[NM_STRONGSWAN_USERKEY]));
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_AGENT)) {
         d->ui.cmbMethod->setCurrentIndex(StrongswanSettingWidgetPrivate::SshAgent);
-        d->ui.leAuthSshCertificate->setUrl(QUrl::fromUserInput(dataMap[NM_STRONGSWAN_USERCERT]));
+        d->ui.leAuthSshCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_STRONGSWAN_USERCERT]));
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD)) {
         d->ui.cmbMethod->setCurrentIndex(StrongswanSettingWidgetPrivate::Smartcard);
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_EAP)) {
@@ -158,19 +158,19 @@ QVariantMap StrongswanSettingWidget::setting(bool agentOwned) const
     if (!d->ui.leGateway->text().isEmpty()) {
         data.insert(NM_STRONGSWAN_GATEWAY, d->ui.leGateway->text());
     }
-    data.insert( NM_STRONGSWAN_CERTIFICATE, d->ui.leGatewayCertificate->url().path());
+    data.insert( NM_STRONGSWAN_CERTIFICATE, d->ui.leGatewayCertificate->url().toLocalFile());
 
     // Authentication
     switch (d->ui.cmbMethod->currentIndex())
     {
     case StrongswanSettingWidgetPrivate::PrivateKey:
         data.insert(NM_STRONGSWAN_METHOD, NM_STRONGSWAN_AUTH_KEY);
-        data.insert(NM_STRONGSWAN_USERCERT, d->ui.leAuthPrivatekeyCertificate->url().path());
-        data.insert(NM_STRONGSWAN_USERKEY, d->ui.leAuthPrivatekeyKey->url().path());
+        data.insert(NM_STRONGSWAN_USERCERT, d->ui.leAuthPrivatekeyCertificate->url().toLocalFile());
+        data.insert(NM_STRONGSWAN_USERKEY, d->ui.leAuthPrivatekeyKey->url().toLocalFile());
         break;
     case StrongswanSettingWidgetPrivate::SshAgent:
         data.insert(NM_STRONGSWAN_METHOD, NM_STRONGSWAN_AUTH_AGENT);
-        data.insert(NM_STRONGSWAN_USERCERT, d->ui.leAuthSshCertificate->url().path());
+        data.insert(NM_STRONGSWAN_USERCERT, d->ui.leAuthSshCertificate->url().toLocalFile());
         break;
     case StrongswanSettingWidgetPrivate::Smartcard:
         data.insert(NM_STRONGSWAN_METHOD, NM_STRONGSWAN_AUTH_SMARTCARD);

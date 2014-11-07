@@ -182,10 +182,10 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
     {
     case Private::EnumConnectionType::Certificates:
         contype = QLatin1String(NM_OPENVPN_CONTYPE_TLS);
-        // qCDebug(PLASMA_NM) << "saving VPN TLS settings as urls:" << d->ui.x509CaFile->url().path() << d->ui.x509Cert->url().path() << d->ui.x509Key->url().path();
-        data.insert(QLatin1String(NM_OPENVPN_KEY_CA), d->ui.x509CaFile->url().path());
-        data.insert(QLatin1String(NM_OPENVPN_KEY_CERT), d->ui.x509Cert->url().path());
-        data.insert(QLatin1String(NM_OPENVPN_KEY_KEY), d->ui.x509Key->url().path());
+        // qCDebug(PLASMA_NM) << "saving VPN TLS settings as urls:" << d->ui.x509CaFile->url() << d->ui.x509Cert->url() << d->ui.x509Key->url();
+        data.insert(QLatin1String(NM_OPENVPN_KEY_CA), d->ui.x509CaFile->url().toLocalFile());
+        data.insert(QLatin1String(NM_OPENVPN_KEY_CERT), d->ui.x509Cert->url().toLocalFile());
+        data.insert(QLatin1String(NM_OPENVPN_KEY_KEY), d->ui.x509Key->url().toLocalFile());
         // key password
         if (!d->ui.x509KeyPassword->text().isEmpty()) {
             secretData.insert(QLatin1String(NM_OPENVPN_KEY_CERTPASS), d->ui.x509KeyPassword->text());
@@ -194,7 +194,7 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
         break;
     case Private::EnumConnectionType::Psk:
         contype = QLatin1String(NM_OPENVPN_CONTYPE_STATIC_KEY);
-        data.insert(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY), d->ui.pskSharedKey->url().path());
+        data.insert(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY), d->ui.pskSharedKey->url().toLocalFile());
         switch (d->ui.cmbKeyDirection->currentIndex()) {
         case Private::EnumKeyDirection::None:
             break;
@@ -221,7 +221,7 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
         }
         handleOnePasswordType(d->ui.passPasswordStorage, QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), data, agentOwned);
         // ca
-        data.insert(QLatin1String(NM_OPENVPN_KEY_CA), d->ui.passCaFile->url().path());
+        data.insert(QLatin1String(NM_OPENVPN_KEY_CA), d->ui.passCaFile->url().toLocalFile());
         break;
     case Private::EnumConnectionType::CertsPassword:
         contype = QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD_TLS);
@@ -230,11 +230,11 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
             data.insert(QLatin1String(NM_OPENVPN_KEY_USERNAME), d->ui.x509PassUsername->text());
         }
         // ca
-        data.insert(QLatin1String(NM_OPENVPN_KEY_CA), d->ui.x509PassCaFile->url().path());
+        data.insert(QLatin1String(NM_OPENVPN_KEY_CA), d->ui.x509PassCaFile->url().toLocalFile());
         // cert
-        data.insert(QLatin1String(NM_OPENVPN_KEY_CERT), d->ui.x509PassCert->url().path());
+        data.insert(QLatin1String(NM_OPENVPN_KEY_CERT), d->ui.x509PassCert->url().toLocalFile());
         // key file
-        data.insert(QLatin1String(NM_OPENVPN_KEY_KEY), d->ui.x509PassKey->url().path());
+        data.insert(QLatin1String(NM_OPENVPN_KEY_KEY), d->ui.x509PassKey->url().toLocalFile());
         // key password
         if (!d->ui.x509PassKeyPassword->text().isEmpty()) {
             secretData.insert(QLatin1String(NM_OPENVPN_KEY_CERTPASS), d->ui.x509PassKeyPassword->text());
@@ -261,7 +261,7 @@ void OpenVpnSettingWidget::updateStartDir(const QUrl & url)
     requesters << d->ui.x509CaFile << d->ui.x509Cert << d->ui.x509Key << d->ui.pskSharedKey << d->ui.passCaFile << d->ui.x509PassCaFile
                << d->ui.x509PassCert << d->ui.x509PassKey;
     foreach (KUrlRequester * requester, requesters) {
-        requester->setStartDir(QUrl(url.url(QUrl::RemoveFilename | QUrl::StripTrailingSlash)));
+        requester->setStartDir(url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash));
     }
 }
 

@@ -83,9 +83,9 @@ void Security8021x::loadConfig()
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTls)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodTls));
         m_ui->tlsIdentity->setText(m_setting->identity());
-        m_ui->tlsUserCert->setText(m_setting->clientCertificate()); // FIXME check the blob vs. path case
-        m_ui->tlsCACert->setText(m_setting->caCertificate()); // FIXME check the blob vs. path case
-        m_ui->tlsPrivateKey->setText(m_setting->privateKey()); // FIXME check the blob vs. path case
+        m_ui->tlsUserCert->setUrl(QUrl::fromLocalFile(m_setting->clientCertificate()));
+        m_ui->tlsCACert->setUrl(QUrl::fromLocalFile(m_setting->caCertificate()));
+        m_ui->tlsPrivateKey->setUrl(QUrl::fromLocalFile(m_setting->privateKey()));
         m_ui->tlsPrivateKeyPassword->setText(m_setting->privateKeyPassword());
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodLeap)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodLeap));
@@ -96,7 +96,7 @@ void Security8021x::loadConfig()
         m_ui->fastAnonIdentity->setText(m_setting->anonymousIdentity());
         m_ui->fastAllowPacProvisioning->setChecked((int)m_setting->phase1FastProvisioning() > 0);
         m_ui->pacMethod->setCurrentIndex(m_setting->phase1FastProvisioning() - 1);
-        m_ui->pacFile->setText(m_setting->pacFile()); // TODO check the file scheme used
+        m_ui->pacFile->setUrl(QUrl::fromLocalFile(m_setting->pacFile()));
         if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodGtc)
             m_ui->fastInnerAuth->setCurrentIndex(0);
         else
@@ -107,7 +107,7 @@ void Security8021x::loadConfig()
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTtls)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodTtls));
         m_ui->ttlsAnonIdentity->setText(m_setting->anonymousIdentity());
-        m_ui->ttlsCACert->setText(m_setting->caCertificate());  // FIXME check the blob vs. path case
+        m_ui->ttlsCACert->setUrl(QUrl::fromLocalFile(m_setting->caCertificate()));
         if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodPap)
             m_ui->ttlsInnerAuth->setCurrentIndex(0);
         else if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodMschap)
@@ -122,7 +122,7 @@ void Security8021x::loadConfig()
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPeap)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodPeap));
         m_ui->peapAnonIdentity->setText(m_setting->anonymousIdentity());
-        m_ui->peapCACert->setText(m_setting->caCertificate()); // FIXME check the blob vs. path case
+        m_ui->peapCACert->setUrl(QUrl::fromLocalFile(m_setting->caCertificate()));
         m_ui->peapVersion->setCurrentIndex(m_setting->phase1PeapVersion() + 1);
         if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodMschapv2)
             m_ui->peapInnerAuth->setCurrentIndex(0);
@@ -159,12 +159,12 @@ QVariantMap Security8021x::setting(bool agentOwned) const
     } else if (method == NetworkManager::Security8021xSetting::EapMethodTls) {
         if (!m_ui->tlsIdentity->text().isEmpty())
             setting.setIdentity(m_ui->tlsIdentity->text());
-        if (!m_ui->tlsUserCert->url().isEmpty())
-            setting.setClientCertificate(QFile::encodeName(m_ui->tlsUserCert->url().url()).append('\0'));
-        if (!m_ui->tlsCACert->url().isEmpty())
-            setting.setCaCertificate(QFile::encodeName(m_ui->tlsCACert->url().url()).append('\0'));
-        if (!m_ui->tlsPrivateKey->url().isEmpty())
-            setting.setPrivateKey(QFile::encodeName(m_ui->tlsPrivateKey->url().url()).append('\0'));
+        if (m_ui->tlsUserCert->url().isValid())
+            setting.setClientCertificate(QFile::encodeName(m_ui->tlsUserCert->url().toLocalFile()));
+        if (m_ui->tlsCACert->url().isValid())
+            setting.setCaCertificate(QFile::encodeName(m_ui->tlsCACert->url().toLocalFile()));
+        if (m_ui->tlsPrivateKey->url().isValid())
+            setting.setPrivateKey(QFile::encodeName(m_ui->tlsPrivateKey->url().toLocalFile()));
         if (!m_ui->tlsPrivateKeyPassword->text().isEmpty())
             setting.setPrivateKeyPassword(m_ui->tlsPrivateKeyPassword->text());
 
@@ -188,8 +188,8 @@ QVariantMap Security8021x::setting(bool agentOwned) const
         } else {
             setting.setPhase1FastProvisioning(static_cast<NetworkManager::Security8021xSetting::FastProvisioning>(m_ui->pacMethod->currentIndex() + 1));
         }
-        if (!m_ui->pacFile->text().isEmpty())
-            setting.setPacFile(QFile::encodeName(m_ui->pacFile->url().url()).append('\0'));
+        if (m_ui->pacFile->url().isValid())
+            setting.setPacFile(QFile::encodeName(m_ui->pacFile->url().toLocalFile()));
         if (m_ui->fastInnerAuth->currentIndex() == 0)
             setting.setPhase2AuthMethod(NetworkManager::Security8021xSetting::AuthMethodGtc);
         else
@@ -207,8 +207,8 @@ QVariantMap Security8021x::setting(bool agentOwned) const
     } else if (method == NetworkManager::Security8021xSetting::EapMethodTtls) {
         if (!m_ui->ttlsAnonIdentity->text().isEmpty())
             setting.setAnonymousIdentity(m_ui->ttlsAnonIdentity->text());
-        if (!m_ui->ttlsCACert->text().isEmpty())
-            setting.setCaCertificate(QFile::encodeName(m_ui->ttlsCACert->url().url()).append('\0'));
+        if (m_ui->ttlsCACert->url().isValid())
+            setting.setCaCertificate(QFile::encodeName(m_ui->ttlsCACert->url().toLocalFile()));
         const int innerAuth = m_ui->ttlsInnerAuth->currentIndex();
         if (innerAuth == 0)
             setting.setPhase2AuthMethod(NetworkManager::Security8021xSetting::AuthMethodPap);
@@ -231,8 +231,8 @@ QVariantMap Security8021x::setting(bool agentOwned) const
     } else if (method == NetworkManager::Security8021xSetting::EapMethodPeap) {
         if (!m_ui->peapAnonIdentity->text().isEmpty())
             setting.setAnonymousIdentity(m_ui->peapAnonIdentity->text());
-        if (!m_ui->peapCACert->text().isEmpty())
-            setting.setCaCertificate(QFile::encodeName(m_ui->peapCACert->url().url()).append('\0'));
+        if (m_ui->peapCACert->url().isValid())
+            setting.setCaCertificate(QFile::encodeName(m_ui->peapCACert->url().toLocalFile()));
         setting.setPhase1PeapVersion(static_cast<NetworkManager::Security8021xSetting::PeapVersion>(m_ui->peapVersion->currentIndex() - 1));
         const int innerAuth = m_ui->peapInnerAuth->currentIndex();
         if (innerAuth == 0)

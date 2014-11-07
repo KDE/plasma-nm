@@ -23,6 +23,7 @@
 
 #include <KAboutData>
 #include <KLocalizedString>
+#include <KDBusService>
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -49,9 +50,12 @@ int main(int argc, char *argv[])
     about.setProductName("plasma-nm/editor");
 
     KAboutData::setApplicationData(about);
+    KDBusService service(KDBusService::Unique);
 
     ConnectionEditor * editor = new ConnectionEditor();
     editor->show();
+
+    QObject::connect(&service, &KDBusService::activateRequested, editor, &ConnectionEditor::activateAndRaise);
 
     return app.exec();
 }

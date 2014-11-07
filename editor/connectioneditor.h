@@ -47,6 +47,9 @@ public:
     explicit ConnectionEditor(QWidget* parent = 0, Qt::WindowFlags flags = 0);
     virtual ~ConnectionEditor();
 
+public Q_SLOTS:
+    void activateAndRaise();
+
 private Q_SLOTS:
     void addConnection(QAction * action);
     void connectionAdded(const QString & connection);

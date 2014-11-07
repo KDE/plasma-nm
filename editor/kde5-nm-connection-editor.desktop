@@ -114,5 +114,7 @@ Exec=kde5-nm-connection-editor
 Icon=preferences-system-network
 Type=Application
 Terminal=false
+X-DBUS-StartupType=Unique
+X-DBUS-ServiceName=org.kde.kde5-nm-connection-editor
 Categories=Qt;KDE;Network;
 NoDisplay=true

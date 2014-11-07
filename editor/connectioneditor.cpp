@@ -113,6 +113,11 @@ ConnectionEditor::~ConnectionEditor()
     delete m_editor;
 }
 
+void ConnectionEditor::activateAndRaise()
+{
+    setWindowState((windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
+}
+
 void ConnectionEditor::initializeMenu()
 {
     m_menu = new KActionMenu(QIcon::fromTheme("list-add"), i18n("Add"), this);

@@ -246,7 +246,6 @@ PlasmaComponents.ListItem {
                             font.pointSize: theme.smallestFont.pointSize;
                             opacity: 0.6;
                             text: ConnectionDetails[(index*2)+1];
-                            textFormat: Text.StyledText;
                         }
                     }
                 }

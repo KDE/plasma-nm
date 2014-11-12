@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef INTDELEGATE_H
 #define INTDELEGATE_H
 
-#include <KLineEdit>
+#include <QLineEdit>
 #include <QStandardItem>
 #include <QStandardItemModel>
 

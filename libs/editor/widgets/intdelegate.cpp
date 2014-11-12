@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "intdelegate.h"
 #include <QIntValidator>
 
-#include <KLineEdit>
+#include <QLineEdit>
 
 IntDelegate::IntDelegate(QObject * parent) : Delegate(parent), m_boundary(false) {}
 IntDelegate::IntDelegate(int min, int max, QObject * parent) : Delegate(parent), m_min(min), m_max(max), m_boundary(true) {}
@@ -29,7 +29,7 @@ IntDelegate::~IntDelegate() {}
 
 QWidget * IntDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const
 {
-    KLineEdit *editor = new KLineEdit(parent);
+    QLineEdit *editor = new QLineEdit(parent);
     if (m_boundary)
         editor->setValidator(new QIntValidator(m_min, m_max, editor));
     else

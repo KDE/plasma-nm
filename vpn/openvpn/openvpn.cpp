@@ -36,6 +36,8 @@
 #include "openvpnwidget.h"
 #include "openvpnauth.h"
 
+#include <arpa/inet.h>
+
 #include "nm-openvpn-service.h"
 
 K_PLUGIN_FACTORY_WITH_JSON(OpenVpnUiPluginFactory, "plasmanetworkmanagement_openvpnui.json", registerPlugin<OpenVpnUiPlugin>();)
@@ -550,7 +552,23 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
 
         // Import X-NM-Routes if present
         if (key_value[0] == "X-NM-Routes") {
-            ipv4Data.insert("X-NM-Routes", key_value[1]);
+            QList<NetworkManager::IpRoute> list;
+            for (int i = 1; i < key_value.count(); i++) {
+                NetworkManager::IpRoute ipRoute;
+                ipRoute.setIp(QHostAddress(key_value[1].split('/').first()));
+                ipRoute.setPrefixLength(key_value[1].split('/').at(1).toInt());
+                list << ipRoute;
+            }
+            QList<QList<uint> > dbusRoutes;
+            foreach (const NetworkManager::IpRoute &route, list) {
+                QList<uint> dbusRoute;
+                dbusRoute << htonl(route.ip().toIPv4Address())
+                        << route.prefixLength()
+                        << htonl(route.nextHop().toIPv4Address())
+                        << route.metric();
+                dbusRoutes << dbusRoute;
+            }
+            ipv4Data.insert("routes", QVariant::fromValue(dbusRoutes));
             continue;
         }
     }
@@ -813,7 +831,7 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
         }
         if (!routes.isEmpty()) {
             routes = "X-NM-Routes " + routes.trimmed();
-            expFile.write(routes.toLatin1());
+            expFile.write(routes.toLatin1() + '\n');
         }
     }
     // Add hard-coded stuff

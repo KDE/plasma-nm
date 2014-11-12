@@ -38,6 +38,8 @@
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/Ipv4Setting>
 
+#include <arpa/inet.h>
+
 #include "vpncwidget.h"
 #include "vpncauth.h"
 
@@ -142,7 +144,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
     if (!config) {
         mErrorMessage = i18n("File %1 could not be opened.", fileName);
         return result;
-    }
+        }
 
     KConfigGroup cg(config, "main");   // Keys&Values are stored under [main]
     if (cg.exists()) {
@@ -271,7 +273,23 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
             ipv4Data.insert("never-default", cg.readEntry("EnableLocalLAN"));
         }
         if (!decrPlugin->readStringKeyValue(cg,"X-NM-Routes").isEmpty()) {
-            ipv4Data.insert("X-NM-Routes", decrPlugin->readStringKeyValue(cg,"X-NM-Routes"));
+            QList<NetworkManager::IpRoute> list;
+            foreach (const QString &route, decrPlugin->readStringKeyValue(cg,"X-NM-Routes").split(' ')) {
+                NetworkManager::IpRoute ipRoute;
+                ipRoute.setIp(QHostAddress(route.split('/').first()));
+                ipRoute.setPrefixLength(route.split('/').at(1).toInt());
+                list << ipRoute;
+            }
+            QList<QList<uint> > dbusRoutes;
+            foreach (const NetworkManager::IpRoute &route, list) {
+                QList<uint> dbusRoute;
+                dbusRoute << htonl(route.ip().toIPv4Address())
+                        << route.prefixLength()
+                        << htonl(route.nextHop().toIPv4Address())
+                        << route.metric();
+                dbusRoutes << dbusRoute;
+            }
+            ipv4Data.insert("routes", QVariant::fromValue(dbusRoutes));
         }
 
         // Set the '...-type' and '...-flags' value also

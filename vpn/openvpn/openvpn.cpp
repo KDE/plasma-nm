@@ -67,7 +67,6 @@ K_PLUGIN_FACTORY_WITH_JSON(OpenVpnUiPluginFactory, "plasmanetworkmanagement_open
 #define TLS_CLIENT_TAG "tls-client"
 #define TLS_REMOTE_TAG "tls-remote"
 #define TUNMTU_TAG "tun-mtu"
-#define REDIRECT_GATEWAY_TAG "redirect-gateway"
 #define KEY_DIRECTION_TAG "key-direction"
 
 #define BEGIN_KEY_CA_TAG "<ca>"
@@ -204,7 +203,6 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
     bool proxy_set = false;
     bool have_pass = false;
     bool have_sk = false;
-    bool have_redirect_gateway = false;
     int key_direction = -1;
 
     QTextStream in(&impFile);
@@ -497,10 +495,6 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             continue;
         }
 
-        if (key_value[0] == REDIRECT_GATEWAY_TAG) {
-            have_redirect_gateway = true;
-            continue;
-        }
         if (key_value[0] == KEY_DIRECTION_TAG) {
             if (key_value.count() == 2) {
                 key_direction = key_value[1].toInt();
@@ -810,13 +804,7 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
         }
     }
 
-    // Export never default setting.
     NetworkManager::Ipv4Setting::Ptr ipv4Setting = connection->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
-    if (!ipv4Setting->neverDefault()) {
-        line = QString(REDIRECT_GATEWAY_TAG) + '\n';
-        expFile.write(line.toLatin1());
-    }
-    
     // Export X-NM-Routes
     if (!ipv4Setting->routes().isEmpty()) {
         QString routes;

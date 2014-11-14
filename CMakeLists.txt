@@ -9,7 +9,7 @@ set(PLASMANM_VERSION_STRING ${PROJECT_VERSION} )
 
 ################# set KDE specific information #################
 
-find_package(ECM 0.0.12 REQUIRED NO_MODULE)
+find_package(ECM 1.3.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 include(KDEInstallDirs)

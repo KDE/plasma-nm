@@ -303,7 +303,7 @@ void ConnectionDetailEditor::initTabs()
         SettingWidget * widget = dynamic_cast<SettingWidget *>(m_ui->tabWidget->widget(i));
         if (widget) {
             valid = valid && widget->isValid();
-            connect(widget, SIGNAL(validChanged(bool)), SLOT(validChanged(bool)));
+            connect(widget, &SettingWidget::validChanged, this, &ConnectionDetailEditor::validChanged);
         }
     }
     enableOKButton(valid);
@@ -390,8 +390,8 @@ void ConnectionDetailEditor::replyFinished(QDBusPendingCallWatcher *watcher)
         notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
         notification->sendEvent();
 
-        connect(this, SIGNAL(accepted()), notification, SLOT(close()));
-        connect(this, SIGNAL(rejected()), notification, SLOT(close()));
+        connect(this, &ConnectionDetailEditor::accepted, notification, &KNotification::close);
+        connect(this, &ConnectionDetailEditor::rejected, notification, &KNotification::close);
     }
 
     initTabs();

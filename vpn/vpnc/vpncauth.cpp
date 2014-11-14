@@ -38,7 +38,7 @@ VpncAuthDialog::VpncAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, Q
     Q_D(VpncAuthDialog);
     d->ui.setupUi(this);
     d->setting = setting;
-    connect(d->ui.cbShowPasswords, SIGNAL(toggled(bool)), this, SLOT(showPasswordsChanged(bool)));
+    connect(d->ui.cbShowPasswords, &QCheckBox::toggled, this, &VpncAuthDialog::showPasswordsChanged);
 
     readSecrets();
 

@@ -22,7 +22,6 @@
 #ifndef PLASMA_NM_UIUTILS_H
 #define PLASMA_NM_UIUTILS_H
 
-class QSizeF;
 
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/ModemDevice>

@@ -36,12 +36,12 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     m_ui->setupUi(this);
 
-    connect(m_ui->cboUserPasswordType, SIGNAL(currentIndexChanged(int)), SLOT(userPasswordTypeChanged(int)));
-    connect(m_ui->cboGroupPasswordType, SIGNAL(currentIndexChanged(int)), SLOT(groupPasswordTypeChanged(int)));
-    connect(m_ui->cbShowPasswords, SIGNAL(toggled(bool)), SLOT(showPasswords(bool)));
-    connect(m_ui->btnAdvanced, SIGNAL(clicked()), SLOT(showAdvanced()));
+    connect(m_ui->cboUserPasswordType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &VpncWidget::userPasswordTypeChanged);
+    connect(m_ui->cboGroupPasswordType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &VpncWidget::groupPasswordTypeChanged);
+    connect(m_ui->cbShowPasswords, &QCheckBox::toggled, this, &VpncWidget::showPasswords);
+    connect(m_ui->btnAdvanced, &QPushButton::clicked, this, &VpncWidget::showAdvanced);
 
-    connect(m_ui->gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->gateway, &QLineEdit::textChanged, this, &VpncWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

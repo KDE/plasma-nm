@@ -82,12 +82,9 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     initializeConnections();
     initializeMenu();
 
-    connect(m_editor->connectionsWidget, SIGNAL(pressed(QModelIndex)),
-            SLOT(slotItemClicked(QModelIndex)));
-    connect(m_editor->connectionsWidget, SIGNAL(doubleClicked(QModelIndex)),
-            SLOT(slotItemDoubleClicked(QModelIndex)));
-    connect(m_editor->connectionsWidget, SIGNAL(customContextMenuRequested(QPoint)),
-            SLOT(slotContextMenuRequested(QPoint)));
+    connect(m_editor->connectionsWidget, &QTreeView::pressed, this, &ConnectionEditor::slotItemClicked);
+    connect(m_editor->connectionsWidget, &QTreeView::doubleClicked, this, &ConnectionEditor::slotItemDoubleClicked);
+    connect(m_editor->connectionsWidget, &QTreeView::customContextMenuRequested, this, &ConnectionEditor::slotContextMenuRequested);
     connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
             SLOT(addConnection(QAction*)));
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
@@ -191,33 +188,33 @@ void ConnectionEditor::initializeMenu()
 
     QAction * kAction = new QAction(QIcon::fromTheme("network-connect"), i18n("Connect"), this);
     kAction->setEnabled(false);
-    connect(kAction, SIGNAL(triggered()), SLOT(connectConnection()));
+    connect(kAction, &QAction::triggered, this, &ConnectionEditor::connectConnection);
     actionCollection()->addAction("connect_connection", kAction);
 
     kAction = new QAction(QIcon::fromTheme("network-disconnect"), i18n("Disconnect"), this);
     kAction->setEnabled(false);
-    connect(kAction, SIGNAL(triggered()), SLOT(disconnectConnection()));
+    connect(kAction, &QAction::triggered, this, &ConnectionEditor::disconnectConnection);
     actionCollection()->addAction("disconnect_connection", kAction);
 
     kAction = new QAction(QIcon::fromTheme("configure"), i18n("Edit..."), this);
     kAction->setEnabled(false);
-    connect(kAction, SIGNAL(triggered()), SLOT(editConnection()));
+    connect(kAction, &QAction::triggered, this, &ConnectionEditor::editConnection);
     actionCollection()->addAction("edit_connection", kAction);
 
     kAction = new QAction(QIcon::fromTheme("edit-delete"), i18n("Delete"), this);
     kAction->setEnabled(false);
-    connect(kAction, SIGNAL(triggered()), SLOT(removeConnection()));
+    connect(kAction, &QAction::triggered, this, &ConnectionEditor::removeConnection);
     actionCollection()->addAction("delete_connection", kAction);
     actionCollection()->setDefaultShortcut(kAction, QKeySequence::Delete);
 
     kAction = new QAction(QIcon::fromTheme("document-import"), i18n("Import VPN..."), this);
     actionCollection()->addAction("import_vpn", kAction);
-    connect(kAction, SIGNAL(triggered()), SLOT(importVpn()));
+    connect(kAction, &QAction::triggered, this, &ConnectionEditor::importVpn);
 
     kAction = new QAction(QIcon::fromTheme("document-export"), i18n("Export VPN..."), this);
     actionCollection()->addAction("export_vpn", kAction);
     kAction->setEnabled(false);
-    connect(kAction, SIGNAL(triggered()), SLOT(exportVpn()));
+    connect(kAction, &QAction::triggered, this, &ConnectionEditor::exportVpn);
 
     KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
     KStandardAction::quit(this, SLOT(close()), actionCollection());

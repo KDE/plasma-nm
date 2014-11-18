@@ -56,7 +56,7 @@ IpV6RoutesWidget::IpV6RoutesWidget(QWidget * parent)
 {
     d->ui.setupUi(this);
     d->ui.tableViewAddresses->setModel(&d->model);
-    d->ui.tableViewAddresses->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
+    d->ui.tableViewAddresses->horizontalHeader()->setResizeMode(QHeaderView::Interactive);
 
     IpV6Delegate *ipDelegate = new IpV6Delegate(this);
     IntDelegate *netmaskDelegate = new IntDelegate(0,128,this);

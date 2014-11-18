@@ -82,7 +82,7 @@ IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
     m_ui->setupUi(this);
 
     m_ui->tableViewAddresses->setModel(&d->model);
-    m_ui->tableViewAddresses->horizontalHeader()->setResizeMode(QHeaderView::ResizeToContents);
+    m_ui->tableViewAddresses->horizontalHeader()->setResizeMode(QHeaderView::Interactive);
     m_ui->tableViewAddresses->horizontalHeader()->setStretchLastSection(true);
 
     IpV4Delegate *ipDelegate = new IpV4Delegate(this);

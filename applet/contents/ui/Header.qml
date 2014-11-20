@@ -27,80 +27,48 @@ PlasmaComponents.ListItem {
 
     property alias text: headerLabel.text;
 
-    anchors {
-        left: parent.left;
-        right: parent.right;
-    }
-
+    width: parent.width
     height: headerLabel.height + units.gridUnit;
     sectionDelegate: true;
 
     PlasmaComponents.Label {
         id: headerLabel;
-
-        anchors {
-            horizontalCenter: parent.horizontalCenter;
-            verticalCenter: parent.verticalCenter;
-        }
-
+        anchors.centerIn: parent
         height: paintedHeight;
         font.weight: Font.DemiBold;
     }
 
-    PlasmaCore.FrameSvgItem {
-        id: buttonFrame;
-
+    PlasmaComponents.ToolButton {
         anchors {
-            fill: refreshButton;
-            bottomMargin: -Math.round(units.gridUnit / 3);
-            leftMargin: -Math.round(units.gridUnit / 3);
-            rightMargin: -Math.round(units.gridUnit / 3);
-            topMargin: -Math.round(units.gridUnit / 3);
+            top: parent.top
+            bottom: parent.bottom
+            margins: -Math.round(units.gridUnit / 3)
+            right: parent.right
+            rightMargin: units.gridUnit / 2
+        }
+        width: height
+        flat: true
+        visible: header.text === i18n("Available connections")
+
+        onClicked: {
+            handler.requestScan()
+            refreshAnimation.restart()
         }
 
-        width: height;
-        imagePath: "widgets/button"
-        prefix: "normal"
-        visible: header.text == i18n("Available connections") && refreshButtonMouseArea.containsMouse;
-    }
+        PlasmaCore.SvgItem {
+            anchors {
+                fill: parent
+                margins: Math.round(units.gridUnit / 3)
+            }
+            elementId: "view-refresh"
+            svg: PlasmaCore.FrameSvg { imagePath: "icons/view" }
 
-    PlasmaCore.SvgItem {
-        id: refreshButton;
-
-        anchors {
-            bottom: parent.bottom;
-            right: parent.right;
-            rightMargin: Math.round(units.gridUnit / 2);
-            top: parent.top;
-        }
-
-        width: height;
-        elementId: "view-refresh"
-        visible: header.text == i18n("Available connections");
-        svg: PlasmaCore.FrameSvg { imagePath: "icons/view" }
-
-        RotationAnimation {
-            id: animation;
-
-            direction: RotationAnimation.Clockwise
-            duration: 1000;
-            from: 0;
-            to: 720;
-            target: refreshButton;
-            // Workaround for warning message about non-existing property "rotation"
-            // BUG: https://bugreports.qt-project.org/browse/QTBUG-22141
-            property: "rotation";
-        }
-
-        MouseArea {
-            id: refreshButtonMouseArea;
-
-            anchors.fill: parent;
-            hoverEnabled: true;
-
-            onClicked: {
-                handler.requestScan();
-                animation.start();
+            RotationAnimator on rotation {
+                id: refreshAnimation
+                duration: 1000
+                running: false
+                from: 0
+                to: 720
             }
         }
     }

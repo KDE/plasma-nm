@@ -116,6 +116,7 @@ bool AppletProxyModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 {
     const bool leftAvailable = (NetworkModelItem::ItemType)sourceModel()->data(left, NetworkModel::ItemTypeRole).toUInt() != NetworkModelItem::UnavailableConnection;
     const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const int leftConnectionState = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt();
     const QString leftName = sourceModel()->data(left, NetworkModel::NameRole).toString();
     const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
     const QString leftUuid = sourceModel()->data(left, NetworkModel::UuidRole).toString();
@@ -123,6 +124,7 @@ bool AppletProxyModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 
     const bool rightAvailable = (NetworkModelItem::ItemType)sourceModel()->data(right, NetworkModel::ItemTypeRole).toUInt() != NetworkModelItem::UnavailableConnection;
     const bool rightConnected = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const int rightConnectionState = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt();
     const QString rightName = sourceModel()->data(right, NetworkModel::NameRole).toString();
     const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
     const QString rightUuid = sourceModel()->data(right, NetworkModel::UuidRole).toString();
@@ -137,6 +139,12 @@ bool AppletProxyModel::lessThan(const QModelIndex& left, const QModelIndex& righ
     if (leftConnected < rightConnected) {
         return true;
     } else if (leftConnected > rightConnected) {
+        return false;
+    }
+
+    if (leftConnectionState > rightConnectionState) {
+        return true;
+    } else if (leftConnectionState < rightConnectionState) {
         return false;
     }
 

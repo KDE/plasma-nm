@@ -52,6 +52,7 @@
 #include <KStandardAction>
 #include <KXMLGUIFactory>
 #include <KWallet/Wallet>
+#include <KSharedConfig>
 
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>
@@ -82,6 +83,9 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     initializeConnections();
     initializeMenu();
 
+    KConfigGroup grp(KSharedConfig::openConfig(), "ConnectionsWidget");
+    m_editor->connectionsWidget->header()->restoreState(grp.readEntry<QByteArray>("state", QByteArray()));
+
     connect(m_editor->connectionsWidget, &QTreeView::pressed, this, &ConnectionEditor::slotItemClicked);
     connect(m_editor->connectionsWidget, &QTreeView::doubleClicked, this, &ConnectionEditor::slotItemDoubleClicked);
     connect(m_editor->connectionsWidget, &QTreeView::customContextMenuRequested, this, &ConnectionEditor::slotContextMenuRequested);
@@ -107,6 +111,8 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
 
 ConnectionEditor::~ConnectionEditor()
 {
+    KConfigGroup grp(KSharedConfig::openConfig(), "ConnectionsWidget");
+    grp.writeEntry("state", m_editor->connectionsWidget->header()->saveState());
     delete m_editor;
 }
 

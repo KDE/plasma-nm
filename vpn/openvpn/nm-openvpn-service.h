@@ -54,6 +54,7 @@
 #define NM_OPENVPN_KEY_USERNAME "username"
 #define NM_OPENVPN_KEY_TAP_DEV "tap-dev"
 #define NM_OPENVPN_KEY_TLS_REMOTE "tls-remote"
+#define NM_OPENVPN_KEY_REMOTE_CERT_TLS "remote-cert-tls"
 
 #define NM_OPENVPN_KEY_PASSWORD "password"
 #define NM_OPENVPN_KEY_CERTPASS "cert-pass"

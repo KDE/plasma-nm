@@ -208,6 +208,15 @@ void OpenVpnAdvancedWidget::loadConfig()
     if (dataMap.contains(NM_OPENVPN_KEY_TLS_REMOTE)) {
         m_ui->subjectMatch->setText(dataMap[NM_OPENVPN_KEY_TLS_REMOTE]);
     }
+
+    if (dataMap.contains(NM_OPENVPN_KEY_REMOTE_CERT_TLS)) {
+        const QString remoteCertTls = dataMap[NM_OPENVPN_KEY_REMOTE_CERT_TLS];
+        m_ui->chkRemoteCertTls->setChecked(true);
+        m_ui->labelRemoteCertTls->setEnabled(true);
+        m_ui->cmbRemoteCertTls->setEnabled(true);
+        m_ui->cmbRemoteCertTls->setCurrentIndex(remoteCertTls == QLatin1String("server") ? 0 : 1);
+    }
+
     m_ui->useExtraTlsAuth->setChecked(!dataMap[NM_OPENVPN_KEY_TA].isEmpty());
     m_ui->kurlTlsAuthKey->setUrl(KUrl(dataMap[NM_OPENVPN_KEY_TA]) );
     if (dataMap.contains(NM_OPENVPN_KEY_TA_DIR)) {
@@ -320,6 +329,11 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     if (!m_ui->subjectMatch->text().isEmpty()) {
         data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE), m_ui->subjectMatch->text());
     }
+
+    if (m_ui->chkRemoteCertTls->isChecked()) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_CERT_TLS), m_ui->cmbRemoteCertTls->currentText().toLower());
+    }
+
     if (m_ui->useExtraTlsAuth->isChecked()) {
         KUrl tlsAuthKeyUrl = m_ui->kurlTlsAuthKey->url();
         if (!tlsAuthKeyUrl.isEmpty()) {

@@ -31,7 +31,7 @@ public:
     explicit IpV4Delegate(QObject * parent = 0);
     virtual ~IpV4Delegate();
 
-    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
 };
 
 #endif

@@ -43,11 +43,11 @@ public:
                QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~BondWidget();
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    QVariantMap setting(bool agentOwned = false) const;
+    QVariantMap setting(bool agentOwned = false) const Q_DECL_OVERRIDE;
 
-    virtual bool isValid() const;
+    virtual bool isValid() const Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void addBond(QAction * action);

@@ -33,7 +33,7 @@ public:
     explicit IpV6Delegate(QObject * parent = 0);
     virtual ~IpV6Delegate();
 
-    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
 };
 
 #endif

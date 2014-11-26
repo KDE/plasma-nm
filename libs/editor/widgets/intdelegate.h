@@ -35,7 +35,7 @@ public:
     IntDelegate(int min, int max, QObject * parent = 0);
     virtual ~IntDelegate();
 
-    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
 
 private:
     int m_min;

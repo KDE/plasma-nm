@@ -39,9 +39,9 @@ public:
     explicit PPPWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~PPPWidget();
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    QVariantMap setting(bool agentOwned = false) const;
+    QVariantMap setting(bool agentOwned = false) const Q_DECL_OVERRIDE;
 
 private:
     Ui::PPPWidget * m_ui;

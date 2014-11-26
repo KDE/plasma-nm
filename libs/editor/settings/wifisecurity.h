@@ -46,14 +46,14 @@ public:
                  const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(),
                  QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~WifiSecurity();
-    void loadConfig(const NetworkManager::Setting::Ptr &setting);
-    QVariantMap setting(bool agentOwned = false) const;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    QVariantMap setting(bool agentOwned = false) const Q_DECL_OVERRIDE;
     QVariantMap setting8021x(bool agentOwned = false) const;
 
     bool enabled() const;
     bool enabled8021x() const;
 
-    virtual bool isValid() const;
+    virtual bool isValid() const Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void securityChanged(int index);

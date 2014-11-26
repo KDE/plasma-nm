@@ -24,6 +24,8 @@
 #include "networkmodelitem.h"
 #include "uiutils.h"
 
+#include <NetworkManagerQt/Settings>
+
 #include <QIcon>
 #include <QFont>
 
@@ -77,6 +79,16 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
     const bool isActivated = (NetworkManager::ActiveConnection::State) sourceModel()->data(sourceIndex, NetworkModel::ConnectionStateRole).toInt()
                              == NetworkManager::ActiveConnection::Activated;
     NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(sourceModel()->data(sourceIndex, NetworkModel::TypeRole).toInt());
+
+    NetworkManager::ConnectionSettings::Ptr settings;
+    NetworkManager::VpnSetting::Ptr vpnSetting ;
+    if (type == NetworkManager::ConnectionSettings::Vpn) {
+        settings = NetworkManager::findConnection(sourceModel()->data(sourceIndex, NetworkModel::ConnectionPathRole).toString())->settings();
+        if (settings) {
+            vpnSetting = settings->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
+        }
+    }
+
     QString tooltip;
     const QString iconName = UiUtils::iconAndTitleForConnectionSettingsType(type, tooltip);
     const int column = index.column();
@@ -95,6 +107,9 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
             }
             return connectionName;
         case 1:
+            if (type == NetworkManager::ConnectionSettings::Vpn && vpnSetting) {
+                return QString("%1 (%2)").arg(tooltip).arg(vpnSetting->serviceType().section('.', -1));
+            }
             return tooltip;
         case 2:
             return lastUsed;

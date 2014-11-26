@@ -1,7 +1,7 @@
 /*
     Copyright 2011 Lamarque Souza <lamarque@kde.org>
     Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
-    Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -46,8 +46,6 @@
 BluetoothMonitor::BluetoothMonitor(QObject * parent)
     : QObject(parent)
 {
-    QDBusConnection::sessionBus().registerService("org.kde.plasmanetworkmanagement");
-    QDBusConnection::sessionBus().registerObject("/org/kde/plasmanetworkmanagement", this, QDBusConnection::ExportScriptableContents);
 }
 
 BluetoothMonitor::~BluetoothMonitor()

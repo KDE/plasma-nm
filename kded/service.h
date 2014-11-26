@@ -33,9 +33,9 @@ class NetworkManagementServicePrivate;
 
 class Q_DECL_EXPORT NetworkManagementService : public KDEDModule
 {
-    Q_CLASSINFO("D-Bus Interface", "org.kde.plasmanetworkmanagement")
-    Q_OBJECT
-    Q_DECLARE_PRIVATE(NetworkManagementService)
+Q_CLASSINFO("D-Bus Interface", "org.kde.plasmanetworkmanagement")
+Q_OBJECT
+Q_DECLARE_PRIVATE(NetworkManagementService)
 public:
     NetworkManagementService(QObject * parent, const QVariantList&);
     virtual ~NetworkManagementService();

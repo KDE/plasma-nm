@@ -33,7 +33,7 @@
 NetworkModel::NetworkModel(QObject* parent)
     : QAbstractListModel(parent)
 {
-    QLoggingCategory::setFilterRules(QStringLiteral("plasma-nm.debug = false"));
+    QLoggingCategory::setFilterRules(QStringLiteral("plasma-nm.debug = true"));
 
     initialize();
 }

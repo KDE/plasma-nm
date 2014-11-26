@@ -24,6 +24,7 @@
 #include <QDBusInterface>
 
 #include <NetworkManagerQt/Connection>
+#include <ModemManagerQt/GenericTypes>
 
 #include <config.h>
 
@@ -109,12 +110,14 @@ public Q_SLOTS:
 private Q_SLOTS:
     void initKdedModule();
     void replyFinished(QDBusPendingCallWatcher * watcher);
+    void unlockRequiredChanged(MMModemLock modemLock);
 
 private:
     bool m_tmpBluetoothEnabled;
     bool m_tmpWimaxEnabled;
     bool m_tmpWirelessEnabled;
     bool m_tmpWwanEnabled;
+    QString m_tmpConnectionPath;
     QString m_tmpConnectionUuid;
     QString m_tmpDevicePath;
     QString m_tmpSpecificPath;

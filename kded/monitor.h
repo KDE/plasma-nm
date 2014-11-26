@@ -1,7 +1,5 @@
 /*
-    Copyright 2011 Lamarque Souza <lamarque@kde.org>
-    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -20,36 +18,35 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_BLUETOOTH_MONITOR_H
-#define PLASMA_NM_BLUETOOTH_MONITOR_H
-#if WITH_MODEMMANAGER_SUPPORT
-#include "mobileconnectionwizard.h"
-#include <ModemManagerQt/manager.h>
-#endif
-#include <QDBusObjectPath>
+#ifndef PLASMA_NM_MONITOR_H
+#define PLASMA_NM_MONITOR_H
 
-class BluetoothMonitor: public QObject
+#include <QObject>
+#include <QDBusPendingCallWatcher>
+
+#include "bluetoothmonitor.h"
+#include "modemmonitor.h"
+#include <config.h>
+
+class Q_DECL_EXPORT Monitor : public QObject
 {
 Q_OBJECT
+Q_CLASSINFO("D-Bus Interface", "org.kde.plasmanetworkmanagement")
 public:
-    explicit BluetoothMonitor(QObject * parent);
-    ~BluetoothMonitor();
+    explicit Monitor(QObject * parent);
+    virtual ~Monitor();
 
-    void addBluetoothConnection(const QString & bdAddr, const QString & service);
-
-private Q_SLOTS:
-    void init();
+public Q_SLOTS:
+    Q_SCRIPTABLE void addBluetoothConnection(const QString &bdAddr, const QString &service);
 #if WITH_MODEMMANAGER_SUPPORT
-    void modemAdded(const QString &udi);
+    Q_SCRIPTABLE void unlockModem(const QString &modem);
 #endif
 private:
-    QString mBdaddr;
-    QString mService;
-    QString mDunDevice;
-    QString mDevicePath;
-    QString mDeviceName;
+    BluetoothMonitor * m_bluetoothMonitor;
 #if WITH_MODEMMANAGER_SUPPORT
-    QWeakPointer<MobileConnectionWizard> mobileConnectionWizard;
+    ModemMonitor * m_modemMonitor;
 #endif
 };
-#endif
+
+
+#endif // PLASMA_NM_MONITOR_H

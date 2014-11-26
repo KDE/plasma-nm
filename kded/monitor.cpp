@@ -1,7 +1,5 @@
 /*
-    Copyright 2011 Lamarque Souza <lamarque@kde.org>
-    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -20,36 +18,38 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_BLUETOOTH_MONITOR_H
-#define PLASMA_NM_BLUETOOTH_MONITOR_H
-#if WITH_MODEMMANAGER_SUPPORT
-#include "mobileconnectionwizard.h"
-#include <ModemManagerQt/manager.h>
-#endif
-#include <QDBusObjectPath>
 
-class BluetoothMonitor: public QObject
+#include "monitor.h"
+
+Monitor::Monitor(QObject* parent)
+    : QObject(parent)
 {
-Q_OBJECT
-public:
-    explicit BluetoothMonitor(QObject * parent);
-    ~BluetoothMonitor();
-
-    void addBluetoothConnection(const QString & bdAddr, const QString & service);
-
-private Q_SLOTS:
-    void init();
 #if WITH_MODEMMANAGER_SUPPORT
-    void modemAdded(const QString &udi);
+    m_modemMonitor = new ModemMonitor(this);
 #endif
-private:
-    QString mBdaddr;
-    QString mService;
-    QString mDunDevice;
-    QString mDevicePath;
-    QString mDeviceName;
+    m_bluetoothMonitor = new BluetoothMonitor(this);
+
+    QDBusConnection::sessionBus().registerService("org.kde.plasmanetworkmanagement");
+    QDBusConnection::sessionBus().registerObject("/org/kde/plasmanetworkmanagement", this, QDBusConnection::ExportScriptableContents);
+}
+
+Monitor::~Monitor()
+{
+    delete m_bluetoothMonitor;
 #if WITH_MODEMMANAGER_SUPPORT
-    QWeakPointer<MobileConnectionWizard> mobileConnectionWizard;
+    delete m_modemMonitor;
 #endif
-};
+}
+
+void Monitor::addBluetoothConnection(const QString& bdAddr, const QString& service)
+{
+    m_bluetoothMonitor->addBluetoothConnection(bdAddr, service);
+}
+
+#if WITH_MODEMMANAGER_SUPPORT
+void Monitor::unlockModem(const QString& modem)
+{
+    qDebug() << "unlocking " << modem;
+    m_modemMonitor->unlockModem(modem);
+}
 #endif

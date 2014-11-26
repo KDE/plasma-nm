@@ -5,13 +5,14 @@ include_directories(${CMAKE_SOURCE_DIR}/libs/editor/widgets)
 if (WITH_MODEMMANAGER_SUPPORT)
     set(kded_networkmanagement_SRCS
         ../libs/debug.cpp
+        bluetoothmonitor.cpp
         notification.cpp
+        modemmonitor.cpp
+        monitor.cpp
         passworddialog.cpp
+        pindialog.cpp
         secretagent.cpp
         service.cpp
-        bluetoothmonitor.cpp
-        modemmonitor.cpp
-        pindialog.cpp
     )
     ki18n_wrap_ui(kded_networkmanagement_SRCS
         pinwidget.ui
@@ -21,11 +22,13 @@ if (WITH_MODEMMANAGER_SUPPORT)
 else()
     set(kded_networkmanagement_SRCS
         ../libs/debug.cpp
+        ../libs/debug.cpp
+        bluetoothmonitor.cpp
         notification.cpp
+        monitor.cpp
         passworddialog.cpp
         secretagent.cpp
         service.cpp
-        bluetoothmonitor.cpp
     )
     ki18n_wrap_ui(kded_networkmanagement_SRCS
         passworddialog.ui

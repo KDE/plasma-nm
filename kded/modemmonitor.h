@@ -1,6 +1,7 @@
 /*
     Copyright 2009 Will Stephenson <wstephenson@kde.org>
     Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -28,7 +29,8 @@
 #include <config.h>
 
 #include <ModemManager/ModemManager.h>
-#include <ModemManagerQt/modem.h>
+#include <ModemManagerQt/ModemDevice>
+#include <ModemManagerQt/Modem>
 
 class ModemMonitorPrivate;
 
@@ -37,13 +39,15 @@ class ModemMonitorPrivate;
  */
 class Q_DECL_EXPORT ModemMonitor : public QObject
 {
-    Q_OBJECT
-    Q_DECLARE_PRIVATE(ModemMonitor)
+Q_OBJECT
+Q_DECLARE_PRIVATE(ModemMonitor)
 public:
     explicit ModemMonitor(QObject * parent);
     virtual ~ModemMonitor();
+
+public Q_SLOTS:
+    void unlockModem(const QString &modemUni);
 private Q_SLOTS:
-    void modemAdded(const QString&);
     void requestPin(MMModemLock lock);
     void onSendPinArrived(QDBusPendingCallWatcher *);
 private:

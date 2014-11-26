@@ -27,10 +27,7 @@
 
 #include "secretagent.h"
 #include "notification.h"
-#if WITH_MODEMMANAGER_SUPPORT
-#include "modemmonitor.h"
-#endif
-#include "bluetoothmonitor.h"
+#include "monitor.h"
 
 #include <QDBusMetaType>
 #include <QDBusServiceWatcher>
@@ -44,11 +41,8 @@ class NetworkManagementServicePrivate
 {
     public:
     SecretAgent * agent;
-    BluetoothMonitor * bluetoothMonitor;
-#if WITH_MODEMMANAGER_SUPPORT
-    ModemMonitor * modemMonitor;
-#endif
     Notification * notification;
+    Monitor * monitor;
 };
 
 NetworkManagementService::NetworkManagementService(QObject * parent, const QVariantList&)
@@ -58,10 +52,7 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 
     d->agent = Q_NULLPTR;
     d->notification = Q_NULLPTR;
-#if WITH_MODEMMANAGER_SUPPORT
-    d->modemMonitor = Q_NULLPTR;
-#endif
-    d->bluetoothMonitor = Q_NULLPTR;
+    d->monitor = Q_NULLPTR;
 
     connect(this, &KDEDModule::moduleRegistered, this, &NetworkManagementService::slotRegistered);
 }
@@ -83,14 +74,8 @@ void NetworkManagementService::init()
         d->notification = new Notification(this);
     }
 
-#if WITH_MODEMMANAGER_SUPPORT
-    if (!d->modemMonitor) {
-        d->modemMonitor = new ModemMonitor(this);
-    }
-#endif
-
-    if (!d->bluetoothMonitor) {
-        d->bluetoothMonitor = new BluetoothMonitor(this);
+    if (!d->monitor) {
+        d->monitor = new Monitor(this);
     }
 }
 

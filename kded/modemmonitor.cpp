@@ -1,6 +1,7 @@
 /*
     Copyright 2009 Will Stephenson <wstephenson@kde.org>
     Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2014 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -28,10 +29,9 @@
 #include <KMessageBox>
 
 #include <ModemManager/ModemManager.h>
-#include <ModemManagerQt/manager.h>
-#include <ModemManagerQt/modemdevice.h>
-#include <ModemManagerQt/modem.h>
-#include <ModemManagerQt/sim.h>
+#include <ModemManagerQt/Manager>
+#include <ModemManagerQt/Modem>
+#include <ModemManagerQt/Sim>
 
 #include "pindialog.h"
 
@@ -47,9 +47,9 @@ ModemMonitor::ModemMonitor(QObject * parent)
     Q_D(ModemMonitor);
     d->dialog.clear();
 
-    QObject::connect(ModemManager::notifier(), SIGNAL(modemAdded(QString)), SLOT(modemAdded(QString)));
+    QObject::connect(ModemManager::notifier(), SIGNAL(modemAdded(QString)), SLOT(unlockModem(QString)));
     foreach (const ModemManager::ModemDevice::Ptr &iface, ModemManager::modemDevices()) {
-        modemAdded(iface->uni());
+        unlockModem(iface->uni());
     }
 }
 
@@ -58,19 +58,19 @@ ModemMonitor::~ModemMonitor()
     delete d_ptr;
 }
 
-void ModemMonitor::modemAdded(const QString & udi)
+void ModemMonitor::unlockModem(const QString &modemUni)
 {
     Q_D(ModemMonitor);
 
-    ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(udi);
     ModemManager::Modem::Ptr modem;
+    ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(modemUni);
     if (modemDevice) {
         modem = modemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
     } else {
         return;
     }
 
-    connect(modem.data(), SIGNAL(unlockRequiredChanged(MMModemLock)), SLOT(requestPin(MMModemLock)));
+    connect(modem.data(), SIGNAL(unlockRequiredChanged(MMModemLock)), SLOT(requestPin(MMModemLock)), Qt::UniqueConnection);
 
     if (d->dialog || (modem && modem->unlockRequired() == MM_MODEM_LOCK_NONE) || (modem && modem->unlockRequired() == MM_MODEM_LOCK_UNKNOWN)) {
         return;

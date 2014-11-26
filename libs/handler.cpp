@@ -35,6 +35,9 @@
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/ActiveConnection>
 
+#include <ModemManagerQt/Manager>
+#include <ModemManagerQt/ModemDevice>
+
 #include <QDBusError>
 #include <QIcon>
 
@@ -91,6 +94,25 @@ void Handler::activateConnection(const QString& connection, const QString& devic
                 notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
                 notification->sendEvent();
                 return;
+            }
+        }
+    }
+
+    if (con->settings()->connectionType() == NetworkManager::ConnectionSettings::Gsm) {
+        NetworkManager::ModemDevice::Ptr nmModemDevice = NetworkManager::findNetworkInterface(device).objectCast<NetworkManager::ModemDevice>();
+        if (nmModemDevice) {
+            ModemManager::ModemDevice::Ptr mmModemDevice = ModemManager::findModemDevice(nmModemDevice->udi());
+            if (mmModemDevice) {
+                ModemManager::Modem::Ptr modem = mmModemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
+                if (modem && modem->unlockRequired() > MM_MODEM_LOCK_NONE) {
+                    QDBusInterface managerIface("org.kde.plasmanetworkmanagement", "/org/kde/plasmanetworkmanagement", "org.kde.plasmanetworkmanagement", QDBusConnection::sessionBus(), this);
+                    managerIface.call("unlockModem", mmModemDevice->uni());
+                    connect(modem.data(), &ModemManager::Modem::unlockRequiredChanged, this, &Handler::unlockRequiredChanged);
+                    m_tmpConnectionPath = connection;
+                    m_tmpDevicePath = device;
+                    m_tmpSpecificPath = specificObject;
+                    return;
+                }
             }
         }
     }
@@ -481,4 +503,11 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
     }
 
     watcher->deleteLater();
+}
+
+void Handler::unlockRequiredChanged(MMModemLock modemLock)
+{
+    if (modemLock == MM_MODEM_LOCK_NONE) {
+        activateConnection(m_tmpConnectionPath, m_tmpDevicePath, m_tmpSpecificPath);
+    }
 }

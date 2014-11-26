@@ -26,7 +26,7 @@
          <item>
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>&amp;Gateway Port:</string>
+            <string>Gateway Port:</string>
            </property>
            <property name="buddy">
             <cstring>sbCustomPort</cstring>
@@ -50,7 +50,7 @@
          <item>
           <widget class="QLabel" name="label_8">
            <property name="text">
-            <string>&amp;Tunnel MTU:</string>
+            <string>Tunnel MTU:</string>
            </property>
            <property name="buddy">
             <cstring>sbMtu</cstring>
@@ -74,7 +74,7 @@
          <item>
           <widget class="QLabel" name="label_9">
            <property name="text">
-            <string>UDP fragment si&amp;ze:</string>
+            <string>UDP fragment size:</string>
            </property>
            <property name="buddy">
             <cstring>sbUdpFragmentSize</cstring>
@@ -199,7 +199,7 @@
          <item>
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>HMAC Au&amp;thentication:</string>
+            <string>HMAC Authentication:</string>
            </property>
            <property name="buddy">
             <cstring>cboHmac</cstring>
@@ -302,7 +302,7 @@
           <item>
            <widget class="QLabel" name="label_10">
             <property name="text">
-             <string>Sub&amp;ject Match:</string>
+             <string>Subject Match:</string>
             </property>
             <property name="buddy">
              <cstring>subjectMatch</cstring>
@@ -362,7 +362,7 @@
         <item>
          <widget class="QGroupBox" name="useExtraTlsAuth">
           <property name="title">
-           <string>Use additional &amp;TLS authentication</string>
+           <string>Use additional TLS authentication</string>
           </property>
           <property name="checkable">
            <bool>true</bool>
@@ -396,7 +396,7 @@
              <item>
               <widget class="QLabel" name="textLabel1">
                <property name="text">
-                <string>Key &amp;Direction:</string>
+                <string>Key Direction:</string>
                </property>
                <property name="wordWrap">
                 <bool>false</bool>
@@ -460,7 +460,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_11">
          <property name="text">
-          <string>Proxy &amp;Type:</string>
+          <string>Proxy Type:</string>
          </property>
          <property name="buddy">
           <cstring>cmbProxyType</cstring>
@@ -501,7 +501,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_12">
          <property name="text">
-          <string>Ser&amp;ver Address:</string>
+          <string>Server Address:</string>
          </property>
          <property name="buddy">
           <cstring>proxyServerAddress</cstring>
@@ -548,7 +548,7 @@
        <item row="4" column="0">
         <widget class="QLabel" name="label_14">
          <property name="text">
-          <string>Proxy Userna&amp;me:</string>
+          <string>Proxy Username:</string>
          </property>
          <property name="buddy">
           <cstring>proxyUsername</cstring>

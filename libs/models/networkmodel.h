@@ -72,9 +72,9 @@ public:
         VpnState,
     };
 
-    int rowCount(const QModelIndex& parent) const;
-    QVariant data(const QModelIndex& index, int role) const;
-    virtual QHash< int, QByteArray > roleNames() const;
+    int rowCount(const QModelIndex& parent) const Q_DECL_OVERRIDE;
+    QVariant data(const QModelIndex& index, int role) const Q_DECL_OVERRIDE;
+    virtual QHash< int, QByteArray > roleNames() const Q_DECL_OVERRIDE;
 
 public Q_SLOTS:
     void onItemUpdated();

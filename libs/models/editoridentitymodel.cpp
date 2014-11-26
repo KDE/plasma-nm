@@ -50,7 +50,7 @@ int EditorIdentityModel::columnCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent);
 
-    return 2;
+    return 3;
 }
 
 QVariant EditorIdentityModel::headerData(int section, Qt::Orientation orientation, int role) const
@@ -60,6 +60,8 @@ QVariant EditorIdentityModel::headerData(int section, Qt::Orientation orientatio
         case 0:
             return i18n("Connection name");
         case 1:
+            return i18n("Connection type");
+        case 2:
             return i18n("Last used");
         }
     }
@@ -76,7 +78,7 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
                              == NetworkManager::ActiveConnection::Activated;
     NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(sourceModel()->data(sourceIndex, NetworkModel::TypeRole).toInt());
     QString tooltip;
-    QString iconName = UiUtils::iconAndTitleForConnectionSettingsType(type, tooltip);
+    const QString iconName = UiUtils::iconAndTitleForConnectionSettingsType(type, tooltip);
     const int column = index.column();
 
     if (role == Qt::DisplayRole) {
@@ -93,6 +95,8 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
             }
             return connectionName;
         case 1:
+            return tooltip;
+        case 2:
             return lastUsed;
         }
     } else if (role == Qt::DecorationRole) {

@@ -28,7 +28,6 @@
 
 #include <config.h>
 
-#include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/ModemDevice>
 #include <ModemManagerQt/Modem>
 
@@ -53,9 +52,5 @@ private Q_SLOTS:
 private:
     ModemMonitorPrivate * d_ptr;
 };
-
-// Types from libmm-qt are not declared, because some
-// of them are in conflict with types from libnm-qt
-Q_DECLARE_METATYPE(MMModemLock)
 
 #endif // PLASMA_NM_MODEM_MONITOR_H

@@ -21,6 +21,8 @@
 
 #include "monitor.h"
 
+#include <QDBusConnection>
+
 Monitor::Monitor(QObject* parent)
     : QObject(parent)
 {

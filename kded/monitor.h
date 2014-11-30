@@ -25,7 +25,9 @@
 #include <QDBusPendingCallWatcher>
 
 #include "bluetoothmonitor.h"
+#if WITH_MODEMMANAGER_SUPPORT
 #include "modemmonitor.h"
+#endif
 #include <config.h>
 
 class Q_DECL_EXPORT Monitor : public QObject

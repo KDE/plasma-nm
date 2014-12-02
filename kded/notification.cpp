@@ -329,7 +329,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
     NetworkManager::ActiveConnection *ac = qobject_cast<NetworkManager::ActiveConnection*>(sender());
 
     QString eventId, text;
-    const QString acName = ac->connection()->name();
+    const QString acName = ac->id();
     const QString connectionId = ac->path();
 
     if (state == NetworkManager::ActiveConnection::Activated) {

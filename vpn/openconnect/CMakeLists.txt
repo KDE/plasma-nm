@@ -26,6 +26,8 @@ if (OPENCONNECT_FOUND)
     if (${OPENCONNECT_VERSION} VERSION_GREATER ${MINIMUM_OPENCONNECT_VERSION_REQUIRED} OR
         ${OPENCONNECT_VERSION} VERSION_EQUAL ${MINIMUM_OPENCONNECT_VERSION_REQUIRED})
 
+        include_directories(${OPENCONNECT_INCLUDE_DIRS})
+
         set(openconnect_SRCS
         ../../libs/debug.cpp
         openconnectui.cpp

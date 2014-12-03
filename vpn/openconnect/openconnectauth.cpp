@@ -66,7 +66,6 @@ public:
     Ui_OpenconnectAuth ui;
     NetworkManager::VpnSetting::Ptr setting;
     struct openconnect_info *vpninfo;
-    QStringList certificateFingerprints;
     NMStringMap secrets;
     QMutex mutex;
     QWaitCondition workerWaiting;
@@ -193,10 +192,6 @@ void OpenconnectAuthWidget::readSecrets()
 
     d->secrets = d->setting->secrets();
 
-    if (!d->secrets[NM_OPENCONNECT_KEY_GWCERT].isEmpty()) {
-        d->certificateFingerprints.append(d->secrets[NM_OPENCONNECT_KEY_GWCERT]);
-    }
-
     if (!d->secrets["xmlconfig"].isEmpty()) {
         const QByteArray config = QByteArray::fromBase64(d->secrets["xmlconfig"].toAscii());
 
@@ -236,11 +231,6 @@ void OpenconnectAuthWidget::readSecrets()
         d->ui.chkAutoconnect->setChecked(true);
         QTimer::singleShot(0, this, SLOT(connectHost()));
     }
-
-    if (!d->secrets["certsigs"].isEmpty()) {
-        d->certificateFingerprints.append(d->secrets["certsigs"].split('\t'));
-    }
-    d->certificateFingerprints.removeDuplicates();
 }
 
 void OpenconnectAuthWidget::acceptDialog()
@@ -309,7 +299,6 @@ QVariantMap OpenconnectAuthWidget::setting(bool agentOwned) const
     openconnect_get_cert_sha1(d->vpninfo, cert, fingerprint);
 #endif
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_GWCERT), QLatin1String(fingerprint));
-    secrets.insert(QLatin1String("certsigs"), d->certificateFingerprints.join("\t"));
     secrets.insert(QLatin1String("autoconnect"), d->ui.chkAutoconnect->isChecked() ? "yes" : "no");
 
     NMStringMap::iterator i = secrets.begin();
@@ -492,7 +481,16 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
 {
     Q_D(OpenconnectAuthWidget);
 
-    if (!d->certificateFingerprints.contains(fingerprint)) {
+    const QString host = QLatin1String(openconnect_get_hostname(d->vpninfo));
+    const QString port = QString::number(openconnect_get_port(d->vpninfo));
+    const QString key = QString("certificate:%1:%2").arg(host,  port);
+    const QString value = d->secrets.value(key);
+
+#if !OPENCONNECT_CHECK_VER(5,0)
+#define openconnect_check_peer_cert_hash(v,d) strcmp(d, fingerprint.toUtf8().data())
+#endif
+  
+    if (openconnect_check_peer_cert_hash(d->vpninfo, value.toUtf8().data())) {
         QWidget *widget = new QWidget();
         QVBoxLayout *verticalLayout;
         QHBoxLayout *horizontalLayout;
@@ -537,7 +535,6 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
         dialog.data()->setButtons(KDialog::Yes | KDialog::No);
         dialog.data()->setMainWidget(widget);
         if(dialog.data()->exec() == KDialog::Yes) {
-            d->certificateFingerprints.append(fingerprint);
             *accepted = true;
         } else {
             *accepted = false;
@@ -549,6 +546,8 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
     } else {
         *accepted = true;
     }
+    if (*accepted)
+        d->secrets.insert(key, QString(fingerprint));
     d->mutex.lock();
     d->workerWaiting.wakeAll();
     d->mutex.unlock();

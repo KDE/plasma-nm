@@ -165,7 +165,7 @@ void OpenconnectAuthWidget::readConfig()
     }
     if (!dataMap[NM_OPENCONNECT_KEY_CACERT].isEmpty()) {
         const QByteArray crt = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_CACERT]);
-        openconnect_set_cafile(d->vpninfo, strdup(crt.data()));
+        openconnect_set_cafile(d->vpninfo, OC3DUP(crt.data()));
     }
     if (dataMap[NM_OPENCONNECT_KEY_CSD_ENABLE] == "yes") {
         char *wrapper;
@@ -178,12 +178,12 @@ void OpenconnectAuthWidget::readConfig()
     }
     if (!dataMap[NM_OPENCONNECT_KEY_PROXY].isEmpty()) {
         const QByteArray proxy = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_PROXY]);
-        openconnect_set_http_proxy(d->vpninfo, strdup(proxy.data()));
+        openconnect_set_http_proxy(d->vpninfo, OC3DUP(proxy.data()));
     }
     if (!dataMap[NM_OPENCONNECT_KEY_USERCERT].isEmpty()) {
         const QByteArray crt = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_USERCERT]);
         const QByteArray key = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_PRIVKEY]);
-        openconnect_set_client_cert (d->vpninfo, strdup(crt.data()), strdup(key.data()));
+        openconnect_set_client_cert (d->vpninfo, OC3DUP(crt.data()), OC3DUP(key.data()));
 
         if (!crt.isEmpty() && dataMap[NM_OPENCONNECT_KEY_PEM_PASSPHRASE_FSID] == "yes") {
             openconnect_passphrase_from_fsid(d->vpninfo);
@@ -280,10 +280,10 @@ void OpenconnectAuthWidget::connectHost()
     const VPNHost &host = d->hosts.at(i);
     if (openconnect_parse_url(d->vpninfo, host.address.toAscii().data())) {
         qWarning() << "Failed to parse server URL" << host.address;
-        openconnect_set_hostname(d->vpninfo, strdup(host.address.toAscii().data()));
+        openconnect_set_hostname(d->vpninfo, OC3DUP(host.address.toAscii().data()));
     }
     if (!openconnect_get_urlpath(d->vpninfo) && !host.group.isEmpty())
-        openconnect_set_urlpath(d->vpninfo, strdup(host.group.toAscii().data()));
+        openconnect_set_urlpath(d->vpninfo, OC3DUP(host.group.toAscii().data()));
     d->secrets["lasthost"] = host.name;
     addFormInfo(QLatin1String("dialog-information"), i18n("Contacting host, please wait..."));
     d->worker->start();
@@ -305,9 +305,13 @@ QVariantMap OpenconnectAuthWidget::setting(bool agentOwned) const
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_COOKIE), QLatin1String(openconnect_get_cookie(d->vpninfo)));
     openconnect_clear_cookie(d->vpninfo);
 
+#if OPENCONNECT_CHECK_VER(5,0)
+    const char *fingerprint = openconnect_get_peer_cert_hash(d->vpninfo);
+#else
     OPENCONNECT_X509 *cert = openconnect_get_peer_cert(d->vpninfo);
     char fingerprint[41];
     openconnect_get_cert_sha1(d->vpninfo, cert, fingerprint);
+#endif
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_GWCERT), QLatin1String(fingerprint));
     secrets.insert(QLatin1String("certsigs"), d->certificateFingerprints.join("\t"));
     secrets.insert(QLatin1String("autoconnect"), d->ui.chkAutoconnect->isChecked() ? "yes" : "no");
@@ -581,14 +585,16 @@ void OpenconnectAuthWidget::formLoginClicked()
             const QString key = QString("form:%1:%2").arg(QLatin1String(form->auth_id)).arg(QLatin1String(opt->name));
             if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {
                 QLineEdit *le = qobject_cast<QLineEdit*>(widget);
-                opt->value = qstrdup(le->text().toUtf8().constData());
-                if (opt->type == OC_FORM_OPT_PASSWORD) {
+                QByteArray text = le->text().toUtf8();
+                openconnect_set_option_value(opt, text.data());
+                if (opt->type == OC_FORM_OPT_TEXT) {
                     d->secrets.insert(key,le->text());
                 }
             } else if (opt->type == OC_FORM_OPT_SELECT) {
                 QComboBox *cbo = qobject_cast<QComboBox*>(widget);
-                opt->value = qstrdup(cbo->currentData().toString().toUtf8().constData());
-                d->secrets.insert(key, cbo->currentData().toString());
+                QByteArray text = cbo->itemData(cbo->currentIndex()).toString().toAscii();
+                openconnect_set_option_value(opt, text.data());
+                d->secrets.insert(key,cbo->itemData(cbo->currentIndex()).toString());
             }
         }
     }

@@ -43,6 +43,20 @@ extern "C"
 class OpenconnectAuthStaticWrapper
 {
 public:
+#if OPENCONNECT_CHECK_VER(5,0)
+    static int writeNewConfig(void *obj, const char *str, int num)
+    {
+        if (obj)
+            return static_cast<OpenconnectAuthWorkerThread*>(obj)->writeNewConfig(str, num);
+        return -1;
+    }
+    static int validatePeerCert(void *obj, const char *str)
+    {
+        if (obj)
+            return static_cast<OpenconnectAuthWorkerThread*>(obj)->validatePeerCert(NULL, str);
+        return -1;
+    }
+#else
     static int writeNewConfig(void *obj, char *str, int num)
     {
         if (obj)
@@ -55,7 +69,8 @@ public:
             return static_cast<OpenconnectAuthWorkerThread*>(obj)->validatePeerCert(cert, str);
         return -1;
     }
-    static int processAuthForm(void *obj, struct oc_auth_form *form)
+#endif
+	static int processAuthForm(void *obj, struct oc_auth_form *form)
     {
         if (obj)
             return static_cast<OpenconnectAuthWorkerThread*>(obj)->processAuthFormP(form);
@@ -108,7 +123,7 @@ struct openconnect_info* OpenconnectAuthWorkerThread::getOpenconnectInfo()
     return m_openconnectInfo;
 }
 
-int OpenconnectAuthWorkerThread::writeNewConfig(char *buf, int buflen)
+int OpenconnectAuthWorkerThread::writeNewConfig(const char *buf, int buflen)
 {
     Q_UNUSED(buflen)
     if (*m_userDecidedToQuit)
@@ -139,10 +154,16 @@ static char *openconnect_get_cert_details(struct openconnect_info *vpninfo,
 }
 #endif
 
-int OpenconnectAuthWorkerThread::validatePeerCert(OPENCONNECT_X509 *cert, const char *reason)
+int OpenconnectAuthWorkerThread::validatePeerCert(void *cert, const char *reason)
 {
     if (*m_userDecidedToQuit)
         return -EINVAL;
+
+#if OPENCONNECT_CHECK_VER(5,0)
+    (void)cert;
+    const char *fingerprint = openconnect_get_peer_cert_hash(m_openconnectInfo);
+    char *details = openconnect_get_peer_cert_details(m_openconnectInfo);
+#else
     char fingerprint[41];
     int ret = 0;
 
@@ -151,7 +172,7 @@ int OpenconnectAuthWorkerThread::validatePeerCert(OPENCONNECT_X509 *cert, const 
         return ret;
 
     char *details = openconnect_get_cert_details(m_openconnectInfo, cert);
-
+#endif
     bool accepted = false;
     m_mutex->lock();
     QString qFingerprint(fingerprint);
@@ -160,7 +181,7 @@ int OpenconnectAuthWorkerThread::validatePeerCert(OPENCONNECT_X509 *cert, const 
     emit validatePeerCert(qFingerprint, qCertinfo, qReason, &accepted);
     m_waitForUserInput->wait(m_mutex);
     m_mutex->unlock();
-    ::free(details);
+    openconnect_free_cert_info(m_openconnectInfo, details);
     if (*m_userDecidedToQuit)
         return -EINVAL;
 

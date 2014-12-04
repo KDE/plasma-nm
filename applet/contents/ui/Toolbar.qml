@@ -28,14 +28,6 @@ Item {
 
     height: wifiSwitchButton.height;
 
-    PlasmaNM.EnabledConnections {
-        id: enabledConnections;
-    }
-
-    PlasmaNM.AvailableDevices {
-        id: availableDevices;
-    }
-
     PlasmaCore.Svg {
         id: lineSvg;
         imagePath: "widgets/line";

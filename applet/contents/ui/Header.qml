@@ -48,7 +48,8 @@ PlasmaComponents.ListItem {
         }
         width: height
         flat: true
-        visible: header.text === i18n("Available connections")
+        visible: header.text === i18n("Available connections") &&
+                 enabledConnections.wirelessEnabled && enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable;
 
         onClicked: {
             handler.requestScan()

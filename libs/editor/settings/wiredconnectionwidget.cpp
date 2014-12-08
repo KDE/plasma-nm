@@ -69,6 +69,8 @@ void WiredConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &setti
     }
 
     if (!wiredSetting->autoNegotiate()) {
+        m_widget->autonegotiate->setChecked(false);
+
         if (wiredSetting->speed()) {
             m_widget->speed->setValue(wiredSetting->speed());
         }

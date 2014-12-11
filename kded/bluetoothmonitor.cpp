@@ -175,7 +175,7 @@ void BluetoothMonitor::init()
         foreach (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
             if (con && con->settings() && con->settings()->connectionType() == NetworkManager::ConnectionSettings::Bluetooth) {
                 NetworkManager::BluetoothSetting::Ptr btSetting = con->settings()->setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
-                if (NetworkManager::Utils::macAddressFromString(btSetting->bluetoothAddress()) == mBdaddr) {
+                if (NetworkManager::macAddressFromString(btSetting->bluetoothAddress()) == mBdaddr) {
                     exists = true;
                     break;
                 }
@@ -187,7 +187,7 @@ void BluetoothMonitor::init()
             connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
             connectionSettings.setId(mDeviceName);
             NetworkManager::BluetoothSetting::Ptr btSetting = connectionSettings.setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
-            btSetting->setBluetoothAddress(NetworkManager::Utils::macAddressFromString(mBdaddr));
+            btSetting->setBluetoothAddress(NetworkManager::macAddressFromString(mBdaddr));
             btSetting->setProfileType(NetworkManager::BluetoothSetting::Panu);
             btSetting->setInitialized(true);
             qDebug() << "Adding PAN connection" << connectionSettings;
@@ -262,7 +262,7 @@ void BluetoothMonitor::modemAdded(const QString &udi)
     foreach (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
         if (con && con->settings() && con->settings()->connectionType() == NetworkManager::ConnectionSettings::Bluetooth) {
             NetworkManager::BluetoothSetting::Ptr btSetting = con->settings()->setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
-            if (btSetting->bluetoothAddress() == NetworkManager::Utils::macAddressFromString(mBdaddr)) {
+            if (btSetting->bluetoothAddress() == NetworkManager::macAddressFromString(mBdaddr)) {
                 exists = true;
                 break;
             }
@@ -281,7 +281,7 @@ void BluetoothMonitor::modemAdded(const QString &udi)
                 connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
                 connectionSettings.setId(mDeviceName);
                 NetworkManager::BluetoothSetting::Ptr btSetting = connectionSettings.setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
-                btSetting->setBluetoothAddress(NetworkManager::Utils::macAddressFromString(mBdaddr));
+                btSetting->setBluetoothAddress(NetworkManager::macAddressFromString(mBdaddr));
                 btSetting->setProfileType(NetworkManager::BluetoothSetting::Dun);
                 btSetting->setInitialized(true);
 

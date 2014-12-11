@@ -60,7 +60,7 @@ bool BssidComboBox::isValid() const
         return true;
     }
 
-    return NetworkManager::Utils::macAddressIsValid(bssid());
+    return NetworkManager::macAddressIsValid(bssid());
 }
 
 void BssidComboBox::editTextChanged(const QString &)

@@ -135,20 +135,20 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     }
     NetworkManager::WirelessSecuritySetting::Ptr wifiSecurity = settings->setting(NetworkManager::Setting::WirelessSecurity).dynamicCast<NetworkManager::WirelessSecuritySetting>();
 
-    NetworkManager::Utils::WirelessSecurityType securityType = NetworkManager::Utils::findBestWirelessSecurity(wifiDev->wirelessCapabilities(), true, (ap->mode() == NetworkManager::AccessPoint::Adhoc), ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
+    NetworkManager::WirelessSecurityType securityType = NetworkManager::findBestWirelessSecurity(wifiDev->wirelessCapabilities(), true, (ap->mode() == NetworkManager::AccessPoint::Adhoc), ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
 
-    if (securityType != NetworkManager::Utils::None) {
+    if (securityType != NetworkManager::NoneSecurity) {
         wifiSecurity->setInitialized(true);
         wifiSetting->setSecurity("802-11-wireless-security");
     }
 
-    if (securityType == NetworkManager::Utils::Leap ||
-        securityType == NetworkManager::Utils::DynamicWep ||
-        securityType == NetworkManager::Utils::Wpa2Eap ||
-        securityType == NetworkManager::Utils::WpaEap) {
-        if (securityType == NetworkManager::Utils::DynamicWep || securityType == NetworkManager::Utils::Leap) {
+    if (securityType == NetworkManager::Leap ||
+        securityType == NetworkManager::DynamicWep ||
+        securityType == NetworkManager::Wpa2Eap ||
+        securityType == NetworkManager::WpaEap) {
+        if (securityType == NetworkManager::DynamicWep || securityType == NetworkManager::Leap) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Ieee8021x);
-            if (securityType == NetworkManager::Utils::Leap) {
+            if (securityType == NetworkManager::Leap) {
                 wifiSecurity->setAuthAlg(NetworkManager::WirelessSecuritySetting::Leap);
             }
         } else {
@@ -171,7 +171,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
             editor->deleteLater();
         }
     } else {
-        if (securityType == NetworkManager::Utils::StaticWep) {
+        if (securityType == NetworkManager::StaticWep) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
             wifiSecurity->setWepKey0(password);
             if (KWallet::Wallet::isEnabled()) {

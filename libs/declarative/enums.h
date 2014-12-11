@@ -62,7 +62,7 @@ public:
 
     enum SecurityType {
         UnknownSecurity = -1,
-        None = 0,
+        NoneSecurity = 0,
         StaticWep,
         DynamicWep,
         Leap,

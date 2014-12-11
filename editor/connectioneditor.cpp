@@ -278,7 +278,7 @@ void ConnectionEditor::addConnection(QAction* action)
                             if (wifiDev) {
                                 if (wifiDev->wirelessCapabilities().testFlag(NetworkManager::WirelessDevice::ApCap)) {
                                     wifiSetting->setMode(NetworkManager::WirelessSetting::Ap);
-                                    wifiSetting->setMacAddress(NetworkManager::Utils::macAddressFromString(wifiDev->hardwareAddress()));
+                                    wifiSetting->setMacAddress(NetworkManager::macAddressFromString(wifiDev->hardwareAddress()));
                                 }
                             }
                         }

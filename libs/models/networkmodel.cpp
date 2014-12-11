@@ -434,7 +434,7 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
 
         if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
             item->setMode(wirelessSetting->mode());
-            item->setSecurityType(NetworkManager::Utils::securityTypeFromConnectionSetting(settings));
+            item->setSecurityType(NetworkManager::securityTypeFromConnectionSetting(settings));
             item->setSsid(wirelessSetting->ssid());
         }
 
@@ -506,10 +506,10 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
     initializeSignals(network);
 
     NetworkManager::WirelessSetting::NetworkMode mode = NetworkManager::WirelessSetting::Infrastructure;
-    NetworkManager::Utils::WirelessSecurityType securityType = NetworkManager::Utils::Unknown;
+    NetworkManager::WirelessSecurityType securityType = NetworkManager::UnknownSecurity;
     NetworkManager::AccessPoint::Ptr ap = network->referenceAccessPoint();
-    if (ap && ap->capabilities() & NetworkManager::AccessPoint::Privacy) {
-        securityType = NetworkManager::Utils::findBestWirelessSecurity(device->wirelessCapabilities(), true, (device->mode() == NetworkManager::WirelessDevice::Adhoc),
+    if (ap && ap->capabilities().testFlag(NetworkManager::AccessPoint::Privacy)) {
+        securityType = NetworkManager::findBestWirelessSecurity(device->wirelessCapabilities(), true, (device->mode() == NetworkManager::WirelessDevice::Adhoc),
                                                                        ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
         if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Infra) {
             mode = NetworkManager::WirelessSetting::Infrastructure;
@@ -817,7 +817,7 @@ void NetworkModel::connectionUpdated()
                 NetworkManager::WirelessSetting::Ptr wirelessSetting;
                 wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
                 item->setMode(wirelessSetting->mode());
-                item->setSecurityType(NetworkManager::Utils::securityTypeFromConnectionSetting(settings));
+                item->setSecurityType(NetworkManager::securityTypeFromConnectionSetting(settings));
                 item->setSsid(wirelessSetting->ssid());
                 // TODO check whether BSSID has changed and update the wireless info
             }
@@ -1103,16 +1103,16 @@ void NetworkModel::wirelessNetworkSignalChanged(int signal)
     }
 }
 
-NetworkManager::Utils::WirelessSecurityType NetworkModel::alternativeWirelessSecurity(const NetworkManager::Utils::WirelessSecurityType type)
+NetworkManager::WirelessSecurityType NetworkModel::alternativeWirelessSecurity(const NetworkManager::WirelessSecurityType type)
 {
-    if (type == NetworkManager::Utils::WpaPsk) {
-        return NetworkManager::Utils::Wpa2Psk;
-    } else if (type == NetworkManager::Utils::WpaEap) {
-        return NetworkManager::Utils::Wpa2Eap;
-    } else if (type == NetworkManager::Utils::Wpa2Psk) {
-        return NetworkManager::Utils::WpaPsk;
-    } else if (type == NetworkManager::Utils::Wpa2Eap) {
-        return NetworkManager::Utils::WpaEap;
+    if (type == NetworkManager::WpaPsk) {
+        return NetworkManager::Wpa2Psk;
+    } else if (type == NetworkManager::WpaEap) {
+        return NetworkManager::Wpa2Eap;
+    } else if (type == NetworkManager::Wpa2Psk) {
+        return NetworkManager::WpaPsk;
+    } else if (type == NetworkManager::Wpa2Eap) {
+        return NetworkManager::WpaEap;
     }
     return type;
 }
@@ -1132,7 +1132,7 @@ void NetworkModel::updateFromWirelessNetwork(NetworkModelItem* item, const Netwo
         if (wirelessSetting) {
             if (!wirelessSetting->bssid().isEmpty()) {
                 foreach (const NetworkManager::AccessPoint::Ptr ap, network->accessPoints()) {
-                    if (ap->hardwareAddress() == NetworkManager::Utils::macAddressAsString(wirelessSetting->bssid())) {
+                    if (ap->hardwareAddress() == NetworkManager::macAddressAsString(wirelessSetting->bssid())) {
                         item->setSignal(ap->signalStrength());
                         item->setSpecificPath(ap->uni());
                         // We need to watch this AP for signal changes

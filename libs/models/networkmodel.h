@@ -131,7 +131,7 @@ private:
     void updateFromWimaxNsp(NetworkModelItem * item, const NetworkManager::WimaxNsp::Ptr& nsp);
     void updateFromWirelessNetwork(NetworkModelItem * item, const NetworkManager::WirelessNetwork::Ptr& network);
 
-    NetworkManager::Utils::WirelessSecurityType alternativeWirelessSecurity(const NetworkManager::Utils::WirelessSecurityType type);
+    NetworkManager::WirelessSecurityType alternativeWirelessSecurity(const NetworkManager::WirelessSecurityType type);
 };
 
 #endif // PLASMA_NM_NETWORK_MODEL_H

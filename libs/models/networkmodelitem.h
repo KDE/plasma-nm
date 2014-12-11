@@ -79,8 +79,8 @@ public:
 
     QString sectionType() const;
 
-    NetworkManager::Utils::WirelessSecurityType securityType() const;
-    void setSecurityType(NetworkManager::Utils::WirelessSecurityType type);
+    NetworkManager::WirelessSecurityType securityType() const;
+    void setSecurityType(NetworkManager::WirelessSecurityType type);
 
     int signal() const;
     void setSignal(int signal);
@@ -125,7 +125,7 @@ private:
     NetworkManager::WirelessSetting::NetworkMode m_mode;
     QString m_name;
     QString m_nsp;
-    NetworkManager::Utils::WirelessSecurityType m_securityType;
+    NetworkManager::WirelessSecurityType m_securityType;
     int m_signal;
     bool m_slave;
     QString m_specificPath;

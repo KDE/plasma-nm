@@ -103,7 +103,7 @@ public:
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
     static QString convertNspTypeToString(NetworkManager::WimaxNsp::NetworkType type);
 
-    static QString labelFromWirelessSecurity(NetworkManager::Utils::WirelessSecurityType type);
+    static QString labelFromWirelessSecurity(NetworkManager::WirelessSecurityType type);
 
     static QString formatDateRelative(const QDateTime & lastUsed);
     static QString formatLastUsedDateRelative(const QDateTime & lastUsed);

@@ -66,17 +66,17 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
     }
     modeChanged(wifiSetting->mode());
 
-    m_ui->BSSIDCombo->init(NetworkManager::Utils::macAddressAsString(wifiSetting->bssid()), wifiSetting->ssid());
+    m_ui->BSSIDCombo->init(NetworkManager::macAddressAsString(wifiSetting->bssid()), wifiSetting->ssid());
 
     m_ui->band->setCurrentIndex(wifiSetting->band());
     if (wifiSetting->band() != NetworkManager::WirelessSetting::Automatic) {
         m_ui->channel->setCurrentIndex(m_ui->channel->findData(wifiSetting->channel()));
     }
 
-    m_ui->macAddress->init(NetworkManager::Device::Wifi, NetworkManager::Utils::macAddressAsString(wifiSetting->macAddress()));
+    m_ui->macAddress->init(NetworkManager::Device::Wifi, NetworkManager::macAddressAsString(wifiSetting->macAddress()));
 
     if (!wifiSetting->clonedMacAddress().isEmpty()) {
-        m_ui->clonedMacAddress->setText(NetworkManager::Utils::macAddressAsString(wifiSetting->clonedMacAddress()));
+        m_ui->clonedMacAddress->setText(NetworkManager::macAddressAsString(wifiSetting->clonedMacAddress()));
     }
 
     if (wifiSetting->mtu()) {
@@ -98,17 +98,17 @@ QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
 
     wifiSetting.setMode(static_cast<NetworkManager::WirelessSetting::NetworkMode>(m_ui->modeComboBox->currentIndex()));
 
-    wifiSetting.setBssid(NetworkManager::Utils::macAddressFromString(m_ui->BSSIDCombo->bssid()));
+    wifiSetting.setBssid(NetworkManager::macAddressFromString(m_ui->BSSIDCombo->bssid()));
 
     if (wifiSetting.mode() != NetworkManager::WirelessSetting::Infrastructure && m_ui->band->currentIndex() != 0) {
         wifiSetting.setBand((NetworkManager::WirelessSetting::FrequencyBand)m_ui->band->currentIndex());
         wifiSetting.setChannel(m_ui->channel->itemData(m_ui->channel->currentIndex()).toUInt());
     }
 
-    wifiSetting.setMacAddress(NetworkManager::Utils::macAddressFromString(m_ui->macAddress->hwAddress()));
+    wifiSetting.setMacAddress(NetworkManager::macAddressFromString(m_ui->macAddress->hwAddress()));
 
     if (!m_ui->clonedMacAddress->text().isEmpty() && m_ui->clonedMacAddress->text() != ":::::") {
-        wifiSetting.setClonedMacAddress(NetworkManager::Utils::macAddressFromString(m_ui->clonedMacAddress->text()));
+        wifiSetting.setClonedMacAddress(NetworkManager::macAddressFromString(m_ui->clonedMacAddress->text()));
     }
 
     if (m_ui->mtu->value()) {
@@ -128,7 +128,7 @@ void WifiConnectionWidget::generateRandomClonedMac()
         int random = qrand() % 255;
         mac[i] = random;
     }
-    m_ui->clonedMacAddress->setText(NetworkManager::Utils::macAddressAsString(mac));
+    m_ui->clonedMacAddress->setText(NetworkManager::macAddressAsString(mac));
 }
 
 void WifiConnectionWidget::ssidChanged()
@@ -173,9 +173,9 @@ void WifiConnectionWidget::fillChannels(NetworkManager::WirelessSetting::Frequen
     QList<QPair<int, int> > channels;
 
     if (band == NetworkManager::WirelessSetting::A) {
-        channels = NetworkManager::Utils::getAFreqs();
+        channels = NetworkManager::getAFreqs();
     } else if (band == NetworkManager::WirelessSetting::Bg) {
-        channels = NetworkManager::Utils::getBFreqs();
+        channels = NetworkManager::getBFreqs();
     } else {
         qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unhandled band number" << band;
         return;

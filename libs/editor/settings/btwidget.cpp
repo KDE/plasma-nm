@@ -54,7 +54,7 @@ void BtWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     NetworkManager::BluetoothSetting::Ptr btSetting = setting.staticCast<NetworkManager::BluetoothSetting>();
 
-    m_ui->bdaddr->init(NetworkManager::Device::Bluetooth, NetworkManager::Utils::macAddressAsString(btSetting->bluetoothAddress()));
+    m_ui->bdaddr->init(NetworkManager::Device::Bluetooth, NetworkManager::macAddressAsString(btSetting->bluetoothAddress()));
     m_ui->type->setCurrentIndex(m_ui->type->findData(btSetting->profileType()));
 }
 
@@ -64,7 +64,7 @@ QVariantMap BtWidget::setting(bool agentOwned) const
 
     NetworkManager::BluetoothSetting btSetting;
 
-    btSetting.setBluetoothAddress(NetworkManager::Utils::macAddressFromString(m_ui->bdaddr->hwAddress()));
+    btSetting.setBluetoothAddress(NetworkManager::macAddressFromString(m_ui->bdaddr->hwAddress()));
     btSetting.setProfileType(static_cast<NetworkManager::BluetoothSetting::ProfileType>(m_ui->type->itemData(m_ui->type->currentIndex()).toInt()));
 
     return btSetting.toMap();

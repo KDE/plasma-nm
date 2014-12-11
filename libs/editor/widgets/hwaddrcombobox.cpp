@@ -48,7 +48,7 @@ bool HwAddrComboBox::isValid() const
         return true;
     }
 
-    return NetworkManager::Utils::macAddressIsValid(hwAddress());
+    return NetworkManager::macAddressIsValid(hwAddress());
 }
 
 QString HwAddrComboBox::hwAddress() const

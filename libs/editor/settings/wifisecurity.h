@@ -38,7 +38,7 @@ class Q_DECL_EXPORT WifiSecurity : public SettingWidget
 {
     Q_OBJECT
 public:
-    // Keep this in sync with NetworkManager::Utils::WirelessSecurityType from
+    // Keep this in sync with NetworkManager::WirelessSecurityType from
     // NetworkManagerQt.
     enum SecurityTypeIndex { None = 0, WepHex, WepPassphrase, Leap, DynamicWep, WpaPsk, WpaEap };
 

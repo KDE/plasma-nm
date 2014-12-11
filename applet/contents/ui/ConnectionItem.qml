@@ -397,7 +397,7 @@ PlasmaComponents.ListItem {
                 return DeviceState;
         } else if (ConnectionState == PlasmaNM.Enums.Deactivated) {
             var result = LastUsed;
-            if (SecurityType > PlasmaNM.Enums.None)
+            if (SecurityType > PlasmaNM.Enums.NoneSecurity)
                 result += ", " + SecurityTypeString;
             return result;
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {

@@ -82,13 +82,13 @@ bool WifiSecurity::isValid() const
     const int securityIndex = m_ui->securityCombo->currentIndex();
 
     if (securityIndex == WepHex) { // WEP Hex
-        return NetworkManager::Utils::wepKeyIsValid(m_ui->wepKey->text(), NetworkManager::WirelessSecuritySetting::Hex);
+        return NetworkManager::wepKeyIsValid(m_ui->wepKey->text(), NetworkManager::WirelessSecuritySetting::Hex);
     } else if (securityIndex == WepPassphrase) { // WEP Passphrase
-        return NetworkManager::Utils::wepKeyIsValid(m_ui->wepKey->text(), NetworkManager::WirelessSecuritySetting::Passphrase);
+        return NetworkManager::wepKeyIsValid(m_ui->wepKey->text(), NetworkManager::WirelessSecuritySetting::Passphrase);
     }else if (securityIndex == Leap) { // LEAP
         return !m_ui->leapUsername->text().isEmpty() && !m_ui->leapPassword->text().isEmpty();
     } else if (securityIndex == WpaPsk) { // WPA
-        return NetworkManager::Utils::wpaPskIsValid(m_ui->psk->text());
+        return NetworkManager::wpaPskIsValid(m_ui->psk->text());
     }
 
     return true;

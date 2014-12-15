@@ -129,8 +129,8 @@ PlasmaComponents.ListItem {
 
             height: units.iconSizes.medium;
             width: height;
-            running: ConnectionState == PlasmaNM.Enums.Activating;
-            visible: running && !stateChangeButton.visible;
+            running: plasmoid.expanded && !stateChangeButton.visible && ConnectionState == PlasmaNM.Enums.Activating;
+            visible: running;
         }
 
         PlasmaComponents.Button {

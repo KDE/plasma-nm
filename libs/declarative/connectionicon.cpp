@@ -82,15 +82,9 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
     }
 
     foreach (NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
-        activeConnectionAdded(activeConnection->path());
-        if (activeConnection->vpn()) {
-            NetworkManager::VpnConnection::Ptr vpnConnection;
-            vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
-            if (vpnConnection && vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
-                m_vpn = true;
-            }
-        }
+        addActiveConnection(activeConnection->path());
     }
+    setStates();
 
     connectivityChanged();
 }
@@ -128,55 +122,45 @@ void ConnectionIcon::activatingConnectionChanged(const QString& connection)
     setIcons();
 }
 
-void ConnectionIcon::activeConnectionAdded(const QString &activeConnection)
+void ConnectionIcon::addActiveConnection(const QString &activeConnection)
 {
     NetworkManager::ActiveConnection::Ptr active = NetworkManager::findActiveConnection(activeConnection);
 
     if (active) {
         NetworkManager::VpnConnection::Ptr vpnConnection;
+        connect(active.data(), SIGNAL(destroyed(QObject*)),
+                SLOT(activeConnectionDestroyed()));
         if (active->vpn()) {
             vpnConnection = active.objectCast<NetworkManager::VpnConnection>();
-        }
-        if ((active->state() == NetworkManager::ActiveConnection::Activating) ||
-            (vpnConnection && (vpnConnection->state() == NetworkManager::VpnConnection::Prepare ||
-                               vpnConnection->state() == NetworkManager::VpnConnection::NeedAuth ||
-                               vpnConnection->state() == NetworkManager::VpnConnection::Connecting ||
-                               vpnConnection->state() == NetworkManager::VpnConnection::GettingIpConfig ||
-                               vpnConnection->state() == NetworkManager::VpnConnection::Activated))) {
-            connect(active.data(), SIGNAL(destroyed(QObject*)),
-                    SLOT(activeConnectionDestroyed()));
-            if (vpnConnection) {
-                connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
-                        SLOT(vpnConnectionStateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)), Qt::UniqueConnection);
-            } else {
-                connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-                        SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
-            }
-            if (vpnConnection && vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
-                m_vpn = true;
-            } else {
-                m_connecting = true;
-            }
-            Q_EMIT connectingChanged(true);
+            connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
+                    SLOT(vpnConnectionStateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)), Qt::UniqueConnection);
+        } else {
+            connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
+                    SLOT(activeConnectionStateChanged(NetworkManager::ActiveConnection::State)), Qt::UniqueConnection);
         }
     }
 }
 
+void ConnectionIcon::activeConnectionAdded(const QString &activeConnection)
+{
+    addActiveConnection(activeConnection);
+    setStates();
+}
+
 void ConnectionIcon::activeConnectionStateChanged(NetworkManager::ActiveConnection::State state)
 {
-    if (state == NetworkManager::ActiveConnection::Deactivated ||
-        state == NetworkManager::ActiveConnection::Deactivating ||
-        state == NetworkManager::ActiveConnection::Activated ||
-        state == NetworkManager::ActiveConnection::Unknown) {
-        m_connecting = false;
-        Q_EMIT connectingChanged(false);
+    // activeConnectionStateChanged can only affect connecting
+    // m_vpn is updated at vpnConnectionStateChanged
+    if (state == NetworkManager::ActiveConnection::Activating) {
+        setConnecting(true);
+    } else {
+        setStates();
     }
 }
 
 void ConnectionIcon::activeConnectionDestroyed()
 {
-    m_connecting = false;
-    Q_EMIT connectingChanged(false);
+    setStates();
 }
 
 void ConnectionIcon::carrierChanged(bool carrier)
@@ -240,8 +224,7 @@ void ConnectionIcon::modemSignalChanged(uint signal)
 void ConnectionIcon::networkingEnabledChanged(bool enabled)
 {
     if (!enabled) {
-        m_connectionIcon = "network-unavailable";
-        Q_EMIT connectionIconChanged("network-unavailable");
+        setConnectionIcon("network-unavailable");
     }
 }
 
@@ -261,32 +244,10 @@ void ConnectionIcon::statusChanged(NetworkManager::Status status)
 
 void ConnectionIcon::vpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
 {
+    Q_UNUSED(state);
     Q_UNUSED(reason);
-    if (state == NetworkManager::VpnConnection::Activated ||
-        state == NetworkManager::VpnConnection::Failed ||
-        state == NetworkManager::VpnConnection::Disconnected) {
-        m_connecting = false;
-        Q_EMIT connectingChanged(false);
-    }
-
-    if (state == NetworkManager::VpnConnection::Activated) {
-        m_vpn = true;
-        setIcons();
-    } else if (state == NetworkManager::VpnConnection::Failed ||
-               state == NetworkManager::VpnConnection::Disconnected) {
-        m_vpn = false;
-
-        foreach (const NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
-            if (activeConnection->vpn()) {
-                NetworkManager::VpnConnection::Ptr vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
-                if (vpnConnection && vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
-                    m_vpn = true;
-                }
-            }
-        }
-
-        setIcons();
-    }
+    setStates();
+    setIcons();
 }
 
 void ConnectionIcon::wirelessEnabledChanged(bool enabled)
@@ -303,6 +264,36 @@ void ConnectionIcon::wwanEnabledChanged(bool enabled)
     if (NetworkManager::status() == NetworkManager::Disconnected) {
         setDisconnectedIcon();
     }
+}
+
+void ConnectionIcon::setStates()
+{
+    bool connecting = false;
+    bool vpn = false;
+    foreach (NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
+        if (activeConnection->state() == NetworkManager::ActiveConnection::Activating) {
+            connecting = true;
+        }
+
+        NetworkManager::VpnConnection::Ptr vpnConnection;
+        if (activeConnection->vpn()) {
+            vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
+        }
+
+        if (vpnConnection) {
+            if (vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
+                vpn = true;
+            } else if (vpnConnection->state() == NetworkManager::VpnConnection::Prepare ||
+                       vpnConnection->state() == NetworkManager::VpnConnection::NeedAuth ||
+                       vpnConnection->state() == NetworkManager::VpnConnection::Connecting ||
+                       vpnConnection->state() == NetworkManager::VpnConnection::GettingIpConfig) {
+                connecting = true;
+            }
+        }
+    }
+
+    setVpn(vpn);
+    setConnecting(connecting);
 }
 
 void ConnectionIcon::setIcons()
@@ -355,18 +346,14 @@ void ConnectionIcon::setIcons()
                     }
                 }
             } else if (type == NetworkManager::Device::Ethernet) {
-                m_connectionIcon = "network-wired-activated";
-                m_connectionTooltipIcon = "network-wired-activated";
-                Q_EMIT connectionIconChanged("network-wired-activated");
-                Q_EMIT connectionTooltipIconChanged("network-wired-activated");
+                setConnectionIcon("network-wired-activated");
+                setConnectionTooltipIcon("network-wired-activated");
             } else if (type == NetworkManager::Device::Modem) {
 #if WITH_MODEMMANAGER_SUPPORT
                 setModemIcon(device);
 #else
-                m_connectionIcon = "network-mobile-0";
-                m_connectionTooltipIcon = "phone";
-                Q_EMIT connectionIconChanged("network-mobile-0");
-                Q_EMIT connectionTooltipIconChanged("phone");
+                setConnectionIcon("network-mobile-0");
+                setConnectionTooltipIcon("phone");
 #endif
             } else if (type == NetworkManager::Device::Bluetooth) {
                 NetworkManager::BluetoothDevice::Ptr btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
@@ -375,23 +362,17 @@ void ConnectionIcon::setIcons()
 #if WITH_MODEMMANAGER_SUPPORT
                         setModemIcon(device);
 #else
-                        m_connectionIcon = "network-mobile-0";
-                        m_connectionTooltipIcon = "phone";
-                        Q_EMIT connectionIconChanged("network-mobile-0");
-                        Q_EMIT connectionTooltipIconChanged("phone");
+                        setConnectionIcon("network-mobile-0");
+                        setConnectionTooltipIcon("phone");
 #endif
                     } else {
-                        m_connectionIcon = "network-bluetooth-activated";
-                        m_connectionTooltipIcon = "preferences-system-bluetooth";
-                        Q_EMIT connectionIconChanged("network-bluetooth-activated");
-                        Q_EMIT connectionTooltipIconChanged("preferences-system-bluetooth");
+                        setConnectionIcon("network-bluetooth-activated");
+                        setConnectionTooltipIcon("preferences-system-bluetooth");
                     }
                 }
             } else {
-                m_connectionIcon = "network-wired-activated";
-                m_connectionTooltipIcon = "network-wired-activated";
-                Q_EMIT connectionIconChanged("network-wired-activated");
-                Q_EMIT connectionTooltipIconChanged("network-wired-activated");
+                setConnectionIcon("network-wired-activated");
+                setConnectionTooltipIcon("network-wired-activated");
             }
         }
     } else {
@@ -403,8 +384,7 @@ void ConnectionIcon::setDisconnectedIcon()
 {
     if (NetworkManager::status() == NetworkManager::Unknown ||
         NetworkManager::status() == NetworkManager::Asleep) {
-        m_connectionIcon = "network-unavailable";
-        Q_EMIT connectionIconChanged("network-unavailable");
+        setConnectionIcon("network-unavailable");
         return;
     }
 
@@ -436,28 +416,20 @@ void ConnectionIcon::setDisconnectedIcon()
     }
 
     if (wired) {
-        m_connectionIcon = "network-wired-available";
-        m_connectionTooltipIcon = "network-wired";
-        Q_EMIT connectionIconChanged("network-wired-available");
-        Q_EMIT connectionTooltipIconChanged("network-wired");
+        setConnectionIcon("network-wired-available");
+        setConnectionTooltipIcon("network-wired");
         return;
     } else if (wireless) {
-        m_connectionIcon = "network-wireless-available";
-        m_connectionTooltipIcon = "network-wireless-connected-00";
-        Q_EMIT connectionIconChanged("network-wireless-available");
-        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-00");
+        setConnectionIcon("network-wireless-available");
+        setConnectionTooltipIcon("network-wireless-connected-00");
         return;
     } else if (modem) {
-        m_connectionIcon = "network-mobile-available";
-        m_connectionTooltipIcon = "phone";
-        Q_EMIT connectionIconChanged("network-mobile-available");
-        Q_EMIT connectionTooltipIconChanged("phone");
+        setConnectionIcon("network-mobile-available");
+        setConnectionTooltipIcon("phone");
         return;
     }  else {
-        m_connectionIcon = "network-unavailable";
-        m_connectionTooltipIcon = "network-wired";
-        Q_EMIT connectionIconChanged("network-unavailable");
-        Q_EMIT connectionTooltipIconChanged("network-wired");
+        setConnectionIcon("network-unavailable");
+        setConnectionTooltipIcon("network-wired");
     }
 }
 
@@ -467,8 +439,7 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
     NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
 
     if (!modemDevice) {
-        m_connectionIcon = "network-mobile-100";
-        Q_EMIT connectionIconChanged("network-mobile-100");
+        setConnectionIcon("network-mobile-100");
 
         return;
     }
@@ -491,10 +462,8 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
         m_signal = m_modemNetwork->signalQuality().signal;
         setIconForModem();
     } else {
-        m_connectionIcon = "network-mobile-0";
-        Q_EMIT connectionIconChanged("network-mobile-0");
-        m_connectionTooltipIcon = "phone";
-        Q_EMIT connectionTooltipIconChanged("phone");
+        setConnectionIcon("network-mobile-0");
+        setConnectionTooltipIcon("phone");
         return;
     }
 }
@@ -554,10 +523,8 @@ void ConnectionIcon::setIconForModem()
         break;
     }
 
-    m_connectionIcon = QString(result).arg(strength);
-    m_connectionTooltipIcon = "phone";
-    Q_EMIT connectionIconChanged(QString(result).arg(strength));
-    Q_EMIT connectionTooltipIconChanged("phone");
+    setConnectionIcon(QString(result).arg(strength));
+    setConnectionTooltipIcon("phone");
 }
 #endif
 
@@ -585,31 +552,64 @@ void ConnectionIcon::setWirelessIconForSignalStrength(int strength)
     int iconStrength = 100;
     if (strength == 0) {
         iconStrength = 0;
-        m_connectionTooltipIcon = "network-wireless-connected-00";
-        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-00");
+        setConnectionTooltipIcon("network-wireless-connected-00");
     } else if (strength < 20) {
         iconStrength = 20;
-        m_connectionTooltipIcon = "network-wireless-connected-20";
-        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-20");
+        setConnectionTooltipIcon("network-wireless-connected-20");
     } else if (strength < 40) {
         iconStrength = 40;
-        m_connectionTooltipIcon = "network-wireless-connected-40";
-        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-40");
+        setConnectionTooltipIcon("network-wireless-connected-40");
     } else if (strength < 60) {
         iconStrength = 60;
-        m_connectionTooltipIcon = "network-wireless-connected-60";
-        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-60");
+        setConnectionTooltipIcon("network-wireless-connected-60");
     } else if (strength < 80) {
         iconStrength = 80;
-        m_connectionTooltipIcon = "network-wireless-connected-80";
-        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-80");
+        setConnectionTooltipIcon("network-wireless-connected-80");
     } else if (strength < 100) {
-        m_connectionTooltipIcon = "network-wireless-connected-100";
-        Q_EMIT connectionTooltipIconChanged("network-wireless-connected-100");
+        setConnectionTooltipIcon("network-wireless-connected-100");
     }
 
     QString icon = QString("network-wireless-%1").arg(iconStrength);
 
-    m_connectionIcon = icon;
-    Q_EMIT connectionIconChanged(icon);
+    setConnectionIcon(icon);
+}
+
+void ConnectionIcon::setConnecting(bool connecting)
+{
+    if (connecting != m_connecting) {
+        m_connecting = connecting;
+        Q_EMIT connectingChanged(m_connecting);
+    }
+}
+
+void ConnectionIcon::setConnectionIcon(const QString & icon)
+{
+    if (icon != m_connectionIcon) {
+        m_connectionIcon = icon;
+        Q_EMIT connectionIconChanged(connectionIcon());
+    }
+}
+
+void ConnectionIcon::setConnectionTooltipIcon(const QString & icon)
+{
+    if (icon != m_connectionTooltipIcon) {
+        m_connectionTooltipIcon = icon;
+        Q_EMIT connectionTooltipIconChanged(m_connectionTooltipIcon);
+    }
+}
+
+void ConnectionIcon::setVpn(bool vpn)
+{
+    if (m_vpn != vpn) {
+        m_vpn = vpn;
+        Q_EMIT connectionIconChanged(connectionIcon());
+    }
+}
+
+void ConnectionIcon::setLimited(bool limited)
+{
+    if (m_limited != limited) {
+        m_limited = limited;
+        Q_EMIT connectionIconChanged(connectionIcon());
+    }
 }

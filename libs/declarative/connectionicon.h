@@ -72,6 +72,12 @@ Q_SIGNALS:
     void connectionTooltipIconChanged(const QString & icon);
 
 private:
+    void addActiveConnection(const QString & activeConnection);
+    void setConnecting(bool connecting);
+    void setConnectionIcon(const QString & icon);
+    void setConnectionTooltipIcon(const QString & icon);
+    void setVpn(bool vpn);
+    void setLimited(bool limited);
     uint m_signal;
     NetworkManager::WirelessNetwork::Ptr m_wirelessNetwork;
 
@@ -83,6 +89,7 @@ private:
 
     void setDisconnectedIcon();
     void setIcons();
+    void setStates();
     void setWirelessIcon(const NetworkManager::Device::Ptr & device, const QString & ssid);
 #if WITH_MODEMMANAGER_SUPPORT
     ModemManager::Modem::Ptr m_modemNetwork;

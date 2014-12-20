@@ -149,13 +149,8 @@ void ConnectionIcon::activeConnectionAdded(const QString &activeConnection)
 
 void ConnectionIcon::activeConnectionStateChanged(NetworkManager::ActiveConnection::State state)
 {
-    // activeConnectionStateChanged can only affect connecting
-    // m_vpn is updated at vpnConnectionStateChanged
-    if (state == NetworkManager::ActiveConnection::Activating) {
-        setConnecting(true);
-    } else {
-        setStates();
-    }
+    Q_UNUSED(state);
+    setStates();
 }
 
 void ConnectionIcon::activeConnectionDestroyed()
@@ -271,16 +266,16 @@ void ConnectionIcon::setStates()
     bool connecting = false;
     bool vpn = false;
     foreach (NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
-        if (activeConnection->state() == NetworkManager::ActiveConnection::Activating) {
-            connecting = true;
-        }
-
         NetworkManager::VpnConnection::Ptr vpnConnection;
         if (activeConnection->vpn()) {
             vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
         }
 
-        if (vpnConnection) {
+        if (!vpnConnection) {
+            if (activeConnection->state() == NetworkManager::ActiveConnection::Activating) {
+                connecting = true;
+            }
+        } else {
             if (vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
                 vpn = true;
             } else if (vpnConnection->state() == NetworkManager::VpnConnection::Prepare ||

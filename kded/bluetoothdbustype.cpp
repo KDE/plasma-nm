@@ -1,7 +1,5 @@
 /*
-    Copyright 2011 Lamarque Souza <lamarque@kde.org>
-    Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2014 Xuetian Weng <wengxt@gmail.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -20,27 +18,14 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_BLUETOOTH_MONITOR_H
-#define PLASMA_NM_BLUETOOTH_MONITOR_H
-#if WITH_MODEMMANAGER_SUPPORT
-#include "mobileconnectionwizard.h"
-#include <ModemManagerQt/manager.h>
-#endif
+#include "bluetoothdbustype.h"
+#include <QDBusMetaType>
 
-#include "dbusobjectmanager.h"
-class QDBusServiceWatcher;
+Q_DECLARE_METATYPE(DBusManagedObject);
+Q_DECLARE_METATYPE(DBusManagedObjectMap);
 
-class BluetoothMonitor: public QObject
+void registerBluetoohDBusType()
 {
-Q_OBJECT
-public:
-    explicit BluetoothMonitor(QObject * parent);
-    ~BluetoothMonitor();
-
-    void addBluetoothConnection(const QString & bdAddr, const QString & service);
-
-private:
-    QDBusServiceWatcher *mServiceWatcher;
-    org::freedesktop::DBus::ObjectManager *mBluezInterface;
-};
-#endif
+    qDBusRegisterMetaType<DBusManagedObject>();
+    qDBusRegisterMetaType<DBusManagedObjectMap>();
+}

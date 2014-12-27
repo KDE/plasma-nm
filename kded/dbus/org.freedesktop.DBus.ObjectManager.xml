@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.freedesktop.DBus.ObjectManager">
+    <method name="GetManagedObjects">
+      <arg name="objects" type="a{oa{sa{sv}}}" direction="out"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="DBusManagedObjectMap"/>
+    </method>
+  </interface>
+</node>

@@ -6,6 +6,7 @@ if (WITH_MODEMMANAGER_SUPPORT)
     set(kded_networkmanagement_SRCS
         ../libs/debug.cpp
         bluetoothmonitor.cpp
+        bluetoothdbustype.cpp
         notification.cpp
         modemmonitor.cpp
         monitor.cpp
@@ -22,8 +23,8 @@ if (WITH_MODEMMANAGER_SUPPORT)
 else()
     set(kded_networkmanagement_SRCS
         ../libs/debug.cpp
-        ../libs/debug.cpp
         bluetoothmonitor.cpp
+        bluetoothdbustype.cpp
         notification.cpp
         monitor.cpp
         passworddialog.cpp
@@ -34,6 +35,10 @@ else()
         passworddialog.ui
     )
 endif()
+
+set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/dbus/org.freedesktop.DBus.ObjectManager.xml PROPERTIES INCLUDE "bluetoothdbustype.h")
+qt5_add_dbus_interface(kded_networkmanagement_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/dbus/org.freedesktop.DBus.ObjectManager.xml dbusobjectmanager)
+qt5_add_dbus_interface(kded_networkmanagement_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/dbus/org.freedesktop.DBus.Properties.xml dbusproperties)
 
 add_library(kded_networkmanagement MODULE ${kded_networkmanagement_SRCS})
 

@@ -241,8 +241,8 @@ void BluetoothMonitor::addBluetoothConnection(const QString& bdAddr, const QStri
                                 delete mobileConnectionWizard;
                             }
                         }
-                    }
 #endif
+                    }
                 });
             });
         }

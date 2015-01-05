@@ -32,7 +32,7 @@ find_package(KF5 REQUIRED
     I18n WindowSystem Service Completion WidgetsAddons KIO CoreAddons Wallet ItemViews XmlGui
     ConfigWidgets IconThemes Solid DBusAddons Notifications Plasma Declarative Init KDELibs4Support)
 
-find_package(KF5NetworkManagerQt)
+find_package(KF5NetworkManagerQt 5.6.0)
 set_package_properties(KF5NetworkManagerQt PROPERTIES
                        TYPE REQUIRED)
 

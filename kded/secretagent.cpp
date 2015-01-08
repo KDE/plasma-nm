@@ -374,7 +374,17 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
         NMVariantMapMap result;
         NetworkManager::VpnSetting::Ptr vpnSetting;
         vpnSetting = connectionSettings.setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
-        result.insert("vpn", vpnSetting->secretsToMap());
+        //FIXME workaround when NM is asking for secrets which should be system-stored, if we send an empty map it
+        // won't ask for additional secrets with AllowInteraction flag which would display the authentication dialog
+        if (vpnSetting->secretsToMap().isEmpty()) {
+            // Insert an empty secrets map as it was before I fixed it in NetworkManagerQt to make sure NM will ask again
+            // with flags we need
+            QVariantMap secretsMap;
+            secretsMap.insert(QLatin1String("secrets"), QVariant::fromValue<NMStringMap>(NMStringMap()));
+            result.insert("vpn", secretsMap);
+        } else {
+            result.insert("vpn", vpnSetting->secretsToMap());
+        }
         sendSecrets(result, request.message);
         return true;
     } else if (setting->needSecrets().isEmpty()) {

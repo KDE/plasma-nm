@@ -10,7 +10,7 @@ ki18n_wrap_ui(pptp_SRCS pptpprop.ui pptpadvanced.ui pptpauth.ui)
 
 add_library(plasmanetworkmanagement_pptpui ${pptp_SRCS})
 
-kservice_desktop_to_json(plasmanetworkmanagement_pptpui plasmanetworkmanagement_pptpui.desktop)
+kcoreaddons_desktop_to_json(plasmanetworkmanagement_pptpui plasmanetworkmanagement_pptpui.desktop)
 
 target_link_libraries(plasmanetworkmanagement_pptpui
     plasmanm_internal

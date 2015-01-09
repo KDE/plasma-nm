@@ -10,7 +10,7 @@ ki18n_wrap_ui(openswan_SRCS openswan.ui openswanauth.ui)
 
 add_library(plasmanetworkmanagement_openswanui ${openswan_SRCS})
 
-kservice_desktop_to_json(plasmanetworkmanagement_openswanui plasmanetworkmanagement_openswanui.desktop)
+kcoreaddons_desktop_to_json(plasmanetworkmanagement_openswanui plasmanetworkmanagement_openswanui.desktop)
 
 target_link_libraries(plasmanetworkmanagement_openswanui
     plasmanm_internal

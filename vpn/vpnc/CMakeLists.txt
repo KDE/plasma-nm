@@ -12,7 +12,7 @@ ki18n_wrap_ui(vpnc_SRCS vpnc.ui vpncadvanced.ui vpncauth.ui)
 
 add_library(plasmanetworkmanagement_vpncui ${vpnc_SRCS})
 
-kservice_desktop_to_json(plasmanetworkmanagement_vpncui plasmanetworkmanagement_vpncui.desktop)
+kcoreaddons_desktop_to_json(plasmanetworkmanagement_vpncui plasmanetworkmanagement_vpncui.desktop)
 
 target_link_libraries(plasmanetworkmanagement_vpncui
     plasmanm_internal

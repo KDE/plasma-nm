@@ -102,6 +102,8 @@ QVariantMap OpenconnectSettingWidget::setting(bool agentOwned) const
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_GATEWAY"-flags"), QString::number(NetworkManager::Setting::NotSaved));
 
     setting.setData(data);
+    setting.setSecrets(d->setting->secrets());
+
     return setting.toMap();
 }
 

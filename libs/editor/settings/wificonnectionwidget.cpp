@@ -59,7 +59,7 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
 {
     NetworkManager::WirelessSetting::Ptr wifiSetting = setting.staticCast<NetworkManager::WirelessSetting>();
 
-    m_ui->SSIDCombo->init(wifiSetting->ssid());
+    m_ui->SSIDCombo->init(QString::fromUtf8(wifiSetting->ssid()));
 
     if (wifiSetting->mode() != NetworkManager::WirelessSetting::Infrastructure) {
         m_ui->modeComboBox->setCurrentIndex(wifiSetting->mode());

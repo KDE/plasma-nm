@@ -30,7 +30,9 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
 
 find_package(KF5 REQUIRED
     I18n WindowSystem Service Completion WidgetsAddons KIO CoreAddons Wallet ItemViews XmlGui
-    ConfigWidgets IconThemes Solid DBusAddons Notifications Plasma Declarative Init KDELibs4Support NetworkManagerQt)
+    ConfigWidgets IconThemes Solid DBusAddons Notifications Plasma Declarative Init KDELibs4Support)
+
+find_package(KF5NetworkManagerQt REQUIRED 5.7.0)
 
 find_package(KF5ModemManagerQt)
 set_package_properties(KF5ModemManagerQt PROPERTIES

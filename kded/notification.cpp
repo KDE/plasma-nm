@@ -318,7 +318,11 @@ void Notification::addActiveConnection(const NetworkManager::ActiveConnection::P
         NetworkManager::VpnConnection::Ptr vpnConnection = ac.objectCast<NetworkManager::VpnConnection>();
         connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
                 this, SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)));
+#if NM_CHECK_VERSION(0, 9, 10)
+    } else if (ac->type() != NetworkManager::ConnectionSettings::Generic) {
+#else
     } else {
+#endif
         connect(ac.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
                 this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
     }

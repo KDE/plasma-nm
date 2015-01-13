@@ -67,6 +67,7 @@ public:
     NetworkManager::VpnSetting::Ptr setting;
     struct openconnect_info *vpninfo;
     NMStringMap secrets;
+    NMStringMap tmpSecrets;
     QMutex mutex;
     QWaitCondition workerWaiting;
     OpenconnectAuthWorkerThread *worker;
@@ -310,6 +311,12 @@ QVariantMap OpenconnectAuthWidget::setting(bool agentOwned) const
     }
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
+
+    // These secrets are not officially part of the secrets which would be returned back to NetworkManager. We just
+    // need to somehow get them to our secret agent which will handle them separately and store them.
+    if (!d->tmpSecrets.isEmpty()) {
+        secretData.insert("tmp-secrets", QVariant::fromValue<NMStringMap>(d->tmpSecrets));
+    }
     return secretData;
 }
 
@@ -489,7 +496,7 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
 #if !OPENCONNECT_CHECK_VER(5,0)
 #define openconnect_check_peer_cert_hash(v,d) strcmp(d, fingerprint.toUtf8().data())
 #endif
-  
+
     if (openconnect_check_peer_cert_hash(d->vpninfo, value.toUtf8().data())) {
         QWidget *widget = new QWidget();
         QVBoxLayout *verticalLayout;
@@ -583,7 +590,9 @@ void OpenconnectAuthWidget::formLoginClicked()
                 QByteArray text = le->text().toUtf8();
                 openconnect_set_option_value(opt, text.data());
                 if (opt->type == OC_FORM_OPT_TEXT) {
-                    d->secrets.insert(key,le->text());
+                    d->secrets.insert(key, le->text());
+                } else {
+                    d->tmpSecrets.insert(key, le->text());
                 }
             } else if (opt->type == OC_FORM_OPT_SELECT) {
                 KComboBox *cbo = qobject_cast<KComboBox*>(widget);
@@ -593,6 +602,7 @@ void OpenconnectAuthWidget::formLoginClicked()
             }
         }
     }
+
     deleteAllFromLayout(d->ui.loginBoxLayout);
     d->workerWaiting.wakeAll();
 }

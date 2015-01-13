@@ -26,7 +26,6 @@
 #include "debug.h"
 
 #include <QDialog>
-#include <KLocalizedString>
 #include <QPushButton>
 #include <QString>
 #include <QLabel>
@@ -44,7 +43,9 @@
 #include <QFile>
 #include <QTimer>
 #include <QPointer>
+
 #include <KIconLoader>
+#include <KLocalizedString>
 
 #include "nm-openconnect-service.h"
 
@@ -72,6 +73,7 @@ public:
     NetworkManager::VpnSetting::Ptr setting;
     struct openconnect_info *vpninfo;
     NMStringMap secrets;
+    NMStringMap tmpSecrets;
     QMutex mutex;
     QWaitCondition workerWaiting;
     OpenconnectAuthWorkerThread *worker;
@@ -315,6 +317,12 @@ QVariantMap OpenconnectAuthWidget::setting(bool agentOwned) const
     }
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
+
+    // These secrets are not officially part of the secrets which would be returned back to NetworkManager. We just
+    // need to somehow get them to our secret agent which will handle them separately and store them.
+    if (!d->tmpSecrets.isEmpty()) {
+        secretData.insert("tmp-secrets", QVariant::fromValue<NMStringMap>(d->tmpSecrets));
+    }
     return secretData;
 }
 
@@ -588,7 +596,9 @@ void OpenconnectAuthWidget::formLoginClicked()
                 QByteArray text = le->text().toUtf8();
                 openconnect_set_option_value(opt, text.data());
                 if (opt->type == OC_FORM_OPT_TEXT) {
-                    d->secrets.insert(key,le->text());
+                    d->secrets.insert(key, le->text());
+                } else {
+                    d->tmpSecrets.insert(key, le->text());
                 }
             } else if (opt->type == OC_FORM_OPT_SELECT) {
                 QComboBox *cbo = qobject_cast<QComboBox*>(widget);
@@ -598,6 +608,7 @@ void OpenconnectAuthWidget::formLoginClicked()
             }
         }
     }
+
     deleteAllFromLayout(d->ui.loginBoxLayout);
     d->workerWaiting.wakeAll();
 }

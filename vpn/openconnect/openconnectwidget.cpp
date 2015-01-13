@@ -97,6 +97,13 @@ QVariantMap OpenconnectSettingWidget::setting(bool agentOwned) const
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_PRIVKEY), d->ui.leUserPrivateKey->url().toLocalFile());
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_PEM_PASSPHRASE_FSID), d->ui.chkUseFsid->isChecked() ? "yes" : "no");
 
+    // Restore previous flags, this is necessary for keeping secrets stored in KWallet
+    foreach (const QString &key, d->setting->data().keys()) {
+        if (key.contains(QLatin1String("-flags"))) {
+            data.insert(key, d->setting->data().value(key));
+        }
+    }
+
     /* These are different for every login session, and should not be stored */
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_COOKIE"-flags"), QString::number(NetworkManager::Setting::NotSaved));
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_GWCERT"-flags"), QString::number(NetworkManager::Setting::NotSaved));

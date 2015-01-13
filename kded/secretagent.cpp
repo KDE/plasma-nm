@@ -161,7 +161,16 @@ void SecretAgent::dialogAccepted()
     for (int i = 0; i < m_calls.size(); ++i) {
         SecretsRequest request = m_calls[i];
         if (request.type == SecretsRequest::GetSecrets && request.dialog == m_dialog) {
+            NMStringMap tmpOpenconnectSecrets;
             NMVariantMapMap connection = request.dialog->secrets();
+            if (connection.contains(QLatin1String("vpn"))) {
+                if (connection.value(QLatin1String("vpn")).contains(QLatin1String("tmp-secrets"))) {
+                    QVariantMap vpnSetting = connection.value(QLatin1String("vpn"));
+                    tmpOpenconnectSecrets = qdbus_cast<NMStringMap>(vpnSetting.take(QLatin1String("tmp-secrets")));
+                    connection.insert(QLatin1String("vpn"), vpnSetting);
+                }
+            }
+
             sendSecrets(connection, request.message);
             NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(connection));
             NetworkManager::ConnectionSettings::Ptr completeConnectionSettings;
@@ -210,6 +219,33 @@ void SecretAgent::dialogAccepted()
                     requestOffline.connection_path = request.connection_path;
                     requestOffline.saveSecretsWithoutReply = true;
                     m_calls << requestOffline;
+                }
+            } else if (request.saveSecretsWithoutReply && completeConnectionSettings->connectionType() == NetworkManager::ConnectionSettings::Vpn && !tmpOpenconnectSecrets.isEmpty()) {
+                NetworkManager::VpnSetting::Ptr vpnSetting = completeConnectionSettings->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
+                if (vpnSetting) {
+                    NMStringMap data = vpnSetting->data();
+                    NMStringMap secrets = vpnSetting->secrets();
+
+                    // Load secrets from auth dialog which are returned back to NM
+                    if (connection.value(QLatin1String("vpn")).contains(QLatin1String("secrets"))) {
+                        secrets.unite(qdbus_cast<NMStringMap>(connection.value(QLatin1String("vpn")).value(QLatin1String("secrets"))));
+                    }
+
+                    // Load temporary secrets from auth dialog which are not returned to NM
+                    foreach (const QString &key, tmpOpenconnectSecrets.keys()) {
+                        data.insert(key + QLatin1String("-flags"), QString::number(NetworkManager::Setting::AgentOwned));
+                        secrets.insert(key, tmpOpenconnectSecrets.value(key));
+                    }
+
+                    vpnSetting->setData(data);
+                    vpnSetting->setSecrets(secrets);
+                    if (!con) {
+                        con = NetworkManager::findConnection(request.connection_path.path());
+                    }
+
+                    if (con) {
+                        con->update(completeConnectionSettings->toMap());
+                    }
                 }
             }
 

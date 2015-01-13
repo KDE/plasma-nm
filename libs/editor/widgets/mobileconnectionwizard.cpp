@@ -147,10 +147,7 @@ void MobileConnectionWizard::initializePage(int id)
             goto OUT_3;
         }
         if (radioManualProvider->isChecked()) {
-            mPlanComboBox->insertSeparator(1);
             mPlanComboBox->addItem(i18nc("Mobile Connection Wizard", "My plan is not listed..."));
-            mPlanComboBox->setCurrentIndex(1);
-            userApn->clear();
 
             if (lineEditProvider->text().isEmpty()) {
                 lineEditProvider->setText(i18nc("Mobile Connection Wizard", "Unknown Provider"));
@@ -160,7 +157,6 @@ void MobileConnectionWizard::initializePage(int id)
                 const QStringList mApns = mProviders->getApns(mProvidersList->currentItem()->text());
 
                 if (!mApns.isEmpty()) {
-                    userApn->setText(mApns.first());
                     mPlanComboBox->insertItems(0, mApns);
                     mPlanComboBox->setItemText(0, i18nc("Mobile Connection Wizard", "Default"));
                 }
@@ -171,6 +167,8 @@ void MobileConnectionWizard::initializePage(int id)
             }
             mPlanComboBox->addItem(i18nc("Mobile Connection Wizard", "My plan is not listed..."));
         }
+        mPlanComboBox->setCurrentIndex(0);
+        slotEnablePlanEditBox(mPlanComboBox->currentText());
 OUT_3:
         connect(mPlanComboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(slotEnablePlanEditBox(QString)));
         break;

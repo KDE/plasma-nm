@@ -378,9 +378,11 @@ void ConnectionDetailEditor::replyFinished(QDBusPendingCallWatcher *watcher)
     QDBusPendingReply<NMVariantMapMap> reply = *watcher;
     if (reply.isValid()) {
         NMVariantMapMap secrets = reply.argumentAt<0>();
-        foreach (const QString & key, secrets.keys()) {
+        Q_FOREACH(const QString & key, secrets.keys()) {
             NetworkManager::Setting::Ptr setting = m_connection->setting(NetworkManager::Setting::typeFromString(key));
-            setting->secretsFromMap(secrets.value(key));
+            if (setting) {
+                setting->secretsFromMap(secrets.value(key));
+            }
         }
     } else {
         KNotification *notification = new KNotification("FailedToGetSecrets", KNotification::CloseOnTimeout);

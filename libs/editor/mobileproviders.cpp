@@ -35,7 +35,7 @@ bool localeAwareCompare(const QString & one, const QString & two) {
 MobileProviders::MobileProviders()
 {
     const QStringList allCountries = KLocale::global()->allCountriesList();
-    foreach (const QString & cc, allCountries) {
+    Q_FOREACH(const QString & cc, allCountries) {
         // qCDebug(PLASMA_NM) << "Inserting" << cc.toUpper() << KLocale::global()->countryCodeToName(cc);
         mCountries.insert(cc.toUpper(), KLocale::global()->countryCodeToName(cc));
     }
@@ -304,7 +304,7 @@ QString MobileProviders::getNameByLocale(const QMap<QString, QString> & localize
 {
     QString name;
     const QStringList locales = KLocale::global()->languageList();
-    foreach(const QString & locale, locales) {
+    Q_FOREACH (const QString & locale, locales) {
         QString language, country, modifier, charset;
         KLocale::splitLocale(locale, language, country, modifier, charset);
 

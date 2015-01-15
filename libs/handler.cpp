@@ -132,7 +132,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
 {
     NetworkManager::AccessPoint::Ptr ap;
     NetworkManager::WirelessDevice::Ptr wifiDev;
-    foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+    Q_FOREACH(const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
         if (dev->type() == NetworkManager::Device::Wifi) {
             wifiDev = dev.objectCast<NetworkManager::WirelessDevice>();
             ap = wifiDev->findAccessPoint(specificObject);
@@ -243,7 +243,7 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
     }
 
     QDBusPendingReply<> reply;
-    foreach (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+    Q_FOREACH(const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
         if (active->uuid() == con->uuid() && ((!active->devices().isEmpty() && active->devices().first() == device) ||
                                                active->vpn())) {
             if (active->vpn()) {
@@ -267,7 +267,7 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
 
 void Handler::disconnectAll()
 {
-    foreach (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH(const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
         device->disconnectInterface();
     }
 }
@@ -326,7 +326,7 @@ bool Handler::isBtEnabled()
     QDBusInterface managerIface("org.bluez", "/", "org.freedesktop.DBus.ObjectManager", QDBusConnection::systemBus(), this);
     QDBusReply<QMap<QDBusObjectPath, NMVariantMapMap> > reply = managerIface.call("GetManagedObjects");
     if (reply.isValid()) {
-        foreach(const QDBusObjectPath &path, reply.value().keys()) {
+        Q_FOREACH (const QDBusObjectPath &path, reply.value().keys()) {
             const QString objPath = path.path();
             qCDebug(PLASMA_NM) << "inspecting path" << objPath;
             const QStringList interfaces = reply.value().value(path).keys();
@@ -350,7 +350,7 @@ void Handler::enableBt(bool enable)
     QDBusInterface managerIface("org.bluez", "/", "org.freedesktop.DBus.ObjectManager", QDBusConnection::systemBus(), this);
     QDBusReply<QMap<QDBusObjectPath, NMVariantMapMap> > reply = managerIface.call("GetManagedObjects");
     if (reply.isValid()) {
-        foreach(const QDBusObjectPath &path, reply.value().keys()) {
+        Q_FOREACH (const QDBusObjectPath &path, reply.value().keys()) {
             const QString objPath = path.path();
             qCDebug(PLASMA_NM) << "inspecting path" << objPath;
             const QStringList interfaces = reply.value().value(path).keys();
@@ -383,7 +383,7 @@ void Handler::removeConnection(const QString& connection)
     }
 
     // Remove slave connections
-    foreach (const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
+    Q_FOREACH(const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
         NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
         if (settings->master() == con->uuid()) {
             connection->remove();
@@ -413,7 +413,7 @@ void Handler::openEditor()
 
 void Handler::requestScan()
 {
-    foreach (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH(NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
             if (wifiDevice) {

@@ -46,5 +46,5 @@ QString SettingWidget::type() const
 
 void SettingWidget::slotWidgetChanged()
 {
-    emit validChanged(isValid());
+    Q_EMIT validChanged(isValid());
 }

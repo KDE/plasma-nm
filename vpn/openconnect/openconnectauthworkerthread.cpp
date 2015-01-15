@@ -115,7 +115,7 @@ void OpenconnectAuthWorkerThread::run()
     int ret = openconnect_obtain_cookie(m_openconnectInfo);
     if (*m_userDecidedToQuit)
         return;
-    emit cookieObtained(ret);
+    Q_EMIT cookieObtained(ret);
 }
 
 struct openconnect_info* OpenconnectAuthWorkerThread::getOpenconnectInfo()
@@ -128,7 +128,7 @@ int OpenconnectAuthWorkerThread::writeNewConfig(const char *buf, int buflen)
     Q_UNUSED(buflen)
     if (*m_userDecidedToQuit)
         return -EINVAL;
-    emit writeNewConfig(QString(QByteArray(buf).toBase64()));
+    Q_EMIT writeNewConfig(QString(QByteArray(buf).toBase64()));
     return 0;
 }
 
@@ -178,7 +178,7 @@ int OpenconnectAuthWorkerThread::validatePeerCert(void *cert, const char *reason
     QString qFingerprint(fingerprint);
     QString qCertinfo(details);
     QString qReason(reason);
-    emit validatePeerCert(qFingerprint, qCertinfo, qReason, &accepted);
+    Q_EMIT validatePeerCert(qFingerprint, qCertinfo, qReason, &accepted);
     m_waitForUserInput->wait(m_mutex);
     m_mutex->unlock();
     openconnect_free_cert_info(m_openconnectInfo, details);
@@ -199,7 +199,7 @@ int OpenconnectAuthWorkerThread::processAuthFormP(struct oc_auth_form *form)
 
     m_mutex->lock();
     *m_formGroupChanged = false;
-    emit processAuthForm(form);
+    Q_EMIT processAuthForm(form);
     m_waitForUserInput->wait(m_mutex);
     m_mutex->unlock();
     if (*m_userDecidedToQuit)
@@ -216,5 +216,5 @@ void OpenconnectAuthWorkerThread::writeProgress(int level, const char *fmt, va_l
         return;
     QString msg;
     msg.vsprintf(fmt, argPtr);
-    emit updateLog(msg, level);
+    Q_EMIT updateLog(msg, level);
 }

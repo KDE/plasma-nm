@@ -71,7 +71,7 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
     connect(NetworkManager::notifier(), SIGNAL(wwanHardwareEnabledChanged(bool)),
             SLOT(wwanEnabledChanged(bool)));
 
-    foreach (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH(NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
             NetworkManager::WiredDevice::Ptr wiredDevice = device.staticCast<NetworkManager::WiredDevice>();
             if (wiredDevice) {
@@ -81,7 +81,7 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
         }
     }
 
-    foreach (NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
+    Q_FOREACH(NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
         addActiveConnection(activeConnection->path());
     }
     setStates();
@@ -265,7 +265,7 @@ void ConnectionIcon::setStates()
 {
     bool connecting = false;
     bool vpn = false;
-    foreach (NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
+    Q_FOREACH(NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
         NetworkManager::VpnConnection::Ptr vpnConnection;
         if (activeConnection->vpn()) {
             vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
@@ -314,7 +314,7 @@ void ConnectionIcon::setIcons()
     // doesn't work correctly with some VPN connections. This shouldn't be necessary
     // for NM 0.9.9.0 or the upcoming bugfix release NM 0.9.8.10
     if (!connection) {
-        foreach (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
+        Q_FOREACH(const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
             if ((activeConnection->default4() || activeConnection->default6()) && activeConnection->vpn()) {
                 NetworkManager::ActiveConnection::Ptr baseActiveConnection;
                 baseActiveConnection = NetworkManager::findActiveConnection(activeConnection->specificObject());
@@ -390,7 +390,7 @@ void ConnectionIcon::setDisconnectedIcon()
     m_limited = false;
     m_vpn = false;
 
-    foreach (const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH(const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
             NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
             if (wiredDev->carrier()) {

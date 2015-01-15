@@ -49,7 +49,7 @@ public:
 
     virtual bool isValid() const;
 
-private slots:
+private Q_SLOTS:
     void addTeam(QAction * action);
     void currentTeamChanged(QListWidgetItem * current, QListWidgetItem * previous);
     void teamAddComplete(QDBusPendingCallWatcher * watcher);

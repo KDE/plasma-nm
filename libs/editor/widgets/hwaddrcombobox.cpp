@@ -67,13 +67,13 @@ QString HwAddrComboBox::hwAddress() const
 void HwAddrComboBox::editTextChanged(const QString &)
 {
     m_dirty = true;
-    emit hwAddressChanged();
+    Q_EMIT hwAddressChanged();
 }
 
 void HwAddrComboBox::currentIndexChanged(int)
 {
     m_dirty = false;
-    emit hwAddressChanged();
+    Q_EMIT hwAddressChanged();
 }
 
 void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const QString &address)
@@ -83,7 +83,7 @@ void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const 
     // qCDebug(PLASMA_NM) << "Initial address:" << m_initialAddress;
 
     QString deviceName;
-    foreach(const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
         const NetworkManager::Device::Type type = device->type();
         if (type == deviceType) {
             if (address == hwAddressFromDevice(device).toString()) {

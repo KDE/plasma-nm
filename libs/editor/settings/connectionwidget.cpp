@@ -88,7 +88,7 @@ void ConnectionWidget::loadConfig(const NetworkManager::ConnectionSettings::Ptr 
     const QStringList secondaries = settings->secondaries();
     const QStringList vpnKeys = vpnConnections().keys();
     if (!secondaries.isEmpty() && !vpnKeys.isEmpty()) {
-        foreach (const QString & vpnKey, vpnKeys) {
+        Q_FOREACH(const QString & vpnKey, vpnKeys) {
             if (secondaries.contains(vpnKey)) {
                 m_widget->vpnCombobox->setCurrentIndex(m_widget->vpnCombobox->findData(vpnKey));
                 m_widget->autoconnectVpn->setChecked(true);
@@ -165,7 +165,7 @@ NMStringMap ConnectionWidget::vpnConnections() const
     NetworkManager::Connection::List list = NetworkManager::listConnections();
     NMStringMap result;
 
-    foreach (const NetworkManager::Connection::Ptr & conn, list) {
+    Q_FOREACH(const NetworkManager::Connection::Ptr & conn, list) {
         NetworkManager::ConnectionSettings::Ptr conSet = conn->settings();
         if (conSet->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
             // qCDebug(PLASMA_NM) << "Found VPN" << conSet->id() << conSet->uuid();

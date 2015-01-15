@@ -37,7 +37,7 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     if (modem) {
         m_udi = modem->uni();
         m_name = modem->device();
-        foreach (const Solid::Device &d, Solid::Device::allDevices()) {
+        Q_FOREACH(const Solid::Device &d, Solid::Device::allDevices()) {
             if (d.udi().contains(m_name, Qt::CaseInsensitive)) {
                 m_name = d.product();
                 if (!m_name.startsWith(d.vendor())) {

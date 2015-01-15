@@ -69,7 +69,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     qCDebug(PLASMA_NM) << "Flags:" << flags;
 
     const QString callId = connection_path.path() % setting_name;
-    foreach (const SecretsRequest & request, m_calls) {
+    Q_FOREACH(const SecretsRequest & request, m_calls) {
         if (request == callId) {
             qCWarning(PLASMA_NM) << "GetSecrets was called again! This should not happen, cancelling first call" << connection_path.path() << setting_name;
             CancelGetSecrets(connection_path, setting_name);
@@ -408,7 +408,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request) const
             }
 
             if (m_wallet->setFolder("Network Management")) {
-                foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
+                Q_FOREACH(const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
                     NMStringMap secretsMap = setting->secretsToStringMap();
 
                     if (!secretsMap.isEmpty()) {
@@ -444,9 +444,9 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request) const
         if (m_wallet->isOpen()) {
             if (m_wallet->hasFolder("Network Management") && m_wallet->setFolder("Network Management")) {
                 NetworkManager::ConnectionSettings connectionSettings(request.connection);
-                foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
+                Q_FOREACH(const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
                     QString entryName = QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name();
-                    foreach (const QString &entry, m_wallet->entryList()) {
+                    Q_FOREACH(const QString &entry, m_wallet->entryList()) {
                         if (entry.startsWith(entryName)) {
                             m_wallet->removeEntry(entryName);
                         }
@@ -500,7 +500,7 @@ bool SecretAgent::useWallet() const
 bool SecretAgent::hasSecrets(const NMVariantMapMap &connection) const
 {
     NetworkManager::ConnectionSettings connectionSettings(connection);
-    foreach (const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
+    Q_FOREACH(const NetworkManager::Setting::Ptr &setting, connectionSettings.settings()) {
         if (!setting->secretsToMap().isEmpty()) {
             return true;
         }
@@ -524,7 +524,7 @@ void SecretAgent::importSecretsFromPlainTextFiles()
 
     // No action is required when the list of secrets is empty
     if (!config.groupList().isEmpty()) {
-        foreach (const QString &groupName, config.groupList()) {
+        Q_FOREACH(const QString &groupName, config.groupList()) {
             QString loadedUuid = groupName.split(';').first().remove('{').remove('}');
             QString loadedSettingType = groupName.split(';').last();
             NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(loadedUuid);
@@ -533,7 +533,7 @@ void SecretAgent::importSecretsFromPlainTextFiles()
                 QMap<QString, QString> secrets = config.entryMap(groupName);
                 NMVariantMapMap settings = connection->settings()->toMap();
 
-                foreach (const QString &setting, settings.keys()) {
+                Q_FOREACH(const QString &setting, settings.keys()) {
                     if (setting == QLatin1String("vpn")) {
                         NetworkManager::VpnSetting::Ptr vpnSetting = connection->settings()->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
                         if (vpnSetting) {
@@ -543,7 +543,7 @@ void SecretAgent::importSecretsFromPlainTextFiles()
                             NMStringMap vpnData = vpnSetting->data();
                             // Reset flags, we can't save secrets to our secret agent when KWallet is not enabled, because
                             // we dropped support for plaintext files, therefore they need to be stored to NetworkManager
-                            foreach (const QString &key, vpnData.keys()) {
+                            Q_FOREACH(const QString &key, vpnData.keys()) {
                                 if (key.endsWith(QLatin1String("-flags"))) {
                                     vpnData.insert(key, QString::number((int)secretFlags));
                                 }
@@ -558,7 +558,7 @@ void SecretAgent::importSecretsFromPlainTextFiles()
                             QVariantMap tmpSetting = settings.value(setting);
                             // Reset flags, we can't save secrets to our secret agent when KWallet is not enabled, because
                             // we dropped support for plaintext files, therefore they need to be stored to NetworkManager
-                            foreach (const QString &key, tmpSetting.keys()) {
+                            Q_FOREACH(const QString &key, tmpSetting.keys()) {
                                 if (key.endsWith(QLatin1String("-flags"))) {
                                     tmpSetting.insert(key, (int)secretFlags);
                                 }

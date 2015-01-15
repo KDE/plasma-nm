@@ -118,7 +118,7 @@ void OpenVpnAdvancedWidget::openVpnFinished(int exitCode, QProcess::ExitStatus e
         m_ui->cboCipher->addItem(i18nc("@item::inlist Default openvpn cipher item", "Default"));
         const QList<QByteArray> rawOutputLines = d->openVpnCiphers.split('\n');
         bool foundFirstSpace = false;;
-        foreach (const QByteArray &cipher, rawOutputLines) {
+        Q_FOREACH(const QByteArray &cipher, rawOutputLines) {
             if (cipher.length() == 0) {
                 foundFirstSpace = true;
             } else if (foundFirstSpace) {

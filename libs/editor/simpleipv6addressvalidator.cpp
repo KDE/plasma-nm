@@ -58,7 +58,7 @@ QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value)
     // lets check address parts
     bool emptypresent = false;
     int i = 1;
-    foreach(QString part, addrParts) { // krazy:exclude=foreach
+    Q_FOREACH (QString part, addrParts) { // krazy:exclude=Q_FOREACH 
         if (part.isEmpty() && i < number) {
             if (emptypresent) {
                 // qCDebug(PLASMA_NM) << "part.isEmpty()";

@@ -560,7 +560,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                 list << ipRoute;
             }
             QList<QList<uint> > dbusRoutes;
-            foreach (const NetworkManager::IpRoute &route, list) {
+            Q_FOREACH(const NetworkManager::IpRoute &route, list) {
                 QList<uint> dbusRoute;
                 dbusRoute << htonl(route.ip().toIPv4Address())
                         << route.prefixLength()
@@ -826,7 +826,7 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
     // Export X-NM-Routes
     if (!ipv4Setting->routes().isEmpty()) {
         QString routes;
-        foreach(const NetworkManager::IpRoute &route, ipv4Setting->routes()) {
+        Q_FOREACH (const NetworkManager::IpRoute &route, ipv4Setting->routes()) {
             routes += route.ip().toString() % QLatin1Char('/') % QString::number(route.prefixLength()) % QLatin1Char(' ');
         }
         if (!routes.isEmpty()) {

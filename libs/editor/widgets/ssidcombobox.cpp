@@ -58,14 +58,14 @@ QString SsidComboBox::ssid() const
 void SsidComboBox::editTextChanged(const QString &)
 {
     m_dirty = true;
-    emit ssidChanged();
+    Q_EMIT ssidChanged();
 }
 
 void SsidComboBox::currentIndexChanged(int)
 {
     m_dirty = false;
     setEditText(ssid());
-    emit ssidChanged();
+    Q_EMIT ssidChanged();
 }
 
 void SsidComboBox::init(const QString &ssid)
@@ -76,13 +76,13 @@ void SsidComboBox::init(const QString &ssid)
 
     QList<NetworkManager::WirelessNetwork::Ptr> networks;
 
-    foreach(const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
 
-            foreach (const NetworkManager::WirelessNetwork::Ptr & newNetwork, wifiDevice->networks()) {
+            Q_FOREACH(const NetworkManager::WirelessNetwork::Ptr & newNetwork, wifiDevice->networks()) {
                 bool found = false;
-                foreach (const NetworkManager::WirelessNetwork::Ptr & existingNetwork, networks) {
+                Q_FOREACH(const NetworkManager::WirelessNetwork::Ptr & existingNetwork, networks) {
                     if (newNetwork->ssid() == existingNetwork->ssid()) {
                         if (newNetwork->signalStrength() > existingNetwork->signalStrength()) {
                             networks.removeOne(existingNetwork);
@@ -117,7 +117,7 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
 {
     QList<NetworkManager::WirelessDevice::Ptr> wifiDevices;
 
-    foreach (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+    Q_FOREACH(const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
         if (dev->type() == NetworkManager::Device::Wifi) {
             wifiDevices << dev.objectCast<NetworkManager::WirelessDevice>();
         }
@@ -126,14 +126,14 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
     QString longestSsid;
     bool empty = true;
 
-    foreach (const NetworkManager::WirelessNetwork::Ptr & network, networks) {
+    Q_FOREACH(const NetworkManager::WirelessNetwork::Ptr & network, networks) {
         NetworkManager::AccessPoint::Ptr accessPoint = network->referenceAccessPoint();
 
         if (!accessPoint) {
             continue;
         }
 
-        foreach (const NetworkManager::WirelessDevice::Ptr & wifiDev, wifiDevices) {
+        Q_FOREACH(const NetworkManager::WirelessDevice::Ptr & wifiDev, wifiDevices) {
             if (wifiDev->findNetwork(network->ssid()) == network) {
                 if (!empty) {
                     insertSeparator(count());

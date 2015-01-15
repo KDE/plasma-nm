@@ -66,14 +66,14 @@ bool BssidComboBox::isValid() const
 void BssidComboBox::editTextChanged(const QString &)
 {
     m_dirty = true;
-    emit bssidChanged();
+    Q_EMIT bssidChanged();
 }
 
 void BssidComboBox::currentIndexChanged(int)
 {
     m_dirty = false;
     setEditText(bssid());
-    emit bssidChanged();
+    Q_EMIT bssidChanged();
 }
 
 void BssidComboBox::init(const QString & bssid, const QString &ssid)
@@ -84,7 +84,7 @@ void BssidComboBox::init(const QString & bssid, const QString &ssid)
 
     QList<NetworkManager::AccessPoint::Ptr> aps;
 
-    foreach(const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
             NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(ssid);
@@ -93,9 +93,9 @@ void BssidComboBox::init(const QString & bssid, const QString &ssid)
                 continue;
             }
 
-            foreach (const NetworkManager::AccessPoint::Ptr & newAp, wifiNetwork->accessPoints()) {
+            Q_FOREACH(const NetworkManager::AccessPoint::Ptr & newAp, wifiNetwork->accessPoints()) {
                 bool found = false;;
-                foreach (const NetworkManager::AccessPoint::Ptr & existingAp, aps) {
+                Q_FOREACH(const NetworkManager::AccessPoint::Ptr & existingAp, aps) {
                     if (newAp->hardwareAddress() == existingAp->hardwareAddress()) {
                         if (newAp->signalStrength() > existingAp->signalStrength()) {
                             aps.removeOne(existingAp);
@@ -136,7 +136,7 @@ void BssidComboBox::addBssidsToCombo(const QList<NetworkManager::AccessPoint::Pt
         return;
     }
 
-    foreach (const NetworkManager::AccessPoint::Ptr & ap, aps) {
+    Q_FOREACH(const NetworkManager::AccessPoint::Ptr & ap, aps) {
         if (!ap) {
             continue;
         }

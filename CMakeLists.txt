@@ -63,9 +63,9 @@ else()
     endif()
 endif()
 
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0 -DQT_NO_KEYWORDS)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
-remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_STRICT_ITERATORS -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_KEYWORDS)
+remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_STRICT_ITERATORS -DQT_NO_CAST_FROM_BYTEARRAY)
 
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 
@@ -73,8 +73,14 @@ add_definitions(-DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT})
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR} # for config.h
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/
-                    ${NETWORKMANAGER_INCLUDE_DIRS})
+                    ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/)
+
+if (${NETWORKMANAGER_VERSION} VERSION_EQUAL 1.0.0 OR ${NETWORKMANAGER_VERSION} VERSION_GREATER 1.0.0)
+include_directories(${NM-CORE_INCLUDE_DIRS})
+else()
+include_directories(${NETWORKMANAGER_INCLUDE_DIRS})
+remove_definitions(-DQT_NO_KEYWORDS)
+endif()
 
 if (WITH_MODEMMANAGER_SUPPORT)
     include_directories(${MODEMMANAGER_INCLUDE_DIRS})

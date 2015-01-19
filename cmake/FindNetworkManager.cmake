@@ -15,10 +15,10 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 
-IF (NETWORKMANAGER_INCLUDE_DIRS AND (NM-UTIL_INCLUDE_DIRS OR NM-CORE_INCLUDE_DIRS))
+IF (NETWORKMANAGER_INCLUDE_DIRS AND NM-CORE_INCLUDE_DIRS)
     # in cache already
     SET(NetworkManager_FIND_QUIETLY TRUE)
-ENDIF (NETWORKMANAGER_INCLUDE_DIRS AND (NM-UTIL_INCLUDE_DIRS OR NM-CORE_INCLUDE_DIRS))
+ENDIF (NETWORKMANAGER_INCLUDE_DIRS AND NM-CORE_INCLUDE_DIRS)
 
 IF (NOT WIN32)
     # use pkg-config to get the directories and then use these values
@@ -31,18 +31,7 @@ IF (NOT WIN32)
             MESSAGE(FATAL_ERROR "NetworkManager ${NETWORKMANAGER_VERSION} is too old, need at least ${NetworkManager_FIND_VERSION}")
         ELSE ()
             # Since NetworkManager 1.0.0 we need to find different libraries
-            IF (NetworkManager_FIND_VERSION AND ("${NETWORKMANAGER_VERSION}" VERSION_LESS "1.0.0"))
-                PKG_SEARCH_MODULE( NM-UTIL libnm-util )
-                PKG_SEARCH_MODULE( NM-GLIB libnm-glib )
-                IF (NM-UTIL_FOUND AND NM-GLIB_FOUND)
-                    IF (NOT NetworkManager_FIND_QUIETLY)
-                        MESSAGE(STATUS "Found libnm-util: ${NM-UTIL_LIBRARY_DIRS}")
-                        MESSAGE(STATUS "Found libnm-glib: ${NM-GLIB_LIBRARY_DIRS}")
-                    ENDIF ()
-                ELSE ()
-                    MESSAGE(FATAL_ERROR "Could NOT find libnm-util or libnm-glib, check FindPkgConfig output above!")
-                ENDIF ()
-            ELSE ()
+            IF (NetworkManager_FIND_VERSION AND ("${NETWORKMANAGER_VERSION}" VERSION_GREATER "1.0.0" OR "${NETWORKMANAGER_VERSION}" VERSION_EQUAL "1.0.0"))
                 PKG_SEARCH_MODULE( NM-CORE libnm )
                 IF (NM-CORE_FOUND)
                     IF (NOT NetworkManager_FIND_QUIETLY)

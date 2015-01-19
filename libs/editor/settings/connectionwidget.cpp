@@ -110,9 +110,11 @@ void ConnectionWidget::loadConfig(const NetworkManager::ConnectionSettings::Ptr 
 
     m_widget->autoconnect->setChecked(settings->autoconnect());
 
+#if NM_CHECK_VERSION(1, 0, 0)
     if (m_widget->prioritySpin->isEnabled()) {
         m_widget->prioritySpin->setValue(settings->autoconnectPriority());
     }
+#endif
 }
 
 NMVariantMapMap ConnectionWidget::setting() const
@@ -143,9 +145,11 @@ NMVariantMapMap ConnectionWidget::setting() const
         settings.setZone(zone);
     }
 
+#if NM_CHECK_VERSION(1, 0, 0)
     if (m_widget->prioritySpin->isEnabled()) {
         settings.setAutoconnectPriority(m_widget->prioritySpin->value());
     }
+#endif
 
     return settings.toMap();
 }

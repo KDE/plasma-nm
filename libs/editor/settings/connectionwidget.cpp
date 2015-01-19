@@ -58,8 +58,17 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
 
     connect(m_widget->autoconnectVpn, SIGNAL(toggled(bool)), SLOT(autoVpnToggled(bool)));
 
-    if (settings)
+    if (NetworkManager::compareVersion(QLatin1String("1.0.0")) >= 0) {
+        m_widget->prioritySpin->setEnabled(true);
+        m_widget->nmVersionWarning->setVisible(false);
+    } else {
+        m_widget->prioritySpin->setEnabled(false);
+        m_widget->nmVersionWarning->setVisible(true);
+    }
+
+    if (settings) {
         loadConfig(settings);
+    }
 
     m_tmpSetting.setPermissions(settings->permissions());
 
@@ -100,6 +109,10 @@ void ConnectionWidget::loadConfig(const NetworkManager::ConnectionSettings::Ptr 
     }
 
     m_widget->autoconnect->setChecked(settings->autoconnect());
+
+    if (m_widget->prioritySpin->isEnabled()) {
+        m_widget->prioritySpin->setValue(settings->autoconnectPriority());
+    }
 }
 
 NMVariantMapMap ConnectionWidget::setting() const
@@ -128,6 +141,10 @@ NMVariantMapMap ConnectionWidget::setting() const
     const QString zone = m_widget->firewallZone->currentText();
     if (!zone.isEmpty()) {
         settings.setZone(zone);
+    }
+
+    if (m_widget->prioritySpin->isEnabled()) {
+        settings.setAutoconnectPriority(m_widget->prioritySpin->value());
     }
 
     return settings.toMap();

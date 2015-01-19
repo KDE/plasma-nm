@@ -10,21 +10,8 @@
     <height>441</height>
    </rect>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="8" column="1">
-    <spacer name="verticalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>118</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="0" column="0" colspan="3">
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item>
     <widget class="QCheckBox" name="autoconnect">
      <property name="text">
       <string>Automatically connect to this network when it is available</string>
@@ -34,7 +21,45 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QCheckBox" name="allUsers">
+       <property name="text">
+        <string>All users may connect to this network</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonPermissions">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="toolTip">
+        <string>Edit advanced permissions for this connection</string>
+       </property>
+       <property name="whatsThis">
+        <string>Fine-grained permissions editor for this connection. It lets you choose which users can activate/modify/delete this connection.</string>
+       </property>
+       <property name="text">
+        <string>Advanced...</string>
+       </property>
+       <property name="icon">
+        <iconset theme="preferences-desktop-user">
+         <normaloff/>
+        </iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -50,7 +75,25 @@
      </property>
     </spacer>
    </item>
-   <item row="5" column="1">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QCheckBox" name="autoconnectVpn">
+       <property name="text">
+        <string>Automatically connect to VPN when using this connection</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="KComboBox" name="vpnCombobox">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -66,79 +109,95 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="0" colspan="2">
-    <widget class="QCheckBox" name="allUsers">
-     <property name="text">
-      <string>All users may connect to this network</string>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
-    </widget>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Firewall zone:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="buddy">
+          <cstring>firewallZone</cstring>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Priority:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="KComboBox" name="firewallZone">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <property name="insertPolicy">
+          <enum>QComboBox::InsertAlphabetically</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="prioritySpin">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </item>
-   <item row="1" column="2">
-    <widget class="QPushButton" name="pushButtonPermissions">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="toolTip">
-      <string>Edit advanced permissions for this connection</string>
-     </property>
-     <property name="whatsThis">
-      <string>Fine-grained permissions editor for this connection. It lets you choose which users can activate/modify/delete this connection.</string>
-     </property>
-     <property name="text">
-      <string>Advanced...</string>
-     </property>
-     <property name="icon">
-      <iconset theme="preferences-desktop-user">
-       <normaloff/>
-      </iconset>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Firewall zone:</string>
-     </property>
-     <property name="buddy">
-      <cstring>firewallZone</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0" colspan="3">
-    <widget class="QCheckBox" name="autoconnectVpn">
-     <property name="text">
-      <string>Automatically connect to VPN when using this connection</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0" colspan="3">
-    <widget class="KComboBox" name="vpnCombobox">
+   <item>
+    <widget class="QLabel" name="nmVersionWarning">
      <property name="enabled">
       <bool>false</bool>
      </property>
+     <property name="text">
+      <string>(Priority property requires newer version of NetworkManager)</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
    </item>
-   <item row="7" column="0" colspan="3">
-    <widget class="KComboBox" name="firewallZone">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
+   <item>
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <property name="editable">
-      <bool>true</bool>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>118</height>
+      </size>
      </property>
-     <property name="insertPolicy">
-      <enum>QComboBox::InsertAlphabetically</enum>
-     </property>
-    </widget>
+    </spacer>
    </item>
   </layout>
  </widget>

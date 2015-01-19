@@ -230,7 +230,11 @@ void SecretAgent::dialogAccepted()
 
                     // Load temporary secrets from auth dialog which are not returned to NM
                     Q_FOREACH(const QString &key, tmpOpenconnectSecrets.keys()) {
-                        data.insert(key + QLatin1String("-flags"), QString::number(NetworkManager::Setting::AgentOwned));
+                        if (secrets.contains(QLatin1Literal("save_passwords")) && secrets.value(QLatin1Literal("save_passwords")) == QLatin1String("yes")) {
+                            data.insert(key + QLatin1String("-flags"), QString::number(NetworkManager::Setting::AgentOwned));
+                        } else {
+                            data.insert(key + QLatin1String("-flags"), QString::number(NetworkManager::Setting::NotSaved));
+                        }
                         secrets.insert(key, tmpOpenconnectSecrets.value(key));
                     }
 

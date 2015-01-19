@@ -23,7 +23,16 @@
    <property name="sizeConstraint">
     <enum>QLayout::SetMinimumSize</enum>
    </property>
-   <property name="margin">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
     <number>0</number>
    </property>
    <item>
@@ -79,6 +88,13 @@
     </widget>
    </item>
    <item>
+    <widget class="QCheckBox" name="chkStorePasswords">
+     <property name="text">
+      <string>Store passwords</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QGroupBox" name="loginBox">
      <property name="minimumSize">
       <size>
@@ -101,7 +117,16 @@
       </sizepolicy>
      </property>
      <layout class="QVBoxLayout" name="logLayout">
-      <property name="margin">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
        <number>0</number>
       </property>
       <item>

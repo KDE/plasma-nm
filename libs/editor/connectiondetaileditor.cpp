@@ -92,44 +92,52 @@ void ConnectionDetailEditor::initEditor()
     if (!m_new) {
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(m_connection->uuid());
         if (connection) {
-            bool hasSecrets = false;
+            QStringList requiredSecrets;
+            QString settingName;
+            QVariantMap setting;
             QDBusPendingReply<NMVariantMapMap> reply;
 
             if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Adsl) {
                 NetworkManager::AdslSetting::Ptr adslSetting = connection->settings()->setting(NetworkManager::Setting::Adsl).staticCast<NetworkManager::AdslSetting>();
                 if (adslSetting && !adslSetting->needSecrets().isEmpty()) {
-                    hasSecrets = true;
-                    reply = connection->secrets("adsl");
+                    requiredSecrets = adslSetting->needSecrets();
+                    setting = adslSetting->toMap();
+                    settingName = QLatin1String("adsl");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Bluetooth) {
                 NetworkManager::GsmSetting::Ptr gsmSetting = connection->settings()->setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
                 if (gsmSetting && !gsmSetting->needSecrets().isEmpty()) {
-                    hasSecrets = true;
-                    reply = connection->secrets("gsm");
+                    requiredSecrets = gsmSetting->needSecrets();
+                    setting = gsmSetting->toMap();
+                    settingName = QLatin1String("gsm");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Cdma) {
                 NetworkManager::CdmaSetting::Ptr cdmaSetting = connection->settings()->setting(NetworkManager::Setting::Cdma).staticCast<NetworkManager::CdmaSetting>();
                 if (cdmaSetting && !cdmaSetting->needSecrets().isEmpty()) {
-                    hasSecrets = true;
-                    reply = connection->secrets("cdma");
+                    requiredSecrets = cdmaSetting->needSecrets();
+                    setting = cdmaSetting->toMap();
+                    settingName = QLatin1String("cdma");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Gsm) {
                 NetworkManager::GsmSetting::Ptr gsmSetting = connection->settings()->setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
                 if (gsmSetting && !gsmSetting->needSecrets().isEmpty()) {
-                    hasSecrets = true;
-                    reply = connection->secrets("gsm");
+                    requiredSecrets = gsmSetting->needSecrets();
+                    setting = gsmSetting->toMap();
+                    settingName = QLatin1String("gsm");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Pppoe) {
                 NetworkManager::PppoeSetting::Ptr pppoeSetting = connection->settings()->setting(NetworkManager::Setting::Pppoe).staticCast<NetworkManager::PppoeSetting>();
                 if (pppoeSetting && !pppoeSetting->needSecrets().isEmpty()) {
-                    hasSecrets = true;
-                    reply = connection->secrets("pppoe");
+                    requiredSecrets = pppoeSetting->needSecrets();
+                    setting = pppoeSetting->toMap();
+                    settingName = QLatin1String("pppoe");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Wired) {
                 NetworkManager::Security8021xSetting::Ptr securitySetting = connection->settings()->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>();
                 if (securitySetting && !securitySetting->needSecrets().isEmpty()) {
-                    hasSecrets = true;
-                    reply = connection->secrets("802-1x");
+                    requiredSecrets = securitySetting->needSecrets();
+                    setting = securitySetting->toMap();
+                    settingName = QLatin1String("802-1x");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
                 NetworkManager::WirelessSecuritySetting::Ptr wifiSecuritySetting = connection->settings()->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
@@ -139,24 +147,45 @@ void ConnectionDetailEditor::initEditor()
                      wifiSecuritySetting->authAlg() != NetworkManager::WirelessSecuritySetting::Leap))) {
                     NetworkManager::Security8021xSetting::Ptr securitySetting = connection->settings()->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>();
                     if (securitySetting && !securitySetting->needSecrets().isEmpty()) {
-                        hasSecrets = true;
-                        reply = connection->secrets("802-1x");
+                        requiredSecrets = securitySetting->needSecrets();
+                        setting = securitySetting->toMap();
+                        settingName = QLatin1String("802-1x");
                     }
                 } else {
                     if (!wifiSecuritySetting->needSecrets().isEmpty()) {
-                        hasSecrets = true;
-                        reply = connection->secrets("802-11-wireless-security");
+                        requiredSecrets = wifiSecuritySetting->needSecrets();
+                        setting = wifiSecuritySetting->toMap();
+                        settingName = QLatin1String("802-11-wireless-security");
                     }
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
-                hasSecrets = true;
-                reply = connection->secrets("vpn");
+                settingName = QLatin1String("vpn");
             }
 
-            if (hasSecrets) {
-                QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-                watcher->setProperty("connection", connection->name());
-                connect(watcher, &QDBusPendingCallWatcher::finished, this, &ConnectionDetailEditor::replyFinished);
+            if (!requiredSecrets.isEmpty() || m_connection->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
+                bool requestSecrets = false;
+                if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
+                    requestSecrets = true;
+                } else {
+                    Q_FOREACH (const QString &secret, requiredSecrets) {
+                        if (setting.contains(secret + QLatin1String("-flags"))) {
+                            NetworkManager::Setting::SecretFlagType secretFlag = (NetworkManager::Setting::SecretFlagType)setting.value(secret + QLatin1String("-flags")).toInt();
+                            if (secretFlag == NetworkManager::Setting::None ||
+                                secretFlag == NetworkManager::Setting::AgentOwned) {
+                                requestSecrets = true;
+                            }
+                        }
+                    }
+                }
+
+                if (requestSecrets) {
+                    reply = connection->secrets(settingName);
+                    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+                    watcher->setProperty("connection", connection->name());
+                    connect(watcher, &QDBusPendingCallWatcher::finished, this, &ConnectionDetailEditor::replyFinished);
+                } else {
+                   initTabs();
+                }
             } else {
                 initTabs();
             }

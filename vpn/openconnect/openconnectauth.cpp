@@ -238,6 +238,10 @@ void OpenconnectAuthWidget::readSecrets()
         d->ui.chkAutoconnect->setChecked(true);
         QTimer::singleShot(0, this, SLOT(connectHost()));
     }
+
+    if (d->secrets["save_passwords"] == "yes") {
+        d->ui.chkStorePasswords->setChecked(true);
+    }
 }
 
 void OpenconnectAuthWidget::acceptDialog()
@@ -307,6 +311,7 @@ QVariantMap OpenconnectAuthWidget::setting(bool agentOwned) const
 #endif
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_GWCERT), QLatin1String(fingerprint));
     secrets.insert(QLatin1String("autoconnect"), d->ui.chkAutoconnect->isChecked() ? "yes" : "no");
+    secrets.insert(QLatin1String("save_passwords"), d->ui.chkStorePasswords->isChecked() ? "yes" : "no");
 
     NMStringMap::iterator i = secrets.begin();
     while (i != secrets.end()) {

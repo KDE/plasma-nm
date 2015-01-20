@@ -373,7 +373,19 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
     }
 
     if (!secretsMap.isEmpty()) {
-        setting->secretsFromStringMap(secretsMap);
+        // FIXME workaround just for Plasma 5.2 for a missing fix in networkmanager-qt
+        if (isVpn) {
+            NetworkManager::VpnSetting::Ptr vpnSetting = setting.staticCast<NetworkManager::VpnSetting>();
+            if (vpnSetting) {
+                NMStringMap secrets = vpnSetting->secrets();
+                vpnSetting->secretsFromStringMap(secretsMap);
+                secrets.unite(vpnSetting->secrets());
+                vpnSetting->setSecrets(secrets);
+            }
+        } else {
+            setting->secretsFromStringMap(secretsMap);
+        }
+
         if (!isVpn && setting->needSecrets(requestNew).isEmpty()) {
             // Enough secrets were retrieved from storage
             request.connection[request.setting_name] = setting->secretsToMap();

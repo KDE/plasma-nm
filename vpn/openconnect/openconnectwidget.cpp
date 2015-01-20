@@ -98,7 +98,7 @@ QVariantMap OpenconnectSettingWidget::setting(bool agentOwned) const
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_PEM_PASSPHRASE_FSID), d->ui.chkUseFsid->isChecked() ? "yes" : "no");
 
     // Restore previous flags, this is necessary for keeping secrets stored in KWallet
-    foreach (const QString &key, d->setting->data().keys()) {
+    Q_FOREACH (const QString &key, d->setting->data().keys()) {
         if (key.contains(QLatin1String("-flags"))) {
             data.insert(key, d->setting->data().value(key));
         }

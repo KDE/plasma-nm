@@ -129,8 +129,11 @@ void NetworkStatus::changeActiveConnections()
     Q_FOREACH(const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
         if (!active->devices().isEmpty()) {
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
-
+#if NM_CHECK_VERSION(0, 9, 10)
+            if (device && device->type() != NetworkManager::Device::Generic && device->type() <= NetworkManager::Device::Team) {
+#else
             if (device) {
+#endif
                 QString conType;
                 QString status;
                 NetworkManager::VpnConnection::Ptr vpnConnection;

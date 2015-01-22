@@ -132,7 +132,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
 {
     NetworkManager::AccessPoint::Ptr ap;
     NetworkManager::WirelessDevice::Ptr wifiDev;
-    Q_FOREACH(const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+    Q_FOREACH (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
         if (dev->type() == NetworkManager::Device::Wifi) {
             wifiDev = dev.objectCast<NetworkManager::WirelessDevice>();
             ap = wifiDev->findAccessPoint(specificObject);
@@ -243,7 +243,7 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
     }
 
     QDBusPendingReply<> reply;
-    Q_FOREACH(const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+    Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
         if (active->uuid() == con->uuid() && ((!active->devices().isEmpty() && active->devices().first() == device) ||
                                                active->vpn())) {
             if (active->vpn()) {
@@ -267,7 +267,7 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
 
 void Handler::disconnectAll()
 {
-    Q_FOREACH(const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
         device->disconnectInterface();
     }
 }
@@ -383,7 +383,7 @@ void Handler::removeConnection(const QString& connection)
     }
 
     // Remove slave connections
-    Q_FOREACH(const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
+    Q_FOREACH (const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
         NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
         if (settings->master() == con->uuid()) {
             connection->remove();
@@ -413,7 +413,7 @@ void Handler::openEditor()
 
 void Handler::requestScan()
 {
-    Q_FOREACH(NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
             if (wifiDevice) {

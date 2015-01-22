@@ -274,14 +274,14 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         }
         if (!decrPlugin->readStringKeyValue(cg,"X-NM-Routes").isEmpty()) {
             QList<NetworkManager::IpRoute> list;
-            Q_FOREACH(const QString &route, decrPlugin->readStringKeyValue(cg,"X-NM-Routes").split(' ')) {
+            Q_FOREACH (const QString &route, decrPlugin->readStringKeyValue(cg,"X-NM-Routes").split(' ')) {
                 NetworkManager::IpRoute ipRoute;
                 ipRoute.setIp(QHostAddress(route.split('/').first()));
                 ipRoute.setPrefixLength(route.split('/').at(1).toInt());
                 list << ipRoute;
             }
             QList<QList<uint> > dbusRoutes;
-            Q_FOREACH(const NetworkManager::IpRoute &route, list) {
+            Q_FOREACH (const NetworkManager::IpRoute &route, list) {
                 QList<uint> dbusRoute;
                 dbusRoute << htonl(route.ip().toIPv4Address())
                         << route.prefixLength()

@@ -30,7 +30,7 @@ AvailableDevices::AvailableDevices(QObject* parent)
     , m_modemDeviceAvailable(false)
     , m_bluetoothDeviceAvailable(false)
 {
-    Q_FOREACH(const NetworkManager::Device::Ptr& device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH (const NetworkManager::Device::Ptr& device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Modem) {
             m_modemDeviceAvailable = true;
         } else if (device->type() == NetworkManager::Device::Wifi) {
@@ -111,7 +111,7 @@ void AvailableDevices::deviceRemoved()
     bool modem = false;
     bool bluetooth = false;
 
-    Q_FOREACH(const NetworkManager::Device::Ptr& device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH (const NetworkManager::Device::Ptr& device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Modem) {
             modem = true;
         } else if (device->type() == NetworkManager::Device::Wifi) {

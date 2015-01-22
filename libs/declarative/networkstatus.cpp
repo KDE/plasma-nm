@@ -56,7 +56,7 @@ QString NetworkStatus::networkStatus() const
 
 void NetworkStatus::activeConnectionsChanged()
 {
-    Q_FOREACH(const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+    Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
         connect(active.data(), SIGNAL(default4Changed(bool)),
                 SLOT(defaultChanged()), Qt::UniqueConnection);
         connect(active.data(), SIGNAL(default6Changed(bool)),
@@ -126,7 +126,7 @@ void NetworkStatus::changeActiveConnections()
     const QString format = "<b>%1</b><br>%2<br><br>";
     const QString formatDefault = "<b>%1</b><br><b>%2</b><br><br>";
 
-    Q_FOREACH(const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+    Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
         if (!active->devices().isEmpty()) {
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
 #if NM_CHECK_VERSION(0, 9, 10)

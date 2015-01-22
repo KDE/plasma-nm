@@ -93,9 +93,9 @@ void BssidComboBox::init(const QString & bssid, const QString &ssid)
                 continue;
             }
 
-            Q_FOREACH(const NetworkManager::AccessPoint::Ptr & newAp, wifiNetwork->accessPoints()) {
+            Q_FOREACH (const NetworkManager::AccessPoint::Ptr & newAp, wifiNetwork->accessPoints()) {
                 bool found = false;;
-                Q_FOREACH(const NetworkManager::AccessPoint::Ptr & existingAp, aps) {
+                Q_FOREACH (const NetworkManager::AccessPoint::Ptr & existingAp, aps) {
                     if (newAp->hardwareAddress() == existingAp->hardwareAddress()) {
                         if (newAp->signalStrength() > existingAp->signalStrength()) {
                             aps.removeOne(existingAp);
@@ -136,7 +136,7 @@ void BssidComboBox::addBssidsToCombo(const QList<NetworkManager::AccessPoint::Pt
         return;
     }
 
-    Q_FOREACH(const NetworkManager::AccessPoint::Ptr & ap, aps) {
+    Q_FOREACH (const NetworkManager::AccessPoint::Ptr & ap, aps) {
         if (!ap) {
             continue;
         }

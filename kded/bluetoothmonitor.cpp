@@ -113,7 +113,7 @@ void BluetoothMonitor::addBluetoothConnection(const QString& bdAddr, const QStri
             }
         }
 
-        Q_FOREACH(QDBusPendingCallWatcher *getPropertiesWatcher, *getPropertiesWatchers) {
+        Q_FOREACH (QDBusPendingCallWatcher *getPropertiesWatcher, *getPropertiesWatchers) {
             connect(getPropertiesWatcher, &QDBusPendingCallWatcher::finished, [this, bdAddr, service, getPropertiesWatchers](QDBusPendingCallWatcher *watcher) {
                 // remove it from the shared set
                 getPropertiesWatchers->remove(watcher);
@@ -138,7 +138,7 @@ void BluetoothMonitor::addBluetoothConnection(const QString& bdAddr, const QStri
                 }
 
                 // Delete all other watcher since we already find the first match address
-                Q_FOREACH(QDBusPendingCallWatcher *getPropertiesWatcher, *getPropertiesWatchers) {
+                Q_FOREACH (QDBusPendingCallWatcher *getPropertiesWatcher, *getPropertiesWatchers) {
                     delete getPropertiesWatcher;
                 }
                 getPropertiesWatchers->clear();
@@ -149,7 +149,7 @@ void BluetoothMonitor::addBluetoothConnection(const QString& bdAddr, const QStri
 
                 // check support on dun and nap
                 bool dun = false, nap = false;
-                Q_FOREACH(const QString &u, properties["UUIDs"].toStringList()) {
+                Q_FOREACH (const QString &u, properties["UUIDs"].toStringList()) {
                     QUuid uuid(u);
                     if (uuid.data1 == 0x1103) {
                         dun = true;
@@ -184,7 +184,7 @@ void BluetoothMonitor::addBluetoothConnection(const QString& bdAddr, const QStri
                     }
 
                     bool exists = false;
-                    Q_FOREACH(const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
+                    Q_FOREACH (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
                         if (con && con->settings() && con->settings()->connectionType() == NetworkManager::ConnectionSettings::Bluetooth) {
                             NetworkManager::BluetoothSetting::Ptr btSetting = con->settings()->setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
                             if (btSetting->bluetoothAddress() == NetworkManager::macAddressFromString(bdAddr)) {

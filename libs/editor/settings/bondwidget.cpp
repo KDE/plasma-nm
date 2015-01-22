@@ -264,7 +264,7 @@ void BondWidget::populateBonds()
 {
     m_ui->bonds->clear();
 
-    Q_FOREACH(const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
+    Q_FOREACH (const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
         NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
         if (settings->master() == m_uuid && settings->slaveType() == type()) {
             const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
@@ -282,7 +282,7 @@ bool BondWidget::isValid() const
             return false;
         }
 
-        Q_FOREACH(const QString & ip, ipAddresses) {
+        Q_FOREACH (const QString & ip, ipAddresses) {
             QHostAddress ipAddress(ip);
             if (ipAddress.isNull()) {
                 return false;

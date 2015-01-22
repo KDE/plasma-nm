@@ -33,7 +33,7 @@ NetworkItemsList::~NetworkItemsList()
 
 bool NetworkItemsList::contains(const NetworkItemsList::FilterType type, const QString& parameter) const
 {
-    Q_FOREACH(NetworkModelItem * item, m_items) {
+    Q_FOREACH (NetworkModelItem * item, m_items) {
         switch (type) {
             case NetworkItemsList::ActiveConnection:
                 if (item->activeConnectionPath() == parameter) {
@@ -113,7 +113,7 @@ QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList:
 {
     QList<NetworkModelItem*> result;
 
-    Q_FOREACH(NetworkModelItem * item, m_items) {
+    Q_FOREACH (NetworkModelItem * item, m_items) {
         switch (type) {
             case NetworkItemsList::ActiveConnection:
                 if (item->activeConnectionPath() == parameter) {
@@ -180,7 +180,7 @@ QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList:
 {
     QList<NetworkModelItem*> result;
 
-    Q_FOREACH(NetworkModelItem * item, m_items) {
+    Q_FOREACH (NetworkModelItem * item, m_items) {
         if (type == NetworkItemsList::Type) {
             if (item->type() == typeParameter) {
                 result << item;

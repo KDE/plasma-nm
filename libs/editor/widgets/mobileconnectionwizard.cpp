@@ -305,7 +305,7 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
             desc.append(modemInterface->model());
         } else {
             QString deviceName = modemInterface->device();
-            Q_FOREACH(const Solid::Device &d, Solid::Device::allDevices()) {
+            Q_FOREACH (const Solid::Device &d, Solid::Device::allDevices()) {
                 if (d.udi().contains(deviceName, Qt::CaseInsensitive)) {
                     deviceName = d.product();
                     if (!deviceName.startsWith(d.vendor())) {

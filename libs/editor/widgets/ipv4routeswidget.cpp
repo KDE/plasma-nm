@@ -109,7 +109,7 @@ bool IpV4RoutesWidget::ignoreautoroutes() const
 void IpV4RoutesWidget::setRoutes(const QList<NetworkManager::IpRoute> &list)
 {
     d->model.removeRows(0, d->model.rowCount());
-    Q_FOREACH(const NetworkManager::IpRoute &route, list) {
+    Q_FOREACH (const NetworkManager::IpRoute &route, list) {
         QList<QStandardItem *> item;
 
         // qCDebug(PLASMA_NM) << route.ip();

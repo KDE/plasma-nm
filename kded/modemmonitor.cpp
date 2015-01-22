@@ -48,7 +48,7 @@ ModemMonitor::ModemMonitor(QObject * parent)
     d->dialog.clear();
 
     QObject::connect(ModemManager::notifier(), SIGNAL(modemAdded(QString)), SLOT(unlockModem(QString)));
-    Q_FOREACH(const ModemManager::ModemDevice::Ptr &iface, ModemManager::modemDevices()) {
+    Q_FOREACH (const ModemManager::ModemDevice::Ptr &iface, ModemManager::modemDevices()) {
         unlockModem(iface->uni());
     }
 }

@@ -38,14 +38,14 @@ Notification::Notification(QObject *parent) :
     QObject(parent)
 {
     // devices
-    Q_FOREACH(const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
+    Q_FOREACH (const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
         addDevice(device);
     }
 
     connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)), this, SLOT(deviceAdded(QString)));
 
     // connections
-    Q_FOREACH(const NetworkManager::ActiveConnection::Ptr &ac, NetworkManager::activeConnections()) {
+    Q_FOREACH (const NetworkManager::ActiveConnection::Ptr &ac, NetworkManager::activeConnections()) {
         addActiveConnection(ac);
     }
 

@@ -579,13 +579,6 @@ void NetworkModel::updateItem(NetworkModelItem * item)
     }
 }
 
-void NetworkModel::updateItems()
-{
-    Q_FOREACH(NetworkModelItem * item, m_list.items()) {
-        updateItem(item);
-    }
-}
-
 void NetworkModel::accessPointSignalStrengthChanged(int signal)
 {
     NetworkManager::AccessPoint * apPtr = qobject_cast<NetworkManager::AccessPoint*>(sender());

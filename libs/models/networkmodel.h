@@ -78,7 +78,6 @@ public:
 
 public Q_SLOTS:
     void onItemUpdated();
-    void updateItems();
 
 private Q_SLOTS:
     void accessPointSignalStrengthChanged(int signal);

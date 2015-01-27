@@ -313,17 +313,36 @@ void ConnectionIcon::setIcons()
     // Workaround, because PrimaryConnection is kinda broken in NM 0.9.8.x and
     // doesn't work correctly with some VPN connections. This shouldn't be necessary
     // for NM 0.9.9.0 or the upcoming bugfix release NM 0.9.8.10
+#if !NM_CHECK_VERSION(0, 9, 10)
     if (!connection) {
-        Q_FOREACH(const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
+        bool defaultRoute = false;
+        NetworkManager::ActiveConnection::Ptr mainActiveConnection;
+        Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
             if ((activeConnection->default4() || activeConnection->default6()) && activeConnection->vpn()) {
-                NetworkManager::ActiveConnection::Ptr baseActiveConnection;
-                baseActiveConnection = NetworkManager::findActiveConnection(activeConnection->specificObject());
-                if (baseActiveConnection) {
-                    connection = baseActiveConnection;
+                defaultRoute = true;
+                mainActiveConnection = activeConnection;
+                break;
+            }
+        }
+
+        if (!defaultRoute) {
+            Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
+                if (activeConnection->vpn()) {
+                    mainActiveConnection = activeConnection;
+                    break;
                 }
             }
         }
+
+        if (mainActiveConnection) {
+            NetworkManager::ActiveConnection::Ptr baseActiveConnection;
+            baseActiveConnection = NetworkManager::findActiveConnection(mainActiveConnection->specificObject());
+            if (baseActiveConnection) {
+                connection = baseActiveConnection;
+            }
+        }
     }
+#endif
 
     if (connection && !connection->devices().isEmpty()) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(connection->devices().first());

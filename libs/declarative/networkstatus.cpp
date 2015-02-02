@@ -134,9 +134,12 @@ void NetworkStatus::changeActiveConnections()
 #else
             if (device) {
 #endif
+                bool connecting = false;
+                bool connected = false;
                 QString conType;
                 QString status;
                 NetworkManager::VpnConnection::Ptr vpnConnection;
+
                 if (active->vpn()) {
                     conType = i18n("VPN");
                     vpnConnection = active.objectCast<NetworkManager::VpnConnection>();
@@ -147,16 +150,23 @@ void NetworkStatus::changeActiveConnections()
                 if (vpnConnection && active->vpn()) {
                     if (vpnConnection->state() >= NetworkManager::VpnConnection::Prepare &&
                         vpnConnection->state() <= NetworkManager::VpnConnection::GettingIpConfig) {
-                        status = i18n("Connecting to %1", active->connection()->name());
+                        connecting = true;
                     } else if (vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
-                        status = i18n("Connected to %1", active->connection()->name());
+                        connected = true;
                     }
                 } else {
                     if (active->state() == NetworkManager::ActiveConnection::Activated) {
-                        status = i18n("Connected to %1", active->connection()->name());
+                        connected = true;
                     } else if (active->state() == NetworkManager::ActiveConnection::Activating) {
-                        status = i18n("Connecting to %1", active->connection()->name());
+                        connecting = true;
                     }
+                }
+
+                const QString connectionName = active->connection()->name().replace('&', "&amp;").replace('<', "&lt;").replace('>', "&gt;");
+                if (connecting) {
+                    status = i18n("Connecting to %1", connectionName);
+                } else if (connected) {
+                    status = i18n("Connected to %1", connectionName);
                 }
 
                 if (active->default4() || active->default6()) {

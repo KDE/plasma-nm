@@ -130,7 +130,12 @@ void NetworkStatus::changeActiveConnections()
         if (!active->devices().isEmpty()) {
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
 
+#if NM_CHECK_VERSION(0, 9, 10)
+            if (device && ((device->type() >= NetworkManager::Device::Ethernet && device->type() <= NetworkManager::Device::Wifi) ||
+                          ((device->type() >= NetworkManager::Device::Bluetooth && device->type() <= NetworkManager::Device::Bridge)))) {
+#else
             if (device) {
+#endif
                 QString devName;
                 QString conType;
                 QString status;

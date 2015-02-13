@@ -49,7 +49,7 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
 
 #if NM_CHECK_VERSION(0, 9, 10)
     const NetworkManager::ConnectionSettings::ConnectionType type = (NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(index, NetworkModel::TypeRole).toUInt();
-    if (type < NetworkManager::ConnectionSettings::Adsl || type > NetworkManager::ConnectionSettings::Team) {
+    if (type < NetworkManager::ConnectionSettings::Adsl || type > NetworkManager::ConnectionSettings::Wireless) {
         return false;
     }
 #endif

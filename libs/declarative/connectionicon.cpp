@@ -73,6 +73,14 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
                 connect(wiredDevice.data(), SIGNAL(carrierChanged(bool)),
                         SLOT(carrierChanged(bool)));
             }
+        } else if (device->type() == NetworkManager::Device::Wifi) {
+            NetworkManager::WirelessDevice::Ptr wifiDevice = device.staticCast<NetworkManager::WirelessDevice>();
+            if (wifiDevice) {
+                connect(wifiDevice.data(), SIGNAL(availableConnectionAppeared(QString)),
+                        SLOT(wirelessNetworkAppeared(QString)));
+                connect(wifiDevice.data(), SIGNAL(networkAppeared(QString)),
+                        SLOT(wirelessNetworkAppeared(QString)));
+            }
         }
     }
 
@@ -287,6 +295,14 @@ void ConnectionIcon::wirelessEnabledChanged(bool enabled)
     }
 }
 
+void ConnectionIcon::wirelessNetworkAppeared(const QString& network)
+{
+    Q_UNUSED(network);
+    if (NetworkManager::status() == NetworkManager::Disconnected) {
+        setDisconnectedIcon();
+    }
+}
+
 void ConnectionIcon::wwanEnabledChanged(bool enabled)
 {
     Q_UNUSED(enabled);
@@ -415,7 +431,7 @@ void ConnectionIcon::setDisconnectedIcon()
                    NetworkManager::isWirelessEnabled() &&
                    NetworkManager::isWirelessHardwareEnabled()) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
-            if (!wifiDevice->accessPoints().isEmpty()) {
+            if (!wifiDevice->accessPoints().isEmpty() || !wifiDevice->availableConnections().isEmpty()) {
                 wireless = true;
             }
         } else if (device->type() == NetworkManager::Device::Modem &&

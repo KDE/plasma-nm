@@ -65,6 +65,7 @@ private Q_SLOTS:
     void setWirelessIconForSignalStrength(int strength);
     void vpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason);
     void wirelessEnabledChanged(bool enabled);
+    void wirelessNetworkAppeared(const QString &network); 
     void wwanEnabledChanged(bool enabled);
 Q_SIGNALS:
     void connectingChanged(bool connecting);

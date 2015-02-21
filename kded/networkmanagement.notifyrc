@@ -2,7 +2,6 @@
 IconName=applications-internet
 Name=networkmanagement
 Name[bg]=networkmanagement
-Name[bs]=networkmanagement
 Name[ca]=Gestió de la xarxa
 Name[ca@valencia]=Gestió de la xarxa
 Name[cs]=networkmanagement
@@ -35,7 +34,6 @@ Name[x-test]=xxnetworkmanagementxx
 Name[zh_CN]=网络管理
 Comment=Notifies about network errors
 Comment[bg]=Уведомява за мрежови грешки
-Comment[bs]=Obavještava o mrežnim greškama
 Comment[ca]=Notifica quant als errors de la xarxa
 Comment[ca@valencia]=Notifica quant als errors de la xarxa
 Comment[cs]=Oznamuje chyby sítě
@@ -68,6 +66,7 @@ Comment[zh_CN]=提示网络错误
 
 [Event/ConnectionActivated]
 Name=Connection activated
+Name[bs]=Konekcija aktivirana
 Name[ca]=Connexió activada
 Name[cs]=Spojení aktivováno
 Name[da]=Forbindelse aktiveret
@@ -97,6 +96,7 @@ Action=Popup
 
 [Event/ConnectionDeactivated]
 Name=Connection deactivated
+Name[bs]=Konekcija deaktivirana
 Name[ca]=Connexió desactivada
 Name[cs]=Spojení deaktivováno
 Name[da]=Forbindelse deaktiveret
@@ -126,6 +126,7 @@ Action=Popup
 
 [Event/DeviceFailed]
 Name=Device failed
+Name[bs]=Uređaj pao
 Name[ca]=El dispositiu ha fallat
 Name[cs]=Zařízení selhalo
 Name[da]=Enheden fejlede
@@ -155,6 +156,7 @@ Action=Popup
 
 [Event/FailedToActivateConnection]
 Name=Failed to activate connection
+Name[bs]=Neuspjela aktivacija konekcije
 Name[ca]=Ha fallat en activar la connexió
 Name[cs]=Spojení nelze aktivovat
 Name[da]=Kunne ikke aktivere forbindelsen
@@ -184,6 +186,7 @@ Action=Popup
 
 [Event/FailedToAddConnection]
 Name=Failed to add connection
+Name[bs]=Neuspjelo dodavanje konekcije
 Name[ca]=Ha fallat en afegir la connexió
 Name[cs]=Přidání spojení selhalo
 Name[da]=Kunne ikke tilføje forbindelse
@@ -213,6 +216,7 @@ Action=Popup
 
 [Event/FailedToRequestScan]
 Name=Failed to request scan
+Name[bs]=Neuspjelo traženje skeniranja
 Name[ca]=Ha fallat en demanar escanejar
 Name[cs]=Vyžádání skenu selhalo
 Name[da]=Kunne ikke anmode om scanning
@@ -243,6 +247,7 @@ Action=None
 [Event/MissingVpnPlugin]
 Name=Missing VPN plugin
 Name[bg]=Лшпсваща приставка за VPN
+Name[bs]=Nedostaje VPN dodatak
 Name[ca]=Manca el connector VPN
 Name[ca@valencia]=Manca el connector VPN
 Name[cs]=Chybějící modul VPN

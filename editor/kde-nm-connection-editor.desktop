@@ -1,7 +1,6 @@
 [Desktop Entry]
 Name=kde-nm-connection-editor
 Name[bg]=kde-nm-connection-editor
-Name[bs]=kde-nm-connection-editor
 Name[ca]=kde-nm-connection-editor
 Name[ca@valencia]=kde-nm-connection-editor
 Name[cs]=kde-nm-connection-editor
@@ -35,7 +34,7 @@ Name[x-test]=xxkde-nm-connection-editorxx
 Name[zh_CN]=kde-nm-connection-editor
 GenericName=Connection editor
 GenericName[bg]=Редактор на мрежи
-GenericName[bs]=Uređivač veze
+GenericName[bs]=Uređivač konekcije
 GenericName[ca]=Editor de la connexió
 GenericName[ca@valencia]=Editor de la connexió
 GenericName[cs]=Editor spojení

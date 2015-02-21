@@ -1,7 +1,6 @@
 [Desktop Entry]
 Name=Network Management
 Name[bg]=Управление на мрежа
-Name[bs]=Upravljanje mrežom
 Name[ca]=Gestió de la xarxa
 Name[ca@valencia]=Gestió de la xarxa
 Name[cs]=Správa sítě
@@ -36,7 +35,7 @@ Name[zh_CN]=网络管理
 
 Comment=Network status and control
 Comment[bg]=Състояние и контрол на мрежата
-Comment[bs]=Alat za kontrolu i prikaz stanja mreže
+Comment[bs]=Kontrola i status mreže
 Comment[ca]=Control i estat de la xarxa
 Comment[ca@valencia]=Control i estat de la xarxa
 Comment[cs]=Stav a ovládání sítě

@@ -80,7 +80,7 @@ void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings
         const QString ssid = wifi->ssid();
         ui->labelText->setText(i18n("For accessing the wireless network '%1' you need to provide a password below", ssid));
     } else {
-        ui->labelText->setText(i18n("Please provide the password for activating connection '%1'", connectionSettings.name()));
+        ui->labelText->setText(i18n("Please provide the password for activating connection '%1'", connectionSettings.id()));
     }
 
     ui->password->setFocus();

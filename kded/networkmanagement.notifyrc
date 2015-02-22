@@ -2,6 +2,7 @@
 IconName=applications-internet
 Name=Network management
 Name[ar]=إدارة الشبكات
+Name[bs]=Upravljanje mrežom
 Name[ca]=Gestió de la xarxa
 Name[cs]=Správa sítě
 Name[da]=Netværkshåndtering
@@ -35,6 +36,7 @@ Name[zh_CN]=网络管理
 Name[zh_TW]=網路管理
 Comment=Network management
 Comment[ar]=إدارة الشبكات
+Comment[bs]=Upravljanje mrežom
 Comment[ca]=Gestió de la xarxa
 Comment[cs]=Správa sítě
 Comment[da]=Netværkshåndtering
@@ -70,6 +72,7 @@ Comment[zh_TW]=網路管理
 [Event/ConnectionActivated]
 Name=Connection activated
 Name[ar]=فُعِل الاتصال
+Name[bs]=Konekcija aktivirana
 Name[ca]=Connexió activada
 Name[cs]=Spojení aktivováno
 Name[da]=Forbindelse aktiveret
@@ -107,6 +110,7 @@ Action=Popup
 [Event/ConnectionDeactivated]
 Name=Connection deactivated
 Name[ar]=عُطل الاتصال
+Name[bs]=Konekcija deaktivirana
 Name[ca]=Connexió desactivada
 Name[cs]=Spojení deaktivováno
 Name[da]=Forbindelse deaktiveret
@@ -144,6 +148,7 @@ Action=Popup
 [Event/ConnectionAdded]
 Name=Connection added
 Name[ar]=أضيف الاتصال
+Name[bs]=Konekcija dodana
 Name[ca]=S'ha afegit una connexió 
 Name[cs]=Spojení bylo přidáno
 Name[da]=Forbindelse tilføjet
@@ -181,6 +186,7 @@ Action=None
 [Event/ConnectionRemoved]
 Name=Connection removed
 Name[ar]=أُزِيل الإتصال
+Name[bs]=Konekcija uklonjena
 Name[ca]=S'ha eliminat una connexió
 Name[cs]=Spojení bylo odstraněno
 Name[da]=Forbindelse fjernet
@@ -218,6 +224,7 @@ Action=None
 [Event/ConnectionUpdated]
 Name=Connection updated
 Name[ar]=حُدِّث الاتصال
+Name[bs]=Konekcija ažurirana
 Name[ca]=S'ha actualitzat una connexió
 Name[cs]=Spojení bylo aktualizováno
 Name[da]=Forbindelse opdateret
@@ -255,6 +262,7 @@ Action=None
 [Event/DeviceFailed]
 Name=Device failed
 Name[ar]=فشِل الجهاز
+Name[bs]=Uređaj pao
 Name[ca]=El dispositiu ha fallat
 Name[cs]=Zařízení selhalo
 Name[da]=Enheden fejlede
@@ -292,6 +300,7 @@ Action=Popup
 [Event/FailedToActivateConnection]
 Name=Failed to activate connection
 Name[ar]=فشل في تفعيل الاتصال
+Name[bs]=Neuspjela aktivacija konekcije
 Name[ca]=Ha fallat en activar la connexió
 Name[cs]=Spojení nelze aktivovat
 Name[da]=Kunne ikke aktivere forbindelsen
@@ -329,6 +338,7 @@ Action=Popup
 [Event/FailedToAddConnection]
 Name=Failed to add connection
 Name[ar]=فشل في إضافة اتصال
+Name[bs]=Neuspjelo dodavanje konekcije
 Name[ca]=Ha fallat en afegir la connexió
 Name[cs]=Přidání spojení selhalo
 Name[da]=Kunne ikke tilføje forbindelse
@@ -366,6 +376,7 @@ Action=Popup
 [Event/FailedToDeactivateConnection]
 Name=Failed to deactivate connection
 Name[ar]=فشل في إبطال الاتصال
+Name[bs]=Neuspjelo deaktiviranje konekcije
 Name[ca]=Ha fallat en desactivar la connexió
 Name[cs]=Spojení nelze deaktivovat
 Name[da]=Kunne ikke deaktivere forbindelsen
@@ -403,6 +414,7 @@ Action=Popup
 [Event/FailedToRemoveConnection]
 Name=Failed to remove connection
 Name[ar]=فشل في إزالة الاتصال
+Name[bs]=Neuspjelo uklanjanje konekcije
 Name[ca]=Ha fallat en eliminar la connexió
 Name[cs]=Spojení nelze odstranit
 Name[da]=Kunne ikke fjerne forbindelsen
@@ -440,6 +452,7 @@ Action=Popup
 [Event/FailedToRequestScan]
 Name=Failed to request scan
 Name[ar]=فشل في مسح الطلب
+Name[bs]=Neuspjelo traženje skeniranja
 Name[ca]=Ha fallat en demanar escanejar
 Name[cs]=Vyžádání skenu selhalo
 Name[da]=Kunne ikke anmode om scanning
@@ -476,6 +489,7 @@ Action=Popup
 
 [Event/FailedToGetSecrets]
 Name=Failed to get secrets
+Name[bs]=Nesupjelo uzimanje tajni
 Name[ca]=Ha fallat en obtenir els secrets
 Name[cs]=Selhalo získávání přístupu
 Name[da]=Enheden kunne ikke hente hemmeligheder
@@ -513,6 +527,7 @@ Action=Popup
 [Event/FailedToUpdateConnection]
 Name=Failed to update connection
 Name[ar]=فشل في تحديث الاتصال
+Name[bs]=Neuspjelo ažuriranje konekcije
 Name[ca]=Ha fallat en actualitzar la connexió
 Name[cs]=Spojení nelze aktualizovat
 Name[da]=Kunne ikke opdatere forbindelsen
@@ -551,6 +566,7 @@ Action=Popup
 Name=Missing VPN plugin
 Name[ar]=ملحق VPN مفقود
 Name[bg]=Лшпсваща приставка за VPN
+Name[bs]=Nedostaje VPN dodatak
 Name[ca]=Manca el connector VPN
 Name[ca@valencia]=Manca el connector VPN
 Name[cs]=Chybějící modul VPN

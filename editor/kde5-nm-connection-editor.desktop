@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=kde5-nm-connection-editor
 Name[ar]=محرر اتصال إدارة الشبكات في كدي 5
+Name[bs]=kde5-nm-editor-konekcije
 Name[ca]=kde5-nm-connection-editor
 Name[cs]=kde5-nm-connection-editor
 Name[da]=kde5-nm-connection-editor
@@ -34,7 +35,7 @@ Name[zh_TW]=kde5-nm-connection-editor
 GenericName=Connection editor
 GenericName[ar]=محرر الإتصال
 GenericName[bg]=Редактор на мрежи
-GenericName[bs]=Uređivač veze
+GenericName[bs]=Uređivač konekcije
 GenericName[ca]=Editor de la connexió
 GenericName[ca@valencia]=Editor de la connexió
 GenericName[cs]=Editor spojení

@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Notifications
 Name[bg]=Уведомления
+Name[bs]=obavještenja
 Name[ca]=Notificacions
 Name[ca@valencia]=Notificacions
 Name[cs]=Oznamování
@@ -33,6 +34,7 @@ Name[x-test]=xxNotificationsxx
 Name[zh_CN]=通知
 Comment=Configure the Network Management notifications
 Comment[bg]=Настройки на уведомления на управлението на мрежата
+Comment[bs]=Definiše Network Management za upravljanje mrežom
 Comment[ca]=Configura les notificacions del Gestor de la xarxa
 Comment[ca@valencia]=Configura les notificacions del Gestor de la xarxa
 Comment[cs]=Nastavit oznamování správy sítě

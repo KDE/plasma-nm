@@ -2,6 +2,7 @@
 IconName=applications-internet
 Name=networkmanagement
 Name[bg]=networkmanagement
+Name[bs]=Upravljanje mrežom
 Name[ca]=Gestió de la xarxa
 Name[ca@valencia]=Gestió de la xarxa
 Name[cs]=networkmanagement
@@ -34,6 +35,7 @@ Name[x-test]=xxnetworkmanagementxx
 Name[zh_CN]=网络管理
 Comment=Notifies about network errors
 Comment[bg]=Уведомява за мрежови грешки
+Comment[bs]=Prijavljuje mrežne greške
 Comment[ca]=Notifica quant als errors de la xarxa
 Comment[ca@valencia]=Notifica quant als errors de la xarxa
 Comment[cs]=Oznamuje chyby sítě

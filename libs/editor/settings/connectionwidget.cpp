@@ -171,14 +171,18 @@ void ConnectionWidget::openAdvancedPermissions()
     AdvancedPermissionsWidget permissions(m_tmpSetting.permissions());
     dialog->layout()->addWidget(&permissions);
     dialog->layout()->addWidget(buttons);
-
-    if (dialog->exec() == QDialog::Accepted) {
-        m_tmpSetting.setPermissions(permissions.currentUsers());
-    }
-
-    if (dialog) {
-        dialog->deleteLater();
-    }
+    connect(dialog.data(), &QDialog::accepted,
+            [&permissions, this] () {
+                m_tmpSetting.setPermissions(permissions.currentUsers());
+            });
+    connect(dialog.data(), &QDialog::finished,
+            [dialog] () {
+                if (dialog) {
+                    dialog->deleteLater();
+                }
+            });
+    dialog->setModal(true);
+    dialog->show();
 }
 
 NMStringMap ConnectionWidget::vpnConnections() const

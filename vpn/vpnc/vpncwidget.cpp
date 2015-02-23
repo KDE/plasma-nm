@@ -202,12 +202,15 @@ void VpncWidget::showPasswords(bool show)
 void VpncWidget::showAdvanced()
 {
     m_advancedWidget->loadConfig(m_tmpSetting);
-    if (m_advancedWidget->exec() == QDialog::Accepted) {
-        NMStringMap advData = m_advancedWidget->setting();
-        if (!advData.isEmpty()) {
-            m_tmpSetting->setData(advData);
-        }
-    }
+    connect(m_advancedWidget.data(), &VpncAdvancedWidget::accepted,
+            [this] () {
+                NMStringMap advData = m_advancedWidget->setting();
+                if (!advData.isEmpty()) {
+                    m_tmpSetting->setData(advData);
+                }
+            });
+    m_advancedWidget->setModal(true);
+    m_advancedWidget->show();
 }
 
 bool VpncWidget::isValid() const

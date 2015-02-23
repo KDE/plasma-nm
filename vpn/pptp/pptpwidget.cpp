@@ -94,7 +94,8 @@ void PptpSettingWidget::setShowPassword(bool show)
 void PptpSettingWidget::doAdvancedDialog()
 {
     Q_D(PptpSettingWidget);
-    d->advancedDlg->exec();
+    d->advancedDlg->setModal(true);
+    d->advancedDlg->show();
 }
 
 void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)

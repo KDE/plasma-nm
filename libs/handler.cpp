@@ -188,14 +188,18 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         editor->show();
         KWindowSystem::setState(editor->winId(), NET::KeepAbove);
         KWindowSystem::forceActiveWindow(editor->winId());
-
-        if (editor->exec() == QDialog::Accepted) {
-            addConnection(editor->setting());
-        }
-
-        if (editor) {
-            editor->deleteLater();
-        }
+        connect(editor.data(), &ConnectionDetailEditor::accepted,
+                [editor, this] () {
+                    addConnection(editor->setting());
+                });
+        connect(editor.data(), &ConnectionDetailEditor::finished,
+                [editor] () {
+                    if (editor) {
+                        editor->deleteLater();
+                    }
+                });
+        editor->setModal(true);
+        editor->show();
     } else {
         if (securityType == NetworkManager::StaticWep) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);

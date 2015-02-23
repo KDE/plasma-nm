@@ -69,6 +69,7 @@ private:
     Handler * m_handler;
     KActionMenu * m_menu;
 
+    void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void initializeMenu();
     void importSecretsFromPlainTextFiles();
     void storeSecrets(const QMap<QString, QMap<QString, QString> > & map);

@@ -115,18 +115,22 @@ void TeamWidget::addTeam(QAction *action)
     connectionSettings->setAutoconnect(false);
 
     QPointer<ConnectionDetailEditor> teamEditor = new ConnectionDetailEditor(connectionSettings, true);
-
-    if (teamEditor->exec() == QDialog::Accepted) {
-        qCDebug(PLASMA_NM) << "Saving slave connection";
-        // qCDebug(PLASMA_NM) << teamEditor->setting();
-        QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(teamEditor->setting());
-        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-        connect(watcher, &QDBusPendingCallWatcher::finished, this, &TeamWidget::teamAddComplete);
-    }
-
-    if (teamEditor) {
-        teamEditor->deleteLater();
-    }
+    connect(teamEditor.data(), &ConnectionDetailEditor::accepted,
+            [teamEditor, this] () {
+                qCDebug(PLASMA_NM) << "Saving slave connection";
+                // qCDebug(PLASMA_NM) << teamEditor->setting();
+                QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(teamEditor->setting());
+                QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+                connect(watcher, &QDBusPendingCallWatcher::finished, this, &TeamWidget::teamAddComplete);
+            });
+    connect(teamEditor.data(), &ConnectionDetailEditor::finished,
+            [teamEditor] () {
+                if (teamEditor) {
+                    teamEditor->deleteLater();
+                }
+            });
+    teamEditor->setModal(true);
+    teamEditor->show();
 }
 
 void TeamWidget::currentTeamChanged(QListWidgetItem *current, QListWidgetItem *previous)
@@ -167,14 +171,19 @@ void TeamWidget::editTeam()
     if (connection) {
         qCDebug(PLASMA_NM) << "Editing teamed connection" << currentItem->text() << uuid;
         QPointer<ConnectionDetailEditor> teamEditor = new ConnectionDetailEditor(connection->settings(), this);
-        if (teamEditor->exec() == QDialog::Accepted) {
-            connection->update(teamEditor->setting());
-            connect(connection.data(), SIGNAL(updated()), this, SLOT(populateTeams()));
-        }
-
-        if (teamEditor) {
-            teamEditor->deleteLater();
-        }
+        connect(teamEditor.data(), &ConnectionDetailEditor::accepted,
+                [connection, teamEditor, this] () {
+                    connection->update(teamEditor->setting());
+                    connect(connection.data(), SIGNAL(updated()), this, SLOT(populateTeams()));
+                });
+        connect(teamEditor.data(), &ConnectionDetailEditor::finished,
+                [teamEditor] () {
+                    if (teamEditor) {
+                        teamEditor->deleteLater();
+                    }
+                });
+        teamEditor->setModal(true);
+        teamEditor->show();
     }
 }
 

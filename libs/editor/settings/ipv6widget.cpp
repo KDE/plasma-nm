@@ -388,15 +388,20 @@ void IPv6Widget::slotRoutesDialog()
         dlg->setIgnoreAutoRoutes(m_tmpIpv6Setting.ignoreAutoRoutes());
     }
 
-    if (dlg->exec() == QDialog::Accepted) {
-        m_tmpIpv6Setting.setRoutes(dlg->routes());
-        m_tmpIpv6Setting.setNeverDefault(dlg->neverDefault());
-        m_tmpIpv6Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
-    }
-
-    if (dlg) {
-        dlg->deleteLater();
-    }
+    connect(dlg.data(), &QDialog::accepted,
+            [dlg, this] () {
+                m_tmpIpv6Setting.setRoutes(dlg->routes());
+                m_tmpIpv6Setting.setNeverDefault(dlg->neverDefault());
+                m_tmpIpv6Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
+            });
+    connect(dlg.data(), &QDialog::finished,
+            [dlg] () {
+                if (dlg) {
+                    dlg->deleteLater();
+                }
+            });
+    dlg->setModal(true);
+    dlg->show();
 }
 
 void IPv6Widget::slotDnsServers()
@@ -411,18 +416,22 @@ void IPv6Widget::slotDnsServers()
     listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(" ", ""));
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
-
-    if (dialog->exec() == QDialog::Accepted) {
-        QString text = listWidget->items().join(",");
-        if (text.endsWith(',')) {
-            text.chop(1);
-        }
-        m_ui->dns->setText(text);
-    }
-
-    if (dialog) {
-        dialog->deleteLater();
-    }
+    connect(dialog.data(), &QDialog::accepted,
+            [listWidget, this] () {
+                QString text = listWidget->items().join(",");
+                if (text.endsWith(',')) {
+                    text.chop(1);
+                }
+                m_ui->dns->setText(text);
+            });
+    connect(dialog.data(), &QDialog::finished,
+            [dialog] () {
+                if (dialog) {
+                    dialog->deleteLater();
+                }
+            });
+    dialog->setModal(true);
+    dialog->show();
 }
 
 void IPv6Widget::slotDnsDomains()
@@ -437,18 +446,22 @@ void IPv6Widget::slotDnsDomains()
     listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(" ", ""));
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
-
-    if (dialog->exec() == QDialog::Accepted) {
-        QString text = listWidget->items().join(",");
-        if (text.endsWith(',')) {
-            text.chop(1);
-        }
-        m_ui->dnsSearch->setText(text);
-    }
-
-    if (dialog) {
-        dialog->deleteLater();
-    }
+    connect(dialog.data(), &QDialog::accepted,
+            [listWidget, this] () {
+                QString text = listWidget->items().join(",");
+                if (text.endsWith(',')) {
+                    text.chop(1);
+                }
+                m_ui->dnsSearch->setText(text);
+            });
+    connect(dialog.data(), &QDialog::finished,
+            [dialog] () {
+                if (dialog) {
+                    dialog->deleteLater();
+                }
+            });
+    dialog->setModal(true);
+    dialog->show();
 }
 
 bool IPv6Widget::isValid() const

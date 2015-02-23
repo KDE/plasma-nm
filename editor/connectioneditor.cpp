@@ -234,7 +234,6 @@ void ConnectionEditor::initializeMenu()
 
 void ConnectionEditor::addConnection(QAction* action)
 {
-    NetworkManager::ConnectionSettings::Ptr connectionSettings;
     NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(action->data().toUInt());
     const QString vpnType = action->property("type").toString();
 
@@ -242,40 +241,51 @@ void ConnectionEditor::addConnection(QAction* action)
 
     if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
 #if WITH_MODEMMANAGER_SUPPORT
-        QWeakPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
-        if (wizard.data()->exec() == QDialog::Accepted && wizard.data()->getError() == MobileProviders::Success) {
-            qCDebug(PLASMA_NM) << "Mobile broadband wizard finished:" << wizard.data()->type() << wizard.data()->args();
+        QPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
+        connect(wizard.data(), &MobileConnectionWizard::accepted,
+                [wizard, this] () {
+                    if (wizard->getError() == MobileProviders::Success) {
+                        qCDebug(PLASMA_NM) << "Mobile broadband wizard finished:" << wizard->type() << wizard->args();
 
-            if (wizard.data()->args().count() == 2) {
-                QVariantMap tmp = qdbus_cast<QVariantMap>(wizard.data()->args().value(1));
+                        if (wizard->args().count() == 2) {
+                            QVariantMap tmp = qdbus_cast<QVariantMap>(wizard->args().value(1));
 
-#if 0 // network IDs are not used yet and seem to break the setting
-        if (args.count() == 3) { // gsm specific
-            QStringList networkIds = args.value(1).toStringList();
-            if (!networkIds.isEmpty())
-                tmp.insert("network-id", networkIds.first());
-        }
+#if 0                       // network IDs are not used yet and seem to break the setting
+                            if (args.count() == 3) { // gsm specific
+                            QStringList networkIds = args.value(1).toStringList();
+                            if (!networkIds.isEmpty())
+                                tmp.insert("network-id", networkIds.first());
+                            }
 #endif
-                connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(wizard.data()->type()));
-                connectionSettings->setId(wizard.data()->args().value(0).toString());
-                if (wizard.data()->type() == NetworkManager::ConnectionSettings::Gsm) {
-                    connectionSettings->setting(NetworkManager::Setting::Gsm)->fromMap(tmp);
-                } else if (wizard.data()->type() == NetworkManager::ConnectionSettings::Cdma) {
-                    connectionSettings->setting(NetworkManager::Setting::Cdma)->fromMap(tmp);
-                } else {
-                    qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unhandled setting type";
-                }
-            } else {
-                qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unexpected number of args to parse";
-            }
-        }
-
-        if (wizard) {
-            wizard.data()->deleteLater();
-        }
-
+                            NetworkManager::ConnectionSettings::Ptr connectionSettings;
+                            connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(wizard->type()));
+                            connectionSettings->setId(wizard->args().value(0).toString());
+                            if (wizard->type() == NetworkManager::ConnectionSettings::Gsm) {
+                                connectionSettings->setting(NetworkManager::Setting::Gsm)->fromMap(tmp);
+                            } else if (wizard->type() == NetworkManager::ConnectionSettings::Cdma) {
+                                connectionSettings->setting(NetworkManager::Setting::Cdma)->fromMap(tmp);
+                            } else {
+                                qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unhandled setting type";
+                            }
+                            // Generate new UUID
+                            connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+                            addConnection(connectionSettings);
+                        } else {
+                            qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unexpected number of args to parse";
+                        }
+                    }
+                });
+        connect(wizard.data(), &MobileConnectionWizard::finished,
+                [wizard] () {
+                    if (wizard) {
+                        wizard->deleteLater();
+                    }
+                });
+        wizard->setModal(true);
+        wizard->show();
 #endif
     } else {
+        NetworkManager::ConnectionSettings::Ptr connectionSettings;
         connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(type));
 
         if (type == NetworkManager::ConnectionSettings::Vpn) {
@@ -310,30 +320,28 @@ void ConnectionEditor::addConnection(QAction* action)
                 connectionSettings->setAutoconnect(false);
             }
         }
+        // Generate new UUID
+        connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+        addConnection(connectionSettings);
     }
+}
 
-    // In case that mobile broadband wizard has not been finished
-    if (!connectionSettings) {
-        return;
-    }
-
-    // Generate new UUID
-    connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
-
+void ConnectionEditor::addConnection(const NetworkManager::ConnectionSettings::Ptr& connectionSettings)
+{
     QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(connectionSettings, true);
-
-    if (editor->exec() == QDialog::Accepted) {
-        if (type == NetworkManager::ConnectionSettings::Vpn) {
-            qCDebug(PLASMA_NM) << "Adding new connection of type " << vpnType;
-        } else {
-            qCDebug(PLASMA_NM) << "Adding new connection of type " << NetworkManager::ConnectionSettings::typeAsString(type);
-        }
-        m_handler->addConnection(editor->setting());
-    }
-
-    if (editor) {
-        editor->deleteLater();
-    }
+    connect(editor.data(), &ConnectionDetailEditor::accepted,
+            [connectionSettings, editor, this] () {
+                qCDebug(PLASMA_NM) << "Adding new connection of type " << NetworkManager::ConnectionSettings::typeAsString(connectionSettings->connectionType());
+                m_handler->addConnection(editor->setting());
+            });
+    connect(editor.data(), &ConnectionDetailEditor::finished,
+            [editor] () {
+                if (editor) {
+                    editor->deleteLater();
+                }
+            });
+    editor->setModal(true);
+    editor->show();
 }
 
 void ConnectionEditor::connectionAdded(const QString& connection)
@@ -495,14 +503,18 @@ void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(index.data(NetworkModel::UuidRole).toString());
 
     QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(connection->settings(), false);
-
-    if (editor->exec() == QDialog::Accepted) {
-        m_handler->updateConnection(connection, editor->setting());
-    }
-
-    if (editor) {
-        editor->deleteLater();
-    }
+    connect(editor.data(), &ConnectionDetailEditor::accepted,
+            [editor, connection, this] () {
+                m_handler->updateConnection(connection, editor->setting());
+            });
+    connect(editor.data(), &ConnectionDetailEditor::finished,
+            [editor] () {
+                if (editor) {
+                    editor->deleteLater();
+                }
+            });
+    editor->setModal(true);
+    editor->show();
 }
 
 void ConnectionEditor::importSecretsFromPlainTextFiles()

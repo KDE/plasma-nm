@@ -163,19 +163,24 @@ void L2tpWidget::showAdvanced()
     } else {
         adv = new L2tpAdvancedWidget(m_tmpAdvancedSetting, this);
     }
-    if (adv->exec() == QDialog::Accepted) {
-        NMStringMap advData = adv->setting();
-        if (!advData.isEmpty()) {
-            if (m_tmpAdvancedSetting.isNull()) {
-                m_tmpAdvancedSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
-            }
-            m_tmpAdvancedSetting->setData(advData);
-        }
-    }
-
-    if (adv) {
-        adv->deleteLater();
-    }
+    connect(adv.data(), &L2tpAdvancedWidget::accepted,
+            [adv, this] () {
+                NMStringMap advData = adv->setting();
+                if (!advData.isEmpty()) {
+                    if (m_tmpAdvancedSetting.isNull()) {
+                        m_tmpAdvancedSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
+                    }
+                    m_tmpAdvancedSetting->setData(advData);
+                }
+            });
+    connect(adv.data(), &L2tpAdvancedWidget::finished,
+            [adv] () {
+                if (adv) {
+                    adv->deleteLater();
+                }
+            });
+    adv->setModal(true);
+    adv->show();
 }
 
 void L2tpWidget::showPpp()
@@ -186,19 +191,24 @@ void L2tpWidget::showPpp()
     } else {
         adv = new L2tpPPPWidget(m_tmpPppSetting, this);
     }
-    if (adv->exec() == QDialog::Accepted) {
-        NMStringMap advData = adv->setting();
-        if (!advData.isEmpty()) {
-            if (m_tmpPppSetting.isNull()) {
-                m_tmpPppSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
-            }
-            m_tmpPppSetting->setData(advData);
-        }
-    }
-
-    if (adv) {
-        adv->deleteLater();
-    }
+    connect(adv.data(), &L2tpPPPWidget::accepted,
+            [adv, this] () {
+                NMStringMap advData = adv->setting();
+                if (!advData.isEmpty()) {
+                    if (m_tmpPppSetting.isNull()) {
+                        m_tmpPppSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
+                    }
+                    m_tmpPppSetting->setData(advData);
+                }
+            });
+    connect(adv.data(), &L2tpPPPWidget::finished,
+            [adv] () {
+                if (adv) {
+                    adv->deleteLater();
+                }
+            });
+    adv->setModal(true);
+    adv->show();
 }
 
 bool L2tpWidget::isValid() const

@@ -340,17 +340,22 @@ void OpenVpnSettingWidget::showAdvanced()
 {
     QPointer<OpenVpnAdvancedWidget> adv = new OpenVpnAdvancedWidget(d->setting, this);
     adv->init();
-    if (adv->exec() == QDialog::Accepted) {
-        NetworkManager::VpnSetting::Ptr advData = adv->setting();
-        if (!advData.isNull()) {
-            d->setting->setData(advData->data());
-            d->setting->setSecrets(advData->secrets());
-        }
-    }
-
-    if (adv) {
-        adv->deleteLater();
-    }
+    connect(adv.data(), &OpenVpnAdvancedWidget::accepted,
+            [adv, this] () {
+                NetworkManager::VpnSetting::Ptr advData = adv->setting();
+                if (!advData.isNull()) {
+                    d->setting->setData(advData->data());
+                    d->setting->setSecrets(advData->secrets());
+                }
+            });
+    connect(adv.data(), &OpenVpnAdvancedWidget::finished,
+            [adv] () {
+                if (adv) {
+                    adv->deleteLater();
+                }
+            });
+    adv->setModal(true);
+    adv->show();
 }
 
 bool OpenVpnSettingWidget::isValid() const

@@ -126,18 +126,22 @@ void BridgeWidget::addBridge(QAction *action)
     connectionSettings->setAutoconnect(false);
 
     QPointer<ConnectionDetailEditor> bridgeEditor = new ConnectionDetailEditor(connectionSettings, true);
-
-    if (bridgeEditor->exec() == QDialog::Accepted) {
-        qCDebug(PLASMA_NM) << "Saving slave connection";
-        // qCDebug(PLASMA_NM) << bridgeEditor->setting();
-        QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(bridgeEditor->setting());
-        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-        connect(watcher, &QDBusPendingCallWatcher::finished, this, &BridgeWidget::bridgeAddComplete);
-    }
-
-    if (bridgeEditor) {
-        bridgeEditor->deleteLater();
-    }
+    connect(bridgeEditor.data(), &ConnectionDetailEditor::accepted,
+            [bridgeEditor, this] () {
+                qCDebug(PLASMA_NM) << "Saving slave connection";
+                // qCDebug(PLASMA_NM) << bridgeEditor->setting();
+                QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(bridgeEditor->setting());
+                QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+                connect(watcher, &QDBusPendingCallWatcher::finished, this, &BridgeWidget::bridgeAddComplete);
+            });
+    connect(bridgeEditor.data(), &ConnectionDetailEditor::finished,
+            [bridgeEditor] () {
+                if (bridgeEditor) {
+                    bridgeEditor->deleteLater();
+                }
+            });
+    bridgeEditor->setModal(true);
+    bridgeEditor->show();
 }
 
 void BridgeWidget::currentBridgeChanged(QListWidgetItem *current, QListWidgetItem *previous)
@@ -178,14 +182,19 @@ void BridgeWidget::editBridge()
     if (connection) {
         qCDebug(PLASMA_NM) << "Editing bridged connection" << currentItem->text() << uuid;
         QPointer<ConnectionDetailEditor> bridgeEditor = new ConnectionDetailEditor(connection->settings(), this);
-        if (bridgeEditor->exec() == QDialog::Accepted) {
-            connection->update(bridgeEditor->setting());
-            connect(connection.data(), SIGNAL(updated()), this, SLOT(populateBridges()));
-        }
-
-        if (bridgeEditor) {
-            bridgeEditor->deleteLater();
-        }
+        connect(bridgeEditor.data(), &ConnectionDetailEditor::accepted,
+                [connection, bridgeEditor, this] () {
+                    connection->update(bridgeEditor->setting());
+                    connect(connection.data(), SIGNAL(updated()), this, SLOT(populateBridges()));
+                });
+        connect(bridgeEditor.data(), &ConnectionDetailEditor::finished,
+                [bridgeEditor] () {
+                    if (bridgeEditor) {
+                        bridgeEditor->deleteLater();
+                    }
+                });
+        bridgeEditor->setModal(true);
+        bridgeEditor->show();
     }
 }
 

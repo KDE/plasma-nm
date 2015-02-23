@@ -176,18 +176,22 @@ void BondWidget::addBond(QAction *action)
     connectionSettings->setAutoconnect(false);
 
     QPointer<ConnectionDetailEditor> bondEditor = new ConnectionDetailEditor(connectionSettings, true);
-
-    if (bondEditor->exec() == QDialog::Accepted) {
-        qCDebug(PLASMA_NM) << "Saving slave connection";
-        // qCDebug(PLASMA_NM) << bondEditor->setting();
-        QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(bondEditor->setting());
-        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-        connect(watcher, &QDBusPendingCallWatcher::finished, this, &BondWidget::bondAddComplete);
-    }
-
-    if (bondEditor) {
-        bondEditor->deleteLater();
-    }
+    connect(bondEditor.data(), &ConnectionDetailEditor::accepted,
+            [bondEditor, this] () {
+                qCDebug(PLASMA_NM) << "Saving slave connection";
+                // qCDebug(PLASMA_NM) << bondEditor->setting();
+                QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(bondEditor->setting());
+                QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+                connect(watcher, &QDBusPendingCallWatcher::finished, this, &BondWidget::bondAddComplete);
+            });
+    connect(bondEditor.data(), &ConnectionDetailEditor::finished,
+            [bondEditor] () {
+                if (bondEditor) {
+                    bondEditor->deleteLater();
+                }
+            });
+    bondEditor->setModal(true);
+    bondEditor->show();
 }
 
 void BondWidget::currentBondChanged(QListWidgetItem *current, QListWidgetItem *previous)
@@ -228,14 +232,19 @@ void BondWidget::editBond()
     if (connection) {
         // qCDebug(PLASMA_NM) << "Editing bonded connection" << currentItem->text() << uuid;
         QPointer<ConnectionDetailEditor> bondEditor = new ConnectionDetailEditor(connection->settings(), this);
-        if (bondEditor->exec() == QDialog::Accepted) {
-            connection->update(bondEditor->setting());
-            connect(connection.data(), SIGNAL(updated()), this, SLOT(populateBonds()));
-        }
-
-        if (bondEditor) {
-            bondEditor->deleteLater();
-        }
+        connect(bondEditor.data(), &ConnectionDetailEditor::accepted,
+                [connection, bondEditor, this] () {
+                    connection->update(bondEditor->setting());
+                    connect(connection.data(), SIGNAL(updated()), this, SLOT(populateBonds()));
+                });
+        connect(bondEditor.data(), &ConnectionDetailEditor::finished,
+                [bondEditor] () {
+                    if (bondEditor) {
+                        bondEditor->deleteLater();
+                    }
+                });
+        bondEditor->setModal(true);
+        bondEditor->show();
     }
 }
 

@@ -32,7 +32,7 @@ find_package(KF5 REQUIRED
     I18n WindowSystem Service Completion WidgetsAddons KIO CoreAddons Wallet ItemViews XmlGui
     ConfigWidgets IconThemes Solid DBusAddons Notifications Plasma Declarative Init KDELibs4Support)
 
-find_package(KF5NetworkManagerQt REQUIRED 5.7.0)
+find_package(KF5NetworkManagerQt REQUIRED 5.8.0)
 
 find_package(KF5ModemManagerQt)
 set_package_properties(KF5ModemManagerQt PROPERTIES
@@ -76,13 +76,6 @@ add_definitions(-DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT})
 include_directories(${CMAKE_CURRENT_BINARY_DIR} # for config.h
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/)
-
-if (${NETWORKMANAGER_VERSION} VERSION_EQUAL 1.0.0 OR ${NETWORKMANAGER_VERSION} VERSION_GREATER 1.0.0)
-include_directories(${NM-CORE_INCLUDE_DIRS})
-else()
-include_directories(${NETWORKMANAGER_INCLUDE_DIRS})
-remove_definitions(-DQT_NO_KEYWORDS)
-endif()
 
 if (WITH_MODEMMANAGER_SUPPORT)
     include_directories(${MODEMMANAGER_INCLUDE_DIRS})

@@ -160,11 +160,11 @@ QVariantMap Security8021x::setting(bool agentOwned) const
         if (!m_ui->tlsIdentity->text().isEmpty())
             setting.setIdentity(m_ui->tlsIdentity->text());
         if (m_ui->tlsUserCert->url().isValid())
-            setting.setClientCertificate(QFile::encodeName(m_ui->tlsUserCert->url().toLocalFile()));
+            setting.setClientCertificate(m_ui->tlsUserCert->url().toString().toUtf8().append('\0'));
         if (m_ui->tlsCACert->url().isValid())
-            setting.setCaCertificate(QFile::encodeName(m_ui->tlsCACert->url().toLocalFile()));
+            setting.setCaCertificate(m_ui->tlsCACert->url().toString().toUtf8().append('\0'));
         if (m_ui->tlsPrivateKey->url().isValid())
-            setting.setPrivateKey(QFile::encodeName(m_ui->tlsPrivateKey->url().toLocalFile()));
+            setting.setPrivateKey(m_ui->tlsPrivateKey->url().toString().toUtf8().append('\0'));
         if (!m_ui->tlsPrivateKeyPassword->text().isEmpty())
             setting.setPrivateKeyPassword(m_ui->tlsPrivateKeyPassword->text());
 
@@ -208,7 +208,7 @@ QVariantMap Security8021x::setting(bool agentOwned) const
         if (!m_ui->ttlsAnonIdentity->text().isEmpty())
             setting.setAnonymousIdentity(m_ui->ttlsAnonIdentity->text());
         if (m_ui->ttlsCACert->url().isValid())
-            setting.setCaCertificate(QFile::encodeName(m_ui->ttlsCACert->url().toLocalFile()));
+            setting.setCaCertificate(m_ui->ttlsCACert->url().toString().toUtf8().append('\0'));
         const int innerAuth = m_ui->ttlsInnerAuth->currentIndex();
         if (innerAuth == 0)
             setting.setPhase2AuthMethod(NetworkManager::Security8021xSetting::AuthMethodPap);
@@ -232,7 +232,7 @@ QVariantMap Security8021x::setting(bool agentOwned) const
         if (!m_ui->peapAnonIdentity->text().isEmpty())
             setting.setAnonymousIdentity(m_ui->peapAnonIdentity->text());
         if (m_ui->peapCACert->url().isValid())
-            setting.setCaCertificate(QFile::encodeName(m_ui->peapCACert->url().toLocalFile()));
+            setting.setCaCertificate(m_ui->peapCACert->url().toString().toUtf8().append('\0'));
         setting.setPhase1PeapVersion(static_cast<NetworkManager::Security8021xSetting::PeapVersion>(m_ui->peapVersion->currentIndex() - 1));
         const int innerAuth = m_ui->peapInnerAuth->currentIndex();
         if (innerAuth == 0)

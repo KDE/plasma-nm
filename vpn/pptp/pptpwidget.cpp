@@ -195,14 +195,14 @@ QVariantMap PptpSettingWidget::setting(bool agentOwned) const
     NMStringMap data;
     NMStringMap secretData;
 
-    data.insert(NM_PPTP_KEY_GATEWAY,  d->ui.edt_gateway->text().toUtf8());
-    data.insert(NM_PPTP_KEY_USER, d->ui.edt_login->text().toUtf8());
+    data.insert(NM_PPTP_KEY_GATEWAY,  d->ui.edt_gateway->text());
+    data.insert(NM_PPTP_KEY_USER, d->ui.edt_login->text());
     if (!d->ui.edt_password->text().isEmpty()) {
         secretData.insert(QLatin1String(NM_PPTP_KEY_PASSWORD), d->ui.edt_password->text());
     }
     handleOnePasswordType(d->ui.cmbPasswordStorage, NM_PPTP_KEY_PASSWORD"-flags", data, agentOwned);
     if (!d->ui.edt_ntDomain->text().isEmpty()) {
-        data.insert(NM_PPTP_KEY_DOMAIN,  d->ui.edt_ntDomain->text().toUtf8());
+        data.insert(NM_PPTP_KEY_DOMAIN,  d->ui.edt_ntDomain->text());
     }
 
     // Advanced dialog settings

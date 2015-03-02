@@ -482,10 +482,11 @@ void ConnectionEditor::slotItemClicked(const QModelIndex &index)
         actionCollection()->action("export_vpn")->setEnabled(false);
     } else {                       //connection
         const bool isActive = (NetworkManager::ActiveConnection::State)index.data(NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+        const bool isActivating = (NetworkManager::ActiveConnection::State)index.data(NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activating;
         const bool isAvailable = (NetworkModelItem::ItemType)index.data(NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::AvailableConnection;
 
-        actionCollection()->action("connect_connection")->setEnabled(isAvailable && !isActive);
-        actionCollection()->action("disconnect_connection")->setEnabled(isAvailable && isActive);
+        actionCollection()->action("connect_connection")->setEnabled(isAvailable && !isActive && !isActivating);
+        actionCollection()->action("disconnect_connection")->setEnabled(isAvailable && (isActive || isActivating));
         actionCollection()->action("edit_connection")->setEnabled(true);
         actionCollection()->action("delete_connection")->setEnabled(true);
         const bool isVpn = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(index.data(NetworkModel::TypeRole).toUInt()) ==

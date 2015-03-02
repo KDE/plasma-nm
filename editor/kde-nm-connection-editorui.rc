@@ -14,6 +14,8 @@
 
     <Menu name="connection">
     <text>Connection</text>
+      <Action name="connect_connection" />
+      <Action name="disconnect_connection" />
       <Action name="add_connection" />
       <Action name="edit_connection" />
       <Action name="delete_connection" />
@@ -23,6 +25,9 @@
   <ToolBar name="mainToolBar" >
     <text>Main Toolbar</text>
     <Action name="add_connection" />
+    <Separator/>
+    <Action name="connect_connection" />
+    <Action name="disconnect_connection" />
     <Action name="edit_connection" />
     <Action name="delete_connection" />
   </ToolBar>

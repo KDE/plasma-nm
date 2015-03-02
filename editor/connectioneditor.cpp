@@ -175,7 +175,17 @@ void ConnectionEditor::initializeMenu()
 
     actionCollection()->addAction("add_connection", m_menu);
 
-    KAction * kAction = new KAction(KIcon("configure"), i18n("Edit..."), this);
+    KAction * kAction = new KAction(KIcon("network-connect"), i18n("Connect"), this);
+    kAction->setEnabled(false);
+    connect(kAction, SIGNAL(triggered()), this, SLOT(connectConnection()));
+    actionCollection()->addAction("connect_connection", kAction);
+
+    kAction = new KAction(KIcon("network-disconnect"), i18n("Disconnect"), this);
+    kAction->setEnabled(false);
+    connect(kAction, SIGNAL(triggered()), this, SLOT(disconnectConnection()));
+    actionCollection()->addAction("disconnect_connection", kAction);
+
+    kAction = new KAction(KIcon("configure"), i18n("Edit..."), this);
     kAction->setEnabled(false);
     connect(kAction, SIGNAL(triggered()), SLOT(editConnection()));
     actionCollection()->addAction("edit_connection", kAction);
@@ -363,9 +373,9 @@ void ConnectionEditor::slotContextMenuRequested(const QPoint&)
     const bool isAvailable = (NetworkModelItem::ItemType)index.data(NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::AvailableConnection;
 
     if (isAvailable && !isActive) {
-        menu->addAction(KIcon("user-online"), i18n("Connect"), this, SLOT(connectConnection()));
+        menu->addAction(actionCollection()->action("connect_connection"));
     } else if (isAvailable && isActive) {
-        menu->addAction(KIcon("user-offline"), i18n("Disconnect"), this, SLOT(disconnectConnection()));
+        menu->addAction(actionCollection()->action("disconnect_connection"));
     }
     menu->addAction(actionCollection()->action("edit_connection"));
     menu->addAction(actionCollection()->action("delete_connection"));
@@ -381,11 +391,18 @@ void ConnectionEditor::slotItemClicked(const QModelIndex &index)
     qDebug() << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
 
     if (index.parent().isValid()) { // category
+        actionCollection()->action("connect_connection")->setEnabled(false);
+        actionCollection()->action("disconnect_connection")->setEnabled(false);
         actionCollection()->action("edit_connection")->setEnabled(false);
         actionCollection()->action("delete_connection")->setEnabled(false);
         actionCollection()->action("export_vpn")->setEnabled(false);
         actionCollection()->action("export_vpn")->setEnabled(false);
     } else {                       //connection
+        const bool isActive = (NetworkManager::ActiveConnection::State)index.data(NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+        const bool isAvailable = (NetworkModelItem::ItemType)index.data(NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::AvailableConnection;
+
+        actionCollection()->action("connect_connection")->setEnabled(isAvailable && !isActive);
+        actionCollection()->action("disconnect_connection")->setEnabled(isAvailable && isActive);
         actionCollection()->action("edit_connection")->setEnabled(true);
         actionCollection()->action("delete_connection")->setEnabled(true);
         const bool isVpn = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(index.data(NetworkModel::TypeRole).toUInt()) ==

@@ -66,7 +66,7 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
     }
     modeChanged(wifiSetting->mode());
 
-    m_ui->BSSIDCombo->init(NetworkManager::macAddressAsString(wifiSetting->bssid()), wifiSetting->ssid());
+    m_ui->BSSIDCombo->init(NetworkManager::macAddressAsString(wifiSetting->bssid()), QString::fromUtf8(wifiSetting->ssid()));
 
     m_ui->band->setCurrentIndex(wifiSetting->band());
     if (wifiSetting->band() != NetworkManager::WirelessSetting::Automatic) {

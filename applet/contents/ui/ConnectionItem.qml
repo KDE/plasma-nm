@@ -99,6 +99,7 @@ PlasmaComponents.ListItem {
             font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal;
             font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false;
             text: ItemUniqueName;
+            textFormat: Text.PlainText;
         }
 
         PlasmaComponents.Label {
@@ -246,6 +247,7 @@ PlasmaComponents.ListItem {
                             font.pointSize: theme.smallestFont.pointSize;
                             opacity: 0.6;
                             text: ConnectionDetails[(index*2)+1];
+                            textFormat: Text.PlainText;
                         }
                     }
                 }

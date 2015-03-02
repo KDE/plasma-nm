@@ -276,6 +276,21 @@ void ConnectionEditor::connectConnection()
     m_handler->activateConnection(connectionPath, devicePath, specificPath);
 }
 
+void ConnectionEditor::dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight)
+{
+    QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
+    if (currentIndex.isValid()) {
+        for (int i = topLeft.row(); i <= bottomRight.row(); i++) {
+            QModelIndex index = m_editor->connectionsWidget->model()->index(i, 0);
+            if (index.isValid() && index == currentIndex) {
+                // Re-check enabled/disabled actions
+                slotItemClicked(currentIndex);
+                break;
+            }
+        }
+    }
+}
+
 void ConnectionEditor::disconnectConnection()
 {
     const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
@@ -303,13 +318,12 @@ void ConnectionEditor::editConnection()
 void ConnectionEditor::initializeConnections()
 {
     EditorIdentityModel * model = new EditorIdentityModel(this);
-
     EditorProxyModel * filterModel = new EditorProxyModel(this);
     filterModel->setSourceModel(model);
+    connect(filterModel, SIGNAL(dataChanged(QModelIndex,QModelIndex)),SLOT(dataChanged(QModelIndex,QModelIndex)));
 
     m_editor->connectionsWidget->setModel(filterModel);
     m_editor->ktreewidgetsearchline->setProxy(filterModel);
-
     m_editor->connectionsWidget->header()->setResizeMode(0, QHeaderView::Stretch);
 }
 

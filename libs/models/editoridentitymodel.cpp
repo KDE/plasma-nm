@@ -75,6 +75,8 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
     const QString lastUsed = sourceModel()->data(sourceIndex, NetworkModel::LastUsedDateOnlyRole).toString();
     const bool isActivated = (NetworkManager::ActiveConnection::State) sourceModel()->data(sourceIndex, NetworkModel::ConnectionStateRole).toInt()
                              == NetworkManager::ActiveConnection::Activated;
+    const bool isActivating = (NetworkManager::ActiveConnection::State) sourceModel()->data(sourceIndex, NetworkModel::ConnectionStateRole).toInt()
+                             == NetworkManager::ActiveConnection::Activating;
     NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(sourceModel()->data(sourceIndex, NetworkModel::TypeRole).toInt());
     QString tooltip;
     QString iconName = UiUtils::iconAndTitleForConnectionSettingsType(type, tooltip);
@@ -104,6 +106,10 @@ QVariant EditorIdentityModel::data(const QModelIndex& index, int role) const
         if (column == 0 && isActivated) {
             QFont f;
             f.setBold(true);
+            return f;
+        } else if (column == 0 && isActivating) {
+            QFont f;
+            f.setItalic(true);
             return f;
         }
     } else {

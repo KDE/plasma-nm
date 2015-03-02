@@ -425,7 +425,7 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
         if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
             item->setMode(wirelessSetting->mode());
             item->setSecurityType(NetworkManager::Utils::securityTypeFromConnectionSetting(settings));
-            item->setSsid(wirelessSetting->ssid());
+            item->setSsid(QString::fromUtf8(wirelessSetting->ssid()));
         }
 
         if (item->type() == NetworkManager::ConnectionSettings::Wimax) {
@@ -808,7 +808,7 @@ void NetworkModel::connectionUpdated()
                 wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
                 item->setMode(wirelessSetting->mode());
                 item->setSecurityType(NetworkManager::Utils::securityTypeFromConnectionSetting(settings));
-                item->setSsid(wirelessSetting->ssid());
+                item->setSsid(QString::fromUtf8(wirelessSetting->ssid()));
                 // TODO check whether BSSID has changed and update the wireless info
             }
 

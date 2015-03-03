@@ -23,19 +23,19 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 
 PlasmaComponents.ListItem {
-    id: header;
+    id: header
 
-    property alias text: headerLabel.text;
+    property alias text: headerLabel.text
 
-    width: parent.width
-    height: headerLabel.height + units.gridUnit;
-    sectionDelegate: true;
+    height: headerLabel.height + units.gridUnit; width: parent.width
+    sectionDelegate: true
 
     PlasmaComponents.Label {
-        id: headerLabel;
+        id: headerLabel
+
         anchors.centerIn: parent
-        height: paintedHeight;
-        font.weight: Font.DemiBold;
+        height: paintedHeight
+        font.weight: Font.DemiBold
     }
 
     PlasmaComponents.ToolButton {
@@ -49,11 +49,11 @@ PlasmaComponents.ListItem {
         width: height
         flat: true
         visible: header.text === i18n("Available connections") &&
-                 enabledConnections.wirelessEnabled && enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable;
+                 enabledConnections.wirelessEnabled && enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable
 
         onClicked: {
-            handler.requestScan()
-            refreshAnimation.restart()
+            handler.requestScan();
+            refreshAnimation.restart();
         }
 
         PlasmaCore.SvgItem {
@@ -66,6 +66,7 @@ PlasmaComponents.ListItem {
 
             RotationAnimator on rotation {
                 id: refreshAnimation
+
                 duration: 1000
                 running: false
                 from: 0

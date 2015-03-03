@@ -23,24 +23,24 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 MouseArea {
-    id: panelIconWidget;
+    id: panelIconWidget
 
     anchors.fill: parent
+
     onClicked: plasmoid.expanded = !plasmoid.expanded
 
     PlasmaCore.IconItem {
-        id: connectionIcon;
+        id: connectionIcon
 
         anchors.fill: parent
-
-        source: connectionIconProvider.connectionIcon;
+        source: connectionIconProvider.connectionIcon
 
         PlasmaComponents.BusyIndicator {
-            id: connectingIndicator;
+            id: connectingIndicator
 
-            anchors.fill: parent;
-            running: connectionIconProvider.connecting;
-            visible: running;
+            anchors.fill: parent
+            running: connectionIconProvider.connecting
+            visible: running
         }
     }
 }

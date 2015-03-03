@@ -23,49 +23,48 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 
 Item {
-    id: switchButton;
+    id: switchButton
 
-    property alias icon: switchButtonIcon.elementId;
-    property alias checked: switchButtonCheckbox.checked;
-    property alias enabled: switchButtonCheckbox.enabled;
+    property alias icon: switchButtonIcon.elementId
+    property alias checked: switchButtonCheckbox.checked
+    property alias enabled: switchButtonCheckbox.enabled
 
-    signal clicked();
+    signal clicked
 
-    height: switchButtonIcon.height + Math.round(units.gridUnit / 2);
-    width: switchButtonCheckbox.width + switchButtonIcon.width + units.gridUnit;
+    height: switchButtonIcon.height + Math.round(units.gridUnit / 2)
+    width: switchButtonCheckbox.width + switchButtonIcon.width + units.gridUnit
 
     PlasmaCore.Svg {
-        id: svgNetworkIcons;
+        id: svgNetworkIcons
 
-        multipleImages: true;
-        imagePath: "icons/network";
+        multipleImages: true
+        imagePath: "icons/network"
     }
 
     PlasmaComponents.CheckBox {
-        id: switchButtonCheckbox;
+        id: switchButtonCheckbox
 
         anchors {
-            bottomMargin: Math.round(units.gridUnit / 3);
-            left: parent.left;
-            leftMargin: Math.round(units.gridUnit / 2);
-            topMargin: Math.round(units.gridUnit / 3);
-            verticalCenter: parent.verticalCenter;
+            bottomMargin: Math.round(units.gridUnit / 3)
+            left: parent.left
+            leftMargin: Math.round(units.gridUnit / 2)
+            topMargin: Math.round(units.gridUnit / 3)
+            verticalCenter: parent.verticalCenter
         }
 
         onClicked: {
-            switchButton.clicked();
+            switchButton.clicked()
         }
     }
 
     PlasmaCore.SvgItem {
-        id: switchButtonIcon;
+        id: switchButtonIcon
 
         anchors {
-            left: switchButtonCheckbox.right;
-            leftMargin: Math.round(units.gridUnit / 2);
-            verticalCenter: parent.verticalCenter;
+            left: switchButtonCheckbox.right
+            leftMargin: Math.round(units.gridUnit / 2)
+            verticalCenter: parent.verticalCenter
         }
-
-        svg: svgNetworkIcons;
+        svg: svgNetworkIcons
     }
 }

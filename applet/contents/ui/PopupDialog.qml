@@ -25,52 +25,52 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 FocusScope {
 
     PlasmaNM.EnabledConnections {
-        id: enabledConnections;
+        id: enabledConnections
     }
 
     PlasmaNM.AvailableDevices {
-        id: availableDevices;
+        id: availableDevices
     }
 
     PlasmaNM.NetworkModel {
-        id: connectionModel;
+        id: connectionModel
     }
 
     PlasmaNM.AppletProxyModel {
-        id: appletProxyModel;
+        id: appletProxyModel
 
-        sourceModel: connectionModel;
+        sourceModel: connectionModel
     }
 
     Toolbar {
-        id: toolbar;
+        id: toolbar
 
         anchors {
-            left: parent.left;
-            right: parent.right;
-            top: parent.top;
+            left: parent.left
+            right: parent.right
+            top: parent.top
         }
     }
 
     PlasmaExtras.ScrollArea {
-        id: scrollView;
+        id: scrollView
 
         anchors {
-            bottom: parent.bottom;
-            left: parent.left;
-            right: parent.right;
-            top: toolbar.bottom;
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+            top: toolbar.bottom
         }
 
         ListView {
-            id: connectionView;
+            id: connectionView
 
-            anchors.fill: parent;
+            anchors.fill: parent
             clip: true
-            model: appletProxyModel;
-            currentIndex: -1;
-            boundsBehavior: Flickable.StopAtBounds;
-            section.property: showSections ? "Section" : "";
+            model: appletProxyModel
+            currentIndex: -1
+            boundsBehavior: Flickable.StopAtBounds
+            section.property: showSections ? "Section" : ""
             section.delegate: Header { text: section }
             delegate: ConnectionItem { }
         }

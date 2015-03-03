@@ -26,206 +26,194 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 PlasmaComponents.ListItem {
-    id: connectionItem;
+    id: connectionItem
 
-    property int baseHeight: connectionItemBase.height;
-    property bool activating: ConnectionState == PlasmaNM.Enums.Activating;
-    property bool expanded: visibleDetails || visiblePasswordDialog;
+    property int  baseHeight: connectionItemBase.height
+    property bool activating: ConnectionState == PlasmaNM.Enums.Activating
+    property bool expanded: visibleDetails || visiblePasswordDialog
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
                                                (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
-                                                SecurityType == PlasmaNM.Enums.Wpa2Psk);
+                                                SecurityType == PlasmaNM.Enums.Wpa2Psk)
     property bool showSpeed: ConnectionState == PlasmaNM.Enums.Activated &&
                              (Type == PlasmaNM.Enums.Wimax ||
                               Type == PlasmaNM.Enums.Wired ||
                               Type == PlasmaNM.Enums.Wireless ||
                               Type == PlasmaNM.Enums.Gsm ||
-                              Type == PlasmaNM.Enums.Cdma);
-    property bool visibleDetails: false;
-    property bool visiblePasswordDialog: false;
+                              Type == PlasmaNM.Enums.Cdma)
+    property bool visibleDetails: false
+    property bool visiblePasswordDialog: false
 
-    height: expanded ? baseHeight + expandableComponentLoader.height + Math.round(units.gridUnit / 3) : baseHeight;
-    checked: ListView.isCurrentItem;
-    enabled: true;
+    checked: ListView.isCurrentItem
+    enabled: true
+    height: expanded ? baseHeight + expandableComponentLoader.height + Math.round(units.gridUnit / 3) : baseHeight
 
     PlasmaCore.DataSource {
-        id: dataSource;
+        id: dataSource
 
-        property string downloadSource: "network/interfaces/" + DeviceName + "/receiver/data";
-        property string uploadSource: "network/interfaces/" + DeviceName + "/transmitter/data";
+        property string downloadSource: "network/interfaces/" + DeviceName + "/receiver/data"
+        property string uploadSource: "network/interfaces/" + DeviceName + "/transmitter/data"
 
-        engine: "systemmonitor";
-        connectedSources: showSpeed && plasmoid.expanded ? [downloadSource, uploadSource] : [];
-        interval: 2000;
+        connectedSources: showSpeed && plasmoid.expanded ? [downloadSource, uploadSource] : []
+        engine: "systemmonitor"
+        interval: 2000
     }
 
     Item {
-        id: connectionItemBase;
+        id: connectionItemBase
 
         anchors {
-            left: parent.left;
-            right: parent.right;
-            top: parent.top;
+            left: parent.left
+            right: parent.right
+            top: parent.top
             // Reset top margin from PlasmaComponents.ListItem
-            topMargin: -Math.round(units.gridUnit / 3);
+            topMargin: -Math.round(units.gridUnit / 3)
         }
-
-        height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(units.gridUnit / 2);
+        height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(units.gridUnit / 2)
 
         PlasmaCore.SvgItem {
-            id: connectionSvgIcon;
+            id: connectionSvgIcon
 
             anchors {
-                left: parent.left;
-                verticalCenter: parent.verticalCenter;
+                left: parent.left
+                verticalCenter: parent.verticalCenter
             }
-
-            height: units.iconSizes.medium;
-            width: height;
-            elementId: ConnectionIcon;
+            elementId: ConnectionIcon
+            height: units.iconSizes.medium; width: height
             svg: PlasmaCore.Svg { multipleImages: true; imagePath: "icons/network" }
         }
 
         PlasmaComponents.Label {
-            id: connectionNameLabel;
+            id: connectionNameLabel
 
             anchors {
-                bottom: connectionSvgIcon.verticalCenter;
-                left: connectionSvgIcon.right;
-                leftMargin: Math.round(units.gridUnit / 2);
-                right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
+                bottom: connectionSvgIcon.verticalCenter
+                left: connectionSvgIcon.right
+                leftMargin: Math.round(units.gridUnit / 2)
+                right: stateChangeButton.visible ? stateChangeButton.left : parent.right
             }
-
-            height: paintedHeight;
-            elide: Text.ElideRight;
-            font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal;
-            font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false;
-            text: ItemUniqueName;
-            textFormat: Text.PlainText;
+            height: paintedHeight
+            elide: Text.ElideRight
+            font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
+            font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false
+            text: ItemUniqueName
+            textFormat: Text.PlainText
         }
 
         PlasmaComponents.Label {
-            id: connectionStatusLabel;
+            id: connectionStatusLabel
 
             anchors {
-                left: connectionSvgIcon.right;
-                leftMargin: Math.round(units.gridUnit / 2);
-                right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
-                top: connectionNameLabel.bottom;
+                left: connectionSvgIcon.right
+                leftMargin: Math.round(units.gridUnit / 2)
+                right: stateChangeButton.visible ? stateChangeButton.left : parent.right
+                top: connectionNameLabel.bottom
             }
-
-            height: paintedHeight;
-            elide: Text.ElideRight;
-            font.pointSize: theme.smallestFont.pointSize;
-            opacity: 0.6;
-            text: itemText();
+            height: paintedHeight
+            elide: Text.ElideRight
+            font.pointSize: theme.smallestFont.pointSize
+            opacity: 0.6
+            text: itemText()
         }
 
         PlasmaComponents.BusyIndicator {
-            id: connectingIndicator;
+            id: connectingIndicator
 
             anchors {
-                right: stateChangeButton.visible ? stateChangeButton.left : parent.right;
-                rightMargin: Math.round(units.gridUnit / 2);
-                verticalCenter: connectionSvgIcon.verticalCenter;
+                right: stateChangeButton.visible ? stateChangeButton.left : parent.right
+                rightMargin: Math.round(units.gridUnit / 2)
+                verticalCenter: connectionSvgIcon.verticalCenter
             }
-
-            height: units.iconSizes.medium;
-            width: height;
-            running: plasmoid.expanded && !stateChangeButton.visible && ConnectionState == PlasmaNM.Enums.Activating;
-            visible: running;
+            height: units.iconSizes.medium; width: height
+            running: plasmoid.expanded && !stateChangeButton.visible && ConnectionState == PlasmaNM.Enums.Activating
+            visible: running
         }
 
         PlasmaComponents.Button {
-            id: stateChangeButton;
+            id: stateChangeButton
 
             anchors {
-                right: parent.right;
-                rightMargin: Math.round(units.gridUnit / 2);
-                verticalCenter: connectionSvgIcon.verticalCenter;
+                right: parent.right
+                rightMargin: Math.round(units.gridUnit / 2)
+                verticalCenter: connectionSvgIcon.verticalCenter
             }
-
-            opacity: connectionItem.containsMouse ? 1 : 0;
-            visible: opacity != 0;
-            text: (ConnectionState == PlasmaNM.Enums.Deactivated) ? i18n("Connect") : i18n("Disconnect");
+            opacity: connectionItem.containsMouse ? 1 : 0
+            visible: opacity != 0
+            text: (ConnectionState == PlasmaNM.Enums.Deactivated) ? i18n("Connect") : i18n("Disconnect")
 
             Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
 
-            onClicked: changeState();
+            onClicked: changeState()
         }
     }
 
     Loader {
-        id: expandableComponentLoader;
+        id: expandableComponentLoader
 
         anchors {
-            left: parent.left;
-            right: parent.right;
-            top: connectionItemBase.bottom;
+            left: parent.left
+            right: parent.right
+            top: connectionItemBase.bottom
         }
     }
 
     Component {
-        id: detailsComponent;
+        id: detailsComponent
 
         Item {
-            height: childrenRect.height;
+            height: childrenRect.height
 
             PlasmaCore.SvgItem {
-                id: detailsSeparator;
+                id: detailsSeparator
 
                 anchors {
-                    left: parent.left;
-                    right: parent.right;
-                    top: parent.top;
+                    left: parent.left
+                    right: parent.right
+                    top: parent.top
                 }
-
-                height: lineSvg.elementSize("horizontal-line").height;
-                width: parent.width;
-                elementId: "horizontal-line";
+                height: lineSvg.elementSize("horizontal-line").height; width: parent.width
+                elementId: "horizontal-line"
                 svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
             }
 
             Column {
-                id: details;
+                id: details
 
                 anchors {
-                    left: parent.left;
-                    leftMargin: units.iconSizes.medium;
-                    right: parent.right;
-                    top: detailsSeparator.bottom;
-                    topMargin: Math.round(units.gridUnit / 3);
+                    left: parent.left
+                    leftMargin: units.iconSizes.medium
+                    right: parent.right
+                    top: detailsSeparator.bottom
+                    topMargin: Math.round(units.gridUnit / 3)
                 }
 
                 Repeater {
-                    id: repeater;
+                    id: repeater
 
-                    property int longestString: 0;
+                    property int longestString: 0
 
-                    model: ConnectionDetails.length / 2;
+                    model: ConnectionDetails.length / 2
 
                     Item {
                         anchors {
-                            left: parent.left;
-                            right: parent.right;
-                            topMargin: Math.round(units.gridUnit / 3);
+                            left: parent.left
+                            right: parent.right
+                            topMargin: Math.round(units.gridUnit / 3)
                         }
-
-                        height: Math.max(detailNameLabel.height, detailValueLabel.height);
+                        height: Math.max(detailNameLabel.height, detailValueLabel.height)
 
                         PlasmaComponents.Label {
-                            id: detailNameLabel;
+                            id: detailNameLabel
 
                             anchors {
-                                left: parent.left;
-                                leftMargin: repeater.longestString - paintedWidth + Math.round(units.gridUnit / 2);
-                                verticalCenter: parent.verticalCenter;
+                                left: parent.left
+                                leftMargin: repeater.longestString - paintedWidth + Math.round(units.gridUnit / 2)
+                                verticalCenter: parent.verticalCenter
                             }
-
-                            height: paintedHeight;
-                            font.pointSize: theme.smallestFont.pointSize;
-                            horizontalAlignment: Text.AlignRight;
-                            opacity: 0.6;
-                            text: "<b>" + ConnectionDetails[index*2] + "</b>: &nbsp";
+                            height: paintedHeight
+                            font.pointSize: theme.smallestFont.pointSize
+                            horizontalAlignment: Text.AlignRight
+                            opacity: 0.6
+                            text: "<b>" + ConnectionDetails[index*2] + "</b>: &nbsp"
 
                             Component.onCompleted: {
                                 if (paintedWidth > repeater.longestString) {
@@ -235,20 +223,19 @@ PlasmaComponents.ListItem {
                         }
 
                         PlasmaComponents.Label {
-                            id: detailValueLabel;
+                            id: detailValueLabel
 
                             anchors {
-                                left: detailNameLabel.right;
-                                right: parent.right;
-                                verticalCenter: parent.verticalCenter;
+                                left: detailNameLabel.right
+                                right: parent.right
+                                verticalCenter: parent.verticalCenter
                             }
-
-                            height: paintedHeight;
-                            elide: Text.ElideRight;
-                            font.pointSize: theme.smallestFont.pointSize;
-                            opacity: 0.6;
-                            text: ConnectionDetails[(index*2)+1];
-                            textFormat: Text.PlainText;
+                            height: paintedHeight
+                            elide: Text.ElideRight
+                            font.pointSize: theme.smallestFont.pointSize
+                            opacity: 0.6
+                            text: ConnectionDetails[(index*2)+1]
+                            textFormat: Text.PlainText
                         }
                     }
                 }
@@ -257,42 +244,38 @@ PlasmaComponents.ListItem {
     }
 
     Component {
-        id: passwordDialogComponent;
+        id: passwordDialogComponent
 
         Item {
-            height: childrenRect.height;
-
-            property alias password: passwordInput.text;
+            property alias password: passwordInput.text
             property alias passwordFocus: passwordInput
 
+            height: childrenRect.height
+
             PlasmaCore.SvgItem {
-                id: passwordSeparator;
+                id: passwordSeparator
 
                 anchors {
-                    left: parent.left;
-                    right: parent.right;
-                    top: parent.top;
+                    left: parent.left
+                    right: parent.right
+                    top: parent.top
                 }
-
-                height: lineSvg.elementSize("horizontal-line").height;
-                width: parent.width;
-                elementId: "horizontal-line";
+                height: lineSvg.elementSize("horizontal-line").height; width: parent.width
+                elementId: "horizontal-line"
                 svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
             }
 
             PlasmaComponents.TextField {
-                id: passwordInput;
+                id: passwordInput
 
                 anchors {
-                    horizontalCenter: parent.horizontalCenter;
-                    top: passwordSeparator.bottom;
-                    topMargin: Math.round(units.gridUnit / 3);
+                    horizontalCenter: parent.horizontalCenter
+                    top: passwordSeparator.bottom
+                    topMargin: Math.round(units.gridUnit / 3)
                 }
-
-                height: implicitHeight;
-                width: 200;
+                height: implicitHeight; width: 200
                 echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
-                placeholderText: i18n("Password...");
+                placeholderText: i18n("Password...")
                 validator: RegExpValidator {
                                 regExp: if (SecurityType == PlasmaNM.Enums.StaticWep) {
                                             /^(?:[\x20-\x7F]{5}|[0-9a-fA-F]{10}|[\x20-\x7F]{13}|[0-9a-fA-F]{26}){1}$/
@@ -300,6 +283,7 @@ PlasmaComponents.ListItem {
                                             /^(?:[\x20-\x7F]{8,64}){1}$/
                                         }
                                 }
+
                 onAccepted: {
                     stateChangeButton.clicked();
                 }
@@ -310,16 +294,15 @@ PlasmaComponents.ListItem {
             }
 
             PlasmaComponents.CheckBox {
-                id: showPasswordCheckbox;
+                id: showPasswordCheckbox
 
                 anchors {
-                    left: passwordInput.left;
-                    right: parent.right;
-                    top: passwordInput.bottom;
+                    left: passwordInput.left
+                    right: parent.right
+                    top: passwordInput.bottom
                 }
-
-                checked: false;
-                text: i18n("Show password");
+                checked: false
+                text: i18n("Show password")
             }
 
             Component.onCompleted: {
@@ -334,22 +317,22 @@ PlasmaComponents.ListItem {
 
     states: [
         State {
-            name: "collapsed";
-            when: !(visibleDetails || visiblePasswordDialog);
+            name: "collapsed"
+            when: !(visibleDetails || visiblePasswordDialog)
             StateChangeScript { script: if (expandableComponentLoader.status == Loader.Ready) {expandableComponentLoader.sourceComponent = undefined} }
         },
 
         State {
-            name: "expandedDetails";
-            when: visibleDetails;
-            StateChangeScript { script: createContent(); }
+            name: "expandedDetails"
+            when: visibleDetails
+            StateChangeScript { script: createContent() }
         },
 
         State {
-            name: "expandedPasswordDialog";
-            when: visiblePasswordDialog;
-            StateChangeScript { script: createContent(); }
-            PropertyChanges { target: stateChangeButton; opacity: 1; }
+            name: "expandedPasswordDialog"
+            when: visiblePasswordDialog
+            StateChangeScript { script: createContent() }
+            PropertyChanges { target: stateChangeButton; opacity: 1 }
         }
     ]
 
@@ -363,7 +346,7 @@ PlasmaComponents.ListItem {
     }
 
     function changeState() {
-        visibleDetails = false;
+        visibleDetails = false
         if (Uuid || !predictableWirelessPassword || visiblePasswordDialog) {
             if (ConnectionState == PlasmaNM.Enums.Deactivated) {
                 if (!predictableWirelessPassword && !Uuid) {
@@ -406,7 +389,7 @@ PlasmaComponents.ListItem {
             if (showSpeed && dataSource.data && dataSource.data[dataSource.downloadSource] && dataSource.data[dataSource.uploadSource]) {
                 return i18n("Connected, ⬇ %1/s, ⬆ %2/s",
                             KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.downloadSource].value * 1024 || 0),
-                            KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.uploadSource].value * 1024 || 0))
+                            KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.uploadSource].value * 1024 || 0));
             } else {
                 return i18n("Connected");
             }
@@ -415,7 +398,7 @@ PlasmaComponents.ListItem {
 
     onActivatingChanged: {
         if (ConnectionState == PlasmaNM.Enums.Activating) {
-            ListView.view.positionViewAtIndex(index, ListView.End)
+            ListView.view.positionViewAtIndex(index, ListView.End);
         }
     }
 

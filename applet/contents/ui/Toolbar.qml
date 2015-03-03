@@ -24,29 +24,29 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 Item {
-    id: toolbar;
+    id: toolbar
 
-    height: wifiSwitchButton.height;
+    height: wifiSwitchButton.height
 
     PlasmaCore.Svg {
-        id: lineSvg;
-        imagePath: "widgets/line";
+        id: lineSvg
+        imagePath: "widgets/line"
     }
 
     Row {
         anchors {
-            bottom: parent.bottom;
-            left: parent.left;
-            top: parent.top;
+            bottom: parent.bottom
+            left: parent.left
+            top: parent.top
         }
 
         SwitchButton {
-            id: wifiSwitchButton;
+            id: wifiSwitchButton
 
-            checked: enabled && enabledConnections.wirelessEnabled;
-            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled;
-            icon: enabled ? "network-wireless-on" : "network-wireless-off";
-            visible: availableDevices.wirelessDeviceAvailable;
+            checked: enabled && enabledConnections.wirelessEnabled
+            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
+            icon: enabled ? "network-wireless-on" : "network-wireless-off"
+            visible: availableDevices.wirelessDeviceAvailable
 
             onClicked: {
                 handler.enableWireless(checked);
@@ -54,12 +54,12 @@ Item {
         }
 
         SwitchButton {
-            id: wwanSwitchButton;
+            id: wwanSwitchButton
 
-            checked: enabled && enabledConnections.wwanEnabled;
-            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled;
-            icon: enabled ? "network-mobile-on" : "network-mobile-off";
-            visible: availableDevices.modemDeviceAvailable;
+            checked: enabled && enabledConnections.wwanEnabled
+            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
+            icon: enabled ? "network-mobile-on" : "network-mobile-off"
+            visible: availableDevices.modemDeviceAvailable
 
             onClicked: {
                 handler.enableWwan(checked);
@@ -67,31 +67,30 @@ Item {
         }
 
         SwitchButton {
-            id: planeModeSwitchButton;
+            id: planeModeSwitchButton
 
-            property bool airplaneModeEnabled: false;
+            property bool airplaneModeEnabled: false
 
-            checked: airplaneModeEnabled;
-            icon: airplaneModeEnabled ? "flightmode-on" : "flightmode-off";
+            checked: airplaneModeEnabled
+            icon: airplaneModeEnabled ? "flightmode-on" : "flightmode-off"
 
             onClicked: {
                 handler.enableAirplaneMode(checked);
                 airplaneModeEnabled = !airplaneModeEnabled;
-                console.log(airplaneModeEnabled);
             }
         }
     }
 
     PlasmaComponents.ToolButton {
-        id: openEditorButton;
+        id: openEditorButton
 
         anchors {
-            right: parent.right;
-            rightMargin: Math.round(units.gridUnit / 2);
-            verticalCenter: parent.verticalCenter;
+            right: parent.right
+            rightMargin: Math.round(units.gridUnit / 2)
+            verticalCenter: parent.verticalCenter
         }
 
-        iconSource: "configure";
+        iconSource: "configure"
 
         onClicked: {
             handler.openEditor();

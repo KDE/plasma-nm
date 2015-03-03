@@ -28,8 +28,7 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 PlasmaComponents.ListItem {
     id: connectionItem;
 
-    property int baseHeight: connectionItemBase.height;
-    property bool activating: ConnectionState == PlasmaNM.Enums.Activating;
+    property int  baseHeight: connectionItemBase.height;
     property bool expanded: visibleDetails || visiblePasswordDialog;
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
                                                (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
@@ -410,12 +409,6 @@ PlasmaComponents.ListItem {
             } else {
                 return i18n("Connected");
             }
-        }
-    }
-
-    onActivatingChanged: {
-        if (ConnectionState == PlasmaNM.Enums.Activating) {
-            ListView.view.positionViewAtIndex(index, ListView.End)
         }
     }
 

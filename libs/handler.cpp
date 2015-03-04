@@ -253,9 +253,6 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
             if (active->vpn()) {
                 reply = NetworkManager::deactivateConnection(active->path());
             } else {
-                if (active->devices().isEmpty()) {
-                    reply = NetworkManager::deactivateConnection(connection);
-                }
                 NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
                 if (device) {
                     reply = device->disconnectInterface();

@@ -122,9 +122,9 @@ void NetworkStatus::changeActiveConnections()
         return;
     }
 
-    QString activeConnections = "<qt>";
-    const QString format = "<b>%1</b><br>%2<br><br>";
-    const QString formatDefault = "<b>%1</b><br><b>%2</b><br><br>";
+    QString activeConnections = QStringLiteral("<qt>");
+    const QString format = QStringLiteral("%1: %2<br>");
+    const QString formatDefault = QStringLiteral("%1: %2<br>");
 
     Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
         if (!active->devices().isEmpty()) {
@@ -180,7 +180,7 @@ void NetworkStatus::changeActiveConnections()
 
     activeConnections += "</qt>";
     // Remove the last two new lines
-    activeConnections.replace("<br><br></qt>", "</qt>");
+    activeConnections.replace("<br></qt>", "</qt>");
 
     m_activeConnections = activeConnections;
     Q_EMIT activeConnectionsChanged(activeConnections);

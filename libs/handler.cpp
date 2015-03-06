@@ -273,6 +273,7 @@ void Handler::enableWwan(bool enable)
 
 bool Handler::isBtEnabled()
 {
+    qDBusRegisterMetaType< QMap<QDBusObjectPath, NMVariantMapMap > >();
     bool result = false;
 
     QDBusInterface managerIface("org.bluez", "/", "org.freedesktop.DBus.ObjectManager", QDBusConnection::systemBus(), this);

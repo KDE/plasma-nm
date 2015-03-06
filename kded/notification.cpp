@@ -283,6 +283,28 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         text = i18nc("@info:status Notification when the device failed due to SecondaryConnectionFailed",
                      "A secondary connection of the base connection failed");
         break;
+#if NM_CHECK_VERSION(0, 9, 10)
+    case NetworkManager::Device::DcbFcoeFailed:
+        text = i18nc("@info:status Notification when the device failed due to DcbFcoeFailed",
+                     "DCB or FCoE setup failed");
+        break;
+    case NetworkManager::Device::TeamdControlFailed:
+        text = i18nc("@info:status Notification when the device failed due to TeamdControlFailed",
+                     "teamd control failed");
+        break;
+    case NetworkManager::Device::ModemFailed:
+        text = i18nc("@info:status Notification when the device failed due to ModemFailed",
+                     "Modem failed or no longer available");
+        break;
+    case NetworkManager::Device::ModemAvailable:
+        text = i18nc("@info:status Notification when the device failed due to ModemAvailable",
+                     "Modem now ready and available");
+        break;
+    case NetworkManager::Device::SimPinIncorrect:
+        text = i18nc("@info:status Notification when the device failed due to SimPinIncorrect",
+                     "The SIM PIN was incorrect");
+        break;
+#endif
     case NetworkManager::Device::Reserved:
         return;
     }

@@ -230,10 +230,11 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="KLineEdit" name="leapPassword"/>
+        <widget class="KLineEdit" name="leapPassword">
          <property name="passwordMode">
           <bool>true</bool>
          </property>
+        </widget>
        </item>
        <item row="2" column="1">
         <widget class="QCheckBox" name="cbShowLeapPassword">

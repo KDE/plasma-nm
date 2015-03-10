@@ -54,7 +54,6 @@ private Q_SLOTS:
     void addConnection(QAction * action);
     void connectionAdded(const QString & connection);
     void connectConnection();
-    void dataChanged(const QModelIndex & topLeft, const QModelIndex & bottomRight, const QVector<int> & roles = QVector<int> ());
     void disconnectConnection();
     void editConnection();
     void exportVpn();
@@ -62,7 +61,7 @@ private Q_SLOTS:
     void initializeConnections();
     void removeConnection();
     void slotContextMenuRequested(const QPoint& point);
-    void slotItemClicked(const QModelIndex& index);
+    void slotSelectionChanged(const QModelIndex& index, const QModelIndex &previous);
     void slotItemDoubleClicked(const QModelIndex& index);
 
 private:

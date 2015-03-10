@@ -86,7 +86,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     KConfigGroup grp(KSharedConfig::openConfig(), "ConnectionsWidget");
     m_editor->connectionsWidget->header()->restoreState(grp.readEntry<QByteArray>("state", QByteArray()));
 
-    connect(m_editor->connectionsWidget, &QTreeView::pressed, this, &ConnectionEditor::slotItemClicked);
+    connect(m_editor->connectionsWidget->selectionModel(), &QItemSelectionModel::currentChanged, this, &ConnectionEditor::slotSelectionChanged);
     connect(m_editor->connectionsWidget, &QTreeView::doubleClicked, this, &ConnectionEditor::slotItemDoubleClicked);
     connect(m_editor->connectionsWidget, &QTreeView::customContextMenuRequested, this, &ConnectionEditor::slotContextMenuRequested);
     connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
@@ -376,22 +376,6 @@ void ConnectionEditor::connectConnection()
     m_handler->activateConnection(connectionPath, devicePath, specificPath);
 }
 
-void ConnectionEditor::dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QVector< int >& roles)
-{
-    Q_UNUSED(roles);
-    QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
-    if (currentIndex.isValid()) {
-        for (int i = topLeft.row(); i <= bottomRight.row(); i++) {
-            QModelIndex index = m_editor->connectionsWidget->model()->index(i, 0);
-            if (index.isValid() && index == currentIndex) {
-                // Re-check enabled/disabled actions
-                slotItemClicked(currentIndex);
-                break;
-            }
-        }
-    }
-}
-
 void ConnectionEditor::disconnectConnection()
 {
     const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
@@ -421,7 +405,6 @@ void ConnectionEditor::initializeConnections()
     EditorIdentityModel * model = new EditorIdentityModel(this);
     EditorProxyModel * filterModel = new EditorProxyModel(this);
     filterModel->setSourceModel(model);
-    connect(filterModel, &EditorProxyModel::dataChanged, this, &ConnectionEditor::dataChanged);
 
     m_editor->connectionsWidget->setModel(filterModel);
     m_editor->ktreewidgetsearchline->setProxy(filterModel);
@@ -473,13 +456,13 @@ void ConnectionEditor::slotContextMenuRequested(const QPoint&)
     menu->exec(QCursor::pos());
 }
 
-void ConnectionEditor::slotItemClicked(const QModelIndex &index)
+void ConnectionEditor::slotSelectionChanged(const QModelIndex &index, const QModelIndex &previous)
 {
     if (!index.isValid()) {
         return;
     }
 
-    // qCDebug(PLASMA_NM) << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
+    //qCDebug(PLASMA_NM) << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
 
     if (index.parent().isValid()) { // category
         actionCollection()->action("connect_connection")->setEnabled(false);

@@ -48,6 +48,7 @@ PlasmaComponents.ListItem {
         }
         width: height
         flat: true
+        tooltip: i18n("Rescan wireless networks")
         visible: header.text === i18n("Available connections") &&
                  enabledConnections.wirelessEnabled && enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable
 

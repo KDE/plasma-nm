@@ -91,6 +91,7 @@ Item {
         }
 
         iconSource: "configure"
+        tooltip: i18n("Configure network connections...")
 
         onClicked: {
             handler.openEditor();

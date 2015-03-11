@@ -62,7 +62,7 @@ private Q_SLOTS:
     void initializeConnections();
     void removeConnection();
     void slotContextMenuRequested(const QPoint& point);
-    void slotItemClicked(const QModelIndex& index);
+    void slotSelectionChanged(const QModelIndex &index, const QModelIndex &previous);
     void slotItemDoubleClicked(const QModelIndex& index);
 
 private:

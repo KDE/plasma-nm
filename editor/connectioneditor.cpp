@@ -86,7 +86,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     KConfigGroup grp(KSharedConfig::openConfig(), "ConnectionsWidget");
     m_editor->connectionsWidget->header()->restoreState(grp.readEntry<QByteArray>("state", QByteArray()));
 
-    connect(m_editor->connectionsWidget, &QTreeView::pressed, this, &ConnectionEditor::slotItemClicked);
+    connect(m_editor->connectionsWidget->selectionModel(), &QItemSelectionModel::currentChanged, this, &ConnectionEditor::slotSelectionChanged);
     connect(m_editor->connectionsWidget, &QTreeView::doubleClicked, this, &ConnectionEditor::slotItemDoubleClicked);
     connect(m_editor->connectionsWidget, &QTreeView::customContextMenuRequested, this, &ConnectionEditor::slotContextMenuRequested);
     connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
@@ -377,7 +377,7 @@ void ConnectionEditor::dataChanged(const QModelIndex& topLeft, const QModelIndex
             QModelIndex index = m_editor->connectionsWidget->model()->index(i, 0);
             if (index.isValid() && index == currentIndex) {
                 // Re-check enabled/disabled actions
-                slotItemClicked(currentIndex);
+                slotSelectionChanged(currentIndex, currentIndex);
                 break;
             }
         }
@@ -465,7 +465,7 @@ void ConnectionEditor::slotContextMenuRequested(const QPoint&)
     menu->exec(QCursor::pos());
 }
 
-void ConnectionEditor::slotItemClicked(const QModelIndex &index)
+void ConnectionEditor::slotSelectionChanged(const QModelIndex &index, const QModelIndex &previous)
 {
     if (!index.isValid()) {
         return;

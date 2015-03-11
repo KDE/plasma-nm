@@ -54,6 +54,7 @@ private Q_SLOTS:
     void addConnection(QAction * action);
     void connectionAdded(const QString & connection);
     void connectConnection();
+    void dataChanged(const QModelIndex & topLeft, const QModelIndex & bottomRight, const QVector<int> & roles = QVector<int> ());
     void disconnectConnection();
     void editConnection();
     void exportVpn();

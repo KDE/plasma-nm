@@ -376,6 +376,22 @@ void ConnectionEditor::connectConnection()
     m_handler->activateConnection(connectionPath, devicePath, specificPath);
 }
 
+void ConnectionEditor::dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight, const QVector< int >& roles)
+{
+    Q_UNUSED(roles);
+    QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
+    if (currentIndex.isValid()) {
+        for (int i = topLeft.row(); i <= bottomRight.row(); i++) {
+            QModelIndex index = m_editor->connectionsWidget->model()->index(i, 0);
+            if (index.isValid() && index == currentIndex) {
+                // Re-check enabled/disabled actions
+                slotSelectionChanged(currentIndex, currentIndex);
+                break;
+            }
+        }
+    }
+}
+
 void ConnectionEditor::disconnectConnection()
 {
     const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
@@ -405,6 +421,7 @@ void ConnectionEditor::initializeConnections()
     EditorIdentityModel * model = new EditorIdentityModel(this);
     EditorProxyModel * filterModel = new EditorProxyModel(this);
     filterModel->setSourceModel(model);
+    connect(filterModel, &EditorProxyModel::dataChanged, this, &ConnectionEditor::dataChanged);
 
     m_editor->connectionsWidget->setModel(filterModel);
     m_editor->ktreewidgetsearchline->setProxy(filterModel);

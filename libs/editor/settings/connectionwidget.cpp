@@ -161,28 +161,13 @@ void ConnectionWidget::autoVpnToggled(bool on)
 
 void ConnectionWidget::openAdvancedPermissions()
 {
-    QPointer<QDialog> dialog = new QDialog(this);
+    AdvancedPermissionsWidget * dialog = new AdvancedPermissionsWidget(m_tmpSetting.permissions(), this);
     dialog->setWindowTitle(i18nc("@title:window advanced permissions editor",
                                  "Advanced Permissions Editor"));
-    dialog->setLayout(new QVBoxLayout);
-    QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
-    connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));
-    connect(buttons, SIGNAL(rejected()), dialog, SLOT(reject()));
-    AdvancedPermissionsWidget permissions(m_tmpSetting.permissions());
-    dialog->layout()->addWidget(&permissions);
-    dialog->layout()->addWidget(buttons);
-    connect(dialog.data(), &QDialog::accepted,
-            [&permissions, this] () {
-                m_tmpSetting.setPermissions(permissions.currentUsers());
-            });
-    connect(dialog.data(), &QDialog::finished,
-            [dialog] () {
-                if (dialog) {
-                    dialog->deleteLater();
-                }
-            });
-    dialog->setModal(true);
-    dialog->show();
+    if (dialog->exec() == QDialog::Accepted) {
+        m_tmpSetting.setPermissions(dialog->currentUsers());
+    }
+    delete dialog;
 }
 
 NMStringMap ConnectionWidget::vpnConnections() const

@@ -36,7 +36,7 @@ public:
 };
 
 AdvancedPermissionsWidget::AdvancedPermissionsWidget(QWidget *parent):
-    QWidget(parent),
+    QDialog(parent),
     d_ptr(new AdvancedPermissionsWidgetPrivate)
 {
     Q_D(AdvancedPermissionsWidget);
@@ -50,7 +50,7 @@ AdvancedPermissionsWidget::AdvancedPermissionsWidget(QWidget *parent):
 }
 
 AdvancedPermissionsWidget::AdvancedPermissionsWidget(const QHash<QString,QString> &users, QWidget *parent):
-    QWidget(parent),
+    QDialog(parent),
     d_ptr(new AdvancedPermissionsWidgetPrivate)
 {
     Q_D(AdvancedPermissionsWidget);

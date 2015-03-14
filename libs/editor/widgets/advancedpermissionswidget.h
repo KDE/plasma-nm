@@ -22,14 +22,14 @@
 #ifndef PLASMA_NM_ADVANCED_PERMISSIONS_WIDGET_H
 #define PLASMA_NM_ADVANCED_PERMISSIONS_WIDGET_H
 
-#include <QWidget>
+#include <QDialog>
 #include <QHash>
 
 class QTreeWidgetItem;
 class AdvancedPermissionsWidgetPrivate;
 class KUser;
 
-class AdvancedPermissionsWidget : public QWidget
+class AdvancedPermissionsWidget : public QDialog
 {
 Q_OBJECT
 Q_DECLARE_PRIVATE(AdvancedPermissionsWidget)

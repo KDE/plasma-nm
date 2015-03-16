@@ -140,7 +140,7 @@ void ConnectionWidget::autoVpnToggled(bool on)
 
 void ConnectionWidget::openAdvancedPermissions()
 {
-    AdvancedPermissionsWidget * dialog = new AdvancedPermissionsWidget(m_tmpSetting.permissions(), this);
+    QPointer<AdvancedPermissionsWidget> dialog = new AdvancedPermissionsWidget(m_tmpSetting.permissions(), this);
     dialog->setWindowTitle(i18nc("@title:window advanced permissions editor",
                                  "Advanced Permissions Editor"));
 

@@ -83,14 +83,16 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     initializeConnections();
     initializeMenu();
 
-    KConfigGroup grp(KSharedConfig::openConfig(), "ConnectionsWidget");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp(config, "ConnectionsWidget");
     m_editor->connectionsWidget->header()->restoreState(grp.readEntry<QByteArray>("state", QByteArray()));
 
-    if (grp.isValid()) {
-        if (grp.readEntry("FirstStart", true)) {
+    KConfigGroup grp2(config, "General");
+    if (grp2.isValid()) {
+        if (grp2.readEntry("FirstStart", true)) {
             importSecretsFromPlainTextFiles();
         }
-        grp.writeEntry("FirstStart", false);
+        grp2.writeEntry("FirstStart", false);
     }
 
     connect(m_editor->connectionsWidget->selectionModel(), &QItemSelectionModel::currentChanged, this, &ConnectionEditor::slotSelectionChanged);

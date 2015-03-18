@@ -48,6 +48,11 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget* paren
     connect(m_ui->passwordStorage, SIGNAL(currentIndexChanged(int)), SLOT(passwordStorageChanged(int)));
 
     connect(m_ui->apn, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->password, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->pin, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->username, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->passwordStorage, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
+    connect(m_ui->pinStorage, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
 
     KAcceleratorManager::manage(this);
 
@@ -68,10 +73,10 @@ void GsmWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     if (!number.isEmpty())
         m_ui->number->setText(number);
     m_ui->username->setText(gsmSetting->username());
-    m_ui->password->setText(gsmSetting->password());
-    if (gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::None) ||
+    if ((!gsmSetting->password().isEmpty() && gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::None)) ||
         gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
         m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
+        m_ui->password->setText(gsmSetting->password());
     } else if (gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::NotSaved)) {
         m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
     } else {
@@ -82,10 +87,10 @@ void GsmWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     if (gsmSetting->networkType() != NetworkManager::GsmSetting::Any)
         m_ui->type->setCurrentIndex(m_ui->type->findData(static_cast<int>(gsmSetting->networkType())));
     m_ui->roaming->setChecked(!gsmSetting->homeOnly());
-    m_ui->pin->setText(gsmSetting->pin());
-    if (gsmSetting->pinFlags() == NetworkManager::Setting::None ||
+    if ((!gsmSetting->pin().isEmpty() && gsmSetting->pinFlags() == NetworkManager::Setting::None) ||
         gsmSetting->pinFlags() == NetworkManager::Setting::AgentOwned) {
         m_ui->pinStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
+        m_ui->pin->setText(gsmSetting->pin());
     } else if (gsmSetting->pinFlags() == NetworkManager::Setting::NotSaved) {
         m_ui->pinStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
     } else {
@@ -151,5 +156,18 @@ void GsmWidget::passwordStorageChanged(int index)
 
 bool GsmWidget::isValid() const
 {
-    return !m_ui->apn->text().isEmpty();
+    bool passwordUserValid = true;
+    bool pinValid = true;
+
+    if (m_ui->passwordStorage->currentIndex() == SettingWidget::EnumPasswordStorageType::Store) {
+        passwordUserValid = !m_ui->username->text().isEmpty() && !m_ui->password->text().isEmpty();
+    } else if (m_ui->passwordStorage->currentIndex() == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {
+        passwordUserValid = !m_ui->username->text().isEmpty();
+    }
+
+    if (m_ui->pinStorage->currentIndex() == SettingWidget::EnumPasswordStorageType::Store) {
+        pinValid = !m_ui->pin->text().isEmpty();
+    }
+
+    return !m_ui->apn->text().isEmpty() && passwordUserValid && pinValid;
 }

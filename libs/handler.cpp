@@ -31,6 +31,7 @@
 #include <NetworkManagerQt/Setting>
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/GsmSetting>
 #include <NetworkManagerQt/WiredSetting>
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/ActiveConnection>
@@ -107,7 +108,9 @@ void Handler::activateConnection(const QString& connection, const QString& devic
             ModemManager::ModemDevice::Ptr mmModemDevice = ModemManager::findModemDevice(nmModemDevice->udi());
             if (mmModemDevice) {
                 ModemManager::Modem::Ptr modem = mmModemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
-                if (modem && modem->unlockRequired() > MM_MODEM_LOCK_NONE) {
+                NetworkManager::GsmSetting::Ptr gsmSetting = con->settings()->setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
+                if (gsmSetting && gsmSetting->pinFlags() == NetworkManager::Setting::NotSaved &&
+                    modem && modem->unlockRequired() > MM_MODEM_LOCK_NONE) {
                     QDBusInterface managerIface("org.kde.plasmanetworkmanagement", "/org/kde/plasmanetworkmanagement", "org.kde.plasmanetworkmanagement", QDBusConnection::sessionBus(), this);
                     managerIface.call("unlockModem", mmModemDevice->uni());
                     connect(modem.data(), &ModemManager::Modem::unlockRequiredChanged, this, &Handler::unlockRequiredChanged);

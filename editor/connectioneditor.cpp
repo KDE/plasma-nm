@@ -86,6 +86,13 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     KConfigGroup grp(KSharedConfig::openConfig(), "ConnectionsWidget");
     m_editor->connectionsWidget->header()->restoreState(grp.readEntry<QByteArray>("state", QByteArray()));
 
+    if (grp.isValid()) {
+        if (grp.readEntry("FirstStart", true)) {
+            importSecretsFromPlainTextFiles();
+        }
+        grp.writeEntry("FirstStart", false);
+    }
+
     connect(m_editor->connectionsWidget->selectionModel(), &QItemSelectionModel::currentChanged, this, &ConnectionEditor::slotSelectionChanged);
     connect(m_editor->connectionsWidget, &QTreeView::doubleClicked, this, &ConnectionEditor::slotItemDoubleClicked);
     connect(m_editor->connectionsWidget, &QTreeView::customContextMenuRequested, this, &ConnectionEditor::slotContextMenuRequested);
@@ -93,17 +100,6 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
             SLOT(addConnection(QAction*)));
     connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
             SLOT(connectionAdded(QString)));
-
-    KConfig config("kde5-nm-connection-editor");
-    KConfigGroup generalGroup = config.group("General");
-
-    if (generalGroup.isValid()) {
-        if (generalGroup.readEntry("FirstStart", true)) {
-            importSecretsFromPlainTextFiles();
-        }
-
-        generalGroup.writeEntry("FirstStart", false);
-    }
 
     QLoggingCategory::setFilterRules(QStringLiteral("plasma-nm.debug = false"));
     QLoggingCategory::setFilterRules(QStringLiteral("plasma-nm.warning = true"));

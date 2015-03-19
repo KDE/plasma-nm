@@ -43,8 +43,11 @@ public:
 
     QVariantMap setting(bool agentOwned = false) const Q_DECL_OVERRIDE;
 
+    virtual bool isValid() const Q_DECL_OVERRIDE;
+
 private Q_SLOTS:
     void showPassword(bool show);
+    void passwordStorageChanged(int index);
 
 private:
     Ui::CdmaWidget * m_ui;

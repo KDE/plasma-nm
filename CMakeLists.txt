@@ -34,7 +34,7 @@ find_package(KF5 REQUIRED
 
 find_package(KF5NetworkManagerQt REQUIRED 5.8.0)
 
-find_package(KF5ModemManagerQt)
+find_package(KF5ModemManagerQt REQUIRED 5.8.0)
 set_package_properties(KF5ModemManagerQt PROPERTIES
                        TYPE OPTIONAL)
 
@@ -42,7 +42,7 @@ find_package(NetworkManager 0.9.8.4)
 set_package_properties(NetworkManager PROPERTIES
                        TYPE REQUIRED)
 
-find_package(ModemManager)
+find_package(ModemManager 1.0.0)
 set_package_properties(ModemManager PROPERTIES
                        TYPE OPTIONAL)
 
@@ -56,7 +56,7 @@ if (DISABLE_MODEMMANAGER_SUPPORT)
     message(STATUS "Disabling ModemManager support")
     set(WITH_MODEMMANAGER_SUPPORT 0)
 else()
-    if (KF5ModemManagerQt_FOUND AND MODEMMANAGER_FOUND)
+    if (KF5ModemManagerQt_FOUND)
         message(STATUS "Enabling ModemManager support")
         set(WITH_MODEMMANAGER_SUPPORT 1)
     else()
@@ -76,10 +76,6 @@ add_definitions(-DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT})
 include_directories(${CMAKE_CURRENT_BINARY_DIR} # for config.h
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/)
-
-if (WITH_MODEMMANAGER_SUPPORT)
-    include_directories(${MODEMMANAGER_INCLUDE_DIRS})
-endif()
 
 add_subdirectory(applet)
 add_subdirectory(editor)

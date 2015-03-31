@@ -5,13 +5,13 @@ Plasma applet written in QML for managing network connections
 
 Dependencies:
 -------------
-  * libnm-qt - 5.0.90 (master branch)
-    - requires NetworkManager 0.9.8+
+  * networkmanager-qt - 5.8.0
+  * NetworkManager 0.9.8.4 and newer
 
 Optional dependencies:
 ---------------------
-  * libmm-qt - 5.0.90 (master branch)
-    - requires ModemManager 1.0+
+  * modemmanager-qt - 5.8.0
+    - requires ModemManager 1.0.0 and newer
     - Plasma-nm is compiled with ModemManager support by default when libmm-qt is found,
       when you want to explicitly disable ModemManager support, use -DDISABLE_MODEMMANAGER_SUPPORT=true cmake parameter.
 

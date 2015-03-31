@@ -246,10 +246,10 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
             if (modem->hasInterface(ModemManager::ModemDevice::ModemInterface)) {
                 ModemManager::Modem::Ptr modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
                 if (modemNetwork) {
-                    connect(modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
-                            SLOT(gsmNetworkSignalQualityChanged(uint)), Qt::UniqueConnection);
-                    connect(modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::Modem::AccessTechnologies)),
-                            SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies)), Qt::UniqueConnection);
+                    connect(modemNetwork.data(), SIGNAL(signalQualityChanged(ModemManager::SignalQualityPair)),
+                            SLOT(gsmNetworkSignalQualityChanged(ModemManager::SignalQualityPair)), Qt::UniqueConnection);
+                    connect(modemNetwork.data(), SIGNAL(accessTechnologiesChanged(QFlags<MMModemAccessTechnology>)),
+                            SLOT(gsmNetworkAccessTechnologiesChanged(QFlags<MMModemAccessTechnology>)), Qt::UniqueConnection);
                     connect(modemNetwork.data(), SIGNAL(currentModesChanged()),
                             SLOT(gsmNetworkCurrentModesChanged()), Qt::UniqueConnection);
                 }
@@ -847,9 +847,9 @@ void NetworkModel::deviceStateChanged(NetworkManager::Device::State state, Netwo
 }
 
 #if WITH_MODEMMANAGER_SUPPORT
-void NetworkModel::gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies technology)
+void NetworkModel::gsmNetworkAccessTechnologiesChanged(QFlags<MMModemAccessTechnology> accessTechnologies)
 {
-    Q_UNUSED(technology);
+    Q_UNUSED(accessTechnologies);
     ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
     if (gsmNetwork) {
         Q_FOREACH (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
@@ -893,7 +893,7 @@ void NetworkModel::gsmNetworkCurrentModesChanged()
     }
 }
 
-void NetworkModel::gsmNetworkSignalQualityChanged(uint signal)
+void NetworkModel::gsmNetworkSignalQualityChanged(const ModemManager::SignalQualityPair &signalQuality)
 {
     ModemManager::Modem * gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
     if (gsmNetwork) {
@@ -905,7 +905,7 @@ void NetworkModel::gsmNetworkSignalQualityChanged(uint signal)
                         ModemManager::Modem::Ptr modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
                         if (modemNetwork && modemNetwork->device() == gsmNetwork->device()) {
                             Q_FOREACH (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, dev->uni())) {
-                                item->setSignal(signal);
+                                item->setSignal(signalQuality.signal);
                                 updateItem(item);
                             }
                         }

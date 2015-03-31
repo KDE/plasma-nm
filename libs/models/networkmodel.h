@@ -94,9 +94,9 @@ private Q_SLOTS:
     void deviceRemoved(const QString& device);
     void deviceStateChanged(NetworkManager::Device::State state, NetworkManager::Device::State oldState, NetworkManager::Device::StateChangeReason reason);
 #if WITH_MODEMMANAGER_SUPPORT
-    void gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies technology);
+    void gsmNetworkAccessTechnologiesChanged(QFlags<MMModemAccessTechnology> accessTechnologies);
     void gsmNetworkCurrentModesChanged();
-    void gsmNetworkSignalQualityChanged(uint signal);
+    void gsmNetworkSignalQualityChanged(const ModemManager::SignalQualityPair &signalQuality);
 #endif
     void ipConfigChanged();
     void ipInterfaceChanged();

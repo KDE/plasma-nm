@@ -8,7 +8,7 @@ find_package(NetworkManager "0.9.8.4" REQUIRED)
 include(FindPkgConfig)
 include(KDE4Defaults)
 
-set(PLASMA_NM_VERSION 0.9.3.5)
+set(PLASMA_NM_VERSION 0.9.3.6)
 set(PLASMA_NM_STRING_VERSION "${PLASMA_NM_VERSION}")
 
 pkg_check_modules(NETWORKMANAGERQT REQUIRED NetworkManagerQt)

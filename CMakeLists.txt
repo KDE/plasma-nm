@@ -34,7 +34,7 @@ find_package(KF5 REQUIRED
 
 find_package(KF5NetworkManagerQt REQUIRED 5.8.0)
 
-find_package(KF5ModemManagerQt 5.8.0)
+find_package(KF5ModemManagerQt 5.9.0)
 set_package_properties(KF5ModemManagerQt PROPERTIES
                        TYPE OPTIONAL)
 

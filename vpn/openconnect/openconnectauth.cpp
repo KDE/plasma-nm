@@ -666,7 +666,7 @@ void OpenconnectAuthWidget::viewServerLogToggled(bool toggled)
     d->ui.lblLogLevel->setVisible(toggled);
     d->ui.cmbLogLevel->setVisible(toggled);
     if (toggled) {
-        QLayoutItem *item = d->ui.verticalLayout->takeAt(4);
+        QLayoutItem *item = d->ui.verticalLayout->takeAt(5);
         if (item) {
             delete item;
         }

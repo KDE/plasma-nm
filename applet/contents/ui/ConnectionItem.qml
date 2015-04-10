@@ -277,9 +277,9 @@ PlasmaComponents.ListItem {
                 placeholderText: i18n("Password...")
                 validator: RegExpValidator {
                                 regExp: if (SecurityType == PlasmaNM.Enums.StaticWep) {
-                                            /^(?:[\x20-\x7F]{5}|[0-9a-fA-F]{10}|[\x20-\x7F]{13}|[0-9a-fA-F]{26}){1}$/
+                                            /^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26}){1}$/
                                         } else {
-                                            /^(?:[\x20-\x7F]{8,64}){1}$/
+                                            /^(?:.{8,64}){1}$/
                                         }
                                 }
 

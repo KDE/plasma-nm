@@ -288,7 +288,11 @@ void ConnectionIcon::setStates()
         }
 
         if (!vpnConnection) {
+#if NM_CHECK_VERSION(0, 9, 10)
+            if (activeConnection->state() == NetworkManager::ActiveConnection::Activating && activeConnection->type() != NetworkManager::ConnectionSettings::Generic) {
+#else
             if (activeConnection->state() == NetworkManager::ActiveConnection::Activating) {
+#endif
                 connecting = true;
             }
         } else {

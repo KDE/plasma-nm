@@ -28,7 +28,7 @@
 
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/ConnectionSettings>
-#include <NetworkManagerQt/generictypes.h>
+#include <NetworkManagerQt/GenericTypes>
 
 #include "settingwidget.h"
 

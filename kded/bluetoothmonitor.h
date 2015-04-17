@@ -2,6 +2,7 @@
     Copyright 2011 Lamarque Souza <lamarque@kde.org>
     Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
     Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2015 David Rosca <nowrep@gmail.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -27,9 +28,6 @@
 #include <ModemManagerQt/manager.h>
 #endif
 
-#include "dbusobjectmanager.h"
-class QDBusServiceWatcher;
-
 class BluetoothMonitor: public QObject
 {
 Q_OBJECT
@@ -37,10 +35,7 @@ public:
     explicit BluetoothMonitor(QObject * parent);
     ~BluetoothMonitor();
 
-    void addBluetoothConnection(const QString & bdAddr, const QString & service);
-
-private:
-    QDBusServiceWatcher *mServiceWatcher;
-    org::freedesktop::DBus::ObjectManager *mBluezInterface;
+    bool bluetoothConnectionExists(const QString &bdAddr, const QString &service);
+    void addBluetoothConnection(const QString &bdAddr, const QString &service, const QString &connectionName);
 };
 #endif

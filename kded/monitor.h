@@ -39,7 +39,8 @@ public:
     virtual ~Monitor();
 
 public Q_SLOTS:
-    Q_SCRIPTABLE void addBluetoothConnection(const QString &bdAddr, const QString &service);
+    Q_SCRIPTABLE bool bluetoothConnectionExists(const QString &bdAddr, const QString &service);
+    Q_SCRIPTABLE void addBluetoothConnection(const QString &bdAddr, const QString &service, const QString &connectionName);
 #if WITH_MODEMMANAGER_SUPPORT
     Q_SCRIPTABLE void unlockModem(const QString &modem);
 #endif

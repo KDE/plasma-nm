@@ -43,9 +43,14 @@ Monitor::~Monitor()
 #endif
 }
 
-void Monitor::addBluetoothConnection(const QString& bdAddr, const QString& service)
+bool Monitor::bluetoothConnectionExists(const QString &bdAddr, const QString &service)
 {
-    m_bluetoothMonitor->addBluetoothConnection(bdAddr, service);
+    return m_bluetoothMonitor->bluetoothConnectionExists(bdAddr, service);
+}
+
+void Monitor::addBluetoothConnection(const QString &bdAddr, const QString &service, const QString &connectionName)
+{
+    m_bluetoothMonitor->addBluetoothConnection(bdAddr, service, connectionName);
 }
 
 #if WITH_MODEMMANAGER_SUPPORT

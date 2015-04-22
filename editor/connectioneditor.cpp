@@ -178,7 +178,13 @@ void ConnectionEditor::initializeMenu()
 
     m_menu->menu()->addSection(i18n("VPN"));
 
-    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
+    KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
+
+    std::sort(services.begin(), services.end(), [] (const KService::Ptr &left, const KService::Ptr &right)
+    {
+        return QString::localeAwareCompare(left->name(), right->name()) <= 0;
+    });
+
     Q_FOREACH (const KService::Ptr & service, services) {
         qCDebug(PLASMA_NM) << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
 
@@ -473,6 +479,8 @@ void ConnectionEditor::slotContextMenuRequested(const QPoint&)
 
 void ConnectionEditor::slotSelectionChanged(const QModelIndex &index, const QModelIndex &previous)
 {
+    Q_UNUSED(previous);
+
     if (!index.isValid()) {
         return;
     }

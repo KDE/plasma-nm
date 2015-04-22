@@ -32,7 +32,8 @@ public:
 };
 
 L2tpAuthDialog::L2tpAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent), d_ptr(new L2tpAuthDialogPrivate)
+    : SettingWidget(setting, parent)
+    , d_ptr(new L2tpAuthDialogPrivate)
 {
     Q_D(L2tpAuthDialog);
     d->ui.setupUi(this);
@@ -95,8 +96,9 @@ QVariantMap L2tpAuthDialog::setting(bool agentOwned) const
 void L2tpAuthDialog::showPasswordsChanged(bool show)
 {
     Q_D(L2tpAuthDialog);
-    if (show)
+    if (show) {
         d->ui.leUserPassword->setEchoMode(QLineEdit::Normal);
-    else
+    } else {
         d->ui.leUserPassword->setEchoMode(QLineEdit::Password);
+    }
 }

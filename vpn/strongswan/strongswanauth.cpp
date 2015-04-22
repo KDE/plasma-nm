@@ -39,7 +39,8 @@ public:
 };
 
 StrongswanAuthWidget::StrongswanAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent), d_ptr(new StrongswanAuthWidgetPrivate)
+    : SettingWidget(setting, parent)
+    , d_ptr(new StrongswanAuthWidgetPrivate)
 {
     Q_D(StrongswanAuthWidget);
     d->setting = setting;
@@ -64,10 +65,11 @@ void StrongswanAuthWidget::readSecrets()
 
     const QString method = dataMap[NM_STRONGSWAN_METHOD];
     if (method == QLatin1String(NM_STRONGSWAN_AUTH_AGENT) || dataMap[NM_STRONGSWAN_SECRET_TYPE] == QLatin1String(NM_STRONGSWAN_PW_TYPE_UNUSED)) {
-        if (isVisible())
+        if (isVisible()) {
             acceptDialog();
-        else
+        } else {
             d->acceptOnShow = true;
+        }
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_KEY)) {
         d->ui.passwordLabel->setText(i18nc("@label:textbox password label for private key password", "Private Key Password:"));
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD)) {
@@ -128,8 +130,9 @@ QVariantMap StrongswanAuthWidget::setting(bool agentOwned) const
 void StrongswanAuthWidget::showPasswordsChanged(bool show)
 {
     Q_D(StrongswanAuthWidget);
-    if (show)
+    if (show) {
         d->ui.password->setEchoMode(QLineEdit::Normal);
-    else
+    } else {
         d->ui.password->setEchoMode(QLineEdit::Password);
+    }
 }

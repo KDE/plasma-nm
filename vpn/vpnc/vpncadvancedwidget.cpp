@@ -25,9 +25,9 @@
 #include <KLocalizedString>
 #include <KAcceleratorManager>
 
-VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent) :
-    QDialog(parent),
-    m_ui(new Ui::VpncAdvancedWidget)
+VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
+    : QDialog(parent)
+    , m_ui(new Ui::VpncAdvancedWidget)
 {
     m_ui->setupUi(this);
 
@@ -75,27 +75,32 @@ void VpncAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setti
     m_ui->domain->setText(setting->data().value(NM_VPNC_KEY_DOMAIN));
 
     const QString vendor = setting->data().value(NM_VPNC_KEY_VENDOR);
-    if (!vendor.isEmpty())
+    if (!vendor.isEmpty()) {
         m_ui->vendor->setCurrentIndex(m_ui->vendor->findData(vendor));
+    }
 
-    if (setting->data().value(NM_VPNC_KEY_SINGLE_DES) == "yes")
+    if (setting->data().value(NM_VPNC_KEY_SINGLE_DES) == "yes") {
         m_ui->encryption->setCurrentIndex(m_ui->encryption->findData(NM_VPNC_KEY_SINGLE_DES));
-    else if (setting->data().value(NM_VPNC_KEY_NO_ENCRYPTION) == "yes")
+    } else if (setting->data().value(NM_VPNC_KEY_NO_ENCRYPTION) == "yes") {
         m_ui->encryption->setCurrentIndex(m_ui->encryption->findData(NM_VPNC_KEY_NO_ENCRYPTION));
+    }
 
     const QString nat = setting->data().value(NM_VPNC_KEY_NAT_TRAVERSAL_MODE);
-    if (!nat.isEmpty())
+    if (!nat.isEmpty()) {
         m_ui->nat->setCurrentIndex(m_ui->nat->findData(nat));
+    }
 
     const QString dhGroup = setting->data().value(NM_VPNC_KEY_DHGROUP);
-    if (!dhGroup.isEmpty())
+    if (!dhGroup.isEmpty()) {
         m_ui->dhGroup->setCurrentIndex(m_ui->dhGroup->findData(dhGroup));
-    else
+    } else {
         m_ui->dhGroup->setCurrentIndex(m_ui->dhGroup->findData(NM_VPNC_DHGROUP_DH2));  // default
+    }
 
     const QString pfs = setting->data().value(NM_VPNC_KEY_PERFECT_FORWARD);
-    if (!pfs.isEmpty())
+    if (!pfs.isEmpty()) {
         m_ui->pfs->setCurrentIndex(m_ui->pfs->findData(pfs));
+    }
 
     bool ok = false;
 
@@ -114,29 +119,29 @@ void VpncAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setti
 NMStringMap VpncAdvancedWidget::setting() const
 {
     NMStringMap result;
-    if (!m_ui->domain->text().isEmpty())
+    if (!m_ui->domain->text().isEmpty()) {
         result.insert(NM_VPNC_KEY_DOMAIN, m_ui->domain->text());
+    }
 
     result.insert(NM_VPNC_KEY_VENDOR, m_ui->vendor->currentData().toString());
 
     const QString encData = m_ui->encryption->currentData().toString();
     if (!encData.isEmpty()) {
-        if (encData == NM_VPNC_KEY_SINGLE_DES)
+        if (encData == NM_VPNC_KEY_SINGLE_DES) {
             result.insert(NM_VPNC_KEY_SINGLE_DES, "yes");
-        else if (encData == NM_VPNC_KEY_NO_ENCRYPTION)
+        } else if (encData == NM_VPNC_KEY_NO_ENCRYPTION) {
             result.insert(NM_VPNC_KEY_NO_ENCRYPTION, "yes");
+        }
     }
 
     result.insert(NM_VPNC_KEY_NAT_TRAVERSAL_MODE, m_ui->nat->currentData().toString());
-
     result.insert(NM_VPNC_KEY_DHGROUP, m_ui->dhGroup->currentData().toString());
-
     result.insert(NM_VPNC_KEY_PERFECT_FORWARD, m_ui->pfs->currentData().toString());
-
     result.insert(NM_VPNC_KEY_LOCAL_PORT, QString::number(m_ui->localport->value()));
 
-    if (m_ui->deadPeer->isChecked())
+    if (m_ui->deadPeer->isChecked()) {
         result.insert(NM_VPNC_KEY_DPD_IDLE_TIMEOUT, "0");
+    }
 
     return result;
 }

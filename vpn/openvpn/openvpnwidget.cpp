@@ -52,7 +52,8 @@ public:
 
 
 OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent), d(new Private)
+    : SettingWidget(setting, parent)
+    , d(new Private)
 {
     qDBusRegisterMetaType<NMStringMap>();
 
@@ -83,8 +84,9 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
 
     KAcceleratorManager::manage(this);
 
-    if (d->setting)
+    if (d->setting) {
         loadConfig(d->setting);
+    }
 }
 
 OpenVpnSettingWidget::~OpenVpnSettingWidget()
@@ -111,8 +113,7 @@ void OpenVpnSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
         d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::Psk );
         d->ui.pskSharedKey->setText( dataMap[NM_OPENVPN_KEY_STATIC_KEY]);
         if (dataMap.contains(NM_OPENVPN_KEY_STATIC_KEY_DIRECTION)) {
-            switch (dataMap[NM_OPENVPN_KEY_STATIC_KEY_DIRECTION].toUInt())
-            {
+            switch (dataMap[NM_OPENVPN_KEY_STATIC_KEY_DIRECTION].toUInt()) {
             case 0:
                 d->ui.cmbKeyDirection->setCurrentIndex(Private::EnumKeyDirection::D0);
                 break;
@@ -178,8 +179,7 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
 
     QString contype;
 
-    switch ( d->ui.cmbConnectionType->currentIndex())
-    {
+    switch ( d->ui.cmbConnectionType->currentIndex()) {
     case Private::EnumConnectionType::Certificates:
         contype = QLatin1String(NM_OPENVPN_CONTYPE_TLS);
         // qCDebug(PLASMA_NM) << "saving VPN TLS settings as urls:" << d->ui.x509CaFile->url() << d->ui.x509Cert->url() << d->ui.x509Key->url();
@@ -309,10 +309,11 @@ uint OpenVpnSettingWidget::handleOnePasswordType(const QComboBox * combo, const 
         data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
         break;
     case SettingWidget::EnumPasswordStorageType::Store:
-        if (agentOwned)
+        if (agentOwned) {
             data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
-        else
+        } else {
             data.insert(key, QString::number(NetworkManager::Setting::None));
+        }
         break;
     case SettingWidget::EnumPasswordStorageType::NotRequired:
         data.insert(key, QString::number(NetworkManager::Setting::NotRequired));

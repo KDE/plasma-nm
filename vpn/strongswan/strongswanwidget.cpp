@@ -36,7 +36,8 @@ public:
 };
 
 StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent), d_ptr(new StrongswanSettingWidgetPrivate)
+    : SettingWidget(setting, parent)
+    , d_ptr(new StrongswanSettingWidgetPrivate)
 {
     Q_D(StrongswanSettingWidget);
     d->ui.setupUi(this);
@@ -51,8 +52,9 @@ StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSettin
 
     KAcceleratorManager::manage(this);
 
-    if (d->setting)
+    if (d->setting) {
         loadConfig(d->setting);
+    }
 }
 
 StrongswanSettingWidget::~StrongswanSettingWidget()
@@ -123,8 +125,7 @@ void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &set
     // secrets
     const NMStringMap secrets = d->setting->secrets();
     if (d->setting->data().value(NM_STRONGSWAN_SECRET_TYPE) == QLatin1String(NM_STRONGSWAN_PW_TYPE_SAVE)) {
-        switch (d->ui.cmbMethod->currentIndex())
-        {
+        switch (d->ui.cmbMethod->currentIndex()) {
         case StrongswanSettingWidgetPrivate::PrivateKey:
             d->ui.lePrivateKeyPassword->setText(secrets.value(QLatin1String(NM_STRONGSWAN_SECRET)));
             fillOnePasswordCombo(d->ui.cboPrivateKeyPassOptions, NM_STRONGSWAN_SECRET_TYPE, d->setting->data(), !d->ui.leAuthPrivatekeyKey->url().isEmpty());
@@ -161,8 +162,7 @@ QVariantMap StrongswanSettingWidget::setting(bool agentOwned) const
     data.insert( NM_STRONGSWAN_CERTIFICATE, d->ui.leGatewayCertificate->url().toLocalFile());
 
     // Authentication
-    switch (d->ui.cmbMethod->currentIndex())
-    {
+    switch (d->ui.cmbMethod->currentIndex()) {
     case StrongswanSettingWidgetPrivate::PrivateKey:
         data.insert(NM_STRONGSWAN_METHOD, NM_STRONGSWAN_AUTH_KEY);
         data.insert(NM_STRONGSWAN_USERCERT, d->ui.leAuthPrivatekeyCertificate->url().toLocalFile());
@@ -215,18 +215,18 @@ uint StrongswanSettingWidget::handleOnePasswordType(const QComboBox * combo, con
 {
     const uint type = combo->currentIndex();
     switch (type) {
-        case 1:
-            data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
-            break;
-        case 0:
-            if (agentOwned)
-                data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
-            else
-                data.insert(key, QString::number(NetworkManager::Setting::None));
-            break;
-        case 2:
-            data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
-            break;
+    case 1:
+        data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
+        break;
+    case 0:
+        if (agentOwned)
+            data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
+        else
+            data.insert(key, QString::number(NetworkManager::Setting::None));
+        break;
+    case 2:
+        data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
+        break;
     }
     return type;
 }

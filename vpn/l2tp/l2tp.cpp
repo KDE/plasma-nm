@@ -29,8 +29,8 @@
 
 K_PLUGIN_FACTORY_WITH_JSON(L2tpUiPluginFactory, "plasmanetworkmanagement_l2tpui.json", registerPlugin<L2tpUiPlugin>();)
 
-L2tpUiPlugin::L2tpUiPlugin(QObject * parent, const QVariantList &):
-    VpnUiPlugin(parent)
+L2tpUiPlugin::L2tpUiPlugin(QObject * parent, const QVariantList &)
+    : VpnUiPlugin(parent)
 {
 }
 

@@ -35,6 +35,7 @@ class VpncAuthDialog : public SettingWidget
 public:
     explicit VpncAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
     ~VpncAuthDialog();
+
     virtual void readSecrets();
     virtual QVariantMap setting(bool agentOwned = false) const;
 

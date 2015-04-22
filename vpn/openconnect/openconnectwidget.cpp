@@ -36,7 +36,8 @@ public:
 };
 
 OpenconnectSettingWidget::OpenconnectSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-: SettingWidget(setting, parent), d_ptr(new OpenconnectSettingWidgetPrivate)
+    : SettingWidget(setting, parent)
+    , d_ptr(new OpenconnectSettingWidgetPrivate)
 {
     Q_D(OpenconnectSettingWidget);
     d->ui.setupUi(this);
@@ -46,8 +47,9 @@ OpenconnectSettingWidget::OpenconnectSettingWidget(const NetworkManager::VpnSett
 
     KAcceleratorManager::manage(this);
 
-    if (d->setting)
+    if (d->setting) {
         loadConfig(d->setting);
+    }
 }
 
 OpenconnectSettingWidget::~OpenconnectSettingWidget()
@@ -84,17 +86,22 @@ QVariantMap OpenconnectSettingWidget::setting(bool agentOwned) const
     NMStringMap data;
 
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_GATEWAY), d->ui.leGateway->text());
-    if (d->ui.leCaCertificate->url().isValid())
+    if (d->ui.leCaCertificate->url().isValid()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_CACERT), d->ui.leCaCertificate->url().toLocalFile());
-    if (!d->ui.leProxy->text().isEmpty())
+    }
+    if (!d->ui.leProxy->text().isEmpty()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_PROXY), d->ui.leProxy->text());
+    }
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_CSD_ENABLE), d->ui.chkAllowTrojan->isChecked() ? "yes" : "no");
-    if (d->ui.leCsdWrapperScript->url().isValid())
+    if (d->ui.leCsdWrapperScript->url().isValid()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_CSD_WRAPPER), d->ui.leCsdWrapperScript->url().toLocalFile());
-    if (d->ui.leUserCert->url().isValid())
+    }
+    if (d->ui.leUserCert->url().isValid()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_USERCERT), d->ui.leUserCert->url().toLocalFile());
-    if (d->ui.leUserPrivateKey->url().isValid())
+    }
+    if (d->ui.leUserPrivateKey->url().isValid()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_PRIVKEY), d->ui.leUserPrivateKey->url().toLocalFile());
+    }
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_PEM_PASSPHRASE_FSID), d->ui.chkUseFsid->isChecked() ? "yes" : "no");
 
     // Restore previous flags, this is necessary for keeping secrets stored in KWallet

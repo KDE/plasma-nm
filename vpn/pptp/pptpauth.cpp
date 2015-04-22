@@ -32,7 +32,8 @@ public:
 };
 
 PptpAuthWidget::PptpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-: SettingWidget(setting, parent), d_ptr(new PptpAuthWidgetPrivate)
+    : SettingWidget(setting, parent)
+    , d_ptr(new PptpAuthWidgetPrivate)
 {
     Q_D(PptpAuthWidget);
     d->setting = setting;
@@ -66,8 +67,9 @@ QVariantMap PptpAuthWidget::setting(bool agentOwned) const
 void PptpAuthWidget::showPasswordsToggled(bool show)
 {
     Q_D(PptpAuthWidget);
-    if (show)
+    if (show) {
         d->ui.lePassword->setEchoMode(QLineEdit::Normal);
-    else
+    } else {
         d->ui.lePassword->setEchoMode(QLineEdit::Password);
+    }
 }

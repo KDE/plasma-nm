@@ -27,10 +27,10 @@
 
 #include <QDBusMetaType>
 
-VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_ui(new Ui::VpncWidget),
-    m_setting(setting)
+VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_ui(new Ui::VpncWidget)
+    , m_setting(setting)
 {
     qDBusRegisterMetaType<NMStringMap>();
 
@@ -54,8 +54,9 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
         m_tmpSetting->setData(advData);
     }
 
-    if (m_setting)
+    if (m_setting) {
         loadConfig(setting);
+    }
 }
 
 VpncWidget::~VpncWidget()
@@ -73,42 +74,49 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const NMStringMap secrets = m_setting->secrets();
 
     const QString gateway = data.value(NM_VPNC_KEY_GATEWAY);
-    if (!gateway.isEmpty())
+    if (!gateway.isEmpty()) {
         m_ui->gateway->setText(gateway);
+    }
 
     const QString user = data.value(NM_VPNC_KEY_XAUTH_USER);
-    if (!user.isEmpty())
+    if (!user.isEmpty()) {
         m_ui->user->setText(user);
+    }
 
     const QString userPassword = secrets.value(NM_VPNC_KEY_XAUTH_PASSWORD);
-    if (!userPassword.isEmpty())
+    if (!userPassword.isEmpty()) {
         m_ui->userPassword->setText(userPassword);
+    }
 
     const NetworkManager::Setting::SecretFlags userPassType =
             static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt());
-    if (userPassType.testFlag(NetworkManager::Setting::NotSaved))
+    if (userPassType.testFlag(NetworkManager::Setting::NotSaved)) {
         m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
-    else if (userPassType.testFlag(NetworkManager::Setting::NotRequired))
+    } else if (userPassType.testFlag(NetworkManager::Setting::NotRequired)) {
         m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
-    else
+    } else {
         m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
+    }
 
     const QString groupName = data.value(NM_VPNC_KEY_ID);
-    if (!groupName.isEmpty())
+    if (!groupName.isEmpty()) {
         m_ui->group->setText(groupName);
+    }
 
     const QString groupPassword = secrets.value(NM_VPNC_KEY_SECRET);
-    if (!groupPassword.isEmpty())
+    if (!groupPassword.isEmpty()) {
         m_ui->groupPassword->setText(groupPassword);
+    }
 
     const NetworkManager::Setting::SecretFlags groupPassType =
             static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_VPNC_KEY_SECRET"-flags").toInt());
-    if (groupPassType.testFlag(NetworkManager::Setting::NotSaved))
+    if (groupPassType.testFlag(NetworkManager::Setting::NotSaved)) {
         m_ui->cboGroupPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
-    else if (groupPassType.testFlag(NetworkManager::Setting::NotRequired))
+    } else if (groupPassType.testFlag(NetworkManager::Setting::NotRequired)) {
         m_ui->cboGroupPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
-    else
+    } else {
         m_ui->cboGroupPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
+    }
 
     if (data.value(NM_VPNC_KEY_AUTHMODE) == QLatin1String("hybrid")) {
         m_ui->useHybridAuth->setChecked(true);
@@ -127,14 +135,17 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
         data = m_tmpSetting->data();
     }
 
-    if (!m_ui->gateway->text().isEmpty())
+    if (!m_ui->gateway->text().isEmpty()) {
         data.insert(NM_VPNC_KEY_GATEWAY, m_ui->gateway->text());
+    }
 
-    if (!m_ui->user->text().isEmpty())
+    if (!m_ui->user->text().isEmpty()) {
         data.insert(NM_VPNC_KEY_XAUTH_USER, m_ui->user->text());
+    }
 
-    if (m_ui->userPassword->isEnabled() && !m_ui->userPassword->text().isEmpty())
+    if (m_ui->userPassword->isEnabled() && !m_ui->userPassword->text().isEmpty()) {
         secrets.insert(NM_VPNC_KEY_XAUTH_PASSWORD, m_ui->userPassword->text());
+    }
 
     const int userPasswordTypeIndex =  m_ui->cboUserPasswordType->currentIndex();
     if (userPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {
@@ -149,11 +160,13 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
         }
     }
 
-    if (!m_ui->group->text().isEmpty())
+    if (!m_ui->group->text().isEmpty()) {
         data.insert(NM_VPNC_KEY_ID, m_ui->group->text());
+    }
 
-    if (m_ui->groupPassword->isEnabled() && !m_ui->groupPassword->text().isEmpty())
+    if (m_ui->groupPassword->isEnabled() && !m_ui->groupPassword->text().isEmpty()) {
         secrets.insert(NM_VPNC_KEY_SECRET, m_ui->groupPassword->text());
+    }
 
     const int groupPasswordTypeIndex =  m_ui->cboGroupPasswordType->currentIndex();
     if (groupPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {

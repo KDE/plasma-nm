@@ -51,10 +51,10 @@ public:
     };
 };
 
-OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent) :
-    QDialog(parent),
-    m_ui(new Ui::OpenVpnAdvancedWidget),
-    d(new Private)
+OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
+    : QDialog(parent)
+    , m_ui(new Ui::OpenVpnAdvancedWidget)
+    , d(new Private)
 {
     m_ui->setupUi(this);
     m_ui->kurlTlsAuthKey->setMode(KFile::LocalOnly);
@@ -384,16 +384,16 @@ void OpenVpnAdvancedWidget::proxyPasswordStorageChanged(int index)
 
 void OpenVpnAdvancedWidget::proxyPasswordToggled(bool show)
 {
-    if (show)
+    if (show) {
         m_ui->proxyPassword->setEchoMode(QLineEdit::Normal);
-    else
+    } else {
         m_ui->proxyPassword->setEchoMode(QLineEdit::Password);
+    }
 }
 
 void OpenVpnAdvancedWidget::proxyTypeChanged(int type)
 {
-    switch (type)
-    {
+    switch (type) {
     case Private::EnumProxyType::NotRequired:
         m_ui->proxyServerAddress->setEnabled(false);
         m_ui->sbProxyPort->setEnabled(false);

@@ -88,7 +88,8 @@ public:
 
 
 OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent), d_ptr(new OpenconnectAuthWidgetPrivate)
+    : SettingWidget(setting, parent)
+    , d_ptr(new OpenconnectAuthWidgetPrivate)
 {
     Q_D(OpenconnectAuthWidget);
     d->setting = setting;
@@ -230,8 +231,9 @@ void OpenconnectAuthWidget::readSecrets()
 
     for (int i = 0; i < d->hosts.size(); i++) {
         d->ui.cmbHosts->addItem(d->hosts.at(i).name, i);
-        if (d->secrets["lasthost"] == d->hosts.at(i).name || d->secrets["lasthost"] == d->hosts.at(i).address)
+        if (d->secrets["lasthost"] == d->hosts.at(i).name || d->secrets["lasthost"] == d->hosts.at(i).address) {
             d->ui.cmbHosts->setCurrentIndex(i);
+        }
     }
 
     if (d->secrets["autoconnect"] == "yes") {
@@ -267,20 +269,23 @@ void OpenconnectAuthWidget::connectHost()
 
     /* Suck out the cancel byte(s) */
     char buf;
-    while (read(d->cancelPipes[0], &buf, 1) == 1)
+    while (read(d->cancelPipes[0], &buf, 1) == 1) {
         ;
+    }
     deleteAllFromLayout(d->ui.loginBoxLayout);
     int i = d->ui.cmbHosts->currentIndex();
-    if (i == -1)
+    if (i == -1) {
         return;
+    }
     i = d->ui.cmbHosts->itemData(i).toInt();
     const VPNHost &host = d->hosts.at(i);
     if (openconnect_parse_url(d->vpninfo, host.address.toAscii().data())) {
         qCWarning(PLASMA_NM) << "Failed to parse server URL" << host.address;
         openconnect_set_hostname(d->vpninfo, OC3DUP(host.address.toAscii().data()));
     }
-    if (!openconnect_get_urlpath(d->vpninfo) && !host.group.isEmpty())
+    if (!openconnect_get_urlpath(d->vpninfo) && !host.group.isEmpty()) {
         openconnect_set_urlpath(d->vpninfo, OC3DUP(host.group.toAscii().data()));
+    }
     d->secrets["lasthost"] = host.name;
     addFormInfo(QLatin1String("dialog-information"), i18n("Contacting host, please wait..."));
     d->worker->start();
@@ -315,10 +320,11 @@ QVariantMap OpenconnectAuthWidget::setting(bool agentOwned) const
 
     NMStringMap::iterator i = secrets.begin();
     while (i != secrets.end()) {
-        if (i.value().isEmpty())
+        if (i.value().isEmpty()) {
             i = secrets.erase(i);
-        else
+        } else {
             i++;
+        }
     }
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
@@ -342,10 +348,10 @@ void OpenconnectAuthWidget::updateLog(const QString &message, const int &level)
     Q_D(OpenconnectAuthWidget);
     QPair<QString, int> pair;
     pair.first = message;
-    if (pair.first.endsWith(QLatin1String("\n")))
+    if (pair.first.endsWith(QLatin1String("\n"))) {
         pair.first.chop(1);
-    switch (level)
-    {
+    }
+    switch (level) {
     case PRG_ERR:
         pair.second = OpenconnectAuthWidgetPrivate::Error;
         break;
@@ -432,8 +438,9 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
     int passwordnumber = 0;
     bool focusSet = false;
     for (opt = form->opts; opt; opt = opt->next) {
-        if (opt->type == OC_FORM_OPT_HIDDEN || IGNORE_OPT(opt))
+        if (opt->type == OC_FORM_OPT_HIDDEN || IGNORE_OPT(opt)) {
             continue;
+        }
         QLabel *text = new QLabel(this);
         text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         text->setText(QString(opt->label));
@@ -477,8 +484,9 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
     }
     d->ui.loginBoxLayout->addLayout(layout);
     d->ui.loginBoxLayout->addWidget(togglePasswordMode);
-    if (passwordnumber == 0)
+    if (passwordnumber == 0) {
         togglePasswordMode->setVisible(false);
+    }
     QDialogButtonBox *box = new QDialogButtonBox(this);
     QPushButton *btn = box->addButton(QDialogButtonBox::Ok);
     btn->setText(i18n("Login"));
@@ -569,8 +577,9 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
     } else {
         *accepted = true;
     }
-    if (*accepted)
+    if (*accepted) {
         d->secrets.insert(key, QString(fingerprint));
+    }
     d->mutex.lock();
     d->workerWaiting.wakeAll();
     d->mutex.unlock();
@@ -636,8 +645,9 @@ void OpenconnectAuthWidget::workerFinished(const int &ret)
                 break;
             }
         }
-        if (message.isEmpty())
+        if (message.isEmpty()) {
             message = i18n("Connection attempt was unsuccessful.");
+        }
         deleteAllFromLayout(d->ui.loginBoxLayout);
         addFormInfo(QLatin1String("dialog-error"), message);
     } else {
@@ -652,9 +662,9 @@ void OpenconnectAuthWidget::deleteAllFromLayout(QLayout *layout)
         if (QLayout *itemLayout = item->layout()) {
             deleteAllFromLayout(itemLayout);
             itemLayout->deleteLater();
-        }
-        else
+        } else {
             item->widget()->deleteLater();
+        }
         delete item;
     }
     layout->invalidate();

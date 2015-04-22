@@ -103,21 +103,20 @@ QString unQuote(QString &certVal, const QString &fileName)
                 break;
             }
         }
-    }
-    else {
+    } else {
         nextSep = certFile.indexOf(QRegExp("\\s"));   // First whitespace
         if (nextSep != -1) {
             certVal = certFile.right(certFile.length() - nextSep - 1);  // Leftover
             certFile = certFile.left(nextSep);        // value
-        }
-        else {
+        } else {
             certVal.clear();
         }
     }
     certFile.replace("\\\\", "\\");     // Replace '\\' with '\'
     certFile.replace("\\ ", " ");        // Replace escaped space with space
-    if (QFileInfo(certFile).isRelative())
+    if (QFileInfo(certFile).isRelative()) {
         certFile = QFileInfo(fileName).dir().absolutePath() + '/' + certFile;
+    }
     return certFile;
 }
 
@@ -129,8 +128,9 @@ bool isEncrypted(const QString &fileName)
     //       build a new dependency on nss-devel. See NetworkManager/libnm-util/crypto_nss.c+453
 
     QFile inFile(fileName);
-    if (!inFile.open(QFile::ReadOnly))
+    if (!inFile.open(QFile::ReadOnly)) {
         return false;
+    }
     QTextStream in(&inFile);
     while (!in.atEnd()) {
         QString line = in.readLine();
@@ -212,12 +212,15 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         QStringList key_value;
         QString line = in.readLine();
         // Skip comments
-        if (line.indexOf('#') >= 0)
+        if (line.indexOf('#') >= 0) {
             line.truncate(line.indexOf('#'));
-        if (line.indexOf(';') >= 0)
+        }
+        if (line.indexOf(';') >= 0) {
             line.truncate(line.indexOf(';'));
-        if (line.isEmpty())
+        }
+        if (line.isEmpty()) {
             continue;
+        }
         key_value.clear();
         key_value << line.split(QRegExp("\\s+")); // Split at one or more whitespaces
 
@@ -229,15 +232,12 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             if (key_value.count() == 2) {
                 if (key_value[1].startsWith(QLatin1String("tun"))) {
                     // ignore; default is tun
-                }
-                else if (key_value[1].startsWith(QLatin1String("tap"))) {
+                } else if (key_value[1].startsWith(QLatin1String("tap"))) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TAP_DEV), "yes");
-                }
-                else {
+                } else {
                     KMessageBox::information(0, i18n("Unknown option: %1", line));
                 }
-            }
-            else {
+            } else {
                 KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
@@ -250,15 +250,12 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                  */
                 if (key_value[1] == "udp") {
                     // ignore; default is udp
-                }
-                else if (key_value[1] == "tcp-client" || key_value[1] == "tcp-server" || key_value[1] == "tcp") {
+                } else if (key_value[1] == "tcp-client" || key_value[1] == "tcp-server" || key_value[1] == "tcp") {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PROTO_TCP), "yes");
-                }
-                else {
+                } else {
                     KMessageBox::information(0, i18n("Unknown option: %1", line));
                 }
-            }
-            else {
+            } else {
                 KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
@@ -271,12 +268,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             if (key_value.count() == 2) {
                 if (key_value[1].toLong() >= 0 && key_value[1].toLong() < 0xFFFF ) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TUNNEL_MTU), key_value[1]);
-                }
-                else {
+                } else {
                     KMessageBox::information(0, i18n("Invalid size (should be between 0 and 0xFFFF) in option: %1", line));
                 }
-            }
-            else {
+            } else {
                 KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
@@ -285,12 +280,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             if (key_value.count() == 2) {
                 if (key_value[1].toLong() >= 0 && key_value[1].toLong() < 0xFFFF ) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_FRAGMENT_SIZE), key_value[1]);
-                }
-                else {
+                } else {
                     KMessageBox::information(0, i18n("Invalid size (should be between 0 and 0xFFFF) in option: %1", line));
                 }
-            }
-            else {
+            } else {
                 KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
@@ -303,12 +296,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             if (key_value.count() == 2) {
                 if (key_value[1].toLong() >= 0 && key_value[1].toLong() <= 604800 ) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_RENEG_SECONDS), key_value[1]);
-                }
-                else {
+                } else {
                     KMessageBox::information(0, i18n("Invalid size (should be between 0 and 604800) in option: %1", line));
                 }
-            }
-            else {
+            } else {
                 KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
@@ -317,10 +308,12 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PROXY_RETRY), "yes");
             continue;
         }
-        if (key_value[0] == HTTP_PROXY_TAG)
+        if (key_value[0] == HTTP_PROXY_TAG) {
             proxy_type = "http";
-        if (key_value[0] == SOCKS_PROXY_TAG)
+        }
+        if (key_value[0] == SOCKS_PROXY_TAG) {
             proxy_type = "socks";
+        }
         if (!proxy_type.isEmpty() && !proxy_set && key_value.count() >= 3) {
             bool success = true;
             if (proxy_type == "http" && key_value.count() >= 4) {
@@ -330,17 +323,20 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                     QTextStream httpProxyIn(&httpProxyFile);
                     while (!httpProxyIn.atEnd()) {
                         QString httpProxyLine = httpProxyIn.readLine();
-                        if (httpProxyLine.isEmpty())
+                        if (httpProxyLine.isEmpty()) {
                             continue;
-                        if (proxy_user.isEmpty())
+                        }
+                        if (proxy_user.isEmpty()) {
                             proxy_user = httpProxyLine;
+                        }
                         if (proxy_passwd.isEmpty()) {
                             proxy_passwd = httpProxyLine;
                             break;
                         }
                     }
-                    if (proxy_user.isEmpty()||proxy_passwd.isEmpty())
+                    if (proxy_user.isEmpty()||proxy_passwd.isEmpty()) {
                         success = false;
+                    }
                 }
             }
             if (success && !proxy_type.isEmpty() && key_value[2].toLong() > 0 // Port
@@ -348,16 +344,18 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PROXY_TYPE), proxy_type);
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PROXY_SERVER), key_value[1]);  // Proxy server
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PROXY_PORT), key_value[2]);    // Port
-                if (!proxy_user.isEmpty())
+                if (!proxy_user.isEmpty()) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_USERNAME), proxy_user);
+                }
                 if (!proxy_passwd.isEmpty()) {
                     secretData.insert(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD), proxy_passwd);
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags"), QString::number(NetworkManager::Setting::NotSaved));
                 }
                 proxy_set = true;
             }
-            if (!success)
+            if (!success) {
                 KMessageBox::information(0, i18n("Invalid proxy option: %1", line));
+            }
             continue;
         }
         if (key_value[0] == REMOTE_TAG) {
@@ -377,12 +375,12 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             // Port specified in 'remote' always takes precedence
             if (!dataMap.contains(NM_OPENVPN_KEY_PORT)) {
                 if (key_value.count() == 2 ) {
-                    if (key_value[1].toLong() > 0 && key_value[1].toLong() < 65536)
+                    if (key_value[1].toLong() > 0 && key_value[1].toLong() < 65536) {
                         dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PORT), key_value[1]);
-                    else
+                    } else {
                         KMessageBox::information(0, i18n("Invalid port (should be between 1 and 65535) in option: %1", line));
-                }
-                else
+                    }
+                } else
                     KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
@@ -435,8 +433,9 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             }
             if (key_value.count() > 2) {
                 key_value[2] = key_value[1];
-                if (!key_value[2].isEmpty() && (key_value[2].toLong() == 0 ||key_value[2].toLong() == 1))
+                if (!key_value[2].isEmpty() && (key_value[2].toLong() == 0 ||key_value[2].toLong() == 1)) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY_DIRECTION), key_value[2]);
+                }
             }
             have_sk = true;
             continue;
@@ -451,16 +450,16 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             }
             if (key_value.count() > 2) {
                 key_value[2] = key_value[1];
-                if (!key_value[2].isEmpty() && (key_value[2].toLong() == 0 ||key_value[2].toLong() == 1))
+                if (!key_value[2].isEmpty() && (key_value[2].toLong() == 0 ||key_value[2].toLong() == 1)) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA_DIR), key_value[2]);
+                }
             }
             continue;
         }
         if (key_value[0] == CIPHER_TAG) {
             if (key_value.count() == 2) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CIPHER), key_value[1]);
-            }
-            else {
+            } else {
                 KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
@@ -468,8 +467,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         if (key_value[0] == TLS_REMOTE_TAG) {
             if (!unQuote(key_value[1], fileName).isEmpty()) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE), key_value[1]);
-            }
-            else {
+            } else {
                 KMessageBox::information(0, i18n("Unknown option: %1", line));
             }
             continue;
@@ -478,8 +476,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             if (key_value.count() == 3) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_LOCAL_IP), key_value[1]);
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_IP), key_value[2]);
-            }
-            else {
+            } else {
                 KMessageBox::information(0, i18n("Invalid number of arguments (expected 2) in option: %1", line));
             }
             continue;
@@ -490,8 +487,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         if (key_value[0] == AUTH_TAG) {
             if (key_value.count() == 2) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_AUTH), key_value[1]);
-            }
-            else {
+            } else {
                 KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
@@ -576,43 +572,45 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         mError = VpnUiPlugin::Error;
         mErrorMessage = i18n("File %1 is not a valid OpenVPN's client configuration file", fileName);
         return result;
-    }
-    else if (!have_remote) {
+    } else if (!have_remote) {
         mError = VpnUiPlugin::Error;
         mErrorMessage = i18n("File %1 is not a valid OpenVPN configuration (no remote).", fileName);
         return result;
-    }
-    else {
+    } else {
         QString conType;
         bool have_certs = false;
         bool have_ca = false;
 
-        if (dataMap.contains(NM_OPENVPN_KEY_CA))
+        if (dataMap.contains(NM_OPENVPN_KEY_CA)) {
             have_ca = true;
-        if (have_ca && dataMap.contains(NM_OPENVPN_KEY_CERT) && dataMap.contains(NM_OPENVPN_KEY_KEY))
+        }
+        if (have_ca && dataMap.contains(NM_OPENVPN_KEY_CERT) && dataMap.contains(NM_OPENVPN_KEY_KEY)) {
             have_certs = true;
+        }
         // Determine connection type
         if (have_pass) {
-            if (have_certs)
+            if (have_certs) {
                 conType = NM_OPENVPN_CONTYPE_PASSWORD_TLS;
-            else if (have_ca)
+            } else if (have_ca) {
                 conType = NM_OPENVPN_CONTYPE_PASSWORD;
-        }
-        else if (have_certs) {
+            }
+        } else if (have_certs) {
             conType = NM_OPENVPN_CONTYPE_TLS;
-        }
-        else if (have_sk) {
+        } else if (have_sk) {
             conType = NM_OPENVPN_CONTYPE_STATIC_KEY;
         }
-        if (conType.isEmpty())
+        if (conType.isEmpty()) {
             conType = NM_OPENVPN_CONTYPE_TLS;
+        }
         dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CONNECTION_TYPE), conType);
         // Default secret flags to be agent-owned
-        if (have_pass)
+        if (have_pass) {
             dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), QString::number(NetworkManager::Setting::NotSaved));
+        }
         if (have_certs) {
-            if (dataMap.contains(NM_OPENVPN_KEY_KEY) && isEncrypted(dataMap[NM_OPENVPN_KEY_KEY]))
+            if (dataMap.contains(NM_OPENVPN_KEY_KEY) && isEncrypted(dataMap[NM_OPENVPN_KEY_KEY])) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERTPASS"-flags"), QString::number(NetworkManager::Setting::NotSaved));
+            }
         }
     }
 
@@ -707,15 +705,17 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
     if (dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_TLS ||
             dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD ||
             dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
-        if (!dataMap[NM_OPENVPN_KEY_CA].isEmpty())
+        if (!dataMap[NM_OPENVPN_KEY_CA].isEmpty()) {
             cacert = dataMap[NM_OPENVPN_KEY_CA];
+        }
     }
     if (dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_TLS ||
             dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
-        if (!dataMap[NM_OPENVPN_KEY_CERT].isEmpty())
+        if (!dataMap[NM_OPENVPN_KEY_CERT].isEmpty()) {
             user_cert = dataMap[NM_OPENVPN_KEY_CERT];
-        if (!dataMap[NM_OPENVPN_KEY_KEY].isEmpty())
+        } if (!dataMap[NM_OPENVPN_KEY_KEY].isEmpty()) {
             private_key = dataMap[NM_OPENVPN_KEY_KEY];
+        }
 
     }
     // Handle PKCS#12 (all certs are the same file)
@@ -723,8 +723,7 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
                           && cacert == user_cert && cacert == private_key) {
         line = QString("%1 \"%2\"\n").arg(PKCS12_TAG, cacert);
         expFile.write(line.toLatin1());
-    }
-    else {
+    } else {
         if (!cacert.isEmpty()) {
             line = QString("%1 \"%2\"\n").arg(CA_TAG, cacert);
             expFile.write(line.toLatin1());
@@ -790,8 +789,9 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
         QString proxy_port = dataMap[NM_OPENVPN_KEY_PROXY_PORT];
         if (dataMap[NM_OPENVPN_KEY_PROXY_TYPE] == "http" && !dataMap[NM_OPENVPN_KEY_PROXY_SERVER].isEmpty()
                                                          && dataMap.contains(NM_OPENVPN_KEY_PROXY_PORT)) {
-            if (proxy_port.toInt() == 0)
+            if (proxy_port.toInt() == 0) {
                 proxy_port = "8080";
+            }
             line = QString(HTTP_PROXY_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_PROXY_SERVER] + ' ' + proxy_port +
                     (dataMap[NM_OPENVPN_KEY_HTTP_PROXY_USERNAME].isEmpty() ? "\n" : (' ' + fileName + "-httpauthfile") + '\n');
             expFile.write(line.toLatin1());
@@ -809,10 +809,10 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
                     authFile.close();
                 }
             }
-        }
-        else if (dataMap[NM_OPENVPN_KEY_PROXY_TYPE] == "socks" && !dataMap[NM_OPENVPN_KEY_PROXY_SERVER].isEmpty() && dataMap.contains(NM_OPENVPN_KEY_PROXY_PORT)) {
-            if (proxy_port.toInt() == 0)
+        } else if (dataMap[NM_OPENVPN_KEY_PROXY_TYPE] == "socks" && !dataMap[NM_OPENVPN_KEY_PROXY_SERVER].isEmpty() && dataMap.contains(NM_OPENVPN_KEY_PROXY_PORT)) {
+            if (proxy_port.toInt() == 0) {
                 proxy_port = "1080";
+            }
             line = QString(SOCKS_PROXY_TAG) + dataMap[NM_OPENVPN_KEY_PROXY_SERVER] + ' ' + proxy_port + '\n';
             expFile.write(line.toLatin1());
             if (dataMap[NM_OPENVPN_KEY_PROXY_RETRY] == "yes") {

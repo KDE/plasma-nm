@@ -88,7 +88,11 @@ public:
 };
 
 OpenconnectAuthWorkerThread::OpenconnectAuthWorkerThread(QMutex *mutex, QWaitCondition *waitForUserInput, bool *userDecidedToQuit, bool *formGroupChanged, int cancelFd)
-	: QThread(), m_mutex(mutex), m_waitForUserInput(waitForUserInput), m_userDecidedToQuit(userDecidedToQuit), m_formGroupChanged(formGroupChanged)
+	: QThread()
+    , m_mutex(mutex)
+    , m_waitForUserInput(waitForUserInput)
+    , m_userDecidedToQuit(userDecidedToQuit)
+    , m_formGroupChanged(formGroupChanged)
 {
     m_openconnectInfo = openconnect_vpninfo_new((char*)"OpenConnect VPN Agent (PlasmaNM - running on KDE)",
                                                 OpenconnectAuthStaticWrapper::validatePeerCert,
@@ -113,8 +117,9 @@ void OpenconnectAuthWorkerThread::run()
 {
     openconnect_init_ssl();
     int ret = openconnect_obtain_cookie(m_openconnectInfo);
-    if (*m_userDecidedToQuit)
+    if (*m_userDecidedToQuit) {
         return;
+    }
     Q_EMIT cookieObtained(ret);
 }
 
@@ -126,8 +131,9 @@ struct openconnect_info* OpenconnectAuthWorkerThread::getOpenconnectInfo()
 int OpenconnectAuthWorkerThread::writeNewConfig(const char *buf, int buflen)
 {
     Q_UNUSED(buflen)
-    if (*m_userDecidedToQuit)
+    if (*m_userDecidedToQuit) {
         return -EINVAL;
+    }
     Q_EMIT writeNewConfig(QString(QByteArray(buf).toBase64()));
     return 0;
 }
@@ -156,8 +162,9 @@ static char *openconnect_get_cert_details(struct openconnect_info *vpninfo,
 
 int OpenconnectAuthWorkerThread::validatePeerCert(void *cert, const char *reason)
 {
-    if (*m_userDecidedToQuit)
+    if (*m_userDecidedToQuit) {
         return -EINVAL;
+    }
 
 #if OPENCONNECT_CHECK_VER(5,0)
     (void)cert;
@@ -168,8 +175,9 @@ int OpenconnectAuthWorkerThread::validatePeerCert(void *cert, const char *reason
     int ret = 0;
 
     ret = openconnect_get_cert_sha1(m_openconnectInfo, cert, fingerprint);
-    if (ret)
+    if (ret) {
         return ret;
+    }
 
     char *details = openconnect_get_cert_details(m_openconnectInfo, cert);
 #endif
@@ -182,38 +190,44 @@ int OpenconnectAuthWorkerThread::validatePeerCert(void *cert, const char *reason
     m_waitForUserInput->wait(m_mutex);
     m_mutex->unlock();
     openconnect_free_cert_info(m_openconnectInfo, details);
-    if (*m_userDecidedToQuit)
+    if (*m_userDecidedToQuit) {
         return -EINVAL;
+    }
 
-    if (accepted)
+    if (accepted) {
         return 0;
-    else
+    } else {
         return -EINVAL;
+    }
 
 }
 
 int OpenconnectAuthWorkerThread::processAuthFormP(struct oc_auth_form *form)
 {
-    if (*m_userDecidedToQuit)
+    if (*m_userDecidedToQuit) {
         return -1;
+    }
 
     m_mutex->lock();
     *m_formGroupChanged = false;
     Q_EMIT processAuthForm(form);
     m_waitForUserInput->wait(m_mutex);
     m_mutex->unlock();
-    if (*m_userDecidedToQuit)
+    if (*m_userDecidedToQuit) {
         return OC_FORM_RESULT_CANCELLED;
+    }
 
-    if (*m_formGroupChanged)
+    if (*m_formGroupChanged) {
         return OC_FORM_RESULT_NEWGROUP;
+    }
     return OC_FORM_RESULT_OK;
 }
 
 void OpenconnectAuthWorkerThread::writeProgress(int level, const char *fmt, va_list argPtr)
 {
-    if (*m_userDecidedToQuit)
+    if (*m_userDecidedToQuit) {
         return;
+    }
     QString msg;
     msg.vsprintf(fmt, argPtr);
     Q_EMIT updateLog(msg, level);

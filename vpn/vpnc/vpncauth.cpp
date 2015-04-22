@@ -33,7 +33,8 @@ public:
 };
 
 VpncAuthDialog::VpncAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent), d_ptr(new VpncAuthDialogPrivate)
+    : SettingWidget(setting, parent)
+    , d_ptr(new VpncAuthDialogPrivate)
 {
     Q_D(VpncAuthDialog);
     d->ui.setupUi(this);
@@ -87,10 +88,11 @@ void VpncAuthDialog::readSecrets()
         d->ui.leGroupPassword->setVisible(false);
     }
 
-    if (haveUserPassword && d->ui.leUserPassword->text().isEmpty())
+    if (haveUserPassword && d->ui.leUserPassword->text().isEmpty()) {
         d->ui.leUserPassword->setFocus(Qt::OtherFocusReason);
-    else if (d->ui.leGroupPassword->text().isEmpty())
+    } else if (d->ui.leGroupPassword->text().isEmpty()) {
         d->ui.leGroupPassword->setFocus(Qt::OtherFocusReason);
+    }
 }
 
 QVariantMap VpncAuthDialog::setting(bool agentOwned) const

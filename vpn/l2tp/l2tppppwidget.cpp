@@ -25,9 +25,9 @@
 #include <KLocalizedString>
 #include <KAcceleratorManager>
 
-L2tpPPPWidget::L2tpPPPWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent) :
-    QDialog(parent),
-    m_ui(new Ui::L2tpPppWidget)
+L2tpPPPWidget::L2tpPPPWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
+    : QDialog(parent)
+    , m_ui(new Ui::L2tpPppWidget)
 {
     m_ui->setupUi(this);
 
@@ -78,11 +78,9 @@ void L2tpPPPWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
         m_ui->gbMPPE->setChecked(mppe || mppe40 || mppe128);
         if (mppe128) {
             m_ui->cbMPPECrypto->setCurrentIndex(1); // 128 bit
-        }
-        else if (mppe40) {
+        } else if (mppe40) {
             m_ui->cbMPPECrypto->setCurrentIndex(2); // 40 bit
-        }
-        else {
+        } else {
             m_ui->cbMPPECrypto->setCurrentIndex(0); // Any
         }
         m_ui->cbstatefulEncryption->setChecked(mppe_stateful);
@@ -115,35 +113,41 @@ NMStringMap L2tpPPPWidget::setting() const
     QListWidgetItem * item = 0;
     item = m_ui->listWidget->item(0); // PAP
     const QString yesString = QLatin1String("yes");
-    if (item->checkState() == Qt::Unchecked)
+    if (item->checkState() == Qt::Unchecked) {
         result.insert(NM_L2TP_KEY_REFUSE_PAP, yesString);
+    }
     item = m_ui->listWidget->item(1); // CHAP
-    if (item->checkState() == Qt::Unchecked)
+    if (item->checkState() == Qt::Unchecked) {
         result.insert(NM_L2TP_KEY_REFUSE_CHAP, yesString);
+
+    }
     item = m_ui->listWidget->item(2); // MSCHAP
-    if (item->checkState() == Qt::Unchecked)
+    if (item->checkState() == Qt::Unchecked) {
         result.insert(NM_L2TP_KEY_REFUSE_MSCHAP, yesString);
+    }
     item = m_ui->listWidget->item(3); // MSCHAPv2
-    if (item->checkState() == Qt::Unchecked)
+    if (item->checkState() == Qt::Unchecked) {
         result.insert(NM_L2TP_KEY_REFUSE_MSCHAPV2, yesString);
+    }
     item = m_ui->listWidget->item(4); // EAP
-    if (item->checkState() == Qt::Unchecked)
+    if (item->checkState() == Qt::Unchecked) {
         result.insert(NM_L2TP_KEY_REFUSE_EAP, yesString);
+    }
 
     // Cryptography and compression
     if (m_ui->gbMPPE->isChecked()) {
         int index = m_ui->cbMPPECrypto->currentIndex();
 
         switch (index) {
-            case 0: // "Any"
-                result.insert(NM_L2TP_KEY_REQUIRE_MPPE, yesString);
-                break;
-            case 1: // "128 bit"
-                result.insert(NM_L2TP_KEY_REQUIRE_MPPE_128, yesString);
-                break;
-            case 2: // "40 bit"
-                result.insert(NM_L2TP_KEY_REQUIRE_MPPE_40, yesString);
-                break;
+        case 0: // "Any"
+            result.insert(NM_L2TP_KEY_REQUIRE_MPPE, yesString);
+            break;
+        case 1: // "128 bit"
+            result.insert(NM_L2TP_KEY_REQUIRE_MPPE_128, yesString);
+            break;
+        case 2: // "40 bit"
+            result.insert(NM_L2TP_KEY_REQUIRE_MPPE_40, yesString);
+            break;
         }
 
         if (m_ui->cbstatefulEncryption->isChecked()) {

@@ -29,10 +29,10 @@
 #include <QPointer>
 #include <QDBusMetaType>
 
-L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_ui(new Ui::L2tpWidget),
-    m_setting(setting)
+L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_ui(new Ui::L2tpWidget)
+    , m_setting(setting)
 {
     qDBusRegisterMetaType<NMStringMap>();
 
@@ -47,8 +47,9 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     KAcceleratorManager::manage(this);
 
-    if (m_setting)
+    if (m_setting) {
         loadConfig(setting);
+    }
 }
 
 L2tpWidget::~L2tpWidget()
@@ -133,8 +134,9 @@ QVariantMap L2tpWidget::setting(bool agentOwned) const
         }
     }
 
-    if (!m_ui->domain->text().isEmpty())
+    if (!m_ui->domain->text().isEmpty()) {
         data.insert(NM_L2TP_KEY_DOMAIN, m_ui->domain->text());
+    }
 
     setting.setData(data);
     setting.setSecrets(secrets);
@@ -149,10 +151,11 @@ void L2tpWidget::userPasswordTypeChanged(int index)
 
 void L2tpWidget::showPassword(bool show)
 {
-    if (show)
+    if (show) {
         m_ui->password->setEchoMode(QLineEdit::Normal);
-    else
+    } else {
         m_ui->password->setEchoMode(QLineEdit::Password);
+    }
 }
 
 void L2tpWidget::showAdvanced()

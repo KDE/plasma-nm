@@ -26,10 +26,10 @@
 
 #include <QDBusMetaType>
 
-OpenswanWidget::OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_ui(new Ui::OpenswanWidget),
-    m_setting(setting)
+OpenswanWidget::OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_ui(new Ui::OpenswanWidget)
+    , m_setting(setting)
 {
     qDBusRegisterMetaType<NMStringMap>();
 
@@ -45,8 +45,9 @@ OpenswanWidget::OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, Q
 
     KAcceleratorManager::manage(this);
 
-    if (m_setting)
+    if (m_setting) {
         loadConfig(setting);
+    }
 }
 
 OpenswanWidget::~OpenswanWidget()

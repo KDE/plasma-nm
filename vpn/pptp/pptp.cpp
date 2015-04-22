@@ -28,14 +28,13 @@
 
 K_PLUGIN_FACTORY_WITH_JSON(PptpUiPluginFactory, "plasmanetworkmanagement_pptpui.json", registerPlugin<PptpUiPlugin>();)
 
-PptpUiPlugin::PptpUiPlugin(QObject * parent, const QVariantList &) : VpnUiPlugin(parent)
+PptpUiPlugin::PptpUiPlugin(QObject * parent, const QVariantList &)
+    : VpnUiPlugin(parent)
 {
-
 }
 
 PptpUiPlugin::~PptpUiPlugin()
 {
-
 }
 
 SettingWidget * PptpUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
@@ -47,7 +46,6 @@ SettingWidget * PptpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &set
 {
     return new PptpAuthWidget(setting, parent);
 }
-
 
 QString PptpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {

@@ -32,7 +32,8 @@ public:
 };
 
 OpenswanAuthDialog::OpenswanAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent), d_ptr(new OpenswanAuthDialogPrivate)
+    : SettingWidget(setting, parent)
+    , d_ptr(new OpenswanAuthDialogPrivate)
 {
     Q_D(OpenswanAuthDialog);
     d->ui.setupUi(this);

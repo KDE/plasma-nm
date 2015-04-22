@@ -77,8 +77,9 @@ void VpncUiPluginPrivate::gotCiscoDecryptOutput()
 
 void VpncUiPluginPrivate::ciscoDecryptFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
-    if (exitCode || exitStatus != QProcess::NormalExit)
+    if (exitCode || exitStatus != QProcess::NormalExit) {
         decryptedPasswd.clear();
+    }
 }
 
 void VpncUiPluginPrivate::ciscoDecryptError(QProcess::ProcessError pError)
@@ -95,7 +96,8 @@ void VpncUiPluginPrivate::ciscoDecryptError(QProcess::ProcessError pError)
 
 K_PLUGIN_FACTORY_WITH_JSON(VpncUiPluginFactory, "plasmanetworkmanagement_vpncui.json", registerPlugin<VpncUiPlugin>();)
 
-VpncUiPlugin::VpncUiPlugin(QObject * parent, const QVariantList &) : VpnUiPlugin(parent)
+VpncUiPlugin::VpncUiPlugin(QObject * parent, const QVariantList &)
+    : VpnUiPlugin(parent)
 {
 
 }
@@ -144,7 +146,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
     if (!config) {
         mErrorMessage = i18n("File %1 could not be opened.", fileName);
         return result;
-        }
+    }
 
     KConfigGroup cg(config, "main");   // Keys&Values are stored under [main]
     if (cg.exists()) {
@@ -174,8 +176,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         // user password
         if (!decrPlugin->readStringKeyValue(cg,"UserPassword").isEmpty()) {
             secretData.insert(NM_VPNC_KEY_XAUTH_PASSWORD, decrPlugin->readStringKeyValue(cg,"UserPassword"));
-        }
-        else if (!decrPlugin->readStringKeyValue(cg,"enc_UserPassword").isEmpty() && !ciscoDecryptBinary.isEmpty()) {
+        } else if (!decrPlugin->readStringKeyValue(cg,"enc_UserPassword").isEmpty() && !ciscoDecryptBinary.isEmpty()) {
             // Decrypt the password and insert into map
             decrPlugin->ciscoDecrypt->setProgram(ciscoDecryptBinary);
             decrPlugin->ciscoDecrypt->start();
@@ -186,17 +187,16 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
             }
         }
         // Save user password
-        switch (cg.readEntry("SaveUserPassword").toInt())
-        {
-            case 0:
-                data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
-                break;
-            case 1:
-                data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
-                break;
-            case 2:
-                data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotRequired));
-                break;
+        switch (cg.readEntry("SaveUserPassword").toInt()) {
+        case 0:
+            data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
+            break;
+        case 1:
+            data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
+            break;
+        case 2:
+            data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotRequired));
+            break;
         }
 
         // group password
@@ -252,8 +252,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
                     data.insert(NM_VPNC_KEY_NAT_TRAVERSAL_MODE, QLatin1String(NM_VPNC_NATT_MODE_NATT_ALWAYS));
                 }
             }
-        }
-        else {
+        } else {
             data.insert(NM_VPNC_KEY_NAT_TRAVERSAL_MODE, QLatin1String(NM_VPNC_NATT_MODE_NONE));
         }
         // dead peer detection
@@ -342,10 +341,11 @@ bool VpncUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSett
 
     cg.writeEntry("Description", connection->id());
     cg.writeEntry("Host", data.value(NM_VPNC_KEY_GATEWAY));
-    if (data.value(NM_VPNC_KEY_AUTHMODE) == QLatin1String("hybrid"))
+    if (data.value(NM_VPNC_KEY_AUTHMODE) == QLatin1String("hybrid")) {
         cg.writeEntry("AuthType", "5");
-    else
+    } else {
         cg.writeEntry("AuthType", "1");
+    }
     cg.writeEntry("GroupName", data.value(NM_VPNC_KEY_ID));
     cg.writeEntry("GroupPwd", secretData.value(NM_VPNC_KEY_SECRET));
     cg.writeEntry("UserPassword", secretData.value(NM_VPNC_KEY_XAUTH_PASSWORD));

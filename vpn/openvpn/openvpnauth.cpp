@@ -39,7 +39,8 @@ public:
 };
 
 OpenVpnAuthWidget::OpenVpnAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent), d_ptr(new OpenVpnAuthWidgetPrivate)
+    : SettingWidget(setting, parent)
+    , d_ptr(new OpenVpnAuthWidgetPrivate)
 {
     Q_D(OpenVpnAuthWidget);
     d->setting = setting;
@@ -155,10 +156,11 @@ void OpenVpnAuthWidget::showPasswordsToggled(bool show)
     for (int i = 0; i < d->layout->rowCount() - 1; i++) {
         QLineEdit *le = qobject_cast<QLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le) {
-            if (show)
+            if (show) {
                 le->setEchoMode(QLineEdit::Normal);
-            else
+            } else {
                 le->setEchoMode(QLineEdit::Password);
+            }
         }
     }
 }

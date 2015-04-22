@@ -27,8 +27,8 @@
 
 K_PLUGIN_FACTORY_WITH_JSON(OpenswanUiPluginFactory, "plasmanetworkmanagement_openswanui.json", registerPlugin<OpenswanUiPlugin>(); )
 
-OpenswanUiPlugin::OpenswanUiPlugin(QObject * parent, const QVariantList &):
-    VpnUiPlugin(parent)
+OpenswanUiPlugin::OpenswanUiPlugin(QObject * parent, const QVariantList &)
+    : VpnUiPlugin(parent)
 {
 }
 
@@ -61,7 +61,7 @@ NMVariantMapMap OpenswanUiPlugin::importConnectionSettings(const QString &fileNa
 {
     Q_UNUSED(fileName);
 
-    // TODO : import the Openconnect connection from file and return settings
+    // TODO : import the Openswan connection from file and return settings
     mError = VpnUiPlugin::NotImplemented;
     return NMVariantMapMap();
 }
@@ -71,7 +71,7 @@ bool OpenswanUiPlugin::exportConnectionSettings(const NetworkManager::Connection
     Q_UNUSED(connection);
     Q_UNUSED(fileName);
 
-    // TODO : export Openconnect connection to file
+    // TODO : export Openswan connection to file
     mError = VpnUiPlugin::NotImplemented;
     return false;
 }

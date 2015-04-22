@@ -28,7 +28,8 @@
 
 K_PLUGIN_FACTORY(OpenconnectUiPluginFactory, registerPlugin<OpenconnectUiPlugin>();)
 
-OpenconnectUiPlugin::OpenconnectUiPlugin(QObject * parent, const QVariantList &) : VpnUiPlugin(parent)
+OpenconnectUiPlugin::OpenconnectUiPlugin(QObject * parent, const QVariantList &)
+    : VpnUiPlugin(parent)
 {
 }
 

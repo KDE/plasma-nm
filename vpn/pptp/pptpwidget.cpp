@@ -42,7 +42,8 @@ public:
 };
 
 PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent), d_ptr(new PptpSettingWidgetPrivate)
+    : SettingWidget(setting, parent)
+    , d_ptr(new PptpSettingWidgetPrivate)
 {
     Q_D(PptpSettingWidget);
     d->ui.setupUi(this);
@@ -52,6 +53,7 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
     connect(d->ui.btnAdvanced, SIGNAL(clicked()), this, SLOT(doAdvancedDialog()));
     connect (d->ui.cmbPasswordStorage, SIGNAL(currentIndexChanged(int)), this, SLOT(passwordTypeChanged(int)));
     connect(d->ui.cb_showPassword, SIGNAL(toggled(bool)), this, SLOT(setShowPassword(bool)));
+
     d->advancedDlg = new QDialog(this);
     d->advancedWid = new QWidget(this);
     d->advUi.setupUi(d->advancedWid);
@@ -67,8 +69,9 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
 
     KAcceleratorManager::manage(this);
 
-    if (d->setting)
+    if (d->setting) {
         loadConfig(d->setting);
+    }
 }
 
 PptpSettingWidget::~PptpSettingWidget()
@@ -85,10 +88,11 @@ void PptpSettingWidget::passwordTypeChanged(int index)
 void PptpSettingWidget::setShowPassword(bool show)
 {
     Q_D(PptpSettingWidget);
-    if (show)
+    if (show) {
         d->ui.edt_password->setEchoMode(QLineEdit::Normal);
-    else
+    } else {
         d->ui.edt_password->setEchoMode(QLineEdit::Password);
+    }
 }
 
 void PptpSettingWidget::doAdvancedDialog()
@@ -109,14 +113,12 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // Authentication
     const QString sGateway = dataMap[NM_PPTP_KEY_GATEWAY];
-    if (!sGateway.isEmpty())
-    {
+    if (!sGateway.isEmpty()) {
         d->ui.edt_gateway->setText(sGateway);
     }
 
     const QString sLogin = dataMap[NM_PPTP_KEY_USER];
-    if (!sLogin.isEmpty())
-    {
+    if (!sLogin.isEmpty()) {
         d->ui.edt_login->setText(sLogin);
     }
 
@@ -126,8 +128,7 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     }
 
     const QString sDomain = dataMap[NM_PPTP_KEY_DOMAIN];
-    if (!sDomain.isEmpty())
-    {
+    if (!sDomain.isEmpty()) {
         d->ui.edt_ntDomain->setText(sDomain);
     }
 
@@ -163,11 +164,9 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         d->advUi.gb_MPPE->setChecked(mppe || mppe40 || mppe128);
         if (mppe128) {
             d->advUi.cb_MPPECrypto->setCurrentIndex(1); // 128 bit
-        }
-        else if (mppe40) {
+        } else if (mppe40) {
             d->advUi.cb_MPPECrypto->setCurrentIndex(2); // 40 bit
-        }
-        else {
+        } else {
             d->advUi.cb_MPPECrypto->setCurrentIndex(0); // Any
         }
         d->advUi.cb_statefulEncryption->setChecked(mppe_stateful);
@@ -223,46 +222,40 @@ QVariantMap PptpSettingWidget::setting(bool agentOwned) const
     QListWidgetItem * item = 0;
     item = d->advUi.listWidget->item(0); // PAP
     const QString yesString = QLatin1String("yes");
-    if (item->checkState() == Qt::Unchecked)
+    if (item->checkState() == Qt::Unchecked) {
         data.insert(NM_PPTP_KEY_REFUSE_PAP, yesString);
+    }
     item = d->advUi.listWidget->item(1); // CHAP
-    if (item->checkState() == Qt::Unchecked)
+    if (item->checkState() == Qt::Unchecked) {
         data.insert(NM_PPTP_KEY_REFUSE_CHAP, yesString);
+    }
     item = d->advUi.listWidget->item(2); // MSCHAP
-    if (item->checkState() == Qt::Unchecked)
+    if (item->checkState() == Qt::Unchecked) {
         data.insert(NM_PPTP_KEY_REFUSE_MSCHAP, yesString);
+    }
     item = d->advUi.listWidget->item(3); // MSCHAPv2
-    if (item->checkState() == Qt::Unchecked)
+    if (item->checkState() == Qt::Unchecked) {
         data.insert(NM_PPTP_KEY_REFUSE_MSCHAPV2, yesString);
+    }
     item = d->advUi.listWidget->item(4); // EAP
-    if (item->checkState() == Qt::Unchecked)
+    if (item->checkState() == Qt::Unchecked) {
         data.insert(NM_PPTP_KEY_REFUSE_EAP, yesString);
+    }
 
     // Cryptography and compression
-    if (d->advUi.gb_MPPE->isChecked())
-    {
+    if (d->advUi.gb_MPPE->isChecked()) {
         int index = d->advUi.cb_MPPECrypto->currentIndex();
 
-        switch (index)
-        {
-            case 0:
-                {
-                    // "Any"
-                    data.insert(NM_PPTP_KEY_REQUIRE_MPPE, yesString);
-                }
-                break;
-            case 1:
-                {
-                    // "128 bit"
-                    data.insert(NM_PPTP_KEY_REQUIRE_MPPE_128, yesString);
-                }
-                break;
-            case 2:
-                {
-                    // "40 bit"
-                    data.insert(NM_PPTP_KEY_REQUIRE_MPPE_40, yesString);
-                }
-                break;
+        switch (index) {
+        case 0:
+            data.insert(NM_PPTP_KEY_REQUIRE_MPPE, yesString);
+            break;
+        case 1:
+            data.insert(NM_PPTP_KEY_REQUIRE_MPPE_128, yesString);
+            break;
+        case 2:
+            data.insert(NM_PPTP_KEY_REQUIRE_MPPE_40, yesString);
+            break;
         }
 
         if (d->advUi.cb_statefulEncryption->isChecked()) {
@@ -272,7 +265,6 @@ QVariantMap PptpSettingWidget::setting(bool agentOwned) const
 
     if (!d->advUi.cb_BSD->isChecked()) {
         data.insert(NM_PPTP_KEY_NOBSDCOMP, yesString);
-
     }
     if (!d->advUi.cb_deflate->isChecked()) {
         data.insert(NM_PPTP_KEY_NODEFLATE, yesString);
@@ -297,11 +289,11 @@ QVariantMap PptpSettingWidget::setting(bool agentOwned) const
 void PptpSettingWidget::fillOnePasswordCombo(QComboBox * combo, NetworkManager::Setting::SecretFlags type)
 {
     if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) { // store
-        combo->setCurrentIndex(0);
-    } else if (type.testFlag(NetworkManager::Setting::NotRequired)) { // not required
-        combo->setCurrentIndex(2);
+        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
     } else if (type.testFlag(NetworkManager::Setting::NotSaved)) { // always ask
-        combo->setCurrentIndex(1);
+        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
+    } else if (type.testFlag(NetworkManager::Setting::NotRequired)) { // not required
+        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
     }
 }
 
@@ -309,18 +301,19 @@ uint PptpSettingWidget::handleOnePasswordType(const QComboBox *combo, const QStr
 {
     const uint type = combo->currentIndex();
     switch (type) {
-        case 1:
-            data.insert(key, QString::number(NetworkManager::Setting::NotSaved)); // always ask
+    case 1:
+        data.insert(key, QString::number(NetworkManager::Setting::NotSaved)); // always ask
+        break;
+    case 0:
+        if (agentOwned) {
+            data.insert(key, QString::number(NetworkManager::Setting::AgentOwned)); // store
+        } else {
+            data.insert(key, QString::number(NetworkManager::Setting::None));
             break;
-        case 0:
-            if (agentOwned)
-                data.insert(key, QString::number(NetworkManager::Setting::AgentOwned)); // store
-            else
-                data.insert(key, QString::number(NetworkManager::Setting::None));
-            break;
-        case 2:
-            data.insert(key, QString::number(NetworkManager::Setting::NotRequired)); // not required
-            break;
+        }
+    case 2:
+        data.insert(key, QString::number(NetworkManager::Setting::NotRequired)); // not required
+        break;
     }
     return type;
 }

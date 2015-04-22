@@ -25,9 +25,9 @@
 #include <KLocalizedString>
 #include <KAcceleratorManager>
 
-L2tpAdvancedWidget::L2tpAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent) :
-    QDialog(parent),
-    m_ui(new Ui::L2tpAdvancedWidget)
+L2tpAdvancedWidget::L2tpAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
+    : QDialog(parent)
+    , m_ui(new Ui::L2tpAdvancedWidget)
 {
     m_ui->setupUi(this);
 

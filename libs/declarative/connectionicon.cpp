@@ -211,13 +211,13 @@ void ConnectionIcon::modemNetworkRemoved()
     m_modemNetwork.clear();
 }
 
-void ConnectionIcon::modemSignalChanged(uint signal)
+void ConnectionIcon::modemSignalChanged(const ModemManager::SignalQualityPair &signalQuality)
 {
-    int diff = m_signal - signal;
+    int diff = m_signal - signalQuality.signal;
 
     if (diff >= 10 ||
         diff <= -10) {
-        m_signal = signal;
+        m_signal = signalQuality.signal;
 
         setIconForModem();
     }
@@ -486,9 +486,9 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr & device)
     }
 
     if (m_modemNetwork) {
-        connect(m_modemNetwork.data(), SIGNAL(signalQualityChanged(uint)),
-                SLOT(modemSignalChanged(uint)), Qt::UniqueConnection);
-        connect(m_modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::Modem::AccessTechnologies)),
+        connect(m_modemNetwork.data(), SIGNAL(signalQualityChanged(ModemManager::SignalQualityPair)),
+                SLOT(modemSignalChanged(ModemManager::SignalQualityPair)), Qt::UniqueConnection);
+        connect(m_modemNetwork.data(), SIGNAL(accessTechnologiesChanged(QFlags<MMModemAccessTechnology>)),
                 SLOT(setIconForModem()), Qt::UniqueConnection);
         connect(m_modemNetwork.data(), SIGNAL(destroyed(QObject*)),
                 SLOT(modemNetworkRemoved()));

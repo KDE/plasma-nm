@@ -37,7 +37,7 @@ InfinibandWidget::InfinibandWidget(const NetworkManager::Setting::Ptr &setting, 
     m_ui->transport->addItem(i18nc("infiniband transport mode", "Connected"), NetworkManager::InfinibandSetting::Connected);
     m_ui->transport->setCurrentIndex(0);
 
-    connect(m_ui->macAddress, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
+    connect(m_ui->macAddress, &HwAddrComboBox::hwAddressChanged, this, &InfinibandWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

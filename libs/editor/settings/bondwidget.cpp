@@ -52,9 +52,9 @@ BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Setting
     action->setData(NetworkManager::ConnectionSettings::Infiniband);
     m_menu->addAction(action);
     m_ui->btnAdd->setMenu(m_menu);
-    connect(m_menu, SIGNAL(triggered(QAction*)), SLOT(addBond(QAction*)));
-    connect(m_ui->btnEdit, SIGNAL(clicked()), SLOT(editBond()));
-    connect(m_ui->btnDelete, SIGNAL(clicked()), SLOT(deleteBond()));
+    connect(m_menu, &QMenu::triggered, this, &BondWidget::addBond);
+    connect(m_ui->btnEdit, &QPushButton::clicked, this, &BondWidget::editBond);
+    connect(m_ui->btnDelete, &QPushButton::clicked, this, &BondWidget::deleteBond);
 
     // mode
     m_ui->mode->addItem(i18nc("bond mode", "Round-robin"), QLatin1String("balance-rr"));
@@ -70,12 +70,12 @@ BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Setting
 
     // bonds
     populateBonds();
-    connect(m_ui->bonds, SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)), SLOT(currentBondChanged(QListWidgetItem*,QListWidgetItem*)));
-    connect(m_ui->bonds, SIGNAL(itemDoubleClicked(QListWidgetItem*)), SLOT(editBond()));
+    connect(m_ui->bonds, &QListWidget::currentItemChanged, this, &BondWidget::currentBondChanged);
+    connect(m_ui->bonds, &QListWidget::itemDoubleClicked, this, &BondWidget::editBond);
 
-    connect(m_ui->ifaceName, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->arpTargets, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->linkMonitoring, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
+    connect(m_ui->ifaceName, &KLineEdit::textChanged, this, &BondWidget::slotWidgetChanged);
+    connect(m_ui->arpTargets, &KLineEdit::textChanged, this, &BondWidget::slotWidgetChanged);
+    connect(m_ui->linkMonitoring, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &BondWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
     KAcceleratorManager::manage(m_menu);
@@ -235,7 +235,7 @@ void BondWidget::editBond()
         connect(bondEditor.data(), &ConnectionDetailEditor::accepted,
                 [connection, bondEditor, this] () {
                     connection->update(bondEditor->setting());
-                    connect(connection.data(), SIGNAL(updated()), this, SLOT(populateBonds()));
+                    connect(connection.data(), &NetworkManager::Connection::updated, this, &BondWidget::populateBonds);
                 });
         connect(bondEditor.data(), &ConnectionDetailEditor::finished,
                 [bondEditor] () {

@@ -37,7 +37,7 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
     m_widget->duplexLabel->setHidden(true);
     m_widget->duplex->setHidden(true);
 
-    connect(m_widget->btnRandomMacAddr, SIGNAL(clicked()), SLOT(generateRandomClonedMac()));
+    connect(m_widget->btnRandomMacAddr, &QPushButton::clicked, this, &WiredConnectionWidget::generateRandomClonedMac);
 
     if (setting)
         loadConfig(setting);
@@ -45,8 +45,8 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
     KAcceleratorManager::manage(this);
 
     // Validation
-    connect(m_widget->macAddress, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
-    connect(m_widget->clonedMacAddress, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_widget->macAddress, &HwAddrComboBox::hwAddressChanged, this, &WiredConnectionWidget::slotWidgetChanged);
+    connect(m_widget->clonedMacAddress, &KLineEdit::textChanged, this, &WiredConnectionWidget::slotWidgetChanged);
 }
 
 WiredConnectionWidget::~WiredConnectionWidget()

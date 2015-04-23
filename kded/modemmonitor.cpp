@@ -47,7 +47,7 @@ ModemMonitor::ModemMonitor(QObject * parent)
     Q_D(ModemMonitor);
     d->dialog.clear();
 
-    QObject::connect(ModemManager::notifier(), SIGNAL(modemAdded(QString)), SLOT(unlockModem(QString)));
+    connect(ModemManager::notifier(), &ModemManager::Notifier::modemAdded, this, &ModemMonitor::unlockModem);
     Q_FOREACH (const ModemManager::ModemDevice::Ptr &iface, ModemManager::modemDevices()) {
         unlockModem(iface->uni());
     }
@@ -70,7 +70,7 @@ void ModemMonitor::unlockModem(const QString &modemUni)
         return;
     }
 
-    connect(modem.data(), SIGNAL(unlockRequiredChanged(MMModemLock)), SLOT(requestPin(MMModemLock)), Qt::UniqueConnection);
+    connect(modem.data(), &ModemManager::Modem::unlockRequiredChanged, this, &ModemMonitor::requestPin, Qt::UniqueConnection);
 
     if (d->dialog || (modem && modem->unlockRequired() == MM_MODEM_LOCK_NONE) || (modem && modem->unlockRequired() == MM_MODEM_LOCK_UNKNOWN)) {
         return;
@@ -169,7 +169,7 @@ void ModemMonitor::requestPin(MMModemLock lock)
             watcher = new QDBusPendingCallWatcher(reply, sim.data());
         }
 
-        connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), SLOT(onSendPinArrived(QDBusPendingCallWatcher*)));
+        connect(watcher, &QDBusPendingCallWatcher::finished, this, &ModemMonitor::onSendPinArrived);
     }
 
 OUT:

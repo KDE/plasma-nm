@@ -37,7 +37,7 @@ BtWidget::BtWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent,
 
     m_ui->type->setEnabled(false);
 
-    connect(m_ui->bdaddr, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
+    connect(m_ui->bdaddr, &HwAddrComboBox::hwAddressChanged, this, &BtWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

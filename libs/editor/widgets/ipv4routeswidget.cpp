@@ -62,16 +62,15 @@ IpV4RoutesWidget::IpV4RoutesWidget(QWidget * parent)
     d->ui.tableViewAddresses->setItemDelegateForColumn(2, ipDelegate);
     d->ui.tableViewAddresses->setItemDelegateForColumn(3, metricDelegate);
 
-    connect(d->ui.pushButtonAdd, SIGNAL(clicked()), this, SLOT(addRoute()));
-    connect(d->ui.pushButtonRemove, SIGNAL(clicked()), this, SLOT(removeRoute()));
+    connect(d->ui.pushButtonAdd, &QPushButton::clicked, this, &IpV4RoutesWidget::addRoute);
+    connect(d->ui.pushButtonRemove, &QPushButton::clicked, this, &IpV4RoutesWidget::removeRoute);
 
-    connect(d->ui.tableViewAddresses->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this,
-            SLOT(selectionChanged(QItemSelection)));
+    connect(d->ui.tableViewAddresses->selectionModel(), &QItemSelectionModel::selectionChanged, this, &IpV4RoutesWidget::selectionChanged);
 
-    connect(&d->model, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(tableViewItemChanged(QStandardItem*)));
+    connect(&d->model, &QStandardItemModel::itemChanged, this, &IpV4RoutesWidget::tableViewItemChanged);
 
-    connect(d->ui.buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(d->ui.buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+    connect(d->ui.buttonBox, &QDialogButtonBox::accepted, this, &IpV4RoutesWidget::accept);
+    connect(d->ui.buttonBox, &QDialogButtonBox::rejected, this, &IpV4RoutesWidget::reject);
 
     KAcceleratorManager::manage(this);
 }

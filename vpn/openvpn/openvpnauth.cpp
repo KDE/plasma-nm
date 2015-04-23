@@ -128,7 +128,7 @@ void OpenVpnAuthWidget::readSecrets()
     QCheckBox *showPasswords = new QCheckBox(this);
     showPasswords->setText(i18n("Show passwords"));
     d->layout->addRow(showPasswords);
-    connect(showPasswords, SIGNAL(toggled(bool)), this, SLOT(showPasswordsToggled(bool)));
+    connect(showPasswords, &QCheckBox::toggled, this, &OpenVpnAuthWidget::showPasswordsToggled);
 }
 
 QVariantMap OpenVpnAuthWidget::setting(bool agentOwned) const

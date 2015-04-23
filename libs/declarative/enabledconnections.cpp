@@ -33,20 +33,13 @@ EnabledConnections::EnabledConnections(QObject* parent)
     , m_wwanEnabled(NetworkManager::isWwanEnabled())
     , m_wwanHwEnabled(NetworkManager::isWwanHardwareEnabled())
 {
-    connect(NetworkManager::notifier(), SIGNAL(networkingEnabledChanged(bool)),
-            SLOT(onNetworkingEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wirelessEnabledChanged(bool)),
-            SLOT(onWirelessEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wirelessHardwareEnabledChanged(bool)),
-            SLOT(onWirelessHwEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wimaxEnabledChanged(bool)),
-            SLOT(onWimaxEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wimaxHardwareEnabledChanged(bool)),
-            SLOT(onWimaxHwEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wwanEnabledChanged(bool)),
-            SLOT(onWwanEnabled(bool)));
-    connect(NetworkManager::notifier(), SIGNAL(wwanHardwareEnabledChanged(bool)),
-            SLOT(onWwanHwEnabled(bool)));
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::networkingEnabledChanged, this, &EnabledConnections::onNetworkingEnabled);
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::wirelessEnabledChanged, this, &EnabledConnections::onWirelessEnabled);
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::wirelessHardwareEnabledChanged, this, &EnabledConnections::onWirelessHwEnabled);
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::wimaxEnabledChanged, this, &EnabledConnections::onWimaxEnabled);
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::wimaxHardwareEnabledChanged, this, &EnabledConnections::onWimaxHwEnabled);
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::wwanEnabledChanged, this, &EnabledConnections::onWwanEnabled);
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::wwanHardwareEnabledChanged, this, &EnabledConnections::onWwanHwEnabled);
 }
 
 EnabledConnections::~EnabledConnections()

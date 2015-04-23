@@ -90,34 +90,30 @@ IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
     m_ui->tableViewAddresses->setItemDelegateForColumn(1, ipDelegate);
     m_ui->tableViewAddresses->setItemDelegateForColumn(2, ipDelegate);
 
-    connect(m_ui->btnAdd, SIGNAL(clicked()), this, SLOT(slotAddIPAddress()));
-    connect(m_ui->btnRemove, SIGNAL(clicked()), this, SLOT(slotRemoveIPAddress()));
+    connect(m_ui->btnAdd, &QPushButton::clicked, this, &IPv4Widget::slotAddIPAddress);
+    connect(m_ui->btnRemove, &QPushButton::clicked, this, &IPv4Widget::slotRemoveIPAddress);
 
-    connect(m_ui->dnsMorePushButton, SIGNAL(clicked()), SLOT(slotDnsServers()));
-    connect(m_ui->dnsSearchMorePushButton, SIGNAL(clicked()), SLOT(slotDnsDomains()));
+    connect(m_ui->dnsMorePushButton, &QPushButton::clicked, this, &IPv4Widget::slotDnsServers);
+    connect(m_ui->dnsSearchMorePushButton, &QPushButton::clicked, this, &IPv4Widget::slotDnsDomains);
 
-    connect(m_ui->tableViewAddresses->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
-            this, SLOT(selectionChanged(QItemSelection)));
+    connect(m_ui->tableViewAddresses->selectionModel(), &QItemSelectionModel::selectionChanged, this, &IPv4Widget::selectionChanged);
 
-    connect(&d->model, SIGNAL(itemChanged(QStandardItem*)),
-            this, SLOT(tableViewItemChanged(QStandardItem*)));
+    connect(&d->model, &QStandardItemModel::itemChanged, this, &IPv4Widget::tableViewItemChanged);
 
     if (setting) {
         loadConfig(setting);
     }
 
-    connect(m_ui->method, SIGNAL(currentIndexChanged(int)),
-            SLOT(slotModeComboChanged(int)));
+    connect(m_ui->method, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &IPv4Widget::slotModeComboChanged);
     slotModeComboChanged(m_ui->method->currentIndex());
 
-    connect(m_ui->btnRoutes, SIGNAL(clicked()),
-            SLOT(slotRoutesDialog()));
+    connect(m_ui->btnRoutes, &QPushButton::clicked, this, &IPv4Widget::slotRoutesDialog);
 
     // Validation
-    connect(m_ui->dns, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->method, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
-    connect(&d->model, SIGNAL(dataChanged(QModelIndex,QModelIndex)), SLOT(slotWidgetChanged()));
-    connect(&d->model, SIGNAL(rowsRemoved(QModelIndex,int,int)), SLOT(slotWidgetChanged()));
+    connect(m_ui->dns, &KLineEdit::textChanged, this, &IPv4Widget::slotWidgetChanged);
+    connect(m_ui->method, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &IPv4Widget::slotWidgetChanged);
+    connect(&d->model, &QStandardItemModel::dataChanged, this, &IPv4Widget::slotWidgetChanged);
+    connect(&d->model, &QStandardItemModel::rowsRemoved, this, &IPv4Widget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 }
@@ -420,8 +416,8 @@ void IPv4Widget::slotDnsServers()
     dialog->setWindowTitle(i18n("Edit DNS servers"));
     dialog->setLayout(new QVBoxLayout);
     QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
-    connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));
-    connect(buttons, SIGNAL(rejected()), dialog, SLOT(reject()));
+    connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
+    connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
     KEditListWidget * listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(" ", ""));
     dialog->layout()->addWidget(listWidget);
@@ -450,8 +446,8 @@ void IPv4Widget::slotDnsDomains()
     dialog->setWindowTitle(i18n("Edit DNS search domains"));
     dialog->setLayout(new QVBoxLayout);
     QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
-    connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));
-    connect(buttons, SIGNAL(rejected()), dialog, SLOT(reject()));
+    connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
+    connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
     KEditListWidget * listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(" ", ""));
     dialog->layout()->addWidget(listWidget);

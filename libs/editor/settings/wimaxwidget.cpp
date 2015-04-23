@@ -33,8 +33,8 @@ WimaxWidget::WimaxWidget(const NetworkManager::Setting::Ptr &setting, QWidget* p
 {
     m_ui->setupUi(this);
 
-    connect(m_ui->networkName, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->macAddress, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
+    connect(m_ui->networkName, &KLineEdit::textChanged, this, &WimaxWidget::slotWidgetChanged);
+    connect(m_ui->macAddress, &HwAddrComboBox::hwAddressChanged, this, &WimaxWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

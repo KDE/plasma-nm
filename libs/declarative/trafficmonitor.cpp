@@ -73,7 +73,7 @@ TrafficMonitor::TrafficMonitor(QGraphicsItem* parent)
 
     Plasma::DataEngineManager::self()->loadEngine("systemmonitor");
 
-    connect(m_traffic, SIGNAL(heightChanged()), this, SIGNAL(heightChanged()));
+    connect(m_traffic, &Plasma::Label::heightChanged, this, &TrafficMonitor::heightChanged);
 }
 
 TrafficMonitor::~TrafficMonitor()

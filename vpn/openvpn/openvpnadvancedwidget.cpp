@@ -66,9 +66,9 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     d->readConfig = false;
     d->setting = setting;
 
-    connect(m_ui->proxyPasswordStorage, SIGNAL(currentIndexChanged(int)), this, SLOT(proxyPasswordStorageChanged(int)));
-    connect(m_ui->chkProxyShowPassword, SIGNAL(toggled(bool)), this, SLOT(proxyPasswordToggled(bool)));
-    connect(m_ui->cmbProxyType, SIGNAL(currentIndexChanged(int)), this, SLOT(proxyTypeChanged(int)));
+    connect(m_ui->proxyPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyPasswordStorageChanged);
+    connect(m_ui->chkProxyShowPassword, &QCheckBox::toggled, this, &OpenVpnAdvancedWidget::proxyPasswordToggled);
+    connect(m_ui->cmbProxyType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyTypeChanged);
 
     // start openVPN process and get its cipher list
     const QString openVpnBinary = QStandardPaths::findExecutable("openvpn", QStringList() << "/sbin" << "/usr/sbin");
@@ -76,14 +76,14 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     d->openvpnProcess = new KProcess(this);
     d->openvpnProcess->setOutputChannelMode(KProcess::OnlyStdoutChannel);
     d->openvpnProcess->setReadChannel(QProcess::StandardOutput);
-    connect(d->openvpnProcess, SIGNAL(error(QProcess::ProcessError)), this, SLOT(openVpnError(QProcess::ProcessError)));
-    connect(d->openvpnProcess, SIGNAL(readyReadStandardOutput()), this, SLOT(gotOpenVpnOutput()));
-    connect(d->openvpnProcess, SIGNAL(finished(int,QProcess::ExitStatus)), this, SLOT(openVpnFinished(int,QProcess::ExitStatus)));
+    connect(d->openvpnProcess, static_cast<void (KProcess::*)(QProcess::ProcessError)>(&KProcess::error), this, &OpenVpnAdvancedWidget::openVpnError);
+    connect(d->openvpnProcess, &KProcess::readyReadStandardOutput, this, &OpenVpnAdvancedWidget::gotOpenVpnOutput);
+    connect(d->openvpnProcess, static_cast<void (KProcess::*)(int, QProcess::ExitStatus)>(&KProcess::finished), this, &OpenVpnAdvancedWidget::openVpnFinished);
 
     d->openvpnProcess->setProgram(openVpnBinary, args);
 
-    connect(m_ui->buttonBox, SIGNAL(accepted()), SLOT(accept()));
-    connect(m_ui->buttonBox, SIGNAL(rejected()), SLOT(reject()));
+    connect(m_ui->buttonBox, &QDialogButtonBox::accepted, this, &OpenVpnAdvancedWidget::accept);
+    connect(m_ui->buttonBox, &QDialogButtonBox::rejected, this, &OpenVpnAdvancedWidget::reject);
 
     KAcceleratorManager::manage(this);
 

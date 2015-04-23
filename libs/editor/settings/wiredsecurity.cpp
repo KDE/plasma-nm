@@ -33,7 +33,7 @@ WiredSecurity::WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &se
 
     m_ui->verticalLayout->addWidget(m_8021xWidget);
 
-    connect(m_ui->use8021X, SIGNAL(toggled(bool)), m_8021xWidget, SLOT(setEnabled(bool)));
+    connect(m_ui->use8021X, &QCheckBox::toggled, m_8021xWidget, &Security8021x::setEnabled);
 
     KAcceleratorManager::manage(this);
 

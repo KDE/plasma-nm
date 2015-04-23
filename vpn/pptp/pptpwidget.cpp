@@ -50,9 +50,9 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
 
     d->setting = setting;
 
-    connect(d->ui.btnAdvanced, SIGNAL(clicked()), this, SLOT(doAdvancedDialog()));
-    connect (d->ui.cmbPasswordStorage, SIGNAL(currentIndexChanged(int)), this, SLOT(passwordTypeChanged(int)));
-    connect(d->ui.cb_showPassword, SIGNAL(toggled(bool)), this, SLOT(setShowPassword(bool)));
+    connect(d->ui.btnAdvanced, &QPushButton::clicked, this, &PptpSettingWidget::doAdvancedDialog);
+    connect(d->ui.cmbPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &PptpSettingWidget::passwordTypeChanged);
+    connect(d->ui.cb_showPassword, &QCheckBox::toggled, this, &PptpSettingWidget::setShowPassword);
 
     d->advancedDlg = new QDialog(this);
     d->advancedWid = new QWidget(this);
@@ -61,11 +61,11 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
     layout->addWidget(d->advancedWid);
     d->advancedDlg->setLayout(layout);
     QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, d->advancedDlg);
-    connect(buttons, SIGNAL(accepted()), d->advancedDlg, SLOT(accept()));
-    connect(buttons, SIGNAL(rejected()), d->advancedDlg, SLOT(reject()));
+    connect(buttons, &QDialogButtonBox::accepted, d->advancedDlg, &QDialog::accept);
+    connect(buttons, &QDialogButtonBox::rejected, d->advancedDlg, &QDialog::reject);
     layout->addWidget(buttons);
 
-    connect(d->ui.edt_gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(d->ui.edt_gateway, &QLineEdit::textChanged, this, &PptpSettingWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

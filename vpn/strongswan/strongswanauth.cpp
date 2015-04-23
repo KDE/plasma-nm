@@ -46,7 +46,7 @@ StrongswanAuthWidget::StrongswanAuthWidget(const NetworkManager::VpnSetting::Ptr
     d->setting = setting;
     d->ui.setupUi(this);
     d->acceptOnShow = false;
-    connect(d->ui.chkShowPass, SIGNAL(toggled(bool)), this, SLOT(showPasswordsChanged(bool)));
+    connect(d->ui.chkShowPass, &QCheckBox::toggled, this, &StrongswanAuthWidget::showPasswordsChanged);
 
     readSecrets();
 

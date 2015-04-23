@@ -44,10 +44,8 @@ AvailableDevices::AvailableDevices(QObject* parent)
         }
     }
 
-    connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)),
-            SLOT(deviceAdded(QString)));
-    connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
-            SLOT(deviceRemoved()));
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::deviceAdded, this, &AvailableDevices::deviceAdded);
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::deviceRemoved, this, &AvailableDevices::deviceRemoved);
 }
 
 AvailableDevices::~AvailableDevices()

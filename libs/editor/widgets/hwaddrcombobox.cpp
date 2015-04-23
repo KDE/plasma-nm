@@ -38,8 +38,8 @@ HwAddrComboBox::HwAddrComboBox(QWidget *parent) :
     setEditable(true);
     setInsertPolicy(QComboBox::NoInsert);
 
-    connect(this, SIGNAL(editTextChanged(QString)), SLOT(editTextChanged(QString)));
-    connect(this, SIGNAL(currentIndexChanged(int)), SLOT(currentIndexChanged(int)));
+    connect(this, &HwAddrComboBox::editTextChanged, this, &HwAddrComboBox::editTextChanged);
+    connect(this, static_cast<void (HwAddrComboBox::*)(int)>(&HwAddrComboBox::currentIndexChanged), this, &HwAddrComboBox::currentIndexChanged);
 }
 
 bool HwAddrComboBox::isValid() const

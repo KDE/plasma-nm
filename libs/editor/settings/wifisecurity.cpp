@@ -37,20 +37,20 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
     m_ui->stackedWidget->insertWidget(3, m_8021xWidget);
     m_ui->stackedWidget->insertWidget(5, m_WPA2Widget);
 
-    connect(m_ui->securityCombo, SIGNAL(currentIndexChanged(int)), SLOT(securityChanged(int)));
+    connect(m_ui->securityCombo, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::securityChanged);
 
-    connect(m_ui->cbShowWepKey, SIGNAL(toggled(bool)), SLOT(slotShowWepKeyPasswordChecked(bool)));
-    connect(m_ui->cbShowLeapPassword, SIGNAL(toggled(bool)), SLOT(slotShowLeapPasswordChecked(bool)));
-    connect(m_ui->cbShowPsk, SIGNAL(toggled(bool)), SLOT(slotShowPskPasswordChecked(bool)));
+    connect(m_ui->cbShowWepKey, &QCheckBox::toggled, this, &WifiSecurity::slotShowWepKeyPasswordChecked);
+    connect(m_ui->cbShowLeapPassword, &QCheckBox::toggled, this, &WifiSecurity::slotShowLeapPasswordChecked);
+    connect(m_ui->cbShowPsk, &QCheckBox::toggled, this, &WifiSecurity::slotShowPskPasswordChecked);
 
-    connect(m_ui->wepIndex, SIGNAL(currentIndexChanged(int)), SLOT(setWepKey(int)));
+    connect(m_ui->wepIndex, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::setWepKey);
 
-    connect(m_ui->wepKey, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->leapUsername, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->leapPassword, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->psk, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->wepIndex, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
-    connect(m_ui->securityCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
+    connect(m_ui->wepKey, &KLineEdit::textChanged, this, &WifiSecurity::slotWidgetChanged);
+    connect(m_ui->leapUsername, &KLineEdit::textChanged, this, &WifiSecurity::slotWidgetChanged);
+    connect(m_ui->leapPassword, &KLineEdit::textChanged, this, &WifiSecurity::slotWidgetChanged);
+    connect(m_ui->psk, &KLineEdit::textChanged, this, &WifiSecurity::slotWidgetChanged);
+    connect(m_ui->wepIndex, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
+    connect(m_ui->securityCombo, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

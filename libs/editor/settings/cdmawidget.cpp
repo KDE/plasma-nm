@@ -29,13 +29,13 @@ CdmaWidget::CdmaWidget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 {
     m_ui->setupUi(this);
 
-    connect(m_ui->cbShowPassword, SIGNAL(toggled(bool)), SLOT(showPassword(bool)));
-    connect(m_ui->passwordStorage, SIGNAL(currentIndexChanged(int)), SLOT(passwordStorageChanged(int)));
+    connect(m_ui->cbShowPassword, &QCheckBox::toggled, this, &CdmaWidget::showPassword);
+    connect(m_ui->passwordStorage, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &CdmaWidget::passwordStorageChanged);
 
-    connect(m_ui->number, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->password, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->passwordStorage, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
-    connect(m_ui->username, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->number, &KLineEdit::textChanged, this, &CdmaWidget::slotWidgetChanged);
+    connect(m_ui->password, &KLineEdit::textChanged, this, &CdmaWidget::slotWidgetChanged);
+    connect(m_ui->passwordStorage, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &CdmaWidget::slotWidgetChanged);
+    connect(m_ui->username, &KLineEdit::textChanged, this, &CdmaWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

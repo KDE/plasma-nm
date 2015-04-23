@@ -38,12 +38,12 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     m_ui->setupUi(this);
 
-    connect(m_ui->cboUserPasswordType, SIGNAL(currentIndexChanged(int)), SLOT(userPasswordTypeChanged(int)));
-    connect(m_ui->cbShowPassword, SIGNAL(toggled(bool)), SLOT(showPassword(bool)));
-    connect(m_ui->btnIPSecSettings, SIGNAL(clicked(bool)), SLOT(showAdvanced()));
-    connect(m_ui->btnPPPSettings, SIGNAL(clicked(bool)), SLOT(showPpp()));
+    connect(m_ui->cboUserPasswordType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &L2tpWidget::userPasswordTypeChanged);
+    connect(m_ui->cbShowPassword, &QCheckBox::toggled, this, &L2tpWidget::showPassword);
+    connect(m_ui->btnIPSecSettings, &QPushButton::clicked, this, &L2tpWidget::showAdvanced);
+    connect(m_ui->btnPPPSettings, &QPushButton::clicked, this, &L2tpWidget::showPpp);
 
-    connect(m_ui->gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->gateway, &QLineEdit::textChanged, this, &L2tpWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

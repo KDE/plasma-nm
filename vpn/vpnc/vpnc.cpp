@@ -161,9 +161,9 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         decrPlugin->ciscoDecrypt = new KProcess(decrPlugin);
         decrPlugin->ciscoDecrypt->setOutputChannelMode(KProcess::OnlyStdoutChannel);
         decrPlugin->ciscoDecrypt->setReadChannel(QProcess::StandardOutput);
-        connect(decrPlugin->ciscoDecrypt, SIGNAL(error(QProcess::ProcessError)), decrPlugin, SLOT(ciscoDecryptError(QProcess::ProcessError)));
-        connect(decrPlugin->ciscoDecrypt, SIGNAL(finished(int,QProcess::ExitStatus)), decrPlugin, SLOT(ciscoDecryptFinished(int,QProcess::ExitStatus)));
-        connect(decrPlugin->ciscoDecrypt, SIGNAL(readyReadStandardOutput()), decrPlugin, SLOT(gotCiscoDecryptOutput()));
+        connect(decrPlugin->ciscoDecrypt, static_cast<void (KProcess::*)(QProcess::ProcessError)>(&KProcess::error), decrPlugin, &VpncUiPluginPrivate::ciscoDecryptError);
+        connect(decrPlugin->ciscoDecrypt, static_cast<void (KProcess::*)(int, QProcess::ExitStatus)>(&KProcess::finished), decrPlugin, &VpncUiPluginPrivate::ciscoDecryptFinished);
+        connect(decrPlugin->ciscoDecrypt, &KProcess::readyReadStandardOutput, decrPlugin, &VpncUiPluginPrivate::gotCiscoDecryptOutput);
 
         NMStringMap data;
         NMStringMap secretData;

@@ -425,7 +425,7 @@ void Handler::requestScan()
                 QDBusPendingReply<> reply = wifiDevice->requestScan();
                 QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
                 watcher->setProperty("action", Handler::RequestScan);
-                connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(replyFinished(QDBusPendingCallWatcher*)));
+                connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
             }
         }
     }

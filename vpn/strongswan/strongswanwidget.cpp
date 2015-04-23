@@ -42,13 +42,13 @@ StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSettin
     Q_D(StrongswanSettingWidget);
     d->ui.setupUi(this);
     d->setting = setting;
-    connect(d->ui.cboUserPassOptions, SIGNAL(currentIndexChanged(int)), this, SLOT(userPasswordTypeChanged(int)));
-    connect(d->ui.cboPrivateKeyPassOptions, SIGNAL(currentIndexChanged(int)), this, SLOT(privateKeyPasswordTypeChanged(int)));
-    connect(d->ui.cboPinOptions, SIGNAL(currentIndexChanged(int)), this, SLOT(pinTypeChanged(int)));
-    connect(d->ui.cmbMethod, SIGNAL(currentIndexChanged(int)), this, SLOT(methodChanged(int)));
-    connect(d->ui.cbShowPasswords, SIGNAL(toggled(bool)), this, SLOT(showPasswordsChanged(bool)));
+    connect(d->ui.cboUserPassOptions, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &StrongswanSettingWidget::userPasswordTypeChanged);
+    connect(d->ui.cboPrivateKeyPassOptions, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &StrongswanSettingWidget::privateKeyPasswordTypeChanged);
+    connect(d->ui.cboPinOptions, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &StrongswanSettingWidget::pinTypeChanged);
+    connect(d->ui.cmbMethod, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &StrongswanSettingWidget::methodChanged);
+    connect(d->ui.cbShowPasswords, &QCheckBox::toggled, this, &StrongswanSettingWidget::showPasswordsChanged);
 
-    connect(d->ui.leGateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(d->ui.leGateway, &QLineEdit::textChanged, this, &StrongswanSettingWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

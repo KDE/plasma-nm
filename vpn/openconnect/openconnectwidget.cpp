@@ -43,7 +43,7 @@ OpenconnectSettingWidget::OpenconnectSettingWidget(const NetworkManager::VpnSett
     d->ui.setupUi(this);
     d->setting = setting;
 
-    connect(d->ui.leGateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(d->ui.leGateway, &QLineEdit::textChanged, this, &OpenconnectSettingWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

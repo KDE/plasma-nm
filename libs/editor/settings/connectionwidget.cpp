@@ -56,7 +56,7 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
         m_widget->autoconnect->setEnabled(true);
     }
 
-    connect(m_widget->autoconnectVpn, SIGNAL(toggled(bool)), SLOT(autoVpnToggled(bool)));
+    connect(m_widget->autoconnectVpn, &QCheckBox::toggled, this, &ConnectionWidget::autoVpnToggled);
 
     if (NetworkManager::compareVersion(QLatin1String("1.0.0")) >= 0) {
         m_widget->prioritySpin->setEnabled(true);
@@ -74,8 +74,7 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
 
     KAcceleratorManager::manage(this);
 
-    connect(m_widget->pushButtonPermissions, SIGNAL(clicked(bool)),
-            SLOT(openAdvancedPermissions()));
+    connect(m_widget->pushButtonPermissions, &QPushButton::clicked, this, &ConnectionWidget::openAdvancedPermissions);
 }
 
 ConnectionWidget::~ConnectionWidget()

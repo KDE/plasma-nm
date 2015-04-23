@@ -35,14 +35,14 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
 
     m_ui->setupUi(this);
 
-    connect(m_ui->btnRandomMacAddr, SIGNAL(clicked()), SLOT(generateRandomClonedMac()));
-    connect(m_ui->SSIDCombo, SIGNAL(ssidChanged()), SLOT(ssidChanged()));
-    connect(m_ui->modeComboBox, SIGNAL(currentIndexChanged(int)), SLOT(modeChanged(int)));
-    connect(m_ui->band, SIGNAL(currentIndexChanged(int)), SLOT(bandChanged(int)));
+    connect(m_ui->btnRandomMacAddr, &QPushButton::clicked, this, &WifiConnectionWidget::generateRandomClonedMac);
+    connect(m_ui->SSIDCombo, &SsidComboBox::ssidChanged, this, &WifiConnectionWidget::ssidChanged);
+    connect(m_ui->modeComboBox, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::modeChanged);
+    connect(m_ui->band, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::bandChanged);
 
     // Validation
-    connect(m_ui->macAddress, SIGNAL(hwAddressChanged()), SLOT(slotWidgetChanged()));
-    connect(m_ui->BSSIDCombo, SIGNAL(bssidChanged()), SLOT(slotWidgetChanged()));
+    connect(m_ui->macAddress, &HwAddrComboBox::hwAddressChanged, this, &WifiConnectionWidget::slotWidgetChanged);
+    connect(m_ui->BSSIDCombo, &BssidComboBox::bssidChanged, this, &WifiConnectionWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

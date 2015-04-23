@@ -33,9 +33,9 @@ VlanWidget::VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 
     fillConnections();
 
-    connect(m_ui->ifaceName, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->parent, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
-    connect(m_ui->parent->lineEdit(), SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->ifaceName, &KLineEdit::textChanged, this, &VlanWidget::slotWidgetChanged);
+    connect(m_ui->parent, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &VlanWidget::slotWidgetChanged);
+    connect(m_ui->parent->lineEdit(), &QLineEdit::textChanged, this, &VlanWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

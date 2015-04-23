@@ -31,10 +31,8 @@
 NetworkStatus::NetworkStatus(QObject* parent)
     : QObject(parent)
 {
-    connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
-            SLOT(statusChanged(NetworkManager::Status)));
-    connect(NetworkManager::notifier(), SIGNAL(activeConnectionsChanged()),
-            SLOT(activeConnectionsChanged()));
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::statusChanged, this, &NetworkStatus::statusChanged);
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionsChanged, this, static_cast<void (NetworkStatus::*)(void)>(&NetworkStatus::activeConnectionsChanged));
 
     activeConnectionsChanged();
     statusChanged(NetworkManager::status());
@@ -57,12 +55,9 @@ QString NetworkStatus::networkStatus() const
 void NetworkStatus::activeConnectionsChanged()
 {
     Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-        connect(active.data(), SIGNAL(default4Changed(bool)),
-                SLOT(defaultChanged()), Qt::UniqueConnection);
-        connect(active.data(), SIGNAL(default6Changed(bool)),
-                SLOT(defaultChanged()), Qt::UniqueConnection);
-        connect(active.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-                SLOT(changeActiveConnections()));
+        connect(active.data(), &NetworkManager::ActiveConnection::default4Changed, this, &NetworkStatus::defaultChanged, Qt::UniqueConnection);
+        connect(active.data(), &NetworkManager::ActiveConnection::default6Changed, this, &NetworkStatus::defaultChanged, Qt::UniqueConnection);
+        connect(active.data(), &NetworkManager::ActiveConnection::stateChanged, this, &NetworkStatus::changeActiveConnections);
     }
 
     changeActiveConnections();

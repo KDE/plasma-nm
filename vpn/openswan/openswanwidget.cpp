@@ -35,13 +35,13 @@ OpenswanWidget::OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, Q
 
     m_ui->setupUi(this);
 
-    connect(m_ui->cbUsernamePasswordMode, SIGNAL(currentIndexChanged(int)), SLOT(userPasswordTypeChanged(int)));
-    connect(m_ui->cbGroupPasswordMode, SIGNAL(currentIndexChanged(int)), SLOT(groupPasswordTypeChanged(int)));
+    connect(m_ui->cbUsernamePasswordMode, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenswanWidget::userPasswordTypeChanged);
+    connect(m_ui->cbGroupPasswordMode, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenswanWidget::groupPasswordTypeChanged);
 
-    connect(m_ui->ckShowPasswords, SIGNAL(toggled(bool)), SLOT(showPassword(bool)));
+    connect(m_ui->ckShowPasswords, &QCheckBox::toggled, this, &OpenswanWidget::showPassword);
 
-    connect(m_ui->gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->groupname, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->gateway, &QLineEdit::textChanged, this, &OpenswanWidget::slotWidgetChanged);
+    connect(m_ui->groupname, &QLineEdit::textChanged, this, &OpenswanWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

@@ -42,14 +42,14 @@ Notification::Notification(QObject *parent) :
         addDevice(device);
     }
 
-    connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)), this, SLOT(deviceAdded(QString)));
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::deviceAdded, this, &Notification::deviceAdded);
 
     // connections
     Q_FOREACH (const NetworkManager::ActiveConnection::Ptr &ac, NetworkManager::activeConnections()) {
         addActiveConnection(ac);
     }
 
-    connect(NetworkManager::notifier(), SIGNAL(activeConnectionAdded(QString)), this, SLOT(addActiveConnection(QString)));
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionAdded, this, static_cast<void (Notification::*)(const QString&)>(&Notification::addActiveConnection));
 }
 
 void Notification::deviceAdded(const QString &uni)
@@ -60,8 +60,7 @@ void Notification::deviceAdded(const QString &uni)
 
 void Notification::addDevice(const NetworkManager::Device::Ptr &device)
 {
-    connect(device.data(), SIGNAL(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)),
-            this, SLOT(stateChanged(NetworkManager::Device::State,NetworkManager::Device::State,NetworkManager::Device::StateChangeReason)));
+    connect(device.data(), &NetworkManager::Device::stateChanged, this, &Notification::stateChanged);
 }
 
 void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason)
@@ -315,7 +314,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         notify->update();
     } else {
         KNotification *notify = new KNotification("DeviceFailed", KNotification::CloseOnTimeout, this);
-        connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
+        connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
         notify->setProperty("uni", device->uni());
         notify->setComponentName("networkmanagement");
         notify->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
@@ -338,15 +337,13 @@ void Notification::addActiveConnection(const NetworkManager::ActiveConnection::P
 {
     if (ac->vpn()) {
         NetworkManager::VpnConnection::Ptr vpnConnection = ac.objectCast<NetworkManager::VpnConnection>();
-        connect(vpnConnection.data(), SIGNAL(stateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)),
-                this, SLOT(onVpnConnectionStateChanged(NetworkManager::VpnConnection::State,NetworkManager::VpnConnection::StateChangeReason)));
+        connect(vpnConnection.data(), &NetworkManager::VpnConnection::stateChanged, this, &Notification::onVpnConnectionStateChanged);
 #if NM_CHECK_VERSION(0, 9, 10)
     } else if (ac->type() != NetworkManager::ConnectionSettings::Generic) {
 #else
     } else {
 #endif
-        connect(ac.data(), SIGNAL(stateChanged(NetworkManager::ActiveConnection::State)),
-                this, SLOT(onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State)));
+        connect(ac.data(), &NetworkManager::ActiveConnection::stateChanged, this, &Notification::onActiveConnectionStateChanged);
     }
 }
 
@@ -370,7 +367,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
     }
 
     KNotification *notify = new KNotification(eventId, KNotification::CloseOnTimeout, this);
-    connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
+    connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
     notify->setProperty("uni", connectionId);
     notify->setComponentName("networkmanagement");
     if (state == NetworkManager::ActiveConnection::Activated) {
@@ -444,7 +441,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
     }
 
     KNotification *notify = new KNotification(eventId, KNotification::CloseOnTimeout, this);
-    connect(notify, SIGNAL(closed()), this, SLOT(notificationClosed()));
+    connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
     notify->setProperty("uni", connectionId);
     notify->setComponentName("networkmanagement");
     if (state == NetworkManager::VpnConnection::Activated) {

@@ -81,8 +81,8 @@ AdvancedPermissionsWidget::~AdvancedPermissionsWidget()
 void AdvancedPermissionsWidget::setupCommon()
 {
     Q_D(AdvancedPermissionsWidget);
-    connect(d->ui.arrowLeft, SIGNAL(clicked()), this, SLOT(leftArrowClicked()));
-    connect(d->ui.arrowRight, SIGNAL(clicked()), this, SLOT(rightArrowClicked()));
+    connect(d->ui.arrowLeft, &QPushButton::clicked, this, &AdvancedPermissionsWidget::leftArrowClicked);
+    connect(d->ui.arrowRight, &QPushButton::clicked, this, &AdvancedPermissionsWidget::rightArrowClicked);
     d->ui.availUsers->sortByColumn(FullName, Qt::AscendingOrder);
     d->ui.currentUsers->sortByColumn(FullName, Qt::AscendingOrder);
     d->ui.availUsers->setSortingEnabled(true);

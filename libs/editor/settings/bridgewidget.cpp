@@ -52,16 +52,16 @@ BridgeWidget::BridgeWidget(const QString & masterUuid, const NetworkManager::Set
     action->setData(NetworkManager::ConnectionSettings::Wireless);
     m_menu->addAction(action);
     m_ui->btnAdd->setMenu(m_menu);
-    connect(m_menu, SIGNAL(triggered(QAction*)), SLOT(addBridge(QAction*)));
-    connect(m_ui->btnEdit, SIGNAL(clicked()), SLOT(editBridge()));
-    connect(m_ui->btnDelete, SIGNAL(clicked()), SLOT(deleteBridge()));
+    connect(m_menu, &QMenu::triggered, this, &BridgeWidget::addBridge);
+    connect(m_ui->btnEdit, &QPushButton::clicked, this, &BridgeWidget::editBridge);
+    connect(m_ui->btnDelete, &QPushButton::clicked, this, &BridgeWidget::deleteBridge);
 
     // bridges
     populateBridges();
-    connect(m_ui->bridges, SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)), SLOT(currentBridgeChanged(QListWidgetItem*,QListWidgetItem*)));
-    connect(m_ui->bridges, SIGNAL(itemDoubleClicked(QListWidgetItem*)), SLOT(editBridge()));
+    connect(m_ui->bridges, &QListWidget::currentItemChanged, this, &BridgeWidget::currentBridgeChanged);
+    connect(m_ui->bridges, &QListWidget::itemDoubleClicked, this, &BridgeWidget::editBridge);
 
-    connect(m_ui->ifaceName, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->ifaceName, &KLineEdit::textChanged, this, &BridgeWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
     KAcceleratorManager::manage(m_menu);
@@ -185,7 +185,7 @@ void BridgeWidget::editBridge()
         connect(bridgeEditor.data(), &ConnectionDetailEditor::accepted,
                 [connection, bridgeEditor, this] () {
                     connection->update(bridgeEditor->setting());
-                    connect(connection.data(), SIGNAL(updated()), this, SLOT(populateBridges()));
+                    connect(connection.data(), &NetworkManager::Connection::updated, this, &BridgeWidget::populateBridges);
                 });
         connect(bridgeEditor.data(), &ConnectionDetailEditor::finished,
                 [bridgeEditor] () {

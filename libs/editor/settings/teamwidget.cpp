@@ -57,18 +57,18 @@ TeamWidget::TeamWidget(const QString & masterUuid, const NetworkManager::Setting
     action->setData(NetworkManager::ConnectionSettings::Vlan);
     m_menu->addAction(action);
     m_ui->btnAdd->setMenu(m_menu);
-    connect(m_menu, SIGNAL(triggered(QAction*)), SLOT(addTeam(QAction*)));
-    connect(m_ui->btnEdit, SIGNAL(clicked()), SLOT(editTeam()));
-    connect(m_ui->btnDelete, SIGNAL(clicked()), SLOT(deleteTeam()));
+    connect(m_menu, &QMenu::triggered, this, &TeamWidget::addTeam);
+    connect(m_ui->btnEdit, &QPushButton::clicked, this, &TeamWidget::editTeam);
+    connect(m_ui->btnDelete, &QPushButton::clicked, this, &TeamWidget::deleteTeam);
 
-    connect(m_ui->btnImport, SIGNAL(clicked()), SLOT(importConfig()));
+    connect(m_ui->btnImport, &QPushButton::clicked, this, &TeamWidget::importConfig);
 
     // teams
     populateTeams();
-    connect(m_ui->teams, SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)), SLOT(currentTeamChanged(QListWidgetItem*,QListWidgetItem*)));
-    connect(m_ui->teams, SIGNAL(itemDoubleClicked(QListWidgetItem*)), SLOT(editTeam()));
+    connect(m_ui->teams, &QListWidget::currentItemChanged, this, &TeamWidget::currentTeamChanged);
+    connect(m_ui->teams, &QListWidget::itemDoubleClicked, this, &TeamWidget::editTeam);
 
-    connect(m_ui->ifaceName, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(m_ui->ifaceName, &KLineEdit::textChanged, this, &TeamWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
     KAcceleratorManager::manage(m_menu);
@@ -174,7 +174,7 @@ void TeamWidget::editTeam()
         connect(teamEditor.data(), &ConnectionDetailEditor::accepted,
                 [connection, teamEditor, this] () {
                     connection->update(teamEditor->setting());
-                    connect(connection.data(), SIGNAL(updated()), this, SLOT(populateTeams()));
+                    connect(connection.data(), &NetworkManager::Connection::updated, this, &TeamWidget::populateTeams);
                 });
         connect(teamEditor.data(), &ConnectionDetailEditor::finished,
                 [teamEditor] () {

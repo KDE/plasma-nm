@@ -70,17 +70,17 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
     requesters << d->ui.x509CaFile << d->ui.x509Cert << d->ui.x509Key << d->ui.pskSharedKey << d->ui.passCaFile
                << d->ui.x509PassCaFile << d->ui.x509PassCert << d->ui.x509PassKey;
     Q_FOREACH (const KUrlRequester * requester, requesters) {
-        connect(requester, SIGNAL(urlSelected(QUrl)), this, SLOT(updateStartDir(QUrl)));
+        connect(requester, &KUrlRequester::urlSelected, this, &OpenVpnSettingWidget::updateStartDir);
     }
 
-    connect(d->ui.x509KeyPasswordStorage, SIGNAL(currentIndexChanged(int)), this, SLOT(x509KeyPasswordStorageChanged(int)));
-    connect(d->ui.passPasswordStorage, SIGNAL(currentIndexChanged(int)), this, SLOT(passPasswordStorageChanged(int)));
-    connect(d->ui.x509PassKeyPasswordStorage, SIGNAL(currentIndexChanged(int)), this, SLOT(x509PassKeyPasswordStorageChanged(int)));
-    connect(d->ui.x509PassPasswordStorage, SIGNAL(currentIndexChanged(int)), this, SLOT(x509PassPasswordStorageChanged(int)));
-    connect(d->ui.chkShowPasswords, SIGNAL(toggled(bool)), this, SLOT(showPasswordsToggled(bool)));
-    connect(d->ui.btnAdvanced, SIGNAL(clicked()), SLOT(showAdvanced()));
+    connect(d->ui.x509KeyPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnSettingWidget::x509KeyPasswordStorageChanged);
+    connect(d->ui.passPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnSettingWidget::passPasswordStorageChanged);
+    connect(d->ui.x509PassKeyPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnSettingWidget::x509PassKeyPasswordStorageChanged);
+    connect(d->ui.x509PassPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnSettingWidget::x509PassPasswordStorageChanged);
+    connect(d->ui.chkShowPasswords, &QCheckBox::toggled, this, &OpenVpnSettingWidget::showPasswordsToggled);
+    connect(d->ui.btnAdvanced, &QPushButton::clicked, this, &OpenVpnSettingWidget::showAdvanced);
 
-    connect(d->ui.gateway, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
+    connect(d->ui.gateway, &QLineEdit::textChanged, this, &OpenVpnSettingWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

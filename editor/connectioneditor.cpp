@@ -98,10 +98,8 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     connect(m_editor->connectionsWidget->selectionModel(), &QItemSelectionModel::currentChanged, this, &ConnectionEditor::slotSelectionChanged);
     connect(m_editor->connectionsWidget, &QTreeView::doubleClicked, this, &ConnectionEditor::slotItemDoubleClicked);
     connect(m_editor->connectionsWidget, &QTreeView::customContextMenuRequested, this, &ConnectionEditor::slotContextMenuRequested);
-    connect(m_menu->menu(), SIGNAL(triggered(QAction*)),
-            SLOT(addConnection(QAction*)));
-    connect(NetworkManager::settingsNotifier(), SIGNAL(connectionAdded(QString)),
-            SLOT(connectionAdded(QString)));
+    connect(m_menu->menu(), &QMenu::triggered, this, static_cast<void (ConnectionEditor::*)(QAction*)>(&ConnectionEditor::addConnection));
+    connect(NetworkManager::settingsNotifier(), &NetworkManager::SettingsNotifier::connectionAdded, this, &ConnectionEditor::connectionAdded);
 
     QLoggingCategory::setFilterRules(QStringLiteral("plasma-nm.debug = false"));
     QLoggingCategory::setFilterRules(QStringLiteral("plasma-nm.warning = true"));
@@ -228,7 +226,6 @@ void ConnectionEditor::initializeMenu()
 
     KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
     KStandardAction::quit(this, SLOT(close()), actionCollection());
-
     setupGUI(QSize(480, 480));
 
     setAutoSaveSettings();
@@ -362,7 +359,7 @@ void ConnectionEditor::connectionAdded(const QString& connection)
     m_editor->messageWidget->animatedShow();
     m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
     m_editor->messageWidget->setText(i18n("Connection %1 has been added", con->name()));
-    QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+    QTimer::singleShot(5000, m_editor->messageWidget, &KMessageWidget::animatedHide);
 }
 
 void ConnectionEditor::connectConnection()
@@ -633,7 +630,7 @@ void ConnectionEditor::importVpn()
                     m_editor->messageWidget->animatedShow();
                     m_editor->messageWidget->setMessageType(KMessageWidget::Error);
                     m_editor->messageWidget->setText(i18n("Importing VPN connection %1 failed\n%2", fi.fileName(), vpnPlugin->lastErrorMessage()));
-                    QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+                    QTimer::singleShot(5000, m_editor->messageWidget, &KMessageWidget::animatedHide);
                 } else {
                     delete vpnPlugin;
                     break; // stop iterating over the plugins if the import produced at least some output
@@ -677,7 +674,7 @@ void ConnectionEditor::exportVpn()
             m_editor->messageWidget->animatedShow();
             m_editor->messageWidget->setMessageType(KMessageWidget::Error);
             m_editor->messageWidget->setText(i18n("Export is not supported by this VPN type"));
-            QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+            QTimer::singleShot(5000, m_editor->messageWidget, &KMessageWidget::animatedHide);
             return;
         }
 
@@ -688,12 +685,12 @@ void ConnectionEditor::exportVpn()
                 m_editor->messageWidget->animatedShow();
                 m_editor->messageWidget->setMessageType(KMessageWidget::Error);
                 m_editor->messageWidget->setText(i18n("Exporting VPN connection %1 failed\n%2", connection->name(), vpnPlugin->lastErrorMessage()));
-                QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+                QTimer::singleShot(5000, m_editor->messageWidget, &KMessageWidget::animatedHide);
             } else {
                 m_editor->messageWidget->animatedShow();
                 m_editor->messageWidget->setMessageType(KMessageWidget::Positive);
                 m_editor->messageWidget->setText(i18n("VPN connection %1 exported successfully", connection->name()));
-                QTimer::singleShot(5000, m_editor->messageWidget, SLOT(animatedHide()));
+                QTimer::singleShot(5000, m_editor->messageWidget, &KMessageWidget::animatedHide);
             }
         }
         delete vpnPlugin;

@@ -103,9 +103,9 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
         d->cancelPipes[1] = -1;
     }
 
-    connect(d->ui.cmbLogLevel, SIGNAL(currentIndexChanged(int)), this, SLOT(logLevelChanged(int)));
-    connect(d->ui.viewServerLog, SIGNAL(toggled(bool)), this, SLOT(viewServerLogToggled(bool)));
-    connect(d->ui.btnConnect, SIGNAL(clicked()), this, SLOT(connectHost()));
+    connect(d->ui.cmbLogLevel, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::logLevelChanged);
+    connect(d->ui.viewServerLog, &QCheckBox::toggled, this, &OpenconnectAuthWidget::viewServerLogToggled);
+    connect(d->ui.btnConnect, &QPushButton::clicked, this, &OpenconnectAuthWidget::connectHost);
 
     d->ui.cmbLogLevel->setCurrentIndex(OpenconnectAuthWidgetPrivate::Debug);
     d->ui.btnConnect->setIcon(QIcon::fromTheme("network-connect"));
@@ -117,17 +117,17 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
     // and which needs to be populated with settings we get from NM, like host, certificate or private key
     d->vpninfo = d->worker->getOpenconnectInfo();
 
-    connect(d->worker, SIGNAL(validatePeerCert(QString,QString,QString,bool*)), this, SLOT(validatePeerCert(QString,QString,QString,bool*)));
-    connect(d->worker, SIGNAL(processAuthForm(oc_auth_form*)), this, SLOT(processAuthForm(oc_auth_form*)));
-    connect(d->worker, SIGNAL(updateLog(QString,int)), this, SLOT(updateLog(QString,int)));
-    connect(d->worker, SIGNAL(writeNewConfig(QString)), this, SLOT(writeNewConfig(QString)));
-    connect(d->worker, SIGNAL(cookieObtained(int)), this, SLOT(workerFinished(int)));
+    connect(d->worker, static_cast<void (OpenconnectAuthWorkerThread::*)(const QString &, const QString &, const QString &, bool*)>(&OpenconnectAuthWorkerThread::validatePeerCert), this, &OpenconnectAuthWidget::validatePeerCert);
+    connect(d->worker, &OpenconnectAuthWorkerThread::processAuthForm, this, &OpenconnectAuthWidget::processAuthForm);
+    connect(d->worker, &OpenconnectAuthWorkerThread::updateLog, this, &OpenconnectAuthWidget::updateLog);
+    connect(d->worker, static_cast<void (OpenconnectAuthWorkerThread::*)(const QString&)>(&OpenconnectAuthWorkerThread::writeNewConfig), this, &OpenconnectAuthWidget::writeNewConfig);
+    connect(d->worker, &OpenconnectAuthWorkerThread::cookieObtained, this, &OpenconnectAuthWidget::workerFinished);
 
     readConfig();
     readSecrets();
 
     // This might be set by readSecrets() so don't connect it until now
-    connect(d->ui.cmbHosts, SIGNAL(currentIndexChanged(int)), this, SLOT(connectHost()));
+    connect(d->ui.cmbHosts, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::connectHost);
 
     KAcceleratorManager::manage(this);
 }
@@ -238,7 +238,7 @@ void OpenconnectAuthWidget::readSecrets()
 
     if (d->secrets["autoconnect"] == "yes") {
         d->ui.chkAutoconnect->setChecked(true);
-        QTimer::singleShot(0, this, SLOT(connectHost()));
+        QTimer::singleShot(0, this, &OpenconnectAuthWidget::connectHost);
     }
 
     if (d->secrets["save_passwords"] == "yes") {
@@ -434,7 +434,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
     QCheckBox *togglePasswordMode = new QCheckBox(this);
     togglePasswordMode->setText(i18n("&Show password"));
     togglePasswordMode->setChecked(false);
-    connect(togglePasswordMode, SIGNAL(toggled(bool)), this, SLOT(passwordModeToggled(bool)));
+    connect(togglePasswordMode, &QCheckBox::toggled, this, &OpenconnectAuthWidget::passwordModeToggled);
     int passwordnumber = 0;
     bool focusSet = false;
     for (opt = form->opts; opt; opt = opt->next) {
@@ -467,12 +467,12 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
                 if (value == QString::fromUtf8(FORMCHOICE(sopt, i)->name)) {
                     cmb->setCurrentIndex(i);
                     if (sopt == AUTHGROUP_OPT(form) && i != AUTHGROUP_SELECTION(form)) {
-                        QTimer::singleShot(0, this, SLOT(formGroupChanged()));
+                        QTimer::singleShot(0, this, &OpenconnectAuthWidget::formGroupChanged);
                     }
                 }
             }
             if (sopt == AUTHGROUP_OPT(form)) {
-                connect(cmb, SIGNAL(currentIndexChanged(int)), this, SLOT(formGroupChanged()));
+                connect(cmb, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::formGroupChanged);
             }
             widget = qobject_cast<QWidget*>(cmb);
         }
@@ -494,7 +494,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
     d->ui.loginBoxLayout->addWidget(box);
     box->setProperty("openconnect_form", (quintptr)form);
 
-    connect(box, SIGNAL(accepted()), this, SLOT(formLoginClicked()));
+    connect(box, &QDialogButtonBox::accepted, this, &OpenconnectAuthWidget::formLoginClicked);
 }
 
 void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
@@ -555,8 +555,8 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
         dialog.data()->setWindowModality(Qt::WindowModal);
         dialog->setLayout(new QVBoxLayout);
         QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
-        connect(buttons, SIGNAL(accepted()), dialog, SLOT(accept()));
-        connect(buttons, SIGNAL(rejected()), dialog, SLOT(reject()));
+        connect(buttons, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
+        connect(buttons, &QDialogButtonBox::rejected, dialog, &QDialog::reject);
         dialog->layout()->addWidget(widget);
         dialog->layout()->addWidget(buttons);
         connect(dialog.data(), &QDialog::finished,

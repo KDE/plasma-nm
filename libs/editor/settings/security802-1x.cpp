@@ -37,17 +37,17 @@ Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &se
     m_ui->auth->setItemData(4, NetworkManager::Security8021xSetting::EapMethodTtls);
     m_ui->auth->setItemData(5, NetworkManager::Security8021xSetting::EapMethodPeap);
 
-    connect(m_ui->cbShowMd5Password, SIGNAL(toggled(bool)), SLOT(setShowMD5Password(bool)));
-    connect(m_ui->cbShowTlsPassword, SIGNAL(toggled(bool)), SLOT(setShowTlsPrivateKeyPassword(bool)));
-    connect(m_ui->cbShowLeapPassword, SIGNAL(toggled(bool)), SLOT(setShowLeapPassword(bool)));
-    connect(m_ui->cbShowFastPassword, SIGNAL(toggled(bool)), SLOT(setShowFastPassword(bool)));
-    connect(m_ui->cbShowTtlsPassword, SIGNAL(toggled(bool)), SLOT(setShowTtlsPassword(bool)));
-    connect(m_ui->cbShowPeapPassword, SIGNAL(toggled(bool)), SLOT(setShowPeapPassword(bool)));
+    connect(m_ui->cbShowMd5Password, &QCheckBox::toggled, this, &Security8021x::setShowMD5Password);
+    connect(m_ui->cbShowTlsPassword, &QCheckBox::toggled, this, &Security8021x::setShowTlsPrivateKeyPassword);
+    connect(m_ui->cbShowLeapPassword, &QCheckBox::toggled, this, &Security8021x::setShowLeapPassword);
+    connect(m_ui->cbShowFastPassword, &QCheckBox::toggled, this, &Security8021x::setShowFastPassword);
+    connect(m_ui->cbShowTtlsPassword, &QCheckBox::toggled, this, &Security8021x::setShowTtlsPassword);
+    connect(m_ui->cbShowPeapPassword, &QCheckBox::toggled, this, &Security8021x::setShowPeapPassword);
 
-    connect(m_ui->cbAskMd5Password, SIGNAL(toggled(bool)), m_ui->cbShowMd5Password, SLOT(setDisabled(bool)));
-    connect(m_ui->cbAskFastPassword, SIGNAL(toggled(bool)), m_ui->cbShowFastPassword, SLOT(setDisabled(bool)));
-    connect(m_ui->cbAskPeapPassword, SIGNAL(toggled(bool)), m_ui->cbShowPeapPassword, SLOT(setDisabled(bool)));
-    connect(m_ui->cbAskTtlsPassword, SIGNAL(toggled(bool)), m_ui->cbShowTtlsPassword, SLOT(setDisabled(bool)));
+    connect(m_ui->cbAskMd5Password, &QCheckBox::toggled, m_ui->cbShowMd5Password, &QCheckBox::setDisabled);
+    connect(m_ui->cbAskFastPassword, &QCheckBox::toggled, m_ui->cbShowFastPassword, &QCheckBox::setDisabled);
+    connect(m_ui->cbAskPeapPassword, &QCheckBox::toggled, m_ui->cbShowPeapPassword, &QCheckBox::setDisabled);
+    connect(m_ui->cbAskTtlsPassword, &QCheckBox::toggled, m_ui->cbShowTtlsPassword, &QCheckBox::setDisabled);
 
     if (wifiMode) {
         m_ui->auth->removeItem(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodMd5)); // MD 5
@@ -58,7 +58,7 @@ Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &se
     }
 
     KAcceleratorManager::manage(this);
-    connect(m_ui->stackedWidget, SIGNAL(currentChanged(int)), SLOT(currentAuthChanged(int)));
+    connect(m_ui->stackedWidget, &QStackedWidget::currentChanged, this, &Security8021x::currentAuthChanged);
 
     if (m_setting)
         loadConfig();

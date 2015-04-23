@@ -43,16 +43,16 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget* paren
     m_ui->type->addItem(i18n("Prefer 4G (LTE)"), NetworkManager::GsmSetting::Prefer4GLte);
     m_ui->type->addItem(i18n("4G Only (LTE)"), NetworkManager::GsmSetting::Only4GLte);
 
-    connect(m_ui->cbShowPasswords, SIGNAL(toggled(bool)), SLOT(showPasswords(bool)));
-    connect(m_ui->pinStorage, SIGNAL(currentIndexChanged(int)), SLOT(pinStorageChanged(int)));
-    connect(m_ui->passwordStorage, SIGNAL(currentIndexChanged(int)), SLOT(passwordStorageChanged(int)));
+    connect(m_ui->cbShowPasswords, &QCheckBox::toggled, this, &GsmWidget::showPasswords);
+    connect(m_ui->pinStorage, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &GsmWidget::pinStorageChanged);
+    connect(m_ui->passwordStorage, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &GsmWidget::passwordStorageChanged);
 
-    connect(m_ui->apn, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->password, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->pin, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->username, SIGNAL(textChanged(QString)), SLOT(slotWidgetChanged()));
-    connect(m_ui->passwordStorage, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
-    connect(m_ui->pinStorage, SIGNAL(currentIndexChanged(int)), SLOT(slotWidgetChanged()));
+    connect(m_ui->apn, &KLineEdit::textChanged, this, &GsmWidget::slotWidgetChanged);
+    connect(m_ui->password, &KLineEdit::textChanged, this, &GsmWidget::slotWidgetChanged);
+    connect(m_ui->pin, &KLineEdit::textChanged, this, &GsmWidget::slotWidgetChanged);
+    connect(m_ui->username, &KLineEdit::textChanged, this, &GsmWidget::slotWidgetChanged);
+    connect(m_ui->passwordStorage, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &GsmWidget::slotWidgetChanged);
+    connect(m_ui->pinStorage, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &GsmWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

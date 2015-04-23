@@ -141,7 +141,7 @@ void MobileConnectionWizard::initializePage(int id)
         break;
 
     case 3: // Plans Page
-        disconnect(mPlanComboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(slotEnablePlanEditBox(QString)));
+        disconnect(mPlanComboBox, static_cast<void (KComboBox::*)(const QString &)>(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
         mPlanComboBox->clear();
         if (type() != NetworkManager::ConnectionSettings::Gsm) {
             goto OUT_3;
@@ -170,7 +170,7 @@ void MobileConnectionWizard::initializePage(int id)
         mPlanComboBox->setCurrentIndex(0);
         slotEnablePlanEditBox(mPlanComboBox->currentText());
 OUT_3:
-        connect(mPlanComboBox, SIGNAL(currentIndexChanged(QString)), this, SLOT(slotEnablePlanEditBox(QString)));
+        connect(mPlanComboBox, static_cast<void (KComboBox::*)(const QString &)>(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
         break;
 
     case 4: // Confirm Page
@@ -277,12 +277,9 @@ QWizardPage * MobileConnectionWizard::createIntroPage()
         label->setBuddy(mDeviceComboBox);
         layout->addWidget(mDeviceComboBox);
 
-        QObject::connect(NetworkManager::notifier(), SIGNAL(deviceAdded(QString)),
-                         this, SLOT(introDeviceAdded(QString)));
-        QObject::connect(NetworkManager::notifier(), SIGNAL(deviceRemoved(QString)),
-                         this, SLOT(introDeviceRemoved(QString)));
-        QObject::connect(NetworkManager::notifier(), SIGNAL(statusChanged(NetworkManager::Status)),
-                         this, SLOT(introStatusChanged(NetworkManager::Status)));
+        connect(NetworkManager::notifier(), &NetworkManager::Notifier::deviceAdded, this, &MobileConnectionWizard::introDeviceAdded);
+        connect(NetworkManager::notifier(), &NetworkManager::Notifier::deviceRemoved, this, &MobileConnectionWizard::introDeviceRemoved);
+        connect(NetworkManager::notifier(), &NetworkManager::Notifier::statusChanged, this, &MobileConnectionWizard::introStatusChanged);
 
         introAddInitialDevices();
     }
@@ -445,17 +442,17 @@ QWizardPage * MobileConnectionWizard::createProvidersPage()
     layout->addWidget(radioAutoProvider);
 
     mProvidersList = new QListWidget();
-    connect(mProvidersList, SIGNAL(itemSelectionChanged()), this, SLOT(slotCheckProviderList()));
-    connect(mProvidersList, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(slotCheckProviderList()));
+    connect(mProvidersList, &QListWidget::itemSelectionChanged, this, &MobileConnectionWizard::slotCheckProviderList);
+    connect(mProvidersList, &QListWidget::itemClicked, this, &MobileConnectionWizard::slotCheckProviderList);
     layout->addWidget(mProvidersList);
 
     radioManualProvider = new QRadioButton(i18nc("Mobile Connection Wizard", "I cannot find my provider and I wish to enter it &manually:"));
     layout->addWidget(radioManualProvider);
-    connect(radioManualProvider, SIGNAL(toggled(bool)), this, SLOT(slotEnableProviderEdit(bool)));
+    connect(radioManualProvider, &QRadioButton::toggled, this, &MobileConnectionWizard::slotEnableProviderEdit);
 
     lineEditProvider = new KLineEdit();
     layout->addWidget(lineEditProvider);
-    connect(lineEditProvider, SIGNAL(textEdited(QString)), this, SLOT(slotCheckProviderEdit()));
+    connect(lineEditProvider, &KLineEdit::textEdited, this, &MobileConnectionWizard::slotCheckProviderEdit);
 
     page->setLayout(layout);
 

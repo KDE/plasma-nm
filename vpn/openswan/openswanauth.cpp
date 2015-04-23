@@ -38,7 +38,7 @@ OpenswanAuthDialog::OpenswanAuthDialog(const NetworkManager::VpnSetting::Ptr &se
     Q_D(OpenswanAuthDialog);
     d->ui.setupUi(this);
     d->setting = setting;
-    connect(d->ui.cbShowPasswords, SIGNAL(toggled(bool)), this, SLOT(showPasswordsChanged(bool)));
+    connect(d->ui.cbShowPasswords, &QCheckBox::toggled, this, &OpenswanAuthDialog::showPasswordsChanged);
 
     readSecrets();
 

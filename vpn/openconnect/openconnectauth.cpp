@@ -555,8 +555,8 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
         dialog.data()->setWindowModality(Qt::WindowModal);
         dialog->setLayout(new QVBoxLayout);
         QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
-        connect(buttons, &QDialogButtonBox::accepted, dialog, &QDialog::accept);
-        connect(buttons, &QDialogButtonBox::rejected, dialog, &QDialog::reject);
+        connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
+        connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
         dialog->layout()->addWidget(widget);
         dialog->layout()->addWidget(buttons);
         connect(dialog.data(), &QDialog::finished,

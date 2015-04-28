@@ -28,6 +28,8 @@
 #include <ModemManagerQt/manager.h>
 #endif
 
+#include <QObject>
+
 class BluetoothMonitor: public QObject
 {
 Q_OBJECT

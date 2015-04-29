@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QValidator>
 
-class SimpleIpV4AddressValidator : public QValidator
+class Q_DECL_EXPORT SimpleIpV4AddressValidator : public QValidator
 {
 public:
     explicit SimpleIpV4AddressValidator(QObject *parent);

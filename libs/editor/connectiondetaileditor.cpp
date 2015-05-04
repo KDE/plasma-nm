@@ -174,6 +174,8 @@ void ConnectionDetailEditor::initEditor()
                                 secretFlag == NetworkManager::Setting::AgentOwned) {
                                 requestSecrets = true;
                             }
+                        } else {
+                            requestSecrets = true;
                         }
                     }
                 }

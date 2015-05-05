@@ -304,22 +304,25 @@ void ConnectionDetailEditor::initTabs()
         m_ui->tabWidget->addTab(pppWidget, i18n("PPP"));
     }
 
-    // TODO virtual connections
-//     IPv4 widget
+    // IPv4 widget
     if (!m_connection->isSlave()) {
         IPv4Widget * ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Setting::Ipv4), this);
         m_ui->tabWidget->addTab(ipv4Widget, i18n("IPv4"));
     }
 
-    // TODO virtual connections
     // IPv6 widget
     if ((type == NetworkManager::ConnectionSettings::Wired
          || type == NetworkManager::ConnectionSettings::Wireless
          || type == NetworkManager::ConnectionSettings::Infiniband
          || type == NetworkManager::ConnectionSettings::Wimax
-    #if NM_CHECK_VERSION(0, 9, 10)
+#if NM_CHECK_VERSION(0, 9, 10)
          || type == NetworkManager::ConnectionSettings::Team
-     #endif
+#endif
+
+#if NM_CHECK_VERSION(1, 0, 0)
+         || type == NetworkManager::ConnectionSettings::Cdma
+         || type == NetworkManager::ConnectionSettings::Gsm
+#endif
          || type == NetworkManager::ConnectionSettings::Bond
          || type == NetworkManager::ConnectionSettings::Bridge
          || type == NetworkManager::ConnectionSettings::Vlan

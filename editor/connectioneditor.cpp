@@ -225,7 +225,7 @@ void ConnectionEditor::initializeMenu()
     kAction->setEnabled(false);
     connect(kAction, &QAction::triggered, this, &ConnectionEditor::exportVpn);
 
-    m_menuBarAction = KStandardAction::showMenubar(this, SLOT(slotShowMenuBar()), actionCollection());
+    KStandardAction::showMenubar(menuBar(), SLOT(setVisible(bool)), actionCollection());
     KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
     KStandardAction::quit(this, SLOT(close()), actionCollection());
     setupGUI(QSize(480, 480));
@@ -536,11 +536,6 @@ void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
             });
     editor->setModal(true);
     editor->show();
-}
-
-void ConnectionEditor::slotShowMenuBar()
-{
-    menuBar()->setVisible(m_menuBarAction->isChecked());
 }
 
 void ConnectionEditor::importSecretsFromPlainTextFiles()

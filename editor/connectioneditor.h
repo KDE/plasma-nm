@@ -29,7 +29,6 @@
 
 #include <KXmlGuiWindow>
 #include <KActionMenu>
-#include <KToggleAction>
 
 #include <NetworkManagerQt/Connection>
 
@@ -65,13 +64,11 @@ private Q_SLOTS:
     void slotContextMenuRequested(const QPoint& point);
     void slotSelectionChanged(const QModelIndex& index, const QModelIndex &previous);
     void slotItemDoubleClicked(const QModelIndex& index);
-    void slotShowMenuBar();
     
 private:
     Ui::ConnectionEditor * m_editor;
     Handler * m_handler;
     KActionMenu * m_menu;
-    KToggleAction *m_menuBarAction;
 
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void initializeMenu();

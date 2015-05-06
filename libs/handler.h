@@ -87,7 +87,9 @@ public Q_SLOTS:
     void enableBt(bool enable);
     void enableNetworking(bool enable);
     void enableWireless(bool enable);
+#if !NM_CHECK_VERSION(1, 2, 0)
     void enableWimax(bool enable);
+#endif
     void enableWwan(bool enable);
 
 //     /**
@@ -118,7 +120,9 @@ private Q_SLOTS:
 
 private:
     bool m_tmpBluetoothEnabled;
+#if !NM_CHECK_VERSION(1, 2, 0)
     bool m_tmpWimaxEnabled;
+#endif
     bool m_tmpWirelessEnabled;
     bool m_tmpWwanEnabled;
 #if WITH_MODEMMANAGER_SUPPORT

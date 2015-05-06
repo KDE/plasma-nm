@@ -57,7 +57,9 @@
 Handler::Handler(QObject* parent)
     : QObject(parent)
     , m_tmpBluetoothEnabled(isBtEnabled())
+#if !NM_CHECK_VERSION(1, 2, 0)
     , m_tmpWimaxEnabled(NetworkManager::isWimaxEnabled())
+#endif
     , m_tmpWirelessEnabled(NetworkManager::isWirelessEnabled())
     , m_tmpWwanEnabled(NetworkManager::isWwanEnabled())
     , m_agentIface(QStringLiteral("org.kde.kded5"), QStringLiteral("/modules/networkmanagement"),
@@ -280,20 +282,26 @@ void Handler::enableAirplaneMode(bool enable)
 {
     if (enable) {
         m_tmpBluetoothEnabled = isBtEnabled();
+#if !NM_CHECK_VERSION(1, 2, 0)
         m_tmpWimaxEnabled = NetworkManager::isWimaxEnabled();
+#endif
         m_tmpWirelessEnabled = NetworkManager::isWirelessEnabled();
         m_tmpWwanEnabled = NetworkManager::isWwanEnabled();
         enableBt(false);
+#if !NM_CHECK_VERSION(1, 2, 0)
         enableWimax(false);
+#endif
         enableWireless(false);
         enableWwan(false);
     } else {
         if (m_tmpBluetoothEnabled) {
             enableBt(true);
         }
+#if !NM_CHECK_VERSION(1, 2, 0)
         if (m_tmpWimaxEnabled) {
             enableWimax(true);
         }
+#endif
         if (m_tmpWirelessEnabled) {
             enableWireless(true);
         }
@@ -313,10 +321,12 @@ void Handler::enableWireless(bool enable)
     NetworkManager::setWirelessEnabled(enable);
 }
 
+#if !NM_CHECK_VERSION(1, 2, 0)
 void Handler::enableWimax(bool enable)
 {
     NetworkManager::setWimaxEnabled(enable);
 }
+#endif
 
 void Handler::enableWwan(bool enable)
 {

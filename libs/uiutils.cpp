@@ -488,6 +488,7 @@ QString UiUtils::convertLockReasonToString(MMModemLock reason)
 }
 #endif
 
+#if !NM_CHECK_VERSION(1, 2, 0)
 QString UiUtils::convertNspTypeToString(WimaxNsp::NetworkType type)
 {
     switch (type) {
@@ -499,6 +500,7 @@ QString UiUtils::convertNspTypeToString(WimaxNsp::NetworkType type)
 
     return i18nc("Unknown", "Unknown Wimax NSP type");
 }
+#endif
 
 NetworkManager::ModemDevice::Capability UiUtils::modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps)
 {

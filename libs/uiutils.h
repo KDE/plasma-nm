@@ -101,8 +101,9 @@ public:
     static QString convertLockReasonToString(MMModemLock reason);
 #endif
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
+#if !NM_CHECK_VERSION(1, 2, 0)
     static QString convertNspTypeToString(NetworkManager::WimaxNsp::NetworkType type);
-
+#endif
     static QString labelFromWirelessSecurity(NetworkManager::WirelessSecurityType type);
 
     static QString formatDateRelative(const QDateTime & lastUsed);

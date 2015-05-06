@@ -21,15 +21,15 @@
 
 #include "enabledconnections.h"
 
-#include <NetworkManagerQt/Manager>
-
 EnabledConnections::EnabledConnections(QObject* parent)
     : QObject(parent)
     , m_networkingEnabled(NetworkManager::isNetworkingEnabled())
     , m_wirelessEnabled(NetworkManager::isWirelessEnabled())
     , m_wirelessHwEnabled(NetworkManager::isWirelessHardwareEnabled())
+#if !NM_CHECK_VERSION(1, 2, 0)
     , m_wimaxEnabled(NetworkManager::isWimaxEnabled())
     , m_wimaxHwEnabled(NetworkManager::isWimaxHardwareEnabled())
+#endif
     , m_wwanEnabled(NetworkManager::isWwanEnabled())
     , m_wwanHwEnabled(NetworkManager::isWwanHardwareEnabled())
 {
@@ -39,10 +39,12 @@ EnabledConnections::EnabledConnections(QObject* parent)
             SLOT(onWirelessEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wirelessHardwareEnabledChanged(bool)),
             SLOT(onWirelessHwEnabled(bool)));
+#if !NM_CHECK_VERSION(1, 2, 0)
     connect(NetworkManager::notifier(), SIGNAL(wimaxEnabledChanged(bool)),
             SLOT(onWimaxEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wimaxHardwareEnabledChanged(bool)),
             SLOT(onWimaxHwEnabled(bool)));
+#endif
     connect(NetworkManager::notifier(), SIGNAL(wwanEnabledChanged(bool)),
             SLOT(onWwanEnabled(bool)));
     connect(NetworkManager::notifier(), SIGNAL(wwanHardwareEnabledChanged(bool)),
@@ -68,6 +70,7 @@ bool EnabledConnections::isWirelessHwEnabled() const
     return m_wirelessHwEnabled;
 }
 
+#if !NM_CHECK_VERSION(1, 2, 0)
 bool EnabledConnections::isWimaxEnabled() const
 {
     return m_wimaxEnabled;
@@ -77,6 +80,7 @@ bool EnabledConnections::isWimaxHwEnabled() const
 {
     return m_wimaxHwEnabled;
 }
+#endif
 
 bool EnabledConnections::isWwanEnabled() const
 {
@@ -106,6 +110,7 @@ void EnabledConnections::onWirelessHwEnabled(bool enabled)
     Q_EMIT wirelessHwEnabled(enabled);
 }
 
+#if !NM_CHECK_VERSION(1, 2, 0)
 void EnabledConnections::onWimaxEnabled(bool enabled)
 {
     m_wimaxEnabled = enabled;
@@ -117,6 +122,7 @@ void EnabledConnections::onWimaxHwEnabled(bool enabled)
     m_wimaxHwEnabled = enabled;
     Q_EMIT wimaxHwEnabled(enabled);
 }
+#endif
 
 void EnabledConnections::onWwanEnabled(bool enabled)
 {

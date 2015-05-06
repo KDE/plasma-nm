@@ -36,7 +36,9 @@
 #include <NetworkManagerQt/VlanDevice>
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/VpnSetting>
+#if !NM_CHECK_VERSION(1, 2, 0)
 #include <NetworkManagerQt/WimaxDevice>
+#endif
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
@@ -559,6 +561,7 @@ void NetworkModelItem::updateDetails()
             m_details << i18n("MAC Address") << bluetoothDevice->hardwareAddress();
 
         }
+#if !NM_CHECK_VERSION(1, 2, 0)
     } else if (m_type == NetworkManager::ConnectionSettings::Wimax) {
         NetworkManager::WimaxDevice::Ptr wimaxDevice = device.objectCast<NetworkManager::WimaxDevice>();
         if (wimaxDevice) {
@@ -571,6 +574,7 @@ void NetworkModelItem::updateDetails()
             m_details << i18n("Bsid") << wimaxDevice->bsid();
             m_details << i18n("MAC Address") << wimaxDevice->hardwareAddress();
         }
+#endif
     } else if (m_type == NetworkManager::ConnectionSettings::Infiniband) {
         NetworkManager::InfinibandDevice::Ptr infinibandDevice = device.objectCast<NetworkManager::InfinibandDevice>();
         m_details << i18n("Type") << i18n("Infiniband");

@@ -80,7 +80,7 @@ K_PLUGIN_FACTORY_WITH_JSON(OpenVpnUiPluginFactory, "plasmanetworkmanagement_open
 #define BEGIN_KEY_SECRET_TAG "<secret>"
 #define END_KEY_SECRET_TAG "</secret>"
 #define BEGIN_TLS_AUTH_TAG "<tls-auth>"
-#define END_TLS_AUTH_TAG "</tls_auth>"
+#define END_TLS_AUTH_TAG "</tls-auth>"
 
 #define PROC_TYPE_TAG "Proc-Type: 4,ENCRYPTED"
 #define PKCS8_TAG "-----BEGIN ENCRYPTED PRIVATE KEY-----"

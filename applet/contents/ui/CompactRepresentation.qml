@@ -34,6 +34,7 @@ MouseArea {
 
         anchors.fill: parent
         source: connectionIconProvider.connectionIcon
+        colorGroup: PlasmaCore.ColorScope.colorGroup
 
         PlasmaComponents.BusyIndicator {
             id: connectingIndicator

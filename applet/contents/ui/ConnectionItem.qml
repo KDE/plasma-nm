@@ -78,7 +78,11 @@ PlasmaComponents.ListItem {
             }
             elementId: ConnectionIcon
             height: units.iconSizes.medium; width: height
-            svg: PlasmaCore.Svg { multipleImages: true; imagePath: "icons/network" }
+            svg: PlasmaCore.Svg {
+                multipleImages: true
+                imagePath: "icons/network"
+                colorGroup: PlasmaCore.ColorScope.colorGroup
+            }
         }
 
         PlasmaComponents.Label {

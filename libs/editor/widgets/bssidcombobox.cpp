@@ -37,8 +37,8 @@ BssidComboBox::BssidComboBox(QWidget *parent) :
     setEditable(true);
     setInsertPolicy(QComboBox::NoInsert);
 
-    connect(this, &BssidComboBox::editTextChanged, this, &BssidComboBox::editTextChanged);
-    connect(this, static_cast<void (BssidComboBox::*)(int)>(&BssidComboBox::activated), this, &BssidComboBox::currentIndexChanged);
+    connect(this, &BssidComboBox::editTextChanged, this, &BssidComboBox::slotEditTextChanged);
+    connect(this, static_cast<void (BssidComboBox::*)(int)>(&BssidComboBox::activated), this, &BssidComboBox::slotCurrentIndexChanged);
 }
 
 QString BssidComboBox::bssid() const
@@ -63,13 +63,13 @@ bool BssidComboBox::isValid() const
     return NetworkManager::macAddressIsValid(bssid());
 }
 
-void BssidComboBox::editTextChanged(const QString &)
+void BssidComboBox::slotEditTextChanged(const QString &)
 {
     m_dirty = true;
     Q_EMIT bssidChanged();
 }
 
-void BssidComboBox::currentIndexChanged(int)
+void BssidComboBox::slotCurrentIndexChanged(int)
 {
     m_dirty = false;
     setEditText(bssid());

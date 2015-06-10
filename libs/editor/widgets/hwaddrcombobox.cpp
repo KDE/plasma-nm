@@ -40,8 +40,8 @@ HwAddrComboBox::HwAddrComboBox(QWidget *parent) :
     setEditable(true);
     setInsertPolicy(QComboBox::NoInsert);
 
-    connect(this, &HwAddrComboBox::editTextChanged, this, &HwAddrComboBox::editTextChanged);
-    connect(this, static_cast<void (HwAddrComboBox::*)(int)>(&HwAddrComboBox::currentIndexChanged), this, &HwAddrComboBox::currentIndexChanged);
+    connect(this, &HwAddrComboBox::editTextChanged, this, &HwAddrComboBox::slotEditTextChanged);
+    connect(this, static_cast<void (HwAddrComboBox::*)(int)>(&HwAddrComboBox::currentIndexChanged), this, &HwAddrComboBox::slotCurrentIndexChanged);
 }
 
 bool HwAddrComboBox::isValid() const
@@ -66,13 +66,13 @@ QString HwAddrComboBox::hwAddress() const
     return result;
 }
 
-void HwAddrComboBox::editTextChanged(const QString &)
+void HwAddrComboBox::slotEditTextChanged(const QString &)
 {
     m_dirty = true;
     Q_EMIT hwAddressChanged();
 }
 
-void HwAddrComboBox::currentIndexChanged(int)
+void HwAddrComboBox::slotCurrentIndexChanged(int)
 {
     m_dirty = false;
     Q_EMIT hwAddressChanged();

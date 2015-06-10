@@ -43,8 +43,8 @@ public Q_SLOTS:
     void init(const QString & bssid, const QString &ssid);
 
 private Q_SLOTS:
-    void editTextChanged(const QString &);
-    void currentIndexChanged(int);
+    void slotEditTextChanged(const QString &);
+    void slotCurrentIndexChanged(int);
 
 private:
     void addBssidsToCombo(const QList<NetworkManager::AccessPoint::Ptr> & aps);

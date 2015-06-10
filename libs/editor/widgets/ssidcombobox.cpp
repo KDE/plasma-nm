@@ -38,8 +38,8 @@ SsidComboBox::SsidComboBox(QWidget *parent) :
     setEditable(true);
     setInsertPolicy(QComboBox::NoInsert);
 
-    connect(this, &SsidComboBox::editTextChanged, this, &SsidComboBox::editTextChanged);
-    connect(this, static_cast<void (SsidComboBox::*)(int)>(&SsidComboBox::activated), this, &SsidComboBox::currentIndexChanged);
+    connect(this, &SsidComboBox::editTextChanged, this, &SsidComboBox::slotEditTextChanged);
+    connect(this, static_cast<void (SsidComboBox::*)(int)>(&SsidComboBox::activated), this, &SsidComboBox::slotCurrentIndexChanged);
 }
 
 QString SsidComboBox::ssid() const
@@ -55,13 +55,13 @@ QString SsidComboBox::ssid() const
     return result;
 }
 
-void SsidComboBox::editTextChanged(const QString &)
+void SsidComboBox::slotEditTextChanged(const QString &)
 {
     m_dirty = true;
     Q_EMIT ssidChanged();
 }
 
-void SsidComboBox::currentIndexChanged(int)
+void SsidComboBox::slotCurrentIndexChanged(int)
 {
     m_dirty = false;
     setEditText(ssid());

@@ -40,8 +40,8 @@ Q_SIGNALS:
     void hwAddressChanged();
 
 private Q_SLOTS:
-    void editTextChanged(const QString &);
-    void currentIndexChanged(int);
+    void slotEditTextChanged(const QString &);
+    void slotCurrentIndexChanged(int);
 
 private:
     void addAddressToCombo(const NetworkManager::Device::Ptr &device);

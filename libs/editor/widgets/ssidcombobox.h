@@ -40,8 +40,8 @@ Q_SIGNALS:
     void ssidChanged();
 
 private Q_SLOTS:
-    void editTextChanged(const QString &);
-    void currentIndexChanged(int);
+    void slotEditTextChanged(const QString &);
+    void slotCurrentIndexChanged(int);
 
 private:
     void addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::Ptr> &networks);

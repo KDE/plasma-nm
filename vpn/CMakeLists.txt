@@ -6,5 +6,7 @@ add_subdirectory(openvpn)
 add_subdirectory(openswan)
 add_subdirectory(pptp)
 add_subdirectory(ssh)
+add_subdirectory(sstp)
 add_subdirectory(strongswan)
 add_subdirectory(vpnc)
+

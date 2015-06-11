@@ -123,7 +123,6 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
         }
     }
 
-    QString longestSsid;
     bool empty = true;
 
     Q_FOREACH (const NetworkManager::WirelessNetwork::Ptr & network, networks) {
@@ -140,10 +139,6 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
                 }
                 empty = false;
 
-                if (network->ssid().length() > longestSsid.length()) {
-                    longestSsid = network->ssid();
-                }
-
                 NetworkManager::WirelessSecurityType security = NetworkManager::findBestWirelessSecurity(wifiDev->wirelessCapabilities(), true, (wifiDev->mode() == NetworkManager::WirelessDevice::Adhoc), accessPoint->capabilities(), accessPoint->wpaFlags(), accessPoint->rsnFlags());
                 if (security != NetworkManager::UnknownSecurity && security != NetworkManager::NoneSecurity) {
                     const QString text = i18n("%1 (%2%)\nSecurity: %3\nFrequency: %4 Mhz", accessPoint->ssid(), network->signalStrength(), UiUtils::labelFromWirelessSecurity(security), accessPoint->frequency());
@@ -155,7 +150,4 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
             }
         }
     }
-
-    QFontMetrics metrics(font());
-    setMinimumWidth(metrics.width(longestSsid));
 }

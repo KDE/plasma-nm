@@ -335,7 +335,11 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     }
 
     if (m_ui->chkRemoteCertTls->isChecked()) {
-        data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_CERT_TLS), m_ui->cmbRemoteCertTls->currentText().toLower());
+        if (m_ui->cmbRemoteCertTls->currentIndex() == 0) {
+            data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_CERT_TLS), QLatin1String("server"));
+        } else {
+            data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_CERT_TLS), QLatin1String("client"));
+        }
     }
 
     if (m_ui->useExtraTlsAuth->isChecked()) {

@@ -58,10 +58,6 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
     qDBusRegisterMetaType<NMStringMap>();
 
     d->ui.setupUi(this);
-    d->ui.x509CaFile->setMode(KFile::LocalOnly);
-    d->ui.x509Cert->setMode(KFile::LocalOnly);
-    d->ui.x509Key->setMode(KFile::LocalOnly);
-    d->ui.passCaFile->setMode(KFile::LocalOnly);
     d->setting = setting;
 
     // use requesters' urlSelected signals to set other requester's startDirs to save clicking

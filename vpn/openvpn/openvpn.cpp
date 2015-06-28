@@ -395,6 +395,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         }
         if (key_value[0] == CA_TAG && key_value.count() > 1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
+            if (key_value[1].trimmed() == QLatin1String("[inline]")) {
+                // No data or file to copy for now, it will be available later when we reach <ca> tag.
+                continue;
+            }
             if (copyCertificates) {
                 const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CA), absoluteFilePath);
@@ -405,6 +409,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         }
         if (key_value[0] == CERT_TAG && key_value.count() > 1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
+            if (key_value[1].trimmed() == QLatin1String("[inline]")) {
+                // No data or file to copy for now, it will be available later when we reach <cert> tag.
+                continue;
+            }
             if (copyCertificates) {
                 const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERT), absoluteFilePath);
@@ -415,6 +423,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         }
         if (key_value[0] == KEY_TAG && key_value.count() > 1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
+            if (key_value[1].trimmed() == QLatin1String("[inline]")) {
+                // No data or file to copy for now, it will be available later when we reach <key> tag.
+                continue;
+            }
             if (copyCertificates) {
                 const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_KEY), absoluteFilePath);
@@ -442,12 +454,17 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         }
         if (key_value[0] == TLS_AUTH_TAG && key_value.count() >1) {
             key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
-            if (copyCertificates) {
-                const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
-                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA), absoluteFilePath);
-            } else {
-                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA), unQuote(key_value[1], fileName));
+
+            // We will copy inline certificate later when we reach <tls-auth> tag.
+            if (key_value[1].trimmed() != QLatin1String("[inline]")) {
+                if (copyCertificates) {
+                    const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA), absoluteFilePath);
+                } else {
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA), unQuote(key_value[1], fileName));
+                }
             }
+
             if (key_value.count() > 2) {
                 key_value[2] = key_value[1];
                 if (!key_value[2].isEmpty() && (key_value[2].toLong() == 0 ||key_value[2].toLong() == 1)) {

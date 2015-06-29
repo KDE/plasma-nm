@@ -244,7 +244,7 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr& device)
                     SLOT(gsmNetworkSignalQualityChanged(uint)), Qt::UniqueConnection);
             connect(modemNetwork.data(), SIGNAL(accessTechnologyChanged(ModemManager::Modem::AccessTechnologies)),
                     SLOT(gsmNetworkAccessTechnologyChanged(ModemManager::Modem::AccessTechnologies)), Qt::UniqueConnection);
-            connect(modemNetwork.data(), SIGNAL(currentModesChanged()),
+            connect(modemNetwork.data(), SIGNAL(currentModesChanged(ModemManager::CurrentModesType)),
                     SLOT(gsmNetworkCurrentModesChanged()), Qt::UniqueConnection);
         }
     }

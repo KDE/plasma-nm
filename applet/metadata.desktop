@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Networks
 Name[ar]=شبكات
+Name[ast]=Redes
 Name[bs]=Mreže
 Name[ca]=Xarxes
 Name[cs]=Sítě
@@ -39,6 +40,7 @@ Name[zh_TW]=網路
 
 Comment=Network status and control
 Comment[ar]=تحكم وحالة الشبكة
+Comment[ast]=Estáu y control de rede
 Comment[bg]=Състояние и контрол на мрежата
 Comment[bs]=Kontrola i status mreže
 Comment[ca]=Control i estat de la xarxa

@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Plasma Networkmanagement module
 Name[ar]=وحدة إدارة الشبكات بلازما
+Name[ast]=Módulu de xestión de rede Plasma
 Name[bg]=Модул за настройка на мрежата
 Name[bs]=Plasma Networkmanagement režim
 Name[ca]=Mòdul de Plasma per a la Gestió de la xarxa
@@ -42,6 +43,7 @@ Name[zh_CN]=Plasma 网络管理模块
 Name[zh_TW]=Plasma 網路管理員模組
 Comment=Provides secrets to the NetworkManager daemon
 Comment[ar]=يوفِّر سرية لمراقب إدارة الشبكة
+Comment[ast]=Apurre secretos al degorriu NetworkManager
 Comment[bs]=Pruža tajne Upravljaču mreže daemon
 Comment[ca]=Proporciona secrets al dimoni NetworkManager
 Comment[ca@valencia]=Proporciona secrets al dimoni NetworkManager

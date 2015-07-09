@@ -2,6 +2,7 @@
 IconName=applications-internet
 Name=Network management
 Name[ar]=إدارة الشبكات
+Name[ast]=Xestión de rede
 Name[bs]=Upravljanje mrežom
 Name[ca]=Gestió de la xarxa
 Name[cs]=Správa sítě
@@ -40,6 +41,7 @@ Name[zh_CN]=网络管理
 Name[zh_TW]=網路管理
 Comment=Network management
 Comment[ar]=إدارة الشبكات
+Comment[ast]=Xestión de rede
 Comment[bs]=Upravljanje mrežom
 Comment[ca]=Gestió de la xarxa
 Comment[cs]=Správa sítě
@@ -80,6 +82,7 @@ Comment[zh_TW]=網路管理
 [Event/ConnectionActivated]
 Name=Connection activated
 Name[ar]=فُعِل الاتصال
+Name[ast]=Conexón activada
 Name[bs]=Konekcija aktivirana
 Name[ca]=Connexió activada
 Name[cs]=Spojení aktivováno
@@ -285,6 +288,7 @@ Action=None
 [Event/DeviceFailed]
 Name=Device failed
 Name[ar]=فشِل الجهاز
+Name[ast]=Falló'l preséu
 Name[bs]=Uređaj pao
 Name[ca]=El dispositiu ha fallat
 Name[cs]=Zařízení selhalo

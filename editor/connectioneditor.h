@@ -64,7 +64,7 @@ private Q_SLOTS:
     void slotContextMenuRequested(const QPoint& point);
     void slotSelectionChanged(const QModelIndex& index, const QModelIndex &previous);
     void slotItemDoubleClicked(const QModelIndex& index);
-    
+
 private:
     Ui::ConnectionEditor * m_editor;
     Handler * m_handler;

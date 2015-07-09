@@ -69,6 +69,33 @@ Security8021x::~Security8021x()
     delete m_ui;
 }
 
+void Security8021x::loadSecrets(const NetworkManager::Security8021xSetting::Ptr &setting)
+{
+    const QString password = setting->password();
+    const QList<NetworkManager::Security8021xSetting::EapMethod> eapMethods = m_setting->eapMethods();
+
+    if (!password.isEmpty()) {
+        if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodMd5)) {
+            m_ui->md5Password->setText(setting->password());
+        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodLeap)) {
+            m_ui->leapPassword->setText(setting->password());
+        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodFast)) {
+            m_ui->fastPassword->setText(setting->password());
+        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTtls)) {
+            m_ui->ttlsPassword->setText(setting->password());
+        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPeap)) {
+            m_ui->peapPassword->setText(setting->password());
+        }
+    }
+
+    if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTls)) {
+        const QString privateKeyPassword = setting->privateKeyPassword();
+        if (!privateKeyPassword.isEmpty()) {
+            m_ui->tlsPrivateKeyPassword->setText(setting->privateKeyPassword());
+        }
+    }
+}
+
 void Security8021x::loadConfig()
 {
     const QList<NetworkManager::Security8021xSetting::EapMethod> eapMethods = m_setting->eapMethods();
@@ -78,7 +105,6 @@ void Security8021x::loadConfig()
     if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodMd5)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodMd5));
         m_ui->md5UserName->setText(m_setting->identity());
-        m_ui->md5Password->setText(m_setting->password());
         m_ui->cbAskMd5Password->setChecked(notSavedPassword);
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTls)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodTls));
@@ -86,11 +112,9 @@ void Security8021x::loadConfig()
         m_ui->tlsUserCert->setUrl(QUrl::fromLocalFile(m_setting->clientCertificate()));
         m_ui->tlsCACert->setUrl(QUrl::fromLocalFile(m_setting->caCertificate()));
         m_ui->tlsPrivateKey->setUrl(QUrl::fromLocalFile(m_setting->privateKey()));
-        m_ui->tlsPrivateKeyPassword->setText(m_setting->privateKeyPassword());
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodLeap)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodLeap));
         m_ui->leapUsername->setText(m_setting->identity());
-        m_ui->leapPassword->setText(m_setting->password());
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodFast)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodFast));
         m_ui->fastAnonIdentity->setText(m_setting->anonymousIdentity());
@@ -102,7 +126,6 @@ void Security8021x::loadConfig()
         else
             m_ui->fastInnerAuth->setCurrentIndex(1);
         m_ui->fastUsername->setText(m_setting->identity());
-        m_ui->fastPassword->setText(m_setting->password());
         m_ui->cbAskFastPassword->setChecked(notSavedPassword);
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTtls)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodTtls));
@@ -117,7 +140,6 @@ void Security8021x::loadConfig()
         else if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodChap)
             m_ui->ttlsInnerAuth->setCurrentIndex(3);
         m_ui->ttlsUsername->setText(m_setting->identity());
-        m_ui->ttlsPassword->setText(m_setting->password());
         m_ui->cbAskTtlsPassword->setChecked(notSavedPassword);
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPeap)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodPeap));
@@ -131,9 +153,10 @@ void Security8021x::loadConfig()
         else if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodGtc)
             m_ui->peapInnerAuth->setCurrentIndex(2);
         m_ui->peapUsername->setText(m_setting->identity());
-        m_ui->peapPassword->setText(m_setting->password());
         m_ui->cbAskPeapPassword->setChecked(notSavedPassword);
     }
+
+    loadSecrets(m_setting);
 }
 
 QVariantMap Security8021x::setting(bool agentOwned) const

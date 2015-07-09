@@ -89,6 +89,8 @@ void ConnectionDetailEditor::initEditor()
 {
     enableOKButton(false);
 
+    initTabs();
+
     if (!m_new) {
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(m_connection->uuid());
         if (connection) {
@@ -184,16 +186,12 @@ void ConnectionDetailEditor::initEditor()
                     reply = connection->secrets(settingName);
                     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
                     watcher->setProperty("connection", connection->name());
+                    watcher->setProperty("settingName", settingName);
                     connect(watcher, &QDBusPendingCallWatcher::finished, this, &ConnectionDetailEditor::replyFinished);
-                } else {
-                   initTabs();
+                    enableOKButton(false);
                 }
-            } else {
-                initTabs();
             }
         }
-    } else {
-        initTabs();
     }
 
     if (m_connection->id().isEmpty()) {
@@ -410,12 +408,24 @@ NMVariantMapMap ConnectionDetailEditor::setting()
 void ConnectionDetailEditor::replyFinished(QDBusPendingCallWatcher *watcher)
 {
     QDBusPendingReply<NMVariantMapMap> reply = *watcher;
+    const QString settingName = watcher->property("settingName").toString();
     if (reply.isValid()) {
         NMVariantMapMap secrets = reply.argumentAt<0>();
         Q_FOREACH (const QString & key, secrets.keys()) {
-            NetworkManager::Setting::Ptr setting = m_connection->setting(NetworkManager::Setting::typeFromString(key));
-            if (setting) {
-                setting->secretsFromMap(secrets.value(key));
+            if (key == settingName) {
+                NetworkManager::Setting::Ptr setting = m_connection->setting(NetworkManager::Setting::typeFromString(key));
+                if (setting) {
+                    setting->secretsFromMap(secrets.value(key));
+                    for (int i = 1; i < m_ui->tabWidget->count(); ++i) {
+                        SettingWidget *widget = static_cast<SettingWidget*>(m_ui->tabWidget->widget(i));
+                        const QString type = widget->type();
+                        if (type == settingName ||
+                            (settingName == NetworkManager::Setting::typeAsString(NetworkManager::Setting::Security8021x) &&
+                             type == NetworkManager::Setting::typeAsString(NetworkManager::Setting::WirelessSecurity))) {
+                            widget->loadSecrets(setting);
+                        }
+                    }
+                }
             }
         }
     } else {
@@ -430,8 +440,8 @@ void ConnectionDetailEditor::replyFinished(QDBusPendingCallWatcher *watcher)
         connect(this, &ConnectionDetailEditor::rejected, notification, &KNotification::close);
     }
 
-    initTabs();
     watcher->deleteLater();
+    validChanged(true);
 }
 
 void ConnectionDetailEditor::validChanged(bool valid)

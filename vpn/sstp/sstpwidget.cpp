@@ -89,7 +89,6 @@ void SstpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     const QString yesString = QLatin1String("yes");
     const NMStringMap dataMap = d->setting->data();
-    const NMStringMap secrets = d->setting->secrets();
 
     // General
     const QString gateway = dataMap[QLatin1String(NM_SSTP_KEY_GATEWAY)];
@@ -105,9 +104,6 @@ void SstpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // Authentication
     const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_SSTP_KEY_PASSWORD_FLAGS].toInt();
-    if (type & NetworkManager::Setting::AgentOwned || type == NetworkManager::Setting::None) {
-        d->ui.le_password->setText(secrets[QLatin1String(NM_SSTP_KEY_PASSWORD)]);
-    }
     fillOnePasswordCombo(d->ui.cmb_passwordOption, type);
 
     const QString ntDomain = dataMap[QLatin1String(NM_SSTP_KEY_DOMAIN)];
@@ -197,6 +193,24 @@ void SstpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const QString proxyPassword = dataMap[QLatin1String(NM_SSTP_KEY_PROXY_PASSWORD)];
     if (!proxyPassword.isEmpty()) {
         d->advUi.le_password->setText(proxyPassword);
+    }
+
+    loadSecrets(setting);
+}
+
+void SstpSettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+    Q_D(SstpSettingWidget);
+
+    NetworkManager::VpnSetting::Ptr vpnSetting = setting.staticCast<NetworkManager::VpnSetting>();
+
+    if (vpnSetting) {
+        const NMStringMap secrets = vpnSetting->secrets();
+
+        const QString keyPassword = secrets.value(NM_SSTP_KEY_PASSWORD);
+        if (!keyPassword.isEmpty()) {
+            d->ui.le_password->setText(keyPassword);
+        }
     }
 }
 

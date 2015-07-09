@@ -35,7 +35,10 @@ class SstpSettingWidget : public SettingWidget
 public:
     explicit SstpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~SstpSettingWidget();
-    virtual void loadConfig(const NetworkManager::Setting::Ptr &setting);
+
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+
     virtual QVariantMap setting(bool agentOwned = false) const;
     virtual bool isValid() const;
 

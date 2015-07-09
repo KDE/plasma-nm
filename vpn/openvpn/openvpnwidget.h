@@ -41,7 +41,9 @@ public:
     explicit OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
     ~OpenVpnSettingWidget();
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+
     QVariantMap setting(bool agentOwned = false) const;
 
     virtual bool isValid() const;

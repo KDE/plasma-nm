@@ -38,6 +38,8 @@ public:
     virtual ~Security8021x();
     QVariantMap setting(bool agentOwned = false) const;
 
+    void loadSecrets(const NetworkManager::Security8021xSetting::Ptr &setting);
+
 private Q_SLOTS:
     void setShowMD5Password(bool on);
     void setShowTlsPrivateKeyPassword(bool on);

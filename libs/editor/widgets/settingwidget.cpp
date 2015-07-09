@@ -35,8 +35,9 @@ void SettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     Q_UNUSED(setting);
 }
 
-void SettingWidget::readSecrets()
+void SettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
 {
+    Q_UNUSED(setting);
 }
 
 QString SettingWidget::type() const

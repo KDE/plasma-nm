@@ -40,7 +40,8 @@ public:
     explicit VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~VpncWidget();
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
     QVariantMap setting(bool agentOwned = false) const;
 

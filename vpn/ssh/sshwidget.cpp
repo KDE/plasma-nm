@@ -108,7 +108,6 @@ void SshSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     Q_UNUSED(setting)
 
     const NMStringMap dataMap = d->setting->data();
-    const NMStringMap secrets = d->setting->secrets();
 
     // General
     const QString gateway = dataMap[QLatin1String(NM_SSH_KEY_REMOTE)];
@@ -160,9 +159,6 @@ void SshSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     } else if (sshAuthType == QLatin1String(NM_SSH_AUTH_TYPE_PASSWORD)) {
         d->ui.cmb_authType->setCurrentIndex(1);
         const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_SSH_KEY_PASSWORD"-flags"].toInt();
-        if (type & NetworkManager::Setting::AgentOwned || type == NetworkManager::Setting::None) {
-            d->ui.le_password->setText(secrets[QLatin1String(NM_SSH_KEY_PASSWORD)]);
-        }
         fillOnePasswordCombo(d->ui.cmb_passwordOption, type);
     } else if (sshAuthType == QLatin1String(NM_SSH_AUTH_TYPE_KEY)) {
         d->ui.cmb_authType->setCurrentIndex(2);
@@ -211,6 +207,23 @@ void SshSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     if (!doNotReplaceDefaultRoute.isEmpty()) {
         if (doNotReplaceDefaultRoute == QLatin1String("yes")) {
             d->advUi.chk_doNotReplaceDefaultRoute->setChecked(true);
+        }
+    }
+
+    loadSecrets(setting);
+}
+
+void SshSettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+    Q_D(SshSettingWidget);
+
+    NetworkManager::VpnSetting::Ptr vpnSetting = setting.staticCast<NetworkManager::VpnSetting>();
+
+    if (vpnSetting) {
+        const NMStringMap secrets = vpnSetting->secrets();
+        const QString keyPassword = secrets.value(NM_SSH_KEY_PASSWORD);
+        if (!keyPassword.isEmpty()) {
+            d->ui.le_password->setText(keyPassword);
         }
     }
 }

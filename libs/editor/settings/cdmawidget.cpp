@@ -55,14 +55,27 @@ void CdmaWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     if (!number.isEmpty())
         m_ui->number->setText(number);
     m_ui->username->setText(cdmaSetting->username());
-    if ((!cdmaSetting->password().isEmpty() && cdmaSetting->passwordFlags().testFlag(NetworkManager::Setting::None)) ||
+    if (cdmaSetting->passwordFlags().testFlag(NetworkManager::Setting::None) ||
         cdmaSetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
         m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
-        m_ui->password->setText(cdmaSetting->password());
     } else if (cdmaSetting->passwordFlags().testFlag(NetworkManager::Setting::NotSaved)) {
         m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
     } else {
         m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
+    }
+
+    loadSecrets(setting);
+}
+
+void CdmaWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+    NetworkManager::CdmaSetting::Ptr cdmaSetting = setting.staticCast<NetworkManager::CdmaSetting>();
+
+    if (cdmaSetting) {
+        const QString password = cdmaSetting->password();
+        if (!password.isEmpty()) {
+            m_ui->password->setText(password);
+        }
     }
 }
 

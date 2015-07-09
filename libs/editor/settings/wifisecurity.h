@@ -47,6 +47,8 @@ public:
                  QWidget* parent = 0, Qt::WindowFlags f = 0);
     virtual ~WifiSecurity();
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+
     QVariantMap setting(bool agentOwned = false) const Q_DECL_OVERRIDE;
     QVariantMap setting8021x(bool agentOwned = false) const;
 

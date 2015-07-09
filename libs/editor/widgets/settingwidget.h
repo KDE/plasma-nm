@@ -40,7 +40,7 @@ public:
     virtual ~SettingWidget();
 
     virtual void loadConfig(const NetworkManager::Setting::Ptr &setting);
-    virtual void readSecrets();
+    virtual void loadSecrets(const NetworkManager::Setting::Ptr &setting);
 
     virtual QVariantMap setting(bool agentOwned = false) const = 0;
     QString type() const;

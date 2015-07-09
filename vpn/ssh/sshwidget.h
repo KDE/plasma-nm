@@ -35,7 +35,10 @@ class SshSettingWidget : public SettingWidget
 public:
     explicit SshSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~SshSettingWidget();
-    virtual void loadConfig(const NetworkManager::Setting::Ptr &setting);
+
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+
     virtual QVariantMap setting(bool agentOwned = false) const;
     virtual bool isValid() const;
 

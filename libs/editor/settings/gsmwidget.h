@@ -40,6 +40,7 @@ public:
     virtual ~GsmWidget();
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
     QVariantMap setting(bool agentOwned = false) const Q_DECL_OVERRIDE;
 

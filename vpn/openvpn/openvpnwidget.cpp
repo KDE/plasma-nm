@@ -97,7 +97,6 @@ void OpenVpnSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
     // General settings
     const NMStringMap dataMap = d->setting->data();
     const QString cType = dataMap.value(NM_OPENVPN_KEY_CONNECTION_TYPE);
-    const NMStringMap secrets = d->setting->secrets();
 
     if ( cType == QLatin1String( NM_OPENVPN_CONTYPE_PASSWORD_TLS ) ) {
         d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::CertsPassword);
@@ -139,28 +138,36 @@ void OpenVpnSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
 
     if (cType == QLatin1String(NM_OPENVPN_CONTYPE_TLS)) {
         type = (NetworkManager::Setting::SecretFlags)dataMap[NM_OPENVPN_KEY_CERTPASS"-flags"].toInt();
-        if (!(type & NetworkManager::Setting::NotSaved || type & NetworkManager::Setting::NotRequired)) {
-            d->ui.x509KeyPassword->setText(secrets.value(NM_OPENVPN_KEY_CERTPASS));
-        }
         fillOnePasswordCombo(d->ui.x509KeyPasswordStorage, type);
     } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD)) {
         type = (NetworkManager::Setting::SecretFlags)dataMap[NM_OPENVPN_KEY_PASSWORD"-flags"].toInt();
-        if (!(type & NetworkManager::Setting::NotSaved || type & NetworkManager::Setting::NotRequired)) {
-            d->ui.passPassword->setText(secrets.value(NM_OPENVPN_KEY_PASSWORD));
-        }
         fillOnePasswordCombo(d->ui.passPasswordStorage, type);
     } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD_TLS)) {
         type = (NetworkManager::Setting::SecretFlags)dataMap[NM_OPENVPN_KEY_PASSWORD"-flags"].toInt();
-        if (!(type & NetworkManager::Setting::NotSaved || type & NetworkManager::Setting::NotRequired)) {
-            d->ui.x509PassPassword->setText(secrets.value(NM_OPENVPN_KEY_PASSWORD));
-        }
         fillOnePasswordCombo(d->ui.x509PassPasswordStorage, type);
-
         type = (NetworkManager::Setting::SecretFlags)dataMap[NM_OPENVPN_KEY_CERTPASS"-flags"].toInt();
-        if (!(type & NetworkManager::Setting::NotSaved || type & NetworkManager::Setting::NotRequired)) {
+        fillOnePasswordCombo(d->ui.x509PassKeyPasswordStorage, type);
+    }
+
+    loadSecrets(setting);
+}
+
+void OpenVpnSettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+    NetworkManager::VpnSetting::Ptr vpnSetting = setting.staticCast<NetworkManager::VpnSetting>();
+
+    if (vpnSetting) {
+        const QString cType = d->setting->data().value(NM_OPENVPN_KEY_CONNECTION_TYPE);
+        const NMStringMap secrets = vpnSetting->secrets();
+
+        if (cType == QLatin1String(NM_OPENVPN_CONTYPE_TLS)) {
+            d->ui.x509KeyPassword->setText(secrets.value(NM_OPENVPN_KEY_CERTPASS));
+        } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD)) {
+            d->ui.passPassword->setText(secrets.value(NM_OPENVPN_KEY_PASSWORD));
+        } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD_TLS)) {
+            d->ui.x509PassPassword->setText(secrets.value(NM_OPENVPN_KEY_PASSWORD));
             d->ui.x509PassKeyPassword->setText(secrets.value(NM_OPENVPN_KEY_CERTPASS));
         }
-        fillOnePasswordCombo(d->ui.x509PassKeyPasswordStorage, type);
     }
 }
 

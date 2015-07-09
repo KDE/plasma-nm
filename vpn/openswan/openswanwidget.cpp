@@ -60,7 +60,6 @@ void OpenswanWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     Q_UNUSED(setting);
 
     const NMStringMap data = m_setting->data();
-    const NMStringMap secrets = m_setting->secrets();
 
     const QString gateway = data.value(NM_OPENSWAN_RIGHT);
     if (!gateway.isEmpty()) {
@@ -70,16 +69,6 @@ void OpenswanWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const QString groupName = data.value(NM_OPENSWAN_LEFTID);
     if (!groupName.isEmpty()) {
         m_ui->groupname->setText(groupName);
-    }
-
-    const QString userPassword = secrets.value(NM_OPENSWAN_XAUTH_PASSWORD);
-    if (!userPassword.isEmpty()) {
-        m_ui->userPassword->setText(userPassword);
-    }
-
-    const QString groupPassword = secrets.value(NM_OPENSWAN_PSK_VALUE);
-    if (!groupPassword.isEmpty()) {
-        m_ui->groupPassword->setText(groupPassword);
     }
 
     const QString userPasswordMode = data.value(NM_OPENSWAN_XAUTH_PASSWORD_INPUT_MODES);
@@ -118,6 +107,27 @@ void OpenswanWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const QString domain = data.value(NM_OPENSWAN_DOMAIN);
     if (!domain.isEmpty()) {
         m_ui->domain->setText(domain);
+    }
+
+    loadSecrets(setting);
+}
+
+void OpenswanWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+    NetworkManager::VpnSetting::Ptr vpnSetting = setting.staticCast<NetworkManager::VpnSetting>();
+
+    if (vpnSetting) {
+        const NMStringMap secrets = vpnSetting->secrets();
+
+        const QString userPassword = secrets.value(NM_OPENSWAN_XAUTH_PASSWORD);
+        if (!userPassword.isEmpty()) {
+            m_ui->userPassword->setText(userPassword);
+        }
+
+        const QString groupPassword = secrets.value(NM_OPENSWAN_PSK_VALUE);
+        if (!groupPassword.isEmpty()) {
+            m_ui->groupPassword->setText(groupPassword);
+        }
     }
 }
 

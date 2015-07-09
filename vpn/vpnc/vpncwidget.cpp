@@ -71,7 +71,6 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     Q_UNUSED(setting);
 
     const NMStringMap data = m_setting->data();
-    const NMStringMap secrets = m_setting->secrets();
 
     const QString gateway = data.value(NM_VPNC_KEY_GATEWAY);
     if (!gateway.isEmpty()) {
@@ -81,11 +80,6 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const QString user = data.value(NM_VPNC_KEY_XAUTH_USER);
     if (!user.isEmpty()) {
         m_ui->user->setText(user);
-    }
-
-    const QString userPassword = secrets.value(NM_VPNC_KEY_XAUTH_PASSWORD);
-    if (!userPassword.isEmpty()) {
-        m_ui->userPassword->setText(userPassword);
     }
 
     const NetworkManager::Setting::SecretFlags userPassType =
@@ -103,11 +97,6 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         m_ui->group->setText(groupName);
     }
 
-    const QString groupPassword = secrets.value(NM_VPNC_KEY_SECRET);
-    if (!groupPassword.isEmpty()) {
-        m_ui->groupPassword->setText(groupPassword);
-    }
-
     const NetworkManager::Setting::SecretFlags groupPassType =
             static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_VPNC_KEY_SECRET"-flags").toInt());
     if (groupPassType.testFlag(NetworkManager::Setting::NotSaved)) {
@@ -121,6 +110,27 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     if (data.value(NM_VPNC_KEY_AUTHMODE) == QLatin1String("hybrid")) {
         m_ui->useHybridAuth->setChecked(true);
         m_ui->caFile->setUrl(QUrl::fromLocalFile(data.value(NM_VPNC_KEY_CA_FILE)));
+    }
+
+    loadSecrets(setting);
+}
+
+void VpncWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+    NetworkManager::VpnSetting::Ptr vpnSetting = setting.staticCast<NetworkManager::VpnSetting>();
+
+    if (vpnSetting) {
+        const NMStringMap secrets = vpnSetting->secrets();
+
+        const QString userPassword = secrets.value(NM_VPNC_KEY_XAUTH_PASSWORD);
+        if (!userPassword.isEmpty()) {
+            m_ui->userPassword->setText(userPassword);
+        }
+
+        const QString groupPassword = secrets.value(NM_VPNC_KEY_SECRET);
+        if (!groupPassword.isEmpty()) {
+            m_ui->groupPassword->setText(groupPassword);
+        }
     }
 }
 

@@ -62,6 +62,15 @@ void WiredSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
     }
 }
 
+void WiredSecurity::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+    NetworkManager::Security8021xSetting::Ptr securitySetting = setting.staticCast<NetworkManager::Security8021xSetting>();
+
+    if (securitySetting) {
+        m_8021xWidget->loadSecrets(securitySetting);
+    }
+}
+
 QVariantMap WiredSecurity::setting(bool agentOwned) const
 {
     if (m_ui->use8021X->isChecked())

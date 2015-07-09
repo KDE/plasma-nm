@@ -73,10 +73,9 @@ void GsmWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     if (!number.isEmpty())
         m_ui->number->setText(number);
     m_ui->username->setText(gsmSetting->username());
-    if ((!gsmSetting->password().isEmpty() && gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::None)) ||
+    if (gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::None) ||
         gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
         m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
-        m_ui->password->setText(gsmSetting->password());
     } else if (gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::NotSaved)) {
         m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
     } else {
@@ -87,14 +86,32 @@ void GsmWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     if (gsmSetting->networkType() != NetworkManager::GsmSetting::Any)
         m_ui->type->setCurrentIndex(m_ui->type->findData(static_cast<int>(gsmSetting->networkType())));
     m_ui->roaming->setChecked(!gsmSetting->homeOnly());
-    if ((!gsmSetting->pin().isEmpty() && gsmSetting->pinFlags() == NetworkManager::Setting::None) ||
+    if (gsmSetting->pinFlags() == NetworkManager::Setting::None ||
         gsmSetting->pinFlags() == NetworkManager::Setting::AgentOwned) {
         m_ui->pinStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
-        m_ui->pin->setText(gsmSetting->pin());
     } else if (gsmSetting->pinFlags() == NetworkManager::Setting::NotSaved) {
         m_ui->pinStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
     } else {
         m_ui->pinStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
+    }
+
+    loadSecrets(setting);
+}
+
+void GsmWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+    NetworkManager::GsmSetting::Ptr gsmSetting = setting.staticCast<NetworkManager::GsmSetting>();
+
+    if (gsmSetting) {
+        const QString password = gsmSetting->password();
+        if (!password.isEmpty()) {
+            m_ui->password->setText(password);
+        }
+
+        const QString pin = gsmSetting->pin();
+        if (!pin.isEmpty()) {
+            m_ui->pin->setText(pin);
+        }
     }
 }
 

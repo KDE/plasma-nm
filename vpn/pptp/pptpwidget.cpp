@@ -109,7 +109,6 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // General settings
     const NMStringMap dataMap = d->setting->data();
-    const NMStringMap secrets = d->setting->secrets();
 
     // Authentication
     const QString sGateway = dataMap[NM_PPTP_KEY_GATEWAY];
@@ -120,11 +119,6 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const QString sLogin = dataMap[NM_PPTP_KEY_USER];
     if (!sLogin.isEmpty()) {
         d->ui.edt_login->setText(sLogin);
-    }
-
-    const QString sPassword = secrets[NM_PPTP_KEY_PASSWORD];
-    if (!sPassword.isEmpty()) {
-        d->ui.edt_password->setText(sPassword);
     }
 
     const QString sDomain = dataMap[NM_PPTP_KEY_DOMAIN];
@@ -187,10 +181,24 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // secrets
     const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_PPTP_KEY_PASSWORD"-flags"].toInt();
-    if (type & NetworkManager::Setting::AgentOwned || type & NetworkManager::Setting::None || !type) {
-        d->ui.edt_password->setText(secrets.value(QLatin1String(NM_PPTP_KEY_PASSWORD)));
-    }
     fillOnePasswordCombo(d->ui.cmbPasswordStorage, type);
+
+    loadSecrets(setting);
+}
+
+void PptpSettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+    Q_D(PptpSettingWidget);
+
+    NetworkManager::VpnSetting::Ptr vpnSetting = setting.staticCast<NetworkManager::VpnSetting>();
+
+    if (vpnSetting) {
+        const NMStringMap secrets = vpnSetting->secrets();
+        const QString keyPassword = secrets.value(QLatin1String(NM_PPTP_KEY_PASSWORD));
+        if (!keyPassword.isEmpty()) {
+            d->ui.edt_password->setText(keyPassword);
+        }
+    }
 }
 
 QVariantMap PptpSettingWidget::setting(bool agentOwned) const

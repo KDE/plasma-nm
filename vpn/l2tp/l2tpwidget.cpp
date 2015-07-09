@@ -64,7 +64,6 @@ void L2tpWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     Q_UNUSED(setting);
 
     const NMStringMap data = m_setting->data();
-    const NMStringMap secrets = m_setting->secrets();
 
     const QString gateway = data.value(NM_L2TP_KEY_GATEWAY);
     if (!gateway.isEmpty()) {
@@ -74,11 +73,6 @@ void L2tpWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const QString user = data.value(NM_L2TP_KEY_USER);
     if (!user.isEmpty()) {
         m_ui->username->setText(user);
-    }
-
-    const QString userPassword = secrets.value(NM_L2TP_KEY_PASSWORD);
-    if (!userPassword.isEmpty()) {
-        m_ui->password->setText(userPassword);
     }
 
     const NetworkManager::Setting::SecretFlags userPassType = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_L2TP_KEY_PASSWORD"-flags").toInt());
@@ -93,6 +87,21 @@ void L2tpWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const QString domain = data.value(NM_L2TP_KEY_DOMAIN);
     if (!domain.isEmpty()) {
         m_ui->domain->setText(domain);
+    }
+
+    loadSecrets(setting);
+}
+
+void L2tpWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+    NetworkManager::VpnSetting::Ptr vpnSetting = setting.staticCast<NetworkManager::VpnSetting>();
+
+    if (vpnSetting) {
+        const NMStringMap secrets = vpnSetting->secrets();
+        const QString userPassword = secrets.value(NM_L2TP_KEY_PASSWORD);
+        if (!userPassword.isEmpty()) {
+            m_ui->password->setText(userPassword);
+        }
     }
 }
 

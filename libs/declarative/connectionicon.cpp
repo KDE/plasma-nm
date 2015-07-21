@@ -345,6 +345,12 @@ void ConnectionIcon::setIcons()
     }
 #endif
 
+    // Fallback: If we still don't have an active connection with default route, let's just take the first one.
+    //           This can happen when you have some virtual connection (bridge, bond, etc.)
+    if (!connection && !NetworkManager::activeConnections().isEmpty()) {
+        connection = NetworkManager::activeConnections().first();
+    }
+
     if (connection && !connection->devices().isEmpty()) {
         NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(connection->devices().first());
 

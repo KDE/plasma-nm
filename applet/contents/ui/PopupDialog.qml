@@ -65,6 +65,8 @@ FocusScope {
         ListView {
             id: connectionView
 
+            property int currentVisibleButtonIndex: -1
+
             anchors.fill: parent
             clip: true
             model: appletProxyModel
@@ -74,5 +76,10 @@ FocusScope {
             section.delegate: Header { text: section }
             delegate: ConnectionItem { }
         }
+    }
+
+    Connections {
+        target: plasmoid
+        onExpandedChanged: connectionView.currentVisibleButtonIndex = -1
     }
 }

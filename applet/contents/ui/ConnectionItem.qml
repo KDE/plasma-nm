@@ -139,7 +139,7 @@ PlasmaComponents.ListItem {
                 rightMargin: Math.round(units.gridUnit / 2)
                 verticalCenter: connectionSvgIcon.verticalCenter
             }
-            opacity: connectionItem.containsMouse ? 1 : 0
+            opacity: connectionView.currentVisibleButtonIndex == index ? 1 : 0
             visible: opacity != 0
             text: (ConnectionState == PlasmaNM.Enums.Deactivated) ? i18n("Connect") : i18n("Disconnect")
 
@@ -414,6 +414,12 @@ PlasmaComponents.ListItem {
 
         if (!visibleDetails) {
             ListView.view.currentIndex = -1;
+        }
+    }
+
+    onContainsMouseChanged: {
+        if (connectionItem.containsMouse) {
+            connectionView.currentVisibleButtonIndex = index
         }
     }
 }

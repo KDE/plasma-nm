@@ -348,7 +348,16 @@ void ConnectionIcon::setIcons()
     // Fallback: If we still don't have an active connection with default route, let's just take the first one.
     //           This can happen when you have some virtual connection (bridge, bond, etc.)
     if (!connection && !NetworkManager::activeConnections().isEmpty()) {
+#if NM_CHECK_VERSION(0, 9, 10)
+    const NetworkManager::ConnectionSettings::ConnectionType type = NetworkManager::activeConnections().first()->type();
+    if (type >= NetworkManager::ConnectionSettings::Adsl && type <= NetworkManager::ConnectionSettings::Team) {
         connection = NetworkManager::activeConnections().first();
+    }
+#else
+    connection = NetworkManager::activeConnections().first();
+#endif
+
+
     }
 
     if (connection && !connection->devices().isEmpty()) {

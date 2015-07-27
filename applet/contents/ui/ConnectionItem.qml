@@ -516,6 +516,10 @@ PlasmaComponents.ListItem {
         }
     }
 
+    /*
+     * Stolen from the system monitor applet
+     * from plasma-workspace/applets/systemmonitor/common/contents/ui/DoublePlotter.qml
+     */
     function cycle(color, degrees) {
         var min = Math.min(color.r, Math.min(color.g, color.b));
         var max = Math.max(color.r, Math.max(color.g, color.b));

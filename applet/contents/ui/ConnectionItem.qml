@@ -20,9 +20,10 @@
 
 import QtQuick 2.2
 import org.kde.kcoreaddons 1.0 as KCoreAddons
-import org.kde.kquickcontrolsaddons 2.0
+import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 PlasmaComponents.ListItem {
@@ -42,7 +43,7 @@ PlasmaComponents.ListItem {
     property bool visibleDetails: false
     property bool visiblePasswordDialog: false
 
-    checked: ListView.isCurrentItem
+    checked: connectionItem.containsMouse
     enabled: true
     height: expanded ? baseHeight + expandableComponentLoader.height + Math.round(units.gridUnit / 3) : baseHeight
 
@@ -178,6 +179,35 @@ PlasmaComponents.ListItem {
                 svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
             }
 
+            PlasmaComponents.TabBar {
+                id: detailsTabBar;
+
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    top: detailsSeparator.bottom
+                    topMargin: Math.round(units.gridUnit / 3)
+                }
+                height: visible ? implicitHeight : 0
+                visible: showSpeed && dataSource.data && dataSource.data[dataSource.downloadSource] && dataSource.data[dataSource.uploadSource]
+
+                PlasmaComponents.TabButton {
+                    id: speedTabButton;
+                    text: i18n("Speed");
+                }
+
+                PlasmaComponents.TabButton {
+                    id: detailsTabButton;
+                    text: i18n("Details");
+                }
+
+                Component.onCompleted: {
+                    if (!speedTabButton.visible) {
+                        currentTab = detailsTabButton;
+                    }
+                }
+            }
+
             Column {
                 id: details
 
@@ -185,9 +215,11 @@ PlasmaComponents.ListItem {
                     left: parent.left
                     leftMargin: units.iconSizes.medium
                     right: parent.right
-                    top: detailsSeparator.bottom
+                    top: detailsTabBar.visible ? detailsTabBar.bottom : detailsSeparator.bottom
                     topMargin: Math.round(units.gridUnit / 3)
                 }
+                height: childrenRect.height
+                visible: detailsTabBar.currentTab == detailsTabButton;
 
                 Repeater {
                     id: repeater
@@ -220,7 +252,7 @@ PlasmaComponents.ListItem {
 
                             Component.onCompleted: {
                                 if (paintedWidth > repeater.longestString) {
-                                    repeater.longestString = paintedWidth;
+                                    repeater.longestString = paintedWidth
                                 }
                             }
                         }
@@ -239,6 +271,89 @@ PlasmaComponents.ListItem {
                             opacity: 0.6
                             text: ConnectionDetails[(index*2)+1]
                             textFormat: Text.PlainText
+                        }
+                    }
+                }
+            }
+
+            Item {
+                id: trafficMonitor
+
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    top: detailsTabBar.visible ? detailsTabBar.bottom : detailsSeparator.bottom
+                    topMargin: Math.round(units.gridUnit / 3)
+                }
+                height: visible? plotter.height + Math.round(units.gridUnit / 3) : 0
+                visible: detailsTabBar.currentTab == speedTabButton
+
+                Repeater {
+                    model: 5
+
+                    PlasmaComponents.Label {
+                        anchors {
+                            left: parent.left
+                            top: parent.top
+                            topMargin: Math.round(units.gridUnit / 3) + (index * plotter.height / 5)
+                        }
+                        height: paintedHeight
+                        font.pointSize: theme.smallestFont.pointSize
+                        text: KCoreAddons.Format.formatByteSize((plotter.maxValue * 1024) / (index + 1))
+                    }
+                }
+
+                KQuickControlsAddons.Plotter {
+                    id: plotter
+
+                    property int maxValue: 0
+                    anchors {
+                        left: parent.left
+                        leftMargin: units.iconSizes.medium
+                        right: parent.right
+                        top: parent.top
+                        topMargin: Math.round(units.gridUnit / 2)
+                    }
+                    width: units.gridUnit * 20
+                    height: units.gridUnit * 8
+                    horizontalGridLineCount: 5
+
+                    dataSets: [
+                        KQuickControlsAddons.PlotData {
+                            label: i18n("Download")
+                            color: theme.highlightColor
+
+                            onValuesChanged: {
+                                var maxValue = 0
+                                for (var i = 0; i < values.length; ++i) {
+                                    if (maxValue < values[i]) {
+                                        maxValue = values[i]
+                                    }
+                                }
+
+                                plotter.maxValue = maxValue
+                            }
+                        },
+                        KQuickControlsAddons.PlotData {
+                            label: i18n("Upload")
+                            color: cycle(theme.highlightColor, -180)
+                        }
+                    ]
+
+                    Connections {
+                        target: dataSource;
+                        onNewData: {
+                            if (sourceName.indexOf("network/interfaces/" + DeviceName) != 0) {
+                                return;
+                            }
+                            var rx = dataSource.data[dataSource.downloadSource];
+                            var tx = dataSource.data[dataSource.uploadSource];
+                            if (rx === undefined || rx.value === undefined ||
+                                tx === undefined || tx.value === undefined) {
+                                return;
+                            }
+
+                            plotter.addSample([rx.value, tx.value]);
                         }
                     }
                 }
@@ -390,8 +505,10 @@ PlasmaComponents.ListItem {
             return result;
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
             if (showSpeed && dataSource.data && dataSource.data[dataSource.downloadSource] && dataSource.data[dataSource.uploadSource]) {
-                return i18n("Connected, ⬇ %1/s, ⬆ %2/s",
+                return i18n("Connected, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s",
+                            theme.highlightColor,
                             KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.downloadSource].value * 1024 || 0),
+                            cycle(theme.highlightColor, -180),
                             KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.uploadSource].value * 1024 || 0));
             } else {
                 return i18n("Connected");
@@ -399,10 +516,26 @@ PlasmaComponents.ListItem {
         }
     }
 
-    onStateChanged: {
-        if (state == "expandedPasswordDialog" || state == "expandedDetails") {
-            ListView.view.currentIndex = index;
+    function cycle(color, degrees) {
+        var min = Math.min(color.r, Math.min(color.g, color.b));
+        var max = Math.max(color.r, Math.max(color.g, color.b));
+        var c = max - min;
+        var h;
+
+        if (c == 0) {
+            h = 0
+        } else if (max == color.r) {
+            h = ((color.g - color.b) / c) % 6;
+        } else if (max == color.g) {
+            h = ((color.b - color.r) / c) + 2;
+        } else if (max == color.b) {
+            h = ((color.r - color.g) / c) + 4;
         }
+        var hue = (1/6) * h + (degrees/360);
+        var saturation = c / (1 - Math.abs(2 * ((max+min)/2) - 1));
+        var lightness = (max + min)/3;
+
+        return Qt.hsla(hue, saturation, lightness, 1.0);
     }
 
     onClicked: {

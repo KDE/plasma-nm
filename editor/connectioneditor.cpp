@@ -73,6 +73,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     m_editor->connectionsWidget->setSortingEnabled(false);
     m_editor->connectionsWidget->sortByColumn(0, Qt::AscendingOrder);
     m_editor->connectionsWidget->setSortingEnabled(true);
+    m_editor->connectionsWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
     m_editor->connectionsWidget->setContextMenuPolicy(Qt::CustomContextMenu);
 
     m_editor->messageWidget->hide();
@@ -96,7 +97,7 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
         grp2.writeEntry("FirstStart", false);
     }
 
-    connect(m_editor->connectionsWidget->selectionModel(), &QItemSelectionModel::currentChanged, this, &ConnectionEditor::slotSelectionChanged);
+    connect(m_editor->connectionsWidget->selectionModel(), &QItemSelectionModel::selectionChanged, this, &ConnectionEditor::slotSelectionChanged);
     connect(m_editor->connectionsWidget, &QTreeView::doubleClicked, this, &ConnectionEditor::slotItemDoubleClicked);
     connect(m_editor->connectionsWidget, &QTreeView::customContextMenuRequested, this, &ConnectionEditor::slotContextMenuRequested);
     connect(m_menu->menu(), &QMenu::triggered, this, static_cast<void (ConnectionEditor::*)(QAction*)>(&ConnectionEditor::addConnection));
@@ -388,7 +389,7 @@ void ConnectionEditor::dataChanged(const QModelIndex& topLeft, const QModelIndex
             QModelIndex index = m_editor->connectionsWidget->model()->index(i, 0);
             if (index.isValid() && index == currentIndex) {
                 // Re-check enabled/disabled actions
-                slotSelectionChanged(currentIndex, currentIndex);
+                slotSelectionChanged();
                 break;
             }
         }
@@ -433,28 +434,50 @@ void ConnectionEditor::initializeConnections()
 
 void ConnectionEditor::removeConnection()
 {
-    const QModelIndex currentIndex = m_editor->connectionsWidget->currentIndex();
+    QModelIndexList selected = m_editor->connectionsWidget->selectionModel()->selectedRows();
 
-    if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
-        return;
-    }
+    QList<NetworkManager::Connection::Ptr> connections;
+    QString connectionNames = QString("\n");
+    bool removeConnections;
 
-    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentIndex.data(NetworkModel::UuidRole).toString());
+    Q_FOREACH( const QModelIndex& currentIndex, selected ) {
 
-    if (!connection) {
-        return;
-    }
-
-    if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->name()), i18n("Remove Connection"), KStandardGuiItem::remove(),
-                                   KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
-            == KMessageBox::Yes) {
-        Q_FOREACH (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
-            NetworkManager::ConnectionSettings::Ptr settings = con->settings();
-            if (settings->master() == connection->uuid()) {
-                m_handler->removeConnection(con->path());
-            }
+        if (!currentIndex.isValid() || currentIndex.parent().isValid()) {
+            return;
         }
-        m_handler->removeConnection(connection->path());
+
+        NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(currentIndex.data(NetworkModel::UuidRole).toString());
+
+        if (connection) {
+            connections.append(connection);
+            connectionNames.append(QString("• %1\n").arg(connection->name()));
+        }
+    }
+
+    connectionNames = connectionNames.remove(connectionNames.size()-1,1);
+
+    if (connections.size() == 1) {
+        removeConnections = KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connectionNames), i18n("Remove Connection"),
+                                   KStandardGuiItem::remove(), KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
+        == KMessageBox::Yes;
+    } else if (connections.size() > 1) {
+        removeConnections = KMessageBox::questionYesNo(this, i18n("Do you want to remove the following connections: %1", connectionNames), i18n("Remove Connections"),
+                                                       KStandardGuiItem::remove(), KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
+        == KMessageBox::Yes;
+    }
+
+    Q_FOREACH( NetworkManager::Connection::Ptr connection, connections ) {
+
+        if (removeConnections) {
+            Q_FOREACH (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
+                NetworkManager::ConnectionSettings::Ptr settings = con->settings();
+                if (settings->master() == connection->uuid()) {
+                    m_handler->removeConnection(con->path());
+                }
+            }
+            m_handler->removeConnection(connection->path());
+        }
+
     }
 }
 
@@ -476,35 +499,35 @@ void ConnectionEditor::slotContextMenuRequested(const QPoint&)
     menu->exec(QCursor::pos());
 }
 
-void ConnectionEditor::slotSelectionChanged(const QModelIndex &index, const QModelIndex &previous)
+void ConnectionEditor::slotSelectionChanged()
 {
-    Q_UNUSED(previous);
+    QModelIndexList selected = m_editor->connectionsWidget->selectionModel()->selectedRows();
 
-    if (!index.isValid()) {
-        return;
-    }
+    bool singleSelection = (selected.size() == 1);
 
     //qCDebug(PLASMA_NM) << "Clicked item" << index.data(NetworkModel::UuidRole).toString();
 
-    if (index.parent().isValid()) { // category
+    if (selected.size() >= 1) {                       //connection
+        QModelIndex index = selected.at(0);
+
+        const bool isActive = (NetworkManager::ActiveConnection::State)index.data(NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+        const bool isActivating = (NetworkManager::ActiveConnection::State)index.data(NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activating;
+        const bool isAvailable = (NetworkModelItem::ItemType)index.data(NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::AvailableConnection;
+
+        actionCollection()->action("connect_connection")->setEnabled(singleSelection && isAvailable && !isActive && !isActivating);
+        actionCollection()->action("disconnect_connection")->setEnabled(singleSelection && isAvailable && (isActive || isActivating));
+        actionCollection()->action("edit_connection")->setEnabled(singleSelection);
+        actionCollection()->action("delete_connection")->setEnabled(true);
+        const bool isVpn = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(index.data(NetworkModel::TypeRole).toUInt()) ==
+                        NetworkManager::ConnectionSettings::Vpn;
+        actionCollection()->action("export_vpn")->setEnabled(singleSelection && isVpn);
+    } else { // category
         actionCollection()->action("connect_connection")->setEnabled(false);
         actionCollection()->action("disconnect_connection")->setEnabled(false);
         actionCollection()->action("edit_connection")->setEnabled(false);
         actionCollection()->action("delete_connection")->setEnabled(false);
         actionCollection()->action("export_vpn")->setEnabled(false);
         actionCollection()->action("export_vpn")->setEnabled(false);
-    } else {                       //connection
-        const bool isActive = (NetworkManager::ActiveConnection::State)index.data(NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
-        const bool isActivating = (NetworkManager::ActiveConnection::State)index.data(NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activating;
-        const bool isAvailable = (NetworkModelItem::ItemType)index.data(NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::AvailableConnection;
-
-        actionCollection()->action("connect_connection")->setEnabled(isAvailable && !isActive && !isActivating);
-        actionCollection()->action("disconnect_connection")->setEnabled(isAvailable && (isActive || isActivating));
-        actionCollection()->action("edit_connection")->setEnabled(true);
-        actionCollection()->action("delete_connection")->setEnabled(true);
-        const bool isVpn = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(index.data(NetworkModel::TypeRole).toUInt()) ==
-                           NetworkManager::ConnectionSettings::Vpn;
-        actionCollection()->action("export_vpn")->setEnabled(isVpn);
     }
 }
 

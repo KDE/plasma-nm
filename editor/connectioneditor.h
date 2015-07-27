@@ -26,6 +26,7 @@
 
 #include <QMenu>
 #include <QModelIndex>
+#include <QItemSelection>
 
 #include <KXmlGuiWindow>
 #include <KActionMenu>
@@ -62,7 +63,7 @@ private Q_SLOTS:
     void initializeConnections();
     void removeConnection();
     void slotContextMenuRequested(const QPoint& point);
-    void slotSelectionChanged(const QModelIndex& index, const QModelIndex &previous);
+    void slotSelectionChanged();
     void slotItemDoubleClicked(const QModelIndex& index);
 
 private:

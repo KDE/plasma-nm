@@ -6,7 +6,6 @@ set(plasmanm_qml_plugins_SRCS
    enabledconnections.cpp
    enums.cpp
    networkstatus.cpp
-#    trafficmonitor.cpp
    qmlplugins.cpp
 )
 

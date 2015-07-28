@@ -41,6 +41,15 @@ Item {
         focus: true
     }
 
+    function action_openEditor() {
+        handler.openEditor()
+    }
+
+    Component.onCompleted: {
+        plasmoid.removeAction("configure");
+        plasmoid.setAction("openEditor", i18n("&Configure Network Connections..."), "preferences-system-network");
+    }
+
     PlasmaNM.NetworkStatus {
         id: networkStatus
     }

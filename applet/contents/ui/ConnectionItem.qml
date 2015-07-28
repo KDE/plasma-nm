@@ -544,13 +544,15 @@ PlasmaComponents.ListItem {
 
     onClicked: {
         if (visiblePasswordDialog) {
-            visiblePasswordDialog = false;
+            visiblePasswordDialog = false
         } else {
-            visibleDetails = !visibleDetails;
+            visibleDetails = !visibleDetails
         }
 
-        if (!visibleDetails) {
-            ListView.view.currentIndex = -1;
+        if (visibleDetails || visiblePasswordDialog) {
+            ListView.view.currentIndex = index
+        } else {
+            ListView.view.currentIndex = -1
         }
     }
 

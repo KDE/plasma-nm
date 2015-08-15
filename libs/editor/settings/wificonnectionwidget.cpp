@@ -128,6 +128,11 @@ void WifiConnectionWidget::generateRandomClonedMac()
         int random = qrand() % 255;
         mac[i] = random;
     }
+
+    // Disable the multicast bit and enable the locally administered bit.
+    mac[0] = mac[0] & ~0x1;
+    mac[0] = mac[0] |  0x2;
+
     m_ui->clonedMacAddress->setText(NetworkManager::macAddressAsString(mac));
 }
 

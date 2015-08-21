@@ -34,6 +34,8 @@ else()
 endif()
 
 add_library(kded_networkmanagement MODULE ${kded_networkmanagement_SRCS})
+set_target_properties(kded_networkmanagement PROPERTIES OUTPUT_NAME networkmanagement)
+kcoreaddons_desktop_to_json(kded_networkmanagement networkmanagement.desktop)
 
 target_link_libraries(kded_networkmanagement
     plasmanm_internal
@@ -59,7 +61,6 @@ if (WITH_MODEMMANAGER_SUPPORT)
     target_link_libraries(kded_networkmanagement KF5::ModemManagerQt)
 endif()
 
-install(TARGETS kded_networkmanagement DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS kded_networkmanagement DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/kded)
 
-install(FILES networkmanagement.desktop DESTINATION ${SERVICES_INSTALL_DIR}/kded)
 install(FILES networkmanagement.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})

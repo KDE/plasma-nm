@@ -35,7 +35,9 @@
 #include <QDBusConnectionInterface>
 #include <QDBusReply>
 
-K_PLUGIN_FACTORY(NetworkManagementServiceFactory, registerPlugin<NetworkManagementService>();)
+K_PLUGIN_FACTORY_WITH_JSON(NetworkManagementServiceFactory,
+                           "networkmanagement.json",
+                           registerPlugin<NetworkManagementService>();)
 
 class NetworkManagementServicePrivate
 {

@@ -50,7 +50,6 @@ public:
 private Q_SLOTS:
     void userPasswordTypeChanged(int index);
     void groupPasswordTypeChanged(int index);
-    void showPasswords(bool show);
     void showAdvanced();
 
 private:

@@ -38,7 +38,6 @@ SstpAuthWidget::SstpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, Q
     Q_D(SstpAuthWidget);
     d->setting = setting;
     d->ui.setupUi(this);
-    connect(d->ui.chk_showPassword, &QCheckBox::toggled, this, &SstpAuthWidget::showPasswordsChanged);
 
     KAcceleratorManager::manage(this);
 }
@@ -62,14 +61,4 @@ QVariantMap SstpAuthWidget::setting(bool agentOwned) const
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
     return secretData;
-}
-
-void SstpAuthWidget::showPasswordsChanged(bool show)
-{
-    Q_D(SstpAuthWidget);
-    if (show) {
-        d->ui.le_password->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->ui.le_password->setEchoMode(QLineEdit::Password);
-    }
 }

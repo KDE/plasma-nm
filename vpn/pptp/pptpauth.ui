@@ -45,14 +45,14 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="1">
-    <widget class="QCheckBox" name="chkShowPassword">
-     <property name="text">
-      <string>Show password</string>
+   <item row="0" column="1">
+    <widget class="PasswordField" name="lePassword">
+     <property name="passwordMode">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
+   <item row="1" column="1">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -65,21 +65,20 @@
      </property>
     </spacer>
    </item>
-   <item row="0" column="1">
-    <widget class="QLineEdit" name="lePassword">
-     <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <tabstops>
   <tabstop>lePassword</tabstop>
-  <tabstop>chkShowPassword</tabstop>
  </tabstops>
  <resources/>
  <connections/>
+ <customwidgets>
+  <customwidget>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header>passwordfield.h</header>
+  </customwidget>
+ </customwidgets>
 </ui>

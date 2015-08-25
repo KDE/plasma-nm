@@ -29,7 +29,6 @@ CdmaWidget::CdmaWidget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 {
     m_ui->setupUi(this);
 
-    connect(m_ui->cbShowPassword, &QCheckBox::toggled, this, &CdmaWidget::showPassword);
     connect(m_ui->passwordStorage, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &CdmaWidget::passwordStorageChanged);
 
     connect(m_ui->number, &KLineEdit::textChanged, this, &CdmaWidget::slotWidgetChanged);
@@ -102,10 +101,6 @@ QVariantMap CdmaWidget::setting(bool agentOwned) const
     return cdmaSetting.toMap();
 }
 
-void CdmaWidget::showPassword(bool show)
-{
-    m_ui->password->setPasswordMode(!show);
-}
 
 void CdmaWidget::passwordStorageChanged(int index)
 {

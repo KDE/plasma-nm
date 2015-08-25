@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2015 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,35 +18,23 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_SECURITY8021X_H
-#define PLASMA_NM_SECURITY8021X_H
+#ifndef PLASMA_NM_PASSWORD_FIELD_H
+#define PLASMA_NM_PASSWORD_FIELD_H
 
-#include <QWidget>
+#include <KLineEdit>
 
-#include <NetworkManagerQt/Security8021xSetting>
-
-namespace Ui
-{
-class Security8021x;
-}
-
-class Security8021x: public QWidget
+class Q_DECL_EXPORT PasswordField : public KLineEdit
 {
     Q_OBJECT
 public:
-    Security8021x(const NetworkManager::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent = 0);
-    virtual ~Security8021x();
-    QVariantMap setting(bool agentOwned = false) const;
-
-    void loadSecrets(const NetworkManager::Security8021xSetting::Ptr &setting);
+    explicit PasswordField(QWidget *parent = 0);
 
 private Q_SLOTS:
-    void currentAuthChanged(int index);
+    void showToggleEchoModeAction(const QString &text);
+    void toggleEchoMode();
 
 private:
-    void loadConfig();
-    NetworkManager::Security8021xSetting::Ptr m_setting;
-    Ui::Security8021x * m_ui;
+    QAction *toggleEchoModeAction;
 };
 
-#endif // SECURITY8021X_H
+#endif // PLASMA_NM_PASSWORD_FIELD_H

@@ -43,9 +43,6 @@ public:
 public Q_SLOTS:
     void setVisible(bool);
 
-private Q_SLOTS:
-    void showPasswordsChanged(bool show);
-
 private:
     StrongswanAuthWidgetPrivate * const d_ptr;
     void acceptDialog();

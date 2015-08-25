@@ -44,9 +44,9 @@
    <item row="2" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLineEdit" name="userPassword">
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
+      <widget class="PasswordField" name="userPassword">
+       <property name="passwordMode">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -81,9 +81,9 @@
    <item row="3" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QLineEdit" name="groupPassword">
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
+      <widget class="PasswordField" name="groupPassword">
+       <property name="passwordMode">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -109,13 +109,6 @@
     </layout>
    </item>
    <item row="4" column="1">
-    <widget class="QCheckBox" name="ckShowPasswords">
-     <property name="text">
-      <string>Show passwords</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="1">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -128,48 +121,55 @@
      </property>
     </spacer>
    </item>
-   <item row="6" column="0">
+   <item row="5" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
       <string>User name:</string>
      </property>
     </widget>
    </item>
-   <item row="6" column="1">
+   <item row="5" column="1">
     <widget class="QLineEdit" name="username"/>
    </item>
-   <item row="7" column="0">
+   <item row="6" column="0">
     <widget class="QLabel" name="label_6">
      <property name="text">
       <string>Phase1 algorithms:</string>
      </property>
     </widget>
    </item>
-   <item row="7" column="1">
+   <item row="6" column="1">
     <widget class="QLineEdit" name="phase1"/>
    </item>
-   <item row="8" column="0">
+   <item row="7" column="0">
     <widget class="QLabel" name="label_7">
      <property name="text">
       <string>Phase2 algorithms:</string>
      </property>
     </widget>
    </item>
-   <item row="8" column="1">
+   <item row="7" column="1">
     <widget class="QLineEdit" name="phase2"/>
    </item>
-   <item row="9" column="0">
+   <item row="8" column="0">
     <widget class="QLabel" name="label_8">
      <property name="text">
       <string>Domain:</string>
      </property>
     </widget>
    </item>
-   <item row="9" column="1">
+   <item row="8" column="1">
     <widget class="QLineEdit" name="domain"/>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header>passwordfield.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>gateway</tabstop>
   <tabstop>groupname</tabstop>
@@ -177,7 +177,6 @@
   <tabstop>cbUsernamePasswordMode</tabstop>
   <tabstop>groupPassword</tabstop>
   <tabstop>cbGroupPasswordMode</tabstop>
-  <tabstop>ckShowPasswords</tabstop>
   <tabstop>username</tabstop>
   <tabstop>phase1</tabstop>
   <tabstop>phase2</tabstop>

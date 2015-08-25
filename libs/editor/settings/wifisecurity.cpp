@@ -38,11 +38,6 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
     m_ui->stackedWidget->insertWidget(5, m_WPA2Widget);
 
     connect(m_ui->securityCombo, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::securityChanged);
-
-    connect(m_ui->cbShowWepKey, &QCheckBox::toggled, this, &WifiSecurity::slotShowWepKeyPasswordChecked);
-    connect(m_ui->cbShowLeapPassword, &QCheckBox::toggled, this, &WifiSecurity::slotShowLeapPasswordChecked);
-    connect(m_ui->cbShowPsk, &QCheckBox::toggled, this, &WifiSecurity::slotShowPskPasswordChecked);
-
     connect(m_ui->wepIndex, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::setWepKey);
 
     connect(m_ui->wepKey, &KLineEdit::textChanged, this, &WifiSecurity::slotWidgetChanged);
@@ -272,19 +267,4 @@ void WifiSecurity::securityChanged(int index)
     }
 
     KAcceleratorManager::manage(m_ui->stackedWidget->currentWidget());
-}
-
-void WifiSecurity::slotShowWepKeyPasswordChecked(bool checked)
-{
-    m_ui->wepKey->setPasswordMode(!checked);
-}
-
-void WifiSecurity::slotShowLeapPasswordChecked(bool checked)
-{
-    m_ui->leapPassword->setPasswordMode(!checked);
-}
-
-void WifiSecurity::slotShowPskPasswordChecked(bool checked)
-{
-    m_ui->psk->setPasswordMode(!checked);
 }

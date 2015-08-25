@@ -39,9 +39,6 @@ public:
     virtual void readSecrets();
     virtual QVariantMap setting(bool agentOwned = false) const;
 
-private Q_SLOTS:
-    void showPasswordsChanged(bool);
-
 private:
     VpncAuthDialogPrivate * const d_ptr;
 };

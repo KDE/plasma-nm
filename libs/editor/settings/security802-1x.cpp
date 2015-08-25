@@ -37,18 +37,6 @@ Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &se
     m_ui->auth->setItemData(4, NetworkManager::Security8021xSetting::EapMethodTtls);
     m_ui->auth->setItemData(5, NetworkManager::Security8021xSetting::EapMethodPeap);
 
-    connect(m_ui->cbShowMd5Password, &QCheckBox::toggled, this, &Security8021x::setShowMD5Password);
-    connect(m_ui->cbShowTlsPassword, &QCheckBox::toggled, this, &Security8021x::setShowTlsPrivateKeyPassword);
-    connect(m_ui->cbShowLeapPassword, &QCheckBox::toggled, this, &Security8021x::setShowLeapPassword);
-    connect(m_ui->cbShowFastPassword, &QCheckBox::toggled, this, &Security8021x::setShowFastPassword);
-    connect(m_ui->cbShowTtlsPassword, &QCheckBox::toggled, this, &Security8021x::setShowTtlsPassword);
-    connect(m_ui->cbShowPeapPassword, &QCheckBox::toggled, this, &Security8021x::setShowPeapPassword);
-
-    connect(m_ui->cbAskMd5Password, &QCheckBox::toggled, m_ui->cbShowMd5Password, &QCheckBox::setDisabled);
-    connect(m_ui->cbAskFastPassword, &QCheckBox::toggled, m_ui->cbShowFastPassword, &QCheckBox::setDisabled);
-    connect(m_ui->cbAskPeapPassword, &QCheckBox::toggled, m_ui->cbShowPeapPassword, &QCheckBox::setDisabled);
-    connect(m_ui->cbAskTtlsPassword, &QCheckBox::toggled, m_ui->cbShowTtlsPassword, &QCheckBox::setDisabled);
-
     if (wifiMode) {
         m_ui->auth->removeItem(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodMd5)); // MD 5
         m_ui->stackedWidget->removeWidget(m_ui->md5Page);
@@ -277,36 +265,6 @@ QVariantMap Security8021x::setting(bool agentOwned) const
     }
 
     return setting.toMap();
-}
-
-void Security8021x::setShowMD5Password(bool on)
-{
-    m_ui->md5Password->setPasswordMode(!on);
-}
-
-void Security8021x::setShowTlsPrivateKeyPassword(bool on)
-{
-    m_ui->tlsPrivateKeyPassword->setPasswordMode(!on);
-}
-
-void Security8021x::setShowLeapPassword(bool on)
-{
-    m_ui->leapPassword->setPasswordMode(!on);
-}
-
-void Security8021x::setShowFastPassword(bool on)
-{
-    m_ui->fastPassword->setPasswordMode(!on);
-}
-
-void Security8021x::setShowTtlsPassword(bool on)
-{
-    m_ui->ttlsPassword->setPasswordMode(!on);
-}
-
-void Security8021x::setShowPeapPassword(bool on)
-{
-    m_ui->peapPassword->setPasswordMode(!on);
 }
 
 void Security8021x::currentAuthChanged(int index)

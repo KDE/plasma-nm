@@ -38,7 +38,6 @@ OpenswanAuthDialog::OpenswanAuthDialog(const NetworkManager::VpnSetting::Ptr &se
     Q_D(OpenswanAuthDialog);
     d->ui.setupUi(this);
     d->setting = setting;
-    connect(d->ui.cbShowPasswords, &QCheckBox::toggled, this, &OpenswanAuthDialog::showPasswordsChanged);
 
     readSecrets();
 
@@ -105,16 +104,4 @@ QVariantMap OpenswanAuthDialog::setting(bool agentOwned) const
     result.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
 
     return result;
-}
-
-void OpenswanAuthDialog::showPasswordsChanged(bool show)
-{
-    Q_D(OpenswanAuthDialog);
-    if (show) {
-        d->ui.leUserPassword->setEchoMode(QLineEdit::Normal);
-        d->ui.leGroupPassword->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->ui.leUserPassword->setEchoMode(QLineEdit::Password);
-        d->ui.leGroupPassword->setEchoMode(QLineEdit::Password);
-    }
 }

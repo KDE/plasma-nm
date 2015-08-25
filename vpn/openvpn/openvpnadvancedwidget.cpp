@@ -66,7 +66,6 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     d->setting = setting;
 
     connect(m_ui->proxyPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyPasswordStorageChanged);
-    connect(m_ui->chkProxyShowPassword, &QCheckBox::toggled, this, &OpenVpnAdvancedWidget::proxyPasswordToggled);
     connect(m_ui->cmbProxyType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyTypeChanged);
 
     // start openVPN process and get its cipher list
@@ -385,15 +384,6 @@ void OpenVpnAdvancedWidget::proxyPasswordStorageChanged(int index)
     setPasswordType(m_ui->proxyPassword, index);
 }
 
-void OpenVpnAdvancedWidget::proxyPasswordToggled(bool show)
-{
-    if (show) {
-        m_ui->proxyPassword->setEchoMode(QLineEdit::Normal);
-    } else {
-        m_ui->proxyPassword->setEchoMode(QLineEdit::Password);
-    }
-}
-
 void OpenVpnAdvancedWidget::proxyTypeChanged(int type)
 {
     switch (type) {
@@ -404,7 +394,6 @@ void OpenVpnAdvancedWidget::proxyTypeChanged(int type)
         m_ui->proxyUsername->setEnabled(false);
         m_ui->proxyPassword->setEnabled(false);
         m_ui->proxyPasswordStorage->setEnabled(false);
-        m_ui->chkProxyShowPassword->setEnabled(false);
         break;
     case Private::EnumProxyType::HTTP:
         m_ui->proxyServerAddress->setEnabled(true);
@@ -413,7 +402,6 @@ void OpenVpnAdvancedWidget::proxyTypeChanged(int type)
         m_ui->proxyUsername->setEnabled(true);
         m_ui->proxyPasswordStorage->setEnabled(true);
         setPasswordType(m_ui->proxyPassword, m_ui->proxyPasswordStorage->currentIndex());
-        m_ui->chkProxyShowPassword->setEnabled(true);
         break;
     case Private::EnumProxyType::SOCKS:
         m_ui->proxyServerAddress->setEnabled(true);
@@ -422,7 +410,6 @@ void OpenVpnAdvancedWidget::proxyTypeChanged(int type)
         m_ui->proxyUsername->setEnabled(false);
         m_ui->proxyPassword->setEnabled(false);
         m_ui->proxyPasswordStorage->setEnabled(false);
-        m_ui->chkProxyShowPassword->setEnabled(false);
         break;
     }
 }

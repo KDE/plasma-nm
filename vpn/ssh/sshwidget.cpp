@@ -54,7 +54,6 @@ SshSettingWidget::SshSettingWidget(const NetworkManager::VpnSetting::Ptr &settin
     connect(d->ui.cmb_authType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &SshSettingWidget::authTypeChanged);
     connect(d->ui.btn_advancedOption, &QPushButton::clicked, this, &SshSettingWidget::doAdvancedDialog);
     connect(d->ui.cmb_passwordOption, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &SshSettingWidget::passwordTypeChanged);
-    connect(d->ui.chk_showPassword, &QCheckBox::toggled, this, &SshSettingWidget::setShowPassword);
 
     d->advancedDlg = new QDialog(this);
     d->advancedDlg->setModal(true);
@@ -347,16 +346,6 @@ void SshSettingWidget::passwordTypeChanged(int index)
 {
     Q_D(SshSettingWidget);
     d->ui.le_password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
-}
-
-void SshSettingWidget::setShowPassword(bool show)
-{
-    Q_D(SshSettingWidget);
-    if (show) {
-        d->ui.le_password->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->ui.le_password->setEchoMode(QLineEdit::Password);
-    }
 }
 
 void SshSettingWidget::fillOnePasswordCombo(QComboBox *combo, NetworkManager::Setting::SecretFlags type)

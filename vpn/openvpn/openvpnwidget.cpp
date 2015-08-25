@@ -73,7 +73,6 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
     connect(d->ui.passPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnSettingWidget::passPasswordStorageChanged);
     connect(d->ui.x509PassKeyPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnSettingWidget::x509PassKeyPasswordStorageChanged);
     connect(d->ui.x509PassPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnSettingWidget::x509PassPasswordStorageChanged);
-    connect(d->ui.chkShowPasswords, &QCheckBox::toggled, this, &OpenVpnSettingWidget::showPasswordsToggled);
     connect(d->ui.btnAdvanced, &QPushButton::clicked, this, &OpenVpnSettingWidget::showAdvanced);
 
     connect(d->ui.gateway, &QLineEdit::textChanged, this, &OpenVpnSettingWidget::slotWidgetChanged);
@@ -323,21 +322,6 @@ uint OpenVpnSettingWidget::handleOnePasswordType(const QComboBox * combo, const 
         break;
     }
     return type;
-}
-
-void OpenVpnSettingWidget::showPasswordsToggled(bool show)
-{
-    if (show) {
-        d->ui.x509KeyPassword->setEchoMode(QLineEdit::Normal);
-        d->ui.passPassword->setEchoMode(QLineEdit::Normal);
-        d->ui.x509PassKeyPassword->setEchoMode(QLineEdit::Normal);
-        d->ui.x509PassPassword->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->ui.x509KeyPassword->setEchoMode(QLineEdit::Password);
-        d->ui.passPassword->setEchoMode(QLineEdit::Password);
-        d->ui.x509PassKeyPassword->setEchoMode(QLineEdit::Password);
-        d->ui.x509PassPassword->setEchoMode(QLineEdit::Password);
-    }
 }
 
 void OpenVpnSettingWidget::showAdvanced()

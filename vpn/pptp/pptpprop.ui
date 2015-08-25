@@ -116,12 +116,12 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="edt_password">
+           <widget class="PasswordField" name="edt_password">
             <property name="enabled">
              <bool>true</bool>
             </property>
-            <property name="echoMode">
-             <enum>QLineEdit::Password</enum>
+            <property name="passwordMode">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -147,13 +147,6 @@
          </layout>
         </item>
         <item>
-         <widget class="QCheckBox" name="cb_showPassword">
-          <property name="text">
-           <string>Show password</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <item>
            <widget class="QLabel" name="lbl_ntdomain">
@@ -170,7 +163,7 @@
              </size>
             </property>
             <property name="text">
-             <string>NT Do&amp;main:</string>
+             <string>NT Domain:</string>
             </property>
             <property name="buddy">
              <cstring>edt_ntDomain</cstring>
@@ -233,12 +226,18 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header>passwordfield.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>edt_gateway</tabstop>
   <tabstop>edt_login</tabstop>
   <tabstop>edt_password</tabstop>
   <tabstop>cmbPasswordStorage</tabstop>
-  <tabstop>cb_showPassword</tabstop>
   <tabstop>edt_ntDomain</tabstop>
   <tabstop>btnAdvanced</tabstop>
  </tabstops>

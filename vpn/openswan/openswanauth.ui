@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="groupNameLabel">
      <property name="text">
-      <string>Group na&amp;me:</string>
+      <string>Group name:</string>
      </property>
      <property name="wordWrap">
       <bool>false</bool>
@@ -48,10 +48,10 @@
     </widget>
    </item>
    <item row="1" column="1">
-    <widget class="QLineEdit" name="leUserPassword">
-     <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
-     </property>
+    <widget class="PasswordField" name="leUserPassword">
+     <property name="passwordMode">
+        <bool>true</bool>
+       </property>
     </widget>
    </item>
    <item row="2" column="0">
@@ -68,24 +68,21 @@
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="QLineEdit" name="leGroupPassword">
-     <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QCheckBox" name="cbShowPasswords">
-     <property name="text">
-      <string>Show passwords</string>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
+    <widget class="PasswordField" name="leGroupPassword">
+     <property name="passwordMode">
+        <bool>true</bool>
+       </property>
     </widget>
    </item>
   </layout>
  </widget>
  <resources/>
  <connections/>
+ <customwidgets>
+  <customwidget>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header>passwordfield.h</header>
+  </customwidget>
+ </customwidgets>
 </ui>

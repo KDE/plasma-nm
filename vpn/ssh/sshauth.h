@@ -37,9 +37,6 @@ public:
 
     virtual QVariantMap setting(bool agentOwned = false) const;
 
-private Q_SLOTS:
-    void showPasswordsChanged(bool show);
-
 private:
     SshAuthWidgetPrivate * const d_ptr;
     void acceptDialog();

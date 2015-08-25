@@ -46,7 +46,6 @@ public:
 private Q_SLOTS:
     void doAdvancedDialog();
     void passwordTypeChanged(int);
-    void setShowPassword(bool);
 
 private:
     PptpSettingWidgetPrivate * const d_ptr;

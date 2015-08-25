@@ -46,7 +46,6 @@ private Q_SLOTS:
     void authTypeChanged(int index);
     void doAdvancedDialog();
     void passwordTypeChanged(int index);
-    void setShowPassword(bool show);
 
 private:
     SshSettingWidgetPrivate * const d_ptr;

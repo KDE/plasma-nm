@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>490</width>
-    <height>420</height>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -144,9 +144,9 @@
           <item row="2" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <widget class="QLineEdit" name="lePrivateKeyPassword">
-              <property name="echoMode">
-               <enum>QLineEdit::Password</enum>
+             <widget class="PasswordField" name="lePrivateKeyPassword">
+              <property name="passwordMode">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -214,9 +214,9 @@
           <item row="0" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
-             <widget class="QLineEdit" name="lePin">
-              <property name="echoMode">
-               <enum>QLineEdit::Password</enum>
+             <widget class="PasswordField" name="lePin">
+              <property name="passwordMode">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -257,7 +257,7 @@
           <item row="0" column="0">
            <widget class="QLabel" name="label_5">
             <property name="text">
-             <string>&amp;Username:</string>
+             <string>Username:</string>
             </property>
             <property name="buddy">
              <cstring>leUserName</cstring>
@@ -274,7 +274,11 @@
           <item row="1" column="1">
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
-             <widget class="QLineEdit" name="leUserPassword"/>
+             <widget class="PasswordField" name="leUserPassword">
+              <property name="passwordMode">
+               <bool>true</bool>
+              </property>
+             </widget>
             </item>
             <item>
              <widget class="QComboBox" name="cboUserPassOptions">
@@ -300,7 +304,7 @@
           <item row="1" column="0">
            <widget class="QLabel" name="label_2">
             <property name="text">
-             <string>User &amp;Password</string>
+             <string>User Password</string>
             </property>
             <property name="buddy">
              <cstring>leUserPassword</cstring>
@@ -309,16 +313,6 @@
           </item>
          </layout>
         </widget>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="cbShowPasswords">
-        <property name="text">
-         <string>Show passwords</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
        </widget>
       </item>
      </layout>
@@ -384,6 +378,11 @@
    <class>KUrlRequester</class>
    <extends>QWidget</extends>
    <header>kurlrequester.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header>passwordfield.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

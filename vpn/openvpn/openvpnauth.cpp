@@ -20,16 +20,17 @@
 */
 
 #include "openvpnauth.h"
+#include "passwordfield.h"
 
 #include <QString>
 #include <QFormLayout>
 #include <QLabel>
 #include <QCheckBox>
-#include <QLineEdit>
 
 #include <KLocalizedString>
 
 #include "nm-openvpn-service.h"
+#include "debug.h"
 
 class OpenVpnAuthWidgetPrivate
 {
@@ -64,7 +65,7 @@ void OpenVpnAuthWidget::readSecrets()
     const NMStringMap dataMap = d->setting->data();
     const QString cType = dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE];
     QLabel *label;
-    QLineEdit *lineEdit;
+    PasswordField *lineEdit;
 
     NetworkManager::Setting::SecretFlags certType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_CERTPASS"-flags").toInt();
     NetworkManager::Setting::SecretFlags passType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_PASSWORD"-flags").toInt();
@@ -73,16 +74,16 @@ void OpenVpnAuthWidget::readSecrets()
     if (cType == QLatin1String(NM_OPENVPN_CONTYPE_TLS) && !(certType.testFlag(NetworkManager::Setting::NotRequired))) {
         label = new QLabel(this);
         label->setText(i18n("Key Password:"));
-        lineEdit = new QLineEdit(this);
-        lineEdit->setEchoMode(QLineEdit::Password);
+        lineEdit = new PasswordField(this);
+        lineEdit->setPasswordMode(true);
         lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_CERTPASS));
         lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_CERTPASS)));
         d->layout->addRow(label, lineEdit);
     } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD) && !(passType.testFlag(NetworkManager::Setting::NotRequired))) {
         label = new QLabel(this);
         label->setText(i18n("Password:"));
-        lineEdit = new QLineEdit(this);
-        lineEdit->setEchoMode(QLineEdit::Password);
+        lineEdit = new PasswordField(this);
+        lineEdit->setPasswordMode(true);
         lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_PASSWORD));
         lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)));
         d->layout->addRow(label, lineEdit);
@@ -90,8 +91,8 @@ void OpenVpnAuthWidget::readSecrets()
         if (!(passType.testFlag(NetworkManager::Setting::NotRequired))) {
             label = new QLabel(this);
             label->setText(i18n("Password:"));
-            lineEdit = new QLineEdit(this);
-            lineEdit->setEchoMode(QLineEdit::Password);
+            lineEdit = new PasswordField(this);
+            lineEdit->setPasswordMode(true);
             lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_PASSWORD));
             lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)));
             d->layout->addRow(label, lineEdit);
@@ -99,8 +100,8 @@ void OpenVpnAuthWidget::readSecrets()
         if (!(certType.testFlag(NetworkManager::Setting::NotRequired))) {
             label = new QLabel(this);
             label->setText(i18n("Key Password:"));
-            lineEdit = new QLineEdit(this);
-            lineEdit->setEchoMode(QLineEdit::Password);
+            lineEdit = new PasswordField(this);
+            lineEdit->setPasswordMode(true);
             lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_CERTPASS));
             lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_CERTPASS)));
             d->layout->addRow(label, lineEdit);
@@ -110,25 +111,20 @@ void OpenVpnAuthWidget::readSecrets()
     if (dataMap.contains(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags") && !(proxyType.testFlag(NetworkManager::Setting::NotRequired))) {
         label = new QLabel(this);
         label->setText(i18n("Proxy Password:"));
-        lineEdit = new QLineEdit(this);
-        lineEdit->setEchoMode(QLineEdit::Password);
+        lineEdit = new PasswordField(this);
+        lineEdit->setPasswordMode(true);
         lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD));
         lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD)));
         d->layout->addRow(label, lineEdit);
     }
 
     for (int i = 0; i < d->layout->rowCount(); i++) {
-        QLineEdit *le = qobject_cast<QLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+        PasswordField *le = qobject_cast<PasswordField*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && le->text().isEmpty()) {
             le->setFocus(Qt::OtherFocusReason);
             break;
         }
     }
-
-    QCheckBox *showPasswords = new QCheckBox(this);
-    showPasswords->setText(i18n("Show passwords"));
-    d->layout->addRow(showPasswords);
-    connect(showPasswords, &QCheckBox::toggled, this, &OpenVpnAuthWidget::showPasswordsToggled);
 }
 
 QVariantMap OpenVpnAuthWidget::setting(bool agentOwned) const
@@ -138,8 +134,8 @@ QVariantMap OpenVpnAuthWidget::setting(bool agentOwned) const
 
     NMStringMap secrets;
     QVariantMap secretData;
-    for (int i = 0; i < d->layout->rowCount() - 1; i++) {
-        QLineEdit *le = qobject_cast<QLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+    for (int i = 0; i < d->layout->rowCount(); i++) {
+        PasswordField *le = qobject_cast<PasswordField*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && !le->text().isEmpty()) {
             const QString key = le->property("nm_secrets_key").toString();
             secrets.insert(key, le->text());
@@ -148,19 +144,4 @@ QVariantMap OpenVpnAuthWidget::setting(bool agentOwned) const
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
     return secretData;
-}
-
-void OpenVpnAuthWidget::showPasswordsToggled(bool show)
-{
-    Q_D(OpenVpnAuthWidget);
-    for (int i = 0; i < d->layout->rowCount() - 1; i++) {
-        QLineEdit *le = qobject_cast<QLineEdit*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
-        if (le) {
-            if (show) {
-                le->setEchoMode(QLineEdit::Normal);
-            } else {
-                le->setEchoMode(QLineEdit::Password);
-            }
-        }
-    }
 }

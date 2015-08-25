@@ -43,7 +43,6 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget* paren
     m_ui->type->addItem(i18n("Prefer 4G (LTE)"), NetworkManager::GsmSetting::Prefer4GLte);
     m_ui->type->addItem(i18n("4G Only (LTE)"), NetworkManager::GsmSetting::Only4GLte);
 
-    connect(m_ui->cbShowPasswords, &QCheckBox::toggled, this, &GsmWidget::showPasswords);
     connect(m_ui->pinStorage, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &GsmWidget::pinStorageChanged);
     connect(m_ui->passwordStorage, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &GsmWidget::passwordStorageChanged);
 
@@ -153,12 +152,6 @@ QVariantMap GsmWidget::setting(bool agentOwned) const
     }
 
     return gsmSetting.toMap();
-}
-
-void GsmWidget::showPasswords(bool show)
-{
-    m_ui->password->setPasswordMode(!show);
-    m_ui->pin->setPasswordMode(!show);
 }
 
 void GsmWidget::pinStorageChanged(int index)

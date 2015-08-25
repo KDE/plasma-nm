@@ -38,7 +38,6 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     connect(m_ui->cboUserPasswordType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &VpncWidget::userPasswordTypeChanged);
     connect(m_ui->cboGroupPasswordType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &VpncWidget::groupPasswordTypeChanged);
-    connect(m_ui->cbShowPasswords, &QCheckBox::toggled, this, &VpncWidget::showPasswords);
     connect(m_ui->btnAdvanced, &QPushButton::clicked, this, &VpncWidget::showAdvanced);
 
     connect(m_ui->gateway, &QLineEdit::textChanged, this, &VpncWidget::slotWidgetChanged);
@@ -209,17 +208,6 @@ void VpncWidget::userPasswordTypeChanged(int index)
 void VpncWidget::groupPasswordTypeChanged(int index)
 {
     m_ui->groupPassword->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
-}
-
-void VpncWidget::showPasswords(bool show)
-{
-    if (show) {
-        m_ui->userPassword->setEchoMode(QLineEdit::Normal);
-        m_ui->groupPassword->setEchoMode(QLineEdit::Normal);
-    } else {
-        m_ui->userPassword->setEchoMode(QLineEdit::Password);
-        m_ui->groupPassword->setEchoMode(QLineEdit::Password);
-    }
 }
 
 void VpncWidget::showAdvanced()

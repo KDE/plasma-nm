@@ -46,7 +46,6 @@ StrongswanAuthWidget::StrongswanAuthWidget(const NetworkManager::VpnSetting::Ptr
     d->setting = setting;
     d->ui.setupUi(this);
     d->acceptOnShow = false;
-    connect(d->ui.chkShowPass, &QCheckBox::toggled, this, &StrongswanAuthWidget::showPasswordsChanged);
 
     readSecrets();
 
@@ -125,14 +124,4 @@ QVariantMap StrongswanAuthWidget::setting(bool agentOwned) const
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
     return secretData;
-}
-
-void StrongswanAuthWidget::showPasswordsChanged(bool show)
-{
-    Q_D(StrongswanAuthWidget);
-    if (show) {
-        d->ui.password->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->ui.password->setEchoMode(QLineEdit::Password);
-    }
 }

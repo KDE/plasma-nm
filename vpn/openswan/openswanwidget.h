@@ -47,7 +47,6 @@ public:
 private Q_SLOTS:
     void userPasswordTypeChanged(int index);
     void groupPasswordTypeChanged(int index);
-    void showPassword(bool show);
 
 private:
     Ui::OpenswanWidget * m_ui;

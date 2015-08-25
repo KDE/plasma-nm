@@ -59,9 +59,6 @@ public:
 
 private Q_SLOTS:
     void securityChanged(int index);
-    void slotShowWepKeyPasswordChecked(bool checked);
-    void slotShowLeapPasswordChecked(bool checked);
-    void slotShowPskPasswordChecked(bool checked);
     void setWepKey(int keyIndex);
 
 private:

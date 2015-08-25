@@ -37,9 +37,6 @@ public:
     virtual void readSecrets();
     virtual QVariantMap setting(bool agentOwned = false) const;
 
-private Q_SLOTS:
-    void showPasswordsChanged(bool);
-
 private:
     L2tpAuthDialogPrivate * const d_ptr;
 };

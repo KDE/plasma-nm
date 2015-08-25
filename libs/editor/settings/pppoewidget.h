@@ -46,9 +46,6 @@ public:
 
     virtual bool isValid() const Q_DECL_OVERRIDE;
 
-private Q_SLOTS:
-    void showPassword(bool show);
-
 private:
     Ui::PppoeWidget * m_ui;
 };

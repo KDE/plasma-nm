@@ -38,7 +38,6 @@ PptpAuthWidget::PptpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, Q
     Q_D(PptpAuthWidget);
     d->setting = setting;
     d->ui.setupUi(this);
-    connect(d->ui.chkShowPassword, &QCheckBox::toggled, this, &PptpAuthWidget::showPasswordsToggled);
 
     KAcceleratorManager::manage(this);
 }
@@ -62,14 +61,4 @@ QVariantMap PptpAuthWidget::setting(bool agentOwned) const
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
     return secretData;
-}
-
-void PptpAuthWidget::showPasswordsToggled(bool show)
-{
-    Q_D(PptpAuthWidget);
-    if (show) {
-        d->ui.lePassword->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->ui.lePassword->setEchoMode(QLineEdit::Password);
-    }
 }

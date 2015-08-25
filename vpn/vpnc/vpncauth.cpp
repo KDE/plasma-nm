@@ -39,7 +39,6 @@ VpncAuthDialog::VpncAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, Q
     Q_D(VpncAuthDialog);
     d->ui.setupUi(this);
     d->setting = setting;
-    connect(d->ui.cbShowPasswords, &QCheckBox::toggled, this, &VpncAuthDialog::showPasswordsChanged);
 
     readSecrets();
 
@@ -115,16 +114,4 @@ QVariantMap VpncAuthDialog::setting(bool agentOwned) const
     result.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
 
     return result;
-}
-
-void VpncAuthDialog::showPasswordsChanged(bool show)
-{
-    Q_D(VpncAuthDialog);
-    if (show) {
-        d->ui.leUserPassword->setEchoMode(QLineEdit::Normal);
-        d->ui.leGroupPassword->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->ui.leUserPassword->setEchoMode(QLineEdit::Password);
-        d->ui.leGroupPassword->setEchoMode(QLineEdit::Password);
-    }
 }

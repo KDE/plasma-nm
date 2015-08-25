@@ -38,8 +38,6 @@ OpenswanWidget::OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, Q
     connect(m_ui->cbUsernamePasswordMode, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenswanWidget::userPasswordTypeChanged);
     connect(m_ui->cbGroupPasswordMode, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenswanWidget::groupPasswordTypeChanged);
 
-    connect(m_ui->ckShowPasswords, &QCheckBox::toggled, this, &OpenswanWidget::showPassword);
-
     connect(m_ui->gateway, &QLineEdit::textChanged, this, &OpenswanWidget::slotWidgetChanged);
     connect(m_ui->groupname, &QLineEdit::textChanged, this, &OpenswanWidget::slotWidgetChanged);
 
@@ -222,17 +220,6 @@ void OpenswanWidget::groupPasswordTypeChanged(int index)
         m_ui->groupPassword->setEnabled(false);
     } else {
         m_ui->groupPassword->setEnabled(true);
-    }
-}
-
-void OpenswanWidget::showPassword(bool show)
-{
-    if (show) {
-        m_ui->userPassword->setEchoMode(QLineEdit::Normal);
-        m_ui->groupPassword->setEchoMode(QLineEdit::Normal);
-    } else {
-        m_ui->userPassword->setEchoMode(QLineEdit::Password);
-        m_ui->groupPassword->setEchoMode(QLineEdit::Password);
     }
 }
 

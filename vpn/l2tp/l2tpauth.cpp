@@ -38,7 +38,6 @@ L2tpAuthDialog::L2tpAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, Q
     Q_D(L2tpAuthDialog);
     d->ui.setupUi(this);
     d->setting = setting;
-    connect(d->ui.cbShowPasswords, &QCheckBox::toggled, this, &L2tpAuthDialog::showPasswordsChanged);
 
     KAcceleratorManager::manage(this);
 
@@ -91,14 +90,4 @@ QVariantMap L2tpAuthDialog::setting(bool agentOwned) const
     result.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
 
     return result;
-}
-
-void L2tpAuthDialog::showPasswordsChanged(bool show)
-{
-    Q_D(L2tpAuthDialog);
-    if (show) {
-        d->ui.leUserPassword->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->ui.leUserPassword->setEchoMode(QLineEdit::Password);
-    }
 }

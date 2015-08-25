@@ -46,7 +46,6 @@ public:
 
 private Q_SLOTS:
     void userPasswordTypeChanged(int index);
-    void showPassword(bool show);
     void showAdvanced();
     void showPpp();
 

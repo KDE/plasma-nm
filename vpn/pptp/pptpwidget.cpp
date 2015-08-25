@@ -52,7 +52,6 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
 
     connect(d->ui.btnAdvanced, &QPushButton::clicked, this, &PptpSettingWidget::doAdvancedDialog);
     connect(d->ui.cmbPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &PptpSettingWidget::passwordTypeChanged);
-    connect(d->ui.cb_showPassword, &QCheckBox::toggled, this, &PptpSettingWidget::setShowPassword);
 
     d->advancedDlg = new QDialog(this);
     d->advancedWid = new QWidget(this);
@@ -83,16 +82,6 @@ void PptpSettingWidget::passwordTypeChanged(int index)
 {
     Q_D(PptpSettingWidget);
     d->ui.edt_password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
-}
-
-void PptpSettingWidget::setShowPassword(bool show)
-{
-    Q_D(PptpSettingWidget);
-    if (show) {
-        d->ui.edt_password->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->ui.edt_password->setEchoMode(QLineEdit::Password);
-    }
 }
 
 void PptpSettingWidget::doAdvancedDialog()

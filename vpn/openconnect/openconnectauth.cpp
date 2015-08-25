@@ -24,6 +24,7 @@
 #include "ui_openconnectauth.h"
 
 #include "debug.h"
+#include "passwordfield.h"
 
 #include <QDialog>
 #include <QPushButton>
@@ -31,7 +32,6 @@
 #include <QLabel>
 #include <QEventLoop>
 #include <QFormLayout>
-#include <QLineEdit>
 #include <QIcon>
 #include <QDialogButtonBox>
 #include <QPushButton>
@@ -431,11 +431,6 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
     struct oc_form_opt *opt;
     QFormLayout *layout = new QFormLayout();
     QSizePolicy policy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    QCheckBox *togglePasswordMode = new QCheckBox(this);
-    togglePasswordMode->setText(i18n("&Show password"));
-    togglePasswordMode->setChecked(false);
-    connect(togglePasswordMode, &QCheckBox::toggled, this, &OpenconnectAuthWidget::passwordModeToggled);
-    int passwordnumber = 0;
     bool focusSet = false;
     for (opt = form->opts; opt; opt = opt->next) {
         if (opt->type == OC_FORM_OPT_HIDDEN || IGNORE_OPT(opt)) {
@@ -448,11 +443,10 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
         const QString key = QString("form:%1:%2").arg(QLatin1String(form->auth_id)).arg(QLatin1String(opt->name));
         const QString value = d->secrets.value(key);
         if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {
-            QLineEdit *le = new QLineEdit(this);
+            PasswordField *le = new PasswordField(this);
             le->setText(value);
             if (opt->type == OC_FORM_OPT_PASSWORD) {
-                le->setEchoMode(QLineEdit::Password);
-                passwordnumber++;
+                le->setPasswordMode(true);
             }
             if (!focusSet && le->text().isEmpty()) {
                 le->setFocus(Qt::OtherFocusReason);
@@ -483,10 +477,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
         }
     }
     d->ui.loginBoxLayout->addLayout(layout);
-    d->ui.loginBoxLayout->addWidget(togglePasswordMode);
-    if (passwordnumber == 0) {
-        togglePasswordMode->setVisible(false);
-    }
+
     QDialogButtonBox *box = new QDialogButtonBox(this);
     QPushButton *btn = box->addButton(QDialogButtonBox::Ok);
     btn->setText(i18n("Login"));
@@ -705,11 +696,11 @@ void OpenconnectAuthWidget::passwordModeToggled(bool toggled)
         if (widget && widget->property("openconnect_opt").isValid()) {
             struct oc_form_opt *opt = (struct oc_form_opt *) widget->property("openconnect_opt").value<quintptr>();
             if (opt->type == OC_FORM_OPT_PASSWORD) {
-                QLineEdit *le = qobject_cast<QLineEdit*>(widget);
+                PasswordField *le = qobject_cast<PasswordField*>(widget);
                 if (toggled) {
-                    le->setEchoMode(QLineEdit::Normal);
+                    le->setPasswordMode(false);
                 } else {
-                    le->setEchoMode(QLineEdit::Password);
+                    le->setPasswordMode(true);
                 }
             }
         }

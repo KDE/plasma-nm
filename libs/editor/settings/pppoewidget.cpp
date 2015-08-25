@@ -29,9 +29,6 @@ PppoeWidget::PppoeWidget(const NetworkManager::Setting::Ptr &setting, QWidget* p
 {
     m_ui->setupUi(this);
 
-    connect(m_ui->cbShowPassword, &QCheckBox::toggled, this, &PppoeWidget::showPassword);
-    connect(m_ui->username, &KLineEdit::textChanged, this, &PppoeWidget::slotWidgetChanged);
-
     KAcceleratorManager::manage(this);
 
     if (setting)
@@ -82,11 +79,6 @@ QVariantMap PppoeWidget::setting(bool agentOwned) const
     }
 
     return pppoeSetting.toMap();
-}
-
-void PppoeWidget::showPassword(bool show)
-{
-    m_ui->password->setPasswordMode(!show);
 }
 
 bool PppoeWidget::isValid() const

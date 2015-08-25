@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="userNameLabel">
      <property name="text">
-      <string>Userna&amp;me:</string>
+      <string>Username:</string>
      </property>
      <property name="buddy">
       <cstring>leUserName</cstring>
@@ -45,24 +45,21 @@
     </widget>
    </item>
    <item row="1" column="1">
-    <widget class="QLineEdit" name="leUserPassword">
-     <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QCheckBox" name="cbShowPasswords">
-     <property name="text">
-      <string>Show passwords</string>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
+    <widget class="PasswordField" name="leUserPassword">
+      <property name="passwordMode">
+       <bool>true</bool>
+      </property>
     </widget>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header>passwordfield.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

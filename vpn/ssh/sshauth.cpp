@@ -38,7 +38,6 @@ SshAuthWidget::SshAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWi
     Q_D(SshAuthWidget);
     d->setting = setting;
     d->ui.setupUi(this);
-    connect(d->ui.chk_showPassword, &QCheckBox::toggled, this, &SshAuthWidget::showPasswordsChanged);
 
     KAcceleratorManager::manage(this);
 }
@@ -62,14 +61,4 @@ QVariantMap SshAuthWidget::setting(bool agentOwned) const
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
     return secretData;
-}
-
-void SshAuthWidget::showPasswordsChanged(bool show)
-{
-    Q_D(SshAuthWidget);
-    if (show) {
-        d->ui.le_password->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->ui.le_password->setEchoMode(QLineEdit::Password);
-    }
 }

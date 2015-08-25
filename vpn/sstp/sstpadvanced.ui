@@ -51,7 +51,7 @@
           <item row="0" column="0">
            <widget class="QLabel" name="lbl_auth">
             <property name="text">
-             <string>Allow following authentication methods:</string>
+             <string>A&amp;llow following authentication methods:</string>
             </property>
             <property name="buddy">
              <cstring>listWidget</cstring>
@@ -111,7 +111,7 @@
           <string>Use Microsoft Point-to-Point Encryption</string>
          </property>
          <property name="title">
-          <string>Use MPPE Encryption</string>
+          <string>&amp;Use MPPE Encryption</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -132,7 +132,7 @@
              </size>
             </property>
             <property name="text">
-             <string>Crypto:</string>
+             <string>Cr&amp;ypto:</string>
             </property>
             <property name="buddy">
              <cstring>cb_MPPECrypto</cstring>
@@ -342,16 +342,9 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QLineEdit" name="le_password">
-            <property name="echoMode">
-             <enum>QLineEdit::Password</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QCheckBox" name="chk_showPassword">
-            <property name="text">
-             <string>Show password</string>
+           <widget class="PasswordField" name="le_password">
+            <property name="passwordMode">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -377,6 +370,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header>passwordfield.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

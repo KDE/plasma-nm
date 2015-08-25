@@ -45,8 +45,7 @@ public:
 private Q_SLOTS:
     void doAdvancedDialog();
     void passwordTypeChanged(int index);
-    void setShowPassword(bool show);
-    void setShowProxyPassword(bool show);
+
 private:
     SstpSettingWidgetPrivate * const d_ptr;
     void fillOnePasswordCombo(QComboBox *, NetworkManager::Setting::SecretFlags);

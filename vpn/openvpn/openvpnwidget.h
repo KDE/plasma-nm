@@ -54,7 +54,6 @@ private Q_SLOTS:
     void passPasswordStorageChanged(int);
     void x509PassKeyPasswordStorageChanged(int);
     void x509PassPasswordStorageChanged(int);
-    void showPasswordsToggled(bool show);
     void showAdvanced();
 
 private:

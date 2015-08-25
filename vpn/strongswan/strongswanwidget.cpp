@@ -45,8 +45,6 @@ StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSettin
     connect(d->ui.cboUserPassOptions, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &StrongswanSettingWidget::userPasswordTypeChanged);
     connect(d->ui.cboPrivateKeyPassOptions, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &StrongswanSettingWidget::privateKeyPasswordTypeChanged);
     connect(d->ui.cboPinOptions, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &StrongswanSettingWidget::pinTypeChanged);
-    connect(d->ui.cmbMethod, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &StrongswanSettingWidget::methodChanged);
-    connect(d->ui.cbShowPasswords, &QCheckBox::toggled, this, &StrongswanSettingWidget::showPasswordsChanged);
 
     connect(d->ui.leGateway, &QLineEdit::textChanged, this, &StrongswanSettingWidget::slotWidgetChanged);
 
@@ -78,12 +76,6 @@ void StrongswanSettingWidget::pinTypeChanged(int index)
 {
     Q_D(StrongswanSettingWidget);
     d->ui.lePin->setEnabled(index == 0);
-}
-
-void StrongswanSettingWidget::methodChanged(int index)
-{
-    Q_D(StrongswanSettingWidget);
-    d->ui.cbShowPasswords->setEnabled(index != StrongswanSettingWidgetPrivate::SshAgent);
 }
 
 void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
@@ -260,18 +252,4 @@ bool StrongswanSettingWidget::isValid() const
 {
     Q_D(const StrongswanSettingWidget);
     return !d->ui.leGateway->text().isEmpty();
-}
-
-void StrongswanSettingWidget::showPasswordsChanged(bool show)
-{
-    Q_D(StrongswanSettingWidget);
-    if (show) {
-        d->ui.lePrivateKeyPassword->setEchoMode(QLineEdit::Normal);
-        d->ui.leUserPassword->setEchoMode(QLineEdit::Normal);
-        d->ui.lePin->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->ui.lePrivateKeyPassword->setEchoMode(QLineEdit::Password);
-        d->ui.leUserPassword->setEchoMode(QLineEdit::Password);
-        d->ui.lePin->setEchoMode(QLineEdit::Password);
-    }
 }

@@ -39,7 +39,6 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
     m_ui->setupUi(this);
 
     connect(m_ui->cboUserPasswordType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &L2tpWidget::userPasswordTypeChanged);
-    connect(m_ui->cbShowPassword, &QCheckBox::toggled, this, &L2tpWidget::showPassword);
     connect(m_ui->btnIPSecSettings, &QPushButton::clicked, this, &L2tpWidget::showAdvanced);
     connect(m_ui->btnPPPSettings, &QPushButton::clicked, this, &L2tpWidget::showPpp);
 
@@ -156,15 +155,6 @@ QVariantMap L2tpWidget::setting(bool agentOwned) const
 void L2tpWidget::userPasswordTypeChanged(int index)
 {
     m_ui->password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
-}
-
-void L2tpWidget::showPassword(bool show)
-{
-    if (show) {
-        m_ui->password->setEchoMode(QLineEdit::Normal);
-    } else {
-        m_ui->password->setEchoMode(QLineEdit::Password);
-    }
 }
 
 void L2tpWidget::showAdvanced()

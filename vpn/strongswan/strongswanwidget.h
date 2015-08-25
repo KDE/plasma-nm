@@ -49,8 +49,7 @@ protected Q_SLOTS:
     void userPasswordTypeChanged(int);
     void privateKeyPasswordTypeChanged(int);
     void pinTypeChanged(int);
-    void methodChanged(int);
-    void showPasswordsChanged(bool show);
+
 private:
     void fillOnePasswordCombo(QComboBox * combo, const QString & key, const NMStringMap & data, bool hasPassword);
     uint handleOnePasswordType(const QComboBox * combo, const QString & key, NMStringMap & data, bool agentOwned) const;

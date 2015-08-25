@@ -29,6 +29,7 @@ set(plasmanm_editor_SRCS
     widgets/ipv4routeswidget.cpp
     widgets/ipv6delegate.cpp
     widgets/ipv6routeswidget.cpp
+    widgets/passwordfield.cpp
     widgets/settingwidget.cpp
     widgets/ssidcombobox.cpp
 

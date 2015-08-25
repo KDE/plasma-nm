@@ -11,9 +11,9 @@
    </rect>
   </property>
   <layout class="QFormLayout" name="formLayout">
-    <property name="verticalSpacing">
+   <property name="verticalSpacing">
     <number>0</number>
-    </property>
+   </property>
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
@@ -51,16 +51,9 @@
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="KLineEdit" name="password">
+    <widget class="PasswordField" name="password">
      <property name="passwordMode">
       <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QCheckBox" name="cbShowPassword">
-     <property name="text">
-      <string>Show password</string>
      </property>
     </widget>
    </item>
@@ -68,9 +61,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KLineEdit</class>
+   <class>PasswordField</class>
    <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
+   <header>passwordfield.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

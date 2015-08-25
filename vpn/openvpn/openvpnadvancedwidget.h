@@ -49,7 +49,6 @@ private Q_SLOTS:
     void openVpnFinished(int, QProcess::ExitStatus);
 
     void proxyPasswordStorageChanged(int);
-    void proxyPasswordToggled(bool show);
     void proxyTypeChanged(int);
 
 private:

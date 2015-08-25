@@ -64,6 +64,9 @@
    </item>
    <item row="1" column="0" colspan="2">
     <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
      <widget class="QWidget" name="md5Page">
       <layout class="QFormLayout" name="formLayout">
        <item row="0" column="0">
@@ -90,8 +93,8 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="KLineEdit" name="md5Password">
-         <property name="passwordMode">
+        <widget class="PasswordField" name="md5Password">
+         <property name="passwordMode" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -100,13 +103,6 @@
         <widget class="QCheckBox" name="cbAskMd5Password">
          <property name="text">
           <string>Ask for this password every time</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QCheckBox" name="cbShowMd5Password">
-         <property name="text">
-          <string>Show password</string>
          </property>
         </widget>
        </item>
@@ -189,16 +185,9 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="KLineEdit" name="tlsPrivateKeyPassword">
-         <property name="passwordMode">
+        <widget class="PasswordField" name="tlsPrivateKeyPassword">
+         <property name="passwordMode" stdset="0">
           <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QCheckBox" name="cbShowTlsPassword">
-         <property name="text">
-          <string>Show password</string>
          </property>
         </widget>
        </item>
@@ -230,16 +219,9 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="KLineEdit" name="leapPassword">
-         <property name="passwordMode">
+        <widget class="PasswordField" name="leapPassword">
+         <property name="passwordMode" stdset="0">
           <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QCheckBox" name="cbShowLeapPassword">
-         <property name="text">
-          <string>Show password</string>
          </property>
         </widget>
        </item>
@@ -366,8 +348,8 @@
         </widget>
        </item>
        <item row="5" column="1">
-        <widget class="KLineEdit" name="fastPassword">
-         <property name="passwordMode">
+        <widget class="PasswordField" name="fastPassword">
+         <property name="passwordMode" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -376,13 +358,6 @@
         <widget class="QCheckBox" name="cbAskFastPassword">
          <property name="text">
           <string>Ask for this password every time</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QCheckBox" name="cbShowFastPassword">
-         <property name="text">
-          <string>Show password</string>
          </property>
         </widget>
        </item>
@@ -484,8 +459,8 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="KLineEdit" name="ttlsPassword">
-         <property name="passwordMode">
+        <widget class="PasswordField" name="ttlsPassword">
+         <property name="passwordMode" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -494,13 +469,6 @@
         <widget class="QCheckBox" name="cbAskTtlsPassword">
          <property name="text">
           <string>Ask for this password every time</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QCheckBox" name="cbShowTtlsPassword">
-         <property name="text">
-          <string>Show password</string>
          </property>
         </widget>
        </item>
@@ -632,8 +600,8 @@
         </widget>
        </item>
        <item row="5" column="1">
-        <widget class="KLineEdit" name="peapPassword">
-         <property name="passwordMode">
+        <widget class="PasswordField" name="peapPassword">
+         <property name="passwordMode" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -645,13 +613,6 @@
          </property>
         </widget>
        </item>
-       <item row="7" column="1">
-        <widget class="QCheckBox" name="cbShowPeapPassword">
-         <property name="text">
-          <string>Show password</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
     </widget>
@@ -659,6 +620,11 @@
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QWidget</extends>
+   <header>kurlrequester.h</header>
+  </customwidget>
   <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
@@ -670,9 +636,9 @@
    <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
-   <class>KUrlRequester</class>
-   <extends>QWidget</extends>
-   <header>kurlrequester.h</header>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header>passwordfield.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
@@ -680,16 +646,13 @@
   <tabstop>md5UserName</tabstop>
   <tabstop>md5Password</tabstop>
   <tabstop>cbAskMd5Password</tabstop>
-  <tabstop>cbShowMd5Password</tabstop>
   <tabstop>tlsIdentity</tabstop>
   <tabstop>tlsUserCert</tabstop>
   <tabstop>tlsCACert</tabstop>
   <tabstop>tlsPrivateKey</tabstop>
   <tabstop>tlsPrivateKeyPassword</tabstop>
-  <tabstop>cbShowTlsPassword</tabstop>
   <tabstop>leapUsername</tabstop>
   <tabstop>leapPassword</tabstop>
-  <tabstop>cbShowLeapPassword</tabstop>
   <tabstop>fastAnonIdentity</tabstop>
   <tabstop>fastAllowPacProvisioning</tabstop>
   <tabstop>pacMethod</tabstop>
@@ -698,14 +661,12 @@
   <tabstop>fastUsername</tabstop>
   <tabstop>fastPassword</tabstop>
   <tabstop>cbAskFastPassword</tabstop>
-  <tabstop>cbShowFastPassword</tabstop>
   <tabstop>ttlsAnonIdentity</tabstop>
   <tabstop>ttlsCACert</tabstop>
   <tabstop>ttlsInnerAuth</tabstop>
   <tabstop>ttlsUsername</tabstop>
   <tabstop>ttlsPassword</tabstop>
   <tabstop>cbAskTtlsPassword</tabstop>
-  <tabstop>cbShowTtlsPassword</tabstop>
   <tabstop>peapAnonIdentity</tabstop>
   <tabstop>peapCACert</tabstop>
   <tabstop>peapVersion</tabstop>
@@ -713,7 +674,6 @@
   <tabstop>peapUsername</tabstop>
   <tabstop>peapPassword</tabstop>
   <tabstop>cbAskPeapPassword</tabstop>
-  <tabstop>cbShowPeapPassword</tabstop>
  </tabstops>
  <resources/>
  <connections>

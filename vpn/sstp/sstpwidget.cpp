@@ -50,7 +50,6 @@ SstpSettingWidget::SstpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
 
     connect(d->ui.btn_advancedOption, &QPushButton::clicked, this, &SstpSettingWidget::doAdvancedDialog);
     connect(d->ui.cmb_passwordOption, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &SstpSettingWidget::passwordTypeChanged);
-    connect(d->ui.chk_showPassword, &QCheckBox::toggled, this, &SstpSettingWidget::setShowPassword);
 
     d->advancedDlg = new QDialog(this);
     d->advancedDlg->setModal(true);
@@ -62,7 +61,6 @@ SstpSettingWidget::SstpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
     QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, d->advancedDlg);
     connect(buttons, &QDialogButtonBox::accepted, d->advancedDlg, &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, d->advancedDlg, &QDialog::reject);
-    connect(d->advUi.chk_showPassword, &QCheckBox::toggled, this, &SstpSettingWidget::setShowProxyPassword);
 
     layout->addWidget(buttons);
 
@@ -353,26 +351,6 @@ void SstpSettingWidget::passwordTypeChanged(int index)
 {
     Q_D(SstpSettingWidget);
     d->ui.le_password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
-}
-
-void SstpSettingWidget::setShowPassword(bool show)
-{
-    Q_D(SstpSettingWidget);
-    if (show) {
-        d->ui.le_password->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->ui.le_password->setEchoMode(QLineEdit::Password);
-    }
-}
-
-void SstpSettingWidget::setShowProxyPassword(bool show)
-{
-    Q_D(SstpSettingWidget);
-    if (show) {
-        d->advUi.le_password->setEchoMode(QLineEdit::Normal);
-    } else {
-        d->advUi.le_password->setEchoMode(QLineEdit::Password);
-    }
 }
 
 void SstpSettingWidget::fillOnePasswordCombo(QComboBox *combo, NetworkManager::Setting::SecretFlags type)

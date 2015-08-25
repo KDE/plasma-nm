@@ -537,6 +537,13 @@
          </property>
         </widget>
        </item>
+       <item row="4" column="1">
+        <widget class="PasswordField" name="proxyUsername">
+         <property name="passwordMode">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
        <item row="5" column="0">
         <widget class="QLabel" name="label_15">
          <property name="text">
@@ -547,29 +554,12 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="proxyUsername">
-         <property name="echoMode">
-          <enum>QLineEdit::Password</enum>
-         </property>
-         <property name="clearButtonEnabled">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QCheckBox" name="chkProxyShowPassword">
-         <property name="text">
-          <string>Show Password</string>
-         </property>
-        </widget>
-       </item>
        <item row="5" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout_14">
          <item>
-          <widget class="QLineEdit" name="proxyPassword">
-           <property name="echoMode">
-            <enum>QLineEdit::Password</enum>
+          <widget class="PasswordField" name="proxyPassword">
+           <property name="passwordMode">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -608,10 +598,15 @@
   </layout>
  </widget>
  <customwidgets>
- <customwidget>
+  <customwidget>
    <class>KUrlRequester</class>
    <extends>QWidget</extends>
    <header>kurlrequester.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header>passwordfield.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
@@ -640,7 +635,6 @@
   <tabstop>proxyUsername</tabstop>
   <tabstop>proxyPassword</tabstop>
   <tabstop>proxyPasswordStorage</tabstop>
-  <tabstop>chkProxyShowPassword</tabstop>
  </tabstops>
  <resources/>
  <connections>

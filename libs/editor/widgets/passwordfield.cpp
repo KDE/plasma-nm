@@ -44,7 +44,7 @@ void PasswordField::toggleEchoMode()
 {
     if (echoMode() == QLineEdit::Password) {
         setEchoMode(QLineEdit::Normal);
-        toggleEchoModeAction->setIcon(QIcon::fromTheme(QStringLiteral("visible")));
+        toggleEchoModeAction->setIcon(QIcon::fromTheme(QStringLiteral("visibility")));
     } else if (echoMode() == QLineEdit::Normal) {
         setEchoMode(QLineEdit::Password);
         toggleEchoModeAction->setIcon(QIcon::fromTheme(QStringLiteral("hint")));

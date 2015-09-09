@@ -304,6 +304,20 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
                      "The SIM PIN was incorrect");
         break;
 #endif
+#if NM_CHECK_VERSION(1, 0, 4)
+    case NetworkManager::Device::NewActivation:
+        text = i18nc("@info:status Notification when the device failed due to NewActivation",
+                     "A new connection activation was enqueued");
+        break;
+    case NetworkManager::Device::ParentChanged:
+        text = i18nc("@info:status Notification when the device failed due to ParentChanged",
+                     "The device's parent changed");
+        break;
+    case NetworkManager::Device::ParentManagedChanged:
+        text = i18nc("@info:status Notification when the device failed due to ParentManagedChanged",
+                     "The device parent's management changed");
+        break;
+#endif
     case NetworkManager::Device::Reserved:
         return;
     }

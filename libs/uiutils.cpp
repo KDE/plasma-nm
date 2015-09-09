@@ -118,15 +118,15 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
     switch (type) {
     case ConnectionSettings::Adsl:
         text = i18n("ADSL");
-        icon = "modem";
+        icon = "network-modem";
         break;
     case ConnectionSettings::Pppoe:
         text = i18n("DSL");
-        icon = "modem";
+        icon = "network-modem";
         break;
     case ConnectionSettings::Bluetooth:
         text = i18n("Bluetooth");
-        icon = "preferences-system-bluetooth";
+        icon = "network-bluetooth";
         break;
     case ConnectionSettings::Bond:
         text = i18n("Bond");
@@ -137,7 +137,7 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
     case ConnectionSettings::Gsm:
     case ConnectionSettings::Cdma:
         text = i18n("Mobile broadband");
-        icon = "phone";
+        icon = "smartphone";
         break;
     case ConnectionSettings::Infiniband:
         text = i18n("Infiniband");
@@ -150,7 +150,7 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
         break;
     case ConnectionSettings::Vpn:
         text = i18n("VPN");
-        icon = "secure-card";
+        icon = "network-vpn";
         break;
     case ConnectionSettings::Wimax:
         text = i18n("WiMAX");

@@ -28,7 +28,7 @@
 PasswordField::PasswordField(QWidget* parent)
     : KLineEdit(parent)
 {
-    toggleEchoModeAction = addAction(QIcon::fromTheme(QStringLiteral("hint")), QLineEdit::TrailingPosition);
+    toggleEchoModeAction = addAction(QIcon::fromTheme(QStringLiteral("visibility")), QLineEdit::TrailingPosition);
     toggleEchoModeAction->setVisible(false);
     toggleEchoModeAction->setToolTip(i18n("Change the visibility of the password"));
     connect(toggleEchoModeAction, &QAction::triggered, this, &PasswordField::toggleEchoMode);
@@ -44,9 +44,9 @@ void PasswordField::toggleEchoMode()
 {
     if (echoMode() == QLineEdit::Password) {
         setEchoMode(QLineEdit::Normal);
-        toggleEchoModeAction->setIcon(QIcon::fromTheme(QStringLiteral("visibility")));
+        toggleEchoModeAction->setIcon(QIcon::fromTheme(QStringLiteral("hint")));
     } else if (echoMode() == QLineEdit::Normal) {
         setEchoMode(QLineEdit::Password);
-        toggleEchoModeAction->setIcon(QIcon::fromTheme(QStringLiteral("hint")));
+        toggleEchoModeAction->setIcon(QIcon::fromTheme(QStringLiteral("visibility")));
     }
 }

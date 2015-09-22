@@ -20,8 +20,11 @@
 
 #include "security802-1x.h"
 #include "ui_802-1x.h"
+#include "editlistdialog.h"
+#include "listvalidator.h"
 
 #include <KAcceleratorManager>
+#include <KLocalizedString>
 
 Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent) :
     QWidget(parent),
@@ -45,8 +48,48 @@ Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &se
         m_ui->stackedWidget->removeWidget(m_ui->leapPage);
     }
 
+    connect(m_ui->btnTlsAltSubjectMatches, &QPushButton::clicked, this, &Security8021x::altSubjectMatchesButtonClicked);
+    connect(m_ui->btnTlsConnectToServers, &QPushButton::clicked, this, &Security8021x::connectToServersButtonClicked);
+
+    // Those signals are monitor for setting validation
+    connect(m_ui->auth, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &Security8021x::widgetChanged);
+    connect(m_ui->md5UserName, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->md5Password, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->cbAskMd5Password, &QCheckBox::stateChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->tlsIdentity, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->tlsCACert, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->tlsUserCert, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->tlsPrivateKey, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->tlsPrivateKeyPassword, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->leapUsername, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->leapPassword, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->fastAllowPacProvisioning, &QCheckBox::stateChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->pacFile, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->fastUsername, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->fastPassword, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->cbAskFastPassword, &QCheckBox::stateChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->ttlsCACert, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->ttlsUsername, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->ttlsPassword, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->cbAskTtlsPassword, &QCheckBox::stateChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->peapCACert, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->peapUsername, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->peapPassword, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->cbAskPeapPassword, &QCheckBox::stateChanged, this, &Security8021x::widgetChanged);
+
     KAcceleratorManager::manage(this);
     connect(m_ui->stackedWidget, &QStackedWidget::currentChanged, this, &Security8021x::currentAuthChanged);
+
+    altSubjectValidator = new QRegExpValidator(QRegExp(QLatin1String("^(DNS:[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+|EMAIL:[a-zA-Z0-9._-]+@[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+|URI:[a-zA-Z0-9.+-]+:.+|)$")), this);
+    serversValidator = new QRegExpValidator(QRegExp(QLatin1String("^[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+$")), this);
+
+    ListValidator *altSubjectListValidator = new ListValidator(this);
+    altSubjectListValidator->setInnerValidator(altSubjectValidator);
+    m_ui->leTlsSubjectMatch->setValidator(altSubjectListValidator);
+
+    ListValidator *serverListValidator = new ListValidator(this);
+    serverListValidator->setInnerValidator(serversValidator);
+    m_ui->leTlsConnectToServers->setValidator(serverListValidator);
 
     if (m_setting) {
         loadConfig();
@@ -96,10 +139,19 @@ void Security8021x::loadConfig()
         m_ui->md5UserName->setText(m_setting->identity());
         m_ui->cbAskMd5Password->setChecked(notSavedPassword);
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTls)) {
+        QStringList servers;
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodTls));
         m_ui->tlsIdentity->setText(m_setting->identity());
         m_ui->tlsUserCert->setUrl(QUrl::fromLocalFile(m_setting->clientCertificate()));
         m_ui->tlsCACert->setUrl(QUrl::fromLocalFile(m_setting->caCertificate()));
+        m_ui->leTlsSubjectMatch->setText(m_setting->subjectMatch());
+        m_ui->leTlsAlternativeSubjectMatches->setText(m_setting->altSubjectMatches().join(QLatin1String(", ")));
+        Q_FOREACH (const QString &match, m_setting->altSubjectMatches()) {
+            if (match.startsWith(QLatin1String("DNS:"))) {
+                servers.append(match.right(match.length()-4));
+            }
+        }
+        m_ui->leTlsConnectToServers->setText(servers.join(QLatin1String(", ")));
         m_ui->tlsPrivateKey->setUrl(QUrl::fromLocalFile(m_setting->privateKey()));
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodLeap)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodLeap));
@@ -186,6 +238,16 @@ QVariantMap Security8021x::setting(bool agentOwned) const
         if (m_ui->tlsCACert->url().isValid()) {
             setting.setCaCertificate(m_ui->tlsCACert->url().toString().toUtf8().append('\0'));
         }
+
+        QStringList altsubjectmatches = m_ui->leTlsAlternativeSubjectMatches->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts);
+        Q_FOREACH (const QString &match, m_ui->leTlsConnectToServers->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts)) {
+            const QString tempstr = QLatin1String("DNS:") + match;
+            if (!altsubjectmatches.contains(tempstr)) {
+                altsubjectmatches.append(tempstr);
+            }
+        }
+        setting.setSubjectMatch(m_ui->leTlsSubjectMatch->text());
+        setting.setAltSubjectMatches(altsubjectmatches);
 
         if (m_ui->tlsPrivateKey->url().isValid()) {
             setting.setPrivateKey(m_ui->tlsPrivateKey->url().toString().toUtf8().append('\0'));
@@ -314,9 +376,88 @@ QVariantMap Security8021x::setting(bool agentOwned) const
     return setting.toMap();
 }
 
+void Security8021x::altSubjectMatchesButtonClicked()
+{
+    QPointer<EditListDialog> editor = new EditListDialog(this);
+
+    editor->setItems(m_ui->leTlsSubjectMatch->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts));
+    editor->setWindowTitle(i18n("Alternative Subject Matches"));
+    editor->setToolTip(i18n("<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;</li></ul></qt>"));
+    editor->setValidator(altSubjectValidator);
+
+    connect(editor.data(), &QDialog::accepted,
+            [editor, this] () {
+                m_ui->leTlsSubjectMatch->setText(editor->items().join(QLatin1String(", ")));
+            });
+    connect(editor.data(), &QDialog::finished,
+            [editor] () {
+                if (editor) {
+                    editor->deleteLater();
+                }
+            });
+    editor->setModal(true);
+    editor->show();
+}
+
+void Security8021x::connectToServersButtonClicked()
+{
+    QPointer<EditListDialog> editor = new EditListDialog(this);
+
+    editor->setItems(m_ui->leTlsConnectToServers->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts));
+    editor->setWindowTitle(i18n("Connect to these servers only"));
+    editor->setValidator(serversValidator);
+
+    connect(editor.data(), &QDialog::accepted,
+            [editor, this] () {
+                m_ui->leTlsConnectToServers->setText(editor->items().join(QLatin1String(", ")));
+            });
+    connect(editor.data(), &QDialog::finished,
+            [editor] () {
+                if (editor) {
+                    editor->deleteLater();
+                }
+            });
+    editor->setModal(true);
+    editor->show();
+}
+
+bool Security8021x::isValid() const
+{
+    NetworkManager::Security8021xSetting::EapMethod method =
+            static_cast<NetworkManager::Security8021xSetting::EapMethod>(m_ui->auth->itemData(m_ui->auth->currentIndex()).toInt());
+
+    if (method == NetworkManager::Security8021xSetting::EapMethodMd5) {
+        return !m_ui->md5UserName->text().isEmpty() && (!m_ui->md5Password->text().isEmpty() || m_ui->cbAskMd5Password->isChecked());
+    } else if (method == NetworkManager::Security8021xSetting::EapMethodTls) {
+        if (m_ui->tlsIdentity->text().isEmpty()) {
+            return false;
+        }
+
+        if (!m_ui->tlsPrivateKey->url().isValid()) {
+            return false;
+        }
+
+        if (m_ui->tlsPrivateKeyPassword->text().isEmpty()) {
+            return false;
+        }
+    } else if (method == NetworkManager::Security8021xSetting::EapMethodLeap) {
+        return !m_ui->leapUsername->text().isEmpty() && !m_ui->leapPassword->text().isEmpty();
+    } else if (method == NetworkManager::Security8021xSetting::EapMethodFast) {
+        if (!m_ui->fastAllowPacProvisioning->isChecked() && !m_ui->pacFile->url().isValid()) {
+            return false;
+        }
+        return !m_ui->fastUsername->text().isEmpty() && (!m_ui->fastPassword->text().isEmpty() || m_ui->cbAskFastPassword->isChecked());
+    } else if (method == NetworkManager::Security8021xSetting::EapMethodTtls) {
+         return !m_ui->ttlsUsername->text().isEmpty() && (!m_ui->ttlsPassword->text().isEmpty() || m_ui->cbAskTtlsPassword->isChecked());
+    } else if (method == NetworkManager::Security8021xSetting::EapMethodPeap) {
+         return !m_ui->peapUsername->text().isEmpty() && (!m_ui->peapPassword->text().isEmpty() || m_ui->cbAskPeapPassword->isChecked());
+    }
+
+    return true;
+}
+
 void Security8021x::currentAuthChanged(int index)
 {
     Q_UNUSED(index);
     KAcceleratorManager::manage(m_ui->stackedWidget->currentWidget());
 }
-

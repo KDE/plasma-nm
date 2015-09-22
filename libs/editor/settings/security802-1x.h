@@ -21,6 +21,7 @@
 #ifndef PLASMA_NM_SECURITY8021X_H
 #define PLASMA_NM_SECURITY8021X_H
 
+#include <QRegExpValidator>
 #include <QWidget>
 
 #include <NetworkManagerQt/Security8021xSetting>
@@ -36,17 +37,28 @@ class Security8021x: public QWidget
 public:
     Security8021x(const NetworkManager::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent = 0);
     virtual ~Security8021x();
+
     QVariantMap setting(bool agentOwned = false) const;
 
     void loadSecrets(const NetworkManager::Security8021xSetting::Ptr &setting);
 
+    bool isValid() const;
+
+Q_SIGNALS:
+    void widgetChanged();
+
 private Q_SLOTS:
+    void altSubjectMatchesButtonClicked();
+    void connectToServersButtonClicked();
     void currentAuthChanged(int index);
 
 private:
-    void loadConfig();
     NetworkManager::Security8021xSetting::Ptr m_setting;
     Ui::Security8021x * m_ui;
+    QRegExpValidator *altSubjectValidator;
+    QRegExpValidator *serversValidator;
+
+    void loadConfig();
 };
 
 #endif // SECURITY8021X_H

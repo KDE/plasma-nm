@@ -23,6 +23,7 @@ set(plasmanm_editor_SRCS
     widgets/advancedpermissionswidget.cpp
     widgets/bssidcombobox.cpp
     widgets/delegate.cpp
+    widgets/editlistdialog.cpp
     widgets/hwaddrcombobox.cpp
     widgets/intdelegate.cpp
     widgets/ipv4delegate.cpp
@@ -33,6 +34,7 @@ set(plasmanm_editor_SRCS
     widgets/settingwidget.cpp
     widgets/ssidcombobox.cpp
 
+    listvalidator.cpp
     connectiondetaileditor.cpp
     simpleipv4addressvalidator.cpp
     simpleipv6addressvalidator.cpp

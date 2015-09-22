@@ -46,6 +46,8 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
     connect(m_ui->psk, &KLineEdit::textChanged, this, &WifiSecurity::slotWidgetChanged);
     connect(m_ui->wepIndex, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
     connect(m_ui->securityCombo, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
+    connect(m_8021xWidget, &Security8021x::widgetChanged, this, &WifiSecurity::slotWidgetChanged);
+    connect(m_WPA2Widget, &Security8021x::widgetChanged, this, &WifiSecurity::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 
@@ -84,6 +86,10 @@ bool WifiSecurity::isValid() const
         return !m_ui->leapUsername->text().isEmpty() && !m_ui->leapPassword->text().isEmpty();
     } else if (securityIndex == WpaPsk) { // WPA
         return NetworkManager::wpaPskIsValid(m_ui->psk->text());
+    } else if (securityIndex == DynamicWep) {
+        return m_8021xWidget->isValid();
+    } else if (securityIndex == WpaEap) {
+        return m_WPA2Widget->isValid();
     }
 
     return true;

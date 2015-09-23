@@ -26,6 +26,8 @@
 #include <KAcceleratorManager>
 #include <KLocalizedString>
 
+#include <QtCrypto>
+
 Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent) :
     QWidget(parent),
     m_setting(setting),
@@ -257,6 +259,18 @@ QVariantMap Security8021x::setting(bool agentOwned) const
             setting.setPrivateKeyPassword(m_ui->tlsPrivateKeyPassword->text());
         }
 
+        QCA::Initializer init;
+        QCA::ConvertResult convRes;
+
+        // Try if the private key is in pkcs12 format bundled with client certificate
+        if (QCA::isSupported("pkcs12")) {
+            QCA::KeyBundle keyBundle = QCA::KeyBundle::fromFile(m_ui->tlsPrivateKey->url().path(), m_ui->tlsPrivateKeyPassword->text().toUtf8(), &convRes);
+            // Set client certificate to the same path as private key
+            if (convRes == QCA::ConvertGood && keyBundle.privateKey().canDecrypt()) {
+                setting.setClientCertificate(m_ui->tlsPrivateKey->url().toString().toUtf8().append('\0'));
+            }
+        }
+
         if (agentOwned) {
             setting.setPrivateKeyPasswordFlags(NetworkManager::Setting::AgentOwned);
         }
@@ -440,6 +454,32 @@ bool Security8021x::isValid() const
         if (m_ui->tlsPrivateKeyPassword->text().isEmpty()) {
             return false;
         }
+
+        QCA::Initializer init;
+        QCA::ConvertResult convRes;
+
+        // Try if the private key is in pkcs12 format bundled with client certificate
+        if (QCA::isSupported("pkcs12")) {
+            QCA::KeyBundle keyBundle = QCA::KeyBundle::fromFile(m_ui->tlsPrivateKey->url().path(), m_ui->tlsPrivateKeyPassword->text().toUtf8(), &convRes);
+            // We can return the result of decryption when we managed to import the private key
+            if (convRes == QCA::ConvertGood) {
+                return keyBundle.privateKey().canDecrypt();
+            }
+        }
+
+        // If the private key is not in pkcs12 format, we need client certificate to be set
+        if (!m_ui->tlsUserCert->url().isValid()) {
+            return false;
+        }
+
+        // Try if the private key is in PEM format and return the result of decryption if we managed to open it
+        QCA::PrivateKey key = QCA::PrivateKey::fromPEMFile(m_ui->tlsPrivateKey->url().path(), m_ui->tlsPrivateKeyPassword->text().toUtf8(), &convRes);
+        if (convRes == QCA::ConvertGood) {
+            return key.canDecrypt();
+        }
+
+        // TODO Try other formats (DER - mainly used in Windows)
+        // TODO Validate other certificates??
     } else if (method == NetworkManager::Security8021xSetting::EapMethodLeap) {
         return !m_ui->leapUsername->text().isEmpty() && !m_ui->leapPassword->text().isEmpty();
     } else if (method == NetworkManager::Security8021xSetting::EapMethodFast) {

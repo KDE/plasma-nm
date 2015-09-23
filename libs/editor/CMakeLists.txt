@@ -91,6 +91,7 @@ target_link_libraries(plasmanm_editor
     Qt5::Widgets
     Qt5::Network
     Qt5::DBus
+    qca-qt5
     KF5::NetworkManagerQt
     KF5::Service
     KF5::Completion

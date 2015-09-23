@@ -49,6 +49,11 @@ set_package_properties(MobileBroadbandProviderInfo PROPERTIES
                        URL "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders"
                        TYPE OPTIONAL)
 
+find_package(Qca-qt5 2.1.0)
+set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Support for encryption"
+                       URL "http://download.kde.org/stable/qca-qt5/"
+                       TYPE REQUIRED)
+
 if (DISABLE_MODEMMANAGER_SUPPORT)
     message(STATUS "Disabling ModemManager support")
     set(WITH_MODEMMANAGER_SUPPORT 0)

@@ -84,7 +84,7 @@ Comment[x-test]=xxNetwork status and controlxx
 Comment[zh_CN]=网络状态和控制
 Comment[zh_TW]=網路狀態與控制
 
-Icon=preferences-system-network
+Icon=org.kde.plasma.networkmanagement
 Type=Service
 X-KDE-ServiceTypes=Plasma/Applet,Plasma/PopupApplet
 

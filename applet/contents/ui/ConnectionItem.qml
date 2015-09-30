@@ -29,6 +29,7 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 PlasmaComponents.ListItem {
     id: connectionItem
 
+    property bool activating: ConnectionState == PlasmaNM.Enums.Activating;
     property int  baseHeight: connectionItemBase.height
     property bool expanded: visibleDetails || visiblePasswordDialog
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
@@ -540,6 +541,12 @@ PlasmaComponents.ListItem {
         var lightness = (max + min)/3;
 
         return Qt.hsla(hue, saturation, lightness, 1.0);
+    }
+
+    onActivatingChanged: {
+        if (ConnectionState == PlasmaNM.Enums.Activating) {
+            ListView.view.positionViewAtBeginning()
+        }
     }
 
     onClicked: {

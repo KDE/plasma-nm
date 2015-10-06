@@ -47,7 +47,10 @@
    </item>
    <item row="0" column="1">
     <widget class="PasswordField" name="lePassword">
-     <property name="passwordMode">
+     <property name="toolTip">
+      <string>Password passed to PPTP when prompted for it.</string>
+     </property>
+     <property name="passwordMode" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -69,11 +72,6 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
- <tabstops>
-  <tabstop>lePassword</tabstop>
- </tabstops>
- <resources/>
- <connections/>
  <customwidgets>
   <customwidget>
    <class>PasswordField</class>
@@ -81,4 +79,9 @@
    <header>passwordfield.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>lePassword</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
 </ui>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>477</width>
-    <height>324</height>
+    <width>499</width>
+    <height>356</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -38,6 +38,9 @@
    </item>
    <item row="4" column="0">
     <widget class="QCheckBox" name="cbNeverDefault">
+     <property name="toolTip">
+      <string>If enabled, this connection will never be used as the default network connection</string>
+     </property>
      <property name="text">
       <string>Use only for resources on this connection</string>
      </property>
@@ -91,6 +94,10 @@
        <height>50</height>
       </size>
      </property>
+     <property name="toolTip">
+      <string>IP addresses identify your computer on the network. Click the &quot;Add&quot; button to add
+an IP address</string>
+     </property>
      <property name="selectionMode">
       <enum>QAbstractItemView::SingleSelection</enum>
      </property>
@@ -125,6 +132,9 @@
    </item>
    <item row="3" column="0">
     <widget class="QCheckBox" name="cbIgnoreAutoRoutes">
+     <property name="toolTip">
+      <string>If enabled, automatically configured routes are ignored and only routes specified above are used</string>
+     </property>
      <property name="text">
       <string>Ignore automatically obtained routes</string>
      </property>

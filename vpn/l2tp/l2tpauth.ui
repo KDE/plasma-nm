@@ -29,6 +29,9 @@
      <property name="enabled">
       <bool>false</bool>
      </property>
+     <property name="toolTip">
+      <string>Set the name used for authenticating the local system to the peer to &lt;name&gt;.</string>
+     </property>
     </widget>
    </item>
    <item row="1" column="0">
@@ -46,9 +49,12 @@
    </item>
    <item row="1" column="1">
     <widget class="PasswordField" name="leUserPassword">
-      <property name="passwordMode">
-       <bool>true</bool>
-      </property>
+     <property name="toolTip">
+      <string>Password passed to PPPD when prompted for it.</string>
+     </property>
+     <property name="passwordMode" stdset="0">
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
   </layout>

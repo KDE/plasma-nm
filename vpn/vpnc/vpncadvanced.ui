@@ -7,7 +7,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>388</width>
+    <width>407</width>
     <height>379</height>
    </rect>
   </property>
@@ -32,12 +32,16 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="domain"/>
+       <widget class="QLineEdit" name="domain">
+        <property name="toolTip">
+         <string>(NT-)Domain name for authentication.</string>
+        </property>
+       </widget>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>&amp;Vendor:</string>
+         <string>Vendor:</string>
         </property>
         <property name="buddy">
          <cstring>vendor</cstring>
@@ -51,6 +55,9 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Vendor of your IPsec gateway.</string>
         </property>
        </widget>
       </item>
@@ -72,7 +79,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>Encryption &amp;method:</string>
+         <string>Encryption method:</string>
         </property>
         <property name="buddy">
          <cstring>encryption</cstring>
@@ -86,6 +93,9 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Encryption method.</string>
         </property>
        </widget>
       </item>
@@ -107,12 +117,15 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="toolTip">
+         <string>NAT traversal method to use.</string>
+        </property>
        </widget>
       </item>
       <item row="2" column="0">
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>I&amp;KE DH Group:</string>
+         <string>IKE DH Group:</string>
         </property>
         <property name="buddy">
          <cstring>dhGroup</cstring>
@@ -126,6 +139,9 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Name of the IKE DH group.</string>
         </property>
        </widget>
       </item>
@@ -147,6 +163,9 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="toolTip">
+         <string>Diffie-Hellman group to use for PFS.</string>
+        </property>
        </widget>
       </item>
       <item row="5" column="1">
@@ -156,6 +175,9 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Disable sending DPD packets (sets timeout to 0).</string>
         </property>
         <property name="text">
          <string>Disable dead peer detection</string>
@@ -181,7 +203,7 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>Local port to use (0-65535). 0 (default value) means random port.</string>
+         <string>Local port to use (0-65535). 0 (default value) means random port. 500 is vpnc's default.</string>
         </property>
         <property name="specialValueText">
          <string>Random</string>

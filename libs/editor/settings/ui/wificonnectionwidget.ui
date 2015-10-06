@@ -93,6 +93,10 @@
      <property name="sizeAdjustPolicy">
       <enum>QComboBox::AdjustToMinimumContentsLength</enum>
      </property>
+     <property name="toolTip">
+      <string>This option locks this connection to the Wi-Fi access point (AP) specified by the
+ BSSID entered here. Example: 00:11:22:33:44:55</string>
+     </property>
     </widget>
    </item>
    <item row="7" column="0">
@@ -228,6 +232,10 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="toolTip">
+      <string>This options locks the connection to the Wi-Fi network associated to the specified band. This setting depends
+ on specific driver capability and may not work with all drivers</string>
+     </property>
      <item>
       <property name="text">
        <string extracomment="automatic band">Automatic</string>
@@ -262,6 +270,10 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Wireless channel to use for the Wi-Fi connection. The device will only join (or create for Ad-Hoc networks)
+a Wi-Fi network on the specified channel</string>
      </property>
     </widget>
    </item>

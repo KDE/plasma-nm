@@ -35,6 +35,10 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="toolTip">
+      <string>This option locks this connection to the network device specified by its
+permanent MAC address entered here. Example: 00:11:22:33:44:55</string>
+     </property>
     </widget>
    </item>
    <item row="1" column="0">
@@ -56,6 +60,11 @@
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="toolTip">
+        <string>The MAC address entered here will be used as hardware address for the
+network device this connection is activated on. This feature is known as MAC
+cloning or spoofing. Example 11:22:33:44:55</string>
        </property>
        <property name="inputMask">
         <string notr="true">HH:HH:HH:HH:HH:HH;_</string>
@@ -92,6 +101,10 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="toolTip">
+      <string>Only transmit packets of the specified size or smaller, breaking larger packets up
+into multiple Ethernet frames</string>
+     </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
@@ -123,6 +136,9 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Request that the device use only the specified speed. In MBit/s, example 100 == 100Mbit/s</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -156,6 +172,9 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="toolTip">
+      <string>Request that the device use the specified duplex mode. Either &quot;half&quot; or &quot;full&quot;</string>
+     </property>
      <item>
       <property name="text">
        <string>Full</string>
@@ -175,6 +194,9 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Allow auto-negotiation of port speed and duplex mode</string>
      </property>
      <property name="text">
       <string>Autonegotiate</string>
@@ -204,14 +226,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
-  <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
    <class>HwAddrComboBox</class>

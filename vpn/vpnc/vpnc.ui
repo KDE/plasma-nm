@@ -23,7 +23,11 @@
     </widget>
    </item>
    <item row="0" column="2">
-    <widget class="QLineEdit" name="gateway"/>
+    <widget class="QLineEdit" name="gateway">
+     <property name="toolTip">
+      <string>IP/hostname of IPsec gateway.</string>
+     </property>
+    </widget>
    </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label_2">
@@ -36,7 +40,11 @@
     </widget>
    </item>
    <item row="1" column="2">
-    <widget class="QLineEdit" name="user"/>
+    <widget class="QLineEdit" name="user">
+     <property name="toolTip">
+      <string>User name for the connection.</string>
+     </property>
+    </widget>
    </item>
    <item row="2" column="0" colspan="2">
     <widget class="QLabel" name="label_3">
@@ -58,7 +66,10 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="passwordMode">
+       <property name="toolTip">
+        <string>User password for the connection.</string>
+       </property>
+       <property name="passwordMode" stdset="0">
         <bool>true</bool>
        </property>
       </widget>
@@ -85,7 +96,11 @@
     </layout>
    </item>
    <item row="3" column="2">
-    <widget class="QLineEdit" name="group"/>
+    <widget class="QLineEdit" name="group">
+     <property name="toolTip">
+      <string>Group name</string>
+     </property>
+    </widget>
    </item>
    <item row="3" column="0">
     <widget class="QLabel" name="label_4">
@@ -99,6 +114,9 @@
    </item>
    <item row="6" column="0" colspan="3">
     <widget class="QCheckBox" name="useHybridAuth">
+     <property name="toolTip">
+      <string>Enable hybrid authentication, i.e. use certificate in addition to password.</string>
+     </property>
      <property name="text">
       <string>Use hybrid authentication</string>
      </property>
@@ -124,7 +142,10 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="passwordMode">
+       <property name="toolTip">
+        <string>Group password.</string>
+       </property>
+       <property name="passwordMode" stdset="0">
         <bool>true</bool>
        </property>
       </widget>
@@ -183,6 +204,9 @@
     <widget class="KUrlRequester" name="caFile">
      <property name="enabled">
       <bool>false</bool>
+     </property>
+     <property name="toolTip">
+      <string>CA certificate in PEM format.</string>
      </property>
      <property name="filter">
       <string>*.pem *.crt *.cer</string>

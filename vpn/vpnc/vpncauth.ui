@@ -54,7 +54,10 @@
    </item>
    <item row="1" column="2">
     <widget class="PasswordField" name="leUserPassword">
-     <property name="passwordMode">
+     <property name="toolTip">
+      <string>User password for the connection.</string>
+     </property>
+     <property name="passwordMode" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -77,7 +80,10 @@
    </item>
    <item row="3" column="2">
     <widget class="PasswordField" name="leGroupPassword">
-     <property name="passwordMode">
+     <property name="toolTip">
+      <string>Group password.</string>
+     </property>
+     <property name="passwordMode" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
@@ -86,6 +92,9 @@
     <widget class="QLineEdit" name="leUserName">
      <property name="enabled">
       <bool>false</bool>
+     </property>
+     <property name="toolTip">
+      <string>User name for the connection.</string>
      </property>
     </widget>
    </item>
@@ -103,6 +112,9 @@
     <widget class="QLineEdit" name="leGroupName">
      <property name="enabled">
       <bool>false</bool>
+     </property>
+     <property name="toolTip">
+      <string>Group name.</string>
      </property>
     </widget>
    </item>

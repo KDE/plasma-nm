@@ -31,6 +31,10 @@
      </item>
      <item row="0" column="1">
       <widget class="QLineEdit" name="gateway">
+       <property name="toolTip">
+        <string>Remote gateways(s), with optional port and protocol (e.g. ovpn.corp.com:1234:tcp).
+You can specify multiple hosts for redundancy (use commas or spaces as delimiters).</string>
+       </property>
        <property name="clearButtonEnabled">
         <bool>true</bool>
        </property>
@@ -60,6 +64,9 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="toolTip">
+        <string>Select an authentication mode.</string>
+       </property>
        <item>
         <property name="text">
          <string>X.509 Certificates</string>
@@ -87,7 +94,7 @@
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="page">
       <layout class="QFormLayout" name="formLayout_2">
@@ -106,6 +113,9 @@
        </item>
        <item row="0" column="1">
         <widget class="KUrlRequester" name="x509CaFile">
+         <property name="toolTip">
+          <string>Certificate authority (CA) file in .pem format.</string>
+         </property>
          <property name="filter">
           <string>*.pem *.crt *.key *.cer *.p12</string>
          </property>
@@ -126,6 +136,9 @@
        </item>
        <item row="1" column="1">
         <widget class="KUrlRequester" name="x509Cert">
+         <property name="toolTip">
+          <string>Local peer's signed certificate in .pem format (signed by CA of CA Certificate).</string>
+         </property>
          <property name="filter">
           <string>*.pem *.crt *.key *.cer *.p12</string>
          </property>
@@ -146,6 +159,9 @@
        </item>
        <item row="2" column="1">
         <widget class="KUrlRequester" name="x509Key">
+         <property name="toolTip">
+          <string>Local peer's private key in .pem format.</string>
+         </property>
          <property name="filter">
           <string>*.pem *.crt *.key *.cer *.p12</string>
          </property>
@@ -162,6 +178,9 @@
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="PasswordField" name="x509KeyPassword">
+           <property name="toolTip">
+            <string>Password for private key.</string>
+           </property>
            <property name="passwordMode" stdset="0">
             <bool>true</bool>
            </property>
@@ -220,6 +239,9 @@
        </item>
        <item row="0" column="1">
         <widget class="KUrlRequester" name="pskSharedKey">
+         <property name="toolTip">
+          <string>Pre-shared file for Static Key encryption mode (non-TLS).</string>
+         </property>
          <property name="filter">
           <string>*.key</string>
          </property>
@@ -239,6 +261,9 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Direction for Static Key encryption mode (non-TLS).</string>
          </property>
          <property name="whatsThis">
           <string>If key direction is used, it must be the opposite of that used on the VPN peer.</string>
@@ -275,6 +300,9 @@
        </item>
        <item row="2" column="1">
         <widget class="QLineEdit" name="pskLocalIp">
+         <property name="toolTip">
+          <string>IP address of the remote VPN endpoint.</string>
+         </property>
          <property name="clearButtonEnabled">
           <bool>true</bool>
          </property>
@@ -295,6 +323,9 @@
        </item>
        <item row="3" column="1">
         <widget class="QLineEdit" name="pskRemoteIp">
+         <property name="toolTip">
+          <string>IP address of the local VPN endpoint.</string>
+         </property>
          <property name="clearButtonEnabled">
           <bool>true</bool>
          </property>
@@ -335,6 +366,9 @@
        </item>
        <item row="0" column="1">
         <widget class="KUrlRequester" name="passCaFile">
+         <property name="toolTip">
+          <string>Certificate authority (CA) file in .pem format.</string>
+         </property>
          <property name="filter">
           <string>*.pem *.crt *.key *.cer</string>
          </property>
@@ -358,6 +392,9 @@
        </item>
        <item row="1" column="1">
         <widget class="QLineEdit" name="passUserName">
+         <property name="toolTip">
+          <string>Username passed to OpenVPN when prompted for it.</string>
+         </property>
          <property name="clearButtonEnabled">
           <bool>true</bool>
          </property>
@@ -379,6 +416,9 @@
           <widget class="PasswordField" name="passPassword">
            <property name="enabled">
             <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string>Password passed to OpenVPN when prompted for it.</string>
            </property>
            <property name="passwordMode" stdset="0">
             <bool>true</bool>
@@ -438,6 +478,9 @@
        </item>
        <item row="0" column="1">
         <widget class="KUrlRequester" name="x509PassCaFile">
+         <property name="toolTip">
+          <string>Certificate authority (CA) file in .pem format.</string>
+         </property>
          <property name="filter">
           <string>*.pem *.crt *.key *.cer *.p12</string>
          </property>
@@ -458,6 +501,9 @@
        </item>
        <item row="1" column="1">
         <widget class="KUrlRequester" name="x509PassCert">
+         <property name="toolTip">
+          <string>Local peer's signed certificate in .pem format (signed by CA of CA Certificate).</string>
+         </property>
          <property name="filter">
           <string>*.pem *.crt *.key *.cer *.p12</string>
          </property>
@@ -478,6 +524,9 @@
        </item>
        <item row="2" column="1">
         <widget class="KUrlRequester" name="x509PassKey">
+         <property name="toolTip">
+          <string>Local peer's private key in .pem format.</string>
+         </property>
          <property name="filter">
           <string>*.pem *.crt *.key *.cer *.p12</string>
          </property>
@@ -494,6 +543,9 @@
         <layout class="QHBoxLayout" name="horizontalLayout_12">
          <item>
           <widget class="PasswordField" name="x509PassKeyPassword">
+           <property name="toolTip">
+            <string>Password for private key.</string>
+           </property>
            <property name="passwordMode" stdset="0">
             <bool>true</bool>
            </property>
@@ -535,6 +587,9 @@
        </item>
        <item row="4" column="1">
         <widget class="QLineEdit" name="x509PassUsername">
+         <property name="toolTip">
+          <string>Username passed to OpenVPN when prompted for it.</string>
+         </property>
          <property name="clearButtonEnabled">
           <bool>true</bool>
          </property>
@@ -553,6 +608,9 @@
           <widget class="PasswordField" name="x509PassPassword">
            <property name="enabled">
             <bool>true</bool>
+           </property>
+           <property name="toolTip">
+            <string>Password passed to OpenVPN when prompted for it.</string>
            </property>
            <property name="passwordMode" stdset="0">
             <bool>true</bool>

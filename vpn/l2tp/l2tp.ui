@@ -23,6 +23,9 @@
    </item>
    <item row="0" column="1">
     <widget class="QLineEdit" name="gateway">
+     <property name="toolTip">
+      <string>L2TP server IP or name.</string>
+     </property>
      <property name="clearButtonEnabled">
       <bool>true</bool>
      </property>
@@ -37,6 +40,9 @@
    </item>
    <item row="1" column="1">
     <widget class="QLineEdit" name="username">
+     <property name="toolTip">
+      <string>Set the name used for authenticating the local system to the peer to &lt;name&gt;.</string>
+     </property>
      <property name="clearButtonEnabled">
       <bool>true</bool>
      </property>
@@ -53,7 +59,10 @@
     <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,1">
      <item>
       <widget class="PasswordField" name="password">
-       <property name="passwordMode">
+       <property name="toolTip">
+        <string>Password passed to PPPD when prompted for it.</string>
+       </property>
+       <property name="passwordMode" stdset="0">
         <bool>true</bool>
        </property>
       </widget>
@@ -88,6 +97,10 @@
    </item>
    <item row="3" column="1">
     <widget class="QLineEdit" name="domain">
+     <property name="toolTip">
+      <string>Append the domain name &lt;domain&gt; to the local host name for 
+authentication purposes.</string>
+     </property>
      <property name="clearButtonEnabled">
       <bool>true</bool>
      </property>

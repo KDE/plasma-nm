@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>424</width>
-    <height>435</height>
+    <height>490</height>
    </rect>
   </property>
   <property name="toolTip">
@@ -262,7 +262,8 @@
         </sizepolicy>
        </property>
        <property name="toolTip">
-        <string>Addresses</string>
+        <string>IP addresses identify your computer on the network. Click the &quot;Add&quot; button to add
+an IP address</string>
        </property>
        <property name="selectionMode">
         <enum>QAbstractItemView::SingleSelection</enum>
@@ -298,6 +299,9 @@
    </item>
    <item row="8" column="0" colspan="2">
     <widget class="QCheckBox" name="ipv6RequiredCB">
+     <property name="toolTip">
+      <string>When connecting to IPv4-capable networks, allows the connection to complete if IPv6 configuration fails but IPv4 configuration succeeds</string>
+     </property>
      <property name="text">
       <string>IPv6 is required for this connection</string>
      </property>
@@ -328,6 +332,11 @@
    </item>
    <item row="5" column="1" colspan="2">
     <widget class="KComboBox" name="privacyCombo">
+     <property name="toolTip">
+      <string>Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If enabled, it makes the kernel generate
+a temporary IPv6 address in addition to the public one generated from MAC address via modified EUI-64.
+This enhances privacy, but could cause problems in some applications, on the other hand</string>
+     </property>
      <item>
       <property name="text">
        <string>Default</string>
@@ -354,14 +363,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
-  <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

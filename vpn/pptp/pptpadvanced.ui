@@ -23,7 +23,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="lbl_auth">
         <property name="text">
-         <string>Allow following authentication &amp;methods:</string>
+         <string>Allow following authentication methods:</string>
         </property>
         <property name="buddy">
          <cstring>listWidget</cstring>
@@ -32,6 +32,9 @@
       </item>
       <item row="1" column="0" colspan="2">
        <widget class="QListWidget" name="listWidget">
+        <property name="toolTip">
+         <string>Allow/disable authentication methods.</string>
+        </property>
         <item>
          <property name="text">
           <string>PAP</string>
@@ -80,7 +83,9 @@
    <item>
     <widget class="QGroupBox" name="gb_MPPE">
      <property name="toolTip">
-      <string>Use Microsoft Point-to-Point Encryption</string>
+      <string>Note: MPPE encryption is only available with MSCHAP authentication methods. To
+enable this checkbox, select one or more of the MSCHAP authentication
+methods: MSCHAP or MSCHAPv2.</string>
      </property>
      <property name="title">
       <string>Use MPPE Encryption</string>
@@ -104,7 +109,7 @@
          </size>
         </property>
         <property name="text">
-         <string>Cr&amp;ypto:</string>
+         <string>Crypto:</string>
         </property>
         <property name="buddy">
          <cstring>cb_MPPECrypto</cstring>
@@ -118,6 +123,9 @@
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Require the use of MPPE, with 40/128-bit encryption or all.</string>
         </property>
         <item>
          <property name="text">
@@ -138,6 +146,9 @@
       </item>
       <item row="1" column="0" colspan="2">
        <widget class="QCheckBox" name="cb_statefulEncryption">
+        <property name="toolTip">
+         <string>Allow MPPE to use stateful mode. Stateless mode is still attempted first.</string>
+        </property>
         <property name="text">
          <string>Use stateful encryption</string>
         </property>
@@ -160,6 +171,9 @@
       </property>
       <item row="0" column="0">
        <widget class="QCheckBox" name="cb_BSD">
+        <property name="toolTip">
+         <string>Allow/disable BSC-Compress compression.</string>
+        </property>
         <property name="text">
          <string>Allow BSD compression</string>
         </property>
@@ -170,6 +184,9 @@
       </item>
       <item row="1" column="0">
        <widget class="QCheckBox" name="cb_deflate">
+        <property name="toolTip">
+         <string>Allow/disable Deflate compression.</string>
+        </property>
         <property name="text">
          <string>Allow Deflate compression</string>
         </property>
@@ -180,6 +197,10 @@
       </item>
       <item row="2" column="0">
        <widget class="QCheckBox" name="cb_TCPheaders">
+        <property name="toolTip">
+         <string>Allow/disable Van Jacobson style TCP/IP header compression in both the transmit
+ and the receive directions.</string>
+        </property>
         <property name="text">
          <string>Allow TCP header compression</string>
         </property>
@@ -202,6 +223,9 @@
       </property>
       <item row="0" column="0">
        <widget class="QCheckBox" name="cb_sendEcho">
+        <property name="toolTip">
+         <string>Send LCP echo-requests to find out whether peer is alive.</string>
+        </property>
         <property name="text">
          <string>Send PPP echo packets </string>
         </property>

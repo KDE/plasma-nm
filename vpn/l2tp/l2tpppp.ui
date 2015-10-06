@@ -11,18 +11,18 @@
    </rect>
   </property>
   <layout class="QFormLayout" name="formLayout_3">
-    <property name="verticalSpacing">
+   <property name="verticalSpacing">
     <number>0</number>
-    </property>
+   </property>
    <item row="0" column="0" colspan="2">
     <widget class="QGroupBox" name="grp_authenfication">
      <property name="title">
       <string>Authentication</string>
      </property>
      <layout class="QFormLayout" name="formLayout_5">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
       <item row="0" column="0">
        <widget class="QLabel" name="lblauth">
         <property name="text">
@@ -35,6 +35,9 @@
       </item>
       <item row="1" column="0" colspan="2">
        <widget class="QListWidget" name="listWidget">
+        <property name="toolTip">
+         <string>Allow/disable authentication methods</string>
+        </property>
         <item>
          <property name="text">
           <string>PAP</string>
@@ -83,7 +86,9 @@
    <item row="1" column="0" colspan="2">
     <widget class="QGroupBox" name="gbMPPE">
      <property name="toolTip">
-      <string>Use Microsoft Point-to-Point Encryption</string>
+      <string>Note: MPPE encryption is only available with MSCHAP authentication methods. To
+enable this checkbox, select one or more of the MSCHAP authentication
+methods: MSCHAP or MSCHAPv2.</string>
      </property>
      <property name="title">
       <string>Use MPPE Encryption</string>
@@ -95,9 +100,9 @@
       <bool>false</bool>
      </property>
      <layout class="QFormLayout" name="formLayout_4">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
       <item row="0" column="0">
        <widget class="QLabel" name="lblMMPEcrypto">
         <property name="maximumSize">
@@ -122,6 +127,9 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="toolTip">
+         <string>Require the use of MPPE, with 40/128-bit encryption or all.</string>
+        </property>
         <item>
          <property name="text">
           <string comment="like in use Any configuration">Any</string>
@@ -141,6 +149,9 @@
       </item>
       <item row="1" column="0" colspan="2">
        <widget class="QCheckBox" name="cbstatefulEncryption">
+        <property name="toolTip">
+         <string>Allow MPPE to use stateful mode. Stateless mode is still attempted first.</string>
+        </property>
         <property name="text">
          <string>Use stateful encryption</string>
         </property>
@@ -155,14 +166,17 @@
       <string>Compression</string>
      </property>
      <layout class="QFormLayout" name="formLayout">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
       <property name="labelAlignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
       <item row="0" column="0">
        <widget class="QCheckBox" name="cbBSD">
+        <property name="toolTip">
+         <string>Allow/disable BSD-Compress compression.</string>
+        </property>
         <property name="text">
          <string>Allow BSD compression</string>
         </property>
@@ -173,6 +187,9 @@
       </item>
       <item row="1" column="0">
        <widget class="QCheckBox" name="cbdeflate">
+        <property name="toolTip">
+         <string>Allow/disable Deflate compression.</string>
+        </property>
         <property name="text">
          <string>Allow Deflate compression</string>
         </property>
@@ -183,6 +200,10 @@
       </item>
       <item row="2" column="0">
        <widget class="QCheckBox" name="cbTCPheaders">
+        <property name="toolTip">
+         <string>Allow/disable Van Jacobson style TCP/IP header compression in both the transmit
+and the receive directions.</string>
+        </property>
         <property name="text">
          <string>Allow TCP header compression</string>
         </property>
@@ -193,6 +214,10 @@
       </item>
       <item row="3" column="0">
        <widget class="QCheckBox" name="cbCompressionNegotiation">
+        <property name="toolTip">
+         <string>Allow protocol field compression negotiation in both the receive and the
+ transmit direction.</string>
+        </property>
         <property name="text">
          <string>Use protocol field compression negotiation</string>
         </property>
@@ -206,6 +231,9 @@
       </item>
       <item row="4" column="0">
        <widget class="QCheckBox" name="cbAddressControlCompression">
+        <property name="toolTip">
+         <string>Use Address/Control compression in both directions (send and receive).</string>
+        </property>
         <property name="text">
          <string>Use Address/Control compression</string>
         </property>
@@ -223,11 +251,14 @@
       <string>Echo</string>
      </property>
      <layout class="QFormLayout" name="formLayout_2">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
       <item row="0" column="0">
        <widget class="QCheckBox" name="cbsendEcho">
+        <property name="toolTip">
+         <string>Send LCP echo-requests to find out whether peer is alive.</string>
+        </property>
         <property name="text">
          <string>Send PPP echo packets </string>
         </property>

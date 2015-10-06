@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>424</width>
-    <height>434</height>
+    <height>490</height>
    </rect>
   </property>
   <property name="toolTip">
@@ -262,7 +262,8 @@
         </sizepolicy>
        </property>
        <property name="toolTip">
-        <string>Addresses</string>
+        <string>IP addresses identify your computer on the network. Click the &quot;Add&quot; button to add
+an IP address</string>
        </property>
        <property name="selectionMode">
         <enum>QAbstractItemView::SingleSelection</enum>
@@ -298,6 +299,10 @@
    </item>
    <item row="8" column="0" colspan="2">
     <widget class="QCheckBox" name="ipv4RequiredCB">
+     <property name="toolTip">
+      <string>When connecting to IPv6-capable networks, allows the connection to complete if
+IPv4 configuration fails but IPv6 configuration succeeds</string>
+     </property>
      <property name="text">
       <string>IPv4 is required for this connection</string>
      </property>
@@ -316,7 +321,9 @@
    <item row="5" column="1" colspan="2">
     <widget class="KLineEdit" name="dhcpClientId">
      <property name="toolTip">
-      <string>Use this field to specify the DHCP client ID which is a string sent to the DHCP server to identify the local machine that the DHCP server may use to customize the DHCP lease and options.</string>
+      <string>Use this field to specify the DHCP client ID which is a string sent to the DHCP server
+to identify the local machine that the DHCP server may use to customize the DHCP
+lease and options.</string>
      </property>
     </widget>
    </item>
@@ -337,14 +344,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
-  <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

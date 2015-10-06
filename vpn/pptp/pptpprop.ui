@@ -40,6 +40,9 @@
         </item>
         <item>
          <widget class="QLineEdit" name="edt_gateway">
+          <property name="toolTip">
+           <string>PPTP server IP or name.</string>
+          </property>
           <property name="clearButtonEnabled">
            <bool>true</bool>
           </property>
@@ -84,6 +87,9 @@
           </item>
           <item>
            <widget class="QLineEdit" name="edt_login">
+            <property name="toolTip">
+             <string>Set the name used for authenticating the local system to the peer to &lt;name&gt;.</string>
+            </property>
             <property name="clearButtonEnabled">
              <bool>true</bool>
             </property>
@@ -120,7 +126,10 @@
             <property name="enabled">
              <bool>true</bool>
             </property>
-            <property name="passwordMode">
+            <property name="toolTip">
+             <string>Password passed to PPTP when prompted for it.</string>
+            </property>
+            <property name="passwordMode" stdset="0">
              <bool>true</bool>
             </property>
            </widget>
@@ -172,6 +181,10 @@
           </item>
           <item>
            <widget class="QLineEdit" name="edt_ntDomain">
+            <property name="toolTip">
+             <string>Append the domain name &lt;domain&gt; to the local host name for
+authenticating purposes.</string>
+            </property>
             <property name="clearButtonEnabled">
              <bool>true</bool>
             </property>

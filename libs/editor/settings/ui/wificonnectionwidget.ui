@@ -233,7 +233,7 @@
       </sizepolicy>
      </property>
      <property name="toolTip">
-      <string>This options locks the connection to the Wi-Fi network associated to the specified band. This setting depends
+      <string>This option locks the connection to the Wi-Fi network associated to the specified band. This setting depends
  on specific driver capability and may not work with all drivers</string>
      </property>
      <item>

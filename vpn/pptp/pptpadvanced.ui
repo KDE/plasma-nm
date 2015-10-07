@@ -172,7 +172,7 @@ methods: MSCHAP or MSCHAPv2.</string>
       <item row="0" column="0">
        <widget class="QCheckBox" name="cb_BSD">
         <property name="toolTip">
-         <string>Allow/disable BSC-Compress compression.</string>
+         <string>Allow/disable BSD-Compress compression.</string>
         </property>
         <property name="text">
          <string>Allow BSD compression</string>

@@ -216,7 +216,7 @@ and the receive directions.</string>
        <widget class="QCheckBox" name="cbCompressionNegotiation">
         <property name="toolTip">
          <string>Allow protocol field compression negotiation in both the receive and the
- transmit direction.</string>
+ transmit directions.</string>
         </property>
         <property name="text">
          <string>Use protocol field compression negotiation</string>

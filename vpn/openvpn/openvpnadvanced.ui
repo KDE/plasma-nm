@@ -11,6 +11,13 @@
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
@@ -26,7 +33,7 @@
          <item>
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>Gateway Port:</string>
+            <string>Custom gateway port:</string>
            </property>
            <property name="buddy">
             <cstring>sbCustomPort</cstring>
@@ -53,7 +60,7 @@
          <item>
           <widget class="QLabel" name="label_8">
            <property name="text">
-            <string>Tunnel MTU:</string>
+            <string>Custom tunnel MTU:</string>
            </property>
            <property name="buddy">
             <cstring>sbMtu</cstring>
@@ -80,7 +87,7 @@
          <item>
           <widget class="QLabel" name="label_9">
            <property name="text">
-            <string>UDP fragment size:</string>
+            <string>Custom UDP fragment size:</string>
            </property>
            <property name="buddy">
             <cstring>sbUdpFragmentSize</cstring>
@@ -127,6 +134,73 @@
         </layout>
        </item>
        <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QCheckBox" name="chkUseVirtualDeviceType">
+           <property name="toolTip">
+            <string>Explicitly set virtual device type (TUN/TAP).</string>
+           </property>
+           <property name="text">
+            <string>Set virtual device type:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cmbDeviceType">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>Explicitly set virtual device type (TUN/TAP).</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>TUN</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TAP</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <item>
+          <widget class="QCheckBox" name="chkUseVirtualDeviceName">
+           <property name="toolTip">
+            <string>Use custom name for TUN/TAP virtual device (instead of default &quot;tun&quot; or &quot;tap&quot;).</string>
+           </property>
+           <property name="text">
+            <string>Set virtual device name:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="leVirtualDeviceName">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>Use custom name for TUN/TAP virtual device (instead of default &quot;tun&quot; or &quot;tap&quot;).</string>
+           </property>
+           <property name="placeholderText">
+            <string>Automatic</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
         <widget class="QCheckBox" name="chkUseLZO">
          <property name="toolTip">
           <string>Use fast LZO compression.</string>
@@ -142,27 +216,28 @@
           <string>Use TCP for communicating with remote host.</string>
          </property>
          <property name="text">
-          <string>Use TCP connection</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="chkUseTAP">
-         <property name="toolTip">
-          <string>Explicitly set virtual device type (TUN/TAP).</string>
-         </property>
-         <property name="text">
-          <string>Use TAP device</string>
+          <string>Use a TCP connection</string>
          </property>
         </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="chkMssRestrict">
          <property name="toolTip">
-          <string>Restrict tunnel TCP MSS.</string>
+          <string>Restrict tunnel TCP maximum segment size.</string>
          </property>
          <property name="text">
           <string>Restrict TCP maximum segment size (MSS)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkRandRemHosts">
+         <property name="toolTip">
+          <string>Randomize the order of gateways list (remote) as a kind of basic load-
+balancing measure.</string>
+         </property>
+         <property name="text">
+          <string>Randomize remote hosts</string>
          </property>
         </widget>
        </item>
@@ -218,6 +293,39 @@ Block Chaining mode).</string>
              <string>Obtaining available ciphers...</string>
             </property>
            </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QCheckBox" name="chkUseCustomCipherKey">
+           <property name="toolTip">
+            <string>Set cipher key size to a custom value. If unspecified, it defaults to cipher-specific size.</string>
+           </property>
+           <property name="text">
+            <string>Use custom size of cipher key:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="sbCustomCipherKey">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>Set cipher key size to a custom value. If unspecified, it defaults to cipher-specific size.</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>65535</number>
+           </property>
+           <property name="value">
+            <number>128</number>
+           </property>
           </widget>
          </item>
         </layout>
@@ -348,6 +456,28 @@ the specified one.</string>
         </layout>
        </item>
        <item>
+        <widget class="QLabel" name="lbSubjectMatch">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <italic>true</italic>
+          </font>
+         </property>
+         <property name="text">
+          <string>Connect only to servers whose certificate matches the given subject.
+Example: /CN=myvpn.company.com</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCheckBox" name="chkRemoteCertTls">
          <property name="toolTip">
           <string>Require that peer certificate was signed with an explicit key usage and extended
@@ -411,7 +541,7 @@ key usage based on RFC3280 TLS rules.</string>
           <item row="0" column="0">
            <widget class="QLabel" name="textLabel4_3">
             <property name="text">
-             <string>Key:</string>
+             <string>Key File:</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -493,7 +623,7 @@ to protect against DoS attacks.</string>
        <property name="verticalSpacing">
         <number>0</number>
        </property>
-       <item row="0" column="0">
+       <item row="1" column="0">
         <widget class="QLabel" name="label_11">
          <property name="text">
           <string>Proxy Type:</string>
@@ -503,7 +633,7 @@ to protect against DoS attacks.</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
+       <item row="1" column="1">
         <widget class="QComboBox" name="cmbProxyType">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -537,7 +667,28 @@ to protect against DoS attacks.</string>
          </item>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="2" column="1">
+        <widget class="QLabel" name="lbProxyType">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <italic>true</italic>
+          </font>
+         </property>
+         <property name="text">
+          <string>Select this option if your organization requires the use of a proxy server to access the Internet.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
         <widget class="QLabel" name="label_12">
          <property name="text">
           <string>Server Address:</string>
@@ -547,7 +698,7 @@ to protect against DoS attacks.</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
+       <item row="3" column="1">
         <widget class="QLineEdit" name="proxyServerAddress">
          <property name="toolTip">
           <string>Connect to remote host through a proxy with this address.</string>
@@ -557,7 +708,7 @@ to protect against DoS attacks.</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="4" column="0">
         <widget class="QLabel" name="label_13">
          <property name="text">
           <string>Port:</string>
@@ -567,7 +718,7 @@ to protect against DoS attacks.</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
+       <item row="4" column="1">
         <widget class="QSpinBox" name="sbProxyPort">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -583,17 +734,7 @@ to protect against DoS attacks.</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QCheckBox" name="chkProxyRetry">
-         <property name="toolTip">
-          <string>Retry indefinitely on proxy errors. It simulates a SIGUSR1 reset.</string>
-         </property>
-         <property name="text">
-          <string>Retry indefinitely when errors occur</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
+       <item row="8" column="0">
         <widget class="QLabel" name="label_14">
          <property name="text">
           <string>Proxy Username:</string>
@@ -603,7 +744,7 @@ to protect against DoS attacks.</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
+       <item row="8" column="1">
         <widget class="PasswordField" name="proxyUsername">
          <property name="toolTip">
           <string>HTTP/Socks proxy username passed to OpenVPN when prompted for it.</string>
@@ -613,7 +754,7 @@ to protect against DoS attacks.</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
+       <item row="9" column="0">
         <widget class="QLabel" name="label_15">
          <property name="text">
           <string>Proxy Password:</string>
@@ -623,7 +764,7 @@ to protect against DoS attacks.</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
+       <item row="9" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout_14">
          <item>
           <widget class="PasswordField" name="proxyPassword">
@@ -656,15 +797,18 @@ to protect against DoS attacks.</string>
          </item>
         </layout>
        </item>
+       <item row="7" column="1">
+        <widget class="QCheckBox" name="chkProxyRetry">
+         <property name="toolTip">
+          <string>Retry indefinitely on proxy errors. It simulates a SIGUSR1 reset.</string>
+         </property>
+         <property name="text">
+          <string>Retry indefinitely when errors occur</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
     </widget>
    </item>
   </layout>
@@ -690,7 +834,6 @@ to protect against DoS attacks.</string>
   <tabstop>sbCustomReneg</tabstop>
   <tabstop>chkUseLZO</tabstop>
   <tabstop>chkUseTCP</tabstop>
-  <tabstop>chkUseTAP</tabstop>
   <tabstop>chkMssRestrict</tabstop>
   <tabstop>cboCipher</tabstop>
   <tabstop>cboHmac</tabstop>
@@ -755,6 +898,54 @@ to protect against DoS attacks.</string>
     <hint type="destinationlabel">
      <x>148</x>
      <y>127</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkUseVirtualDeviceType</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbDeviceType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>208</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>412</x>
+     <y>208</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkUseVirtualDeviceName</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>leVirtualDeviceName</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>245</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>412</x>
+     <y>245</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkUseCustomCipherKey</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>sbCustomCipherKey</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>97</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>412</x>
+     <y>97</y>
     </hint>
    </hints>
   </connection>

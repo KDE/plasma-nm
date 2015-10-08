@@ -58,4 +58,8 @@ Name[x-test]=xxOpenVPNxx
 Name[zh_CN]=OpenVPN
 Name[zh_TW]=OpenVPN
 Comment=Compatible with the OpenVPN server
+Comment[nl]=Compatibel met de OpenVPN-server
+Comment[pt]=Compatível com o servidor OpenVPN
+Comment[sv]=Kompatibel med OpenVPN-server
+Comment[x-test]=xxCompatible with the OpenVPN serverxx
 

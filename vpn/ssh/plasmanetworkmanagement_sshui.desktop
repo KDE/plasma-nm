@@ -46,3 +46,7 @@ Name[x-test]=xxSSHxx
 Name[zh_CN]=SSH
 Name[zh_TW]=SSH
 Comment=Compatible with the SSH server
+Comment[nl]=Compatibel met de SSH-server
+Comment[pt]=Compatível com o servidor SSH
+Comment[sv]=Kompatibel med SSH-server
+Comment[x-test]=xxCompatible with the SSH serverxx

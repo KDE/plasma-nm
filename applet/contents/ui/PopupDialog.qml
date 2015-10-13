@@ -65,6 +65,7 @@ FocusScope {
         ListView {
             id: connectionView
 
+            property bool availableConnectionsVisible: false
             property int currentVisibleButtonIndex: -1
 
             anchors.fill: parent

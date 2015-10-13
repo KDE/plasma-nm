@@ -49,7 +49,7 @@ PlasmaComponents.ListItem {
         width: height
         flat: true
         tooltip: i18n("Rescan wireless networks")
-        visible: header.text === i18n("Available connections") &&
+        visible: (header.text === i18n("Available connections") || !connectionView.availableConnectionsVisible) &&
                  enabledConnections.wirelessEnabled && enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable
 
         onClicked: {
@@ -74,5 +74,19 @@ PlasmaComponents.ListItem {
                 to: 720
             }
         }
+    }
+
+    Component.onCompleted: {
+        if (header.text === i18n("Available connections")) {
+            connectionView.availableConnectionsVisible = true
+        }
+    }
+
+    Component.onDestruction: {
+        connectionView.availableConnectionsVisible = false
+    }
+
+    onVisibleChanged: {
+        connectionView.availableConnectionsVisible = visible
     }
 }

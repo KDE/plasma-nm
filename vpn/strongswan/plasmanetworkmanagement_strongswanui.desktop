@@ -27,6 +27,7 @@ Name[x-test]=xxIPsec based VPN (strongswan)xx
 Comment=IPsec, IKEv1, IKEv2 based VPN
 Comment[ca]=VPN basada en IKEv1, IKEv2 sobre IPsec
 Comment[en_GB]=IPsec, IKEv1, IKEv2 based VPN
+Comment[es]=VPN basada en IPsec, IKEv1 e IKEv2
 Comment[nl]=Op IPsec, IKEv1, IKEv2 gebaseerde VPN
 Comment[nn]=IPsec-/IKEv1-/IKEv2-basert VPN
 Comment[pl]=VPN oparty na IPsec, IKEv1, IKEv2

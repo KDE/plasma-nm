@@ -84,7 +84,6 @@ public Q_SLOTS:
      */
     void disconnectAll();
     void enableAirplaneMode(bool enable);
-    void enableBt(bool enable);
     void enableNetworking(bool enable);
     void enableWireless(bool enable);
 #if !NM_CHECK_VERSION(1, 2, 0)
@@ -113,13 +112,12 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void initKdedModule();
-    void replyFinished(QDBusPendingCallWatcher * watcher);
+    void replyFinished(QDBusPendingCallWatcher *watcher);
 #if WITH_MODEMMANAGER_SUPPORT
     void unlockRequiredChanged(MMModemLock modemLock);
 #endif
 
 private:
-    bool m_tmpBluetoothEnabled;
 #if !NM_CHECK_VERSION(1, 2, 0)
     bool m_tmpWimaxEnabled;
 #endif
@@ -131,8 +129,9 @@ private:
     QString m_tmpConnectionUuid;
     QString m_tmpDevicePath;
     QString m_tmpSpecificPath;
+    QMap<QString, bool> m_bluetoothAdapters;
 
-    bool isBtEnabled();
+    void enableBluetooth(bool enable);
     QDBusInterface m_agentIface;
 };
 

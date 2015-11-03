@@ -37,11 +37,11 @@ public:
     Ui_PptpProp ui;
     Ui_PptpAdvanced advUi;
     NetworkManager::VpnSetting::Ptr setting;
-    QDialog * advancedDlg;
-    QWidget * advancedWid;
+    QDialog *advancedDlg;
+    QWidget *advancedWid;
 };
 
-PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
     : SettingWidget(setting, parent)
     , d_ptr(new PptpSettingWidgetPrivate)
 {
@@ -50,8 +50,10 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
 
     d->setting = setting;
 
+    d->ui.edt_password->setPasswordOptionsEnabled(true);
+    d->ui.edt_password->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+
     connect(d->ui.btnAdvanced, &QPushButton::clicked, this, &PptpSettingWidget::doAdvancedDialog);
-    connect(d->ui.cmbPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &PptpSettingWidget::passwordTypeChanged);
 
     d->advancedDlg = new QDialog(this);
     d->advancedWid = new QWidget(this);
@@ -68,7 +70,7 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
 
     KAcceleratorManager::manage(this);
 
-    if (d->setting) {
+    if (d->setting && !d->setting->isNull()) {
         loadConfig(d->setting);
     }
 }
@@ -76,12 +78,6 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
 PptpSettingWidget::~PptpSettingWidget()
 {
     delete d_ptr;
-}
-
-void PptpSettingWidget::passwordTypeChanged(int index)
-{
-    Q_D(PptpSettingWidget);
-    d->ui.edt_password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
 }
 
 void PptpSettingWidget::doAdvancedDialog()
@@ -170,7 +166,7 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // secrets
     const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_PPTP_KEY_PASSWORD"-flags"].toInt();
-    fillOnePasswordCombo(d->ui.cmbPasswordStorage, type);
+    fillOnePasswordCombo(d->ui.edt_password, type);
 
     loadSecrets(setting);
 }
@@ -190,7 +186,7 @@ void PptpSettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
     }
 }
 
-QVariantMap PptpSettingWidget::setting(bool agentOwned) const
+QVariantMap PptpSettingWidget::setting() const
 {
     Q_D(const PptpSettingWidget);
 
@@ -208,7 +204,7 @@ QVariantMap PptpSettingWidget::setting(bool agentOwned) const
     if (!d->ui.edt_password->text().isEmpty()) {
         secretData.insert(QLatin1String(NM_PPTP_KEY_PASSWORD), d->ui.edt_password->text());
     }
-    handleOnePasswordType(d->ui.cmbPasswordStorage, NM_PPTP_KEY_PASSWORD"-flags", data, agentOwned);
+    handleOnePasswordType(d->ui.edt_password, NM_PPTP_KEY_PASSWORD"-flags", data);
     if (!d->ui.edt_ntDomain->text().isEmpty()) {
         data.insert(NM_PPTP_KEY_DOMAIN,  d->ui.edt_ntDomain->text());
     }
@@ -283,38 +279,36 @@ QVariantMap PptpSettingWidget::setting(bool agentOwned) const
     return setting.toMap();
 }
 
-void PptpSettingWidget::fillOnePasswordCombo(QComboBox * combo, NetworkManager::Setting::SecretFlags type)
+void PptpSettingWidget::fillOnePasswordCombo(PasswordField *passwordField, NetworkManager::Setting::SecretFlags type)
 {
-    if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) { // store
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
-    } else if (type.testFlag(NetworkManager::Setting::NotSaved)) { // always ask
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
-    } else if (type.testFlag(NetworkManager::Setting::NotRequired)) { // not required
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
+    if (type.testFlag(NetworkManager::Setting::None)) {
+        passwordField->setPasswordOption(PasswordField::StoreForAllUsers);
+    } else if (type.testFlag(NetworkManager::Setting::AgentOwned)) {
+        passwordField->setPasswordOption(PasswordField::StoreForUser);
+    } else if (type.testFlag(NetworkManager::Setting::NotSaved)) {
+        passwordField->setPasswordOption(PasswordField::AlwaysAsk);
+    } else {
+        passwordField->setPasswordOption(PasswordField::PasswordField::NotRequired);
     }
 }
 
-uint PptpSettingWidget::handleOnePasswordType(const QComboBox *combo, const QString & key, NMStringMap & data, bool agentOwned) const
+void PptpSettingWidget::handleOnePasswordType(const PasswordField *passwordField, const QString &key, NMStringMap &data) const
 {
-    const uint type = combo->currentIndex();
-    switch (type) {
-    case 0:
-        if (agentOwned) {
-            data.insert(key, QString::number(NetworkManager::Setting::AgentOwned)); // store
-            break;
-        } else {
-            data.insert(key, QString::number(NetworkManager::Setting::None));
-            break;
-        }
-    case 1:
-        data.insert(key, QString::number(NetworkManager::Setting::NotSaved)); // always ask
+    const PasswordField::PasswordOption option = passwordField->passwordOption();
+    switch (option) {
+    case PasswordField::StoreForAllUsers:
+        data.insert(key, QString::number(NetworkManager::Setting::None));
         break;
-
-    case 2:
-        data.insert(key, QString::number(NetworkManager::Setting::NotRequired)); // not required
+    case PasswordField::StoreForUser:
+        data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
+        break;
+    case PasswordField::AlwaysAsk:
+        data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
+        break;
+    case PasswordField::NotRequired:
+        data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
         break;
     }
-    return type;
 }
 
 bool PptpSettingWidget::isValid() const

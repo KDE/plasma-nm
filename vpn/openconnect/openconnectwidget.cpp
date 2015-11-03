@@ -75,10 +75,9 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
     d->ui.chkUseFsid->setChecked(dataMap[NM_OPENCONNECT_KEY_PEM_PASSPHRASE_FSID] == "yes");
 }
 
-QVariantMap OpenconnectSettingWidget::setting(bool agentOwned) const
+QVariantMap OpenconnectSettingWidget::setting() const
 {
     Q_D(const OpenconnectSettingWidget);
-    Q_UNUSED(agentOwned)
 
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_OPENCONNECT));

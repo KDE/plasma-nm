@@ -150,34 +150,6 @@
               </property>
              </widget>
             </item>
-            <item>
-             <widget class="QComboBox" name="cboPrivateKeyPassOptions">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="sizeAdjustPolicy">
-               <enum>QComboBox::AdjustToContents</enum>
-              </property>
-              <item>
-               <property name="text">
-                <string>Store</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Always Ask</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Not Required</string>
-               </property>
-              </item>
-             </widget>
-            </item>
            </layout>
           </item>
          </layout>
@@ -220,28 +192,6 @@
               </property>
              </widget>
             </item>
-            <item>
-             <widget class="QComboBox" name="cboPinOptions">
-              <property name="sizeAdjustPolicy">
-               <enum>QComboBox::AdjustToContents</enum>
-              </property>
-              <item>
-               <property name="text">
-                <string>Store</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Always Ask</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Not Required</string>
-               </property>
-              </item>
-             </widget>
-            </item>
            </layout>
           </item>
          </layout>
@@ -278,25 +228,6 @@
               <property name="passwordMode" stdset="0">
                <bool>true</bool>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="cboUserPassOptions">
-              <item>
-               <property name="text">
-                <string>Store</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Always Ask</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Not Required</string>
-               </property>
-              </item>
              </widget>
             </item>
            </layout>
@@ -392,13 +323,10 @@
   <tabstop>leAuthPrivatekeyCertificate</tabstop>
   <tabstop>leAuthPrivatekeyKey</tabstop>
   <tabstop>lePrivateKeyPassword</tabstop>
-  <tabstop>cboPrivateKeyPassOptions</tabstop>
   <tabstop>leAuthSshCertificate</tabstop>
   <tabstop>lePin</tabstop>
-  <tabstop>cboPinOptions</tabstop>
   <tabstop>leUserName</tabstop>
   <tabstop>leUserPassword</tabstop>
-  <tabstop>cboUserPassOptions</tabstop>
   <tabstop>innerIP</tabstop>
   <tabstop>udpEncap</tabstop>
   <tabstop>ipComp</tabstop>

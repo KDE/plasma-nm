@@ -51,9 +51,10 @@ SshSettingWidget::SshSettingWidget(const NetworkManager::VpnSetting::Ptr &settin
 
     d->setting = setting;
 
+    d->ui.le_password->setPasswordOptionsEnabled(true);
+
     connect(d->ui.cmb_authType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &SshSettingWidget::authTypeChanged);
     connect(d->ui.btn_advancedOption, &QPushButton::clicked, this, &SshSettingWidget::doAdvancedDialog);
-    connect(d->ui.cmb_passwordOption, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &SshSettingWidget::passwordTypeChanged);
 
     d->advancedDlg = new QDialog(this);
     d->advancedDlg->setModal(true);
@@ -91,7 +92,7 @@ SshSettingWidget::SshSettingWidget(const NetworkManager::VpnSetting::Ptr &settin
 
     KAcceleratorManager::manage(this);
 
-    if (d->setting) {
+    if (d->setting && !d->setting->isNull()) {
         loadConfig(d->setting);
     }
 }
@@ -158,7 +159,7 @@ void SshSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     } else if (sshAuthType == QLatin1String(NM_SSH_AUTH_TYPE_PASSWORD)) {
         d->ui.cmb_authType->setCurrentIndex(1);
         const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_SSH_KEY_PASSWORD"-flags"].toInt();
-        fillOnePasswordCombo(d->ui.cmb_passwordOption, type);
+        fillOnePasswordCombo(d->ui.le_password, type);
     } else if (sshAuthType == QLatin1String(NM_SSH_AUTH_TYPE_KEY)) {
         d->ui.cmb_authType->setCurrentIndex(2);
         d->ui.kurl_sshKeyFile->setUrl(QUrl::fromLocalFile(dataMap[QLatin1String(NM_SSH_KEY_KEY_FILE)]));
@@ -227,7 +228,7 @@ void SshSettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
     }
 }
 
-QVariantMap SshSettingWidget::setting(bool agentOwned) const
+QVariantMap SshSettingWidget::setting() const
 {
     Q_D(const SshSettingWidget);
 
@@ -276,7 +277,7 @@ QVariantMap SshSettingWidget::setting(bool agentOwned) const
             if (!d->ui.le_password->text().isEmpty()) {
                 secretData.insert(QLatin1String(NM_SSH_KEY_PASSWORD), d->ui.le_password->text());
             }
-            handleOnePasswordType(d->ui.cmb_passwordOption, NM_SSH_KEY_PASSWORD"-flags", data, agentOwned);
+            handleOnePasswordType(d->ui.le_password, NM_SSH_KEY_PASSWORD"-flags", data);
             break;
         case 2:
             data.insert(QLatin1String(NM_SSH_KEY_AUTH_TYPE), QLatin1String(NM_SSH_AUTH_TYPE_KEY));
@@ -348,36 +349,36 @@ void SshSettingWidget::passwordTypeChanged(int index)
     d->ui.le_password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
 }
 
-void SshSettingWidget::fillOnePasswordCombo(QComboBox *combo, NetworkManager::Setting::SecretFlags type)
+void SshSettingWidget::fillOnePasswordCombo(PasswordField *passwordField, NetworkManager::Setting::SecretFlags type)
 {
-    if (type.testFlag(NetworkManager::Setting::AgentOwned) || type == NetworkManager::Setting::None) { // store
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
+    if (type.testFlag(NetworkManager::Setting::None)) {
+        passwordField->setPasswordOption(PasswordField::StoreForAllUsers);
+    } else if (type.testFlag(NetworkManager::Setting::AgentOwned)) {
+        passwordField->setPasswordOption(PasswordField::StoreForUser);
     } else if (type.testFlag(NetworkManager::Setting::NotSaved)) {
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
-    } else if (type.testFlag(NetworkManager::Setting::NotRequired)) {
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
+        passwordField->setPasswordOption(PasswordField::AlwaysAsk);
+    } else {
+        passwordField->setPasswordOption(PasswordField::PasswordField::NotRequired);
     }
 }
 
-uint SshSettingWidget::handleOnePasswordType(const QComboBox *combo, const QString &key, NMStringMap &data, bool agentOwned) const
+void SshSettingWidget::handleOnePasswordType(const PasswordField *passwordField, const QString &key, NMStringMap &data) const
 {
-    const uint type = combo->currentIndex();
-    switch (type) {
-        case SettingWidget::EnumPasswordStorageType::Store:
-            if (agentOwned) {
-                data.insert(key, QString::number(NetworkManager::Setting::AgentOwned)); // store
-            } else {
-                data.insert(key, QString::number(NetworkManager::Setting::None));
-            }
-            break;
-        case SettingWidget::EnumPasswordStorageType::AlwaysAsk:
-            data.insert(key, QString::number(NetworkManager::Setting::NotSaved)); // always ask
-            break;
-        case SettingWidget::EnumPasswordStorageType::NotRequired:
-            data.insert(key, QString::number(NetworkManager::Setting::NotRequired)); // not required
-            break;
+    const PasswordField::PasswordOption option = passwordField->passwordOption();
+    switch (option) {
+    case PasswordField::StoreForAllUsers:
+        data.insert(key, QString::number(NetworkManager::Setting::None));
+        break;
+    case PasswordField::StoreForUser:
+        data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
+        break;
+    case PasswordField::AlwaysAsk:
+        data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
+        break;
+    case PasswordField::NotRequired:
+        data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
+        break;
     }
-    return type;
 }
 
 bool SshSettingWidget::isValid() const

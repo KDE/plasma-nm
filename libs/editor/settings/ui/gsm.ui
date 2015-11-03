@@ -62,28 +62,9 @@
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="PasswordField" name="password">
-          <property name="passwordMode">
+          <property name="passwordMode" stdset="0">
            <bool>true</bool>
           </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="KComboBox" name="passwordStorage">
-          <item>
-           <property name="text">
-            <string>Store</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Always Ask</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Not Required</string>
-           </property>
-          </item>
          </widget>
         </item>
        </layout>
@@ -180,28 +161,9 @@
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
          <widget class="PasswordField" name="pin">
-          <property name="passwordMode">
+          <property name="passwordMode" stdset="0">
            <bool>true</bool>
           </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="KComboBox" name="pinStorage">
-          <item>
-           <property name="text">
-            <string>Store</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Always Ask</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Not Required</string>
-           </property>
-          </item>
          </widget>
         </item>
        </layout>
@@ -226,27 +188,30 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>PasswordField</class>
+   <class>KLineEdit</class>
    <extends>QLineEdit</extends>
-   <header>passwordfield.h</header>
+   <header>klineedit.h</header>
   </customwidget>
   <customwidget>
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
   </customwidget>
+  <customwidget>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header>passwordfield.h</header>
+  </customwidget>
  </customwidgets>
  <tabstops>
   <tabstop>number</tabstop>
   <tabstop>username</tabstop>
   <tabstop>password</tabstop>
-  <tabstop>passwordStorage</tabstop>
   <tabstop>apn</tabstop>
   <tabstop>networkId</tabstop>
   <tabstop>type</tabstop>
   <tabstop>roaming</tabstop>
   <tabstop>pin</tabstop>
-  <tabstop>pinStorage</tabstop>
  </tabstops>
  <resources/>
  <connections/>

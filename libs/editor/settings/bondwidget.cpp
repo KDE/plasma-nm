@@ -133,10 +133,8 @@ void BondWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     }
 }
 
-QVariantMap BondWidget::setting(bool agentOwned) const
+QVariantMap BondWidget::setting() const
 {
-    Q_UNUSED(agentOwned)
-
     NetworkManager::BondSetting setting;
     setting.setInterfaceName(m_ui->ifaceName->text());
 

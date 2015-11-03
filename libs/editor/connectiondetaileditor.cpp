@@ -350,35 +350,29 @@ NMVariantMapMap ConnectionDetailEditor::setting()
 
     NMVariantMapMap settings = connectionWidget->setting();
 
-    bool agentOwned = false;
-    // We can store secrets into KWallet if KWallet is enabled and permissions list is not empty
-    if (!settings.value("connection").value("permissions").toStringList().isEmpty() && KWallet::Wallet::isEnabled()) {
-        agentOwned = true;
-    }
-
     for (int i = 1; i < m_ui->tabWidget->count(); ++i) {
-        SettingWidget * widget = static_cast<SettingWidget*>(m_ui->tabWidget->widget(i));
+        SettingWidget *widget = static_cast<SettingWidget*>(m_ui->tabWidget->widget(i));
         const QString type = widget->type();
         if (type != NetworkManager::Setting::typeAsString(NetworkManager::Setting::Security8021x) &&
             type != NetworkManager::Setting::typeAsString(NetworkManager::Setting::WirelessSecurity)) {
-            settings.insert(type, widget->setting(agentOwned));
+            settings.insert(type, widget->setting());
         }
 
         // add 802.1x security if needed
         QVariantMap security8021x;
         if (type == NetworkManager::Setting::typeAsString(NetworkManager::Setting::WirelessSecurity)) {
-            WifiSecurity * wifiSecurity = static_cast<WifiSecurity*>(widget);
+            WifiSecurity *wifiSecurity = static_cast<WifiSecurity*>(widget);
             if (wifiSecurity->enabled()) {
-                settings.insert(type, wifiSecurity->setting(agentOwned));
+                settings.insert(type, wifiSecurity->setting());
             }
             if (wifiSecurity->enabled8021x()) {
-                security8021x = static_cast<WifiSecurity *>(widget)->setting8021x(agentOwned);
+                security8021x = static_cast<WifiSecurity *>(widget)->setting8021x();
                 settings.insert(NetworkManager::Setting::typeAsString(NetworkManager::Setting::Security8021x), security8021x);
             }
         } else if (type == NetworkManager::Setting::typeAsString(NetworkManager::Setting::Security8021x)) {
-            WiredSecurity * wiredSecurity = static_cast<WiredSecurity*>(widget);
+            WiredSecurity *wiredSecurity = static_cast<WiredSecurity*>(widget);
             if (wiredSecurity->enabled8021x()) {
-                security8021x = static_cast<WiredSecurity *>(widget)->setting(agentOwned);
+                security8021x = static_cast<WiredSecurity *>(widget)->setting();
                 settings.insert(NetworkManager::Setting::typeAsString(NetworkManager::Setting::Security8021x), security8021x);
             }
         }

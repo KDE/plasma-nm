@@ -33,13 +33,13 @@ class PptpAuthWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(PptpAuthWidget)
 public:
-    explicit PptpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    explicit PptpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~PptpAuthWidget();
 
-    virtual QVariantMap setting(bool agentOwned = false) const;
+    virtual QVariantMap setting() const;
 
 private:
-    PptpAuthWidgetPrivate * const d_ptr;
+    PptpAuthWidgetPrivate *const d_ptr;
 };
 
 #endif // PPTPAUTH_H

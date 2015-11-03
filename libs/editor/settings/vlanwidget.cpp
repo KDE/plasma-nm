@@ -62,10 +62,8 @@ void VlanWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     m_ui->looseBinding->setChecked(vlanSetting->flags().testFlag(NetworkManager::VlanSetting::LooseBinding));
 }
 
-QVariantMap VlanWidget::setting(bool agentOwned) const
+QVariantMap VlanWidget::setting() const
 {
-    Q_UNUSED(agentOwned);
-
     NetworkManager::VlanSetting setting;
 
     setting.setParent(m_ui->parent->itemData(m_ui->parent->currentIndex()).toString());

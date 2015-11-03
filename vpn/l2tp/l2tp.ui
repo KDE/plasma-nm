@@ -56,7 +56,7 @@
     </widget>
    </item>
    <item row="2" column="1">
-    <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,1">
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="3">
      <item>
       <widget class="PasswordField" name="password">
        <property name="toolTip">
@@ -65,25 +65,6 @@
        <property name="passwordMode" stdset="0">
         <bool>true</bool>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="cboUserPasswordType">
-       <item>
-        <property name="text">
-         <string>Store</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Always Ask</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Not Required</string>
-        </property>
-       </item>
       </widget>
      </item>
     </layout>
@@ -163,7 +144,6 @@ authentication purposes.</string>
   <tabstop>gateway</tabstop>
   <tabstop>username</tabstop>
   <tabstop>password</tabstop>
-  <tabstop>cboUserPasswordType</tabstop>
   <tabstop>domain</tabstop>
   <tabstop>btnIPSecSettings</tabstop>
   <tabstop>btnPPPSettings</tabstop>

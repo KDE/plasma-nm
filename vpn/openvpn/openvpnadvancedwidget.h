@@ -21,6 +21,8 @@
 #ifndef PLASMA_NM_OPENVPN_ADVANCED_WIDGET_H
 #define PLASMA_NM_OPENVPN_ADVANCED_WIDGET_H
 
+#include "passwordfield.h"
+
 #include <QDialog>
 #include <QProcess>
 
@@ -31,7 +33,6 @@ namespace Ui
 class OpenVpnAdvancedWidget;
 }
 
-class QComboBox;
 class QLineEdit;
 class OpenVpnAdvancedWidget : public QDialog
 {
@@ -47,18 +48,15 @@ private Q_SLOTS:
     void gotOpenVpnOutput();
     void openVpnError(QProcess::ProcessError);
     void openVpnFinished(int, QProcess::ExitStatus);
-
-    void proxyPasswordStorageChanged(int);
     void proxyTypeChanged(int);
 
 private:
     void loadConfig();
-    void setPasswordType(QLineEdit *edit, int type);
-    void fillOnePasswordCombo(QComboBox *combo, NetworkManager::Setting::SecretFlags type);
-    uint handleOnePasswordType(const QComboBox *combo, const QString & key, NMStringMap & data) const;
-    Ui::OpenVpnAdvancedWidget * m_ui;
+    void fillOnePasswordCombo(PasswordField *passwordField, NetworkManager::Setting::SecretFlags type);
+    void handleOnePasswordType(const PasswordField *passwordField, const QString &key, NMStringMap &data) const;
+    Ui::OpenVpnAdvancedWidget *m_ui;
     class Private;
-    Private * const d;
+    Private *const d;
 };
 
 #endif // PLASMA_NM_OPENVPN_ADVANCED_WIDGET_H

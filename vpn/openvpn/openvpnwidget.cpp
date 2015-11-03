@@ -51,7 +51,7 @@ public:
 };
 
 
-OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
     : SettingWidget(setting, parent)
     , d(new Private)
 {
@@ -59,6 +59,15 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
 
     d->ui.setupUi(this);
     d->setting = setting;
+
+    d->ui.x509KeyPassword->setPasswordOptionsEnabled(true);
+    d->ui.x509KeyPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    d->ui.passPassword->setPasswordOptionsEnabled(true);
+    d->ui.passPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    d->ui.x509PassKeyPassword->setPasswordOptionsEnabled(true);
+    d->ui.x509PassKeyPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    d->ui.x509PassPassword->setPasswordOptionsEnabled(true);
+    d->ui.x509PassPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
 
     // use requesters' urlSelected signals to set other requester's startDirs to save clicking
     // around the filesystem
@@ -69,17 +78,13 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
         connect(requester, &KUrlRequester::urlSelected, this, &OpenVpnSettingWidget::updateStartDir);
     }
 
-    connect(d->ui.x509KeyPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnSettingWidget::x509KeyPasswordStorageChanged);
-    connect(d->ui.passPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnSettingWidget::passPasswordStorageChanged);
-    connect(d->ui.x509PassKeyPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnSettingWidget::x509PassKeyPasswordStorageChanged);
-    connect(d->ui.x509PassPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnSettingWidget::x509PassPasswordStorageChanged);
     connect(d->ui.btnAdvanced, &QPushButton::clicked, this, &OpenVpnSettingWidget::showAdvanced);
 
     connect(d->ui.gateway, &QLineEdit::textChanged, this, &OpenVpnSettingWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 
-    if (d->setting) {
+    if (setting && !setting->isNull()) {
         loadConfig(d->setting);
     }
 }
@@ -97,13 +102,13 @@ void OpenVpnSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
     const NMStringMap dataMap = d->setting->data();
     const QString cType = dataMap.value(NM_OPENVPN_KEY_CONNECTION_TYPE);
 
-    if ( cType == QLatin1String( NM_OPENVPN_CONTYPE_PASSWORD_TLS ) ) {
-        d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::CertsPassword);
-        d->ui.x509PassUsername->setText( dataMap[NM_OPENVPN_KEY_USERNAME]);
-        d->ui.x509PassCaFile->setUrl( QUrl::fromLocalFile(dataMap[NM_OPENVPN_KEY_CA]) );
-        d->ui.x509PassCert->setUrl(QUrl::fromLocalFile( dataMap[NM_OPENVPN_KEY_CERT] ));
-        d->ui.x509PassKey->setUrl(QUrl::fromLocalFile( dataMap[NM_OPENVPN_KEY_KEY] ));
-    } else if ( cType == QLatin1String( NM_OPENVPN_CONTYPE_STATIC_KEY ) ) {
+    if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD_TLS)) {
+        d->ui.cmbConnectionType->setCurrentIndex(Private::EnumConnectionType::CertsPassword);
+        d->ui.x509PassUsername->setText(dataMap[NM_OPENVPN_KEY_USERNAME]);
+        d->ui.x509PassCaFile->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENVPN_KEY_CA]));
+        d->ui.x509PassCert->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENVPN_KEY_CERT]));
+        d->ui.x509PassKey->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENVPN_KEY_KEY]));
+    } else if (cType == QLatin1String( NM_OPENVPN_CONTYPE_STATIC_KEY)) {
         d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::Psk );
         d->ui.pskSharedKey->setText( dataMap[NM_OPENVPN_KEY_STATIC_KEY]);
         if (dataMap.contains(NM_OPENVPN_KEY_STATIC_KEY_DIRECTION)) {
@@ -118,17 +123,17 @@ void OpenVpnSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
         } else {
             d->ui.cmbKeyDirection->setCurrentIndex(Private::EnumKeyDirection::None);
         }
-        d->ui.pskRemoteIp->setText( dataMap[NM_OPENVPN_KEY_REMOTE_IP]);
-        d->ui.pskLocalIp->setText( dataMap[NM_OPENVPN_KEY_LOCAL_IP]);
-    } else if ( cType == QLatin1String( NM_OPENVPN_CONTYPE_PASSWORD ) ) {
-        d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::Password );
-        d->ui.passUserName->setText( dataMap[NM_OPENVPN_KEY_USERNAME] );
-        d->ui.passCaFile->setUrl(QUrl::fromLocalFile( dataMap[NM_OPENVPN_KEY_CA] ));
-    } else if ( cType == QLatin1String( NM_OPENVPN_CONTYPE_TLS ) ) {
-        d->ui.cmbConnectionType->setCurrentIndex( Private::EnumConnectionType::Certificates );
-        d->ui.x509CaFile->setUrl(QUrl::fromLocalFile( dataMap[NM_OPENVPN_KEY_CA] ));
-        d->ui.x509Cert->setUrl(QUrl::fromLocalFile( dataMap[NM_OPENVPN_KEY_CERT] ));
-        d->ui.x509Key->setUrl(QUrl::fromLocalFile( dataMap[NM_OPENVPN_KEY_KEY] ));
+        d->ui.pskRemoteIp->setText(dataMap[NM_OPENVPN_KEY_REMOTE_IP]);
+        d->ui.pskLocalIp->setText(dataMap[NM_OPENVPN_KEY_LOCAL_IP]);
+    } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD)) {
+        d->ui.cmbConnectionType->setCurrentIndex(Private::EnumConnectionType::Password);
+        d->ui.passUserName->setText(dataMap[NM_OPENVPN_KEY_USERNAME] );
+        d->ui.passCaFile->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENVPN_KEY_CA]));
+    } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_TLS)) {
+        d->ui.cmbConnectionType->setCurrentIndex(Private::EnumConnectionType::Certificates);
+        d->ui.x509CaFile->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENVPN_KEY_CA]));
+        d->ui.x509Cert->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENVPN_KEY_CERT]));
+        d->ui.x509Key->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENVPN_KEY_KEY]));
     }
 
     d->ui.gateway->setText( dataMap[NM_OPENVPN_KEY_REMOTE] );
@@ -137,15 +142,15 @@ void OpenVpnSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
 
     if (cType == QLatin1String(NM_OPENVPN_CONTYPE_TLS)) {
         type = (NetworkManager::Setting::SecretFlags)dataMap[NM_OPENVPN_KEY_CERTPASS"-flags"].toInt();
-        fillOnePasswordCombo(d->ui.x509KeyPasswordStorage, type);
+        fillOnePasswordCombo(d->ui.x509KeyPassword, type);
     } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD)) {
         type = (NetworkManager::Setting::SecretFlags)dataMap[NM_OPENVPN_KEY_PASSWORD"-flags"].toInt();
-        fillOnePasswordCombo(d->ui.passPasswordStorage, type);
+        fillOnePasswordCombo(d->ui.passPassword, type);
     } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD_TLS)) {
         type = (NetworkManager::Setting::SecretFlags)dataMap[NM_OPENVPN_KEY_PASSWORD"-flags"].toInt();
-        fillOnePasswordCombo(d->ui.x509PassPasswordStorage, type);
+        fillOnePasswordCombo(d->ui.x509PassPassword, type);
         type = (NetworkManager::Setting::SecretFlags)dataMap[NM_OPENVPN_KEY_CERTPASS"-flags"].toInt();
-        fillOnePasswordCombo(d->ui.x509PassKeyPasswordStorage, type);
+        fillOnePasswordCombo(d->ui.x509PassKeyPassword, type);
     }
 
     loadSecrets(setting);
@@ -170,7 +175,7 @@ void OpenVpnSettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setti
     }
 }
 
-QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
+QVariantMap OpenVpnSettingWidget::setting() const
 {
     NMStringMap data = d->setting->data();
     NMStringMap secretData = d->setting->secrets();
@@ -192,7 +197,7 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
         if (!d->ui.x509KeyPassword->text().isEmpty()) {
             secretData.insert(QLatin1String(NM_OPENVPN_KEY_CERTPASS), d->ui.x509KeyPassword->text());
         }
-        handleOnePasswordType(d->ui.x509KeyPasswordStorage, QLatin1String(NM_OPENVPN_KEY_CERTPASS"-flags"), data, agentOwned);
+        handleOnePasswordType(d->ui.x509KeyPassword, QLatin1String(NM_OPENVPN_KEY_CERTPASS"-flags"), data);
         break;
     case Private::EnumConnectionType::Psk:
         contype = QLatin1String(NM_OPENVPN_CONTYPE_STATIC_KEY);
@@ -221,7 +226,7 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
         if (!d->ui.passPassword->text().isEmpty()) {
             secretData.insert(QLatin1String(NM_OPENVPN_KEY_PASSWORD ), d->ui.passPassword->text());
         }
-        handleOnePasswordType(d->ui.passPasswordStorage, QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), data, agentOwned);
+        handleOnePasswordType(d->ui.passPassword, QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), data);
         // ca
         data.insert(QLatin1String(NM_OPENVPN_KEY_CA), d->ui.passCaFile->url().toLocalFile());
         break;
@@ -241,12 +246,12 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
         if (!d->ui.x509PassKeyPassword->text().isEmpty()) {
             secretData.insert(QLatin1String(NM_OPENVPN_KEY_CERTPASS), d->ui.x509PassKeyPassword->text());
         }
-        handleOnePasswordType(d->ui.x509PassKeyPasswordStorage, QLatin1String(NM_OPENVPN_KEY_CERTPASS"-flags"), data, agentOwned);
+        handleOnePasswordType(d->ui.x509PassKeyPassword, QLatin1String(NM_OPENVPN_KEY_CERTPASS"-flags"), data);
         // password
         if (!d->ui.x509PassPassword->text().isEmpty()) {
             secretData.insert(QLatin1String(NM_OPENVPN_KEY_PASSWORD), d->ui.x509PassPassword->text());
         }
-        handleOnePasswordType(d->ui.x509PassPasswordStorage, QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), data, agentOwned);
+        handleOnePasswordType(d->ui.x509PassPassword, QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), data);
         break;
     }
     data.insert(QLatin1String(NM_OPENVPN_KEY_CONNECTION_TYPE), contype);
@@ -257,7 +262,7 @@ QVariantMap OpenVpnSettingWidget::setting(bool agentOwned) const
     return setting.toMap();
 }
 
-void OpenVpnSettingWidget::updateStartDir(const QUrl & url)
+void OpenVpnSettingWidget::updateStartDir(const QUrl &url)
 {
     QList<KUrlRequester *> requesters;
     requesters << d->ui.x509CaFile << d->ui.x509Cert << d->ui.x509Key << d->ui.pskSharedKey << d->ui.passCaFile << d->ui.x509PassCaFile
@@ -267,61 +272,41 @@ void OpenVpnSettingWidget::updateStartDir(const QUrl & url)
     }
 }
 
-void OpenVpnSettingWidget::x509KeyPasswordStorageChanged(int index)
-{
-    setPasswordType(d->ui.x509KeyPassword, index);
-}
-
-void OpenVpnSettingWidget::passPasswordStorageChanged(int index)
-{
-    setPasswordType(d->ui.passPassword, index);
-}
-
-void OpenVpnSettingWidget::x509PassKeyPasswordStorageChanged(int index)
-{
-    setPasswordType(d->ui.x509PassKeyPassword, index);
-}
-
-void OpenVpnSettingWidget::x509PassPasswordStorageChanged(int index)
-{
-    setPasswordType(d->ui.x509PassPassword, index);
-}
-
 void OpenVpnSettingWidget::setPasswordType(QLineEdit *edit, int type)
 {
     edit->setEnabled(type == SettingWidget::EnumPasswordStorageType::Store);
 }
 
-void OpenVpnSettingWidget::fillOnePasswordCombo(QComboBox * combo, NetworkManager::Setting::SecretFlags type)
+void OpenVpnSettingWidget::fillOnePasswordCombo(PasswordField *passwordField, NetworkManager::Setting::SecretFlags type)
 {
-    if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) {
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
-    } else if (type.testFlag(NetworkManager::Setting::NotRequired)) {
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
+    if (type.testFlag(NetworkManager::Setting::None)) {
+        passwordField->setPasswordOption(PasswordField::StoreForAllUsers);
+    } else if (type.testFlag(NetworkManager::Setting::AgentOwned)) {
+        passwordField->setPasswordOption(PasswordField::StoreForUser);
     } else if (type.testFlag(NetworkManager::Setting::NotSaved)) {
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
+        passwordField->setPasswordOption(PasswordField::AlwaysAsk);
+    } else {
+        passwordField->setPasswordOption(PasswordField::PasswordField::NotRequired);
     }
 }
 
-uint OpenVpnSettingWidget::handleOnePasswordType(const QComboBox * combo, const QString & key, NMStringMap &data, bool agentOwned) const
+void OpenVpnSettingWidget::handleOnePasswordType(const PasswordField *passwordField, const QString &key, NMStringMap &data) const
 {
-    const uint type = combo->currentIndex();
-    switch (type) {
-    case SettingWidget::EnumPasswordStorageType::AlwaysAsk:
+    const PasswordField::PasswordOption option = passwordField->passwordOption();
+    switch (option) {
+    case PasswordField::StoreForAllUsers:
+        data.insert(key, QString::number(NetworkManager::Setting::None));
+        break;
+    case PasswordField::StoreForUser:
+        data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
+        break;
+    case PasswordField::AlwaysAsk:
         data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
         break;
-    case SettingWidget::EnumPasswordStorageType::Store:
-        if (agentOwned) {
-            data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
-        } else {
-            data.insert(key, QString::number(NetworkManager::Setting::None));
-        }
-        break;
-    case SettingWidget::EnumPasswordStorageType::NotRequired:
+    case PasswordField::NotRequired:
         data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
         break;
     }
-    return type;
 }
 
 void OpenVpnSettingWidget::showAdvanced()

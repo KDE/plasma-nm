@@ -41,7 +41,7 @@ public:
     virtual ~WiredSecurity();
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    QVariantMap setting(bool agentOwned = false) const Q_DECL_OVERRIDE;
+    QVariantMap setting() const Q_DECL_OVERRIDE;
 
     bool enabled8021x() const;
 

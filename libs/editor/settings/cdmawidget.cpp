@@ -1,5 +1,6 @@
 /*
     Copyright 2013 Lukas Tinkl <ltinkl@redhat.com>
+    Copyright 2015 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -23,23 +24,25 @@
 
 #include <NetworkManagerQt/CdmaSetting>
 
-CdmaWidget::CdmaWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_ui(new Ui::CdmaWidget)
+CdmaWidget::CdmaWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_ui(new Ui::CdmaWidget)
 {
     m_ui->setupUi(this);
 
-    connect(m_ui->passwordStorage, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &CdmaWidget::passwordStorageChanged);
+    m_ui->password->setPasswordOptionsEnabled(true);
+    m_ui->password->setPasswordOptionEnabled(PasswordField::NotRequired, true);
 
     connect(m_ui->number, &KLineEdit::textChanged, this, &CdmaWidget::slotWidgetChanged);
     connect(m_ui->password, &KLineEdit::textChanged, this, &CdmaWidget::slotWidgetChanged);
-    connect(m_ui->passwordStorage, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &CdmaWidget::slotWidgetChanged);
+    connect(m_ui->password, &PasswordField::passwordOptionChanged, this, &CdmaWidget::slotWidgetChanged);
     connect(m_ui->username, &KLineEdit::textChanged, this, &CdmaWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 
-    if (setting)
+    if (setting && !setting->isNull()) {
         loadConfig(setting);
+    }
 }
 
 CdmaWidget::~CdmaWidget()
@@ -51,16 +54,20 @@ void CdmaWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     NetworkManager::CdmaSetting::Ptr cdmaSetting = setting.staticCast<NetworkManager::CdmaSetting>();
     const QString number = cdmaSetting->number();
-    if (!number.isEmpty())
+
+    if (!number.isEmpty()) {
         m_ui->number->setText(number);
+    }
+
     m_ui->username->setText(cdmaSetting->username());
-    if (cdmaSetting->passwordFlags().testFlag(NetworkManager::Setting::None) ||
-        cdmaSetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
-        m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
+    if (cdmaSetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
+        m_ui->password->setPasswordOption(PasswordField::StoreForAllUsers);
+    } else if (cdmaSetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
+        m_ui->password->setPasswordOption(PasswordField::StoreForUser);
     } else if (cdmaSetting->passwordFlags().testFlag(NetworkManager::Setting::NotSaved)) {
-        m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
+        m_ui->password->setPasswordOption(PasswordField::AlwaysAsk);
     } else {
-        m_ui->passwordStorage->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
+        m_ui->password->setPasswordOption(PasswordField::NotRequired);
     }
 
     loadSecrets(setting);
@@ -78,21 +85,26 @@ void CdmaWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
     }
 }
 
-QVariantMap CdmaWidget::setting(bool agentOwned) const
+QVariantMap CdmaWidget::setting() const
 {
     NetworkManager::CdmaSetting cdmaSetting;
-    if (!m_ui->number->text().isEmpty())
+    if (!m_ui->number->text().isEmpty()) {
         cdmaSetting.setNumber(m_ui->number->text());
-    if (!m_ui->username->text().isEmpty())
-        cdmaSetting.setUsername(m_ui->username->text());
-    if (!m_ui->password->text().isEmpty())
-        cdmaSetting.setPassword(m_ui->password->text());
+    }
 
-    if (m_ui->passwordStorage->currentIndex() == SettingWidget::EnumPasswordStorageType::Store) {
-        if (agentOwned) {
-            cdmaSetting.setPasswordFlags(NetworkManager::Setting::AgentOwned);
-        }
-    } else if (m_ui->passwordStorage->currentIndex() == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {
+    if (!m_ui->username->text().isEmpty()) {
+        cdmaSetting.setUsername(m_ui->username->text());
+    }
+
+    if (!m_ui->password->text().isEmpty()) {
+        cdmaSetting.setPassword(m_ui->password->text());
+    }
+
+    if (m_ui->password->passwordOption() == PasswordField::StoreForAllUsers) {
+        cdmaSetting.setPasswordFlags(NetworkManager::Setting::None);
+    } else if (m_ui->password->passwordOption() == PasswordField::StoreForUser) {
+        cdmaSetting.setPasswordFlags(NetworkManager::Setting::AgentOwned);
+    } else if (m_ui->password->passwordOption() == PasswordField::AlwaysAsk) {
         cdmaSetting.setPasswordFlags(NetworkManager::Setting::NotSaved);
     } else {
         cdmaSetting.setPasswordFlags(NetworkManager::Setting::NotRequired);
@@ -101,19 +113,14 @@ QVariantMap CdmaWidget::setting(bool agentOwned) const
     return cdmaSetting.toMap();
 }
 
-
-void CdmaWidget::passwordStorageChanged(int index)
-{
-    m_ui->password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
-}
-
 bool CdmaWidget::isValid() const
 {
     bool passwordUserValid = true;
 
-    if (m_ui->passwordStorage->currentIndex() == SettingWidget::EnumPasswordStorageType::Store) {
+    if (m_ui->password->passwordOption() == PasswordField::StoreForUser ||
+        m_ui->password->passwordOption() == PasswordField::StoreForAllUsers) {
         passwordUserValid = !m_ui->username->text().isEmpty() && !m_ui->password->text().isEmpty();
-    } else if (m_ui->passwordStorage->currentIndex() == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {
+    } else if (m_ui->password->passwordOption() == PasswordField::AlwaysAsk) {
         passwordUserValid = !m_ui->username->text().isEmpty();
     }
 

@@ -88,10 +88,8 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
     }
 }
 
-QVariantMap WifiConnectionWidget::setting(bool agentOwned) const
+QVariantMap WifiConnectionWidget::setting() const
 {
-    Q_UNUSED(agentOwned);
-
     NetworkManager::WirelessSetting wifiSetting;
 
     wifiSetting.setSsid(m_ui->SSIDCombo->ssid().toUtf8());

@@ -32,36 +32,31 @@
 
 class QUrl;
 class QLineEdit;
-class QComboBox;
 
 class OpenVpnSettingWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    explicit OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~OpenVpnSettingWidget();
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    QVariantMap setting(bool agentOwned = false) const;
+    QVariantMap setting() const;
 
     virtual bool isValid() const;
 
 private Q_SLOTS:
     void updateStartDir(const QUrl &);
-    void x509KeyPasswordStorageChanged(int);
-    void passPasswordStorageChanged(int);
-    void x509PassKeyPasswordStorageChanged(int);
-    void x509PassPasswordStorageChanged(int);
     void showAdvanced();
 
 private:
     class Private;
-    Private * d;
+    Private *d;
     void setPasswordType(QLineEdit *, int);
-    void fillOnePasswordCombo(QComboBox *, NetworkManager::Setting::SecretFlags);
-    uint handleOnePasswordType(const QComboBox *, const QString &, NMStringMap &, bool agentOwned) const;
+    void fillOnePasswordCombo(PasswordField *, NetworkManager::Setting::SecretFlags);
+    void handleOnePasswordType(const PasswordField *, const QString &, NMStringMap &) const;
 };
 
 #endif // OPENVPNWIDGET_H

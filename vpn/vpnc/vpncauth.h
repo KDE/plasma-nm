@@ -33,14 +33,14 @@ class VpncAuthDialog : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(VpncAuthDialog)
 public:
-    explicit VpncAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    explicit VpncAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~VpncAuthDialog();
 
     virtual void readSecrets();
-    virtual QVariantMap setting(bool agentOwned = false) const;
+    virtual QVariantMap setting() const;
 
 private:
-    VpncAuthDialogPrivate * const d_ptr;
+    VpncAuthDialogPrivate *const d_ptr;
 };
 
 #endif // PLASMA_NM_VPNC_AUTH_H

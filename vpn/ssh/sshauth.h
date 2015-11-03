@@ -35,10 +35,10 @@ public:
     explicit SshAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~SshAuthWidget();
 
-    virtual QVariantMap setting(bool agentOwned = false) const;
+    virtual QVariantMap setting() const;
 
 private:
-    SshAuthWidgetPrivate * const d_ptr;
+    SshAuthWidgetPrivate *const d_ptr;
     void acceptDialog();
 };
 

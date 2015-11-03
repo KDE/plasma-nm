@@ -44,13 +44,13 @@ public:
 
     explicit WifiSecurity(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
                  const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(),
-                 QWidget* parent = 0, Qt::WindowFlags f = 0);
+                 QWidget *parent = 0, Qt::WindowFlags f = 0);
     virtual ~WifiSecurity();
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    QVariantMap setting(bool agentOwned = false) const Q_DECL_OVERRIDE;
-    QVariantMap setting8021x(bool agentOwned = false) const;
+    QVariantMap setting() const Q_DECL_OVERRIDE;
+    QVariantMap setting8021x() const;
 
     bool enabled() const;
     bool enabled8021x() const;
@@ -62,9 +62,9 @@ private Q_SLOTS:
     void setWepKey(int keyIndex);
 
 private:
-    Ui::WifiSecurity * m_ui;
-    Security8021x * m_8021xWidget;
-    Security8021x * m_WPA2Widget;
+    Ui::WifiSecurity *m_ui;
+    Security8021x *m_8021xWidget;
+    Security8021x *m_WPA2Widget;
     NetworkManager::WirelessSecuritySetting::Ptr m_wifiSecurity;
 };
 

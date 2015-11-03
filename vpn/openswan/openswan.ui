@@ -45,28 +45,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="PasswordField" name="userPassword">
-       <property name="passwordMode">
+       <property name="passwordMode" stdset="0">
         <bool>true</bool>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="cbUsernamePasswordMode">
-       <item>
-        <property name="text">
-         <string>Store</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Always Ask</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Not Required</string>
-        </property>
-       </item>
       </widget>
      </item>
     </layout>
@@ -82,28 +63,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="PasswordField" name="groupPassword">
-       <property name="passwordMode">
+       <property name="passwordMode" stdset="0">
         <bool>true</bool>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="cbGroupPasswordMode">
-       <item>
-        <property name="text">
-         <string>Store</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Always Ask</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Not Required</string>
-        </property>
-       </item>
       </widget>
      </item>
     </layout>
@@ -174,9 +136,7 @@
   <tabstop>gateway</tabstop>
   <tabstop>groupname</tabstop>
   <tabstop>userPassword</tabstop>
-  <tabstop>cbUsernamePasswordMode</tabstop>
   <tabstop>groupPassword</tabstop>
-  <tabstop>cbGroupPasswordMode</tabstop>
   <tabstop>username</tabstop>
   <tabstop>phase1</tabstop>
   <tabstop>phase2</tabstop>

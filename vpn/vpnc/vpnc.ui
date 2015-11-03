@@ -74,25 +74,6 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="QComboBox" name="cboUserPasswordType">
-       <item>
-        <property name="text">
-         <string>Store</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Always Ask</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Not Required</string>
-        </property>
-       </item>
-      </widget>
-     </item>
     </layout>
    </item>
    <item row="3" column="2">
@@ -148,25 +129,6 @@
        <property name="passwordMode" stdset="0">
         <bool>true</bool>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="cboGroupPasswordType">
-       <item>
-        <property name="text">
-         <string>Store</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Always Ask</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Not Required</string>
-        </property>
-       </item>
       </widget>
      </item>
     </layout>
@@ -255,10 +217,8 @@
   <tabstop>gateway</tabstop>
   <tabstop>user</tabstop>
   <tabstop>userPassword</tabstop>
-  <tabstop>cboUserPasswordType</tabstop>
   <tabstop>group</tabstop>
   <tabstop>groupPassword</tabstop>
-  <tabstop>cboGroupPasswordType</tabstop>
   <tabstop>useHybridAuth</tabstop>
   <tabstop>caFile</tabstop>
  </tabstops>

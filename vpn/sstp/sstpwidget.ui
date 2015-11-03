@@ -89,25 +89,9 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QComboBox" name="cmb_passwordOption">
-        <item>
-         <property name="text">
-          <string>Store</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Always ask</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Not required</string>
-         </property>
-        </item>
-       </widget>
+       <widget class="QLineEdit" name="le_ntDomain"/>
       </item>
-      <item row="3" column="0">
+      <item row="2" column="0">
        <widget class="QLabel" name="lbl_ntDomain">
         <property name="text">
          <string>NT Domain:</string>
@@ -115,19 +99,16 @@
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QLineEdit" name="le_ntDomain"/>
+       <widget class="KUrlRequester" name="kurl_caCert"/>
       </item>
-      <item row="4" column="0">
+      <item row="3" column="0">
        <widget class="QLabel" name="lbl_caCert">
         <property name="text">
          <string>CA Certificate:</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="1">
-       <widget class="KUrlRequester" name="kurl_caCert"/>
-      </item>
-      <item row="5" column="0" colspan="2">
+      <item row="4" column="0" colspan="2">
        <widget class="QCheckBox" name="chk_ignoreCertWarnings">
         <property name="text">
          <string>Ignore certificate warnings</string>

@@ -47,10 +47,9 @@ PptpAuthWidget::~PptpAuthWidget()
     delete d_ptr;
 }
 
-QVariantMap PptpAuthWidget::setting(bool agentOwned) const
+QVariantMap PptpAuthWidget::setting() const
 {
     Q_D(const PptpAuthWidget);
-    Q_UNUSED(agentOwned)
 
     NMStringMap secrets;
     QVariantMap secretData;

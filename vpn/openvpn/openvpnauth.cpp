@@ -127,10 +127,9 @@ void OpenVpnAuthWidget::readSecrets()
     }
 }
 
-QVariantMap OpenVpnAuthWidget::setting(bool agentOwned) const
+QVariantMap OpenVpnAuthWidget::setting() const
 {
     Q_D(const OpenVpnAuthWidget);
-    Q_UNUSED(agentOwned)
 
     NMStringMap secrets;
     QVariantMap secretData;

@@ -42,7 +42,8 @@ public:
     virtual void loadConfig(const NetworkManager::Setting::Ptr &setting);
     virtual void loadSecrets(const NetworkManager::Setting::Ptr &setting);
 
-    virtual QVariantMap setting(bool agentOwned = false) const = 0;
+    virtual QVariantMap setting() const = 0;
+
     QString type() const;
 
     virtual bool isValid() const { return true; }

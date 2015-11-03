@@ -67,10 +67,8 @@ void InfinibandWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     }
 }
 
-QVariantMap InfinibandWidget::setting(bool agentOwned) const
+QVariantMap InfinibandWidget::setting() const
 {
-    Q_UNUSED(agentOwned)
-
     NetworkManager::InfinibandSetting setting;
     if (m_ui->transport->currentIndex() == 0) {
         setting.setTransportMode(NetworkManager::InfinibandSetting::Datagram);

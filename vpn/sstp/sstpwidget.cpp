@@ -48,8 +48,9 @@ SstpSettingWidget::SstpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
 
     d->setting = setting;
 
+    d->ui.le_password->setPasswordOptionsEnabled(true);
+
     connect(d->ui.btn_advancedOption, &QPushButton::clicked, this, &SstpSettingWidget::doAdvancedDialog);
-    connect(d->ui.cmb_passwordOption, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &SstpSettingWidget::passwordTypeChanged);
 
     d->advancedDlg = new QDialog(this);
     d->advancedDlg->setModal(true);
@@ -70,7 +71,7 @@ SstpSettingWidget::SstpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
 
     KAcceleratorManager::manage(this);
 
-    if (d->setting) {
+    if (d->setting && !d->setting->isNull()) {
         loadConfig(d->setting);
     }
 }
@@ -102,7 +103,7 @@ void SstpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // Authentication
     const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_SSTP_KEY_PASSWORD_FLAGS].toInt();
-    fillOnePasswordCombo(d->ui.cmb_passwordOption, type);
+    fillOnePasswordCombo(d->ui.le_password, type);
 
     const QString ntDomain = dataMap[QLatin1String(NM_SSTP_KEY_DOMAIN)];
     if (!ntDomain.isEmpty()) {
@@ -212,7 +213,7 @@ void SstpSettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
     }
 }
 
-QVariantMap SstpSettingWidget::setting(bool agentOwned) const
+QVariantMap SstpSettingWidget::setting() const
 {
     Q_D(const SstpSettingWidget);
 
@@ -233,7 +234,7 @@ QVariantMap SstpSettingWidget::setting(bool agentOwned) const
     if (!d->ui.le_password->text().isEmpty()) {
         secretData.insert(QLatin1String(NM_SSTP_KEY_PASSWORD), d->ui.le_password->text());
     }
-    handleOnePasswordType(d->ui.cmb_passwordOption, NM_SSTP_KEY_PASSWORD_FLAGS, data, agentOwned);
+    handleOnePasswordType(d->ui.le_password, NM_SSTP_KEY_PASSWORD_FLAGS, data);
 
     if (!d->ui.le_ntDomain->text().isEmpty()) {
         data.insert(QLatin1String(NM_SSTP_KEY_DOMAIN), d->ui.le_ntDomain->text());
@@ -327,12 +328,8 @@ QVariantMap SstpSettingWidget::setting(bool agentOwned) const
 
     if (!d->advUi.le_password->text().isEmpty()) {
         data.insert(QLatin1String(NM_SSTP_KEY_PROXY_PASSWORD), d->advUi.le_password->text());
-        if (agentOwned) {
-            data.insert(QLatin1String(NM_SSTP_KEY_PROXY_PASSWORD_FLAGS), QString::number(NetworkManager::Setting::AgentOwned));
-        } else {
-            data.insert(QLatin1String(NM_SSTP_KEY_PROXY_PASSWORD_FLAGS), QString::number(NetworkManager::Setting::None));
-        }
     }
+    handleOnePasswordType(d->advUi.le_password, NM_SSTP_KEY_PROXY_PASSWORD_FLAGS, data);
 
     // save it all
     setting.setData(data);
@@ -347,42 +344,36 @@ void SstpSettingWidget::doAdvancedDialog()
     d->advancedDlg->show();
 }
 
-void SstpSettingWidget::passwordTypeChanged(int index)
+void SstpSettingWidget::fillOnePasswordCombo(PasswordField *passwordField, NetworkManager::Setting::SecretFlags type)
 {
-    Q_D(SstpSettingWidget);
-    d->ui.le_password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
-}
-
-void SstpSettingWidget::fillOnePasswordCombo(QComboBox *combo, NetworkManager::Setting::SecretFlags type)
-{
-    if (type.testFlag(NetworkManager::Setting::AgentOwned) || type == NetworkManager::Setting::None) { // store
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
+    if (type.testFlag(NetworkManager::Setting::None)) {
+        passwordField->setPasswordOption(PasswordField::StoreForAllUsers);
+    } else if (type.testFlag(NetworkManager::Setting::AgentOwned)) {
+        passwordField->setPasswordOption(PasswordField::StoreForUser);
     } else if (type.testFlag(NetworkManager::Setting::NotSaved)) {
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
-    } else if (type.testFlag(NetworkManager::Setting::NotRequired)) {
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
+        passwordField->setPasswordOption(PasswordField::AlwaysAsk);
+    } else {
+        passwordField->setPasswordOption(PasswordField::PasswordField::NotRequired);
     }
 }
 
-uint SstpSettingWidget::handleOnePasswordType(const QComboBox *combo, const QString &key, NMStringMap &data, bool agentOwned) const
+void SstpSettingWidget::handleOnePasswordType(const PasswordField *passwordField, const QString &key, NMStringMap &data) const
 {
-    const uint type = combo->currentIndex();
-    switch (type) {
-    case SettingWidget::EnumPasswordStorageType::Store:
-        if (agentOwned) {
-            data.insert(key, QString::number(NetworkManager::Setting::AgentOwned)); // store
-        } else {
-            data.insert(key, QString::number(NetworkManager::Setting::None));
-        }
+    const PasswordField::PasswordOption option = passwordField->passwordOption();
+    switch (option) {
+    case PasswordField::StoreForAllUsers:
+        data.insert(key, QString::number(NetworkManager::Setting::None));
         break;
-    case SettingWidget::EnumPasswordStorageType::AlwaysAsk:
-        data.insert(key, QString::number(NetworkManager::Setting::NotSaved)); // always ask
+    case PasswordField::StoreForUser:
+        data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
         break;
-    case SettingWidget::EnumPasswordStorageType::NotRequired:
-        data.insert(key, QString::number(NetworkManager::Setting::NotRequired)); // not required
+    case PasswordField::AlwaysAsk:
+        data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
+        break;
+    case PasswordField::NotRequired:
+        data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
         break;
     }
-    return type;
 }
 
 bool SstpSettingWidget::isValid() const

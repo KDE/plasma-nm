@@ -40,7 +40,7 @@ public:
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    QVariantMap setting(bool agentOwned = false) const Q_DECL_OVERRIDE;
+    QVariantMap setting() const Q_DECL_OVERRIDE;
 
     virtual bool isValid() const Q_DECL_OVERRIDE;
 

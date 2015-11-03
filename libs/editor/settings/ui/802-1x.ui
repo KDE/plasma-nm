@@ -99,13 +99,6 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
-        <widget class="QCheckBox" name="cbAskMd5Password">
-         <property name="text">
-          <string>Ask for this password every time</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tlsPage">
@@ -419,13 +412,6 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="1">
-        <widget class="QCheckBox" name="cbAskFastPassword">
-         <property name="text">
-          <string>Ask for this password every time</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="ttlsPage">
@@ -527,13 +513,6 @@
         <widget class="PasswordField" name="ttlsPassword">
          <property name="passwordMode" stdset="0">
           <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QCheckBox" name="cbAskTtlsPassword">
-         <property name="text">
-          <string>Ask for this password every time</string>
          </property>
         </widget>
        </item>
@@ -671,13 +650,6 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="1">
-        <widget class="QCheckBox" name="cbAskPeapPassword">
-         <property name="text">
-          <string>Ask for this password every time</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
     </widget>
@@ -710,7 +682,6 @@
   <tabstop>auth</tabstop>
   <tabstop>md5UserName</tabstop>
   <tabstop>md5Password</tabstop>
-  <tabstop>cbAskMd5Password</tabstop>
   <tabstop>tlsIdentity</tabstop>
   <tabstop>tlsUserCert</tabstop>
   <tabstop>tlsCACert</tabstop>
@@ -730,20 +701,17 @@
   <tabstop>fastInnerAuth</tabstop>
   <tabstop>fastUsername</tabstop>
   <tabstop>fastPassword</tabstop>
-  <tabstop>cbAskFastPassword</tabstop>
   <tabstop>ttlsAnonIdentity</tabstop>
   <tabstop>ttlsCACert</tabstop>
   <tabstop>ttlsInnerAuth</tabstop>
   <tabstop>ttlsUsername</tabstop>
   <tabstop>ttlsPassword</tabstop>
-  <tabstop>cbAskTtlsPassword</tabstop>
   <tabstop>peapAnonIdentity</tabstop>
   <tabstop>peapCACert</tabstop>
   <tabstop>peapVersion</tabstop>
   <tabstop>peapInnerAuth</tabstop>
   <tabstop>peapUsername</tabstop>
   <tabstop>peapPassword</tabstop>
-  <tabstop>cbAskPeapPassword</tabstop>
  </tabstops>
  <resources/>
  <connections>
@@ -780,22 +748,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>cbAskMd5Password</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>md5Password</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>123</x>
-     <y>98</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>117</x>
-     <y>80</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>fastAllowPacProvisioning</sender>
    <signal>toggled(bool)</signal>
    <receiver>pacMethod</receiver>
@@ -808,54 +760,6 @@
     <hint type="destinationlabel">
      <x>285</x>
      <y>77</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cbAskFastPassword</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>fastPassword</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>311</x>
-     <y>211</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>311</x>
-     <y>189</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cbAskTtlsPassword</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>ttlsPassword</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>253</x>
-     <y>180</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>245</x>
-     <y>156</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cbAskPeapPassword</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>peapPassword</receiver>
-   <slot>setDisabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>216</x>
-     <y>214</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>215</x>
-     <y>191</y>
     </hint>
    </hints>
   </connection>

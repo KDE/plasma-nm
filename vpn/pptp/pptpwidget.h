@@ -22,11 +22,11 @@
 #ifndef PPTPWIDGET_H
 #define PPTPWIDGET_H
 
+#include "passwordfield.h"
 #include "settingwidget.h"
 
 #include <NetworkManagerQt/VpnSetting>
 
-class QComboBox;
 class PptpSettingWidgetPrivate;
 
 class PptpSettingWidget : public SettingWidget
@@ -34,23 +34,22 @@ class PptpSettingWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(PptpSettingWidget)
 public:
-    explicit PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    explicit PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~PptpSettingWidget();
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    virtual QVariantMap setting(bool agentOwned = false) const;
+    virtual QVariantMap setting() const;
     virtual bool isValid() const;
 
 private Q_SLOTS:
     void doAdvancedDialog();
-    void passwordTypeChanged(int);
 
 private:
-    PptpSettingWidgetPrivate * const d_ptr;
-    void fillOnePasswordCombo(QComboBox *, NetworkManager::Setting::SecretFlags);
-    uint handleOnePasswordType(const QComboBox *, const QString &, NMStringMap &, bool agentOwned) const;
+    PptpSettingWidgetPrivate *const d_ptr;
+    void fillOnePasswordCombo(PasswordField *, NetworkManager::Setting::SecretFlags);
+    void handleOnePasswordType(const PasswordField *, const QString &, NMStringMap &) const;
 };
 
 #endif // PPTPWIDGET_H

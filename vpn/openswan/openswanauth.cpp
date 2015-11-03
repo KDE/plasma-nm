@@ -85,10 +85,9 @@ void OpenswanAuthDialog::readSecrets()
     }
 }
 
-QVariantMap OpenswanAuthDialog::setting(bool agentOwned) const
+QVariantMap OpenswanAuthDialog::setting() const
 {
     Q_D(const OpenswanAuthDialog);
-    Q_UNUSED(agentOwned)
 
     NMStringMap secrets;
     QVariantMap result;

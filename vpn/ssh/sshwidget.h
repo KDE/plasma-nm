@@ -21,11 +21,11 @@
 #ifndef SSH_WIDGET_H
 #define SSH_WIDGET_H
 
+#include "passwordfield.h"
 #include "settingwidget.h"
 
 #include <NetworkManagerQt/VpnSetting>
 
-class QComboBox;
 class SshSettingWidgetPrivate;
 
 class SshSettingWidget : public SettingWidget
@@ -39,7 +39,7 @@ public:
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    virtual QVariantMap setting(bool agentOwned = false) const;
+    virtual QVariantMap setting() const;
     virtual bool isValid() const;
 
 private Q_SLOTS:
@@ -49,8 +49,8 @@ private Q_SLOTS:
 
 private:
     SshSettingWidgetPrivate * const d_ptr;
-    void fillOnePasswordCombo(QComboBox *, NetworkManager::Setting::SecretFlags);
-    uint handleOnePasswordType(const QComboBox *, const QString &, NMStringMap &, bool agentOwned) const;
+    void fillOnePasswordCombo(PasswordField *, NetworkManager::Setting::SecretFlags);
+    void handleOnePasswordType(const PasswordField *, const QString &, NMStringMap &) const;
 };
 
 #endif // SSH_WIDGET_H

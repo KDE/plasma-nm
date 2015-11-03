@@ -42,12 +42,12 @@ public:
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    QVariantMap setting(bool agentOwned = false) const Q_DECL_OVERRIDE;
+    QVariantMap setting() const Q_DECL_OVERRIDE;
 
     virtual bool isValid() const Q_DECL_OVERRIDE;
 
 private:
-    Ui::PppoeWidget * m_ui;
+    Ui::PppoeWidget *m_ui;
 };
 
 #endif // PLASMA_NM_PPPOE_WIDGET_H

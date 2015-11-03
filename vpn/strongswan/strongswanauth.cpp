@@ -103,9 +103,8 @@ void StrongswanAuthWidget::acceptDialog()
     }
 }
 
-QVariantMap StrongswanAuthWidget::setting(bool agentOwned) const
+QVariantMap StrongswanAuthWidget::setting() const
 {
-    Q_UNUSED(agentOwned)
     Q_D(const StrongswanAuthWidget);
 
     NMStringMap secrets;

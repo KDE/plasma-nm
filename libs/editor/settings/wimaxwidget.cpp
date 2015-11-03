@@ -55,10 +55,8 @@ void WimaxWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     m_ui->macAddress->init(NetworkManager::Device::Wimax, NetworkManager::macAddressAsString(wimaxSetting->macAddress()));
 }
 
-QVariantMap WimaxWidget::setting(bool agentOwned) const
+QVariantMap WimaxWidget::setting() const
 {
-    Q_UNUSED(agentOwned);
-
     NetworkManager::WimaxSetting wimaxSetting;
 
     wimaxSetting.setNetworkName(m_ui->networkName->text());

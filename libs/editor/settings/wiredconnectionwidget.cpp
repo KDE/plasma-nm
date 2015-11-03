@@ -83,10 +83,8 @@ void WiredConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &setti
     }
 }
 
-QVariantMap WiredConnectionWidget::setting(bool agentOwned) const
+QVariantMap WiredConnectionWidget::setting() const
 {
-    Q_UNUSED(agentOwned);
-
     NetworkManager::WiredSetting wiredSetting;
 
     wiredSetting.setMacAddress(NetworkManager::macAddressFromString(m_widget->macAddress->hwAddress()));

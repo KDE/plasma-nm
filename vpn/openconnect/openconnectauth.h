@@ -39,11 +39,11 @@ class OpenconnectAuthWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(OpenconnectAuthWidget)
 public:
-    explicit OpenconnectAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    explicit OpenconnectAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~OpenconnectAuthWidget();
     virtual void readSecrets();
     void readConfig();
-    virtual QVariantMap setting(bool agentOwned = false) const;
+    virtual QVariantMap setting() const;
 
 private:
     OpenconnectAuthWidgetPrivate * const d_ptr;

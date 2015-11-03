@@ -38,7 +38,8 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     m_ui->setupUi(this);
 
-    connect(m_ui->cboUserPasswordType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &L2tpWidget::userPasswordTypeChanged);
+    m_ui->password->setPasswordOptionsEnabled(true);
+
     connect(m_ui->btnIPSecSettings, &QPushButton::clicked, this, &L2tpWidget::showAdvanced);
     connect(m_ui->btnPPPSettings, &QPushButton::clicked, this, &L2tpWidget::showPpp);
 
@@ -46,7 +47,7 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     KAcceleratorManager::manage(this);
 
-    if (m_setting) {
+    if (setting && !setting->isNull()) {
         loadConfig(setting);
     }
 }
@@ -75,12 +76,12 @@ void L2tpWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     }
 
     const NetworkManager::Setting::SecretFlags userPassType = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_L2TP_KEY_PASSWORD"-flags").toInt());
-    if (userPassType.testFlag(NetworkManager::Setting::NotSaved)) {
-        m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
-    } else if (userPassType.testFlag(NetworkManager::Setting::NotRequired)) {
-        m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
+    if (userPassType.testFlag(NetworkManager::Setting::None)) {
+        m_ui->password->setPasswordOption(PasswordField::StoreForAllUsers);
+    } else if (userPassType.testFlag(NetworkManager::Setting::AgentOwned)) {
+        m_ui->password->setPasswordOption(PasswordField::StoreForUser);
     } else {
-        m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
+        m_ui->password->setPasswordOption(PasswordField::AlwaysAsk);
     }
 
     const QString domain = data.value(NM_L2TP_KEY_DOMAIN);
@@ -104,7 +105,7 @@ void L2tpWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
     }
 }
 
-QVariantMap L2tpWidget::setting(bool agentOwned) const
+QVariantMap L2tpWidget::setting() const
 {
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_L2TP));
@@ -129,17 +130,12 @@ QVariantMap L2tpWidget::setting(bool agentOwned) const
         secrets.insert(NM_L2TP_KEY_PASSWORD, m_ui->password->text());
     }
 
-    const int userPasswordTypeIndex =  m_ui->cboUserPasswordType->currentIndex();
-    if (userPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {
-        data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
-    } else if (userPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::NotRequired) {
-        data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotRequired));
+    if (m_ui->password->passwordOption() == PasswordField::StoreForAllUsers) {
+        data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::None));
+    } else if (m_ui->password->passwordOption() == PasswordField::StoreForUser) {
+        data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
     } else { // SettingWidget::EnumPasswordStorageType::Store
-        if (agentOwned) {
-            data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
-        } else {
-            data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::None));
-        }
+        data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
     }
 
     if (!m_ui->domain->text().isEmpty()) {

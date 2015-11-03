@@ -32,13 +32,13 @@ class OpenswanAuthDialog : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(OpenswanAuthDialog)
 public:
-    explicit OpenswanAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    explicit OpenswanAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~OpenswanAuthDialog();
     virtual void readSecrets();
-    virtual QVariantMap setting(bool agentOwned = false) const;
+    virtual QVariantMap setting() const;
 
 private:
-    OpenswanAuthDialogPrivate * const d_ptr;
+    OpenswanAuthDialogPrivate *const d_ptr;
 };
 
 #endif // PLASMA_NM_OPENSWAN_AUTH_H

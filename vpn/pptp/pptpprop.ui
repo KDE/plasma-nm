@@ -134,25 +134,6 @@
             </property>
            </widget>
           </item>
-          <item>
-           <widget class="QComboBox" name="cmbPasswordStorage">
-            <item>
-             <property name="text">
-              <string>Store</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Always Ask</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Not Required</string>
-             </property>
-            </item>
-           </widget>
-          </item>
          </layout>
         </item>
         <item>
@@ -250,7 +231,6 @@ authenticating purposes.</string>
   <tabstop>edt_gateway</tabstop>
   <tabstop>edt_login</tabstop>
   <tabstop>edt_password</tabstop>
-  <tabstop>cmbPasswordStorage</tabstop>
   <tabstop>edt_ntDomain</tabstop>
   <tabstop>btnAdvanced</tabstop>
  </tabstops>

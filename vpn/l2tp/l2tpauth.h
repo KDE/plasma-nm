@@ -32,13 +32,13 @@ class L2tpAuthDialog : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(L2tpAuthDialog)
 public:
-    explicit L2tpAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    explicit L2tpAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~L2tpAuthDialog();
     virtual void readSecrets();
-    virtual QVariantMap setting(bool agentOwned = false) const;
+    virtual QVariantMap setting() const;
 
 private:
-    L2tpAuthDialogPrivate * const d_ptr;
+    L2tpAuthDialogPrivate *const d_ptr;
 };
 
 #endif // PLASMA_NM_L2TP_AUTH_H

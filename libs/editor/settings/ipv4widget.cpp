@@ -179,10 +179,8 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     m_ui->ipv4RequiredCB->setChecked(!ipv4Setting->mayFail());
 }
 
-QVariantMap IPv4Widget::setting(bool agentOwned) const
+QVariantMap IPv4Widget::setting() const
 {
-    Q_UNUSED(agentOwned);
-
     NetworkManager::Ipv4Setting ipv4Setting;
 
     ipv4Setting.setRoutes(m_tmpIpv4Setting.routes());

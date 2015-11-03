@@ -47,10 +47,9 @@ SstpAuthWidget::~SstpAuthWidget()
     delete d_ptr;
 }
 
-QVariantMap SstpAuthWidget::setting(bool agentOwned) const
+QVariantMap SstpAuthWidget::setting() const
 {
     Q_D(const SstpAuthWidget);
-    Q_UNUSED(agentOwned)
 
     NMStringMap secrets;
     QVariantMap secretData;

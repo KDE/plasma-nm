@@ -47,10 +47,9 @@ SshAuthWidget::~SshAuthWidget()
     delete d_ptr;
 }
 
-QVariantMap SshAuthWidget::setting(bool agentOwned) const
+QVariantMap SshAuthWidget::setting() const
 {
     Q_D(const SshAuthWidget);
-    Q_UNUSED(agentOwned)
 
     NMStringMap secrets;
     QVariantMap secretData;

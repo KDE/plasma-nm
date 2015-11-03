@@ -71,10 +71,11 @@ void WiredSecurity::loadSecrets(const NetworkManager::Setting::Ptr &setting)
     }
 }
 
-QVariantMap WiredSecurity::setting(bool agentOwned) const
+QVariantMap WiredSecurity::setting() const
 {
-    if (m_ui->use8021X->isChecked())
-        return m_8021xWidget->setting(agentOwned);
+    if (m_ui->use8021X->isChecked()) {
+        return m_8021xWidget->setting();
+    }
 
     return QVariantMap();
 }

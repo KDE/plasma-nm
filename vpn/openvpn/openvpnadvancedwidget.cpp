@@ -35,7 +35,7 @@
 class OpenVpnAdvancedWidget::Private {
 public:
     NetworkManager::VpnSetting::Ptr setting;
-    KProcess * openvpnProcess;
+    KProcess *openvpnProcess;
     QByteArray openVpnCiphers;
     bool gotOpenVpnCiphers;
     bool readConfig;
@@ -66,7 +66,9 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     d->readConfig = false;
     d->setting = setting;
 
-    connect(m_ui->proxyPasswordStorage, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyPasswordStorageChanged);
+    m_ui->proxyPassword->setPasswordOptionsEnabled(true);
+    m_ui->proxyPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+
     connect(m_ui->cmbProxyType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyTypeChanged);
 
     // start openVPN process and get its cipher list
@@ -86,7 +88,9 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
 
     KAcceleratorManager::manage(this);
 
-    loadConfig();
+    if (d->setting && !d->setting->isNull()) {
+        loadConfig();
+    }
 }
 
 OpenVpnAdvancedWidget::~OpenVpnAdvancedWidget()
@@ -267,22 +271,19 @@ void OpenVpnAdvancedWidget::loadConfig()
     if (!(type & NetworkManager::Setting::NotSaved || type & NetworkManager::Setting::NotRequired)) {
         m_ui->proxyPassword->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD)));
     }
-    fillOnePasswordCombo(m_ui->proxyPasswordStorage, type);
+    fillOnePasswordCombo(m_ui->proxyPassword, type);
 }
 
-void OpenVpnAdvancedWidget::setPasswordType(QLineEdit *edit, int type)
+void OpenVpnAdvancedWidget::fillOnePasswordCombo(PasswordField *passwordField, NetworkManager::Setting::SecretFlags type)
 {
-    edit->setEnabled(type == SettingWidget::EnumPasswordStorageType::Store);
-}
-
-void OpenVpnAdvancedWidget::fillOnePasswordCombo(QComboBox * combo, NetworkManager::Setting::SecretFlags type)
-{
-    if (type.testFlag(NetworkManager::Setting::AgentOwned) || type.testFlag(NetworkManager::Setting::None)) {
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
-    } else if (type.testFlag(NetworkManager::Setting::NotRequired)) {
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
+    if (type.testFlag(NetworkManager::Setting::None)) {
+        passwordField->setPasswordOption(PasswordField::StoreForAllUsers);
+    } else if (type.testFlag(NetworkManager::Setting::AgentOwned)) {
+        passwordField->setPasswordOption(PasswordField::StoreForUser);
     } else if (type.testFlag(NetworkManager::Setting::NotSaved)) {
-        combo->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
+        passwordField->setPasswordOption(PasswordField::AlwaysAsk);
+    } else {
+        passwordField->setPasswordOption(PasswordField::PasswordField::NotRequired);
     }
 }
 
@@ -391,7 +392,7 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
         if (!m_ui->proxyUsername->text().isEmpty()) {
             data.insert(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_USERNAME), m_ui->proxyUsername->text());
             secretData.insert(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD), m_ui->proxyPassword->text());
-            handleOnePasswordType(m_ui->proxyPasswordStorage, QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags"), data);
+            handleOnePasswordType(m_ui->proxyPassword, QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags"), data);
         }
         break;
     case Private::EnumProxyType::SOCKS:
@@ -408,11 +409,6 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     return d->setting;
 }
 
-void OpenVpnAdvancedWidget::proxyPasswordStorageChanged(int index)
-{
-    setPasswordType(m_ui->proxyPassword, index);
-}
-
 void OpenVpnAdvancedWidget::proxyTypeChanged(int type)
 {
     switch (type) {
@@ -422,15 +418,13 @@ void OpenVpnAdvancedWidget::proxyTypeChanged(int type)
         m_ui->chkProxyRetry->setEnabled(false);
         m_ui->proxyUsername->setEnabled(false);
         m_ui->proxyPassword->setEnabled(false);
-        m_ui->proxyPasswordStorage->setEnabled(false);
         break;
     case Private::EnumProxyType::HTTP:
         m_ui->proxyServerAddress->setEnabled(true);
         m_ui->sbProxyPort->setEnabled(true);
         m_ui->chkProxyRetry->setEnabled(true);
         m_ui->proxyUsername->setEnabled(true);
-        m_ui->proxyPasswordStorage->setEnabled(true);
-        setPasswordType(m_ui->proxyPassword, m_ui->proxyPasswordStorage->currentIndex());
+        m_ui->proxyPassword->setEnabled(true);
         break;
     case Private::EnumProxyType::SOCKS:
         m_ui->proxyServerAddress->setEnabled(true);
@@ -438,24 +432,25 @@ void OpenVpnAdvancedWidget::proxyTypeChanged(int type)
         m_ui->chkProxyRetry->setEnabled(true);
         m_ui->proxyUsername->setEnabled(false);
         m_ui->proxyPassword->setEnabled(false);
-        m_ui->proxyPasswordStorage->setEnabled(false);
         break;
     }
 }
 
-uint OpenVpnAdvancedWidget::handleOnePasswordType(const QComboBox * combo, const QString & key, NMStringMap & data) const
+void OpenVpnAdvancedWidget::handleOnePasswordType(const PasswordField *passwordField, const QString & key, NMStringMap & data) const
 {
-    uint type = combo->currentIndex();
-    switch (type) {
-    case SettingWidget::EnumPasswordStorageType::AlwaysAsk:
-        data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
+    const PasswordField::PasswordOption option = passwordField->passwordOption();
+    switch (option) {
+    case PasswordField::StoreForAllUsers:
+        data.insert(key, QString::number(NetworkManager::Setting::None));
         break;
-    case SettingWidget::EnumPasswordStorageType::Store:
+    case PasswordField::StoreForUser:
         data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
         break;
-    case SettingWidget::EnumPasswordStorageType::NotRequired:
+    case PasswordField::AlwaysAsk:
+        data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
+        break;
+    case PasswordField::NotRequired:
         data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
         break;
     }
-    return type;
 }

@@ -776,25 +776,6 @@ to protect against DoS attacks.</string>
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QComboBox" name="proxyPasswordStorage">
-           <item>
-            <property name="text">
-             <string>Store</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Always Ask</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Not Required</string>
-            </property>
-           </item>
-          </widget>
-         </item>
         </layout>
        </item>
        <item row="7" column="1">
@@ -856,7 +837,6 @@ to protect against DoS attacks.</string>
   <tabstop>chkProxyRetry</tabstop>
   <tabstop>proxyUsername</tabstop>
   <tabstop>proxyPassword</tabstop>
-  <tabstop>proxyPasswordStorage</tabstop>
  </tabstops>
  <resources/>
  <connections>

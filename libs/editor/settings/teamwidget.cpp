@@ -90,10 +90,8 @@ void TeamWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     m_ui->config->setPlainText(teamSetting->config());
 }
 
-QVariantMap TeamWidget::setting(bool agentOwned) const
+QVariantMap TeamWidget::setting() const
 {
-    Q_UNUSED(agentOwned)
-
     NetworkManager::TeamSetting setting;
     setting.setInterfaceName(m_ui->ifaceName->text());
     setting.setConfig(m_ui->config->toPlainText());

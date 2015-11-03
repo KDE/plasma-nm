@@ -45,7 +45,7 @@ public:
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting);
 
-    QVariantMap setting(bool agentOwned = false) const;
+    QVariantMap setting() const;
 
     virtual bool isValid() const;
 

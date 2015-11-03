@@ -92,10 +92,8 @@ void BridgeWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     }
 }
 
-QVariantMap BridgeWidget::setting(bool agentOwned) const
+QVariantMap BridgeWidget::setting() const
 {
-    Q_UNUSED(agentOwned)
-
     NetworkManager::BridgeSetting setting;
     setting.setInterfaceName(m_ui->ifaceName->text());
     setting.setAgingTime(m_ui->agingTime->value());

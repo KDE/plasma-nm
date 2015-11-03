@@ -36,22 +36,18 @@ class Q_DECL_EXPORT GsmWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit GsmWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit GsmWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget *parent = 0, Qt::WindowFlags f = 0);
     virtual ~GsmWidget();
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    QVariantMap setting(bool agentOwned = false) const Q_DECL_OVERRIDE;
+    QVariantMap setting() const Q_DECL_OVERRIDE;
 
     virtual bool isValid() const Q_DECL_OVERRIDE;
 
-private Q_SLOTS:
-    void pinStorageChanged(int index);
-    void passwordStorageChanged(int index);
-
 private:
-    Ui::GsmWidget * m_ui;
+    Ui::GsmWidget *m_ui;
 };
 
 #endif // PLASMA_NM_GSM_WIDGET_H

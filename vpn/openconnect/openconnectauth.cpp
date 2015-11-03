@@ -291,10 +291,9 @@ void OpenconnectAuthWidget::connectHost()
     d->worker->start();
 }
 
-QVariantMap OpenconnectAuthWidget::setting(bool agentOwned) const
+QVariantMap OpenconnectAuthWidget::setting() const
 {
     Q_D(const OpenconnectAuthWidget);
-    Q_UNUSED(agentOwned)
 
     NMStringMap secrets;
     QVariantMap secretData;

@@ -94,10 +94,9 @@ void VpncAuthDialog::readSecrets()
     }
 }
 
-QVariantMap VpncAuthDialog::setting(bool agentOwned) const
+QVariantMap VpncAuthDialog::setting() const
 {
     Q_D(const VpncAuthDialog);
-    Q_UNUSED(agentOwned)
 
     NMStringMap secrets;
     QVariantMap result;

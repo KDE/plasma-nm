@@ -36,8 +36,11 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     m_ui->setupUi(this);
 
-    connect(m_ui->cboUserPasswordType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &VpncWidget::userPasswordTypeChanged);
-    connect(m_ui->cboGroupPasswordType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &VpncWidget::groupPasswordTypeChanged);
+    m_ui->groupPassword->setPasswordOptionsEnabled(true);
+    m_ui->groupPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    m_ui->userPassword->setPasswordOptionsEnabled(true);
+    m_ui->userPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+
     connect(m_ui->btnAdvanced, &QPushButton::clicked, this, &VpncWidget::showAdvanced);
 
     connect(m_ui->gateway, &QLineEdit::textChanged, this, &VpncWidget::slotWidgetChanged);
@@ -53,7 +56,7 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
         m_tmpSetting->setData(advData);
     }
 
-    if (m_setting) {
+    if (setting && !setting->isNull()) {
         loadConfig(setting);
     }
 }
@@ -83,12 +86,14 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     const NetworkManager::Setting::SecretFlags userPassType =
             static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt());
-    if (userPassType.testFlag(NetworkManager::Setting::NotSaved)) {
-        m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
-    } else if (userPassType.testFlag(NetworkManager::Setting::NotRequired)) {
-        m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
+    if (userPassType.testFlag(NetworkManager::Setting::None)) {
+        m_ui->userPassword->setPasswordOption(PasswordField::StoreForAllUsers);
+    } else if (userPassType.testFlag(NetworkManager::Setting::AgentOwned)) {
+        m_ui->userPassword->setPasswordOption(PasswordField::StoreForUser);
+    } else if (userPassType.testFlag(NetworkManager::Setting::NotSaved)) {
+        m_ui->userPassword->setPasswordOption(PasswordField::AlwaysAsk);
     } else {
-        m_ui->cboUserPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
+        m_ui->userPassword->setPasswordOption(PasswordField::NotRequired);
     }
 
     const QString groupName = data.value(NM_VPNC_KEY_ID);
@@ -98,12 +103,14 @@ void VpncWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     const NetworkManager::Setting::SecretFlags groupPassType =
             static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_VPNC_KEY_SECRET"-flags").toInt());
-    if (groupPassType.testFlag(NetworkManager::Setting::NotSaved)) {
-        m_ui->cboGroupPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::AlwaysAsk);
-    } else if (groupPassType.testFlag(NetworkManager::Setting::NotRequired)) {
-        m_ui->cboGroupPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::NotRequired);
+    if (groupPassType.testFlag(NetworkManager::Setting::None)) {
+        m_ui->groupPassword->setPasswordOption(PasswordField::StoreForAllUsers);
+    } else if (groupPassType.testFlag(NetworkManager::Setting::AgentOwned)) {
+        m_ui->groupPassword->setPasswordOption(PasswordField::StoreForUser);
+    } else if (groupPassType.testFlag(NetworkManager::Setting::NotSaved)) {
+        m_ui->groupPassword->setPasswordOption(PasswordField::AlwaysAsk);
     } else {
-        m_ui->cboGroupPasswordType->setCurrentIndex(SettingWidget::EnumPasswordStorageType::Store);
+        m_ui->groupPassword->setPasswordOption(PasswordField::NotRequired);
     }
 
     if (data.value(NM_VPNC_KEY_AUTHMODE) == QLatin1String("hybrid")) {
@@ -133,7 +140,7 @@ void VpncWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
     }
 }
 
-QVariantMap VpncWidget::setting(bool agentOwned) const
+QVariantMap VpncWidget::setting() const
 {
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_VPNC));
@@ -156,18 +163,16 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
         secrets.insert(NM_VPNC_KEY_XAUTH_PASSWORD, m_ui->userPassword->text());
     }
 
-    const int userPasswordTypeIndex =  m_ui->cboUserPasswordType->currentIndex();
-    if (userPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {
+    if (m_ui->userPassword->passwordOption() == PasswordField::StoreForAllUsers) {
+        data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::None));
+    } else if (m_ui->userPassword->passwordOption() == PasswordField::StoreForUser) {
+        data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
+    } else if (m_ui->userPassword->passwordOption() == PasswordField::AlwaysAsk) { // SettingWidget::EnumPasswordStorageType::Store
         data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
-    } else if (userPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::NotRequired) {
+    } else {
         data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotRequired));
-    } else { // none
-        if (agentOwned) {
-            data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
-        } else {
-            data.insert(NM_VPNC_KEY_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::None));
-        }
     }
+
 
     if (!m_ui->group->text().isEmpty()) {
         data.insert(NM_VPNC_KEY_ID, m_ui->group->text());
@@ -177,17 +182,14 @@ QVariantMap VpncWidget::setting(bool agentOwned) const
         secrets.insert(NM_VPNC_KEY_SECRET, m_ui->groupPassword->text());
     }
 
-    const int groupPasswordTypeIndex =  m_ui->cboGroupPasswordType->currentIndex();
-    if (groupPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::AlwaysAsk) {
+    if (m_ui->groupPassword->passwordOption() == PasswordField::StoreForAllUsers) {
+        data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::None));
+    } else if (m_ui->groupPassword->passwordOption() == PasswordField::StoreForUser) {
+        data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::AgentOwned));
+    } else if (m_ui->groupPassword->passwordOption() == PasswordField::AlwaysAsk) { // SettingWidget::EnumPasswordStorageType::Store
         data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::NotSaved));
-    } else if (groupPasswordTypeIndex == SettingWidget::EnumPasswordStorageType::NotRequired) {
+    } else {
         data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::NotRequired));
-    } else { // none
-        if (agentOwned) {
-            data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::AgentOwned));
-        } else {
-            data.insert(NM_VPNC_KEY_SECRET"-flags", QString::number(NetworkManager::Setting::None));
-        }
     }
 
     if (m_ui->useHybridAuth->isChecked() && m_ui->caFile->url().isValid()) {

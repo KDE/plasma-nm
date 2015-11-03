@@ -21,20 +21,39 @@
 #ifndef PLASMA_NM_PASSWORD_FIELD_H
 #define PLASMA_NM_PASSWORD_FIELD_H
 
+#include <KActionMenu>
 #include <KLineEdit>
 
 class Q_DECL_EXPORT PasswordField : public KLineEdit
 {
     Q_OBJECT
 public:
+    enum PasswordOption {
+        StoreForUser,
+        StoreForAllUsers,
+        AlwaysAsk,
+        NotRequired
+    };
+
     explicit PasswordField(QWidget *parent = 0);
 
+    void setPasswordOptionsEnabled(bool enable);
+    void setPasswordOptionEnabled(PasswordOption option, bool enable);
+
+    PasswordOption passwordOption() const;
+    void setPasswordOption(PasswordOption option);
 private Q_SLOTS:
+    void changePasswordOption(QAction *action);
     void showToggleEchoModeAction(const QString &text);
     void toggleEchoMode();
 
+Q_SIGNALS:
+    void passwordOptionChanged(PasswordOption option);
+
 private:
-    QAction *toggleEchoModeAction;
+    PasswordOption m_currentPasswordOption;
+    KActionMenu *m_passwordOptionsMenu;
+    QAction *m_toggleEchoModeAction;
 };
 
 #endif // PLASMA_NM_PASSWORD_FIELD_H

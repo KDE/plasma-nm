@@ -172,10 +172,8 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     }
 }
 
-QVariantMap IPv6Widget::setting(bool agentOwned) const
+QVariantMap IPv6Widget::setting() const
 {
-    Q_UNUSED(agentOwned);
-
     NetworkManager::Ipv6Setting ipv6Setting;
 
     ipv6Setting.setRoutes(m_tmpIpv6Setting.routes());

@@ -38,7 +38,7 @@ public:
     Security8021x(const NetworkManager::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent = 0);
     virtual ~Security8021x();
 
-    QVariantMap setting(bool agentOwned = false) const;
+    QVariantMap setting() const;
 
     void loadSecrets(const NetworkManager::Security8021xSetting::Ptr &setting);
 
@@ -54,7 +54,7 @@ private Q_SLOTS:
 
 private:
     NetworkManager::Security8021xSetting::Ptr m_setting;
-    Ui::Security8021x * m_ui;
+    Ui::Security8021x *m_ui;
     QRegExpValidator *altSubjectValidator;
     QRegExpValidator *serversValidator;
 

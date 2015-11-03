@@ -34,22 +34,18 @@ class OpenswanWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0, Qt::WindowFlags f = 0);
     virtual ~OpenswanWidget();
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    QVariantMap setting(bool agentOwned = false) const;
+    QVariantMap setting() const;
 
     virtual bool isValid() const;
 
-private Q_SLOTS:
-    void userPasswordTypeChanged(int index);
-    void groupPasswordTypeChanged(int index);
-
 private:
-    Ui::OpenswanWidget * m_ui;
+    Ui::OpenswanWidget *m_ui;
     NetworkManager::VpnSetting::Ptr m_setting;
 };
 

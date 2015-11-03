@@ -35,22 +35,20 @@ public:
     enum AuthType {PrivateKey = 0, SshAgent, Smartcard, Eap};
 };
 
-StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
     : SettingWidget(setting, parent)
     , d_ptr(new StrongswanSettingWidgetPrivate)
 {
     Q_D(StrongswanSettingWidget);
     d->ui.setupUi(this);
+
     d->setting = setting;
-    connect(d->ui.cboUserPassOptions, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &StrongswanSettingWidget::userPasswordTypeChanged);
-    connect(d->ui.cboPrivateKeyPassOptions, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &StrongswanSettingWidget::privateKeyPasswordTypeChanged);
-    connect(d->ui.cboPinOptions, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &StrongswanSettingWidget::pinTypeChanged);
 
     connect(d->ui.leGateway, &QLineEdit::textChanged, this, &StrongswanSettingWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 
-    if (d->setting) {
+    if (d->setting && !d->setting->isNull()) {
         loadConfig(d->setting);
     }
 }
@@ -58,24 +56,6 @@ StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSettin
 StrongswanSettingWidget::~StrongswanSettingWidget()
 {
     delete d_ptr;
-}
-
-void StrongswanSettingWidget::userPasswordTypeChanged(int index)
-{
-    Q_D(StrongswanSettingWidget);
-    d->ui.leUserPassword->setEnabled(index == 0);
-}
-
-void StrongswanSettingWidget::privateKeyPasswordTypeChanged(int index)
-{
-    Q_D(StrongswanSettingWidget);
-    d->ui.lePrivateKeyPassword->setEnabled(index == 0);
-}
-
-void StrongswanSettingWidget::pinTypeChanged(int index)
-{
-    Q_D(StrongswanSettingWidget);
-    d->ui.lePin->setEnabled(index == 0);
 }
 
 void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
@@ -113,55 +93,15 @@ void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &set
     d->ui.innerIP->setChecked(dataMap[NM_STRONGSWAN_INNERIP] == "yes");
     d->ui.udpEncap->setChecked(dataMap[NM_STRONGSWAN_ENCAP] == "yes");
     d->ui.ipComp->setChecked(dataMap[NM_STRONGSWAN_IPCOMP] == "yes");
-
-    // secrets
-    if (d->setting->data().value(NM_STRONGSWAN_SECRET_TYPE) == QLatin1String(NM_STRONGSWAN_PW_TYPE_SAVE)) {
-        switch (d->ui.cmbMethod->currentIndex()) {
-        case StrongswanSettingWidgetPrivate::PrivateKey:
-            fillOnePasswordCombo(d->ui.cboPrivateKeyPassOptions, NM_STRONGSWAN_SECRET_TYPE, d->setting->data(), !d->ui.leAuthPrivatekeyKey->url().isEmpty());
-            break;
-        case StrongswanSettingWidgetPrivate::Smartcard:
-            fillOnePasswordCombo(d->ui.cboPinOptions, NM_STRONGSWAN_SECRET_TYPE, d->setting->data(), true);
-            break;
-        case StrongswanSettingWidgetPrivate::Eap:
-            fillOnePasswordCombo(d->ui.cboUserPassOptions, NM_STRONGSWAN_SECRET_TYPE, d->setting->data(), !d->ui.leUserName->text().isEmpty());
-            break;
-        default:
-            break;
-        }
-    }
-
-    loadSecrets(setting);
 }
 
 void StrongswanSettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
 {
     Q_D(StrongswanSettingWidget);
-
-    NetworkManager::VpnSetting::Ptr vpnSetting = setting.staticCast<NetworkManager::VpnSetting>();
-
-    if (vpnSetting) {
-        const NMStringMap secrets = vpnSetting->secrets();
-
-        if (d->setting->data().value(NM_STRONGSWAN_SECRET_TYPE) == QLatin1String(NM_STRONGSWAN_PW_TYPE_SAVE)) {
-            switch (d->ui.cmbMethod->currentIndex()) {
-            case StrongswanSettingWidgetPrivate::PrivateKey:
-                d->ui.lePrivateKeyPassword->setText(secrets.value(QLatin1String(NM_STRONGSWAN_SECRET)));
-                break;
-            case StrongswanSettingWidgetPrivate::Smartcard:
-                d->ui.lePin->setText(secrets.value(QLatin1String(NM_STRONGSWAN_SECRET)));
-                break;
-            case StrongswanSettingWidgetPrivate::Eap:
-                d->ui.leUserPassword->setText(secrets.value(QLatin1String(NM_STRONGSWAN_SECRET)));
-                break;
-            default:
-                break;
-            }
-        }
-    }
+    Q_UNUSED(setting);
 }
 
-QVariantMap StrongswanSettingWidget::setting(bool agentOwned) const
+QVariantMap StrongswanSettingWidget::setting() const
 {
     Q_D(const StrongswanSettingWidget);
 
@@ -194,13 +134,10 @@ QVariantMap StrongswanSettingWidget::setting(bool agentOwned) const
         break;
     case StrongswanSettingWidgetPrivate::Eap:
         data.insert(NM_STRONGSWAN_METHOD, NM_STRONGSWAN_AUTH_EAP);
-        if (!d->ui.leUserName->text().isEmpty())
+        if (!d->ui.leUserName->text().isEmpty()) {
             data.insert(NM_STRONGSWAN_USER, d->ui.leUserName->text());
+        }
         //StrongSwan-nm 1.2 does not appear to be able to save secrets, the must be entered through the auth dialog
-        if (!d->ui.leUserPassword->text().isEmpty() && d->ui.cboUserPassOptions->currentIndex() == 1)
-            secretData.insert(NM_STRONGSWAN_SECRET, d->ui.leUserPassword->text());
-        handleOnePasswordType(d->ui.cboUserPassOptions, NM_STRONGSWAN_SECRET_TYPE, data, agentOwned);
-        break;
     }
 
     //Options
@@ -213,39 +150,6 @@ QVariantMap StrongswanSettingWidget::setting(bool agentOwned) const
     setting.setSecrets(secretData);
 
     return setting.toMap();
-}
-
-void StrongswanSettingWidget::fillOnePasswordCombo(QComboBox * combo, const QString & key, const NMStringMap & data, bool hasPassword)
-{
-    if (data.contains(key)) {
-        if (data.value(key) == NM_STRONGSWAN_PW_TYPE_SAVE) {
-            combo->setCurrentIndex(0);
-        } else if (data.value(key) == NM_STRONGSWAN_PW_TYPE_UNUSED) {
-            combo->setCurrentIndex(2);
-        }
-    } else if (!hasPassword) {
-        combo->setCurrentIndex(1);
-    }
-}
-
-uint StrongswanSettingWidget::handleOnePasswordType(const QComboBox * combo, const QString & key, NMStringMap & data, bool agentOwned) const
-{
-    const uint type = combo->currentIndex();
-    switch (type) {
-    case 1:
-        data.insert(key, QString::number(NetworkManager::Setting::NotSaved));
-        break;
-    case 0:
-        if (agentOwned)
-            data.insert(key, QString::number(NetworkManager::Setting::AgentOwned));
-        else
-            data.insert(key, QString::number(NetworkManager::Setting::None));
-        break;
-    case 2:
-        data.insert(key, QString::number(NetworkManager::Setting::NotRequired));
-        break;
-    }
-    return type;
 }
 
 bool StrongswanSettingWidget::isValid() const

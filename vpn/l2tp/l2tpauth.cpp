@@ -75,10 +75,9 @@ void L2tpAuthDialog::readSecrets()
     }
 }
 
-QVariantMap L2tpAuthDialog::setting(bool agentOwned) const
+QVariantMap L2tpAuthDialog::setting() const
 {
     Q_D(const L2tpAuthDialog);
-    Q_UNUSED(agentOwned)
 
     NMStringMap secrets;
     QVariantMap result;

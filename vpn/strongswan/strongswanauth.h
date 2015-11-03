@@ -38,7 +38,7 @@ public:
 
     virtual void readSecrets();
 
-    virtual QVariantMap setting(bool agentOwned = false) const;
+    virtual QVariantMap setting() const;
 
 public Q_SLOTS:
     void setVisible(bool);

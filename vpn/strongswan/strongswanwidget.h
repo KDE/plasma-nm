@@ -23,6 +23,7 @@
 #ifndef STRONGSWANWIDGET_H
 #define STRONGSWANWIDGET_H
 
+#include "passwordfield.h"
 #include "settingwidget.h"
 
 #include <NetworkManagerQt/VpnSetting>
@@ -35,25 +36,18 @@ class StrongswanSettingWidget : public SettingWidget
 Q_OBJECT
 Q_DECLARE_PRIVATE(StrongswanSettingWidget)
 public:
-    explicit StrongswanSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    explicit StrongswanSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~StrongswanSettingWidget();
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    virtual QVariantMap setting(bool agentOwned = false) const;
+    virtual QVariantMap setting() const;
 
     virtual bool isValid() const;
 
-protected Q_SLOTS:
-    void userPasswordTypeChanged(int);
-    void privateKeyPasswordTypeChanged(int);
-    void pinTypeChanged(int);
-
 private:
-    void fillOnePasswordCombo(QComboBox * combo, const QString & key, const NMStringMap & data, bool hasPassword);
-    uint handleOnePasswordType(const QComboBox * combo, const QString & key, NMStringMap & data, bool agentOwned) const;
-    StrongswanSettingWidgetPrivate * const d_ptr;
+    StrongswanSettingWidgetPrivate *const d_ptr;
 };
 
 #endif // STRONGSWANWIDGET_H

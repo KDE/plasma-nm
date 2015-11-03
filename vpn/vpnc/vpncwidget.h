@@ -37,13 +37,13 @@ class VpncWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0, Qt::WindowFlags f = 0);
     virtual ~VpncWidget();
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    QVariantMap setting(bool agentOwned = false) const;
+    QVariantMap setting() const;
 
     virtual bool isValid() const;
 
@@ -53,7 +53,7 @@ private Q_SLOTS:
     void showAdvanced();
 
 private:
-    Ui::VpncWidget * m_ui;
+    Ui::VpncWidget *m_ui;
     NetworkManager::VpnSetting::Ptr m_setting;
     NetworkManager::VpnSetting::Ptr m_tmpSetting;
     QPointer<VpncAdvancedWidget> m_advancedWidget;

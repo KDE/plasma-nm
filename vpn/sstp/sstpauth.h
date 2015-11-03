@@ -35,10 +35,10 @@ public:
     explicit SstpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~SstpAuthWidget();
 
-    virtual QVariantMap setting(bool agentOwned = false) const;
+    virtual QVariantMap setting() const;
 
 private:
-    SstpAuthWidgetPrivate * const d_ptr;
+    SstpAuthWidgetPrivate *const d_ptr;
     void acceptDialog();
 };
 

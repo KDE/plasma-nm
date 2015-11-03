@@ -150,7 +150,7 @@ void WifiSecurity::loadSecrets(const NetworkManager::Setting::Ptr &setting)
     const NetworkManager::WirelessSecuritySetting::KeyMgmt keyMgmt = m_wifiSecurity->keyMgmt();
     const NetworkManager::WirelessSecuritySetting::AuthAlg authAlg = m_wifiSecurity->authAlg();
 
-    if (keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x ||
+    if ((keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x && authAlg != NetworkManager::WirelessSecuritySetting::Leap) ||
         keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEap) {
         NetworkManager::Security8021xSetting::Ptr security8021xSetting = setting.staticCast<NetworkManager::Security8021xSetting>();
         if (security8021xSetting) {

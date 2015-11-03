@@ -71,7 +71,7 @@
       </size>
      </property>
      <property name="text">
-      <string comment="Remove a selected row">R&amp;emove</string>
+      <string comment="Remove a selected row">Remove</string>
      </property>
      <property name="icon">
       <iconset theme="list-remove">
@@ -149,6 +149,13 @@ an IP address</string>
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>tableViewAddresses</tabstop>
+  <tabstop>pushButtonAdd</tabstop>
+  <tabstop>pushButtonRemove</tabstop>
+  <tabstop>cbIgnoreAutoRoutes</tabstop>
+  <tabstop>cbNeverDefault</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

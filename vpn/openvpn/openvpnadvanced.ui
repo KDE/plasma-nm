@@ -832,10 +832,17 @@ to protect against DoS attacks.</string>
   <tabstop>sbUdpFragmentSize</tabstop>
   <tabstop>chkUseCustomReneg</tabstop>
   <tabstop>sbCustomReneg</tabstop>
+  <tabstop>chkUseVirtualDeviceType</tabstop>
+  <tabstop>cmbDeviceType</tabstop>
+  <tabstop>chkUseVirtualDeviceName</tabstop>
+  <tabstop>leVirtualDeviceName</tabstop>
   <tabstop>chkUseLZO</tabstop>
   <tabstop>chkUseTCP</tabstop>
   <tabstop>chkMssRestrict</tabstop>
+  <tabstop>chkRandRemHosts</tabstop>
   <tabstop>cboCipher</tabstop>
+  <tabstop>chkUseCustomCipherKey</tabstop>
+  <tabstop>sbCustomCipherKey</tabstop>
   <tabstop>cboHmac</tabstop>
   <tabstop>subjectMatch</tabstop>
   <tabstop>chkRemoteCertTls</tabstop>

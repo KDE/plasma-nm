@@ -145,7 +145,7 @@
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
              <widget class="PasswordField" name="lePrivateKeyPassword">
-              <property name="passwordMode">
+              <property name="passwordMode" stdset="0">
                <bool>true</bool>
               </property>
              </widget>
@@ -215,7 +215,7 @@
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
              <widget class="PasswordField" name="lePin">
-              <property name="passwordMode">
+              <property name="passwordMode" stdset="0">
                <bool>true</bool>
               </property>
              </widget>
@@ -275,7 +275,7 @@
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
              <widget class="PasswordField" name="leUserPassword">
-              <property name="passwordMode">
+              <property name="passwordMode" stdset="0">
                <bool>true</bool>
               </property>
              </widget>
@@ -385,6 +385,24 @@
    <header>passwordfield.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>leGateway</tabstop>
+  <tabstop>leGatewayCertificate</tabstop>
+  <tabstop>cmbMethod</tabstop>
+  <tabstop>leAuthPrivatekeyCertificate</tabstop>
+  <tabstop>leAuthPrivatekeyKey</tabstop>
+  <tabstop>lePrivateKeyPassword</tabstop>
+  <tabstop>cboPrivateKeyPassOptions</tabstop>
+  <tabstop>leAuthSshCertificate</tabstop>
+  <tabstop>lePin</tabstop>
+  <tabstop>cboPinOptions</tabstop>
+  <tabstop>leUserName</tabstop>
+  <tabstop>leUserPassword</tabstop>
+  <tabstop>cboUserPassOptions</tabstop>
+  <tabstop>innerIP</tabstop>
+  <tabstop>udpEncap</tabstop>
+  <tabstop>ipComp</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>

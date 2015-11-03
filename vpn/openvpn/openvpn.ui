@@ -94,7 +94,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="page">
       <layout class="QFormLayout" name="formLayout_2">

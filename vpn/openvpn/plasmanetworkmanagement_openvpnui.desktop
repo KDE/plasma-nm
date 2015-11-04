@@ -59,6 +59,7 @@ Name[zh_CN]=OpenVPN
 Name[zh_TW]=OpenVPN
 Comment=Compatible with the OpenVPN server
 Comment[ca]=Compatible amb el servidor OpenVPN
+Comment[ca@valencia]=Compatible amb el servidor OpenVPN
 Comment[en_GB]=Compatible with the OpenVPN server
 Comment[ko]=OpenVPN 서버와 호환됨
 Comment[nl]=Compatibel met de OpenVPN-server

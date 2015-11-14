@@ -164,7 +164,7 @@ void SecretAgent::dialogAccepted()
             NMStringMap tmpOpenconnectSecrets;
             NMVariantMapMap connection = request.dialog->secrets();
             if (connection.contains(QLatin1String("vpn"))) {
-                if (connection.value(QLatin1String("vpn")).contains(QLatin1String("tmp-secrets"))) {
+                if (connection.value(QStringLiteral("vpn")).contains(QLatin1String("tmp-secrets"))) {
                     QVariantMap vpnSetting = connection.value(QLatin1String("vpn"));
                     tmpOpenconnectSecrets = qdbus_cast<NMStringMap>(vpnSetting.take(QLatin1String("tmp-secrets")));
                     connection.insert(QLatin1String("vpn"), vpnSetting);

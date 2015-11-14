@@ -551,11 +551,7 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
         dialog->layout()->addWidget(buttons);
         connect(dialog.data(), &QDialog::finished,
                 [accepted, dialog, widget] (int result) {
-                    if (result == QDialog::Accepted) {
-                        *accepted = true;
-                    } else {
-                        *accepted = false;
-                    }
+                    *accepted = (result == QDialog::Accepted);
 
                     if (dialog) {
                         dialog->deleteLater();
@@ -666,10 +662,7 @@ void OpenconnectAuthWidget::viewServerLogToggled(bool toggled)
     d->ui.lblLogLevel->setVisible(toggled);
     d->ui.cmbLogLevel->setVisible(toggled);
     if (toggled) {
-        QLayoutItem *item = d->ui.verticalLayout->takeAt(5);
-        if (item) {
-            delete item;
-        }
+        delete d->ui.verticalLayout->takeAt(5);
         QSizePolicy policy = d->ui.serverLogBox->sizePolicy();
         policy.setVerticalPolicy(QSizePolicy::Expanding);
         d->ui.serverLogBox->setSizePolicy(policy);
@@ -696,11 +689,7 @@ void OpenconnectAuthWidget::passwordModeToggled(bool toggled)
             struct oc_form_opt *opt = (struct oc_form_opt *) widget->property("openconnect_opt").value<quintptr>();
             if (opt->type == OC_FORM_OPT_PASSWORD) {
                 PasswordField *le = qobject_cast<PasswordField*>(widget);
-                if (toggled) {
-                    le->setPasswordMode(false);
-                } else {
-                    le->setPasswordMode(true);
-                }
+                le->setPasswordMode(!toggled);
             }
         }
     }

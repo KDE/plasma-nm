@@ -83,7 +83,7 @@ void NetworkManagementService::init()
 
 void NetworkManagementService::slotRegistered(const QDBusObjectPath &path)
 {
-    if (path.path() == QStringLiteral("/modules/networkmanagement")) {
+    if (path.path() == QLatin1String("/modules/networkmanagement")) {
         Q_EMIT registered();
     }
 }

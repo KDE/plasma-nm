@@ -42,7 +42,7 @@ QValidator::State SimpleIpV6AddressValidator::validate(QString &address, int &po
 
 QValidator::State SimpleIpV6AddressValidator::checkWithInputMask(QString &value, int &pos) const
 {
-    QRegExpValidator v(QRegExp("([0-9a-fA-F]{1,4}|:)+"), 0);
+    QRegExpValidator v(QRegExp(QLatin1String("([0-9a-fA-F]{1,4}|:)+")), 0);
 
     return v.validate(value, pos);
 }

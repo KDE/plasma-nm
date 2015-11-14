@@ -41,7 +41,7 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
             if (d.udi().contains(m_name, Qt::CaseInsensitive)) {
                 m_name = d.product();
                 if (!m_name.startsWith(d.vendor())) {
-                    m_name = d.vendor() + ' ' + m_name;
+                    m_name = d.vendor() % ' ' % m_name;
                 }
                 break;
             }
@@ -68,7 +68,7 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     pixmapLabel = new QLabel(this);
     pixmapLabel->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     ui->gridLayout->addWidget(pixmapLabel, 0, 0);
-    pixmapLabel->setPixmap(QIcon::fromTheme("dialog-password").pixmap(KIconLoader::SizeMedium));
+    pixmapLabel->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-password")).pixmap(KIconLoader::SizeMedium));
 
     connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &PinDialog::accept);
     connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &PinDialog::reject);

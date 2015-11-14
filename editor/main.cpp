@@ -35,19 +35,19 @@ int main(int argc, char *argv[])
     KLocalizedString::setApplicationDomain("kde5-nm-connection-editor");
 
     QApplication app(argc, argv);
-    app.setWindowIcon(QIcon::fromTheme("preferences-system-network"));
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-system-network")));
 
-    KAboutData about("kde5-nm-connection-editor", i18n("Connection editor"),
+    KAboutData about(QStringLiteral("kde5-nm-connection-editor"), i18n("Connection editor"),
                      PLASMA_NM_VERSION_STRING, i18n("Manage your network connections"),
                      KAboutLicense::GPL, i18n("(C) 2013-2015 Jan Grulich and Lukáš Tinkl"),
                      i18n("This application allows you to create, edit and delete network connections.\n\nUsing NM version: %1", NetworkManager::version()));
-    about.addAuthor(i18n("Jan Grulich"), i18n("Developer"), "jgrulich@redhat.com");
-    about.addAuthor(i18n("Lukáš Tinkl"), i18n("Developer"), "ltinkl@redhat.com");
-    about.addCredit(i18n("Lamarque Souza"), i18n("libnm-qt author"), "lamarque@kde.org");
-    about.addCredit(i18n("Daniel Nicoletti"), i18n("various bugfixes"), "dantti12@gmail.com");
-    about.addCredit(i18n("Will Stephenson"), i18n("VPN plugins"), "wstephenson@kde.org");
-    about.addCredit(i18n("Ilia Kats"), i18n("VPN plugins"), "ilia-kats@gmx.net");
-    about.setProductName("plasma-nm/editor");
+    about.addAuthor(i18n("Jan Grulich"), i18n("Developer"), QStringLiteral("jgrulich@redhat.com"));
+    about.addAuthor(i18n("Lukáš Tinkl"), i18n("Developer"), QStringLiteral("ltinkl@redhat.com"));
+    about.addCredit(i18n("Lamarque Souza"), i18n("libnm-qt author"), QStringLiteral("lamarque@kde.org"));
+    about.addCredit(i18n("Daniel Nicoletti"), i18n("various bugfixes"), QStringLiteral("dantti12@gmail.com"));
+    about.addCredit(i18n("Will Stephenson"), i18n("VPN plugins"), QStringLiteral("wstephenson@kde.org"));
+    about.addCredit(i18n("Ilia Kats"), i18n("VPN plugins"), QStringLiteral("ilia-kats@gmx.net"));
+    about.setProductName(QByteArrayLiteral("plasma-nm/editor"));
 
     KAboutData::setApplicationData(about);
     KDBusService service(KDBusService::Unique);

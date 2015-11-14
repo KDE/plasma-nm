@@ -47,7 +47,7 @@ PasswordDialog::PasswordDialog(const NMVariantMapMap &connection, SecretAgent::G
     m_hasError(false),
     m_error(SecretAgent::NoSecrets)
 {
-    setWindowIcon(QIcon::fromTheme("dialog-password"));
+    setWindowIcon(QIcon::fromTheme(QStringLiteral("dialog-password")));
 }
 
 PasswordDialog::~PasswordDialog()
@@ -62,7 +62,7 @@ void PasswordDialog::setupGenericUi(const ConnectionSettings &connectionSettings
     ui = new Ui::PasswordDialog;
     ui->setupUi(this);
     // TODO fix this for high DPI
-    ui->labelIcon->setPixmap(QIcon::fromTheme("dialog-password").pixmap(KIconLoader::SizeMedium));
+    ui->labelIcon->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-password")).pixmap(KIconLoader::SizeMedium));
 
     m_neededSecrets = setting->needSecrets(m_flags & SecretAgent::RequestNew);
     if (m_neededSecrets.isEmpty()) {
@@ -111,7 +111,7 @@ void PasswordDialog::setupVpnUi(const ConnectionSettings &connectionSettings)
             setWindowTitle(i18n("VPN secrets (%1)", shortName));
             vpnWidget = vpnUiPlugin->askUser(vpnSetting, this);
             QDialogButtonBox * box;
-            if (shortName != QLatin1Literal("openconnect")) {
+            if (shortName != QLatin1String("openconnect")) {
                 box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, this);
                 connect(box, &QDialogButtonBox::accepted, this, &PasswordDialog::accept);
             } else {

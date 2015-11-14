@@ -121,7 +121,7 @@ void ConnectionEditor::activateAndRaise()
 
 void ConnectionEditor::initializeMenu()
 {
-    m_menu = new KActionMenu(QIcon::fromTheme("list-add"), i18n("Add"), this);
+    m_menu = new KActionMenu(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Add"), this);
     m_menu->menu()->setSeparatorsCollapsible(false);
     m_menu->setDelayed(false);
 
@@ -194,35 +194,35 @@ void ConnectionEditor::initializeMenu()
         m_menu->addAction(action);
     }
 
-    actionCollection()->addAction("add_connection", m_menu);
+    actionCollection()->addAction(QStringLiteral("add_connection"), m_menu);
 
-    QAction * kAction = new QAction(QIcon::fromTheme("network-connect"), i18n("Connect"), this);
+    QAction * kAction = new QAction(QIcon::fromTheme(QStringLiteral("network-connect")), i18n("Connect"), this);
     kAction->setEnabled(false);
     connect(kAction, &QAction::triggered, this, &ConnectionEditor::connectConnection);
-    actionCollection()->addAction("connect_connection", kAction);
+    actionCollection()->addAction(QStringLiteral("connect_connection"), kAction);
 
-    kAction = new QAction(QIcon::fromTheme("network-disconnect"), i18n("Disconnect"), this);
+    kAction = new QAction(QIcon::fromTheme(QStringLiteral("network-disconnect")), i18n("Disconnect"), this);
     kAction->setEnabled(false);
     connect(kAction, &QAction::triggered, this, &ConnectionEditor::disconnectConnection);
-    actionCollection()->addAction("disconnect_connection", kAction);
+    actionCollection()->addAction(QStringLiteral("disconnect_connection"), kAction);
 
-    kAction = new QAction(QIcon::fromTheme("configure"), i18n("Edit..."), this);
+    kAction = new QAction(QIcon::fromTheme(QStringLiteral("configure")), i18n("Edit..."), this);
     kAction->setEnabled(false);
     connect(kAction, &QAction::triggered, this, &ConnectionEditor::editConnection);
-    actionCollection()->addAction("edit_connection", kAction);
+    actionCollection()->addAction(QStringLiteral("edit_connection"), kAction);
 
-    kAction = new QAction(QIcon::fromTheme("edit-delete"), i18n("Delete"), this);
+    kAction = new QAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete"), this);
     kAction->setEnabled(false);
     connect(kAction, &QAction::triggered, this, &ConnectionEditor::removeConnection);
-    actionCollection()->addAction("delete_connection", kAction);
+    actionCollection()->addAction(QStringLiteral("delete_connection"), kAction);
     actionCollection()->setDefaultShortcut(kAction, QKeySequence::Delete);
 
-    kAction = new QAction(QIcon::fromTheme("document-import"), i18n("Import VPN..."), this);
-    actionCollection()->addAction("import_vpn", kAction);
+    kAction = new QAction(QIcon::fromTheme(QStringLiteral("document-import")), i18n("Import VPN..."), this);
+    actionCollection()->addAction(QStringLiteral("import_vpn"), kAction);
     connect(kAction, &QAction::triggered, this, &ConnectionEditor::importVpn);
 
-    kAction = new QAction(QIcon::fromTheme("document-export"), i18n("Export VPN..."), this);
-    actionCollection()->addAction("export_vpn", kAction);
+    kAction = new QAction(QIcon::fromTheme(QStringLiteral("document-export")), i18n("Export VPN..."), this);
+    actionCollection()->addAction(QStringLiteral("export_vpn"), kAction);
     kAction->setEnabled(false);
     connect(kAction, &QAction::triggered, this, &ConnectionEditor::exportVpn);
 
@@ -437,7 +437,7 @@ void ConnectionEditor::removeConnection()
     QModelIndexList selected = m_editor->connectionsWidget->selectionModel()->selectedRows();
 
     QList<NetworkManager::Connection::Ptr> connections;
-    QString connectionNames = QString("\n");
+    QString connectionNames = QLatin1String("\n");
     bool removeConnections;
 
     Q_FOREACH( const QModelIndex& currentIndex, selected ) {
@@ -450,11 +450,11 @@ void ConnectionEditor::removeConnection()
 
         if (connection) {
             connections.append(connection);
-            connectionNames.append(QString("• %1\n").arg(connection->name()));
+            connectionNames.append(QStringLiteral("• %1\n").arg(connection->name()));
         }
     }
 
-    connectionNames = connectionNames.remove(connectionNames.size()-1,1);
+    connectionNames.chop(1);
 
     if (connections.size() == 1) {
         removeConnections = KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connectionNames), i18n("Remove Connection"),
@@ -490,13 +490,14 @@ void ConnectionEditor::slotContextMenuRequested(const QPoint&)
     const bool isAvailable = (NetworkModelItem::ItemType)index.data(NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::AvailableConnection;
 
     if (isAvailable && !isActive) {
-        menu->addAction(actionCollection()->action("connect_connection"));
+        menu->addAction(actionCollection()->action(QStringLiteral("connect_connection")));
     } else if (isAvailable && isActive) {
-        menu->addAction(actionCollection()->action("disconnect_connection"));
+        menu->addAction(actionCollection()->action(QStringLiteral("disconnect_connection")));
     }
-    menu->addAction(actionCollection()->action("edit_connection"));
-    menu->addAction(actionCollection()->action("delete_connection"));
-    menu->exec(QCursor::pos());
+    menu->addAction(actionCollection()->action(QStringLiteral("edit_connection")));
+    menu->addAction(actionCollection()->action(QStringLiteral("delete_connection")));
+    menu->setAttribute(Qt::WA_DeleteOnClose);
+    menu->popup(QCursor::pos());
 }
 
 void ConnectionEditor::slotSelectionChanged()
@@ -514,20 +515,20 @@ void ConnectionEditor::slotSelectionChanged()
         const bool isActivating = (NetworkManager::ActiveConnection::State)index.data(NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activating;
         const bool isAvailable = (NetworkModelItem::ItemType)index.data(NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::AvailableConnection;
 
-        actionCollection()->action("connect_connection")->setEnabled(singleSelection && isAvailable && !isActive && !isActivating);
-        actionCollection()->action("disconnect_connection")->setEnabled(singleSelection && isAvailable && (isActive || isActivating));
-        actionCollection()->action("edit_connection")->setEnabled(singleSelection);
-        actionCollection()->action("delete_connection")->setEnabled(true);
+        actionCollection()->action(QStringLiteral("connect_connection"))->setEnabled(singleSelection && isAvailable && !isActive && !isActivating);
+        actionCollection()->action(QStringLiteral("disconnect_connection"))->setEnabled(singleSelection && isAvailable && (isActive || isActivating));
+        actionCollection()->action(QStringLiteral("edit_connection"))->setEnabled(singleSelection);
+        actionCollection()->action(QStringLiteral("delete_connection"))->setEnabled(true);
         const bool isVpn = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(index.data(NetworkModel::TypeRole).toUInt()) ==
                         NetworkManager::ConnectionSettings::Vpn;
-        actionCollection()->action("export_vpn")->setEnabled(singleSelection && isVpn);
+        actionCollection()->action(QStringLiteral("export_vpn"))->setEnabled(singleSelection && isVpn);
     } else { // category
-        actionCollection()->action("connect_connection")->setEnabled(false);
-        actionCollection()->action("disconnect_connection")->setEnabled(false);
-        actionCollection()->action("edit_connection")->setEnabled(false);
-        actionCollection()->action("delete_connection")->setEnabled(false);
-        actionCollection()->action("export_vpn")->setEnabled(false);
-        actionCollection()->action("export_vpn")->setEnabled(false);
+        actionCollection()->action(QStringLiteral("connect_connection"))->setEnabled(false);
+        actionCollection()->action(QStringLiteral("disconnect_connection"))->setEnabled(false);
+        actionCollection()->action(QStringLiteral("edit_connection"))->setEnabled(false);
+        actionCollection()->action(QStringLiteral("delete_connection"))->setEnabled(false);
+        actionCollection()->action(QStringLiteral("export_vpn"))->setEnabled(false);
+        actionCollection()->action(QStringLiteral("export_vpn"))->setEnabled(false);
     }
 }
 
@@ -563,7 +564,7 @@ void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
 
 void ConnectionEditor::importSecretsFromPlainTextFiles()
 {
-    const QString secretsDirectory = QStandardPaths::locate(QStandardPaths::DataLocation, "networkmanagement/secrets/", QStandardPaths::LocateDirectory);
+    const QString secretsDirectory = QStandardPaths::locate(QStandardPaths::DataLocation, QStringLiteral("networkmanagement/secrets/"), QStandardPaths::LocateDirectory);
     QDir dir(secretsDirectory);
     if (dir.exists() && !dir.entryList(QDir::Files).isEmpty()) {
         QMap<QString, QMap<QString, QString > > resultingMap;
@@ -602,7 +603,7 @@ void ConnectionEditor::storeSecrets(const QMap< QString, QMap< QString, QString 
             int count = 0;
             Q_FOREACH (const QString & entry, map.keys()) {
                 QString connectionUuid = entry.split(';').first();
-                connectionUuid.replace('{',"").replace('}',"");
+                connectionUuid.remove('{').remove('}');
                 NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(connectionUuid);
 
                 if (connection) {

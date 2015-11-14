@@ -47,7 +47,7 @@ QString VpnUiPlugin::lastErrorMessage()
 {
     switch (mError) {
         case NoError:
-            mErrorMessage = "";
+            mErrorMessage.clear();
             break;
         case NotImplemented:
             return i18nc("Error message in VPN import/export dialog", "Operation not supported for this VPN type.");

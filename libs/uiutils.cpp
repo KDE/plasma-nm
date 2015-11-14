@@ -114,19 +114,19 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
 QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type, QString &title)
 {
     QString text;
-    QString icon = "network-wired";
+    QString icon = QStringLiteral("network-wired");
     switch (type) {
     case ConnectionSettings::Adsl:
         text = i18n("ADSL");
-        icon = "network-modem";
+        icon = QStringLiteral("network-modem");
         break;
     case ConnectionSettings::Pppoe:
         text = i18n("DSL");
-        icon = "network-modem";
+        icon = QStringLiteral("network-modem");
         break;
     case ConnectionSettings::Bluetooth:
         text = i18n("Bluetooth");
-        icon = "network-bluetooth";
+        icon = QStringLiteral("network-bluetooth");
         break;
     case ConnectionSettings::Bond:
         text = i18n("Bond");
@@ -137,7 +137,7 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
     case ConnectionSettings::Gsm:
     case ConnectionSettings::Cdma:
         text = i18n("Mobile broadband");
-        icon = "smartphone";
+        icon = QStringLiteral("smartphone");
         break;
     case ConnectionSettings::Infiniband:
         text = i18n("Infiniband");
@@ -150,19 +150,19 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
         break;
     case ConnectionSettings::Vpn:
         text = i18n("VPN");
-        icon = "network-vpn";
+        icon = QStringLiteral("network-vpn");
         break;
     case ConnectionSettings::Wimax:
         text = i18n("WiMAX");
-        icon = "network-wireless";
+        icon = QStringLiteral("network-wireless");
         break;
     case ConnectionSettings::Wired:
         text = i18n("Wired Ethernet");
-        icon = "network-wired";
+        icon = QStringLiteral("network-wired");
         break;
     case ConnectionSettings::Wireless:
         text = i18n("Wi-Fi");
-        icon = "network-wireless";
+        icon = QStringLiteral("network-wireless");
         break;
 #if NM_CHECK_VERSION(0, 9, 10)
     case ConnectionSettings::Team:
@@ -374,13 +374,13 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
 {
     switch (band) {
         case NetworkManager::WirelessSetting::Automatic:
-            return QLatin1String("automatic");
+            return QStringLiteral("automatic");
             break;
         case NetworkManager::WirelessSetting::A:
-            return QLatin1String("a");
+            return QStringLiteral("a");
             break;
         case NetworkManager::WirelessSetting::Bg:
-            return QLatin1String("b/g");
+            return QStringLiteral("b/g");
             break;
     }
 

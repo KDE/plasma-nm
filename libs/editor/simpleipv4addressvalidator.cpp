@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "simpleipv4addressvalidator.h"
 
 #include <QStringList>
+#include <QVector>
 
 SimpleIpV4AddressValidator::SimpleIpV4AddressValidator(QObject *parent)
     : QValidator(parent)
@@ -46,7 +47,7 @@ QValidator::State SimpleIpV4AddressValidator::validate(QString &address, int &po
 
 QValidator::State SimpleIpV4AddressValidator::checkWithInputMask(QString &value, int &pos) const
 {
-    QRegExpValidator v(QRegExp("[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}"), 0);
+    QRegExpValidator v(QRegExp(QLatin1String("[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}")), 0);
 
     return v.validate(value, pos);
 }
@@ -54,13 +55,13 @@ QValidator::State SimpleIpV4AddressValidator::checkWithInputMask(QString &value,
 QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value, QList<int> &tetrads) const
 {
     QStringList temp;
-    const QStringList addrParts = value.split(QLatin1Char('.'));
+    const QVector<QStringRef> addrParts = value.splitRef(QLatin1Char('.'));
     int i = 0;
     // fill in the list with invalid values
     tetrads << -1 << -1 << -1 << -1;
 
     // lets check address parts
-    Q_FOREACH (const QString &part, addrParts) {
+    Q_FOREACH (const QStringRef &part, addrParts) {
         if (part.isEmpty()) {
             if (i != (addrParts.size() - 1)) {
                 // qCDebug(PLASMA_NM) << "part.isEmpty()";

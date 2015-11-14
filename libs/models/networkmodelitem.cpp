@@ -162,13 +162,13 @@ QString NetworkModelItem::icon() const
 {
     switch (m_type) {
         case NetworkManager::ConnectionSettings::Adsl:
-            return "network-mobile-100";
+            return QStringLiteral("network-mobile-100");
             break;
         case NetworkManager::ConnectionSettings::Bluetooth:
             if (connectionState() == NetworkManager::ActiveConnection::Activated) {
-                return "network-bluetooth-activated";
+                return QStringLiteral("network-bluetooth-activated");
             } else {
-                return "network-bluetooth";
+                return QStringLiteral("network-bluetooth");
             }
             break;
         case NetworkManager::ConnectionSettings::Bond:
@@ -178,17 +178,17 @@ QString NetworkModelItem::icon() const
         case NetworkManager::ConnectionSettings::Cdma:
         case NetworkManager::ConnectionSettings::Gsm:
             if (m_signal == 0 ) {
-                return "network-mobile-0";
+                return QStringLiteral("network-mobile-0");
             } else if (m_signal < 20) {
-                return "network-mobile-20";
+                return QStringLiteral("network-mobile-20");
             } else if (m_signal < 40) {
-                return "network-mobile-40";
+                return QStringLiteral("network-mobile-40");
             } else if (m_signal < 60) {
-                return "network-mobile-60";
+                return QStringLiteral("network-mobile-60");
             } else if (m_signal < 80) {
-                return "network-mobile-80";
+                return QStringLiteral("network-mobile-80");
             } else {
-                return "network-mobile-100";
+                return QStringLiteral("network-mobile-100");
             }
             break;
         case NetworkManager::ConnectionSettings::Infiniband:
@@ -196,51 +196,51 @@ QString NetworkModelItem::icon() const
         case NetworkManager::ConnectionSettings::OLPCMesh:
             break;
         case NetworkManager::ConnectionSettings::Pppoe:
-            return "network-mobile-100";
+            return QStringLiteral("network-mobile-100");
             break;
         case NetworkManager::ConnectionSettings::Vlan:
             break;
         case NetworkManager::ConnectionSettings::Vpn:
-            return "network-vpn";
+            return QStringLiteral("network-vpn");
             break;
         case NetworkManager::ConnectionSettings::Wimax:
             if (m_signal == 0 ) {
-                return "network-wireless-0";
+                return QStringLiteral("network-wireless-0");
             } else if (m_signal < 20) {
-                return "network-wireless-20";
+                return QStringLiteral("network-wireless-20");
             } else if (m_signal < 40) {
-                return "network-wireless-40";
+                return QStringLiteral("network-wireless-40");
             } else if (m_signal < 60) {
-                return "network-wireless-60";
+                return QStringLiteral("network-wireless-60");
             } else if (m_signal < 80) {
-                return "network-wireless-80";
+                return QStringLiteral("network-wireless-80");
             } else {
-                return "network-wireless-100";
+                return QStringLiteral("network-wireless-100");
             }
             break;
         case NetworkManager::ConnectionSettings::Wired:
             if (connectionState() == NetworkManager::ActiveConnection::Activated) {
-                return "network-wired-activated";
+                return QStringLiteral("network-wired-activated");
             } else {
-                return "network-wired";
+                return QStringLiteral("network-wired");
             }
             break;
         case NetworkManager::ConnectionSettings::Wireless:
             if (m_signal == 0 ) {
                 if (m_mode == NetworkManager::WirelessSetting::Adhoc || m_mode == NetworkManager::WirelessSetting::Ap) {
-                    return (m_securityType <= NetworkManager::NoneSecurity) ? "network-wireless-100" : "network-wireless-100-locked";
+                    return (m_securityType <= NetworkManager::NoneSecurity) ? QStringLiteral("network-wireless-100") : QStringLiteral("network-wireless-100-locked");
                 }
-                return (m_securityType <= NetworkManager::NoneSecurity) ? "network-wireless-0" : "network-wireless-0-locked";
+                return (m_securityType <= NetworkManager::NoneSecurity) ? QStringLiteral("network-wireless-0") : QStringLiteral("network-wireless-0-locked");
             } else if (m_signal < 20) {
-                return (m_securityType <= NetworkManager::NoneSecurity) ? "network-wireless-20" : "network-wireless-20-locked";
+                return (m_securityType <= NetworkManager::NoneSecurity) ? QStringLiteral("network-wireless-20") : QStringLiteral("network-wireless-20-locked");
             } else if (m_signal < 40) {
-                return (m_securityType <= NetworkManager::NoneSecurity) ? "network-wireless-40" : "network-wireless-40-locked";
+                return (m_securityType <= NetworkManager::NoneSecurity) ? QStringLiteral("network-wireless-40") : QStringLiteral("network-wireless-40-locked");
             } else if (m_signal < 60) {
-                return (m_securityType <= NetworkManager::NoneSecurity) ? "network-wireless-60" : "network-wireless-60-locked";
+                return (m_securityType <= NetworkManager::NoneSecurity) ? QStringLiteral("network-wireless-60") : QStringLiteral("network-wireless-60-locked");
             } else if (m_signal < 80) {
-                return (m_securityType <= NetworkManager::NoneSecurity) ? "network-wireless-80" : "network-wireless-80-locked";
+                return (m_securityType <= NetworkManager::NoneSecurity) ? QStringLiteral("network-wireless-80") : QStringLiteral("network-wireless-80-locked");
             } else {
-                return (m_securityType <= NetworkManager::NoneSecurity) ? "network-wireless-100" : "network-wireless-100-locked";
+                return (m_securityType <= NetworkManager::NoneSecurity) ? QStringLiteral("network-wireless-100") : QStringLiteral("network-wireless-100-locked");
             }
             break;
         default:
@@ -248,9 +248,9 @@ QString NetworkModelItem::icon() const
     }
 
     if (connectionState() == NetworkManager::ActiveConnection::Activated) {
-        return "network-wired-activated";
+        return QStringLiteral("network-wired-activated");
     } else {
-        return "network-wired";
+        return QStringLiteral("network-wired");
     }
 }
 
@@ -312,7 +312,7 @@ QString NetworkModelItem::originalName() const
     if (m_deviceName.isEmpty()) {
         return m_name;
     }
-    return m_name + " (" + m_deviceName + ')';
+    return m_name % QLatin1String(" (") % m_deviceName % ')';
 }
 
 QString NetworkModelItem::sectionType() const
@@ -554,9 +554,9 @@ void NetworkModelItem::updateDetails()
         if (bluetoothDevice) {
             m_details << i18n("Name") << bluetoothDevice->name();
             if (bluetoothDevice->bluetoothCapabilities() == NetworkManager::BluetoothDevice::Pan) {
-                m_details << i18n("Capabilities") << "PAN";
+                m_details << i18n("Capabilities") << QStringLiteral("PAN");
             } else if (bluetoothDevice->bluetoothCapabilities() == NetworkManager::BluetoothDevice::Dun) {
-                m_details << i18n("Capabilities") << "DUN";
+                m_details << i18n("Capabilities") << QStringLiteral("DUN");
             }
             m_details << i18n("MAC Address") << bluetoothDevice->hardwareAddress();
 

@@ -52,7 +52,21 @@ int main(int argc, char *argv[])
     KAboutData::setApplicationData(about);
     KDBusService service(KDBusService::Unique);
 
+    QCommandLineParser parser;
+    QCommandLineOption importVpnOption(QStringLiteral("import-vpn"), i18n("Import VPN Connection"), QStringLiteral("path"));
+    parser.addOption(importVpnOption);
+    parser.addHelpOption();
+    parser.addVersionOption();
+    about.setupCommandLine(&parser);
+    parser.process(app);
+    about.processCommandLine(&parser);
+
     ConnectionEditor * editor = new ConnectionEditor();
+
+    if (parser.isSet(importVpnOption)) {
+        editor->importVpnAtPath(parser.value(importVpnOption));
+    }
+
     editor->show();
 
     QObject::connect(&service, &KDBusService::activateRequested, editor, &ConnectionEditor::activateAndRaise);

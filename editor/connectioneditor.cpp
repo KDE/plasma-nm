@@ -628,18 +628,25 @@ void ConnectionEditor::importVpn()
         }
     }
 
-    const QString filename = QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), extensions.simplified());
-    if (!filename.isEmpty()) {
-        QFileInfo fi(filename);
+    const QString &filename = QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), extensions.simplified());
+    importVpnAtPath(filename);
+}
+
+void ConnectionEditor::importVpnAtPath(const QString &path)
+{
+    if (!path.isEmpty()) {
+        const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
+
+        QFileInfo fi(path);
         const QString ext = QStringLiteral("*.") % fi.suffix();
-        qCDebug(PLASMA_NM) << "Importing VPN connection " << filename << "extension:" << ext;
+        qCDebug(PLASMA_NM) << "Importing VPN connection " << path << "extension:" << ext;
 
         Q_FOREACH (const KService::Ptr &service, services) {
             VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
             if (vpnPlugin && vpnPlugin->supportedFileExtensions().contains(ext)) {
                 qCDebug(PLASMA_NM) << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
 
-                NMVariantMapMap connection = vpnPlugin->importConnectionSettings(filename);
+                NMVariantMapMap connection = vpnPlugin->importConnectionSettings(path);
 
                 // qCDebug(PLASMA_NM) << "Raw connection:" << connection;
 

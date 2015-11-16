@@ -48,6 +48,8 @@ public:
     explicit ConnectionEditor(QWidget* parent = 0, Qt::WindowFlags flags = 0);
     virtual ~ConnectionEditor();
 
+    void importVpnAtPath(const QString &path);
+
 public Q_SLOTS:
     void activateAndRaise();
 

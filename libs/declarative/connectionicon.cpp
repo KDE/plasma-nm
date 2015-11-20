@@ -151,9 +151,7 @@ void ConnectionIcon::activeConnectionDestroyed()
 void ConnectionIcon::carrierChanged(bool carrier)
 {
     Q_UNUSED(carrier);
-    if (NetworkManager::status() == NetworkManager::Disconnected) {
-        setDisconnectedIcon();
-    }
+    setIcons();
 }
 
 void ConnectionIcon::connectivityChanged()
@@ -237,25 +235,20 @@ void ConnectionIcon::vpnConnectionStateChanged(NetworkManager::VpnConnection::St
 void ConnectionIcon::wirelessEnabledChanged(bool enabled)
 {
     Q_UNUSED(enabled);
-    if (NetworkManager::status() == NetworkManager::Disconnected) {
-        setDisconnectedIcon();
-    }
+    setIcons();
 }
 
 void ConnectionIcon::wwanEnabledChanged(bool enabled)
 {
     Q_UNUSED(enabled);
-    if (NetworkManager::status() == NetworkManager::Disconnected) {
-        setDisconnectedIcon();
-    }
+    setIcons();
+
 }
 
 void ConnectionIcon::wirelessNetworkAppeared(const QString& network)
 {
     Q_UNUSED(network);
-    if (NetworkManager::status() == NetworkManager::Disconnected) {
-        setDisconnectedIcon();
-    }
+    setIcons();
 }
 
 void ConnectionIcon::setStates()
@@ -401,8 +394,8 @@ void ConnectionIcon::setIcons()
                     }
                 }
             } else {
-                setConnectionIcon("network-wired-activated");
-                setConnectionTooltipIcon("network-wired-activated");
+                // Ignore other devices (bond/bridge/team etc.)
+                setDisconnectedIcon();
             }
         }
     } else {

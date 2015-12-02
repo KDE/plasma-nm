@@ -549,17 +549,15 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
         connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
         dialog->layout()->addWidget(widget);
         dialog->layout()->addWidget(buttons);
-        connect(dialog.data(), &QDialog::finished,
-                [accepted, dialog, widget] (int result) {
-                    *accepted = (result == QDialog::Accepted);
-
-                    if (dialog) {
-                        dialog->deleteLater();
-                    }
-                    widget->deleteLater();
-                });
-        dialog->setModal(true);
-        dialog->show();
+        if(dialog.data()->exec() == QDialog::Accepted) {
+            *accepted = true;
+        } else {
+            *accepted = false;
+        }
+        if (dialog) {
+            dialog.data()->deleteLater();
+        }
+        widget->deleteLater();
     } else {
         *accepted = true;
     }

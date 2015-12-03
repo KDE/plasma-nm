@@ -59,6 +59,7 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Ipv4Setting>
 #include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/GsmSetting>
 #include <NetworkManagerQt/VpnSetting>
 
 ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
@@ -265,7 +266,10 @@ void ConnectionEditor::addConnection(QAction* action)
                             connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(wizard->type()));
                             connectionSettings->setId(wizard->args().value(0).toString());
                             if (wizard->type() == NetworkManager::ConnectionSettings::Gsm) {
-                                connectionSettings->setting(NetworkManager::Setting::Gsm)->fromMap(tmp);
+                                NetworkManager::GsmSetting::Ptr gsmSetting = connectionSettings->setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
+                                gsmSetting->fromMap(tmp);
+                                gsmSetting->setPasswordFlags(NetworkManager::Setting::NotRequired);
+                                gsmSetting->setPinFlags(NetworkManager::Setting::NotRequired);
                             } else if (wizard->type() == NetworkManager::ConnectionSettings::Cdma) {
                                 connectionSettings->setting(NetworkManager::Setting::Cdma)->fromMap(tmp);
                             } else {

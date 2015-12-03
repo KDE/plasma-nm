@@ -57,7 +57,7 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget *paren
 
     KAcceleratorManager::manage(this);
 
-    if (setting && !setting->isNull()) {
+    if (setting) {
         loadConfig(setting);
     }
 }

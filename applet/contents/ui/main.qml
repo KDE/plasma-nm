@@ -36,7 +36,8 @@ Item {
     Plasmoid.compactRepresentation: CompactRepresentation { }
     Plasmoid.fullRepresentation: PopupDialog {
         id: dialogItem
-
+        Layout.minimumWidth: units.iconSizes.medium * 8
+        Layout.minimumHeight: units.gridUnit * 16
         anchors.fill: parent
         focus: true
     }

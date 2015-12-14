@@ -82,6 +82,7 @@ public:
     bool formGroupChanged;
     int cancelPipes[2];
     QList<QPair<QString, int> > serverLog;
+    int passwordFormIndex;
 
     enum LogLevels {Error = 0, Info, Debug, Trace};
 };
@@ -476,6 +477,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
         }
     }
     d->ui.loginBoxLayout->addLayout(layout);
+    d->passwordFormIndex = d->ui.loginBoxLayout->count() - 1;
 
     QDialogButtonBox *box = new QDialogButtonBox(this);
     QPushButton *btn = box->addButton(QDialogButtonBox::Ok);
@@ -585,7 +587,7 @@ void OpenconnectAuthWidget::formLoginClicked()
     Q_D(OpenconnectAuthWidget);
 
     const int lastIndex = d->ui.loginBoxLayout->count() - 1;
-    QLayout *layout = d->ui.loginBoxLayout->itemAt(lastIndex - 2)->layout();
+    QLayout *layout = d->ui.loginBoxLayout->itemAt(d->passwordFormIndex)->layout();
     struct oc_auth_form *form = (struct oc_auth_form *) d->ui.loginBoxLayout->itemAt(lastIndex)->widget()->property("openconnect_form").value<quintptr>();
 
     for (int i = 0; i < layout->count(); i++) {
@@ -672,23 +674,5 @@ void OpenconnectAuthWidget::viewServerLogToggled(bool toggled)
         QSizePolicy policy = d->ui.serverLogBox->sizePolicy();
         policy.setVerticalPolicy(QSizePolicy::Fixed);
         d->ui.serverLogBox->setSizePolicy(policy);
-    }
-}
-
-void OpenconnectAuthWidget::passwordModeToggled(bool toggled)
-{
-    Q_D(OpenconnectAuthWidget);
-    const int lastIndex = d->ui.loginBoxLayout->count() - 1;
-    QLayout *layout = d->ui.loginBoxLayout->itemAt(lastIndex - 2)->layout();
-    for (int i = 0; i < layout->count(); i++) {
-        QLayoutItem *item = layout->itemAt(i);
-        QWidget *widget = item->widget();
-        if (widget && widget->property("openconnect_opt").isValid()) {
-            struct oc_form_opt *opt = (struct oc_form_opt *) widget->property("openconnect_opt").value<quintptr>();
-            if (opt->type == OC_FORM_OPT_PASSWORD) {
-                PasswordField *le = qobject_cast<PasswordField*>(widget);
-                le->setPasswordMode(!toggled);
-            }
-        }
     }
 }

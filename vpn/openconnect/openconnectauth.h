@@ -61,7 +61,6 @@ private Q_SLOTS:
     void formGroupChanged();
     void workerFinished(const int&);
     void viewServerLogToggled(bool);
-    void passwordModeToggled(bool);
     void connectHost();
 };
 

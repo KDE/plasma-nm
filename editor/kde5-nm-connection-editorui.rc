@@ -7,11 +7,6 @@
                          http://www.kde.org/standards/kxmlgui/1.0/kxmlgui.xsd" >
 
   <MenuBar>
-    <Menu name="file" >
-      <Action name="import_vpn" />
-      <Action name="export_vpn" />
-    </Menu>
-
     <Menu name="connection">
     <text>Connection</text>
       <Action name="connect_connection" />
@@ -19,6 +14,8 @@
       <Action name="add_connection" />
       <Action name="edit_connection" />
       <Action name="delete_connection" />
+      <Action name="import_vpn" />
+      <Action name="export_vpn" />
     </Menu>
   </MenuBar>
 

@@ -195,6 +195,13 @@ void ConnectionEditor::initializeMenu()
         m_menu->addAction(action);
     }
 
+    m_menu->menu()->addSeparator();
+
+    action = new QAction(i18n("Import VPN..."), this);
+    action->setData(NetworkManager::ConnectionSettings::Vpn);
+    action->setProperty("type", "imported");
+    m_menu->addAction(action);
+
     actionCollection()->addAction(QStringLiteral("add_connection"), m_menu);
 
     QAction * kAction = new QAction(QIcon::fromTheme(QStringLiteral("network-connect")), i18n("Connect"), this);
@@ -243,8 +250,9 @@ void ConnectionEditor::addConnection(QAction* action)
     const QString vpnType = action->property("type").toString();
 
     // qCDebug(PLASMA_NM) << "Adding new connection of type " << type;
-
-    if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
+    if (type == NetworkManager::ConnectionSettings::Vpn && vpnType == "imported") {
+        importVpn();
+    } else if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
 #if WITH_MODEMMANAGER_SUPPORT
         QPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
         connect(wizard.data(), &MobileConnectionWizard::accepted,

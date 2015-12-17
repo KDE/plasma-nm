@@ -46,6 +46,9 @@ public:
 
     virtual bool isValid() const Q_DECL_OVERRIDE;
 
+Q_SIGNALS:
+    void ssidChanged(const QString &ssid);
+
 private Q_SLOTS:
     void generateRandomClonedMac();
     void ssidChanged();

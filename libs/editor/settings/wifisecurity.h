@@ -57,6 +57,9 @@ public:
 
     virtual bool isValid() const Q_DECL_OVERRIDE;
 
+public Q_SLOTS:
+    void onSsidChanged(const QString &ssid);
+
 private Q_SLOTS:
     void securityChanged(int index);
     void setWepKey(int keyIndex);

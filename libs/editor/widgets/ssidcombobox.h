@@ -40,13 +40,12 @@ Q_SIGNALS:
     void ssidChanged();
 
 private Q_SLOTS:
-    void slotEditTextChanged(const QString &);
+    void slotEditTextChanged(const QString &text);
     void slotCurrentIndexChanged(int);
 
 private:
     void addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::Ptr> &networks);
     QString m_initialSsid;
-    bool m_dirty;
 };
 
 #endif // PLASMA_NM_SSIDCOMBOBOX_H

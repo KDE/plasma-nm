@@ -36,7 +36,7 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
     m_ui->setupUi(this);
 
     connect(m_ui->btnRandomMacAddr, &QPushButton::clicked, this, &WifiConnectionWidget::generateRandomClonedMac);
-    connect(m_ui->SSIDCombo, &SsidComboBox::ssidChanged, this, &WifiConnectionWidget::ssidChanged);
+    connect(m_ui->SSIDCombo, &SsidComboBox::ssidChanged, this, static_cast<void (WifiConnectionWidget::*)()>(&WifiConnectionWidget::ssidChanged));
     connect(m_ui->modeComboBox, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::modeChanged);
     connect(m_ui->band, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::bandChanged);
 
@@ -46,8 +46,9 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
 
     KAcceleratorManager::manage(this);
 
-    if (setting)
+    if (setting) {
         loadConfig(setting);
+    }
 }
 
 WifiConnectionWidget::~WifiConnectionWidget()
@@ -138,6 +139,9 @@ void WifiConnectionWidget::ssidChanged()
 {
     m_ui->BSSIDCombo->init(m_ui->BSSIDCombo->bssid(), m_ui->SSIDCombo->ssid());
     slotWidgetChanged();
+
+    // Emit that SSID has changed so we can pre-configure wireless security
+    Q_EMIT ssidChanged(m_ui->SSIDCombo->ssid());
 }
 
 void WifiConnectionWidget::modeChanged(int mode)

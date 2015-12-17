@@ -33,7 +33,7 @@ bool signalCompare(const NetworkManager::WirelessNetwork::Ptr & one, const Netwo
 }
 
 SsidComboBox::SsidComboBox(QWidget *parent) :
-    KComboBox(parent), m_dirty(false)
+    KComboBox(parent)
 {
     setEditable(true);
     setInsertPolicy(QComboBox::NoInsert);
@@ -44,28 +44,23 @@ SsidComboBox::SsidComboBox(QWidget *parent) :
 
 QString SsidComboBox::ssid() const
 {
-    QString result;
-    if (!m_dirty)
-        result = itemData(currentIndex()).toString();
-    else
-        result = currentText();
-
-    // qCDebug(PLASMA_NM) << "Result:" << currentIndex() << result;
-
-    return result;
+    if (currentIndex() == 0 || currentText() != itemData(currentIndex()).toString()) {
+        return currentText();
+    } else {
+        return itemData(currentIndex()).toString();
+    }
 }
 
-void SsidComboBox::slotEditTextChanged(const QString &)
+void SsidComboBox::slotEditTextChanged(const QString &text)
 {
-    m_dirty = true;
-    Q_EMIT ssidChanged();
+    if (!text.contains(QLatin1String("Security:")) && !text.contains(QLatin1String("Frequency:"))) {
+        Q_EMIT ssidChanged();
+    }
 }
 
 void SsidComboBox::slotCurrentIndexChanged(int)
 {
-    m_dirty = false;
-    setEditText(ssid());
-    Q_EMIT ssidChanged();
+    setEditText(itemData(currentIndex()).toString());
 }
 
 void SsidComboBox::init(const QString &ssid)

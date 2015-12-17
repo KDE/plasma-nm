@@ -564,7 +564,7 @@ Name[x-test]=xxFailed to request scanxx
 Name[zh_CN]=请求扫描失败
 Name[zh_TW]=請求掃描失敗
 IconName=applications-internet
-Action=Popup
+Action=None
 
 [Event/FailedToGetSecrets]
 Name=Failed to get secrets

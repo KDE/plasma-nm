@@ -103,7 +103,12 @@ bool AppletProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
 
 #if NM_CHECK_VERSION(0, 9, 10)
     const NetworkManager::ConnectionSettings::ConnectionType type = (NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(index, NetworkModel::TypeRole).toUInt();
-    if (type == NetworkManager::ConnectionSettings::Generic) {
+    if (type == NetworkManager::ConnectionSettings::Bond ||
+        type == NetworkManager::ConnectionSettings::Bridge ||
+        type == NetworkManager::ConnectionSettings::Generic ||
+        type == NetworkManager::ConnectionSettings::Infiniband ||
+        type == NetworkManager::ConnectionSettings::Team ||
+        type == NetworkManager::ConnectionSettings::Vlan) {
         return false;
     }
 #endif

@@ -338,19 +338,45 @@ void ConnectionIcon::setIcons()
     }
 #endif
 
-    // Fallback: If we still don't have an active connection with default route, let's just take the first one.
-    //           This can happen when you have some virtual connection (bridge, bond, etc.)
-    if (!connection && !NetworkManager::activeConnections().isEmpty()) {
+    /* Fallback: If we still don't have an active connection with default route or the default route goes through a connection
+                 of generic type (some type of VPNs) we need to go through all other active connections and pick the one with
+                 hightest probability of being the main one (order is: vpn, wired, wireless, gsm, cdma, bluetooth) */
 #if NM_CHECK_VERSION(0, 9, 10)
-    const NetworkManager::ConnectionSettings::ConnectionType type = NetworkManager::activeConnections().first()->type();
-    if (type >= NetworkManager::ConnectionSettings::Adsl && type <= NetworkManager::ConnectionSettings::Team) {
-        connection = NetworkManager::activeConnections().first();
-    }
+    if ((!connection && !NetworkManager::activeConnections().isEmpty()) || (connection && connection->type() == NetworkManager::ConnectionSettings::Generic)) {
 #else
-    connection = NetworkManager::activeConnections().first();
+    if (!connection && !NetworkManager::activeConnections().isEmpty()) {
 #endif
-
-
+#if NM_CHECK_VERSION(0, 9, 10)
+        Q_FOREACH (const NetworkManager::ActiveConnection::Ptr &activeConnection, NetworkManager::activeConnections()) {
+            const NetworkManager::ConnectionSettings::ConnectionType type = activeConnection->type();
+            if (type == NetworkManager::ConnectionSettings::Bluetooth) {
+                if (connection && connection->type() <= NetworkManager::ConnectionSettings::Bluetooth) {
+                    connection = activeConnection;
+                }
+            } else if (type == NetworkManager::ConnectionSettings::Cdma) {
+                if (connection && connection->type() <= NetworkManager::ConnectionSettings::Cdma) {
+                    connection = activeConnection;
+                }
+            } else if (type == NetworkManager::ConnectionSettings::Gsm) {
+                if (connection && connection->type() <= NetworkManager::ConnectionSettings::Gsm) {
+                    connection = activeConnection;
+                }
+            } else if (type == NetworkManager::ConnectionSettings::Vpn) {
+                connection = activeConnection;
+            } else if (type == NetworkManager::ConnectionSettings::Wired) {
+                if (connection && connection->type() != NetworkManager::ConnectionSettings::Vpn) {
+                    connection = activeConnection;
+                }
+            } else if (type == NetworkManager::ConnectionSettings::Wireless) {
+                if (connection && (connection->type() != NetworkManager::ConnectionSettings::Vpn &&
+                                  (connection->type() != NetworkManager::ConnectionSettings::Wired))) {
+                    connection = activeConnection;
+                }
+            }
+        }
+#else
+        connection = NetworkManager::activeConnections().first();
+#endif
     }
 
     if (connection && !connection->devices().isEmpty()) {

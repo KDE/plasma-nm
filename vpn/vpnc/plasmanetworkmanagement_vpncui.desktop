@@ -40,6 +40,7 @@ Name[zh_CN]=Cisco 兼容 VPN (vpnc)
 Comment=Compatible with various Cisco, Juniper, Netscreen and Sonicwall IPsec-based VPN gateways
 Comment[ca]=Compatible amb diverses passarel·les VPN basades en IPsec de Cisco, Juniper, Netscreen i Sonicwall
 Comment[ca@valencia]=Compatible amb diverses passarel·les VPN basades en IPsec de Cisco, Juniper, Netscreen i Sonicwall
+Comment[de]=Mit verschiedenen auf IPsec basierenden VPN-Gateways von Cisco, Juniper, Netscreen und Sonicwall kompatibel
 Comment[es]=Compatible con diversas puertas de enlace VPN de Cisco, Juniper, Netscreen y Sonicwall basadas en IPsec
 Comment[gl]=Compatíbel coas seguintes pasarelas de VPN baseadas en IPsec: Cisco, Juniper, Netscreen e Sonicwall.
 Comment[nl]=Compatibel met verschillende op IPsec gebaseerde VPN-gateways van Cisco, Juniper, Netscreen en Sonicwall

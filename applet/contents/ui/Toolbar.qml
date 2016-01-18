@@ -33,6 +33,26 @@ Item {
         imagePath: "widgets/line"
     }
 
+    PlasmaNM.EnabledConnections {
+        id: enabledConnections
+
+        onWirelessEnabledChanged: {
+            wifiSwitchButton.checked = wifiSwitchButton.enabled && enabled
+        }
+
+        onWirelessHwEnabledChanged: {
+            wifiSwitchButton.enabled = enabled && availableDevices.wirelessDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
+        }
+
+        onWwanEnabledChanged: {
+            wwanSwitchButton.checked = wwanSwitchButton.enabled && enabled
+        }
+
+        onWwanHwEnabledChanged: {
+            wwanSwitchButton.enabled = enabled && availableDevices.modemDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
+        }
+    }
+
     Row {
         anchors {
             bottom: parent.bottom

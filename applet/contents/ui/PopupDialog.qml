@@ -24,10 +24,6 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 FocusScope {
 
-    PlasmaNM.EnabledConnections {
-        id: enabledConnections
-    }
-
     PlasmaNM.AvailableDevices {
         id: availableDevices
     }

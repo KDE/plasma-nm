@@ -300,7 +300,8 @@ an IP address</string>
    <item row="8" column="0" colspan="2">
     <widget class="QCheckBox" name="ipv6RequiredCB">
      <property name="toolTip">
-      <string>When connecting to IPv4-capable networks, allows the connection to complete if IPv6 configuration fails but IPv4 configuration succeeds</string>
+      <string>When connecting to IPv4-capable networks, allows the connection to complete if
+IPv6 configuration fails but IPv4 configuration succeeds</string>
      </property>
      <property name="text">
       <string>IPv6 is required for this connection</string>

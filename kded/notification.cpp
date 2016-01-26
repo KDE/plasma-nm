@@ -32,7 +32,9 @@
 #include <KNotification>
 #include <KIconLoader>
 
+#include <QDBusConnection>
 #include <QIcon>
+#include <QTimer>
 
 Notification::Notification(QObject *parent) :
     QObject(parent)
@@ -50,6 +52,13 @@ Notification::Notification(QObject *parent) :
     }
 
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionAdded, this, static_cast<void (Notification::*)(const QString&)>(&Notification::addActiveConnection));
+
+    QDBusConnection::systemBus().connect(QStringLiteral("org.freedesktop.login1"),
+                                         QStringLiteral("/org/freedesktop/login1"),
+                                         QStringLiteral("org.freedesktop.login1.Manager"),
+                                         QStringLiteral("PrepareForSleep"),
+                                         this,
+                                         SLOT(onPrepareForSleep(bool)));
 }
 
 void Notification::deviceAdded(const QString &uni)
@@ -378,9 +387,25 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
     const QString connectionId = ac->path();
 
     if (state == NetworkManager::ActiveConnection::Activated) {
+        auto foundConnection = std::find_if(m_activeConnectionsBeforeSleep.constBegin(),
+                                            m_activeConnectionsBeforeSleep.constEnd(),
+                                            [ac](const QString &uuid) {
+            return uuid == ac->uuid();
+        });
+
+        if (foundConnection != m_activeConnectionsBeforeSleep.constEnd()) {
+            qCDebug(PLASMA_NM) << "Not emitting conection activated notification as the connection was active prior to suspend";
+            return;
+        }
+
         eventId = QStringLiteral("ConnectionActivated");
         text = i18n("Connection '%1' activated.", acName);
     } else if (state == NetworkManager::ActiveConnection::Deactivated) {
+        if (m_preparingForSleep) {
+            qCDebug(PLASMA_NM) << "Not emitting connection deactivated notification as we're about to suspend";
+            return;
+        }
+
         eventId = QStringLiteral("ConnectionDeactivated");
         text = i18n("Connection '%1' deactivated.", acName);
     } else {
@@ -482,4 +507,64 @@ void Notification::notificationClosed()
     KNotification *notify = qobject_cast<KNotification*>(sender());
     m_notifications.remove(notify->property("uni").toString());
     notify->deleteLater();
+}
+
+void Notification::onPrepareForSleep(bool sleep)
+{
+    m_preparingForSleep = sleep;
+
+    if (m_checkActiveConnectionOnResumeTimer) {
+        m_checkActiveConnectionOnResumeTimer->stop();
+    }
+
+    if (sleep) {
+        // store all active notifications so we don't show a "is connected" notification
+        // on resume if we were connected previously
+        m_activeConnectionsBeforeSleep.clear();
+        const auto &connections = NetworkManager::activeConnections();
+        for (const auto &connection : connections) {
+            if (!connection->vpn() && connection->state() == NetworkManager::ActiveConnection::State::Activated) {
+                m_activeConnectionsBeforeSleep << connection->uuid();
+            }
+        }
+    } else {
+        if (!m_checkActiveConnectionOnResumeTimer) {
+            m_checkActiveConnectionOnResumeTimer = new QTimer(this);
+            m_checkActiveConnectionOnResumeTimer->setInterval(5000);
+            m_checkActiveConnectionOnResumeTimer->setSingleShot(true);
+            connect(m_checkActiveConnectionOnResumeTimer, &QTimer::timeout, this, &Notification::onCheckActiveConnectionOnResume);
+        }
+
+        m_checkActiveConnectionOnResumeTimer->start();
+    }
+}
+
+void Notification::onCheckActiveConnectionOnResume()
+{
+    if (m_activeConnectionsBeforeSleep.isEmpty()) {
+        // if we weren't connected before, don't bother telling us now :)
+        return;
+    }
+
+    m_activeConnectionsBeforeSleep.clear();
+
+    const auto &connections = NetworkManager::activeConnections();
+    for (const auto &connection : connections) {
+        if (connection->state() == NetworkManager::ActiveConnection::State::Activated ||
+            connection->state() == NetworkManager::ActiveConnection::State::Activating) {
+            // we have an active or activating connection, don't tell the user we're no longer connected
+            return;
+        }
+    }
+
+    KNotification *notify = new KNotification(QStringLiteral("NoLongerConnected"), KNotification::CloseOnTimeout, this);
+    connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
+    const QString uni = QStringLiteral("offlineNotification");
+    notify->setProperty("uni", uni);
+    notify->setComponentName("networkmanagement");
+    notify->setIconName(QStringLiteral("dialog-warning"));
+    notify->setTitle(i18n("No Network Connection"));
+    notify->setText(i18n("You are no longer connected to a network."));
+    notify->sendEvent();
+    m_notifications[uni] = notify;
 }

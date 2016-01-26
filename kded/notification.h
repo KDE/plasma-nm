@@ -29,6 +29,8 @@
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/VpnConnection>
 
+class QTimer;
+
 class KNotification;
 class Notification : public QObject
 {
@@ -48,8 +50,16 @@ private Q_SLOTS:
 
     void notificationClosed();
 
+    void onPrepareForSleep(bool sleep);
+    void onCheckActiveConnectionOnResume();
+
 private:
     QHash<QString, KNotification*> m_notifications;
+
+    bool m_preparingForSleep = false;
+    QStringList m_activeConnectionsBeforeSleep;
+    QTimer *m_checkActiveConnectionOnResumeTimer = nullptr;
+
 };
 
 #endif // PLASMA_NM_NOTIFICATION_H

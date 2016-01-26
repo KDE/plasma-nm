@@ -701,3 +701,8 @@ Name[zh_CN]=缺少 OpenVPN 插件
 Name[zh_TW]=遺失 VPN 外掛程式
 IconName=applications-internet
 Action=Popup
+
+[Event/NoLongerConnected]
+Name=No longer connected to a network
+IconName=applications-internet
+Action=Popup

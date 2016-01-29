@@ -705,6 +705,8 @@ Action=Popup
 [Event/NoLongerConnected]
 Name=No longer connected to a network
 Name[ca]=No connectat a cap xarxa
+Name[ca@valencia]=No connectat a cap xarxa
+Name[es]=Ya no está conectado a una red
 Name[nl]=Niet langer verbonden met een netwerk
 Name[pt]=Não está mais ligado a nenhuma rede
 Name[pt_BR]=Não está mais conectado a uma rede

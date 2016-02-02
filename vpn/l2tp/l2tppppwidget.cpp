@@ -104,6 +104,14 @@ void L2tpPPPWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
     // Echo
     const int lcp_echo_interval = QString(dataMap[NM_L2TP_KEY_LCP_ECHO_INTERVAL]).toInt();
     m_ui->cbsendEcho->setChecked(lcp_echo_interval > 0);
+
+    if (dataMap.contains(QLatin1String(NM_L2TP_KEY_MTU))) {
+        m_ui->sbMTU->setValue(QString(dataMap[NM_L2TP_KEY_MTU]).toInt());
+    }
+
+    if (dataMap.contains(QLatin1String(NM_L2TP_KEY_MTU))) {
+        m_ui->sbMRU->setValue(QString(dataMap[NM_L2TP_KEY_MRU]).toInt());
+    }
 }
 
 NMStringMap L2tpPPPWidget::setting() const
@@ -179,6 +187,14 @@ NMStringMap L2tpPPPWidget::setting() const
     if (m_ui->cbsendEcho->isChecked()) {
         result.insert(NM_L2TP_KEY_LCP_ECHO_FAILURE, "5");
         result.insert(NM_L2TP_KEY_LCP_ECHO_INTERVAL, "30");
+    }
+
+    if (m_ui->sbMTU->value() != 0) {
+        result.insert(NM_L2TP_KEY_MTU, QString::number(m_ui->sbMTU->value()));
+    }
+
+    if (m_ui->sbMRU->value() != 0) {
+        result.insert(NM_L2TP_KEY_MRU, QString::number(m_ui->sbMRU->value()));
     }
 
     return result;

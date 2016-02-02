@@ -48,6 +48,7 @@ private Q_SLOTS:
     void userPasswordTypeChanged(int index);
     void showAdvanced();
     void showPpp();
+    void certStateChanged();
 
 private:
     Ui::L2tpWidget * m_ui;

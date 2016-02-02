@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>376</width>
-    <height>553</height>
+    <width>311</width>
+    <height>702</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <layout class="QFormLayout" name="formLayout_3">
    <property name="verticalSpacing">
@@ -83,84 +89,7 @@
      </layout>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2">
-    <widget class="QGroupBox" name="gbMPPE">
-     <property name="toolTip">
-      <string>Note: MPPE encryption is only available with MSCHAP authentication methods. To
-enable this checkbox, select one or more of the MSCHAP authentication
-methods: MSCHAP or MSCHAPv2.</string>
-     </property>
-     <property name="title">
-      <string>Use MPPE Encryption</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
-     <layout class="QFormLayout" name="formLayout_4">
-      <property name="verticalSpacing">
-       <number>0</number>
-      </property>
-      <item row="0" column="0">
-       <widget class="QLabel" name="lblMMPEcrypto">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Crypto:</string>
-        </property>
-        <property name="buddy">
-         <cstring>cbMPPECrypto</cstring>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="cbMPPECrypto">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="toolTip">
-         <string>Require the use of MPPE, with 40/128-bit encryption or all.</string>
-        </property>
-        <item>
-         <property name="text">
-          <string comment="like in use Any configuration">Any</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>128 bit</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>40 bit</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="2">
-       <widget class="QCheckBox" name="cbstatefulEncryption">
-        <property name="toolTip">
-         <string>Allow MPPE to use stateful mode. Stateless mode is still attempted first.</string>
-        </property>
-        <property name="text">
-         <string>Use stateful encryption</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="2" column="0" colspan="2">
+   <item row="3" column="0" colspan="2">
     <widget class="QGroupBox" name="grp_cryptoAndCompression">
      <property name="title">
       <string>Compression</string>
@@ -245,7 +174,7 @@ and the receive directions.</string>
      </layout>
     </widget>
    </item>
-   <item row="3" column="0" colspan="2">
+   <item row="4" column="0" colspan="2">
     <widget class="QGroupBox" name="grp_echo">
      <property name="title">
       <string>Echo</string>
@@ -267,11 +196,134 @@ and the receive directions.</string>
      </layout>
     </widget>
    </item>
-   <item row="4" column="0" colspan="2">
+   <item row="10" column="1">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
+    </widget>
+   </item>
+   <item row="9" column="0" colspan="2">
+    <widget class="QGroupBox" name="grp_other">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Other Settings</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout_6">
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lbMRU">
+        <property name="text">
+         <string>MRU: </string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QSpinBox" name="sbMRU">
+        <property name="maximum">
+         <number>1500</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lbMTU">
+        <property name="text">
+         <string>MTU: </string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSpinBox" name="sbMTU">
+        <property name="maximum">
+         <number>1500</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QGroupBox" name="gbMPPE">
+     <property name="toolTip">
+      <string>Note: MPPE encryption is only available with MSCHAP authentication methods. To
+enable this checkbox, select one or more of the MSCHAP authentication
+methods: MSCHAP or MSCHAPv2.</string>
+     </property>
+     <property name="title">
+      <string>Use MPPE Encryption</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <layout class="QFormLayout" name="formLayout_4">
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lblMMPEcrypto">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Crypto:</string>
+        </property>
+        <property name="buddy">
+         <cstring>cbMPPECrypto</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="cbMPPECrypto">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Require the use of MPPE, with 40/128-bit encryption or all.</string>
+        </property>
+        <item>
+         <property name="text">
+          <string comment="like in use Any configuration">Any</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>128 bit</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>40 bit</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QCheckBox" name="cbstatefulEncryption">
+        <property name="toolTip">
+         <string>Allow MPPE to use stateful mode. Stateless mode is still attempted first.</string>
+        </property>
+        <property name="text">
+         <string>Use stateful encryption</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
@@ -280,6 +332,7 @@ and the receive directions.</string>
   <zorder>grp_cryptoAndCompression</zorder>
   <zorder>gbMPPE</zorder>
   <zorder>buttonBox</zorder>
+  <zorder>grp_other</zorder>
  </widget>
  <tabstops>
   <tabstop>listWidget</tabstop>
@@ -292,7 +345,6 @@ and the receive directions.</string>
   <tabstop>cbCompressionNegotiation</tabstop>
   <tabstop>cbAddressControlCompression</tabstop>
   <tabstop>cbsendEcho</tabstop>
-  <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources/>
  <connections>

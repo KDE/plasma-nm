@@ -122,7 +122,21 @@ void NetworkStatus::changeActiveConnections()
     const QString formatDefault = QStringLiteral("%1: %2<br>");
 
     Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
-        if (!active->devices().isEmpty()) {
+#if NM_CHECK_VERSION(0, 9, 10)
+        if (!active->devices().isEmpty() &&
+            active->type() != NetworkManager::ConnectionSettings::Bond &&
+            active->type() != NetworkManager::ConnectionSettings::Bridge &&
+            active->type() != NetworkManager::ConnectionSettings::Generic &&
+            active->type() != NetworkManager::ConnectionSettings::Infiniband &&
+            active->type() != NetworkManager::ConnectionSettings::Team &&
+            active->type() != NetworkManager::ConnectionSettings::Vlan) {
+#else
+        if (!active->devices().isEmpty() &&
+            active->type() != NetworkManager::ConnectionSettings::Bond &&
+            active->type() != NetworkManager::ConnectionSettings::Bridge &&
+            active->type() != NetworkManager::ConnectionSettings::Infiniband &&
+            active->type() != NetworkManager::ConnectionSettings::Vlan) {
+#endif
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
 #if NM_CHECK_VERSION(0, 9, 10)
             if (device && device->type() != NetworkManager::Device::Generic && device->type() <= NetworkManager::Device::Team) {

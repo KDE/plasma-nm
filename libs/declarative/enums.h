@@ -60,6 +60,22 @@ public:
         Wireless
     };
 
+    enum DeviceStatus {
+        UnknownDeviceState = 0,
+        Unmanaged,
+        Unavailable,
+        Disconnected,
+        Prepare,
+        Config,
+        NeedAuth,
+        IpConfig,
+        IpCheck,
+        Secondaries,
+        Connected,
+        Disconnecting,
+        Failed
+    };
+
     enum SecurityType {
         UnknownSecurity = -1,
         NoneSecurity = 0,

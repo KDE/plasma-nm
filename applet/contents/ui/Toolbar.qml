@@ -22,6 +22,7 @@ import QtQuick 2.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import org.kde.kquickcontrolsaddons 2.0
 
 Item {
     id: toolbar
@@ -31,26 +32,6 @@ Item {
     PlasmaCore.Svg {
         id: lineSvg
         imagePath: "widgets/line"
-    }
-
-    PlasmaNM.EnabledConnections {
-        id: enabledConnections
-
-        onWirelessEnabledChanged: {
-            wifiSwitchButton.checked = wifiSwitchButton.enabled && enabled
-        }
-
-        onWirelessHwEnabledChanged: {
-            wifiSwitchButton.enabled = enabled && availableDevices.wirelessDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
-        }
-
-        onWwanEnabledChanged: {
-            wwanSwitchButton.checked = wwanSwitchButton.enabled && enabled
-        }
-
-        onWwanHwEnabledChanged: {
-            wwanSwitchButton.enabled = enabled && availableDevices.modemDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
-        }
     }
 
     Row {
@@ -114,7 +95,7 @@ Item {
         tooltip: i18n("Configure network connections...")
 
         onClicked: {
-            handler.openEditor();
+            KCMShell.open(["kcm_networkmanagement"]);
         }
     }
 }

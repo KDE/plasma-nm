@@ -2,8 +2,13 @@ add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-libs\")
 
 set(plasmanm_internal_SRCS
     models/appletproxymodel.cpp
+    models/devicemodel.cpp
+    models/devicemodelitem.cpp
+    models/deviceitemslist.cpp
+    models/devicesortmodel.cpp
     models/editoridentitymodel.cpp
     models/editorproxymodel.cpp
+    models/kcmproxymodel.cpp
     models/networkitemslist.cpp
     models/networkmodel.cpp
     models/networkmodelitem.cpp

@@ -58,7 +58,7 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->connectionPath();
             case ConnectionStateRole:
                 return item->connectionState();
-            case DeviceName:
+            case DeviceNameRole:
                 return item->deviceName();
             case DevicePathRole:
                 return item->devicePath();
@@ -127,7 +127,7 @@ QHash< int, QByteArray > NetworkModel::roleNames() const
     roles[ConnectionIconRole] = "ConnectionIcon";
     roles[ConnectionPathRole] = "ConnectionPath";
     roles[ConnectionStateRole] = "ConnectionState";
-    roles[DeviceName] = "DeviceName";
+    roles[DeviceNameRole] = "DeviceName";
     roles[DevicePathRole] = "DevicePath";
     roles[DeviceStateRole] = "DeviceState";
     roles[DuplicateRole] = "Duplicate";

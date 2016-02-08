@@ -28,6 +28,9 @@
 #include "networkstatus.h"
 
 #include "appletproxymodel.h"
+#include "devicemodel.h"
+#include "devicesortmodel.h"
+#include "kcmproxymodel.h"
 #include "networkmodel.h"
 
 #include "handler.h"
@@ -51,4 +54,10 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<NetworkModel>(uri, 0, 2, "NetworkModel");
     // @uri org.kde.plasma.networkmanagement.AppletProxyModel
     qmlRegisterType<AppletProxyModel>(uri, 0, 2, "AppletProxyModel");
+    // @uri org.kde.plasma.networkmanagement.KCMProxyModel
+    qmlRegisterType<KCMProxyModel>(uri, 0, 2, "KCMProxyModel");
+    // @uri org.kde.plasma.networkmanagement.DeviceModel
+    qmlRegisterType<DeviceModel>(uri, 0, 2, "DeviceModel");
+        // @uri org.kde.plasma.networkmanagement.DeviceSortModel
+    qmlRegisterType<DeviceSortModel>(uri, 0, 2, "DeviceSortModel");
 }

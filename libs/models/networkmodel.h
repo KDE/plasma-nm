@@ -50,7 +50,7 @@ public:
         ConnectionIconRole,
         ConnectionPathRole,
         ConnectionStateRole,
-        DeviceName,
+        DeviceNameRole,
         DevicePathRole,
         DeviceStateRole,
         DuplicateRole,

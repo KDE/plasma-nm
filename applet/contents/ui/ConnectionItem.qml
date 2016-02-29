@@ -300,7 +300,7 @@ PlasmaComponents.ListItem {
                         }
                         height: paintedHeight
                         font.pointSize: theme.smallestFont.pointSize
-                        text: KCoreAddons.Format.formatByteSize((plotter.maxValue * 1024) / (index + 1))
+                        text: KCoreAddons.Format.formatByteSize((plotter.maxValue * 1024) * (1 - index / 5))
                     }
                 }
 

@@ -132,7 +132,6 @@ private:
     QMap<QString, bool> m_bluetoothAdapters;
 
     void enableBluetooth(bool enable);
-    QDBusInterface m_agentIface;
 };
 
 #endif // PLASMA_NM_HANDLER_H

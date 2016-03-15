@@ -55,6 +55,11 @@
 #include <KIconLoader>
 #include <KWallet/Wallet>
 
+#define AGENT_SERVICE "org.kde.kded5"
+#define AGENT_PATH "/modules/networkmanagement"
+#define AGENT_IFACE "org.kde.plasmanetworkmanagement"
+
+
 Handler::Handler(QObject *parent)
     : QObject(parent)
 #if !NM_CHECK_VERSION(1, 2, 0)
@@ -62,12 +67,13 @@ Handler::Handler(QObject *parent)
 #endif
     , m_tmpWirelessEnabled(NetworkManager::isWirelessEnabled())
     , m_tmpWwanEnabled(NetworkManager::isWwanEnabled())
-    , m_agentIface(QStringLiteral("org.kde.kded5"), QStringLiteral("/modules/networkmanagement"),
-                   QStringLiteral("org.kde.plasmanetworkmanagement"))
 {
     initKdedModule();
-    QDBusConnection::sessionBus().connect(m_agentIface.service(), m_agentIface.path(), m_agentIface.interface(), QStringLiteral("registered"),
-                                          this, SLOT(initKdedModule()));
+    QDBusConnection::sessionBus().connect(QStringLiteral(AGENT_SERVICE),
+                                            QStringLiteral(AGENT_PATH),
+                                            QStringLiteral(AGENT_IFACE),
+                                            QStringLiteral("registered"),
+                                            this, SLOT(initKdedModule()));
 }
 
 Handler::~Handler()
@@ -450,7 +456,11 @@ void Handler::requestScan()
 
 void Handler::initKdedModule()
 {
-    m_agentIface.call(QStringLiteral("init"));
+    QDBusMessage initMsg = QDBusMessage::createMethodCall(QStringLiteral(AGENT_SERVICE),
+                                                          QStringLiteral(AGENT_PATH),
+                                                          QStringLiteral(AGENT_IFACE),
+                                                          QStringLiteral("init"));
+    QDBusConnection::sessionBus().send(initMsg);
 }
 
 void Handler::replyFinished(QDBusPendingCallWatcher * watcher)

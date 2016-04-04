@@ -52,8 +52,12 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
     if (type == NetworkManager::ConnectionSettings::Generic) {
         return false;
     }
+#if NM_CHECK_VERSION(1, 1, 92)
+    if (type == NetworkManager::ConnectionSettings::Tun) {
+        return false;
+    }
 #endif
-
+#endif
 
     NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
     if (itemType == NetworkModelItem::AvailableAccessPoint || itemType == NetworkModelItem::AvailableNsp) {

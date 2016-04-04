@@ -129,7 +129,12 @@ void NetworkStatus::changeActiveConnections()
             active->type() != NetworkManager::ConnectionSettings::Generic &&
             active->type() != NetworkManager::ConnectionSettings::Infiniband &&
             active->type() != NetworkManager::ConnectionSettings::Team &&
+#if NM_CHECK_VERSION(1, 1, 92)
+            active->type() != NetworkManager::ConnectionSettings::Vlan &&
+            active->type() != NetworkManager::ConnectionSettings::Tun) {
+#else
             active->type() != NetworkManager::ConnectionSettings::Vlan) {
+#endif
 #else
         if (!active->devices().isEmpty() &&
             active->type() != NetworkManager::ConnectionSettings::Bond &&

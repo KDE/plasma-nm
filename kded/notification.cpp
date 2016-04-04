@@ -367,7 +367,13 @@ void Notification::addActiveConnection(const NetworkManager::ActiveConnection::P
                ac->type() != NetworkManager::ConnectionSettings::Generic &&
                ac->type() != NetworkManager::ConnectionSettings::Infiniband &&
                ac->type() != NetworkManager::ConnectionSettings::Team &&
+#if NM_CHECK_VERSION(1, 1, 92)
+               ac->type() != NetworkManager::ConnectionSettings::Vlan &&
+               ac->type() != NetworkManager::ConnectionSettings::Tun) {
+#else
                ac->type() != NetworkManager::ConnectionSettings::Vlan) {
+#endif
+
 #else
     } else if (ac->type() != NetworkManager::ConnectionSettings::Bond &&
                ac->type() != NetworkManager::ConnectionSettings::Bridge &&

@@ -42,20 +42,28 @@ Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &se
     m_ui->tlsPrivateKeyPassword->setPasswordOptionsEnabled(true);
     m_ui->ttlsPassword->setPasswordOptionsEnabled(true);
 
-    m_ui->auth->setItemData(0, NetworkManager::Security8021xSetting::EapMethodMd5);
-    m_ui->auth->setItemData(1, NetworkManager::Security8021xSetting::EapMethodTls);
-    m_ui->auth->setItemData(2, NetworkManager::Security8021xSetting::EapMethodLeap);
-    m_ui->auth->setItemData(3, NetworkManager::Security8021xSetting::EapMethodFast);
-    m_ui->auth->setItemData(4, NetworkManager::Security8021xSetting::EapMethodTtls);
-    m_ui->auth->setItemData(5, NetworkManager::Security8021xSetting::EapMethodPeap);
-
     if (wifiMode) {
-        m_ui->auth->removeItem(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodMd5)); // MD 5
+        m_ui->auth->removeItem(0); // MD 5
         m_ui->stackedWidget->removeWidget(m_ui->md5Page);
+
+        m_ui->auth->setItemData(0, NetworkManager::Security8021xSetting::EapMethodTls);
+        m_ui->auth->setItemData(1, NetworkManager::Security8021xSetting::EapMethodLeap);
+        m_ui->auth->setItemData(2, NetworkManager::Security8021xSetting::EapMethodFast);
+        m_ui->auth->setItemData(3, NetworkManager::Security8021xSetting::EapMethodTtls);
+        m_ui->auth->setItemData(4, NetworkManager::Security8021xSetting::EapMethodPeap);
     } else {
-        m_ui->auth->removeItem(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodLeap)); // LEAP
+        m_ui->auth->removeItem(2); // LEAP
         m_ui->stackedWidget->removeWidget(m_ui->leapPage);
+
+        m_ui->auth->setItemData(0, NetworkManager::Security8021xSetting::EapMethodMd5);
+        m_ui->auth->setItemData(1, NetworkManager::Security8021xSetting::EapMethodTls);
+        m_ui->auth->setItemData(2, NetworkManager::Security8021xSetting::EapMethodFast);
+        m_ui->auth->setItemData(3, NetworkManager::Security8021xSetting::EapMethodTtls);
+        m_ui->auth->setItemData(4, NetworkManager::Security8021xSetting::EapMethodPeap);
     }
+
+    // Set PEAP authentication as default
+    m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodPeap));
 
     connect(m_ui->btnTlsAltSubjectMatches, &QPushButton::clicked, this, &Security8021x::altSubjectMatchesButtonClicked);
     connect(m_ui->btnTlsConnectToServers, &QPushButton::clicked, this, &Security8021x::connectToServersButtonClicked);

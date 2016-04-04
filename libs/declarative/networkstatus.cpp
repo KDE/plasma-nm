@@ -218,7 +218,8 @@ void NetworkStatus::changeActiveConnections()
                     }
                 }
 
-                const QString connectionName = active->connection()->name().replace('&', "&amp;").replace('<', "&lt;").replace('>', "&gt;");
+                NetworkManager::Connection::Ptr connection = active->connection();
+                const QString connectionName = connection->name().replace('&', "&amp;").replace('<', "&lt;").replace('>', "&gt;");
                 if (connecting) {
                     status = i18n("Connecting to %1", connectionName);
                 } else if (connected) {
@@ -226,6 +227,8 @@ void NetworkStatus::changeActiveConnections()
                 }
 
                 activeConnections += format.arg(conType, status);
+
+                connect(connection.data(), &NetworkManager::Connection::updated, this, &NetworkStatus::changeActiveConnections, Qt::UniqueConnection);
             }
         }
     }

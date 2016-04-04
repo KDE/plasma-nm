@@ -28,6 +28,48 @@
 
 #include <KLocalizedString>
 
+NetworkStatus::SortedConnectionType NetworkStatus::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
+{
+    switch (type) {
+        case NetworkManager::ConnectionSettings::Adsl:
+            return NetworkStatus::NetworkStatus::Adsl;
+            break;
+        case NetworkManager::ConnectionSettings::Bluetooth:
+            return NetworkStatus::Bluetooth;
+            break;
+        case NetworkManager::ConnectionSettings::Cdma:
+            return NetworkStatus::Cdma;
+            break;
+        case NetworkManager::ConnectionSettings::Gsm:
+            return NetworkStatus::Gsm;
+            break;
+        case NetworkManager::ConnectionSettings::Infiniband:
+            return NetworkStatus::Infiniband;
+            break;
+        case NetworkManager::ConnectionSettings::OLPCMesh:
+            return NetworkStatus::OLPCMesh;
+            break;
+        case NetworkManager::ConnectionSettings::Pppoe:
+            return NetworkStatus::Pppoe;
+            break;
+        case NetworkManager::ConnectionSettings::Vpn:
+            return NetworkStatus::Vpn;
+            break;
+        case NetworkManager::ConnectionSettings::Wimax:
+            return NetworkStatus::Wimax;
+            break;
+        case NetworkManager::ConnectionSettings::Wired:
+            return NetworkStatus::Wired;
+            break;
+        case NetworkManager::ConnectionSettings::Wireless:
+            return NetworkStatus::Wireless;
+            break;
+        default:
+            return NetworkStatus::Other;
+            break;
+    }
+}
+
 NetworkStatus::NetworkStatus(QObject* parent)
     : QObject(parent)
 {
@@ -117,11 +159,16 @@ void NetworkStatus::changeActiveConnections()
         return;
     }
 
-    QString activeConnections = QStringLiteral("<qt>");
-    const QString format = QStringLiteral("%1: %2<br>");
-    const QString formatDefault = QStringLiteral("%1: %2<br>");
+    QString activeConnections;
+    const QString format = QStringLiteral("%1: %2\n");
 
-    Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+    QList<NetworkManager::ActiveConnection::Ptr> activeConnectionList = NetworkManager::activeConnections();
+    std::sort(activeConnectionList.begin(), activeConnectionList.end(), [] (const NetworkManager::ActiveConnection::Ptr &left, const NetworkManager::ActiveConnection::Ptr &right)
+    {
+        return NetworkStatus::connectionTypeToSortedType(left->type()) <= NetworkStatus::connectionTypeToSortedType(right->type());
+    });
+
+    Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, activeConnectionList) {
 #if NM_CHECK_VERSION(0, 9, 10)
         if (!active->devices().isEmpty() &&
             active->type() != NetworkManager::ConnectionSettings::Bond &&
@@ -183,18 +230,10 @@ void NetworkStatus::changeActiveConnections()
                     status = i18n("Connected to %1", connectionName);
                 }
 
-                if (active->default4() || active->default6()) {
-                    activeConnections += formatDefault.arg(conType, status);
-                } else {
-                    activeConnections += format.arg(conType, status);
-                }
+                activeConnections += format.arg(conType, status);
             }
         }
     }
-
-    activeConnections += "</qt>";
-    // Remove the last two new lines
-    activeConnections.replace("<br></qt>", "</qt>");
 
     m_activeConnections = activeConnections;
     Q_EMIT activeConnectionsChanged(activeConnections);

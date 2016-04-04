@@ -37,6 +37,22 @@ Q_PROPERTY(QString activeConnections READ activeConnections NOTIFY activeConnect
 Q_PROPERTY(QString networkStatus READ networkStatus NOTIFY networkStatusChanged)
 Q_OBJECT
 public:
+    enum SortedConnectionType {
+        Wired,
+        Wireless,
+        Wimax,
+        Gsm,
+        Cdma,
+        Pppoe,
+        Adsl,
+        Infiniband,
+        OLPCMesh,
+        Bluetooth,
+        Vpn,
+        Other };
+
+    static SortedConnectionType connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type);
+
     explicit NetworkStatus(QObject* parent = 0);
     virtual ~NetworkStatus();
 

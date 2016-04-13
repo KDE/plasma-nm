@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>424</width>
-    <height>490</height>
+    <height>498</height>
    </rect>
   </property>
   <property name="toolTip">
@@ -24,6 +24,9 @@
      </property>
      <property name="text">
       <string>Method:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
      <property name="buddy">
       <cstring>method</cstring>
@@ -94,6 +97,9 @@
      <property name="textFormat">
       <enum>Qt::AutoText</enum>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
      <property name="buddy">
       <cstring>dns</cstring>
      </property>
@@ -127,8 +133,7 @@
        </property>
        <property name="icon">
         <iconset theme="document-properties">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -144,6 +149,9 @@
      </property>
      <property name="text">
       <string comment="@info">Search Domains:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
      <property name="buddy">
       <cstring>dnsSearch</cstring>
@@ -172,8 +180,7 @@
        </property>
        <property name="icon">
         <iconset theme="document-properties">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -206,6 +213,9 @@
      <property name="text">
       <string>DHCP Client ID:</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
      <property name="buddy">
       <cstring>dhcpClientId</cstring>
      </property>
@@ -236,8 +246,7 @@
        </property>
        <property name="icon">
         <iconset theme="list-remove">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -248,8 +257,7 @@
        </property>
        <property name="icon">
         <iconset theme="list-add">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -344,14 +352,14 @@ lease and options.</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

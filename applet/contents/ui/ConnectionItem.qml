@@ -392,7 +392,7 @@ PlasmaComponents.ListItem {
                     top: passwordSeparator.bottom
                     topMargin: Math.round(units.gridUnit / 3)
                 }
-                height: implicitHeight; width: 200
+                height: implicitHeight; width: units.gridUnit * 15
                 echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
                 placeholderText: i18n("Password...")
                 validator: RegExpValidator {

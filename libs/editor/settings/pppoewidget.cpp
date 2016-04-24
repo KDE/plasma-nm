@@ -34,7 +34,9 @@ PppoeWidget::PppoeWidget(const NetworkManager::Setting::Ptr &setting, QWidget *p
     m_ui->password->setPasswordOptionsEnabled(true);
     m_ui->password->setPasswordOptionEnabled(PasswordField::NotRequired, true);
 
+    connect(m_ui->service, &KLineEdit::textChanged, this, &PppoeWidget::slotWidgetChanged);
     connect(m_ui->username, &KLineEdit::textChanged, this, &PppoeWidget::slotWidgetChanged);
+    connect(m_ui->password, &PasswordField::textChanged, this, &PppoeWidget::slotWidgetChanged);
     connect(m_ui->password, &PasswordField::passwordOptionChanged, this, &PppoeWidget::slotWidgetChanged);
 
     if (setting && !setting->isNull()) {
@@ -117,5 +119,5 @@ bool PppoeWidget::isValid() const
         passwordUserValid = !m_ui->username->text().isEmpty();
     }
 
-    return !m_ui->service->text().isEmpty() && passwordUserValid;
+    return passwordUserValid;
 }

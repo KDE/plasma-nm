@@ -484,6 +484,7 @@ PlasmaComponents.ListItem {
                 handler.deactivateConnection(ConnectionPath, DevicePath);
             }
         } else if (predictableWirelessPassword) {
+            appletProxyModel.dynamicSortFilter = false;
             visiblePasswordDialog = true;
         }
     }
@@ -551,6 +552,7 @@ PlasmaComponents.ListItem {
 
     onClicked: {
         if (visiblePasswordDialog) {
+            appletProxyModel.dynamicSortFilter = true
             visiblePasswordDialog = false
         } else {
             visibleDetails = !visibleDetails

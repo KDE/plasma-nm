@@ -272,6 +272,7 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
         addConnection(connection);
     }
 
+    beginResetModel();
     Q_FOREACH (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::NetworkItemsList::Uuid, connection->uuid())) {
         if (((device && device->uni() == item->devicePath()) || item->devicePath().isEmpty()) || item->type() == NetworkManager::ConnectionSettings::Vpn) {
             item->setActiveConnectionPath(activeConnection->path());
@@ -291,10 +292,11 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
                 }
                 item->setVpnState(state);
             }
-            updateItem(item);
+            item->updateDetails();
             qCDebug(PLASMA_NM) << "Item " << item->name() << ": active connection state changed to " << item->connectionState();
         }
     }
+    endResetModel();
 }
 
 void NetworkModel::addAvailableConnection(const QString& connection, const NetworkManager::Device::Ptr& device)
@@ -605,11 +607,13 @@ void NetworkModel::activeConnectionStateChanged(NetworkManager::ActiveConnection
 {
     NetworkManager::ActiveConnection * activePtr = qobject_cast<NetworkManager::ActiveConnection*>(sender());
     if (activePtr) {
+        beginResetModel();
         Q_FOREACH (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::ActiveConnection, activePtr->path())) {
             item->setConnectionState(state);
-            updateItem(item);
+            item->updateDetails();
             qCDebug(PLASMA_NM) << "Item " << item->name() << ": active connection changed to " << item->connectionState();
         }
+        endResetModel();
     }
 }
 
@@ -829,11 +833,13 @@ void NetworkModel::deviceStateChanged(NetworkManager::Device::State state, Netwo
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
 
     if (device) {
+        beginResetModel();
         Q_FOREACH (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Device, device->uni())) {
             item->setDeviceState(state);
-            updateItem(item);
+            item->updateDetails();
 //             qCDebug(PLASMA_NM) << "Item " << item->name() << ": device state changed to " << item->deviceState();
         }
+        endResetModel();
     }
 }
 

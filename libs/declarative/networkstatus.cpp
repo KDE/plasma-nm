@@ -160,7 +160,7 @@ void NetworkStatus::changeActiveConnections()
     }
 
     QString activeConnections;
-    const QString format = QStringLiteral("%1: %2\n");
+    const QString format = QStringLiteral("%1: %2");
 
     QList<NetworkManager::ActiveConnection::Ptr> activeConnectionList = NetworkManager::activeConnections();
     std::sort(activeConnectionList.begin(), activeConnectionList.end(), [] (const NetworkManager::ActiveConnection::Ptr &left, const NetworkManager::ActiveConnection::Ptr &right)
@@ -231,6 +231,9 @@ void NetworkStatus::changeActiveConnections()
                     status = i18n("Connected to %1", connectionName);
                 }
 
+                if (!activeConnections.isEmpty()) {
+                    activeConnections += '\n';
+                }
                 activeConnections += format.arg(conType, status);
 
                 connect(connection.data(), &NetworkManager::Connection::updated, this, &NetworkStatus::changeActiveConnections, Qt::UniqueConnection);

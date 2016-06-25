@@ -26,7 +26,7 @@
 
 #include <QStandardPaths>
 #include <QFile>
-#include <QUrl>
+#include <QFileInfo>
 
 #include <KPluginFactory>
 #include <KSharedConfig>
@@ -299,8 +299,8 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
 
         QVariantMap conn;
         if (decrPlugin->readStringKeyValue(cg,"Description").isEmpty()) {
-            QUrl name = fileName;
-            conn.insert("id", name.fileName().remove(QLatin1String(".pcf"), Qt::CaseInsensitive));
+            QFileInfo fileInfo(fileName);
+            conn.insert("id", fileInfo.fileName().remove(QLatin1String(".pcf"), Qt::CaseInsensitive));
         } else {
             conn.insert("id", decrPlugin->readStringKeyValue(cg,"Description"));
         }

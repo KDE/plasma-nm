@@ -28,6 +28,7 @@
 #include <KLocalizedString>
 #include <KActionMenu>
 #include <KAction>
+#include <KWallet/Wallet>
 
 PasswordField::PasswordField(QWidget *parent)
     : KLineEdit(parent)
@@ -36,18 +37,28 @@ PasswordField::PasswordField(QWidget *parent)
     QAction *action;
     QActionGroup *actionGroup = new QActionGroup(this);
     m_passwordOptionsMenu = new KActionMenu(this);
-    m_passwordOptionsMenu->setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
-    m_passwordOptionsMenu->setToolTip(i18n("Store password for this user only (encrypted)"));
+    if (KWallet::Wallet::isEnabled()) {
+        m_passwordOptionsMenu->setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
+        m_passwordOptionsMenu->setToolTip(i18n("Store password for this user only (encrypted)"));
+    } else {
+        m_passwordOptionsMenu->setIcon(QIcon::fromTheme(QStringLiteral("document-save-all")));
+        m_passwordOptionsMenu->setToolTip(i18n("Store password and make it available for all users (not encrypted)"));
+    }
     m_passwordOptionsMenu->setActionGroup(actionGroup);
 
     action = new QAction(QIcon::fromTheme(QStringLiteral("document-save")), i18n("Store password for this user only (encrypted)"), actionGroup);
     action->setCheckable(true);
-    action->setChecked(true);
+    if (KWallet::Wallet::isEnabled()) {
+        action->setChecked(true);
+    }
     action->setData(StoreForUser);
     m_passwordOptionsMenu->addAction(action);
 
     action= new QAction(QIcon::fromTheme(QStringLiteral("document-save-all")), i18n("Store password and make it available for all users (not encrypted)"), actionGroup);
     action->setCheckable(true);
+    if (!KWallet::Wallet::isEnabled()) {
+        action->setChecked(true);
+    }
     action->setData(StoreForAllUsers);
     m_passwordOptionsMenu->addAction(action);
 

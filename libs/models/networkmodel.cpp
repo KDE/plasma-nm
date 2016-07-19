@@ -349,7 +349,7 @@ void NetworkModel::addAvailableConnection(const QString& connection, const Netwo
             if (wifiDevice) {
                 NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(item->ssid());
                 if (wifiNetwork) {
-                    updateFromWirelessNetwork(item, wifiNetwork);
+                    updateFromWirelessNetwork(item, wifiNetwork, wifiDevice);
                 }
             }
         }
@@ -1104,8 +1104,15 @@ void NetworkModel::updateFromWimaxNsp(NetworkModelItem* item, const NetworkManag
 }
 #endif
 
-void NetworkModel::updateFromWirelessNetwork(NetworkModelItem* item, const NetworkManager::WirelessNetwork::Ptr& network)
+void NetworkModel::updateFromWirelessNetwork(NetworkModelItem* item, const NetworkManager::WirelessNetwork::Ptr& network, const NetworkManager::WirelessDevice::Ptr& device)
 {
+    NetworkManager::WirelessSecurityType securityType = NetworkManager::UnknownSecurity;
+    NetworkManager::AccessPoint::Ptr ap = network->referenceAccessPoint();
+    if (ap && ap->capabilities().testFlag(NetworkManager::AccessPoint::Privacy)) {
+        securityType = NetworkManager::findBestWirelessSecurity(device->wirelessCapabilities(), true, (device->mode() == NetworkManager::WirelessDevice::Adhoc),
+                                                                ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
+    }
+
     // Check whether the connection is associated with some concrete AP
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(item->connectionPath());
     if (connection) {
@@ -1126,4 +1133,6 @@ void NetworkModel::updateFromWirelessNetwork(NetworkModelItem* item, const Netwo
             }
         }
     }
+    item->setSecurityType(securityType);
+    updateItem(item);
 }

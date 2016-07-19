@@ -74,13 +74,13 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     // start openVPN process and get its cipher list
     const QString openVpnBinary = QStandardPaths::findExecutable("openvpn", QStringList() << "/sbin" << "/usr/sbin");
     const QStringList args(QLatin1String("--show-ciphers"));
+
     d->openvpnProcess = new KProcess(this);
     d->openvpnProcess->setOutputChannelMode(KProcess::OnlyStdoutChannel);
     d->openvpnProcess->setReadChannel(QProcess::StandardOutput);
     connect(d->openvpnProcess, static_cast<void (KProcess::*)(QProcess::ProcessError)>(&KProcess::error), this, &OpenVpnAdvancedWidget::openVpnError);
     connect(d->openvpnProcess, &KProcess::readyReadStandardOutput, this, &OpenVpnAdvancedWidget::gotOpenVpnOutput);
     connect(d->openvpnProcess, static_cast<void (KProcess::*)(int, QProcess::ExitStatus)>(&KProcess::finished), this, &OpenVpnAdvancedWidget::openVpnFinished);
-
     d->openvpnProcess->setProgram(openVpnBinary, args);
 
     connect(m_ui->buttonBox, &QDialogButtonBox::accepted, this, &OpenVpnAdvancedWidget::accept);
@@ -120,7 +120,7 @@ void OpenVpnAdvancedWidget::openVpnFinished(int exitCode, QProcess::ExitStatus e
     if (!exitCode && exitStatus == QProcess::NormalExit) {
         m_ui->cboCipher->addItem(i18nc("@item::inlist Default openvpn cipher item", "Default"));
         const QList<QByteArray> rawOutputLines = d->openVpnCiphers.split('\n');
-        bool foundFirstSpace = false;;
+        bool foundFirstSpace = false;
         Q_FOREACH (const QByteArray &cipher, rawOutputLines) {
             if (cipher.length() == 0) {
                 foundFirstSpace = true;
@@ -178,7 +178,17 @@ void OpenVpnAdvancedWidget::loadConfig()
         m_ui->chkUseCustomReneg->setChecked(false);
         m_ui->sbCustomReneg->setValue(0);
     }
-    m_ui->chkUseLZO->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_COMP_LZO)] == QLatin1String("yes"));
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_COMP_LZO))) {
+        const QString compLzo = dataMap[QLatin1String(NM_OPENVPN_KEY_COMP_LZO)];
+        if (compLzo == QLatin1String("no")) {
+            m_ui->cmbUseLZO->setCurrentIndex(0);
+        } else if (compLzo == QLatin1String("yes")) {
+            m_ui->cmbUseLZO->setCurrentIndex(1);
+        } else {
+            m_ui->cmbUseLZO->setCurrentIndex(2);
+        }
+        m_ui->chkUseLZO->setChecked(true);
+    }
     m_ui->chkUseTCP->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_PROTO_TCP)] == QLatin1String("yes"));
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_DEV_TYPE))) {
         m_ui->chkUseVirtualDeviceType->setChecked(true);
@@ -306,7 +316,21 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
         data.insert(QLatin1String(NM_OPENVPN_KEY_RENEG_SECONDS), QString::number(m_ui->sbCustomReneg->value()));
     }
     data.insert(QLatin1String(NM_OPENVPN_KEY_PROTO_TCP), m_ui->chkUseTCP->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
-    data.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), m_ui->chkUseLZO->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
+
+    if (m_ui->chkUseLZO->isChecked()) {
+        switch (m_ui->cmbUseLZO->currentIndex()) {
+        case 0:
+            data.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), QLatin1String("no"));
+            break;
+        case 1:
+            data.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), QLatin1String("yes"));
+            break;
+        case 2:
+            data.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), QLatin1String("adaptive"));
+            break;
+        }
+    }
+
     if (m_ui->chkUseVirtualDeviceType->isChecked()) {
         data.insert(QLatin1String(NM_OPENVPN_KEY_DEV_TYPE), m_ui->cmbDeviceType->currentIndex() == 0 ? QLatin1String("tun") : QLatin1String("tap"));
     }

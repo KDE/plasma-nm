@@ -165,7 +165,7 @@ void NetworkStatus::changeActiveConnections()
     QList<NetworkManager::ActiveConnection::Ptr> activeConnectionList = NetworkManager::activeConnections();
     std::sort(activeConnectionList.begin(), activeConnectionList.end(), [] (const NetworkManager::ActiveConnection::Ptr &left, const NetworkManager::ActiveConnection::Ptr &right)
     {
-        return NetworkStatus::connectionTypeToSortedType(left->type()) <= NetworkStatus::connectionTypeToSortedType(right->type());
+        return NetworkStatus::connectionTypeToSortedType(left->type()) < NetworkStatus::connectionTypeToSortedType(right->type());
     });
 
     Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, activeConnectionList) {

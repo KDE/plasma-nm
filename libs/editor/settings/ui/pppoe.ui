@@ -27,7 +27,7 @@
    <item row="0" column="1">
     <widget class="KLineEdit" name="service">
      <property name="toolTip">
-      <string>If specified, instruct PPPoE to only initiate sessions with access concentrators that provide the specified serivce. For most providers, this should be left blank. It is only required if there are multiple access concentrators or a specific service is known to be required.</string>
+      <string>If specified, instruct PPPoE to only initiate sessions with access concentrators that provide the specified service. For most providers, this should be left blank. It is only required if there are multiple access concentrators or a specific service is known to be required.</string>
      </property>
     </widget>
    </item>

@@ -25,7 +25,7 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 Item {
     id: switchButton
 
-    property alias icon: switchButtonIcon.elementId
+    property alias icon: switchButtonIcon.source
     property alias checked: switchButtonCheckbox.checked
     property alias enabled: switchButtonCheckbox.enabled
 
@@ -33,13 +33,6 @@ Item {
 
     height: switchButtonIcon.height + units.gridUnit / 2
     width: switchButtonCheckbox.width + switchButtonIcon.width + units.gridUnit
-
-    PlasmaCore.Svg {
-        id: svgNetworkIcons
-        multipleImages: true
-        imagePath: "icons/network"
-        colorGroup: PlasmaCore.ColorScope.colorGroup
-    }
 
     PlasmaComponents.CheckBox {
         id: switchButtonCheckbox
@@ -57,9 +50,8 @@ Item {
         }
     }
 
-    PlasmaCore.SvgItem {
+    PlasmaCore.IconItem {
         id: switchButtonIcon
-
         anchors {
             left: switchButtonCheckbox.right
             leftMargin: units.gridUnit / 2
@@ -67,6 +59,5 @@ Item {
             bottom: switchButtonCheckbox.bottom
         }
         width: height
-        svg: svgNetworkIcons
     }
 }

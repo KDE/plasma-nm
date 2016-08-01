@@ -92,11 +92,17 @@ Item {
             property bool airplaneModeEnabled: false
 
             checked: airplaneModeEnabled
-            icon: airplaneModeEnabled ? "flightmode-on" : "flightmode-off"
+            icon: airplaneModeEnabled ? "network-flightmode-on" : "network-flightmode-off"
 
             onClicked: {
                 handler.enableAirplaneMode(checked);
                 airplaneModeEnabled = !airplaneModeEnabled;
+            }
+
+            Binding {
+                target: connectionIconProvider
+                property: "airplaneMode"
+                value: planeModeSwitchButton.airplaneModeEnabled
             }
         }
     }

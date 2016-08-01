@@ -388,7 +388,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
 {
     NetworkManager::ActiveConnection *ac = qobject_cast<NetworkManager::ActiveConnection*>(sender());
 
-    QString eventId, text;
+    QString eventId, text, iconName;
     const QString acName = ac->id();
     const QString connectionId = ac->path();
 
@@ -406,6 +406,17 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
 
         eventId = QStringLiteral("ConnectionActivated");
         text = i18n("Connection '%1' activated.", acName);
+
+        switch (ac->type()) {
+        case NetworkManager::ConnectionSettings::Wireless:
+            iconName = QStringLiteral("network-wireless-on");
+            break;
+        case NetworkManager::ConnectionSettings::Wired:
+            iconName = QStringLiteral("network-wired-activated");
+            break;
+        default: // silence warning
+            break;
+        }
     } else if (state == NetworkManager::ActiveConnection::Deactivated) {
         if (m_preparingForSleep) {
             qCDebug(PLASMA_NM) << "Not emitting connection deactivated notification as we're about to suspend";
@@ -414,6 +425,17 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
 
         eventId = QStringLiteral("ConnectionDeactivated");
         text = i18n("Connection '%1' deactivated.", acName);
+
+        switch (ac->type()) {
+        case NetworkManager::ConnectionSettings::Wireless:
+            iconName = QStringLiteral("network-wireless-disconnected");
+            break;
+        case NetworkManager::ConnectionSettings::Wired:
+            iconName = QStringLiteral("network-unavailable");
+            break;
+        default: // silence warning
+            break;
+        }
     } else {
         qCWarning(PLASMA_NM) << "Unhandled active connection state change: " << state;
         return;
@@ -423,10 +445,14 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
     connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
     notify->setProperty("uni", connectionId);
     notify->setComponentName(QStringLiteral("networkmanagement"));
-    if (state == NetworkManager::ActiveConnection::Activated) {
-        notify->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-information")).pixmap(KIconLoader::SizeHuge));
+    if (!iconName.isEmpty()) {
+        notify->setIconName(iconName);
     } else {
-        notify->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(KIconLoader::SizeHuge));
+        if (state == NetworkManager::ActiveConnection::Activated) {
+            notify->setIconName(QStringLiteral("dialog-information"));
+        } else {
+            notify->setIconName(QStringLiteral("dialog-warning"));
+        }
     }
     notify->setTitle(acName);
     notify->setText(text);
@@ -498,9 +524,9 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
     notify->setProperty("uni", connectionId);
     notify->setComponentName("networkmanagement");
     if (state == NetworkManager::VpnConnection::Activated) {
-        notify->setPixmap(QIcon::fromTheme("dialog-information").pixmap(KIconLoader::SizeHuge));
+        notify->setIconName(QStringLiteral("dialog-information"));
     } else {
-        notify->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
+        notify->setIconName(QStringLiteral("dialog-warning"));
     }
     notify->setTitle(vpnName);
     notify->setText(text);

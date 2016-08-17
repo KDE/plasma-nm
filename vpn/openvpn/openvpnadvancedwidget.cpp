@@ -180,7 +180,7 @@ void OpenVpnAdvancedWidget::loadConfig()
     }
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_COMP_LZO))) {
         const QString compLzo = dataMap[QLatin1String(NM_OPENVPN_KEY_COMP_LZO)];
-        if (compLzo == QLatin1String("no")) {
+        if (compLzo == QLatin1String("no-by-default")) {
             m_ui->cmbUseLZO->setCurrentIndex(0);
         } else if (compLzo == QLatin1String("yes")) {
             m_ui->cmbUseLZO->setCurrentIndex(1);
@@ -320,7 +320,7 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     if (m_ui->chkUseLZO->isChecked()) {
         switch (m_ui->cmbUseLZO->currentIndex()) {
         case 0:
-            data.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), QLatin1String("no"));
+            data.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), QLatin1String("no-by-default"));
             break;
         case 1:
             data.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), QLatin1String("yes"));

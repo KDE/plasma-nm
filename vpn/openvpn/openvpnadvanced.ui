@@ -215,7 +215,7 @@
            </property>
            <item>
             <property name="text">
-             <string>No</string>
+             <string>No by default</string>
             </property>
            </item>
            <item>

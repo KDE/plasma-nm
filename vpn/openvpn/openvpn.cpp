@@ -2,7 +2,7 @@
     Copyright 2008 Will Stephenson <wstephenson@kde.org>
     Copyright 2011-2012 Rajeesh K Nambiar <rajeeshknambiar@gmail.com>
     Copyright 2011 Ilia Kats <ilia-kats@gmx.net>
-    Copyright 2012-2014 Lamarque V. Souza <lamarque@kde.org>
+    Copyright 2012-2016 Lamarque V. Souza <lamarque@kde.org>
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as
@@ -754,8 +754,10 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
             expFile.write(line.toLatin1());
         }
     }
-    if (dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD ||
-            dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
+    if (dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_TLS ||
+        dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_STATIC_KEY ||
+        dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD ||
+        dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
         line = QString(AUTH_USER_PASS_TAG) + '\n';
         expFile.write(line.toLatin1());
         if (!dataMap[NM_OPENVPN_KEY_TLS_REMOTE].isEmpty()) {

@@ -307,7 +307,8 @@ PlasmaComponents.ListItem {
                 KQuickControlsAddons.Plotter {
                     id: plotter
 
-                    property int maxValue: 0
+                    // Joining two QList<foo> in QML/javascript doesn't seem to work so I'm getting maximum from both list separately
+                    readonly property int maxValue: Math.max(Math.max.apply(null, downloadPlotData.values), Math.max.apply(null, uploadPlotData.values))
                     anchors {
                         left: parent.left
                         leftMargin: units.iconSizes.medium
@@ -321,21 +322,12 @@ PlasmaComponents.ListItem {
 
                     dataSets: [
                         KQuickControlsAddons.PlotData {
+                            id: downloadPlotData
                             label: i18n("Download")
                             color: theme.highlightColor
-
-                            onValuesChanged: {
-                                var maxValue = 0
-                                for (var i = 0; i < values.length; ++i) {
-                                    if (maxValue < values[i]) {
-                                        maxValue = values[i]
-                                    }
-                                }
-
-                                plotter.maxValue = maxValue
-                            }
                         },
                         KQuickControlsAddons.PlotData {
+                            id: uploadPlotData
                             label: i18n("Upload")
                             color: cycle(theme.highlightColor, -180)
                         }

@@ -158,6 +158,11 @@
        </item>
        <item>
         <widget class="QSpinBox" name="prioritySpin">
+         <property name="toolTip">
+           <string>If the connection is set to autoconnect, connections with higher priority will be preferred. Defaults to 0.
+The higher number means higher priority. An negative number can be used to indicate priority lower than the default.
+           </string>
+         </property>
          <property name="enabled">
           <bool>false</bool>
          </property>
@@ -166,6 +171,9 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimum">
+          <number>-100</number>
          </property>
         </widget>
        </item>

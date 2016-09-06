@@ -385,7 +385,8 @@ PlasmaComponents.ListItem {
                     topMargin: Math.round(units.gridUnit / 3)
                 }
                 height: implicitHeight; width: units.gridUnit * 15
-                echoMode: showPasswordCheckbox.checked ? TextInput.Normal : TextInput.Password
+                echoMode: TextInput.Password
+                revealPasswordButtonShown: true
                 placeholderText: i18n("Password...")
                 validator: RegExpValidator {
                                 regExp: if (SecurityType == PlasmaNM.Enums.StaticWep) {
@@ -402,18 +403,6 @@ PlasmaComponents.ListItem {
                 onAcceptableInputChanged: {
                     stateChangeButton.enabled = acceptableInput;
                 }
-            }
-
-            PlasmaComponents.CheckBox {
-                id: showPasswordCheckbox
-
-                anchors {
-                    left: passwordInput.left
-                    right: parent.right
-                    top: passwordInput.bottom
-                }
-                checked: false
-                text: i18n("Show password")
             }
 
             Component.onCompleted: {

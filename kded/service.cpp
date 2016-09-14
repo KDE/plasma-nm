@@ -28,6 +28,7 @@
 #include "secretagent.h"
 #include "notification.h"
 #include "monitor.h"
+#include "portalmonitor.h"
 
 #include <QDBusMetaType>
 #include <QDBusServiceWatcher>
@@ -42,19 +43,16 @@ K_PLUGIN_FACTORY_WITH_JSON(NetworkManagementServiceFactory,
 class NetworkManagementServicePrivate
 {
     public:
-    SecretAgent * agent;
-    Notification * notification;
-    Monitor * monitor;
+    SecretAgent *agent = nullptr;
+    Notification *notification = nullptr;
+    Monitor *monitor = nullptr;
+    PortalMonitor *portalMonitor = nullptr;
 };
 
 NetworkManagementService::NetworkManagementService(QObject * parent, const QVariantList&)
     : KDEDModule(parent), d_ptr(new NetworkManagementServicePrivate)
 {
     Q_D(NetworkManagementService);
-
-    d->agent = Q_NULLPTR;
-    d->notification = Q_NULLPTR;
-    d->monitor = Q_NULLPTR;
 
     connect(this, &KDEDModule::moduleRegistered, this, &NetworkManagementService::slotRegistered);
 }
@@ -78,6 +76,10 @@ void NetworkManagementService::init()
 
     if (!d->monitor) {
         d->monitor = new Monitor(this);
+    }
+
+    if (!d->portalMonitor) {
+        d->portalMonitor = new PortalMonitor(this);
     }
 }
 

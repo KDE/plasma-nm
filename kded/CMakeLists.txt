@@ -11,6 +11,7 @@ if (WITH_MODEMMANAGER_SUPPORT)
         monitor.cpp
         passworddialog.cpp
         pindialog.cpp
+        portalmonitor.cpp
         secretagent.cpp
         service.cpp
     )
@@ -25,6 +26,7 @@ else()
         notification.cpp
         monitor.cpp
         passworddialog.cpp
+        portalmonitor.cpp
         secretagent.cpp
         service.cpp
     )

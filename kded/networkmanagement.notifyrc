@@ -776,5 +776,12 @@ Action=Popup
 
 [Event/CaptivePortal]
 Name=Captive portal detected
+Name[ca]=S'ha detectat un portal captiu
+Name[nl]=Vangstportaal gedetecteerd
+Name[pt]=Foi detectado um portal captivo
+Name[sk]=Zistil sa zajatý portál
+Name[sv]=Captive portal detekterades
+Name[uk]=Виявлено керований портал
+Name[x-test]=xxCaptive portal detectedxx
 IconName=dialog-password
 Action=Popup

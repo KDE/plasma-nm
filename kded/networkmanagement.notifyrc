@@ -776,10 +776,15 @@ Action=Popup
 
 [Event/CaptivePortal]
 Name=Captive portal detected
+Name[ca]=S'ha detectat un portal captiu
+Name[ca@valencia]=S'ha detectat un portal captiu
+Name[en_GB]=Captive portal detected
 Name[es]=Se ha detectado un portal cautivo
 Name[nl]=Vangstportaal gedetecteerd
+Name[pl]=Wykryto portal Captive
 Name[pt]=Foi detectado um portal captivo
 Name[sk]=Zistil sa zajatý portál
+Name[sl]=Zaznan prijavni portal
 Name[sv]=Captive portal detekterades
 Name[uk]=Виявлено керований портал
 Name[x-test]=xxCaptive portal detectedxx

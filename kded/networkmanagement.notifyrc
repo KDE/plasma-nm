@@ -791,5 +791,6 @@ Name[sl]=Zaznan prijavni portal
 Name[sv]=Captive portal detekterades
 Name[uk]=Виявлено керований портал
 Name[x-test]=xxCaptive portal detectedxx
+Name[zh_CN]=检测到强制网络门户
 IconName=dialog-password
 Action=Popup

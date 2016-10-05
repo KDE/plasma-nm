@@ -4,6 +4,7 @@ Icon=
 ServiceTypes=PlasmaNetworkManagement/VpnUiPlugin
 X-KDE-Library=plasmanetworkmanagement_openconnectui
 X-NetworkManager-Services=org.freedesktop.NetworkManager.openconnect
+X-NetworkManager-Services-Subtype=anyconnect
 X-KDE-PluginInfo-Author=Lukáš Tinkl
 X-KDE-PluginInfo-Email=ltinkl@redhat.com
 X-KDE-PluginInfo-Name=plasmanetworkmanagement_openconnectui

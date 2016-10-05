@@ -189,9 +189,13 @@ void ConnectionEditor::initializeMenu()
     Q_FOREACH (const KService::Ptr & service, services) {
         qCDebug(PLASMA_NM) << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
 
+        const QString vpnSubType = service->property("X-NetworkManager-Services-Subtype", QVariant::String).toString();
         action = new QAction(service->name(), this);
         action->setData(NetworkManager::ConnectionSettings::Vpn);
         action->setProperty("type", service->property("X-NetworkManager-Services", QVariant::String));
+        if (!vpnSubType.isEmpty()) {
+            action->setProperty("subtype", vpnSubType);
+        }
         m_menu->addAction(action);
     }
 
@@ -248,8 +252,9 @@ void ConnectionEditor::addConnection(QAction* action)
 {
     NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(action->data().toUInt());
     const QString vpnType = action->property("type").toString();
+    const QString vpnSubType = action->property("subtype").toString();
 
-    // qCDebug(PLASMA_NM) << "Adding new connection of type " << type;
+    // qCDebug(PLASMA_NM) << "Adding new connection of type " << type << " and subtype " << vpnSubType;
     if (type == NetworkManager::ConnectionSettings::Vpn && vpnType == "imported") {
         importVpn();
     } else if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
@@ -307,6 +312,12 @@ void ConnectionEditor::addConnection(QAction* action)
         if (type == NetworkManager::ConnectionSettings::Vpn) {
             NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
             vpnSetting->setServiceType(vpnType);
+            // Set VPN subtype in case of Openconnect to add support for juniper
+            if (vpnType == QLatin1String("org.freedesktop.NetworkManager.openconnect")) {
+                NMStringMap data = vpnSetting->data();
+                data.insert(QLatin1String("protocol"), vpnSubType);
+                vpnSetting->setData(data);
+            }
             // qCDebug(PLASMA_NM) << "VPN type: " << vpnType;
         }
 

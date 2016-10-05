@@ -110,6 +110,11 @@ QVariantMap OpenconnectSettingWidget::setting() const
         }
     }
 
+    // Restore configured protocol if any, either juniper or anyconnect
+    if (d->setting->data().contains(NM_OPENCONNECT_KEY_PROTOCOL)) {
+        data.insert(NM_OPENCONNECT_KEY_PROTOCOL, d->setting->data().value(NM_OPENCONNECT_KEY_PROTOCOL));
+    }
+
     /* These are different for every login session, and should not be stored */
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_COOKIE"-flags"), QString::number(NetworkManager::Setting::NotSaved));
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_GWCERT"-flags"), QString::number(NetworkManager::Setting::NotSaved));

@@ -1,5 +1,6 @@
 include_directories(${CMAKE_SOURCE_DIR}/libs/editor/widgets)
 
+add_subdirectory(iodine)
 add_subdirectory(l2tp)
 add_subdirectory(openconnect)
 add_subdirectory(openvpn)

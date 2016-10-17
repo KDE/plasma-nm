@@ -622,11 +622,11 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CONNECTION_TYPE), conType);
         // Default secret flags to be agent-owned
         if (have_pass) {
-            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), QString::number(NetworkManager::Setting::NotSaved));
+            dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), QString::number(NetworkManager::Setting::AgentOwned));
         }
         if (have_certs) {
             if (dataMap.contains(NM_OPENVPN_KEY_KEY) && isEncrypted(dataMap[NM_OPENVPN_KEY_KEY])) {
-                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERTPASS"-flags"), QString::number(NetworkManager::Setting::NotSaved));
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERTPASS"-flags"), QString::number(NetworkManager::Setting::AgentOwned));
             }
         }
     }

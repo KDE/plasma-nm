@@ -285,8 +285,8 @@ void OpenVpnSettingWidget::fillOnePasswordCombo(PasswordField *passwordField, Ne
         passwordField->setPasswordOption(PasswordField::StoreForUser);
     } else if (type.testFlag(NetworkManager::Setting::NotSaved)) {
         passwordField->setPasswordOption(PasswordField::AlwaysAsk);
-    } else {
-        passwordField->setPasswordOption(PasswordField::PasswordField::NotRequired);
+    } else if (type.testFlag(NetworkManager::Setting::NotRequired)) {
+        passwordField->setPasswordOption(PasswordField::NotRequired);
     }
 }
 

@@ -97,7 +97,7 @@
        </item>
        <item row="1" column="1">
         <widget class="PasswordField" name="md5Password">
-         <property name="passwordMode" stdset="0">
+         <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -247,7 +247,7 @@
        </item>
        <item row="7" column="1">
         <widget class="PasswordField" name="tlsPrivateKeyPassword">
-         <property name="passwordMode" stdset="0">
+         <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -281,7 +281,7 @@
        </item>
        <item row="1" column="1">
         <widget class="PasswordField" name="leapPassword">
-         <property name="passwordMode" stdset="0">
+         <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -410,7 +410,7 @@
        </item>
        <item row="5" column="1">
         <widget class="PasswordField" name="fastPassword">
-         <property name="passwordMode" stdset="0">
+         <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -514,7 +514,7 @@
        </item>
        <item row="4" column="1">
         <widget class="PasswordField" name="ttlsPassword">
-         <property name="passwordMode" stdset="0">
+         <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -648,7 +648,7 @@
        </item>
        <item row="5" column="1">
         <widget class="PasswordField" name="peapPassword">
-         <property name="passwordMode" stdset="0">
+         <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
         </widget>

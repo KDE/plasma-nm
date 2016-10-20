@@ -71,29 +71,29 @@ Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &se
     // Those signals are monitor for setting validation
     connect(m_ui->auth, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &Security8021x::widgetChanged);
     connect(m_ui->md5UserName, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->md5Password, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->md5Password, &PasswordField::textChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->md5Password, &PasswordField::passwordOptionChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->tlsIdentity, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->tlsCACert, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->tlsUserCert, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->tlsPrivateKey, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->tlsPrivateKeyPassword, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->tlsPrivateKeyPassword, &PasswordField::textChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->tlsPrivateKeyPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->leapUsername, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->leapPassword, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->leapPassword, &PasswordField::textChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->leapPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->fastAllowPacProvisioning, &QCheckBox::stateChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->pacFile, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->fastUsername, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->fastPassword, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->fastPassword, &PasswordField::textChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->fastPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->ttlsCACert, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->ttlsUsername, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->ttlsPassword, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->ttlsPassword, &PasswordField::textChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->ttlsPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->peapCACert, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->peapUsername, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->peapPassword, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
+    connect(m_ui->peapPassword, &PasswordField::textChanged, this, &Security8021x::widgetChanged);
     connect(m_ui->peapPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::widgetChanged);
 
     KAcceleratorManager::manage(this);

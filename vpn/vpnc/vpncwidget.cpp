@@ -37,9 +37,9 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
     m_ui->setupUi(this);
 
     m_ui->groupPassword->setPasswordOptionsEnabled(true);
-    m_ui->groupPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    m_ui->groupPassword->setPasswordNotRequiredEnabled(true);
     m_ui->userPassword->setPasswordOptionsEnabled(true);
-    m_ui->userPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    m_ui->userPassword->setPasswordNotRequiredEnabled(true);
 
     connect(m_ui->btnAdvanced, &QPushButton::clicked, this, &VpncWidget::showAdvanced);
 

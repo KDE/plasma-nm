@@ -36,9 +36,9 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget *paren
     m_ui->networkId->setHidden(true);
 
     m_ui->password->setPasswordOptionsEnabled(true);
-    m_ui->password->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    m_ui->password->setPasswordNotRequiredEnabled(true);
     m_ui->pin->setPasswordOptionsEnabled(true);
-    m_ui->pin->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    m_ui->pin->setPasswordNotRequiredEnabled(true);
 
     m_ui->type->addItem(i18nc("GSM network type", "Any"), NetworkManager::GsmSetting::Any);
     m_ui->type->addItem(i18n("3G Only (UMTS/HSPA)"), NetworkManager::GsmSetting::Only3G);
@@ -49,9 +49,9 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget *paren
     m_ui->type->addItem(i18n("4G Only (LTE)"), NetworkManager::GsmSetting::Only4GLte);
 
     connect(m_ui->apn, &KLineEdit::textChanged, this, &GsmWidget::slotWidgetChanged);
-    connect(m_ui->password, &KLineEdit::textChanged, this, &GsmWidget::slotWidgetChanged);
+    connect(m_ui->password, &PasswordField::textChanged, this, &GsmWidget::slotWidgetChanged);
     connect(m_ui->password, &PasswordField::passwordOptionChanged, this, &GsmWidget::slotWidgetChanged);
-    connect(m_ui->pin, &KLineEdit::textChanged, this, &GsmWidget::slotWidgetChanged);
+    connect(m_ui->pin, &PasswordField::textChanged, this, &GsmWidget::slotWidgetChanged);
     connect(m_ui->pin, &PasswordField::passwordOptionChanged, this, &GsmWidget::slotWidgetChanged);
     connect(m_ui->username, &KLineEdit::textChanged, this, &GsmWidget::slotWidgetChanged);
 

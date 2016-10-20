@@ -32,7 +32,7 @@ PppoeWidget::PppoeWidget(const NetworkManager::Setting::Ptr &setting, QWidget *p
     KAcceleratorManager::manage(this);
 
     m_ui->password->setPasswordOptionsEnabled(true);
-    m_ui->password->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    m_ui->password->setPasswordNotRequiredEnabled(true);
 
     connect(m_ui->service, &KLineEdit::textChanged, this, &PppoeWidget::slotWidgetChanged);
     connect(m_ui->username, &KLineEdit::textChanged, this, &PppoeWidget::slotWidgetChanged);

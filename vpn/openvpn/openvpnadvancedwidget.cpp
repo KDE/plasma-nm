@@ -67,7 +67,7 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     d->setting = setting;
 
     m_ui->proxyPassword->setPasswordOptionsEnabled(true);
-    m_ui->proxyPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    m_ui->proxyPassword->setPasswordNotRequiredEnabled(true);
 
     connect(m_ui->cmbProxyType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyTypeChanged);
 

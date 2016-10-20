@@ -31,10 +31,10 @@ CdmaWidget::CdmaWidget(const NetworkManager::Setting::Ptr &setting, QWidget *par
     m_ui->setupUi(this);
 
     m_ui->password->setPasswordOptionsEnabled(true);
-    m_ui->password->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    m_ui->password->setPasswordNotRequiredEnabled(true);
 
     connect(m_ui->number, &KLineEdit::textChanged, this, &CdmaWidget::slotWidgetChanged);
-    connect(m_ui->password, &KLineEdit::textChanged, this, &CdmaWidget::slotWidgetChanged);
+    connect(m_ui->password, &PasswordField::textChanged, this, &CdmaWidget::slotWidgetChanged);
     connect(m_ui->password, &PasswordField::passwordOptionChanged, this, &CdmaWidget::slotWidgetChanged);
     connect(m_ui->username, &KLineEdit::textChanged, this, &CdmaWidget::slotWidgetChanged);
 

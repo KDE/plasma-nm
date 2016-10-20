@@ -181,7 +181,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
            <property name="toolTip">
             <string>Password for private key.</string>
            </property>
-           <property name="passwordMode" stdset="0">
+           <property name="passwordModeEnabled" stdset="0">
             <bool>true</bool>
            </property>
           </widget>
@@ -428,7 +428,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
            <property name="toolTip">
             <string>Password passed to OpenVPN when prompted for it.</string>
            </property>
-           <property name="passwordMode" stdset="0">
+           <property name="passwordModeEnabled" stdset="0">
             <bool>true</bool>
            </property>
           </widget>
@@ -535,7 +535,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
            <property name="toolTip">
             <string>Password for private key.</string>
            </property>
-           <property name="passwordMode" stdset="0">
+           <property name="passwordModeEnabled" stdset="0">
             <bool>true</bool>
            </property>
           </widget>
@@ -582,7 +582,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
            <property name="toolTip">
             <string>Password passed to OpenVPN when prompted for it.</string>
            </property>
-           <property name="passwordMode" stdset="0">
+           <property name="passwordModeEnabled" stdset="0">
             <bool>true</bool>
            </property>
           </widget>

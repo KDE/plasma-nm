@@ -21,12 +21,15 @@
 #ifndef PLASMA_NM_PASSWORD_FIELD_H
 #define PLASMA_NM_PASSWORD_FIELD_H
 
-#include <KActionMenu>
-#include <KLineEdit>
+#include <QLineEdit>
+#include <QComboBox>
 
-class Q_DECL_EXPORT PasswordField : public KLineEdit
+#include <QVBoxLayout>
+
+class Q_DECL_EXPORT PasswordField : public QWidget
 {
     Q_OBJECT
+    Q_PROPERTY(bool passwordModeEnabled WRITE setPasswordModeEnabled)
 public:
     enum PasswordOption {
         StoreForUser,
@@ -35,24 +38,33 @@ public:
         NotRequired
     };
 
-    explicit PasswordField(QWidget *parent = 0);
+    explicit PasswordField(QWidget *parent = 0, Qt::WindowFlags f = Qt::WindowFlags());
 
+    void setMaxLength(int maxLength);
+    void setPasswordModeEnabled(bool passwordMode);
     void setPasswordOptionsEnabled(bool enable);
-    void setPasswordOptionEnabled(PasswordOption option, bool enable);
+    void setPasswordNotRequiredEnabled(bool enable);
 
     PasswordOption passwordOption() const;
     void setPasswordOption(PasswordOption option);
+
+    void setText(const QString &text);
+    QString text() const;
+
 private Q_SLOTS:
-    void changePasswordOption(QAction *action);
+    void changePasswordOption(int index);
     void showToggleEchoModeAction(const QString &text);
     void toggleEchoMode();
 
 Q_SIGNALS:
+    void textChanged(const QString &text);
     void passwordOptionChanged(PasswordOption option);
 
 private:
     PasswordOption m_currentPasswordOption;
-    KActionMenu *m_passwordOptionsMenu;
+    QVBoxLayout *m_layout;
+    QLineEdit *m_passwordField;
+    QComboBox *m_passwordOptionsMenu;
     QAction *m_toggleEchoModeAction;
 };
 

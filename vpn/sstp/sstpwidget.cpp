@@ -67,7 +67,7 @@ SstpSettingWidget::SstpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
 
     connect(d->ui.le_gateway, &QLineEdit::textChanged, this, &SstpSettingWidget::slotWidgetChanged);
     connect(d->ui.le_username, &QLineEdit::textChanged, this, &SstpSettingWidget::slotWidgetChanged);
-    connect(d->ui.le_password, &QLineEdit::textChanged, this, &SstpSettingWidget::slotWidgetChanged);
+    connect(d->ui.le_password, &PasswordField::textChanged, this, &SstpSettingWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

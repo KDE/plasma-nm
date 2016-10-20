@@ -62,7 +62,7 @@
        <property name="toolTip">
         <string>Password passed to PPPD when prompted for it.</string>
        </property>
-       <property name="passwordMode" stdset="0">
+       <property name="passwordModeEnabled" stdset="0">
         <bool>true</bool>
        </property>
       </widget>
@@ -79,7 +79,7 @@
    <item row="3" column="1">
     <widget class="QLineEdit" name="domain">
      <property name="toolTip">
-      <string>Append the domain name &lt;domain&gt; to the local host name for 
+      <string>Append the domain name &lt;domain&gt; to the local host name for
 authentication purposes.</string>
      </property>
      <property name="clearButtonEnabled">

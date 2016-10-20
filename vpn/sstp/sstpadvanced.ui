@@ -51,7 +51,7 @@
           <item row="0" column="0">
            <widget class="QLabel" name="lbl_auth">
             <property name="text">
-             <string>A&amp;llow following authentication methods:</string>
+             <string>Allow following authentication methods:</string>
             </property>
             <property name="buddy">
              <cstring>listWidget</cstring>
@@ -111,7 +111,7 @@
           <string>Use Microsoft Point-to-Point Encryption</string>
          </property>
          <property name="title">
-          <string>&amp;Use MPPE Encryption</string>
+          <string>Use MPPE Encryption</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -132,7 +132,7 @@
              </size>
             </property>
             <property name="text">
-             <string>Cr&amp;ypto:</string>
+             <string>Crypto:</string>
             </property>
             <property name="buddy">
              <cstring>cb_MPPECrypto</cstring>
@@ -343,7 +343,7 @@
           </item>
           <item row="1" column="1">
            <widget class="PasswordField" name="le_password">
-            <property name="passwordMode">
+            <property name="passwordModeEnabled">
              <bool>true</bool>
             </property>
            </widget>

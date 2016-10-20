@@ -29,7 +29,7 @@
    </item>
    <item row="0" column="1">
     <widget class="PasswordField" name="le_password">
-     <property name="passwordMode" stdset="0">
+     <property name="passwordModeEnabled" stdset="0">
       <bool>true</bool>
      </property>
     </widget>

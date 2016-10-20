@@ -21,87 +21,98 @@
 #include "passwordfield.h"
 
 #include <QAction>
-#include <QActionGroup>
 #include <QIcon>
-#include <QMenu>
 
 #include <KLocalizedString>
-#include <KActionMenu>
-#include <KAction>
 #include <KWallet/Wallet>
 
-PasswordField::PasswordField(QWidget *parent)
-    : KLineEdit(parent)
+PasswordField::PasswordField(QWidget *parent, Qt::WindowFlags f)
+    : QWidget(parent, f)
     , m_currentPasswordOption(StoreForUser)
 {
-    QAction *action;
-    QActionGroup *actionGroup = new QActionGroup(this);
-    m_passwordOptionsMenu = new KActionMenu(this);
-    if (KWallet::Wallet::isEnabled()) {
-        m_passwordOptionsMenu->setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
-        m_passwordOptionsMenu->setToolTip(i18n("Store password for this user only (encrypted)"));
-    } else {
-        m_passwordOptionsMenu->setIcon(QIcon::fromTheme(QStringLiteral("document-save-all")));
-        m_passwordOptionsMenu->setToolTip(i18n("Store password and make it available for all users (not encrypted)"));
-    }
-    m_passwordOptionsMenu->setActionGroup(actionGroup);
+    m_layout = new QVBoxLayout(this);
+    // The widget will be already in layout, thus reset content margins
+    // to align it with the rest of widgets
+    m_layout->setContentsMargins(0, 0, 0, 0);
 
-    action = new QAction(QIcon::fromTheme(QStringLiteral("document-save")), i18n("Store password for this user only (encrypted)"), actionGroup);
-    action->setCheckable(true);
-    if (KWallet::Wallet::isEnabled()) {
-        action->setChecked(true);
-    }
-    action->setData(StoreForUser);
-    m_passwordOptionsMenu->addAction(action);
-
-    action= new QAction(QIcon::fromTheme(QStringLiteral("document-save-all")), i18n("Store password and make it available for all users (not encrypted)"), actionGroup);
-    action->setCheckable(true);
-    if (!KWallet::Wallet::isEnabled()) {
-        action->setChecked(true);
-    }
-    action->setData(StoreForAllUsers);
-    m_passwordOptionsMenu->addAction(action);
-
-    action = new QAction(QIcon::fromTheme(QStringLiteral("dialog-messages")), i18n("Ask for this password every time"), actionGroup);
-    action->setCheckable(true);
-    action->setData(AlwaysAsk);
-    m_passwordOptionsMenu->addAction(action);
-
-    action = new QAction(QIcon::fromTheme(QStringLiteral("document-close")), i18n("This password is not required"), actionGroup);
-    action->setCheckable(true);
-    action->setVisible(false);
-    action->setData(NotRequired);
-    m_passwordOptionsMenu->addAction(action);
-
-    connect(actionGroup, &QActionGroup::triggered, this, &PasswordField::changePasswordOption);
-
-    m_toggleEchoModeAction = addAction(QIcon::fromTheme(QStringLiteral("visibility")), QLineEdit::TrailingPosition);
+    m_passwordField = new QLineEdit(this);
+    m_toggleEchoModeAction = m_passwordField->addAction(QIcon::fromTheme(QStringLiteral("visibility")), QLineEdit::TrailingPosition);
     m_toggleEchoModeAction->setVisible(false);
     m_toggleEchoModeAction->setToolTip(i18n("Change the visibility of the password"));
+    connect(m_passwordField, &QLineEdit::textChanged, this, &PasswordField::showToggleEchoModeAction);
+    connect(m_passwordField, &QLineEdit::textChanged, this, &PasswordField::textChanged);
     connect(m_toggleEchoModeAction, &QAction::triggered, this, &PasswordField::toggleEchoMode);
-    connect(this, &KLineEdit::textChanged, this, &PasswordField::showToggleEchoModeAction);
+
+    m_layout->addWidget(m_passwordField);
+
+    m_passwordOptionsMenu = new QComboBox(this);
+    m_passwordOptionsMenu->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+
+    m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("document-save")), i18n("Store password for this user only (encrypted)"), StoreForUser);
+    m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("document-save-all")), i18n("Store password for all users (not encrypted)"), StoreForAllUsers);
+    m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("dialog-messages")), i18n("Ask for this password every time"), AlwaysAsk);
+    // Do not add by default
+    // m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("document-close")), i18n("This password is not required"), NotRequired);
+
+    if (KWallet::Wallet::isEnabled()) {
+        m_passwordOptionsMenu->setCurrentIndex(0);
+    } else {
+        m_passwordOptionsMenu->setCurrentIndex(1);
+    }
+
+    connect(m_passwordOptionsMenu, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &PasswordField::changePasswordOption);
+
+    // Disable by default
+    m_passwordOptionsMenu->setVisible(false);
+    // m_layout->addWidget(m_passwordOptionsMenu);
+
+    setLayout(m_layout);
+}
+
+void PasswordField::setMaxLength(int maxLength)
+{
+    m_passwordField->setMaxLength(maxLength);
+}
+
+void PasswordField::setPasswordModeEnabled(bool enable)
+{
+    m_passwordField->setEchoMode(enable ? QLineEdit::Password : QLineEdit::Normal);
 }
 
 void PasswordField::setPasswordOptionsEnabled(bool enable)
 {
     if (enable) {
-        // Remove the "show password action" first so we are at the position we want
-        removeAction(m_toggleEchoModeAction);
-        addAction(m_passwordOptionsMenu,  QLineEdit::TrailingPosition);
-        // Re-add the "show password action"
-        addAction(m_toggleEchoModeAction,  QLineEdit::TrailingPosition);
+        m_layout->addWidget(m_passwordOptionsMenu);
+        m_passwordOptionsMenu->setVisible(true);
     } else {
-        removeAction(m_passwordOptionsMenu);
+        m_layout->removeWidget(m_passwordOptionsMenu);
+        m_passwordOptionsMenu->setVisible(false);
     }
 }
 
-void PasswordField::setPasswordOptionEnabled(PasswordOption option, bool enable)
+void PasswordField::setPasswordNotRequiredEnabled(bool enable)
 {
-    Q_FOREACH (QAction *action, m_passwordOptionsMenu->actionGroup()->actions()) {
-        if ((PasswordOption)action->data().toUInt() == option) {
-            action->setVisible(enable);
+    if (enable) {
+        const int index = m_passwordOptionsMenu->findData(NotRequired);
+        if (index == -1) {
+            m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("document-close")), i18n("This password is not required"), NotRequired);
+        }
+    } else {
+        const int index = m_passwordOptionsMenu->findData(NotRequired);
+        if (index != -1) {
+            m_passwordOptionsMenu->removeItem(index);
         }
     }
+}
+
+void PasswordField::setText(const QString &text)
+{
+    m_passwordField->setText(text);
+}
+
+QString PasswordField::text() const
+{
+    return m_passwordField->text();
 }
 
 PasswordField::PasswordOption PasswordField::passwordOption() const
@@ -111,13 +122,9 @@ PasswordField::PasswordOption PasswordField::passwordOption() const
 
 void PasswordField::setPasswordOption(PasswordField::PasswordOption option)
 {
-    Q_FOREACH (QAction *action, m_passwordOptionsMenu->actionGroup()->actions()) {
-        if ((PasswordOption)action->data().toUInt() == option) {
-            action->setChecked(true);
-            m_passwordOptionsMenu->setIcon(action->icon());
-            m_passwordOptionsMenu->setToolTip(action->toolTip());
-            changePasswordOption(action);
-        }
+    const int index = m_passwordOptionsMenu->findData(option);
+    if (index != -1) {
+        m_passwordOptionsMenu->setCurrentIndex(index);
     }
 }
 
@@ -128,27 +135,27 @@ void PasswordField::showToggleEchoModeAction(const QString &text)
 
 void PasswordField::toggleEchoMode()
 {
-    if (echoMode() == QLineEdit::Password) {
-        setEchoMode(QLineEdit::Normal);
+    if (m_passwordField->echoMode() == QLineEdit::Password) {
+        m_passwordField->setEchoMode(QLineEdit::Normal);
         m_toggleEchoModeAction->setIcon(QIcon::fromTheme(QStringLiteral("hint")));
-    } else if (echoMode() == QLineEdit::Normal) {
-        setEchoMode(QLineEdit::Password);
+    } else if (m_passwordField->echoMode() == QLineEdit::Normal) {
+        m_passwordField->setEchoMode(QLineEdit::Password);
         m_toggleEchoModeAction->setIcon(QIcon::fromTheme(QStringLiteral("visibility")));
     }
 }
 
-void PasswordField::changePasswordOption(QAction *action)
+void PasswordField::changePasswordOption(int index)
 {
-    m_currentPasswordOption = (PasswordOption)action->data().toUInt();
+    Q_UNUSED(index);
+
+    m_currentPasswordOption = (PasswordOption)m_passwordOptionsMenu->currentData().toUInt();
 
     if (m_currentPasswordOption == PasswordField::NotRequired || m_currentPasswordOption == PasswordField::AlwaysAsk) {
-        clear();
-        setReadOnly(true);
+        m_passwordField->clear();
+        m_passwordField->setReadOnly(true);
     } else {
-        setReadOnly(false);
+        m_passwordField->setReadOnly(false);
     }
 
-    m_passwordOptionsMenu->setIcon(action->icon());
-    m_passwordOptionsMenu->setToolTip(action->toolTip());
     Q_EMIT passwordOptionChanged(m_currentPasswordOption);
 }

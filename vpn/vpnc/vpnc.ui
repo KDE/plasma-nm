@@ -69,7 +69,7 @@
        <property name="toolTip">
         <string>User password for the connection.</string>
        </property>
-       <property name="passwordMode" stdset="0">
+       <property name="passwordModeEnabled" stdset="0">
         <bool>true</bool>
        </property>
       </widget>
@@ -126,7 +126,7 @@
        <property name="toolTip">
         <string>Group password.</string>
        </property>
-       <property name="passwordMode" stdset="0">
+       <property name="passwordModeEnabled" stdset="0">
         <bool>true</bool>
        </property>
       </widget>

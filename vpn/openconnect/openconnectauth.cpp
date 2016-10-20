@@ -446,7 +446,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
             PasswordField *le = new PasswordField(this);
             le->setText(value);
             if (opt->type == OC_FORM_OPT_PASSWORD) {
-                le->setPasswordMode(true);
+                le->setPasswordModeEnabled(true);
             }
             if (!focusSet && le->text().isEmpty()) {
                 le->setFocus(Qt::OtherFocusReason);

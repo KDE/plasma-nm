@@ -771,7 +771,7 @@ to protect against DoS attacks.</string>
          <property name="toolTip">
           <string>HTTP/Socks proxy username passed to OpenVPN when prompted for it.</string>
          </property>
-         <property name="passwordMode" stdset="0">
+         <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -793,7 +793,7 @@ to protect against DoS attacks.</string>
            <property name="toolTip">
             <string>HTTP/Socks proxy password passed to OpenVPN when prompted for it.</string>
            </property>
-           <property name="passwordMode" stdset="0">
+           <property name="passwordModeEnabled" stdset="0">
             <bool>true</bool>
            </property>
           </widget>

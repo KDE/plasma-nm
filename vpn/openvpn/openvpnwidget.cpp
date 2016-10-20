@@ -61,13 +61,13 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
     d->setting = setting;
 
     d->ui.x509KeyPassword->setPasswordOptionsEnabled(true);
-    d->ui.x509KeyPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    d->ui.x509KeyPassword->setPasswordNotRequiredEnabled(true);
     d->ui.passPassword->setPasswordOptionsEnabled(true);
-    d->ui.passPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    d->ui.passPassword->setPasswordNotRequiredEnabled(true);
     d->ui.x509PassKeyPassword->setPasswordOptionsEnabled(true);
-    d->ui.x509PassKeyPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    d->ui.x509PassKeyPassword->setPasswordNotRequiredEnabled(true);
     d->ui.x509PassPassword->setPasswordOptionsEnabled(true);
-    d->ui.x509PassPassword->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    d->ui.x509PassPassword->setPasswordNotRequiredEnabled(true);
 
     // use requesters' urlSelected signals to set other requester's startDirs to save clicking
     // around the filesystem

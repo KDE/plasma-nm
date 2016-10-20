@@ -51,7 +51,7 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
     d->setting = setting;
 
     d->ui.edt_password->setPasswordOptionsEnabled(true);
-    d->ui.edt_password->setPasswordOptionEnabled(PasswordField::NotRequired, true);
+    d->ui.edt_password->setPasswordNotRequiredEnabled(true);
 
     connect(d->ui.btnAdvanced, &QPushButton::clicked, this, &PptpSettingWidget::doAdvancedDialog);
 

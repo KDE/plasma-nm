@@ -75,7 +75,7 @@ void OpenVpnAuthWidget::readSecrets()
         label = new QLabel(this);
         label->setText(i18n("Key Password:"));
         lineEdit = new PasswordField(this);
-        lineEdit->setPasswordMode(true);
+        lineEdit->setPasswordModeEnabled(true);
         lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_CERTPASS));
         lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_CERTPASS)));
         d->layout->addRow(label, lineEdit);
@@ -83,7 +83,7 @@ void OpenVpnAuthWidget::readSecrets()
         label = new QLabel(this);
         label->setText(i18n("Password:"));
         lineEdit = new PasswordField(this);
-        lineEdit->setPasswordMode(true);
+        lineEdit->setPasswordModeEnabled(true);
         lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_PASSWORD));
         lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)));
         d->layout->addRow(label, lineEdit);
@@ -92,7 +92,7 @@ void OpenVpnAuthWidget::readSecrets()
             label = new QLabel(this);
             label->setText(i18n("Password:"));
             lineEdit = new PasswordField(this);
-            lineEdit->setPasswordMode(true);
+            lineEdit->setPasswordModeEnabled(true);
             lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_PASSWORD));
             lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)));
             d->layout->addRow(label, lineEdit);
@@ -101,7 +101,7 @@ void OpenVpnAuthWidget::readSecrets()
             label = new QLabel(this);
             label->setText(i18n("Key Password:"));
             lineEdit = new PasswordField(this);
-            lineEdit->setPasswordMode(true);
+            lineEdit->setPasswordModeEnabled(true);
             lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_CERTPASS));
             lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_CERTPASS)));
             d->layout->addRow(label, lineEdit);
@@ -112,7 +112,7 @@ void OpenVpnAuthWidget::readSecrets()
         label = new QLabel(this);
         label->setText(i18n("Proxy Password:"));
         lineEdit = new PasswordField(this);
-        lineEdit->setPasswordMode(true);
+        lineEdit->setPasswordModeEnabled(true);
         lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD));
         lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD)));
         d->layout->addRow(label, lineEdit);

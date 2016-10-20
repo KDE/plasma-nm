@@ -62,7 +62,7 @@
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="PasswordField" name="password">
-          <property name="passwordMode" stdset="0">
+          <property name="passwordModeEnabled" stdset="0">
            <bool>true</bool>
           </property>
          </widget>
@@ -161,7 +161,7 @@
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
          <widget class="PasswordField" name="pin">
-          <property name="passwordMode" stdset="0">
+          <property name="passwordModeEnabled" stdset="0">
            <bool>true</bool>
           </property>
          </widget>

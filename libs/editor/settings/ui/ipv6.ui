@@ -6,46 +6,34 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>424</width>
-    <height>498</height>
+    <width>418</width>
+    <height>427</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="toolTip">
    <string extracomment="Advanced IP settings"/>
   </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="4" column="1">
-    <spacer name="verticalSpacer_5">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>17</width>
-       <height>15</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="labelPrivacy">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
+   <item row="5" column="0" colspan="2">
+    <widget class="QCheckBox" name="ipv6RequiredCB">
+     <property name="toolTip">
+      <string>When connecting to IPv4-capable networks, allows the connection to complete if
+IPv6 configuration fails but IPv4 configuration succeeds</string>
      </property>
      <property name="text">
-      <string>Privacy:</string>
+      <string>IPv6 is required for this connection</string>
      </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="buddy">
-      <cstring>privacyCombo</cstring>
+     <property name="checked">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
@@ -68,79 +56,7 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="1" colspan="2">
-    <widget class="KComboBox" name="method">
-     <item>
-      <property name="text">
-       <string>Automatic</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Automatic (Only addresses)</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Automatic (Only DHCP)</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Link-Local</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string comment="like in use Manual configuration">Manual</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string comment="like in this setting is Disabled">Ignored</string>
-      </property>
-     </item>
-    </widget>
-   </item>
    <item row="1" column="1">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Minimum</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="dnsLabel">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string comment="@info">DNS Servers:</string>
-     </property>
-     <property name="textFormat">
-      <enum>Qt::AutoText</enum>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="buddy">
-      <cstring>dns</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1" colspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="KLineEdit" name="dns">
@@ -164,7 +80,7 @@
      <item>
       <widget class="QPushButton" name="dnsMorePushButton">
        <property name="toolTip">
-        <string>Edit DNS the list of servers</string>
+        <string>Edit the list of DNS servers</string>
        </property>
        <property name="icon">
         <iconset theme="document-properties">
@@ -174,70 +90,7 @@
      </item>
     </layout>
    </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="dnsSearchLabel">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string comment="@info">Search Domains:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="buddy">
-      <cstring>dnsSearch</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1" colspan="2">
-    <layout class="QHBoxLayout" name="horizontalLayout_5">
-     <item>
-      <widget class="KLineEdit" name="dnsSearch">
-       <property name="minimumSize">
-        <size>
-         <width>250</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>Use this field to specify one or more DNS domains to search. Use ',' to separate entries.</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="dnsSearchMorePushButton">
-       <property name="toolTip">
-        <string>Edit the list of DNS domains being searched</string>
-       </property>
-       <property name="icon">
-        <iconset theme="document-properties">
-         <normaloff>.</normaloff>.</iconset>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item row="6" column="1">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>17</width>
-       <height>15</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="7" column="0" colspan="3">
+   <item row="4" column="0" colspan="2">
     <layout class="QGridLayout" name="gridLayout">
      <item row="1" column="1">
       <widget class="QPushButton" name="btnRemove">
@@ -264,7 +117,7 @@
      <item row="0" column="0" rowspan="3">
       <widget class="QTableView" name="tableViewAddresses">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -305,46 +158,39 @@ an IP address</string>
      </item>
     </layout>
    </item>
-   <item row="8" column="0" colspan="2">
-    <widget class="QCheckBox" name="ipv6RequiredCB">
-     <property name="toolTip">
-      <string>When connecting to IPv4-capable networks, allows the connection to complete if
-IPv6 configuration fails but IPv4 configuration succeeds</string>
+   <item row="1" column="0">
+    <widget class="QLabel" name="dnsLabel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
      <property name="text">
-      <string>IPv6 is required for this connection</string>
+      <string comment="@info">DNS Servers:</string>
      </property>
-     <property name="checked">
-      <bool>true</bool>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>dns</cstring>
      </property>
     </widget>
    </item>
-   <item row="9" column="2">
-    <widget class="QPushButton" name="btnRoutes">
-     <property name="text">
-      <string>Routes...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="0" colspan="2">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="5" column="1" colspan="2">
+   <item row="3" column="1">
     <widget class="KComboBox" name="privacyCombo">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="toolTip">
       <string>Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If enabled, it makes the kernel generate
-a temporary IPv6 address in addition to the public one generated from MAC address via modified EUI-64.
-This enhances privacy, but could cause problems in some applications, on the other hand</string>
+a temporary IPv6 address in addition to the public one generated from MAC address via modified EUI-64.</string>
      </property>
      <item>
       <property name="text">
@@ -368,7 +214,170 @@ This enhances privacy, but could cause problems in some applications, on the oth
      </item>
     </widget>
    </item>
+   <item row="0" column="1">
+    <widget class="KComboBox" name="method">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>Automatic</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Automatic (Only addresses)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Automatic (Only DHCP)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Link-Local</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string comment="like in use Manual configuration">Manual</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string comment="like in this setting is Disabled">Ignored</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="KLineEdit" name="dnsSearch">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Use this field to specify one or more DNS domains to search. Use ',' to separate entries.</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="dnsSearchMorePushButton">
+       <property name="toolTip">
+        <string>Edit the list of DNS domains being searched</string>
+       </property>
+       <property name="icon">
+        <iconset theme="document-properties">
+         <normaloff>.</normaloff>.</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="7" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnRoutes">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Routes...</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="labelPrivacy">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Privacy:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>privacyCombo</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="dnsSearchLabel">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string comment="@info">Search Domains:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>dnsSearch</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
   </layout>
+  <zorder>labelPrivacy</zorder>
+  <zorder>ipv6RequiredCB</zorder>
+  <zorder>method</zorder>
+  <zorder>dnsLabel</zorder>
+  <zorder>dnsSearchLabel</zorder>
+  <zorder>privacyCombo</zorder>
+  <zorder>label</zorder>
+  <zorder>verticalSpacer</zorder>
  </widget>
  <customwidgets>
   <customwidget>
@@ -387,12 +396,10 @@ This enhances privacy, but could cause problems in some applications, on the oth
   <tabstop>dns</tabstop>
   <tabstop>dnsMorePushButton</tabstop>
   <tabstop>dnsSearch</tabstop>
-  <tabstop>dnsSearchMorePushButton</tabstop>
   <tabstop>privacyCombo</tabstop>
   <tabstop>tableViewAddresses</tabstop>
   <tabstop>btnAdd</tabstop>
   <tabstop>btnRemove</tabstop>
-  <tabstop>ipv6RequiredCB</tabstop>
   <tabstop>btnRoutes</tabstop>
  </tabstops>
  <resources/>

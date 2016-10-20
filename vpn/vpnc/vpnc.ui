@@ -7,55 +7,11 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>449</width>
-    <height>405</height>
+    <width>339</width>
+    <height>294</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Gateway:</string>
-     </property>
-     <property name="buddy">
-      <cstring>gateway</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2">
-    <widget class="QLineEdit" name="gateway">
-     <property name="toolTip">
-      <string>IP/hostname of IPsec gateway.</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>User name:</string>
-     </property>
-     <property name="buddy">
-      <cstring>user</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="2">
-    <widget class="QLineEdit" name="user">
-     <property name="toolTip">
-      <string>User name for the connection.</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0" colspan="2">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>User password:</string>
-     </property>
-     <property name="buddy">
-      <cstring>userPassword</cstring>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="2">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
@@ -76,24 +32,7 @@
      </item>
     </layout>
    </item>
-   <item row="3" column="2">
-    <widget class="QLineEdit" name="group">
-     <property name="toolTip">
-      <string>Group name</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>Group name:</string>
-     </property>
-     <property name="buddy">
-      <cstring>group</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0" colspan="3">
+   <item row="5" column="0" colspan="3">
     <widget class="QCheckBox" name="useHybridAuth">
      <property name="toolTip">
       <string>Enable hybrid authentication, i.e. use certificate in addition to password.</string>
@@ -103,13 +42,10 @@
      </property>
     </widget>
    </item>
-   <item row="4" column="0" colspan="2">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Group password:</string>
-     </property>
-     <property name="buddy">
-      <cstring>groupPassword</cstring>
+   <item row="0" column="2">
+    <widget class="QLineEdit" name="gateway">
+     <property name="toolTip">
+      <string>IP/hostname of IPsec gateway.</string>
      </property>
     </widget>
    </item>
@@ -133,23 +69,17 @@
      </item>
     </layout>
    </item>
-   <item row="5" column="1">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
+   <item row="4" column="0" colspan="2">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Group password:</string>
      </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Preferred</enum>
+     <property name="buddy">
+      <cstring>groupPassword</cstring>
      </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>144</height>
-      </size>
-     </property>
-    </spacer>
+    </widget>
    </item>
-   <item row="7" column="0">
+   <item row="6" column="0">
     <widget class="QLabel" name="label_6">
      <property name="enabled">
       <bool>false</bool>
@@ -162,7 +92,34 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="2">
+   <item row="1" column="2">
+    <widget class="QLineEdit" name="user">
+     <property name="toolTip">
+      <string>User name for the connection.</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QLineEdit" name="group">
+     <property name="toolTip">
+      <string>Group name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>User password:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>userPassword</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2">
     <widget class="KUrlRequester" name="caFile">
      <property name="enabled">
       <bool>false</bool>
@@ -198,6 +155,58 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Group name:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>group</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>User name:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>user</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Gateway:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="buddy">
+      <cstring>gateway</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="3">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>

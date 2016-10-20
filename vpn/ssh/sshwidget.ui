@@ -24,6 +24,9 @@
           <property name="text">
            <string>Gateway:</string>
           </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
          </widget>
         </item>
         <item>
@@ -45,6 +48,9 @@
         <property name="text">
          <string>Remote IP Address:</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
        </widget>
       </item>
       <item row="0" column="1">
@@ -55,6 +61,9 @@
         <property name="text">
          <string>Local IP Address:</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
        </widget>
       </item>
       <item row="1" column="1">
@@ -64,6 +73,9 @@
        <widget class="QLabel" name="lbl_netmask">
         <property name="text">
          <string>Netmask:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
@@ -91,6 +103,9 @@
         <property name="text">
          <string>Remote IP Address:</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
        </widget>
       </item>
       <item row="1" column="1">
@@ -105,6 +120,9 @@
         <property name="text">
          <string>Local IP Address:</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
        </widget>
       </item>
       <item row="2" column="1">
@@ -118,6 +136,9 @@
        <widget class="QLabel" name="lbl_netmaskIpv6">
         <property name="text">
          <string>Prefix:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
        </widget>
       </item>
@@ -194,6 +215,9 @@
           <property name="text">
            <string>Type:</string>
           </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
          </widget>
         </item>
         <item>
@@ -268,7 +292,6 @@
   <tabstop>le_localIpv6</tabstop>
   <tabstop>le_netmaskIpv6</tabstop>
   <tabstop>le_password</tabstop>
-  <tabstop>cmb_passwordOption</tabstop>
   <tabstop>kurl_sshKeyFile</tabstop>
   <tabstop>cmb_authType</tabstop>
   <tabstop>btn_advancedOption</tabstop>

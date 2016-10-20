@@ -265,9 +265,8 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->ipv4RequiredCB->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
         m_ui->tableViewAddresses->setEnabled(false);
-        m_ui->tableViewAddresses->setVisible(false);
-        m_ui->btnAdd->setVisible(false);
-        m_ui->btnRemove->setVisible(false);
+        m_ui->btnAdd->setEnabled(false);
+        m_ui->btnRemove->setEnabled(false);
     } else if (index == AutomaticOnlyIP) {
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(true);
@@ -278,9 +277,8 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->ipv4RequiredCB->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
         m_ui->tableViewAddresses->setEnabled(false);
-        m_ui->tableViewAddresses->setVisible(false);
-        m_ui->btnAdd->setVisible(false);
-        m_ui->btnRemove->setVisible(false);
+        m_ui->btnAdd->setEnabled(false);
+        m_ui->btnRemove->setEnabled(false);
     } else if (index == Manual) {  // Manual
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(true);
@@ -291,9 +289,8 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->ipv4RequiredCB->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
         m_ui->tableViewAddresses->setEnabled(true);
-        m_ui->tableViewAddresses->setVisible(true);
-        m_ui->btnAdd->setVisible(true);
-        m_ui->btnRemove->setVisible(true);
+        m_ui->btnAdd->setEnabled(true);
+        m_ui->btnRemove->setEnabled(true);
     } else if (index == LinkLocal || index == Shared) {  // Link-local or Shared
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
@@ -304,9 +301,8 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->ipv4RequiredCB->setEnabled(true);
         m_ui->btnRoutes->setEnabled(false);
         m_ui->tableViewAddresses->setEnabled(false);
-        m_ui->tableViewAddresses->setVisible(false);
-        m_ui->btnAdd->setVisible(false);
-        m_ui->btnRemove->setVisible(false);
+        m_ui->btnAdd->setEnabled(false);
+        m_ui->btnRemove->setEnabled(false);
     } else if (index == Disabled) {  // Disabled
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
@@ -317,9 +313,8 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->ipv4RequiredCB->setEnabled(false);
         m_ui->btnRoutes->setEnabled(false);
         m_ui->tableViewAddresses->setEnabled(false);
-        m_ui->tableViewAddresses->setVisible(false);
-        m_ui->btnAdd->setVisible(false);
-        m_ui->btnRemove->setVisible(false);
+        m_ui->btnAdd->setEnabled(false);
+        m_ui->btnRemove->setEnabled(false);
     }
 }
 

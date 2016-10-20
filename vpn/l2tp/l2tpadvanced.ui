@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>382</width>
-    <height>139</height>
+    <height>151</height>
    </rect>
   </property>
   <layout class="QFormLayout" name="formLayout">
-    <property name="verticalSpacing">
-    <number>0</number>
-    </property>
+   <property name="verticalSpacing">
+    <number>6</number>
+   </property>
    <item row="0" column="0" colspan="2">
     <widget class="QCheckBox" name="cbEnableTunnelToHost">
      <property name="text">

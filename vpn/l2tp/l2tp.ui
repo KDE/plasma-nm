@@ -12,7 +12,7 @@
   </property>
   <layout class="QFormLayout" name="formLayout">
    <property name="verticalSpacing">
-    <number>0</number>
+    <number>6</number>
    </property>
    <item row="0" column="0">
     <widget class="QLabel" name="label_2">
@@ -94,42 +94,35 @@ authentication purposes.</string>
      </property>
     </widget>
    </item>
-   <item row="7" column="0">
+   <item row="8" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
       <string/>
      </property>
     </widget>
    </item>
-   <item row="7" column="1">
-    <widget class="QCheckBox" name="cbUseCertificate">
-     <property name="text">
-      <string>Use Certificate</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="0">
+   <item row="9" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
       <string>CA Certificate: </string>
      </property>
     </widget>
    </item>
-   <item row="9" column="0">
+   <item row="10" column="0">
     <widget class="QLabel" name="label_7">
      <property name="text">
       <string>Certificate: </string>
      </property>
     </widget>
    </item>
-   <item row="10" column="0">
+   <item row="11" column="0">
     <widget class="QLabel" name="label_8">
      <property name="text">
       <string>Private Key: </string>
      </property>
     </widget>
    </item>
-   <item row="11" column="0">
+   <item row="12" column="0">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -142,7 +135,7 @@ authentication purposes.</string>
      </property>
     </spacer>
    </item>
-   <item row="12" column="0" colspan="2">
+   <item row="13" column="0" colspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <spacer name="horizontalSpacer">
@@ -173,24 +166,31 @@ authentication purposes.</string>
      </item>
     </layout>
    </item>
-   <item row="8" column="1">
+   <item row="9" column="1">
     <widget class="KUrlRequester" name="urCACertificate">
      <property name="enabled">
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="9" column="1">
+   <item row="10" column="1">
     <widget class="KUrlRequester" name="urCertificate">
      <property name="enabled">
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="10" column="1">
+   <item row="11" column="1">
     <widget class="KUrlRequester" name="urPrivateKey">
      <property name="enabled">
       <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QCheckBox" name="cbUseCertificate">
+     <property name="text">
+      <string>Use Certificate</string>
      </property>
     </widget>
    </item>

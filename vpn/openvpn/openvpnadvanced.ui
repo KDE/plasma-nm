@@ -28,6 +28,9 @@
            <property name="text">
             <string>Custom gateway port:</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
            <property name="buddy">
             <cstring>sbCustomPort</cstring>
            </property>
@@ -55,6 +58,9 @@
            <property name="text">
             <string>Custom tunnel MTU:</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
            <property name="buddy">
             <cstring>sbMtu</cstring>
            </property>
@@ -81,6 +87,9 @@
           <widget class="QLabel" name="label_9">
            <property name="text">
             <string>Custom UDP fragment size:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
            <property name="buddy">
             <cstring>sbUdpFragmentSize</cstring>
@@ -290,6 +299,9 @@ balancing measure.</string>
            <property name="text">
             <string>Cipher:</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
            <property name="buddy">
             <cstring>cboCipher</cstring>
            </property>
@@ -326,6 +338,9 @@ Block Chaining mode).</string>
            <property name="toolTip">
             <string>Set cipher key size to a custom value. If unspecified, it defaults to cipher-specific size.</string>
            </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
            <property name="text">
             <string>Use custom size of cipher key:</string>
            </property>
@@ -358,6 +373,9 @@ Block Chaining mode).</string>
           <widget class="QLabel" name="label_4">
            <property name="text">
             <string>HMAC Authentication:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
            <property name="buddy">
             <cstring>cboHmac</cstring>
@@ -643,7 +661,7 @@ to protect against DoS attacks.</string>
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <property name="verticalSpacing">
-        <number>0</number>
+        <number>6</number>
        </property>
        <item row="1" column="0">
         <widget class="QLabel" name="label_11">

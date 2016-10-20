@@ -50,12 +50,12 @@
      </item>
      <item>
       <property name="text">
-       <string>WPA &amp; WPA2 Personal</string>
+       <string>WPA/WPA2 Personal</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>WPA &amp; WPA2 Enterprise</string>
+       <string>WPA/WPA2 Enterprise</string>
       </property>
      </item>
     </widget>
@@ -79,7 +79,7 @@
      <widget class="QWidget" name="securityWep">
       <layout class="QFormLayout" name="formLayout">
        <property name="verticalSpacing">
-        <number>0</number>
+        <number>6</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_2">
@@ -176,7 +176,7 @@
      <widget class="QWidget" name="securityLeap">
       <layout class="QFormLayout" name="formLayout_3">
        <property name="verticalSpacing">
-        <number>0</number>
+        <number>6</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_8">
@@ -213,7 +213,7 @@
      <widget class="QWidget" name="securityWpaPersonal">
       <layout class="QFormLayout" name="formLayout_4">
        <property name="verticalSpacing">
-        <number>0</number>
+        <number>6</number>
        </property>
        <item row="0" column="0">
         <widget class="QLabel" name="label_10">
@@ -240,14 +240,19 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>PasswordField</class>
-   <extends>QLineEdit</extends>
-   <header>passwordfield.h</header>
-  </customwidget>
-  <customwidget>
    <class>KComboBox</class>
    <extends>QComboBox</extends>
    <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header>passwordfield.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

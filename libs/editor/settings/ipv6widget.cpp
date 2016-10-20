@@ -257,9 +257,8 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->privacyCombo->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
         m_ui->tableViewAddresses->setEnabled(false);
-        m_ui->tableViewAddresses->setVisible(false);
-        m_ui->btnAdd->setVisible(false);
-        m_ui->btnRemove->setVisible(false);
+        m_ui->btnAdd->setEnabled(false);
+        m_ui->btnRemove->setEnabled(false);
     } else if (index == AutomaticOnlyIP) {
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(true);
@@ -270,9 +269,8 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->privacyCombo->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
         m_ui->tableViewAddresses->setEnabled(false);
-        m_ui->tableViewAddresses->setVisible(false);
-        m_ui->btnAdd->setVisible(false);
-        m_ui->btnRemove->setVisible(false);
+        m_ui->btnAdd->setEnabled(false);
+        m_ui->btnRemove->setEnabled(false);
     } else if (index == Manual) {  // Manual
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(true);
@@ -283,9 +281,8 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->privacyCombo->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
         m_ui->tableViewAddresses->setEnabled(true);
-        m_ui->tableViewAddresses->setVisible(true);
-        m_ui->btnAdd->setVisible(true);
-        m_ui->btnRemove->setVisible(true);
+        m_ui->btnAdd->setEnabled(true);
+        m_ui->btnRemove->setEnabled(true);
     } else if (index == AutomaticOnlyDHCP || index == LinkLocal) {  // Link-local or DHCP
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
@@ -296,9 +293,8 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->privacyCombo->setEnabled(true);
         m_ui->btnRoutes->setEnabled(false);
         m_ui->tableViewAddresses->setEnabled(false);
-        m_ui->tableViewAddresses->setVisible(false);
-        m_ui->btnAdd->setVisible(false);
-        m_ui->btnRemove->setVisible(false);
+        m_ui->btnAdd->setEnabled(false);
+        m_ui->btnRemove->setEnabled(false);
     } else if (index == Disabled) {  // Ignored
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
@@ -309,9 +305,8 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->privacyCombo->setEnabled(false);
         m_ui->btnRoutes->setEnabled(false);
         m_ui->tableViewAddresses->setEnabled(false);
-        m_ui->tableViewAddresses->setVisible(false);
-        m_ui->btnAdd->setVisible(false);
-        m_ui->btnRemove->setVisible(false);
+        m_ui->btnAdd->setEnabled(false);
+        m_ui->btnRemove->setEnabled(false);
     }
 }
 

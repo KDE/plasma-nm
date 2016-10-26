@@ -20,7 +20,7 @@
 
 #include "teamwidget.h"
 #include "ui_team.h"
-#include "connectiondetaileditor.h"
+#include "connectioneditordialog.h"
 #include "debug.h"
 
 #include <QDesktopServices>
@@ -112,8 +112,8 @@ void TeamWidget::addTeam(QAction *action)
     connectionSettings->setSlaveType(type());
     connectionSettings->setAutoconnect(false);
 
-    QPointer<ConnectionDetailEditor> teamEditor = new ConnectionDetailEditor(connectionSettings, true);
-    connect(teamEditor.data(), &ConnectionDetailEditor::accepted,
+    QPointer<ConnectionEditorDialog> teamEditor = new ConnectionEditorDialog(connectionSettings);
+    connect(teamEditor.data(), &ConnectionEditorDialog::accepted,
             [teamEditor, this] () {
                 qCDebug(PLASMA_NM) << "Saving slave connection";
                 // qCDebug(PLASMA_NM) << teamEditor->setting();
@@ -121,7 +121,7 @@ void TeamWidget::addTeam(QAction *action)
                 QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
                 connect(watcher, &QDBusPendingCallWatcher::finished, this, &TeamWidget::teamAddComplete);
             });
-    connect(teamEditor.data(), &ConnectionDetailEditor::finished,
+    connect(teamEditor.data(), &ConnectionEditorDialog::finished,
             [teamEditor] () {
                 if (teamEditor) {
                     teamEditor->deleteLater();
@@ -168,13 +168,13 @@ void TeamWidget::editTeam()
 
     if (connection) {
         qCDebug(PLASMA_NM) << "Editing teamed connection" << currentItem->text() << uuid;
-        QPointer<ConnectionDetailEditor> teamEditor = new ConnectionDetailEditor(connection->settings(), this);
-        connect(teamEditor.data(), &ConnectionDetailEditor::accepted,
+        QPointer<ConnectionEditorDialog> teamEditor = new ConnectionEditorDialog(connection->settings());
+        connect(teamEditor.data(), &ConnectionEditorDialog::accepted,
                 [connection, teamEditor, this] () {
                     connection->update(teamEditor->setting());
                     connect(connection.data(), &NetworkManager::Connection::updated, this, &TeamWidget::populateTeams);
                 });
-        connect(teamEditor.data(), &ConnectionDetailEditor::finished,
+        connect(teamEditor.data(), &ConnectionEditorDialog::finished,
                 [teamEditor] () {
                     if (teamEditor) {
                         teamEditor->deleteLater();

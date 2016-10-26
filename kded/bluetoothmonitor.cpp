@@ -22,7 +22,6 @@
 */
 
 #include "bluetoothmonitor.h"
-#include "connectiondetaileditor.h"
 #include "debug.h"
 #include <config.h>
 

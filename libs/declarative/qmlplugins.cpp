@@ -28,6 +28,8 @@
 #include "networkstatus.h"
 
 #include "appletproxymodel.h"
+#include "editorproxymodel.h"
+#include "kcmidentitymodel.h"
 #include "networkmodel.h"
 
 #include "handler.h"
@@ -51,4 +53,8 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<NetworkModel>(uri, 0, 2, "NetworkModel");
     // @uri org.kde.plasma.networkmanagement.AppletProxyModel
     qmlRegisterType<AppletProxyModel>(uri, 0, 2, "AppletProxyModel");
+    // @uri org.kde.plasma.networkmanagement.EditorProxyModel
+    qmlRegisterType<EditorProxyModel>(uri, 0, 2, "EditorProxyModel");
+    // @uri org.kde.plasma.networkmanagement.KcmIdentityModel
+    qmlRegisterType<KcmIdentityModel>(uri, 0, 2, "KcmIdentityModel");
 }

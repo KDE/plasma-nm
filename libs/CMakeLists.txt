@@ -4,6 +4,7 @@ set(plasmanm_internal_SRCS
     models/appletproxymodel.cpp
     models/editoridentitymodel.cpp
     models/editorproxymodel.cpp
+    models/kcmidentitymodel.cpp
     models/networkitemslist.cpp
     models/networkmodel.cpp
     models/networkmodelitem.cpp

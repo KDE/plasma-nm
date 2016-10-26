@@ -20,7 +20,7 @@
 
 #include "bridgewidget.h"
 #include "ui_bridge.h"
-#include "connectiondetaileditor.h"
+#include "connectioneditordialog.h"
 #include "debug.h"
 
 #include <QDBusPendingReply>
@@ -123,8 +123,8 @@ void BridgeWidget::addBridge(QAction *action)
     connectionSettings->setSlaveType(type());
     connectionSettings->setAutoconnect(false);
 
-    QPointer<ConnectionDetailEditor> bridgeEditor = new ConnectionDetailEditor(connectionSettings, true);
-    connect(bridgeEditor.data(), &ConnectionDetailEditor::accepted,
+    QPointer<ConnectionEditorDialog> bridgeEditor = new ConnectionEditorDialog(connectionSettings);
+    connect(bridgeEditor.data(), &ConnectionEditorDialog::accepted,
             [bridgeEditor, this] () {
                 qCDebug(PLASMA_NM) << "Saving slave connection";
                 // qCDebug(PLASMA_NM) << bridgeEditor->setting();
@@ -132,7 +132,7 @@ void BridgeWidget::addBridge(QAction *action)
                 QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
                 connect(watcher, &QDBusPendingCallWatcher::finished, this, &BridgeWidget::bridgeAddComplete);
             });
-    connect(bridgeEditor.data(), &ConnectionDetailEditor::finished,
+    connect(bridgeEditor.data(), &ConnectionEditorDialog::finished,
             [bridgeEditor] () {
                 if (bridgeEditor) {
                     bridgeEditor->deleteLater();
@@ -179,13 +179,13 @@ void BridgeWidget::editBridge()
 
     if (connection) {
         qCDebug(PLASMA_NM) << "Editing bridged connection" << currentItem->text() << uuid;
-        QPointer<ConnectionDetailEditor> bridgeEditor = new ConnectionDetailEditor(connection->settings(), this);
-        connect(bridgeEditor.data(), &ConnectionDetailEditor::accepted,
+        QPointer<ConnectionEditorDialog> bridgeEditor = new ConnectionEditorDialog(connection->settings());
+        connect(bridgeEditor.data(), &ConnectionEditorDialog::accepted,
                 [connection, bridgeEditor, this] () {
                     connection->update(bridgeEditor->setting());
                     connect(connection.data(), &NetworkManager::Connection::updated, this, &BridgeWidget::populateBridges);
                 });
-        connect(bridgeEditor.data(), &ConnectionDetailEditor::finished,
+        connect(bridgeEditor.data(), &ConnectionEditorDialog::finished,
                 [bridgeEditor] () {
                     if (bridgeEditor) {
                         bridgeEditor->deleteLater();

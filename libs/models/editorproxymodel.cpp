@@ -19,8 +19,65 @@
 */
 
 #include "editorproxymodel.h"
-#include "networkmodelitem.h"
-#include "networkmodel.h"
+
+EditorProxyModel::SortedConnectionType EditorProxyModel::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
+{
+    switch (type) {
+        case NetworkManager::ConnectionSettings::Unknown:
+            return EditorProxyModel::EditorProxyModel::Unknown;
+            break;
+        case NetworkManager::ConnectionSettings::Adsl:
+            return EditorProxyModel::EditorProxyModel::Adsl;
+            break;
+        case NetworkManager::ConnectionSettings::Bluetooth:
+            return EditorProxyModel::Bluetooth;
+            break;
+        case NetworkManager::ConnectionSettings::Bond:
+            return EditorProxyModel::Bond;
+            break;
+        case NetworkManager::ConnectionSettings::Bridge:
+            return EditorProxyModel::Bridge;
+            break;
+        case NetworkManager::ConnectionSettings::Cdma:
+            return EditorProxyModel::Cdma;
+            break;
+        case NetworkManager::ConnectionSettings::Gsm:
+            return EditorProxyModel::Gsm;
+            break;
+        case NetworkManager::ConnectionSettings::Infiniband:
+            return EditorProxyModel::Infiniband;
+            break;
+        case NetworkManager::ConnectionSettings::OLPCMesh:
+            return EditorProxyModel::OLPCMesh;
+            break;
+        case NetworkManager::ConnectionSettings::Pppoe:
+            return EditorProxyModel::Pppoe;
+            break;
+#if NM_CHECK_VERSION(0, 9, 10)
+        case NetworkManager::ConnectionSettings::Team:
+            return EditorProxyModel::Team;
+            break;
+#endif
+        case NetworkManager::ConnectionSettings::Vlan:
+            return EditorProxyModel::Vlan;
+            break;
+        case NetworkManager::ConnectionSettings::Vpn:
+            return EditorProxyModel::Vpn;
+            break;
+        case NetworkManager::ConnectionSettings::Wimax:
+            return EditorProxyModel::Wimax;
+            break;
+        case NetworkManager::ConnectionSettings::Wired:
+            return EditorProxyModel::Wired;
+            break;
+        case NetworkManager::ConnectionSettings::Wireless:
+            return EditorProxyModel::Wireless;
+            break;
+        default:
+            return EditorProxyModel::Unknown;
+            break;
+    }
+}
 
 EditorProxyModel::EditorProxyModel(QObject* parent)
     : QSortFilterProxyModel(parent)
@@ -34,7 +91,7 @@ EditorProxyModel::EditorProxyModel(QObject* parent)
 EditorProxyModel::~EditorProxyModel()
 {
 }
-
+#include "debug.h"
 bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
 {
     const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
@@ -66,8 +123,11 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
 
     const QString pattern = filterRegExp().pattern();
     if (!pattern.isEmpty()) {  // filtering on data (connection name), wildcard-only
-        const QString data = sourceModel()->data(index, Qt::DisplayRole).toString();
-        // qCDebug(PLASMA_NM) << "Filtering " << data << "with pattern" << pattern;
+        QString data = sourceModel()->data(index, Qt::DisplayRole).toString();
+        if (data.isEmpty()) {
+            data = sourceModel()->data(index, NetworkModel::NameRole).toString();
+        }
+        qCDebug(PLASMA_NM) << "Filtering " << data << "with pattern" << pattern;
         return data.contains(pattern, Qt::CaseInsensitive);
     }
 
@@ -77,11 +137,26 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
 bool EditorProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
     if (sourceModel()) { // special sorting case, only for editor
-        if (sortColumn() == 2) {
-            const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStampRole).toDateTime();
-            const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStampRole).toDateTime();
-            return leftDate < rightDate;
+        const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStampRole).toDateTime();
+        const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+        const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
+        const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStampRole).toDateTime();
+        const bool rightConnected = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+        const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
+
+        if (leftType < rightType) {
+            return false;
+        } else if (leftType > rightType) {
+            return true;
         }
+
+        if (leftConnected < rightConnected) {
+            return true;
+        } else if (leftConnected > rightConnected) {
+            return false;
+        }
+
+        return leftDate < rightDate;
     }
 
     return QSortFilterProxyModel::lessThan(left, right);

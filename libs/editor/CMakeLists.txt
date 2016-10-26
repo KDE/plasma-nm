@@ -13,6 +13,7 @@ set(plasmanm_editor_SRCS
     settings/pppoewidget.cpp
     settings/pppwidget.cpp
     settings/security802-1x.cpp
+    settings/teamwidget.cpp
     settings/vlanwidget.cpp
     settings/wificonnectionwidget.cpp
     settings/wifisecurity.cpp
@@ -34,8 +35,10 @@ set(plasmanm_editor_SRCS
     widgets/settingwidget.cpp
     widgets/ssidcombobox.cpp
 
+    connectioneditorbase.cpp
+    connectioneditordialog.cpp
+    connectioneditortabwidget.cpp
     listvalidator.cpp
-    connectiondetaileditor.cpp
     simpleipv4addressvalidator.cpp
     simpleipv6addressvalidator.cpp
     vpnuiplugin.cpp
@@ -49,12 +52,6 @@ if (WITH_MODEMMANAGER_SUPPORT)
         ${plasmanm_editor_SRCS}
         widgets/mobileconnectionwizard.cpp
         mobileproviders.cpp)
-endif()
-
-if (${NETWORKMANAGER_VERSION} VERSION_EQUAL 0.9.10.0 OR ${NETWORKMANAGER_VERSION} VERSION_GREATER 0.9.10.0)
-set(plasmanm_editor_SRCS
-    ${plasmanm_editor_SRCS}
-    settings/teamwidget.cpp)
 endif()
 
 ki18n_wrap_ui(plasmanm_editor_SRCS
@@ -83,7 +80,7 @@ ki18n_wrap_ui(plasmanm_editor_SRCS
     widgets/ui/ipv4routes.ui
     widgets/ui/ipv6routes.ui
 
-    connectiondetaileditor.ui
+    connectioneditortabwidget.ui
 )
 
 add_library(plasmanm_editor SHARED ${plasmanm_editor_SRCS})

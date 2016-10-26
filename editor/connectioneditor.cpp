@@ -21,7 +21,7 @@
 
 
 #include "connectioneditor.h"
-#include "connectiondetaileditor.h"
+#include "connectioneditordialog.h"
 
 #include "debug.h"
 #include "editoridentitymodel.h"
@@ -355,13 +355,13 @@ void ConnectionEditor::addConnection(QAction* action)
 
 void ConnectionEditor::addConnection(const NetworkManager::ConnectionSettings::Ptr& connectionSettings)
 {
-    QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(connectionSettings, true);
-    connect(editor.data(), &ConnectionDetailEditor::accepted,
+    QPointer<ConnectionEditorDialog> editor = new ConnectionEditorDialog(connectionSettings);
+    connect(editor.data(), &ConnectionEditorDialog::accepted,
             [connectionSettings, editor, this] () {
                 qCDebug(PLASMA_NM) << "Adding new connection of type " << NetworkManager::ConnectionSettings::typeAsString(connectionSettings->connectionType());
                 m_handler->addConnection(editor->setting());
             });
-    connect(editor.data(), &ConnectionDetailEditor::finished,
+    connect(editor.data(), &ConnectionEditorDialog::finished,
             [editor] () {
                 if (editor) {
                     editor->deleteLater();
@@ -570,12 +570,12 @@ void ConnectionEditor::slotItemDoubleClicked(const QModelIndex &index)
 
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(index.data(NetworkModel::UuidRole).toString());
 
-    QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(connection->settings(), false);
-    connect(editor.data(), &ConnectionDetailEditor::accepted,
+    QPointer<ConnectionEditorDialog> editor = new ConnectionEditorDialog(connection->settings());
+    connect(editor.data(), &ConnectionEditorDialog::accepted,
             [editor, connection, this] () {
                 m_handler->updateConnection(connection, editor->setting());
             });
-    connect(editor.data(), &ConnectionDetailEditor::finished,
+    connect(editor.data(), &ConnectionEditorDialog::finished,
             [editor] () {
                 if (editor) {
                     editor->deleteLater();

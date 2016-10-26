@@ -19,7 +19,7 @@
 */
 
 #include "handler.h"
-#include "connectiondetaileditor.h"
+#include "connectioneditordialog.h"
 #include "uiutils.h"
 #include "debug.h"
 
@@ -195,15 +195,15 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         m_tmpDevicePath = device;
         m_tmpSpecificPath = specificObject;
 
-        QPointer<ConnectionDetailEditor> editor = new ConnectionDetailEditor(settings, true);
+        QPointer<ConnectionEditorDialog> editor = new ConnectionEditorDialog(settings);
         editor->show();
         KWindowSystem::setState(editor->winId(), NET::KeepAbove);
         KWindowSystem::forceActiveWindow(editor->winId());
-        connect(editor.data(), &ConnectionDetailEditor::accepted,
+        connect(editor.data(), &ConnectionEditorDialog::accepted,
                 [editor, this] () {
                     addConnection(editor->setting());
                 });
-        connect(editor.data(), &ConnectionDetailEditor::finished,
+        connect(editor.data(), &ConnectionEditorDialog::finished,
                 [editor] () {
                     if (editor) {
                         editor->deleteLater();

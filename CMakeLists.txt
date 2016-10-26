@@ -25,6 +25,8 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     DBus
     Network
     Quick
+    QuickWidgets
+    UiTools
     Widgets
 )
 
@@ -84,6 +86,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR} # for config.h
 add_subdirectory(applet)
 add_subdirectory(editor)
 add_subdirectory(kded)
+add_subdirectory(kcm)
 add_subdirectory(libs)
 add_subdirectory(vpn)
 

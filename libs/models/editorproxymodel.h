@@ -21,6 +21,8 @@
 #ifndef PLASMA_NM_EDITOR_PROXY_MODEL_H
 #define PLASMA_NM_EDITOR_PROXY_MODEL_H
 
+#include "networkmodelitem.h"
+
 #include <QSortFilterProxyModel>
 
 class Q_DECL_EXPORT EditorProxyModel : public QSortFilterProxyModel
@@ -28,6 +30,29 @@ class Q_DECL_EXPORT EditorProxyModel : public QSortFilterProxyModel
 Q_OBJECT
 Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
 public:
+    enum SortedConnectionType {
+        Wired,
+        Wireless,
+        Wimax,
+        Gsm,
+        Cdma,
+        Pppoe,
+        Adsl,
+        Infiniband,
+        OLPCMesh,
+        Bluetooth,
+        Vpn,
+        Vlan,
+        Bridge,
+        Bond,
+#if NM_CHECK_VERSION(0, 9, 10)
+        Team,
+#endif
+        Unknown
+    };
+
+    static SortedConnectionType connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type);
+
     explicit EditorProxyModel(QObject* parent = 0);
     virtual ~EditorProxyModel();
 

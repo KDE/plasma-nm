@@ -43,8 +43,12 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void onSelectedConnectionChanged(const QString &connectionPath);
+    void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
 
 private:
+    void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
+    void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
+    
     QString m_currentConnectionPath;
     Handler *m_handler;
     ConnectionEditorTabWidget *m_tabWidget;

@@ -135,29 +135,38 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
 }
 
 bool EditorProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
-{
-    if (sourceModel()) { // special sorting case, only for editor
-        const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStampRole).toDateTime();
-        const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
-        const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
-        const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStampRole).toDateTime();
-        const bool rightConnected = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
-        const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
+{ 
+    const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const QString leftName = sourceModel()->data(left, NetworkModel::NameRole).toString();
+    const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
+    const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStampRole).toDateTime();
 
-        if (leftType < rightType) {
-            return false;
-        } else if (leftType > rightType) {
-            return true;
-        }
+    const bool rightConnected = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const QString rightName = sourceModel()->data(right, NetworkModel::NameRole).toString();
+    const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
+    const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStampRole).toDateTime();
 
-        if (leftConnected < rightConnected) {
-            return true;
-        } else if (leftConnected > rightConnected) {
-            return false;
-        }
-
-        return leftDate < rightDate;
+    if (leftType < rightType) {
+        return false;
+    } else if (leftType > rightType) {
+        return true;
+    }
+    
+    if (leftConnected < rightConnected) {
+        return true;
+    } else if (leftConnected > rightConnected) {
+        return false;
     }
 
-    return QSortFilterProxyModel::lessThan(left, right);
+    if (leftDate > rightDate) {
+        return false;
+    } else if (leftDate < rightDate) {
+        return true;
+    }
+
+    if (QString::localeAwareCompare(leftName, rightName) > 0) {
+        return true;
+    } else {
+        return false;
+    }
 }

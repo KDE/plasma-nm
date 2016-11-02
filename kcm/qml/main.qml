@@ -32,6 +32,7 @@ Item {
     anchors.fill: parent
 
     signal selectedConnectionChanged(string connection)
+    signal requestCreateConnection(int type, string vpnType, string specificType, bool shared)
 
     SystemPalette {
         id: palette
@@ -79,7 +80,7 @@ Item {
         id: scrollView
 
         anchors {
-            bottom: parent.bottom
+            bottom: buttonRow.top
             left: parent.left
             right: parent.right
             top: searchField.bottom
@@ -100,9 +101,57 @@ Item {
             delegate: ConnectionItem { }
 
             onCurrentConnectionChanged: {
-                console.warn(currentConnection)
-                root.selectedConnectionChanged(currentConnection)
+                if (currentConnection) {
+                    root.selectedConnectionChanged(currentConnection)
+                }
             }
         }
+    }
+    
+    Column {
+        id: buttonRow
+        
+        anchors {
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+            margins: Math.round(units.gridUnit / 2)
+        }
+        
+        spacing: Math.round(units.gridUnit / 2)
+        
+        PlasmaCore.SvgItem {
+            id: separator
+            height: lineSvg.elementSize("horizontal-line").height; width: parent.width
+            elementId: "horizontal-line"
+            svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
+        }
+        
+        PlasmaComponents.Button {
+            id: addConnectionButton
+            
+            anchors {
+                right: parent.right
+            }
+            
+            iconSource: "list-add"
+            text: i18n("Add new connection")
+            
+            onClicked: {
+                addNewConnectionDialog.open()
+            }
+        }
+    }
+    
+    Dialog {
+        id: addNewConnectionDialog
+        
+        onRequestCreateConnection: {
+            root.requestCreateConnection(type, vpnType, specificType, shared)
+        }
+    }
+    
+    function deselectConnections() {
+        connectionView.currentConnection = ""
     }
 }

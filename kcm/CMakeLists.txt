@@ -5,6 +5,7 @@ include_directories(${CMAKE_SOURCE_DIR}/libs/editor
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-kcm\")
 
 set(kcm_networkmanagement_PART_SRCS
+    ../libs/debug.cpp
     kcm.cpp
 )
 
@@ -35,6 +36,7 @@ install(TARGETS kcm_networkmanagement  DESTINATION ${PLUGIN_INSTALL_DIR} )
 install( FILES kcm_networkmanagement.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
 install( FILES
     qml/ConnectionItem.qml
+    qml/Dialog.qml
     qml/Header.qml
     qml/main.qml
 

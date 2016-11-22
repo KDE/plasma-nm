@@ -91,7 +91,7 @@ EditorProxyModel::EditorProxyModel(QObject* parent)
 EditorProxyModel::~EditorProxyModel()
 {
 }
-#include "debug.h"
+
 bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
 {
     const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
@@ -106,14 +106,19 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
 
 #if NM_CHECK_VERSION(0, 9, 10)
     const NetworkManager::ConnectionSettings::ConnectionType type = (NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(index, NetworkModel::TypeRole).toUInt();
-    if (type == NetworkManager::ConnectionSettings::Generic) {
-        return false;
-    }
+    if (type == NetworkManager::ConnectionSettings::Bond ||
+        type == NetworkManager::ConnectionSettings::Bridge ||
+        type == NetworkManager::ConnectionSettings::Generic ||
+        type == NetworkManager::ConnectionSettings::Infiniband ||
+        type == NetworkManager::ConnectionSettings::Team ||
 #if NM_CHECK_VERSION(1, 1, 92)
-    if (type == NetworkManager::ConnectionSettings::Tun) {
+        type == NetworkManager::ConnectionSettings::Vlan ||
+        type == NetworkManager::ConnectionSettings::Tun) {
+#else
+        type == NetworkManager::ConnectionSettings::Vlan) {
+#endif
         return false;
     }
-#endif
 #endif
 
     NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
@@ -127,7 +132,6 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
         if (data.isEmpty()) {
             data = sourceModel()->data(index, NetworkModel::NameRole).toString();
         }
-        qCDebug(PLASMA_NM) << "Filtering " << data << "with pattern" << pattern;
         return data.contains(pattern, Qt::CaseInsensitive);
     }
 
@@ -135,7 +139,7 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
 }
 
 bool EditorProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
-{ 
+{
     const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
     const QString leftName = sourceModel()->data(left, NetworkModel::NameRole).toString();
     const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
@@ -151,7 +155,7 @@ bool EditorProxyModel::lessThan(const QModelIndex &left, const QModelIndex &righ
     } else if (leftType > rightType) {
         return true;
     }
-    
+
     if (leftConnected < rightConnected) {
         return true;
     } else if (leftConnected > rightConnected) {

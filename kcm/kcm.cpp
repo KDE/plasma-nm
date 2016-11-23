@@ -76,7 +76,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     QObject *rootItem = m_quickView->rootObject();
     connect(rootItem, SIGNAL(selectedConnectionChanged(QString)), this, SLOT(onSelectedConnectionChanged(QString)));
     connect(rootItem, SIGNAL(requestCreateConnection(int,QString,QString,bool)), this, SLOT(onRequestCreateConnection(int,QString,QString,bool)));
-    
+
     QVBoxLayout *l = new QVBoxLayout(this);
     l->addWidget(mainWidget);
 
@@ -85,6 +85,12 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
 
 KCMNetworkmanagement::~KCMNetworkmanagement()
 {
+    delete m_handler;
+    if (m_tabWidget) {
+        delete m_tabWidget;
+    }
+    delete m_quickView;
+    delete m_ui;
 }
 
 void KCMNetworkmanagement::defaults()
@@ -98,7 +104,7 @@ void KCMNetworkmanagement::load()
     if (m_currentConnectionPath.isEmpty()) {
         return;
     }
-    
+
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_currentConnectionPath);
     if (connection) {
         NetworkManager::ConnectionSettings::Ptr connectionSettings = connection->settings();
@@ -107,18 +113,18 @@ void KCMNetworkmanagement::load()
             m_tabWidget->setConnection(connectionSettings);
         }
     }
-    
+
     KCModule::load();
 }
 
 void KCMNetworkmanagement::save()
 {
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_currentConnectionPath);
-    
+
     if (connection) {
         m_handler->updateConnection(connection, m_tabWidget->setting());
     }
-    
+
     KCModule::save();
 }
 
@@ -219,8 +225,13 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
 
 void KCMNetworkmanagement::onSelectedConnectionChanged(const QString &connectionPath)
 {
+    if (connectionPath.isEmpty()) {
+        resetSelection();
+        return;
+    }
+
     m_currentConnectionPath = connectionPath;
-    
+
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_currentConnectionPath);
     if (connection) {
         NetworkManager::ConnectionSettings::Ptr connectionSettings = connection->settings();
@@ -230,16 +241,8 @@ void KCMNetworkmanagement::onSelectedConnectionChanged(const QString &connection
 
 void KCMNetworkmanagement::addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings)
 {
-    // Reset selected connections
-    m_currentConnectionPath.clear();
-    QObject *rootItem = m_quickView->rootObject();
-    QMetaObject::invokeMethod(rootItem, "deselectConnections");
-    if (m_tabWidget) {
-        delete m_ui->connectionConfiguration->layout();
-        delete m_tabWidget;
-        m_tabWidget = nullptr;
-    }
-    
+    resetSelection();
+
     QPointer<ConnectionEditorDialog> editor = new ConnectionEditorDialog(connectionSettings);
     connect(editor.data(), &ConnectionEditorDialog::accepted,
             [connectionSettings, editor, this] () {
@@ -268,6 +271,18 @@ void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::Connecti
     Q_EMIT changed(true);
 }
 
+void KCMNetworkmanagement::resetSelection()
+{
+    // Reset selected connections
+    m_currentConnectionPath.clear();
+    QObject *rootItem = m_quickView->rootObject();
+    QMetaObject::invokeMethod(rootItem, "deselectConnections");
+    if (m_tabWidget) {
+        delete m_ui->connectionConfiguration->layout();
+        delete m_tabWidget;
+        m_tabWidget = nullptr;
+    }
+}
 
 #include "kcm.moc"
 

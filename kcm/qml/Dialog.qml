@@ -31,15 +31,15 @@ Dialog {
     title: i18n("Choose a connection type")
 
     signal requestCreateConnection(int type, string vpnType, string specificType, bool shared)
-    
+
     contentItem: Item {
         implicitHeight: 600
         implicitWidth: 500
-        
+
         PlasmaNM.CreatableConnectionsModel {
             id: connectionModel
         }
-        
+
         SystemPalette {
             id: palette
         }
@@ -60,16 +60,16 @@ Dialog {
                 right: parent.right
                 top: parent.top
             }
-            
+
             ListView {
                 id: view
-                
+
                 property int currentlySelectedIndex: -1
                 property bool connectionShared
                 property string connectionSpecificType
                 property int connectionType
                 property string connectionVpnType
-                
+
                 anchors.fill: parent
                 clip: true
                 model: connectionModel
@@ -80,7 +80,7 @@ Dialog {
                 delegate: PlasmaComponents.ListItem {
                     checked: mouseArea.containsMouse || view.currentlySelectedIndex == index
                     height: connectionTypeBase.height
-                    
+
                     Item {
                         id: connectionTypeBase
 
@@ -135,12 +135,12 @@ Dialog {
                             text: ConnectionDescription
                         }
                     }
-                    
+
                     MouseArea {
                         id: mouseArea
                         anchors.fill: parent
                         hoverEnabled: true
-                    
+
                         onClicked: {
                             createButton.enabled = true
                             view.currentlySelectedIndex = index
@@ -149,7 +149,7 @@ Dialog {
                             view.connectionType = ConnectionType
                             view.connectionVpnType = ConnectionVpnType
                         }
-                        
+
                         onDoubleClicked: {
                             dialog.close()
                             dialog.requestCreateConnection(view.connectionType, view.connectionVpnType, view.ConnectionSpecificType, view.connectionShared)
@@ -158,7 +158,7 @@ Dialog {
                 }
             }
         }
-        
+
         Row {
             id: buttonRow
             anchors {
@@ -167,22 +167,22 @@ Dialog {
                 margins: Math.round(units.gridUnit / 2)
             }
             spacing: Math.round(units.gridUnit / 2)
-                
+
             PlasmaComponents.Button {
                 id: createButton
                 enabled: false
                 text: i18n("Create")
-                
+
                 onClicked: {
                     dialog.close()
                     dialog.requestCreateConnection(view.connectionType, view.connectionVpnType, view.connectionSpecificType, view.connectionShared)
                 }
             }
-            
+
             PlasmaComponents.Button {
                 id: closeButton
                 text: i18n("Close")
-                
+
                 onClicked: {
                     dialog.close()
                 }

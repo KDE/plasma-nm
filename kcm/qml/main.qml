@@ -21,6 +21,7 @@
 import QtQuick 2.1
 import QtQuick.Controls 1.2
 import QtQuick.Layouts 1.1
+import QtQuick.Dialogs 1.1
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
@@ -28,8 +29,9 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 Item {
     id: root
-    focus: true
+
     anchors.fill: parent
+    focus: true
 
     signal selectedConnectionChanged(string connection)
     signal requestCreateConnection(int type, string vpnType, string specificType, bool shared)
@@ -61,21 +63,21 @@ Item {
 
     PlasmaComponents.TextField {
         id: searchField
-        
+
         anchors {
             left: parent.left
             right: parent.right
             top: parent.top
         }
-        
+
         placeholderText: i18n("Type here to search connections...")
-        
+
         onTextChanged: {
             console.error(text)
             editorProxyModel.setFilterRegExp(text)
         }
     }
-    
+
     PlasmaExtras.ScrollArea {
         id: scrollView
 
@@ -98,59 +100,83 @@ Item {
             boundsBehavior: Flickable.StopAtBounds
             section.property: "KcmConnectionType"
             section.delegate: Header { text: section }
-            delegate: ConnectionItem { }
+            delegate: ConnectionItem {
+                onAboutToRemove: {
+                    deleteConfirmationDialog.connectionName = name
+                    deleteConfirmationDialog.connectionPath = path
+                    deleteConfirmationDialog.open()
+                }
+            }
 
             onCurrentConnectionChanged: {
-                if (currentConnection) {
-                    root.selectedConnectionChanged(currentConnection)
-                }
+                root.selectedConnectionChanged(currentConnection)
             }
         }
     }
-    
+
     Column {
         id: buttonRow
-        
+
         anchors {
             bottom: parent.bottom
             left: parent.left
             right: parent.right
             margins: Math.round(units.gridUnit / 2)
         }
-        
+
         spacing: Math.round(units.gridUnit / 2)
-        
+
         PlasmaCore.SvgItem {
             id: separator
             height: lineSvg.elementSize("horizontal-line").height; width: parent.width
             elementId: "horizontal-line"
             svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
         }
-        
+
         PlasmaComponents.Button {
             id: addConnectionButton
-            
+
             anchors {
                 right: parent.right
             }
-            
+
             iconSource: "list-add"
             text: i18n("Add new connection")
-            
+
             onClicked: {
                 addNewConnectionDialog.open()
             }
         }
     }
-    
+
+    MessageDialog {
+        id: deleteConfirmationDialog
+
+        property string connectionName
+        property string connectionPath
+
+        icon: StandardIcon.Question
+        standardButtons: StandardButton.Ok | StandardButton.Close
+        title: i18n("Remove connection")
+        text: i18n("Do you want to remove the connection '%1'", connectionName)
+
+        onAccepted: {
+            if (connectionPath == connectionView.currentConnection) {
+                // Deselect now non-existing connection
+                deselectConnections()
+            }
+            handler.removeConnection(connectionPath)
+        }
+    }
+
     Dialog {
         id: addNewConnectionDialog
-        
+
         onRequestCreateConnection: {
             root.requestCreateConnection(type, vpnType, specificType, shared)
         }
     }
-    
+
     function deselectConnections() {
         connectionView.currentConnection = ""
     }

@@ -29,9 +29,10 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 PlasmaComponents.ListItem {
     id: connectionItem
 
-    checked: containsMouse || ConnectionPath === connectionView.currentConnection
-    enabled: true
+    checked: mouseArea.containsMouse || ConnectionPath === connectionView.currentConnection
     height: connectionItemBase.height
+
+    signal aboutToRemove(string name, string path)
 
     Item {
         id: connectionItemBase
@@ -63,7 +64,7 @@ PlasmaComponents.ListItem {
                 bottom: connectionIcon.verticalCenter
                 left: connectionIcon.right
                 leftMargin: Math.round(units.gridUnit / 2)
-                right: parent.right
+                right: connectingIndicator.visible ? connectingIndicator.left : parent.right
             }
             height: paintedHeight
             elide: Text.ElideRight
@@ -79,7 +80,7 @@ PlasmaComponents.ListItem {
             anchors {
                 left: connectionIcon.right
                 leftMargin: Math.round(units.gridUnit / 2)
-                right: parent.right
+                right: connectingIndicator.visible ? connectingIndicator.left : parent.right
                 top: connectionNameLabel.bottom
             }
             height: paintedHeight
@@ -87,6 +88,60 @@ PlasmaComponents.ListItem {
             font.pointSize: theme.smallestFont.pointSize
             opacity: 0.6
             text: itemText()
+        }
+
+        PlasmaComponents.BusyIndicator {
+            id: connectingIndicator
+
+            anchors {
+                right: parent.right
+                rightMargin: Math.round(units.gridUnit / 2)
+                verticalCenter: connectionIcon.verticalCenter
+            }
+            height: units.iconSizes.medium; width: height
+            running: ConnectionState == PlasmaNM.Enums.Activating
+            visible: running
+        }
+    }
+
+    PlasmaComponents.Menu {
+        id: connectionItemMenu
+        visualParent: mouseArea
+
+        PlasmaComponents.MenuItem {
+            text: ConnectionState == PlasmaNM.Enums.Deactivated ? i18n("Connect") : i18n("Disconnect")
+            visible: ItemType == 1
+            onClicked: {
+                if (ConnectionState == PlasmaNM.Enums.Deactivated) {
+                    handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
+                } else {
+                    handler.deactivateConnection(ConnectionPath, DevicePath);
+                }
+            }
+        }
+
+        PlasmaComponents.MenuItem {
+            icon: "list-remove"
+            text: i18n("Delete");
+
+            onClicked: {
+                aboutToRemove(Name, ConnectionPath)
+            }
+        }
+    }
+
+    MouseArea {
+        id: mouseArea
+        anchors.fill: parent
+        acceptedButtons: Qt.AllButtons;
+        hoverEnabled: true
+
+        onClicked: {
+            if (mouse.button === Qt.LeftButton) {
+                connectionView.currentConnection = ConnectionPath
+            } else if (mouse.button == Qt.RightButton) {
+                connectionItemMenu.open(mouse.x, mouse.y)
+            }
         }
     }
 
@@ -96,9 +151,5 @@ PlasmaComponents.ListItem {
         } else {
             return LastUsed
         }
-    }
-
-    onClicked: {
-        connectionView.currentConnection = ConnectionPath
     }
 }

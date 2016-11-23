@@ -48,7 +48,8 @@ private Q_SLOTS:
 private:
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
-    
+    void resetSelection();
+
     QString m_currentConnectionPath;
     Handler *m_handler;
     ConnectionEditorTabWidget *m_tabWidget;

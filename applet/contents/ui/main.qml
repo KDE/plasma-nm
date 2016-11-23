@@ -21,12 +21,14 @@
 import QtQuick 2.2
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import org.kde.kquickcontrolsaddons 2.0
 import QtQuick.Layouts 1.1
 
 Item {
     id: mainWindow
 
     property bool showSections: true
+    readonly property string kcm: "kcm_networkmanagement.desktop"
 
     Plasmoid.toolTipMainText: i18n("Networks")
     Plasmoid.toolTipSubText: networkStatus.activeConnections
@@ -42,13 +44,13 @@ Item {
         focus: true
     }
 
-    function action_openEditor() {
-        handler.openEditor()
+    function action_openKCM() {
+        KCMShell.open(kcm)
     }
 
     Component.onCompleted: {
         plasmoid.removeAction("configure");
-        plasmoid.setAction("openEditor", i18n("&Configure Network Connections..."), "preferences-system-network");
+        plasmoid.setAction("openKCM", i18n("&Configure Network Connections..."), "preferences-system-network");
     }
 
     PlasmaNM.NetworkStatus {

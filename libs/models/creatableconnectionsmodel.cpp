@@ -132,18 +132,18 @@ void CreatableConnectionItem::setVpnType(const QString &vpnType)
 
 CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
     : QAbstractListModel(parent)
-{ 
+{
     CreatableConnectionItem *connectionItem;
     connectionItem = new CreatableConnectionItem(i18n("DSL"), i18n("Hardware based connections"),
                                                  i18n("Some DSL description"), QStringLiteral("network-modem"),
                                                  NetworkManager::ConnectionSettings::Pppoe);
     m_list << connectionItem;
-    
+
     connectionItem = new CreatableConnectionItem(i18n("Infiniband"), i18n("Hardware based connections"),
                                                  i18n("Some infiniband description"), QStringLiteral("network-wired"),
                                                  NetworkManager::ConnectionSettings::Infiniband);
     m_list << connectionItem;
-    
+
 #if WITH_MODEMMANAGER_SUPPORT
     connectionItem = new CreatableConnectionItem(i18n("Mobile Broadband"), i18n("Hardware based connections"),
                                                  i18n("Some mobile broadband description"), QStringLiteral("smartphone"),
@@ -155,7 +155,7 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
                                                  i18n("Some wired ethernet description"), QStringLiteral("network-wired"),
                                                  NetworkManager::ConnectionSettings::Wired);
     m_list << connectionItem;
-    
+
     connectionItem = new CreatableConnectionItem(i18n("Wired Ethernet (shared)"), i18n("Hardware based connections"),
                                                  i18n("Some wired ethernet description"), QStringLiteral("network-wired"),
                                                  NetworkManager::ConnectionSettings::Wired,
@@ -166,13 +166,13 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
                                                  i18n("Some wi-fi description"), QStringLiteral("network-wireless"),
                                                  NetworkManager::ConnectionSettings::Wireless);
     m_list << connectionItem;
-    
+
     connectionItem = new CreatableConnectionItem(i18n("Wi-Fi (shared)"), i18n("Hardware based connections"),
                                                  i18n("Some wi-fi description"), QStringLiteral("network-wireless"),
                                                  NetworkManager::ConnectionSettings::Wireless,
                                                  QString(), QString(), true); // VpnType and SpecificType are empty
     m_list << connectionItem;
-    
+
     KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
 
     std::sort(services.begin(), services.end(), [] (const KService::Ptr &left, const KService::Ptr &right)
@@ -184,7 +184,7 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
         const QString vpnType = service->property("X-NetworkManager-Services", QVariant::String).toString();
         const QString vpnSubType = service->property("X-NetworkManager-Services-Subtype", QVariant::String).toString();
         const QString vpnDescription = service->property("Comment", QVariant::String).toString();
-        
+
         connectionItem = new CreatableConnectionItem(service->name(), i18n("VPN connections"),
                                                      vpnDescription, QStringLiteral("network-vpn"),
                                                      NetworkManager::ConnectionSettings::Vpn,

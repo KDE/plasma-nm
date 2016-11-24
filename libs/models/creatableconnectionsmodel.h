@@ -38,31 +38,31 @@ public:
                                      QObject *parent = 0);
     explicit CreatableConnectionItem(QObject *parent = 0);
     virtual ~CreatableConnectionItem();
-    
+
     NetworkManager::ConnectionSettings::ConnectionType connectionType() const;
     void setConnectionType(NetworkManager::ConnectionSettings::ConnectionType type);
-    
+
     QString description() const;
     void setDescription(const QString &description);
 
     QString icon() const;
     void setIcon(const QString &icon);
-    
+
     QString specificType() const;
     void setSpecificType(const QString &specificType);
-    
+
     bool shared() const;
     void setShared(bool shared);
-    
+
     QString typeName() const;
     void setTypeName(const QString &typeName);
-    
+
     QString typeSection() const;
     void setTypeSection(const QString &typeSection);
-    
+
     QString vpnType() const;
     void setVpnType(const QString &vpnType);
-    
+
 private:
     bool m_shared;
     NetworkManager::ConnectionSettings::ConnectionType m_connectionType;

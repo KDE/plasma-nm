@@ -36,6 +36,7 @@ ConnectionEditorDialog::ConnectionEditorDialog(const NetworkManager::ConnectionS
     layout->addWidget(m_connectionEditorTabWidget);
 
     m_buttonBox->setStandardButtons(QDialogButtonBox::Save | QDialogButtonBox::Cancel);
+    m_buttonBox->button(QDialogButtonBox::Save)->setEnabled(m_connectionEditorTabWidget->isValid());
     layout->addWidget(m_buttonBox);
 
     setLayout(layout);

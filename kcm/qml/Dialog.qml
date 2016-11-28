@@ -91,7 +91,7 @@ Dialog {
                             // Reset top margin from PlasmaComponents.ListItem
                             topMargin: -Math.round(units.gridUnit / 3)
                         }
-                        height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(units.gridUnit / 2)
+                        height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionDescriptionLabel.height) + Math.round(units.gridUnit / 2)
 
                         PlasmaCore.IconItem {
                             id: connectionIcon
@@ -108,10 +108,11 @@ Dialog {
                             id: connectionNameLabel
 
                             anchors {
-                                bottom: connectionIcon.verticalCenter
+                                bottom: ConnectionType == 11 ? connectionIcon.verticalCenter : undefined
                                 left: connectionIcon.right
                                 leftMargin: Math.round(units.gridUnit / 2)
                                 right: parent.right
+                                verticalCenter: ConnectionType == 11 ? undefined : parent.verticalCenter
                             }
                             height: paintedHeight
                             elide: Text.ElideRight
@@ -120,7 +121,7 @@ Dialog {
                         }
 
                         PlasmaComponents.Label {
-                            id: connectionStatusLabel
+                            id: connectionDescriptionLabel
 
                             anchors {
                                 left: connectionIcon.right
@@ -128,11 +129,12 @@ Dialog {
                                 right: parent.right
                                 top: connectionNameLabel.bottom
                             }
-                            height: paintedHeight
+                            height: visible ? paintedHeight : 0
                             elide: Text.ElideRight
                             font.pointSize: theme.smallestFont.pointSize
                             opacity: 0.6
                             text: ConnectionDescription
+                            visible: ConnectionType == 11 // VPN
                         }
                     }
 

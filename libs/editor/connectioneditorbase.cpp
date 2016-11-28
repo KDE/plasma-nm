@@ -64,6 +64,8 @@
 ConnectionEditorBase::ConnectionEditorBase(const NetworkManager::ConnectionSettings::Ptr &connection,
                                            QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)
+    , m_initialized(false)
+    , m_valid(false)
     , m_connection(connection)
 {
 }
@@ -83,6 +85,7 @@ void ConnectionEditorBase::setConnection(const NetworkManager::ConnectionSetting
     // Set connection settings
     m_connection.clear();
     m_connection = connection;
+    m_initialized = false;
 
     // Reset UI setting widgets
     delete m_connectionWidget;
@@ -145,9 +148,21 @@ NMVariantMapMap ConnectionEditorBase::setting() const
     return connectionSettings->toMap();
 }
 
+bool ConnectionEditorBase::isInitialized() const
+{
+    return m_initialized;
+}
+
+bool ConnectionEditorBase::isValid() const
+{
+    return m_valid;
+}
+
 void ConnectionEditorBase::addConnectionWidget(ConnectionWidget *widget, const QString &text)
 {
     m_connectionWidget = widget;
+
+    connect(widget, &ConnectionWidget::settingChanged, this, &ConnectionEditorBase::settingChanged);
 
     addWidget(widget, text);
 }
@@ -155,6 +170,8 @@ void ConnectionEditorBase::addConnectionWidget(ConnectionWidget *widget, const Q
 void ConnectionEditorBase::addSettingWidget(SettingWidget *widget, const QString &text)
 {
     m_settingWidgets << widget;
+
+    connect(widget, &SettingWidget::settingChanged, this, &ConnectionEditorBase::settingChanged);
 
     addWidget(widget, text);
 }
@@ -285,6 +302,7 @@ void ConnectionEditorBase::initialize()
         connect(widget, &SettingWidget::validChanged, this, &ConnectionEditorBase::validChanged);
     }
 
+    m_valid = valid;
     Q_EMIT validityChanged(valid);
 
     KAcceleratorManager::manage(this);
@@ -387,11 +405,16 @@ void ConnectionEditorBase::initialize()
                     watcher->setProperty("connection", connection->name());
                     watcher->setProperty("settingName", settingName);
                     connect(watcher, &QDBusPendingCallWatcher::finished, this, &ConnectionEditorBase::replyFinished);
+                    m_valid = false;
                     Q_EMIT validityChanged(false);
+                    return;
                 }
             }
         }
     }
+
+    // We should be now fully initialized as we don't wait for secrets
+    m_initialized = true;
 }
 
 void ConnectionEditorBase::replyFinished(QDBusPendingCallWatcher *watcher)
@@ -427,21 +450,27 @@ void ConnectionEditorBase::replyFinished(QDBusPendingCallWatcher *watcher)
 
     watcher->deleteLater();
     validChanged(true);
+
+    // We should be now fully with secrets
+    m_initialized = true;
 }
 
 void ConnectionEditorBase::validChanged(bool valid)
 {
     if (!valid) {
+        m_valid = false;
         Q_EMIT validityChanged(false);
         return;
     } else {
         Q_FOREACH (SettingWidget *widget, m_settingWidgets) {
             if (!widget->isValid()) {
+                m_valid = false;
                 Q_EMIT validityChanged(false);
                 return;
             }
         }
     }
 
+    m_valid = true;
     Q_EMIT validityChanged(true);
 }

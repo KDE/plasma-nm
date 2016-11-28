@@ -44,6 +44,9 @@ public:
 
     virtual QVariantMap setting() const = 0;
 
+    // Do not forget to call this function in the inherited class once initialized
+    void watchChangedSetting();
+
     QString type() const;
 
     virtual bool isValid() const { return true; }
@@ -53,7 +56,7 @@ protected Q_SLOTS:
 
 Q_SIGNALS:
     void validChanged(bool isValid);
-
+    void settingChanged();
 private:
     QString m_type;
 };

@@ -28,11 +28,12 @@
 
 #include <QtCrypto>
 
-Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent)
-    : QWidget(parent)
-    , m_setting(setting)
+Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool wifiMode, QWidget *parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
     , m_ui(new Ui::Security8021x)
 {
+    m_setting = setting.staticCast<NetworkManager::Security8021xSetting>();
+
     m_ui->setupUi(this);
 
     m_ui->fastPassword->setPasswordOptionsEnabled(true);
@@ -68,33 +69,36 @@ Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &se
     connect(m_ui->btnTlsAltSubjectMatches, &QPushButton::clicked, this, &Security8021x::altSubjectMatchesButtonClicked);
     connect(m_ui->btnTlsConnectToServers, &QPushButton::clicked, this, &Security8021x::connectToServersButtonClicked);
 
-    // Those signals are monitor for setting validation
-    connect(m_ui->auth, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &Security8021x::widgetChanged);
-    connect(m_ui->md5UserName, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->md5Password, &PasswordField::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->md5Password, &PasswordField::passwordOptionChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->tlsIdentity, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->tlsCACert, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->tlsUserCert, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->tlsPrivateKey, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->tlsPrivateKeyPassword, &PasswordField::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->tlsPrivateKeyPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->leapUsername, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->leapPassword, &PasswordField::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->leapPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->fastAllowPacProvisioning, &QCheckBox::stateChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->pacFile, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->fastUsername, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->fastPassword, &PasswordField::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->fastPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->ttlsCACert, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->ttlsUsername, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->ttlsPassword, &PasswordField::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->ttlsPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->peapCACert, &KUrlRequester::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->peapUsername, &KLineEdit::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->peapPassword, &PasswordField::textChanged, this, &Security8021x::widgetChanged);
-    connect(m_ui->peapPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::widgetChanged);
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
+    connect(m_ui->auth, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->md5UserName, &KLineEdit::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->md5Password, &PasswordField::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->md5Password, &PasswordField::passwordOptionChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->tlsIdentity, &KLineEdit::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->tlsCACert, &KUrlRequester::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->tlsUserCert, &KUrlRequester::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->tlsPrivateKey, &KUrlRequester::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->tlsPrivateKeyPassword, &PasswordField::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->tlsPrivateKeyPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->leapUsername, &KLineEdit::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->leapPassword, &PasswordField::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->leapPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->fastAllowPacProvisioning, &QCheckBox::stateChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->pacFile, &KUrlRequester::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->fastUsername, &KLineEdit::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->fastPassword, &PasswordField::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->fastPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->ttlsCACert, &KUrlRequester::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->ttlsUsername, &KLineEdit::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->ttlsPassword, &PasswordField::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->ttlsPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->peapCACert, &KUrlRequester::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->peapUsername, &KLineEdit::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->peapPassword, &PasswordField::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->peapPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
     connect(m_ui->stackedWidget, &QStackedWidget::currentChanged, this, &Security8021x::currentAuthChanged);
@@ -110,8 +114,8 @@ Security8021x::Security8021x(const NetworkManager::Security8021xSetting::Ptr &se
     serverListValidator->setInnerValidator(serversValidator);
     m_ui->leTlsConnectToServers->setValidator(serverListValidator);
 
-    if (m_setting) {
-        loadConfig();
+    if (setting) {
+        loadConfig(setting);
     }
 }
 
@@ -120,45 +124,20 @@ Security8021x::~Security8021x()
     delete m_ui;
 }
 
-void Security8021x::loadSecrets(const NetworkManager::Security8021xSetting::Ptr &setting)
+void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    const QString password = setting->password();
-    const QList<NetworkManager::Security8021xSetting::EapMethod> eapMethods = m_setting->eapMethods();
+    NetworkManager::Security8021xSetting::Ptr securitySetting = setting.staticCast<NetworkManager::Security8021xSetting>();
 
-    if (!password.isEmpty()) {
-        if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodMd5)) {
-            m_ui->md5Password->setText(setting->password());
-        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodLeap)) {
-            m_ui->leapPassword->setText(setting->password());
-        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodFast)) {
-            m_ui->fastPassword->setText(setting->password());
-        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTtls)) {
-            m_ui->ttlsPassword->setText(setting->password());
-        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPeap)) {
-            m_ui->peapPassword->setText(setting->password());
-        }
-    }
-
-    if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTls)) {
-        const QString privateKeyPassword = setting->privateKeyPassword();
-        if (!privateKeyPassword.isEmpty()) {
-            m_ui->tlsPrivateKeyPassword->setText(setting->privateKeyPassword());
-        }
-    }
-}
-
-void Security8021x::loadConfig()
-{
-    const QList<NetworkManager::Security8021xSetting::EapMethod> eapMethods = m_setting->eapMethods();
-    const NetworkManager::Security8021xSetting::AuthMethod phase2AuthMethod = m_setting->phase2AuthMethod();
+    const QList<NetworkManager::Security8021xSetting::EapMethod> eapMethods = securitySetting->eapMethods();
+    const NetworkManager::Security8021xSetting::AuthMethod phase2AuthMethod = securitySetting->phase2AuthMethod();
 
     if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodMd5)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodMd5));
-        m_ui->md5UserName->setText(m_setting->identity());
+        m_ui->md5UserName->setText(securitySetting->identity());
 
-        if (m_setting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
+        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
             m_ui->md5Password->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (m_setting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
+        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
             m_ui->md5Password->setPasswordOption(PasswordField::StoreForUser);
         } else {
             m_ui->md5Password->setPasswordOption(PasswordField::AlwaysAsk);
@@ -166,58 +145,58 @@ void Security8021x::loadConfig()
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTls)) {
         QStringList servers;
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodTls));
-        m_ui->tlsIdentity->setText(m_setting->identity());
-        m_ui->tlsUserCert->setUrl(QUrl::fromLocalFile(m_setting->clientCertificate()));
-        m_ui->tlsCACert->setUrl(QUrl::fromLocalFile(m_setting->caCertificate()));
-        m_ui->leTlsSubjectMatch->setText(m_setting->subjectMatch());
-        m_ui->leTlsAlternativeSubjectMatches->setText(m_setting->altSubjectMatches().join(QLatin1String(", ")));
-        Q_FOREACH (const QString &match, m_setting->altSubjectMatches()) {
+        m_ui->tlsIdentity->setText(securitySetting->identity());
+        m_ui->tlsUserCert->setUrl(QUrl::fromLocalFile(securitySetting->clientCertificate()));
+        m_ui->tlsCACert->setUrl(QUrl::fromLocalFile(securitySetting->caCertificate()));
+        m_ui->leTlsSubjectMatch->setText(securitySetting->subjectMatch());
+        m_ui->leTlsAlternativeSubjectMatches->setText(securitySetting->altSubjectMatches().join(QLatin1String(", ")));
+        Q_FOREACH (const QString &match, securitySetting->altSubjectMatches()) {
             if (match.startsWith(QLatin1String("DNS:"))) {
                 servers.append(match.right(match.length()-4));
             }
         }
         m_ui->leTlsConnectToServers->setText(servers.join(QLatin1String(", ")));
-        m_ui->tlsPrivateKey->setUrl(QUrl::fromLocalFile(m_setting->privateKey()));
-        if (m_setting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
+        m_ui->tlsPrivateKey->setUrl(QUrl::fromLocalFile(securitySetting->privateKey()));
+        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
             m_ui->tlsPrivateKeyPassword->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (m_setting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
+        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
             m_ui->tlsPrivateKeyPassword->setPasswordOption(PasswordField::StoreForUser);
         } else {
             m_ui->tlsPrivateKeyPassword->setPasswordOption(PasswordField::AlwaysAsk);
         }
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodLeap)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodLeap));
-        m_ui->leapUsername->setText(m_setting->identity());
-        if (m_setting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
+        m_ui->leapUsername->setText(securitySetting->identity());
+        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
             m_ui->leapPassword->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (m_setting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
+        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
             m_ui->leapPassword->setPasswordOption(PasswordField::StoreForUser);
         } else {
             m_ui->leapPassword->setPasswordOption(PasswordField::AlwaysAsk);
         }
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodFast)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodFast));
-        m_ui->fastAnonIdentity->setText(m_setting->anonymousIdentity());
-        m_ui->fastAllowPacProvisioning->setChecked((int)m_setting->phase1FastProvisioning() > 0);
-        m_ui->pacMethod->setCurrentIndex(m_setting->phase1FastProvisioning() - 1);
-        m_ui->pacFile->setUrl(QUrl::fromLocalFile(m_setting->pacFile()));
+        m_ui->fastAnonIdentity->setText(securitySetting->anonymousIdentity());
+        m_ui->fastAllowPacProvisioning->setChecked((int)securitySetting->phase1FastProvisioning() > 0);
+        m_ui->pacMethod->setCurrentIndex(securitySetting->phase1FastProvisioning() - 1);
+        m_ui->pacFile->setUrl(QUrl::fromLocalFile(securitySetting->pacFile()));
         if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodGtc) {
             m_ui->fastInnerAuth->setCurrentIndex(0);
         } else {
             m_ui->fastInnerAuth->setCurrentIndex(1);
         }
-        m_ui->fastUsername->setText(m_setting->identity());
-        if (m_setting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
+        m_ui->fastUsername->setText(securitySetting->identity());
+        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
             m_ui->fastPassword->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (m_setting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
+        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
             m_ui->fastPassword->setPasswordOption(PasswordField::StoreForUser);
         } else {
             m_ui->fastPassword->setPasswordOption(PasswordField::AlwaysAsk);
         }
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTtls)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodTtls));
-        m_ui->ttlsAnonIdentity->setText(m_setting->anonymousIdentity());
-        m_ui->ttlsCACert->setUrl(QUrl::fromLocalFile(m_setting->caCertificate()));
+        m_ui->ttlsAnonIdentity->setText(securitySetting->anonymousIdentity());
+        m_ui->ttlsCACert->setUrl(QUrl::fromLocalFile(securitySetting->caCertificate()));
         if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodPap) {
             m_ui->ttlsInnerAuth->setCurrentIndex(0);
         } else if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodMschap) {
@@ -227,19 +206,19 @@ void Security8021x::loadConfig()
         } else if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodChap) {
             m_ui->ttlsInnerAuth->setCurrentIndex(3);
         }
-        m_ui->ttlsUsername->setText(m_setting->identity());
-        if (m_setting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
+        m_ui->ttlsUsername->setText(securitySetting->identity());
+        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
             m_ui->ttlsPassword->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (m_setting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
+        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
             m_ui->ttlsPassword->setPasswordOption(PasswordField::StoreForUser);
         } else {
             m_ui->ttlsPassword->setPasswordOption(PasswordField::AlwaysAsk);
         }
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPeap)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodPeap));
-        m_ui->peapAnonIdentity->setText(m_setting->anonymousIdentity());
-        m_ui->peapCACert->setUrl(QUrl::fromLocalFile(m_setting->caCertificate()));
-        m_ui->peapVersion->setCurrentIndex(m_setting->phase1PeapVersion() + 1);
+        m_ui->peapAnonIdentity->setText(securitySetting->anonymousIdentity());
+        m_ui->peapCACert->setUrl(QUrl::fromLocalFile(securitySetting->caCertificate()));
+        m_ui->peapVersion->setCurrentIndex(securitySetting->phase1PeapVersion() + 1);
         if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodMschapv2) {
             m_ui->peapInnerAuth->setCurrentIndex(0);
         } else if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodMd5) {
@@ -247,17 +226,46 @@ void Security8021x::loadConfig()
         } else if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodGtc) {
             m_ui->peapInnerAuth->setCurrentIndex(2);
         }
-        m_ui->peapUsername->setText(m_setting->identity());
-        if (m_setting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
+        m_ui->peapUsername->setText(securitySetting->identity());
+        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
             m_ui->peapPassword->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (m_setting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
+        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
             m_ui->peapPassword->setPasswordOption(PasswordField::StoreForUser);
         } else {
             m_ui->peapPassword->setPasswordOption(PasswordField::AlwaysAsk);
         }
     }
 
-    loadSecrets(m_setting);
+    loadSecrets(setting);
+}
+
+void Security8021x::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+    NetworkManager::Security8021xSetting::Ptr securitySetting = setting.staticCast<NetworkManager::Security8021xSetting>();
+
+    const QString password = securitySetting->password();
+    const QList<NetworkManager::Security8021xSetting::EapMethod> eapMethods = securitySetting->eapMethods();
+
+    if (!password.isEmpty()) {
+        if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodMd5)) {
+            m_ui->md5Password->setText(securitySetting->password());
+        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodLeap)) {
+            m_ui->leapPassword->setText(securitySetting->password());
+        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodFast)) {
+            m_ui->fastPassword->setText(securitySetting->password());
+        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTtls)) {
+            m_ui->ttlsPassword->setText(securitySetting->password());
+        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPeap)) {
+            m_ui->peapPassword->setText(securitySetting->password());
+        }
+    }
+
+    if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTls)) {
+        const QString privateKeyPassword = securitySetting->privateKeyPassword();
+        if (!privateKeyPassword.isEmpty()) {
+            m_ui->tlsPrivateKeyPassword->setText(securitySetting->privateKeyPassword());
+        }
+    }
 }
 
 QVariantMap Security8021x::setting() const

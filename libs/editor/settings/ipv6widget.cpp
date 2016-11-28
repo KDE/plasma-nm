@@ -98,7 +98,10 @@ IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 
     connect(m_ui->btnRoutes, &QPushButton::clicked, this, &IPv6Widget::slotRoutesDialog);
 
-    // Validation
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->dns, &KLineEdit::textChanged, this, &IPv6Widget::slotWidgetChanged);
     connect(m_ui->method, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &IPv6Widget::slotWidgetChanged);
     connect(&d->model, &QStandardItemModel::dataChanged, this, &IPv6Widget::slotWidgetChanged);

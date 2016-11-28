@@ -36,10 +36,14 @@ WimaxWidget::WimaxWidget(const NetworkManager::Setting::Ptr &setting, QWidget* p
     connect(m_ui->networkName, &KLineEdit::textChanged, this, &WimaxWidget::slotWidgetChanged);
     connect(m_ui->macAddress, &HwAddrComboBox::hwAddressChanged, this, &WimaxWidget::slotWidgetChanged);
 
+    // Connect for setting check
+    watchChangedSetting();
+
     KAcceleratorManager::manage(this);
 
-    if (setting)
+    if (setting) {
         loadConfig(setting);
+    }
 }
 
 WimaxWidget::~WimaxWidget()

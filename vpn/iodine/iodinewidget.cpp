@@ -38,6 +38,10 @@ IodineWidget::IodineWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidg
 
     m_ui->le_password->setPasswordOptionsEnabled(true);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->le_toplevelDomain, &QLineEdit::textChanged, this, &IodineWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);

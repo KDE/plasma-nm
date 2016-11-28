@@ -47,6 +47,9 @@ private Q_SLOTS:
     void autoVpnToggled(bool on);
     void openAdvancedPermissions();
 
+Q_SIGNALS:
+    void settingChanged();
+
 private:
     // list of VPN: UUID, name
     NMStringMap vpnConnections() const;

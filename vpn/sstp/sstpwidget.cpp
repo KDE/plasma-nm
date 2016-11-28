@@ -65,6 +65,10 @@ SstpSettingWidget::SstpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
 
     layout->addWidget(buttons);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(d->ui.le_gateway, &QLineEdit::textChanged, this, &SstpSettingWidget::slotWidgetChanged);
     connect(d->ui.le_username, &QLineEdit::textChanged, this, &SstpSettingWidget::slotWidgetChanged);
     connect(d->ui.le_password, &PasswordField::textChanged, this, &SstpSettingWidget::slotWidgetChanged);

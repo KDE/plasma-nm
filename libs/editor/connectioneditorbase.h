@@ -43,10 +43,19 @@ public:
 
     NMVariantMapMap setting() const;
 
+    // Returns whether the editor is fully initialized (including secrets)
+    bool isInitialized() const;
+
+    // Returns whether the filled values are valid
+    bool isValid() const;
+
 Q_SIGNALS:
     // The default value is supposed to be false, watch this property for validity change after
     // proper initialization with secrets
     void validityChanged(bool valid);
+
+    // Emited when user changed configuration
+    void settingChanged();
 
 private Q_SLOTS:
     void replyFinished(QDBusPendingCallWatcher *watcher);
@@ -63,6 +72,8 @@ protected:
     void initialize();
 
 private:
+    bool m_initialized;
+    bool m_valid;
     NetworkManager::ConnectionSettings::Ptr m_connection;
     ConnectionWidget *m_connectionWidget;
     QList<SettingWidget *> m_settingWidgets;

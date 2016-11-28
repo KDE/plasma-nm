@@ -109,7 +109,10 @@ IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 
     connect(m_ui->btnRoutes, &QPushButton::clicked, this, &IPv4Widget::slotRoutesDialog);
 
-    // Validation
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->dns, &KLineEdit::textChanged, this, &IPv4Widget::slotWidgetChanged);
     connect(m_ui->method, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &IPv4Widget::slotWidgetChanged);
     connect(&d->model, &QStandardItemModel::dataChanged, this, &IPv4Widget::slotWidgetChanged);

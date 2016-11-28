@@ -38,6 +38,10 @@ OpenswanWidget::OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, Q
     m_ui->groupPassword->setPasswordOptionsEnabled(true);
     m_ui->userPassword->setPasswordOptionsEnabled(true);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->gateway, &QLineEdit::textChanged, this, &OpenswanWidget::slotWidgetChanged);
     connect(m_ui->groupname, &QLineEdit::textChanged, this, &OpenswanWidget::slotWidgetChanged);
 

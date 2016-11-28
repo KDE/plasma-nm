@@ -48,6 +48,10 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget *paren
     m_ui->type->addItem(i18n("Prefer 4G (LTE)"), NetworkManager::GsmSetting::Prefer4GLte);
     m_ui->type->addItem(i18n("4G Only (LTE)"), NetworkManager::GsmSetting::Only4GLte);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->apn, &KLineEdit::textChanged, this, &GsmWidget::slotWidgetChanged);
     connect(m_ui->password, &PasswordField::textChanged, this, &GsmWidget::slotWidgetChanged);
     connect(m_ui->password, &PasswordField::passwordOptionChanged, this, &GsmWidget::slotWidgetChanged);

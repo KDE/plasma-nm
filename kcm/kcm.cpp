@@ -264,11 +264,22 @@ void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::Connecti
         m_tabWidget->setConnection(connectionSettings);
     } else {
         m_tabWidget = new ConnectionEditorTabWidget(connectionSettings);
+        connect(m_tabWidget, &ConnectionEditorTabWidget::settingChanged,
+                [this] () {
+                    if (m_tabWidget->isInitialized() && m_tabWidget->isValid()) {
+                        Q_EMIT changed(true);
+                    }
+                });
+        connect(m_tabWidget, &ConnectionEditorTabWidget::validityChanged,
+                [this] (bool valid) {
+                    if (m_tabWidget->isInitialized()) {
+                        Q_EMIT changed(valid);
+                    }
+                });
         QVBoxLayout *layout = new QVBoxLayout(m_ui->connectionConfiguration);
         layout->addWidget(m_tabWidget);
     }
-
-    Q_EMIT changed(true);
+    Q_EMIT changed(false);
 }
 
 void KCMNetworkmanagement::resetSelection()

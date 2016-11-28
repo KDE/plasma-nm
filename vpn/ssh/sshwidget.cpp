@@ -69,6 +69,10 @@ SshSettingWidget::SshSettingWidget(const NetworkManager::VpnSetting::Ptr &settin
 
     layout->addWidget(buttons);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(d->ui.le_gateway, &QLineEdit::textChanged, this, &SshSettingWidget::slotWidgetChanged);
     connect(d->ui.le_localIp, &QLineEdit::textChanged, this, &SshSettingWidget::slotWidgetChanged);
     connect(d->ui.le_netmask, &QLineEdit::textChanged, this, &SshSettingWidget::slotWidgetChanged);

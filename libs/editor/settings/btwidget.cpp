@@ -37,12 +37,17 @@ BtWidget::BtWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent,
 
     m_ui->type->setEnabled(false);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->bdaddr, &HwAddrComboBox::hwAddressChanged, this, &BtWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 
-    if (setting)
+    if (setting) {
         loadConfig(setting);
+    }
 }
 
 BtWidget::~BtWidget()

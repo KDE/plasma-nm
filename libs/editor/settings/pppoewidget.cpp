@@ -34,6 +34,10 @@ PppoeWidget::PppoeWidget(const NetworkManager::Setting::Ptr &setting, QWidget *p
     m_ui->password->setPasswordOptionsEnabled(true);
     m_ui->password->setPasswordNotRequiredEnabled(true);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->service, &KLineEdit::textChanged, this, &PppoeWidget::slotWidgetChanged);
     connect(m_ui->username, &KLineEdit::textChanged, this, &PppoeWidget::slotWidgetChanged);
     connect(m_ui->password, &PasswordField::textChanged, this, &PppoeWidget::slotWidgetChanged);

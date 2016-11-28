@@ -26,26 +26,26 @@
 
 #include <NetworkManagerQt/Security8021xSetting>
 
+#include "settingwidget.h"
+
 namespace Ui
 {
 class Security8021x;
 }
 
-class Security8021x: public QWidget
+class Q_DECL_EXPORT Security8021x: public SettingWidget
 {
     Q_OBJECT
 public:
-    Security8021x(const NetworkManager::Security8021xSetting::Ptr &setting, bool wifiMode, QWidget *parent = 0);
+    Security8021x(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), bool wifiMode = true, QWidget *parent = 0, Qt::WindowFlags f = 0);
     virtual ~Security8021x();
 
-    QVariantMap setting() const;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
 
-    void loadSecrets(const NetworkManager::Security8021xSetting::Ptr &setting);
+    QVariantMap setting() const Q_DECL_OVERRIDE;
 
-    bool isValid() const;
-
-Q_SIGNALS:
-    void widgetChanged();
+    virtual bool isValid() const Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void altSubjectMatchesButtonClicked();
@@ -57,8 +57,6 @@ private:
     Ui::Security8021x *m_ui;
     QRegExpValidator *altSubjectValidator;
     QRegExpValidator *serversValidator;
-
-    void loadConfig();
 };
 
 #endif // SECURITY8021X_H

@@ -43,6 +43,10 @@ VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     connect(m_ui->btnAdvanced, &QPushButton::clicked, this, &VpncWidget::showAdvanced);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->gateway, &QLineEdit::textChanged, this, &VpncWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);

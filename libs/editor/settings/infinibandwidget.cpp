@@ -37,12 +37,17 @@ InfinibandWidget::InfinibandWidget(const NetworkManager::Setting::Ptr &setting, 
     m_ui->transport->addItem(i18nc("infiniband transport mode", "Connected"), NetworkManager::InfinibandSetting::Connected);
     m_ui->transport->setCurrentIndex(0);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->macAddress, &HwAddrComboBox::hwAddressChanged, this, &InfinibandWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 
-    if (setting)
+    if (setting) {
         loadConfig(setting);
+    }
 }
 
 InfinibandWidget::~InfinibandWidget()

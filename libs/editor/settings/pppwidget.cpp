@@ -29,10 +29,14 @@ PPPWidget::PPPWidget(const NetworkManager::Setting::Ptr &setting, QWidget* paren
 {
     m_ui->setupUi(this);
 
+    // Connect for setting check
+    watchChangedSetting();
+
     KAcceleratorManager::manage(this);
 
-    if (setting)
+    if (setting) {
         loadConfig(setting);
+    }
 }
 
 PPPWidget::~PPPWidget()

@@ -63,11 +63,15 @@ BridgeWidget::BridgeWidget(const QString & masterUuid, const NetworkManager::Set
 
     connect(m_ui->ifaceName, &KLineEdit::textChanged, this, &BridgeWidget::slotWidgetChanged);
 
+    // Connect for setting check
+    watchChangedSetting();
+
     KAcceleratorManager::manage(this);
     KAcceleratorManager::manage(m_menu);
 
-    if (setting)
+    if (setting) {
         loadConfig(setting);
+    }
 }
 
 BridgeWidget::~BridgeWidget()

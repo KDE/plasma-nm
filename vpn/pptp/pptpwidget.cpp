@@ -66,6 +66,10 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
     connect(buttons, &QDialogButtonBox::rejected, d->advancedDlg, &QDialog::reject);
     layout->addWidget(buttons);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(d->ui.edt_gateway, &QLineEdit::textChanged, this, &PptpSettingWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);

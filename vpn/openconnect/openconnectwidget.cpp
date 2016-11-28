@@ -43,6 +43,10 @@ OpenconnectSettingWidget::OpenconnectSettingWidget(const NetworkManager::VpnSett
     d->ui.setupUi(this);
     d->setting = setting;
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(d->ui.leGateway, &QLineEdit::textChanged, this, &OpenconnectSettingWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);

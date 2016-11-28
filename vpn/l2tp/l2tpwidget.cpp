@@ -43,6 +43,10 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
     connect(m_ui->btnIPSecSettings, &QPushButton::clicked, this, &L2tpWidget::showAdvanced);
     connect(m_ui->btnPPPSettings, &QPushButton::clicked, this, &L2tpWidget::showPpp);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->gateway, &QLineEdit::textChanged, this, &L2tpWidget::slotWidgetChanged);
     connect(m_ui->cbUseCertificate, &QCheckBox::stateChanged, this, &L2tpWidget::certStateChanged);
 

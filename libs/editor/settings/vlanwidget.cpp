@@ -37,10 +37,14 @@ VlanWidget::VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* par
     connect(m_ui->parent, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &VlanWidget::slotWidgetChanged);
     connect(m_ui->parent->lineEdit(), &QLineEdit::textChanged, this, &VlanWidget::slotWidgetChanged);
 
+    // Connect for setting check
+    watchChangedSetting();
+
     KAcceleratorManager::manage(this);
 
-    if (setting)
+    if (setting) {
         loadConfig(setting);
+    }
 }
 
 VlanWidget::~VlanWidget()

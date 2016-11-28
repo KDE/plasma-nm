@@ -44,6 +44,10 @@ StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSettin
 
     d->setting = setting;
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(d->ui.leGateway, &QLineEdit::textChanged, this, &StrongswanSettingWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);

@@ -35,6 +35,9 @@ WiredSecurity::WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &se
 
     connect(m_ui->use8021X, &QCheckBox::toggled, m_8021xWidget, &Security8021x::setEnabled);
 
+    // Connect for setting check
+    watchChangedSetting();
+
     KAcceleratorManager::manage(this);
 
     loadConfig(setting8021x);

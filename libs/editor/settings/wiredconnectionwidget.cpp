@@ -39,14 +39,18 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
 
     connect(m_widget->btnRandomMacAddr, &QPushButton::clicked, this, &WiredConnectionWidget::generateRandomClonedMac);
 
-    if (setting)
-        loadConfig(setting);
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
+    connect(m_widget->macAddress, &HwAddrComboBox::hwAddressChanged, this, &WiredConnectionWidget::slotWidgetChanged);
+    connect(m_widget->clonedMacAddress, &KLineEdit::textChanged, this, &WiredConnectionWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 
-    // Validation
-    connect(m_widget->macAddress, &HwAddrComboBox::hwAddressChanged, this, &WiredConnectionWidget::slotWidgetChanged);
-    connect(m_widget->clonedMacAddress, &KLineEdit::textChanged, this, &WiredConnectionWidget::slotWidgetChanged);
+    if (setting) {
+        loadConfig(setting);
+    }
 }
 
 WiredConnectionWidget::~WiredConnectionWidget()

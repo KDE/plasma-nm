@@ -47,6 +47,10 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
     connect(m_ui->securityCombo, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::securityChanged);
     connect(m_ui->wepIndex, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::setWepKey);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->wepKey, &PasswordField::textChanged, this, &WifiSecurity::slotWidgetChanged);
     connect(m_ui->wepKey, &PasswordField::passwordOptionChanged, this, &WifiSecurity::slotWidgetChanged);
     connect(m_ui->leapUsername, &KLineEdit::textChanged, this, &WifiSecurity::slotWidgetChanged);
@@ -56,8 +60,8 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
     connect(m_ui->psk, &PasswordField::passwordOptionChanged, this, &WifiSecurity::slotWidgetChanged);
     connect(m_ui->wepIndex, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
     connect(m_ui->securityCombo, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
-    connect(m_8021xWidget, &Security8021x::widgetChanged, this, &WifiSecurity::slotWidgetChanged);
-    connect(m_WPA2Widget, &Security8021x::widgetChanged, this, &WifiSecurity::slotWidgetChanged);
+    connect(m_8021xWidget, &Security8021x::validChanged, this, &WifiSecurity::slotWidgetChanged);
+    connect(m_WPA2Widget, &Security8021x::validChanged, this, &WifiSecurity::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

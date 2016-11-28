@@ -33,6 +33,10 @@ CdmaWidget::CdmaWidget(const NetworkManager::Setting::Ptr &setting, QWidget *par
     m_ui->password->setPasswordOptionsEnabled(true);
     m_ui->password->setPasswordNotRequiredEnabled(true);
 
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->number, &KLineEdit::textChanged, this, &CdmaWidget::slotWidgetChanged);
     connect(m_ui->password, &PasswordField::textChanged, this, &CdmaWidget::slotWidgetChanged);
     connect(m_ui->password, &PasswordField::passwordOptionChanged, this, &CdmaWidget::slotWidgetChanged);

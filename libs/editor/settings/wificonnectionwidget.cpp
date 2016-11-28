@@ -40,7 +40,10 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
     connect(m_ui->modeComboBox, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::modeChanged);
     connect(m_ui->band, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::bandChanged);
 
-    // Validation
+    // Connect for setting check
+    watchChangedSetting();
+
+    // Connect for validity check
     connect(m_ui->macAddress, &HwAddrComboBox::hwAddressChanged, this, &WifiConnectionWidget::slotWidgetChanged);
     connect(m_ui->BSSIDCombo, &BssidComboBox::bssidChanged, this, &WifiConnectionWidget::slotWidgetChanged);
 

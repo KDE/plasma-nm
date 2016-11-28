@@ -77,11 +77,15 @@ BondWidget::BondWidget(const QString & masterUuid, const NetworkManager::Setting
     connect(m_ui->arpTargets, &KLineEdit::textChanged, this, &BondWidget::slotWidgetChanged);
     connect(m_ui->linkMonitoring, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &BondWidget::slotWidgetChanged);
 
+    // Connect for setting check
+    watchChangedSetting();
+
     KAcceleratorManager::manage(this);
     KAcceleratorManager::manage(m_menu);
 
-    if (setting)
+    if (setting) {
         loadConfig(setting);
+    }
 }
 
 BondWidget::~BondWidget()

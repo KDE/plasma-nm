@@ -293,6 +293,7 @@ void KCMNetworkmanagement::resetSelection()
         delete m_tabWidget;
         m_tabWidget = nullptr;
     }
+    Q_EMIT changed(false);
 }
 
 #include "kcm.moc"

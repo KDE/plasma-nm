@@ -119,6 +119,7 @@ Item {
 
         iconSource: "configure"
         tooltip: i18n("Configure network connections...")
+        visible: mainWindow.kcmAuthorized
 
         onClicked: {
             KCMShell.open(mainWindow.kcm)

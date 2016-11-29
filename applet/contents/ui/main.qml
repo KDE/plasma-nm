@@ -29,6 +29,7 @@ Item {
 
     property bool showSections: true
     readonly property string kcm: "kcm_networkmanagement.desktop"
+    readonly property bool kcmAuthorized: KCMShell.authorize(kcm).length == 1
 
     Plasmoid.toolTipMainText: i18n("Networks")
     Plasmoid.toolTipSubText: networkStatus.activeConnections
@@ -50,7 +51,9 @@ Item {
 
     Component.onCompleted: {
         plasmoid.removeAction("configure");
-        plasmoid.setAction("openKCM", i18n("&Configure Network Connections..."), "preferences-system-network");
+        if (kcmAuthorized) {
+            plasmoid.setAction("openKCM", i18n("&Configure Network Connections..."), "preferences-system-network");
+        }
     }
 
     PlasmaNM.NetworkStatus {

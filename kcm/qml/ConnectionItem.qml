@@ -26,7 +26,7 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 PlasmaComponents.ListItem {
     id: connectionItem
 
-    checked: mouseArea.containsMouse || ConnectionPath === connectionView.currentConnection
+    checked: mouseArea.containsMouse || ConnectionPath === connectionView.currentConnectionPath
     height: connectionItemBase.height
 
     signal aboutToRemove(string name, string path)
@@ -135,7 +135,8 @@ PlasmaComponents.ListItem {
 
         onClicked: {
             if (mouse.button === Qt.LeftButton) {
-                connectionView.currentConnection = ConnectionPath
+                connectionView.currentConnectionName = Name
+                connectionView.currentConnectionPath = ConnectionPath
             } else if (mouse.button == Qt.RightButton) {
                 connectionItemMenu.open(mouse.x, mouse.y)
             }

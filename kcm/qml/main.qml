@@ -81,6 +81,7 @@ Item {
 
         anchors {
             bottom: buttonRow.top
+            bottomMargin: Math.round(units.gridUnit / 3)
             left: parent.left
             right: parent.right
             top: searchField.bottom
@@ -89,7 +90,8 @@ Item {
         ListView {
             id: connectionView
 
-            property string currentConnection
+            property string currentConnectionName
+            property string currentConnectionPath
 
             anchors.fill: parent
             clip: true
@@ -106,43 +108,44 @@ Item {
                 }
             }
 
-            onCurrentConnectionChanged: {
-                root.selectedConnectionChanged(currentConnection)
+            onCurrentConnectionPathChanged: {
+                root.selectedConnectionChanged(currentConnectionPath)
             }
         }
     }
 
-    Column {
+    Row {
         id: buttonRow
 
         anchors {
             bottom: parent.bottom
             left: parent.left
-            right: parent.right
-            margins: Math.round(units.gridUnit / 2)
+            margins: Math.round(units.gridUnit / 3)
         }
-
         spacing: Math.round(units.gridUnit / 2)
 
-        PlasmaCore.SvgItem {
-            id: separator
-            height: lineSvg.elementSize("horizontal-line").height; width: parent.width
-            elementId: "horizontal-line"
-            svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
-        }
-
-        PlasmaComponents.Button {
+        PlasmaComponents.ToolButton {
             id: addConnectionButton
 
-            anchors {
-                right: parent.right
-            }
-
             iconSource: "list-add"
-            text: i18n("Add new connection")
+            tooltip: i18n("Add new connection")
 
             onClicked: {
                 addNewConnectionDialog.open()
+            }
+        }
+
+        PlasmaComponents.ToolButton {
+            id: removeConnectionButton
+
+            enabled: connectionView.currentConnectionPath && connectionView.currentConnectionPath.length
+            iconSource: "list-remove"
+            tooltip: i18n("Remove selected connection")
+
+            onClicked: {
+                deleteConfirmationDialog.connectionName = connectionView.currentConnectionName
+                deleteConfirmationDialog.connectionPath = connectionView.currentConnectionPath
+                deleteConfirmationDialog.open()
             }
         }
     }
@@ -159,7 +162,7 @@ Item {
         text: i18n("Do you want to remove the connection '%1'", connectionName)
 
         onAccepted: {
-            if (connectionPath == connectionView.currentConnection) {
+            if (connectionPath == connectionView.currentConnectionPath) {
                 // Deselect now non-existing connection
                 deselectConnections()
             }
@@ -176,6 +179,6 @@ Item {
     }
 
     function deselectConnections() {
-        connectionView.currentConnection = ""
+        connectionView.currentConnectionPath = ""
     }
 }

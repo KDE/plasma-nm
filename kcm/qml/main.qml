@@ -119,7 +119,7 @@ Item {
 
         anchors {
             bottom: parent.bottom
-            left: parent.left
+            right: parent.right
             margins: Math.round(units.gridUnit / 3)
         }
         spacing: Math.round(units.gridUnit / 2)

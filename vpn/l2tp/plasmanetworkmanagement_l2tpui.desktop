@@ -44,7 +44,6 @@ Name[x-test]=xxLayer 2 Tunneling Protocol (L2TP)xx
 Name[zh_CN]=第二层隧道协议 (L2TP)
 Name[zh_TW]=第二層通道協定（L2TP）
 Comment=Compatible with L2TP VPN servers
-Comment[ast]=Compatible con sirvidores VPN L2TP
 Comment[ca]=Compatible amb els servidors VPN del L2TP
 Comment[ca@valencia]=Compatible amb els servidors VPN del L2TP
 Comment[da]=Kompatibel med L2TP VPN-servere

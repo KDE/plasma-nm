@@ -3,7 +3,6 @@ Type=ServiceType
 X-KDE-ServiceType=PlasmaNetworkManagement/VpnUiPlugin
 Name=Network Management VPN UI Plugin
 Name[ar]=إدارة شبكات ملحق واجهة مستخدم VPN
-Name[ast]=Complementu d'UI VPN de xestión de rede
 Name[bs]=Dodatak za upravljanje mrežom VPN UI
 Name[ca]=Connector de la IU per a la VPN del Gestor de la xarxa
 Name[ca@valencia]=Connector de la IU per a la VPN del Gestor de la xarxa

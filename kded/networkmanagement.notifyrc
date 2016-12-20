@@ -2,7 +2,6 @@
 IconName=applications-internet
 Name=Network management
 Name[ar]=إدارة الشبكات
-Name[ast]=Xestión de rede
 Name[bs]=Upravljanje mrežom
 Name[ca]=Gestió de la xarxa
 Name[ca@valencia]=Gestió de la xarxa
@@ -45,7 +44,6 @@ Name[zh_CN]=网络管理
 Name[zh_TW]=網路管理
 Comment=Network management
 Comment[ar]=إدارة الشبكات
-Comment[ast]=Xestión de rede
 Comment[bs]=Upravljanje mrežom
 Comment[ca]=Gestió de la xarxa
 Comment[ca@valencia]=Gestió de la xarxa
@@ -90,7 +88,6 @@ Comment[zh_TW]=網路管理
 [Event/ConnectionActivated]
 Name=Connection activated
 Name[ar]=فُعِل الاتصال
-Name[ast]=Conexón activada
 Name[bs]=Konekcija aktivirana
 Name[ca]=Connexió activada
 Name[ca@valencia]=Connexió activada
@@ -320,7 +317,6 @@ Action=None
 [Event/DeviceFailed]
 Name=Device failed
 Name[ar]=فشِل الجهاز
-Name[ast]=Falló'l preséu
 Name[bs]=Uređaj pao
 Name[ca]=El dispositiu ha fallat
 Name[ca@valencia]=El dispositiu ha fallat
@@ -367,7 +363,6 @@ Action=Popup
 [Event/FailedToActivateConnection]
 Name=Failed to activate connection
 Name[ar]=فشل في تفعيل الاتصال
-Name[ast]=Fallu al activar la conexón
 Name[bs]=Neuspjela aktivacija konekcije
 Name[ca]=Ha fallat en activar la connexió
 Name[ca@valencia]=Ha fallat en activar la connexió
@@ -414,7 +409,6 @@ Action=Popup
 [Event/FailedToAddConnection]
 Name=Failed to add connection
 Name[ar]=فشل في إضافة اتصال
-Name[ast]=Fallu al amestar la conexón
 Name[bs]=Neuspjelo dodavanje konekcije
 Name[ca]=Ha fallat en afegir la connexió
 Name[ca@valencia]=Ha fallat en afegir la connexió
@@ -460,7 +454,6 @@ Action=Popup
 [Event/FailedToDeactivateConnection]
 Name=Failed to deactivate connection
 Name[ar]=فشل في إبطال الاتصال
-Name[ast]=Fallu al desactivar la conexón
 Name[bs]=Neuspjelo deaktiviranje konekcije
 Name[ca]=Ha fallat en desactivar la connexió
 Name[ca@valencia]=Ha fallat en desactivar la connexió
@@ -506,7 +499,6 @@ Action=Popup
 [Event/FailedToRemoveConnection]
 Name=Failed to remove connection
 Name[ar]=فشل في إزالة الاتصال
-Name[ast]=Fallu al desaniciar la conexón
 Name[bs]=Neuspjelo uklanjanje konekcije
 Name[ca]=Ha fallat en eliminar la connexió
 Name[ca@valencia]=Ha fallat en eliminar la connexió
@@ -552,7 +544,6 @@ Action=Popup
 [Event/FailedToRequestScan]
 Name=Failed to request scan
 Name[ar]=فشل في مسح الطلب
-Name[ast]=Fallu al solicitar l'escanéu
 Name[bs]=Neuspjelo traženje skeniranja
 Name[ca]=Ha fallat en demanar escanejar
 Name[ca@valencia]=Ha fallat en demanar escanejar
@@ -597,7 +588,6 @@ Action=None
 
 [Event/FailedToGetSecrets]
 Name=Failed to get secrets
-Name[ast]=Fallu al consiguir los secretos
 Name[bs]=Nesupjelo uzimanje tajni
 Name[ca]=Ha fallat en obtenir els secrets
 Name[ca@valencia]=Ha fallat en obtindre els secrets
@@ -642,7 +632,6 @@ Action=Popup
 [Event/FailedToUpdateConnection]
 Name=Failed to update connection
 Name[ar]=فشل في تحديث الاتصال
-Name[ast]=Fallu al anovar la conexón
 Name[bs]=Neuspjelo ažuriranje konekcije
 Name[ca]=Ha fallat en actualitzar la connexió
 Name[ca@valencia]=Ha fallat en actualitzar la connexió

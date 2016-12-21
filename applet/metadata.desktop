@@ -90,7 +90,7 @@ Comment[zh_TW]=網路狀態與控制
 
 Icon=org.kde.plasma.networkmanagement
 Type=Service
-X-KDE-ServiceTypes=Plasma/Applet,Plasma/PopupApplet
+X-KDE-ServiceTypes=Plasma/Applet
 
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml

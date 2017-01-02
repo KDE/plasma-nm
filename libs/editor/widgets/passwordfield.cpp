@@ -23,6 +23,7 @@
 #include <QAction>
 #include <QIcon>
 
+#include <KAuthorized>
 #include <KLocalizedString>
 #include <KWallet/Wallet>
 
@@ -36,12 +37,15 @@ PasswordField::PasswordField(QWidget *parent, Qt::WindowFlags f)
     m_layout->setContentsMargins(0, 0, 0, 0);
 
     m_passwordField = new QLineEdit(this);
-    m_toggleEchoModeAction = m_passwordField->addAction(QIcon::fromTheme(QStringLiteral("visibility")), QLineEdit::TrailingPosition);
-    m_toggleEchoModeAction->setVisible(false);
-    m_toggleEchoModeAction->setToolTip(i18n("Change the visibility of the password"));
-    connect(m_passwordField, &QLineEdit::textChanged, this, &PasswordField::showToggleEchoModeAction);
     connect(m_passwordField, &QLineEdit::textChanged, this, &PasswordField::textChanged);
-    connect(m_toggleEchoModeAction, &QAction::triggered, this, &PasswordField::toggleEchoMode);
+
+    if (KAuthorized::authorize(QStringLiteral("lineedit_reveal_password"))) {
+        m_toggleEchoModeAction = m_passwordField->addAction(QIcon::fromTheme(QStringLiteral("visibility")), QLineEdit::TrailingPosition);
+        m_toggleEchoModeAction->setVisible(false);
+        m_toggleEchoModeAction->setToolTip(i18n("Change the visibility of the password"));
+        connect(m_passwordField, &QLineEdit::textChanged, this, &PasswordField::showToggleEchoModeAction);
+        connect(m_toggleEchoModeAction, &QAction::triggered, this, &PasswordField::toggleEchoMode);
+    }
 
     m_layout->addWidget(m_passwordField);
 

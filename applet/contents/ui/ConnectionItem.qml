@@ -209,6 +209,28 @@ PlasmaComponents.ListItem {
                 }
             }
 
+            KQuickControlsAddons.Clipboard {
+                id: clipboard
+            }
+
+            PlasmaComponents.ContextMenu {
+                id: contextMenu
+                property string text
+
+                function show(item, text, x, y) {
+                    contextMenu.text = text
+                    visualParent = item
+                    open(x, y)
+                }
+
+                PlasmaComponents.MenuItem {
+                    text: i18n("Copy")
+                    icon: "edit-copy"
+                    enabled: contextMenu.text !== ""
+                    onClicked: clipboard.content = contextMenu.text
+                }
+            }
+
             Column {
                 id: details
 
@@ -272,6 +294,12 @@ PlasmaComponents.ListItem {
                             opacity: 0.6
                             text: ConnectionDetails[(index*2)+1]
                             textFormat: Text.PlainText
+
+                            MouseArea {
+                                anchors.fill: parent
+                                acceptedButtons: Qt.RightButton
+                                onClicked: contextMenu.show(this, detailValueLabel.text, mouse.x, mouse.y)
+                            }
                         }
                     }
                 }

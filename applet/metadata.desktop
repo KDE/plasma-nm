@@ -45,7 +45,6 @@ Name[zh_TW]=網路
 
 Comment=Network status and control
 Comment[ar]=تحكم وحالة الشبكة
-Comment[ast]=Estáu y control de rede
 Comment[bg]=Състояние и контрол на мрежата
 Comment[bs]=Kontrola i status mreže
 Comment[ca]=Control i estat de la xarxa
@@ -91,7 +90,7 @@ Comment[zh_TW]=網路狀態與控制
 
 Icon=org.kde.plasma.networkmanagement
 Type=Service
-X-KDE-ServiceTypes=Plasma/Applet,Plasma/PopupApplet
+X-KDE-ServiceTypes=Plasma/Applet
 
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml

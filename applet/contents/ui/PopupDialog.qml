@@ -19,10 +19,12 @@
 */
 
 import QtQuick 2.2
+import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 FocusScope {
+    property var notificationInhibitorLock: undefined
 
     PlasmaNM.AvailableDevices {
         id: availableDevices
@@ -77,6 +79,28 @@ FocusScope {
 
     Connections {
         target: plasmoid
-        onExpandedChanged: connectionView.currentVisibleButtonIndex = -1
+        onExpandedChanged: {
+            connectionView.currentVisibleButtonIndex = -1;
+            if (expanded) {
+                var service = notificationsEngine.serviceForSource("notifications");
+                var operation = service.operationDescription("inhibit");
+                operation.hint = "x-kde-appname";
+                operation.value = "networkmanagement";
+                var job = service.startOperationCall(operation);
+                job.finished.connect(function(job) {
+                    if (expanded) {
+                        notificationInhibitorLock =  job.result;
+                    }
+                });
+            } else {
+                notificationInhibitorLock = undefined;
+            }
+        }
     }
+
+    PlasmaCore.DataSource {
+        id: notificationsEngine
+        engine: "notifications"
+    }
+
 }

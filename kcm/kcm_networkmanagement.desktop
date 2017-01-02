@@ -8,6 +8,6 @@ X-KDE-ParentApp=kcontrol
 X-KDE-System-Settings-Parent-Category=network
 X-KDE-Weight=40
 
-Name=Network Configuration
+Name=Connections
 Comment=Edit your network connections
 X-KDE-Keywords=network,wifi,ethernet,mobile,broadband,vpn,internet,traffic

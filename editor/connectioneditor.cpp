@@ -160,23 +160,6 @@ void ConnectionEditor::initializeMenu()
     action->setData(NetworkManager::ConnectionSettings::Wimax);
     m_menu->addAction(action);
 
-    m_menu->menu()->addSection(i18nc("Virtual hardware devices, eg Bridge, Bond", "Virtual"));
-
-    action = new QAction(i18n("Bond"), this);
-    action->setData(NetworkManager::ConnectionSettings::Bond);
-    m_menu->addAction(action);
-    action = new QAction(i18n("Bridge"), this);
-    action->setData(NetworkManager::ConnectionSettings::Bridge);
-    m_menu->addAction(action);
-    action = new QAction(i18n("VLAN"), this);
-    action->setData(NetworkManager::ConnectionSettings::Vlan);
-    m_menu->addAction(action);
-#if NM_CHECK_VERSION(0, 9, 10)
-    action = new QAction(i18n("Team"), this);
-    action->setData(NetworkManager::ConnectionSettings::Team);
-    m_menu->addAction(action);
-#endif
-
     m_menu->menu()->addSection(i18n("VPN"));
 
     KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");

@@ -108,6 +108,9 @@ public:
     QString vpnState() const;
     void setVpnState(NetworkManager::VpnConnection::State state);
 
+    QString vpnType() const;
+    void setVpnType(const QString &type);
+
     bool operator==(const NetworkModelItem * item) const;
 
 public Q_SLOTS:
@@ -133,6 +136,7 @@ private:
     QDateTime m_timestamp;
     NetworkManager::ConnectionSettings::ConnectionType m_type;
     QString m_uuid;
+    QString m_vpnType;
     NetworkManager::VpnConnection::State m_vpnState;
 };
 

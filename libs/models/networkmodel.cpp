@@ -106,6 +106,8 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
                 return item->uuid();
             case VpnState:
                 return item->vpnState();
+            case VpnType:
+                return item->vpnType();
             default:
                 break;
         }
@@ -149,6 +151,7 @@ QHash< int, QByteArray > NetworkModel::roleNames() const
     roles[UniRole] = "Uni";
     roles[UuidRole] = "Uuid";
     roles[VpnState] = "VpnState";
+    roles[VpnType] = "VpnType";
 
     return roles;
 }
@@ -392,10 +395,13 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
     initializeSignals(connection);
 
     NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
+    NetworkManager::VpnSetting::Ptr vpnSetting;
     NetworkManager::WimaxSetting::Ptr wimaxSetting;
     NetworkManager::WirelessSetting::Ptr wirelessSetting;
 
-    if (settings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
+    if (settings->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
+        vpnSetting = settings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+    } else if (settings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
         wirelessSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
     } else if (settings->connectionType() == NetworkManager::ConnectionSettings::Wimax) {
         wimaxSetting = settings->setting(NetworkManager::Setting::Wimax).dynamicCast<NetworkManager::WimaxSetting>();
@@ -411,7 +417,9 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr& connecti
         item->setUuid(settings->uuid());
         item->setSlave(settings->isSlave());
 
-        if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
+        if (item->type() == NetworkManager::ConnectionSettings::Vpn) {
+            item->setVpnType(vpnSetting->serviceType().section('.', -1));
+        } else if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
             item->setMode(wirelessSetting->mode());
             item->setSecurityType(NetworkManager::securityTypeFromConnectionSetting(settings));
             item->setSsid(QString::fromUtf8(wirelessSetting->ssid()));

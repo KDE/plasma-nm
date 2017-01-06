@@ -72,6 +72,7 @@ public:
         UniRole,
         UuidRole,
         VpnState,
+        VpnType
     };
 
     int rowCount(const QModelIndex& parent) const Q_DECL_OVERRIDE;

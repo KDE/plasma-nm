@@ -425,6 +425,16 @@ void NetworkModelItem::setVpnState(NetworkManager::VpnConnection::State state)
     m_vpnState = state;
 }
 
+QString NetworkModelItem::vpnType() const
+{
+    return m_vpnType;
+}
+
+void NetworkModelItem::setVpnType(const QString &type)
+{
+    m_vpnType = type;
+}
+
 bool NetworkModelItem::operator==(const NetworkModelItem* item) const
 {
     if (!item->uuid().isEmpty() && !uuid().isEmpty()) {
@@ -522,20 +532,7 @@ void NetworkModelItem::updateDetails()
         }
 #endif
     } else if (m_type == NetworkManager::ConnectionSettings::Vpn) {
-        NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_connectionPath);
-        NetworkManager::ConnectionSettings::Ptr connectionSettings;
-        NetworkManager::VpnSetting::Ptr vpnSetting;
-
-        if (connection) {
-            connectionSettings = connection->settings();
-        }
-        if (connectionSettings) {
-            vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
-        }
-
-        if (vpnSetting) {
-            m_details << i18n("VPN plugin") << vpnSetting->serviceType().section('.', -1);
-        }
+        m_details << i18n("VPN plugin") << m_vpnType;
 
         if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
             NetworkManager::ActiveConnection::Ptr active = NetworkManager::findActiveConnection(m_activeConnectionPath);

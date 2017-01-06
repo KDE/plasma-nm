@@ -44,6 +44,7 @@ public Q_SLOTS:
 private Q_SLOTS:
     void onSelectedConnectionChanged(const QString &connectionPath);
     void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
+    void onRequestExportConnection(const QString &connectionPath);
 
 private:
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);

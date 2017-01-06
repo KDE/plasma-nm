@@ -33,7 +33,8 @@ public:
 
     enum KcmItemRole {
         KcmConnectionIconRole = Qt::UserRole + 100,
-        KcmConnectionTypeRole
+        KcmConnectionTypeRole,
+        KcmVpnConnectionExportable
     };
 
     QHash< int, QByteArray > roleNames() const Q_DECL_OVERRIDE;

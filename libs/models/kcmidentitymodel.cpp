@@ -30,10 +30,10 @@
 
 #include <KLocalizedString>
 
-KcmIdentityModel::KcmIdentityModel(QObject* parent)
+KcmIdentityModel::KcmIdentityModel(QObject *parent)
     : QIdentityProxyModel(parent)
 {
-    NetworkModel * baseModel = new NetworkModel(this);
+    NetworkModel *baseModel = new NetworkModel(this);
     setSourceModel(baseModel);
 }
 
@@ -41,13 +41,13 @@ KcmIdentityModel::~KcmIdentityModel()
 {
 }
 
-Qt::ItemFlags KcmIdentityModel::flags(const QModelIndex& index) const
+Qt::ItemFlags KcmIdentityModel::flags(const QModelIndex &index) const
 {
     const QModelIndex mappedProxyIndex = index.sibling(index.row(), 0);
     return QIdentityProxyModel::flags(mappedProxyIndex) | Qt::ItemIsEnabled | Qt::ItemIsSelectable;
 }
 
-int KcmIdentityModel::columnCount(const QModelIndex& parent) const
+int KcmIdentityModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
 
@@ -59,10 +59,12 @@ QHash<int, QByteArray> KcmIdentityModel::roleNames() const
     QHash<int, QByteArray> roles = QIdentityProxyModel::roleNames();
     roles[KcmConnectionIconRole] = "KcmConnectionIcon";
     roles[KcmConnectionTypeRole] = "KcmConnectionType";
+    roles[KcmVpnConnectionExportable] = "KcmVpnConnectionExportable";
+
     return roles;
 }
 
-QVariant KcmIdentityModel::data(const QModelIndex& index, int role) const
+QVariant KcmIdentityModel::data(const QModelIndex &index, int role) const
 {
     const QModelIndex sourceIndex = sourceModel()->index(index.row(), 0);
     NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(sourceModel()->data(sourceIndex, NetworkModel::TypeRole).toInt());
@@ -86,6 +88,11 @@ QVariant KcmIdentityModel::data(const QModelIndex& index, int role) const
             return QString("%1 (%2)").arg(tooltip).arg(vpnSetting->serviceType().section('.', -1));
         }
         return tooltip;
+    } else if (role == KcmVpnConnectionExportable) {
+        if (type == NetworkManager::ConnectionSettings::Vpn && vpnSetting) {
+            return (vpnSetting->serviceType().endsWith(QLatin1String("vpnc")) || vpnSetting->serviceType().endsWith(QLatin1String("openvpn")));
+        }
+        return false;
     } else {
         return sourceModel()->data(index, role);
     }
@@ -93,13 +100,13 @@ QVariant KcmIdentityModel::data(const QModelIndex& index, int role) const
     return QVariant();
 }
 
-QModelIndex KcmIdentityModel::index(int row, int column, const QModelIndex& parent) const
+QModelIndex KcmIdentityModel::index(int row, int column, const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return createIndex(row, column);
 }
 
-QModelIndex KcmIdentityModel::mapToSource(const QModelIndex& proxyIndex) const
+QModelIndex KcmIdentityModel::mapToSource(const QModelIndex &proxyIndex) const
 {
     if (proxyIndex.column() > 0) {
         return QModelIndex();

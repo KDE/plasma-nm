@@ -33,6 +33,7 @@ Item {
 
     signal selectedConnectionChanged(string connection)
     signal requestCreateConnection(int type, string vpnType, string specificType, bool shared)
+    signal requestExportConnection(string connection)
 
     SystemPalette {
         id: palette
@@ -71,7 +72,6 @@ Item {
         placeholderText: i18n("Type here to search connections...")
 
         onTextChanged: {
-            console.error(text)
             editorProxyModel.setFilterRegExp(text)
         }
     }
@@ -90,6 +90,7 @@ Item {
         ListView {
             id: connectionView
 
+            property bool currentConnectionExportable: false
             property string currentConnectionName
             property string currentConnectionPath
 
@@ -101,10 +102,14 @@ Item {
             section.property: "KcmConnectionType"
             section.delegate: Header { text: section }
             delegate: ConnectionItem {
-                onAboutToRemove: {
+                onAboutToRemoveConnection: {
                     deleteConfirmationDialog.connectionName = name
                     deleteConfirmationDialog.connectionPath = path
                     deleteConfirmationDialog.open()
+                }
+
+                onAboutToExportConnection: {
+                    requestExportConnection(path)
                 }
             }
 
@@ -146,6 +151,18 @@ Item {
                 deleteConfirmationDialog.connectionName = connectionView.currentConnectionName
                 deleteConfirmationDialog.connectionPath = connectionView.currentConnectionPath
                 deleteConfirmationDialog.open()
+            }
+        }
+
+        PlasmaComponents.ToolButton {
+            id: exportConnectionButton
+
+            enabled: connectionView.currentConnectionExportable
+            iconSource: "document-export"
+            tooltip: i18n("Export selected connection")
+
+            onClicked: {
+                root.requestExportConnection(connectionView.currentConnectionPath)
             }
         }
     }

@@ -24,11 +24,14 @@
 #include "connectioneditordialog.h"
 #include "mobileconnectionwizard.h"
 #include "uiutils.h"
+#include "vpnuiplugin.h"
 
 // KDE
 #include <KPluginFactory>
 #include <KSharedConfig>
 #include <kdeclarative/kdeclarative.h>
+#include <KService>
+#include <KServiceTypeTrader>
 
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>
@@ -42,6 +45,7 @@
 #include <NetworkManagerQt/WirelessDevice>
 
 // Qt
+#include <QFileDialog>
 #include <QMenu>
 #include <QQmlContext>
 #include <QQmlEngine>
@@ -77,6 +81,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     QObject *rootItem = m_quickView->rootObject();
     connect(rootItem, SIGNAL(selectedConnectionChanged(QString)), this, SLOT(onSelectedConnectionChanged(QString)));
     connect(rootItem, SIGNAL(requestCreateConnection(int,QString,QString,bool)), this, SLOT(onRequestCreateConnection(int,QString,QString,bool)));
+    connect(rootItem, SIGNAL(requestExportConnection(QString)), this, SLOT(onRequestExportConnection(QString)));
 
     QVBoxLayout *l = new QVBoxLayout(this);
     l->addWidget(mainWidget);
@@ -273,6 +278,49 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
         // Generate new UUID
         connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
         addConnection(connectionSettings);
+    }
+}
+
+void KCMNetworkmanagement::onRequestExportConnection(const QString &connectionPath)
+{
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(connectionPath);
+    if (!connection) {
+        return;
+    }
+
+    NetworkManager::ConnectionSettings::Ptr connSettings = connection->settings();
+
+    if (connSettings->connectionType() != NetworkManager::ConnectionSettings::Vpn)
+        return;
+
+    NetworkManager::VpnSetting::Ptr vpnSetting = connSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+
+    qCDebug(PLASMA_NM) << "Exporting VPN connection" << connection->name() << "type:" << vpnSetting->serviceType();
+
+    QString error;
+    VpnUiPlugin * vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QStringLiteral("PlasmaNetworkManagement/VpnUiPlugin"),
+                                                                                       QStringLiteral("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()),
+                                                                                       this, QVariantList(), &error);
+
+    if (vpnPlugin) {
+        if (vpnPlugin->suggestedFileName(connSettings).isEmpty()) { // this VPN doesn't support export
+            qCWarning(PLASMA_NM) << "This VPN doesn't support export";
+            return;
+        }
+
+        const QString url = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + QDir::separator() + vpnPlugin->suggestedFileName(connSettings);
+        const QString filename = QFileDialog::getSaveFileName(this, i18n("Export VPN Connection"), url, vpnPlugin->supportedFileExtensions());
+        if (!filename.isEmpty()) {
+            if (!vpnPlugin->exportConnectionSettings(connSettings, filename)) {
+                // TODO display failure
+                qCWarning(PLASMA_NM) << "Failed to export VPN connection";
+            } else {
+                // TODO display success
+            }
+        }
+        delete vpnPlugin;
+    } else {
+        qCWarning(PLASMA_NM) << "Error getting VpnUiPlugin for export:" << error;
     }
 }
 

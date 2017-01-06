@@ -29,7 +29,8 @@ PlasmaComponents.ListItem {
     checked: mouseArea.containsMouse || ConnectionPath === connectionView.currentConnectionPath
     height: connectionItemBase.height
 
-    signal aboutToRemove(string name, string path)
+    signal aboutToExportConnection(string path)
+    signal aboutToRemoveConnection(string name, string path)
 
     Item {
         id: connectionItemBase
@@ -122,8 +123,16 @@ PlasmaComponents.ListItem {
             text: i18n("Delete");
 
             onClicked: {
-                aboutToRemove(Name, ConnectionPath)
+                aboutToRemoveConnection(Name, ConnectionPath)
             }
+        }
+
+        PlasmaComponents.MenuItem {
+            icon: "document-export"
+            visible: KcmVpnConnectionExportable
+            text: i18n("Export");
+
+            onClicked: aboutToExportConnection(ConnectionPath)
         }
     }
 
@@ -135,6 +144,7 @@ PlasmaComponents.ListItem {
 
         onClicked: {
             if (mouse.button === Qt.LeftButton) {
+                connectionView.currentConnectionExportable = KcmVpnConnectionExportable
                 connectionView.currentConnectionName = Name
                 connectionView.currentConnectionPath = ConnectionPath
             } else if (mouse.button == Qt.RightButton) {

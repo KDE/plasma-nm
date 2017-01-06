@@ -51,6 +51,82 @@
 
 using namespace NetworkManager;
 
+UiUtils::SortedConnectionType UiUtils::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
+{
+    switch (type) {
+        case NetworkManager::ConnectionSettings::Unknown:
+            return UiUtils::Unknown;
+            break;
+        case NetworkManager::ConnectionSettings::Adsl:
+            return UiUtils::Adsl;
+            break;
+        case NetworkManager::ConnectionSettings::Bluetooth:
+            return UiUtils::Bluetooth;
+            break;
+        case NetworkManager::ConnectionSettings::Bond:
+            return UiUtils::Bond;
+            break;
+        case NetworkManager::ConnectionSettings::Bridge:
+            return UiUtils::Bridge;
+            break;
+        case NetworkManager::ConnectionSettings::Cdma:
+            return UiUtils::Cdma;
+            break;
+        case NetworkManager::ConnectionSettings::Gsm:
+            return UiUtils::Gsm;
+            break;
+        case NetworkManager::ConnectionSettings::Infiniband:
+            return UiUtils::Infiniband;
+            break;
+        case NetworkManager::ConnectionSettings::OLPCMesh:
+            return UiUtils::OLPCMesh;
+            break;
+        case NetworkManager::ConnectionSettings::Pppoe:
+            return UiUtils::Pppoe;
+            break;
+        case NetworkManager::ConnectionSettings::Team:
+            return UiUtils::Team;
+            break;
+        case NetworkManager::ConnectionSettings::Vlan:
+            return UiUtils::Vlan;
+            break;
+        case NetworkManager::ConnectionSettings::Vpn:
+            return UiUtils::Vpn;
+            break;
+        case NetworkManager::ConnectionSettings::Wimax:
+            return UiUtils::Wimax;
+            break;
+        case NetworkManager::ConnectionSettings::Wired:
+            return UiUtils::Wired;
+            break;
+        case NetworkManager::ConnectionSettings::Wireless:
+            return UiUtils::Wireless;
+            break;
+        default:
+            return UiUtils::Unknown;
+            break;
+    }
+}
+
+bool UiUtils::isConnectionTypeSupported(NetworkManager::ConnectionSettings::ConnectionType type)
+{
+    if (type == NetworkManager::ConnectionSettings::Bond ||
+        type == NetworkManager::ConnectionSettings::Bridge ||
+        type == NetworkManager::ConnectionSettings::Generic ||
+        type == NetworkManager::ConnectionSettings::Infiniband ||
+        type == NetworkManager::ConnectionSettings::Team ||
+#if NM_CHECK_VERSION(1, 2, 0)
+        type == NetworkManager::ConnectionSettings::Vlan ||
+        type == NetworkManager::ConnectionSettings::Tun) {
+#else
+        type == NetworkManager::ConnectionSettings::Vlan) {
+#endif
+        return false;
+    }
+
+    return true;
+}
+
 QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, const NetworkManager::Device::Ptr iface)
 {
     QString deviceText;

@@ -19,65 +19,7 @@
 */
 
 #include "editorproxymodel.h"
-
-EditorProxyModel::SortedConnectionType EditorProxyModel::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
-{
-    switch (type) {
-        case NetworkManager::ConnectionSettings::Unknown:
-            return EditorProxyModel::EditorProxyModel::Unknown;
-            break;
-        case NetworkManager::ConnectionSettings::Adsl:
-            return EditorProxyModel::EditorProxyModel::Adsl;
-            break;
-        case NetworkManager::ConnectionSettings::Bluetooth:
-            return EditorProxyModel::Bluetooth;
-            break;
-        case NetworkManager::ConnectionSettings::Bond:
-            return EditorProxyModel::Bond;
-            break;
-        case NetworkManager::ConnectionSettings::Bridge:
-            return EditorProxyModel::Bridge;
-            break;
-        case NetworkManager::ConnectionSettings::Cdma:
-            return EditorProxyModel::Cdma;
-            break;
-        case NetworkManager::ConnectionSettings::Gsm:
-            return EditorProxyModel::Gsm;
-            break;
-        case NetworkManager::ConnectionSettings::Infiniband:
-            return EditorProxyModel::Infiniband;
-            break;
-        case NetworkManager::ConnectionSettings::OLPCMesh:
-            return EditorProxyModel::OLPCMesh;
-            break;
-        case NetworkManager::ConnectionSettings::Pppoe:
-            return EditorProxyModel::Pppoe;
-            break;
-#if NM_CHECK_VERSION(0, 9, 10)
-        case NetworkManager::ConnectionSettings::Team:
-            return EditorProxyModel::Team;
-            break;
-#endif
-        case NetworkManager::ConnectionSettings::Vlan:
-            return EditorProxyModel::Vlan;
-            break;
-        case NetworkManager::ConnectionSettings::Vpn:
-            return EditorProxyModel::Vpn;
-            break;
-        case NetworkManager::ConnectionSettings::Wimax:
-            return EditorProxyModel::Wimax;
-            break;
-        case NetworkManager::ConnectionSettings::Wired:
-            return EditorProxyModel::Wired;
-            break;
-        case NetworkManager::ConnectionSettings::Wireless:
-            return EditorProxyModel::Wireless;
-            break;
-        default:
-            return EditorProxyModel::Unknown;
-            break;
-    }
-}
+#include "uiutils.h"
 
 EditorProxyModel::EditorProxyModel(QObject* parent)
     : QSortFilterProxyModel(parent)
@@ -142,12 +84,12 @@ bool EditorProxyModel::lessThan(const QModelIndex &left, const QModelIndex &righ
 {
     const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
     const QString leftName = sourceModel()->data(left, NetworkModel::NameRole).toString();
-    const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
+    const UiUtils::SortedConnectionType leftType = UiUtils::connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
     const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStampRole).toDateTime();
 
     const bool rightConnected = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
     const QString rightName = sourceModel()->data(right, NetworkModel::NameRole).toString();
-    const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
+    const UiUtils::SortedConnectionType rightType = UiUtils::connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
     const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStampRole).toDateTime();
 
     if (leftType < rightType) {

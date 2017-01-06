@@ -181,4 +181,9 @@ Item {
     function deselectConnections() {
         connectionView.currentConnectionPath = ""
     }
+
+    function selectConnection(connectionName, connectionPath) {
+        connectionView.currentConnectionName = connectionName
+        connectionView.currentConnectionPath = connectionPath
+    }
 }

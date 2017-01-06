@@ -46,6 +46,35 @@
 class Q_DECL_EXPORT UiUtils
 {
 public:
+    enum SortedConnectionType {
+        Wired,
+        Wireless,
+        Wimax,
+        Gsm,
+        Cdma,
+        Pppoe,
+        Adsl,
+        Infiniband,
+        OLPCMesh,
+        Bluetooth,
+        Vpn,
+        Vlan,
+        Bridge,
+        Bond,
+        Team,
+        Unknown
+    };
+
+    /*
+     * @return sorted connection type used to prioritize specific connection types
+     */
+    static SortedConnectionType connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type);
+
+    /*
+     * @return whether given connection type is supported
+     * Currently ignored connection types: Bond, Bridge, Generic, Infiniband, Team, Vlan, Tun
+     */
+    static bool isConnectionTypeSupported(NetworkManager::ConnectionSettings::ConnectionType type);
 
     /**
      * @return a human-readable description for the network interface type for use as label

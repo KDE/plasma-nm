@@ -23,6 +23,7 @@
 #include "debug.h"
 #include "connectioneditordialog.h"
 #include "mobileconnectionwizard.h"
+#include "uiutils.h"
 
 // KDE
 #include <KPluginFactory>
@@ -81,6 +82,58 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     l->addWidget(mainWidget);
 
     setButtons(Button::Apply);
+
+    // Pre-select currently active primary connection and if there is none then just select
+    // the very first connection
+    NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::primaryConnection();
+    if (activeConnection && activeConnection->isValid()) {
+        // Also check if the connection type is supported by KCM
+        const NetworkManager::ConnectionSettings::ConnectionType type = activeConnection->type();
+        if (UiUtils::isConnectionTypeSupported(type)) {
+            loadConnectionSettings(activeConnection->connection()->settings());
+            QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, activeConnection->id()), Q_ARG(QVariant, activeConnection->connection()->path()));
+        }
+    } else {
+        // Select first connection
+        NetworkManager::Connection::List connectionList = NetworkManager::listConnections();
+        std::sort(connectionList.begin(), connectionList.end(), [] (const NetworkManager::Connection::Ptr &left, const NetworkManager::Connection::Ptr &right)
+        {
+            const QString leftName = left->settings()->id();
+            const UiUtils::SortedConnectionType leftType = UiUtils::connectionTypeToSortedType(left->settings()->connectionType());
+            const QDateTime leftDate = left->settings()->timestamp();
+
+            const QString rightName = right->settings()->id();
+            const UiUtils::SortedConnectionType rightType = UiUtils::connectionTypeToSortedType(right->settings()->connectionType());
+            const QDateTime rightDate = right->settings()->timestamp();
+
+            if (leftType < rightType) {
+                return true;
+            } else if (leftType > rightType) {
+                return false;
+            }
+
+            if (leftDate > rightDate) {
+                return true;
+            } else if (leftDate < rightDate) {
+                return false;
+            }
+
+            if (QString::localeAwareCompare(leftName, rightName) > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        Q_FOREACH (const NetworkManager::Connection::Ptr &connection, connectionList) {
+            const NetworkManager::ConnectionSettings::ConnectionType type = connection->settings()->connectionType();
+            if (UiUtils::isConnectionTypeSupported(type)) {
+                loadConnectionSettings(connection->settings());
+                QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, connection->settings()->id()), Q_ARG(QVariant, connection->path()));
+                break;
+            }
+        }
+    }
 }
 
 KCMNetworkmanagement::~KCMNetworkmanagement()

@@ -30,28 +30,6 @@ class Q_DECL_EXPORT AppletProxyModel : public QSortFilterProxyModel
 Q_OBJECT
 Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
 public:
-    enum SortedConnectionType {
-        Wired,
-        Wireless,
-        Wimax,
-        Gsm,
-        Cdma,
-        Pppoe,
-        Adsl,
-        Infiniband,
-        OLPCMesh,
-        Bluetooth,
-        Vpn,
-        Vlan,
-        Bridge,
-        Bond,
-#if NM_CHECK_VERSION(0, 9, 10)
-        Team,
-#endif
-        Unknown };
-
-    static SortedConnectionType connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type);
-
     explicit AppletProxyModel(QObject* parent = 0);
     virtual ~AppletProxyModel();
 

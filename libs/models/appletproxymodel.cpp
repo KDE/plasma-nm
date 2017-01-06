@@ -20,65 +20,7 @@
 
 #include "appletproxymodel.h"
 #include "networkmodel.h"
-
-AppletProxyModel::SortedConnectionType AppletProxyModel::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
-{
-    switch (type) {
-        case NetworkManager::ConnectionSettings::Unknown:
-            return AppletProxyModel::AppletProxyModel::Unknown;
-            break;
-        case NetworkManager::ConnectionSettings::Adsl:
-            return AppletProxyModel::AppletProxyModel::Adsl;
-            break;
-        case NetworkManager::ConnectionSettings::Bluetooth:
-            return AppletProxyModel::Bluetooth;
-            break;
-        case NetworkManager::ConnectionSettings::Bond:
-            return AppletProxyModel::Bond;
-            break;
-        case NetworkManager::ConnectionSettings::Bridge:
-            return AppletProxyModel::Bridge;
-            break;
-        case NetworkManager::ConnectionSettings::Cdma:
-            return AppletProxyModel::Cdma;
-            break;
-        case NetworkManager::ConnectionSettings::Gsm:
-            return AppletProxyModel::Gsm;
-            break;
-        case NetworkManager::ConnectionSettings::Infiniband:
-            return AppletProxyModel::Infiniband;
-            break;
-        case NetworkManager::ConnectionSettings::OLPCMesh:
-            return AppletProxyModel::OLPCMesh;
-            break;
-        case NetworkManager::ConnectionSettings::Pppoe:
-            return AppletProxyModel::Pppoe;
-            break;
-#if NM_CHECK_VERSION(0, 9, 10)
-        case NetworkManager::ConnectionSettings::Team:
-            return AppletProxyModel::Team;
-            break;
-#endif
-        case NetworkManager::ConnectionSettings::Vlan:
-            return AppletProxyModel::Vlan;
-            break;
-        case NetworkManager::ConnectionSettings::Vpn:
-            return AppletProxyModel::Vpn;
-            break;
-        case NetworkManager::ConnectionSettings::Wimax:
-            return AppletProxyModel::Wimax;
-            break;
-        case NetworkManager::ConnectionSettings::Wired:
-            return AppletProxyModel::Wired;
-            break;
-        case NetworkManager::ConnectionSettings::Wireless:
-            return AppletProxyModel::Wireless;
-            break;
-        default:
-            return AppletProxyModel::Unknown;
-            break;
-    }
-}
+#include "uiutils.h"
 
 AppletProxyModel::AppletProxyModel(QObject* parent)
     : QSortFilterProxyModel(parent)
@@ -135,7 +77,7 @@ bool AppletProxyModel::lessThan(const QModelIndex& left, const QModelIndex& righ
     const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
     const int leftConnectionState = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt();
     const QString leftName = sourceModel()->data(left, NetworkModel::NameRole).toString();
-    const SortedConnectionType leftType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
+    const UiUtils::SortedConnectionType leftType = UiUtils::connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
     const QString leftUuid = sourceModel()->data(left, NetworkModel::UuidRole).toString();
     const int leftSignal = sourceModel()->data(left, NetworkModel::SignalRole).toInt();
     const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStampRole).toDateTime();
@@ -144,7 +86,7 @@ bool AppletProxyModel::lessThan(const QModelIndex& left, const QModelIndex& righ
     const bool rightConnected = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
     const int rightConnectionState = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt();
     const QString rightName = sourceModel()->data(right, NetworkModel::NameRole).toString();
-    const SortedConnectionType rightType = connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
+    const UiUtils::SortedConnectionType rightType = UiUtils::connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
     const QString rightUuid = sourceModel()->data(right, NetworkModel::UuidRole).toString();
     const int rightSignal = sourceModel()->data(right, NetworkModel::SignalRole).toInt();
     const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStampRole).toDateTime();

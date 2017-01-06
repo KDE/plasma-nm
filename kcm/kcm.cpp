@@ -189,12 +189,10 @@ void KCMNetworkmanagement::save()
 void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared)
 {
     NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(connectionType);
-//     const QString vpnType = action->property("type").toString();
-//     const QString vpnSubType = action->property("subtype").toString();
 
-//     if (type == NetworkManager::ConnectionSettings::Vpn && vpnType == "imported") {
-//         importVpn();
-/*    } else */if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
+    if (type == NetworkManager::ConnectionSettings::Vpn && vpnType == "imported") {
+        importVpn();
+    } else if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
 #if WITH_MODEMMANAGER_SUPPORT
         QPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
         connect(wizard.data(), &MobileConnectionWizard::accepted,
@@ -397,5 +395,57 @@ void KCMNetworkmanagement::resetSelection()
     Q_EMIT changed(false);
 }
 
-#include "kcm.moc"
+void KCMNetworkmanagement::importVpn()
+{
+    // get the list of supported extensions
+    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
+    QString extensions;
+    Q_FOREACH (const KService::Ptr &service, services) {
+        VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
+        if (vpnPlugin) {
+            extensions += vpnPlugin->supportedFileExtensions() % QStringLiteral(" ");
+            delete vpnPlugin;
+        }
+    }
 
+    const QString &filename = QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), extensions.simplified());
+
+    if (!filename.isEmpty()) {
+        const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
+
+        QFileInfo fi(filename);
+        const QString ext = QStringLiteral("*.") % fi.suffix();
+        qCDebug(PLASMA_NM) << "Importing VPN connection " << filename << "extension:" << ext;
+
+        Q_FOREACH (const KService::Ptr &service, services) {
+            VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
+            if (vpnPlugin && vpnPlugin->supportedFileExtensions().contains(ext)) {
+                qCDebug(PLASMA_NM) << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
+
+                NMVariantMapMap connection = vpnPlugin->importConnectionSettings(filename);
+
+                // qCDebug(PLASMA_NM) << "Raw connection:" << connection;
+
+                NetworkManager::ConnectionSettings connectionSettings;
+                connectionSettings.fromMap(connection);
+                connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+
+                // qCDebug(PLASMA_NM) << "Converted connection:" << connectionSettings;
+
+                m_handler->addConnection(connectionSettings.toMap());
+                // qCDebug(PLASMA_NM) << "Adding imported connection under id:" << conId;
+
+                if (connection.isEmpty()) { // the "positive" part will arrive with connectionAdded
+                    // TODO display success
+                } else {
+                    delete vpnPlugin;
+                    break; // stop iterating over the plugins if the import produced at least some output
+                }
+
+                delete vpnPlugin;
+            }
+        }
+    }
+}
+
+#include "kcm.moc"

@@ -191,6 +191,13 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
                                                      vpnType, vpnSubType, false);
         m_list << connectionItem;
     }
+
+    // Placeholder for VPN import
+    connectionItem = new CreatableConnectionItem(i18n("Import VPN connection..."), i18n("Other"),
+                                                 i18n("Import a saved configuration file"), QStringLiteral("document-import"),
+                                                 NetworkManager::ConnectionSettings::Vpn,
+                                                 QLatin1String("imported"), QLatin1String("imported"), false);
+    m_list << connectionItem;
 }
 
 CreatableConnectionsModel::~CreatableConnectionsModel()

@@ -495,8 +495,8 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
                 /* INFO: Disabled for now as wifi scanning is now automatical
                     notification = new KNotification("FailedToRequestScan", KNotification::CloseOnTimeout, this);
                     notification->setTitle(i18n("Failed to request scan"));
-                    break;
                 */
+                    break;
             case Handler::UpdateConnection:
                 notification = new KNotification("FailedToUpdateConnection", KNotification::CloseOnTimeout, this);
                 notification->setTitle(i18n("Failed to update connection %1", watcher->property("connection").toString()));

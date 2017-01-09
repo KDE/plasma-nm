@@ -67,4 +67,16 @@ Item {
     PlasmaNM.Handler {
         id: handler
     }
+
+    Timer {
+        id: scanTimer
+        interval: 15000
+        repeat: true
+        running: plasmoid.expanded
+        triggeredOnStart: true
+
+        onTriggered: {
+            handler.requestScan()
+        }
+    }
 }

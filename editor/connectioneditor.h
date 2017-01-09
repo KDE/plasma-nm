@@ -72,6 +72,7 @@ private:
     Ui::ConnectionEditor * m_editor;
     Handler * m_handler;
     KActionMenu * m_menu;
+    QTimer *m_timer;
 
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void initializeMenu();

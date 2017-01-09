@@ -47,11 +47,12 @@
 // Qt
 #include <QFileDialog>
 #include <QMenu>
+#include <QVBoxLayout>
+#include <QTimer>
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickItem>
 #include <QQuickView>
-#include <QVBoxLayout>
 
 K_PLUGIN_FACTORY(KCMNetworkConfigurationFactory, registerPlugin<KCMNetworkmanagement>();)
 
@@ -139,6 +140,17 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
             }
         }
     }
+
+    // Initialize first scan and then scan every 15 seconds
+    m_handler->requestScan();
+
+    m_timer = new QTimer(this);
+    m_timer->setInterval(15000);
+    connect(m_timer, &QTimer::timeout, [this] () {
+        m_handler->requestScan();
+        m_timer->start();
+    });
+    m_timer->start();
 }
 
 KCMNetworkmanagement::~KCMNetworkmanagement()

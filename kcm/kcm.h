@@ -55,6 +55,7 @@ private:
     QString m_currentConnectionPath;
     Handler *m_handler;
     ConnectionEditorTabWidget *m_tabWidget;
+    QTimer *m_timer;
     Ui::KCMForm *m_ui;
     QQuickView *m_quickView;
 };

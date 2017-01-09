@@ -106,6 +106,17 @@ ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
 
     QLoggingCategory::setFilterRules(QStringLiteral("plasma-nm.debug = false"));
     QLoggingCategory::setFilterRules(QStringLiteral("plasma-nm.warning = true"));
+
+    // Initialize first scan and then scan every 15 seconds
+    m_handler->requestScan();
+
+    m_timer = new QTimer(this);
+    m_timer->setInterval(15000);
+    connect(m_timer, &QTimer::timeout, [this] () {
+        m_handler->requestScan();
+        m_timer->start();
+    });
+    m_timer->start();
 }
 
 ConnectionEditor::~ConnectionEditor()
@@ -473,7 +484,6 @@ void ConnectionEditor::removeConnection()
     }
 
     Q_FOREACH( NetworkManager::Connection::Ptr connection, connections ) {
-
         if (removeConnections) {
             Q_FOREACH (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
                 NetworkManager::ConnectionSettings::Ptr settings = con->settings();
@@ -483,7 +493,6 @@ void ConnectionEditor::removeConnection()
             }
             m_handler->removeConnection(connection->path());
         }
-
     }
 }
 

@@ -43,6 +43,7 @@ PlasmaComponents.ListItem {
         font.weight: Font.DemiBold
     }
 
+    /* INFO: Disabled for now as wifi scanning is now automatical
     PlasmaComponents.ToolButton {
         anchors {
             top: parent.top
@@ -80,6 +81,7 @@ PlasmaComponents.ListItem {
             }
         }
     }
+    */
 
     Component.onCompleted: {
         if (header.text === i18n("Available connections")) {

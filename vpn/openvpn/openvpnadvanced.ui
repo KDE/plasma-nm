@@ -470,7 +470,7 @@ Block Chaining mode).</string>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
-          <widget class="QLabel" name="label_10">
+          <widget class="QLabel" name="lbSubjectMatch">
            <property name="text">
             <string>Subject Match:</string>
            </property>
@@ -496,7 +496,7 @@ the specified one.</string>
         </layout>
        </item>
        <item>
-        <widget class="QLabel" name="lbSubjectMatch">
+        <widget class="QLabel" name="lbSubjectMatchInfo">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>

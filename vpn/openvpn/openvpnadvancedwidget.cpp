@@ -35,10 +35,16 @@
 class OpenVpnAdvancedWidget::Private {
 public:
     NetworkManager::VpnSetting::Ptr setting;
-    KProcess *openvpnProcess;
-    QByteArray openVpnCiphers;
-    bool gotOpenVpnCiphers;
-    bool readConfig;
+    KProcess *openvpnCipherProcess = nullptr;
+    KProcess *openvpnVersionProcess = nullptr;
+    QByteArray openvpnCiphers;
+    QByteArray openVpnVersion;
+    bool gotOpenVpnCiphers = false;
+    bool gotOpenVpnVersion = false;
+    bool readConfig = false;
+    int versionX = 0;
+    int versionY = 0;
+    int versionZ = 0;
 
     class EnumProxyType
     {
@@ -61,9 +67,6 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
 
     setWindowTitle(i18nc("@title: window advanced openvpn properties", "Advanced OpenVPN properties"));
 
-    d->openvpnProcess = 0;
-    d->gotOpenVpnCiphers = false;
-    d->readConfig = false;
     d->setting = setting;
 
     m_ui->proxyPassword->setPasswordOptionsEnabled(true);
@@ -73,15 +76,24 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
 
     // start openVPN process and get its cipher list
     const QString openVpnBinary = QStandardPaths::findExecutable("openvpn", QStringList() << "/sbin" << "/usr/sbin");
-    const QStringList args(QLatin1String("--show-ciphers"));
+    const QStringList ciphersArgs(QLatin1String("--show-ciphers"));
+    const QStringList versionArgs(QLatin1String("--version"));
 
-    d->openvpnProcess = new KProcess(this);
-    d->openvpnProcess->setOutputChannelMode(KProcess::OnlyStdoutChannel);
-    d->openvpnProcess->setReadChannel(QProcess::StandardOutput);
-    connect(d->openvpnProcess, static_cast<void (KProcess::*)(QProcess::ProcessError)>(&KProcess::error), this, &OpenVpnAdvancedWidget::openVpnError);
-    connect(d->openvpnProcess, &KProcess::readyReadStandardOutput, this, &OpenVpnAdvancedWidget::gotOpenVpnOutput);
-    connect(d->openvpnProcess, static_cast<void (KProcess::*)(int, QProcess::ExitStatus)>(&KProcess::finished), this, &OpenVpnAdvancedWidget::openVpnFinished);
-    d->openvpnProcess->setProgram(openVpnBinary, args);
+    d->openvpnCipherProcess = new KProcess(this);
+    d->openvpnCipherProcess->setOutputChannelMode(KProcess::OnlyStdoutChannel);
+    d->openvpnCipherProcess->setReadChannel(QProcess::StandardOutput);
+    connect(d->openvpnCipherProcess, static_cast<void (KProcess::*)(QProcess::ProcessError)>(&KProcess::error), this, &OpenVpnAdvancedWidget::openVpnCipherError);
+    connect(d->openvpnCipherProcess, &KProcess::readyReadStandardOutput, this, &OpenVpnAdvancedWidget::gotOpenVpnCipherOutput);
+    connect(d->openvpnCipherProcess, static_cast<void (KProcess::*)(int, QProcess::ExitStatus)>(&KProcess::finished), this, &OpenVpnAdvancedWidget::openVpnCipherFinished);
+    d->openvpnCipherProcess->setProgram(openVpnBinary, ciphersArgs);
+
+    d->openvpnVersionProcess = new KProcess(this);
+    d->openvpnVersionProcess->setOutputChannelMode(KProcess::OnlyStdoutChannel);
+    d->openvpnVersionProcess->setReadChannel(QProcess::StandardOutput);
+    connect(d->openvpnVersionProcess, static_cast<void (KProcess::*)(QProcess::ProcessError)>(&KProcess::error), this, &OpenVpnAdvancedWidget::openVpnVersionError);
+    connect(d->openvpnVersionProcess, &KProcess::readyReadStandardOutput, this, &OpenVpnAdvancedWidget::gotOpenVpnVersionOutput);
+    connect(d->openvpnVersionProcess, static_cast<void (KProcess::*)(int, QProcess::ExitStatus)>(&KProcess::finished), this, &OpenVpnAdvancedWidget::openVpnVersionFinished);
+    d->openvpnVersionProcess->setProgram(openVpnBinary, versionArgs);
 
     connect(m_ui->buttonBox, &QDialogButtonBox::accepted, this, &OpenVpnAdvancedWidget::accept);
     connect(m_ui->buttonBox, &QDialogButtonBox::rejected, this, &OpenVpnAdvancedWidget::reject);
@@ -100,26 +112,27 @@ OpenVpnAdvancedWidget::~OpenVpnAdvancedWidget()
 
 void OpenVpnAdvancedWidget::init()
 {
-    d->openvpnProcess->start();
+    d->openvpnCipherProcess->start();
+    d->openvpnVersionProcess->start();
 }
 
-void OpenVpnAdvancedWidget::gotOpenVpnOutput()
+void OpenVpnAdvancedWidget::gotOpenVpnCipherOutput()
 {
-    d->openVpnCiphers.append(d->openvpnProcess->readAll());
+    d->openvpnCiphers.append(d->openvpnCipherProcess->readAll());
 }
 
-void OpenVpnAdvancedWidget::openVpnError(QProcess::ProcessError)
+void OpenVpnAdvancedWidget::openVpnCipherError(QProcess::ProcessError)
 {
     m_ui->cboCipher->removeItem(0);
     m_ui->cboCipher->addItem(i18nc("@item:inlistbox Item added when OpenVPN cipher lookup failed", "OpenVPN cipher lookup failed"));
 }
 
-void OpenVpnAdvancedWidget::openVpnFinished(int exitCode, QProcess::ExitStatus exitStatus)
+void OpenVpnAdvancedWidget::openVpnCipherFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
     m_ui->cboCipher->removeItem(0);
     if (!exitCode && exitStatus == QProcess::NormalExit) {
         m_ui->cboCipher->addItem(i18nc("@item::inlist Default openvpn cipher item", "Default"));
-        const QList<QByteArray> rawOutputLines = d->openVpnCiphers.split('\n');
+        const QList<QByteArray> rawOutputLines = d->openvpnCiphers.split('\n');
         bool foundFirstSpace = false;
         Q_FOREACH (const QByteArray &cipher, rawOutputLines) {
             if (cipher.length() == 0) {
@@ -137,9 +150,9 @@ void OpenVpnAdvancedWidget::openVpnFinished(int exitCode, QProcess::ExitStatus e
     } else {
         m_ui->cboCipher->addItem(i18nc("@item:inlistbox Item added when OpenVPN cipher lookup failed", "OpenVPN cipher lookup failed"));
     }
-    delete d->openvpnProcess;
-    d->openvpnProcess = 0;
-    d->openVpnCiphers = QByteArray();
+    delete d->openvpnCipherProcess;
+    d->openvpnCipherProcess = 0;
+    d->openvpnCiphers = QByteArray();
     d->gotOpenVpnCiphers = true;
 
     if (d->readConfig) {
@@ -148,6 +161,82 @@ void OpenVpnAdvancedWidget::openVpnFinished(int exitCode, QProcess::ExitStatus e
             m_ui->cboCipher->setCurrentIndex(m_ui->cboCipher->findText(dataMap.value(NM_OPENVPN_KEY_CIPHER)));
         }
     }
+}
+
+void OpenVpnAdvancedWidget::gotOpenVpnVersionOutput()
+{
+    d->openVpnVersion.append(d->openvpnVersionProcess->readAll());
+}
+
+void OpenVpnAdvancedWidget::openVpnVersionError(QProcess::ProcessError)
+{
+    // We couldn't identify OpenVPN version so disable tls-remote
+    disableSubjectMatch();
+}
+
+void OpenVpnAdvancedWidget::openVpnVersionFinished(int exitCode, QProcess::ExitStatus exitStatus)
+{
+    // OpenVPN returns 1 when you use "--help" and unfortunately returns 1 even when some error occurs
+    if (exitCode == 1 && exitStatus == QProcess::NormalExit) {
+        QStringList list = QString(d->openVpnVersion).split(QLatin1Char(' '));
+        if (list.count() > 2) {
+            const QStringList versionList = list.at(1).split(QLatin1Char('.'));
+            if (versionList.count() == 3) {
+                d->versionX = versionList.at(0).toInt();
+                d->versionY = versionList.at(1).toInt();
+                d->versionZ = versionList.at(2).toInt();
+
+                if (compareVersion(2, 4, 0) >= 0) {
+                    disableSubjectMatch();
+                }
+            }
+        }
+    } else {
+        disableSubjectMatch();
+    }
+
+    delete d->openvpnVersionProcess;
+    d->openvpnVersionProcess = 0;
+    d->openVpnVersion = QByteArray();
+    d->gotOpenVpnVersion = true;
+
+    if (d->readConfig) {
+        const NMStringMap dataMap = d->setting->data();
+        if (dataMap.contains(NM_OPENVPN_KEY_TLS_REMOTE)) {
+            m_ui->subjectMatch->setText(dataMap.value(NM_OPENVPN_KEY_TLS_REMOTE));
+        }
+    }
+}
+
+int OpenVpnAdvancedWidget::compareVersion(const int x, const int y, const int z) const
+{
+    if (d->versionX == 0) {
+        // Not valid version
+        return -2;
+    }
+
+    if (d->versionX > x) {
+        return 1;
+    } else if (d->versionX < x) {
+        return -1;
+    } else if (d->versionY > y) {
+        return 1;
+    } else if (d->versionY < y) {
+        return -1;
+    } else if (d->versionZ > z) {
+        return 1;
+    } else if (d->versionZ < z) {
+        return -1;
+    }
+    return 0;
+}
+
+void OpenVpnAdvancedWidget::disableSubjectMatch()
+{
+    m_ui->subjectMatch->setDisabled(true);
+    m_ui->subjectMatch->setVisible(false);
+    m_ui->lbSubjectMatch->setVisible(false);
+    m_ui->lbSubjectMatchInfo->setVisible(false);
 }
 
 void OpenVpnAdvancedWidget::loadConfig()
@@ -238,7 +327,7 @@ void OpenVpnAdvancedWidget::loadConfig()
     }
 
     // Optional TLS
-    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE))) {
+    if (d->gotOpenVpnVersion && dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE))) {
         m_ui->subjectMatch->setText(dataMap[QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE)]);
     }
 
@@ -382,7 +471,7 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     }
 
     // optional tls authentication
-    if (!m_ui->subjectMatch->text().isEmpty()) {
+    if (compareVersion(2, 4, 0) == -1 && !m_ui->subjectMatch->text().isEmpty()) {
         data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE), m_ui->subjectMatch->text());
     }
 

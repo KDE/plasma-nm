@@ -45,12 +45,17 @@ public:
     NetworkManager::VpnSetting::Ptr setting() const;
 
 private Q_SLOTS:
-    void gotOpenVpnOutput();
-    void openVpnError(QProcess::ProcessError);
-    void openVpnFinished(int, QProcess::ExitStatus);
+    void gotOpenVpnCipherOutput();
+    void openVpnCipherError(QProcess::ProcessError);
+    void openVpnCipherFinished(int, QProcess::ExitStatus);
+    void gotOpenVpnVersionOutput();
+    void openVpnVersionError(QProcess::ProcessError);
+    void openVpnVersionFinished(int, QProcess::ExitStatus);
     void proxyTypeChanged(int);
 
 private:
+    int compareVersion(const int x, const int y, const int z) const;
+    void disableSubjectMatch();
     void loadConfig();
     void fillOnePasswordCombo(PasswordField *passwordField, NetworkManager::Setting::SecretFlags type);
     void handleOnePasswordType(const PasswordField *passwordField, const QString &key, NMStringMap &data) const;

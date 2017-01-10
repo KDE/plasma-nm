@@ -156,6 +156,8 @@ PlasmaComponents.ListItem {
     function itemText() {
         if (ConnectionState == PlasmaNM.Enums.Activated) {
             return i18n("Connected")
+        } else if (ConnectionState == PlasmaNM.Enums.Activating) {
+            return i18n("Connecting")
         } else {
             return LastUsed
         }

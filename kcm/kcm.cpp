@@ -73,6 +73,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     kdeclarative.setupBindings();
 
     QWidget *widget = QWidget::createWindowContainer(m_quickView, this);
+    widget->setMinimumWidth(300);
     QVBoxLayout *layout = new QVBoxLayout(m_ui->connectionView);
     layout->addWidget(widget);
 

@@ -142,6 +142,8 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
         }
     }
 
+    connect(NetworkManager::settingsNotifier(), &NetworkManager::SettingsNotifier::connectionAdded, this, &KCMNetworkmanagement::onConnectionAdded, Qt::UniqueConnection);
+
     // Initialize first scan and then scan every 15 seconds
     m_handler->requestScan();
 
@@ -197,6 +199,24 @@ void KCMNetworkmanagement::save()
     }
 
     KCModule::save();
+}
+
+void KCMNetworkmanagement::onConnectionAdded(const QString &connection)
+{
+    if (m_createdConnectionUuid.isEmpty()) {
+        return;
+    }
+
+    NetworkManager::Connection::Ptr newConnection = NetworkManager::findConnection(connection);
+    if (newConnection) {
+        NetworkManager::ConnectionSettings::Ptr connectionSettings = newConnection->settings();
+        if (connectionSettings && connectionSettings->uuid() == m_createdConnectionUuid) {
+            QObject *rootItem = m_quickView->rootObject();
+            loadConnectionSettings(connectionSettings);
+            QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, connectionSettings->id()), Q_ARG(QVariant, newConnection->path()));
+            m_createdConnectionUuid.clear();
+        }
+    }
 }
 
 void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared)
@@ -287,6 +307,7 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
             }
         }
         // Generate new UUID
+
         connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
         addConnection(connectionSettings);
     }
@@ -353,11 +374,11 @@ void KCMNetworkmanagement::onSelectedConnectionChanged(const QString &connection
 
 void KCMNetworkmanagement::addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings)
 {
-    resetSelection();
-
     QPointer<ConnectionEditorDialog> editor = new ConnectionEditorDialog(connectionSettings);
     connect(editor.data(), &ConnectionEditorDialog::accepted,
             [connectionSettings, editor, this] () {
+                // We got confirmation so watch this connection and select it once it is created
+                m_createdConnectionUuid = connectionSettings->uuid();
                 m_handler->addConnection(editor->setting());
             });
     connect(editor.data(), &ConnectionEditorDialog::finished,

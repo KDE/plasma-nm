@@ -42,6 +42,7 @@ public Q_SLOTS:
     void save() override;
 
 private Q_SLOTS:
+    void onConnectionAdded(const QString &connection);
     void onSelectedConnectionChanged(const QString &connectionPath);
     void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
     void onRequestExportConnection(const QString &connectionPath);
@@ -53,6 +54,7 @@ private:
     void importVpn();
 
     QString m_currentConnectionPath;
+    QString m_createdConnectionUuid;
     Handler *m_handler;
     ConnectionEditorTabWidget *m_tabWidget;
     QTimer *m_timer;

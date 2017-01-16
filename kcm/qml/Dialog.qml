@@ -20,7 +20,8 @@
 
 import QtQuick 2.3
 import QtQuick.Dialogs 1.2
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import QtQuick.Controls 1.2 as QtControls
+import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
@@ -39,15 +40,11 @@ Dialog {
             id: connectionModel
         }
 
-        SystemPalette {
-            id: palette
-        }
-
         Rectangle {
             id: background
             anchors.fill: parent
             focus: true
-            color: palette.base
+            color: baseColor
         }
 
         PlasmaExtras.ScrollArea {
@@ -76,7 +73,7 @@ Dialog {
                 boundsBehavior: Flickable.StopAtBounds
                 section.property: "ConnectionTypeSection"
                 section.delegate: Header { text: section }
-                delegate: PlasmaComponents.ListItem {
+                delegate: ListItem {
                     checked: mouseArea.containsMouse || view.currentlySelectedIndex == index
                     height: connectionTypeBase.height
 
@@ -92,7 +89,7 @@ Dialog {
                         }
                         height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionDescriptionLabel.height) + Math.round(units.gridUnit / 2)
 
-                        PlasmaCore.IconItem {
+                        KQuickControlsAddons.QIconItem {
                             id: connectionIcon
 
                             anchors {
@@ -100,10 +97,10 @@ Dialog {
                                 verticalCenter: parent.verticalCenter
                             }
                             height: units.iconSizes.medium; width: height
-                            source: ConnectionIcon
+                            icon: ConnectionIcon
                         }
 
-                        PlasmaComponents.Label {
+                        Text {
                             id: connectionNameLabel
 
                             anchors {
@@ -113,13 +110,14 @@ Dialog {
                                 right: parent.right
                                 verticalCenter: ConnectionType == 11 ? undefined : parent.verticalCenter
                             }
+                            color: textColor
                             height: paintedHeight
                             elide: Text.ElideRight
                             text: ConnectionTypeName
                             textFormat: Text.PlainText
                         }
 
-                        PlasmaComponents.Label {
+                        Text {
                             id: connectionDescriptionLabel
 
                             anchors {
@@ -128,6 +126,7 @@ Dialog {
                                 right: parent.right
                                 top: connectionNameLabel.bottom
                             }
+                            color: textColor
                             height: visible ? paintedHeight : 0
                             elide: Text.ElideRight
                             font.pointSize: theme.smallestFont.pointSize
@@ -169,7 +168,7 @@ Dialog {
             }
             spacing: Math.round(units.gridUnit / 2)
 
-            PlasmaComponents.Button {
+            QtControls.Button {
                 id: createButton
                 enabled: false
                 text: i18n("Create")
@@ -180,7 +179,7 @@ Dialog {
                 }
             }
 
-            PlasmaComponents.Button {
+            QtControls.Button {
                 id: closeButton
                 text: i18n("Close")
 

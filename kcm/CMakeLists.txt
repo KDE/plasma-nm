@@ -38,6 +38,7 @@ install( FILES
     qml/ConnectionItem.qml
     qml/Dialog.qml
     qml/Header.qml
+    qml/ListItem.qml
     qml/main.qml
 
     DESTINATION ${DATA_INSTALL_DIR}/kcm_networkmanagement/qml)

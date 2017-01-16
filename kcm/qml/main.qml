@@ -20,8 +20,8 @@
 
 import QtQuick 2.1
 import QtQuick.Dialogs 1.1
+import QtQuick.Controls 1.2 as QtControls
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
@@ -35,15 +35,11 @@ Item {
     signal requestCreateConnection(int type, string vpnType, string specificType, bool shared)
     signal requestExportConnection(string connection)
 
-    SystemPalette {
-        id: palette
-    }
-
     Rectangle {
         id: background
         anchors.fill: parent
         focus: true
-        color: palette.base
+        color: baseColor
     }
 
     PlasmaNM.Handler {
@@ -60,7 +56,7 @@ Item {
         sourceModel: connectionModel
     }
 
-    PlasmaComponents.TextField {
+    QtControls.TextField {
         id: searchField
 
         anchors {
@@ -129,10 +125,10 @@ Item {
         }
         spacing: Math.round(units.gridUnit / 2)
 
-        PlasmaComponents.ToolButton {
+        QtControls.ToolButton {
             id: addConnectionButton
 
-            iconSource: "list-add"
+            iconName: "list-add"
             tooltip: i18n("Add new connection")
 
             onClicked: {
@@ -140,11 +136,11 @@ Item {
             }
         }
 
-        PlasmaComponents.ToolButton {
+        QtControls.ToolButton {
             id: removeConnectionButton
 
             enabled: connectionView.currentConnectionPath && connectionView.currentConnectionPath.length
-            iconSource: "list-remove"
+            iconName: "list-remove"
             tooltip: i18n("Remove selected connection")
 
             onClicked: {
@@ -154,11 +150,11 @@ Item {
             }
         }
 
-        PlasmaComponents.ToolButton {
+        QtControls.ToolButton {
             id: exportConnectionButton
 
             enabled: connectionView.currentConnectionExportable
-            iconSource: "document-export"
+            iconName: "document-export"
             tooltip: i18n("Export selected connection")
 
             onClicked: {

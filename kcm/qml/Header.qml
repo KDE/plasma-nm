@@ -21,7 +21,7 @@
 import QtQuick 2.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
-PlasmaComponents.ListItem {
+ListItem {
     id: header
 
     property alias text: headerLabel.text
@@ -30,10 +30,11 @@ PlasmaComponents.ListItem {
     width: parent.width
     sectionDelegate: true
 
-    PlasmaComponents.Label {
+    Text {
         id: headerLabel
 
         anchors.centerIn: parent
+        color: textColor
         height: paintedHeight
         font.weight: Font.DemiBold
     }

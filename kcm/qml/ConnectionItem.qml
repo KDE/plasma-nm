@@ -19,11 +19,12 @@
 */
 
 import QtQuick 2.1
+import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
-PlasmaComponents.ListItem {
+ListItem {
     id: connectionItem
 
     checked: mouseArea.containsMouse || ConnectionPath === connectionView.currentConnectionPath
@@ -39,12 +40,11 @@ PlasmaComponents.ListItem {
             left: parent.left
             right: parent.right
             top: parent.top
-            // Reset top margin from PlasmaComponents.ListItem
             topMargin: -Math.round(units.gridUnit / 3)
         }
         height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(units.gridUnit / 2)
 
-        PlasmaCore.IconItem {
+        KQuickControlsAddons.QIconItem {
             id: connectionIcon
 
             anchors {
@@ -52,10 +52,10 @@ PlasmaComponents.ListItem {
                 verticalCenter: parent.verticalCenter
             }
             height: units.iconSizes.medium; width: height
-            source: KcmConnectionIcon
+            icon: KcmConnectionIcon
         }
 
-        PlasmaComponents.Label {
+        Text {
             id: connectionNameLabel
 
             anchors {
@@ -64,6 +64,7 @@ PlasmaComponents.ListItem {
                 leftMargin: Math.round(units.gridUnit / 2)
                 right: connectingIndicator.visible ? connectingIndicator.left : parent.right
             }
+            color: textColor
             height: paintedHeight
             elide: Text.ElideRight
             font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
@@ -72,7 +73,7 @@ PlasmaComponents.ListItem {
             textFormat: Text.PlainText
         }
 
-        PlasmaComponents.Label {
+        Text {
             id: connectionStatusLabel
 
             anchors {
@@ -81,6 +82,7 @@ PlasmaComponents.ListItem {
                 right: connectingIndicator.visible ? connectingIndicator.left : parent.right
                 top: connectionNameLabel.bottom
             }
+            color: textColor
             height: paintedHeight
             elide: Text.ElideRight
             font.pointSize: theme.smallestFont.pointSize

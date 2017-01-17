@@ -196,6 +196,8 @@ QVariantMap OpenVpnSettingWidget::setting() const
         // key password
         if (!d->ui.x509KeyPassword->text().isEmpty()) {
             secretData.insert(QLatin1String(NM_OPENVPN_KEY_CERTPASS), d->ui.x509KeyPassword->text());
+        } else {
+            secretData.remove(QLatin1String(NM_OPENVPN_KEY_CERTPASS));
         }
         handleOnePasswordType(d->ui.x509KeyPassword, QLatin1String(NM_OPENVPN_KEY_CERTPASS"-flags"), data);
         break;
@@ -221,10 +223,14 @@ QVariantMap OpenVpnSettingWidget::setting() const
         // username
         if (!d->ui.passUserName->text().isEmpty()) {
             data.insert(QLatin1String(NM_OPENVPN_KEY_USERNAME), d->ui.passUserName->text());
+        } else {
+            data.remove(QLatin1String(NM_OPENVPN_KEY_USERNAME));
         }
         // password
         if (!d->ui.passPassword->text().isEmpty()) {
-            secretData.insert(QLatin1String(NM_OPENVPN_KEY_PASSWORD ), d->ui.passPassword->text());
+            secretData.insert(QLatin1String(NM_OPENVPN_KEY_PASSWORD), d->ui.passPassword->text());
+        } else {
+            secretData.remove(QLatin1String(NM_OPENVPN_KEY_PASSWORD));
         }
         handleOnePasswordType(d->ui.passPassword, QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), data);
         // ca
@@ -235,6 +241,8 @@ QVariantMap OpenVpnSettingWidget::setting() const
         // username
         if (!d->ui.x509PassUsername->text().isEmpty()) {
             data.insert(QLatin1String(NM_OPENVPN_KEY_USERNAME), d->ui.x509PassUsername->text());
+        } else {
+            data.remove(QLatin1String(NM_OPENVPN_KEY_USERNAME));
         }
         // ca
         data.insert(QLatin1String(NM_OPENVPN_KEY_CA), d->ui.x509PassCaFile->url().toLocalFile());
@@ -245,11 +253,15 @@ QVariantMap OpenVpnSettingWidget::setting() const
         // key password
         if (!d->ui.x509PassKeyPassword->text().isEmpty()) {
             secretData.insert(QLatin1String(NM_OPENVPN_KEY_CERTPASS), d->ui.x509PassKeyPassword->text());
+        } else {
+            secretData.remove(QLatin1String(NM_OPENVPN_KEY_CERTPASS));
         }
         handleOnePasswordType(d->ui.x509PassKeyPassword, QLatin1String(NM_OPENVPN_KEY_CERTPASS"-flags"), data);
         // password
         if (!d->ui.x509PassPassword->text().isEmpty()) {
             secretData.insert(QLatin1String(NM_OPENVPN_KEY_PASSWORD), d->ui.x509PassPassword->text());
+        } else {
+            secretData.remove(QLatin1String(NM_OPENVPN_KEY_PASSWORD));
         }
         handleOnePasswordType(d->ui.x509PassPassword, QLatin1String(NM_OPENVPN_KEY_PASSWORD"-flags"), data);
         break;

@@ -601,7 +601,7 @@ void OpenconnectAuthWidget::formLoginClicked()
             struct oc_form_opt *opt = (struct oc_form_opt *) widget->property("openconnect_opt").value<quintptr>();
             const QString key = QString("form:%1:%2").arg(QLatin1String(form->auth_id)).arg(QLatin1String(opt->name));
             if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {
-                QLineEdit *le = qobject_cast<QLineEdit*>(widget);
+                PasswordField *le = qobject_cast<PasswordField*>(widget);
                 QByteArray text = le->text().toUtf8();
                 openconnect_set_option_value(opt, text.data());
                 if (opt->type == OC_FORM_OPT_TEXT) {

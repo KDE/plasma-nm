@@ -344,7 +344,9 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         notify->setTitle(identifier);
         notify->setText(text);
         notify->sendEvent();
-        m_notifications[device->uni()] = notify;
+        if (notify->id() != -1) {
+                m_notifications[device->uni()] = notify;
+        }
     }
 }
 
@@ -457,7 +459,9 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
     notify->setTitle(acName);
     notify->setText(text);
     notify->sendEvent();
-    m_notifications[connectionId] = notify;
+    if (notify->id() != -1) {
+        m_notifications[connectionId] = notify;
+    }
 }
 
 void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
@@ -531,7 +535,9 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
     notify->setTitle(vpnName);
     notify->setText(text);
     notify->sendEvent();
-    m_notifications[connectionId] = notify;
+    if (notify->id() != -1) {
+        m_notifications[connectionId] = notify;
+    }
 }
 
 void Notification::notificationClosed()
@@ -598,5 +604,7 @@ void Notification::onCheckActiveConnectionOnResume()
     notify->setTitle(i18n("No Network Connection"));
     notify->setText(i18n("You are no longer connected to a network."));
     notify->sendEvent();
-    m_notifications[uni] = notify;
+    if (notify->id() != -1) {
+        m_notifications[uni] = notify;
+    }
 }

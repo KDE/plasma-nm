@@ -29,6 +29,9 @@
      <property name="currentIndex">
       <number>-1</number>
      </property>
+     <property name="elideMode">
+      <enum>Qt::ElideRight</enum>
+     </property>
     </widget>
    </item>
   </layout>

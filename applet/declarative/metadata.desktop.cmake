@@ -52,6 +52,7 @@ Comment[fi]=Verkon tila ja hallinta
 Comment[fr]=État et contrôle du réseau
 Comment[gl]=Monitorización e control da rede
 Comment[hu]=Hálózatállapot és vezérlés
+Comment[ia]=Stato e controlo de rete
 Comment[it]=Stato e controllo della rete
 Comment[ko]=네트워크 상태 및 제어
 Comment[lt]=Tinklo būsena ir kontrolė

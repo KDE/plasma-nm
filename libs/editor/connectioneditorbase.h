@@ -74,6 +74,7 @@ protected:
 private:
     bool m_initialized;
     bool m_valid;
+    int m_pendingReplies;
     NetworkManager::ConnectionSettings::Ptr m_connection;
     ConnectionWidget *m_connectionWidget;
     QList<SettingWidget *> m_settingWidgets;

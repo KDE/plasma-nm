@@ -66,6 +66,7 @@ ConnectionEditorBase::ConnectionEditorBase(const NetworkManager::ConnectionSetti
     : QWidget(parent, f)
     , m_initialized(false)
     , m_valid(false)
+    , m_pendingReplies(0)
     , m_connection(connection)
 {
 }
@@ -400,6 +401,7 @@ void ConnectionEditorBase::initialize()
                 }
 
                 if (requestSecrets) {
+                    m_pendingReplies++;
                     reply = connection->secrets(settingName);
                     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
                     watcher->setProperty("connection", connection->name());
@@ -414,7 +416,9 @@ void ConnectionEditorBase::initialize()
     }
 
     // We should be now fully initialized as we don't wait for secrets
-    m_initialized = true;
+    if (m_pendingReplies == 0) {
+        m_initialized = true;
+    }
 }
 
 void ConnectionEditorBase::replyFinished(QDBusPendingCallWatcher *watcher)
@@ -452,6 +456,7 @@ void ConnectionEditorBase::replyFinished(QDBusPendingCallWatcher *watcher)
     validChanged(true);
 
     // We should be now fully with secrets
+    m_pendingReplies--;
     m_initialized = true;
 }
 

@@ -43,8 +43,10 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
     watchChangedSetting();
 
     // Connect for validity check
-    connect(m_widget->macAddress, &HwAddrComboBox::hwAddressChanged, this, &WiredConnectionWidget::slotWidgetChanged);
+    connect(m_widget->autonegotiate, &QCheckBox::stateChanged, this, &WiredConnectionWidget::slotWidgetChanged);
     connect(m_widget->clonedMacAddress, &KLineEdit::textChanged, this, &WiredConnectionWidget::slotWidgetChanged);
+    connect(m_widget->macAddress, &HwAddrComboBox::hwAddressChanged, this, &WiredConnectionWidget::slotWidgetChanged);
+    connect(m_widget->speed, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &WiredConnectionWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 
@@ -103,12 +105,11 @@ QVariantMap WiredConnectionWidget::setting() const
 
     if (m_widget->autonegotiate->isChecked()) {
         wiredSetting.setAutoNegotiate(true);
+        wiredSetting.setDuplexType(NetworkManager::WiredSetting::UnknownDuplexType);
+        wiredSetting.setSpeed(0);
     } else {
         wiredSetting.setAutoNegotiate(false);
-
-        if (m_widget->speed->value()) {
-            wiredSetting.setSpeed(m_widget->speed->value());
-        }
+        wiredSetting.setSpeed(m_widget->speed->value());
 
         if (m_widget->duplex->currentIndex() == 0) {
             wiredSetting.setDuplexType(NetworkManager::WiredSetting::Full);
@@ -144,6 +145,12 @@ bool WiredConnectionWidget::isValid() const
 
     if (m_widget->clonedMacAddress->text() != ":::::") {
         if (!NetworkManager::macAddressIsValid(m_widget->clonedMacAddress->text())) {
+            return false;
+        }
+    }
+
+    if (!m_widget->autonegotiate->isChecked()) {
+        if (!m_widget->speed->value()) {
             return false;
         }
     }

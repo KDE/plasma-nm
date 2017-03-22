@@ -19,29 +19,21 @@
 */
 
 import QtQuick 2.2
-import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
-MouseArea {
-    id: panelIconWidget
+PlasmaComponents.TextField {
+    property int securityType
 
-    anchors.fill: parent
-
-    onClicked: plasmoid.expanded = !plasmoid.expanded
-
-    PlasmaCore.IconItem {
-        id: connectionIcon
-
-        anchors.fill: parent
-        source: connectionIconProvider.connectionIcon
-        colorGroup: PlasmaCore.ColorScope.colorGroup
-
-        PlasmaComponents.BusyIndicator {
-            id: connectingIndicator
-
-            anchors.fill: parent
-            running: connectionIconProvider.connecting
-            visible: running
-        }
-    }
+    height: implicitHeight; width: units.gridUnit * 15
+    echoMode: TextInput.Password
+    revealPasswordButtonShown: true
+    placeholderText: i18n("Password...")
+    validator: RegExpValidator {
+                    regExp: if (securityType == PlasmaNM.Enums.StaticWep) {
+                                /^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26}){1}$/
+                            } else {
+                                /^(?:.{8,64}){1}$/
+                            }
+                    }
 }

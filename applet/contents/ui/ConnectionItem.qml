@@ -1,5 +1,5 @@
 /*
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2017 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -167,17 +167,13 @@ PlasmaComponents.ListItem {
         Item {
             height: childrenRect.height
 
-            PlasmaCore.SvgItem {
+            Separator {
                 id: detailsSeparator
-
                 anchors {
                     left: parent.left
                     right: parent.right
                     top: parent.top
                 }
-                height: lineSvg.elementSize("horizontal-line").height; width: parent.width
-                elementId: "horizontal-line"
-                svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
             }
 
             PlasmaComponents.TabBar {
@@ -209,31 +205,7 @@ PlasmaComponents.ListItem {
                 }
             }
 
-            KQuickControlsAddons.Clipboard {
-                id: clipboard
-            }
-
-            PlasmaComponents.ContextMenu {
-                id: contextMenu
-                property string text
-
-                function show(item, text, x, y) {
-                    contextMenu.text = text
-                    visualParent = item
-                    open(x, y)
-                }
-
-                PlasmaComponents.MenuItem {
-                    text: i18n("Copy")
-                    icon: "edit-copy"
-                    enabled: contextMenu.text !== ""
-                    onClicked: clipboard.content = contextMenu.text
-                }
-            }
-
-            Column {
-                id: details
-
+            DetailsText {
                 anchors {
                     left: parent.left
                     leftMargin: units.iconSizes.medium
@@ -241,143 +213,20 @@ PlasmaComponents.ListItem {
                     top: detailsTabBar.visible ? detailsTabBar.bottom : detailsSeparator.bottom
                     topMargin: Math.round(units.gridUnit / 3)
                 }
-                height: childrenRect.height
-                visible: detailsTabBar.currentTab == detailsTabButton;
-
-                Repeater {
-                    id: repeater
-
-                    property int longestString: 0
-
-                    model: ConnectionDetails.length / 2
-
-                    Item {
-                        anchors {
-                            left: parent.left
-                            right: parent.right
-                            topMargin: Math.round(units.gridUnit / 3)
-                        }
-                        height: Math.max(detailNameLabel.height, detailValueLabel.height)
-
-                        PlasmaComponents.Label {
-                            id: detailNameLabel
-
-                            anchors {
-                                left: parent.left
-                                leftMargin: repeater.longestString - paintedWidth + Math.round(units.gridUnit / 2)
-                                verticalCenter: parent.verticalCenter
-                            }
-                            height: paintedHeight
-                            font.pointSize: theme.smallestFont.pointSize
-                            horizontalAlignment: Text.AlignRight
-                            opacity: 0.6
-                            text: "<b>" + ConnectionDetails[index*2] + "</b>: &nbsp"
-
-                            Component.onCompleted: {
-                                if (paintedWidth > repeater.longestString) {
-                                    repeater.longestString = paintedWidth
-                                }
-                            }
-                        }
-
-                        PlasmaComponents.Label {
-                            id: detailValueLabel
-
-                            anchors {
-                                left: detailNameLabel.right
-                                right: parent.right
-                                verticalCenter: parent.verticalCenter
-                            }
-                            height: paintedHeight
-                            elide: Text.ElideRight
-                            font.pointSize: theme.smallestFont.pointSize
-                            opacity: 0.6
-                            text: ConnectionDetails[(index*2)+1]
-                            textFormat: Text.PlainText
-
-                            MouseArea {
-                                anchors.fill: parent
-                                acceptedButtons: Qt.RightButton
-                                onClicked: contextMenu.show(this, detailValueLabel.text, mouse.x, mouse.y)
-                            }
-                        }
-                    }
-                }
+                details: ConnectionDetails
+                visible: detailsTabBar.currentTab == detailsTabButton
             }
 
-            Item {
-                id: trafficMonitor
-
+            TrafficMonitor {
                 anchors {
                     left: parent.left
                     right: parent.right
                     top: detailsTabBar.visible ? detailsTabBar.bottom : detailsSeparator.bottom
                     topMargin: Math.round(units.gridUnit / 3)
                 }
-                height: visible? plotter.height + Math.round(units.gridUnit / 3) : 0
+                dataEngine: dataSource
+                deviceName: DeviceName
                 visible: detailsTabBar.currentTab == speedTabButton
-
-                Repeater {
-                    model: 5
-
-                    PlasmaComponents.Label {
-                        anchors {
-                            left: parent.left
-                            top: parent.top
-                            topMargin: Math.round(units.gridUnit / 3) + (index * plotter.height / 5)
-                        }
-                        height: paintedHeight
-                        font.pointSize: theme.smallestFont.pointSize
-                        text: KCoreAddons.Format.formatByteSize((plotter.maxValue * 1024) * (1 - index / 5))
-                    }
-                }
-
-                KQuickControlsAddons.Plotter {
-                    id: plotter
-
-                    // Joining two QList<foo> in QML/javascript doesn't seem to work so I'm getting maximum from both list separately
-                    readonly property int maxValue: Math.max(Math.max.apply(null, downloadPlotData.values), Math.max.apply(null, uploadPlotData.values))
-                    anchors {
-                        left: parent.left
-                        leftMargin: units.iconSizes.medium
-                        right: parent.right
-                        top: parent.top
-                        topMargin: Math.round(units.gridUnit / 2)
-                    }
-                    width: units.gridUnit * 20
-                    height: units.gridUnit * 8
-                    horizontalGridLineCount: 5
-
-                    dataSets: [
-                        KQuickControlsAddons.PlotData {
-                            id: downloadPlotData
-                            label: i18n("Download")
-                            color: theme.highlightColor
-                        },
-                        KQuickControlsAddons.PlotData {
-                            id: uploadPlotData
-                            label: i18n("Upload")
-                            color: cycle(theme.highlightColor, -180)
-                        }
-                    ]
-
-                    Connections {
-                        target: dataSource;
-                        onNewData: {
-                            if (sourceName.indexOf("network/interfaces/" + DeviceName) != 0) {
-                                return;
-                            }
-                            var rx = dataSource.data[dataSource.downloadSource];
-                            var tx = dataSource.data[dataSource.uploadSource];
-                            if (rx === undefined || rx.value === undefined ||
-                                tx === undefined || tx.value === undefined) {
-                                return;
-                            }
-
-                            plotter.addSample([rx.value, tx.value]);
-                        }
-                    }
-                }
             }
         }
     }
@@ -386,59 +235,44 @@ PlasmaComponents.ListItem {
         id: passwordDialogComponent
 
         Item {
-            property alias password: passwordInput.text
-            property alias passwordFocus: passwordInput
+            property alias password: passwordField.text
+            property alias passwordInput: passwordField
 
             height: childrenRect.height
 
-            PlasmaCore.SvgItem {
+            Separator {
                 id: passwordSeparator
-
                 anchors {
                     left: parent.left
                     right: parent.right
                     top: parent.top
                 }
-                height: lineSvg.elementSize("horizontal-line").height; width: parent.width
-                elementId: "horizontal-line"
-                svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
             }
 
-            PlasmaComponents.TextField {
-                id: passwordInput
-
+            PasswordField {
+                id: passwordField
                 anchors {
                     horizontalCenter: parent.horizontalCenter
                     top: passwordSeparator.bottom
                     topMargin: Math.round(units.gridUnit / 3)
                 }
-                height: implicitHeight; width: units.gridUnit * 15
-                echoMode: TextInput.Password
-                revealPasswordButtonShown: true
-                placeholderText: i18n("Password...")
-                validator: RegExpValidator {
-                                regExp: if (SecurityType == PlasmaNM.Enums.StaticWep) {
-                                            /^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26}){1}$/
-                                        } else {
-                                            /^(?:.{8,64}){1}$/
-                                        }
-                                }
+                securityType: SecurityType
 
                 onAccepted: {
-                    stateChangeButton.clicked();
+                    stateChangeButton.clicked()
                 }
 
                 onAcceptableInputChanged: {
-                    stateChangeButton.enabled = acceptableInput;
+                    stateChangeButton.enabled = acceptableInput
                 }
-            }
 
-            Component.onCompleted: {
-                stateChangeButton.enabled = false;
-            }
+                Component.onCompleted: {
+                    stateChangeButton.enabled = false
+                }
 
-            Component.onDestruction: {
-                stateChangeButton.enabled = true;
+                Component.onDestruction: {
+                    stateChangeButton.enabled = true
+                }
             }
         }
     }
@@ -466,10 +300,10 @@ PlasmaComponents.ListItem {
 
     function createContent() {
         if (visibleDetails) {
-            expandableComponentLoader.sourceComponent = detailsComponent;
+            expandableComponentLoader.sourceComponent = detailsComponent
         } else if (visiblePasswordDialog) {
-            expandableComponentLoader.sourceComponent = passwordDialogComponent;
-            expandableComponentLoader.item.passwordFocus.forceActiveFocus();
+            expandableComponentLoader.sourceComponent = passwordDialogComponent
+            expandableComponentLoader.item.passwordInput.forceActiveFocus()
         }
     }
 

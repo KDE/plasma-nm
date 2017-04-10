@@ -317,6 +317,15 @@ void ConnectionEditor::addConnection(QAction* action)
 
         if (type == NetworkManager::ConnectionSettings::Wired || type == NetworkManager::ConnectionSettings::Wireless) {
             bool shared = action->property("shared").toBool();
+
+            // Set auto-negotiate to true, NM sets it to false by default, but we used to have this before and also
+            // I don't think it's wise to request users to specify speed and duplex as most of them don't know what is that
+            // and what to set
+            if (type == NetworkManager::ConnectionSettings::Wired) {
+                NetworkManager::WiredSetting::Ptr wiredSetting = connectionSettings->setting(NetworkManager::Setting::Wired).dynamicCast<NetworkManager::WiredSetting>();
+                wiredSetting->setAutoNegotiate(true);
+            }
+
             if (shared) {
                 if (type == NetworkManager::ConnectionSettings::Wireless) {
                     NetworkManager::WirelessSetting::Ptr wifiSetting = connectionSettings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();

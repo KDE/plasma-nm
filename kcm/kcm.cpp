@@ -41,6 +41,7 @@
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/VpnSetting>
+#include <NetworkManagerQt/WiredSetting>
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/WirelessDevice>
 
@@ -287,6 +288,14 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
         }
 
         if (type == NetworkManager::ConnectionSettings::Wired || type == NetworkManager::ConnectionSettings::Wireless) {
+            // Set auto-negotiate to true, NM sets it to false by default, but we used to have this before and also
+            // I don't think it's wise to request users to specify speed and duplex as most of them don't know what is that
+            // and what to set
+            if (type == NetworkManager::ConnectionSettings::Wired) {
+                NetworkManager::WiredSetting::Ptr wiredSetting = connectionSettings->setting(NetworkManager::Setting::Wired).dynamicCast<NetworkManager::WiredSetting>();
+                wiredSetting->setAutoNegotiate(true);
+            }
+
             if (shared) {
                 if (type == NetworkManager::ConnectionSettings::Wireless) {
                     NetworkManager::WirelessSetting::Ptr wifiSetting = connectionSettings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
@@ -312,7 +321,6 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
             }
         }
         // Generate new UUID
-
         connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
         addConnection(connectionSettings);
     }

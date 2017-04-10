@@ -61,6 +61,7 @@
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/GsmSetting>
 #include <NetworkManagerQt/VpnSetting>
+#include <NetworkManagerQt/WiredSetting>
 
 ConnectionEditor::ConnectionEditor(QWidget* parent, Qt::WindowFlags flags)
     : KXmlGuiWindow(parent, flags)

@@ -101,7 +101,7 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
 
     KAcceleratorManager::manage(this);
 
-    if (d->setting && !d->setting->isNull()) {
+    if (d->setting) {
         loadConfig();
     }
 }

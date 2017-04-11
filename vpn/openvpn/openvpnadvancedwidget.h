@@ -37,6 +37,15 @@ class QLineEdit;
 class OpenVpnAdvancedWidget : public QDialog
 {
     Q_OBJECT
+
+    enum CertCheckType {
+        DontVerify = 0,
+        VerifyWholeSubjectExactly,
+        VerifyNameExactly,
+        VerifyNameByPrefix,
+        VerifySubjectPartially
+    };
+
 public:
     explicit OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
     ~OpenVpnAdvancedWidget();
@@ -51,11 +60,12 @@ private Q_SLOTS:
     void gotOpenVpnVersionOutput();
     void openVpnVersionError(QProcess::ProcessError);
     void openVpnVersionFinished(int, QProcess::ExitStatus);
+    void certCheckTypeChanged(int);
     void proxyTypeChanged(int);
 
 private:
     int compareVersion(const int x, const int y, const int z) const;
-    void disableSubjectMatch();
+    void disableLegacySubjectMatch();
     void loadConfig();
     void fillOnePasswordCombo(PasswordField *passwordField, NetworkManager::Setting::SecretFlags type);
     void handleOnePasswordType(const PasswordField *passwordField, const QString &key, NMStringMap &data) const;

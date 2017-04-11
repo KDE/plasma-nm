@@ -72,6 +72,7 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     m_ui->proxyPassword->setPasswordOptionsEnabled(true);
     m_ui->proxyPassword->setPasswordNotRequiredEnabled(true);
 
+    connect(m_ui->cbCertCheck, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::certCheckTypeChanged);
     connect(m_ui->cmbProxyType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyTypeChanged);
 
     // start openVPN process and get its cipher list
@@ -171,7 +172,7 @@ void OpenVpnAdvancedWidget::gotOpenVpnVersionOutput()
 void OpenVpnAdvancedWidget::openVpnVersionError(QProcess::ProcessError)
 {
     // We couldn't identify OpenVPN version so disable tls-remote
-    disableSubjectMatch();
+    disableLegacySubjectMatch();
 }
 
 void OpenVpnAdvancedWidget::openVpnVersionFinished(int exitCode, QProcess::ExitStatus exitStatus)
@@ -187,12 +188,12 @@ void OpenVpnAdvancedWidget::openVpnVersionFinished(int exitCode, QProcess::ExitS
                 d->versionZ = versionList.at(2).toInt();
 
                 if (compareVersion(2, 4, 0) >= 0) {
-                    disableSubjectMatch();
+                    disableLegacySubjectMatch();
                 }
             }
         }
     } else {
-        disableSubjectMatch();
+        disableLegacySubjectMatch();
     }
 
     delete d->openvpnVersionProcess;
@@ -231,12 +232,9 @@ int OpenVpnAdvancedWidget::compareVersion(const int x, const int y, const int z)
     return 0;
 }
 
-void OpenVpnAdvancedWidget::disableSubjectMatch()
+void OpenVpnAdvancedWidget::disableLegacySubjectMatch()
 {
-    m_ui->subjectMatch->setDisabled(true);
-    m_ui->subjectMatch->setVisible(false);
-    m_ui->lbSubjectMatch->setVisible(false);
-    m_ui->lbSubjectMatchInfo->setVisible(false);
+    m_ui->cbCertCheck->removeItem(CertCheckType::VerifySubjectPartially);
 }
 
 void OpenVpnAdvancedWidget::loadConfig()
@@ -246,20 +244,27 @@ void OpenVpnAdvancedWidget::loadConfig()
 
     // Optional Settings
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_PORT))) {
+        m_ui->chkCustomPort->setChecked(true);
         m_ui->sbCustomPort->setValue(dataMap[QLatin1String(NM_OPENVPN_KEY_PORT)].toUInt());
     } else {
-        m_ui->sbCustomPort->setValue(0);
+        m_ui->chkCustomPort->setChecked(false);
+        m_ui->sbCustomPort->setValue(1194); // Default value
     }
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TUNNEL_MTU))) {
+        m_ui->chkMtu->setChecked(true);
         m_ui->sbMtu->setValue(dataMap[QLatin1String(NM_OPENVPN_KEY_TUNNEL_MTU)].toUInt());
     } else {
-        m_ui->sbMtu->setValue(0);
+        m_ui->chkMtu->setChecked(false);
+        m_ui->sbMtu->setValue(1500); // Default value
     }
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_FRAGMENT_SIZE))) {
-        m_ui->sbUdpFragmentSize->setValue(dataMap[QLatin1String(NM_OPENVPN_KEY_FRAGMENT_SIZE)].toUInt());
+        m_ui->chkCustomFragmentSize->setChecked(true);
+        m_ui->sbCustomFragmentSize->setValue(dataMap[QLatin1String(NM_OPENVPN_KEY_FRAGMENT_SIZE)].toUInt());
     } else {
-        m_ui->sbUdpFragmentSize->setValue(0);
+        m_ui->chkCustomFragmentSize->setChecked(false);
+        m_ui->sbCustomFragmentSize->setValue(1300);
     }
+
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_RENEG_SECONDS))) {
         m_ui->chkUseCustomReneg->setChecked(true);
         m_ui->sbCustomReneg->setValue(dataMap[QLatin1String(NM_OPENVPN_KEY_RENEG_SECONDS)].toUInt());
@@ -267,6 +272,7 @@ void OpenVpnAdvancedWidget::loadConfig()
         m_ui->chkUseCustomReneg->setChecked(false);
         m_ui->sbCustomReneg->setValue(0);
     }
+
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_COMP_LZO))) {
         const QString compLzo = dataMap[QLatin1String(NM_OPENVPN_KEY_COMP_LZO)];
         if (compLzo == QLatin1String("no-by-default")) {
@@ -291,6 +297,31 @@ void OpenVpnAdvancedWidget::loadConfig()
     }
     m_ui->chkMssRestrict->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_MSSFIX)] == QLatin1String("yes"));
     m_ui->chkRandRemHosts->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_REMOTE_RANDOM)] == QLatin1String("yes"));
+
+    m_ui->chkIpv6TunLink->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_TUN_IPV6)] == QLatin1String("yes"));
+
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_PING))) {
+        m_ui->chkPingInterval->setChecked(true);
+        m_ui->sbPingInterval->setValue(dataMap[QLatin1String(NM_OPENVPN_KEY_PING)].toInt());
+    }
+
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_PING_EXIT)) || dataMap.contains(QLatin1String(NM_OPENVPN_KEY_PING_RESTART))) {
+        m_ui->chkSpecifyExitRestartPing->setChecked(true);
+        if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_PING_EXIT))) {
+            m_ui->cbSpecifyExitRestartPing->setCurrentIndex(0); // Exit
+            m_ui->sbSpecifyExitRestartPing->setValue(dataMap[QLatin1String(NM_OPENVPN_KEY_PING_EXIT)].toInt());
+        } else {
+            m_ui->cbSpecifyExitRestartPing->setCurrentIndex(1); // Restart
+            m_ui->sbSpecifyExitRestartPing->setValue(dataMap[QLatin1String(NM_OPENVPN_KEY_PING_RESTART)].toInt());
+        }
+    }
+
+    m_ui->chkAcceptAuthenticatedPackets->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_FLOAT)] == QLatin1String("yes"));
+
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_MAX_ROUTES))) {
+        m_ui->chkMaxRoutes->setChecked(true);
+        m_ui->sbMaxRoutes->setValue(dataMap[QLatin1String(NM_OPENVPN_KEY_MAX_ROUTES)].toInt());
+    }
 
     // Optional Security Settings
     const QString hmacKeyAuth = dataMap[QLatin1String(NM_OPENVPN_KEY_AUTH)];
@@ -327,8 +358,26 @@ void OpenVpnAdvancedWidget::loadConfig()
     }
 
     // Optional TLS
-    if (d->gotOpenVpnVersion && dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE))) {
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE))) {
+        m_ui->cbCertCheck->setCurrentIndex(CertCheckType::VerifySubjectPartially);
         m_ui->subjectMatch->setText(dataMap[QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE)]);
+    }
+
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME))) {
+        const QString x509Value = dataMap.value(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME));
+        const QStringList x509List = x509Value.split(QLatin1Char(':'));
+        if (x509List.size() == 2) {
+            if (x509List.at(0) == QLatin1String(NM_OPENVPN_VERIFY_X509_NAME_TYPE_SUBJECT)) {
+                m_ui->cbCertCheck->setCurrentIndex(CertCheckType::VerifyWholeSubjectExactly);
+            } else if (x509List.at(0) == QLatin1String(NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME)) {
+                m_ui->cbCertCheck->setCurrentIndex(CertCheckType::VerifyNameExactly);
+            } else if (x509List.at(0) == QLatin1String(NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME_PREFIX)) {
+                m_ui->cbCertCheck->setCurrentIndex(CertCheckType::VerifyNameByPrefix);
+            }
+            m_ui->subjectMatch->setText(x509List.at(1));
+        }
+    } else {
+        m_ui->cbCertCheck->setCurrentIndex(CertCheckType::DontVerify);
     }
 
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_REMOTE_CERT_TLS))) {
@@ -336,7 +385,15 @@ void OpenVpnAdvancedWidget::loadConfig()
         m_ui->chkRemoteCertTls->setChecked(true);
         m_ui->labelRemoteCertTls->setEnabled(true);
         m_ui->cmbRemoteCertTls->setEnabled(true);
-        m_ui->cmbRemoteCertTls->setCurrentIndex(remoteCertTls == QLatin1String("server") ? 0 : 1);
+        m_ui->cmbRemoteCertTls->setCurrentIndex(remoteCertTls == QLatin1String(NM_OPENVPN_REM_CERT_TLS_SERVER) ? 0 : 1);
+    }
+
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_NS_CERT_TYPE))) {
+        const QString remoteCertTls = dataMap[QLatin1String(NM_OPENVPN_KEY_NS_CERT_TYPE)];
+        m_ui->chkNsCertType->setChecked(true);
+        m_ui->lblNsCertType->setEnabled(true);
+        m_ui->cmbNsCertType->setEnabled(true);
+        m_ui->cmbNsCertType->setCurrentIndex(remoteCertTls == QLatin1String(NM_OPENVPN_NS_CERT_TYPE_SERVER) ? 0 : 1);
     }
 
     m_ui->useExtraTlsAuth->setChecked(!dataMap[QLatin1String(NM_OPENVPN_KEY_TA)].isEmpty());
@@ -392,14 +449,14 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     NMStringMap secretData;
 
     // optional settings
-    if (m_ui->sbCustomPort->value() > 0 ) {
+    if (m_ui->chkCustomPort->isChecked()) {
         data.insert(QLatin1String(NM_OPENVPN_KEY_PORT), QString::number(m_ui->sbCustomPort->value()));
     }
-    if (m_ui->sbMtu->value() > 0 ) {
+    if (m_ui->chkMtu->isChecked()) {
         data.insert(QLatin1String(NM_OPENVPN_KEY_TUNNEL_MTU), QString::number(m_ui->sbMtu->value()));
     }
-    if (m_ui->sbUdpFragmentSize->value() > 0 ) {
-        data.insert(QLatin1String(NM_OPENVPN_KEY_FRAGMENT_SIZE), QString::number(m_ui->sbUdpFragmentSize->value()));
+    if (m_ui->chkCustomFragmentSize->isChecked() ) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_FRAGMENT_SIZE), QString::number(m_ui->sbCustomFragmentSize->value()));
     }
     if (m_ui->chkUseCustomReneg->isChecked()) {
         data.insert(QLatin1String(NM_OPENVPN_KEY_RENEG_SECONDS), QString::number(m_ui->sbCustomReneg->value()));
@@ -426,8 +483,28 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     if (m_ui->chkUseVirtualDeviceName->isChecked()) {
         data.insert(QLatin1String(NM_OPENVPN_KEY_DEV), m_ui->leVirtualDeviceName->text());
     }
+
     data.insert(QLatin1String(NM_OPENVPN_KEY_MSSFIX), m_ui->chkMssRestrict->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
     data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_RANDOM), m_ui->chkRandRemHosts->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
+    data.insert(QLatin1String(NM_OPENVPN_KEY_TUN_IPV6), m_ui->chkIpv6TunLink->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
+
+    if (m_ui->chkPingInterval->isChecked()) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_PING), QString::number(m_ui->sbPingInterval->value()));
+    }
+
+    if (m_ui->chkSpecifyExitRestartPing->isChecked()) {
+        if (m_ui->cbSpecifyExitRestartPing->currentIndex() == 0) { // Exit
+            data.insert(QLatin1String(NM_OPENVPN_KEY_PING_EXIT), QString::number(m_ui->sbSpecifyExitRestartPing->value()));
+        } else { // Restart
+            data.insert(QLatin1String(NM_OPENVPN_KEY_PING_RESTART), QString::number(m_ui->sbSpecifyExitRestartPing->value()));
+        }
+    }
+
+    data.insert(QLatin1String(NM_OPENVPN_KEY_FLOAT), m_ui->chkAcceptAuthenticatedPackets->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
+
+    if (m_ui->chkMaxRoutes->isChecked()) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_MAX_ROUTES), QString::number(m_ui->sbMaxRoutes->value()));
+    }
 
     // Optional Security
     switch (m_ui->cboHmac->currentIndex()) {
@@ -471,15 +548,36 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     }
 
     // optional tls authentication
-    if (compareVersion(2, 4, 0) == -1 && !m_ui->subjectMatch->text().isEmpty()) {
+    switch (m_ui->cbCertCheck->currentIndex()) {
+    case CertCheckType::DontVerify:
+        break;
+    case CertCheckType::VerifyWholeSubjectExactly:
+        data.insert(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME), QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_SUBJECT).arg(m_ui->subjectMatch->text()));
+        break;
+    case CertCheckType::VerifyNameExactly:
+        data.insert(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME), QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME).arg(m_ui->subjectMatch->text()));
+        break;
+    case CertCheckType::VerifyNameByPrefix:
+        data.insert(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME), QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME_PREFIX).arg(m_ui->subjectMatch->text()));
+        break;
+    case CertCheckType::VerifySubjectPartially:
         data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE), m_ui->subjectMatch->text());
+        break;
     }
 
     if (m_ui->chkRemoteCertTls->isChecked()) {
         if (m_ui->cmbRemoteCertTls->currentIndex() == 0) {
-            data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_CERT_TLS), QLatin1String("server"));
+            data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_CERT_TLS), NM_OPENVPN_REM_CERT_TLS_SERVER);
         } else {
-            data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_CERT_TLS), QLatin1String("client"));
+            data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_CERT_TLS), NM_OPENVPN_REM_CERT_TLS_CLIENT);
+        }
+    }
+
+    if (m_ui->chkNsCertType->isChecked()) {
+        if (m_ui->cmbNsCertType->currentIndex() == 0) {
+            data.insert(QLatin1String(NM_OPENVPN_KEY_NS_CERT_TYPE), NM_OPENVPN_NS_CERT_TYPE_SERVER);
+        } else {
+            data.insert(QLatin1String(NM_OPENVPN_KEY_NS_CERT_TYPE), NM_OPENVPN_NS_CERT_TYPE_CLIENT);
         }
     }
 
@@ -520,6 +618,17 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     d->setting->setSecrets(secretData);
 
     return d->setting;
+}
+
+void OpenVpnAdvancedWidget::certCheckTypeChanged(int type)
+{
+    if (type == CertCheckType::DontVerify) {
+        m_ui->lbSubjectMatch->setEnabled(false);
+        m_ui->subjectMatch->setEnabled(false);
+    } else {
+        m_ui->lbSubjectMatch->setEnabled(true);
+        m_ui->subjectMatch->setEnabled(true);
+    }
 }
 
 void OpenVpnAdvancedWidget::proxyTypeChanged(int type)

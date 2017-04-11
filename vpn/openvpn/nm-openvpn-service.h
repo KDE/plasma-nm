@@ -39,6 +39,7 @@
 #define NM_OPENVPN_KEY_KEY "key"
 #define NM_OPENVPN_KEY_LOCAL_IP "local-ip" /* ??? */
 #define NM_OPENVPN_KEY_MSSFIX "mssfix"
+#define NM_OPENVPN_KEY_NS_CERT_TYPE "ns-cert-type"
 #define NM_OPENVPN_KEY_PING "ping"
 #define NM_OPENVPN_KEY_PING_EXIT "ping-exit"
 #define NM_OPENVPN_KEY_PING_RESTART "ping-restart"
@@ -61,8 +62,12 @@
 #define NM_OPENVPN_KEY_TAP_DEV "tap-dev"
 #define NM_OPENVPN_KEY_DEV "dev"
 #define NM_OPENVPN_KEY_DEV_TYPE "dev-type"
+#define NM_OPENVPN_KEY_TUN_IPV6 "tun-ipv6"
+#define NM_OPENVPN_KEY_TLS_CIPHER "tls-cipher"
 #define NM_OPENVPN_KEY_TLS_REMOTE "tls-remote"
+#define NM_OPENVPN_KEY_VERIFY_X509_NAME "verify-x509-name"
 #define NM_OPENVPN_KEY_REMOTE_CERT_TLS "remote-cert-tls"
+#define NM_OPENVPN_KEY_MAX_ROUTES "max-routes"
 
 #define NM_OPENVPN_KEY_PASSWORD "password"
 #define NM_OPENVPN_KEY_CERTPASS "cert-pass"
@@ -88,5 +93,18 @@
 #define NM_OPENVPN_CONTYPE_STATIC_KEY   "static-key"
 #define NM_OPENVPN_CONTYPE_PASSWORD     "password"
 #define NM_OPENVPN_CONTYPE_PASSWORD_TLS "password-tls"
+
+/* arguments of "--remote-cert-tls" */
+#define NM_OPENVPN_REM_CERT_TLS_CLIENT "client"
+#define NM_OPENVPN_REM_CERT_TLS_SERVER "server"
+
+/* arguments of "--ns-cert-type" */
+#define NM_OPENVPN_NS_CERT_TYPE_CLIENT "client"
+#define NM_OPENVPN_NS_CERT_TYPE_SERVER "server"
+
+/* possible types for verify-x509-name */
+#define NM_OPENVPN_VERIFY_X509_NAME_TYPE_SUBJECT     "subject"
+#define NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME        "name"
+#define NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME_PREFIX "name-prefix"
 
 #endif /* NM_OPENVPN_SERVICE_H */

@@ -350,9 +350,8 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
         return false;
     }
 
-    NetworkManager::ConnectionSettings connectionSettings(request.connection);
-
-    NetworkManager::Setting::Ptr setting = connectionSettings.setting(request.setting_name);
+    NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(request.connection));
+    NetworkManager::Setting::Ptr setting = connectionSettings->setting(request.setting_name);
 
     const bool requestNew = request.flags & RequestNew;
     const bool userRequested = request.flags & UserRequested;
@@ -363,7 +362,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
     if (!requestNew && useWallet()) {
         if (m_wallet->isOpen()) {
             if (m_wallet->hasFolder("Network Management") && m_wallet->setFolder("Network Management")) {
-                QString key = QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % request.setting_name;
+                QString key = QLatin1Char('{') % connectionSettings->uuid() % QLatin1Char('}') % QLatin1Char(';') % request.setting_name;
                 m_wallet->readMap(key, secretsMap);
             }
         } else {
@@ -383,14 +382,9 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
     }
 
     if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
-        m_dialog = new PasswordDialog(request.connection, request.flags, request.setting_name);
+        m_dialog = new PasswordDialog(connectionSettings, request.flags, request.setting_name);
         connect(m_dialog, &PasswordDialog::accepted, this, &SecretAgent::dialogAccepted);
         connect(m_dialog, &PasswordDialog::rejected, this, &SecretAgent::dialogRejected);
-        if (isVpn) {
-            m_dialog->setupVpnUi(connectionSettings);
-        } else {
-            m_dialog->setupGenericUi(connectionSettings);
-        }
 
         if (m_dialog->hasError()) {
             sendError(m_dialog->error(),
@@ -401,7 +395,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
             return true;
         } else {
             request.dialog = m_dialog;
-            request.saveSecretsWithoutReply = !connectionSettings.permissions().isEmpty();
+            request.saveSecretsWithoutReply = !connectionSettings->permissions().isEmpty();
             m_dialog->show();
             KWindowSystem::setState(m_dialog->winId(), NET::KeepAbove);
             KWindowSystem::forceActiveWindow(m_dialog->winId());
@@ -410,7 +404,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
     } else if (isVpn && userRequested) { // just return what we have
         NMVariantMapMap result;
         NetworkManager::VpnSetting::Ptr vpnSetting;
-        vpnSetting = connectionSettings.setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+        vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
         //FIXME workaround when NM is asking for secrets which should be system-stored, if we send an empty map it
         // won't ask for additional secrets with AllowInteraction flag which would display the authentication dialog
         if (vpnSetting->secretsToMap().isEmpty()) {

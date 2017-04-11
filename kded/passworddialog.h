@@ -37,13 +37,11 @@ class Q_DECL_EXPORT PasswordDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit PasswordDialog(const NMVariantMapMap &connection,
+    explicit PasswordDialog(const NetworkManager::ConnectionSettings::Ptr &connectionSettings,
                             NetworkManager::SecretAgent::GetSecretsFlags flags,
                             const QString &setting_name,
                             QWidget *parent = 0);
     ~PasswordDialog();
-    void setupGenericUi(const NetworkManager::ConnectionSettings &connectionSettings);
-    void setupVpnUi(const NetworkManager::ConnectionSettings &connectionSettings);
 
     bool hasError() const;
     NetworkManager::SecretAgent::Error error() const;
@@ -51,19 +49,19 @@ public:
 
     NMVariantMapMap secrets() const;
 
-private Q_SLOTS:
-    void showPassword(bool show);
-
 private:
-    Ui::PasswordDialog *ui;
-    SettingWidget *vpnWidget;
-    NMVariantMapMap m_connection;
-    NetworkManager::SecretAgent::GetSecretsFlags m_flags;
+    void initializeUi();
+
+    Ui::PasswordDialog *m_ui;
+    bool m_hasError;
+    QString m_errorMessage;
     QString m_settingName;
     QStringList m_neededSecrets;
-    bool m_hasError;
+    NetworkManager::ConnectionSettings::Ptr m_connectionSettings;
     NetworkManager::SecretAgent::Error m_error;
-    QString m_errorMessage;
+    NetworkManager::SecretAgent::GetSecretsFlags m_flags;
+    SettingWidget *m_vpnWidget;
+
 };
 
 #endif // PLASMA_NM_PASSWORD_DIALOG_H

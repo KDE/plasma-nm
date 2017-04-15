@@ -404,7 +404,7 @@ new address will take control of the session. This is useful when you are connec
 to a peer which holds a dynamic address such as a dial-in user or DHCP client.
 
 
-Essentialy, --float tells OpenVPN to accept authenticated packets from any address,
+Essentially, --float tells OpenVPN to accept authenticated packets from any address,
 not only the address which was specified in the --remote option.</string>
          </property>
          <property name="text">

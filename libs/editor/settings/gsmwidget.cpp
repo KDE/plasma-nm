@@ -40,14 +40,6 @@ GsmWidget::GsmWidget(const NetworkManager::Setting::Ptr &setting, QWidget *paren
     m_ui->pin->setPasswordOptionsEnabled(true);
     m_ui->pin->setPasswordNotRequiredEnabled(true);
 
-    m_ui->type->addItem(i18nc("GSM network type", "Any"), NetworkManager::GsmSetting::Any);
-    m_ui->type->addItem(i18n("3G Only (UMTS/HSPA)"), NetworkManager::GsmSetting::Only3G);
-    m_ui->type->addItem(i18n("2G Only (GPRS/EDGE)"), NetworkManager::GsmSetting::GprsEdgeOnly);
-    m_ui->type->addItem(i18n("Prefer 3G (UMTS/HSPA)"), NetworkManager::GsmSetting::Prefer3G);
-    m_ui->type->addItem(i18n("Prefer 2G (GPRS/EDGE)"), NetworkManager::GsmSetting::Prefer2G);
-    m_ui->type->addItem(i18n("Prefer 4G (LTE)"), NetworkManager::GsmSetting::Prefer4GLte);
-    m_ui->type->addItem(i18n("4G Only (LTE)"), NetworkManager::GsmSetting::Only4GLte);
-
     // Connect for setting check
     watchChangedSetting();
 
@@ -91,8 +83,6 @@ void GsmWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     m_ui->apn->setText(gsmSetting->apn());
     m_ui->networkId->setText(gsmSetting->networkId());
-    if (gsmSetting->networkType() != NetworkManager::GsmSetting::Any)
-        m_ui->type->setCurrentIndex(m_ui->type->findData(static_cast<int>(gsmSetting->networkType())));
     m_ui->roaming->setChecked(!gsmSetting->homeOnly());
     if (gsmSetting->pinFlags().testFlag(NetworkManager::Setting::None)) {
         m_ui->pin->setPasswordOption(PasswordField::StoreForAllUsers);
@@ -147,7 +137,6 @@ QVariantMap GsmWidget::setting() const
         gsmSetting.setApn(m_ui->apn->text());
     if (!m_ui->networkId->text().isEmpty())
         gsmSetting.setNetworkId(m_ui->networkId->text());
-    gsmSetting.setNetworkType(static_cast<NetworkManager::GsmSetting::NetworkType>(m_ui->type->itemData(m_ui->type->currentIndex()).toInt()));
     gsmSetting.setHomeOnly(!m_ui->roaming->isChecked());
     if (!m_ui->pin->text().isEmpty())
         gsmSetting.setPin(m_ui->pin->text());

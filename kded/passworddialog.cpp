@@ -93,7 +93,7 @@ void PasswordDialog::initializeUi()
 
         QString connectionLabel;
         UiUtils::iconAndTitleForConnectionSettingsType(m_connectionSettings->connectionType(), connectionLabel);
-        m_ui->password->setFocus();
+        setFocusProxy(m_ui->password);
         setWindowTitle(i18n("%1 password dialog", connectionLabel));
     } else {
         NetworkManager::VpnSetting::Ptr vpnSetting = m_connectionSettings->setting(Setting::Vpn).dynamicCast<VpnSetting>();
@@ -126,6 +126,9 @@ void PasswordDialog::initializeUi()
                     QAbstractButton *button = m_ui->buttonBox->button(QDialogButtonBox::Ok);
                     m_ui->buttonBox->removeButton(button);
                 }
+
+                setFocusProxy(m_vpnWidget);
+                m_vpnWidget->setFocus(Qt::OtherFocusReason);
             } else {
                 qCWarning(PLASMA_NM) << error << ", serviceType == " << serviceType;
                 m_hasError = true;
@@ -134,6 +137,9 @@ void PasswordDialog::initializeUi()
             }
         }
     }
+
+    // Workaround to force m_ui->password to get focus.
+    focusNextChild();
 }
 
 bool PasswordDialog::hasError() const

@@ -25,8 +25,15 @@
 
 #include <QDBusPendingReply>
 
+#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KSharedConfig>
+
+#include <NetworkManagerQt/Device>
+#include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/GsmSetting>
+#include <NetworkManagerQt/Manager>
 
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/Manager>
@@ -47,9 +54,16 @@ ModemMonitor::ModemMonitor(QObject * parent)
     Q_D(ModemMonitor);
     d->dialog.clear();
 
-    connect(ModemManager::notifier(), &ModemManager::Notifier::modemAdded, this, &ModemMonitor::unlockModem);
-    Q_FOREACH (const ModemManager::ModemDevice::Ptr &iface, ModemManager::modemDevices()) {
-        unlockModem(iface->uni());
+    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
+    KConfigGroup grp(config, QLatin1String("General"));
+
+    if (grp.isValid()) {
+        if (grp.readEntry(QLatin1String("UnlockModemOnDetection"), true)) {
+            connect(ModemManager::notifier(), &ModemManager::Notifier::modemAdded, this, &ModemMonitor::unlockModem);
+            Q_FOREACH (const ModemManager::ModemDevice::Ptr &iface, ModemManager::modemDevices()) {
+                unlockModem(iface->uni());
+            }
+        }
     }
 }
 

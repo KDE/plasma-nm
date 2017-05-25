@@ -50,7 +50,6 @@ Item {
     }
 
     Component.onCompleted: {
-        plasmoid.removeAction("configure");
         if (kcmAuthorized) {
             plasmoid.setAction("openKCM", i18n("&Configure Network Connections..."), "preferences-system-network");
         }
@@ -78,5 +77,9 @@ Item {
         onTriggered: {
             handler.requestScan()
         }
+    }
+
+    PlasmaNM.Configuration {
+        unlockModemOnDetection: plasmoid.configuration.unlockModemOnDetection
     }
 }

@@ -28,6 +28,7 @@
 #include "networkstatus.h"
 
 #include "appletproxymodel.h"
+#include "configuration.h"
 #include "creatableconnectionsmodel.h"
 #include "editorproxymodel.h"
 #include "kcmidentitymodel.h"
@@ -42,6 +43,8 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<AvailableDevices>(uri, 0, 2, "AvailableDevices");
     // @uri org.kde.plasma.networkmanagement.ConnectionIcon
     qmlRegisterType<ConnectionIcon>(uri, 0, 2, "ConnectionIcon");
+    // @uri org.kde.plasma.networkmanagement.Configuration
+    qmlRegisterType<Configuration>(uri, 0, 2, "Configuration");
     // @uri org.kde.plasma.networkmanagement.EnabledConnections
     qmlRegisterType<EnabledConnections>(uri, 0, 2, "EnabledConnections");
     // @uri org.kde.plasma.networkmanagement.Enums

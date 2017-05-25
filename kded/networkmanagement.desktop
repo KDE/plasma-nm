@@ -62,6 +62,7 @@ Comment[eu]=NetworkManager daimonari sekretuak hornitzen dizkio
 Comment[fi]=Välittää salaisuuksia NetworkManager-palvelulle
 Comment[fr]=Fournit des mots de passe pour le démon NetworkManager
 Comment[gl]=Fornece segredos ao servizo de xestión da rede
+Comment[he]=מספק סיסמאות לשירות מנהל הרשתות
 Comment[hu]=Titkokat biztosít a NetworkManager démonhoz
 Comment[ia]=Forni secretos per le demon de NetworkManager
 Comment[it]=Fornisce i segreti al demone NetworkManager

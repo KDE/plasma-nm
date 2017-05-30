@@ -26,7 +26,7 @@
       <property name="verticalSpacing">
        <number>6</number>
       </property>
-      <item row="0" column="0">
+      <item row="1" column="0">
        <widget class="QLabel" name="label_4">
         <property name="text">
          <string>Gateway:</string>
@@ -36,10 +36,10 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item row="1" column="1">
        <widget class="QLineEdit" name="leGateway"/>
       </item>
-      <item row="1" column="0">
+      <item row="2" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
          <string>CA Certificate:</string>
@@ -49,14 +49,14 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item row="2" column="1">
        <widget class="KUrlRequester" name="leCaCertificate">
         <property name="filter">
          <string>*.pem *.crt *.key</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
+      <item row="3" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
          <string>Proxy:</string>
@@ -66,10 +66,10 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
+      <item row="3" column="1">
        <widget class="QLineEdit" name="leProxy"/>
       </item>
-      <item row="4" column="0">
+      <item row="5" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
          <string>CSD Wrapper Script:</string>
@@ -79,15 +79,42 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="0" colspan="2">
+      <item row="4" column="0" colspan="2">
        <widget class="QCheckBox" name="chkAllowTrojan">
         <property name="text">
          <string>Allow Cisco Secure Desktop trojan</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="1">
+      <item row="5" column="1">
        <widget class="KUrlRequester" name="leCsdWrapperScript"/>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>VPN Protocol:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="cmbProtocol">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Cisco AnyConnect</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Juniper/Pulse Network Connect</string>
+         </property>
+        </item>
+       </widget>
       </item>
      </layout>
     </widget>

@@ -69,6 +69,7 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
     // General settings
     const NMStringMap dataMap = d->setting->data();
 
+    d->ui.cmbProtocol->setCurrentIndex(dataMap[NM_OPENCONNECT_KEY_PROTOCOL] != QLatin1String("anyconnect"));
     d->ui.leGateway->setText(dataMap[NM_OPENCONNECT_KEY_GATEWAY]);
     d->ui.leCaCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_CACERT]));
     d->ui.leProxy->setText(dataMap[NM_OPENCONNECT_KEY_PROXY]);
@@ -88,6 +89,7 @@ QVariantMap OpenconnectSettingWidget::setting() const
 
     NMStringMap data;
 
+    data.insert(NM_OPENCONNECT_KEY_PROTOCOL, d->ui.cmbProtocol->currentIndex() ? QLatin1String("nc") : QLatin1String("anyconnect"));
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_GATEWAY), d->ui.leGateway->text());
     if (d->ui.leCaCertificate->url().isValid()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_CACERT), d->ui.leCaCertificate->url().toLocalFile());
@@ -112,11 +114,6 @@ QVariantMap OpenconnectSettingWidget::setting() const
         if (key.contains(QLatin1String("-flags"))) {
             data.insert(key, d->setting->data().value(key));
         }
-    }
-
-    // Restore configured protocol if any, either juniper or anyconnect
-    if (d->setting->data().contains(NM_OPENCONNECT_KEY_PROTOCOL)) {
-        data.insert(NM_OPENCONNECT_KEY_PROTOCOL, d->setting->data().value(NM_OPENCONNECT_KEY_PROTOCOL));
     }
 
     /* These are different for every login session, and should not be stored */

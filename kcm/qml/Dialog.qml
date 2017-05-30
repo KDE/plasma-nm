@@ -152,7 +152,7 @@ Dialog {
 
                         onDoubleClicked: {
                             dialog.close()
-                            dialog.requestCreateConnection(view.connectionType, view.connectionVpnType, view.ConnectionSpecificType, view.connectionShared)
+                            dialog.requestCreateConnection(view.connectionType, view.connectionVpnType, view.connectionSpecificType, view.connectionShared)
                         }
                     }
                 }

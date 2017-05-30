@@ -194,8 +194,8 @@ void OpenconnectAuthWidget::readConfig()
         }
     }
     if (!dataMap[NM_OPENCONNECT_KEY_PROTOCOL].isEmpty()) {
-        const QString protocol = dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == "juniper" ? "nc" : "anyconnect";
-        openconnect_set_protocol(d->vpninfo, OC3DUP(protocol.toUtf8().data()));
+        const QString protocol = dataMap[NM_OPENCONNECT_KEY_PROTOCOL];
+        openconnect_set_protocol(d->vpninfo, OC3DUP(protocol == "juniper" ? "nc" : protocol.toUtf8().data()));
     }
 }
 

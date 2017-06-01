@@ -308,7 +308,7 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
                             if (wifiDev) {
                                 if (wifiDev->wirelessCapabilities().testFlag(NetworkManager::WirelessDevice::ApCap)) {
                                     wifiSetting->setMode(NetworkManager::WirelessSetting::Ap);
-                                    wifiSetting->setMacAddress(NetworkManager::macAddressFromString(wifiDev->hardwareAddress()));
+                                    wifiSetting->setMacAddress(NetworkManager::macAddressFromString(wifiDev->permanentHardwareAddress()));
                                 }
                             }
                         }

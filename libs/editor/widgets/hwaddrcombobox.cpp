@@ -143,9 +143,9 @@ QVariant HwAddrComboBox::hwAddressFromDevice(const NetworkManager::Device::Ptr& 
 
     QVariant data;
     if (type == NetworkManager::Device::Ethernet) {
-        data = device->as<NetworkManager::WiredDevice>()->hardwareAddress();
+        data = device->as<NetworkManager::WiredDevice>()->permanentHardwareAddress();
     } else if (type == NetworkManager::Device::Wifi) {
-        data = device->as<NetworkManager::WirelessDevice>()->hardwareAddress();
+        data = device->as<NetworkManager::WirelessDevice>()->permanentHardwareAddress();
     } else if (type == NetworkManager::Device::Bluetooth) {
         data = device->as<NetworkManager::BluetoothDevice>()->hardwareAddress();
     } else if (type == NetworkManager::Device::OlpcMesh) {

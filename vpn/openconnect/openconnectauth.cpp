@@ -253,7 +253,13 @@ void OpenconnectAuthWidget::readSecrets()
 
 void OpenconnectAuthWidget::acceptDialog()
 {
-    QDialog *dialog = qobject_cast<QDialog*>(parentWidget());
+    // Find top-level widget as this should be the QDialog itself
+    QWidget *widget = parentWidget();
+    while (widget->parentWidget() != nullptr) {
+        widget = widget->parentWidget();
+    }
+
+    QDialog *dialog = qobject_cast<QDialog*>(widget);
     if (dialog) {
         dialog->accept();
     }

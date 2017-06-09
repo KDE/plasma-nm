@@ -48,8 +48,14 @@ void L2tpAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setti
     if (setting->data().value(NM_L2TP_KEY_IPSEC_ENABLE) == "yes") {
         m_ui->cbEnableTunnelToHost->setChecked(true);
         m_ui->gatewayId->setText(setting->data().value(NM_L2TP_KEY_IPSEC_GATEWAY_ID));
-        m_ui->groupName->setText(setting->data().value(NM_L2TP_KEY_IPSEC_GROUP_NAME));
         m_ui->presharedKey->setText(setting->data().value(NM_L2TP_KEY_IPSEC_PSK));
+        m_ui->ike->setText(setting->data().value(NM_L2TP_KEY_IPSEC_IKE));
+        m_ui->esp->setText(setting->data().value(NM_L2TP_KEY_IPSEC_ESP));
+        if (setting->data().value(NM_L2TP_KEY_IPSEC_FORCEENCAPS) == "yes" ) {
+            m_ui->cbForceEncaps->setChecked(true);
+        } else {
+            m_ui->cbForceEncaps->setChecked(false);
+        }
     } else {
         m_ui->cbEnableTunnelToHost->setChecked(false);
     }
@@ -66,12 +72,20 @@ NMStringMap L2tpAdvancedWidget::setting() const
             result.insert(NM_L2TP_KEY_IPSEC_GATEWAY_ID, m_ui->gatewayId->text());
         }
 
-        if (!m_ui->groupName->text().isEmpty()) {
-            result.insert(NM_L2TP_KEY_IPSEC_GROUP_NAME, m_ui->groupName->text());
-        }
-
         if (!m_ui->presharedKey->text().isEmpty()) {
             result.insert(NM_L2TP_KEY_IPSEC_PSK, m_ui->presharedKey->text());
+        }
+
+        if (!m_ui->ike->text().isEmpty()) {
+            result.insert(NM_L2TP_KEY_IPSEC_IKE, m_ui->ike->text());
+        }
+
+        if (!m_ui->esp->text().isEmpty()) {
+            result.insert(NM_L2TP_KEY_IPSEC_ESP, m_ui->esp->text());
+        }
+
+        if (m_ui->cbForceEncaps->isChecked()) {
+            result.insert(NM_L2TP_KEY_IPSEC_FORCEENCAPS, "yes");
         }
     }
 

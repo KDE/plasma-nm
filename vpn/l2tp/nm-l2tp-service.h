@@ -17,20 +17,21 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * (C) Copyright 2008 Red Hat, Inc.
+ * Copyright 2008, 2014 Red Hat, Inc.
  */
 
-#ifndef NM_L2TP_SERVICE_H
-#define NM_L2TP_SERVICE_H
+#ifndef NM_L2TP_SERVICE_DEFINES_H
+#define NM_L2TP_SERVICE_DEFINES_H
 
-#define NM_DBUS_SERVICE_L2TP_PPP    "org.freedesktop.NetworkManager.l2tp-ppp"
-#define NM_DBUS_PATH_L2TP_PPP       "/org/freedesktop/NetworkManager/l2tp/ppp"
-#define NM_DBUS_INTERFACE_L2TP_PPP  "org.freedesktop.NetworkManager.l2tp.ppp"
+#define NM_DBUS_SERVICE_L2TP    "org.freedesktop.NetworkManager.l2tp"
 
 /* For the NM <-> VPN plugin service */
-#define NM_DBUS_SERVICE_L2TP    "org.freedesktop.NetworkManager.l2tp"
 #define NM_DBUS_INTERFACE_L2TP  "org.freedesktop.NetworkManager.l2tp"
 #define NM_DBUS_PATH_L2TP       "/org/freedesktop/NetworkManager/l2tp"
+
+/* For the VPN plugin service <-> PPP plugin */
+#define NM_DBUS_INTERFACE_L2TP_PPP  "org.freedesktop.NetworkManager.l2tp.ppp"
+#define NM_DBUS_PATH_L2TP_PPP       "/org/freedesktop/NetworkManager/l2tp/ppp"
 
 #define NM_L2TP_KEY_GATEWAY           "gateway"
 #define NM_L2TP_KEY_USER              "user"
@@ -58,10 +59,14 @@
 #define NM_L2TP_KEY_NO_ACCOMP         "noaccomp"
 #define NM_L2TP_KEY_LCP_ECHO_FAILURE  "lcp-echo-failure"
 #define NM_L2TP_KEY_LCP_ECHO_INTERVAL "lcp-echo-interval"
+#define NM_L2TP_KEY_UNIT_NUM          "unit"
 
 #define NM_L2TP_KEY_IPSEC_ENABLE      "ipsec-enabled"
 #define NM_L2TP_KEY_IPSEC_GATEWAY_ID  "ipsec-gateway-id"
 #define NM_L2TP_KEY_IPSEC_GROUP_NAME  "ipsec-group-name"
 #define NM_L2TP_KEY_IPSEC_PSK         "ipsec-psk"
+#define NM_L2TP_KEY_IPSEC_IKE         "ipsec-ike"
+#define NM_L2TP_KEY_IPSEC_ESP         "ipsec-esp"
+#define NM_L2TP_KEY_IPSEC_FORCEENCAPS "ipsec-forceencaps"
 
-#endif /* NM_L2TP_SERVICE_H */
+#endif /* NM_L2TP_SERVICE_DEFINES_H */

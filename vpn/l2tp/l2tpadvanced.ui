@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>382</width>
-    <height>151</height>
+    <height>254</height>
    </rect>
   </property>
   <layout class="QFormLayout" name="formLayout">
@@ -23,13 +23,16 @@
    </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="text">
-      <string>Group Name:</string>
+      <string>Gateway ID:</string>
      </property>
     </widget>
    </item>
    <item row="1" column="1">
-    <widget class="QLineEdit" name="groupName">
+    <widget class="QLineEdit" name="gatewayId">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -37,13 +40,16 @@
    </item>
    <item row="2" column="0">
     <widget class="QLabel" name="label_2">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="text">
-      <string>Gateway ID:</string>
+      <string>Pre-shared Key:</string>
      </property>
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="QLineEdit" name="gatewayId">
+    <widget class="QLineEdit" name="presharedKey">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -51,19 +57,52 @@
    </item>
    <item row="3" column="0">
     <widget class="QLabel" name="label_3">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="text">
-      <string>Pre-shared Key:</string>
+      <string>Phase1 algorithms:</string>
      </property>
     </widget>
    </item>
    <item row="3" column="1">
-    <widget class="QLineEdit" name="presharedKey">
+    <widget class="QLineEdit" name="ike">
      <property name="enabled">
       <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="4" column="0" colspan="2">
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Phase2 algorithms:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="esp">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <widget class="QCheckBox" name="cbForceEncaps">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Enforce UDP encapsulation</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
@@ -93,22 +132,6 @@
   <connection>
    <sender>cbEnableTunnelToHost</sender>
    <signal>toggled(bool)</signal>
-   <receiver>groupName</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>159</x>
-     <y>14</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>209</x>
-     <y>39</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cbEnableTunnelToHost</sender>
-   <signal>toggled(bool)</signal>
    <receiver>presharedKey</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
@@ -119,6 +142,118 @@
     <hint type="destinationlabel">
      <x>209</x>
      <y>91</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbEnableTunnelToHost</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ike</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>209</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbEnableTunnelToHost</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>esp</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>209</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbEnableTunnelToHost</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cbForceEncaps</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>209</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbEnableTunnelToHost</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_2</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>75</x>
+     <y>87</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbEnableTunnelToHost</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>86</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbEnableTunnelToHost</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_3</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>64</x>
+     <y>125</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbEnableTunnelToHost</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>label_4</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>64</x>
+     <y>163</y>
     </hint>
    </hints>
   </connection>

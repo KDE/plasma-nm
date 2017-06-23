@@ -14,5 +14,17 @@ X-KDE-PluginInfo-Depends=
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=false
 Name=Fortinet SSLVPN (fortisslvpn)
+Name[ca]=Fortinet SSLVPN (fortisslvpn)
+Name[nl]=Fortinet SSLVPN (fortisslvpn)
+Name[pt]=SSLVPN do Fortinet (fortisslvpn)
+Name[sv]=Fortinet SSLVPN (fortisslvpn)
+Name[uk]=Fortinet SSLVPN (fortisslvpn)
+Name[x-test]=xxFortinet SSLVPN (fortisslvpn)xx
 Comment=Fortinet SSLVPN virtual private networks
+Comment[ca]=Xarxes privades virtuals Fortinet SSLVPN
+Comment[nl]=Fortinet SSLVPN virtuele private netwerken
+Comment[pt]=Redes privadas virtuais do SSLVPN do Fortinet
+Comment[sv]=Fortinet SSLVPN virtuella privata nätverk
+Comment[uk]=Віртуальні приватні мережі SSLVPN Fortinet
+Comment[x-test]=xxFortinet SSLVPN virtual private networksxx
 

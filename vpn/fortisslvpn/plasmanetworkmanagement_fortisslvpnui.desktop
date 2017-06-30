@@ -28,6 +28,7 @@ Name[sr@latin]=Fortinetov SSL VPN
 Name[sv]=Fortinet SSLVPN (fortisslvpn)
 Name[uk]=Fortinet SSLVPN (fortisslvpn)
 Name[x-test]=xxFortinet SSLVPN (fortisslvpn)xx
+Name[zh_TW]=Fortinet SSLVPN (fortisslvpn)
 Comment=Fortinet SSLVPN virtual private networks
 Comment[ca]=Xarxes privades virtuals Fortinet SSLVPN
 Comment[ca@valencia]=Xarxes privades virtuals Fortinet SSLVPN
@@ -43,4 +44,5 @@ Comment[sr@latin]=Virtuelne privatne mreže preko Fortinetovog SSL VPN‑a
 Comment[sv]=Fortinet SSLVPN virtuella privata nätverk
 Comment[uk]=Віртуальні приватні мережі SSLVPN Fortinet
 Comment[x-test]=xxFortinet SSLVPN virtual private networksxx
+Comment[zh_TW]=Fortinet SSLVPN 虛擬私人網路
 

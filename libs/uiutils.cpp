@@ -22,10 +22,13 @@
 // Own
 #include "uiutils.h"
 
+#include "configuration.h"
 #include "debug.h"
 
 // KDE
 #include <KLocalizedString>
+#include <KConfigGroup>
+#include <KSharedConfig>
 
 #include <NetworkManagerQt/BluetoothDevice>
 #include <NetworkManagerQt/Manager>
@@ -110,18 +113,22 @@ UiUtils::SortedConnectionType UiUtils::connectionTypeToSortedType(NetworkManager
 
 bool UiUtils::isConnectionTypeSupported(NetworkManager::ConnectionSettings::ConnectionType type)
 {
-    if (type == NetworkManager::ConnectionSettings::Bond ||
-        type == NetworkManager::ConnectionSettings::Bridge ||
-        type == NetworkManager::ConnectionSettings::Generic ||
-        type == NetworkManager::ConnectionSettings::Infiniband ||
-        type == NetworkManager::ConnectionSettings::Team ||
 #if NM_CHECK_VERSION(1, 2, 0)
-        type == NetworkManager::ConnectionSettings::Vlan ||
-        type == NetworkManager::ConnectionSettings::Tun) {
+    if (type == NetworkManager::ConnectionSettings::Generic || type == NetworkManager::ConnectionSettings::Tun) {
 #else
-        type == NetworkManager::ConnectionSettings::Vlan) {
+    if (type == NetworkManager::ConnectionSettings::Generic) {
 #endif
         return false;
+    }
+
+    bool manageVirtualConnections = Configuration::manageVirtualConnections();
+
+    if (type == NetworkManager::ConnectionSettings::Bond ||
+        type == NetworkManager::ConnectionSettings::Bridge ||
+        type == NetworkManager::ConnectionSettings::Infiniband ||
+        type == NetworkManager::ConnectionSettings::Team ||
+        type == NetworkManager::ConnectionSettings::Vlan) {
+        return manageVirtualConnections;
     }
 
     return true;

@@ -10,6 +10,10 @@
       <label>If true request PIN code as soon as modem is detected.</label>
       <default>true</default>
     </entry>
+    <entry name="manageVirtualConnections" type="Bool">
+      <label>If true plasma-nm will be able to show and configure virtual connections.</label>
+      <default>false</default>
+    </entry>
   </group>
 
 </kcfg>

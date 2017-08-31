@@ -20,6 +20,8 @@
 
 #include "creatableconnectionsmodel.h"
 
+#include "configuration.h"
+
 #include <KLocalizedString>
 #include <KService>
 #include <KServiceTypeTrader>
@@ -172,6 +174,32 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
                                                  NetworkManager::ConnectionSettings::Wireless,
                                                  QString(), QString(), true); // VpnType and SpecificType are empty
     m_list << connectionItem;
+
+    if (Configuration::manageVirtualConnections()) {
+        connectionItem = new CreatableConnectionItem(i18n("Bond"), i18n("Virtual connections"),
+                                                    i18n("Some bond description"), QStringLiteral("network-wired"),
+                                                    NetworkManager::ConnectionSettings::Bond,
+                                                    QString(), QString(), true); // VpnType and SpecificType are empty
+        m_list << connectionItem;
+
+        connectionItem = new CreatableConnectionItem(i18n("Bridge"), i18n("Virtual connections"),
+                                                    i18n("Some bond description"), QStringLiteral("network-wired"),
+                                                    NetworkManager::ConnectionSettings::Bridge,
+                                                    QString(), QString(), true); // VpnType and SpecificType are empty
+        m_list << connectionItem;
+
+        connectionItem = new CreatableConnectionItem(i18n("Team"), i18n("Virtual connections"),
+                                                    i18n("Some team description"), QStringLiteral("network-wired"),
+                                                    NetworkManager::ConnectionSettings::Team,
+                                                    QString(), QString(), true); // VpnType and SpecificType are empty
+        m_list << connectionItem;
+
+        connectionItem = new CreatableConnectionItem(i18n("Vlan"), i18n("Virtual connections"),
+                                                    i18n("Some vlan description"), QStringLiteral("network-wired"),
+                                                    NetworkManager::ConnectionSettings::Vlan,
+                                                    QString(), QString(), true); // VpnType and SpecificType are empty
+        m_list << connectionItem;
+    }
 
     KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
 

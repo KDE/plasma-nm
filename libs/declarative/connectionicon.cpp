@@ -19,6 +19,7 @@
 */
 
 #include "connectionicon.h"
+#include "uiutils.h"
 
 #include <NetworkManagerQt/BluetoothDevice>
 #include <NetworkManagerQt/Connection>
@@ -278,21 +279,7 @@ void ConnectionIcon::setStates()
         }
 
         if (!vpnConnection) {
-#if NM_CHECK_VERSION(0, 9, 10)
-            if (activeConnection->state() == NetworkManager::ActiveConnection::Activating &&
-                activeConnection->type() != NetworkManager::ConnectionSettings::Bond &&
-                activeConnection->type() != NetworkManager::ConnectionSettings::Bridge &&
-                activeConnection->type() != NetworkManager::ConnectionSettings::Generic &&
-                activeConnection->type() != NetworkManager::ConnectionSettings::Infiniband &&
-                activeConnection->type() != NetworkManager::ConnectionSettings::Team &&
-                activeConnection->type() != NetworkManager::ConnectionSettings::Vlan) {
-#else
-            if (activeConnection->state() == NetworkManager::ActiveConnection::Activating &&
-                activeConnection->type() != NetworkManager::ConnectionSettings::Bond &&
-                activeConnection->type() != NetworkManager::ConnectionSettings::Bridge &&
-                activeConnection->type() != NetworkManager::ConnectionSettings::Infiniband &&
-                activeConnection->type() != NetworkManager::ConnectionSettings::Vlan) {
-#endif
+            if (activeConnection->state() == NetworkManager::ActiveConnection::Activating && UiUtils::isConnectionTypeSupported(activeConnection->type())) {
                 connecting = true;
             }
         } else {

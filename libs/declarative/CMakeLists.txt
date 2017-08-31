@@ -3,7 +3,6 @@ include_directories(${CMAKE_SOURCE_DIR}/libs/models)
 set(plasmanm_qml_plugins_SRCS
    availabledevices.cpp
    connectionicon.cpp
-   configuration.cpp
    enabledconnections.cpp
    enums.cpp
    networkstatus.cpp

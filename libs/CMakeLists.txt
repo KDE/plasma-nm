@@ -10,6 +10,7 @@ set(plasmanm_internal_SRCS
     models/networkmodel.cpp
     models/networkmodelitem.cpp
 
+    configuration.cpp
     debug.cpp
     handler.cpp
     uiutils.cpp

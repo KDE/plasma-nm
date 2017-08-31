@@ -81,5 +81,6 @@ Item {
 
     PlasmaNM.Configuration {
         unlockModemOnDetection: plasmoid.configuration.unlockModemOnDetection
+        manageVirtualConnections: plasmoid.configuration.manageVirtualConnections
     }
 }

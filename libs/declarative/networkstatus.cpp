@@ -169,26 +169,8 @@ void NetworkStatus::changeActiveConnections()
     });
 
     Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, activeConnectionList) {
-#if NM_CHECK_VERSION(0, 9, 10)
-        if (!active->devices().isEmpty() &&
-            active->type() != NetworkManager::ConnectionSettings::Bond &&
-            active->type() != NetworkManager::ConnectionSettings::Bridge &&
-            active->type() != NetworkManager::ConnectionSettings::Generic &&
-            active->type() != NetworkManager::ConnectionSettings::Infiniband &&
-            active->type() != NetworkManager::ConnectionSettings::Team &&
-#if NM_CHECK_VERSION(1, 1, 92)
-            active->type() != NetworkManager::ConnectionSettings::Vlan &&
-            active->type() != NetworkManager::ConnectionSettings::Tun) {
-#else
-            active->type() != NetworkManager::ConnectionSettings::Vlan) {
-#endif
-#else
-        if (!active->devices().isEmpty() &&
-            active->type() != NetworkManager::ConnectionSettings::Bond &&
-            active->type() != NetworkManager::ConnectionSettings::Bridge &&
-            active->type() != NetworkManager::ConnectionSettings::Infiniband &&
-            active->type() != NetworkManager::ConnectionSettings::Vlan) {
-#endif
+        if (!active->devices().isEmpty() && UiUtils::isConnectionTypeSupported(active->type())) {
+
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
 #if NM_CHECK_VERSION(0, 9, 10)
             if (device && device->type() != NetworkManager::Device::Generic && device->type() <= NetworkManager::Device::Team) {

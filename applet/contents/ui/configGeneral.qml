@@ -30,6 +30,7 @@ Item {
     signal configurationChanged
 
     property alias cfg_unlockModemOnDetection: unlockModem.checked
+    property alias cfg_manageVirtualConnections: manageVirtualConnections.checked
 
     Layouts.ColumnLayout {
         id: mainColumn
@@ -38,6 +39,15 @@ Item {
             id: unlockModem
             Layouts.Layout.fillWidth: true
             text: i18n("Ask for PIN on modem detection")
+            onClicked: {
+                generalPage.configurationChanged()
+            }
+        }
+
+        Controls.CheckBox {
+            id: manageVirtualConnections
+            Layouts.Layout.fillWidth: true
+            text: i18n("Show and configure virtual connections")
             onClicked: {
                 generalPage.configurationChanged()
             }

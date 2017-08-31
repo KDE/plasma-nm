@@ -18,38 +18,25 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "configuration.h"
+#ifndef PLASMA_NM_CONFIGURATION_H
+#define PLASMA_NM_CONFIGURATION_H
 
-#include <KConfigGroup>
-#include <KSharedConfig>
+#include <QObject>
 
-Configuration::Configuration(QObject *parent)
-    : QObject(parent)
+#include <NetworkManagerQt/Manager>
+
+class Q_DECL_EXPORT Configuration : public QObject
 {
-}
+    Q_PROPERTY(bool unlockModemOnDetection READ unlockModemOnDetection WRITE setUnlockModemOnDetection)
+    Q_PROPERTY(bool manageVirtualConnections READ manageVirtualConnections WRITE setManageVirtualConnections)
+    Q_OBJECT
+public:
+    static bool unlockModemOnDetection();
+    static void setUnlockModemOnDetection(bool unlock);
 
-Configuration::~Configuration()
-{
-}
+    static bool manageVirtualConnections();
+    static void setManageVirtualConnections(bool manage);
+};
 
-bool Configuration::unlockModemOnDetection() const
-{
-    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
-    KConfigGroup grp(config, QLatin1String("General"));
+#endif // PLAMA_NM_CONFIGURATION_H
 
-    if (grp.isValid()) {
-        return grp.readEntry(QLatin1String("UnlockModemOnDetection"), true);
-    }
-
-    return true;
-}
-
-void Configuration::setUnlockModemOnDetection(bool unlock)
-{
-    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
-    KConfigGroup grp(config, QLatin1String("General"));
-
-    if (grp.isValid()) {
-        grp.writeEntry(QLatin1String("UnlockModemOnDetection"), unlock);
-    }
-}

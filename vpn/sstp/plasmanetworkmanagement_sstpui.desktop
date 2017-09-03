@@ -50,6 +50,7 @@ Name[x-test]=xxSecure Socket Tunneling Protocol (SSTP)xx
 Name[zh_CN]=安全套接字隧道协议 (SSTP)
 Name[zh_TW]=安全 Socket 通道協定 (SSTP)
 Comment=Compatible with Microsoft and other SSTP VPN servers
+Comment[ar]=متوافق مع «مايكروسوفت» وخواديم SSTP VPN الأخرى
 Comment[ca]=Compatible amb Microsoft i altres servidors VPN sobre SSTP
 Comment[ca@valencia]=Compatible amb Microsoft i altres servidors VPN sobre SSTP
 Comment[da]=Kompatibel med Microsoft og andre SSTP VPN-servere

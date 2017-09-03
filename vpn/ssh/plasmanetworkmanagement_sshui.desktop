@@ -53,6 +53,7 @@ Name[x-test]=xxSSHxx
 Name[zh_CN]=SSH
 Name[zh_TW]=SSH
 Comment=Compatible with the SSH server
+Comment[ar]=متوافق مع خادوم SSH
 Comment[ca]=Compatible amb el servidor SSH
 Comment[ca@valencia]=Compatible amb el servidor SSH
 Comment[da]=Kompatibel med SSH-serveren

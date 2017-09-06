@@ -84,7 +84,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR} # for config.h
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/)
 
 add_subdirectory(applet)
-add_subdirectory(editor)
 add_subdirectory(kded)
 add_subdirectory(kcm)
 add_subdirectory(libs)

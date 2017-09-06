@@ -394,13 +394,6 @@ void Handler::enableWwan(bool enable)
     NetworkManager::setWwanEnabled(enable);
 }
 
-// void Handler::editConnection(const QString& uuid)
-// {
-//     QStringList args;
-//     args << uuid;
-//     KProcess::startDetached("kde5-nm-connection-editor", args);
-// }
-
 void Handler::removeConnection(const QString& connection)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
@@ -432,11 +425,6 @@ void Handler::updateConnection(const NetworkManager::Connection::Ptr& connection
     watcher->setProperty("action", UpdateConnection);
     watcher->setProperty("connection", connection->name());
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
-}
-
-void Handler::openEditor()
-{
-    KProcess::startDetached("kde5-nm-connection-editor");
 }
 
 void Handler::requestScan()

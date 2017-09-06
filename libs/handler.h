@@ -91,11 +91,6 @@ public Q_SLOTS:
 #endif
     void enableWwan(bool enable);
 
-//     /**
-//      * Opens connection editor for given connection
-//      * @uuid - uuid of the connection you want to edit
-//      */
-//     void editConnection(const QString & uuid);
     /**
      * Removes given connection
      * @connection - d-bus path of the connection you want to edit
@@ -107,7 +102,6 @@ public Q_SLOTS:
      * @map - NMVariantMapMap with new connection settings
      */
     void updateConnection(const NetworkManager::Connection::Ptr &connection, const NMVariantMapMap &map);
-    void openEditor();
     void requestScan();
 
 private Q_SLOTS:

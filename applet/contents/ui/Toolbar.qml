@@ -66,6 +66,7 @@ Item {
 
             checked: enabled && enabledConnections.wirelessEnabled
             enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
+            tooltip: i18n("Enable wireless")
             icon: enabled ? "network-wireless-on" : "network-wireless-off"
             visible: availableDevices.wirelessDeviceAvailable
 
@@ -79,6 +80,7 @@ Item {
 
             checked: enabled && enabledConnections.wwanEnabled
             enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
+            tooltip: i18n("Enable mobile network")
             icon: enabled ? "network-mobile-on" : "network-mobile-off"
             visible: availableDevices.modemDeviceAvailable
 
@@ -93,6 +95,7 @@ Item {
             property bool airplaneModeEnabled: false
 
             checked: airplaneModeEnabled
+            tooltip: i18n("Enable airplane mode")
             icon: airplaneModeEnabled ? "network-flightmode-on" : "network-flightmode-off"
 
             onClicked: {

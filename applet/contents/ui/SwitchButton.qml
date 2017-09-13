@@ -28,6 +28,7 @@ Item {
     property alias icon: switchButtonIcon.source
     property alias checked: switchButtonCheckbox.checked
     property alias enabled: switchButtonCheckbox.enabled
+    property alias tooltip: switchButtonCheckbox.tooltip
 
     signal clicked
 
@@ -36,7 +37,6 @@ Item {
 
     PlasmaComponents.CheckBox {
         id: switchButtonCheckbox
-
         anchors {
             bottomMargin: Math.round(units.gridUnit / 3)
             left: parent.left

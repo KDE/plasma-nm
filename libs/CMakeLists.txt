@@ -3,7 +3,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-libs\")
 set(plasmanm_internal_SRCS
     models/appletproxymodel.cpp
     models/creatableconnectionsmodel.cpp
-    models/editoridentitymodel.cpp
     models/editorproxymodel.cpp
     models/kcmidentitymodel.cpp
     models/networkitemslist.cpp

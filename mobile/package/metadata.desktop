@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Wifi settings
+Comment=Network settings
+
+Encoding=UTF-8
+Type=Service
+Icon=network-wireless-symbolic
+X-KDE-ServiceTypes=Active/SettingsModule
+X-KDE-PluginInfo-Author=Martin Kacej
+X-KDE-PluginInfo-Email=m.kacej@atlas.sk
+X-KDE-PluginInfo-Name=wifi
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Website=http://plasma-active.org
+X-KDE-PluginInfo-Category=Online Services
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-FormFactors=handset,tablet,mediacenter
+X-Plasma-MainScript=ui/Wifi.qml

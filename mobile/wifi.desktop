@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Network Settings
+Comment=Wifi, Bluetooth, Mobile Networks Settings
+
+Icon=network-wireless-symbolic
+Exec=plasma-settings -m wifi
+
+Type=Service
+X-KDE-ServiceTypes=KCModule
+
+#X-KDE-Library=kcm_mobile_power
+X-KDE-ParentApp=kcontrol
+X-KDE-FormFactors=handset,tablet,mediacenter
+
+X-KDE-System-Settings-Parent-Category=display
+X-KDE-Weight=70
+
+X-KDE-Keywords=wifi,network
+Categories=Qt;KDE;X-KDE-settings-system;
+

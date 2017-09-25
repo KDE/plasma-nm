@@ -25,6 +25,7 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.active.settings 2.0 as ActiveSettings
+import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 //import org.kde.kirigami 1.0 as Kirigami
 
 Item {
@@ -33,6 +34,17 @@ Item {
     width: units.gridUnit * 30
     height: width * 1.5
     
+    PlasmaNM.Handler{
+        id: handler
+    }
+    
+    PlasmaNM.EnabledConnections {
+        id: enabledConnections
+        
+        onWirelessEnabledChanged: {
+            wifiSwitchButton.checked = wifiSwitchButton.enabled && enabled
+        }
+    }
     Column {
         id: formLayout
         spacing: units.gridUnit
@@ -53,9 +65,14 @@ Item {
             
             PlasmaComponents.Switch {
                 id: wifiSwitch
-                checked: false
+                checked: enabled && enabledConnections.wirelessEnabled
+                enabled: enabledConnections.wirelessHwEnabled 
+                            && availableDevices.wirelessDeviceAvailable 
+                            && !planeModeSwitchButton.airplaneModeEnabled
+                
+                //icon: enabled ? "network-wireless-on" : "network-wireless-off"
                 onClicked: {
-                    
+                    handler.enableWireless(checked);
                 }
             }
         }
@@ -69,7 +86,7 @@ Item {
         
         PlasmaComponents.Label {
             anchors.left: parent.left
-            text: i18n("<b>Available wifi networks TEST</b>")
+            text: i18n("<b>Available wifi networks</b>")
             Layout.fillWidth: true
         }
 

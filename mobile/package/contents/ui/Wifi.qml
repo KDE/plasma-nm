@@ -45,6 +45,16 @@ Item {
             wifiSwitchButton.checked = wifiSwitchButton.enabled && enabled
         }
     }
+    
+    PlasmaNM.NetworkModel {
+        id: connectionModel
+    }
+    
+    PlasmaNM.AppletProxyModel {
+        id: appletProxyModel
+
+        sourceModel: connectionModel
+    }
     Column {
         id: formLayout
         spacing: units.gridUnit
@@ -109,15 +119,19 @@ Item {
                         }
 
                 ListView {
+                    
+                    property bool availableConnectionsVisible: false
+                    property int currentVisibleButtonIndex: -1
+            
                     anchors.fill: parent
                     anchors.margins: units.gridUnit
+                    clip: true
                     width: parent.width
-                    model: TestWifi{
-                        id: wifiTestModel
-                    }
-
+                    currentIndex: -1
+                    boundsBehavior: Flickable.StopAtBounds
+                    model: appletProxyModel
                     delegate: RowItemDelegate{
-                        id: wifiDelegate
+                        
                     }
                 }
             }

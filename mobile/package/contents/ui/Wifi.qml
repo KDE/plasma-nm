@@ -55,6 +55,11 @@ Item {
 
         sourceModel: connectionModel
     }
+    PlasmaNM.MobileAppletProxyModel{
+        id: mobileappletProxyModel
+
+        sourceModel: connectionModel
+    }
     Column {
         id: formLayout
         spacing: units.gridUnit
@@ -129,7 +134,7 @@ Item {
                     width: parent.width
                     currentIndex: -1
                     boundsBehavior: Flickable.StopAtBounds
-                    model: appletProxyModel
+                    model: mobileappletProxyModel
                     delegate: RowItemDelegate{
                         
                     }

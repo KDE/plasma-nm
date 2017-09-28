@@ -8,6 +8,7 @@ set(plasmanm_internal_SRCS
     models/networkitemslist.cpp
     models/networkmodel.cpp
     models/networkmodelitem.cpp
+    models/mobileappletproxymodel.cpp
 
     configuration.cpp
     debug.cpp

@@ -55,7 +55,6 @@ public:
         Pppoe,
         Vlan,
         Vpn,
-        Wimax,
         Wired,
         Wireless
     };

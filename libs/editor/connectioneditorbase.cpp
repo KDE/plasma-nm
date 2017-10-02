@@ -39,7 +39,6 @@
 #include "settings/wifisecurity.h"
 #include "settings/wiredconnectionwidget.h"
 #include "settings/wiredsecurity.h"
-#include "settings/wimaxwidget.h"
 #include "vpnuiplugin.h"
 
 #include <NetworkManagerQt/ActiveConnection>
@@ -279,7 +278,6 @@ void ConnectionEditorBase::initialize()
     if ((type == NetworkManager::ConnectionSettings::Wired
             || type == NetworkManager::ConnectionSettings::Wireless
             || type == NetworkManager::ConnectionSettings::Infiniband
-            || type == NetworkManager::ConnectionSettings::Wimax
 #if NM_CHECK_VERSION(0, 9, 10)
             || type == NetworkManager::ConnectionSettings::Team
 #endif

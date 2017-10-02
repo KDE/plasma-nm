@@ -55,9 +55,6 @@ NetworkStatus::SortedConnectionType NetworkStatus::connectionTypeToSortedType(Ne
         case NetworkManager::ConnectionSettings::Vpn:
             return NetworkStatus::Vpn;
             break;
-        case NetworkManager::ConnectionSettings::Wimax:
-            return NetworkStatus::Wimax;
-            break;
         case NetworkManager::ConnectionSettings::Wired:
             return NetworkStatus::Wired;
             break;

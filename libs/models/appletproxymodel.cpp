@@ -51,8 +51,7 @@ bool AppletProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
     NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
 
     if (itemType == NetworkModelItem::AvailableConnection ||
-        itemType == NetworkModelItem::AvailableAccessPoint ||
-        itemType == NetworkModelItem::AvailableNsp) {
+        itemType == NetworkModelItem::AvailableAccessPoint) {
         return true;
     }
 

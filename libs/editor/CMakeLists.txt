@@ -17,7 +17,6 @@ set(plasmanm_editor_SRCS
     settings/vlanwidget.cpp
     settings/wificonnectionwidget.cpp
     settings/wifisecurity.cpp
-    settings/wimaxwidget.cpp
     settings/wiredconnectionwidget.cpp
     settings/wiredsecurity.cpp
 
@@ -73,7 +72,6 @@ ki18n_wrap_ui(plasmanm_editor_SRCS
     settings/ui/team.ui
     settings/ui/wificonnectionwidget.ui
     settings/ui/wifisecurity.ui
-    settings/ui/wimax.ui
     settings/ui/wiredconnectionwidget.ui
     settings/ui/wiredsecurity.ui
 

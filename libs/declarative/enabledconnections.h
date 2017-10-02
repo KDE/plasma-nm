@@ -39,18 +39,6 @@ Q_PROPERTY(bool wirelessEnabled READ isWirelessEnabled NOTIFY wirelessEnabled)
  * Indicates if the wireless hardware is currently enabled, i.e. the state of the RF kill switch
  */
 Q_PROPERTY(bool wirelessHwEnabled READ isWirelessHwEnabled NOTIFY wirelessHwEnabled)
-
-#if !NM_CHECK_VERSION(1, 2, 0)
-/**
- * Indicates if WiMAX devices are currently enabled or not
- */
-Q_PROPERTY(bool wimaxEnabled READ isWimaxEnabled NOTIFY wimaxEnabled)
-/**
- * Indicates if the WiMAX hardware is currently enabled, i.e. the state of the RF kill switch.
- */
-Q_PROPERTY(bool wimaxHwEnabled READ isWimaxHwEnabled NOTIFY wimaxHwEnabled)
-#endif
-
 /**
  * Indicates if mobile broadband devices are currently enabled or not.
  */
@@ -67,10 +55,6 @@ public:
     bool isNetworkingEnabled() const;
     bool isWirelessEnabled() const;
     bool isWirelessHwEnabled() const;
-#if !NM_CHECK_VERSION(1, 2, 0)
-    bool isWimaxEnabled() const;
-    bool isWimaxHwEnabled() const;
-#endif
     bool isWwanEnabled() const;
     bool isWwanHwEnabled() const;
 
@@ -78,10 +62,6 @@ public Q_SLOTS:
     void onNetworkingEnabled(bool enabled);
     void onWirelessEnabled(bool enabled);
     void onWirelessHwEnabled(bool enabled);
-#if !NM_CHECK_VERSION(1, 2, 0)
-    void onWimaxEnabled(bool enabled);
-    void onWimaxHwEnabled(bool enabled);
-#endif
     void onWwanEnabled(bool enabled);
     void onWwanHwEnabled(bool enabled);
 
@@ -89,10 +69,6 @@ Q_SIGNALS:
     void networkingEnabled(bool enabled);
     void wirelessEnabled(bool enabled);
     void wirelessHwEnabled(bool enabled);
-#if !NM_CHECK_VERSION(1, 2, 0)
-    void wimaxEnabled(bool enabled);
-    void wimaxHwEnabled(bool enabled);
-#endif
     void wwanEnabled(bool enabled);
     void wwanHwEnabled(bool enabled);
 
@@ -100,10 +76,6 @@ private:
     bool m_networkingEnabled;
     bool m_wirelessEnabled;
     bool m_wirelessHwEnabled;
-#if !NM_CHECK_VERSION(1, 2, 0)
-    bool m_wimaxEnabled;
-    bool m_wimaxHwEnabled;
-#endif
     bool m_wwanEnabled;
     bool m_wwanHwEnabled;
 };

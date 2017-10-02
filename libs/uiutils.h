@@ -28,10 +28,8 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/AccessPoint>
-#include <NetworkManagerQt/WimaxNsp>
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/BluetoothDevice>
-#include <NetworkManagerQt/WimaxDevice>
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/VpnSetting>
@@ -49,7 +47,6 @@ public:
     enum SortedConnectionType {
         Wired,
         Wireless,
-        Wimax,
         Gsm,
         Cdma,
         Pppoe,
@@ -130,9 +127,6 @@ public:
     static QString convertLockReasonToString(MMModemLock reason);
 #endif
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
-#if !NM_CHECK_VERSION(1, 2, 0)
-    static QString convertNspTypeToString(NetworkManager::WimaxNsp::NetworkType type);
-#endif
     static QString labelFromWirelessSecurity(NetworkManager::WirelessSecurityType type);
 
     static QString formatDateRelative(const QDateTime & lastUsed);

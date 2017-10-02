@@ -62,9 +62,6 @@
 
 Handler::Handler(QObject *parent)
     : QObject(parent)
-#if !NM_CHECK_VERSION(1, 2, 0)
-    , m_tmpWimaxEnabled(NetworkManager::isWimaxEnabled())
-#endif
     , m_tmpWirelessEnabled(NetworkManager::isWirelessEnabled())
     , m_tmpWwanEnabled(NetworkManager::isWwanEnabled())
 {
@@ -287,24 +284,13 @@ void Handler::disconnectAll()
 void Handler::enableAirplaneMode(bool enable)
 {
     if (enable) {
-#if !NM_CHECK_VERSION(1, 2, 0)
-        m_tmpWimaxEnabled = NetworkManager::isWimaxEnabled();
-#endif
         m_tmpWirelessEnabled = NetworkManager::isWirelessEnabled();
         m_tmpWwanEnabled = NetworkManager::isWwanEnabled();
         enableBluetooth(false);
-#if !NM_CHECK_VERSION(1, 2, 0)
-        enableWimax(false);
-#endif
         enableWireless(false);
         enableWwan(false);
     } else {
         enableBluetooth(true);
-#if !NM_CHECK_VERSION(1, 2, 0)
-        if (m_tmpWimaxEnabled) {
-            enableWimax(true);
-        }
-#endif
         if (m_tmpWirelessEnabled) {
             enableWireless(true);
         }
@@ -381,13 +367,6 @@ void Handler::enableWireless(bool enable)
 {
     NetworkManager::setWirelessEnabled(enable);
 }
-
-#if !NM_CHECK_VERSION(1, 2, 0)
-void Handler::enableWimax(bool enable)
-{
-    NetworkManager::setWimaxEnabled(enable);
-}
-#endif
 
 void Handler::enableWwan(bool enable)
 {

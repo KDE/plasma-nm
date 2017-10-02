@@ -25,9 +25,6 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/BluetoothDevice>
 #include <NetworkManagerQt/OlpcMeshDevice>
-#if !NM_CHECK_VERSION(1, 2, 0)
-#include <NetworkManagerQt/WimaxDevice>
-#endif
 #include <NetworkManagerQt/InfinibandDevice>
 #include <NetworkManagerQt/BondDevice>
 #include <NetworkManagerQt/BridgeDevice>
@@ -150,10 +147,6 @@ QVariant HwAddrComboBox::hwAddressFromDevice(const NetworkManager::Device::Ptr& 
         data = device->as<NetworkManager::BluetoothDevice>()->hardwareAddress();
     } else if (type == NetworkManager::Device::OlpcMesh) {
         data = device->as<NetworkManager::OlpcMeshDevice>()->hardwareAddress();
-#if !NM_CHECK_VERSION(1, 2, 0)
-    } else if (type == NetworkManager::Device::Wimax) {
-        data = device->as<NetworkManager::WimaxDevice>()->hardwareAddress();
-#endif
     } else if (type == NetworkManager::Device::InfiniBand) {
         data = device->as<NetworkManager::InfinibandDevice>()->hwAddress();
     } else if (type == NetworkManager::Device::Bond) {

@@ -96,9 +96,6 @@ UiUtils::SortedConnectionType UiUtils::connectionTypeToSortedType(NetworkManager
         case NetworkManager::ConnectionSettings::Vpn:
             return UiUtils::Vpn;
             break;
-        case NetworkManager::ConnectionSettings::Wimax:
-            return UiUtils::Wimax;
-            break;
         case NetworkManager::ConnectionSettings::Wired:
             return UiUtils::Wired;
             break;
@@ -143,9 +140,6 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
         break;
     case NetworkManager::Device::Bluetooth:
         deviceText = i18nc("title of the interface widget in nm's popup", "Bluetooth");
-        break;
-    case NetworkManager::Device::Wimax:
-        deviceText = i18nc("title of the interface widget in nm's popup", "WiMAX");
         break;
     case NetworkManager::Device::InfiniBand:
         deviceText = i18nc("title of the interface widget in nm's popup", "Infiniband");
@@ -234,10 +228,6 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
     case ConnectionSettings::Vpn:
         text = i18n("VPN");
         icon = QStringLiteral("network-vpn");
-        break;
-    case ConnectionSettings::Wimax:
-        text = i18n("WiMAX");
-        icon = QStringLiteral("network-wireless");
         break;
     case ConnectionSettings::Wired:
         text = i18n("Wired Ethernet");
@@ -568,20 +558,6 @@ QString UiUtils::convertLockReasonToString(MMModemLock reason)
     default:
         return i18nc("possible SIM lock reason", "Lock reason unknown.");
     }
-}
-#endif
-
-#if !NM_CHECK_VERSION(1, 2, 0)
-QString UiUtils::convertNspTypeToString(WimaxNsp::NetworkType type)
-{
-    switch (type) {
-        case WimaxNsp::Unknown: return i18nc("unknown Wimax NSP type", "Unknown");
-        case WimaxNsp::Home: return i18n("Home");
-        case WimaxNsp::Partner: return i18n("Partner");
-        case WimaxNsp::RoamingPartner: return i18n("Roaming partner");
-    }
-
-    return i18nc("Unknown", "Unknown Wimax NSP type");
 }
 #endif
 

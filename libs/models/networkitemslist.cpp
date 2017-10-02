@@ -55,11 +55,6 @@ bool NetworkItemsList::contains(const NetworkItemsList::FilterType type, const Q
                     return true;
                 }
                 break;
-            case NetworkItemsList::Nsp:
-                if (item->nsp() == parameter) {
-                    return true;
-                }
-                break;
             case NetworkItemsList::Ssid:
                 if (item->ssid() == parameter) {
                     return true;
@@ -139,17 +134,6 @@ QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList:
             case NetworkItemsList::Name:
                 if (item->name() == parameter) {
                     result << item;
-                }
-                break;
-            case NetworkItemsList::Nsp:
-                if (item->nsp() == parameter) {
-                    if (additionalParameter.isEmpty()) {
-                        result << item;
-                    } else {
-                        if (item->devicePath() == additionalParameter) {
-                            result << item;
-                        }
-                    }
                 }
                 break;
             case NetworkItemsList::Ssid:

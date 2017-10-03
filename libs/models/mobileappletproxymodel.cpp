@@ -21,6 +21,7 @@
  */
 
 #include "mobileappletproxymodel.h"
+#include "uiutils.h"
 
 MobileAppletProxymodel::MobileAppletProxymodel(QObject* parent):AppletProxyModel(parent)
 {
@@ -35,5 +36,26 @@ MobileAppletProxymodel::~MobileAppletProxymodel()
 
 bool MobileAppletProxymodel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
 {
-    return true;
+    const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
+
+    // slaves are always filtered-out
+    const bool isSlave = sourceModel()->data(index, NetworkModel::SlaveRole).toBool();
+    if (isSlave) {
+        return false;
+    }
+    const NetworkManager::ConnectionSettings::ConnectionType type = (NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(index, NetworkModel::TypeRole).toUInt();
+    
+    if(type == NetworkManager::ConnectionSettings::Wireless){
+        if (!UiUtils::isConnectionTypeSupported(type)) {
+            return false;
+        }
+        NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
+        
+        if (itemType == NetworkModelItem::AvailableConnection ||
+            itemType == NetworkModelItem::AvailableAccessPoint ||
+            itemType == NetworkModelItem::AvailableNsp) {
+            return true;
+        }
+    }
+    return false;
 }

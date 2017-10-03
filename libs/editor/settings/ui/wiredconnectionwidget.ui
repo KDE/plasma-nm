@@ -144,13 +144,19 @@ into multiple Ethernet frames</string>
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
      <property name="specialValueText">
-      <string>Automatic</string>
+      <string/>
      </property>
      <property name="suffix">
       <string> Mbit/s</string>
      </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
      <property name="maximum">
       <number>9999</number>
+     </property>
+     <property name="value">
+      <number>100</number>
      </property>
     </widget>
    </item>

@@ -34,6 +34,7 @@ Item {
     signal selectedConnectionChanged(string connection)
     signal requestCreateConnection(int type, string vpnType, string specificType, bool shared)
     signal requestExportConnection(string connection)
+    signal requestToChangeConnection(string name, string path)
 
     Rectangle {
         id: background
@@ -98,14 +99,25 @@ Item {
             section.property: "KcmConnectionType"
             section.delegate: Header { text: section }
             delegate: ConnectionItem {
-                onAboutToRemoveConnection: {
-                    deleteConfirmationDialog.connectionName = name
-                    deleteConfirmationDialog.connectionPath = path
-                    deleteConfirmationDialog.open()
+                onAboutToChangeConnection: {
+                    // Shouldn't be problem to set this in advance
+                    connectionView.currentConnectionExportable = exportable
+                    if (connectionModified) {
+                        requestToChangeConnection(name, path)
+                    } else {
+                        connectionView.currentConnectionName = name
+                        connectionView.currentConnectionPath = path
+                    }
                 }
 
                 onAboutToExportConnection: {
                     requestExportConnection(path)
+                }
+
+                onAboutToRemoveConnection: {
+                    deleteConfirmationDialog.connectionName = name
+                    deleteConfirmationDialog.connectionPath = path
+                    deleteConfirmationDialog.open()
                 }
             }
 

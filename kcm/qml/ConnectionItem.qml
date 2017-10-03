@@ -30,6 +30,7 @@ ListItem {
     checked: mouseArea.containsMouse || ConnectionPath === connectionView.currentConnectionPath
     height: connectionItemBase.height
 
+    signal aboutToChangeConnection(bool exportable, string name, string path)
     signal aboutToExportConnection(string path)
     signal aboutToRemoveConnection(string name, string path)
 
@@ -146,9 +147,7 @@ ListItem {
 
         onClicked: {
             if (mouse.button === Qt.LeftButton) {
-                connectionView.currentConnectionExportable = KcmVpnConnectionExportable
-                connectionView.currentConnectionName = Name
-                connectionView.currentConnectionPath = ConnectionPath
+                aboutToChangeConnection(KcmVpnConnectionExportable, Name, ConnectionPath)
             } else if (mouse.button == Qt.RightButton) {
                 connectionItemMenu.open(mouse.x, mouse.y)
             }

@@ -50,16 +50,11 @@ Item {
         id: connectionModel
     }
     
-    PlasmaNM.AppletProxyModel {
-        id: appletProxyModel
-
-        sourceModel: connectionModel
-    }
-    PlasmaNM.MobileAppletProxyModel{
+   PlasmaNM.MobileAppletProxyModel{
         id: mobileappletProxyModel
 
         sourceModel: connectionModel
-    }
+   }
     Column {
         id: formLayout
         spacing: units.gridUnit
@@ -139,14 +134,6 @@ Item {
                         
                     }
                 }
-            }
-        }
-        
-        PlasmaComponents.Button{     
-            id: editorButton
-            text: "Connection editor"
-            onClicked: {
-                connectionEditorDialog.open()
             }
         }
     }

@@ -24,18 +24,27 @@ PlasmaComponents.ListItem {
             font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false
             text: ItemUniqueName
             textFormat: Text.PlainText
-        }
-
-        Rectangle {
-            anchors.horizontalCenter: parent.Center
-            width: units.gridUnit
-            height: units.gridUnit
-            color: status
             MouseArea{
                 anchors.fill: parent
                 onClicked: {
                     connectionEditorDialog.open()
                 }
+            }
+        }
+
+        PlasmaCore.SvgItem {
+            id: connectionSvgIcon
+
+            anchors {
+                right: parent.right
+                verticalCenter: parent.verticalCenter
+            }
+            elementId: ConnectionIcon
+            height: units.iconSizes.medium; width: height
+            svg: PlasmaCore.Svg {
+                multipleImages: true
+                imagePath: "icons/network"
+                colorGroup: PlasmaCore.ColorScope.colorGroup
             }
         }
     }

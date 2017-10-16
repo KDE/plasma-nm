@@ -181,7 +181,7 @@ Dialog {
 
             QtControls.Button {
                 id: closeButton
-                text: i18n("Close")
+                text: i18n("Cancel")
 
                 onClicked: {
                     dialog.close()

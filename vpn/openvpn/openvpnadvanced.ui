@@ -72,7 +72,7 @@
             <string>Renegotiate data channel key after the specified number of seconds.</string>
            </property>
            <property name="text">
-            <string>Use custom renegotiation interval</string>
+            <string>Use custom renegotiation interval:</string>
            </property>
           </widget>
          </item>

@@ -189,7 +189,7 @@ and the receive directions.</string>
          <string>Send LCP echo-requests to find out whether peer is alive.</string>
         </property>
         <property name="text">
-         <string>Send PPP echo packets </string>
+         <string>Send PPP echo packets</string>
         </property>
        </widget>
       </item>

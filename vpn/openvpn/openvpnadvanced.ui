@@ -945,7 +945,7 @@ to protect against DoS attacks.</string>
        <item row="1" column="0">
         <widget class="QLabel" name="label_11">
          <property name="toolTip">
-          <string>Proxy type: HTTP or Socks</string>
+          <string>Proxy type: HTTP or SOCKS</string>
          </property>
          <property name="text">
           <string>Proxy Type:</string>
@@ -1065,7 +1065,7 @@ to protect against DoS attacks.</string>
        <item row="8" column="0">
         <widget class="QLabel" name="label_14">
          <property name="toolTip">
-          <string>HTTP/Socks proxy username passed to OpenVPN when prompted for it.</string>
+          <string>HTTP/SOCKS proxy username passed to OpenVPN when prompted for it.</string>
          </property>
          <property name="text">
           <string>Proxy Username:</string>
@@ -1088,7 +1088,7 @@ to protect against DoS attacks.</string>
        <item row="9" column="0">
         <widget class="QLabel" name="label_15">
          <property name="toolTip">
-          <string>HTTP/Socks proxy password passed to OpenVPN when prompted for it.</string>
+          <string>HTTP/SOCKS proxy password passed to OpenVPN when prompted for it.</string>
          </property>
          <property name="text">
           <string>Proxy Password:</string>

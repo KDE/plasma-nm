@@ -180,7 +180,7 @@ Dialog {
             }
 
             QtControls.Button {
-                id: closeButton
+                id: cancelButton
                 text: i18n("Cancel")
 
                 onClicked: {

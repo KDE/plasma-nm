@@ -183,7 +183,7 @@ Item {
 
         icon: StandardIcon.Question
         standardButtons: StandardButton.Ok | StandardButton.Close
-        title: i18n("Remove connection")
+        title: i18nc("@title:window", "Remove Connection")
         text: i18n("Do you want to remove the connection '%1'", connectionName)
 
         onAccepted: {

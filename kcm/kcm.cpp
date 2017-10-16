@@ -379,7 +379,7 @@ void KCMNetworkmanagement::onRequestToChangeConnection( const QString &connectio
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_currentConnectionPath);
 
     if (connection) {
-        if (KMessageBox::questionYesNo(this, i18n("Do you want to save changes made to the connection '%1'?", connection->name()), i18n("Save changes"),
+        if (KMessageBox::questionYesNo(this, i18n("Do you want to save changes made to the connection '%1'?", connection->name()), i18nc("@title:window", "Save Changes"),
                                     KStandardGuiItem::save(), KStandardGuiItem::discard(), QString(), KMessageBox::Notify)  == KMessageBox::Yes) {
             save();
         }

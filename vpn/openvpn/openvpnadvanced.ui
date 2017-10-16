@@ -970,7 +970,7 @@ to protect against DoS attacks.</string>
           </size>
          </property>
          <property name="toolTip">
-          <string>Proxy type: HTTP or Socks</string>
+          <string>Proxy type: HTTP or SOCKS</string>
          </property>
          <item>
           <property name="text">
@@ -1078,7 +1078,7 @@ to protect against DoS attacks.</string>
        <item row="8" column="1">
         <widget class="PasswordField" name="proxyUsername">
          <property name="toolTip">
-          <string>HTTP/Socks proxy username passed to OpenVPN when prompted for it.</string>
+          <string>HTTP/SOCKS proxy username passed to OpenVPN when prompted for it.</string>
          </property>
          <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
@@ -1103,7 +1103,7 @@ to protect against DoS attacks.</string>
          <item>
           <widget class="PasswordField" name="proxyPassword">
            <property name="toolTip">
-            <string>HTTP/Socks proxy password passed to OpenVPN when prompted for it.</string>
+            <string>HTTP/SOCKS proxy password passed to OpenVPN when prompted for it.</string>
            </property>
            <property name="passwordModeEnabled" stdset="0">
             <bool>true</bool>

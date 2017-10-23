@@ -407,6 +407,7 @@ void IPv6Widget::slotDnsServers()
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
     KEditListWidget * listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(" ", ""));
+    listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
     connect(dialog.data(), &QDialog::accepted,
@@ -437,6 +438,7 @@ void IPv6Widget::slotDnsDomains()
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
     KEditListWidget * listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(" ", ""));
+    listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
     connect(dialog.data(), &QDialog::accepted,

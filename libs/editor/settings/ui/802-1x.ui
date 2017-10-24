@@ -120,6 +120,16 @@
         <widget class="KLineEdit" name="tlsIdentity"/>
        </item>
        <item row="1" column="0">
+        <widget class="QLabel" name="label_32">
+         <property name="text">
+          <string>Domain:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="KLineEdit" name="tlsDomain"/>
+       </item>
+       <item row="2" column="0">
         <widget class="QLabel" name="label_5">
          <property name="text">
           <string>User certificate:</string>
@@ -129,14 +139,14 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
+       <item row="2" column="1">
         <widget class="KUrlRequester" name="tlsUserCert">
          <property name="filter">
           <string notr="true">*.der *.pem *.crt *.cer</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="3" column="0">
         <widget class="QLabel" name="label_6">
          <property name="text">
           <string>CA certificate:</string>
@@ -146,14 +156,14 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
+       <item row="3" column="1">
         <widget class="KUrlRequester" name="tlsCACert">
          <property name="filter">
           <string notr="true">*.der *.pem *.crt *.cer</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item row="4" column="0">
         <widget class="QLabel" name="label_27">
          <property name="text">
           <string>Subject match:</string>
@@ -163,14 +173,14 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
+       <item row="4" column="1">
         <widget class="QLineEdit" name="leTlsSubjectMatch">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
+       <item row="5" column="0">
         <widget class="QLabel" name="label_28">
          <property name="text">
           <string>Alternative subject matches:</string>
@@ -180,7 +190,7 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
+       <item row="5" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
           <widget class="QLineEdit" name="leTlsAlternativeSubjectMatches"/>
@@ -194,7 +204,7 @@
          </item>
         </layout>
        </item>
-       <item row="5" column="0">
+       <item row="6" column="0">
         <widget class="QLabel" name="label_29">
          <property name="text">
           <string>Connect to these servers:</string>
@@ -204,7 +214,7 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
+       <item row="6" column="1">
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
           <widget class="QLineEdit" name="leTlsConnectToServers"/>
@@ -218,7 +228,7 @@
          </item>
         </layout>
        </item>
-       <item row="6" column="0">
+       <item row="7" column="0">
         <widget class="QLabel" name="label_7">
          <property name="text">
           <string>Private key:</string>
@@ -228,14 +238,14 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="1">
+       <item row="7" column="1">
         <widget class="KUrlRequester" name="tlsPrivateKey">
          <property name="filter">
           <string notr="true">*.der *.pem *.p12 *.key</string>
          </property>
         </widget>
        </item>
-       <item row="7" column="0">
+       <item row="8" column="0">
         <widget class="QLabel" name="label_8">
          <property name="text">
           <string>Private key password:</string>
@@ -245,7 +255,7 @@
          </property>
         </widget>
        </item>
-       <item row="7" column="1">
+       <item row="8" column="1">
         <widget class="PasswordField" name="tlsPrivateKeyPassword">
          <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
@@ -432,7 +442,7 @@
        <item row="0" column="1">
         <widget class="KLineEdit" name="ttlsAnonIdentity"/>
        </item>
-       <item row="1" column="0">
+       <item row="3" column="0">
         <widget class="QLabel" name="label_20">
          <property name="text">
           <string>CA certificate:</string>
@@ -442,14 +452,14 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
+       <item row="3" column="1">
         <widget class="KUrlRequester" name="ttlsCACert">
          <property name="filter">
           <string notr="true">*.der *.pem *.crt *.cer</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="5" column="0">
         <widget class="QLabel" name="label_16">
          <property name="text">
           <string>Inner authentication:</string>
@@ -459,7 +469,7 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
+       <item row="5" column="1">
         <widget class="KComboBox" name="ttlsInnerAuth">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -489,7 +499,7 @@
          </item>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item row="6" column="0">
         <widget class="QLabel" name="label_17">
          <property name="text">
           <string>Username:</string>
@@ -499,10 +509,10 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
+       <item row="6" column="1">
         <widget class="KLineEdit" name="ttlsUsername"/>
        </item>
-       <item row="4" column="0">
+       <item row="7" column="0">
         <widget class="QLabel" name="label_18">
          <property name="text">
           <string>Password:</string>
@@ -512,18 +522,28 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
+       <item row="7" column="1">
         <widget class="PasswordField" name="ttlsPassword">
          <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
        </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_30">
+         <property name="text">
+          <string>Domain:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="KLineEdit" name="ttlsDomain"/>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="peapPage">
       <layout class="QFormLayout" name="formLayout_6">
-       <item row="0" column="0">
+       <item row="2" column="0">
         <widget class="QLabel" name="label_24">
          <property name="text">
           <string>Anonymous identity:</string>
@@ -533,10 +553,10 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="1">
+       <item row="2" column="1">
         <widget class="KLineEdit" name="peapAnonIdentity"/>
        </item>
-       <item row="1" column="0">
+       <item row="6" column="0">
         <widget class="QLabel" name="label_23">
          <property name="text">
           <string>CA certificate:</string>
@@ -546,14 +566,14 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
+       <item row="6" column="1">
         <widget class="KUrlRequester" name="peapCACert">
          <property name="filter">
           <string notr="true">*.der *.pem *.crt *.cer</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="7" column="0">
         <widget class="QLabel" name="label_26">
          <property name="text">
           <string>PEAP version:</string>
@@ -563,7 +583,7 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
+       <item row="7" column="1">
         <widget class="KComboBox" name="peapVersion">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -588,7 +608,7 @@
          </item>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item row="8" column="0">
         <widget class="QLabel" name="label_22">
          <property name="text">
           <string>Inner authentication:</string>
@@ -598,7 +618,7 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
+       <item row="8" column="1">
         <widget class="KComboBox" name="peapInnerAuth">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -623,7 +643,7 @@
          </item>
         </widget>
        </item>
-       <item row="4" column="0">
+       <item row="9" column="0">
         <widget class="QLabel" name="label_25">
          <property name="text">
           <string>Username:</string>
@@ -633,10 +653,10 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
+       <item row="9" column="1">
         <widget class="KLineEdit" name="peapUsername"/>
        </item>
-       <item row="5" column="0">
+       <item row="10" column="0">
         <widget class="QLabel" name="label_21">
          <property name="text">
           <string>Password:</string>
@@ -646,12 +666,22 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
+       <item row="10" column="1">
         <widget class="PasswordField" name="peapPassword">
          <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_31">
+         <property name="text">
+          <string>Domain:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="KLineEdit" name="peapDomain"/>
        </item>
       </layout>
      </widget>
@@ -686,6 +716,7 @@
   <tabstop>md5UserName</tabstop>
   <tabstop>md5Password</tabstop>
   <tabstop>tlsIdentity</tabstop>
+  <tabstop>tlsDomain</tabstop>
   <tabstop>tlsUserCert</tabstop>
   <tabstop>tlsCACert</tabstop>
   <tabstop>leTlsSubjectMatch</tabstop>
@@ -705,11 +736,13 @@
   <tabstop>fastUsername</tabstop>
   <tabstop>fastPassword</tabstop>
   <tabstop>ttlsAnonIdentity</tabstop>
+  <tabstop>ttlsDomain</tabstop>
   <tabstop>ttlsCACert</tabstop>
   <tabstop>ttlsInnerAuth</tabstop>
   <tabstop>ttlsUsername</tabstop>
   <tabstop>ttlsPassword</tabstop>
   <tabstop>peapAnonIdentity</tabstop>
+  <tabstop>peapDomain</tabstop>
   <tabstop>peapCACert</tabstop>
   <tabstop>peapVersion</tabstop>
   <tabstop>peapInnerAuth</tabstop>

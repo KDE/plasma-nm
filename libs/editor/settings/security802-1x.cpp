@@ -146,6 +146,7 @@ void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
         QStringList servers;
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodTls));
         m_ui->tlsIdentity->setText(securitySetting->identity());
+        m_ui->tlsDomain->setText(securitySetting->domainSuffixMatch());
         m_ui->tlsUserCert->setUrl(QUrl::fromLocalFile(securitySetting->clientCertificate()));
         m_ui->tlsCACert->setUrl(QUrl::fromLocalFile(securitySetting->caCertificate()));
         m_ui->leTlsSubjectMatch->setText(securitySetting->subjectMatch());
@@ -196,6 +197,7 @@ void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTtls)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodTtls));
         m_ui->ttlsAnonIdentity->setText(securitySetting->anonymousIdentity());
+        m_ui->ttlsDomain->setText(securitySetting->domainSuffixMatch());
         m_ui->ttlsCACert->setUrl(QUrl::fromLocalFile(securitySetting->caCertificate()));
         if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodPap) {
             m_ui->ttlsInnerAuth->setCurrentIndex(0);
@@ -217,6 +219,7 @@ void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPeap)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodPeap));
         m_ui->peapAnonIdentity->setText(securitySetting->anonymousIdentity());
+        m_ui->peapDomain->setText(securitySetting->domainSuffixMatch());
         m_ui->peapCACert->setUrl(QUrl::fromLocalFile(securitySetting->caCertificate()));
         m_ui->peapVersion->setCurrentIndex(securitySetting->phase1PeapVersion() + 1);
         if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodMschapv2) {
@@ -296,6 +299,10 @@ QVariantMap Security8021x::setting() const
     } else if (method == NetworkManager::Security8021xSetting::EapMethodTls) {
         if (!m_ui->tlsIdentity->text().isEmpty()) {
             setting.setIdentity(m_ui->tlsIdentity->text());
+        }
+
+        if (!m_ui->tlsDomain->text().isEmpty()) {
+            setting.setDomainSuffixMatch(m_ui->tlsDomain->text());
         }
 
         if (m_ui->tlsUserCert->url().isValid()) {
@@ -400,6 +407,10 @@ QVariantMap Security8021x::setting() const
             setting.setAnonymousIdentity(m_ui->ttlsAnonIdentity->text());
         }
 
+        if (!m_ui->ttlsDomain->text().isEmpty()) {
+            setting.setDomainSuffixMatch(m_ui->ttlsDomain->text());
+        }
+
         if (m_ui->ttlsCACert->url().isValid()) {
             setting.setCaCertificate(m_ui->ttlsCACert->url().toString().toUtf8().append('\0'));
         }
@@ -433,6 +444,10 @@ QVariantMap Security8021x::setting() const
     } else if (method == NetworkManager::Security8021xSetting::EapMethodPeap) {
         if (!m_ui->peapAnonIdentity->text().isEmpty()) {
             setting.setAnonymousIdentity(m_ui->peapAnonIdentity->text());
+        }
+
+        if (!m_ui->peapDomain->text().isEmpty()) {
+            setting.setDomainSuffixMatch(m_ui->peapDomain->text());
         }
 
         if (m_ui->peapCACert->url().isValid()) {

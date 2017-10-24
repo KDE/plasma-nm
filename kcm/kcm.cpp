@@ -106,7 +106,6 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
         // Also check if the connection type is supported by KCM
         const NetworkManager::ConnectionSettings::ConnectionType type = activeConnection->type();
         if (UiUtils::isConnectionTypeSupported(type)) {
-            loadConnectionSettings(activeConnection->connection()->settings());
             QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, activeConnection->id()), Q_ARG(QVariant, activeConnection->connection()->path()));
         }
     } else {
@@ -144,7 +143,6 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
         Q_FOREACH (const NetworkManager::Connection::Ptr &connection, connectionList) {
             const NetworkManager::ConnectionSettings::ConnectionType type = connection->settings()->connectionType();
             if (UiUtils::isConnectionTypeSupported(type)) {
-                loadConnectionSettings(connection->settings());
                 QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, connection->settings()->id()), Q_ARG(QVariant, connection->path()));
                 break;
             }

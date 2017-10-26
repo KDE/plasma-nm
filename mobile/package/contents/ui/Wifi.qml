@@ -65,6 +65,7 @@ Item {
         }
 
         RowLayout{
+            id:layoutrow
             width: parent.width
             
             PlasmaComponents.Label {
@@ -78,7 +79,6 @@ Item {
                 checked: enabled && enabledConnections.wirelessEnabled
                 enabled: enabledConnections.wirelessHwEnabled 
                             && availableDevices.wirelessDeviceAvailable 
-                            && !planeModeSwitchButton.airplaneModeEnabled
                 
                 //icon: enabled ? "network-wireless-on" : "network-wireless-off"
                 onClicked: {
@@ -88,72 +88,57 @@ Item {
         }
        
          Rectangle{
-             //separator
+            id: separator
+            anchors.top: layoutrow.bottom
             width: parent.width
             height: units.gridUnit/8
             border.color: "grey"
         }
         
         PlasmaComponents.Label {
-            anchors.left: parent.left
+            id:label
+            anchors{
+                left: parent.left
+                top:separator.bottom
+            }
             text: i18n("<b>Available wifi networks</b>")
             Layout.fillWidth: true
         }
 
-        Rectangle{
-            id: wifiSection
-            anchors.left: parent.left
-            implicitHeight: 300 //units.gridUnit * 45 -100
-            //anchors.bottomMargin: 29
-            width: parent.width
-            border.color: "black"
-            //Layout.fillHeight:true
-
-            PlasmaExtras.ScrollArea{
-
-                anchors {
-                            bottom: parent.bottom
-                            left: parent.left
-                            right: parent.right
-                            fill: parent
-                        }
-
-                ListView {
-                    
-                    property bool availableConnectionsVisible: false
-                    property int currentVisibleButtonIndex: -1
+        PlasmaExtras.ScrollArea{
+            id:wifiarea
+            anchors {
+                top:label.bottom
+                bottomMargin:units.gridUnit*2
+                bottom: parent.bottom
+                left: parent.left
+                right: parent.right
+            }
             
-                    anchors.fill: parent
-                    anchors.margins: units.gridUnit
-                    clip: true
-                    width: parent.width
-                    currentIndex: -1
-                    boundsBehavior: Flickable.StopAtBounds
-                    model: mobileappletProxyModel
-                    delegate: RowItemDelegate{
-                        
-                    }
+            ListView {
+                
+                property bool availableConnectionsVisible: false
+                property int currentVisibleButtonIndex: -1
+                
+                anchors.fill: parent
+                anchors.margins: units.gridUnit
+                clip: true
+                width: parent.width
+                currentIndex: -1
+                boundsBehavior: Flickable.StopAtBounds
+                model: mobileappletProxyModel
+                delegate: RowItemDelegate{
+                    
                 }
             }
         }
-    }
-
-    PlasmaComponents.CommonDialog {
-        id: connectionEditorDialog
-        titleText: i18n("Connection Editor")
-        buttonTexts: [i18n("Close")]
-        onButtonClicked: close()
-        content: Loader {
-            id: connectionEditorDialogLoader
-            width: units.gridUnit * 22
-            height: units.gridUnit * 25
-            }
-
-        onStatusChanged: {
-            if (status == PlasmaComponents.DialogStatus.Open) {
-                connectionEditorDialogLoader.source = "ConnectionEditorDialog.qml"
-                connectionEditorDialogLoader.item.focusTextInput()
-            }
+        PlasmaComponents.Button{
+            id:customConnectionButton
+            anchors.top:wifiarea.bottom
+            text:"Add custom connection"
+            
         }
+        
     }
 }
+

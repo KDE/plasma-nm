@@ -33,28 +33,28 @@ Item {
     objectName: "wifiMain"
     width: units.gridUnit * 30
     height: width * 1.5
-    
+
     PlasmaNM.Handler{
         id: handler
     }
-    
+
     PlasmaNM.EnabledConnections {
         id: enabledConnections
-        
+
         onWirelessEnabledChanged: {
-            wifiSwitchButton.checked = wifiSwitchButton.enabled && enabled
+            wifiSwitchButton.checked = wifiSwitchButton.enabled
         }
     }
-    
+
     PlasmaNM.NetworkModel {
         id: connectionModel
     }
-    
+
    PlasmaNM.MobileAppletProxyModel{
         id: mobileappletProxyModel
-
         sourceModel: connectionModel
    }
+
     Column {
         id: formLayout
         spacing: units.gridUnit
@@ -67,26 +67,24 @@ Item {
         RowLayout{
             id:layoutrow
             width: parent.width
-            
+
             PlasmaComponents.Label {
                 anchors.left: parent.left
                 text: i18n("Wifi")
                 Layout.fillWidth: true
             }
-            
+
             PlasmaComponents.Switch {
                 id: wifiSwitch
                 checked: enabled && enabledConnections.wirelessEnabled
-                enabled: enabledConnections.wirelessHwEnabled 
-                            && availableDevices.wirelessDeviceAvailable 
-                
+                enabled: enabledConnections.wirelessHwEnabled
                 //icon: enabled ? "network-wireless-on" : "network-wireless-off"
                 onClicked: {
                     handler.enableWireless(checked);
                 }
             }
         }
-       
+
          Rectangle{
             id: separator
             anchors.top: layoutrow.bottom
@@ -94,7 +92,7 @@ Item {
             height: units.gridUnit/8
             border.color: "grey"
         }
-        
+
         PlasmaComponents.Label {
             id:label
             anchors{
@@ -114,12 +112,10 @@ Item {
                 left: parent.left
                 right: parent.right
             }
-            
+
             ListView {
-                
-                property bool availableConnectionsVisible: false
-                property int currentVisibleButtonIndex: -1
-                
+                id:view
+                //property bool availableConnectionsVisible: false
                 anchors.fill: parent
                 anchors.margins: units.gridUnit
                 clip: true
@@ -127,18 +123,74 @@ Item {
                 currentIndex: -1
                 boundsBehavior: Flickable.StopAtBounds
                 model: mobileappletProxyModel
-                delegate: RowItemDelegate{
-                    
+                delegate: RowItemDelegate {
+                    onClicked: {
+                        networkDetailsViewContent.details = ConnectionDetails
+                        if (ConnectionDetails[1] != ""){
+                            detailsDialog.titleText = ConnectionDetails[1]
+                        }else{
+                            detailsDialog.titleText = "Network details"
+                        }
+                        networkDetailsViewContent.fillDetails()
+                        detailsDialog.open()
+                    }
                 }
             }
         }
+
         PlasmaComponents.Button{
             id:customConnectionButton
             anchors.top:wifiarea.bottom
             text:"Add custom connection"
-            
+            onClicked: connectionEditorDialog.open()
         }
-        
+    }
+
+    PlasmaComponents.CommonDialog {
+        id: connectionEditorDialog
+        titleText: i18n("Connection Editor")
+        buttonTexts: [i18n("Close")]
+        onButtonClicked: {
+            close()
+        }
+        content: ConnectionEditorDialog {
+            id: connectionEditorDialogContent
+            width: units.gridUnit * 22
+            height: units.gridUnit * 25
+            Component.onDestruction: {
+                console.info("Destroyed editor content")
+            }
+        }
+        Component.onDestruction: {
+            console.info("Destroyed editor")
+            connectionEditorDialogContent.destroy()
+        }
+    }
+
+    PlasmaComponents.CommonDialog {
+        id: detailsDialog
+        titleText: i18n("Network Details")
+        buttonTexts: [i18n("Close")]
+        onButtonClicked: {
+            close()
+        }
+        content: NetworkDetailsView {
+            id: networkDetailsViewContent
+            width: units.gridUnit * 22
+            height: units.gridUnit * 25
+            Component.onDestruction: {
+                console.info("Destroyed details content")
+            }
+        }
+        Component.onDestruction: {
+            console.info("Destroyed details")
+            networkDetailsViewContent.destroy()
+        }
+    }
+    Component.onDestruction: {
+        console.error("Destroyed main")
+        connectionEditorDialog.destroy()
+        detailsDialog.destroy()
+        //connectionEditorDialog.connectionEditorDialogContent.destroy()
     }
 }
-

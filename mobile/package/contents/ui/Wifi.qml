@@ -1,5 +1,5 @@
 /*
- *   
+ *
  *   Copyright 2017 Martin Kacej <>
  *
  *   This program is free software; you can redistribute it and/or modify
@@ -34,7 +34,7 @@ Item {
     width: units.gridUnit * 30
     height: width * 1.5
 
-    PlasmaNM.Handler{
+    PlasmaNM.Handler {
         id: handler
     }
 
@@ -50,10 +50,10 @@ Item {
         id: connectionModel
     }
 
-   PlasmaNM.MobileAppletProxyModel{
+    PlasmaNM.MobileAppletProxyModel{
         id: mobileappletProxyModel
         sourceModel: connectionModel
-   }
+    }
 
     Column {
         id: formLayout
@@ -61,11 +61,11 @@ Item {
         anchors {
             fill: parent
             margins: units.gridUnit
-            leftMargin: units.gridUnit/2
+            leftMargin: units.gridUnit / 2
         }
 
-        RowLayout{
-            id:layoutrow
+        RowLayout {
+            id: layoutrow
             width: parent.width
 
             PlasmaComponents.Label {
@@ -85,17 +85,17 @@ Item {
             }
         }
 
-         Rectangle{
+         Rectangle {
             id: separator
             anchors.top: layoutrow.bottom
             width: parent.width
-            height: units.gridUnit/8
+            height: units.gridUnit / 8
             border.color: "grey"
         }
 
         PlasmaComponents.Label {
-            id:label
-            anchors{
+            id: label
+            anchors {
                 left: parent.left
                 top:separator.bottom
             }
@@ -103,18 +103,18 @@ Item {
             Layout.fillWidth: true
         }
 
-        PlasmaExtras.ScrollArea{
-            id:wifiarea
+        PlasmaExtras.ScrollArea {
+            id: wifiarea
             anchors {
                 top:label.bottom
-                bottomMargin:units.gridUnit*2
+                bottomMargin: units.gridUnit*2
                 bottom: parent.bottom
                 left: parent.left
                 right: parent.right
             }
 
             ListView {
-                id:view
+                id: view
                 //property bool availableConnectionsVisible: false
                 anchors.fill: parent
                 anchors.margins: units.gridUnit
@@ -126,10 +126,10 @@ Item {
                 delegate: RowItemDelegate {
                     onClicked: {
                         networkDetailsViewContent.details = ConnectionDetails
-                        if (ConnectionDetails[1] != ""){
+                        if (ConnectionDetails[1] != "") {
                             detailsDialog.titleText = ConnectionDetails[1]
-                        }else{
-                            detailsDialog.titleText = "Network details"
+                        } else {
+                            detailsDialog.titleText = i18n("Network details")
                         }
                         networkDetailsViewContent.fillDetails()
                         detailsDialog.open()
@@ -138,10 +138,10 @@ Item {
             }
         }
 
-        PlasmaComponents.Button{
-            id:customConnectionButton
-            anchors.top:wifiarea.bottom
-            text:"Add custom connection"
+        PlasmaComponents.Button {
+            id: customConnectionButton
+            anchors.top: wifiarea.bottom
+            text: i18n("Add custom connection")
             onClicked: connectionEditorDialog.open()
         }
     }

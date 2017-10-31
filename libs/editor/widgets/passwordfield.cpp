@@ -62,6 +62,7 @@ PasswordField::PasswordField(QWidget *parent, Qt::WindowFlags f)
         m_passwordOptionsMenu->setCurrentIndex(0);
     } else {
         m_passwordOptionsMenu->setCurrentIndex(1);
+        m_currentPasswordOption = StoreForAllUsers;
     }
 
     connect(m_passwordOptionsMenu, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &PasswordField::changePasswordOption);

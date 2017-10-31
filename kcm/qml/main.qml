@@ -182,7 +182,7 @@ Item {
         property string connectionPath
 
         icon: StandardIcon.Question
-        standardButtons: StandardButton.Ok | StandardButton.Close
+        standardButtons: StandardButton.Ok | StandardButton.Cancel
         title: i18nc("@title:window", "Remove Connection")
         text: i18n("Do you want to remove the connection '%1'?", connectionName)
 

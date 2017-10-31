@@ -46,7 +46,7 @@ Item {
             text: i18n("Security")
         }
         Controls.ComboBox {
-            model: ["None","WEP","WPA","802.1x EAP"]
+            model: [i18n("None"), i18n("WEP Key"), i18n("Dynamic WEP"), i18n("WPA/WPA2 Personal"), i18n("WPA/WPA2 Enterprise")]
         }
         RowLayout {
             PlasmaComponents.Label {

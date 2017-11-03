@@ -25,11 +25,12 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
-Item {
+PlasmaExtras.ScrollArea {
     property var details
     property var str: 0
 
-    Column {
+    ColumnLayout{
+        id: columnlayout
         anchors.fill: parent
 
         PlasmaComponents.Label {
@@ -38,7 +39,8 @@ Item {
         }
 
         PlasmaComponents.TextField {
-            width: 100 // units.GridUnit * 100
+            width: 300 // units.GridUnit * 100
+            placeholderText: i18n("None")
         }
 
         PlasmaComponents.Label {
@@ -46,17 +48,28 @@ Item {
             text: i18n("Security")
         }
         Controls.ComboBox {
+            id: combobox
             model: [i18n("None"), i18n("WEP Key"), i18n("Dynamic WEP"), i18n("WPA/WPA2 Personal"), i18n("WPA/WPA2 Enterprise")]
         }
         RowLayout {
+            anchors.top: combobox.bottom
             PlasmaComponents.Label {
                 anchors.left: parent.left
                 text: i18n("Advanced options")
             }
             PlasmaComponents.Switch {
-
+                id: advancedOptionsSwitch
+                //checked: false
+                onCheckedChanged: {
+                    proxydetailsviewid.visible = checked
+                    columnlayout.update()
+                }
             }
         }
     }
-
+    ProxyDetailsView{
+        id:proxydetailsviewid
+        anchors.bottom: columnlayout.bottom
+        anchors.left: parent.left
+    }
 }

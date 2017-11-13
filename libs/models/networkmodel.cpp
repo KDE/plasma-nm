@@ -28,6 +28,7 @@
 #include <ModemManagerQt/modem.h>
 #endif
 #include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/Utils>
 
 NetworkModel::NetworkModel(QObject* parent)
     : QAbstractListModel(parent)
@@ -410,6 +411,30 @@ void NetworkModel::addDevice(const NetworkManager::Device::Ptr& device)
 void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr& network, const NetworkManager::WirelessDevice::Ptr& device)
 {
     initializeSignals(network);
+
+    // BUG: 386342
+    // When creating a new hidden wireless network and attempting to connect to it, NM then later reports that AccessPoint appeared, but
+    // it doesn't know its SSID from some reason, this also makes Wireless device to advertise a new available connection, which we later
+    // attempt to merge with an AP, based on its SSID, but it doesn't find any, because we have AP with empty SSID. After this we get another
+    // AccessPoint appeared signal, this time we know SSID, but we don't attempt any merging, because it's usually the other way around, thus
+    // we need to attempt to merge it here with a connection we guess it's related to this new AP
+    Q_FOREACH (NetworkModelItem * item, m_list.returnItems(NetworkItemsList::Type, NetworkManager::ConnectionSettings::Wireless)) {
+        if (item->itemType() == NetworkModelItem::AvailableConnection) {
+            NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::findConnection(item->connectionPath())->settings();
+            if (connectionSettings && connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
+                NetworkManager::WirelessSetting::Ptr wirelessSetting = connectionSettings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+                if (QString::fromUtf8(wirelessSetting->ssid()) == network->ssid()) {
+                    const QString bssid =  NetworkManager::macAddressAsString(wirelessSetting->bssid());
+                    const QString restrictedHw = NetworkManager::macAddressAsString(wirelessSetting->macAddress());
+                    if ((bssid.isEmpty() || bssid == network->referenceAccessPoint()->hardwareAddress()) &&
+                        (restrictedHw.isEmpty() || restrictedHw == device->hardwareAddress())) {
+                        updateFromWirelessNetwork(item, network, device);
+                        return;
+                    }
+                }
+            }
+        }
+    }
 
     NetworkManager::WirelessSetting::NetworkMode mode = NetworkManager::WirelessSetting::Infrastructure;
     NetworkManager::WirelessSecurityType securityType = NetworkManager::UnknownSecurity;

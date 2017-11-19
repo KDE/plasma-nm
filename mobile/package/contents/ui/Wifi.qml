@@ -42,7 +42,7 @@ Item {
         id: enabledConnections
 
         onWirelessEnabledChanged: {
-            wifiSwitchButton.checked = wifiSwitchButton.enabled
+            wifiSwitchButton.checked = wifiSwitchButton.enabled && enabled
         }
     }
 
@@ -50,14 +50,13 @@ Item {
         id: connectionModel
     }
 
-    PlasmaNM.MobileAppletProxyModel{
+    PlasmaNM.MobileAppletProxyModel {
         id: mobileappletProxyModel
         sourceModel: connectionModel
     }
 
-    Column {
+    Item {
         id: formLayout
-        spacing: units.gridUnit
         anchors {
             fill: parent
             margins: units.gridUnit
@@ -75,17 +74,16 @@ Item {
             }
 
             PlasmaComponents.Switch {
-                id: wifiSwitch
+                id: wifiSwitchButton
                 checked: enabled && enabledConnections.wirelessEnabled
                 enabled: enabledConnections.wirelessHwEnabled
-                //icon: enabled ? "network-wireless-on" : "network-wireless-off"
                 onClicked: {
                     handler.enableWireless(checked);
                 }
             }
         }
 
-         Rectangle {
+        Rectangle {
             id: separator
             anchors.top: layoutrow.bottom
             width: parent.width
@@ -97,7 +95,7 @@ Item {
             id: label
             anchors {
                 left: parent.left
-                top:separator.bottom
+                top: separator.bottom
             }
             text: i18n("<b>Available wifi networks</b>")
             Layout.fillWidth: true
@@ -106,7 +104,7 @@ Item {
         PlasmaExtras.ScrollArea {
             id: wifiarea
             anchors {
-                top:label.bottom
+                top: label.bottom
                 bottomMargin: units.gridUnit*2
                 bottom: parent.bottom
                 left: parent.left
@@ -115,7 +113,6 @@ Item {
 
             ListView {
                 id: view
-                //property bool availableConnectionsVisible: false
                 anchors.fill: parent
                 anchors.margins: units.gridUnit
                 clip: true
@@ -126,7 +123,7 @@ Item {
                 delegate: RowItemDelegate {
                     onClicked: {
                         networkDetailsViewContent.details = ConnectionDetails
-                        if (ConnectionDetails[1] != "") {
+                        if (ConnectionDetails[1] !== "") {
                             detailsDialog.titleText = ConnectionDetails[1]
                         } else {
                             detailsDialog.titleText = i18n("Network details")
@@ -146,12 +143,23 @@ Item {
         }
     }
 
-    PlasmaComponents.CommonDialog {
+    PlasmaComponents.Dialog {
         id: connectionEditorDialog
-        titleText: i18n("Connection Editor")
-        buttonTexts: [i18n("Close")]
-        onButtonClicked: {
-            close()
+        title: i18n("Connection Editor")
+        buttons: RowLayout {
+            width: parent.width
+            PlasmaComponents.Button {
+                text: 'Save'
+                onClicked:{
+                    connectionEditorDialogContent.save()
+                    connectionEditorDialog.close()
+                }
+            }
+            PlasmaComponents.Button{
+                anchors.right: parent.right
+                text: 'Cancel'
+                onClicked: connectionEditorDialog.close()
+            }
         }
         content: ConnectionEditorDialog {
             id: connectionEditorDialogContent

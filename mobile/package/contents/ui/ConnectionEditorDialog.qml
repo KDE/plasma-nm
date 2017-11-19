@@ -1,3 +1,4 @@
+
 /*
  *
  *   Copyright 2017 Martin Kacej <>
@@ -31,24 +32,23 @@ PlasmaExtras.ScrollArea {
 
     ColumnLayout{
         id: columnlayout
-        anchors.fill: parent
+        //anchors.fill: parent
 
         PlasmaComponents.Label {
-            anchors.left: parent.left
             text: i18n("SSID")
         }
 
         PlasmaComponents.TextField {
-            width: 300 // units.GridUnit * 100
+            Layout.fillWidth: true
             placeholderText: i18n("None")
         }
 
         PlasmaComponents.Label {
-            anchors.left: parent.left
             text: i18n("Security")
         }
         Controls.ComboBox {
             id: combobox
+            Layout.fillWidth: true
             model: [i18n("None"), i18n("WEP Key"), i18n("Dynamic WEP"), i18n("WPA/WPA2 Personal"), i18n("WPA/WPA2 Enterprise")]
         }
         RowLayout {
@@ -59,17 +59,20 @@ PlasmaExtras.ScrollArea {
             }
             PlasmaComponents.Switch {
                 id: advancedOptionsSwitch
-                //checked: false
-                onCheckedChanged: {
-                    proxydetailsviewid.visible = checked
-                    columnlayout.update()
-                }
+                checked: false
             }
         }
+
+        IPDetailsSection{
+            visible: advancedOptionsSwitch.checked
+        }
+
+        ProxyDetailsSection{
+            visible: advancedOptionsSwitch.checked
+        }
     }
-    ProxyDetailsView{
-        id:proxydetailsviewid
-        anchors.bottom: columnlayout.bottom
-        anchors.left: parent.left
+
+    function save(){
+        console.info('Connection saved')
     }
 }

@@ -26,7 +26,7 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.active.settings 2.0 as ActiveSettings
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-//import org.kde.kirigami 1.0 as Kirigami
+import org.kde.kirigami 1.0 as Kirigami
 
 Item {
     id: main
@@ -73,7 +73,7 @@ Item {
                 Layout.fillWidth: true
             }
 
-            PlasmaComponents.Switch {
+            Controls.Switch{
                 id: wifiSwitchButton
                 checked: enabled && enabledConnections.wirelessEnabled
                 enabled: enabledConnections.wirelessHwEnabled
@@ -86,6 +86,7 @@ Item {
         Rectangle {
             id: separator
             anchors.top: layoutrow.bottom
+            anchors.topMargin: 10
             width: parent.width
             height: units.gridUnit / 8
             border.color: "grey"
@@ -114,7 +115,6 @@ Item {
             ListView {
                 id: view
                 anchors.fill: parent
-                anchors.margins: units.gridUnit
                 clip: true
                 width: parent.width
                 currentIndex: -1
@@ -122,14 +122,6 @@ Item {
                 model: mobileappletProxyModel
                 delegate: RowItemDelegate {
                     onClicked: {
-                        networkDetailsViewContent.details = ConnectionDetails
-                        if (ConnectionDetails[1] !== "") {
-                            detailsDialog.titleText = ConnectionDetails[1]
-                        } else {
-                            detailsDialog.titleText = i18n("Network details")
-                        }
-                        networkDetailsViewContent.fillDetails()
-                        detailsDialog.open()
                     }
                 }
             }
@@ -138,6 +130,7 @@ Item {
         PlasmaComponents.Button {
             id: customConnectionButton
             anchors.top: wifiarea.bottom
+            anchors.topMargin:  units.gridUnit
             text: i18n("Add custom connection")
             onClicked: connectionEditorDialog.open()
         }

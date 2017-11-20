@@ -24,18 +24,38 @@ import QtQuick.Layouts 1.2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import org.kde.kirigami 1.0 as Kirigami
 
-PlasmaComponents.ListItem {
+Kirigami.SwipeListItem{
     width: parent.width
     enabled: true
 
-    RowLayout {
+    Item{
+        height: connectionSvgIcon.height
         width: parent.width
+
+        PlasmaCore.SvgItem {
+            id: connectionSvgIcon
+            anchors {
+                left: parent.left
+                rightMargin: 10
+            }
+            elementId: ConnectionIcon
+            //height: units.iconSizes.big; width: height
+            svg: PlasmaCore.Svg {
+                multipleImages: true
+                imagePath: "icons/network"
+                colorGroup: PlasmaCore.ColorScope.colorGroup
+            }
+        }
+
         PlasmaComponents.Label {
             id: connectionNameLabel
 
             anchors {
-                leftMargin: Math.round(units.gridUnit / 2)
+                left: connectionSvgIcon.right
+                leftMargin: units.gridUnit
+                verticalCenter: connectionSvgIcon.verticalCenter
             }
             height: paintedHeight
             elide: Text.ElideRight
@@ -44,21 +64,21 @@ PlasmaComponents.ListItem {
             text: ItemUniqueName
             textFormat: Text.PlainText
         }
+    }
 
-        PlasmaCore.SvgItem {
-            id: connectionSvgIcon
-
-            anchors {
-                right: parent.right
-                verticalCenter: parent.verticalCenter
-            }
-            elementId: ConnectionIcon
-            height: units.iconSizes.medium; width: height
-            svg: PlasmaCore.Svg {
-                multipleImages: true
-                imagePath: "icons/network"
-                colorGroup: PlasmaCore.ColorScope.colorGroup
+    actions: [
+        Kirigami.Action {
+            iconName: "configure-small"
+            onTriggered: {
+                networkDetailsViewContent.details = ConnectionDetails
+                if (ConnectionDetails[1] !== "") {
+                    detailsDialog.titleText = ConnectionDetails[1]
+                } else {
+                    detailsDialog.titleText = i18n("Network details")
+                }
+                networkDetailsViewContent.fillDetails()
+                detailsDialog.open()
             }
         }
-    }
+    ]
 }

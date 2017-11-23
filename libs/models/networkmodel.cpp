@@ -117,7 +117,7 @@ QVariant NetworkModel::data(const QModelIndex& index, int role) const
 int NetworkModel::rowCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent);
-    return m_list.count();
+    return parent.isValid() ? 0 : m_list.count();
 }
 
 QHash< int, QByteArray > NetworkModel::roleNames() const

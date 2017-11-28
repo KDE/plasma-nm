@@ -6,13 +6,16 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 ColumnLayout{
-        spacing: units.gridUnit
+    property var adress: ""
+    property var gateway: ""
+
+    spacing: units.gridUnit
 
     PlasmaComponents.Label{
         text: i18n("IP Settings")
     }
 
-    Controls.CheckBox{
+    PlasmaComponents.Switch{
         id: manualIPCheckbox
         checked: false
         onCheckedChanged: {
@@ -30,6 +33,7 @@ ColumnLayout{
 
         Controls.TextField{
             placeholderText: i18n("193.168.1.128")
+            text: adress
         }
 
         PlasmaComponents.Label{
@@ -41,7 +45,7 @@ ColumnLayout{
         }
 
         PlasmaComponents.Label{
-            text: i18n("Network proxy length")
+            text: i18n("Network prefix length")
         }
 
         Controls.TextField{
@@ -54,14 +58,6 @@ ColumnLayout{
 
         Controls.TextField{
             placeholderText: i18n("8.8.8.8")
-        }
-
-        PlasmaComponents.Label{
-            text: i18n("Network proxy length")
-        }
-
-        Controls.TextField{
-            placeholderText: i18n("24")
         }
     }
 }

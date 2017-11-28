@@ -11,7 +11,7 @@ ColumnLayout{
         text: i18n("Proxy settings")
     }
 
-    Controls.CheckBox{
+    PlasmaComponents.CheckBox{
         id: manualProxyCheck
         checked: false
         onCheckedChanged: {

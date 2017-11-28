@@ -29,6 +29,7 @@ import org.kde.kirigami 1.0 as Kirigami
 Kirigami.SwipeListItem{
     width: parent.width
     enabled: true
+    backgroundColor: theme.backgroundColor
 
     Item{
         height: connectionSvgIcon.height
@@ -47,6 +48,19 @@ Kirigami.SwipeListItem{
                 imagePath: "icons/network"
                 colorGroup: PlasmaCore.ColorScope.colorGroup
             }
+        }
+
+        PlasmaComponents.BusyIndicator {
+            id: connectingIndicator
+
+            anchors {
+                left: parent.left
+                horizontalCenter: connectionSvgIcon.horizontalCenter
+                verticalCenter: connectionSvgIcon.verticalCenter
+            }
+            height: units.iconSizes.medium; width: height
+            running: ConnectionState == PlasmaNM.Enums.Activating
+            visible: running
         }
 
         PlasmaComponents.Label {
@@ -70,15 +84,28 @@ Kirigami.SwipeListItem{
         Kirigami.Action {
             iconName: "configure-small"
             onTriggered: {
-                networkDetailsViewContent.details = ConnectionDetails
+                if (ConnectionDetails) networkDetailsViewContent.details = ConnectionDetails
                 if (ConnectionDetails[1] !== "") {
-                    detailsDialog.titleText = ConnectionDetails[1]
+                    detailsDialog.titleText = ItemUniqueName
                 } else {
                     detailsDialog.titleText = i18n("Network details")
                 }
                 networkDetailsViewContent.fillDetails()
                 detailsDialog.open()
             }
+        },
+        Kirigami.Action {
+            iconName: "remove"
+            onTriggered: {
+                forgetNetwork()
+            }
         }
     ]
+
+    function connect(){
+        console.info(ConnectionDetails[1]+' trying to connect')
+    }
+    function forgetNetwork(){
+        console.info(ConnectionDetails[1]+' trying to forget')
+    }
 }

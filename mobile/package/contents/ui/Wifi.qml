@@ -92,13 +92,14 @@ Item {
             border.color: "grey"
         }
 
-        PlasmaComponents.Label {
+        Controls.Label {
             id: label
             anchors {
                 left: parent.left
                 top: separator.bottom
             }
-            text: i18n("<b>Available wifi networks</b>")
+            text: i18n("Available wifi networks")
+            font.bold: true
             Layout.fillWidth: true
         }
 
@@ -122,6 +123,7 @@ Item {
                 model: mobileappletProxyModel
                 delegate: RowItemDelegate {
                     onClicked: {
+                        connect()
                     }
                 }
             }
@@ -173,6 +175,7 @@ Item {
         titleText: i18n("Network Details")
         buttonTexts: [i18n("Close")]
         onButtonClicked: {
+            networkDetailsViewContent.clearDetails()
             close()
         }
         content: NetworkDetailsView {

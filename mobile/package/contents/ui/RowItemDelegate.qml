@@ -1,6 +1,5 @@
 /*
- *
- *   Copyright 2017 Martin Kacej <>
+ *   Copyright 2017 Martin Kacej <m.kacej@atlas.sk>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License as
@@ -26,12 +25,12 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 1.0 as Kirigami
 
-Kirigami.SwipeListItem{
+Kirigami.SwipeListItem {
     width: parent.width
     enabled: true
     backgroundColor: theme.backgroundColor
 
-    Item{
+    Item {
         height: connectionSvgIcon.height
         width: parent.width
 
@@ -84,7 +83,8 @@ Kirigami.SwipeListItem{
         Kirigami.Action {
             iconName: "configure-small"
             onTriggered: {
-                if (ConnectionDetails) networkDetailsViewContent.details = ConnectionDetails
+                if (ConnectionDetails)
+                    networkDetailsViewContent.details = ConnectionDetails
                 if (ConnectionDetails[1] !== "") {
                     detailsDialog.titleText = ItemUniqueName
                 } else {
@@ -102,10 +102,10 @@ Kirigami.SwipeListItem{
         }
     ]
 
-    function connect(){
+    function connect() {
         console.info(ConnectionDetails[1]+' trying to connect')
     }
-    function forgetNetwork(){
+    function forgetNetwork() {
         console.info(ConnectionDetails[1]+' trying to forget')
     }
 }

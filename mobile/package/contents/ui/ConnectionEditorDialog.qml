@@ -1,7 +1,5 @@
-
 /*
- *
- *   Copyright 2017 Martin Kacej <>
+ *   Copyright 2017 Martin Kacej <m.kacej@atlas.sk>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License as
@@ -22,7 +20,6 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.4 as Controls
 import QtQuick.Layouts 1.2
-import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
@@ -63,16 +60,16 @@ PlasmaExtras.ScrollArea {
             }
         }
 
-        IPDetailsSection{
+        IPDetailsSection {
             visible: advancedOptionsSwitch.checked
         }
 
-        ProxyDetailsSection{
+        ProxyDetailsSection {
             visible: advancedOptionsSwitch.checked
         }
     }
 
-    function save(){
+    function save() {
         console.info('Connection saved')
     }
 }

@@ -1,6 +1,5 @@
 /*
- *
- *   Copyright 2017 Martin Kacej <>
+ *   Copyright 2017 Martin Kacej <m.kacej@atlas.sk>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License as
@@ -21,34 +20,72 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.4 as Controls
 import QtQuick.Layouts 1.2
-import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 PlasmaExtras.ScrollArea{
     property var details
-    property var signal_strength: 0
-    property var signal_speed: 0
-    property var ip_address: 0
-    property var security: "Unknown"
+    property alias signal_strength: signalStrengthLabel.text
+    property alias signal_speed: linkSpeedLabel.text
+    property alias ip_address: securityLabel.text
+    property alias security: ipAddressLabel.text
 
     Column {
 
-        Column{
+        Column {
             id: staticInfo
             anchors.bottomMargin: units.gridUnit
 
-            PlasmaComponents.Label {
-                text: i18n("<b>Strength: </b>" + signal_strength)
+            Row {
+                spacing: units.gridUnit / 2
+
+                PlasmaComponents.Label {
+                    font.weight: Font.Bold
+                    text: i18n("Strength:")
+                }
+
+                PlasmaComponents.Label {
+                    id: signalStrengthLabel
+                }
             }
-            PlasmaComponents.Label{
-                text: i18n("<b>Link Speed:</b> " + signal_speed)
+
+            Row {
+                spacing: units.gridUnit / 2
+
+                PlasmaComponents.Label {
+                    font.weight: Font.Bold
+                    text: i18n("Link Speed:")
+                }
+
+                PlasmaComponents.Label {
+                    id: linkSpeedLabel
+                }
             }
-            PlasmaComponents.Label{
-                text: i18n("<b>Security: </b>" +security)
+
+            Row {
+                spacing: units.gridUnit / 2
+
+                PlasmaComponents.Label {
+                    font.weight: Font.Bold
+                    text: i18n("Security:")
+                }
+
+                PlasmaComponents.Label {
+                    id: securityLabel
+                }
             }
-            PlasmaComponents.Label{
-                text: i18n("<b>IP Address: </b>" + ip_address)
+
+            Row {
+                spacing: units.gridUnit / 2
+
+                PlasmaComponents.Label {
+                    font.weight: Font.Bold
+                    text: i18n("IP Address:")
+                }
+
+                PlasmaComponents.Label {
+                    id: ipAddressLabel
+                }
             }
         }
 
@@ -63,12 +100,8 @@ PlasmaExtras.ScrollArea{
             }
         }
 
-        IPDetailsSection{
+        IPDetailsSection {
             id: detailsIP
-            visible: advancedOptionsSwitch.checked
-        }
-
-        ProxyDetailsSection{
             visible: advancedOptionsSwitch.checked
         }
     }
@@ -79,13 +112,17 @@ PlasmaExtras.ScrollArea{
             console.info(details[i])
             d[details[(i * 2)]] = details[(i * 2) + 1]
         }
-        if(d['Access point (SSID)']) detailsDialog.titleText = d['Access point (SSID)']
+        if (d['Access point (SSID)'])
+            detailsDialog.titleText = d['Access point (SSID)']
         signal_strength = d['Signal strength']
-        if (d['IPv4 Address']) ip_address = detailsIP.adress = d['IPv4 Address']
-        if (d['Security type']) security = d['Security type']
-        if (d['Connection speed']) signal_speed = d['Connection speed']
+        if (d['IPv4 Address'])
+            ip_address = detailsIP.adress = d['IPv4 Address']
+        if (d['Security type'])
+            security = d['Security type']
+        if (d['Connection speed'])
+            signal_speed = d['Connection speed']
     }
-    function clearDetails(){
+    function clearDetails() {
         signal_speed = signal_strength = ip_address = 0
         security = "Unknown"
         detailsIP.adress = detailsIP.gateway = ''

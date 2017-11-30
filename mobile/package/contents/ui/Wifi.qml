@@ -1,6 +1,5 @@
 /*
- *
- *   Copyright 2017 Martin Kacej <>
+ *   Copyright 2017 Martin Kacej <m.kacej@atlas.sk>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License as
@@ -21,10 +20,8 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.4 as Controls
 import QtQuick.Layouts 1.2
-import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.active.settings 2.0 as ActiveSettings
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 1.0 as Kirigami
 
@@ -73,7 +70,7 @@ Item {
                 Layout.fillWidth: true
             }
 
-            Controls.Switch{
+            Controls.Switch {
                 id: wifiSwitchButton
                 checked: enabled && enabledConnections.wirelessEnabled
                 enabled: enabledConnections.wirelessHwEnabled
@@ -150,7 +147,7 @@ Item {
                     connectionEditorDialog.close()
                 }
             }
-            PlasmaComponents.Button{
+            PlasmaComponents.Button {
                 anchors.right: parent.right
                 text: 'Cancel'
                 onClicked: connectionEditorDialog.close()

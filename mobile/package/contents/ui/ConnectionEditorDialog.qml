@@ -63,10 +63,6 @@ PlasmaExtras.ScrollArea {
         IPDetailsSection {
             visible: advancedOptionsSwitch.checked
         }
-
-        ProxyDetailsSection {
-            visible: advancedOptionsSwitch.checked
-        }
     }
 
     function save() {

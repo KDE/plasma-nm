@@ -107,7 +107,7 @@ Item {
                     MouseArea {
                         anchors.fill: parent
                         acceptedButtons: Qt.RightButton
-                        onClicked: contextMenu.show(this, detailValueLabel.text, mouse.x, mouse.y)
+                        onPressed: contextMenu.show(this, detailValueLabel.text, mouse.x, mouse.y)
                     }
                 }
             }

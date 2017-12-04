@@ -117,7 +117,7 @@ Item {
                 width: parent.width
                 currentIndex: -1
                 boundsBehavior: Flickable.StopAtBounds
-                model: mobileappletProxyModel
+                model: mobileProxyModel
                 delegate: RowItemDelegate {
                     onClicked: {
                         connect()

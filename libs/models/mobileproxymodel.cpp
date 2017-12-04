@@ -48,8 +48,13 @@ bool MobileProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
     }
 
     const NetworkManager::ConnectionSettings::ConnectionType type = (NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(index, NetworkModel::TypeRole).toUInt();
+    if (type != NetworkManager::ConnectionSettings::Wireless) {
+        return false;
+    }
 
-    return type == NetworkManager::ConnectionSettings::Wireless;
+    // TODO add an option to show already configured connections
+    NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
+    return itemType > NetworkModelItem::UnavailableConnection;
 }
 
 bool MobileProxyModel::lessThan(const QModelIndex& left, const QModelIndex& right) const

@@ -47,8 +47,8 @@ Item {
         id: connectionModel
     }
 
-    PlasmaNM.MobileAppletProxyModel {
-        id: mobileappletProxyModel
+    PlasmaNM.MobileProxyModel {
+        id: mobileProxyModel
         sourceModel: connectionModel
     }
 

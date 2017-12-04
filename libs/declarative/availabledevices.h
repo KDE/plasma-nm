@@ -36,13 +36,6 @@ Q_PROPERTY(bool wiredDeviceAvailable READ isWiredDeviceAvailable NOTIFY wiredDev
  */
 Q_PROPERTY(bool wirelessDeviceAvailable READ isWirelessDeviceAvailable NOTIFY wirelessDeviceAvailableChanged)
 
-#if !NM_CHECK_VERSION(1, 2, 0)
-/**
- * Return true when there is present wimax device
- */
-Q_PROPERTY(bool wimaxDeviceAvailable READ isWimaxDeviceAvailable NOTIFY wimaxDeviceAvailableChanged)
-#endif
-
 /**
  * Return true when there is present modem device
  */
@@ -60,9 +53,6 @@ public:
 public Q_SLOTS:
     bool isWiredDeviceAvailable() const;
     bool isWirelessDeviceAvailable() const;
-#if !NM_CHECK_VERSION(1, 2, 0)
-    bool isWimaxDeviceAvailable() const;
-#endif
     bool isModemDeviceAvailable() const;
     bool isBluetoothDeviceAvailable() const;
 
@@ -73,18 +63,12 @@ private Q_SLOTS:
 Q_SIGNALS:
     void wiredDeviceAvailableChanged(bool available);
     void wirelessDeviceAvailableChanged(bool available);
-#if !NM_CHECK_VERSION(1, 2, 0)
-    void wimaxDeviceAvailableChanged(bool available);
-#endif
     void modemDeviceAvailableChanged(bool available);
     void bluetoothDeviceAvailableChanged(bool available);
 
 private:
     bool m_wiredDeviceAvailable;
     bool m_wirelessDeviceAvailable;
-#if !NM_CHECK_VERSION(1, 2, 0)
-    bool m_wimaxDeviceAvailable;
-#endif
     bool m_modemDeviceAvailable;
     bool m_bluetoothDeviceAvailable;
 };

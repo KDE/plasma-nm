@@ -396,6 +396,7 @@ a temporary IPv6 address in addition to the public one generated from MAC addres
   <tabstop>dns</tabstop>
   <tabstop>dnsMorePushButton</tabstop>
   <tabstop>dnsSearch</tabstop>
+  <tabstop>dnsSearchMorePushButton</tabstop>
   <tabstop>privacyCombo</tabstop>
   <tabstop>tableViewAddresses</tabstop>
   <tabstop>btnAdd</tabstop>

@@ -62,6 +62,7 @@ PasswordField::PasswordField(QWidget *parent, Qt::WindowFlags f)
         m_passwordOptionsMenu->setCurrentIndex(0);
     } else {
         m_passwordOptionsMenu->setCurrentIndex(1);
+        m_currentPasswordOption = StoreForAllUsers;
     }
 
     connect(m_passwordOptionsMenu, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &PasswordField::changePasswordOption);
@@ -156,9 +157,9 @@ void PasswordField::changePasswordOption(int index)
 
     if (m_currentPasswordOption == PasswordField::NotRequired || m_currentPasswordOption == PasswordField::AlwaysAsk) {
         m_passwordField->clear();
-        m_passwordField->setReadOnly(true);
+        m_passwordField->setDisabled(true);
     } else {
-        m_passwordField->setReadOnly(false);
+        m_passwordField->setEnabled(true);
     }
 
     Q_EMIT passwordOptionChanged(m_currentPasswordOption);

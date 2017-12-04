@@ -36,7 +36,6 @@ public:
         Connection,
         Device,
         Name,
-        Nsp,
         Ssid,
         Uuid,
         Type

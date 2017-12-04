@@ -26,9 +26,6 @@ AvailableDevices::AvailableDevices(QObject* parent)
     : QObject(parent)
     , m_wiredDeviceAvailable(false)
     , m_wirelessDeviceAvailable(false)
-#if !NM_CHECK_VERSION(1, 2, 0)
-    , m_wimaxDeviceAvailable(false)
-#endif
     , m_modemDeviceAvailable(false)
     , m_bluetoothDeviceAvailable(false)
 {
@@ -37,10 +34,6 @@ AvailableDevices::AvailableDevices(QObject* parent)
             m_modemDeviceAvailable = true;
         } else if (device->type() == NetworkManager::Device::Wifi) {
             m_wirelessDeviceAvailable = true;
-#if !NM_CHECK_VERSION(1, 2, 0)
-        } else if (device->type() == NetworkManager::Device::Wimax) {
-            m_wimaxDeviceAvailable = true;
-#endif
         } else if (device->type() == NetworkManager::Device::Ethernet) {
             m_wiredDeviceAvailable = true;
         } else if (device->type() == NetworkManager::Device::Bluetooth) {
@@ -66,13 +59,6 @@ bool AvailableDevices::isWirelessDeviceAvailable() const
     return m_wirelessDeviceAvailable;
 }
 
-#if !NM_CHECK_VERSION(1, 2, 0)
-bool AvailableDevices::isWimaxDeviceAvailable() const
-{
-    return m_wimaxDeviceAvailable;
-}
-#endif
-
 bool AvailableDevices::isModemDeviceAvailable() const
 {
     return m_modemDeviceAvailable;
@@ -94,11 +80,6 @@ void AvailableDevices::deviceAdded(const QString& dev)
         } else if (device->type() == NetworkManager::Device::Wifi && !m_wirelessDeviceAvailable) {
             m_wirelessDeviceAvailable = true;
             Q_EMIT wirelessDeviceAvailableChanged(true);
-#if !NM_CHECK_VERSION(1, 2, 0)
-        } else if (device->type() == NetworkManager::Device::Wimax && !m_wimaxDeviceAvailable) {
-            m_wimaxDeviceAvailable = true;
-            Q_EMIT wimaxDeviceAvailableChanged(true);
-#endif
         } else if (device->type() == NetworkManager::Device::Ethernet && !m_wiredDeviceAvailable) {
             m_wiredDeviceAvailable = true;
             Q_EMIT wiredDeviceAvailableChanged(true);
@@ -113,9 +94,6 @@ void AvailableDevices::deviceRemoved()
 {
     bool wired = false;
     bool wireless = false;
-#if !NM_CHECK_VERSION(1, 2, 0)
-    bool wimax = false;
-#endif
     bool modem = false;
     bool bluetooth = false;
 
@@ -124,10 +102,6 @@ void AvailableDevices::deviceRemoved()
             modem = true;
         } else if (device->type() == NetworkManager::Device::Wifi) {
             wireless = true;
-#if !NM_CHECK_VERSION(1, 2, 0)
-        } else if (device->type() == NetworkManager::Device::Wimax) {
-            wimax = true;
-#endif
         } else if (device->type() == NetworkManager::Device::Ethernet) {
             wired = true;
         } else if (device->type() == NetworkManager::Device::Bluetooth) {
@@ -144,13 +118,6 @@ void AvailableDevices::deviceRemoved()
         m_wirelessDeviceAvailable = false;
         Q_EMIT wirelessDeviceAvailableChanged(false);
     }
-
-#if !NM_CHECK_VERSION(1, 2, 0)
-    if (!wimax && m_wimaxDeviceAvailable) {
-        m_wimaxDeviceAvailable = false;
-        Q_EMIT wimaxDeviceAvailableChanged(false);
-    }
-#endif
 
     if (!modem && m_modemDeviceAvailable) {
         m_modemDeviceAvailable = false;

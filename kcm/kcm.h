@@ -46,12 +46,14 @@ private Q_SLOTS:
     void onSelectedConnectionChanged(const QString &connectionPath);
     void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
     void onRequestExportConnection(const QString &connectionPath);
+    void onRequestToChangeConnection(const QString &connectionName, const QString &connectionPath);
 
 private:
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
+    void importVpn();
+    void kcmChanged(bool kcmChanged);
     void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void resetSelection();
-    void importVpn();
 
     QString m_currentConnectionPath;
     QString m_createdConnectionUuid;

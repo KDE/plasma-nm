@@ -39,7 +39,6 @@
 #include "settings/wifisecurity.h"
 #include "settings/wiredconnectionwidget.h"
 #include "settings/wiredsecurity.h"
-#include "settings/wimaxwidget.h"
 #include "vpnuiplugin.h"
 
 #include <NetworkManagerQt/ActiveConnection>
@@ -279,7 +278,6 @@ void ConnectionEditorBase::initialize()
     if ((type == NetworkManager::ConnectionSettings::Wired
             || type == NetworkManager::ConnectionSettings::Wireless
             || type == NetworkManager::ConnectionSettings::Infiniband
-            || type == NetworkManager::ConnectionSettings::Wimax
 #if NM_CHECK_VERSION(0, 9, 10)
             || type == NetworkManager::ConnectionSettings::Team
 #endif
@@ -370,6 +368,10 @@ void ConnectionEditorBase::initialize()
                         requiredSecrets = securitySetting->needSecrets();
                         setting = securitySetting->toMap();
                         settingName = QLatin1String("802-1x");
+
+                        if (requiredSecrets.contains(NM_SETTING_802_1X_PASSWORD_RAW)) {
+                            requiredSecrets.removeAll(NM_SETTING_802_1X_PASSWORD_RAW);
+                        }
                     }
                 } else {
                     if (!wifiSecuritySetting->needSecrets().isEmpty()) {
@@ -390,8 +392,7 @@ void ConnectionEditorBase::initialize()
                     Q_FOREACH (const QString &secret, requiredSecrets) {
                         if (setting.contains(secret + QLatin1String("-flags"))) {
                             NetworkManager::Setting::SecretFlagType secretFlag = (NetworkManager::Setting::SecretFlagType)setting.value(secret + QLatin1String("-flags")).toInt();
-                            if (secretFlag == NetworkManager::Setting::None ||
-                                    secretFlag == NetworkManager::Setting::AgentOwned) {
+                            if (secretFlag == NetworkManager::Setting::None || secretFlag == NetworkManager::Setting::AgentOwned) {
                                 requestSecrets = true;
                             }
                         } else {

@@ -34,7 +34,7 @@ class Q_DECL_EXPORT NetworkModelItem : public QObject
 Q_OBJECT
 public:
 
-    enum ItemType { UnavailableConnection, AvailableConnection, AvailableAccessPoint, AvailableNsp };
+    enum ItemType { UnavailableConnection, AvailableConnection, AvailableAccessPoint };
 
     explicit NetworkModelItem(QObject * parent = 0);
     explicit NetworkModelItem(const NetworkModelItem * item, QObject* parent = 0);
@@ -71,9 +71,6 @@ public:
 
     QString name() const;
     void setName(const QString& name);
-
-    QString nsp() const;
-    void setNsp(const QString& nsp);
 
     QString originalName() const;
 
@@ -127,7 +124,6 @@ private:
     bool m_duplicate;
     NetworkManager::WirelessSetting::NetworkMode m_mode;
     QString m_name;
-    QString m_nsp;
     NetworkManager::WirelessSecurityType m_securityType;
     int m_signal;
     bool m_slave;

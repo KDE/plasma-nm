@@ -36,8 +36,7 @@ PlasmaComponents.ListItem {
                                                (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
                                                 SecurityType == PlasmaNM.Enums.Wpa2Psk)
     property bool showSpeed: ConnectionState == PlasmaNM.Enums.Activated &&
-                             (Type == PlasmaNM.Enums.Wimax ||
-                              Type == PlasmaNM.Enums.Wired ||
+                             (Type == PlasmaNM.Enums.Wired ||
                               Type == PlasmaNM.Enums.Wireless ||
                               Type == PlasmaNM.Enums.Gsm ||
                               Type == PlasmaNM.Enums.Cdma)

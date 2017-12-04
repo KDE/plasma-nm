@@ -28,7 +28,7 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 Dialog {
     id: dialog
-    title: i18n("Choose a connection type")
+    title: i18nc("@title:window", "Choose a Connection Type")
 
     signal requestCreateConnection(int type, string vpnType, string specificType, bool shared)
 
@@ -180,8 +180,8 @@ Dialog {
             }
 
             QtControls.Button {
-                id: closeButton
-                text: i18n("Close")
+                id: cancelButton
+                text: i18n("Cancel")
 
                 onClicked: {
                     dialog.close()

@@ -40,7 +40,6 @@ public:
     enum SortedConnectionType {
         Wired,
         Wireless,
-        Wimax,
         Gsm,
         Cdma,
         Pppoe,

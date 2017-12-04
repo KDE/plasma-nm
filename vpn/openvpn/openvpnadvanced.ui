@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>554</width>
-    <height>611</height>
+    <width>626</width>
+    <height>624</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -72,7 +72,7 @@
             <string>Renegotiate data channel key after the specified number of seconds.</string>
            </property>
            <property name="text">
-            <string>Use custom renegotiation interval</string>
+            <string>Use custom renegotiation interval:</string>
            </property>
           </widget>
          </item>
@@ -841,16 +841,42 @@ key usage based on RFC3280 TLS rules.</string>
           <string>Add an additional layer of HMAC authentication.</string>
          </property>
          <property name="title">
-          <string>Use additional TLS authentication</string>
+          <string/>
          </property>
          <property name="checkable">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="checked">
           <bool>false</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Mode:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="cboTLSMode">
+            <item>
+             <property name="text">
+              <string>None</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TLS-Auth</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TLS-Crypt</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="0">
            <widget class="QLabel" name="textLabel4_3">
             <property name="toolTip">
              <string>Add an additional layer of HMAC authentication on top of the TLS control channel
@@ -867,15 +893,18 @@ to protect against DoS attacks.</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
+          <item row="1" column="1">
            <widget class="KUrlRequester" name="kurlTlsAuthKey">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="toolTip">
              <string>Add an additional layer of HMAC authentication on top of the TLS control channel
 to protect against DoS attacks.</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
+          <item row="2" column="0">
            <widget class="QLabel" name="textLabel1">
             <property name="toolTip">
              <string>Direction parameter for static key mode.</string>
@@ -891,8 +920,11 @@ to protect against DoS attacks.</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
+          <item row="2" column="1">
            <widget class="QComboBox" name="cboDirection">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="toolTip">
              <string>Direction parameter for static key mode.</string>
             </property>
@@ -913,7 +945,7 @@ to protect against DoS attacks.</string>
             </item>
            </widget>
           </item>
-          <item row="2" column="1">
+          <item row="3" column="1">
            <spacer name="verticalSpacer">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
@@ -945,7 +977,7 @@ to protect against DoS attacks.</string>
        <item row="1" column="0">
         <widget class="QLabel" name="label_11">
          <property name="toolTip">
-          <string>Proxy type: HTTP or Socks</string>
+          <string>Proxy type: HTTP or SOCKS</string>
          </property>
          <property name="text">
           <string>Proxy Type:</string>
@@ -970,7 +1002,7 @@ to protect against DoS attacks.</string>
           </size>
          </property>
          <property name="toolTip">
-          <string>Proxy type: HTTP or Socks</string>
+          <string>Proxy type: HTTP or SOCKS</string>
          </property>
          <item>
           <property name="text">
@@ -1065,7 +1097,7 @@ to protect against DoS attacks.</string>
        <item row="8" column="0">
         <widget class="QLabel" name="label_14">
          <property name="toolTip">
-          <string>HTTP/Socks proxy username passed to OpenVPN when prompted for it.</string>
+          <string>HTTP/SOCKS proxy username passed to OpenVPN when prompted for it.</string>
          </property>
          <property name="text">
           <string>Proxy Username:</string>
@@ -1078,7 +1110,7 @@ to protect against DoS attacks.</string>
        <item row="8" column="1">
         <widget class="PasswordField" name="proxyUsername">
          <property name="toolTip">
-          <string>HTTP/Socks proxy username passed to OpenVPN when prompted for it.</string>
+          <string>HTTP/SOCKS proxy username passed to OpenVPN when prompted for it.</string>
          </property>
          <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
@@ -1088,7 +1120,7 @@ to protect against DoS attacks.</string>
        <item row="9" column="0">
         <widget class="QLabel" name="label_15">
          <property name="toolTip">
-          <string>HTTP/Socks proxy password passed to OpenVPN when prompted for it.</string>
+          <string>HTTP/SOCKS proxy password passed to OpenVPN when prompted for it.</string>
          </property>
          <property name="text">
           <string>Proxy Password:</string>
@@ -1103,7 +1135,7 @@ to protect against DoS attacks.</string>
          <item>
           <widget class="PasswordField" name="proxyPassword">
            <property name="toolTip">
-            <string>HTTP/Socks proxy password passed to OpenVPN when prompted for it.</string>
+            <string>HTTP/SOCKS proxy password passed to OpenVPN when prompted for it.</string>
            </property>
            <property name="passwordModeEnabled" stdset="0">
             <bool>true</bool>

@@ -74,6 +74,18 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
 
     connect(m_ui->cbCertCheck, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::certCheckTypeChanged);
     connect(m_ui->cmbProxyType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyTypeChanged);
+    connect(m_ui->cboTLSMode, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this] (int index) {
+        if (index == 0) {
+            m_ui->kurlTlsAuthKey->setDisabled(true);
+            m_ui->cboDirection->setDisabled(true);
+        } else if (index == 1) { // TLS-Auth
+            m_ui->kurlTlsAuthKey->setEnabled(true);
+            m_ui->cboDirection->setEnabled(true);
+        } else { // TLS-Crypt
+            m_ui->kurlTlsAuthKey->setEnabled(true);
+            m_ui->cboDirection->setDisabled(true);
+        }
+    });
 
     // start openVPN process and get its cipher list
     const QString openVpnBinary = QStandardPaths::findExecutable("openvpn", QStringList() << "/sbin" << "/usr/sbin");
@@ -396,11 +408,19 @@ void OpenVpnAdvancedWidget::loadConfig()
         m_ui->cmbNsCertType->setCurrentIndex(remoteCertTls == QLatin1String(NM_OPENVPN_NS_CERT_TYPE_SERVER) ? 0 : 1);
     }
 
-    m_ui->useExtraTlsAuth->setChecked(!dataMap[QLatin1String(NM_OPENVPN_KEY_TA)].isEmpty());
-    m_ui->kurlTlsAuthKey->setUrl(QUrl::fromLocalFile(dataMap[QLatin1String(NM_OPENVPN_KEY_TA)]));
-    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TA_DIR))) {
-        const uint tlsAuthDirection = dataMap[QLatin1String(NM_OPENVPN_KEY_TA_DIR)].toUInt();
-        m_ui->cboDirection->setCurrentIndex(tlsAuthDirection + 1);
+    const QString openvpnKeyTa = dataMap[QLatin1String(NM_OPENVPN_KEY_TA)];
+    const QString openvpnKeyTlsCrypt = dataMap[QLatin1String(NM_OPENVPN_KEY_TLS_CRYPT)];
+
+    if (!openvpnKeyTlsCrypt.isEmpty()) {
+        m_ui->cboTLSMode->setCurrentIndex(2); // TLS-Crypt
+        m_ui->kurlTlsAuthKey->setUrl(QUrl::fromLocalFile(openvpnKeyTlsCrypt));
+    } else if (!openvpnKeyTa.isEmpty()) {
+        m_ui->cboTLSMode->setCurrentIndex(1); // TLS-Auth
+        m_ui->kurlTlsAuthKey->setUrl(QUrl::fromLocalFile(openvpnKeyTa));
+        if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TA_DIR))) {
+            const uint tlsAuthDirection = dataMap[QLatin1String(NM_OPENVPN_KEY_TA_DIR)].toUInt();
+            m_ui->cboDirection->setCurrentIndex(tlsAuthDirection + 1);
+        }
     }
 
     // Proxies
@@ -581,13 +601,18 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
         }
     }
 
-    if (m_ui->useExtraTlsAuth->isChecked()) {
+    if (m_ui->cboTLSMode->currentIndex() == 1) { // TLS-Auth
         QUrl tlsAuthKeyUrl = m_ui->kurlTlsAuthKey->url();
         if (!tlsAuthKeyUrl.isEmpty()) {
             data.insert(QLatin1String(NM_OPENVPN_KEY_TA), tlsAuthKeyUrl.path());
         }
         if (m_ui->cboDirection->currentIndex() > 0) {
             data.insert(QLatin1String(NM_OPENVPN_KEY_TA_DIR), QString::number(m_ui->cboDirection->currentIndex() - 1));
+        }
+    } else if (m_ui->cboTLSMode->currentIndex() == 2) { // TLS-Crypt
+        QUrl tlsCryptKeyUrl = m_ui->kurlTlsAuthKey->url();
+        if (!tlsCryptKeyUrl.isEmpty()) {
+            data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_CRYPT), tlsCryptKeyUrl.path());
         }
     }
 

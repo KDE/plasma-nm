@@ -24,6 +24,8 @@
 #include <QDBusInterface>
 
 #include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/ConnectionSettings>
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/GenericTypes>
 #endif
@@ -86,6 +88,9 @@ public Q_SLOTS:
     void enableAirplaneMode(bool enable);
     void enableNetworking(bool enable);
     void enableWireless(bool enable);
+
+    QVariantMap getConnectionSettings(const QString &connection, const QString &type);
+
     void enableWwan(bool enable);
 
     /**

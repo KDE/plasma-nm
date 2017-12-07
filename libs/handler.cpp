@@ -29,6 +29,7 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Setting>
+#include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/GsmSetting>
@@ -509,6 +510,17 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
 
     watcher->deleteLater();
 }
+QVariantMap Handler::getConnectionSettings(const QString &connection, const QString &type)
+{
+    if (type.length() == 0)
+        return QVariantMap();
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
+    if (!con)
+        return QVariantMap();
+    QVariantMap map = con->settings()->toMap().value(type);
+    qCWarning(PLASMA_NM) << "Map:" <<con->settings()->toMap().value(type);
+    return map;
+}
 
 #if WITH_MODEMMANAGER_SUPPORT
 void Handler::unlockRequiredChanged(MMModemLock modemLock)
@@ -518,3 +530,4 @@ void Handler::unlockRequiredChanged(MMModemLock modemLock)
     }
 }
 #endif
+

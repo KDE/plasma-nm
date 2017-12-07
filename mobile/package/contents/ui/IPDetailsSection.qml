@@ -23,34 +23,27 @@ import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 ColumnLayout{
-    property var adress: ""
+    property var ipmap: []
+    property var address: ""
     property var gateway: ""
 
     spacing: units.gridUnit
 
-    PlasmaComponents.Label {
+    PlasmaComponents.Label{
+        anchors.margins: units.gridUnit
         text: i18n("IP Settings")
     }
 
-    PlasmaComponents.Switch {
-        id: manualIPCheckbox
-        checked: false
-        onCheckedChanged: {
-            manuaIPSettings.visible = checked
-        }
-    }
-
-    ColumnLayout {
+    ColumnLayout{
         id: manuaIPSettings
-        anchors.top: manualIPCheckbox.bottom
-        visible: false
+        visible: true
         PlasmaComponents.Label {
             text: i18n("IP Address")
         }
 
         Controls.TextField {
             placeholderText: i18n("193.168.1.128")
-            text: adress
+            text: address
         }
 
         PlasmaComponents.Label {
@@ -75,6 +68,11 @@ ColumnLayout{
 
         Controls.TextField {
             placeholderText: i18n("8.8.8.8")
+        }
+    }
+    onVisibleChanged: {
+        if (visible == true){
+            address = ipmap["address-data"]
         }
     }
 }

@@ -349,41 +349,19 @@ PlasmaComponents.ListItem {
             return result;
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
             if (showSpeed && dataSource.data && dataSource.data[dataSource.downloadSource] && dataSource.data[dataSource.uploadSource]) {
+                var downloadColor = theme.highlightColor;
+                // cycle upload color by 180 degrees
+                var uploadColor = Qt.hsva((downloadColor.hsvHue + 0.5) % 1, downloadColor.hsvSaturation, downloadColor.hsvValue, downloadColor.a);
+
                 return i18n("Connected, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s",
-                            theme.highlightColor,
+                            downloadColor,
                             KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.downloadSource].value * 1024 || 0),
-                            cycle(theme.highlightColor, -180),
+                            uploadColor,
                             KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.uploadSource].value * 1024 || 0));
             } else {
                 return i18n("Connected");
             }
         }
-    }
-
-    /*
-     * Stolen from the system monitor applet
-     * from plasma-workspace/applets/systemmonitor/common/contents/ui/DoublePlotter.qml
-     */
-    function cycle(color, degrees) {
-        var min = Math.min(color.r, Math.min(color.g, color.b));
-        var max = Math.max(color.r, Math.max(color.g, color.b));
-        var c = max - min;
-        var h;
-
-        if (c == 0) {
-            h = 0
-        } else if (max == color.r) {
-            h = ((color.g - color.b) / c) % 6;
-        } else if (max == color.g) {
-            h = ((color.b - color.r) / c) + 2;
-        } else if (max == color.b) {
-            h = ((color.r - color.g) / c) + 4;
-        }
-        var hue = (1/6) * h + (degrees/360);
-        var saturation = c / (1 - Math.abs(2 * ((max+min)/2) - 1));
-        var lightness = (max + min)/3;
-
-        return Qt.hsla(hue, saturation, lightness, 1.0);
     }
 
     onActivatingChanged: {

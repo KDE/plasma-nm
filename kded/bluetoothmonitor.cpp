@@ -23,7 +23,6 @@
 
 #include "bluetoothmonitor.h"
 #include "debug.h"
-#include <config.h>
 
 #include <KLocalizedString>
 #include <KMessageBox>

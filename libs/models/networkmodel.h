@@ -23,7 +23,6 @@
 
 #include <QAbstractListModel>
 
-#include <config.h>
 #include "networkitemslist.h"
 
 #include <NetworkManagerQt/Manager>

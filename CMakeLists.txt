@@ -5,7 +5,6 @@ set(QT_MIN_VERSION "5.4.0")
 
 set(PROJECT_VERSION "5.11.90")
 set(PROJECT_VERSION_MAJOR 5)
-set(PLASMANM_VERSION_STRING ${PROJECT_VERSION} )
 
 ################# set KDE specific information #################
 
@@ -75,12 +74,9 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)
 
-configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
-
 add_definitions(-DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT})
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR} # for config.h
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libs
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/libs
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/)
 
 add_subdirectory(applet)

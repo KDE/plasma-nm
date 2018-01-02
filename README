@@ -5,15 +5,13 @@ Plasma applet written in QML for managing network connections
 
 Dependencies:
 -------------
-  * networkmanager-qt - 5.8.0
-  * NetworkManager 0.9.8.4 and newer
+  * networkmanager-qt
+  * NetworkManager 0.9.10 and newer
 
 Optional dependencies:
 ---------------------
-  * modemmanager-qt - 5.8.0
-    - requires ModemManager 1.0.0 and newer
-    - Plasma-nm is compiled with ModemManager support by default when libmm-qt is found,
-      when you want to explicitly disable ModemManager support, use -DDISABLE_MODEMMANAGER_SUPPORT=true cmake parameter.
+  * modemmanager-qt
+    - requires ModemManager 1.0.0 and newer as runtime dependency
 
   * openconnect
     - if you want to build the OpenConnect VPN plugin
@@ -25,7 +23,7 @@ Compiling:
 ----------
   mkdir build
   cd build
-  cmake ../ -DCMAKE_INSTALL_PREFIX=/usr [-DDISABLE_MODEMMANAGER_SUPPORT=true]
+  cmake ../ -DCMAKE_INSTALL_PREFIX=/usr
   make
   # As root:
   make install
@@ -40,6 +38,6 @@ https://bugs.kde.org/describecomponents.cgi?product=plasma-nm
 
 NetworkManager specification:
 ------------------------------
-http://projects.gnome.org/NetworkManager/developers/api/09/spec.html
-http://projects.gnome.org/NetworkManager/developers/api/09/ref-settings.html
-https://developer.gnome.org/ModemManager/unstable/
+https://developer.gnome.org/NetworkManager/stable/
+https://developer.gnome.org/NetworkManager/stable/ref-settings.html
+https://www.freedesktop.org/software/ModemManager/api/latest/

@@ -512,7 +512,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
 }
 QVariantMap Handler::getConnectionSettings(const QString &connection, const QString &type)
 {
-    if (type.length() == 0)
+    if (type.isEmpty())
         return QVariantMap();
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
     if (!con)

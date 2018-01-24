@@ -94,6 +94,7 @@ Item {
             anchors {
                 left: parent.left
                 top: separator.bottom
+                bottomMargin: 10
             }
             text: i18n("Available wifi networks")
             font.bold: true
@@ -194,4 +195,5 @@ Item {
         detailsDialog.destroy()
         //connectionEditorDialog.connectionEditorDialogContent.destroy()
     }
+
 }

@@ -47,7 +47,7 @@ Dialog {
             color: baseColor
         }
 
-        PlasmaExtras.ScrollArea {
+        QtControls.ScrollView {
             id: scrollView
             anchors {
                 bottom: buttonRow.top

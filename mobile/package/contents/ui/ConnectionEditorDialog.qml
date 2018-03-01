@@ -25,9 +25,9 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 PlasmaExtras.ScrollArea{
 
-    frameVisible: true
+//    frameVisible: true
 
-    anchors.fill: parent
+   // anchors.fill: parent
     property var details
     property var str: 0
 

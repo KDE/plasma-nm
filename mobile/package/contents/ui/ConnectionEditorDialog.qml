@@ -23,13 +23,16 @@ import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
-PlasmaExtras.ScrollArea {
+PlasmaExtras.ScrollArea{
+
+    frameVisible: true
+
+    anchors.fill: parent
     property var details
     property var str: 0
 
     ColumnLayout{
         id: columnlayout
-        //anchors.fill: parent
 
         PlasmaComponents.Label {
             text: i18n("SSID")
@@ -40,16 +43,7 @@ PlasmaExtras.ScrollArea {
             placeholderText: i18n("None")
         }
 
-        PlasmaComponents.Label {
-            text: i18n("Security")
-        }
-        Controls.ComboBox {
-            id: combobox
-            Layout.fillWidth: true
-            model: [i18n("None"), i18n("WEP Key"), i18n("Dynamic WEP"), i18n("WPA/WPA2 Personal"), i18n("WPA/WPA2 Enterprise")]
-        }
         RowLayout {
-            anchors.top: combobox.bottom
             PlasmaComponents.Label {
                 anchors.left: parent.left
                 text: i18n("Advanced options")
@@ -61,10 +55,20 @@ PlasmaExtras.ScrollArea {
         }
 
         IPDetailsSection {
+            id: ipsec
+            //anchors.top: columnlayout.bottom
+            enabled: advancedOptionsSwitch.checked
             visible: advancedOptionsSwitch.checked
         }
-    }
 
+        SecuritySection{
+            anchors.top: ipsec.bottom
+            //anchors.topMargin: 30
+            enabled: advancedOptionsSwitch.checked
+            visible: advancedOptionsSwitch.checked
+        }
+
+    }
     function save() {
         console.info('Connection saved')
     }

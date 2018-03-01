@@ -568,7 +568,7 @@ void Notification::onPrepareForSleep(bool sleep)
     } else {
         if (!m_checkActiveConnectionOnResumeTimer) {
             m_checkActiveConnectionOnResumeTimer = new QTimer(this);
-            m_checkActiveConnectionOnResumeTimer->setInterval(5000);
+            m_checkActiveConnectionOnResumeTimer->setInterval(10000);
             m_checkActiveConnectionOnResumeTimer->setSingleShot(true);
             connect(m_checkActiveConnectionOnResumeTimer, &QTimer::timeout, this, &Notification::onCheckActiveConnectionOnResume);
         }

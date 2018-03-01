@@ -50,6 +50,11 @@
      </item>
      <item>
       <property name="text">
+       <string>PWD</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>FAST</string>
       </property>
      </item>
@@ -291,6 +296,40 @@
        </item>
        <item row="1" column="1">
         <widget class="PasswordField" name="leapPassword">
+         <property name="passwordModeEnabled" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pwdPage">
+      <layout class="QFormLayout" name="formLayout_8">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_33">
+         <property name="text">
+          <string>Username:</string>
+         </property>
+         <property name="buddy">
+          <cstring>md5UserName</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="KLineEdit" name="pwdUsername"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_34">
+         <property name="text">
+          <string>Password:</string>
+         </property>
+         <property name="buddy">
+          <cstring>md5Password</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="PasswordField" name="pwdPassword">
          <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
@@ -696,14 +735,14 @@
    <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
-   <class>KUrlRequester</class>
-   <extends>QWidget</extends>
-   <header>kurlrequester.h</header>
-  </customwidget>
-  <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QWidget</extends>
+   <header>kurlrequester.h</header>
   </customwidget>
   <customwidget>
    <class>PasswordField</class>

@@ -30,8 +30,6 @@
 #include <ModemManagerQt/GenericTypes>
 #endif
 
-#include <config.h>
-
 
 class Q_DECL_EXPORT Handler : public QObject
 {

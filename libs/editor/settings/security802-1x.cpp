@@ -40,6 +40,7 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool w
     m_ui->leapPassword->setPasswordOptionsEnabled(true);
     m_ui->md5Password->setPasswordOptionsEnabled(true);
     m_ui->peapPassword->setPasswordOptionsEnabled(true);
+    m_ui->pwdPassword->setPasswordOptionsEnabled(true);
     m_ui->tlsPrivateKeyPassword->setPasswordOptionsEnabled(true);
     m_ui->ttlsPassword->setPasswordOptionsEnabled(true);
 
@@ -49,18 +50,20 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool w
 
         m_ui->auth->setItemData(0, NetworkManager::Security8021xSetting::EapMethodTls);
         m_ui->auth->setItemData(1, NetworkManager::Security8021xSetting::EapMethodLeap);
-        m_ui->auth->setItemData(2, NetworkManager::Security8021xSetting::EapMethodFast);
-        m_ui->auth->setItemData(3, NetworkManager::Security8021xSetting::EapMethodTtls);
-        m_ui->auth->setItemData(4, NetworkManager::Security8021xSetting::EapMethodPeap);
+        m_ui->auth->setItemData(2, NetworkManager::Security8021xSetting::EapMethodPwd);
+        m_ui->auth->setItemData(3, NetworkManager::Security8021xSetting::EapMethodFast);
+        m_ui->auth->setItemData(4, NetworkManager::Security8021xSetting::EapMethodTtls);
+        m_ui->auth->setItemData(5, NetworkManager::Security8021xSetting::EapMethodPeap);
     } else {
         m_ui->auth->removeItem(2); // LEAP
         m_ui->stackedWidget->removeWidget(m_ui->leapPage);
 
         m_ui->auth->setItemData(0, NetworkManager::Security8021xSetting::EapMethodMd5);
         m_ui->auth->setItemData(1, NetworkManager::Security8021xSetting::EapMethodTls);
-        m_ui->auth->setItemData(2, NetworkManager::Security8021xSetting::EapMethodFast);
-        m_ui->auth->setItemData(3, NetworkManager::Security8021xSetting::EapMethodTtls);
-        m_ui->auth->setItemData(4, NetworkManager::Security8021xSetting::EapMethodPeap);
+        m_ui->auth->setItemData(2, NetworkManager::Security8021xSetting::EapMethodPwd);
+        m_ui->auth->setItemData(3, NetworkManager::Security8021xSetting::EapMethodFast);
+        m_ui->auth->setItemData(4, NetworkManager::Security8021xSetting::EapMethodTtls);
+        m_ui->auth->setItemData(5, NetworkManager::Security8021xSetting::EapMethodPeap);
     }
 
     // Set PEAP authentication as default
@@ -88,6 +91,8 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool w
     connect(m_ui->leapPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::slotWidgetChanged);
     connect(m_ui->fastAllowPacProvisioning, &QCheckBox::stateChanged, this, &Security8021x::slotWidgetChanged);
     connect(m_ui->pacFile, &KUrlRequester::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->pwdUsername, &KLineEdit::textChanged, this, &Security8021x::slotWidgetChanged);
+    connect(m_ui->pwdPassword, &PasswordField::textChanged, this, &Security8021x::slotWidgetChanged);
     connect(m_ui->fastUsername, &KLineEdit::textChanged, this, &Security8021x::slotWidgetChanged);
     connect(m_ui->fastPassword, &PasswordField::textChanged, this, &Security8021x::slotWidgetChanged);
     connect(m_ui->fastPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::slotWidgetChanged);
@@ -175,6 +180,18 @@ void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
         } else {
             m_ui->leapPassword->setPasswordOption(PasswordField::AlwaysAsk);
         }
+
+    } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPwd)) {
+        m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodPwd));
+        m_ui->pwdUsername->setText(securitySetting->identity());
+
+        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
+            m_ui->pwdPassword->setPasswordOption(PasswordField::StoreForAllUsers);
+        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
+            m_ui->pwdPassword->setPasswordOption(PasswordField::StoreForUser);
+        } else {
+            m_ui->pwdPassword->setPasswordOption(PasswordField::AlwaysAsk);
+        }
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodFast)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodFast));
         m_ui->fastAnonIdentity->setText(securitySetting->anonymousIdentity());
@@ -256,6 +273,8 @@ void Security8021x::loadSecrets(const NetworkManager::Setting::Ptr &setting)
             m_ui->leapPassword->setText(securitySetting->password());
         } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodFast)) {
             m_ui->fastPassword->setText(securitySetting->password());
+        } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPwd)) {
+            m_ui->pwdPassword->setText(securitySetting->password());
         } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTtls)) {
             m_ui->ttlsPassword->setText(securitySetting->password());
         } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPeap)) {
@@ -365,6 +384,22 @@ QVariantMap Security8021x::setting() const
             setting.setPasswordFlags(NetworkManager::Setting::AgentOwned);
         } else {
             setting.setPasswordFlags(NetworkManager::Setting::NotSaved);
+        }
+    } else if (method == NetworkManager::Security8021xSetting::EapMethodPwd) {
+        if (!m_ui->pwdUsername->text().isEmpty()) {
+            setting.setIdentity(m_ui->pwdUsername->text());
+        }
+
+        if (m_ui->pwdPassword->passwordOption() == PasswordField::StoreForAllUsers) {
+            setting.setPasswordFlags(NetworkManager::Setting::None);
+        } else if (m_ui->pwdPassword->passwordOption() == PasswordField::StoreForUser) {
+            setting.setPasswordFlags(NetworkManager::Setting::AgentOwned);
+        } else {
+            setting.setPasswordFlags(NetworkManager::Setting::NotSaved);
+        }
+
+        if (!m_ui->pwdPassword->text().isEmpty()) {
+            setting.setPassword(m_ui->pwdPassword->text());
         }
     } else if (method == NetworkManager::Security8021xSetting::EapMethodFast) {
         if (!m_ui->fastAnonIdentity->text().isEmpty()) {
@@ -580,6 +615,8 @@ bool Security8021x::isValid() const
         // TODO Validate other certificates??
     } else if (method == NetworkManager::Security8021xSetting::EapMethodLeap) {
         return !m_ui->leapUsername->text().isEmpty() && (!m_ui->leapPassword->text().isEmpty() || m_ui->leapPassword->passwordOption() == PasswordField::AlwaysAsk);
+    } else if (method == NetworkManager::Security8021xSetting::EapMethodPwd) {
+        return !m_ui->pwdUsername->text().isEmpty() && (!m_ui->pwdPassword->text().isEmpty() || m_ui->pwdPassword->passwordOption() == PasswordField::AlwaysAsk);
     } else if (method == NetworkManager::Security8021xSetting::EapMethodFast) {
         if (!m_ui->fastAllowPacProvisioning->isChecked() && !m_ui->pacFile->url().isValid()) {
             return false;

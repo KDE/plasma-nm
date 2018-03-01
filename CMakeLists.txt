@@ -3,9 +3,8 @@ project(plasma-networkmanagement)
 cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 set(QT_MIN_VERSION "5.4.0")
 
-set(PROJECT_VERSION "5.11.90")
+set(PROJECT_VERSION "5.12.80")
 set(PROJECT_VERSION_MAJOR 5)
-set(PLASMANM_VERSION_STRING ${PROJECT_VERSION} )
 
 ################# set KDE specific information #################
 
@@ -34,7 +33,7 @@ find_package(KF5 REQUIRED
     I18n WindowSystem Service Completion WidgetsAddons KIO CoreAddons Wallet ItemViews XmlGui
     ConfigWidgets IconThemes Solid DBusAddons Notifications Plasma Declarative Init KDELibs4Support)
 
-find_package(KF5NetworkManagerQt REQUIRED 5.21.0)
+find_package(KF5NetworkManagerQt REQUIRED 5.42.0)
 
 find_package(KF5ModemManagerQt 5.14.0)
 set_package_properties(KF5ModemManagerQt PROPERTIES
@@ -69,18 +68,15 @@ else()
     endif()
 endif()
 
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0 -DQT_NO_KEYWORDS)
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
 add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)
 
-configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
-
 add_definitions(-DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT})
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR} # for config.h
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libs
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/libs
                     ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/)
 
 add_subdirectory(applet)

@@ -27,7 +27,7 @@ Item {
     property QtObject dataEngine: null
     property string deviceName
 
-    height: visible ? plotter.height + Math.round(units.gridUnit / 3) : 0
+    height: visible ? plotter.height + units.gridUnit : 0
 
     Repeater {
         model: 5
@@ -40,6 +40,7 @@ Item {
             }
             height: paintedHeight
             font.pointSize: theme.smallestFont.pointSize
+            lineHeight: 1.75
             text: KCoreAddons.Format.formatByteSize((plotter.maxValue * 1024) * (1 - index / 5))
         }
     }
@@ -51,10 +52,10 @@ Item {
         readonly property int maxValue: Math.max(Math.max.apply(null, downloadPlotData.values), Math.max.apply(null, uploadPlotData.values))
         anchors {
             left: parent.left
-            leftMargin: units.iconSizes.medium
+            leftMargin: units.gridUnit * 3
             right: parent.right
             top: parent.top
-            topMargin: Math.round(units.gridUnit / 2)
+            topMargin: units.gridUnit
         }
         width: units.gridUnit * 20
         height: units.gridUnit * 8

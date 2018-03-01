@@ -37,13 +37,14 @@ ColumnLayout{
     ColumnLayout{
         id: manuaIPSettings
         visible: true
+        Layout.fillWidth: true
         PlasmaComponents.Label {
             text: i18n("IP Address")
         }
 
         Controls.TextField {
             placeholderText: i18n("193.168.1.128")
-            text: address
+            text: address ? address : ""
         }
 
         PlasmaComponents.Label {

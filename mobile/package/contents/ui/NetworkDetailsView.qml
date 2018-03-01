@@ -29,6 +29,7 @@ PlasmaExtras.ScrollArea{
     property alias signal_speed: linkSpeedLabel.text
     property alias ip_address: securityLabel.text
     property alias security: ipAddressLabel.text
+    property var map: []
 
     Column {
 
@@ -90,6 +91,7 @@ PlasmaExtras.ScrollArea{
         }
 
         RowLayout {
+
             PlasmaComponents.Label {
                 anchors.left: parent.left
                 text: i18n("Advanced options")
@@ -104,14 +106,20 @@ PlasmaExtras.ScrollArea{
             id: detailsIP
             visible: advancedOptionsSwitch.checked
         }
+
+        SecuritySection{
+            id:s
+            visible: advancedOptionsSwitch.checked
+        }
     }
 
     function fillDetails() {
         var d = {}
         for (var i = 0; i < (details.length / 2); i++){
-            console.info(details[i])
+            //console.info(details[i])
             d[details[(i * 2)]] = details[(i * 2) + 1]
         }
+
         if (d['Access point (SSID)'])
             detailsDialog.titleText = d['Access point (SSID)']
         signal_strength = d['Signal strength']
@@ -125,6 +133,5 @@ PlasmaExtras.ScrollArea{
     function clearDetails() {
         signal_speed = signal_strength = ip_address = 0
         security = "Unknown"
-        detailsIP.adress = detailsIP.gateway = ''
     }
 }

@@ -29,6 +29,7 @@ Kirigami.SwipeListItem {
     width: parent.width
     enabled: true
     backgroundColor: theme.backgroundColor
+    property var map : []
 
     Item {
         height: connectionSvgIcon.height
@@ -81,31 +82,39 @@ Kirigami.SwipeListItem {
 
     actions: [
         Kirigami.Action {
-            iconName: "configure-small"
-            onTriggered: {
-                if (ConnectionDetails)
-                    networkDetailsViewContent.details = ConnectionDetails
-                if (ConnectionDetails[1] !== "") {
-                    detailsDialog.titleText = ItemUniqueName
-                } else {
-                    detailsDialog.titleText = i18n("Network details")
-                }
-                networkDetailsViewContent.fillDetails()
-                detailsDialog.open()
-            }
+            iconName: "configure"
+            onTriggered: getDetails()
         },
         Kirigami.Action {
             iconName: "remove"
+            visible: (Uuid != "")? true : false
             onTriggered: {
                 forgetNetwork()
             }
         }
     ]
 
-    function connect() {
+    function getDetails(){
+        if (ConnectionDetails) 
+            networkDetailsViewContent.details = ConnectionDetails
+        if (ConnectionDetails[1] !== "") {
+            detailsDialog.titleText = ItemUniqueName
+        } else {
+            detailsDialog.titleText = i18n("Network details")
+        }
+        map =  handler.getConnectionSettings(ConnectionPath,"ipv4")
+        networkDetailsViewContent.map = map
+        console.info(map[ "method"])
+        networkDetailsViewContent.fillDetails()
+        detailsDialog.open()
+    }
+
+    function connect(){
         console.info(ConnectionDetails[1]+' trying to connect')
     }
-    function forgetNetwork() {
-        console.info(ConnectionDetails[1]+' trying to forget')
+    function forgetNetwork(){
+        console.info(ConnectionPath+' trying to forget')
+        deleteConfirmation.open()
+        // ItemUniqueName
     }
 }

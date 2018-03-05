@@ -7,7 +7,5 @@ tags
 .swp.*
 .kdev4/
 *.kdev4
-applet/contents/ui/SwitchButton.qml
-applet/contents/ui/Toolbar.qml
 CMakeLists.txt.user
 *.qmlc

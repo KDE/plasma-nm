@@ -29,11 +29,6 @@ ColumnLayout{
 
     spacing: units.gridUnit
 
-    PlasmaComponents.Label{
-        anchors.margins: units.gridUnit
-        text: i18n("IP Settings")
-    }
-
     ColumnLayout{
         id: manuaIPSettings
         visible: true

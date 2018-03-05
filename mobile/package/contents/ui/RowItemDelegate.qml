@@ -104,7 +104,7 @@ Kirigami.SwipeListItem {
         }
         map =  handler.getConnectionSettings(ConnectionPath,"ipv4")
         networkDetailsViewContent.map = map
-        console.info(map[ "method"])
+        console.info(map["method"])
         networkDetailsViewContent.fillDetails()
         detailsDialog.open()
     }

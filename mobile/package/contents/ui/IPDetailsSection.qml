@@ -26,13 +26,31 @@ ColumnLayout{
     property var ipmap: []
     property var address: ""
     property var gateway: ""
+    property var enabledSave: false
 
     spacing: units.gridUnit
 
+    ColumnLayout {
+        PlasmaComponents.Label {
+            anchors.left: parent.left
+            text: i18n("IP settings")
+            font.weight: Font.Bold
+        }
+        Controls.ComboBox {
+            id: ipMethodComb
+            model: ListModel{
+                ListElement{ text: "Automatic"; method: "auto" }
+                ListElement{ text: "Manual"; method: "manual"}
+            }
+        }
+    }
+
     ColumnLayout{
         id: manuaIPSettings
-        visible: true
+        enabled: ipMethodComb.currentText == "Manual"
+        visible: ipMethodComb.currentText == "Manual"
         Layout.fillWidth: true
+
         PlasmaComponents.Label {
             text: i18n("IP Address")
         }

@@ -7,7 +7,8 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 Layouts.ColumnLayout{
     id:securitySectionView
-    property var securityMap: []
+    property var securityMap: {}
+    property var enabledSave: false
     width: parent.width
 
     Column{
@@ -22,6 +23,7 @@ Layouts.ColumnLayout{
         }
         Controls.Label {
             text: i18n("Security")
+            font.weight: Font.Bold
         }
         Controls.ComboBox {
             id: securityCombobox

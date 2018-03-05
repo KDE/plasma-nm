@@ -24,52 +24,42 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 PlasmaExtras.ScrollArea{
-
-//    frameVisible: true
-
-   // anchors.fill: parent
     property var details
     property var str: 0
+    property var connection : {}
+    property var enabledSaving: (editorIpSection.enabledSave && editorSecuritySection.enabledSave)
 
     ColumnLayout{
         id: columnlayout
 
         PlasmaComponents.Label {
             text: i18n("SSID")
+            font.weight: Font.Bold
         }
 
         PlasmaComponents.TextField {
+            id: ssidField
             Layout.fillWidth: true
             placeholderText: i18n("None")
         }
 
-        RowLayout {
-            PlasmaComponents.Label {
-                anchors.left: parent.left
-                text: i18n("Advanced options")
-            }
-            PlasmaComponents.Switch {
-                id: advancedOptionsSwitch
-                checked: false
-            }
-        }
-
         IPDetailsSection {
-            id: ipsec
-            //anchors.top: columnlayout.bottom
-            enabled: advancedOptionsSwitch.checked
-            visible: advancedOptionsSwitch.checked
+            id: editorIpSection
         }
 
         SecuritySection{
-            anchors.top: ipsec.bottom
-            //anchors.topMargin: 30
-            enabled: advancedOptionsSwitch.checked
-            visible: advancedOptionsSwitch.checked
+            id: editorSecuritySection
+            //anchors.top: editorIpSection.bottom
+            anchors.topMargin: units.gridUnit
         }
 
     }
     function save() {
+        connection["ssid"] = ssidField.text
+        connection["type"] = "802-11-wireless"
+        connection["mode"] = "infrastructure"
+        connection["method"] = editorIpSection.ipMethodComb.get(currentIndex).method
+        // TODO
         console.info('Connection saved')
     }
 }

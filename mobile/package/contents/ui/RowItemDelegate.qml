@@ -17,15 +17,16 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-import QtQuick 2.0
-import QtQuick.Controls 1.4 as Controls
+import QtQuick 2.6
+import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-import org.kde.kirigami 1.0 as Kirigami
+import org.kde.kirigami 2.0 as Kirigami
 
 Kirigami.SwipeListItem {
+    id: listitem
     width: parent.width
     enabled: true
     backgroundColor: theme.backgroundColor

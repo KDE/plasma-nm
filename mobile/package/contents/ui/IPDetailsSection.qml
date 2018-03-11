@@ -23,32 +23,41 @@ import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 ColumnLayout{
-    property var ipmap: []
-    property var address: ""
-    property var gateway: ""
-    property var enabledSave: false
+    id: ipmain
+
+    property var ipmap: ({})
+    property alias address: manualIPaddress.text
+    property alias gateway: manualIPgateway.text
+    property alias prefix: manualIPprefix.text
+    property alias dns: manualIPdns.text
+    property bool enabledSave: false
 
     spacing: units.gridUnit
 
     ColumnLayout {
+
         PlasmaComponents.Label {
             anchors.left: parent.left
             text: i18n("IP settings")
             font.weight: Font.Bold
         }
+
         Controls.ComboBox {
             id: ipMethodComb
-            model: ListModel{
-                ListElement{ text: "Automatic"; method: "auto" }
-                ListElement{ text: "Manual"; method: "manual"}
+            model:["Automatic","Manual"]
+            onCurrentIndexChanged: {
+                if (ipMethodComb.currentIndex == 0){
+                    ipmain.state = "Automatic"
+                }
+                if(ipMethodComb.currentIndex == 1){
+                    ipmain.state = "Manual"
+                }
             }
         }
     }
 
     ColumnLayout{
-        id: manuaIPSettings
-        enabled: ipMethodComb.currentText == "Manual"
-        visible: ipMethodComb.currentText == "Manual"
+        id: manualIPSettings
         Layout.fillWidth: true
 
         PlasmaComponents.Label {
@@ -56,8 +65,9 @@ ColumnLayout{
         }
 
         Controls.TextField {
+            id: manualIPaddress
             placeholderText: i18n("193.168.1.128")
-            text: address ? address : ""
+            text: address
         }
 
         PlasmaComponents.Label {
@@ -65,7 +75,9 @@ ColumnLayout{
         }
 
         Controls.TextField {
+            id: manualIPgateway
             placeholderText: i18n("192.168.1.1")
+            text: gateway
         }
 
         PlasmaComponents.Label {
@@ -73,7 +85,9 @@ ColumnLayout{
         }
 
         Controls.TextField {
+            id: manualIPprefix
             placeholderText: i18n("24")
+            text: prefix
         }
 
         PlasmaComponents.Label{
@@ -81,12 +95,31 @@ ColumnLayout{
         }
 
         Controls.TextField {
+            id:manualIPdns
             placeholderText: i18n("8.8.8.8")
+            text: dns
         }
     }
-    onVisibleChanged: {
-        if (visible == true){
-            address = ipmap["address-data"]
+
+    states: [
+        State {
+            name: "Automatic"
+            PropertyChanges{ target: manualIPSettings; visible : false }
+            PropertyChanges{ target: ipmain; ipmap : {"method":"auto"}}
+        },
+
+        State {
+            name:"Manual"
+            PropertyChanges{ target: manualIPSettings; visible : true }
+            PropertyChanges{
+                target: ipmain;
+                ipmap : {
+                    "method" : "manual",
+                    "address-data" : [{"address":address, "prefix":prefix}],
+                    "gateway" : gateway,
+                    "dns" : dns
+                }
+            }
         }
-    }
+    ]
 }

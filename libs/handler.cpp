@@ -518,10 +518,50 @@ QVariantMap Handler::getConnectionSettings(const QString &connection, const QStr
     if (!con)
         return QVariantMap();
     QVariantMap map = con->settings()->toMap().value(type);
-    qCWarning(PLASMA_NM) << "Map:" <<con->settings()->toMap().value(type);
+    //qCWarning(PLASMA_NM) << "Map:" <<con->settings()->toMap().value(type);
     return map;
 }
 
+QVariantMap Handler::getActiveConnectionInfo(const QString &connection)
+{
+    if (connection.isEmpty())
+        return QVariantMap();
+    NetworkManager::ActiveConnection::Ptr con = NetworkManager::findActiveConnection(connection);
+    if(!con){
+        qWarning(PLASMA_NM) << "Active" << connection << "not found";
+        return QVariantMap();
+    }
+    qWarning(PLASMA_NM) << "Active" << con->ipV4Config().addresses().first().ip().toString();
+    return QVariantMap();
+}
+
+void Handler::addConnectionFromQML(const QVariantMap &QMLmap)
+{
+    if(!QMLmap.isEmpty()){
+        NMVariantMapMap map;
+        for(QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
+             qWarning(PLASMA_NM) << iter.key() << iter.value();
+             //map.insert(iter.key(),iter.value());
+        }
+        if (!QMLmap.contains("uuid")){
+            QVariant foo = QMLmap.value("connection");
+            /*for(QVariantMap::const_iterator iter = foo.value<QVariantMap>().begin(); iter != foo.value<QVariantMap>().end(); ++iter) {
+                 qWarning(PLASMA_NM) << iter.key() << iter.value();
+                 map.insert(iter.key(),iter.value());
+            }
+            foo.insert("connection",NetworkManager::ConnectionSettings::createNewUuid());
+            QMLmap.insert("connection",foo);*/
+        }
+        map.insert("connection",QMLmap);
+        //TODO add UUID, SSID
+
+        QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(map);
+        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+        watcher->setProperty("action", AddConnection);
+        watcher->setProperty("connection", map.value("connection").value("id"));
+        connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
+    }
+}
 #if WITH_MODEMMANAGER_SUPPORT
 void Handler::unlockRequiredChanged(MMModemLock modemLock)
 {

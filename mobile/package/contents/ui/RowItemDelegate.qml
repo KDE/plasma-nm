@@ -103,6 +103,9 @@ Kirigami.SwipeListItem {
             detailsDialog.titleText = i18n("Network details")
         }
         map =  handler.getConnectionSettings(ConnectionPath,"ipv4")
+        if (ConnectionState == PlasmaNM.Enums.Activated){
+            handler.getActiveConnectionInfo(ConnectionPath)
+        }
         networkDetailsViewContent.map = map
         console.info(map["method"])
         networkDetailsViewContent.fillDetails()

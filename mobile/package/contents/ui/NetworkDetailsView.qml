@@ -116,15 +116,18 @@ PlasmaExtras.ScrollArea{
     function fillDetails() {
         var d = {}
         for (var i = 0; i < (details.length / 2); i++){
-            //console.info(details[i])
             d[details[(i * 2)]] = details[(i * 2) + 1]
         }
-
+        for (var i in map) {
+            if (map.hasOwnProperty(i)) {
+              console.info(i + ' = ' + map[i]);
+            }
+          }
         if (d['Access point (SSID)'])
             detailsDialog.titleText = d['Access point (SSID)']
         signal_strength = d['Signal strength']
         if (d['IPv4 Address'])
-            ip_address = detailsIP.adress = d['IPv4 Address']
+            ip_address = detailsIP.address = d['IPv4 Address']
         if (d['Security type'])
             security = d['Security type']
         if (d['Connection speed'])

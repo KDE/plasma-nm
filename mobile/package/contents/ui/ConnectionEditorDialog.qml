@@ -26,8 +26,9 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 PlasmaExtras.ScrollArea{
     property var details
     property var str: 0
-    property var connection : {}
-    property var enabledSaving: (editorIpSection.enabledSave && editorSecuritySection.enabledSave)
+    property var connection : ({})
+    property var wirelessSettings: ({})
+    property var enabledSaving: (editorIpSection.enabledSave && editorSecuritySection.enabledSave && ssidField.text)
 
     ColumnLayout{
         id: columnlayout
@@ -55,11 +56,14 @@ PlasmaExtras.ScrollArea{
 
     }
     function save() {
-        connection["ssid"] = ssidField.text
+        var m = ({});
+        connection["id"] = ssidField.text
         connection["type"] = "802-11-wireless"
-        connection["mode"] = "infrastructure"
-        connection["method"] = editorIpSection.ipMethodComb.get(currentIndex).method
-        // TODO
-        console.info('Connection saved')
+        wirelessSettings["mode"] = "infrastructure"
+        m["connection"] = connection
+        m["ipv4"] = editorIpSection.ipmap
+        m["802-11-wireless"] = wirelessSettings
+        handler.addConnectionFromQML(m)
+        console.info('Connection saved '+ connection["id"])
     }
 }

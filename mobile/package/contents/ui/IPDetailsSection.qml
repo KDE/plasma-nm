@@ -44,7 +44,7 @@ ColumnLayout {
 
         Controls.ComboBox {
             id: ipMethodComb
-            model: ["Automatic","Manual"]
+            model: [i18n("Automatic"), i18n("Manual")]
             onCurrentIndexChanged: {
                 if (ipMethodComb.currentIndex == 0) {
                     ipmain.state = "Automatic"

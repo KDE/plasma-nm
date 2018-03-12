@@ -23,7 +23,7 @@ import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
-PlasmaExtras.ScrollArea{
+PlasmaExtras.ScrollArea {
     property var details
     property alias signal_strength: signalStrengthLabel.text
     property alias signal_speed: linkSpeedLabel.text
@@ -32,7 +32,6 @@ PlasmaExtras.ScrollArea{
     property var map: []
 
     Column {
-
         Column {
             id: staticInfo
             anchors.bottomMargin: units.gridUnit
@@ -107,8 +106,8 @@ PlasmaExtras.ScrollArea{
             visible: advancedOptionsSwitch.checked
         }
 
-        SecuritySection{
-            id:s
+        SecuritySection {
+            id: s
             visible: advancedOptionsSwitch.checked
         }
     }
@@ -122,7 +121,7 @@ PlasmaExtras.ScrollArea{
             if (map.hasOwnProperty(i)) {
               console.info(i + ' = ' + map[i]);
             }
-          }
+        }
         if (d['Access point (SSID)'])
             detailsDialog.titleText = d['Access point (SSID)']
         signal_strength = d['Signal strength']

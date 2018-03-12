@@ -96,14 +96,14 @@ Kirigami.SwipeListItem {
     ]
 
     function getDetails(){
-        if (ConnectionDetails) 
+        if (ConnectionDetails)
             networkDetailsViewContent.details = ConnectionDetails
         if (ConnectionDetails[1] !== "") {
             detailsDialog.titleText = ItemUniqueName
         } else {
             detailsDialog.titleText = i18n("Network details")
         }
-        map =  handler.getConnectionSettings(ConnectionPath,"ipv4")
+        map = handler.getConnectionSettings(ConnectionPath,"ipv4")
         if (ConnectionState == PlasmaNM.Enums.Activated){
             handler.getActiveConnectionInfo(ConnectionPath)
         }
@@ -113,11 +113,11 @@ Kirigami.SwipeListItem {
         detailsDialog.open()
     }
 
-    function connect(){
-        console.info(ConnectionDetails[1]+' trying to connect')
+    function connect() {
+        console.info(ConnectionDetails[1] + ' trying to connect')
     }
-    function forgetNetwork(){
-        console.info(ConnectionPath+' trying to forget')
+    function forgetNetwork() {
+        console.info(ConnectionPath + ' trying to forget')
         deleteConfirmation.open()
         // ItemUniqueName
     }

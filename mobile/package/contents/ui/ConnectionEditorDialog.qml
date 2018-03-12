@@ -23,7 +23,7 @@ import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
-PlasmaExtras.ScrollArea{
+PlasmaExtras.ScrollArea {
     property var details
     property var str: 0
     property var connection : ({})
@@ -48,7 +48,7 @@ PlasmaExtras.ScrollArea{
             id: editorIpSection
         }
 
-        SecuritySection{
+        SecuritySection {
             id: editorSecuritySection
             //anchors.top: editorIpSection.bottom
             anchors.topMargin: units.gridUnit

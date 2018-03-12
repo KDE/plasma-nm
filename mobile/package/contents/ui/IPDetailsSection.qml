@@ -22,7 +22,7 @@ import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
-ColumnLayout{
+ColumnLayout {
     id: ipmain
 
     property var ipmap: ({})
@@ -44,7 +44,7 @@ ColumnLayout{
 
         Controls.ComboBox {
             id: ipMethodComb
-            model:["Automatic","Manual"]
+            model: ["Automatic","Manual"]
             onCurrentIndexChanged: {
                 if (ipMethodComb.currentIndex == 0){
                     ipmain.state = "Automatic"
@@ -90,12 +90,12 @@ ColumnLayout{
             text: prefix
         }
 
-        PlasmaComponents.Label{
+        PlasmaComponents.Label {
             text: i18n("DNS")
         }
 
         Controls.TextField {
-            id:manualIPdns
+            id: manualIPdns
             placeholderText: i18n("8.8.8.8")
             text: dns
         }
@@ -110,8 +110,8 @@ ColumnLayout{
 
         State {
             name:"Manual"
-            PropertyChanges{ target: manualIPSettings; visible : true }
-            PropertyChanges{
+            PropertyChanges { target: manualIPSettings; visible : true }
+            PropertyChanges {
                 target: ipmain;
                 ipmap : {
                     "method" : "manual",

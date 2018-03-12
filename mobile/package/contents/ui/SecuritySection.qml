@@ -5,7 +5,7 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
-Layouts.ColumnLayout{
+Layouts.ColumnLayout {
     id:securitySectionView
     property var securityMap: {}
     property var enabledSave: false
@@ -31,47 +31,47 @@ Layouts.ColumnLayout{
             anchors.bottomMargin: 50
             model: [i18n("None"), i18n("WEP Key"), i18n("Dynamic WEP"), i18n("WPA/WPA2 Personal"), i18n("WPA/WPA2 Enterprise")]
         }
-        Controls.Label{
+        Controls.Label {
             anchors.bottomMargin: units.Gridunit
             visible: !(securityCombobox.currentText == "None")
             text: securityCombobox.currentText
         }
     }
 
-    Layouts.ColumnLayout{
+    Layouts.ColumnLayout {
         id: wep
         anchors.top: securitySectionHeader.bottom
         width: parent.width
-        Column{
+        Column {
             width: parent.width
             visible: (securityCombobox.currentText === "WEP Key")
-            PasswordField{
+            PasswordField {
                 width: parent.width
                 securityType: PlasmaNM.Enums.StaticWep
             }
         }
     }
 
-    Layouts.ColumnLayout{
+    Layouts.ColumnLayout {
         id: wpaPSK
         width: parent.width
         anchors.top: securitySectionHeader.bottom
-        Column{
+        Column {
             width: parent.width
             visible: (securityCombobox.currentText === "WPA/WPA2 Personal")
-            PasswordField{
+            PasswordField {
                 width: parent.width
                 securityType: PlasmaNM.Enums.Wpa2Psk
             }
         }
     }
 
-    Layouts.ColumnLayout{
+    Layouts.ColumnLayout {
         id: eap
         anchors.top: securitySectionHeader.bottom
-        Column{
+        Column {
             visible: (securityCombobox.currentText === "Dynamic WEP")
-            Controls.Label{
+            Controls.Label {
                 text:i18n("Authentication")
             }
             Controls.ComboBox {

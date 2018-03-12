@@ -46,10 +46,10 @@ ColumnLayout {
             id: ipMethodComb
             model: ["Automatic","Manual"]
             onCurrentIndexChanged: {
-                if (ipMethodComb.currentIndex == 0){
+                if (ipMethodComb.currentIndex == 0) {
                     ipmain.state = "Automatic"
                 }
-                if(ipMethodComb.currentIndex == 1){
+                if (ipMethodComb.currentIndex == 1) {
                     ipmain.state = "Manual"
                 }
             }
@@ -66,7 +66,7 @@ ColumnLayout {
 
         Controls.TextField {
             id: manualIPaddress
-            placeholderText: i18n("193.168.1.128")
+            placeholderText: "193.168.1.128"
             text: address
         }
 
@@ -76,7 +76,7 @@ ColumnLayout {
 
         Controls.TextField {
             id: manualIPgateway
-            placeholderText: i18n("192.168.1.1")
+            placeholderText: "192.168.1.1"
             text: gateway
         }
 
@@ -86,7 +86,7 @@ ColumnLayout {
 
         Controls.TextField {
             id: manualIPprefix
-            placeholderText: i18n("24")
+            placeholderText: "24"
             text: prefix
         }
 
@@ -96,7 +96,7 @@ ColumnLayout {
 
         Controls.TextField {
             id: manualIPdns
-            placeholderText: i18n("8.8.8.8")
+            placeholderText: "8.8.8.8"
             text: dns
         }
     }

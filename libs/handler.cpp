@@ -539,27 +539,32 @@ void Handler::addConnectionFromQML(const QVariantMap &QMLmap)
 {
     if(!QMLmap.isEmpty()){
         NMVariantMapMap map;
-        for(QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
-             qWarning(PLASMA_NM) << iter.key() << iter.value();
-             //map.insert(iter.key(),iter.value());
-        }
-        if (!QMLmap.contains("uuid")){
-            QVariant foo = QMLmap.value("connection");
-            /*for(QVariantMap::const_iterator iter = foo.value<QVariantMap>().begin(); iter != foo.value<QVariantMap>().end(); ++iter) {
-                 qWarning(PLASMA_NM) << iter.key() << iter.value();
-                 map.insert(iter.key(),iter.value());
+        QString id;
+        for (QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
+            if (iter.key() == QLatin1String("connection")) {
+                QVariantMap connectionMap = iter.value().toMap();
+                id = connectionMap.value("id").toString();
+                if (!connectionMap.contains(QLatin1String("uuid"))) {
+                    connectionMap.insert(QLatin1String("uuid"), NetworkManager::ConnectionSettings::createNewUuid());
+                }
+                map.insert(QLatin1String("connection"), connectionMap);
+            } else {
+                map.insert(iter.key(), iter.value().toMap());
             }
-            foo.insert("connection",NetworkManager::ConnectionSettings::createNewUuid());
-            QMLmap.insert("connection",foo);*/
         }
-        map.insert("connection",QMLmap);
-        //TODO add UUID, SSID
 
-        QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(map);
-        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-        watcher->setProperty("action", AddConnection);
-        watcher->setProperty("connection", map.value("connection").value("id"));
-        connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
+        for (QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
+            if (iter.key() == QLatin1String("802-11-wireless")) {
+                QVariantMap wirelessnMap = iter.value().toMap();
+                if (!wirelessnMap.contains(QLatin1String("uuid"))) {
+                    wirelessnMap.insert(QLatin1String("ssid"), id.toAscii());
+                }
+                map.insert(QLatin1String("802-11-wireless"), wirelessnMap);
+            }
+        }
+
+        //qWarning() << map;
+        this->addConnection(map);
     }
 }
 #if WITH_MODEMMANAGER_SUPPORT

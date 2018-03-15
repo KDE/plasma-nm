@@ -539,7 +539,7 @@ void Handler::addConnectionFromQML(const QVariantMap &QMLmap)
 {
     if(!QMLmap.isEmpty()){
         NMVariantMapMap map;
-        QString id;
+        QString id; // add UUID
         for (QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
             if (iter.key() == QLatin1String("connection")) {
                 QVariantMap connectionMap = iter.value().toMap();
@@ -552,7 +552,7 @@ void Handler::addConnectionFromQML(const QVariantMap &QMLmap)
                 map.insert(iter.key(), iter.value().toMap());
             }
         }
-
+        // add SSID
         for (QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
             if (iter.key() == QLatin1String("802-11-wireless")) {
                 QVariantMap wirelessnMap = iter.value().toMap();
@@ -562,10 +562,29 @@ void Handler::addConnectionFromQML(const QVariantMap &QMLmap)
                 map.insert(QLatin1String("802-11-wireless"), wirelessnMap);
             }
         }
+        // if settings are manual, convert dns to uint32
+       /* for (QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
+            if (iter.key() == QLatin1String("ipv4")) {
+                QVariantMap ipv4Map = iter.value().toMap();
+                if (ipv4Map.value("method").toString() == QLatin1String("manual")) {
+                    QString dns = ipv4Map.value("dns").toString();
+                    UIntList list;
+                    list.append(QHostAddress(dns).toIPv4Address());
+                    qWarning() << dns << list;
+                    ipv4Map.insert("dns",list);
+                }
+                map.insert(QLatin1String("ipv4"), ipv4Map);
+            }
+        }*/
 
-        //qWarning() << map;
+        qWarning() << map;
         this->addConnection(map);
     }
+}
+
+quint32 Handler::convertIPtoUINT(const QString str)
+{
+    return QHostAddress(str).toIPv4Address();
 }
 #if WITH_MODEMMANAGER_SUPPORT
 void Handler::unlockRequiredChanged(MMModemLock modemLock)

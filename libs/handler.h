@@ -90,6 +90,7 @@ public Q_SLOTS:
     QVariantMap getConnectionSettings(const QString &connection, const QString &type);
     QVariantMap getActiveConnectionInfo(const QString &connection);
     void addConnectionFromQML(const QVariantMap &map);
+    quint32 convertIPtoUINT(const QString str);
 
     void enableWwan(bool enable);
 
@@ -125,6 +126,7 @@ private:
     QMap<QString, bool> m_bluetoothAdapters;
 
     void enableBluetooth(bool enable);
+
 };
 
 #endif // PLASMA_NM_HANDLER_H

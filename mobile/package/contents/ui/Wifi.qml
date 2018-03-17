@@ -119,11 +119,7 @@ Item {
                 currentIndex: -1
                 boundsBehavior: Flickable.StopAtBounds
                 model: mobileProxyModel
-                delegate: RowItemDelegate {
-                    onClicked: {
-                        connect()
-                    }
-                }
+                delegate: RowItemDelegate {}
             }
         }
 

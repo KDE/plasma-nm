@@ -23,27 +23,43 @@ import QtQuick.Layouts 1.2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 1.0 as Kirigami
 
 Kirigami.SwipeListItem {
     id: listitem
+
     width: parent.width
+    height: units.gridUnit * 3
     enabled: true
     backgroundColor: theme.backgroundColor
+
     property var map : []
+    property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
+                                                   (SecurityType == PlasmaNM.Enums.StaticWep ||
+                                                    SecurityType == PlasmaNM.Enums.WpaPsk ||
+                                                    SecurityType == PlasmaNM.Enums.Wpa2Psk)
+
+    onClicked: {
+        changeState()
+    }
 
     Item {
+
         height: connectionSvgIcon.height
         width: parent.width
+        anchors.centerIn: parent
 
         PlasmaCore.SvgItem {
             id: connectionSvgIcon
+
             anchors {
                 left: parent.left
                 rightMargin: 10
             }
+            height: units.iconSizes.big;
+            width: height
             elementId: ConnectionIcon
-            //height: units.iconSizes.big; width: height
+
             svg: PlasmaCore.Svg {
                 multipleImages: true
                 imagePath: "icons/network"
@@ -79,9 +95,49 @@ Kirigami.SwipeListItem {
             text: ItemUniqueName
             textFormat: Text.PlainText
         }
+
+        Item{
+            id: connectionPasswordField
+
+            anchors.left: connectionNameLabel.left
+            height: units.gridUnit * 1.5
+            visible: false
+
+            onVisibleChanged: {
+                connectionPasswordFieldField.text = ""
+            }
+
+            PasswordField{
+                id: connectionPasswordFieldField
+                height: parent.height
+            }
+
+            PlasmaComponents.Button{
+                id: connectionPasswordFieldButton
+
+                anchors.left: connectionPasswordFieldField.right
+                width: units.gridUnit * 5
+                height: parent.height
+                text: "ok" // TODO icon, size
+
+                onClicked: {
+                    handler.addAndActivateConnection(DevicePath, SpecificPath, connectionPasswordFieldField.text);
+                }
+            }
+        }
     }
 
     actions: [
+        Kirigami.Action {
+            iconName: "go-previous" // TODO better icon
+            visible: ConnectionState != PlasmaNM.Enums.Activated
+            onTriggered: changeState()
+        },
+        Kirigami.Action {
+            iconName: "go-next" // TODO better icon
+            visible: ConnectionState == PlasmaNM.Enums.Activated
+            onTriggered: handler.deactivateConnection(ConnectionPath, DevicePath)
+        },
         Kirigami.Action {
             iconName: "configure"
             onTriggered: getDetails()
@@ -89,13 +145,11 @@ Kirigami.SwipeListItem {
         Kirigami.Action {
             iconName: "remove"
             visible: (Uuid != "")? true : false
-            onTriggered: {
-                forgetNetwork()
-            }
+            onTriggered: forgetNetwork()
         }
     ]
 
-    function getDetails(){
+    function getDetails() {
         if (ConnectionDetails)
             networkDetailsViewContent.details = ConnectionDetails
         if (ConnectionDetails[1] !== "") {
@@ -108,17 +162,33 @@ Kirigami.SwipeListItem {
             handler.getActiveConnectionInfo(ConnectionPath)
         }
         networkDetailsViewContent.map = map
-        console.info(map["method"])
         networkDetailsViewContent.fillDetails()
         detailsDialog.open()
     }
 
-    function connect() {
-        console.info(ConnectionDetails[1] + ' trying to connect')
+    function changeState() {
+        if (Uuid || !predictableWirelessPassword || connectionPasswordField.visible) {
+            if (ConnectionState == PlasmaNM.Enums.Deactivated) {
+                if (!predictableWirelessPassword && !Uuid) {
+                    handler.addAndActivateConnection(DevicePath, SpecificPath);
+                } else if (connectionPasswordField.visible) {
+                            if (connectionPasswordFieldField.text != "") {
+                                handler.addAndActivateConnection(DevicePath, SpecificPath, connectionPasswordFieldField.text);
+                                connectionPasswordField.visible = false;
+                            } else {
+                                connectionPasswordField.visible = false;
+                            }
+                        } else {
+                            handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
+                        }
+            }
+        } else if (predictableWirelessPassword) {
+           connectionPasswordField.visible = true;
+        }
     }
+
     function forgetNetwork() {
-        console.info(ConnectionPath + ' trying to forget')
-        deleteConfirmation.open()
-        // ItemUniqueName
+        // TODO confirmation dialog
+        handler.removeConnection(ConnectionPath)
     }
 }

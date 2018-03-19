@@ -557,35 +557,31 @@ void Handler::addConnectionFromQML(const QVariantMap &QMLmap)
             if (iter.key() == QLatin1String("802-11-wireless")) {
                 QVariantMap wirelessnMap = iter.value().toMap();
                 if (!wirelessnMap.contains(QLatin1String("uuid"))) {
-                    wirelessnMap.insert(QLatin1String("ssid"), id.toAscii());
+                    wirelessnMap.insert(QLatin1String("ssid"), id.toUtf8());
                 }
                 map.insert(QLatin1String("802-11-wireless"), wirelessnMap);
             }
         }
         // if settings are manual, convert dns to uint32
-       /* for (QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
+        for (QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
             if (iter.key() == QLatin1String("ipv4")) {
                 QVariantMap ipv4Map = iter.value().toMap();
-                if (ipv4Map.value("method").toString() == QLatin1String("manual")) {
-                    QString dns = ipv4Map.value("dns").toString();
+                if (ipv4Map.value(QLatin1String("method")).toString() == QLatin1String("manual")) {
+                    QString dns = ipv4Map.value(QLatin1String("dns")).toString();
                     UIntList list;
                     list.append(QHostAddress(dns).toIPv4Address());
                     qWarning() << dns << list;
-                    ipv4Map.insert("dns",list);
+                    ipv4Map.insert(QLatin1String("dns"),QVariant::fromValue<UIntList>(list));
                 }
                 map.insert(QLatin1String("ipv4"), ipv4Map);
             }
-        }*/
+        }
 
         qWarning() << map;
         this->addConnection(map);
     }
 }
 
-quint32 Handler::convertIPtoUINT(const QString str)
-{
-    return QHostAddress(str).toIPv4Address();
-}
 #if WITH_MODEMMANAGER_SUPPORT
 void Handler::unlockRequiredChanged(MMModemLock modemLock)
 {

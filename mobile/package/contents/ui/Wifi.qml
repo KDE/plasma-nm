@@ -25,7 +25,7 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.2 as Kirigami
 
-Item {
+Kirigami.Page {
     id: main
     objectName: "wifiMain"
     width: units.gridUnit * 30
@@ -83,7 +83,6 @@ Item {
         Rectangle {
             id: separator
             anchors.top: layoutrow.bottom
-            anchors.topMargin: 10
             width: parent.width
             height: units.gridUnit / 8
             border.color: "grey"
@@ -94,18 +93,18 @@ Item {
             anchors {
                 left: parent.left
                 top: separator.bottom
-                bottomMargin: 10
+                topMargin: units.gridUnit
             }
             text: i18n("Available wifi networks")
             font.bold: true
             Layout.fillWidth: true
         }
 
-        PlasmaExtras.ScrollArea {
+        Kirigami.ScrollablePage {
             id: wifiarea
             anchors {
                 top: label.bottom
-                bottomMargin: units.gridUnit*2
+                bottomMargin: units.gridUnit * 2
                 bottom: parent.bottom
                 left: parent.left
                 right: parent.right

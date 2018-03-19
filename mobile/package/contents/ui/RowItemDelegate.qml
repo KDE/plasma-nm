@@ -23,12 +23,11 @@ import QtQuick.Layouts 1.2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-import org.kde.kirigami 1.0 as Kirigami
+import org.kde.kirigami 2.2 as Kirigami
 
 Kirigami.SwipeListItem {
     id: listitem
 
-    width: parent.width
     height: units.gridUnit * 3
     enabled: true
     backgroundColor: theme.backgroundColor
@@ -45,16 +44,17 @@ Kirigami.SwipeListItem {
 
     Item {
 
-        height: connectionSvgIcon.height
+        height: parent.height
         width: parent.width
-        anchors.centerIn: parent
+        anchors.fill: parent
 
         PlasmaCore.SvgItem {
             id: connectionSvgIcon
 
             anchors {
                 left: parent.left
-                rightMargin: 10
+                leftMargin: units.gridUnit
+                verticalCenter: parent.verticalCenter
             }
             height: units.iconSizes.big;
             width: height
@@ -100,6 +100,7 @@ Kirigami.SwipeListItem {
             id: connectionPasswordField
 
             anchors.left: connectionNameLabel.left
+            anchors.verticalCenter: parent.verticalCenter
             height: units.gridUnit * 1.5
             visible: false
 
@@ -109,6 +110,7 @@ Kirigami.SwipeListItem {
 
             PasswordField{
                 id: connectionPasswordFieldField
+                securityType: SecurityType
                 height: parent.height
             }
 

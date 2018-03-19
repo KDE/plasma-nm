@@ -117,7 +117,7 @@ ColumnLayout {
                     "method" : "manual",
                     "address-data" : [{"address":address, "prefix":prefix}],
                     "gateway" : gateway,
-                    "dns" : [handler.convertIPtoUINT(dns)]
+                    "dns" : dns
                 }
             }
         }

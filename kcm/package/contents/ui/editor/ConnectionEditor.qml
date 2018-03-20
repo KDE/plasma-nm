@@ -81,10 +81,10 @@ Item {
         }
     }
 
-    function loadConnectionSetting() {
-        connectionNameTextField.text = connectionSettingObject.id
+    function loadConnectionSettings() {
+        connectionNameTextField.text = connectionSettingsObject.id
         // Load general connection setting
-        connectionSetting.loadSetting()
+        connectionSetting.loadSettings()
     }
 }
 

@@ -4,7 +4,7 @@ set(plasmanm_editor_SRCS
     # FIXME
     ../debug.cpp
 
-    settings/connectionsetting.cpp
+    settings/connectionsettings.cpp
     settings/setting.cpp
 
     widgets/passwordfield.cpp

@@ -24,13 +24,13 @@
 class QObject;
 class QDBusPendingCallWatcher;
 
-class ConnectionSettingPrivate;
+class ConnectionSettingsPrivate;
 
 #include <NetworkManagerQt/ConnectionSettings>
 
 class Setting;
 
-class Q_DECL_EXPORT ConnectionSetting : public QObject
+class Q_DECL_EXPORT ConnectionSettings : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString id READ id WRITE setId)
@@ -39,15 +39,16 @@ class Q_DECL_EXPORT ConnectionSetting : public QObject
     Q_PROPERTY(bool autoconnect READ autoconnect WRITE setAutoconnect)
     Q_PROPERTY(QStringList permissions READ permissions WRITE setPermissions)
     Q_PROPERTY(QString secondaryConnection READ secondaryConnection WRITE setSecondaryConnection)
+    Q_PROPERTY(QString zone READ zone WRITE setZone)
     Q_PROPERTY(int priority READ priority WRITE setPriority)
 
     Q_PROPERTY(QStringList firewallZones READ firewallZones CONSTANT)
     Q_PROPERTY(QStringList vpnConnections READ vpnConnections CONSTANT)
 public:
-    explicit ConnectionSetting(QObject *parent = nullptr);
-    ConnectionSetting(const NetworkManager::ConnectionSettings::Ptr &settings = NetworkManager::ConnectionSettings::Ptr(), QObject *parent = nullptr);
+    explicit ConnectionSettings(QObject *parent = nullptr);
+    ConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &settings = NetworkManager::ConnectionSettings::Ptr(), QObject *parent = nullptr);
 
-    virtual ~ConnectionSetting();
+    virtual ~ConnectionSettings();
 
     void loadConfig(const NetworkManager::ConnectionSettings::Ptr &settings);
     NMVariantMapMap settingMap() const;
@@ -68,6 +69,9 @@ public:
 
     QString secondaryConnection() const;
     void setSecondaryConnection(const QString &secondaryConnection);
+
+    QString zone() const;
+    void setZone(const QString &zone);
 
     int priority() const;
     void setPriority(int priority);
@@ -92,10 +96,10 @@ private Q_SLOTS:
     void onReplyFinished(QDBusPendingCallWatcher *watcher);
 
 protected:
-    ConnectionSettingPrivate *d_ptr;
+    ConnectionSettingsPrivate *d_ptr;
 
 private:
-    Q_DECLARE_PRIVATE(ConnectionSetting)
+    Q_DECLARE_PRIVATE(ConnectionSettings)
 
 };
 

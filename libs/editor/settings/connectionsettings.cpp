@@ -18,7 +18,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "connectionsetting.h"
+#include "connectionsettings.h"
 #include "setting.h"
 
 #include <QDBusConnection>
@@ -30,9 +30,10 @@
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/Settings>
 
+#include <KLocalizedString>
 #include <KUser>
 
-class ConnectionSettingPrivate
+class ConnectionSettingsPrivate
 {
 public:
     NetworkManager::ConnectionSettings::Ptr connectionSettings;
@@ -42,20 +43,20 @@ public:
     int pendingReplies;
     bool valid;
     bool secretsLoaded;
-    QStringList firewallZones;
+    QStringList firewallZones = {i18n("Default")};
     NMStringMap vpnConnections;
 };
 
-ConnectionSetting::ConnectionSetting(QObject *parent)
-    : ConnectionSetting(nullptr, parent)
+ConnectionSettings::ConnectionSettings(QObject *parent)
+    : ConnectionSettings(nullptr, parent)
 {
 }
 
-ConnectionSetting::ConnectionSetting(const NetworkManager::ConnectionSettings::Ptr &settings, QObject *parent)
+ConnectionSettings::ConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &settings, QObject *parent)
     : QObject(parent)
-    , d_ptr(new ConnectionSettingPrivate())
+    , d_ptr(new ConnectionSettingsPrivate())
 {
-    Q_D(ConnectionSetting);
+    Q_D(ConnectionSettings);
 
     // Load list of firewall zones
     QDBusMessage msg = QDBusMessage::createMethodCall("org.fedoraproject.FirewallD1", "/org/fedoraproject/FirewallD1",
@@ -63,7 +64,7 @@ ConnectionSetting::ConnectionSetting(const NetworkManager::ConnectionSettings::P
     QDBusPendingReply<QStringList> reply = QDBusConnection::systemBus().asyncCall(msg);
     reply.waitForFinished();
     if (reply.isValid()) {
-        d->firewallZones = reply.value();
+        d->firewallZones += reply.value();
     }
 
     // Load list of VPN connections
@@ -81,14 +82,14 @@ ConnectionSetting::ConnectionSetting(const NetworkManager::ConnectionSettings::P
     }
 }
 
-ConnectionSetting::~ConnectionSetting()
+ConnectionSettings::~ConnectionSettings()
 {
     delete d_ptr;
 }
 
-void ConnectionSetting::loadConfig(const NetworkManager::ConnectionSettings::Ptr &settings)
+void ConnectionSettings::loadConfig(const NetworkManager::ConnectionSettings::Ptr &settings)
 {
-    Q_D(ConnectionSetting);
+    Q_D(ConnectionSettings);
 
     d->secretsLoaded = false;
 
@@ -208,7 +209,7 @@ void ConnectionSetting::loadConfig(const NetworkManager::ConnectionSettings::Ptr
     bool valid = true;
     foreach (NetworkManager::Setting::SettingType settingType, d->settings.keys()) {
         valid = valid && d->settings.value(settingType)->isValid();
-        connect(d->settings.value(settingType), &Setting::validityChanged, this, &ConnectionSetting::onValidityChanged);
+        connect(d->settings.value(settingType), &Setting::validityChanged, this, &ConnectionSettings::onValidityChanged);
     }
 
     d->valid = valid;
@@ -330,164 +331,178 @@ void ConnectionSetting::loadConfig(const NetworkManager::ConnectionSettings::Ptr
     }
 }
 
-NMVariantMapMap ConnectionSetting::settingMap() const
+NMVariantMapMap ConnectionSettings::settingMap() const
 {
     return NMVariantMapMap();
 }
 
-QString ConnectionSetting::id() const
+QString ConnectionSettings::id() const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
 
     return d->connectionSettings->id();
 }
 
-void ConnectionSetting::setId(const QString &id)
+void ConnectionSettings::setId(const QString &id)
 {
-    Q_D(ConnectionSetting);
+    Q_D(ConnectionSettings);
 
     d->connectionSettings->setId(id);
 }
 
-QString ConnectionSetting::uuid() const
+QString ConnectionSettings::uuid() const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
 
     return d->connectionSettings->uuid();
 }
 
-void ConnectionSetting::setUuid(const QString &uuid)
+void ConnectionSettings::setUuid(const QString &uuid)
 {
-    Q_D(ConnectionSetting);
+    Q_D(ConnectionSettings);
 
     d->connectionSettings->setUuid(uuid);
 }
 
-uint ConnectionSetting::connectionType() const
+uint ConnectionSettings::connectionType() const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
 
     return (uint)d->connectionSettings->connectionType();
 }
 
-bool ConnectionSetting::autoconnect() const
+bool ConnectionSettings::autoconnect() const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
 
     return d->connectionSettings->autoconnect();
 }
 
-void ConnectionSetting::setAutoconnect(bool autoconnect)
+void ConnectionSettings::setAutoconnect(bool autoconnect)
 {
-    Q_D(ConnectionSetting);
+    Q_D(ConnectionSettings);
 
     d->connectionSettings->setAutoconnect(autoconnect);
 }
 
-QStringList ConnectionSetting::permissions() const
+QStringList ConnectionSettings::permissions() const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
 
     return d->connectionSettings->permissions().keys();
 }
 
-void ConnectionSetting::setPermissions(const QStringList &permissions)
+void ConnectionSettings::setPermissions(const QStringList &permissions)
 {
-    Q_D(ConnectionSetting);
+    Q_D(ConnectionSettings);
 
     foreach (const QString &user, permissions) {
         d->connectionSettings->addToPermissions(user, QString());
     }
 }
 
-QString ConnectionSetting::secondaryConnection() const
+QString ConnectionSettings::secondaryConnection() const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
 
     if (!d->connectionSettings->secondaries().isEmpty()) {
-        return d->connectionSettings->secondaries().first();
+        return d->vpnConnections.value(d->connectionSettings->secondaries().first());
     }
 
     return nullptr;
 }
 
-void ConnectionSetting::setSecondaryConnection(const QString &secondaryConnection)
+void ConnectionSettings::setSecondaryConnection(const QString &secondaryConnection)
 {
-    Q_D(ConnectionSetting);
+    Q_D(ConnectionSettings);
 
     d->connectionSettings->setSecondaries({secondaryConnection});
 }
 
-int ConnectionSetting::priority() const
+QString ConnectionSettings::zone() const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
+
+    return d->connectionSettings->zone();
+}
+
+void ConnectionSettings::setZone(const QString &zone)
+{
+    Q_D(ConnectionSettings);
+
+    d->connectionSettings->setZone(zone);
+}
+
+int ConnectionSettings::priority() const
+{
+    Q_D(const ConnectionSettings);
 
     return d->connectionSettings->autoconnectPriority();
 }
 
-void ConnectionSetting::setPriority(int priority)
+void ConnectionSettings::setPriority(int priority)
 {
-    Q_D(ConnectionSetting);
+    Q_D(ConnectionSettings);
 
     d->connectionSettings->setAutoconnectPriority(priority);
 }
 
-QStringList ConnectionSetting::firewallZones() const
+QStringList ConnectionSettings::firewallZones() const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
 
     return d->firewallZones;
 }
 
-QStringList ConnectionSetting::vpnConnections() const
+QStringList ConnectionSettings::vpnConnections() const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
 
     return d->vpnConnections.values();
 }
 
-Setting * ConnectionSetting::setting(NetworkManager::Setting::SettingType type) const
+Setting * ConnectionSettings::setting(NetworkManager::Setting::SettingType type) const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
 
     return d->settings.value(type);
 }
 
-QList<NetworkManager::Setting::SettingType> ConnectionSetting::settingTypes() const
+QList<NetworkManager::Setting::SettingType> ConnectionSettings::settingTypes() const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
 
     return d->settings.keys();
 }
 
-void ConnectionSetting::addSetting(NetworkManager::Setting::SettingType type, Setting *setting)
+void ConnectionSettings::addSetting(NetworkManager::Setting::SettingType type, Setting *setting)
 {
-    Q_D(ConnectionSetting);
+    Q_D(ConnectionSettings);
 
     d->settings.insert(type, setting);
 }
 
-bool ConnectionSetting::isInitialized() const
+bool ConnectionSettings::isInitialized() const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
 
     return d->secretsLoaded;
 }
 
-bool ConnectionSetting::isValid() const
+bool ConnectionSettings::isValid() const
 {
-    Q_D(const ConnectionSetting);
+    Q_D(const ConnectionSettings);
 
     return d->valid;
 }
 
-void ConnectionSetting::onReplyFinished(QDBusPendingCallWatcher *watcher)
+void ConnectionSettings::onReplyFinished(QDBusPendingCallWatcher *watcher)
 {
 }
 
-void ConnectionSetting::onValidityChanged(bool valid)
+void ConnectionSettings::onValidityChanged(bool valid)
 {
-    Q_D(ConnectionSetting);
+    Q_D(ConnectionSettings);
 
     if (!valid) {
         d->valid = false;

@@ -17,6 +17,7 @@
     You should have received a copy of the GNU Lesser General Public
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 import "editor"
 
 import QtQuick 2.6
@@ -31,7 +32,7 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 Kirigami.ApplicationItem {
     id: root
 
-    property QtObject connectionSettingObject: kcm.connectionSetting
+    property QtObject connectionSettingsObject: kcm.connectionSettings
 
     implicitWidth: Kirigami.Units.gridUnit * 20
     implicitHeight: Kirigami.Units.gridUnit * 20
@@ -95,11 +96,8 @@ Kirigami.ApplicationItem {
 
                     icon.name: "list-add"
 
-                    QtControls.ToolTip {
-                        parent: addConnectionButton.handle
-                        text: i18n("Add new connection")
-                        visible: addConnectionButton.hovered
-                    }
+                    QtControls.ToolTip.text: i18n("Add new connection")
+                    QtControls.ToolTip.visible: addConnectionButton.hovered
 
                     onClicked: {
                         addNewConnectionDialog.open()
@@ -115,11 +113,8 @@ Kirigami.ApplicationItem {
                     enabled: connectionView.currentConnectionPath && connectionView.currentConnectionPath.length
                     icon.name: "list-remove"
 
-                    QtControls.ToolTip {
-                        parent: removeConnectionButton.handle
-                        text: i18n("Remove selected connection")
-                        visible: removeConnectionButton.hovered
-                    }
+                    QtControls.ToolTip.text: i18n("Remove selected connection")
+                    QtControls.ToolTip.visible: removeConnectionButton.hovered
 
                     onClicked: {
                         deleteConfirmationDialog.connectionName = connectionView.currentConnectionName
@@ -137,11 +132,8 @@ Kirigami.ApplicationItem {
                     enabled: connectionView.currentConnectionExportable
                     icon.name: "document-export"
 
-                    QtControls.ToolTip {
-                        parent: exportConnectionButton.handle
-                        text: i18n("Export selected connection")
-                        visible: exportConnectionButton.hovered
-                    }
+                    QtControls.ToolTip.text: i18n("Export selected connection")
+                    QtControls.ToolTip.visible: exportConnectionButton.hovered
 
                     onClicked: {
                         kcm.requestExportConnection(connectionView.currentConnectionPath)
@@ -206,7 +198,7 @@ Kirigami.ApplicationItem {
     }
 
     function loadConnectionSetting() {
-        connectionEditor.loadConnectionSetting()
+        connectionEditor.loadConnectionSettings()
     }
 
     function deselectConnectionsInView() {

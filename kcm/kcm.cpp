@@ -21,7 +21,7 @@
 #include "kcm.h"
 
 #include "debug.h"
-#include "settings/connectionsetting.h"
+#include "settings/connectionsettings.h"
 // #include "mobileconnectionwizard.h"
 #include "uiutils.h"
 // #include "vpnuiplugin.h"
@@ -66,16 +66,16 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const QVariantList &
     setAboutData(about);
     setButtons(Apply);
 
-    m_connectionSetting = new ConnectionSetting(this);
-//     connect(m_connectionSetting, &ConnectionSetting::settingChanged,
+    m_connectionSettings = new ConnectionSettings(this);
+//     connect(m_connectionSettings, &ConnectionSettings::settingChanged,
 //             [this] () {
 //                 if (m_connectionSetting->isInitialized() && m_connectionSetting->isValid()) {
 //                     setNeedsSave(true);
 //                 }
 //             });
-    connect(m_connectionSetting, &ConnectionSetting::validityChanged,
+    connect(m_connectionSettings, &ConnectionSettings::validityChanged,
             [this] (bool valid) {
-                if (m_connectionSetting->isInitialized()) {
+                if (m_connectionSettings->isInitialized()) {
                     setNeedsSave(true);
                 }
             });
@@ -165,7 +165,7 @@ void KCMNetworkmanagement::load()
     if (connection) {
         NetworkManager::ConnectionSettings::Ptr connectionSettings = connection->settings();
         // Re-load the connection again to load stored values
-        m_connectionSetting->loadConfig(connectionSettings);
+        m_connectionSettings->loadConfig(connectionSettings);
     }
 
     KQuickAddons::ConfigModule::load();
@@ -176,7 +176,7 @@ void KCMNetworkmanagement::save()
 //     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_currentConnectionPath);
 //
 //     if (connection) {
-//         m_handler->updateConnection(connection, m_connectionSetting->setting());
+//         m_handler->updateConnection(connection, m_connectionSettings->setting());
 //     }
 
     KQuickAddons::ConfigModule::save();
@@ -359,9 +359,9 @@ void KCMNetworkmanagement::requestExportConnection(const QString &connectionPath
 //     }
 }
 
-QObject * KCMNetworkmanagement::connectionSetting() const
+QObject * KCMNetworkmanagement::connectionSettings() const
 {
-   return m_connectionSetting;
+   return m_connectionSettings;
 }
 
 void KCMNetworkmanagement::addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings)
@@ -385,7 +385,7 @@ void KCMNetworkmanagement::addConnection(const NetworkManager::ConnectionSetting
 
 void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr& connectionSettings)
 {
-    m_connectionSetting->loadConfig(connectionSettings);
+    m_connectionSettings->loadConfig(connectionSettings);
 
     QMetaObject::invokeMethod(mainUi(), "loadConnectionSetting");
 

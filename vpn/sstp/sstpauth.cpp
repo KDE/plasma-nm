@@ -24,6 +24,8 @@
 
 #include "nm-sstp-service.h"
 
+#include <KAcceleratorManager>
+
 class SstpAuthWidgetPrivate
 {
 public:

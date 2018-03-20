@@ -1,21 +1,35 @@
-include_directories(${CMAKE_SOURCE_DIR}/libs/models)
+include_directories(models)
 
 set(plasmanm_qml_plugins_SRCS
-   availabledevices.cpp
-   connectionicon.cpp
-   enabledconnections.cpp
-   enums.cpp
-   networkstatus.cpp
-   qmlplugins.cpp
+    # FIXME
+    ../debug.cpp
+
+    availabledevices.cpp
+    connectionicon.cpp
+    enabledconnections.cpp
+    enums.cpp
+    networkstatus.cpp
+    utils.cpp
+    qmlplugins.cpp
+
+    models/appletproxymodel.cpp
+    models/creatableconnectionsmodel.cpp
+    models/editorproxymodel.cpp
+    models/kcmidentitymodel.cpp
+    models/mobileproxymodel.cpp
+    models/networkitemslist.cpp
+    models/networkmodel.cpp
+    models/networkmodelitem.cpp
 )
 
 add_library(plasmanm_qmlplugins SHARED ${plasmanm_qml_plugins_SRCS})
 
 target_link_libraries(plasmanm_qmlplugins
     plasmanm_internal
-    plasmanm_editor
     Qt5::Quick
     KF5::I18n
+    KF5::NetworkManagerQt
+    KF5::Service
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)

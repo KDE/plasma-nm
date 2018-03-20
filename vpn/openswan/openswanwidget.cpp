@@ -26,6 +26,8 @@
 
 #include <QDBusMetaType>
 
+#include <KAcceleratorManager>
+
 OpenswanWidget::OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)
     , m_ui(new Ui::OpenswanWidget)

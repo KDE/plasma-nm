@@ -24,6 +24,8 @@
 
 #include "nm-ssh-service.h"
 
+#include <KAcceleratorManager>
+
 class SshAuthWidgetPrivate
 {
 public:

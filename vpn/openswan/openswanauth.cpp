@@ -24,6 +24,8 @@
 
 #include <QString>
 
+#include <KAcceleratorManager>
+
 class OpenswanAuthDialogPrivate
 {
 public:

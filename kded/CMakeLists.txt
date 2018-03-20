@@ -50,6 +50,7 @@ target_link_libraries(kded_networkmanagement
     KF5::Service
     KF5::Solid
     KF5::Wallet
+    KF5::WidgetsAddons
     KF5::WindowSystem
 )
 

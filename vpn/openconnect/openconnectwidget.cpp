@@ -51,6 +51,8 @@ typedef struct {
     QString tokenSecret;
 } Token;
 
+#include <KAcceleratorManager>
+
 class OpenconnectSettingWidgetPrivate
 {
 public:

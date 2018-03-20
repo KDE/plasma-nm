@@ -27,6 +27,8 @@
 #include <QDialog>
 #include <QDialogButtonBox>
 
+#include <KAcceleratorManager>
+
 #include "nm-sstp-service.h"
 
 class SstpSettingWidgetPrivate

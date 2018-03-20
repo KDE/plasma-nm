@@ -27,30 +27,27 @@ include(FeatureSummary)
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Core
     DBus
-    Network
     Quick
     QuickWidgets
     Widgets
 )
 
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
+find_package(KF5 REQUIRED
     ConfigWidgets
-    Completion
     CoreAddons
     Declarative
-    DBusAddons
-    KIO
     I18n
     IconThemes
-    NetworkManagerQt
+    Kirigami2
+    KDELibs4Support
     Notifications
     Plasma
     Service
-    Solid
-    Wallet
-    WidgetsAddons
     WindowSystem
+    Wallet
 )
+
+find_package(KF5NetworkManagerQt REQUIRED 5.42.0)
 
 find_package(KF5ModemManagerQt ${KF5_MIN_VERSION})
 set_package_properties(KF5ModemManagerQt PROPERTIES

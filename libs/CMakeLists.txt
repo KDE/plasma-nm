@@ -1,14 +1,6 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-libs\")
 
 set(plasmanm_internal_SRCS
-    models/appletproxymodel.cpp
-    models/creatableconnectionsmodel.cpp
-    models/editorproxymodel.cpp
-    models/kcmidentitymodel.cpp
-    models/networkitemslist.cpp
-    models/networkmodel.cpp
-    models/networkmodelitem.cpp
-
     configuration.cpp
     debug.cpp
     handler.cpp
@@ -18,16 +10,15 @@ set(plasmanm_internal_SRCS
 add_library(plasmanm_internal SHARED ${plasmanm_internal_SRCS})
 
 target_link_libraries(plasmanm_internal
-    plasmanm_editor
     KF5::NetworkManagerQt
-    KF5::Solid
-    KF5::Completion
+    KF5::ConfigCore
+    KF5::CoreAddons
     KF5::I18n
     KF5::IconThemes
-    KF5::Plasma
     KF5::Notifications
-    Qt5::Xml
-    Qt5::Network
+    KF5::Service
+    KF5::Wallet
+    KF5::WindowSystem
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)

@@ -19,9 +19,6 @@
 */
 
 #include "settingwidget.h"
-#include "bssidcombobox.h"
-#include "hwaddrcombobox.h"
-#include "ssidcombobox.h"
 #include "passwordfield.h"
 
 #include <QComboBox>
@@ -113,22 +110,22 @@ void SettingWidget::watchChangedSetting()
     }
 
     // Connect all HwAddrComboBox widgets
-    QList<HwAddrComboBox *> hwAddrcomboboxes = findChildren<HwAddrComboBox *>();
-    Q_FOREACH (HwAddrComboBox *combobox, hwAddrcomboboxes) {
-        connect(combobox, &HwAddrComboBox::hwAddressChanged, this, &SettingWidget::settingChanged);
-    }
-
-    // Connect all SssidComboBox widgets
-    QList<SsidComboBox *> ssidcomboboxes = findChildren<SsidComboBox *>();
-    Q_FOREACH (SsidComboBox *combobox, ssidcomboboxes) {
-        connect(combobox, &SsidComboBox::ssidChanged, this, &SettingWidget::settingChanged);
-    }
-
-    // Connect all BssidComboBox widgets
-    QList<BssidComboBox *> bssidcomboboxes = findChildren<BssidComboBox *>();
-    Q_FOREACH (BssidComboBox *combobox, bssidcomboboxes) {
-        connect(combobox, &BssidComboBox::bssidChanged, this, &SettingWidget::settingChanged);
-    }
+//     QList<HwAddrComboBox *> hwAddrcomboboxes = findChildren<HwAddrComboBox *>();
+//     Q_FOREACH (HwAddrComboBox *combobox, hwAddrcomboboxes) {
+//         connect(combobox, &HwAddrComboBox::hwAddressChanged, this, &SettingWidget::settingChanged);
+//     }
+//
+//     // Connect all SssidComboBox widgets
+//     QList<SsidComboBox *> ssidcomboboxes = findChildren<SsidComboBox *>();
+//     Q_FOREACH (SsidComboBox *combobox, ssidcomboboxes) {
+//         connect(combobox, &SsidComboBox::ssidChanged, this, &SettingWidget::settingChanged);
+//     }
+//
+//     // Connect all BssidComboBox widgets
+//     QList<BssidComboBox *> bssidcomboboxes = findChildren<BssidComboBox *>();
+//     Q_FOREACH (BssidComboBox *combobox, bssidcomboboxes) {
+//         connect(combobox, &BssidComboBox::bssidChanged, this, &SettingWidget::settingChanged);
+//     }
 }
 
 QString SettingWidget::type() const

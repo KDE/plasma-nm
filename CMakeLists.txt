@@ -22,16 +22,25 @@ include(FeatureSummary)
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Core
     DBus
-    Network
     Quick
     QuickWidgets
-    UiTools
     Widgets
 )
 
 find_package(KF5 REQUIRED
-    I18n WindowSystem Service Completion WidgetsAddons KIO CoreAddons Wallet ItemViews XmlGui
-    ConfigWidgets IconThemes Solid DBusAddons Notifications Plasma Declarative Init KDELibs4Support)
+    ConfigWidgets
+    CoreAddons
+    Declarative
+    I18n
+    IconThemes
+    Kirigami2
+    KDELibs4Support
+    Notifications
+    Plasma
+    Service
+    WindowSystem
+    Wallet
+)
 
 find_package(KF5NetworkManagerQt REQUIRED 5.42.0)
 

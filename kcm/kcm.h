@@ -1,5 +1,5 @@
 /*
-    Copyright 2016 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2016-2018 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -21,20 +21,28 @@
 #ifndef PLASMA_NM_KCM_H
 #define PLASMA_NM_KCM_H
 
-#include "connectioneditortabwidget.h"
 #include "handler.h"
 
-#include <KCModule>
-#include <ui_kcm.h>
+#include <KQuickAddons/ConfigModule>
 
 class QQuickView;
 
-class KCMNetworkmanagement : public KCModule
+class ConnectionSetting;
+
+class KCMNetworkmanagement : public KQuickAddons::ConfigModule
 {
     Q_OBJECT
+    Q_PROPERTY(QObject * connectionSetting READ connectionSetting NOTIFY connectionSettingChanged)
 public:
-    explicit KCMNetworkmanagement(QWidget *parent = nullptr, const QVariantList &args = QVariantList());
+    explicit KCMNetworkmanagement(QObject *parent = nullptr, const QVariantList &args = QVariantList());
     virtual ~KCMNetworkmanagement();
+
+    // Called from QML
+    Q_INVOKABLE void selectConnection(const QString &connectionPath);
+    Q_INVOKABLE void requestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool share);
+    Q_INVOKABLE void requestExportConnection(const QString &connectionPath);
+
+    QObject *connectionSetting() const;
 
 public Q_SLOTS:
     void defaults() override;
@@ -43,25 +51,22 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void onConnectionAdded(const QString &connection);
-    void onSelectedConnectionChanged(const QString &connectionPath);
-    void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
-    void onRequestExportConnection(const QString &connectionPath);
-    void onRequestToChangeConnection(const QString &connectionName, const QString &connectionPath);
+
+Q_SIGNALS:
+    void connectionSettingChanged();
 
 private:
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void importVpn();
-    void kcmChanged(bool kcmChanged);
     void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void resetSelection();
 
     QString m_currentConnectionPath;
     QString m_createdConnectionUuid;
     Handler *m_handler;
-    ConnectionEditorTabWidget *m_tabWidget;
     QTimer *m_timer;
-    Ui::KCMForm *m_ui;
-    QQuickView *m_quickView;
+
+    ConnectionSetting *m_connectionSetting = nullptr;
 };
 
 #endif

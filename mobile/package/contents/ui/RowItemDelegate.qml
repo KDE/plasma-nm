@@ -112,9 +112,12 @@ Kirigami.SwipeListItem {
                 id: connectionPasswordFieldField
                 securityType: SecurityType
                 height: parent.height
+                onAcceptableInputChanged: {
+                    connectionPasswordFieldButton.enabled = acceptableInput
+                }
             }
 
-            PlasmaComponents.Button{
+            Controls.Button{
                 id: connectionPasswordFieldButton
 
                 anchors.left: connectionPasswordFieldField.right

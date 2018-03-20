@@ -40,7 +40,7 @@ target_link_libraries(plasmanm_editor
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
-    target_link_libraries(plasmanm_editor PUBLIC KF5::ModemManagerQt)
+    target_link_libraries(plasmanm_editor KF5::ModemManagerQt)
 endif()
 
 

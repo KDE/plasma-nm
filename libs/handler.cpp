@@ -97,7 +97,7 @@ Handler::~Handler()
 {
 }
 
-void Handler::activateConnection(const QString& connection, const QString& device, const QString& specificObject)
+void Handler::activateConnection(const QString &connection, const QString &device, const QString &specificObject)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
@@ -325,7 +325,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     settings.clear();
 }
 
-void Handler::addConnection(const NMVariantMapMap& map)
+void Handler::addConnection(const NMVariantMapMap &map)
 {
     QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(map);
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
@@ -334,7 +334,7 @@ void Handler::addConnection(const NMVariantMapMap& map)
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
-void Handler::deactivateConnection(const QString& connection, const QString& device)
+void Handler::deactivateConnection(const QString &connection, const QString &device)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
@@ -465,7 +465,7 @@ void Handler::enableWwan(bool enable)
     NetworkManager::setWwanEnabled(enable);
 }
 
-void Handler::removeConnection(const QString& connection)
+void Handler::removeConnection(const QString &connection)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
@@ -489,7 +489,7 @@ void Handler::removeConnection(const QString& connection)
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
-void Handler::updateConnection(const NetworkManager::Connection::Ptr& connection, const NMVariantMapMap& map)
+void Handler::updateConnection(const NetworkManager::Connection::Ptr &connection, const NMVariantMapMap &map)
 {
     QDBusPendingReply<> reply = connection->update(map);
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
@@ -740,7 +740,7 @@ void Handler::secretAgentError(const QString &connectionPath, const QString &mes
     emit connectionActivationFailed(connectionPath, message);
 }
 
-void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
+void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
 {
     QDBusPendingReply<> reply = *watcher;
     if (reply.isError() || !reply.isValid()) {

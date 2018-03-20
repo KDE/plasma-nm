@@ -19,10 +19,11 @@ target_link_libraries(plasmanm_internal
     KF5::Service
     KF5::Wallet
     KF5::WindowSystem
+    ${NETWORKMANAGER_LIBRARIES}
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
-    target_link_libraries(plasmanm_internal PUBLIC KF5::ModemManagerQt)
+    target_link_libraries(plasmanm_internal KF5::ModemManagerQt)
 endif()
 
 install(TARGETS plasmanm_internal ${INSTALL_TARGETS_DEFAULT_ARGS})

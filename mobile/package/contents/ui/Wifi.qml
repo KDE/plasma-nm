@@ -149,6 +149,7 @@ Kirigami.Page {
             width: parent.width
             PlasmaComponents.Button {
                 text: 'Save'
+                enabled: connectionEditorDialogContent.enabledSaving
                 onClicked:{
                     connectionEditorDialogContent.save()
                     connectionEditorDialog.close()

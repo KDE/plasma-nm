@@ -26,8 +26,8 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 Layouts.ColumnLayout {
     id:securitySectionView
-    property var securityMap: {}
-    property var enabledSave: false
+    property var securityMap: ({})
+    property var enabledSave: true
     width: parent.width
 
     Column {

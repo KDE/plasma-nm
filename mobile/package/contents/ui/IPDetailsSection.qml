@@ -30,7 +30,10 @@ ColumnLayout {
     property alias gateway: manualIPgateway.text
     property alias prefix: manualIPprefix.text
     property alias dns: manualIPdns.text
-    property bool enabledSave: false
+    property bool enabledSave: (ipMethodComb.currentIndex == 0 || (
+                                ipMethodComb.currentIndex == 1 && manualIPaddress.acceptableInput
+                                && manualIPgateway.acceptableInput && manualIPprefix.acceptableInput
+                                && manualIPdns.acceptableInput ))
 
     spacing: units.gridUnit
 
@@ -60,7 +63,7 @@ ColumnLayout {
         id: manualIPSettings
         Layout.fillWidth: true
 
-        PlasmaComponents.Label {
+        Controls.Label {
             text: i18n("IP Address")
         }
 
@@ -68,9 +71,13 @@ ColumnLayout {
             id: manualIPaddress
             placeholderText: "193.168.1.128"
             text: address
+            //inputMask: "000.000.000.000;_"
+            validator: RegExpValidator{
+                regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/
+            }
         }
 
-        PlasmaComponents.Label {
+        Controls.Label {
             text: i18n("Gateway")
         }
 
@@ -78,9 +85,12 @@ ColumnLayout {
             id: manualIPgateway
             placeholderText: "192.168.1.1"
             text: gateway
+            validator: RegExpValidator{
+                regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/
+            }
         }
 
-        PlasmaComponents.Label {
+        Controls.Label {
             text: i18n("Network prefix length")
         }
 
@@ -88,9 +98,10 @@ ColumnLayout {
             id: manualIPprefix
             placeholderText: "24"
             text: prefix
+            validator: IntValidator { bottom: 1; top: 32; }
         }
 
-        PlasmaComponents.Label {
+        Controls.Label {
             text: i18n("DNS")
         }
 
@@ -98,6 +109,9 @@ ColumnLayout {
             id: manualIPdns
             placeholderText: "8.8.8.8"
             text: dns
+            validator: RegExpValidator{
+                regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/
+            }
         }
     }
 
@@ -105,7 +119,7 @@ ColumnLayout {
         State {
             name: "Automatic"
             PropertyChanges{ target: manualIPSettings; visible : false }
-            PropertyChanges{ target: ipmain; ipmap : {"method":"auto"}}
+            PropertyChanges{ target: ipmain; ipmap : {"method":"auto"} }
         },
 
         State {

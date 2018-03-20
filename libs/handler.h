@@ -1,5 +1,5 @@
 /*
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2018 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -28,11 +28,9 @@
 #include <ModemManagerQt/GenericTypes>
 #endif
 
-
 class Q_DECL_EXPORT Handler : public QObject
 {
-Q_OBJECT
-
+    Q_OBJECT
 public:
     enum HandlerAction {
         ActivateConnection,
@@ -44,17 +42,16 @@ public:
         UpdateConnection
     };
 
-    explicit Handler(QObject* parent = 0);
+    explicit Handler(QObject *parent = 0);
     virtual ~Handler();
 
-public Q_SLOTS:
     /**
      * Activates given connection
      * @connection - d-bus path of the connection you want to activate
      * @device - d-bus path of the device where the connection should be activated
      * @specificParameter - d-bus path of the specific object you want to use for this activation, i.e access point
      */
-    void activateConnection(const QString &connection, const QString &device, const QString &specificParameter);
+    Q_INVOKABLE void activateConnection(const QString &connection, const QString &device, const QString &specificParameter);
     /**
      * Adds and activates a new wireless connection
      * @device - d-bus path of the wireless device where the connection should be activated
@@ -65,39 +62,39 @@ public Q_SLOTS:
      * Works automatically for wireless connections with WEP/WPA security, for wireless connections with WPA/WPA
      * it will open the connection editor for advanced configuration.
      * */
-    void addAndActivateConnection(const QString &device, const QString &specificParameter, const QString &password = QString());
+    Q_INVOKABLE void addAndActivateConnection(const QString &device, const QString &specificParameter, const QString &password = QString());
     /**
      * Adds a new connection
      * @map - NMVariantMapMap with connection settings
      */
-    void addConnection(const NMVariantMapMap &map);
+    Q_INVOKABLE void addConnection(const NMVariantMapMap &map);
     /**
      * Deactivates given connection
      * @connection - d-bus path of the connection you want to deactivate
      * @device - d-bus path of the connection where the connection is activated
      */
-    void deactivateConnection(const QString &connection, const QString &device);
+   Q_INVOKABLE  void deactivateConnection(const QString &connection, const QString &device);
     /**
      * Disconnects all connections
      */
-    void disconnectAll();
-    void enableAirplaneMode(bool enable);
-    void enableNetworking(bool enable);
-    void enableWireless(bool enable);
-    void enableWwan(bool enable);
+    Q_INVOKABLE void disconnectAll();
+    Q_INVOKABLE void enableAirplaneMode(bool enable);
+    Q_INVOKABLE void enableNetworking(bool enable);
+    Q_INVOKABLE void enableWireless(bool enable);
+    Q_INVOKABLE void enableWwan(bool enable);
 
     /**
      * Removes given connection
      * @connection - d-bus path of the connection you want to edit
      */
-    void removeConnection(const QString & connection);
+    Q_INVOKABLE void removeConnection(const QString & connection);
     /**
      * Updates given connection
      * @connection - connection which should be updated
      * @map - NMVariantMapMap with new connection settings
      */
-    void updateConnection(const NetworkManager::Connection::Ptr &connection, const NMVariantMapMap &map);
-    void requestScan();
+    Q_INVOKABLE void updateConnection(const NetworkManager::Connection::Ptr &connection, const NMVariantMapMap &map);
+    Q_INVOKABLE void requestScan();
 
 private Q_SLOTS:
     void initKdedModule();

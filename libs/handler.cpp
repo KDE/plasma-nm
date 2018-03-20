@@ -66,17 +66,17 @@ Handler::Handler(QObject *parent)
 {
     initKdedModule();
     QDBusConnection::sessionBus().connect(QStringLiteral(AGENT_SERVICE),
-                                            QStringLiteral(AGENT_PATH),
-                                            QStringLiteral(AGENT_IFACE),
-                                            QStringLiteral("registered"),
-                                            this, SLOT(initKdedModule()));
+                                          QStringLiteral(AGENT_PATH),
+                                          QStringLiteral(AGENT_IFACE),
+                                          QStringLiteral("registered"),
+                                          this, SLOT(initKdedModule()));
 }
 
 Handler::~Handler()
 {
 }
 
-void Handler::activateConnection(const QString& connection, const QString& device, const QString& specificObject)
+void Handler::activateConnection(const QString &connection, const QString &device, const QString &specificObject)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
@@ -135,11 +135,11 @@ void Handler::activateConnection(const QString& connection, const QString& devic
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
-void Handler::addAndActivateConnection(const QString& device, const QString& specificObject, const QString& password)
+void Handler::addAndActivateConnection(const QString &device, const QString &specificObject, const QString &password)
 {
     NetworkManager::AccessPoint::Ptr ap;
     NetworkManager::WirelessDevice::Ptr wifiDev;
-    Q_FOREACH (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+    foreach (const NetworkManager::Device::Ptr &dev, NetworkManager::networkInterfaces()) {
         if (dev->type() == NetworkManager::Device::Wifi) {
             wifiDev = dev.objectCast<NetworkManager::WirelessDevice>();
             ap = wifiDev->findAccessPoint(specificObject);
@@ -235,7 +235,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
     settings.clear();
 }
 
-void Handler::addConnection(const NMVariantMapMap& map)
+void Handler::addConnection(const NMVariantMapMap &map)
 {
     QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(map);
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
@@ -244,7 +244,7 @@ void Handler::addConnection(const NMVariantMapMap& map)
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
-void Handler::deactivateConnection(const QString& connection, const QString& device)
+void Handler::deactivateConnection(const QString &connection, const QString &device)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
@@ -254,7 +254,7 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
     }
 
     QDBusPendingReply<> reply;
-    Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+    foreach (const NetworkManager::ActiveConnection::Ptr &active, NetworkManager::activeConnections()) {
         if (active->uuid() == con->uuid() && ((!active->devices().isEmpty() && active->devices().first() == device) ||
                                                active->vpn())) {
             if (active->vpn()) {
@@ -275,7 +275,7 @@ void Handler::deactivateConnection(const QString& connection, const QString& dev
 
 void Handler::disconnectAll()
 {
-    Q_FOREACH (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+    foreach (const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
         device->disconnectInterface();
     }
 }
@@ -310,7 +310,7 @@ void Handler::enableBluetooth(bool enable)
         [this, enable] (QDBusPendingCallWatcher *watcher) {
             QDBusPendingReply<QMap<QDBusObjectPath, NMVariantMapMap> > reply = *watcher;
             if (reply.isValid()) {
-                Q_FOREACH (const QDBusObjectPath &path, reply.value().keys()) {
+                foreach (const QDBusObjectPath &path, reply.value().keys()) {
                     const QString objPath = path.path();
                     qCDebug(PLASMA_NM) << "inspecting path" << objPath;
                     const QStringList interfaces = reply.value().value(path).keys();
@@ -372,7 +372,7 @@ void Handler::enableWwan(bool enable)
     NetworkManager::setWwanEnabled(enable);
 }
 
-void Handler::removeConnection(const QString& connection)
+void Handler::removeConnection(const QString &connection)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
@@ -382,7 +382,7 @@ void Handler::removeConnection(const QString& connection)
     }
 
     // Remove slave connections
-    Q_FOREACH (const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
+    foreach (const NetworkManager::Connection::Ptr &connection, NetworkManager::listConnections()) {
         NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
         if (settings->master() == con->uuid()) {
             connection->remove();
@@ -396,7 +396,7 @@ void Handler::removeConnection(const QString& connection)
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
-void Handler::updateConnection(const NetworkManager::Connection::Ptr& connection, const NMVariantMapMap& map)
+void Handler::updateConnection(const NetworkManager::Connection::Ptr &connection, const NMVariantMapMap &map)
 {
     QDBusPendingReply<> reply = connection->update(map);
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
@@ -407,7 +407,7 @@ void Handler::updateConnection(const NetworkManager::Connection::Ptr& connection
 
 void Handler::requestScan()
 {
-    Q_FOREACH (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
+    foreach (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
             if (wifiDevice) {
@@ -429,7 +429,7 @@ void Handler::initKdedModule()
     QDBusConnection::sessionBus().send(initMsg);
 }
 
-void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
+void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
 {
     QDBusPendingReply<> reply = *watcher;
     if (reply.isError() || !reply.isValid()) {

@@ -27,12 +27,12 @@
 
 class QQuickView;
 
-class ConnectionSetting;
+class ConnectionSettings;
 
 class KCMNetworkmanagement : public KQuickAddons::ConfigModule
 {
     Q_OBJECT
-    Q_PROPERTY(QObject * connectionSetting READ connectionSetting NOTIFY connectionSettingChanged)
+    Q_PROPERTY(QObject * connectionSettings READ connectionSettings CONSTANT)
 public:
     explicit KCMNetworkmanagement(QWidget *parent = nullptr, const QVariantList &args = QVariantList());
     ~KCMNetworkmanagement() override;
@@ -42,7 +42,7 @@ public:
     Q_INVOKABLE void requestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool share);
     Q_INVOKABLE void requestExportConnection(const QString &connectionPath);
 
-    QObject *connectionSetting() const;
+    QObject *connectionSettings() const;
 
 public Q_SLOTS:
     void defaults() override;
@@ -51,9 +51,6 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void onConnectionAdded(const QString &connection);
-
-Q_SIGNALS:
-    void connectionSettingChanged();
 
 private:
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
@@ -66,7 +63,7 @@ private:
     Handler *m_handler;
     QTimer *m_timer;
 
-    ConnectionSetting *m_connectionSetting = nullptr;
+    ConnectionSettings *m_connectionSettings = nullptr;
 };
 
 #endif

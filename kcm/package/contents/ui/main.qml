@@ -17,6 +17,7 @@
     You should have received a copy of the GNU Lesser General Public
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 import "editor"
 
 import QtQuick 2.6
@@ -33,7 +34,7 @@ import org.kde.kirigami 2.9 as Kirigami
 Kirigami.ApplicationItem {
     id: root
 
-    property QtObject connectionSettingObject: kcm.connectionSetting
+    property QtObject connectionSettingsObject: kcm.connectionSettings
 
     implicitWidth: Kirigami.Units.gridUnit * 20
     implicitHeight: Kirigami.Units.gridUnit * 20
@@ -120,7 +121,6 @@ Kirigami.ApplicationItem {
 
                     QQC2.ToolTip.text: i18n("Remove selected connection")
                     QQC2.ToolTip.visible: hovered
-
                     onClicked: {
                         deleteConfirmationDialog.connectionName = connectionView.currentConnectionName
                         deleteConfirmationDialog.connectionPath = connectionView.currentConnectionPath
@@ -244,7 +244,7 @@ Kirigami.ApplicationItem {
     }
 
     function loadConnectionSetting() {
-        connectionEditor.loadConnectionSetting()
+        connectionEditor.loadConnectionSettings()
     }
 
     function deselectConnectionsInView() {

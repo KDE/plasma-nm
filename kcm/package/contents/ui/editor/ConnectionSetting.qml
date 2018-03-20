@@ -58,6 +58,9 @@ ColumnLayout {
 
             enabled: !allUsersAllowedCheckbox.checked
             text: i18n("Advanced...")
+
+            QtControls.ToolTip.text: i18n("Edit advanced permissions for this connection")
+            QtControls.ToolTip.visible: advancedPermissionsButton.hovered
         }
     }
 
@@ -74,7 +77,8 @@ ColumnLayout {
 
         Layout.fillWidth: true
 
-        model: connectionSettingObject.vpnConnections
+        enabled: autoconnectVpnCheckbox.checked
+        model: connectionSettingsObject.vpnConnections
     }
 
     RowLayout {
@@ -98,6 +102,7 @@ ColumnLayout {
             QtControls.ComboBox {
                 id: firewallZoneCombobox
 
+                model: connectionSettingsObject.firewallZones
                 Layout.fillWidth: true
             }
 
@@ -107,27 +112,39 @@ ColumnLayout {
                 Layout.fillWidth: true
 
                 value: 0
+
+                QtControls.ToolTip.text: i18n("If the connection is set to autoconnect, connections with higher priority will be preferred.\nDefaults to 0. The higher number means higher priority. An negative number can be used to \nindicate priority lower than the default.")
+                QtControls.ToolTip.visible: prioritySpinBox.hovered
             }
         }
     }
 
-    function loadSetting() {
-        if (connectionSettingObject.connectionType == PlasmaNM.Enums.Vpn) {
+    function loadSettings() {
+        if (connectionSettingsObject.connectionType == PlasmaNM.Enums.Vpn) {
             autoconnectCheckbox.enabled = false
             autoconnectVpnCheckbox.enabled = false
             prioritySpinBox.enabled = false
-            vpnListCombobox.enabled = false
         } else {
             autoconnectCheckbox.enabled = true
             autoconnectVpnCheckbox.enabled = true
             prioritySpinBox.enabled = true
-            vpnListCombobox.enabled = true
         }
 
-        autoconnectCheckbox.checked = connectionSettingObject.autoconnect
-        allUsersAllowedCheckbox.checked = !connectionSettingObject.permissions.length
-        prioritySpinBox.value = connectionSettingObject.priority
+        autoconnectCheckbox.checked = connectionSettingsObject.autoconnect
+        allUsersAllowedCheckbox.checked = !connectionSettingsObject.permissions.length
+        prioritySpinBox.value = connectionSettingsObject.priority
 
-        // TODO set firewall zone and vpn
+        if (connectionSettingsObject.zone.length) {
+            firewallZoneCombobox.currentIndex = firewallZoneCombobox.find(connectionSettingsObject.zone)
+        } else {
+            firewallZoneCombobox.currentIndex = 0 // Default
+        }
+
+        if (connectionSettingsObject.secondaryConnection.length && connectionSettingsObject.vpnConnections.length) {
+            autoconnectVpnCheckbox.checked = true
+            vpnListCombobox.currentIndex = vpnListCombobox.find(connectionSettingsObject.secondaryConnection)
+        } else {
+            autoconnectVpnCheckbox.checked = false
+        }
     }
 }

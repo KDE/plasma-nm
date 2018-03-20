@@ -131,6 +131,17 @@ Kirigami.Page {
         }
     }
 
+    contextualActions: [
+       Kirigami.Action {
+            text:"Add custom connection"
+            onTriggered: connectionEditorDialog.open()
+        },
+        Kirigami.Action {
+            text:"Create Hotspot"
+            onTriggered: showPassiveNotification("Open tethering")
+        }
+    ]
+
     PlasmaComponents.Dialog {
         id: connectionEditorDialog
         title: i18n("Connection Editor")

@@ -27,8 +27,8 @@ PlasmaExtras.ScrollArea {
     property var details
     property alias signal_strength: signalStrengthLabel.text
     property alias signal_speed: linkSpeedLabel.text
-    property alias ip_address: securityLabel.text
-    property alias security: ipAddressLabel.text
+    property alias ip_address: ipAddressLabel.text
+    property alias security: securityLabel.text
     property var map: []
 
     Column {

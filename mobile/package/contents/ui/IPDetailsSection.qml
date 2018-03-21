@@ -118,20 +118,20 @@ ColumnLayout {
     states: [
         State {
             name: "Automatic"
-            PropertyChanges{ target: manualIPSettings; visible : false }
-            PropertyChanges{ target: ipmain; ipmap : {"method":"auto"} }
+            PropertyChanges{ target: manualIPSettings; visible: false }
+            PropertyChanges{ target: ipmain; ipmap: {"method": "auto"} }
         },
 
         State {
             name:"Manual"
-            PropertyChanges { target: manualIPSettings; visible : true }
+            PropertyChanges { target: manualIPSettings; visible: true }
             PropertyChanges {
                 target: ipmain;
                 ipmap : {
-                    "method" : "manual",
-                    "address-data" : [{"address":address, "prefix":prefix}],
-                    "gateway" : gateway,
-                    "dns" : dns
+                    "method": "manual",
+                    "address-data": [{"address": address, "prefix": prefix}],
+                    "gateway": gateway,
+                    "dns": dns
                 }
             }
         }

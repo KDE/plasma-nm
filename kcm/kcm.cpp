@@ -136,55 +136,55 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const QVariantList &
 
     // Pre-select currently active primary connection and if there is none then just select
     // the very first connection
-    NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::primaryConnection();
-    if (activeConnection && activeConnection->isValid()) {
-        // Also check if the connection type is supported by KCM
-        const NetworkManager::ConnectionSettings::ConnectionType type = activeConnection->type();
-        if (UiUtils::isConnectionTypeSupported(type)) {
-            QMetaObject::invokeMethod(mainUi(), "selectConnectionInView", Q_ARG(QVariant, activeConnection->id()), Q_ARG(QVariant, activeConnection->connection()->path()));
-        }
-    }
-
-    // Select the very first connection as a fallback
-    if (!selectedConnection || !selectedConnection->isValid()) {
-        NetworkManager::Connection::List connectionList = NetworkManager::listConnections();
-        std::sort(connectionList.begin(), connectionList.end(), [] (const NetworkManager::Connection::Ptr &left, const NetworkManager::Connection::Ptr &right)
-        {
-            const QString leftName = left->settings()->id();
-            const UiUtils::SortedConnectionType leftType = UiUtils::connectionTypeToSortedType(left->settings()->connectionType());
-            const QDateTime leftDate = left->settings()->timestamp();
-
-            const QString rightName = right->settings()->id();
-            const UiUtils::SortedConnectionType rightType = UiUtils::connectionTypeToSortedType(right->settings()->connectionType());
-            const QDateTime rightDate = right->settings()->timestamp();
-
-            if (leftType < rightType) {
-                return true;
-            } else if (leftType > rightType) {
-                return false;
-            }
-
-            if (leftDate > rightDate) {
-                return true;
-            } else if (leftDate < rightDate) {
-                return false;
-            }
-
-            if (QString::localeAwareCompare(leftName, rightName) > 0) {
-                return true;
-            } else {
-                return false;
-            }
-        });
-
-        for (const NetworkManager::Connection::Ptr &connection : connectionList) {
-            const NetworkManager::ConnectionSettings::ConnectionType type = connection->settings()->connectionType();
-            if (UiUtils::isConnectionTypeSupported(type)) {
-                QMetaObject::invokeMethod(mainUi(), "selectConnectionInView", Q_ARG(QVariant, connection->settings()->id()), Q_ARG(QVariant, connection->path()));
-                break;
-            }
-        }
-    }
+//     NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::primaryConnection();
+//     if (activeConnection && activeConnection->isValid()) {
+//         // Also check if the connection type is supported by KCM
+//         const NetworkManager::ConnectionSettings::ConnectionType type = activeConnection->type();
+//         if (UiUtils::isConnectionTypeSupported(type)) {
+//             QMetaObject::invokeMethod(mainUi(), "selectConnectionInView", Q_ARG(QVariant, activeConnection->id()), Q_ARG(QVariant, activeConnection->connection()->path()));
+//         }
+//     }
+//
+//     // Select the very first connection as a fallback
+//     if (!selectedConnection || !selectedConnection->isValid()) {
+//         NetworkManager::Connection::List connectionList = NetworkManager::listConnections();
+//         std::sort(connectionList.begin(), connectionList.end(), [] (const NetworkManager::Connection::Ptr &left, const NetworkManager::Connection::Ptr &right)
+//         {
+//             const QString leftName = left->settings()->id();
+//             const UiUtils::SortedConnectionType leftType = UiUtils::connectionTypeToSortedType(left->settings()->connectionType());
+//             const QDateTime leftDate = left->settings()->timestamp();
+//
+//             const QString rightName = right->settings()->id();
+//             const UiUtils::SortedConnectionType rightType = UiUtils::connectionTypeToSortedType(right->settings()->connectionType());
+//             const QDateTime rightDate = right->settings()->timestamp();
+//
+//             if (leftType < rightType) {
+//                 return true;
+//             } else if (leftType > rightType) {
+//                 return false;
+//             }
+//
+//             if (leftDate > rightDate) {
+//                 return true;
+//             } else if (leftDate < rightDate) {
+//                 return false;
+//             }
+//
+//             if (QString::localeAwareCompare(leftName, rightName) > 0) {
+//                 return true;
+//             } else {
+//                 return false;
+//             }
+//         });
+//
+//         for (const NetworkManager::Connection::Ptr &connection : connectionList) {
+//             const NetworkManager::ConnectionSettings::ConnectionType type = connection->settings()->connectionType();
+//             if (UiUtils::isConnectionTypeSupported(type)) {
+//                 QMetaObject::invokeMethod(mainUi(), "selectConnectionInView", Q_ARG(QVariant, connection->settings()->id()), Q_ARG(QVariant, connection->path()));
+//                 break;
+//             }
+//         }
+//     }
 
     if (selectedConnection && selectedConnection->isValid()) {
         const NetworkManager::ConnectionSettings::Ptr settings = selectedConnection->settings();

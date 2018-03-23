@@ -22,62 +22,132 @@ import QtQuick 2.6
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2 as QtControls
 
-import org.kde.kirigami 2.0 // for units
+import org.kde.kirigami 2.0 as Kirigami
 
-// FIXME add horizontal scrollbar?
-Item {
-    id: connectionEditorTab
+Kirigami.ScrollablePage {
+    id: connectionEditorPage
 
-    QtControls.TextField  {
-        id: connectionNameTextField
+    title: connectionNameTextField.text
 
-        anchors.top: parent.top
+    header: MouseArea {
+        width: connectionEditorPage.width
+        height: Math.round(Kirigami.Units.gridUnit * 2.5)
+        enabled: !applicationWindow().wideScreen
 
-        hoverEnabled: true
+        Accessible.role: Accessible.Button
+        Accessible.name: i18n("Back")
+
+        onClicked: {
+            root.pageStack.currentIndex = 0
+        }
+
+        Item {
+            id: headerControls
+            anchors.fill: parent
+
+            QtControls.ToolButton {
+                id: backButton
+                anchors.fill: parent
+                anchors.margins: Kirigami.Units.smallSpacing
+                visible: !applicationWindow().wideScreen
+
+                onClicked: {
+                    root.pageStack.currentIndex = 0
+                }
+
+                RowLayout {
+                    anchors.fill: parent
+
+                    Kirigami.Icon {
+                        id: toolButtonIcon
+
+                        Layout.alignment: Qt.AlignVCenter
+                        Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                        Layout.preferredWidth: Layout.preferredHeight
+
+                        source: LayoutMirroring.enabled ? "go-next" : "go-previous"
+                    }
+
+                    QtControls.Label {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+
+                        height: toolButtonIcon.height
+                        text: connectionEditorPage.title
+                        verticalAlignment: Text.AlignVCenter
+                        elide: Text.ElideRight
+
+                        //FIXME: QtControls bug, why?
+                        Component.onCompleted: {
+                            font.bold = true
+                        }
+                    }
+                }
+            }
+
+            QtControls.Label {
+                anchors.verticalCenter: parent.verticalCenter
+                x: y
+
+                text: connectionEditorPage.title
+                elide: Text.ElideRight
+                visible: !backButton.visible
+                opacity: 0.3
+                //FIXME: QtControls bug, why?
+                Component.onCompleted: {
+                    font.bold = true
+                }
+            }
+        }
+
+        Kirigami.Separator {
+            anchors {
+                left: parent.left
+                right: parent.right
+                top: parent.bottom
+            }
+            visible: !connectionEditorPage.atYBeginning
+        }
     }
 
-    QtControls.TabBar {
-        id: tabBar
+    ColumnLayout {
+        width: connectionEditorPage.width
 
-        width: parent.width
-        anchors {
-            top: connectionNameTextField.bottom
-            topMargin: Math.round(Units.gridUnit / 2)
+        QtControls.TextField  {
+            id: connectionNameTextField
+
+            Layout.fillWidth: true
+
+            hoverEnabled: true
         }
 
-        QtControls.TabButton {
-            text: i18n("Connection")
+        QtControls.TabBar {
+            id: tabBar
+
+            Layout.fillWidth: true
+
+            QtControls.TabButton {
+                text: i18n("Connection")
+            }
+
+            // FIXME just placeholders for now
+            QtControls.TabButton {
+                text: i18n("Wireless")
+            }
+
+            QtControls.TabButton {
+                text: i18n("IP")
+            }
         }
 
-        // FIXME just placeholders for now
-        QtControls.TabButton {
-            text: i18n("Wireless")
-        }
+        StackLayout {
+            Layout.fillWidth: true
 
-        QtControls.TabButton {
-            text: i18n("Wireless security")
-        }
+            currentIndex: tabBar.currentIndex
 
-        QtControls.TabButton {
-            text: i18n("IPv4")
-        }
-
-        QtControls.TabButton {
-            text: i18n("IPv6")
-        }
-    }
-
-    StackLayout {
-        anchors {
-            horizontalCenter: parent.horizontalCenter
-            top: tabBar.bottom
-            topMargin: Math.round(Units.gridUnit / 2)
-        }
-
-        currentIndex: tabBar.currentIndex
-
-        ConnectionSetting {
-            id: connectionSetting
+            ConnectionSetting {
+                id: connectionSetting
+            }
         }
     }
 

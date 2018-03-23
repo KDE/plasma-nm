@@ -29,8 +29,11 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 Kirigami.AbstractListItem {
     id: connectionItem
 
-    checked: ConnectionPath === scrollablePage.currentConnectionPath
-    highlighted: hovered
+    Accessible.role: Accessible.ListItem
+    Accessible.name: model.Name
+
+    checked: ConnectionPath === connectionViewPage.currentConnectionPath
+    highlighted: focus
 
     signal aboutToChangeConnection(bool exportable, string name, string path)
     signal aboutToExportConnection(string path)

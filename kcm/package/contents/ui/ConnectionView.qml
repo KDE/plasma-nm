@@ -19,30 +19,109 @@
 */
 
 import QtQuick 2.6
+import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2 as QtControls
 
 import org.kde.kcm 1.0
 import org.kde.kirigami 2.3  as Kirigami
 
 Kirigami.ScrollablePage {
-    id: scrollablePage
+    id: connectionViewPage
 
     property bool currentConnectionExportable: false
     property string currentConnectionName
     property string currentConnectionPath
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    title: "Connections"
 
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
     background: Rectangle {
         color: Kirigami.Theme.backgroundColor
     }
 
+    header: Rectangle {
+        color: Kirigami.Theme.backgroundColor
+
+        width: connectionViewPage.width
+        height: Math.round(Kirigami.Units.gridUnit * 2.5)
+
+        RowLayout {
+            id: searchLayout
+
+            spacing: Kirigami.Units.smallSpacing
+            anchors {
+                fill: parent
+                margins: Kirigami.Units.smallSpacing
+            }
+
+            QtControls.TextField {
+                id: searchField
+
+                Layout.minimumHeight: Layout.maximumHeight
+                Layout.maximumHeight: Kirigami.Units.iconSizes.smallMedium + Kirigami.Units.smallSpacing * 2
+                Layout.fillWidth: true
+
+                focus: true
+                placeholderText: i18n("Type here to search connection...")
+
+                onTextChanged: {
+                    editorProxyModel.setFilterRegExp(text)
+                }
+
+                MouseArea {
+                    anchors {
+                        right: parent.right
+                        verticalCenter: parent.verticalCenter
+                        rightMargin: y
+                    }
+
+                    opacity: searchField.text.length > 0 ? 1 : 0
+                    width: Kirigami.Units.iconSizes.small
+                    height: width
+
+                    onClicked: {
+                        searchField.text = ""
+                    }
+
+                    Kirigami.Icon {
+                        anchors.fill: parent
+                        source: LayoutMirroring.enabled ? "edit-clear-rtl" : "edit-clear"
+                    }
+
+                    Behavior on opacity {
+                        OpacityAnimator {
+                            duration: Kirigami.Units.longDuration
+                            easing.type: Easing.InOutQuad
+                        }
+                    }
+                }
+            }
+        }
+
+        Kirigami.Separator {
+            visible: !connectionView.atYBeginning
+            anchors {
+                left: parent.left
+                right: parent.right
+                top: parent.bottom
+            }
+        }
+    }
+
     ListView {
-        anchors.fill: parent
+        id: connectionView
         clip: true
         model: editorProxyModel
         currentIndex: -1
         boundsBehavior: Flickable.StopAtBounds
+        activeFocusOnTab: true
+        keyNavigationWraps: true
+        Accessible.role: Accessible.List
+        Keys.onTabPressed: {
+            if (applicationWindow().wideScreen && root.pageStack.depth > 1) {
+                connectionEditor.focus = true;
+            }
+        }
 
         section {
             property: "KcmConnectionType"
@@ -62,16 +141,17 @@ Kirigami.ScrollablePage {
 
         delegate: ConnectionItemDelegate {
             onAboutToChangeConnection: {
-                // Shouldn't be problem to set this in advance
-                scrollablePage.currentConnectionExportable = exportable
-                if (kcm.needsSave) {
-                    confirmSaveDialog.connectionName = name
-                    confirmSaveDialog.connectionPath = path
-                    confirmSaveDialog.open()
-                } else {
-                    scrollablePage.currentConnectionName = name
-                    scrollablePage.currentConnectionPath = path
-                }
+//                         // Shouldn't be problem to set this in advance
+//                         connectionViewPage.currentConnectionExportable = exportable
+//                         if (kcm.needsSave) {
+//                             confirmSaveDialog.connectionName = name
+//                             confirmSaveDialog.connectionPath = path
+//                             confirmSaveDialog.open()
+//                         } else {
+                    connectionViewPage.currentConnectionName = name
+                    connectionViewPage.currentConnectionPath = path
+
+//                         }
             }
 
             onAboutToExportConnection: {
@@ -86,7 +166,72 @@ Kirigami.ScrollablePage {
         }
     }
 
+    footer: Row {
+        layoutDirection: Qt.RightToLeft
+        spacing: Kirigami.Units.smallSpacing
+        padding: Kirigami.Units.smallSpacing
+
+        QtControls.Button {
+            id: exportConnectionButton
+
+            height: Kirigami.Units.iconSizes.medium
+            width: Kirigami.Units.iconSizes.medium
+
+            enabled: connectionViewPage.currentConnectionExportable
+            icon.name: "document-export"
+
+            QtControls.ToolTip.text: i18n("Export selected connection")
+            QtControls.ToolTip.visible: exportConnectionButton.hovered
+
+            onClicked: {
+                kcm.requestExportConnection(connectionViewPage.currentConnectionPath)
+            }
+        }
+
+        QtControls.Button {
+            id: removeConnectionButton
+
+            height: Kirigami.Units.iconSizes.medium
+            width: Kirigami.Units.iconSizes.medium
+
+            enabled: connectionViewPage.currentConnectionPath && connectionViewPage.currentConnectionPath.length
+            icon.name: "list-remove"
+
+            QtControls.ToolTip.text: i18n("Remove selected connection")
+            QtControls.ToolTip.visible: removeConnectionButton.hovered
+
+            onClicked: {
+                deleteConfirmationDialog.connectionName = connectionViewPage.currentConnectionName
+                deleteConfirmationDialog.connectionPath = connectionViewPage.currentConnectionPath
+                deleteConfirmationDialog.open()
+            }
+        }
+
+        QtControls.Button {
+            id: addConnectionButton
+
+            width: Kirigami.Units.iconSizes.medium
+            height: Kirigami.Units.iconSizes.medium
+
+            icon.name: "list-add"
+
+            QtControls.ToolTip.text: i18n("Add new connection")
+            QtControls.ToolTip.visible: addConnectionButton.hovered
+
+            onClicked: {
+                addNewConnectionDialog.open()
+            }
+        }
+    }
+
     onCurrentConnectionPathChanged: {
-        kcm.selectConnection(scrollablePage.currentConnectionPath)
+        if (currentConnectionPath) {
+            if (root.pageStack.depth < 2) {
+                root.pageStack.push(connectionEditor)
+            } else {
+                root.pageStack.currentIndex = 1
+            }
+            kcm.selectConnection(connectionViewPage.currentConnectionPath)
+        }
     }
 }

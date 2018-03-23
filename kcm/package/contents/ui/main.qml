@@ -36,8 +36,13 @@ Kirigami.ApplicationItem {
 
     property QtObject connectionSettingsObject: kcm.connectionSettings
 
-    implicitWidth: Kirigami.Units.gridUnit * 20
-    implicitHeight: Kirigami.Units.gridUnit * 20
+    LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
+    LayoutMirroring.childrenInherit: true
+
+    wideScreen: width >= Kirigami.Units.gridUnit * 50
+
+    pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 25
+    pageStack.initialPage: connectionView
 
     SystemPalette {
         id: palette
@@ -146,14 +151,10 @@ Kirigami.ApplicationItem {
                 }
             }
         }
+    }
 
-        ConnectionEditor {
-            id: connectionEditor
-
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Layout.minimumWidth: childrenRect.width
-        }
+    ConnectionEditor {
+        id: connectionEditor
     }
 
     Row {

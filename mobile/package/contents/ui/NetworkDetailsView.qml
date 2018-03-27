@@ -22,8 +22,9 @@ import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.kirigami 2.2 as Kirigami
 
-PlasmaExtras.ScrollArea {
+Kirigami.ScrollablePage{
     property var details
     property alias signal_strength: signalStrengthLabel.text
     property alias signal_speed: linkSpeedLabel.text

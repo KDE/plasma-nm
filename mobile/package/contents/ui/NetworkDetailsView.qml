@@ -111,6 +111,14 @@ Kirigami.ScrollablePage{
             visible: advancedOptionsSwitch.checked
         }
     }
+    actions {
+        right: Kirigami.Action {
+            iconName: "cancel"
+            onTriggered: {
+                applicationWindow().pageStack.pop()
+            }
+        }
+    }
 
     function fillDetails() {
         var d = {}

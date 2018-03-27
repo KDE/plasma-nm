@@ -25,11 +25,14 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.2 as Kirigami
 
-Kirigami.Page {
+Kirigami.ApplicationItem {
     id: main
     objectName: "wifiMain"
-    width: units.gridUnit * 30
-    height: width * 1.5
+    //width: units.gridUnit * 30
+    //height: width * 1.5
+
+    pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 25
+    pageStack.initialPage: formLayout
 
     PlasmaNM.Handler {
         id: handler
@@ -42,6 +45,10 @@ Kirigami.Page {
             wifiSwitchButton.checked = wifiSwitchButton.enabled && enabled
         }
     }
+
+    contextDrawer: Kirigami.ContextDrawer {
+           id: contextDrawer
+       }
 
     PlasmaNM.NetworkModel {
         id: connectionModel
@@ -56,15 +63,12 @@ Kirigami.Page {
         id: formLayout
         anchors {
             fill: parent
-            margins: units.gridUnit
-            leftMargin: units.gridUnit / 2
         }
-
         RowLayout {
             id: layoutrow
             width: parent.width
 
-            PlasmaComponents.Label {
+            Controls.Label {
                 anchors.left: parent.left
                 text: i18n("Wifi")
                 Layout.fillWidth: true
@@ -79,6 +83,7 @@ Kirigami.Page {
                 }
             }
         }
+
 
         Rectangle {
             id: separator
@@ -120,87 +125,32 @@ Kirigami.Page {
                 model: mobileProxyModel
                 delegate: RowItemDelegate {}
             }
+
+
         }
 
-        PlasmaComponents.Button {
+        Controls.Button {
             id: customConnectionButton
             anchors.top: wifiarea.bottom
             anchors.topMargin:  units.gridUnit
             text: i18n("Add custom connection")
-            onClicked: connectionEditorDialog.open()
+            onClicked: {
+                applicationWindow().pageStack.push(connectionEditorDialogcomponent)
+                            //Qt.resolvedUrl("./ConnectionEditorDialog.qml"))
+            }
         }
     }
 
-    contextualActions: [
-       Kirigami.Action {
-            text:"Add custom connection"
-            onTriggered: connectionEditorDialog.open()
-        },
-        Kirigami.Action {
-            text:"Create Hotspot"
-            onTriggered: showPassiveNotification("Open tethering")
-        }
-    ]
-
-    PlasmaComponents.Dialog {
-        id: connectionEditorDialog
-        title: i18n("Connection Editor")
-        buttons: RowLayout {
-            width: parent.width
-            PlasmaComponents.Button {
-                text: 'Save'
-                enabled: connectionEditorDialogContent.enabledSaving
-                onClicked:{
-                    connectionEditorDialogContent.save()
-                    connectionEditorDialog.close()
-                }
-            }
-            PlasmaComponents.Button {
-                anchors.right: parent.right
-                text: 'Cancel'
-                onClicked: connectionEditorDialog.close()
-            }
-        }
-        content: ConnectionEditorDialog {
-            id: connectionEditorDialogContent
-            width: units.gridUnit * 22
-            height: units.gridUnit * 25
-            Component.onDestruction: {
-                console.info("Destroyed editor content")
-            }
-        }
-        Component.onDestruction: {
-            console.info("Destroyed editor")
-            connectionEditorDialogContent.destroy()
+    Component {
+        id: connectionEditorDialogcomponent
+        ConnectionEditorDialog {
         }
     }
 
-    PlasmaComponents.CommonDialog {
-        id: detailsDialog
-        titleText: i18n("Network Details")
-        buttonTexts: [i18n("Close")]
-        onButtonClicked: {
-            networkDetailsViewContent.clearDetails()
-            close()
-        }
-        content: NetworkDetailsView {
-            id: networkDetailsViewContent
-            width: units.gridUnit * 22
-            height: units.gridUnit * 25
-            Component.onDestruction: {
-                console.info("Destroyed details content")
-            }
-        }
-        Component.onDestruction: {
-            console.info("Destroyed details")
-            networkDetailsViewContent.destroy()
+    Component {
+        id: networkDetailsViewComponent
+        NetworkDetailsView {
+            id: networkDetailsViewComponentView
         }
     }
-    Component.onDestruction: {
-        console.error("Destroyed main")
-        connectionEditorDialog.destroy()
-        detailsDialog.destroy()
-        //connectionEditorDialog.connectionEditorDialogContent.destroy()
-    }
-
 }

@@ -22,39 +22,66 @@ import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.kirigami 2.2 as Kirigami
 
-PlasmaExtras.ScrollArea {
+Kirigami.ScrollablePage{
     property var details
     property var str: 0
     property var connection : ({})
     property var wirelessSettings: ({})
     property var enabledSaving: (editorIpSection.enabledSave && editorSecuritySection.enabledSave && ssidField.text)
 
+    title: i18n("Connection Editor")
+
     ColumnLayout{
         id: columnlayout
+        anchors.horizontalCenter: parent.horizontalCenter
 
-        PlasmaComponents.Label {
+        Controls.Label {
             text: i18n("SSID")
             font.weight: Font.Bold
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
-        PlasmaComponents.TextField {
+        Controls.TextField {
             id: ssidField
-            Layout.fillWidth: true
+            anchors.horizontalCenter: parent.horizontalCenter
             placeholderText: i18n("None")
         }
 
         IPDetailsSection {
             id: editorIpSection
+            width: parent.width
+            anchors.horizontalCenter: parent.horizontalCenter
         }
 
         SecuritySection {
             id: editorSecuritySection
-            //anchors.top: editorIpSection.bottom
             anchors.topMargin: units.gridUnit
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width
         }
-
     }
+
+    actions {
+        left: Kirigami.Action {
+            text: "save"
+            enabled: enabledSaving
+            onTriggered: {
+                save()
+                applicationWindow().pageStack.pop()
+            }
+        }
+        right: Kirigami.Action {
+            iconName: "cancel"
+            onTriggered: {
+                applicationWindow().pageStack.pop()
+            }
+        }
+    }
+
+
+
     function save() {
         var m = ({});
         connection["id"] = ssidField.text

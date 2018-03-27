@@ -155,20 +155,25 @@ Kirigami.SwipeListItem {
     ]
 
     function getDetails() {
-        if (ConnectionDetails)
-            networkDetailsViewContent.details = ConnectionDetails
-        if (ConnectionDetails[1] !== "") {
-            detailsDialog.titleText = ItemUniqueName
-        } else {
-            detailsDialog.titleText = i18n("Network details")
+        applicationWindow().pageStack.push(networkDetailsViewComponent)
+        if (networkDetailsViewComponent.status == Component.Ready){
+            console.info("Network view ready")
+            if (ConnectionDetails)
+                networkDetailsViewComponentView.details = ConnectionDetails
+            if (ConnectionDetails[1] !== "") {
+                detailsDialog.titleText = ItemUniqueName
+            } else {
+                detailsDialog.titleText = i18n("Network details")
+            }
+            map = handler.getConnectionSettings(ConnectionPath,"ipv4")
+            if (ConnectionState == PlasmaNM.Enums.Activated){
+                networkDetailsViewComponentView.activeMap = handler.getActiveConnectionInfo(SpecificPath)
+            }
+            //networkDetailsViewContent.map = map
+            networkDetailsViewComponentView.fillDetails()
+            //applicationWindow().pageStack.push(networkDetailsViewComponent)
+
         }
-        map = handler.getConnectionSettings(ConnectionPath,"ipv4")
-        if (ConnectionState == PlasmaNM.Enums.Activated){
-            handler.getActiveConnectionInfo(ConnectionPath)
-        }
-        networkDetailsViewContent.map = map
-        networkDetailsViewContent.fillDetails()
-        detailsDialog.open()
     }
 
     function changeState() {

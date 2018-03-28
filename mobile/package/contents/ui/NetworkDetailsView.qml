@@ -20,8 +20,6 @@
 import QtQuick 2.6
 import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.kirigami 2.2 as Kirigami
 
 Kirigami.ScrollablePage{
@@ -40,12 +38,12 @@ Kirigami.ScrollablePage{
             Row {
                 spacing: units.gridUnit / 2
 
-                PlasmaComponents.Label {
+                Controls.Label {
                     font.weight: Font.Bold
                     text: i18n("Strength:")
                 }
 
-                PlasmaComponents.Label {
+                Controls.Label {
                     id: signalStrengthLabel
                 }
             }
@@ -53,12 +51,12 @@ Kirigami.ScrollablePage{
             Row {
                 spacing: units.gridUnit / 2
 
-                PlasmaComponents.Label {
+                Controls.Label {
                     font.weight: Font.Bold
                     text: i18n("Link Speed:")
                 }
 
-                PlasmaComponents.Label {
+                Controls.Label {
                     id: linkSpeedLabel
                 }
             }
@@ -66,12 +64,12 @@ Kirigami.ScrollablePage{
             Row {
                 spacing: units.gridUnit / 2
 
-                PlasmaComponents.Label {
+                Controls.Label {
                     font.weight: Font.Bold
                     text: i18n("Security:")
                 }
 
-                PlasmaComponents.Label {
+                Controls.Label {
                     id: securityLabel
                 }
             }
@@ -79,12 +77,12 @@ Kirigami.ScrollablePage{
             Row {
                 spacing: units.gridUnit / 2
 
-                PlasmaComponents.Label {
+                Controls.Label {
                     font.weight: Font.Bold
                     text: i18n("IP Address:")
                 }
 
-                PlasmaComponents.Label {
+                Controls.Label {
                     id: ipAddressLabel
                 }
             }

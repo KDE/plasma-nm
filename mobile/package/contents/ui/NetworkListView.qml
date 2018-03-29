@@ -34,11 +34,15 @@ Kirigami.ScrollablePage  {
 
     ListView {
         id: view
+
         anchors.fill: parent
         clip: true
         width: parent.width
         currentIndex: -1
         boundsBehavior: Flickable.StopAtBounds
+        header: Text {
+            text: "Available networks"
+        }
         model: mobileProxyModel
         delegate: RowItemDelegate {}
     }

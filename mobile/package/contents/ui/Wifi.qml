@@ -28,11 +28,10 @@ import org.kde.kirigami 2.2 as Kirigami
 Kirigami.ApplicationItem {
     id: main
     objectName: "wifiMain"
-    //width: units.gridUnit * 30
-    //height: width * 1.5
 
     pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 25
     pageStack.initialPage: formLayout
+    anchors.fill: parent
 
     PlasmaNM.Handler {
         id: handler
@@ -47,8 +46,8 @@ Kirigami.ApplicationItem {
     }
 
     contextDrawer: Kirigami.ContextDrawer {
-           id: contextDrawer
-       }
+        id: contextDrawer
+    }
 
     PlasmaNM.NetworkModel {
         id: connectionModel
@@ -59,12 +58,11 @@ Kirigami.ApplicationItem {
         sourceModel: connectionModel
     }
 
-    Item {
+    Kirigami.ScrollablePage  {
         id: formLayout
-        anchors {
-            fill: parent
-        }
-        RowLayout {
+        anchors.fill: parent
+
+        header: RowLayout {
             id: layoutrow
             width: parent.width
 
@@ -82,63 +80,43 @@ Kirigami.ApplicationItem {
                     handler.enableWireless(checked);
                 }
             }
-        }
 
-
-        Rectangle {
-            id: separator
-            anchors.top: layoutrow.bottom
-            width: parent.width
-            height: units.gridUnit / 8
-            border.color: "grey"
-        }
-
-        Controls.Label {
-            id: label
-            anchors {
-                left: parent.left
-                top: separator.bottom
-                topMargin: units.gridUnit
-            }
-            text: i18n("Available wifi networks")
-            font.bold: true
-            Layout.fillWidth: true
-        }
-
-        Kirigami.ScrollablePage {
-            id: wifiarea
-            anchors {
-                top: label.bottom
-                bottomMargin: units.gridUnit * 2
-                bottom: parent.bottom
-                left: parent.left
-                right: parent.right
-            }
-
-            ListView {
-                id: view
-                anchors.fill: parent
-                clip: true
+            Kirigami.Separator {
+                id: separator
+                anchors.top: layoutrow.bottom
                 width: parent.width
-                currentIndex: -1
-                boundsBehavior: Flickable.StopAtBounds
-                model: mobileProxyModel
-                delegate: RowItemDelegate {}
-            }
-
-
-        }
-
-        Controls.Button {
-            id: customConnectionButton
-            anchors.top: wifiarea.bottom
-            anchors.topMargin:  units.gridUnit
-            text: i18n("Add custom connection")
-            onClicked: {
-                applicationWindow().pageStack.push(connectionEditorDialogcomponent)
-                            //Qt.resolvedUrl("./ConnectionEditorDialog.qml"))
             }
         }
+
+        ListView {
+            id: view
+            anchors.fill: parent
+            clip: true
+            width: parent.width
+            currentIndex: -1
+            boundsBehavior: Flickable.StopAtBounds
+            model: mobileProxyModel
+            delegate: RowItemDelegate {}
+        }
+
+        actions.contextualActions: [
+
+            Kirigami.Action {
+                iconName: "edit"
+                text:"Add custom connection"
+                onTriggered: {
+                    applicationWindow().pageStack.push(connectionEditorDialogcomponent)
+                }
+            },
+
+            Kirigami.Action {
+                iconName: "edit"
+                text: "Create Hotspot"
+                onTriggered: {
+                    showPassiveNotification("Open tethering")
+                }
+            }
+        ]
     }
 
     Component {

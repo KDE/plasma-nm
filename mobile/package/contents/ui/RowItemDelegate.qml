@@ -134,12 +134,12 @@ Kirigami.SwipeListItem {
 
     actions: [
         Kirigami.Action {
-            iconName: "go-previous" // TODO better icon
+            iconName: "network-connect"
             visible: ConnectionState != PlasmaNM.Enums.Activated
             onTriggered: changeState()
         },
         Kirigami.Action {
-            iconName: "go-next" // TODO better icon
+            iconName: "network-disconnect"
             visible: ConnectionState == PlasmaNM.Enums.Activated
             onTriggered: handler.deactivateConnection(ConnectionPath, DevicePath)
         },
@@ -148,7 +148,7 @@ Kirigami.SwipeListItem {
             onTriggered: getDetails()
         },
         Kirigami.Action {
-            iconName: "remove"
+            iconName: "entry-delete"
             visible: (Uuid != "")? true : false
             onTriggered: forgetNetwork()
         }

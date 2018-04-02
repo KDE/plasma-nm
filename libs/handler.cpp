@@ -537,32 +537,20 @@ QVariantMap Handler::getActiveConnectionInfo(const QString &connection)
 
 void Handler::addConnectionFromQML(const QVariantMap &QMLmap)
 {
-    if(!QMLmap.isEmpty()){
-        NMVariantMapMap map;
-        QString id; // add UUID
-        for (QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
-            if (iter.key() == QLatin1String("connection")) {
-                QVariantMap connectionMap = iter.value().toMap();
-                id = connectionMap.value("id").toString();
-                if (!connectionMap.contains(QLatin1String("uuid"))) {
-                    connectionMap.insert(QLatin1String("uuid"), NetworkManager::ConnectionSettings::createNewUuid());
-                }
-                map.insert(QLatin1String("connection"), connectionMap);
-            } else {
-                map.insert(iter.key(), iter.value().toMap());
-            }
-        }
-        // add SSID
-        for (QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
-            if (iter.key() == QLatin1String("802-11-wireless")) {
-                QVariantMap wirelessnMap = iter.value().toMap();
-                if (!wirelessnMap.contains(QLatin1String("uuid"))) {
-                    wirelessnMap.insert(QLatin1String("ssid"), id.toUtf8());
-                }
-                map.insert(QLatin1String("802-11-wireless"), wirelessnMap);
-            }
-        }
-        // if settings are manual, convert dns to uint32
+    if (!QMLmap.isEmpty()) {
+        NetworkManager::WirelessSetting::Ptr wirelessSettings = NetworkManager::WirelessSetting::Ptr(new NetworkManager::WirelessSetting());
+        wirelessSettings->setSsid(QMLmap.value(QLatin1String("id")).toString().toUtf8());
+        wirelessSettings->setMode(NetworkManager::WirelessSetting::Infrastructure);
+        // TODO manual IP config
+        NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(NetworkManager::ConnectionSettings::Wireless));
+        connectionSettings->setId(QMLmap.value(QLatin1String("id")).toString());
+        connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+
+        NMVariantMapMap map = connectionSettings->toMap();
+        map.insert("802-11-wireless",wirelessSettings->toMap());
+
+        qWarning() << map;
+        /* if settings are manual, convert dns to uint32
         for (QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
             if (iter.key() == QLatin1String("ipv4")) {
                 QVariantMap ipv4Map = iter.value().toMap();
@@ -575,9 +563,7 @@ void Handler::addConnectionFromQML(const QVariantMap &QMLmap)
                 }
                 map.insert(QLatin1String("ipv4"), ipv4Map);
             }
-        }
-
-        qWarning() << map;
+        }*/
         this->addConnection(map);
     }
 }

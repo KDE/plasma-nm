@@ -28,7 +28,6 @@ Kirigami.ScrollablePage{
     property var details
     property var str: 0
     property var connection : ({})
-    property var wirelessSettings: ({})
     property var enabledSaving: (editorIpSection.enabledSave && editorSecuritySection.enabledSave && ssidField.text)
 
     title: i18n("Connection Editor")
@@ -65,7 +64,7 @@ Kirigami.ScrollablePage{
 
     actions {
         left: Kirigami.Action {
-            text: "save"
+            iconName: "dialog-ok"
             enabled: enabledSaving
             onTriggered: {
                 save()
@@ -73,7 +72,7 @@ Kirigami.ScrollablePage{
             }
         }
         right: Kirigami.Action {
-            iconName: "cancel"
+            iconName: "dialog-cancel"
             onTriggered: {
                 applicationWindow().pageStack.pop()
             }
@@ -83,14 +82,10 @@ Kirigami.ScrollablePage{
 
 
     function save() {
-        var m = ({});
+        connection = editorIpSection.ipmap
         connection["id"] = ssidField.text
-        connection["type"] = "802-11-wireless"
-        wirelessSettings["mode"] = "infrastructure"
-        m["connection"] = connection
-        m["ipv4"] = editorIpSection.ipmap
-        m["802-11-wireless"] = wirelessSettings
-        handler.addConnectionFromQML(m)
+        connection["mode"] = "infrastructure"
+        handler.addConnectionFromQML(connection)
         console.info('Connection saved '+ connection["id"])
     }
 }

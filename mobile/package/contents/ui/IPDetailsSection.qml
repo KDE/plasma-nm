@@ -129,7 +129,8 @@ ColumnLayout {
                 target: ipmain;
                 ipmap : {
                     "method": "manual",
-                    "address-data": [{"address": address, "prefix": prefix}],
+                    "address": address,
+                    "prefix": prefix,
                     "gateway": gateway,
                     "dns": dns
                 }

@@ -133,6 +133,11 @@ Kirigami.ScrollablePage{
             security = d['Security type']
         if (d['Connection speed'])
             signal_speed = d['Connection speed']
+
+        IPDetailsSection.address = activeMap["address"]
+        IPDetailsSection.dns = activeMap["dns"]
+        IPDetailsSection.prefix = activeMap["prefix"]
+        IPDetailsSection.gateway = activeMap["gateway"]
     }
     function clearDetails() {
         signal_speed = signal_strength = ip_address = 0

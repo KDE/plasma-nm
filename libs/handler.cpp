@@ -526,13 +526,23 @@ QVariantMap Handler::getActiveConnectionInfo(const QString &connection)
 {
     if (connection.isEmpty())
         return QVariantMap();
-    NetworkManager::ActiveConnection::Ptr con = NetworkManager::findActiveConnection(connection);
-    if(!con){
+    NetworkManager::ActiveConnection::Ptr activeCon;
+    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
+    Q_FOREACH (const NetworkManager::ActiveConnection::Ptr &active, NetworkManager::activeConnections()) {
+        if (active->uuid() == con->uuid())
+            activeCon = active;
+    }
+    if(!activeCon){
         qWarning(PLASMA_NM) << "Active" << connection << "not found";
         return QVariantMap();
     }
-    qWarning(PLASMA_NM) << "Active" << con->ipV4Config().addresses().first().ip().toString();
-    return QVariantMap();
+    QVariantMap map;
+    map.insert("address",QVariant(activeCon->ipV4Config().addresses().first().ip().toString()));
+    map.insert("prefix",QVariant(activeCon->ipV4Config().addresses().first().netmask().toString()));
+    map.insert("gateway",QVariant(activeCon->ipV4Config().gateway()));
+    map.insert("dns",QVariant(activeCon->ipV4Config().nameservers().first().toString()));
+    //qWarning() << map;
+    return map;
 }
 
 void Handler::addConnectionFromQML(const QVariantMap &QMLmap)

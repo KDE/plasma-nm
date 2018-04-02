@@ -80,7 +80,7 @@ Kirigami.SwipeListItem {
             visible: running
         }
 
-        PlasmaComponents.Label {
+        Controls.Label {
             id: connectionNameLabel
 
             anchors {
@@ -110,8 +110,9 @@ Kirigami.SwipeListItem {
 
             PasswordField{
                 id: connectionPasswordFieldField
+                anchors.verticalCenter: parent.verticalCenter
+                height: units.gridUnit * 2
                 securityType: SecurityType
-                height: parent.height
                 onAcceptableInputChanged: {
                     connectionPasswordFieldButton.enabled = acceptableInput
                 }
@@ -158,6 +159,7 @@ Kirigami.SwipeListItem {
         applicationWindow().pageStack.push(networkDetailsViewComponent)
         if (networkDetailsViewComponent.status == Component.Ready){
             console.info("Network view ready")
+            //handler.getActiveConnectionInfo(ConnectionPath)
             if (ConnectionDetails)
                 networkDetailsViewComponentView.details = ConnectionDetails
             if (ConnectionDetails[1] !== "") {
@@ -167,7 +169,7 @@ Kirigami.SwipeListItem {
             }
             map = handler.getConnectionSettings(ConnectionPath,"ipv4")
             if (ConnectionState == PlasmaNM.Enums.Activated){
-                networkDetailsViewComponentView.activeMap = handler.getActiveConnectionInfo(SpecificPath)
+                networkDetailsViewComponentView.activeMap = handler.getActiveConnectionInfo(ConnectionPath)
             }
             //networkDetailsViewContent.map = map
             networkDetailsViewComponentView.fillDetails()

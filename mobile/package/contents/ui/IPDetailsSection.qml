@@ -34,6 +34,7 @@ ColumnLayout {
                                 ipMethodComb.currentIndex == 1 && manualIPaddress.acceptableInput
                                 && manualIPgateway.acceptableInput && manualIPprefix.acceptableInput
                                 && manualIPdns.acceptableInput ))
+    property var ipRegex:  /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/
 
     spacing: units.gridUnit
 
@@ -71,9 +72,8 @@ ColumnLayout {
             id: manualIPaddress
             placeholderText: "193.168.1.128"
             text: address
-            //inputMask: "000.000.000.000;_"
-            validator: RegExpValidator{
-                regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/
+            validator: RegExpValidator {
+                regExp: ipRegex
             }
         }
 
@@ -85,8 +85,8 @@ ColumnLayout {
             id: manualIPgateway
             placeholderText: "192.168.1.1"
             text: gateway
-            validator: RegExpValidator{
-                regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/
+            validator: RegExpValidator {
+                regExp: ipRegex
             }
         }
 
@@ -96,9 +96,11 @@ ColumnLayout {
 
         Controls.TextField {
             id: manualIPprefix
-            placeholderText: "24"
+            placeholderText: "255.255.255.0"
             text: prefix
-            validator: IntValidator { bottom: 1; top: 32; }
+            validator: RegExpValidator {
+                regExp: ipRegex
+            }
         }
 
         Controls.Label {
@@ -109,8 +111,8 @@ ColumnLayout {
             id: manualIPdns
             placeholderText: "8.8.8.8"
             text: dns
-            validator: RegExpValidator{
-                regExp: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/
+            validator: RegExpValidator {
+                regExp: ipRegex
             }
         }
     }

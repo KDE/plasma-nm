@@ -28,6 +28,7 @@ Kirigami.ScrollablePage{
     property alias signal_speed: linkSpeedLabel.text
     property alias ip_address: ipAddressLabel.text
     property alias security: securityLabel.text
+    property var settings: ({})
     property var activeMap: ({})
 
     Column {
@@ -133,11 +134,12 @@ Kirigami.ScrollablePage{
             security = d['Security type']
         if (d['Connection speed'])
             signal_speed = d['Connection speed']
-
-        IPDetailsSection.address = activeMap["address"]
-        IPDetailsSection.dns = activeMap["dns"]
-        IPDetailsSection.prefix = activeMap["prefix"]
-        IPDetailsSection.gateway = activeMap["gateway"]
+        if (activeMap && ipMethodComb.currentIndex == 1) {
+            IPDetailsSection.address = activeMap["address"]
+            IPDetailsSection.dns = activeMap["dns"]
+            IPDetailsSection.prefix = activeMap["prefix"]
+            IPDetailsSection.gateway = activeMap["gateway"]
+        }
     }
     function clearDetails() {
         signal_speed = signal_strength = ip_address = 0

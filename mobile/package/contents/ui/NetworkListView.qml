@@ -53,7 +53,7 @@ Kirigami.ScrollablePage  {
             iconName: "edit"
             text:"Add custom connection"
             onTriggered: {
-                applicationWindow().pageStack.push(connectionEditorDialogcomponent)
+                applicationWindow().pageStack.push(connectionEditorDialogComponent)
             }
         },
 

@@ -62,7 +62,7 @@ Kirigami.ApplicationItem {
     }
 
     Component {
-        id: connectionEditorDialogcomponent
+        id: connectionEditorDialogComponent
         ConnectionEditorDialog {
         }
     }

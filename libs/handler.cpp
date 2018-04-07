@@ -36,6 +36,7 @@
 #include <NetworkManagerQt/WiredSetting>
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/ActiveConnection>
+#include <NetworkManagerQt/Ipv4Setting>
 
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/Manager>
@@ -551,29 +552,29 @@ void Handler::addConnectionFromQML(const QVariantMap &QMLmap)
         NetworkManager::WirelessSetting::Ptr wirelessSettings = NetworkManager::WirelessSetting::Ptr(new NetworkManager::WirelessSetting());
         wirelessSettings->setSsid(QMLmap.value(QLatin1String("id")).toString().toUtf8());
         wirelessSettings->setMode(NetworkManager::WirelessSetting::Infrastructure);
-        // TODO manual IP config
+
+        NetworkManager::Ipv4Setting::Ptr ipSettings = NetworkManager::Ipv4Setting::Ptr(new NetworkManager::Ipv4Setting());
+        if (QMLmap["method"] == QLatin1String("auto")) {
+            ipSettings->setMethod(NetworkManager::Ipv4Setting::ConfigMethod::Automatic);
+        } else {
+            ipSettings->setMethod(NetworkManager::Ipv4Setting::ConfigMethod::Manual);
+            NetworkManager::IpAddress ipaddr;
+            ipaddr.setIp(QHostAddress(QMLmap["address"].toString()));
+            ipaddr.setPrefixLength(QMLmap["prefix"].toInt());
+            ipaddr.setGateway(QHostAddress(QMLmap["gateway"].toString()));
+            ipSettings->setAddresses(QList<NetworkManager::IpAddress>({ipaddr}));
+            ipSettings->setDns(QList<QHostAddress>({QHostAddress(QMLmap["dns"].toString())}));
+        }
+
         NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(NetworkManager::ConnectionSettings::Wireless));
         connectionSettings->setId(QMLmap.value(QLatin1String("id")).toString());
         connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
 
         NMVariantMapMap map = connectionSettings->toMap();
         map.insert("802-11-wireless",wirelessSettings->toMap());
+        map.insert("ipv4",ipSettings->toMap());
 
-        qWarning() << map;
-        /* if settings are manual, convert dns to uint32
-        for (QVariantMap::const_iterator iter = QMLmap.begin(); iter != QMLmap.end(); ++iter) {
-            if (iter.key() == QLatin1String("ipv4")) {
-                QVariantMap ipv4Map = iter.value().toMap();
-                if (ipv4Map.value(QLatin1String("method")).toString() == QLatin1String("manual")) {
-                    QString dns = ipv4Map.value(QLatin1String("dns")).toString();
-                    UIntList list;
-                    list.append(QHostAddress(dns).toIPv4Address());
-                    qWarning() << dns << list;
-                    ipv4Map.insert(QLatin1String("dns"),QVariant::fromValue<UIntList>(list));
-                }
-                map.insert(QLatin1String("ipv4"), ipv4Map);
-            }
-        }*/
+        //qWarning() << map;
         this->addConnection(map);
     }
 }

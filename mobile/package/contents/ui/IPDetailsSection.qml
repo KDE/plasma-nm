@@ -40,7 +40,7 @@ ColumnLayout {
 
     ColumnLayout {
 
-        PlasmaComponents.Label {
+        Controls.Label {
             anchors.left: parent.left
             text: i18n("IP settings")
             font.weight: Font.Bold
@@ -96,11 +96,9 @@ ColumnLayout {
 
         Controls.TextField {
             id: manualIPprefix
-            placeholderText: "255.255.255.0"
+            placeholderText: "32"
             text: prefix
-            validator: RegExpValidator {
-                regExp: ipRegex
-            }
+            validator: IntValidator { bottom: 1; top: 32; }
         }
 
         Controls.Label {

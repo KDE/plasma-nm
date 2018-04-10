@@ -54,6 +54,7 @@ Kirigami.ApplicationItem {
     PlasmaNM.MobileProxyModel {
         id: mobileProxyModel
         sourceModel: connectionModel
+        showSavedMode: false
     }
 
     NetworkListView{

@@ -36,6 +36,14 @@ MobileProxyModel::~MobileProxyModel()
 {
 }
 
+void MobileProxyModel::setShowSavedMode(bool mode){
+    _showSavedMode = mode;
+}
+
+bool MobileProxyModel::showSavedMode() const{
+    return _showSavedMode;
+}
+
 bool MobileProxyModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
 {
     const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
@@ -48,13 +56,15 @@ bool MobileProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
     }
 
     const NetworkManager::ConnectionSettings::ConnectionType type = (NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(index, NetworkModel::TypeRole).toUInt();
-    if (type != NetworkManager::ConnectionSettings::Wireless) {
-        return false;
+    if (type == NetworkManager::ConnectionSettings::Wireless) {
+        NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
+        if (showSavedMode()) {
+            return itemType == NetworkModelItem::UnavailableConnection;
+        } else {
+            return itemType >= NetworkModelItem::AvailableConnection;
+        }
     }
-
-    // TODO add an option to show already configured connections
-    NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
-    return itemType > NetworkModelItem::UnavailableConnection;
+    return false;
 }
 
 bool MobileProxyModel::lessThan(const QModelIndex& left, const QModelIndex& right) const

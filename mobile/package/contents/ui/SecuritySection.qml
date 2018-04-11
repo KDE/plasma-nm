@@ -20,14 +20,13 @@
 import QtQuick 2.6
 import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2 as Layouts
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 Layouts.ColumnLayout {
     id:securitySectionView
     property var securityMap: ({})
-    property var enabledSave: true
+    property var enabledSave: !wepWpaPasswordField.visible || (wepWpaPasswordField.visible && wepWpaPasswordField.acceptableInput)
+    property alias password: wepWpaPasswordField.text
     width: parent.width
 
     Column {
@@ -64,6 +63,9 @@ Layouts.ColumnLayout {
                     securityCombobox.currentIndex = 0
                 }
             }
+            onCurrentIndexChanged: {
+                securitySectionView.state = securityTypesModel.get(currentIndex).type;
+            }
         }
 
         Controls.Label {
@@ -83,6 +85,7 @@ Layouts.ColumnLayout {
                 id: wepWpaPasswordField
                 width: parent.width
                 securityType: securityTypesModel.get(securityCombobox.currentIndex).type
+
             }
         }
     }
@@ -99,6 +102,36 @@ Layouts.ColumnLayout {
                 id: authComboBox
                 model: [i18n("TLS"), i18n("LEAP"), i18n("FAST"), i18n("Tunneled TLS"), i18n("Protected EAP")] // more - SIM, AKA, PWD ?
             }
+            Controls.Label{
+                text: "----Not yet implemented----"
+                color: "red"
+            }
         }
     }
+
+    states: [
+        State {
+            name: PlasmaNM.Enums.NoneSecurity
+            PropertyChanges {
+                target: securitySectionView; securityMap: {"type" : PlasmaNM.Enums.NoneSecurity }
+            }
+        },
+        State {
+            name: PlasmaNM.Enums.StaticWep
+            PropertyChanges {
+                target: securitySectionView; securityMap: { "type" : PlasmaNM.Enums.StaticWep,
+                                                            "password" : password
+                }
+            }
+        },
+        State {
+            name: PlasmaNM.Enums.Wpa2Psk
+            PropertyChanges {
+                target: securitySectionView; securityMap: { "type" : PlasmaNM.Enums.Wpa2Psk,
+                                                            "password" : password
+                }
+            }
+        }
+
+    ]
 }

@@ -85,6 +85,8 @@ Kirigami.ScrollablePage{
         connection = editorIpSection.ipmap
         connection["id"] = ssidField.text
         connection["mode"] = "infrastructure"
+        connection["802-11-wireless-security"] = editorSecuritySection.securityMap
+        console.info(connection)
         handler.addConnectionFromQML(connection)
         console.info('Connection saved '+ connection["id"])
     }

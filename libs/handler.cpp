@@ -548,7 +548,10 @@ QVariantMap Handler::getActiveConnectionInfo(const QString &connection)
 
 void Handler::addConnectionFromQML(const QVariantMap &QMLmap)
 {
-    if (!QMLmap.isEmpty()) {
+    if (QMLmap.isEmpty())
+        return;
+
+    if (QMLmap["mode"].toString() == "infrastructure") {
         NetworkManager::WirelessSetting::Ptr wirelessSettings = NetworkManager::WirelessSetting::Ptr(new NetworkManager::WirelessSetting());
         wirelessSettings->setSsid(QMLmap.value(QLatin1String("id")).toString().toUtf8());
         wirelessSettings->setMode(NetworkManager::WirelessSetting::Infrastructure);
@@ -574,7 +577,28 @@ void Handler::addConnectionFromQML(const QVariantMap &QMLmap)
         map.insert("802-11-wireless",wirelessSettings->toMap());
         map.insert("ipv4",ipSettings->toMap());
 
-        //qWarning() << map;
+        if (QMLmap.contains("802-11-wireless-security")) {
+            QVariantMap securMap = QMLmap["802-11-wireless-security"].toMap();
+            int type = securMap["type"].toInt();
+            if (!type == NetworkManager::NoneSecurity) {
+                NetworkManager::WirelessSecuritySetting::Ptr securitySettings = NetworkManager::WirelessSecuritySetting::Ptr(new NetworkManager::WirelessSecuritySetting());
+                if (type == NetworkManager::Wpa2Psk ) {
+                    securitySettings->setKeyMgmt(NetworkManager::WirelessSecuritySetting::KeyMgmt::WpaPsk);
+                    securitySettings->setAuthAlg(NetworkManager::WirelessSecuritySetting::AuthAlg::Open);
+                    securitySettings->setPskFlags(NetworkManager::Setting::SecretFlagType::AgentOwned);
+                    securitySettings->setPsk(securMap["password"].toString());
+                }
+                if (type == NetworkManager::StaticWep) {
+                    securitySettings->setKeyMgmt(NetworkManager::WirelessSecuritySetting::KeyMgmt::Wep);
+                    securitySettings->setAuthAlg(NetworkManager::WirelessSecuritySetting::AuthAlg::Open);
+                    securitySettings->setWepKeyType(NetworkManager::WirelessSecuritySetting::WepKeyType::Hex);
+                    securitySettings->setWepKeyFlags(NetworkManager::Setting::SecretFlagType::AgentOwned);
+                    securitySettings->setWepKey0(securMap["password"].toString());
+                }
+                map.insert("802-11-wireless-security",securitySettings->toMap());
+            }
+        }
+        qWarning() << map;
         this->addConnection(map);
     }
 }

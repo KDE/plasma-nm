@@ -14,6 +14,7 @@ set(plasmanm_internal_SRCS
     debug.cpp
     handler.cpp
     uiutils.cpp
+    mobileutils.cpp
 )
 
 add_library(plasmanm_internal SHARED ${plasmanm_internal_SRCS})

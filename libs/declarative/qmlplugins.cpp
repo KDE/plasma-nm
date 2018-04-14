@@ -34,6 +34,7 @@
 #include "kcmidentitymodel.h"
 #include "networkmodel.h"
 #include "mobileproxymodel.h"
+#include "mobileutils.h"
 
 #include "handler.h"
 #include "enums.h"
@@ -66,4 +67,5 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<CreatableConnectionsModel>(uri, 0, 2, "CreatableConnectionsModel");
     // @uri org.kde.plasma.networkmanagement.MobileProxyModel
     qmlRegisterType<MobileProxyModel>(uri, 0, 2, "MobileProxyModel");
+    qmlRegisterType<MobileUtils>(uri, 0, 2, "MobileUtils");
 }

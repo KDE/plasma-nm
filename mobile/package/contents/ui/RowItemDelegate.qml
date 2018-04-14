@@ -21,42 +21,32 @@ import QtQuick 2.6
 import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.2 as Kirigami
 
 Kirigami.SwipeListItem {
-    id: listitem
 
-    height: units.gridUnit * 3
+    height: Kirigami.Units.gridUnit * 4
     enabled: true
     backgroundColor: theme.backgroundColor
 
     property var map : []
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
-                                                   (SecurityType == PlasmaNM.Enums.StaticWep ||
-                                                    SecurityType == PlasmaNM.Enums.WpaPsk ||
-                                                    SecurityType == PlasmaNM.Enums.Wpa2Psk)
+                                                    (SecurityType == PlasmaNM.Enums.StaticWep ||
+                                                     SecurityType == PlasmaNM.Enums.WpaPsk ||
+                                                     SecurityType == PlasmaNM.Enums.Wpa2Psk)
 
     onClicked: {
         changeState()
     }
 
-    Item {
+    RowLayout {
 
-        height: parent.height
-        width: parent.width
-        anchors.fill: parent
-
+        anchors.leftMargin: Kirigami.Units.largeSpacing * 4
         PlasmaCore.SvgItem {
             id: connectionSvgIcon
 
-            anchors {
-                left: parent.left
-                leftMargin: units.gridUnit
-                verticalCenter: parent.verticalCenter
-            }
-            height: units.iconSizes.big;
+            height: Kirigami.Units.iconSizes.big//units.iconSizes.big;
             width: height
             elementId: ConnectionIcon
 
@@ -65,13 +55,14 @@ Kirigami.SwipeListItem {
                 imagePath: "icons/network"
                 colorGroup: PlasmaCore.ColorScope.colorGroup
             }
+            Layout.minimumHeight: Kirigami.Units.iconSizes.smallMedium
+            Layout.minimumWidth: height
         }
 
-        PlasmaComponents.BusyIndicator {
+        Controls.BusyIndicator {
             id: connectingIndicator
 
             anchors {
-                left: parent.left
                 horizontalCenter: connectionSvgIcon.horizontalCenter
                 verticalCenter: connectionSvgIcon.verticalCenter
             }
@@ -85,50 +76,31 @@ Kirigami.SwipeListItem {
 
             anchors {
                 left: connectionSvgIcon.right
-                leftMargin: units.gridUnit
-                verticalCenter: connectionSvgIcon.verticalCenter
+                leftMargin: Kirigami.Units.gridUnit * 2
             }
             height: paintedHeight
+            visible: !connectionPasswordField.visible
             elide: Text.ElideRight
             font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
             font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false
             text: ItemUniqueName
             textFormat: Text.PlainText
         }
-
-        Item{
+        PasswordField{
             id: connectionPasswordField
-
             anchors.left: connectionNameLabel.left
-            anchors.verticalCenter: parent.verticalCenter
-            height: units.gridUnit * 1.5
+            height: units.gridUnit * 2
+            implicitWidth: Kirigami.Units.gridUnit *16
+            securityType: SecurityType
             visible: false
-
             onVisibleChanged: {
-                connectionPasswordFieldField.text = ""
+                if (visible)
+                    forceActiveFocus()
+                connectionPasswordField.text = ""
             }
-
-            PasswordField{
-                id: connectionPasswordFieldField
-                anchors.verticalCenter: parent.verticalCenter
-                height: units.gridUnit * 2
-                securityType: SecurityType
-                onAcceptableInputChanged: {
-                    connectionPasswordFieldButton.enabled = acceptableInput
-                }
-            }
-
-            Controls.Button{
-                id: connectionPasswordFieldButton
-
-                anchors.left: connectionPasswordFieldField.right
-                width: units.gridUnit * 5
-                height: parent.height
-                text: "ok" // TODO icon, size
-
-                onClicked: {
-                    handler.addAndActivateConnection(DevicePath, SpecificPath, connectionPasswordFieldField.text);
-                }
+            onAccepted: {
+                if (acceptableInput)
+                    handler.addAndActivateConnection(DevicePath, SpecificPath, connectionPasswordField.text);
             }
         }
     }
@@ -156,25 +128,17 @@ Kirigami.SwipeListItem {
     ]
 
     function getDetails() {
-        applicationWindow().pageStack.push(networkDetailsViewComponent)
+        main.path = ConnectionPath
+        applicationWindow().pageStack.push(networkDetailsViewComponent,ConnectionPath)
         if (networkDetailsViewComponent.status == Component.Ready){
             console.info("Network view ready")
-            //handler.getActiveConnectionInfo(ConnectionPath)
-            if (ConnectionDetails)
-                networkDetailsViewComponentView.details = ConnectionDetails
-            if (ConnectionDetails[1] !== "") {
-                detailsDialog.titleText = ItemUniqueName
-            } else {
-                detailsDialog.titleText = i18n("Network details")
-            }
-            map = handler.getConnectionSettings(ConnectionPath,"ipv4")
+            utils.getActiveConnectionInfo(ConnectionPath)
+            map = utils.getConnectionSettings(ConnectionPath,"ipv4")
             if (ConnectionState == PlasmaNM.Enums.Activated){
-                networkDetailsViewComponentView.activeMap = handler.getActiveConnectionInfo(ConnectionPath)
+                //networkDetailsViewComponentView.activeMap = handler.getActiveConnectionInfo(ConnectionPath)
             }
             //networkDetailsViewContent.map = map
-            networkDetailsViewComponentView.fillDetails()
-            //applicationWindow().pageStack.push(networkDetailsViewComponent)
-
+            //networkDetailsViewComponentView.fillDetails()
         }
     }
 
@@ -184,18 +148,20 @@ Kirigami.SwipeListItem {
                 if (!predictableWirelessPassword && !Uuid) {
                     handler.addAndActivateConnection(DevicePath, SpecificPath);
                 } else if (connectionPasswordField.visible) {
-                            if (connectionPasswordFieldField.text != "") {
-                                handler.addAndActivateConnection(DevicePath, SpecificPath, connectionPasswordFieldField.text);
-                                connectionPasswordField.visible = false;
-                            } else {
-                                connectionPasswordField.visible = false;
-                            }
-                        } else {
-                            handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
-                        }
+                    if (connectionPasswordField.text != "") {
+                        handler.addAndActivateConnection(DevicePath, SpecificPath, connectionPasswordFieldField.text);
+                        connectionPasswordField.visible = false;
+                    } else {
+                        connectionPasswordField.visible = false;
+                    }
+                } else {
+                    handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
+                }
+            } else{
+                //show popup
             }
         } else if (predictableWirelessPassword) {
-           connectionPasswordField.visible = true;
+            connectionPasswordField.visible = true;
         }
     }
 

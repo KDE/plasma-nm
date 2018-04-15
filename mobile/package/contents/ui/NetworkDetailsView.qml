@@ -31,6 +31,7 @@ Kirigami.ScrollablePage{
     property var settings: ({})
     property var activeMap: ({})
 
+
     Column {
         Column {
             id: staticInfo
@@ -112,7 +113,7 @@ Kirigami.ScrollablePage{
     }
     actions {
         right: Kirigami.Action {
-            iconName: "cancel"
+            iconName: "dialog-cancel"
             onTriggered: {
                 applicationWindow().pageStack.pop()
             }

@@ -51,6 +51,10 @@ Kirigami.ApplicationItem {
         id: connectionModel
     }
 
+    PlasmaNM.MobileUtils{
+        id: utils
+    }
+
     PlasmaNM.MobileProxyModel {
         id: mobileProxyModel
         sourceModel: connectionModel

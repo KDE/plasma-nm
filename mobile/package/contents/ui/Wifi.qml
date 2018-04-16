@@ -75,7 +75,6 @@ Kirigami.ApplicationItem {
     Component {
         id: networkDetailsViewComponent
         NetworkDetailsView {
-            id: networkDetailsViewComponentView
         }
     }
 }

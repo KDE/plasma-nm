@@ -118,7 +118,8 @@ Kirigami.SwipeListItem {
         },
         Kirigami.Action {
             iconName: "configure"
-            onTriggered: getDetails()
+            visible: (Uuid != "")? true : false
+            onTriggered: getConfigureDialog()
         },
         Kirigami.Action {
             iconName: "entry-delete"
@@ -127,19 +128,10 @@ Kirigami.SwipeListItem {
         }
     ]
 
-    function getDetails() {
-        main.path = ConnectionPath
-        applicationWindow().pageStack.push(networkDetailsViewComponent,ConnectionPath)
-        if (networkDetailsViewComponent.status == Component.Ready){
-            console.info("Network view ready")
-            utils.getActiveConnectionInfo(ConnectionPath)
-            map = utils.getConnectionSettings(ConnectionPath,"ipv4")
-            if (ConnectionState == PlasmaNM.Enums.Activated){
-                //networkDetailsViewComponentView.activeMap = handler.getActiveConnectionInfo(ConnectionPath)
-            }
-            //networkDetailsViewContent.map = map
-            //networkDetailsViewComponentView.fillDetails()
-        }
+    function getConfigureDialog() {
+        var item = applicationWindow().pageStack.push(networkDetailsViewComponent)
+        item.path = ConnectionPath
+        item.loadNetworkSettings()
     }
 
     function changeState() {

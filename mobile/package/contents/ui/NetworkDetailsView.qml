@@ -24,6 +24,7 @@ import org.kde.kirigami 2.2 as Kirigami
 
 Kirigami.ScrollablePage{
     property var details
+    property var path
     property alias signal_strength: signalStrengthLabel.text
     property alias signal_speed: linkSpeedLabel.text
     property alias ip_address: ipAddressLabel.text
@@ -121,7 +122,7 @@ Kirigami.ScrollablePage{
     }
 
     function fillDetails() {
-        var d = {}
+       /* var d = {}
         for (var i = 0; i < (details.length / 2); i++){
             d[details[(i * 2)]] = details[(i * 2) + 1]
         }
@@ -140,10 +141,14 @@ Kirigami.ScrollablePage{
             IPDetailsSection.dns = activeMap["dns"]
             IPDetailsSection.prefix = activeMap["prefix"]
             IPDetailsSection.gateway = activeMap["gateway"]
-        }
+        }*/
     }
-    function clearDetails() {
-        signal_speed = signal_strength = ip_address = 0
-        security = "Unknown"
+
+    function loadNetworkSettings() {
+        console.info(path);
+        settings = utils.getConnectionSettings(path,"connection");
+        detailsSecuritySection.securityMap = utils.getConnectionSettings(path,"802-11-wireless-security");
+        detailsIP.ipmap = utils.getConnectionSettings(path,"ipv4");
+        console.info(detailsIP.ipmap["method"]);
     }
 }

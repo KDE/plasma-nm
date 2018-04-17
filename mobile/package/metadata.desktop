@@ -5,6 +5,7 @@ Encoding=UTF-8
 Type=Service
 Icon=network-wireless-symbolic
 X-KDE-ServiceTypes=Active/SettingsModule
+X-KDE-Library=kcm_mobile_wifi
 X-KDE-PluginInfo-Author=Martin Kacej
 X-KDE-PluginInfo-Email=m.kacej@atlas.sk
 X-KDE-PluginInfo-Name=wifi

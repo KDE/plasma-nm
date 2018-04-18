@@ -37,11 +37,12 @@ MobileProxyModel::~MobileProxyModel()
 }
 
 void MobileProxyModel::setShowSavedMode(bool mode){
-    _showSavedMode = mode;
+    m_showSavedMode = mode;
+    emit showSavedModeChanged(mode);
 }
 
 bool MobileProxyModel::showSavedMode() const{
-    return _showSavedMode;
+    return m_showSavedMode;
 }
 
 bool MobileProxyModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const

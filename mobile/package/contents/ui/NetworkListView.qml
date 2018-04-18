@@ -42,7 +42,7 @@ Kirigami.ScrollablePage  {
         currentIndex: -1
         boundsBehavior: Flickable.StopAtBounds
         header: Controls.Label {
-            text: "Available networks"
+            text: (mobileProxyModel.showSavedMode) ? i18n("Saved networks") : i18n("Available networks")
         }
         model: mobileProxyModel
         delegate: RowItemDelegate {}
@@ -52,7 +52,7 @@ Kirigami.ScrollablePage  {
 
         Kirigami.Action {
             iconName: "edit"
-            text:"Add custom connection"
+            text: i18n("Add custom connection")
             onTriggered: {
                 applicationWindow().pageStack.push(connectionEditorDialogComponent)
             }
@@ -71,7 +71,9 @@ Kirigami.ScrollablePage  {
             checkable: true
             checked: false
             onTriggered: {
-                mobileProxyModel.showSavedMode = checked
+                mobileProxyModel.showSavedMode = !mobileProxyModel.showSavedMode
+                mobileProxyModel.clear()
+                handler.requestScan
             }
         }
     ]

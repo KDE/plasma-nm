@@ -87,8 +87,6 @@ public Q_SLOTS:
     void enableNetworking(bool enable);
     void enableWireless(bool enable);
 
-    void addConnectionFromQML(const QVariantMap &map);
-
     void enableWwan(bool enable);
 
     /**

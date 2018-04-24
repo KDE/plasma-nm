@@ -9,6 +9,7 @@ set(plasmanm_qml_plugins_SRCS
     enabledconnections.cpp
     enums.cpp
     networkstatus.cpp
+    utils.cpp
     qmlplugins.cpp
 
     models/appletproxymodel.cpp

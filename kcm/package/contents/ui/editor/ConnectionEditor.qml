@@ -23,11 +23,16 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2 as QtControls
 
 import org.kde.kirigami 2.0 as Kirigami
+import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 Kirigami.ScrollablePage {
     id: connectionEditorPage
 
     title: connectionNameTextField.text
+
+    PlasmaNM.Utils {
+        id: nmUtils
+    }
 
     header: MouseArea {
         width: connectionEditorPage.width
@@ -127,12 +132,12 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
 
             QtControls.TabButton {
-                text: i18n("Connection")
+                text: connectionSetting.settingName
             }
 
             // FIXME just placeholders for now
             QtControls.TabButton {
-                text: i18n("Wireless")
+                text: connectionSpecificSetting.item.settingName
             }
 
             QtControls.TabButton {
@@ -148,6 +153,10 @@ Kirigami.ScrollablePage {
             ConnectionSetting {
                 id: connectionSetting
             }
+
+            Loader {
+                id: connectionSpecificSetting
+            }
         }
     }
 
@@ -155,6 +164,14 @@ Kirigami.ScrollablePage {
         connectionNameTextField.text = connectionSettingsObject.id
         // Load general connection setting
         connectionSetting.loadSettings()
+
+        // Load connection specific setting
+        if (connectionSettingsObject.connectionType == PlasmaNM.Enums.Wired) {
+            connectionSpecificSetting.source = "WiredSetting.qml"
+        } else if (connectionSettingsObject.connectionType == PlasmaNM.Enums.Wireless) {
+            connectionSpecificSetting.source = "WirelessSetting.qml"
+        }
+        connectionSpecificSetting.item.loadSettings()
     }
 }
 

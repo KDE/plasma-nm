@@ -6,6 +6,7 @@ set(plasmanm_editor_SRCS
 
     settings/connectionsettings.cpp
     settings/setting.cpp
+    settings/wirelesssetting.cpp
 
     widgets/passwordfield.cpp
     widgets/settingwidget.cpp

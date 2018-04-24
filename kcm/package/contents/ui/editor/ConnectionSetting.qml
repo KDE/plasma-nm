@@ -29,6 +29,8 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 ColumnLayout {
     id: connectionSetting
 
+    property string settingName: i18n("Connection")
+
     spacing: Math.round(Units.gridUnit / 2)
 
     QtControls.CheckBox {
@@ -78,44 +80,40 @@ ColumnLayout {
         Layout.fillWidth: true
 
         enabled: autoconnectVpnCheckbox.checked
-        model: connectionSettingsObject.vpnConnections
+        model: nmUtils.vpnConnections()
     }
 
-    RowLayout {
-        ColumnLayout {
-            QtControls.Label {
-                Layout.fillHeight: true
-                Layout.alignment: Qt.AlignRight
+    GridLayout {
+        columns: 2
 
-                text: i18n("Firewall zone:")
-            }
+        QtControls.Label {
+            Layout.alignment: Qt.AlignRight
 
-            QtControls.Label {
-                Layout.fillHeight: true
-                Layout.alignment: Qt.AlignRight
-
-                text: i18n("Priority:")
-            }
+            text: i18n("Firewall zone:")
         }
 
-        ColumnLayout {
-            QtControls.ComboBox {
-                id: firewallZoneCombobox
+        QtControls.ComboBox {
+            id: firewallZoneCombobox
 
-                model: connectionSettingsObject.firewallZones
-                Layout.fillWidth: true
-            }
+            model: nmUtils.firewallZones()
+            Layout.fillWidth: true
+        }
 
-            QtControls.SpinBox {
-                id: prioritySpinBox
+        QtControls.Label {
+            Layout.alignment: Qt.AlignRight
 
-                Layout.fillWidth: true
+            text: i18n("Priority:")
+        }
 
-                value: 0
+        QtControls.SpinBox {
+            id: prioritySpinBox
 
-                QtControls.ToolTip.text: i18n("If the connection is set to autoconnect, connections with higher priority will be preferred.\nDefaults to 0. The higher number means higher priority. An negative number can be used to \nindicate priority lower than the default.")
-                QtControls.ToolTip.visible: prioritySpinBox.hovered
-            }
+            Layout.fillWidth: true
+
+            value: 0
+
+            QtControls.ToolTip.text: i18n("If the connection is set to autoconnect, connections with higher priority will be preferred.\nDefaults to 0. The higher number means higher priority. An negative number can be used to \nindicate priority lower than the default.")
+            QtControls.ToolTip.visible: prioritySpinBox.hovered
         }
     }
 

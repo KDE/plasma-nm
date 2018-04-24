@@ -17,11 +17,11 @@ class Q_DECL_EXPORT MobileUtils : public QObject
 public:
     explicit MobileUtils(QObject *parent = nullptr);
 
-signals:
-
 public Q_SLOTS:
     QVariantMap getConnectionSettings(const QString &connection, const QString &type);
     QVariantMap getActiveConnectionInfo(const QString &connection);
+    void addConnectionFromQML(const QVariantMap &QMLmap);
+    void updateConnectionFromQML(const QString &path, const QVariantMap &map);
 };
 
 #endif // MOBILEUTILS_H

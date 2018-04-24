@@ -19,19 +19,11 @@
 */
 
 #include "setting.h"
-
-class SettingPrivate
-{
-public:
-    explicit SettingPrivate(NetworkManager::Setting::SettingType type)
-        : type(type)
-        { }
-    NetworkManager::Setting::SettingType type;
-};
+#include "setting_p.h"
 
 Setting::Setting(const NetworkManager::Setting::Ptr &setting, QObject *parent)
     : QObject(parent)
-    , d_ptr(new SettingPrivate(setting->type()))
+    , d_ptr(new SettingPrivate(setting, setting->type()))
 {
 }
 

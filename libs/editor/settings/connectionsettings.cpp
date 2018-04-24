@@ -20,11 +20,7 @@
 
 #include "connectionsettings.h"
 #include "setting.h"
-
-#include <QDBusConnection>
-#include <QDBusMessage>
-#include <QDBusPendingReply>
-#include <QDBusPendingCallWatcher>
+#include "wirelesssetting.h"
 
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
@@ -43,7 +39,6 @@ public:
     int pendingReplies;
     bool valid;
     bool secretsLoaded;
-    QStringList firewallZones = {i18n("Default")};
     NMStringMap vpnConnections;
 };
 
@@ -57,15 +52,6 @@ ConnectionSettings::ConnectionSettings(const NetworkManager::ConnectionSettings:
     , d_ptr(new ConnectionSettingsPrivate())
 {
     Q_D(ConnectionSettings);
-
-    // Load list of firewall zones
-    QDBusMessage msg = QDBusMessage::createMethodCall("org.fedoraproject.FirewallD1", "/org/fedoraproject/FirewallD1",
-                                                      "org.fedoraproject.FirewallD1.zone", "getZones");
-    QDBusPendingReply<QStringList> reply = QDBusConnection::systemBus().asyncCall(msg);
-    reply.waitForFinished();
-    if (reply.isValid()) {
-        d->firewallZones += reply.value();
-    }
 
     // Load list of VPN connections
     NetworkManager::Connection::List list = NetworkManager::listConnections();
@@ -108,7 +94,9 @@ void ConnectionSettings::loadConfig(const NetworkManager::ConnectionSettings::Pt
 //         addSettingWidget(wiredWidget, i18n("Wired"));
 //         WiredSecurity *wiredSecurity = new WiredSecurity(m_connection->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>(), this);
 //         addSettingWidget(wiredSecurity, i18n("802.1x Security"));
-//     } else if (type == NetworkManager::ConnectionSettings::Wireless) {
+//     } else
+    if (settings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
+        addSetting(NetworkManager::Setting::Wireless, new WirelessSetting(d->connectionSettings->setting(NetworkManager::Setting::Wireless)));
 //         WifiConnectionWidget *wifiWidget = new WifiConnectionWidget(m_connection->setting(NetworkManager::Setting::Wireless), this);
 //         addSettingWidget(wifiWidget, i18n("Wi-Fi"));
 //         WifiSecurity *wifiSecurity = new WifiSecurity(m_connection->setting(NetworkManager::Setting::WirelessSecurity),
@@ -116,7 +104,8 @@ void ConnectionSettings::loadConfig(const NetworkManager::ConnectionSettings::Pt
 //                 this);
 //         addSettingWidget(wifiSecurity, i18n("Wi-Fi Security"));
 //         connect(wifiWidget, static_cast<void (WifiConnectionWidget::*)(const QString &)>(&WifiConnectionWidget::ssidChanged), wifiSecurity, &WifiSecurity::onSsidChanged);
-//     } else if (type == NetworkManager::ConnectionSettings::Pppoe) { // DSL
+    }
+//     else if (type == NetworkManager::ConnectionSettings::Pppoe) { // DSL
 //         PppoeWidget *pppoeWidget = new PppoeWidget(m_connection->setting(NetworkManager::Setting::Pppoe), this);
 //         addSettingWidget(pppoeWidget, i18n("DSL"));
 //         WiredConnectionWidget *wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Setting::Wired), this);
@@ -447,25 +436,11 @@ void ConnectionSettings::setPriority(int priority)
     d->connectionSettings->setAutoconnectPriority(priority);
 }
 
-QStringList ConnectionSettings::firewallZones() const
+QObject * ConnectionSettings::setting(uint type) const
 {
     Q_D(const ConnectionSettings);
 
-    return d->firewallZones;
-}
-
-QStringList ConnectionSettings::vpnConnections() const
-{
-    Q_D(const ConnectionSettings);
-
-    return d->vpnConnections.values();
-}
-
-Setting * ConnectionSettings::setting(NetworkManager::Setting::SettingType type) const
-{
-    Q_D(const ConnectionSettings);
-
-    return d->settings.value(type);
+    return d->settings.value((NetworkManager::Setting::SettingType) type);
 }
 
 QList<NetworkManager::Setting::SettingType> ConnectionSettings::settingTypes() const

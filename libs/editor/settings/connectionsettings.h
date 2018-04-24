@@ -41,9 +41,6 @@ class Q_DECL_EXPORT ConnectionSettings : public QObject
     Q_PROPERTY(QString secondaryConnection READ secondaryConnection WRITE setSecondaryConnection)
     Q_PROPERTY(QString zone READ zone WRITE setZone)
     Q_PROPERTY(int priority READ priority WRITE setPriority)
-
-    Q_PROPERTY(QStringList firewallZones READ firewallZones CONSTANT)
-    Q_PROPERTY(QStringList vpnConnections READ vpnConnections CONSTANT)
 public:
     explicit ConnectionSettings(QObject *parent = nullptr);
     ConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &settings = NetworkManager::ConnectionSettings::Ptr(), QObject *parent = nullptr);
@@ -76,10 +73,8 @@ public:
     int priority() const;
     void setPriority(int priority);
 
-    QStringList firewallZones() const;
-    QStringList vpnConnections() const;
+    Q_INVOKABLE QObject * setting(uint type) const;
 
-    Setting * setting(NetworkManager::Setting::SettingType type) const;
     QList<NetworkManager::Setting::SettingType> settingTypes() const;
     void addSetting(NetworkManager::Setting::SettingType type, Setting *setting);
 

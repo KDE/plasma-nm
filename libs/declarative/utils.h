@@ -18,41 +18,26 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_SETTING_H
-#define PLASMA_NM_SETTING_H
+#ifndef PLASMA_NM_UTILS_H
+#define PLASMA_NM_UTILS_H
 
-class QObject;
+#include <QObject>
 
-class SettingPrivate;
+#include <NetworkManagerQt/WirelessSetting>
 
-#include <NetworkManagerQt/Setting>
-
-class Q_DECL_EXPORT Setting : public QObject
+class Q_DECL_EXPORT Utils : public QObject
 {
     Q_OBJECT
 public:
-    explicit Setting(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QObject *parent = nullptr);
-    virtual ~Setting();
+    explicit Utils(QObject *parent = nullptr);
+    virtual ~Utils();
 
-//     virtual void loadConfig(const NetworkManager::Setting::Ptr &setting) = 0;
-//     virtual void loadSecrets(const NetworkManager::Setting::Ptr &setting) = 0;
-
-//     virtual QVariantMap setting() const = 0;
-
-    NetworkManager::Setting::SettingType type() const;
-
-    virtual bool isValid() const;
-
-Q_SIGNALS:
-    void changed();
-    void validityChanged(bool valid);
-
-protected:
-    SettingPrivate *d_ptr;
-
-private:
-    Q_DECLARE_PRIVATE(Setting)
-
+    Q_INVOKABLE QVariantList availableSsids(const QString &ssid = QString());
+    Q_INVOKABLE QVariantList availableBssids(const QString &ssid, const QString &bssid = QString());
+    Q_INVOKABLE QVariantList deviceHwAddresses(uint deviceType, const QString &address = QString());
+    Q_INVOKABLE QStringList firewallZones();
+    Q_INVOKABLE QStringList vpnConnections();
+    Q_INVOKABLE QStringList wirelessChannels(uint band);
 };
 
-#endif // PLASMA_NM_SETTING_H
+#endif //PLASMA_NM_UTILS_H

@@ -23,7 +23,6 @@ import QtQuick.Layouts 1.2
 import org.kde.kirigami 2.2 as Kirigami
 
 Kirigami.ScrollablePage{
-    property var details
     property var path
     property alias signal_strength: signalStrengthLabel.text
     property alias signal_speed: linkSpeedLabel.text
@@ -31,9 +30,12 @@ Kirigami.ScrollablePage{
     property alias security: securityLabel.text
     property var settings: ({})
     property var activeMap: ({})
+    property bool enabledSave: true && detailsIP.enabledSave
 
 
     Column {
+        id: detailsView
+        spacing: Kirigami.Units.gridUnit
         Column {
             id: staticInfo
             anchors.bottomMargin: units.gridUnit
@@ -93,28 +95,27 @@ Kirigami.ScrollablePage{
 
         SecuritySection {
             id: detailsSecuritySection
-        }
-
-        RowLayout {
-
-            Controls.Label {
-                anchors.left: parent.left
-                text: i18n("Advanced options")
-            }
-            Controls.Switch {
-                id: advancedOptionsSwitch
-                checked: false
-            }
+            anchors.bottomMargin: 10
         }
 
         IPDetailsSection {
             id: detailsIP
-            visible: advancedOptionsSwitch.checked
         }
     }
     actions {
+        left: Kirigami.Action {
+            iconName: "document-save"
+            text: i18n("Save")
+            enabled: enabledSave
+            onTriggered: {
+                save()
+                applicationWindow().pageStack.pop()
+            }
+        }
+
         right: Kirigami.Action {
             iconName: "dialog-cancel"
+            text: i18n("Cancel")
             onTriggered: {
                 applicationWindow().pageStack.pop()
             }
@@ -149,6 +150,15 @@ Kirigami.ScrollablePage{
         settings = utils.getConnectionSettings(path,"connection");
         detailsSecuritySection.securityMap = utils.getConnectionSettings(path,"802-11-wireless-security");
         detailsIP.ipmap = utils.getConnectionSettings(path,"ipv4");
-        console.info(detailsIP.ipmap["method"]);
+        detailsSecuritySection.setStateFromMap();
+        detailsIP.setStateFromMap();
+    }
+
+    function save() {
+        settings = detailsIP.ipmap;
+        if (detailsSecuritySection.password !== "") { //otherwise password is unchanged
+            settings["802-11-wireless-security"] = detailsSecuritySection.securityMap;
+        }
+        utils.updateConnectionFromQML(path,settings);
     }
 }

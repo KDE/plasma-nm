@@ -21,13 +21,16 @@ import QtQuick 2.6
 import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2 as Layouts
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import org.kde.kirigami 2.2 as Kirigami
 
 Layouts.ColumnLayout {
     id:securitySectionView
     property var securityMap: ({})
     property var enabledSave: !wepWpaPasswordField.visible || (wepWpaPasswordField.visible && wepWpaPasswordField.acceptableInput)
     property alias password: wepWpaPasswordField.text
-    width: parent.width
+
+    implicitWidth: Kirigami.Units.gridUnit * 20
+    width: implicitWidth
 
     Column {
         id: securitySectionHeader
@@ -46,6 +49,8 @@ Layouts.ColumnLayout {
         Controls.ComboBox {
             id: securityCombobox
             //anchors.bottomMargin: units.Gridunit
+            implicitWidth: Kirigami.Units.gridUnit * 15
+            //width: parent.width
             anchors.bottomMargin: 50
             model: ListModel {
                 id: securityTypesModel
@@ -67,26 +72,17 @@ Layouts.ColumnLayout {
                 securitySectionView.state = securityTypesModel.get(currentIndex).type;
             }
         }
-
-        Controls.Label {
-            anchors.bottomMargin: units.Gridunit
-            text: securityCombobox.currentText
-        }
     }
 
-    Layouts.ColumnLayout {
+    Item {
         id: wepWpaSecurity
         anchors.top: securitySectionHeader.bottom
         width: parent.width
-        Column {
+        visible: securityCombobox.currentIndex == 1 || securityCombobox.currentIndex == 3
+        PasswordField {
+            id: wepWpaPasswordField
             width: parent.width
-            visible: securityCombobox.currentIndex == 1 || securityCombobox.currentIndex == 3
-            PasswordField {
-                id: wepWpaPasswordField
-                width: parent.width
-                securityType: securityTypesModel.get(securityCombobox.currentIndex).type
-
-            }
+            securityType: securityTypesModel.get(securityCombobox.currentIndex).type
         }
     }
 
@@ -132,6 +128,27 @@ Layouts.ColumnLayout {
                 }
             }
         }
-
     ]
+    function setStateFromMap(){
+        var x = securityMap["key-mgmt"]
+        switch (x) {
+            case "none":
+                securityCombobox.currentIndex = 1
+                break;
+             case "ieee8021x":
+                 securityCombobox.currentIndex = 2
+                 break;
+             case "wpa-psk":
+                 securityCombobox.currentIndex = 3
+                 break;
+             case "wpa-eap":
+                 securityCombobox.currentIndex = 4
+                 break;
+            default:
+                securityCombobox.currentIndex = 0
+                break;
+        }
+        wepWpaPasswordField.placeholderText = i18n("(Unchanged)")
+        securityCombobox.enabled = false
+    }
 }

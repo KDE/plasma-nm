@@ -31,6 +31,7 @@ Kirigami.ScrollablePage{
     property var enabledSaving: (editorIpSection.enabledSave && editorSecuritySection.enabledSave && ssidField.text)
 
     title: i18n("Connection Editor")
+    width: parent.width
 
     ColumnLayout{
         id: columnlayout
@@ -65,6 +66,7 @@ Kirigami.ScrollablePage{
     actions {
         left: Kirigami.Action {
             iconName: "dialog-ok"
+            text: i18n("Save")
             enabled: enabledSaving
             onTriggered: {
                 save()
@@ -73,6 +75,7 @@ Kirigami.ScrollablePage{
         }
         right: Kirigami.Action {
             iconName: "dialog-cancel"
+            text: i18n("Cancel")
             onTriggered: {
                 applicationWindow().pageStack.pop()
             }

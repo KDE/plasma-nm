@@ -158,7 +158,7 @@ Kirigami.SwipeListItem {
     }
 
     function forgetNetwork() {
-        // TODO confirmation dialog
-        handler.removeConnection(ConnectionPath)
+        deleteConnectionDialog.name = ItemUniqueName
+        deleteConnectionDialog.open()
     }
 }

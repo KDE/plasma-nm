@@ -60,14 +60,14 @@ Kirigami.ScrollablePage  {
 
         Kirigami.Action {
             iconName: "edit"
-            text: "Create Hotspot"
+            text: i18n("Create Hotspot")
             onTriggered: {
-                showPassiveNotification("Open tethering")
+                //applicationWindow().pageStack.push(tetheringComponent)
             }
         },
         Kirigami.Action {
             iconName: "edit"
-            text: "Saved Connections"
+            text: i18n("Saved Connections")
             checkable: true
             checked: false
             onTriggered: {
@@ -107,4 +107,38 @@ Kirigami.ScrollablePage  {
             }
         }
 */
+    Kirigami.OverlayDrawer {
+            id: deleteConnectionDialog
+            property var name
+            property var dbusPath
+            edge: Qt.BottomEdge
+            contentItem: Item {
+                implicitHeight: childrenRect.height + Kirigami.Units.gridUnit
+                ColumnLayout{
+                    anchors.centerIn: parent
+                    Controls.Button {
+                        text: i18n("Delete ") + deleteConnectionDialog.name
+                        onClicked: {
+                            handler.removeConnection(deleteConnectionDialog.dbusPath)
+                            deleteConnectionDialog.close()
+                        }
+                    }
+                    Controls.Button {
+                        text: i18n("Cancel")
+                        onClicked: deleteConnectionDialog.close()
+                    }
+                    Item {
+                        Layout.minimumHeight: Kirigami.Units.gridUnit * 4
+                    }
+                }
+                onVisibleChanged: {
+                    if (visible) {
+
+                    } else {
+                        deleteConnectionDialog.name = ""
+                        deleteConnectionDialog.dbusPath = ""
+                    }
+                }
+            }
+        }
 }

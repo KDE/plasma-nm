@@ -17,21 +17,24 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef MOBILEUTILS_H
-#define MOBILEUTILS_H
+#include "wifisettings.h"
 
-#include <QObject>
+#include <KPluginFactory>
+#include <KLocalizedString>
+#include <KAboutData>
 
-class Q_DECL_EXPORT MobileUtils : public QObject
+K_PLUGIN_FACTORY_WITH_JSON(WifiSettingsFactory, "wifisettings.json", registerPlugin<WifiSettings>();)
+
+WifiSettings::WifiSettings(QObject* parent, const QVariantList& args) : KQuickAddons::ConfigModule(parent, args)
 {
-    Q_OBJECT
-public:
-    explicit MobileUtils(QObject *parent = nullptr);
+    KAboutData* about = new KAboutData("kcm_mobile_wifi", i18n("Configure Wi-Fi networks"),
+                                       "0.1", QString(), KAboutLicense::LGPL);
+    about->addAuthor(i18n("Martin Kacej"), QString(), "m.kacej@atlas.sk");
+    setAboutData(about);
+}
 
-    Q_INVOKABLE QVariantMap getConnectionSettings(const QString &connection, const QString &type);
-    Q_INVOKABLE QVariantMap getActiveConnectionInfo(const QString &connection);
-    Q_INVOKABLE void addConnectionFromQML(const QVariantMap &QMLmap);
-    Q_INVOKABLE void updateConnectionFromQML(const QString &path, const QVariantMap &map);
-};
+WifiSettings::~WifiSettings()
+{
+}
 
-#endif // MOBILEUTILS_H
+#include "wifisettings.moc"

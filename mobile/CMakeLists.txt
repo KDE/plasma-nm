@@ -1,6 +1,6 @@
 project (kcm_mobile_wifi)
 
-set (wifisettings_SRCS mobilewifisettings.cpp)
+set (wifisettings_SRCS wifisettings.cpp)
 
 add_library(kcm_mobile_wifi MODULE ${wifisettings_SRCS})
 
@@ -14,8 +14,8 @@ target_link_libraries(kcm_mobile_wifi
     KF5::QuickAddons
 )
 
-kcoreaddons_desktop_to_json(kcm_mobile_wifi "wifi.desktop")
+kcoreaddons_desktop_to_json(kcm_mobile_wifi "wifisettings.desktop")
 
-install(FILES wifi.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+install(FILES wifisettings.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 install(TARGETS kcm_mobile_wifi DESTINATION ${PLUGIN_INSTALL_DIR}/kcms)
-kpackage_install_package(package wifi kcms)
+kpackage_install_package(package kcm_mobile_wifi kcms)

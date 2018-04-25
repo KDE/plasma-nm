@@ -1,39 +1,59 @@
+/*
+ *   Copyright 2018 Martin Kacej <m.kacej@atlas.sk>
+ *
+ *   This program is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU Library General Public License as
+ *   published by the Free Software Foundation; either version 2 or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU Library General Public License for more details
+ *
+ *   You should have received a copy of the GNU Library General Public
+ *   License along with this program; if not, write to the
+ *   Free Software Foundation, Inc.,
+ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
 #include "mobileutils.h"
 
-
-#include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/AccessPoint>
-#include <NetworkManagerQt/WiredDevice>
-#include <NetworkManagerQt/WirelessDevice>
-#include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/Setting>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/GsmSetting>
-#include <NetworkManagerQt/WiredSetting>
-#include <NetworkManagerQt/WirelessSetting>
-#include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Ipv4Setting>
+#include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/Utils>
+#include <NetworkManagerQt/WiredDevice>
+#include <NetworkManagerQt/WiredSetting>
+#include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/WirelessSetting>
 
 #if WITH_MODEMMANAGER_SUPPORT
+#include <ModemManagerQt/GenericTypes>
 #include <ModemManagerQt/Manager>
 #include <ModemManagerQt/ModemDevice>
 #endif
 
 
-MobileUtils::MobileUtils(QObject *parent) : QObject(parent)
+MobileUtils::MobileUtils(QObject *parent)
+    : QObject(parent)
 {
-
 }
 
 QVariantMap MobileUtils::getConnectionSettings(const QString &connection, const QString &type)
 {
     if (type.isEmpty())
         return QVariantMap();
+
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
     if (!con)
         return QVariantMap();
+
     QVariantMap map = con->settings()->toMap().value(type);
     if (type == "ipv4") {
         NetworkManager::Ipv4Setting::Ptr ipSettings = NetworkManager::Ipv4Setting::Ptr(new NetworkManager::Ipv4Setting());
@@ -42,6 +62,7 @@ QVariantMap MobileUtils::getConnectionSettings(const QString &connection, const 
         if (ipSettings->method() == NetworkManager::Ipv4Setting::Automatic) {
             map.insert(QLatin1String("method"),QVariant(QLatin1String("auto")));
         }
+
         if (ipSettings->method() == NetworkManager::Ipv4Setting::Manual) {
             map.insert(QLatin1String("method"),QVariant(QLatin1String("manual")));
             map.insert(QLatin1String("address"),QVariant(ipSettings->addresses().first().ip().toString()));
@@ -57,16 +78,19 @@ QVariantMap MobileUtils::getActiveConnectionInfo(const QString &connection)
 {
     if (connection.isEmpty())
         return QVariantMap();
+
     NetworkManager::ActiveConnection::Ptr activeCon;
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
-    Q_FOREACH (const NetworkManager::ActiveConnection::Ptr &active, NetworkManager::activeConnections()) {
+    foreach (const NetworkManager::ActiveConnection::Ptr &active, NetworkManager::activeConnections()) {
         if (active->uuid() == con->uuid())
             activeCon = active;
     }
-    if(!activeCon){
+
+    if (!activeCon) {
         qWarning() << "Active" << connection << "not found";
         return QVariantMap();
     }
+
     QVariantMap map;
     map.insert("address",QVariant(activeCon->ipV4Config().addresses().first().ip().toString()));
     map.insert("prefix",QVariant(activeCon->ipV4Config().addresses().first().netmask().toString()));
@@ -78,7 +102,6 @@ QVariantMap MobileUtils::getActiveConnectionInfo(const QString &connection)
 
 void MobileUtils::addConnectionFromQML(const QVariantMap &QMLmap)
 {
-
     if (QMLmap.isEmpty())
         return;
 
@@ -119,6 +142,7 @@ void MobileUtils::addConnectionFromQML(const QVariantMap &QMLmap)
                     securitySettings->setPskFlags(NetworkManager::Setting::SecretFlagType::AgentOwned);
                     securitySettings->setPsk(securMap["password"].toString());
                 }
+
                 if (type == NetworkManager::StaticWep) {
                     securitySettings->setKeyMgmt(NetworkManager::WirelessSecuritySetting::KeyMgmt::Wep);
                     securitySettings->setAuthAlg(NetworkManager::WirelessSecuritySetting::AuthAlg::Open);
@@ -139,6 +163,7 @@ void MobileUtils::updateConnectionFromQML(const QString &path, const QVariantMap
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(path);
     if (!con)
         return;
+
     //qWarning() << map;
     NMVariantMapMap toUpdateMap = con->settings()->toMap();
 
@@ -147,6 +172,7 @@ void MobileUtils::updateConnectionFromQML(const QString &path, const QVariantMap
         if (map.value("method") == "auto") {
             ipSetting->setMethod(NetworkManager::Ipv4Setting::Automatic);
         }
+
         if (map.value("method") == "manual") {
             ipSetting->setMethod(NetworkManager::Ipv4Setting::ConfigMethod::Manual);
             NetworkManager::IpAddress ipaddr;
@@ -158,6 +184,7 @@ void MobileUtils::updateConnectionFromQML(const QString &path, const QVariantMap
         }
         toUpdateMap.insert("ipv4",ipSetting->toMap());
     }
+
     if (map.contains("802-11-wireless-security")) {
         QVariantMap secMap = map.value("802-11-wireless-security").toMap();
         //qWarning() << secMap;
@@ -166,6 +193,7 @@ void MobileUtils::updateConnectionFromQML(const QString &path, const QVariantMap
                 && (secMap.value("type") == NetworkManager::StaticWep)) {
             securitySetting->setWepKey0(secMap["password"].toString());
         }
+
         if ((securitySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaPsk)
                 && (secMap.value("type") == NetworkManager::Wpa2Psk)) {
             securitySetting->setPsk(secMap["password"].toString());

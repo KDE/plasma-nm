@@ -61,6 +61,18 @@ Kirigami.ApplicationItem {
         showSavedMode: false
     }
 
+    Timer {
+        id: scanTimer
+        interval: 15000
+        repeat: true
+        running: parent.visible
+        triggeredOnStart: true
+
+        onTriggered: {
+            handler.requestScan()
+        }
+    }
+
     NetworkListView{
         id: formLayout
         anchors.fill: parent

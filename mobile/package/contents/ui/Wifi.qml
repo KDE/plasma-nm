@@ -77,4 +77,10 @@ Kirigami.ApplicationItem {
         NetworkDetailsView {
         }
     }
+
+    Component {
+        id: tetheringComponent
+        TetheringSettings {
+        }
+    }
 }

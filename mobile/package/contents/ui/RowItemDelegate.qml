@@ -159,6 +159,7 @@ Kirigami.SwipeListItem {
 
     function forgetNetwork() {
         deleteConnectionDialog.name = ItemUniqueName
+        deleteConnectionDialog.dbusPath = ConnectionPath
         deleteConnectionDialog.open()
     }
 }

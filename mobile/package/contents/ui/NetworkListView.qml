@@ -62,7 +62,7 @@ Kirigami.ScrollablePage  {
             iconName: "edit"
             text: i18n("Create Hotspot")
             onTriggered: {
-                //applicationWindow().pageStack.push(tetheringComponent)
+                applicationWindow().pageStack.push(tetheringComponent)
             }
         },
         Kirigami.Action {

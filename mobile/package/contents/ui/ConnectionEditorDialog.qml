@@ -35,30 +35,30 @@ Kirigami.ScrollablePage{
 
     ColumnLayout{
         id: columnlayout
-        anchors.horizontalCenter: parent.horizontalCenter
+       // anchors.horizontalCenter: parent.horizontalCenter
 
         Controls.Label {
             text: i18n("SSID")
             font.weight: Font.Bold
-            anchors.horizontalCenter: parent.horizontalCenter
+            //anchors.horizontalCenter: parent.horizontalCenter
         }
 
         Controls.TextField {
             id: ssidField
-            anchors.horizontalCenter: parent.horizontalCenter
+            //anchors.horizontalCenter: parent.horizontalCenter
             placeholderText: i18n("None")
         }
 
         IPDetailsSection {
             id: editorIpSection
             width: parent.width
-            anchors.horizontalCenter: parent.horizontalCenter
+            //anchors.horizontalCenter: parent.horizontalCenter
         }
 
         SecuritySection {
             id: editorSecuritySection
             anchors.topMargin: units.gridUnit
-            anchors.horizontalCenter: parent.horizontalCenter
+            //anchors.horizontalCenter: parent.horizontalCenter
             width: parent.width
         }
     }

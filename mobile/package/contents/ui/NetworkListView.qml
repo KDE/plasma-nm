@@ -55,6 +55,7 @@ Kirigami.ScrollablePage  {
             text: i18n("Add custom connection")
             onTriggered: {
                 applicationWindow().pageStack.push(connectionEditorDialogComponent)
+                contextDrawer.close()
             }
         },
 
@@ -63,6 +64,7 @@ Kirigami.ScrollablePage  {
             text: i18n("Create Hotspot")
             onTriggered: {
                 applicationWindow().pageStack.push(tetheringComponent)
+                contextDrawer.close()
             }
         },
         Kirigami.Action {

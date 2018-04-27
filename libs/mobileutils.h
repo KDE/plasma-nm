@@ -32,6 +32,10 @@ public:
     Q_INVOKABLE QVariantMap getActiveConnectionInfo(const QString &connection);
     Q_INVOKABLE void addConnectionFromQML(const QVariantMap &QMLmap);
     Q_INVOKABLE void updateConnectionFromQML(const QString &path, const QVariantMap &map);
+    Q_INVOKABLE QString getAccessPointDevice();
+    Q_INVOKABLE QString getAccesPointConnection();
+    Q_INVOKABLE void startAccessPoint(const QString &uuid,const QString &device);
+
 };
 
 #endif // MOBILEUTILS_H

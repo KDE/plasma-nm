@@ -105,57 +105,66 @@ void MobileUtils::addConnectionFromQML(const QVariantMap &QMLmap)
     if (QMLmap.isEmpty())
         return;
 
+    NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(NetworkManager::ConnectionSettings::Wireless));
+    connectionSettings->setId(QMLmap.value(QLatin1String("id")).toString());
+    connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+
+    NetworkManager::WirelessSetting::Ptr wirelessSettings = NetworkManager::WirelessSetting::Ptr(new NetworkManager::WirelessSetting());
+    wirelessSettings->setSsid(QMLmap.value(QLatin1String("id")).toString().toUtf8());
     if (QMLmap["mode"].toString() == "infrastructure") {
-        NetworkManager::WirelessSetting::Ptr wirelessSettings = NetworkManager::WirelessSetting::Ptr(new NetworkManager::WirelessSetting());
-        wirelessSettings->setSsid(QMLmap.value(QLatin1String("id")).toString().toUtf8());
         wirelessSettings->setMode(NetworkManager::WirelessSetting::Infrastructure);
-
-        NetworkManager::Ipv4Setting::Ptr ipSettings = NetworkManager::Ipv4Setting::Ptr(new NetworkManager::Ipv4Setting());
-        if (QMLmap["method"] == QLatin1String("auto")) {
-            ipSettings->setMethod(NetworkManager::Ipv4Setting::ConfigMethod::Automatic);
-        } else {
-            ipSettings->setMethod(NetworkManager::Ipv4Setting::ConfigMethod::Manual);
-            NetworkManager::IpAddress ipaddr;
-            ipaddr.setIp(QHostAddress(QMLmap["address"].toString()));
-            ipaddr.setPrefixLength(QMLmap["prefix"].toInt());
-            ipaddr.setGateway(QHostAddress(QMLmap["gateway"].toString()));
-            ipSettings->setAddresses(QList<NetworkManager::IpAddress>({ipaddr}));
-            ipSettings->setDns(QList<QHostAddress>({QHostAddress(QMLmap["dns"].toString())}));
-        }
-
-        NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(NetworkManager::ConnectionSettings::Wireless));
-        connectionSettings->setId(QMLmap.value(QLatin1String("id")).toString());
-        connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
-
-        NMVariantMapMap map = connectionSettings->toMap();
-        map.insert("802-11-wireless",wirelessSettings->toMap());
-        map.insert("ipv4",ipSettings->toMap());
-
-        if (QMLmap.contains("802-11-wireless-security")) {
-            QVariantMap securMap = QMLmap["802-11-wireless-security"].toMap();
-            int type = securMap["type"].toInt();
-            if (!type == NetworkManager::NoneSecurity) {
-                NetworkManager::WirelessSecuritySetting::Ptr securitySettings = NetworkManager::WirelessSecuritySetting::Ptr(new NetworkManager::WirelessSecuritySetting());
-                if (type == NetworkManager::Wpa2Psk ) {
-                    securitySettings->setKeyMgmt(NetworkManager::WirelessSecuritySetting::KeyMgmt::WpaPsk);
-                    securitySettings->setAuthAlg(NetworkManager::WirelessSecuritySetting::AuthAlg::Open);
-                    securitySettings->setPskFlags(NetworkManager::Setting::SecretFlagType::AgentOwned);
-                    securitySettings->setPsk(securMap["password"].toString());
-                }
-
-                if (type == NetworkManager::StaticWep) {
-                    securitySettings->setKeyMgmt(NetworkManager::WirelessSecuritySetting::KeyMgmt::Wep);
-                    securitySettings->setAuthAlg(NetworkManager::WirelessSecuritySetting::AuthAlg::Open);
-                    securitySettings->setWepKeyType(NetworkManager::WirelessSecuritySetting::WepKeyType::Hex);
-                    securitySettings->setWepKeyFlags(NetworkManager::Setting::SecretFlagType::AgentOwned);
-                    securitySettings->setWepKey0(securMap["password"].toString());
-                }
-                map.insert("802-11-wireless-security",securitySettings->toMap());
-            }
-        }
-        //qWarning() << map;
-        NetworkManager::addConnection(map);
     }
+    if (QMLmap["mode"].toString() == "ap") {
+        wirelessSettings->setMode(NetworkManager::WirelessSetting::Ap);
+    }
+    if (QMLmap.contains("hidden")) {
+        wirelessSettings->setHidden(QMLmap.value("hidden").toBool());
+    }
+
+    NetworkManager::Ipv4Setting::Ptr ipSettings = NetworkManager::Ipv4Setting::Ptr(new NetworkManager::Ipv4Setting());
+    if (QMLmap["method"] == QLatin1String("auto")) {
+        ipSettings->setMethod(NetworkManager::Ipv4Setting::ConfigMethod::Automatic);
+    }
+    if (QMLmap["method"] == QLatin1String("shared")) {
+        ipSettings->setMethod(NetworkManager::Ipv4Setting::ConfigMethod::Shared);
+    }
+    if (QMLmap["method"] == QLatin1String("manual")) {
+        ipSettings->setMethod(NetworkManager::Ipv4Setting::ConfigMethod::Manual);
+        NetworkManager::IpAddress ipaddr;
+        ipaddr.setIp(QHostAddress(QMLmap["address"].toString()));
+        ipaddr.setPrefixLength(QMLmap["prefix"].toInt());
+        ipaddr.setGateway(QHostAddress(QMLmap["gateway"].toString()));
+        ipSettings->setAddresses(QList<NetworkManager::IpAddress>({ipaddr}));
+        ipSettings->setDns(QList<QHostAddress>({QHostAddress(QMLmap["dns"].toString())}));
+    }
+
+    NMVariantMapMap map = connectionSettings->toMap();
+    map.insert("802-11-wireless",wirelessSettings->toMap());
+    map.insert("ipv4",ipSettings->toMap());
+
+    if (QMLmap.contains("802-11-wireless-security")) {
+        QVariantMap securMap = QMLmap["802-11-wireless-security"].toMap();
+        int type = securMap["type"].toInt();
+        if (!type == NetworkManager::NoneSecurity) {
+            NetworkManager::WirelessSecuritySetting::Ptr securitySettings = NetworkManager::WirelessSecuritySetting::Ptr(new NetworkManager::WirelessSecuritySetting());
+            if (type == NetworkManager::Wpa2Psk ) {
+                securitySettings->setKeyMgmt(NetworkManager::WirelessSecuritySetting::KeyMgmt::WpaPsk); // TODO ap
+                securitySettings->setAuthAlg(NetworkManager::WirelessSecuritySetting::AuthAlg::Open);
+                securitySettings->setPskFlags(NetworkManager::Setting::SecretFlagType::AgentOwned);
+                securitySettings->setPsk(securMap["password"].toString());
+            }
+            if (type == NetworkManager::StaticWep) {
+                securitySettings->setKeyMgmt(NetworkManager::WirelessSecuritySetting::KeyMgmt::Wep);
+                securitySettings->setAuthAlg(NetworkManager::WirelessSecuritySetting::AuthAlg::Open);
+                securitySettings->setWepKeyType(NetworkManager::WirelessSecuritySetting::WepKeyType::Hex);
+                securitySettings->setWepKeyFlags(NetworkManager::Setting::SecretFlagType::AgentOwned);
+                securitySettings->setWepKey0(securMap["password"].toString());
+            }
+            map.insert("802-11-wireless-security",securitySettings->toMap());
+        }
+    }
+    //qWarning() << map;
+    NetworkManager::addConnection(map);
 }
 
 void MobileUtils::updateConnectionFromQML(const QString &path, const QVariantMap &map)
@@ -201,4 +210,40 @@ void MobileUtils::updateConnectionFromQML(const QString &path, const QVariantMap
         toUpdateMap.insert("802-11-wireless-security",securitySetting->toMap());
     }
     con->update(toUpdateMap);
+}
+
+QString MobileUtils::getAccessPointDevice()
+{
+    NetworkManager::WirelessDevice::Ptr device;
+    foreach (const NetworkManager::Device::Ptr &dev, NetworkManager::networkInterfaces()) {
+        if (dev->type() == NetworkManager::Device::Wifi){
+            device = dev.staticCast<NetworkManager::WirelessDevice>();
+            if (device->wirelessCapabilities().testFlag(NetworkManager::WirelessDevice::ApCap))
+                break; // we have wireless device with access point capability
+        }
+    }
+    if (device) {
+        return device->uni();
+    } else {
+        qWarning() << "No wireless device found";
+    }
+    return QString();
+}
+
+QString MobileUtils::getAccesPointConnection()
+{
+    foreach (const NetworkManager::Connection::Ptr &con,  NetworkManager::listConnections()) {
+        NetworkManager::Setting::Ptr d = con->settings()->setting(NetworkManager::Setting::Wireless);
+        if (!d.isNull()){
+            if( d.staticCast<NetworkManager::WirelessSetting>()->mode() == NetworkManager::WirelessSetting::Ap){
+                return con->path();
+            }
+        }
+    }
+    return QString();
+}
+
+void MobileUtils::startAccessPoint(const QString &uuid, const QString &device)
+{
+    return QString();
 }

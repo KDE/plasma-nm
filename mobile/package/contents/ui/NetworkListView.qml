@@ -25,12 +25,6 @@ Kirigami.ScrollablePage  {
                 handler.enableWireless(checked);
             }
         }
-
-        Kirigami.Separator {
-            id: separator
-            anchors.top: layoutrow.bottom
-            width: parent.width
-        }
     }
 
     ListView {

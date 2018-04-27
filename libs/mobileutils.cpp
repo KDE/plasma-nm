@@ -148,7 +148,11 @@ void MobileUtils::addConnectionFromQML(const QVariantMap &QMLmap)
         if (!type == NetworkManager::NoneSecurity) {
             NetworkManager::WirelessSecuritySetting::Ptr securitySettings = NetworkManager::WirelessSecuritySetting::Ptr(new NetworkManager::WirelessSecuritySetting());
             if (type == NetworkManager::Wpa2Psk ) {
-                securitySettings->setKeyMgmt(NetworkManager::WirelessSecuritySetting::KeyMgmt::WpaPsk); // TODO ap
+                if (QMLmap["mode"].toString() == "ap") {
+                    securitySettings->setKeyMgmt(NetworkManager::WirelessSecuritySetting::KeyMgmt::WpaNone);
+                } else {
+                    securitySettings->setKeyMgmt(NetworkManager::WirelessSecuritySetting::KeyMgmt::WpaPsk);
+                }
                 securitySettings->setAuthAlg(NetworkManager::WirelessSecuritySetting::AuthAlg::Open);
                 securitySettings->setPskFlags(NetworkManager::Setting::SecretFlagType::AgentOwned);
                 securitySettings->setPsk(securMap["password"].toString());
@@ -245,5 +249,5 @@ QString MobileUtils::getAccesPointConnection()
 
 void MobileUtils::startAccessPoint(const QString &uuid, const QString &device)
 {
-    return QString();
+
 }

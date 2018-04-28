@@ -21,6 +21,7 @@
 import QtQuick 2.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
+import QtQuick.Controls.Styles.Plasma 2.0 as Styles
 
 Item {
     id: switchButton
@@ -37,6 +38,25 @@ Item {
 
     PlasmaComponents.CheckBox {
         id: switchButtonCheckbox
+		style: Styles.CheckBoxStyle {
+			indicator: Rectangle {
+							implicitWidth: 18
+							implicitHeight: 18
+							radius: 2
+							border.color: "#bababa"
+							border.width: 1
+							color: "#00ffffff"
+							Rectangle {
+								visible: control.checked
+								color: "#4092e3"
+								border.color: "#01ffffff"
+								border.width: 2
+								radius: 2
+								anchors.margins: 1
+								anchors.fill: parent
+							}
+					}		
+		}
         anchors {
             bottomMargin: Math.round(units.gridUnit / 3)
             left: parent.left

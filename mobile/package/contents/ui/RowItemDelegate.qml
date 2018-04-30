@@ -108,7 +108,7 @@ Kirigami.SwipeListItem {
     actions: [
         Kirigami.Action {
             iconName: "network-connect"
-            visible: ConnectionState != PlasmaNM.Enums.Activated
+            visible: ConnectionState != PlasmaNM.Enums.Activated && Signal > 0
             onTriggered: changeState()
         },
         Kirigami.Action {
@@ -135,6 +135,8 @@ Kirigami.SwipeListItem {
     }
 
     function changeState() {
+        if (Signal === 0)
+            return
         if (Uuid || !predictableWirelessPassword || connectionPasswordField.visible) {
             if (ConnectionState == PlasmaNM.Enums.Deactivated) {
                 if (!predictableWirelessPassword && !Uuid) {

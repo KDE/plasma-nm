@@ -102,22 +102,44 @@ Kirigami.ScrollablePage{
             id: detailsIP
         }
     }
-    actions {
-        left: Kirigami.Action {
-            iconName: "document-save"
-            text: i18n("Save")
-            enabled: enabledSave
-            onTriggered: {
-                save()
-                applicationWindow().pageStack.pop()
+    footer: Item {
+        height: Kirigami.Units.gridUnit * 4
+        RowLayout {
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: Kirigami.Units.gridUnit
+            Controls.Button {
+                enabled: enabledSaving
+                RowLayout {
+                    anchors.centerIn: parent
+                    Kirigami.Icon {
+                        width: Kirigami.Units.iconSizes.smallMedium
+                        height: width
+                        source: "document-save"
+                    }
+                    Text {
+                        text: i18n("Save")
+                    }
+                }
+                onPressed: {
+                    save()
+                    applicationWindow().pageStack.pop()
+                }
             }
-        }
-
-        right: Kirigami.Action {
-            iconName: "dialog-cancel"
-            text: i18n("Cancel")
-            onTriggered: {
-                applicationWindow().pageStack.pop()
+            Controls.Button {
+                RowLayout {
+                    anchors.centerIn: parent
+                    Kirigami.Icon {
+                        width: Kirigami.Units.iconSizes.smallMedium
+                        height: width
+                        source: "dialog-cancel"
+                    }
+                    Text {
+                        text: i18n("Cancel")
+                    }
+                }
+                onPressed: {
+                    applicationWindow().pageStack.pop()
+                }
             }
         }
     }

@@ -13,7 +13,7 @@ Kirigami.ScrollablePage {
         width: parent.width
         Controls.Label {
             text: "Wi-fi hotspot"
-            Layout.fillHeight: true
+            Layout.fillWidth:  true
         }
         Controls.Switch {
             id: hotSpotSwitch
@@ -27,17 +27,22 @@ Kirigami.ScrollablePage {
         }
     }
 
-    Column {
-        Row {
+    ColumnLayout {
+        spacing: Kirigami.Units.gridUnit
+        Kirigami.Separator{}
+
+        RowLayout {
             id: hotSpotStatus
+            spacing: Kirigami.Units.gridUnit
             property alias text: hotSpotStatusLabel.text
-            anchors.left: parent.left
             Controls.Label {
                 id: hotSpotStatusLabel
             }
-            Item {
+            Kirigami.Icon {
                 id: hotSpotStatusIcon
-                //TODO
+                width: Kirigami.Units.iconSizes.smallMedium
+                height: width
+                source: "network-wireless-disconnected"
             }
         }
         Controls.Button {
@@ -45,12 +50,16 @@ Kirigami.ScrollablePage {
             checkable: true
             checked: false
             text: i18n("Configure")
+            onPressed: {
+                loadSettings()
+            }
         }
-
         Column{
             id: hotSpotSettings
+            width: parent.width / 2
             visible: hotSpotConfigButton.checked
             Column {
+                width: parent.width
                 Controls.Label {
                     text: i18n("SSID")
                     font.weight: Font.Bold
@@ -58,10 +67,11 @@ Kirigami.ScrollablePage {
 
                 Controls.TextField {
                     id: hotSpotName
+                    width: parent.width / 2
                     placeholderText: i18n("My Hotspot")
                 }
             }
-            Row {
+            RowLayout {
                 Controls.CheckBox {
                     id: hotSpotConfigHidden
                     checked: false
@@ -71,7 +81,7 @@ Kirigami.ScrollablePage {
                     text: i18n("Hide this network")
                 }
             }
-            Row {
+            RowLayout {
                 Controls.CheckBox {
                     id: hotSpotConfigSecurity
                     checked: false
@@ -83,6 +93,7 @@ Kirigami.ScrollablePage {
             }
             PasswordField {
                 id: hotSpotConfigPassword
+                width: parent.width / 2
                 visible: hotSpotConfigSecurity.checked
                 securityType: PlasmaNM.Enums.Wpa2Psk
             }
@@ -97,16 +108,21 @@ Kirigami.ScrollablePage {
         }
     }
 
-    actions {
-        left:
-            Kirigami.Action {
-            iconName: "dialog-cancel"
-            text: i18n("Cancel")
-            onTriggered: {
+    footer:
+        Controls.Button {
+            height: Kirigami.Units.gridUnit * 2
+            width: height
+            Kirigami.Icon {
+                anchors.centerIn: parent
+                width: Kirigami.Units.iconSizes.medium
+                height: width
+                source: "dialog-close"
+            }
+            onPressed: {
                 applicationWindow().pageStack.pop()
             }
+
         }
-    }
 
     Component.onCompleted: {
         hotSpotStatus.text = i18n("HotSpot is inactive")
@@ -117,6 +133,7 @@ Kirigami.ScrollablePage {
         devicePath = utils.getAccessPointDevice();
         if (devicePath === "") {
             hotSpotStatus.text = i18n('Not possible to start Acces point.')
+            hotSpotStatusIcon.source = "dialog-close"
             hotSpotSwitch.enabled = false
             return
         }
@@ -132,12 +149,14 @@ Kirigami.ScrollablePage {
         connectPath = utils.getAccessPointConnection()
         if (connectPath === "") {
             hotSpotStatus.text = i18n('No suitable configuration found.')
+            hotSpotStatusIcon.source = "error"
             hotSpotSwitch.checked = false
             return
         }
         loadSettings()
         handler.activateConnection(connectPath,devicePath,"")
         hotSpotStatus.text = i18n('Access point running: ') + name
+        hotSpotStatusIcon.source = "network-wireless-symbolic"
 
     }
 
@@ -145,6 +164,7 @@ Kirigami.ScrollablePage {
         if (connectPath !== "") {
             handler.deactivateConnection(connectPath,devicePath)
             hotSpotStatus.text = i18n("HotSpot is inactive")
+            hotSpotStatusIcon.source = "network-wireless-disconnected"
         }
     }
 

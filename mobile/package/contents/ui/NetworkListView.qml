@@ -112,8 +112,13 @@ Kirigami.ScrollablePage  {
                 implicitHeight: childrenRect.height + Kirigami.Units.gridUnit
                 ColumnLayout{
                     anchors.centerIn: parent
+                    Controls.Label {
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        text: i18n("Delete connection ") + deleteConnectionDialog.name + " from device ?"
+                    }
                     Controls.Button {
-                        text: i18n("Delete ") + deleteConnectionDialog.name
+                        text: i18n("Delete")
+                        anchors.horizontalCenter: parent.horizontalCenter
                         onClicked: {
                             handler.removeConnection(deleteConnectionDialog.dbusPath)
                             deleteConnectionDialog.close()
@@ -121,6 +126,7 @@ Kirigami.ScrollablePage  {
                     }
                     Controls.Button {
                         text: i18n("Cancel")
+                        anchors.horizontalCenter: parent.horizontalCenter
                         onClicked: deleteConnectionDialog.close()
                     }
                     Item {

@@ -42,13 +42,13 @@ Kirigami.SwipeListItem {
 
     RowLayout {
 
-        anchors.leftMargin: Kirigami.Units.largeSpacing * 4
+        anchors.leftMargin: Kirigami.Units.largeSpacing * 5
         PlasmaCore.SvgItem {
             id: connectionSvgIcon
-
+            anchors.leftMargin: Kirigami.Units.largeSpacing
             height: Kirigami.Units.iconSizes.big//units.iconSizes.big;
             width: height
-            elementId: ConnectionIcon
+            elementId: mobileProxyModel.showSavedMode ? "network-wireless-connected-100" : ConnectionIcon
 
             svg: PlasmaCore.Svg {
                 multipleImages: true
@@ -66,7 +66,8 @@ Kirigami.SwipeListItem {
                 horizontalCenter: connectionSvgIcon.horizontalCenter
                 verticalCenter: connectionSvgIcon.verticalCenter
             }
-            height: units.iconSizes.medium; width: height
+            height: connectionSvgIcon.height//units.iconSizes.medium;
+            width: height
             running: ConnectionState == PlasmaNM.Enums.Activating
             visible: running
         }

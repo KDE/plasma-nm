@@ -29,6 +29,8 @@ Kirigami.ApplicationItem {
 
     pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 25
     pageStack.initialPage: formLayout
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+
     anchors.fill: parent
 
     PlasmaNM.Handler {

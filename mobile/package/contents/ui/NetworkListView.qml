@@ -13,8 +13,9 @@ Kirigami.ScrollablePage  {
 
         Controls.Label {
             anchors.left: parent.left
-            text: i18n("Wifi")
+            text: i18n("Wi-fi")
             Layout.fillWidth: true
+            font.bold: true
         }
 
         Controls.Switch {
@@ -35,8 +36,12 @@ Kirigami.ScrollablePage  {
         width: parent.width
         currentIndex: -1
         boundsBehavior: Flickable.StopAtBounds
-        header: Controls.Label {
-            text: (mobileProxyModel.showSavedMode) ? i18n("Saved networks") : i18n("Available networks")
+        header: Column {
+                width: parent.width
+            Controls.Label {
+                text: (mobileProxyModel.showSavedMode) ? i18n("Saved networks") : i18n("Available networks")
+            }
+            Rectangle { width: parent.width; height: 2; color: Kirigami.Theme.disabledTextColor}
         }
         model: mobileProxyModel
         delegate: RowItemDelegate {}

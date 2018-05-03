@@ -9,23 +9,54 @@ Kirigami.ScrollablePage {
     property var devicePath
     property alias name: hotSpotName.text
 
-    header: RowLayout {
+    header:
+        ColumnLayout {
         width: parent.width
-        Controls.Label {
-            text: "Wi-fi hotspot"
-            Layout.fillWidth:  true
-        }
-        Controls.Switch {
-            id: hotSpotSwitch
-            onCheckedChanged: {
-                if (checked) {
-                    initTethering()
-                } else {
-                    disableTethering()
+        anchors.leftMargin: Kirigami.Units.largeSpacing * 2
+        Kirigami.Separator {}
+        RowLayout{
+            Kirigami.Separator {}
+            Controls.Label {
+                anchors.leftMargin: Kirigami.Units.largeSpacing * 2
+                text: "Wi-fi hotspot"
+                Layout.fillWidth:  true
+                font.weight: Font.Bold
+            }
+            Controls.Switch {
+                id: hotSpotSwitch
+                onCheckedChanged: {
+                    if (checked) {
+                        initTethering()
+                    } else {
+                        disableTethering()
+                    }
                 }
             }
-        }
+            Kirigami.Separator {}
+            Rectangle{
+                height: 1
+                Layout.fillWidth: true
+                color: "black"
+            }
+            }
     }
+//        RowLayout {
+//        width: parent.width
+//        Controls.Label {
+//            text: "Wi-fi hotspot"
+//            Layout.fillWidth:  true
+//        }
+//        Controls.Switch {
+//            id: hotSpotSwitch
+//            onCheckedChanged: {
+//                if (checked) {
+//                    initTethering()
+//                } else {
+//                    disableTethering()
+//                }
+//            }
+//        }
+//    }
 
     ColumnLayout {
         spacing: Kirigami.Units.gridUnit

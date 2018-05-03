@@ -186,6 +186,9 @@ void MobileUtils::updateConnectionFromQML(const QString &path, const QVariantMap
         return;
 
     //qWarning() << map;
+    if (map.contains("id"))
+        con->settings()->setId(map.value("id").toString());
+
     NMVariantMapMap toUpdateMap = con->settings()->toMap();
 
     NetworkManager::Ipv4Setting::Ptr ipSetting = con->settings()->setting(NetworkManager::Setting::Ipv4).staticCast<NetworkManager::Ipv4Setting>();
@@ -211,7 +214,6 @@ void MobileUtils::updateConnectionFromQML(const QString &path, const QVariantMap
         wirelessSetting->setHidden(map.value("hidden").toBool());
     }
     if (map.contains("id")) {
-        con->settings()->setId(map.value("id").toString());
         wirelessSetting->setSsid(map.value("id").toByteArray());
     }
     toUpdateMap.insert("802-11-wireless",wirelessSetting->toMap());
@@ -253,6 +255,7 @@ void MobileUtils::updateConnectionFromQML(const QString &path, const QVariantMap
 
         toUpdateMap.insert("802-11-wireless-security",securitySetting->toMap());
     }
+    qWarning() << toUpdateMap;
     con->update(toUpdateMap);
 }
 

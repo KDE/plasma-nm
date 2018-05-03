@@ -24,75 +24,34 @@ import org.kde.kirigami 2.2 as Kirigami
 
 Kirigami.ScrollablePage{
     property var path
-    property alias signal_strength: signalStrengthLabel.text
-    property alias signal_speed: linkSpeedLabel.text
-    property alias ip_address: ipAddressLabel.text
-    property alias security: securityLabel.text
     property var settings: ({})
     property var activeMap: ({})
     property bool enabledSave: true && detailsIP.enabledSave
 
+    header : ColumnLayout {
+        width: parent.width
+        anchors.leftMargin: Kirigami.Units.largeSpacing * 2
+        Kirigami.Separator {}
+        RowLayout{
+            Kirigami.Separator {}
+            Controls.Label {
+                id: detailsName
+                anchors.leftMargin: Kirigami.Units.largeSpacing * 2
+                text: "Connection Name"
+                font.weight: Font.Bold
+            }
+        }
+        Kirigami.Separator {}
+        Rectangle{
+            height: 1
+            Layout.fillWidth: true
+            color: "black"
+        }
+    }
 
     Column {
         id: detailsView
         spacing: Kirigami.Units.gridUnit
-        Column {
-            id: staticInfo
-            anchors.bottomMargin: units.gridUnit
-
-            Row {
-                spacing: units.gridUnit / 2
-
-                Controls.Label {
-                    font.weight: Font.Bold
-                    text: i18n("Strength:")
-                }
-
-                Controls.Label {
-                    id: signalStrengthLabel
-                }
-            }
-
-            Row {
-                spacing: units.gridUnit / 2
-
-                Controls.Label {
-                    font.weight: Font.Bold
-                    text: i18n("Link Speed:")
-                }
-
-                Controls.Label {
-                    id: linkSpeedLabel
-                }
-            }
-
-            Row {
-                spacing: units.gridUnit / 2
-
-                Controls.Label {
-                    font.weight: Font.Bold
-                    text: i18n("Security:")
-                }
-
-                Controls.Label {
-                    id: securityLabel
-                }
-            }
-
-            Row {
-                spacing: units.gridUnit / 2
-
-                Controls.Label {
-                    font.weight: Font.Bold
-                    text: i18n("IP Address:")
-                }
-
-                Controls.Label {
-                    id: ipAddressLabel
-                }
-            }
-        }
-
         SecuritySection {
             id: detailsSecuritySection
             anchors.bottomMargin: 10
@@ -108,7 +67,7 @@ Kirigami.ScrollablePage{
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: Kirigami.Units.gridUnit
             Controls.Button {
-                enabled: enabledSaving
+                enabled: enabledSave
                 RowLayout {
                     anchors.centerIn: parent
                     Kirigami.Icon {
@@ -144,32 +103,10 @@ Kirigami.ScrollablePage{
         }
     }
 
-    function fillDetails() {
-       /* var d = {}
-        for (var i = 0; i < (details.length / 2); i++){
-            d[details[(i * 2)]] = details[(i * 2) + 1]
-        }
-
-        if (d['Access point (SSID)'])
-            detailsDialog.titleText = d['Access point (SSID)']
-        signal_strength = d['Signal strength']
-        if (d['IPv4 Address'])
-            ip_address = detailsIP.address = d['IPv4 Address']
-        if (d['Security type'])
-            security = d['Security type']
-        if (d['Connection speed'])
-            signal_speed = d['Connection speed']
-        if (activeMap && ipMethodComb.currentIndex == 1) {
-            IPDetailsSection.address = activeMap["address"]
-            IPDetailsSection.dns = activeMap["dns"]
-            IPDetailsSection.prefix = activeMap["prefix"]
-            IPDetailsSection.gateway = activeMap["gateway"]
-        }*/
-    }
-
     function loadNetworkSettings() {
         console.info(path);
         settings = utils.getConnectionSettings(path,"connection");
+        detailsName.text = settings["id"]
         detailsSecuritySection.securityMap = utils.getConnectionSettings(path,"802-11-wireless-security");
         detailsIP.ipmap = utils.getConnectionSettings(path,"ipv4");
         detailsSecuritySection.setStateFromMap();

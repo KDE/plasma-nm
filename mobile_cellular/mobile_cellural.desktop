@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Mobile data
+Comment=Mobile cellural network setting
+
+Icon=smartphone
+Exec=plasma-settings -m kcm_mobile_wifi
+
+Type=Service
+X-KDE-ServiceTypes=KCModule
+X-KDE-Library=kcm_mobile_cellural
+X-KDE-ParentApp=kcontrol
+X-KDE-FormFactors=handset,tablet,mediacenter
+
+X-KDE-System-Settings-Parent-Category=network
+X-KDE-Weight=70
+
+X-KDE-Keywords=mobile,data,network
+Categories=Qt;KDE;X-KDE-settings-system;
+

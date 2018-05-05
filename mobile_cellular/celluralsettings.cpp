@@ -37,4 +37,15 @@ CelluralSettings::~CelluralSettings()
 {
 }
 
+bool CelluralSettings::mobileDataActive()
+{
+    return m_mobileDataActive;
+}
+
+void CelluralSettings::setMobileDataActive(bool active)
+{
+    m_mobileDataActive = active;
+    emit mobileDataActiveChanged(m_mobileDataActive);
+}
+
 #include "celluralsettings.moc"

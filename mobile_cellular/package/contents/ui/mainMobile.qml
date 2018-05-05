@@ -8,13 +8,28 @@ Kirigami.ApplicationItem {
     objectName: "mobileDataMain"
 
     pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 25
-    //pageStack.initialPage:
+    pageStack.initialPage: MobileSettings {}
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
     anchors.fill: parent
 
-    Controls.Label {
-        text: i18n("Mobile data settings")
-        font.weight: Font.Bold
+    PlasmaNM.Handler {
+        id: handler
+    }
+
+    PlasmaNM.AvailableDevices {
+        id: availableDevices
+    }
+
+    PlasmaNM.EnabledConnections {
+        id: enabledConnections
+
+        onWwanEnabledChanged: {
+            //mobileDataCheckbox.checked = mobileDataCheckbox.enabled && enabled
+        }
+
+        onWwanHwEnabledChanged: {
+            //mobileDataCheckbox.enabled = enabled && availableDevices.modemDeviceAvailable
+        }
     }
 }

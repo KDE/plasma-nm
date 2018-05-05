@@ -24,9 +24,18 @@
 
 class CelluralSettings : public KQuickAddons::ConfigModule
 {
+    Q_OBJECT
+    Q_PROPERTY(bool mobileDataActive READ mobileDataActive WRITE setMobileDataActive NOTIFY mobileDataActiveChanged)
+
 public:
     CelluralSettings(QObject *parent, const QVariantList &args);
     virtual ~CelluralSettings();
+    bool mobileDataActive();
+    void setMobileDataActive(bool active);
+    Q_SIGNAL void mobileDataActiveChanged(bool active);
+
+private:
+    bool m_mobileDataActive;
 };
 
 #endif // CELLURALSETTINGS_H

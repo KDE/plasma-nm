@@ -28,7 +28,7 @@ Kirigami.SwipeListItem {
 
     height: Kirigami.Units.gridUnit * 4
     enabled: true
-    backgroundColor: theme.backgroundColor
+    //backgroundColor: theme.backgroundColor
 
     property var map : []
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
@@ -41,12 +41,12 @@ Kirigami.SwipeListItem {
     }
 
     RowLayout {
-
         anchors.leftMargin: Kirigami.Units.largeSpacing * 5
+        Kirigami.Separator {}
         PlasmaCore.SvgItem {
             id: connectionSvgIcon
             anchors.leftMargin: Kirigami.Units.largeSpacing
-            height: Kirigami.Units.iconSizes.big//units.iconSizes.big;
+            height: Kirigami.Units.iconSizes.big
             width: height
             elementId: mobileProxyModel.showSavedMode ? "network-wireless-connected-100" : ConnectionIcon
 
@@ -66,7 +66,7 @@ Kirigami.SwipeListItem {
                 horizontalCenter: connectionSvgIcon.horizontalCenter
                 verticalCenter: connectionSvgIcon.verticalCenter
             }
-            height: connectionSvgIcon.height//units.iconSizes.medium;
+            height: connectionSvgIcon.height
             width: height
             running: ConnectionState == PlasmaNM.Enums.Activating
             visible: running

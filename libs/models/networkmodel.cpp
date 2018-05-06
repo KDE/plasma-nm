@@ -594,7 +594,9 @@ void NetworkModel::activeVpnConnectionStateChanged(NetworkManager::VpnConnection
 void NetworkModel::availableConnectionAppeared(const QString& connection)
 {
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
-    addAvailableConnection(connection, device);
+    if (device) {
+        addAvailableConnection(connection, device);
+    }
 }
 
 void NetworkModel::availableConnectionDisappeared(const QString& connection)

@@ -17,4 +17,4 @@ X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=true
 X-KDE-FormFactors=handset,tablet,mediacenter
 X-Plasma-Package=kcm_mobile_wifi
-X-Plasma-MainScript=ui/Wifi.qml
+X-Plasma-MainScript=ui/mainWifi.qml

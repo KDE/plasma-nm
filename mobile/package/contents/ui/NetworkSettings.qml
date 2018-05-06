@@ -52,12 +52,12 @@ Kirigami.ScrollablePage{
     Column {
         id: detailsView
         spacing: Kirigami.Units.gridUnit
-        SecuritySection {
+		WirelessSecuritySetting {
             id: detailsSecuritySection
             anchors.bottomMargin: 10
         }
 
-        IPDetailsSection {
+        IpSetting {
             id: detailsIP
         }
     }

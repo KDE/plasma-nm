@@ -28,7 +28,7 @@ Kirigami.ApplicationItem {
     objectName: "wifiMain"
 
     pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 25
-    pageStack.initialPage: formLayout
+    pageStack.initialPage: networkListview
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
     anchors.fill: parent
@@ -76,19 +76,19 @@ Kirigami.ApplicationItem {
     }
 
     NetworkListView{
-        id: formLayout
+        id: networkListview
         anchors.fill: parent
     }
 
     Component {
         id: connectionEditorDialogComponent
-        ConnectionEditorDialog {
+        ConnectionEditor {
         }
     }
 
     Component {
         id: networkDetailsViewComponent
-        NetworkDetailsView {
+        NetworkSettings{
         }
     }
 

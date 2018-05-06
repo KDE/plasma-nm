@@ -49,13 +49,13 @@ Kirigami.ScrollablePage{
             placeholderText: i18n("None")
         }
 
-        IPDetailsSection {
+        IpSetting {
             id: editorIpSection
             width: parent.width
             //anchors.horizontalCenter: parent.horizontalCenter
         }
 
-        SecuritySection {
+		WirelessSecuritySetting {
             id: editorSecuritySection
             anchors.topMargin: units.gridUnit
             //anchors.horizontalCenter: parent.horizontalCenter

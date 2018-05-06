@@ -44,7 +44,7 @@ Kirigami.ScrollablePage  {
             Rectangle { width: parent.width; height: 2; color: Kirigami.Theme.disabledTextColor}
         }
         model: mobileProxyModel
-        delegate: RowItemDelegate {}
+        delegate: ConnectionItemDelegate {}
     }
 
     actions.contextualActions: [

@@ -139,10 +139,10 @@ Kirigami.ScrollablePage {
         }
     }
 
-    footer:
+    footer: Item {
+        height: Kirigami.Units.gridUnit * 4
         Controls.Button {
-            height: Kirigami.Units.gridUnit * 2
-            width: height
+            anchors.centerIn: parent
             Kirigami.Icon {
                 anchors.centerIn: parent
                 width: Kirigami.Units.iconSizes.medium
@@ -154,6 +154,7 @@ Kirigami.ScrollablePage {
             }
 
         }
+    }
 
     Component.onCompleted: {
         hotSpotStatus.text = i18n("HotSpot is inactive")

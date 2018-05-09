@@ -1,10 +1,10 @@
 import QtQuick 2.6
-import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2
+import QtQuick.Controls 2.2 as Controls
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.2 as Kirigami
 
-Kirigami.ScrollablePage  {
+Kirigami.ScrollablePage {
     anchors.leftMargin: Kirigami.Units.largeSpacing * 2
 
     header: RowLayout {
@@ -109,43 +109,41 @@ Kirigami.ScrollablePage  {
         }
 */
     Kirigami.OverlayDrawer {
-            id: deleteConnectionDialog
-            property var name
-            property var dbusPath
-            edge: Qt.BottomEdge
-            contentItem: Item {
-                implicitHeight: childrenRect.height + Kirigami.Units.gridUnit
-                ColumnLayout{
-                    anchors.centerIn: parent
-                    Controls.Label {
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        text: i18n("Delete connection ") + deleteConnectionDialog.name + " from device ?"
-                    }
-                    Controls.Button {
-                        text: i18n("Delete")
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        onClicked: {
-                            handler.removeConnection(deleteConnectionDialog.dbusPath)
-                            deleteConnectionDialog.close()
-                        }
-                    }
-                    Controls.Button {
-                        text: i18n("Cancel")
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        onClicked: deleteConnectionDialog.close()
-                    }
-                    Item {
-                        Layout.minimumHeight: Kirigami.Units.gridUnit * 4
+        id: deleteConnectionDialog
+        property var name
+        property var dbusPath
+        edge: Qt.BottomEdge
+        contentItem: Item {
+            implicitHeight: childrenRect.height + Kirigami.Units.gridUnit
+            ColumnLayout {
+                anchors.centerIn: parent
+                Controls.Label {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    text: i18n("Delete connection ") + deleteConnectionDialog.name + " from device ?"
+                }
+                Controls.Button {
+                    text: i18n("Delete")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    onClicked: {
+                        handler.removeConnection(deleteConnectionDialog.dbusPath)
+                        deleteConnectionDialog.close()
                     }
                 }
-                onVisibleChanged: {
-                    if (visible) {
-
-                    } else {
-                        deleteConnectionDialog.name = ""
-                        deleteConnectionDialog.dbusPath = ""
-                    }
+                Controls.Button {
+                    text: i18n("Cancel")
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    onClicked: deleteConnectionDialog.close()
+                }
+                Item {
+                    Layout.minimumHeight: Kirigami.Units.gridUnit * 4
+                }
+            }
+            onVisibleChanged: {
+                if (!visible) {
+                    deleteConnectionDialog.name = ""
+                    deleteConnectionDialog.dbusPath = ""
                 }
             }
         }
+    }
 }

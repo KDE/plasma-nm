@@ -18,10 +18,9 @@
  */
 
 import QtQuick 2.6
-import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2
+import QtQuick.Controls 2.2 as Controls
 import org.kde.kirigami 2.2 as Kirigami
-import org.kde.plasma.components 2.0 as PlasmaComponents
 
 ColumnLayout {
     id: ipmain
@@ -42,7 +41,6 @@ ColumnLayout {
     width: implicitWidth
 
     ColumnLayout {
-
         Controls.Label {
             anchors.left: parent.left
             text: i18n("IP settings")
@@ -66,7 +64,7 @@ ColumnLayout {
         }
     }
 
-    ColumnLayout{
+    ColumnLayout {
         id: manualIPSettings
         Layout.fillWidth: true
 

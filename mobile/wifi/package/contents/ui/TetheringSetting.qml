@@ -1,6 +1,6 @@
 import QtQuick 2.6
-import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.3
+import QtQuick.Controls 2.2 as Controls
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.2 as Kirigami
 
@@ -9,11 +9,12 @@ Kirigami.ScrollablePage {
     property var devicePath
     property alias name: hotSpotName.text
 
-    header:
-        ColumnLayout {
+    header: ColumnLayout {
         width: parent.width
         anchors.leftMargin: Kirigami.Units.largeSpacing * 2
+
         Kirigami.Separator {}
+
         RowLayout{
             Kirigami.Separator {}
             Controls.Label {
@@ -85,7 +86,7 @@ Kirigami.ScrollablePage {
                 loadSettings()
             }
         }
-        Column{
+        Column {
             id: hotSpotSettings
             width: parent.width / 2
             visible: hotSpotConfigButton.checked
@@ -189,7 +190,6 @@ Kirigami.ScrollablePage {
         handler.activateConnection(connectPath,devicePath,"")
         hotSpotStatus.text = i18n('Access point running: ') + name
         hotSpotStatusIcon.source = "network-wireless-symbolic"
-
     }
 
     function disableTethering(){

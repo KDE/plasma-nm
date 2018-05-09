@@ -1,13 +1,13 @@
 [Desktop Entry]
-Name=Mobile data
-Comment=Mobile cellural network setting
+Name=Mobile broadband
+Comment=Mobile broadband setting
 
 Icon=smartphone
-Exec=plasma-settings -m kcm_mobile_wifi
+Exec=plasma-settings -m kcm_mobile_broadband
 
 Type=Service
 X-KDE-ServiceTypes=KCModule
-X-KDE-Library=kcm_mobile_cellural
+X-KDE-Library=kcm_mobile_broadband
 X-KDE-ParentApp=kcontrol
 X-KDE-FormFactors=handset,tablet,mediacenter
 

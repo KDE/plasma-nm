@@ -17,35 +17,35 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include "celluralsettings.h"
+#include "mobilebroadbandsettings.h"
 
 #include <KPluginFactory>
 #include <KLocalizedString>
 #include <KAboutData>
 
-K_PLUGIN_FACTORY_WITH_JSON(CelluralSettingsFactory, "mobile_cellural.json", registerPlugin<CelluralSettings>();)
+K_PLUGIN_FACTORY_WITH_JSON(MobileBroadbandSettingsFactory, "mobilebroadbandsettings.json", registerPlugin<MobileBroadbandSettings>();)
 
-CelluralSettings::CelluralSettings(QObject* parent, const QVariantList& args) : KQuickAddons::ConfigModule(parent, args)
+MobileBroadbandSettings::MobileBroadbandSettings(QObject* parent, const QVariantList& args) : KQuickAddons::ConfigModule(parent, args)
 {
-    KAboutData* about = new KAboutData("kcm_mobile_cellural", i18n("Configure cellural data network"),
+    KAboutData* about = new KAboutData("kcm_mobile_broadband", i18n("Configure mobile broadband"),
                                        "0.1", QString(), KAboutLicense::GPL);
     about->addAuthor(i18n("Martin Kacej"), QString(), "m.kacej@atlas.sk");
     setAboutData(about);
 }
 
-CelluralSettings::~CelluralSettings()
+MobileBroadbandSettings::~MobileBroadbandSettings()
 {
 }
 
-bool CelluralSettings::mobileDataActive()
+bool MobileBroadbandSettings::mobileDataActive()
 {
     return m_mobileDataActive;
 }
 
-void CelluralSettings::setMobileDataActive(bool active)
+void MobileBroadbandSettings::setMobileDataActive(bool active)
 {
     m_mobileDataActive = active;
     emit mobileDataActiveChanged(m_mobileDataActive);
 }
 
-#include "celluralsettings.moc"
+#include "mobilebroadbandsettings.moc"

@@ -19,13 +19,12 @@
 */
 
 import QtQuick 2.6
-import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import QtQuick.Controls 2.2 as Controls
 
-PlasmaComponents.TextField {
+Controls.TextField {
     property int securityType
     echoMode: TextInput.Password
-    revealPasswordButtonShown: true
     placeholderText: i18n("Password...")
     validator: RegExpValidator {
                     regExp: if (securityType == PlasmaNM.Enums.StaticWep) {

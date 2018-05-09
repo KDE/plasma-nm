@@ -33,6 +33,9 @@ public:
     bool mobileDataActive();
     void setMobileDataActive(bool active);
     Q_SIGNAL void mobileDataActiveChanged(bool active);
+    Q_INVOKABLE QString getModemDevice();
+    void setupMobileNetwork();
+    Q_INVOKABLE QString getAPN();
 
 private:
     bool m_mobileDataActive;

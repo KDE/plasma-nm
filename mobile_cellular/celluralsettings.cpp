@@ -23,6 +23,17 @@
 #include <KLocalizedString>
 #include <KAboutData>
 
+#include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/GsmSetting>
+#include <NetworkManagerQt/CdmaSetting>
+
+#if WITH_MODEMMANAGER_SUPPORT
+#include <ModemManagerQt/Manager>
+#include <ModemManagerQt/GenericTypes>
+#include <ModemManagerQt/ModemDevice>
+#endif
+
 K_PLUGIN_FACTORY_WITH_JSON(CelluralSettingsFactory, "mobile_cellural.json", registerPlugin<CelluralSettings>();)
 
 CelluralSettings::CelluralSettings(QObject* parent, const QVariantList& args) : KQuickAddons::ConfigModule(parent, args)
@@ -31,6 +42,9 @@ CelluralSettings::CelluralSettings(QObject* parent, const QVariantList& args) : 
                                        "0.1", QString(), KAboutLicense::GPL);
     about->addAuthor(i18n("Martin Kacej"), QString(), "m.kacej@atlas.sk");
     setAboutData(about);
+    ModemManager::scanDevices();
+    this->getModemDevice();
+    this->setupMobileNetwork();
 }
 
 CelluralSettings::~CelluralSettings()
@@ -46,6 +60,51 @@ void CelluralSettings::setMobileDataActive(bool active)
 {
     m_mobileDataActive = active;
     emit mobileDataActiveChanged(m_mobileDataActive);
+}
+
+QString CelluralSettings::getModemDevice()
+{
+    ModemManager::ModemDevice::List list = ModemManager::modemDevices();
+    if (list.length() == 0)
+        return QString();
+    ModemManager::ModemDevice::Ptr device;
+    foreach (const ModemManager::ModemDevice::Ptr &md, list) {
+        ModemManager::Modem::Ptr m = md->modemInterface();
+        if (!m->isEnabled())
+            continue;
+        // TODO powerState ???
+        if (m->state() <= MM_MODEM_STATE_REGISTERED)
+            continue; // needs inspection
+        if (m->accessTechnologies() <= MM_MODEM_ACCESS_TECHNOLOGY_GSM)
+            continue;
+        if (m->currentCapabilities() <= MM_MODEM_CAPABILITY_GSM_UMTS)
+            continue;
+        device = md;
+    }
+    if (device) {
+        qWarning() << device->uni() << device->modemInterface()->uni();
+        return device->uni();
+    }
+    return QString();
+}
+
+void CelluralSettings::setupMobileNetwork()
+{
+    ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(getModemDevice());
+    if (!modem)
+        return;
+    if (modem->bearers().count() == 0) {
+        qWarning() << "No bearers in modem found";
+    } else {
+        foreach (const ModemManager::Bearer::Ptr &p, modem->bearers()) {
+            qWarning() << p->properties();
+        }
+    }
+}
+
+QString CelluralSettings::getAPN()
+{
+    return "some.ap.placeholder.com";
 }
 
 #include "celluralsettings.moc"

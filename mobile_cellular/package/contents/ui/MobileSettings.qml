@@ -40,5 +40,23 @@ Kirigami.Page {
                 }
             }
         }
+        Kirigami.Separator {}
+        Column {
+            Controls.Label {
+                text: i18n("Access point name")
+                font.weight: Font.Bold
+            }
+            Row {
+                Controls.TextField {
+                    text: kcm.getAPN()
+                }
+                Controls.ToolButton {
+                    text: i18n("Edit APN")
+                }
+            }
+        }
+        Controls.Button {
+            text: i18n("Data usage")
+        }
     }
 }

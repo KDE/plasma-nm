@@ -5,6 +5,8 @@ set (celluralsettings_SRCS celluralsettings.cpp)
 add_library(kcm_mobile_cellural MODULE ${celluralsettings_SRCS})
 
 target_link_libraries(kcm_mobile_cellural
+    KF5::NetworkManagerQt
+    KF5::ModemManagerQt
     Qt5::DBus
     Qt5::Gui
     Qt5::Quick

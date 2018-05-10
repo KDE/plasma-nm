@@ -73,7 +73,7 @@ Item {
         }
     }
 
-    PlasmaExtras.ScrollArea {
+    QtControls.ScrollView {
         id: scrollView
 
         anchors {

@@ -18,8 +18,8 @@
  */
 
 import QtQuick 2.6
-import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2
+import QtQuick.Controls 2.2 as Controls
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.2 as Kirigami
@@ -35,10 +35,6 @@ Kirigami.SwipeListItem {
                                                     (SecurityType == PlasmaNM.Enums.StaticWep ||
                                                      SecurityType == PlasmaNM.Enums.WpaPsk ||
                                                      SecurityType == PlasmaNM.Enums.Wpa2Psk)
-
-    onClicked: {
-        changeState()
-    }
 
     RowLayout {
         anchors.leftMargin: Kirigami.Units.largeSpacing * 5
@@ -87,7 +83,7 @@ Kirigami.SwipeListItem {
             text: ItemUniqueName
             textFormat: Text.PlainText
         }
-        PasswordField{
+        PasswordField {
             id: connectionPasswordField
             anchors.left: connectionNameLabel.left
             height: units.gridUnit * 2
@@ -128,6 +124,10 @@ Kirigami.SwipeListItem {
             onTriggered: forgetNetwork()
         }
     ]
+
+    onClicked: {
+        changeState()
+    }
 
     function getConfigureDialog() {
         var item = applicationWindow().pageStack.push(networkDetailsViewComponent)

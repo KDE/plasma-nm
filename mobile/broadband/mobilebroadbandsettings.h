@@ -17,19 +17,20 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef CELLURALSETTINGS_H
-#define CELLURALSETTINGS_H
+#ifndef MOBILEBROADBANDSETTINGS_H
+#define MOBILEBROADBANDSETTINGS_H
 
 #include <KQuickAddons/ConfigModule>
 
-class CelluralSettings : public KQuickAddons::ConfigModule
+class MobileBroadbandSettings : public KQuickAddons::ConfigModule
 {
     Q_OBJECT
     Q_PROPERTY(bool mobileDataActive READ mobileDataActive WRITE setMobileDataActive NOTIFY mobileDataActiveChanged)
 
 public:
-    CelluralSettings(QObject *parent, const QVariantList &args);
-    virtual ~CelluralSettings();
+    MobileBroadbandSettings(QObject *parent, const QVariantList &args);
+    virtual ~MobileBroadbandSettings();
+
     bool mobileDataActive();
     void setMobileDataActive(bool active);
     Q_SIGNAL void mobileDataActiveChanged(bool active);
@@ -41,4 +42,4 @@ private:
     bool m_mobileDataActive;
 };
 
-#endif // CELLURALSETTINGS_H
+#endif // MOBILEBROADBANDSETTINGS_H

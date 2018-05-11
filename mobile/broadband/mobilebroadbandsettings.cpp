@@ -17,13 +17,12 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include "celluralsettings.h"
+#include "mobilebroadbandsettings.h"
 
 #include <KPluginFactory>
 #include <KLocalizedString>
 #include <KAboutData>
 
-#include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/GsmSetting>
 #include <NetworkManagerQt/CdmaSetting>
@@ -34,11 +33,11 @@
 #include <ModemManagerQt/ModemDevice>
 #endif
 
-K_PLUGIN_FACTORY_WITH_JSON(CelluralSettingsFactory, "mobile_cellural.json", registerPlugin<CelluralSettings>();)
+K_PLUGIN_FACTORY_WITH_JSON(MobileBroadbandSettingsFactory, "mobilebroadbandsettings.json", registerPlugin<MobileBroadbandSettings>();)
 
-CelluralSettings::CelluralSettings(QObject* parent, const QVariantList& args) : KQuickAddons::ConfigModule(parent, args)
+MobileBroadbandSettings::MobileBroadbandSettings(QObject* parent, const QVariantList& args) : KQuickAddons::ConfigModule(parent, args)
 {
-    KAboutData* about = new KAboutData("kcm_mobile_cellural", i18n("Configure cellural data network"),
+    KAboutData* about = new KAboutData("kcm_mobile_broadband", i18n("Configure mobile broadband"),
                                        "0.1", QString(), KAboutLicense::GPL);
     about->addAuthor(i18n("Martin Kacej"), QString(), "m.kacej@atlas.sk");
     setAboutData(about);
@@ -47,22 +46,22 @@ CelluralSettings::CelluralSettings(QObject* parent, const QVariantList& args) : 
     this->setupMobileNetwork();
 }
 
-CelluralSettings::~CelluralSettings()
+MobileBroadbandSettings::~MobileBroadbandSettings()
 {
 }
 
-bool CelluralSettings::mobileDataActive()
+bool MobileBroadbandSettings::mobileDataActive()
 {
     return m_mobileDataActive;
 }
 
-void CelluralSettings::setMobileDataActive(bool active)
+void MobileBroadbandSettings::setMobileDataActive(bool active)
 {
     m_mobileDataActive = active;
     emit mobileDataActiveChanged(m_mobileDataActive);
 }
 
-QString CelluralSettings::getModemDevice()
+QString MobileBroadbandSettings::getModemDevice()
 {
     ModemManager::ModemDevice::List list = ModemManager::modemDevices();
     if (list.length() == 0)
@@ -88,7 +87,7 @@ QString CelluralSettings::getModemDevice()
     return QString();
 }
 
-void CelluralSettings::setupMobileNetwork()
+void MobileBroadbandSettings::setupMobileNetwork()
 {
     ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(getModemDevice());
     if (!modem)
@@ -102,9 +101,9 @@ void CelluralSettings::setupMobileNetwork()
     }
 }
 
-QString CelluralSettings::getAPN()
+QString MobileBroadbandSettings::getAPN()
 {
     return "some.ap.placeholder.com";
 }
 
-#include "celluralsettings.moc"
+#include "mobilebroadbandsettings.moc"

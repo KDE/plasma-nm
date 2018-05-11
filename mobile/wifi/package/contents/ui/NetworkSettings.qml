@@ -18,48 +18,47 @@
  */
 
 import QtQuick 2.6
-import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.extras 2.0 as PlasmaExtras
+import QtQuick.Controls 2.2 as Controls
 import org.kde.kirigami 2.2 as Kirigami
 
 Kirigami.ScrollablePage{
-    property var details
-    property var str: 0
-    property var connection : ({})
-    property var enabledSaving: (editorIpSection.enabledSave && editorSecuritySection.enabledSave && ssidField.text)
+    property var path
+    property var settings: ({})
+    property var activeMap: ({})
+    property bool enabledSave: true && detailsIP.enabledSave
 
-    title: i18n("Connection Editor")
-    width: parent.width
+    header: ColumnLayout {
+        width: parent.width
+        anchors.leftMargin: Kirigami.Units.largeSpacing * 2
+        Kirigami.Separator {}
+        RowLayout{
+            Kirigami.Separator {}
+            Controls.Label {
+                id: detailsName
+                anchors.leftMargin: Kirigami.Units.largeSpacing * 2
+                text: "Connection Name"
+                font.weight: Font.Bold
+            }
+        }
+        Kirigami.Separator {}
+        Rectangle{
+            height: 1
+            Layout.fillWidth: true
+            color: "black"
+        }
+    }
 
-    ColumnLayout{
-        id: columnlayout
-       // anchors.horizontalCenter: parent.horizontalCenter
-
-        Controls.Label {
-            text: i18n("SSID")
-            font.weight: Font.Bold
-            //anchors.horizontalCenter: parent.horizontalCenter
+    Column {
+        id: detailsView
+        spacing: Kirigami.Units.gridUnit
+        WirelessSecuritySetting {
+            id: detailsSecuritySection
+            anchors.bottomMargin: 10
         }
 
-        Controls.TextField {
-            id: ssidField
-            //anchors.horizontalCenter: parent.horizontalCenter
-            placeholderText: i18n("None")
-        }
-
-        IpSetting {
-            id: editorIpSection
-            width: parent.width
-            //anchors.horizontalCenter: parent.horizontalCenter
-        }
-
-		WirelessSecuritySetting {
-            id: editorSecuritySection
-            anchors.topMargin: units.gridUnit
-            //anchors.horizontalCenter: parent.horizontalCenter
-            width: parent.width
+        IPAddressSetting {
+            id: detailsIP
         }
     }
 
@@ -69,7 +68,7 @@ Kirigami.ScrollablePage{
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: Kirigami.Units.gridUnit
             Controls.Button {
-                enabled: enabledSaving
+                enabled: enabledSave
                 RowLayout {
                     anchors.centerIn: parent
                     Kirigami.Icon {
@@ -105,13 +104,21 @@ Kirigami.ScrollablePage{
         }
     }
 
+    function loadNetworkSettings() {
+        console.info(path);
+        settings = utils.getConnectionSettings(path,"connection");
+        detailsName.text = settings["id"]
+        detailsSecuritySection.securityMap = utils.getConnectionSettings(path,"802-11-wireless-security");
+        detailsIP.ipmap = utils.getConnectionSettings(path,"ipv4");
+        detailsSecuritySection.setStateFromMap();
+        detailsIP.setStateFromMap();
+    }
+
     function save() {
-        connection = editorIpSection.ipmap
-        connection["id"] = ssidField.text
-        connection["mode"] = "infrastructure"
-        connection["802-11-wireless-security"] = editorSecuritySection.securityMap
-        console.info(connection)
-        utils.addConnectionFromQML(connection)
-        console.info('Connection saved '+ connection["id"])
+        settings = detailsIP.ipmap;
+        if (detailsSecuritySection.password !== "") { //otherwise password is unchanged
+            settings["802-11-wireless-security"] = detailsSecuritySection.securityMap;
+        }
+        utils.updateConnectionFromQML(path,settings);
     }
 }

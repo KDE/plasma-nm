@@ -18,8 +18,8 @@
  */
 
 import QtQuick 2.6
-import QtQuick.Controls 2.2 as Controls
 import QtQuick.Layouts 1.2
+import QtQuick.Controls 2.2 as Controls
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.2 as Kirigami
 
@@ -75,26 +75,23 @@ Kirigami.ApplicationItem {
         }
     }
 
-    NetworkListView{
+    NetworkListView {
         id: networkListview
         anchors.fill: parent
     }
 
     Component {
         id: connectionEditorDialogComponent
-        ConnectionEditor {
-        }
+        ConnectionEditor { }
     }
 
     Component {
         id: networkDetailsViewComponent
-        NetworkSettings{
-        }
+        NetworkSettings { }
     }
 
     Component {
         id: tetheringComponent
-        TetheringSettings {
-        }
+        TetheringSetting { }
     }
 }

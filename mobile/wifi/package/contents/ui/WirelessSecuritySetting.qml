@@ -18,12 +18,12 @@
  */
 
 import QtQuick 2.6
+import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.2 as Controls
-import QtQuick.Layouts 1.2 as Layouts
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.2 as Kirigami
 
-Layouts.ColumnLayout {
+ColumnLayout {
     id:securitySectionView
     property var securityMap: ({})
     property var enabledSave: !wepWpaPasswordField.visible || (wepWpaPasswordField.visible && wepWpaPasswordField.acceptableInput)
@@ -32,7 +32,7 @@ Layouts.ColumnLayout {
     implicitWidth: Kirigami.Units.gridUnit * 20
     width: implicitWidth
 
-    Column {
+    ColumnLayout {
         id: securitySectionHeader
 
         width: parent.width
@@ -86,7 +86,7 @@ Layouts.ColumnLayout {
         }
     }
 
-    Layouts.ColumnLayout {
+    ColumnLayout {
         id: eap
         anchors.top: securitySectionHeader.bottom
         Column {
@@ -129,7 +129,7 @@ Layouts.ColumnLayout {
             }
         }
     ]
-    function setStateFromMap(){
+    function setStateFromMap() {
         var x = securityMap["key-mgmt"]
         switch (x) {
             case "none":

@@ -73,8 +73,6 @@ Kirigami.ScrollablePage {
             checked: false
             onTriggered: {
                 mobileProxyModel.showSavedMode = !mobileProxyModel.showSavedMode
-                mobileProxyModel.clear()
-                handler.requestScan
             }
         }
     ]

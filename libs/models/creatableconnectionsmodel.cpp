@@ -1,5 +1,5 @@
 /*
-    Copyright 2016 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2016-2018 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -208,7 +208,7 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
         return QString::localeAwareCompare(left->name(), right->name()) <= 0;
     });
 
-    Q_FOREACH (const KService::Ptr & service, services) {
+    for (const KService::Ptr &service : services) {
         const QString vpnType = service->property("X-NetworkManager-Services", QVariant::String).toString();
         const QString vpnSubType = service->property("X-NetworkManager-Services-Subtype", QVariant::String).toString();
         const QString vpnDescription = service->property("Comment", QVariant::String).toString();
@@ -237,7 +237,7 @@ QVariant CreatableConnectionsModel::data(const QModelIndex &index, int role) con
     const int row = index.row();
 
     if (row >= 0 && row < m_list.count()) {
-        CreatableConnectionItem * item = m_list.at(row);
+        CreatableConnectionItem *item = m_list.at(row);
 
         switch (role) {
             case ConnectionDescription:

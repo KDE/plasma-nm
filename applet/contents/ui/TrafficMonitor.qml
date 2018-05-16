@@ -47,7 +47,8 @@ Item {
 
     KQuickControlsAddons.Plotter {
         id: plotter
-
+        property variant downloadColor: theme.highlightColor
+        property variant uploadColor: Qt.hsva((downloadColor.hsvHue + 0.5) % 1, downloadColor.hsvSaturation, downloadColor.hsvValue, downloadColor.a)
         // Joining two QList<foo> in QML/javascript doesn't seem to work so I'm getting maximum from both list separately
         readonly property int maxValue: Math.max(Math.max.apply(null, downloadPlotData.values), Math.max.apply(null, uploadPlotData.values))
         anchors {
@@ -65,12 +66,12 @@ Item {
             KQuickControlsAddons.PlotData {
                 id: downloadPlotData
                 label: i18n("Download")
-                color: theme.highlightColor
+                color: plotter.downloadColor
             },
             KQuickControlsAddons.PlotData {
                 id: uploadPlotData
                 label: i18n("Upload")
-                color: cycle(theme.highlightColor, -180)
+                color: plotter.uploadColor
             }
         ]
 

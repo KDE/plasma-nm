@@ -23,6 +23,7 @@
 
 #include "openvpn.h"
 
+#include <QLatin1Char>
 #include <QStringBuilder>
 #include <KPluginFactory>
 #include <KLocalizedString>
@@ -360,7 +361,12 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         }
         if (key_value[0] == REMOTE_TAG) {
             if (key_value.count() >= 2 && key_value.count() <= 4) {
-                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE), key_value[1]);
+                QString remote = key_value[1];
+                if (remote.startsWith(QLatin1Char('\'')) || remote.startsWith(QLatin1Char('"'))) {
+                    remote.remove(0, 1); // Remove first quote
+                    remote.remove(remote.size() - 1, 1); // Remove last quote
+                }
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE), remote);
                 have_remote = true;
                 if (key_value.count() >= 3 && key_value[2].toLong() > 0
                                            && key_value[2].toLong() < 65536) {

@@ -1,5 +1,5 @@
 /*
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2018 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -21,7 +21,7 @@
 #include "editorproxymodel.h"
 #include "uiutils.h"
 
-EditorProxyModel::EditorProxyModel(QObject* parent)
+EditorProxyModel::EditorProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
     setDynamicSortFilter(true);
@@ -34,7 +34,7 @@ EditorProxyModel::~EditorProxyModel()
 {
 }
 
-bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
+bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
 

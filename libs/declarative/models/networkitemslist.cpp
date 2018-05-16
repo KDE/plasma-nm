@@ -1,5 +1,5 @@
 /*
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2018 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -21,7 +21,7 @@
 #include "networkitemslist.h"
 #include "networkmodelitem.h"
 
-NetworkItemsList::NetworkItemsList(QObject* parent)
+NetworkItemsList::NetworkItemsList(QObject *parent)
     : QObject(parent)
 {
 }
@@ -31,9 +31,9 @@ NetworkItemsList::~NetworkItemsList()
     qDeleteAll(m_items);
 }
 
-bool NetworkItemsList::contains(const NetworkItemsList::FilterType type, const QString& parameter) const
+bool NetworkItemsList::contains(const NetworkItemsList::FilterType type, const QString &parameter) const
 {
-    Q_FOREACH (NetworkModelItem * item, m_items) {
+    for (NetworkModelItem *item : m_items) {
         switch (type) {
             case NetworkItemsList::ActiveConnection:
                 if (item->activeConnectionPath() == parameter) {
@@ -79,36 +79,36 @@ int NetworkItemsList::count() const
     return m_items.count();
 }
 
-int NetworkItemsList::indexOf(NetworkModelItem* item) const
+int NetworkItemsList::indexOf(NetworkModelItem *item) const
 {
     return m_items.indexOf(item);
 }
 
-void NetworkItemsList::insertItem(NetworkModelItem* item)
+void NetworkItemsList::insertItem(NetworkModelItem *item)
 {
     m_items << item;
 }
 
-NetworkModelItem* NetworkItemsList::itemAt(int index) const
+NetworkModelItem *NetworkItemsList::itemAt(int index) const
 {
     return m_items.at(index);
 }
 
-QList< NetworkModelItem* > NetworkItemsList::items() const
+QList< NetworkModelItem*> NetworkItemsList::items() const
 {
     return m_items;
 }
 
-void NetworkItemsList::removeItem(NetworkModelItem* item)
+void NetworkItemsList::removeItem(NetworkModelItem *item)
 {
     m_items.removeAll(item);
 }
 
-QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList::FilterType type, const QString& parameter, const QString& additionalParameter) const
+QList< NetworkModelItem*> NetworkItemsList::returnItems(const NetworkItemsList::FilterType type, const QString &parameter, const QString &additionalParameter) const
 {
     QList<NetworkModelItem*> result;
 
-    Q_FOREACH (NetworkModelItem * item, m_items) {
+    for (NetworkModelItem *item : m_items) {
         switch (type) {
             case NetworkItemsList::ActiveConnection:
                 if (item->activeConnectionPath() == parameter) {
@@ -160,11 +160,11 @@ QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList:
     return result;
 }
 
-QList< NetworkModelItem* > NetworkItemsList::returnItems(const NetworkItemsList::FilterType type, NetworkManager::ConnectionSettings::ConnectionType typeParameter) const
+QList<NetworkModelItem*> NetworkItemsList::returnItems(const NetworkItemsList::FilterType type, NetworkManager::ConnectionSettings::ConnectionType typeParameter) const
 {
     QList<NetworkModelItem*> result;
 
-    Q_FOREACH (NetworkModelItem * item, m_items) {
+    for (NetworkModelItem *item : m_items) {
         if (type == NetworkItemsList::Type) {
             if (item->type() == typeParameter) {
                 result << item;

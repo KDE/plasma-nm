@@ -43,46 +43,6 @@ PlasmaComponents.ListItem {
         font.weight: Font.DemiBold
     }
 
-    /* INFO: Disabled for now as wifi scanning is now automatical
-    PlasmaComponents.ToolButton {
-        anchors {
-            top: parent.top
-            bottom: parent.bottom
-            margins: -Math.round(units.gridUnit / 3)
-            right: parent.right
-            rightMargin: units.gridUnit / 2
-        }
-        width: height
-        flat: true
-        tooltip: i18n("Rescan wireless networks")
-        visible: (header.text === i18n("Available connections") || !connectionView.availableConnectionsVisible) &&
-                 enabledConnections.wirelessEnabled && enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable
-
-        onClicked: {
-            handler.requestScan();
-            refreshAnimation.restart();
-        }
-
-        PlasmaCore.SvgItem {
-            anchors {
-                fill: parent
-                margins: Math.round(units.gridUnit / 3)
-            }
-            elementId: "view-refresh"
-            svg: PlasmaCore.FrameSvg { imagePath: "icons/view" }
-
-            RotationAnimator on rotation {
-                id: refreshAnimation
-
-                duration: 1000
-                running: false
-                from: 0
-                to: 720
-            }
-        }
-    }
-    */
-
     Component.onCompleted: {
         if (header.text === i18n("Available connections")) {
             connectionView.availableConnectionsVisible = true

@@ -19,18 +19,17 @@
 */
 
 import QtQuick 2.2
+import QtQuick.Layouts 1.2
 import org.kde.kcoreaddons 1.0 as KCoreAddons
-import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 PlasmaComponents.ListItem {
     id: connectionItem
 
-    property bool activating: ConnectionState == PlasmaNM.Enums.Activating;
-    property int  baseHeight: connectionItemBase.height
+    property bool activating: ConnectionState == PlasmaNM.Enums.Activating
+    property int  baseHeight: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(units.gridUnit / 2)
     property bool expanded: visibleDetails || visiblePasswordDialog
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
                                                (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
@@ -45,7 +44,7 @@ PlasmaComponents.ListItem {
 
     checked: connectionItem.containsMouse
     enabled: true
-    height: expanded ? baseHeight + expandableComponentLoader.height + Math.round(units.gridUnit / 3) : baseHeight
+    height: expanded ? baseHeight + separator.height + expandableComponentLoader.height + (2 * Math.round(units.gridUnit / 3)) : baseHeight
 
     PlasmaCore.DataSource {
         id: dataSource
@@ -58,105 +57,89 @@ PlasmaComponents.ListItem {
         interval: 2000
     }
 
-    Item {
-        id: connectionItemBase
+    ColumnLayout {
+        anchors.fill: parent
 
-        anchors {
-            left: parent.left
-            right: parent.right
-            top: parent.top
-            // Reset top margin from PlasmaComponents.ListItem
-            topMargin: -Math.round(units.gridUnit / 3)
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: Math.round(units.gridUnit / 2)
+
+            PlasmaCore.SvgItem {
+                id: connectionSvgIcon
+                Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
+                elementId: ConnectionIcon
+                height: units.iconSizes.medium; width: height
+                svg: PlasmaCore.Svg {
+                    multipleImages: true
+                    imagePath: "icons/network"
+                    colorGroup: PlasmaCore.ColorScope.colorGroup
+                }
+            }
+
+            ColumnLayout {
+                Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
+                spacing: 0
+
+                PlasmaComponents.Label {
+                    id: connectionNameLabel
+                    Layout.fillWidth: true
+                    height: paintedHeight
+                    elide: Text.ElideRight
+                    font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
+                    font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false
+                    text: ItemUniqueName
+                    textFormat: Text.PlainText
+                }
+
+                PlasmaComponents.Label {
+                    id: connectionStatusLabel
+                    Layout.fillWidth: true
+                    height: paintedHeight
+                    elide: Text.ElideRight
+                    font.pointSize: theme.smallestFont.pointSize
+                    opacity: 0.6
+                    text: itemText()
+                }
+            }
+
+            PlasmaComponents.BusyIndicator {
+                id: connectingIndicator
+                Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+                Layout.fillHeight: true
+                running: plasmoid.expanded && !stateChangeButton.visible && ConnectionState == PlasmaNM.Enums.Activating
+                visible: running
+                opacity: visible
+            }
+
+            PlasmaComponents.Button {
+                id: stateChangeButton
+                Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+                opacity: connectionView.currentVisibleButtonIndex == index ? 1 : 0
+                visible: opacity != 0
+                text: (ConnectionState == PlasmaNM.Enums.Deactivated) ? i18n("Connect") : i18n("Disconnect")
+
+                Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
+
+                onClicked: changeState()
+            }
         }
-        height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(units.gridUnit / 2)
 
         PlasmaCore.SvgItem {
-            id: connectionSvgIcon
-
-            anchors {
-                left: parent.left
-                verticalCenter: parent.verticalCenter
-            }
-            elementId: ConnectionIcon
-            height: units.iconSizes.medium; width: height
-            svg: PlasmaCore.Svg {
-                multipleImages: true
-                imagePath: "icons/network"
-                colorGroup: PlasmaCore.ColorScope.colorGroup
-            }
+            id: separator
+            height: lineSvg.elementSize("horizontal-line").height
+            Layout.fillWidth: true
+            Layout.maximumHeight: height
+            elementId: "horizontal-line"
+            svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
+            visible: connectionItem.expanded
+            opacity: visible
         }
 
-        PlasmaComponents.Label {
-            id: connectionNameLabel
-
-            anchors {
-                bottom: connectionSvgIcon.verticalCenter
-                left: connectionSvgIcon.right
-                leftMargin: Math.round(units.gridUnit / 2)
-                right: stateChangeButton.visible ? stateChangeButton.left : parent.right
-            }
-            height: paintedHeight
-            elide: Text.ElideRight
-            font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
-            font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false
-            text: ItemUniqueName
-            textFormat: Text.PlainText
-        }
-
-        PlasmaComponents.Label {
-            id: connectionStatusLabel
-
-            anchors {
-                left: connectionSvgIcon.right
-                leftMargin: Math.round(units.gridUnit / 2)
-                right: stateChangeButton.visible ? stateChangeButton.left : parent.right
-                top: connectionNameLabel.bottom
-            }
-            height: paintedHeight
-            elide: Text.ElideRight
-            font.pointSize: theme.smallestFont.pointSize
-            opacity: 0.6
-            text: itemText()
-        }
-
-        PlasmaComponents.BusyIndicator {
-            id: connectingIndicator
-
-            anchors {
-                right: stateChangeButton.visible ? stateChangeButton.left : parent.right
-                rightMargin: Math.round(units.gridUnit / 2)
-                verticalCenter: connectionSvgIcon.verticalCenter
-            }
-            height: units.iconSizes.medium; width: height
-            running: plasmoid.expanded && !stateChangeButton.visible && ConnectionState == PlasmaNM.Enums.Activating
-            visible: running
-        }
-
-        PlasmaComponents.Button {
-            id: stateChangeButton
-
-            anchors {
-                right: parent.right
-                rightMargin: Math.round(units.gridUnit / 2)
-                verticalCenter: connectionSvgIcon.verticalCenter
-            }
-            opacity: connectionView.currentVisibleButtonIndex == index ? 1 : 0
-            visible: opacity != 0
-            text: (ConnectionState == PlasmaNM.Enums.Deactivated) ? i18n("Connect") : i18n("Disconnect")
-
-            Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
-
-            onClicked: changeState()
-        }
-    }
-
-    Loader {
-        id: expandableComponentLoader
-
-        anchors {
-            left: parent.left
-            right: parent.right
-            top: connectionItemBase.bottom
+        Loader {
+            id: expandableComponentLoader
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            height: childrenRect.height
         }
     }
 
@@ -166,40 +149,30 @@ PlasmaComponents.ListItem {
         Item {
             height: childrenRect.height
 
-            Separator {
-                id: detailsSeparator
+            PlasmaComponents.TabBar {
+                id: detailsTabBar
+
                 anchors {
                     left: parent.left
                     right: parent.right
                     top: parent.top
                 }
-            }
-
-            PlasmaComponents.TabBar {
-                id: detailsTabBar;
-
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    top: detailsSeparator.bottom
-                    topMargin: Math.round(units.gridUnit / 3)
-                }
                 height: visible ? implicitHeight : 0
                 visible: showSpeed && dataSource.data && dataSource.data[dataSource.downloadSource] && dataSource.data[dataSource.uploadSource]
 
                 PlasmaComponents.TabButton {
-                    id: speedTabButton;
-                    text: i18n("Speed");
+                    id: speedTabButton
+                    text: i18n("Speed")
                 }
 
                 PlasmaComponents.TabButton {
-                    id: detailsTabButton;
-                    text: i18n("Details");
+                    id: detailsTabButton
+                    text: i18n("Details")
                 }
 
                 Component.onCompleted: {
                     if (!speedTabButton.visible) {
-                        currentTab = detailsTabButton;
+                        currentTab = detailsTabButton
                     }
                 }
             }
@@ -209,7 +182,7 @@ PlasmaComponents.ListItem {
                     left: parent.left
                     leftMargin: units.iconSizes.medium
                     right: parent.right
-                    top: detailsTabBar.visible ? detailsTabBar.bottom : detailsSeparator.bottom
+                    top: detailsTabBar.visible ? detailsTabBar.bottom : parent.top
                     topMargin: Math.round(units.gridUnit / 3)
                 }
                 details: ConnectionDetails
@@ -220,7 +193,7 @@ PlasmaComponents.ListItem {
                 anchors {
                     left: parent.left
                     right: parent.right
-                    top: detailsTabBar.visible ? detailsTabBar.bottom : detailsSeparator.bottom
+                    top: detailsTabBar.visible ? detailsTabBar.bottom : parent.top
                     topMargin: Math.round(units.gridUnit / 3)
                 }
                 dataEngine: dataSource
@@ -239,21 +212,12 @@ PlasmaComponents.ListItem {
 
             height: childrenRect.height
 
-            Separator {
-                id: passwordSeparator
+            PasswordField {
+                id: passwordField
                 anchors {
                     left: parent.left
                     right: parent.right
                     top: parent.top
-                }
-            }
-
-            PasswordField {
-                id: passwordField
-                anchors {
-                    horizontalCenter: parent.horizontalCenter
-                    top: passwordSeparator.bottom
-                    topMargin: Math.round(units.gridUnit / 3)
                 }
                 securityType: SecurityType
 
@@ -311,55 +275,55 @@ PlasmaComponents.ListItem {
         if (Uuid || !predictableWirelessPassword || visiblePasswordDialog) {
             if (ConnectionState == PlasmaNM.Enums.Deactivated) {
                 if (!predictableWirelessPassword && !Uuid) {
-                    handler.addAndActivateConnection(DevicePath, SpecificPath);
+                    handler.addAndActivateConnection(DevicePath, SpecificPath)
                 } else if (visiblePasswordDialog) {
                     if (expandableComponentLoader.item.password != "") {
-                        handler.addAndActivateConnection(DevicePath, SpecificPath, expandableComponentLoader.item.password);
-                        visiblePasswordDialog = false;
+                        handler.addAndActivateConnection(DevicePath, SpecificPath, expandableComponentLoader.item.password)
+                        visiblePasswordDialog = false
                     } else {
-                        connectionItem.clicked();
+                        connectionItem.clicked()
                     }
                 } else {
-                    handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
+                    handler.activateConnection(ConnectionPath, DevicePath, SpecificPath)
                 }
             } else {
-                handler.deactivateConnection(ConnectionPath, DevicePath);
+                handler.deactivateConnection(ConnectionPath, DevicePath)
             }
         } else if (predictableWirelessPassword) {
-            appletProxyModel.dynamicSortFilter = false;
-            visiblePasswordDialog = true;
+            appletProxyModel.dynamicSortFilter = false
+            visiblePasswordDialog = true
         }
     }
 
     function itemText() {
         if (ConnectionState == PlasmaNM.Enums.Activating) {
             if (Type == PlasmaNM.Enums.Vpn)
-                return VpnState;
+                return VpnState
             else
-                return DeviceState;
+                return DeviceState
         } else if (ConnectionState == PlasmaNM.Enums.Deactivating) {
             if (Type == PlasmaNM.Enums.Vpn)
-                return VpnState;
+                return VpnState
             else
-                return DeviceState;
+                return DeviceState
         } else if (ConnectionState == PlasmaNM.Enums.Deactivated) {
-            var result = LastUsed;
+            var result = LastUsed
             if (SecurityType > PlasmaNM.Enums.NoneSecurity)
-                result += ", " + SecurityTypeString;
-            return result;
+                result += ", " + SecurityTypeString
+            return result
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
             if (showSpeed && dataSource.data && dataSource.data[dataSource.downloadSource] && dataSource.data[dataSource.uploadSource]) {
-                var downloadColor = theme.highlightColor;
+                var downloadColor = theme.highlightColor
                 // cycle upload color by 180 degrees
-                var uploadColor = Qt.hsva((downloadColor.hsvHue + 0.5) % 1, downloadColor.hsvSaturation, downloadColor.hsvValue, downloadColor.a);
+                var uploadColor = Qt.hsva((downloadColor.hsvHue + 0.5) % 1, downloadColor.hsvSaturation, downloadColor.hsvValue, downloadColor.a)
 
                 return i18n("Connected, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s",
                             downloadColor,
                             KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.downloadSource].value * 1024 || 0),
                             uploadColor,
-                            KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.uploadSource].value * 1024 || 0));
+                            KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.uploadSource].value * 1024 || 0))
             } else {
-                return i18n("Connected");
+                return i18n("Connected")
             }
         }
     }

@@ -1,5 +1,5 @@
 /*
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2018 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -50,7 +50,7 @@
 #include <ModemManagerQt/modemcdma.h>
 #endif
 
-NetworkModelItem::NetworkModelItem(QObject* parent)
+NetworkModelItem::NetworkModelItem(QObject *parent)
     : QObject(parent)
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
     , m_deviceState(NetworkManager::Device::UnknownState)
@@ -64,7 +64,7 @@ NetworkModelItem::NetworkModelItem(QObject* parent)
 {
 }
 
-NetworkModelItem::NetworkModelItem(const NetworkModelItem* item, QObject* parent)
+NetworkModelItem::NetworkModelItem(const NetworkModelItem *item, QObject *parent)
     : QObject(parent)
     , m_connectionPath(item->connectionPath())
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
@@ -90,7 +90,7 @@ QString NetworkModelItem::activeConnectionPath() const
     return m_activeConnectionPath;
 }
 
-void NetworkModelItem::setActiveConnectionPath(const QString& path)
+void NetworkModelItem::setActiveConnectionPath(const QString &path)
 {
     m_activeConnectionPath = path;
 }
@@ -100,7 +100,7 @@ QString NetworkModelItem::connectionPath() const
     return m_connectionPath;
 }
 
-void NetworkModelItem::setConnectionPath(const QString& path)
+void NetworkModelItem::setConnectionPath(const QString &path)
 {
     m_connectionPath = path;
 }
@@ -130,12 +130,12 @@ QString NetworkModelItem::deviceName() const
     return m_deviceName;
 }
 
-void NetworkModelItem::setDeviceName(const QString& name)
+void NetworkModelItem::setDeviceName(const QString &name)
 {
     m_deviceName = name;
 }
 
-void NetworkModelItem::setDevicePath(const QString& path)
+void NetworkModelItem::setDevicePath(const QString &path)
 {
     m_devicePath = path;
 }
@@ -272,7 +272,7 @@ QString NetworkModelItem::name() const
     return m_name;
 }
 
-void NetworkModelItem::setName(const QString& name)
+void NetworkModelItem::setName(const QString &name)
 {
     m_name = name;
 }
@@ -329,7 +329,7 @@ QString NetworkModelItem::specificPath() const
     return m_specificPath;
 }
 
-void NetworkModelItem::setSpecificPath(const QString& path)
+void NetworkModelItem::setSpecificPath(const QString &path)
 {
     m_specificPath = path;
 }
@@ -339,7 +339,7 @@ QString NetworkModelItem::ssid() const
     return m_ssid;
 }
 
-void NetworkModelItem::setSsid(const QString& ssid)
+void NetworkModelItem::setSsid(const QString &ssid)
 {
     m_ssid = ssid;
 }
@@ -354,7 +354,7 @@ QDateTime NetworkModelItem::timestamp() const
     return m_timestamp;
 }
 
-void NetworkModelItem::setTimestamp(const QDateTime& date)
+void NetworkModelItem::setTimestamp(const QDateTime &date)
 {
     m_timestamp = date;
 }
@@ -378,7 +378,7 @@ QString NetworkModelItem::uuid() const
     return m_uuid;
 }
 
-void NetworkModelItem::setUuid(const QString& uuid)
+void NetworkModelItem::setUuid(const QString &uuid)
 {
     m_uuid = uuid;
 }
@@ -403,7 +403,7 @@ void NetworkModelItem::setVpnType(const QString &type)
     m_vpnType = type;
 }
 
-bool NetworkModelItem::operator==(const NetworkModelItem* item) const
+bool NetworkModelItem::operator==(const NetworkModelItem *item) const
 {
     if (!item->uuid().isEmpty() && !uuid().isEmpty()) {
         if (item->devicePath() == devicePath() && item->uuid() == uuid()) {

@@ -64,11 +64,9 @@ ScrollViewKCM {
         sourceModel: connectionModel
     }
 
-    header: Rectangle {
-        color: Kirigami.Theme.backgroundColor
-
+    header: Item {
         width: root.width
-        height: Math.round(Kirigami.Units.gridUnit * 2.5)
+        implicitHeight: Math.round(Kirigami.Units.gridUnit * 2.5)
 
         RowLayout {
             id: searchLayout
@@ -251,7 +249,8 @@ ScrollViewKCM {
 
     ConnectionEditor {
         id: connectionEditor
-        opacity: applicationWindow().pageStack.currentIndex == 1
+        visible: applicationWindow().pageStack.currentIndex == 1
+        opacity: visible
     }
 
     MessageDialog {
@@ -309,6 +308,10 @@ ScrollViewKCM {
             }
             kcm.selectConnection(root.currentConnectionPath)
         }
+    }
+
+    Component.onCompleted: {
+        applicationWindow().pageStack.defaultColumnWidth = Kirigami.Units.gridUnit * 25
     }
 
     function loadConnectionSetting() {

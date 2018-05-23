@@ -32,7 +32,7 @@ Kirigami.AbstractListItem {
     Accessible.role: Accessible.ListItem
     Accessible.name: model.Name
 
-    checked: ConnectionPath === connectionViewPage.currentConnectionPath
+    checked: ConnectionPath === root.currentConnectionPath
     highlighted: focus
 
     signal aboutToChangeConnection(bool exportable, string name, string path)

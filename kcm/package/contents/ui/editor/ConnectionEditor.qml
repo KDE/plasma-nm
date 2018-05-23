@@ -22,10 +22,11 @@ import QtQuick 2.6
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2 as QtControls
 
+import org.kde.kcm 1.2
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
-Kirigami.ScrollablePage {
+SimpleKCM {
     id: connectionEditorPage
 
     title: connectionNameTextField.text
@@ -34,86 +35,86 @@ Kirigami.ScrollablePage {
         id: nmUtils
     }
 
-    header: MouseArea {
-        width: connectionEditorPage.width
-        height: Math.round(Kirigami.Units.gridUnit * 2.5)
-        enabled: !applicationWindow().wideScreen
-
-        Accessible.role: Accessible.Button
-        Accessible.name: i18n("Back")
-
-        onClicked: {
-            root.pageStack.currentIndex = 0
-        }
-
-        Item {
-            id: headerControls
-            anchors.fill: parent
-
-            QtControls.ToolButton {
-                id: backButton
-                anchors.fill: parent
-                anchors.margins: Kirigami.Units.smallSpacing
-                visible: !applicationWindow().wideScreen
-
-                onClicked: {
-                    root.pageStack.currentIndex = 0
-                }
-
-                RowLayout {
-                    anchors.fill: parent
-
-                    Kirigami.Icon {
-                        id: toolButtonIcon
-
-                        Layout.alignment: Qt.AlignVCenter
-                        Layout.preferredHeight: Kirigami.Units.iconSizes.small
-                        Layout.preferredWidth: Layout.preferredHeight
-
-                        source: LayoutMirroring.enabled ? "go-next" : "go-previous"
-                    }
-
-                    QtControls.Label {
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-
-                        height: toolButtonIcon.height
-                        text: connectionEditorPage.title
-                        verticalAlignment: Text.AlignVCenter
-                        elide: Text.ElideRight
-
-                        //FIXME: QtControls bug, why?
-                        Component.onCompleted: {
-                            font.bold = true
-                        }
-                    }
-                }
-            }
-
-            QtControls.Label {
-                anchors.verticalCenter: parent.verticalCenter
-                x: y
-
-                text: connectionEditorPage.title
-                elide: Text.ElideRight
-                visible: !backButton.visible
-                opacity: 0.3
-                //FIXME: QtControls bug, why?
-                Component.onCompleted: {
-                    font.bold = true
-                }
-            }
-        }
-
-        Kirigami.Separator {
-            anchors {
-                left: parent.left
-                right: parent.right
-                top: parent.bottom
-            }
-            visible: !connectionEditorPage.atYBeginning
-        }
-    }
+//     header: MouseArea {
+//         width: connectionEditorPage.width
+//         height: Math.round(Kirigami.Units.gridUnit * 2.5)
+//         enabled: !applicationWindow().wideScreen
+//
+//         Accessible.role: Accessible.Button
+//         Accessible.name: i18n("Back")
+//
+//         onClicked: {
+//             applicationWindow().pageStack.currentIndex = 0
+//         }
+//
+//         Item {
+//             id: headerControls
+//             anchors.fill: parent
+//
+//             QtControls.ToolButton {
+//                 id: backButton
+//                 anchors.fill: parent
+//                 anchors.margins: Kirigami.Units.smallSpacing
+//                 visible: !applicationWindow().wideScreen
+//
+//                 onClicked: {
+//                     applicationWindow().pageStack.currentIndex = 0
+//                 }
+//
+//                 RowLayout {
+//                     anchors.fill: parent
+//
+//                     Kirigami.Icon {
+//                         id: toolButtonIcon
+//
+//                         Layout.alignment: Qt.AlignVCenter
+//                         Layout.preferredHeight: Kirigami.Units.iconSizes.small
+//                         Layout.preferredWidth: Layout.preferredHeight
+//
+//                         source: LayoutMirroring.enabled ? "go-next" : "go-previous"
+//                     }
+//
+//                     QtControls.Label {
+//                         Layout.fillWidth: true
+//                         Layout.fillHeight: true
+//
+//                         height: toolButtonIcon.height
+//                         text: connectionEditorPage.title
+//                         verticalAlignment: Text.AlignVCenter
+//                         elide: Text.ElideRight
+//
+//                         //FIXME: QtControls bug, why?
+//                         Component.onCompleted: {
+//                             font.bold = true
+//                         }
+//                     }
+//                 }
+//             }
+//
+//             QtControls.Label {
+//                 anchors.verticalCenter: parent.verticalCenter
+//                 x: y
+//
+//                 text: connectionEditorPage.title
+//                 elide: Text.ElideRight
+//                 visible: !backButton.visible
+//                 opacity: 0.3
+//                 //FIXME: QtControls bug, why?
+//                 Component.onCompleted: {
+//                     font.bold = true
+//                 }
+//             }
+//         }
+//
+//         Kirigami.Separator {
+//             anchors {
+//                 left: parent.left
+//                 right: parent.right
+//                 top: parent.bottom
+//             }
+//             visible: !connectionEditorPage.atYBeginning
+//         }
+//     }
 
     ColumnLayout {
         width: connectionEditorPage.width

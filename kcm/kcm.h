@@ -34,7 +34,7 @@ class KCMNetworkmanagement : public KQuickAddons::ConfigModule
     Q_OBJECT
     Q_PROPERTY(QObject * connectionSettings READ connectionSettings CONSTANT)
 public:
-    explicit KCMNetworkmanagement(QWidget *parent = nullptr, const QVariantList &args = QVariantList());
+    KCMNetworkmanagement(QObject *parent = nullptr, const QVariantList &args = QVariantList());
     ~KCMNetworkmanagement() override;
 
     // Called from QML

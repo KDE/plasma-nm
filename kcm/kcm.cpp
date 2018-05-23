@@ -104,7 +104,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const QVariantList &
 //     m_ui->connectionView->rootContext()->setContextProperty("connectionModified", false);
 //     m_ui->connectionView->rootContext()->setContextProperty("useApMode", useApMode);
 
-    m_connectionSetting = new ConnectionSetting(this);
+    m_connectionSettings = new ConnectionSettings(this);
 //     connect(m_connectionSetting, &ConnectionSetting::settingChanged,
 //             [this] () {
 //                 if (m_connectionSetting->isInitialized() && m_connectionSetting->isValid()) {
@@ -186,14 +186,14 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const QVariantList &
 //         }
 //     }
 
-    if (selectedConnection && selectedConnection->isValid()) {
-        const NetworkManager::ConnectionSettings::Ptr settings = selectedConnection->settings();
-        if (UiUtils::isConnectionTypeSupported(settings->connectionType())) {
-            QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, settings->id()), Q_ARG(QVariant, selectedConnection->path()));
-        }
-    } else {
-        qDebug() << "Cannot preselect a connection";
-    }
+//     if (selectedConnection && selectedConnection->isValid()) {
+//         const NetworkManager::ConnectionSettings::Ptr settings = selectedConnection->settings();
+//         if (UiUtils::isConnectionTypeSupported(settings->connectionType())) {
+//             QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, settings->id()), Q_ARG(QVariant, selectedConnection->path()));
+//         }
+//     } else {
+//         qDebug() << "Cannot preselect a connection";
+//     }
 
     connect(NetworkManager::settingsNotifier(), &NetworkManager::SettingsNotifier::connectionAdded, this, &KCMNetworkmanagement::onConnectionAdded, Qt::UniqueConnection);
 

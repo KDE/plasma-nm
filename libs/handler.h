@@ -115,7 +115,7 @@ public:
      * @map - NMVariantMapMap with new connection settings
      */
     Q_INVOKABLE void updateConnection(const NetworkManager::Connection::Ptr &connection, const NMVariantMapMap &map);
-    Q_INVOKABLE void requestScan(const QString &interface);
+    Q_INVOKABLE void requestScan(const QString &interface = QString());
 
     Q_INVOKABLE void createHotspot();
     Q_INVOKABLE void stopHotspot();

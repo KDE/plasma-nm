@@ -22,27 +22,38 @@ import "editor"
 
 import QtQuick 2.6
 import QtQuick.Dialogs 1.1
+<<<<<<< HEAD
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.5 as QQC2
 
 import org.kde.kcm 1.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
+=======
+import QtQuick.Layouts 1.3
+import QtQuick.Controls 2.2 as QtControls
+
+import org.kde.kcm 1.2
+import org.kde.kirigami 2.3  as Kirigami // for Kirigami.Units
+>>>>>>> 6cfc42e4... Attempt to use multipage KCM feature
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.9 as Kirigami
 
-Kirigami.ApplicationItem {
+ScrollViewKCM {
     id: root
+
+    ConfigModule.quickHelp: i18n("Connections")
+
+    title: i18n("Edit your Network Connections")
+
+    property bool currentConnectionExportable: false
+    property string currentConnectionName
+    property string currentConnectionPath
 
     property QtObject connectionSettingsObject: kcm.connectionSettings
 
     LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
-
-    wideScreen: width >= Kirigami.Units.gridUnit * 50
-
-    pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 25
-    pageStack.initialPage: connectionView
 
     SystemPalette {
         id: palette
@@ -63,98 +74,194 @@ Kirigami.ApplicationItem {
         sourceModel: connectionModel
     }
 
-    PlasmaNM.Configuration {
-        id: configuration
-    }
+    header: Rectangle {
+        color: Kirigami.Theme.backgroundColor
 
-    RowLayout {
-        anchors.fill: parent
+        width: root.width
+        height: Math.round(Kirigami.Units.gridUnit * 2.5)
 
-        spacing: units.smallSpacing
+        RowLayout {
+            id: searchLayout
 
-        ColumnLayout {
-
-            spacing: units.smallSpacing
-
-            ConnectionView {
-                id: connectionView
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Layout.minimumWidth: 300
-                Layout.preferredWidth: 400
+            spacing: Kirigami.Units.smallSpacing
+            anchors {
+                fill: parent
+                margins: Kirigami.Units.smallSpacing
             }
 
-            RowLayout {
-                spacing: units.smallSpacing
+            QQC2.TextField {
+                id: searchField
 
-                QQC2.TextField {
-                    id: searchField
+                Layout.minimumHeight: Layout.maximumHeight
+                Layout.maximumHeight: Kirigami.Units.iconSizes.smallMedium + Kirigami.Units.smallSpacing * 2
+                Layout.fillWidth: true
 
-                    Layout.fillWidth: true
+                focus: true
+                placeholderText: i18n("Type here to search connection...")
 
-                    placeholderText: i18n("Search...")
-
-                    onTextChanged: {
-                        editorProxyModel.setFilterRegExp(text)
-                    }
+                onTextChanged: {
+                    editorProxyModel.setFilterRegExp(text)
                 }
 
-                 QQC2.ToolButton {
-                    id: addConnectionButton
+                MouseArea {
+                    anchors {
+                        right: parent.right
+                        verticalCenter: parent.verticalCenter
+                        rightMargin: y
+                    }
 
-                    width: Kirigami.Units.iconSizes.medium * 3
-                    height: Kirigami.Units.iconSizes.medium
-
-                    icon.name: "list-add"
-
-                    QQC2.ToolTip.text: i18n("Add new connection")
-                    QQC2.ToolTip.visible: hovered
+                    opacity: searchField.text.length > 0 ? 1 : 0
+                    width: Kirigami.Units.iconSizes.small
+                    height: width
 
                     onClicked: {
-                        addNewConnectionDialog.open()
+                        searchField.text = ""
+                    }
+
+                    Kirigami.Icon {
+                        anchors.fill: parent
+                        source: LayoutMirroring.enabled ? "edit-clear-rtl" : "edit-clear"
+                    }
+
+                    Behavior on opacity {
+                        OpacityAnimator {
+                            duration: Kirigami.Units.longDuration
+                            easing.type: Easing.InOutQuad
+                        }
                     }
                 }
+            }
+        }
 
-                 QQC2.ToolButton {
-                    id: removeConnectionButton
+        Kirigami.Separator {
+            visible: !connectionView.atYBeginning
+            anchors {
+                left: parent.left
+                right: parent.right
+                top: parent.bottom
+            }
+        }
+    }
 
-                    height: Kirigami.Units.iconSizes.medium
-                    width: Kirigami.Units.iconSizes.medium
+    view: ListView {
+        id: connectionView
+        clip: true
+        model: editorProxyModel
+        currentIndex: -1
+        boundsBehavior: Flickable.StopAtBounds
+        activeFocusOnTab: true
+        keyNavigationWraps: true
+        Accessible.role: Accessible.List
+        Keys.onTabPressed: {
+            if (applicationWindow().wideScreen && root.pageStack.depth > 1) {
+                connectionEditor.focus = true;
+            }
+        }
 
-                    enabled: connectionView.currentConnectionPath && connectionView.currentConnectionPath.length
-                    icon.name: "list-remove"
-
-                    QQC2.ToolTip.text: i18n("Remove selected connection")
-                    QQC2.ToolTip.visible: hovered
-                    onClicked: {
-                        deleteConfirmationDialog.connectionName = connectionView.currentConnectionName
-                        deleteConfirmationDialog.connectionPath = connectionView.currentConnectionPath
-                        deleteConfirmationDialog.open()
-                    }
+        section {
+            property: "KcmConnectionType"
+            delegate: Kirigami.AbstractListItem {
+                supportsMouseEvents: false
+                background: Rectangle {
+                    color: palette.window
                 }
-
-                 QQC2.ToolButton {
-                    id: exportConnectionButton
-
-                    height: Kirigami.Units.iconSizes.medium
-                    width: Kirigami.Units.iconSizes.medium
-
-                    enabled: connectionView.currentConnectionExportable
-                    icon.name: "document-export"
-
-                    QQC2.ToolTip.text: i18n("Export selected connection")
-                    QQC2.ToolTip.visible: hovered
-
-                    onClicked: {
-                        kcm.requestExportConnection(connectionView.currentConnectionPath)
-                    }
+                QQC2.Label {
+                    id: headerLabel
+                    anchors.centerIn: parent
+                    font.weight: Font.DemiBold
+                    text: section
                 }
+            }
+        }
+
+        delegate: ConnectionItemDelegate {
+            onAboutToChangeConnection: {
+//                         // Shouldn't be problem to set this in advance
+//                         root.currentConnectionExportable = exportable
+//                         if (kcm.needsSave) {
+//                             confirmSaveDialog.connectionName = name
+//                             confirmSaveDialog.connectionPath = path
+//                             confirmSaveDialog.open()
+//                         } else {
+                    root.currentConnectionName = name
+                    root.currentConnectionPath = path
+
+//                         }
+            }
+
+            onAboutToExportConnection: {
+                requestExportConnection(path)
+            }
+
+            onAboutToRemoveConnection: {
+                deleteConfirmationDialog.connectionName = name
+                deleteConfirmationDialog.connectionPath = path
+                deleteConfirmationDialog.open()
+            }
+        }
+    }
+
+    footer: Row {
+        layoutDirection: Qt.RightToLeft
+        spacing: Kirigami.Units.smallSpacing
+        padding: Kirigami.Units.smallSpacing
+
+        QQC2.Button {
+            id: exportConnectionButton
+
+            height: Kirigami.Units.iconSizes.medium
+            width: Kirigami.Units.iconSizes.medium
+
+            enabled: root.currentConnectionExportable
+            icon.name: "document-export"
+
+            QQC2.ToolTip.text: i18n("Export selected connection")
+            QQC2.ToolTip.visible: hovered
+
+            onClicked: {
+                kcm.requestExportConnection(root.currentConnectionPath)
+            }
+        }
+
+        QQC2.Button {
+            id: removeConnectionButton
+
+            height: Kirigami.Units.iconSizes.medium
+            width: Kirigami.Units.iconSizes.medium
+
+            enabled: root.currentConnectionPath && root.currentConnectionPath.length
+            icon.name: "list-remove"
+
+            QQC2.ToolTip.text: i18n("Remove selected connection")
+            QQC2.ToolTip.visible: hovered
+
+            onClicked: {
+                deleteConfirmationDialog.connectionName = root.currentConnectionName
+                deleteConfirmationDialog.connectionPath = root.currentConnectionPath
+                deleteConfirmationDialog.open()
+            }
+        }
+
+        QQC2.Button {
+            id: addConnectionButton
+
+            width: Kirigami.Units.iconSizes.medium
+            height: Kirigami.Units.iconSizes.medium
+
+            icon.name: "list-add"
+
+            QQC2.ToolTip.text: i18n("Add new connection")
+            QQC2.ToolTip.visible: hovered
+
+            onClicked: {
+                addNewConnectionDialog.open()
             }
         }
     }
 
     ConnectionEditor {
         id: connectionEditor
+        opacity: applicationWindow().pageStack.currentIndex == 1
     }
 
     Row {
@@ -242,6 +349,17 @@ Kirigami.ApplicationItem {
 
     ConfigurationDialog {
         id: configurationDialog
+    }
+
+    onCurrentConnectionPathChanged: {
+        if (currentConnectionPath) {
+            if (applicationWindow().pageStack.depth < 2) {
+                applicationWindow().pageStack.push(connectionEditor)
+            } else {
+                applicationWindow().pageStack.currentIndex = 1
+            }
+            kcm.selectConnection(root.currentConnectionPath)
+        }
     }
 
     function loadConnectionSetting() {

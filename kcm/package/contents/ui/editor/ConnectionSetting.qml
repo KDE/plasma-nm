@@ -53,6 +53,7 @@ ColumnLayout {
             text: i18n("All users may connect to this network")
         }
 
+        // TODO implement advanced configuration
         QtControls.Button {
             id: advancedPermissionsButton
 
@@ -63,6 +64,8 @@ ColumnLayout {
 
             QtControls.ToolTip.text: i18n("Edit advanced permissions for this connection")
             QtControls.ToolTip.visible: advancedPermissionsButton.hovered
+
+            visible: expertModeCheckbox.checked
         }
     }
 
@@ -88,20 +91,19 @@ ColumnLayout {
 
         QtControls.Label {
             Layout.alignment: Qt.AlignRight
-
             text: i18n("Firewall zone:")
+            visible: expertModeCheckbox.checked
         }
 
         QtControls.ComboBox {
             id: firewallZoneCombobox
-
-            model: nmUtils.firewallZones()
             Layout.fillWidth: true
+            model: nmUtils.firewallZones()
+            visible: expertModeCheckbox.checked
         }
 
         QtControls.Label {
             Layout.alignment: Qt.AlignRight
-
             text: i18n("Priority:")
         }
 

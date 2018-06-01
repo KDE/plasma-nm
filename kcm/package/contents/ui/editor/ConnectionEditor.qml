@@ -36,46 +36,76 @@ SimpleKCM {
     }
 
     ColumnLayout {
-        width: connectionEditorPage.width
+        spacing: Kirigami.Units.smallSpacing
 
         QtControls.TextField  {
             id: connectionNameTextField
-
+            Layout.alignment: Qt.AlignHCenter
             Layout.fillWidth: true
-
+            Layout.minimumWidth: Kirigami.Units.gridUnit * 25
+            Layout.maximumWidth: Kirigami.Units.gridUnit * 40
             hoverEnabled: true
         }
 
-        QtControls.TabBar {
-            id: tabBar
-
-            Layout.fillWidth: true
-
-            QtControls.TabButton {
-                text: connectionSetting.settingName
-            }
-
-            // FIXME just placeholders for now
-            QtControls.TabButton {
-                text: connectionSpecificSetting.item.settingName
-            }
-
-            QtControls.TabButton {
-                text: i18n("IP")
-            }
-        }
-
         StackLayout {
+            Layout.alignment: Qt.AlignHCenter
             Layout.fillWidth: true
+            Layout.minimumWidth: Kirigami.Units.gridUnit * 25
+            Layout.maximumWidth: Kirigami.Units.gridUnit * 40
 
-            currentIndex: tabBar.currentIndex
+            currentIndex: expertModeCheckbox.checked ? 1 : 0
 
-            ConnectionSetting {
-                id: connectionSetting
+            ColumnLayout {
+                id: simpleLayout
+                anchors.fill: parent
+
+                ConnectionSetting {
+                    id: connectionSetting
+                    Layout.fillWidth: true
+                }
+
+                Loader {
+                    id: connectionSpecificSetting
+                    Layout.fillWidth: true
+                }
             }
 
-            Loader {
-                id: connectionSpecificSetting
+            ColumnLayout {
+                anchors.fill: parent
+
+                QtControls.TabBar {
+                    id: tabBar
+                    Layout.fillWidth: true
+
+                    QtControls.TabButton {
+                        text: connectionSetting.settingName
+                    }
+
+                    QtControls.TabButton {
+                        text: connectionSpecificSetting.item.settingName
+                    }
+
+                    // FIXME just placeholders for now
+                    QtControls.TabButton {
+                        text: i18n("IP")
+                    }
+                }
+
+                StackLayout {
+                    id: expertLayout
+
+                    Layout.fillWidth: true
+
+                    currentIndex: tabBar.currentIndex
+                    // Items will be re-parented
+                }
+            }
+
+            // FIXME this is probably not the best solution
+            onCurrentIndexChanged: {
+                tabBar.currentIndex = 0
+                connectionSetting.parent = currentIndex ? expertLayout : simpleLayout
+                connectionSpecificSetting.parent =  currentIndex ? expertLayout : simpleLayout
             }
         }
     }
@@ -91,6 +121,7 @@ SimpleKCM {
         } else if (connectionSettingsObject.connectionType == PlasmaNM.Enums.Wireless) {
             connectionSpecificSetting.source = "WirelessSetting.qml"
         }
+
         connectionSpecificSetting.item.loadSettings()
     }
 }

@@ -71,11 +71,8 @@ ScrollViewKCM {
         RowLayout {
             id: searchLayout
 
+            anchors.fill: parent
             spacing: Kirigami.Units.smallSpacing
-            anchors {
-                fill: parent
-                margins: Kirigami.Units.smallSpacing
-            }
 
             QtControls.TextField {
                 id: searchField
@@ -189,14 +186,21 @@ ScrollViewKCM {
         }
     }
 
-    footer: Row {
-        layoutDirection: Qt.RightToLeft
-        spacing: Kirigami.Units.smallSpacing
-        padding: Kirigami.Units.smallSpacing
+    footer: RowLayout {
+        spacing: Kirigami.Units.largeSpacing
+
+        QtControls.CheckBox {
+            id: expertModeCheckbox
+            Layout.alignment: Qt.AlignLeft
+            Layout.fillWidth: true
+            height: Kirigami.Units.iconSizes.medium
+            width: Kirigami.Units.iconSizes.medium
+            text: i18n("Enable expert mode")
+        }
 
         QtControls.Button {
             id: exportConnectionButton
-
+            Layout.alignment: Qt.AlignRight
             height: Kirigami.Units.iconSizes.medium
             width: Kirigami.Units.iconSizes.medium
 
@@ -213,7 +217,7 @@ ScrollViewKCM {
 
         QtControls.Button {
             id: removeConnectionButton
-
+            Layout.alignment: Qt.AlignRight
             height: Kirigami.Units.iconSizes.medium
             width: Kirigami.Units.iconSizes.medium
 
@@ -232,9 +236,9 @@ ScrollViewKCM {
 
         QtControls.Button {
             id: addConnectionButton
-
-            width: Kirigami.Units.iconSizes.medium
+            Layout.alignment: Qt.AlignRight
             height: Kirigami.Units.iconSizes.medium
+            width: Kirigami.Units.iconSizes.medium
 
             icon.name: "list-add"
 

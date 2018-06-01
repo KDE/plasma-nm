@@ -111,7 +111,7 @@ ColumnLayout {
             Layout.alignment: Qt.AlignRight
 
             opacity: visible ? 1 : 0
-            visible: !modeCombobox.currentIndex
+            visible: !modeCombobox.currentIndex && expertModeCheckbox.checked
             text: i18n("BSSID:")
         }
 
@@ -156,7 +156,7 @@ ColumnLayout {
             model: nmUtils.availableBssids(ssidCombobox.currentText)
             editable: true
             opacity: visible ? 1 : 0
-            visible: !modeCombobox.currentIndex
+            visible: !modeCombobox.currentIndex && expertModeCheckbox.checked
             textRole: "bssid"
             validator: RegExpValidator { regExp: /([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}/ }
         }
@@ -165,7 +165,7 @@ ColumnLayout {
             Layout.alignment: Qt.AlignRight
 
             opacity: visible ? 1 : 0
-            visible: modeCombobox.currentIndex
+            visible: modeCombobox.currentIndex && expertModeCheckbox.checked
             text: i18n("Band:")
         }
 
@@ -175,14 +175,14 @@ ColumnLayout {
 
             model: [i18n("Automatic"), i18n("A (5 GHz)"), i18n("B/G (2.4 GHz)")]
             opacity: visible ? 1 : 0
-            visible: modeCombobox.currentIndex
+            visible: modeCombobox.currentIndex && expertModeCheckbox.checked
         }
 
         QtControls.Label {
             Layout.alignment: Qt.AlignRight
 
             opacity: visible ? 1 : 0
-            visible: modeCombobox.currentIndex
+            visible: modeCombobox.currentIndex && expertModeCheckbox.checked
             text: i18n("Channel:")
         }
 
@@ -193,13 +193,13 @@ ColumnLayout {
             enabled: bandCombobox.currentIndex
             model: nmUtils.wirelessChannels(bandCombobox.currentIndex)
             opacity: visible ? 1 : 0
-            visible: modeCombobox.currentIndex
+            visible: modeCombobox.currentIndex && expertModeCheckbox.checked
         }
 
         QtControls.Label {
             Layout.alignment: Qt.AlignRight
-
             text: i18n("Restrict to device:")
+            visible: expertModeCheckbox.checked
         }
 
         QtControls.ComboBox {
@@ -225,12 +225,13 @@ ColumnLayout {
             model: nmUtils.deviceHwAddresses(2) // Wireless device enum is NM_DEVICE_TYPE_WIFI which is 2
             validator: RegExpValidator { regExp: /([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}/ }
             textRole: "mac"
+            visible: expertModeCheckbox.checked
         }
 
         QtControls.Label {
             Layout.alignment: Qt.AlignRight
-
             text: i18n("Cloned MAC address:")
+            visible: expertModeCheckbox.checked
         }
 
         QtControls.ComboBox {
@@ -240,12 +241,13 @@ ColumnLayout {
             editable: true
             model: ["", i18n("Preserve"), i18n("Permanent"), i18n("Random"), i18n("Stable")]
             validator: RegExpValidator { regExp: /(([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2})|Preserve|Permanent|Random|Stable/ }
+            visible: expertModeCheckbox.checked
         }
 
         QtControls.Label {
             Layout.alignment: Qt.AlignRight
-
             text: i18n("MTU:")
+            visible: expertModeCheckbox.checked
         }
 
         QtControls.SpinBox {
@@ -257,11 +259,11 @@ ColumnLayout {
             to: 1000
             valueFromText: function(text, locale) { return text === "Automatic" ? 0 : Number.fromLocaleString(locale, text); }
             textFromValue: function(value, locale) { return value ? Number(value).toLocaleString(locale, 'f', 0) : i18n("Automatic")}
+            visible: expertModeCheckbox.checked
         }
 
         QtControls.Label {
             Layout.alignment: Qt.AlignRight
-
             text: i18n("Visibility:")
         }
 

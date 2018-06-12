@@ -37,7 +37,7 @@ Kirigami.Page {
             }
             Controls.CheckBox {
                 id: mobileDataCheckbox
-               // enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable
+                enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable
                 anchors.rightMargin: Kirigami.Units.gridUnit
             }
         }

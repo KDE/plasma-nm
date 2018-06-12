@@ -13,7 +13,7 @@ target_link_libraries(kcm_mobile_broadband
     KF5::I18n
     KF5::QuickAddons
     KF5::NetworkManagerQt
-	KF5::ModemManagerQt
+    KF5::ModemManagerQt
 )
 
 kcoreaddons_desktop_to_json(kcm_mobile_broadband "mobilebroadbandsettings.desktop")

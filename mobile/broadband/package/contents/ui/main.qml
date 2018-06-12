@@ -44,11 +44,11 @@ Kirigami.ApplicationItem {
         id: enabledConnections
 
         onWwanEnabledChanged: {
-            //mobileDataCheckbox.checked = mobileDataCheckbox.enabled && enabled
+            mobileDataCheckbox.checked = mobileDataCheckbox.enabled && enabled
         }
 
         onWwanHwEnabledChanged: {
-            //mobileDataCheckbox.enabled = enabled && availableDevices.modemDeviceAvailable
+            mobileDataCheckbox.enabled = enabled && availableDevices.modemDeviceAvailable
         }
     }
 }

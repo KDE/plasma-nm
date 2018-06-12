@@ -106,10 +106,10 @@ Kirigami.ScrollablePage{
 
     function loadNetworkSettings() {
         console.info(path);
-        settings = utils.getConnectionSettings(path,"connection");
+        settings = kcm.getConnectionSettings(path,"connection");
         detailsName.text = settings["id"]
-        detailsSecuritySection.securityMap = utils.getConnectionSettings(path,"802-11-wireless-security");
-        detailsIP.ipmap = utils.getConnectionSettings(path,"ipv4");
+        detailsSecuritySection.securityMap = kcm.getConnectionSettings(path,"802-11-wireless-security");
+        detailsIP.ipmap = kcm.getConnectionSettings(path,"ipv4");
         detailsSecuritySection.setStateFromMap();
         detailsIP.setStateFromMap();
     }
@@ -119,6 +119,6 @@ Kirigami.ScrollablePage{
         if (detailsSecuritySection.password !== "") { //otherwise password is unchanged
             settings["802-11-wireless-security"] = detailsSecuritySection.securityMap;
         }
-        utils.updateConnectionFromQML(path,settings);
+        kcm.updateConnectionFromQML(path,settings);
     }
 }

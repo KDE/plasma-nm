@@ -109,7 +109,7 @@ Kirigami.ScrollablePage {
         connection["mode"] = "infrastructure"
         connection["802-11-wireless-security"] = editorSecuritySection.securityMap
         console.info(connection)
-        utils.addConnectionFromQML(connection)
+        kcm.addConnectionFromQML(connection)
         console.info('Connection saved '+ connection["id"])
     }
 }

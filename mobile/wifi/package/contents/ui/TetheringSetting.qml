@@ -163,15 +163,15 @@ Kirigami.ScrollablePage {
     }
 
     function checkTethering() {
-        devicePath = utils.getAccessPointDevice();
+        devicePath = kcm.getAccessPointDevice();
         if (devicePath === "") {
             hotSpotStatus.text = i18n('Not possible to start Acces point.')
             hotSpotStatusIcon.source = "dialog-close"
             hotSpotSwitch.enabled = false
             return
         }
-        connectPath = utils.getAccessPointConnection()
-        var map = utils.getActiveConnectionInfo(connectPath);
+        connectPath = kcm.getAccessPointConnection()
+        var map = kcm.getActiveConnectionInfo(connectPath);
         if (map["address"]) { // means AP connection is active
             hotSpotSwitch.checked = true
             hotSpotStatus.text = i18n('Access point running: ') + name
@@ -179,7 +179,7 @@ Kirigami.ScrollablePage {
     }
 
     function initTethering() {
-        connectPath = utils.getAccessPointConnection()
+        connectPath = kcm.getAccessPointConnection()
         if (connectPath === "") {
             hotSpotStatus.text = i18n('No suitable configuration found.')
             hotSpotStatusIcon.source = "error"
@@ -213,19 +213,19 @@ Kirigami.ScrollablePage {
             map["802-11-wireless-security"] = securityMap
         }
         if (connectPath === "") {
-            utils.addConnectionFromQML(map)
+            kcm.addConnectionFromQML(map)
         } else {
-            utils.updateConnectionFromQML(connectPath,map)
+            kcm.updateConnectionFromQML(connectPath,map)
         }
     }
 
     function loadSettings() {
-        var map = utils.getConnectionSettings(connectPath,"connection");
+        var map = kcm.getConnectionSettings(connectPath,"connection");
         name = map["id"]
-        map = utils.getConnectionSettings(connectPath,"802-11-wireless");
+        map = kcm.getConnectionSettings(connectPath,"802-11-wireless");
         if (map["hidden"])
             hotSpotConfigHidden.checked = map["hidden"]
-        map = utils.getConnectionSettings(connectPath,"802-11-wireless-security")
+        map = kcm.getConnectionSettings(connectPath,"802-11-wireless-security")
         if (map["key-mgmt"]) {
             hotSpotConfigSecurity.checked = true
         }

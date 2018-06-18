@@ -67,9 +67,9 @@ PlasmaComponents.ListItem {
             PlasmaCore.SvgItem {
                 id: connectionSvgIcon
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
+                Layout.preferredHeight: units.iconSizes.medium
+                Layout.preferredWidth: units.iconSizes.medium
                 elementId: ConnectionIcon
-                height: Layout.preferredHeight
-                width: Layout.preferredWidth
                 svg: PlasmaCore.Svg {
                     multipleImages: true
                     imagePath: "icons/network"

@@ -44,7 +44,7 @@ public:
      * or NetworkManager::ConnectionSettings::Cdma.
      */
     explicit MobileConnectionWizard(NetworkManager::ConnectionSettings::ConnectionType connectionType = NetworkManager::ConnectionSettings::Unknown,
-                                    QWidget * parent = 0);
+                                    QWidget * parent = nullptr);
     ~MobileConnectionWizard() override;
 
     /*

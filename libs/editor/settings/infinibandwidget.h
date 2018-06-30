@@ -36,7 +36,7 @@ class Q_DECL_EXPORT InfinibandWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit InfinibandWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit InfinibandWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~InfinibandWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

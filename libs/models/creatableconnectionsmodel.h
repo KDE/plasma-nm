@@ -35,8 +35,8 @@ public:
                                      const QString &vpnType = QString(),                              // Properties needed for creating
                                      const QString &specificType = QString(),                         // Properties needed for creating
                                      bool shared = false,                                             // Properties needed for creating
-                                     QObject *parent = 0);
-    explicit CreatableConnectionItem(QObject *parent = 0);
+                                     QObject *parent = nullptr);
+    explicit CreatableConnectionItem(QObject *parent = nullptr);
     ~CreatableConnectionItem() override;
 
     NetworkManager::ConnectionSettings::ConnectionType connectionType() const;
@@ -79,7 +79,7 @@ class Q_DECL_EXPORT CreatableConnectionsModel : public QAbstractListModel
 {
 Q_OBJECT
 public:
-    explicit CreatableConnectionsModel(QObject *parent = 0);
+    explicit CreatableConnectionsModel(QObject *parent = nullptr);
     ~CreatableConnectionsModel() override;
 
     enum ItemRole {

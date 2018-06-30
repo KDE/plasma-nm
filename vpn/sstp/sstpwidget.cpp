@@ -129,7 +129,7 @@ void SstpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     bool refuse_mschapv2 = (dataMap[QLatin1String(NM_SSTP_KEY_REFUSE_MSCHAPV2)] == yesString);
     bool refuse_eap = (dataMap[QLatin1String(NM_SSTP_KEY_REFUSE_EAP)] == yesString);
 
-    QListWidgetItem *item = 0;
+    QListWidgetItem *item = nullptr;
     item = d->advUi.listWidget->item(0); // PAP
     item->setCheckState(refuse_pap ? Qt::Unchecked : Qt::Checked);
     item = d->advUi.listWidget->item(1); // CHAP
@@ -253,7 +253,7 @@ QVariantMap SstpSettingWidget::setting() const
     }
 
     // Advanced configuration
-    QListWidgetItem *item = 0;
+    QListWidgetItem *item = nullptr;
     item = d->advUi.listWidget->item(0); // PAP
     if (item->checkState() == Qt::Unchecked) {
         data.insert(QLatin1String(NM_SSTP_KEY_REFUSE_PAP), yesString);

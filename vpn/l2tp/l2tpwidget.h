@@ -34,7 +34,7 @@ class L2tpWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~L2tpWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

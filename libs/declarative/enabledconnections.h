@@ -49,7 +49,7 @@ Q_PROPERTY(bool wwanEnabled READ isWwanEnabled NOTIFY wwanEnabled)
 Q_PROPERTY(bool wwanHwEnabled READ isWwanHwEnabled NOTIFY wwanHwEnabled)
 Q_OBJECT
 public:
-    explicit EnabledConnections(QObject* parent = 0);
+    explicit EnabledConnections(QObject* parent = nullptr);
     ~EnabledConnections() override;
 
     bool isNetworkingEnabled() const;

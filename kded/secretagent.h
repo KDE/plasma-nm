@@ -42,7 +42,7 @@ public:
         type(_type),
         flags(NetworkManager::SecretAgent::None),
         saveSecretsWithoutReply(false),
-        dialog(0)
+        dialog(nullptr)
     {}
     inline bool operator==(const QString &other) const {
         return callId == other;
@@ -69,7 +69,7 @@ class Q_DECL_EXPORT SecretAgent : public NetworkManager::SecretAgent
 {
     Q_OBJECT
 public:
-    explicit SecretAgent(QObject* parent = 0);
+    explicit SecretAgent(QObject* parent = nullptr);
     ~SecretAgent() override;
 
 public Q_SLOTS:

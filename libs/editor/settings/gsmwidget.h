@@ -36,7 +36,7 @@ class Q_DECL_EXPORT GsmWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit GsmWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget *parent = 0, Qt::WindowFlags f = 0);
+    explicit GsmWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~GsmWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

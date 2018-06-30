@@ -36,7 +36,7 @@ class Q_DECL_EXPORT CdmaWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit CdmaWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget *parent = 0, Qt::WindowFlags f = 0);
+    explicit CdmaWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~CdmaWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

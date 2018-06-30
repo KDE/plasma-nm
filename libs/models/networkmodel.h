@@ -38,7 +38,7 @@ class Q_DECL_EXPORT NetworkModel : public QAbstractListModel
 {
 Q_OBJECT
 public:
-    explicit NetworkModel(QObject *parent = 0);
+    explicit NetworkModel(QObject *parent = nullptr);
     ~NetworkModel() override;
 
     enum ItemRole {

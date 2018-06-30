@@ -35,7 +35,7 @@ class Q_DECL_EXPORT WiredConnectionWidget : public SettingWidget
 Q_OBJECT
 
 public:
-    explicit WiredConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit WiredConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~WiredConnectionWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

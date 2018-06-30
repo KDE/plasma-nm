@@ -37,7 +37,7 @@ class Q_DECL_EXPORT WiredSecurity : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~WiredSecurity() override;
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;

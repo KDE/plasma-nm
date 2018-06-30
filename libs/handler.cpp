@@ -434,7 +434,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
 {
     QDBusPendingReply<> reply = *watcher;
     if (reply.isError() || !reply.isValid()) {
-        KNotification *notification = 0;
+        KNotification *notification = nullptr;
         QString error = reply.error().message();
         Handler::HandlerAction action = (Handler::HandlerAction)watcher->property("action").toUInt();
         switch (action) {
@@ -479,7 +479,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
             notification->sendEvent();
         }
     } else {
-        KNotification *notification = 0;
+        KNotification *notification = nullptr;
         Handler::HandlerAction action = (Handler::HandlerAction)watcher->property("action").toUInt();
 
         switch (action) {

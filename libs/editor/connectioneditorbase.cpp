@@ -242,7 +242,7 @@ void ConnectionEditorBase::initialize()
         addSettingWidget(teamWidget, i18n("Team"));
     } else if (type == NetworkManager::ConnectionSettings::Vpn) { // VPN
         QString error;
-        VpnUiPlugin *vpnPlugin = 0;
+        VpnUiPlugin *vpnPlugin = nullptr;
         NetworkManager::VpnSetting::Ptr vpnSetting =
             m_connection->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
         if (!vpnSetting) {

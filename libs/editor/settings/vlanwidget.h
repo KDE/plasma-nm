@@ -35,7 +35,7 @@ class Q_DECL_EXPORT VlanWidget : public SettingWidget
 Q_OBJECT
 
 public:
-    explicit VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~VlanWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

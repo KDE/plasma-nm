@@ -28,7 +28,7 @@ class Q_DECL_EXPORT KcmIdentityModel : public QIdentityProxyModel
 {
 Q_OBJECT
 public:
-    explicit KcmIdentityModel(QObject *parent = 0);
+    explicit KcmIdentityModel(QObject *parent = nullptr);
     ~KcmIdentityModel() override;
 
     enum KcmItemRole {

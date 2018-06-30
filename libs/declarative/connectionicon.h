@@ -38,7 +38,7 @@ Q_PROPERTY(QString connectionTooltipIcon READ connectionTooltipIcon NOTIFY conne
 Q_PROPERTY(bool airplaneMode READ airplaneMode WRITE setAirplaneMode NOTIFY airplaneModeChanged)
 Q_OBJECT
 public:
-    explicit ConnectionIcon(QObject* parent = 0);
+    explicit ConnectionIcon(QObject* parent = nullptr);
     ~ConnectionIcon() override;
 
     bool connecting() const;

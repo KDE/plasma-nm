@@ -44,7 +44,7 @@ public:
         UpdateConnection
     };
 
-    explicit Handler(QObject* parent = 0);
+    explicit Handler(QObject* parent = nullptr);
     ~Handler() override;
 
 public Q_SLOTS:

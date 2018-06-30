@@ -33,7 +33,7 @@ class SshSettingWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(SshSettingWidget)
 public:
-    explicit SshSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
+    explicit SshSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
     ~SshSettingWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

@@ -38,7 +38,7 @@ Q_OBJECT
 public:
     enum MethodIndex { Automatic = 0, AutomaticOnlyIP, AutomaticOnlyDHCP, LinkLocal, Manual, Disabled };
 
-    explicit IPv6Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit IPv6Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~IPv6Widget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

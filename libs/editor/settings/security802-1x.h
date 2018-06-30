@@ -37,7 +37,7 @@ class Q_DECL_EXPORT Security8021x: public SettingWidget
 {
     Q_OBJECT
 public:
-    Security8021x(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), bool wifiMode = true, QWidget *parent = 0, Qt::WindowFlags f = 0);
+    Security8021x(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), bool wifiMode = true, QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~Security8021x() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

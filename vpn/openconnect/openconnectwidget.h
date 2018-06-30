@@ -33,7 +33,7 @@ class OpenconnectSettingWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(OpenconnectSettingWidget)
 public:
-    explicit OpenconnectSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
+    explicit OpenconnectSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
     ~OpenconnectSettingWidget() override;
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
     QVariantMap setting() const override;

@@ -40,7 +40,7 @@ public:
     explicit PasswordDialog(const NetworkManager::ConnectionSettings::Ptr &connectionSettings,
                             NetworkManager::SecretAgent::GetSecretsFlags flags,
                             const QString &setting_name,
-                            QWidget *parent = 0);
+                            QWidget *parent = nullptr);
     ~PasswordDialog() override;
 
     bool hasError() const;

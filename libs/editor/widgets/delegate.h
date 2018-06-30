@@ -28,7 +28,7 @@ class Delegate : public QStyledItemDelegate
 {
     Q_OBJECT
 public:
-    explicit Delegate(QObject * parent = 0);
+    explicit Delegate(QObject * parent = nullptr);
     ~Delegate() override;
 
     QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option,

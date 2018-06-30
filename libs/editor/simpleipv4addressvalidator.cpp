@@ -47,7 +47,7 @@ QValidator::State SimpleIpV4AddressValidator::validate(QString &address, int &po
 
 QValidator::State SimpleIpV4AddressValidator::checkWithInputMask(QString &value, int &pos) const
 {
-    QRegExpValidator v(QRegExp(QLatin1String("[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}")), 0);
+    QRegExpValidator v(QRegExp(QLatin1String("[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}")), nullptr);
 
     return v.validate(value, pos);
 }

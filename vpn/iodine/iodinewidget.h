@@ -34,7 +34,7 @@ class IodineWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit IodineWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0, Qt::WindowFlags f = 0);
+    explicit IodineWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~IodineWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

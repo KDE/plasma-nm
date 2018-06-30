@@ -36,8 +36,8 @@ public:
 
     enum ItemType { UnavailableConnection, AvailableConnection, AvailableAccessPoint };
 
-    explicit NetworkModelItem(QObject *parent = 0);
-    explicit NetworkModelItem(const NetworkModelItem *item, QObject *parent = 0);
+    explicit NetworkModelItem(QObject *parent = nullptr);
+    explicit NetworkModelItem(const NetworkModelItem *item, QObject *parent = nullptr);
     ~NetworkModelItem() override;
 
     QString activeConnectionPath() const;

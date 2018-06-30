@@ -27,10 +27,10 @@ class Q_DECL_EXPORT SshUiPlugin : public VpnUiPlugin
 {
 Q_OBJECT
 public:
-    explicit SshUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
+    explicit SshUiPlugin(QObject * parent = nullptr, const QVariantList& = QVariantList());
     ~SshUiPlugin() override;
-    SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) override;
-    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) override;
+    SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) override;
+    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) override;
     QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
     QString supportedFileExtensions() const override;
 

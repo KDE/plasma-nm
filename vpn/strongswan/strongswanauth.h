@@ -33,7 +33,7 @@ class StrongswanAuthWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(StrongswanAuthWidget)
 public:
-    explicit StrongswanAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    explicit StrongswanAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr);
     ~StrongswanAuthWidget() override;
 
     virtual void readSecrets();

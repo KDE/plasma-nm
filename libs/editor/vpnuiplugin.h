@@ -41,11 +41,11 @@ class Q_DECL_EXPORT VpnUiPlugin : public QObject
 public:
     enum ErrorType {NoError, NotImplemented, Error};
 
-    explicit VpnUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
+    explicit VpnUiPlugin(QObject * parent = nullptr, const QVariantList& = QVariantList());
     ~VpnUiPlugin() override;
 
-    virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;
-    virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;
+    virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) = 0;
+    virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) = 0;
 
     /**
      * Suggested file name to save the exported connection configuration.

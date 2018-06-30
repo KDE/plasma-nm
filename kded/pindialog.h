@@ -56,7 +56,7 @@ public:
     };
     enum ErrorCode {PinCodeTooShort, PinCodesDoNotMatch, PukCodeTooShort};
 
-    explicit PinDialog(ModemManager::Modem *modem, const Type type = SimPin, QWidget *parent=0);
+    explicit PinDialog(ModemManager::Modem *modem, const Type type = SimPin, QWidget *parent = nullptr);
     ~PinDialog() override;
 
     Type type() const;

@@ -34,7 +34,7 @@ class L2tpAdvancedWidget : public QDialog
 {
     Q_OBJECT
 public:
-    explicit L2tpAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
+    explicit L2tpAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
     ~L2tpAdvancedWidget() override;
 
     NMStringMap setting() const;

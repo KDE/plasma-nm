@@ -40,7 +40,7 @@ class Q_DECL_EXPORT BridgeWidget : public SettingWidget
     Q_OBJECT
 public:
     explicit BridgeWidget(const QString & masterUuid, const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
-                 QWidget* parent = 0, Qt::WindowFlags f = 0);
+                 QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~BridgeWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

@@ -115,7 +115,7 @@ QVariantMap StrongswanAuthWidget::setting() const
         if (!agent.isEmpty()) {
             secrets.insert(NM_STRONGSWAN_AUTH_AGENT, agent);
         } else {
-            KMessageBox::error(0, i18nc("@label:textbox error message while saving configuration", "Configuration uses ssh-agent for authentication, but no ssh-agent found running."));
+            KMessageBox::error(nullptr, i18nc("@label:textbox error message while saving configuration", "Configuration uses ssh-agent for authentication, but no ssh-agent found running."));
         }
     } else {
         secrets.insert(NM_STRONGSWAN_SECRET, d->ui.password->text());

@@ -34,7 +34,7 @@ class OpenswanWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0, Qt::WindowFlags f = 0);
+    explicit OpenswanWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~OpenswanWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

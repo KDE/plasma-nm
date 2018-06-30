@@ -34,7 +34,7 @@ class PptpSettingWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(PptpSettingWidget)
 public:
-    explicit PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
+    explicit PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
     ~PptpSettingWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

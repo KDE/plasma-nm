@@ -173,7 +173,7 @@ void OpenconnectAuthWidget::readConfig()
     }
     if (dataMap[NM_OPENCONNECT_KEY_CSD_ENABLE] == "yes") {
         char *wrapper;
-        wrapper = 0;
+        wrapper = nullptr;
         if (!dataMap[NM_OPENCONNECT_KEY_CSD_WRAPPER].isEmpty()) {
             const QByteArray wrapperScript = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_CSD_WRAPPER]);
             wrapper = strdup(wrapperScript.data());
@@ -449,7 +449,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
         QLabel *text = new QLabel(this);
         text->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         text->setText(QString(opt->label));
-        QWidget *widget = 0;
+        QWidget *widget = nullptr;
         const QString key = QString("form:%1:%2").arg(QLatin1String(form->auth_id)).arg(QLatin1String(opt->name));
         const QString value = d->secrets.value(key);
         if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {

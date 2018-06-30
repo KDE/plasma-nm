@@ -34,7 +34,7 @@ class VpncAdvancedWidget : public QDialog
 {
     Q_OBJECT
 public:
-    explicit VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
+    explicit VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
     ~VpncAdvancedWidget() override;
 
     NMStringMap setting() const;

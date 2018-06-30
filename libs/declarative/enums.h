@@ -31,7 +31,7 @@ Q_ENUMS(ConnectionType)
 Q_ENUMS(SecurityType)
 
 public:
-    explicit Enums(QObject* parent = 0);
+    explicit Enums(QObject* parent = nullptr);
     ~Enums() override;
 
     enum ConnectionStatus {

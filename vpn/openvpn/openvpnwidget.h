@@ -37,7 +37,7 @@ class OpenVpnSettingWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
+    explicit OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
     ~OpenVpnSettingWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

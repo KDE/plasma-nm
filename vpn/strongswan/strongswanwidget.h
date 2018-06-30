@@ -36,7 +36,7 @@ class StrongswanSettingWidget : public SettingWidget
 Q_OBJECT
 Q_DECLARE_PRIVATE(StrongswanSettingWidget)
 public:
-    explicit StrongswanSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
+    explicit StrongswanSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
     ~StrongswanSettingWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

@@ -41,7 +41,7 @@ public:
         Type
     };
 
-    explicit NetworkItemsList(QObject *parent = 0);
+    explicit NetworkItemsList(QObject *parent = nullptr);
     ~NetworkItemsList() override;
 
     bool contains(const FilterType type, const QString &parameter) const;

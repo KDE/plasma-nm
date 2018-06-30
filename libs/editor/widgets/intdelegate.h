@@ -31,8 +31,8 @@ class IntDelegate : public Delegate
 {
     Q_OBJECT
 public:
-    explicit IntDelegate(QObject * parent = 0);
-    IntDelegate(int min, int max, QObject * parent = 0);
+    explicit IntDelegate(QObject * parent = nullptr);
+    IntDelegate(int min, int max, QObject * parent = nullptr);
     ~IntDelegate() override;
 
     QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;

@@ -30,7 +30,7 @@ class Q_DECL_EXPORT EditorProxyModel : public QSortFilterProxyModel
 Q_OBJECT
 Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
 public:
-    explicit EditorProxyModel(QObject *parent = 0);
+    explicit EditorProxyModel(QObject *parent = nullptr);
     ~EditorProxyModel() override;
 
 protected:

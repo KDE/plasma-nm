@@ -36,7 +36,7 @@ class Q_DECL_EXPORT PppoeWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit PppoeWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
+    explicit PppoeWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~PppoeWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

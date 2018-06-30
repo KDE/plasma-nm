@@ -32,7 +32,7 @@ class FortisslvpnWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(FortisslvpnWidget)
 public:
-    explicit FortisslvpnWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0, Qt::WindowFlags f = 0);
+    explicit FortisslvpnWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~FortisslvpnWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

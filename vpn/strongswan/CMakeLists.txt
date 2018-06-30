@@ -15,11 +15,9 @@ kcoreaddons_desktop_to_json(plasmanetworkmanagement_strongswanui plasmanetworkma
 target_link_libraries(plasmanetworkmanagement_strongswanui
     plasmanm_internal
     plasmanm_editor
-    Qt5::Widgets
-    KF5::Service
     KF5::I18n
     KF5::KIOWidgets
-    KF5::NetworkManagerQt
+    KF5::CoreAddons
 )
 
 install(TARGETS plasmanetworkmanagement_strongswanui  DESTINATION ${PLUGIN_INSTALL_DIR})

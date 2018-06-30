@@ -24,14 +24,27 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     DBus
     Network
     Quick
-    QuickWidgets
-    UiTools
     Widgets
 )
 
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
-    I18n WindowSystem Service Completion WidgetsAddons KIO CoreAddons Wallet ItemViews XmlGui
-    ConfigWidgets IconThemes Solid DBusAddons Notifications Plasma Declarative Init KDELibs4Support)
+    I18n
+    WindowSystem
+    Service
+    Completion
+    WidgetsAddons
+    KIO
+    CoreAddons
+    Wallet
+    ConfigWidgets
+    IconThemes
+    Solid
+    DBusAddons
+    Notifications
+    Plasma
+    Declarative
+    KDELibs4Support
+)
 
 find_package(KF5NetworkManagerQt REQUIRED 5.42.0)
 

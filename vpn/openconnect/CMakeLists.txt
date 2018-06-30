@@ -44,13 +44,9 @@ if (OPENCONNECT_FOUND)
             plasmanm_internal
             plasmanm_editor
             ${NETWORKMANAGERQT5_LDFLAGS}
-            Qt5::Widgets
-            Qt5::Network
-            Qt5::DBus
-            KF5::Service
-            KF5::Completion
             KF5::I18n
             KF5::WidgetsAddons
+            KF5::IconThemes
             KF5::KIOWidgets
             KF5::CoreAddons
             ${OPENCONNECT_LIBRARIES}

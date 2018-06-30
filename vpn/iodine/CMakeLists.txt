@@ -15,15 +15,8 @@ kcoreaddons_desktop_to_json(plasmanetworkmanagement_iodineui plasmanetworkmanage
 target_link_libraries(plasmanetworkmanagement_iodineui
     plasmanm_internal
     plasmanm_editor
-    Qt5::Widgets
-    Qt5::Network
-    Qt5::DBus
-    KF5::NetworkManagerQt
-    KF5::Service
-    KF5::Completion
     KF5::I18n
     KF5::WidgetsAddons
-    KF5::KIOWidgets
     KF5::CoreAddons
 )
 

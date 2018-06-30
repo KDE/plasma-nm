@@ -15,11 +15,7 @@ target_link_libraries(plasmanm_qmlplugins
     plasmanm_internal
     plasmanm_editor
     Qt5::Quick
-    Qt5::DBus
-    Qt5::Network
-    KF5::NetworkManagerQt
     KF5::I18n
-    KF5::WindowSystem
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)

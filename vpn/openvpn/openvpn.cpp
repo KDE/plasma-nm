@@ -25,10 +25,11 @@
 
 #include <QLatin1Char>
 #include <QStringBuilder>
+#include <QStandardPaths>
+
 #include <KPluginFactory>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KStandardDirs>
 
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/VpnSetting>
@@ -85,6 +86,12 @@ K_PLUGIN_FACTORY_WITH_JSON(OpenVpnUiPluginFactory, "plasmanetworkmanagement_open
 
 #define PROC_TYPE_TAG "Proc-Type: 4,ENCRYPTED"
 #define PKCS8_TAG "-----BEGIN ENCRYPTED PRIVATE KEY-----"
+
+QString localCertPath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) +
+        QLatin1String("/networkmanagement/certificates/");
+}
 
 QString unQuote(QString &certVal, const QString &fileName)
 {
@@ -187,7 +194,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
     bool copyCertificates;
     KMessageBox::ButtonCode buttonCode;
     if (KMessageBox::shouldBeShownYesNo(QLatin1String("copyCertificatesDialog"), buttonCode)) {
-        copyCertificates = KMessageBox::questionYesNo(nullptr, i18n("Do you want to copy your certificates to %1?", KStandardDirs::locateLocal("data", "networkmanagement/certificates/")),
+        copyCertificates = KMessageBox::questionYesNo(nullptr, i18n("Do you want to copy your certificates to %1?", localCertPath()),
                                    i18n("Copy certificates"), KStandardGuiItem::yes(), KStandardGuiItem::no(), QLatin1String("copyCertificatesDialog")) == KMessageBox::Yes;
     } else {
         copyCertificates = buttonCode == KMessageBox::Yes;
@@ -660,7 +667,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
 
 QString OpenVpnUiPlugin::saveFile(QTextStream &in, const QString &endTag, const QString &connectionName, const QString &fileName)
 {
-    const QString certificatesDirectory = KStandardDirs::locateLocal("data", "networkmanagement/certificates/" + connectionName);
+    const QString certificatesDirectory = localCertPath() + connectionName;
     const QString absoluteFilePath = certificatesDirectory + '/' + fileName;
     QFile outFile(absoluteFilePath);
 
@@ -687,7 +694,7 @@ QString OpenVpnUiPlugin::saveFile(QTextStream &in, const QString &endTag, const 
 
 QString OpenVpnUiPlugin::tryToCopyToCertificatesDirectory(const QString &connectionName, const QString &sourceFilePath)
 {
-    const QString certificatesDirectory = KStandardDirs::locateLocal("data", "networkmanagement/certificates/");
+    const QString certificatesDirectory = localCertPath();
     const QString absoluteFilePath = certificatesDirectory + connectionName + '_' + QFileInfo(sourceFilePath).fileName();
 
     QFile sourceFile(sourceFilePath);

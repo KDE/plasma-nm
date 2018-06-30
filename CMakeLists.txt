@@ -1,6 +1,7 @@
+cmake_minimum_required(VERSION 3.0)
+
 project(plasma-networkmanagement)
 
-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 set(QT_MIN_VERSION "5.4.0")
 
 set(PROJECT_VERSION "5.13.80")

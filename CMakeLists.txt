@@ -43,10 +43,9 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     Notifications
     Plasma
     Declarative
+    NetworkManagerQt
     KDELibs4Support
 )
-
-find_package(KF5NetworkManagerQt REQUIRED 5.42.0)
 
 find_package(KF5ModemManagerQt 5.14.0)
 set_package_properties(KF5ModemManagerQt PROPERTIES

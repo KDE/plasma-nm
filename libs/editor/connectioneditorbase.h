@@ -36,7 +36,7 @@ public:
     explicit ConnectionEditorBase(const NetworkManager::ConnectionSettings::Ptr &connection,
                                   QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
     explicit ConnectionEditorBase(QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
-    virtual ~ConnectionEditorBase();
+    ~ConnectionEditorBase() override;
 
     // When reimplementing do not forget to call the base method as well to initialize widgets
     virtual void setConnection(const NetworkManager::ConnectionSettings::Ptr &connection);

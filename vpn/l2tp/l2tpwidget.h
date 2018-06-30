@@ -35,14 +35,14 @@ class L2tpWidget : public SettingWidget
     Q_OBJECT
 public:
     explicit L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~L2tpWidget();
+    ~L2tpWidget() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
 
-    QVariantMap setting() const;
+    QVariantMap setting() const override;
 
-    virtual bool isValid() const;
+    bool isValid() const override;
 
 private Q_SLOTS:
     void userPasswordTypeChanged(int index);

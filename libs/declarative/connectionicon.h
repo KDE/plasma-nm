@@ -39,7 +39,7 @@ Q_PROPERTY(bool airplaneMode READ airplaneMode WRITE setAirplaneMode NOTIFY airp
 Q_OBJECT
 public:
     explicit ConnectionIcon(QObject* parent = 0);
-    virtual ~ConnectionIcon();
+    ~ConnectionIcon() override;
 
     bool connecting() const;
     QString connectionIcon() const;

@@ -34,7 +34,7 @@ class KCMNetworkmanagement : public KCModule
     Q_OBJECT
 public:
     explicit KCMNetworkmanagement(QWidget *parent = nullptr, const QVariantList &args = QVariantList());
-    virtual ~KCMNetworkmanagement();
+    ~KCMNetworkmanagement() override;
 
 public Q_SLOTS:
     void defaults() override;

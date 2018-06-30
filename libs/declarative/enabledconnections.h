@@ -50,7 +50,7 @@ Q_PROPERTY(bool wwanHwEnabled READ isWwanHwEnabled NOTIFY wwanHwEnabled)
 Q_OBJECT
 public:
     explicit EnabledConnections(QObject* parent = 0);
-    virtual ~EnabledConnections();
+    ~EnabledConnections() override;
 
     bool isNetworkingEnabled() const;
     bool isWirelessEnabled() const;

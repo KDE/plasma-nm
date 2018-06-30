@@ -33,9 +33,9 @@ class L2tpAuthDialog : public SettingWidget
     Q_DECLARE_PRIVATE(L2tpAuthDialog)
 public:
     explicit L2tpAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
-    ~L2tpAuthDialog();
+    ~L2tpAuthDialog() override;
     virtual void readSecrets();
-    virtual QVariantMap setting() const;
+    QVariantMap setting() const override;
 
 private:
     L2tpAuthDialogPrivate *const d_ptr;

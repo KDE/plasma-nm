@@ -34,10 +34,10 @@ class VpncAuthDialog : public SettingWidget
     Q_DECLARE_PRIVATE(VpncAuthDialog)
 public:
     explicit VpncAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
-    ~VpncAuthDialog();
+    ~VpncAuthDialog() override;
 
     virtual void readSecrets();
-    virtual QVariantMap setting() const;
+    QVariantMap setting() const override;
 
 private:
     VpncAuthDialogPrivate *const d_ptr;

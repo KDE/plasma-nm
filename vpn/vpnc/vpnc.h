@@ -36,7 +36,7 @@ class VpncUiPluginPrivate: public QObject
     Q_OBJECT
 public:
     VpncUiPluginPrivate();
-    ~VpncUiPluginPrivate();
+    ~VpncUiPluginPrivate() override;
     QString readStringKeyValue(const KConfigGroup & configGroup, const QString & key);
     KProcess * ciscoDecrypt;
     QString decryptedPasswd;
@@ -53,14 +53,14 @@ class Q_DECL_EXPORT VpncUiPlugin : public VpnUiPlugin
 
 public:
     explicit VpncUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
-    virtual ~VpncUiPlugin();
-    virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
-    virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    ~VpncUiPlugin() override;
+    SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) override;
+    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) override;
 
-    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const;
-    QString supportedFileExtensions() const;
-    NMVariantMapMap importConnectionSettings(const QString &fileName);
-    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName);
+    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
+    QString supportedFileExtensions() const override;
+    NMVariantMapMap importConnectionSettings(const QString &fileName) override;
+    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
 };
 
 #endif // PLASMA_NM_VPNC_H

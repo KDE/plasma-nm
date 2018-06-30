@@ -33,9 +33,9 @@ class IntDelegate : public Delegate
 public:
     explicit IntDelegate(QObject * parent = 0);
     IntDelegate(int min, int max, QObject * parent = 0);
-    virtual ~IntDelegate();
+    ~IntDelegate() override;
 
-    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
+    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
 private:
     int m_min;

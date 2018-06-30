@@ -34,14 +34,14 @@ class Q_DECL_EXPORT OpenVpnUiPlugin : public VpnUiPlugin
 Q_OBJECT
 public:
     explicit OpenVpnUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
-    virtual ~OpenVpnUiPlugin();
-    SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
-    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    ~OpenVpnUiPlugin() override;
+    SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) override;
+    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) override;
 
-    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const;
-    QString supportedFileExtensions() const;
-    NMVariantMapMap importConnectionSettings(const QString &fileName);
-    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName);
+    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
+    QString supportedFileExtensions() const override;
+    NMVariantMapMap importConnectionSettings(const QString &fileName) override;
+    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
 
 private:
     QString saveFile(QTextStream &in, const QString &endTag, const QString &connectionName, const QString &fileName);

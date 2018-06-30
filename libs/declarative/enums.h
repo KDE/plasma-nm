@@ -32,7 +32,7 @@ Q_ENUMS(SecurityType)
 
 public:
     explicit Enums(QObject* parent = 0);
-    virtual ~Enums();
+    ~Enums() override;
 
     enum ConnectionStatus {
         UnknownState = 0,

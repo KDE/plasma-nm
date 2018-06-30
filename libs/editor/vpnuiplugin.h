@@ -42,7 +42,7 @@ public:
     enum ErrorType {NoError, NotImplemented, Error};
 
     explicit VpnUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
-    virtual ~VpnUiPlugin();
+    ~VpnUiPlugin() override;
 
     virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;
     virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) = 0;

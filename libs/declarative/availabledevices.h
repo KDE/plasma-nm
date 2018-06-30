@@ -48,7 +48,7 @@ Q_PROPERTY(bool bluetoothDeviceAvailable READ isBluetoothDeviceAvailable NOTIFY 
 Q_OBJECT
 public:
     explicit AvailableDevices(QObject* parent = 0);
-    virtual ~AvailableDevices();
+    ~AvailableDevices() override;
 
 public Q_SLOTS:
     bool isWiredDeviceAvailable() const;

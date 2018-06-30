@@ -29,7 +29,7 @@ class Q_DECL_EXPORT KcmIdentityModel : public QIdentityProxyModel
 Q_OBJECT
 public:
     explicit KcmIdentityModel(QObject *parent = 0);
-    virtual ~KcmIdentityModel();
+    ~KcmIdentityModel() override;
 
     enum KcmItemRole {
         KcmConnectionIconRole = Qt::UserRole + 100,
@@ -37,14 +37,14 @@ public:
         KcmVpnConnectionExportable
     };
 
-    QHash< int, QByteArray > roleNames() const Q_DECL_OVERRIDE;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
-    Qt::ItemFlags flags(const QModelIndex &index) const Q_DECL_OVERRIDE;
+    QHash< int, QByteArray > roleNames() const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    Qt::ItemFlags flags(const QModelIndex &index) const override;
 
-    int columnCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
-    QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
+    int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+    QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
 
-    QModelIndex mapToSource(const QModelIndex &proxyIndex) const Q_DECL_OVERRIDE;
+    QModelIndex mapToSource(const QModelIndex &proxyIndex) const override;
 };
 
 #endif // PLASMA_NM_KCM_IDENTITY_MODEL_H

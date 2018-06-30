@@ -37,7 +37,7 @@ public:
     };
 
     explicit SettingWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~SettingWidget();
+    ~SettingWidget() override;
 
     virtual void loadConfig(const NetworkManager::Setting::Ptr &setting);
     virtual void loadSecrets(const NetworkManager::Setting::Ptr &setting);

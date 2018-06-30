@@ -34,7 +34,7 @@ class IpV6RoutesWidget : public QDialog
     Q_OBJECT
 public:
     explicit IpV6RoutesWidget(QWidget * parent = 0);
-    virtual ~IpV6RoutesWidget();
+    ~IpV6RoutesWidget() override;
 
     void setRoutes(const QList<NetworkManager::IpRoute> &list);
     QList<NetworkManager::IpRoute> routes();

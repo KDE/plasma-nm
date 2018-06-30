@@ -37,14 +37,14 @@ Q_OBJECT
 Q_DECLARE_PRIVATE(StrongswanSettingWidget)
 public:
     explicit StrongswanSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
-    ~StrongswanSettingWidget();
+    ~StrongswanSettingWidget() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
 
-    virtual QVariantMap setting() const;
+    QVariantMap setting() const override;
 
-    virtual bool isValid() const;
+    bool isValid() const override;
 
 private:
     StrongswanSettingWidgetPrivate *const d_ptr;

@@ -31,9 +31,9 @@ class IpV6Delegate : public Delegate
     Q_OBJECT
 public:
     explicit IpV6Delegate(QObject * parent = 0);
-    virtual ~IpV6Delegate();
+    ~IpV6Delegate() override;
 
-    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
+    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };
 
 #endif

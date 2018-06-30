@@ -39,13 +39,13 @@ public:
     enum MethodIndex { Automatic = 0, AutomaticOnlyIP, LinkLocal, Manual, Shared, Disabled };
 
     explicit IPv4Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~IPv4Widget();
+    ~IPv4Widget() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
 
-    QVariantMap setting() const Q_DECL_OVERRIDE;
+    QVariantMap setting() const override;
 
-    virtual bool isValid() const Q_DECL_OVERRIDE;
+    bool isValid() const override;
 
 private Q_SLOTS:
     void slotModeComboChanged(int index);

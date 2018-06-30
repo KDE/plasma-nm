@@ -34,9 +34,9 @@ class ListValidator : public QValidator
 {
 public:
     ListValidator(QObject *parent);
-    virtual ~ListValidator();
+    ~ListValidator() override;
 
-    virtual State validate(QString &text, int &pos) const;
+    State validate(QString &text, int &pos) const override;
     void setInnerValidator(QValidator *validator);
 
 private:

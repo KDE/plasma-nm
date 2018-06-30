@@ -38,7 +38,7 @@ public:
 
     explicit NetworkModelItem(QObject *parent = 0);
     explicit NetworkModelItem(const NetworkModelItem *item, QObject *parent = 0);
-    virtual ~NetworkModelItem();
+    ~NetworkModelItem() override;
 
     QString activeConnectionPath() const;
     void setActiveConnectionPath(const QString &path);

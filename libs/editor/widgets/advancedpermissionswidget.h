@@ -36,7 +36,7 @@ Q_DECLARE_PRIVATE(AdvancedPermissionsWidget)
 public:
     explicit AdvancedPermissionsWidget(QWidget *parent=0);
     AdvancedPermissionsWidget(const QHash<QString,QString>&, QWidget *parent=0);
-    ~AdvancedPermissionsWidget();
+    ~AdvancedPermissionsWidget() override;
 
     QHash<QString,QString> currentUsers() const;
 

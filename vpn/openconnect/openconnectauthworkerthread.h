@@ -82,7 +82,7 @@ class OpenconnectAuthWorkerThread : public QThread
     friend class OpenconnectAuthStaticWrapper;
 public:
     OpenconnectAuthWorkerThread(QMutex *, QWaitCondition *, bool *, bool *, int);
-    ~OpenconnectAuthWorkerThread();
+    ~OpenconnectAuthWorkerThread() override;
     struct openconnect_info* getOpenconnectInfo();
 
 Q_SIGNALS:
@@ -93,7 +93,7 @@ Q_SIGNALS:
     void cookieObtained(const int&);
 
 protected:
-    void run();
+    void run() override;
 
 private:
     int writeNewConfig(const char *, int);

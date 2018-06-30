@@ -57,7 +57,7 @@ public:
     enum ErrorCode {PinCodeTooShort, PinCodesDoNotMatch, PukCodeTooShort};
 
     explicit PinDialog(ModemManager::Modem *modem, const Type type = SimPin, QWidget *parent=0);
-    ~PinDialog();
+    ~PinDialog() override;
 
     Type type() const;
     QString pin() const;
@@ -65,7 +65,7 @@ public:
     QString puk() const;
 
 public Q_SLOTS:
-    void accept();
+    void accept() override;
 
 private Q_SLOTS:
     void chkShowPassToggled(bool on);

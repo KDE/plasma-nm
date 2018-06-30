@@ -32,14 +32,14 @@ class Q_DECL_EXPORT StrongswanUiPlugin : public VpnUiPlugin
 Q_OBJECT
 public:
     explicit StrongswanUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
-    virtual ~StrongswanUiPlugin();
-    virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
-    virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
-    virtual QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const;
-    virtual QString supportedFileExtensions() const;
+    ~StrongswanUiPlugin() override;
+    SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) override;
+    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0) override;
+    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
+    QString supportedFileExtensions() const override;
 
-    virtual NMVariantMapMap importConnectionSettings(const QString &fileName);
-    virtual bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName);
+    NMVariantMapMap importConnectionSettings(const QString &fileName) override;
+    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
 };
 
 #endif //  PLASMANM_STRONGSWAN_H

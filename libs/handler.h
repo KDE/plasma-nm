@@ -45,7 +45,7 @@ public:
     };
 
     explicit Handler(QObject* parent = 0);
-    virtual ~Handler();
+    ~Handler() override;
 
 public Q_SLOTS:
     /**

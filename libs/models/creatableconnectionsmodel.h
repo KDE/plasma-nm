@@ -37,7 +37,7 @@ public:
                                      bool shared = false,                                             // Properties needed for creating
                                      QObject *parent = 0);
     explicit CreatableConnectionItem(QObject *parent = 0);
-    virtual ~CreatableConnectionItem();
+    ~CreatableConnectionItem() override;
 
     NetworkManager::ConnectionSettings::ConnectionType connectionType() const;
     void setConnectionType(NetworkManager::ConnectionSettings::ConnectionType type);
@@ -80,7 +80,7 @@ class Q_DECL_EXPORT CreatableConnectionsModel : public QAbstractListModel
 Q_OBJECT
 public:
     explicit CreatableConnectionsModel(QObject *parent = 0);
-    virtual ~CreatableConnectionsModel();
+    ~CreatableConnectionsModel() override;
 
     enum ItemRole {
         ConnectionDescription = Qt::UserRole + 1,
@@ -93,9 +93,9 @@ public:
         ConnectionVpnType
     };
 
-    int rowCount(const QModelIndex &parent) const Q_DECL_OVERRIDE;
-    QVariant data(const QModelIndex &index, int role) const Q_DECL_OVERRIDE;
-    virtual QHash< int, QByteArray > roleNames() const Q_DECL_OVERRIDE;
+    int rowCount(const QModelIndex &parent) const override;
+    QVariant data(const QModelIndex &index, int role) const override;
+    QHash< int, QByteArray > roleNames() const override;
 
 private:
     QList<CreatableConnectionItem*> m_list;

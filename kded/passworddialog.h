@@ -41,7 +41,7 @@ public:
                             NetworkManager::SecretAgent::GetSecretsFlags flags,
                             const QString &setting_name,
                             QWidget *parent = 0);
-    ~PasswordDialog();
+    ~PasswordDialog() override;
 
     bool hasError() const;
     NetworkManager::SecretAgent::Error error() const;

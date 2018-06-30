@@ -36,13 +36,13 @@ Q_OBJECT
 
 public:
     explicit WiredConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~WiredConnectionWidget();
+    ~WiredConnectionWidget() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
 
-    QVariantMap setting() const Q_DECL_OVERRIDE;
+    QVariantMap setting() const override;
 
-    bool isValid() const Q_DECL_OVERRIDE;
+    bool isValid() const override;
 
 private Q_SLOTS:
     void generateRandomClonedMac();

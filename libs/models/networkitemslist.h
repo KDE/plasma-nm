@@ -42,7 +42,7 @@ public:
     };
 
     explicit NetworkItemsList(QObject *parent = 0);
-    virtual ~NetworkItemsList();
+    ~NetworkItemsList() override;
 
     bool contains(const FilterType type, const QString &parameter) const;
     int count() const;

@@ -41,13 +41,13 @@ class Q_DECL_EXPORT TeamWidget : public SettingWidget
 public:
     explicit TeamWidget(const QString & masterUuid, const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
                         QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~TeamWidget();
+    ~TeamWidget() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting);
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
 
-    QVariantMap setting() const;
+    QVariantMap setting() const override;
 
-    virtual bool isValid() const;
+    bool isValid() const override;
 
 private Q_SLOTS:
     void addTeam(QAction * action);

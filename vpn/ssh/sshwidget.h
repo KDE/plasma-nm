@@ -34,13 +34,13 @@ class SshSettingWidget : public SettingWidget
     Q_DECLARE_PRIVATE(SshSettingWidget)
 public:
     explicit SshSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
-    ~SshSettingWidget();
+    ~SshSettingWidget() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
 
-    virtual QVariantMap setting() const;
-    virtual bool isValid() const;
+    QVariantMap setting() const override;
+    bool isValid() const override;
 
 private Q_SLOTS:
     void authTypeChanged(int index);

@@ -37,14 +37,14 @@ class Q_DECL_EXPORT PppoeWidget : public SettingWidget
     Q_OBJECT
 public:
     explicit PppoeWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~PppoeWidget();
+    ~PppoeWidget() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
 
-    QVariantMap setting() const Q_DECL_OVERRIDE;
+    QVariantMap setting() const override;
 
-    virtual bool isValid() const Q_DECL_OVERRIDE;
+    bool isValid() const override;
 
 private:
     Ui::PppoeWidget *m_ui;

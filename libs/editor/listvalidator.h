@@ -33,7 +33,7 @@
 class ListValidator : public QValidator
 {
 public:
-    ListValidator(QObject *parent);
+    explicit ListValidator(QObject *parent);
     ~ListValidator() override;
 
     State validate(QString &text, int &pos) const override;

@@ -53,7 +53,7 @@
 #include <KServiceTypeTrader>
 #include <KWindowSystem>
 #include <KIconLoader>
-#include <KWallet/Wallet>
+#include <KWallet>
 
 #define AGENT_SERVICE "org.kde.kded5"
 #define AGENT_PATH "/modules/networkmanagement"

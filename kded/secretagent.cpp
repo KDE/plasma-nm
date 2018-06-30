@@ -41,7 +41,7 @@
 #include <KWindowSystem>
 #include <KConfig>
 #include <KConfigGroup>
-#include <KWallet/Wallet>
+#include <KWallet>
 
 SecretAgent::SecretAgent(QObject* parent)
     : NetworkManager::SecretAgent("org.kde.plasma.networkmanagement", parent)

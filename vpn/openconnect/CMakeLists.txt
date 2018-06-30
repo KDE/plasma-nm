@@ -52,9 +52,9 @@ if (OPENCONNECT_FOUND)
             ${OPENCONNECT_LIBRARIES}
             ${maybe_OPENSSL_LIBRARIES}
         )
-        install(TARGETS plasmanetworkmanagement_openconnectui  DESTINATION ${PLUGIN_INSTALL_DIR})
-        install(FILES plasmanetworkmanagement_openconnectui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
-        install(FILES plasmanetworkmanagement_openconnect_juniperui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
+        install(TARGETS plasmanetworkmanagement_openconnectui  DESTINATION ${KDE_INSTALL_PLUGINDIR})
+        install(FILES plasmanetworkmanagement_openconnectui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
+        install(FILES plasmanetworkmanagement_openconnect_juniperui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
     else()
         message("ERROR: OpenConnection version '${OPENCONNECT_VERSION}' does not match minimum required (${MINIMUM_OPENCONNECT_VERSION_REQUIRED})")
         message("OpenConnect plugin will not be built")

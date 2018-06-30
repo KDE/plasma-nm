@@ -20,6 +20,6 @@ target_link_libraries(plasmanetworkmanagement_iodineui
     KF5::CoreAddons
 )
 
-install(TARGETS plasmanetworkmanagement_iodineui  DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS plasmanetworkmanagement_iodineui  DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
-install(FILES plasmanetworkmanagement_iodineui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
+install(FILES plasmanetworkmanagement_iodineui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})

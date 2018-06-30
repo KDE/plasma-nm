@@ -26,6 +26,6 @@ target_link_libraries(plasmanetworkmanagement_openvpnui
     KF5::KDELibs4Support # KStandardDirs
 )
 
-install(TARGETS plasmanetworkmanagement_openvpnui  DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS plasmanetworkmanagement_openvpnui  DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
-install(FILES plasmanetworkmanagement_openvpnui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
+install(FILES plasmanetworkmanagement_openvpnui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})

@@ -23,11 +23,11 @@ target_link_libraries(kcm_networkmanagement
     KF5::I18n
     KF5::Service
 )
-install(TARGETS kcm_networkmanagement  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS kcm_networkmanagement  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 ########### install files ###############
 
-install( FILES kcm_networkmanagement.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
+install( FILES kcm_networkmanagement.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 install( FILES
     qml/ConnectionItem.qml
     qml/Dialog.qml
@@ -35,4 +35,4 @@ install( FILES
     qml/ListItem.qml
     qml/main.qml
 
-    DESTINATION ${DATA_INSTALL_DIR}/kcm_networkmanagement/qml)
+    DESTINATION ${KDE_INSTALL_DATADIR}/kcm_networkmanagement/qml)

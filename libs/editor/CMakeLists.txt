@@ -107,4 +107,4 @@ if (WITH_MODEMMANAGER_SUPPORT)
 endif()
 
 install(TARGETS plasmanm_editor ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES plasma-networkmanagement-vpnuiplugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
+install(FILES plasma-networkmanagement-vpnuiplugin.desktop DESTINATION ${KDE_INSTALL_KSERVICETYPES5DIR})

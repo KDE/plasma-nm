@@ -21,6 +21,6 @@ target_link_libraries(plasmanetworkmanagement_sstpui
     KF5::CoreAddons
 )
 
-install(TARGETS plasmanetworkmanagement_sstpui  DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS plasmanetworkmanagement_sstpui  DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
-install(FILES plasmanetworkmanagement_sstpui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
+install(FILES plasmanetworkmanagement_sstpui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})

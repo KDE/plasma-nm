@@ -47,7 +47,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     KDELibs4Support
 )
 
-find_package(KF5ModemManagerQt 5.14.0)
+find_package(KF5ModemManagerQt ${KF5_MIN_VERSION})
 set_package_properties(KF5ModemManagerQt PROPERTIES
                        TYPE OPTIONAL)
 

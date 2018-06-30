@@ -24,7 +24,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QWidget>
 
 #include <QDialog>
-#include <KLocale>
 #include <QPushButton>
 #include <Solid/Device>
 

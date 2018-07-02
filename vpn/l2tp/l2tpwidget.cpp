@@ -132,7 +132,7 @@ QVariantMap L2tpWidget::setting() const
         data = m_tmpAdvancedSetting->data();
     } else {
         // retrieve the settings if the dialog has not been opened
-        QScopedPointer<L2tpAdvancedWidget> adv(new L2tpAdvancedWidget(m_setting, Q_NULLPTR));
+        QScopedPointer<L2tpAdvancedWidget> adv(new L2tpAdvancedWidget(m_setting, nullptr));
         data = adv->setting();
     }
 
@@ -140,7 +140,7 @@ QVariantMap L2tpWidget::setting() const
         data.unite(m_tmpPppSetting->data());
     } else {
         // retrieve the settings if the dialog has not been opened
-        QScopedPointer<L2tpPPPWidget> ppp(new L2tpPPPWidget(m_setting, Q_NULLPTR));
+        QScopedPointer<L2tpPPPWidget> ppp(new L2tpPPPWidget(m_setting, nullptr));
         data.unite(ppp->setting());
     }
 

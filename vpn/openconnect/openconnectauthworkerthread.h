@@ -48,7 +48,7 @@ struct x509_st;
 #define IGNORE_OPT(opt)		((opt)->flags & OC_FORM_OPT_IGNORE)
 #else
 #define NEWGROUP_SUPPORTED	0
-#define AUTHGROUP_OPT(form)	NULL
+#define AUTHGROUP_OPT(form)	nullptr
 #define AUTHGROUP_SELECTION(form) 0
 #define FORMCHOICE(sopt, i)	(&(sopt)->choices[i])
 #define IGNORE_OPT(opt)		0

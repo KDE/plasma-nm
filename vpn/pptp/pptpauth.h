@@ -33,10 +33,10 @@ class PptpAuthWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(PptpAuthWidget)
 public:
-    explicit PptpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
-    ~PptpAuthWidget();
+    explicit PptpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
+    ~PptpAuthWidget() override;
 
-    virtual QVariantMap setting() const;
+    QVariantMap setting() const override;
 
 private:
     PptpAuthWidgetPrivate *const d_ptr;

@@ -164,7 +164,7 @@ void OpenVpnAdvancedWidget::openVpnCipherFinished(int exitCode, QProcess::ExitSt
         m_ui->cboCipher->addItem(i18nc("@item:inlistbox Item added when OpenVPN cipher lookup failed", "OpenVPN cipher lookup failed"));
     }
     delete d->openvpnCipherProcess;
-    d->openvpnCipherProcess = 0;
+    d->openvpnCipherProcess = nullptr;
     d->openvpnCiphers = QByteArray();
     d->gotOpenVpnCiphers = true;
 
@@ -209,7 +209,7 @@ void OpenVpnAdvancedWidget::openVpnVersionFinished(int exitCode, QProcess::ExitS
     }
 
     delete d->openvpnVersionProcess;
-    d->openvpnVersionProcess = 0;
+    d->openvpnVersionProcess = nullptr;
     d->openVpnVersion = QByteArray();
     d->gotOpenVpnVersion = true;
 

@@ -31,7 +31,7 @@ class PortalMonitor : public QObject
     Q_OBJECT
 public:
     explicit PortalMonitor(QObject *parent);
-    ~PortalMonitor();
+    ~PortalMonitor() override;
 
 private Q_SLOTS:
     void connectivityChanged(NetworkManager::Connectivity connectivity);

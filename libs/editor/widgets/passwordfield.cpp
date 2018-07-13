@@ -25,7 +25,7 @@
 
 #include <KAuthorized>
 #include <KLocalizedString>
-#include <KWallet/Wallet>
+#include <KWallet>
 
 PasswordField::PasswordField(QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)

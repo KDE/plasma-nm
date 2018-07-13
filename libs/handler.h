@@ -42,8 +42,8 @@ public:
         UpdateConnection
     };
 
-    explicit Handler(QObject *parent = 0);
-    virtual ~Handler();
+    explicit Handler(QObject* parent = nullptr);
+    ~Handler() override;
 
     /**
      * Activates given connection

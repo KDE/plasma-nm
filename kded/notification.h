@@ -36,7 +36,7 @@ class Notification : public QObject
 {
     Q_OBJECT
 public:
-    explicit Notification(QObject *parent = 0);
+    explicit Notification(QObject *parent = nullptr);
 
 private Q_SLOTS:
     void deviceAdded(const QString &uni);

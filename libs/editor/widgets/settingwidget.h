@@ -36,8 +36,8 @@ public:
         enum PasswordStorageType {Store = 0, AlwaysAsk, NotRequired};
     };
 
-    explicit SettingWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~SettingWidget();
+    explicit SettingWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
+    ~SettingWidget() override;
 
     virtual void loadConfig(const NetworkManager::Setting::Ptr &setting);
     virtual void loadSecrets(const NetworkManager::Setting::Ptr &setting);

@@ -38,8 +38,8 @@ class Q_DECL_EXPORT NetworkModel : public QAbstractListModel
 {
 Q_OBJECT
 public:
-    explicit NetworkModel(QObject *parent = 0);
-    virtual ~NetworkModel();
+    explicit NetworkModel(QObject *parent = nullptr);
+    ~NetworkModel() override;
 
     enum ItemRole {
         ConnectionDetailsRole = Qt::UserRole + 1,
@@ -70,9 +70,9 @@ public:
         VpnType
     };
 
-    int rowCount(const QModelIndex &parent) const Q_DECL_OVERRIDE;
-    QVariant data(const QModelIndex &index, int role) const Q_DECL_OVERRIDE;
-    virtual QHash<int, QByteArray> roleNames() const Q_DECL_OVERRIDE;
+    int rowCount(const QModelIndex &parent) const override;
+    QVariant data(const QModelIndex &index, int role) const override;
+    QHash<int, QByteArray> roleNames() const override;
 
 public Q_SLOTS:
     void onItemUpdated();

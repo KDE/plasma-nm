@@ -20,7 +20,7 @@
 
 #include "qmlplugins.h"
 
-#include <QtQml>
+#include <QQmlEngine>
 
 #include "availabledevices.h"
 #include "connectionicon.h"

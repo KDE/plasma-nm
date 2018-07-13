@@ -41,13 +41,13 @@ using namespace NetworkManager;
 PasswordDialog::PasswordDialog(const NetworkManager::ConnectionSettings::Ptr &connectionSettings, SecretAgent::GetSecretsFlags flags,
                                const QString &setting_name, QWidget *parent) :
     QDialog(parent),
-    m_ui(0),
+    m_ui(nullptr),
     m_hasError(false),
     m_settingName(setting_name),
     m_connectionSettings(connectionSettings),
     m_error(SecretAgent::NoSecrets),
     m_flags(flags),
-    m_vpnWidget(0)
+    m_vpnWidget(nullptr)
 {
     setWindowIcon(QIcon::fromTheme(QStringLiteral("dialog-password")));
 

@@ -30,12 +30,12 @@ class Q_DECL_EXPORT AppletProxyModel : public QSortFilterProxyModel
 Q_OBJECT
 Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
 public:
-    explicit AppletProxyModel(QObject *parent = 0);
-    virtual ~AppletProxyModel();
+    explicit AppletProxyModel(QObject *parent = nullptr);
+    ~AppletProxyModel() override;
 
 protected:
-    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const Q_DECL_OVERRIDE;
-    bool lessThan(const QModelIndex &left, const QModelIndex &right) const Q_DECL_OVERRIDE;
+    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
+    bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
 };
 
 

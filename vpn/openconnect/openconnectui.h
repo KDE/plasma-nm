@@ -31,16 +31,16 @@ class Q_DECL_EXPORT OpenconnectUiPlugin : public VpnUiPlugin
 {
     Q_OBJECT
 public:
-    explicit OpenconnectUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
-    virtual ~OpenconnectUiPlugin();
-    virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
-    virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    explicit OpenconnectUiPlugin(QObject * parent = nullptr, const QVariantList& = QVariantList());
+    ~OpenconnectUiPlugin() override;
+    SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) override;
+    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) override;
 
-    virtual QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const;
-    virtual QString supportedFileExtensions() const;
-    virtual QMessageBox::StandardButtons suggestedAuthDialogButtons() const;
-    virtual NMVariantMapMap importConnectionSettings(const QString &fileName);
-    virtual bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName);
+    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
+    QString supportedFileExtensions() const override;
+    QMessageBox::StandardButtons suggestedAuthDialogButtons() const override;
+    NMVariantMapMap importConnectionSettings(const QString &fileName) override;
+    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
 };
 
 #endif //  OPENCONNECT_UI_H

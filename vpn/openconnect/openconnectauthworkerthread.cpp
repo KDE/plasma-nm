@@ -53,7 +53,7 @@ public:
     static int validatePeerCert(void *obj, const char *str)
     {
         if (obj)
-            return static_cast<OpenconnectAuthWorkerThread*>(obj)->validatePeerCert(NULL, str);
+            return static_cast<OpenconnectAuthWorkerThread*>(obj)->validatePeerCert(nullptr, str);
         return -1;
     }
 #else

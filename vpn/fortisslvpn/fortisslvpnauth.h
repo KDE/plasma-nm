@@ -33,8 +33,8 @@ class FortisslvpnAuthDialog : public SettingWidget
     Q_DECLARE_PRIVATE(FortisslvpnAuthDialog)
 public:
     explicit FortisslvpnAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
-    ~FortisslvpnAuthDialog();
-    QVariantMap setting() const Q_DECL_OVERRIDE;
+    ~FortisslvpnAuthDialog() override;
+    QVariantMap setting() const override;
 
 private:
     FortisslvpnAuthDialogPrivate *const d_ptr;

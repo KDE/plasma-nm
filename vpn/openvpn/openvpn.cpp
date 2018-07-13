@@ -25,10 +25,11 @@
 
 #include <QLatin1Char>
 #include <QStringBuilder>
+#include <QStandardPaths>
+
 #include <KPluginFactory>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KStandardDirs>
 
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/VpnSetting>
@@ -85,6 +86,12 @@ K_PLUGIN_FACTORY_WITH_JSON(OpenVpnUiPluginFactory, "plasmanetworkmanagement_open
 
 #define PROC_TYPE_TAG "Proc-Type: 4,ENCRYPTED"
 #define PKCS8_TAG "-----BEGIN ENCRYPTED PRIVATE KEY-----"
+
+QString localCertPath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) +
+        QLatin1String("/networkmanagement/certificates/");
+}
 
 QString unQuote(QString &certVal, const QString &fileName)
 {
@@ -187,7 +194,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
     bool copyCertificates;
     KMessageBox::ButtonCode buttonCode;
     if (KMessageBox::shouldBeShownYesNo(QLatin1String("copyCertificatesDialog"), buttonCode)) {
-        copyCertificates = KMessageBox::questionYesNo(0, i18n("Do you want to copy your certificates to %1?", KStandardDirs::locateLocal("data", "networkmanagement/certificates/")),
+        copyCertificates = KMessageBox::questionYesNo(nullptr, i18n("Do you want to copy your certificates to %1?", localCertPath()),
                                    i18n("Copy certificates"), KStandardGuiItem::yes(), KStandardGuiItem::no(), QLatin1String("copyCertificatesDialog")) == KMessageBox::Yes;
     } else {
         copyCertificates = buttonCode == KMessageBox::Yes;
@@ -236,10 +243,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                 } else if (key_value[1].startsWith(QLatin1String("tap"))) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TAP_DEV), "yes");
                 } else {
-                    KMessageBox::information(0, i18n("Unknown option: %1", line));
+                    KMessageBox::information(nullptr, i18n("Unknown option: %1", line));
                 }
             } else {
-                KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
+                KMessageBox::information(nullptr, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
         }
@@ -254,10 +261,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                 } else if (key_value[1] == "tcp-client" || key_value[1] == "tcp-server" || key_value[1] == "tcp") {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PROTO_TCP), "yes");
                 } else {
-                    KMessageBox::information(0, i18n("Unknown option: %1", line));
+                    KMessageBox::information(nullptr, i18n("Unknown option: %1", line));
                 }
             } else {
-                KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
+                KMessageBox::information(nullptr, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
         }
@@ -270,10 +277,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                 if (key_value[1].toLong() >= 0 && key_value[1].toLong() < 0xFFFF ) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TUNNEL_MTU), key_value[1]);
                 } else {
-                    KMessageBox::information(0, i18n("Invalid size (should be between 0 and 0xFFFF) in option: %1", line));
+                    KMessageBox::information(nullptr, i18n("Invalid size (should be between 0 and 0xFFFF) in option: %1", line));
                 }
             } else {
-                KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
+                KMessageBox::information(nullptr, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
         }
@@ -282,10 +289,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                 if (key_value[1].toLong() >= 0 && key_value[1].toLong() < 0xFFFF ) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_FRAGMENT_SIZE), key_value[1]);
                 } else {
-                    KMessageBox::information(0, i18n("Invalid size (should be between 0 and 0xFFFF) in option: %1", line));
+                    KMessageBox::information(nullptr, i18n("Invalid size (should be between 0 and 0xFFFF) in option: %1", line));
                 }
             } else {
-                KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
+                KMessageBox::information(nullptr, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
         }
@@ -298,10 +305,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                 if (key_value[1].toLong() >= 0 && key_value[1].toLong() <= 604800 ) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_RENEG_SECONDS), key_value[1]);
                 } else {
-                    KMessageBox::information(0, i18n("Invalid size (should be between 0 and 604800) in option: %1", line));
+                    KMessageBox::information(nullptr, i18n("Invalid size (should be between 0 and 604800) in option: %1", line));
                 }
             } else {
-                KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
+                KMessageBox::information(nullptr, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
         }
@@ -355,7 +362,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                 proxy_set = true;
             }
             if (!success) {
-                KMessageBox::information(0, i18n("Invalid proxy option: %1", line));
+                KMessageBox::information(nullptr, i18n("Invalid proxy option: %1", line));
             }
             continue;
         }
@@ -384,10 +391,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                     if (key_value[1].toLong() > 0 && key_value[1].toLong() < 65536) {
                         dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PORT), key_value[1]);
                     } else {
-                        KMessageBox::information(0, i18n("Invalid port (should be between 1 and 65535) in option: %1", line));
+                        KMessageBox::information(nullptr, i18n("Invalid port (should be between 1 and 65535) in option: %1", line));
                     }
                 } else
-                    KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
+                    KMessageBox::information(nullptr, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
         }
@@ -483,7 +490,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             if (key_value.count() == 2) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CIPHER), key_value[1]);
             } else {
-                KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
+                KMessageBox::information(nullptr, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
         }
@@ -491,7 +498,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             if (!unQuote(key_value[1], fileName).isEmpty()) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE), key_value[1]);
             } else {
-                KMessageBox::information(0, i18n("Unknown option: %1", line));
+                KMessageBox::information(nullptr, i18n("Unknown option: %1", line));
             }
             continue;
         }
@@ -500,7 +507,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_LOCAL_IP), key_value[1]);
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_IP), key_value[2]);
             } else {
-                KMessageBox::information(0, i18n("Invalid number of arguments (expected 2) in option: %1", line));
+                KMessageBox::information(nullptr, i18n("Invalid number of arguments (expected 2) in option: %1", line));
             }
             continue;
         }
@@ -511,7 +518,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             if (key_value.count() == 2) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_AUTH), key_value[1]);
             } else {
-                KMessageBox::information(0, i18n("Invalid number of arguments (expected 1) in option: %1", line));
+                KMessageBox::information(nullptr, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }
             continue;
         }
@@ -522,7 +529,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             }
 
             if (key_direction != 0 && key_direction != 1) {
-                KMessageBox::information(0, i18n("Invalid argument in option: %1", line));
+                KMessageBox::information(nullptr, i18n("Invalid argument in option: %1", line));
                 key_direction = -1;
             }
             continue;
@@ -660,13 +667,13 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
 
 QString OpenVpnUiPlugin::saveFile(QTextStream &in, const QString &endTag, const QString &connectionName, const QString &fileName)
 {
-    const QString certificatesDirectory = KStandardDirs::locateLocal("data", "networkmanagement/certificates/" + connectionName);
+    const QString certificatesDirectory = localCertPath() + connectionName;
     const QString absoluteFilePath = certificatesDirectory + '/' + fileName;
     QFile outFile(absoluteFilePath);
 
     QDir().mkpath(certificatesDirectory);
     if (!outFile.open(QFile::WriteOnly | QFile::Text)) {
-        KMessageBox::information(0, i18n("Error saving file %1: %2", absoluteFilePath, outFile.errorString()));
+        KMessageBox::information(nullptr, i18n("Error saving file %1: %2", absoluteFilePath, outFile.errorString()));
         return QString();
     }
 
@@ -687,14 +694,14 @@ QString OpenVpnUiPlugin::saveFile(QTextStream &in, const QString &endTag, const 
 
 QString OpenVpnUiPlugin::tryToCopyToCertificatesDirectory(const QString &connectionName, const QString &sourceFilePath)
 {
-    const QString certificatesDirectory = KStandardDirs::locateLocal("data", "networkmanagement/certificates/");
+    const QString certificatesDirectory = localCertPath();
     const QString absoluteFilePath = certificatesDirectory + connectionName + '_' + QFileInfo(sourceFilePath).fileName();
 
     QFile sourceFile(sourceFilePath);
 
     QDir().mkpath(certificatesDirectory);
     if (!sourceFile.copy(absoluteFilePath)) {
-        KMessageBox::information(0, i18n("Error copying certificate to %1: %2", absoluteFilePath, sourceFile.errorString()));
+        KMessageBox::information(nullptr, i18n("Error copying certificate to %1: %2", absoluteFilePath, sourceFile.errorString()));
         return sourceFilePath;
     }
 

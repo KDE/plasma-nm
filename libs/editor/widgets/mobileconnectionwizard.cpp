@@ -153,7 +153,7 @@ void MobileConnectionWizard::initializePage(int id)
                 lineEditProvider->setText(i18nc("Mobile Connection Wizard", "Unknown Provider"));
             }
         } else {
-            if (mProvidersList->currentItem() != 0) {
+            if (mProvidersList->currentItem() != nullptr) {
                 const QStringList mApns = mProviders->getApns(mProvidersList->currentItem()->text());
 
                 if (!mApns.isEmpty()) {
@@ -530,7 +530,7 @@ void MobileConnectionWizard::slotEnablePlanEditBox(const QString & text)
         userApn->clear();
         userApn->setEnabled(true);
     } else {
-        if (mProvidersList->currentItem() != 0) {
+        if (mProvidersList->currentItem() != nullptr) {
             int i = mPlanComboBox->currentIndex();
             if (i>0) i=i-1; // Skiping the separator (i==1)
             QStringList mApns = mProviders->getApns(mProvidersList->currentItem()->text());

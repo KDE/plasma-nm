@@ -15,18 +15,11 @@ kcoreaddons_desktop_to_json(plasmanetworkmanagement_openswanui plasmanetworkmana
 target_link_libraries(plasmanetworkmanagement_openswanui
     plasmanm_internal
     plasmanm_editor
-    Qt5::Widgets
-    Qt5::Network
-    Qt5::DBus
-    KF5::NetworkManagerQt
-    KF5::Service
-    KF5::Completion
     KF5::I18n
     KF5::WidgetsAddons
-    KF5::KIOWidgets
     KF5::CoreAddons
 )
 
-install(TARGETS plasmanetworkmanagement_openswanui  DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS plasmanetworkmanagement_openswanui  DESTINATION ${KDE_INSTALL_PLUGINDIR})
 
-install(FILES plasmanetworkmanagement_openswanui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
+install(FILES plasmanetworkmanagement_openswanui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})

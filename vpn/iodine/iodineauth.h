@@ -33,8 +33,8 @@ class IodineAuthDialog : public SettingWidget
     Q_DECLARE_PRIVATE(IodineAuthDialog)
 public:
     explicit IodineAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
-    ~IodineAuthDialog();
-    QVariantMap setting() const Q_DECL_OVERRIDE;
+    ~IodineAuthDialog() override;
+    QVariantMap setting() const override;
 
 private:
     IodineAuthDialogPrivate *const d_ptr;

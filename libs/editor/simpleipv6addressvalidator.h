@@ -27,9 +27,9 @@ class Q_DECL_EXPORT SimpleIpV6AddressValidator : public QValidator
 {
 public:
     explicit SimpleIpV6AddressValidator(QObject *parent);
-    virtual ~SimpleIpV6AddressValidator();
+    ~SimpleIpV6AddressValidator() override;
 
-    virtual State validate(QString &, int &) const;
+    State validate(QString &, int &) const override;
 
     /** Check input value with a regular expression describing simple input mask.
      */

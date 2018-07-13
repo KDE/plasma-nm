@@ -37,15 +37,15 @@ class OpenVpnSettingWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
-    ~OpenVpnSettingWidget();
+    explicit OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
+    ~OpenVpnSettingWidget() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
 
-    QVariantMap setting() const;
+    QVariantMap setting() const override;
 
-    virtual bool isValid() const;
+    bool isValid() const override;
 
 private Q_SLOTS:
     void updateStartDir(const QUrl &);

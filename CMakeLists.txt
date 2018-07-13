@@ -1,22 +1,22 @@
+cmake_minimum_required(VERSION 3.0)
+
 project(plasma-networkmanagement)
 
-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
-set(QT_MIN_VERSION "5.4.0")
+set(QT_MIN_VERSION "5.9.0")
+set(KF5_MIN_VERSION "5.46.0")
 
 set(PROJECT_VERSION "5.12.80")
 set(PROJECT_VERSION_MAJOR 5)
 
 ################# set KDE specific information #################
 
-find_package(ECM 1.3.0 REQUIRED NO_MODULE)
+find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
-include(ECMPackageConfigHelpers)
-include(ECMOptionalAddSubdirectory)
 include(FeatureSummary)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
@@ -27,7 +27,7 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Widgets
 )
 
-find_package(KF5 REQUIRED
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     ConfigWidgets
     CoreAddons
     Declarative
@@ -36,15 +36,14 @@ find_package(KF5 REQUIRED
     Kirigami2
     KDELibs4Support
     Notifications
+    NetworkManagerQt
     Plasma
     Service
     WindowSystem
     Wallet
 )
 
-find_package(KF5NetworkManagerQt REQUIRED 5.42.0)
-
-find_package(KF5ModemManagerQt 5.14.0)
+find_package(KF5ModemManagerQt ${KF5_MIN_VERSION})
 set_package_properties(KF5ModemManagerQt PROPERTIES
                        TYPE OPTIONAL)
 
@@ -78,7 +77,7 @@ else()
 endif()
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
-add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+add_definitions(-DQT_USE_FAST_CONCATENATION)
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)

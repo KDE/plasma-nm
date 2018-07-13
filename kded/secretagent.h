@@ -42,7 +42,7 @@ public:
         type(_type),
         flags(NetworkManager::SecretAgent::None),
         saveSecretsWithoutReply(false),
-        dialog(0)
+        dialog(nullptr)
     {}
     inline bool operator==(const QString &other) const {
         return callId == other;
@@ -69,14 +69,14 @@ class Q_DECL_EXPORT SecretAgent : public NetworkManager::SecretAgent
 {
     Q_OBJECT
 public:
-    explicit SecretAgent(QObject* parent = 0);
-    virtual ~SecretAgent();
+    explicit SecretAgent(QObject* parent = nullptr);
+    ~SecretAgent() override;
 
 public Q_SLOTS:
-    virtual NMVariantMapMap GetSecrets(const NMVariantMapMap&, const QDBusObjectPath&, const QString&, const QStringList&, uint) Q_DECL_OVERRIDE;
-    virtual void SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path) Q_DECL_OVERRIDE;
-    virtual void DeleteSecrets(const NMVariantMapMap &, const QDBusObjectPath &) Q_DECL_OVERRIDE;
-    virtual void CancelGetSecrets(const QDBusObjectPath &, const QString &) Q_DECL_OVERRIDE;
+    NMVariantMapMap GetSecrets(const NMVariantMapMap&, const QDBusObjectPath&, const QString&, const QStringList&, uint) override;
+    void SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path) override;
+    void DeleteSecrets(const NMVariantMapMap &, const QDBusObjectPath &) override;
+    void CancelGetSecrets(const QDBusObjectPath &, const QString &) override;
 
 private Q_SLOTS:
     void dialogAccepted();

@@ -29,15 +29,15 @@ class Q_DECL_EXPORT OpenswanUiPlugin : public VpnUiPlugin
 {
     Q_OBJECT
 public:
-    explicit OpenswanUiPlugin(QObject * parent = 0, const QVariantList& = QVariantList());
-    virtual ~OpenswanUiPlugin();
-    virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
-    virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = 0);
+    explicit OpenswanUiPlugin(QObject * parent = nullptr, const QVariantList& = QVariantList());
+    ~OpenswanUiPlugin() override;
+    SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) override;
+    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) override;
 
-    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const;
-    QString supportedFileExtensions() const;
-    NMVariantMapMap importConnectionSettings(const QString &fileName);
-    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName);
+    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
+    QString supportedFileExtensions() const override;
+    NMVariantMapMap importConnectionSettings(const QString &fileName) override;
+    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
 };
 
 #endif //  PLASMA_NM_OPENSWAN_H

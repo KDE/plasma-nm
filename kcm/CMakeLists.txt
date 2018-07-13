@@ -30,3 +30,4 @@ install(TARGETS kcm_networkmanagement DESTINATION ${PLUGIN_INSTALL_DIR}/kcms)
 install( FILES kcm_networkmanagement.desktop  DESTINATION  ${SERVICES_INSTALL_DIR})
 
 kpackage_install_package(package kcm_networkmanagement kcms)
+

@@ -10,19 +10,21 @@ set(plasmanm_internal_SRCS
 add_library(plasmanm_internal SHARED ${plasmanm_internal_SRCS})
 
 target_link_libraries(plasmanm_internal
+PUBLIC
     KF5::NetworkManagerQt
+PRIVATE
     KF5::ConfigCore
     KF5::CoreAddons
     KF5::I18n
     KF5::IconThemes
     KF5::Notifications
     KF5::Service
-    KF5::Wallet
     KF5::WindowSystem
+    KF5::Wallet
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
-    target_link_libraries(plasmanm_internal KF5::ModemManagerQt)
+    target_link_libraries(plasmanm_internal PUBLIC KF5::ModemManagerQt)
 endif()
 
 install(TARGETS plasmanm_internal ${INSTALL_TARGETS_DEFAULT_ARGS})

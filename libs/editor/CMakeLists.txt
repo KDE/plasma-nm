@@ -99,7 +99,6 @@ PRIVATE
     KF5::Notifications
     KF5::Wallet
     KF5::Solid
-    KF5::KDELibs4Support # KLocale
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)

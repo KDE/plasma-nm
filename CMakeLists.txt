@@ -44,7 +44,6 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     Plasma
     Declarative
     NetworkManagerQt
-    KDELibs4Support
 )
 
 find_package(KF5ModemManagerQt ${KF5_MIN_VERSION})

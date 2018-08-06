@@ -287,11 +287,15 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
 
 void NetworkModel::addAvailableConnection(const QString &connection, const NetworkManager::Device::Ptr &device)
 {
-    checkAndCreateDuplicate(connection, device);
+    if (!device) {
+        return;
+    }
+
+    checkAndCreateDuplicate(connection, device->uni());
 
     for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::Connection, connection)) {
         // The item is already associated with another device
-        if (!item->devicePath().isEmpty()) {
+        if (!device || !item->devicePath().isEmpty()) {
             continue;
         }
 
@@ -300,6 +304,7 @@ void NetworkModel::addAvailableConnection(const QString &connection, const Netwo
         } else {
             item->setDeviceName(device->ipInterfaceName());
         }
+
         item->setDevicePath(device->uni());
         item->setDeviceState(device->state());
         qCDebug(PLASMA_NM) << "Item " << item->name() << ": device changed to " << item->devicePath();
@@ -474,7 +479,7 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
     qCDebug(PLASMA_NM) << "New wireless network " << item->name() << " added";
 }
 
-void NetworkModel::checkAndCreateDuplicate(const QString &connection, const NetworkManager::Device::Ptr &device)
+void NetworkModel::checkAndCreateDuplicate(const QString &connection, const QString &deviceUni)
 {
     bool createDuplicate = false;
     NetworkModelItem *originalItem = 0;
@@ -484,7 +489,7 @@ void NetworkModel::checkAndCreateDuplicate(const QString &connection, const Netw
             originalItem = item;
         }
 
-        if (!item->duplicate() && item->itemType() == NetworkModelItem::AvailableConnection && (item->devicePath() != device->uni() && !item->devicePath().isEmpty())) {
+        if (!item->duplicate() && item->itemType() == NetworkModelItem::AvailableConnection && (item->devicePath() != deviceUni && !item->devicePath().isEmpty())) {
             createDuplicate = true;
         }
     }

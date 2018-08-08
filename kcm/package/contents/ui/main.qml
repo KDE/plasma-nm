@@ -26,7 +26,7 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2 as QtControls
 
 import org.kde.kcm 1.2
-import org.kde.kirigami 2.3  as Kirigami // for Kirigami.Units
+import org.kde.kirigami 2.4  as Kirigami // for Kirigami.Units
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 ScrollViewKCM {
@@ -64,76 +64,54 @@ ScrollViewKCM {
         sourceModel: connectionModel
     }
 
-    header: Item {
-        width: root.width
-        implicitHeight: Math.round(Kirigami.Units.gridUnit * 2.5)
+    header: QtControls.TextField {
+        id: searchField
 
-        RowLayout {
-            id: searchLayout
+        Layout.minimumHeight: Layout.maximumHeight
+        Layout.maximumHeight: Kirigami.Units.iconSizes.smallMedium + Kirigami.Units.smallSpacing * 2
+        Layout.fillWidth: true
 
-            anchors.fill: parent
-            spacing: Kirigami.Units.smallSpacing
+        focus: true
+        placeholderText: i18n("Type here to search connection...")
 
-            QtControls.TextField {
-                id: searchField
-
-                Layout.minimumHeight: Layout.maximumHeight
-                Layout.maximumHeight: Kirigami.Units.iconSizes.smallMedium + Kirigami.Units.smallSpacing * 2
-                Layout.fillWidth: true
-
-                focus: true
-                placeholderText: i18n("Type here to search connection...")
-
-                onTextChanged: {
-                    editorProxyModel.setFilterRegExp(text)
-                }
-
-                MouseArea {
-                    anchors {
-                        right: parent.right
-                        verticalCenter: parent.verticalCenter
-                        rightMargin: y
-                    }
-
-                    opacity: searchField.text.length > 0 ? 1 : 0
-                    width: Kirigami.Units.iconSizes.small
-                    height: width
-
-                    onClicked: {
-                        searchField.text = ""
-                    }
-
-                    Kirigami.Icon {
-                        anchors.fill: parent
-                        source: LayoutMirroring.enabled ? "edit-clear-rtl" : "edit-clear"
-                    }
-
-                    Behavior on opacity {
-                        OpacityAnimator {
-                            duration: Kirigami.Units.longDuration
-                            easing.type: Easing.InOutQuad
-                        }
-                    }
-                }
-            }
+        onTextChanged: {
+            editorProxyModel.setFilterRegExp(text)
         }
 
-        Kirigami.Separator {
-            visible: !connectionView.atYBeginning
+        MouseArea {
             anchors {
-                left: parent.left
                 right: parent.right
-                top: parent.bottom
+                verticalCenter: parent.verticalCenter
+                rightMargin: y
+            }
+
+            opacity: searchField.text.length > 0 ? 1 : 0
+            width: Kirigami.Units.iconSizes.small
+            height: width
+
+            onClicked: {
+                searchField.text = ""
+            }
+
+            Kirigami.Icon {
+                anchors.fill: parent
+                source: LayoutMirroring.enabled ? "edit-clear-rtl" : "edit-clear"
+            }
+
+            Behavior on opacity {
+                OpacityAnimator {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InOutQuad
+                }
             }
         }
     }
 
+
     view: ListView {
         id: connectionView
-        clip: true
         model: editorProxyModel
         currentIndex: -1
-        boundsBehavior: Flickable.StopAtBounds
         activeFocusOnTab: true
         keyNavigationWraps: true
         Accessible.role: Accessible.List
@@ -146,6 +124,7 @@ ScrollViewKCM {
         section {
             property: "KcmConnectionType"
             delegate: Kirigami.AbstractListItem {
+                width: connectionView.width
                 supportsMouseEvents: false
                 background: Rectangle {
                     color: palette.window
@@ -160,6 +139,7 @@ ScrollViewKCM {
         }
 
         delegate: ConnectionItemDelegate {
+            width: connectionView.width
             onAboutToChangeConnection: {
 //                         // Shouldn't be problem to set this in advance
 //                         root.currentConnectionExportable = exportable
@@ -193,16 +173,12 @@ ScrollViewKCM {
             id: expertModeCheckbox
             Layout.alignment: Qt.AlignLeft
             Layout.fillWidth: true
-            height: Kirigami.Units.iconSizes.medium
-            width: Kirigami.Units.iconSizes.medium
             text: i18n("Enable expert mode")
         }
 
         QtControls.Button {
             id: exportConnectionButton
             Layout.alignment: Qt.AlignRight
-            height: Kirigami.Units.iconSizes.medium
-            width: Kirigami.Units.iconSizes.medium
 
             enabled: root.currentConnectionExportable
             icon.name: "document-export"
@@ -218,8 +194,6 @@ ScrollViewKCM {
         QtControls.Button {
             id: removeConnectionButton
             Layout.alignment: Qt.AlignRight
-            height: Kirigami.Units.iconSizes.medium
-            width: Kirigami.Units.iconSizes.medium
 
             enabled: root.currentConnectionPath && root.currentConnectionPath.length
             icon.name: "list-remove"
@@ -237,8 +211,6 @@ ScrollViewKCM {
         QtControls.Button {
             id: addConnectionButton
             Layout.alignment: Qt.AlignRight
-            height: Kirigami.Units.iconSizes.medium
-            width: Kirigami.Units.iconSizes.medium
 
             icon.name: "list-add"
 
@@ -253,8 +225,7 @@ ScrollViewKCM {
 
     ConnectionEditor {
         id: connectionEditor
-        visible: applicationWindow().pageStack.currentIndex == 1
-        opacity: visible
+        visible: false
     }
 
     MessageDialog {
@@ -307,6 +278,7 @@ ScrollViewKCM {
         if (currentConnectionPath) {
             if (applicationWindow().pageStack.depth < 2) {
                 applicationWindow().pageStack.push(connectionEditor)
+                connectionEditor.visible = true
             } else {
                 applicationWindow().pageStack.currentIndex = 1
             }

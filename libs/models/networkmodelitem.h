@@ -111,16 +111,19 @@ public:
     bool operator==(const NetworkModelItem *item) const;
 
 public Q_SLOTS:
-    void updateDetails();
+    void invalidateDetails();
 
 private:
+    void updateDetails() const;
+
     QString m_activeConnectionPath;
     QString m_connectionPath;
     NetworkManager::ActiveConnection::State m_connectionState;
     QString m_devicePath;
     QString m_deviceName;
     NetworkManager::Device::State m_deviceState;
-    QStringList m_details;
+    mutable QStringList m_details;
+    mutable bool m_detailsValid;
     bool m_duplicate;
     NetworkManager::WirelessSetting::NetworkMode m_mode;
     QString m_name;

@@ -278,7 +278,7 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
                 }
                 item->setVpnState(state);
             }
-            item->updateDetails();
+            item->invalidateDetails();
             qCDebug(PLASMA_NM) << "Item " << item->name() << ": active connection state changed to " << item->connectionState();
         }
     }
@@ -382,7 +382,7 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr &connecti
             item->setSsid(QString::fromUtf8(wirelessSetting->ssid()));
         }
 
-        item->updateDetails();
+        item->invalidateDetails();
 
         const int index = m_list.count();
         beginInsertRows(QModelIndex(), index, index);
@@ -465,7 +465,7 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
     item->setSsid(network->ssid());
     item->setType(NetworkManager::ConnectionSettings::Wireless);
     item->setSecurityType(securityType);
-    item->updateDetails();
+    item->invalidateDetails();
 
     const int index = m_list.count();
     beginInsertRows(QModelIndex(), index, index);
@@ -491,7 +491,7 @@ void NetworkModel::checkAndCreateDuplicate(const QString &connection, const Netw
 
     if (createDuplicate) {
         NetworkModelItem *duplicatedItem = new NetworkModelItem(originalItem);
-        duplicatedItem->updateDetails();
+        duplicatedItem->invalidateDetails();
 
         const int index = m_list.count();
         beginInsertRows(QModelIndex(), index, index);
@@ -513,7 +513,7 @@ void NetworkModel::updateItem(NetworkModelItem*item)
     const int row = m_list.indexOf(item);
 
     if (row >= 0) {
-        item->updateDetails();
+        item->invalidateDetails();
         QModelIndex index = createIndex(row, 0);
         Q_EMIT dataChanged(index, index);
     }
@@ -560,7 +560,7 @@ void NetworkModel::activeConnectionStateChanged(NetworkManager::ActiveConnection
         beginResetModel();
         for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::ActiveConnection, activePtr->path())) {
             item->setConnectionState(state);
-            item->updateDetails();
+            item->invalidateDetails();
             qCDebug(PLASMA_NM) << "Item " << item->name() << ": active connection changed to " << item->connectionState();
         }
         endResetModel();
@@ -771,7 +771,7 @@ void NetworkModel::deviceStateChanged(NetworkManager::Device::State state, Netwo
         beginResetModel();
         for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::Device, device->uni())) {
             item->setDeviceState(state);
-            item->updateDetails();
+            item->invalidateDetails();
 //             qCDebug(PLASMA_NM) << "Item " << item->name() << ": device state changed to " << item->deviceState();
         }
         endResetModel();

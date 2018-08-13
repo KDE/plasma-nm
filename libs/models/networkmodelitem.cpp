@@ -54,6 +54,7 @@ NetworkModelItem::NetworkModelItem(QObject *parent)
     : QObject(parent)
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
     , m_deviceState(NetworkManager::Device::UnknownState)
+    , m_detailsValid(false)
     , m_duplicate(false)
     , m_mode(NetworkManager::WirelessSetting::Infrastructure)
     , m_securityType(NetworkManager::NoneSecurity)
@@ -68,6 +69,7 @@ NetworkModelItem::NetworkModelItem(const NetworkModelItem *item, QObject *parent
     : QObject(parent)
     , m_connectionPath(item->connectionPath())
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
+    , m_detailsValid(false)
     , m_duplicate(true)
     , m_mode(item->mode())
     , m_name(item->name())
@@ -117,6 +119,9 @@ void NetworkModelItem::setConnectionState(NetworkManager::ActiveConnection::Stat
 
 QStringList NetworkModelItem::details() const
 {
+    if (!m_detailsValid) {
+        updateDetails();
+    }
     return m_details;
 }
 
@@ -418,8 +423,14 @@ bool NetworkModelItem::operator==(const NetworkModelItem *item) const
     return false;
 }
 
-void NetworkModelItem::updateDetails()
+void NetworkModelItem::invalidateDetails()
 {
+    m_detailsValid = false;
+}
+
+void NetworkModelItem::updateDetails() const
+{
+    m_detailsValid = true;
     m_details.clear();
 
     if (itemType() == NetworkModelItem::UnavailableConnection) {

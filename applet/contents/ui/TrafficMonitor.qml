@@ -24,8 +24,9 @@ import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
-    property QtObject dataEngine: null
-    property string deviceName
+    property real rxBytes: 0
+    property real txBytes: 0
+    property alias interval: timer.interval
 
     height: visible ? plotter.height + units.gridUnit : 0
 
@@ -41,7 +42,7 @@ Item {
             height: paintedHeight
             font.pointSize: theme.smallestFont.pointSize
             lineHeight: 1.75
-            text: KCoreAddons.Format.formatByteSize((plotter.maxValue * 1024) * (1 - index / 5))
+            text: KCoreAddons.Format.formatByteSize(plotter.maxValue * (1 - index / 5)) + i18n("/s")
         }
     }
 
@@ -75,20 +76,22 @@ Item {
             }
         ]
 
-        Connections {
-            target: dataEngine;
-            onNewData: {
-                if (sourceName.indexOf("network/interfaces/" + deviceName) != 0) {
-                    return;
-                }
-                var rx = dataEngine.data[dataEngine.downloadSource];
-                var tx = dataEngine.data[dataEngine.uploadSource];
-                if (rx === undefined || rx.value === undefined ||
-                    tx === undefined || tx.value === undefined) {
-                    return;
-                }
-
-                plotter.addSample([rx.value, tx.value]);
+        Timer {
+            id: timer
+            repeat: true
+            running: parent.visible
+            property real prevRxBytes
+            property real prevTxBytes
+            Component.onCompleted: {
+                prevRxBytes = rxBytes
+                prevTxBytes = txBytes
+            }
+            onTriggered: {
+                var rxSpeed = (rxBytes - prevRxBytes) * 1000 / interval
+                var txSpeed = (txBytes - prevTxBytes) * 1000 / interval
+                prevRxBytes = rxBytes
+                prevTxBytes = txBytes
+                plotter.addSample([rxSpeed, txSpeed]);
             }
         }
     }

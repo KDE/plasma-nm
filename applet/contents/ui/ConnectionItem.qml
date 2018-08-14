@@ -34,7 +34,8 @@ PlasmaComponents.ListItem {
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
                                                (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
                                                 SecurityType == PlasmaNM.Enums.Wpa2Psk)
-    property bool showSpeed: ConnectionState == PlasmaNM.Enums.Activated &&
+    property bool showSpeed: plasmoid.expanded &&
+                             ConnectionState == PlasmaNM.Enums.Activated &&
                              (Type == PlasmaNM.Enums.Wired ||
                               Type == PlasmaNM.Enums.Wireless ||
                               Type == PlasmaNM.Enums.Gsm ||
@@ -45,17 +46,6 @@ PlasmaComponents.ListItem {
     checked: connectionItem.containsMouse
     enabled: true
     height: expanded ? baseHeight + separator.height + expandableComponentLoader.height + (2 * Math.round(units.gridUnit / 3)) : baseHeight
-
-    PlasmaCore.DataSource {
-        id: dataSource
-
-        property string downloadSource: "network/interfaces/" + DeviceName + "/receiver/data"
-        property string uploadSource: "network/interfaces/" + DeviceName + "/transmitter/data"
-
-        connectedSources: showSpeed && plasmoid.expanded ? [downloadSource, uploadSource] : []
-        engine: "systemmonitor"
-        interval: 2000
-    }
 
     ColumnLayout {
         anchors.fill: parent
@@ -159,7 +149,7 @@ PlasmaComponents.ListItem {
                     top: parent.top
                 }
                 height: visible ? implicitHeight : 0
-                visible: showSpeed && dataSource.data && dataSource.data[dataSource.downloadSource] && dataSource.data[dataSource.uploadSource]
+                visible: showSpeed
 
                 PlasmaComponents.TabButton {
                     id: speedTabButton
@@ -197,8 +187,9 @@ PlasmaComponents.ListItem {
                     top: detailsTabBar.visible ? detailsTabBar.bottom : parent.top
                     topMargin: Math.round(units.gridUnit / 3)
                 }
-                dataEngine: dataSource
-                deviceName: DeviceName
+                rxBytes: RxBytes
+                txBytes: TxBytes
+                interval: 2000
                 visible: detailsTabBar.currentTab == speedTabButton
             }
         }
@@ -313,20 +304,24 @@ PlasmaComponents.ListItem {
                 result += ", " + SecurityTypeString
             return result
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
-            if (showSpeed && dataSource.data && dataSource.data[dataSource.downloadSource] && dataSource.data[dataSource.uploadSource]) {
+            if (showSpeed) {
                 var downloadColor = theme.highlightColor
                 // cycle upload color by 180 degrees
                 var uploadColor = Qt.hsva((downloadColor.hsvHue + 0.5) % 1, downloadColor.hsvSaturation, downloadColor.hsvValue, downloadColor.a)
 
-                return i18n("Connected, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s",
+                return i18n("Connected, <font color='%1'>⬇</font> %2, <font color='%3'>⬆</font> %4",
                             downloadColor,
-                            KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.downloadSource].value * 1024 || 0),
+                            KCoreAddons.Format.formatByteSize(RxBytes),
                             uploadColor,
-                            KCoreAddons.Format.formatByteSize(dataSource.data[dataSource.uploadSource].value * 1024 || 0))
+                            KCoreAddons.Format.formatByteSize(TxBytes))
             } else {
                 return i18n("Connected")
             }
         }
+    }
+
+    onShowSpeedChanged: {
+        connectionModel.setDeviceStatisticsRefreshRateMs(DevicePath, showSpeed ? 2000 : 0)
     }
 
     onActivatingChanged: {

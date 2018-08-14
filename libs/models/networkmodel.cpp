@@ -106,6 +106,10 @@ QVariant NetworkModel::data(const QModelIndex &index, int role) const
                 return item->vpnState();
             case VpnType:
                 return item->vpnType();
+            case RxBytesRole:
+                return item->rxBytes();
+            case TxBytesRole:
+                return item->txBytes();
             default:
                 break;
         }
@@ -149,6 +153,8 @@ QHash<int, QByteArray> NetworkModel::roleNames() const
     roles[UuidRole] = "Uuid";
     roles[VpnState] = "VpnState";
     roles[VpnType] = "VpnType";
+    roles[RxBytesRole] = "RxBytes";
+    roles[TxBytesRole] = "TxBytes";
 
     return roles;
 }
@@ -209,6 +215,20 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr &device)
     connect(device.data(), &NetworkManager::Device::ipV6ConfigChanged, this, &NetworkModel::ipConfigChanged, Qt::UniqueConnection);
     connect(device.data(), &NetworkManager::Device::ipInterfaceChanged, this, &NetworkModel::ipInterfaceChanged);
     connect(device.data(), &NetworkManager::Device::stateChanged, this, &NetworkModel::deviceStateChanged, Qt::UniqueConnection);
+
+    auto deviceStatistics = device->deviceStatistics();
+    connect(deviceStatistics.data(), &NetworkManager::DeviceStatistics::rxBytesChanged, this, [this, device](qulonglong rxBytes) {
+        for (auto *item : m_list.returnItems(NetworkItemsList::Device, device->uni())) {
+            item->setRxBytes(rxBytes);
+            updateItem(item);
+        }
+    });
+    connect(deviceStatistics.data(), &NetworkManager::DeviceStatistics::txBytesChanged, this, [this, device](qulonglong txBytes) {
+        for (auto *item : m_list.returnItems(NetworkItemsList::Device, device->uni())) {
+            item->setTxBytes(txBytes);
+            updateItem(item);
+        }
+    });
 
     if (device->type() == NetworkManager::Device::Wifi) {
         NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
@@ -505,6 +525,15 @@ void NetworkModel::onItemUpdated()
     NetworkModelItem *item = static_cast<NetworkModelItem*>(sender());
     if (item) {
         updateItem(item);
+    }
+}
+
+void NetworkModel::setDeviceStatisticsRefreshRateMs(const QString &devicePath, uint refreshRate)
+{
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(devicePath);
+
+    if (device) {
+        device->deviceStatistics()->setRefreshRateMs(refreshRate);
     }
 }
 

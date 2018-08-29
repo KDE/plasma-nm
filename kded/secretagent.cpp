@@ -358,6 +358,29 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
     const bool allowInteraction = request.flags & AllowInteraction;
     const bool isVpn = (setting->type() == NetworkManager::Setting::Vpn);
 
+    if (isVpn) {
+        NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+        if (vpnSetting->serviceType() == QLatin1String("org.freedesktop.NetworkManager.ssh") && vpnSetting->data()["auth-type"] == QLatin1String("ssh-agent")) {
+            QString authSock = qgetenv("SSH_AUTH_SOCK");
+            qCDebug(PLASMA_NM) << Q_FUNC_INFO << "Sending SSH auth socket" << authSock;
+
+            if (authSock.isEmpty()) {
+                sendError(SecretAgent::NoSecrets,
+                          QLatin1String("SSH_AUTH_SOCK not present"),
+                          request.message);
+            } else {
+                NMStringMap secrets;
+                secrets.insert(QLatin1String("ssh-auth-sock"), authSock);
+
+                QVariantMap secretData;
+                secretData.insert(QLatin1String("secrets"), QVariant::fromValue<NMStringMap>(secrets));
+                request.connection[request.setting_name] = secretData;
+                sendSecrets(request.connection, request.message);
+            }
+            return true;
+        }
+    }
+
     NMStringMap secretsMap;
     if (!requestNew && useWallet()) {
         if (m_wallet->isOpen()) {

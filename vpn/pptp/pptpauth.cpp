@@ -24,6 +24,8 @@
 
 #include "nm-pptp-service.h"
 
+#include <KAcceleratorManager>
+
 class PptpAuthWidgetPrivate
 {
 public:

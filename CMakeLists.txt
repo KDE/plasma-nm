@@ -32,17 +32,20 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Widgets
 )
 
-find_package(KF5 REQUIRED
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
+    Config
     ConfigWidgets
     CoreAddons
+    DBusAddons
     Declarative
     I18n
     IconThemes
     Kirigami2
-    KDELibs4Support
+    KIO
     Notifications
     Plasma
     Service
+    WidgetsAddons
     WindowSystem
     Wallet
 )

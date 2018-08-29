@@ -27,6 +27,8 @@
 #include <QUrl>
 #include <QString>
 
+#include <KAcceleratorManager>
+
 class StrongswanSettingWidgetPrivate
 {
 public:

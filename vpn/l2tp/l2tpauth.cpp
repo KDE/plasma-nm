@@ -29,6 +29,7 @@
 #include <QCheckBox>
 
 #include <KLocalizedString>
+#include <KAcceleratorManager>
 
 #include "nm-l2tp-service.h"
 

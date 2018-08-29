@@ -27,6 +27,8 @@
 
 #include <QDBusMetaType>
 
+#include <KAcceleratorManager>
+
 IodineWidget::IodineWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)
     , m_ui(new Ui::IodineWidget)

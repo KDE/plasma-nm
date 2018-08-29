@@ -25,6 +25,8 @@
 
 #include <QString>
 
+#include <KAcceleratorManager>
+
 class FortisslvpnAuthDialogPrivate
 {
 public:

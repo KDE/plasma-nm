@@ -24,8 +24,6 @@
 #include <QWidget>
 #include <NetworkManagerQt/Setting>
 
-#include <KAcceleratorManager>
-
 class Q_DECL_EXPORT SettingWidget : public QWidget
 {
     Q_OBJECT

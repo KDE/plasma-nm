@@ -30,6 +30,8 @@
 #include <QDialog>
 #include <QDialogButtonBox>
 
+#include <KAcceleratorManager>
+
 #include "nm-ssh-service.h"
 
 class SshSettingWidgetPrivate

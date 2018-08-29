@@ -27,6 +27,7 @@
 #include <QLabel>
 #include <QCheckBox>
 
+#include <KAcceleratorManager>
 #include <KLocalizedString>
 
 #include "nm-openvpn-service.h"

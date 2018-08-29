@@ -28,6 +28,7 @@
 #include <QUrl>
 #include <QPointer>
 
+#include <KAcceleratorManager>
 #include <KProcess>
 #include <KUrlRequester>
 

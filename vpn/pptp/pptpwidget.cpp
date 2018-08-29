@@ -29,6 +29,8 @@
 #include <QDialog>
 #include <QDialogButtonBox>
 
+#include <KAcceleratorManager>
+
 #include "nm-pptp-service.h"
 
 class PptpSettingWidgetPrivate

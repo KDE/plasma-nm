@@ -29,6 +29,8 @@
 #include <QPointer>
 #include <QDBusMetaType>
 
+#include <KAcceleratorManager>
+
 L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)
     , m_ui(new Ui::L2tpWidget)

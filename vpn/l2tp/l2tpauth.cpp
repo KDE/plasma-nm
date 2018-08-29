@@ -23,6 +23,7 @@
 #include "nm-l2tp-service.h"
 
 #include <QString>
+#include <KAcceleratorManager>
 
 class L2tpAuthDialogPrivate
 {

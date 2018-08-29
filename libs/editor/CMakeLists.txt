@@ -31,9 +31,12 @@ PUBLIC
     Qt5::Widgets
 PRIVATE
     Qt5::DBus
+    KF5::ConfigCore
+    KF5::Completion
     KF5::CoreAddons
     KF5::I18n
-    KF5::Completion
+    KF5::IconThemes
+    KF5::KIOFileWidgets
     KF5::Solid
     KF5::Wallet
     plasmanm_internal

@@ -43,6 +43,7 @@
 #include <QTimer>
 #include <QPointer>
 
+#include <KAcceleratorManager>
 #include <KIconLoader>
 #include <KLocalizedString>
 

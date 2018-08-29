@@ -23,9 +23,10 @@
 #include "ui_vpnc.h"
 #include "nm-vpnc-service.h"
 
+#include <QDBusMetaType>
 #include <QUrl>
 
-#include <QDBusMetaType>
+#include <KAcceleratorManager>
 
 VpncWidget::VpncWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)

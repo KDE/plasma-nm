@@ -29,6 +29,8 @@
 #include <QDialog>
 #include <QDialogButtonBox>
 
+#include <KAcceleratorManager>
+
 class FortisslvpnWidgetPrivate
 {
 public:

@@ -28,6 +28,8 @@
 #include <QString>
 #include "nm-openconnect-service.h"
 
+#include <KAcceleratorManager>
+
 class OpenconnectSettingWidgetPrivate
 {
 public:

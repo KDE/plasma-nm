@@ -28,6 +28,7 @@
 #include <QString>
 #include <QProcessEnvironment>
 
+#include <KAcceleratorManager>
 #include <KLocalizedString>
 
 class StrongswanAuthWidgetPrivate

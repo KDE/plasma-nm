@@ -34,7 +34,7 @@ PRIVATE
     KF5::CoreAddons
     KF5::I18n
     KF5::Completion
-    KF5::KDELibs4Support
+    KF5::Solid
     KF5::Wallet
     plasmanm_internal
 #     KF5::Declarative

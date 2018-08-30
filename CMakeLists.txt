@@ -51,7 +51,7 @@ set_package_properties(KF5ModemManagerQt PROPERTIES
                        TYPE OPTIONAL)
 
 # Required only for getting information about NetworkManager version in CMake
-find_package(NetworkManager 1.0.0)
+find_package(NetworkManager 1.4.0)
 set_package_properties(NetworkManager PROPERTIES
                        TYPE REQUIRED)
 

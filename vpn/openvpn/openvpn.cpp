@@ -379,7 +379,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                                            && key_value[2].toLong() < 65536) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_PORT), key_value[2]);
                     if (key_value.count() == 4) {
-                        // TODO
+                        QString protocol = key_value[3];
+                        if(protocol.startsWith(QLatin1String("tcp"))) {
+                            dataMap[QLatin1String(NM_OPENVPN_KEY_PROTO_TCP)] = QLatin1String("yes");
+                        }
                     }
                 }
             }

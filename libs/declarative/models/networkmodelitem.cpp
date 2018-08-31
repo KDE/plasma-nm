@@ -62,6 +62,8 @@ NetworkModelItem::NetworkModelItem(QObject *parent)
     , m_slave(false)
     , m_type(NetworkManager::ConnectionSettings::Unknown)
     , m_vpnState(NetworkManager::VpnConnection::Unknown)
+    , m_rxBytes(0)
+    , m_txBytes(0)
 {
 }
 
@@ -80,6 +82,8 @@ NetworkModelItem::NetworkModelItem(const NetworkModelItem *item, QObject *parent
     , m_type(item->type())
     , m_uuid(item->uuid())
     , m_vpnState(NetworkManager::VpnConnection::Unknown)
+    , m_rxBytes(0)
+    , m_txBytes(0)
 {
 }
 
@@ -406,6 +410,26 @@ QString NetworkModelItem::vpnType() const
 void NetworkModelItem::setVpnType(const QString &type)
 {
     m_vpnType = type;
+}
+
+qulonglong NetworkModelItem::rxBytes() const
+{
+    return m_rxBytes;
+}
+
+void NetworkModelItem::setRxBytes(qulonglong bytes)
+{
+    m_rxBytes = bytes;
+}
+
+qulonglong NetworkModelItem::txBytes() const
+{
+    return m_txBytes;
+}
+
+void NetworkModelItem::setTxBytes(qulonglong bytes)
+{
+    m_txBytes = bytes;
 }
 
 bool NetworkModelItem::operator==(const NetworkModelItem *item) const

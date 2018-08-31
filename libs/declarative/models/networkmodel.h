@@ -67,7 +67,9 @@ public:
         UniRole,
         UuidRole,
         VpnState,
-        VpnType
+        VpnType,
+        RxBytesRole,
+        TxBytesRole
     };
 
     int rowCount(const QModelIndex &parent) const override;
@@ -76,6 +78,7 @@ public:
 
 public Q_SLOTS:
     void onItemUpdated();
+    void setDeviceStatisticsRefreshRateMs(const QString &devicePath, uint refreshRate);
 
 private Q_SLOTS:
     void accessPointSignalStrengthChanged(int signal);

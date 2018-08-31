@@ -2,11 +2,11 @@ cmake_minimum_required(VERSION 3.0)
 
 project(plasma-networkmanagement)
 
-set(QT_MIN_VERSION "5.9.0")
-set(KF5_MIN_VERSION "5.46.0")
-
-set(PROJECT_VERSION "5.12.80")
+set(PROJECT_VERSION "5.13.80")
 set(PROJECT_VERSION_MAJOR 5)
+
+set(QT_MIN_VERSION "5.9.0")
+set(KF5_MIN_VERSION "5.50.0")
 
 ################# set KDE specific information #################
 
@@ -51,7 +51,7 @@ set_package_properties(KF5ModemManagerQt PROPERTIES
                        TYPE OPTIONAL)
 
 # Required only for getting information about NetworkManager version in CMake
-find_package(NetworkManager 1.0.0)
+find_package(NetworkManager 1.4.0)
 set_package_properties(NetworkManager PROPERTIES
                        TYPE REQUIRED)
 

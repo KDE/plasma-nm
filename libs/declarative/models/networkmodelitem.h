@@ -108,6 +108,12 @@ public:
     QString vpnType() const;
     void setVpnType(const QString &type);
 
+    qulonglong rxBytes() const;
+    void setRxBytes(qulonglong bytes);
+
+    qulonglong txBytes() const;
+    void setTxBytes(qulonglong bytes);
+
     bool operator==(const NetworkModelItem *item) const;
 
 public Q_SLOTS:
@@ -137,6 +143,8 @@ private:
     QString m_uuid;
     QString m_vpnType;
     NetworkManager::VpnConnection::State m_vpnState;
+    qulonglong m_rxBytes;
+    qulonglong m_txBytes;
 };
 
 #endif // PLASMA_NM_MODEL_NETWORK_MODEL_ITEM_H

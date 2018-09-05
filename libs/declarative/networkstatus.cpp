@@ -71,7 +71,7 @@ NetworkStatus::NetworkStatus(QObject* parent)
     : QObject(parent)
 {
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::statusChanged, this, &NetworkStatus::statusChanged);
-    connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionsChanged, this, static_cast<void (NetworkStatus::*)(void)>(&NetworkStatus::activeConnectionsChanged));
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionsChanged, this, QOverload<>::of(&NetworkStatus::activeConnectionsChanged));
 
     activeConnectionsChanged();
     statusChanged(NetworkManager::status());

@@ -141,7 +141,7 @@ void MobileConnectionWizard::initializePage(int id)
         break;
 
     case 3: // Plans Page
-        disconnect(mPlanComboBox, static_cast<void (KComboBox::*)(const QString &)>(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
+        disconnect(mPlanComboBox, QOverload<const QString &>::of(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
         mPlanComboBox->clear();
         if (type() != NetworkManager::ConnectionSettings::Gsm) {
             goto OUT_3;
@@ -170,7 +170,7 @@ void MobileConnectionWizard::initializePage(int id)
         mPlanComboBox->setCurrentIndex(0);
         slotEnablePlanEditBox(mPlanComboBox->currentText());
 OUT_3:
-        connect(mPlanComboBox, static_cast<void (KComboBox::*)(const QString &)>(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
+        connect(mPlanComboBox, QOverload<const QString &>::of(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
         break;
 
     case 4: // Confirm Page

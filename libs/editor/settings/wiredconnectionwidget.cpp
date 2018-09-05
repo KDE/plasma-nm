@@ -46,7 +46,7 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
     connect(m_widget->autonegotiate, &QCheckBox::stateChanged, this, &WiredConnectionWidget::slotWidgetChanged);
     connect(m_widget->clonedMacAddress, &KLineEdit::textChanged, this, &WiredConnectionWidget::slotWidgetChanged);
     connect(m_widget->macAddress, &HwAddrComboBox::hwAddressChanged, this, &WiredConnectionWidget::slotWidgetChanged);
-    connect(m_widget->speed, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &WiredConnectionWidget::slotWidgetChanged);
+    connect(m_widget->speed, QOverload<int>::of(&QSpinBox::valueChanged), this, &WiredConnectionWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 

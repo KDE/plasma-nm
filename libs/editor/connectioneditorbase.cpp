@@ -203,7 +203,7 @@ void ConnectionEditorBase::initialize()
                 m_connection->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>(),
                 this);
         addSettingWidget(wifiSecurity, i18n("Wi-Fi Security"));
-        connect(wifiWidget, static_cast<void (WifiConnectionWidget::*)(const QString &)>(&WifiConnectionWidget::ssidChanged), wifiSecurity, &WifiSecurity::onSsidChanged);
+        connect(wifiWidget, QOverload<const QString &>::of(&WifiConnectionWidget::ssidChanged), wifiSecurity, &WifiSecurity::onSsidChanged);
     } else if (type == NetworkManager::ConnectionSettings::Pppoe) { // DSL
         PppoeWidget *pppoeWidget = new PppoeWidget(m_connection->setting(NetworkManager::Setting::Pppoe), this);
         addSettingWidget(pppoeWidget, i18n("DSL"));

@@ -82,6 +82,7 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
     setStates();
 
     connectivityChanged();
+    setIcons();
 }
 
 ConnectionIcon::~ConnectionIcon()
@@ -174,8 +175,7 @@ void ConnectionIcon::carrierChanged(bool carrier)
 void ConnectionIcon::connectivityChanged()
 {
     NetworkManager::Connectivity conn = NetworkManager::connectivity();
-    m_limited = (conn == NetworkManager::Portal || conn == NetworkManager::Limited);
-    setIcons();
+    setLimited(conn == NetworkManager::Portal || conn == NetworkManager::Limited);
 }
 
 void ConnectionIcon::deviceAdded(const QString& device)

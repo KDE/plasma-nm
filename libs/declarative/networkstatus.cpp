@@ -203,11 +203,10 @@ void NetworkStatus::changeActiveConnections()
                 }
 
                 NetworkManager::Connection::Ptr connection = active->connection();
-                const QString connectionName = connection->name().replace('&', "&amp;").replace('<', "&lt;").replace('>', "&gt;");
                 if (connecting) {
-                    status = i18n("Connecting to %1", connectionName);
+                    status = i18n("Connecting to %1", connection->name());
                 } else if (connected) {
-                    status = i18n("Connected to %1", connectionName);
+                    status = i18n("Connected to %1", connection->name());
                 }
 
                 if (!activeConnections.isEmpty()) {

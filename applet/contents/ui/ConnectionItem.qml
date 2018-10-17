@@ -43,6 +43,9 @@ PlasmaComponents.ListItem {
     property bool visibleDetails: false
     property bool visiblePasswordDialog: false
 
+    property real rxBytes: 0
+    property real txBytes: 0
+
     checked: connectionItem.containsMouse
     enabled: true
     height: expanded ? baseHeight + separator.height + expandableComponentLoader.height + (2 * Math.round(units.gridUnit / 3)) : baseHeight
@@ -232,6 +235,25 @@ PlasmaComponents.ListItem {
         }
     }
 
+    Timer {
+        id: timer
+        repeat: true
+        interval: 2000
+        running: showSpeed
+        property real prevRxBytes
+        property real prevTxBytes
+        Component.onCompleted: {
+            prevRxBytes = RxBytes
+            prevTxBytes = TxBytes
+        }
+        onTriggered: {
+            rxBytes = (RxBytes - prevRxBytes) * 1000 / interval
+            txBytes = (TxBytes - prevTxBytes) * 1000 / interval
+            prevRxBytes = RxBytes
+            prevTxBytes = TxBytes
+        }
+    }
+
     states: [
         State {
             name: "collapsed"
@@ -311,9 +333,9 @@ PlasmaComponents.ListItem {
 
                 return i18n("Connected, <font color='%1'>⬇</font> %2, <font color='%3'>⬆</font> %4",
                             downloadColor,
-                            KCoreAddons.Format.formatByteSize(RxBytes),
+                            KCoreAddons.Format.formatByteSize(rxBytes),
                             uploadColor,
-                            KCoreAddons.Format.formatByteSize(TxBytes))
+                            KCoreAddons.Format.formatByteSize(txBytes))
             } else {
                 return i18n("Connected")
             }

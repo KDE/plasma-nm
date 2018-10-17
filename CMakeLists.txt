@@ -25,7 +25,6 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Network
     Quick
     Widgets
-    Test
 )
 
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
@@ -96,6 +95,10 @@ add_subdirectory(kded)
 add_subdirectory(kcm)
 add_subdirectory(libs)
 add_subdirectory(vpn)
-add_subdirectory(tests)
+
+# Enable unit testing
+if (BUILD_TESTING)
+    add_subdirectory(tests)
+endif ()
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

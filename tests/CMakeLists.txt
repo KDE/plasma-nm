@@ -1,30 +1,23 @@
-set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
-
-include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. )
+include_directories( ${CMAKE_SOURCE_DIR}/libs/editor )
 
 ########### next target ###############
 
 include(ECMAddTests)
 
+find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Test)
+set_package_properties(Qt5Test PROPERTIES PURPOSE "Required for autotests")
+
 ecm_add_test(
     simpleipv6test.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../libs/editor/simpleipv6addressvalidator.cpp
-    TEST_NAME simpleipv6test
-    LINK_LIBRARIES Qt5::Test  Qt5::Widgets
+    LINK_LIBRARIES Qt5::Test plasmanm_editor
 )
 
 ecm_add_test(
     simpleipv4test.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../libs/editor/simpleipv4addressvalidator.cpp
-    TEST_NAME simpleipv4test
-    LINK_LIBRARIES Qt5::Test  Qt5::Widgets
+    LINK_LIBRARIES Qt5::Test plasmanm_editor
 )
 
 ecm_add_test(
     simpleiplisttest.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../libs/editor/simpleipv4addressvalidator.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../libs/editor/simpleipv6addressvalidator.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/../libs/editor/simpleiplistvalidator.cpp
-    TEST_NAME simpleiplisttest
-    LINK_LIBRARIES Qt5::Test  Qt5::Widgets
+    LINK_LIBRARIES Qt5::Test plasmanm_editor
 )

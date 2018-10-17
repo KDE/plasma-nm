@@ -1,5 +1,5 @@
 /*
-Copyright 2011 Ilia Kats <ilia-kats@gmx.net>, based on work by Paul Marchouk <pmarchouk@gmail.com>
+Copyright 2018 Bruce Anderson <banderson19com@san.rr.com>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -18,31 +18,29 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SIMPLEIPV6ADDRESSVALIDATOR_H
-#define SIMPLEIPV6ADDRESSVALIDATOR_H
+#ifndef SIMPLEIPLISTVALIDATOR_H
+#define SIMPLEIPLISTVALIDATOR_H
 
 #include <QValidator>
+#include "simpleipv4addressvalidator.h"
+#include "simpleipv6addressvalidator.h"
 
-class Q_DECL_EXPORT SimpleIpV6AddressValidator : public QValidator
+class Q_DECL_EXPORT SimpleIpListValidator : public QValidator
 {
 public:
+    enum AddressType {Ipv4, Ipv6, Both};
     enum AddressStyle {Base, WithCidr, WithPort};
 
-    explicit SimpleIpV6AddressValidator(QObject *parent, AddressStyle style = AddressStyle::Base);
-    ~SimpleIpV6AddressValidator() override;
+    explicit SimpleIpListValidator(QObject *parent,
+                                   AddressStyle style = AddressStyle::Base,
+                                   AddressType allow = AddressType::Both);
+    ~SimpleIpListValidator() override;
 
     State validate(QString &, int &) const override;
 
-    /** Check input value with a regular expression describing simple input mask.
-     */
-    QValidator::State checkWithInputMask(QString &, int &) const;
-    /** Function split intput string into tetrads and check them for valid values.
-     *  In the tetrads are placed into QList. Input string may be changed.
-     */
-    QValidator::State checkTetradsRanges(QString &) const;
 private:
-    AddressStyle m_addressStyle;
-    QRegularExpressionValidator m_validator;
+    SimpleIpV6AddressValidator *m_ipv6Validator;
+    SimpleIpV4AddressValidator *m_ipv4Validator;
 };
 
-#endif // SIMPLEIPV6ADDRESSVALIDATOR_H
+#endif // SIMPLEIPV4ADDRESSVALIDATOR_H

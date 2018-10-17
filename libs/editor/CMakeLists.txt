@@ -40,6 +40,7 @@ set(plasmanm_editor_SRCS
     listvalidator.cpp
     simpleipv4addressvalidator.cpp
     simpleipv6addressvalidator.cpp
+    simpleiplistvalidator.cpp
     vpnuiplugin.cpp
 
     ../configuration.cpp

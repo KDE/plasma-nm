@@ -300,6 +300,12 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
             }
             item->invalidateDetails();
             qCDebug(PLASMA_NM) << "Item " << item->name() << ": active connection state changed to " << item->connectionState();
+
+            if (device && device->uni() == item->devicePath()) {
+                auto deviceStatistics = device->deviceStatistics();
+                item->setRxBytes(deviceStatistics->rxBytes());
+                item->setTxBytes(deviceStatistics->txBytes());
+            }
         }
     }
     endResetModel();

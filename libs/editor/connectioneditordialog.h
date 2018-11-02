@@ -33,7 +33,7 @@ Q_OBJECT
 public:
     explicit ConnectionEditorDialog(const NetworkManager::ConnectionSettings::Ptr &connection,
                                     QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
-    virtual ~ConnectionEditorDialog();
+    ~ConnectionEditorDialog() override;
 
     NMVariantMapMap setting() const;
 

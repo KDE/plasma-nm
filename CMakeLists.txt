@@ -1,22 +1,22 @@
+cmake_minimum_required(VERSION 3.0)
+
 project(plasma-networkmanagement)
 
-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
-set(QT_MIN_VERSION "5.4.0")
-
-set(PROJECT_VERSION "5.12.80")
+set(PROJECT_VERSION "5.14.80")
 set(PROJECT_VERSION_MAJOR 5)
+
+set(QT_MIN_VERSION "5.11.0")
+set(KF5_MIN_VERSION "5.50.0")
 
 ################# set KDE specific information #################
 
-find_package(ECM 1.3.0 REQUIRED NO_MODULE)
+find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
-include(ECMPackageConfigHelpers)
-include(ECMOptionalAddSubdirectory)
 include(FeatureSummary)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
@@ -24,23 +24,34 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     DBus
     Network
     Quick
-    QuickWidgets
-    UiTools
     Widgets
 )
 
-find_package(KF5 REQUIRED
-    I18n WindowSystem Service Completion WidgetsAddons KIO CoreAddons Wallet ItemViews XmlGui
-    ConfigWidgets IconThemes Solid DBusAddons Notifications Plasma Declarative Init KDELibs4Support)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
+    I18n
+    WindowSystem
+    Service
+    Completion
+    WidgetsAddons
+    KIO
+    CoreAddons
+    Wallet
+    ConfigWidgets
+    IconThemes
+    Solid
+    DBusAddons
+    Notifications
+    Plasma
+    Declarative
+    NetworkManagerQt
+)
 
-find_package(KF5NetworkManagerQt REQUIRED 5.42.0)
-
-find_package(KF5ModemManagerQt 5.14.0)
+find_package(KF5ModemManagerQt ${KF5_MIN_VERSION})
 set_package_properties(KF5ModemManagerQt PROPERTIES
                        TYPE OPTIONAL)
 
 # Required only for getting information about NetworkManager version in CMake
-find_package(NetworkManager 1.0.0)
+find_package(NetworkManager 1.4.0)
 set_package_properties(NetworkManager PROPERTIES
                        TYPE REQUIRED)
 
@@ -69,7 +80,7 @@ else()
 endif()
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
-add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+add_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)
@@ -85,4 +96,10 @@ add_subdirectory(kcm)
 add_subdirectory(libs)
 add_subdirectory(vpn)
 add_subdirectory(mobile)
+
+# Enable unit testing
+if (BUILD_TESTING)
+    add_subdirectory(tests)
+endif ()
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

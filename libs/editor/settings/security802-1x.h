@@ -37,15 +37,15 @@ class Q_DECL_EXPORT Security8021x: public SettingWidget
 {
     Q_OBJECT
 public:
-    Security8021x(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), bool wifiMode = true, QWidget *parent = 0, Qt::WindowFlags f = 0);
-    virtual ~Security8021x();
+    explicit Security8021x(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), bool wifiMode = true, QWidget *parent = nullptr, Qt::WindowFlags f = {});
+    ~Security8021x() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
 
-    QVariantMap setting() const Q_DECL_OVERRIDE;
+    QVariantMap setting() const override;
 
-    virtual bool isValid() const Q_DECL_OVERRIDE;
+    bool isValid() const override;
 
 private Q_SLOTS:
     void altSubjectMatchesButtonClicked();

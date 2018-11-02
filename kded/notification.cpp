@@ -51,7 +51,7 @@ Notification::Notification(QObject *parent) :
         addActiveConnection(ac);
     }
 
-    connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionAdded, this, static_cast<void (Notification::*)(const QString&)>(&Notification::addActiveConnection));
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionAdded, this, QOverload<const QString&>::of(&Notification::addActiveConnection));
 
     QDBusConnection::systemBus().connect(QStringLiteral("org.freedesktop.login1"),
                                          QStringLiteral("/org/freedesktop/login1"),

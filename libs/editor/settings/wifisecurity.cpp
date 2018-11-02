@@ -44,8 +44,8 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
     m_ui->stackedWidget->insertWidget(3, m_8021xWidget);
     m_ui->stackedWidget->insertWidget(5, m_WPA2Widget);
 
-    connect(m_ui->securityCombo, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::securityChanged);
-    connect(m_ui->wepIndex, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::setWepKey);
+    connect(m_ui->securityCombo, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::securityChanged);
+    connect(m_ui->wepIndex, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::setWepKey);
 
     // Connect for setting check
     watchChangedSetting();
@@ -58,8 +58,8 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
     connect(m_ui->leapPassword, &PasswordField::passwordOptionChanged, this, &WifiSecurity::slotWidgetChanged);
     connect(m_ui->psk, &PasswordField::textChanged, this, &WifiSecurity::slotWidgetChanged);
     connect(m_ui->psk, &PasswordField::passwordOptionChanged, this, &WifiSecurity::slotWidgetChanged);
-    connect(m_ui->wepIndex, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
-    connect(m_ui->securityCombo, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
+    connect(m_ui->wepIndex, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
+    connect(m_ui->securityCombo, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
     connect(m_8021xWidget, &Security8021x::validChanged, this, &WifiSecurity::slotWidgetChanged);
     connect(m_WPA2Widget, &Security8021x::validChanged, this, &WifiSecurity::slotWidgetChanged);
 

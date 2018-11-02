@@ -38,7 +38,7 @@ public:
         NotRequired
     };
 
-    explicit PasswordField(QWidget *parent = 0, Qt::WindowFlags f = Qt::WindowFlags());
+    explicit PasswordField(QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
 
     void setMaxLength(int maxLength);
     void setPasswordModeEnabled(bool passwordMode);

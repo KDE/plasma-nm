@@ -72,9 +72,9 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     m_ui->proxyPassword->setPasswordOptionsEnabled(true);
     m_ui->proxyPassword->setPasswordNotRequiredEnabled(true);
 
-    connect(m_ui->cbCertCheck, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::certCheckTypeChanged);
-    connect(m_ui->cmbProxyType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyTypeChanged);
-    connect(m_ui->cboTLSMode, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this] (int index) {
+    connect(m_ui->cbCertCheck, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::certCheckTypeChanged);
+    connect(m_ui->cmbProxyType, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyTypeChanged);
+    connect(m_ui->cboTLSMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this] (int index) {
         if (index == 0) {
             m_ui->kurlTlsAuthKey->setDisabled(true);
             m_ui->cboDirection->setDisabled(true);
@@ -95,17 +95,17 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     d->openvpnCipherProcess = new KProcess(this);
     d->openvpnCipherProcess->setOutputChannelMode(KProcess::OnlyStdoutChannel);
     d->openvpnCipherProcess->setReadChannel(QProcess::StandardOutput);
-    connect(d->openvpnCipherProcess, static_cast<void (KProcess::*)(QProcess::ProcessError)>(&KProcess::error), this, &OpenVpnAdvancedWidget::openVpnCipherError);
+    connect(d->openvpnCipherProcess, QOverload<QProcess::ProcessError>::of(&KProcess::error), this, &OpenVpnAdvancedWidget::openVpnCipherError);
     connect(d->openvpnCipherProcess, &KProcess::readyReadStandardOutput, this, &OpenVpnAdvancedWidget::gotOpenVpnCipherOutput);
-    connect(d->openvpnCipherProcess, static_cast<void (KProcess::*)(int, QProcess::ExitStatus)>(&KProcess::finished), this, &OpenVpnAdvancedWidget::openVpnCipherFinished);
+    connect(d->openvpnCipherProcess, QOverload<int, QProcess::ExitStatus>::of(&KProcess::finished), this, &OpenVpnAdvancedWidget::openVpnCipherFinished);
     d->openvpnCipherProcess->setProgram(openVpnBinary, ciphersArgs);
 
     d->openvpnVersionProcess = new KProcess(this);
     d->openvpnVersionProcess->setOutputChannelMode(KProcess::OnlyStdoutChannel);
     d->openvpnVersionProcess->setReadChannel(QProcess::StandardOutput);
-    connect(d->openvpnVersionProcess, static_cast<void (KProcess::*)(QProcess::ProcessError)>(&KProcess::error), this, &OpenVpnAdvancedWidget::openVpnVersionError);
+    connect(d->openvpnVersionProcess, QOverload<QProcess::ProcessError>::of(&KProcess::error), this, &OpenVpnAdvancedWidget::openVpnVersionError);
     connect(d->openvpnVersionProcess, &KProcess::readyReadStandardOutput, this, &OpenVpnAdvancedWidget::gotOpenVpnVersionOutput);
-    connect(d->openvpnVersionProcess, static_cast<void (KProcess::*)(int, QProcess::ExitStatus)>(&KProcess::finished), this, &OpenVpnAdvancedWidget::openVpnVersionFinished);
+    connect(d->openvpnVersionProcess, QOverload<int, QProcess::ExitStatus>::of(&KProcess::finished), this, &OpenVpnAdvancedWidget::openVpnVersionFinished);
     d->openvpnVersionProcess->setProgram(openVpnBinary, versionArgs);
 
     connect(m_ui->buttonBox, &QDialogButtonBox::accepted, this, &OpenVpnAdvancedWidget::accept);
@@ -164,7 +164,7 @@ void OpenVpnAdvancedWidget::openVpnCipherFinished(int exitCode, QProcess::ExitSt
         m_ui->cboCipher->addItem(i18nc("@item:inlistbox Item added when OpenVPN cipher lookup failed", "OpenVPN cipher lookup failed"));
     }
     delete d->openvpnCipherProcess;
-    d->openvpnCipherProcess = 0;
+    d->openvpnCipherProcess = nullptr;
     d->openvpnCiphers = QByteArray();
     d->gotOpenVpnCiphers = true;
 
@@ -209,7 +209,7 @@ void OpenVpnAdvancedWidget::openVpnVersionFinished(int exitCode, QProcess::ExitS
     }
 
     delete d->openvpnVersionProcess;
-    d->openvpnVersionProcess = 0;
+    d->openvpnVersionProcess = nullptr;
     d->openVpnVersion = QByteArray();
     d->gotOpenVpnVersion = true;
 

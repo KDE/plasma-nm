@@ -23,7 +23,7 @@
       <bool>false</bool>
      </property>
      <property name="buddy">
-      <cstring>le_password</cstring>
+      <cstring>password</cstring>
      </property>
     </widget>
    </item>

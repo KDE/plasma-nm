@@ -30,14 +30,14 @@ class Q_DECL_EXPORT IodineUiPlugin : public VpnUiPlugin
     Q_OBJECT
 public:
     explicit IodineUiPlugin(QObject *parent = nullptr, const QVariantList& = QVariantList());
-    virtual ~IodineUiPlugin();
-    SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0) Q_DECL_OVERRIDE;
-    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0) Q_DECL_OVERRIDE;
+    ~IodineUiPlugin() override;
+    SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr) override;
+    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr) override;
 
-    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const Q_DECL_OVERRIDE;
-    QString supportedFileExtensions() const Q_DECL_OVERRIDE;
-    NMVariantMapMap importConnectionSettings(const QString &fileName) Q_DECL_OVERRIDE;
-    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) Q_DECL_OVERRIDE;
+    QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
+    QString supportedFileExtensions() const override;
+    NMVariantMapMap importConnectionSettings(const QString &fileName) override;
+    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
 };
 
 #endif //  PLASMA_NM_IODINE_H

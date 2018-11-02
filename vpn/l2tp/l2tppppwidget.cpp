@@ -56,7 +56,7 @@ void L2tpPPPWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
     bool refuse_mschapv2 = (dataMap[NM_L2TP_KEY_REFUSE_MSCHAPV2] == yesString);
     bool refuse_eap = (dataMap[NM_L2TP_KEY_REFUSE_EAP] == yesString);
 
-    QListWidgetItem * item = 0;
+    QListWidgetItem * item = nullptr;
     item = m_ui->listWidget->item(0); // PAP
     item->setCheckState(refuse_pap ? Qt::Unchecked : Qt::Checked);
     item = m_ui->listWidget->item(1); // CHAP
@@ -118,7 +118,7 @@ NMStringMap L2tpPPPWidget::setting() const
 {
     NMStringMap result;
 
-    QListWidgetItem * item = 0;
+    QListWidgetItem * item = nullptr;
     item = m_ui->listWidget->item(0); // PAP
     const QString yesString = QLatin1String("yes");
     if (item->checkState() == Qt::Unchecked) {

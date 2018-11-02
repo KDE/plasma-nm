@@ -34,7 +34,7 @@ VlanWidget::VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* par
     fillConnections();
 
     connect(m_ui->ifaceName, &KLineEdit::textChanged, this, &VlanWidget::slotWidgetChanged);
-    connect(m_ui->parent, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &VlanWidget::slotWidgetChanged);
+    connect(m_ui->parent, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &VlanWidget::slotWidgetChanged);
     connect(m_ui->parent->lineEdit(), &QLineEdit::textChanged, this, &VlanWidget::slotWidgetChanged);
 
     // Connect for setting check

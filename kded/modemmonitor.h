@@ -40,7 +40,7 @@ Q_OBJECT
 Q_DECLARE_PRIVATE(ModemMonitor)
 public:
     explicit ModemMonitor(QObject * parent);
-    virtual ~ModemMonitor();
+    ~ModemMonitor() override;
 
 public Q_SLOTS:
     void unlockModem(const QString &modemUni);

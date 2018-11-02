@@ -1,5 +1,5 @@
 /*
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2018 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -41,19 +41,19 @@ public:
         Type
     };
 
-    explicit NetworkItemsList(QObject* parent = 0);
-    virtual ~NetworkItemsList();
+    explicit NetworkItemsList(QObject *parent = nullptr);
+    ~NetworkItemsList() override;
 
-    bool contains(const FilterType type, const QString& parameter) const;
+    bool contains(const FilterType type, const QString &parameter) const;
     int count() const;
-    int indexOf(NetworkModelItem * item) const;
-    NetworkModelItem * itemAt(int index) const;
+    int indexOf(NetworkModelItem *item) const;
+    NetworkModelItem *itemAt(int index) const;
     QList<NetworkModelItem*> items() const;
-    QList<NetworkModelItem*> returnItems(const FilterType type, const QString& parameter, const QString& additionalParameter = QString()) const;
+    QList<NetworkModelItem*> returnItems(const FilterType type, const QString &parameter, const QString &additionalParameter = QString()) const;
     QList<NetworkModelItem*> returnItems(const FilterType type, NetworkManager::ConnectionSettings::ConnectionType typeParameter) const;
 
-    void insertItem(NetworkModelItem * item);
-    void removeItem(NetworkModelItem * item);
+    void insertItem(NetworkModelItem *item);
+    void removeItem(NetworkModelItem *item);
 private:
     QList<NetworkModelItem*> m_items;
 };

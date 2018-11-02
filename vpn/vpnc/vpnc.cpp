@@ -46,7 +46,7 @@
 VpncUiPluginPrivate::VpncUiPluginPrivate()
 {
     decryptedPasswd.clear();
-    ciscoDecrypt = 0;
+    ciscoDecrypt = nullptr;
 }
 
 VpncUiPluginPrivate::~VpncUiPluginPrivate()
@@ -86,7 +86,7 @@ void VpncUiPluginPrivate::ciscoDecryptError(QProcess::ProcessError pError)
 {
     if (!pError) {
         qCWarning(PLASMA_NM) << "Error in executing cisco-decrypt";
-        KMessageBox::error(0, i18n("Error decrypting the obfuscated password"), i18n("Error"), KMessageBox::Notify);
+        KMessageBox::error(nullptr, i18n("Error decrypting the obfuscated password"), i18n("Error"), KMessageBox::Notify);
     }
     decryptedPasswd.clear();
 }
@@ -131,7 +131,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
 {
     // qCDebug(PLASMA_NM) << "Importing Cisco VPN connection from " << fileName;
 
-    VpncUiPluginPrivate * decrPlugin = 0;
+    VpncUiPluginPrivate * decrPlugin = nullptr;
     NMVariantMapMap result;
 
     if (!fileName.endsWith(QLatin1String(".pcf"), Qt::CaseInsensitive)) {
@@ -161,8 +161,8 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         decrPlugin->ciscoDecrypt = new KProcess(decrPlugin);
         decrPlugin->ciscoDecrypt->setOutputChannelMode(KProcess::OnlyStdoutChannel);
         decrPlugin->ciscoDecrypt->setReadChannel(QProcess::StandardOutput);
-        connect(decrPlugin->ciscoDecrypt, static_cast<void (KProcess::*)(QProcess::ProcessError)>(&KProcess::error), decrPlugin, &VpncUiPluginPrivate::ciscoDecryptError);
-        connect(decrPlugin->ciscoDecrypt, static_cast<void (KProcess::*)(int, QProcess::ExitStatus)>(&KProcess::finished), decrPlugin, &VpncUiPluginPrivate::ciscoDecryptFinished);
+        connect(decrPlugin->ciscoDecrypt, QOverload<QProcess::ProcessError>::of(&KProcess::error), decrPlugin, &VpncUiPluginPrivate::ciscoDecryptError);
+        connect(decrPlugin->ciscoDecrypt, QOverload<int, QProcess::ExitStatus>::of(&KProcess::finished), decrPlugin, &VpncUiPluginPrivate::ciscoDecryptFinished);
         connect(decrPlugin->ciscoDecrypt, &KProcess::readyReadStandardOutput, decrPlugin, &VpncUiPluginPrivate::gotCiscoDecryptOutput);
 
         NMStringMap data;
@@ -265,7 +265,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         data.insert(NM_VPNC_KEY_DHGROUP, decrPlugin->readStringKeyValue(cg,"DHGroup"));
         // Tunneling Mode - not supported by vpnc
         if (cg.readEntry("TunnelingMode").toInt() == 1) {
-            KMessageBox::error(0, i18n("The VPN settings file '%1' specifies that VPN traffic should be tunneled through TCP which is currently not supported in the vpnc software.\n\nThe connection can still be created, with TCP tunneling disabled, however it may not work as expected.", fileName), i18n("Not supported"), KMessageBox::Notify);
+            KMessageBox::error(nullptr, i18n("The VPN settings file '%1' specifies that VPN traffic should be tunneled through TCP which is currently not supported in the vpnc software.\n\nThe connection can still be created, with TCP tunneling disabled, however it may not work as expected.", fileName), i18n("Not supported"), KMessageBox::Notify);
         }
         // EnableLocalLAN and X-NM-Routes are to be added to IPv4Setting
         if (!cg.readEntry("EnableLocalLAN").isEmpty()) {

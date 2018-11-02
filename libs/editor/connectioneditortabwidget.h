@@ -37,7 +37,7 @@ Q_OBJECT
 public:
     explicit ConnectionEditorTabWidget(const NetworkManager::ConnectionSettings::Ptr &connection,
                                        QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
-    virtual ~ConnectionEditorTabWidget();
+    ~ConnectionEditorTabWidget() override;
 
     void setConnection(const NetworkManager::ConnectionSettings::Ptr &connection) override;
 

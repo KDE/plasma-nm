@@ -28,10 +28,10 @@ class IpV4Delegate : public Delegate
 {
     Q_OBJECT
 public:
-    explicit IpV4Delegate(QObject * parent = 0);
-    virtual ~IpV4Delegate();
+    explicit IpV4Delegate(QObject * parent = nullptr);
+    ~IpV4Delegate() override;
 
-    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
+    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };
 
 #endif

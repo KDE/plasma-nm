@@ -29,7 +29,7 @@ class Q_DECL_EXPORT HwAddrComboBox : public QComboBox
 {
     Q_OBJECT
 public:
-    explicit HwAddrComboBox(QWidget *parent = 0);
+    explicit HwAddrComboBox(QWidget *parent = nullptr);
 
     void init(const NetworkManager::Device::Type &deviceType, const QString &address);
 

@@ -141,7 +141,7 @@ void MobileConnectionWizard::initializePage(int id)
         break;
 
     case 3: // Plans Page
-        disconnect(mPlanComboBox, static_cast<void (KComboBox::*)(const QString &)>(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
+        disconnect(mPlanComboBox, QOverload<const QString &>::of(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
         mPlanComboBox->clear();
         if (type() != NetworkManager::ConnectionSettings::Gsm) {
             goto OUT_3;
@@ -153,7 +153,7 @@ void MobileConnectionWizard::initializePage(int id)
                 lineEditProvider->setText(i18nc("Mobile Connection Wizard", "Unknown Provider"));
             }
         } else {
-            if (mProvidersList->currentItem() != 0) {
+            if (mProvidersList->currentItem() != nullptr) {
                 const QStringList mApns = mProviders->getApns(mProvidersList->currentItem()->text());
 
                 if (!mApns.isEmpty()) {
@@ -170,7 +170,7 @@ void MobileConnectionWizard::initializePage(int id)
         mPlanComboBox->setCurrentIndex(0);
         slotEnablePlanEditBox(mPlanComboBox->currentText());
 OUT_3:
-        connect(mPlanComboBox, static_cast<void (KComboBox::*)(const QString &)>(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
+        connect(mPlanComboBox, QOverload<const QString &>::of(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
         break;
 
     case 4: // Confirm Page
@@ -530,7 +530,7 @@ void MobileConnectionWizard::slotEnablePlanEditBox(const QString & text)
         userApn->clear();
         userApn->setEnabled(true);
     } else {
-        if (mProvidersList->currentItem() != 0) {
+        if (mProvidersList->currentItem() != nullptr) {
             int i = mPlanComboBox->currentIndex();
             if (i>0) i=i-1; // Skiping the separator (i==1)
             QStringList mApns = mProviders->getApns(mProvidersList->currentItem()->text());

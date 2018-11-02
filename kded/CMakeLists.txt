@@ -42,27 +42,21 @@ kcoreaddons_desktop_to_json(kded_networkmanagement networkmanagement.desktop)
 target_link_libraries(kded_networkmanagement
     plasmanm_internal
     plasmanm_editor
-    Qt5::Widgets
-    Qt5::Network
-    Qt5::DBus
-    KF5::NetworkManagerQt
     KF5::Service
     KF5::Solid
-    KF5::Completion
+    KF5::ConfigCore
     KF5::I18n
-    KF5::WidgetsAddons
     KF5::DBusAddons
     KF5::Notifications
+    KF5::IconThemes
     KF5::Wallet
     KF5::WindowSystem
-    KF5::KIOWidgets
-    KF5::CoreAddons
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
     target_link_libraries(kded_networkmanagement KF5::ModemManagerQt)
 endif()
 
-install(TARGETS kded_networkmanagement DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/kded)
+install(TARGETS kded_networkmanagement DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kded)
 
-install(FILES networkmanagement.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+install(FILES networkmanagement.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR})

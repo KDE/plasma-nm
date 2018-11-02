@@ -34,14 +34,14 @@ class SstpSettingWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(SstpSettingWidget)
 public:
-    explicit SstpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
-    ~SstpSettingWidget();
+    explicit SstpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
+    ~SstpSettingWidget() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
 
-    virtual QVariantMap setting() const;
-    virtual bool isValid() const;
+    QVariantMap setting() const override;
+    bool isValid() const override;
 
 private Q_SLOTS:
     void doAdvancedDialog();

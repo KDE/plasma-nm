@@ -38,7 +38,7 @@ Q_OBJECT
 Q_DECLARE_PRIVATE(NetworkManagementService)
 public:
     NetworkManagementService(QObject * parent, const QVariantList&);
-    virtual ~NetworkManagementService();
+    ~NetworkManagementService() override;
 
 public Q_SLOTS:
     Q_SCRIPTABLE void init();

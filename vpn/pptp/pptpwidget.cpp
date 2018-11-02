@@ -125,7 +125,7 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     bool refuse_mschapv2 = (dataMap[NM_PPTP_KEY_REFUSE_MSCHAPV2] == yesString);
     bool refuse_eap = (dataMap[NM_PPTP_KEY_REFUSE_EAP] == yesString);
 
-    QListWidgetItem * item = 0;
+    QListWidgetItem * item = nullptr;
     item = d->advUi.listWidget->item(0); // PAP
     item->setCheckState(refuse_pap ? Qt::Unchecked : Qt::Checked);
     item = d->advUi.listWidget->item(1); // CHAP
@@ -216,7 +216,7 @@ QVariantMap PptpSettingWidget::setting() const
     // Advanced dialog settings
 
     // Authenfication options
-    QListWidgetItem * item = 0;
+    QListWidgetItem * item = nullptr;
     item = d->advUi.listWidget->item(0); // PAP
     const QString yesString = QLatin1String("yes");
     if (item->checkState() == Qt::Unchecked) {

@@ -40,6 +40,7 @@ set(plasmanm_editor_SRCS
     listvalidator.cpp
     simpleipv4addressvalidator.cpp
     simpleipv6addressvalidator.cpp
+    simpleiplistvalidator.cpp
     vpnuiplugin.cpp
 
     ../configuration.cpp
@@ -84,31 +85,26 @@ ki18n_wrap_ui(plasmanm_editor_SRCS
 
 add_library(plasmanm_editor SHARED ${plasmanm_editor_SRCS})
 target_link_libraries(plasmanm_editor
+PUBLIC
+    KF5::NetworkManagerQt
+    KF5::WidgetsAddons
+    KF5::Completion
     Qt5::Widgets
+PRIVATE
     Qt5::Network
     Qt5::DBus
     qca-qt5
-    KF5::NetworkManagerQt
-    KF5::Service
-    KF5::Completion
     KF5::I18n
-    KF5::WidgetsAddons
-    KF5::KIOCore
     KF5::KIOWidgets
-    KF5::CoreAddons
-    KF5::Wallet
-    KF5::ItemViews
-    KF5::XmlGui
     KF5::IconThemes
     KF5::Notifications
     KF5::Wallet
     KF5::Solid
-    KF5::KDELibs4Support
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
-    target_link_libraries(plasmanm_editor KF5::ModemManagerQt)
+    target_link_libraries(plasmanm_editor PUBLIC KF5::ModemManagerQt)
 endif()
 
 install(TARGETS plasmanm_editor ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES plasma-networkmanagement-vpnuiplugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})
+install(FILES plasma-networkmanagement-vpnuiplugin.desktop DESTINATION ${KDE_INSTALL_KSERVICETYPES5DIR})

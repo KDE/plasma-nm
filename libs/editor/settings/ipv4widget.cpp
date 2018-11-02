@@ -104,7 +104,7 @@ IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
         loadConfig(setting);
     }
 
-    connect(m_ui->method, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &IPv4Widget::slotModeComboChanged);
+    connect(m_ui->method, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &IPv4Widget::slotModeComboChanged);
     slotModeComboChanged(m_ui->method->currentIndex());
 
     connect(m_ui->btnRoutes, &QPushButton::clicked, this, &IPv4Widget::slotRoutesDialog);
@@ -114,7 +114,7 @@ IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 
     // Connect for validity check
     connect(m_ui->dns, &KLineEdit::textChanged, this, &IPv4Widget::slotWidgetChanged);
-    connect(m_ui->method, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &IPv4Widget::slotWidgetChanged);
+    connect(m_ui->method, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &IPv4Widget::slotWidgetChanged);
     connect(&d->model, &QStandardItemModel::dataChanged, this, &IPv4Widget::slotWidgetChanged);
     connect(&d->model, &QStandardItemModel::rowsRemoved, this, &IPv4Widget::slotWidgetChanged);
 

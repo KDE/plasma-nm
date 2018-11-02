@@ -26,10 +26,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class Q_DECL_EXPORT SimpleIpV6AddressValidator : public QValidator
 {
 public:
-    explicit SimpleIpV6AddressValidator(QObject *parent);
-    virtual ~SimpleIpV6AddressValidator();
+    enum AddressStyle {Base, WithCidr, WithPort};
 
-    virtual State validate(QString &, int &) const;
+    explicit SimpleIpV6AddressValidator(QObject *parent, AddressStyle style = AddressStyle::Base);
+    ~SimpleIpV6AddressValidator() override;
+
+    State validate(QString &, int &) const override;
 
     /** Check input value with a regular expression describing simple input mask.
      */
@@ -38,6 +40,9 @@ public:
      *  In the tetrads are placed into QList. Input string may be changed.
      */
     QValidator::State checkTetradsRanges(QString &) const;
+private:
+    AddressStyle m_addressStyle;
+    QRegularExpressionValidator m_validator;
 };
 
 #endif // SIMPLEIPV6ADDRESSVALIDATOR_H

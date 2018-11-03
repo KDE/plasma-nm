@@ -34,9 +34,9 @@ class AdvancedPermissionsWidget : public QDialog
 Q_OBJECT
 Q_DECLARE_PRIVATE(AdvancedPermissionsWidget)
 public:
-    explicit AdvancedPermissionsWidget(QWidget *parent=0);
-    AdvancedPermissionsWidget(const QHash<QString,QString>&, QWidget *parent=0);
-    ~AdvancedPermissionsWidget();
+    explicit AdvancedPermissionsWidget(QWidget *parent = nullptr);
+    AdvancedPermissionsWidget(const QHash<QString,QString>&, QWidget *parent = nullptr);
+    ~AdvancedPermissionsWidget() override;
 
     QHash<QString,QString> currentUsers() const;
 

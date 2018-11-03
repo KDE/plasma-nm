@@ -38,14 +38,14 @@ Q_OBJECT
 public:
     enum MethodIndex { Automatic = 0, AutomaticOnlyIP, AutomaticOnlyDHCP, LinkLocal, Manual, Disabled };
 
-    explicit IPv6Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~IPv6Widget();
+    explicit IPv6Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
+    ~IPv6Widget() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
 
-    QVariantMap setting() const Q_DECL_OVERRIDE;
+    QVariantMap setting() const override;
 
-    virtual bool isValid() const Q_DECL_OVERRIDE;
+    bool isValid() const override;
 
 private Q_SLOTS:
     void slotModeComboChanged(int index);

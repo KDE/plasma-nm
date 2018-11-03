@@ -38,7 +38,7 @@ BssidComboBox::BssidComboBox(QWidget *parent) :
     setInsertPolicy(QComboBox::NoInsert);
 
     connect(this, &BssidComboBox::editTextChanged, this, &BssidComboBox::slotEditTextChanged);
-    connect(this, static_cast<void (BssidComboBox::*)(int)>(&BssidComboBox::activated), this, &BssidComboBox::slotCurrentIndexChanged);
+    connect(this, QOverload<int>::of(&BssidComboBox::activated), this, &BssidComboBox::slotCurrentIndexChanged);
 }
 
 QString BssidComboBox::bssid() const

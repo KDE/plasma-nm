@@ -68,7 +68,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     QWidget *mainWidget = new QWidget(this);
     m_ui->setupUi(mainWidget);
 
-    m_quickView = new QQuickView(0);
+    m_quickView = new QQuickView(nullptr);
     KDeclarative::KDeclarative kdeclarative;
     kdeclarative.setDeclarativeEngine(m_quickView->engine());
     kdeclarative.setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));

@@ -44,18 +44,18 @@ public:
 
     explicit WifiSecurity(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
                  const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(),
-                 QWidget *parent = 0, Qt::WindowFlags f = 0);
-    virtual ~WifiSecurity();
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
+                 QWidget *parent = nullptr, Qt::WindowFlags f = {});
+    ~WifiSecurity() override;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
 
-    QVariantMap setting() const Q_DECL_OVERRIDE;
+    QVariantMap setting() const override;
     QVariantMap setting8021x() const;
 
     bool enabled() const;
     bool enabled8021x() const;
 
-    virtual bool isValid() const Q_DECL_OVERRIDE;
+    bool isValid() const override;
 
 public Q_SLOTS:
     void onSsidChanged(const QString &ssid);

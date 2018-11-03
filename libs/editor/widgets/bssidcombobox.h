@@ -31,7 +31,7 @@ class Q_DECL_EXPORT BssidComboBox : public QComboBox
 {
     Q_OBJECT
 public:
-    explicit BssidComboBox(QWidget *parent = 0);
+    explicit BssidComboBox(QWidget *parent = nullptr);
 
     QString bssid() const;
     bool isValid() const;

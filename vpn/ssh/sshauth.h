@@ -32,10 +32,10 @@ class SshAuthWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(SshAuthWidget)
 public:
-    explicit SshAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
-    ~SshAuthWidget();
+    explicit SshAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
+    ~SshAuthWidget() override;
 
-    virtual QVariantMap setting() const;
+    QVariantMap setting() const override;
 
 private:
     SshAuthWidgetPrivate *const d_ptr;

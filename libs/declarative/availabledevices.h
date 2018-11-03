@@ -47,8 +47,8 @@ Q_PROPERTY(bool modemDeviceAvailable READ isModemDeviceAvailable NOTIFY modemDev
 Q_PROPERTY(bool bluetoothDeviceAvailable READ isBluetoothDeviceAvailable NOTIFY bluetoothDeviceAvailableChanged)
 Q_OBJECT
 public:
-    explicit AvailableDevices(QObject* parent = 0);
-    virtual ~AvailableDevices();
+    explicit AvailableDevices(QObject* parent = nullptr);
+    ~AvailableDevices() override;
 
 public Q_SLOTS:
     bool isWiredDeviceAvailable() const;

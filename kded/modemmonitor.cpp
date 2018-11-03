@@ -165,7 +165,7 @@ void ModemMonitor::requestPin(MMModemLock lock)
             return;
         }
 
-        QDBusPendingCallWatcher *watcher = 0;
+        QDBusPendingCallWatcher *watcher = nullptr;
 
         PinDialog::Type type = d->dialog.data()->type();
 
@@ -201,7 +201,7 @@ void ModemMonitor::onSendPinArrived(QDBusPendingCallWatcher * watcher)
         // Automatically enabling this for cell phones with expensive data plans is not a good idea.
         //NetworkManager::setWwanEnabled(true);
     } else {
-        KMessageBox::error(0, i18nc("Text in GSM PIN/PUK unlock error dialog", "Error unlocking modem: %1", reply.error().message()),
+        KMessageBox::error(nullptr, i18nc("Text in GSM PIN/PUK unlock error dialog", "Error unlocking modem: %1", reply.error().message()),
                            i18nc("Title for GSM PIN/PUK unlock error dialog", "PIN/PUK unlock error"));
     }
 

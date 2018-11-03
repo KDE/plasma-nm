@@ -28,18 +28,18 @@ class Delegate : public QStyledItemDelegate
 {
     Q_OBJECT
 public:
-    explicit Delegate(QObject * parent = 0);
-    virtual ~Delegate();
+    explicit Delegate(QObject * parent = nullptr);
+    ~Delegate() override;
 
-    virtual QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option,
-                                   const QModelIndex &index) const Q_DECL_OVERRIDE;
-    virtual void setEditorData(QWidget *editor, const QModelIndex &index) const Q_DECL_OVERRIDE;
+    QWidget * createEditor(QWidget *parent, const QStyleOptionViewItem &option,
+                                   const QModelIndex &index) const override;
+    void setEditorData(QWidget *editor, const QModelIndex &index) const override;
 
-    virtual void setModelData(QWidget *editor, QAbstractItemModel *model,
-                              const QModelIndex &index) const Q_DECL_OVERRIDE;
+    void setModelData(QWidget *editor, QAbstractItemModel *model,
+                              const QModelIndex &index) const override;
 
-    virtual void updateEditorGeometry(QWidget *editor,
-                                      const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE;
+    void updateEditorGeometry(QWidget *editor,
+                                      const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 };
 
 #endif

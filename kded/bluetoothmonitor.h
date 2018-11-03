@@ -35,7 +35,7 @@ class BluetoothMonitor: public QObject
 Q_OBJECT
 public:
     explicit BluetoothMonitor(QObject * parent);
-    ~BluetoothMonitor();
+    ~BluetoothMonitor() override;
 
     bool bluetoothConnectionExists(const QString &bdAddr, const QString &service);
     void addBluetoothConnection(const QString &bdAddr, const QString &service, const QString &connectionName);

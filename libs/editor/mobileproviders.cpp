@@ -23,8 +23,7 @@
 
 #include <QFile>
 #include <QTextStream>
-
-#include <KLocale>
+#include <QLocale>
 
 const QString MobileProviders::ProvidersFile = "/usr/share/mobile-broadband-provider-info/serviceproviders.xml";
 
@@ -34,10 +33,21 @@ bool localeAwareCompare(const QString & one, const QString & two) {
 
 MobileProviders::MobileProviders()
 {
-    const QStringList allCountries = KLocale::global()->allCountriesList();
-    Q_FOREACH (const QString & cc, allCountries) {
-        // qCDebug(PLASMA_NM) << "Inserting" << cc.toUpper() << KLocale::global()->countryCodeToName(cc);
-        mCountries.insert(cc.toUpper(), KLocale::global()->countryCodeToName(cc));
+    for (int c = 1; c <= QLocale::LastCountry; c++) {
+        const auto country = static_cast<QLocale::Country>(c);
+        QLocale locale(QLocale::AnyLanguage, country);
+        if (locale.country() == country) {
+            const QString localeName = locale.name();
+            const auto idx = localeName.indexOf(QLatin1Char('_'));
+            if (idx != -1) {
+                const QString countryCode = localeName.mid(idx + 1);
+                QString countryName = locale.nativeCountryName();
+                if (countryName.isEmpty()) {
+                    countryName = QLocale::countryToString(country);
+                }
+                mCountries.insert(countryCode, countryName);
+            }
+        }
     }
     mError = Success;
 
@@ -85,7 +95,12 @@ QStringList MobileProviders::getCountryList() const
 
 QString MobileProviders::countryFromLocale() const
 {
-    return KLocale::global()->country().toUpper();
+    const QString localeName = QLocale().name();
+    const auto idx = localeName.indexOf(QLatin1Char('_'));
+    if (idx != -1) {
+        return localeName.mid(idx + 1);
+    }
+    return QString();
 }
 
 QStringList MobileProviders::getProvidersList(QString country, NetworkManager::ConnectionSettings::ConnectionType type)
@@ -303,10 +318,9 @@ QVariantMap MobileProviders::getCdmaInfo(const QString & provider)
 QString MobileProviders::getNameByLocale(const QMap<QString, QString> & localizedNames) const
 {
     QString name;
-    const QStringList locales = KLocale::global()->languageList();
+    const QStringList locales = QLocale().uiLanguages();
     Q_FOREACH (const QString & locale, locales) {
-        QString language, country, modifier, charset;
-        KLocale::splitLocale(locale, language, country, modifier, charset);
+        QString language = locale.split(QLatin1Char('-')).at(0);
 
         if (localizedNames.contains(language)) {
             return localizedNames[language];

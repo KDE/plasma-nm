@@ -44,8 +44,8 @@ public:
      * or NetworkManager::ConnectionSettings::Cdma.
      */
     explicit MobileConnectionWizard(NetworkManager::ConnectionSettings::ConnectionType connectionType = NetworkManager::ConnectionSettings::Unknown,
-                                    QWidget * parent = 0);
-    ~MobileConnectionWizard();
+                                    QWidget * parent = nullptr);
+    ~MobileConnectionWizard() override;
 
     /*
      * Returns the information to configure one connection from the last wizard run.
@@ -76,8 +76,8 @@ private:
     QWizardPage * createProvidersPage();
     QWizardPage * createPlansPage();
     QWizardPage * createConfirmPage();
-    void initializePage(int id);
-    int nextId() const;
+    void initializePage(int id) override;
+    int nextId() const override;
 
     MobileProviders * mProviders;
     QString getCountryFromLocale();

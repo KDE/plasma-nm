@@ -36,8 +36,8 @@ Q_OBJECT
 
 public:
     explicit ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr &settings = NetworkManager::ConnectionSettings::Ptr(),
-                              QWidget* parent = 0, Qt::WindowFlags f = 0);
-    virtual ~ConnectionWidget();
+                              QWidget* parent = nullptr, Qt::WindowFlags f = {});
+    ~ConnectionWidget() override;
 
     void loadConfig(const NetworkManager::ConnectionSettings::Ptr &settings);
 

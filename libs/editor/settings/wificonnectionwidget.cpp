@@ -36,9 +36,9 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
     m_ui->setupUi(this);
 
     connect(m_ui->btnRandomMacAddr, &QPushButton::clicked, this, &WifiConnectionWidget::generateRandomClonedMac);
-    connect(m_ui->SSIDCombo, &SsidComboBox::ssidChanged, this, static_cast<void (WifiConnectionWidget::*)()>(&WifiConnectionWidget::ssidChanged));
-    connect(m_ui->modeComboBox, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::modeChanged);
-    connect(m_ui->band, static_cast<void (KComboBox::*)(int)>(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::bandChanged);
+    connect(m_ui->SSIDCombo, &SsidComboBox::ssidChanged, this, QOverload<>::of(&WifiConnectionWidget::ssidChanged));
+    connect(m_ui->modeComboBox, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::modeChanged);
+    connect(m_ui->band, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::bandChanged);
 
     // Connect for setting check
     watchChangedSetting();

@@ -22,7 +22,7 @@
 #include "networkmodel.h"
 #include "uiutils.h"
 
-AppletProxyModel::AppletProxyModel(QObject* parent)
+AppletProxyModel::AppletProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
     setDynamicSortFilter(true);
@@ -33,7 +33,7 @@ AppletProxyModel::~AppletProxyModel()
 {
 }
 
-bool AppletProxyModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
+bool AppletProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
 
@@ -58,7 +58,7 @@ bool AppletProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
     return false;
 }
 
-bool AppletProxyModel::lessThan(const QModelIndex& left, const QModelIndex& right) const
+bool AppletProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
     const bool leftAvailable = (NetworkModelItem::ItemType)sourceModel()->data(left, NetworkModel::ItemTypeRole).toUInt() != NetworkModelItem::UnavailableConnection;
     const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;

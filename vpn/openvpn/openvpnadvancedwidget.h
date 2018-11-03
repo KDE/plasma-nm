@@ -47,8 +47,8 @@ class OpenVpnAdvancedWidget : public QDialog
     };
 
 public:
-    explicit OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
-    ~OpenVpnAdvancedWidget();
+    explicit OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
+    ~OpenVpnAdvancedWidget() override;
     void init();
 
     NetworkManager::VpnSetting::Ptr setting() const;

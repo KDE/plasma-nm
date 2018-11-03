@@ -39,13 +39,13 @@
 ConnectionIcon::ConnectionIcon(QObject* parent)
     : QObject(parent)
     , m_signal(0)
-    , m_wirelessNetwork(0)
+    , m_wirelessNetwork(nullptr)
     , m_connecting(false)
     , m_limited(false)
     , m_vpn(false)
     , m_airplaneMode(false)
 #if WITH_MODEMMANAGER_SUPPORT
-    , m_modemNetwork(0)
+    , m_modemNetwork(nullptr)
 #endif
 {
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionChanged, this, &ConnectionIcon::primaryConnectionChanged);
@@ -82,6 +82,7 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
     setStates();
 
     connectivityChanged();
+    setIcons();
 }
 
 ConnectionIcon::~ConnectionIcon()
@@ -174,8 +175,7 @@ void ConnectionIcon::carrierChanged(bool carrier)
 void ConnectionIcon::connectivityChanged()
 {
     NetworkManager::Connectivity conn = NetworkManager::connectivity();
-    m_limited = (conn == NetworkManager::Portal || conn == NetworkManager::Limited);
-    setIcons();
+    setLimited(conn == NetworkManager::Portal || conn == NetworkManager::Limited);
 }
 
 void ConnectionIcon::deviceAdded(const QString& device)
@@ -303,12 +303,12 @@ void ConnectionIcon::setIcons()
     m_signal = 0;
 #if WITH_MODEMMANAGER_SUPPORT
     if (m_modemNetwork) {
-        disconnect(m_modemNetwork.data(), 0, this, 0);
+        disconnect(m_modemNetwork.data(), nullptr, this, nullptr);
         m_modemNetwork.clear();
     }
 #endif
     if (m_wirelessNetwork) {
-        disconnect(m_wirelessNetwork.data(), 0, this, 0);
+        disconnect(m_wirelessNetwork.data(), nullptr, this, nullptr);
         m_wirelessNetwork.clear();
     }
 

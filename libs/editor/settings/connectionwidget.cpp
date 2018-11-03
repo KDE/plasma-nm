@@ -78,11 +78,11 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
     connect(m_widget->allUsers, &QCheckBox::stateChanged, this, &ConnectionWidget::settingChanged);
     connect(m_widget->autoconnectVpn, &QCheckBox::stateChanged, this, &ConnectionWidget::settingChanged);
     connect(m_widget->pushButtonPermissions, &QPushButton::clicked, this, &ConnectionWidget::settingChanged);
-    connect(m_widget->firewallZone, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &ConnectionWidget::settingChanged);
+    connect(m_widget->firewallZone, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ConnectionWidget::settingChanged);
     connect(m_widget->firewallZone, &QComboBox::currentTextChanged, this, &ConnectionWidget::settingChanged);
-    connect(m_widget->vpnCombobox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &ConnectionWidget::settingChanged);
+    connect(m_widget->vpnCombobox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ConnectionWidget::settingChanged);
     connect(m_widget->vpnCombobox, &QComboBox::currentTextChanged, this, &ConnectionWidget::settingChanged);
-    connect(m_widget->prioritySpin, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &ConnectionWidget::settingChanged);
+    connect(m_widget->prioritySpin, QOverload<int>::of(&QSpinBox::valueChanged), this, &ConnectionWidget::settingChanged);
 
     connect(m_widget->pushButtonPermissions, &QPushButton::clicked, this, &ConnectionWidget::openAdvancedPermissions);
 }

@@ -24,8 +24,9 @@ import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Item {
-    property QtObject dataEngine: null
-    property string deviceName
+    property real rxBytes: 0
+    property real txBytes: 0
+    property alias interval: timer.interval
 
     height: visible ? plotter.height + units.gridUnit : 0
 
@@ -41,13 +42,14 @@ Item {
             height: paintedHeight
             font.pointSize: theme.smallestFont.pointSize
             lineHeight: 1.75
-            text: KCoreAddons.Format.formatByteSize((plotter.maxValue * 1024) * (1 - index / 5))
+            text: KCoreAddons.Format.formatByteSize(plotter.maxValue * (1 - index / 5)) + i18n("/s")
         }
     }
 
     KQuickControlsAddons.Plotter {
         id: plotter
-
+        property variant downloadColor: theme.highlightColor
+        property variant uploadColor: Qt.hsva((downloadColor.hsvHue + 0.5) % 1, downloadColor.hsvSaturation, downloadColor.hsvValue, downloadColor.a)
         // Joining two QList<foo> in QML/javascript doesn't seem to work so I'm getting maximum from both list separately
         readonly property int maxValue: Math.max(Math.max.apply(null, downloadPlotData.values), Math.max.apply(null, uploadPlotData.values))
         anchors {
@@ -65,29 +67,31 @@ Item {
             KQuickControlsAddons.PlotData {
                 id: downloadPlotData
                 label: i18n("Download")
-                color: theme.highlightColor
+                color: plotter.downloadColor
             },
             KQuickControlsAddons.PlotData {
                 id: uploadPlotData
                 label: i18n("Upload")
-                color: cycle(theme.highlightColor, -180)
+                color: plotter.uploadColor
             }
         ]
 
-        Connections {
-            target: dataEngine;
-            onNewData: {
-                if (sourceName.indexOf("network/interfaces/" + deviceName) != 0) {
-                    return;
-                }
-                var rx = dataEngine.data[dataEngine.downloadSource];
-                var tx = dataEngine.data[dataEngine.uploadSource];
-                if (rx === undefined || rx.value === undefined ||
-                    tx === undefined || tx.value === undefined) {
-                    return;
-                }
-
-                plotter.addSample([rx.value, tx.value]);
+        Timer {
+            id: timer
+            repeat: true
+            running: parent.visible
+            property real prevRxBytes
+            property real prevTxBytes
+            Component.onCompleted: {
+                prevRxBytes = rxBytes
+                prevTxBytes = txBytes
+            }
+            onTriggered: {
+                var rxSpeed = (rxBytes - prevRxBytes) * 1000 / interval
+                var txSpeed = (txBytes - prevTxBytes) * 1000 / interval
+                prevRxBytes = rxBytes
+                prevTxBytes = txBytes
+                plotter.addSample([rxSpeed, txSpeed]);
             }
         }
     }

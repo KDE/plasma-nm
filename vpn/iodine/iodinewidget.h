@@ -34,13 +34,13 @@ class IodineWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit IodineWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0, Qt::WindowFlags f = 0);
-    virtual ~IodineWidget();
+    explicit IodineWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr, Qt::WindowFlags f = {});
+    ~IodineWidget() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    QVariantMap setting() const Q_DECL_OVERRIDE;
-    bool isValid() const Q_DECL_OVERRIDE;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
+    QVariantMap setting() const override;
+    bool isValid() const override;
 
 private:
     Ui::IodineWidget *m_ui;

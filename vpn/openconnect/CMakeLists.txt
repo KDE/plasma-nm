@@ -6,6 +6,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_MODULE_PATH})
 
 find_package(OpenConnect ${MINIMUM_OPENCONNECT_VERSION_REQUIRED} MODULE)
 if (OPENCONNECT_FOUND)
+
+    find_package(Qt5Xml ${QT_MIN_VERSION} CONFIG REQUIRED)
+
     if (${OPENCONNECT_VERSION} VERSION_LESS "3.99")
 #         macro_optional_find_package(OpenSSL)
 #         macro_log_feature(OpenSSL_FOUND "OpenSSL headers" "Encryption suite" "http://www.openssl.org" FALSE "" "Needed for OpenConnect support in Network Management")
@@ -44,21 +47,18 @@ if (OPENCONNECT_FOUND)
             plasmanm_internal
             plasmanm_editor
             ${NETWORKMANAGERQT5_LDFLAGS}
-            Qt5::Widgets
-            Qt5::Network
-            Qt5::DBus
-            KF5::Service
-            KF5::Completion
             KF5::I18n
             KF5::WidgetsAddons
+            KF5::IconThemes
             KF5::KIOWidgets
             KF5::CoreAddons
+            Qt5::Xml
             ${OPENCONNECT_LIBRARIES}
             ${maybe_OPENSSL_LIBRARIES}
         )
-        install(TARGETS plasmanetworkmanagement_openconnectui  DESTINATION ${PLUGIN_INSTALL_DIR})
-        install(FILES plasmanetworkmanagement_openconnectui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
-        install(FILES plasmanetworkmanagement_openconnect_juniperui.desktop  DESTINATION ${SERVICES_INSTALL_DIR})
+        install(TARGETS plasmanetworkmanagement_openconnectui  DESTINATION ${KDE_INSTALL_PLUGINDIR})
+        install(FILES plasmanetworkmanagement_openconnectui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
+        install(FILES plasmanetworkmanagement_openconnect_juniperui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
     else()
         message("ERROR: OpenConnection version '${OPENCONNECT_VERSION}' does not match minimum required (${MINIMUM_OPENCONNECT_VERSION_REQUIRED})")
         message("OpenConnect plugin will not be built")

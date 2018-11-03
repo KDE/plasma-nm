@@ -1,5 +1,5 @@
 /*
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2018 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -36,15 +36,15 @@ public:
 
     enum ItemType { UnavailableConnection, AvailableConnection, AvailableAccessPoint };
 
-    explicit NetworkModelItem(QObject * parent = 0);
-    explicit NetworkModelItem(const NetworkModelItem * item, QObject* parent = 0);
-    virtual ~NetworkModelItem();
+    explicit NetworkModelItem(QObject *parent = nullptr);
+    explicit NetworkModelItem(const NetworkModelItem *item, QObject *parent = nullptr);
+    ~NetworkModelItem() override;
 
     QString activeConnectionPath() const;
-    void setActiveConnectionPath(const QString& path);
+    void setActiveConnectionPath(const QString &path);
 
     QString connectionPath() const;
-    void setConnectionPath(const QString& path);
+    void setConnectionPath(const QString &path);
 
     NetworkManager::ActiveConnection::State connectionState() const;
     void setConnectionState(NetworkManager::ActiveConnection::State state);
@@ -52,10 +52,10 @@ public:
     QStringList details() const;
 
     QString deviceName() const;
-    void setDeviceName(const QString& name);
+    void setDeviceName(const QString &name);
 
     QString devicePath() const;
-    void setDevicePath(const QString& path);
+    void setDevicePath(const QString &path);
 
     QString deviceState() const;
     void setDeviceState(const NetworkManager::Device::State state);
@@ -70,7 +70,7 @@ public:
     void setMode(const NetworkManager::WirelessSetting::NetworkMode mode);
 
     QString name() const;
-    void setName(const QString& name);
+    void setName(const QString &name);
 
     QString originalName() const;
 
@@ -86,13 +86,13 @@ public:
     void setSlave(bool slave);
 
     QString specificPath() const;
-    void setSpecificPath(const QString& path);
+    void setSpecificPath(const QString &path);
 
     QString ssid() const;
-    void setSsid(const QString& ssid);
+    void setSsid(const QString &ssid);
 
     QDateTime timestamp() const;
-    void setTimestamp(const QDateTime& date);
+    void setTimestamp(const QDateTime &date);
 
     NetworkManager::ConnectionSettings::ConnectionType type() const;
     void setType(NetworkManager::ConnectionSettings::ConnectionType type);
@@ -100,7 +100,7 @@ public:
     QString uni() const;
 
     QString uuid() const;
-    void setUuid(const QString& uuid);
+    void setUuid(const QString &uuid);
 
     QString vpnState() const;
     void setVpnState(NetworkManager::VpnConnection::State state);
@@ -108,19 +108,28 @@ public:
     QString vpnType() const;
     void setVpnType(const QString &type);
 
-    bool operator==(const NetworkModelItem * item) const;
+    qulonglong rxBytes() const;
+    void setRxBytes(qulonglong bytes);
+
+    qulonglong txBytes() const;
+    void setTxBytes(qulonglong bytes);
+
+    bool operator==(const NetworkModelItem *item) const;
 
 public Q_SLOTS:
-    void updateDetails();
+    void invalidateDetails();
 
 private:
+    void updateDetails() const;
+
     QString m_activeConnectionPath;
     QString m_connectionPath;
     NetworkManager::ActiveConnection::State m_connectionState;
     QString m_devicePath;
     QString m_deviceName;
     NetworkManager::Device::State m_deviceState;
-    QStringList m_details;
+    mutable QStringList m_details;
+    mutable bool m_detailsValid;
     bool m_duplicate;
     NetworkManager::WirelessSetting::NetworkMode m_mode;
     QString m_name;
@@ -134,6 +143,8 @@ private:
     QString m_uuid;
     QString m_vpnType;
     NetworkManager::VpnConnection::State m_vpnState;
+    qulonglong m_rxBytes;
+    qulonglong m_txBytes;
 };
 
 #endif // PLASMA_NM_MODEL_NETWORK_MODEL_ITEM_H

@@ -32,13 +32,13 @@ class FortisslvpnWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(FortisslvpnWidget)
 public:
-    explicit FortisslvpnWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0, Qt::WindowFlags f = 0);
-    virtual ~FortisslvpnWidget();
+    explicit FortisslvpnWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr, Qt::WindowFlags f = {});
+    ~FortisslvpnWidget() override;
 
-    void loadConfig(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    void loadSecrets(const NetworkManager::Setting::Ptr &setting) Q_DECL_OVERRIDE;
-    QVariantMap setting() const Q_DECL_OVERRIDE;
-    bool isValid() const Q_DECL_OVERRIDE;
+    void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
+    QVariantMap setting() const override;
+    bool isValid() const override;
 
 private Q_SLOTS:
     void showAdvanced();

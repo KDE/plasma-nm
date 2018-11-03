@@ -41,13 +41,13 @@
 #include <KWindowSystem>
 #include <KConfig>
 #include <KConfigGroup>
-#include <KWallet/Wallet>
+#include <KWallet>
 
 SecretAgent::SecretAgent(QObject* parent)
     : NetworkManager::SecretAgent("org.kde.plasma.networkmanagement", parent)
     , m_openWalletFailed(false)
-    , m_wallet(0)
-    , m_dialog(0)
+    , m_wallet(nullptr)
+    , m_dialog(nullptr)
 {
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::serviceDisappeared, this, &SecretAgent::killDialogs);
 
@@ -142,7 +142,7 @@ void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const
         SecretsRequest request = m_calls.at(i);
         if (request.type == SecretsRequest::GetSecrets && callId == request.callId) {
             if (m_dialog == request.dialog) {
-                m_dialog = 0;
+                m_dialog = nullptr;
             }
             delete request.dialog;
             sendError(SecretAgent::AgentCanceled,
@@ -256,7 +256,7 @@ void SecretAgent::dialogAccepted()
     }
 
     m_dialog->deleteLater();
-    m_dialog = 0;
+    m_dialog = nullptr;
 
     processNext();
 }
@@ -275,7 +275,7 @@ void SecretAgent::dialogRejected()
     }
 
     m_dialog->deleteLater();
-    m_dialog = 0;
+    m_dialog = nullptr;
 
     processNext();
 }
@@ -299,7 +299,7 @@ void SecretAgent::walletOpened(bool success)
     if (!success) {
         m_openWalletFailed = true;
         m_wallet->deleteLater();
-        m_wallet = 0;
+        m_wallet = nullptr;
     } else {
         m_openWalletFailed = false;
     }
@@ -312,7 +312,7 @@ void SecretAgent::walletClosed()
     if (m_wallet) {
         m_wallet->deleteLater();
     }
-    m_wallet = 0;
+    m_wallet = nullptr;
 }
 
 void SecretAgent::processNext()
@@ -358,6 +358,29 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
     const bool allowInteraction = request.flags & AllowInteraction;
     const bool isVpn = (setting->type() == NetworkManager::Setting::Vpn);
 
+    if (isVpn) {
+        NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+        if (vpnSetting->serviceType() == QLatin1String("org.freedesktop.NetworkManager.ssh") && vpnSetting->data()["auth-type"] == QLatin1String("ssh-agent")) {
+            QString authSock = qgetenv("SSH_AUTH_SOCK");
+            qCDebug(PLASMA_NM) << Q_FUNC_INFO << "Sending SSH auth socket" << authSock;
+
+            if (authSock.isEmpty()) {
+                sendError(SecretAgent::NoSecrets,
+                          QLatin1String("SSH_AUTH_SOCK not present"),
+                          request.message);
+            } else {
+                NMStringMap secrets;
+                secrets.insert(QLatin1String("ssh-auth-sock"), authSock);
+
+                QVariantMap secretData;
+                secretData.insert(QLatin1String("secrets"), QVariant::fromValue<NMStringMap>(secrets));
+                request.connection[request.setting_name] = secretData;
+                sendSecrets(request.connection, request.message);
+            }
+            return true;
+        }
+    }
+
     NMStringMap secretsMap;
     if (!requestNew && useWallet()) {
         if (m_wallet->isOpen()) {
@@ -391,7 +414,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
                       m_dialog->errorMessage(),
                       request.message);
             delete m_dialog;
-            m_dialog = 0;
+            m_dialog = nullptr;
             return true;
         } else {
             request.dialog = m_dialog;
@@ -525,7 +548,7 @@ bool SecretAgent::useWallet() const
         }
     } else if (m_wallet) {
         m_wallet->deleteLater();
-        m_wallet = 0;
+        m_wallet = nullptr;
     }
 
     return false;

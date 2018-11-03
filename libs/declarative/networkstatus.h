@@ -52,8 +52,8 @@ public:
 
     static SortedConnectionType connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type);
 
-    explicit NetworkStatus(QObject* parent = 0);
-    virtual ~NetworkStatus();
+    explicit NetworkStatus(QObject* parent = nullptr);
+    ~NetworkStatus() override;
 
     QString activeConnections() const;
     QString networkStatus() const;

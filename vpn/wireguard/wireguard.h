@@ -29,16 +29,13 @@ Q_OBJECT
 public:
     explicit WireGuardUiPlugin(QObject *parent = nullptr, const QVariantList& = QVariantList());
     ~WireGuardUiPlugin() override;
-    SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting,
-                          QWidget *parent = nullptr) override;
-    SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting,
-                           QWidget *parent = nullptr) override;
+    SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr) override;
+    SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr) override;
 
     QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
     QString supportedFileExtensions() const override;
     NMVariantMapMap importConnectionSettings(const QString &fileName) override;
-    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection,
-                                  const QString &fileName) override;
+    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
 };
 
 #endif //  PLASMANM_WIREGUARD_H

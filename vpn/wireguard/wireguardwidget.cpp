@@ -35,6 +35,7 @@ class WireGuardSettingWidget::Private
 {
 public:
     Private();
+
     Ui_WireGuardProp ui;
     NetworkManager::VpnSetting::Ptr setting;
     KSharedConfigPtr config;
@@ -49,19 +50,19 @@ public:
     bool endpointValid;
 };
 
-WireGuardSettingWidget::Private::Private(void) : addressValid(false),
-                                                 privateKeyValid(false),
-                                                 publicKeyValid(false),
-                                                 dnsValid(true),       // optional so blank is valid
-                                                 allowedIpsValid(false),
-                                                 endpointValid(true)   // optional so blank is valid
+WireGuardSettingWidget::Private::Private(void)
+    : addressValid(false)
+    , privateKeyValid(false)
+    , publicKeyValid(false)
+    , dnsValid(true)         // optional so blank is valid
+    , allowedIpsValid(false)
+    , endpointValid(true)    // optional so blank is valid
 {
 }
 
-WireGuardSettingWidget::WireGuardSettingWidget(const NetworkManager::VpnSetting::Ptr &setting,
-                                               QWidget *parent)
-    : SettingWidget(setting, parent),
-      d(new Private)
+WireGuardSettingWidget::WireGuardSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
+    : SettingWidget(setting, parent)
+    , d(new Private)
 {
     qDBusRegisterMetaType<NMStringMap>();
 
@@ -71,33 +72,20 @@ WireGuardSettingWidget::WireGuardSettingWidget(const NetworkManager::VpnSetting:
     d->config = KSharedConfig::openConfig();
     d->warningPalette = KColorScheme::createApplicationPalette(d->config);
     d->normalPalette = KColorScheme::createApplicationPalette(d->config);
-    KColorScheme::adjustBackground(d->warningPalette,
-                                   KColorScheme::NegativeBackground,
-                                   QPalette::Base,
-                                   KColorScheme::ColorSet::View,
-                                   d->config);
+    KColorScheme::adjustBackground(d->warningPalette, KColorScheme::NegativeBackground, QPalette::Base,
+                                   KColorScheme::ColorSet::View, d->config);
 
-    KColorScheme::adjustBackground(d->normalPalette,
-                                   KColorScheme::NormalBackground,
-                                   QPalette::Base,
-                                   KColorScheme::ColorSet::View,
-                                   d->config);
+    KColorScheme::adjustBackground(d->normalPalette, KColorScheme::NormalBackground, QPalette::Base,
+                                   KColorScheme::ColorSet::View, d->config);
 
 
-    connect(d->ui.addressIPv4LineEdit, &QLineEdit::textChanged, this,
-            &WireGuardSettingWidget::checkAddressValid);
-    connect(d->ui.addressIPv6LineEdit, &QLineEdit::textChanged, this,
-            &WireGuardSettingWidget::checkAddressValid);
-    connect(d->ui.privateKeyLineEdit, &PasswordField::textChanged, this,
-            &WireGuardSettingWidget::checkPrivateKeyValid);
-    connect(d->ui.publicKeyLineEdit, &QLineEdit::textChanged, this,
-            &WireGuardSettingWidget::checkPublicKeyValid);
-    connect(d->ui.allowedIPsLineEdit, &QLineEdit::textChanged, this,
-            &WireGuardSettingWidget::checkAllowedIpsValid);
-    connect(d->ui.endpointLineEdit, &QLineEdit::textChanged, this,
-            &WireGuardSettingWidget::checkEndpointValid);
-    connect(d->ui.dNSLineEdit, &QLineEdit::textChanged, this,
-            &WireGuardSettingWidget::checkDnsValid);
+    connect(d->ui.addressIPv4LineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkAddressValid);
+    connect(d->ui.addressIPv6LineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkAddressValid);
+    connect(d->ui.privateKeyLineEdit, &PasswordField::textChanged, this, &WireGuardSettingWidget::checkPrivateKeyValid);
+    connect(d->ui.publicKeyLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkPublicKeyValid);
+    connect(d->ui.allowedIPsLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkAllowedIpsValid);
+    connect(d->ui.endpointLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkEndpointValid);
+    connect(d->ui.dNSLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkDnsValid);
 
     d->ui.privateKeyLineEdit->setPasswordModeEnabled(true);
 
@@ -129,8 +117,7 @@ WireGuardSettingWidget::WireGuardSettingWidget(const NetworkManager::VpnSetting:
     d->ui.endpointLineEdit->setValidator(endpointValidator);
 
     // Create validator for AllowedIPs
-    SimpleIpListValidator *allowedIPsValidator = new SimpleIpListValidator(this,
-                                                                           SimpleIpListValidator::WithCidr,
+    SimpleIpListValidator *allowedIPsValidator = new SimpleIpListValidator(this, SimpleIpListValidator::WithCidr,
                                                                            SimpleIpListValidator::Both);
     d->ui.allowedIPsLineEdit->setValidator(allowedIPsValidator);
 
@@ -199,9 +186,7 @@ QVariantMap WireGuardSettingWidget::setting() const
     return setting.toMap();
 }
 
-void WireGuardSettingWidget::setProperty(NMStringMap &data,
-                                         const QLatin1String &key,
-                                         const QString &value) const
+void WireGuardSettingWidget::setProperty(NMStringMap &data, const QLatin1String &key, const QString &value) const
 {
     if (!value.isEmpty())
         data.insert(key, value);
@@ -253,9 +238,7 @@ void WireGuardSettingWidget::checkAddressValid()
     bool ip6valid = QValidator::Acceptable == widget->validator()->validate(value, pos);
     bool ip6present = !widget->displayText().isEmpty();
 
-    d->addressValid = (ip4valid && ip6valid)
-                      || (ip4valid && !ip6present)
-                      || (!ip4present && ip6valid);
+    d->addressValid = (ip4valid && ip6valid) || (ip4valid && !ip6present) || (!ip4present && ip6valid);
 
     setBackground(d->ui.addressIPv4LineEdit, d->addressValid);
     setBackground(d->ui.addressIPv6LineEdit, d->addressValid);

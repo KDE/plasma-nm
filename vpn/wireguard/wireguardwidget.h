@@ -30,8 +30,7 @@ class WireGuardSettingWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit WireGuardSettingWidget(const NetworkManager::VpnSetting::Ptr &setting,
-                                    QWidget *parent = 0);
+    explicit WireGuardSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
     ~WireGuardSettingWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
@@ -45,8 +44,6 @@ private Q_SLOTS:
     void showAdvanced();
 
 private:
-    class Private;
-    Private *d;
     void setProperty(NMStringMap &data, const QLatin1String &key, const QString &value) const;
     void setBackground(QWidget *w, bool result) const;
     void checkAddressValid();
@@ -55,6 +52,9 @@ private:
     void checkDnsValid();
     void checkAllowedIpsValid();
     void checkEndpointValid();
+
+    class Private;
+    Private *d;
 };
 
 #endif // WIREGUARDWIDGET_H

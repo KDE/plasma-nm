@@ -39,9 +39,7 @@
 
 #include "nm-wireguard-service.h"
 
-K_PLUGIN_FACTORY_WITH_JSON(WireGuardUiPluginFactory,
-                           "plasmanetworkmanagement_wireguardui.json",
-                           registerPlugin<WireGuardUiPlugin>();)
+K_PLUGIN_FACTORY_WITH_JSON(WireGuardUiPluginFactory, "plasmanetworkmanagement_wireguardui.json", registerPlugin<WireGuardUiPlugin>(); )
 
 #define NMV_WG_TAG_INTERFACE             "Interface"
 #define NMV_WG_TAG_PRIVATE_KEY           "PrivateKey"
@@ -64,7 +62,8 @@ K_PLUGIN_FACTORY_WITH_JSON(WireGuardUiPluginFactory,
 #define NMV_WG_TAG_PERSISTENT_KEEPALIVE  "PersistentKeepalive"
 
 
-WireGuardUiPlugin::WireGuardUiPlugin(QObject *parent, const QVariantList &) : VpnUiPlugin(parent)
+WireGuardUiPlugin::WireGuardUiPlugin(QObject *parent, const QVariantList &)
+    : VpnUiPlugin(parent)
 {
 }
 
@@ -72,14 +71,12 @@ WireGuardUiPlugin::~WireGuardUiPlugin()
 {
 }
 
-SettingWidget *WireGuardUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting,
-                                         QWidget *parent)
+SettingWidget *WireGuardUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
     return new WireGuardSettingWidget(setting, parent);
 }
 
-SettingWidget *WireGuardUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting,
-                                          QWidget *parent)
+SettingWidget *WireGuardUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
     return new WireGuardAuthWidget(setting, parent);
 }
@@ -103,8 +100,7 @@ NMVariantMapMap WireGuardUiPlugin::importConnectionSettings(const QString &fileN
     const KConfigGroup peerGroup = importFile.group(NMV_WG_TAG_PEER);
 
     // The config file must have both [Interface] and [Peer] sections
-    if (!interfaceGroup.exists()
-        || !peerGroup.exists()) {
+    if (!interfaceGroup.exists() || !peerGroup.exists()) {
         mError = VpnUiPlugin::Error;
         mErrorMessage = i18n("Config file needs both [Peer] and [Interface]");
         return result;
@@ -179,9 +175,7 @@ NMVariantMapMap WireGuardUiPlugin::importConnectionSettings(const QString &fileN
     // Allowed IPs
     value = peerGroup.readEntry(NMV_WG_TAG_ALLOWED_IPS);
     if (!value.isEmpty()) {
-        SimpleIpListValidator validator(this,
-                                        SimpleIpListValidator::WithCidr,
-                                        SimpleIpListValidator::Both);
+        SimpleIpListValidator validator(this, SimpleIpListValidator::WithCidr, SimpleIpListValidator::Both);
 
         if (validator.validate(value, pos) != QValidator::State::Invalid) {
             dataMap.insert(QLatin1String(NM_WG_KEY_ALLOWED_IPS), value);

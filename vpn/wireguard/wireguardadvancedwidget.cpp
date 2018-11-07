@@ -29,6 +29,9 @@
 class WireGuardAdvancedWidget::Private
 {
 public:
+    ~Private();
+    Private();
+
     NetworkManager::VpnSetting::Ptr setting;
     Ui::WireGuardAdvancedWidget ui;
     QPalette warningPalette;
@@ -39,16 +42,15 @@ public:
     QRegularExpressionValidator *fwMarkValidator;
     QIntValidator *persistentKeepaliveValidator;
     QRegularExpressionValidator *tableValidator;
-    ~Private();
-    Private();
     bool fwMarkValid;
     bool presharedKeyValid;
     bool tableValid;
 };
 
-WireGuardAdvancedWidget::Private::Private() : fwMarkValid(true),
-                                              presharedKeyValid(true),
-                                              tableValid(true)
+WireGuardAdvancedWidget::Private::Private()
+    : fwMarkValid(true)
+    , presharedKeyValid(true)
+    , tableValid(true)
 {
 }
 
@@ -62,9 +64,9 @@ WireGuardAdvancedWidget::Private::~Private()
     delete tableValidator;
 }
 
-WireGuardAdvancedWidget::WireGuardAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting,
-                                                 QWidget *parent)
-    : QDialog(parent), d(new Private)
+WireGuardAdvancedWidget::WireGuardAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
+    : QDialog(parent)
+    , d(new Private)
 {
     KSharedConfigPtr config = KSharedConfig::openConfig();
     d->warningPalette = KColorScheme::createApplicationPalette(config);
@@ -91,12 +93,9 @@ WireGuardAdvancedWidget::WireGuardAdvancedWidget(const NetworkManager::VpnSettin
 
     connect(d->ui.buttonBox, &QDialogButtonBox::accepted, this, &WireGuardAdvancedWidget::accept);
     connect(d->ui.buttonBox, &QDialogButtonBox::rejected, this, &WireGuardAdvancedWidget::reject);
-    connect(d->ui.presharedKeyLineEdit, &PasswordField::textChanged,
-            this, &WireGuardAdvancedWidget::checkPresharedKey);
-    connect(d->ui.tableLineEdit, &QLineEdit::textChanged,
-            this, &WireGuardAdvancedWidget::checkTable);
-    connect(d->ui.fwMarkLineEdit, &QLineEdit::textChanged,
-            this, &WireGuardAdvancedWidget::checkFwMark);
+    connect(d->ui.presharedKeyLineEdit, &PasswordField::textChanged, this, &WireGuardAdvancedWidget::checkPresharedKey);
+    connect(d->ui.tableLineEdit, &QLineEdit::textChanged, this, &WireGuardAdvancedWidget::checkTable);
+    connect(d->ui.fwMarkLineEdit, &QLineEdit::textChanged, this, &WireGuardAdvancedWidget::checkFwMark);
     d->ui.presharedKeyLineEdit->setPasswordModeEnabled(true);
 
     d->listenPortValidator = new QIntValidator(0, 65535, nullptr);
@@ -198,8 +197,7 @@ NetworkManager::VpnSetting::Ptr WireGuardAdvancedWidget::setting() const
     QString stringVal;
 
     setProperty(data, QLatin1String(NM_WG_KEY_LISTEN_PORT), d->ui.listenPortLineEdit->displayText());
-    setProperty(data, QLatin1String(NM_WG_KEY_PERSISTENT_KEEPALIVE),
-                d->ui.persistentKeepaliveLineEdit->displayText());
+    setProperty(data, QLatin1String(NM_WG_KEY_PERSISTENT_KEEPALIVE), d->ui.persistentKeepaliveLineEdit->displayText());
     setProperty(data, QLatin1String(NM_WG_KEY_MTU), d->ui.mtuLineEdit->displayText());
     setProperty(data, QLatin1String(NM_WG_KEY_TABLE), d->ui.tableLineEdit->displayText());
     setProperty(data, QLatin1String(NM_WG_KEY_FWMARK), d->ui.fwMarkLineEdit->displayText());

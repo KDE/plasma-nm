@@ -30,8 +30,7 @@ public:
     NetworkManager::VpnSetting::Ptr setting;
 };
 
-WireGuardAuthWidget::WireGuardAuthWidget(const NetworkManager::VpnSetting::Ptr &setting,
-                                         QWidget *parent)
+WireGuardAuthWidget::WireGuardAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
     : SettingWidget(setting, parent)
     , d_ptr(new WireGuardAuthWidgetPrivate)
 {

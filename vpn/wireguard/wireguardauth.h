@@ -32,7 +32,7 @@ class WireGuardAuthWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(WireGuardAuthWidget)
 public:
-    explicit WireGuardAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = 0);
+    explicit WireGuardAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
     ~WireGuardAuthWidget() override;
     virtual QVariantMap setting() const override;
 

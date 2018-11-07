@@ -38,8 +38,7 @@ class WireGuardAdvancedWidget : public QDialog
     Q_OBJECT
 
 public:
-    explicit WireGuardAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting,
-                                     QWidget *parent = 0);
+    explicit WireGuardAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
     ~WireGuardAdvancedWidget() override;
     NetworkManager::VpnSetting::Ptr setting() const;
 

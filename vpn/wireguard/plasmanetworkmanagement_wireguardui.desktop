@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Service
+Icon=
+ServiceTypes=PlasmaNetworkManagement/VpnUiPlugin
+X-KDE-Library=plasmanetworkmanagement_wireguardui
+X-NetworkManager-Services=org.freedesktop.NetworkManager.wireguard
+X-KDE-PluginInfo-Author=Bruce Anderson
+X-KDE-PluginInfo-Email=banderson19com@san.rr.com
+X-KDE-PluginInfo-Name=plasmanetworkmanagement_wireguardui
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Website=
+X-KDE-PluginInfo-Category=VPNService
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=false
+Name=WireGuard based VPN
+Comment=Compatible with WireGuard VPN servers

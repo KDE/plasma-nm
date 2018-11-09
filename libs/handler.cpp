@@ -29,12 +29,14 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Setting>
+#include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/GsmSetting>
 #include <NetworkManagerQt/WiredSetting>
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/ActiveConnection>
+#include <NetworkManagerQt/Ipv4Setting>
 
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/Manager>
@@ -518,3 +520,4 @@ void Handler::unlockRequiredChanged(MMModemLock modemLock)
     }
 }
 #endif
+

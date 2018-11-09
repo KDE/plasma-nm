@@ -1,3 +1,4 @@
+.gitignore
 *.directory
 *~
 .*.sw[p,o]
@@ -6,3 +7,5 @@ tags
 .swp.*
 .kdev4/
 *.kdev4
+CMakeLists.txt.user
+*.qmlc

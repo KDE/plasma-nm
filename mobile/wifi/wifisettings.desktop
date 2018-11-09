@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Wi-Fi
+Comment=Wireless network setting
+
+Icon=network-wireless-symbolic
+Exec=plasma-settings -m kcm_mobile_wifi
+
+Type=Service
+X-KDE-ServiceTypes=KCModule
+X-KDE-Library=kcm_mobile_wifi
+X-KDE-ParentApp=kcontrol
+X-KDE-FormFactors=handset,tablet,mediacenter
+
+X-KDE-System-Settings-Parent-Category=network
+X-KDE-Weight=70
+
+X-KDE-Keywords=wifi,network
+Categories=Qt;KDE;X-KDE-settings-system;
+

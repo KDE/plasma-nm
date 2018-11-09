@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Wi-Fi
+Comment=Wireless network setting
+Encoding=UTF-8
+Type=Service
+Icon=network-wireless-symbolic
+X-KDE-ServiceTypes=KCModule
+X-KDE-Library=kcm_mobile_wifi
+X-KDE-PluginInfo-Author=Martin Kacej
+X-KDE-PluginInfo-Email=m.kacej@atlas.sk
+X-KDE-PluginInfo-Name=kcm_mobile_wifi
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Website=https://plasma-mobile.org/
+X-KDE-PluginInfo-Category=System Information
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-FormFactors=handset,tablet,mediacenter
+X-Plasma-Package=kcm_mobile_wifi
+X-Plasma-MainScript=ui/main.qml

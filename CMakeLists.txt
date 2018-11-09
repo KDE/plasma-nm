@@ -95,6 +95,7 @@ add_subdirectory(kded)
 add_subdirectory(kcm)
 add_subdirectory(libs)
 add_subdirectory(vpn)
+add_subdirectory(mobile)
 
 # Enable unit testing
 if (BUILD_TESTING)

@@ -1,5 +1,5 @@
 /*
-    Copyright 2013-2014 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2013-2017 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,25 +18,19 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_APPLET_PROXY_MODEL_H
-#define PLASMA_NM_APPLET_PROXY_MODEL_H
+import QtQuick 2.6
+import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import QtQuick.Controls 2.2 as Controls
 
-#include <QSortFilterProxyModel>
-
-#include "networkmodelitem.h"
-
-class Q_DECL_EXPORT AppletProxyModel : public QSortFilterProxyModel
-{
-Q_OBJECT
-    Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
-public:
-    explicit AppletProxyModel(QObject *parent = nullptr);
-    ~AppletProxyModel() override;
-
-protected:
-    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
-    bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
-};
-
-
-#endif // PLASMA_NM_APPLET_PROXY_MODEL_H
+Controls.TextField {
+    property int securityType
+    echoMode: TextInput.Password
+    placeholderText: i18n("Password...")
+    validator: RegExpValidator {
+                    regExp: if (securityType == PlasmaNM.Enums.StaticWep) {
+                                /^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26}){1}$/
+                            } else {
+                                /^(?:.{8,64}){1}$/
+                            }
+                    }
+}

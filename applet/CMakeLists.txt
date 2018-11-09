@@ -1,2 +1,1 @@
-plasma_install_package(. org.kde.plasma.networkmanagement)
-
+plasma_install_bundled_package(. org.kde.plasma.networkmanagement)

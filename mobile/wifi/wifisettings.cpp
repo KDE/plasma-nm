@@ -37,13 +37,6 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 
-#if WITH_MODEMMANAGER_SUPPORT
-#include <ModemManagerQt/GenericTypes>
-#include <ModemManagerQt/Manager>
-#include <ModemManagerQt/ModemDevice>
-#endif
-
-
 
 K_PLUGIN_FACTORY_WITH_JSON(WifiSettingsFactory, "wifisettings.json", registerPlugin<WifiSettings>();)
 

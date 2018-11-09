@@ -1,5 +1,6 @@
-if (KF5ModemManagerQt_FOUND)
-	add_subdirectory(broadband)
+if (WITH_MODEMMANAGER_SUPPORT)
+    add_subdirectory(broadband)
 endif()
+
 add_subdirectory(wifi)
 

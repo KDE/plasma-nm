@@ -95,11 +95,14 @@ add_subdirectory(kded)
 add_subdirectory(kcm)
 add_subdirectory(libs)
 add_subdirectory(vpn)
-add_subdirectory(mobile)
+
+if (BUILD_MOBILE)
+    add_subdirectory(mobile)
+endif()
 
 # Enable unit testing
 if (BUILD_TESTING)
     add_subdirectory(tests)
-endif ()
+endif()
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

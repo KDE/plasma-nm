@@ -1,6 +1,20 @@
 [Desktop Entry]
 Name=Mobile Broadband
+Name[ca]=Banda ampla per mòbil
+Name[ca@valencia]=Banda ampla per mòbil
+Name[nl]=Mobiel breedband
+Name[pt]=Banda Larga Móvel
+Name[sv]=Mobilt bredband
+Name[uk]=Мобільна радіомережа
+Name[x-test]=xxMobile Broadbandxx
 Comment=Mobile broadband setting
+Comment[ca]=Configuració de la banda ampla per mòbil
+Comment[ca@valencia]=Configuració de la banda ampla per mòbil
+Comment[nl]=Instelling voor mobiel breedband
+Comment[pt]=Configuração da banda larga móvel
+Comment[sv]=Inställning av mobilt bredband
+Comment[uk]=Налаштовування мобільної радіомережі
+Comment[x-test]=xxMobile broadband settingxx
 Encoding=UTF-8
 Type=Service
 Icon=smartphone

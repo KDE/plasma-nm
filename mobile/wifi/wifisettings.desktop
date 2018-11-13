@@ -1,6 +1,20 @@
 [Desktop Entry]
 Name=Wi-Fi
+Name[ca]=Wi-Fi
+Name[ca@valencia]=Wi-Fi
+Name[nl]=Wi-Fi
+Name[pt]=Wi-Fi
+Name[sv]=WIFI
+Name[uk]=Wi-Fi
+Name[x-test]=xxWi-Fixx
 Comment=Wireless network setting
+Comment[ca]=Configuració de la xarxa sense fil
+Comment[ca@valencia]=Configuració de la xarxa sense fil
+Comment[nl]=Draadloos netwerk instelling
+Comment[pt]=Configuração da rede sem-fios
+Comment[sv]=Trådlös nätverksinställning
+Comment[uk]=Налаштовування бездротової мережі
+Comment[x-test]=xxWireless network settingxx
 
 Icon=network-wireless-symbolic
 Exec=plasma-settings -m kcm_mobile_wifi
@@ -15,5 +29,12 @@ X-KDE-System-Settings-Parent-Category=network
 X-KDE-Weight=70
 
 X-KDE-Keywords=wifi,network
+X-KDE-Keywords[ca]=wifi,xarxa
+X-KDE-Keywords[ca@valencia]=wifi,xarxa
+X-KDE-Keywords[nl]=wifi,netwerk
+X-KDE-Keywords[pt]=wifi,rede
+X-KDE-Keywords[sv]=wifi,nätverk
+X-KDE-Keywords[uk]=wifi,network,вайфай,мережа
+X-KDE-Keywords[x-test]=xxwifixx,xxnetworkxx
 Categories=Qt;KDE;X-KDE-settings-system;
 

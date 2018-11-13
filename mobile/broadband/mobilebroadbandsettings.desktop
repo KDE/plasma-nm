@@ -1,6 +1,20 @@
 [Desktop Entry]
 Name=Mobile broadband
+Name[ca]=Banda ampla per mòbil
+Name[ca@valencia]=Banda ampla per mòbil
+Name[nl]=Mobiel breedband
+Name[pt]=Banda larga móvel
+Name[sv]=Mobilt bredband
+Name[uk]=Мобільна радіомережа
+Name[x-test]=xxMobile broadbandxx
 Comment=Mobile broadband setting
+Comment[ca]=Configuració de la banda ampla per mòbil
+Comment[ca@valencia]=Configuració de la banda ampla per mòbil
+Comment[nl]=Instelling voor mobiel breedband
+Comment[pt]=Configuração da banda larga móvel
+Comment[sv]=Inställning av mobilt bredband
+Comment[uk]=Налаштовування мобільної радіомережі
+Comment[x-test]=xxMobile broadband settingxx
 
 Icon=smartphone
 Exec=plasma-settings -m kcm_mobile_broadband
@@ -15,5 +29,12 @@ X-KDE-System-Settings-Parent-Category=network
 X-KDE-Weight=70
 
 X-KDE-Keywords=mobile,data,network
+X-KDE-Keywords[ca]=mòbil,dades,xarxa
+X-KDE-Keywords[ca@valencia]=mòbil,dades,xarxa
+X-KDE-Keywords[nl]=mobiel,gegevens,netwerk
+X-KDE-Keywords[pt]=móvel,dados,rede
+X-KDE-Keywords[sv]=mobil,data,nätverk
+X-KDE-Keywords[uk]=mobile,data,network,мобільний,дані,мережа
+X-KDE-Keywords[x-test]=xxmobilexx,xxdataxx,xxnetworkxx
 Categories=Qt;KDE;X-KDE-settings-system;
 

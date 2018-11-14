@@ -387,7 +387,15 @@ void ConnectionEditorBase::initialize()
             if (!requiredSecrets.isEmpty() || m_connection->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
                 bool requestSecrets = false;
                 if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
-                    requestSecrets = true;
+                    NetworkManager::VpnSetting::Ptr vpnSetting = connection->settings()->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
+                    for (const QString &key : vpnSetting->data().keys()) {
+                        if (key.endsWith(QStringLiteral("-flags"))) {
+                            NetworkManager::Setting::SecretFlagType secretFlag = (NetworkManager::Setting::SecretFlagType)vpnSetting->data().value(key).toInt();
+                            if (secretFlag == NetworkManager::Setting::None || secretFlag == NetworkManager::Setting::AgentOwned) {
+                                requestSecrets = true;
+                            }
+                        }
+                    }
                 } else {
                     Q_FOREACH (const QString &secret, requiredSecrets) {
                         if (setting.contains(secret + QLatin1String("-flags"))) {

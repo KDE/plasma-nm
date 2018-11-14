@@ -329,7 +329,7 @@
          <property name="title">
           <string>Credentials</string>
          </property>
-         <layout class="QGridLayout" name="gridLayout_4">
+         <layout class="QFormLayout" name="formLayout_5">
           <item row="0" column="0">
            <widget class="QLabel" name="lbl_username">
             <property name="text">
@@ -355,7 +355,7 @@
           </item>
           <item row="1" column="1">
            <widget class="PasswordField" name="le_password">
-            <property name="passwordModeEnabled">
+            <property name="passwordModeEnabled" stdset="0">
              <bool>true</bool>
             </property>
            </widget>

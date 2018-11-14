@@ -10,263 +10,310 @@
     <height>571</height>
    </rect>
   </property>
-  <layout class="QGridLayout" name="gridLayout_8">
-   <item row="0" column="0">
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string>General</string>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
      </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QLabel" name="lbl_gateway">
-          <property name="text">
-           <string>Gateway:</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="le_gateway"/>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QGroupBox" name="groupBox_2">
-     <property name="title">
-      <string>Network Settings</string>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QLabel" name="lbl_remoteIp">
-        <property name="text">
-         <string>Remote IP Address:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="le_remoteIp"/>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="lbl_localIp">
-        <property name="text">
-         <string>Local IP Address:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="le_localIp"/>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="lbl_netmask">
-        <property name="text">
-         <string>Netmask:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="le_netmask"/>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QGroupBox" name="groupBox_3">
-     <property name="title">
-      <string>IPv6 Network Settings</string>
+     <property name="lineWidth">
+      <number>0</number>
      </property>
-     <layout class="QGridLayout" name="gridLayout_3">
-      <item row="0" column="0">
-       <widget class="QCheckBox" name="chk_useIpv6">
-        <property name="text">
-         <string>Use IPv6</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="lbl_remoteIpv6">
-        <property name="text">
-         <string>Remote IP Address:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="le_remoteIpv6">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="lbl_localIpv6">
-        <property name="text">
-         <string>Local IP Address:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="le_localIpv6">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="lbl_netmaskIpv6">
-        <property name="text">
-         <string>Prefix:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QLineEdit" name="le_netmaskIpv6">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QGroupBox" name="groupBox_4">
-     <property name="title">
-      <string>Authentication</string>
+     <property name="widgetResizable">
+      <bool>true</bool>
      </property>
-     <layout class="QGridLayout" name="gridLayout_4">
-      <item row="1" column="0">
-       <widget class="QStackedWidget" name="stackedWidget">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="currentIndex">
-         <number>0</number>
-        </property>
-        <widget class="QWidget" name="passwordWidget">
-         <layout class="QGridLayout" name="gridLayout_7">
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>455</width>
+        <height>624</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>General</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
           <item row="0" column="0">
-           <layout class="QGridLayout" name="gridLayout_6">
-            <item row="0" column="1">
-             <widget class="PasswordField" name="le_password">
-              <property name="passwordModeEnabled" stdset="0">
-               <bool>true</bool>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="lbl_gateway">
+              <property name="text">
+               <string>Gateway:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="lbl_password">
+            <item>
+             <widget class="QLineEdit" name="le_gateway"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>Network Settings</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_remoteIp">
+            <property name="text">
+             <string>Remote IP Address:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="le_remoteIp"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lbl_localIp">
+            <property name="text">
+             <string>Local IP Address:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="le_localIp"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbl_netmask">
+            <property name="text">
+             <string>Netmask:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="le_netmask"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>IPv6 Network Settings</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <widget class="QCheckBox" name="chk_useIpv6">
+            <property name="text">
+             <string>Use IPv6</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lbl_remoteIpv6">
+            <property name="text">
+             <string>Remote IP Address:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="le_remoteIpv6">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lbl_localIpv6">
+            <property name="text">
+             <string>Local IP Address:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="le_localIpv6">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lbl_netmaskIpv6">
+            <property name="text">
+             <string>Prefix:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="le_netmaskIpv6">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string>Authentication</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="1" column="0">
+           <widget class="QStackedWidget" name="stackedWidget">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <widget class="QWidget" name="passwordWidget">
+             <layout class="QGridLayout" name="gridLayout_7">
+              <item row="0" column="0">
+               <layout class="QGridLayout" name="gridLayout_6">
+                <item row="0" column="1">
+                 <widget class="PasswordField" name="le_password">
+                  <property name="passwordModeEnabled" stdset="0">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="lbl_password">
+                  <property name="text">
+                   <string>Password:</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="sshKeyFile">
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="0" column="0">
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QLabel" name="lbl_sshKeyFile">
+                  <property name="text">
+                   <string>SSH Key File:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="KUrlRequester" name="kurl_sshKeyFile"/>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="lbl_authType">
               <property name="text">
-               <string>Password:</string>
+               <string>Type:</string>
               </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cmb_authType">
+              <item>
+               <property name="text">
+                <string>SSH Agent</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Password</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Key authentication</string>
+               </property>
+              </item>
              </widget>
             </item>
            </layout>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="sshKeyFile">
-         <layout class="QGridLayout" name="gridLayout_5">
-          <item row="0" column="0">
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
-            <item>
-             <widget class="QLabel" name="lbl_sshKeyFile">
-              <property name="text">
-               <string>SSH Key File:</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="KUrlRequester" name="kurl_sshKeyFile"/>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </widget>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLabel" name="lbl_authType">
-          <property name="text">
-           <string>Type:</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="cmb_authType">
-          <item>
-           <property name="text">
-            <string>SSH Agent</string>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Password</string>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
            </property>
-          </item>
-          <item>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_advancedOption">
            <property name="text">
-            <string>Key authentication</string>
+            <string>Advanced...</string>
            </property>
-          </item>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
     </widget>
-   </item>
-   <item row="4" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btn_advancedOption">
-       <property name="text">
-        <string>Advanced...</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </item>
   </layout>
  </widget>

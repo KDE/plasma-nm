@@ -58,14 +58,6 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
 
     connect(m_widget->autoconnectVpn, &QCheckBox::toggled, this, &ConnectionWidget::autoVpnToggled);
 
-    if (NetworkManager::compareVersion(QLatin1String("1.0.0")) >= 0) {
-        m_widget->prioritySpin->setEnabled(true);
-        m_widget->nmVersionWarning->setVisible(false);
-    } else {
-        m_widget->prioritySpin->setEnabled(false);
-        m_widget->nmVersionWarning->setVisible(true);
-    }
-
     if (settings) {
         loadConfig(settings);
     }
@@ -83,6 +75,7 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
     connect(m_widget->vpnCombobox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ConnectionWidget::settingChanged);
     connect(m_widget->vpnCombobox, &QComboBox::currentTextChanged, this, &ConnectionWidget::settingChanged);
     connect(m_widget->prioritySpin, QOverload<int>::of(&QSpinBox::valueChanged), this, &ConnectionWidget::settingChanged);
+    connect(m_widget->metered, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ConnectionWidget::settingChanged);
 
     connect(m_widget->pushButtonPermissions, &QPushButton::clicked, this, &ConnectionWidget::openAdvancedPermissions);
 }
@@ -119,11 +112,11 @@ void ConnectionWidget::loadConfig(const NetworkManager::ConnectionSettings::Ptr 
 
     m_widget->autoconnect->setChecked(settings->autoconnect());
 
-#if NM_CHECK_VERSION(1, 0, 0)
     if (m_widget->prioritySpin->isEnabled()) {
         m_widget->prioritySpin->setValue(settings->autoconnectPriority());
     }
-#endif
+
+    m_widget->metered->setCurrentIndex(settings->metered());
 }
 
 NMVariantMapMap ConnectionWidget::setting() const
@@ -154,11 +147,11 @@ NMVariantMapMap ConnectionWidget::setting() const
         settings.setZone(zone);
     }
 
-#if NM_CHECK_VERSION(1, 0, 0)
     if (m_widget->prioritySpin->isEnabled()) {
         settings.setAutoconnectPriority(m_widget->prioritySpin->value());
     }
-#endif
+
+    settings.setMetered(static_cast<NetworkManager::ConnectionSettings::Metered>(m_widget->metered->currentIndex()));
 
     return settings.toMap();
 }

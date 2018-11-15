@@ -72,7 +72,8 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     KDeclarative::KDeclarative kdeclarative;
     kdeclarative.setDeclarativeEngine(m_quickView->engine());
     kdeclarative.setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
-    kdeclarative.setupBindings();
+    kdeclarative.setupEngine(m_quickView->engine());
+    kdeclarative.setupContext();
 
     QWidget *widget = QWidget::createWindowContainer(m_quickView, this);
     widget->setMinimumWidth(300);

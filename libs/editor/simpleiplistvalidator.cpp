@@ -74,7 +74,7 @@ QValidator::State SimpleIpListValidator::validate(QString &address, int &pos) co
 
         QString addr = rawAddr.trimmed();
 
-        // If we are starting a new address and all the previous addressess
+        // If we are starting a new address and all the previous addresses
         // are not Acceptable then the previous addresses need to be completed
         // before a new one is started
         if (result != QValidator::Acceptable)

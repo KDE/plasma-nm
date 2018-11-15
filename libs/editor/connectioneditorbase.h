@@ -54,7 +54,7 @@ Q_SIGNALS:
     // proper initialization with secrets
     void validityChanged(bool valid);
 
-    // Emited when user changed configuration
+    // Emitted when user changed configuration
     void settingChanged();
 
 private Q_SLOTS:

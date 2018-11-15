@@ -532,7 +532,7 @@ void MobileConnectionWizard::slotEnablePlanEditBox(const QString & text)
     } else {
         if (mProvidersList->currentItem() != nullptr) {
             int i = mPlanComboBox->currentIndex();
-            if (i>0) i=i-1; // Skiping the separator (i==1)
+            if (i>0) i=i-1; // Skipping the separator (i==1)
             QStringList mApns = mProviders->getApns(mProvidersList->currentItem()->text());
             userApn->setText(mApns.at(i));
         }

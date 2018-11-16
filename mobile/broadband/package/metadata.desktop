@@ -2,6 +2,7 @@
 Name=Mobile Broadband
 Name[ca]=Banda ampla per mòbil
 Name[ca@valencia]=Banda ampla per mòbil
+Name[de]=Mobiles Breitband
 Name[es]=Banda ancha móvil
 Name[nl]=Mobiel breedband
 Name[pt]=Banda Larga Móvel
@@ -12,6 +13,7 @@ Name[x-test]=xxMobile Broadbandxx
 Comment=Mobile broadband setting
 Comment[ca]=Configuració de la banda ampla per mòbil
 Comment[ca@valencia]=Configuració de la banda ampla per mòbil
+Comment[de]=Einstellungen für Mobiles Breitband
 Comment[es]=Preferencias de banda ancha móvil
 Comment[nl]=Instelling voor mobiel breedband
 Comment[pt]=Configuração da banda larga móvel

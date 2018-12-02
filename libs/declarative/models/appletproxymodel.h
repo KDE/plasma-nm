@@ -28,7 +28,7 @@
 class Q_DECL_EXPORT AppletProxyModel : public QSortFilterProxyModel
 {
 Q_OBJECT
-Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
+    Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
 public:
     explicit AppletProxyModel(QObject *parent = nullptr);
     ~AppletProxyModel() override;

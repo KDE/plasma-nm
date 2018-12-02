@@ -24,6 +24,8 @@
 #include <QDBusInterface>
 
 #include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/ConnectionSettings>
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/GenericTypes>
 #endif
@@ -115,6 +117,7 @@ private:
     QMap<QString, bool> m_bluetoothAdapters;
 
     void enableBluetooth(bool enable);
+
 };
 
 #endif // PLASMA_NM_HANDLER_H

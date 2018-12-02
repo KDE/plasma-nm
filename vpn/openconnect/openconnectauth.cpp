@@ -104,7 +104,7 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
         d->cancelPipes[1] = -1;
     }
 
-    connect(d->ui.cmbLogLevel, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::logLevelChanged);
+    connect(d->ui.cmbLogLevel, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::logLevelChanged);
     connect(d->ui.viewServerLog, &QCheckBox::toggled, this, &OpenconnectAuthWidget::viewServerLogToggled);
     connect(d->ui.btnConnect, &QPushButton::clicked, this, &OpenconnectAuthWidget::connectHost);
 
@@ -118,17 +118,17 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
     // and which needs to be populated with settings we get from NM, like host, certificate or private key
     d->vpninfo = d->worker->getOpenconnectInfo();
 
-    connect(d->worker, static_cast<void (OpenconnectAuthWorkerThread::*)(const QString &, const QString &, const QString &, bool*)>(&OpenconnectAuthWorkerThread::validatePeerCert), this, &OpenconnectAuthWidget::validatePeerCert);
+    connect(d->worker, QOverload<const QString &, const QString &, const QString &, bool*>::of(&OpenconnectAuthWorkerThread::validatePeerCert), this, &OpenconnectAuthWidget::validatePeerCert);
     connect(d->worker, &OpenconnectAuthWorkerThread::processAuthForm, this, &OpenconnectAuthWidget::processAuthForm);
     connect(d->worker, &OpenconnectAuthWorkerThread::updateLog, this, &OpenconnectAuthWidget::updateLog);
-    connect(d->worker, static_cast<void (OpenconnectAuthWorkerThread::*)(const QString&)>(&OpenconnectAuthWorkerThread::writeNewConfig), this, &OpenconnectAuthWidget::writeNewConfig);
+    connect(d->worker, QOverload<const QString&>::of(&OpenconnectAuthWorkerThread::writeNewConfig), this, &OpenconnectAuthWidget::writeNewConfig);
     connect(d->worker, &OpenconnectAuthWorkerThread::cookieObtained, this, &OpenconnectAuthWidget::workerFinished);
 
     readConfig();
     readSecrets();
 
     // This might be set by readSecrets() so don't connect it until now
-    connect(d->ui.cmbHosts, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::connectHost);
+    connect(d->ui.cmbHosts, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::connectHost);
 
     KAcceleratorManager::manage(this);
 }
@@ -476,7 +476,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
                 }
             }
             if (sopt == AUTHGROUP_OPT(form)) {
-                connect(cmb, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::formGroupChanged);
+                connect(cmb, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::formGroupChanged);
             }
             widget = qobject_cast<QWidget*>(cmb);
         }

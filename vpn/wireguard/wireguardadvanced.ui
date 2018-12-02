@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WireGuardAdvancedWidget</class>
+ <widget class="QWidget" name="WireGuardAdvancedWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>398</width>
+    <height>380</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>WireGuard Advanced</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Interface</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout_1">
+      <item row="0" column="0">
+       <widget class="QLabel" name="listenPortLabel">
+        <property name="text">
+         <string>Listen port:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="listenPortLineEdit">
+        <property name="toolTip">
+         <string>Listen port number. Chosen randomly if left as 'Automatic'.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="mTULabel">
+        <property name="text">
+         <string>MTU:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="mtuLineEdit">
+        <property name="toolTip">
+         <string>Optional.
+If not specified, the MTU is automatically determined
+from the endpoint addresses or the system default route,
+which is usually a sane choice. However, to manually
+specify an MTU and to override this automatic discovery,
+this value may be specified explicitly.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="tableLabel">
+        <property name="text">
+         <string>Table:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="tableLineEdit">
+        <property name="toolTip">
+         <string>Controls the routing table to which routes are added. 
+There are two special values: `off' disables the 
+creation of routes altogether, and `auto' (the default) 
+adds routes to the default table and enables special 
+handling of default routes</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="fwMarkLabel">
+        <property name="text">
+         <string>FwMark:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="fwMarkLineEdit">
+        <property name="toolTip">
+         <string>Optional.
+An fwmark for outgoing packets. If set to 0 or 'off', this
+option is disabled. May be specified in hexadecimal by
+prepending '0x'.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="preUpLabel">
+        <property name="text">
+         <string>Pre-up command:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="preUpLineEdit">
+        <property name="toolTip">
+         <string>Optional.
+Script snippet which will be executed by bash(1)
+before setting up the interface. Most commonly used
+to configure custom DNS options or firewall rules.
+The special string `%i' is expanded to INTERFACE.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="postUpLabel">
+        <property name="text">
+         <string>Post-up command:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="postUpLineEdit">
+        <property name="toolTip">
+         <string>Optional.
+Script snippet which will be executed by bash(1)
+after setting up the interface. Most commonly used
+to configure custom DNS options or firewall rules.
+The special string `%i' is expanded to INTERFACE.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="preDownLabel">
+        <property name="text">
+         <string>Pre-down command:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLineEdit" name="preDownLineEdit">
+        <property name="toolTip">
+         <string>Optional.
+Script snippet which will be executed by bash(1)
+before tearing down the interface. Most commonly used
+to configure custom DNS options or firewall rules.
+The special string `%i' is expanded to INTERFACE.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="postDownLabel">
+        <property name="text">
+         <string>Post-down command:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QLineEdit" name="postDownLineEdit">
+        <property name="toolTip">
+         <string>Optional.
+Script snippet which will be executed by bash(1)
+after tearing down the interface. Most commonly used
+to configure custom DNS options or firewall rules.
+The special string `%i' is expanded to INTERFACE.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>Peer</string>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="presharedKeyLabel">
+        <property name="text">
+         <string>Preshared key:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="PasswordField" name="presharedKeyLineEdit">
+        <property name="toolTip">
+         <string>Optional.
+A base64 preshared key generated by wg genpsk.
+This option adds an additional layer of symmetric-key
+cryptography to be mixed into the already existing
+public-key cryptography, for post-quantum resistance.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="persistentKeepaliveLabel">
+        <property name="text">
+         <string>Persistent Keepalive:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="persistentKeepaliveLineEdit">
+        <property name="toolTip">
+         <string>Optional.
+A seconds interval, between 1 and 65535 inclusive, of
+how often to send an authenticated empty packet to
+the peer for the purpose of keeping a stateful firewall
+or NAT mapping valid persistently. For example, if the
+interface very rarely sends traffic, but it might at
+anytime receive traffic from a peer, and it is behind
+NAT, the interface might benefit from having a
+persistent keepalive interval of 25 seconds. If set to
+0 or "off", this option is disabled. By default or
+when unspecified, this option is off. Most users will not
+need this.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PasswordField</class>
+   <extends>QLineEdit</extends>
+   <header location="global">passwordfield.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

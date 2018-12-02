@@ -6,6 +6,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_MODULE_PATH})
 
 find_package(OpenConnect ${MINIMUM_OPENCONNECT_VERSION_REQUIRED} MODULE)
 if (OPENCONNECT_FOUND)
+
+    find_package(Qt5Xml ${QT_MIN_VERSION} CONFIG REQUIRED)
+
     if (${OPENCONNECT_VERSION} VERSION_LESS "3.99")
 #         macro_optional_find_package(OpenSSL)
 #         macro_log_feature(OpenSSL_FOUND "OpenSSL headers" "Encryption suite" "http://www.openssl.org" FALSE "" "Needed for OpenConnect support in Network Management")
@@ -49,6 +52,7 @@ if (OPENCONNECT_FOUND)
             KF5::IconThemes
             KF5::KIOWidgets
             KF5::CoreAddons
+            Qt5::Xml
             ${OPENCONNECT_LIBRARIES}
             ${maybe_OPENSSL_LIBRARIES}
         )

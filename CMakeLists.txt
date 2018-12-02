@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.0)
 
 project(plasma-networkmanagement)
 
-set(PROJECT_VERSION "5.13.80")
+set(PROJECT_VERSION "5.14.80")
 set(PROJECT_VERSION_MAJOR 5)
 
-set(QT_MIN_VERSION "5.9.0")
+set(QT_MIN_VERSION "5.11.0")
 set(KF5_MIN_VERSION "5.50.0")
 
 ################# set KDE specific information #################
@@ -95,5 +95,14 @@ add_subdirectory(kded)
 add_subdirectory(kcm)
 add_subdirectory(libs)
 add_subdirectory(vpn)
+
+if (BUILD_MOBILE)
+    add_subdirectory(mobile)
+endif()
+
+# Enable unit testing
+if (BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

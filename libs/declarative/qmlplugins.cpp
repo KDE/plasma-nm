@@ -33,6 +33,7 @@
 #include "editorproxymodel.h"
 #include "kcmidentitymodel.h"
 #include "networkmodel.h"
+#include "mobileproxymodel.h"
 #include "utils.h"
 
 #include "handler.h"
@@ -64,6 +65,8 @@ void QmlPlugins::registerTypes(const char* uri)
     qmlRegisterType<KcmIdentityModel>(uri, 0, 2, "KcmIdentityModel");
     // @uri org.kde.plasma.networkmanagement.CreatableConnectionsModel
     qmlRegisterType<CreatableConnectionsModel>(uri, 0, 2, "CreatableConnectionsModel");
+    // @uri org.kde.plasma.networkmanagement.MobileProxyModel
+    qmlRegisterType<MobileProxyModel>(uri, 0, 2, "MobileProxyModel");
     // @uri org.kde.plasma.networkmanagement.Utils
     qmlRegisterType<Utils>(uri, 0, 2, "Utils");
 }

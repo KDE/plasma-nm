@@ -66,7 +66,7 @@ void SettingWidget::watchChangedSetting()
     // Connect all QComboBox widgets
     QList<QComboBox *> comboboxes = findChildren<QComboBox *>();
     Q_FOREACH (QComboBox *combobox, comboboxes) {
-        connect(combobox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &SettingWidget::settingChanged);
+        connect(combobox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &SettingWidget::settingChanged);
         connect(combobox, &QComboBox::currentTextChanged, this, &SettingWidget::settingChanged);
     }
 
@@ -85,7 +85,7 @@ void SettingWidget::watchChangedSetting()
     // Connect all QSpinBox widgets
     QList<QSpinBox *> spinboxes = findChildren<QSpinBox *>();
     Q_FOREACH (QSpinBox *spinbox, spinboxes) {
-        connect(spinbox, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &SettingWidget::settingChanged);
+        connect(spinbox, QOverload<int>::of(&QSpinBox::valueChanged), this, &SettingWidget::settingChanged);
     }
 
     // Connect all KUrlRequester widgets

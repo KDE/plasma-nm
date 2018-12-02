@@ -16,6 +16,7 @@ set(plasmanm_qml_plugins_SRCS
     models/creatableconnectionsmodel.cpp
     models/editorproxymodel.cpp
     models/kcmidentitymodel.cpp
+    models/mobileproxymodel.cpp
     models/networkitemslist.cpp
     models/networkmodel.cpp
     models/networkmodelitem.cpp

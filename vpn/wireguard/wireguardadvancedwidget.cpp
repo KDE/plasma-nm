@@ -26,6 +26,8 @@
 #include "settingwidget.h"
 #include "wireguardkeyvalidator.h"
 
+#include <KAcceleratorManager>
+
 class WireGuardAdvancedWidget::Private
 {
 public:

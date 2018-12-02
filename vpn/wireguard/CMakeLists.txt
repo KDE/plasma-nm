@@ -19,11 +19,11 @@ target_link_libraries(plasmanetworkmanagement_wireguardui
     plasmanm_internal
     plasmanm_editor
     KF5::ConfigCore
+    KF5::ConfigWidgets
     KF5::CoreAddons
     KF5::I18n
     KF5::KIOWidgets
     KF5::WidgetsAddons
-    KF5::ConfigWidgets
 )
 
 install(TARGETS plasmanetworkmanagement_wireguardui  DESTINATION ${PLUGIN_INSTALL_DIR})

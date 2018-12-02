@@ -23,6 +23,8 @@
 
 #include <QString>
 
+#include <KAcceleratorManager>
+
 class WireGuardAuthWidgetPrivate
 {
 public:

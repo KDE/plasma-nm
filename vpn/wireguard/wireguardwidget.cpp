@@ -29,6 +29,8 @@
 #include <QPointer>
 #include <KColorScheme>
 
+#include <KAcceleratorManager>
+
 #include "nm-wireguard-service.h"
 
 class WireGuardSettingWidget::Private

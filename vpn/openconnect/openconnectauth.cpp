@@ -469,9 +469,6 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
                 cmb->addItem(QString::fromUtf8(FORMCHOICE(sopt, i)->label), QString::fromUtf8(FORMCHOICE(sopt, i)->name));
                 if (value == QString::fromUtf8(FORMCHOICE(sopt, i)->name)) {
                     cmb->setCurrentIndex(i);
-                    if (sopt == AUTHGROUP_OPT(form) && i != AUTHGROUP_SELECTION(form)) {
-                        QTimer::singleShot(0, this, &OpenconnectAuthWidget::formGroupChanged);
-                    }
                 }
             }
             if (sopt == AUTHGROUP_OPT(form)) {

@@ -443,7 +443,7 @@ void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::Connecti
                 });
         connect(m_tabWidget, &ConnectionEditorTabWidget::validityChanged,
                 [this] (bool valid) {
-                    if (m_tabWidget->isInitialized()) {
+                    if (m_tabWidget->isInitialized() && m_tabWidget->isValid() != valid) {
                         kcmChanged(valid);
                     }
                 });

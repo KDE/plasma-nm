@@ -57,7 +57,6 @@ SimpleKCM {
 
             ColumnLayout {
                 id: simpleLayout
-                anchors.fill: parent
 
                 ConnectionSetting {
                     id: connectionSetting
@@ -71,7 +70,6 @@ SimpleKCM {
             }
 
             ColumnLayout {
-                anchors.fill: parent
 
                 QtControls.TabBar {
                     id: tabBar

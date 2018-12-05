@@ -29,23 +29,15 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 SimpleKCM {
     id: connectionEditorPage
 
-    title: connectionNameTextField.text
+    title: connectionSetting.connectionNameTextField.text
 
     PlasmaNM.Utils {
         id: nmUtils
     }
 
+
     ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
-
-        QtControls.TextField  {
-            id: connectionNameTextField
-            Layout.alignment: Qt.AlignHCenter
-            Layout.fillWidth: true
-            Layout.minimumWidth: Kirigami.Units.gridUnit * 25
-            Layout.maximumWidth: Kirigami.Units.gridUnit * 40
-            hoverEnabled: true
-        }
 
         StackLayout {
             Layout.alignment: Qt.AlignHCenter
@@ -57,10 +49,12 @@ SimpleKCM {
 
             ColumnLayout {
                 id: simpleLayout
-
+                //spacing is managed by FormLayout
+                spacing: 0
                 ConnectionSetting {
                     id: connectionSetting
                     Layout.fillWidth: true
+                    twinFormLayouts: connectionSpecificSetting.item
                 }
 
                 Loader {
@@ -109,7 +103,7 @@ SimpleKCM {
     }
 
     function loadConnectionSettings() {
-        connectionNameTextField.text = connectionSettingsObject.id
+        connectionSetting.connectionNameTextField.text = connectionSettingsObject.id
         // Load general connection setting
         connectionSetting.loadSettings()
 
@@ -120,6 +114,7 @@ SimpleKCM {
             connectionSpecificSetting.source = "WirelessSetting.qml"
         }
 
+        connectionSpecificSetting.item.twinFormLayouts = connectionSetting;
         connectionSpecificSetting.item.loadSettings()
     }
 }

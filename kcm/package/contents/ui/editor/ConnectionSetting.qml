@@ -22,22 +22,26 @@ import QtQuick 2.6
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2 as QtControls
 
-import org.kde.kirigami 2.0 // for units
+import org.kde.kirigami 2.5 as Kirigami
 
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
-ColumnLayout {
+Kirigami.FormLayout {
     id: connectionSetting
 
     property string settingName: i18n("Connection")
+    property alias connectionNameTextField: connectionNameTextField
 
-    spacing: Math.round(Units.gridUnit / 2)
+    QtControls.TextField  {
+        id: connectionNameTextField
+        focus: true
+        Kirigami.FormData.label: i18n("Network Name:")
+    }
 
     QtControls.CheckBox {
         id: autoconnectCheckbox
 
         checked: true
-        Layout.fillWidth: true
 
         text: i18n("Automatically connect to this network when it is available")
     }
@@ -72,52 +76,42 @@ ColumnLayout {
     QtControls.CheckBox {
         id: autoconnectVpnCheckbox
 
-        Layout.fillWidth: true
-
         text: i18n("Automatically connect to VPN when using this connection")
     }
 
-    QtControls.ComboBox {
-        id: vpnListCombobox
-
-        Layout.fillWidth: true
-
-        enabled: autoconnectVpnCheckbox.checked
-        model: nmUtils.vpnConnections()
-    }
-
-    GridLayout {
-        columns: 2
-
-        QtControls.Label {
-            Layout.alignment: Qt.AlignRight
-            text: i18n("Firewall zone:")
-            visible: expertModeCheckbox.checked
+    RowLayout {
+        Item {
+            Layout.preferredWidth: Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
         }
-
         QtControls.ComboBox {
-            id: firewallZoneCombobox
-            Layout.fillWidth: true
-            model: nmUtils.firewallZones()
-            visible: expertModeCheckbox.checked
-        }
+            id: vpnListCombobox
 
-        QtControls.Label {
-            Layout.alignment: Qt.AlignRight
-            text: i18n("Priority:")
-        }
-
-        QtControls.SpinBox {
-            id: prioritySpinBox
-
-            Layout.fillWidth: true
-
-            value: 0
-
-            QtControls.ToolTip.text: i18n("If the connection is set to autoconnect, connections with higher priority will be preferred.\nDefaults to 0. The higher number means higher priority. An negative number can be used to \nindicate priority lower than the default.")
-            QtControls.ToolTip.visible: prioritySpinBox.hovered
+            enabled: autoconnectVpnCheckbox.checked
+            model: nmUtils.vpnConnections()
         }
     }
+
+    Item {
+        Kirigami.FormData.isSection: true
+    }
+
+    QtControls.ComboBox {
+        id: firewallZoneCombobox
+        Kirigami.FormData.label: i18n("Firewall zone:")
+        model: nmUtils.firewallZones()
+        visible: expertModeCheckbox.checked
+    }
+
+    QtControls.SpinBox {
+        id: prioritySpinBox
+        Kirigami.FormData.label: i18n("Priority:")
+        value: 0
+
+        QtControls.ToolTip {
+            text: i18n("If the connection is set to autoconnect, connections with higher priority will be preferred.\nDefaults to 0. The higher number means higher priority. An negative number can be used to \nindicate priority lower than the default.")
+        }
+    }
+
 
     function loadSettings() {
         if (connectionSettingsObject.connectionType == PlasmaNM.Enums.Vpn) {

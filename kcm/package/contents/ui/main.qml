@@ -69,10 +69,6 @@ ScrollViewKCM {
     header: QtControls.TextField {
         id: searchField
 
-        Layout.minimumHeight: Layout.maximumHeight
-        Layout.maximumHeight: Kirigami.Units.iconSizes.smallMedium + Kirigami.Units.smallSpacing * 2
-        Layout.fillWidth: true
-
         focus: true
         placeholderText: i18n("Type here to search connection...")
 
@@ -319,18 +315,17 @@ ScrollViewKCM {
 
     onCurrentConnectionPathChanged: {
         if (currentConnectionPath) {
-            if (applicationWindow().pageStack.depth < 2) {
-                applicationWindow().pageStack.push(connectionEditor)
-                connectionEditor.visible = true
+            if (kcm.depth < 2) {
+                kcm.push(connectionEditor)
             } else {
-                applicationWindow().pageStack.currentIndex = 1
+                kcm.currentIndex = 1
             }
             kcm.selectConnection(root.currentConnectionPath)
         }
     }
 
     Component.onCompleted: {
-        applicationWindow().pageStack.defaultColumnWidth = Kirigami.Units.gridUnit * 25
+        kcm.columnWidth = Kirigami.Units.gridUnit * 18
     }
 
     function loadConnectionSetting() {

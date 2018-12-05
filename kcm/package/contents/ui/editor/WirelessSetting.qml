@@ -22,256 +22,192 @@ import QtQuick 2.6
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2 as QtControls
 
-import org.kde.kirigami 2.0 as Kirigami // for units
+import org.kde.kirigami 2.5 as Kirigami
 
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
-ColumnLayout {
+Kirigami.FormLayout {
     id: connectionSetting
 
     property string settingName: i18n("Wireless")
 
-    spacing: Math.round(Kirigami.Units.gridUnit / 2)
+    QtControls.ComboBox {
+        id: ssidCombobox
+        Kirigami.FormData.label: i18n("SSID:")
 
-    GridLayout {
-        columns: 2
+        delegate: QtControls.ItemDelegate {
+            id: ssidComboDelegate
 
-        QtControls.Label {
-            Layout.alignment: Qt.AlignRight
+            property bool apVisible: typeof(modelData.signal) !== "undefined"
 
-            text: i18n("SSID:")
-        }
+            height: apVisible ? (Kirigami.Units.gridUnit * 2) + Kirigami.Units.largeSpacing : Kirigami.Units.gridUnit
+            width: parent.width
 
-        QtControls.ComboBox {
-            id: ssidCombobox
-            Layout.fillWidth: true
-
-            delegate: QtControls.ItemDelegate {
-                id: ssidComboDelegate
-
-                property bool apVisible: typeof(modelData.signal) !== "undefined"
-
-                height: apVisible ? (Kirigami.Units.gridUnit * 2) + Kirigami.Units.largeSpacing : Kirigami.Units.gridUnit
-                width: parent.width
-
-                RowLayout {
-                    anchors.fill: parent
-                    Kirigami.Icon {
-                        Layout.alignment: Qt.AlignVCenter
-                        height: Kirigami.Units.iconSizes.small
-                        width: Kirigami.Units.iconSizes.small
-                        source: modelData.security === i18n("Insecure") ? "object-unlocked" : "object-locked"
-                        visible: ssidComboDelegate.apVisible
-                    }
-
-                    ColumnLayout {
-                        spacing: 0
-                        QtControls.Label {
-                            Layout.alignment: Qt.AlignLeft
-                            Layout.fillWidth: true
-                            Layout.leftMargin: apVisible ? 0 : Kirigami.Units.iconSizes.small + Kirigami.Units.smallSpacing
-                            text: ssidComboDelegate.apVisible ? i18n("%1 (%2%)", modelData.ssid, modelData.signal) : modelData.ssid
-                        }
-
-                        QtControls.Label {
-                            Layout.alignment: Qt.AlignLeft
-                            Layout.fillWidth: true
-                            text: i18n("Security: %1", modelData.security)
-                            visible: ssidComboDelegate.apVisible
-                        }
-                    }
+            RowLayout {
+                anchors.fill: parent
+                Kirigami.Icon {
+                    Layout.alignment: Qt.AlignVCenter
+                    height: Kirigami.Units.iconSizes.small
+                    width: Kirigami.Units.iconSizes.small
+                    source: modelData.security === i18n("Insecure") ? "object-unlocked" : "object-locked"
+                    visible: ssidComboDelegate.apVisible
                 }
-            }
-
-            editable: true
-            model: nmUtils.availableSsids()
-            textRole: "ssid"
-
-            onCurrentTextChanged: {
-                var currentBssid = bssidCombobox.currentText
-                bssidCombobox.model = nmUtils.availableBssids(ssidCombobox.currentText, currentBssid)
-                bssidCombobox.currentIndex = bssidCombobox.find(currentBssid)
-            }
-        }
-
-        QtControls.Label {
-            Layout.alignment: Qt.AlignRight
-
-            text: i18n("Mode:")
-        }
-
-        QtControls.ComboBox {
-            id: modeCombobox
-            Layout.fillWidth: true
-
-            model: [i18n("Infrastructure"), i18n("Ad-hoc"), i18n("Access Point")]
-        }
-
-        QtControls.Label {
-            Layout.alignment: Qt.AlignRight
-
-            opacity: visible ? 1 : 0
-            visible: !modeCombobox.currentIndex && expertModeCheckbox.checked
-            text: i18n("BSSID:")
-        }
-
-        QtControls.ComboBox {
-            id: bssidCombobox
-            Layout.fillWidth: true
-
-            delegate: QtControls.ItemDelegate {
-                id: bssidComboDelegate
-
-                property bool apVisible: typeof(modelData.signal) !== "undefined"
-
-                height: apVisible ? (Kirigami.Units.gridUnit * 3) + Kirigami.Units.largeSpacing : Kirigami.Units.gridUnit
-                width: parent.width
 
                 ColumnLayout {
-                    anchors.fill: parent
                     spacing: 0
-
                     QtControls.Label {
                         Layout.alignment: Qt.AlignLeft
                         Layout.fillWidth: true
-                        text: bssidComboDelegate.apVisible ? i18n("%1 (%2%)", modelData.bssid, modelData.signal) : modelData.bssid
+                        Layout.leftMargin: apVisible ? 0 : Kirigami.Units.iconSizes.small + Kirigami.Units.smallSpacing
+                        text: ssidComboDelegate.apVisible ? i18n("%1 (%2%)", modelData.ssid, modelData.signal) : modelData.ssid
                     }
 
                     QtControls.Label {
                         Layout.alignment: Qt.AlignLeft
                         Layout.fillWidth: true
-                        text: i18n("Frequency: %1", modelData.frequency)
-                        visible: bssidComboDelegate.apVisible
-                    }
-
-                    QtControls.Label {
-                        Layout.alignment: Qt.AlignLeft
-                        Layout.fillWidth: true
-                        text: i18n("Channel: %1", modelData.channel)
-                        visible: bssidComboDelegate.apVisible
+                        text: i18n("Security: %1", modelData.security)
+                        visible: ssidComboDelegate.apVisible
                     }
                 }
             }
-
-            model: nmUtils.availableBssids(ssidCombobox.currentText)
-            editable: true
-            opacity: visible ? 1 : 0
-            visible: !modeCombobox.currentIndex && expertModeCheckbox.checked
-            textRole: "bssid"
-            validator: RegExpValidator { regExp: /([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}/ }
         }
 
-        QtControls.Label {
-            Layout.alignment: Qt.AlignRight
+        editable: true
+        model: nmUtils.availableSsids()
+        textRole: "ssid"
 
-            opacity: visible ? 1 : 0
-            visible: modeCombobox.currentIndex && expertModeCheckbox.checked
-            text: i18n("Band:")
+        onCurrentTextChanged: {
+            var currentBssid = bssidCombobox.currentText
+            bssidCombobox.model = nmUtils.availableBssids(ssidCombobox.currentText, currentBssid)
+            bssidCombobox.currentIndex = bssidCombobox.find(currentBssid)
         }
+    }
 
-        QtControls.ComboBox {
-            id: bandCombobox
-            Layout.fillWidth: true
+    QtControls.ComboBox {
+        id: modeCombobox
+        Kirigami.FormData.label: i18n("Mode:")
 
-            model: [i18n("Automatic"), i18n("A (5 GHz)"), i18n("B/G (2.4 GHz)")]
-            opacity: visible ? 1 : 0
-            visible: modeCombobox.currentIndex && expertModeCheckbox.checked
-        }
+        model: [i18n("Infrastructure"), i18n("Ad-hoc"), i18n("Access Point")]
+    }
 
-        QtControls.Label {
-            Layout.alignment: Qt.AlignRight
+    QtControls.ComboBox {
+        id: bssidCombobox
+        Kirigami.FormData.label: i18n("Mode:")
 
-            opacity: visible ? 1 : 0
-            visible: modeCombobox.currentIndex && expertModeCheckbox.checked
-            text: i18n("Channel:")
-        }
+        delegate: QtControls.ItemDelegate {
+            id: bssidComboDelegate
 
-        QtControls.ComboBox {
-            id: channelCombobox
-            Layout.fillWidth: true
+            property bool apVisible: typeof(modelData.signal) !== "undefined"
 
-            enabled: bandCombobox.currentIndex
-            model: nmUtils.wirelessChannels(bandCombobox.currentIndex)
-            opacity: visible ? 1 : 0
-            visible: modeCombobox.currentIndex && expertModeCheckbox.checked
-        }
+            height: apVisible ? (Kirigami.Units.gridUnit * 3) + Kirigami.Units.largeSpacing : Kirigami.Units.gridUnit
+            width: parent.width
 
-        QtControls.Label {
-            Layout.alignment: Qt.AlignRight
-            text: i18n("Restrict to device:")
-            visible: expertModeCheckbox.checked
-        }
-
-        QtControls.ComboBox {
-            id: restrictToDeviceCombobox
-            Layout.fillWidth: true
-
-            delegate: QtControls.ItemDelegate {
-                height: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing
-                width: parent.width
+            ColumnLayout {
+                anchors.fill: parent
+                spacing: 0
 
                 QtControls.Label {
-                    id: label
-                    anchors {
-                        left: parent.left
-                        leftMargin: Kirigami.Units.smallSpacing
-                        verticalCenter: parent.verticalCenter
-                    }
-                    text: typeof(modelData.device) !==  "undefined" ? i18n("%1 (%2)", modelData.device, modelData.mac) : modelData.mac
+                    Layout.alignment: Qt.AlignLeft
+                    Layout.fillWidth: true
+                    text: bssidComboDelegate.apVisible ? i18n("%1 (%2%)", modelData.bssid, modelData.signal) : modelData.bssid
+                }
+
+                QtControls.Label {
+                    Layout.alignment: Qt.AlignLeft
+                    Layout.fillWidth: true
+                    text: i18n("Frequency: %1", modelData.frequency)
+                    visible: bssidComboDelegate.apVisible
+                }
+
+                QtControls.Label {
+                    Layout.alignment: Qt.AlignLeft
+                    Layout.fillWidth: true
+                    text: i18n("Channel: %1", modelData.channel)
+                    visible: bssidComboDelegate.apVisible
                 }
             }
-
-            editable: true
-            model: nmUtils.deviceHwAddresses(2) // Wireless device enum is NM_DEVICE_TYPE_WIFI which is 2
-            validator: RegExpValidator { regExp: /([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}/ }
-            textRole: "mac"
-            visible: expertModeCheckbox.checked
         }
 
-        QtControls.Label {
-            Layout.alignment: Qt.AlignRight
-            text: i18n("Cloned MAC address:")
-            visible: expertModeCheckbox.checked
+        model: nmUtils.availableBssids(ssidCombobox.currentText)
+        editable: true
+        opacity: visible ? 1 : 0
+        visible: !modeCombobox.currentIndex && expertModeCheckbox.checked
+        textRole: "bssid"
+        validator: RegExpValidator { regExp: /([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}/ }
+    }
+
+    QtControls.ComboBox {
+        id: bandCombobox
+        Kirigami.FormData.label: i18n("Band:")
+        Layout.fillWidth: true
+
+        model: [i18n("Automatic"), i18n("A (5 GHz)"), i18n("B/G (2.4 GHz)")]
+        opacity: visible ? 1 : 0
+        visible: modeCombobox.currentIndex && expertModeCheckbox.checked
+    }
+
+    QtControls.ComboBox {
+        id: channelCombobox
+        Kirigami.FormData.label: i18n("Channel:")
+
+        enabled: bandCombobox.currentIndex
+        model: nmUtils.wirelessChannels(bandCombobox.currentIndex)
+        opacity: visible ? 1 : 0
+        visible: modeCombobox.currentIndex && expertModeCheckbox.checked
+    }
+
+    QtControls.ComboBox {
+        id: restrictToDeviceCombobox
+        Kirigami.FormData.label: i18n("Restrict to device:")
+
+        delegate: QtControls.ItemDelegate {
+            height: Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing
+            width: parent.width
+
+            QtControls.Label {
+                id: label
+                anchors {
+                    left: parent.left
+                    leftMargin: Kirigami.Units.smallSpacing
+                    verticalCenter: parent.verticalCenter
+                }
+                text: typeof(modelData.device) !==  "undefined" ? i18n("%1 (%2)", modelData.device, modelData.mac) : modelData.mac
+            }
         }
 
-        QtControls.ComboBox {
-            id: assignedMacAddressCombobox
-            Layout.fillWidth: true
+        editable: true
+        model: nmUtils.deviceHwAddresses(2) // Wireless device enum is NM_DEVICE_TYPE_WIFI which is 2
+        validator: RegExpValidator { regExp: /([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}/ }
+        textRole: "mac"
+        visible: expertModeCheckbox.checked
+    }
 
-            editable: true
-            model: ["", i18n("Preserve"), i18n("Permanent"), i18n("Random"), i18n("Stable")]
-            validator: RegExpValidator { regExp: /(([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2})|Preserve|Permanent|Random|Stable/ }
-            visible: expertModeCheckbox.checked
-        }
+    QtControls.ComboBox {
+        id: assignedMacAddressCombobox
+        Kirigami.FormData.label: i18n("Cloned MAC address:")
 
-        QtControls.Label {
-            Layout.alignment: Qt.AlignRight
-            text: i18n("MTU:")
-            visible: expertModeCheckbox.checked
-        }
+        editable: true
+        model: ["", i18n("Preserve"), i18n("Permanent"), i18n("Random"), i18n("Stable")]
+        validator: RegExpValidator { regExp: /(([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2})|Preserve|Permanent|Random|Stable/ }
+        visible: expertModeCheckbox.checked
+    }
 
-        QtControls.SpinBox {
-            id: mtuSpinBox
-            Layout.fillWidth: true
+    QtControls.SpinBox {
+        id: mtuSpinBox
+        Kirigami.FormData.label: i18n("MTU:")
 
-            from: 0
-            value: 0
-            to: 1000
-            valueFromText: function(text, locale) { return text === "Automatic" ? 0 : Number.fromLocaleString(locale, text); }
-            textFromValue: function(value, locale) { return value ? Number(value).toLocaleString(locale, 'f', 0) : i18n("Automatic")}
-            visible: expertModeCheckbox.checked
-        }
+        from: 0
+        value: 0
+        to: 1000
+        valueFromText: function(text, locale) { return text === "Automatic" ? 0 : Number.fromLocaleString(locale, text); }
+        textFromValue: function(value, locale) { return value ? Number(value).toLocaleString(locale, 'f', 0) : i18n("Automatic")}
+        visible: expertModeCheckbox.checked
+    }
 
-        QtControls.Label {
-            Layout.alignment: Qt.AlignRight
-            text: i18n("Visibility:")
-        }
-
-        QtControls.CheckBox {
-            id: visibilityCheckbox
-            Layout.fillWidth: true
-            text: i18n("Hidden network")
-        }
+    QtControls.CheckBox {
+        id: visibilityCheckbox
+        Kirigami.FormData.label: i18n("Visibility:")
+        text: i18n("Hidden network")
     }
 
     function loadSettings() {

@@ -331,7 +331,7 @@ PlasmaComponents.ListItem {
                 // cycle upload color by 180 degrees
                 var uploadColor = Qt.hsva((downloadColor.hsvHue + 0.5) % 1, downloadColor.hsvSaturation, downloadColor.hsvValue, downloadColor.a)
 
-                return i18n("Connected, <font color='%1'>⬇</font> %2, <font color='%3'>⬆</font> %4",
+                return i18n("Connected, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s",
                             downloadColor,
                             KCoreAddons.Format.formatByteSize(rxBytes),
                             uploadColor,

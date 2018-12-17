@@ -473,7 +473,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
                 if (value == QString::fromUtf8(FORMCHOICE(sopt, i)->name)) {
                     cmb->setCurrentIndex(i);
 #if !OPENCONNECT_CHECK_VER(8,0)
-                    if (protocol == QLatin1String("nc") && sopt == AUTHGROUP_OPT(form) && i != AUTHGROUP_SELECTION(form)) {
+                    if (protocol != QLatin1String("nc") && sopt == AUTHGROUP_OPT(form) && i != AUTHGROUP_SELECTION(form)) {
 #else
                     if (sopt == AUTHGROUP_OPT(form) && i != AUTHGROUP_SELECTION(form)) {
 #endif

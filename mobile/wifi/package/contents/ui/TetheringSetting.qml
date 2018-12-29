@@ -177,7 +177,7 @@ Kirigami.ScrollablePage {
     }
 
     Component.onCompleted: {
-        hotSpotStatus.text = i18n("HotSpot is inactive")
+        hotSpotStatus.text = i18n("Hotspot is inactive")
         checkTethering()
     }
 
@@ -214,7 +214,7 @@ Kirigami.ScrollablePage {
     function disableTethering(){
         if (connectPath !== "") {
             handler.deactivateConnection(connectPath,devicePath)
-            hotSpotStatus.text = i18n("HotSpot is inactive")
+            hotSpotStatus.text = i18n("Hotspot is inactive")
             hotSpotStatusIcon.source = "network-wireless-disconnected"
         }
     }

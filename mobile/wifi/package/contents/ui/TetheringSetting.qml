@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
             Kirigami.Separator {}
             Controls.Label {
                 anchors.leftMargin: Kirigami.Units.largeSpacing * 2
-                text: "Wi-fi hotspot"
+                text: i18n("Wi-fi hotspot")
                 Layout.fillWidth:  true
                 font.weight: Font.Bold
             }

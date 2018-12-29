@@ -149,7 +149,7 @@ Kirigami.ScrollablePage {
                 securityType: PlasmaNM.Enums.Wpa2Psk
             }
             Controls.Button {
-                text: i18n("Save Hospot configuration")
+                text: i18n("Save Hotspot configuration")
                 enabled: name && (!hotSpotConfigSecurity.checked || (hotSpotConfigSecurity.checked && hotSpotConfigPassword.acceptableInput))
                 onPressed: {
                     saveSettings()

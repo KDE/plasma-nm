@@ -37,8 +37,14 @@ FortisslvpnAuthDialog::FortisslvpnAuthDialog(const NetworkManager::VpnSetting::P
     , d_ptr(new FortisslvpnAuthDialogPrivate)
 {
     Q_D(FortisslvpnAuthDialog);
+
+    const NMStringMap data = d->setting->data();
+
     d->ui.setupUi(this);
     d->setting = setting;
+
+    const NetworkManager::Setting::SecretFlags otpFlag = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_OTP"-flags").toInt());
+    d->ui.otpFrame->setVisible(otpFlag == NetworkManager::Setting::NotSaved);
 
     KAcceleratorManager::manage(this);
 }
@@ -52,11 +58,19 @@ QVariantMap FortisslvpnAuthDialog::setting() const
 {
     Q_D(const FortisslvpnAuthDialog);
 
+    const NMStringMap data = d->setting->data();
     NMStringMap secrets;
     QVariantMap secretData;
 
     if (!d->ui.password->text().isEmpty()) {
         secrets.insert(QLatin1String(NM_FORTISSLVPN_KEY_PASSWORD), d->ui.password->text());
+    }
+
+    if (!data.value(NM_FORTISSLVPN_KEY_OTP"-flags").isEmpty()) {
+        const NetworkManager::Setting::SecretFlags otpFlag = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_OTP"-flags").toInt());
+        if (otpFlag == NetworkManager::Setting::NotSaved && !d->ui.otp->text().isEmpty()) {
+            secrets.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP), d->ui.otp->text());
+        }
     }
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));

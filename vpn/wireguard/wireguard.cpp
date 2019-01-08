@@ -350,7 +350,7 @@ bool WireGuardUiPlugin::exportConnectionSettings(const NetworkManager::Connectio
     if (dataMap.contains(QLatin1String(NM_WG_KEY_POST_DOWN)))
         interfaceGroup.writeEntry(NMV_WG_TAG_POST_DOWN, dataMap[NM_WG_KEY_POST_DOWN]);
 
-    // Do Pupblic key (required)
+    // Do Public key (required)
     peerGroup.writeEntry(NMV_WG_TAG_PUBLIC_KEY, dataMap[NM_WG_KEY_PUBLIC_KEY]);
 
     // Do Allowed IP list (Required)

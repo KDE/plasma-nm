@@ -24,7 +24,7 @@
 
 #include <KPluginFactory>
 
-K_PLUGIN_FACTORY_WITH_JSON(IodineUiPluginFactory, "plasmanetworkmanagement_iodineui.json", registerPlugin<IodineUiPlugin>(); )
+K_PLUGIN_CLASS_WITH_JSON(IodineUiPlugin, "plasmanetworkmanagement_iodineui.json")
 
 IodineUiPlugin::IodineUiPlugin(QObject *parent, const QVariantList &)
     : VpnUiPlugin(parent)

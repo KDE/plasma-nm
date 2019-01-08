@@ -39,7 +39,7 @@
 
 #include "nm-wireguard-service.h"
 
-K_PLUGIN_FACTORY_WITH_JSON(WireGuardUiPluginFactory, "plasmanetworkmanagement_wireguardui.json", registerPlugin<WireGuardUiPlugin>(); )
+K_PLUGIN_CLASS_WITH_JSON(WireGuardUiPlugin, "plasmanetworkmanagement_wireguardui.json")
 
 #define NMV_WG_TAG_INTERFACE             "Interface"
 #define NMV_WG_TAG_PRIVATE_KEY           "PrivateKey"

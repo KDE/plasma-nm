@@ -42,7 +42,7 @@
 
 #include "nm-openvpn-service.h"
 
-K_PLUGIN_FACTORY_WITH_JSON(OpenVpnUiPluginFactory, "plasmanetworkmanagement_openvpnui.json", registerPlugin<OpenVpnUiPlugin>();)
+K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.json")
 
 #define AUTH_TAG "auth"
 #define AUTH_USER_PASS_TAG "auth-user-pass"

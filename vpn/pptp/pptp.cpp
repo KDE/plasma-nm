@@ -26,7 +26,7 @@
 #include "pptpwidget.h"
 #include "pptpauth.h"
 
-K_PLUGIN_FACTORY_WITH_JSON(PptpUiPluginFactory, "plasmanetworkmanagement_pptpui.json", registerPlugin<PptpUiPlugin>();)
+K_PLUGIN_CLASS_WITH_JSON(PptpUiPlugin, "plasmanetworkmanagement_pptpui.json")
 
 PptpUiPlugin::PptpUiPlugin(QObject * parent, const QVariantList &)
     : VpnUiPlugin(parent)

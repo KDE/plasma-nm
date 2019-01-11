@@ -66,7 +66,7 @@ Item {
             top: parent.top
         }
 
-        placeholderText: i18n("Type here to search connections...")
+        placeholderText: i18n("Search...")
 
         onTextChanged: {
             editorProxyModel.setFilterRegExp(text)

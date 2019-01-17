@@ -50,6 +50,15 @@ find_package(KF5ModemManagerQt ${KF5_MIN_VERSION})
 set_package_properties(KF5ModemManagerQt PROPERTIES
                        TYPE OPTIONAL)
 
+if (BUILD_MOBILE)
+    find_package(KF5Kirigami2 ${KF5_MIN_VERSION} CONFIG)
+    set_package_properties(KF5Kirigami2 PROPERTIES
+        DESCRIPTION "A QtQuick based components set"
+        PURPOSE "Required at runtime by the mobile KCMs"
+        TYPE RUNTIME
+    )
+endif()
+
 # Required only for getting information about NetworkManager version in CMake
 find_package(NetworkManager 1.4.0)
 set_package_properties(NetworkManager PROPERTIES

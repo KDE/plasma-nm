@@ -20,7 +20,9 @@
 
 import QtQuick 2.2
 import QtQuick.Layouts 1.2
+import QtQuick.Controls 2.4 as Controls
 import org.kde.kcoreaddons 1.0 as KCoreAddons
+import org.kde.kquickcontrolsaddons 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
@@ -134,6 +136,33 @@ PlasmaComponents.ListItem {
             Layout.fillHeight: true
             Layout.fillWidth: true
             height: childrenRect.height
+        }
+    }
+
+    MouseArea {
+        acceptedButtons: Qt.RightButton
+        anchors.fill: parent
+        onPressed: {
+            contextMenu.visualParent = parent
+            contextMenu.open()
+        }
+    }
+
+    PlasmaComponents.Menu {
+        id: contextMenu
+        PlasmaComponents.MenuItem {
+            text: ItemUniqueName
+            enabled: false
+        }
+        PlasmaComponents.MenuItem {
+            text: stateChangeButton.text
+            icon: (ConnectionState == PlasmaNM.Enums.Deactivated) ? "network-connect" : "network-disconnect"
+            onClicked: changeState()
+        }
+        PlasmaComponents.MenuItem {
+            text: i18n("Configure")
+            icon: "settings-configure"
+            onClicked: KCMShell.open([mainWindow.kcm, "--args", "Uuid=" + Uuid])
         }
     }
 

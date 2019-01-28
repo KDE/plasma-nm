@@ -20,6 +20,7 @@
 
 import QtQuick 2.6
 import QtQuick.Layouts 1.2
+import QtQuick.Controls 1.4 as QQC
 import QtQuick.Controls 2.5 as QQC2
 
 import org.kde.kirigami 2.9 as Kirigami
@@ -83,38 +84,38 @@ Kirigami.AbstractListItem {
         }
     }
 
-    QQC.Menu {
-        id: connectionItemMenu
-
-        QQC.MenuItem {
-            text: ConnectionState == PlasmaNM.Enums.Deactivated ? i18n("Connect") : i18n("Disconnect")
-            visible: ItemType == 1
-            onTriggered: {
-                if (ConnectionState == PlasmaNM.Enums.Deactivated) {
-                    handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
-                } else {
-                    handler.deactivateConnection(ConnectionPath, DevicePath);
-                }
-            }
-        }
-
-        QQC.MenuItem {
-            iconName: "list-remove"
-            text: i18n("Delete");
-
-            onTriggered: {
-                aboutToRemoveConnection(Name, ConnectionPath)
-            }
-        }
-
-        QQC.MenuItem {
-            iconName: "document-export"
-            visible: KcmVpnConnectionExportable
-            text: i18n("Export");
-
-            onTriggered: aboutToExportConnection(ConnectionPath)
-        }
-    }
+//     QQC.Menu {
+//         id: connectionItemMenu
+//
+//         QQC.MenuItem {
+//             text: ConnectionState == PlasmaNM.Enums.Deactivated ? i18n("Connect") : i18n("Disconnect")
+//             visible: ItemType == 1
+//             onTriggered: {
+//                 if (ConnectionState == PlasmaNM.Enums.Deactivated) {
+//                     handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
+//                 } else {
+//                     handler.deactivateConnection(ConnectionPath, DevicePath);
+//                 }
+//             }
+//         }
+//
+//         QQC.MenuItem {
+//             iconName: "list-remove"
+//             text: i18n("Delete");
+//
+//             onTriggered: {
+//                 aboutToRemoveConnection(Name, ConnectionPath)
+//             }
+//         }
+//
+//         QQC.MenuItem {
+//             iconName: "document-export"
+//             visible: KcmVpnConnectionExportable
+//             text: i18n("Export");
+//
+//             onTriggered: aboutToExportConnection(ConnectionPath)
+//         }
+//     }
 
     onClicked: {
         if (mouse.button === Qt.LeftButton) {

@@ -1,5 +1,5 @@
 /*
-    Copyright 2018 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2019 Jan Grulich <jgrulich@redhat.com>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,41 +18,42 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_SETTING_H
-#define PLASMA_NM_SETTING_H
+#ifndef PLASMA_NM_WIRED_SETTING_H
+#define PLASMA_NM_WIRED_SETTING_H
+
+#include "setting.h"
 
 class QObject;
 
-class SettingPrivate;
+class WiredSettingPrivate;
 
-#include <NetworkManagerQt/Setting>
+#include <NetworkManagerQt/WiredSetting>
 
-class Q_DECL_EXPORT Setting : public QObject
+class WiredSetting : public Setting
 {
     Q_OBJECT
 public:
-    explicit Setting(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QObject *parent = nullptr);
-    virtual ~Setting();
+    explicit WiredSetting(const NetworkManager::Setting::Ptr &setting = NetworkManager::WiredSetting::Ptr(), QObject *parent = nullptr);
+    virtual ~WiredSetting();
 
-//     virtual void loadConfig(const NetworkManager::Setting::Ptr &setting) = 0;
-    virtual void loadSecrets(const NetworkManager::Setting::Ptr &setting);
+//     virtual void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+//     virtual void loadSecrets(const NetworkManager::Setting::Ptr &setting) = 0;
 
-    virtual QVariantMap setting() const = 0;
+    QVariantMap setting() const override;
 
-    NetworkManager::Setting::SettingType type() const;
-
-    virtual bool isValid() const;
+    bool isValid() const override;
 
 Q_SIGNALS:
-    void changed();
+    void settingChanged();
     void validityChanged(bool valid);
 
 protected:
-    SettingPrivate *d_ptr;
+    WiredSettingPrivate *d_ptr;
 
 private:
-    Q_DECLARE_PRIVATE(Setting)
+    Q_DECLARE_PRIVATE(WiredSetting)
 
 };
 
-#endif // PLASMA_NM_SETTING_H
+#endif // PLASMA_NM_WIRED_SETTING_H
+

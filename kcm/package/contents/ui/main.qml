@@ -66,7 +66,7 @@ ScrollViewKCM {
         sourceModel: connectionModel
     }
 
-    header: QtControls.TextField {
+    header: QQC2.TextField {
         id: searchField
 
         focus: true
@@ -139,17 +139,15 @@ ScrollViewKCM {
         delegate: ConnectionItemDelegate {
             width: connectionView.width
             onAboutToChangeConnection: {
-//                         // Shouldn't be problem to set this in advance
-//                         root.currentConnectionExportable = exportable
-//                         if (kcm.needsSave) {
-//                             confirmSaveDialog.connectionName = name
-//                             confirmSaveDialog.connectionPath = path
-//                             confirmSaveDialog.open()
-//                         } else {
-                    root.currentConnectionName = name
-                    root.currentConnectionPath = path
-
-//                         }
+                // Shouldn't be problem to set this in advance
+                root.currentConnectionExportable = exportable
+                if (kcm.needsSave) {
+                    confirmSaveDialog.connectionName = name
+                    confirmSaveDialog.connectionPath = path
+                    confirmSaveDialog.open()
+                } else {
+                    selectConnectionInView(name, path)
+                }
             }
 
             onAboutToExportConnection: {
@@ -167,7 +165,7 @@ ScrollViewKCM {
     footer: RowLayout {
         spacing: Kirigami.Units.largeSpacing
 
-        QtControls.CheckBox {
+        QQC2.CheckBox {
             id: expertModeCheckbox
             Layout.alignment: Qt.AlignLeft
             Layout.fillWidth: true
@@ -256,26 +254,6 @@ ScrollViewKCM {
         property string connectionName
         property string connectionPath
 
-        icon: StandardIcon.Question
-        standardButtons: StandardButton.Ok | StandardButton.Cancel
-        title: i18nc("@title:window", "Remove Connection")
-        text: i18n("Do you want to remove the connection '%1'?", connectionName)
-
-        onAccepted: {
-            if (connectionPath == connectionView.currentConnectionPath) {
-                // Deselect now non-existing connection
-                deselectConnectionsInView()
-            }
-            handler.removeConnection(connectionPath)
-        }
-    }
-
-    MessageDialog {
-        id: deleteConfirmationDialog
-
-        property string connectionName
-        property string connectionPath
-
         /* Like QString::toHtmlEscaped */
         function toHtmlEscaped(s) {
             return s.replace(/[&<>]/g, function (tag) {
@@ -293,12 +271,33 @@ ScrollViewKCM {
         text: i18n("Do you want to remove the connection '%1'?", toHtmlEscaped(connectionName))
 
         onAccepted: {
-            if (connectionPath == connectionView.currentConnectionPath) {
+            if (connectionPath == root.currentConnectionPath) {
                 // Deselect now non-existing connection
-                deselectConnections()
+                deselectConnectionsInView()
             }
             handler.removeConnection(connectionPath)
         }
+
+        onRejected: selectConnectionInView(connectionName, connectionPath)
+    }
+
+    MessageDialog {
+        id: confirmSaveDialog
+
+        property string connectionName
+        property string connectionPath
+
+        icon: StandardIcon.Question
+        standardButtons: StandardButton.Ok | StandardButton.Cancel
+        title: i18nc("@title:window", "Save Connection")
+        text: i18n("Do you want to save changes made to the connection '%1'?", root.currentConnectionName)
+
+        onAccepted: {
+            kcm.save()
+            selectConnectionInView(connectionName, connectionPath)
+        }
+
+        onRejected: selectConnectionInView(connectionName, connectionPath)
     }
 
     AddConnectionDialog {
@@ -333,11 +332,11 @@ ScrollViewKCM {
     }
 
     function deselectConnectionsInView() {
-        connectionView.currentConnectionPath = ""
+        root.currentConnectionPath = ""
     }
 
     function selectConnectionInView(connectionName, connectionPath) {
-        connectionView.currentConnectionName = connectionName
-        connectionView.currentConnectionPath = connectionPath
+        root.currentConnectionName = connectionName
+        root.currentConnectionPath = connectionPath
     }
 }

@@ -32,6 +32,10 @@ Setting::~Setting()
     delete d_ptr;
 }
 
+void Setting::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+}
+
 NetworkManager::Setting::SettingType Setting::type() const
 {
     Q_D(const Setting);

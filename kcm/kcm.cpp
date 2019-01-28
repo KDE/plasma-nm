@@ -105,12 +105,12 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const QVariantList &
 //     m_ui->connectionView->rootContext()->setContextProperty("useApMode", useApMode);
 
     m_connectionSettings = new ConnectionSettings(this);
-//     connect(m_connectionSetting, &ConnectionSetting::settingChanged,
-//             [this] () {
-//                 if (m_connectionSetting->isInitialized() && m_connectionSetting->isValid()) {
-//                     setNeedsSave(true);
-//                 }
-//             });
+    connect(m_connectionSettings, &ConnectionSettings::settingChanged,
+            [this] () {
+                if (m_connectionSettings->isInitialized() && m_connectionSettings->isValid()) {
+                    setNeedsSave(true);
+                }
+            });
     connect(m_connectionSettings, &ConnectionSettings::validityChanged,
             [this] (bool valid) {
                 if (m_connectionSettings->isInitialized()) {
@@ -229,7 +229,7 @@ void KCMNetworkmanagement::load()
     if (connection) {
         NetworkManager::ConnectionSettings::Ptr connectionSettings = connection->settings();
         // Re-load the connection again to load stored values
-        m_connectionSettings->loadConfig(connectionSettings);
+        m_connectionSettings->loadConfig(connectionSettings->toMap());
     }
 
     KQuickAddons::ConfigModule::load();
@@ -237,11 +237,11 @@ void KCMNetworkmanagement::load()
 
 void KCMNetworkmanagement::save()
 {
-//     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_currentConnectionPath);
-//
-//     if (connection) {
-//         m_handler->updateConnection(connection, m_connectionSettings->setting());
-//     }
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_currentConnectionPath);
+
+    if (connection) {
+        m_handler->updateConnection(connection, m_connectionSettings->settingMap());
+    }
 
     KQuickAddons::ConfigModule::save();
 }
@@ -256,7 +256,7 @@ void KCMNetworkmanagement::onConnectionAdded(const QString &connection)
     if (newConnection) {
         NetworkManager::ConnectionSettings::Ptr connectionSettings = newConnection->settings();
         if (connectionSettings && connectionSettings->uuid() == m_createdConnectionUuid) {
-            loadConnectionSettings(connectionSettings);
+            loadConnectionSettings(connectionSettings->toMap());
             QMetaObject::invokeMethod(mainUi(), "selectConnectionInView", Q_ARG(QVariant, connectionSettings->id()), Q_ARG(QVariant, newConnection->path()));
             m_createdConnectionUuid.clear();
         }
@@ -275,7 +275,7 @@ void KCMNetworkmanagement::selectConnection(const QString &connectionPath)
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_currentConnectionPath);
     if (connection) {
         NetworkManager::ConnectionSettings::Ptr connectionSettings = connection->settings();
-        loadConnectionSettings(connectionSettings);
+        loadConnectionSettings(connectionSettings->toMap());
     }
 }
 
@@ -455,7 +455,7 @@ void KCMNetworkmanagement::addConnection(const NetworkManager::ConnectionSetting
 //     editor->show();
 }
 
-void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr& connectionSettings)
+void KCMNetworkmanagement::loadConnectionSettings(const NMVariantMapMap &connectionSettings)
 {
     m_connectionSettings->loadConfig(connectionSettings);
 

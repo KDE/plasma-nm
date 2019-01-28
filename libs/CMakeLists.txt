@@ -12,6 +12,7 @@ add_library(plasmanm_internal SHARED ${plasmanm_internal_SRCS})
 target_link_libraries(plasmanm_internal
 PUBLIC
     KF5::NetworkManagerQt
+    ${NETWORKMANAGER_LIBRARIES}
 PRIVATE
     KF5::ConfigCore
     KF5::CoreAddons

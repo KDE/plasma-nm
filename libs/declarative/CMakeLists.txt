@@ -27,8 +27,9 @@ add_library(plasmanm_qmlplugins SHARED ${plasmanm_qml_plugins_SRCS})
 target_link_libraries(plasmanm_qmlplugins
     plasmanm_internal
     Qt5::Quick
-    KF5::NetworkManagerQt
     KF5::I18n
+    KF5::NetworkManagerQt
+    KF5::Service
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)

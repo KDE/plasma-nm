@@ -48,11 +48,13 @@ WirelessSetting::~WirelessSetting()
 // void WirelessSetting::loadConfig(const NetworkManager::Setting::Ptr &setting)
 // {
 // }
-//
-// QVariantMap WirelessSetting::setting() const
-// {
-//     return QVariantMap();
-// }
+
+QVariantMap WirelessSetting::setting() const
+{
+    Q_D(const WirelessSetting);
+
+    return d->wirelessSetting->toMap();
+}
 
 QString WirelessSetting::ssid() const
 {
@@ -66,6 +68,8 @@ void WirelessSetting::setSsid(const QString &ssid)
     Q_D(WirelessSetting);
 
     d->wirelessSetting->setSsid(ssid.toUtf8());
+
+    Q_EMIT settingChanged();
 }
 
 uint WirelessSetting::mode() const
@@ -80,6 +84,8 @@ void WirelessSetting::setMode(uint mode)
     Q_D(WirelessSetting);
 
     d->wirelessSetting->setMode((NetworkManager::WirelessSetting::NetworkMode) mode);
+
+    Q_EMIT settingChanged();
 }
 
 QString WirelessSetting::bssid() const
@@ -94,6 +100,8 @@ void WirelessSetting::setBssid(const QString &bssid)
     Q_D(WirelessSetting);
 
     d->wirelessSetting->setBssid(bssid.toUtf8());
+
+    Q_EMIT settingChanged();
 }
 
 uint WirelessSetting::band() const
@@ -108,6 +116,8 @@ void WirelessSetting::setBand(uint band)
     Q_D(WirelessSetting);
 
     d->wirelessSetting->setBand((NetworkManager::WirelessSetting::FrequencyBand) band);
+
+    Q_EMIT settingChanged();
 }
 
 uint WirelessSetting::channel() const
@@ -122,6 +132,8 @@ void WirelessSetting::setChannel(uint channel)
     Q_D(WirelessSetting);
 
     d->wirelessSetting->setChannel(channel);
+
+    Q_EMIT settingChanged();
 }
 
 QString WirelessSetting::macAddress() const
@@ -136,6 +148,8 @@ void WirelessSetting::setMacAddress(const QString &macAddress)
     Q_D(WirelessSetting);
 
     d->wirelessSetting->setMacAddress(NetworkManager::macAddressFromString(macAddress));
+
+    Q_EMIT settingChanged();
 }
 
 QString WirelessSetting::assignedMacAddress() const
@@ -150,6 +164,8 @@ void WirelessSetting::setAssignedMacAddress(const QString &assignedMacAddress)
     Q_D(WirelessSetting);
 
     d->wirelessSetting->setAssignedMacAddress(assignedMacAddress);
+
+    Q_EMIT settingChanged();
 }
 
 uint WirelessSetting::mtu() const
@@ -164,6 +180,8 @@ void WirelessSetting::setMtu(uint mtu)
     Q_D(WirelessSetting);
 
     d->wirelessSetting->setMtu(mtu);
+
+    Q_EMIT settingChanged();
 }
 
 bool WirelessSetting::hidden() const
@@ -178,9 +196,13 @@ void WirelessSetting::setHidden(bool hidden)
     Q_D(WirelessSetting);
 
     d->wirelessSetting->setHidden(hidden);
+
+    Q_EMIT settingChanged();
 }
 
 bool WirelessSetting::isValid() const
 {
-    return true;
+    Q_D(const WirelessSetting);
+
+    return !d->wirelessSetting->ssid().isEmpty();
 }

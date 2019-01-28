@@ -48,7 +48,7 @@ public:
 //     virtual void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
 //     virtual void loadSecrets(const NetworkManager::Setting::Ptr &setting) = 0;
 
-//     virtual QVariantMap setting() const override;
+    QVariantMap setting() const override;
 
     QString ssid() const;
     void setSsid(const QString &ssid);
@@ -80,7 +80,7 @@ public:
     bool isValid() const override;
 
 Q_SIGNALS:
-    void changed();
+    void settingChanged();
     void validityChanged(bool valid);
 
 protected:

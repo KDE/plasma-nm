@@ -55,7 +55,7 @@ private Q_SLOTS:
 private:
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void importVpn();
-    void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
+    void loadConnectionSettings(const NMVariantMapMap &connectionSettings);
     void resetSelection();
 
     QString m_currentConnectionPath;

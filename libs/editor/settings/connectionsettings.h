@@ -44,11 +44,11 @@ class Q_DECL_EXPORT ConnectionSettings : public QObject
     Q_PROPERTY(int metered READ metered WRITE setMetered)
 public:
     explicit ConnectionSettings(QObject *parent = nullptr);
-    ConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &settings = NetworkManager::ConnectionSettings::Ptr(), QObject *parent = nullptr);
+    ConnectionSettings(const NMVariantMapMap &settings, QObject *parent = nullptr);
 
     virtual ~ConnectionSettings();
 
-    void loadConfig(const NetworkManager::ConnectionSettings::Ptr &settings);
+    void loadConfig(const NMVariantMapMap &settings);
     NMVariantMapMap settingMap() const;
 
     QString id() const;
@@ -89,6 +89,8 @@ Q_SIGNALS:
     // The default value is supposed to be false, watch this property for validity change after
     // proper initialization with secrets
     void validityChanged(bool valid);
+
+    void settingChanged();
 
 private Q_SLOTS:
     void onValidityChanged(bool valid);

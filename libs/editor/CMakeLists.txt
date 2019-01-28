@@ -5,8 +5,12 @@ set(plasmanm_editor_SRCS
     ../debug.cpp
 
     settings/connectionsettings.cpp
+    settings/ipv4setting.cpp
+    settings/ipv6setting.cpp
     settings/setting.cpp
+    settings/wiredsetting.cpp
     settings/wirelesssetting.cpp
+    settings/wirelesssecuritysetting.cpp
 
     widgets/passwordfield.cpp
     widgets/settingwidget.cpp
@@ -38,11 +42,11 @@ PRIVATE
     KF5::I18n
     KF5::IconThemes
     KF5::KIOFileWidgets
+    KF5::Notifications
     KF5::Solid
     KF5::Wallet
     plasmanm_internal
 #     KF5::Declarative
-#     KF5::Notifications
 #     qca-qt5
 )
 

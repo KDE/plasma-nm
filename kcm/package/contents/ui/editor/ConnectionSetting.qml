@@ -112,6 +112,12 @@ Kirigami.FormLayout {
         }
     }
 
+    QtControls.ComboBox {
+        id: connectionMeteredCombobox
+        Kirigami.FormData.label: i18n("Connection metered:")
+        model: [ i18n("Auto"), i18n("Yes"), i18n("No") ]
+        visible: expertModeCheckbox.checked
+    }
 
     function loadSettings() {
         if (connectionSettingsObject.connectionType == PlasmaNM.Enums.Vpn) {
@@ -140,5 +146,7 @@ Kirigami.FormLayout {
         } else {
             autoconnectVpnCheckbox.checked = false
         }
+
+        connectionMeteredCombobox.currentIndex = connectionSettingsObject.metered
     }
 }

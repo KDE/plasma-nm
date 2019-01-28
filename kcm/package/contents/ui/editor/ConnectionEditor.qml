@@ -35,7 +35,6 @@ SimpleKCM {
         id: nmUtils
     }
 
-
     ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
 

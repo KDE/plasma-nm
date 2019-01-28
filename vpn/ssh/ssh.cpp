@@ -24,7 +24,7 @@
 
 #include <KPluginFactory>
 
-K_PLUGIN_FACTORY_WITH_JSON(SshUiPluginFactory, "plasmanetworkmanagement_sshui.json", registerPlugin<SshUiPlugin>();)
+K_PLUGIN_CLASS_WITH_JSON(SshUiPlugin, "plasmanetworkmanagement_sshui.json")
 
 SshUiPlugin::SshUiPlugin(QObject * parent, const QVariantList &)
     : VpnUiPlugin(parent)

@@ -19,7 +19,7 @@
 */
 
 #include "wireguardadvancedwidget.h"
-#include <QtWidgets/QPushButton>
+#include <QPushButton>
 #include <KColorScheme>
 #include "ui_wireguardadvanced.h"
 #include "nm-wireguard-service.h"

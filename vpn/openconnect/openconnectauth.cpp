@@ -466,16 +466,27 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
         } else if (opt->type == OC_FORM_OPT_SELECT) {
             QComboBox *cmb = new QComboBox(this);
             struct oc_form_opt_select *sopt = reinterpret_cast<oc_form_opt_select *>(opt);
+#if !OPENCONNECT_CHECK_VER(8,0)
+            const QString protocol = d->setting->data()[NM_OPENCONNECT_KEY_PROTOCOL];
+#endif
             for (int i = 0; i < sopt->nr_choices; i++) {
                 cmb->addItem(QString::fromUtf8(FORMCHOICE(sopt, i)->label), QString::fromUtf8(FORMCHOICE(sopt, i)->name));
                 if (value == QString::fromUtf8(FORMCHOICE(sopt, i)->name)) {
                     cmb->setCurrentIndex(i);
+#if !OPENCONNECT_CHECK_VER(8,0)
+                    if (protocol != QLatin1String("nc") && sopt == AUTHGROUP_OPT(form) && i != AUTHGROUP_SELECTION(form)) {
+#else
                     if (sopt == AUTHGROUP_OPT(form) && i != AUTHGROUP_SELECTION(form)) {
+#endif
                         QTimer::singleShot(0, this, &OpenconnectAuthWidget::formGroupChanged);
                     }
                 }
             }
+#if !OPENCONNECT_CHECK_VER(8,0)
+            if (protocol != QLatin1String("nc") && sopt == AUTHGROUP_OPT(form)) {
+#else
             if (sopt == AUTHGROUP_OPT(form)) {
+#endif
                 connect(cmb, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::formGroupChanged);
             }
             widget = qobject_cast<QWidget*>(cmb);

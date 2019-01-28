@@ -25,7 +25,7 @@
 #include "openswanwidget.h"
 #include "openswanauth.h"
 
-K_PLUGIN_FACTORY_WITH_JSON(OpenswanUiPluginFactory, "plasmanetworkmanagement_openswanui.json", registerPlugin<OpenswanUiPlugin>(); )
+K_PLUGIN_CLASS_WITH_JSON(OpenswanUiPlugin, "plasmanetworkmanagement_openswanui.json")
 
 OpenswanUiPlugin::OpenswanUiPlugin(QObject * parent, const QVariantList &)
     : VpnUiPlugin(parent)

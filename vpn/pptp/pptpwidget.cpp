@@ -217,7 +217,7 @@ QVariantMap PptpSettingWidget::setting() const
 
     // Advanced dialog settings
 
-    // Authenfication options
+    // Authentication options
     QListWidgetItem * item = nullptr;
     item = d->advUi.listWidget->item(0); // PAP
     const QString yesString = QLatin1String("yes");

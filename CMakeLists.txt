@@ -2,11 +2,11 @@ cmake_minimum_required(VERSION 3.0)
 
 project(plasma-networkmanagement)
 
-set(PROJECT_VERSION "5.14.80")
+set(PROJECT_VERSION "5.15.80")
 set(PROJECT_VERSION_MAJOR 5)
 
 set(QT_MIN_VERSION "5.11.0")
-set(KF5_MIN_VERSION "5.50.0")
+set(KF5_MIN_VERSION "5.54.0")
 
 ################# set KDE specific information #################
 
@@ -49,6 +49,15 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
 find_package(KF5ModemManagerQt ${KF5_MIN_VERSION})
 set_package_properties(KF5ModemManagerQt PROPERTIES
                        TYPE OPTIONAL)
+
+if (BUILD_MOBILE)
+    find_package(KF5Kirigami2 ${KF5_MIN_VERSION} CONFIG)
+    set_package_properties(KF5Kirigami2 PROPERTIES
+        DESCRIPTION "A QtQuick based components set"
+        PURPOSE "Required at runtime by the mobile KCMs"
+        TYPE RUNTIME
+    )
+endif()
 
 # Required only for getting information about NetworkManager version in CMake
 find_package(NetworkManager 1.4.0)

@@ -33,7 +33,7 @@
 #include <ModemManagerQt/ModemDevice>
 #endif
 
-K_PLUGIN_FACTORY_WITH_JSON(MobileBroadbandSettingsFactory, "mobilebroadbandsettings.json", registerPlugin<MobileBroadbandSettings>();)
+K_PLUGIN_CLASS_WITH_JSON(MobileBroadbandSettings, "mobilebroadbandsettings.json")
 
 MobileBroadbandSettings::MobileBroadbandSettings(QObject* parent, const QVariantList& args) : KQuickAddons::ConfigModule(parent, args)
 {

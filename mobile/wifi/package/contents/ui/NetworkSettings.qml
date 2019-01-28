@@ -37,7 +37,7 @@ Kirigami.ScrollablePage{
             Controls.Label {
                 id: detailsName
                 anchors.leftMargin: Kirigami.Units.largeSpacing * 2
-                text: "Connection Name"
+                text: i18n("Connection Name")
                 font.weight: Font.Bold
             }
         }

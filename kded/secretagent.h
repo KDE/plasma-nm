@@ -91,7 +91,7 @@ private:
      * @brief processGetSecrets requests
      * @param request the request we are processing
      * @param ignoreWallet true if the code should avoid Wallet
-     * nomally if it failed to open
+     * normally if it failed to open
      * @return true if the item was processed
      */
     bool processGetSecrets(SecretsRequest &request) const;

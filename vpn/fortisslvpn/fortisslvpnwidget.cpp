@@ -130,6 +130,12 @@ void FortisslvpnWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         d->advUi.trustedCert->setText(trustedCert);
     }
 
+    if (!data.value(NM_FORTISSLVPN_KEY_OTP"-flags").isEmpty()) {
+        const NetworkManager::Setting::SecretFlags otpFlag = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_OTP"-flags").toInt());
+        if (otpFlag & NetworkManager::Setting::NotSaved) {
+            d->advUi.otp->setChecked(true);
+        }
+    }
     loadSecrets(setting);
 }
 
@@ -191,6 +197,10 @@ QVariantMap FortisslvpnWidget::setting() const
     // From advanced
     if (!d->advUi.trustedCert->text().isEmpty()) {
         data.insert(NM_FORTISSLVPN_KEY_TRUSTED_CERT, d->advUi.trustedCert->text());
+    }
+
+    if (d->advUi.otp->isChecked()) {
+        data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP"-flags"), QString::number(NetworkManager::Setting::NotSaved));
     }
 
     setting.setData(data);

@@ -353,7 +353,7 @@ void ConnectionIcon::setIcons()
 
     /* Fallback: If we still don't have an active connection with default route or the default route goes through a connection
                  of generic type (some type of VPNs) we need to go through all other active connections and pick the one with
-                 hightest probability of being the main one (order is: vpn, wired, wireless, gsm, cdma, bluetooth) */
+                 highest probability of being the main one (order is: vpn, wired, wireless, gsm, cdma, bluetooth) */
 #if NM_CHECK_VERSION(1, 2, 0)
     if ((!connection && !NetworkManager::activeConnections().isEmpty()) || (connection && connection->type() == NetworkManager::ConnectionSettings::Generic)
                                                                         || (connection && connection->type() == NetworkManager::ConnectionSettings::Tun)) {

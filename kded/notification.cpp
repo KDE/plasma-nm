@@ -402,7 +402,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         });
 
         if (foundConnection != m_activeConnectionsBeforeSleep.constEnd()) {
-            qCDebug(PLASMA_NM) << "Not emitting conection activated notification as the connection was active prior to suspend";
+            qCDebug(PLASMA_NM) << "Not emitting connection activated notification as the connection was active prior to suspend";
             return;
         }
 

@@ -24,7 +24,7 @@
 
 #include <KPluginFactory>
 
-K_PLUGIN_FACTORY_WITH_JSON(FortisslvpnUiPluginFactory, "plasmanetworkmanagement_fortisslvpnui.json", registerPlugin<FortisslvpnUiPlugin>(); )
+K_PLUGIN_CLASS_WITH_JSON(FortisslvpnUiPlugin, "plasmanetworkmanagement_fortisslvpnui.json")
 
 FortisslvpnUiPlugin::FortisslvpnUiPlugin(QObject *parent, const QVariantList &)
     : VpnUiPlugin(parent)

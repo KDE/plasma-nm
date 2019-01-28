@@ -460,7 +460,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
                 notification->setTitle(i18n("Failed to remove %1", watcher->property("connection").toString()));
                 break;
             case Handler::RequestScan:
-                /* INFO: Disabled for now as wifi scanning is now automatical
+                /* INFO: Disabled for now as wifi scanning is now automatic
                     notification = new KNotification("FailedToRequestScan", KNotification::CloseOnTimeout, this);
                     notification->setTitle(i18n("Failed to request scan"));
                 */

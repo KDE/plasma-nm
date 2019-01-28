@@ -36,6 +36,7 @@ ListValidator::~ListValidator()
 QValidator::State ListValidator::validate(QString &text, int &pos) const
 {
     Q_ASSERT(inner);
+    Q_UNUSED(pos);
 
     QStringList strings = text.split(QLatin1Char(','));
     int unusedPos;

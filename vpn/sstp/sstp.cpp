@@ -24,7 +24,7 @@
 
 #include <KPluginFactory>
 
-K_PLUGIN_FACTORY_WITH_JSON(SstpUiPluginFactory, "plasmanetworkmanagement_sstpui.json", registerPlugin<SstpUiPlugin>();)
+K_PLUGIN_CLASS_WITH_JSON(SstpUiPlugin, "plasmanetworkmanagement_sstpui.json")
 
 SstpUiPlugin::SstpUiPlugin(QObject *parent, const QVariantList &)
     : VpnUiPlugin(parent)

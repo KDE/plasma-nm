@@ -56,7 +56,7 @@ ConnectionSettings::ConnectionSettings(const NetworkManager::ConnectionSettings:
     // Load list of VPN connections
     NetworkManager::Connection::List list = NetworkManager::listConnections();
 
-    Q_FOREACH (const NetworkManager::Connection::Ptr & conn, list) {
+    for (const NetworkManager::Connection::Ptr & conn : list) {
         NetworkManager::ConnectionSettings::Ptr conSet = conn->settings();
         if (conSet->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
             d->vpnConnections.insert(conSet->uuid(), conSet->id());
@@ -434,6 +434,20 @@ void ConnectionSettings::setPriority(int priority)
     Q_D(ConnectionSettings);
 
     d->connectionSettings->setAutoconnectPriority(priority);
+}
+
+int ConnectionSettings::metered() const
+{
+    Q_D(const ConnectionSettings);
+
+    return d->connectionSettings->metered();
+}
+
+void ConnectionSettings::setMetered(int metered)
+{
+    Q_D(ConnectionSettings);
+
+    d->connectionSettings->setMetered(static_cast<NetworkManager::ConnectionSettings::Metered>(metered));
 }
 
 QObject * ConnectionSettings::setting(uint type) const

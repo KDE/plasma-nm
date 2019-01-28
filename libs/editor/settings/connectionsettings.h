@@ -41,6 +41,7 @@ class Q_DECL_EXPORT ConnectionSettings : public QObject
     Q_PROPERTY(QString secondaryConnection READ secondaryConnection WRITE setSecondaryConnection)
     Q_PROPERTY(QString zone READ zone WRITE setZone)
     Q_PROPERTY(int priority READ priority WRITE setPriority)
+    Q_PROPERTY(int metered READ metered WRITE setMetered)
 public:
     explicit ConnectionSettings(QObject *parent = nullptr);
     ConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &settings = NetworkManager::ConnectionSettings::Ptr(), QObject *parent = nullptr);
@@ -72,6 +73,9 @@ public:
 
     int priority() const;
     void setPriority(int priority);
+
+    int metered() const;
+    void setMetered(int metered);
 
     Q_INVOKABLE QObject * setting(uint type) const;
 

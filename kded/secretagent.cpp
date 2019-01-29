@@ -25,6 +25,8 @@
 
 #include "debug.h"
 
+#include "configuration.h"
+
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/GenericTypes>
@@ -404,7 +406,10 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
         }
     }
 
-    if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
+    if (!Configuration::showPasswordDialog()) {
+        sendError(SecretAgent::NoSecrets, "Cannot authenticate", request.message);
+        return true;
+    } else if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
         m_dialog = new PasswordDialog(connectionSettings, request.flags, request.setting_name);
         connect(m_dialog, &PasswordDialog::accepted, this, &SecretAgent::dialogAccepted);
         connect(m_dialog, &PasswordDialog::rejected, this, &SecretAgent::dialogRejected);

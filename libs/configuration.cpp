@@ -66,3 +66,16 @@ void Configuration::setManageVirtualConnections(bool manage)
         grp.writeEntry(QLatin1String("ManageVirtualConnections"), manage);
     }
 }
+
+bool Configuration::showPasswordDialog()
+{
+    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
+    KConfigGroup grp(config, QLatin1String("General"));
+
+    if (grp.isValid()) {
+        return grp.readEntry(QLatin1String("ShowPasswordDialog"), true);
+    }
+
+    return true;
+}
+

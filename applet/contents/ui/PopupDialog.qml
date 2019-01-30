@@ -19,6 +19,8 @@
 */
 
 import QtQuick 2.2
+import QtQuick.Layouts 1.2
+import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
@@ -40,40 +42,34 @@ FocusScope {
         sourceModel: connectionModel
     }
 
-    Toolbar {
-        id: toolbar
+    ColumnLayout {
+        anchors.fill: parent
 
-        anchors {
-            left: parent.left
-            right: parent.right
-            top: parent.top
-        }
-    }
-
-    PlasmaExtras.ScrollArea {
-        id: scrollView
-
-        anchors {
-            bottom: parent.bottom
-            left: parent.left
-            right: parent.right
-            top: toolbar.bottom
+        Toolbar {
+            id: toolbar
+            Layout.fillWidth: true
         }
 
-        ListView {
-            id: connectionView
+        PlasmaExtras.ScrollArea {
+            id: scrollView
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
-            property bool availableConnectionsVisible: false
-            property int currentVisibleButtonIndex: -1
+            ListView {
+                id: connectionView
 
-            anchors.fill: parent
-            clip: true
-            model: appletProxyModel
-            currentIndex: -1
-            boundsBehavior: Flickable.StopAtBounds
-            section.property: showSections ? "Section" : ""
-            section.delegate: Header { text: section }
-            delegate: ConnectionItem { }
+                property bool availableConnectionsVisible: false
+                property int currentVisibleButtonIndex: -1
+
+                anchors.fill: parent
+                clip: true
+                model: appletProxyModel
+                currentIndex: -1
+                boundsBehavior: Flickable.StopAtBounds
+                section.property: showSections ? "Section" : ""
+                section.delegate: Header { text: section }
+                delegate: ConnectionItem { }
+            }
         }
     }
 
@@ -94,6 +90,7 @@ FocusScope {
                 });
             } else {
                 notificationInhibitorLock = undefined;
+                toolbar.closeSearch()
             }
         }
     }

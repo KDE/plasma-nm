@@ -26,6 +26,7 @@ AppletProxyModel::AppletProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
     setDynamicSortFilter(true);
+    setFilterCaseSensitivity(Qt::CaseInsensitive);
     sort(0, Qt::DescendingOrder);
 }
 
@@ -37,9 +38,9 @@ bool AppletProxyModel::filterAcceptsRow(int source_row, const QModelIndex &sourc
 {
     const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
 
-    // slaves are always filtered-out
+    // slaves are filtered-out when not searching for a connection (makes the state of search results clear)
     const bool isSlave = sourceModel()->data(index, NetworkModel::SlaveRole).toBool();
-    if (isSlave) {
+    if (isSlave && filterRegExp().isEmpty()) {
         return false;
     }
 
@@ -50,12 +51,16 @@ bool AppletProxyModel::filterAcceptsRow(int source_row, const QModelIndex &sourc
 
     NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
 
-    if (itemType == NetworkModelItem::AvailableConnection ||
-        itemType == NetworkModelItem::AvailableAccessPoint) {
+    if (itemType != NetworkModelItem::AvailableConnection &&
+        itemType != NetworkModelItem::AvailableAccessPoint) {
+        return false;
+    }
+
+    if (filterRegExp().isEmpty()) {
         return true;
     }
 
-    return false;
+    return sourceModel()->data(index, NetworkModel::ItemUniqueNameRole).toString().contains(filterRegExp());
 }
 
 bool AppletProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const

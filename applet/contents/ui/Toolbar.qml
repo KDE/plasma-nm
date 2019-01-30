@@ -19,15 +19,21 @@
 */
 
 import QtQuick 2.2
+import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kquickcontrolsaddons 2.0
 
-Item {
+GridLayout {
     id: toolbar
 
-    height: wifiSwitchButton.height
+    function closeSearch() {
+        searchToggleButton.checked = false
+    }
+
+    rows: 2
+    columns: 2
 
     PlasmaCore.Svg {
         id: lineSvg
@@ -55,11 +61,7 @@ Item {
     }
 
     Row {
-        anchors {
-            bottom: parent.bottom
-            left: parent.left
-            top: parent.top
-        }
+        Layout.fillWidth: true
 
         SwitchButton {
             id: wifiSwitchButton
@@ -111,21 +113,52 @@ Item {
         }
     }
 
-    PlasmaComponents.ToolButton {
-        id: openEditorButton
+    Row {
+        Layout.column: 1
 
-        anchors {
-            right: parent.right
-            rightMargin: Math.round(units.gridUnit / 2)
-            verticalCenter: parent.verticalCenter
+        PlasmaComponents.ToolButton {
+            id: searchToggleButton
+            iconSource: "search"
+            tooltip: i18ndc("plasma-nm", "button tooltip", "Search the connections")
+            checkable: true
         }
 
-        iconSource: "configure"
-        tooltip: i18n("Configure network connections...")
-        visible: mainWindow.kcmAuthorized
+        PlasmaComponents.ToolButton {
+            id: openEditorButton
+            iconSource: "configure"
+            tooltip: i18n("Configure network connections...")
+            visible: mainWindow.kcmAuthorized
 
-        onClicked: {
-            KCMShell.open(mainWindow.kcm)
+            onClicked: {
+                KCMShell.open(mainWindow.kcm)
+            }
+        }
+    }
+
+    PlasmaComponents.TextField {
+        id: searchTextField
+
+        Layout.row: 1
+        Layout.columnSpan: 2
+        Layout.fillWidth: true
+        Layout.leftMargin: units.smallSpacing
+        Layout.rightMargin: units.smallSpacing
+        Layout.bottomMargin: units.smallSpacing
+
+        focus: true
+        clearButtonShown: true
+        placeholderText: i18ndc("plasma-nm", "text field placeholder text", "Search...")
+
+        visible: searchToggleButton.checked
+        onVisibleChanged: if (!visible) text = ""
+        Keys.onEscapePressed: searchToggleButton.checked = false
+
+        onTextChanged: {
+            // Show search field when starting to type directly
+            if (text.length && !searchToggleButton.checked) {
+                searchToggleButton.checked = true
+            }
+            appletProxyModel.setFilterRegExp(text)
         }
     }
 }

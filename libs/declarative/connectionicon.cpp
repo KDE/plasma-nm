@@ -317,52 +317,11 @@ void ConnectionIcon::setIcons()
         connection = NetworkManager::primaryConnection();
     }
 
-    // Workaround, because PrimaryConnection is kinda broken in NM 0.9.8.x and
-    // doesn't work correctly with some VPN connections. This shouldn't be necessary
-    // for NM 0.9.9.0 or the upcoming bugfix release NM 0.9.8.10
-#if !NM_CHECK_VERSION(0, 9, 10)
-    if (!connection) {
-        bool defaultRoute = false;
-        NetworkManager::ActiveConnection::Ptr mainActiveConnection;
-        Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
-            if ((activeConnection->default4() || activeConnection->default6()) && activeConnection->vpn()) {
-                defaultRoute = true;
-                mainActiveConnection = activeConnection;
-                break;
-            }
-        }
-
-        if (!defaultRoute) {
-            Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
-                if (activeConnection->vpn()) {
-                    mainActiveConnection = activeConnection;
-                    break;
-                }
-            }
-        }
-
-        if (mainActiveConnection) {
-            NetworkManager::ActiveConnection::Ptr baseActiveConnection;
-            baseActiveConnection = NetworkManager::findActiveConnection(mainActiveConnection->specificObject());
-            if (baseActiveConnection) {
-                connection = baseActiveConnection;
-            }
-        }
-    }
-#endif
-
     /* Fallback: If we still don't have an active connection with default route or the default route goes through a connection
                  of generic type (some type of VPNs) we need to go through all other active connections and pick the one with
                  highest probability of being the main one (order is: vpn, wired, wireless, gsm, cdma, bluetooth) */
-#if NM_CHECK_VERSION(1, 2, 0)
     if ((!connection && !NetworkManager::activeConnections().isEmpty()) || (connection && connection->type() == NetworkManager::ConnectionSettings::Generic)
                                                                         || (connection && connection->type() == NetworkManager::ConnectionSettings::Tun)) {
-#elif NM_CHECK_VERSION(0, 9, 10)
-    if ((!connection && !NetworkManager::activeConnections().isEmpty()) || (connection && connection->type() == NetworkManager::ConnectionSettings::Generic)) {
-#else
-    if (!connection && !NetworkManager::activeConnections().isEmpty()) {
-#endif
-#if NM_CHECK_VERSION(0, 9, 10)
         Q_FOREACH (const NetworkManager::ActiveConnection::Ptr &activeConnection, NetworkManager::activeConnections()) {
             const NetworkManager::ConnectionSettings::ConnectionType type = activeConnection->type();
             if (type == NetworkManager::ConnectionSettings::Bluetooth) {
@@ -390,9 +349,6 @@ void ConnectionIcon::setIcons()
                 }
             }
         }
-#else
-        connection = NetworkManager::activeConnections().first();
-#endif
     }
 
     if (connection && !connection->devices().isEmpty()) {

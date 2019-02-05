@@ -118,35 +118,41 @@ PlasmaComponents.ListItem {
 
                 onClicked: changeState()
             }
+
+            MouseArea {
+                acceptedButtons: Qt.RightButton
+                Layout.alignment: Qt.AlignTop | Qt.AlignLeft
+                width: parent.width
+                height: parent.height
+                onPressed: {
+                    contextMenu.visualParent = parent
+                    contextMenu.open(mouse.x, mouse.y)
+                }
+            }
         }
 
-        PlasmaCore.SvgItem {
-            id: separator
-            height: lineSvg.elementSize("horizontal-line").height
-            Layout.fillWidth: true
-            Layout.maximumHeight: height
-            elementId: "horizontal-line"
-            svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
-            visible: connectionItem.expanded
-            opacity: visible
-        }
-
-        Loader {
-            id: expandableComponentLoader
+        ColumnLayout {
             Layout.fillHeight: true
-            Layout.fillWidth: true
-            height: childrenRect.height
+            PlasmaCore.SvgItem {
+                id: separator
+                height: lineSvg.elementSize("horizontal-line").height
+                Layout.fillWidth: true
+                Layout.maximumHeight: height
+                elementId: "horizontal-line"
+                svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
+                visible: connectionItem.expanded
+                opacity: visible
+            }
+
+            Loader {
+                id: expandableComponentLoader
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                height: childrenRect.height
+            }
         }
     }
 
-    MouseArea {
-        acceptedButtons: Qt.RightButton
-        anchors.fill: parent
-        onPressed: {
-            contextMenu.visualParent = parent
-            contextMenu.open()
-        }
-    }
 
     PlasmaComponents.Menu {
         id: contextMenu

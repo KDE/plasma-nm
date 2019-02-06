@@ -93,7 +93,7 @@ QString NetworkStatus::networkStatus() const
 
 void NetworkStatus::activeConnectionsChanged()
 {
-    Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, NetworkManager::activeConnections()) {
+    for (const NetworkManager::ActiveConnection::Ptr & active : NetworkManager::activeConnections()) {
         connect(active.data(), &NetworkManager::ActiveConnection::default4Changed, this, &NetworkStatus::defaultChanged, Qt::UniqueConnection);
         connect(active.data(), &NetworkManager::ActiveConnection::default6Changed, this, &NetworkStatus::defaultChanged, Qt::UniqueConnection);
         connect(active.data(), &NetworkManager::ActiveConnection::stateChanged, this, &NetworkStatus::changeActiveConnections);
@@ -165,7 +165,7 @@ void NetworkStatus::changeActiveConnections()
         return NetworkStatus::connectionTypeToSortedType(left->type()) < NetworkStatus::connectionTypeToSortedType(right->type());
     });
 
-    Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & active, activeConnectionList) {
+    for (const NetworkManager::ActiveConnection::Ptr &active : activeConnectionList) {
         if (!active->devices().isEmpty() && UiUtils::isConnectionTypeSupported(active->type())) {
 
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());

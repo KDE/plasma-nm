@@ -29,6 +29,8 @@ class Q_DECL_EXPORT Configuration : public QObject
 {
     Q_PROPERTY(bool unlockModemOnDetection READ unlockModemOnDetection WRITE setUnlockModemOnDetection)
     Q_PROPERTY(bool manageVirtualConnections READ manageVirtualConnections WRITE setManageVirtualConnections)
+    //Readonly constant property, as this value should only be set by the platform
+    Q_PROPERTY(bool showPasswordDialog READ showPasswordDialog CONSTANT)
     Q_OBJECT
 public:
     static bool unlockModemOnDetection();
@@ -36,6 +38,8 @@ public:
 
     static bool manageVirtualConnections();
     static void setManageVirtualConnections(bool manage);
+
+    static bool showPasswordDialog();
 };
 
 #endif // PLAMA_NM_CONFIGURATION_H

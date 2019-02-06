@@ -60,7 +60,7 @@ ModemMonitor::ModemMonitor(QObject * parent)
     if (grp.isValid()) {
         if (grp.readEntry(QLatin1String("UnlockModemOnDetection"), true)) {
             connect(ModemManager::notifier(), &ModemManager::Notifier::modemAdded, this, &ModemMonitor::unlockModem);
-            Q_FOREACH (const ModemManager::ModemDevice::Ptr &iface, ModemManager::modemDevices()) {
+            for (const ModemManager::ModemDevice::Ptr &iface : ModemManager::modemDevices()) {
                 unlockModem(iface->uni());
             }
         }

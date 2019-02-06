@@ -61,7 +61,7 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::wwanEnabledChanged, this, &ConnectionIcon::wwanEnabledChanged);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::wwanHardwareEnabledChanged, this, &ConnectionIcon::wwanEnabledChanged);
 
-    Q_FOREACH (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
+    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
             NetworkManager::WiredDevice::Ptr wiredDevice = device.staticCast<NetworkManager::WiredDevice>();
             if (wiredDevice) {
@@ -76,7 +76,7 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
         }
     }
 
-    Q_FOREACH (NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
+    for (const NetworkManager::ActiveConnection::Ptr &activeConnection : NetworkManager::activeConnections()) {
         addActiveConnection(activeConnection->path());
     }
     setStates();
@@ -272,7 +272,7 @@ void ConnectionIcon::setStates()
 {
     bool connecting = false;
     bool vpn = false;
-    Q_FOREACH (NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
+    for (const NetworkManager::ActiveConnection::Ptr &activeConnection : NetworkManager::activeConnections()) {
         NetworkManager::VpnConnection::Ptr vpnConnection;
         if (activeConnection->vpn()) {
             vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
@@ -317,53 +317,12 @@ void ConnectionIcon::setIcons()
         connection = NetworkManager::primaryConnection();
     }
 
-    // Workaround, because PrimaryConnection is kinda broken in NM 0.9.8.x and
-    // doesn't work correctly with some VPN connections. This shouldn't be necessary
-    // for NM 0.9.9.0 or the upcoming bugfix release NM 0.9.8.10
-#if !NM_CHECK_VERSION(0, 9, 10)
-    if (!connection) {
-        bool defaultRoute = false;
-        NetworkManager::ActiveConnection::Ptr mainActiveConnection;
-        Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
-            if ((activeConnection->default4() || activeConnection->default6()) && activeConnection->vpn()) {
-                defaultRoute = true;
-                mainActiveConnection = activeConnection;
-                break;
-            }
-        }
-
-        if (!defaultRoute) {
-            Q_FOREACH (const NetworkManager::ActiveConnection::Ptr & activeConnection, NetworkManager::activeConnections()) {
-                if (activeConnection->vpn()) {
-                    mainActiveConnection = activeConnection;
-                    break;
-                }
-            }
-        }
-
-        if (mainActiveConnection) {
-            NetworkManager::ActiveConnection::Ptr baseActiveConnection;
-            baseActiveConnection = NetworkManager::findActiveConnection(mainActiveConnection->specificObject());
-            if (baseActiveConnection) {
-                connection = baseActiveConnection;
-            }
-        }
-    }
-#endif
-
     /* Fallback: If we still don't have an active connection with default route or the default route goes through a connection
                  of generic type (some type of VPNs) we need to go through all other active connections and pick the one with
                  highest probability of being the main one (order is: vpn, wired, wireless, gsm, cdma, bluetooth) */
-#if NM_CHECK_VERSION(1, 2, 0)
     if ((!connection && !NetworkManager::activeConnections().isEmpty()) || (connection && connection->type() == NetworkManager::ConnectionSettings::Generic)
                                                                         || (connection && connection->type() == NetworkManager::ConnectionSettings::Tun)) {
-#elif NM_CHECK_VERSION(0, 9, 10)
-    if ((!connection && !NetworkManager::activeConnections().isEmpty()) || (connection && connection->type() == NetworkManager::ConnectionSettings::Generic)) {
-#else
-    if (!connection && !NetworkManager::activeConnections().isEmpty()) {
-#endif
-#if NM_CHECK_VERSION(0, 9, 10)
-        Q_FOREACH (const NetworkManager::ActiveConnection::Ptr &activeConnection, NetworkManager::activeConnections()) {
+        for (const NetworkManager::ActiveConnection::Ptr &activeConnection : NetworkManager::activeConnections()) {
             const NetworkManager::ConnectionSettings::ConnectionType type = activeConnection->type();
             if (type == NetworkManager::ConnectionSettings::Bluetooth) {
                 if (connection && connection->type() <= NetworkManager::ConnectionSettings::Bluetooth) {
@@ -390,9 +349,6 @@ void ConnectionIcon::setIcons()
                 }
             }
         }
-#else
-        connection = NetworkManager::activeConnections().first();
-#endif
     }
 
     if (connection && !connection->devices().isEmpty()) {
@@ -465,7 +421,7 @@ void ConnectionIcon::setDisconnectedIcon()
     m_limited = false;
     m_vpn = false;
 
-    Q_FOREACH (const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
+    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
             NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
             if (wiredDev->carrier()) {

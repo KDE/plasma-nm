@@ -315,11 +315,11 @@ QVariantMap MobileProviders::getCdmaInfo(const QString & provider)
     return temp;
 }
 
-QString MobileProviders::getNameByLocale(const QMap<QString, QString> & localizedNames) const
+QString MobileProviders::getNameByLocale(const QMap<QString, QString> &localizedNames) const
 {
     QString name;
     const QStringList locales = QLocale().uiLanguages();
-    Q_FOREACH (const QString & locale, locales) {
+    for (const QString &locale : locales) {
         QString language = locale.split(QLatin1Char('-')).at(0);
 
         if (localizedNames.contains(language)) {

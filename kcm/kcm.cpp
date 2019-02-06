@@ -80,17 +80,33 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const QVariantList &
                 }
             });
 
-    // Pre-select currently active primary connection and if there is none then just select
-    // the very first connection
-//     NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::primaryConnection();
-//     if (activeConnection && activeConnection->isValid()) {
-//         // Also check if the connection type is supported by KCM
-//         const NetworkManager::ConnectionSettings::ConnectionType type = activeConnection->type();
-//         if (UiUtils::isConnectionTypeSupported(type)) {
-//             QMetaObject::invokeMethod(mainUi(), "selectConnectionInView", Q_ARG(QVariant, activeConnection->id()), Q_ARG(QVariant, activeConnection->connection()->path()));
+//     NetworkManager::Connection::Ptr selectedConnection;
+//
+//     // Look in the arguments for a connection ID to preselect
+//     static const QLatin1Literal uuidArgumentMarker { "Uuid=" };
+//     for (QVariant arg : args) {
+//         if (arg.canConvert(QMetaType::QString)) {
+//             QString uuid = arg.toString();
+//             if (uuid.startsWith(uuidArgumentMarker)) {
+//                 uuid = uuid.replace(uuidArgumentMarker, QString());
+//                 selectedConnection = NetworkManager::findConnectionByUuid(uuid);
+//                 qDebug() << "Selecting user connection:" << uuid;
+//                 break;
+//             }
 //         }
-//     } else {
-//         // Select first connection
+//     }
+//
+//     // Pre-select the currently active primary connection
+//     if (!selectedConnection || !selectedConnection->isValid()) {
+//         NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::primaryConnection();
+//         if (activeConnection && activeConnection->isValid()) {
+//             selectedConnection = activeConnection->connection();
+//             qDebug() << "Selecting active connection:" << selectedConnection->uuid();
+//         }
+//     }
+//
+//     // Select the very first connection as a fallback
+//     if (!selectedConnection || !selectedConnection->isValid()) {
 //         NetworkManager::Connection::List connectionList = NetworkManager::listConnections();
 //         std::sort(connectionList.begin(), connectionList.end(), [] (const NetworkManager::Connection::Ptr &left, const NetworkManager::Connection::Ptr &right)
 //         {
@@ -121,13 +137,23 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const QVariantList &
 //             }
 //         });
 //
-//         Q_FOREACH (const NetworkManager::Connection::Ptr &connection, connectionList) {
+//         for (const NetworkManager::Connection::Ptr &connection : connectionList) {
 //             const NetworkManager::ConnectionSettings::ConnectionType type = connection->settings()->connectionType();
 //             if (UiUtils::isConnectionTypeSupported(type)) {
-//                 QMetaObject::invokeMethod(mainUi(), "selectConnectionInView", Q_ARG(QVariant, connection->settings()->id()), Q_ARG(QVariant, connection->path()));
+//                 selectedConnection = connection;
+//                 qDebug() << "Selecting first connection:" << connection->uuid();
 //                 break;
 //             }
 //         }
+//     }
+//
+//     if (selectedConnection && selectedConnection->isValid()) {
+//         const NetworkManager::ConnectionSettings::Ptr settings = selectedConnection->settings();
+//         if (UiUtils::isConnectionTypeSupported(settings->connectionType())) {
+//             QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, settings->id()), Q_ARG(QVariant, selectedConnection->path()));
+//         }
+//     } else {
+//         qDebug() << "Cannot preselect a connection";
 //     }
 
     connect(NetworkManager::settingsNotifier(), &NetworkManager::SettingsNotifier::connectionAdded, this, &KCMNetworkmanagement::onConnectionAdded, Qt::UniqueConnection);
@@ -292,7 +318,7 @@ void KCMNetworkmanagement::requestCreateConnection(int connectionType, const QSt
                     wifiSetting->setMode(NetworkManager::WirelessSetting::Adhoc);
                     wifiSetting->setSsid(i18n("my_shared_connection").toUtf8());
 
-                    Q_FOREACH (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+                    for (const NetworkManager::Device::Ptr & device : NetworkManager::networkInterfaces()) {
                         if (device->type() == NetworkManager::Device::Wifi) {
                             NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
                             if (wifiDev) {

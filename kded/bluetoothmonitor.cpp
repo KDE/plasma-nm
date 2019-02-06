@@ -58,7 +58,7 @@ bool BluetoothMonitor::bluetoothConnectionExists(const QString &bdAddr, const QS
         return false;
     }
 
-    Q_FOREACH (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
+    for (const NetworkManager::Connection::Ptr &con : NetworkManager::listConnections()) {
         if (con && con->settings() && con->settings()->connectionType() == NetworkManager::ConnectionSettings::Bluetooth) {
             NetworkManager::BluetoothSetting::Ptr btSetting = con->settings()->setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
             if (btSetting->profileType() == profile && btSetting->bluetoothAddress() == NetworkManager::macAddressFromString(bdAddr)) {

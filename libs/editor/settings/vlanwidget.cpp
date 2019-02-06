@@ -94,7 +94,7 @@ void VlanWidget::fillConnections()
 {
     m_ui->parent->clear();
 
-    Q_FOREACH (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
+    for (const NetworkManager::Connection::Ptr &con : NetworkManager::listConnections()) {
         if (!con->settings()->isSlave() && con->settings()->connectionType() == NetworkManager::ConnectionSettings::Wired)
             m_ui->parent->addItem(con->name(), con->uuid());
     }

@@ -97,7 +97,7 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
     tetrads << -1 << -1 << -1 << -1;
 
     // lets check address parts
-    Q_FOREACH (const QStringRef &part, addrParts) {
+    for (const QStringRef &part : addrParts) {
         if (part.isEmpty()) {
             if (i != (addrParts.size() - 1)) {
                 // qCDebug(PLASMA_NM) << "part.isEmpty()";

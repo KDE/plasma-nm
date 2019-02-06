@@ -149,14 +149,14 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // dns
     QStringList tmp;
-    Q_FOREACH (const QHostAddress & addr, ipv6Setting->dns()) {
+    for (const QHostAddress &addr : ipv6Setting->dns()) {
         tmp.append(addr.toString());
     }
     m_ui->dns->setText(tmp.join(","));
     m_ui->dnsSearch->setText(ipv6Setting->dnsSearch().join(","));
 
     // addresses
-    Q_FOREACH (const NetworkManager::IpAddress &address, ipv6Setting->addresses()) {
+    for (const NetworkManager::IpAddress &address : ipv6Setting->addresses()) {
         QList<QStandardItem *> item;
 
         item << new QStandardItem(address.ip().toString())
@@ -210,7 +210,7 @@ QVariantMap IPv6Widget::setting() const
     if (m_ui->dns->isEnabled() && !m_ui->dns->text().isEmpty()) {
         QStringList tmp = m_ui->dns->text().split(',');
         QList<QHostAddress> tmpAddrList;
-        Q_FOREACH (const QString & str, tmp) {
+        for (const QString &str : tmp) {
             QHostAddress addr(str);
             if (!addr.isNull())
                 tmpAddrList.append(addr);
@@ -479,7 +479,7 @@ bool IPv6Widget::isValid() const
 
     if (!m_ui->dns->text().isEmpty() && (m_ui->method->currentIndex() == Automatic || m_ui->method->currentIndex() == Manual || m_ui->method->currentIndex() == AutomaticOnlyIP)) {
         const QStringList tmp = m_ui->dns->text().split(',');
-        Q_FOREACH (const QString & str, tmp) {
+        for (const QString &str : tmp) {
             QHostAddress addr(str);
             if (addr.isNull()) {
                 return false;

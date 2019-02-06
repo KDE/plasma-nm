@@ -308,11 +308,11 @@ QVariantMap WifiSecurity::setting8021x() const
 
 void WifiSecurity::onSsidChanged(const QString &ssid)
 {
-    Q_FOREACH (const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
+    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.staticCast<NetworkManager::WirelessDevice>();
             if (wifiDevice) {
-                Q_FOREACH (const NetworkManager::WirelessNetwork::Ptr wifiNetwork, wifiDevice->networks()) {
+                for (const NetworkManager::WirelessNetwork::Ptr wifiNetwork : wifiDevice->networks()) {
                     if (wifiNetwork && wifiNetwork->ssid() == ssid) {
                         NetworkManager::AccessPoint::Ptr ap = wifiNetwork->referenceAccessPoint();
                         NetworkManager::WirelessSecurityType securityType = NetworkManager::findBestWirelessSecurity(wifiDevice->wirelessCapabilities(), true, (wifiDevice->mode() == NetworkManager::WirelessDevice::Adhoc),

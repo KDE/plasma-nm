@@ -273,14 +273,14 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         }
         if (!decrPlugin->readStringKeyValue(cg,"X-NM-Routes").isEmpty()) {
             QList<NetworkManager::IpRoute> list;
-            Q_FOREACH (const QString &route, decrPlugin->readStringKeyValue(cg,"X-NM-Routes").split(' ')) {
+            for (const QString &route : decrPlugin->readStringKeyValue(cg,"X-NM-Routes").split(' ')) {
                 NetworkManager::IpRoute ipRoute;
                 ipRoute.setIp(QHostAddress(route.split('/').first()));
                 ipRoute.setPrefixLength(route.split('/').at(1).toInt());
                 list << ipRoute;
             }
             QList<QList<uint> > dbusRoutes;
-            Q_FOREACH (const NetworkManager::IpRoute &route, list) {
+            for (const NetworkManager::IpRoute &route : list) {
                 QList<uint> dbusRoute;
                 dbusRoute << htonl(route.ip().toIPv4Address())
                         << route.prefixLength()
@@ -403,7 +403,7 @@ bool VpncUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSett
     NetworkManager::Ipv4Setting::Ptr ipv4Setting = connection->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
     if (!ipv4Setting->routes().isEmpty()) {
         QString routes;
-        Q_FOREACH (const NetworkManager::IpRoute &route, ipv4Setting->routes()) {
+        for (const NetworkManager::IpRoute &route : ipv4Setting->routes()) {
             routes += route.ip().toString() + QLatin1Char('/') + QString::number(route.prefixLength()) + QLatin1Char(' ');
         }
         cg.writeEntry("X-NM-Routes", routes.trimmed());

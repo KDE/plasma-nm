@@ -156,7 +156,7 @@ void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
         m_ui->tlsCACert->setUrl(QUrl::fromLocalFile(securitySetting->caCertificate()));
         m_ui->leTlsSubjectMatch->setText(securitySetting->subjectMatch());
         m_ui->leTlsAlternativeSubjectMatches->setText(securitySetting->altSubjectMatches().join(QLatin1String(", ")));
-        Q_FOREACH (const QString &match, securitySetting->altSubjectMatches()) {
+        for (const QString &match : securitySetting->altSubjectMatches()) {
             if (match.startsWith(QLatin1String("DNS:"))) {
                 servers.append(match.right(match.length()-4));
             }
@@ -333,7 +333,7 @@ QVariantMap Security8021x::setting() const
         }
 
         QStringList altsubjectmatches = m_ui->leTlsAlternativeSubjectMatches->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts);
-        Q_FOREACH (const QString &match, m_ui->leTlsConnectToServers->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts)) {
+        for (const QString &match : m_ui->leTlsConnectToServers->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts)) {
             const QString tempstr = QLatin1String("DNS:") + match;
             if (!altsubjectmatches.contains(tempstr)) {
                 altsubjectmatches.append(tempstr);

@@ -160,7 +160,7 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // dns
     QStringList tmp;
-    Q_FOREACH (const QHostAddress & addr, ipv4Setting->dns()) {
+    for (const QHostAddress &addr : ipv4Setting->dns()) {
         tmp.append(addr.toString());
     }
     m_ui->dns->setText(tmp.join(","));
@@ -169,7 +169,7 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     m_ui->dhcpClientId->setText(ipv4Setting->dhcpClientId());
 
     // addresses
-    Q_FOREACH (const NetworkManager::IpAddress &addr, ipv4Setting->addresses()) {
+    for (const NetworkManager::IpAddress &addr : ipv4Setting->addresses()) {
         QList<QStandardItem *> item;
         item << new QStandardItem(addr.ip().toString())
              << new QStandardItem(addr.netmask().toString())
@@ -217,7 +217,7 @@ QVariantMap IPv4Widget::setting() const
     if (m_ui->dns->isEnabled() && !m_ui->dns->text().isEmpty()) {
         QStringList tmp = m_ui->dns->text().split(',');
         QList<QHostAddress> tmpAddrList;
-        Q_FOREACH (const QString & str, tmp) {
+        for (const QString &str : tmp) {
             QHostAddress addr(str);
             if (!addr.isNull())
                 tmpAddrList.append(addr);
@@ -488,7 +488,7 @@ bool IPv4Widget::isValid() const
 
     if (!m_ui->dns->text().isEmpty() && (m_ui->method->currentIndex() == Automatic || m_ui->method->currentIndex() == Manual || m_ui->method->currentIndex() == AutomaticOnlyIP)) {
         const QStringList tmp = m_ui->dns->text().split(',');
-        Q_FOREACH (const QString & str, tmp) {
+        for (const QString &str : tmp) {
             QHostAddress addr(str);
             if (addr.isNull()) {
                 return false;

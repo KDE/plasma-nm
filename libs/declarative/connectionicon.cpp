@@ -61,7 +61,7 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::wwanEnabledChanged, this, &ConnectionIcon::wwanEnabledChanged);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::wwanHardwareEnabledChanged, this, &ConnectionIcon::wwanEnabledChanged);
 
-    Q_FOREACH (NetworkManager::Device::Ptr device, NetworkManager::networkInterfaces()) {
+    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
             NetworkManager::WiredDevice::Ptr wiredDevice = device.staticCast<NetworkManager::WiredDevice>();
             if (wiredDevice) {
@@ -76,7 +76,7 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
         }
     }
 
-    Q_FOREACH (NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
+    for (const NetworkManager::ActiveConnection::Ptr &activeConnection : NetworkManager::activeConnections()) {
         addActiveConnection(activeConnection->path());
     }
     setStates();
@@ -272,7 +272,7 @@ void ConnectionIcon::setStates()
 {
     bool connecting = false;
     bool vpn = false;
-    Q_FOREACH (NetworkManager::ActiveConnection::Ptr activeConnection, NetworkManager::activeConnections()) {
+    for (const NetworkManager::ActiveConnection::Ptr &activeConnection : NetworkManager::activeConnections()) {
         NetworkManager::VpnConnection::Ptr vpnConnection;
         if (activeConnection->vpn()) {
             vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
@@ -322,7 +322,7 @@ void ConnectionIcon::setIcons()
                  highest probability of being the main one (order is: vpn, wired, wireless, gsm, cdma, bluetooth) */
     if ((!connection && !NetworkManager::activeConnections().isEmpty()) || (connection && connection->type() == NetworkManager::ConnectionSettings::Generic)
                                                                         || (connection && connection->type() == NetworkManager::ConnectionSettings::Tun)) {
-        Q_FOREACH (const NetworkManager::ActiveConnection::Ptr &activeConnection, NetworkManager::activeConnections()) {
+        for (const NetworkManager::ActiveConnection::Ptr &activeConnection : NetworkManager::activeConnections()) {
             const NetworkManager::ConnectionSettings::ConnectionType type = activeConnection->type();
             if (type == NetworkManager::ConnectionSettings::Bluetooth) {
                 if (connection && connection->type() <= NetworkManager::ConnectionSettings::Bluetooth) {
@@ -421,7 +421,7 @@ void ConnectionIcon::setDisconnectedIcon()
     m_limited = false;
     m_vpn = false;
 
-    Q_FOREACH (const NetworkManager::Device::Ptr &device, NetworkManager::networkInterfaces()) {
+    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Ethernet) {
             NetworkManager::WiredDevice::Ptr wiredDev = device.objectCast<NetworkManager::WiredDevice>();
             if (wiredDev->carrier()) {

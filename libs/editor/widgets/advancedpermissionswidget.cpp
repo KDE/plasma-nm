@@ -42,7 +42,7 @@ AdvancedPermissionsWidget::AdvancedPermissionsWidget(QWidget *parent):
     Q_D(AdvancedPermissionsWidget);
     d->ui.setupUi(this);
 
-    Q_FOREACH (const KUser &user, KUser::allUsers()) {
+    for (const KUser &user : KUser::allUsers()) {
         if (user.userId().nativeId() >= 1000 && user.loginName() != QLatin1String("nobody"))
             d->ui.availUsers->addTopLevelItem(constructItem(user));
     }
@@ -56,7 +56,7 @@ AdvancedPermissionsWidget::AdvancedPermissionsWidget(const QHash<QString,QString
     Q_D(AdvancedPermissionsWidget);
     d->ui.setupUi(this);
 
-    Q_FOREACH (const KUser &user, KUser::allUsers()) {
+    for (const KUser &user : KUser::allUsers()) {
         const QString name = user.loginName();
         if (!users.contains(name) && user.userId().nativeId() >= 1000 && user.loginName() != QLatin1String("nobody"))
             d->ui.availUsers->addTopLevelItem(constructItem(user));
@@ -127,7 +127,7 @@ QHash<QString, QString> AdvancedPermissionsWidget::currentUsers() const
 void AdvancedPermissionsWidget::rightArrowClicked()
 {
     Q_D(AdvancedPermissionsWidget);
-    Q_FOREACH (QTreeWidgetItem *item, d->ui.availUsers->selectedItems()) {
+    for (QTreeWidgetItem *item : d->ui.availUsers->selectedItems()) {
         const int index = d->ui.availUsers->indexOfTopLevelItem(item);
         d->ui.availUsers->takeTopLevelItem(index);
         d->ui.currentUsers->addTopLevelItem(item);
@@ -137,7 +137,7 @@ void AdvancedPermissionsWidget::rightArrowClicked()
 void AdvancedPermissionsWidget::leftArrowClicked()
 {
     Q_D(AdvancedPermissionsWidget);
-    Q_FOREACH (QTreeWidgetItem *item, d->ui.currentUsers->selectedItems()) {
+    for (QTreeWidgetItem *item : d->ui.currentUsers->selectedItems()) {
         if (item->data(LoginName, Qt::DisplayRole) != KUser().loginName()) {
             const int index = d->ui.currentUsers->indexOfTopLevelItem(item);
             d->ui.currentUsers->takeTopLevelItem(index);

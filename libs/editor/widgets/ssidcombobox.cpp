@@ -71,13 +71,13 @@ void SsidComboBox::init(const QString &ssid)
 
     QList<NetworkManager::WirelessNetwork::Ptr> networks;
 
-    Q_FOREACH (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
 
-            Q_FOREACH (const NetworkManager::WirelessNetwork::Ptr & newNetwork, wifiDevice->networks()) {
+            for (const NetworkManager::WirelessNetwork::Ptr &newNetwork : wifiDevice->networks()) {
                 bool found = false;
-                Q_FOREACH (const NetworkManager::WirelessNetwork::Ptr & existingNetwork, networks) {
+                for (const NetworkManager::WirelessNetwork::Ptr &existingNetwork : networks) {
                     if (newNetwork->ssid() == existingNetwork->ssid()) {
                         if (newNetwork->signalStrength() > existingNetwork->signalStrength()) {
                             networks.removeOne(existingNetwork);
@@ -112,7 +112,7 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
 {
     QList<NetworkManager::WirelessDevice::Ptr> wifiDevices;
 
-    Q_FOREACH (const NetworkManager::Device::Ptr & dev, NetworkManager::networkInterfaces()) {
+    for (const NetworkManager::Device::Ptr &dev : NetworkManager::networkInterfaces()) {
         if (dev->type() == NetworkManager::Device::Wifi) {
             wifiDevices << dev.objectCast<NetworkManager::WirelessDevice>();
         }
@@ -120,14 +120,14 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
 
     bool empty = true;
 
-    Q_FOREACH (const NetworkManager::WirelessNetwork::Ptr & network, networks) {
+    for (const NetworkManager::WirelessNetwork::Ptr &network : networks) {
         NetworkManager::AccessPoint::Ptr accessPoint = network->referenceAccessPoint();
 
         if (!accessPoint) {
             continue;
         }
 
-        Q_FOREACH (const NetworkManager::WirelessDevice::Ptr & wifiDev, wifiDevices) {
+        for (const NetworkManager::WirelessDevice::Ptr &wifiDev : wifiDevices) {
             if (wifiDev->findNetwork(network->ssid()) == network) {
                 if (!empty) {
                     insertSeparator(count());

@@ -157,7 +157,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
             }
         });
 
-        Q_FOREACH (const NetworkManager::Connection::Ptr &connection, connectionList) {
+        for (const NetworkManager::Connection::Ptr &connection : connectionList) {
             const NetworkManager::ConnectionSettings::ConnectionType type = connection->settings()->connectionType();
             if (UiUtils::isConnectionTypeSupported(type)) {
                 selectedConnection = connection;
@@ -332,7 +332,7 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
                     wifiSetting->setMode(NetworkManager::WirelessSetting::Adhoc);
                     wifiSetting->setSsid(i18n("my_shared_connection").toUtf8());
 
-                    Q_FOREACH (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+                    for (const NetworkManager::Device::Ptr & device : NetworkManager::networkInterfaces()) {
                         if (device->type() == NetworkManager::Device::Wifi) {
                             NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
                             if (wifiDev) {
@@ -485,7 +485,7 @@ void KCMNetworkmanagement::importVpn()
     // get the list of supported extensions
     const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
     QString extensions;
-    Q_FOREACH (const KService::Ptr &service, services) {
+    for (const KService::Ptr &service : services) {
         VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
         if (vpnPlugin) {
             extensions += vpnPlugin->supportedFileExtensions() % QStringLiteral(" ");
@@ -502,7 +502,7 @@ void KCMNetworkmanagement::importVpn()
         const QString ext = QStringLiteral("*.") % fi.suffix();
         qCDebug(PLASMA_NM) << "Importing VPN connection " << filename << "extension:" << ext;
 
-        Q_FOREACH (const KService::Ptr &service, services) {
+        for (const KService::Ptr &service : services) {
             VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
             if (vpnPlugin && vpnPlugin->supportedFileExtensions().contains(ext)) {
                 qCDebug(PLASMA_NM) << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();

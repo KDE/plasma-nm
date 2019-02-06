@@ -62,71 +62,71 @@ void SettingWidget::watchChangedSetting()
 
     // Connect all QLineEdit widgets
     QList<QLineEdit *> lineEdits = findChildren<QLineEdit *>();
-    Q_FOREACH (QLineEdit *lineedit, lineEdits) {
+    for (QLineEdit *lineedit : lineEdits) {
         connect(lineedit, &QLineEdit::textChanged, this, &SettingWidget::settingChanged);
     }
 
     // Connect all QComboBox widgets
     QList<QComboBox *> comboboxes = findChildren<QComboBox *>();
-    Q_FOREACH (QComboBox *combobox, comboboxes) {
+    for (QComboBox *combobox : comboboxes) {
         connect(combobox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &SettingWidget::settingChanged);
         connect(combobox, &QComboBox::currentTextChanged, this, &SettingWidget::settingChanged);
     }
 
     // Connect all QCheckBox widgets
     QList<QCheckBox *> checkboxes = findChildren<QCheckBox *>();
-    Q_FOREACH (QCheckBox *checkbox, checkboxes) {
+    for (QCheckBox *checkbox : checkboxes) {
         connect(checkbox, &QCheckBox::stateChanged, this, &SettingWidget::settingChanged);
     }
 
     // Connect all QPushButton widgets
     QList<QPushButton *> pushbuttons = findChildren<QPushButton *>();
-    Q_FOREACH (QPushButton *pushbutton, pushbuttons) {
+    for (QPushButton *pushbutton : pushbuttons) {
         connect(pushbutton, &QPushButton::clicked, this, &SettingWidget::settingChanged);
     }
 
     // Connect all QSpinBox widgets
     QList<QSpinBox *> spinboxes = findChildren<QSpinBox *>();
-    Q_FOREACH (QSpinBox *spinbox, spinboxes) {
+    for (QSpinBox *spinbox : spinboxes) {
         connect(spinbox, QOverload<int>::of(&QSpinBox::valueChanged), this, &SettingWidget::settingChanged);
     }
 
     // Connect all KUrlRequester widgets
     QList<KUrlRequester *> urlrequesters = findChildren<KUrlRequester *>();
-    Q_FOREACH (KUrlRequester *urlrequester, urlrequesters) {
+    for (KUrlRequester *urlrequester : urlrequesters) {
         connect(urlrequester, &KUrlRequester::textChanged, this, &SettingWidget::settingChanged);
         connect(urlrequester, &KUrlRequester::urlSelected, this, &SettingWidget::settingChanged);
     }
 
     // Connect all QTableView widgets
     QList<QTableView *> tableviews = findChildren<QTableView *>();
-    Q_FOREACH(QTableView *tableview, tableviews) {
+    for(QTableView *tableview : tableviews) {
         connect(tableview, &QTableView::clicked, this, &SettingWidget::settingChanged);
     }
 
     /********** OUR CUSTOM WIDGETS **********/
     // Connect all PasswordField widgets
     QList<PasswordField *> passwordfields = findChildren<PasswordField *>();
-    Q_FOREACH (PasswordField *passwordfield, passwordfields) {
+    for (PasswordField *passwordfield : passwordfields) {
         connect(passwordfield, &PasswordField::textChanged, this, &SettingWidget::settingChanged);
         connect(passwordfield, &PasswordField::passwordOptionChanged, this, &SettingWidget::settingChanged);
     }
 
     // Connect all HwAddrComboBox widgets
     QList<HwAddrComboBox *> hwAddrcomboboxes = findChildren<HwAddrComboBox *>();
-    Q_FOREACH (HwAddrComboBox *combobox, hwAddrcomboboxes) {
+    for (HwAddrComboBox *combobox : hwAddrcomboboxes) {
         connect(combobox, &HwAddrComboBox::hwAddressChanged, this, &SettingWidget::settingChanged);
     }
 
     // Connect all SssidComboBox widgets
     QList<SsidComboBox *> ssidcomboboxes = findChildren<SsidComboBox *>();
-    Q_FOREACH (SsidComboBox *combobox, ssidcomboboxes) {
+    for (SsidComboBox *combobox : ssidcomboboxes) {
         connect(combobox, &SsidComboBox::ssidChanged, this, &SettingWidget::settingChanged);
     }
 
     // Connect all BssidComboBox widgets
     QList<BssidComboBox *> bssidcomboboxes = findChildren<BssidComboBox *>();
-    Q_FOREACH (BssidComboBox *combobox, bssidcomboboxes) {
+    for (BssidComboBox *combobox : bssidcomboboxes) {
         connect(combobox, &BssidComboBox::bssidChanged, this, &SettingWidget::settingChanged);
     }
 }

@@ -100,7 +100,7 @@ NMVariantMapMap ConnectionEditorBase::setting() const
 {
     NMVariantMapMap settings = m_connectionWidget->setting();
 
-    Q_FOREACH (SettingWidget *widget, m_settingWidgets) {
+    for (SettingWidget *widget : m_settingWidgets) {
         const QString type = widget->type();
         if (type != NetworkManager::Setting::typeAsString(NetworkManager::Setting::Security8021x) &&
                 type != NetworkManager::Setting::typeAsString(NetworkManager::Setting::WirelessSecurity)) {
@@ -296,7 +296,7 @@ void ConnectionEditorBase::initialize()
 
     // Re-check validation
     bool valid = true;
-    Q_FOREACH (SettingWidget *widget, m_settingWidgets) {
+    for (SettingWidget *widget : m_settingWidgets) {
         valid = valid && widget->isValid();
         connect(widget, &SettingWidget::validChanged, this, &ConnectionEditorBase::validChanged);
     }
@@ -397,7 +397,7 @@ void ConnectionEditorBase::initialize()
                         }
                     }
                 } else {
-                    Q_FOREACH (const QString &secret, requiredSecrets) {
+                    for (const QString &secret : requiredSecrets) {
                         if (setting.contains(secret + QLatin1String("-flags"))) {
                             NetworkManager::Setting::SecretFlagType secretFlag = (NetworkManager::Setting::SecretFlagType)setting.value(secret + QLatin1String("-flags")).toInt();
                             if (secretFlag == NetworkManager::Setting::None || secretFlag == NetworkManager::Setting::AgentOwned) {
@@ -436,12 +436,12 @@ void ConnectionEditorBase::replyFinished(QDBusPendingCallWatcher *watcher)
     const QString settingName = watcher->property("settingName").toString();
     if (reply.isValid()) {
         NMVariantMapMap secrets = reply.argumentAt<0>();
-        Q_FOREACH (const QString &key, secrets.keys()) {
+        for (const QString &key : secrets.keys()) {
             if (key == settingName) {
                 NetworkManager::Setting::Ptr setting = m_connection->setting(NetworkManager::Setting::typeFromString(key));
                 if (setting) {
                     setting->secretsFromMap(secrets.value(key));
-                    Q_FOREACH (SettingWidget *widget, m_settingWidgets) {
+                    for (SettingWidget *widget : m_settingWidgets) {
                         const QString type = widget->type();
                         if (type == settingName ||
                                 (settingName == NetworkManager::Setting::typeAsString(NetworkManager::Setting::Security8021x) &&
@@ -476,7 +476,7 @@ void ConnectionEditorBase::validChanged(bool valid)
         Q_EMIT validityChanged(false);
         return;
     } else {
-        Q_FOREACH (SettingWidget *widget, m_settingWidgets) {
+        for (SettingWidget *widget : m_settingWidgets) {
             if (!widget->isValid()) {
                 m_valid = false;
                 Q_EMIT validityChanged(false);

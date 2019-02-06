@@ -82,7 +82,7 @@ void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const 
     // qCDebug(PLASMA_NM) << "Initial address:" << m_initialAddress;
 
     QString deviceName;
-    Q_FOREACH (const NetworkManager::Device::Ptr & device, NetworkManager::networkInterfaces()) {
+    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
         const NetworkManager::Device::Type type = device->type();
         if (type == deviceType) {
             if (address == hwAddressFromDevice(device).toString()) {

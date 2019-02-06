@@ -74,7 +74,7 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
     QList<const KUrlRequester *> requesters;
     requesters << d->ui.x509CaFile << d->ui.x509Cert << d->ui.x509Key << d->ui.pskSharedKey << d->ui.passCaFile
                << d->ui.x509PassCaFile << d->ui.x509PassCert << d->ui.x509PassKey;
-    Q_FOREACH (const KUrlRequester * requester, requesters) {
+    for (const KUrlRequester *requester : requesters) {
         connect(requester, &KUrlRequester::urlSelected, this, &OpenVpnSettingWidget::updateStartDir);
     }
 
@@ -283,7 +283,7 @@ void OpenVpnSettingWidget::updateStartDir(const QUrl &url)
     QList<KUrlRequester *> requesters;
     requesters << d->ui.x509CaFile << d->ui.x509Cert << d->ui.x509Key << d->ui.pskSharedKey << d->ui.passCaFile << d->ui.x509PassCaFile
                << d->ui.x509PassCert << d->ui.x509PassKey;
-    Q_FOREACH (KUrlRequester * requester, requesters) {
+    for (KUrlRequester *requester : requesters) {
         requester->setStartDir(url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash));
     }
 }

@@ -313,7 +313,10 @@ void ConnectionIcon::setIcons()
     }
 
     NetworkManager::ActiveConnection::Ptr connection = NetworkManager::activatingConnection();
-    if (!connection) {
+
+    // Set icon based on the current primary connection if the activating connection is virtual
+    // since we're not setting icons for virtual connections
+    if (!connection || (connection && UiUtils::isConnectionTypeVirtual(connection->type()))) {
         connection = NetworkManager::primaryConnection();
     }
 

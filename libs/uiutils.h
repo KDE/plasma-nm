@@ -72,6 +72,12 @@ public:
     static bool isConnectionTypeSupported(NetworkManager::ConnectionSettings::ConnectionType type);
 
     /**
+     * @return true if the connection is virtual.
+     * @param type Type of the network connection
+     */
+    static bool isConnectionTypeVirtual(NetworkManager::ConnectionSettings::ConnectionType type);
+
+    /**
      * @return a human-readable description for the network interface type for use as label
      * @param type the type of the network interface
      */

@@ -131,6 +131,19 @@ bool UiUtils::isConnectionTypeSupported(NetworkManager::ConnectionSettings::Conn
     return true;
 }
 
+bool UiUtils::isConnectionTypeVirtual(NetworkManager::ConnectionSettings::ConnectionType type)
+{
+    if (type == NetworkManager::ConnectionSettings::Bond ||
+        type == NetworkManager::ConnectionSettings::Bridge ||
+        type == NetworkManager::ConnectionSettings::Infiniband ||
+        type == NetworkManager::ConnectionSettings::Team ||
+        type == NetworkManager::ConnectionSettings::Vlan) {
+        return true;
+    }
+
+   return false;
+}
+
 QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, const NetworkManager::Device::Ptr iface)
 {
     QString deviceText;

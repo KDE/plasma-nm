@@ -29,9 +29,7 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/ModemDevice>
 #include <NetworkManagerQt/Settings>
-#if NM_CHECK_VERSION (0, 9, 10)
 #include <NetworkManagerQt/TeamDevice>
-#endif
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/VlanDevice>
 #include <NetworkManagerQt/VpnConnection>
@@ -251,9 +249,7 @@ NetworkModelItem::ItemType NetworkModelItem::itemType() const
         m_type == NetworkManager::ConnectionSettings::Bond ||
         m_type == NetworkManager::ConnectionSettings::Bridge ||
         m_type == NetworkManager::ConnectionSettings::Vlan ||
-#if NM_CHECK_VERSION(0, 9, 10)
         m_type == NetworkManager::ConnectionSettings::Team ||
-#endif
         ((NetworkManager::status() == NetworkManager::Connected ||
           NetworkManager::status() == NetworkManager::ConnectedLinkLocal ||
           NetworkManager::status() == NetworkManager::ConnectedSiteOnly) && m_type == NetworkManager::ConnectionSettings::Vpn)) {
@@ -585,7 +581,6 @@ void NetworkModelItem::updateDetails() const
     } else if (m_type == NetworkManager::ConnectionSettings::Adsl) {
         m_details << i18n("Type") << i18n("Adsl");
     }
-#if NM_CHECK_VERSION (0, 9, 10)
       else if (m_type == NetworkManager::ConnectionSettings::Team) {
         NetworkManager::TeamDevice::Ptr teamDevice = device.objectCast<NetworkManager::TeamDevice>();
         m_details << i18n("Type") << i18n("Team");
@@ -593,5 +588,4 @@ void NetworkModelItem::updateDetails() const
             m_details << i18n("MAC Address") << teamDevice->hwAddress();
         }
     }
-#endif
 }

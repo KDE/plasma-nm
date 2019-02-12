@@ -169,11 +169,7 @@ void NetworkStatus::changeActiveConnections()
         if (!active->devices().isEmpty() && UiUtils::isConnectionTypeSupported(active->type())) {
 
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
-#if NM_CHECK_VERSION(0, 9, 10)
             if (device && device->type() != NetworkManager::Device::Generic && device->type() <= NetworkManager::Device::Team) {
-#else
-            if (device) {
-#endif
                 bool connecting = false;
                 bool connected = false;
                 QString conType;

@@ -278,14 +278,9 @@ void ConnectionEditorBase::initialize()
     if ((type == NetworkManager::ConnectionSettings::Wired
             || type == NetworkManager::ConnectionSettings::Wireless
             || type == NetworkManager::ConnectionSettings::Infiniband
-#if NM_CHECK_VERSION(0, 9, 10)
             || type == NetworkManager::ConnectionSettings::Team
-#endif
-
-#if NM_CHECK_VERSION(1, 0, 0)
             || type == NetworkManager::ConnectionSettings::Cdma
             || type == NetworkManager::ConnectionSettings::Gsm
-#endif
             || type == NetworkManager::ConnectionSettings::Bond
             || type == NetworkManager::ConnectionSettings::Bridge
             || type == NetworkManager::ConnectionSettings::Vlan

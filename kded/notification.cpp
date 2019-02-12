@@ -291,7 +291,6 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         text = i18nc("@info:status Notification when the device failed due to SecondaryConnectionFailed",
                      "A secondary connection of the base connection failed");
         break;
-#if NM_CHECK_VERSION(0, 9, 10)
     case NetworkManager::Device::DcbFcoeFailed:
         text = i18nc("@info:status Notification when the device failed due to DcbFcoeFailed",
                      "DCB or FCoE setup failed");
@@ -312,8 +311,6 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         text = i18nc("@info:status Notification when the device failed due to SimPinIncorrect",
                      "The SIM PIN was incorrect");
         break;
-#endif
-#if NM_CHECK_VERSION(1, 0, 4)
     case NetworkManager::Device::NewActivation:
         text = i18nc("@info:status Notification when the device failed due to NewActivation",
                      "A new connection activation was enqueued");
@@ -326,7 +323,6 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         text = i18nc("@info:status Notification when the device failed due to ParentManagedChanged",
                      "The device parent's management changed");
         break;
-#endif
     case NetworkManager::Device::Reserved:
         return;
     }
@@ -363,25 +359,13 @@ void Notification::addActiveConnection(const NetworkManager::ActiveConnection::P
     if (ac->vpn()) {
         NetworkManager::VpnConnection::Ptr vpnConnection = ac.objectCast<NetworkManager::VpnConnection>();
         connect(vpnConnection.data(), &NetworkManager::VpnConnection::stateChanged, this, &Notification::onVpnConnectionStateChanged);
-#if NM_CHECK_VERSION(0, 9, 10)
     } else if (ac->type() != NetworkManager::ConnectionSettings::Bond &&
                ac->type() != NetworkManager::ConnectionSettings::Bridge &&
                ac->type() != NetworkManager::ConnectionSettings::Generic &&
                ac->type() != NetworkManager::ConnectionSettings::Infiniband &&
                ac->type() != NetworkManager::ConnectionSettings::Team &&
-#if NM_CHECK_VERSION(1, 1, 92)
                ac->type() != NetworkManager::ConnectionSettings::Vlan &&
                ac->type() != NetworkManager::ConnectionSettings::Tun) {
-#else
-               ac->type() != NetworkManager::ConnectionSettings::Vlan) {
-#endif
-
-#else
-    } else if (ac->type() != NetworkManager::ConnectionSettings::Bond &&
-               ac->type() != NetworkManager::ConnectionSettings::Bridge &&
-               ac->type() != NetworkManager::ConnectionSettings::Infiniband &&
-               ac->type() != NetworkManager::ConnectionSettings::Vlan) {
-#endif
         connect(ac.data(), &NetworkManager::ActiveConnection::stateChanged, this, &Notification::onActiveConnectionStateChanged);
     }
 }

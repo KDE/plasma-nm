@@ -110,11 +110,7 @@ UiUtils::SortedConnectionType UiUtils::connectionTypeToSortedType(NetworkManager
 
 bool UiUtils::isConnectionTypeSupported(NetworkManager::ConnectionSettings::ConnectionType type)
 {
-#if NM_CHECK_VERSION(1, 2, 0)
     if (type == NetworkManager::ConnectionSettings::Generic || type == NetworkManager::ConnectionSettings::Tun) {
-#else
-    if (type == NetworkManager::ConnectionSettings::Generic) {
-#endif
         return false;
     }
 
@@ -169,11 +165,9 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
     case NetworkManager::Device::Vlan:
         deviceText = i18nc("title of the interface widget in nm's popup", "Virtual (vlan)");
         break;
-#if NM_CHECK_VERSION(0, 9, 10)
     case NetworkManager::Device::Team:
         deviceText = i18nc("title of the interface widget in nm's popup", "Virtual (team)");
         break;
-#endif
     case NetworkManager::Device::Modem: {
         const NetworkManager::ModemDevice::Ptr nmModemIface = iface.objectCast<NetworkManager::ModemDevice>();
         if (nmModemIface) {
@@ -250,11 +244,9 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
         text = i18n("Wi-Fi");
         icon = QStringLiteral("network-wireless");
         break;
-#if NM_CHECK_VERSION(0, 9, 10)
     case ConnectionSettings::Team:
         text = i18n("Team");
         break;
-#endif
     default:
         text = i18n("Unknown connection type");
         break;

@@ -284,7 +284,8 @@ void ConnectionEditorBase::initialize()
             || type == NetworkManager::ConnectionSettings::Bond
             || type == NetworkManager::ConnectionSettings::Bridge
             || type == NetworkManager::ConnectionSettings::Vlan
-            || (type == NetworkManager::ConnectionSettings::Vpn && serviceType == QLatin1String("org.freedesktop.NetworkManager.openvpn"))) && !m_connection->isSlave()) {
+            || (type == NetworkManager::ConnectionSettings::Vpn && serviceType == QLatin1String("org.freedesktop.NetworkManager.openvpn"))
+            || (type == NetworkManager::ConnectionSettings::Vpn && serviceType == QLatin1String("org.freedesktop.NetworkManager.wireguard"))) && !m_connection->isSlave()) {
         IPv6Widget *ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Setting::Ipv6), this);
         addSettingWidget(ipv6Widget, i18n("IPv6"));
     }

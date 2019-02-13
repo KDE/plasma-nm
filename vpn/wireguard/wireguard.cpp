@@ -29,6 +29,7 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/Ipv4Setting>
+#include <NetworkManagerQt/Ipv6Setting>
 
 #include "wireguardwidget.h"
 #include "wireguardauth.h"
@@ -109,10 +110,16 @@ NMVariantMapMap WireGuardUiPlugin::importConnectionSettings(const QString &fileN
     const QString connectionName = QFileInfo(fileName).completeBaseName();
     NMStringMap dataMap;
     QVariantMap ipv4Data;
+    QVariantMap ipv6Data;
 
     QString value;
     QStringList valueList;
+    QList<QHostAddress> ipv4List;
+    QList<QHostAddress> ipv6List;
     int intValue;
+
+    NetworkManager::Ipv4Setting ipv4Setting;
+    NetworkManager::Ipv6Setting ipv6Setting;
 
     // Do the required fields first and fail (i.e. return an empty result) if not present
 
@@ -204,17 +211,36 @@ NMVariantMapMap WireGuardUiPlugin::importConnectionSettings(const QString &fileN
         }
     }
 
-    // DNS
-    value = interfaceGroup.readEntry(NMV_WG_TAG_DNS);
-    if (!value.isEmpty()) {
-        const QHostAddress testAddress(value);
-        if (testAddress.protocol() == QAbstractSocket::NetworkLayerProtocol::IPv4Protocol
-            || testAddress.protocol() == QAbstractSocket::NetworkLayerProtocol::IPv6Protocol) {
-            dataMap.insert(QLatin1String(NM_WG_KEY_DNS), value);
-        } else {
-            mError = VpnUiPlugin::Error;
-            mErrorMessage = i18n("Invalid DNS in config file");
-            return result;
+    // DNS servers are added slightly differently in that they are not added
+    // to the [vpn] section of the setup but to the [ipv4] and/or [ipv6]
+    // sections.
+    valueList = interfaceGroup.readEntry(NMV_WG_TAG_DNS, QStringList());
+    if (!valueList.isEmpty()) {
+        for (const QString &address : valueList) {
+            const QPair<QHostAddress, int> addressIn = QHostAddress::parseSubnet(address.trimmed());
+            if (addressIn.first.protocol() == QAbstractSocket::NetworkLayerProtocol::IPv4Protocol) {
+                ipv4List.append(addressIn.first);
+            } else if (addressIn.first.protocol() == QAbstractSocket::NetworkLayerProtocol::IPv6Protocol) {
+                ipv6List.append(addressIn.first);
+            } else { // Error condition
+                mError = VpnUiPlugin::Error;
+                mErrorMessage = i18n("No valid address in config file");
+                return result;
+            }
+        }
+
+        // If there are any addresses put them on the correct tab and set the "method" to 
+        // "Automatic (Only addresses)" by setting "ignore-auto-dns=true"
+        if (!ipv4List.isEmpty()) {
+            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Automatic);
+            ipv4Setting.setIgnoreAutoDns(true);
+            ipv4Setting.setDns(ipv4List);
+        }
+
+        if (!ipv6List.isEmpty()) {
+            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Automatic);
+            ipv6Setting.setIgnoreAutoDns(true);
+            ipv6Setting.setDns(ipv6List);
         }
     }
 
@@ -279,6 +305,12 @@ NMVariantMapMap WireGuardUiPlugin::importConnectionSettings(const QString &fileN
     conn.insert("type", "vpn");
     result.insert("connection", conn);
     result.insert("vpn", setting.toMap());
+    if (!ipv4List.isEmpty()) {
+        result.insert("ipv4", ipv4Setting.toMap());
+    }
+    if (!ipv6List.isEmpty()) {
+        result.insert("ipv6", ipv6Setting.toMap());
+    }
 
     return result;
 }
@@ -288,6 +320,12 @@ bool WireGuardUiPlugin::exportConnectionSettings(const NetworkManager::Connectio
 {
     NetworkManager::VpnSetting::Ptr vpnSetting = connection->setting(
                                                     NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+    NetworkManager::Ipv4Setting::Ptr ipv4Setting = connection->setting(
+                                                    NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
+    NetworkManager::Ipv6Setting::Ptr ipv6Setting = connection->setting(
+                                                    NetworkManager::Setting::Ipv6).dynamicCast<NetworkManager::Ipv6Setting>();
+    QList<QHostAddress> ipv4Dns = ipv4Setting->dns();
+    QList<QHostAddress> ipv6Dns = ipv6Setting->dns();
     NMStringMap dataMap = vpnSetting->data();
 
     // Make sure all the required fields are present
@@ -315,8 +353,21 @@ bool WireGuardUiPlugin::exportConnectionSettings(const NetworkManager::Connectio
     interfaceGroup.writeEntry(NMV_WG_TAG_PRIVATE_KEY, dataMap[NM_WG_KEY_PRIVATE_KEY]);
 
     // Do DNS (Not required)
-    if (dataMap.contains(QLatin1String(NM_WG_KEY_DNS)))
+    // DNS is a little complicated because the first version of plasma-nm-wireguard included
+    // the DNS key in the VPN settings but this was changed in a later version such that it
+    // uses DNS from the IPv4 and IPv6 tabs instead, so here we check to see if the IPv4 and/or
+    // the IPv6 tabs contain DNS entries and if so use those. Otherwise see if we have an
+    // old style VPN setting with DNS in it and if so use that.
+    if (ipv4Dns.count() > 0 || ipv6Dns.count() > 0) {
+        QStringList dnsList;
+        for (QHostAddress addr : ipv4Dns)
+            dnsList.append(addr.toString());
+        for (QHostAddress addr : ipv6Dns)
+            dnsList.append(addr.toString());
+        interfaceGroup.writeEntry(NMV_WG_TAG_DNS, dnsList);
+    } else if (dataMap.contains(QLatin1String(NM_WG_KEY_DNS))) {
         interfaceGroup.writeEntry(NMV_WG_TAG_DNS, dataMap[NM_WG_KEY_DNS]);
+    }
 
     // Do MTU (Not required)
     if (dataMap.contains(QLatin1String(NM_WG_KEY_MTU)))

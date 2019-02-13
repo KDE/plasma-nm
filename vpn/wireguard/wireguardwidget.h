@@ -49,7 +49,6 @@ private:
     void checkAddressValid();
     void checkPrivateKeyValid();
     void checkPublicKeyValid();
-    void checkDnsValid();
     void checkAllowedIpsValid();
     void checkEndpointValid();
 

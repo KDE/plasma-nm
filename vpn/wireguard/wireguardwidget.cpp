@@ -45,7 +45,6 @@ public:
     bool addressValid;
     bool privateKeyValid;
     bool publicKeyValid;
-    bool dnsValid;
     bool allowedIpsValid;
     bool endpointValid;
 };
@@ -54,7 +53,6 @@ WireGuardSettingWidget::Private::Private(void)
     : addressValid(false)
     , privateKeyValid(false)
     , publicKeyValid(false)
-    , dnsValid(true)         // optional so blank is valid
     , allowedIpsValid(false)
     , endpointValid(true)    // optional so blank is valid
 {
@@ -85,7 +83,6 @@ WireGuardSettingWidget::WireGuardSettingWidget(const NetworkManager::VpnSetting:
     connect(d->ui.publicKeyLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkPublicKeyValid);
     connect(d->ui.allowedIPsLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkAllowedIpsValid);
     connect(d->ui.endpointLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkEndpointValid);
-    connect(d->ui.dNSLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkDnsValid);
 
     d->ui.privateKeyLineEdit->setPasswordModeEnabled(true);
 
@@ -106,10 +103,6 @@ WireGuardSettingWidget::WireGuardSettingWidget(const NetworkManager::VpnSetting:
     // used both here and to validate the private key later
     d->keyValidator = new WireGuardKeyValidator(this);
     d->ui.publicKeyLineEdit->setValidator(d->keyValidator);
-
-    // Create validator for DNS
-    SimpleIpV4AddressValidator *dnsValidator = new SimpleIpV4AddressValidator(this);
-    d->ui.dNSLineEdit->setValidator(dnsValidator);
 
     // Create validator for Endpoint
     SimpleIpV4AddressValidator *endpointValidator =
@@ -134,7 +127,6 @@ WireGuardSettingWidget::WireGuardSettingWidget(const NetworkManager::VpnSetting:
     checkAddressValid();
     checkPrivateKeyValid();
     checkPublicKeyValid();
-    checkDnsValid();
     checkAllowedIpsValid();
     checkEndpointValid();
 
@@ -148,13 +140,13 @@ WireGuardSettingWidget::~WireGuardSettingWidget()
 void WireGuardSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     Q_UNUSED(setting)
+
     // General settings
     const NMStringMap dataMap = d->setting->data();
 
     d->ui.addressIPv4LineEdit->setText(dataMap[NM_WG_KEY_ADDR_IP4]);
     d->ui.addressIPv6LineEdit->setText(dataMap[NM_WG_KEY_ADDR_IP6]);
     d->ui.privateKeyLineEdit->setText(dataMap[NM_WG_KEY_PRIVATE_KEY]);
-    d->ui.dNSLineEdit->setText(dataMap[NM_WG_KEY_DNS]);
     d->ui.publicKeyLineEdit->setText(dataMap[NM_WG_KEY_PUBLIC_KEY]);
     d->ui.allowedIPsLineEdit->setText(dataMap[NM_WG_KEY_ALLOWED_IPS]);
     d->ui.endpointLineEdit->setText(dataMap[NM_WG_KEY_ENDPOINT]);
@@ -178,7 +170,6 @@ QVariantMap WireGuardSettingWidget::setting() const
     setProperty(data, QLatin1String(NM_WG_KEY_PRIVATE_KEY), d->ui.privateKeyLineEdit->text());
     setProperty(data, QLatin1String(NM_WG_KEY_PUBLIC_KEY), d->ui.publicKeyLineEdit->displayText());
     setProperty(data, QLatin1String(NM_WG_KEY_ALLOWED_IPS), d->ui.allowedIPsLineEdit->displayText());
-    setProperty(data, QLatin1String(NM_WG_KEY_DNS), d->ui.dNSLineEdit->displayText());
     setProperty(data, QLatin1String(NM_WG_KEY_ENDPOINT), d->ui.endpointLineEdit->displayText());
 
     setting.setData(data);
@@ -220,7 +211,6 @@ bool WireGuardSettingWidget::isValid() const
     return d->addressValid
            && d->privateKeyValid
            && d->publicKeyValid
-           && d->dnsValid
            && d->allowedIpsValid
            && d->endpointValid;
 }
@@ -263,17 +253,6 @@ void WireGuardSettingWidget::checkPublicKeyValid()
     QString value = widget->displayText();
     d->publicKeyValid = QValidator::Acceptable == widget->validator()->validate(value, pos);
     setBackground(widget, d->publicKeyValid);
-    slotWidgetChanged();
-}
-
-void WireGuardSettingWidget::checkDnsValid()
-{
-    int pos = 0;
-    QLineEdit *widget = d->ui.dNSLineEdit;
-    QString value = widget->displayText();
-    d->dnsValid = QValidator::Acceptable == widget->validator()->validate(value, pos)
-                  || widget->displayText().isEmpty();
-    setBackground(widget, d->dnsValid);
     slotWidgetChanged();
 }
 

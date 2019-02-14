@@ -65,6 +65,13 @@ Item {
 
     PlasmaNM.Handler {
         id: handler
+        onWirelessScanTimerEnabled: {
+            if (enabled) {
+                scanTimer.restart()
+            } else {
+                scanTimer.stop()
+            }
+        }
     }
 
     Timer {
@@ -72,11 +79,8 @@ Item {
         interval: 15000
         repeat: true
         running: plasmoid.expanded
-        triggeredOnStart: true
 
-        onTriggered: {
-            handler.requestScan()
-        }
+        onTriggered: handler.requestScan()
     }
 
     PlasmaNM.Configuration {

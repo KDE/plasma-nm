@@ -185,7 +185,6 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     m_timer->setInterval(15000);
     connect(m_timer, &QTimer::timeout, [this] () {
         m_handler->requestScan();
-        m_timer->start();
     });
     m_timer->start();
 }

@@ -73,6 +73,10 @@ Handler::Handler(QObject *parent)
                                             QStringLiteral(AGENT_IFACE),
                                             QStringLiteral("registered"),
                                             this, SLOT(initKdedModule()));
+
+    // Interval (in ms) between attempts to scan for wifi networks
+    m_wirelessScanRetryTimer.setInterval(2000);
+    m_wirelessScanRetryTimer.setSingleShot(true);
 }
 
 Handler::~Handler()
@@ -408,19 +412,41 @@ void Handler::updateConnection(const NetworkManager::Connection::Ptr& connection
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
-void Handler::requestScan()
+void Handler::requestScan(const QString &interface)
 {
     for (NetworkManager::Device::Ptr device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
             if (wifiDevice) {
+                if (!interface.isEmpty() && interface != wifiDevice->interfaceName()) {
+                    continue;
+                }
+                qCDebug(PLASMA_NM) << "Requesting wifi scan on device" << wifiDevice->interfaceName();
                 QDBusPendingReply<> reply = wifiDevice->requestScan();
                 QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
                 watcher->setProperty("action", Handler::RequestScan);
+                watcher->setProperty("interface", wifiDevice->interfaceName());
                 connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
             }
         }
     }
+}
+
+void Handler::scanRequestFailed(const QString &interface)
+{
+    if (m_wirelessScanRetryTimer.isActive()) {
+        return;
+    }
+    qCDebug(PLASMA_NM) << "Trying soon a new scan on" << interface;
+
+    emit wirelessScanTimerEnabled(false);
+
+    auto retryAction = [this,interface]() {
+        m_wirelessScanRetryTimer.disconnect();
+        requestScan(interface);
+    };
+    connect(&m_wirelessScanRetryTimer, &QTimer::timeout, this, retryAction);
+    m_wirelessScanRetryTimer.start();
 }
 
 void Handler::initKdedModule()
@@ -460,16 +486,17 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
                 notification = new KNotification("FailedToRemoveConnection", KNotification::CloseOnTimeout, this);
                 notification->setTitle(i18n("Failed to remove %1", watcher->property("connection").toString()));
                 break;
-            case Handler::RequestScan:
-                /* INFO: Disabled for now as wifi scanning is now automatic
-                    notification = new KNotification("FailedToRequestScan", KNotification::CloseOnTimeout, this);
-                    notification->setTitle(i18n("Failed to request scan"));
-                */
-                break;
             case Handler::UpdateConnection:
                 notification = new KNotification("FailedToUpdateConnection", KNotification::CloseOnTimeout, this);
                 notification->setTitle(i18n("Failed to update connection %1", watcher->property("connection").toString()));
                 break;
+            case Handler::RequestScan:
+            {
+                const QString interface = watcher->property("interface").toString();
+                qCDebug(PLASMA_NM) << "Wireless scan on" << interface << "failed:" << error;
+                scanRequestFailed(interface);
+                break;
+            }
             default:
                 break;
         }
@@ -496,6 +523,10 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
             case Handler::UpdateConnection:
                 notification = new KNotification("ConnectionUpdated", KNotification::CloseOnTimeout, this);
                 notification->setText(i18n("Connection %1 has been updated", watcher->property("connection").toString()));
+                break;
+            case Handler::RequestScan:
+                qCDebug(PLASMA_NM) << "Wireless scan on" << watcher->property("interface").toString() << "succeeded";
+                emit wirelessScanTimerEnabled(true);
                 break;
             default:
                 break;

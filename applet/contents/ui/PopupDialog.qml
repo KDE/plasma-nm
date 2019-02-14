@@ -88,6 +88,7 @@ FocusScope {
                         notificationInhibitorLock =  job.result;
                     }
                 });
+                handler.requestScan()
             } else {
                 notificationInhibitorLock = undefined;
                 toolbar.closeSearch()

@@ -35,6 +35,13 @@ Kirigami.ApplicationItem {
 
     PlasmaNM.Handler {
         id: handler
+        onWirelessScanTimerEnabled: {
+            if (enabled) {
+                scanTimer.restart()
+            } else {
+                scanTimer.stop()
+            }
+        }
     }
 
     PlasmaNM.EnabledConnections {
@@ -59,16 +66,15 @@ Kirigami.ApplicationItem {
         showSavedMode: false
     }
 
+    Component.onCompleted: handler.requestScan()
+
     Timer {
         id: scanTimer
         interval: 15000
         repeat: true
         running: parent.visible
-        triggeredOnStart: true
 
-        onTriggered: {
-            handler.requestScan()
-        }
+        onTriggered: handler.requestScan()
     }
 
     NetworkListView {

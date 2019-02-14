@@ -100,7 +100,7 @@ public Q_SLOTS:
      * @map - NMVariantMapMap with new connection settings
      */
     void updateConnection(const NetworkManager::Connection::Ptr &connection, const NMVariantMapMap &map);
-    void requestScan();
+    void requestScan(const QString &interface = QString());
 
 private Q_SLOTS:
     void initKdedModule();
@@ -109,6 +109,8 @@ private Q_SLOTS:
     void unlockRequiredChanged(MMModemLock modemLock);
 #endif
 
+Q_SIGNALS:
+    void wirelessScanTimerEnabled(bool enable);
 private:
     bool m_tmpWirelessEnabled;
     bool m_tmpWwanEnabled;
@@ -119,8 +121,10 @@ private:
     QString m_tmpDevicePath;
     QString m_tmpSpecificPath;
     QMap<QString, bool> m_bluetoothAdapters;
+    QTimer m_wirelessScanRetryTimer;
 
     void enableBluetooth(bool enable);
+    void scanRequestFailed(const QString &interface);
 
 };
 

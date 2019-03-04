@@ -39,6 +39,7 @@
 #include <QStringBuilder>
 #include <QDialog>
 
+#include <KLocalizedString>
 #include <KPluginFactory>
 #include <KWindowSystem>
 #include <KConfig>
@@ -408,6 +409,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
 
     if (!Configuration::showPasswordDialog()) {
         sendError(SecretAgent::NoSecrets, "Cannot authenticate", request.message);
+        emit secretsError(request.connection_path.path(), i18n("Authentication to %1 failed. Wrong password?", request.connection.value("connection").value("id").toString()));
         return true;
     } else if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
         m_dialog = new PasswordDialog(connectionSettings, request.flags, request.setting_name);

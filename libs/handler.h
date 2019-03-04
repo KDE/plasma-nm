@@ -104,6 +104,7 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void initKdedModule();
+    void secretAgentError(const QString &connectionPath, const QString &message);
     void replyFinished(QDBusPendingCallWatcher *watcher);
 #if WITH_MODEMMANAGER_SUPPORT
     void unlockRequiredChanged(MMModemLock modemLock);
@@ -111,6 +112,7 @@ private Q_SLOTS:
 
 Q_SIGNALS:
     void wirelessScanTimerEnabled(bool enable);
+    void connectionActivationFailed(const QString &connectionPath, const QString &message);
 private:
     bool m_tmpWirelessEnabled;
     bool m_tmpWwanEnabled;

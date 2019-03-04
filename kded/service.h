@@ -45,6 +45,8 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     Q_SCRIPTABLE void registered();
+    Q_SCRIPTABLE
+    void secretsError(const QString &connectionPath, const QString &message);
 
 private Q_SLOTS:
     void slotRegistered(const QDBusObjectPath &path);

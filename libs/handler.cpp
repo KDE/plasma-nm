@@ -74,6 +74,12 @@ Handler::Handler(QObject *parent)
                                             QStringLiteral("registered"),
                                             this, SLOT(initKdedModule()));
 
+    QDBusConnection::sessionBus().connect(QStringLiteral(AGENT_SERVICE),
+                                            QStringLiteral(AGENT_PATH),
+                                            QStringLiteral(AGENT_IFACE),
+                                            QStringLiteral("secretsError"),
+                                            this, SLOT(secretAgentError(QString, QString)));
+
     // Interval (in ms) between attempts to scan for wifi networks
     m_wirelessScanRetryTimer.setInterval(2000);
     m_wirelessScanRetryTimer.setSingleShot(true);
@@ -456,6 +462,13 @@ void Handler::initKdedModule()
                                                           QStringLiteral(AGENT_IFACE),
                                                           QStringLiteral("init"));
     QDBusConnection::sessionBus().send(initMsg);
+}
+
+void Handler::secretAgentError(const QString &connectionPath, const QString &message)
+{
+    // If the password was wrong, forget it
+    removeConnection(connectionPath);
+    emit connectionActivationFailed(connectionPath, message);
 }
 
 void Handler::replyFinished(QDBusPendingCallWatcher * watcher)

@@ -21,28 +21,48 @@ import QtQuick 2.6
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.2 as Controls
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-import org.kde.kirigami 2.2 as Kirigami
+import org.kde.kirigami 2.6 as Kirigami
 
 Kirigami.ScrollablePage {
     anchors.leftMargin: Kirigami.Units.largeSpacing * 2
 
-    header: RowLayout {
-        id: layoutrow
+    header: ColumnLayout {
         width: parent.width
-
-        Controls.Label {
-            anchors.left: parent.left
-            text: i18n("Wi-fi")
+        Kirigami.InlineMessage {
+            id: inlineError
             Layout.fillWidth: true
-            font.bold: true
+            showCloseButton: true
+
+            visible: false
+
+            type: Kirigami.MessageType.Warning
+            Connections {
+                target: handler
+                onConnectionActivationFailed: {
+                    inlineError.text = message;
+                    inlineError.visible = true;
+                }
+            }
         }
 
-        Controls.Switch {
-            id: wifiSwitchButton
-            checked: enabled && enabledConnections.wirelessEnabled
-            enabled: enabledConnections.wirelessHwEnabled
-            onClicked: {
-                handler.enableWireless(checked);
+        RowLayout {
+            id: layoutrow
+            Layout.fillWidth: true
+
+            Controls.Label {
+                anchors.left: parent.left
+                text: i18n("Wi-fi")
+                Layout.fillWidth: true
+                font.bold: true
+            }
+
+            Controls.Switch {
+                id: wifiSwitchButton
+                checked: enabled && enabledConnections.wirelessEnabled
+                enabled: enabledConnections.wirelessHwEnabled
+                onClicked: {
+                    handler.enableWireless(checked);
+                }
             }
         }
     }

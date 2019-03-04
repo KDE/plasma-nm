@@ -72,6 +72,9 @@ public:
     explicit SecretAgent(QObject* parent = nullptr);
     ~SecretAgent() override;
 
+Q_SIGNALS:
+    void secretsError(const QString &connectionPath, const QString &message) const;
+
 public Q_SLOTS:
     NMVariantMapMap GetSecrets(const NMVariantMapMap&, const QDBusObjectPath&, const QString&, const QStringList&, uint) override;
     void SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path) override;

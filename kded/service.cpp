@@ -66,6 +66,7 @@ void NetworkManagementService::init()
 
     if (!d->agent) {
         d->agent = new SecretAgent(this);
+        connect(d->agent, &SecretAgent::secretsError, this, &NetworkManagementService::secretsError);
     }
 
     if (!d->notification) {

@@ -27,6 +27,7 @@
 
 #include <QDBusMetaType>
 #include <QPointer>
+#include <QUrl>
 #include <KColorScheme>
 
 #include "nm-wireguard-service.h"
@@ -82,7 +83,8 @@ WireGuardSettingWidget::WireGuardSettingWidget(const NetworkManager::VpnSetting:
     connect(d->ui.privateKeyLineEdit, &PasswordField::textChanged, this, &WireGuardSettingWidget::checkPrivateKeyValid);
     connect(d->ui.publicKeyLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkPublicKeyValid);
     connect(d->ui.allowedIPsLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkAllowedIpsValid);
-    connect(d->ui.endpointLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkEndpointValid);
+    connect(d->ui.endpointAddressLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkEndpointValid);
+    connect(d->ui.endpointPortLineEdit, &QLineEdit::textChanged, this, &WireGuardSettingWidget::checkEndpointValid);
 
     d->ui.privateKeyLineEdit->setPasswordModeEnabled(true);
 
@@ -104,15 +106,16 @@ WireGuardSettingWidget::WireGuardSettingWidget(const NetworkManager::VpnSetting:
     d->keyValidator = new WireGuardKeyValidator(this);
     d->ui.publicKeyLineEdit->setValidator(d->keyValidator);
 
-    // Create validator for Endpoint
-    SimpleIpV4AddressValidator *endpointValidator =
-        new SimpleIpV4AddressValidator(this, SimpleIpV4AddressValidator::AddressStyle::WithPort);
-    d->ui.endpointLineEdit->setValidator(endpointValidator);
-
     // Create validator for AllowedIPs
     SimpleIpListValidator *allowedIPsValidator = new SimpleIpListValidator(this, SimpleIpListValidator::WithCidr,
                                                                            SimpleIpListValidator::Both);
     d->ui.allowedIPsLineEdit->setValidator(allowedIPsValidator);
+
+    // Create validator for endpoint port
+    QIntValidator *portValidator = new QIntValidator(this);
+    portValidator->setBottom(0);
+    portValidator->setTop(65535);
+    d->ui.endpointPortLineEdit->setValidator(portValidator);
 
     // Connect for setting check
     watchChangedSetting();
@@ -149,7 +152,15 @@ void WireGuardSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &sett
     d->ui.privateKeyLineEdit->setText(dataMap[NM_WG_KEY_PRIVATE_KEY]);
     d->ui.publicKeyLineEdit->setText(dataMap[NM_WG_KEY_PUBLIC_KEY]);
     d->ui.allowedIPsLineEdit->setText(dataMap[NM_WG_KEY_ALLOWED_IPS]);
-    d->ui.endpointLineEdit->setText(dataMap[NM_WG_KEY_ENDPOINT]);
+
+    // An endpoint is stored as <ipv4 | [ipv6] | fqdn>:<port>
+    QString storedEndpoint = dataMap[NM_WG_KEY_ENDPOINT];
+    QStringList endpointList = storedEndpoint.contains("]:") ?
+                               dataMap[NM_WG_KEY_ENDPOINT].split("]:") :
+                               dataMap[NM_WG_KEY_ENDPOINT].split(":");
+
+    d->ui.endpointAddressLineEdit->setText(endpointList[0].remove("["));
+    d->ui.endpointPortLineEdit->setText(endpointList[1]);
 }
 
 void WireGuardSettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
@@ -170,7 +181,25 @@ QVariantMap WireGuardSettingWidget::setting() const
     setProperty(data, QLatin1String(NM_WG_KEY_PRIVATE_KEY), d->ui.privateKeyLineEdit->text());
     setProperty(data, QLatin1String(NM_WG_KEY_PUBLIC_KEY), d->ui.publicKeyLineEdit->displayText());
     setProperty(data, QLatin1String(NM_WG_KEY_ALLOWED_IPS), d->ui.allowedIPsLineEdit->displayText());
-    setProperty(data, QLatin1String(NM_WG_KEY_ENDPOINT), d->ui.endpointLineEdit->displayText());
+
+    // Endpoint isn't required and is created from <address>:<port>
+    QString addressString = d->ui.endpointAddressLineEdit->displayText();
+    if (!addressString.isEmpty()) {
+        // If there is a ':' in the address string then it is an IPv6 address and
+        // the output needs to be formatted as '[1:2:3:4:5:6:7:8]:123' otherwhise
+        // it is formatted as '1.2.3.4:123' or 'ab.com:123'
+        if (addressString.contains(":"))
+            setProperty(data, QLatin1String(NM_WG_KEY_ENDPOINT),
+                        "[" +
+                        d->ui.endpointAddressLineEdit->displayText().trimmed() +
+                        "]:" +
+                        d->ui.endpointPortLineEdit->displayText().trimmed());
+        else
+            setProperty(data, QLatin1String(NM_WG_KEY_ENDPOINT),
+                        d->ui.endpointAddressLineEdit->displayText().trimmed() +
+                        ":" +
+                        d->ui.endpointPortLineEdit->displayText().trimmed());
+    }
 
     setting.setData(data);
 
@@ -269,11 +298,26 @@ void WireGuardSettingWidget::checkAllowedIpsValid()
 void WireGuardSettingWidget::checkEndpointValid()
 {
     int pos = 0;
-    QLineEdit *widget = d->ui.endpointLineEdit;
-    QString value = widget->displayText();
-    d->endpointValid = QValidator::Acceptable == widget->validator()->validate(value, pos)
-                       || value.isEmpty();
-    setBackground(widget, d->endpointValid);
+    QLineEdit *addressWidget = d->ui.endpointAddressLineEdit;
+    QLineEdit *portWidget = d->ui.endpointPortLineEdit;
+    QString addressValue = addressWidget->displayText();
+    QString portString = portWidget->displayText();
+
+    QUrl temp;
+    static QRegExpValidator fqdnValidator(QRegExp(QLatin1String("(?=.{5,254}$)([a-zA-Z0-9][a-zA-Z0-9-]{1,62}\\.){1,63}[a-zA-Z]{2,63}")), 0);
+    static SimpleIpV4AddressValidator ipv4Validator(0);
+    static SimpleIpV6AddressValidator ipv6Validator(0);
+
+    bool addressValid = QValidator::Acceptable == fqdnValidator.validate(addressValue, pos)
+                        || QValidator::Acceptable == ipv4Validator.validate(addressValue, pos)
+                        || QValidator::Acceptable == ipv6Validator.validate(addressValue, pos);
+    bool bothEmpty = addressValue.isEmpty() && portString.isEmpty();
+    // Because of the validator, if the port is non-empty, it is valid
+    bool portValid = !portString.isEmpty();
+    d->endpointValid = bothEmpty || (addressValid && portValid);
+    setBackground(addressWidget, bothEmpty || addressValid);
+    setBackground(portWidget, bothEmpty || portValid);
+
     slotWidgetChanged();
 }
 

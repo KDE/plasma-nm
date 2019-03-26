@@ -22,6 +22,7 @@ target_link_libraries(plasmanm_internal
 PUBLIC
     KF5::NetworkManagerQt
     plasmanm_editor
+    ${NETWORKMANAGER_LIBRARIES}
 PRIVATE
     KF5::Service
     KF5::I18n

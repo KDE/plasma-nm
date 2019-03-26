@@ -38,6 +38,8 @@
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Ipv4Setting>
 
+#include <libnm/nm-vpn-plugin-info.h>
+
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/Manager>
 #include <ModemManagerQt/ModemDevice>
@@ -102,10 +104,24 @@ void Handler::activateConnection(const QString& connection, const QString& devic
         NetworkManager::VpnSetting::Ptr vpnSetting = con->settings()->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
         if (vpnSetting) {
             qCDebug(PLASMA_NM) << "Checking VPN" << con->name() << "type:" << vpnSetting->serviceType();
-            // get the list of supported VPN service types
+
+            bool pluginMissing = false;
+
+            // Check missing plasma-nm VPN plugin
             const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin",
                                                                               QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()));
-            if (services.isEmpty()) {
+            pluginMissing = services.isEmpty();
+
+            // Check missing NetworkManager VPN plugin
+            if (!pluginMissing) {
+                GSList *plugins = nullptr;
+                plugins = nm_vpn_plugin_info_list_load();
+
+                NMVpnPluginInfo *plugin_info = nm_vpn_plugin_info_list_find_by_service(plugins, vpnSetting->serviceType().toStdString().c_str());
+                pluginMissing = !plugin_info;
+            }
+
+            if (pluginMissing) {
                 qCWarning(PLASMA_NM) << "VPN" << vpnSetting->serviceType() << "not found, skipping";
                 KNotification *notification = new KNotification("MissingVpnPlugin", KNotification::CloseOnTimeout, this);
                 notification->setComponentName("networkmanagement");
@@ -115,6 +131,7 @@ void Handler::activateConnection(const QString& connection, const QString& devic
                 notification->sendEvent();
                 return;
             }
+
         }
     }
 

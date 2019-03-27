@@ -84,9 +84,6 @@
            <property name="toolTip">
             <string>Renegotiate data channel key after the specified number of seconds.</string>
            </property>
-           <property name="maximum">
-            <number>604800</number>
-           </property>
           </widget>
          </item>
         </layout>

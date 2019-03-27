@@ -302,11 +302,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         }
         if (key_value[0] == RENEG_SEC_TAG) {
             if (key_value.count() == 2) {
-                if (key_value[1].toLong() >= 0 && key_value[1].toLong() <= 604800 ) {
-                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_RENEG_SECONDS), key_value[1]);
-                } else {
-                    KMessageBox::information(nullptr, i18n("Invalid size (should be between 0 and 604800) in option: %1", line));
-                }
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_RENEG_SECONDS), key_value[1]);
             } else {
                 KMessageBox::information(nullptr, i18n("Invalid number of arguments (expected 1) in option: %1", line));
             }

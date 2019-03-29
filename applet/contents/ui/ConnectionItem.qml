@@ -101,7 +101,8 @@ PlasmaComponents.ListItem {
             PlasmaComponents.BusyIndicator {
                 id: connectingIndicator
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-                Layout.fillHeight: true
+                Layout.preferredHeight: units.iconSizes.medium
+                Layout.preferredWidth: units.iconSizes.medium
                 running: plasmoid.expanded && !stateChangeButton.visible && ConnectionState == PlasmaNM.Enums.Activating
                 visible: running
                 opacity: visible

@@ -120,6 +120,11 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     NetworkManager::Ipv6Setting::Ptr ipv6Setting = setting.staticCast<NetworkManager::Ipv6Setting>();
 
+    // BUG:406118
+    // We don't have route-metric in the UI, maybe even won't have for now, but that doesn't mean we
+    // want to loose it when it's configured manually in a config file
+    m_tmpIpv6Setting.setRouteMetric(ipv6Setting->routeMetric());
+
     m_tmpIpv6Setting.setRoutes(ipv6Setting->routes());
     m_tmpIpv6Setting.setNeverDefault(ipv6Setting->neverDefault());
     m_tmpIpv6Setting.setIgnoreAutoRoutes(ipv6Setting->ignoreAutoRoutes());
@@ -178,6 +183,11 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 QVariantMap IPv6Widget::setting() const
 {
     NetworkManager::Ipv6Setting ipv6Setting;
+
+    // BUG:406118
+    // We don't have route-metric in the UI, maybe even won't have for now, but that doesn't mean we
+    // want to loose it when it's configured manually in a config file
+    ipv6Setting.setRouteMetric(m_tmpIpv6Setting.routeMetric());
 
     ipv6Setting.setRoutes(m_tmpIpv6Setting.routes());
     ipv6Setting.setNeverDefault(m_tmpIpv6Setting.neverDefault());

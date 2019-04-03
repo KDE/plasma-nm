@@ -131,6 +131,11 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     NetworkManager::Ipv4Setting::Ptr ipv4Setting = setting.staticCast<NetworkManager::Ipv4Setting>();
 
+    // BUG:406118
+    // We don't have route-metric in the UI, maybe even won't have for now, but that doesn't mean we
+    // want to loose it when it's configured manually in a config file
+    m_tmpIpv4Setting.setRouteMetric(ipv4Setting->routeMetric());
+
     m_tmpIpv4Setting.setRoutes(ipv4Setting->routes());
     m_tmpIpv4Setting.setNeverDefault(ipv4Setting->neverDefault());
     m_tmpIpv4Setting.setIgnoreAutoRoutes(ipv4Setting->ignoreAutoRoutes());
@@ -185,6 +190,11 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 QVariantMap IPv4Widget::setting() const
 {
     NetworkManager::Ipv4Setting ipv4Setting;
+
+    // BUG:406118
+    // We don't have route-metric in the UI, maybe even won't have for now, but that doesn't mean we
+    // want to loose it when it's configured manually in a config file
+    ipv4Setting.setRouteMetric(m_tmpIpv4Setting.routeMetric());
 
     ipv4Setting.setRoutes(m_tmpIpv4Setting.routes());
     ipv4Setting.setNeverDefault(m_tmpIpv4Setting.neverDefault());

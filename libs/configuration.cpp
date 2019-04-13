@@ -23,10 +23,11 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 
+Q_GLOBAL_STATIC_WITH_ARGS(KSharedConfigPtr, config, (KSharedConfig::openConfig(QLatin1String("plasma-nm"))))
+
 bool Configuration::unlockModemOnDetection()
 {
-    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
-    KConfigGroup grp(config, QLatin1String("General"));
+    KConfigGroup grp(*config, QLatin1String("General"));
 
     if (grp.isValid()) {
         return grp.readEntry(QLatin1String("UnlockModemOnDetection"), true);
@@ -37,8 +38,7 @@ bool Configuration::unlockModemOnDetection()
 
 void Configuration::setUnlockModemOnDetection(bool unlock)
 {
-    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
-    KConfigGroup grp(config, QLatin1String("General"));
+    KConfigGroup grp(*config, QLatin1String("General"));
 
     if (grp.isValid()) {
         grp.writeEntry(QLatin1String("UnlockModemOnDetection"), unlock);
@@ -47,8 +47,7 @@ void Configuration::setUnlockModemOnDetection(bool unlock)
 
 bool Configuration::manageVirtualConnections()
 {
-    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
-    KConfigGroup grp(config, QLatin1String("General"));
+    KConfigGroup grp(*config, QLatin1String("General"));
 
     if (grp.isValid()) {
         return grp.readEntry(QLatin1String("ManageVirtualConnections"), false);
@@ -59,8 +58,7 @@ bool Configuration::manageVirtualConnections()
 
 void Configuration::setManageVirtualConnections(bool manage)
 {
-    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
-    KConfigGroup grp(config, QLatin1String("General"));
+    KConfigGroup grp(*config, QLatin1String("General"));
 
     if (grp.isValid()) {
         grp.writeEntry(QLatin1String("ManageVirtualConnections"), manage);
@@ -69,8 +67,7 @@ void Configuration::setManageVirtualConnections(bool manage)
 
 bool Configuration::showPasswordDialog()
 {
-    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
-    KConfigGroup grp(config, QLatin1String("General"));
+    KConfigGroup grp(*config, QLatin1String("General"));
 
     if (grp.isValid()) {
         return grp.readEntry(QLatin1String("ShowPasswordDialog"), true);

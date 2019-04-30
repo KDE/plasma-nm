@@ -635,7 +635,9 @@ void NetworkModel::availableConnectionAppeared(const QString &connection)
 {
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
     if (device) {
+        beginResetModel();
         addAvailableConnection(connection, device);
+        endResetModel();
     }
 }
 

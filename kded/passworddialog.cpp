@@ -28,6 +28,7 @@
 
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/VpnSetting>
+#include <NetworkManagerQt/Utils>
 
 #include <KServiceTypeTrader>
 #include <KLocalizedString>
@@ -69,6 +70,29 @@ void PasswordDialog::initializeUi()
 
     connect(m_ui->buttonBox, &QDialogButtonBox::accepted, this, &PasswordDialog::accept);
     connect(m_ui->buttonBox, &QDialogButtonBox::rejected, this, &PasswordDialog::reject);
+    connect(m_ui->password, &PasswordField::textChanged, [this](const QString &text){
+        if (m_connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
+            NetworkManager::WirelessSecuritySetting::Ptr wirelessSecuritySetting =
+                    m_connectionSettings->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
+            bool valid = true;
+
+            if (wirelessSecuritySetting) {
+                switch (wirelessSecuritySetting->keyMgmt()) {
+                case NetworkManager::WirelessSecuritySetting::WpaPsk:
+                    valid = wpaPskIsValid(text);
+                    break;
+                case NetworkManager::WirelessSecuritySetting::Wep:
+                    valid = wepKeyIsValid(text, wirelessSecuritySetting->wepKeyType());
+                    break;
+                default:
+                    break;
+                }
+            }
+
+            // disable button if key is not valid
+            m_ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(!valid);
+        }
+    });
 
     if (m_connectionSettings->connectionType() != NetworkManager::ConnectionSettings::Vpn) {
         NetworkManager::Setting::Ptr setting = m_connectionSettings->setting(m_settingName);

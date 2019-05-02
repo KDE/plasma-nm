@@ -62,6 +62,7 @@ private Q_SLOTS:
     void workerFinished(const int&);
     void viewServerLogToggled(bool);
     void connectHost();
+    void initTokens();
 };
 
 #endif // OPENCONNECTAUTH_H

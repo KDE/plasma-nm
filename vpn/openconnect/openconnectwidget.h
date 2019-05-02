@@ -31,13 +31,22 @@ class OpenconnectSettingWidgetPrivate;
 class OpenconnectSettingWidget : public SettingWidget
 {
     Q_OBJECT
+
     Q_DECLARE_PRIVATE(OpenconnectSettingWidget)
 public:
     explicit OpenconnectSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
     ~OpenconnectSettingWidget() override;
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
     QVariantMap setting() const override;
     bool isValid() const override;
+    bool initTokenGroup();
+
+private Q_SLOTS:
+    void showTokens();
+    void handleTokenSecret(int index);
+    void saveTokens();
+    void restoreTokens();
 
 private:
     OpenconnectSettingWidgetPrivate *const d_ptr;

@@ -57,6 +57,18 @@ extern "C"
 #include <fcntl.h>
 }
 
+#if !OPENCONNECT_CHECK_VER(2,1)
+#define __openconnect_set_token_mode(...) -EOPNOTSUPP
+#elif !OPENCONNECT_CHECK_VER(2,2)
+#define __openconnect_set_token_mode(vpninfo, mode, secret) openconnect_set_stoken_mode(vpninfo, 1, secret)
+#else
+#define __openconnect_set_token_mode openconnect_set_token_mode
+#endif
+
+#if OPENCONNECT_CHECK_VER(3,4)
+    static int updateToken(void*, const char*);
+#endif
+
 // name/address: IP/domain name of the host (OpenConnect accepts both, so no difference here)
 // group: user group on the server
 typedef struct {
@@ -64,6 +76,11 @@ typedef struct {
     QString group;
     QString address;
 } VPNHost;
+
+typedef struct {
+    oc_token_mode_t tokenMode;
+    QByteArray tokenSecret;
+} Token;
 
 class OpenconnectAuthWidgetPrivate
 {
@@ -82,6 +99,8 @@ public:
     int cancelPipes[2];
     QList<QPair<QString, int> > serverLog;
     int passwordFormIndex;
+    QByteArray tokenMode;
+    Token token;
 
     enum LogLevels {Error = 0, Info, Debug, Trace};
 };
@@ -122,9 +141,14 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
     connect(d->worker, &OpenconnectAuthWorkerThread::updateLog, this, &OpenconnectAuthWidget::updateLog);
     connect(d->worker, QOverload<const QString&>::of(&OpenconnectAuthWorkerThread::writeNewConfig), this, &OpenconnectAuthWidget::writeNewConfig);
     connect(d->worker, &OpenconnectAuthWorkerThread::cookieObtained, this, &OpenconnectAuthWidget::workerFinished);
+    connect(d->worker, &OpenconnectAuthWorkerThread::initTokens, this, &OpenconnectAuthWidget::initTokens);
 
     readConfig();
     readSecrets();
+
+#if OPENCONNECT_CHECK_VER(3,4)
+    openconnect_set_token_callbacks(d->vpninfo, &d->secrets, NULL, &updateToken);
+#endif
 
     // This might be set by readSecrets() so don't connect it until now
     connect(d->ui.cmbHosts, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::connectHost);
@@ -196,6 +220,8 @@ void OpenconnectAuthWidget::readConfig()
         const QString protocol = dataMap[NM_OPENCONNECT_KEY_PROTOCOL];
         openconnect_set_protocol(d->vpninfo, OC3DUP(protocol == "juniper" ? "nc" : protocol.toUtf8().data()));
     }
+
+    d->tokenMode = dataMap[NM_OPENCONNECT_KEY_TOKEN_MODE].toUtf8();
 }
 
 void OpenconnectAuthWidget::readSecrets()
@@ -248,6 +274,40 @@ void OpenconnectAuthWidget::readSecrets()
     if (d->secrets["save_passwords"] == "yes") {
         d->ui.chkStorePasswords->setChecked(true);
     }
+
+    d->token.tokenMode = OC_TOKEN_MODE_NONE;
+    d->token.tokenSecret = nullptr;
+
+    if (!d->tokenMode.isEmpty()) {
+        int ret = 0;
+        QByteArray tokenSecret = d->secrets[NM_OPENCONNECT_KEY_TOKEN_SECRET].toUtf8();
+
+        if (d->tokenMode == QStringLiteral("manual") && !tokenSecret.isEmpty()) {
+            ret = __openconnect_set_token_mode(d->vpninfo, OC_TOKEN_MODE_STOKEN, tokenSecret);
+        } else if (d->tokenMode ==QStringLiteral("stokenrc")) {
+            ret = __openconnect_set_token_mode(d->vpninfo, OC_TOKEN_MODE_STOKEN, NULL);
+        } else if (d->tokenMode == QStringLiteral("totp") && !tokenSecret.isEmpty()) {
+            ret = __openconnect_set_token_mode(d->vpninfo, OC_TOKEN_MODE_TOTP, tokenSecret);
+        }
+#if OPENCONNECT_CHECK_VER(3,4)
+        else if (d->tokenMode ==  QStringLiteral("hotp") && !tokenSecret.isEmpty()) {
+            ret = __openconnect_set_token_mode(d->vpninfo, OC_TOKEN_MODE_HOTP, tokenSecret);
+        }
+#endif
+#if OPENCONNECT_CHECK_VER(5,0)
+        else if (d->tokenMode == "yubioath") {
+            /* This needs to be done from a thread because it can call back to
+                ask for the PIN */
+            d->token.tokenMode = OC_TOKEN_MODE_YUBIOATH;
+            if (!tokenSecret.isEmpty()) {
+                d->token.tokenSecret = tokenSecret;
+            }
+        }
+#endif
+        if (ret) {
+            addFormInfo(QLatin1String("dialog-error"), i18n("Failed to initialize software token: %1", ret));
+        }
+    }
 }
 
 void OpenconnectAuthWidget::acceptDialog()
@@ -269,6 +329,7 @@ void OpenconnectAuthWidget::acceptDialog()
 void OpenconnectAuthWidget::connectHost()
 {
     Q_D(OpenconnectAuthWidget);
+
     d->userQuit = true;
     if (write(d->cancelPipes[1], "x", 1)) {
         // not a lot we can do
@@ -299,6 +360,15 @@ void OpenconnectAuthWidget::connectHost()
     d->secrets["lasthost"] = host.name;
     addFormInfo(QLatin1String("dialog-information"), i18n("Contacting host, please wait..."));
     d->worker->start();
+}
+
+void OpenconnectAuthWidget::initTokens()
+{
+    Q_D(OpenconnectAuthWidget);
+
+    if (d->token.tokenMode != OC_TOKEN_MODE_NONE) {
+            __openconnect_set_token_mode(d->vpninfo, d->token.tokenMode, d->token.tokenSecret);
+    }
 }
 
 QVariantMap OpenconnectAuthWidget::setting() const
@@ -346,6 +416,15 @@ QVariantMap OpenconnectAuthWidget::setting() const
     return secretData;
 }
 
+#if OPENCONNECT_CHECK_VER(3,4)
+static int updateToken(void *cbdata, const char *tok)
+{
+    NMStringMap *secrets = static_cast<NMStringMap *>(cbdata);
+    secrets->insert(QLatin1String(NM_OPENCONNECT_KEY_TOKEN_SECRET), QLatin1String(tok));
+    return 0;
+}
+#endif
+
 void OpenconnectAuthWidget::writeNewConfig(const QString & buf)
 {
     Q_D(OpenconnectAuthWidget);
@@ -355,6 +434,7 @@ void OpenconnectAuthWidget::writeNewConfig(const QString & buf)
 void OpenconnectAuthWidget::updateLog(const QString &message, const int &level)
 {
     Q_D(OpenconnectAuthWidget);
+
     QPair<QString, int> pair;
     pair.first = message;
     if (pair.first.endsWith(QLatin1String("\n"))) {
@@ -401,6 +481,7 @@ void OpenconnectAuthWidget::logLevelChanged(int newLevel)
 void OpenconnectAuthWidget::addFormInfo(const QString &iconName, const QString &message)
 {
     Q_D(OpenconnectAuthWidget);
+
     QHBoxLayout *layout = new QHBoxLayout();
     QLabel *icon = new QLabel(this);
     QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -426,6 +507,7 @@ void OpenconnectAuthWidget::addFormInfo(const QString &iconName, const QString &
 void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
 {
     Q_D(OpenconnectAuthWidget);
+
     deleteAllFromLayout(d->ui.loginBoxLayout);
     if (form->banner) {
         addFormInfo(QLatin1String("dialog-information"), form->banner);
@@ -571,6 +653,10 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint,
         connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
         dialog->layout()->addWidget(widget);
         dialog->layout()->addWidget(buttons);
+
+        const NMStringMap dataMap = d->setting->data();
+        buttons->button(QDialogButtonBox::Ok)->setEnabled(dataMap[NM_OPENCONNECT_KEY_PREVENT_INVALID_CERT] != "yes");
+
         if(dialog.data()->exec() == QDialog::Accepted) {
             *accepted = true;
         } else {
@@ -641,6 +727,7 @@ void OpenconnectAuthWidget::formLoginClicked()
 void OpenconnectAuthWidget::workerFinished(const int &ret)
 {
     Q_D(OpenconnectAuthWidget);
+
     if (ret < 0) {
         QString message;
         QList<QPair<QString, int> >::const_iterator i;

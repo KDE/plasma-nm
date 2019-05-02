@@ -116,6 +116,7 @@ OpenconnectAuthWorkerThread::~OpenconnectAuthWorkerThread()
 void OpenconnectAuthWorkerThread::run()
 {
     openconnect_init_ssl();
+    Q_EMIT initTokens();
     int ret = openconnect_obtain_cookie(m_openconnectInfo);
     if (*m_userDecidedToQuit) {
         return;

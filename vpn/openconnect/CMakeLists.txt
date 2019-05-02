@@ -39,7 +39,7 @@ if (OPENCONNECT_FOUND)
         openconnectauthworkerthread.cpp
         )
 
-        ki18n_wrap_ui(openconnect_SRCS openconnectprop.ui openconnectauth.ui)
+        ki18n_wrap_ui(openconnect_SRCS openconnectprop.ui openconnectauth.ui openconnecttoken.ui)
 
         add_library(plasmanetworkmanagement_openconnectui ${openconnect_SRCS})
 

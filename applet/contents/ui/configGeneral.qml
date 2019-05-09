@@ -18,39 +18,35 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.0
-import QtQuick.Controls 1.1 as Controls
-import QtQuick.Layouts 1.1 as Layouts
+import QtQuick 2.5
+import QtQuick.Controls 2.5 as QQC2
 
-Item {
+import org.kde.kirigami 2.5 as Kirigami
+
+Kirigami.FormLayout {
     id: generalPage
-    width: childrenRect.width
-    height: childrenRect.height
+
+    anchors.left: parent.left
+    anchors.right: parent.right
 
     signal configurationChanged
 
     property alias cfg_unlockModemOnDetection: unlockModem.checked
     property alias cfg_manageVirtualConnections: manageVirtualConnections.checked
 
-    Layouts.ColumnLayout {
-        id: mainColumn
-
-        Controls.CheckBox {
-            id: unlockModem
-            Layouts.Layout.fillWidth: true
-            text: i18n("Ask for PIN on modem detection")
-            onClicked: {
-                generalPage.configurationChanged()
-            }
+    QQC2.CheckBox {
+        id: unlockModem
+        text: i18n("Ask for PIN on modem detection")
+        onClicked: {
+            generalPage.configurationChanged()
         }
+    }
 
-        Controls.CheckBox {
-            id: manageVirtualConnections
-            Layouts.Layout.fillWidth: true
-            text: i18n("Show and configure virtual connections")
-            onClicked: {
-                generalPage.configurationChanged()
-            }
+    QQC2.CheckBox {
+        id: manageVirtualConnections
+        text: i18n("Show virtual connections")
+        onClicked: {
+            generalPage.configurationChanged()
         }
     }
 }

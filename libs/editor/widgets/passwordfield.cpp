@@ -95,6 +95,21 @@ void PasswordField::setPasswordOptionsEnabled(bool enable)
     }
 }
 
+void PasswordField::setPasswordNotSavedEnabled(bool enable)
+{
+    if (enable) {
+        const int index = m_passwordOptionsMenu->findData(AlwaysAsk);
+        if (index == -1) {
+            m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("dialog-messages")), i18n("Ask for this password every time"), AlwaysAsk);
+        }
+    } else {
+        const int index = m_passwordOptionsMenu->findData(AlwaysAsk);
+        if (index != -1) {
+            m_passwordOptionsMenu->removeItem(index);
+        }
+    }
+}
+
 void PasswordField::setPasswordNotRequiredEnabled(bool enable)
 {
     if (enable) {

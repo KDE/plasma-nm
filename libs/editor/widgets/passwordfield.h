@@ -43,6 +43,7 @@ public:
     void setMaxLength(int maxLength);
     void setPasswordModeEnabled(bool passwordMode);
     void setPasswordOptionsEnabled(bool enable);
+    void setPasswordNotSavedEnabled(bool enable);
     void setPasswordNotRequiredEnabled(bool enable);
 
     PasswordOption passwordOption() const;

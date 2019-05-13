@@ -183,7 +183,16 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
     // General settings
     const NMStringMap dataMap = setting.staticCast<NetworkManager::VpnSetting>()->data();
 
-    d->ui.cmbProtocol->setCurrentIndex(dataMap[NM_OPENCONNECT_KEY_PROTOCOL] != QLatin1String("anyconnect"));
+    int cmbProtocolIndex;
+    if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("anyconnect")) {
+        cmbProtocolIndex = 0;
+    } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("nc")) {
+        cmbProtocolIndex = 1;
+    } else {
+        cmbProtocolIndex = 2; // paloAlto/GlobalProtect (gp)
+    }
+
+    d->ui.cmbProtocol->setCurrentIndex(cmbProtocolIndex);
     d->ui.leGateway->setText(dataMap[NM_OPENCONNECT_KEY_GATEWAY]);
     d->ui.leCaCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_CACERT]));
     d->ui.leProxy->setText(dataMap[NM_OPENCONNECT_KEY_PROXY]);
@@ -237,8 +246,19 @@ QVariantMap OpenconnectSettingWidget::setting() const
 
     NMStringMap data;
     NMStringMap secrets;
+    QString protocol;
+    switch (d->ui.cmbProtocol->currentIndex()) {
+        case 0:
+            protocol = QLatin1String("anyconnect");
+            break;
+        case 1:
+            protocol = QLatin1String("nc");
+            break;
+        default:
+            protocol = QLatin1String("gp");
+    }
 
-    data.insert(NM_OPENCONNECT_KEY_PROTOCOL, d->ui.cmbProtocol->currentIndex() ? QLatin1String("nc") : QLatin1String("anyconnect"));
+    data.insert(NM_OPENCONNECT_KEY_PROTOCOL, protocol);
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_GATEWAY), d->ui.leGateway->text());
     if (d->ui.leCaCertificate->url().isValid()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_CACERT), d->ui.leCaCertificate->url().toLocalFile());

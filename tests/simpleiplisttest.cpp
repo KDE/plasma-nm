@@ -43,9 +43,9 @@ private:
 };
 
 SimpleipListTest::SimpleipListTest()
-    : m_vb(nullptr, SimpleIpListValidator::AddressStyle::Base)
-    , m_vc(nullptr, SimpleIpListValidator::AddressStyle::WithCidr)
-    , m_vp(nullptr, SimpleIpListValidator::AddressStyle::WithPort)
+    : m_vb(SimpleIpListValidator::AddressStyle::Base)
+    , m_vc(SimpleIpListValidator::AddressStyle::WithCidr)
+    , m_vp(SimpleIpListValidator::AddressStyle::WithPort)
 {
 }
 

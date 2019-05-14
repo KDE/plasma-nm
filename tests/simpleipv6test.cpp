@@ -43,9 +43,9 @@ private:
 };
 
 SimpleIpv6Test::SimpleIpv6Test()
-    : m_vb(nullptr, SimpleIpV6AddressValidator::AddressStyle::Base)
-    , m_vc(nullptr, SimpleIpV6AddressValidator::AddressStyle::WithCidr)
-    , m_vp(nullptr, SimpleIpV6AddressValidator::AddressStyle::WithPort)
+    : m_vb(SimpleIpV6AddressValidator::AddressStyle::Base)
+    , m_vc(SimpleIpV6AddressValidator::AddressStyle::WithCidr)
+    , m_vp(SimpleIpV6AddressValidator::AddressStyle::WithPort)
 {
 }
 

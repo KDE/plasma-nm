@@ -44,9 +44,9 @@ private:
 
 
 SimpleIpv4Test::SimpleIpv4Test()
-    : m_vb(nullptr, SimpleIpV4AddressValidator::AddressStyle::Base)
-    , m_vc(nullptr, SimpleIpV4AddressValidator::AddressStyle::WithCidr)
-    , m_vp(nullptr, SimpleIpV4AddressValidator::AddressStyle::WithPort)
+    : m_vb(SimpleIpV4AddressValidator::AddressStyle::Base)
+    , m_vc(SimpleIpV4AddressValidator::AddressStyle::WithCidr)
+    , m_vp(SimpleIpV4AddressValidator::AddressStyle::WithPort)
 {
 }
 

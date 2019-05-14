@@ -175,15 +175,6 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
                                                  QString(), QString(), true); // VpnType and SpecificType are empty
     m_list << connectionItem;
 
-    // WireGuard changed from VPN plugin to primary device in version 1.16 of NetworkManager
-    if (NetworkManager::checkVersion(1, 16, 0)) {
-            connectionItem = new CreatableConnectionItem(i18n("WireGuard"), i18n("VPN connections"),
-                                                         i18n("WireGuard"), QStringLiteral("network-vpn"),
-                                                         NetworkManager::ConnectionSettings::WireGuard,
-                                                         QStringLiteral("WireGuard"), QString(), true); // VpnType and SpecificType are empty
-            m_list << connectionItem;
-    }
-
     if (Configuration::manageVirtualConnections()) {
         connectionItem = new CreatableConnectionItem(i18n("Bond"), i18n("Virtual connections"),
                                                     i18n("Some bond description"), QStringLiteral("network-wired"),
@@ -228,6 +219,16 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
                                                      NetworkManager::ConnectionSettings::Vpn,
                                                      vpnType, vpnSubType, false);
         m_list << connectionItem;
+    }
+
+
+    // WireGuard changed from VPN plugin to primary device in version 1.16 of NetworkManager
+    if (NetworkManager::checkVersion(1, 16, 0)) {
+            connectionItem = new CreatableConnectionItem(i18n("WireGuard"), i18n("VPN connections"),
+                                                         i18n("WireGuard"), QStringLiteral("network-vpn"),
+                                                         NetworkManager::ConnectionSettings::WireGuard,
+                                                         QStringLiteral("WireGuard"), QString(), true); // VpnType and SpecificType are empty
+            m_list << connectionItem;
     }
 
     // Placeholder for VPN import

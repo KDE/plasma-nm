@@ -52,6 +52,7 @@ public:
         Infiniband,
         OLPCMesh,
         Bluetooth,
+        Wireguard,
         Vpn,
         Vlan,
         Bridge,

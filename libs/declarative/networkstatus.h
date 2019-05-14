@@ -47,6 +47,7 @@ public:
         Infiniband,
         OLPCMesh,
         Bluetooth,
+        Wireguard,
         Vpn,
         Other };
 

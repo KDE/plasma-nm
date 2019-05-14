@@ -35,6 +35,7 @@
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/WirelessSecuritySetting>
 #include <NetworkManagerQt/WirelessSetting>
+#include <NetworkManagerQt/WireguardSetting>
 
 #include <QStringBuilder>
 #include <QDialog>
@@ -92,7 +93,6 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     m_calls << request;
 
     processNext();
-
     return NMVariantMapMap();
 }
 
@@ -360,6 +360,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
     const bool userRequested = request.flags & UserRequested;
     const bool allowInteraction = request.flags & AllowInteraction;
     const bool isVpn = (setting->type() == NetworkManager::Setting::Vpn);
+    const bool isWireGuard = (setting->type() == NetworkManager::Setting::WireGuard);
 
     if (isVpn) {
         NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
@@ -399,7 +400,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
 
     if (!secretsMap.isEmpty()) {
         setting->secretsFromStringMap(secretsMap);
-        if (!isVpn && setting->needSecrets(requestNew).isEmpty()) {
+        if (!(isVpn || isWireGuard) && setting->needSecrets(requestNew).isEmpty()) {
             // Enough secrets were retrieved from storage
             request.connection[request.setting_name] = setting->secretsToMap();
             sendSecrets(request.connection, request.message);
@@ -411,7 +412,25 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
         sendError(SecretAgent::NoSecrets, "Cannot authenticate", request.message);
         emit secretsError(request.connection_path.path(), i18n("Authentication to %1 failed. Wrong password?", request.connection.value("connection").value("id").toString()));
         return true;
+    } else if (isWireGuard && userRequested) { // Just return what we have
+        NMVariantMapMap result;
+        NetworkManager::WireGuardSetting::Ptr wireGuardSetting;
+        wireGuardSetting = connectionSettings->setting(NetworkManager::Setting::WireGuard).dynamicCast<NetworkManager::WireGuardSetting>();
+        //FIXME workaround when NM is asking for secrets which should be system-stored, if we send an empty map it
+        // won't ask for additional secrets with AllowInteraction flag which would display the authentication dialog
+        if (wireGuardSetting->secretsToMap().isEmpty()) {
+            // Insert an empty secrets map as it was before I fixed it in NetworkManagerQt to make sure NM will ask again
+            // with flags we need
+            QVariantMap secretsMap;
+            secretsMap.insert(QLatin1String("secrets"), QVariant::fromValue<NMStringMap>(NMStringMap()));
+            result.insert("wireguard", secretsMap);
+        } else {
+            result.insert("wireguard", wireGuardSetting->secretsToMap());
+        }
+        sendSecrets(result, request.message);
+        return true;
     } else if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
+
         m_dialog = new PasswordDialog(connectionSettings, request.flags, request.setting_name);
         connect(m_dialog, &PasswordDialog::accepted, this, &SecretAgent::dialogAccepted);
         connect(m_dialog, &PasswordDialog::rejected, this, &SecretAgent::dialogRejected);

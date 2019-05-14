@@ -25,6 +25,7 @@
 #include "mobileconnectionwizard.h"
 #include "uiutils.h"
 #include "vpnuiplugin.h"
+#include "settings/wireguardinterfacewidget.h"
 
 // KDE
 #include <KMessageBox>
@@ -39,12 +40,14 @@
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/GsmSetting>
 #include <NetworkManagerQt/Ipv4Setting>
+#include <NetworkManagerQt/Ipv6Setting>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/WiredSetting>
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/WireguardSetting>
 
 // Qt
 #include <QFileDialog>
@@ -349,6 +352,14 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
                 connectionSettings->setAutoconnect(false);
             }
         }
+        if (type == NetworkManager::ConnectionSettings::WireGuard) {
+            NetworkManager::WireGuardSetting::Ptr wireguardSetting = connectionSettings->setting(NetworkManager::Setting::WireGuard).dynamicCast<NetworkManager::WireGuardSetting>();
+            NetworkManager::Ipv4Setting::Ptr ipv4Setting = connectionSettings->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
+            NetworkManager::Ipv6Setting::Ptr ipv6Setting = connectionSettings->setting(NetworkManager::Setting::Ipv6).dynamicCast<NetworkManager::Ipv6Setting>();
+            connectionSettings->setAutoconnect(false);
+            ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Disabled);
+            ipv6Setting->setMethod(NetworkManager::Ipv6Setting::Ignored);
+        }
         // Generate new UUID
         connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
         addConnection(connectionSettings);
@@ -501,6 +512,22 @@ void KCMNetworkmanagement::importVpn()
         const QString ext = QStringLiteral("*.") % fi.suffix();
         qCDebug(PLASMA_NM) << "Importing VPN connection " << filename << "extension:" << ext;
 
+        // Handle WireGuard separately because it is different than all the other VPNs
+        if (WireGuardInterfaceWidget::supportedFileExtensions().contains(ext)) {
+            NMVariantMapMap connection = WireGuardInterfaceWidget::importConnectionSettings(filename);
+            NetworkManager::ConnectionSettings connectionSettings;
+            connectionSettings.fromMap(connection);
+            connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+
+            // qCDebug(PLASMA_NM) << "Converted connection:" << connectionSettings;
+
+            m_handler->addConnection(connectionSettings.toMap());
+            // qCDebug(PLASMA_NM) << "Adding imported connection under id:" << conId;
+
+            if (!connection.isEmpty()) {
+                return; // get out if the import produced at least some output
+            }
+        }
         for (const KService::Ptr &service : services) {
             VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
             if (vpnPlugin && vpnPlugin->supportedFileExtensions().contains(ext)) {

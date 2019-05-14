@@ -26,7 +26,9 @@ WireGuardKeyValidator::WireGuardKeyValidator(QObject *parent)
     m_validator = new QRegularExpressionValidator(this);
     // A WireGuard key is Base64 encoded and in human readable form consists
     // of 43 Alpha-numeric or  '+' or '/' with a 44th character of an equal sign.
-    m_validator->setRegularExpression(QRegularExpression(QLatin1String("[0-9a-zA-Z\\+/]{43,43}=")));
+    // The 43rd character is limited such that the converted character zeroes in
+    // the 2 LSB.
+    m_validator->setRegularExpression(QRegularExpression(QLatin1String("[0-9a-zA-Z\\+/]{42,42}[AEIMQUYcgkosw048]=")));
 }
 
 WireGuardKeyValidator::~WireGuardKeyValidator()

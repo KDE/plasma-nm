@@ -154,6 +154,8 @@ ListItem {
         }
     }
 
+    /* This generates the status description under each connection
+       in the list at the left side of the applet. */
     function itemText() {
         if (ConnectionState == PlasmaNM.Enums.Activated) {
             return i18n("Connected")

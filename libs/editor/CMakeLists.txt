@@ -19,6 +19,9 @@ set(plasmanm_editor_SRCS
     settings/wifisecurity.cpp
     settings/wiredconnectionwidget.cpp
     settings/wiredsecurity.cpp
+    settings/wireguardinterfacewidget.cpp
+    settings/wireguardtabwidget.cpp
+    settings/wireguardpeerwidget.cpp
 
     widgets/advancedpermissionswidget.cpp
     widgets/bssidcombobox.cpp
@@ -41,6 +44,7 @@ set(plasmanm_editor_SRCS
     simpleipv4addressvalidator.cpp
     simpleipv6addressvalidator.cpp
     simpleiplistvalidator.cpp
+    wireguardkeyvalidator.cpp
     vpnuiplugin.cpp
 
     ../configuration.cpp
@@ -75,6 +79,9 @@ ki18n_wrap_ui(plasmanm_editor_SRCS
     settings/ui/wifisecurity.ui
     settings/ui/wiredconnectionwidget.ui
     settings/ui/wiredsecurity.ui
+    settings/ui/wireguardinterfacewidget.ui
+    settings/ui/wireguardtabwidget.ui
+    settings/ui/wireguardpeerwidget.ui
 
     widgets/ui/advancedpermissionswidget.ui
     widgets/ui/ipv4routes.ui
@@ -89,6 +96,7 @@ PUBLIC
     KF5::NetworkManagerQt
     KF5::WidgetsAddons
     KF5::Completion
+    KF5::ConfigWidgets
     Qt5::Widgets
 PRIVATE
     Qt5::Network

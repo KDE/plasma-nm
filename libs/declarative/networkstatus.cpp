@@ -20,7 +20,6 @@
 
 #include "networkstatus.h"
 #include "uiutils.h"
-
 #include <QDBusConnection>
 
 #include <NetworkManagerQt/ActiveConnection>
@@ -60,6 +59,9 @@ NetworkStatus::SortedConnectionType NetworkStatus::connectionTypeToSortedType(Ne
             break;
         case NetworkManager::ConnectionSettings::Wireless:
             return NetworkStatus::Wireless;
+            break;
+        case NetworkManager::ConnectionSettings::WireGuard:
+            return NetworkStatus::Wireguard;
             break;
         default:
             return NetworkStatus::Other;
@@ -169,7 +171,8 @@ void NetworkStatus::changeActiveConnections()
         if (!active->devices().isEmpty() && UiUtils::isConnectionTypeSupported(active->type())) {
 
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
-            if (device && device->type() != NetworkManager::Device::Generic && device->type() <= NetworkManager::Device::Team) {
+            if (device && ((device->type() != NetworkManager::Device::Generic && device->type() <= NetworkManager::Device::Team)
+                           || device->type() == 29)) {  // TODO: Change to WireGuard enum value when it is added
                 bool connecting = false;
                 bool connected = false;
                 QString conType;
@@ -196,6 +199,11 @@ void NetworkStatus::changeActiveConnections()
                     } else if (active->state() == NetworkManager::ActiveConnection::Activating) {
                         connecting = true;
                     }
+                }
+
+                if (active->type() == NetworkManager::ConnectionSettings::ConnectionType::WireGuard) {
+                    conType = i18n("WireGuard");
+                    connected = true;
                 }
 
                 NetworkManager::Connection::Ptr connection = active->connection();

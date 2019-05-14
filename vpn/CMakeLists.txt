@@ -11,5 +11,3 @@ add_subdirectory(ssh)
 add_subdirectory(sstp)
 add_subdirectory(strongswan)
 add_subdirectory(vpnc)
-add_subdirectory(wireguard)
-

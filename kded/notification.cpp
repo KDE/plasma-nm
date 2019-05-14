@@ -400,6 +400,9 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         case NetworkManager::ConnectionSettings::Wired:
             iconName = QStringLiteral("network-wired-activated");
             break;
+        case NetworkManager::ConnectionSettings::WireGuard:
+            iconName = QStringLiteral("network-vpn");
+            break;
         default: // silence warning
             break;
         }

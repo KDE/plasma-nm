@@ -29,7 +29,6 @@
 #include <QDialog>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
-
 #include <KUser>
 #include <KAcceleratorManager>
 #include <KLocalizedString>
@@ -179,7 +178,8 @@ NMStringMap ConnectionWidget::vpnConnections() const
 
     for (const NetworkManager::Connection::Ptr &conn : list) {
         NetworkManager::ConnectionSettings::Ptr conSet = conn->settings();
-        if (conSet->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
+        if (conSet->connectionType() == NetworkManager::ConnectionSettings::Vpn
+            || conSet->connectionType() == NetworkManager::ConnectionSettings::WireGuard) {
             // qCDebug(PLASMA_NM) << "Found VPN" << conSet->id() << conSet->uuid();
             result.insert(conSet->uuid(), conSet->id());
         }

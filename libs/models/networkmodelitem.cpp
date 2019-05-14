@@ -17,7 +17,6 @@
     You should have received a copy of the GNU Lesser General Public
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
-
 #include "networkmodelitem.h"
 #include "uiutils.h"
 
@@ -205,6 +204,7 @@ QString NetworkModelItem::icon() const
         case NetworkManager::ConnectionSettings::Vlan:
             break;
         case NetworkManager::ConnectionSettings::Vpn:
+        case NetworkManager::ConnectionSettings::WireGuard:
             return QStringLiteral("network-vpn");
             break;
         case NetworkManager::ConnectionSettings::Wired:
@@ -252,7 +252,7 @@ NetworkModelItem::ItemType NetworkModelItem::itemType() const
         m_type == NetworkManager::ConnectionSettings::Team ||
         ((NetworkManager::status() == NetworkManager::Connected ||
           NetworkManager::status() == NetworkManager::ConnectedLinkLocal ||
-          NetworkManager::status() == NetworkManager::ConnectedSiteOnly) && m_type == NetworkManager::ConnectionSettings::Vpn)) {
+          NetworkManager::status() == NetworkManager::ConnectedSiteOnly) && (m_type == NetworkManager::ConnectionSettings::Vpn || m_type == NetworkManager::ConnectionSettings::WireGuard))) {
         if (m_connectionPath.isEmpty() && m_type == NetworkManager::ConnectionSettings::Wireless) {
             return NetworkModelItem::AvailableAccessPoint;
         } else {
@@ -477,7 +477,6 @@ void NetworkModelItem::updateDetails() const
             }
         }
     }
-
     if (m_type == NetworkManager::ConnectionSettings::Wired) {
         NetworkManager::WiredDevice::Ptr wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
         if (wiredDevice) {

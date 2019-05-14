@@ -39,6 +39,7 @@
 #include "settings/wifisecurity.h"
 #include "settings/wiredconnectionwidget.h"
 #include "settings/wiredsecurity.h"
+#include "settings/wireguardinterfacewidget.h"
 #include "vpnuiplugin.h"
 
 #include <NetworkManagerQt/ActiveConnection>
@@ -132,6 +133,8 @@ NMVariantMapMap ConnectionEditorBase::setting() const
 
     connectionSettings->fromMap(settings);
     connectionSettings->setId(connectionName());
+    if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::WireGuard)
+        connectionSettings->setInterfaceName(connectionName());
     connectionSettings->setUuid(m_connection->uuid());
 
     if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
@@ -144,7 +147,6 @@ NMVariantMapMap ConnectionEditorBase::setting() const
             }
         }
     }
-
     return connectionSettings->toMap();
 }
 
@@ -240,6 +242,9 @@ void ConnectionEditorBase::initialize()
     } else if (type == NetworkManager::ConnectionSettings::Team) { // Team
         TeamWidget *teamWidget = new TeamWidget(m_connection->uuid(), m_connection->setting(NetworkManager::Setting::Team), this);
         addSettingWidget(teamWidget, i18n("Team"));
+    } else if (type == NetworkManager::ConnectionSettings::WireGuard) { // WireGuard
+        WireGuardInterfaceWidget *wireGuardInterfaceWidget = new WireGuardInterfaceWidget(m_connection->setting(NetworkManager::Setting::WireGuard), this);
+        addSettingWidget(wireGuardInterfaceWidget, i18n("WireGuard Interface"));
     } else if (type == NetworkManager::ConnectionSettings::Vpn) { // VPN
         QString error;
         VpnUiPlugin *vpnPlugin = nullptr;
@@ -284,8 +289,8 @@ void ConnectionEditorBase::initialize()
             || type == NetworkManager::ConnectionSettings::Bond
             || type == NetworkManager::ConnectionSettings::Bridge
             || type == NetworkManager::ConnectionSettings::Vlan
-            || (type == NetworkManager::ConnectionSettings::Vpn && serviceType == QLatin1String("org.freedesktop.NetworkManager.openvpn"))
-            || (type == NetworkManager::ConnectionSettings::Vpn && serviceType == QLatin1String("org.freedesktop.NetworkManager.wireguard"))) && !m_connection->isSlave()) {
+            || type == NetworkManager::ConnectionSettings::WireGuard
+            || (type == NetworkManager::ConnectionSettings::Vpn && serviceType == QLatin1String("org.freedesktop.NetworkManager.openvpn"))) && !m_connection->isSlave()) {
         IPv6Widget *ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Setting::Ipv6), this);
         addSettingWidget(ipv6Widget, i18n("IPv6"));
     }
@@ -352,6 +357,13 @@ void ConnectionEditorBase::initialize()
                     requiredSecrets = securitySetting->needSecrets();
                     setting = securitySetting->toMap();
                     settingName = QLatin1String("802-1x");
+                }
+            } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::WireGuard) {
+                NetworkManager::WireGuardSetting::Ptr securitySetting = connection->settings()->setting(NetworkManager::Setting::WireGuard).staticCast<NetworkManager::WireGuardSetting>();
+                if (securitySetting && !securitySetting->needSecrets().isEmpty()) {
+                    requiredSecrets = securitySetting->needSecrets();
+                    setting = securitySetting->toMap();
+                    settingName = QLatin1String("wireguard");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
                 NetworkManager::WirelessSecuritySetting::Ptr wifiSecuritySetting = connection->settings()->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();

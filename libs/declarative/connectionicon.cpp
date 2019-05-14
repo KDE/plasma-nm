@@ -282,6 +282,9 @@ void ConnectionIcon::setStates()
             if (activeConnection->state() == NetworkManager::ActiveConnection::Activating && UiUtils::isConnectionTypeSupported(activeConnection->type())) {
                 connecting = true;
             }
+            if (activeConnection->type() == NetworkManager::ConnectionSettings::ConnectionType::WireGuard) {
+                vpn = true;
+            }
         } else {
             if (vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
                 vpn = true;
@@ -341,8 +344,11 @@ void ConnectionIcon::setIcons()
                 }
             } else if (type == NetworkManager::ConnectionSettings::Vpn) {
                 connection = activeConnection;
+            } else if (type == NetworkManager::ConnectionSettings::WireGuard) {
+                connection = activeConnection;
             } else if (type == NetworkManager::ConnectionSettings::Wired) {
-                if (connection && connection->type() != NetworkManager::ConnectionSettings::Vpn) {
+                if (connection && (connection->type() != NetworkManager::ConnectionSettings::Vpn
+                                  || connection->type() != NetworkManager::ConnectionSettings::WireGuard)) {
                     connection = activeConnection;
                 }
             } else if (type == NetworkManager::ConnectionSettings::Wireless) {
@@ -394,6 +400,11 @@ void ConnectionIcon::setIcons()
                         setConnectionTooltipIcon("preferences-system-bluetooth");
                     }
                 }
+            } else if (type == 29) {      // TODO change to WireGuard enum value once it is added
+                // WireGuard is a VPN but is not implemented
+                // in NetworkManager as a VPN, so we don't want to
+                // do anything just because it has a device
+                // associated with it.
             } else {
                 // Ignore other devices (bond/bridge/team etc.)
                 setDisconnectedIcon();

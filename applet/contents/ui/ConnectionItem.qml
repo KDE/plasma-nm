@@ -345,6 +345,9 @@ PlasmaComponents.ListItem {
         }
     }
 
+    /* This generates the formatted text under the connection name
+       in the popup where the connections can be "Connect"ed and
+       "Disconnect"ed. */
     function itemText() {
         if (ConnectionState == PlasmaNM.Enums.Activating) {
             if (Type == PlasmaNM.Enums.Vpn)

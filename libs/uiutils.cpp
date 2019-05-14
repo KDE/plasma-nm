@@ -102,6 +102,9 @@ UiUtils::SortedConnectionType UiUtils::connectionTypeToSortedType(NetworkManager
         case NetworkManager::ConnectionSettings::Wireless:
             return UiUtils::Wireless;
             break;
+        case NetworkManager::ConnectionSettings::WireGuard:
+            return UiUtils::Wireguard;
+            break;
         default:
             return UiUtils::Unknown;
             break;
@@ -246,6 +249,10 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
         break;
     case ConnectionSettings::Team:
         text = i18n("Team");
+        break;
+    case ConnectionSettings::WireGuard:
+        text = i18n("WireGuard VPN");
+        icon = QStringLiteral("network-vpn");
         break;
     default:
         text = i18n("Unknown connection type");

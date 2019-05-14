@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 class WireGuardKeyValidator : public QValidator
 {
 public:
-    explicit WireGuardKeyValidator(QObject *parent);
+    explicit WireGuardKeyValidator(QObject *parent = nullptr);
     ~WireGuardKeyValidator() override;
 
     QValidator::State validate(QString &, int &) const override;

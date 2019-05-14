@@ -50,9 +50,8 @@
 #define PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS  "preshared-key-flags"
 #define PNM_WG_PEER_KEY_PUBLIC_KEY           "public-key"
 
-static WireGuardKeyValidator keyValidator(nullptr);
-static SimpleIpListValidator allowedIPsValidator(nullptr, SimpleIpListValidator::WithCidr,
-                                                    SimpleIpListValidator::Both);
+static WireGuardKeyValidator keyValidator();
+static SimpleIpListValidator allowedIPsValidator(SimpleIpListValidator::WithCidr, SimpleIpListValidator::Both);
 
 class WireGuardTabWidget::Private
 {

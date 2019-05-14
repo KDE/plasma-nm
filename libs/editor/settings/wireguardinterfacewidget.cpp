@@ -142,7 +142,7 @@ WireGuardInterfaceWidget::WireGuardInterfaceWidget(const NetworkManager::Setting
     d->keyValidator = new WireGuardKeyValidator(this);
 
     // Create validator for listen port
-    d->portValidator = new QIntValidator(nullptr);
+    d->portValidator = new QIntValidator;
     d->portValidator->setBottom(0);
     d->portValidator->setTop(65535);
 
@@ -153,7 +153,7 @@ WireGuardInterfaceWidget::WireGuardInterfaceWidget(const NetworkManager::Setting
     d->ui.fwmarkLineEdit->setValidator(d->fwmarkValidator);
 
     // Create a validator for the MTU field.
-    d->mtuValidator = new QIntValidator(nullptr);
+    d->mtuValidator = new QIntValidator();
     d->mtuValidator->setBottom(0);
     d->ui.mtuLineEdit->setValidator(d->mtuValidator);
 
@@ -402,7 +402,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
     NMVariantMapList peers;
     QVariantMap ipv4Data;
     QVariantMap *currentPeer = nullptr;
-    WireGuardKeyValidator keyValidator(nullptr);
+    WireGuardKeyValidator keyValidator;
     NetworkManager::Ipv4Setting ipv4Setting;
     NetworkManager::Ipv6Setting ipv6Setting;
     NetworkManager::WireGuardSetting wgSetting;
@@ -588,7 +588,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
                     havePublicKey = true;
                 }
             } else if (key == PNM_WG_CONF_TAG_ALLOWED_IPS) {
-                SimpleIpListValidator validator(nullptr, SimpleIpListValidator::WithCidr, SimpleIpListValidator::Both);
+                SimpleIpListValidator validator(SimpleIpListValidator::WithCidr, SimpleIpListValidator::Both);
                 QString val = keyValue[1].trimmed();
                 if (QValidator::Acceptable == validator.validate(val, pos))
                 {

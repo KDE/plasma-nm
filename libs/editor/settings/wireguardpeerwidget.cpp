@@ -49,9 +49,8 @@
 #define PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS  "preshared-key-flags"
 #define PNM_WG_PEER_KEY_PUBLIC_KEY           "public-key"
 
-static WireGuardKeyValidator keyValidator(nullptr);
-static SimpleIpListValidator allowedIPsValidator(nullptr, SimpleIpListValidator::WithCidr,
-                                                    SimpleIpListValidator::Both);
+static WireGuardKeyValidator keyValidator;
+static SimpleIpListValidator allowedIPsValidator(SimpleIpListValidator::WithCidr, SimpleIpListValidator::Both);
 
 class WireGuardPeerWidget::Private
 {
@@ -204,8 +203,8 @@ WireGuardPeerWidget::EndPointValid WireGuardPeerWidget::isEndpointValid(QString 
     // separated by '.', so "ab.cc" is valid but "a.cc" is not. The full string must also be less 
     // than 255 characters long.
     static QRegExpValidator fqdnValidator(QRegExp(QLatin1String("(?=.{5,254}$)([a-zA-Z0-9][a-zA-Z0-9-]{1,62}\\.){1,63}[a-zA-Z]{2,63}")), nullptr);
-    static SimpleIpV4AddressValidator ipv4Validator(nullptr);
-    static SimpleIpV6AddressValidator ipv6Validator(nullptr);
+    static SimpleIpV4AddressValidator ipv4Validator;
+    static SimpleIpV6AddressValidator ipv6Validator;
     int pos = 0;
 
     bool addressValid = QValidator::Acceptable == fqdnValidator.validate(address, pos)

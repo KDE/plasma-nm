@@ -23,9 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStringList>
 #include <QVector>
 
-SimpleIpListValidator::SimpleIpListValidator(QObject *parent,
-                                             AddressStyle style,
-                                             AddressType type)
+SimpleIpListValidator::SimpleIpListValidator(AddressStyle style, AddressType type, QObject *parent)
     : QValidator(parent)
     , m_ipv6Validator(nullptr)
     , m_ipv4Validator(nullptr)
@@ -38,7 +36,7 @@ SimpleIpListValidator::SimpleIpListValidator(QObject *parent,
             ipv4Style = SimpleIpV4AddressValidator::AddressStyle::WithCidr;
         else
             ipv4Style = SimpleIpV4AddressValidator::AddressStyle::WithPort;
-        m_ipv4Validator = new SimpleIpV4AddressValidator(this, ipv4Style);
+        m_ipv4Validator = new SimpleIpV4AddressValidator(ipv4Style, this);
     }
     if (type == Ipv6 || type == Both) {
         SimpleIpV6AddressValidator::AddressStyle ipv6Style;
@@ -48,7 +46,7 @@ SimpleIpListValidator::SimpleIpListValidator(QObject *parent,
             ipv6Style = SimpleIpV6AddressValidator::AddressStyle::WithCidr;
         else
             ipv6Style = SimpleIpV6AddressValidator::AddressStyle::WithPort;
-        m_ipv6Validator = new SimpleIpV6AddressValidator(this, ipv6Style);
+        m_ipv6Validator = new SimpleIpV6AddressValidator(ipv6Style, this);
     }
 }
 

@@ -28,7 +28,7 @@ class Q_DECL_EXPORT SimpleIpV6AddressValidator : public QValidator
 public:
     enum AddressStyle {Base, WithCidr, WithPort};
 
-    explicit SimpleIpV6AddressValidator(QObject *parent, AddressStyle style = AddressStyle::Base);
+    explicit SimpleIpV6AddressValidator(AddressStyle style = AddressStyle::Base, QObject *parent = nullptr);
     ~SimpleIpV6AddressValidator() override;
 
     State validate(QString &, int &) const override;

@@ -31,9 +31,8 @@ public:
     enum AddressType {Ipv4, Ipv6, Both};
     enum AddressStyle {Base, WithCidr, WithPort};
 
-    explicit SimpleIpListValidator(QObject *parent,
-                                   AddressStyle style = AddressStyle::Base,
-                                   AddressType allow = AddressType::Both);
+    explicit SimpleIpListValidator(AddressStyle style = AddressStyle::Base,
+                                   AddressType allow = AddressType::Both, QObject *parent = nullptr);
     ~SimpleIpListValidator() override;
 
     State validate(QString &, int &) const override;

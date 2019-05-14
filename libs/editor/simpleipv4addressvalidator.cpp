@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QStringList>
 #include <QVector>
 
-SimpleIpV4AddressValidator::SimpleIpV4AddressValidator(QObject *parent, AddressStyle style)
+SimpleIpV4AddressValidator::SimpleIpV4AddressValidator(AddressStyle style, QObject *parent)
     : QValidator(parent)
     , m_addressStyle(style)
 {

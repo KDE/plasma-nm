@@ -78,12 +78,12 @@ SshSettingWidget::SshSettingWidget(const NetworkManager::VpnSetting::Ptr &settin
     connect(d->ui.le_netmask, &QLineEdit::textChanged, this, &SshSettingWidget::slotWidgetChanged);
     connect(d->ui.le_remoteIp, &QLineEdit::textChanged, this, &SshSettingWidget::slotWidgetChanged);
 
-    SimpleIpV4AddressValidator *ipv4Validator = new SimpleIpV4AddressValidator(this);
+    SimpleIpV4AddressValidator *ipv4Validator = new SimpleIpV4AddressValidator(SimpleIpV4AddressValidator::Base, this);
     d->ui.le_localIp->setValidator(ipv4Validator);
     d->ui.le_remoteIp->setValidator(ipv4Validator);
     d->ui.le_netmask->setValidator(ipv4Validator);
 
-    SimpleIpV6AddressValidator *ipv6Validator = new SimpleIpV6AddressValidator(this);
+    SimpleIpV6AddressValidator *ipv6Validator = new SimpleIpV6AddressValidator(SimpleIpV6AddressValidator::Base, this);
     d->ui.le_localIpv6->setValidator(ipv6Validator);
     d->ui.le_remoteIpv6->setValidator(ipv6Validator);
 

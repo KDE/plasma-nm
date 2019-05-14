@@ -30,7 +30,7 @@ IpV4Delegate::~IpV4Delegate() {}
 QWidget * IpV4Delegate::createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const
 {
     QLineEdit *editor = new QLineEdit(parent);
-    editor->setValidator(new SimpleIpV4AddressValidator(editor));
+    editor->setValidator(new SimpleIpV4AddressValidator(SimpleIpV4AddressValidator::Base, editor));
 
     return editor;
 }

@@ -38,10 +38,10 @@ FortisslvpnAuthDialog::FortisslvpnAuthDialog(const NetworkManager::VpnSetting::P
 {
     Q_D(FortisslvpnAuthDialog);
 
-    const NMStringMap data = d->setting->data();
-
     d->ui.setupUi(this);
     d->setting = setting;
+
+    const NMStringMap data = d->setting->data();
 
     const NetworkManager::Setting::SecretFlags otpFlag = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_OTP"-flags").toInt());
     d->ui.otpFrame->setVisible(otpFlag == NetworkManager::Setting::NotSaved);

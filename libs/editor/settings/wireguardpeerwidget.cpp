@@ -27,6 +27,7 @@
 #include "wireguardkeyvalidator.h"
 
 #include <QStandardItemModel>
+#include <QUrl>
 
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/WireguardSetting>

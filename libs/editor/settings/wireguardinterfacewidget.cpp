@@ -26,6 +26,9 @@
 #include "simpleiplistvalidator.h"
 #include "wireguardkeyvalidator.h"
 
+#include <QFile>
+#include <QFileInfo>
+#include <QPointer>
 #include <QStandardItemModel>
 
 #include <NetworkManagerQt/Utils>

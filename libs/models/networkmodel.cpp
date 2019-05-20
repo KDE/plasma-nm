@@ -555,7 +555,8 @@ void NetworkModel::updateItem(NetworkModelItem*item)
     if (row >= 0) {
         item->invalidateDetails();
         QModelIndex index = createIndex(row, 0);
-        Q_EMIT dataChanged(index, index);
+        Q_EMIT dataChanged(index, index, item->changedRoles());
+        item->clearChangedRoles();
     }
 }
 

@@ -111,6 +111,7 @@ void NetworkStatus::defaultChanged()
 
 void NetworkStatus::statusChanged(NetworkManager::Status status)
 {
+    const auto oldNetworkStatus = m_networkStatus;
     switch (status) {
         case NetworkManager::ConnectedLinkLocal:
             m_networkStatus = i18nc("A network device is connected, but there is only link-local connectivity", "Connected");
@@ -142,12 +143,14 @@ void NetworkStatus::statusChanged(NetworkManager::Status status)
         status == NetworkManager::ConnectedSiteOnly ||
         status == NetworkManager::Connected) {
         changeActiveConnections();
-    } else {
+    } else if (m_activeConnections != m_networkStatus) {
         m_activeConnections = m_networkStatus;
         Q_EMIT activeConnectionsChanged(m_activeConnections);
     }
 
-    Q_EMIT networkStatusChanged(m_networkStatus);
+    if (oldNetworkStatus != m_networkStatus) {
+        Q_EMIT networkStatusChanged(m_networkStatus);
+    }
 }
 
 void NetworkStatus::changeActiveConnections()
@@ -223,8 +226,10 @@ void NetworkStatus::changeActiveConnections()
         }
     }
 
-    m_activeConnections = activeConnections;
-    Q_EMIT activeConnectionsChanged(activeConnections);
+    if (m_activeConnections != activeConnections) {
+        m_activeConnections = activeConnections;
+        Q_EMIT activeConnectionsChanged(activeConnections);
+    }
 }
 
 QString NetworkStatus::checkUnknownReason() const

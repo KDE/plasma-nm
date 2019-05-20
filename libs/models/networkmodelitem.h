@@ -62,7 +62,8 @@ public:
 
     bool duplicate() const;
 
-    QString icon() const;
+    void setIcon(const QString &icon);
+    QString icon() const { return m_icon; }
 
     ItemType itemType() const;
 
@@ -116,10 +117,15 @@ public:
 
     bool operator==(const NetworkModelItem *item) const;
 
+    QVector<int> changedRoles() const { return m_changedRoles; }
+    void clearChangedRoles() { m_changedRoles.clear(); }
+
 public Q_SLOTS:
     void invalidateDetails();
 
 private:
+    QString computeIcon() const;
+    void refreshIcon();
     void updateDetails() const;
 
     QString m_activeConnectionPath;
@@ -145,6 +151,8 @@ private:
     NetworkManager::VpnConnection::State m_vpnState;
     qulonglong m_rxBytes;
     qulonglong m_txBytes;
+    QString m_icon;
+    QVector<int> m_changedRoles;
 };
 
 #endif // PLASMA_NM_MODEL_NETWORK_MODEL_ITEM_H

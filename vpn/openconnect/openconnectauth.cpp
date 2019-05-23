@@ -583,7 +583,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
 
     QDialogButtonBox *box = new QDialogButtonBox(this);
     QPushButton *btn = box->addButton(QDialogButtonBox::Ok);
-    btn->setText(i18n("Login"));
+    btn->setText(i18nc("Verb, to proceed with login", "Login"));
     btn->setDefault(true);
     d->ui.loginBoxLayout->addWidget(box);
     box->setProperty("openconnect_form", (quintptr)form);

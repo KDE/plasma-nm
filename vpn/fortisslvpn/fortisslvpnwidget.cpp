@@ -72,6 +72,12 @@ FortisslvpnWidget::FortisslvpnWidget(const NetworkManager::VpnSetting::Ptr &sett
     layout->addWidget(buttons);
     KAcceleratorManager::manage(this);
 
+    // Remove these from setting check:
+    // Just popping up the advancedDlg changes nothing
+    disconnect(d->ui.advancedButton, &QPushButton::clicked, this, &SettingWidget::settingChanged);
+    // But the accept button does
+    connect(buttons, &QDialogButtonBox::accepted, this, &SettingWidget::settingChanged);
+
     if (setting && !setting->isNull()) {
         loadConfig(setting);
     }
@@ -134,6 +140,12 @@ void FortisslvpnWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
             d->advUi.otp->setChecked(true);
         }
     }
+
+    const QString realm = data.value(NM_FORTISSLVPN_KEY_REALM);
+    if (!realm.isEmpty()) {
+        d->advUi.realm->setText(realm);
+    }
+
     loadSecrets(setting);
 }
 
@@ -199,6 +211,10 @@ QVariantMap FortisslvpnWidget::setting() const
 
     if (d->advUi.otp->isChecked()) {
         data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP"-flags"), QString::number(NetworkManager::Setting::NotSaved));
+    }
+
+    if (!d->advUi.realm->text().isEmpty()) {
+        data.insert(NM_FORTISSLVPN_KEY_REALM, d->advUi.realm->text());
     }
 
     setting.setData(data);

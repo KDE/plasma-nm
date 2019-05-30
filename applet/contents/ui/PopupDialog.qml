@@ -26,20 +26,24 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 FocusScope {
+    id: full
     property var notificationInhibitorLock: undefined
 
     PlasmaNM.AvailableDevices {
         id: availableDevices
     }
 
-    PlasmaNM.NetworkModel {
-        id: connectionModel
+    Component {
+        id: networkModelComponent
+        PlasmaNM.NetworkModel {}
     }
+
+    property PlasmaNM.NetworkModel connectionModel: null
 
     PlasmaNM.AppletProxyModel {
         id: appletProxyModel
 
-        sourceModel: connectionModel
+        sourceModel: full.connectionModel
     }
 
     ColumnLayout {
@@ -92,6 +96,12 @@ FocusScope {
             } else {
                 notificationInhibitorLock = undefined;
                 toolbar.closeSearch()
+            }
+
+            if (expanded) {
+                full.connectionModel = networkModelComponent.createObject(full)
+            } else {
+                full.connectionModel.destroy()
             }
         }
     }

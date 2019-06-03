@@ -28,7 +28,6 @@
 
 #include <NetworkManagerQt/VpnSetting>
 
-class QComboBox;
 class StrongswanSettingWidgetPrivate;
 
 class StrongswanSettingWidget : public SettingWidget

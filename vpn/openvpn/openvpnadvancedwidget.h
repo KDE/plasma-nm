@@ -33,7 +33,6 @@ namespace Ui
 class OpenVpnAdvancedWidget;
 }
 
-class QLineEdit;
 class OpenVpnAdvancedWidget : public QDialog
 {
     Q_OBJECT

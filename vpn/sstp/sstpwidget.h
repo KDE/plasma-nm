@@ -26,7 +26,6 @@
 
 #include <NetworkManagerQt/VpnSetting>
 
-class QComboBox;
 class SstpSettingWidgetPrivate;
 
 class SstpSettingWidget : public SettingWidget

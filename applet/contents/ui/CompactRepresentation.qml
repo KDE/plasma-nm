@@ -26,6 +26,7 @@ MouseArea {
     id: panelIconWidget
 
     anchors.fill: parent
+    hoverEnabled: true
 
     onClicked: plasmoid.expanded = !plasmoid.expanded
 
@@ -35,6 +36,7 @@ MouseArea {
         anchors.fill: parent
         source: connectionIconProvider.connectionIcon
         colorGroup: PlasmaCore.ColorScope.colorGroup
+        active: parent.containsMouse
 
         PlasmaComponents.BusyIndicator {
             id: connectingIndicator

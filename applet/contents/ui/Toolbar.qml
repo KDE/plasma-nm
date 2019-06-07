@@ -151,7 +151,14 @@ GridLayout {
 
         visible: searchToggleButton.checked
         onVisibleChanged: if (!visible) text = ""
-        Keys.onEscapePressed: searchToggleButton.checked = false
+        Keys.onEscapePressed: {
+            //Check if the searchbar is actually visible before accepting the escape key. Otherwise, the escape key cannot dismiss the applet until one interacts with some other element.
+            if (searchToggleButton.checked) {
+                searchToggleButton.checked = false;
+            } else {
+                event.accepted = false;
+            }
+        }
 
         onTextChanged: {
             // Show search field when starting to type directly

@@ -79,7 +79,6 @@ Kirigami.ApplicationItem {
 
     NetworkListView {
         id: networkListview
-        anchors.fill: parent
     }
 
     Component {

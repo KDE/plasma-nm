@@ -81,8 +81,17 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
     }
     setStates();
 
-    connectivityChanged();
     setIcons();
+
+    QDBusPendingReply<uint> pendingReply = NetworkManager::checkConnectivity();
+    QDBusPendingCallWatcher *callWatcher = new QDBusPendingCallWatcher(pendingReply);
+    connect(callWatcher, &QDBusPendingCallWatcher::finished, this, [this] (QDBusPendingCallWatcher *watcher) {
+        QDBusPendingReply<uint> reply = *watcher;
+        if (reply.isValid()) {
+            connectivityChanged((NetworkManager::Connectivity)reply.value());
+        }
+        watcher->deleteLater();
+    });
 }
 
 ConnectionIcon::~ConnectionIcon()
@@ -172,9 +181,13 @@ void ConnectionIcon::carrierChanged(bool carrier)
     setIcons();
 }
 
-void ConnectionIcon::connectivityChanged()
+void ConnectionIcon::connectivityChanged(NetworkManager::Connectivity conn)
 {
-    NetworkManager::Connectivity conn = NetworkManager::connectivity();
+    const bool needsPortal = conn == NetworkManager::Portal;
+    if (needsPortal != m_needsPortal) {
+        m_needsPortal = needsPortal;
+        Q_EMIT needsPortalChanged(needsPortal);
+    }
     setLimited(conn == NetworkManager::Portal || conn == NetworkManager::Limited);
 }
 

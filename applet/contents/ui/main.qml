@@ -47,12 +47,21 @@ Item {
 
     function action_openKCM() {
         KCMShell.open(kcm)
+
+
+    }
+    function action_showPortal() {
+        Qt.openUrlExternally("http://networkcheck.kde.org")
     }
 
     Component.onCompleted: {
         if (kcmAuthorized) {
             plasmoid.setAction("openKCM", i18n("&Configure Network Connections..."), "preferences-system-network");
         }
+        plasmoid.setAction("showPortal", i18n("Open Network Login Page..."), "internet-services");
+
+        var action = plasmoid.action("showPortal");
+        action.visible = Qt.binding(function() { return connectionIconProvider.needsPortal; })
     }
 
     PlasmaNM.NetworkStatus {

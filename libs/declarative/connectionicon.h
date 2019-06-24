@@ -34,6 +34,7 @@ class ConnectionIcon : public QObject
 Q_PROPERTY(bool connecting READ connecting NOTIFY connectingChanged)
 Q_PROPERTY(QString connectionIcon READ connectionIcon NOTIFY connectionIconChanged)
 Q_PROPERTY(QString connectionTooltipIcon READ connectionTooltipIcon NOTIFY connectionTooltipIconChanged)
+Q_PROPERTY(bool needsPortal READ needsPortal NOTIFY needsPortalChanged)
 
 Q_PROPERTY(bool airplaneMode READ airplaneMode WRITE setAirplaneMode NOTIFY airplaneModeChanged)
 Q_OBJECT
@@ -45,6 +46,8 @@ public:
     QString connectionIcon() const;
     QString connectionTooltipIcon() const;
 
+    bool needsPortal() const { return m_needsPortal; }
+
     bool airplaneMode() const;
     void setAirplaneMode(bool airplaneMode);
 
@@ -54,7 +57,7 @@ private Q_SLOTS:
     void activeConnectionDestroyed();
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
     void carrierChanged(bool carrier);
-    void connectivityChanged();
+    void connectivityChanged(NetworkManager::Connectivity connectivity);
     void deviceAdded(const QString & device);
     void deviceRemoved(const QString & device);
     void networkingEnabledChanged(bool enabled);
@@ -75,6 +78,7 @@ Q_SIGNALS:
     void connectionIconChanged(const QString & icon);
     void connectionTooltipIconChanged(const QString & icon);
     void airplaneModeChanged(bool airplaneMode);
+    void needsPortalChanged(bool needsPortal);
 
 private:
     void addActiveConnection(const QString & activeConnection);
@@ -92,6 +96,7 @@ private:
     QString m_connectionIcon;
     QString m_connectionTooltipIcon;
     bool m_airplaneMode;
+    bool m_needsPortal = false;
 
     void setDisconnectedIcon();
     void setIcons();

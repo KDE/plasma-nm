@@ -87,7 +87,7 @@ Item {
         id: scanTimer
         interval: 15000
         repeat: true
-        running: plasmoid.expanded
+        running: plasmoid.expanded && !connectionIconProvider.airplaneMode
 
         onTriggered: handler.requestScan()
     }

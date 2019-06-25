@@ -440,10 +440,12 @@ void Handler::requestScan(const QString &interface)
     for (NetworkManager::Device::Ptr device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
-            if (wifiDevice) {
+
+            if (wifiDevice && wifiDevice->state() != NetworkManager::WirelessDevice::Unavailable) {
                 if (!interface.isEmpty() && interface != wifiDevice->interfaceName()) {
                     continue;
                 }
+
                 qCDebug(PLASMA_NM) << "Requesting wifi scan on device" << wifiDevice->interfaceName();
                 QDBusPendingReply<> reply = wifiDevice->requestScan();
                 QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
@@ -523,7 +525,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
             case Handler::RequestScan:
             {
                 const QString interface = watcher->property("interface").toString();
-                qCDebug(PLASMA_NM) << "Wireless scan on" << interface << "failed:" << error;
+                qCWarning(PLASMA_NM) << "Wireless scan on" << interface << "failed:" << error;
                 scanRequestFailed(interface);
                 break;
             }

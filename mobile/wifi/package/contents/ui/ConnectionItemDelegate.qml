@@ -26,7 +26,6 @@ import org.kde.kirigami 2.2 as Kirigami
 
 Kirigami.SwipeListItem {
 
-    height: Kirigami.Units.gridUnit * 4
     enabled: true
     //backgroundColor: theme.backgroundColor
 
@@ -75,7 +74,6 @@ Kirigami.SwipeListItem {
                 left: connectionSvgIcon.right
                 leftMargin: Kirigami.Units.gridUnit * 2
             }
-            height: paintedHeight
             visible: !connectionPasswordField.visible
             elide: Text.ElideRight
             font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
@@ -86,7 +84,6 @@ Kirigami.SwipeListItem {
         PasswordField {
             id: connectionPasswordField
             anchors.left: connectionNameLabel.left
-            height: units.gridUnit * 2
             implicitWidth: Kirigami.Units.gridUnit *16
             securityType: SecurityType
             visible: false

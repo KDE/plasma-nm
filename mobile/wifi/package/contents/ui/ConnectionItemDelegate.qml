@@ -37,43 +37,40 @@ Kirigami.SwipeListItem {
 
     RowLayout {
         anchors.leftMargin: Kirigami.Units.largeSpacing * 5
+        spacing: Kirigami.Units.largeSpacing
         Kirigami.Separator {}
-        PlasmaCore.SvgItem {
-            id: connectionSvgIcon
-            anchors.leftMargin: Kirigami.Units.largeSpacing
-            height: Kirigami.Units.iconSizes.big
-            width: height
-            elementId: mobileProxyModel.showSavedMode ? "network-wireless-connected-100" : ConnectionIcon
 
-            svg: PlasmaCore.Svg {
-                multipleImages: true
-                imagePath: "icons/network"
-                colorGroup: PlasmaCore.ColorScope.colorGroup
+        Item {
+            Layout.preferredWidth: Kirigami.Units.gridUnit
+            Layout.preferredHeight: Kirigami.Units.gridUnit
+
+            PlasmaCore.SvgItem {
+                id: connectionSvgIcon
+                elementId: mobileProxyModel.showSavedMode ? "network-wireless-connected-100" : ConnectionIcon
+
+                svg: PlasmaCore.Svg {
+                    multipleImages: true
+                    imagePath: "icons/network"
+                    colorGroup: PlasmaCore.ColorScope.colorGroup
+                }
             }
-            Layout.minimumHeight: Kirigami.Units.iconSizes.smallMedium
-            Layout.minimumWidth: height
-        }
 
-        Controls.BusyIndicator {
-            id: connectingIndicator
+            Controls.BusyIndicator {
+                id: connectingIndicator
 
-            anchors {
-                horizontalCenter: connectionSvgIcon.horizontalCenter
-                verticalCenter: connectionSvgIcon.verticalCenter
+                anchors {
+                    horizontalCenter: connectionSvgIcon.horizontalCenter
+                    verticalCenter: connectionSvgIcon.verticalCenter
+                }
+                running: ConnectionState == PlasmaNM.Enums.Activating
+                visible: running
             }
-            height: connectionSvgIcon.height
-            width: height
-            running: ConnectionState == PlasmaNM.Enums.Activating
-            visible: running
         }
 
         Controls.Label {
             id: connectionNameLabel
 
-            anchors {
-                left: connectionSvgIcon.right
-                leftMargin: Kirigami.Units.gridUnit * 2
-            }
+            Layout.fillWidth: true
             visible: !connectionPasswordField.visible
             elide: Text.ElideRight
             font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
@@ -83,7 +80,7 @@ Kirigami.SwipeListItem {
         }
         PasswordField {
             id: connectionPasswordField
-            anchors.left: connectionNameLabel.left
+            Layout.fillWidth: true
             implicitWidth: Kirigami.Units.gridUnit *16
             securityType: SecurityType
             visible: false

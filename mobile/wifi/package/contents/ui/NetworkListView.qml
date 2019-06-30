@@ -26,43 +26,19 @@ import org.kde.kirigami 2.6 as Kirigami
 Kirigami.ScrollablePage {
     anchors.leftMargin: Kirigami.Units.largeSpacing * 2
 
-    header: ColumnLayout {
-        width: parent.width
-        Kirigami.InlineMessage {
-            id: inlineError
-            Layout.fillWidth: true
-            showCloseButton: true
+    header: Kirigami.InlineMessage {
+        id: inlineError
+        Layout.fillWidth: true
+        showCloseButton: true
 
-            visible: false
+        visible: false
 
-            type: Kirigami.MessageType.Warning
-            Connections {
-                target: handler
-                onConnectionActivationFailed: {
-                    inlineError.text = message;
-                    inlineError.visible = true;
-                }
-            }
-        }
-
-        RowLayout {
-            id: layoutrow
-            Layout.fillWidth: true
-
-            Controls.Label {
-                anchors.left: parent.left
-                text: i18n("Wi-fi")
-                Layout.fillWidth: true
-                font.bold: true
-            }
-
-            Controls.Switch {
-                id: wifiSwitchButton
-                checked: enabled && enabledConnections.wirelessEnabled
-                enabled: enabledConnections.wirelessHwEnabled
-                onClicked: {
-                    handler.enableWireless(checked);
-                }
+        type: Kirigami.MessageType.Warning
+        Connections {
+            target: handler
+            onConnectionActivationFailed: {
+                inlineError.text = message;
+                inlineError.visible = true;
             }
         }
     }
@@ -84,6 +60,12 @@ Kirigami.ScrollablePage {
         }
         model: mobileProxyModel
         delegate: ConnectionItemDelegate {}
+    }
+
+    actions.main: Kirigami.Action {
+        iconName: enabledConnections.wirelessEnabled ? "network-wireless-disconnected" : "network-wireless-connected"
+        text: enabledConnections.wirelessEnabled ? i18n("Disable Wi-Fi") : i18n("Enable Wi-Fi")
+        onTriggered: handler.enableWireless(!enabledConnections.wirelessEnabled);
     }
 
     actions.contextualActions: [

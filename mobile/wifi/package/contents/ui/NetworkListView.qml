@@ -132,36 +132,34 @@ Kirigami.ScrollablePage {
         property var name
         property var dbusPath
         edge: Qt.BottomEdge
-        contentItem: Item {
-            implicitHeight: childrenRect.height + Kirigami.Units.gridUnit
-            ColumnLayout {
-                anchors.centerIn: parent
-                Controls.Label {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    text: i18n("Delete connection %1 from device?", deleteConnectionDialog.name)
-                }
-                Controls.Button {
-                    text: i18n("Delete")
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    onClicked: {
-                        handler.removeConnection(deleteConnectionDialog.dbusPath)
-                        deleteConnectionDialog.close()
-                    }
-                }
-                Controls.Button {
-                    text: i18n("Cancel")
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    onClicked: deleteConnectionDialog.close()
-                }
-                Item {
-                    Layout.minimumHeight: Kirigami.Units.gridUnit * 4
+
+        contentItem: Column {
+            anchors.centerIn: parent
+            spacing: Kirigami.Units.largeSpacing
+            bottomPadding: Kirigami.Units.largeSpacing
+
+            Controls.Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: i18n("Delete connection %1 from device?", deleteConnectionDialog.name)
+            }
+            Controls.Button {
+                text: i18n("Delete")
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    handler.removeConnection(deleteConnectionDialog.dbusPath)
+                    deleteConnectionDialog.close()
                 }
             }
-            onVisibleChanged: {
-                if (!visible) {
-                    deleteConnectionDialog.name = ""
-                    deleteConnectionDialog.dbusPath = ""
-                }
+            Controls.Button {
+                text: i18n("Cancel")
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: deleteConnectionDialog.close()
+            }
+        }
+        onVisibleChanged: {
+            if (!visible) {
+                deleteConnectionDialog.name = ""
+                deleteConnectionDialog.dbusPath = ""
             }
         }
     }

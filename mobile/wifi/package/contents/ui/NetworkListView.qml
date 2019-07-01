@@ -138,7 +138,7 @@ Kirigami.ScrollablePage {
                 anchors.centerIn: parent
                 Controls.Label {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    text: i18n("Delete connection ") + deleteConnectionDialog.name + " from device ?"
+                    text: i18n("Delete connection %1 from device?", deleteConnectionDialog.name)
                 }
                 Controls.Button {
                     text: i18n("Delete")

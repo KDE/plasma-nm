@@ -24,7 +24,6 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.6 as Kirigami
 
 Kirigami.ScrollablePage {
-    anchors.leftMargin: Kirigami.Units.largeSpacing * 2
 
     header: Kirigami.InlineMessage {
         id: inlineError

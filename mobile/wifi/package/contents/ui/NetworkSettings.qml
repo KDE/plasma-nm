@@ -64,39 +64,26 @@ Kirigami.ScrollablePage{
 
     footer: Item {
         height: Kirigami.Units.gridUnit * 4
+
         RowLayout {
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: Kirigami.Units.gridUnit
+
             Controls.Button {
                 enabled: enabledSave
-                RowLayout {
-                    anchors.centerIn: parent
-                    Kirigami.Icon {
-                        width: Kirigami.Units.iconSizes.smallMedium
-                        height: width
-                        source: "document-save"
-                    }
-                    Text {
-                        text: i18n("Save")
-                    }
-                }
+
+                icon.name: "document-save"
+                text: i18n("Save")
+
                 onPressed: {
                     save()
                     applicationWindow().pageStack.pop()
                 }
             }
             Controls.Button {
-                RowLayout {
-                    anchors.centerIn: parent
-                    Kirigami.Icon {
-                        width: Kirigami.Units.iconSizes.smallMedium
-                        height: width
-                        source: "dialog-cancel"
-                    }
-                    Text {
-                        text: i18n("Cancel")
-                    }
-                }
+                icon.name: "dialog-cancel"
+                text: i18n("Cancel")
+
                 onPressed: {
                     applicationWindow().pageStack.pop()
                 }

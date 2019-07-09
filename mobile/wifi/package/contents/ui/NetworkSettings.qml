@@ -21,8 +21,9 @@ import QtQuick 2.6
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.2 as Controls
 import org.kde.kirigami 2.2 as Kirigami
+import org.kde.kcm 1.1
 
-Kirigami.ScrollablePage{
+SimpleKCM {
     property var path
     property var settings: ({})
     property var activeMap: ({})
@@ -91,7 +92,7 @@ Kirigami.ScrollablePage{
         }
     }
 
-    function loadNetworkSettings() {
+    Component.onCompleted: {
         console.info(path);
         settings = kcm.getConnectionSettings(path,"connection");
         detailsName.text = settings["id"]

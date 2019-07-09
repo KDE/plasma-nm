@@ -21,17 +21,11 @@ import QtQuick 2.6
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.2 as Controls
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-import org.kde.kirigami 2.2 as Kirigami
+import org.kde.kirigami 2.5 as Kirigami
+import org.kde.kcm 1.1
 
-Kirigami.ApplicationItem {
+SimpleKCM {
     id: main
-    objectName: "wifiMain"
-
-    pageStack.defaultColumnWidth: Kirigami.Units.gridUnit * 25
-    pageStack.initialPage: networkListview
-    Kirigami.Theme.colorSet: Kirigami.Theme.Window
-
-    anchors.fill: parent
 
     PlasmaNM.Handler {
         id: handler
@@ -50,10 +44,6 @@ Kirigami.ApplicationItem {
         onWirelessEnabledChanged: {
             wifiSwitchButton.checked = wifiSwitchButton.enabled && enabled
         }
-    }
-
-    contextDrawer: Kirigami.ContextDrawer {
-        id: contextDrawer
     }
 
     PlasmaNM.NetworkModel {
@@ -77,18 +67,146 @@ Kirigami.ApplicationItem {
         onTriggered: handler.requestScan()
     }
 
-    NetworkListView {
-        id: networkListview
+    header: Kirigami.InlineMessage {
+        id: inlineError
+        Layout.fillWidth: true
+        showCloseButton: true
+
+        visible: false
+
+        type: Kirigami.MessageType.Warning
+        Connections {
+            target: handler
+            onConnectionActivationFailed: {
+                inlineError.text = message;
+                inlineError.visible = true;
+            }
+        }
+    }
+
+    ListView {
+        id: view
+
+        anchors.fill: parent
+        clip: true
+        width: parent.width
+        currentIndex: -1
+        boundsBehavior: Flickable.StopAtBounds
+
+        header: Controls.Label {
+            leftPadding: Kirigami.Units.smallSpacing
+            text: mobileProxyModel.showSavedMode ? i18n("Saved networks") : i18n("Available networks")
+        }
+
+        model: mobileProxyModel
+        delegate: ConnectionItemDelegate {}
+    }
+
+    actions.main: Kirigami.Action {
+        iconName: enabledConnections.wirelessEnabled ? "network-wireless-disconnected" : "network-wireless-connected"
+        text: enabledConnections.wirelessEnabled ? i18n("Disable Wi-Fi") : i18n("Enable Wi-Fi")
+        onTriggered: handler.enableWireless(!enabledConnections.wirelessEnabled);
+    }
+
+    actions.contextualActions: [
+
+        Kirigami.Action {
+            iconName: "edit"
+            text: i18n("Add custom connection")
+            onTriggered: {
+                applicationWindow().pageStack.push(connectionEditorDialogComponent)
+                contextDrawer.close()
+            }
+        },
+
+        Kirigami.Action {
+            iconName: "edit"
+            text: i18n("Create Hotspot")
+            onTriggered: {
+                applicationWindow().pageStack.push(tetheringComponent)
+                contextDrawer.close()
+            }
+        },
+        Kirigami.Action {
+            iconName: "edit"
+            text: i18n("Saved Connections")
+            checkable: true
+            checked: false
+            onTriggered: {
+                mobileProxyModel.showSavedMode = !mobileProxyModel.showSavedMode
+            }
+        }
+    ]
+/*
+    footer: Controls.Button {
+        width: parent.width
+        text: "ContextualActions"
+        iconName: "edit"
+        onClicked: bottomDrawer.open()
+    }
+
+    Kirigami.OverlayDrawer {
+            id: bottomDrawer
+            edge: Qt.BottomEdge
+            contentItem: Item {
+                implicitHeight: childrenRect.height + Kirigami.Units.gridUnit
+                ColumnLayout{
+                    anchors.centerIn: parent
+                    Controls.Button {
+                        text: "Add custom connection"
+                        onClicked: applicationWindow().pageStack.push(connectionEditorDialogComponent)
+                    }
+                    Controls.Button {
+                        text: "Create Hotspot"
+                        onClicked: showPassiveNotification("Open tethering")
+                    }
+                    Item {
+                        Layout.minimumHeight: Units.gridUnit * 4
+                    }
+                }
+            }
+        }
+*/
+    Kirigami.OverlayDrawer {
+        id: deleteConnectionDialog
+        property var name
+        property var dbusPath
+        edge: Qt.BottomEdge
+
+        contentItem: Column {
+            anchors.centerIn: parent
+            spacing: Kirigami.Units.largeSpacing
+            bottomPadding: Kirigami.Units.largeSpacing
+
+            Controls.Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: i18n("Delete connection %1 from device?", deleteConnectionDialog.name)
+            }
+            Controls.Button {
+                text: i18n("Delete")
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    handler.removeConnection(deleteConnectionDialog.dbusPath)
+                    deleteConnectionDialog.close()
+                }
+            }
+            Controls.Button {
+                text: i18n("Cancel")
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: deleteConnectionDialog.close()
+            }
+        }
+        onVisibleChanged: {
+            if (!visible) {
+                deleteConnectionDialog.name = ""
+                deleteConnectionDialog.dbusPath = ""
+            }
+        }
     }
 
     Component {
         id: connectionEditorDialogComponent
         ConnectionEditor { }
-    }
-
-    Component {
-        id: networkDetailsViewComponent
-        NetworkSettings { }
     }
 
     Component {

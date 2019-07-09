@@ -110,7 +110,9 @@ Kirigami.SwipeListItem {
         Kirigami.Action {
             iconName: "configure"
             visible: (Uuid != "")? true : false
-            onTriggered: getConfigureDialog()
+            onTriggered: {
+                kcm.push("NetworkSettings.qml", {path: ConnectionPath})
+            }
         },
         Kirigami.Action {
             iconName: "entry-delete"
@@ -121,12 +123,6 @@ Kirigami.SwipeListItem {
 
     onClicked: {
         changeState()
-    }
-
-    function getConfigureDialog() {
-        var item = applicationWindow().pageStack.push(networkDetailsViewComponent)
-        item.path = ConnectionPath
-        item.loadNetworkSettings()
     }
 
     function changeState() {

@@ -50,6 +50,7 @@ public:
 private Q_SLOTS:
     void slotModeComboChanged(int index);
     void slotRoutesDialog();
+    void slotAdvancedDialog();
 
     void slotDnsServers();
     void slotDnsDomains();

@@ -305,6 +305,13 @@ but IPv6 configuration succeeds</string>
       </spacer>
      </item>
      <item>
+      <widget class="QPushButton" name="btnAdvanced">
+       <property name="text">
+        <string>Advanced...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="btnRoutes">
        <property name="enabled">
         <bool>true</bool>

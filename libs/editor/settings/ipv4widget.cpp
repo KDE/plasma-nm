@@ -27,6 +27,8 @@
 #include <QStandardItemModel>
 #include <QItemSelection>
 #include <QNetworkAddressEntry>
+#include <QFormLayout>
+#include <QSpinBox>
 
 #include <KEditListWidget>
 #include <KLocalizedString>
@@ -108,6 +110,7 @@ IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
     slotModeComboChanged(m_ui->method->currentIndex());
 
     connect(m_ui->btnRoutes, &QPushButton::clicked, this, &IPv4Widget::slotRoutesDialog);
+    connect(m_ui->btnAdvanced, &QPushButton::clicked, this, &IPv4Widget::slotAdvancedDialog);
 
     // Connect for setting check
     watchChangedSetting();
@@ -139,6 +142,10 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     m_tmpIpv4Setting.setRoutes(ipv4Setting->routes());
     m_tmpIpv4Setting.setNeverDefault(ipv4Setting->neverDefault());
     m_tmpIpv4Setting.setIgnoreAutoRoutes(ipv4Setting->ignoreAutoRoutes());
+
+    m_tmpIpv4Setting.setDhcpHostname(ipv4Setting->dhcpHostname());
+    m_tmpIpv4Setting.setDhcpSendHostname(ipv4Setting->dhcpSendHostname());
+    m_tmpIpv4Setting.setDadTimeout(ipv4Setting->dadTimeout());
 
     // method
     switch (ipv4Setting->method()) {
@@ -199,6 +206,10 @@ QVariantMap IPv4Widget::setting() const
     ipv4Setting.setRoutes(m_tmpIpv4Setting.routes());
     ipv4Setting.setNeverDefault(m_tmpIpv4Setting.neverDefault());
     ipv4Setting.setIgnoreAutoRoutes(m_tmpIpv4Setting.ignoreAutoRoutes());
+
+    ipv4Setting.setDhcpHostname(m_tmpIpv4Setting.dhcpHostname());
+    ipv4Setting.setDhcpSendHostname(m_tmpIpv4Setting.dhcpSendHostname());
+    ipv4Setting.setDadTimeout(m_tmpIpv4Setting.dadTimeout());
 
     // method
     switch ((MethodIndex)m_ui->method->currentIndex()) {
@@ -412,6 +423,47 @@ void IPv4Widget::slotRoutesDialog()
                     dlg->deleteLater();
                 }
             });
+    dlg->setModal(true);
+    dlg->show();
+}
+
+void IPv4Widget::slotAdvancedDialog()
+{
+    auto dlg = new QDialog(this);
+    dlg->setAttribute(Qt::WA_DeleteOnClose);
+
+    auto layout = new QFormLayout(dlg);
+    dlg->setLayout(layout);
+
+    layout->addRow(new QLabel(i18n("<qt>You can find more information about these values here:<br/><a href='https://developer.gnome.org/NetworkManager/stable/nm-settings.html'>https://developer.gnome.org/NetworkManager/stable/nm-settings.html</a></qt>")));
+
+    auto sendHostname = new QCheckBox;
+    sendHostname->setChecked(m_tmpIpv4Setting.dhcpSendHostname());
+    layout->addRow(i18n("Send hostname:"), sendHostname);
+
+    auto dhcpHostname = new QLineEdit;
+    dhcpHostname->setText(m_tmpIpv4Setting.dhcpHostname());
+    layout->addRow(i18n("DHCP hostname:"), dhcpHostname);
+
+    connect(sendHostname, &QCheckBox::toggled, dhcpHostname, &QLineEdit::setEnabled);
+
+    auto dadTimeout = new QSpinBox;
+    dadTimeout->setMinimum(-1);
+    dadTimeout->setValue(m_tmpIpv4Setting.dadTimeout());
+    layout->addRow(i18n("DAD timeout:"), dadTimeout);
+
+    QDialogButtonBox* box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dlg);
+    connect(box, &QDialogButtonBox::accepted, dlg, &QDialog::accept);
+    connect(box, &QDialogButtonBox::rejected, dlg, &QDialog::reject);
+    layout->addWidget(box);
+
+    connect(dlg, &QDialog::accepted,
+            [&] () {
+                m_tmpIpv4Setting.setDhcpSendHostname(sendHostname->isChecked());
+                m_tmpIpv4Setting.setDhcpHostname(dhcpHostname->text());
+                m_tmpIpv4Setting.setDadTimeout(dadTimeout->value());
+            });
+
     dlg->setModal(true);
     dlg->show();
 }

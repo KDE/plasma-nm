@@ -29,6 +29,7 @@
 #include <QNetworkAddressEntry>
 #include <QFormLayout>
 #include <QSpinBox>
+#include <QHostInfo>
 
 #include <KEditListWidget>
 #include <KLocalizedString>
@@ -443,11 +444,14 @@ void IPv4Widget::slotAdvancedDialog()
 
     auto dhcpHostname = new QLineEdit;
     dhcpHostname->setText(m_tmpIpv4Setting.dhcpHostname());
+    dhcpHostname->setPlaceholderText(QHostInfo::localHostName());
     layout->addRow(i18n("DHCP hostname:"), dhcpHostname);
 
     connect(sendHostname, &QCheckBox::toggled, dhcpHostname, &QLineEdit::setEnabled);
 
     auto dadTimeout = new QSpinBox;
+    dadTimeout->setSpecialValueText(i18n("Default"));
+    dadTimeout->setSuffix(i18nc("Milliseconds", " ms"));
     dadTimeout->setMinimum(-1);
     dadTimeout->setValue(m_tmpIpv4Setting.dadTimeout());
     layout->addRow(i18n("DAD timeout:"), dadTimeout);
@@ -457,7 +461,7 @@ void IPv4Widget::slotAdvancedDialog()
     connect(box, &QDialogButtonBox::rejected, dlg, &QDialog::reject);
     layout->addWidget(box);
 
-    connect(dlg, &QDialog::accepted,
+    connect(dlg, &QDialog::accepted, this,
             [&] () {
                 m_tmpIpv4Setting.setDhcpSendHostname(sendHostname->isChecked());
                 m_tmpIpv4Setting.setDhcpHostname(dhcpHostname->text());

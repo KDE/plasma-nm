@@ -26,6 +26,7 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/Utils>
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/GenericTypes>
 #endif
@@ -68,6 +69,18 @@ public Q_SLOTS:
      * it will open the connection editor for advanced configuration.
      * */
     void addAndActivateConnection(const QString &device, const QString &specificParameter, const QString &password = QString());
+
+    /**
+     * Returns a code that includes the credentials to a said wifi connection
+     * Here's some information on how this information is created, it's generally used to put in QR codes to share.
+     * https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11
+     *
+     * @param connectionPath the d-bus path to the connection we want to read
+     * @param ssid the name of the network being displayed
+     * @param securityType the authentication protocol used for this specific ssid
+     */
+    QString wifiCode(const QString& connectionPath, const QString& ssid, /*NetworkManager::WirelessSecurityType*/ int securityType) const;
+
     /**
      * Adds a new connection
      * @map - NMVariantMapMap with connection settings

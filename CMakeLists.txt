@@ -16,6 +16,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_D
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
+include(ECMQMLModules)
 
 include(FeatureSummary)
 
@@ -49,6 +50,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
 find_package(KF5ModemManagerQt ${KF5_MIN_VERSION})
 set_package_properties(KF5ModemManagerQt PROPERTIES
                        TYPE OPTIONAL)
+
+ecm_find_qmlmodule(org.kde.prison 1.0)
 
 if (BUILD_MOBILE)
     find_package(KF5Kirigami2 ${KF5_MIN_VERSION} CONFIG)

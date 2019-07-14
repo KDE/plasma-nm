@@ -165,6 +165,56 @@ void Handler::activateConnection(const QString& connection, const QString& devic
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
+QString Handler::wifiCode(const QString& connectionPath, const QString& ssid, int _securityType) const
+{
+    NetworkManager::WirelessSecurityType securityType = static_cast<NetworkManager::WirelessSecurityType>(_securityType);
+
+    QString ret = QStringLiteral("WIFI:S:") + ssid + QLatin1Char(';');
+    if (securityType != NetworkManager::NoneSecurity) {
+        switch (securityType) {
+            case NetworkManager::NoneSecurity:
+                break;
+            case NetworkManager::StaticWep:
+                ret += "T:WEP;";
+                break;
+            case NetworkManager::WpaPsk:
+            case NetworkManager::Wpa2Psk:
+                ret += "T:WPA;";
+                break;
+            default:
+            case NetworkManager::DynamicWep:
+            case NetworkManager::WpaEap:
+            case NetworkManager::Wpa2Eap:
+            case NetworkManager::Leap:
+                return {};
+        }
+    }
+
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(connectionPath);
+    if(!connection)
+        return {};
+
+    const auto key = QStringLiteral("802-11-wireless-security");
+    auto reply = connection->secrets(key);
+
+    const auto secret = reply.argumentAt<0>()[key];
+    QString pass;
+    switch (securityType) {
+        case NetworkManager::NoneSecurity:
+            break;
+        case NetworkManager::WpaPsk:
+        case NetworkManager::Wpa2Psk:
+            pass = secret["psk"].toString();
+            break;
+        default:
+            return {};
+    }
+    if (!pass.isEmpty())
+        ret += QStringLiteral("P:") + pass + QLatin1Char(';');
+
+    return ret + QLatin1Char(';');
+}
+
 void Handler::addAndActivateConnection(const QString& device, const QString& specificObject, const QString& password)
 {
     NetworkManager::AccessPoint::Ptr ap;

@@ -167,6 +167,22 @@ PlasmaComponents.ListItem {
             onClicked: changeState()
         }
         PlasmaComponents.MenuItem {
+            text: i18n("Show network's QR code")
+            icon: "view-barcode"
+            visible: Uuid && Type == PlasmaNM.Enums.Wireless &&
+                    (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk || SecurityType == PlasmaNM.Enums.Wpa2Psk)
+            onClicked: {
+                const data = handler.wifiCode(ConnectionPath, Ssid, SecurityType)
+                var obj = showQR.createObject(connectionItem, { content: data });
+                obj.showMaximized()
+            }
+
+            Component {
+                id: showQR
+                ShowQR {}
+            }
+        }
+        PlasmaComponents.MenuItem {
             text: i18n("Configure...")
             icon: "settings-configure"
             onClicked: KCMShell.open([mainWindow.kcm, "--args", "Uuid=" + Uuid])

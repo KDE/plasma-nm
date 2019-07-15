@@ -46,7 +46,7 @@ void PortalMonitor::connectivityChanged(NetworkManager::Connectivity connectivit
 {
     if (connectivity == NetworkManager::Portal) {
         NetworkManager::ActiveConnection::Ptr primaryConnection = NetworkManager::primaryConnection();
-        KNotification *notification = new KNotification(QStringLiteral("CaptivePortal"), KNotification::CloseOnTimeout, this);
+        KNotification *notification = new KNotification(QStringLiteral("CaptivePortal"), KNotification::Persistent, this);
         notification->setActions(QStringList{i18n("Log in")});
         notification->setComponentName(QStringLiteral("networkmanagement"));
         if (primaryConnection) {
@@ -56,8 +56,9 @@ void PortalMonitor::connectivityChanged(NetworkManager::Connectivity connectivit
         }
         notification->setText(i18n("You need to log in to this network"));
         notification->sendEvent();
-        connect(notification, &KNotification::action1Activated, this, [] () {
+        connect(notification, &KNotification::action1Activated, this, [notification] () {
             QDesktopServices::openUrl(QUrl("http://networkcheck.kde.org"));
+            notification->close();
         });
     }
 }

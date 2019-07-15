@@ -810,5 +810,6 @@ Name[uk]=Виявлено керований портал
 Name[x-test]=xxCaptive portal detectedxx
 Name[zh_CN]=检测到强制网络门户
 Name[zh_TW]=偵測到強制入口
+Urgency=Low
 IconName=dialog-password
 Action=Popup

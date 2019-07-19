@@ -127,6 +127,7 @@ PlasmaComponents.ListItem {
                 height: parent.height
                 onPressed: {
                     contextMenu.visualParent = parent
+                    contextMenu.prepare();
                     contextMenu.open(mouse.x, mouse.y)
                 }
             }
@@ -157,6 +158,25 @@ PlasmaComponents.ListItem {
 
     PlasmaComponents.Menu {
         id: contextMenu
+
+        property Component showQRComponent: null
+
+        function prepare() {
+            showQRMenuItem.visible = false;
+
+            if (Uuid && Type === PlasmaNM.Enums.Wireless &&
+                    (SecurityType === PlasmaNM.Enums.StaticWep || SecurityType === PlasmaNM.Enums.WpaPsk || SecurityType === PlasmaNM.Enums.Wpa2Psk)) {
+                if (!showQRComponent) {
+                    showQRComponent = Qt.createComponent("ShowQR.qml", this);
+                    if (showQRComponent.status === Component.Error) {
+                        console.warn("Cannot create QR code component:", showQRComponent.errorString());
+                    }
+                }
+
+                showQRMenuItem.visible = (showQRComponent.status === Component.Ready);
+            }
+        }
+
         PlasmaComponents.MenuItem {
             text: ItemUniqueName
             enabled: false
@@ -167,19 +187,15 @@ PlasmaComponents.ListItem {
             onClicked: changeState()
         }
         PlasmaComponents.MenuItem {
+            id: showQRMenuItem
             text: i18n("Show network's QR code")
             icon: "view-barcode"
-            visible: Uuid && Type == PlasmaNM.Enums.Wireless &&
-                    (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk || SecurityType == PlasmaNM.Enums.Wpa2Psk)
+            // Updated in prepare()
+            visible: false
             onClicked: {
                 const data = handler.wifiCode(ConnectionPath, Ssid, SecurityType)
-                var obj = showQR.createObject(connectionItem, { content: data });
+                var obj = contextMenu.showQRComponent.createObject(connectionItem, { content: data });
                 obj.showMaximized()
-            }
-
-            Component {
-                id: showQR
-                ShowQR {}
             }
         }
         PlasmaComponents.MenuItem {

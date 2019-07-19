@@ -78,6 +78,13 @@ set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Support for encryption"
                        URL "http://download.kde.org/stable/qca-qt5/"
                        TYPE REQUIRED)
 
+find_package(KF5Prison ${KF5_MIN_VERSION})
+set_package_properties(KF5Prison PROPERTIES DESCRIPTION "Prison library"
+                       URL "http://projects.kde.org/prison"
+                       TYPE RUNTIME
+                       PURPOSE "Needed to create mobile barcodes for WiFi networks"
+                      )
+
 if (DISABLE_MODEMMANAGER_SUPPORT)
     message(STATUS "Disabling ModemManager support")
     set(WITH_MODEMMANAGER_SUPPORT 0)

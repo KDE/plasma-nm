@@ -168,6 +168,9 @@ void NetworkModel::initialize()
 
     // Initialize existing devices
     for (const NetworkManager::Device::Ptr &dev : NetworkManager::networkInterfaces()) {
+        if (!dev->managed()) {
+            continue;
+        }
         addDevice(dev);
     }
 

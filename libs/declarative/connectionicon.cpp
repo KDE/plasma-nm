@@ -19,6 +19,7 @@
 */
 
 #include "connectionicon.h"
+#include "configuration.h"
 #include "uiutils.h"
 
 #include <NetworkManagerQt/BluetoothDevice>
@@ -43,7 +44,6 @@ ConnectionIcon::ConnectionIcon(QObject* parent)
     , m_connecting(false)
     , m_limited(false)
     , m_vpn(false)
-    , m_airplaneMode(false)
 #if WITH_MODEMMANAGER_SUPPORT
     , m_modemNetwork(nullptr)
 #endif
@@ -110,21 +110,6 @@ QString ConnectionIcon::connectionIcon() const
 QString ConnectionIcon::connectionTooltipIcon() const
 {
     return m_connectionTooltipIcon;
-}
-
-bool ConnectionIcon::airplaneMode() const
-{
-    return m_airplaneMode;
-}
-
-void ConnectionIcon::setAirplaneMode(bool airplaneMode)
-{
-    if (m_airplaneMode != airplaneMode) {
-        m_airplaneMode = airplaneMode;
-        Q_EMIT airplaneModeChanged(airplaneMode);
-
-        setIcons();
-    }
 }
 
 void ConnectionIcon::activatingConnectionChanged(const QString& connection)
@@ -417,7 +402,7 @@ void ConnectionIcon::setIcons()
 
 void ConnectionIcon::setDisconnectedIcon()
 {
-    if (m_airplaneMode) {
+    if (Configuration::airplaneModeEnabled()) {
         setConnectionIcon(QStringLiteral("network-flightmode-on"));
         return;
     }

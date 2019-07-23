@@ -34,8 +34,6 @@ class ConnectionIcon : public QObject
 Q_PROPERTY(bool connecting READ connecting NOTIFY connectingChanged)
 Q_PROPERTY(QString connectionIcon READ connectionIcon NOTIFY connectionIconChanged)
 Q_PROPERTY(QString connectionTooltipIcon READ connectionTooltipIcon NOTIFY connectionTooltipIconChanged)
-
-Q_PROPERTY(bool airplaneMode READ airplaneMode WRITE setAirplaneMode NOTIFY airplaneModeChanged)
 Q_OBJECT
 public:
     explicit ConnectionIcon(QObject* parent = nullptr);
@@ -44,9 +42,6 @@ public:
     bool connecting() const;
     QString connectionIcon() const;
     QString connectionTooltipIcon() const;
-
-    bool airplaneMode() const;
-    void setAirplaneMode(bool airplaneMode);
 
 private Q_SLOTS:
     void activatingConnectionChanged(const QString & connection);
@@ -91,7 +86,6 @@ private:
     bool m_vpn;
     QString m_connectionIcon;
     QString m_connectionTooltipIcon;
-    bool m_airplaneMode;
 
     void setDisconnectedIcon();
     void setIcons();

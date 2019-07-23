@@ -368,9 +368,8 @@ void Handler::enableBluetooth(bool enable)
                                             message.setArguments(arguments);
                                             QDBusConnection::systemBus().asyncCall(message);
                                         }
-
+                                        watcher->deleteLater();
                                     });
-                            getWatcher->deleteLater();
                         } else if (enable && m_bluetoothAdapters.value(objPath)) {
                             QDBusMessage message = QDBusMessage::createMethodCall("org.bluez", objPath, "org.freedesktop.DBus.Properties", "Set");
                             QList<QVariant> arguments;
@@ -383,8 +382,8 @@ void Handler::enableBluetooth(bool enable)
                     }
                 }
             }
+            watcher->deleteLater();
         });
-    watcher->deleteLater();
 }
 
 void Handler::enableNetworking(bool enable)

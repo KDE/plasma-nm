@@ -313,7 +313,7 @@ void NetworkModelItem::setName(const QString &name)
 {
     if (m_name != name) {
         m_name = name;
-        m_changedRoles << NetworkModel::NameRole;
+        m_changedRoles << NetworkModel::DisplayNameRole << NetworkModel::ItemUniqueNameRole << NetworkModel::NameRole;
     }
 }
 
@@ -343,7 +343,7 @@ void NetworkModelItem::setSecurityType(NetworkManager::WirelessSecurityType type
 {
     if (m_securityType != type) {
         m_securityType = type;
-        m_changedRoles << NetworkModel::SecurityTypeRole;
+        m_changedRoles << NetworkModel::SecurityTypeStringRole << NetworkModel::SecurityTypeRole;
         refreshIcon();
     }
 }

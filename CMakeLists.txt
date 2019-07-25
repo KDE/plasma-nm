@@ -29,22 +29,22 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
 )
 
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
-    I18n
-    WindowSystem
-    Service
-    Completion
-    WidgetsAddons
-    KIO
-    CoreAddons
-    Wallet
     ConfigWidgets
-    IconThemes
-    Solid
+    Completion
+    CoreAddons
+    Declarative
     DBusAddons
+    KIO
+    I18n
+    IconThemes
+    NetworkManagerQt
     Notifications
     Plasma
-    Declarative
-    NetworkManagerQt
+    Service
+    Solid
+    Wallet
+    WidgetsAddons
+    WindowSystem
 )
 
 find_package(KF5ModemManagerQt ${KF5_MIN_VERSION})

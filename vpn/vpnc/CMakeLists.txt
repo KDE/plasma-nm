@@ -18,10 +18,10 @@ target_link_libraries(plasmanetworkmanagement_vpncui
     plasmanm_internal
     plasmanm_editor
     KF5::ConfigCore
+    KF5::CoreAddons
+    KF5::KIOWidgets
     KF5::I18n
     KF5::WidgetsAddons
-    KF5::KIOWidgets
-    KF5::CoreAddons
 )
 
 install(TARGETS plasmanetworkmanagement_vpncui  DESTINATION ${KDE_INSTALL_PLUGINDIR})

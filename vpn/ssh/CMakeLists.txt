@@ -15,10 +15,10 @@ kcoreaddons_desktop_to_json(plasmanetworkmanagement_sshui plasmanetworkmanagemen
 target_link_libraries(plasmanetworkmanagement_sshui
     plasmanm_internal
     plasmanm_editor
-    KF5::I18n
-    KF5::WidgetsAddons
-    KF5::KIOWidgets
     KF5::CoreAddons
+    KF5::I18n
+    KF5::KIOWidgets
+    KF5::WidgetsAddons
 )
 
 install(TARGETS plasmanetworkmanagement_sshui  DESTINATION ${KDE_INSTALL_PLUGINDIR})

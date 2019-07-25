@@ -19,10 +19,10 @@ kcoreaddons_desktop_to_json(plasmanetworkmanagement_openvpnui plasmanetworkmanag
 target_link_libraries(plasmanetworkmanagement_openvpnui
     plasmanm_internal
     plasmanm_editor
-    KF5::KIOWidgets
+    KF5::CoreAddons
     KF5::I18n
     KF5::WidgetsAddons
-    KF5::CoreAddons
+    KF5::KIOWidgets
 )
 
 install(TARGETS plasmanetworkmanagement_openvpnui  DESTINATION ${KDE_INSTALL_PLUGINDIR})

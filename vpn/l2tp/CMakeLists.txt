@@ -17,10 +17,10 @@ kcoreaddons_desktop_to_json(plasmanetworkmanagement_l2tpui plasmanetworkmanageme
 target_link_libraries(plasmanetworkmanagement_l2tpui
     plasmanm_internal
     plasmanm_editor
-    KF5::I18n
-    KF5::WidgetsAddons
-    KF5::KIOWidgets
     KF5::CoreAddons
+    KF5::I18n
+    KF5::KIOWidgets
+    KF5::WidgetsAddons
 )
 
 install(TARGETS plasmanetworkmanagement_l2tpui  DESTINATION ${KDE_INSTALL_PLUGINDIR})

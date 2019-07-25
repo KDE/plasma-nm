@@ -15,10 +15,10 @@ kcoreaddons_desktop_to_json(plasmanetworkmanagement_fortisslvpnui plasmanetworkm
 target_link_libraries(plasmanetworkmanagement_fortisslvpnui
     plasmanm_internal
     plasmanm_editor
-    KF5::I18n
-    KF5::WidgetsAddons
-    KF5::KIOWidgets
     KF5::CoreAddons
+    KF5::I18n
+    KF5::KIOWidgets
+    KF5::WidgetsAddons
 )
 
 install(TARGETS plasmanetworkmanagement_fortisslvpnui  DESTINATION ${KDE_INSTALL_PLUGINDIR})

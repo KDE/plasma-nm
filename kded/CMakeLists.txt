@@ -42,13 +42,13 @@ kcoreaddons_desktop_to_json(kded_networkmanagement networkmanagement.desktop)
 target_link_libraries(kded_networkmanagement
     plasmanm_internal
     plasmanm_editor
+    KF5::ConfigCore
+    KF5::DBusAddons
+    KF5::I18n
+    KF5::IconThemes
+    KF5::Notifications
     KF5::Service
     KF5::Solid
-    KF5::ConfigCore
-    KF5::I18n
-    KF5::DBusAddons
-    KF5::Notifications
-    KF5::IconThemes
     KF5::Wallet
     KF5::WindowSystem
 )

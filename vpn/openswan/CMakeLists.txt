@@ -15,9 +15,9 @@ kcoreaddons_desktop_to_json(plasmanetworkmanagement_openswanui plasmanetworkmana
 target_link_libraries(plasmanetworkmanagement_openswanui
     plasmanm_internal
     plasmanm_editor
+    KF5::CoreAddons
     KF5::I18n
     KF5::WidgetsAddons
-    KF5::CoreAddons
 )
 
 install(TARGETS plasmanetworkmanagement_openswanui  DESTINATION ${KDE_INSTALL_PLUGINDIR})

@@ -47,11 +47,11 @@ if (OPENCONNECT_FOUND)
             plasmanm_internal
             plasmanm_editor
             ${NETWORKMANAGERQT5_LDFLAGS}
+            KF5::CoreAddons
             KF5::I18n
-            KF5::WidgetsAddons
             KF5::IconThemes
             KF5::KIOWidgets
-            KF5::CoreAddons
+            KF5::WidgetsAddons
             Qt5::Xml
             ${OPENCONNECT_LIBRARIES}
             ${maybe_OPENSSL_LIBRARIES}

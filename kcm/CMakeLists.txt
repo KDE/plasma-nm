@@ -17,11 +17,11 @@ add_library(kcm_networkmanagement MODULE ${kcm_networkmanagement_PART_SRCS})
 target_link_libraries(kcm_networkmanagement
     plasmanm_internal
     plasmanm_editor
-    Qt5::Quick
     KF5::ConfigWidgets
     KF5::Declarative
     KF5::I18n
     KF5::Service
+    Qt5::Quick
 )
 install(TARGETS kcm_networkmanagement  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

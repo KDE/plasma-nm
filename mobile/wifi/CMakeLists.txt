@@ -9,10 +9,10 @@ target_link_libraries(kcm_mobile_wifi
     Qt5::Gui
     Qt5::Quick
     Qt5::Qml
-    KF5::Plasma
     KF5::I18n
-    KF5::QuickAddons
     KF5::NetworkManagerQt
+    KF5::Plasma
+    KF5::QuickAddons
 )
 
 kcoreaddons_desktop_to_json(kcm_mobile_wifi "wifisettings.desktop")

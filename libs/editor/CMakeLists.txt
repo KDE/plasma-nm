@@ -93,21 +93,21 @@ ki18n_wrap_ui(plasmanm_editor_SRCS
 add_library(plasmanm_editor SHARED ${plasmanm_editor_SRCS})
 target_link_libraries(plasmanm_editor
 PUBLIC
+    KF5::ConfigWidgets
+    KF5::Completion
     KF5::NetworkManagerQt
     KF5::WidgetsAddons
-    KF5::Completion
-    KF5::ConfigWidgets
     Qt5::Widgets
 PRIVATE
-    Qt5::Network
-    Qt5::DBus
-    qca-qt5
+    KF5::IconThemes
     KF5::I18n
     KF5::KIOWidgets
-    KF5::IconThemes
     KF5::Notifications
-    KF5::Wallet
     KF5::Solid
+    KF5::Wallet
+    Qt5::DBus
+    Qt5::Network
+    qca-qt5
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)

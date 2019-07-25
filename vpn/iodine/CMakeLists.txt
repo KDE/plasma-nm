@@ -15,9 +15,9 @@ kcoreaddons_desktop_to_json(plasmanetworkmanagement_iodineui plasmanetworkmanage
 target_link_libraries(plasmanetworkmanagement_iodineui
     plasmanm_internal
     plasmanm_editor
+    KF5::CoreAddons
     KF5::I18n
     KF5::WidgetsAddons
-    KF5::CoreAddons
 )
 
 install(TARGETS plasmanetworkmanagement_iodineui  DESTINATION ${KDE_INSTALL_PLUGINDIR})

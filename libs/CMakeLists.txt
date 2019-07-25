@@ -24,10 +24,10 @@ PUBLIC
     plasmanm_editor
     ${NETWORKMANAGER_LIBRARIES}
 PRIVATE
-    KF5::Service
     KF5::I18n
     KF5::IconThemes
     KF5::Notifications
+    KF5::Service
     KF5::Wallet
     KF5::WindowSystem
 )

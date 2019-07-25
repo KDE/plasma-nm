@@ -313,7 +313,7 @@ void NetworkModelItem::setName(const QString &name)
 {
     if (m_name != name) {
         m_name = name;
-        m_changedRoles << NetworkModel::DisplayNameRole << NetworkModel::ItemUniqueNameRole << NetworkModel::NameRole;
+        m_changedRoles << NetworkModel::ItemUniqueNameRole << NetworkModel::NameRole;
     }
 }
 

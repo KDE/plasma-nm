@@ -94,6 +94,7 @@ Comment[zh_TW]=網路管理
 [Event/ConnectionActivated]
 Name=Connection activated
 Name[ar]=فُعّل الاتّصال
+Name[ast]=Activóse una conexón
 Name[bs]=Konekcija aktivirana
 Name[ca]=Connexió activada
 Name[ca@valencia]=Connexió activada
@@ -144,6 +145,7 @@ Action=Popup
 [Event/ConnectionDeactivated]
 Name=Connection deactivated
 Name[ar]=عُطّل الاتّصال
+Name[ast]=Desactivóse la conexón
 Name[bs]=Konekcija deaktivirana
 Name[ca]=Connexió desactivada
 Name[ca@valencia]=Connexió desactivada
@@ -193,6 +195,7 @@ Action=Popup
 [Event/ConnectionAdded]
 Name=Connection added
 Name[ar]=أُضيف الاتّصال
+Name[ast]=Amestóse una conexón
 Name[bs]=Konekcija dodana
 Name[ca]=S'ha afegit una connexió 
 Name[ca@valencia]=S'ha afegit una connexió 
@@ -242,6 +245,7 @@ Action=None
 [Event/ConnectionRemoved]
 Name=Connection removed
 Name[ar]=أُزيل الاتّصال
+Name[ast]=Desanicióse la conexón
 Name[bs]=Konekcija uklonjena
 Name[ca]=S'ha eliminat una connexió
 Name[ca@valencia]=S'ha eliminat una connexió
@@ -291,6 +295,7 @@ Action=None
 [Event/ConnectionUpdated]
 Name=Connection updated
 Name[ar]=حُدّث الاتّصال
+Name[ast]=Anovóse la conexón
 Name[bs]=Konekcija ažurirana
 Name[ca]=S'ha actualitzat una connexió
 Name[ca@valencia]=S'ha actualitzat una connexió
@@ -340,6 +345,7 @@ Action=None
 [Event/DeviceFailed]
 Name=Device failed
 Name[ar]=فشل الجهاز
+Name[ast]=El preséu falló
 Name[bs]=Uređaj pao
 Name[ca]=El dispositiu ha fallat
 Name[ca@valencia]=El dispositiu ha fallat
@@ -388,6 +394,7 @@ Action=Popup
 [Event/FailedToActivateConnection]
 Name=Failed to activate connection
 Name[ar]=فشل تفعيل الاتّصال
+Name[ast]=Fallu al activar la conexón
 Name[bs]=Neuspjela aktivacija konekcije
 Name[ca]=Ha fallat en activar la connexió
 Name[ca@valencia]=Ha fallat en activar la connexió
@@ -437,6 +444,7 @@ Action=Popup
 [Event/FailedToAddConnection]
 Name=Failed to add connection
 Name[ar]=فشلت إضافة الاتّصال
+Name[ast]=Fallu al amestar la conexón
 Name[bs]=Neuspjelo dodavanje konekcije
 Name[ca]=Ha fallat en afegir la connexió
 Name[ca@valencia]=Ha fallat en afegir la connexió
@@ -486,6 +494,7 @@ Action=Popup
 [Event/FailedToDeactivateConnection]
 Name=Failed to deactivate connection
 Name[ar]=فشل تعطيل الاتّصال
+Name[ast]=Fallu al desactivar la conexón
 Name[bs]=Neuspjelo deaktiviranje konekcije
 Name[ca]=Ha fallat en desactivar la connexió
 Name[ca@valencia]=Ha fallat en desactivar la connexió
@@ -535,6 +544,7 @@ Action=Popup
 [Event/FailedToRemoveConnection]
 Name=Failed to remove connection
 Name[ar]=فشلت إزالة الاتّصال
+Name[ast]=Fallu al desaniciar la conexón
 Name[bs]=Neuspjelo uklanjanje konekcije
 Name[ca]=Ha fallat en eliminar la connexió
 Name[ca@valencia]=Ha fallat en eliminar la connexió
@@ -584,6 +594,7 @@ Action=Popup
 [Event/FailedToGetSecrets]
 Name=Failed to get secrets
 Name[ar]=فشل جلب الأسرار
+Name[ast]=Fallu al consiguir los secretos
 Name[bs]=Nesupjelo uzimanje tajni
 Name[ca]=Ha fallat en obtenir els secrets
 Name[ca@valencia]=Ha fallat en obtindre els secrets
@@ -633,6 +644,7 @@ Action=Popup
 [Event/FailedToUpdateConnection]
 Name=Failed to update connection
 Name[ar]=فشل تحدي الاتّصال
+Name[ast]=Fallu al anovar la conexón
 Name[bs]=Neuspjelo ažuriranje konekcije
 Name[ca]=Ha fallat en actualitzar la connexió
 Name[ca@valencia]=Ha fallat en actualitzar la connexió
@@ -775,6 +787,7 @@ Action=Popup
 
 [Event/CaptivePortal]
 Name=Captive portal detected
+Name[ast]=Deteutóse un portal cativu
 Name[ca]=S'ha detectat un portal captiu
 Name[ca@valencia]=S'ha detectat un portal captiu
 Name[da]=Captive portal detekteret

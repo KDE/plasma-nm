@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Mobile broadband
+Name[ast]=Banda ancha móvil
 Name[ca]=Banda ampla per mòbil
 Name[ca@valencia]=Banda ampla per mòbil
 Name[da]=Mobilt bredbånd
@@ -67,6 +68,7 @@ X-KDE-System-Settings-Parent-Category=network
 X-KDE-Weight=70
 
 X-KDE-Keywords=mobile,data,network
+X-KDE-Keywords[ast]=móvil,datos,rede
 X-KDE-Keywords[ca]=mòbil,dades,xarxa
 X-KDE-Keywords[ca@valencia]=mòbil,dades,xarxa
 X-KDE-Keywords[da]=mobil,data,netværk

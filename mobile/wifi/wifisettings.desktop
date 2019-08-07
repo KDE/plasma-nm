@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Wi-Fi
+Name[ast]=Wi-Fi
 Name[ca]=Wi-Fi
 Name[ca@valencia]=Wi-Fi
 Name[da]=Wi-Fi
@@ -67,6 +68,7 @@ X-KDE-System-Settings-Parent-Category=network
 X-KDE-Weight=70
 
 X-KDE-Keywords=wifi,network
+X-KDE-Keywords[ast]=wifi,rede
 X-KDE-Keywords[ca]=wifi,xarxa
 X-KDE-Keywords[ca@valencia]=wifi,xarxa
 X-KDE-Keywords[da]=wifi,netværk

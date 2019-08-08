@@ -28,7 +28,6 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 Item {
     id: root
 
-    anchors.fill: parent
     focus: true
 
     signal selectedConnectionChanged(string connection)

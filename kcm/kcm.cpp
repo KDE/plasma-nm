@@ -58,6 +58,7 @@
 #include <QQmlEngine>
 #include <QQuickItem>
 #include <QQuickView>
+#include <QQuickWidget>
 
 K_PLUGIN_FACTORY(KCMNetworkConfigurationFactory, registerPlugin<KCMNetworkmanagement>();)
 
@@ -66,33 +67,28 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     , m_handler(new Handler(this))
     , m_tabWidget(nullptr)
     , m_ui(new Ui::KCMForm)
-    , m_quickView(nullptr)
 {
     QWidget *mainWidget = new QWidget(this);
     m_ui->setupUi(mainWidget);
 
-    m_quickView = new QQuickView(nullptr);
     KDeclarative::KDeclarative kdeclarative;
-    kdeclarative.setDeclarativeEngine(m_quickView->engine());
+    kdeclarative.setDeclarativeEngine(m_ui->connectionView->engine());
     kdeclarative.setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
-    kdeclarative.setupEngine(m_quickView->engine());
+    kdeclarative.setupEngine(m_ui->connectionView->engine());
     kdeclarative.setupContext();
 
-    QWidget *widget = QWidget::createWindowContainer(m_quickView, this);
-    widget->setMinimumWidth(300);
-    QVBoxLayout *layout = new QVBoxLayout(m_ui->connectionView);
-    layout->addWidget(widget);
+    m_ui->connectionView->setMinimumWidth(300);
+    m_ui->connectionView->rootContext()->setContextProperty("alternateBaseColor", mainWidget->palette().color(QPalette::Active, QPalette::AlternateBase));
+    m_ui->connectionView->rootContext()->setContextProperty("backgroundColor", mainWidget->palette().color(QPalette::Active, QPalette::Window));
+    m_ui->connectionView->rootContext()->setContextProperty("baseColor", mainWidget->palette().color(QPalette::Active, QPalette::Base));
+    m_ui->connectionView->rootContext()->setContextProperty("highlightColor", mainWidget->palette().color(QPalette::Active, QPalette::Highlight));
+    m_ui->connectionView->rootContext()->setContextProperty("textColor", mainWidget->palette().color(QPalette::Active, QPalette::Text));
+    m_ui->connectionView->rootContext()->setContextProperty("connectionModified", false);
+    m_ui->connectionView->setClearColor(Qt::transparent);
+    m_ui->connectionView->setResizeMode(QQuickWidget::SizeRootObjectToView);
+    m_ui->connectionView->setSource(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcm_networkmanagement/qml/main.qml"))));
 
-    m_quickView->rootContext()->setContextProperty("alternateBaseColor", mainWidget->palette().color(QPalette::Active, QPalette::AlternateBase));
-    m_quickView->rootContext()->setContextProperty("backgroundColor", mainWidget->palette().color(QPalette::Active, QPalette::Window));
-    m_quickView->rootContext()->setContextProperty("baseColor", mainWidget->palette().color(QPalette::Active, QPalette::Base));
-    m_quickView->rootContext()->setContextProperty("highlightColor", mainWidget->palette().color(QPalette::Active, QPalette::Highlight));
-    m_quickView->rootContext()->setContextProperty("textColor", mainWidget->palette().color(QPalette::Active, QPalette::Text));
-    m_quickView->rootContext()->setContextProperty("connectionModified", false);
-    m_quickView->setResizeMode(QQuickView::SizeRootObjectToView);
-    m_quickView->setSource(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcm_networkmanagement/qml/main.qml"))));
-
-    QObject *rootItem = m_quickView->rootObject();
+    QObject *rootItem = m_ui->connectionView->rootObject();
     connect(rootItem, SIGNAL(selectedConnectionChanged(QString)), this, SLOT(onSelectedConnectionChanged(QString)));
     connect(rootItem, SIGNAL(requestCreateConnection(int,QString,QString,bool)), this, SLOT(onRequestCreateConnection(int,QString,QString,bool)));
     connect(rootItem, SIGNAL(requestExportConnection(QString)), this, SLOT(onRequestExportConnection(QString)));
@@ -198,7 +194,6 @@ KCMNetworkmanagement::~KCMNetworkmanagement()
     if (m_tabWidget) {
         delete m_tabWidget;
     }
-    delete m_quickView;
     delete m_ui;
 }
 
@@ -249,7 +244,7 @@ void KCMNetworkmanagement::onConnectionAdded(const QString &connection)
     if (newConnection) {
         NetworkManager::ConnectionSettings::Ptr connectionSettings = newConnection->settings();
         if (connectionSettings && connectionSettings->uuid() == m_createdConnectionUuid) {
-            QObject *rootItem = m_quickView->rootObject();
+            QObject *rootItem = m_ui->connectionView->rootObject();
             loadConnectionSettings(connectionSettings);
             QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, connectionSettings->id()), Q_ARG(QVariant, newConnection->path()));
             m_createdConnectionUuid.clear();
@@ -420,7 +415,7 @@ void KCMNetworkmanagement::onRequestToChangeConnection( const QString &connectio
         }
     }
 
-    QObject *rootItem = m_quickView->rootObject();
+    QObject *rootItem = m_ui->connectionView->rootObject();
     QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, connectionName), Q_ARG(QVariant, connectionPath));
 }
 
@@ -461,7 +456,7 @@ void KCMNetworkmanagement::addConnection(const NetworkManager::ConnectionSetting
 
 void KCMNetworkmanagement::kcmChanged(bool kcmChanged)
 {
-    m_quickView->rootContext()->setContextProperty("connectionModified", kcmChanged);
+    m_ui->connectionView->rootContext()->setContextProperty("connectionModified", kcmChanged);
     Q_EMIT changed(kcmChanged);
 }
 
@@ -563,7 +558,7 @@ void KCMNetworkmanagement::resetSelection()
 {
     // Reset selected connections
     m_currentConnectionPath.clear();
-    QObject *rootItem = m_quickView->rootObject();
+    QObject *rootItem = m_ui->connectionView->rootObject();
     QMetaObject::invokeMethod(rootItem, "deselectConnections");
     if (m_tabWidget) {
         delete m_ui->connectionConfiguration->layout();

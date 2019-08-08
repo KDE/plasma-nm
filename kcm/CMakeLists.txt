@@ -22,6 +22,7 @@ target_link_libraries(kcm_networkmanagement
     KF5::I18n
     KF5::Service
     Qt5::Quick
+    Qt5::QuickWidgets
 )
 install(TARGETS kcm_networkmanagement  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 

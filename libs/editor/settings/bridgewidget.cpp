@@ -33,9 +33,12 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
-BridgeWidget::BridgeWidget(const QString & masterUuid, const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
+BridgeWidget::BridgeWidget(const QString & masterUuid, const QString &masterId,
+                           const NetworkManager::Setting::Ptr &setting,
+                           QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_uuid(masterUuid),
+    m_id(masterId),
     m_ui(new Ui::BridgeWidget)
 {
     m_ui->setupUi(this);
@@ -227,7 +230,12 @@ void BridgeWidget::populateBridges()
 
     for (const NetworkManager::Connection::Ptr &connection : NetworkManager::listConnections()) {
         NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
-        if (settings->master() == m_uuid && settings->slaveType() == type()) {
+        // The mapping from slave to master may be by uuid or name, try our best to
+        // figure out if we are master to the slave.
+        const QString master = settings->master();
+        bool isSlave = ((master == m_uuid) || // by-uuid
+                        (!m_id.isEmpty() && master == m_id)); // by-name
+        if (isSlave && (settings->slaveType() == type())) {
             const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
             QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->bridges);
             slaveItem->setData(Qt::UserRole, connection->uuid());

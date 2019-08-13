@@ -39,7 +39,8 @@ class Q_DECL_EXPORT TeamWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit TeamWidget(const QString & masterUuid, const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
+    explicit TeamWidget(const QString & masterUuid, const QString &masterId,
+                        const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
                         QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~TeamWidget() override;
 
@@ -63,6 +64,7 @@ private Q_SLOTS:
 
 private:
     QString m_uuid;
+    QString m_id;
     Ui::TeamWidget * m_ui;
     QMenu * m_menu;
 };

@@ -39,7 +39,8 @@ class Q_DECL_EXPORT BondWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit BondWidget(const QString & masterUuid, const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
+    explicit BondWidget(const QString & masterUuid, const QString &masterId,
+                        const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
                QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~BondWidget() override;
 
@@ -61,6 +62,7 @@ private Q_SLOTS:
 
 private:
     QString m_uuid;
+    QString m_id;
     Ui::BondWidget * m_ui;
     QMenu * m_menu;
 };

@@ -39,8 +39,9 @@ class Q_DECL_EXPORT BridgeWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit BridgeWidget(const QString & masterUuid, const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
-                 QWidget* parent = nullptr, Qt::WindowFlags f = {});
+    explicit BridgeWidget(const QString & masterUuid, const QString &masterId,
+                          const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
+                          QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~BridgeWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
@@ -61,6 +62,7 @@ private Q_SLOTS:
 
 private:
     QString m_uuid;
+    QString m_id;
     Ui::BridgeWidget * m_ui;
     QMenu * m_menu;
 };

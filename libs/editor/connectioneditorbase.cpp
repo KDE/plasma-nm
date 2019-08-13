@@ -231,16 +231,16 @@ void ConnectionEditorBase::initialize()
         InfinibandWidget *infinibandWidget = new InfinibandWidget(m_connection->setting(NetworkManager::Setting::Infiniband), this);
         addSettingWidget(infinibandWidget, i18n("Infiniband"));
     } else if (type == NetworkManager::ConnectionSettings::Bond) { // Bond
-        BondWidget *bondWidget = new BondWidget(m_connection->uuid(), m_connection->setting(NetworkManager::Setting::Bond), this);
+        BondWidget *bondWidget = new BondWidget(m_connection->uuid(), m_connection->id(), m_connection->setting(NetworkManager::Setting::Bond), this);
         addSettingWidget(bondWidget, i18n("Bond"));
     } else if (type == NetworkManager::ConnectionSettings::Bridge) { // Bridge
-        BridgeWidget *bridgeWidget = new BridgeWidget(m_connection->uuid(), m_connection->setting(NetworkManager::Setting::Bridge), this);
+        BridgeWidget *bridgeWidget = new BridgeWidget(m_connection->uuid(), m_connection->id(), m_connection->setting(NetworkManager::Setting::Bridge), this);
         addSettingWidget(bridgeWidget, i18n("Bridge"));
     } else if (type == NetworkManager::ConnectionSettings::Vlan) { // Vlan
         VlanWidget *vlanWidget = new VlanWidget(m_connection->setting(NetworkManager::Setting::Vlan), this);
         addSettingWidget(vlanWidget, i18n("Vlan"));
     } else if (type == NetworkManager::ConnectionSettings::Team) { // Team
-        TeamWidget *teamWidget = new TeamWidget(m_connection->uuid(), m_connection->setting(NetworkManager::Setting::Team), this);
+        TeamWidget *teamWidget = new TeamWidget(m_connection->uuid(), m_connection->id(), m_connection->setting(NetworkManager::Setting::Team), this);
         addSettingWidget(teamWidget, i18n("Team"));
     } else if (type == NetworkManager::ConnectionSettings::WireGuard) { // WireGuard
         WireGuardInterfaceWidget *wireGuardInterfaceWidget = new WireGuardInterfaceWidget(m_connection->setting(NetworkManager::Setting::WireGuard), this);

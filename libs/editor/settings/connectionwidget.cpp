@@ -26,6 +26,7 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
 
+#include <QDBusConnection>
 #include <QDialog>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>

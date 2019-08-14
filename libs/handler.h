@@ -22,6 +22,7 @@
 #define PLASMA_NM_HANDLER_H
 
 #include <QDBusInterface>
+#include <QTimer>
 
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Settings>

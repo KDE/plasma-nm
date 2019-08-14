@@ -46,6 +46,7 @@
 #endif
 
 #include <QDBusError>
+#include <QDBusMetaType>
 #include <QDBusPendingReply>
 #include <QIcon>
 

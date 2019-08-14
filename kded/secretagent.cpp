@@ -37,6 +37,7 @@
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/WireguardSetting>
 
+#include <QDBusConnection>
 #include <QStringBuilder>
 #include <QDialog>
 

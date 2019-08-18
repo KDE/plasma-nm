@@ -188,6 +188,7 @@ Name[x-test]=xxConnection deactivatedxx
 Name[zh_CN]=连接已取消激活
 Name[zh_TW]=連線已中止
 IconName=applications-internet
+Urgency=Low
 Action=Popup
 
 [Event/ConnectionAdded]

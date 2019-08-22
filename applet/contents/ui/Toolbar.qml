@@ -94,11 +94,13 @@ GridLayout {
         SwitchButton {
             id: planeModeSwitchButton
 
+            property bool initialized: false
             property bool airplaneModeEnabled: false
 
             checked: airplaneModeEnabled
             tooltip: i18n("Enable airplane mode")
             icon: airplaneModeEnabled ? "network-flightmode-on" : "network-flightmode-off"
+            visible: availableDevices.modemDeviceAvailable || availableDevices.wirelessDeviceAvailable
 
             onClicked: {
                 handler.enableAirplaneMode(checked);
@@ -106,9 +108,15 @@ GridLayout {
             }
 
             Binding {
-                target: connectionIconProvider
-                property: "airplaneMode"
+                target: configuration
+                property: "airplaneModeEnabled"
                 value: planeModeSwitchButton.airplaneModeEnabled
+                when: planeModeSwitchButton.initialized
+            }
+
+            Component.onCompleted: {
+                airplaneModeEnabled = configuration.airplaneModeEnabled
+                initialized = true
             }
         }
     }

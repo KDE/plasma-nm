@@ -29,6 +29,8 @@ class Q_DECL_EXPORT Configuration : public QObject
 {
     Q_PROPERTY(bool unlockModemOnDetection READ unlockModemOnDetection WRITE setUnlockModemOnDetection)
     Q_PROPERTY(bool manageVirtualConnections READ manageVirtualConnections WRITE setManageVirtualConnections)
+    Q_PROPERTY(bool airplaneModeEnabled READ airplaneModeEnabled WRITE setAirplaneModeEnabled)
+
     //Readonly constant property, as this value should only be set by the platform
     Q_PROPERTY(bool showPasswordDialog READ showPasswordDialog CONSTANT)
     Q_OBJECT
@@ -38,6 +40,9 @@ public:
 
     static bool manageVirtualConnections();
     static void setManageVirtualConnections(bool manage);
+
+    static bool airplaneModeEnabled();
+    static void setAirplaneModeEnabled(bool enabled);
 
     static bool showPasswordDialog();
 };

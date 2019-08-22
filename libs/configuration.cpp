@@ -65,6 +65,38 @@ void Configuration::setManageVirtualConnections(bool manage)
     }
 }
 
+bool Configuration::airplaneModeEnabled()
+{
+    // Check whether other devices are disabled to assume airplane mode is enabled
+    // after suspend
+    const bool isWifiDisabled = !NetworkManager::isWirelessEnabled() || !NetworkManager::isWirelessHardwareEnabled();
+    const bool isWwanDisabled = !NetworkManager::isWwanEnabled() || !NetworkManager::isWwanHardwareEnabled();
+
+    KConfigGroup grp(*config, QLatin1String("General"));
+
+    if (grp.isValid()) {
+        if (grp.readEntry(QLatin1String("AirplaneModeEnabled"), false)) {
+            // We can assume that airplane mode is still activated after resume
+            if (isWifiDisabled && isWwanDisabled)
+                return true;
+            else {
+                setAirplaneModeEnabled(false);
+            }
+        }
+    }
+
+    return false;
+}
+
+void Configuration::setAirplaneModeEnabled(bool enabled)
+{
+    KConfigGroup grp(*config, QLatin1String("General"));
+
+    if (grp.isValid()) {
+        grp.writeEntry(QLatin1String("AirplaneModeEnabled"), enabled);
+    }
+}
+
 bool Configuration::showPasswordDialog()
 {
     KConfigGroup grp(*config, QLatin1String("General"));

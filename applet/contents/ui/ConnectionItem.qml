@@ -189,7 +189,7 @@ PlasmaComponents.ListItem {
         PlasmaComponents.MenuItem {
             id: showQRMenuItem
             text: i18n("Show network's QR code")
-            icon: "view-barcode"
+            icon: "view-barcode-qr"
             // Updated in prepare()
             visible: false
             onClicked: {

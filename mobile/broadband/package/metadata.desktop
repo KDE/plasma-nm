@@ -2,6 +2,7 @@
 Name=Mobile Broadband
 Name[ca]=Banda ampla per mòbil
 Name[ca@valencia]=Banda ampla per mòbil
+Name[cs]=Mobilní Broadband
 Name[da]=Mobilt bredbånd
 Name[de]=Mobiles Breitband
 Name[en_GB]=Mobile Broadband
@@ -28,6 +29,7 @@ Name[zh_TW]=行動數據
 Comment=Mobile broadband setting
 Comment[ca]=Configuració de la banda ampla per mòbil
 Comment[ca@valencia]=Configuració de la banda ampla per mòbil
+Comment[cs]=Nastavení pro Mobilní Broadband
 Comment[da]=Opsætning af mobilt bredbånd
 Comment[de]=Einstellungen für Mobiles Breitband
 Comment[en_GB]=Mobile broadband setting

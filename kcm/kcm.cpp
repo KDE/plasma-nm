@@ -102,7 +102,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     NetworkManager::Connection::Ptr selectedConnection;
 
     // Look in the arguments for a connection ID to preselect
-    static const QLatin1Literal uuidArgumentMarker { "Uuid=" };
+    static const QLatin1String uuidArgumentMarker { "Uuid=" };
     for (QVariant arg : args) {
         if (arg.canConvert(QMetaType::QString)) {
             QString uuid = arg.toString();

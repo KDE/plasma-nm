@@ -401,8 +401,8 @@ void Handler::enableBluetooth(bool enable)
                         if (!enable) {
                             QDBusMessage message = QDBusMessage::createMethodCall("org.bluez", objPath, "org.freedesktop.DBus.Properties", "Get");
                             QList<QVariant> arguments;
-                            arguments << QLatin1Literal("org.bluez.Adapter1");
-                            arguments << QLatin1Literal("Powered");
+                            arguments << QLatin1String("org.bluez.Adapter1");
+                            arguments << QLatin1String("Powered");
                             message.setArguments(arguments);
                             QDBusPendingReply<QVariant> getReply = QDBusConnection::systemBus().asyncCall(message);
                             QDBusPendingCallWatcher *getWatcher = new QDBusPendingCallWatcher(getReply, this);
@@ -413,8 +413,8 @@ void Handler::enableBluetooth(bool enable)
                                             m_bluetoothAdapters.insert(objPath, reply.value().toBool());
                                             QDBusMessage message = QDBusMessage::createMethodCall("org.bluez", objPath, "org.freedesktop.DBus.Properties", "Set");
                                             QList<QVariant> arguments;
-                                            arguments << QLatin1Literal("org.bluez.Adapter1");
-                                            arguments << QLatin1Literal("Powered");
+                                            arguments << QLatin1String("org.bluez.Adapter1");
+                                            arguments << QLatin1String("Powered");
                                             arguments << QVariant::fromValue(QDBusVariant(QVariant(false)));
                                             message.setArguments(arguments);
                                             QDBusConnection::systemBus().asyncCall(message);
@@ -424,8 +424,8 @@ void Handler::enableBluetooth(bool enable)
                         } else if (enable && m_bluetoothAdapters.value(objPath)) {
                             QDBusMessage message = QDBusMessage::createMethodCall("org.bluez", objPath, "org.freedesktop.DBus.Properties", "Set");
                             QList<QVariant> arguments;
-                            arguments << QLatin1Literal("org.bluez.Adapter1");
-                            arguments << QLatin1Literal("Powered");
+                            arguments << QLatin1String("org.bluez.Adapter1");
+                            arguments << QLatin1String("Powered");
                             arguments << QVariant::fromValue(QDBusVariant(QVariant(enable)));
                             message.setArguments(arguments);
                             QDBusConnection::systemBus().asyncCall(message);

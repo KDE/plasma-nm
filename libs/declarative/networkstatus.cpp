@@ -74,6 +74,7 @@ NetworkStatus::SortedConnectionType NetworkStatus::connectionTypeToSortedType(Ne
 NetworkStatus::NetworkStatus(QObject* parent)
     : QObject(parent)
 {
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this,  &NetworkStatus::changeActiveConnections);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::statusChanged, this, &NetworkStatus::statusChanged);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionsChanged, this, QOverload<>::of(&NetworkStatus::activeConnectionsChanged));
 
@@ -215,7 +216,20 @@ void NetworkStatus::changeActiveConnections()
                 if (connecting) {
                     status = i18n("Connecting to %1", connection->name());
                 } else if (connected) {
-                    status = i18n("Connected to %1", connection->name());
+                    switch (NetworkManager::connectivity()) {
+                        case NetworkManager::NoConnectivity:
+                            status = i18n("Connected to %1 (no connectivity)", connection->name());
+                            break;
+                        case NetworkManager::Limited:
+                            status = i18n("Connected to %1 (limited connectivity)", connection->name());
+                            break;
+                        case NetworkManager::Portal:
+                            status = i18n("Connected to %1 (log in required)", connection->name());
+                            break;
+                        default:
+                            status = i18n("Connected to %1", connection->name());
+                            break;
+                    }
                 }
 
                 if (!activeConnections.isEmpty()) {

@@ -21,62 +21,14 @@ import QtQuick 2.6
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2 as Controls
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-import org.kde.kirigami 2.2 as Kirigami
+import org.kde.kirigami 2.10 as Kirigami
 
 Kirigami.ScrollablePage {
     property var connectPath
     property var devicePath
     property alias name: hotSpotName.text
 
-    header: ColumnLayout {
-        width: parent.width
-        anchors.leftMargin: Kirigami.Units.largeSpacing * 2
-
-        Kirigami.Separator {}
-
-        RowLayout{
-            Kirigami.Separator {}
-            Controls.Label {
-                anchors.leftMargin: Kirigami.Units.largeSpacing * 2
-                text: i18n("Wi-fi hotspot")
-                Layout.fillWidth:  true
-                font.weight: Font.Bold
-            }
-            Controls.Switch {
-                id: hotSpotSwitch
-                onCheckedChanged: {
-                    if (checked) {
-                        initTethering()
-                    } else {
-                        disableTethering()
-                    }
-                }
-            }
-            Kirigami.Separator {}
-            Rectangle{
-                height: 1
-                Layout.fillWidth: true
-                color: "black"
-            }
-            }
-    }
-//        RowLayout {
-//        width: parent.width
-//        Controls.Label {
-//            text: "Wi-fi hotspot"
-//            Layout.fillWidth:  true
-//        }
-//        Controls.Switch {
-//            id: hotSpotSwitch
-//            onCheckedChanged: {
-//                if (checked) {
-//                    initTethering()
-//                } else {
-//                    disableTethering()
-//                }
-//            }
-//        }
-//    }
+    title: i18n("Wi-Fi Hotspot")
 
     ColumnLayout {
         spacing: Kirigami.Units.gridUnit
@@ -159,20 +111,23 @@ Kirigami.ScrollablePage {
         }
     }
 
-    footer: Item {
-        height: Kirigami.Units.gridUnit * 4
-        Controls.Button {
-            anchors.centerIn: parent
-            Kirigami.Icon {
-                anchors.centerIn: parent
-                width: Kirigami.Units.iconSizes.medium
-                height: width
-                source: "dialog-close"
+    actions {
+        main: Kirigami.Action {
+            icon.name: checked ? "network-wireless-disconnected" : "network-wireless-connected"
+            text: checked ? i18n("Disable Wi-Fi Hotspot") : i18n("Enable Wi-Fi Hotspot")
+            checkable: true
+            onCheckedChanged: {
+                if (checked) {
+                    initTethering()
+                } else {
+                    disableTethering()
+                }
             }
-            onPressed: {
-                applicationWindow().pageStack.pop()
-            }
-
+        }
+        right: Kirigami.Action {
+            icon.name: "dialog-close"
+            text: i18n("Cancel")
+            onTriggered: kcm.pop()
         }
     }
 

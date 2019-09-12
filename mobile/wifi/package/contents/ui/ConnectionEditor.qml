@@ -31,10 +31,7 @@ Kirigami.ScrollablePage {
     title: i18n("Connection Editor")
     width: parent.width
 
-    ColumnLayout{
-        id: columnlayout
-       // anchors.horizontalCenter: parent.horizontalCenter
-
+    ColumnLayout {
         Controls.Label {
             text: i18n("SSID")
             font.weight: Font.Bold
@@ -68,36 +65,18 @@ Kirigami.ScrollablePage {
             spacing: Kirigami.Units.gridUnit
             Controls.Button {
                 enabled: enabledSaving
-                RowLayout {
-                    anchors.centerIn: parent
-                    Kirigami.Icon {
-                        width: Kirigami.Units.iconSizes.smallMedium
-                        height: width
-                        source: "document-save"
-                    }
-                    Text {
-                        text: i18n("Save")
-                    }
-                }
+                text: i18n("Save")
+                icon.name: "document-save"
                 onPressed: {
                     save()
-                    applicationWindow().pageStack.pop()
+                    kcm.pop()
                 }
             }
             Controls.Button {
-                RowLayout {
-                    anchors.centerIn: parent
-                    Kirigami.Icon {
-                        width: Kirigami.Units.iconSizes.smallMedium
-                        height: width
-                        source: "dialog-cancel"
-                    }
-                    Text {
-                        text: i18n("Cancel")
-                    }
-                }
+                icon.name: "dialog-cancel"
+                text: i18n("Cancel")
                 onPressed: {
-                    applicationWindow().pageStack.pop()
+                    kcm.pop()
                 }
             }
         }

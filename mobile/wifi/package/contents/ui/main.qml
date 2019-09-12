@@ -21,7 +21,7 @@ import QtQuick 2.6
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.2 as Controls
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-import org.kde.kirigami 2.5 as Kirigami
+import org.kde.kirigami 2.10 as Kirigami
 import org.kde.kcm 1.1
 
 SimpleKCM {
@@ -93,8 +93,7 @@ SimpleKCM {
         currentIndex: -1
         boundsBehavior: Flickable.StopAtBounds
 
-        header: Controls.Label {
-            leftPadding: Kirigami.Units.smallSpacing
+        header: Kirigami.ListSectionHeader {
             text: mobileProxyModel.showSavedMode ? i18n("Saved networks") : i18n("Available networks")
         }
 
@@ -114,7 +113,7 @@ SimpleKCM {
             iconName: "edit"
             text: i18n("Add custom connection")
             onTriggered: {
-                applicationWindow().pageStack.push(connectionEditorDialogComponent)
+                kcm.push("ConnectionEditor.qml")
                 contextDrawer.close()
             }
         },
@@ -123,7 +122,7 @@ SimpleKCM {
             iconName: "edit"
             text: i18n("Create Hotspot")
             onTriggered: {
-                applicationWindow().pageStack.push(tetheringComponent)
+                kcm.push("TetheringSetting.qml")
                 contextDrawer.close()
             }
         },
@@ -202,15 +201,5 @@ SimpleKCM {
                 deleteConnectionDialog.dbusPath = ""
             }
         }
-    }
-
-    Component {
-        id: connectionEditorDialogComponent
-        ConnectionEditor { }
-    }
-
-    Component {
-        id: tetheringComponent
-        TetheringSetting { }
     }
 }

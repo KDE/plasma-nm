@@ -37,6 +37,9 @@
 #define NM_STRONGSWAN_INNERIP "virtual"
 #define NM_STRONGSWAN_ENCAP "encap"
 #define NM_STRONGSWAN_IPCOMP "ipcomp"
+#define NM_STRONGSWAN_PROPOSAL "proposal"
+#define NM_STRONGSWAN_IKE "ike"
+#define NM_STRONGSWAN_ESP "esp"
 
 #define NM_STRONGSWAN_AUTH_KEY "key"
 #define NM_STRONGSWAN_AUTH_AGENT "agent"

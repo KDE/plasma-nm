@@ -49,6 +49,7 @@ StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSettin
 
     // Connect for validity check
     connect(d->ui.leGateway, &QLineEdit::textChanged, this, &StrongswanSettingWidget::slotWidgetChanged);
+    connect(d->ui.proposal, &QGroupBox::toggled, this, &SettingWidget::settingChanged);
 
     KAcceleratorManager::manage(this);
 
@@ -97,6 +98,9 @@ void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &set
     d->ui.innerIP->setChecked(dataMap[NM_STRONGSWAN_INNERIP] == "yes");
     d->ui.udpEncap->setChecked(dataMap[NM_STRONGSWAN_ENCAP] == "yes");
     d->ui.ipComp->setChecked(dataMap[NM_STRONGSWAN_IPCOMP] == "yes");
+    d->ui.proposal->setChecked(dataMap[NM_STRONGSWAN_PROPOSAL] == "yes");
+    d->ui.ike->setText(dataMap[NM_STRONGSWAN_IKE]);
+    d->ui.esp->setText(dataMap[NM_STRONGSWAN_ESP]);
 }
 
 void StrongswanSettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
@@ -148,6 +152,12 @@ QVariantMap StrongswanSettingWidget::setting() const
     data.insert(NM_STRONGSWAN_INNERIP, d->ui.innerIP->isChecked() ? "yes" : "no");
     data.insert(NM_STRONGSWAN_ENCAP, d->ui.udpEncap->isChecked() ? "yes" : "no");
     data.insert(NM_STRONGSWAN_IPCOMP, d->ui.ipComp->isChecked() ? "yes" : "no");
+    if (d->ui.proposal->isChecked()) {
+        data.insert(NM_STRONGSWAN_PROPOSAL, "yes");
+        data.insert(NM_STRONGSWAN_IKE, d->ui.ike->text());
+        data.insert(NM_STRONGSWAN_ESP, d->ui.esp->text());
+    } else
+        data.insert(NM_STRONGSWAN_PROPOSAL, "no");
 
     // save it all
     setting.setData(data);

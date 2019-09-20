@@ -346,7 +346,7 @@ Action=None
 [Event/DeviceFailed]
 Name=Device failed
 Name[ar]=فشل الجهاز
-Name[ast]=El preséu falló
+Name[ast]=Falló'l preséu
 Name[bs]=Uređaj pao
 Name[ca]=El dispositiu ha fallat
 Name[ca@valencia]=El dispositiu ha fallat

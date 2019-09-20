@@ -95,7 +95,7 @@ void SsidComboBox::init(const QString &ssid)
         }
     }
 
-    qSort(networks.begin(), networks.end(), signalCompare);
+    std::sort(networks.begin(), networks.end(), signalCompare);
     addSsidsToCombo(networks);
 
     int index = findData(m_initialSsid);

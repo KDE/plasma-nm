@@ -89,7 +89,7 @@ MobileProviders::~MobileProviders()
 QStringList MobileProviders::getCountryList() const
 {
     QStringList temp = mCountries.values();
-    qSort(temp.begin(), temp.end(), localeAwareCompare);
+    std::sort(temp.begin(), temp.end(), localeAwareCompare);
     return temp;
 }
 

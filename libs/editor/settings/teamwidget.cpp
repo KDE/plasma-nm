@@ -233,7 +233,7 @@ void TeamWidget::populateTeams()
 
 void TeamWidget::importConfig()
 {
-    const QString filename = QFileDialog::getOpenFileName(this, i18n("Select file to import"), QDesktopServices::storageLocation(QDesktopServices::HomeLocation),
+    const QString filename = QFileDialog::getOpenFileName(this, i18n("Select file to import"), QStandardPaths::writableLocation(QStandardPaths::HomeLocation),
                                                           "text/plain");
     if (!filename.isEmpty()) {
         //qCDebug(PLASMA_NM) << "Importing" << filename;

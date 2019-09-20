@@ -69,7 +69,7 @@ IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
     m_ui->setupUi(this);
 
     m_ui->tableViewAddresses->setModel(&d->model);
-    m_ui->tableViewAddresses->horizontalHeader()->setResizeMode(QHeaderView::Interactive);
+    m_ui->tableViewAddresses->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
     m_ui->tableViewAddresses->horizontalHeader()->setStretchLastSection(true);
 
     IpV6Delegate *ipDelegate = new IpV6Delegate(this);

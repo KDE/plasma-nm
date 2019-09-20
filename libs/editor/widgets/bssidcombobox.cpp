@@ -114,7 +114,7 @@ void BssidComboBox::init(const QString & bssid, const QString &ssid)
         }
     }
 
-    qSort(aps.begin(), aps.end(), signalCompare);
+    std::sort(aps.begin(), aps.end(), signalCompare);
     addBssidsToCombo(aps);
 
     const int index = findData(m_initialBssid);

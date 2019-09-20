@@ -231,7 +231,7 @@ void OpenconnectAuthWidget::readSecrets()
     d->secrets = d->setting->secrets();
 
     if (!d->secrets["xmlconfig"].isEmpty()) {
-        const QByteArray config = QByteArray::fromBase64(d->secrets["xmlconfig"].toAscii());
+        const QByteArray config = QByteArray::fromBase64(d->secrets["xmlconfig"].toLatin1());
 
         QCryptographicHash hash(QCryptographicHash::Sha1);
         hash.addData(config.data(), config.size());
@@ -350,12 +350,12 @@ void OpenconnectAuthWidget::connectHost()
     }
     i = d->ui.cmbHosts->itemData(i).toInt();
     const VPNHost &host = d->hosts.at(i);
-    if (openconnect_parse_url(d->vpninfo, host.address.toAscii().data())) {
+    if (openconnect_parse_url(d->vpninfo, host.address.toLatin1().data())) {
         qCWarning(PLASMA_NM) << "Failed to parse server URL" << host.address;
-        openconnect_set_hostname(d->vpninfo, OC3DUP(host.address.toAscii().data()));
+        openconnect_set_hostname(d->vpninfo, OC3DUP(host.address.toLatin1().data()));
     }
     if (!openconnect_get_urlpath(d->vpninfo) && !host.group.isEmpty()) {
-        openconnect_set_urlpath(d->vpninfo, OC3DUP(host.group.toAscii().data()));
+        openconnect_set_urlpath(d->vpninfo, OC3DUP(host.group.toLatin1().data()));
     }
     d->secrets["lasthost"] = host.name;
     addFormInfo(QLatin1String("dialog-information"), i18n("Contacting host, please wait..."));
@@ -713,7 +713,7 @@ void OpenconnectAuthWidget::formLoginClicked()
                 }
             } else if (opt->type == OC_FORM_OPT_SELECT) {
                 QComboBox *cbo = qobject_cast<QComboBox*>(widget);
-                QByteArray text = cbo->itemData(cbo->currentIndex()).toString().toAscii();
+                QByteArray text = cbo->itemData(cbo->currentIndex()).toString().toLatin1();
                 openconnect_set_option_value(opt, text.data());
                 d->secrets.insert(key,cbo->itemData(cbo->currentIndex()).toString());
             }

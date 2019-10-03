@@ -95,7 +95,7 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     d->openvpnCipherProcess = new KProcess(this);
     d->openvpnCipherProcess->setOutputChannelMode(KProcess::OnlyStdoutChannel);
     d->openvpnCipherProcess->setReadChannel(QProcess::StandardOutput);
-    connect(d->openvpnCipherProcess, QOverload<QProcess::ProcessError>::of(&KProcess::error), this, &OpenVpnAdvancedWidget::openVpnCipherError);
+    connect(d->openvpnCipherProcess, &KProcess::errorOccurred, this, &OpenVpnAdvancedWidget::openVpnCipherError);
     connect(d->openvpnCipherProcess, &KProcess::readyReadStandardOutput, this, &OpenVpnAdvancedWidget::gotOpenVpnCipherOutput);
     connect(d->openvpnCipherProcess, QOverload<int, QProcess::ExitStatus>::of(&KProcess::finished), this, &OpenVpnAdvancedWidget::openVpnCipherFinished);
     d->openvpnCipherProcess->setProgram(openVpnBinary, ciphersArgs);
@@ -103,7 +103,7 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     d->openvpnVersionProcess = new KProcess(this);
     d->openvpnVersionProcess->setOutputChannelMode(KProcess::OnlyStdoutChannel);
     d->openvpnVersionProcess->setReadChannel(QProcess::StandardOutput);
-    connect(d->openvpnVersionProcess, QOverload<QProcess::ProcessError>::of(&KProcess::error), this, &OpenVpnAdvancedWidget::openVpnVersionError);
+    connect(d->openvpnVersionProcess, &KProcess::errorOccurred, this, &OpenVpnAdvancedWidget::openVpnVersionError);
     connect(d->openvpnVersionProcess, &KProcess::readyReadStandardOutput, this, &OpenVpnAdvancedWidget::gotOpenVpnVersionOutput);
     connect(d->openvpnVersionProcess, QOverload<int, QProcess::ExitStatus>::of(&KProcess::finished), this, &OpenVpnAdvancedWidget::openVpnVersionFinished);
     d->openvpnVersionProcess->setProgram(openVpnBinary, versionArgs);

@@ -58,6 +58,11 @@
        <string>WPA/WPA2 Enterprise</string>
       </property>
      </item>
+     <item>
+      <property name="text">
+       <string>WPA3 Personal</string>
+      </property>
+     </item>
     </widget>
    </item>
    <item row="0" column="0">
@@ -96,7 +101,7 @@
          <property name="maxLength">
           <number>26</number>
          </property>
-         <property name="passwordModeEnabled">
+         <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -203,7 +208,7 @@
        </item>
        <item row="1" column="1">
         <widget class="PasswordField" name="leapPassword">
-         <property name="passwordModeEnabled">
+         <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
         </widget>
@@ -227,7 +232,7 @@
        </item>
        <item row="0" column="1">
         <widget class="PasswordField" name="psk">
-         <property name="passwordModeEnabled">
+         <property name="passwordModeEnabled" stdset="0">
           <bool>true</bool>
          </property>
         </widget>

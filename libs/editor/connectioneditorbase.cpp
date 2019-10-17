@@ -53,6 +53,7 @@
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/WirelessSetting>
+#include <NetworkManagerQt/WirelessSecuritySetting>
 #include <NetworkManagerQt/WirelessDevice>
 
 #include <KLocalizedString>
@@ -143,6 +144,23 @@ NMVariantMapMap ConnectionEditorBase::setting() const
         if (securitySetting && wirelessSetting) {
             if (securitySetting->keyMgmt() != NetworkManager::WirelessSecuritySetting::WirelessSecuritySetting::Unknown) {
                 wirelessSetting->setSecurity("802-11-wireless-security");
+            }
+
+            if (securitySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::SAE &&
+                    wirelessSetting->mode() == NetworkManager::WirelessSetting::Adhoc) {
+                // Ad-Hoc settings as specified by the supplicant
+                // Proto
+                QList<NetworkManager::WirelessSecuritySetting::WpaProtocolVersion> protoVersions = securitySetting->proto();
+                protoVersions << NetworkManager::WirelessSecuritySetting::Rsn;
+                securitySetting->setProto(protoVersions);
+                // Pairwise
+                QList<NetworkManager::WirelessSecuritySetting::WpaEncryptionCapabilities> pairwiseEncrypts = securitySetting->pairwise();
+                pairwiseEncrypts << NetworkManager::WirelessSecuritySetting::Ccmp;
+                securitySetting->setPairwise(pairwiseEncrypts);
+                // Group
+                QList<NetworkManager::WirelessSecuritySetting::WpaEncryptionCapabilities> groupEncrypts = securitySetting->group();
+                groupEncrypts << NetworkManager::WirelessSecuritySetting::Ccmp;
+                securitySetting->setGroup(groupEncrypts);
             }
         }
     }

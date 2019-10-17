@@ -44,6 +44,11 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
     m_ui->stackedWidget->insertWidget(3, m_8021xWidget);
     m_ui->stackedWidget->insertWidget(5, m_WPA2Widget);
 
+    // WPA3 Personal is available in NM 1.16+
+    if (!NetworkManager::checkVersion(1, 16, 0)) {
+        m_ui->securityCombo->removeItem(7);
+    }
+
     connect(m_ui->securityCombo, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::securityChanged);
     connect(m_ui->wepIndex, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::setWepKey);
 
@@ -104,11 +109,13 @@ bool WifiSecurity::isValid() const
                (!m_ui->leapPassword->text().isEmpty() || m_ui->leapPassword->passwordOption() == PasswordField::AlwaysAsk);
     } else if (securityIndex == WpaPsk) { // WPA
         return NetworkManager::wpaPskIsValid(m_ui->psk->text()) ||
-               m_ui->psk->passwordOption() == PasswordField::AlwaysAsk;;
+               m_ui->psk->passwordOption() == PasswordField::AlwaysAsk;
     } else if (securityIndex == DynamicWep) {
         return m_8021xWidget->isValid();
     } else if (securityIndex == WpaEap) {
         return m_WPA2Widget->isValid();
+    } else if (securityIndex == SAE) {
+        return !m_ui->psk->text().isEmpty() || m_ui->psk->passwordOption() == PasswordField::AlwaysAsk;
     }
 
     return true;
@@ -176,6 +183,16 @@ void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
     } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEap) {
         m_ui->securityCombo->setCurrentIndex(WpaEap);  // WPA2 Enterprise
         // done in the widget
+    } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::SAE) {
+        m_ui->securityCombo->setCurrentIndex(SAE);  // WPA3
+
+        if (wifiSecurity->pskFlags().testFlag(NetworkManager::Setting::None)) {
+            m_ui->psk->setPasswordOption(PasswordField::StoreForAllUsers);
+        } else if (wifiSecurity->pskFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
+            m_ui->psk->setPasswordOption(PasswordField::StoreForUser);
+        } else {
+            m_ui->psk->setPasswordOption(PasswordField::AlwaysAsk);
+        }
     }
 
     if (keyMgmt != NetworkManager::WirelessSecuritySetting::Ieee8021x &&
@@ -212,7 +229,7 @@ void WifiSecurity::loadSecrets(const NetworkManager::Setting::Ptr &setting)
                 if (!leapPassword.isEmpty()) {
                     m_ui->leapPassword->setText(leapPassword);
                 }
-            } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::WpaPsk) {
+            } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::WpaPsk || keyMgmt == NetworkManager::WirelessSecuritySetting::SAE) {
                 const QString psk = wifiSecurity->psk();
                 if (!psk.isEmpty()) {
                     m_ui->psk->setText(psk);
@@ -290,6 +307,17 @@ QVariantMap WifiSecurity::setting() const
         }
     } else if (securityIndex == WpaEap) {  // WPA2 Enterprise
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaEap);
+    } else if (securityIndex == SAE) { // WPA3 Personal
+        wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::SAE);
+        wifiSecurity.setPsk(m_ui->psk->text());
+
+        if (m_ui->psk->passwordOption() == PasswordField::StoreForAllUsers) {
+            wifiSecurity.setPskFlags(NetworkManager::Setting::None);
+        } else if (m_ui->psk->passwordOption() == PasswordField::StoreForUser) {
+            wifiSecurity.setPskFlags(NetworkManager::Setting::AgentOwned);
+        } else {
+            wifiSecurity.setPskFlags(NetworkManager::Setting::NotSaved);
+        }
     }
 
     return wifiSecurity.toMap();
@@ -339,6 +367,9 @@ void WifiSecurity::onSsidChanged(const QString &ssid)
                         case NetworkManager::WirelessSecurityType::Wpa2Eap:
                             m_ui->securityCombo->setCurrentIndex(WpaEap);
                             break;
+                        case NetworkManager::WirelessSecurityType::SAE:
+                            m_ui->securityCombo->setCurrentIndex(SAE);
+                            break;
                         default:
                             m_ui->securityCombo->setCurrentIndex(None);
                         }
@@ -369,12 +400,18 @@ void WifiSecurity::setWepKey(int keyIndex)
 
 void WifiSecurity::securityChanged(int index)
 {
-    if (index == 0) {
+    if (index == None) {
         m_ui->stackedWidget->setCurrentIndex(0);
-    } else if (index == 1 || index == 2) {
+    } else if (index == WepHex || index == WepPassphrase) {
         m_ui->stackedWidget->setCurrentIndex(1);
-    } else {
-        m_ui->stackedWidget->setCurrentIndex(index-1);
+    } else if (index == Leap) {
+        m_ui->stackedWidget->setCurrentIndex(2);
+    } else if (index == DynamicWep) {
+        m_ui->stackedWidget->setCurrentIndex(3);
+    } else if (index == WpaPsk || index == SAE) {
+        m_ui->stackedWidget->setCurrentIndex(4);
+    } else if (index == WpaEap) {
+        m_ui->stackedWidget->setCurrentIndex(5);
     }
 
     KAcceleratorManager::manage(m_ui->stackedWidget->currentWidget());

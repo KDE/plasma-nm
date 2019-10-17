@@ -125,7 +125,6 @@ private Q_SLOTS:
 #endif
 
 Q_SIGNALS:
-    void wirelessScanTimerEnabled(bool enable);
     void connectionActivationFailed(const QString &connectionPath, const QString &message);
 private:
     bool m_tmpWirelessEnabled;
@@ -137,11 +136,12 @@ private:
     QString m_tmpDevicePath;
     QString m_tmpSpecificPath;
     QMap<QString, bool> m_bluetoothAdapters;
-    QTimer m_wirelessScanRetryTimer;
+    QMap<QString, QTimer*> m_wirelessScanRetryTimer;
 
     void enableBluetooth(bool enable);
     void scanRequestFailed(const QString &interface);
-
+    bool checkRequestScanRateLimit(const NetworkManager::WirelessDevice::Ptr &wifiDevice);
+    void scheduleRequestScan(const QString &interface, int timeout);
 };
 
 #endif // PLASMA_NM_HANDLER_H

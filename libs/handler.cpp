@@ -64,6 +64,8 @@
 #define AGENT_PATH "/modules/networkmanagement"
 #define AGENT_IFACE "org.kde.plasmanetworkmanagement"
 
+// 10 seconds
+#define NM_REQUESTSCAN_LIMIT_RATE 10000
 
 Handler::Handler(QObject *parent)
     : QObject(parent)
@@ -82,10 +84,6 @@ Handler::Handler(QObject *parent)
                                             QStringLiteral(AGENT_IFACE),
                                             QStringLiteral("secretsError"),
                                             this, SLOT(secretAgentError(QString, QString)));
-
-    // Interval (in ms) between attempts to scan for wifi networks
-    m_wirelessScanRetryTimer.setInterval(2000);
-    m_wirelessScanRetryTimer.setSingleShot(true);
 }
 
 Handler::~Handler()
@@ -496,6 +494,30 @@ void Handler::requestScan(const QString &interface)
                     continue;
                 }
 
+                if (!checkRequestScanRateLimit(wifiDevice)) {
+                    QDateTime now = QDateTime::currentDateTime();
+                    // for NM < 1.12, lastScan is not available
+                    QDateTime lastScan = wifiDevice->lastScan();
+                    QDateTime lastRequestScan = wifiDevice->lastRequestScan();
+                    // Compute the next time we can run a scan
+                    int timeout = NM_REQUESTSCAN_LIMIT_RATE;
+                    if (lastScan.isValid() && lastScan.msecsTo(now) < NM_REQUESTSCAN_LIMIT_RATE) {
+                        timeout = NM_REQUESTSCAN_LIMIT_RATE - lastScan.msecsTo(now);
+                    } else if (lastRequestScan.isValid() && lastRequestScan.msecsTo(now) < NM_REQUESTSCAN_LIMIT_RATE) {
+                        timeout = NM_REQUESTSCAN_LIMIT_RATE - lastRequestScan.msecsTo(now);
+                    }
+                    qCDebug(PLASMA_NM) << "Rescheduling a request scan for" << wifiDevice->interfaceName() << "in" << timeout;
+                    scheduleRequestScan(wifiDevice->interfaceName(), timeout);
+
+                    if (!interface.isEmpty()) {
+                        return;
+                    }
+                    continue;
+                } else if (m_wirelessScanRetryTimer.contains(interface)){
+                    m_wirelessScanRetryTimer.value(interface)->stop();
+                    delete m_wirelessScanRetryTimer.take(interface);
+                }
+
                 qCDebug(PLASMA_NM) << "Requesting wifi scan on device" << wifiDevice->interfaceName();
                 QDBusPendingReply<> reply = wifiDevice->requestScan();
                 QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
@@ -507,21 +529,54 @@ void Handler::requestScan(const QString &interface)
     }
 }
 
+bool Handler::checkRequestScanRateLimit(const NetworkManager::WirelessDevice::Ptr &wifiDevice)
+{
+    QDateTime now = QDateTime::currentDateTime();
+    QDateTime lastScan = wifiDevice->lastScan();
+    QDateTime lastRequestScan = wifiDevice->lastRequestScan();
+
+    // if the last scan finished within the last 10 seconds
+    bool ret = lastScan.isValid() && lastScan.msecsTo(now) < NM_REQUESTSCAN_LIMIT_RATE;
+    // or if the last Request was sent within the last 10 seconds
+    ret |= lastRequestScan.isValid() && lastRequestScan.msecsTo(now) < NM_REQUESTSCAN_LIMIT_RATE;
+    // skip the request scan
+    if (ret) {
+        qCDebug(PLASMA_NM) << "Last scan finished " << lastScan.msecsTo(now) << "ms ago and last request scan was sent "
+                           << lastRequestScan.msecsTo(now) << "ms ago, Skipping scanning interface:" << wifiDevice->interfaceName();
+        return false;
+    }
+    return true;
+}
+
+void Handler::scheduleRequestScan(const QString &interface, int timeout)
+{
+    QTimer *timer;
+    if (!m_wirelessScanRetryTimer.contains(interface)) {
+        // create a timer for the interface
+        timer = new QTimer();
+        timer->setSingleShot(true);
+        m_wirelessScanRetryTimer.insert(interface, timer);
+        auto retryAction = [this, interface]() {
+            requestScan(interface);
+        };
+        connect(timer, &QTimer::timeout, this, retryAction);
+    } else {
+        // set the new value for an existing timer
+        timer = m_wirelessScanRetryTimer.value(interface);
+        if (timer->isActive()) {
+            timer->stop();
+        }
+    }
+
+    // +1 ms is added to avoid having the scan being rejetted by nm
+    // because it is run at the exact last millisecond of the requestScan threshold
+    timer->setInterval(timeout + 1);
+    timer->start();
+}
+
 void Handler::scanRequestFailed(const QString &interface)
 {
-    if (m_wirelessScanRetryTimer.isActive()) {
-        return;
-    }
-    qCDebug(PLASMA_NM) << "Trying soon a new scan on" << interface;
-
-    emit wirelessScanTimerEnabled(false);
-
-    auto retryAction = [this,interface]() {
-        m_wirelessScanRetryTimer.disconnect();
-        requestScan(interface);
-    };
-    connect(&m_wirelessScanRetryTimer, &QTimer::timeout, this, retryAction);
-    m_wirelessScanRetryTimer.start();
+    scheduleRequestScan(interface, 2000);
 }
 
 void Handler::initKdedModule()
@@ -608,7 +663,6 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
                 break;
             case Handler::RequestScan:
                 qCDebug(PLASMA_NM) << "Wireless scan on" << watcher->property("interface").toString() << "succeeded";
-                emit wirelessScanTimerEnabled(true);
                 break;
             default:
                 break;

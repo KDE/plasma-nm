@@ -27,6 +27,10 @@ import org.kde.kcm 1.1
 SimpleKCM {
     id: main
 
+    PlasmaNM.Handler {
+        id: handler
+    }
+
     PlasmaNM.EnabledConnections {
         id: enabledConnections
 

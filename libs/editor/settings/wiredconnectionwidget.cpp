@@ -81,7 +81,8 @@ void WiredConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &setti
             m_widget->speed->setValue(wiredSetting->speed());
         }
 
-        if (wiredSetting->duplexType() == NetworkManager::WiredSetting::Full) {
+        // Default to "Full" duplex when duplex type is not set
+        if (wiredSetting->duplexType() == NetworkManager::WiredSetting::Full || wiredSetting->duplexType() == NetworkManager::WiredSetting::UnknownDuplexType) {
             m_widget->duplex->setCurrentIndex(0);
         } else {
             m_widget->duplex->setCurrentIndex(1);

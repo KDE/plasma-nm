@@ -27,17 +27,6 @@ import org.kde.kcm 1.1
 SimpleKCM {
     id: main
 
-    PlasmaNM.Handler {
-        id: handler
-        onWirelessScanTimerEnabled: {
-            if (enabled) {
-                scanTimer.restart()
-            } else {
-                scanTimer.stop()
-            }
-        }
-    }
-
     PlasmaNM.EnabledConnections {
         id: enabledConnections
 
@@ -60,7 +49,7 @@ SimpleKCM {
 
     Timer {
         id: scanTimer
-        interval: 15000
+        interval: 10200
         repeat: true
         running: parent.visible
 

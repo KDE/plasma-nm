@@ -53,25 +53,11 @@ SimpleKCM {
         }
     }
 
-    header: ColumnLayout {
-        width: parent.width
-        anchors.leftMargin: Kirigami.Units.largeSpacing * 2
-        Kirigami.Separator {}
-        RowLayout{
-            Kirigami.Separator {}
-            Controls.Label {
-                id: detailsName
-                anchors.leftMargin: Kirigami.Units.largeSpacing * 2
-                text: i18n("Connection Name")
-                font.weight: Font.Bold
-            }
-        }
-        Kirigami.Separator {}
-        Rectangle{
-            height: 1
-            Layout.fillWidth: true
-            color: "black"
-        }
+    header: Kirigami.Heading {
+        id: detailsName
+        text: i18n("Connection Name")
+        level: 2
+        leftPadding: Kirigami.Units.smallSpacing
     }
 
     Kirigami.FormLayout {

@@ -86,8 +86,9 @@ SimpleKCM {
         currentIndex: -1
         boundsBehavior: Flickable.StopAtBounds
 
-        header: Kirigami.ListSectionHeader {
-            text: mobileProxyModel.showSavedMode ? i18n("Saved networks") : i18n("Available networks")
+        section.property: "Section"
+        section.delegate: Kirigami.ListSectionHeader {
+            text: section
         }
 
         model: mobileProxyModel

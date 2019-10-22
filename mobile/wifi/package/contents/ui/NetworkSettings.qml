@@ -111,7 +111,7 @@ SimpleKCM {
         }
 
         Kirigami.Separator {
-            Kirigami.FormData.label: "IP settings"
+            Kirigami.FormData.label: i18n("IP settings")
             Kirigami.FormData.isSection: true
         }
 

@@ -35,6 +35,17 @@ class Q_DECL_EXPORT WiredConnectionWidget : public SettingWidget
 Q_OBJECT
 
 public:
+    enum LinkNegotiation {
+        Ignore = 0,
+        Automatic,
+        Manual
+    };
+
+    enum Duplex {
+        Half = 0,
+        Full
+    };
+
     explicit WiredConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~WiredConnectionWidget() override;
 

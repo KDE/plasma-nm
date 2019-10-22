@@ -32,10 +32,6 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
     qsrand(QTime::currentTime().msec());
 
     m_widget->setupUi(this);
-    m_widget->speedLabel->setHidden(true);
-    m_widget->speed->setHidden(true);
-    m_widget->duplexLabel->setHidden(true);
-    m_widget->duplex->setHidden(true);
 
     connect(m_widget->btnRandomMacAddr, &QPushButton::clicked, this, &WiredConnectionWidget::generateRandomClonedMac);
 
@@ -43,10 +39,12 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
     watchChangedSetting();
 
     // Connect for validity check
-    connect(m_widget->autonegotiate, &QCheckBox::stateChanged, this, &WiredConnectionWidget::slotWidgetChanged);
     connect(m_widget->clonedMacAddress, &KLineEdit::textChanged, this, &WiredConnectionWidget::slotWidgetChanged);
     connect(m_widget->macAddress, &HwAddrComboBox::hwAddressChanged, this, &WiredConnectionWidget::slotWidgetChanged);
-    connect(m_widget->speed, QOverload<int>::of(&QSpinBox::valueChanged), this, &WiredConnectionWidget::slotWidgetChanged);
+    connect(m_widget->linkNegotiation, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this] (int index) {
+        m_widget->duplex->setEnabled(index == LinkNegotiation::Manual);
+        m_widget->speed->setEnabled(index == LinkNegotiation::Manual);
+    });
 
     KAcceleratorManager::manage(this);
 
@@ -74,19 +72,33 @@ void WiredConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &setti
         m_widget->mtu->setValue(wiredSetting->mtu());
     }
 
-    if (!wiredSetting->autoNegotiate()) {
-        m_widget->autonegotiate->setChecked(false);
+    if (wiredSetting->autoNegotiate()) {
+        m_widget->linkNegotiation->setCurrentIndex(LinkNegotiation::Automatic);
+    } else if (wiredSetting->speed() && wiredSetting->duplexType() != NetworkManager::WiredSetting::UnknownDuplexType) {
+        m_widget->linkNegotiation->setCurrentIndex(LinkNegotiation::Manual);
+    }
 
-        if (wiredSetting->speed()) {
-            m_widget->speed->setValue(wiredSetting->speed());
+    if (wiredSetting->speed()) {
+        switch(wiredSetting->speed()) {
+            case 10:
+                m_widget->speed->setCurrentIndex(0);
+                break;
+            case 100:
+                m_widget->speed->setCurrentIndex(1);
+                break;
+            case 1000:
+                m_widget->speed->setCurrentIndex(2);
+                break;
+            case 10000:
+                m_widget->speed->setCurrentIndex(3);
+                break;
         }
+    }
 
-        // Default to "Full" duplex when duplex type is not set
-        if (wiredSetting->duplexType() == NetworkManager::WiredSetting::Full || wiredSetting->duplexType() == NetworkManager::WiredSetting::UnknownDuplexType) {
-            m_widget->duplex->setCurrentIndex(0);
-        } else {
-            m_widget->duplex->setCurrentIndex(1);
-        }
+    if (wiredSetting->duplexType() != NetworkManager::WiredSetting::Half) {
+        m_widget->duplex->setCurrentIndex(Duplex::Full);
+    } else {
+        m_widget->duplex->setCurrentIndex(Duplex::Half);
     }
 }
 
@@ -104,20 +116,34 @@ QVariantMap WiredConnectionWidget::setting() const
         wiredSetting.setMtu(m_widget->mtu->value());
     }
 
-    if (m_widget->autonegotiate->isChecked()) {
-        wiredSetting.setAutoNegotiate(true);
+    if (m_widget->linkNegotiation->currentIndex() == LinkNegotiation::Automatic || m_widget->linkNegotiation->currentIndex() == LinkNegotiation::Ignore) {
         wiredSetting.setDuplexType(NetworkManager::WiredSetting::UnknownDuplexType);
         wiredSetting.setSpeed(0);
     } else {
-        wiredSetting.setAutoNegotiate(false);
-        wiredSetting.setSpeed(m_widget->speed->value());
+        switch (m_widget->speed->currentIndex()) {
+            case 0:
+                wiredSetting.setSpeed(10);
+                break;
+            case 1:
+                wiredSetting.setSpeed(100);
+                break;
+            case 2:
+                wiredSetting.setSpeed(1000);
+                break;
+            case 3:
+                wiredSetting.setSpeed(10000);
+                break;
+        }
 
-        if (m_widget->duplex->currentIndex() == 0) {
+        if (m_widget->duplex->currentIndex() == Duplex::Full) {
             wiredSetting.setDuplexType(NetworkManager::WiredSetting::Full);
         } else {
             wiredSetting.setDuplexType(NetworkManager::WiredSetting::Half);
         }
     }
+
+    wiredSetting.setAutoNegotiate(m_widget->linkNegotiation->currentIndex() == LinkNegotiation::Automatic);
+
 
     return wiredSetting.toMap();
 }
@@ -146,12 +172,6 @@ bool WiredConnectionWidget::isValid() const
 
     if (m_widget->clonedMacAddress->text() != ":::::") {
         if (!NetworkManager::macAddressIsValid(m_widget->clonedMacAddress->text())) {
-            return false;
-        }
-    }
-
-    if (!m_widget->autonegotiate->isChecked()) {
-        if (!m_widget->speed->value()) {
             return false;
         }
     }

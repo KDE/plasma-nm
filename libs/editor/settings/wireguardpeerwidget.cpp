@@ -238,7 +238,7 @@ void WireGuardPeerWidget::checkEndpointValid()
     setBackground(portWidget, WireGuardPeerWidget::BothValid == valid || WireGuardPeerWidget::PortValid == valid);
 
     // If there is a ':' in the address string then it is an IPv6 address and
-    // the output needs to be formatted as '[1:2:3:4:5:6:7:8]:123' otherwhise
+    // the output needs to be formatted as '[1:2:3:4:5:6:7:8]:123' otherwise
     // it is formatted as '1.2.3.4:123' or 'ab.com:123'
     QString stringToStore;
     if  (addressString.contains(":"))

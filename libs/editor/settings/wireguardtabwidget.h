@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_WIREGUARD_PEERS_TAB_WIDGET_H
-#define PLASMA_NM_WIREGUARD_PEERS_TAB_WIDGET_H
+#ifndef PLASMA_NM_WIREGUARD_TAB_WIDGET_H
+#define PLASMA_NM_WIREGUARD_TAB_WIDGET_H
 
 #include <QDialog>
 
@@ -51,4 +51,4 @@ private:
     Private *d;
 };
 
-#endif // PLASMA_NM_WIREGUARD_PEERS_TABS_WIDGET_H
+#endif // PLASMA_NM_WIREGUARD_TAB_WIDGET_H

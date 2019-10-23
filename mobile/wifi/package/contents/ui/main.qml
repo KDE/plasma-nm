@@ -160,40 +160,4 @@ SimpleKCM {
             }
         }
 */
-    Kirigami.OverlayDrawer {
-        id: deleteConnectionDialog
-        property var name
-        property var dbusPath
-        edge: Qt.BottomEdge
-
-        contentItem: Column {
-            anchors.centerIn: parent
-            spacing: Kirigami.Units.largeSpacing
-            bottomPadding: Kirigami.Units.largeSpacing
-
-            Controls.Label {
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: i18n("Delete connection %1 from device?", deleteConnectionDialog.name)
-            }
-            Controls.Button {
-                text: i18n("Delete")
-                anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: {
-                    handler.removeConnection(deleteConnectionDialog.dbusPath)
-                    deleteConnectionDialog.close()
-                }
-            }
-            Controls.Button {
-                text: i18n("Cancel")
-                anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: deleteConnectionDialog.close()
-            }
-        }
-        onVisibleChanged: {
-            if (!visible) {
-                deleteConnectionDialog.name = ""
-                deleteConnectionDialog.dbusPath = ""
-            }
-        }
-    }
 }

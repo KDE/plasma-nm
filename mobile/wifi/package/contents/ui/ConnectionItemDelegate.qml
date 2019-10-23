@@ -117,7 +117,7 @@ Kirigami.SwipeListItem {
         Kirigami.Action {
             iconName: "entry-delete"
             visible: (Uuid != "")? true : false
-            onTriggered: forgetNetwork()
+            onTriggered: handler.removeConnection(ConnectionPath)
         }
     ]
 
@@ -148,11 +148,5 @@ Kirigami.SwipeListItem {
         } else if (predictableWirelessPassword) {
             connectionPasswordField.visible = true;
         }
-    }
-
-    function forgetNetwork() {
-        deleteConnectionDialog.name = ItemUniqueName
-        deleteConnectionDialog.dbusPath = ConnectionPath
-        deleteConnectionDialog.open()
     }
 }

@@ -601,13 +601,14 @@ void NetworkModel::activeConnectionStateChanged(NetworkManager::ActiveConnection
 {
     NetworkManager::ActiveConnection *activePtr = qobject_cast<NetworkManager::ActiveConnection*>(sender());
     if (activePtr) {
-        beginResetModel();
         for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::ActiveConnection, activePtr->path())) {
             item->setConnectionState(state);
             item->invalidateDetails();
+            int row = m_list.indexOf(item);
+            Q_EMIT dataChanged(index(row, 0), index(row, 0));
+
             qCDebug(PLASMA_NM) << "Item " << item->name() << ": active connection changed to " << item->connectionState();
         }
-        endResetModel();
     }
 }
 

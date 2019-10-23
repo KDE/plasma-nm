@@ -72,8 +72,6 @@ Kirigami.SwipeListItem {
             Layout.fillWidth: true
             visible: !connectionPasswordField.visible
             elide: Text.ElideRight
-            font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
-            font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false
             text: ItemUniqueName
             textFormat: Text.PlainText
         }

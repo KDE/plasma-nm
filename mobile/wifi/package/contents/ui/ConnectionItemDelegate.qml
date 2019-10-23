@@ -27,7 +27,6 @@ import org.kde.kirigami 2.2 as Kirigami
 Kirigami.SwipeListItem {
 
     enabled: true
-    //backgroundColor: theme.backgroundColor
 
     property var map : []
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&

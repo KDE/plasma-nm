@@ -130,34 +130,4 @@ SimpleKCM {
             }
         }
     ]
-/*
-    footer: Controls.Button {
-        width: parent.width
-        text: "ContextualActions"
-        iconName: "edit"
-        onClicked: bottomDrawer.open()
-    }
-
-    Kirigami.OverlayDrawer {
-            id: bottomDrawer
-            edge: Qt.BottomEdge
-            contentItem: Item {
-                implicitHeight: childrenRect.height + Kirigami.Units.gridUnit
-                ColumnLayout{
-                    anchors.centerIn: parent
-                    Controls.Button {
-                        text: "Add custom connection"
-                        onClicked: applicationWindow().pageStack.push(connectionEditorDialogComponent)
-                    }
-                    Controls.Button {
-                        text: "Create Hotspot"
-                        onClicked: showPassiveNotification("Open tethering")
-                    }
-                    Item {
-                        Layout.minimumHeight: Units.gridUnit * 4
-                    }
-                }
-            }
-        }
-*/
 }

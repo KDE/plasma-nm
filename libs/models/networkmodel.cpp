@@ -281,7 +281,6 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
         addConnection(connection);
     }
 
-    beginResetModel();
     for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::NetworkItemsList::Uuid, connection->uuid())) {
         if (((device && device->uni() == item->devicePath()) || item->devicePath().isEmpty()) || item->type() == NetworkManager::ConnectionSettings::Vpn) {
             item->setActiveConnectionPath(activeConnection->path());
@@ -310,8 +309,8 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
                 item->setTxBytes(deviceStatistics->txBytes());
             }
         }
+        updateItem(item);
     }
-    endResetModel();
 }
 
 void NetworkModel::addAvailableConnection(const QString &connection, const NetworkManager::Device::Ptr &device)

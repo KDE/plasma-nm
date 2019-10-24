@@ -484,7 +484,10 @@ qulonglong NetworkModelItem::rxBytes() const
 
 void NetworkModelItem::setRxBytes(qulonglong bytes)
 {
-    m_rxBytes = bytes;
+    if (m_rxBytes != bytes) {
+        m_rxBytes = bytes;
+        m_changedRoles << NetworkModel::RxBytesRole;
+    }
 }
 
 qulonglong NetworkModelItem::txBytes() const
@@ -494,7 +497,10 @@ qulonglong NetworkModelItem::txBytes() const
 
 void NetworkModelItem::setTxBytes(qulonglong bytes)
 {
-    m_txBytes = bytes;
+    if (m_txBytes != bytes) {
+        m_txBytes = bytes;
+        m_changedRoles << NetworkModel::TxBytesRole;
+    }
 }
 
 bool NetworkModelItem::operator==(const NetworkModelItem *item) const
@@ -515,6 +521,7 @@ bool NetworkModelItem::operator==(const NetworkModelItem *item) const
 void NetworkModelItem::invalidateDetails()
 {
     m_detailsValid = false;
+    m_changedRoles << NetworkModel::ConnectionDetailsRole;
 }
 
 void NetworkModelItem::updateDetails() const

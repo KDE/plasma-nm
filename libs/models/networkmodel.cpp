@@ -829,13 +829,11 @@ void NetworkModel::deviceStateChanged(NetworkManager::Device::State state, Netwo
         return;
     }
 
-    beginResetModel();
     for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::Device, device->uni())) {
         item->setDeviceState(state);
-        item->invalidateDetails();
+        updateItem(item);
 //             qCDebug(PLASMA_NM) << "Item " << item->name() << ": device state changed to " << item->deviceState();
     }
-    endResetModel();
 }
 
 #if WITH_MODEMMANAGER_SUPPORT

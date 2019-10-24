@@ -399,31 +399,33 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr &connecti
     }
 
     // Check whether the connection is already in the model to avoid duplicates, but this shouldn't happen
-    if (!m_list.contains(NetworkItemsList::Connection, connection->path())) {
-        NetworkModelItem *item = new NetworkModelItem();
-        item->setConnectionPath(connection->path());
-        item->setName(settings->id());
-        item->setTimestamp(settings->timestamp());
-        item->setType(settings->connectionType());
-        item->setUuid(settings->uuid());
-        item->setSlave(settings->isSlave());
-
-        if (item->type() == NetworkManager::ConnectionSettings::Vpn) {
-            item->setVpnType(vpnSetting->serviceType().section('.', -1));
-        } else if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
-            item->setMode(wirelessSetting->mode());
-            item->setSecurityType(NetworkManager::securityTypeFromConnectionSetting(settings));
-            item->setSsid(QString::fromUtf8(wirelessSetting->ssid()));
-        }
-
-        item->invalidateDetails();
-
-        const int index = m_list.count();
-        beginInsertRows(QModelIndex(), index, index);
-        m_list.insertItem(item);
-        endInsertRows();
-        qCDebug(PLASMA_NM) << "New connection " << item->name() << " added";
+    if (m_list.contains(NetworkItemsList::Connection, connection->path())) {
+        return;
     }
+
+    NetworkModelItem *item = new NetworkModelItem();
+    item->setConnectionPath(connection->path());
+    item->setName(settings->id());
+    item->setTimestamp(settings->timestamp());
+    item->setType(settings->connectionType());
+    item->setUuid(settings->uuid());
+    item->setSlave(settings->isSlave());
+
+    if (item->type() == NetworkManager::ConnectionSettings::Vpn) {
+        item->setVpnType(vpnSetting->serviceType().section('.', -1));
+    } else if (item->type() == NetworkManager::ConnectionSettings::Wireless) {
+        item->setMode(wirelessSetting->mode());
+        item->setSecurityType(NetworkManager::securityTypeFromConnectionSetting(settings));
+        item->setSsid(QString::fromUtf8(wirelessSetting->ssid()));
+    }
+
+    item->invalidateDetails();
+
+    const int index = m_list.count();
+    beginInsertRows(QModelIndex(), index, index);
+    m_list.insertItem(item);
+    endInsertRows();
+    qCDebug(PLASMA_NM) << "New connection " << item->name() << " added";
 }
 
 void NetworkModel::addDevice(const NetworkManager::Device::Ptr &device)

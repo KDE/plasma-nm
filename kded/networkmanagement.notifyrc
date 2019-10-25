@@ -2,6 +2,7 @@
 IconName=applications-internet
 Name=Network management
 Name[ar]=إدارة الشّبكات
+Name[ast]=Xestión de redes
 Name[bs]=Upravljanje mrežom
 Name[ca]=Gestió de la xarxa
 Name[ca@valencia]=Gestió de la xarxa
@@ -48,6 +49,7 @@ Name[zh_CN]=网络管理
 Name[zh_TW]=網路管理
 Comment=Network management
 Comment[ar]=إدارة الشّبكات
+Comment[ast]=Xestión de redes
 Comment[bs]=Upravljanje mrežom
 Comment[ca]=Gestió de la xarxa
 Comment[ca@valencia]=Gestió de la xarxa

@@ -20,6 +20,7 @@ Name[sk]=Modul Plasma správa siete
 Name[sv]=Plasma nätverkshanteringsmodul
 Name[uk]=Модуль керування мережею Плазми
 Name[x-test]=xxPlasma Network Management modulexx
+Name[zh_CN]=Plasma 网络管理模块
 Name[zh_TW]=Plasma 網路管理模組
 Comment=Provides secrets to the NetworkManager daemon
 Comment[ar]=توفّر الأسرار لعفريت «مديرالشّبكة»

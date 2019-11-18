@@ -57,7 +57,6 @@
 #include <KService>
 #include <KServiceTypeTrader>
 #include <KWindowSystem>
-#include <KIconLoader>
 #include <KWallet>
 
 #define AGENT_SERVICE "org.kde.kded5"
@@ -126,7 +125,7 @@ void Handler::activateConnection(const QString& connection, const QString& devic
                 notification->setComponentName("networkmanagement");
                 notification->setTitle(con->name());
                 notification->setText(i18n("Missing VPN plugin"));
-                notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
+                notification->setIconName(QStringLiteral("dialog-warning"));
                 notification->sendEvent();
                 return;
             }
@@ -641,7 +640,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
         if (notification) {
             notification->setComponentName("networkmanagement");
             notification->setText(error);
-            notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
+            notification->setIconName(QStringLiteral("dialog-warning"));
             notification->sendEvent();
         }
     } else {
@@ -671,7 +670,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
         if (notification) {
             notification->setComponentName("networkmanagement");
             notification->setTitle(watcher->property("connection").toString());
-            notification->setPixmap(QIcon::fromTheme("dialog-information").pixmap(KIconLoader::SizeHuge));
+            notification->setIconName(QStringLiteral("dialog-information"));
             notification->sendEvent();
         }
     }

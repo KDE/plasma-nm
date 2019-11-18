@@ -55,7 +55,6 @@
 #include <NetworkManagerQt/WirelessSetting>
 #include <NetworkManagerQt/WirelessDevice>
 
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KNotification>
 #include <KServiceTypeTrader>
@@ -465,7 +464,7 @@ void ConnectionEditorBase::replyFinished(QDBusPendingCallWatcher *watcher)
         notification->setComponentName("networkmanagement");
         notification->setTitle(i18n("Failed to get secrets for %1", watcher->property("connection").toString()));
         notification->setText(reply.error().message());
-        notification->setPixmap(QIcon::fromTheme("dialog-warning").pixmap(KIconLoader::SizeHuge));
+        notification->setIconName(QStringLiteral("dialog-warning"));
         notification->sendEvent();
     }
 

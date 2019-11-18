@@ -30,7 +30,6 @@
 
 #include <KLocalizedString>
 #include <KNotification>
-#include <KIconLoader>
 
 #include <QDBusConnection>
 #include <QIcon>
@@ -336,7 +335,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
         notify->setProperty("uni", device->uni());
         notify->setComponentName(QStringLiteral("networkmanagement"));
-        notify->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(KIconLoader::SizeHuge));
+        notify->setIconName(QStringLiteral("dialog-warning"));
         notify->setTitle(identifier);
         notify->setText(text);
         notify->sendEvent();

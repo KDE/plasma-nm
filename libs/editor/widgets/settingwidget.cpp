@@ -26,6 +26,7 @@
 
 #include <QComboBox>
 #include <QCheckBox>
+#include <QGroupBox>
 #include <QLineEdit>
 #include <QPushButton>
 #include <QSpinBox>
@@ -102,6 +103,12 @@ void SettingWidget::watchChangedSetting()
     QList<QTableView *> tableviews = findChildren<QTableView *>();
     for(QTableView *tableview : tableviews) {
         connect(tableview, &QTableView::clicked, this, &SettingWidget::settingChanged);
+    }
+
+    // Connect all QGroupBox widgets
+    QList<QGroupBox *> groupBoxes = findChildren<QGroupBox *>();
+    for (QGroupBox *box : groupBoxes) {
+        connect(box, &QGroupBox::toggled, this, &SettingWidget::settingChanged);
     }
 
     /********** OUR CUSTOM WIDGETS **********/

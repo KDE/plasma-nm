@@ -20,7 +20,7 @@
 
 import QtQuick 2.1
 import QtQuick.Dialogs 1.1
-import QtQuick.Controls 1.2 as QtControls
+import QtQuick.Controls 2.5 as QQC2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
@@ -56,7 +56,7 @@ Item {
         sourceModel: connectionModel
     }
 
-    QtControls.TextField {
+    QQC2.TextField {
         id: searchField
 
         anchors {
@@ -72,8 +72,10 @@ Item {
         }
     }
 
-    QtControls.ScrollView {
+    QQC2.ScrollView {
         id: scrollView
+
+        Component.onCompleted: background.visible = true // show frame
 
         anchors {
             bottom: buttonRow.top
@@ -92,6 +94,8 @@ Item {
 
             anchors.fill: parent
             clip: true
+            focus: true
+            activeFocusOnTab: true
             model: editorProxyModel
             currentIndex: -1
             boundsBehavior: Flickable.StopAtBounds
@@ -136,23 +140,29 @@ Item {
         }
         spacing: Math.round(units.gridUnit / 2)
 
-        QtControls.ToolButton {
+        QQC2.ToolButton {
             id: addConnectionButton
 
-            iconName: "list-add"
-            tooltip: i18n("Add new connection")
+            icon.name: "list-add"
+
+            QQC2.ToolTip {
+                text: i18n("Add new connection")
+            }
 
             onClicked: {
                 addNewConnectionDialog.open()
             }
         }
 
-        QtControls.ToolButton {
+        QQC2.ToolButton {
             id: removeConnectionButton
 
             enabled: connectionView.currentConnectionPath && connectionView.currentConnectionPath.length
-            iconName: "list-remove"
-            tooltip: i18n("Remove selected connection")
+            icon.name: "list-remove"
+
+            QQC2.ToolTip {
+                text: i18n("Remove selected connection")
+            }
 
             onClicked: {
                 deleteConfirmationDialog.connectionName = connectionView.currentConnectionName
@@ -161,12 +171,15 @@ Item {
             }
         }
 
-        QtControls.ToolButton {
+        QQC2.ToolButton {
             id: exportConnectionButton
 
             enabled: connectionView.currentConnectionExportable
-            iconName: "document-export"
-            tooltip: i18n("Export selected connection")
+            icon.name: "document-export"
+
+            QQC2.ToolTip {
+                text: i18n("Export selected connection")
+            }
 
             onClicked: {
                 root.requestExportConnection(connectionView.currentConnectionPath)

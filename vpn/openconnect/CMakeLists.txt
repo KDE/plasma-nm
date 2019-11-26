@@ -11,11 +11,11 @@ if (OPENCONNECT_FOUND)
 
     if (${OPENCONNECT_VERSION} VERSION_LESS "3.99")
 #         macro_optional_find_package(OpenSSL)
-#         macro_log_feature(OpenSSL_FOUND "OpenSSL headers" "Encryption suite" "http://www.openssl.org" FALSE "" "Needed for OpenConnect support in Network Management")
+#         macro_log_feature(OpenSSL_FOUND "OpenSSL headers" "Encryption suite" "https://www.openssl.org" FALSE "" "Needed for OpenConnect support in Network Management")
         find_package(OpenSSL)
         set_package_properties(OpenSSL PROPERTIES
                             DESCRIPTION "Encryption suite"
-                            URL "http://www.openssl.org"
+                            URL "https://www.openssl.org"
                             TYPE OPTIONAL
                             )
 

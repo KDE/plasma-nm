@@ -72,17 +72,17 @@ set_package_properties(NetworkManager PROPERTIES
 find_package(MobileBroadbandProviderInfo)
 set_package_properties(MobileBroadbandProviderInfo PROPERTIES
                        DESCRIPTION "Database of mobile broadband service providers"
-                       URL "http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders"
+                       URL "https://wiki.gnome.org/action/show/Projects/NetworkManager/MobileBroadband/ServiceProviders"
                        TYPE OPTIONAL)
 
 find_package(Qca-qt5 2.1.0)
 set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Support for encryption"
-                       URL "http://download.kde.org/stable/qca-qt5/"
+                       URL "https://download.kde.org/stable/qca-qt5/"
                        TYPE REQUIRED)
 
 find_package(KF5Prison ${KF5_MIN_VERSION})
 set_package_properties(KF5Prison PROPERTIES DESCRIPTION "Prison library"
-                       URL "http://projects.kde.org/prison"
+                       URL "https://commits.kde.org/prison"
                        TYPE RUNTIME
                        PURPOSE "Needed to create mobile barcodes for WiFi networks"
                       )

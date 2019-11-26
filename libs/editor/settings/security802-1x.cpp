@@ -525,7 +525,7 @@ void Security8021x::altSubjectMatchesButtonClicked()
 
     editor->setItems(m_ui->leTlsSubjectMatch->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts));
     editor->setWindowTitle(i18n("Alternative Subject Matches"));
-    editor->setToolTip(i18n("<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde.org&gt;</li></ul></qt>"));
+    editor->setToolTip(i18n("<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. https://www.kde.org&gt;</li></ul></qt>"));
     editor->setValidator(altSubjectValidator);
 
     connect(editor.data(), &QDialog::accepted,

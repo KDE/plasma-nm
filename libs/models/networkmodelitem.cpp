@@ -535,12 +535,24 @@ void NetworkModelItem::updateDetails() const
 
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
 
-    // Get IPv[46]Address
+    // Get IPv[46]Address and related nameservers + IPv4 default gateway
     if (device && device->ipV4Config().isValid() && m_connectionState == NetworkManager::ActiveConnection::Activated) {
         if (!device->ipV4Config().addresses().isEmpty()) {
             QHostAddress addr = device->ipV4Config().addresses().first().ip();
             if (!addr.isNull()) {
                 m_details << i18n("IPv4 Address") << addr.toString();
+            }
+        }
+        if (!device->ipV4Config().gateway().isEmpty()) {
+            QString addr = device->ipV4Config().gateway();
+            if (!addr.isNull()) {
+                m_details << i18n("IPv4 Default Gateway") << addr;
+            }
+        }
+        if (!device->ipV4Config().nameservers().isEmpty()) {
+            QHostAddress addr = device->ipV4Config().nameservers().first();
+            if (!addr.isNull()) {
+                m_details << i18n("IPv4 Nameserver") << addr.toString();
             }
         }
     }
@@ -550,6 +562,12 @@ void NetworkModelItem::updateDetails() const
             QHostAddress addr = device->ipV6Config().addresses().first().ip();
             if (!addr.isNull()) {
                 m_details << i18n("IPv6 Address") << addr.toString();
+            }
+        }
+        if (!device->ipV6Config().nameservers().isEmpty()) {
+            QHostAddress addr = device->ipV6Config().nameservers().first();
+            if (!addr.isNull()) {
+                m_details << i18n("IPv6 Nameserver") << addr.toString();
             }
         }
     }

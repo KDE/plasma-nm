@@ -79,8 +79,7 @@ Item {
                     height: paintedHeight
                     font.pointSize: theme.smallestFont.pointSize
                     horizontalAlignment: Text.AlignRight
-                    opacity: 0.6
-                    text: "<b>" + details[index*2] + "</b>: &nbsp"
+                    text: details[index*2] + ": "
 
                     Component.onCompleted: {
                         if (paintedWidth > repeater.longestString) {
@@ -100,7 +99,6 @@ Item {
                     height: paintedHeight
                     elide: Text.ElideRight
                     font.pointSize: theme.smallestFont.pointSize
-                    opacity: 0.6
                     text: details[(index*2)+1]
                     textFormat: Text.PlainText
 

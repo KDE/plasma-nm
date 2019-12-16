@@ -24,6 +24,7 @@
 
 #include <NetworkManagerQt/Manager>
 
+#include <KNotification>
 #include <QObject>
 
 class PortalMonitor : public QObject
@@ -36,6 +37,9 @@ public:
 private Q_SLOTS:
     void connectivityChanged(NetworkManager::Connectivity connectivity);
     void checkConnectivity();
+
+private:
+    KNotification *m_notification = nullptr;
 };
 
 #endif // PLASMA_NM_PORTAL_MONITOR_H

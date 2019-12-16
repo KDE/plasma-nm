@@ -40,26 +40,49 @@ PortalMonitor::PortalMonitor(QObject *parent)
 
 PortalMonitor::~PortalMonitor()
 {
+    if (m_notification) {
+        m_notification->close();
+    }
 }
 
 void PortalMonitor::connectivityChanged(NetworkManager::Connectivity connectivity)
 {
     if (connectivity == NetworkManager::Portal) {
+        bool updateOnly = true;
         NetworkManager::ActiveConnection::Ptr primaryConnection = NetworkManager::primaryConnection();
-        KNotification *notification = new KNotification(QStringLiteral("CaptivePortal"), KNotification::Persistent, this);
-        notification->setActions(QStringList{i18n("Log in")});
-        notification->setComponentName(QStringLiteral("networkmanagement"));
-        if (primaryConnection) {
-            notification->setTitle(primaryConnection->id());
-        } else {
-            notification->setTitle(i18n("Network authentication"));
+
+        if (!m_notification) {
+            updateOnly = false;
+            m_notification = new KNotification(QStringLiteral("CaptivePortal"), KNotification::Persistent, this);
+            m_notification->setActions(QStringList{i18n("Log in")});
+            m_notification->setComponentName(QStringLiteral("networkmanagement"));
+            m_notification->setText(i18n("You need to log in to this network"));
+
+            connect(m_notification, &KNotification::action1Activated, this, [this] () {
+                QDesktopServices::openUrl(QUrl("http://networkcheck.kde.org"));
+            });
+            connect(m_notification, &KNotification::closed, this, [this] () {
+                m_notification = nullptr;
+            });
         }
-        notification->setText(i18n("You need to log in to this network"));
-        notification->sendEvent();
-        connect(notification, &KNotification::action1Activated, this, [notification] () {
-            QDesktopServices::openUrl(QUrl("http://networkcheck.kde.org"));
-            notification->close();
-        });
+
+        if (primaryConnection) {
+            m_notification->setTitle(primaryConnection->id());
+        } else {
+            m_notification->setTitle(i18n("Network authentication"));
+        }
+
+        if (updateOnly) {
+            m_notification->update();
+        } else {
+            m_notification->sendEvent();
+        }
+
+    } else {
+        if (m_notification) {
+            m_notification->close();
+        }
+        m_notification = nullptr;
     }
 }
 

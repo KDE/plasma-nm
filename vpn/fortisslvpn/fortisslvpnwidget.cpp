@@ -50,6 +50,7 @@ FortisslvpnWidget::FortisslvpnWidget(const NetworkManager::VpnSetting::Ptr &sett
     d->ui.setupUi(this);
 
     d->ui.password->setPasswordOptionsEnabled(true);
+    d->ui.password->setPasswordNotRequiredEnabled(true);
 
     // Connect for setting check
     watchChangedSetting();
@@ -109,8 +110,10 @@ void FortisslvpnWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         d->ui.password->setPasswordOption(PasswordField::StoreForAllUsers);
     } else if (passwordFlag == NetworkManager::Setting::AgentOwned) {
         d->ui.password->setPasswordOption(PasswordField::StoreForUser);
-    } else {
+    } else if (passwordFlag == NetworkManager::Setting::NotSaved) {
         d->ui.password->setPasswordOption(PasswordField::AlwaysAsk);
+    } else {
+        d->ui.password->setPasswordOption(PasswordField::NotRequired);
     }
 
     const QString caCert = data.value(NM_FORTISSLVPN_KEY_CA);
@@ -188,8 +191,10 @@ QVariantMap FortisslvpnWidget::setting() const
         data.insert(NM_FORTISSLVPN_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::None));
     } else if (d->ui.password->passwordOption() == PasswordField::StoreForUser) {
         data.insert(NM_FORTISSLVPN_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
-    } else {
+    } else if (d->ui.password->passwordOption() == PasswordField::AlwaysAsk) {
         data.insert(NM_FORTISSLVPN_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
+    } else {
+        data.insert(NM_FORTISSLVPN_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotRequired));
     }
 
     if (!d->ui.caCert->url().isEmpty()) {
@@ -211,6 +216,8 @@ QVariantMap FortisslvpnWidget::setting() const
 
     if (d->advUi.otp->isChecked()) {
         data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP"-flags"), QString::number(NetworkManager::Setting::NotSaved));
+    } else {
+        data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP"-flags"), QString::number(NetworkManager::Setting::None));
     }
 
     if (!d->advUi.realm->text().isEmpty()) {

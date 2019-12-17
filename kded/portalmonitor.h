@@ -26,6 +26,7 @@
 
 #include <KNotification>
 #include <QObject>
+#include <QPointer>
 
 class PortalMonitor : public QObject
 {
@@ -39,7 +40,7 @@ private Q_SLOTS:
     void checkConnectivity();
 
 private:
-    KNotification *m_notification = nullptr;
+    QPointer<KNotification> m_notification;
 };
 
 #endif // PLASMA_NM_PORTAL_MONITOR_H

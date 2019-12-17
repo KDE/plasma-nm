@@ -61,9 +61,6 @@ void PortalMonitor::connectivityChanged(NetworkManager::Connectivity connectivit
             connect(m_notification, &KNotification::action1Activated, this, [this] () {
                 QDesktopServices::openUrl(QUrl("http://networkcheck.kde.org"));
             });
-            connect(m_notification, &KNotification::closed, this, [this] () {
-                m_notification = nullptr;
-            });
         }
 
         if (primaryConnection) {
@@ -82,7 +79,6 @@ void PortalMonitor::connectivityChanged(NetworkManager::Connectivity connectivit
         if (m_notification) {
             m_notification->close();
         }
-        m_notification = nullptr;
     }
 }
 

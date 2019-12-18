@@ -30,8 +30,9 @@ install(TARGETS kcm_networkmanagement  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 install( FILES kcm_networkmanagement.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 install( FILES
+    qml/AddConnectionDialog.qml
+    qml/ConfigurationDialog.qml
     qml/ConnectionItem.qml
-    qml/Dialog.qml
     qml/Header.qml
     qml/ListItem.qml
     qml/main.qml

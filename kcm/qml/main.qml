@@ -78,8 +78,8 @@ Item {
         Component.onCompleted: background.visible = true // show frame
 
         anchors {
-            bottom: buttonRow.top
-            bottomMargin: Math.round(units.gridUnit / 3)
+            bottom: rightButtonRow.top
+            bottomMargin: units.smallSpacing
             left: parent.left
             right: parent.right
             top: searchField.bottom
@@ -131,23 +131,22 @@ Item {
     }
 
     Row {
-        id: buttonRow
+        id: rightButtonRow
 
         anchors {
             bottom: parent.bottom
             right: parent.right
-            margins: Math.round(units.gridUnit / 3)
+            margins: units.smallSpacing
         }
-        spacing: Math.round(units.gridUnit / 2)
+        spacing: units.smallSpacing
 
         QQC2.ToolButton {
             id: addConnectionButton
 
             icon.name: "list-add"
 
-            QQC2.ToolTip {
-                text: i18n("Add new connection")
-            }
+            QQC2.ToolTip.text: i18n("Add new connection")
+            QQC2.ToolTip.visible: hovered
 
             onClicked: {
                 addNewConnectionDialog.open()
@@ -160,9 +159,8 @@ Item {
             enabled: connectionView.currentConnectionPath && connectionView.currentConnectionPath.length
             icon.name: "list-remove"
 
-            QQC2.ToolTip {
-                text: i18n("Remove selected connection")
-            }
+            QQC2.ToolTip.text: i18n("Remove selected connection")
+            QQC2.ToolTip.visible: hovered
 
             onClicked: {
                 deleteConfirmationDialog.connectionName = connectionView.currentConnectionName
@@ -177,12 +175,35 @@ Item {
             enabled: connectionView.currentConnectionExportable
             icon.name: "document-export"
 
-            QQC2.ToolTip {
-                text: i18n("Export selected connection")
-            }
+            QQC2.ToolTip.text: i18n("Export selected connection")
+            QQC2.ToolTip.visible: hovered
 
             onClicked: {
                 root.requestExportConnection(connectionView.currentConnectionPath)
+            }
+        }
+    }
+
+    Row {
+        id: leftButtonRow
+
+        anchors {
+            bottom: parent.bottom
+            left: parent.left
+            margins: units.smallSpacing
+        }
+        spacing: units.smallSpacing
+
+        QQC2.ToolButton {
+            id: configureButton
+
+            icon.name: "configure"
+
+            QQC2.ToolTip.text: i18n("Configuration")
+            QQC2.ToolTip.visible: hovered
+
+            onClicked: {
+                configurationDialog.open()
             }
         }
     }
@@ -207,12 +228,16 @@ Item {
         }
     }
 
-    Dialog {
+    AddConnectionDialog {
         id: addNewConnectionDialog
 
         onRequestCreateConnection: {
             root.requestCreateConnection(type, vpnType, specificType, shared)
         }
+    }
+
+    ConfigurationDialog {
+        id: configurationDialog
     }
 
     function deselectConnections() {

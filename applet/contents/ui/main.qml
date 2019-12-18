@@ -47,9 +47,8 @@ Item {
 
     function action_openKCM() {
         KCMShell.open(kcm)
-
-
     }
+
     function action_showPortal() {
         Qt.openUrlExternally("http://networkcheck.kde.org")
     }
@@ -58,6 +57,7 @@ Item {
         if (kcmAuthorized) {
             plasmoid.setAction("openKCM", i18n("&Configure Network Connections..."), "preferences-system-network");
         }
+        plasmoid.removeAction("configure");
         plasmoid.setAction("showPortal", i18n("Open Network Login Page..."), "internet-services");
 
         var action = plasmoid.action("showPortal");
@@ -83,11 +83,5 @@ Item {
         running: plasmoid.expanded && !connectionIconProvider.airplaneMode
 
         onTriggered: handler.requestScan()
-    }
-
-    PlasmaNM.Configuration {
-        id: configuration
-        unlockModemOnDetection: plasmoid.configuration.unlockModemOnDetection
-        manageVirtualConnections: plasmoid.configuration.manageVirtualConnections
     }
 }

@@ -229,7 +229,6 @@ void OpenconnectAuthWorkerThread::writeProgress(int level, const char *fmt, va_l
     if (*m_userDecidedToQuit) {
         return;
     }
-    QString msg;
-    msg.vsprintf(fmt, argPtr);
+    const QString msg = QString::vasprintf(fmt, argPtr);
     Q_EMIT updateLog(msg, level);
 }

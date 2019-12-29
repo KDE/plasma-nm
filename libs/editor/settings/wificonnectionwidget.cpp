@@ -24,6 +24,7 @@
 
 #include <NetworkManagerQt/Utils>
 #include <KLocalizedString>
+#include <QRandomGenerator>
 
 #include "uiutils.h"
 
@@ -31,8 +32,6 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
     SettingWidget(setting, parent, f),
     m_ui(new Ui::WifiConnectionWidget)
 {
-    qsrand(QTime::currentTime().msec());
-
     m_ui->setupUi(this);
 
     connect(m_ui->btnRandomMacAddr, &QPushButton::clicked, this, &WifiConnectionWidget::generateRandomClonedMac);
@@ -125,9 +124,10 @@ QVariantMap WifiConnectionWidget::setting() const
 void WifiConnectionWidget::generateRandomClonedMac()
 {
     QByteArray mac;
+    auto *generator = QRandomGenerator::global();
     mac.resize(6);
     for (int i = 0; i < 6; i++) {
-        int random = qrand() % 255;
+        const int random = generator->bounded(255);
         mac[i] = random;
     }
 

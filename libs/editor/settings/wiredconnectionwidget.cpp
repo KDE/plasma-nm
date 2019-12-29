@@ -25,12 +25,12 @@
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/WiredSetting>
 
+#include <QRandomGenerator>
+
 WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
     SettingWidget(setting, parent, f),
     m_widget(new Ui::WiredConnectionWidget)
 {
-    qsrand(QTime::currentTime().msec());
-
     m_widget->setupUi(this);
 
     connect(m_widget->btnRandomMacAddr, &QPushButton::clicked, this, &WiredConnectionWidget::generateRandomClonedMac);
@@ -150,10 +150,11 @@ QVariantMap WiredConnectionWidget::setting() const
 
 void WiredConnectionWidget::generateRandomClonedMac()
 {
+    auto *generator = QRandomGenerator::global();
     QByteArray mac;
     mac.resize(6);
     for (int i = 0; i < 6; i++) {
-        int random = qrand() % 255;
+        const int random = generator->bounded(255);
         mac[i] = random;
     }
 

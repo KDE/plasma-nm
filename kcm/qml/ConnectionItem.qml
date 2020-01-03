@@ -19,8 +19,8 @@
 */
 
 import QtQuick 2.1
+import QtQuick.Controls 1.4 as QQC
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
-import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
@@ -105,14 +105,13 @@ ListItem {
         }
     }
 
-    PlasmaComponents.Menu {
+    QQC.Menu {
         id: connectionItemMenu
-        visualParent: mouseArea
 
-        PlasmaComponents.MenuItem {
+        QQC.MenuItem {
             text: ConnectionState == PlasmaNM.Enums.Deactivated ? i18n("Connect") : i18n("Disconnect")
             visible: ItemType == 1
-            onClicked: {
+            onTriggered: {
                 if (ConnectionState == PlasmaNM.Enums.Deactivated) {
                     handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
                 } else {
@@ -121,21 +120,21 @@ ListItem {
             }
         }
 
-        PlasmaComponents.MenuItem {
-            icon: "list-remove"
+        QQC.MenuItem {
+            iconName: "list-remove"
             text: i18n("Delete");
 
-            onClicked: {
+            onTriggered: {
                 aboutToRemoveConnection(Name, ConnectionPath)
             }
         }
 
-        PlasmaComponents.MenuItem {
-            icon: "document-export"
+        QQC.MenuItem {
+            iconName: "document-export"
             visible: KcmVpnConnectionExportable
             text: i18n("Export");
 
-            onClicked: aboutToExportConnection(ConnectionPath)
+            onTriggered: aboutToExportConnection(ConnectionPath)
         }
     }
 
@@ -149,7 +148,7 @@ ListItem {
             if (mouse.button === Qt.LeftButton) {
                 aboutToChangeConnection(KcmVpnConnectionExportable, Name, ConnectionPath)
             } else if (mouse.button == Qt.RightButton) {
-                connectionItemMenu.open(mouse.x, mouse.y)
+                connectionItemMenu.popup()
             }
         }
     }

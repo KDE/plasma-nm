@@ -53,6 +53,9 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
     Q_D(NetworkManagementService);
 
     connect(this, &KDEDModule::moduleRegistered, this, &NetworkManagementService::slotRegistered);
+
+    d->agent = new SecretAgent(this);
+    connect(d->agent, &SecretAgent::secretsError, this, &NetworkManagementService::secretsError);
 }
 
 NetworkManagementService::~NetworkManagementService()
@@ -63,11 +66,6 @@ NetworkManagementService::~NetworkManagementService()
 void NetworkManagementService::init()
 {
     Q_D(NetworkManagementService);
-
-    if (!d->agent) {
-        d->agent = new SecretAgent(this);
-        connect(d->agent, &SecretAgent::secretsError, this, &NetworkManagementService::secretsError);
-    }
 
     if (!d->notification) {
         d->notification = new Notification(this);

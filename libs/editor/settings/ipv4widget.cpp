@@ -438,18 +438,18 @@ void IPv4Widget::slotAdvancedDialog()
 
     layout->addRow(new QLabel(i18n("<qt>You can find more information about these values here:<br/><a href='https://developer.gnome.org/NetworkManager/stable/nm-settings.html'>https://developer.gnome.org/NetworkManager/stable/nm-settings.html</a></qt>")));
 
-    auto sendHostname = new QCheckBox;
+    auto sendHostname = new QCheckBox(dlg);
     sendHostname->setChecked(m_tmpIpv4Setting.dhcpSendHostname());
     layout->addRow(i18n("Send hostname:"), sendHostname);
 
-    auto dhcpHostname = new QLineEdit;
+    auto dhcpHostname = new QLineEdit(dlg);
     dhcpHostname->setText(m_tmpIpv4Setting.dhcpHostname());
     dhcpHostname->setPlaceholderText(QHostInfo::localHostName());
     layout->addRow(i18n("DHCP hostname:"), dhcpHostname);
 
     connect(sendHostname, &QCheckBox::toggled, dhcpHostname, &QLineEdit::setEnabled);
 
-    auto dadTimeout = new QSpinBox;
+    auto dadTimeout = new QSpinBox(dlg);
     dadTimeout->setSpecialValueText(i18n("Default"));
     dadTimeout->setSuffix(i18nc("Milliseconds", " ms"));
     dadTimeout->setMinimum(-1);
@@ -462,7 +462,7 @@ void IPv4Widget::slotAdvancedDialog()
     layout->addWidget(box);
 
     connect(dlg, &QDialog::accepted, this,
-            [&] () {
+            [=] () {
                 m_tmpIpv4Setting.setDhcpSendHostname(sendHostname->isChecked());
                 m_tmpIpv4Setting.setDhcpHostname(dhcpHostname->text());
                 m_tmpIpv4Setting.setDadTimeout(dadTimeout->value());

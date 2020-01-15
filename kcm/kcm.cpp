@@ -77,6 +77,37 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     kdeclarative.setupEngine(m_ui->connectionView->engine());
     kdeclarative.setupContext();
 
+    // Check if we can use AP mode to identify security type
+    bool useApMode = false;
+    bool foundInactive = false;
+
+    NetworkManager::WirelessDevice::Ptr wifiDev;
+
+    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
+        if (device->type() == NetworkManager::Device::Wifi) {
+            wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
+            if (wifiDev) {
+                if (!wifiDev->isActive()) {
+                    foundInactive = true;
+                } else {
+                    // Prefer previous device if it was inactive
+                    if (foundInactive) {
+                        break;
+                    }
+                }
+
+                if (wifiDev->wirelessCapabilities().testFlag(NetworkManager::WirelessDevice::ApCap)) {
+                    useApMode = true;
+                }
+
+                // We prefer inactive wireless card with AP capabilities
+                if (foundInactive && useApMode) {
+                    break;
+                }
+            }
+        }
+    }
+
     m_ui->connectionView->setMinimumWidth(300);
     m_ui->connectionView->rootContext()->setContextProperty("alternateBaseColor", mainWidget->palette().color(QPalette::Active, QPalette::AlternateBase));
     m_ui->connectionView->rootContext()->setContextProperty("backgroundColor", mainWidget->palette().color(QPalette::Active, QPalette::Window));
@@ -84,6 +115,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     m_ui->connectionView->rootContext()->setContextProperty("highlightColor", mainWidget->palette().color(QPalette::Active, QPalette::Highlight));
     m_ui->connectionView->rootContext()->setContextProperty("textColor", mainWidget->palette().color(QPalette::Active, QPalette::Text));
     m_ui->connectionView->rootContext()->setContextProperty("connectionModified", false);
+    m_ui->connectionView->rootContext()->setContextProperty("useApMode", useApMode);
     m_ui->connectionView->setClearColor(Qt::transparent);
     m_ui->connectionView->setResizeMode(QQuickWidget::SizeRootObjectToView);
     m_ui->connectionView->setSource(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcm_networkmanagement/qml/main.qml"))));

@@ -49,18 +49,60 @@ Dialog {
             anchors.right: parent.right
             anchors.topMargin: units.gridUnit
 
+            Kirigami.Heading {
+                id: generalLabel
+                level: 2
+                text: i18n("General")
+            }
+
             QQC2.CheckBox {
                 id: unlockModem
                 text: i18n("Ask for PIN on modem detection")
-                onClicked: okButton.enabled = true
+                onClicked: configurationChanged()
                 Component.onCompleted: checked = configuration.unlockModemOnDetection
             }
 
             QQC2.CheckBox {
                 id: manageVirtualConnections
                 text: i18n("Show virtual connections")
-                onClicked: okButton.enabled = true
+                onClicked: configurationChanged()
                 Component.onCompleted: checked = configuration.manageVirtualConnections
+            }
+
+            Kirigami.Heading {
+                id: hotspotLabel
+                level: 2
+                text: i18n("Hotspot")
+                Component.onCompleted: visible = handler.hotspotSupported
+            }
+
+            QQC2.TextField {
+                id: hotspotName
+                Kirigami.FormData.label: i18n("Hotspot name:")
+                onTextChanged: configurationChanged()
+                Component.onCompleted: {
+                    text = configuration.hotspotName
+                    visible = handler.hotspotSupported
+                }
+            }
+
+            QQC2.TextField {
+                id: hotspotPassword
+                Kirigami.FormData.label: i18n("Hotspot password:")
+                validator: RegExpValidator {
+                    regExp: if (useApMode) {
+                                /^$|^(?:.{8,64}){1}$/
+                            } else {
+                                /^$|^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26}){1}$/
+                            }
+                    }
+
+                onAcceptableInputChanged: configurationChanged()
+
+                Component.onCompleted: {
+                    text = configuration.hotspotPassword
+                    visible = handler.hotspotSupported
+                }
             }
         }
 
@@ -94,16 +136,28 @@ Dialog {
         }
     }
 
+    function configurationChanged() {
+        if (handler.hotspotSupported) {
+            okButton.enabled = hotspotPassword.acceptableInput && hotspotName.text
+        } else {
+            okButton.enabled = true
+        }
+    }
+
     onVisibleChanged: {
         if (visible) {
             unlockModem.checked = configuration.unlockModemOnDetection
             manageVirtualConnections.checked = configuration.manageVirtualConnections
+            hotspotName.text = configuration.hotspotName
+            hotspotPassword.text = configuration.hotspotPassword
         }
     }
 
     onAccepted: {
         configuration.unlockModemOnDetection = unlockModem.checked
         configuration.manageVirtualConnections = manageVirtualConnections.checked
+        configuration.hotspotName = hotspotName.text
+        configuration.hotspotPassword = hotspotPassword.text
     }
 }
 

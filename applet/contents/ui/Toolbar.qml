@@ -21,6 +21,7 @@
 import QtQuick 2.2
 import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kquickcontrolsaddons 2.0
@@ -58,6 +59,10 @@ GridLayout {
         onWwanHwEnabledChanged: {
             wwanSwitchButton.enabled = enabled && availableDevices.modemDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
         }
+    }
+
+    PlasmaNM.Configuration {
+        id: configuration
     }
 
     Row {
@@ -124,18 +129,78 @@ GridLayout {
     Row {
         Layout.column: 1
 
-        PlasmaComponents.ToolButton {
-            id: searchToggleButton
-            iconSource: "search"
-            tooltip: i18ndc("plasma-nm", "button tooltip", "Search the connections")
+
+        PlasmaComponents3.ToolButton {
+            id: hotspotButton
+
+            icon {
+                height: 16
+                width: 16
+                name: "network-wireless-on"
+            }
             checkable: true
+            text: i18n("Hotspot")
+            visible: handler.hotspotSupported
+
+            onClicked: {
+                if (configuration.hotspotConnectionPath) {
+                    checked = false
+                    handler.stopHotspot()
+                } else {
+                    checked = true
+                    handler.createHotspot()
+                }
+            }
+
+            PlasmaComponents3.ToolTip {
+                id: tooltip
+            }
+
+            Connections {
+                target: handler
+                onHotspotCreated: {
+                    hotspotButton.checked = true
+                    tooltip.text = i18n("Disable Hotspot")
+                }
+
+                onHotspotDisabled: {
+                    hotspotButton.checked = false
+                    tooltip.text = i18n("Create Hotspot")
+                }
+            }
+
+            Component.onCompleted: {
+                checked = configuration.hotspotConnectionPath
+                tooltip.text = configuration.hotspotConnectionPath ? i18n("Disable Hotspot") : i18n("Create Hotspot")
+            }
         }
 
-        PlasmaComponents.ToolButton {
+        PlasmaComponents3.ToolButton {
+            id: searchToggleButton
+            icon {
+                height: 16
+                width: 16
+                name: "search"
+            }
+            checkable: true
+
+            PlasmaComponents3.ToolTip {
+                text: i18ndc("plasma-nm", "button tooltip", "Search the connections")
+            }
+        }
+
+        PlasmaComponents3.ToolButton {
             id: openEditorButton
-            iconSource: "configure"
-            tooltip: i18n("Configure network connections...")
+            icon {
+                height: 16
+                width: 16
+                name: "configure"
+            }
             visible: mainWindow.kcmAuthorized
+
+            PlasmaComponents3.ToolTip {
+                text: i18n("Configure network connections...")
+            }
 
             onClicked: {
                 KCMShell.open(mainWindow.kcm)

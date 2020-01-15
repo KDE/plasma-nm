@@ -20,6 +20,7 @@
 
 #include "handler.h"
 #include "connectioneditordialog.h"
+#include "configuration.h"
 #include "uiutils.h"
 #include "debug.h"
 
@@ -83,6 +84,15 @@ Handler::Handler(QObject *parent)
                                             QStringLiteral(AGENT_IFACE),
                                             QStringLiteral("secretsError"),
                                             this, SLOT(secretAgentError(QString, QString)));
+
+    m_hotspotSupported = checkHotspotSupported();
+
+    if (NetworkManager::checkVersion(1, 16, 0)) {
+        connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionTypeChanged, [this] () {
+            m_hotspotSupported = checkHotspotSupported();
+            Q_EMIT hotspotSupportedChanged(m_hotspotSupported);
+        });
+    }
 }
 
 Handler::~Handler()
@@ -528,6 +538,110 @@ void Handler::requestScan(const QString &interface)
     }
 }
 
+void Handler::createHotspot()
+{
+    bool foundInactive = false;
+    bool useApMode = false;
+    NetworkManager::WirelessDevice::Ptr wifiDev;
+
+    NetworkManager::ConnectionSettings::Ptr connectionSettings;
+    connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(NetworkManager::ConnectionSettings::Wireless));
+
+    NetworkManager::WirelessSetting::Ptr wifiSetting = connectionSettings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+    wifiSetting->setMode(NetworkManager::WirelessSetting::Adhoc);
+    wifiSetting->setSsid(Configuration::hotspotName().toUtf8());
+
+    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
+        if (device->type() == NetworkManager::Device::Wifi) {
+            wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
+            if (wifiDev) {
+                if (!wifiDev->isActive()) {
+                    foundInactive = true;
+                } else {
+                    // Prefer previous device if it was inactive
+                    if (foundInactive) {
+                        break;
+                    }
+                }
+
+                if (wifiDev->wirelessCapabilities().testFlag(NetworkManager::WirelessDevice::ApCap)) {
+                    useApMode = true;
+                }
+
+                // We prefer inactive wireless card with AP capabilities
+                if (foundInactive && useApMode) {
+                    break;
+                }
+            }
+        }
+    }
+
+    if (!wifiDev) {
+        qCWarning(PLASMA_NM) << "Failed to create hotspot: missing wireless device";
+        return;
+    }
+
+    wifiSetting->setInitialized(true);
+    wifiSetting->setMode(useApMode ? NetworkManager::WirelessSetting::Ap :NetworkManager::WirelessSetting::Adhoc);
+
+    if (!Configuration::hotspotPassword().isEmpty()) {
+        NetworkManager::WirelessSecuritySetting::Ptr wifiSecurity = connectionSettings->setting(NetworkManager::Setting::WirelessSecurity).dynamicCast<NetworkManager::WirelessSecuritySetting>();
+        wifiSecurity->setInitialized(true);
+
+        if (useApMode) {
+            // Use WPA2
+            wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
+            wifiSecurity->setPsk(Configuration::hotspotPassword());
+            wifiSecurity->setPskFlags(NetworkManager::Setting::AgentOwned);
+        } else {
+            // Use WEP
+            wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
+            wifiSecurity->setWepKeyType(NetworkManager::WirelessSecuritySetting::Passphrase);
+            wifiSecurity->setWepTxKeyindex(0);
+            wifiSecurity->setWepKey0(Configuration::hotspotPassword());
+            wifiSecurity->setWepKeyFlags(NetworkManager::Setting::AgentOwned);
+            wifiSecurity->setAuthAlg(NetworkManager::WirelessSecuritySetting::Open);
+        }
+    }
+
+    NetworkManager::Ipv4Setting::Ptr ipv4Setting = connectionSettings->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
+    ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Shared);
+    ipv4Setting->setInitialized(true);
+
+    connectionSettings->setId(Configuration::hotspotName());
+    connectionSettings->setAutoconnect(false);
+    connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+
+    const QVariantMap options = { {QLatin1String("persist"), QLatin1String("volatile")} };
+
+    QDBusPendingReply<QDBusObjectPath, QDBusObjectPath, QVariantMap> reply = NetworkManager::addAndActivateConnection2(connectionSettings->toMap(), wifiDev->uni(), QString(), options);
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    watcher->setProperty("action", Handler::CreateHotspot);
+    watcher->setProperty("connection", Configuration::hotspotName());
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
+    connect(watcher, &QDBusPendingCallWatcher::finished, this, QOverload<QDBusPendingCallWatcher *>::of(&Handler::hotspotCreated));
+}
+
+void Handler::stopHotspot()
+{
+    const QString activeConnectionPath = Configuration::hotspotConnectionPath();
+
+    if (activeConnectionPath.isEmpty()) {
+        return;
+    }
+
+    NetworkManager::ActiveConnection::Ptr hotspot = NetworkManager::findActiveConnection(activeConnectionPath);
+
+    if (!hotspot) {
+        return;
+    }
+
+    NetworkManager::deactivateConnection(activeConnectionPath);
+    Configuration::setHotspotConnectionPath(QString());
+
+    Q_EMIT hotspotDisabled();
+}
+
 bool Handler::checkRequestScanRateLimit(const NetworkManager::WirelessDevice::Ptr &wifiDevice)
 {
     QDateTime now = QDateTime::currentDateTime();
@@ -545,6 +659,41 @@ bool Handler::checkRequestScanRateLimit(const NetworkManager::WirelessDevice::Pt
         return false;
     }
     return true;
+}
+
+bool Handler::checkHotspotSupported()
+{
+    if (NetworkManager::checkVersion(1, 16, 0)) {
+        bool unusedWifiFound = false;
+        bool wifiFound = false;
+
+        for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
+            if (device->type() == NetworkManager::Device::Wifi) {
+                wifiFound = true;
+
+                NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
+                if (wifiDev && !wifiDev->isActive()) {
+                    unusedWifiFound = true;
+                }
+            }
+        }
+
+
+        if (!wifiFound) {
+            return false;
+        }
+
+        if (unusedWifiFound) {
+            return true;
+        }
+
+        // Check if the primary connection which is used for internet connectivity is not using WiFi
+        if (NetworkManager::primaryConnectionType() != NetworkManager::ConnectionSettings::Wireless) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 void Handler::scheduleRequestScan(const QString &interface, int timeout)
@@ -633,6 +782,10 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
                 scanRequestFailed(interface);
                 break;
             }
+            case Handler::CreateHotspot:
+                notification = new KNotification("FailedToCreateHotspot", KNotification::CloseOnTimeout, this);
+                notification->setTitle(i18n("Failed to create hotspot %1", watcher->property("connection").toString()));
+                break;
             default:
                 break;
         }
@@ -676,6 +829,36 @@ void Handler::replyFinished(QDBusPendingCallWatcher * watcher)
     }
 
     watcher->deleteLater();
+}
+
+void Handler::hotspotCreated(QDBusPendingCallWatcher *watcher)
+{
+    QDBusPendingReply<QDBusObjectPath, QDBusObjectPath, QVariantMap> reply = *watcher;
+
+    if (!reply.isError() && reply.isValid()) {
+        const QString activeConnectionPath = reply.argumentAt(1).value<QDBusObjectPath>().path();
+
+        if (activeConnectionPath.isEmpty()) {
+            return;
+        }
+
+        Configuration::setHotspotConnectionPath(activeConnectionPath);
+
+        NetworkManager::ActiveConnection::Ptr hotspot = NetworkManager::findActiveConnection(activeConnectionPath);
+
+        if (!hotspot) {
+            return;
+        }
+
+        connect(hotspot.data(), &NetworkManager::ActiveConnection::stateChanged, [=] (NetworkManager::ActiveConnection::State state) {
+            if (state > NetworkManager::ActiveConnection::Activated) {
+                Configuration::setHotspotConnectionPath(QString());
+                Q_EMIT hotspotDisabled();
+            }
+        });
+
+        Q_EMIT hotspotCreated();
+    }
 }
 
 #if WITH_MODEMMANAGER_SUPPORT

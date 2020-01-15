@@ -838,3 +838,9 @@ Name[zh_TW]=偵測到強制入口
 Urgency=Low
 IconName=dialog-password
 Action=Popup
+
+[Event/FailedToCreateHotspot]
+Name=Failed to create hotspot
+Urgency=Low
+IconName=applications-internet
+Action=Popup

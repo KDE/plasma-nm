@@ -20,6 +20,7 @@
 
 #include "networkmodel.h"
 #include "networkmodelitem.h"
+#include "configuration.h"
 #include "debug.h"
 #include "uiutils.h"
 
@@ -446,6 +447,16 @@ void NetworkModel::addDevice(const NetworkManager::Device::Ptr &device)
 void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::WirelessDevice::Ptr &device)
 {
     initializeSignals(network);
+
+    // Avoid duplicating entries in the model
+    if (!Configuration::hotspotConnectionPath().isEmpty()) {
+        NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::findActiveConnection(Configuration::hotspotConnectionPath());
+
+        // If we are trying to add an AP which is the one created by our hotspot, then we can skip this and don't add it twice
+        if (activeConnection && activeConnection->specificObject() == network->referenceAccessPoint()->uni()) {
+            return;
+        }
+    }
 
     // BUG: 386342
     // When creating a new hidden wireless network and attempting to connect to it, NM then later reports that AccessPoint appeared, but

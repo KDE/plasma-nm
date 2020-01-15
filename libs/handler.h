@@ -45,11 +45,16 @@ public:
         DeactivateConnection,
         RemoveConnection,
         RequestScan,
-        UpdateConnection
+        UpdateConnection,
+        CreateHotspot,
     };
 
     explicit Handler(QObject* parent = nullptr);
     ~Handler() override;
+
+    Q_PROPERTY(bool hotspotSupported READ hotspotSupported NOTIFY hotspotSupportedChanged);
+public:
+    bool hotspotSupported() const { return m_hotspotSupported; };
 
 public Q_SLOTS:
     /**
@@ -116,17 +121,25 @@ public Q_SLOTS:
     void updateConnection(const NetworkManager::Connection::Ptr &connection, const NMVariantMapMap &map);
     void requestScan(const QString &interface = QString());
 
+    void createHotspot();
+    void stopHotspot();
+
 private Q_SLOTS:
     void initKdedModule();
     void secretAgentError(const QString &connectionPath, const QString &message);
     void replyFinished(QDBusPendingCallWatcher *watcher);
+    void hotspotCreated(QDBusPendingCallWatcher *watcher);
 #if WITH_MODEMMANAGER_SUPPORT
     void unlockRequiredChanged(MMModemLock modemLock);
 #endif
 
 Q_SIGNALS:
     void connectionActivationFailed(const QString &connectionPath, const QString &message);
+    void hotspotCreated();
+    void hotspotDisabled();
+    void hotspotSupportedChanged(bool hotspotSupported);
 private:
+    bool m_hotspotSupported;
     bool m_tmpWirelessEnabled;
     bool m_tmpWwanEnabled;
 #if WITH_MODEMMANAGER_SUPPORT
@@ -141,6 +154,7 @@ private:
     void enableBluetooth(bool enable);
     void scanRequestFailed(const QString &interface);
     bool checkRequestScanRateLimit(const NetworkManager::WirelessDevice::Ptr &wifiDevice);
+    bool checkHotspotSupported();
     void scheduleRequestScan(const QString &interface, int timeout);
 };
 

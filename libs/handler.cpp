@@ -85,6 +85,15 @@ Handler::Handler(QObject *parent)
                                             QStringLiteral("secretsError"),
                                             this, SLOT(secretAgentError(QString, QString)));
 
+
+    if (!Configuration::hotspotConnectionPath().isEmpty()) {
+        NetworkManager::ActiveConnection::Ptr hotspot = NetworkManager::findActiveConnection(Configuration::hotspotConnectionPath());
+        if (!hotspot) {
+            Configuration::setHotspotConnectionPath(QString());
+            Q_EMIT hotspotDisabled();
+        }
+    }
+
     m_hotspotSupported = checkHotspotSupported();
 
     if (NetworkManager::checkVersion(1, 16, 0)) {

@@ -53,8 +53,6 @@ public:
     static QString hotspotPassword();
     static void setHotspotPassword(const QString &password);
 
-    static bool hotspotCreated();
-
     static QString hotspotConnectionPath();
     static void setHotspotConnectionPath(const QString &path);
 

@@ -27,7 +27,6 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 FocusScope {
     id: full
-    property var notificationInhibitorLock: undefined
 
     PlasmaNM.AvailableDevices {
         id: availableDevices
@@ -81,33 +80,14 @@ FocusScope {
         target: plasmoid
         onExpandedChanged: {
             connectionView.currentVisibleButtonIndex = -1;
-            if (expanded) {
-                var service = notificationsEngine.serviceForSource("notifications");
-                var operation = service.operationDescription("inhibit");
-                operation.hint = "x-kde-appname";
-                operation.value = "networkmanagement";
-                var job = service.startOperationCall(operation);
-                job.finished.connect(function(job) {
-                    if (expanded) {
-                        notificationInhibitorLock =  job.result;
-                    }
-                });
-                handler.requestScan()
-            } else {
-                notificationInhibitorLock = undefined;
-                toolbar.closeSearch()
-            }
 
             if (expanded) {
+                handler.requestScan();
                 full.connectionModel = networkModelComponent.createObject(full)
             } else {
                 full.connectionModel.destroy()
+                toolbar.closeSearch();
             }
         }
-    }
-
-    PlasmaCore.DataSource {
-        id: notificationsEngine
-        engine: "notifications"
     }
 }

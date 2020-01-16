@@ -134,8 +134,8 @@ GridLayout {
             id: hotspotButton
 
             icon {
-                height: 16
-                width: 16
+                height: units.iconSizes.small
+                width: units.iconSizes.small
                 name: "network-wireless-on"
             }
             checkable: true
@@ -178,8 +178,8 @@ GridLayout {
         PlasmaComponents3.ToolButton {
             id: searchToggleButton
             icon {
-                height: 16
-                width: 16
+                height: units.iconSizes.small
+                width: units.iconSizes.small
                 name: "search"
             }
             checkable: true
@@ -192,8 +192,8 @@ GridLayout {
         PlasmaComponents3.ToolButton {
             id: openEditorButton
             icon {
-                height: 16
-                width: 16
+                height: units.iconSizes.small
+                width: units.iconSizes.small
                 name: "configure"
             }
             visible: mainWindow.kcmAuthorized

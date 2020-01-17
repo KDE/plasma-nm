@@ -841,6 +841,17 @@ Action=Popup
 
 [Event/FailedToCreateHotspot]
 Name=Failed to create hotspot
+Name[ca]=Ha fallat en crear el punt d'accés
+Name[es]=No se ha podido crear el punto de acceso
+Name[et]=Pääsupunkti loomine nurjus
+Name[lt]=Nepavyko sukurti viešosios prieigos taško
+Name[pt]=Não foi possível criar o ponto de acesso
+Name[pt_BR]=Falha ao criar o ponto de acesso
+Name[ru]=Не удалось создать точку доступа
+Name[sv]=Misslyckade skapa accesspunkt
+Name[uk]=Не вдалося створити хот-спот 
+Name[x-test]=xxFailed to create hotspotxx
+Name[zh_TW]=無法建立熱點
 Urgency=Low
 IconName=applications-internet
 Action=Popup

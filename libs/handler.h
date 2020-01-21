@@ -129,6 +129,7 @@ private Q_SLOTS:
     void secretAgentError(const QString &connectionPath, const QString &message);
     void replyFinished(QDBusPendingCallWatcher *watcher);
     void hotspotCreated(QDBusPendingCallWatcher *watcher);
+    void primaryConnectionTypeChanged(NetworkManager::ConnectionSettings::ConnectionType type);
 #if WITH_MODEMMANAGER_SUPPORT
     void unlockRequiredChanged(MMModemLock modemLock);
 #endif

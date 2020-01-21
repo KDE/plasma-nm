@@ -90,17 +90,13 @@ Handler::Handler(QObject *parent)
         NetworkManager::ActiveConnection::Ptr hotspot = NetworkManager::findActiveConnection(Configuration::hotspotConnectionPath());
         if (!hotspot) {
             Configuration::setHotspotConnectionPath(QString());
-            Q_EMIT hotspotDisabled();
         }
     }
 
     m_hotspotSupported = checkHotspotSupported();
 
     if (NetworkManager::checkVersion(1, 16, 0)) {
-        connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionTypeChanged, [this] () {
-            m_hotspotSupported = checkHotspotSupported();
-            Q_EMIT hotspotSupportedChanged(m_hotspotSupported);
-        });
+        connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionTypeChanged, this, &Handler::primaryConnectionTypeChanged);
     }
 }
 
@@ -868,6 +864,13 @@ void Handler::hotspotCreated(QDBusPendingCallWatcher *watcher)
 
         Q_EMIT hotspotCreated();
     }
+}
+
+void Handler::primaryConnectionTypeChanged(NetworkManager::ConnectionSettings::ConnectionType type)
+{
+    Q_UNUSED(type)
+    m_hotspotSupported = checkHotspotSupported();
+    Q_EMIT hotspotSupportedChanged(m_hotspotSupported);
 }
 
 #if WITH_MODEMMANAGER_SUPPORT

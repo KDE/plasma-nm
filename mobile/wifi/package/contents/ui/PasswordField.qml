@@ -19,10 +19,10 @@
 */
 
 import QtQuick 2.6
+import org.kde.kirigami 2.10 as Kirigami
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-import QtQuick.Controls 2.2 as Controls
 
-Controls.TextField {
+Kirigami.PasswordField {
     property int securityType
     echoMode: TextInput.Password
     placeholderText: i18n("Password...")

@@ -39,7 +39,7 @@ Item {
         id: background
         anchors.fill: parent
         focus: true
-        color: baseColor
+        color: theme.backgroundColor
     }
 
     PlasmaNM.Handler {
@@ -79,7 +79,7 @@ Item {
     QQC2.ScrollView {
         id: scrollView
 
-        Component.onCompleted: background.visible = true // show frame
+        Component.onCompleted: scrollView.background.visible = true // show frame
 
         anchors {
             bottom: rightButtonRow.top
@@ -96,7 +96,6 @@ Item {
             property string currentConnectionName
             property string currentConnectionPath
 
-            anchors.fill: parent
             clip: true
             focus: true
             activeFocusOnTab: true

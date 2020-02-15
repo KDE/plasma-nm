@@ -24,7 +24,6 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 Kirigami.PasswordField {
     property int securityType
-    echoMode: TextInput.Password
     placeholderText: i18n("Password...")
     validator: RegExpValidator {
                     regExp: if (securityType == PlasmaNM.Enums.StaticWep) {

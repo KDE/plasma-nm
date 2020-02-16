@@ -53,7 +53,11 @@ SshSettingWidget::SshSettingWidget(const NetworkManager::VpnSetting::Ptr &settin
 
     d->ui.le_password->setPasswordOptionsEnabled(true);
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(d->ui.cmb_authType, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &SshSettingWidget::authTypeChanged);
+#else
+    connect(d->ui.cmb_authType, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, &SshSettingWidget::authTypeChanged);
+#endif
     connect(d->ui.btn_advancedOption, &QPushButton::clicked, this, &SshSettingWidget::doAdvancedDialog);
 
     d->advancedDlg = new QDialog(this);

@@ -122,7 +122,11 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
         d->cancelPipes[1] = -1;
     }
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(d->ui.cmbLogLevel, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::logLevelChanged);
+#else
+    connect(d->ui.cmbLogLevel, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::logLevelChanged);
+#endif
     connect(d->ui.viewServerLog, &QCheckBox::toggled, this, &OpenconnectAuthWidget::viewServerLogToggled);
     connect(d->ui.btnConnect, &QPushButton::clicked, this, &OpenconnectAuthWidget::connectHost);
 
@@ -151,7 +155,11 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
 #endif
 
     // This might be set by readSecrets() so don't connect it until now
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(d->ui.cmbHosts, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::connectHost);
+#else
+    connect(d->ui.cmbHosts, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::connectHost);
+#endif
 
     KAcceleratorManager::manage(this);
 }
@@ -568,7 +576,11 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
 #else
             if (sopt == AUTHGROUP_OPT(form)) {
 #endif
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
                 connect(cmb, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::formGroupChanged);
+#else
+                connect(cmb, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::formGroupChanged);
+#endif
             }
             widget = qobject_cast<QWidget*>(cmb);
         }

@@ -65,7 +65,11 @@ PasswordField::PasswordField(QWidget *parent, Qt::WindowFlags f)
         m_currentPasswordOption = StoreForAllUsers;
     }
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_passwordOptionsMenu, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &PasswordField::changePasswordOption);
+#else
+    connect(m_passwordOptionsMenu, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, &PasswordField::changePasswordOption);
+#endif
 
     // Disable by default
     m_passwordOptionsMenu->setVisible(false);

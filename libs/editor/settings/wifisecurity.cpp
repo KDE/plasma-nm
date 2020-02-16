@@ -49,8 +49,16 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
         m_ui->securityCombo->removeItem(7);
     }
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->securityCombo, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::securityChanged);
+#else
+    connect(m_ui->securityCombo, QOverload<int, const QString &>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::securityChanged);
+#endif
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->wepIndex, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::setWepKey);
+#else
+    connect(m_ui->wepIndex, QOverload<int, const QString &>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::setWepKey);
+#endif
 
     // Connect for setting check
     watchChangedSetting();
@@ -63,8 +71,16 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
     connect(m_ui->leapPassword, &PasswordField::passwordOptionChanged, this, &WifiSecurity::slotWidgetChanged);
     connect(m_ui->psk, &PasswordField::textChanged, this, &WifiSecurity::slotWidgetChanged);
     connect(m_ui->psk, &PasswordField::passwordOptionChanged, this, &WifiSecurity::slotWidgetChanged);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->wepIndex, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
+#else
+    connect(m_ui->wepIndex, QOverload<int, const QString &>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
+#endif
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->securityCombo, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
+#else
+    connect(m_ui->securityCombo, QOverload<int, const QString &>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
+#endif
     connect(m_8021xWidget, &Security8021x::validChanged, this, &WifiSecurity::slotWidgetChanged);
     connect(m_WPA2Widget, &Security8021x::validChanged, this, &WifiSecurity::slotWidgetChanged);
 

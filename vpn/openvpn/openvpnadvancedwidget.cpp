@@ -72,9 +72,21 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     m_ui->proxyPassword->setPasswordOptionsEnabled(true);
     m_ui->proxyPassword->setPasswordNotRequiredEnabled(true);
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->cbCertCheck, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::certCheckTypeChanged);
+#else
+    connect(m_ui->cbCertCheck, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::certCheckTypeChanged);
+#endif
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->cmbProxyType, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyTypeChanged);
+#else
+    connect(m_ui->cmbProxyType, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyTypeChanged);
+#endif
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->cboTLSMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this] (int index) {
+#else
+    connect(m_ui->cboTLSMode, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, [this] (int index) {
+#endif
         if (index == 0) {
             m_ui->kurlTlsAuthKey->setDisabled(true);
             m_ui->cboDirection->setDisabled(true);

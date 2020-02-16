@@ -77,7 +77,11 @@ BondWidget::BondWidget(const QString & masterUuid, const QString &masterId,
 
     connect(m_ui->ifaceName, &KLineEdit::textChanged, this, &BondWidget::slotWidgetChanged);
     connect(m_ui->arpTargets, &KLineEdit::textChanged, this, &BondWidget::slotWidgetChanged);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->linkMonitoring, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &BondWidget::slotWidgetChanged);
+#else
+    connect(m_ui->linkMonitoring, QOverload<int, const QString &>::of(&KComboBox::currentIndexChanged), this, &BondWidget::slotWidgetChanged);
+#endif
 
     // Connect for setting check
     watchChangedSetting();

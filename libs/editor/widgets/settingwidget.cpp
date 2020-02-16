@@ -70,7 +70,11 @@ void SettingWidget::watchChangedSetting()
     // Connect all QComboBox widgets
     QList<QComboBox *> comboboxes = findChildren<QComboBox *>();
     for (QComboBox *combobox : comboboxes) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         connect(combobox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &SettingWidget::settingChanged);
+#else
+        connect(combobox, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, &SettingWidget::settingChanged);
+#endif
         connect(combobox, &QComboBox::currentTextChanged, this, &SettingWidget::settingChanged);
     }
 

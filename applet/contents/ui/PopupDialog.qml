@@ -28,6 +28,8 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 FocusScope {
     id: full
 
+    property alias toolbarValues: toolbar
+
     PlasmaNM.AvailableDevices {
         id: availableDevices
     }
@@ -57,6 +59,45 @@ FocusScope {
             id: scrollView
             Layout.fillWidth: true
             Layout.fillHeight: true
+            frameVisible: false
+
+            PlasmaExtras.Heading {
+                id: disabledMessage
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                level: 3
+                visible: connectionView.count === 0 && text != ""
+                enabled: false
+                text: {
+                    if (toolbarValues.displayplaneModeMessage) {
+                        return i18n("Airplane mode is enabled")
+                    }
+                    if (toolbarValues.displayWifiMessage) {
+                        if (toolbarValues.displayWwanMessage) {
+                            return i18n("Wireless and mobile networks are deactivated")
+                        }
+                        return i18n("Wireless is deactivated")
+                    }
+                    if (toolbarValues.displayWwanMessage) {
+                        return i18n("Mobile network is deactivated")
+                    }
+                    return ""
+                }
+            }
+
+            PlasmaExtras.Heading {
+                id: message
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                level: 3
+                opacity: connectionView.count === 0 && !disabledMessage.visible ? 0.6 : 0
+                // Check connectionView.count again, to avoid a small delay.
+                visible: opacity >= 0.6 && connectionView.count === 0
+                Behavior on opacity { NumberAnimation { duration: 5000 } }
+                text: i18n("No available connections")
+            }
 
             ListView {
                 id: connectionView

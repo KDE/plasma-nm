@@ -29,6 +29,10 @@ import org.kde.kquickcontrolsaddons 2.0
 GridLayout {
     id: toolbar
 
+    readonly property var displayWifiMessage: !wifiSwitchButton.checked && wifiSwitchButton.visible
+    readonly property var displayWwanMessage: !wwanSwitchButton.checked && wwanSwitchButton.visible
+    readonly property var displayplaneModeMessage: planeModeSwitchButton.checked && planeModeSwitchButton.visible
+
     function closeSearch() {
         searchToggleButton.checked = false
     }

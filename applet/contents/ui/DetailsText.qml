@@ -22,10 +22,8 @@ import QtQuick 2.2
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
-Item {
+Column {
     property var details: []
-
-    height: repeater.contentHeight
 
     KQuickControlsAddons.Clipboard {
         id: clipboard
@@ -49,70 +47,59 @@ Item {
         }
     }
 
-    Column {
-        anchors.fill: parent
+    Repeater {
+        id: repeater
 
-        Repeater {
-            id: repeater
+        property int contentHeight: 0
+        property int longestString: 0
 
-            property int contentHeight: 0
-            property int longestString: 0
+        model: details.length / 2
 
-            model: details.length / 2
+        Item {
+            anchors {
+                left: parent.left
+                right: parent.right
+            }
+            height: Math.max(detailNameLabel.height, detailValueLabel.height)
 
-            Item {
+            PlasmaComponents.Label {
+                id: detailNameLabel
+
                 anchors {
                     left: parent.left
-                    right: parent.right
-                    topMargin: Math.round(units.gridUnit / 3)
+                    leftMargin: repeater.longestString - paintedWidth + Math.round(units.gridUnit / 2)
                 }
-                height: Math.max(detailNameLabel.height, detailValueLabel.height)
+                height: paintedHeight
+                font.pointSize: theme.smallestFont.pointSize
+                horizontalAlignment: Text.AlignRight
+                text: details[index*2] + ": "
 
-                PlasmaComponents.Label {
-                    id: detailNameLabel
-
-                    anchors {
-                        left: parent.left
-                        leftMargin: repeater.longestString - paintedWidth + Math.round(units.gridUnit / 2)
-                        verticalCenter: parent.verticalCenter
-                    }
-                    height: paintedHeight
-                    font.pointSize: theme.smallestFont.pointSize
-                    horizontalAlignment: Text.AlignRight
-                    text: details[index*2] + ": "
-
-                    Component.onCompleted: {
-                        if (paintedWidth > repeater.longestString) {
-                            repeater.longestString = paintedWidth
-                        }
-                    }
-                }
-
-                PlasmaComponents.Label {
-                    id: detailValueLabel
-
-                    anchors {
-                        left: detailNameLabel.right
-                        right: parent.right
-                        verticalCenter: parent.verticalCenter
-                    }
-                    height: paintedHeight
-                    elide: Text.ElideRight
-                    font.pointSize: theme.smallestFont.pointSize
-                    text: details[(index*2)+1]
-                    textFormat: Text.PlainText
-
-                    MouseArea {
-                        anchors.fill: parent
-                        acceptedButtons: Qt.RightButton
-                        onPressed: contextMenu.show(this, detailValueLabel.text, mouse.x, mouse.y)
+                Component.onCompleted: {
+                    if (paintedWidth > repeater.longestString) {
+                        repeater.longestString = paintedWidth
                     }
                 }
             }
 
-            // Count total height from added items, somehow contentRect.height doesn't work
-            onItemAdded: {
-                contentHeight = contentHeight + item.height
+            PlasmaComponents.Label {
+                id: detailValueLabel
+
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    leftMargin: repeater.longestString + Math.round(units.gridUnit / 2)
+                }
+                height: paintedHeight
+                elide: Text.ElideRight
+                font.pointSize: theme.smallestFont.pointSize
+                text: details[(index*2)+1]
+                textFormat: Text.PlainText
+
+                MouseArea {
+                    anchors.fill: parent
+                    acceptedButtons: Qt.RightButton
+                    onPressed: contextMenu.show(this, detailValueLabel.text, mouse.x, mouse.y)
+                }
             }
         }
     }

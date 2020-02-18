@@ -28,18 +28,22 @@ Item {
     property real txBytes: 0
     property alias interval: timer.interval
 
-    height: visible ? plotter.height + units.gridUnit : 0
+    height: visible ? plotter.height + plotter.anchors.topMargin + units.smallSpacing : 0
 
     Repeater {
-        model: 5
+        id: labels
+        model: 6
+        readonly property int labelHeight: theme.mSize(theme.smallestFont).height
 
         PlasmaComponents.Label {
             anchors {
-                left: parent.left
+                right: plotter.left
                 top: parent.top
-                topMargin: Math.round(units.gridUnit / 3) + (index * plotter.height / 5)
+                rightMargin: units.smallSpacing
+                topMargin: Math.round(index * plotter.height / 5)
             }
-            height: paintedHeight
+            // Workaround to get paintedHeight. (Undefined or paintedheight does not work.)
+            height: labels.labelHeight
             font.pointSize: theme.smallestFont.pointSize
             lineHeight: 1.75
             text: KCoreAddons.Format.formatByteSize(plotter.maxValue * (1 - index / 5)) + i18n("/s")
@@ -57,7 +61,8 @@ Item {
             leftMargin: units.gridUnit * 3
             right: parent.right
             top: parent.top
-            topMargin: units.gridUnit
+            // Align plotter lines with labels.
+            topMargin: Math.round(labels.labelHeight / 2)
         }
         width: units.gridUnit * 20
         height: units.gridUnit * 8

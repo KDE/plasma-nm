@@ -33,7 +33,7 @@ Item {
     signal clicked
 
     height: Math.max(switchButtonCheckbox.height, switchButtonIcon.height)
-    width: switchButtonCheckbox.width + switchButtonIcon.width + units.gridUnit
+    width: switchButtonCheckbox.width + switchButtonIcon.width + units.smallSpacing * 3
 
     PlasmaComponents.CheckBox {
         id: switchButtonCheckbox

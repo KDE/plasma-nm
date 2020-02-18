@@ -25,7 +25,6 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 PlasmaComponents.TextField {
     property int securityType
 
-    width: units.gridUnit * 15
     echoMode: TextInput.Password
     revealPasswordButtonShown: true
     placeholderText: i18n("Password...")

@@ -27,11 +27,13 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
-PlasmaComponents.ListItem {
+ListItem {
     id: connectionItem
 
     property bool activating: ConnectionState == PlasmaNM.Enums.Activating
-    property int  baseHeight: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(units.gridUnit / 2)
+    property bool deactivated: ConnectionState === PlasmaNM.Enums.Deactivated
+    property int  baseHeight: Uuid ? connectionNameLabel.implicitHeight + connectionStatusLabel.implicitHeight + units.smallSpacing * 2
+                                   : stateChangeButton.implicitHeight + units.smallSpacing * 2
     property bool expanded: visibleDetails || visiblePasswordDialog
     property bool passwordIsStatic: (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
                                      SecurityType == PlasmaNM.Enums.Wpa2Psk || SecurityType == PlasmaNM.Enums.SAE)
@@ -48,113 +50,126 @@ PlasmaComponents.ListItem {
     property real rxBytes: 0
     property real txBytes: 0
 
-    checked: connectionItem.containsMouse
-    enabled: true
-    height: expanded ? baseHeight + separator.height + expandableComponentLoader.height + (2 * Math.round(units.gridUnit / 3)) : baseHeight
+    height: expanded ? baseHeight + expandableComponentLoader.height + units.smallSpacing * (ConnectionState == PlasmaNM.Enums.Active ? 1 : Uuid ? 2  : 1)
+                     : baseHeight
+    highlightRect: Qt.rect(mainColumn.x, mainColumn.y, mainColumn.width, baseHeight)
 
     ColumnLayout {
+        id: mainColumn
         anchors.fill: parent
 
-        RowLayout {
+        MouseArea {
             Layout.fillWidth: true
-            spacing: Math.round(units.gridUnit / 2)
+            Layout.preferredHeight: mainRow.height
+            Layout.alignment: Qt.AlignTop
+            acceptedButtons: Qt.LeftButton | Qt.RightButton
+            hoverEnabled: true
 
-            PlasmaCore.SvgItem {
-                id: connectionSvgIcon
-                Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
-                Layout.preferredHeight: units.iconSizes.medium
-                Layout.preferredWidth: units.iconSizes.medium
-                elementId: ConnectionIcon
-                svg: PlasmaCore.Svg {
-                    multipleImages: true
-                    imagePath: "icons/network"
-                    colorGroup: PlasmaCore.ColorScope.colorGroup
-                }
+            onEntered: {
+                connectionView.currentVisibleButtonIndex = index
+                connectionItem.checked = true
             }
 
-            ColumnLayout {
-                Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
-                spacing: 0
+            onExited: {
+                connectionItem.checked = false
+            }
 
-                PlasmaComponents.Label {
-                    id: connectionNameLabel
-                    Layout.fillWidth: true
-                    height: paintedHeight
-                    elide: Text.ElideRight
-                    font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
-                    font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false
-                    text: ItemUniqueName
-                    textFormat: Text.PlainText
+            onPressed: {
+                if (mouse.button & Qt.LeftButton) {
+                    changeExpanded()
                 }
 
-                PlasmaComponents.Label {
-                    id: connectionStatusLabel
-                    Layout.fillWidth: true
-                    height: paintedHeight
-                    elide: Text.ElideRight
-                    font.pointSize: theme.smallestFont.pointSize
-                    opacity: 0.6
-                    text: itemText()
-                }
-            }
-
-            PlasmaComponents.BusyIndicator {
-                id: connectingIndicator
-                Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-                Layout.preferredHeight: units.iconSizes.medium
-                Layout.preferredWidth: units.iconSizes.medium
-                running: plasmoid.expanded && !stateChangeButton.visible && ConnectionState == PlasmaNM.Enums.Activating
-                visible: running
-                opacity: visible
-            }
-
-            PlasmaComponents.Button {
-                id: stateChangeButton
-                Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
-                opacity: connectionView.currentVisibleButtonIndex == index ? 1 : 0
-                visible: opacity != 0
-                text: (ConnectionState == PlasmaNM.Enums.Deactivated) ? i18n("Connect") : i18n("Disconnect")
-
-                Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
-
-                onClicked: changeState()
-            }
-
-            MouseArea {
-                acceptedButtons: Qt.RightButton
-                Layout.alignment: Qt.AlignTop | Qt.AlignLeft
-                width: parent.width
-                height: parent.height
-                onPressed: {
+                if (mouse.button & Qt.RightButton) {
                     contextMenu.visualParent = parent
                     contextMenu.prepare();
                     contextMenu.open(mouse.x, mouse.y)
                 }
             }
+
+            RowLayout {
+                id: mainRow
+                spacing: units.smallSpacing * 2
+                height: baseHeight
+                width: mainColumn.width
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    leftMargin:  units.smallSpacing
+                    // Identical margins around the button.
+                    rightMargin: Math.round((baseHeight - stateChangeButton.height) / 2)
+                }
+
+                PlasmaCore.SvgItem {
+                    id: connectionSvgIcon
+                    Layout.preferredHeight: Uuid ? units.iconSizes.medium : units.iconSizes.smallMedium
+                    Layout.preferredWidth: Layout.preferredHeight
+                    Layout.leftMargin: units.smallSpacing
+                    elementId: ConnectionIcon
+                    svg: PlasmaCore.Svg {
+                        multipleImages: true
+                        imagePath: "icons/network"
+                        colorGroup: PlasmaCore.ColorScope.colorGroup
+                    }
+                }
+
+                // ColumnLayout with fillWidth in children, creates bind loop for width.
+                Column {
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: connectionNameLabel.height + (connectionStatusLabel.visible ? connectionStatusLabel.height : 0)
+                    spacing: 0
+
+                    PlasmaComponents.Label {
+                        id: connectionNameLabel
+                        width: parent.width
+                        elide: Text.ElideRight
+                        height: undefined
+                        font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
+                        font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false
+                        text: ItemUniqueName
+                        textFormat: Text.PlainText
+                    }
+
+                    PlasmaComponents.Label {
+                        id: connectionStatusLabel
+                        width: parent.width
+                        elide: Text.ElideRight
+                        height: undefined
+                        font.pointSize: theme.smallestFont.pointSize
+                        opacity: 0.6
+                        text: itemText()
+                        visible: !!Uuid
+                    }
+                }
+
+                PlasmaComponents.BusyIndicator {
+                    id: connectingIndicator
+                    Layout.preferredHeight: units.iconSizes.medium
+                    Layout.preferredWidth: Layout.preferredHeight
+                    running: plasmoid.expanded && !stateChangeButton.visible && ConnectionState == PlasmaNM.Enums.Activating
+                    visible: running
+                    opacity: visible
+                }
+
+                PlasmaComponents.Button {
+                    id: stateChangeButton
+                    opacity: connectionView.currentVisibleButtonIndex == index ? 1 : 0
+                    visible: opacity != 0
+                    text: (ConnectionState == PlasmaNM.Enums.Deactivated) ? i18n("Connect") : i18n("Disconnect")
+
+                    Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
+
+                    onClicked: changeState()
+                }
+            }
         }
 
-        ColumnLayout {
-            Layout.fillHeight: true
-            PlasmaCore.SvgItem {
-                id: separator
-                height: lineSvg.elementSize("horizontal-line").height
-                Layout.fillWidth: true
-                Layout.maximumHeight: height
-                elementId: "horizontal-line"
-                svg: PlasmaCore.Svg { id: lineSvg; imagePath: "widgets/line" }
-                visible: connectionItem.expanded
-                opacity: visible
-            }
-
-            Loader {
-                id: expandableComponentLoader
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-                height: childrenRect.height
-            }
+        Loader {
+            id: expandableComponentLoader
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignBottom
+            Layout.bottomMargin: units.smallSpacing
         }
     }
-
 
     PlasmaComponents.Menu {
         id: contextMenu
@@ -207,8 +222,8 @@ PlasmaComponents.ListItem {
     Component {
         id: detailsComponent
 
-        Item {
-            height: childrenRect.height
+        Column {
+            spacing: units.smallSpacing
 
             PlasmaComponents.TabBar {
                 id: detailsTabBar
@@ -216,7 +231,6 @@ PlasmaComponents.ListItem {
                 anchors {
                     left: parent.left
                     right: parent.right
-                    top: parent.top
                 }
                 height: visible ? implicitHeight : 0
                 visible: showSpeed
@@ -241,10 +255,8 @@ PlasmaComponents.ListItem {
             DetailsText {
                 anchors {
                     left: parent.left
-                    leftMargin: units.iconSizes.medium
+                    leftMargin: units.iconSizes.smallMedium
                     right: parent.right
-                    top: detailsTabBar.visible ? detailsTabBar.bottom : parent.top
-                    topMargin: Math.round(units.gridUnit / 3)
                 }
                 details: ConnectionDetails
                 visible: detailsTabBar.currentTab == detailsTabButton
@@ -254,8 +266,6 @@ PlasmaComponents.ListItem {
                 anchors {
                     left: parent.left
                     right: parent.right
-                    top: detailsTabBar.visible ? detailsTabBar.bottom : parent.top
-                    topMargin: Math.round(units.gridUnit / 3)
                 }
                 rxBytes: RxBytes
                 txBytes: TxBytes
@@ -268,19 +278,15 @@ PlasmaComponents.ListItem {
     Component {
         id: passwordDialogComponent
 
-        Item {
+        ColumnLayout {
             property alias password: passwordField.text
             property alias passwordInput: passwordField
 
-            height: childrenRect.height
-
             PasswordField {
                 id: passwordField
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    top: parent.top
-                }
+                Layout.leftMargin: units.iconSizes.smallMedium + units.smallSpacing * 2
+                Layout.bottomMargin: units.smallSpacing
+                Layout.preferredWidth: units.gridUnit * 15
                 securityType: SecurityType
 
                 onAccepted: {
@@ -390,11 +396,8 @@ PlasmaComponents.ListItem {
                 return VpnState
             else
                 return DeviceState
-        } else if (ConnectionState == PlasmaNM.Enums.Deactivated) {
-            var result = LastUsed
-            if (SecurityType > PlasmaNM.Enums.NoneSecurity)
-                result += ", " + SecurityTypeString
-            return result
+        } else if (Uuid && ConnectionState == PlasmaNM.Enums.Deactivated) {
+            return LastUsed
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
             if (showSpeed) {
                 var downloadColor = theme.highlightColor
@@ -410,19 +413,10 @@ PlasmaComponents.ListItem {
                 return i18n("Connected")
             }
         }
+        return ""
     }
 
-    onShowSpeedChanged: {
-        connectionModel.setDeviceStatisticsRefreshRateMs(DevicePath, showSpeed ? 2000 : 0)
-    }
-
-    onActivatingChanged: {
-        if (ConnectionState == PlasmaNM.Enums.Activating) {
-            ListView.view.positionViewAtBeginning()
-        }
-    }
-
-    onClicked: {
+    function changeExpanded() {
         if (visiblePasswordDialog) {
             appletProxyModel.dynamicSortFilter = true
             visiblePasswordDialog = false
@@ -437,9 +431,33 @@ PlasmaComponents.ListItem {
         }
     }
 
+    onShowSpeedChanged: {
+        connectionModel.setDeviceStatisticsRefreshRateMs(DevicePath, showSpeed ? 2000 : 0)
+    }
+
+    onActivatingChanged: {
+        if (ConnectionState == PlasmaNM.Enums.Activating) {
+            ListView.view.positionViewAtBeginning()
+        }
+    }
+
     onContainsMouseChanged: {
         if (connectionItem.containsMouse) {
             connectionView.currentVisibleButtonIndex = index
         }
+    }
+
+    onDeactivatedChanged: {
+        /* Separator is part of section, which is visible only when available connections exist. Need to determine
+           if there is a connection in use, to show Separator. Otherwise need to hide it from the top of the list.
+           Connections in use are always on top, only need to check the first one. */
+        if (appletProxyModel.data(appletProxyModel.index(0, 0), PlasmaNM.NetworkModel.SectionRole) !== "Available connections") {
+            if (connectionView.showSeparator != true) {
+                connectionView.showSeparator = true
+            }
+            return
+        }
+        connectionView.showSeparator = false
+        return
     }
 }

@@ -26,8 +26,9 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kquickcontrolsaddons 2.0
 
-GridLayout {
+ColumnLayout {
     id: toolbar
+    spacing: units.smallSpacing
 
     readonly property var displayWifiMessage: !wifiSwitchButton.checked && wifiSwitchButton.visible
     readonly property var displayWwanMessage: !wwanSwitchButton.checked && wwanSwitchButton.visible
@@ -36,9 +37,6 @@ GridLayout {
     function closeSearch() {
         searchToggleButton.checked = false
     }
-
-    rows: 2
-    columns: 2
 
     PlasmaCore.Svg {
         id: lineSvg
@@ -69,8 +67,8 @@ GridLayout {
         id: configuration
     }
 
-    Row {
-        Layout.fillWidth: true
+    RowLayout {
+        spacing: units.smallSpacing
 
         SwitchButton {
             id: wifiSwitchButton
@@ -128,11 +126,10 @@ GridLayout {
                 initialized = true
             }
         }
-    }
 
-    Row {
-        Layout.column: 1
-
+        Item {
+            Layout.fillWidth: true
+        }
 
         PlasmaComponents3.ToolButton {
             id: hotspotButton
@@ -212,14 +209,21 @@ GridLayout {
         }
     }
 
-    PlasmaComponents.TextField {
+    PlasmaCore.SvgItem {
+        Layout.fillWidth: true
+        elementId: "horizontal-line"
+        Layout.leftMargin: - units.smallSpacing * 1.5
+        Layout.rightMargin: - units.smallSpacing * 1.5
+        svg: lineSvg
+    }
+
+   PlasmaComponents.TextField {
         id: searchTextField
 
-        Layout.row: 1
-        Layout.columnSpan: 2
         Layout.fillWidth: true
         Layout.leftMargin: units.smallSpacing
         Layout.rightMargin: units.smallSpacing
+        Layout.topMargin: units.smallSpacing
         Layout.bottomMargin: units.smallSpacing
 
         focus: true

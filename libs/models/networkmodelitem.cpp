@@ -327,10 +327,10 @@ QString NetworkModelItem::originalName() const
 
 QString NetworkModelItem::sectionType() const
 {
-    if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
-        return i18n("Active connections");
+    if (m_connectionState == NetworkManager::ActiveConnection::Deactivated) {
+        return "Available connections";
     }  else {
-        return i18n("Available connections");
+        return QString();
     }
 }
 
@@ -585,9 +585,7 @@ void NetworkModelItem::updateDetails() const
         if (m_mode == NetworkManager::WirelessSetting::Infrastructure) {
             m_details << i18n("Signal strength") << QStringLiteral("%1%").arg(m_signal);
         }
-        if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
-            m_details << i18n("Security type") << UiUtils::labelFromWirelessSecurity(m_securityType);
-        }
+        m_details << i18n("Security type") << UiUtils::labelFromWirelessSecurity(m_securityType);
         if (wirelessDevice) {
             if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
                 m_details << i18n("Connection speed") << UiUtils::connectionSpeed(wirelessDevice->bitRate());

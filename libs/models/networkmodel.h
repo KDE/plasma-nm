@@ -71,6 +71,7 @@ public:
         RxBytesRole,
         TxBytesRole
     };
+    Q_ENUMS(ItemRole)
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;

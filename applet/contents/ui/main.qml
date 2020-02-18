@@ -27,7 +27,6 @@ import QtQuick.Layouts 1.1
 Item {
     id: mainWindow
 
-    property bool showSections: true
     readonly property string kcm: "kcm_networkmanagement.desktop"
     readonly property bool kcmAuthorized: KCMShell.authorize(kcm).length == 1
 

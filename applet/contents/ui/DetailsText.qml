@@ -73,6 +73,7 @@ Column {
                 font.pointSize: theme.smallestFont.pointSize
                 horizontalAlignment: Text.AlignRight
                 text: details[index*2] + ": "
+                opacity: 0.6
 
                 Component.onCompleted: {
                     if (paintedWidth > repeater.longestString) {

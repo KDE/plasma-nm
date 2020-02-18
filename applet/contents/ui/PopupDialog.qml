@@ -102,16 +102,16 @@ FocusScope {
             ListView {
                 id: connectionView
 
-                property bool availableConnectionsVisible: false
                 property int currentVisibleButtonIndex: -1
+                property bool showSeparator: false
 
-                anchors.fill: parent
+                spacing: units.smallSpacing
                 clip: true
                 model: appletProxyModel
                 currentIndex: -1
                 boundsBehavior: Flickable.StopAtBounds
-                section.property: showSections ? "Section" : ""
-                section.delegate: Header { text: section }
+                section.property: showSeparator ? "Section" : ""
+                section.delegate: ListItem { separator: true }
                 delegate: ConnectionItem { }
             }
         }

@@ -32,17 +32,14 @@ Item {
 
     signal clicked
 
-    height: switchButtonIcon.height + units.gridUnit / 2
+    height: Math.max(switchButtonCheckbox.height, switchButtonIcon.height)
     width: switchButtonCheckbox.width + switchButtonIcon.width + units.gridUnit
 
     PlasmaComponents.CheckBox {
         id: switchButtonCheckbox
         anchors {
-            bottomMargin: Math.round(units.gridUnit / 3)
             left: parent.left
-            leftMargin: units.gridUnit / 2
-            topMargin: Math.round(units.gridUnit / 3)
-            verticalCenter: parent.verticalCenter
+            leftMargin: units.smallSpacing
         }
 
         onClicked: {
@@ -54,10 +51,11 @@ Item {
         id: switchButtonIcon
         anchors {
             left: switchButtonCheckbox.right
-            leftMargin: units.gridUnit / 2
-            top: switchButtonCheckbox.top
-            bottom: switchButtonCheckbox.bottom
+            // Checkbox bug adds internally a smallSpacing on the right. Doubling the effective spacing here.
+            leftMargin: units.smallSpacing
+            verticalCenter: parent.verticalCenter
         }
-        width: height
+        width: units.iconSizes.smallMedium
+        height: units.iconSizes.smallMedium
     }
 }

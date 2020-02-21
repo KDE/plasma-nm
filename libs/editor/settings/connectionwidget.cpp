@@ -29,6 +29,7 @@
 #include <QDialog>
 #include <QVBoxLayout>
 #include <QDialogButtonBox>
+#include <QDBusConnection>
 
 #include <KUser>
 #include <KAcceleratorManager>

@@ -36,6 +36,7 @@
 
 #include <QStringBuilder>
 #include <QDialog>
+#include <QDBusConnection>
 
 #include <KPluginFactory>
 #include <KWindowSystem>

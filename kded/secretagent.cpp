@@ -40,6 +40,7 @@
 #include <QDBusConnection>
 #include <QStringBuilder>
 #include <QDialog>
+#include <QDBusConnection>
 
 #include <KLocalizedString>
 #include <KPluginFactory>

@@ -22,9 +22,9 @@ import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.2 as Controls
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.10 as Kirigami
-import org.kde.kcm 1.1
+import org.kde.kcm 1.2
 
-SimpleKCM {
+ScrollViewKCM {
     id: main
 
     PlasmaNM.Handler {
@@ -62,10 +62,7 @@ SimpleKCM {
 
     header: Kirigami.InlineMessage {
         id: inlineError
-        Layout.fillWidth: true
         showCloseButton: true
-
-        visible: false
 
         type: Kirigami.MessageType.Warning
         Connections {
@@ -77,12 +74,10 @@ SimpleKCM {
         }
     }
 
-    ListView {
+    view: ListView {
         id: view
 
-        anchors.fill: parent
         clip: true
-        width: parent.width
         currentIndex: -1
         boundsBehavior: Flickable.StopAtBounds
 

@@ -186,10 +186,17 @@ void WireGuardPeerWidget::checkAllowedIpsValid()
     int pos = 0;
     QLineEdit *widget = d->ui.allowedIPsLineEdit;
     QString ipString = widget->displayText();
-    QStringList ipList = ipString.split(',');
+    QStringList rawIPList = ipString.split(',');
+    QStringList ipList;
 
     bool valid = QValidator::Acceptable == allowedIPsValidator.validate(ipString, pos);
     setBackground(widget, valid);
+
+    ipList.reserve(rawIPList.size());
+    for (const QString &ip : rawIPList) {
+        ipList.append(ip.trimmed());
+    }
+
     d->peerData[PNM_WG_PEER_KEY_ALLOWED_IPS] = ipList;
     if (valid != d->allowedIPsValid) {
         d->allowedIPsValid = valid;

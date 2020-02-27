@@ -33,9 +33,9 @@ PlasmaComponents.ListItem {
     property bool activating: ConnectionState == PlasmaNM.Enums.Activating
     property int  baseHeight: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(units.gridUnit / 2)
     property bool expanded: visibleDetails || visiblePasswordDialog
-    property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
-                                               (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
-                                                SecurityType == PlasmaNM.Enums.Wpa2Psk)
+    property bool passwordIsStatic: (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
+                                     SecurityType == PlasmaNM.Enums.Wpa2Psk || SecurityType == PlasmaNM.Enums.SAE)
+    property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless && passwordIsStatic
     property bool showSpeed: plasmoid.expanded &&
                              ConnectionState == PlasmaNM.Enums.Activated &&
                              (Type == PlasmaNM.Enums.Wired ||
@@ -164,8 +164,7 @@ PlasmaComponents.ListItem {
         function prepare() {
             showQRMenuItem.visible = false;
 
-            if (Uuid && Type === PlasmaNM.Enums.Wireless &&
-                    (SecurityType === PlasmaNM.Enums.StaticWep || SecurityType === PlasmaNM.Enums.WpaPsk || SecurityType === PlasmaNM.Enums.Wpa2Psk)) {
+            if (Uuid && Type === PlasmaNM.Enums.Wireless && passwordIsStatic) {
                 if (!showQRComponent) {
                     showQRComponent = Qt.createComponent("ShowQR.qml", this);
                     if (showQRComponent.status === Component.Error) {

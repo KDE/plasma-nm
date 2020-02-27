@@ -69,7 +69,8 @@ public:
         WpaPsk,
         WpaEap,
         Wpa2Psk,
-        Wpa2Eap
+        Wpa2Eap,
+        SAE
     };
 };
 

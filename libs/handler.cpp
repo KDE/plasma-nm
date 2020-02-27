@@ -194,6 +194,9 @@ QString Handler::wifiCode(const QString& connectionPath, const QString& ssid, in
             case NetworkManager::Wpa2Psk:
                 ret += "T:WPA;";
                 break;
+            case NetworkManager::SAE:
+                ret += "T:SAE;";
+                break;
             default:
             case NetworkManager::DynamicWep:
             case NetworkManager::WpaEap:
@@ -217,6 +220,7 @@ QString Handler::wifiCode(const QString& connectionPath, const QString& ssid, in
             break;
         case NetworkManager::WpaPsk:
         case NetworkManager::Wpa2Psk:
+        case NetworkManager::SAE:
             pass = secret["psk"].toString();
             break;
         default:

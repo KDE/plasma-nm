@@ -18,7 +18,7 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.2
+import QtQuick 2.4
 import org.kde.kcoreaddons 1.0 as KCoreAddons
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.plasma.components 2.0 as PlasmaComponents
@@ -58,13 +58,12 @@ Item {
         readonly property int maxValue: Math.max(Math.max.apply(null, downloadPlotData.values), Math.max.apply(null, uploadPlotData.values))
         anchors {
             left: parent.left
-            leftMargin: units.gridUnit * 3
+            leftMargin: speedMetrics.width + units.smallSpacing * 2
             right: parent.right
             top: parent.top
             // Align plotter lines with labels.
             topMargin: Math.round(labels.labelHeight / 2)
         }
-        width: units.gridUnit * 20
         height: units.gridUnit * 8
         horizontalGridLineCount: 5
 
@@ -99,5 +98,12 @@ Item {
                 plotter.addSample([rxSpeed, txSpeed]);
             }
         }
+    }
+
+    TextMetrics {
+        id: speedMetrics
+        font.pointSize: theme.smallestFont.pointSize
+        // Measure 888.8 KiB/s
+        text: KCoreAddons.Format.formatByteSize(910131) + i18n("/s")
     }
 }

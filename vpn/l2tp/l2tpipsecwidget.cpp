@@ -18,16 +18,16 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "l2tpadvancedwidget.h"
-#include "ui_l2tpadvanced.h"
+#include "l2tpipsecwidget.h"
+#include "ui_l2tpipsec.h"
 #include "nm-l2tp-service.h"
 
 #include <KLocalizedString>
 #include <KAcceleratorManager>
 
-L2tpAdvancedWidget::L2tpAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
+L2tpIpsecWidget::L2tpIpsecWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
     : QDialog(parent)
-    , m_ui(new Ui::L2tpAdvancedWidget)
+    , m_ui(new Ui::L2tpIpsecWidget)
 {
     m_ui->setupUi(this);
 
@@ -38,12 +38,12 @@ L2tpAdvancedWidget::L2tpAdvancedWidget(const NetworkManager::VpnSetting::Ptr &se
     loadConfig(setting);
 }
 
-L2tpAdvancedWidget::~L2tpAdvancedWidget()
+L2tpIpsecWidget::~L2tpIpsecWidget()
 {
     delete m_ui;
 }
 
-void L2tpAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
+void L2tpIpsecWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
 {
     if (setting->data().value(NM_L2TP_KEY_IPSEC_ENABLE) == "yes") {
         m_ui->cbEnableTunnelToHost->setChecked(true);
@@ -61,7 +61,7 @@ void L2tpAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setti
     }
 }
 
-NMStringMap L2tpAdvancedWidget::setting() const
+NMStringMap L2tpIpsecWidget::setting() const
 {
     NMStringMap result;
 

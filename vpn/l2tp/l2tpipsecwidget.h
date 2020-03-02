@@ -18,8 +18,8 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PLASMA_NM_L2TP_ADVANCED_WIDGET_H
-#define PLASMA_NM_L2TP_ADVANCED_WIDGET_H
+#ifndef PLASMA_NM_L2TP_IPSEC_WIDGET_H
+#define PLASMA_NM_L2TP_IPSEC_WIDGET_H
 
 #include <QDialog>
 
@@ -27,21 +27,21 @@
 
 namespace Ui
 {
-class L2tpAdvancedWidget;
+class L2tpIpsecWidget;
 }
 
-class L2tpAdvancedWidget : public QDialog
+class L2tpIpsecWidget : public QDialog
 {
     Q_OBJECT
 public:
-    explicit L2tpAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
-    ~L2tpAdvancedWidget() override;
+    explicit L2tpIpsecWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
+    ~L2tpIpsecWidget() override;
 
     NMStringMap setting() const;
 
 private:
     void loadConfig(const NetworkManager::VpnSetting::Ptr &setting);
-    Ui::L2tpAdvancedWidget * m_ui;
+    Ui::L2tpIpsecWidget * m_ui;
 };
 
-#endif // PLASMA_NM_L2TP_ADVANCED_WIDGET_H
+#endif // PLASMA_NM_L2TP_IPSEC_WIDGET_H

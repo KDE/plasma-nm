@@ -46,14 +46,14 @@ public:
 
 private Q_SLOTS:
     void userPasswordTypeChanged(int index);
-    void showAdvanced();
+    void showIpsec();
     void showPpp();
     void certStateChanged();
 
 private:
     Ui::L2tpWidget * m_ui;
     NetworkManager::VpnSetting::Ptr m_setting;
-    NetworkManager::VpnSetting::Ptr m_tmpAdvancedSetting;
+    NetworkManager::VpnSetting::Ptr m_tmpIpsecSetting;
     NetworkManager::VpnSetting::Ptr m_tmpPppSetting;
 };
 

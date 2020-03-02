@@ -19,7 +19,7 @@
 */
 
 #include "l2tpwidget.h"
-#include "l2tpadvancedwidget.h"
+#include "l2tpipsecwidget.h"
 #include "l2tppppwidget.h"
 #include "ui_l2tp.h"
 #include "nm-l2tp-service.h"
@@ -40,7 +40,7 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
     m_ui->password->setPasswordOptionsEnabled(true);
 
-    connect(m_ui->btnIPSecSettings, &QPushButton::clicked, this, &L2tpWidget::showAdvanced);
+    connect(m_ui->btnIPSecSettings, &QPushButton::clicked, this, &L2tpWidget::showIpsec);
     connect(m_ui->btnPPPSettings, &QPushButton::clicked, this, &L2tpWidget::showPpp);
 
     // Connect for setting check
@@ -59,7 +59,7 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* 
 
 L2tpWidget::~L2tpWidget()
 {
-    m_tmpAdvancedSetting.clear();
+    m_tmpIpsecSetting.clear();
     m_tmpPppSetting.clear();
     delete m_ui;
 }
@@ -128,12 +128,12 @@ QVariantMap L2tpWidget::setting() const
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_L2TP));
     NMStringMap data;
-    if (!m_tmpAdvancedSetting.isNull()) {
-        data = m_tmpAdvancedSetting->data();
+    if (!m_tmpIpsecSetting.isNull()) {
+        data = m_tmpIpsecSetting->data();
     } else {
         // retrieve the settings if the dialog has not been opened
-        QScopedPointer<L2tpAdvancedWidget> adv(new L2tpAdvancedWidget(m_setting, nullptr));
-        data = adv->setting();
+        QScopedPointer<L2tpIpsecWidget> ipsec(new L2tpIpsecWidget(m_setting, nullptr));
+        data = ipsec->setting();
     }
 
     if (!m_tmpPppSetting.isNull()) {
@@ -204,60 +204,60 @@ void L2tpWidget::userPasswordTypeChanged(int index)
     m_ui->password->setEnabled(index == SettingWidget::EnumPasswordStorageType::Store);
 }
 
-void L2tpWidget::showAdvanced()
+void L2tpWidget::showIpsec()
 {
-    QPointer<L2tpAdvancedWidget> adv;
-    if (m_tmpAdvancedSetting.isNull()) {
-        adv = new L2tpAdvancedWidget(m_setting, this);
+    QPointer<L2tpIpsecWidget> ipsec;
+    if (m_tmpIpsecSetting.isNull()) {
+        ipsec = new L2tpIpsecWidget(m_setting, this);
     } else {
-        adv = new L2tpAdvancedWidget(m_tmpAdvancedSetting, this);
+        ipsec = new L2tpIpsecWidget(m_tmpIpsecSetting, this);
     }
-    connect(adv.data(), &L2tpAdvancedWidget::accepted,
-            [adv, this] () {
-                NMStringMap advData = adv->setting();
-                if (!advData.isEmpty()) {
-                    if (m_tmpAdvancedSetting.isNull()) {
-                        m_tmpAdvancedSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
+    connect(ipsec.data(), &L2tpIpsecWidget::accepted,
+            [ipsec, this] () {
+                NMStringMap ipsecData = ipsec->setting();
+                if (!ipsecData.isEmpty()) {
+                    if (m_tmpIpsecSetting.isNull()) {
+                        m_tmpIpsecSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
                     }
-                    m_tmpAdvancedSetting->setData(advData);
+                    m_tmpIpsecSetting->setData(ipsecData);
                 }
             });
-    connect(adv.data(), &L2tpAdvancedWidget::finished,
-            [adv] () {
-                if (adv) {
-                    adv->deleteLater();
+    connect(ipsec.data(), &L2tpIpsecWidget::finished,
+            [ipsec] () {
+                if (ipsec) {
+                    ipsec->deleteLater();
                 }
             });
-    adv->setModal(true);
-    adv->show();
+    ipsec->setModal(true);
+    ipsec->show();
 }
 
 void L2tpWidget::showPpp()
 {
-    QPointer<L2tpPPPWidget> adv;
+    QPointer<L2tpPPPWidget> ipsec;
     if (m_tmpPppSetting.isNull()) {
-        adv = new L2tpPPPWidget(m_setting, this);
+        ipsec = new L2tpPPPWidget(m_setting, this);
     } else {
-        adv = new L2tpPPPWidget(m_tmpPppSetting, this);
+        ipsec = new L2tpPPPWidget(m_tmpPppSetting, this);
     }
-    connect(adv.data(), &L2tpPPPWidget::accepted,
-            [adv, this] () {
-                NMStringMap advData = adv->setting();
-                if (!advData.isEmpty()) {
+    connect(ipsec.data(), &L2tpPPPWidget::accepted,
+            [ipsec, this] () {
+                NMStringMap ipsecData = ipsec->setting();
+                if (!ipsecData.isEmpty()) {
                     if (m_tmpPppSetting.isNull()) {
                         m_tmpPppSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
                     }
-                    m_tmpPppSetting->setData(advData);
+                    m_tmpPppSetting->setData(ipsecData);
                 }
             });
-    connect(adv.data(), &L2tpPPPWidget::finished,
-            [adv] () {
-                if (adv) {
-                    adv->deleteLater();
+    connect(ipsec.data(), &L2tpPPPWidget::finished,
+            [ipsec] () {
+                if (ipsec) {
+                    ipsec->deleteLater();
                 }
             });
-    adv->setModal(true);
-    adv->show();
+    ipsec->setModal(true);
+    ipsec->show();
 }
 
 bool L2tpWidget::isValid() const

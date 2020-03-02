@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>L2tpAdvancedWidget</class>
- <widget class="QWidget" name="L2tpAdvancedWidget">
+ <class>L2tpIpsecWidget</class>
+ <widget class="QWidget" name="L2tpIpsecWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -270,7 +270,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>L2tpAdvancedWidget</receiver>
+   <receiver>L2tpIpsecWidget</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -286,7 +286,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>L2tpAdvancedWidget</receiver>
+   <receiver>L2tpIpsecWidget</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

@@ -36,7 +36,7 @@ Item {
     signal requestExportConnection(string connection)
     signal requestToChangeConnection(string name, string path)
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
     Rectangle {
         id: background

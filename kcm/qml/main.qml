@@ -24,6 +24,7 @@ import QtQuick.Controls 2.5 as QQC2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import org.kde.kirigami 2.9 as Kirigami
 
 Item {
     id: root
@@ -35,11 +36,13 @@ Item {
     signal requestExportConnection(string connection)
     signal requestToChangeConnection(string name, string path)
 
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+
     Rectangle {
         id: background
         anchors.fill: parent
         focus: true
-        color: theme.backgroundColor
+        color: Kirigami.Theme.backgroundColor
     }
 
     PlasmaNM.Handler {

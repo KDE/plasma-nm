@@ -55,14 +55,13 @@ set_package_properties(KF5ModemManagerQt PROPERTIES
 
 ecm_find_qmlmodule(org.kde.prison 1.0)
 
-if (BUILD_MOBILE)
-    find_package(KF5Kirigami2 ${KF5_MIN_VERSION} CONFIG)
-    set_package_properties(KF5Kirigami2 PROPERTIES
-        DESCRIPTION "A QtQuick based components set"
-        PURPOSE "Required at runtime by the mobile KCMs"
-        TYPE RUNTIME
-    )
-endif()
+find_package(KF5Kirigami2 ${KF5_MIN_VERSION} CONFIG)
+set_package_properties(KF5Kirigami2 PROPERTIES
+    DESCRIPTION "A QtQuick based components set"
+    PURPOSE "Required at runtime by the KCMs"
+    TYPE RUNTIME
+)
+
 
 # Required only for getting information about NetworkManager version in CMake
 find_package(NetworkManager 1.4.0)

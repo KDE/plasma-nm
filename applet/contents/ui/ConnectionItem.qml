@@ -52,7 +52,6 @@ ListItem {
 
     height: expanded ? baseHeight + expandableComponentLoader.height + units.smallSpacing * (ConnectionState == PlasmaNM.Enums.Active ? 1 : Uuid ? 2  : 1)
                      : baseHeight
-    highlightRect: Qt.rect(mainColumn.x, mainColumn.y, mainColumn.width, baseHeight)
 
     ColumnLayout {
         id: mainColumn
@@ -67,11 +66,11 @@ ListItem {
 
             onEntered: {
                 connectionView.currentVisibleButtonIndex = index
-                connectionItem.checked = true
+                connectionView.currentIndex = index
             }
 
             onExited: {
-                connectionItem.checked = false
+                connectionView.currentIndex = -1
             }
 
             onPressed: {
@@ -438,12 +437,6 @@ ListItem {
     onActivatingChanged: {
         if (ConnectionState == PlasmaNM.Enums.Activating) {
             ListView.view.positionViewAtBeginning()
-        }
-    }
-
-    onContainsMouseChanged: {
-        if (connectionItem.containsMouse) {
-            connectionView.currentVisibleButtonIndex = index
         }
     }
 

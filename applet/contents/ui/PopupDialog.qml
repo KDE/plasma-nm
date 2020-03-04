@@ -112,6 +112,9 @@ FocusScope {
                 boundsBehavior: Flickable.StopAtBounds
                 section.property: showSeparator ? "Section" : ""
                 section.delegate: ListItem { separator: true }
+                highlight: PlasmaComponents.Highlight { }
+                highlightMoveDuration: 0
+                highlightResizeDuration: 0
                 delegate: ConnectionItem { }
             }
         }

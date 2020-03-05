@@ -1,5 +1,6 @@
 /*
     Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2020 Douglas Kosovic <doug@uq.edu.au>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -33,6 +34,9 @@ class L2tpWidget;
 class L2tpWidget : public SettingWidget
 {
     Q_OBJECT
+
+    enum AuthType {Password = 0, TLS};
+
 public:
     explicit L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent = nullptr, Qt::WindowFlags f = {});
     ~L2tpWidget() override;
@@ -45,10 +49,9 @@ public:
     bool isValid() const override;
 
 private Q_SLOTS:
-    void userPasswordTypeChanged(int index);
+    void updateStartDirUrl(const QUrl &);
     void showIpsec();
     void showPpp();
-    void certStateChanged();
 
 private:
     Ui::L2tpWidget * m_ui;

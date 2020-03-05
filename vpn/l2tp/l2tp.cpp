@@ -22,7 +22,6 @@
 
 #include <NetworkManagerQt/VpnSetting>
 
-#include "nm-l2tp-service.h"
 #include "l2tp.h"
 #include "l2tpwidget.h"
 #include "l2tpauth.h"
@@ -45,7 +44,7 @@ SettingWidget * L2tpUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &sett
 
 SettingWidget *L2tpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
 {
-    return new L2tpAuthDialog(setting, parent);
+    return new L2tpAuthWidget(setting, parent);
 }
 
 QString L2tpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const

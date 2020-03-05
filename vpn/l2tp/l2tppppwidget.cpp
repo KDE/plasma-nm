@@ -1,5 +1,6 @@
 /*
     Copyright 2013 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2020 Douglas Kosovic <doug@uq.edu.au>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -25,9 +26,10 @@
 #include <KLocalizedString>
 #include <KAcceleratorManager>
 
-L2tpPPPWidget::L2tpPPPWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
+L2tpPPPWidget::L2tpPPPWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent, bool need_peer_eap)
     : QDialog(parent)
     , m_ui(new Ui::L2tpPppWidget)
+    , m_need_peer_eap(need_peer_eap)
 {
     m_ui->setupUi(this);
 
@@ -45,28 +47,34 @@ L2tpPPPWidget::~L2tpPPPWidget()
 
 void L2tpPPPWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
 {
+    const QString yesString = QLatin1String("yes");
+
     // General settings
     const NMStringMap dataMap = setting->data();
 
-    // Authentication options
-    const QString yesString = QLatin1String("yes");
-    bool refuse_pap = (dataMap[NM_L2TP_KEY_REFUSE_PAP] == yesString);
-    bool refuse_chap = (dataMap[NM_L2TP_KEY_REFUSE_CHAP] == yesString);
-    bool refuse_mschap = (dataMap[NM_L2TP_KEY_REFUSE_MSCHAP] == yesString);
-    bool refuse_mschapv2 = (dataMap[NM_L2TP_KEY_REFUSE_MSCHAPV2] == yesString);
-    bool refuse_eap = (dataMap[NM_L2TP_KEY_REFUSE_EAP] == yesString);
+    if (m_need_peer_eap) {
+        m_ui->grp_authenfication->setVisible(false);
+        resize(width(), sizeHint().height());
+    } else {
+        // Authentication options
+        const bool refuse_pap = (dataMap[NM_L2TP_KEY_REFUSE_PAP] == yesString);
+        const bool refuse_chap = (dataMap[NM_L2TP_KEY_REFUSE_CHAP] == yesString);
+        const bool refuse_mschap = (dataMap[NM_L2TP_KEY_REFUSE_MSCHAP] == yesString);
+        const bool refuse_mschapv2 = (dataMap[NM_L2TP_KEY_REFUSE_MSCHAPV2] == yesString);
+        const bool refuse_eap = (dataMap[NM_L2TP_KEY_REFUSE_EAP] == yesString);
 
-    QListWidgetItem * item = nullptr;
-    item = m_ui->listWidget->item(0); // PAP
-    item->setCheckState(refuse_pap ? Qt::Unchecked : Qt::Checked);
-    item = m_ui->listWidget->item(1); // CHAP
-    item->setCheckState(refuse_chap ? Qt::Unchecked : Qt::Checked);
-    item = m_ui->listWidget->item(2); // MSCHAP
-    item->setCheckState(refuse_mschap ? Qt::Unchecked : Qt::Checked);
-    item = m_ui->listWidget->item(3); // MSCHAPv2
-    item->setCheckState(refuse_mschapv2 ? Qt::Unchecked : Qt::Checked);
-    item = m_ui->listWidget->item(4); // EAP
-    item->setCheckState(refuse_eap ? Qt::Unchecked : Qt::Checked);
+        QListWidgetItem * item = nullptr;
+        item = m_ui->listWidget->item(0); // PAP
+        item->setCheckState(refuse_pap ? Qt::Unchecked : Qt::Checked);
+        item = m_ui->listWidget->item(1); // CHAP
+        item->setCheckState(refuse_chap ? Qt::Unchecked : Qt::Checked);
+        item = m_ui->listWidget->item(2); // MSCHAP
+        item->setCheckState(refuse_mschap ? Qt::Unchecked : Qt::Checked);
+        item = m_ui->listWidget->item(3); // MSCHAPv2
+        item->setCheckState(refuse_mschapv2 ? Qt::Unchecked : Qt::Checked);
+        item = m_ui->listWidget->item(4); // EAP
+        item->setCheckState(refuse_eap ? Qt::Unchecked : Qt::Checked);
+    }
 
     // Cryptography and compression
     const bool mppe = (dataMap[NM_L2TP_KEY_REQUIRE_MPPE] == yesString);
@@ -117,29 +125,30 @@ void L2tpPPPWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
 NMStringMap L2tpPPPWidget::setting() const
 {
     NMStringMap result;
-
-    QListWidgetItem * item = nullptr;
-    item = m_ui->listWidget->item(0); // PAP
     const QString yesString = QLatin1String("yes");
-    if (item->checkState() == Qt::Unchecked) {
-        result.insert(NM_L2TP_KEY_REFUSE_PAP, yesString);
-    }
-    item = m_ui->listWidget->item(1); // CHAP
-    if (item->checkState() == Qt::Unchecked) {
-        result.insert(NM_L2TP_KEY_REFUSE_CHAP, yesString);
 
-    }
-    item = m_ui->listWidget->item(2); // MSCHAP
-    if (item->checkState() == Qt::Unchecked) {
-        result.insert(NM_L2TP_KEY_REFUSE_MSCHAP, yesString);
-    }
-    item = m_ui->listWidget->item(3); // MSCHAPv2
-    if (item->checkState() == Qt::Unchecked) {
-        result.insert(NM_L2TP_KEY_REFUSE_MSCHAPV2, yesString);
-    }
-    item = m_ui->listWidget->item(4); // EAP
-    if (item->checkState() == Qt::Unchecked) {
-        result.insert(NM_L2TP_KEY_REFUSE_EAP, yesString);
+    if (!m_need_peer_eap) {
+        QListWidgetItem * item = nullptr;
+        item = m_ui->listWidget->item(0); // PAP
+        if (item->checkState() == Qt::Unchecked) {
+            result.insert(NM_L2TP_KEY_REFUSE_PAP, yesString);
+        }
+        item = m_ui->listWidget->item(1); // CHAP
+        if (item->checkState() == Qt::Unchecked) {
+            result.insert(NM_L2TP_KEY_REFUSE_CHAP, yesString);
+        }
+        item = m_ui->listWidget->item(2); // MSCHAP
+        if (item->checkState() == Qt::Unchecked) {
+            result.insert(NM_L2TP_KEY_REFUSE_MSCHAP, yesString);
+        }
+        item = m_ui->listWidget->item(3); // MSCHAPv2
+        if (item->checkState() == Qt::Unchecked) {
+            result.insert(NM_L2TP_KEY_REFUSE_MSCHAPV2, yesString);
+        }
+        item = m_ui->listWidget->item(4); // EAP
+        if (item->checkState() == Qt::Unchecked) {
+            result.insert(NM_L2TP_KEY_REFUSE_EAP, yesString);
+        }
     }
 
     // Cryptography and compression

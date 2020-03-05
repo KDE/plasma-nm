@@ -8,7 +8,7 @@ set(l2tp_SRCS
     l2tppppwidget.cpp
 )
 
-ki18n_wrap_ui(l2tp_SRCS l2tp.ui l2tpipsec.ui l2tpauth.ui l2tpppp.ui)
+ki18n_wrap_ui(l2tp_SRCS l2tp.ui l2tpipsec.ui l2tpppp.ui)
 
 add_library(plasmanetworkmanagement_l2tpui ${l2tp_SRCS})
 

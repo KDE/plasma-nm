@@ -328,7 +328,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
 
     if (m_notifications.contains(device->uni())) {
         KNotification *notify = m_notifications.value(device->uni());
-        notify->setText(text);
+        notify->setText(text.toHtmlEscaped());
         notify->update();
     } else {
         KNotification *notify = new KNotification(QStringLiteral("DeviceFailed"), KNotification::CloseOnTimeout, this);
@@ -337,7 +337,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         notify->setComponentName(QStringLiteral("networkmanagement"));
         notify->setIconName(QStringLiteral("dialog-warning"));
         notify->setTitle(identifier);
-        notify->setText(text);
+        notify->setText(text.toHtmlEscaped());
         notify->sendEvent();
         if (notify->id() != -1) {
                 m_notifications[device->uni()] = notify;
@@ -443,7 +443,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         }
     }
     notify->setTitle(acName);
-    notify->setText(text);
+    notify->setText(text.toHtmlEscaped());
     notify->sendEvent();
     if (notify->id() != -1) {
         m_notifications[connectionId] = notify;
@@ -519,7 +519,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         notify->setIconName(QStringLiteral("dialog-warning"));
     }
     notify->setTitle(vpnName);
-    notify->setText(text);
+    notify->setText(text.toHtmlEscaped());
     notify->sendEvent();
     if (notify->id() != -1) {
         m_notifications[connectionId] = notify;

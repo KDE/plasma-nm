@@ -220,10 +220,21 @@ Item {
         property string connectionName
         property string connectionPath
 
+        /* Like QString::toHtmlEscaped */
+        function toHtmlEscaped(s) {
+            return s.replace(/[&<>]/g, function (tag) {
+                return {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;'
+                }[tag] || tag
+            });
+        }
+
         icon: StandardIcon.Question
         standardButtons: StandardButton.Ok | StandardButton.Cancel
         title: i18nc("@title:window", "Remove Connection")
-        text: i18n("Do you want to remove the connection '%1'?", connectionName)
+        text: i18n("Do you want to remove the connection '%1'?", toHtmlEscaped(connectionName))
 
         onAccepted: {
             if (connectionPath == connectionView.currentConnectionPath) {

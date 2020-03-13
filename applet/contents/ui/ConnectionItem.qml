@@ -1,5 +1,6 @@
 /*
     Copyright 2013-2017 Jan Grulich <jgrulich@redhat.com>
+    Copyright 2020 Nate Graham <nate@kde.org>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -18,23 +19,23 @@
     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.2
+import QtQuick 2.12
 import QtQuick.Layouts 1.2
-import QtQuick.Controls 2.4 as Controls
+import QtQuick.Controls 2.12
+
 import org.kde.kcoreaddons 1.0 as KCoreAddons
 import org.kde.kquickcontrolsaddons 2.0
-import org.kde.plasma.components 2.0 as PlasmaComponents
+
 import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
-ListItem {
+PlasmaExtras.ExpandableListItem {
     id: connectionItem
 
     property bool activating: ConnectionState == PlasmaNM.Enums.Activating
     property bool deactivated: ConnectionState === PlasmaNM.Enums.Deactivated
-    property int  baseHeight: Uuid ? connectionNameLabel.implicitHeight + connectionStatusLabel.implicitHeight + units.smallSpacing * 2
-                                   : stateChangeButton.implicitHeight + units.smallSpacing * 2
-    property bool expanded: visibleDetails || visiblePasswordDialog
     property bool passwordIsStatic: (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
                                      SecurityType == PlasmaNM.Enums.Wpa2Psk || SecurityType == PlasmaNM.Enums.SAE)
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless && passwordIsStatic
@@ -44,133 +45,26 @@ ListItem {
                               Type == PlasmaNM.Enums.Wireless ||
                               Type == PlasmaNM.Enums.Gsm ||
                               Type == PlasmaNM.Enums.Cdma)
-    property bool visibleDetails: false
-    property bool visiblePasswordDialog: false
 
     property real rxBytes: 0
     property real txBytes: 0
 
-    height: expanded ? baseHeight + expandableComponentLoader.height + units.smallSpacing * (ConnectionState == PlasmaNM.Enums.Active ? 1 : Uuid ? 2  : 1)
-                     : baseHeight
-
-    ColumnLayout {
-        id: mainColumn
-        anchors.fill: parent
-
-        MouseArea {
-            Layout.fillWidth: true
-            Layout.preferredHeight: mainRow.height
-            Layout.alignment: Qt.AlignTop
-            acceptedButtons: Qt.LeftButton | Qt.RightButton
-            hoverEnabled: true
-
-            onEntered: {
-                connectionView.currentVisibleButtonIndex = index
-                connectionView.currentIndex = index
-            }
-
-            onExited: {
-                connectionView.currentIndex = -1
-            }
-
-            onPressed: {
-                if (mouse.button & Qt.LeftButton) {
-                    changeExpanded()
-                }
-
-                if (mouse.button & Qt.RightButton) {
-                    contextMenu.visualParent = parent
-                    contextMenu.prepare();
-                    contextMenu.open(mouse.x, mouse.y)
-                }
-            }
-
-            RowLayout {
-                id: mainRow
-                spacing: units.smallSpacing * 2
-                height: baseHeight
-                width: mainColumn.width
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    leftMargin:  units.smallSpacing
-                    // Identical margins around the button.
-                    rightMargin: Math.round((baseHeight - stateChangeButton.height) / 2)
-                }
-
-                PlasmaCore.SvgItem {
-                    id: connectionSvgIcon
-                    Layout.preferredHeight: Uuid ? units.iconSizes.medium : units.iconSizes.smallMedium
-                    Layout.preferredWidth: Layout.preferredHeight
-                    Layout.leftMargin: units.smallSpacing
-                    elementId: ConnectionIcon
-                    svg: PlasmaCore.Svg {
-                        multipleImages: true
-                        imagePath: "icons/network"
-                        colorGroup: PlasmaCore.ColorScope.colorGroup
-                    }
-                }
-
-                // ColumnLayout with fillWidth in children, creates bind loop for width.
-                Column {
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: connectionNameLabel.height + (connectionStatusLabel.visible ? connectionStatusLabel.height : 0)
-                    spacing: 0
-
-                    PlasmaComponents.Label {
-                        id: connectionNameLabel
-                        width: parent.width
-                        elide: Text.ElideRight
-                        height: undefined
-                        font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
-                        font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false
-                        text: ItemUniqueName
-                        textFormat: Text.PlainText
-                    }
-
-                    PlasmaComponents.Label {
-                        id: connectionStatusLabel
-                        width: parent.width
-                        elide: Text.ElideRight
-                        height: undefined
-                        font.pointSize: theme.smallestFont.pointSize
-                        opacity: 0.6
-                        text: itemText()
-                        visible: !!Uuid
-                    }
-                }
-
-                PlasmaComponents.BusyIndicator {
-                    id: connectingIndicator
-                    Layout.preferredHeight: units.iconSizes.medium
-                    Layout.preferredWidth: Layout.preferredHeight
-                    running: plasmoid.expanded && !stateChangeButton.visible && ConnectionState == PlasmaNM.Enums.Activating
-                    visible: running
-                    opacity: visible
-                }
-
-                PlasmaComponents.Button {
-                    id: stateChangeButton
-                    opacity: connectionView.currentVisibleButtonIndex == index ? 1 : 0
-                    visible: opacity != 0
-                    text: (ConnectionState == PlasmaNM.Enums.Deactivated) ? i18n("Connect") : i18n("Disconnect")
-
-                    Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
-
-                    onClicked: changeState()
-                }
-            }
-        }
-
-        Loader {
-            id: expandableComponentLoader
-            Layout.fillWidth: true
-            Layout.alignment: Qt.AlignBottom
-            Layout.bottomMargin: units.smallSpacing
-        }
+    icon: model.ConnectionIcon
+    title: model.ItemUniqueName
+    subtitle: itemText()
+    iconUsesPlasmaSVG: true // We want the nice detailed network SVGs from the Plasma theme
+    isBusy: plasmoid.expanded && model.ConnectionState == PlasmaNM.Enums.Activating
+    isDefault: ConnectionState == PlasmaNM.Enums.Activated
+    allowStyledText: true // So we can colorize the up and down arrows
+    defaultActionButtonAction: Action {
+        id: stateChangeButton
+        icon.name: model.ConnectionState == PlasmaNM.Enums.Deactivated ? "network-connect" : "network-disconnect"
+        text: model.ConnectionState == PlasmaNM.Enums.Deactivated ? i18n("Connect") : i18n("Disconnect")
+        onTriggered: changeState()
     }
-
-    PlasmaComponents.Menu {
+    showDefaultActionButtonWhenBusy: true
+    customExpandedViewContent: detailsComponent
+    contextMenu: PlasmaComponents.Menu {
         id: contextMenu
 
         property Component showQRComponent: null
@@ -245,7 +139,7 @@ ListItem {
                 }
 
                 Component.onCompleted: {
-                    if (!speedTabButton.visible) {
+                    if (!showSpeed) {
                         currentTab = detailsTabButton
                     }
                 }
@@ -283,13 +177,15 @@ ListItem {
 
             PasswordField {
                 id: passwordField
-                Layout.leftMargin: units.iconSizes.smallMedium + units.smallSpacing * 2
-                Layout.bottomMargin: units.smallSpacing
-                Layout.preferredWidth: units.gridUnit * 15
+                Layout.fillWidth: true
+                Layout.leftMargin: units.iconSizes.smallMedium + units.smallSpacing * 4
+                Layout.rightMargin: units.iconSizes.smallMedium + units.smallSpacing * 4
+
                 securityType: SecurityType
 
                 onAccepted: {
-                    stateChangeButton.clicked()
+                    stateChangeButton.trigger()
+                    connectionItem.customExpandedViewContent = detailsComponent
                 }
 
                 onAcceptableInputChanged: {
@@ -298,10 +194,13 @@ ListItem {
 
                 Component.onCompleted: {
                     stateChangeButton.enabled = false
+                    passwordField.forceActiveFocus()
+                    appletProxyModel.dynamicSortFilter = true
                 }
 
                 Component.onDestruction: {
                     stateChangeButton.enabled = true
+                    connectionItem.customExpandedViewContent = detailsComponent
                 }
             }
         }
@@ -326,48 +225,18 @@ ListItem {
         }
     }
 
-    states: [
-        State {
-            name: "collapsed"
-            when: !(visibleDetails || visiblePasswordDialog)
-            StateChangeScript { script: if (expandableComponentLoader.status == Loader.Ready) {expandableComponentLoader.sourceComponent = undefined} }
-        },
-
-        State {
-            name: "expandedDetails"
-            when: visibleDetails
-            StateChangeScript { script: createContent() }
-        },
-
-        State {
-            name: "expandedPasswordDialog"
-            when: visiblePasswordDialog
-            StateChangeScript { script: createContent() }
-            PropertyChanges { target: stateChangeButton; opacity: 1 }
-        }
-    ]
-
-    function createContent() {
-        if (visibleDetails) {
-            expandableComponentLoader.sourceComponent = detailsComponent
-        } else if (visiblePasswordDialog) {
-            expandableComponentLoader.sourceComponent = passwordDialogComponent
-            expandableComponentLoader.item.passwordInput.forceActiveFocus()
-        }
-    }
-
     function changeState() {
-        visibleDetails = false
-        if (Uuid || !predictableWirelessPassword || visiblePasswordDialog) {
+        if (Uuid || !predictableWirelessPassword || passwordDialogComponent.visible) {
             if (ConnectionState == PlasmaNM.Enums.Deactivated) {
                 if (!predictableWirelessPassword && !Uuid) {
                     handler.addAndActivateConnection(DevicePath, SpecificPath)
-                } else if (visiblePasswordDialog) {
-                    if (expandableComponentLoader.item.password != "") {
-                        handler.addAndActivateConnection(DevicePath, SpecificPath, expandableComponentLoader.item.password)
-                        visiblePasswordDialog = false
+                } else if (passwordDialogComponent.visible) {
+                    if (connectionItem.customExpandedViewContent.item.password != "") {
+                        handler.addAndActivateConnection(DevicePath, SpecificPath, connectionItem.customExpandedViewContent.item.password)
+                        connectionItem.customExpandedViewContent = detailsComponent
+                        connectionItem.collapse()
                     } else {
-                        connectionItem.clicked()
+                        connectionItem.expand()
                     }
                 } else {
                     handler.activateConnection(ConnectionPath, DevicePath, SpecificPath)
@@ -377,7 +246,8 @@ ListItem {
             }
         } else if (predictableWirelessPassword) {
             appletProxyModel.dynamicSortFilter = false
-            visiblePasswordDialog = true
+            connectionItem.customExpandedViewContent = passwordDialogComponent
+            connectionItem.expand()
         }
     }
 
@@ -415,21 +285,6 @@ ListItem {
         return ""
     }
 
-    function changeExpanded() {
-        if (visiblePasswordDialog) {
-            appletProxyModel.dynamicSortFilter = true
-            visiblePasswordDialog = false
-        } else {
-            visibleDetails = !visibleDetails
-        }
-
-        if (visibleDetails || visiblePasswordDialog) {
-            ListView.view.currentIndex = index
-        } else {
-            ListView.view.currentIndex = -1
-        }
-    }
-
     onShowSpeedChanged: {
         connectionModel.setDeviceStatisticsRefreshRateMs(DevicePath, showSpeed ? 2000 : 0)
     }
@@ -452,5 +307,11 @@ ListItem {
         }
         connectionView.showSeparator = false
         return
+    }
+
+    // Re-activate the default button if the password field is hidden without
+    // sending a password
+    onItemCollapsed: {
+        stateChangeButton.enabled = true;
     }
 }

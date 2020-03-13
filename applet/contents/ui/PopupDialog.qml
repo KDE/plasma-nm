@@ -113,8 +113,8 @@ FocusScope {
                 section.property: showSeparator ? "Section" : ""
                 section.delegate: ListItem { separator: true }
                 highlight: PlasmaComponents.Highlight { }
-                highlightMoveDuration: 0
-                highlightResizeDuration: 0
+                highlightMoveDuration: units.longDuration
+                highlightResizeDuration: units.longDuration
                 delegate: ConnectionItem { }
             }
         }

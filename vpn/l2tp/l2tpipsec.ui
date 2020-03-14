@@ -313,7 +313,7 @@
          <item row="7" column="0" colspan="2">
           <widget class="QCheckBox" name="cbPFS">
            <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disable perfect forward security. Enable this option only if the server doesn’t support PFS.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disable perfect forward secrecy. Enable this option only if the server doesn’t support PFS.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="text">
             <string>Disable PFS</string>

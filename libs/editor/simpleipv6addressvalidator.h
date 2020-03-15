@@ -36,7 +36,7 @@ public:
     /** Check input value with a regular expression describing simple input mask.
      */
     QValidator::State checkWithInputMask(QString &, int &) const;
-    /** Function split intput string into tetrads and check them for valid values.
+    /** Function split input string into tetrads and check them for valid values.
      *  In the tetrads are placed into QList. Input string may be changed.
      */
     QValidator::State checkTetradsRanges(QString &) const;

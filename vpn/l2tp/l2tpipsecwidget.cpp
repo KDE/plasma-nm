@@ -187,7 +187,7 @@ NMStringMap L2tpIpsecWidget::setting() const
 
         if (m_ui->cmbAuthType->currentIndex() == AuthType::PSK) {
             // NetworkManager-l2tp < 1.2.12 does not support Base64 PSK
-            // For backwards compatibilty don't use Base64 PSK for now.
+            // For backwards compatibility don't use Base64 PSK for now.
             if (!m_ui->presharedKey->text().isEmpty()) {
                 result.insert(NM_L2TP_KEY_IPSEC_PSK, m_ui->presharedKey->text());
                 // *SWAN support Base64 encoded PSKs that are prefixed with "0s"
@@ -227,7 +227,7 @@ NMStringMap L2tpIpsecWidget::setting() const
 
         // NetworkManager-l2tp 1.2.12 recommends NM_L2TP_KEY_IPSEC_REMOTE_ID
         // instead of deprecated NM_L2TP_KEY_IPSEC_GATEWAY_ID
-        // For backwards compatibilty use NM_L2TP_KEY_IPSEC_GATEWAY_ID for now.
+        // For backwards compatibility use NM_L2TP_KEY_IPSEC_GATEWAY_ID for now.
         if (!m_ui->remoteId->text().isEmpty()) {
             result.insert(NM_L2TP_KEY_IPSEC_GATEWAY_ID, m_ui->remoteId->text());
         }

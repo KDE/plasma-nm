@@ -9,3 +9,5 @@ tags
 *.kdev4
 CMakeLists.txt.user
 *.qmlc
+.clang-format
+/build*/

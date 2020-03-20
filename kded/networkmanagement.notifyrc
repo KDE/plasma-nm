@@ -843,6 +843,7 @@ Action=Popup
 Name=Failed to create hotspot
 Name[ast]=Fallu al crear el puntu d'accesu
 Name[ca]=Ha fallat en crear el punt d'accés
+Name[cs]=Nepovedlo se vytvořit hotspot
 Name[da]=Kunne ikke aktivere internetdeling
 Name[de]=Hotspot kann nicht erstellt werden
 Name[es]=No se ha podido crear el punto de acceso

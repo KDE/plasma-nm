@@ -864,6 +864,7 @@ Name[sk]=Zlyhalo vytvorenie aktívneho bodu
 Name[sv]=Misslyckade skapa accesspunkt
 Name[uk]=Не вдалося створити хот-спот 
 Name[x-test]=xxFailed to create hotspotxx
+Name[zh_CN]=创建热点失败
 Name[zh_TW]=無法建立熱點
 Urgency=Low
 IconName=applications-internet

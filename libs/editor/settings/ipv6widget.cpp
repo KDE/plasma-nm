@@ -93,11 +93,7 @@ IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
         loadConfig(setting);
     }
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->method, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &IPv6Widget::slotModeComboChanged);
-#else
-    connect(m_ui->method, QOverload<int, const QString &>::of(&KComboBox::currentIndexChanged), this, &IPv6Widget::slotModeComboChanged);
-#endif
     slotModeComboChanged(m_ui->method->currentIndex());
 
     connect(m_ui->btnRoutes, &QPushButton::clicked, this, &IPv6Widget::slotRoutesDialog);
@@ -107,11 +103,7 @@ IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 
     // Connect for validity check
     connect(m_ui->dns, &KLineEdit::textChanged, this, &IPv6Widget::slotWidgetChanged);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->method, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &IPv6Widget::slotWidgetChanged);
-#else
-    connect(m_ui->method, QOverload<int, const QString &>::of(&KComboBox::currentIndexChanged), this, &IPv6Widget::slotWidgetChanged);
-#endif
     connect(&d->model, &QStandardItemModel::dataChanged, this, &IPv6Widget::slotWidgetChanged);
     connect(&d->model, &QStandardItemModel::rowsRemoved, this, &IPv6Widget::slotWidgetChanged);
 

@@ -87,11 +87,7 @@ OpenconnectSettingWidget::OpenconnectSettingWidget(const NetworkManager::VpnSett
     connect(d->tokenDlg, &QDialog::rejected, this, &OpenconnectSettingWidget::restoreTokens);
     connect(d->tokenDlg, &QDialog::accepted, this, &OpenconnectSettingWidget::saveTokens);
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(d->tokenUi.cmbTokenMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, QOverload<int>::of((&OpenconnectSettingWidget::handleTokenSecret)));
-#else
-    connect(d->tokenUi.cmbTokenMode, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, QOverload<int>::of((&OpenconnectSettingWidget::handleTokenSecret)));
-#endif
 
     // Connect for setting check
     watchChangedSetting();

@@ -41,11 +41,7 @@ WiredConnectionWidget::WiredConnectionWidget(const NetworkManager::Setting::Ptr 
     // Connect for validity check
     connect(m_widget->clonedMacAddress, &KLineEdit::textChanged, this, &WiredConnectionWidget::slotWidgetChanged);
     connect(m_widget->macAddress, &HwAddrComboBox::hwAddressChanged, this, &WiredConnectionWidget::slotWidgetChanged);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_widget->linkNegotiation, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this] (int index) {
-#else
-    connect(m_widget->linkNegotiation, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, [this] (int index) {
-#endif
         m_widget->duplex->setEnabled(index == LinkNegotiation::Manual);
         m_widget->speed->setEnabled(index == LinkNegotiation::Manual);
     });

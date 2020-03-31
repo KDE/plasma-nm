@@ -36,16 +36,8 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
 
     connect(m_ui->btnRandomMacAddr, &QPushButton::clicked, this, &WifiConnectionWidget::generateRandomClonedMac);
     connect(m_ui->SSIDCombo, &SsidComboBox::ssidChanged, this, QOverload<>::of(&WifiConnectionWidget::ssidChanged));
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->modeComboBox, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::modeChanged);
-#else
-    connect(m_ui->modeComboBox, QOverload<int, const QString &>::of(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::modeChanged);
-#endif
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->band, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::bandChanged);
-#else
-    connect(m_ui->band, QOverload<int, const QString &>::of(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::bandChanged);
-#endif
 
     // Connect for setting check
     watchChangedSetting();

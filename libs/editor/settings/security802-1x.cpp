@@ -76,11 +76,7 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool w
     watchChangedSetting();
 
     // Connect for validity check
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(m_ui->auth, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &Security8021x::slotWidgetChanged);
-#else
-    connect(m_ui->auth, QOverload<int, const QString &>::of(&KComboBox::currentIndexChanged), this, &Security8021x::slotWidgetChanged);
-#endif
     connect(m_ui->md5UserName, &KLineEdit::textChanged, this, &Security8021x::slotWidgetChanged);
     connect(m_ui->md5Password, &PasswordField::textChanged, this, &Security8021x::slotWidgetChanged);
     connect(m_ui->md5Password, &PasswordField::passwordOptionChanged, this, &Security8021x::slotWidgetChanged);

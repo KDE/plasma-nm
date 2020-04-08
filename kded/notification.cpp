@@ -78,8 +78,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
     NetworkManager::Device *device = qobject_cast<NetworkManager::Device*>(sender());
     if (newstate == NetworkManager::Device::Activated && m_notifications.contains(device->uni())) {
         KNotification *notify = m_notifications.value(device->uni());
-        notify->deleteLater();
-        m_notifications.remove(device->uni());
+        notify->close();
         return;
     } else if (newstate != NetworkManager::Device::Failed) {
         return;
@@ -331,17 +330,15 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
         notify->setText(text.toHtmlEscaped());
         notify->update();
     } else {
-        KNotification *notify = new KNotification(QStringLiteral("DeviceFailed"), KNotification::CloseOnTimeout, this);
+        KNotification *notify = new KNotification(QStringLiteral("DeviceFailed"), KNotification::CloseOnTimeout);
         connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
         notify->setProperty("uni", device->uni());
         notify->setComponentName(QStringLiteral("networkmanagement"));
         notify->setIconName(QStringLiteral("dialog-warning"));
         notify->setTitle(identifier);
         notify->setText(text.toHtmlEscaped());
+        m_notifications[device->uni()] = notify;
         notify->sendEvent();
-        if (notify->id() != -1) {
-                m_notifications[device->uni()] = notify;
-        }
     }
 }
 
@@ -429,7 +426,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         return;
     }
 
-    KNotification *notify = new KNotification(eventId, KNotification::CloseOnTimeout, this);
+    KNotification *notify = new KNotification(eventId, KNotification::CloseOnTimeout);
     connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
     notify->setProperty("uni", connectionId);
     notify->setComponentName(QStringLiteral("networkmanagement"));
@@ -444,10 +441,8 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
     }
     notify->setTitle(acName);
     notify->setText(text.toHtmlEscaped());
+    m_notifications[connectionId] = notify;
     notify->sendEvent();
-    if (notify->id() != -1) {
-        m_notifications[connectionId] = notify;
-    }
 }
 
 void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
@@ -509,7 +504,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         break;
     }
 
-    KNotification *notify = new KNotification(eventId, KNotification::CloseOnTimeout, this);
+    KNotification *notify = new KNotification(eventId, KNotification::CloseOnTimeout);
     connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
     notify->setProperty("uni", connectionId);
     notify->setComponentName("networkmanagement");
@@ -520,17 +515,14 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
     }
     notify->setTitle(vpnName);
     notify->setText(text.toHtmlEscaped());
+    m_notifications[connectionId] = notify;
     notify->sendEvent();
-    if (notify->id() != -1) {
-        m_notifications[connectionId] = notify;
-    }
 }
 
 void Notification::notificationClosed()
 {
     KNotification *notify = qobject_cast<KNotification*>(sender());
     m_notifications.remove(notify->property("uni").toString());
-    notify->deleteLater();
 }
 
 void Notification::onPrepareForSleep(bool sleep)
@@ -581,7 +573,7 @@ void Notification::onCheckActiveConnectionOnResume()
         }
     }
 
-    KNotification *notify = new KNotification(QStringLiteral("NoLongerConnected"), KNotification::CloseOnTimeout, this);
+    KNotification *notify = new KNotification(QStringLiteral("NoLongerConnected"), KNotification::CloseOnTimeout);
     connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
     const QString uni = QStringLiteral("offlineNotification");
     notify->setProperty("uni", uni);
@@ -589,8 +581,6 @@ void Notification::onCheckActiveConnectionOnResume()
     notify->setIconName(QStringLiteral("dialog-warning"));
     notify->setTitle(i18n("No Network Connection"));
     notify->setText(i18n("You are no longer connected to a network."));
+    m_notifications[uni] = notify;
     notify->sendEvent();
-    if (notify->id() != -1) {
-        m_notifications[uni] = notify;
-    }
 }

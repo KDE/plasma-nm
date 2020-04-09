@@ -35,6 +35,8 @@
 #include <QIcon>
 #include <QTimer>
 
+#include <algorithm>
+
 Notification::Notification(QObject *parent) :
     QObject(parent)
 {
@@ -569,13 +571,13 @@ void Notification::onCheckActiveConnectionOnResume()
 
     m_activeConnectionsBeforeSleep.clear();
 
-    const auto &connections = NetworkManager::activeConnections();
-    for (const auto &connection : connections) {
-        if (connection->state() == NetworkManager::ActiveConnection::State::Activated ||
-            connection->state() == NetworkManager::ActiveConnection::State::Activating) {
-            // we have an active or activating connection, don't tell the user we're no longer connected
-            return;
-        }
+    const auto ac = NetworkManager::activeConnections();
+    if (std::any_of(ac.constBegin(), ac.constEnd(), [](const auto &connection) {
+       return connection->state() == NetworkManager::ActiveConnection::State::Activated
+           || connection->state() == NetworkManager::ActiveConnection::State::Activating;
+    })) {
+        // we have an active or activating connection, don't tell the user we're no longer connected
+        return;
     }
 
     KNotification *notify = new KNotification(QStringLiteral("NoLongerConnected"), KNotification::CloseOnTimeout);

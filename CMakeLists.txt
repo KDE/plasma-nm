@@ -8,6 +8,9 @@ set(PROJECT_VERSION_MAJOR 5)
 set(QT_MIN_VERSION "5.14.0")
 set(KF5_MIN_VERSION "5.66.0")
 
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED On)
+
 ################# set KDE specific information #################
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)

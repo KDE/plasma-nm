@@ -372,7 +372,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
 
     QString eventId, text, iconName;
     const QString acName = ac->id();
-    const QString connectionId = ac->path();
+    const QString connectionId = ac->id();
 
     if (state == NetworkManager::ActiveConnection::Activated) {
         auto foundConnection = std::find_if(m_activeConnectionsBeforeSleep.constBegin(),
@@ -426,10 +426,16 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         return;
     }
 
-    KNotification *notify = new KNotification(eventId, KNotification::CloseOnTimeout);
-    connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
-    notify->setProperty("uni", connectionId);
-    notify->setComponentName(QStringLiteral("networkmanagement"));
+    KNotification *notify = m_notifications.value(connectionId);
+
+    if (!notify) {
+        notify = new KNotification(eventId, KNotification::CloseOnTimeout);
+        connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
+        notify->setProperty("uni", connectionId);
+        notify->setComponentName(QStringLiteral("networkmanagement"));
+        m_notifications[connectionId] = notify;
+    }
+
     if (!iconName.isEmpty()) {
         notify->setIconName(iconName);
     } else {
@@ -441,7 +447,6 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
     }
     notify->setTitle(acName);
     notify->setText(text.toHtmlEscaped());
-    m_notifications[connectionId] = notify;
     notify->sendEvent();
 }
 

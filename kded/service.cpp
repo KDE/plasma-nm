@@ -52,7 +52,7 @@ NetworkManagementService::NetworkManagementService(QObject * parent, const QVari
 {
     Q_D(NetworkManagementService);
 
-    connect(this, &KDEDModule::moduleRegistered, this, &NetworkManagementService::slotRegistered);
+    connect(this, &KDEDModule::moduleRegistered, this, &NetworkManagementService::init);
 
     d->agent = new SecretAgent(this);
     connect(d->agent, &SecretAgent::secretsError, this, &NetworkManagementService::secretsError);
@@ -77,13 +77,6 @@ void NetworkManagementService::init()
 
     if (!d->portalMonitor) {
         d->portalMonitor = new PortalMonitor(this);
-    }
-}
-
-void NetworkManagementService::slotRegistered(const QDBusObjectPath &path)
-{
-    if (path.path() == QLatin1String("/modules/networkmanagement")) {
-        Q_EMIT registered();
     }
 }
 

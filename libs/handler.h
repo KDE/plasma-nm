@@ -125,7 +125,6 @@ public Q_SLOTS:
     void stopHotspot();
 
 private Q_SLOTS:
-    void initKdedModule();
     void secretAgentError(const QString &connectionPath, const QString &message);
     void replyFinished(QDBusPendingCallWatcher *watcher);
     void hotspotCreated(QDBusPendingCallWatcher *watcher);

@@ -72,13 +72,6 @@ Handler::Handler(QObject *parent)
     , m_tmpWirelessEnabled(NetworkManager::isWirelessEnabled())
     , m_tmpWwanEnabled(NetworkManager::isWwanEnabled())
 {
-    initKdedModule();
-    QDBusConnection::sessionBus().connect(QStringLiteral(AGENT_SERVICE),
-                                            QStringLiteral(AGENT_PATH),
-                                            QStringLiteral(AGENT_IFACE),
-                                            QStringLiteral("registered"),
-                                            this, SLOT(initKdedModule()));
-
     QDBusConnection::sessionBus().connect(QStringLiteral(AGENT_SERVICE),
                                             QStringLiteral(AGENT_PATH),
                                             QStringLiteral(AGENT_IFACE),
@@ -734,15 +727,6 @@ void Handler::scheduleRequestScan(const QString &interface, int timeout)
 void Handler::scanRequestFailed(const QString &interface)
 {
     scheduleRequestScan(interface, 2000);
-}
-
-void Handler::initKdedModule()
-{
-    QDBusMessage initMsg = QDBusMessage::createMethodCall(QStringLiteral(AGENT_SERVICE),
-                                                          QStringLiteral(AGENT_PATH),
-                                                          QStringLiteral(AGENT_IFACE),
-                                                          QStringLiteral("init"));
-    QDBusConnection::sessionBus().send(initMsg);
 }
 
 void Handler::secretAgentError(const QString &connectionPath, const QString &message)

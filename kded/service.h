@@ -44,12 +44,8 @@ public Q_SLOTS:
     Q_SCRIPTABLE void init();
 
 Q_SIGNALS:
-    Q_SCRIPTABLE void registered();
     Q_SCRIPTABLE
     void secretsError(const QString &connectionPath, const QString &message);
-
-private Q_SLOTS:
-    void slotRegistered(const QDBusObjectPath &path);
 
 private:
     NetworkManagementServicePrivate * const d_ptr;

@@ -389,61 +389,65 @@ void Handler::enableAirplaneMode(bool enable)
     }
 }
 
+template<typename T>
+void makeDBusCall(const QDBusMessage &message, QObject *context, std::function<void(QDBusPendingReply<T>)> func)
+{
+    QDBusPendingReply<T> reply = QDBusConnection::systemBus().asyncCall(message);
+    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, context);
+    QObject::connect(watcher, &QDBusPendingCallWatcher::finished, context, [func] (QDBusPendingCallWatcher *watcher) {
+        const QDBusPendingReply<T> reply = *watcher;
+        if (!reply.isValid()) {
+            qCWarning(PLASMA_NM) << reply.error().message();
+            return;
+        }
+        func(reply);
+        watcher->deleteLater();
+    });
+}
+
+void setBluetoothEnabled(QString path, bool enabled)
+{
+    QDBusMessage message = QDBusMessage::createMethodCall("org.bluez", path, "org.freedesktop.DBus.Properties", "Set");
+    QList<QVariant> arguments;
+    arguments << QLatin1String("org.bluez.Adapter1");
+    arguments << QLatin1String("Powered");
+    arguments << QVariant::fromValue(QDBusVariant(QVariant(enabled)));
+    message.setArguments(arguments);
+    QDBusConnection::systemBus().asyncCall(message);
+}
+
 void Handler::enableBluetooth(bool enable)
 {
     qDBusRegisterMetaType< QMap<QDBusObjectPath, NMVariantMapMap > >();
 
-    QDBusMessage message = QDBusMessage::createMethodCall("org.bluez", "/", "org.freedesktop.DBus.ObjectManager", "GetManagedObjects");
-    QDBusPendingReply<QMap<QDBusObjectPath, NMVariantMapMap> > reply = QDBusConnection::systemBus().asyncCall(message);
-    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-    connect(watcher, &QDBusPendingCallWatcher::finished,
-        [this, enable] (QDBusPendingCallWatcher *watcher) {
-            QDBusPendingReply<QMap<QDBusObjectPath, NMVariantMapMap> > reply = *watcher;
-            if (reply.isValid()) {
-                for (const QDBusObjectPath &path : reply.value().keys()) {
-                    const QString objPath = path.path();
-                    qCDebug(PLASMA_NM) << "inspecting path" << objPath;
-                    const QStringList interfaces = reply.value().value(path).keys();
-                    qCDebug(PLASMA_NM) << "interfaces:" << interfaces;
-                    if (interfaces.contains("org.bluez.Adapter1")) {
-                        // We need to check previous state first
-                        if (!enable) {
-                            QDBusMessage message = QDBusMessage::createMethodCall("org.bluez", objPath, "org.freedesktop.DBus.Properties", "Get");
-                            QList<QVariant> arguments;
-                            arguments << QLatin1String("org.bluez.Adapter1");
-                            arguments << QLatin1String("Powered");
-                            message.setArguments(arguments);
-                            QDBusPendingReply<QVariant> getReply = QDBusConnection::systemBus().asyncCall(message);
-                            QDBusPendingCallWatcher *getWatcher = new QDBusPendingCallWatcher(getReply, this);
-                                connect(getWatcher, &QDBusPendingCallWatcher::finished,
-                                    [this, objPath] (QDBusPendingCallWatcher *watcher) {
-                                        QDBusPendingReply<QVariant> reply = *watcher;
-                                        if (reply.isValid()) {
-                                            m_bluetoothAdapters.insert(objPath, reply.value().toBool());
-                                            QDBusMessage message = QDBusMessage::createMethodCall("org.bluez", objPath, "org.freedesktop.DBus.Properties", "Set");
-                                            QList<QVariant> arguments;
-                                            arguments << QLatin1String("org.bluez.Adapter1");
-                                            arguments << QLatin1String("Powered");
-                                            arguments << QVariant::fromValue(QDBusVariant(QVariant(false)));
-                                            message.setArguments(arguments);
-                                            QDBusConnection::systemBus().asyncCall(message);
-                                        }
-                                        watcher->deleteLater();
-                                    });
-                        } else if (enable && m_bluetoothAdapters.value(objPath)) {
-                            QDBusMessage message = QDBusMessage::createMethodCall("org.bluez", objPath, "org.freedesktop.DBus.Properties", "Set");
-                            QList<QVariant> arguments;
-                            arguments << QLatin1String("org.bluez.Adapter1");
-                            arguments << QLatin1String("Powered");
-                            arguments << QVariant::fromValue(QDBusVariant(QVariant(enable)));
-                            message.setArguments(arguments);
-                            QDBusConnection::systemBus().asyncCall(message);
-                        }
-                    }
-                }
+    const QDBusMessage getObjects = QDBusMessage::createMethodCall("org.bluez", "/", "org.freedesktop.DBus.ObjectManager", "GetManagedObjects");
+
+    makeDBusCall<QMap<QDBusObjectPath, NMVariantMapMap>>(getObjects, this, [enable, this](const auto reply) {
+        for (const QDBusObjectPath &path : reply.value().keys()) {
+            const QString objPath = path.path();
+            qCDebug(PLASMA_NM) << "inspecting path" << objPath;
+            const QStringList interfaces = reply.value().value(path).keys();
+            qCDebug(PLASMA_NM) << "interfaces:" << interfaces;
+
+            if (!interfaces.contains("org.bluez.Adapter1")) {
+                continue;
             }
-            watcher->deleteLater();
-        });
+
+            // We need to check previous state first
+            if (!enable) {
+                QDBusMessage getPowered = QDBusMessage::createMethodCall("org.bluez", objPath, "org.freedesktop.DBus.Properties", "Get");
+                const QList<QVariant> arguments { QLatin1String("org.bluez.Adapter1"), QLatin1String("Powered") };
+                getPowered.setArguments(arguments);
+
+                makeDBusCall<QVariant>(getPowered, this, [objPath, this](const auto reply){
+                    m_bluetoothAdapters.insert(objPath, reply.value().toBool());
+                    setBluetoothEnabled(objPath, false);
+                });
+            } else if (m_bluetoothAdapters.value(objPath)) {
+                setBluetoothEnabled(objPath, true);
+            }
+        }
+    });
 }
 
 void Handler::enableNetworking(bool enable)

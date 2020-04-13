@@ -63,8 +63,6 @@ bool MobileProxyModel::filterAcceptsRow(int source_row, const QModelIndex& sourc
         if (showSavedMode()) {
             return itemType == NetworkModelItem::UnavailableConnection;
         } else {
-            if (sourceModel()->data(index,NetworkModel::SignalRole).toUInt() == 0)
-                return false; // if signal is 0 yet we still have connection, it means local access point -> we don't want to show that
             return itemType >= NetworkModelItem::AvailableConnection;
         }
     }

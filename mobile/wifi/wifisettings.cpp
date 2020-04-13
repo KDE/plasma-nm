@@ -62,6 +62,9 @@ QVariantMap WifiSettings::getConnectionSettings(const QString &connection, const
     if (!con)
         return QVariantMap();
 
+    if (type == "secrets")
+        return con->secrets(QLatin1String("802-11-wireless-security")).value().value(QLatin1String("802-11-wireless-security"));
+
     QVariantMap map = con->settings()->toMap().value(type);
     if (type == "ipv4") {
         NetworkManager::Ipv4Setting::Ptr ipSettings = NetworkManager::Ipv4Setting::Ptr(new NetworkManager::Ipv4Setting());
@@ -74,7 +77,7 @@ QVariantMap WifiSettings::getConnectionSettings(const QString &connection, const
         if (ipSettings->method() == NetworkManager::Ipv4Setting::Manual) {
             map.insert(QLatin1String("method"),QVariant(QLatin1String("manual")));
             map.insert(QLatin1String("address"),QVariant(ipSettings->addresses().first().ip().toString()));
-            map.insert(QLatin1String("prefix"),QVariant(ipSettings->addresses().first().netmask().toString()));
+            map.insert(QLatin1String("prefix"),QVariant(ipSettings->addresses().first().prefixLength()));
             map.insert(QLatin1String("gateway"),QVariant(ipSettings->addresses().first().gateway().toString()));
             map.insert(QLatin1String("dns"),QVariant(ipSettings->dns().first().toString()));
         }

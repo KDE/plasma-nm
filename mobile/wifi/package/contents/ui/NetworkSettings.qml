@@ -16,7 +16,6 @@
  *   Free Software Foundation, Inc.,
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-
 import QtQuick 2.6
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.2 as Controls
@@ -26,27 +25,25 @@ import org.kde.kcm 1.1
 
 SimpleKCM {
     property var path
-    property var settings: ({})
-    property var securityMap: ({})
-    property var activeMap: ({})
-    property alias password: wepWpaPasswordField.text
 
-    property var ipmap: ({})
-    property alias address: manualIPaddress.text
-    property alias gateway: manualIPgateway.text
-    property alias prefix: manualIPprefix.text
-    property alias dns: manualIPdns.text
-    property var ipRegex:  /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/
-    property bool manualIp
+    property var wirelessSettings: ({})
+    property var securitySettings: ({})
+    property var ipSettings: ({})
+    property var secrets: ({})
 
-    property bool enabledSave: (ipMethodComb.currentIndex == 0 || (
-                                ipMethodComb.currentIndex == 1 && manualIPaddress.acceptableInput
-                                && manualIPgateway.acceptableInput && manualIPprefix.acceptableInput
-                                && manualIPdns.acceptableInput ))
+    property var ipRegex: /^(([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))\.){3}([01]?[0-9]?[0-9]|2([0-4][0-9]|5[0-5]))$/
+
+    property bool enabledSave: (ipMethodCombobox.currentIndex == 0
+                                || (ipMethodCombobox.currentIndex == 1
+                                    && manualIPaddress.acceptableInput
+                                    && manualIPgateway.acceptableInput
+                                    && manualIPprefix.acceptableInput
+                                    && manualIPdns.acceptableInput))
 
     actions.main: Kirigami.Action {
         icon.name: "dialog-ok"
         text: i18n("Save")
+        enabled: enabledSave
         onTriggered: {
             save()
             kcm.pop()
@@ -55,14 +52,33 @@ SimpleKCM {
 
     header: Kirigami.Heading {
         id: detailsName
-        text: i18n("Connection Name")
+        text: i18n("Add new Connection")
         level: 2
         leftPadding: Kirigami.Units.smallSpacing
     }
 
     Kirigami.FormLayout {
-
         Item {
+            Kirigami.FormData.label: i18n("General")
+            Kirigami.FormData.isSection: true
+        }
+        Controls.TextField {
+            id: ssidField
+            Kirigami.FormData.label: i18n("SSID:")
+            text: wirelessSettings["ssid"] ? wirelessSettings["ssid"] : ""
+            enabled: true
+            onTextChanged: {
+                ipSettings["id"] = text
+            }
+        }
+        Controls.CheckBox {
+            id: hidden
+            Kirigami.FormData.label: i18n("Hidden Network:")
+            checked: wirelessSettings["hidden"] ? wirelessSettings["hidden"] : false
+            onToggled: ipSettings["hidden"] = checked
+        }
+
+        Kirigami.Separator {
             Kirigami.FormData.label: i18n("Security")
             Kirigami.FormData.isSection: true
         }
@@ -76,36 +92,54 @@ SimpleKCM {
                 ListElement {
                     text: "placeholder"
                 }
-                Component.onCompleted: {
+                function load() {
                     clear()
                     append({ "text": i18n("None"), "type": PlasmaNM.Enums.NoneSecurity })
                     append({ "text": i18n("WEP Key"), "type": PlasmaNM.Enums.StaticWep })
                     append({ "text": i18n("Dynamic WEP"), "type": PlasmaNM.Enums.DynamicWep })
                     append({ "text": i18n("WPA/WPA2 Personal"), "type": PlasmaNM.Enums.Wpa2Psk })
                     append({ "text": i18n("WPA/WPA2 Enterprise"), "type": PlasmaNM.Enums.Wpa2Eap })
-                    securityCombobox.currentIndex = 0
+                    switch (securitySettings["key-mgmt"]) {
+                    case "none":
+                        securityCombobox.currentIndex = 0
+                        break
+                    case "ieee8021x":
+                        securityCombobox.currentIndex = 1
+                        break
+                    case "wpa-psk":
+                        securityCombobox.currentIndex = 3
+                        break
+                    case "wpa-eap":
+                        securityCombobox.currentIndex = 4
+                        break
+                    default:
+                        securityCombobox.currentIndex = 0
+                        break
+                    }
                 }
             }
-            onCurrentIndexChanged: {
-                state = securityTypesModel.get(currentIndex).type;
-            }
+
         }
 
         PasswordField {
-            id: wepWpaPasswordField
+            id: passwordField
             Kirigami.FormData.label: i18n("Password:")
-            width: parent.width
-            securityType: securityTypesModel.get(securityCombobox.currentIndex).type
+            text: secrets["psk"]
+            visible: securityTypesModel.get(securityCombobox.currentIndex).type !== PlasmaNM.Enums.NoneSecurity
+            onTextChanged: securitySettings["password"] = text
         }
 
         Controls.ComboBox {
             id: authComboBox
             Kirigami.FormData.label: i18n("Authentication:")
-            visible: securityCombobox.currentIndex == 2 || securityCombobox.currentIndex == 4
-            model: [i18n("TLS"), i18n("LEAP"), i18n("FAST"), i18n("Tunneled TLS"), i18n("Protected EAP")] // more - SIM, AKA, PWD ?
+            visible: securityCombobox.currentIndex === 2
+                     || securityCombobox.currentIndex === 4
+            model: [i18n("TLS"), i18n("LEAP"), i18n("FAST"), i18n(
+                    "Tunneled TLS"), i18n(
+                    "Protected EAP")] // more - SIM, AKA, PWD ?
         }
         Controls.Label {
-            visible: authComboBox.visible
+            visible: securityCombobox.currentIndex !== 3 && securityCombobox.currentIndex !== 0
             text: "----Not yet implemented----"
             color: "red"
         }
@@ -116,32 +150,22 @@ SimpleKCM {
         }
 
         Controls.ComboBox {
-            id: ipMethodComb
-            width: parent.width
+            id: ipMethodCombobox
             model: [i18n("Automatic"), i18n("Manual")]
+            currentIndex: ipSettings["method"] === "manual" ? 1 : 0
+            property var manualIp: currentIndex === 1
             onCurrentIndexChanged: {
-                manualIp = currentIndex == 1
-
-                if (manualIp) {
-                    ipmap = {
-                    "method": "manual",
-                    "address": address,
-                    "prefix": prefix,
-                    "gateway": gateway,
-                    "dns": dns
-                    }
-                } else {
-                    ipmap = {"method": "auto"}
-                }
+                ipSettings["method"] = currentIndex === 1 ? "manual" : "auto"
             }
         }
 
         Controls.TextField {
             id: manualIPaddress
-            visible: manualIp
             Kirigami.FormData.label: i18n("IP Address:")
-            placeholderText: "193.168.1.128"
-            text: address
+            visible: ipMethodCombobox.manualIp
+            placeholderText: "192.168.1.128"
+            text: ipSettings["address"] ? ipSettings["address"] : ""
+            onTextChanged: ipSettings["address"] = text
             validator: RegExpValidator {
                 regExp: ipRegex
             }
@@ -149,10 +173,11 @@ SimpleKCM {
 
         Controls.TextField {
             id: manualIPgateway
-            visible: manualIp
             Kirigami.FormData.label: i18n("Gateway:")
+            visible: ipMethodCombobox.manualIp
             placeholderText: "192.168.1.1"
-            text: gateway
+            text: ipSettings["gateway"] ? ipSettings["gateway"] : ""
+            onTextChanged: ipSettings["gateway"] = text
             validator: RegExpValidator {
                 regExp: ipRegex
             }
@@ -160,100 +185,52 @@ SimpleKCM {
 
         Controls.TextField {
             id: manualIPprefix
-            visible: manualIp
             Kirigami.FormData.label: i18n("Network prefix length:")
-            placeholderText: "32"
-            text: prefix
-            validator: IntValidator { bottom: 1; top: 32; }
+            visible: ipMethodCombobox.manualIp
+            placeholderText: "16"
+            text: ipSettings["prefix"] ? ipSettings["prefix"] : ""
+            onTextChanged: ipSettings["prefix"] = text
+            validator: IntValidator {
+                bottom: 1
+                top: 32
+            }
         }
 
         Controls.TextField {
             id: manualIPdns
-            visible: manualIp
             Kirigami.FormData.label: i18n("DNS:")
+            visible: ipMethodCombobox.manualIp
             placeholderText: "8.8.8.8"
-            text: dns
+            text: ipSettings["dns"] ? ipSettings["dns"] : ""
+            onTextChanged: ipSettings["dns"] = text
             validator: RegExpValidator {
                 regExp: ipRegex
             }
         }
-
     }
-
-    function setStateFromMap() {
-
-        if (!ipmap)
-            return;
-        if (ipmap["method"] === "auto")
-            ipMethodComb.currentIndex = 0
-        if (ipmap["method"] === "manual"){
-            address = ipmap["address"];
-            gateway = ipmap["gateway"];
-            prefix = ipmap["prefix"];
-            dns  = ipmap["dns"];
-            ipMethodComb.currentIndex = 1
-        }
-
-        var x = securityMap["key-mgmt"]
-        switch (x) {
-            case "none":
-                securityCombobox.currentIndex = 0
-                break;
-             case "ieee8021x":
-                 securityCombobox.currentIndex = 1
-                 break;
-             case "wpa-psk":
-                 securityCombobox.currentIndex = 3
-                 break;
-             case "wpa-eap":
-                 securityCombobox.currentIndex = 4
-                 break;
-            default:
-                securityCombobox.currentIndex = -1
-                break;
-        }
-        wepWpaPasswordField.placeholderText = i18n("(Unchanged)")
-        securityCombobox.enabled = false
-    }
-
-    states: [
-        State {
-            name: PlasmaNM.Enums.NoneSecurity
-            PropertyChanges {
-                target: securitySectionView; securityMap: {"type" : PlasmaNM.Enums.NoneSecurity }
-            }
-        },
-        State {
-            name: PlasmaNM.Enums.StaticWep
-            PropertyChanges {
-                target: securitySectionView; securityMap: { "type" : PlasmaNM.Enums.StaticWep,
-                                                            "password" : password
-                }
-            }
-        },
-        State {
-            name: PlasmaNM.Enums.Wpa2Psk
-            PropertyChanges {
-                target: securitySectionView; securityMap: { "type" : PlasmaNM.Enums.Wpa2Psk,
-                                                            "password" : password
-                }
-            }
-        }
-    ]
 
     Component.onCompleted: {
-        settings = kcm.getConnectionSettings(path,"connection");
-        detailsName.text = settings["id"]
-        securityMap = kcm.getConnectionSettings(path, "802-11-wireless-security");
-        ipmap = kcm.getConnectionSettings(path,"ipv4");
-        setStateFromMap();
+        wirelessSettings = kcm.getConnectionSettings(path, "802-11-wireless")
+        securitySettings = kcm.getConnectionSettings(path, "802-11-wireless-security")
+        ipSettings = kcm.getConnectionSettings(path, "ipv4")
+        secrets = kcm.getConnectionSettings(path, "secrets")
+
+        if (path) {
+            detailsName.text = wirelessSettings["ssid"]
+        }
+
+        securityTypesModel.load()
     }
 
     function save() {
-        settings = ipmap;
-        if (password !== "") { //otherwise password is unchanged
-            settings["802-11-wireless-security"] = detailsSecuritySection.securityMap;
-        }
-        kcm.updateConnectionFromQML(path,settings);
+        var settings = ipSettings
+        settings["mode"] = "infrastructure"
+        securitySettings["type"] = securityTypesModel.get(securityCombobox.currentIndex).type
+        settings["802-11-wireless-security"] = securitySettings
+
+        if (path)
+            kcm.updateConnectionFromQML(path, settings)
+        else
+            kcm.addConnectionFromQML(settings)
     }
 }

@@ -102,7 +102,7 @@ ScrollViewKCM {
             iconName: "edit"
             text: i18n("Add custom connection")
             onTriggered: {
-                kcm.push("ConnectionEditor.qml")
+                kcm.push("NetworkSettings.qml")
                 contextDrawer.close()
             }
         },

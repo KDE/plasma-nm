@@ -24,6 +24,8 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kcm 1.1
 
 SimpleKCM {
+    title: path ?  wirelessSettings["ssid"] : i18n("Add new Connection")
+
     property var path
 
     property var wirelessSettings: ({})
@@ -48,13 +50,6 @@ SimpleKCM {
             save()
             kcm.pop()
         }
-    }
-
-    header: Kirigami.Heading {
-        id: detailsName
-        text: i18n("Add new Connection")
-        level: 2
-        leftPadding: Kirigami.Units.smallSpacing
     }
 
     Kirigami.FormLayout {
@@ -214,10 +209,6 @@ SimpleKCM {
         securitySettings = kcm.getConnectionSettings(path, "802-11-wireless-security")
         ipSettings = kcm.getConnectionSettings(path, "ipv4")
         secrets = kcm.getConnectionSettings(path, "secrets")
-
-        if (path) {
-            detailsName.text = wirelessSettings["ssid"]
-        }
 
         securityTypesModel.load()
     }

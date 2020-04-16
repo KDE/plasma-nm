@@ -226,13 +226,13 @@ PlasmaExtras.ExpandableListItem {
     }
 
     function changeState() {
-        if (Uuid || !predictableWirelessPassword || passwordDialogComponent.visible) {
+        if (Uuid || !predictableWirelessPassword || connectionItem.customExpandedViewContent == passwordDialogComponent) {
             if (ConnectionState == PlasmaNM.Enums.Deactivated) {
                 if (!predictableWirelessPassword && !Uuid) {
                     handler.addAndActivateConnection(DevicePath, SpecificPath)
-                } else if (passwordDialogComponent.visible) {
-                    if (connectionItem.customExpandedViewContent.item.password != "") {
-                        handler.addAndActivateConnection(DevicePath, SpecificPath, connectionItem.customExpandedViewContent.item.password)
+                } else if (connectionItem.customExpandedViewContent == passwordDialogComponent) {
+                    if (passwordDialogComponent.password != "") {
+                        handler.addAndActivateConnection(DevicePath, SpecificPath, passwordDialogComponent.password)
                         connectionItem.customExpandedViewContent = detailsComponent
                         connectionItem.collapse()
                     } else {

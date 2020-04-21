@@ -3,4 +3,5 @@ if (WITH_MODEMMANAGER_SUPPORT)
 endif()
 
 add_subdirectory(wifi)
+add_subdirectory(hotspot)
 

@@ -106,15 +106,6 @@ ScrollViewKCM {
                 contextDrawer.close()
             }
         },
-
-        Kirigami.Action {
-            iconName: "edit"
-            text: i18n("Create Hotspot")
-            onTriggered: {
-                kcm.push("TetheringSetting.qml")
-                contextDrawer.close()
-            }
-        },
         Kirigami.Action {
             iconName: "edit"
             text: i18n("Saved Connections")

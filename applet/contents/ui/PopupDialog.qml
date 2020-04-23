@@ -21,11 +21,12 @@
 import QtQuick 2.2
 import QtQuick.Layouts 1.2
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
-FocusScope {
+PlasmaComponents3.Page {
     id: full
 
     property alias toolbarValues: toolbar
@@ -47,18 +48,21 @@ FocusScope {
         sourceModel: full.connectionModel
     }
 
-    ColumnLayout {
-        anchors.fill: parent
-
+    header: PlasmaExtras.PlasmoidHeading {
         Toolbar {
             id: toolbar
-            Layout.fillWidth: true
+            width: parent.width
         }
+    }
+
+    FocusScope {
+
+        anchors.fill: parent
+        anchors.topMargin: units.smallSpacing * 2
 
         PlasmaExtras.ScrollArea {
             id: scrollView
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+            anchors.fill: parent
             frameVisible: false
 
             PlasmaExtras.Heading {
@@ -118,19 +122,19 @@ FocusScope {
                 delegate: ConnectionItem { }
             }
         }
-    }
 
-    Connections {
-        target: plasmoid
-        onExpandedChanged: {
-            connectionView.currentVisibleButtonIndex = -1;
+        Connections {
+            target: plasmoid
+            onExpandedChanged: {
+                connectionView.currentVisibleButtonIndex = -1;
 
-            if (expanded) {
-                handler.requestScan();
-                full.connectionModel = networkModelComponent.createObject(full)
-            } else {
-                full.connectionModel.destroy()
-                toolbar.closeSearch();
+                if (expanded) {
+                    handler.requestScan();
+                    full.connectionModel = networkModelComponent.createObject(full)
+                } else {
+                    full.connectionModel.destroy()
+                    toolbar.closeSearch();
+                }
             }
         }
     }

@@ -209,14 +209,6 @@ ColumnLayout {
         }
     }
 
-    PlasmaCore.SvgItem {
-        Layout.fillWidth: true
-        elementId: "horizontal-line"
-        Layout.leftMargin: - units.smallSpacing * 1.5
-        Layout.rightMargin: - units.smallSpacing * 1.5
-        svg: lineSvg
-    }
-
    PlasmaComponents.TextField {
         id: searchTextField
 

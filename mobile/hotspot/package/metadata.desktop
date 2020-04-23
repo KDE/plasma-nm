@@ -1,6 +1,16 @@
 [Desktop Entry]
 Name=Hotspot
+Name[ca]=Punt d'accés
+Name[et]=Pääsupunkt
+Name[nl]=Hotspot
+Name[uk]=Хот-спот
+Name[x-test]=xxHotspotxx
 Comment=Wi-Fi Hotspots
+Comment[ca]=Punts d'accés Wi-Fi
+Comment[et]=WiFi pääsupunktid
+Comment[nl]=Wi-Fi hotspots
+Comment[uk]=Хот-споти Wi-Fi
+Comment[x-test]=xxWi-Fi Hotspotsxx
 Encoding=UTF-8
 Type=Service
 Icon=network-wireless-hotspot

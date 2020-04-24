@@ -1,14 +1,20 @@
 [Desktop Entry]
 Name=Hotspot
 Name[ca]=Punt d'accés
+Name[es]=Punto de acceso
 Name[et]=Pääsupunkt
 Name[nl]=Hotspot
+Name[pt]=Ponto de Acesso
+Name[sv]=Accesspunkt
 Name[uk]=Хот-спот
 Name[x-test]=xxHotspotxx
 Comment=Wi-Fi Hotspots
 Comment[ca]=Punts d'accés Wi-Fi
+Comment[es]=Puntos de acceso Wi-Fi
 Comment[et]=WiFi pääsupunktid
 Comment[nl]=Wi-Fi hotspots
+Comment[pt]=Pontos de Acesso Wi-Fi
+Comment[sv]=WIFI-accesspunkter
 Comment[uk]=Хот-споти Wi-Fi
 Comment[x-test]=xxWi-Fi Hotspotsxx
 Encoding=UTF-8

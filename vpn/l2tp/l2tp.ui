@@ -184,7 +184,7 @@
        <item row="0" column="1">
         <widget class="KUrlRequester" name="userCA">
          <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Certificate authority (CA) file in .pem, .der, .crt, .crt or .p12 formats.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="filter">
           <string>*.pem *.der *.crt *.cer *.p12</string>

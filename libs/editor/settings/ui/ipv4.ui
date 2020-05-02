@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="toolTip">
-   <string extracomment="Advanced IP settings"/>
+   <string>Advanced IP settings</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
@@ -46,7 +46,7 @@
      </property>
      <item>
       <property name="text">
-       <string>Automatic</string>
+       <string comment="Method:">Automatic</string>
       </property>
      </item>
      <item>

@@ -138,7 +138,7 @@
      </property>
      <item>
       <property name="text">
-       <string extracomment="automatic band">Automatic</string>
+       <string comment="Band:">Automatic</string>
       </property>
      </item>
      <item>
@@ -268,7 +268,7 @@ a Wi-Fi network on the specified channel</string>
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
      <property name="specialValueText">
-      <string>Automatic</string>
+      <string comment="MTU:">Automatic</string>
      </property>
      <property name="suffix">
       <string> bytes</string>

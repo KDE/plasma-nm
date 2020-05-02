@@ -157,7 +157,7 @@ data usage should be restricted.</string>
      </property>
      <item>
       <property name="text">
-       <string>Automatic</string>
+       <string comment="Item in the Metered: list">Automatic</string>
       </property>
      </item>
      <item>

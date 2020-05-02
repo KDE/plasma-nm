@@ -109,7 +109,7 @@ into multiple Ethernet frames</string>
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
      <property name="specialValueText">
-      <string>Automatic</string>
+      <string comment="MTU:">Automatic</string>
      </property>
      <property name="suffix">
       <string> bytes</string>
@@ -194,7 +194,7 @@ the device compatibility. If unsure, leave here “Ignore” or pick “Automati
      </item>
      <item>
       <property name="text">
-       <string>Automatic</string>
+       <string comment="Link negotiation:">Automatic</string>
       </property>
      </item>
      <item>

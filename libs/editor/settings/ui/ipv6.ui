@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="toolTip">
-   <string extracomment="Advanced IP settings"/>
+   <string>Advanced IP settings</string>
   </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
@@ -224,7 +224,7 @@ a temporary IPv6 address in addition to the public one generated from MAC addres
      </property>
      <item>
       <property name="text">
-       <string>Automatic</string>
+       <string comment="Method:">Automatic</string>
       </property>
      </item>
      <item>

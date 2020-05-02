@@ -632,7 +632,7 @@
          </property>
          <item>
           <property name="text">
-           <string>Automatic</string>
+           <string comment="PEAP version">Automatic</string>
           </property>
          </item>
          <item>

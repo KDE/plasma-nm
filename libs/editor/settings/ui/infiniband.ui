@@ -77,7 +77,7 @@
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
      <property name="specialValueText">
-      <string>Automatic</string>
+      <string comment="MTU:">Automatic</string>
      </property>
      <property name="suffix">
       <string> bytes</string>

@@ -317,7 +317,9 @@ void ConnectionIcon::setIcons()
 
     // Set icon based on the current primary connection if the activating connection is virtual
     // since we're not setting icons for virtual connections
-    if (!connection || (connection && UiUtils::isConnectionTypeVirtual(connection->type()))) {
+    if (!connection
+        || (connection && UiUtils::isConnectionTypeVirtual(connection->type()))
+        || connection->type() == NetworkManager::ConnectionSettings::WireGuard) {
         connection = NetworkManager::primaryConnection();
     }
 

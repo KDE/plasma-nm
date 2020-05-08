@@ -29,7 +29,7 @@ import org.kde.kcm 1.2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-import org.kde.kirigami 2.9 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 
 ScrollViewKCM {
     id: root
@@ -66,42 +66,12 @@ ScrollViewKCM {
         sourceModel: connectionModel
     }
 
-    header: QQC2.TextField {
+    header: Kirigami.SearchField {
         id: searchField
 
         focus: true
-        placeholderText: i18n("Type here to search connection...")
-
         onTextChanged: {
             editorProxyModel.setFilterRegExp(text)
-        }
-
-        MouseArea {
-            anchors {
-                right: parent.right
-                verticalCenter: parent.verticalCenter
-                rightMargin: y
-            }
-
-            opacity: searchField.text.length > 0 ? 1 : 0
-            width: Kirigami.Units.iconSizes.small
-            height: width
-
-            onClicked: {
-                searchField.text = ""
-            }
-
-            Kirigami.Icon {
-                anchors.fill: parent
-                source: LayoutMirroring.enabled ? "edit-clear-rtl" : "edit-clear"
-            }
-
-            Behavior on opacity {
-                OpacityAnimator {
-                    duration: Kirigami.Units.longDuration
-                    easing.type: Easing.InOutQuad
-                }
-            }
         }
     }
 
@@ -121,18 +91,8 @@ ScrollViewKCM {
 
         section {
             property: "KcmConnectionType"
-            delegate: Kirigami.AbstractListItem {
-                width: connectionView.width
-                supportsMouseEvents: false
-                background: Rectangle {
-                    color: palette.window
-                }
-                QQC2.Label {
-                    id: headerLabel
-                    anchors.centerIn: parent
-                    font.weight: Font.DemiBold
-                    text: section
-                }
+            delegate: Kirigami.ListSectionHeader {
+                text: section
             }
         }
 
@@ -164,6 +124,47 @@ ScrollViewKCM {
 
     footer: RowLayout {
         spacing: Kirigami.Units.largeSpacing
+
+        QQC2.Button {
+            id: configureButton
+
+            icon.name: "configure"
+
+            Layout.alignment: Qt.AlignLeft
+
+            QQC2.ToolTip.text: i18n("Configuration")
+            QQC2.ToolTip.visible: hovered
+
+            onClicked: {
+                configPopup.open()
+            }
+
+            PlasmaNM.Configuration {
+                id: configuration
+            }
+
+            QQC2.Popup {
+                id: configPopup
+                x: 0
+                y: -height
+                modal: true
+                focus: true
+
+                Kirigami.FormLayout {
+                    QQC2.CheckBox {
+                        text: i18n("Ask for PIN on modem detection")
+                        onToggled: configuration.unlockModemOnDetection = checked
+                        Component.onCompleted: checked = configuration.unlockModemOnDetection
+                    }
+
+                    QQC2.CheckBox {
+                        text: i18n("Show virtual connections")
+                        onToggled: configuration.manageVirtualConnections = checked
+                        Component.onCompleted: checked = configuration.manageVirtualConnections
+                    }
+                }
+            }
+        }
 
         QQC2.CheckBox {
             id: expertModeCheckbox
@@ -213,39 +214,25 @@ ScrollViewKCM {
             QQC2.ToolTip.text: i18n("Add new connection")
             QQC2.ToolTip.visible: hovered
 
-            onClicked: {
-                addNewConnectionDialog.open()
-            }
+            onClicked: addNewConnectionSheet.open()
+        }
+
+        QQC2.Button {
+            visible: handler.hotspotSupported
+            icon.name: "network-wireless-hotspot"
+
+            QQC2.ToolTip.text: i18n("Configure Hotspot")
+            QQC2.ToolTip.visible: hovered
+
+            Layout.alignment: Qt.AlignRight
+
+            onClicked: kcm.push("HotspotPage.qml")
         }
     }
 
     ConnectionEditor {
         id: connectionEditor
         visible: false
-    }
-
-    Row {
-        id: leftButtonRow
-
-        anchors {
-            bottom: parent.bottom
-            left: parent.left
-            margins: units.smallSpacing
-        }
-        spacing: units.smallSpacing
-
-        QQC2.ToolButton {
-            id: configureButton
-
-            icon.name: "configure"
-
-            QQC2.ToolTip.text: i18n("Configuration")
-            QQC2.ToolTip.visible: hovered
-
-            onClicked: {
-                configurationDialog.open()
-            }
-        }
     }
 
     MessageDialog {
@@ -300,16 +287,12 @@ ScrollViewKCM {
         onRejected: selectConnectionInView(connectionName, connectionPath)
     }
 
-    AddConnectionDialog {
-        id: addNewConnectionDialog
+    AddConnectionSheet {
+        id: addNewConnectionSheet
 
         onRequestCreateConnection: {
             root.requestCreateConnection(type, vpnType, specificType, shared)
         }
-    }
-
-    ConfigurationDialog {
-        id: configurationDialog
     }
 
     onCurrentConnectionPathChanged: {

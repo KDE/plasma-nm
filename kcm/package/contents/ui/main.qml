@@ -100,7 +100,7 @@ ScrollViewKCM {
             width: connectionView.width
             onAboutToChangeConnection: {
                 // Shouldn't be problem to set this in advance
-                root.currentConnectionExportable = exportable
+                kcmroot.currentConnectionExportable = exportable
                 if (kcm.needsSave) {
                     confirmSaveDialog.connectionName = name
                     confirmSaveDialog.connectionPath = path
@@ -303,7 +303,7 @@ ScrollViewKCM {
             } else {
                 kcm.currentIndex = 1
             }
-            kcm.selectConnection(root.currentConnectionPath)
+            kcm.selectConnection(kcmroot.currentConnectionPath)
         }
     }
 
@@ -320,7 +320,7 @@ ScrollViewKCM {
     }
 
     function selectConnectionInView(connectionName, connectionPath) {
-        root.currentConnectionName = connectionName
-        root.currentConnectionPath = connectionPath
+        kcmroot.currentConnectionName = connectionName
+        kcmroot.currentConnectionPath = connectionPath
     }
 }

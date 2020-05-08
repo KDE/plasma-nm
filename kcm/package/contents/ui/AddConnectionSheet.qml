@@ -47,13 +47,12 @@ Kirigami.OverlaySheet {
         property int connectionType
         property string connectionVpnType
 
-        Layout.preferredWidth: Kirigami.Units.gridUnit*10
+        Layout.preferredWidth: kcmroot.width*0.8
 
         clip: true
         model: connectionModel
-        boundsBehavior: Flickable.StopAtBounds
 
-        PlasmaNM.KcmIdentityModel {
+        PlasmaNM.CreatableConnectionsModel {
             id: connectionModel
         }
 

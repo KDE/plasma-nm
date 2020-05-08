@@ -51,8 +51,11 @@ Kirigami.OverlaySheet {
 
         clip: true
         model: connectionModel
-        currentIndex: -1
         boundsBehavior: Flickable.StopAtBounds
+
+        PlasmaNM.KcmIdentityModel {
+            id: connectionModel
+        }
 
         section {
             property: "ConnectionTypeSection"

@@ -32,7 +32,7 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.12 as Kirigami
 
 ScrollViewKCM {
-    id: root
+    id: kcmroot
 
     ConfigModule.quickHelp: i18n("Connections")
 
@@ -177,7 +177,7 @@ ScrollViewKCM {
             id: exportConnectionButton
             Layout.alignment: Qt.AlignRight
 
-            enabled: root.currentConnectionExportable
+            enabled: kcmroot.currentConnectionExportable
             icon.name: "document-export"
 
             QQC2.ToolTip.text: i18n("Export selected connection")
@@ -192,7 +192,7 @@ ScrollViewKCM {
             id: removeConnectionButton
             Layout.alignment: Qt.AlignRight
 
-            enabled: root.currentConnectionPath && root.currentConnectionPath.length
+            enabled: kcmroot.currentConnectionPath && kcmroot.currentConnectionPath.length
             icon.name: "list-remove"
 
             QQC2.ToolTip.text: i18n("Remove selected connection")
@@ -277,7 +277,7 @@ ScrollViewKCM {
         icon: StandardIcon.Question
         standardButtons: StandardButton.Ok | StandardButton.Cancel
         title: i18nc("@title:window", "Save Connection")
-        text: i18n("Do you want to save changes made to the connection '%1'?", root.currentConnectionName)
+        text: i18n("Do you want to save changes made to the connection '%1'?", kcmroot.currentConnectionName)
 
         onAccepted: {
             kcm.save()
@@ -289,6 +289,7 @@ ScrollViewKCM {
 
     AddConnectionSheet {
         id: addNewConnectionSheet
+        parent: kcmroot
 
         onRequestCreateConnection: {
             root.requestCreateConnection(type, vpnType, specificType, shared)

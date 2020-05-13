@@ -204,7 +204,7 @@ ColumnLayout {
             }
 
             onClicked: {
-                KCMShell.open(mainWindow.kcm)
+                KCMShell.openSystemSettings(mainWindow.kcm)
             }
         }
     }

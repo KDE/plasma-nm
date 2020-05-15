@@ -531,6 +531,19 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
                 KMessageBox::information(nullptr, i18n("Invalid argument in option: %1", line));
                 key_direction = -1;
             }
+
+            // `key-direction` may also be specified *after* the <tls-auth> etc. block in an *.ovpn file
+            if (key_direction > -1) {
+                if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TA))
+                    && !dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TA_DIR))) {
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA_DIR), QString().setNum(key_direction));
+                }
+                if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_KEY))
+                    && !dataMap.contains(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY_DIRECTION))) {
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY_DIRECTION), QString().setNum(key_direction));
+                }
+            }
+
             continue;
         }
 

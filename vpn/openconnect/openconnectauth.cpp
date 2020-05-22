@@ -218,6 +218,10 @@ void OpenconnectAuthWidget::readConfig()
         const QString protocol = dataMap[NM_OPENCONNECT_KEY_PROTOCOL];
         openconnect_set_protocol(d->vpninfo, OC3DUP(protocol == "juniper" ? "nc" : protocol.toUtf8().data()));
     }
+    if (!dataMap[NM_OPENCONNECT_KEY_REPORTED_OS].isEmpty()) {
+        const QString reportedOs = dataMap[NM_OPENCONNECT_KEY_REPORTED_OS];
+        openconnect_set_reported_os(d->vpninfo, reportedOs.toUtf8().data());
+    }
 
     d->tokenMode = dataMap[NM_OPENCONNECT_KEY_TOKEN_MODE].toUtf8();
 }

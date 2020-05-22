@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>418</width>
-    <height>488</height>
+    <height>518</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -75,7 +75,7 @@
       <item row="3" column="1">
        <widget class="QLineEdit" name="leProxy"/>
       </item>
-      <item row="5" column="0">
+      <item row="6" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
          <string>CSD Wrapper Script:</string>
@@ -85,14 +85,14 @@
         </property>
        </widget>
       </item>
-      <item row="4" column="0" colspan="2">
+      <item row="5" column="0" colspan="2">
        <widget class="QCheckBox" name="chkAllowTrojan">
         <property name="text">
          <string>Allow Cisco Secure Desktop trojan</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="1">
+      <item row="6" column="1">
        <widget class="KUrlRequester" name="leCsdWrapperScript"/>
       </item>
       <item row="0" column="0">
@@ -126,6 +126,58 @@
         <item>
          <property name="text">
           <string>PAN Global Protect</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Reported OS:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QComboBox" name="cmbReportedOs">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>GNU/Linux</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>GNU/Linux 64-bit</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Windows</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Mac OS X</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Android</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Apple iOS</string>
          </property>
         </item>
        </widget>
@@ -234,7 +286,7 @@
  <customwidgets>
   <customwidget>
    <class>KUrlRequester</class>
-   <extends>QFrame</extends>
+   <extends>QWidget</extends>
    <header>kurlrequester.h</header>
   </customwidget>
  </customwidgets>

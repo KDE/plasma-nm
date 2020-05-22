@@ -192,10 +192,28 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
         cmbProtocolIndex = 2; // paloAlto/GlobalProtect (gp)
     }
 
+    int cmbReportedOsIndex;
+    if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QString()) {
+        cmbReportedOsIndex = 0;
+    } else if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QLatin1String("linux")) {
+        cmbReportedOsIndex = 1;
+    } else if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QLatin1String("linux-64")) {
+        cmbReportedOsIndex = 2;
+    } else if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QLatin1String("win")) {
+        cmbReportedOsIndex = 3;
+    } else if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QLatin1String("mac-intel")) {
+        cmbReportedOsIndex = 4;
+    } else if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QLatin1String("android")) {
+        cmbReportedOsIndex = 5;
+    } else {
+        cmbReportedOsIndex = 6; // apple-ios
+    }
+
     d->ui.cmbProtocol->setCurrentIndex(cmbProtocolIndex);
     d->ui.leGateway->setText(dataMap[NM_OPENCONNECT_KEY_GATEWAY]);
     d->ui.leCaCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_CACERT]));
     d->ui.leProxy->setText(dataMap[NM_OPENCONNECT_KEY_PROXY]);
+    d->ui.cmbReportedOs->setCurrentIndex(cmbReportedOsIndex);
     d->ui.chkAllowTrojan->setChecked(dataMap[NM_OPENCONNECT_KEY_CSD_ENABLE] == "yes");
     d->ui.leCsdWrapperScript->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_CSD_WRAPPER]));
     d->ui.leUserCert->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_USERCERT]));
@@ -258,6 +276,30 @@ QVariantMap OpenconnectSettingWidget::setting() const
             protocol = QLatin1String("gp");
     }
 
+    QString reportedOs;
+    switch (d->ui.cmbReportedOs->currentIndex()) {
+        case 0:
+            reportedOs = QString();
+            break;
+        case 1:
+            reportedOs = QLatin1String("linux");
+            break;
+        case 2:
+            reportedOs = QLatin1String("linux-64");
+            break;
+        case 3:
+            reportedOs = QLatin1String("win");
+            break;
+        case 4:
+            reportedOs = QLatin1String("mac-intel");
+            break;
+        case 5:
+            reportedOs = QLatin1String("android");
+            break;
+        default:
+            reportedOs = QLatin1String("apple-ios");
+    }
+
     data.insert(NM_OPENCONNECT_KEY_PROTOCOL, protocol);
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_GATEWAY), d->ui.leGateway->text());
     if (d->ui.leCaCertificate->url().isValid()) {
@@ -266,6 +308,7 @@ QVariantMap OpenconnectSettingWidget::setting() const
     if (!d->ui.leProxy->text().isEmpty()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_PROXY), d->ui.leProxy->text());
     }
+    data.insert(NM_OPENCONNECT_KEY_REPORTED_OS, reportedOs);
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_CSD_ENABLE), d->ui.chkAllowTrojan->isChecked() ? "yes" : "no");
     if (d->ui.leCsdWrapperScript->url().isValid()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_CSD_WRAPPER), d->ui.leCsdWrapperScript->url().toLocalFile());

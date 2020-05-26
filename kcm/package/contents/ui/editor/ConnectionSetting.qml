@@ -20,7 +20,7 @@
 
 import QtQuick 2.6
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.2 as QtControls
+import QtQuick.Controls 2.2 as QQC2
 
 import org.kde.kirigami 2.5 as Kirigami
 
@@ -32,7 +32,7 @@ Kirigami.FormLayout {
     property string settingName: i18n("Connection")
     property alias connectionNameTextField: connectionNameTextField
 
-    QtControls.TextField  {
+    QQC2.TextField  {
         id: connectionNameTextField
         focus: true
         Kirigami.FormData.label: i18n("Network Name:")
@@ -40,50 +40,44 @@ Kirigami.FormLayout {
         onTextEdited: connectionSettingsObject.id = text
     }
 
-    QtControls.CheckBox {
+    QQC2.SpinBox {
+        id: prioritySpinBox
+        Kirigami.FormData.label: i18n("Priority:")
+        value: 0
+
+        QQC2.ToolTip {
+            text: i18n("If the connection is set to autoconnect, connections with higher priority will be preferred.\nDefaults to 0. The higher number means higher priority. An negative number can be used to \nindicate priority lower than the default.")
+        }
+
+        onValueModified: connectionSettingsObject.priority = value
+    }
+
+    QQC2.CheckBox {
         id: autoconnectCheckbox
         checked: true
-        text: i18n("Automatically connect to this network when it is available")
+        text: i18n("Automatically connect")
 
         onToggled: connectionSettingsObject.autoconnect = checked
     }
 
+    QQC2.CheckBox {
+        id: allUsersAllowedCheckbox
+        Layout.fillWidth: true
+        text: i18n("Allow all users to connect to this network")
+
+        onToggled: checked ? connectionSettingsObject.permissions = [] : connectionSettingsObject.permissions = ["replace_current_user"]
+    }
+
     RowLayout {
         Layout.fillWidth: true
+        Kirigami.FormData.label: i18n("Connect to this VPN when active:")
 
-        QtControls.CheckBox {
-            id: allUsersAllowedCheckbox
-            Layout.fillWidth: true
-            text: i18n("All users may connect to this network")
+        QQC2.CheckBox {
+            id: autoconnectVpnCheckbox
 
-            onToggled: checked ? connectionSettingsObject.permissions = [] : connectionSettingsObject.permissions = ["replace_current_user"]
+            onToggled: checked ? connectionSettingsObject.secondaryConnection = vpnListCombobox.currentText : connectionSettingsObject.secondaryConnection = ""
         }
-
-        // TODO implement advanced configuration
-        QtControls.Button {
-            id: advancedPermissionsButton
-            Layout.alignment: Qt.AlignRight
-            enabled: !allUsersAllowedCheckbox.checked
-            text: i18n("Advanced...")
-            visible: expertModeCheckbox.checked
-
-            QtControls.ToolTip.text: i18n("Edit advanced permissions for this connection")
-            QtControls.ToolTip.visible: advancedPermissionsButton.hovered
-        }
-    }
-
-    QtControls.CheckBox {
-        id: autoconnectVpnCheckbox
-        text: i18n("Automatically connect to VPN when using this connection")
-
-        onToggled: checked ? connectionSettingsObject.secondaryConnection = vpnListCombobox.currentText : connectionSettingsObject.secondaryConnection = ""
-    }
-
-    RowLayout {
-        Item {
-            Layout.preferredWidth: Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
-        }
-        QtControls.ComboBox {
+        QQC2.ComboBox {
             id: vpnListCombobox
             enabled: autoconnectVpnCheckbox.checked
             model: nmUtils.vpnConnections()
@@ -92,38 +86,22 @@ Kirigami.FormLayout {
         }
     }
 
-    Item {
-        Kirigami.FormData.isSection: true
-    }
-
-    QtControls.ComboBox {
-        id: firewallZoneCombobox
-        Kirigami.FormData.label: i18n("Firewall zone:")
-        model: nmUtils.firewallZones()
-        visible: expertModeCheckbox.checked
-
-        onActivated: connectionSettingsObject.zone = currentText
-    }
-
-    QtControls.SpinBox {
-        id: prioritySpinBox
-        Kirigami.FormData.label: i18n("Priority:")
-        value: 0
-
-        QtControls.ToolTip {
-            text: i18n("If the connection is set to autoconnect, connections with higher priority will be preferred.\nDefaults to 0. The higher number means higher priority. An negative number can be used to \nindicate priority lower than the default.")
-        }
-
-        onValueModified: connectionSettingsObject.priority = value
-    }
-
-    QtControls.ComboBox {
+    QQC2.ComboBox {
         id: connectionMeteredCombobox
-        Kirigami.FormData.label: i18n("Connection metered:")
-        model: [ i18n("Auto"), i18n("Yes"), i18n("No") ]
-        visible: expertModeCheckbox.checked
+        model: [ i18n("Automatically"), i18n("Always"), i18n("Never") ]
 
         onActivated: connectionSettingsObject.metered = currentIndex
+
+        Kirigami.FormData.label: i18n("Consider this a metered connection:")
+    }
+
+    QQC2.ComboBox {
+        id: firewallZoneCombobox
+        model: nmUtils.firewallZones()
+
+        onActivated: connectionSettingsObject.zone = currentText
+
+        Kirigami.FormData.label: i18n("Put this network in the firewall zone:")
     }
 
     function loadSettings() {

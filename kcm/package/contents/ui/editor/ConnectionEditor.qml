@@ -36,68 +36,17 @@ SimpleKCM {
     }
 
     ColumnLayout {
-        spacing: Kirigami.Units.smallSpacing
+        id: simpleLayout
 
-        StackLayout {
-            Layout.alignment: Qt.AlignHCenter
+        ConnectionSetting {
+            id: connectionSetting
             Layout.fillWidth: true
-            Layout.minimumWidth: Kirigami.Units.gridUnit * 25
-            Layout.maximumWidth: Kirigami.Units.gridUnit * 40
+            twinFormLayouts: connectionSpecificSetting.item
+        }
 
-            currentIndex: expertModeCheckbox.checked ? 1 : 0
-
-            ColumnLayout {
-                id: simpleLayout
-                //spacing is managed by FormLayout
-                spacing: 0
-                ConnectionSetting {
-                    id: connectionSetting
-                    Layout.fillWidth: true
-                    twinFormLayouts: connectionSpecificSetting.item
-                }
-
-                Loader {
-                    id: connectionSpecificSetting
-                    Layout.fillWidth: true
-                }
-            }
-
-            ColumnLayout {
-
-                QtControls.TabBar {
-                    id: tabBar
-                    Layout.fillWidth: true
-
-                    QtControls.TabButton {
-                        text: connectionSetting.settingName
-                    }
-
-                    QtControls.TabButton {
-                        text: connectionSpecificSetting.item.settingName
-                    }
-
-                    // FIXME just placeholders for now
-                    QtControls.TabButton {
-                        text: i18n("IP")
-                    }
-                }
-
-                StackLayout {
-                    id: expertLayout
-
-                    Layout.fillWidth: true
-
-                    currentIndex: tabBar.currentIndex
-                    // Items will be re-parented
-                }
-            }
-
-            // FIXME this is probably not the best solution
-            onCurrentIndexChanged: {
-                tabBar.currentIndex = 0
-                connectionSetting.parent = currentIndex ? expertLayout : simpleLayout
-                connectionSpecificSetting.parent =  currentIndex ? expertLayout : simpleLayout
-            }
+        Loader {
+            id: connectionSpecificSetting
+            Layout.fillWidth: true
         }
     }
 

@@ -131,7 +131,7 @@ Kirigami.FormLayout {
         model: nmUtils.availableBssids(ssidCombobox.currentText)
         editable: true
         opacity: visible ? 1 : 0
-        visible: !modeCombobox.currentIndex && expertModeCheckbox.checked
+        visible: !modeCombobox.currentIndex
         textRole: "bssid"
         validator: RegExpValidator { regExp: /([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}/ }
     }
@@ -143,7 +143,7 @@ Kirigami.FormLayout {
 
         model: [i18n("Automatic"), i18n("A (5 GHz)"), i18n("B/G (2.4 GHz)")]
         opacity: visible ? 1 : 0
-        visible: modeCombobox.currentIndex && expertModeCheckbox.checked
+        visible: modeCombobox.currentIndex
     }
 
     QtControls.ComboBox {
@@ -153,7 +153,7 @@ Kirigami.FormLayout {
         enabled: bandCombobox.currentIndex
         model: nmUtils.wirelessChannels(bandCombobox.currentIndex)
         opacity: visible ? 1 : 0
-        visible: modeCombobox.currentIndex && expertModeCheckbox.checked
+        visible: modeCombobox.currentIndex
     }
 
     QtControls.ComboBox {
@@ -179,7 +179,6 @@ Kirigami.FormLayout {
         model: nmUtils.deviceHwAddresses(2) // Wireless device enum is NM_DEVICE_TYPE_WIFI which is 2
         validator: RegExpValidator { regExp: /([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}/ }
         textRole: "mac"
-        visible: expertModeCheckbox.checked
     }
 
     QtControls.ComboBox {
@@ -189,7 +188,6 @@ Kirigami.FormLayout {
         editable: true
         model: ["", i18n("Preserve"), i18n("Permanent"), i18n("Random"), i18n("Stable")]
         validator: RegExpValidator { regExp: /(([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2})|Preserve|Permanent|Random|Stable/ }
-        visible: expertModeCheckbox.checked
     }
 
     QtControls.SpinBox {
@@ -201,7 +199,6 @@ Kirigami.FormLayout {
         to: 1000
         valueFromText: function(text, locale) { return text === "Automatic" ? 0 : Number.fromLocaleString(locale, text); }
         textFromValue: function(value, locale) { return value ? Number(value).toLocaleString(locale, 'f', 0) : i18n("Automatic")}
-        visible: expertModeCheckbox.checked
     }
 
     QtControls.CheckBox {

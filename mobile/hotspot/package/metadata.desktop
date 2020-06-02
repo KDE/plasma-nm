@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Hotspot
 Name[ca]=Punt d'accés
+Name[cs]=Hotspot
 Name[es]=Punto de acceso
 Name[et]=Pääsupunkt
 Name[eu]=Berogunea
@@ -20,6 +21,7 @@ Name[x-test]=xxHotspotxx
 Name[zh_TW]=熱點
 Comment=Wi-Fi Hotspots
 Comment[ca]=Punts d'accés Wi-Fi
+Comment[cs]=Hostpoty Wi-Fi
 Comment[es]=Puntos de acceso Wi-Fi
 Comment[et]=WiFi pääsupunktid
 Comment[eu]=Wi-Fi berogunea

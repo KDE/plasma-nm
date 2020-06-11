@@ -75,7 +75,7 @@ ColumnLayout {
 
             checked: enabled && enabledConnections.wirelessEnabled
             enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
-            tooltip: i18n("Enable wireless")
+            tooltip: i18n("Enable Wi-Fi")
             icon: enabled ? "network-wireless-on" : "network-wireless-off"
             visible: availableDevices.wirelessDeviceAvailable
 
@@ -98,6 +98,11 @@ ColumnLayout {
             }
         }
 
+        // Add some extra spacing between the wifi and airplane mode toggles
+        Item {
+            Layout.preferredWidth: units.smallSpacing * 2
+        }
+
         SwitchButton {
             id: planeModeSwitchButton
 
@@ -105,7 +110,9 @@ ColumnLayout {
             property bool airplaneModeEnabled: false
 
             checked: airplaneModeEnabled
-            tooltip: i18n("Enable airplane mode")
+            tooltip: airplaneModeEnabled ?
+                    xi18nc("@info", "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth") :
+                    xi18nc("@info", "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth")
             icon: airplaneModeEnabled ? "network-flightmode-on" : "network-flightmode-off"
             visible: availableDevices.modemDeviceAvailable || availableDevices.wirelessDeviceAvailable
 

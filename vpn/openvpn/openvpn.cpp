@@ -363,6 +363,9 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             continue;
         }
         if (key_value[0] == REMOTE_TAG) {
+            if (have_remote) {
+                continue;
+            }
             if (key_value.count() >= 2 && key_value.count() <= 4) {
                 QString remote = key_value[1];
                 if (remote.startsWith(QLatin1Char('\'')) || remote.startsWith(QLatin1Char('"'))) {

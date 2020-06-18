@@ -59,6 +59,7 @@ Name[sv]=OpenVPN
 Name[tr]=OpenVPN
 Name[ug]=OpenVPN
 Name[uk]=OpenVPN
+Name[x-test]=xxOpenVPNxx
 Name[zh_CN]=OpenVPN
 Name[zh_TW]=OpenVPN
 Comment=Compatible with the OpenVPN server
@@ -99,6 +100,7 @@ Comment[sr@latin]=Saglasno sa serverom OpenVPN‑a
 Comment[sv]=Kompatibel med OpenVPN-server
 Comment[tr]=OpenVPN sunucusuyla uyumlu
 Comment[uk]=Сумісний із сервером OpenVPN
+Comment[x-test]=xxCompatible with the OpenVPN serverxx
 Comment[zh_CN]=兼容 OpenVPN 服务器
 Comment[zh_TW]=與 OpenVPN 伺服器相容
 

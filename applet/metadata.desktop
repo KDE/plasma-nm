@@ -44,6 +44,7 @@ Name[sv]=Nätverk
 Name[tg]=Шабакаҳо
 Name[tr]=Ağlar
 Name[uk]=Мережі
+Name[x-test]=xxNetworksxx
 Name[zh_CN]=网络
 Name[zh_TW]=網路
 
@@ -94,6 +95,7 @@ Comment[sv]=Nätverksstatus och kontroll
 Comment[tg]=Вазъият ва идоракунии шабака
 Comment[tr]=Ağ denetim ve durum izleme
 Comment[uk]=Стеження за станом і керування мережею
+Comment[x-test]=xxNetwork status and controlxx
 Comment[zh_CN]=网络状态和控制
 Comment[zh_TW]=網路狀態與控制
 

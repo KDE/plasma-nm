@@ -231,8 +231,8 @@ PlasmaExtras.ExpandableListItem {
                 if (!predictableWirelessPassword && !Uuid) {
                     handler.addAndActivateConnection(DevicePath, SpecificPath)
                 } else if (connectionItem.customExpandedViewContent == passwordDialogComponent) {
-                    if (passwordDialogComponent.password != "") {
-                        handler.addAndActivateConnection(DevicePath, SpecificPath, passwordDialogComponent.password)
+                    if (connectionItem.customExpandedViewContentItem.password != "") {
+                        handler.addAndActivateConnection(DevicePath, SpecificPath, connectionItem.customExpandedViewContentItem.password)
                         connectionItem.customExpandedViewContent = detailsComponent
                         connectionItem.collapse()
                     } else {

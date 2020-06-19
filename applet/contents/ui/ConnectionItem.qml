@@ -55,7 +55,6 @@ PlasmaExtras.ExpandableListItem {
     iconUsesPlasmaSVG: true // We want the nice detailed network SVGs from the Plasma theme
     isBusy: plasmoid.expanded && model.ConnectionState == PlasmaNM.Enums.Activating
     isDefault: ConnectionState == PlasmaNM.Enums.Activated
-    allowStyledText: true // So we can colorize the up and down arrows
     defaultActionButtonAction: Action {
         id: stateChangeButton
         icon.name: model.ConnectionState == PlasmaNM.Enums.Deactivated ? "network-connect" : "network-disconnect"
@@ -269,14 +268,8 @@ PlasmaExtras.ExpandableListItem {
             return LastUsed
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
             if (showSpeed) {
-                var downloadColor = theme.highlightColor
-                // cycle upload color by 180 degrees
-                var uploadColor = Qt.hsva((downloadColor.hsvHue + 0.5) % 1, downloadColor.hsvSaturation, downloadColor.hsvValue, downloadColor.a)
-
-                return i18n("Connected, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s",
-                            downloadColor,
+                return i18n("Connected, ⬇ %1/s, ⬆ %2/s",
                             KCoreAddons.Format.formatByteSize(rxBytes),
-                            uploadColor,
                             KCoreAddons.Format.formatByteSize(txBytes))
             } else {
                 return i18n("Connected")

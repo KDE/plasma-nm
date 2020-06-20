@@ -2,6 +2,7 @@
 Name=Hotspot
 Name[ca]=Punt d'accés
 Name[cs]=Hotspot
+Name[de]=Hotspot
 Name[en_GB]=Hotspot
 Name[es]=Punto de acceso
 Name[et]=Pääsupunkt
@@ -25,6 +26,7 @@ Name[zh_TW]=熱點
 Comment=Wi-Fi Hotspots
 Comment[ca]=Punts d'accés Wi-Fi
 Comment[cs]=Hostpoty Wi-Fi
+Comment[de]=Wi-Fi-Hotspots
 Comment[en_GB]=Wi-Fi Hotspots
 Comment[es]=Puntos de acceso Wi-Fi
 Comment[et]=WiFi pääsupunktid

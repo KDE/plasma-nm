@@ -679,4 +679,8 @@ void NetworkModelItem::updateDetails() const
             m_details << i18n("MAC Address") << teamDevice->hwAddress();
         }
     }
+
+    if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
+        m_details << i18n("Device") << device->interfaceName();
+    }
 }

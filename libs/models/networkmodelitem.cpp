@@ -680,7 +680,7 @@ void NetworkModelItem::updateDetails() const
         }
     }
 
-    if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
+    if (device && m_connectionState == NetworkManager::ActiveConnection::Activated) {
         m_details << i18n("Device") << device->interfaceName();
     }
 }

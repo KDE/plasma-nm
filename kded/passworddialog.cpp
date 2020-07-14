@@ -121,7 +121,6 @@ void PasswordDialog::initializeUi()
         setWindowTitle(i18n("%1 password dialog", connectionLabel));
     } else {
         NetworkManager::VpnSetting::Ptr vpnSetting = m_connectionSettings->setting(Setting::Vpn).dynamicCast<VpnSetting>();
-        qWarning() << "VPN Setting " << *vpnSetting;
         if (!vpnSetting) {
             qCWarning(PLASMA_NM) << "Missing VPN setting!";
             m_hasError = true;

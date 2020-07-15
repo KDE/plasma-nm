@@ -65,14 +65,10 @@ PlasmaComponents3.Page {
             anchors.fill: parent
             frameVisible: false
 
-            PlasmaExtras.Heading {
-                id: disabledMessage
-                anchors.fill: parent
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                level: 3
-                visible: connectionView.count === 0 && text != ""
-                enabled: false
+            PlasmaExtras.PlaceholderMessage {
+                anchors.centerIn: parent
+                width: parent.width - (units.largeSpacing * 4)
+                visible: connectionView.count === 0
                 text: {
                     if (toolbarValues.displayplaneModeMessage) {
                         return i18n("Airplane mode is enabled")
@@ -86,21 +82,8 @@ PlasmaComponents3.Page {
                     if (toolbarValues.displayWwanMessage) {
                         return i18n("Mobile network is deactivated")
                     }
-                    return ""
+                    return i18n("No available connections")
                 }
-            }
-
-            PlasmaExtras.Heading {
-                id: message
-                anchors.fill: parent
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                level: 3
-                opacity: connectionView.count === 0 && !disabledMessage.visible ? 0.6 : 0
-                // Check connectionView.count again, to avoid a small delay.
-                visible: opacity >= 0.6 && connectionView.count === 0
-                Behavior on opacity { NumberAnimation { duration: 5000 } }
-                text: i18n("No available connections")
             }
 
             ListView {

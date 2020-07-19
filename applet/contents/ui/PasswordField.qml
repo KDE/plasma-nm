@@ -19,10 +19,10 @@
 */
 
 import QtQuick 2.2
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
-PlasmaComponents.TextField {
+PlasmaComponents3.TextField {
     property int securityType
 
     echoMode: TextInput.Password

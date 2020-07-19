@@ -21,7 +21,7 @@
 import QtQuick 2.1
 import QtQuick.Controls 1.4 as QQC
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 ListItem {
@@ -91,7 +91,7 @@ ListItem {
             text: itemText()
         }
 
-        PlasmaComponents.BusyIndicator {
+        PlasmaComponents3.BusyIndicator {
             id: connectingIndicator
 
             anchors {

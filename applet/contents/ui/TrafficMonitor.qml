@@ -21,7 +21,7 @@
 import QtQuick 2.4
 import org.kde.kcoreaddons 1.0 as KCoreAddons
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 
 Item {
     property real rxBytes: 0
@@ -35,15 +35,13 @@ Item {
         model: 6
         readonly property int labelHeight: theme.mSize(theme.smallestFont).height
 
-        PlasmaComponents.Label {
+        PlasmaComponents3.Label {
             anchors {
                 right: plotter.left
                 top: parent.top
                 rightMargin: units.smallSpacing
                 topMargin: Math.round(index * plotter.height / 5)
             }
-            // Workaround to get paintedHeight. (Undefined or paintedheight does not work.)
-            height: labels.labelHeight
             font.pointSize: theme.smallestFont.pointSize
             lineHeight: 1.75
             text: KCoreAddons.Format.formatByteSize(plotter.maxValue * (1 - index / 5)) + i18n("/s")

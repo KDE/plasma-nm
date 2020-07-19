@@ -19,7 +19,7 @@
 */
 
 import QtQuick 2.2
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 
 Item {
@@ -28,14 +28,14 @@ Item {
     property alias icon: switchButtonIcon.source
     property alias checked: switchButtonCheckbox.checked
     property alias enabled: switchButtonCheckbox.enabled
-    property alias tooltip: switchButtonCheckbox.tooltip
+    property alias tooltip: itemTooltip.text
 
     signal clicked
 
     height: Math.max(switchButtonCheckbox.height, switchButtonIcon.height)
     width: switchButtonCheckbox.width + switchButtonIcon.width + units.smallSpacing * 3
 
-    PlasmaComponents.CheckBox {
+    PlasmaComponents3.CheckBox {
         id: switchButtonCheckbox
         anchors {
             left: parent.left
@@ -57,5 +57,9 @@ Item {
         }
         width: units.iconSizes.smallMedium
         height: units.iconSizes.smallMedium
+    }
+
+    PlasmaComponents3.ToolTip {
+        id: itemTooltip
     }
 }

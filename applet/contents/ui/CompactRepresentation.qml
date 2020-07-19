@@ -20,7 +20,7 @@
 
 import QtQuick 2.2
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 
 MouseArea {
     id: panelIconWidget
@@ -38,10 +38,10 @@ MouseArea {
         colorGroup: PlasmaCore.ColorScope.colorGroup
         active: parent.containsMouse
 
-        PlasmaComponents.BusyIndicator {
+        PlasmaComponents3.BusyIndicator {
             id: connectingIndicator
 
-            anchors.fill: parent
+            anchors.centerIn: parent
             running: connectionIconProvider.connecting
             visible: running
         }

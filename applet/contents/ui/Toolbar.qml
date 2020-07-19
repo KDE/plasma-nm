@@ -20,7 +20,6 @@
 
 import QtQuick 2.2
 import QtQuick.Layouts 1.2
-import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
@@ -216,7 +215,7 @@ ColumnLayout {
         }
     }
 
-   PlasmaComponents.TextField {
+   PlasmaComponents3.TextField {
         id: searchTextField
 
         Layout.fillWidth: true

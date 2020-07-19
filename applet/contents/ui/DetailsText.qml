@@ -20,7 +20,8 @@
 
 import QtQuick 2.2
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
-import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.components 2.0 as PlasmaComponents // for ContextMenu+MenuItem
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 
 Column {
     property var details: []
@@ -62,14 +63,13 @@ Column {
             }
             height: Math.max(detailNameLabel.height, detailValueLabel.height)
 
-            PlasmaComponents.Label {
+            PlasmaComponents3.Label {
                 id: detailNameLabel
 
                 anchors {
                     left: parent.left
                     leftMargin: repeater.longestString - paintedWidth + Math.round(units.gridUnit / 2)
                 }
-                height: paintedHeight
                 font.pointSize: theme.smallestFont.pointSize
                 horizontalAlignment: Text.AlignRight
                 text: details[index*2] + ": "
@@ -82,7 +82,7 @@ Column {
                 }
             }
 
-            PlasmaComponents.Label {
+            PlasmaComponents3.Label {
                 id: detailValueLabel
 
                 anchors {
@@ -90,7 +90,6 @@ Column {
                     right: parent.right
                     leftMargin: repeater.longestString + Math.round(units.gridUnit / 2)
                 }
-                height: paintedHeight
                 elide: Text.ElideRight
                 font.pointSize: theme.smallestFont.pointSize
                 text: details[(index*2)+1]

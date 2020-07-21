@@ -21,7 +21,6 @@
 import QtQuick 2.2
 import QtQuick.Layouts 1.2
 import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kquickcontrolsaddons 2.0
@@ -70,30 +69,30 @@ ColumnLayout {
     RowLayout {
         spacing: units.smallSpacing
 
-        PlasmaExtras.SwitchButton {
+        SwitchButton {
             id: wifiSwitchButton
 
             checked: enabled && enabledConnections.wirelessEnabled
             enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
-            tooltipText: i18n("Enable Wi-Fi")
+            tooltip: i18n("Enable Wi-Fi")
             icon: enabled ? "network-wireless-on" : "network-wireless-off"
             visible: availableDevices.wirelessDeviceAvailable
 
-            onToggled: {
+            onClicked: {
                 handler.enableWireless(checked);
             }
         }
 
-        PlasmaExtras.SwitchButton {
+        SwitchButton {
             id: wwanSwitchButton
 
             checked: enabled && enabledConnections.wwanEnabled
             enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
-            tooltipText: i18n("Enable mobile network")
+            tooltip: i18n("Enable mobile network")
             icon: enabled ? "network-mobile-on" : "network-mobile-off"
             visible: availableDevices.modemDeviceAvailable
 
-            onToggled: {
+            onClicked: {
                 handler.enableWwan(checked);
             }
         }
@@ -103,20 +102,20 @@ ColumnLayout {
             Layout.preferredWidth: units.smallSpacing * 2
         }
 
-        PlasmaExtras.SwitchButton {
+        SwitchButton {
             id: planeModeSwitchButton
 
             property bool initialized: false
             property bool airplaneModeEnabled: false
 
             checked: airplaneModeEnabled
-            tooltipText: airplaneModeEnabled ?
-                         xi18nc("@info", "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth") :
-                         xi18nc("@info", "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth")
+            tooltip: airplaneModeEnabled ?
+                    xi18nc("@info", "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth") :
+                    xi18nc("@info", "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth")
             icon: airplaneModeEnabled ? "network-flightmode-on" : "network-flightmode-off"
             visible: availableDevices.modemDeviceAvailable || availableDevices.wirelessDeviceAvailable
 
-            onToggled: {
+            onClicked: {
                 handler.enableAirplaneMode(checked);
                 airplaneModeEnabled = !airplaneModeEnabled;
             }

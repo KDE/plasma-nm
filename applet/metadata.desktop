@@ -118,3 +118,4 @@ X-KDE-PluginInfo-Version=1.0.0
 X-KDE-PluginInfo-Website=https://projects.kde.org/projects/kde/workspace/plasma-nm
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-FormFactors=desktop

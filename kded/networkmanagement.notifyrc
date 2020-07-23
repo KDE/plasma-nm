@@ -1,6 +1,6 @@
 [Global]
 IconName=applications-internet
-Name=Network management
+Name=Network Management
 Name[ar]=إدارة الشّبكات
 Name[ast]=Xestión de redes
 Name[bs]=Upravljanje mrežom
@@ -98,7 +98,7 @@ Comment[zh_CN]=网络管理
 Comment[zh_TW]=網路管理
 
 [Event/ConnectionActivated]
-Name=Connection activated
+Name=Connection Activated
 Name[ar]=فُعّل الاتّصال
 Name[ast]=Activóse una conexón
 Name[bs]=Konekcija aktivirana
@@ -150,7 +150,7 @@ Urgency=Low
 Action=Popup
 
 [Event/ConnectionDeactivated]
-Name=Connection deactivated
+Name=Connection Deactivated
 Name[ar]=عُطّل الاتّصال
 Name[ast]=Desactivóse la conexón
 Name[bs]=Konekcija deaktivirana
@@ -202,7 +202,7 @@ Urgency=Low
 Action=Popup
 
 [Event/ConnectionAdded]
-Name=Connection added
+Name=Connection Added
 Name[ar]=أُضيف الاتّصال
 Name[ast]=Amestóse una conexón
 Name[bs]=Konekcija dodana
@@ -253,7 +253,7 @@ IconName=applications-internet
 Action=None
 
 [Event/ConnectionRemoved]
-Name=Connection removed
+Name=Connection Removed
 Name[ar]=أُزيل الاتّصال
 Name[ast]=Desanicióse la conexón
 Name[bs]=Konekcija uklonjena
@@ -304,7 +304,7 @@ IconName=applications-internet
 Action=None
 
 [Event/ConnectionUpdated]
-Name=Connection updated
+Name=Connection Updated
 Name[ar]=حُدّث الاتّصال
 Name[ast]=Anovóse la conexón
 Name[bs]=Konekcija ažurirana
@@ -355,7 +355,7 @@ IconName=applications-internet
 Action=None
 
 [Event/DeviceFailed]
-Name=Device failed
+Name=Device Failed
 Name[ar]=فشل الجهاز
 Name[ast]=Falló'l preséu
 Name[bs]=Uređaj pao
@@ -405,7 +405,7 @@ IconName=applications-internet
 Action=Popup
 
 [Event/FailedToActivateConnection]
-Name=Failed to activate connection
+Name=Failed to Activate Connection
 Name[ar]=فشل تفعيل الاتّصال
 Name[ast]=Fallu al activar la conexón
 Name[bs]=Neuspjela aktivacija konekcije
@@ -456,7 +456,7 @@ IconName=applications-internet
 Action=Popup
 
 [Event/FailedToAddConnection]
-Name=Failed to add connection
+Name=Failed to Add Connection
 Name[ar]=فشلت إضافة الاتّصال
 Name[ast]=Fallu al amestar la conexón
 Name[bs]=Neuspjelo dodavanje konekcije
@@ -507,7 +507,7 @@ IconName=applications-internet
 Action=Popup
 
 [Event/FailedToDeactivateConnection]
-Name=Failed to deactivate connection
+Name=Failed to Deactivate Connection
 Name[ar]=فشل تعطيل الاتّصال
 Name[ast]=Fallu al desactivar la conexón
 Name[bs]=Neuspjelo deaktiviranje konekcije
@@ -558,7 +558,7 @@ IconName=applications-internet
 Action=Popup
 
 [Event/FailedToRemoveConnection]
-Name=Failed to remove connection
+Name=Failed to Remove Connection
 Name[ar]=فشلت إزالة الاتّصال
 Name[ast]=Fallu al desaniciar la conexón
 Name[bs]=Neuspjelo uklanjanje konekcije
@@ -609,7 +609,7 @@ IconName=applications-internet
 Action=Popup
 
 [Event/FailedToGetSecrets]
-Name=Failed to get secrets
+Name=Failed to Get Secrets
 Name[ar]=فشل جلب الأسرار
 Name[ast]=Fallu al consiguir los secretos
 Name[bs]=Nesupjelo uzimanje tajni
@@ -660,7 +660,7 @@ IconName=applications-internet
 Action=Popup
 
 [Event/FailedToUpdateConnection]
-Name=Failed to update connection
+Name=Failed to Update Connection
 Name[ar]=فشل تحدي الاتّصال
 Name[ast]=Fallu al anovar la conexón
 Name[bs]=Neuspjelo ažuriranje konekcije
@@ -711,7 +711,7 @@ IconName=applications-internet
 Action=Popup
 
 [Event/MissingVpnPlugin]
-Name=Missing VPN plugin
+Name=Missing VPN Plugin
 Name[ar]=ملحقة VPN مفقودة
 Name[bg]=Лшпсваща приставка за VPN
 Name[bs]=Nedostaje VPN dodatak
@@ -762,7 +762,7 @@ IconName=applications-internet
 Action=Popup
 
 [Event/NoLongerConnected]
-Name=No longer connected to a network
+Name=No Longer Connected to a Network
 Name[ar]=لم تعد متّصلًا بأيّ شّبكة
 Name[ca]=No connectat a cap xarxa
 Name[ca@valencia]=No connectat a cap xarxa
@@ -807,7 +807,7 @@ IconName=applications-internet
 Action=Popup
 
 [Event/CaptivePortal]
-Name=Captive portal detected
+Name=Captive Portal Detected
 Name[ast]=Deteutóse un portal cativu
 Name[ca]=S'ha detectat un portal captiu
 Name[ca@valencia]=S'ha detectat un portal captiu
@@ -849,7 +849,7 @@ IconName=dialog-password
 Action=Popup
 
 [Event/FailedToCreateHotspot]
-Name=Failed to create hotspot
+Name=Failed to Create Hotspot
 Name[ast]=Fallu al crear el puntu d'accesu
 Name[ca]=Ha fallat en crear el punt d'accés
 Name[cs]=Nepovedlo se vytvořit hotspot

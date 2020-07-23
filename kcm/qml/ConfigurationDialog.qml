@@ -34,7 +34,7 @@ Dialog {
     }
 
     contentItem: Item {
-        implicitHeight: 200
+        implicitHeight: 230
         implicitWidth: 400
 
         Rectangle {

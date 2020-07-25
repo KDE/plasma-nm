@@ -1,6 +1,12 @@
 [Global]
 IconName=applications-internet
 Name=Network Management
+Name[ca]=Gestió de xarxes
+Name[nl]=Netwerkbeheer
+Name[pt]=Gestão de Rede
+Name[sv]=Nätverkshantering
+Name[uk]=Керування мережею
+Name[x-test]=xxNetwork Managementxx
 Comment=Network management
 Comment[ar]=إدارة الشّبكات
 Comment[ast]=Xestión de redes
@@ -52,84 +58,180 @@ Comment[zh_TW]=網路管理
 
 [Event/ConnectionActivated]
 Name=Connection Activated
+Name[ca]=Connexió activada
+Name[nl]=Verbinding geactiveerd
+Name[pt]=Ligação Activada
+Name[sv]=Anslutning aktiverad
+Name[uk]=З’єднання задіяно
+Name[x-test]=xxConnection Activatedxx
 IconName=applications-internet
 Urgency=Low
 Action=Popup
 
 [Event/ConnectionDeactivated]
 Name=Connection Deactivated
+Name[ca]=Connexió desactivada
+Name[nl]=Verbinding gedeactiveerd
+Name[pt]=Ligação Desactivada
+Name[sv]=Anslutning inaktiverad
+Name[uk]=З’єднання вимкнено
+Name[x-test]=xxConnection Deactivatedxx
 IconName=applications-internet
 Urgency=Low
 Action=Popup
 
 [Event/ConnectionAdded]
 Name=Connection Added
+Name[ca]=S'ha afegit una connexió
+Name[nl]=Verbinding toegevoegd
+Name[pt]=Ligação Adicionada
+Name[sv]=Anslutning  tillagd
+Name[uk]=Додано з’єднання
+Name[x-test]=xxConnection Addedxx
 IconName=applications-internet
 Action=None
 
 [Event/ConnectionRemoved]
 Name=Connection Removed
+Name[ca]=S'ha eliminat una connexió
+Name[nl]=Verbinding verwijderd
+Name[pt]=Ligação Removida
+Name[sv]=Anslutning borttagen
+Name[uk]=Вилучено з’єднання
+Name[x-test]=xxConnection Removedxx
 IconName=applications-internet
 Action=None
 
 [Event/ConnectionUpdated]
 Name=Connection Updated
+Name[ca]=S'ha actualitzat una connexió
+Name[nl]=Verbinding bijgewerkt
+Name[pt]=Ligação Actualizada
+Name[sv]=Anslutning uppdaterad
+Name[uk]=Оновлено з’єднання
+Name[x-test]=xxConnection Updatedxx
 IconName=applications-internet
 Action=None
 
 [Event/DeviceFailed]
 Name=Device Failed
+Name[ca]=Ha fallat el dispositiu
+Name[nl]=Apparaat is mislukt
+Name[pt]=Falha no Dispositivo
+Name[sv]=Enhet misslyckades
+Name[uk]=Помилка пристрою
+Name[x-test]=xxDevice Failedxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToActivateConnection]
 Name=Failed to Activate Connection
+Name[ca]=Ha fallat en activar la connexió
+Name[nl]=Activeren van verbinding is mislukt
+Name[pt]=Não Foi Possível Activar a Ligação
+Name[sv]=Aktivering av anslutning misslyckades
+Name[uk]=Не вдалося задіяти з’єднання
+Name[x-test]=xxFailed to Activate Connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToAddConnection]
 Name=Failed to Add Connection
+Name[ca]=Ha fallat en afegir la connexió
+Name[nl]=Toevoegen van verbinding is mislukt
+Name[pt]=Não Foi Possível Adicionar a Ligação
+Name[sv]=Tillägg av anslutning misslyckades
+Name[uk]=Не вдалося додати з’єднання
+Name[x-test]=xxFailed to Add Connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToDeactivateConnection]
 Name=Failed to Deactivate Connection
+Name[ca]=Ha fallat en desactivar la connexió
+Name[nl]=Deactiveren van verbinding is mislukt
+Name[pt]=Não Foi Possível Desactivar a Ligação
+Name[sv]=Inaktivering av anslutningen misslyckades
+Name[uk]=Не вдалося вимкнути з’єднання
+Name[x-test]=xxFailed to Deactivate Connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToRemoveConnection]
 Name=Failed to Remove Connection
+Name[ca]=Ha fallat en eliminar la connexió
+Name[nl]=Verwijderen van verbinding is mislukt
+Name[pt]=Não Foi Possível Remover a Ligação
+Name[sv]=Borttagning av anslutning misslyckades
+Name[uk]=Не вдалося вилучити з’єднання
+Name[x-test]=xxFailed to Remove Connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToGetSecrets]
 Name=Failed to Get Secrets
+Name[ca]=Ha fallat en obtenir els secrets
+Name[nl]=Geheimen ophalen is mislukt
+Name[pt]=Não Foi Possível Obter as Senhas
+Name[sv]=Misslyckades hämta hemligheter
+Name[uk]=Не вдалося отримати дані для розпізнавання
+Name[x-test]=xxFailed to Get Secretsxx
 IconName=applications-internet
 Action=Popup
 
 [Event/FailedToUpdateConnection]
 Name=Failed to Update Connection
+Name[ca]=Ha fallat en actualitzar la connexió
+Name[nl]=Bijwerken van verbinding is mislukt
+Name[pt]=Não Foi Possível Actualizar a Ligação
+Name[sv]=Misslyckades uppdatera anslutning
+Name[uk]=Не вдалося оновити з’єднання
+Name[x-test]=xxFailed to Update Connectionxx
 IconName=applications-internet
 Action=Popup
 
 [Event/MissingVpnPlugin]
 Name=Missing VPN Plugin
+Name[ca]=Manca el connector VPN
+Name[nl]=VPN-plug-in ontbreekt
+Name[pt]='Plugin' de VPN em Falta
+Name[sv]=Saknar VPN-insticksprogram
+Name[uk]=Не вистачає додатка VPN
+Name[x-test]=xxMissing VPN Pluginxx
 IconName=applications-internet
 Action=Popup
 
 [Event/NoLongerConnected]
 Name=No Longer Connected to a Network
+Name[ca]=No connectat a cap xarxa
+Name[nl]=Niet langer verbonden met een netwerk
+Name[pt]=Não Está Mais Ligado a Nenhuma Rede
+Name[sv]=Inte längre ansluten till ett nätverk
+Name[uk]=Більше не з’єднано із мережею
+Name[x-test]=xxNo Longer Connected to a Networkxx
 IconName=applications-internet
 Action=Popup
 
 [Event/CaptivePortal]
 Name=Captive Portal Detected
+Name[ca]=S'ha detectat un portal captiu
+Name[nl]=Vangstportaal gedetecteerd
+Name[pt]=Foi Detectado um Portal Captivo
+Name[sv]=Captive portal detekterades
+Name[uk]=Виявлено керований портал
+Name[x-test]=xxCaptive Portal Detectedxx
 Urgency=Low
 IconName=dialog-password
 Action=Popup
 
 [Event/FailedToCreateHotspot]
 Name=Failed to Create Hotspot
+Name[ca]=Ha fallat en crear el punt d'accés
+Name[nl]=Hotspot aanmaken is mislukt
+Name[pt]=Não Foi Possível Criar o Ponto de Acesso
+Name[sv]=Misslyckade skapa accesspunkt
+Name[uk]=Не вдалося створити хот-спот 
+Name[x-test]=xxFailed to Create Hotspotxx
 Urgency=Low
 IconName=applications-internet
 Action=Popup

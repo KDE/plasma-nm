@@ -2,6 +2,9 @@
 IconName=applications-internet
 Name=Network Management
 Name[ca]=Gestió de xarxes
+Name[es]=Gestión de redes
+Name[fr]=Gestion du réseau
+Name[it]=Gestione della rete
 Name[nl]=Netwerkbeheer
 Name[pt]=Gestão de Rede
 Name[sv]=Nätverkshantering
@@ -59,6 +62,7 @@ Comment[zh_TW]=網路管理
 [Event/ConnectionActivated]
 Name=Connection Activated
 Name[ca]=Connexió activada
+Name[es]=Conexión activada
 Name[nl]=Verbinding geactiveerd
 Name[pt]=Ligação Activada
 Name[sv]=Anslutning aktiverad
@@ -71,6 +75,7 @@ Action=Popup
 [Event/ConnectionDeactivated]
 Name=Connection Deactivated
 Name[ca]=Connexió desactivada
+Name[es]=Conexión desactivada
 Name[nl]=Verbinding gedeactiveerd
 Name[pt]=Ligação Desactivada
 Name[sv]=Anslutning inaktiverad
@@ -83,6 +88,7 @@ Action=Popup
 [Event/ConnectionAdded]
 Name=Connection Added
 Name[ca]=S'ha afegit una connexió
+Name[es]=Conexión añadida
 Name[nl]=Verbinding toegevoegd
 Name[pt]=Ligação Adicionada
 Name[sv]=Anslutning  tillagd
@@ -94,6 +100,7 @@ Action=None
 [Event/ConnectionRemoved]
 Name=Connection Removed
 Name[ca]=S'ha eliminat una connexió
+Name[es]=Conexión eliminada
 Name[nl]=Verbinding verwijderd
 Name[pt]=Ligação Removida
 Name[sv]=Anslutning borttagen
@@ -105,6 +112,7 @@ Action=None
 [Event/ConnectionUpdated]
 Name=Connection Updated
 Name[ca]=S'ha actualitzat una connexió
+Name[es]=Conexión actualizada
 Name[nl]=Verbinding bijgewerkt
 Name[pt]=Ligação Actualizada
 Name[sv]=Anslutning uppdaterad
@@ -116,6 +124,7 @@ Action=None
 [Event/DeviceFailed]
 Name=Device Failed
 Name[ca]=Ha fallat el dispositiu
+Name[es]=El dispositivo ha fallado
 Name[nl]=Apparaat is mislukt
 Name[pt]=Falha no Dispositivo
 Name[sv]=Enhet misslyckades
@@ -127,6 +136,7 @@ Action=Popup
 [Event/FailedToActivateConnection]
 Name=Failed to Activate Connection
 Name[ca]=Ha fallat en activar la connexió
+Name[es]=La activación de la conexión ha fallado
 Name[nl]=Activeren van verbinding is mislukt
 Name[pt]=Não Foi Possível Activar a Ligação
 Name[sv]=Aktivering av anslutning misslyckades
@@ -138,6 +148,7 @@ Action=Popup
 [Event/FailedToAddConnection]
 Name=Failed to Add Connection
 Name[ca]=Ha fallat en afegir la connexió
+Name[es]=Ha ocurrido un error al añadir la conexión
 Name[nl]=Toevoegen van verbinding is mislukt
 Name[pt]=Não Foi Possível Adicionar a Ligação
 Name[sv]=Tillägg av anslutning misslyckades
@@ -149,6 +160,7 @@ Action=Popup
 [Event/FailedToDeactivateConnection]
 Name=Failed to Deactivate Connection
 Name[ca]=Ha fallat en desactivar la connexió
+Name[es]=La desactivación de la conexión ha fallado
 Name[nl]=Deactiveren van verbinding is mislukt
 Name[pt]=Não Foi Possível Desactivar a Ligação
 Name[sv]=Inaktivering av anslutningen misslyckades
@@ -160,6 +172,7 @@ Action=Popup
 [Event/FailedToRemoveConnection]
 Name=Failed to Remove Connection
 Name[ca]=Ha fallat en eliminar la connexió
+Name[es]=La eliminación de la conexión ha fallado
 Name[nl]=Verwijderen van verbinding is mislukt
 Name[pt]=Não Foi Possível Remover a Ligação
 Name[sv]=Borttagning av anslutning misslyckades
@@ -171,6 +184,7 @@ Action=Popup
 [Event/FailedToGetSecrets]
 Name=Failed to Get Secrets
 Name[ca]=Ha fallat en obtenir els secrets
+Name[es]=La obtención de claves secretas ha fallado
 Name[nl]=Geheimen ophalen is mislukt
 Name[pt]=Não Foi Possível Obter as Senhas
 Name[sv]=Misslyckades hämta hemligheter
@@ -182,6 +196,7 @@ Action=Popup
 [Event/FailedToUpdateConnection]
 Name=Failed to Update Connection
 Name[ca]=Ha fallat en actualitzar la connexió
+Name[es]=La actualización de la conexión ha fallado
 Name[nl]=Bijwerken van verbinding is mislukt
 Name[pt]=Não Foi Possível Actualizar a Ligação
 Name[sv]=Misslyckades uppdatera anslutning
@@ -193,6 +208,7 @@ Action=Popup
 [Event/MissingVpnPlugin]
 Name=Missing VPN Plugin
 Name[ca]=Manca el connector VPN
+Name[es]=Falta el complemento VPN
 Name[nl]=VPN-plug-in ontbreekt
 Name[pt]='Plugin' de VPN em Falta
 Name[sv]=Saknar VPN-insticksprogram
@@ -204,6 +220,7 @@ Action=Popup
 [Event/NoLongerConnected]
 Name=No Longer Connected to a Network
 Name[ca]=No connectat a cap xarxa
+Name[es]=Ya no está conectado a una red
 Name[nl]=Niet langer verbonden met een netwerk
 Name[pt]=Não Está Mais Ligado a Nenhuma Rede
 Name[sv]=Inte längre ansluten till ett nätverk
@@ -215,6 +232,7 @@ Action=Popup
 [Event/CaptivePortal]
 Name=Captive Portal Detected
 Name[ca]=S'ha detectat un portal captiu
+Name[es]=Se ha detectado un portal cautivo
 Name[nl]=Vangstportaal gedetecteerd
 Name[pt]=Foi Detectado um Portal Captivo
 Name[sv]=Captive portal detekterades
@@ -227,6 +245,7 @@ Action=Popup
 [Event/FailedToCreateHotspot]
 Name=Failed to Create Hotspot
 Name[ca]=Ha fallat en crear el punt d'accés
+Name[es]=No se ha podido crear el punto de acceso
 Name[nl]=Hotspot aanmaken is mislukt
 Name[pt]=Não Foi Possível Criar o Ponto de Acesso
 Name[sv]=Misslyckade skapa accesspunkt

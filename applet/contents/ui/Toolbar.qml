@@ -149,14 +149,11 @@ ColumnLayout {
         PlasmaComponents3.ToolButton {
             id: hotspotButton
 
-            icon {
-                height: units.iconSizes.small
-                width: units.iconSizes.small
-                name: "network-wireless-on"
-            }
-            checkable: true
-            text: i18n("Hotspot")
             visible: handler.hotspotSupported
+            checkable: true
+
+            text: i18n("Hotspot")
+            icon.name: "network-wireless-on"
 
             onClicked: {
                 if (configuration.hotspotConnectionPath) {
@@ -193,12 +190,10 @@ ColumnLayout {
 
         PlasmaComponents3.ToolButton {
             id: searchToggleButton
-            icon {
-                height: units.iconSizes.small
-                width: units.iconSizes.small
-                name: "search"
-            }
+
             checkable: true
+
+            icon.name: "search"
 
             PlasmaComponents3.ToolTip {
                 text: i18ndc("plasma-nm", "button tooltip", "Search the connections")
@@ -207,12 +202,10 @@ ColumnLayout {
 
         PlasmaComponents3.ToolButton {
             id: openEditorButton
-            icon {
-                height: units.iconSizes.small
-                width: units.iconSizes.small
-                name: "configure"
-            }
+
             visible: mainWindow.kcmAuthorized
+
+            icon.name: "configure"
 
             PlasmaComponents3.ToolTip {
                 text: i18n("Configure network connections...")

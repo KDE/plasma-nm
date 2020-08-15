@@ -193,7 +193,7 @@ ColumnLayout {
 
             checkable: true
 
-            icon.name: "search"
+            icon.name: "system-search"
 
             PlasmaComponents3.ToolTip {
                 text: i18ndc("plasma-nm", "button tooltip", "Search the connections")

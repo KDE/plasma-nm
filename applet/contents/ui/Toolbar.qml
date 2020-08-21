@@ -136,7 +136,7 @@ ColumnLayout {
             }
 
             PlasmaComponents3.ToolTip {
-                text: airplaneModeEnabled ?
+                text: planeModeSwitchButton.checked ?
                       xi18nc("@info", "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth") :
                       xi18nc("@info", "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth")
             }

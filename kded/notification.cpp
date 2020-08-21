@@ -470,10 +470,10 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         text = i18n("VPN connection '%1' activated.", vpnName);
     } else if (state == NetworkManager::VpnConnection::Failed) {
         eventId = QStringLiteral("FailedToActivateConnection");
-        text = i18n("VPN connection '%1' failed.", vpnName);
+        text = i18n("VPN connection '%1' failed to activate.", vpnName);
     } else if (state == NetworkManager::VpnConnection::Disconnected) {
         eventId = QStringLiteral("ConnectionDeactivated");
-        text = i18n("VPN connection '%1' disconnected.", vpnName);
+        text = i18n("VPN connection '%1' deactivated.", vpnName);
     } else {
         qCWarning(PLASMA_NM) << "Unhandled VPN connection state change: " << state;
         return;
@@ -481,34 +481,34 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
 
     switch (reason) {
     case NetworkManager::VpnConnection::UserDisconnectedReason:
-        text = i18n("The VPN connection changed state because the user disconnected it.");
+        text = i18n("VPN connection '%1' deactivated.", vpnName);
         break;
     case NetworkManager::VpnConnection::DeviceDisconnectedReason:
-        text = i18n("The VPN connection changed state because the device it was using was disconnected.");
+        text = i18n("VPN connection '%1' was deactivated because the device it was using was disconnected.", vpnName);
         break;
     case NetworkManager::VpnConnection::ServiceStoppedReason:
-        text = i18n("The service providing the VPN connection was stopped.");
+        text = i18n("The service providing the VPN connection '%1' was stopped.", vpnName);
         break;
     case NetworkManager::VpnConnection::IpConfigInvalidReason:
-        text = i18n("The IP config of the VPN connection was invalid.");
+        text = i18n("The IP config of the VPN connection '%1', was invalid.", vpnName);
         break;
     case NetworkManager::VpnConnection::ConnectTimeoutReason:
         text = i18n("The connection attempt to the VPN service timed out.");
         break;
     case NetworkManager::VpnConnection::ServiceStartTimeoutReason:
-        text = i18n("A timeout occurred while starting the service providing the VPN connection.");
+        text = i18n("A timeout occurred while starting the service providing the VPN connection '%1'.", vpnName);
         break;
     case NetworkManager::VpnConnection::ServiceStartFailedReason:
-        text = i18n("Starting the service providing the VPN connection failed.");
+        text = i18n("Starting the service providing the VPN connection '%1' failed.", vpnName);
         break;
     case NetworkManager::VpnConnection::NoSecretsReason:
-        text = i18n("Necessary secrets for the VPN connection were not provided.");
+        text = i18n("Necessary secrets for the VPN connection '%1' were not provided.", vpnName);
         break;
     case NetworkManager::VpnConnection::LoginFailedReason:
         text = i18n("Authentication to the VPN server failed.");
         break;
     case NetworkManager::VpnConnection::ConnectionRemovedReason:
-        text = i18n("The connection was deleted from settings.");
+        text = i18n("The connection was deleted.");
         break;
     default:
     case NetworkManager::VpnConnection::UnknownReason:

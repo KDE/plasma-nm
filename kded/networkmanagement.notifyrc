@@ -3,6 +3,7 @@ IconName=applications-internet
 Name=Network Management
 Name[ca]=Gestió de xarxes
 Name[cs]=Správa sítě
+Name[de]=Netzwerkverwaltung
 Name[es]=Gestión de redes
 Name[eu]=Sare-kudeaketa
 Name[fi]=Verkonhallinta
@@ -68,6 +69,7 @@ Comment[zh_TW]=網路管理
 [Event/ConnectionActivated]
 Name=Connection Activated
 Name[ca]=Connexió activada
+Name[de]=Verbindung aktiviert
 Name[es]=Conexión activada
 Name[eu]=Konexioa aktibatu da
 Name[fi]=Yhteys aktivoitu
@@ -87,6 +89,7 @@ Action=Popup
 [Event/ConnectionDeactivated]
 Name=Connection Deactivated
 Name[ca]=Connexió desactivada
+Name[de]=Verbindung deaktiviert
 Name[es]=Conexión desactivada
 Name[eu]=Konexioa desaktibatu da
 Name[fi]=Yhteys passivoitu
@@ -106,6 +109,7 @@ Action=Popup
 [Event/ConnectionAdded]
 Name=Connection Added
 Name[ca]=S'ha afegit una connexió
+Name[de]=Verbindung hinzugefügt
 Name[es]=Conexión añadida
 Name[eu]=Konexioa gehitu da
 Name[fi]=Yhteys lisätty
@@ -124,6 +128,7 @@ Action=None
 [Event/ConnectionRemoved]
 Name=Connection Removed
 Name[ca]=S'ha eliminat una connexió
+Name[de]=Verbindung entfernt
 Name[es]=Conexión eliminada
 Name[eu]=Konexioa kendu da
 Name[fi]=Yhteys poistettu
@@ -142,6 +147,7 @@ Action=None
 [Event/ConnectionUpdated]
 Name=Connection Updated
 Name[ca]=S'ha actualitzat una connexió
+Name[de]=Verbindung aktualisiert
 Name[es]=Conexión actualizada
 Name[eu]=Konexioa eguneratu da
 Name[fi]=Yhteys päivitetty
@@ -160,6 +166,7 @@ Action=None
 [Event/DeviceFailed]
 Name=Device Failed
 Name[ca]=Ha fallat el dispositiu
+Name[de]=Gerät nicht bereit
 Name[es]=El dispositivo ha fallado
 Name[eu]=Gailuak huts egin du
 Name[fi]=Laite lakkasi toimimasta
@@ -178,6 +185,7 @@ Action=Popup
 [Event/FailedToActivateConnection]
 Name=Failed to Activate Connection
 Name[ca]=Ha fallat en activar la connexió
+Name[de]=Die Verbindung kann nicht aktiviert werden
 Name[es]=La activación de la conexión ha fallado
 Name[eu]=Konexioa aktibatzea huts egin du
 Name[fi]=Yhteyden aktivoiminen epäonnistui
@@ -196,6 +204,7 @@ Action=Popup
 [Event/FailedToAddConnection]
 Name=Failed to Add Connection
 Name[ca]=Ha fallat en afegir la connexió
+Name[de]=Die Verbindung kann nicht hinzugefügt werden
 Name[es]=Ha ocurrido un error al añadir la conexión
 Name[eu]=Konexioa gehitzea huts egin du
 Name[fi]=Yhteyden lisääminen epäonnistui
@@ -214,6 +223,7 @@ Action=Popup
 [Event/FailedToDeactivateConnection]
 Name=Failed to Deactivate Connection
 Name[ca]=Ha fallat en desactivar la connexió
+Name[de]=Die Verbindung kann nicht deaktiviert werden
 Name[es]=La desactivación de la conexión ha fallado
 Name[eu]=Konexioa desaktibatzea huts egin du
 Name[fi]=Yhteyden passivoiminen epäonnistui
@@ -232,6 +242,7 @@ Action=Popup
 [Event/FailedToRemoveConnection]
 Name=Failed to Remove Connection
 Name[ca]=Ha fallat en eliminar la connexió
+Name[de]=Die Verbindung kann nicht entfernt werden
 Name[es]=La eliminación de la conexión ha fallado
 Name[eu]=Konexioa kentzea huts egin du
 Name[fi]=Yhteyden poistaminen epäonnistui
@@ -250,6 +261,7 @@ Action=Popup
 [Event/FailedToGetSecrets]
 Name=Failed to Get Secrets
 Name[ca]=Ha fallat en obtenir els secrets
+Name[de]=Anmeldedaten können nicht bezogen werden
 Name[es]=La obtención de claves secretas ha fallado
 Name[eu]=Sekretuak lortzea huts egin du
 Name[fi]=Salaisuuksien saaminen epäonnistui
@@ -268,6 +280,7 @@ Action=Popup
 [Event/FailedToUpdateConnection]
 Name=Failed to Update Connection
 Name[ca]=Ha fallat en actualitzar la connexió
+Name[de]=Die Verbindung kann nicht aktualisiert werden
 Name[es]=La actualización de la conexión ha fallado
 Name[eu]=Konexioa eguneratzea huts egin du
 Name[fi]=Yhteyden päivittäminen epäonnistui
@@ -286,6 +299,7 @@ Action=Popup
 [Event/MissingVpnPlugin]
 Name=Missing VPN Plugin
 Name[ca]=Manca el connector VPN
+Name[de]=Fehlendes VPN-Modul
 Name[es]=Falta el complemento VPN
 Name[eu]=VPN plugina falta da
 Name[fi]=Puuttuva VPN-liitännäinen
@@ -304,6 +318,7 @@ Action=Popup
 [Event/NoLongerConnected]
 Name=No Longer Connected to a Network
 Name[ca]=No connectat a cap xarxa
+Name[de]=Nicht mehr mit einem Netzwerk verbunden
 Name[es]=Ya no está conectado a una red
 Name[eu]=Jada ez dago sare batera konektatuta
 Name[fi]=Ei enää verkkoyhteyttä
@@ -322,6 +337,7 @@ Action=Popup
 [Event/CaptivePortal]
 Name=Captive Portal Detected
 Name[ca]=S'ha detectat un portal captiu
+Name[de]=Captive-Portal erkannt
 Name[es]=Se ha detectado un portal cautivo
 Name[eu]=Atari gatibua hauteman da
 Name[fi]=Verkon kirjautumissivu havaittu
@@ -341,6 +357,7 @@ Action=Popup
 [Event/FailedToCreateHotspot]
 Name=Failed to Create Hotspot
 Name[ca]=Ha fallat en crear el punt d'accés
+Name[de]=Hotspot kann nicht erstellt werden
 Name[es]=No se ha podido crear el punto de acceso
 Name[eu]=Berogunea sortzea huts egin du
 Name[fi]=Tukiaseman luominen epäonnistui

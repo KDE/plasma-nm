@@ -42,6 +42,8 @@ MouseArea {
             id: connectingIndicator
 
             anchors.centerIn: parent
+            height: Math.min (parent.width, parent.height)
+            width: height
             running: connectionIconProvider.connecting
             visible: running
         }

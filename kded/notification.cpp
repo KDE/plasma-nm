@@ -410,6 +410,11 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
             return;
         }
 
+        if (m_checkActiveConnectionOnResumeTimer && m_checkActiveConnectionOnResumeTimer->isActive()) {
+            qCDebug(PLASMA_NM) << "Not emitting connection deactivated notification as we've just woken up from suspend";
+            return;
+        }
+
         eventId = QStringLiteral("ConnectionDeactivated");
         text = i18n("Connection '%1' deactivated.", acName);
 

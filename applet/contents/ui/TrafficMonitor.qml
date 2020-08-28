@@ -20,8 +20,10 @@
 
 import QtQuick 2.4
 import org.kde.kcoreaddons 1.0 as KCoreAddons
-import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
+import org.kde.quickcharts 1.0 as QuickCharts
+import org.kde.kirigami 2.12 as Kirigami
 import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.plasma.core 2.0 as PlasmaCore
 
 Item {
     property real rxBytes: 0
@@ -30,53 +32,75 @@ Item {
 
     height: visible ? plotter.height + plotter.anchors.topMargin + units.smallSpacing : 0
 
-    Repeater {
-        id: labels
-        model: 6
-        readonly property int labelHeight: theme.mSize(theme.smallestFont).height
-
-        PlasmaComponents3.Label {
-            anchors {
-                right: plotter.left
-                top: parent.top
-                rightMargin: units.smallSpacing
-                topMargin: Math.round(index * plotter.height / 5)
-            }
-            font.pointSize: theme.smallestFont.pointSize
-            lineHeight: 1.75
-            text: KCoreAddons.Format.formatByteSize(plotter.maxValue * (1 - index / 5)) + i18n("/s")
+    QuickCharts.AxisLabels {
+        anchors {
+            right: plotter.left
+            rightMargin: units.smallSpacing
+            top: plotter.top
+            bottom: plotter.bottom
+        }
+        constrainToBounds: false
+        direction: QuickCharts.AxisLabels.VerticalBottomTop
+        delegate:  PlasmaComponents3.Label { 
+            text: KCoreAddons.Format.formatByteSize(QuickCharts.AxisLabels.label) + i18n("/s")
+            font.pointSize: PlasmaCore.Theme.smallestFont.pointSize
+        }
+        source: QuickCharts.ChartAxisSource { 
+            chart: plotter
+            axis: QuickCharts.ChartAxisSource.YAxis
+            itemCount: 5
         }
     }
 
-    KQuickControlsAddons.Plotter {
+    QuickCharts.GridLines {
+        anchors.fill: plotter
+        direction: QuickCharts.GridLines.Vertical
+        minor.visible: false
+        major.count: 3
+        major.lineWidth: 1
+        // Same calculation as Kirigami Separator
+        major.color: Kirigami.ColorUtils.linearInterpolation(PlasmaCore.Theme.backgroundColor, PlasmaCore.Theme.textColor, 0.2)
+    }
+    QuickCharts.LineChart {
         id: plotter
-        property variant downloadColor: theme.highlightColor
-        property variant uploadColor: Qt.hsva((downloadColor.hsvHue + 0.5) % 1, downloadColor.hsvSaturation, downloadColor.hsvValue, downloadColor.a)
-        // Joining two QList<foo> in QML/javascript doesn't seem to work so I'm getting maximum from both list separately
-        readonly property int maxValue: Math.max(Math.max.apply(null, downloadPlotData.values), Math.max.apply(null, uploadPlotData.values))
         anchors {
             left: parent.left
             leftMargin: speedMetrics.width + units.smallSpacing * 2
             right: parent.right
             top: parent.top
             // Align plotter lines with labels.
-            topMargin: Math.round(labels.labelHeight / 2)
+            topMargin: speedMetrics.height / 2 + units.smallSpacing
         }
         height: units.gridUnit * 8
-        horizontalGridLineCount: 5
-
-        dataSets: [
-            KQuickControlsAddons.PlotData {
-                id: downloadPlotData
-                label: i18n("Download")
-                color: plotter.downloadColor
+        smooth: true
+        direction: QuickCharts.XYChart.ZeroAtEnd
+        yRange {
+            minimum: 100 * 1024
+            increment: 100 * 1024
+        }
+        valueSources: [
+            QuickCharts.ValueHistorySource {
+                id: txSpeed
+                maximumHistory: 40
             },
-            KQuickControlsAddons.PlotData {
-                id: uploadPlotData
-                label: i18n("Upload")
-                color: plotter.uploadColor
+            QuickCharts.ValueHistorySource {
+                id: rxSpeed
+                maximumHistory: 40
             }
         ]
+        colorSource: QuickCharts.ArraySource {
+            array: colors.colors.reverse()
+        }
+
+        fillColorSource: QuickCharts.ArraySource  {
+           array: colors.colors.reverse().map(color => Qt.lighter(color, 1.5))
+        }
+
+        QuickCharts.ColorGradientSource {
+                id: colors
+                baseColor:  PlasmaCore.Theme.highlightColor
+                itemCount: 2
+        }
 
         Timer {
             id: timer
@@ -89,11 +113,10 @@ Item {
                 prevTxBytes = txBytes
             }
             onTriggered: {
-                var rxSpeed = (rxBytes - prevRxBytes) * 1000 / interval
-                var txSpeed = (txBytes - prevTxBytes) * 1000 / interval
+                rxSpeed.value = (rxBytes - prevRxBytes) * 1000 / interval
+                txSpeed.value = (txBytes - prevTxBytes) * 1000 / interval
                 prevRxBytes = rxBytes
                 prevTxBytes = txBytes
-                plotter.addSample([rxSpeed, txSpeed]);
             }
         }
     }

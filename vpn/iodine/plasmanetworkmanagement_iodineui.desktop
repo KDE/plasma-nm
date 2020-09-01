@@ -10,7 +10,6 @@ X-KDE-PluginInfo-Name=plasmanetworkmanagement_iodineui
 X-KDE-PluginInfo-Version=0.1
 X-KDE-PluginInfo-Website=
 X-KDE-PluginInfo-Category=VPNService
-X-KDE-PluginInfo-Depends=
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=false
 Name=Iodine DNS tunnel (iodine)

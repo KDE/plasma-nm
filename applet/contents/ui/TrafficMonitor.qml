@@ -26,9 +26,8 @@ import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 
 Item {
-    property real rxBytes: 0
-    property real txBytes: 0
-    property alias interval: timer.interval
+    property alias downloadSpeed: download.value
+    property alias uploadSpeed: upload.value
 
     height: visible ? plotter.height + plotter.anchors.topMargin + units.smallSpacing : 0
 
@@ -102,23 +101,6 @@ Item {
                 itemCount: 2
         }
 
-        Timer {
-            id: timer
-            repeat: true
-            running: parent.visible
-            property real prevRxBytes
-            property real prevTxBytes
-            Component.onCompleted: {
-                prevRxBytes = rxBytes
-                prevTxBytes = txBytes
-            }
-            onTriggered: {
-                rxSpeed.value = (rxBytes - prevRxBytes) * 1000 / interval
-                txSpeed.value = (txBytes - prevTxBytes) * 1000 / interval
-                prevRxBytes = rxBytes
-                prevTxBytes = txBytes
-            }
-        }
     }
 
     TextMetrics {

@@ -159,9 +159,8 @@ PlasmaExtras.ExpandableListItem {
                     left: parent.left
                     right: parent.right
                 }
-                rxBytes: RxBytes
-                txBytes: TxBytes
-                interval: 2000
+                downloadSpeed: txBytes
+                uploadSpeed: rxBytes
                 visible: detailsTabBar.currentTab == speedTabButton
             }
         }
@@ -269,8 +268,8 @@ PlasmaExtras.ExpandableListItem {
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
             if (showSpeed) {
                 return i18n("Connected, ⬇ %1/s, ⬆ %2/s",
-                            KCoreAddons.Format.formatByteSize(rxBytes),
-                            KCoreAddons.Format.formatByteSize(txBytes))
+                    KCoreAddons.Format.formatByteSize(rxBytes),
+                    KCoreAddons.Format.formatByteSize(txBytes))
             } else {
                 return i18n("Connected")
             }

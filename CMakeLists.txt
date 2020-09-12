@@ -8,8 +8,8 @@ set(PROJECT_VERSION_MAJOR 5)
 set(QT_MIN_VERSION "5.14.0")
 set(KF5_MIN_VERSION "5.73.0")
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED On)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 ################# set KDE specific information #################
 

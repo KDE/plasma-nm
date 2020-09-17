@@ -159,8 +159,8 @@ PlasmaExtras.ExpandableListItem {
                     left: parent.left
                     right: parent.right
                 }
-                downloadSpeed: txBytes
-                uploadSpeed: rxBytes
+                downloadSpeed: rxBytes
+                uploadSpeed: txBytes
                 visible: detailsTabBar.currentTab == speedTabButton
             }
         }

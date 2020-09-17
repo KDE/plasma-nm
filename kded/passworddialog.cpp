@@ -110,9 +110,9 @@ void PasswordDialog::initializeUi()
         Setting::SettingType connectionType = setting->type();
         if (wifi && (connectionType == Setting::WirelessSecurity || connectionType == Setting::Security8021x)) {
             const QString ssid = QString::fromUtf8(wifi->ssid());
-            m_ui->labelText->setText(i18n("For accessing the wireless network %1 you need to provide a password below:", ssid));
+            m_ui->labelText->setText(i18n("Provide the password for the wireless network '%1':", ssid));
         } else {
-            m_ui->labelText->setText(i18n("Please provide the password for activating connection %1:", m_connectionSettings->id()));
+            m_ui->labelText->setText(i18n("Provide the password for the connection '%1':", m_connectionSettings->id()));
         }
 
         QString connectionLabel;
@@ -139,7 +139,7 @@ void PasswordDialog::initializeUi()
                 QVBoxLayout *layout = new QVBoxLayout();
                 layout->addWidget(m_vpnWidget);
                 m_ui->vpnWidget->setLayout(layout);
-                m_ui->labelText->setText(i18n("For accessing the vpn connection %1 you need to provide secrets below:", m_connectionSettings->id()));
+                m_ui->labelText->setText(i18n("Provide the secrets for the VPN connection '%1':", m_connectionSettings->id()));
                 setWindowTitle(i18n("VPN secrets (%1) dialog", shortName));
 
                 // Hide generic password field and OK button in case of openconnect dialog

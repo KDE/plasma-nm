@@ -25,7 +25,6 @@
 #include <QVBoxLayout>
 
 #include <KLocalizedString>
-#include <KIconLoader>
 #include <Solid/Device>
 
 #include <NetworkManagerQt/ModemDevice>
@@ -508,7 +507,7 @@ QWizardPage * MobileConnectionWizard::createPlansPage()
 
     QHBoxLayout *layout2 = new QHBoxLayout();
     label = new QLabel();
-    label->setPixmap(KIconLoader::global()->loadIcon("dialog-warning", KIconLoader::Dialog));
+    label->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(32));
     layout2->addWidget(label, 0, Qt::AlignTop);
     label = new QLabel(i18nc("Mobile Connection Wizard", "Warning: Selecting an incorrect plan may result in billing issues for your broadband account or may prevent connectivity.\n\nIf you are unsure of your plan please ask your provider for your plan's APN."));
     label->setWordWrap(true);

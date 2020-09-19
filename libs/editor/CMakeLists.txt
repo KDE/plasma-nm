@@ -99,7 +99,6 @@ PUBLIC
     KF5::WidgetsAddons
     Qt5::Widgets
 PRIVATE
-    KF5::IconThemes
     KF5::I18n
     KF5::KIOWidgets
     KF5::Notifications

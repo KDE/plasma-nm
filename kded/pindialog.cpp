@@ -26,7 +26,6 @@
 #include <QIcon>
 
 #include <KWindowSystem>
-#include <KIconLoader>
 #include <KLocalizedString>
 
 #include <ModemManagerQt/manager.h>
@@ -68,7 +67,7 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     pixmapLabel = new QLabel(this);
     pixmapLabel->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     ui->gridLayout->addWidget(pixmapLabel, 0, 0);
-    pixmapLabel->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-password")).pixmap(KIconLoader::SizeMedium));
+    pixmapLabel->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-password")).pixmap(32));
 
     connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &PinDialog::accept);
     connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &PinDialog::reject);

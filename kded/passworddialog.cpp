@@ -32,7 +32,6 @@
 
 #include <KServiceTypeTrader>
 #include <KLocalizedString>
-#include <KIconLoader>
 
 #include <QIcon>
 #include <QPushButton>
@@ -66,7 +65,7 @@ void PasswordDialog::initializeUi()
     m_ui = new Ui::PasswordDialog;
     m_ui->setupUi(this);
     // TODO fix this for high DPI
-    m_ui->labelIcon->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-password")).pixmap(KIconLoader::SizeHuge));
+    m_ui->labelIcon->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-password")).pixmap(64));
     m_ui->labelHeadline->setText(i18n("Authenticate %1", m_connectionSettings->id()));
 
     connect(m_ui->buttonBox, &QDialogButtonBox::accepted, this, &PasswordDialog::accept);

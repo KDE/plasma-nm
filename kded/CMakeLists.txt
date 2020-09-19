@@ -45,7 +45,6 @@ target_link_libraries(kded_networkmanagement
     KF5::ConfigCore
     KF5::DBusAddons
     KF5::I18n
-    KF5::IconThemes
     KF5::Notifications
     KF5::Service
     KF5::Solid

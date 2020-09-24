@@ -39,7 +39,7 @@ class Q_DECL_EXPORT PasswordDialog : public QDialog
 public:
     explicit PasswordDialog(const NetworkManager::ConnectionSettings::Ptr &connectionSettings,
                             NetworkManager::SecretAgent::GetSecretsFlags flags,
-                            const QString &setting_name,
+                            const QString &setting_name, const QStringList &hints = QStringList(),
                             QWidget *parent = nullptr);
     ~PasswordDialog() override;
 
@@ -61,6 +61,7 @@ private:
     NetworkManager::SecretAgent::Error m_error;
     NetworkManager::SecretAgent::GetSecretsFlags m_flags;
     SettingWidget *m_vpnWidget;
+    QStringList m_hints;
 
 };
 

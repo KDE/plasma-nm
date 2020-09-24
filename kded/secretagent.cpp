@@ -50,7 +50,7 @@
 #include <KWallet>
 
 SecretAgent::SecretAgent(QObject* parent)
-    : NetworkManager::SecretAgent("org.kde.plasma.networkmanagement", parent)
+    : NetworkManager::SecretAgent("org.kde.plasma.networkmanagement", NetworkManager::SecretAgent::Capability::VpnHints, parent)
     , m_openWalletFailed(false)
     , m_wallet(nullptr)
     , m_dialog(nullptr)
@@ -95,6 +95,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection, const
     m_calls << request;
 
     processNext();
+
     return NMVariantMapMap();
 }
 
@@ -433,7 +434,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
         return true;
     } else if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested) || (isVpn && allowInteraction)) {
 
-        m_dialog = new PasswordDialog(connectionSettings, request.flags, request.setting_name);
+        m_dialog = new PasswordDialog(connectionSettings, request.flags, request.setting_name, request.hints);
         connect(m_dialog, &PasswordDialog::accepted, this, &SecretAgent::dialogAccepted);
         connect(m_dialog, &PasswordDialog::rejected, this, &SecretAgent::dialogRejected);
 

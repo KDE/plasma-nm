@@ -40,7 +40,7 @@
 using namespace NetworkManager;
 
 PasswordDialog::PasswordDialog(const NetworkManager::ConnectionSettings::Ptr &connectionSettings, SecretAgent::GetSecretsFlags flags,
-                               const QString &setting_name,  const QStringList &hints, QWidget *parent) :
+                               const QString &setting_name, const QStringList &hints, QWidget *parent) :
     QDialog(parent),
     m_ui(nullptr),
     m_hasError(false),

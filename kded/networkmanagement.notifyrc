@@ -467,6 +467,12 @@ Urgency=Low
 IconName=dialog-password
 Action=Popup
 
+[Event/LimitedConnectivity]
+Name=Limited Connectivity
+Urgency=Low
+IconName=network-limited
+Action=Popup
+
 [Event/FailedToCreateHotspot]
 Name=Failed to Create Hotspot
 Name[ca]=Ha fallat en crear el punt d'accés

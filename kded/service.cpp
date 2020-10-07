@@ -25,10 +25,10 @@
 
 #include <KPluginFactory>
 
+#include "connectivitymonitor.h"
 #include "secretagent.h"
 #include "notification.h"
 #include "monitor.h"
-#include "portalmonitor.h"
 
 #include <QDBusMetaType>
 #include <QDBusServiceWatcher>
@@ -44,7 +44,7 @@ class NetworkManagementServicePrivate
     SecretAgent *agent = nullptr;
     Notification *notification = nullptr;
     Monitor *monitor = nullptr;
-    PortalMonitor *portalMonitor = nullptr;
+    ConnectivityMonitor *connectivityMonitor = nullptr;
 };
 
 NetworkManagementService::NetworkManagementService(QObject * parent, const QVariantList&)
@@ -75,8 +75,8 @@ void NetworkManagementService::init()
         d->monitor = new Monitor(this);
     }
 
-    if (!d->portalMonitor) {
-        d->portalMonitor = new PortalMonitor(this);
+    if (!d->connectivityMonitor) {
+        d->connectivityMonitor = new ConnectivityMonitor(this);
     }
 }
 

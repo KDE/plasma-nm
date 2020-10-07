@@ -1,5 +1,6 @@
 /*
  * Copyright 2016  Jan Grulich <jgrulich@redhat.com>
+ * Copyright 2020  Kai Uwe Broulik <kde@broulik.de>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -19,28 +20,33 @@
  *
  */
 
-#ifndef PLASMA_NM_PORTAL_MONITOR_H
-#define PLASMA_NM_PORTAL_MONITOR_H
+#ifndef PLASMA_NM_CONNECTIVITY_MONITOR_H
+#define PLASMA_NM_CONNECTIVITY_MONITOR_H
 
 #include <NetworkManagerQt/Manager>
 
 #include <KNotification>
 #include <QObject>
 #include <QPointer>
+#include <QTimer>
 
-class PortalMonitor : public QObject
+class ConnectivityMonitor : public QObject
 {
     Q_OBJECT
 public:
-    explicit PortalMonitor(QObject *parent);
-    ~PortalMonitor() override;
+    explicit ConnectivityMonitor(QObject *parent);
+    ~ConnectivityMonitor() override;
 
 private Q_SLOTS:
     void connectivityChanged(NetworkManager::Connectivity connectivity);
     void checkConnectivity();
 
 private:
+    void showLimitedConnectivityNotification();
+
     QPointer<KNotification> m_notification;
+
+    QTimer m_limitedConnectivityTimer;
 };
 
-#endif // PLASMA_NM_PORTAL_MONITOR_H
+#endif // PLASMA_NM_CONNECTIVITY_MONITOR_H

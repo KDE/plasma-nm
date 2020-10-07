@@ -6,12 +6,12 @@ if (WITH_MODEMMANAGER_SUPPORT)
     set(kded_networkmanagement_SRCS
         ../libs/debug.cpp
         bluetoothmonitor.cpp
+        connectivitymonitor.cpp
         notification.cpp
         modemmonitor.cpp
         monitor.cpp
         passworddialog.cpp
         pindialog.cpp
-        portalmonitor.cpp
         secretagent.cpp
         service.cpp
     )
@@ -23,10 +23,10 @@ else()
     set(kded_networkmanagement_SRCS
         ../libs/debug.cpp
         bluetoothmonitor.cpp
+        connectivitymonitor.cpp
         notification.cpp
         monitor.cpp
         passworddialog.cpp
-        portalmonitor.cpp
         secretagent.cpp
         service.cpp
     )

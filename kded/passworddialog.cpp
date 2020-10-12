@@ -48,7 +48,7 @@ PasswordDialog::PasswordDialog(const NetworkManager::ConnectionSettings::Ptr &co
     m_connectionSettings(connectionSettings),
     m_error(SecretAgent::NoSecrets),
     m_flags(flags),
-    m_vpnWidget(nullptr)
+    m_vpnWidget(nullptr),
     m_hints(hints)
 {
     setWindowIcon(QIcon::fromTheme(QStringLiteral("dialog-password")));

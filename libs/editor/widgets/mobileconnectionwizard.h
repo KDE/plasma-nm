@@ -80,7 +80,6 @@ private:
     int nextId() const override;
 
     MobileProviders * mProviders;
-    QString getCountryFromLocale();
     QString country;
     QString provider;
     QString apn;

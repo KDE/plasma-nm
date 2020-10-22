@@ -39,7 +39,6 @@ public:
 
 private:
     SshAuthWidgetPrivate *const d_ptr;
-    void acceptDialog();
 };
 
 #endif // SSH_AUTH_H

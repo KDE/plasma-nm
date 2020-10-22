@@ -39,7 +39,6 @@ public:
 
 private:
     SstpAuthWidgetPrivate *const d_ptr;
-    void acceptDialog();
 };
 
 #endif // SSTP_AUTH_H

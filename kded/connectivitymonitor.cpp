@@ -27,7 +27,6 @@
 #include <QDesktopServices>
 
 #include <KLocalizedString>
-#include <KNotification>
 
 #include <NetworkManagerQt/ActiveConnection>
 

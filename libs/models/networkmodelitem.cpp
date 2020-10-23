@@ -29,7 +29,6 @@
 #include <NetworkManagerQt/ModemDevice>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/TeamDevice>
-#include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/VlanDevice>
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/VpnSetting>

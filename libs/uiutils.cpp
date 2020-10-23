@@ -30,17 +30,10 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 
-#include <NetworkManagerQt/BluetoothDevice>
 #include <NetworkManagerQt/Manager>
-#include <NetworkManagerQt/Device>
-#include <NetworkManagerQt/AccessPoint>
-#include <NetworkManagerQt/WiredDevice>
-#include <NetworkManagerQt/WirelessDevice>
-#include <NetworkManagerQt/WirelessSetting>
 
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/manager.h>
-#include <ModemManagerQt/modem.h>
 #include <ModemManagerQt/modemdevice.h>
 #include <ModemManagerQt/modem3gpp.h>
 #include <ModemManagerQt/modemcdma.h>

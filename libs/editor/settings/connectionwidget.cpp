@@ -24,7 +24,6 @@
 
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/ConnectionSettings>
 
 #include <QDBusConnection>
 #include <QDialog>

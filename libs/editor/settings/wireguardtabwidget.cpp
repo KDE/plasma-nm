@@ -30,7 +30,6 @@
 #include <QStandardItemModel>
 
 #include <NetworkManagerQt/Utils>
-#include <NetworkManagerQt/WireguardSetting>
 #include <NetworkManagerQt/Ipv4Setting>
 #include <NetworkManagerQt/Ipv6Setting>
 #include <KColorScheme>

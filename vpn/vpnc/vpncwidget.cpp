@@ -19,7 +19,6 @@
 */
 
 #include "vpncwidget.h"
-#include "vpncadvancedwidget.h"
 #include "ui_vpnc.h"
 #include "nm-vpnc-service.h"
 

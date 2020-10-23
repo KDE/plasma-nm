@@ -20,7 +20,6 @@
 
 #include "connectioneditordialog.h"
 
-#include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
 

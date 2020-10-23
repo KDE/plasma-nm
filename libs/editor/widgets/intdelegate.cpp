@@ -21,7 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "intdelegate.h"
 #include <QIntValidator>
 
-#include <QLineEdit>
 
 IntDelegate::IntDelegate(QObject * parent) : Delegate(parent), m_boundary(false) {}
 IntDelegate::IntDelegate(int min, int max, QObject * parent) : Delegate(parent), m_min(min), m_max(max), m_boundary(true) {}

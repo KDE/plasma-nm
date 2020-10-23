@@ -20,7 +20,6 @@
 #include "debug.h"
 #include "wireguardinterfacewidget.h"
 #include "wireguardtabwidget.h"
-#include "ui_wireguardinterfacewidget.h"
 #include "uiutils.h"
 #include "simpleipv4addressvalidator.h"
 #include "simpleiplistvalidator.h"
@@ -32,7 +31,6 @@
 #include <QStandardItemModel>
 
 #include <NetworkManagerQt/Utils>
-#include <NetworkManagerQt/WireguardSetting>
 #include <NetworkManagerQt/Ipv4Setting>
 #include <NetworkManagerQt/Ipv6Setting>
 #include <KColorScheme>

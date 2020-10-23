@@ -27,7 +27,6 @@
 #include "passwordfield.h"
 
 #include <QDialog>
-#include <QString>
 #include <QLabel>
 #include <QEventLoop>
 #include <QFormLayout>

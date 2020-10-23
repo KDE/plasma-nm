@@ -20,7 +20,6 @@
 
 #include "openconnectauthworkerthread.h"
 
-#include <QThread>
 #include <QMutex>
 #include <QWaitCondition>
 #include <QString>
@@ -28,7 +27,6 @@
 
 extern "C"
 {
-#include <openconnect.h>
 #include <stdlib.h>
 #if !OPENCONNECT_CHECK_VER(1,5)
 #include <openssl/ssl.h>

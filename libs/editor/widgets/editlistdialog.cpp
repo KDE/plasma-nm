@@ -24,7 +24,6 @@
 #include <QLayout>
 #include <QDialogButtonBox>
 
-#include <KEditListWidget>
 #include <KLineEdit>
 
 

@@ -26,7 +26,6 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/Device>
-#include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/ModemDevice>
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessDevice>
@@ -34,7 +33,6 @@
 
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/manager.h>
-#include <ModemManagerQt/modem.h>
 #endif
 
 ConnectionIcon::ConnectionIcon(QObject* parent)

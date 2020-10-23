@@ -37,7 +37,6 @@
 
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/Manager>
-#include <ModemManagerQt/Modem>
 #include <ModemManagerQt/Sim>
 
 #include "pindialog.h"

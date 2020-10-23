@@ -28,11 +28,7 @@
 #include <NetworkManagerQt/AccessPoint>
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessDevice>
-#include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Setting>
-#include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/Utils>
-#include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/GsmSetting>
 #include <NetworkManagerQt/WiredSetting>
 #include <NetworkManagerQt/WirelessSetting>

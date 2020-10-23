@@ -26,10 +26,8 @@
 
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/manager.h>
-#include <ModemManagerQt/modem.h>
 #endif
 #include <NetworkManagerQt/Settings>
-#include <NetworkManagerQt/Utils>
 
 NetworkModel::NetworkModel(QObject *parent)
     : QAbstractListModel(parent)

@@ -13,7 +13,7 @@ Optional dependencies:
   * modemmanager-qt
     - requires ModemManager 1.0.0 and newer as runtime dependency
     - Plasma-nm is compiled with ModemManager support by default when modemmanager-qt is found,
-      when you want to explicitly disable ModemManager support, use -DDISABLE_MODEMMANAGER_SUPPORT=true cmake parameter.
+      when you want to explicitly disable ModemManager support, use `-DDISABLE_MODEMMANAGER_SUPPORT=true` cmake parameter.
 
   * openconnect
     - if you want to build the OpenConnect VPN plugin
@@ -23,13 +23,15 @@ Optional dependencies:
 
 Compiling:
 ----------
+
+```sh
   mkdir build
   cd build
   cmake ../ -DCMAKE_INSTALL_PREFIX=/usr [-DDISABLE_MODEMMANAGER_SUPPORT=true]
   make
   # As root:
   make install
-
+```
 
 BUGS:
 -----

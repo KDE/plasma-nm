@@ -216,8 +216,8 @@ PlasmaExtras.ExpandableListItem {
             prevTxBytes = TxBytes
         }
         onTriggered: {
-            rxBytes = (RxBytes - prevRxBytes) * 1000 / interval
-            txBytes = (TxBytes - prevTxBytes) * 1000 / interval
+            rxBytes = prevRxBytes == 0 ? 0 : (RxBytes - prevRxBytes) * 1000 / interval
+            txBytes = prevTxBytes == 0 ? 0 : (TxBytes - prevTxBytes) * 1000 / interval
             prevRxBytes = RxBytes
             prevTxBytes = TxBytes
         }

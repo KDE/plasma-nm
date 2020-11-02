@@ -91,22 +91,22 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_12">
          <item>
-          <widget class="QCheckBox" name="chkUseLZO">
+          <widget class="QCheckBox" name="chkUseCompression">
            <property name="toolTip">
-            <string>Use fast LZO compression.</string>
+            <string>Use compression.</string>
            </property>
            <property name="text">
-            <string>Use LZO compression</string>
+            <string>Use compression</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="cmbUseLZO">
+          <widget class="QComboBox" name="cmbUseCompression">
            <property name="enabled">
             <bool>false</bool>
            </property>
            <property name="toolTip">
-            <string>Use fast LZO compression.</string>
+            <string>Use compression.</string>
            </property>
            <item>
             <property name="text">
@@ -115,12 +115,27 @@
            </item>
            <item>
             <property name="text">
-             <string>Yes</string>
+             <string>LZO</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LZ4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LZ4 v2</string>
             </property>
            </item>
            <item>
             <property name="text">
              <string>Adaptive</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Automatic</string>
             </property>
            </item>
           </widget>
@@ -1179,7 +1194,7 @@ to protect against DoS attacks.</string>
   <tabstop>cmbDeviceType</tabstop>
   <tabstop>chkUseVirtualDeviceName</tabstop>
   <tabstop>leVirtualDeviceName</tabstop>
-  <tabstop>chkUseLZO</tabstop>
+  <tabstop>chkUseCompression</tabstop>
   <tabstop>chkUseTCP</tabstop>
   <tabstop>chkMssRestrict</tabstop>
   <tabstop>chkRandRemHosts</tabstop>
@@ -1395,9 +1410,9 @@ to protect against DoS attacks.</string>
    </hints>
   </connection>
   <connection>
-   <sender>chkUseLZO</sender>
+   <sender>chkUseCompression</sender>
    <signal>toggled(bool)</signal>
-   <receiver>cmbUseLZO</receiver>
+   <receiver>cmbUseCompression</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">

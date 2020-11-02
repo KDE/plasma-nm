@@ -32,6 +32,7 @@
 #define NM_OPENVPN_KEY_CERT "cert"
 #define NM_OPENVPN_KEY_CIPHER "cipher"
 #define NM_OPENVPN_KEY_KEYSIZE "keysize"
+#define NM_OPENVPN_KEY_COMPRESS "compress"
 #define NM_OPENVPN_KEY_COMP_LZO "comp-lzo"
 #define NM_OPENVPN_KEY_CONNECTION_TYPE "connection-type"
 #define NM_OPENVPN_KEY_FLOAT "float"

@@ -50,6 +50,7 @@ K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.jso
 #define CERT_TAG "cert"
 #define CIPHER_TAG "cipher"
 #define CLIENT_TAG "client"
+#define COMPRESS_TAG "compress"
 #define COMP_TAG "comp-lzo"
 #define DEV_TAG "dev"
 #define FRAGMENT_TAG "fragment"
@@ -299,6 +300,26 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         if (key_value[0] == COMP_TAG) {
             dataMap.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), "yes");
             continue;
+        }
+        if (key_value[0] == COMPRESS_TAG) {
+            if (key_value.count() > 1) {
+                if (key_value[1] == "yes") {
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), "yes");
+                    continue;
+                } else if (key_value[1] == "lzo") {
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), "lzo");
+                    continue;
+                } else if (key_value[1] == "lz4") {
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), "lz4");
+                    continue;
+                } else if (key_value[1] == "lz4-v2") {
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), "lz4-v2");
+                    continue;
+                }
+            } else {
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), "yes");
+                continue;
+            }
         }
         if (key_value[0] == RENEG_SEC_TAG) {
             if (key_value.count() == 2) {
@@ -811,8 +832,24 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
         line = QString(CIPHER_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_CIPHER] + '\n';
         expFile.write(line.toLatin1());
     }
-    if (dataMap[NM_OPENVPN_KEY_COMP_LZO] == "yes") {
-        line = QString(COMP_TAG) + " yes\n";
+    if (dataMap[NM_OPENVPN_KEY_COMP_LZO] == "adaptive") {
+        line = QString(COMP_TAG) + " adaptive\n";
+        expFile.write(line.toLatin1());
+    }
+    if (dataMap[NM_OPENVPN_KEY_COMPRESS] == "yes") {
+        line = QString(COMPRESS_TAG) + " yes\n";
+        expFile.write(line.toLatin1());
+    }
+    if (dataMap[NM_OPENVPN_KEY_COMPRESS] == "lzo") {
+        line = QString(COMPRESS_TAG) + " lzo\n";
+        expFile.write(line.toLatin1());
+    }
+    if (dataMap[NM_OPENVPN_KEY_COMPRESS] == "lz4") {
+        line = QString(COMPRESS_TAG) + " lz4\n";
+        expFile.write(line.toLatin1());
+    }
+    if (dataMap[NM_OPENVPN_KEY_COMPRESS] == "lz4-v2") {
+        line = QString(COMPRESS_TAG) + " lz4-v2\n";
         expFile.write(line.toLatin1());
     }
     if (dataMap[NM_OPENVPN_KEY_MSSFIX] == "yes") {

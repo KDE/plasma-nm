@@ -56,6 +56,10 @@ public:
     public:
         enum HashingAlgorithms {Default = 0, None, Md4, Md5, Sha1, Sha224, Sha256, Sha384, Sha512, Ripemd160};
     };
+    class EnumCompression {
+    public:
+        enum Compression {None = 0, LZO, LZ4, LZ4v2, Adaptive, Automatic};
+    };
 };
 
 OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
@@ -288,13 +292,28 @@ void OpenVpnAdvancedWidget::loadConfig()
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_COMP_LZO))) {
         const QString compLzo = dataMap[QLatin1String(NM_OPENVPN_KEY_COMP_LZO)];
         if (compLzo == QLatin1String("no-by-default")) {
-            m_ui->cmbUseLZO->setCurrentIndex(0);
+            m_ui->cmbUseCompression->setCurrentIndex(Private::EnumCompression::None);
         } else if (compLzo == QLatin1String("yes")) {
-            m_ui->cmbUseLZO->setCurrentIndex(1);
+            m_ui->cmbUseCompression->setCurrentIndex(Private::EnumCompression::LZO);
         } else {
-            m_ui->cmbUseLZO->setCurrentIndex(2);
+            m_ui->cmbUseCompression->setCurrentIndex(Private::EnumCompression::Adaptive);
         }
-        m_ui->chkUseLZO->setChecked(true);
+        m_ui->chkUseCompression->setChecked(true);
+    }
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_COMPRESS))) {
+        const QString compress = dataMap[QLatin1String(NM_OPENVPN_KEY_COMPRESS)];
+        if (compress == QLatin1String("lz4")) {
+            m_ui->cmbUseCompression->setCurrentIndex(Private::EnumCompression::LZ4);
+        } else if (compress == QLatin1String("lz4-v2")) {
+            m_ui->cmbUseCompression->setCurrentIndex(Private::EnumCompression::LZ4v2);
+        } else if (compress == QLatin1String("lzo")) {
+            m_ui->cmbUseCompression->setCurrentIndex(Private::EnumCompression::LZO);
+        } else if (compress == QLatin1String("yes")) {
+            m_ui->cmbUseCompression->setCurrentIndex(Private::EnumCompression::Automatic);
+        } else {
+            m_ui->cmbUseCompression->setCurrentIndex(Private::EnumCompression::Automatic);
+        }
+        m_ui->chkUseCompression->setChecked(true);
     }
     m_ui->chkUseTCP->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_PROTO_TCP)] == QLatin1String("yes"));
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_DEV_TYPE))) {
@@ -483,16 +502,25 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     }
     data.insert(QLatin1String(NM_OPENVPN_KEY_PROTO_TCP), m_ui->chkUseTCP->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
 
-    if (m_ui->chkUseLZO->isChecked()) {
-        switch (m_ui->cmbUseLZO->currentIndex()) {
-        case 0:
+    if (m_ui->chkUseCompression->isChecked()) {
+        switch (m_ui->cmbUseCompression->currentIndex()) {
+	case Private::EnumCompression::None:
             data.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), QLatin1String("no-by-default"));
             break;
-        case 1:
-            data.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), QLatin1String("yes"));
+	case Private::EnumCompression::LZO:
+            data.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), QLatin1String("lzo"));
             break;
-        case 2:
+	case Private::EnumCompression::LZ4:
+            data.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), QLatin1String("lz4"));
+            break;
+	case Private::EnumCompression::LZ4v2:
+            data.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), QLatin1String("lz4-v2"));
+            break;
+	case Private::EnumCompression::Adaptive:
             data.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), QLatin1String("adaptive"));
+            break;
+	case Private::EnumCompression::Automatic:
+            data.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), QLatin1String("yes"));
             break;
         }
     }

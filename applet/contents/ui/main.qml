@@ -54,7 +54,7 @@ Item {
 
     Component.onCompleted: {
         if (kcmAuthorized) {
-            plasmoid.setAction("openKCM", i18n("&Configure Network Connections..."), "preferences-system-network");
+            plasmoid.setAction("openKCM", i18n("&Configure Network Connections..."), "configure");
         }
         plasmoid.removeAction("configure");
         plasmoid.setAction("showPortal", i18n("Open Network Login Page..."), "internet-services");

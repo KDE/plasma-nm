@@ -203,7 +203,7 @@ ColumnLayout {
         PlasmaComponents3.ToolButton {
             id: openEditorButton
 
-            visible: mainWindow.kcmAuthorized
+            visible: mainWindow.kcmAuthorized && plasmoid.containmentType !== PlasmaCore.Types.CustomEmbeddedContainment
 
             icon.name: "configure"
 

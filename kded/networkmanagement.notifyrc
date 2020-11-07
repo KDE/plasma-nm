@@ -1,6 +1,7 @@
 [Global]
 IconName=applications-internet
 Name=Network Management
+Name[ast]=Xestión de redes
 Name[ca]=Gestió de xarxes
 Name[cs]=Správa sítě
 Name[da]=Netværkshåndtering
@@ -81,6 +82,7 @@ Comment[zh_TW]=網路管理
 
 [Event/ConnectionActivated]
 Name=Connection Activated
+Name[ast]=Activóse una conexón
 Name[ca]=Connexió activada
 Name[da]=Forbindelse aktiveret
 Name[de]=Verbindung aktiviert
@@ -113,6 +115,7 @@ Action=Popup
 
 [Event/ConnectionDeactivated]
 Name=Connection Deactivated
+Name[ast]=Desactivóse la conexón
 Name[ca]=Connexió desactivada
 Name[da]=Forbindelse deaktiveret
 Name[de]=Verbindung deaktiviert
@@ -145,6 +148,7 @@ Action=Popup
 
 [Event/ConnectionAdded]
 Name=Connection Added
+Name[ast]=Amestóse una conexón
 Name[ca]=S'ha afegit una connexió
 Name[da]=Forbindelse tilføjet
 Name[de]=Verbindung hinzugefügt
@@ -176,6 +180,7 @@ Action=None
 
 [Event/ConnectionRemoved]
 Name=Connection Removed
+Name[ast]=Desanicióse la conexón
 Name[ca]=S'ha eliminat una connexió
 Name[da]=Forbindelse fjernet
 Name[de]=Verbindung entfernt
@@ -207,6 +212,7 @@ Action=None
 
 [Event/ConnectionUpdated]
 Name=Connection Updated
+Name[ast]=Anovóse la conexón
 Name[ca]=S'ha actualitzat una connexió
 Name[da]=Forbindelse opdateret
 Name[de]=Verbindung aktualisiert
@@ -238,6 +244,7 @@ Action=None
 
 [Event/DeviceFailed]
 Name=Device Failed
+Name[ast]=El preséu falló
 Name[ca]=Ha fallat el dispositiu
 Name[da]=Enheden fejlede
 Name[de]=Gerät nicht bereit
@@ -269,6 +276,7 @@ Action=Popup
 
 [Event/FailedToActivateConnection]
 Name=Failed to Activate Connection
+Name[ast]=Fallu al activar la conexón
 Name[ca]=Ha fallat en activar la connexió
 Name[da]=Kunne ikke aktivere forbindelsen
 Name[de]=Die Verbindung kann nicht aktiviert werden
@@ -300,6 +308,7 @@ Action=Popup
 
 [Event/FailedToAddConnection]
 Name=Failed to Add Connection
+Name[ast]=Fallu al amestar la conexón
 Name[ca]=Ha fallat en afegir la connexió
 Name[da]=Kunne ikke tilføje forbindelsen
 Name[de]=Die Verbindung kann nicht hinzugefügt werden
@@ -331,6 +340,7 @@ Action=Popup
 
 [Event/FailedToDeactivateConnection]
 Name=Failed to Deactivate Connection
+Name[ast]=Fallu al desactivar la conexón
 Name[ca]=Ha fallat en desactivar la connexió
 Name[da]=Kunne ikke deaktivere forbindelsen
 Name[de]=Die Verbindung kann nicht deaktiviert werden
@@ -362,6 +372,7 @@ Action=Popup
 
 [Event/FailedToRemoveConnection]
 Name=Failed to Remove Connection
+Name[ast]=Fallu al desaniciar la conexón
 Name[ca]=Ha fallat en eliminar la connexió
 Name[da]=Kunne ikke fjerne forbindelsen
 Name[de]=Die Verbindung kann nicht entfernt werden
@@ -393,6 +404,7 @@ Action=Popup
 
 [Event/FailedToGetSecrets]
 Name=Failed to Get Secrets
+Name[ast]=Fallu al consiguir los secretos
 Name[ca]=Ha fallat en obtenir els secrets
 Name[da]=Kunne ikke hente hemmeligheder
 Name[de]=Anmeldedaten können nicht bezogen werden
@@ -424,6 +436,7 @@ Action=Popup
 
 [Event/FailedToUpdateConnection]
 Name=Failed to Update Connection
+Name[ast]=Fallu al anovar la conexón
 Name[ca]=Ha fallat en actualitzar la connexió
 Name[da]=Kunne ikke opdatere forbindelsen
 Name[de]=Die Verbindung kann nicht aktualisiert werden
@@ -517,6 +530,7 @@ Action=Popup
 
 [Event/CaptivePortal]
 Name=Captive Portal Detected
+Name[ast]=Deteutóse un portal cativu
 Name[ca]=S'ha detectat un portal captiu
 Name[da]=Captive portal detekteret
 Name[de]=Captive-Portal erkannt
@@ -573,6 +587,7 @@ Action=Popup
 
 [Event/FailedToCreateHotspot]
 Name=Failed to Create Hotspot
+Name[ast]=Fallu al crear el puntu d'accesu
 Name[ca]=Ha fallat en crear el punt d'accés
 Name[da]=Kunne ikke aktivere internetdeling
 Name[de]=Hotspot kann nicht erstellt werden

@@ -33,10 +33,6 @@ ColumnLayout {
     readonly property var displayWwanMessage: !wwanSwitchButton.checked && wwanSwitchButton.visible
     readonly property var displayplaneModeMessage: planeModeSwitchButton.checked && planeModeSwitchButton.visible
 
-    function closeSearch() {
-        searchToggleButton.checked = false
-    }
-
     PlasmaCore.Svg {
         id: lineSvg
         imagePath: "widgets/line"
@@ -142,12 +138,10 @@ ColumnLayout {
             }
         }
 
-        Item {
-            Layout.fillWidth: true
-        }
-
         PlasmaComponents3.ToolButton {
             id: hotspotButton
+
+            Layout.leftMargin: PlasmaCore.Units.largeSpacing * 2
 
             visible: handler.hotspotSupported
             checkable: true
@@ -188,15 +182,18 @@ ColumnLayout {
             }
         }
 
-        PlasmaComponents3.ToolButton {
-            id: searchToggleButton
+        PlasmaComponents3.TextField {
+            id: searchTextField
 
-            checkable: true
+            Layout.fillWidth: true
+            Layout.leftMargin: PlasmaCore.Units.largeSpacing * 2
 
-            icon.name: "system-search"
+            focus: true
+            clearButtonShown: true
+            placeholderText: i18ndc("plasma-nm", "text field placeholder text", "Search...")
 
-            PlasmaComponents3.ToolTip {
-                text: i18ndc("plasma-nm", "button tooltip", "Search the connections")
+            onTextChanged: {
+                appletProxyModel.setFilterRegExp(text)
             }
         }
 
@@ -217,42 +214,7 @@ ColumnLayout {
         }
     }
 
-   PlasmaComponents3.TextField {
-        id: searchTextField
-
-        Layout.fillWidth: true
-        Layout.leftMargin: units.smallSpacing
-        Layout.rightMargin: units.smallSpacing
-        Layout.topMargin: units.smallSpacing
-        Layout.bottomMargin: units.smallSpacing
-
-        focus: true
-        clearButtonShown: true
-        placeholderText: i18ndc("plasma-nm", "text field placeholder text", "Search...")
-
-        visible: searchToggleButton.checked
-        onVisibleChanged: {
-            if (visible) {
-                searchTextField.forceActiveFocus()
-            } else {
-                text = ""
-            }
-        }
-        Keys.onEscapePressed: {
-            //Check if the searchbar is actually visible before accepting the escape key. Otherwise, the escape key cannot dismiss the applet until one interacts with some other element.
-            if (searchToggleButton.checked) {
-                searchToggleButton.checked = false;
-            } else {
-                event.accepted = false;
-            }
-        }
-
-        onTextChanged: {
-            // Show search field when starting to type directly
-            if (text.length && !searchToggleButton.checked) {
-                searchToggleButton.checked = true
-            }
-            appletProxyModel.setFilterRegExp(text)
-        }
+    Component.onCompleted: {
+        searchTextField.forceActiveFocus()
     }
 }

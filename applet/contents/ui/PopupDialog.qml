@@ -108,7 +108,7 @@ PlasmaComponents3.Page {
 
         Connections {
             target: plasmoid
-            onExpandedChanged: {
+            function onExpandedChanged(expanded) {
                 connectionView.currentVisibleButtonIndex = -1;
 
                 if (expanded) {

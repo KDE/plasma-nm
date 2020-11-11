@@ -67,7 +67,7 @@ ScrollViewKCM {
         type: Kirigami.MessageType.Warning
         Connections {
             target: handler
-            onConnectionActivationFailed: {
+            function onConnectionActivationFailed(connectionPath, message) {
                 inlineError.text = message;
                 inlineError.visible = true;
             }

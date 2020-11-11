@@ -40,8 +40,12 @@ Item {
 
     Connections {
         target: listItem
-        onCheckedChanged: background.color = (listItem.checked ? highlightColor : baseColor)
-        onSectionDelegateChanged: background.color = (listItem.sectionDelegate ? alternateBaseColor : baseColor)
+        function onCheckedChanged() {
+            background.color = (listItem.checked ? highlightColor : baseColor)
+        }
+        function onSectionDelegateChanged() {
+            background.color = (listItem.sectionDelegate ? alternateBaseColor : baseColor)
+        }
     }
 
     Rectangle {

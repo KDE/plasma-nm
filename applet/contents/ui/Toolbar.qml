@@ -165,12 +165,12 @@ ColumnLayout {
 
             Connections {
                 target: handler
-                onHotspotCreated: {
+                function onHotspotCreated() {
                     hotspotButton.checked = true
                     tooltip.text = i18n("Disable Hotspot")
                 }
 
-                onHotspotDisabled: {
+                function onHotspotDisabled() {
                     hotspotButton.checked = false
                     tooltip.text = i18n("Create Hotspot")
                 }

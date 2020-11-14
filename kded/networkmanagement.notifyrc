@@ -117,7 +117,7 @@ Action=Popup
 
 [Event/ConnectionDeactivated]
 Name=Connection Deactivated
-Name[ast]=Desactivóse la conexón
+Name[ast]=Desactivóse una conexón
 Name[ca]=Connexió desactivada
 Name[da]=Forbindelse deaktiveret
 Name[de]=Verbindung deaktiviert
@@ -184,7 +184,7 @@ Action=None
 
 [Event/ConnectionRemoved]
 Name=Connection Removed
-Name[ast]=Desanicióse la conexón
+Name[ast]=Desanicióse una conexón
 Name[ca]=S'ha eliminat una connexió
 Name[da]=Forbindelse fjernet
 Name[de]=Verbindung entfernt
@@ -217,7 +217,7 @@ Action=None
 
 [Event/ConnectionUpdated]
 Name=Connection Updated
-Name[ast]=Anovóse la conexón
+Name[ast]=Anovóse una conexón
 Name[ca]=S'ha actualitzat una connexió
 Name[da]=Forbindelse opdateret
 Name[de]=Verbindung aktualisiert
@@ -545,7 +545,7 @@ Action=Popup
 
 [Event/CaptivePortal]
 Name=Captive Portal Detected
-Name[ast]=Deteutóse un portal cativu
+Name[ast]=Detectóse un portal cativu
 Name[ca]=S'ha detectat un portal captiu
 Name[da]=Captive portal detekteret
 Name[de]=Captive-Portal erkannt

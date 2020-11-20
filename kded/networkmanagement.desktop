@@ -55,6 +55,7 @@ Comment[id]=Menyediakan rahasia ke daemon NetworkManager
 Comment[it]=Fornisce i segreti al demone NetworkManager
 Comment[ko]=NetworkManager 데몬에 비밀 정보 제공
 Comment[lt]=Teikia paslaptis NetworkManager tarnybai
+Comment[ml]=നെറ്റ്‌വർക്ക് മാനേജർ ഡീമണിന് രഹസ്യങ്ങൾ നൽകുന്നു 
 Comment[nb]=Forsyner NetworkManager-daemonen med hemmeligheter
 Comment[nds]=Stellt Anmellinformatschonen för den NetworkManager-Dämoon praat
 Comment[nl]=Levert secrets aan de NetworkManager-daemon

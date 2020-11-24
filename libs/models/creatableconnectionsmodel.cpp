@@ -9,8 +9,8 @@
 #include "configuration.h"
 
 #include <KLocalizedString>
-#include <KService>
-#include <KServiceTypeTrader>
+#include <KPluginMetaData>
+#include <KPluginLoader>
 
 CreatableConnectionItem::CreatableConnectionItem(const QString &typeName, const QString &typeSection,
                                                  const QString &description, const QString &icon,
@@ -188,19 +188,19 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
 
     }
 
-    KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
+    QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("plasma/network/vpn"));
 
-    std::sort(services.begin(), services.end(), [] (const KService::Ptr &left, const KService::Ptr &right)
+    std::sort(plugins.begin(), plugins.end(), [] (const auto &left, const auto &right)
     {
-        return QString::localeAwareCompare(left->name(), right->name()) <= 0;
+        return QString::localeAwareCompare(left.name(), right.name()) <= 0;
     });
 
-    for (const KService::Ptr &service : services) {
-        const QString vpnType = service->property("X-NetworkManager-Services", QVariant::String).toString();
-        const QString vpnSubType = service->property("X-NetworkManager-Services-Subtype", QVariant::String).toString();
-        const QString vpnDescription = service->property("Comment", QVariant::String).toString();
+    for (const auto &service : qAsConst(plugins)) {
+        const QString vpnType = service.value("X-NetworkManager-Services");
+        const QString vpnSubType = service.value("X-NetworkManager-Services-Subtype");
+        const QString vpnDescription = service.description();
 
-        connectionItem = new CreatableConnectionItem(service->name(), i18n("VPN connections"),
+        connectionItem = new CreatableConnectionItem(service.name(), i18n("VPN connections"),
                                                      vpnDescription, QStringLiteral("network-vpn"),
                                                      NetworkManager::ConnectionSettings::Vpn,
                                                      vpnType, vpnSubType, false);

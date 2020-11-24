@@ -12,7 +12,7 @@ set(openvpn_SRCS
 
 ki18n_wrap_ui(openvpn_SRCS openvpn.ui openvpnadvanced.ui)
 
-add_library(plasmanetworkmanagement_openvpnui ${openvpn_SRCS})
+add_library(plasmanetworkmanagement_openvpnui MODULE ${openvpn_SRCS})
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_openvpnui plasmanetworkmanagement_openvpnui.desktop)
 
@@ -25,6 +25,4 @@ target_link_libraries(plasmanetworkmanagement_openvpnui
     KF5::KIOWidgets
 )
 
-install(TARGETS plasmanetworkmanagement_openvpnui  DESTINATION ${KDE_INSTALL_PLUGINDIR})
-
-install(FILES plasmanetworkmanagement_openvpnui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
+install(TARGETS plasmanetworkmanagement_openvpnui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

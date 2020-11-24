@@ -16,10 +16,10 @@
 // KDE
 #include <KMessageBox>
 #include <KPluginFactory>
+#include <KPluginLoader>
+#include <KPluginMetaData>
 #include <KSharedConfig>
 #include <kdeclarative/kdeclarative.h>
-#include <KService>
-#include <KServiceTypeTrader>
 
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>
@@ -395,12 +395,10 @@ void KCMNetworkmanagement::onRequestExportConnection(const QString &connectionPa
 
     qCDebug(PLASMA_NM) << "Exporting VPN connection" << connection->name() << "type:" << vpnSetting->serviceType();
 
-    QString error;
-    VpnUiPlugin * vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QStringLiteral("PlasmaNetworkManagement/VpnUiPlugin"),
-                                                                                       QStringLiteral("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()),
-                                                                                       this, QVariantList(), &error);
+    const VpnUiPlugin::LoadResult result = VpnUiPlugin::loadPluginForType(nullptr, vpnSetting->serviceType());
 
-    if (vpnPlugin) {
+    if (result) {
+        std::unique_ptr<VpnUiPlugin> vpnPlugin(result.plugin);
         if (vpnPlugin->suggestedFileName(connSettings).isEmpty()) { // this VPN doesn't support export
             qCWarning(PLASMA_NM) << "This VPN doesn't support export";
             return;
@@ -416,9 +414,8 @@ void KCMNetworkmanagement::onRequestExportConnection(const QString &connectionPa
                 // TODO display success
             }
         }
-        delete vpnPlugin;
     } else {
-        qCWarning(PLASMA_NM) << "Error getting VpnUiPlugin for export:" << error;
+        qCWarning(PLASMA_NM) << "Error getting VpnUiPlugin for export:" << result.error;
     }
 }
 
@@ -506,10 +503,12 @@ void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::Connecti
 void KCMNetworkmanagement::importVpn()
 {
     // get the list of supported extensions
-    const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
+    const QVector<KPluginMetaData> services = KPluginLoader::findPlugins(QStringLiteral("plasma/network/vpn"));
     QString extensions;
-    for (const KService::Ptr &service : services) {
-        VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
+    for (const KPluginMetaData &service : services) {
+        KPluginLoader loader(service.fileName());
+        KPluginFactory *factory = loader.factory();
+        VpnUiPlugin *vpnPlugin = factory->create<VpnUiPlugin>(this);
         if (vpnPlugin) {
             extensions += vpnPlugin->supportedFileExtensions() % QStringLiteral(" ");
             delete vpnPlugin;
@@ -519,7 +518,7 @@ void KCMNetworkmanagement::importVpn()
     const QString &filename = QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), extensions.simplified());
 
     if (!filename.isEmpty()) {
-        const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin");
+        const QVector<KPluginMetaData> services = KPluginLoader::findPlugins(QStringLiteral("plasma/network/vpn"));
 
         QFileInfo fi(filename);
         const QString ext = QStringLiteral("*.") % fi.suffix();
@@ -541,10 +540,12 @@ void KCMNetworkmanagement::importVpn()
                 return; // get out if the import produced at least some output
             }
         }
-        for (const KService::Ptr &service : services) {
-            VpnUiPlugin * vpnPlugin = service->createInstance<VpnUiPlugin>(this);
+        for (const KPluginMetaData &service : services) {
+            KPluginLoader loader(service.fileName());
+            KPluginFactory *factory = loader.factory();
+            VpnUiPlugin *vpnPlugin = factory->create<VpnUiPlugin>(this);
             if (vpnPlugin && vpnPlugin->supportedFileExtensions().contains(ext)) {
-                qCDebug(PLASMA_NM) << "Found VPN plugin" << service->name() << ", type:" << service->property("X-NetworkManager-Services", QVariant::String).toString();
+                qCDebug(PLASMA_NM) << "Found VPN plugin" << service.name() << ", type:" << service.value("X-NetworkManager-Services");
 
                 NMVariantMapMap connection = vpnPlugin->importConnectionSettings(filename);
 

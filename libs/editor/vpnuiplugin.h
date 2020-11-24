@@ -55,6 +55,19 @@ public:
     virtual QMessageBox::StandardButtons suggestedAuthDialogButtons() const;
     ErrorType lastError() const;
     QString lastErrorMessage();
+
+    struct LoadResult {
+        VpnUiPlugin *plugin = nullptr;
+        QString error;
+
+        operator bool() const
+        {
+            return plugin != nullptr;
+        }
+    };
+
+    static LoadResult loadPluginForType(QObject *parent, const QString &serviceType);
+
 protected:
     ErrorType mError;
     QString mErrorMessage;

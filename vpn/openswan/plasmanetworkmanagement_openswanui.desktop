@@ -1,8 +1,6 @@
 [Desktop Entry]
 Type=Service
 Icon=
-ServiceTypes=PlasmaNetworkManagement/VpnUiPlugin
-X-KDE-Library=plasmanetworkmanagement_openswanui
 X-NetworkManager-Services=org.freedesktop.NetworkManager.openswan
 X-KDE-PluginInfo-Author=Jan Grulich
 X-KDE-PluginInfo-Email=jgrulich@redhat.com

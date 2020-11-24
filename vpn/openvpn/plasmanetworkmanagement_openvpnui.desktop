@@ -1,8 +1,6 @@
 [Desktop Entry]
 Type=Service
 Icon=
-ServiceTypes=PlasmaNetworkManagement/VpnUiPlugin
-X-KDE-Library=plasmanetworkmanagement_openvpnui
 X-NetworkManager-Services=org.freedesktop.NetworkManager.openvpn
 X-KDE-PluginInfo-Author=Lukáš Tinkl
 X-KDE-PluginInfo-Email=lukas@kde.org

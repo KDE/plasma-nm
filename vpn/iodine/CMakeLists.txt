@@ -8,7 +8,7 @@ set(iodine_SRCS
 
 ki18n_wrap_ui(iodine_SRCS iodine.ui iodineauth.ui)
 
-add_library(plasmanetworkmanagement_iodineui ${iodine_SRCS})
+add_library(plasmanetworkmanagement_iodineui MODULE ${iodine_SRCS})
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_iodineui plasmanetworkmanagement_iodineui.desktop)
 
@@ -20,6 +20,4 @@ target_link_libraries(plasmanetworkmanagement_iodineui
     KF5::WidgetsAddons
 )
 
-install(TARGETS plasmanetworkmanagement_iodineui  DESTINATION ${KDE_INSTALL_PLUGINDIR})
-
-install(FILES plasmanetworkmanagement_iodineui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
+install(TARGETS plasmanetworkmanagement_iodineui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

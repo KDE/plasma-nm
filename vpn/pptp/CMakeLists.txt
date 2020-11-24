@@ -8,7 +8,7 @@ set(pptp_SRCS
 
 ki18n_wrap_ui(pptp_SRCS pptpprop.ui pptpadvanced.ui pptpauth.ui)
 
-add_library(plasmanetworkmanagement_pptpui ${pptp_SRCS})
+add_library(plasmanetworkmanagement_pptpui MODULE ${pptp_SRCS})
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_pptpui plasmanetworkmanagement_pptpui.desktop)
 
@@ -20,6 +20,4 @@ target_link_libraries(plasmanetworkmanagement_pptpui
     KF5::WidgetsAddons
 )
 
-install(TARGETS plasmanetworkmanagement_pptpui  DESTINATION ${KDE_INSTALL_PLUGINDIR})
-
-install(FILES plasmanetworkmanagement_pptpui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
+install(TARGETS plasmanetworkmanagement_pptpui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

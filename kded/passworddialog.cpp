@@ -16,7 +16,6 @@
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/Utils>
 
-#include <KServiceTypeTrader>
 #include <KLocalizedString>
 
 #include <QIcon>
@@ -113,13 +112,11 @@ void PasswordDialog::initializeUi()
             m_error = SecretAgent::InternalError;
             m_errorMessage = QLatin1String("VPN settings are missing");
         } else {
-            VpnUiPlugin *vpnUiPlugin;
-            QString error;
             const QString serviceType = vpnSetting->serviceType();
-            vpnUiPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QLatin1String("PlasmaNetworkManagement/VpnUiPlugin"),
-                                                                                   QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
-                                                                                   this, QVariantList(), &error);
-            if (vpnUiPlugin && error.isEmpty()) {
+            const VpnUiPlugin::LoadResult result = VpnUiPlugin::loadPluginForType(this, serviceType);
+
+            if (result) {
+                VpnUiPlugin *vpnUiPlugin = result.plugin;
                 const QString shortName = serviceType.section('.', -1);
                 NMStringMap data = vpnSetting->data();
                 // If we have hints, make the user have them through the widget
@@ -153,10 +150,10 @@ void PasswordDialog::initializeUi()
                     vpnSetting->setData(data);
                 }
             } else {
-                qCWarning(PLASMA_NM) << error << ", serviceType == " << serviceType;
+                qCWarning(PLASMA_NM) << "Could not load VPN UI plugin" << result.error;
                 m_hasError = true;
                 m_error = SecretAgent::InternalError;
-                m_errorMessage = error;
+                m_errorMessage = result.error;
             }
         }
     }

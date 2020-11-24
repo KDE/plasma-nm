@@ -1,8 +1,6 @@
 [Desktop Entry]
 Type=Service
 Icon=
-ServiceTypes=PlasmaNetworkManagement/VpnUiPlugin
-X-KDE-Library=plasmanetworkmanagement_sstpui
 X-NetworkManager-Services=org.freedesktop.NetworkManager.sstp
 X-KDE-PluginInfo-Author=Jan Grulich
 X-KDE-PluginInfo-Email=jgrulich@redhat.com

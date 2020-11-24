@@ -38,8 +38,8 @@
 #include <KLocalizedString>
 #include <KUser>
 #include <KProcess>
-#include <KService>
-#include <KServiceTypeTrader>
+#include <KPluginMetaData>
+#include <KPluginLoader>
 #include <KWindowSystem>
 #include <KWallet>
 
@@ -98,9 +98,14 @@ void Handler::activateConnection(const QString& connection, const QString& devic
             bool pluginMissing = false;
 
             // Check missing plasma-nm VPN plugin
-            const KService::List services = KServiceTypeTrader::self()->query("PlasmaNetworkManagement/VpnUiPlugin",
-                                                                              QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(vpnSetting->serviceType()));
-            pluginMissing = services.isEmpty();
+
+            const auto filter = [vpnSetting](const KPluginMetaData &md) -> bool {
+                return md.value(QStringLiteral("X-NetworkManager-Services")) == vpnSetting->serviceType();
+            };
+
+            const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
+
+            pluginMissing = plugins.isEmpty();
 
             // Check missing NetworkManager VPN plugin
             if (!pluginMissing) {

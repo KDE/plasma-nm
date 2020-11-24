@@ -10,7 +10,7 @@ set(vpnc_SRCS
 
 ki18n_wrap_ui(vpnc_SRCS vpnc.ui vpncadvanced.ui vpncauth.ui)
 
-add_library(plasmanetworkmanagement_vpncui ${vpnc_SRCS})
+add_library(plasmanetworkmanagement_vpncui MODULE ${vpnc_SRCS})
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_vpncui plasmanetworkmanagement_vpncui.desktop)
 
@@ -24,6 +24,4 @@ target_link_libraries(plasmanetworkmanagement_vpncui
     KF5::WidgetsAddons
 )
 
-install(TARGETS plasmanetworkmanagement_vpncui  DESTINATION ${KDE_INSTALL_PLUGINDIR})
-
-install(FILES plasmanetworkmanagement_vpncui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
+install(TARGETS plasmanetworkmanagement_vpncui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

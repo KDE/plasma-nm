@@ -8,7 +8,7 @@ set(sstp_SRCS
 
 ki18n_wrap_ui(sstp_SRCS sstpwidget.ui sstpadvanced.ui sstpauth.ui)
 
-add_library(plasmanetworkmanagement_sstpui ${sstp_SRCS})
+add_library(plasmanetworkmanagement_sstpui MODULE ${sstp_SRCS})
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_sstpui plasmanetworkmanagement_sstpui.desktop)
 
@@ -21,6 +21,4 @@ target_link_libraries(plasmanetworkmanagement_sstpui
     KF5::WidgetsAddons
 )
 
-install(TARGETS plasmanetworkmanagement_sstpui  DESTINATION ${KDE_INSTALL_PLUGINDIR})
-
-install(FILES plasmanetworkmanagement_sstpui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
+install(TARGETS plasmanetworkmanagement_sstpui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

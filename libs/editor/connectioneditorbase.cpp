@@ -44,7 +44,6 @@
 
 #include <KLocalizedString>
 #include <KNotification>
-#include <KServiceTypeTrader>
 #include <KUser>
 
 ConnectionEditorBase::ConnectionEditorBase(const NetworkManager::ConnectionSettings::Ptr &connection,
@@ -250,22 +249,21 @@ void ConnectionEditorBase::initialize()
         addSettingWidget(wireGuardInterfaceWidget, i18n("WireGuard Interface"));
     } else if (type == NetworkManager::ConnectionSettings::Vpn) { // VPN
         QString error;
-        VpnUiPlugin *vpnPlugin = nullptr;
         NetworkManager::VpnSetting::Ptr vpnSetting =
             m_connection->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
         if (!vpnSetting) {
             qCWarning(PLASMA_NM) << "Missing VPN setting!";
         } else {
             serviceType = vpnSetting->serviceType();
-            vpnPlugin = KServiceTypeTrader::createInstanceFromQuery<VpnUiPlugin>(QString::fromLatin1("PlasmaNetworkManagement/VpnUiPlugin"),
-                        QString::fromLatin1("[X-NetworkManager-Services]=='%1'").arg(serviceType),
-                        this, QVariantList(), &error);
-            if (vpnPlugin && error.isEmpty()) {
+
+            const VpnUiPlugin::LoadResult result = VpnUiPlugin::loadPluginForType(this, serviceType);
+
+            if (result) {
                 const QString shortName = serviceType.section('.', -1);
-                SettingWidget *vpnWidget = vpnPlugin->widget(vpnSetting, this);
+                SettingWidget *vpnWidget = result.plugin->widget(vpnSetting, this);
                 addSettingWidget(vpnWidget, i18n("VPN (%1)", shortName));
             } else {
-                qCWarning(PLASMA_NM) << error << ", serviceType == " << serviceType;
+                qCWarning(PLASMA_NM) << "Could not instantiate VPN UI plugin" << result.error;
             }
         }
     }

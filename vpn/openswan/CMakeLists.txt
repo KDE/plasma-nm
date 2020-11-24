@@ -8,7 +8,7 @@ set(openswan_SRCS
 
 ki18n_wrap_ui(openswan_SRCS openswan.ui openswanauth.ui)
 
-add_library(plasmanetworkmanagement_openswanui ${openswan_SRCS})
+add_library(plasmanetworkmanagement_openswanui MODULE ${openswan_SRCS})
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_openswanui plasmanetworkmanagement_openswanui.desktop)
 
@@ -20,6 +20,4 @@ target_link_libraries(plasmanetworkmanagement_openswanui
     KF5::WidgetsAddons
 )
 
-install(TARGETS plasmanetworkmanagement_openswanui  DESTINATION ${KDE_INSTALL_PLUGINDIR})
-
-install(FILES plasmanetworkmanagement_openswanui.desktop  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
+install(TARGETS plasmanetworkmanagement_openswanui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

@@ -8,6 +8,9 @@
 #include "vpnuiplugin.h"
 
 #include <KLocalizedString>
+#include <KPluginFactory>
+#include <KPluginLoader>
+#include <KPluginMetaData>
 
 VpnUiPlugin::VpnUiPlugin(QObject * parent, const QVariantList & /*args*/):
     QObject(parent)
@@ -42,4 +45,29 @@ QString VpnUiPlugin::lastErrorMessage()
             break;
     }
     return mErrorMessage;
+}
+
+VpnUiPlugin::LoadResult VpnUiPlugin::loadPluginForType(QObject *parent, const QString &serviceType)
+{
+    LoadResult result;
+
+    auto filter = [serviceType](const KPluginMetaData &md) {
+        return md.value(QStringLiteral("X-NetworkManager-Services")) == serviceType;
+    };
+
+    const QVector<KPluginMetaData> offers = KPluginLoader::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
+
+    if (offers.isEmpty()) {
+        result.error = QStringLiteral("No plugin found");
+        return result;
+    }
+
+    KPluginLoader loader(offers.first().fileName());
+    KPluginFactory *factory = loader.factory();
+    result.plugin = factory->create<VpnUiPlugin>(parent);
+
+    if (!result.plugin) {
+        result.error = loader.errorString();
+    }
+    return result;
 }

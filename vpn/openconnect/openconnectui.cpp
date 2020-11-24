@@ -12,8 +12,6 @@
 #include "openconnectwidget.h"
 #include "openconnectauth.h"
 
-K_PLUGIN_FACTORY(OpenconnectUiPluginFactory, registerPlugin<OpenconnectUiPlugin>();)
-
 OpenconnectUiPlugin::OpenconnectUiPlugin(QObject * parent, const QVariantList &)
     : VpnUiPlugin(parent)
 {
@@ -67,5 +65,3 @@ bool OpenconnectUiPlugin::exportConnectionSettings(const NetworkManager::Connect
     mError = VpnUiPlugin::NotImplemented;
     return false;
 }
-
-#include "openconnectui.moc"

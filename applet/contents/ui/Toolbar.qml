@@ -64,6 +64,7 @@ ColumnLayout {
 
     RowLayout {
         spacing: units.smallSpacing
+        Layout.leftMargin: PlasmaCore.Units.smallSpacing
 
         PlasmaComponents3.CheckBox {
             id: wifiSwitchButton

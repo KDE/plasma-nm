@@ -70,26 +70,9 @@ Kirigami.SwipeListItem {
             id: connectionNameLabel
 
             Layout.fillWidth: true
-            visible: !connectionPasswordField.visible
             elide: Text.ElideRight
             text: ItemUniqueName
             textFormat: Text.PlainText
-        }
-        PasswordField {
-            id: connectionPasswordField
-            Layout.fillWidth: true
-            implicitWidth: Kirigami.Units.gridUnit *16
-            securityType: SecurityType
-            visible: false
-            onVisibleChanged: {
-                if (visible)
-                    forceActiveFocus()
-                connectionPasswordField.text = ""
-            }
-            onAccepted: {
-                if (acceptableInput)
-                    handler.addAndActivateConnection(DevicePath, SpecificPath, connectionPasswordField.text);
-            }
         }
     }
 
@@ -123,17 +106,10 @@ Kirigami.SwipeListItem {
     }
 
     function changeState() {
-        if (Uuid || !predictableWirelessPassword || connectionPasswordField.visible) {
+        if (Uuid || !predictableWirelessPassword) {
             if (ConnectionState == PlasmaNM.Enums.Deactivated) {
                 if (!predictableWirelessPassword && !Uuid) {
                     handler.addAndActivateConnection(DevicePath, SpecificPath);
-                } else if (connectionPasswordField.visible) {
-                    if (connectionPasswordField.text != "") {
-                        handler.addAndActivateConnection(DevicePath, SpecificPath, connectionPasswordFieldField.text);
-                        connectionPasswordField.visible = false;
-                    } else {
-                        connectionPasswordField.visible = false;
-                    }
                 } else {
                     handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
                 }
@@ -141,7 +117,11 @@ Kirigami.SwipeListItem {
                 //show popup
             }
         } else if (predictableWirelessPassword) {
-            connectionPasswordField.visible = true;
+            connectionDialog.headingText = i18n("Connect to") + " " + ItemUniqueName;
+            connectionDialog.devicePath = DevicePath;
+            connectionDialog.specificPath = SpecificPath;
+            connectionDialog.securityType = SecurityType;
+            connectionDialog.openAndClear();
         }
     }
 }

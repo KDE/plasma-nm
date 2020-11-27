@@ -74,6 +74,10 @@ ScrollViewKCM {
         }
     }
 
+    ConnectDialog {
+        id: connectionDialog
+    }
+    
     view: ListView {
         id: view
 

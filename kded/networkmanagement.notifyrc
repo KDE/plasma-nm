@@ -598,6 +598,7 @@ Name[sl]=Omejena povezljivost
 Name[sv]=Begränsad anslutning
 Name[uk]=Обмежене з'єднання з мережею
 Name[x-test]=xxLimited Connectivityxx
+Name[zh_CN]=受限的连接
 Urgency=Low
 IconName=network-limited
 Action=Popup

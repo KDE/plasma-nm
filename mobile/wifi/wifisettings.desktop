@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Wi-Fi
 Name[ast]=Wi-Fi
+Name[az]=Wi-Fi
 Name[ca]=Wi-Fi
 Name[ca@valencia]=Wi-Fi
 Name[cs]=Wi-Fi
@@ -37,6 +38,7 @@ Name[x-test]=xxWi-Fixx
 Name[zh_CN]=Wi-Fi
 Name[zh_TW]=Wi-Fi
 Comment=Wireless network setting
+Comment[az]=Naqilsiz şəbəkə ayarları
 Comment[ca]=Configuració de la xarxa sense fil
 Comment[ca@valencia]=Configuració de la xarxa sense fil
 Comment[cs]=Nastavení bezdrátové sítě
@@ -86,6 +88,7 @@ X-KDE-Weight=70
 
 X-KDE-Keywords=wifi,network
 X-KDE-Keywords[ast]=wifi,rede
+X-KDE-Keywords[az]=wifi,network,şəbəkə
 X-KDE-Keywords[ca]=wifi,xarxa
 X-KDE-Keywords[ca@valencia]=wifi,xarxa
 X-KDE-Keywords[cs]=wifi,síť

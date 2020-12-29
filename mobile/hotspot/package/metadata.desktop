@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Hotspot
 Name[ast]=Puntu d'accesu
+Name[az]=Qoşulma nöqtəsi
 Name[ca]=Punt d'accés
 Name[cs]=Hotspot
 Name[da]=Internetdeling
@@ -34,6 +35,7 @@ Name[zh_CN]=热点
 Name[zh_TW]=熱點
 Comment=Wi-Fi Hotspots
 Comment[ast]=Puntos d'accesu Wi-Fi
+Comment[az]=Wi-Fi Qoşulma nöqtələri
 Comment[ca]=Punts d'accés Wi-Fi
 Comment[cs]=Hostpoty Wi-Fi
 Comment[da]=Deling af wi-fi

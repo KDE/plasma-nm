@@ -2,6 +2,7 @@
 IconName=applications-internet
 Name=Network Management
 Name[ast]=Xestión de redes
+Name[az]=Şəbəkə İdarəetməsi
 Name[ca]=Gestió de xarxes
 Name[cs]=Správa sítě
 Name[da]=Netværkshåndtering
@@ -35,6 +36,7 @@ Name[zh_CN]=网络管理
 Comment=Network management
 Comment[ar]=إدارة الشّبكات
 Comment[ast]=Xestión de redes
+Comment[az]=Şəbəkə idarəetməsi
 Comment[bs]=Upravljanje mrežom
 Comment[ca]=Gestió de la xarxa
 Comment[ca@valencia]=Gestió de la xarxa
@@ -85,6 +87,7 @@ Comment[zh_TW]=網路管理
 [Event/ConnectionActivated]
 Name=Connection Activated
 Name[ast]=Activóse una conexón
+Name[az]=Bağlantı quruldu
 Name[ca]=Connexió activada
 Name[da]=Forbindelse aktiveret
 Name[de]=Verbindung aktiviert
@@ -120,6 +123,7 @@ Action=Popup
 [Event/ConnectionDeactivated]
 Name=Connection Deactivated
 Name[ast]=Desactivóse una conexón
+Name[az]=Bağlantısı kəsildi
 Name[ca]=Connexió desactivada
 Name[da]=Forbindelse deaktiveret
 Name[de]=Verbindung deaktiviert
@@ -155,6 +159,7 @@ Action=Popup
 [Event/ConnectionAdded]
 Name=Connection Added
 Name[ast]=Amestóse una conexón
+Name[az]=Bağlantı əlavə edildi
 Name[ca]=S'ha afegit una connexió
 Name[da]=Forbindelse tilføjet
 Name[de]=Verbindung hinzugefügt
@@ -189,6 +194,7 @@ Action=None
 [Event/ConnectionRemoved]
 Name=Connection Removed
 Name[ast]=Desanicióse una conexón
+Name[az]=Bağlantı silindi
 Name[ca]=S'ha eliminat una connexió
 Name[da]=Forbindelse fjernet
 Name[de]=Verbindung entfernt
@@ -223,6 +229,7 @@ Action=None
 [Event/ConnectionUpdated]
 Name=Connection Updated
 Name[ast]=Anovóse una conexón
+Name[az]=Bağlantı yeniləndi
 Name[ca]=S'ha actualitzat una connexió
 Name[da]=Forbindelse opdateret
 Name[de]=Verbindung aktualisiert
@@ -257,6 +264,7 @@ Action=None
 [Event/DeviceFailed]
 Name=Device Failed
 Name[ast]=El preséu falló
+Name[az]=Cihaz xətası
 Name[ca]=Ha fallat el dispositiu
 Name[da]=Enheden fejlede
 Name[de]=Gerät nicht bereit
@@ -291,6 +299,7 @@ Action=Popup
 [Event/FailedToActivateConnection]
 Name=Failed to Activate Connection
 Name[ast]=Fallu al activar la conexón
+Name[az]=Bağlantını qurmaq mümkün olmadı
 Name[ca]=Ha fallat en activar la connexió
 Name[da]=Kunne ikke aktivere forbindelsen
 Name[de]=Die Verbindung kann nicht aktiviert werden
@@ -325,6 +334,7 @@ Action=Popup
 [Event/FailedToAddConnection]
 Name=Failed to Add Connection
 Name[ast]=Fallu al amestar la conexón
+Name[az]=Bağlantı əlavə etmək mümkün olmadı
 Name[ca]=Ha fallat en afegir la connexió
 Name[da]=Kunne ikke tilføje forbindelsen
 Name[de]=Die Verbindung kann nicht hinzugefügt werden
@@ -359,6 +369,7 @@ Action=Popup
 [Event/FailedToDeactivateConnection]
 Name=Failed to Deactivate Connection
 Name[ast]=Fallu al desactivar la conexón
+Name[az]=Bağlantını ayırmaq mümkün olmadı
 Name[ca]=Ha fallat en desactivar la connexió
 Name[da]=Kunne ikke deaktivere forbindelsen
 Name[de]=Die Verbindung kann nicht deaktiviert werden
@@ -393,6 +404,7 @@ Action=Popup
 [Event/FailedToRemoveConnection]
 Name=Failed to Remove Connection
 Name[ast]=Fallu al desaniciar la conexón
+Name[az]=Bağlantını silmək mümkün olmadı
 Name[ca]=Ha fallat en eliminar la connexió
 Name[da]=Kunne ikke fjerne forbindelsen
 Name[de]=Die Verbindung kann nicht entfernt werden
@@ -427,6 +439,7 @@ Action=Popup
 [Event/FailedToGetSecrets]
 Name=Failed to Get Secrets
 Name[ast]=Fallu al consiguir los secretos
+Name[az]=Şifrə və açarı almaq mümkün olmadı
 Name[ca]=Ha fallat en obtenir els secrets
 Name[da]=Kunne ikke hente hemmeligheder
 Name[de]=Anmeldedaten können nicht bezogen werden
@@ -461,6 +474,7 @@ Action=Popup
 [Event/FailedToUpdateConnection]
 Name=Failed to Update Connection
 Name[ast]=Fallu al anovar la conexón
+Name[az]=Bağlantını yeniləmək mümkün olmadı
 Name[ca]=Ha fallat en actualitzar la connexió
 Name[da]=Kunne ikke opdatere forbindelsen
 Name[de]=Die Verbindung kann nicht aktualisiert werden
@@ -494,6 +508,7 @@ Action=Popup
 
 [Event/MissingVpnPlugin]
 Name=Missing VPN Plugin
+Name[az]=VPN qoşması çatışmır
 Name[ca]=Manca el connector VPN
 Name[da]=Mangler VPN-plugin
 Name[de]=Fehlendes VPN-Modul
@@ -527,6 +542,7 @@ Action=Popup
 
 [Event/NoLongerConnected]
 Name=No Longer Connected to a Network
+Name[az]=Siz artıq şəbəkəyə qoşulmamısınız
 Name[ca]=No connectat a cap xarxa
 Name[da]=Ikke længere forbundet til et netværk
 Name[de]=Nicht mehr mit einem Netzwerk verbunden
@@ -561,6 +577,7 @@ Action=Popup
 [Event/CaptivePortal]
 Name=Captive Portal Detected
 Name[ast]=Detectóse un portal cativu
+Name[az]=Əlavə kimlik doğrulaması tələb edən bağlantı aşkar edildi
 Name[ca]=S'ha detectat un portal captiu
 Name[da]=Captive portal detekteret
 Name[de]=Captive-Portal erkannt
@@ -595,6 +612,7 @@ Action=Popup
 
 [Event/LimitedConnectivity]
 Name=Limited Connectivity
+Name[az]=Məhdudlaşdırılmış bağlantı
 Name[ca]=Connectivitat limitada
 Name[en_GB]=Limited Connectivity
 Name[es]=Conectividad limitada
@@ -624,6 +642,7 @@ Action=Popup
 [Event/FailedToCreateHotspot]
 Name=Failed to Create Hotspot
 Name[ast]=Fallu al crear el puntu d'accesu
+Name[az]=Qoşulma nöqtəsi yaratmaq mümkün olmadı
 Name[ca]=Ha fallat en crear el punt d'accés
 Name[da]=Kunne ikke aktivere internetdeling
 Name[de]=Hotspot kann nicht erstellt werden

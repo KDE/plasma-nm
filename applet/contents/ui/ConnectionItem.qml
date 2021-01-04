@@ -184,10 +184,15 @@ PlasmaExtras.ExpandableListItem {
                 onAccepted: {
                     stateChangeButton.trigger()
                     connectionItem.customExpandedViewContent = detailsComponent
+                    scanTimer.running = true
                 }
 
                 onAcceptableInputChanged: {
                     stateChangeButton.enabled = acceptableInput
+                }
+
+                onActiveFocusChanged: {
+                    scanTimer.running = !activeFocus
                 }
 
                 Component.onCompleted: {
@@ -302,8 +307,9 @@ PlasmaExtras.ExpandableListItem {
     }
 
     // Re-activate the default button if the password field is hidden without
-    // sending a password
+    // sending a password, and start the scan timer
     onItemCollapsed: {
         stateChangeButton.enabled = true;
+        scanTimer.running = true;
     }
 }

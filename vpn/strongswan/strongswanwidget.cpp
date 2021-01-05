@@ -124,19 +124,34 @@ QVariantMap StrongswanSettingWidget::setting() const
     if (!d->ui.leGateway->text().isEmpty()) {
         data.insert(NM_STRONGSWAN_GATEWAY, d->ui.leGateway->text());
     }
-    data.insert( NM_STRONGSWAN_CERTIFICATE, d->ui.leGatewayCertificate->url().toLocalFile());
+
+    const QString certificate = d->ui.leGatewayCertificate->url().toLocalFile();
+    if (!certificate.isEmpty()) {
+        data.insert( NM_STRONGSWAN_CERTIFICATE, certificate);
+    }
 
     // Authentication
     switch (d->ui.cmbMethod->currentIndex()) {
-    case StrongswanSettingWidgetPrivate::PrivateKey:
+    case StrongswanSettingWidgetPrivate::PrivateKey: {
         data.insert(NM_STRONGSWAN_METHOD, NM_STRONGSWAN_AUTH_KEY);
-        data.insert(NM_STRONGSWAN_USERCERT, d->ui.leAuthPrivatekeyCertificate->url().toLocalFile());
-        data.insert(NM_STRONGSWAN_USERKEY, d->ui.leAuthPrivatekeyKey->url().toLocalFile());
+        const QString userPrivateCertificate = d->ui.leAuthPrivatekeyCertificate->url().toLocalFile();
+        if (!userPrivateCertificate.isEmpty()) {
+            data.insert(NM_STRONGSWAN_USERCERT, userPrivateCertificate);
+        }
+        const QString userKey = d->ui.leAuthPrivatekeyKey->url().toLocalFile();
+        if (!userKey.isEmpty()) {
+            data.insert(NM_STRONGSWAN_USERKEY, userKey);
+        }
         break;
-    case StrongswanSettingWidgetPrivate::SshAgent:
+    }
+    case StrongswanSettingWidgetPrivate::SshAgent: {
         data.insert(NM_STRONGSWAN_METHOD, NM_STRONGSWAN_AUTH_AGENT);
-        data.insert(NM_STRONGSWAN_USERCERT, d->ui.leAuthSshCertificate->url().toLocalFile());
+        const QString userSshCertificate = d->ui.leAuthSshCertificate->url().toLocalFile();
+        if (!userSshCertificate.isEmpty()) {
+            data.insert(NM_STRONGSWAN_USERCERT, userSshCertificate);
+        }
         break;
+    }
     case StrongswanSettingWidgetPrivate::Smartcard:
         data.insert(NM_STRONGSWAN_METHOD, NM_STRONGSWAN_AUTH_SMARTCARD);
         break;

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>418</width>
-    <height>427</height>
+    <height>434</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -250,6 +250,11 @@ a temporary IPv6 address in addition to the public one generated from MAC addres
      <item>
       <property name="text">
        <string comment="like in this setting is Disabled">Ignored</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Disabled</string>
       </property>
      </item>
     </widget>

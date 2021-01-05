@@ -9,6 +9,8 @@
 #include "ipv6delegate.h"
 #include "intdelegate.h"
 
+#include <NetworkManagerQt/Manager>
+
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QStandardItemModel>
@@ -72,8 +74,12 @@ IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
 
     connect(m_ui->tableViewAddresses->selectionModel(), &QItemSelectionModel::selectionChanged, this, &IPv6Widget::selectionChanged);
 
-
     connect(&d->model, &QStandardItemModel::itemChanged, this, &IPv6Widget::tableViewItemChanged);
+
+    // IPv6Method::Disabled is available in NM 1.20+
+    if (!NetworkManager::checkVersion(1, 20, 0)) {
+        m_ui->method->removeItem(7);
+    }
 
     if (setting) {
         loadConfig(setting);
@@ -134,6 +140,9 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
             m_ui->method->setCurrentIndex(LinkLocal);
             break;
         case NetworkManager::Ipv6Setting::Ignored:
+            m_ui->method->setCurrentIndex(Ignored);
+            break;
+        case NetworkManager::Ipv6Setting::ConfigDisabled:
             m_ui->method->setCurrentIndex(Disabled);
             break;
     }
@@ -197,8 +206,11 @@ QVariantMap IPv6Widget::setting() const
         case LinkLocal:
             ipv6Setting.setMethod(NetworkManager::Ipv6Setting::LinkLocal);
             break;
-        case Disabled:
+        case Ignored:
             ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Ignored);
+            break;
+        case Disabled:
+            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::ConfigDisabled);
             break;
     }
 
@@ -294,7 +306,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setEnabled(false);
         m_ui->btnAdd->setEnabled(false);
         m_ui->btnRemove->setEnabled(false);
-    } else if (index == Disabled) {  // Ignored
+    } else if (index == Ignored || index == Disabled) {  // Ignored and Disabled
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
         m_ui->dnsMorePushButton->setEnabled(false);

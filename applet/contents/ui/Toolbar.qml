@@ -190,7 +190,7 @@ ColumnLayout {
 
             focus: true
             clearButtonShown: true
-            placeholderText: i18ndc("plasma-nm", "text field placeholder text", "Search...")
+            placeholderText: i18nc("text field placeholder text", "Search...")
 
             onTextChanged: {
                 appletProxyModel.setFilterRegExp(text)

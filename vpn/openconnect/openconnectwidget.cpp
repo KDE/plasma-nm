@@ -188,8 +188,10 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
         cmbProtocolIndex = 0;
     } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("nc")) {
         cmbProtocolIndex = 1;
+    } else if(dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("gp")) {
+        cmbProtocolIndex = 2;
     } else {
-        cmbProtocolIndex = 2; // paloAlto/GlobalProtect (gp)
+        cmbProtocolIndex = 3; // pulse, Pule Connect Secure
     }
 
     int cmbReportedOsIndex;
@@ -272,8 +274,10 @@ QVariantMap OpenconnectSettingWidget::setting() const
         case 1:
             protocol = QLatin1String("nc");
             break;
-        default:
+        case 2:
             protocol = QLatin1String("gp");
+        default:
+            protocol = QLatin1String("pulse");
     }
 
     QString reportedOs;

@@ -63,7 +63,7 @@ ColumnLayout {
     }
 
     RowLayout {
-        spacing: units.smallSpacing
+        spacing: units.smallSpacing * 3
 
         PlasmaComponents3.CheckBox {
             id: wifiSwitchButton
@@ -95,11 +95,6 @@ ColumnLayout {
             PlasmaComponents3.ToolTip {
                 text: i18n("Enable mobile network")
             }
-        }
-
-        // Add some extra spacing between the wifi and airplane mode toggles
-        Item {
-            Layout.preferredWidth: units.smallSpacing * 2
         }
 
         PlasmaComponents3.CheckBox {
@@ -140,8 +135,6 @@ ColumnLayout {
 
         PlasmaComponents3.ToolButton {
             id: hotspotButton
-
-            Layout.leftMargin: PlasmaCore.Units.largeSpacing * 2
 
             visible: handler.hotspotSupported
             checkable: true
@@ -186,7 +179,6 @@ ColumnLayout {
             id: searchTextField
 
             Layout.fillWidth: true
-            Layout.leftMargin: PlasmaCore.Units.largeSpacing * 2
 
             focus: true
             clearButtonShown: true

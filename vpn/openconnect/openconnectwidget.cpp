@@ -191,7 +191,7 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
     } else if(dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("gp")) {
         cmbProtocolIndex = 2;
     } else {
-        cmbProtocolIndex = 3; // pulse, Pule Connect Secure
+        cmbProtocolIndex = 3; // pulse, Pulse Connect Secure
     }
 
     int cmbReportedOsIndex;

@@ -113,5 +113,5 @@ if (WITH_MODEMMANAGER_SUPPORT)
     target_link_libraries(plasmanm_editor PUBLIC KF5::ModemManagerQt)
 endif()
 
-install(TARGETS plasmanm_editor ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS plasmanm_editor ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES plasma-networkmanagement-vpnuiplugin.desktop DESTINATION ${KDE_INSTALL_KSERVICETYPES5DIR})

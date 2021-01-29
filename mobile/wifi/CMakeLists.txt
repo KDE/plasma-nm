@@ -18,5 +18,5 @@ target_link_libraries(kcm_mobile_wifi
 kcoreaddons_desktop_to_json(kcm_mobile_wifi "wifisettings.desktop")
 
 install(FILES wifisettings.desktop DESTINATION ${SERVICES_INSTALL_DIR})
-install(TARGETS kcm_mobile_wifi DESTINATION ${PLUGIN_INSTALL_DIR}/kcms)
+install(TARGETS kcm_mobile_wifi DESTINATION ${KDE_INSTALL_PLUGINDIR}/kcms)
 kpackage_install_package(package kcm_mobile_wifi kcms)

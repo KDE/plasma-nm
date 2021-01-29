@@ -35,7 +35,7 @@ if (WITH_MODEMMANAGER_SUPPORT)
     target_link_libraries(plasmanm_internal PUBLIC KF5::ModemManagerQt)
 endif()
 
-install(TARGETS plasmanm_internal ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS plasmanm_internal ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 add_subdirectory(declarative)
 add_subdirectory(editor)

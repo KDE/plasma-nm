@@ -3,8 +3,8 @@ set (hotspotsettings_SRCS hotspotsettings.cpp)
 add_library(kcm_mobile_hotspot MODULE ${hotspotsettings_SRCS})
 
 target_link_libraries(kcm_mobile_hotspot
-    Qt5::Quick
-    Qt5::Qml
+    Qt::Quick
+    Qt::Qml
     KF5::I18n
     KF5::CoreAddons
     KF5::QuickAddons

@@ -5,10 +5,10 @@ set (wifisettings_SRCS wifisettings.cpp)
 add_library(kcm_mobile_wifi MODULE ${wifisettings_SRCS})
 
 target_link_libraries(kcm_mobile_wifi
-    Qt5::DBus
-    Qt5::Gui
-    Qt5::Quick
-    Qt5::Qml
+    Qt::DBus
+    Qt::Gui
+    Qt::Quick
+    Qt::Qml
     KF5::I18n
     KF5::NetworkManagerQt
     KF5::Plasma

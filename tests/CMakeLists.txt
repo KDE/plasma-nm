@@ -9,15 +9,15 @@ set_package_properties(Qt5Test PROPERTIES PURPOSE "Required for autotests")
 
 ecm_add_test(
     simpleipv6test.cpp
-    LINK_LIBRARIES Qt5::Test plasmanm_editor
+    LINK_LIBRARIES Qt::Test plasmanm_editor
 )
 
 ecm_add_test(
     simpleipv4test.cpp
-    LINK_LIBRARIES Qt5::Test plasmanm_editor
+    LINK_LIBRARIES Qt::Test plasmanm_editor
 )
 
 ecm_add_test(
     simpleiplisttest.cpp
-    LINK_LIBRARIES Qt5::Test plasmanm_editor
+    LINK_LIBRARIES Qt::Test plasmanm_editor
 )

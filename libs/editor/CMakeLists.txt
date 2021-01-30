@@ -97,15 +97,15 @@ PUBLIC
     KF5::Completion
     KF5::NetworkManagerQt
     KF5::WidgetsAddons
-    Qt5::Widgets
+    Qt::Widgets
 PRIVATE
     KF5::I18n
     KF5::KIOWidgets
     KF5::Notifications
     KF5::Solid
     KF5::Wallet
-    Qt5::DBus
-    Qt5::Network
+    Qt::DBus
+    Qt::Network
     qca-qt5
 )
 

@@ -51,7 +51,7 @@ if (OPENCONNECT_FOUND)
             KF5::I18n
             KF5::KIOWidgets
             KF5::WidgetsAddons
-            Qt5::Xml
+            Qt::Xml
             ${OPENCONNECT_LIBRARIES}
             ${maybe_OPENSSL_LIBRARIES}
         )

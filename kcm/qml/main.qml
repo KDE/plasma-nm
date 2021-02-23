@@ -59,10 +59,6 @@ Item {
         sourceModel: connectionModel
     }
 
-    PlasmaNM.Configuration {
-        id: configuration
-    }
-
     QQC2.TextField {
         id: searchField
 

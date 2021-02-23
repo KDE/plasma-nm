@@ -447,8 +447,8 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
     initializeSignals(network);
 
     // Avoid duplicating entries in the model
-    if (!Configuration::hotspotConnectionPath().isEmpty()) {
-        NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::findActiveConnection(Configuration::hotspotConnectionPath());
+    if (!Configuration::self().hotspotConnectionPath().isEmpty()) {
+        NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::findActiveConnection(Configuration::self().hotspotConnectionPath());
 
         // If we are trying to add an AP which is the one created by our hotspot, then we can skip this and don't add it twice
         if (activeConnection && activeConnection->specificObject() == network->referenceAccessPoint()->uni()) {

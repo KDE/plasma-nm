@@ -415,7 +415,7 @@ void ConnectionIcon::setIcons()
 
 void ConnectionIcon::setDisconnectedIcon()
 {
-    if (Configuration::airplaneModeEnabled()) {
+    if (Configuration::self().airplaneModeEnabled()) {
         setConnectionIcon(QStringLiteral("network-flightmode-on"));
         return;
     }

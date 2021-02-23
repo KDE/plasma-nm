@@ -110,7 +110,7 @@ bool UiUtils::isConnectionTypeSupported(NetworkManager::ConnectionSettings::Conn
         return false;
     }
 
-    bool manageVirtualConnections = Configuration::manageVirtualConnections();
+    bool manageVirtualConnections = Configuration::self().manageVirtualConnections();
 
     if (type == NetworkManager::ConnectionSettings::Bond ||
         type == NetworkManager::ConnectionSettings::Bridge ||

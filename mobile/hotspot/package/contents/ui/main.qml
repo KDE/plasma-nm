@@ -30,10 +30,6 @@ SimpleKCM {
         id: handler
     }
 
-    PlasmaNM.Configuration {
-        id: configuration
-    }
-
     Kirigami.FormLayout {
         Controls.Switch {
             id: hotspotToggle
@@ -50,20 +46,20 @@ SimpleKCM {
         Controls.TextField {
             id: hotspotName
             Kirigami.FormData.label: i18n("SSID:")
-            text: configuration.hotspotName
+            text: PlasmaNM.Configuration.hotspotName
         }
 
         Kirigami.PasswordField {
             id: hotspotPassword
             Kirigami.FormData.label: i18n("Password:")
-            text: configuration.hotspotPassword
+            text: PlasmaNM.Configuration.hotspotPassword
         }
 
         Controls.Button {
             text: i18n("Save")
             onClicked: {
-                configuration.hotspotName = hotspotName.text
-                configuration.hotspotPassword = hotspotPassword.text
+                PlasmaNM.Configuration.hotspotName = hotspotName.text
+                PlasmaNM.Configuration.hotspotPassword = hotspotPassword.text
                 if (hotspotToggle.checked) {
                     handler.stopHotspot()
                     handler.createHotspot()

@@ -58,10 +58,6 @@ ColumnLayout {
         }
     }
 
-    PlasmaNM.Configuration {
-        id: configuration
-    }
-
     RowLayout {
         spacing: units.smallSpacing * 3
 
@@ -115,14 +111,14 @@ ColumnLayout {
             }
 
             Binding {
-                target: configuration
+                target: PlasmaNM.Configuration
                 property: "airplaneModeEnabled"
                 value: planeModeSwitchButton.airplaneModeEnabled
                 when: planeModeSwitchButton.initialized
             }
 
             Component.onCompleted: {
-                airplaneModeEnabled = configuration.airplaneModeEnabled
+                airplaneModeEnabled = PlasmaNM.Configuration.airplaneModeEnabled
                 initialized = true
             }
 
@@ -143,7 +139,7 @@ ColumnLayout {
             icon.name: "network-wireless-on"
 
             onClicked: {
-                if (configuration.hotspotConnectionPath) {
+                if (PlasmaNM.Configuration.hotspotConnectionPath) {
                     checked = false
                     handler.stopHotspot()
                 } else {
@@ -170,8 +166,8 @@ ColumnLayout {
             }
 
             Component.onCompleted: {
-                checked = configuration.hotspotConnectionPath
-                tooltip.text = configuration.hotspotConnectionPath ? i18n("Disable Hotspot") : i18n("Create Hotspot")
+                checked = PlasmaNM.Configuration.hotspotConnectionPath
+                tooltip.text = PlasmaNM.Configuration.hotspotConnectionPath ? i18n("Disable Hotspot") : i18n("Create Hotspot")
             }
         }
 

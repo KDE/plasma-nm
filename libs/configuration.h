@@ -38,25 +38,27 @@ class Q_DECL_EXPORT Configuration : public QObject
     Q_PROPERTY(bool showPasswordDialog READ showPasswordDialog CONSTANT)
     Q_OBJECT
 public:
-    static bool unlockModemOnDetection();
-    static void setUnlockModemOnDetection(bool unlock);
+    bool unlockModemOnDetection();
+    void setUnlockModemOnDetection(bool unlock);
 
-    static bool manageVirtualConnections();
-    static void setManageVirtualConnections(bool manage);
+    bool manageVirtualConnections();
+    void setManageVirtualConnections(bool manage);
 
-    static bool airplaneModeEnabled();
-    static void setAirplaneModeEnabled(bool enabled);
+    bool airplaneModeEnabled();
+    void setAirplaneModeEnabled(bool enabled);
 
-    static QString hotspotName();
-    static void setHotspotName(const QString &name);
+    QString hotspotName();
+    void setHotspotName(const QString &name);
 
-    static QString hotspotPassword();
-    static void setHotspotPassword(const QString &password);
+    QString hotspotPassword();
+    void setHotspotPassword(const QString &password);
 
-    static QString hotspotConnectionPath();
-    static void setHotspotConnectionPath(const QString &path);
+    QString hotspotConnectionPath();
+    void setHotspotConnectionPath(const QString &path);
 
-    static bool showPasswordDialog();
+    bool showPasswordDialog();
+
+    static Configuration &self();
 };
 
 #endif // PLAMA_NM_CONFIGURATION_H

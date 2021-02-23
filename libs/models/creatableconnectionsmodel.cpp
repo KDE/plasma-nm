@@ -175,7 +175,7 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
                                                  QString(), QString(), true); // VpnType and SpecificType are empty
     m_list << connectionItem;
 
-    if (Configuration::manageVirtualConnections()) {
+    if (Configuration::self().manageVirtualConnections()) {
         connectionItem = new CreatableConnectionItem(i18n("Bond"), i18n("Virtual connections"),
                                                     i18n("Some bond description"), QStringLiteral("network-wired"),
                                                     NetworkManager::ConnectionSettings::Bond,

@@ -27,6 +27,12 @@
 static bool propManageVirtualConnectionsInitialized = false;
 static bool propManageVirtualConnections = false;
 
+Configuration &Configuration::self()
+{
+    static Configuration c;
+    return c;
+}
+
 bool Configuration::unlockModemOnDetection()
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));

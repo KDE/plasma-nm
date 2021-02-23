@@ -75,10 +75,10 @@ Handler::Handler(QObject *parent)
                                             this, SLOT(secretAgentError(QString, QString)));
 
 
-    if (!Configuration::hotspotConnectionPath().isEmpty()) {
-        NetworkManager::ActiveConnection::Ptr hotspot = NetworkManager::findActiveConnection(Configuration::hotspotConnectionPath());
+    if (!Configuration::self().hotspotConnectionPath().isEmpty()) {
+        NetworkManager::ActiveConnection::Ptr hotspot = NetworkManager::findActiveConnection(Configuration::self().hotspotConnectionPath());
         if (!hotspot) {
-            Configuration::setHotspotConnectionPath(QString());
+            Configuration::self().setHotspotConnectionPath(QString());
         }
     }
 
@@ -551,7 +551,7 @@ void Handler::createHotspot()
 
     NetworkManager::WirelessSetting::Ptr wifiSetting = connectionSettings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
     wifiSetting->setMode(NetworkManager::WirelessSetting::Adhoc);
-    wifiSetting->setSsid(Configuration::hotspotName().toUtf8());
+    wifiSetting->setSsid(Configuration::self().hotspotName().toUtf8());
 
     for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
@@ -586,21 +586,21 @@ void Handler::createHotspot()
     wifiSetting->setInitialized(true);
     wifiSetting->setMode(useApMode ? NetworkManager::WirelessSetting::Ap :NetworkManager::WirelessSetting::Adhoc);
 
-    if (!Configuration::hotspotPassword().isEmpty()) {
+    if (!Configuration::self().hotspotPassword().isEmpty()) {
         NetworkManager::WirelessSecuritySetting::Ptr wifiSecurity = connectionSettings->setting(NetworkManager::Setting::WirelessSecurity).dynamicCast<NetworkManager::WirelessSecuritySetting>();
         wifiSecurity->setInitialized(true);
 
         if (useApMode) {
             // Use WPA2
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
-            wifiSecurity->setPsk(Configuration::hotspotPassword());
+            wifiSecurity->setPsk(Configuration::self().hotspotPassword());
             wifiSecurity->setPskFlags(NetworkManager::Setting::AgentOwned);
         } else {
             // Use WEP
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
             wifiSecurity->setWepKeyType(NetworkManager::WirelessSecuritySetting::Passphrase);
             wifiSecurity->setWepTxKeyindex(0);
-            wifiSecurity->setWepKey0(Configuration::hotspotPassword());
+            wifiSecurity->setWepKey0(Configuration::self().hotspotPassword());
             wifiSecurity->setWepKeyFlags(NetworkManager::Setting::AgentOwned);
             wifiSecurity->setAuthAlg(NetworkManager::WirelessSecuritySetting::Open);
         }
@@ -610,7 +610,7 @@ void Handler::createHotspot()
     ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Shared);
     ipv4Setting->setInitialized(true);
 
-    connectionSettings->setId(Configuration::hotspotName());
+    connectionSettings->setId(Configuration::self().hotspotName());
     connectionSettings->setAutoconnect(false);
     connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
 
@@ -619,14 +619,14 @@ void Handler::createHotspot()
     QDBusPendingReply<QDBusObjectPath, QDBusObjectPath, QVariantMap> reply = NetworkManager::addAndActivateConnection2(connectionSettings->toMap(), wifiDev->uni(), QString(), options);
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", Handler::CreateHotspot);
-    watcher->setProperty("connection", Configuration::hotspotName());
+    watcher->setProperty("connection", Configuration::self().hotspotName());
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
     connect(watcher, &QDBusPendingCallWatcher::finished, this, QOverload<QDBusPendingCallWatcher *>::of(&Handler::hotspotCreated));
 }
 
 void Handler::stopHotspot()
 {
-    const QString activeConnectionPath = Configuration::hotspotConnectionPath();
+    const QString activeConnectionPath = Configuration::self().hotspotConnectionPath();
 
     if (activeConnectionPath.isEmpty()) {
         return;
@@ -639,7 +639,7 @@ void Handler::stopHotspot()
     }
 
     NetworkManager::deactivateConnection(activeConnectionPath);
-    Configuration::setHotspotConnectionPath(QString());
+    Configuration::self().setHotspotConnectionPath(QString());
 
     Q_EMIT hotspotDisabled();
 }
@@ -835,7 +835,7 @@ void Handler::hotspotCreated(QDBusPendingCallWatcher *watcher)
             return;
         }
 
-        Configuration::setHotspotConnectionPath(activeConnectionPath);
+        Configuration::self().setHotspotConnectionPath(activeConnectionPath);
 
         NetworkManager::ActiveConnection::Ptr hotspot = NetworkManager::findActiveConnection(activeConnectionPath);
 
@@ -845,7 +845,7 @@ void Handler::hotspotCreated(QDBusPendingCallWatcher *watcher)
 
         connect(hotspot.data(), &NetworkManager::ActiveConnection::stateChanged, [=] (NetworkManager::ActiveConnection::State state) {
             if (state > NetworkManager::ActiveConnection::Activated) {
-                Configuration::setHotspotConnectionPath(QString());
+                Configuration::self().setHotspotConnectionPath(QString());
                 Q_EMIT hotspotDisabled();
             }
         });

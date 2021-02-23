@@ -29,10 +29,6 @@ Dialog {
     standardButtons: Dialog.Ok | Dialog.Cancel
     title: i18nc("@title:window", "Configuration")
 
-    PlasmaNM.Configuration {
-        id: configuration
-    }
-
     contentItem: Item {
         implicitHeight: 230
         implicitWidth: 400
@@ -59,14 +55,14 @@ Dialog {
                 id: unlockModem
                 text: i18n("Ask for PIN on modem detection")
                 onClicked: configurationChanged()
-                Component.onCompleted: checked = configuration.unlockModemOnDetection
+                Component.onCompleted: checked = PlasmaNM.Configuration.unlockModemOnDetection
             }
 
             QQC2.CheckBox {
                 id: manageVirtualConnections
                 text: i18n("Show virtual connections")
                 onClicked: configurationChanged()
-                Component.onCompleted: checked = configuration.manageVirtualConnections
+                Component.onCompleted: checked = PlasmaNM.Configuration.manageVirtualConnections
             }
 
             Kirigami.Heading {
@@ -81,7 +77,7 @@ Dialog {
                 Kirigami.FormData.label: i18n("Hotspot name:")
                 onTextChanged: configurationChanged()
                 Component.onCompleted: {
-                    text = configuration.hotspotName
+                    text = PlasmaNM.Configuration.hotspotName
                     visible = handler.hotspotSupported
                 }
             }
@@ -100,7 +96,7 @@ Dialog {
                 onAcceptableInputChanged: configurationChanged()
 
                 Component.onCompleted: {
-                    text = configuration.hotspotPassword
+                    text = PlasmaNM.Configuration.hotspotPassword
                     visible = handler.hotspotSupported
                 }
             }
@@ -146,18 +142,18 @@ Dialog {
 
     onVisibleChanged: {
         if (visible) {
-            unlockModem.checked = configuration.unlockModemOnDetection
-            manageVirtualConnections.checked = configuration.manageVirtualConnections
-            hotspotName.text = configuration.hotspotName
-            hotspotPassword.text = configuration.hotspotPassword
+            unlockModem.checked = PlasmaNM.Configuration.unlockModemOnDetection
+            manageVirtualConnections.checked = PlasmaNM.Configuration.manageVirtualConnections
+            hotspotName.text = PlasmaNM.Configuration.hotspotName
+            hotspotPassword.text = PlasmaNM.Configuration.hotspotPassword
         }
     }
 
     onAccepted: {
-        configuration.unlockModemOnDetection = unlockModem.checked
-        configuration.manageVirtualConnections = manageVirtualConnections.checked
-        configuration.hotspotName = hotspotName.text
-        configuration.hotspotPassword = hotspotPassword.text
+        PlasmaNM.Configuration.unlockModemOnDetection = unlockModem.checked
+        PlasmaNM.Configuration.manageVirtualConnections = manageVirtualConnections.checked
+        PlasmaNM.Configuration.hotspotName = hotspotName.text
+        PlasmaNM.Configuration.hotspotPassword = hotspotPassword.text
     }
 }
 

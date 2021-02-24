@@ -65,11 +65,9 @@ void QmlPlugins::registerTypes(const char* uri)
     // @uri org.kde.plasma.networkmanagement.MobileProxyModel
     qmlRegisterType<MobileProxyModel>(uri, 0, 2, "MobileProxyModel");
 
-    QQmlEngine::setObjectOwnership(&Configuration::self(), QQmlEngine::CppOwnership);
     qmlRegisterSingletonType<Configuration>(uri, 0, 2, "Configuration", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
-
-        return &Configuration::self();
+        return new Configuration;
     });
 }

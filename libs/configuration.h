@@ -44,7 +44,7 @@ public:
     bool manageVirtualConnections();
     void setManageVirtualConnections(bool manage);
 
-    bool airplaneModeEnabled();
+    bool airplaneModeEnabled() const;
     void setAirplaneModeEnabled(bool enabled);
     Q_SIGNAL void airplaneModeEnabledChanged();
 

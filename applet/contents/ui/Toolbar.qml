@@ -46,7 +46,7 @@ ColumnLayout {
         }
 
         onWirelessHwEnabledChanged: {
-            wifiSwitchButton.enabled = enabled && availableDevices.wirelessDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
+            wifiSwitchButton.enabled = enabled && availableDevices.wirelessDeviceAvailable && !PlasmaNM.Configuration.airplaneModeEnabled
         }
 
         onWwanEnabledChanged: {
@@ -54,7 +54,7 @@ ColumnLayout {
         }
 
         onWwanHwEnabledChanged: {
-            wwanSwitchButton.enabled = enabled && availableDevices.modemDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
+            wwanSwitchButton.enabled = enabled && availableDevices.modemDeviceAvailable && !PlasmaNM.Configuration.airplaneModeEnabled
         }
     }
 
@@ -65,7 +65,7 @@ ColumnLayout {
             id: wifiSwitchButton
 
             checked: enabled && enabledConnections.wirelessEnabled
-            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
+            enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !PlasmaNM.Configuration.airplaneModeEnabled
 
             icon.name: enabled ? "network-wireless-on" : "network-wireless-off"
             visible: availableDevices.wirelessDeviceAvailable
@@ -81,7 +81,7 @@ ColumnLayout {
             id: wwanSwitchButton
 
             checked: enabled && enabledConnections.wwanEnabled
-            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !planeModeSwitchButton.airplaneModeEnabled
+            enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !PlasmaNM.Configuration.airplaneModeEnabled
 
             icon.name: enabled ? "network-mobile-on" : "network-mobile-off"
             visible: availableDevices.modemDeviceAvailable
@@ -97,29 +97,16 @@ ColumnLayout {
             id: planeModeSwitchButton
 
             property bool initialized: false
-            property bool airplaneModeEnabled: false
 
-            checked: airplaneModeEnabled
+            checked: PlasmaNM.Configuration.airplaneModeEnabled
 
-            icon.name: airplaneModeEnabled ? "network-flightmode-on" : "network-flightmode-off"
+            icon.name: PlasmaNM.Configuration.airplaneModeEnabled ? "network-flightmode-on" : "network-flightmode-off"
 
             visible: availableDevices.modemDeviceAvailable || availableDevices.wirelessDeviceAvailable
 
             onToggled: {
                 handler.enableAirplaneMode(checked);
-                airplaneModeEnabled = !airplaneModeEnabled;
-            }
-
-            Binding {
-                target: PlasmaNM.Configuration
-                property: "airplaneModeEnabled"
-                value: planeModeSwitchButton.airplaneModeEnabled
-                when: planeModeSwitchButton.initialized
-            }
-
-            Component.onCompleted: {
-                airplaneModeEnabled = PlasmaNM.Configuration.airplaneModeEnabled
-                initialized = true
+                PlasmaNM.Configuration.airplaneModeEnabled = checked;
             }
 
             PlasmaComponents3.ToolTip {

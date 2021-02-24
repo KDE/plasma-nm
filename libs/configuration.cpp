@@ -86,28 +86,11 @@ void Configuration::setManageVirtualConnections(bool manage)
     }
 }
 
-bool Configuration::airplaneModeEnabled()
+bool Configuration::airplaneModeEnabled() const
 {
-    // Check whether other devices are disabled to assume airplane mode is enabled
-    // after suspend
-    const bool isWifiDisabled = !NetworkManager::isWirelessEnabled() || !NetworkManager::isWirelessHardwareEnabled();
-    const bool isWwanDisabled = !NetworkManager::isWwanEnabled() || !NetworkManager::isWwanHardwareEnabled();
-
-    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
-    KConfigGroup grp(config, QLatin1String("General"));
-
-    if (grp.isValid()) {
-        if (grp.readEntry(QLatin1String("AirplaneModeEnabled"), false)) {
-            // We can assume that airplane mode is still activated after resume
-            if (isWifiDisabled && isWwanDisabled)
-                return true;
-            else {
-                setAirplaneModeEnabled(false);
-            }
-        }
-    }
-
-    return false;
+    static KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
+    static KConfigGroup grp(config, QLatin1String("General"));
+    return grp.readEntry(QLatin1String("AirplaneModeEnabled"), false);
 }
 
 void Configuration::setAirplaneModeEnabled(bool enabled)
@@ -117,6 +100,7 @@ void Configuration::setAirplaneModeEnabled(bool enabled)
 
     if (grp.isValid()) {
         grp.writeEntry(QLatin1String("AirplaneModeEnabled"), enabled);
+        grp.sync();
         Q_EMIT airplaneModeEnabledChanged();
     }
 }

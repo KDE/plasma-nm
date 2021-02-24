@@ -117,6 +117,7 @@ void Configuration::setAirplaneModeEnabled(bool enabled)
 
     if (grp.isValid()) {
         grp.writeEntry(QLatin1String("AirplaneModeEnabled"), enabled);
+        Q_EMIT airplaneModeEnabledChanged();
     }
 }
 

@@ -29,7 +29,7 @@ class Q_DECL_EXPORT Configuration : public QObject
 {
     Q_PROPERTY(bool unlockModemOnDetection READ unlockModemOnDetection WRITE setUnlockModemOnDetection)
     Q_PROPERTY(bool manageVirtualConnections READ manageVirtualConnections WRITE setManageVirtualConnections)
-    Q_PROPERTY(bool airplaneModeEnabled READ airplaneModeEnabled WRITE setAirplaneModeEnabled)
+    Q_PROPERTY(bool airplaneModeEnabled READ airplaneModeEnabled WRITE setAirplaneModeEnabled NOTIFY airplaneModeEnabledChanged)
     Q_PROPERTY(QString hotspotName READ hotspotName WRITE setHotspotName)
     Q_PROPERTY(QString hotspotPassword READ hotspotPassword WRITE setHotspotPassword)
     Q_PROPERTY(QString hotspotConnectionPath READ hotspotConnectionPath WRITE setHotspotConnectionPath)
@@ -46,6 +46,7 @@ public:
 
     bool airplaneModeEnabled();
     void setAirplaneModeEnabled(bool enabled);
+    Q_SIGNAL void airplaneModeEnabledChanged();
 
     QString hotspotName();
     void setHotspotName(const QString &name);

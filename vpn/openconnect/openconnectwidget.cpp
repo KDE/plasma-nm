@@ -276,6 +276,7 @@ QVariantMap OpenconnectSettingWidget::setting() const
             break;
         case 2:
             protocol = QLatin1String("gp");
+            break;
         default:
             protocol = QLatin1String("pulse");
     }

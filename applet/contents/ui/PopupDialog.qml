@@ -102,7 +102,9 @@ PlasmaComponents3.Page {
                 highlight: PlasmaComponents.Highlight { }
                 highlightMoveDuration: units.longDuration
                 highlightResizeDuration: units.longDuration
-                delegate: ConnectionItem { }
+                delegate: ConnectionItem {
+                    width: connectionView.width
+                }
             }
         }
 

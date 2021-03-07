@@ -118,7 +118,6 @@ PlasmaComponents3.Page {
                     full.connectionModel = networkModelComponent.createObject(full)
                 } else {
                     full.connectionModel.destroy()
-                    toolbar.closeSearch();
                 }
             }
         }

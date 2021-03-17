@@ -512,15 +512,6 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
     Q_D(OpenconnectAuthWidget);
 
     deleteAllFromLayout(d->ui.loginBoxLayout);
-    if (form->banner) {
-        addFormInfo(QLatin1String("dialog-information"), form->banner);
-    }
-    if (form->message) {
-        addFormInfo(QLatin1String("dialog-information"), form->message);
-    }
-    if (form->error) {
-        addFormInfo(QLatin1String("dialog-error"), form->error);
-    }
 
     struct oc_form_opt *opt;
     QFormLayout *layout = new QFormLayout();
@@ -581,6 +572,22 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
             layout->addRow(text, widget);
         }
     }
+    if (!layout->rowCount()) {
+        delete layout;
+        d->workerWaiting.wakeAll();
+        return;
+    }
+
+    if (form->banner) {
+        addFormInfo(QLatin1String("dialog-information"), form->banner);
+    }
+    if (form->message) {
+        addFormInfo(QLatin1String("dialog-information"), form->message);
+    }
+    if (form->error) {
+        addFormInfo(QLatin1String("dialog-error"), form->error);
+    }
+
     d->ui.loginBoxLayout->addLayout(layout);
     d->passwordFormIndex = d->ui.loginBoxLayout->count() - 1;
 

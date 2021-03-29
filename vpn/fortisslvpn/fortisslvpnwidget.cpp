@@ -230,8 +230,6 @@ QVariantMap FortisslvpnWidget::setting() const
     if (d->advUi.tfa->isChecked()) {
         data.insert(QLatin1String(NM_FORTISSLVPN_KEY_2FA"-flags"), QString::number(NetworkManager::Setting::AgentOwned));
         data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP"-flags"), QString::number(NetworkManager::Setting::None));
-    } else {
-        data.insert(QLatin1String(NM_FORTISSLVPN_KEY_2FA"-flags"), QString::number(NetworkManager::Setting::None));
     }
 
     if (!d->advUi.realm->text().isEmpty()) {

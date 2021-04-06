@@ -102,8 +102,8 @@ bool PppoeWidget::isValid() const
 {
     bool passwordUserValid = true;
 
-    if (m_ui->password->passwordOption() == PasswordField::StoreForUser ||
-        m_ui->password->passwordOption() == PasswordField::StoreForAllUsers) {
+    if (m_ui->password->passwordOption() == PasswordField::StoreForUser //
+        || m_ui->password->passwordOption() == PasswordField::StoreForAllUsers) {
         passwordUserValid = !m_ui->username->text().isEmpty() && !m_ui->password->text().isEmpty();
     } else if (m_ui->password->passwordOption() == PasswordField::AlwaysAsk) {
         passwordUserValid = !m_ui->username->text().isEmpty();

@@ -177,11 +177,11 @@ void SecretAgent::dialogAccepted()
                 if (completeConnectionSettings->connectionType() == NetworkManager::ConnectionSettings::Gsm) {
                     NetworkManager::GsmSetting::Ptr gsmSetting = completeConnectionSettings->setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
                     if (gsmSetting) {
-                        if (gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::NotSaved) ||
-                            gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::NotRequired)) {
+                        if (gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::NotSaved) //
+                            || gsmSetting->passwordFlags().testFlag(NetworkManager::Setting::NotRequired)) {
                             requestOffline = false;
-                        } else if (gsmSetting->pinFlags().testFlag(NetworkManager::Setting::NotSaved) ||
-                                   gsmSetting->pinFlags().testFlag(NetworkManager::Setting::NotRequired)) {
+                        } else if (gsmSetting->pinFlags().testFlag(NetworkManager::Setting::NotSaved) //
+                                    || gsmSetting->pinFlags().testFlag(NetworkManager::Setting::NotRequired)) {
                             requestOffline = false;
                         }
                     }
@@ -190,9 +190,9 @@ void SecretAgent::dialogAccepted()
                     if (wirelessSecuritySetting && wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEap) {
                         NetworkManager::Security8021xSetting::Ptr security8021xSetting = completeConnectionSettings->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>();
                         if (security8021xSetting) {
-                            if (security8021xSetting->eapMethods().contains(NetworkManager::Security8021xSetting::EapMethodFast) ||
-                                security8021xSetting->eapMethods().contains(NetworkManager::Security8021xSetting::EapMethodTtls) ||
-                                security8021xSetting->eapMethods().contains(NetworkManager::Security8021xSetting::EapMethodPeap)) {
+                            if (security8021xSetting->eapMethods().contains(NetworkManager::Security8021xSetting::EapMethodFast) //
+                                || security8021xSetting->eapMethods().contains(NetworkManager::Security8021xSetting::EapMethodTtls) //
+                                || security8021xSetting->eapMethods().contains(NetworkManager::Security8021xSetting::EapMethodPeap)) {
                                 if (security8021xSetting->passwordFlags().testFlag(NetworkManager::Setting::NotSaved) ||
                                     security8021xSetting->passwordFlags().testFlag(NetworkManager::Setting::NotRequired)) {
                                     requestOffline = false;

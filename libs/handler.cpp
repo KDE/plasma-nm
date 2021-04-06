@@ -249,10 +249,10 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         wifiSetting->setSecurity("802-11-wireless-security");
     }
 
-    if (securityType == NetworkManager::Leap ||
-        securityType == NetworkManager::DynamicWep ||
-        securityType == NetworkManager::Wpa2Eap ||
-        securityType == NetworkManager::WpaEap) {
+    if (securityType == NetworkManager::Leap //
+        || securityType == NetworkManager::DynamicWep //
+        || securityType == NetworkManager::Wpa2Eap //
+        || securityType == NetworkManager::WpaEap) {
         if (securityType == NetworkManager::DynamicWep || securityType == NetworkManager::Leap) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Ieee8021x);
             if (securityType == NetworkManager::Leap) {

@@ -154,16 +154,16 @@ void ModemMonitor::requestPin(MMModemLock lock)
 
         PinDialog::Type type = d->dialog.data()->type();
 
-        if (type == PinDialog::SimPin || type == PinDialog::SimPin2 ||
-            type == PinDialog::ModemServiceProviderPin || type == PinDialog::ModemNetworkPin ||
-            type == PinDialog::ModemPin || type == PinDialog::ModemCorporatePin ||
-            type == PinDialog::ModemPhFsimPin || type == PinDialog::ModemNetworkSubsetPin) {
+        if (type == PinDialog::SimPin || type == PinDialog::SimPin2 //
+            || type == PinDialog::ModemServiceProviderPin || type == PinDialog::ModemNetworkPin //
+            || type == PinDialog::ModemPin || type == PinDialog::ModemCorporatePin //
+            || type == PinDialog::ModemPhFsimPin || type == PinDialog::ModemNetworkSubsetPin) {
             QDBusPendingCall reply = sim->sendPin(d->dialog.data()->pin());
             watcher = new QDBusPendingCallWatcher(reply, sim.data());
-        } else if (type == PinDialog::SimPuk ||
-            type == PinDialog::SimPuk2 || type == PinDialog::ModemServiceProviderPuk ||
-            type == PinDialog::ModemNetworkPuk || type == PinDialog::ModemCorporatePuk ||
-            type == PinDialog::ModemPhFsimPuk || type == PinDialog::ModemNetworkSubsetPuk) {
+        } else if (type == PinDialog::SimPuk //
+            || type == PinDialog::SimPuk2 || type == PinDialog::ModemServiceProviderPuk //
+            || type == PinDialog::ModemNetworkPuk || type == PinDialog::ModemCorporatePuk //
+            || type == PinDialog::ModemPhFsimPuk || type == PinDialog::ModemNetworkSubsetPuk) {
             QDBusPendingCall reply = sim->sendPuk(d->dialog.data()->puk(), d->dialog.data()->pin());
             watcher = new QDBusPendingCallWatcher(reply, sim.data());
         }

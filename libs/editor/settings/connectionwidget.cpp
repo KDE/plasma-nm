@@ -164,7 +164,7 @@ NMStringMap ConnectionWidget::vpnConnections() const
 
     for (const NetworkManager::Connection::Ptr &conn : list) {
         NetworkManager::ConnectionSettings::Ptr conSet = conn->settings();
-        if (conSet->connectionType() == NetworkManager::ConnectionSettings::Vpn
+        if (conSet->connectionType() == NetworkManager::ConnectionSettings::Vpn //
             || conSet->connectionType() == NetworkManager::ConnectionSettings::WireGuard) {
             // qCDebug(PLASMA_NM) << "Found VPN" << conSet->id() << conSet->uuid();
             result.insert(conSet->uuid(), conSet->id());
@@ -176,7 +176,9 @@ NMStringMap ConnectionWidget::vpnConnections() const
 
 QStringList ConnectionWidget::firewallZones() const
 {
-    QDBusMessage msg = QDBusMessage::createMethodCall("org.fedoraproject.FirewallD1", "/org/fedoraproject/FirewallD1", "org.fedoraproject.FirewallD1.zone",
+    QDBusMessage msg = QDBusMessage::createMethodCall("org.fedoraproject.FirewallD1", //
+                                                      "/org/fedoraproject/FirewallD1",
+                                                      "org.fedoraproject.FirewallD1.zone",
                                                       "getZones");
     QDBusPendingReply<QStringList> reply = QDBusConnection::systemBus().asyncCall(msg);
     reply.waitForFinished();

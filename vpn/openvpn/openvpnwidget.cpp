@@ -57,9 +57,16 @@ OpenVpnSettingWidget::OpenVpnSettingWidget(const NetworkManager::VpnSetting::Ptr
 
     // use requesters' urlSelected signals to set other requester's startDirs to save clicking
     // around the filesystem
-    QList<const KUrlRequester *> requesters;
-    requesters << d->ui.x509CaFile << d->ui.x509Cert << d->ui.x509Key << d->ui.pskSharedKey << d->ui.passCaFile
-               << d->ui.x509PassCaFile << d->ui.x509PassCert << d->ui.x509PassKey;
+    QList<const KUrlRequester *> requesters{
+        d->ui.x509CaFile,
+        d->ui.x509Cert,
+        d->ui.x509Key,
+        d->ui.pskSharedKey,
+        d->ui.passCaFile,
+        d->ui.x509PassCaFile,
+        d->ui.x509PassCert,
+        d->ui.x509PassKey,
+    };
     for (const KUrlRequester *requester : requesters) {
         connect(requester, &KUrlRequester::urlSelected, this, &OpenVpnSettingWidget::updateStartDir);
     }

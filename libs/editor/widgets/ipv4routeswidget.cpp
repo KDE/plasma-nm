@@ -95,13 +95,12 @@ void IpV4RoutesWidget::setRoutes(const QList<NetworkManager::IpRoute> &list)
 {
     d->model.removeRows(0, d->model.rowCount());
     for (const NetworkManager::IpRoute &route : list) {
-        QList<QStandardItem *> item;
-
-        // qCDebug(PLASMA_NM) << route.ip();
-        item << new QStandardItem(route.ip().toString())
-             << new QStandardItem(route.netmask().toString())
-             << new QStandardItem(route.nextHop().toString())
-             << new QStandardItem(QString::number(route.metric(), 10));
+        QList<QStandardItem *> item{
+            new QStandardItem(route.ip().toString()),
+            new QStandardItem(route.netmask().toString()),
+            new QStandardItem(route.nextHop().toString()),
+            new QStandardItem(QString::number(route.metric(), 10)),
+        };
 
         d->model.appendRow(item);
     }
@@ -137,8 +136,7 @@ QList<NetworkManager::IpRoute> IpV4RoutesWidget::routes()
 
 void IpV4RoutesWidget::addRoute()
 {
-    QList<QStandardItem *> item;
-    item << new QStandardItem << new QStandardItem << new QStandardItem;
+    QList<QStandardItem *> item{new QStandardItem, new QStandardItem, new QStandardItem};
     d->model.appendRow(item);
 
     const int rowCount = d->model.rowCount();

@@ -293,10 +293,10 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
             if (activeConnection->vpn()) {
                 NetworkManager::VpnConnection::Ptr vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
                 NetworkManager::VpnConnection::State state = vpnConnection->state();
-                if (state == NetworkManager::VpnConnection::Prepare ||
-                    state == NetworkManager::VpnConnection::NeedAuth ||
-                    state == NetworkManager::VpnConnection::Connecting ||
-                    state == NetworkManager::VpnConnection::GettingIpConfig) {
+                if (state == NetworkManager::VpnConnection::Prepare //
+                    || state == NetworkManager::VpnConnection::NeedAuth //
+                    || state == NetworkManager::VpnConnection::Connecting //
+                    || state == NetworkManager::VpnConnection::GettingIpConfig) {
                     item->setConnectionState(NetworkManager::ActiveConnection::Activating);
                 } else if (state == NetworkManager::VpnConnection::Activated) {
                     item->setConnectionState(NetworkManager::ActiveConnection::Activated);
@@ -665,10 +665,10 @@ void NetworkModel::activeVpnConnectionStateChanged(NetworkManager::VpnConnection
     }
 
     for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::ActiveConnection, activePtr->path())) {
-        if (state == NetworkManager::VpnConnection::Prepare ||
-            state == NetworkManager::VpnConnection::NeedAuth ||
-            state == NetworkManager::VpnConnection::Connecting ||
-            state == NetworkManager::VpnConnection::GettingIpConfig) {
+        if (state == NetworkManager::VpnConnection::Prepare //
+            || state == NetworkManager::VpnConnection::NeedAuth //
+            || state == NetworkManager::VpnConnection::Connecting //
+            || state == NetworkManager::VpnConnection::GettingIpConfig) {
             item->setConnectionState(NetworkManager::ActiveConnection::Activating);
         } else if (state == NetworkManager::VpnConnection::Activated) {
             item->setConnectionState(NetworkManager::ActiveConnection::Activated);
@@ -766,11 +766,11 @@ void NetworkModel::connectionRemoved(const QString &connection)
                 // Remove it entirely when there is another connection with the same configuration and for the same device
                 // or it's a shared connection
                 if ((item->mode() != NetworkManager::WirelessSetting::Infrastructure) ||
-                    (item->connectionPath() != secondItem->connectionPath() &&
-                     item->devicePath() == secondItem->devicePath() &&
-                     item->mode() == secondItem->mode() &&
-                     item->securityType() == secondItem->securityType() &&
-                     item->ssid() == secondItem->ssid())) {
+                    (item->connectionPath() != secondItem->connectionPath() //
+                     && item->devicePath() == secondItem->devicePath() //
+                     && item->mode() == secondItem->mode() //
+                     && item->securityType() == secondItem->securityType() //
+                     && item->ssid() == secondItem->ssid())) {
                     remove = true;
                     break;
                 }
@@ -856,7 +856,7 @@ void NetworkModel::deviceStateChanged(NetworkManager::Device::State state, Netwo
     for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::Device, device->uni())) {
         item->setDeviceState(state);
         updateItem(item);
-//             qCDebug(PLASMA_NM) << "Item " << item->name() << ": device state changed to " << item->deviceState();
+        // qCDebug(PLASMA_NM) << "Item " << item->name() << ": device state changed to " << item->deviceState();
     }
 }
 
@@ -970,7 +970,7 @@ void NetworkModel::ipConfigChanged()
 
     for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::Device, device->uni())) {
         updateItem(item);
-//            qCDebug(PLASMA_NM) << "Item " << item->name() << ": device ipconfig changed";
+        // qCDebug(PLASMA_NM) << "Item " << item->name() << ": device ipconfig changed";
     }
 }
 
@@ -1074,7 +1074,7 @@ void NetworkModel::wirelessNetworkSignalChanged(int signal)
         if (item->specificPath() == networkPtr->referenceAccessPoint()->uni()) {
             item->setSignal(signal);
             updateItem(item);
-//              qCDebug(PLASMA_NM) << "Wireless network " << item->name() << ": signal changed to " << item->signal();
+            // qCDebug(PLASMA_NM) << "Wireless network " << item->name() << ": signal changed to " << item->signal();
         }
     }
 }

@@ -157,11 +157,11 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // addresses
     for (const NetworkManager::IpAddress &address : ipv6Setting->addresses()) {
-        QList<QStandardItem *> item;
-
-        item << new QStandardItem(address.ip().toString())
-             << new QStandardItem(QString::number(address.prefixLength(),10))
-             << new QStandardItem(address.gateway().toString());
+        QList<QStandardItem *> item{
+            new QStandardItem(address.ip().toString()),
+            new QStandardItem(QString::number(address.prefixLength(), 10)),
+            new QStandardItem(address.gateway().toString()),
+        };
 
         d->model.appendRow(item);
     }
@@ -323,8 +323,7 @@ void IPv6Widget::slotModeComboChanged(int index)
 
 void IPv6Widget::slotAddIPAddress()
 {
-    QList<QStandardItem *> item;
-    item << new QStandardItem << new QStandardItem << new QStandardItem;
+    QList<QStandardItem *> item{new QStandardItem, new QStandardItem, new QStandardItem};
     d->model.appendRow(item);
 
     const int rowCount = d->model.rowCount();

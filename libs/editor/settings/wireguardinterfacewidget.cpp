@@ -548,10 +548,10 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
                 else
                     val = keyValue[1].toUInt();
                 wgSetting.setFwmark(val);
-            } else if (key == PNM_WG_CONF_TAG_TABLE
-                     || key == PNM_WG_CONF_TAG_PRE_UP
-                     || key == PNM_WG_CONF_TAG_POST_UP
-                     || key == PNM_WG_CONF_TAG_PRE_DOWN
+            } else if (key == PNM_WG_CONF_TAG_TABLE //
+                     || key == PNM_WG_CONF_TAG_PRE_UP //
+                     || key == PNM_WG_CONF_TAG_POST_UP //
+                     || key == PNM_WG_CONF_TAG_PRE_DOWN //
                      || key == PNM_WG_CONF_TAG_POST_DOWN) {
                 // plasma-nm does not handle these items
             } else {

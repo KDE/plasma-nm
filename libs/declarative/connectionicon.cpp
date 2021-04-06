@@ -270,10 +270,10 @@ void ConnectionIcon::setStates()
         } else {
             if (vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
                 vpn = true;
-            } else if (vpnConnection->state() == NetworkManager::VpnConnection::Prepare ||
-                       vpnConnection->state() == NetworkManager::VpnConnection::NeedAuth ||
-                       vpnConnection->state() == NetworkManager::VpnConnection::Connecting ||
-                       vpnConnection->state() == NetworkManager::VpnConnection::GettingIpConfig) {
+            } else if (vpnConnection->state() == NetworkManager::VpnConnection::Prepare //
+                       || vpnConnection->state() == NetworkManager::VpnConnection::NeedAuth //
+                       || vpnConnection->state() == NetworkManager::VpnConnection::Connecting //
+                       || vpnConnection->state() == NetworkManager::VpnConnection::GettingIpConfig) {
                 connecting = true;
             }
         }
@@ -331,13 +331,13 @@ void ConnectionIcon::setIcons()
             } else if (type == NetworkManager::ConnectionSettings::WireGuard) {
                 connection = activeConnection;
             } else if (type == NetworkManager::ConnectionSettings::Wired) {
-                if (connection && (connection->type() != NetworkManager::ConnectionSettings::Vpn
+                if (connection && (connection->type() != NetworkManager::ConnectionSettings::Vpn //
                                   || connection->type() != NetworkManager::ConnectionSettings::WireGuard)) {
                     connection = activeConnection;
                 }
             } else if (type == NetworkManager::ConnectionSettings::Wireless) {
-                if (connection && (connection->type() != NetworkManager::ConnectionSettings::Vpn &&
-                                  (connection->type() != NetworkManager::ConnectionSettings::Wired))) {
+                if (connection && (connection->type() != NetworkManager::ConnectionSettings::Vpn //
+                                  && (connection->type() != NetworkManager::ConnectionSettings::Wired))) {
                     connection = activeConnection;
                 }
             }
@@ -406,8 +406,8 @@ void ConnectionIcon::setDisconnectedIcon()
         return;
     }
 
-    if (NetworkManager::status() == NetworkManager::Unknown ||
-        NetworkManager::status() == NetworkManager::Asleep) {
+    if (NetworkManager::status() == NetworkManager::Unknown //
+        || NetworkManager::status() == NetworkManager::Asleep) {
         setConnectionIcon("network-unavailable");
         return;
     }
@@ -425,16 +425,16 @@ void ConnectionIcon::setDisconnectedIcon()
             if (wiredDev->carrier()) {
                 wired = true;
             }
-        } else if (device->type() == NetworkManager::Device::Wifi &&
-                   NetworkManager::isWirelessEnabled() &&
-                   NetworkManager::isWirelessHardwareEnabled()) {
+        } else if (device->type() == NetworkManager::Device::Wifi //
+                   && NetworkManager::isWirelessEnabled() //
+                   && NetworkManager::isWirelessHardwareEnabled()) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
             if (!wifiDevice->accessPoints().isEmpty() || !wifiDevice->availableConnections().isEmpty()) {
                 wireless = true;
             }
-        } else if (device->type() == NetworkManager::Device::Modem &&
-                   NetworkManager::isWwanEnabled() &&
-                   NetworkManager::isWwanHardwareEnabled()) {
+        } else if (device->type() == NetworkManager::Device::Modem //
+                   && NetworkManager::isWwanEnabled() //
+                   && NetworkManager::isWwanHardwareEnabled()) {
             modem = true;
         }
     }

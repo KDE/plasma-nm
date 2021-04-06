@@ -343,13 +343,13 @@ void Notification::addActiveConnection(const NetworkManager::ActiveConnection::P
     if (ac->vpn()) {
         NetworkManager::VpnConnection::Ptr vpnConnection = ac.objectCast<NetworkManager::VpnConnection>();
         connect(vpnConnection.data(), &NetworkManager::VpnConnection::stateChanged, this, &Notification::onVpnConnectionStateChanged);
-    } else if (ac->type() != NetworkManager::ConnectionSettings::Bond &&
-               ac->type() != NetworkManager::ConnectionSettings::Bridge &&
-               ac->type() != NetworkManager::ConnectionSettings::Generic &&
-               ac->type() != NetworkManager::ConnectionSettings::Infiniband &&
-               ac->type() != NetworkManager::ConnectionSettings::Team &&
-               ac->type() != NetworkManager::ConnectionSettings::Vlan &&
-               ac->type() != NetworkManager::ConnectionSettings::Tun) {
+    } else if (ac->type() != NetworkManager::ConnectionSettings::Bond //
+               && ac->type() != NetworkManager::ConnectionSettings::Bridge //
+               && ac->type() != NetworkManager::ConnectionSettings::Generic //
+               && ac->type() != NetworkManager::ConnectionSettings::Infiniband //
+               && ac->type() != NetworkManager::ConnectionSettings::Team //
+               && ac->type() != NetworkManager::ConnectionSettings::Vlan //
+               && ac->type() != NetworkManager::ConnectionSettings::Tun) {
         connect(ac.data(), &NetworkManager::ActiveConnection::stateChanged, this, &Notification::onActiveConnectionStateChanged);
     }
 }

@@ -132,8 +132,22 @@ bool OpenconnectSettingWidget::initTokenGroup()
     Q_D(const OpenconnectSettingWidget);
 
     int validRows = 0;
-    QStringList tokenLabelList = QStringList() << "Disabled" << "RSA SecurID — read from ~/.stokenrc" << "RSA SecurID — manually entered" << "TOTP — manually entered" << "HOTP — manually entered" << "Yubikey";
-    QStringList tokenModeList = QStringList() << "disabled" << "stokenrc" << "manual" << "totp" << "hotp" << "yubioath";
+    QStringList tokenLabelList{
+        "Disabled",
+        "RSA SecurID — read from ~/.stokenrc",
+        "RSA SecurID — manually entered",
+        "TOTP — manually entered",
+        "HOTP — manually entered",
+        "Yubikey",
+    };
+    QStringList tokenModeList{
+        "disabled",
+        "stokenrc",
+        "manual",
+        "totp",
+        "hotp",
+        "yubioath",
+    };
     QComboBox *combo = d->tokenUi.cmbTokenMode;
 
     combo->addItem(tokenLabelList[validRows]);

@@ -78,7 +78,7 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     });
 
     // start openVPN process and get its cipher list
-    const QString openVpnBinary = QStandardPaths::findExecutable("openvpn", QStringList() << "/sbin" << "/usr/sbin");
+    const QString openVpnBinary = QStandardPaths::findExecutable("openvpn", QStringList{"/sbin", "/usr/sbin"});
     const QStringList ciphersArgs(QLatin1String("--show-ciphers"));
     const QStringList versionArgs(QLatin1String("--version"));
 

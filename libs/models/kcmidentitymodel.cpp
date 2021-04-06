@@ -76,9 +76,9 @@ QVariant KcmIdentityModel::data(const QModelIndex &index, int role) const
         return tooltip;
     } else if (role == KcmVpnConnectionExportable) {
         if (type == NetworkManager::ConnectionSettings::Vpn && vpnSetting) {
-            return (vpnSetting->serviceType().endsWith(QLatin1String("vpnc")) ||
-                    vpnSetting->serviceType().endsWith(QLatin1String("openvpn")) ||
-                    vpnSetting->serviceType().endsWith(QLatin1String("wireguard")));
+            return (vpnSetting->serviceType().endsWith(QLatin1String("vpnc")) //
+                    || vpnSetting->serviceType().endsWith(QLatin1String("openvpn")) //
+                    || vpnSetting->serviceType().endsWith(QLatin1String("wireguard")));
         }
         return false;
     } else {

@@ -28,7 +28,7 @@ class OpenVpnAdvancedWidget : public QDialog
         VerifyWholeSubjectExactly,
         VerifyNameExactly,
         VerifyNameByPrefix,
-        VerifySubjectPartially
+        VerifySubjectPartially,
     };
 
 public:

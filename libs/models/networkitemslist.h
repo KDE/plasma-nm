@@ -24,7 +24,7 @@ public:
         Name,
         Ssid,
         Uuid,
-        Type
+        Type,
     };
 
     explicit NetworkItemsList(QObject *parent = nullptr);

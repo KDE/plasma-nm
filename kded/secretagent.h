@@ -22,7 +22,7 @@ public:
     enum Type {
         GetSecrets,
         SaveSecrets,
-        DeleteSecrets
+        DeleteSecrets,
     };
     explicit SecretsRequest(Type _type) :
         type(_type),

@@ -21,7 +21,7 @@ public:
         StoreForUser,
         StoreForAllUsers,
         AlwaysAsk,
-        NotRequired
+        NotRequired,
     };
 
     explicit PasswordField(QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());

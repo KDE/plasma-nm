@@ -35,7 +35,8 @@ public:
         Bluetooth,
         Wireguard,
         Vpn,
-        Other };
+        Other,
+    };
 
     static SortedConnectionType connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type);
 

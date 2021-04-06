@@ -24,12 +24,12 @@ public:
     enum LinkNegotiation {
         Ignore = 0,
         Automatic,
-        Manual
+        Manual,
     };
 
     enum Duplex {
         Half = 0,
-        Full
+        Full,
     };
 
     explicit WiredConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent = nullptr, Qt::WindowFlags f = {});

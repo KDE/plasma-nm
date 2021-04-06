@@ -44,7 +44,7 @@ public:
         Bridge,
         Bond,
         Team,
-        Unknown
+        Unknown,
     };
 
     /*

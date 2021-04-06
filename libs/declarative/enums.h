@@ -25,7 +25,7 @@ public:
         Activating,
         Activated,
         Deactivating,
-        Deactivated
+        Deactivated,
     };
 
     enum ConnectionType {
@@ -43,7 +43,7 @@ public:
         Vpn,
         Wimax,
         Wired,
-        Wireless
+        Wireless,
     };
 
     enum SecurityType {
@@ -56,7 +56,7 @@ public:
         WpaEap,
         Wpa2Psk,
         Wpa2Eap,
-        SAE
+        SAE,
     };
 };
 

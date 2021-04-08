@@ -184,21 +184,16 @@ PlasmaExtras.ExpandableListItem {
                 onAccepted: {
                     stateChangeButton.trigger()
                     connectionItem.customExpandedViewContent = detailsComponent
-                    scanTimer.running = true
                 }
 
                 onAcceptableInputChanged: {
                     stateChangeButton.enabled = acceptableInput
                 }
 
-                onActiveFocusChanged: {
-                    scanTimer.running = !activeFocus
-                }
-
                 Component.onCompleted: {
                     stateChangeButton.enabled = false
                     passwordField.forceActiveFocus()
-                    appletProxyModel.dynamicSortFilter = true
+                    full.connectionModel.delayModelUpdates = true
                 }
 
                 Component.onDestruction: {
@@ -248,7 +243,7 @@ PlasmaExtras.ExpandableListItem {
                 handler.deactivateConnection(ConnectionPath, DevicePath)
             }
         } else if (predictableWirelessPassword) {
-            appletProxyModel.dynamicSortFilter = false
+            full.connectionModel.delayModelUpdates = true
             connectionItem.customExpandedViewContent = passwordDialogComponent
             connectionItem.expand()
         }
@@ -307,9 +302,13 @@ PlasmaExtras.ExpandableListItem {
     }
 
     // Re-activate the default button if the password field is hidden without
-    // sending a password, and start the scan timer
+    // sending a password
     onItemCollapsed: {
         stateChangeButton.enabled = true;
-        scanTimer.running = true;
+        full.connectionModel.delayModelUpdates = false;
+    }
+
+    Component.onDestruction: {
+        full.connectionModel.delayModelUpdates = false;
     }
 }

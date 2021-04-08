@@ -158,6 +158,26 @@ QHash<int, QByteArray> NetworkModel::roleNames() const
     return roles;
 }
 
+void NetworkModel::setDelayModelUpdates(bool delayUpdates)
+{
+    m_delayModelUpdates = delayUpdates;
+
+    // Process queue
+    if (!delayUpdates) {
+        while (!m_updateQueue.isEmpty()) {
+            QPair<NetworkModel::ModelChangeType, NetworkModelItem*> update = m_updateQueue.dequeue();
+            if (update.first == ItemAdded) {
+                insertItem(update.second);
+            } else if (update.first == ItemRemoved) {
+                removeItem(update.second);
+            } else if (update.first == ItemPropertyChanged) {
+                updateItem(update.second);
+            }
+        }
+    }
+}
+
+
 void NetworkModel::initialize()
 {
     // Initialize existing connections
@@ -351,14 +371,8 @@ void NetworkModel::addAvailableConnection(const QString &connection, const Netwo
             // Find an accesspoint which could be removed, because it will be merged with a connection
             for (NetworkModelItem *secondItem : m_list.returnItems(NetworkItemsList::Ssid, item->ssid())) {
                 if (secondItem->itemType() == NetworkModelItem::AvailableAccessPoint && secondItem->devicePath() == item->devicePath()) {
-                    const int row = m_list.indexOf(secondItem);
+                    removeItem(secondItem);
                     qCDebug(PLASMA_NM) << "Access point " << secondItem->name() << ": merged to " << item->name() << " connection";
-                    if (row >= 0) {
-                        beginRemoveRows(QModelIndex(), row, row);
-                        m_list.removeItem(secondItem);
-                        secondItem->deleteLater();
-                        endRemoveRows();
-                    }
                     break;
                 }
             }
@@ -419,10 +433,7 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr &connecti
 
     item->invalidateDetails();
 
-    const int index = m_list.count();
-    beginInsertRows(QModelIndex(), index, index);
-    m_list.insertItem(item);
-    endInsertRows();
+    insertItem(item);
     qCDebug(PLASMA_NM) << "New connection " << item->name() << " added";
 }
 
@@ -513,10 +524,7 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
     item->setSecurityType(securityType);
     item->invalidateDetails();
 
-    const int index = m_list.count();
-    beginInsertRows(QModelIndex(), index, index);
-    m_list.insertItem(item);
-    endInsertRows();
+    insertItem(item);
     qCDebug(PLASMA_NM) << "New wireless network " << item->name() << " added";
 }
 
@@ -539,10 +547,7 @@ void NetworkModel::checkAndCreateDuplicate(const QString &connection, const QStr
         NetworkModelItem *duplicatedItem = new NetworkModelItem(originalItem);
         duplicatedItem->invalidateDetails();
 
-        const int index = m_list.count();
-        beginInsertRows(QModelIndex(), index, index);
-        m_list.insertItem(duplicatedItem);
-        endInsertRows();
+        insertItem(duplicatedItem);
     }
 }
 
@@ -563,8 +568,46 @@ void NetworkModel::setDeviceStatisticsRefreshRateMs(const QString &devicePath, u
     }
 }
 
-void NetworkModel::updateItem(NetworkModelItem*item)
+void NetworkModel::insertItem(NetworkModelItem *item)
 {
+    if (m_delayModelUpdates) {
+        m_updateQueue.enqueue(QPair<NetworkModel::ModelChangeType, NetworkModelItem*>(NetworkModel::ItemAdded, item));
+        return;
+    }
+
+    const int index = m_list.count();
+    beginInsertRows(QModelIndex(), index, index);
+    m_list.insertItem(item);
+    endInsertRows();
+}
+
+void NetworkModel::removeItem(NetworkModelItem *item)
+{
+    if (m_delayModelUpdates) {
+        m_updateQueue.enqueue(QPair<NetworkModel::ModelChangeType, NetworkModelItem*>(NetworkModel::ItemRemoved, item));
+        return;
+    }
+
+    const int row = m_list.indexOf(item);
+    if (row >= 0) {
+        beginRemoveRows(QModelIndex(), row, row);
+        m_list.removeItem(item);
+        item->deleteLater();
+        endRemoveRows();
+    }
+}
+
+void NetworkModel::updateItem(NetworkModelItem *item)
+{
+    const QVector<int> changedRoles = item->changedRoles();
+    // Check only primary roles which can change item order
+    if (m_delayModelUpdates && (changedRoles.contains(ConnectionStateRole) ||
+                                changedRoles.contains(ItemTypeRole) ||
+                                changedRoles.contains(SignalRole))) {
+        m_updateQueue.enqueue(QPair<NetworkModel::ModelChangeType, NetworkModelItem*>(NetworkModel::ItemPropertyChanged, item));
+        return;
+    }
+
     const int row = m_list.indexOf(item);
 
     if (row >= 0) {
@@ -709,14 +752,8 @@ void NetworkModel::availableConnectionDisappeared(const QString &connection)
             }
 
             if (item->duplicate()) {
-                const int row = m_list.indexOf(item);
-                if (row >= 0) {
-                    qCDebug(PLASMA_NM) << "Duplicate item " << item->name() << " removed completely";
-                    beginRemoveRows(QModelIndex(), row, row);
-                    m_list.removeItem(item);
-                    item->deleteLater();
-                    endRemoveRows();
-                }
+                removeItem(item);
+                qCDebug(PLASMA_NM) << "Duplicate item " << item->name() << " removed completely";
             } else {
                 updateItem(item);
             }
@@ -767,14 +804,8 @@ void NetworkModel::connectionRemoved(const QString &connection)
         }
 
         if (remove) {
-            const int row = m_list.indexOf(item);
-            if (row >= 0) {
-                qCDebug(PLASMA_NM) << "Item " << item->name() << " removed completely";
-                beginRemoveRows(QModelIndex(), row, row);
-                m_list.removeItem(item);
-                item->deleteLater();
-                endRemoveRows();
-            }
+            removeItem(item);
+            qCDebug(PLASMA_NM) << "Item " << item->name() << " removed completely";
         }
         remove = false;
     }
@@ -1004,14 +1035,8 @@ void NetworkModel::wirelessNetworkDisappeared(const QString &ssid)
     for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::Ssid, ssid, device->uni())) {
         // Remove the entire item, because it's only AP or it's a duplicated available connection
         if (item->itemType() == NetworkModelItem::AvailableAccessPoint || item->duplicate()) {
-            const int row = m_list.indexOf(item);
-            if (row >= 0) {
-                qCDebug(PLASMA_NM) << "Wireless network " << item->name() << " removed completely";
-                beginRemoveRows(QModelIndex(), row, row);
-                m_list.removeItem(item);
-                item->deleteLater();
-                endRemoveRows();
-            }
+            removeItem(item);
+            qCDebug(PLASMA_NM) << "Wireless network " << item->name() << " removed completely";
         // Remove only AP and device from the item and leave it as an unavailable connection
         } else {
             if (item->mode() == NetworkManager::WirelessSetting::Infrastructure) {

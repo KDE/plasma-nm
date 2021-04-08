@@ -11,3 +11,7 @@ CMakeLists.txt.user
 *.qmlc
 .clang-format
 /build*/
+/compile_commands.json
+.clangd
+.idea
+/cmake-build*

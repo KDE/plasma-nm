@@ -100,7 +100,7 @@ Item {
             currentIndex: -1
             boundsBehavior: Flickable.StopAtBounds
             section.property: "KcmConnectionType"
-            section.delegate: Header { text: section }
+            section.delegate: Kirigami.ListSectionHeader { text: section }
             delegate: ConnectionItem {
                 onAboutToChangeConnection: {
                     // Shouldn't be problem to set this in advance

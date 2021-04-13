@@ -33,7 +33,6 @@ install( FILES
     qml/AddConnectionDialog.qml
     qml/ConfigurationDialog.qml
     qml/ConnectionItem.qml
-    qml/Header.qml
     qml/ListItem.qml
     qml/main.qml
 

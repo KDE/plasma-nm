@@ -71,7 +71,7 @@ Dialog {
                 currentIndex: -1
                 boundsBehavior: Flickable.StopAtBounds
                 section.property: "ConnectionTypeSection"
-                section.delegate: Header { text: section }
+                section.delegate: Kirigami.ListSectionHeader { text: section }
                 delegate: ListItem {
                     checked: mouseArea.containsMouse || view.currentlySelectedIndex == index
                     height: connectionTypeBase.height

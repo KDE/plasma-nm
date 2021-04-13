@@ -23,7 +23,6 @@ import QtQuick.Dialogs 1.2
 import QtQuick.Controls 1.2 as QtControls
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.kirigami 2.15 as Kirigami
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 Dialog {

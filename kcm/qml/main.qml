@@ -21,10 +21,8 @@
 import QtQuick 2.1
 import QtQuick.Dialogs 1.1
 import QtQuick.Controls 2.5 as QQC2
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-import org.kde.kirigami 2.9 as Kirigami
+import org.kde.kirigami 2.15 as Kirigami
 
 Item {
     id: root
@@ -82,7 +80,7 @@ Item {
 
         anchors {
             bottom: rightButtonRow.top
-            bottomMargin: units.smallSpacing
+            bottomMargin: Kirigami.Units.smallSpacing
             left: parent.left
             right: parent.right
             top: searchField.bottom
@@ -138,9 +136,9 @@ Item {
         anchors {
             bottom: parent.bottom
             right: parent.right
-            margins: units.smallSpacing
+            margins: Kirigami.Units.smallSpacing
         }
-        spacing: units.smallSpacing
+        spacing: Kirigami.Units.smallSpacing
 
         QQC2.ToolButton {
             id: addConnectionButton
@@ -192,9 +190,9 @@ Item {
         anchors {
             bottom: parent.bottom
             left: parent.left
-            margins: units.smallSpacing
+            margins: Kirigami.Units.smallSpacing
         }
-        spacing: units.smallSpacing
+        spacing: Kirigami.Units.smallSpacing
 
         QQC2.ToolButton {
             id: configureButton

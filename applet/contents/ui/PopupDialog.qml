@@ -58,7 +58,7 @@ PlasmaComponents3.Page {
     FocusScope {
 
         anchors.fill: parent
-        anchors.topMargin: units.smallSpacing * 2
+        anchors.topMargin: PlasmaCore.Units.smallSpacing * 2
 
         PlasmaExtras.ScrollArea {
             id: scrollView
@@ -67,7 +67,7 @@ PlasmaComponents3.Page {
 
             PlasmaExtras.PlaceholderMessage {
                 anchors.centerIn: parent
-                width: parent.width - (units.largeSpacing * 4)
+                width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
                 visible: connectionView.count === 0
                 text: {
                     if (toolbarValues.displayplaneModeMessage) {
@@ -92,7 +92,7 @@ PlasmaComponents3.Page {
                 property int currentVisibleButtonIndex: -1
                 property bool showSeparator: false
 
-                spacing: units.smallSpacing
+                spacing: PlasmaCore.Units.smallSpacing
                 clip: true
                 model: appletProxyModel
                 currentIndex: -1
@@ -100,8 +100,8 @@ PlasmaComponents3.Page {
                 section.property: showSeparator ? "Section" : ""
                 section.delegate: ListItem { separator: true }
                 highlight: PlasmaComponents.Highlight { }
-                highlightMoveDuration: units.longDuration
-                highlightResizeDuration: units.longDuration
+                highlightMoveDuration: PlasmaCore.Units.longDuration
+                highlightResizeDuration: PlasmaCore.Units.longDuration
                 delegate: ConnectionItem {
                     width: connectionView.width
                 }

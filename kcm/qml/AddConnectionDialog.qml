@@ -22,7 +22,7 @@ import QtQuick 2.3
 import QtQuick.Dialogs 1.2
 import QtQuick.Controls 1.2 as QtControls
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami 2.15 as Kirigami
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
@@ -51,7 +51,7 @@ Dialog {
             id: scrollView
             anchors {
                 bottom: buttonRow.top
-                bottomMargin: Math.round(units.gridUnit / 2)
+                bottomMargin: Math.round(Kirigami.Units.gridUnit / 2)
                 left: parent.left
                 right: parent.right
                 top: parent.top
@@ -85,9 +85,9 @@ Dialog {
                             right: parent.right
                             top: parent.top
                             // Reset top margin from PlasmaComponents.ListItem
-                            topMargin: -Math.round(units.gridUnit / 3)
+                            topMargin: -Math.round(Kirigami.Units.gridUnit / 3)
                         }
-                        height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionDescriptionLabel.height) + Math.round(units.gridUnit / 2)
+                        height: Math.max(Kirigami.Units.iconSizes.medium, connectionNameLabel.height + connectionDescriptionLabel.height) + Math.round(Kirigami.Units.gridUnit / 2)
 
                         KQuickControlsAddons.QIconItem {
                             id: connectionIcon
@@ -96,7 +96,7 @@ Dialog {
                                 left: parent.left
                                 verticalCenter: parent.verticalCenter
                             }
-                            height: units.iconSizes.medium; width: height
+                            height: Kirigami.Units.iconSizes.medium; width: height
                             icon: ConnectionIcon
                         }
 
@@ -106,7 +106,7 @@ Dialog {
                             anchors {
                                 bottom: ConnectionType == 11 ? connectionIcon.verticalCenter : undefined
                                 left: connectionIcon.right
-                                leftMargin: Math.round(units.gridUnit / 2)
+                                leftMargin: Math.round(Kirigami.Units.gridUnit / 2)
                                 right: parent.right
                                 verticalCenter: ConnectionType == 11 ? undefined : parent.verticalCenter
                             }
@@ -122,14 +122,14 @@ Dialog {
 
                             anchors {
                                 left: connectionIcon.right
-                                leftMargin: Math.round(units.gridUnit / 2)
+                                leftMargin: Math.round(Kirigami.Units.gridUnit / 2)
                                 right: parent.right
                                 top: connectionNameLabel.bottom
                             }
                             color: textColor
                             height: visible ? paintedHeight : 0
                             elide: Text.ElideRight
-                            font.pointSize: theme.smallestFont.pointSize
+                            font.pointSize: Kirigami.Theme.smallFont.pointSize
                             opacity: 0.6
                             text: ConnectionDescription
                             visible: ConnectionType == 11 // VPN
@@ -164,9 +164,9 @@ Dialog {
             anchors {
                 bottom: parent.bottom
                 right: parent.right
-                margins: Math.round(units.gridUnit / 2)
+                margins: Math.round(Kirigami.Units.gridUnit / 2)
             }
-            spacing: Math.round(units.gridUnit / 2)
+            spacing: Math.round(Kirigami.Units.gridUnit / 2)
 
             QtControls.Button {
                 id: createButton

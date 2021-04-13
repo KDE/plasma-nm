@@ -21,6 +21,7 @@
 
 import QtQuick 2.1
 import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami 2.15 as Kirigami
 
 Item {
     id: listItem
@@ -36,7 +37,7 @@ Item {
     width: parent ? parent.width : childrenRect.width
     height: paddingItem.childrenRect.height + background.margins.top + background.margins.bottom
 
-    implicitHeight: paddingItem.childrenRect.height + Math.round(units.gridUnit / 2)
+    implicitHeight: paddingItem.childrenRect.height + Math.round(Kirigami.Units.gridUnit / 2)
 
     Connections {
         target: listItem
@@ -57,7 +58,7 @@ Item {
         Component.onCompleted: {
             color = (listItem.sectionDelegate ? alternateBaseColor : (listItem.checked ? highlightColor : baseColor))
         }
-        Behavior on opacity { NumberAnimation { duration: units.longDuration } }
+        Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration } }
     }
 
     PlasmaCore.SvgItem {
@@ -88,7 +89,7 @@ Item {
             id: paddingItem
             anchors {
                 fill: parent
-                margins: Math.round(units.gridUnit / 3)
+                margins: Math.round(Kirigami.Units.gridUnit / 3)
             }
         }
     }

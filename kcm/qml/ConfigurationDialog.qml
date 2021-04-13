@@ -43,7 +43,7 @@ Dialog {
         Kirigami.FormLayout {
             anchors.left: parent.left
             anchors.right: parent.right
-            anchors.topMargin: units.gridUnit
+            anchors.topMargin: Kirigami.Units.gridUnit
 
             Kirigami.Heading {
                 id: generalLabel
@@ -107,9 +107,9 @@ Dialog {
             anchors {
                 bottom: parent.bottom
                 right: parent.right
-                margins: units.smallSpacing
+                margins: Kirigami.Units.smallSpacing
             }
-            spacing: units.smallSpacing
+            spacing: Kirigami.Units.smallSpacing
 
             QQC2.Button {
                 id: okButton

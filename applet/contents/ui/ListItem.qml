@@ -41,7 +41,7 @@ Item {
     width: parent.width
 
     // Sections have spacing above but not below. Will use 2 of them below.
-    height: separator ? separatorLine.height + units.smallSpacing * 3 : parent.height
+    height: separator ? separatorLine.height + PlasmaCore.Units.smallSpacing * 3 : parent.height
 
     PlasmaCore.Svg {
         id: lineSvg
@@ -52,10 +52,10 @@ Item {
         anchors {
             horizontalCenter: parent.horizontalCenter
             top: parent.top
-            topMargin: units.smallSpacing
+            topMargin: PlasmaCore.Units.smallSpacing
         }
         elementId: "horizontal-line"
-        width: parent.width - units.gridUnit * 2
+        width: parent.width - PlasmaCore.Units.gridUnit * 2
         svg: lineSvg
         visible: separator
     }
@@ -73,7 +73,7 @@ Item {
         imagePath: "widgets/listitem"
         prefix: "pressed"
         opacity: checked ? 1 : 0
-        Behavior on opacity { NumberAnimation { duration: units.shortDuration } }
+        Behavior on opacity { NumberAnimation { duration: PlasmaCore.Units.shortDuration } }
 
         x: highlightRect.x
         y: highlightRect.y

@@ -20,6 +20,7 @@
 
 import QtQuick 2.2
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
+import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents // for ContextMenu+MenuItem
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 
@@ -68,9 +69,9 @@ Column {
 
                 anchors {
                     left: parent.left
-                    leftMargin: repeater.longestString - paintedWidth + Math.round(units.gridUnit / 2)
+                    leftMargin: repeater.longestString - paintedWidth + Math.round(PlasmaCore.Units.gridUnit / 2)
                 }
-                font.pointSize: theme.smallestFont.pointSize
+                font.pointSize: PlasmaCore.Theme.smallestFont.pointSize
                 horizontalAlignment: Text.AlignRight
                 text: details[index*2] + ": "
                 opacity: 0.6
@@ -88,10 +89,10 @@ Column {
                 anchors {
                     left: parent.left
                     right: parent.right
-                    leftMargin: repeater.longestString + Math.round(units.gridUnit / 2)
+                    leftMargin: repeater.longestString + Math.round(PlasmaCore.Units.gridUnit / 2)
                 }
                 elide: Text.ElideRight
-                font.pointSize: theme.smallestFont.pointSize
+                font.pointSize: PlasmaCore.Theme.smallestFont.pointSize
                 text: details[(index*2)+1]
                 textFormat: Text.PlainText
 

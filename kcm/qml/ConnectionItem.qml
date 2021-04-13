@@ -20,6 +20,7 @@
 
 import QtQuick 2.1
 import QtQuick.Controls 1.4 as QQC
+import org.kde.kirigami 2.5 as Kirigami
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
@@ -41,9 +42,9 @@ ListItem {
             left: parent.left
             right: parent.right
             top: parent.top
-            topMargin: -Math.round(units.gridUnit / 3)
+            topMargin: -Math.round(Kirigami.Units.gridUnit / 3)
         }
-        height: Math.max(units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(units.gridUnit / 2)
+        height: Math.max(Kirigami.Units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(Kirigami.Units.gridUnit / 2)
 
         KQuickControlsAddons.QIconItem {
             id: connectionIcon
@@ -52,7 +53,7 @@ ListItem {
                 left: parent.left
                 verticalCenter: parent.verticalCenter
             }
-            height: units.iconSizes.medium; width: height
+            height: Kirigami.Units.iconSizes.medium; width: height
             icon: KcmConnectionIcon
         }
 
@@ -62,7 +63,7 @@ ListItem {
             anchors {
                 bottom: connectionIcon.verticalCenter
                 left: connectionIcon.right
-                leftMargin: Math.round(units.gridUnit / 2)
+                leftMargin: Math.round(Kirigami.Units.gridUnit / 2)
                 right: connectingIndicator.visible ? connectingIndicator.left : parent.right
             }
             color: textColor
@@ -79,14 +80,14 @@ ListItem {
 
             anchors {
                 left: connectionIcon.right
-                leftMargin: Math.round(units.gridUnit / 2)
+                leftMargin: Math.round(Kirigami.Units.gridUnit / 2)
                 right: connectingIndicator.visible ? connectingIndicator.left : parent.right
                 top: connectionNameLabel.bottom
             }
             color: textColor
             height: paintedHeight
             elide: Text.ElideRight
-            font.pointSize: theme.smallestFont.pointSize
+            font.pointSize: Kirigami.Theme.smallFont.pointSize
             opacity: 0.6
             text: itemText()
         }
@@ -96,10 +97,10 @@ ListItem {
 
             anchors {
                 right: parent.right
-                rightMargin: Math.round(units.gridUnit / 2)
+                rightMargin: Math.round(Kirigami.Units.gridUnit / 2)
                 verticalCenter: connectionIcon.verticalCenter
             }
-            height: units.iconSizes.medium; width: height
+            height: Kirigami.Units.iconSizes.medium; width: height
             running: ConnectionState == PlasmaNM.Enums.Activating
             visible: running
         }

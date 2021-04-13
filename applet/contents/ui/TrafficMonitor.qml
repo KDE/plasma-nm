@@ -23,7 +23,7 @@ import QtQuick.Layouts 1.4
 import org.kde.kcoreaddons 1.0 as KCoreAddons
 import org.kde.quickcharts 1.0 as QuickCharts
 import org.kde.quickcharts.controls 1.0 as QuickChartControls
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.15 as Kirigami
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 
@@ -40,7 +40,7 @@ ColumnLayout {
         QuickCharts.AxisLabels {
             anchors {
                 right: plotter.left
-                rightMargin: units.smallSpacing
+                rightMargin: PlasmaCore.Units.smallSpacing
                 top: plotter.top
                 bottom: plotter.bottom
             }
@@ -69,13 +69,13 @@ ColumnLayout {
             id: plotter
             anchors {
                 left: parent.left
-                leftMargin: speedMetrics.width + units.smallSpacing
+                leftMargin: speedMetrics.width + PlasmaCore.Units.smallSpacing
                 right: parent.right
                 top: parent.top
                 // Align plotter lines with labels.
-                topMargin: speedMetrics.height / 2 + units.smallSpacing
+                topMargin: speedMetrics.height / 2 + PlasmaCore.Units.smallSpacing
             }
-            height: units.gridUnit * 8
+            height: PlasmaCore.Units.gridUnit * 8
             smooth: true
             direction: QuickCharts.XYChart.ZeroAtEnd
             yRange {
@@ -109,7 +109,7 @@ ColumnLayout {
         }
         TextMetrics {
             id: speedMetrics
-            font.pointSize: theme.smallestFont.pointSize
+            font.pointSize: PlasmaCore.Theme.smallestFont.pointSize
             // Measure 888.8 KiB/s
             text: KCoreAddons.Format.formatByteSize(910131) + i18n("/s")
         }

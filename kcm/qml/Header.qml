@@ -20,12 +20,14 @@
 
 import QtQuick 2.2
 
+import org.kde.kirigami 2.15 as Kirigami
+
 ListItem {
     id: header
 
     property alias text: headerLabel.text
 
-    height: headerLabel.height + units.gridUnit
+    height: headerLabel.height + Kirigami.Units.gridUnit
     width: parent.width
     sectionDelegate: true
 

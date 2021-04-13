@@ -20,6 +20,7 @@
 
 import QtQuick 2.2
 import org.kde.plasma.plasmoid 2.0
+import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kquickcontrolsaddons 2.0
 import QtQuick.Layouts 1.1
@@ -33,13 +34,13 @@ Item {
     Plasmoid.toolTipMainText: i18n("Networks")
     Plasmoid.toolTipSubText: networkStatus.activeConnections
     Plasmoid.icon: connectionIconProvider.connectionTooltipIcon
-    Plasmoid.switchWidth: units.gridUnit * 10
-    Plasmoid.switchHeight: units.gridUnit * 10
+    Plasmoid.switchWidth: PlasmaCore.Units.gridUnit * 10
+    Plasmoid.switchHeight: PlasmaCore.Units.gridUnit * 10
     Plasmoid.compactRepresentation: CompactRepresentation { }
     Plasmoid.fullRepresentation: PopupDialog {
         id: dialogItem
-        Layout.minimumWidth: units.iconSizes.medium * 10
-        Layout.minimumHeight: units.gridUnit * 20
+        Layout.minimumWidth: PlasmaCore.Units.iconSizes.medium * 10
+        Layout.minimumHeight: PlasmaCore.Units.gridUnit * 20
         anchors.fill: parent
         focus: true
     }

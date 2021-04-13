@@ -27,7 +27,7 @@ import org.kde.kquickcontrolsaddons 2.0
 
 ColumnLayout {
     id: toolbar
-    spacing: units.smallSpacing
+    spacing: PlasmaCore.Units.smallSpacing
 
     readonly property var displayWifiMessage: !wifiSwitchButton.checked && wifiSwitchButton.visible
     readonly property var displayWwanMessage: !wwanSwitchButton.checked && wwanSwitchButton.visible
@@ -59,7 +59,7 @@ ColumnLayout {
     }
 
     RowLayout {
-        spacing: units.smallSpacing * 3
+        spacing: PlasmaCore.Units.smallSpacing * 3
 
         PlasmaComponents3.CheckBox {
             id: wifiSwitchButton

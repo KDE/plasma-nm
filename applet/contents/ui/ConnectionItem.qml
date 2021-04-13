@@ -115,7 +115,7 @@ PlasmaExtras.ExpandableListItem {
         id: detailsComponent
 
         Column {
-            spacing: units.smallSpacing
+            spacing: PlasmaCore.Units.smallSpacing
 
             PlasmaComponents.TabBar {
                 id: detailsTabBar
@@ -147,7 +147,7 @@ PlasmaExtras.ExpandableListItem {
             DetailsText {
                 anchors {
                     left: parent.left
-                    leftMargin: units.iconSizes.smallMedium
+                    leftMargin: PlasmaCore.Units.iconSizes.smallMedium
                     right: parent.right
                 }
                 details: ConnectionDetails
@@ -176,8 +176,8 @@ PlasmaExtras.ExpandableListItem {
             PasswordField {
                 id: passwordField
                 Layout.fillWidth: true
-                Layout.leftMargin: units.iconSizes.smallMedium + units.smallSpacing * 4
-                Layout.rightMargin: units.iconSizes.smallMedium + units.smallSpacing * 4
+                Layout.leftMargin: PlasmaCore.Units.iconSizes.smallMedium + PlasmaCore.Units.smallSpacing * 4
+                Layout.rightMargin: PlasmaCore.Units.iconSizes.smallMedium + PlasmaCore.Units.smallSpacing * 4
 
                 securityType: SecurityType
 

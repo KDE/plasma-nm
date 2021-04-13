@@ -48,7 +48,7 @@ ColumnLayout {
             direction: QuickCharts.AxisLabels.VerticalBottomTop
             delegate:  PlasmaComponents3.Label {
                 text: KCoreAddons.Format.formatByteSize(QuickCharts.AxisLabels.label) + i18n("/s")
-                font.pointSize: PlasmaCore.Theme.smallestFont.pointSize
+                font: PlasmaCore.Theme.smallestFont
             }
             source: QuickCharts.ChartAxisSource {
                 chart: plotter
@@ -109,7 +109,7 @@ ColumnLayout {
         }
         TextMetrics {
             id: speedMetrics
-            font.pointSize: PlasmaCore.Theme.smallestFont.pointSize
+            font: PlasmaCore.Theme.smallestFont
             // Measure 888.8 KiB/s
             text: KCoreAddons.Format.formatByteSize(910131) + i18n("/s")
         }

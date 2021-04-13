@@ -71,7 +71,7 @@ Column {
                     left: parent.left
                     leftMargin: repeater.longestString - paintedWidth + Math.round(PlasmaCore.Units.gridUnit / 2)
                 }
-                font.pointSize: PlasmaCore.Theme.smallestFont.pointSize
+                font: PlasmaCore.Theme.smallestFont
                 horizontalAlignment: Text.AlignRight
                 text: details[index*2] + ": "
                 opacity: 0.6
@@ -92,7 +92,7 @@ Column {
                     leftMargin: repeater.longestString + Math.round(PlasmaCore.Units.gridUnit / 2)
                 }
                 elide: Text.ElideRight
-                font.pointSize: PlasmaCore.Theme.smallestFont.pointSize
+                font: PlasmaCore.Theme.smallestFont
                 text: details[(index*2)+1]
                 textFormat: Text.PlainText
 

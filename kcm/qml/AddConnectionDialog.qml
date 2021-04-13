@@ -76,6 +76,7 @@ Dialog {
                 delegate: ListItem {
                     checked: mouseArea.containsMouse || view.currentlySelectedIndex == index
                     height: connectionTypeBase.height
+                    width: view.width
 
                     Item {
                         id: connectionTypeBase

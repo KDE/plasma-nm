@@ -383,7 +383,13 @@ QVariantMap OpenconnectAuthWidget::setting() const
     secrets.unite(d->secrets);
     QString host(openconnect_get_hostname(d->vpninfo));
     const QString port = QString::number(openconnect_get_port(d->vpninfo));
-    secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_GATEWAY), host + ':' + port);
+    QString gateway = host + ':' + port;
+    const char* urlpath = openconnect_get_urlpath(d->vpninfo);
+    if (urlpath) {
+        gateway += '/';
+        gateway += urlpath;
+    }
+    secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_GATEWAY), gateway);
 
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_COOKIE), QLatin1String(openconnect_get_cookie(d->vpninfo)));
     openconnect_clear_cookie(d->vpninfo);

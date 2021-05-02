@@ -309,6 +309,8 @@ PlasmaExtras.ExpandableListItem {
     }
 
     Component.onDestruction: {
-        full.connectionModel.delayModelUpdates = false;
+        if ( full != null && full.connectionModel != null) {
+            full.connectionModel.delayModelUpdates = false;
+        }
     }
 }

@@ -22,6 +22,7 @@
 #define PLASMA_NM_NETWORK_MODEL_H
 
 #include <QAbstractListModel>
+#include <QQueue>
 
 #include "networkitemslist.h"
 

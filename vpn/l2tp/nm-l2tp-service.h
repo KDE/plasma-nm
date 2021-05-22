@@ -3,7 +3,7 @@
  *
  * Dan Williams <dcbw@redhat.com>
  *
- * Copyright 2008, 2014 Red Hat, Inc.
+ * SPDX-FileCopyrightText: 2008, 2014 Red Hat Inc.
  */
 
 #ifndef NM_L2TP_SERVICE_DEFINES_H

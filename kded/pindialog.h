@@ -1,7 +1,7 @@
 /*
-SPDX-FileCopyrightText: 2011 Lamarque Souza <lamarque@kde.org>
+    SPDX-FileCopyrightText: 2011 Lamarque Souza <lamarque@kde.org>
 
-SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
 #ifndef PLASMA_NM_PIN_DIALOG_H

@@ -1,8 +1,8 @@
 /*
-SPDX-FileCopyrightText: 2011 Ilia Kats <ilia-kats@gmx.net>
-SPDX-FileCopyrightText: 2013 Lukas Tinkl <ltinkl@redhat.com>
+    SPDX-FileCopyrightText: 2011 Ilia Kats <ilia-kats@gmx.net>
+    SPDX-FileCopyrightText: 2013 Lukas Tinkl <ltinkl@redhat.com>
 
-SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
+    SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
 #ifndef OPENCONNECT_UI_H

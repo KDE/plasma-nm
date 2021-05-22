@@ -1,8 +1,8 @@
 /*
-SPDX-FileCopyrightText: 2010-2011 Lamarque Souza <lamarque@kde.org>
-SPDX-FileCopyrightText: 2013 Lukas Tinkl <ltinkl@redhat.com>
+    SPDX-FileCopyrightText: 2010-2011 Lamarque Souza <lamarque@kde.org>
+    SPDX-FileCopyrightText: 2013 Lukas Tinkl <ltinkl@redhat.com>
 
-SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
 #ifndef PLASMA_NM_MOBILE_CONNECTION_WIZARD_H

@@ -1,10 +1,9 @@
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: t; c-basic-offset: 4 -*- */
 /* nm-sstp-service - SSTP VPN integration with NetworkManager
 
-    Dan Williams <dcbw@redhat.com>
-
     SPDX-License-Identifier: GPL-2.0-or-later
 
+    SPDX-FileCopyrightText: Dan Williams <dcbw@redhat.com>
     SPDX-FileCopyrightText: 2008, 2014 Red Hat Inc.
 */
 

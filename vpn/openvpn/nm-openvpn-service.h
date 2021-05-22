@@ -5,7 +5,6 @@
     SPDX-FileCopyrightText: 2005-2008 Dan Williams <dcbw@redhat.com>
 
     SPDX-License-Identifier: GPL-2.0-or-later
-
 */
 
 #ifndef NM_OPENVPN_SERVICE_H

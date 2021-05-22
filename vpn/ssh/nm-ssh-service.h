@@ -4,7 +4,6 @@
     SPDX-FileCopyrightText: 2013 Dan Fruehauf <malkodan@gmail.com>
 
     SPDX-License-Identifier: GPL-2.0-or-later
-
 */
 
 #ifndef NM_SSH_SERVICE_H

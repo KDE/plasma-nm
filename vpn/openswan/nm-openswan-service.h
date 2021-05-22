@@ -3,7 +3,7 @@
 
     SPDX-License-Identifier: GPL-2.0-or-later
 
-    (C) SPDX-FileCopyrightText: 2010 Red Hat Inc.
+    SPDX-FileCopyrightText: 2010 Red Hat Inc.
 */
 
 #ifndef NM_OPENSWAN_SERVICE_H

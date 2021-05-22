@@ -3,8 +3,8 @@
 
     SPDX-License-Identifier: GPL-2.0-or-later
 
-    (C) SPDX-FileCopyrightText: 2005-2008 Red Hat Inc. //krazy:exclude=copyright
-    (C) SPDX-FileCopyrightText: 2007-2008 Novell Inc. //krazy:exclude=copyright
+    SPDX-FileCopyrightText: 2005-2008 Red Hat Inc. //krazy:exclude=copyright
+    SPDX-FileCopyrightText: 2007-2008 Novell Inc. //krazy:exclude=copyright
 */
 
 #ifndef NM_STRONGSWAN_SERVICE_H

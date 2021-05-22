@@ -1,12 +1,10 @@
 /* nm-fortisslvpn-service - SSLVPN integration with NetworkManager
 
-    Lubomir Rintel <lkundrak@v3.sk>
-    Dan Williams <dcbw@redhat.com>
-
     SPDX-License-Identifier: GPL-2.0-or-later
 
-    (C) SPDX-FileCopyrightText: 2008 Red Hat Inc.
-    (C) SPDX-FileCopyrightText: 2015 Lubomir Rintel <lkundrak@v3.sk>
+    SPDX-FileCopyrightText: 2008 Red Hat Inc.
+    SPDX-FileCopyrightText: Dan Williams <dcbw@redhat.com>
+    SPDX-FileCopyrightText: 2015 Lubomir Rintel <lkundrak@v3.sk>
 */
 
 #ifndef __NM_FORTISSLVPN_SERVICE_H__

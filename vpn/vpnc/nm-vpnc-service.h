@@ -2,8 +2,8 @@
 
     SPDX-License-Identifier: GPL-2.0-or-later
 
-    (C) SPDX-FileCopyrightText: 2005-2012 Red Hat Inc.
-    (C) SPDX-FileCopyrightText: 2007-2008 Novell Inc.
+    SPDX-FileCopyrightText: 2005-2012 Red Hat Inc.
+    SPDX-FileCopyrightText: 2007-2008 Novell Inc.
 */
 
 #ifndef NM_VPNC_SERVICE_H

@@ -1,11 +1,11 @@
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: t; c-basic-offset: 4 -*- */
 /* nm-pptp-service - PPTP VPN integration with NetworkManager
 
-    Dan Williams <dcbw@redhat.com>
 
     SPDX-License-Identifier: GPL-2.0-or-later
 
-    (C) SPDX-FileCopyrightText: 2008 Red Hat Inc. //krazy:exclude=copyright
+    SPDX-FileCopyrightText: Dan Williams <dcbw@redhat.com>
+    SPDX-FileCopyrightText: 2008 Red Hat Inc. //krazy:exclude=copyright
 */
 
 #ifndef NM_PPTP_SERVICE_H

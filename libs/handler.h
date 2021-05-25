@@ -126,6 +126,7 @@ Q_SIGNALS:
     void hotspotSupportedChanged(bool hotspotSupported);
 private:
     bool m_hotspotSupported;
+    bool m_runningLiveImage;
     bool m_tmpWirelessEnabled;
     bool m_tmpWwanEnabled;
 #if WITH_MODEMMANAGER_SUPPORT
@@ -141,6 +142,7 @@ private:
     void scanRequestFailed(const QString &interface);
     bool checkRequestScanRateLimit(const NetworkManager::WirelessDevice::Ptr &wifiDevice);
     bool checkHotspotSupported();
+    bool checkRunningLiveImage();
     void scheduleRequestScan(const QString &interface, int timeout);
 };
 

@@ -83,6 +83,7 @@ Handler::Handler(QObject *parent)
     }
 
     m_hotspotSupported = checkHotspotSupported();
+    m_runningLiveImage = checkRunningLiveImage();
 
     if (NetworkManager::checkVersion(1, 16, 0)) {
         connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionTypeChanged, this, &Handler::primaryConnectionTypeChanged);
@@ -297,7 +298,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
         if (securityType == NetworkManager::StaticWep) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
             wifiSecurity->setWepKey0(password);
-            if (KWallet::Wallet::isEnabled()) {
+            if (KWallet::Wallet::isEnabled() && !m_runningLiveImage) {
                 wifiSecurity->setWepKeyFlags(NetworkManager::Setting::AgentOwned);
             }
         } else {
@@ -307,7 +308,7 @@ void Handler::addAndActivateConnection(const QString& device, const QString& spe
                 wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
             }
             wifiSecurity->setPsk(password);
-            if (KWallet::Wallet::isEnabled()) {
+            if (KWallet::Wallet::isEnabled() && !m_runningLiveImage) {
                 wifiSecurity->setPskFlags(NetworkManager::Setting::AgentOwned);
             }
         }
@@ -693,6 +694,25 @@ bool Handler::checkHotspotSupported()
         if (NetworkManager::primaryConnectionType() != NetworkManager::ConnectionSettings::Wireless) {
             return true;
         }
+    }
+
+    return false;
+}
+
+bool Handler::checkRunningLiveImage()
+{
+    QFile cmdFile(QStringLiteral("/proc/cmdline"));
+    cmdFile.open(QIODevice::ReadOnly);
+
+    if (!cmdFile.isOpen()) {
+        return false;
+    }
+
+    const QString cmdFileOutput = cmdFile.readAll();
+    cmdFile.close();
+
+    if (cmdFileOutput.contains(QStringLiteral("rd.live.image"))) {
+        return true;
     }
 
     return false;

@@ -123,7 +123,7 @@ of the peers.</string>
      <item>
       <widget class="QPushButton" name="btnPeers">
        <property name="text">
-        <string>Peers...</string>
+        <string>Peers…</string>
        </property>
       </widget>
      </item>

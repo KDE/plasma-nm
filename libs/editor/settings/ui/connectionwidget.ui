@@ -67,7 +67,7 @@ The higher number means higher priority. An negative number can be used to indic
       <string>Fine-grained permissions editor for this connection. It lets you choose which users can activate/modify/delete this connection.</string>
      </property>
      <property name="text">
-      <string>Advanced...</string>
+      <string>Advanced…</string>
      </property>
      <property name="icon">
       <iconset theme="preferences-desktop-user">

@@ -53,7 +53,7 @@
      <item row="0" column="1">
       <widget class="QPushButton" name="btnAdd">
        <property name="text">
-        <string>Add...</string>
+        <string>Add…</string>
        </property>
        <property name="icon">
         <iconset theme="list-add">
@@ -67,7 +67,7 @@
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>Edit...</string>
+        <string>Edit…</string>
        </property>
        <property name="icon">
         <iconset theme="configure">

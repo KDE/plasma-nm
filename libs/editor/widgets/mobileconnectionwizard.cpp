@@ -132,7 +132,7 @@ void MobileConnectionWizard::initializePage(int id)
             goto OUT_3;
         }
         if (radioManualProvider->isChecked()) {
-            mPlanComboBox->addItem(i18nc("Mobile Connection Wizard", "My plan is not listed..."));
+            mPlanComboBox->addItem(i18nc("Mobile Connection Wizard", "My plan is not listed…"));
 
             if (lineEditProvider->text().isEmpty()) {
                 lineEditProvider->setText(i18nc("Mobile Connection Wizard", "Unknown Provider"));
@@ -150,7 +150,7 @@ void MobileConnectionWizard::initializePage(int id)
             if (mPlanComboBox->count()) {
                 mPlanComboBox->insertSeparator(1);
             }
-            mPlanComboBox->addItem(i18nc("Mobile Connection Wizard", "My plan is not listed..."));
+            mPlanComboBox->addItem(i18nc("Mobile Connection Wizard", "My plan is not listed…"));
         }
         mPlanComboBox->setCurrentIndex(0);
         slotEnablePlanEditBox(mPlanComboBox->currentText());
@@ -178,7 +178,7 @@ OUT_3:
             labelPlan->show();
             labelApn->show();
 
-            if (mPlanComboBox->currentText() == i18nc("Mobile Connection Wizard", "My plan is not listed...")) {
+            if (mPlanComboBox->currentText() == i18nc("Mobile Connection Wizard", "My plan is not listed…")) {
                 labelPlan->setText("    " + userApn->text());
                 labelApn->setText("    " + i18nc("Mobile Connection Wizard", "APN: %1", userApn->text()));
                 apn = userApn->text();
@@ -511,7 +511,7 @@ void MobileConnectionWizard::slotEnablePlanEditBox(const QString & text)
     if (type() != NetworkManager::ConnectionSettings::Gsm) {
         return;
     }
-    if (text == i18nc("Mobile Connection Wizard", "My plan is not listed...")) {
+    if (text == i18nc("Mobile Connection Wizard", "My plan is not listed…")) {
         userApn->clear();
         userApn->setEnabled(true);
     } else {

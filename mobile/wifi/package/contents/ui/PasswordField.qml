@@ -10,7 +10,7 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 Kirigami.PasswordField {
     property int securityType
-    placeholderText: i18n("Password...")
+    placeholderText: i18n("Password…")
     validator: RegExpValidator {
                     regExp: if (securityType == PlasmaNM.Enums.StaticWep) {
                                 /^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26}){1}$/

@@ -510,7 +510,7 @@ Block Chaining mode).</string>
            </property>
            <item>
             <property name="text">
-             <string>Obtaining available ciphers...</string>
+             <string>Obtaining available ciphers…</string>
             </property>
            </item>
           </widget>

@@ -203,7 +203,7 @@
          <item>
           <widget class="QPushButton" name="btnTlsAltSubjectMatches">
            <property name="text">
-            <string>...</string>
+            <string>…</string>
            </property>
           </widget>
          </item>
@@ -227,7 +227,7 @@
          <item>
           <widget class="QPushButton" name="btnTlsConnectToServers">
            <property name="text">
-            <string>...</string>
+            <string>…</string>
            </property>
           </widget>
          </item>

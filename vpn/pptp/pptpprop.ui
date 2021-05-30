@@ -189,7 +189,7 @@ authenticating purposes.</string>
         <item>
          <widget class="QPushButton" name="btnAdvanced">
           <property name="text">
-           <string comment="like in Advanced settings">Advanced...</string>
+           <string comment="like in Advanced settings">Advanced…</string>
           </property>
           <property name="flat">
            <bool>false</bool>

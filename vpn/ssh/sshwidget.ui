@@ -297,7 +297,7 @@
          <item>
           <widget class="QPushButton" name="btn_advancedOption">
            <property name="text">
-            <string>Advanced...</string>
+            <string>Advanced…</string>
            </property>
           </widget>
          </item>

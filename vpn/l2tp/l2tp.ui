@@ -283,14 +283,14 @@
      <item>
       <widget class="QPushButton" name="btnIPSecSettings">
        <property name="text">
-        <string>IPsec Settings...</string>
+        <string>IPsec Settings…</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnPPPSettings">
        <property name="text">
-        <string>PPP Settings...</string>
+        <string>PPP Settings…</string>
        </property>
       </widget>
      </item>

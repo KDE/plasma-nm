@@ -312,7 +312,7 @@ a temporary IPv6 address in addition to the public one generated from MAC addres
         </size>
        </property>
        <property name="text">
-        <string>Routes...</string>
+        <string>Routes…</string>
        </property>
       </widget>
      </item>

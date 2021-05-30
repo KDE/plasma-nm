@@ -41,10 +41,10 @@ Item {
 
     Component.onCompleted: {
         if (kcmAuthorized) {
-            plasmoid.setAction("openKCM", i18n("&Configure Network Connections..."), "configure");
+            plasmoid.setAction("openKCM", i18n("&Configure Network Connections…"), "configure");
         }
         plasmoid.removeAction("configure");
-        plasmoid.setAction("showPortal", i18n("Open Network Login Page..."), "internet-services");
+        plasmoid.setAction("showPortal", i18n("Open Network Login Page…"), "internet-services");
 
         var action = plasmoid.action("showPortal");
         action.visible = Qt.binding(function() { return connectionIconProvider.needsPortal; })

@@ -346,7 +346,7 @@ void OpenconnectAuthWidget::connectHost()
         openconnect_set_urlpath(d->vpninfo, OC3DUP(host.group.toLatin1().data()));
     }
     d->secrets["lasthost"] = host.name;
-    addFormInfo(QLatin1String("dialog-information"), i18n("Contacting host, please wait..."));
+    addFormInfo(QLatin1String("dialog-information"), i18n("Contacting host, please wait…"));
     d->worker->start();
 }
 

@@ -237,7 +237,7 @@ a Wi-Fi network on the specified channel</string>
      <item>
       <widget class="QPushButton" name="btnRandomMacAddr">
        <property name="text">
-        <string>Random...</string>
+        <string>Random…</string>
        </property>
       </widget>
      </item>

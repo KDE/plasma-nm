@@ -91,7 +91,7 @@ PlasmaExtras.ExpandableListItem {
             }
         }
         PlasmaComponents.MenuItem {
-            text: i18n("Configure...")
+            text: i18n("Configure…")
             icon: "settings-configure"
             onClicked: KCMShell.open([mainWindow.kcm, "--args", "Uuid=" + Uuid])
         }

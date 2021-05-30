@@ -624,7 +624,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
      <item>
       <widget class="QPushButton" name="btnAdvanced">
        <property name="text">
-        <string>Advanced...</string>
+        <string>Advanced…</string>
        </property>
       </widget>
      </item>

@@ -151,7 +151,7 @@ ColumnLayout {
 
             focus: true
             clearButtonShown: true
-            placeholderText: i18nc("text field placeholder text", "Search...")
+            placeholderText: i18nc("text field placeholder text", "Search…")
 
             onTextChanged: {
                 appletProxyModel.setFilterRegExp(text)
@@ -166,7 +166,7 @@ ColumnLayout {
             icon.name: "configure"
 
             PlasmaComponents3.ToolTip {
-                text: i18n("Configure network connections...")
+                text: i18n("Configure network connections…")
             }
 
             onClicked: {

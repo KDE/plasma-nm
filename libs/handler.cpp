@@ -45,6 +45,7 @@
 #include <QDBusError>
 #include <QDBusMetaType>
 #include <QDBusPendingReply>
+#include <QFile>
 #include <QIcon>
 
 #include <KNotification>

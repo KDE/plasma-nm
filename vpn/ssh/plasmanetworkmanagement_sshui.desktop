@@ -13,6 +13,7 @@ X-KDE-PluginInfo-Category=VPNService
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=false
 Name=SSH
+Name[ar]=SSH
 Name[ast]=SSH
 Name[az]=SSH
 Name[ca]=SSH

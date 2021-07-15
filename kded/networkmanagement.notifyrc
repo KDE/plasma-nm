@@ -1,6 +1,7 @@
 [Global]
 IconName=applications-internet
 Name=Network Management
+Name[ar]=إدارة الشّبكات
 Name[ast]=Xestión de redes
 Name[az]=Şəbəkə İdarəetməsi
 Name[ca]=Gestió de xarxes
@@ -89,6 +90,7 @@ Comment[zh_TW]=網路管理
 
 [Event/ConnectionActivated]
 Name=Connection Activated
+Name[ar]=فُعِّل الاتصال
 Name[ast]=Activóse una conexón
 Name[az]=Bağlantı quruldu
 Name[ca]=Connexió activada
@@ -128,6 +130,7 @@ Action=Popup
 
 [Event/ConnectionDeactivated]
 Name=Connection Deactivated
+Name[ar]=عُطل الاتصال
 Name[ast]=Desactivóse una conexón
 Name[az]=Bağlantısı kəsildi
 Name[ca]=Connexió desactivada
@@ -167,6 +170,7 @@ Action=Popup
 
 [Event/ConnectionAdded]
 Name=Connection Added
+Name[ar]=أُضيف الاتّصال
 Name[ast]=Amestóse una conexón
 Name[az]=Bağlantı əlavə edildi
 Name[ca]=S'ha afegit una connexió
@@ -205,6 +209,7 @@ Action=None
 
 [Event/ConnectionRemoved]
 Name=Connection Removed
+Name[ar]=أُزيل الاتّصال
 Name[ast]=Desanicióse una conexón
 Name[az]=Bağlantı silindi
 Name[ca]=S'ha eliminat una connexió
@@ -243,6 +248,7 @@ Action=None
 
 [Event/ConnectionUpdated]
 Name=Connection Updated
+Name[ar]=حُدّث الاتّصال
 Name[ast]=Anovóse una conexón
 Name[az]=Bağlantı yeniləndi
 Name[ca]=S'ha actualitzat una connexió
@@ -281,6 +287,7 @@ Action=None
 
 [Event/DeviceFailed]
 Name=Device Failed
+Name[ar]=فشل الجهاز
 Name[ast]=El preséu falló
 Name[az]=Cihaz xətası
 Name[ca]=Ha fallat el dispositiu
@@ -319,6 +326,7 @@ Action=Popup
 
 [Event/FailedToActivateConnection]
 Name=Failed to Activate Connection
+Name[ar]=فشل تفعيل الاتّصال
 Name[ast]=Fallu al activar la conexón
 Name[az]=Bağlantını qurmaq mümkün olmadı
 Name[ca]=Ha fallat en activar la connexió
@@ -357,6 +365,7 @@ Action=Popup
 
 [Event/FailedToAddConnection]
 Name=Failed to Add Connection
+Name[ar]=فشلت إضافة الاتصال
 Name[ast]=Fallu al amestar la conexón
 Name[az]=Bağlantı əlavə etmək mümkün olmadı
 Name[ca]=Ha fallat en afegir la connexió
@@ -395,6 +404,7 @@ Action=Popup
 
 [Event/FailedToDeactivateConnection]
 Name=Failed to Deactivate Connection
+Name[ar]=فشل تعطيل الاتّصال
 Name[ast]=Fallu al desactivar la conexón
 Name[az]=Bağlantını ayırmaq mümkün olmadı
 Name[ca]=Ha fallat en desactivar la connexió
@@ -433,6 +443,7 @@ Action=Popup
 
 [Event/FailedToRemoveConnection]
 Name=Failed to Remove Connection
+Name[ar]=فشلت إزالة الاتّصال
 Name[ast]=Fallu al desaniciar la conexón
 Name[az]=Bağlantını silmək mümkün olmadı
 Name[ca]=Ha fallat en eliminar la connexió
@@ -471,6 +482,7 @@ Action=Popup
 
 [Event/FailedToGetSecrets]
 Name=Failed to Get Secrets
+Name[ar]=فشل جلب الأسرار
 Name[ast]=Fallu al consiguir los secretos
 Name[az]=Şifrə və açarı almaq mümkün olmadı
 Name[ca]=Ha fallat en obtenir els secrets
@@ -508,6 +520,7 @@ Action=Popup
 
 [Event/FailedToUpdateConnection]
 Name=Failed to Update Connection
+Name[ar]=فشل تحديث الاتصال
 Name[ast]=Fallu al anovar la conexón
 Name[az]=Bağlantını yeniləmək mümkün olmadı
 Name[ca]=Ha fallat en actualitzar la connexió
@@ -546,6 +559,7 @@ Action=Popup
 
 [Event/MissingVpnPlugin]
 Name=Missing VPN Plugin
+Name[ar]=ملحقة VPN ناقصة
 Name[az]=VPN qoşması çatışmır
 Name[ca]=Manca el connector VPN
 Name[cs]=Chybějící modul VPN
@@ -583,6 +597,7 @@ Action=Popup
 
 [Event/NoLongerConnected]
 Name=No Longer Connected to a Network
+Name[ar]=لم تعد متّصلًا بأيّ شّبكة
 Name[az]=Siz artıq şəbəkəyə qoşulmamısınız
 Name[ca]=No connectat a cap xarxa
 Name[cs]=Již nepřipojen k síti
@@ -619,6 +634,7 @@ Action=Popup
 
 [Event/CaptivePortal]
 Name=Captive Portal Detected
+Name[ar]=اكتشف بوابة مقيدة
 Name[ast]=Detectóse un portal cativu
 Name[az]=Əlavə kimlik doğrulaması tələb edən bağlantı aşkar edildi
 Name[ca]=S'ha detectat un portal captiu
@@ -655,6 +671,7 @@ Action=Popup
 
 [Event/LimitedConnectivity]
 Name=Limited Connectivity
+Name[ar]=اتصال محدود
 Name[az]=Məhdudlaşdırılmış bağlantı
 Name[ca]=Connectivitat limitada
 Name[cs]=Omezené síťové připojení
@@ -692,6 +709,7 @@ Action=Popup
 
 [Event/FailedToCreateHotspot]
 Name=Failed to Create Hotspot
+Name[ar]=فشل إنشاء نقطة فعالة
 Name[ast]=Fallu al crear el puntu d'accesu
 Name[az]=Qoşulma nöqtəsi yaratmaq mümkün olmadı
 Name[ca]=Ha fallat en crear el punt d'accés

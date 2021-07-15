@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Wi-Fi
+Name[ar]=واي فاي
 Name[ast]=Wi-Fi
 Name[az]=Wi-Fi
 Name[ca]=Wi-Fi
@@ -40,6 +41,7 @@ Name[x-test]=xxWi-Fixx
 Name[zh_CN]=Wi-Fi
 Name[zh_TW]=Wi-Fi
 Comment=Wireless network setting
+Comment[ar]=إعدادات الشبكة اللاسلكية
 Comment[az]=Naqilsiz şəbəkə ayarları
 Comment[ca]=Configuració de la xarxa sense fil
 Comment[ca@valencia]=Configuració de la xarxa sense fil

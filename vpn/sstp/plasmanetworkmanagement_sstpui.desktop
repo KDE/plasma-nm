@@ -13,6 +13,7 @@ X-KDE-PluginInfo-Category=VPNService
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=false
 Name=Secure Socket Tunneling Protocol (SSTP)
+Name[ar]=ميفاق المقبس الآمن النفقي (SSTP)
 Name[ast]=Protocolu de túneles de ralures segures (SSTP)
 Name[az]=Soketlərin təhlükəsiz tunneləşməsi protokolu (SSTP)
 Name[ca]=Protocol per a crear túnels amb sòcols segurs (SSTP)

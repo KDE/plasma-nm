@@ -13,6 +13,7 @@ X-KDE-PluginInfo-Category=VPNService
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=false
 Name=Point-to-Point Tunneling Protocol (PPTP)
+Name[ar]=ميفاق النقطة لنقطة النفقي (PPTP)
 Name[ast]=Protocolu de túneles puntu a puntu (PPTP)
 Name[az]=Nöqtə-nöqtə növlü tunel protokolu (PPTP)
 Name[ca]=Protocol per a crear túnels Punt-a-Punt (PPTP)

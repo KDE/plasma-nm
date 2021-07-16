@@ -49,7 +49,7 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
 
     ui->errorMessage->setHidden(true);
     QRect desktop = QApplication::desktop()->screenGeometry(topLevelWidget());
-    setMinimumWidth(qMin(1000, qMax(sizeHint().width(), desktop.width() / 4)));
+    setMinimumWidth(360); // width of the PinePhone display
 
     pixmapLabel = new QLabel(this);
     pixmapLabel->setAlignment(Qt::AlignLeft | Qt::AlignTop);

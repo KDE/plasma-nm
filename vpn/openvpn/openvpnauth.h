@@ -19,7 +19,7 @@ class OpenVpnAuthWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(OpenVpnAuthWidget)
 public:
-    explicit OpenVpnAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
+    explicit OpenVpnAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr);
     ~OpenVpnAuthWidget() override;
     virtual void readSecrets();
     QVariantMap setting() const override;

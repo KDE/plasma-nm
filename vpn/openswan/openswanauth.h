@@ -18,7 +18,7 @@ class OpenswanAuthDialog : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(OpenswanAuthDialog)
 public:
-    explicit OpenswanAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
+    explicit OpenswanAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr);
     ~OpenswanAuthDialog() override;
     virtual void readSecrets();
     QVariantMap setting() const override;

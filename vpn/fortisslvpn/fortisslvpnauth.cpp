@@ -18,8 +18,8 @@ public:
     NetworkManager::VpnSetting::Ptr setting;
 };
 
-FortisslvpnAuthDialog::FortisslvpnAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
-    : SettingWidget(setting, parent)
+FortisslvpnAuthDialog::FortisslvpnAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
+    : SettingWidget(setting, hints, parent)
     , d_ptr(new FortisslvpnAuthDialogPrivate)
 {
     Q_D(FortisslvpnAuthDialog);
@@ -35,12 +35,13 @@ FortisslvpnAuthDialog::FortisslvpnAuthDialog(const NetworkManager::VpnSetting::P
     const NetworkManager::Setting::SecretFlags passwordFlag = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_PASSWORD"-flags").toInt());
     d->ui.passwordFrame->setVisible(passwordFlag == NetworkManager::Setting::NotSaved);
 
-    const QString hint = data.value("hint");
-    if (!hint.isEmpty()){
-        const QString hintMsg = data.value("hint-msg");
+    if (m_hints.count() == 2) {
+        const QString hint = m_hints.at(0);
+        const QString hintMsg = m_hints.at(1);
         d->ui.otpLabel->setText(hint);
         d->ui.labelOtp->setText(hintMsg.section(":", -2));
         d->ui.otpFrame->setVisible(true);
+        d->ui.passwordFrame->setVisible(false);
     }
 
     KAcceleratorManager::manage(this);

@@ -26,9 +26,9 @@ SettingWidget * IodineUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &se
     return new IodineWidget(setting, parent);
 }
 
-SettingWidget * IodineUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
+SettingWidget * IodineUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
 {
-    return new IodineAuthDialog(setting, parent);
+    return new IodineAuthDialog(setting, hints, parent);
 }
 
 QString IodineUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const

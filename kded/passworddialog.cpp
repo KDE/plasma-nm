@@ -119,13 +119,7 @@ void PasswordDialog::initializeUi()
                 VpnUiPlugin *vpnUiPlugin = result.plugin;
                 const QString shortName = serviceType.section('.', -1);
                 NMStringMap data = vpnSetting->data();
-                // If we have hints, make the user have them through the widget
-                if (!m_hints.isEmpty() && m_hints.size() == 2) {
-                    data.insert("hint", m_hints[0]);
-                    data.insert("hint-msg", m_hints[1]);
-                    vpnSetting->setData(data);
-                }
-                m_vpnWidget = vpnUiPlugin->askUser(vpnSetting, this);
+                m_vpnWidget = vpnUiPlugin->askUser(vpnSetting, m_hints, this);
                 QVBoxLayout *layout = new QVBoxLayout();
                 layout->addWidget(m_vpnWidget);
                 m_ui->vpnWidget->setLayout(layout);
@@ -142,13 +136,6 @@ void PasswordDialog::initializeUi()
 
                 setFocusProxy(m_vpnWidget);
                 m_vpnWidget->setFocus(Qt::OtherFocusReason);
-
-                // Delete hins from vpnSetting
-                if (!m_hints.isEmpty()) {
-                    data.remove("hint");
-                    data.remove("hint-msg");
-                    vpnSetting->setData(data);
-                }
             } else {
                 qCWarning(PLASMA_NM) << "Could not load VPN UI plugin" << result.error;
                 m_hasError = true;

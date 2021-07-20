@@ -18,8 +18,8 @@ public:
     NetworkManager::VpnSetting::Ptr setting;
 };
 
-IodineAuthDialog::IodineAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
-    : SettingWidget(setting, parent)
+IodineAuthDialog::IodineAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
+    : SettingWidget(setting, hints, parent)
     , d_ptr(new IodineAuthDialogPrivate)
 {
     Q_D(IodineAuthDialog);

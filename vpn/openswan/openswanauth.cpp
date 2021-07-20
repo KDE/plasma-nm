@@ -17,8 +17,8 @@ public:
     NetworkManager::VpnSetting::Ptr setting;
 };
 
-OpenswanAuthDialog::OpenswanAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent)
+OpenswanAuthDialog::OpenswanAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
+    : SettingWidget(setting, hints, parent)
     , d_ptr(new OpenswanAuthDialogPrivate)
 {
     Q_D(OpenswanAuthDialog);

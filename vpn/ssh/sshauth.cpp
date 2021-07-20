@@ -16,8 +16,8 @@ public:
     Ui_SshAuth ui;
 };
 
-SshAuthWidget::SshAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
-    : SettingWidget(setting, parent)
+SshAuthWidget::SshAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
+    : SettingWidget(setting, hints, parent)
     , d_ptr(new SshAuthWidgetPrivate)
 {
     Q_D(SshAuthWidget);

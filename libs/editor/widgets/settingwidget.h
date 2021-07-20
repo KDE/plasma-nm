@@ -23,6 +23,8 @@ public:
     };
 
     explicit SettingWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
+    explicit SettingWidget(const NetworkManager::Setting::Ptr &setting, const QStringList &hints, QWidget* parent = nullptr, Qt::WindowFlags f = {});
+
     ~SettingWidget() override;
 
     virtual void loadConfig(const NetworkManager::Setting::Ptr &setting);
@@ -43,6 +45,10 @@ protected Q_SLOTS:
 Q_SIGNALS:
     void validChanged(bool isValid);
     void settingChanged();
+
+protected:
+    QStringList m_hints;
+
 private:
     QString m_type;
 };

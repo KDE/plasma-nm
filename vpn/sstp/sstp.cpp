@@ -26,9 +26,9 @@ SettingWidget * SstpUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &sett
     return new SstpSettingWidget(setting, parent);
 }
 
-SettingWidget * SstpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
+SettingWidget * SstpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
 {
-    return new SstpAuthWidget(setting, parent);
+    return new SstpAuthWidget(setting, hints, parent);
 }
 
 QString SstpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const

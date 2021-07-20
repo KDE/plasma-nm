@@ -28,9 +28,9 @@ SettingWidget * PptpUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &sett
     return new PptpSettingWidget(setting, parent);
 }
 
-SettingWidget * PptpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget * PptpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
 {
-    return new PptpAuthWidget(setting, parent);
+    return new PptpAuthWidget(setting, hints, parent);
 }
 
 QString PptpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const

@@ -18,8 +18,8 @@ public:
     NetworkManager::VpnSetting::Ptr setting;
 };
 
-VpncAuthDialog::VpncAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent)
+VpncAuthDialog::VpncAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
+    : SettingWidget(setting, hints, parent)
     , d_ptr(new VpncAuthDialogPrivate)
 {
     Q_D(VpncAuthDialog);

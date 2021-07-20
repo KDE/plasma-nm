@@ -28,9 +28,9 @@ SettingWidget * StrongswanUiPlugin::widget(const NetworkManager::VpnSetting::Ptr
     return new StrongswanSettingWidget(setting, parent);
 }
 
-SettingWidget * StrongswanUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget * StrongswanUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
 {
-    return new StrongswanAuthWidget(setting, parent);
+    return new StrongswanAuthWidget(setting, hints, parent);
 }
 
 QString StrongswanUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const

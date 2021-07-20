@@ -28,9 +28,9 @@ SettingWidget * L2tpUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &sett
     return new L2tpWidget(setting, parent);
 }
 
-SettingWidget *L2tpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget *L2tpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
 {
-    return new L2tpAuthWidget(setting, parent);
+    return new L2tpAuthWidget(setting, hints, parent);
 }
 
 QString L2tpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const

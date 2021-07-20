@@ -18,7 +18,7 @@ class SstpAuthWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(SstpAuthWidget)
 public:
-    explicit SstpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
+    explicit SstpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr);
     ~SstpAuthWidget() override;
 
     QVariantMap setting() const override;

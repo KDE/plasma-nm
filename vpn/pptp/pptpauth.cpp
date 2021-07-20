@@ -17,8 +17,8 @@ public:
     Ui_PptpAuthenticationWidget ui;
 };
 
-PptpAuthWidget::PptpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent)
+PptpAuthWidget::PptpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
+    : SettingWidget(setting, hints, parent)
     , d_ptr(new PptpAuthWidgetPrivate)
 {
     Q_D(PptpAuthWidget);

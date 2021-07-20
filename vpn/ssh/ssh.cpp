@@ -26,9 +26,9 @@ SettingWidget * SshUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setti
     return new SshSettingWidget(setting, parent);
 }
 
-SettingWidget * SshUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget * SshUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
 {
-    return new SshAuthWidget(setting, parent);
+    return new SshAuthWidget(setting, hints, parent);
 }
 
 QString SshUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const

@@ -90,8 +90,8 @@ public:
 };
 
 
-OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent)
+OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
+    : SettingWidget(setting, hints, parent)
     , d_ptr(new OpenconnectAuthWidgetPrivate)
 {
     Q_D(OpenconnectAuthWidget);

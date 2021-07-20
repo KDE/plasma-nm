@@ -25,7 +25,7 @@ class OpenconnectAuthWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(OpenconnectAuthWidget)
 public:
-    explicit OpenconnectAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
+    explicit OpenconnectAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr);
     ~OpenconnectAuthWidget() override;
     virtual void readSecrets();
     void readConfig();

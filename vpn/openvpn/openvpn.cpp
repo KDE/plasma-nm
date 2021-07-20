@@ -152,9 +152,9 @@ SettingWidget * OpenVpnUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &s
     return wid;
 }
 
-SettingWidget * OpenVpnUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget * OpenVpnUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
 {
-    return new OpenVpnAuthWidget(setting, parent);
+    return new OpenVpnAuthWidget(setting, hints, parent);
 }
 
 QString OpenVpnUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const

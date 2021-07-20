@@ -26,9 +26,9 @@ SettingWidget * OpenconnectUiPlugin::widget(const NetworkManager::VpnSetting::Pt
     return new OpenconnectSettingWidget(setting, parent);
 }
 
-SettingWidget * OpenconnectUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget * OpenconnectUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
 {
-    return new OpenconnectAuthWidget(setting, parent);
+    return new OpenconnectAuthWidget(setting, hints, parent);
 }
 
 QString OpenconnectUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const

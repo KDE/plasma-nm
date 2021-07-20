@@ -56,6 +56,8 @@ class Q_DECL_EXPORT SecretAgent : public NetworkManager::SecretAgent
     Q_OBJECT
 public:
     explicit SecretAgent(QObject* parent = nullptr);
+    explicit SecretAgent(NetworkManager::SecretAgent::Capabilities capabilities, QObject *parent = nullptr);
+
     ~SecretAgent() override;
 
 Q_SIGNALS:

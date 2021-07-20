@@ -19,7 +19,7 @@ class L2tpAuthWidget : public SettingWidget
     Q_OBJECT
     Q_DECLARE_PRIVATE(L2tpAuthWidget)
 public:
-    explicit L2tpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
+    explicit L2tpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr);
     ~L2tpAuthWidget() override;
     virtual void readSecrets();
     QVariantMap setting() const override;

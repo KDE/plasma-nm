@@ -20,9 +20,16 @@
 
 #include <KUrlRequester>
 
-SettingWidget::SettingWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    QWidget(parent, f),
-    m_type(setting->name())
+SettingWidget::SettingWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f)
+    : QWidget(parent, f)
+    , m_type(setting->name())
+{
+}
+
+SettingWidget::SettingWidget(const NetworkManager::Setting::Ptr &setting, const QStringList &hints, QWidget* parent, Qt::WindowFlags f)
+    : QWidget(parent, f)
+    , m_hints(hints)
+    , m_type(setting->name())
 {
 }
 

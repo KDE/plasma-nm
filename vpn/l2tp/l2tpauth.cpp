@@ -25,8 +25,8 @@ public:
     QFormLayout *layout;
 };
 
-L2tpAuthWidget::L2tpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
-    : SettingWidget(setting, parent)
+L2tpAuthWidget::L2tpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
+    : SettingWidget(setting, hints, parent)
     , d_ptr(new L2tpAuthWidgetPrivate)
 {
     Q_D(L2tpAuthWidget);

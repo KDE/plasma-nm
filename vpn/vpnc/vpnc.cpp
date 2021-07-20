@@ -98,9 +98,9 @@ SettingWidget * VpncUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &sett
     return new VpncWidget(setting, parent);
 }
 
-SettingWidget *VpncUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget *VpncUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
 {
-    return new VpncAuthDialog(setting, parent);
+    return new VpncAuthDialog(setting, hints, parent);
 }
 
 QString VpncUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const

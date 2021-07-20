@@ -27,9 +27,9 @@ SettingWidget * OpenswanUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &
     return new OpenswanWidget(setting, parent);
 }
 
-SettingWidget * OpenswanUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget * OpenswanUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
 {
-    return new OpenswanAuthDialog(setting, parent);
+    return new OpenswanAuthDialog(setting, hints, parent);
 }
 
 QString OpenswanUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const

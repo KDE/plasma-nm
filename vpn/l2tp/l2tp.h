@@ -18,7 +18,7 @@ public:
     explicit L2tpUiPlugin(QObject * parent = nullptr, const QVariantList& = QVariantList());
     ~L2tpUiPlugin() override;
     SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) override;
-    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) override;
+    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting,  const QStringList &hints, QWidget * parent = nullptr) override;
 
     QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
     QString supportedFileExtensions() const override;

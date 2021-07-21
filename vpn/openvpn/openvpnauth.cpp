@@ -47,61 +47,68 @@ OpenVpnAuthWidget::~OpenVpnAuthWidget()
 void OpenVpnAuthWidget::readSecrets()
 {
     Q_D(OpenVpnAuthWidget);
-    const NMStringMap secrets = d->setting->secrets();
-    const NMStringMap dataMap = d->setting->data();
-    const QString cType = dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE];
-    QLabel *label;
-    PasswordField *lineEdit;
 
+    const NMStringMap dataMap = d->setting->data();
+    const NMStringMap secrets = d->setting->secrets();
+    const QString cType = dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE];
     NetworkManager::Setting::SecretFlags certType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_CERTPASS"-flags").toInt();
     NetworkManager::Setting::SecretFlags passType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_PASSWORD"-flags").toInt();
     NetworkManager::Setting::SecretFlags proxyType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags").toInt();
 
-    if (cType == QLatin1String(NM_OPENVPN_CONTYPE_TLS) && !(certType.testFlag(NetworkManager::Setting::NotRequired))) {
-        label = new QLabel(this);
-        label->setText(i18n("Key Password:"));
-        lineEdit = new PasswordField(this);
-        lineEdit->setPasswordModeEnabled(true);
-        lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_CERTPASS));
-        lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_CERTPASS)));
-        d->layout->addRow(label, lineEdit);
-    } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD) && !(passType.testFlag(NetworkManager::Setting::NotRequired))) {
-        label = new QLabel(this);
-        label->setText(i18n("Password:"));
-        lineEdit = new PasswordField(this);
-        lineEdit->setPasswordModeEnabled(true);
-        lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_PASSWORD));
-        lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)));
-        d->layout->addRow(label, lineEdit);
-    } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD_TLS)) {
-        if (!(passType.testFlag(NetworkManager::Setting::NotRequired))) {
-            label = new QLabel(this);
-            label->setText(i18n("Password:"));
-            lineEdit = new PasswordField(this);
-            lineEdit->setPasswordModeEnabled(true);
-            lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_PASSWORD));
-            lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)));
-            d->layout->addRow(label, lineEdit);
+    // If hints are given, then always ask for what the hints require
+    if (!m_hints.isEmpty()) {
+        QString passwordType;
+        QString prompt;
+        for (const QString &hint : m_hints) {
+            const QString vpnMessage = QLatin1String("x-vpn-message:");
+            if (hint.startsWith(vpnMessage)) {
+                prompt = hint.right(hint.length() - vpnMessage.length());
+            } else {
+                passwordType = hint;
+            }
         }
-        if (!(certType.testFlag(NetworkManager::Setting::NotRequired))) {
-            label = new QLabel(this);
-            label->setText(i18n("Key Password:"));
-            lineEdit = new PasswordField(this);
-            lineEdit->setPasswordModeEnabled(true);
-            lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_CERTPASS));
-            lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_CERTPASS)));
-            d->layout->addRow(label, lineEdit);
-        }
-    }
 
-    if (dataMap.contains(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags") && !(proxyType.testFlag(NetworkManager::Setting::NotRequired))) {
-        label = new QLabel(this);
-        label->setText(i18n("Proxy Password:"));
-        lineEdit = new PasswordField(this);
-        lineEdit->setPasswordModeEnabled(true);
-        lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD));
-        lineEdit->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD)));
-        d->layout->addRow(label, lineEdit);
+        if (prompt.isEmpty()) {
+            if (passwordType == QLatin1String(NM_OPENVPN_KEY_CERTPASS)) {
+                prompt = i18n("Key Password:");
+            } else if (passwordType == QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD)) {
+                prompt = i18n("Proxy Password:");
+            } else {
+                prompt = i18n("Password:");
+            }
+        } else if (prompt.endsWith(QLatin1Char('.'))) {
+            prompt = prompt.replace(prompt.length() - 1, 1, QLatin1Char(':'));
+        } else if (!prompt.endsWith(QLatin1Char(':'))) {
+            prompt += QLatin1Char(':');
+        }
+
+        bool isOTP = false;
+        QStringList possibleTokens = { i18n("OTP"), i18n("authenticator"), i18n("code"), i18n("token"), i18n("one-time password") };
+        for (const QString &possibleToken : possibleTokens) {
+            if (prompt.toLower().contains(possibleToken.toLower())) {
+                isOTP = true;
+                break;
+            }
+        }
+
+        addPasswordField(prompt, QString(), passwordType, !isOTP);
+    } else {
+        if (cType == QLatin1String(NM_OPENVPN_CONTYPE_TLS) || cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD_TLS)) {
+            // Normal user password
+            if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD_TLS) || !passType.testFlag(NetworkManager::Setting::NotRequired)) {
+                addPasswordField(i18n("Password:"), secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)), QLatin1String(NM_OPENVPN_KEY_PASSWORD));
+            }
+            // Encrypted private key password
+            if (!dataMap.contains(QLatin1String(NM_OPENVPN_KEY_KEY)) && !certType.testFlag(NetworkManager::Setting::NotRequired)) {
+                addPasswordField(i18n("Key Password:"), secrets.value(QLatin1String(NM_OPENVPN_KEY_CERTPASS)), QLatin1String(NM_OPENVPN_KEY_CERTPASS));
+            }
+        } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD)) {
+            addPasswordField(i18n("Password:"), secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)), QLatin1String(NM_OPENVPN_KEY_PASSWORD));
+        }
+
+        if (dataMap.contains(NM_OPENVPN_KEY_PROXY_SERVER) && !(proxyType.testFlag(NetworkManager::Setting::NotRequired))) {
+            addPasswordField(i18n("Proxy Password:"), secrets.value(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD)), QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD));
+        }
     }
 
     for (int i = 0; i < d->layout->rowCount(); i++) {
@@ -129,4 +136,17 @@ QVariantMap OpenVpnAuthWidget::setting() const
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
     return secretData;
+}
+
+void OpenVpnAuthWidget::addPasswordField(const QString &labelText, const QString &password, const QString &secretKey, bool passwordMode)
+{
+    Q_D(const OpenVpnAuthWidget);
+
+    QLabel *label = new QLabel(this);
+    label->setText(labelText);
+    PasswordField *lineEdit = new PasswordField(this);
+    lineEdit->setPasswordModeEnabled(passwordMode);
+    lineEdit->setProperty("nm_secrets_key", secretKey);
+    lineEdit->setText(password);
+    d->layout->addRow(label, lineEdit);
 }

@@ -25,6 +25,8 @@ public:
     QVariantMap setting() const override;
 
 private:
+    void addPasswordField(const QString &labelText, const QString &password, const QString &secretKey, bool passwordMode = true);
+
     OpenVpnAuthWidgetPrivate *const d_ptr;
 };
 

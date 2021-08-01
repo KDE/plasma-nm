@@ -88,6 +88,9 @@ set_package_properties(KF5Prison PROPERTIES DESCRIPTION "Prison library"
                        PURPOSE "Needed to create mobile barcodes for WiFi networks"
                       )
 
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(OPENCONNECT IMPORTED_TARGET openconnect>3.99)
+
 if (DISABLE_MODEMMANAGER_SUPPORT)
     message(STATUS "Disabling ModemManager support")
     set(WITH_MODEMMANAGER_SUPPORT 0)

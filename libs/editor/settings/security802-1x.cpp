@@ -318,8 +318,8 @@ QVariantMap Security8021x::setting() const
             setting.setCaCertificate(m_ui->tlsCACert->url().toString().toUtf8().append('\0'));
         }
 
-        QStringList altsubjectmatches = m_ui->leTlsAlternativeSubjectMatches->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts);
-        for (const QString &match : m_ui->leTlsConnectToServers->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts)) {
+        QStringList altsubjectmatches = m_ui->leTlsAlternativeSubjectMatches->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), Qt::SkipEmptyParts);
+        for (const QString &match : m_ui->leTlsConnectToServers->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), Qt::SkipEmptyParts)) {
             const QString tempstr = QLatin1String("DNS:") + match;
             if (!altsubjectmatches.contains(tempstr)) {
                 altsubjectmatches.append(tempstr);
@@ -509,7 +509,7 @@ void Security8021x::altSubjectMatchesButtonClicked()
 {
     QPointer<EditListDialog> editor = new EditListDialog(this);
 
-    editor->setItems(m_ui->leTlsSubjectMatch->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts));
+    editor->setItems(m_ui->leTlsSubjectMatch->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), Qt::SkipEmptyParts));
     editor->setWindowTitle(i18n("Alternative Subject Matches"));
     editor->setToolTip(i18n("<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. https://www.kde.org&gt;</li></ul></qt>"));
     editor->setValidator(altSubjectValidator);
@@ -532,7 +532,7 @@ void Security8021x::connectToServersButtonClicked()
 {
     QPointer<EditListDialog> editor = new EditListDialog(this);
 
-    editor->setItems(m_ui->leTlsConnectToServers->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), QString::SkipEmptyParts));
+    editor->setItems(m_ui->leTlsConnectToServers->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), Qt::SkipEmptyParts));
     editor->setWindowTitle(i18n("Connect to these servers only"));
     editor->setValidator(serversValidator);
 

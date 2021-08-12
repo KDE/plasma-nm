@@ -520,11 +520,11 @@ void NetworkModelItem::updateDetails() const
 
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
 
-    // Get IPv[46]Address and related nameservers + IPv4 default gateway
+    // Get IPv[46]Address and related nameservers + IPv[46] default gateway
     if (device && device->ipV4Config().isValid() && m_connectionState == NetworkManager::ActiveConnection::Activated) {
         if (!device->ipV4Config().addresses().isEmpty()) {
             QHostAddress addr = device->ipV4Config().addresses().first().ip();
-            if (!addr.isNull()) {
+            if (!addr.isNull() && addr.isGlobal()) {
                 m_details << i18n("IPv4 Address") << addr.toString();
             }
         }
@@ -535,9 +535,15 @@ void NetworkModelItem::updateDetails() const
             }
         }
         if (!device->ipV4Config().nameservers().isEmpty()) {
-            QHostAddress addr = device->ipV4Config().nameservers().first();
-            if (!addr.isNull()) {
-                m_details << i18n("IPv4 Nameserver") << addr.toString();
+            QHostAddress addr1 = device->ipV4Config().nameservers().first();
+            QHostAddress addr2 = device->ipV4Config().nameservers().last();
+            if (!addr1.isNull()) {
+                m_details << i18n("IPv4 Primary Nameserver") << addr1.toString();
+            }
+            if (!addr2.isNull() && !addr1.isNull()) {
+                if (addr2 != addr1) {
+                    m_details << i18n("IPv4 Secondary Nameserver") << addr2.toString();
+                }
             }
         }
     }
@@ -545,14 +551,28 @@ void NetworkModelItem::updateDetails() const
     if (device && device->ipV6Config().isValid() && m_connectionState == NetworkManager::ActiveConnection::Activated) {
         if (!device->ipV6Config().addresses().isEmpty()) {
             QHostAddress addr = device->ipV6Config().addresses().first().ip();
-            if (!addr.isNull()) {
+            if (!addr.isNull() && addr.isGlobal() && !addr.isUniqueLocalUnicast()) {
                 m_details << i18n("IPv6 Address") << addr.toString();
+            } else if (!addr.isNull() && addr.isGlobal() && addr.isUniqueLocalUnicast()) {
+                m_details << i18n("IPv6 ULA Address") << addr.toString();
+            }
+        }
+        if (!device->ipV6Config().gateway().isEmpty()) {
+            QString addr = device->ipV6Config().gateway();
+            if (!addr.isNull()) {
+                m_details << i18n("IPv6 Default Gateway") << addr;
             }
         }
         if (!device->ipV6Config().nameservers().isEmpty()) {
-            QHostAddress addr = device->ipV6Config().nameservers().first();
-            if (!addr.isNull()) {
-                m_details << i18n("IPv6 Nameserver") << addr.toString();
+            QHostAddress addr1 = device->ipV6Config().nameservers().first();
+            QHostAddress addr2 = device->ipV6Config().nameservers().last();
+            if (!addr1.isNull()) {
+                m_details << i18n("IPv6 Primary Nameserver") << addr1.toString();
+            }
+            if (!addr2.isNull() && !addr1.isNull()) {
+                if (addr2 != addr1) {
+                    m_details << i18n("IPv6 Secondary Nameserver") << addr2.toString();
+                }
             }
         }
     }

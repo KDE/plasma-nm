@@ -10,7 +10,6 @@
 
 #include <KLocalizedString>
 #include <KPluginMetaData>
-#include <KPluginLoader>
 
 CreatableConnectionItem::CreatableConnectionItem(const QString &typeName, const QString &typeSection,
                                                  const QString &description, const QString &icon,
@@ -188,7 +187,7 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
 
     }
 
-    QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("plasma/network/vpn"));
+    QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
 
     std::sort(plugins.begin(), plugins.end(), [] (const auto &left, const auto &right)
     {

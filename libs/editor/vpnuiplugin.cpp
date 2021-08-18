@@ -8,8 +8,6 @@
 #include "vpnuiplugin.h"
 
 #include <KLocalizedString>
-#include <KPluginFactory>
-#include <KPluginLoader>
 #include <KPluginMetaData>
 
 VpnUiPlugin::VpnUiPlugin(QObject * parent, const QVariantList & /*args*/):
@@ -47,7 +45,7 @@ QString VpnUiPlugin::lastErrorMessage()
     return mErrorMessage;
 }
 
-VpnUiPlugin::LoadResult VpnUiPlugin::loadPluginForType(QObject *parent, const QString &serviceType)
+KPluginFactory::Result<VpnUiPlugin> VpnUiPlugin::loadPluginForType(QObject *parent, const QString &serviceType)
 {
     LoadResult result;
 
@@ -55,19 +53,16 @@ VpnUiPlugin::LoadResult VpnUiPlugin::loadPluginForType(QObject *parent, const QS
         return md.value(QStringLiteral("X-NetworkManager-Services")) == serviceType;
     };
 
-    const QVector<KPluginMetaData> offers = KPluginLoader::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
+    const QVector<KPluginMetaData> offers = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
 
     if (offers.isEmpty()) {
-        result.error = QStringLiteral("No plugin found");
+        KPluginFactory::Result<VpnUiPlugin> result;
+        result.errorReason = KPluginFactory::INVALID_PLUGIN;
+        result.errorText = QStringLiteral("No VPN plugin found for type %1").arg(serviceType);
+        result.errorString = i18n("No VPN plugin found for type %1", serviceType);
+
         return result;
     }
 
-    KPluginLoader loader(offers.first().fileName());
-    KPluginFactory *factory = loader.factory();
-    result.plugin = factory->create<VpnUiPlugin>(parent);
-
-    if (!result.plugin) {
-        result.error = loader.errorString();
-    }
-    return result;
+    return KPluginFactory::instantiatePlugin<VpnUiPlugin>(offers.first(), parent);
 }

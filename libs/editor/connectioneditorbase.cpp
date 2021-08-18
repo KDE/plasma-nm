@@ -256,14 +256,14 @@ void ConnectionEditorBase::initialize()
         } else {
             serviceType = vpnSetting->serviceType();
 
-            const VpnUiPlugin::LoadResult result = VpnUiPlugin::loadPluginForType(this, serviceType);
+            const auto result = VpnUiPlugin::loadPluginForType(this, serviceType);
 
             if (result) {
                 const QString shortName = serviceType.section('.', -1);
                 SettingWidget *vpnWidget = result.plugin->widget(vpnSetting, this);
                 addSettingWidget(vpnWidget, i18n("VPN (%1)", shortName));
             } else {
-                qCWarning(PLASMA_NM) << "Could not instantiate VPN UI plugin" << result.error;
+                qCWarning(PLASMA_NM) << "Could not instantiate VPN UI plugin" << result.errorText;
             }
         }
     }

@@ -39,7 +39,6 @@
 #include <KUser>
 #include <KProcess>
 #include <KPluginMetaData>
-#include <KPluginLoader>
 #include <KWindowSystem>
 #include <KWallet>
 
@@ -103,7 +102,7 @@ void Handler::activateConnection(const QString& connection, const QString& devic
                 return md.value(QStringLiteral("X-NetworkManager-Services")) == vpnSetting->serviceType();
             };
 
-            const QVector<KPluginMetaData> plugins = KPluginLoader::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
+            const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
 
             pluginMissing = plugins.isEmpty();
 

@@ -16,6 +16,8 @@
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/GenericTypes>
 
+#include <KPluginFactory>
+
 #include "settingwidget.h"
 
 /**
@@ -66,7 +68,7 @@ public:
         }
     };
 
-    static LoadResult loadPluginForType(QObject *parent, const QString &serviceType);
+    static KPluginFactory::Result<VpnUiPlugin> loadPluginForType(QObject *parent, const QString &serviceType);
 
 protected:
     ErrorType mError;

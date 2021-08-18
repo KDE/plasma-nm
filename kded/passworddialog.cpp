@@ -113,7 +113,7 @@ void PasswordDialog::initializeUi()
             m_errorMessage = QLatin1String("VPN settings are missing");
         } else {
             const QString serviceType = vpnSetting->serviceType();
-            const VpnUiPlugin::LoadResult result = VpnUiPlugin::loadPluginForType(this, serviceType);
+            const auto result = VpnUiPlugin::loadPluginForType(this, serviceType);
 
             if (result) {
                 VpnUiPlugin *vpnUiPlugin = result.plugin;
@@ -137,10 +137,10 @@ void PasswordDialog::initializeUi()
                 setFocusProxy(m_vpnWidget);
                 m_vpnWidget->setFocus(Qt::OtherFocusReason);
             } else {
-                qCWarning(PLASMA_NM) << "Could not load VPN UI plugin" << result.error;
+                qCWarning(PLASMA_NM) << "Could not load VPN UI plugin" << result.errorText;
                 m_hasError = true;
                 m_error = SecretAgent::InternalError;
-                m_errorMessage = result.error;
+                m_errorMessage = result.errorString;
             }
         }
     }

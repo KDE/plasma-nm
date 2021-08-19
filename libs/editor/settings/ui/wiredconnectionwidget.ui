@@ -238,7 +238,27 @@ the device compatibility. If unsure, leave here “Ignore” or pick “Automati
      </item>
      <item>
       <property name="text">
+       <string>2.5 Gb/s</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5 Gb/s</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>10 Gb/s</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>40 Gb/s</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>100 Gb/s</string>
       </property>
      </item>
     </widget>

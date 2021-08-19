@@ -75,8 +75,20 @@ void WiredConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &setti
             case 1000:
                 m_widget->speed->setCurrentIndex(2);
                 break;
-            case 10000:
+            case 2500:
                 m_widget->speed->setCurrentIndex(3);
+                break;
+            case 5000:
+                m_widget->speed->setCurrentIndex(4);
+                break;
+            case 10000:
+                m_widget->speed->setCurrentIndex(5);
+                break;
+            case 40000:
+                m_widget->speed->setCurrentIndex(6);
+                break;
+            case 100000:
+                m_widget->speed->setCurrentIndex(7);
                 break;
         }
     }
@@ -117,7 +129,19 @@ QVariantMap WiredConnectionWidget::setting() const
                 wiredSetting.setSpeed(1000);
                 break;
             case 3:
+                wiredSetting.setSpeed(2500);
+                break;
+            case 4:
+                wiredSetting.setSpeed(5000);
+                break;
+            case 5:
                 wiredSetting.setSpeed(10000);
+                break;
+            case 6:
+                wiredSetting.setSpeed(40000);
+                break;
+            case 7:
+                wiredSetting.setSpeed(100000);
                 break;
         }
 

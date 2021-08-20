@@ -314,6 +314,8 @@ QVariantMap MobileProviders::getApnInfo(const QString &apn)
                 temp.insert("password", e.text());
             } else if (e.tagName().toLower() == "dns") {
                 dnsList.append(e.text());
+            } else if (e.tagName().toLower() == "usage") {
+                temp.insert("usageType", e.attribute("type"));
             }
         }
 

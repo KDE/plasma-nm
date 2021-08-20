@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Cellular Network
+Comment=Management of cellular networks
+Encoding=UTF-8
+Type=Service
+Icon=smartphone
+X-KDE-ServiceTypes=KCModule
+X-KDE-Library=kcm_cellular_network
+X-KDE-PluginInfo-Author=Devin Lin
+X-KDE-PluginInfo-Email=espidev@gmail.com
+X-KDE-PluginInfo-Name=kcm_cellular_network
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Website=https://plasma-mobile.org/
+X-KDE-PluginInfo-Category=System Information
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-FormFactors=handset,tablet,mediacenter
+X-Plasma-Package=kcm_cellular_network
+X-Plasma-MainScript=ui/main.qml
+

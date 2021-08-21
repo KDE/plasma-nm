@@ -131,12 +131,11 @@ class ProfileSettings : public QObject
     Q_PROPERTY(QString user READ user WRITE setUser NOTIFY userChanged)
     Q_PROPERTY(QString password READ password WRITE setPassword NOTIFY passwordChanged)
     Q_PROPERTY(QString networkType READ networkType WRITE setNetworkType NOTIFY networkTypeChanged)
-    Q_PROPERTY(bool allowRoaming READ allowRoaming WRITE setAllowRoaming NOTIFY allowRoamingChanged)
     Q_PROPERTY(QString connectionUni READ connectionUni NOTIFY connectionUniChanged)
     
 public:
     ProfileSettings(QObject* parent = nullptr) : QObject{ parent } {}
-    ProfileSettings(QObject* parent, QString name, QString apn, QString user, QString password, NetworkManager::GsmSetting::NetworkType networkType, bool allowRoaming, QString connectionUni);
+    ProfileSettings(QObject* parent, QString name, QString apn, QString user, QString password, NetworkManager::GsmSetting::NetworkType networkType, QString connectionUni);
     ProfileSettings(QObject* parent, NetworkManager::Setting::Ptr settings, NetworkManager::Connection::Ptr connection);
     
     QString name();
@@ -148,8 +147,6 @@ public:
     void setPassword(QString password);
     QString networkType();
     void setNetworkType(QString ipType);
-    bool allowRoaming();
-    void setAllowRoaming(bool allowRoaming);
     QString connectionUni();
     
     // utilities
@@ -162,10 +159,8 @@ Q_SIGNALS:
     void userChanged();
     void passwordChanged();
     void networkTypeChanged();
-    void allowRoamingChanged();
     void connectionUniChanged();
 
 private:
     QString m_name, m_apn, m_user, m_password, m_networkType, m_connectionUni;
-    bool m_gsm, m_allowRoaming;
 };

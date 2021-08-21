@@ -43,7 +43,7 @@ Modem::Modem(QObject *parent, ModemManager::ModemDevice::Ptr mmDevice, NetworkMa
     connect(m_nmDevice.data(), &NetworkManager::ModemDevice::activeConnectionChanged, this, [this]() -> void { refreshProfiles(); Q_EMIT activeConnectionUniChanged(); });
     
     connect(m_nmDevice.data(), &NetworkManager::ModemDevice::stateChanged, this, [this](NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason) -> void {
-        qDebug() << "Modem" << m_nmDevice->uni() << "changed state:" << nmDeviceStateStr(oldstate) << "->" << nmDeviceStateStr(newstate);
+        qDebug() << "Modem" << m_nmDevice->uni() << "changed state:" << nmDeviceStateStr(oldstate) << "->" << nmDeviceStateStr(newstate) << "due to:" << reason;
         Q_EMIT mobileDataActiveChanged();
     });
     
@@ -131,9 +131,10 @@ void Modem::setIsRoaming(bool roaming)
 {
     if (m_nmDevice->activeConnection() && m_nmDevice->activeConnection()->connection()) {
         auto connection = m_nmDevice->activeConnection()->connection();
+        
         NetworkManager::GsmSetting::Ptr gsmSetting = connection->settings()->setting(NetworkManager::Setting::Gsm).dynamicCast<NetworkManager::GsmSetting>();
         if (gsmSetting) {
-            gsmSetting->setHomeOnly(!roaming);
+            gsmSetting->setHomeOnly(!roaming); // set roaming setting
             
             QDBusPendingReply reply = connection->update(connection->settings()->toMap());
             reply.waitForFinished();
@@ -143,6 +144,10 @@ void Modem::setIsRoaming(bool roaming)
                 qDebug() << "Successfully updated connection settings" << connection->uuid() << ".";
             }
         }
+        
+        // the connection uni has changed, refresh the profiles list
+        refreshProfiles(); 
+        Q_EMIT activeConnectionUniChanged();
     }
 }
 
@@ -206,8 +211,6 @@ void Modem::refreshProfiles()
         for (auto setting : connection->settings()->settings()) {
             if (setting.dynamicCast<NetworkManager::GsmSetting>()) {
                 m_profileList.append(new ProfileSettings(this, setting.dynamicCast<NetworkManager::GsmSetting>(), connection));
-            } else if (setting.dynamicCast<NetworkManager::CdmaSetting>()) {
-                m_profileList.append(new ProfileSettings(this, setting.dynamicCast<NetworkManager::CdmaSetting>(), connection));
             }
         }
     }
@@ -217,36 +220,38 @@ void Modem::refreshProfiles()
 void Modem::activateProfile(const QString &connectionUni)
 {
     qDebug() << "Activating profile on modem" << m_nmDevice->uni() << "for connection" << connectionUni << "."; 
+ 
+    // cache roaming setting
+    bool roaming = isRoaming();
+    
+    NetworkManager::Connection::Ptr con;
     
     // disable autoconnect for all other connections
     for (auto connection : m_nmDevice->availableConnections()) {
         if (connection->uuid() == connectionUni) {
-            
-            // ensure roaming setting is correct
-            NetworkManager::GsmSetting::Ptr gsmSetting = connection->settings()->setting(NetworkManager::Setting::Gsm).dynamicCast<NetworkManager::GsmSetting>();
-            gsmSetting->setHomeOnly(!isRoaming());
-            
-            QDBusPendingReply reply = connection->update(connection->settings()->toMap());
-            reply.waitForFinished();
-            if (reply.isError()) {
-                qWarning() << "Error updating connection settings for" << connectionUni << ":" << reply.error().message() << ".";
-            } else {
-                qDebug() << "Successfully updated connection settings" << connectionUni << ".";
-            }
-            
             connection->settings()->setAutoconnect(true);
-            
+            con = connection;
         } else {
             connection->settings()->setAutoconnect(false);
         }
     }
     
+    if (!con) {
+        qDebug() << "Connection" << connectionUni << "not found.";
+        return;
+    }
+    
     // activate connection manually
-    QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::activateConnection(connectionUni, m_nmDevice->uni(), "");
-    reply.waitForFinished(); // TODO performance?
+    // despite the documentation saying otherwise, activateConnection seems to need the DBus path, not uuid of the connection
+    QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::activateConnection(con->path(), m_nmDevice->uni(), "");
+    reply.waitForFinished();
     if (reply.isError()) {
         qWarning() << "Error activating connection" << reply.error().message();
+        return;
     }
+    
+    // set roaming settings separately (since it changes the uni)
+    setIsRoaming(roaming);
 }
 
 void Modem::addProfile(QString name, QString apn, QString username, QString password, QString networkType)
@@ -398,15 +403,14 @@ QString Modem::nmDeviceStateStr(NetworkManager::Device::State state)
     else return "";
 }
 
-ProfileSettings::ProfileSettings(QObject* parent, QString name, QString apn, QString user, QString password, NetworkManager::GsmSetting::NetworkType networkType, bool allowRoaming, QString connectionUni)
+ProfileSettings::ProfileSettings(QObject* parent, QString name, QString apn, QString user, QString password, NetworkManager::GsmSetting::NetworkType networkType, QString connectionUni)
     : QObject{ parent },
       m_name(name), 
       m_apn(apn), 
       m_user(user), 
       m_password(password), 
       m_networkType(networkTypeStr(networkType)), 
-      m_connectionUni(connectionUni),
-      m_allowRoaming(allowRoaming)
+      m_connectionUni(connectionUni)
 {
     setParent(parent);
 }
@@ -419,15 +423,11 @@ ProfileSettings::ProfileSettings(QObject* parent, NetworkManager::Setting::Ptr s
     
     NetworkManager::GsmSetting::Ptr gsmSetting = setting.staticCast<NetworkManager::GsmSetting>();
     
-    if (gsmSetting) {
-        m_gsm = true;
-        m_name = connection->name();
-        m_apn = gsmSetting->apn();
-        m_user = gsmSetting->username();
-        m_password = gsmSetting->password();
-        m_networkType = networkTypeStr(gsmSetting->networkType());
-        m_allowRoaming = !gsmSetting->homeOnly();
-    }
+    m_name = connection->name();
+    m_apn = gsmSetting->apn();
+    m_user = gsmSetting->username();
+    m_password = gsmSetting->password();
+    m_networkType = networkTypeStr(gsmSetting->networkType());
 }
 
 QString ProfileSettings::name()
@@ -471,19 +471,6 @@ void ProfileSettings::setPassword(QString password)
     if (password != m_password) {
         m_password = password; 
         Q_EMIT passwordChanged();
-    }
-}
-
-bool ProfileSettings::allowRoaming()
-{
-    return m_allowRoaming;
-}
-
-void ProfileSettings::setAllowRoaming(bool allowRoaming)
-{
-    if (allowRoaming != m_allowRoaming) {
-        m_allowRoaming = allowRoaming;
-        Q_EMIT allowRoamingChanged();
     }
 }
 

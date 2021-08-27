@@ -10,9 +10,9 @@
 #ifndef NM_STRONGSWAN_SERVICE_H
 #define NM_STRONGSWAN_SERVICE_H
 
-#define NM_DBUS_SERVICE_STRONGSWAN    "org.freedesktop.NetworkManager.strongswan"
-#define NM_DBUS_INTERFACE_STRONGSWAN  "org.freedesktop.NetworkManager.strongswan"
-#define NM_DBUS_PATH_STRONGSWAN       "/org/freedesktop/NetworkManager/strongswan"
+#define NM_DBUS_SERVICE_STRONGSWAN "org.freedesktop.NetworkManager.strongswan"
+#define NM_DBUS_INTERFACE_STRONGSWAN "org.freedesktop.NetworkManager.strongswan"
+#define NM_DBUS_PATH_STRONGSWAN "/org/freedesktop/NetworkManager/strongswan"
 
 #define NM_STRONGSWAN_GATEWAY "address"
 #define NM_STRONGSWAN_CERTIFICATE "certificate"
@@ -34,8 +34,8 @@
 #define NM_STRONGSWAN_AUTH_SMARTCARD "smartcard"
 #define NM_STRONGSWAN_AUTH_EAP "eap"
 
-#define NM_STRONGSWAN_PW_TYPE_SAVE   "save"
-#define NM_STRONGSWAN_PW_TYPE_ASK    "ask"
+#define NM_STRONGSWAN_PW_TYPE_SAVE "save"
+#define NM_STRONGSWAN_PW_TYPE_ASK "ask"
 #define NM_STRONGSWAN_PW_TYPE_UNUSED "unused"
 
 #endif /* NM_Strongswan_PLUGIN_H */

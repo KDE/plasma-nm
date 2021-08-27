@@ -171,4 +171,3 @@ bool Configuration::showPasswordDialog()
 
     return true;
 }
-

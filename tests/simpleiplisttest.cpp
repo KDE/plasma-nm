@@ -55,7 +55,7 @@ void SimpleipListTest::baseTest_data()
     QTest::newRow("123.45.22.9,  BBEf:0112::1,") << "123.45.22.9,  BBEf:0112::1," << QValidator::Intermediate;
     QTest::newRow("123.45.22.9,  BBEf:0112::1/123,") << "123.45.22.9,  BBEf:0112::1/123," << QValidator::Invalid;
     QTest::newRow("123.45.22.9,  BBEf:0112::1,1.2.3.4") << "123.45.22.9,  BBEf:0112::1,1.2.3.4" << QValidator::Acceptable;
-}    
+}
 
 void SimpleipListTest::baseTest()
 {

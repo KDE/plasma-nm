@@ -18,13 +18,13 @@
 #include "creatableconnectionsmodel.h"
 #include "editorproxymodel.h"
 #include "kcmidentitymodel.h"
-#include "networkmodel.h"
 #include "mobileproxymodel.h"
+#include "networkmodel.h"
 
-#include "handler.h"
 #include "enums.h"
+#include "handler.h"
 
-void QmlPlugins::registerTypes(const char* uri)
+void QmlPlugins::registerTypes(const char *uri)
 {
     // @uri org.kde.plasma.networkmanagement.AvailableDevices
     qmlRegisterType<AvailableDevices>(uri, 0, 2, "AvailableDevices");

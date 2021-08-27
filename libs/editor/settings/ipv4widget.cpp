@@ -5,17 +5,17 @@
 */
 
 #include "ipv4widget.h"
-#include "ui_ipv4.h"
 #include "ipv4delegate.h"
+#include "ui_ipv4.h"
 
 #include <QDialog>
 #include <QDialogButtonBox>
-#include <QStandardItemModel>
+#include <QFormLayout>
+#include <QHostInfo>
 #include <QItemSelection>
 #include <QNetworkAddressEntry>
-#include <QFormLayout>
 #include <QSpinBox>
-#include <QHostInfo>
+#include <QStandardItemModel>
 
 #include <KEditListWidget>
 #include <KLocalizedString>
@@ -34,12 +34,10 @@ quint32 suggestNetmask(quint32 ip)
     if (!(ip & 0x80000000)) {
         // test 0 leading bit
         netmask = 0xFF000000;
-    }
-    else if (!(ip & 0x40000000)) {
+    } else if (!(ip & 0x40000000)) {
         // test 10 leading bits
         netmask = 0xFFFF0000;
-    }
-    else if (!(ip & 0x20000000)) {
+    } else if (!(ip & 0x20000000)) {
         // test 110 leading bits
         netmask = 0xFFFFFF00;
     }
@@ -50,9 +48,10 @@ quint32 suggestNetmask(quint32 ip)
 class IPv4Widget::Private
 {
 public:
-    Private() : model(0,3)
+    Private()
+        : model(0, 3)
     {
-        QStandardItem * headerItem = new QStandardItem(i18nc("Header text for IPv4 address", "Address"));
+        QStandardItem *headerItem = new QStandardItem(i18nc("Header text for IPv4 address", "Address"));
         model.setHorizontalHeaderItem(0, headerItem);
         headerItem = new QStandardItem(i18nc("Header text for IPv4 netmask", "Netmask"));
         model.setHorizontalHeaderItem(1, headerItem);
@@ -62,11 +61,10 @@ public:
     QStandardItemModel model;
 };
 
-
-IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_ui(new Ui::IPv4Widget),
-    d(new IPv4Widget::Private())
+IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_ui(new Ui::IPv4Widget)
+    , d(new IPv4Widget::Private())
 {
     m_ui->setupUi(this);
 
@@ -136,25 +134,25 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // method
     switch (ipv4Setting->method()) {
-        case NetworkManager::Ipv4Setting::Automatic:
-            if (ipv4Setting->ignoreAutoDns()) {
-                m_ui->method->setCurrentIndex(AutomaticOnlyIP);
-            } else {
-                m_ui->method->setCurrentIndex(Automatic);
-            }
-            break;
-        case NetworkManager::Ipv4Setting::Manual:
-            m_ui->method->setCurrentIndex(Manual);
-            break;
-        case NetworkManager::Ipv4Setting::LinkLocal:
-            m_ui->method->setCurrentIndex(LinkLocal);
-            break;
-        case NetworkManager::Ipv4Setting::Shared:
-            m_ui->method->setCurrentIndex(Shared);
-            break;
-        case NetworkManager::Ipv4Setting::Disabled:
-            m_ui->method->setCurrentIndex(Disabled);
-            break;
+    case NetworkManager::Ipv4Setting::Automatic:
+        if (ipv4Setting->ignoreAutoDns()) {
+            m_ui->method->setCurrentIndex(AutomaticOnlyIP);
+        } else {
+            m_ui->method->setCurrentIndex(Automatic);
+        }
+        break;
+    case NetworkManager::Ipv4Setting::Manual:
+        m_ui->method->setCurrentIndex(Manual);
+        break;
+    case NetworkManager::Ipv4Setting::LinkLocal:
+        m_ui->method->setCurrentIndex(LinkLocal);
+        break;
+    case NetworkManager::Ipv4Setting::Shared:
+        m_ui->method->setCurrentIndex(Shared);
+        break;
+    case NetworkManager::Ipv4Setting::Disabled:
+        m_ui->method->setCurrentIndex(Disabled);
+        break;
     }
 
     // dns
@@ -201,25 +199,25 @@ QVariantMap IPv4Widget::setting() const
 
     // method
     switch ((MethodIndex)m_ui->method->currentIndex()) {
-        case Automatic:
-            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Automatic);
-            break;
-        case IPv4Widget::AutomaticOnlyIP:
-            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Automatic);
-            ipv4Setting.setIgnoreAutoDns(true);
-            break;
-        case Manual:
-            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Manual);
-            break;
-        case LinkLocal:
-            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::LinkLocal);
-            break;
-        case Shared:
-            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Shared);
-            break;
-        case Disabled:
-            ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Disabled);
-            break;
+    case Automatic:
+        ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Automatic);
+        break;
+    case IPv4Widget::AutomaticOnlyIP:
+        ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Automatic);
+        ipv4Setting.setIgnoreAutoDns(true);
+        break;
+    case Manual:
+        ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Manual);
+        break;
+    case LinkLocal:
+        ipv4Setting.setMethod(NetworkManager::Ipv4Setting::LinkLocal);
+        break;
+    case Shared:
+        ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Shared);
+        break;
+    case Disabled:
+        ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Disabled);
+        break;
     }
 
     // dns
@@ -267,7 +265,7 @@ QVariantMap IPv4Widget::setting() const
 
 void IPv4Widget::slotModeComboChanged(int index)
 {
-    if (index == Automatic) {  // Automatic
+    if (index == Automatic) { // Automatic
         m_ui->dnsLabel->setText(i18n("Other DNS Servers:"));
         m_ui->dns->setEnabled(true);
         m_ui->dnsMorePushButton->setEnabled(true);
@@ -291,7 +289,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setEnabled(false);
         m_ui->btnAdd->setEnabled(false);
         m_ui->btnRemove->setEnabled(false);
-    } else if (index == Manual) {  // Manual
+    } else if (index == Manual) { // Manual
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(true);
         m_ui->dnsMorePushButton->setEnabled(true);
@@ -303,7 +301,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setEnabled(true);
         m_ui->btnAdd->setEnabled(true);
         m_ui->btnRemove->setEnabled(true);
-    } else if (index == LinkLocal || index == Shared) {  // Link-local or Shared
+    } else if (index == LinkLocal || index == Shared) { // Link-local or Shared
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
         m_ui->dnsMorePushButton->setEnabled(false);
@@ -315,7 +313,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setEnabled(false);
         m_ui->btnAdd->setEnabled(false);
         m_ui->btnRemove->setEnabled(false);
-    } else if (index == Disabled) {  // Disabled
+    } else if (index == Disabled) { // Disabled
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
         m_ui->dnsMorePushButton->setEnabled(false);
@@ -339,7 +337,7 @@ void IPv4Widget::slotAddIPAddress()
     if (rowCount > 0) {
         m_ui->tableViewAddresses->selectRow(rowCount - 1);
 
-        QItemSelectionModel * selectionModel = m_ui->tableViewAddresses->selectionModel();
+        QItemSelectionModel *selectionModel = m_ui->tableViewAddresses->selectionModel();
         QModelIndexList list = selectionModel->selectedIndexes();
         if (!list.isEmpty()) {
             // QTableView is configured to select only rows.
@@ -351,7 +349,7 @@ void IPv4Widget::slotAddIPAddress()
 
 void IPv4Widget::slotRemoveIPAddress()
 {
-    QItemSelectionModel * selectionModel = m_ui->tableViewAddresses->selectionModel();
+    QItemSelectionModel *selectionModel = m_ui->tableViewAddresses->selectionModel();
     if (selectionModel->hasSelection()) {
         QModelIndexList indexes = selectionModel->selectedIndexes();
         d->model.takeRow(indexes[0].row());
@@ -359,7 +357,7 @@ void IPv4Widget::slotRemoveIPAddress()
     m_ui->btnRemove->setEnabled(m_ui->tableViewAddresses->selectionModel()->hasSelection());
 }
 
-void IPv4Widget::selectionChanged(const QItemSelection & selected)
+void IPv4Widget::selectionChanged(const QItemSelection &selected)
 {
     m_ui->btnRemove->setEnabled(!selected.isEmpty());
 }
@@ -392,24 +390,22 @@ void IPv4Widget::slotRoutesDialog()
 
     dlg->setRoutes(m_tmpIpv4Setting.routes());
     dlg->setNeverDefault(m_tmpIpv4Setting.neverDefault());
-    if (m_ui->method->currentIndex() == 2) {  // manual
+    if (m_ui->method->currentIndex() == 2) { // manual
         dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
     } else {
         dlg->setIgnoreAutoRoutes(m_tmpIpv4Setting.ignoreAutoRoutes());
     }
 
-    connect(dlg.data(), &QDialog::accepted,
-            [dlg, this] () {
-                m_tmpIpv4Setting.setRoutes(dlg->routes());
-                m_tmpIpv4Setting.setNeverDefault(dlg->neverDefault());
-                m_tmpIpv4Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
-            });
-    connect(dlg.data(), &QDialog::finished,
-            [dlg] () {
-                if (dlg) {
-                    dlg->deleteLater();
-                }
-            });
+    connect(dlg.data(), &QDialog::accepted, [dlg, this]() {
+        m_tmpIpv4Setting.setRoutes(dlg->routes());
+        m_tmpIpv4Setting.setNeverDefault(dlg->neverDefault());
+        m_tmpIpv4Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
+    });
+    connect(dlg.data(), &QDialog::finished, [dlg]() {
+        if (dlg) {
+            dlg->deleteLater();
+        }
+    });
     dlg->setModal(true);
     dlg->show();
 }
@@ -422,7 +418,10 @@ void IPv4Widget::slotAdvancedDialog()
     auto layout = new QFormLayout(dlg);
     dlg->setLayout(layout);
 
-    layout->addRow(new QLabel(i18n("<qt>You can find more information about these values here:<br/><a href='https://developer.gnome.org/NetworkManager/stable/nm-settings.html'>https://developer.gnome.org/NetworkManager/stable/nm-settings.html</a></qt>")));
+    layout->addRow(
+        new QLabel(i18n("<qt>You can find more information about these values here:<br/><a "
+                        "href='https://developer.gnome.org/NetworkManager/stable/nm-settings.html'>https://developer.gnome.org/NetworkManager/stable/"
+                        "nm-settings.html</a></qt>")));
 
     auto sendHostname = new QCheckBox(dlg);
     sendHostname->setChecked(m_tmpIpv4Setting.dhcpSendHostname());
@@ -442,17 +441,16 @@ void IPv4Widget::slotAdvancedDialog()
     dadTimeout->setValue(m_tmpIpv4Setting.dadTimeout());
     layout->addRow(i18n("DAD timeout:"), dadTimeout);
 
-    QDialogButtonBox* box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dlg);
+    QDialogButtonBox *box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dlg);
     connect(box, &QDialogButtonBox::accepted, dlg, &QDialog::accept);
     connect(box, &QDialogButtonBox::rejected, dlg, &QDialog::reject);
     layout->addWidget(box);
 
-    connect(dlg, &QDialog::accepted, this,
-            [=] () {
-                m_tmpIpv4Setting.setDhcpSendHostname(sendHostname->isChecked());
-                m_tmpIpv4Setting.setDhcpHostname(dhcpHostname->text());
-                m_tmpIpv4Setting.setDadTimeout(dadTimeout->value());
-            });
+    connect(dlg, &QDialog::accepted, this, [=]() {
+        m_tmpIpv4Setting.setDhcpSendHostname(sendHostname->isChecked());
+        m_tmpIpv4Setting.setDhcpHostname(dhcpHostname->text());
+        m_tmpIpv4Setting.setDadTimeout(dadTimeout->value());
+    });
 
     dlg->setModal(true);
     dlg->show();
@@ -463,28 +461,26 @@ void IPv4Widget::slotDnsServers()
     QPointer<QDialog> dialog = new QDialog(this);
     dialog->setWindowTitle(i18n("Edit DNS servers"));
     dialog->setLayout(new QVBoxLayout);
-    QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
+    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
     connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
-    KEditListWidget * listWidget = new KEditListWidget(dialog);
+    KEditListWidget *listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(" ", ""));
     listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
-    connect(dialog.data(), &QDialog::accepted,
-            [listWidget, this] () {
-                QString text = listWidget->items().join(",");
-                if (text.endsWith(',')) {
-                    text.chop(1);
-                }
-                m_ui->dns->setText(text);
-            });
-    connect(dialog.data(), &QDialog::finished,
-            [dialog] () {
-                if (dialog) {
-                    dialog->deleteLater();
-                }
-            });
+    connect(dialog.data(), &QDialog::accepted, [listWidget, this]() {
+        QString text = listWidget->items().join(",");
+        if (text.endsWith(',')) {
+            text.chop(1);
+        }
+        m_ui->dns->setText(text);
+    });
+    connect(dialog.data(), &QDialog::finished, [dialog]() {
+        if (dialog) {
+            dialog->deleteLater();
+        }
+    });
     dialog->setModal(true);
     dialog->show();
 }
@@ -494,28 +490,26 @@ void IPv4Widget::slotDnsDomains()
     QPointer<QDialog> dialog = new QDialog(this);
     dialog->setWindowTitle(i18n("Edit DNS search domains"));
     dialog->setLayout(new QVBoxLayout);
-    QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
+    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
     connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
-    KEditListWidget * listWidget = new KEditListWidget(dialog);
+    KEditListWidget *listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(" ", ""));
     listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
-    connect(dialog.data(), &QDialog::accepted,
-            [listWidget, this] () {
-                QString text = listWidget->items().join(",");
-                if (text.endsWith(',')) {
-                    text.chop(1);
-                }
-                m_ui->dnsSearch->setText(text);
-            });
-    connect(dialog.data(), &QDialog::finished,
-            [dialog] () {
-                if (dialog) {
-                    dialog->deleteLater();
-                }
-            });
+    connect(dialog.data(), &QDialog::accepted, [listWidget, this]() {
+        QString text = listWidget->items().join(",");
+        if (text.endsWith(',')) {
+            text.chop(1);
+        }
+        m_ui->dnsSearch->setText(text);
+    });
+    connect(dialog.data(), &QDialog::finished, [dialog]() {
+        if (dialog) {
+            dialog->deleteLater();
+        }
+    });
     dialog->setModal(true);
     dialog->show();
 }
@@ -538,7 +532,8 @@ bool IPv4Widget::isValid() const
         }
     }
 
-    if (!m_ui->dns->text().isEmpty() && (m_ui->method->currentIndex() == Automatic || m_ui->method->currentIndex() == Manual || m_ui->method->currentIndex() == AutomaticOnlyIP)) {
+    if (!m_ui->dns->text().isEmpty()
+        && (m_ui->method->currentIndex() == Automatic || m_ui->method->currentIndex() == Manual || m_ui->method->currentIndex() == AutomaticOnlyIP)) {
         const QStringList tmp = m_ui->dns->text().split(',');
         for (const QString &str : tmp) {
             QHostAddress addr(str);

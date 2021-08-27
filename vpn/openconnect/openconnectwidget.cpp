@@ -7,28 +7,28 @@
 
 #include "openconnectwidget.h"
 #include <QDialog>
-#include <QUrl>
 #include <QStringList>
+#include <QUrl>
 
 #include "ui_openconnectprop.h"
 #include "ui_openconnecttoken.h"
 
-#include <QString>
-#include <QDialogButtonBox>
 #include "nm-openconnect-service.h"
+#include <QDialogButtonBox>
+#include <QString>
 
 #include <openconnect.h>
 #ifndef OPENCONNECT_CHECK_VER
-#define OPENCONNECT_CHECK_VER(x,y) 0
+#define OPENCONNECT_CHECK_VER(x, y) 0
 #endif
 
-#if !OPENCONNECT_CHECK_VER(2,1)
+#if !OPENCONNECT_CHECK_VER(2, 1)
 #define openconnect_has_stoken_support() 0
 #endif
-#if !OPENCONNECT_CHECK_VER(2,2)
+#if !OPENCONNECT_CHECK_VER(2, 2)
 #define openconnect_has_oath_support() 0
 #endif
-#if !OPENCONNECT_CHECK_VER(5,0)
+#if !OPENCONNECT_CHECK_VER(5, 0)
 #define openconnect_has_yubioath_support() 0
 #endif
 
@@ -47,7 +47,7 @@ public:
     Token token;
 };
 
-OpenconnectSettingWidget::OpenconnectSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+OpenconnectSettingWidget::OpenconnectSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
     : SettingWidget(setting, parent)
     , d_ptr(new OpenconnectSettingWidgetPrivate)
 {
@@ -65,7 +65,7 @@ OpenconnectSettingWidget::OpenconnectSettingWidget(const NetworkManager::VpnSett
     d->tokenUi.setupUi(d->tokenDlg);
     d->tokenUi.leTokenSecret->setPasswordModeEnabled(true);
     d->tokenUi.leTokenSecret->setPasswordOptionsEnabled(true);
-    QVBoxLayout * layout = new QVBoxLayout(d->tokenDlg);
+    QVBoxLayout *layout = new QVBoxLayout(d->tokenDlg);
     layout->addWidget(d->tokenDlg);
     d->tokenDlg->setLayout(layout);
     connect(d->tokenUi.buttonBox, &QDialogButtonBox::accepted, d->tokenDlg, &QDialog::accept);
@@ -73,7 +73,10 @@ OpenconnectSettingWidget::OpenconnectSettingWidget(const NetworkManager::VpnSett
     connect(d->tokenDlg, &QDialog::rejected, this, &OpenconnectSettingWidget::restoreTokens);
     connect(d->tokenDlg, &QDialog::accepted, this, &OpenconnectSettingWidget::saveTokens);
 
-    connect(d->tokenUi.cmbTokenMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, QOverload<int>::of((&OpenconnectSettingWidget::handleTokenSecret)));
+    connect(d->tokenUi.cmbTokenMode,
+            QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this,
+            QOverload<int>::of((&OpenconnectSettingWidget::handleTokenSecret)));
 
     // Connect for setting check
     watchChangedSetting();
@@ -114,10 +117,13 @@ void OpenconnectSettingWidget::handleTokenSecret(int index)
         d->tokenUi.leTokenSecret->setEnabled(true);
     } else if (mode == QStringLiteral("totp")) {
         d->tokenUi.leTokenSecret->setEnabled(true);
-        d->tokenUi.leTokenSecret->setToolTip("Insert the secret here, with a sha specification and a leading '0x' or 'base32:'. See the openconnect documentation for syntax.");
-    } else if (mode ==QStringLiteral("hotp")) {
+        d->tokenUi.leTokenSecret->setToolTip(
+            "Insert the secret here, with a sha specification and a leading '0x' or 'base32:'. See the openconnect documentation for syntax.");
+    } else if (mode == QStringLiteral("hotp")) {
         d->tokenUi.leTokenSecret->setEnabled(true);
-        d->tokenUi.leTokenSecret->setToolTip("Insert the secret here, with a leading '0x' or 'base32:' and a trailing counter after a comma (','), See the openconnect documentation for syntax.");
+        d->tokenUi.leTokenSecret->setToolTip(
+            "Insert the secret here, with a leading '0x' or 'base32:' and a trailing counter after a comma (','), See the openconnect documentation for "
+            "syntax.");
     } else if (mode == QStringLiteral("yubioath")) {
         d->tokenUi.leTokenSecret->setEnabled(true);
         d->tokenUi.leTokenSecret->setToolTip("Insert the token Id here, in the form company:username. Make sure to set your Yubikey in CCID mode");
@@ -153,23 +159,23 @@ bool OpenconnectSettingWidget::initTokenGroup()
     combo->addItem(tokenLabelList[validRows]);
     combo->setItemData(validRows, tokenModeList[validRows], Qt::UserRole);
     validRows++;
-    if (openconnect_has_stoken_support ()) {
-        for ( ; validRows < 3; validRows++) {
+    if (openconnect_has_stoken_support()) {
+        for (; validRows < 3; validRows++) {
             combo->addItem(tokenLabelList[validRows]);
             combo->setItemData(validRows, tokenModeList[validRows], Qt::UserRole);
         }
     }
-    if (openconnect_has_oath_support ()) {
+    if (openconnect_has_oath_support()) {
         combo->addItem(tokenLabelList[validRows]);
         combo->setItemData(validRows, tokenModeList[validRows], Qt::UserRole);
         validRows++;
-        if (OPENCONNECT_CHECK_VER(3,4)) {
+        if (OPENCONNECT_CHECK_VER(3, 4)) {
             combo->addItem(tokenLabelList[validRows]);
             combo->setItemData(validRows, tokenModeList[validRows], Qt::UserRole);
             validRows++;
         }
     }
-    if (openconnect_has_yubioath_support ()) {
+    if (openconnect_has_yubioath_support()) {
         combo->addItem(tokenLabelList[validRows]);
         combo->setItemData(validRows, tokenModeList[validRows], Qt::UserRole);
     }
@@ -188,7 +194,7 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
         cmbProtocolIndex = 0;
     } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("nc")) {
         cmbProtocolIndex = 1;
-    } else if(dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("gp")) {
+    } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("gp")) {
         cmbProtocolIndex = 2;
     } else {
         cmbProtocolIndex = 3; // pulse, Pulse Connect Secure
@@ -224,7 +230,8 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
     d->ui.preventInvalidCert->setChecked(dataMap[NM_OPENCONNECT_KEY_PREVENT_INVALID_CERT] == "yes");
 
     // Token settings
-    const NetworkManager::Setting::SecretFlags tokenSecretFlag = static_cast<NetworkManager::Setting::SecretFlags>(dataMap.value(NM_OPENCONNECT_KEY_TOKEN_SECRET"-flags").toInt());
+    const NetworkManager::Setting::SecretFlags tokenSecretFlag =
+        static_cast<NetworkManager::Setting::SecretFlags>(dataMap.value(NM_OPENCONNECT_KEY_TOKEN_SECRET "-flags").toInt());
     if (tokenSecretFlag == NetworkManager::Setting::None) {
         d->tokenUi.leTokenSecret->setPasswordOption(PasswordField::StoreForAllUsers);
     } else if (tokenSecretFlag == NetworkManager::Setting::AgentOwned) {
@@ -268,41 +275,41 @@ QVariantMap OpenconnectSettingWidget::setting() const
     NMStringMap secrets;
     QString protocol;
     switch (d->ui.cmbProtocol->currentIndex()) {
-        case 0:
-            protocol = QLatin1String("anyconnect");
-            break;
-        case 1:
-            protocol = QLatin1String("nc");
-            break;
-        case 2:
-            protocol = QLatin1String("gp");
-            break;
-        default:
-            protocol = QLatin1String("pulse");
+    case 0:
+        protocol = QLatin1String("anyconnect");
+        break;
+    case 1:
+        protocol = QLatin1String("nc");
+        break;
+    case 2:
+        protocol = QLatin1String("gp");
+        break;
+    default:
+        protocol = QLatin1String("pulse");
     }
 
     QString reportedOs;
     switch (d->ui.cmbReportedOs->currentIndex()) {
-        case 0:
-            reportedOs = QString();
-            break;
-        case 1:
-            reportedOs = QLatin1String("linux");
-            break;
-        case 2:
-            reportedOs = QLatin1String("linux-64");
-            break;
-        case 3:
-            reportedOs = QLatin1String("win");
-            break;
-        case 4:
-            reportedOs = QLatin1String("mac-intel");
-            break;
-        case 5:
-            reportedOs = QLatin1String("android");
-            break;
-        default:
-            reportedOs = QLatin1String("apple-ios");
+    case 0:
+        reportedOs = QString();
+        break;
+    case 1:
+        reportedOs = QLatin1String("linux");
+        break;
+    case 2:
+        reportedOs = QLatin1String("linux-64");
+        break;
+    case 3:
+        reportedOs = QLatin1String("win");
+        break;
+    case 4:
+        reportedOs = QLatin1String("mac-intel");
+        break;
+    case 5:
+        reportedOs = QLatin1String("android");
+        break;
+    default:
+        reportedOs = QLatin1String("apple-ios");
     }
 
     data.insert(NM_OPENCONNECT_KEY_PROTOCOL, protocol);
@@ -339,17 +346,17 @@ QVariantMap OpenconnectSettingWidget::setting() const
     }
 
     if (d->tokenUi.leTokenSecret->passwordOption() == PasswordField::StoreForAllUsers) {
-        data.insert(NM_OPENCONNECT_KEY_TOKEN_SECRET"-flags", QString::number(NetworkManager::Setting::None));
+        data.insert(NM_OPENCONNECT_KEY_TOKEN_SECRET "-flags", QString::number(NetworkManager::Setting::None));
     } else if (d->tokenUi.leTokenSecret->passwordOption() == PasswordField::StoreForUser) {
-        data.insert(NM_OPENCONNECT_KEY_TOKEN_SECRET"-flags", QString::number(NetworkManager::Setting::AgentOwned));
+        data.insert(NM_OPENCONNECT_KEY_TOKEN_SECRET "-flags", QString::number(NetworkManager::Setting::AgentOwned));
     } else {
-        data.insert(NM_OPENCONNECT_KEY_TOKEN_SECRET"-flags", QString::number(NetworkManager::Setting::NotSaved));
+        data.insert(NM_OPENCONNECT_KEY_TOKEN_SECRET "-flags", QString::number(NetworkManager::Setting::NotSaved));
     }
 
     /* These are different for every login session, and should not be stored */
-    data.insert(QLatin1String(NM_OPENCONNECT_KEY_COOKIE"-flags"), QString::number(NetworkManager::Setting::NotSaved));
-    data.insert(QLatin1String(NM_OPENCONNECT_KEY_GWCERT"-flags"), QString::number(NetworkManager::Setting::NotSaved));
-    data.insert(QLatin1String(NM_OPENCONNECT_KEY_GATEWAY"-flags"), QString::number(NetworkManager::Setting::NotSaved));
+    data.insert(QLatin1String(NM_OPENCONNECT_KEY_COOKIE "-flags"), QString::number(NetworkManager::Setting::NotSaved));
+    data.insert(QLatin1String(NM_OPENCONNECT_KEY_GWCERT "-flags"), QString::number(NetworkManager::Setting::NotSaved));
+    data.insert(QLatin1String(NM_OPENCONNECT_KEY_GATEWAY "-flags"), QString::number(NetworkManager::Setting::NotSaved));
 
     setting.setData(data);
     setting.setSecrets(secrets);

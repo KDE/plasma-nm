@@ -7,8 +7,8 @@
 #ifndef PLASMA_NM_CONNECTION_ICON_H
 #define PLASMA_NM_CONNECTION_ICON_H
 
-#include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/ActiveConnection>
+#include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessNetwork>
 #if WITH_MODEMMANAGER_SUPPORT
@@ -17,33 +17,36 @@
 
 class ConnectionIcon : public QObject
 {
-Q_PROPERTY(bool connecting READ connecting NOTIFY connectingChanged)
-Q_PROPERTY(QString connectionIcon READ connectionIcon NOTIFY connectionIconChanged)
-Q_PROPERTY(QString connectionTooltipIcon READ connectionTooltipIcon NOTIFY connectionTooltipIconChanged)
-Q_PROPERTY(bool needsPortal READ needsPortal NOTIFY needsPortalChanged)
+    Q_PROPERTY(bool connecting READ connecting NOTIFY connectingChanged)
+    Q_PROPERTY(QString connectionIcon READ connectionIcon NOTIFY connectionIconChanged)
+    Q_PROPERTY(QString connectionTooltipIcon READ connectionTooltipIcon NOTIFY connectionTooltipIconChanged)
+    Q_PROPERTY(bool needsPortal READ needsPortal NOTIFY needsPortalChanged)
 
-Q_OBJECT
+    Q_OBJECT
 public:
-    explicit ConnectionIcon(QObject* parent = nullptr);
+    explicit ConnectionIcon(QObject *parent = nullptr);
     ~ConnectionIcon() override;
 
     bool connecting() const;
     QString connectionIcon() const;
     QString connectionTooltipIcon() const;
 
-    bool needsPortal() const { return m_needsPortal; }
+    bool needsPortal() const
+    {
+        return m_needsPortal;
+    }
 
 private Q_SLOTS:
-    void activatingConnectionChanged(const QString & connection);
-    void activeConnectionAdded(const QString & activeConnection);
+    void activatingConnectionChanged(const QString &connection);
+    void activeConnectionAdded(const QString &activeConnection);
     void activeConnectionDestroyed();
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
     void carrierChanged(bool carrier);
     void connectivityChanged(NetworkManager::Connectivity connectivity);
-    void deviceAdded(const QString & device);
-    void deviceRemoved(const QString & device);
+    void deviceAdded(const QString &device);
+    void deviceRemoved(const QString &device);
     void networkingEnabledChanged(bool enabled);
-    void primaryConnectionChanged(const QString & connection);
+    void primaryConnectionChanged(const QString &connection);
 #if WITH_MODEMMANAGER_SUPPORT
     void modemNetworkRemoved();
     void modemSignalChanged(const ModemManager::SignalQualityPair &signalQuality);
@@ -57,15 +60,15 @@ private Q_SLOTS:
     void wwanEnabledChanged(bool enabled);
 Q_SIGNALS:
     void connectingChanged(bool connecting);
-    void connectionIconChanged(const QString & icon);
-    void connectionTooltipIconChanged(const QString & icon);
+    void connectionIconChanged(const QString &icon);
+    void connectionTooltipIconChanged(const QString &icon);
     void needsPortalChanged(bool needsPortal);
 
 private:
-    void addActiveConnection(const QString & activeConnection);
+    void addActiveConnection(const QString &activeConnection);
     void setConnecting(bool connecting);
-    void setConnectionIcon(const QString & icon);
-    void setConnectionTooltipIcon(const QString & icon);
+    void setConnectionIcon(const QString &icon);
+    void setConnectionTooltipIcon(const QString &icon);
     void setVpn(bool vpn);
     void setLimited(bool limited);
     uint m_signal;
@@ -81,10 +84,10 @@ private:
     void setDisconnectedIcon();
     void setIcons();
     void setStates();
-    void setWirelessIcon(const NetworkManager::Device::Ptr & device, const QString & ssid);
+    void setWirelessIcon(const NetworkManager::Device::Ptr &device, const QString &ssid);
 #if WITH_MODEMMANAGER_SUPPORT
     ModemManager::Modem::Ptr m_modemNetwork;
-    void setModemIcon(const NetworkManager::Device::Ptr & device);
+    void setModemIcon(const NetworkManager::Device::Ptr &device);
 #endif
 };
 

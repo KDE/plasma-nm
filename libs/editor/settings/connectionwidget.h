@@ -18,11 +18,12 @@ class ConnectionWidget;
 
 class ConnectionWidget : public QWidget
 {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr &settings = NetworkManager::ConnectionSettings::Ptr(),
-                              QWidget* parent = nullptr, Qt::WindowFlags f = {});
+                              QWidget *parent = nullptr,
+                              Qt::WindowFlags f = {});
     ~ConnectionWidget() override;
 
     void loadConfig(const NetworkManager::ConnectionSettings::Ptr &settings);
@@ -43,7 +44,7 @@ private:
     QStringList firewallZones() const;
 
     void populateVpnConnections();
-    Ui::ConnectionWidget * m_widget;
+    Ui::ConnectionWidget *m_widget;
     NetworkManager::ConnectionSettings m_tmpSetting;
     NetworkManager::ConnectionSettings::ConnectionType m_type;
     QString m_masterUuid;

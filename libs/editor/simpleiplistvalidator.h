@@ -7,18 +7,17 @@
 #ifndef SIMPLEIPLISTVALIDATOR_H
 #define SIMPLEIPLISTVALIDATOR_H
 
-#include <QValidator>
 #include "simpleipv4addressvalidator.h"
 #include "simpleipv6addressvalidator.h"
+#include <QValidator>
 
 class Q_DECL_EXPORT SimpleIpListValidator : public QValidator
 {
 public:
-    enum AddressType {Ipv4, Ipv6, Both};
-    enum AddressStyle {Base, WithCidr, WithPort};
+    enum AddressType { Ipv4, Ipv6, Both };
+    enum AddressStyle { Base, WithCidr, WithPort };
 
-    explicit SimpleIpListValidator(AddressStyle style = AddressStyle::Base,
-                                   AddressType allow = AddressType::Both, QObject *parent = nullptr);
+    explicit SimpleIpListValidator(AddressStyle style = AddressStyle::Base, AddressType allow = AddressType::Both, QObject *parent = nullptr);
     ~SimpleIpListValidator() override;
 
     State validate(QString &, int &) const override;

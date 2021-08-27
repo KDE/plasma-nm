@@ -6,8 +6,8 @@
 */
 
 #include "vpncauth.h"
-#include "ui_vpncauth.h"
 #include "nm-vpnc-service.h"
+#include "ui_vpncauth.h"
 
 #include <QString>
 
@@ -18,7 +18,7 @@ public:
     NetworkManager::VpnSetting::Ptr setting;
 };
 
-VpncAuthDialog::VpncAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
+VpncAuthDialog::VpncAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
     : SettingWidget(setting, hints, parent)
     , d_ptr(new VpncAuthDialogPrivate)
 {
@@ -54,7 +54,7 @@ void VpncAuthDialog::readSecrets()
     }
 
     bool haveUserPassword = true;
-    if (!((NetworkManager::Setting::SecretFlags)data.value(NM_VPNC_KEY_XAUTH_PASSWORD"-flags").toInt()).testFlag(NetworkManager::Setting::NotRequired)) {
+    if (!((NetworkManager::Setting::SecretFlags)data.value(NM_VPNC_KEY_XAUTH_PASSWORD "-flags").toInt()).testFlag(NetworkManager::Setting::NotRequired)) {
         d->ui.leUserPassword->setText(secrets.value(QLatin1String(NM_VPNC_KEY_XAUTH_PASSWORD)));
     } else {
         d->ui.userNameLabel->setVisible(false);
@@ -64,7 +64,7 @@ void VpncAuthDialog::readSecrets()
         haveUserPassword = false;
     }
 
-    if (!((NetworkManager::Setting::SecretFlags)data.value(NM_VPNC_KEY_SECRET"-flags").toInt()).testFlag(NetworkManager::Setting::NotRequired)) {
+    if (!((NetworkManager::Setting::SecretFlags)data.value(NM_VPNC_KEY_SECRET "-flags").toInt()).testFlag(NetworkManager::Setting::NotRequired)) {
         d->ui.leGroupPassword->setText(secrets.value(QLatin1String(NM_VPNC_KEY_SECRET)));
     } else {
         d->ui.groupNameLabel->setVisible(false);

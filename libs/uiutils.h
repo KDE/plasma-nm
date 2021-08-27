@@ -8,17 +8,16 @@
 #ifndef PLASMA_NM_UIUTILS_H
 #define PLASMA_NM_UIUTILS_H
 
-
+#include <NetworkManagerQt/AccessPoint>
+#include <NetworkManagerQt/BluetoothDevice>
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/ModemDevice>
-#include <NetworkManagerQt/WirelessDevice>
-#include <NetworkManagerQt/WirelessSetting>
-#include <NetworkManagerQt/AccessPoint>
 #include <NetworkManagerQt/Utils>
-#include <NetworkManagerQt/BluetoothDevice>
-#include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/VpnSetting>
+#include <NetworkManagerQt/WiredDevice>
+#include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/WirelessSetting>
 
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManager/ModemManager.h>
@@ -86,8 +85,7 @@ public:
 
     static QString vpnConnectionStateToString(NetworkManager::VpnConnection::State state);
 
-    static QString iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type,
-                                                         QString &title);
+    static QString iconAndTitleForConnectionSettingsType(NetworkManager::ConnectionSettings::ConnectionType type, QString &title);
     /**
      * @return a human-readable description of operation mode.
      * @param mode the operation mode
@@ -120,7 +118,7 @@ public:
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
     static QString labelFromWirelessSecurity(NetworkManager::WirelessSecurityType type);
 
-    static QString formatDateRelative(const QDateTime & lastUsed);
-    static QString formatLastUsedDateRelative(const QDateTime & lastUsed);
+    static QString formatDateRelative(const QDateTime &lastUsed);
+    static QString formatLastUsedDateRelative(const QDateTime &lastUsed);
 };
 #endif // UIUTILS_H

@@ -18,10 +18,10 @@ class VlanWidget;
 
 class Q_DECL_EXPORT VlanWidget : public SettingWidget
 {
-Q_OBJECT
+    Q_OBJECT
 
 public:
-    explicit VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent = nullptr, Qt::WindowFlags f = {});
+    explicit VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~VlanWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
@@ -32,7 +32,7 @@ public:
 
 private:
     void fillConnections();
-    Ui::VlanWidget * m_ui;
+    Ui::VlanWidget *m_ui;
 };
 
 #endif // PLASMA_NM_VLAN_WIDGET_H

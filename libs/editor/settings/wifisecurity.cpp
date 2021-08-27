@@ -9,11 +9,13 @@
 
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/Manager>
-#include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/Utils>
+#include <NetworkManagerQt/WirelessDevice>
 
-WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const NetworkManager::Security8021xSetting::Ptr &setting8021x,
-                           QWidget *parent, Qt::WindowFlags f)
+WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting,
+                           const NetworkManager::Security8021xSetting::Ptr &setting8021x,
+                           QWidget *parent,
+                           Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)
     , m_ui(new Ui::WifiSecurity)
 {
@@ -25,8 +27,8 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting, const Ne
     m_ui->psk->setPasswordOptionsEnabled(true);
     m_ui->wepKey->setPasswordOptionsEnabled(true);
 
-    m_8021xWidget = new Security8021x(setting8021x, true, this);  // Dynamic WEP
-    m_WPA2Widget = new Security8021x(setting8021x, true, this);   // WPA(2) Enterprise
+    m_8021xWidget = new Security8021x(setting8021x, true, this); // Dynamic WEP
+    m_WPA2Widget = new Security8021x(setting8021x, true, this); // WPA(2) Enterprise
     m_ui->stackedWidget->insertWidget(3, m_8021xWidget);
     m_ui->stackedWidget->insertWidget(5, m_WPA2Widget);
 
@@ -85,17 +87,17 @@ bool WifiSecurity::isValid() const
     const int securityIndex = m_ui->securityCombo->currentIndex();
 
     if (securityIndex == WepHex) { // WEP Hex
-        return NetworkManager::wepKeyIsValid(m_ui->wepKey->text(), NetworkManager::WirelessSecuritySetting::Hex) ||
-               m_ui->wepKey->passwordOption() == PasswordField::AlwaysAsk;
+        return NetworkManager::wepKeyIsValid(m_ui->wepKey->text(), NetworkManager::WirelessSecuritySetting::Hex)
+            || m_ui->wepKey->passwordOption() == PasswordField::AlwaysAsk;
     } else if (securityIndex == WepPassphrase) { // WEP Passphrase
-        return NetworkManager::wepKeyIsValid(m_ui->wepKey->text(), NetworkManager::WirelessSecuritySetting::Passphrase) ||
-               m_ui->wepKey->passwordOption() == PasswordField::AlwaysAsk;;
-    }else if (securityIndex == Leap) { // LEAP
-        return !m_ui->leapUsername->text().isEmpty() &&
-               (!m_ui->leapPassword->text().isEmpty() || m_ui->leapPassword->passwordOption() == PasswordField::AlwaysAsk);
+        return NetworkManager::wepKeyIsValid(m_ui->wepKey->text(), NetworkManager::WirelessSecuritySetting::Passphrase)
+            || m_ui->wepKey->passwordOption() == PasswordField::AlwaysAsk;
+        ;
+    } else if (securityIndex == Leap) { // LEAP
+        return !m_ui->leapUsername->text().isEmpty()
+            && (!m_ui->leapPassword->text().isEmpty() || m_ui->leapPassword->passwordOption() == PasswordField::AlwaysAsk);
     } else if (securityIndex == WpaPsk) { // WPA
-        return NetworkManager::wpaPskIsValid(m_ui->psk->text()) ||
-               m_ui->psk->passwordOption() == PasswordField::AlwaysAsk;
+        return NetworkManager::wpaPskIsValid(m_ui->psk->text()) || m_ui->psk->passwordOption() == PasswordField::AlwaysAsk;
     } else if (securityIndex == DynamicWep) {
         return m_8021xWidget->isValid();
     } else if (securityIndex == WpaEap) {
@@ -117,9 +119,9 @@ void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
     if (keyMgmt == NetworkManager::WirelessSecuritySetting::Unknown) {
         m_ui->securityCombo->setCurrentIndex(None); // None
     } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::Wep) {
-        if (wifiSecurity->wepKeyType() == NetworkManager::WirelessSecuritySetting::Hex ||
-            wifiSecurity->wepKeyType() == NetworkManager::WirelessSecuritySetting::NotSpecified) {
-            m_ui->securityCombo->setCurrentIndex(WepHex);  // WEP Hex
+        if (wifiSecurity->wepKeyType() == NetworkManager::WirelessSecuritySetting::Hex
+            || wifiSecurity->wepKeyType() == NetworkManager::WirelessSecuritySetting::NotSpecified) {
+            m_ui->securityCombo->setCurrentIndex(WepHex); // WEP Hex
         } else {
             m_ui->securityCombo->setCurrentIndex(WepPassphrase);
         }
@@ -139,9 +141,8 @@ void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
         } else {
             m_ui->wepKey->setPasswordOption(PasswordField::AlwaysAsk);
         }
-    } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x
-               && authAlg == NetworkManager::WirelessSecuritySetting::Leap) {
-        m_ui->securityCombo->setCurrentIndex(Leap);  // LEAP
+    } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x && authAlg == NetworkManager::WirelessSecuritySetting::Leap) {
+        m_ui->securityCombo->setCurrentIndex(Leap); // LEAP
         m_ui->leapUsername->setText(wifiSecurity->leapUsername());
         m_ui->leapPassword->setText(wifiSecurity->leapPassword());
 
@@ -153,11 +154,11 @@ void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
             m_ui->leapPassword->setPasswordOption(PasswordField::AlwaysAsk);
         }
     } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x) {
-        m_ui->securityCombo->setCurrentIndex(DynamicWep);  // Dynamic WEP
+        m_ui->securityCombo->setCurrentIndex(DynamicWep); // Dynamic WEP
         // done in the widget
 
     } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::WpaPsk) {
-        m_ui->securityCombo->setCurrentIndex(WpaPsk);  // WPA
+        m_ui->securityCombo->setCurrentIndex(WpaPsk); // WPA
 
         if (wifiSecurity->pskFlags().testFlag(NetworkManager::Setting::None)) {
             m_ui->psk->setPasswordOption(PasswordField::StoreForAllUsers);
@@ -167,10 +168,10 @@ void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
             m_ui->psk->setPasswordOption(PasswordField::AlwaysAsk);
         }
     } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEap) {
-        m_ui->securityCombo->setCurrentIndex(WpaEap);  // WPA2 Enterprise
+        m_ui->securityCombo->setCurrentIndex(WpaEap); // WPA2 Enterprise
         // done in the widget
     } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::SAE) {
-        m_ui->securityCombo->setCurrentIndex(SAE);  // WPA3
+        m_ui->securityCombo->setCurrentIndex(SAE); // WPA3
 
         if (wifiSecurity->pskFlags().testFlag(NetworkManager::Setting::None)) {
             m_ui->psk->setPasswordOption(PasswordField::StoreForAllUsers);
@@ -181,8 +182,7 @@ void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
         }
     }
 
-    if (keyMgmt != NetworkManager::WirelessSecuritySetting::Ieee8021x &&
-        keyMgmt != NetworkManager::WirelessSecuritySetting::WpaEap) {
+    if (keyMgmt != NetworkManager::WirelessSecuritySetting::Ieee8021x && keyMgmt != NetworkManager::WirelessSecuritySetting::WpaEap) {
         loadSecrets(setting);
     }
 }
@@ -192,8 +192,8 @@ void WifiSecurity::loadSecrets(const NetworkManager::Setting::Ptr &setting)
     const NetworkManager::WirelessSecuritySetting::KeyMgmt keyMgmt = m_wifiSecurity->keyMgmt();
     const NetworkManager::WirelessSecuritySetting::AuthAlg authAlg = m_wifiSecurity->authAlg();
 
-    if ((keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x && authAlg != NetworkManager::WirelessSecuritySetting::Leap) ||
-        keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEap) {
+    if ((keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x && authAlg != NetworkManager::WirelessSecuritySetting::Leap)
+        || keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEap) {
         NetworkManager::Security8021xSetting::Ptr security8021xSetting = setting.staticCast<NetworkManager::Security8021xSetting>();
         if (security8021xSetting) {
             if (keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x) {
@@ -209,8 +209,7 @@ void WifiSecurity::loadSecrets(const NetworkManager::Setting::Ptr &setting)
                 m_wifiSecurity->secretsFromMap(wifiSecurity->secretsToMap());
                 const int keyIndex = static_cast<int>(m_wifiSecurity->wepTxKeyindex());
                 setWepKey(keyIndex);
-            } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x
-                    && authAlg == NetworkManager::WirelessSecuritySetting::Leap) {
+            } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x && authAlg == NetworkManager::WirelessSecuritySetting::Leap) {
                 const QString leapPassword = wifiSecurity->leapPassword();
                 if (!leapPassword.isEmpty()) {
                     m_ui->leapPassword->setText(leapPassword);
@@ -232,7 +231,7 @@ QVariantMap WifiSecurity::setting() const
     const int securityIndex = m_ui->securityCombo->currentIndex();
     if (securityIndex == None) {
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::Unknown);
-    } else if (securityIndex == WepHex || securityIndex == WepPassphrase)  { // WEP
+    } else if (securityIndex == WepHex || securityIndex == WepPassphrase) { // WEP
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
         if (securityIndex == WepHex) {
             wifiSecurity.setWepKeyType(NetworkManager::WirelessSecuritySetting::Hex);
@@ -278,7 +277,7 @@ QVariantMap WifiSecurity::setting() const
         } else {
             wifiSecurity.setLeapPasswordFlags(NetworkManager::Setting::NotSaved);
         }
-    } else if (securityIndex == DynamicWep) {  // Dynamic WEP
+    } else if (securityIndex == DynamicWep) { // Dynamic WEP
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::Ieee8021x);
     } else if (securityIndex == WpaPsk) { // WPA
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
@@ -291,7 +290,7 @@ QVariantMap WifiSecurity::setting() const
         } else {
             wifiSecurity.setPskFlags(NetworkManager::Setting::NotSaved);
         }
-    } else if (securityIndex == WpaEap) {  // WPA2 Enterprise
+    } else if (securityIndex == WpaEap) { // WPA2 Enterprise
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaEap);
     } else if (securityIndex == SAE) { // WPA3 Personal
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::SAE);
@@ -329,8 +328,13 @@ void WifiSecurity::onSsidChanged(const QString &ssid)
                 for (const NetworkManager::WirelessNetwork::Ptr wifiNetwork : wifiDevice->networks()) {
                     if (wifiNetwork && wifiNetwork->ssid() == ssid) {
                         NetworkManager::AccessPoint::Ptr ap = wifiNetwork->referenceAccessPoint();
-                        NetworkManager::WirelessSecurityType securityType = NetworkManager::findBestWirelessSecurity(wifiDevice->wirelessCapabilities(), true, (wifiDevice->mode() == NetworkManager::WirelessDevice::Adhoc),
-                                                                            ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
+                        NetworkManager::WirelessSecurityType securityType =
+                            NetworkManager::findBestWirelessSecurity(wifiDevice->wirelessCapabilities(),
+                                                                     true,
+                                                                     (wifiDevice->mode() == NetworkManager::WirelessDevice::Adhoc),
+                                                                     ap->capabilities(),
+                                                                     ap->wpaFlags(),
+                                                                     ap->rsnFlags());
                         switch (securityType) {
                         case NetworkManager::WirelessSecurityType::StaticWep:
                             m_ui->securityCombo->setCurrentIndex(WepHex);

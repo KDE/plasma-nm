@@ -3,62 +3,62 @@
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
-#include "debug.h"
 #include "wireguardinterfacewidget.h"
-#include "wireguardtabwidget.h"
-#include "uiutils.h"
-#include "simpleipv4addressvalidator.h"
+#include "debug.h"
 #include "simpleiplistvalidator.h"
+#include "simpleipv4addressvalidator.h"
+#include "uiutils.h"
 #include "wireguardkeyvalidator.h"
+#include "wireguardtabwidget.h"
 
 #include <QFile>
 #include <QFileInfo>
 #include <QPointer>
 #include <QStandardItemModel>
 
-#include <NetworkManagerQt/Utils>
-#include <NetworkManagerQt/Ipv4Setting>
-#include <NetworkManagerQt/Ipv6Setting>
 #include <KColorScheme>
 #include <KConfig>
 #include <KConfigGroup>
+#include <NetworkManagerQt/Ipv4Setting>
+#include <NetworkManagerQt/Ipv6Setting>
+#include <NetworkManagerQt/Utils>
 
 // Tags used in a WireGuard .conf file - Used for importing
-#define PNM_WG_CONF_TAG_INTERFACE            "[Interface]"
-#define PNM_WG_CONF_TAG_ADDRESS              "Address"
-#define PNM_WG_CONF_TAG_LISTEN_PORT          "ListenPort"
-#define PNM_WG_CONF_TAG_MTU                  "MTU"
-#define PNM_WG_CONF_TAG_DNS                  "DNS"
-#define PNM_WG_CONF_TAG_FWMARK               "FwMark"
-#define PNM_WG_CONF_TAG_PRIVATE_KEY          "PrivateKey"
-#define PNM_WG_CONF_TAG_PEER                 "[Peer]"
-#define PNM_WG_CONF_TAG_PUBLIC_KEY           "PublicKey"
-#define PNM_WG_CONF_TAG_PRESHARED_KEY        "PresharedKey"
-#define PNM_WG_CONF_TAG_ALLOWED_IPS          "AllowedIPs"
-#define PNM_WG_CONF_TAG_ENDPOINT             "Endpoint"
+#define PNM_WG_CONF_TAG_INTERFACE "[Interface]"
+#define PNM_WG_CONF_TAG_ADDRESS "Address"
+#define PNM_WG_CONF_TAG_LISTEN_PORT "ListenPort"
+#define PNM_WG_CONF_TAG_MTU "MTU"
+#define PNM_WG_CONF_TAG_DNS "DNS"
+#define PNM_WG_CONF_TAG_FWMARK "FwMark"
+#define PNM_WG_CONF_TAG_PRIVATE_KEY "PrivateKey"
+#define PNM_WG_CONF_TAG_PEER "[Peer]"
+#define PNM_WG_CONF_TAG_PUBLIC_KEY "PublicKey"
+#define PNM_WG_CONF_TAG_PRESHARED_KEY "PresharedKey"
+#define PNM_WG_CONF_TAG_ALLOWED_IPS "AllowedIPs"
+#define PNM_WG_CONF_TAG_ENDPOINT "Endpoint"
 #define PNM_WG_CONF_TAG_PERSISTENT_KEEPALIVE "PersistentKeepalive"
-#define PNM_WG_CONF_TAG_TABLE                "Table"
-#define PNM_WG_CONF_TAG_PRE_UP               "PreUp"
-#define PNM_WG_CONF_TAG_POST_UP              "PostUp"
-#define PNM_WG_CONF_TAG_PRE_DOWN             "PreDown"
-#define PNM_WG_CONF_TAG_POST_DOWN            "PostDown"
+#define PNM_WG_CONF_TAG_TABLE "Table"
+#define PNM_WG_CONF_TAG_PRE_UP "PreUp"
+#define PNM_WG_CONF_TAG_POST_UP "PostUp"
+#define PNM_WG_CONF_TAG_PRE_DOWN "PreDown"
+#define PNM_WG_CONF_TAG_POST_DOWN "PostDown"
 
-#define PNM_WG_KEY_PEERS             "peers"
-#define PNM_WG_KEY_MTU               "mtu"
-#define PNM_WG_KEY_PEER_ROUTES       "peer-routes"
-#define PNM_WG_PEER_KEY_ALLOWED_IPS          "allowed-ips"
-#define PNM_WG_PEER_KEY_ENDPOINT             "endpoint"
+#define PNM_WG_KEY_PEERS "peers"
+#define PNM_WG_KEY_MTU "mtu"
+#define PNM_WG_KEY_PEER_ROUTES "peer-routes"
+#define PNM_WG_PEER_KEY_ALLOWED_IPS "allowed-ips"
+#define PNM_WG_PEER_KEY_ENDPOINT "endpoint"
 #define PNM_WG_PEER_KEY_PERSISTENT_KEEPALIVE "persistent-keepalive"
-#define PNM_WG_PEER_KEY_PRESHARED_KEY        "preshared-key"
-#define PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS  "preshared-key-flags"
-#define PNM_WG_PEER_KEY_PUBLIC_KEY           "public-key"
+#define PNM_WG_PEER_KEY_PRESHARED_KEY "preshared-key"
+#define PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS "preshared-key-flags"
+#define PNM_WG_PEER_KEY_PUBLIC_KEY "public-key"
 
 // Keys for the NetworkManager configuration
 #define PNM_SETTING_WIREGUARD_SETTING_NAME "wireguard"
 
-#define PNM_WG_KEY_FWMARK            "fwmark"
-#define PNM_WG_KEY_LISTEN_PORT       "listen-port"
-#define PNM_WG_KEY_PRIVATE_KEY       "private-key"
+#define PNM_WG_KEY_FWMARK "fwmark"
+#define PNM_WG_KEY_LISTEN_PORT "listen-port"
+#define PNM_WG_KEY_PRIVATE_KEY "private-key"
 #define PNM_WG_KEY_PRIVATE_KEY_FLAGS "private-key-flags"
 
 class WireGuardInterfaceWidget::Private
@@ -108,11 +108,9 @@ WireGuardInterfaceWidget::WireGuardInterfaceWidget(const NetworkManager::Setting
     d->config = KSharedConfig::openConfig();
     d->warningPalette = KColorScheme::createApplicationPalette(d->config);
     d->normalPalette = KColorScheme::createApplicationPalette(d->config);
-    KColorScheme::adjustBackground(d->warningPalette, KColorScheme::NegativeBackground, QPalette::Base,
-                                   KColorScheme::ColorSet::View, d->config);
+    KColorScheme::adjustBackground(d->warningPalette, KColorScheme::NegativeBackground, QPalette::Base, KColorScheme::ColorSet::View, d->config);
 
-    KColorScheme::adjustBackground(d->normalPalette, KColorScheme::NormalBackground, QPalette::Base,
-                                   KColorScheme::ColorSet::View, d->config);
+    KColorScheme::adjustBackground(d->normalPalette, KColorScheme::NormalBackground, QPalette::Base, KColorScheme::ColorSet::View, d->config);
 
     connect(d->ui.privateKeyLineEdit, &PasswordField::textChanged, this, &WireGuardInterfaceWidget::checkPrivateKeyValid);
     connect(d->ui.privateKeyLineEdit, &PasswordField::passwordOptionChanged, this, &WireGuardInterfaceWidget::checkPrivateKeyValid);
@@ -189,17 +187,17 @@ void WireGuardInterfaceWidget::loadConfig(const NetworkManager::Setting::Ptr &se
 
     NetworkManager::Setting::SecretFlags type = wireGuardSetting->privateKeyFlags();
     switch (type) {
-      case NetworkManager::Setting::AgentOwned:
+    case NetworkManager::Setting::AgentOwned:
         d->ui.privateKeyLineEdit->setPasswordOption(PasswordField::StoreForUser);
         break;
-      case NetworkManager::Setting::None:
+    case NetworkManager::Setting::None:
         d->ui.privateKeyLineEdit->setPasswordOption(PasswordField::StoreForAllUsers);
         break;
-      // Not saved is not a valid option for the private key so set it to StoreForUser instead
-      case NetworkManager::Setting::NotSaved:
+    // Not saved is not a valid option for the private key so set it to StoreForUser instead
+    case NetworkManager::Setting::NotSaved:
         d->ui.privateKeyLineEdit->setPasswordOption(PasswordField::StoreForUser);
         break;
-      case NetworkManager::Setting::NotRequired:
+    case NetworkManager::Setting::NotRequired:
         d->ui.privateKeyLineEdit->setPasswordOption(PasswordField::NotRequired);
         break;
     }
@@ -242,10 +240,8 @@ void WireGuardInterfaceWidget::loadSecrets(const NetworkManager::Setting::Ptr &s
     // possible.
     d->peersValid = true;
     for (QList<QVariantMap>::iterator j = d->peers.begin(); j != d->peers.end(); j++) {
-        if ((*j).contains(PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS)
-            && (*j)[PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS] != NetworkManager::Setting::NotRequired
-            && (!(*j).contains(PNM_WG_PEER_KEY_PRESHARED_KEY)
-                || (*j)[PNM_WG_PEER_KEY_PRESHARED_KEY].toString().isEmpty())) {
+        if ((*j).contains(PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS) && (*j)[PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS] != NetworkManager::Setting::NotRequired
+            && (!(*j).contains(PNM_WG_PEER_KEY_PRESHARED_KEY) || (*j)[PNM_WG_PEER_KEY_PRESHARED_KEY].toString().isEmpty())) {
             d->peersValid = false;
             break;
         }
@@ -276,17 +272,17 @@ QVariantMap WireGuardInterfaceWidget::setting() const
 
     PasswordField::PasswordOption option = d->ui.privateKeyLineEdit->passwordOption();
     switch (option) {
-      case PasswordField::StoreForUser:
+    case PasswordField::StoreForUser:
         wgSetting.setPrivateKeyFlags(NetworkManager::Setting::AgentOwned);
         break;
-      case PasswordField::StoreForAllUsers:
+    case PasswordField::StoreForAllUsers:
         wgSetting.setPrivateKeyFlags(NetworkManager::Setting::None);
         break;
-      // Always Ask is not a valid option for the private key so set it to AgentOwned instead
-      case PasswordField::AlwaysAsk:
+    // Always Ask is not a valid option for the private key so set it to AgentOwned instead
+    case PasswordField::AlwaysAsk:
         wgSetting.setPrivateKeyFlags(NetworkManager::Setting::AgentOwned);
         break;
-      case PasswordField::NotRequired:
+    case PasswordField::NotRequired:
         wgSetting.setPrivateKeyFlags(NetworkManager::Setting::NotRequired);
         break;
     }
@@ -296,10 +292,7 @@ QVariantMap WireGuardInterfaceWidget::setting() const
 
 bool WireGuardInterfaceWidget::isValid() const
 {
-    return d->privateKeyValid
-        && d->fwmarkValid
-        && d->listenPortValid
-        && d->peersValid;
+    return d->privateKeyValid && d->fwmarkValid && d->listenPortValid && d->peersValid;
 }
 
 void WireGuardInterfaceWidget::checkPrivateKeyValid()
@@ -317,8 +310,7 @@ void WireGuardInterfaceWidget::checkFwmarkValid()
     int pos = 0;
     QLineEdit *widget = d->ui.fwmarkLineEdit;
     QString value = widget->displayText();
-    d->fwmarkValid = QValidator::Acceptable == widget->validator()->validate(value, pos)
-                     || value.isEmpty();
+    d->fwmarkValid = QValidator::Acceptable == widget->validator()->validate(value, pos) || value.isEmpty();
     setBackground(widget, d->fwmarkValid);
     slotWidgetChanged();
 }
@@ -328,8 +320,7 @@ void WireGuardInterfaceWidget::checkListenPortValid()
     int pos = 0;
     QLineEdit *widget = d->ui.listenPortLineEdit;
     QString value = widget->displayText();
-    d->listenPortValid = QValidator::Acceptable == d->portValidator->validate(value, pos)
-                     || value.isEmpty();
+    d->listenPortValid = QValidator::Acceptable == d->portValidator->validate(value, pos) || value.isEmpty();
     setBackground(widget, d->listenPortValid);
     slotWidgetChanged();
 }
@@ -351,23 +342,21 @@ void WireGuardInterfaceWidget::showPeers()
 {
     QPointer<WireGuardTabWidget> peers = new WireGuardTabWidget(d->peers, this);
 
-    connect(peers.data(), &WireGuardTabWidget::accepted,
-            [peers, this] () {
-                NMVariantMapList peersData = peers->setting();
-                if (!peersData.isEmpty()) {
-                    d->peers = peersData;
-                    // The peers widget won't allow "OK" to be hit
-                    // unless all the peers are valid so no need to check
-                    d->peersValid = true;
-                    slotWidgetChanged();
-                }
-            });
-    connect(peers.data(), &WireGuardTabWidget::finished,
-            [peers] () {
-                if (peers) {
-                    peers->deleteLater();
-                }
-            });
+    connect(peers.data(), &WireGuardTabWidget::accepted, [peers, this]() {
+        NMVariantMapList peersData = peers->setting();
+        if (!peersData.isEmpty()) {
+            d->peers = peersData;
+            // The peers widget won't allow "OK" to be hit
+            // unless all the peers are valid so no need to check
+            d->peersValid = true;
+            slotWidgetChanged();
+        }
+    });
+    connect(peers.data(), &WireGuardTabWidget::finished, [peers]() {
+        if (peers) {
+            peers->deleteLater();
+        }
+    });
     peers->setModal(true);
     peers->show();
 }
@@ -380,7 +369,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
     QList<NetworkManager::IpAddress> ipv4AddressList;
     QList<NetworkManager::IpAddress> ipv6AddressList;
 
-    if (!impFile.open(QFile::ReadOnly|QFile::Text)) {
+    if (!impFile.open(QFile::ReadOnly | QFile::Text)) {
         return result;
     }
 
@@ -408,7 +397,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
     int pos = 0;
 
     QTextStream in(&impFile);
-    enum {IDLE, INTERFACE_SECTION, PEER_SECTION} currentState = IDLE;
+    enum { IDLE, INTERFACE_SECTION, PEER_SECTION } currentState = IDLE;
 
     ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Disabled);
     ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Ignored);
@@ -521,7 +510,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
                     }
                 }
 
-                // If there are any addresses put them on the correct tab and set the "method" to 
+                // If there are any addresses put them on the correct tab and set the "method" to
                 // "Automatic (Only addresses)" by setting "ignore-auto-dns=true"
                 if (!ipv4DnsList.isEmpty()) {
                     if (ipv4Setting.method() == NetworkManager::Ipv4Setting::Disabled)
@@ -549,10 +538,10 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
                     val = keyValue[1].toUInt();
                 wgSetting.setFwmark(val);
             } else if (key == PNM_WG_CONF_TAG_TABLE //
-                     || key == PNM_WG_CONF_TAG_PRE_UP //
-                     || key == PNM_WG_CONF_TAG_POST_UP //
-                     || key == PNM_WG_CONF_TAG_PRE_DOWN //
-                     || key == PNM_WG_CONF_TAG_POST_DOWN) {
+                       || key == PNM_WG_CONF_TAG_PRE_UP //
+                       || key == PNM_WG_CONF_TAG_POST_UP //
+                       || key == PNM_WG_CONF_TAG_PRE_DOWN //
+                       || key == PNM_WG_CONF_TAG_POST_DOWN) {
                 // plasma-nm does not handle these items
             } else {
                 // We got a wrong field in the Interface section so it
@@ -577,10 +566,9 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
             } else if (key == PNM_WG_CONF_TAG_ALLOWED_IPS) {
                 SimpleIpListValidator validator(SimpleIpListValidator::WithCidr, SimpleIpListValidator::Both);
                 QString val = keyValue[1].trimmed();
-                if (QValidator::Acceptable == validator.validate(val, pos))
-                {
+                if (QValidator::Acceptable == validator.validate(val, pos)) {
                     QStringList valList = val.split(',');
-                    for (QString& str : valList)
+                    for (QString &str : valList)
                         str = str.trimmed();
                     currentPeer->insert(PNM_WG_PEER_KEY_ALLOWED_IPS, valList);
                     haveAllowedIps = true;

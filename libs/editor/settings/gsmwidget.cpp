@@ -151,8 +151,7 @@ bool GsmWidget::isValid() const
         passwordUserValid = !m_ui->username->text().isEmpty();
     }
 
-    if (m_ui->pin->passwordOption() == PasswordField::StoreForUser ||
-        m_ui->pin->passwordOption() == PasswordField::StoreForAllUsers) {
+    if (m_ui->pin->passwordOption() == PasswordField::StoreForUser || m_ui->pin->passwordOption() == PasswordField::StoreForAllUsers) {
         pinValid = !m_ui->pin->text().isEmpty();
     }
 

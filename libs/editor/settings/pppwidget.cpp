@@ -9,9 +9,9 @@
 
 #include <NetworkManagerQt/PppSetting>
 
-PPPWidget::PPPWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_ui(new Ui::PPPWidget)
+PPPWidget::PPPWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_ui(new Ui::PPPWidget)
 {
     m_ui->setupUi(this);
 

@@ -34,7 +34,7 @@ private Q_SLOTS:
     void passwordTypeChanged(int index);
 
 private:
-    SshSettingWidgetPrivate * const d_ptr;
+    SshSettingWidgetPrivate *const d_ptr;
     void fillOnePasswordCombo(PasswordField *, NetworkManager::Setting::SecretFlags);
     void handleOnePasswordType(const PasswordField *, const QString &, NMStringMap &) const;
 };

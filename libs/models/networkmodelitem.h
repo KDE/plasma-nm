@@ -17,9 +17,8 @@
 
 class Q_DECL_EXPORT NetworkModelItem : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-
     enum ItemType { UnavailableConnection, AvailableConnection, AvailableAccessPoint };
 
     explicit NetworkModelItem(QObject *parent = nullptr);
@@ -49,7 +48,10 @@ public:
     bool duplicate() const;
 
     void setIcon(const QString &icon);
-    QString icon() const { return m_icon; }
+    QString icon() const
+    {
+        return m_icon;
+    }
 
     ItemType itemType() const;
 
@@ -103,8 +105,14 @@ public:
 
     bool operator==(const NetworkModelItem *item) const;
 
-    QVector<int> changedRoles() const { return m_changedRoles; }
-    void clearChangedRoles() { m_changedRoles.clear(); }
+    QVector<int> changedRoles() const
+    {
+        return m_changedRoles;
+    }
+    void clearChangedRoles()
+    {
+        m_changedRoles.clear();
+    }
 
 public Q_SLOTS:
     void invalidateDetails();

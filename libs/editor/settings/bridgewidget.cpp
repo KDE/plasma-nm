@@ -5,33 +5,31 @@
 */
 
 #include "bridgewidget.h"
-#include "ui_bridge.h"
 #include "connectioneditordialog.h"
 #include "debug.h"
+#include "ui_bridge.h"
 
 #include <QDBusPendingReply>
 
-#include <NetworkManagerQt/GenericTypes>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/GenericTypes>
+#include <NetworkManagerQt/Settings>
 
 #include <KLocalizedString>
 #include <KMessageBox>
 
-BridgeWidget::BridgeWidget(const QString & masterUuid, const QString &masterId,
-                           const NetworkManager::Setting::Ptr &setting,
-                           QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_uuid(masterUuid),
-    m_id(masterId),
-    m_ui(new Ui::BridgeWidget)
+BridgeWidget::BridgeWidget(const QString &masterUuid, const QString &masterId, const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_uuid(masterUuid)
+    , m_id(masterId)
+    , m_ui(new Ui::BridgeWidget)
 {
     m_ui->setupUi(this);
 
     // Action buttons and menu
     m_menu = new QMenu(this);
-    QAction * action = new QAction(i18n("Ethernet"), this);
+    QAction *action = new QAction(i18n("Ethernet"), this);
     action->setData(NetworkManager::ConnectionSettings::Wired);
     m_menu->addAction(action);
     action = new QAction(i18n("VLAN"), this);
@@ -110,27 +108,26 @@ void BridgeWidget::addBridge(QAction *action)
     qCDebug(PLASMA_NM) << "Slave type:" << type();
 
     NetworkManager::ConnectionSettings::ConnectionType connectionType = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(action->data().toInt());
-    NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(connectionType));
+    NetworkManager::ConnectionSettings::Ptr connectionSettings =
+        NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(connectionType));
     connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
     connectionSettings->setMaster(m_uuid);
     connectionSettings->setSlaveType(type());
     connectionSettings->setAutoconnect(false);
 
     QPointer<ConnectionEditorDialog> bridgeEditor = new ConnectionEditorDialog(connectionSettings);
-    connect(bridgeEditor.data(), &ConnectionEditorDialog::accepted,
-            [bridgeEditor, this] () {
-                qCDebug(PLASMA_NM) << "Saving slave connection";
-                // qCDebug(PLASMA_NM) << bridgeEditor->setting();
-                QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(bridgeEditor->setting());
-                QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-                connect(watcher, &QDBusPendingCallWatcher::finished, this, &BridgeWidget::bridgeAddComplete);
-            });
-    connect(bridgeEditor.data(), &ConnectionEditorDialog::finished,
-            [bridgeEditor] () {
-                if (bridgeEditor) {
-                    bridgeEditor->deleteLater();
-                }
-            });
+    connect(bridgeEditor.data(), &ConnectionEditorDialog::accepted, [bridgeEditor, this]() {
+        qCDebug(PLASMA_NM) << "Saving slave connection";
+        // qCDebug(PLASMA_NM) << bridgeEditor->setting();
+        QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(bridgeEditor->setting());
+        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+        connect(watcher, &QDBusPendingCallWatcher::finished, this, &BridgeWidget::bridgeAddComplete);
+    });
+    connect(bridgeEditor.data(), &ConnectionEditorDialog::finished, [bridgeEditor]() {
+        if (bridgeEditor) {
+            bridgeEditor->deleteLater();
+        }
+    });
     bridgeEditor->setModal(true);
     bridgeEditor->show();
 }
@@ -143,7 +140,7 @@ void BridgeWidget::currentBridgeChanged(QListWidgetItem *current, QListWidgetIte
     m_ui->btnDelete->setEnabled(current);
 }
 
-void BridgeWidget::bridgeAddComplete(QDBusPendingCallWatcher * watcher)
+void BridgeWidget::bridgeAddComplete(QDBusPendingCallWatcher *watcher)
 {
     QDBusPendingReply<QDBusObjectPath> reply = *watcher;
 
@@ -151,8 +148,9 @@ void BridgeWidget::bridgeAddComplete(QDBusPendingCallWatcher * watcher)
         // find the slave connection with matching UUID
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(reply.value().path());
         if (connection && connection->settings()->master() == m_uuid) {
-            const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
-            QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->bridges);
+            const QString label =
+                QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
+            QListWidgetItem *slaveItem = new QListWidgetItem(label, m_ui->bridges);
             slaveItem->setData(Qt::UserRole, connection->uuid());
             slotWidgetChanged();
         }
@@ -163,7 +161,7 @@ void BridgeWidget::bridgeAddComplete(QDBusPendingCallWatcher * watcher)
 
 void BridgeWidget::editBridge()
 {
-    QListWidgetItem * currentItem = m_ui->bridges->currentItem();
+    QListWidgetItem *currentItem = m_ui->bridges->currentItem();
     if (!currentItem)
         return;
 
@@ -173,17 +171,15 @@ void BridgeWidget::editBridge()
     if (connection) {
         qCDebug(PLASMA_NM) << "Editing bridged connection" << currentItem->text() << uuid;
         QPointer<ConnectionEditorDialog> bridgeEditor = new ConnectionEditorDialog(connection->settings());
-        connect(bridgeEditor.data(), &ConnectionEditorDialog::accepted,
-                [connection, bridgeEditor, this] () {
-                    connection->update(bridgeEditor->setting());
-                    connect(connection.data(), &NetworkManager::Connection::updated, this, &BridgeWidget::populateBridges);
-                });
-        connect(bridgeEditor.data(), &ConnectionEditorDialog::finished,
-                [bridgeEditor] () {
-                    if (bridgeEditor) {
-                        bridgeEditor->deleteLater();
-                    }
-                });
+        connect(bridgeEditor.data(), &ConnectionEditorDialog::accepted, [connection, bridgeEditor, this]() {
+            connection->update(bridgeEditor->setting());
+            connect(connection.data(), &NetworkManager::Connection::updated, this, &BridgeWidget::populateBridges);
+        });
+        connect(bridgeEditor.data(), &ConnectionEditorDialog::finished, [bridgeEditor]() {
+            if (bridgeEditor) {
+                bridgeEditor->deleteLater();
+            }
+        });
         bridgeEditor->setModal(true);
         bridgeEditor->show();
     }
@@ -191,7 +187,7 @@ void BridgeWidget::editBridge()
 
 void BridgeWidget::deleteBridge()
 {
-    QListWidgetItem * currentItem = m_ui->bridges->currentItem();
+    QListWidgetItem *currentItem = m_ui->bridges->currentItem();
     if (!currentItem)
         return;
 
@@ -200,9 +196,14 @@ void BridgeWidget::deleteBridge()
 
     if (connection) {
         // qCDebug(PLASMA_NM) << "About to delete bridged connection" << currentItem->text() << uuid;
-        if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->name()), i18n("Remove Connection"), KStandardGuiItem::remove(),
-                                       KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
-                == KMessageBox::Yes) {
+        if (KMessageBox::questionYesNo(this,
+                                       i18n("Do you want to remove the connection '%1'?", connection->name()),
+                                       i18n("Remove Connection"),
+                                       KStandardGuiItem::remove(),
+                                       KStandardGuiItem::no(),
+                                       QString(),
+                                       KMessageBox::Dangerous)
+            == KMessageBox::Yes) {
             connection->remove();
             delete currentItem;
             slotWidgetChanged();
@@ -222,8 +223,9 @@ void BridgeWidget::populateBridges()
         bool isSlave = ((master == m_uuid) || // by-uuid
                         (!m_id.isEmpty() && master == m_id)); // by-name
         if (isSlave && (settings->slaveType() == type())) {
-            const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
-            QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->bridges);
+            const QString label =
+                QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
+            QListWidgetItem *slaveItem = new QListWidgetItem(label, m_ui->bridges);
             slaveItem->setData(Qt::UserRole, connection->uuid());
         }
     }

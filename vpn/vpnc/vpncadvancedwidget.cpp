@@ -5,11 +5,11 @@
 */
 
 #include "vpncadvancedwidget.h"
-#include "ui_vpncadvanced.h"
 #include "nm-vpnc-service.h"
+#include "ui_vpncadvanced.h"
 
-#include <KLocalizedString>
 #include <KAcceleratorManager>
+#include <KLocalizedString>
 
 VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
     : QDialog(parent)
@@ -80,7 +80,7 @@ void VpncAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setti
     if (!dhGroup.isEmpty()) {
         m_ui->dhGroup->setCurrentIndex(m_ui->dhGroup->findData(dhGroup));
     } else {
-        m_ui->dhGroup->setCurrentIndex(m_ui->dhGroup->findData(NM_VPNC_DHGROUP_DH2));  // default
+        m_ui->dhGroup->setCurrentIndex(m_ui->dhGroup->findData(NM_VPNC_DHGROUP_DH2)); // default
     }
 
     const QString pfs = setting->data().value(NM_VPNC_KEY_PERFECT_FORWARD);

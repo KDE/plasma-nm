@@ -8,12 +8,12 @@
 
 #include <KPluginFactory>
 
-#include "openswanwidget.h"
 #include "openswanauth.h"
+#include "openswanwidget.h"
 
 K_PLUGIN_CLASS_WITH_JSON(OpenswanUiPlugin, "plasmanetworkmanagement_openswanui.json")
 
-OpenswanUiPlugin::OpenswanUiPlugin(QObject * parent, const QVariantList &)
+OpenswanUiPlugin::OpenswanUiPlugin(QObject *parent, const QVariantList &)
     : VpnUiPlugin(parent)
 {
 }
@@ -22,12 +22,12 @@ OpenswanUiPlugin::~OpenswanUiPlugin()
 {
 }
 
-SettingWidget * OpenswanUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget *OpenswanUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
     return new OpenswanWidget(setting, parent);
 }
 
-SettingWidget * OpenswanUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
+SettingWidget *OpenswanUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
 {
     return new OpenswanAuthDialog(setting, hints, parent);
 }

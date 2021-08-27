@@ -3,37 +3,37 @@
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
-#include "debug.h"
 #include "wireguardtabwidget.h"
-#include "wireguardpeerwidget.h"
-#include "ui_wireguardtabwidget.h"
-#include "ui_wireguardpeerwidget.h"
-#include "uiutils.h"
-#include "simpleipv4addressvalidator.h"
+#include "debug.h"
 #include "simpleiplistvalidator.h"
+#include "simpleipv4addressvalidator.h"
+#include "ui_wireguardpeerwidget.h"
+#include "ui_wireguardtabwidget.h"
+#include "uiutils.h"
 #include "wireguardkeyvalidator.h"
+#include "wireguardpeerwidget.h"
 
 #include <QStandardItemModel>
 
-#include <NetworkManagerQt/Utils>
-#include <NetworkManagerQt/Ipv4Setting>
-#include <NetworkManagerQt/Ipv6Setting>
 #include <KColorScheme>
 #include <KConfig>
 #include <KConfigGroup>
+#include <NetworkManagerQt/Ipv4Setting>
+#include <NetworkManagerQt/Ipv6Setting>
+#include <NetworkManagerQt/Utils>
 
 // Keys for the NetworkManager configuration
 #define PNM_SETTING_WIREGUARD_SETTING_NAME "wireguard"
 
-#define PNM_WG_KEY_PEERS             "peers"
-#define PNM_WG_KEY_MTU               "mtu"
-#define PNM_WG_KEY_PEER_ROUTES       "peer-routes"
-#define PNM_WG_PEER_KEY_ALLOWED_IPS          "allowed-ips"
-#define PNM_WG_PEER_KEY_ENDPOINT             "endpoint"
+#define PNM_WG_KEY_PEERS "peers"
+#define PNM_WG_KEY_MTU "mtu"
+#define PNM_WG_KEY_PEER_ROUTES "peer-routes"
+#define PNM_WG_PEER_KEY_ALLOWED_IPS "allowed-ips"
+#define PNM_WG_PEER_KEY_ENDPOINT "endpoint"
 #define PNM_WG_PEER_KEY_PERSISTENT_KEEPALIVE "persistent-keepalive"
-#define PNM_WG_PEER_KEY_PRESHARED_KEY        "preshared-key"
-#define PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS  "preshared-key-flags"
-#define PNM_WG_PEER_KEY_PUBLIC_KEY           "public-key"
+#define PNM_WG_PEER_KEY_PRESHARED_KEY "preshared-key"
+#define PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS "preshared-key-flags"
+#define PNM_WG_PEER_KEY_PUBLIC_KEY "public-key"
 
 static WireGuardKeyValidator keyValidator();
 static SimpleIpListValidator allowedIPsValidator(SimpleIpListValidator::WithCidr, SimpleIpListValidator::Both);
@@ -68,8 +68,7 @@ WireGuardTabWidget::WireGuardTabWidget(const NMVariantMapList &peerData, QWidget
     d->ui.setupUi(this);
 
     d->config = KSharedConfig::openConfig();
-    setWindowTitle(i18nc("@title: window wireguard peers properties",
-                         "WireGuard peers properties"));
+    setWindowTitle(i18nc("@title: window wireguard peers properties", "WireGuard peers properties"));
     connect(d->ui.btnAdd, &QPushButton::clicked, this, &WireGuardTabWidget::slotAddPeer);
     connect(d->ui.btnRemove, &QPushButton::clicked, this, &WireGuardTabWidget::slotRemovePeer);
     connect(d->ui.buttonBox, &QDialogButtonBox::accepted, this, &WireGuardTabWidget::accept);
@@ -108,13 +107,13 @@ NMVariantMapList WireGuardTabWidget::setting() const
 {
     d->peers.clear();
     for (int i = 0; i < d->ui.tabWidget->count(); i++)
-        d->peers.append(static_cast<WireGuardPeerWidget*>(d->ui.tabWidget->widget(i))->setting());
+        d->peers.append(static_cast<WireGuardPeerWidget *>(d->ui.tabWidget->widget(i))->setting());
     return d->peers;
 }
 
 void WireGuardTabWidget::slotAddPeer()
 {
-    QVariantMap *newItem = new QVariantMap; 
+    QVariantMap *newItem = new QVariantMap;
     int numPeers = d->ui.tabWidget->count() + 1;
     WireGuardPeerWidget *newTab = new WireGuardPeerWidget(*newItem);
     connect(newTab, &WireGuardPeerWidget::notifyValid, this, &WireGuardTabWidget::slotWidgetChanged);
@@ -153,7 +152,7 @@ void WireGuardTabWidget::slotWidgetChanged()
 {
     bool valid = true;
     for (int i = 0; i < d->ui.tabWidget->count(); i++) {
-        if (!static_cast<WireGuardPeerWidget*>(d->ui.tabWidget->widget(i))->isValid()) {
+        if (!static_cast<WireGuardPeerWidget *>(d->ui.tabWidget->widget(i))->isValid()) {
             valid = false;
             break;
         }

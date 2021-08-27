@@ -6,12 +6,12 @@
 
 #include "kcm.h"
 
-#include "debug.h"
 #include "connectioneditordialog.h"
+#include "debug.h"
 #include "mobileconnectionwizard.h"
+#include "settings/wireguardinterfacewidget.h"
 #include "uiutils.h"
 #include "vpnuiplugin.h"
-#include "settings/wireguardinterfacewidget.h"
 
 // KDE
 #include <KMessageBox>
@@ -30,20 +30,20 @@
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/WiredSetting>
-#include <NetworkManagerQt/WirelessSetting>
-#include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WireguardSetting>
+#include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/WirelessSetting>
 
 // Qt
 #include <QFileDialog>
 #include <QMenu>
-#include <QVBoxLayout>
-#include <QTimer>
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQuickItem>
 #include <QQuickView>
 #include <QQuickWidget>
+#include <QTimer>
+#include <QVBoxLayout>
 
 K_PLUGIN_FACTORY(KCMNetworkConfigurationFactory, registerPlugin<KCMNetworkmanagement>();)
 
@@ -103,13 +103,14 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     m_ui->connectionView->rootContext()->setContextProperty("useApMode", useApMode);
     m_ui->connectionView->setClearColor(Qt::transparent);
     m_ui->connectionView->setResizeMode(QQuickWidget::SizeRootObjectToView);
-    m_ui->connectionView->setSource(QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcm_networkmanagement/qml/main.qml"))));
+    m_ui->connectionView->setSource(
+        QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcm_networkmanagement/qml/main.qml"))));
 
     QObject *rootItem = m_ui->connectionView->rootObject();
     connect(rootItem, SIGNAL(selectedConnectionChanged(QString)), this, SLOT(onSelectedConnectionChanged(QString)));
-    connect(rootItem, SIGNAL(requestCreateConnection(int,QString,QString,bool)), this, SLOT(onRequestCreateConnection(int,QString,QString,bool)));
+    connect(rootItem, SIGNAL(requestCreateConnection(int, QString, QString, bool)), this, SLOT(onRequestCreateConnection(int, QString, QString, bool)));
     connect(rootItem, SIGNAL(requestExportConnection(QString)), this, SLOT(onRequestExportConnection(QString)));
-    connect(rootItem, SIGNAL(requestToChangeConnection(QString,QString)), this, SLOT(onRequestToChangeConnection(QString,QString)));
+    connect(rootItem, SIGNAL(requestToChangeConnection(QString, QString)), this, SLOT(onRequestToChangeConnection(QString, QString)));
 
     QVBoxLayout *l = new QVBoxLayout(this);
     l->addWidget(mainWidget);
@@ -119,7 +120,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     NetworkManager::Connection::Ptr selectedConnection;
 
     // Look in the arguments for a connection ID to preselect
-    static const QLatin1String uuidArgumentMarker { "Uuid=" };
+    static const QLatin1String uuidArgumentMarker{"Uuid="};
     for (QVariant arg : args) {
         if (arg.canConvert(QMetaType::QString)) {
             QString uuid = arg.toString();
@@ -144,8 +145,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     // Select the very first connection as a fallback
     if (!selectedConnection || !selectedConnection->isValid()) {
         NetworkManager::Connection::List connectionList = NetworkManager::listConnections();
-        std::sort(connectionList.begin(), connectionList.end(), [] (const NetworkManager::Connection::Ptr &left, const NetworkManager::Connection::Ptr &right)
-        {
+        std::sort(connectionList.begin(), connectionList.end(), [](const NetworkManager::Connection::Ptr &left, const NetworkManager::Connection::Ptr &right) {
             const QString leftName = left->settings()->id();
             const UiUtils::SortedConnectionType leftType = UiUtils::connectionTypeToSortedType(left->settings()->connectionType());
             const QDateTime leftDate = left->settings()->timestamp();
@@ -192,14 +192,18 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
         qDebug() << "Cannot preselect a connection";
     }
 
-    connect(NetworkManager::settingsNotifier(), &NetworkManager::SettingsNotifier::connectionAdded, this, &KCMNetworkmanagement::onConnectionAdded, Qt::UniqueConnection);
+    connect(NetworkManager::settingsNotifier(),
+            &NetworkManager::SettingsNotifier::connectionAdded,
+            this,
+            &KCMNetworkmanagement::onConnectionAdded,
+            Qt::UniqueConnection);
 
     // Initialize first scan and then scan every 15 seconds
     m_handler->requestScan();
 
     m_timer = new QTimer(this);
     m_timer->setInterval(15000);
-    connect(m_timer, &QTimer::timeout, [this] () {
+    connect(m_timer, &QTimer::timeout, [this]() {
         m_handler->requestScan();
     });
     m_timer->start();
@@ -278,41 +282,40 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
     } else if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
 #if WITH_MODEMMANAGER_SUPPORT
         QPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
-        connect(wizard.data(), &MobileConnectionWizard::accepted,
-                [wizard, this] () {
-                    if (wizard->getError() == MobileProviders::Success) {
-                        qCDebug(PLASMA_NM) << "Mobile broadband wizard finished:" << wizard->type() << wizard->args();
+        connect(wizard.data(), &MobileConnectionWizard::accepted, [wizard, this]() {
+            if (wizard->getError() == MobileProviders::Success) {
+                qCDebug(PLASMA_NM) << "Mobile broadband wizard finished:" << wizard->type() << wizard->args();
 
-                        if (wizard->args().count() == 2) {
-                            QVariantMap tmp = qdbus_cast<QVariantMap>(wizard->args().value(1));
+                if (wizard->args().count() == 2) {
+                    QVariantMap tmp = qdbus_cast<QVariantMap>(wizard->args().value(1));
 
-                            NetworkManager::ConnectionSettings::Ptr connectionSettings;
-                            connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(wizard->type()));
-                            connectionSettings->setId(wizard->args().value(0).toString());
-                            if (wizard->type() == NetworkManager::ConnectionSettings::Gsm) {
-                                NetworkManager::GsmSetting::Ptr gsmSetting = connectionSettings->setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
-                                gsmSetting->fromMap(tmp);
-                                gsmSetting->setPasswordFlags(NetworkManager::Setting::NotRequired);
-                                gsmSetting->setPinFlags(NetworkManager::Setting::NotRequired);
-                            } else if (wizard->type() == NetworkManager::ConnectionSettings::Cdma) {
-                                connectionSettings->setting(NetworkManager::Setting::Cdma)->fromMap(tmp);
-                            } else {
-                                qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unhandled setting type";
-                            }
-                            // Generate new UUID
-                            connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
-                            addConnection(connectionSettings);
-                        } else {
-                            qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unexpected number of args to parse";
-                        }
+                    NetworkManager::ConnectionSettings::Ptr connectionSettings;
+                    connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(wizard->type()));
+                    connectionSettings->setId(wizard->args().value(0).toString());
+                    if (wizard->type() == NetworkManager::ConnectionSettings::Gsm) {
+                        NetworkManager::GsmSetting::Ptr gsmSetting =
+                            connectionSettings->setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
+                        gsmSetting->fromMap(tmp);
+                        gsmSetting->setPasswordFlags(NetworkManager::Setting::NotRequired);
+                        gsmSetting->setPinFlags(NetworkManager::Setting::NotRequired);
+                    } else if (wizard->type() == NetworkManager::ConnectionSettings::Cdma) {
+                        connectionSettings->setting(NetworkManager::Setting::Cdma)->fromMap(tmp);
+                    } else {
+                        qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unhandled setting type";
                     }
-                });
-        connect(wizard.data(), &MobileConnectionWizard::finished,
-                [wizard] () {
-                    if (wizard) {
-                        wizard->deleteLater();
-                    }
-                });
+                    // Generate new UUID
+                    connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+                    addConnection(connectionSettings);
+                } else {
+                    qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unexpected number of args to parse";
+                }
+            }
+        });
+        connect(wizard.data(), &MobileConnectionWizard::finished, [wizard]() {
+            if (wizard) {
+                wizard->deleteLater();
+            }
+        });
         wizard->setModal(true);
         wizard->show();
 #endif
@@ -336,17 +339,19 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
             // I don't think it's wise to request users to specify speed and duplex as most of them don't know what is that
             // and what to set
             if (type == NetworkManager::ConnectionSettings::Wired) {
-                NetworkManager::WiredSetting::Ptr wiredSetting = connectionSettings->setting(NetworkManager::Setting::Wired).dynamicCast<NetworkManager::WiredSetting>();
+                NetworkManager::WiredSetting::Ptr wiredSetting =
+                    connectionSettings->setting(NetworkManager::Setting::Wired).dynamicCast<NetworkManager::WiredSetting>();
                 wiredSetting->setAutoNegotiate(true);
             }
 
             if (shared) {
                 if (type == NetworkManager::ConnectionSettings::Wireless) {
-                    NetworkManager::WirelessSetting::Ptr wifiSetting = connectionSettings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+                    NetworkManager::WirelessSetting::Ptr wifiSetting =
+                        connectionSettings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
                     wifiSetting->setMode(NetworkManager::WirelessSetting::Adhoc);
                     wifiSetting->setSsid(i18n("my_shared_connection").toUtf8());
 
-                    for (const NetworkManager::Device::Ptr & device : NetworkManager::networkInterfaces()) {
+                    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
                         if (device->type() == NetworkManager::Device::Wifi) {
                             NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
                             if (wifiDev) {
@@ -359,15 +364,19 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
                     }
                 }
 
-                NetworkManager::Ipv4Setting::Ptr ipv4Setting = connectionSettings->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
+                NetworkManager::Ipv4Setting::Ptr ipv4Setting =
+                    connectionSettings->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
                 ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Shared);
                 connectionSettings->setAutoconnect(false);
             }
         }
         if (type == NetworkManager::ConnectionSettings::WireGuard) {
-            NetworkManager::WireGuardSetting::Ptr wireguardSetting = connectionSettings->setting(NetworkManager::Setting::WireGuard).dynamicCast<NetworkManager::WireGuardSetting>();
-            NetworkManager::Ipv4Setting::Ptr ipv4Setting = connectionSettings->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
-            NetworkManager::Ipv6Setting::Ptr ipv6Setting = connectionSettings->setting(NetworkManager::Setting::Ipv6).dynamicCast<NetworkManager::Ipv6Setting>();
+            NetworkManager::WireGuardSetting::Ptr wireguardSetting =
+                connectionSettings->setting(NetworkManager::Setting::WireGuard).dynamicCast<NetworkManager::WireGuardSetting>();
+            NetworkManager::Ipv4Setting::Ptr ipv4Setting =
+                connectionSettings->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
+            NetworkManager::Ipv6Setting::Ptr ipv6Setting =
+                connectionSettings->setting(NetworkManager::Setting::Ipv6).dynamicCast<NetworkManager::Ipv6Setting>();
             connectionSettings->setAutoconnect(false);
             ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Disabled);
             ipv6Setting->setMethod(NetworkManager::Ipv6Setting::Ignored);
@@ -403,7 +412,8 @@ void KCMNetworkmanagement::onRequestExportConnection(const QString &connectionPa
             return;
         }
 
-        const QString url = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + QDir::separator() + vpnPlugin->suggestedFileName(connSettings);
+        const QString url =
+            QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + QDir::separator() + vpnPlugin->suggestedFileName(connSettings);
         const QString filename = QFileDialog::getSaveFileName(this, i18n("Export VPN Connection"), url, vpnPlugin->supportedFileExtensions());
         if (!filename.isEmpty()) {
             if (!vpnPlugin->exportConnectionSettings(connSettings, filename)) {
@@ -418,13 +428,19 @@ void KCMNetworkmanagement::onRequestExportConnection(const QString &connectionPa
     }
 }
 
-void KCMNetworkmanagement::onRequestToChangeConnection( const QString &connectionName, const QString &connectionPath)
+void KCMNetworkmanagement::onRequestToChangeConnection(const QString &connectionName, const QString &connectionPath)
 {
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_currentConnectionPath);
 
     if (connection) {
-        if (KMessageBox::questionYesNo(this, i18n("Do you want to save changes made to the connection '%1'?", connection->name()), i18nc("@title:window", "Save Changes"),
-                                    KStandardGuiItem::save(), KStandardGuiItem::discard(), QString(), KMessageBox::Notify)  == KMessageBox::Yes) {
+        if (KMessageBox::questionYesNo(this,
+                                       i18n("Do you want to save changes made to the connection '%1'?", connection->name()),
+                                       i18nc("@title:window", "Save Changes"),
+                                       KStandardGuiItem::save(),
+                                       KStandardGuiItem::discard(),
+                                       QString(),
+                                       KMessageBox::Notify)
+            == KMessageBox::Yes) {
             save();
         }
     }
@@ -452,18 +468,16 @@ void KCMNetworkmanagement::onSelectedConnectionChanged(const QString &connection
 void KCMNetworkmanagement::addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings)
 {
     QPointer<ConnectionEditorDialog> editor = new ConnectionEditorDialog(connectionSettings);
-    connect(editor.data(), &ConnectionEditorDialog::accepted,
-            [connectionSettings, editor, this] () {
-                // We got confirmation so watch this connection and select it once it is created
-                m_createdConnectionUuid = connectionSettings->uuid();
-                m_handler->addConnection(editor->setting());
-            });
-    connect(editor.data(), &ConnectionEditorDialog::finished,
-            [editor] () {
-                if (editor) {
-                    editor->deleteLater();
-                }
-            });
+    connect(editor.data(), &ConnectionEditorDialog::accepted, [connectionSettings, editor, this]() {
+        // We got confirmation so watch this connection and select it once it is created
+        m_createdConnectionUuid = connectionSettings->uuid();
+        m_handler->addConnection(editor->setting());
+    });
+    connect(editor.data(), &ConnectionEditorDialog::finished, [editor]() {
+        if (editor) {
+            editor->deleteLater();
+        }
+    });
     editor->setModal(true);
     editor->show();
 }
@@ -474,24 +488,22 @@ void KCMNetworkmanagement::kcmChanged(bool kcmChanged)
     Q_EMIT changed(kcmChanged);
 }
 
-void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr& connectionSettings)
+void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings)
 {
     if (m_tabWidget) {
         m_tabWidget->setConnection(connectionSettings);
     } else {
         m_tabWidget = new ConnectionEditorTabWidget(connectionSettings);
-        connect(m_tabWidget, &ConnectionEditorTabWidget::settingChanged,
-                [this] () {
-                    if (m_tabWidget->isInitialized() && m_tabWidget->isValid()) {
-                        kcmChanged(true);
-                    }
-                });
-        connect(m_tabWidget, &ConnectionEditorTabWidget::validityChanged,
-                [this] (bool valid) {
-                    if (m_tabWidget->isInitialized() && m_tabWidget->isValid() != valid) {
-                        kcmChanged(valid);
-                    }
-                });
+        connect(m_tabWidget, &ConnectionEditorTabWidget::settingChanged, [this]() {
+            if (m_tabWidget->isInitialized() && m_tabWidget->isValid()) {
+                kcmChanged(true);
+            }
+        });
+        connect(m_tabWidget, &ConnectionEditorTabWidget::validityChanged, [this](bool valid) {
+            if (m_tabWidget->isInitialized() && m_tabWidget->isValid() != valid) {
+                kcmChanged(valid);
+            }
+        });
         QVBoxLayout *layout = new QVBoxLayout(m_ui->connectionConfiguration);
         layout->addWidget(m_tabWidget);
     }

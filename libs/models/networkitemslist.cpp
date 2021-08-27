@@ -21,39 +21,40 @@ bool NetworkItemsList::contains(const NetworkItemsList::FilterType type, const Q
 {
     for (NetworkModelItem *item : m_items) {
         switch (type) {
-            case NetworkItemsList::ActiveConnection:
-                if (item->activeConnectionPath() == parameter) {
-                    return true;
-                }
-                break;
-            case NetworkItemsList::Connection:
-                if (item->connectionPath() == parameter) {
-                    return true;
-                }
-                break;
-            case NetworkItemsList::Device:
-                if (item->devicePath() == parameter) {
-                    return true;
-                }
-                break;
-            case NetworkItemsList::Name:
-                if (item->name() == parameter) {
-                    return true;
-                }
-                break;
-            case NetworkItemsList::Ssid:
-                if (item->ssid() == parameter) {
-                    return true;
-                }
-                break;
-            case NetworkItemsList::Uuid:
-                if (item->uuid() == parameter) {
-                    return true;
-                }
-                break;
-            case NetworkItemsList::Type:
-                break;
-            default: break;
+        case NetworkItemsList::ActiveConnection:
+            if (item->activeConnectionPath() == parameter) {
+                return true;
+            }
+            break;
+        case NetworkItemsList::Connection:
+            if (item->connectionPath() == parameter) {
+                return true;
+            }
+            break;
+        case NetworkItemsList::Device:
+            if (item->devicePath() == parameter) {
+                return true;
+            }
+            break;
+        case NetworkItemsList::Name:
+            if (item->name() == parameter) {
+                return true;
+            }
+            break;
+        case NetworkItemsList::Ssid:
+            if (item->ssid() == parameter) {
+                return true;
+            }
+            break;
+        case NetworkItemsList::Uuid:
+            if (item->uuid() == parameter) {
+                return true;
+            }
+            break;
+        case NetworkItemsList::Type:
+            break;
+        default:
+            break;
         }
     }
 
@@ -80,7 +81,7 @@ NetworkModelItem *NetworkItemsList::itemAt(int index) const
     return m_items.at(index);
 }
 
-QList< NetworkModelItem*> NetworkItemsList::items() const
+QList<NetworkModelItem *> NetworkItemsList::items() const
 {
     return m_items;
 }
@@ -90,65 +91,67 @@ void NetworkItemsList::removeItem(NetworkModelItem *item)
     m_items.removeAll(item);
 }
 
-QList< NetworkModelItem*> NetworkItemsList::returnItems(const NetworkItemsList::FilterType type, const QString &parameter, const QString &additionalParameter) const
+QList<NetworkModelItem *>
+NetworkItemsList::returnItems(const NetworkItemsList::FilterType type, const QString &parameter, const QString &additionalParameter) const
 {
-    QList<NetworkModelItem*> result;
+    QList<NetworkModelItem *> result;
 
     for (NetworkModelItem *item : m_items) {
         switch (type) {
-            case NetworkItemsList::ActiveConnection:
-                if (item->activeConnectionPath() == parameter) {
+        case NetworkItemsList::ActiveConnection:
+            if (item->activeConnectionPath() == parameter) {
+                result << item;
+            }
+            break;
+        case NetworkItemsList::Connection:
+            if (item->connectionPath() == parameter) {
+                if (additionalParameter.isEmpty()) {
                     result << item;
-                }
-                break;
-            case NetworkItemsList::Connection:
-                if (item->connectionPath() == parameter) {
-                    if (additionalParameter.isEmpty()) {
+                } else {
+                    if (item->devicePath() == additionalParameter) {
                         result << item;
-                    } else {
-                        if (item->devicePath() == additionalParameter) {
-                            result << item;
-                        }
                     }
                 }
-                break;
-            case NetworkItemsList::Device:
-                if (item->devicePath() == parameter) {
+            }
+            break;
+        case NetworkItemsList::Device:
+            if (item->devicePath() == parameter) {
+                result << item;
+            }
+            break;
+        case NetworkItemsList::Name:
+            if (item->name() == parameter) {
+                result << item;
+            }
+            break;
+        case NetworkItemsList::Ssid:
+            if (item->ssid() == parameter) {
+                if (additionalParameter.isEmpty()) {
                     result << item;
-                }
-                break;
-            case NetworkItemsList::Name:
-                if (item->name() == parameter) {
-                    result << item;
-                }
-                break;
-            case NetworkItemsList::Ssid:
-                if (item->ssid() == parameter) {
-                    if (additionalParameter.isEmpty()) {
+                } else {
+                    if (item->devicePath() == additionalParameter) {
                         result << item;
-                    } else {
-                        if (item->devicePath() == additionalParameter) {
-                            result << item;
-                        }
                     }
                 }
-                break;
-            case NetworkItemsList::Uuid:
-                if (item->uuid() == parameter) {
-                    result << item;
-                }
-                break;
-            case NetworkItemsList::Type:
-                break;
+            }
+            break;
+        case NetworkItemsList::Uuid:
+            if (item->uuid() == parameter) {
+                result << item;
+            }
+            break;
+        case NetworkItemsList::Type:
+            break;
         }
     }
 
     return result;
 }
 
-QList<NetworkModelItem*> NetworkItemsList::returnItems(const NetworkItemsList::FilterType type, NetworkManager::ConnectionSettings::ConnectionType typeParameter) const
+QList<NetworkModelItem *> NetworkItemsList::returnItems(const NetworkItemsList::FilterType type,
+                                                        NetworkManager::ConnectionSettings::ConnectionType typeParameter) const
 {
-    QList<NetworkModelItem*> result;
+    QList<NetworkModelItem *> result;
 
     for (NetworkModelItem *item : m_items) {
         if (type == NetworkItemsList::Type) {

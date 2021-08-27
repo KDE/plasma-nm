@@ -32,20 +32,20 @@ public:
     QVariantMap setting() const override;
 
 private:
-    OpenconnectAuthWidgetPrivate * const d_ptr;
+    OpenconnectAuthWidgetPrivate *const d_ptr;
     void acceptDialog();
     void addFormInfo(const QString &, const QString &);
     void deleteAllFromLayout(QLayout *);
 
 private Q_SLOTS:
     void writeNewConfig(const QString &);
-    void validatePeerCert(const QString &, const QString &, const QString &, bool*);
+    void validatePeerCert(const QString &, const QString &, const QString &, bool *);
     void processAuthForm(struct oc_auth_form *);
     void updateLog(const QString &, const int &);
     void logLevelChanged(int);
     void formLoginClicked();
     void formGroupChanged();
-    void workerFinished(const int&);
+    void workerFinished(const int &);
     void viewServerLogToggled(bool);
     void connectHost();
     void initTokens();

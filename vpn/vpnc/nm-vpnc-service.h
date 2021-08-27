@@ -9,9 +9,9 @@
 #ifndef NM_VPNC_SERVICE_H
 #define NM_VPNC_SERVICE_H
 
-#define NM_DBUS_SERVICE_VPNC    "org.freedesktop.NetworkManager.vpnc"
-#define NM_DBUS_INTERFACE_VPNC  "org.freedesktop.NetworkManager.vpnc"
-#define NM_DBUS_PATH_VPNC       "/org/freedesktop/NetworkManager/vpnc"
+#define NM_DBUS_SERVICE_VPNC "org.freedesktop.NetworkManager.vpnc"
+#define NM_DBUS_INTERFACE_VPNC "org.freedesktop.NetworkManager.vpnc"
+#define NM_DBUS_PATH_VPNC "/org/freedesktop/NetworkManager/vpnc"
 
 #define NM_VPNC_KEY_GATEWAY "IPSec gateway"
 #define NM_VPNC_KEY_ID "IPSec ID"
@@ -32,22 +32,22 @@
 #define NM_VPNC_KEY_AUTHMODE "IKE Authmode"
 #define NM_VPNC_KEY_CA_FILE "CA-File"
 
-#define NM_VPNC_NATT_MODE_NATT        "natt"
-#define NM_VPNC_NATT_MODE_NONE        "none"
+#define NM_VPNC_NATT_MODE_NATT "natt"
+#define NM_VPNC_NATT_MODE_NONE "none"
 #define NM_VPNC_NATT_MODE_NATT_ALWAYS "force-natt"
-#define NM_VPNC_NATT_MODE_CISCO       "cisco-udp"
+#define NM_VPNC_NATT_MODE_CISCO "cisco-udp"
 
 #define NM_VPNC_DHGROUP_DH1 "dh1"
 #define NM_VPNC_DHGROUP_DH2 "dh2"
 #define NM_VPNC_DHGROUP_DH5 "dh5"
 
 #define NM_VPNC_PFS_SERVER "server"
-#define NM_VPNC_PFS_NOPFS  "nopfs"
-#define NM_VPNC_PFS_DH1    "dh1"
-#define NM_VPNC_PFS_DH2    "dh2"
-#define NM_VPNC_PFS_DH5    "dh5"
+#define NM_VPNC_PFS_NOPFS "nopfs"
+#define NM_VPNC_PFS_DH1 "dh1"
+#define NM_VPNC_PFS_DH2 "dh2"
+#define NM_VPNC_PFS_DH5 "dh5"
 
-#define NM_VPNC_VENDOR_CISCO     "cisco"
+#define NM_VPNC_VENDOR_CISCO "cisco"
 #define NM_VPNC_VENDOR_NETSCREEN "netscreen"
 
 #endif /* NM_VPNC_SERVICE_H */

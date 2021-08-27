@@ -13,14 +13,16 @@
 
 class Q_DECL_EXPORT CreatableConnectionItem : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    explicit CreatableConnectionItem(const QString &typeName, const QString &typeSection,             // Visible properties
-                                     const QString &description, const QString &icon,                 // Visible properties
-                                     NetworkManager::ConnectionSettings::ConnectionType type,         // Properties needed for creating
-                                     const QString &vpnType = QString(),                              // Properties needed for creating
-                                     const QString &specificType = QString(),                         // Properties needed for creating
-                                     bool shared = false,                                             // Properties needed for creating
+    explicit CreatableConnectionItem(const QString &typeName,
+                                     const QString &typeSection, // Visible properties
+                                     const QString &description,
+                                     const QString &icon, // Visible properties
+                                     NetworkManager::ConnectionSettings::ConnectionType type, // Properties needed for creating
+                                     const QString &vpnType = QString(), // Properties needed for creating
+                                     const QString &specificType = QString(), // Properties needed for creating
+                                     bool shared = false, // Properties needed for creating
                                      QObject *parent = nullptr);
     explicit CreatableConnectionItem(QObject *parent = nullptr);
     ~CreatableConnectionItem() override;
@@ -60,10 +62,9 @@ private:
     QString m_vpnType;
 };
 
-
 class Q_DECL_EXPORT CreatableConnectionsModel : public QAbstractListModel
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     explicit CreatableConnectionsModel(QObject *parent = nullptr);
     ~CreatableConnectionsModel() override;
@@ -74,18 +75,17 @@ public:
         ConnectionSpeficType,
         ConnectionShared,
         ConnectionType,
-        ConnectionTypeName ,
+        ConnectionTypeName,
         ConnectionTypeSection,
         ConnectionVpnType,
     };
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
-    QHash< int, QByteArray > roleNames() const override;
+    QHash<int, QByteArray> roleNames() const override;
 
 private:
-    QList<CreatableConnectionItem*> m_list;
+    QList<CreatableConnectionItem *> m_list;
 };
 
 #endif // PLASMA_NM_CREATABLE_CONNECTIONS_MODEL_H
-

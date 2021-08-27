@@ -12,29 +12,30 @@
 #include <KPluginFactory>
 
 #include "connectivitymonitor.h"
-#include "secretagent.h"
-#include "notification.h"
 #include "monitor.h"
+#include "notification.h"
+#include "secretagent.h"
 
-#include <QDBusMetaType>
-#include <QDBusServiceWatcher>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
+#include <QDBusMetaType>
 #include <QDBusReply>
+#include <QDBusServiceWatcher>
 
 K_PLUGIN_CLASS_WITH_JSON(NetworkManagementService, "networkmanagement.json")
 
 class NetworkManagementServicePrivate
 {
-    public:
+public:
     SecretAgent *agent = nullptr;
     Notification *notification = nullptr;
     Monitor *monitor = nullptr;
     ConnectivityMonitor *connectivityMonitor = nullptr;
 };
 
-NetworkManagementService::NetworkManagementService(QObject * parent, const QVariantList&)
-    : KDEDModule(parent), d_ptr(new NetworkManagementServicePrivate)
+NetworkManagementService::NetworkManagementService(QObject *parent, const QVariantList &)
+    : KDEDModule(parent)
+    , d_ptr(new NetworkManagementServicePrivate)
 {
     Q_D(NetworkManagementService);
 

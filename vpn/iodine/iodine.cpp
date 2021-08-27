@@ -21,12 +21,12 @@ IodineUiPlugin::~IodineUiPlugin()
 {
 }
 
-SettingWidget * IodineUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
+SettingWidget *IodineUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
     return new IodineWidget(setting, parent);
 }
 
-SettingWidget * IodineUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
+SettingWidget *IodineUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
 {
     return new IodineAuthDialog(setting, hints, parent);
 }

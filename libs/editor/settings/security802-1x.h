@@ -19,11 +19,14 @@ namespace Ui
 class Security8021x;
 }
 
-class Q_DECL_EXPORT Security8021x: public SettingWidget
+class Q_DECL_EXPORT Security8021x : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit Security8021x(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), bool wifiMode = true, QWidget *parent = nullptr, Qt::WindowFlags f = {});
+    explicit Security8021x(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
+                           bool wifiMode = true,
+                           QWidget *parent = nullptr,
+                           Qt::WindowFlags f = {});
     ~Security8021x() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

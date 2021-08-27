@@ -7,8 +7,8 @@
 #ifndef PLASMA_NM_PASSWORD_FIELD_H
 #define PLASMA_NM_PASSWORD_FIELD_H
 
-#include <QLineEdit>
 #include <QComboBox>
+#include <QLineEdit>
 
 #include <QVBoxLayout>
 

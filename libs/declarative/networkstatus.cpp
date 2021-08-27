@@ -18,49 +18,49 @@
 NetworkStatus::SortedConnectionType NetworkStatus::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
 {
     switch (type) {
-        case NetworkManager::ConnectionSettings::Adsl:
-            return NetworkStatus::NetworkStatus::Adsl;
-            break;
-        case NetworkManager::ConnectionSettings::Bluetooth:
-            return NetworkStatus::Bluetooth;
-            break;
-        case NetworkManager::ConnectionSettings::Cdma:
-            return NetworkStatus::Cdma;
-            break;
-        case NetworkManager::ConnectionSettings::Gsm:
-            return NetworkStatus::Gsm;
-            break;
-        case NetworkManager::ConnectionSettings::Infiniband:
-            return NetworkStatus::Infiniband;
-            break;
-        case NetworkManager::ConnectionSettings::OLPCMesh:
-            return NetworkStatus::OLPCMesh;
-            break;
-        case NetworkManager::ConnectionSettings::Pppoe:
-            return NetworkStatus::Pppoe;
-            break;
-        case NetworkManager::ConnectionSettings::Vpn:
-            return NetworkStatus::Vpn;
-            break;
-        case NetworkManager::ConnectionSettings::Wired:
-            return NetworkStatus::Wired;
-            break;
-        case NetworkManager::ConnectionSettings::Wireless:
-            return NetworkStatus::Wireless;
-            break;
-        case NetworkManager::ConnectionSettings::WireGuard:
-            return NetworkStatus::Wireguard;
-            break;
-        default:
-            return NetworkStatus::Other;
-            break;
+    case NetworkManager::ConnectionSettings::Adsl:
+        return NetworkStatus::NetworkStatus::Adsl;
+        break;
+    case NetworkManager::ConnectionSettings::Bluetooth:
+        return NetworkStatus::Bluetooth;
+        break;
+    case NetworkManager::ConnectionSettings::Cdma:
+        return NetworkStatus::Cdma;
+        break;
+    case NetworkManager::ConnectionSettings::Gsm:
+        return NetworkStatus::Gsm;
+        break;
+    case NetworkManager::ConnectionSettings::Infiniband:
+        return NetworkStatus::Infiniband;
+        break;
+    case NetworkManager::ConnectionSettings::OLPCMesh:
+        return NetworkStatus::OLPCMesh;
+        break;
+    case NetworkManager::ConnectionSettings::Pppoe:
+        return NetworkStatus::Pppoe;
+        break;
+    case NetworkManager::ConnectionSettings::Vpn:
+        return NetworkStatus::Vpn;
+        break;
+    case NetworkManager::ConnectionSettings::Wired:
+        return NetworkStatus::Wired;
+        break;
+    case NetworkManager::ConnectionSettings::Wireless:
+        return NetworkStatus::Wireless;
+        break;
+    case NetworkManager::ConnectionSettings::WireGuard:
+        return NetworkStatus::Wireguard;
+        break;
+    default:
+        return NetworkStatus::Other;
+        break;
     }
 }
 
-NetworkStatus::NetworkStatus(QObject* parent)
+NetworkStatus::NetworkStatus(QObject *parent)
     : QObject(parent)
 {
-    connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this,  &NetworkStatus::changeActiveConnections);
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this, &NetworkStatus::changeActiveConnections);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::statusChanged, this, &NetworkStatus::statusChanged);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionsChanged, this, QOverload<>::of(&NetworkStatus::activeConnectionsChanged));
 
@@ -84,7 +84,7 @@ QString NetworkStatus::networkStatus() const
 
 void NetworkStatus::activeConnectionsChanged()
 {
-    for (const NetworkManager::ActiveConnection::Ptr & active : NetworkManager::activeConnections()) {
+    for (const NetworkManager::ActiveConnection::Ptr &active : NetworkManager::activeConnections()) {
         connect(active.data(), &NetworkManager::ActiveConnection::default4Changed, this, &NetworkStatus::defaultChanged, Qt::UniqueConnection);
         connect(active.data(), &NetworkManager::ActiveConnection::default6Changed, this, &NetworkStatus::defaultChanged, Qt::UniqueConnection);
         connect(active.data(), &NetworkManager::ActiveConnection::stateChanged, this, &NetworkStatus::changeActiveConnections);
@@ -102,35 +102,33 @@ void NetworkStatus::statusChanged(NetworkManager::Status status)
 {
     const auto oldNetworkStatus = m_networkStatus;
     switch (status) {
-        case NetworkManager::ConnectedLinkLocal:
-            m_networkStatus = i18nc("A network device is connected, but there is only link-local connectivity", "Connected");
-            break;
-        case NetworkManager::ConnectedSiteOnly:
-            m_networkStatus = i18nc("A network device is connected, but there is only site-local connectivity", "Connected");
-            break;
-        case NetworkManager::Connected:
-            m_networkStatus = i18nc("A network device is connected, with global network connectivity", "Connected");
-            break;
-        case NetworkManager::Asleep:
-            m_networkStatus = i18nc("Networking is inactive and all devices are disabled", "Inactive");
-            break;
-        case NetworkManager::Disconnected:
-            m_networkStatus = i18nc("There is no active network connection", "Disconnected");
-            break;
-        case NetworkManager::Disconnecting:
-            m_networkStatus = i18nc("Network connections are being cleaned up", "Disconnecting");
-            break;
-        case NetworkManager::Connecting:
-            m_networkStatus = i18nc("A network device is connecting to a network and there is no other available network connection", "Connecting");
-            break;
-        default:
-            m_networkStatus = checkUnknownReason();
-            break;
+    case NetworkManager::ConnectedLinkLocal:
+        m_networkStatus = i18nc("A network device is connected, but there is only link-local connectivity", "Connected");
+        break;
+    case NetworkManager::ConnectedSiteOnly:
+        m_networkStatus = i18nc("A network device is connected, but there is only site-local connectivity", "Connected");
+        break;
+    case NetworkManager::Connected:
+        m_networkStatus = i18nc("A network device is connected, with global network connectivity", "Connected");
+        break;
+    case NetworkManager::Asleep:
+        m_networkStatus = i18nc("Networking is inactive and all devices are disabled", "Inactive");
+        break;
+    case NetworkManager::Disconnected:
+        m_networkStatus = i18nc("There is no active network connection", "Disconnected");
+        break;
+    case NetworkManager::Disconnecting:
+        m_networkStatus = i18nc("Network connections are being cleaned up", "Disconnecting");
+        break;
+    case NetworkManager::Connecting:
+        m_networkStatus = i18nc("A network device is connecting to a network and there is no other available network connection", "Connecting");
+        break;
+    default:
+        m_networkStatus = checkUnknownReason();
+        break;
     }
 
-    if (status == NetworkManager::ConnectedLinkLocal ||
-        status == NetworkManager::ConnectedSiteOnly ||
-        status == NetworkManager::Connected) {
+    if (status == NetworkManager::ConnectedLinkLocal || status == NetworkManager::ConnectedSiteOnly || status == NetworkManager::Connected) {
         changeActiveConnections();
     } else if (m_activeConnections != m_networkStatus) {
         m_activeConnections = m_networkStatus;
@@ -144,9 +142,8 @@ void NetworkStatus::statusChanged(NetworkManager::Status status)
 
 void NetworkStatus::changeActiveConnections()
 {
-    if (NetworkManager::status() != NetworkManager::Connected &&
-        NetworkManager::status() != NetworkManager::ConnectedLinkLocal &&
-        NetworkManager::status() != NetworkManager::ConnectedSiteOnly) {
+    if (NetworkManager::status() != NetworkManager::Connected && NetworkManager::status() != NetworkManager::ConnectedLinkLocal
+        && NetworkManager::status() != NetworkManager::ConnectedSiteOnly) {
         return;
     }
 
@@ -154,17 +151,18 @@ void NetworkStatus::changeActiveConnections()
     const QString format = QStringLiteral("%1: %2");
 
     QList<NetworkManager::ActiveConnection::Ptr> activeConnectionList = NetworkManager::activeConnections();
-    std::sort(activeConnectionList.begin(), activeConnectionList.end(), [] (const NetworkManager::ActiveConnection::Ptr &left, const NetworkManager::ActiveConnection::Ptr &right)
-    {
-        return NetworkStatus::connectionTypeToSortedType(left->type()) < NetworkStatus::connectionTypeToSortedType(right->type());
-    });
+    std::sort(activeConnectionList.begin(),
+              activeConnectionList.end(),
+              [](const NetworkManager::ActiveConnection::Ptr &left, const NetworkManager::ActiveConnection::Ptr &right) {
+                  return NetworkStatus::connectionTypeToSortedType(left->type()) < NetworkStatus::connectionTypeToSortedType(right->type());
+              });
 
     for (const NetworkManager::ActiveConnection::Ptr &active : activeConnectionList) {
         if (!active->devices().isEmpty() && UiUtils::isConnectionTypeSupported(active->type())) {
-
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
-            if (device && ((device->type() != NetworkManager::Device::Generic && device->type() <= NetworkManager::Device::Team)
-                           || device->type() == 29)) {  // TODO: Change to WireGuard enum value when it is added
+            if (device
+                && ((device->type() != NetworkManager::Device::Generic && device->type() <= NetworkManager::Device::Team)
+                    || device->type() == 29)) { // TODO: Change to WireGuard enum value when it is added
                 bool connecting = false;
                 bool connected = false;
                 QString conType;
@@ -179,8 +177,8 @@ void NetworkStatus::changeActiveConnections()
                 }
 
                 if (vpnConnection && active->vpn()) {
-                    if (vpnConnection->state() >= NetworkManager::VpnConnection::Prepare &&
-                        vpnConnection->state() <= NetworkManager::VpnConnection::GettingIpConfig) {
+                    if (vpnConnection->state() >= NetworkManager::VpnConnection::Prepare
+                        && vpnConnection->state() <= NetworkManager::VpnConnection::GettingIpConfig) {
                         connecting = true;
                     } else if (vpnConnection->state() == NetworkManager::VpnConnection::Activated) {
                         connected = true;
@@ -203,18 +201,18 @@ void NetworkStatus::changeActiveConnections()
                     status = i18n("Connecting to %1", connection->name());
                 } else if (connected) {
                     switch (NetworkManager::connectivity()) {
-                        case NetworkManager::NoConnectivity:
-                            status = i18n("Connected to %1 (no connectivity)", connection->name());
-                            break;
-                        case NetworkManager::Limited:
-                            status = i18n("Connected to %1 (limited connectivity)", connection->name());
-                            break;
-                        case NetworkManager::Portal:
-                            status = i18n("Connected to %1 (log in required)", connection->name());
-                            break;
-                        default:
-                            status = i18n("Connected to %1", connection->name());
-                            break;
+                    case NetworkManager::NoConnectivity:
+                        status = i18n("Connected to %1 (no connectivity)", connection->name());
+                        break;
+                    case NetworkManager::Limited:
+                        status = i18n("Connected to %1 (limited connectivity)", connection->name());
+                        break;
+                    case NetworkManager::Portal:
+                        status = i18n("Connected to %1 (log in required)", connection->name());
+                        break;
+                    default:
+                        status = i18n("Connected to %1", connection->name());
+                        break;
                     }
                 }
 

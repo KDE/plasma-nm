@@ -7,11 +7,10 @@
 
 #include "editlistdialog.h"
 
-#include <QLayout>
 #include <QDialogButtonBox>
+#include <QLayout>
 
 #include <KLineEdit>
-
 
 EditListDialog::EditListDialog(QWidget *parent)
     : QDialog(parent)
@@ -19,7 +18,7 @@ EditListDialog::EditListDialog(QWidget *parent)
     editListWidget = new KEditListWidget(this);
     editListWidget->setCheckAtEntering(true);
 
-    QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, this);
+    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     connect(buttons, &QDialogButtonBox::accepted, this, &QDialog::accept);
     connect(buttons, &QDialogButtonBox::accepted, this, &EditListDialog::dialogAccepted);
     connect(buttons, &QDialogButtonBox::rejected, this, &QDialog::reject);
@@ -68,7 +67,7 @@ void EditListDialog::setValidator(const QValidator *validator)
     editListWidget->lineEdit()->setValidator(validator);
 }
 
-const QValidator * EditListDialog::validator() const
+const QValidator *EditListDialog::validator() const
 {
     return editListWidget->lineEdit()->validator();
 }

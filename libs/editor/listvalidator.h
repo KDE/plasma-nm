@@ -30,4 +30,3 @@ private:
 };
 
 #endif // PLASMA_NM_LIST_VALIDATOR_H
-

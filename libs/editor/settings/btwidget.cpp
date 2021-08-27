@@ -12,9 +12,9 @@
 
 #include <NetworkManagerQt/Utils>
 
-BtWidget::BtWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_ui(new Ui::BtWidget)
+BtWidget::BtWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_ui(new Ui::BtWidget)
 {
     m_ui->setupUi(this);
 

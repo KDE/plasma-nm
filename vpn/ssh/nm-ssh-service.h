@@ -9,9 +9,9 @@
 #ifndef NM_SSH_SERVICE_H
 #define NM_SSH_SERVICE_H
 
-#define NM_DBUS_SERVICE_SSH    "org.freedesktop.NetworkManager.ssh"
-#define NM_DBUS_INTERFACE_SSH  "org.freedesktop.NetworkManager.ssh"
-#define NM_DBUS_PATH_SSH       "/org/freedesktop/NetworkManager/ssh"
+#define NM_DBUS_SERVICE_SSH "org.freedesktop.NetworkManager.ssh"
+#define NM_DBUS_INTERFACE_SSH "org.freedesktop.NetworkManager.ssh"
+#define NM_DBUS_PATH_SSH "/org/freedesktop/NetworkManager/ssh"
 
 #define NM_SSH_KEY_REMOTE "remote"
 #define NM_SSH_KEY_REMOTE_IP "remote-ip"
@@ -43,6 +43,4 @@
 #define NM_SSH_AUTH_TYPE_PASSWORD "password"
 #define NM_SSH_AUTH_TYPE_KEY "key"
 
-
 #endif /* NM_SSH_SERVICE_H */
-

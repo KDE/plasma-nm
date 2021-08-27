@@ -7,11 +7,11 @@
 #include "settingwidget.h"
 #include "bssidcombobox.h"
 #include "hwaddrcombobox.h"
-#include "ssidcombobox.h"
 #include "passwordfield.h"
+#include "ssidcombobox.h"
 
-#include <QComboBox>
 #include <QCheckBox>
+#include <QComboBox>
 #include <QGroupBox>
 #include <QLineEdit>
 #include <QPushButton>
@@ -20,13 +20,13 @@
 
 #include <KUrlRequester>
 
-SettingWidget::SettingWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f)
+SettingWidget::SettingWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)
     , m_type(setting->name())
 {
 }
 
-SettingWidget::SettingWidget(const NetworkManager::Setting::Ptr &setting, const QStringList &hints, QWidget* parent, Qt::WindowFlags f)
+SettingWidget::SettingWidget(const NetworkManager::Setting::Ptr &setting, const QStringList &hints, QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)
     , m_hints(hints)
     , m_type(setting->name())
@@ -94,7 +94,7 @@ void SettingWidget::watchChangedSetting()
 
     // Connect all QTableView widgets
     QList<QTableView *> tableviews = findChildren<QTableView *>();
-    for(QTableView *tableview : tableviews) {
+    for (QTableView *tableview : tableviews) {
         connect(tableview, &QTableView::clicked, this, &SettingWidget::settingChanged);
     }
 

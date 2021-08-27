@@ -13,27 +13,27 @@
 
 class AvailableDevices : public QObject
 {
-/**
- * Return true when there is present wired device
- */
-Q_PROPERTY(bool wiredDeviceAvailable READ isWiredDeviceAvailable NOTIFY wiredDeviceAvailableChanged)
-/**
- * Return true when there is present wireless device
- */
-Q_PROPERTY(bool wirelessDeviceAvailable READ isWirelessDeviceAvailable NOTIFY wirelessDeviceAvailableChanged)
+    /**
+     * Return true when there is present wired device
+     */
+    Q_PROPERTY(bool wiredDeviceAvailable READ isWiredDeviceAvailable NOTIFY wiredDeviceAvailableChanged)
+    /**
+     * Return true when there is present wireless device
+     */
+    Q_PROPERTY(bool wirelessDeviceAvailable READ isWirelessDeviceAvailable NOTIFY wirelessDeviceAvailableChanged)
 
-/**
- * Return true when there is present modem device
- */
-Q_PROPERTY(bool modemDeviceAvailable READ isModemDeviceAvailable NOTIFY modemDeviceAvailableChanged)
-/**
- * Return true when there is present bluetooth device
- * Bluetooth device is visible for NetworkManager only when there is some Bluetooth connection
- */
-Q_PROPERTY(bool bluetoothDeviceAvailable READ isBluetoothDeviceAvailable NOTIFY bluetoothDeviceAvailableChanged)
-Q_OBJECT
+    /**
+     * Return true when there is present modem device
+     */
+    Q_PROPERTY(bool modemDeviceAvailable READ isModemDeviceAvailable NOTIFY modemDeviceAvailableChanged)
+    /**
+     * Return true when there is present bluetooth device
+     * Bluetooth device is visible for NetworkManager only when there is some Bluetooth connection
+     */
+    Q_PROPERTY(bool bluetoothDeviceAvailable READ isBluetoothDeviceAvailable NOTIFY bluetoothDeviceAvailableChanged)
+    Q_OBJECT
 public:
-    explicit AvailableDevices(QObject* parent = nullptr);
+    explicit AvailableDevices(QObject *parent = nullptr);
     ~AvailableDevices() override;
 
 public Q_SLOTS:
@@ -43,7 +43,7 @@ public Q_SLOTS:
     bool isBluetoothDeviceAvailable() const;
 
 private Q_SLOTS:
-    void deviceAdded(const QString& dev);
+    void deviceAdded(const QString &dev);
     void deviceRemoved();
 
 Q_SIGNALS:

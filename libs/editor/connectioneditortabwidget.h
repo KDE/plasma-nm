@@ -19,10 +19,11 @@ class ConnectionEditorTabWidget;
 
 class Q_DECL_EXPORT ConnectionEditorTabWidget : public ConnectionEditorBase
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     explicit ConnectionEditorTabWidget(const NetworkManager::ConnectionSettings::Ptr &connection,
-                                       QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+                                       QWidget *parent = nullptr,
+                                       Qt::WindowFlags f = Qt::WindowFlags());
     ~ConnectionEditorTabWidget() override;
 
     void setConnection(const NetworkManager::ConnectionSettings::Ptr &connection) override;
@@ -38,4 +39,3 @@ private:
 };
 
 #endif // PLASMA_NM_CONNECTION_EDITOR_TAB_WIDGET_H
-

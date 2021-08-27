@@ -32,7 +32,8 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex &sourc
         return false;
     }
 
-    const NetworkManager::ConnectionSettings::ConnectionType type = (NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(index, NetworkModel::TypeRole).toUInt();
+    const NetworkManager::ConnectionSettings::ConnectionType type =
+        (NetworkManager::ConnectionSettings::ConnectionType)sourceModel()->data(index, NetworkModel::TypeRole).toUInt();
     if (!UiUtils::isConnectionTypeSupported(type)) {
         return false;
     }
@@ -43,7 +44,7 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex &sourc
     }
 
     const QString pattern = filterRegExp().pattern();
-    if (!pattern.isEmpty()) {  // filtering on data (connection name), wildcard-only
+    if (!pattern.isEmpty()) { // filtering on data (connection name), wildcard-only
         QString data = sourceModel()->data(index, Qt::DisplayRole).toString();
         if (data.isEmpty()) {
             data = sourceModel()->data(index, NetworkModel::NameRole).toString();
@@ -58,13 +59,15 @@ bool EditorProxyModel::lessThan(const QModelIndex &left, const QModelIndex &righ
 {
     const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
     const QString leftName = sourceModel()->data(left, NetworkModel::NameRole).toString();
-    const UiUtils::SortedConnectionType leftType = UiUtils::connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
+    const UiUtils::SortedConnectionType leftType =
+        UiUtils::connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType)sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
     const QString leftVpnType = sourceModel()->data(left, NetworkModel::VpnType).toString();
     const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStampRole).toDateTime();
 
     const bool rightConnected = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
     const QString rightName = sourceModel()->data(right, NetworkModel::NameRole).toString();
-    const UiUtils::SortedConnectionType rightType = UiUtils::connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType) sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
+    const UiUtils::SortedConnectionType rightType =
+        UiUtils::connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType)sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
     const QString rightVpnType = sourceModel()->data(right, NetworkModel::VpnType).toString();
     const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStampRole).toDateTime();
 

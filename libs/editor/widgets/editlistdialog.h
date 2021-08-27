@@ -8,14 +8,14 @@
 #ifndef PLASMA_NM_EDIT_LIST_DIALOG_H
 #define PLASMA_NM_EDIT_LIST_DIALOG_H
 
-#include <QDialog>
 #include <KEditListWidget>
+#include <QDialog>
 
 class QValidator;
 
 class EditListDialog : public QDialog
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     explicit EditListDialog(QWidget *parent = nullptr);
     ~EditListDialog() override;
@@ -41,4 +41,3 @@ private:
 };
 
 #endif // PLASMA_NM_EDIT_LIST_DIALOG_H
-

@@ -4,19 +4,19 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-#include "debug.h"
 #include "wificonnectionwidget.h"
+#include "debug.h"
 #include "ui_wificonnectionwidget.h"
 
-#include <NetworkManagerQt/Utils>
 #include <KLocalizedString>
+#include <NetworkManagerQt/Utils>
 #include <QRandomGenerator>
 
 #include "uiutils.h"
 
-WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_ui(new Ui::WifiConnectionWidget)
+WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_ui(new Ui::WifiConnectionWidget)
 {
     m_ui->setupUi(this);
 
@@ -119,7 +119,7 @@ void WifiConnectionWidget::generateRandomClonedMac()
 
     // Disable the multicast bit and enable the locally administered bit.
     mac[0] = mac[0] & ~0x1;
-    mac[0] = mac[0] |  0x2;
+    mac[0] = mac[0] | 0x2;
 
     m_ui->clonedMacAddress->setText(NetworkManager::macAddressAsString(mac));
 }
@@ -166,7 +166,7 @@ void WifiConnectionWidget::bandChanged(int band)
 
 void WifiConnectionWidget::fillChannels(NetworkManager::WirelessSetting::FrequencyBand band)
 {
-    QList<QPair<int, int> > channels;
+    QList<QPair<int, int>> channels;
 
     if (band == NetworkManager::WirelessSetting::A) {
         channels = NetworkManager::getAFreqs();
@@ -177,9 +177,9 @@ void WifiConnectionWidget::fillChannels(NetworkManager::WirelessSetting::Frequen
         return;
     }
 
-    QListIterator<QPair<int,int> > i(channels);
+    QListIterator<QPair<int, int>> i(channels);
     while (i.hasNext()) {
-        QPair<int,int> channel = i.next();
+        QPair<int, int> channel = i.next();
         m_ui->channel->addItem(i18n("%1 (%2 MHz)", channel.first, channel.second), channel.first);
     }
 }

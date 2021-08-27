@@ -8,7 +8,7 @@
 
 #include <QDBusConnection>
 
-Monitor::Monitor(QObject* parent)
+Monitor::Monitor(QObject *parent)
     : QObject(parent)
 {
 #if WITH_MODEMMANAGER_SUPPORT
@@ -39,7 +39,7 @@ void Monitor::addBluetoothConnection(const QString &bdAddr, const QString &servi
 }
 
 #if WITH_MODEMMANAGER_SUPPORT
-void Monitor::unlockModem(const QString& modem)
+void Monitor::unlockModem(const QString &modem)
 {
     qDebug() << "unlocking " << modem;
     m_modemMonitor->unlockModem(modem);

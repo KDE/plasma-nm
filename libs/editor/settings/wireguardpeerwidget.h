@@ -14,7 +14,7 @@
 
 class Q_DECL_EXPORT WireGuardPeerWidget : public QDialog
 {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit WireGuardPeerWidget(const QVariantMap &peerData, QWidget *parent = nullptr, Qt::WindowFlags f = {});
@@ -22,8 +22,8 @@ public:
 
     QVariantMap setting() const;
     bool isValid();
-    enum EndPointValid {BothValid, AddressValid, PortValid, BothInvalid};
-    static WireGuardPeerWidget::EndPointValid isEndpointValid(QString&, QString&);
+    enum EndPointValid { BothValid, AddressValid, PortValid, BothInvalid };
+    static WireGuardPeerWidget::EndPointValid isEndpointValid(QString &, QString &);
 
 Q_SIGNALS:
     void notifyValid();

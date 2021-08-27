@@ -6,8 +6,8 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-#include "debug.h"
 #include "modemmonitor.h"
+#include "debug.h"
 
 #include <QDBusPendingReply>
 
@@ -16,8 +16,8 @@
 #include <KMessageBox>
 #include <KSharedConfig>
 
-#include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/GsmSetting>
 #include <NetworkManagerQt/Manager>
 
@@ -33,8 +33,9 @@ public:
     QPointer<PinDialog> dialog;
 };
 
-ModemMonitor::ModemMonitor(QObject * parent)
-    :QObject(parent), d_ptr(new ModemMonitorPrivate)
+ModemMonitor::ModemMonitor(QObject *parent)
+    : QObject(parent)
+    , d_ptr(new ModemMonitorPrivate)
 {
     Q_D(ModemMonitor);
     d->dialog.clear();
@@ -77,8 +78,7 @@ void ModemMonitor::unlockModem(const QString &modemUni)
 
     if (modem) {
         // Using queued invocation to prevent kded stalling here until user enters the pin.
-        QMetaObject::invokeMethod(modem.data(), "unlockRequiredChanged", Qt::QueuedConnection,
-                                  Q_ARG(MMModemLock, modem->unlockRequired()));
+        QMetaObject::invokeMethod(modem.data(), "unlockRequiredChanged", Qt::QueuedConnection, Q_ARG(MMModemLock, modem->unlockRequired()));
     }
 }
 
@@ -107,7 +107,7 @@ void ModemMonitor::requestPin(MMModemLock lock)
         d->dialog = QPointer<PinDialog>(new PinDialog(modem, PinDialog::SimPin2));
     } else if (lock == MM_MODEM_LOCK_SIM_PUK) {
         d->dialog = QPointer<PinDialog>(new PinDialog(modem, PinDialog::SimPuk));
-    } else if (lock == MM_MODEM_LOCK_SIM_PUK2 ) {
+    } else if (lock == MM_MODEM_LOCK_SIM_PUK2) {
         d->dialog = QPointer<PinDialog>(new PinDialog(modem, PinDialog::SimPuk));
     } else if (lock == MM_MODEM_LOCK_PH_SP_PIN) {
         d->dialog = QPointer<PinDialog>(new PinDialog(modem, PinDialog::ModemServiceProviderPin));
@@ -161,9 +161,9 @@ void ModemMonitor::requestPin(MMModemLock lock)
             QDBusPendingCall reply = sim->sendPin(d->dialog.data()->pin());
             watcher = new QDBusPendingCallWatcher(reply, sim.data());
         } else if (type == PinDialog::SimPuk //
-            || type == PinDialog::SimPuk2 || type == PinDialog::ModemServiceProviderPuk //
-            || type == PinDialog::ModemNetworkPuk || type == PinDialog::ModemCorporatePuk //
-            || type == PinDialog::ModemPhFsimPuk || type == PinDialog::ModemNetworkSubsetPuk) {
+                   || type == PinDialog::SimPuk2 || type == PinDialog::ModemServiceProviderPuk //
+                   || type == PinDialog::ModemNetworkPuk || type == PinDialog::ModemCorporatePuk //
+                   || type == PinDialog::ModemPhFsimPuk || type == PinDialog::ModemNetworkSubsetPuk) {
             QDBusPendingCall reply = sim->sendPuk(d->dialog.data()->puk(), d->dialog.data()->pin());
             watcher = new QDBusPendingCallWatcher(reply, sim.data());
         }
@@ -172,21 +172,22 @@ void ModemMonitor::requestPin(MMModemLock lock)
     }
 
 OUT:
-    if(d->dialog) {
+    if (d->dialog) {
         d->dialog.data()->deleteLater();
     }
     d->dialog.clear();
 }
 
-void ModemMonitor::onSendPinArrived(QDBusPendingCallWatcher * watcher)
+void ModemMonitor::onSendPinArrived(QDBusPendingCallWatcher *watcher)
 {
     QDBusPendingReply<> reply = *watcher;
 
     if (reply.isValid()) {
         // Automatically enabling this for cell phones with expensive data plans is not a good idea.
-        //NetworkManager::setWwanEnabled(true);
+        // NetworkManager::setWwanEnabled(true);
     } else {
-        KMessageBox::error(nullptr, i18nc("Text in GSM PIN/PUK unlock error dialog", "Error unlocking modem: %1", reply.error().message()),
+        KMessageBox::error(nullptr,
+                           i18nc("Text in GSM PIN/PUK unlock error dialog", "Error unlocking modem: %1", reply.error().message()),
                            i18nc("Title for GSM PIN/PUK unlock error dialog", "PIN/PUK unlock error"));
     }
 

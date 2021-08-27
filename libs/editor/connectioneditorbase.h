@@ -17,10 +17,9 @@ class SettingWidget;
 
 class Q_DECL_EXPORT ConnectionEditorBase : public QWidget
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    explicit ConnectionEditorBase(const NetworkManager::ConnectionSettings::Ptr &connection,
-                                  QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+    explicit ConnectionEditorBase(const NetworkManager::ConnectionSettings::Ptr &connection, QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
     explicit ConnectionEditorBase(QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
     ~ConnectionEditorBase() override;
 
@@ -67,7 +66,6 @@ private:
 
     void addConnectionWidget(ConnectionWidget *widget, const QString &text);
     void addSettingWidget(SettingWidget *widget, const QString &text);
-
 };
 
 #endif // PLASMA_NM_CONNECTION_EDITOR_BASE_H

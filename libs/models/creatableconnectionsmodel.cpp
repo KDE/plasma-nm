@@ -11,10 +11,13 @@
 #include <KLocalizedString>
 #include <KPluginMetaData>
 
-CreatableConnectionItem::CreatableConnectionItem(const QString &typeName, const QString &typeSection,
-                                                 const QString &description, const QString &icon,
+CreatableConnectionItem::CreatableConnectionItem(const QString &typeName,
+                                                 const QString &typeSection,
+                                                 const QString &description,
+                                                 const QString &icon,
                                                  NetworkManager::ConnectionSettings::ConnectionType type,
-                                                 const QString &vpnType, const QString &specificType,
+                                                 const QString &vpnType,
+                                                 const QString &specificType,
                                                  bool shared,
                                                  QObject *parent)
     : QObject(parent)
@@ -121,76 +124,108 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
     : QAbstractListModel(parent)
 {
     CreatableConnectionItem *connectionItem;
-    connectionItem = new CreatableConnectionItem(i18n("DSL"), i18n("Hardware based connections"),
-                                                 i18n("Some DSL description"), QStringLiteral("network-modem"),
+    connectionItem = new CreatableConnectionItem(i18n("DSL"),
+                                                 i18n("Hardware based connections"),
+                                                 i18n("Some DSL description"),
+                                                 QStringLiteral("network-modem"),
                                                  NetworkManager::ConnectionSettings::Pppoe);
     m_list << connectionItem;
 
-    connectionItem = new CreatableConnectionItem(i18n("Infiniband"), i18n("Hardware based connections"),
-                                                 i18n("Some infiniband description"), QStringLiteral("network-wired"),
+    connectionItem = new CreatableConnectionItem(i18n("Infiniband"),
+                                                 i18n("Hardware based connections"),
+                                                 i18n("Some infiniband description"),
+                                                 QStringLiteral("network-wired"),
                                                  NetworkManager::ConnectionSettings::Infiniband);
     m_list << connectionItem;
 
 #if WITH_MODEMMANAGER_SUPPORT
-    connectionItem = new CreatableConnectionItem(i18n("Mobile Broadband"), i18n("Hardware based connections"),
-                                                 i18n("Some mobile broadband description"), QStringLiteral("smartphone"),
+    connectionItem = new CreatableConnectionItem(i18n("Mobile Broadband"),
+                                                 i18n("Hardware based connections"),
+                                                 i18n("Some mobile broadband description"),
+                                                 QStringLiteral("smartphone"),
                                                  NetworkManager::ConnectionSettings::Gsm);
     m_list << connectionItem;
 #endif
 
-    connectionItem = new CreatableConnectionItem(i18n("Wired Ethernet"), i18n("Hardware based connections"),
-                                                 i18n("Some wired ethernet description"), QStringLiteral("network-wired"),
+    connectionItem = new CreatableConnectionItem(i18n("Wired Ethernet"),
+                                                 i18n("Hardware based connections"),
+                                                 i18n("Some wired ethernet description"),
+                                                 QStringLiteral("network-wired"),
                                                  NetworkManager::ConnectionSettings::Wired);
     m_list << connectionItem;
 
-    connectionItem = new CreatableConnectionItem(i18n("Wired Ethernet (shared)"), i18n("Hardware based connections"),
-                                                 i18n("Some wired ethernet description"), QStringLiteral("network-wired"),
+    connectionItem = new CreatableConnectionItem(i18n("Wired Ethernet (shared)"),
+                                                 i18n("Hardware based connections"),
+                                                 i18n("Some wired ethernet description"),
+                                                 QStringLiteral("network-wired"),
                                                  NetworkManager::ConnectionSettings::Wired,
-                                                 QString(), QString(), true); // VpnType and SpecificType are empty
+                                                 QString(),
+                                                 QString(),
+                                                 true); // VpnType and SpecificType are empty
     m_list << connectionItem;
 
-    connectionItem = new CreatableConnectionItem(i18n("Wi-Fi"), i18n("Hardware based connections"),
-                                                 i18n("Some wi-fi description"), QStringLiteral("network-wireless"),
+    connectionItem = new CreatableConnectionItem(i18n("Wi-Fi"),
+                                                 i18n("Hardware based connections"),
+                                                 i18n("Some wi-fi description"),
+                                                 QStringLiteral("network-wireless"),
                                                  NetworkManager::ConnectionSettings::Wireless);
     m_list << connectionItem;
 
-    connectionItem = new CreatableConnectionItem(i18n("Wi-Fi (shared)"), i18n("Hardware based connections"),
-                                                 i18n("Some wi-fi description"), QStringLiteral("network-wireless"),
+    connectionItem = new CreatableConnectionItem(i18n("Wi-Fi (shared)"),
+                                                 i18n("Hardware based connections"),
+                                                 i18n("Some wi-fi description"),
+                                                 QStringLiteral("network-wireless"),
                                                  NetworkManager::ConnectionSettings::Wireless,
-                                                 QString(), QString(), true); // VpnType and SpecificType are empty
+                                                 QString(),
+                                                 QString(),
+                                                 true); // VpnType and SpecificType are empty
     m_list << connectionItem;
 
     if (Configuration::self().manageVirtualConnections()) {
-        connectionItem = new CreatableConnectionItem(i18n("Bond"), i18n("Virtual connections"),
-                                                    i18n("Some bond description"), QStringLiteral("network-wired"),
-                                                    NetworkManager::ConnectionSettings::Bond,
-                                                    QString(), QString(), true); // VpnType and SpecificType are empty
+        connectionItem = new CreatableConnectionItem(i18n("Bond"),
+                                                     i18n("Virtual connections"),
+                                                     i18n("Some bond description"),
+                                                     QStringLiteral("network-wired"),
+                                                     NetworkManager::ConnectionSettings::Bond,
+                                                     QString(),
+                                                     QString(),
+                                                     true); // VpnType and SpecificType are empty
         m_list << connectionItem;
 
-        connectionItem = new CreatableConnectionItem(i18n("Bridge"), i18n("Virtual connections"),
-                                                    i18n("Some bond description"), QStringLiteral("network-wired"),
-                                                    NetworkManager::ConnectionSettings::Bridge,
-                                                    QString(), QString(), true); // VpnType and SpecificType are empty
+        connectionItem = new CreatableConnectionItem(i18n("Bridge"),
+                                                     i18n("Virtual connections"),
+                                                     i18n("Some bond description"),
+                                                     QStringLiteral("network-wired"),
+                                                     NetworkManager::ConnectionSettings::Bridge,
+                                                     QString(),
+                                                     QString(),
+                                                     true); // VpnType and SpecificType are empty
         m_list << connectionItem;
 
-        connectionItem = new CreatableConnectionItem(i18n("Team"), i18n("Virtual connections"),
-                                                    i18n("Some team description"), QStringLiteral("network-wired"),
-                                                    NetworkManager::ConnectionSettings::Team,
-                                                    QString(), QString(), true); // VpnType and SpecificType are empty
+        connectionItem = new CreatableConnectionItem(i18n("Team"),
+                                                     i18n("Virtual connections"),
+                                                     i18n("Some team description"),
+                                                     QStringLiteral("network-wired"),
+                                                     NetworkManager::ConnectionSettings::Team,
+                                                     QString(),
+                                                     QString(),
+                                                     true); // VpnType and SpecificType are empty
         m_list << connectionItem;
 
-        connectionItem = new CreatableConnectionItem(i18n("Vlan"), i18n("Virtual connections"),
-                                                    i18n("Some vlan description"), QStringLiteral("network-wired"),
-                                                    NetworkManager::ConnectionSettings::Vlan,
-                                                    QString(), QString(), true); // VpnType and SpecificType are empty
+        connectionItem = new CreatableConnectionItem(i18n("Vlan"),
+                                                     i18n("Virtual connections"),
+                                                     i18n("Some vlan description"),
+                                                     QStringLiteral("network-wired"),
+                                                     NetworkManager::ConnectionSettings::Vlan,
+                                                     QString(),
+                                                     QString(),
+                                                     true); // VpnType and SpecificType are empty
         m_list << connectionItem;
-
     }
 
     QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
 
-    std::sort(plugins.begin(), plugins.end(), [] (const auto &left, const auto &right)
-    {
+    std::sort(plugins.begin(), plugins.end(), [](const auto &left, const auto &right) {
         return QString::localeAwareCompare(left.name(), right.name()) <= 0;
     });
 
@@ -199,28 +234,39 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
         const QString vpnSubType = service.value("X-NetworkManager-Services-Subtype");
         const QString vpnDescription = service.description();
 
-        connectionItem = new CreatableConnectionItem(service.name(), i18n("VPN connections"),
-                                                     vpnDescription, QStringLiteral("network-vpn"),
+        connectionItem = new CreatableConnectionItem(service.name(),
+                                                     i18n("VPN connections"),
+                                                     vpnDescription,
+                                                     QStringLiteral("network-vpn"),
                                                      NetworkManager::ConnectionSettings::Vpn,
-                                                     vpnType, vpnSubType, false);
+                                                     vpnType,
+                                                     vpnSubType,
+                                                     false);
         m_list << connectionItem;
     }
 
-
     // WireGuard changed from VPN plugin to primary device in version 1.16 of NetworkManager
     if (NetworkManager::checkVersion(1, 16, 0)) {
-            connectionItem = new CreatableConnectionItem(i18n("WireGuard"), i18n("VPN connections"),
-                                                         i18n("WireGuard"), QStringLiteral("network-vpn"),
-                                                         NetworkManager::ConnectionSettings::WireGuard,
-                                                         QStringLiteral("WireGuard"), QString(), true); // VpnType and SpecificType are empty
-            m_list << connectionItem;
+        connectionItem = new CreatableConnectionItem(i18n("WireGuard"),
+                                                     i18n("VPN connections"),
+                                                     i18n("WireGuard"),
+                                                     QStringLiteral("network-vpn"),
+                                                     NetworkManager::ConnectionSettings::WireGuard,
+                                                     QStringLiteral("WireGuard"),
+                                                     QString(),
+                                                     true); // VpnType and SpecificType are empty
+        m_list << connectionItem;
     }
 
     // Placeholder for VPN import
-    connectionItem = new CreatableConnectionItem(i18n("Import VPN connection…"), i18n("Other"),
-                                                 i18n("Import a saved configuration file"), QStringLiteral("document-import"),
+    connectionItem = new CreatableConnectionItem(i18n("Import VPN connection…"),
+                                                 i18n("Other"),
+                                                 i18n("Import a saved configuration file"),
+                                                 QStringLiteral("document-import"),
                                                  NetworkManager::ConnectionSettings::Vpn,
-                                                 QLatin1String("imported"), QLatin1String("imported"), false);
+                                                 QLatin1String("imported"),
+                                                 QLatin1String("imported"),
+                                                 false);
     m_list << connectionItem;
 }
 
@@ -236,24 +282,24 @@ QVariant CreatableConnectionsModel::data(const QModelIndex &index, int role) con
         CreatableConnectionItem *item = m_list.at(row);
 
         switch (role) {
-            case ConnectionDescription:
-                return item->description();
-            case ConnectionIcon:
-                return item->icon();
-            case ConnectionSpeficType:
-                return item->specificType();
-            case ConnectionShared:
-                return item->shared();
-            case ConnectionType:
-                return item->connectionType();
-            case ConnectionTypeName:
-                return item->typeName();
-            case ConnectionTypeSection:
-                return item->typeSection();
-            case ConnectionVpnType:
-                return item->vpnType();
-            default:
-                break;
+        case ConnectionDescription:
+            return item->description();
+        case ConnectionIcon:
+            return item->icon();
+        case ConnectionSpeficType:
+            return item->specificType();
+        case ConnectionShared:
+            return item->shared();
+        case ConnectionType:
+            return item->connectionType();
+        case ConnectionTypeName:
+            return item->typeName();
+        case ConnectionTypeSection:
+            return item->typeSection();
+        case ConnectionVpnType:
+            return item->vpnType();
+        default:
+            break;
         }
     }
 
@@ -280,4 +326,3 @@ int CreatableConnectionsModel::rowCount(const QModelIndex &parent) const
     Q_UNUSED(parent);
     return m_list.count();
 }
-

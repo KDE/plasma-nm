@@ -9,13 +9,13 @@
 #ifndef NM_IODINE_SERVICE_DEFINES_H
 #define NM_IODINE_SERVICE_DEFINES_H
 
-#define NM_DBUS_SERVICE_IODINE    "org.freedesktop.NetworkManager.iodine"
-#define NM_DBUS_INTERFACE_IODINE  "org.freedesktop.NetworkManager.iodine"
-#define NM_DBUS_PATH_IODINE       "/org/freedesktop/NetworkManager/iodine"
+#define NM_DBUS_SERVICE_IODINE "org.freedesktop.NetworkManager.iodine"
+#define NM_DBUS_INTERFACE_IODINE "org.freedesktop.NetworkManager.iodine"
+#define NM_DBUS_PATH_IODINE "/org/freedesktop/NetworkManager/iodine"
 
-#define NM_IODINE_KEY_TOPDOMAIN  "topdomain"
+#define NM_IODINE_KEY_TOPDOMAIN "topdomain"
 #define NM_IODINE_KEY_NAMESERVER "nameserver"
-#define NM_IODINE_KEY_FRAGSIZE   "fragsize"
-#define NM_IODINE_KEY_PASSWORD   "password"
+#define NM_IODINE_KEY_FRAGSIZE "fragsize"
+#define NM_IODINE_KEY_PASSWORD "password"
 
 #endif /* NM_IODINE_SERVICE_DEFINES_H */

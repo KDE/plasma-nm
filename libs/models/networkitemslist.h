@@ -15,7 +15,7 @@ class NetworkModelItem;
 
 class NetworkItemsList : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     enum FilterType {
         ActiveConnection,
@@ -34,14 +34,15 @@ public:
     int count() const;
     int indexOf(NetworkModelItem *item) const;
     NetworkModelItem *itemAt(int index) const;
-    QList<NetworkModelItem*> items() const;
-    QList<NetworkModelItem*> returnItems(const FilterType type, const QString &parameter, const QString &additionalParameter = QString()) const;
-    QList<NetworkModelItem*> returnItems(const FilterType type, NetworkManager::ConnectionSettings::ConnectionType typeParameter) const;
+    QList<NetworkModelItem *> items() const;
+    QList<NetworkModelItem *> returnItems(const FilterType type, const QString &parameter, const QString &additionalParameter = QString()) const;
+    QList<NetworkModelItem *> returnItems(const FilterType type, NetworkManager::ConnectionSettings::ConnectionType typeParameter) const;
 
     void insertItem(NetworkModelItem *item);
     void removeItem(NetworkModelItem *item);
+
 private:
-    QList<NetworkModelItem*> m_items;
+    QList<NetworkModelItem *> m_items;
 };
 
 #endif // PLASMA_NM_MODEL_NETWORK_ITEMS_LIST_H

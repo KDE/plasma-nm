@@ -7,8 +7,7 @@
 #include "connectioneditortabwidget.h"
 #include "ui_connectioneditortabwidget.h"
 
-ConnectionEditorTabWidget::ConnectionEditorTabWidget(const NetworkManager::ConnectionSettings::Ptr &connection,
-                                                     QWidget *parent, Qt::WindowFlags f)
+ConnectionEditorTabWidget::ConnectionEditorTabWidget(const NetworkManager::ConnectionSettings::Ptr &connection, QWidget *parent, Qt::WindowFlags f)
     : ConnectionEditorBase(connection, parent, f)
     , m_ui(new Ui::ConnectionEditorTabWidget)
 {

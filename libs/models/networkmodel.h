@@ -13,9 +13,9 @@
 #include "networkitemslist.h"
 
 #include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessDevice>
-#include <NetworkManagerQt/Utils>
 
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/modem.h>
@@ -23,7 +23,7 @@
 
 class Q_DECL_EXPORT NetworkModel : public QAbstractListModel
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     // HACK: Delay model updates to prevent jumping password entry in the applet
     // BUG: 435430
@@ -64,11 +64,7 @@ public:
     };
     Q_ENUMS(ItemRole)
 
-    enum ModelChangeType {
-        ItemAdded,
-        ItemRemoved,
-        ItemPropertyChanged
-    };
+    enum ModelChangeType { ItemAdded, ItemRemoved, ItemPropertyChanged };
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
@@ -84,7 +80,7 @@ private Q_SLOTS:
     void activeConnectionAdded(const QString &activeConnection);
     void activeConnectionRemoved(const QString &activeConnection);
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
-    void activeVpnConnectionStateChanged(NetworkManager::VpnConnection::State state,NetworkManager::VpnConnection::StateChangeReason reason);
+    void activeVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason);
     void availableConnectionAppeared(const QString &connection);
     void availableConnectionDisappeared(const QString &connection);
     void connectionAdded(const QString &connection);
@@ -107,10 +103,11 @@ private Q_SLOTS:
     void wirelessNetworkReferenceApChanged(const QString &accessPoint);
 
     void initialize();
+
 private:
     bool m_delayModelUpdates = false;
     NetworkItemsList m_list;
-    QQueue<QPair<ModelChangeType, NetworkModelItem*> > m_updateQueue;
+    QQueue<QPair<ModelChangeType, NetworkModelItem *>> m_updateQueue;
 
     void addActiveConnection(const NetworkManager::ActiveConnection::Ptr &activeConnection);
     void addAvailableConnection(const QString &connection, const NetworkManager::Device::Ptr &device);
@@ -123,7 +120,8 @@ private:
     void initializeSignals(const NetworkManager::Connection::Ptr &connection);
     void initializeSignals(const NetworkManager::Device::Ptr &device);
     void initializeSignals(const NetworkManager::WirelessNetwork::Ptr &network);
-    void updateFromWirelessNetwork(NetworkModelItem *item, const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::WirelessDevice::Ptr &device);
+    void
+    updateFromWirelessNetwork(NetworkModelItem *item, const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::WirelessDevice::Ptr &device);
 
     void insertItem(NetworkModelItem *item);
     void removeItem(NetworkModelItem *item);

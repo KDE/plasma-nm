@@ -6,7 +6,7 @@
 
 #include "enums.h"
 
-Enums::Enums(QObject* parent)
+Enums::Enums(QObject *parent)
     : QObject(parent)
 {
 }

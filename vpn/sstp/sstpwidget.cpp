@@ -6,12 +6,12 @@
 
 #include "sstpwidget.h"
 
-#include "ui_sstpwidget.h"
 #include "ui_sstpadvanced.h"
+#include "ui_sstpwidget.h"
 
-#include <QString>
 #include <QDialog>
 #include <QDialogButtonBox>
+#include <QString>
 
 #include "nm-sstp-service.h"
 
@@ -45,7 +45,7 @@ SstpSettingWidget::SstpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
     QVBoxLayout *layout = new QVBoxLayout(d->advancedDlg);
     layout->addWidget(d->advancedWid);
     d->advancedDlg->setLayout(layout);
-    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, d->advancedDlg);
+    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, d->advancedDlg);
     connect(buttons, &QDialogButtonBox::accepted, d->advancedDlg, &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, d->advancedDlg, &QDialog::reject);
 
@@ -215,7 +215,7 @@ QVariantMap SstpSettingWidget::setting() const
     NMStringMap data;
     NMStringMap secretData;
 
-    data.insert(QLatin1String(NM_SSTP_KEY_GATEWAY),  d->ui.le_gateway->text());
+    data.insert(QLatin1String(NM_SSTP_KEY_GATEWAY), d->ui.le_gateway->text());
 
     if (!d->ui.le_username->text().isEmpty()) {
         data.insert(QLatin1String(NM_SSTP_KEY_USER), d->ui.le_username->text());

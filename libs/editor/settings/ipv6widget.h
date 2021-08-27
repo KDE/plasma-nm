@@ -7,11 +7,11 @@
 #ifndef PLASMA_NM_IPV6_WIDGET_H
 #define PLASMA_NM_IPV6_WIDGET_H
 
-#include <QWidget>
 #include <NetworkManagerQt/Ipv6Setting>
+#include <QWidget>
 
-#include "settingwidget.h"
 #include "ipv6routeswidget.h"
+#include "settingwidget.h"
 
 namespace Ui
 {
@@ -20,11 +20,11 @@ class IPv6Widget;
 
 class Q_DECL_EXPORT IPv6Widget : public SettingWidget
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     enum MethodIndex { Automatic = 0, AutomaticOnlyIP, AutomaticOnlyDHCP, LinkLocal, Manual, Ignored, Disabled };
 
-    explicit IPv6Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
+    explicit IPv6Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~IPv6Widget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
@@ -43,15 +43,15 @@ private Q_SLOTS:
     void slotAddIPAddress();
     void slotRemoveIPAddress();
 
-    void selectionChanged(const QItemSelection & selected);
-    void tableViewItemChanged(QStandardItem * item);
+    void selectionChanged(const QItemSelection &selected);
+    void tableViewItemChanged(QStandardItem *item);
 
 private:
-    Ui::IPv6Widget * m_ui;
+    Ui::IPv6Widget *m_ui;
     NetworkManager::Ipv6Setting m_tmpIpv6Setting;
 
     class Private;
-    Private * const d;
+    Private *const d;
 };
 
 #endif // PLASMA_NM_IPV4_WIDGET_H

@@ -6,19 +6,20 @@
 */
 
 #include "openvpnadvancedwidget.h"
-#include "ui_openvpnadvanced.h"
 #include "nm-openvpn-service.h"
 #include "settingwidget.h"
+#include "ui_openvpnadvanced.h"
 
+#include <QComboBox>
 #include <QStandardPaths>
 #include <QUrl>
-#include <QComboBox>
 
+#include <KAcceleratorManager>
 #include <KLocalizedString>
 #include <KProcess>
-#include <KAcceleratorManager>
 
-class OpenVpnAdvancedWidget::Private {
+class OpenVpnAdvancedWidget::Private
+{
 public:
     NetworkManager::VpnSetting::Ptr setting;
     KProcess *openvpnCipherProcess = nullptr;
@@ -35,16 +36,17 @@ public:
     class EnumProxyType
     {
     public:
-        enum ProxyType {NotRequired = 0, HTTP = 1, SOCKS = 2};
+        enum ProxyType { NotRequired = 0, HTTP = 1, SOCKS = 2 };
     };
     class EnumHashingAlgorithms
     {
     public:
-        enum HashingAlgorithms {Default = 0, None, Md4, Md5, Sha1, Sha224, Sha256, Sha384, Sha512, Ripemd160};
+        enum HashingAlgorithms { Default = 0, None, Md4, Md5, Sha1, Sha224, Sha256, Sha384, Sha512, Ripemd160 };
     };
-    class EnumCompression {
+    class EnumCompression
+    {
     public:
-        enum Compression {None = 0, LZO, LZ4, LZ4v2, Adaptive, Automatic};
+        enum Compression { None = 0, LZO, LZ4, LZ4v2, Adaptive, Automatic };
     };
 };
 
@@ -64,7 +66,7 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
 
     connect(m_ui->cbCertCheck, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::certCheckTypeChanged);
     connect(m_ui->cmbProxyType, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyTypeChanged);
-    connect(m_ui->cboTLSMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this] (int index) {
+    connect(m_ui->cboTLSMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this](int index) {
         if (index == 0) {
             m_ui->kurlTlsAuthKey->setDisabled(true);
             m_ui->cboDirection->setDisabled(true);
@@ -448,7 +450,7 @@ void OpenVpnAdvancedWidget::loadConfig()
     d->readConfig = true;
 
     NetworkManager::Setting::SecretFlags type;
-    type = (NetworkManager::Setting::SecretFlags)dataMap[NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags"].toInt();
+    type = (NetworkManager::Setting::SecretFlags)dataMap[NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD "-flags"].toInt();
     if (!(type & NetworkManager::Setting::NotSaved || type & NetworkManager::Setting::NotRequired)) {
         m_ui->proxyPassword->setText(secrets.value(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD)));
     }
@@ -480,7 +482,7 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     if (m_ui->chkMtu->isChecked()) {
         data.insert(QLatin1String(NM_OPENVPN_KEY_TUNNEL_MTU), QString::number(m_ui->sbMtu->value()));
     }
-    if (m_ui->chkCustomFragmentSize->isChecked() ) {
+    if (m_ui->chkCustomFragmentSize->isChecked()) {
         data.insert(QLatin1String(NM_OPENVPN_KEY_FRAGMENT_SIZE), QString::number(m_ui->sbCustomFragmentSize->value()));
     }
     if (m_ui->chkUseCustomReneg->isChecked()) {
@@ -490,22 +492,22 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
 
     if (m_ui->chkUseCompression->isChecked()) {
         switch (m_ui->cmbUseCompression->currentIndex()) {
-	case Private::EnumCompression::None:
+        case Private::EnumCompression::None:
             data.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), QLatin1String("no-by-default"));
             break;
-	case Private::EnumCompression::LZO:
+        case Private::EnumCompression::LZO:
             data.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), QLatin1String("lzo"));
             break;
-	case Private::EnumCompression::LZ4:
+        case Private::EnumCompression::LZ4:
             data.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), QLatin1String("lz4"));
             break;
-	case Private::EnumCompression::LZ4v2:
+        case Private::EnumCompression::LZ4v2:
             data.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), QLatin1String("lz4-v2"));
             break;
-	case Private::EnumCompression::Adaptive:
+        case Private::EnumCompression::Adaptive:
             data.insert(QLatin1String(NM_OPENVPN_KEY_COMP_LZO), QLatin1String("adaptive"));
             break;
-	case Private::EnumCompression::Automatic:
+        case Private::EnumCompression::Automatic:
             data.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), QLatin1String("yes"));
             break;
         }
@@ -586,13 +588,16 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     case CertCheckType::DontVerify:
         break;
     case CertCheckType::VerifyWholeSubjectExactly:
-        data.insert(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME), QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_SUBJECT).arg(m_ui->subjectMatch->text()));
+        data.insert(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME),
+                    QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_SUBJECT).arg(m_ui->subjectMatch->text()));
         break;
     case CertCheckType::VerifyNameExactly:
-        data.insert(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME), QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME).arg(m_ui->subjectMatch->text()));
+        data.insert(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME),
+                    QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME).arg(m_ui->subjectMatch->text()));
         break;
     case CertCheckType::VerifyNameByPrefix:
-        data.insert(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME), QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME_PREFIX).arg(m_ui->subjectMatch->text()));
+        data.insert(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME),
+                    QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME_PREFIX).arg(m_ui->subjectMatch->text()));
         break;
     case CertCheckType::VerifySubjectPartially:
         data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE), m_ui->subjectMatch->text());
@@ -642,7 +647,7 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
         if (!m_ui->proxyUsername->text().isEmpty()) {
             data.insert(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_USERNAME), m_ui->proxyUsername->text());
             secretData.insert(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD), m_ui->proxyPassword->text());
-            handleOnePasswordType(m_ui->proxyPassword, QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags"), data);
+            handleOnePasswordType(m_ui->proxyPassword, QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD "-flags"), data);
         }
         break;
     case Private::EnumProxyType::SOCKS:
@@ -697,7 +702,7 @@ void OpenVpnAdvancedWidget::proxyTypeChanged(int type)
     }
 }
 
-void OpenVpnAdvancedWidget::handleOnePasswordType(const PasswordField *passwordField, const QString & key, NMStringMap & data) const
+void OpenVpnAdvancedWidget::handleOnePasswordType(const PasswordField *passwordField, const QString &key, NMStringMap &data) const
 {
     const PasswordField::PasswordOption option = passwordField->passwordOption();
     switch (option) {

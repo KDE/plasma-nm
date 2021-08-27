@@ -5,9 +5,9 @@
 */
 
 #include "security802-1x.h"
-#include "ui_802-1x.h"
 #include "editlistdialog.h"
 #include "listvalidator.h"
+#include "ui_802-1x.h"
 
 #include <KAcceleratorManager>
 #include <KLocalizedString>
@@ -94,7 +94,9 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool w
     KAcceleratorManager::manage(this);
     connect(m_ui->stackedWidget, &QStackedWidget::currentChanged, this, &Security8021x::currentAuthChanged);
 
-    altSubjectValidator = new QRegExpValidator(QRegExp(QLatin1String("^(DNS:[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+|EMAIL:[a-zA-Z0-9._-]+@[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+|URI:[a-zA-Z0-9.+-]+:.+|)$")), this);
+    altSubjectValidator = new QRegExpValidator(
+        QRegExp(QLatin1String("^(DNS:[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+|EMAIL:[a-zA-Z0-9._-]+@[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+|URI:[a-zA-Z0-9.+-]+:.+|)$")),
+        this);
     serversValidator = new QRegExpValidator(QRegExp(QLatin1String("^[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+$")), this);
 
     ListValidator *altSubjectListValidator = new ListValidator(this);
@@ -144,7 +146,7 @@ void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
         m_ui->leTlsAlternativeSubjectMatches->setText(securitySetting->altSubjectMatches().join(QLatin1String(", ")));
         for (const QString &match : securitySetting->altSubjectMatches()) {
             if (match.startsWith(QLatin1String("DNS:"))) {
-                servers.append(match.right(match.length()-4));
+                servers.append(match.right(match.length() - 4));
             }
         }
         m_ui->leTlsConnectToServers->setText(servers.join(QLatin1String(", ")));
@@ -281,7 +283,7 @@ QVariantMap Security8021x::setting() const
     NetworkManager::Security8021xSetting setting;
 
     NetworkManager::Security8021xSetting::EapMethod method =
-            static_cast<NetworkManager::Security8021xSetting::EapMethod>(m_ui->auth->itemData(m_ui->auth->currentIndex()).toInt());
+        static_cast<NetworkManager::Security8021xSetting::EapMethod>(m_ui->auth->itemData(m_ui->auth->currentIndex()).toInt());
 
     setting.setEapMethods(QList<NetworkManager::Security8021xSetting::EapMethod>() << method);
 
@@ -511,19 +513,19 @@ void Security8021x::altSubjectMatchesButtonClicked()
 
     editor->setItems(m_ui->leTlsSubjectMatch->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), Qt::SkipEmptyParts));
     editor->setWindowTitle(i18n("Alternative Subject Matches"));
-    editor->setToolTip(i18n("<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. https://www.kde.org&gt;</li></ul></qt>"));
+    editor->setToolTip(
+        i18n("<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. "
+             "https://www.kde.org&gt;</li></ul></qt>"));
     editor->setValidator(altSubjectValidator);
 
-    connect(editor.data(), &QDialog::accepted,
-            [editor, this] () {
-                m_ui->leTlsSubjectMatch->setText(editor->items().join(QLatin1String(", ")));
-            });
-    connect(editor.data(), &QDialog::finished,
-            [editor] () {
-                if (editor) {
-                    editor->deleteLater();
-                }
-            });
+    connect(editor.data(), &QDialog::accepted, [editor, this]() {
+        m_ui->leTlsSubjectMatch->setText(editor->items().join(QLatin1String(", ")));
+    });
+    connect(editor.data(), &QDialog::finished, [editor]() {
+        if (editor) {
+            editor->deleteLater();
+        }
+    });
     editor->setModal(true);
     editor->show();
 }
@@ -536,16 +538,14 @@ void Security8021x::connectToServersButtonClicked()
     editor->setWindowTitle(i18n("Connect to these servers only"));
     editor->setValidator(serversValidator);
 
-    connect(editor.data(), &QDialog::accepted,
-            [editor, this] () {
-                m_ui->leTlsConnectToServers->setText(editor->items().join(QLatin1String(", ")));
-            });
-    connect(editor.data(), &QDialog::finished,
-            [editor] () {
-                if (editor) {
-                    editor->deleteLater();
-                }
-            });
+    connect(editor.data(), &QDialog::accepted, [editor, this]() {
+        m_ui->leTlsConnectToServers->setText(editor->items().join(QLatin1String(", ")));
+    });
+    connect(editor.data(), &QDialog::finished, [editor]() {
+        if (editor) {
+            editor->deleteLater();
+        }
+    });
     editor->setModal(true);
     editor->show();
 }
@@ -553,10 +553,11 @@ void Security8021x::connectToServersButtonClicked()
 bool Security8021x::isValid() const
 {
     NetworkManager::Security8021xSetting::EapMethod method =
-            static_cast<NetworkManager::Security8021xSetting::EapMethod>(m_ui->auth->itemData(m_ui->auth->currentIndex()).toInt());
+        static_cast<NetworkManager::Security8021xSetting::EapMethod>(m_ui->auth->itemData(m_ui->auth->currentIndex()).toInt());
 
     if (method == NetworkManager::Security8021xSetting::EapMethodMd5) {
-        return !m_ui->md5UserName->text().isEmpty() && (!m_ui->md5Password->text().isEmpty() || m_ui->md5Password->passwordOption() == PasswordField::AlwaysAsk);
+        return !m_ui->md5UserName->text().isEmpty()
+            && (!m_ui->md5Password->text().isEmpty() || m_ui->md5Password->passwordOption() == PasswordField::AlwaysAsk);
     } else if (method == NetworkManager::Security8021xSetting::EapMethodTls) {
         if (m_ui->tlsIdentity->text().isEmpty()) {
             return false;
@@ -600,18 +601,23 @@ bool Security8021x::isValid() const
         // TODO Try other formats (DER - mainly used in Windows)
         // TODO Validate other certificates??
     } else if (method == NetworkManager::Security8021xSetting::EapMethodLeap) {
-        return !m_ui->leapUsername->text().isEmpty() && (!m_ui->leapPassword->text().isEmpty() || m_ui->leapPassword->passwordOption() == PasswordField::AlwaysAsk);
+        return !m_ui->leapUsername->text().isEmpty()
+            && (!m_ui->leapPassword->text().isEmpty() || m_ui->leapPassword->passwordOption() == PasswordField::AlwaysAsk);
     } else if (method == NetworkManager::Security8021xSetting::EapMethodPwd) {
-        return !m_ui->pwdUsername->text().isEmpty() && (!m_ui->pwdPassword->text().isEmpty() || m_ui->pwdPassword->passwordOption() == PasswordField::AlwaysAsk);
+        return !m_ui->pwdUsername->text().isEmpty()
+            && (!m_ui->pwdPassword->text().isEmpty() || m_ui->pwdPassword->passwordOption() == PasswordField::AlwaysAsk);
     } else if (method == NetworkManager::Security8021xSetting::EapMethodFast) {
         if (!m_ui->fastAllowPacProvisioning->isChecked() && !m_ui->pacFile->url().isValid()) {
             return false;
         }
-        return !m_ui->fastUsername->text().isEmpty() && (!m_ui->fastPassword->text().isEmpty()  || m_ui->fastPassword->passwordOption() == PasswordField::AlwaysAsk);
+        return !m_ui->fastUsername->text().isEmpty()
+            && (!m_ui->fastPassword->text().isEmpty() || m_ui->fastPassword->passwordOption() == PasswordField::AlwaysAsk);
     } else if (method == NetworkManager::Security8021xSetting::EapMethodTtls) {
-         return !m_ui->ttlsUsername->text().isEmpty() && (!m_ui->ttlsPassword->text().isEmpty() || m_ui->ttlsPassword->passwordOption() == PasswordField::AlwaysAsk);
+        return !m_ui->ttlsUsername->text().isEmpty()
+            && (!m_ui->ttlsPassword->text().isEmpty() || m_ui->ttlsPassword->passwordOption() == PasswordField::AlwaysAsk);
     } else if (method == NetworkManager::Security8021xSetting::EapMethodPeap) {
-         return !m_ui->peapUsername->text().isEmpty() && (!m_ui->peapPassword->text().isEmpty() || m_ui->peapPassword->passwordOption() == PasswordField::AlwaysAsk);
+        return !m_ui->peapUsername->text().isEmpty()
+            && (!m_ui->peapPassword->text().isEmpty() || m_ui->peapPassword->passwordOption() == PasswordField::AlwaysAsk);
     }
 
     return true;

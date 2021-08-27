@@ -11,13 +11,13 @@
 
 class Enums : public QObject
 {
-Q_OBJECT
-Q_ENUMS(ConnectionStatus)
-Q_ENUMS(ConnectionType)
-Q_ENUMS(SecurityType)
+    Q_OBJECT
+    Q_ENUMS(ConnectionStatus)
+    Q_ENUMS(ConnectionType)
+    Q_ENUMS(SecurityType)
 
 public:
-    explicit Enums(QObject* parent = nullptr);
+    explicit Enums(QObject *parent = nullptr);
     ~Enums() override;
 
     enum ConnectionStatus {

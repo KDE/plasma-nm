@@ -5,9 +5,9 @@
 */
 
 #include "networkmodel.h"
-#include "networkmodelitem.h"
 #include "configuration.h"
 #include "debug.h"
+#include "networkmodelitem.h"
 #include "uiutils.h"
 
 #if WITH_MODEMMANAGER_SUPPORT
@@ -35,68 +35,68 @@ QVariant NetworkModel::data(const QModelIndex &index, int role) const
         NetworkModelItem *item = m_list.itemAt(row);
 
         switch (role) {
-            case ConnectionDetailsRole:
-                return item->details();
-            case ConnectionIconRole:
-                return item->icon();
-            case ConnectionPathRole:
-                return item->connectionPath();
-            case ConnectionStateRole:
-                return item->connectionState();
-            case DeviceName:
-                return item->deviceName();
-            case DevicePathRole:
-                return item->devicePath();
-            case DeviceStateRole:
-                return item->deviceState();
-            case DuplicateRole:
-                return item->duplicate();
-            case ItemUniqueNameRole:
-                if (m_list.returnItems(NetworkItemsList::Name, item->name()).count() > 1) {
-                    return item->originalName();
-                } else {
-                    return item->name();
-                }
-            case ItemTypeRole:
-                return item->itemType();
-            case LastUsedRole:
-                return UiUtils::formatLastUsedDateRelative(item->timestamp());
-            case LastUsedDateOnlyRole:
-                return UiUtils::formatDateRelative(item->timestamp());
-            case NameRole:
+        case ConnectionDetailsRole:
+            return item->details();
+        case ConnectionIconRole:
+            return item->icon();
+        case ConnectionPathRole:
+            return item->connectionPath();
+        case ConnectionStateRole:
+            return item->connectionState();
+        case DeviceName:
+            return item->deviceName();
+        case DevicePathRole:
+            return item->devicePath();
+        case DeviceStateRole:
+            return item->deviceState();
+        case DuplicateRole:
+            return item->duplicate();
+        case ItemUniqueNameRole:
+            if (m_list.returnItems(NetworkItemsList::Name, item->name()).count() > 1) {
+                return item->originalName();
+            } else {
                 return item->name();
-            case SectionRole:
-                return item->sectionType();
-            case SignalRole:
-                return item->signal();
-            case SlaveRole:
-                return item->slave();
-            case SsidRole:
-                return item->ssid();
-            case SpecificPathRole:
-                return item->specificPath();
-            case SecurityTypeRole:
-                return item->securityType();
-            case SecurityTypeStringRole:
-                return UiUtils::labelFromWirelessSecurity(item->securityType());
-            case TimeStampRole:
-                return item->timestamp();
-            case TypeRole:
-                return item->type();
-            case UniRole:
-                return item->uni();
-            case UuidRole:
-                return item->uuid();
-            case VpnState:
-                return item->vpnState();
-            case VpnType:
-                return item->vpnType();
-            case RxBytesRole:
-                return item->rxBytes();
-            case TxBytesRole:
-                return item->txBytes();
-            default:
-                break;
+            }
+        case ItemTypeRole:
+            return item->itemType();
+        case LastUsedRole:
+            return UiUtils::formatLastUsedDateRelative(item->timestamp());
+        case LastUsedDateOnlyRole:
+            return UiUtils::formatDateRelative(item->timestamp());
+        case NameRole:
+            return item->name();
+        case SectionRole:
+            return item->sectionType();
+        case SignalRole:
+            return item->signal();
+        case SlaveRole:
+            return item->slave();
+        case SsidRole:
+            return item->ssid();
+        case SpecificPathRole:
+            return item->specificPath();
+        case SecurityTypeRole:
+            return item->securityType();
+        case SecurityTypeStringRole:
+            return UiUtils::labelFromWirelessSecurity(item->securityType());
+        case TimeStampRole:
+            return item->timestamp();
+        case TypeRole:
+            return item->type();
+        case UniRole:
+            return item->uni();
+        case UuidRole:
+            return item->uuid();
+        case VpnState:
+            return item->vpnState();
+        case VpnType:
+            return item->vpnType();
+        case RxBytesRole:
+            return item->rxBytes();
+        case TxBytesRole:
+            return item->txBytes();
+        default:
+            break;
         }
     }
 
@@ -151,7 +151,7 @@ void NetworkModel::setDelayModelUpdates(bool delayUpdates)
     // Process queue
     if (!delayUpdates) {
         while (!m_updateQueue.isEmpty()) {
-            QPair<NetworkModel::ModelChangeType, NetworkModelItem*> update = m_updateQueue.dequeue();
+            QPair<NetworkModel::ModelChangeType, NetworkModelItem *> update = m_updateQueue.dequeue();
             if (update.first == ItemAdded) {
                 insertItem(update.second);
             } else if (update.first == ItemRemoved) {
@@ -162,7 +162,6 @@ void NetworkModel::setDelayModelUpdates(bool delayUpdates)
         }
     }
 }
-
 
 void NetworkModel::initialize()
 {
@@ -192,7 +191,11 @@ void NetworkModel::initializeSignals()
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionAdded, this, &NetworkModel::activeConnectionAdded, Qt::UniqueConnection);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionRemoved, this, &NetworkModel::activeConnectionRemoved, Qt::UniqueConnection);
     connect(NetworkManager::settingsNotifier(), &NetworkManager::SettingsNotifier::connectionAdded, this, &NetworkModel::connectionAdded, Qt::UniqueConnection);
-    connect(NetworkManager::settingsNotifier(), &NetworkManager::SettingsNotifier::connectionRemoved, this, &NetworkModel::connectionRemoved, Qt::UniqueConnection);
+    connect(NetworkManager::settingsNotifier(),
+            &NetworkManager::SettingsNotifier::connectionRemoved,
+            this,
+            &NetworkModel::connectionRemoved,
+            Qt::UniqueConnection);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::deviceAdded, this, &NetworkModel::deviceAdded, Qt::UniqueConnection);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::deviceRemoved, this, &NetworkModel::deviceRemoved, Qt::UniqueConnection);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::statusChanged, this, &NetworkModel::statusChanged, Qt::UniqueConnection);
@@ -203,10 +206,18 @@ void NetworkModel::initializeSignals(const NetworkManager::ActiveConnection::Ptr
     if (activeConnection->vpn()) {
         NetworkManager::VpnConnection::Ptr vpnConnection = activeConnection.objectCast<NetworkManager::VpnConnection>();
         if (vpnConnection) {
-            connect(vpnConnection.data(), &NetworkManager::VpnConnection::stateChanged, this, &NetworkModel::activeVpnConnectionStateChanged, Qt::UniqueConnection);
+            connect(vpnConnection.data(),
+                    &NetworkManager::VpnConnection::stateChanged,
+                    this,
+                    &NetworkModel::activeVpnConnectionStateChanged,
+                    Qt::UniqueConnection);
         }
     } else {
-        connect(activeConnection.data(), &NetworkManager::ActiveConnection::stateChanged, this, &NetworkModel::activeConnectionStateChanged, Qt::UniqueConnection);
+        connect(activeConnection.data(),
+                &NetworkManager::ActiveConnection::stateChanged,
+                this,
+                &NetworkModel::activeConnectionStateChanged,
+                Qt::UniqueConnection);
     }
 }
 
@@ -244,7 +255,6 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr &device)
         connect(wifiDev.data(), &NetworkManager::WirelessDevice::networkDisappeared, this, &NetworkModel::wirelessNetworkDisappeared, Qt::UniqueConnection);
 
     }
-
 #if WITH_MODEMMANAGER_SUPPORT
     else if (device->type() == NetworkManager::Device::Modem) {
         ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(device->udi());
@@ -252,9 +262,21 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr &device)
             if (modem->hasInterface(ModemManager::ModemDevice::ModemInterface)) {
                 ModemManager::Modem::Ptr modemNetwork = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
                 if (modemNetwork) {
-                    connect(modemNetwork.data(), &ModemManager::Modem::signalQualityChanged, this, &NetworkModel::gsmNetworkSignalQualityChanged, Qt::UniqueConnection);
-                    connect(modemNetwork.data(), &ModemManager::Modem::accessTechnologiesChanged, this, &NetworkModel::gsmNetworkAccessTechnologiesChanged, Qt::UniqueConnection);
-                    connect(modemNetwork.data(), &ModemManager::Modem::currentModesChanged, this, &NetworkModel::gsmNetworkCurrentModesChanged, Qt::UniqueConnection);
+                    connect(modemNetwork.data(),
+                            &ModemManager::Modem::signalQualityChanged,
+                            this,
+                            &NetworkModel::gsmNetworkSignalQualityChanged,
+                            Qt::UniqueConnection);
+                    connect(modemNetwork.data(),
+                            &ModemManager::Modem::accessTechnologiesChanged,
+                            this,
+                            &NetworkModel::gsmNetworkAccessTechnologiesChanged,
+                            Qt::UniqueConnection);
+                    connect(modemNetwork.data(),
+                            &ModemManager::Modem::currentModesChanged,
+                            this,
+                            &NetworkModel::gsmNetworkCurrentModesChanged,
+                            Qt::UniqueConnection);
                 }
             }
         }
@@ -265,7 +287,11 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr &device)
 void NetworkModel::initializeSignals(const NetworkManager::WirelessNetwork::Ptr &network)
 {
     connect(network.data(), &NetworkManager::WirelessNetwork::signalStrengthChanged, this, &NetworkModel::wirelessNetworkSignalChanged, Qt::UniqueConnection);
-    connect(network.data(), &NetworkManager::WirelessNetwork::referenceAccessPointChanged, this, &NetworkModel::wirelessNetworkReferenceApChanged, Qt::UniqueConnection);
+    connect(network.data(),
+            &NetworkManager::WirelessNetwork::referenceAccessPointChanged,
+            this,
+            &NetworkModel::wirelessNetworkReferenceApChanged,
+            Qt::UniqueConnection);
 }
 
 void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::Ptr &activeConnection)
@@ -465,12 +491,13 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
 
         NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::findConnection(item->connectionPath())->settings();
         if (connectionSettings && connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
-            NetworkManager::WirelessSetting::Ptr wirelessSetting = connectionSettings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+            NetworkManager::WirelessSetting::Ptr wirelessSetting =
+                connectionSettings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
             if (QString::fromUtf8(wirelessSetting->ssid()) == network->ssid()) {
-                const QString bssid =  NetworkManager::macAddressAsString(wirelessSetting->bssid());
+                const QString bssid = NetworkManager::macAddressAsString(wirelessSetting->bssid());
                 const QString restrictedHw = NetworkManager::macAddressAsString(wirelessSetting->macAddress());
-                if ((bssid.isEmpty() || bssid == network->referenceAccessPoint()->hardwareAddress()) &&
-                    (restrictedHw.isEmpty() || restrictedHw == device->hardwareAddress())) {
+                if ((bssid.isEmpty() || bssid == network->referenceAccessPoint()->hardwareAddress())
+                    && (restrictedHw.isEmpty() || restrictedHw == device->hardwareAddress())) {
                     updateFromWirelessNetwork(item, network, device);
                     return;
                 }
@@ -483,8 +510,12 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
 
     NetworkManager::AccessPoint::Ptr ap = network->referenceAccessPoint();
     if (ap && (ap->capabilities().testFlag(NetworkManager::AccessPoint::Privacy) || ap->wpaFlags() || ap->rsnFlags())) {
-        securityType = NetworkManager::findBestWirelessSecurity(device->wirelessCapabilities(), true, (device->mode() == NetworkManager::WirelessDevice::Adhoc),
-                                                                ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
+        securityType = NetworkManager::findBestWirelessSecurity(device->wirelessCapabilities(),
+                                                                true,
+                                                                (device->mode() == NetworkManager::WirelessDevice::Adhoc),
+                                                                ap->capabilities(),
+                                                                ap->wpaFlags(),
+                                                                ap->rsnFlags());
         if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Infra) {
             mode = NetworkManager::WirelessSetting::Infrastructure;
         } else if (network->referenceAccessPoint()->mode() == NetworkManager::AccessPoint::Adhoc) {
@@ -524,7 +555,8 @@ void NetworkModel::checkAndCreateDuplicate(const QString &connection, const QStr
             originalItem = item;
         }
 
-        if (!item->duplicate() && item->itemType() == NetworkModelItem::AvailableConnection && (item->devicePath() != deviceUni && !item->devicePath().isEmpty())) {
+        if (!item->duplicate() && item->itemType() == NetworkModelItem::AvailableConnection
+            && (item->devicePath() != deviceUni && !item->devicePath().isEmpty())) {
             createDuplicate = true;
         }
     }
@@ -539,7 +571,7 @@ void NetworkModel::checkAndCreateDuplicate(const QString &connection, const QStr
 
 void NetworkModel::onItemUpdated()
 {
-    NetworkModelItem *item = static_cast<NetworkModelItem*>(sender());
+    NetworkModelItem *item = static_cast<NetworkModelItem *>(sender());
     if (item) {
         updateItem(item);
     }
@@ -557,7 +589,7 @@ void NetworkModel::setDeviceStatisticsRefreshRateMs(const QString &devicePath, u
 void NetworkModel::insertItem(NetworkModelItem *item)
 {
     if (m_delayModelUpdates) {
-        m_updateQueue.enqueue(QPair<NetworkModel::ModelChangeType, NetworkModelItem*>(NetworkModel::ItemAdded, item));
+        m_updateQueue.enqueue(QPair<NetworkModel::ModelChangeType, NetworkModelItem *>(NetworkModel::ItemAdded, item));
         return;
     }
 
@@ -570,7 +602,7 @@ void NetworkModel::insertItem(NetworkModelItem *item)
 void NetworkModel::removeItem(NetworkModelItem *item)
 {
     if (m_delayModelUpdates) {
-        m_updateQueue.enqueue(QPair<NetworkModel::ModelChangeType, NetworkModelItem*>(NetworkModel::ItemRemoved, item));
+        m_updateQueue.enqueue(QPair<NetworkModel::ModelChangeType, NetworkModelItem *>(NetworkModel::ItemRemoved, item));
         return;
     }
 
@@ -587,10 +619,8 @@ void NetworkModel::updateItem(NetworkModelItem *item)
 {
     const QVector<int> changedRoles = item->changedRoles();
     // Check only primary roles which can change item order
-    if (m_delayModelUpdates && (changedRoles.contains(ConnectionStateRole) ||
-                                changedRoles.contains(ItemTypeRole) ||
-                                changedRoles.contains(SignalRole))) {
-        m_updateQueue.enqueue(QPair<NetworkModel::ModelChangeType, NetworkModelItem*>(NetworkModel::ItemPropertyChanged, item));
+    if (m_delayModelUpdates && (changedRoles.contains(ConnectionStateRole) || changedRoles.contains(ItemTypeRole) || changedRoles.contains(SignalRole))) {
+        m_updateQueue.enqueue(QPair<NetworkModel::ModelChangeType, NetworkModelItem *>(NetworkModel::ItemPropertyChanged, item));
         return;
     }
 
@@ -606,7 +636,7 @@ void NetworkModel::updateItem(NetworkModelItem *item)
 
 void NetworkModel::accessPointSignalStrengthChanged(int signal)
 {
-    NetworkManager::AccessPoint *apPtr = qobject_cast<NetworkManager::AccessPoint*>(sender());
+    NetworkManager::AccessPoint *apPtr = qobject_cast<NetworkManager::AccessPoint *>(sender());
     if (!apPtr) {
         return;
     }
@@ -642,7 +672,7 @@ void NetworkModel::activeConnectionRemoved(const QString &activeConnection)
 
 void NetworkModel::activeConnectionStateChanged(NetworkManager::ActiveConnection::State state)
 {
-    NetworkManager::ActiveConnection *activePtr = qobject_cast<NetworkManager::ActiveConnection*>(sender());
+    NetworkManager::ActiveConnection *activePtr = qobject_cast<NetworkManager::ActiveConnection *>(sender());
 
     if (!activePtr) {
         return;
@@ -658,7 +688,7 @@ void NetworkModel::activeConnectionStateChanged(NetworkManager::ActiveConnection
 void NetworkModel::activeVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
 {
     Q_UNUSED(reason)
-    NetworkManager::ActiveConnection *activePtr = qobject_cast<NetworkManager::ActiveConnection*>(sender());
+    NetworkManager::ActiveConnection *activePtr = qobject_cast<NetworkManager::ActiveConnection *>(sender());
 
     if (!activePtr) {
         return;
@@ -683,7 +713,7 @@ void NetworkModel::activeVpnConnectionStateChanged(NetworkManager::VpnConnection
 
 void NetworkModel::availableConnectionAppeared(const QString &connection)
 {
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device *>(sender())->uni());
     if (!device) {
         return;
     }
@@ -765,12 +795,12 @@ void NetworkModel::connectionRemoved(const QString &connection)
             for (NetworkModelItem *secondItem : m_list.items()) {
                 // Remove it entirely when there is another connection with the same configuration and for the same device
                 // or it's a shared connection
-                if ((item->mode() != NetworkManager::WirelessSetting::Infrastructure) ||
-                    (item->connectionPath() != secondItem->connectionPath() //
-                     && item->devicePath() == secondItem->devicePath() //
-                     && item->mode() == secondItem->mode() //
-                     && item->securityType() == secondItem->securityType() //
-                     && item->ssid() == secondItem->ssid())) {
+                if ((item->mode() != NetworkManager::WirelessSetting::Infrastructure)
+                    || (item->connectionPath() != secondItem->connectionPath() //
+                        && item->devicePath() == secondItem->devicePath() //
+                        && item->mode() == secondItem->mode() //
+                        && item->securityType() == secondItem->securityType() //
+                        && item->ssid() == secondItem->ssid())) {
                     remove = true;
                     break;
                 }
@@ -799,7 +829,7 @@ void NetworkModel::connectionRemoved(const QString &connection)
 
 void NetworkModel::connectionUpdated()
 {
-    NetworkManager::Connection *connectionPtr = qobject_cast<NetworkManager::Connection*>(sender());
+    NetworkManager::Connection *connectionPtr = qobject_cast<NetworkManager::Connection *>(sender());
     if (!connectionPtr) {
         return;
     }
@@ -842,12 +872,14 @@ void NetworkModel::deviceRemoved(const QString &device)
     }
 }
 
-void NetworkModel::deviceStateChanged(NetworkManager::Device::State state, NetworkManager::Device::State oldState, NetworkManager::Device::StateChangeReason reason)
+void NetworkModel::deviceStateChanged(NetworkManager::Device::State state,
+                                      NetworkManager::Device::State oldState,
+                                      NetworkManager::Device::StateChangeReason reason)
 {
     Q_UNUSED(oldState);
     Q_UNUSED(reason);
 
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device *>(sender())->uni());
 
     if (!device) {
         return;
@@ -864,7 +896,7 @@ void NetworkModel::deviceStateChanged(NetworkManager::Device::State state, Netwo
 void NetworkModel::gsmNetworkAccessTechnologiesChanged(QFlags<MMModemAccessTechnology> accessTechnologies)
 {
     Q_UNUSED(accessTechnologies);
-    ModemManager::Modem *gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
+    ModemManager::Modem *gsmNetwork = qobject_cast<ModemManager::Modem *>(sender());
     if (!gsmNetwork)
         return;
 
@@ -896,7 +928,7 @@ void NetworkModel::gsmNetworkAccessTechnologiesChanged(QFlags<MMModemAccessTechn
 
 void NetworkModel::gsmNetworkCurrentModesChanged()
 {
-    ModemManager::Modem *gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
+    ModemManager::Modem *gsmNetwork = qobject_cast<ModemManager::Modem *>(sender());
     if (!gsmNetwork) {
         return;
     }
@@ -927,7 +959,7 @@ void NetworkModel::gsmNetworkCurrentModesChanged()
 
 void NetworkModel::gsmNetworkSignalQualityChanged(const ModemManager::SignalQualityPair &signalQuality)
 {
-    ModemManager::Modem *gsmNetwork = qobject_cast<ModemManager::Modem*>(sender());
+    ModemManager::Modem *gsmNetwork = qobject_cast<ModemManager::Modem *>(sender());
     if (!gsmNetwork) {
         return;
     }
@@ -962,7 +994,7 @@ void NetworkModel::gsmNetworkSignalQualityChanged(const ModemManager::SignalQual
 
 void NetworkModel::ipConfigChanged()
 {
-   NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device *>(sender())->uni());
 
     if (!device) {
         return;
@@ -976,7 +1008,7 @@ void NetworkModel::ipConfigChanged()
 
 void NetworkModel::ipInterfaceChanged()
 {
-    NetworkManager::Device *device = qobject_cast<NetworkManager::Device*>(sender());
+    NetworkManager::Device *device = qobject_cast<NetworkManager::Device *>(sender());
     if (!device) {
         return;
     }
@@ -1003,7 +1035,7 @@ void NetworkModel::statusChanged(NetworkManager::Status status)
 
 void NetworkModel::wirelessNetworkAppeared(const QString &ssid)
 {
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device *>(sender())->uni());
     if (device && device->type() == NetworkManager::Device::Wifi) {
         NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
         NetworkManager::WirelessNetwork::Ptr network = wirelessDevice->findNetwork(ssid);
@@ -1013,7 +1045,7 @@ void NetworkModel::wirelessNetworkAppeared(const QString &ssid)
 
 void NetworkModel::wirelessNetworkDisappeared(const QString &ssid)
 {
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device*>(sender())->uni());
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(qobject_cast<NetworkManager::Device *>(sender())->uni());
     if (!device) {
         return;
     }
@@ -1023,7 +1055,7 @@ void NetworkModel::wirelessNetworkDisappeared(const QString &ssid)
         if (item->itemType() == NetworkModelItem::AvailableAccessPoint || item->duplicate()) {
             removeItem(item);
             qCDebug(PLASMA_NM) << "Wireless network " << item->name() << " removed completely";
-        // Remove only AP and device from the item and leave it as an unavailable connection
+            // Remove only AP and device from the item and leave it as an unavailable connection
         } else {
             if (item->mode() == NetworkManager::WirelessSetting::Infrastructure) {
                 item->setDeviceName(QString());
@@ -1039,7 +1071,7 @@ void NetworkModel::wirelessNetworkDisappeared(const QString &ssid)
 
 void NetworkModel::wirelessNetworkReferenceApChanged(const QString &accessPoint)
 {
-    NetworkManager::WirelessNetwork *networkPtr = qobject_cast<NetworkManager::WirelessNetwork*>(sender());
+    NetworkManager::WirelessNetwork *networkPtr = qobject_cast<NetworkManager::WirelessNetwork *>(sender());
 
     if (!networkPtr) {
         return;
@@ -1051,7 +1083,8 @@ void NetworkModel::wirelessNetworkReferenceApChanged(const QString &accessPoint)
             continue;
         }
 
-        NetworkManager::WirelessSetting::Ptr wirelessSetting = connection->settings()->setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
+        NetworkManager::WirelessSetting::Ptr wirelessSetting =
+            connection->settings()->setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
         if (!wirelessSetting) {
             continue;
         }
@@ -1065,7 +1098,7 @@ void NetworkModel::wirelessNetworkReferenceApChanged(const QString &accessPoint)
 
 void NetworkModel::wirelessNetworkSignalChanged(int signal)
 {
-    NetworkManager::WirelessNetwork *networkPtr = qobject_cast<NetworkManager::WirelessNetwork*>(sender());
+    NetworkManager::WirelessNetwork *networkPtr = qobject_cast<NetworkManager::WirelessNetwork *>(sender());
     if (!networkPtr) {
         return;
     }
@@ -1093,19 +1126,26 @@ NetworkManager::WirelessSecurityType NetworkModel::alternativeWirelessSecurity(c
     return type;
 }
 
-void NetworkModel::updateFromWirelessNetwork(NetworkModelItem *item, const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::WirelessDevice::Ptr &device)
+void NetworkModel::updateFromWirelessNetwork(NetworkModelItem *item,
+                                             const NetworkManager::WirelessNetwork::Ptr &network,
+                                             const NetworkManager::WirelessDevice::Ptr &device)
 {
     NetworkManager::WirelessSecurityType securityType = NetworkManager::UnknownSecurity;
     NetworkManager::AccessPoint::Ptr ap = network->referenceAccessPoint();
     if (ap && ap->capabilities().testFlag(NetworkManager::AccessPoint::Privacy)) {
-        securityType = NetworkManager::findBestWirelessSecurity(device->wirelessCapabilities(), true, (device->mode() == NetworkManager::WirelessDevice::Adhoc),
-                                                                ap->capabilities(), ap->wpaFlags(), ap->rsnFlags());
+        securityType = NetworkManager::findBestWirelessSecurity(device->wirelessCapabilities(),
+                                                                true,
+                                                                (device->mode() == NetworkManager::WirelessDevice::Adhoc),
+                                                                ap->capabilities(),
+                                                                ap->wpaFlags(),
+                                                                ap->rsnFlags());
     }
 
     // Check whether the connection is associated with some concrete AP
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(item->connectionPath());
     if (connection) {
-        NetworkManager::WirelessSetting::Ptr wirelessSetting = connection->settings()->setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
+        NetworkManager::WirelessSetting::Ptr wirelessSetting =
+            connection->settings()->setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
         if (wirelessSetting) {
             if (!wirelessSetting->bssid().isEmpty()) {
                 for (const NetworkManager::AccessPoint::Ptr ap : network->accessPoints()) {
@@ -1113,7 +1153,11 @@ void NetworkModel::updateFromWirelessNetwork(NetworkModelItem *item, const Netwo
                         item->setSignal(ap->signalStrength());
                         item->setSpecificPath(ap->uni());
                         // We need to watch this AP for signal changes
-                        connect(ap.data(), &NetworkManager::AccessPoint::signalStrengthChanged, this, &NetworkModel::accessPointSignalStrengthChanged, Qt::UniqueConnection);
+                        connect(ap.data(),
+                                &NetworkManager::AccessPoint::signalStrengthChanged,
+                                this,
+                                &NetworkModel::accessPointSignalStrengthChanged,
+                                Qt::UniqueConnection);
                     }
                 }
             } else {

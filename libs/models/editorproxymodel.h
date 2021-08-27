@@ -13,8 +13,8 @@
 
 class Q_DECL_EXPORT EditorProxyModel : public QSortFilterProxyModel
 {
-Q_OBJECT
-Q_PROPERTY(QAbstractItemModel * sourceModel READ sourceModel WRITE setSourceModel)
+    Q_OBJECT
+    Q_PROPERTY(QAbstractItemModel *sourceModel READ sourceModel WRITE setSourceModel)
 public:
     explicit EditorProxyModel(QObject *parent = nullptr);
     ~EditorProxyModel() override;
@@ -23,6 +23,5 @@ protected:
     bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
 };
-
 
 #endif // PLASMA_NM_EDITOR_PROXY_MODEL_H

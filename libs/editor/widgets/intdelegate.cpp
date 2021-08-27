@@ -7,12 +7,23 @@
 #include "intdelegate.h"
 #include <QIntValidator>
 
+IntDelegate::IntDelegate(QObject *parent)
+    : Delegate(parent)
+    , m_boundary(false)
+{
+}
+IntDelegate::IntDelegate(int min, int max, QObject *parent)
+    : Delegate(parent)
+    , m_min(min)
+    , m_max(max)
+    , m_boundary(true)
+{
+}
+IntDelegate::~IntDelegate()
+{
+}
 
-IntDelegate::IntDelegate(QObject * parent) : Delegate(parent), m_boundary(false) {}
-IntDelegate::IntDelegate(int min, int max, QObject * parent) : Delegate(parent), m_min(min), m_max(max), m_boundary(true) {}
-IntDelegate::~IntDelegate() {}
-
-QWidget * IntDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const
+QWidget *IntDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const
 {
     QLineEdit *editor = new QLineEdit(parent);
     if (m_boundary)

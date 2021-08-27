@@ -8,12 +8,12 @@
 #include "ui_vlan.h"
 #include "uiutils.h"
 
-#include <NetworkManagerQt/VlanSetting>
 #include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/VlanSetting>
 
-VlanWidget::VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_ui(new Ui::VlanWidget)
+VlanWidget::VlanWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_ui(new Ui::VlanWidget)
 {
     m_ui->setupUi(this);
 

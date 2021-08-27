@@ -8,15 +8,15 @@
 #include "openvpnauth.h"
 #include "passwordfield.h"
 
-#include <QString>
+#include <QCheckBox>
 #include <QFormLayout>
 #include <QLabel>
-#include <QCheckBox>
+#include <QString>
 
 #include <KLocalizedString>
 
-#include "nm-openvpn-service.h"
 #include "debug.h"
+#include "nm-openvpn-service.h"
 
 class OpenVpnAuthWidgetPrivate
 {
@@ -25,7 +25,7 @@ public:
     QFormLayout *layout;
 };
 
-OpenVpnAuthWidget::OpenVpnAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
+OpenVpnAuthWidget::OpenVpnAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
     : SettingWidget(setting, hints, parent)
     , d_ptr(new OpenVpnAuthWidgetPrivate)
 {
@@ -51,9 +51,9 @@ void OpenVpnAuthWidget::readSecrets()
     const NMStringMap dataMap = d->setting->data();
     const NMStringMap secrets = d->setting->secrets();
     const QString cType = dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE];
-    NetworkManager::Setting::SecretFlags certType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_CERTPASS"-flags").toInt();
-    NetworkManager::Setting::SecretFlags passType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_PASSWORD"-flags").toInt();
-    NetworkManager::Setting::SecretFlags proxyType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD"-flags").toInt();
+    NetworkManager::Setting::SecretFlags certType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_CERTPASS "-flags").toInt();
+    NetworkManager::Setting::SecretFlags passType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_PASSWORD "-flags").toInt();
+    NetworkManager::Setting::SecretFlags proxyType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD "-flags").toInt();
 
     // If hints are given, then always ask for what the hints require
     if (!m_hints.isEmpty()) {
@@ -83,7 +83,7 @@ void OpenVpnAuthWidget::readSecrets()
         }
 
         bool isOTP = false;
-        QStringList possibleTokens = { i18n("OTP"), i18n("authenticator"), i18n("code"), i18n("token"), i18n("one-time password") };
+        QStringList possibleTokens = {i18n("OTP"), i18n("authenticator"), i18n("code"), i18n("token"), i18n("one-time password")};
         for (const QString &possibleToken : possibleTokens) {
             if (prompt.toLower().contains(possibleToken.toLower())) {
                 isOTP = true;
@@ -107,12 +107,14 @@ void OpenVpnAuthWidget::readSecrets()
         }
 
         if (dataMap.contains(NM_OPENVPN_KEY_PROXY_SERVER) && !(proxyType.testFlag(NetworkManager::Setting::NotRequired))) {
-            addPasswordField(i18n("Proxy Password:"), secrets.value(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD)), QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD));
+            addPasswordField(i18n("Proxy Password:"),
+                             secrets.value(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD)),
+                             QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD));
         }
     }
 
     for (int i = 0; i < d->layout->rowCount(); i++) {
-        PasswordField *le = qobject_cast<PasswordField*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+        PasswordField *le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && le->text().isEmpty()) {
             le->setFocus(Qt::OtherFocusReason);
             break;
@@ -127,7 +129,7 @@ QVariantMap OpenVpnAuthWidget::setting() const
     NMStringMap secrets;
     QVariantMap secretData;
     for (int i = 0; i < d->layout->rowCount(); i++) {
-        PasswordField *le = qobject_cast<PasswordField*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+        PasswordField *le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && !le->text().isEmpty()) {
             const QString key = le->property("nm_secrets_key").toString();
             secrets.insert(key, le->text());

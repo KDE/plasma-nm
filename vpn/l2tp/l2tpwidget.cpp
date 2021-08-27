@@ -8,15 +8,15 @@
 #include "l2tpwidget.h"
 #include "l2tpipsecwidget.h"
 #include "l2tppppwidget.h"
-#include "ui_l2tp.h"
 #include "nm-l2tp-service.h"
+#include "ui_l2tp.h"
 
 #include <NetworkManagerQt/Setting>
 
-#include <QPointer>
 #include <QDBusMetaType>
+#include <QPointer>
 
-L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget* parent, Qt::WindowFlags f)
+L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)
     , m_ui(new Ui::L2tpWidget)
     , m_setting(setting)
@@ -77,7 +77,8 @@ void L2tpWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         m_ui->stackedWidget->setCurrentIndex(AuthType::Password);
         m_ui->username->setText(dataMap[NM_L2TP_KEY_USER]);
 
-        const NetworkManager::Setting::SecretFlags userPassType = static_cast<NetworkManager::Setting::SecretFlags>(dataMap[NM_L2TP_KEY_PASSWORD"-flags"].toInt());
+        const NetworkManager::Setting::SecretFlags userPassType =
+            static_cast<NetworkManager::Setting::SecretFlags>(dataMap[NM_L2TP_KEY_PASSWORD "-flags"].toInt());
         if (userPassType.testFlag(NetworkManager::Setting::None)) {
             m_ui->password->setPasswordOption(PasswordField::StoreForAllUsers);
         } else if (userPassType.testFlag(NetworkManager::Setting::AgentOwned)) {
@@ -96,7 +97,8 @@ void L2tpWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         m_ui->userCert->setUrl(QUrl::fromLocalFile(dataMap[NM_L2TP_KEY_USER_CERT]));
         m_ui->userKey->setUrl(QUrl::fromLocalFile(dataMap[NM_L2TP_KEY_USER_KEY]));
 
-        const NetworkManager::Setting::SecretFlags userKeyPassType = static_cast<NetworkManager::Setting::SecretFlags>(dataMap[NM_L2TP_KEY_USER_CERTPASS"-flags"].toInt());
+        const NetworkManager::Setting::SecretFlags userKeyPassType =
+            static_cast<NetworkManager::Setting::SecretFlags>(dataMap[NM_L2TP_KEY_USER_CERTPASS "-flags"].toInt());
         if (userKeyPassType.testFlag(NetworkManager::Setting::None)) {
             m_ui->userKeyPassword->setPasswordOption(PasswordField::StoreForAllUsers);
         } else if (userKeyPassType.testFlag(NetworkManager::Setting::AgentOwned)) {
@@ -171,13 +173,13 @@ QVariantMap L2tpWidget::setting() const
 
         switch (m_ui->password->passwordOption()) {
         case PasswordField::StoreForAllUsers:
-            data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::None));
+            data.insert(NM_L2TP_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::None));
             break;
         case PasswordField::StoreForUser:
-            data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
+            data.insert(NM_L2TP_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::AgentOwned));
             break;
         default:
-            data.insert(NM_L2TP_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
+            data.insert(NM_L2TP_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::NotSaved));
         };
 
         if (!m_ui->domain->text().isEmpty()) {
@@ -201,16 +203,16 @@ QVariantMap L2tpWidget::setting() const
 
         switch (m_ui->userKeyPassword->passwordOption()) {
         case PasswordField::StoreForAllUsers:
-            data.insert(NM_L2TP_KEY_USER_CERTPASS"-flags", QString::number(NetworkManager::Setting::None));
+            data.insert(NM_L2TP_KEY_USER_CERTPASS "-flags", QString::number(NetworkManager::Setting::None));
             break;
         case PasswordField::StoreForUser:
-            data.insert(NM_L2TP_KEY_USER_CERTPASS"-flags", QString::number(NetworkManager::Setting::AgentOwned));
+            data.insert(NM_L2TP_KEY_USER_CERTPASS "-flags", QString::number(NetworkManager::Setting::AgentOwned));
             break;
         case PasswordField::AlwaysAsk:
-            data.insert(NM_L2TP_KEY_USER_CERTPASS"-flags", QString::number(NetworkManager::Setting::NotSaved));
+            data.insert(NM_L2TP_KEY_USER_CERTPASS "-flags", QString::number(NetworkManager::Setting::NotSaved));
             break;
         case PasswordField::NotRequired:
-            data.insert(NM_L2TP_KEY_USER_CERTPASS"-flags", QString::number(NetworkManager::Setting::NotRequired));
+            data.insert(NM_L2TP_KEY_USER_CERTPASS "-flags", QString::number(NetworkManager::Setting::NotRequired));
             break;
         };
     }
@@ -242,22 +244,20 @@ void L2tpWidget::showIpsec()
     } else {
         ipsec = new L2tpIpsecWidget(m_tmpIpsecSetting, this);
     }
-    connect(ipsec.data(), &L2tpIpsecWidget::accepted,
-            [ipsec, this] () {
-                NMStringMap ipsecData = ipsec->setting();
-                if (!ipsecData.isEmpty()) {
-                    if (m_tmpIpsecSetting.isNull()) {
-                        m_tmpIpsecSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
-                    }
-                    m_tmpIpsecSetting->setData(ipsecData);
-                }
-            });
-    connect(ipsec.data(), &L2tpIpsecWidget::finished,
-            [ipsec] () {
-                if (ipsec) {
-                    ipsec->deleteLater();
-                }
-            });
+    connect(ipsec.data(), &L2tpIpsecWidget::accepted, [ipsec, this]() {
+        NMStringMap ipsecData = ipsec->setting();
+        if (!ipsecData.isEmpty()) {
+            if (m_tmpIpsecSetting.isNull()) {
+                m_tmpIpsecSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
+            }
+            m_tmpIpsecSetting->setData(ipsecData);
+        }
+    });
+    connect(ipsec.data(), &L2tpIpsecWidget::finished, [ipsec]() {
+        if (ipsec) {
+            ipsec->deleteLater();
+        }
+    });
     ipsec->setModal(true);
     ipsec->show();
 }
@@ -271,22 +271,20 @@ void L2tpWidget::showPpp()
     } else {
         ipsec = new L2tpPPPWidget(m_tmpPppSetting, this, need_peer_eap);
     }
-    connect(ipsec.data(), &L2tpPPPWidget::accepted,
-            [ipsec, this] () {
-                NMStringMap ipsecData = ipsec->setting();
-                if (!ipsecData.isEmpty()) {
-                    if (m_tmpPppSetting.isNull()) {
-                        m_tmpPppSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
-                    }
-                    m_tmpPppSetting->setData(ipsecData);
-                }
-            });
-    connect(ipsec.data(), &L2tpPPPWidget::finished,
-            [ipsec] () {
-                if (ipsec) {
-                    ipsec->deleteLater();
-                }
-            });
+    connect(ipsec.data(), &L2tpPPPWidget::accepted, [ipsec, this]() {
+        NMStringMap ipsecData = ipsec->setting();
+        if (!ipsecData.isEmpty()) {
+            if (m_tmpPppSetting.isNull()) {
+                m_tmpPppSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
+            }
+            m_tmpPppSetting->setData(ipsecData);
+        }
+    });
+    connect(ipsec.data(), &L2tpPPPWidget::finished, [ipsec]() {
+        if (ipsec) {
+            ipsec->deleteLater();
+        }
+    });
     ipsec->setModal(true);
     ipsec->show();
 }

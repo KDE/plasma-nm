@@ -14,17 +14,17 @@
 
 #include <QVariant>
 
-#include <KProcess>
 #include <KConfigGroup>
+#include <KProcess>
 
-class VpncUiPluginPrivate: public QObject
+class VpncUiPluginPrivate : public QObject
 {
     Q_OBJECT
 public:
     VpncUiPluginPrivate();
     ~VpncUiPluginPrivate() override;
-    QString readStringKeyValue(const KConfigGroup & configGroup, const QString & key);
-    KProcess * ciscoDecrypt;
+    QString readStringKeyValue(const KConfigGroup &configGroup, const QString &key);
+    KProcess *ciscoDecrypt;
     QString decryptedPasswd;
 
 public Q_SLOTS:
@@ -38,10 +38,10 @@ class Q_DECL_EXPORT VpncUiPlugin : public VpnUiPlugin
     Q_OBJECT
 
 public:
-    explicit VpncUiPlugin(QObject * parent = nullptr, const QVariantList& = QVariantList());
+    explicit VpncUiPlugin(QObject *parent = nullptr, const QVariantList & = QVariantList());
     ~VpncUiPlugin() override;
-    SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) override;
-    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent = nullptr) override;
+    SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr) override;
+    SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr) override;
 
     QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
     QString supportedFileExtensions() const override;

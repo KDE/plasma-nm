@@ -3,37 +3,37 @@
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
-#include "debug.h"
 #include "wireguardpeerwidget.h"
-#include "wireguardtabwidget.h"
+#include "debug.h"
+#include "simpleiplistvalidator.h"
+#include "simpleipv4addressvalidator.h"
 #include "ui_wireguardpeerwidget.h"
 #include "uiutils.h"
-#include "simpleipv4addressvalidator.h"
-#include "simpleiplistvalidator.h"
 #include "wireguardkeyvalidator.h"
+#include "wireguardtabwidget.h"
 
 #include <QStandardItemModel>
 #include <QUrl>
 
-#include <NetworkManagerQt/Utils>
-#include <NetworkManagerQt/Ipv4Setting>
-#include <NetworkManagerQt/Ipv6Setting>
 #include <KColorScheme>
 #include <KConfig>
 #include <KConfigGroup>
+#include <NetworkManagerQt/Ipv4Setting>
+#include <NetworkManagerQt/Ipv6Setting>
+#include <NetworkManagerQt/Utils>
 
 // Keys for the NetworkManager configuration
 #define PNM_SETTING_WIREGUARD_SETTING_NAME "wireguard"
 
-#define PNM_WG_KEY_PEERS             "peers"
-#define PNM_WG_KEY_MTU               "mtu"
-#define PNM_WG_KEY_PEER_ROUTES       "peer-routes"
-#define PNM_WG_PEER_KEY_ALLOWED_IPS          "allowed-ips"
-#define PNM_WG_PEER_KEY_ENDPOINT             "endpoint"
+#define PNM_WG_KEY_PEERS "peers"
+#define PNM_WG_KEY_MTU "mtu"
+#define PNM_WG_KEY_PEER_ROUTES "peer-routes"
+#define PNM_WG_PEER_KEY_ALLOWED_IPS "allowed-ips"
+#define PNM_WG_PEER_KEY_ENDPOINT "endpoint"
 #define PNM_WG_PEER_KEY_PERSISTENT_KEEPALIVE "persistent-keepalive"
-#define PNM_WG_PEER_KEY_PRESHARED_KEY        "preshared-key"
-#define PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS  "preshared-key-flags"
-#define PNM_WG_PEER_KEY_PUBLIC_KEY           "public-key"
+#define PNM_WG_PEER_KEY_PRESHARED_KEY "preshared-key"
+#define PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS "preshared-key-flags"
+#define PNM_WG_PEER_KEY_PUBLIC_KEY "public-key"
 
 static WireGuardKeyValidator keyValidator;
 static SimpleIpListValidator allowedIPsValidator(SimpleIpListValidator::WithCidr, SimpleIpListValidator::Both);
@@ -78,14 +78,11 @@ WireGuardPeerWidget::WireGuardPeerWidget(const QVariantMap &peerData, QWidget *p
     d->config = KSharedConfig::openConfig();
     d->warningPalette = KColorScheme::createApplicationPalette(d->config);
     d->normalPalette = KColorScheme::createApplicationPalette(d->config);
-    KColorScheme::adjustBackground(d->warningPalette, KColorScheme::NegativeBackground, QPalette::Base,
-                                   KColorScheme::ColorSet::View, d->config);
+    KColorScheme::adjustBackground(d->warningPalette, KColorScheme::NegativeBackground, QPalette::Base, KColorScheme::ColorSet::View, d->config);
 
-    KColorScheme::adjustBackground(d->normalPalette, KColorScheme::NormalBackground, QPalette::Base,
-                                   KColorScheme::ColorSet::View, d->config);
+    KColorScheme::adjustBackground(d->normalPalette, KColorScheme::NormalBackground, QPalette::Base, KColorScheme::ColorSet::View, d->config);
 
-    setWindowTitle(i18nc("@title: window wireguard peers properties",
-                         "WireGuard peers properties"));
+    setWindowTitle(i18nc("@title: window wireguard peers properties", "WireGuard peers properties"));
     connect(d->ui.publicKeyLineEdit, &QLineEdit::textChanged, this, &WireGuardPeerWidget::checkPublicKeyValid);
     connect(d->ui.allowedIPsLineEdit, &QLineEdit::textChanged, this, &WireGuardPeerWidget::checkAllowedIpsValid);
     connect(d->ui.endpointAddressLineEdit, &QLineEdit::textChanged, this, &WireGuardPeerWidget::checkEndpointValid);
@@ -153,9 +150,8 @@ void WireGuardPeerWidget::checkPresharedKeyValid()
     // it is valid if it is set to "Store for user only"
     // or "Store for all users" even if the password is bad
     PasswordField::PasswordOption option = d->ui.presharedKeyLineEdit->passwordOption();
-    bool valid = (QValidator::Acceptable == keyValidator.validate(value, pos)
-                  || option == PasswordField::NotRequired);
-    setBackground(widget,  valid);
+    bool valid = (QValidator::Acceptable == keyValidator.validate(value, pos) || option == PasswordField::NotRequired);
+    setBackground(widget, valid);
     if (value.isEmpty())
         d->peerData.remove(PNM_WG_PEER_KEY_PRESHARED_KEY);
     else
@@ -199,13 +195,12 @@ WireGuardPeerWidget::EndPointValid WireGuardPeerWidget::isEndpointValid(QString 
     static SimpleIpV6AddressValidator ipv6Validator;
     int pos = 0;
 
-    bool addressValid = QValidator::Acceptable == fqdnValidator.validate(address, pos)
-                        || QValidator::Acceptable == ipv4Validator.validate(address, pos)
-                        || QValidator::Acceptable == ipv6Validator.validate(address, pos);
+    bool addressValid = QValidator::Acceptable == fqdnValidator.validate(address, pos) || QValidator::Acceptable == ipv4Validator.validate(address, pos)
+        || QValidator::Acceptable == ipv6Validator.validate(address, pos);
     bool bothEmpty = address.isEmpty() && port.isEmpty();
     // Because of the validator, if the port is non-empty, it is valid
     bool portValid = !port.isEmpty();
-    
+
     if ((portValid && addressValid) || bothEmpty)
         return WireGuardPeerWidget::BothValid;
     else if (portValid)
@@ -233,7 +228,7 @@ void WireGuardPeerWidget::checkEndpointValid()
     // the output needs to be formatted as '[1:2:3:4:5:6:7:8]:123' otherwise
     // it is formatted as '1.2.3.4:123' or 'ab.com:123'
     QString stringToStore;
-    if  (addressString.contains(":"))
+    if (addressString.contains(":"))
         stringToStore = "[" + addressString.trimmed() + "]:" + portString.trimmed();
     else
         stringToStore = addressString.trimmed() + ":" + portString.trimmed();
@@ -251,10 +246,7 @@ void WireGuardPeerWidget::checkEndpointValid()
 
 bool WireGuardPeerWidget::isValid()
 {
-    return d->publicKeyValid
-        && d->allowedIPsValid
-        && d->endpointValid
-        && d->presharedKeyValid;
+    return d->publicKeyValid && d->allowedIPsValid && d->endpointValid && d->presharedKeyValid;
 }
 
 void WireGuardPeerWidget::saveKeepAlive()
@@ -272,17 +264,17 @@ void WireGuardPeerWidget::saveKeyFlags()
 {
     PasswordField::PasswordOption option = d->ui.presharedKeyLineEdit->passwordOption();
     switch (option) {
-      case PasswordField::StoreForUser:
+    case PasswordField::StoreForUser:
         d->peerData[PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS] = NetworkManager::Setting::AgentOwned;
         break;
-      case PasswordField::StoreForAllUsers:
+    case PasswordField::StoreForAllUsers:
         d->peerData[PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS] = NetworkManager::Setting::None;
         break;
-      // Always Ask is not a valid option for the preshared key so set it to AgentOwned instead
-      case PasswordField::AlwaysAsk:
+    // Always Ask is not a valid option for the preshared key so set it to AgentOwned instead
+    case PasswordField::AlwaysAsk:
         d->peerData[PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS] = NetworkManager::Setting::AgentOwned;
         break;
-      case PasswordField::NotRequired:
+    case PasswordField::NotRequired:
         d->peerData[PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS] = NetworkManager::Setting::NotRequired;
         break;
     }
@@ -321,9 +313,8 @@ void WireGuardPeerWidget::updatePeerWidgets()
     // An endpoint is stored as <ipv4 | [ipv6] | fqdn>:<port>
     if (d->peerData.contains(PNM_WG_PEER_KEY_ENDPOINT)) {
         QString storedEndpoint = d->peerData[PNM_WG_PEER_KEY_ENDPOINT].toString();
-        QStringList endpointList = storedEndpoint.contains("]:") ?
-            d->peerData[PNM_WG_PEER_KEY_ENDPOINT].toString().split("]:") :
-            d->peerData[PNM_WG_PEER_KEY_ENDPOINT].toString().split(":");
+        QStringList endpointList = storedEndpoint.contains("]:") ? d->peerData[PNM_WG_PEER_KEY_ENDPOINT].toString().split("]:")
+                                                                 : d->peerData[PNM_WG_PEER_KEY_ENDPOINT].toString().split(":");
 
         d->ui.endpointAddressLineEdit->setText(endpointList[0].remove("["));
         d->ui.endpointPortLineEdit->setText(endpointList[1]);
@@ -337,19 +328,20 @@ void WireGuardPeerWidget::updatePeerWidgets()
         d->ui.presharedKeyLineEdit->setText("");
 
     if (d->peerData.contains(PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS)) {
-        NetworkManager::Setting::SecretFlags type = static_cast<NetworkManager::Setting::SecretFlags>(d->peerData[PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS].toUInt());
+        NetworkManager::Setting::SecretFlags type =
+            static_cast<NetworkManager::Setting::SecretFlags>(d->peerData[PNM_WG_PEER_KEY_PRESHARED_KEY_FLAGS].toUInt());
         switch (type) {
-          case NetworkManager::Setting::AgentOwned:
+        case NetworkManager::Setting::AgentOwned:
             d->ui.presharedKeyLineEdit->setPasswordOption(PasswordField::StoreForUser);
             break;
-          case NetworkManager::Setting::None:
+        case NetworkManager::Setting::None:
             d->ui.presharedKeyLineEdit->setPasswordOption(PasswordField::StoreForAllUsers);
             break;
-          // Not saved is not a valid option for the private key so set it to StoreForUser instead
-          case NetworkManager::Setting::NotSaved:
+        // Not saved is not a valid option for the private key so set it to StoreForUser instead
+        case NetworkManager::Setting::NotSaved:
             d->ui.presharedKeyLineEdit->setPasswordOption(PasswordField::StoreForUser);
             break;
-          case NetworkManager::Setting::NotRequired:
+        case NetworkManager::Setting::NotRequired:
             d->ui.presharedKeyLineEdit->setPasswordOption(PasswordField::NotRequired);
             break;
         }

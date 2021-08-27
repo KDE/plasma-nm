@@ -22,7 +22,7 @@ class Q_DECL_EXPORT PPPWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit PPPWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
+    explicit PPPWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~PPPWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;

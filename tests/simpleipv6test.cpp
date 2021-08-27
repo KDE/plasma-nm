@@ -42,7 +42,6 @@ void SimpleIpv6Test::baseTest_data()
     QTest::addColumn<QString>("address");
     QTest::addColumn<QValidator::State>("result");
 
-
     QTest::newRow("null string") << "" << QValidator::Intermediate;
     QTest::newRow("0123:4567:89ab:cdef") << "0123:4567:89ab:cdef" << QValidator::Intermediate;
     QTest::newRow("0123:4567:89ab:cdef:0123:4567:89ab:cdef") << "0123:4567:89ab:cdef:0123:4567:89ab:cdef" << QValidator::Acceptable;
@@ -161,7 +160,6 @@ void SimpleIpv6Test::portTest_data()
     QTest::newRow("[1234:2345::6789:789A:89ab]:65535") << "[1234:2345::6789:789A:89ab]:65535" << QValidator::Acceptable;
     QTest::newRow("[1234:2345::6789:789A:89ab]:65536") << "[1234:2345::6789:789A:89ab]:65536" << QValidator::Invalid;
 }
-
 
 void SimpleIpv6Test::portTest()
 {

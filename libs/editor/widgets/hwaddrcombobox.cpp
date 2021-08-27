@@ -6,19 +6,20 @@
 
 #include "hwaddrcombobox.h"
 
-#include <NetworkManagerQt/Manager>
-#include <NetworkManagerQt/WiredDevice>
-#include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/BluetoothDevice>
-#include <NetworkManagerQt/OlpcMeshDevice>
-#include <NetworkManagerQt/InfinibandDevice>
 #include <NetworkManagerQt/BondDevice>
 #include <NetworkManagerQt/BridgeDevice>
-#include <NetworkManagerQt/VlanDevice>
+#include <NetworkManagerQt/InfinibandDevice>
+#include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/OlpcMeshDevice>
 #include <NetworkManagerQt/Utils>
+#include <NetworkManagerQt/VlanDevice>
+#include <NetworkManagerQt/WiredDevice>
+#include <NetworkManagerQt/WirelessDevice>
 
-HwAddrComboBox::HwAddrComboBox(QWidget *parent) :
-    QComboBox(parent), m_dirty(false)
+HwAddrComboBox::HwAddrComboBox(QWidget *parent)
+    : QComboBox(parent)
+    , m_dirty(false)
 {
     setEditable(true);
     setInsertPolicy(QComboBox::NoInsert);
@@ -112,15 +113,13 @@ void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device
     if (!data.isNull()) {
         if (name == data.toString()) {
             addItem(data.toString(), data);
-        }
-        else {
+        } else {
             addItem(QStringLiteral("%1 (%2)").arg(name).arg(data.toString()), data);
         }
     }
 }
 
-
-QVariant HwAddrComboBox::hwAddressFromDevice(const NetworkManager::Device::Ptr& device)
+QVariant HwAddrComboBox::hwAddressFromDevice(const NetworkManager::Device::Ptr &device)
 {
     const NetworkManager::Device::Type type = device->type();
 

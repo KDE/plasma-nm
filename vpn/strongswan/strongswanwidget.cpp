@@ -10,15 +10,15 @@
 #include "nm-strongswan-service.h"
 #include "ui_strongswanprop.h"
 
-#include <QUrl>
 #include <QString>
+#include <QUrl>
 
 class StrongswanSettingWidgetPrivate
 {
 public:
     Ui_StrongswanProp ui;
     NetworkManager::VpnSetting::Ptr setting;
-    enum AuthType {PrivateKey = 0, SshAgent, Smartcard, Eap};
+    enum AuthType { PrivateKey = 0, SshAgent, Smartcard, Eap };
 };
 
 StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
@@ -62,7 +62,7 @@ void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &set
         d->ui.leGateway->setText(gateway);
     }
     // Certificate
-    d->ui.leGatewayCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_STRONGSWAN_CERTIFICATE]) );
+    d->ui.leGatewayCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_STRONGSWAN_CERTIFICATE]));
 
     // Authentication
     const QString method = dataMap[NM_STRONGSWAN_METHOD];
@@ -113,7 +113,7 @@ QVariantMap StrongswanSettingWidget::setting() const
 
     const QString certificate = d->ui.leGatewayCertificate->url().toLocalFile();
     if (!certificate.isEmpty()) {
-        data.insert( NM_STRONGSWAN_CERTIFICATE, certificate);
+        data.insert(NM_STRONGSWAN_CERTIFICATE, certificate);
     }
 
     // Authentication
@@ -146,10 +146,10 @@ QVariantMap StrongswanSettingWidget::setting() const
         if (!d->ui.leUserName->text().isEmpty()) {
             data.insert(NM_STRONGSWAN_USER, d->ui.leUserName->text());
         }
-        //StrongSwan-nm 1.2 does not appear to be able to save secrets, the must be entered through the auth dialog
+        // StrongSwan-nm 1.2 does not appear to be able to save secrets, the must be entered through the auth dialog
     }
 
-    //Options
+    // Options
     data.insert(NM_STRONGSWAN_INNERIP, d->ui.innerIP->isChecked() ? "yes" : "no");
     data.insert(NM_STRONGSWAN_ENCAP, d->ui.udpEncap->isChecked() ? "yes" : "no");
     data.insert(NM_STRONGSWAN_IPCOMP, d->ui.ipComp->isChecked() ? "yes" : "no");

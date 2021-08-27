@@ -14,14 +14,14 @@ SimpleIpV6AddressValidator::SimpleIpV6AddressValidator(AddressStyle style, QObje
     , m_addressStyle(style)
 {
     switch (style) {
-        case Base:
-            m_validator.setRegularExpression(QRegularExpression(QLatin1String("([0-9a-fA-F]{1,4}|:)+")));
-            break;
-        case WithCidr:
-            m_validator.setRegularExpression(QRegularExpression(QLatin1String("([0-9a-fA-F]{1,4}|:){2,15}/[0-9]{1,3}")));
-            break;
-        case WithPort:
-            m_validator.setRegularExpression(QRegularExpression(QLatin1String("\\[([0-9a-fA-F]{1,4}|:)+\\]:[0-9]{1,5}")));
+    case Base:
+        m_validator.setRegularExpression(QRegularExpression(QLatin1String("([0-9a-fA-F]{1,4}|:)+")));
+        break;
+    case WithCidr:
+        m_validator.setRegularExpression(QRegularExpression(QLatin1String("([0-9a-fA-F]{1,4}|:){2,15}/[0-9]{1,3}")));
+        break;
+    case WithPort:
+        m_validator.setRegularExpression(QRegularExpression(QLatin1String("\\[([0-9a-fA-F]{1,4}|:)+\\]:[0-9]{1,5}")));
     }
 }
 
@@ -40,7 +40,7 @@ QValidator::State SimpleIpV6AddressValidator::validate(QString &address, int &po
 
 QValidator::State SimpleIpV6AddressValidator::checkWithInputMask(QString &value, int &pos) const
 {
-    return  m_validator.validate(value, pos);
+    return m_validator.validate(value, pos);
 }
 
 QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value) const
@@ -62,27 +62,27 @@ QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value)
         break;
 
     case WithPort:
-      if (value.isEmpty())
-          return QValidator::Intermediate;
-      if (value[0] != '[') {
-          return QValidator::Invalid;
-      } else {
-          // Input: "[1:2:3:4:5:6:7:8]:123"
-          // bracketParts: "[1:2:3:4:5:6:7:8" , ":123"
-          // addrParts: "" , "1:2:3:4:5:6:7:8"
-          // portParts: "", "123"
-          QStringList bracketParts = value.split(QLatin1Char(']'));
-          if (bracketParts.size() < 2)
-              portParts = QStringList();
-          else {
-              foundBracket = true;
-              if (!bracketParts[1].isEmpty() && bracketParts[1][0] != ':')
-                  return QValidator::Invalid;
-              else
-                  portParts = bracketParts[1].split(QLatin1Char(':'));
-          }
-          addrParts = bracketParts[0].split(QLatin1Char('['))[1].split(QLatin1Char(':'));
-      }
+        if (value.isEmpty())
+            return QValidator::Intermediate;
+        if (value[0] != '[') {
+            return QValidator::Invalid;
+        } else {
+            // Input: "[1:2:3:4:5:6:7:8]:123"
+            // bracketParts: "[1:2:3:4:5:6:7:8" , ":123"
+            // addrParts: "" , "1:2:3:4:5:6:7:8"
+            // portParts: "", "123"
+            QStringList bracketParts = value.split(QLatin1Char(']'));
+            if (bracketParts.size() < 2)
+                portParts = QStringList();
+            else {
+                foundBracket = true;
+                if (!bracketParts[1].isEmpty() && bracketParts[1][0] != ':')
+                    return QValidator::Invalid;
+                else
+                    portParts = bracketParts[1].split(QLatin1Char(':'));
+            }
+            addrParts = bracketParts[0].split(QLatin1Char('['))[1].split(QLatin1Char(':'));
+        }
     }
 
     int number = addrParts.size();
@@ -110,7 +110,7 @@ QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value)
             } else {
                 // If this is an empty part then set it to zero to not fail
                 // the next test
-                part.setNum(0,16);
+                part.setNum(0, 16);
                 emptypresent = true;
             }
         }
@@ -129,7 +129,7 @@ QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value)
     // Another special case: a single colon followed by something (i.e. ":123"
     // is invalid
     else if (number > 1 && addrParts[0].isEmpty() && !addrParts[1].isEmpty())
-        result =  QValidator::Invalid;
+        result = QValidator::Invalid;
 
     // If we don't have 8 parts yet and none of them are empty we aren't done yet
     else if (number < 8 && !emptypresent)
@@ -137,7 +137,7 @@ QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value)
 
     // If we have 8 parts but the last one is empty we aren't done yet
     else if (number == 8 && addrParts[7].isEmpty())
-        result =  QValidator::Intermediate;
+        result = QValidator::Intermediate;
 
     if (m_addressStyle == WithCidr) {
         int cidrSize = cidrParts.size();

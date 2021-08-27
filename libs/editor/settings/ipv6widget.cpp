@@ -5,17 +5,17 @@
 */
 
 #include "ipv6widget.h"
-#include "ui_ipv6.h"
-#include "ipv6delegate.h"
 #include "intdelegate.h"
+#include "ipv6delegate.h"
+#include "ui_ipv6.h"
 
 #include <NetworkManagerQt/Manager>
 
 #include <QDialog>
 #include <QDialogButtonBox>
-#include <QStandardItemModel>
 #include <QItemSelection>
 #include <QNetworkAddressEntry>
+#include <QStandardItemModel>
 
 #include <KEditListWidget>
 #include <KLocalizedString>
@@ -36,9 +36,10 @@ quint32 suggestNetmask(Q_IPV6ADDR ip)
 class IPv6Widget::Private
 {
 public:
-    Private() : model(0,3)
+    Private()
+        : model(0, 3)
     {
-        QStandardItem * headerItem = new QStandardItem(i18nc("Header text for IPv6 address", "Address"));
+        QStandardItem *headerItem = new QStandardItem(i18nc("Header text for IPv6 address", "Address"));
         model.setHorizontalHeaderItem(0, headerItem);
         headerItem = new QStandardItem(i18nc("Header text for IPv6 prefix", "Prefix"));
         model.setHorizontalHeaderItem(1, headerItem);
@@ -48,11 +49,10 @@ public:
     QStandardItemModel model;
 };
 
-
-IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_ui(new Ui::IPv6Widget),
-    d(new IPv6Widget::Private())
+IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_ui(new Ui::IPv6Widget)
+    , d(new IPv6Widget::Private())
 {
     m_ui->setupUi(this);
 
@@ -61,7 +61,7 @@ IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget* par
     m_ui->tableViewAddresses->horizontalHeader()->setStretchLastSection(true);
 
     IpV6Delegate *ipDelegate = new IpV6Delegate(this);
-    IntDelegate *prefixDelegate = new IntDelegate (0, 128, this);
+    IntDelegate *prefixDelegate = new IntDelegate(0, 128, this);
     m_ui->tableViewAddresses->setItemDelegateForColumn(0, ipDelegate);
     m_ui->tableViewAddresses->setItemDelegateForColumn(1, prefixDelegate);
     m_ui->tableViewAddresses->setItemDelegateForColumn(2, ipDelegate);
@@ -123,28 +123,28 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     // method
     switch (ipv6Setting->method()) {
-        case NetworkManager::Ipv6Setting::Automatic:
-            if (ipv6Setting->ignoreAutoDns()) {
-                m_ui->method->setCurrentIndex(AutomaticOnlyIP);
-            } else {
-                m_ui->method->setCurrentIndex(Automatic);
-            }
-            break;
-        case NetworkManager::Ipv6Setting::Dhcp:
-            m_ui->method->setCurrentIndex(AutomaticOnlyDHCP);
-            break;
-        case NetworkManager::Ipv6Setting::Manual:
-            m_ui->method->setCurrentIndex(Manual);
-            break;
-        case NetworkManager::Ipv6Setting::LinkLocal:
-            m_ui->method->setCurrentIndex(LinkLocal);
-            break;
-        case NetworkManager::Ipv6Setting::Ignored:
-            m_ui->method->setCurrentIndex(Ignored);
-            break;
-        case NetworkManager::Ipv6Setting::ConfigDisabled:
-            m_ui->method->setCurrentIndex(Disabled);
-            break;
+    case NetworkManager::Ipv6Setting::Automatic:
+        if (ipv6Setting->ignoreAutoDns()) {
+            m_ui->method->setCurrentIndex(AutomaticOnlyIP);
+        } else {
+            m_ui->method->setCurrentIndex(Automatic);
+        }
+        break;
+    case NetworkManager::Ipv6Setting::Dhcp:
+        m_ui->method->setCurrentIndex(AutomaticOnlyDHCP);
+        break;
+    case NetworkManager::Ipv6Setting::Manual:
+        m_ui->method->setCurrentIndex(Manual);
+        break;
+    case NetworkManager::Ipv6Setting::LinkLocal:
+        m_ui->method->setCurrentIndex(LinkLocal);
+        break;
+    case NetworkManager::Ipv6Setting::Ignored:
+        m_ui->method->setCurrentIndex(Ignored);
+        break;
+    case NetworkManager::Ipv6Setting::ConfigDisabled:
+        m_ui->method->setCurrentIndex(Disabled);
+        break;
     }
 
     // dns
@@ -190,28 +190,28 @@ QVariantMap IPv6Widget::setting() const
 
     // method
     switch ((MethodIndex)m_ui->method->currentIndex()) {
-        case Automatic:
-            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Automatic);
-            break;
-        case AutomaticOnlyIP:
-            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Automatic);
-            ipv6Setting.setIgnoreAutoDns(true);
-            break;
-        case IPv6Widget::AutomaticOnlyDHCP:
-            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Dhcp);
-            break;
-        case Manual:
-            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Manual);
-            break;
-        case LinkLocal:
-            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::LinkLocal);
-            break;
-        case Ignored:
-            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Ignored);
-            break;
-        case Disabled:
-            ipv6Setting.setMethod(NetworkManager::Ipv6Setting::ConfigDisabled);
-            break;
+    case Automatic:
+        ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Automatic);
+        break;
+    case AutomaticOnlyIP:
+        ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Automatic);
+        ipv6Setting.setIgnoreAutoDns(true);
+        break;
+    case IPv6Widget::AutomaticOnlyDHCP:
+        ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Dhcp);
+        break;
+    case Manual:
+        ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Manual);
+        break;
+    case LinkLocal:
+        ipv6Setting.setMethod(NetworkManager::Ipv6Setting::LinkLocal);
+        break;
+    case Ignored:
+        ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Ignored);
+        break;
+    case Disabled:
+        ipv6Setting.setMethod(NetworkManager::Ipv6Setting::ConfigDisabled);
+        break;
     }
 
     // dns
@@ -258,7 +258,7 @@ QVariantMap IPv6Widget::setting() const
 
 void IPv6Widget::slotModeComboChanged(int index)
 {
-    if (index == Automatic) {  // Automatic
+    if (index == Automatic) { // Automatic
         m_ui->dnsLabel->setText(i18n("Other DNS Servers:"));
         m_ui->dns->setEnabled(true);
         m_ui->dnsMorePushButton->setEnabled(true);
@@ -282,7 +282,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setEnabled(false);
         m_ui->btnAdd->setEnabled(false);
         m_ui->btnRemove->setEnabled(false);
-    } else if (index == Manual) {  // Manual
+    } else if (index == Manual) { // Manual
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(true);
         m_ui->dnsMorePushButton->setEnabled(true);
@@ -294,7 +294,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setEnabled(true);
         m_ui->btnAdd->setEnabled(true);
         m_ui->btnRemove->setEnabled(true);
-    } else if (index == AutomaticOnlyDHCP || index == LinkLocal) {  // Link-local or DHCP
+    } else if (index == AutomaticOnlyDHCP || index == LinkLocal) { // Link-local or DHCP
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
         m_ui->dnsMorePushButton->setEnabled(false);
@@ -306,7 +306,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->tableViewAddresses->setEnabled(false);
         m_ui->btnAdd->setEnabled(false);
         m_ui->btnRemove->setEnabled(false);
-    } else if (index == Ignored || index == Disabled) {  // Ignored and Disabled
+    } else if (index == Ignored || index == Disabled) { // Ignored and Disabled
         m_ui->dnsLabel->setText(i18n("DNS Servers:"));
         m_ui->dns->setEnabled(false);
         m_ui->dnsMorePushButton->setEnabled(false);
@@ -330,7 +330,7 @@ void IPv6Widget::slotAddIPAddress()
     if (rowCount > 0) {
         m_ui->tableViewAddresses->selectRow(rowCount - 1);
 
-        QItemSelectionModel * selectionModel = m_ui->tableViewAddresses->selectionModel();
+        QItemSelectionModel *selectionModel = m_ui->tableViewAddresses->selectionModel();
         QModelIndexList list = selectionModel->selectedIndexes();
         if (list.size()) {
             // QTableView is configured to select only rows.
@@ -342,7 +342,7 @@ void IPv6Widget::slotAddIPAddress()
 
 void IPv6Widget::slotRemoveIPAddress()
 {
-    QItemSelectionModel * selectionModel = m_ui->tableViewAddresses->selectionModel();
+    QItemSelectionModel *selectionModel = m_ui->tableViewAddresses->selectionModel();
     if (selectionModel->hasSelection()) {
         QModelIndexList indexes = selectionModel->selectedIndexes();
         d->model.takeRow(indexes[0].row());
@@ -350,7 +350,7 @@ void IPv6Widget::slotRemoveIPAddress()
     m_ui->btnRemove->setEnabled(m_ui->tableViewAddresses->selectionModel()->hasSelection());
 }
 
-void IPv6Widget::selectionChanged(const QItemSelection & selected)
+void IPv6Widget::selectionChanged(const QItemSelection &selected)
 {
     m_ui->btnRemove->setEnabled(!selected.isEmpty());
 }
@@ -370,7 +370,7 @@ void IPv6Widget::tableViewItemChanged(QStandardItem *item)
             QHostAddress addr(item->text());
             const quint32 netmask = suggestNetmask(addr.toIPv6Address());
             if (netmask) {
-                netmaskItem->setText(QString::number(netmask,10));
+                netmaskItem->setText(QString::number(netmask, 10));
             }
         }
     }
@@ -382,24 +382,22 @@ void IPv6Widget::slotRoutesDialog()
 
     dlg->setRoutes(m_tmpIpv6Setting.routes());
     dlg->setNeverDefault(m_tmpIpv6Setting.neverDefault());
-    if (m_ui->method->currentIndex() == 3) {  // manual
+    if (m_ui->method->currentIndex() == 3) { // manual
         dlg->setIgnoreAutoRoutesCheckboxEnabled(false);
     } else {
         dlg->setIgnoreAutoRoutes(m_tmpIpv6Setting.ignoreAutoRoutes());
     }
 
-    connect(dlg.data(), &QDialog::accepted,
-            [dlg, this] () {
-                m_tmpIpv6Setting.setRoutes(dlg->routes());
-                m_tmpIpv6Setting.setNeverDefault(dlg->neverDefault());
-                m_tmpIpv6Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
-            });
-    connect(dlg.data(), &QDialog::finished,
-            [dlg] () {
-                if (dlg) {
-                    dlg->deleteLater();
-                }
-            });
+    connect(dlg.data(), &QDialog::accepted, [dlg, this]() {
+        m_tmpIpv6Setting.setRoutes(dlg->routes());
+        m_tmpIpv6Setting.setNeverDefault(dlg->neverDefault());
+        m_tmpIpv6Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
+    });
+    connect(dlg.data(), &QDialog::finished, [dlg]() {
+        if (dlg) {
+            dlg->deleteLater();
+        }
+    });
     dlg->setModal(true);
     dlg->show();
 }
@@ -409,28 +407,26 @@ void IPv6Widget::slotDnsServers()
     QPointer<QDialog> dialog = new QDialog(this);
     dialog->setWindowTitle(i18n("Edit DNS servers"));
     dialog->setLayout(new QVBoxLayout);
-    QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
+    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
     connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
-    KEditListWidget * listWidget = new KEditListWidget(dialog);
+    KEditListWidget *listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(" ", ""));
     listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
-    connect(dialog.data(), &QDialog::accepted,
-            [listWidget, this] () {
-                QString text = listWidget->items().join(",");
-                if (text.endsWith(',')) {
-                    text.chop(1);
-                }
-                m_ui->dns->setText(text);
-            });
-    connect(dialog.data(), &QDialog::finished,
-            [dialog] () {
-                if (dialog) {
-                    dialog->deleteLater();
-                }
-            });
+    connect(dialog.data(), &QDialog::accepted, [listWidget, this]() {
+        QString text = listWidget->items().join(",");
+        if (text.endsWith(',')) {
+            text.chop(1);
+        }
+        m_ui->dns->setText(text);
+    });
+    connect(dialog.data(), &QDialog::finished, [dialog]() {
+        if (dialog) {
+            dialog->deleteLater();
+        }
+    });
     dialog->setModal(true);
     dialog->show();
 }
@@ -440,28 +436,26 @@ void IPv6Widget::slotDnsDomains()
     QPointer<QDialog> dialog = new QDialog(this);
     dialog->setWindowTitle(i18n("Edit DNS search domains"));
     dialog->setLayout(new QVBoxLayout);
-    QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, dialog);
+    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
     connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
-    KEditListWidget * listWidget = new KEditListWidget(dialog);
+    KEditListWidget *listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(" ", ""));
     listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
-    connect(dialog.data(), &QDialog::accepted,
-            [listWidget, this] () {
-                QString text = listWidget->items().join(",");
-                if (text.endsWith(',')) {
-                    text.chop(1);
-                }
-                m_ui->dnsSearch->setText(text);
-            });
-    connect(dialog.data(), &QDialog::finished,
-            [dialog] () {
-                if (dialog) {
-                    dialog->deleteLater();
-                }
-            });
+    connect(dialog.data(), &QDialog::accepted, [listWidget, this]() {
+        QString text = listWidget->items().join(",");
+        if (text.endsWith(',')) {
+            text.chop(1);
+        }
+        m_ui->dnsSearch->setText(text);
+    });
+    connect(dialog.data(), &QDialog::finished, [dialog]() {
+        if (dialog) {
+            dialog->deleteLater();
+        }
+    });
     dialog->setModal(true);
     dialog->show();
 }
@@ -475,7 +469,7 @@ bool IPv6Widget::isValid() const
 
         for (int i = 0, rowCount = d->model.rowCount(); i < rowCount; i++) {
             QHostAddress ip = QHostAddress(d->model.item(i, 0)->text());
-            const int prefix = d->model.item(i,1)->text().toInt();
+            const int prefix = d->model.item(i, 1)->text().toInt();
             QHostAddress gateway = QHostAddress(d->model.item(i, 2)->text());
 
             if (ip.isNull() || !(prefix >= 1 && prefix <= 128) || (gateway.isNull() && !d->model.item(i, 2)->text().isEmpty())) {
@@ -484,7 +478,8 @@ bool IPv6Widget::isValid() const
         }
     }
 
-    if (!m_ui->dns->text().isEmpty() && (m_ui->method->currentIndex() == Automatic || m_ui->method->currentIndex() == Manual || m_ui->method->currentIndex() == AutomaticOnlyIP)) {
+    if (!m_ui->dns->text().isEmpty()
+        && (m_ui->method->currentIndex() == Automatic || m_ui->method->currentIndex() == Manual || m_ui->method->currentIndex() == AutomaticOnlyIP)) {
         const QStringList tmp = m_ui->dns->text().split(',');
         for (const QString &str : tmp) {
             QHostAddress addr(str);

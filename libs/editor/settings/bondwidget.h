@@ -7,10 +7,10 @@
 #ifndef PLASMA_NM_BOND_WIDGET_H
 #define PLASMA_NM_BOND_WIDGET_H
 
-#include <QWidget>
-#include <QMenu>
-#include <QListWidgetItem>
 #include <QDBusPendingCallWatcher>
+#include <QListWidgetItem>
+#include <QMenu>
+#include <QWidget>
 
 #include <NetworkManagerQt/BondSetting>
 
@@ -25,9 +25,11 @@ class Q_DECL_EXPORT BondWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit BondWidget(const QString & masterUuid, const QString &masterId,
+    explicit BondWidget(const QString &masterUuid,
+                        const QString &masterId,
                         const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
-               QWidget* parent = nullptr, Qt::WindowFlags f = {});
+                        QWidget *parent = nullptr,
+                        Qt::WindowFlags f = {});
     ~BondWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
@@ -37,9 +39,9 @@ public:
     bool isValid() const override;
 
 private Q_SLOTS:
-    void addBond(QAction * action);
-    void currentBondChanged(QListWidgetItem * current, QListWidgetItem * previous);
-    void bondAddComplete(QDBusPendingCallWatcher * watcher);
+    void addBond(QAction *action);
+    void currentBondChanged(QListWidgetItem *current, QListWidgetItem *previous);
+    void bondAddComplete(QDBusPendingCallWatcher *watcher);
 
     void editBond();
     void deleteBond();
@@ -49,8 +51,8 @@ private Q_SLOTS:
 private:
     QString m_uuid;
     QString m_id;
-    Ui::BondWidget * m_ui;
-    QMenu * m_menu;
+    Ui::BondWidget *m_ui;
+    QMenu *m_menu;
 };
 
 #endif // PLASMA_NM_BOND_WIDGET_H

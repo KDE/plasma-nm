@@ -12,7 +12,7 @@
 class Q_DECL_EXPORT SimpleIpV4AddressValidator : public QValidator
 {
 public:
-    enum AddressStyle {Base, WithCidr, WithPort};
+    enum AddressStyle { Base, WithCidr, WithPort };
 
     explicit SimpleIpV4AddressValidator(AddressStyle style = AddressStyle::Base, QObject *parent = nullptr);
     ~SimpleIpV4AddressValidator() override;
@@ -25,7 +25,8 @@ public:
     /** Function split input string into tetrads and check them for valid values.
      *  In the tetrads are placed into QList. Input string may be changed.
      */
-    QValidator::State checkTetradsRanges(QString &, QList<int>&) const;
+    QValidator::State checkTetradsRanges(QString &, QList<int> &) const;
+
 private:
     AddressStyle m_addressStyle;
     QRegularExpressionValidator m_validator;

@@ -11,8 +11,7 @@
 
 #include <KLocalizedString>
 
-ConnectionEditorDialog::ConnectionEditorDialog(const NetworkManager::ConnectionSettings::Ptr &connection,
-                                               QWidget *parent, Qt::WindowFlags f)
+ConnectionEditorDialog::ConnectionEditorDialog(const NetworkManager::ConnectionSettings::Ptr &connection, QWidget *parent, Qt::WindowFlags f)
     : QDialog(parent, f)
     , m_buttonBox(new QDialogButtonBox(this))
     , m_connectionEditorTabWidget(new ConnectionEditorTabWidget(connection, parent, f))
@@ -50,4 +49,3 @@ void ConnectionEditorDialog::onValidityChanged(bool valid)
 {
     m_buttonBox->button(QDialogButtonBox::Save)->setEnabled(valid);
 }
-

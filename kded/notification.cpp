@@ -7,8 +7,8 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-#include "debug.h"
 #include "notification.h"
+#include "debug.h"
 
 #include <uiutils.h>
 
@@ -23,8 +23,8 @@
 
 #include <algorithm>
 
-Notification::Notification(QObject *parent) :
-    QObject(parent)
+Notification::Notification(QObject *parent)
+    : QObject(parent)
 {
     // devices
     for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
@@ -38,7 +38,10 @@ Notification::Notification(QObject *parent) :
         addActiveConnection(ac);
     }
 
-    connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionAdded, this, QOverload<const QString&>::of(&Notification::addActiveConnection));
+    connect(NetworkManager::notifier(),
+            &NetworkManager::Notifier::activeConnectionAdded,
+            this,
+            QOverload<const QString &>::of(&Notification::addActiveConnection));
 
     QDBusConnection::systemBus().connect(QStringLiteral("org.freedesktop.login1"),
                                          QStringLiteral("/org/freedesktop/login1"),
@@ -59,11 +62,13 @@ void Notification::addDevice(const NetworkManager::Device::Ptr &device)
     connect(device.data(), &NetworkManager::Device::stateChanged, this, &Notification::stateChanged);
 }
 
-void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason)
+void Notification::stateChanged(NetworkManager::Device::State newstate,
+                                NetworkManager::Device::State oldstate,
+                                NetworkManager::Device::StateChangeReason reason)
 {
     Q_UNUSED(oldstate)
 
-    NetworkManager::Device *device = qobject_cast<NetworkManager::Device*>(sender());
+    NetworkManager::Device *device = qobject_cast<NetworkManager::Device *>(sender());
     if (newstate == NetworkManager::Device::Activated && m_notifications.contains(device->uni())) {
         KNotification *notify = m_notifications.value(device->uni());
         notify->close();
@@ -81,233 +86,179 @@ void Notification::stateChanged(NetworkManager::Device::State newstate, NetworkM
     case NetworkManager::Device::NowUnmanagedReason:
         return;
     case NetworkManager::Device::ConfigFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to ConfigFailedReason",
-                     "The device could not be configured");
+        text = i18nc("@info:status Notification when the device failed due to ConfigFailedReason", "The device could not be configured");
         break;
     case NetworkManager::Device::ConfigUnavailableReason:
-        text = i18nc("@info:status Notification when the device failed due to ConfigUnavailableReason",
-                     "IP configuration was unavailable");
+        text = i18nc("@info:status Notification when the device failed due to ConfigUnavailableReason", "IP configuration was unavailable");
         break;
     case NetworkManager::Device::ConfigExpiredReason:
-        text = i18nc("@info:status Notification when the device failed due to ConfigExpiredReason",
-                     "IP configuration expired");
+        text = i18nc("@info:status Notification when the device failed due to ConfigExpiredReason", "IP configuration expired");
         break;
     case NetworkManager::Device::NoSecretsReason:
-        text = i18nc("@info:status Notification when the device failed due to NoSecretsReason",
-                     "No secrets were provided");
+        text = i18nc("@info:status Notification when the device failed due to NoSecretsReason", "No secrets were provided");
         break;
     case NetworkManager::Device::AuthSupplicantDisconnectReason:
-        text = i18nc("@info:status Notification when the device failed due to AuthSupplicantDisconnectReason",
-                     "Authorization supplicant disconnected");
+        text = i18nc("@info:status Notification when the device failed due to AuthSupplicantDisconnectReason", "Authorization supplicant disconnected");
         break;
     case NetworkManager::Device::AuthSupplicantConfigFailedReason:
         text = i18nc("@info:status Notification when the device failed due to AuthSupplicantConfigFailedReason",
                      "Authorization supplicant's configuration failed");
         break;
     case NetworkManager::Device::AuthSupplicantFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to AuthSupplicantFailedReason",
-                     "Authorization supplicant failed");
+        text = i18nc("@info:status Notification when the device failed due to AuthSupplicantFailedReason", "Authorization supplicant failed");
         break;
     case NetworkManager::Device::AuthSupplicantTimeoutReason:
-        text = i18nc("@info:status Notification when the device failed due to AuthSupplicantTimeoutReason",
-                     "Authorization supplicant timed out");
+        text = i18nc("@info:status Notification when the device failed due to AuthSupplicantTimeoutReason", "Authorization supplicant timed out");
         break;
     case NetworkManager::Device::PppStartFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to PppStartFailedReason",
-                     "PPP failed to start");
+        text = i18nc("@info:status Notification when the device failed due to PppStartFailedReason", "PPP failed to start");
         break;
     case NetworkManager::Device::PppDisconnectReason:
-        text = i18nc("@info:status Notification when the device failed due to PppDisconnectReason",
-                     "PPP disconnected");
+        text = i18nc("@info:status Notification when the device failed due to PppDisconnectReason", "PPP disconnected");
         break;
     case NetworkManager::Device::PppFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to PppFailedReason",
-                     "PPP failed");
+        text = i18nc("@info:status Notification when the device failed due to PppFailedReason", "PPP failed");
         break;
     case NetworkManager::Device::DhcpStartFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to DhcpStartFailedReason",
-                     "DHCP failed to start");
+        text = i18nc("@info:status Notification when the device failed due to DhcpStartFailedReason", "DHCP failed to start");
         break;
     case NetworkManager::Device::DhcpErrorReason:
-        text = i18nc("@info:status Notification when the device failed due to DhcpErrorReason",
-                     "A DHCP error occurred");
+        text = i18nc("@info:status Notification when the device failed due to DhcpErrorReason", "A DHCP error occurred");
         break;
     case NetworkManager::Device::DhcpFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to DhcpFailedReason",
-                     "DHCP failed ");
+        text = i18nc("@info:status Notification when the device failed due to DhcpFailedReason", "DHCP failed ");
         break;
     case NetworkManager::Device::SharedStartFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to SharedStartFailedReason",
-                     "The shared service failed to start");
+        text = i18nc("@info:status Notification when the device failed due to SharedStartFailedReason", "The shared service failed to start");
         break;
     case NetworkManager::Device::SharedFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to SharedFailedReason",
-                     "The shared service failed");
+        text = i18nc("@info:status Notification when the device failed due to SharedFailedReason", "The shared service failed");
         break;
     case NetworkManager::Device::AutoIpStartFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to AutoIpStartFailedReason",
-                     "The auto IP service failed to start");
+        text = i18nc("@info:status Notification when the device failed due to AutoIpStartFailedReason", "The auto IP service failed to start");
         break;
     case NetworkManager::Device::AutoIpErrorReason:
-        text = i18nc("@info:status Notification when the device failed due to AutoIpErrorReason",
-                     "The auto IP service reported an error");
+        text = i18nc("@info:status Notification when the device failed due to AutoIpErrorReason", "The auto IP service reported an error");
         break;
     case NetworkManager::Device::AutoIpFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to AutoIpFailedReason",
-                     "The auto IP service failed");
+        text = i18nc("@info:status Notification when the device failed due to AutoIpFailedReason", "The auto IP service failed");
         break;
     case NetworkManager::Device::ModemBusyReason:
-        text = i18nc("@info:status Notification when the device failed due to ModemBusyReason",
-                     "The modem is busy");
+        text = i18nc("@info:status Notification when the device failed due to ModemBusyReason", "The modem is busy");
         break;
     case NetworkManager::Device::ModemNoDialToneReason:
-        text = i18nc("@info:status Notification when the device failed due to ModemNoDialToneReason",
-                     "The modem has no dial tone");
+        text = i18nc("@info:status Notification when the device failed due to ModemNoDialToneReason", "The modem has no dial tone");
         break;
     case NetworkManager::Device::ModemNoCarrierReason:
-        text = i18nc("@info:status Notification when the device failed due to ModemNoCarrierReason",
-                     "The modem shows no carrier");
+        text = i18nc("@info:status Notification when the device failed due to ModemNoCarrierReason", "The modem shows no carrier");
         break;
     case NetworkManager::Device::ModemDialTimeoutReason:
-        text = i18nc("@info:status Notification when the device failed due to ModemDialTimeoutReason",
-                     "The modem dial timed out");
+        text = i18nc("@info:status Notification when the device failed due to ModemDialTimeoutReason", "The modem dial timed out");
         break;
     case NetworkManager::Device::ModemDialFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to ModemDialFailedReason",
-                     "The modem dial failed");
+        text = i18nc("@info:status Notification when the device failed due to ModemDialFailedReason", "The modem dial failed");
         break;
     case NetworkManager::Device::ModemInitFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to ModemInitFailedReason",
-                     "The modem could not be initialized");
+        text = i18nc("@info:status Notification when the device failed due to ModemInitFailedReason", "The modem could not be initialized");
         break;
     case NetworkManager::Device::GsmApnSelectFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to GsmApnSelectFailedReason",
-                     "The GSM APN could not be selected");
+        text = i18nc("@info:status Notification when the device failed due to GsmApnSelectFailedReason", "The GSM APN could not be selected");
         break;
     case NetworkManager::Device::GsmNotSearchingReason:
-        text = i18nc("@info:status Notification when the device failed due to GsmNotSearchingReason",
-                     "The GSM modem is not searching");
+        text = i18nc("@info:status Notification when the device failed due to GsmNotSearchingReason", "The GSM modem is not searching");
         break;
     case NetworkManager::Device::GsmRegistrationDeniedReason:
-        text = i18nc("@info:status Notification when the device failed due to GsmRegistrationDeniedReason",
-                     "GSM network registration was denied");
+        text = i18nc("@info:status Notification when the device failed due to GsmRegistrationDeniedReason", "GSM network registration was denied");
         break;
     case NetworkManager::Device::GsmRegistrationTimeoutReason:
-        text = i18nc("@info:status Notification when the device failed due to GsmRegistrationTimeoutReason",
-                     "GSM network registration timed out");
+        text = i18nc("@info:status Notification when the device failed due to GsmRegistrationTimeoutReason", "GSM network registration timed out");
         break;
     case NetworkManager::Device::GsmRegistrationFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to GsmRegistrationFailedReason",
-                     "GSM registration failed");
+        text = i18nc("@info:status Notification when the device failed due to GsmRegistrationFailedReason", "GSM registration failed");
         break;
     case NetworkManager::Device::GsmPinCheckFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to GsmPinCheckFailedReason",
-                     "The GSM PIN check failed");
+        text = i18nc("@info:status Notification when the device failed due to GsmPinCheckFailedReason", "The GSM PIN check failed");
         break;
     case NetworkManager::Device::FirmwareMissingReason:
-        text = i18nc("@info:status Notification when the device failed due to FirmwareMissingReason",
-                     "Device firmware is missing");
+        text = i18nc("@info:status Notification when the device failed due to FirmwareMissingReason", "Device firmware is missing");
         break;
     case NetworkManager::Device::DeviceRemovedReason:
-        text = i18nc("@info:status Notification when the device failed due to DeviceRemovedReason",
-                     "The device was removed");
+        text = i18nc("@info:status Notification when the device failed due to DeviceRemovedReason", "The device was removed");
         break;
     case NetworkManager::Device::SleepingReason:
-        text = i18nc("@info:status Notification when the device failed due to SleepingReason",
-                     "The networking system is now sleeping");
+        text = i18nc("@info:status Notification when the device failed due to SleepingReason", "The networking system is now sleeping");
         break;
     case NetworkManager::Device::ConnectionRemovedReason:
-        text = i18nc("@info:status Notification when the device failed due to ConnectionRemovedReason",
-                     "The connection was removed");
+        text = i18nc("@info:status Notification when the device failed due to ConnectionRemovedReason", "The connection was removed");
         break;
     case NetworkManager::Device::UserRequestedReason:
         return;
     case NetworkManager::Device::CarrierReason:
-        text = i18nc("@info:status Notification when the device failed due to CarrierReason",
-                     "The cable was disconnected");
+        text = i18nc("@info:status Notification when the device failed due to CarrierReason", "The cable was disconnected");
         break;
     case NetworkManager::Device::ConnectionAssumedReason:
     case NetworkManager::Device::SupplicantAvailableReason:
         return;
     case NetworkManager::Device::ModemNotFoundReason:
-        text = i18nc("@info:status Notification when the device failed due to ModemNotFoundReason",
-                     "The modem could not be found");
+        text = i18nc("@info:status Notification when the device failed due to ModemNotFoundReason", "The modem could not be found");
         break;
     case NetworkManager::Device::BluetoothFailedReason:
-        text = i18nc("@info:status Notification when the device failed due to BluetoothFailedReason",
-                     "The bluetooth connection failed or timed out");
+        text = i18nc("@info:status Notification when the device failed due to BluetoothFailedReason", "The bluetooth connection failed or timed out");
         break;
     case NetworkManager::Device::GsmSimNotInserted:
-        text = i18nc("@info:status Notification when the device failed due to GsmSimNotInserted",
-                     "GSM Modem's SIM Card not inserted");
+        text = i18nc("@info:status Notification when the device failed due to GsmSimNotInserted", "GSM Modem's SIM Card not inserted");
         break;
     case NetworkManager::Device::GsmSimPinRequired:
-        text = i18nc("@info:status Notification when the device failed due to GsmSimPinRequired",
-                     "GSM Modem's SIM Pin required");
+        text = i18nc("@info:status Notification when the device failed due to GsmSimPinRequired", "GSM Modem's SIM Pin required");
         break;
     case NetworkManager::Device::GsmSimPukRequired:
-        text = i18nc("@info:status Notification when the device failed due to GsmSimPukRequired",
-                     "GSM Modem's SIM Puk required");
+        text = i18nc("@info:status Notification when the device failed due to GsmSimPukRequired", "GSM Modem's SIM Puk required");
         break;
     case NetworkManager::Device::GsmSimWrong:
-        text = i18nc("@info:status Notification when the device failed due to GsmSimWrong",
-                     "GSM Modem's SIM wrong");
+        text = i18nc("@info:status Notification when the device failed due to GsmSimWrong", "GSM Modem's SIM wrong");
         break;
     case NetworkManager::Device::InfiniBandMode:
-        text = i18nc("@info:status Notification when the device failed due to InfiniBandMode",
-                     "InfiniBand device does not support connected mode");
+        text = i18nc("@info:status Notification when the device failed due to InfiniBandMode", "InfiniBand device does not support connected mode");
         break;
     case NetworkManager::Device::DependencyFailed:
-        text = i18nc("@info:status Notification when the device failed due to DependencyFailed",
-                     "A dependency of the connection failed");
+        text = i18nc("@info:status Notification when the device failed due to DependencyFailed", "A dependency of the connection failed");
         break;
     case NetworkManager::Device::Br2684Failed:
-        text = i18nc("@info:status Notification when the device failed due to Br2684Failed",
-                     "Problem with the RFC 2684 Ethernet over ADSL bridge");
+        text = i18nc("@info:status Notification when the device failed due to Br2684Failed", "Problem with the RFC 2684 Ethernet over ADSL bridge");
         break;
     case NetworkManager::Device::ModemManagerUnavailable:
-        text = i18nc("@info:status Notification when the device failed due to ModemManagerUnavailable",
-                     "ModemManager not running");
+        text = i18nc("@info:status Notification when the device failed due to ModemManagerUnavailable", "ModemManager not running");
         break;
     case NetworkManager::Device::SsidNotFound:
-        text = i18nc("@info:status Notification when the device failed due to SsidNotFound",
-                     "The WiFi network could not be found");
+        text = i18nc("@info:status Notification when the device failed due to SsidNotFound", "The WiFi network could not be found");
         break;
     case NetworkManager::Device::SecondaryConnectionFailed:
-        text = i18nc("@info:status Notification when the device failed due to SecondaryConnectionFailed",
-                     "A secondary connection of the base connection failed");
+        text =
+            i18nc("@info:status Notification when the device failed due to SecondaryConnectionFailed", "A secondary connection of the base connection failed");
         break;
     case NetworkManager::Device::DcbFcoeFailed:
-        text = i18nc("@info:status Notification when the device failed due to DcbFcoeFailed",
-                     "DCB or FCoE setup failed");
+        text = i18nc("@info:status Notification when the device failed due to DcbFcoeFailed", "DCB or FCoE setup failed");
         break;
     case NetworkManager::Device::TeamdControlFailed:
-        text = i18nc("@info:status Notification when the device failed due to TeamdControlFailed",
-                     "teamd control failed");
+        text = i18nc("@info:status Notification when the device failed due to TeamdControlFailed", "teamd control failed");
         break;
     case NetworkManager::Device::ModemFailed:
-        text = i18nc("@info:status Notification when the device failed due to ModemFailed",
-                     "Modem failed or no longer available");
+        text = i18nc("@info:status Notification when the device failed due to ModemFailed", "Modem failed or no longer available");
         break;
     case NetworkManager::Device::ModemAvailable:
-        text = i18nc("@info:status Notification when the device failed due to ModemAvailable",
-                     "Modem now ready and available");
+        text = i18nc("@info:status Notification when the device failed due to ModemAvailable", "Modem now ready and available");
         break;
     case NetworkManager::Device::SimPinIncorrect:
-        text = i18nc("@info:status Notification when the device failed due to SimPinIncorrect",
-                     "The SIM PIN was incorrect");
+        text = i18nc("@info:status Notification when the device failed due to SimPinIncorrect", "The SIM PIN was incorrect");
         break;
     case NetworkManager::Device::NewActivation:
-        text = i18nc("@info:status Notification when the device failed due to NewActivation",
-                     "A new connection activation was enqueued");
+        text = i18nc("@info:status Notification when the device failed due to NewActivation", "A new connection activation was enqueued");
         break;
     case NetworkManager::Device::ParentChanged:
-        text = i18nc("@info:status Notification when the device failed due to ParentChanged",
-                     "The device's parent changed");
+        text = i18nc("@info:status Notification when the device failed due to ParentChanged", "The device's parent changed");
         break;
     case NetworkManager::Device::ParentManagedChanged:
-        text = i18nc("@info:status Notification when the device failed due to ParentManagedChanged",
-                     "The device parent's management changed");
+        text = i18nc("@info:status Notification when the device failed due to ParentManagedChanged", "The device parent's management changed");
         break;
     case NetworkManager::Device::Reserved:
         return;
@@ -356,16 +307,14 @@ void Notification::addActiveConnection(const NetworkManager::ActiveConnection::P
 
 void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state)
 {
-    NetworkManager::ActiveConnection *ac = qobject_cast<NetworkManager::ActiveConnection*>(sender());
+    NetworkManager::ActiveConnection *ac = qobject_cast<NetworkManager::ActiveConnection *>(sender());
 
     QString eventId, text, iconName;
     const QString acName = ac->id();
     const QString connectionId = ac->id();
 
     if (state == NetworkManager::ActiveConnection::Activated) {
-        auto foundConnection = std::find_if(m_activeConnectionsBeforeSleep.constBegin(),
-                                            m_activeConnectionsBeforeSleep.constEnd(),
-                                            [ac](const QString &uuid) {
+        auto foundConnection = std::find_if(m_activeConnectionsBeforeSleep.constBegin(), m_activeConnectionsBeforeSleep.constEnd(), [ac](const QString &uuid) {
             return uuid == ac->uuid();
         });
 
@@ -445,7 +394,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
 
 void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
 {
-    NetworkManager::VpnConnection *vpn = qobject_cast<NetworkManager::VpnConnection*>(sender());
+    NetworkManager::VpnConnection *vpn = qobject_cast<NetworkManager::VpnConnection *>(sender());
 
     QString eventId, text;
     const QString vpnName = vpn->connection()->name();
@@ -519,7 +468,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
 
 void Notification::notificationClosed()
 {
-    KNotification *notify = qobject_cast<KNotification*>(sender());
+    KNotification *notify = qobject_cast<KNotification *>(sender());
     m_notifications.remove(notify->property("uni").toString());
 }
 
@@ -564,9 +513,9 @@ void Notification::onCheckActiveConnectionOnResume()
 
     const auto ac = NetworkManager::activeConnections();
     if (std::any_of(ac.constBegin(), ac.constEnd(), [](const auto &connection) {
-       return connection->state() == NetworkManager::ActiveConnection::State::Activated
-           || connection->state() == NetworkManager::ActiveConnection::State::Activating;
-    })) {
+            return connection->state() == NetworkManager::ActiveConnection::State::Activated
+                || connection->state() == NetworkManager::ActiveConnection::State::Activating;
+        })) {
         // we have an active or activating connection, don't tell the user we're no longer connected
         return;
     }

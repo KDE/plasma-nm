@@ -8,29 +8,29 @@
 #ifndef PLASMA_NM_MOBILE_CONNECTION_WIZARD_H
 #define PLASMA_NM_MOBILE_CONNECTION_WIZARD_H
 
-#include <QWizardPage>
+#include <QLabel>
 #include <QListWidget>
 #include <QRadioButton>
-#include <QLabel>
+#include <QWizardPage>
 
 #include <KComboBox>
 #include <KLineEdit>
 
-#include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/Manager>
 
 #include "mobileproviders.h"
 
 class Q_DECL_EXPORT MobileConnectionWizard : public QWizard
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     /*
      * Do not use NetworkManager::ConnectionSettings::Bluetooth here, use either NetworkManager::ConnectionSettings::Gsm
      * or NetworkManager::ConnectionSettings::Cdma.
      */
     explicit MobileConnectionWizard(NetworkManager::ConnectionSettings::ConnectionType connectionType = NetworkManager::ConnectionSettings::Unknown,
-                                    QWidget * parent = nullptr);
+                                    QWidget *parent = nullptr);
     ~MobileConnectionWizard() override;
 
     /*
@@ -44,28 +44,31 @@ public:
      */
     QVariantList args();
 
-    NetworkManager::ConnectionSettings::ConnectionType type() const { return mType; }
+    NetworkManager::ConnectionSettings::ConnectionType type() const
+    {
+        return mType;
+    }
     MobileProviders::ErrorCodes getError();
 
 private Q_SLOTS:
     void introDeviceAdded(const QString &uni);
     void introDeviceRemoved(const QString &uni);
     void introStatusChanged(NetworkManager::Status);
-    void slotEnablePlanEditBox(const QString & text);
+    void slotEnablePlanEditBox(const QString &text);
     void slotEnableProviderEdit(bool enable);
     void slotCheckProviderEdit();
     void slotCheckProviderList();
 
 private:
-    QWizardPage * createIntroPage();
-    QWizardPage * createCountryPage();
-    QWizardPage * createProvidersPage();
-    QWizardPage * createPlansPage();
-    QWizardPage * createConfirmPage();
+    QWizardPage *createIntroPage();
+    QWizardPage *createCountryPage();
+    QWizardPage *createProvidersPage();
+    QWizardPage *createPlansPage();
+    QWizardPage *createConfirmPage();
     void initializePage(int id) override;
     int nextId() const override;
 
-    MobileProviders * mProviders;
+    MobileProviders *mProviders;
     QString country;
     QString provider;
     QString apn;
@@ -73,28 +76,28 @@ private:
     bool mInitialMethodType;
 
     // Intro page
-    KComboBox * mDeviceComboBox;
+    KComboBox *mDeviceComboBox;
     void introAddInitialDevices();
     void introRemoveAllDevices();
     void introAddDevice(const NetworkManager::Device::Ptr &device);
 
     // Country page
-    QListWidget * mCountryList;
+    QListWidget *mCountryList;
 
     // Providers page
-    QListWidget * mProvidersList;
-    QRadioButton * radioAutoProvider;
-    QRadioButton * radioManualProvider;
-    KLineEdit * lineEditProvider;
+    QListWidget *mProvidersList;
+    QRadioButton *radioAutoProvider;
+    QRadioButton *radioManualProvider;
+    KLineEdit *lineEditProvider;
 
     // Plan page
-    KComboBox * mPlanComboBox;
-    KLineEdit * userApn;
+    KComboBox *mPlanComboBox;
+    KLineEdit *userApn;
 
     // Confirm page
-    QLabel * labelProvider;
-    QLabel * labelPlanLabel;
-    QLabel * labelPlan;
-    QLabel * labelApn;
+    QLabel *labelProvider;
+    QLabel *labelPlanLabel;
+    QLabel *labelPlan;
+    QLabel *labelApn;
 };
 #endif // PLASMA_NM_MOBILE_CONNECTION_WIZARD_H

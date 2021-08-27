@@ -19,11 +19,11 @@ class NetworkManagementServicePrivate;
 
 class Q_DECL_EXPORT NetworkManagementService : public KDEDModule
 {
-Q_CLASSINFO("D-Bus Interface", "org.kde.plasmanetworkmanagement")
-Q_OBJECT
-Q_DECLARE_PRIVATE(NetworkManagementService)
+    Q_CLASSINFO("D-Bus Interface", "org.kde.plasmanetworkmanagement")
+    Q_OBJECT
+    Q_DECLARE_PRIVATE(NetworkManagementService)
 public:
-    NetworkManagementService(QObject * parent, const QVariantList&);
+    NetworkManagementService(QObject *parent, const QVariantList &);
     ~NetworkManagementService() override;
 
 public Q_SLOTS:
@@ -34,7 +34,7 @@ Q_SIGNALS:
     void secretsError(const QString &connectionPath, const QString &message);
 
 private:
-    NetworkManagementServicePrivate * const d_ptr;
+    NetworkManagementServicePrivate *const d_ptr;
 };
 
 #endif // PLASMANM_KDED_SERVICE_H

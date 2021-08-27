@@ -8,12 +8,12 @@
 
 #include "pptpwidget.h"
 
-#include "ui_pptpprop.h"
 #include "ui_pptpadvanced.h"
+#include "ui_pptpprop.h"
 
-#include <QString>
 #include <QDialog>
 #include <QDialogButtonBox>
+#include <QString>
 
 #include "nm-pptp-service.h"
 
@@ -44,10 +44,10 @@ PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &sett
     d->advancedDlg = new QDialog(this);
     d->advancedWid = new QWidget(this);
     d->advUi.setupUi(d->advancedWid);
-    QVBoxLayout * layout = new QVBoxLayout(d->advancedDlg);
+    QVBoxLayout *layout = new QVBoxLayout(d->advancedDlg);
     layout->addWidget(d->advancedWid);
     d->advancedDlg->setLayout(layout);
-    QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, d->advancedDlg);
+    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, d->advancedDlg);
     connect(buttons, &QDialogButtonBox::accepted, d->advancedDlg, &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, d->advancedDlg, &QDialog::reject);
     layout->addWidget(buttons);
@@ -111,7 +111,7 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     bool refuse_mschapv2 = (dataMap[NM_PPTP_KEY_REFUSE_MSCHAPV2] == yesString);
     bool refuse_eap = (dataMap[NM_PPTP_KEY_REFUSE_EAP] == yesString);
 
-    QListWidgetItem * item = nullptr;
+    QListWidgetItem *item = nullptr;
     item = d->advUi.listWidget->item(0); // PAP
     item->setCheckState(refuse_pap ? Qt::Unchecked : Qt::Checked);
     item = d->advUi.listWidget->item(1); // CHAP
@@ -155,7 +155,7 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     d->advUi.cb_sendEcho->setChecked(lcp_echo_interval > 0);
 
     // secrets
-    const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_PPTP_KEY_PASSWORD"-flags"].toInt();
+    const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_PPTP_KEY_PASSWORD "-flags"].toInt();
     fillOnePasswordCombo(d->ui.edt_password, type);
 
     loadSecrets(setting);
@@ -189,20 +189,20 @@ QVariantMap PptpSettingWidget::setting() const
     NMStringMap data;
     NMStringMap secretData;
 
-    data.insert(NM_PPTP_KEY_GATEWAY,  d->ui.edt_gateway->text());
+    data.insert(NM_PPTP_KEY_GATEWAY, d->ui.edt_gateway->text());
     data.insert(NM_PPTP_KEY_USER, d->ui.edt_login->text());
     if (!d->ui.edt_password->text().isEmpty()) {
         secretData.insert(QLatin1String(NM_PPTP_KEY_PASSWORD), d->ui.edt_password->text());
     }
-    handleOnePasswordType(d->ui.edt_password, NM_PPTP_KEY_PASSWORD"-flags", data);
+    handleOnePasswordType(d->ui.edt_password, NM_PPTP_KEY_PASSWORD "-flags", data);
     if (!d->ui.edt_ntDomain->text().isEmpty()) {
-        data.insert(NM_PPTP_KEY_DOMAIN,  d->ui.edt_ntDomain->text());
+        data.insert(NM_PPTP_KEY_DOMAIN, d->ui.edt_ntDomain->text());
     }
 
     // Advanced dialog settings
 
     // Authentication options
-    QListWidgetItem * item = nullptr;
+    QListWidgetItem *item = nullptr;
     item = d->advUi.listWidget->item(0); // PAP
     const QString yesString = QLatin1String("yes");
     if (item->checkState() == Qt::Unchecked) {

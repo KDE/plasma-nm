@@ -6,11 +6,11 @@
 */
 
 #include "l2tppppwidget.h"
-#include "ui_l2tpppp.h"
 #include "nm-l2tp-service.h"
+#include "ui_l2tpppp.h"
 
-#include <KLocalizedString>
 #include <KAcceleratorManager>
+#include <KLocalizedString>
 
 L2tpPPPWidget::L2tpPPPWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent, bool need_peer_eap)
     : QDialog(parent)
@@ -49,7 +49,7 @@ void L2tpPPPWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
         const bool refuse_mschapv2 = (dataMap[NM_L2TP_KEY_REFUSE_MSCHAPV2] == yesString);
         const bool refuse_eap = (dataMap[NM_L2TP_KEY_REFUSE_EAP] == yesString);
 
-        QListWidgetItem * item = nullptr;
+        QListWidgetItem *item = nullptr;
         item = m_ui->listWidget->item(0); // PAP
         item->setCheckState(refuse_pap ? Qt::Unchecked : Qt::Checked);
         item = m_ui->listWidget->item(1); // CHAP
@@ -114,7 +114,7 @@ NMStringMap L2tpPPPWidget::setting() const
     const QString yesString = QLatin1String("yes");
 
     if (!m_need_peer_eap) {
-        QListWidgetItem * item = nullptr;
+        QListWidgetItem *item = nullptr;
         item = m_ui->listWidget->item(0); // PAP
         if (item->checkState() == Qt::Unchecked) {
             result.insert(NM_L2TP_KEY_REFUSE_PAP, yesString);
@@ -160,7 +160,6 @@ NMStringMap L2tpPPPWidget::setting() const
 
     if (!m_ui->cbBSD->isChecked()) {
         result.insert(NM_L2TP_KEY_NOBSDCOMP, yesString);
-
     }
     if (!m_ui->cbdeflate->isChecked()) {
         result.insert(NM_L2TP_KEY_NODEFLATE, yesString);

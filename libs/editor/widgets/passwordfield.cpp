@@ -39,7 +39,9 @@ PasswordField::PasswordField(QWidget *parent, Qt::WindowFlags f)
     m_passwordOptionsMenu->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
 
     m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("document-save")), i18n("Store password for this user only (encrypted)"), StoreForUser);
-    m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("document-save-all")), i18n("Store password for all users (not encrypted)"), StoreForAllUsers);
+    m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("document-save-all")),
+                                   i18n("Store password for all users (not encrypted)"),
+                                   StoreForAllUsers);
     m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("dialog-messages")), i18n("Ask for this password every time"), AlwaysAsk);
     // Do not add by default
     // m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("document-close")), i18n("This password is not required"), NotRequired);

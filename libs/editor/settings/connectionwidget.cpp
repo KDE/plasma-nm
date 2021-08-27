@@ -5,26 +5,26 @@
 */
 
 #include "connectionwidget.h"
-#include "ui_connectionwidget.h"
 #include "advancedpermissionswidget.h"
+#include "ui_connectionwidget.h"
 
-#include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Connection>
+#include <NetworkManagerQt/Settings>
 
-#include <QDBusConnection>
-#include <QDialog>
-#include <QVBoxLayout>
-#include <QDialogButtonBox>
-#include <KUser>
 #include <KAcceleratorManager>
 #include <KLocalizedString>
+#include <KUser>
+#include <QDBusConnection>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QVBoxLayout>
 
-ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr &settings, QWidget* parent, Qt::WindowFlags f):
-    QWidget(parent, f),
-    m_widget(new Ui::ConnectionWidget),
-    m_type(settings->connectionType()),
-    m_masterUuid(settings->master()),
-    m_slaveType(settings->slaveType())
+ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr &settings, QWidget *parent, Qt::WindowFlags f)
+    : QWidget(parent, f)
+    , m_widget(new Ui::ConnectionWidget)
+    , m_type(settings->connectionType())
+    , m_masterUuid(settings->master())
+    , m_slaveType(settings->slaveType())
 {
     m_widget->setupUi(this);
 
@@ -149,8 +149,7 @@ void ConnectionWidget::autoVpnToggled(bool on)
 void ConnectionWidget::openAdvancedPermissions()
 {
     QPointer<AdvancedPermissionsWidget> dialog = new AdvancedPermissionsWidget(m_tmpSetting.permissions(), this);
-    dialog->setWindowTitle(i18nc("@title:window advanced permissions editor",
-                                 "Advanced Permissions Editor"));
+    dialog->setWindowTitle(i18nc("@title:window advanced permissions editor", "Advanced Permissions Editor"));
     if (dialog->exec() == QDialog::Accepted) {
         m_tmpSetting.setPermissions(dialog->currentUsers());
     }
@@ -190,7 +189,7 @@ QStringList ConnectionWidget::firewallZones() const
 
 void ConnectionWidget::populateVpnConnections()
 {
-    QMapIterator<QString,QString> it(vpnConnections());
+    QMapIterator<QString, QString> it(vpnConnections());
     while (it.hasNext()) {
         it.next();
         m_widget->vpnCombobox->addItem(it.value(), it.key());

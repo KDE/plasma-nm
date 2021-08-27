@@ -8,10 +8,10 @@
 #include "advancedpermissionswidget.h"
 #include "ui_advancedpermissionswidget.h"
 
-#include <KUser>
-#include <KLocalizedString>
-#include <QList>
 #include <KAcceleratorManager>
+#include <KLocalizedString>
+#include <KUser>
+#include <QList>
 
 #define UserTagRole Qt::UserRole + 1
 
@@ -21,9 +21,9 @@ public:
     Ui_AdvancedPermissions ui;
 };
 
-AdvancedPermissionsWidget::AdvancedPermissionsWidget(QWidget *parent):
-    QDialog(parent),
-    d_ptr(new AdvancedPermissionsWidgetPrivate)
+AdvancedPermissionsWidget::AdvancedPermissionsWidget(QWidget *parent)
+    : QDialog(parent)
+    , d_ptr(new AdvancedPermissionsWidgetPrivate)
 {
     Q_D(AdvancedPermissionsWidget);
     d->ui.setupUi(this);
@@ -35,9 +35,9 @@ AdvancedPermissionsWidget::AdvancedPermissionsWidget(QWidget *parent):
     setupCommon();
 }
 
-AdvancedPermissionsWidget::AdvancedPermissionsWidget(const QHash<QString,QString> &users, QWidget *parent):
-    QDialog(parent),
-    d_ptr(new AdvancedPermissionsWidgetPrivate)
+AdvancedPermissionsWidget::AdvancedPermissionsWidget(const QHash<QString, QString> &users, QWidget *parent)
+    : QDialog(parent)
+    , d_ptr(new AdvancedPermissionsWidgetPrivate)
 {
     Q_D(AdvancedPermissionsWidget);
     d->ui.setupUi(this);
@@ -77,7 +77,7 @@ void AdvancedPermissionsWidget::setupCommon()
     KAcceleratorManager::manage(this);
 }
 
-QTreeWidgetItem * AdvancedPermissionsWidget::constructItem(const KUser &user, const QString &itemData)
+QTreeWidgetItem *AdvancedPermissionsWidget::constructItem(const KUser &user, const QString &itemData)
 {
     QStringList data;
     QString name = user.property(KUser::FullName).toString();

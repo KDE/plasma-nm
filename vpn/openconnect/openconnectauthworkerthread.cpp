@@ -6,18 +6,17 @@
 
 #include "openconnectauthworkerthread.h"
 
-#include <QMutex>
-#include <QWaitCondition>
-#include <QString>
 #include <QByteArray>
+#include <QMutex>
+#include <QString>
+#include <QWaitCondition>
 
-extern "C"
-{
+extern "C" {
 #include <stdlib.h>
-#if !OPENCONNECT_CHECK_VER(1,5)
-#include <openssl/ssl.h>
+#if !OPENCONNECT_CHECK_VER(1, 5)
 #include <openssl/bio.h>
 #include <openssl/ossl_typ.h>
+#include <openssl/ssl.h>
 #endif
 #include <errno.h>
 }
@@ -27,37 +26,37 @@ extern "C"
 class OpenconnectAuthStaticWrapper
 {
 public:
-#if OPENCONNECT_CHECK_VER(5,0)
+#if OPENCONNECT_CHECK_VER(5, 0)
     static int writeNewConfig(void *obj, const char *str, int num)
     {
         if (obj)
-            return static_cast<OpenconnectAuthWorkerThread*>(obj)->writeNewConfig(str, num);
+            return static_cast<OpenconnectAuthWorkerThread *>(obj)->writeNewConfig(str, num);
         return -1;
     }
     static int validatePeerCert(void *obj, const char *str)
     {
         if (obj)
-            return static_cast<OpenconnectAuthWorkerThread*>(obj)->validatePeerCert(nullptr, str);
+            return static_cast<OpenconnectAuthWorkerThread *>(obj)->validatePeerCert(nullptr, str);
         return -1;
     }
 #else
     static int writeNewConfig(void *obj, char *str, int num)
     {
         if (obj)
-            return static_cast<OpenconnectAuthWorkerThread*>(obj)->writeNewConfig(str, num);
+            return static_cast<OpenconnectAuthWorkerThread *>(obj)->writeNewConfig(str, num);
         return -1;
     }
     static int validatePeerCert(void *obj, OPENCONNECT_X509 *cert, const char *str)
     {
         if (obj)
-            return static_cast<OpenconnectAuthWorkerThread*>(obj)->validatePeerCert(cert, str);
+            return static_cast<OpenconnectAuthWorkerThread *>(obj)->validatePeerCert(cert, str);
         return -1;
     }
 #endif
-	static int processAuthForm(void *obj, struct oc_auth_form *form)
+    static int processAuthForm(void *obj, struct oc_auth_form *form)
     {
         if (obj)
-            return static_cast<OpenconnectAuthWorkerThread*>(obj)->processAuthFormP(form);
+            return static_cast<OpenconnectAuthWorkerThread *>(obj)->processAuthFormP(form);
         return OC_FORM_RESULT_ERR;
     }
     static void writeProgress(void *obj, int level, const char *str, ...)
@@ -65,26 +64,30 @@ public:
         if (obj) {
             va_list argPtr;
             va_start(argPtr, str);
-            static_cast<OpenconnectAuthWorkerThread*>(obj)->writeProgress(level, str, argPtr);
+            static_cast<OpenconnectAuthWorkerThread *>(obj)->writeProgress(level, str, argPtr);
             va_end(argPtr);
         }
     }
 };
 
-OpenconnectAuthWorkerThread::OpenconnectAuthWorkerThread(QMutex *mutex, QWaitCondition *waitForUserInput, bool *userDecidedToQuit, bool *formGroupChanged, int cancelFd)
-	: QThread()
+OpenconnectAuthWorkerThread::OpenconnectAuthWorkerThread(QMutex *mutex,
+                                                         QWaitCondition *waitForUserInput,
+                                                         bool *userDecidedToQuit,
+                                                         bool *formGroupChanged,
+                                                         int cancelFd)
+    : QThread()
     , m_mutex(mutex)
     , m_waitForUserInput(waitForUserInput)
     , m_userDecidedToQuit(userDecidedToQuit)
     , m_formGroupChanged(formGroupChanged)
 {
-    m_openconnectInfo = openconnect_vpninfo_new((char*)"OpenConnect VPN Agent (PlasmaNM - running on KDE)",
+    m_openconnectInfo = openconnect_vpninfo_new((char *)"OpenConnect VPN Agent (PlasmaNM - running on KDE)",
                                                 OpenconnectAuthStaticWrapper::validatePeerCert,
                                                 OpenconnectAuthStaticWrapper::writeNewConfig,
                                                 OpenconnectAuthStaticWrapper::processAuthForm,
                                                 OpenconnectAuthStaticWrapper::writeProgress,
                                                 this);
-#if OPENCONNECT_CHECK_VER(1,4)
+#if OPENCONNECT_CHECK_VER(1, 4)
     openconnect_set_cancel_fd(m_openconnectInfo, cancelFd);
 #else
     // Silence warning about unused parameter
@@ -108,7 +111,7 @@ void OpenconnectAuthWorkerThread::run()
     Q_EMIT cookieObtained(ret);
 }
 
-struct openconnect_info* OpenconnectAuthWorkerThread::getOpenconnectInfo()
+struct openconnect_info *OpenconnectAuthWorkerThread::getOpenconnectInfo()
 {
     return m_openconnectInfo;
 }
@@ -123,9 +126,8 @@ int OpenconnectAuthWorkerThread::writeNewConfig(const char *buf, int buflen)
     return 0;
 }
 
-#if !OPENCONNECT_CHECK_VER(1,5)
-static char *openconnect_get_cert_details(struct openconnect_info *vpninfo,
-                                          OPENCONNECT_X509 *cert)
+#if !OPENCONNECT_CHECK_VER(1, 5)
+static char *openconnect_get_cert_details(struct openconnect_info *vpninfo, OPENCONNECT_X509 *cert)
 {
     Q_UNUSED(vpninfo)
 
@@ -151,7 +153,7 @@ int OpenconnectAuthWorkerThread::validatePeerCert(void *cert, const char *reason
         return -EINVAL;
     }
 
-#if OPENCONNECT_CHECK_VER(5,0)
+#if OPENCONNECT_CHECK_VER(5, 0)
     (void)cert;
     const char *fingerprint = openconnect_get_peer_cert_hash(m_openconnectInfo);
     char *details = openconnect_get_peer_cert_details(m_openconnectInfo);
@@ -184,7 +186,6 @@ int OpenconnectAuthWorkerThread::validatePeerCert(void *cert, const char *reason
     } else {
         return -EINVAL;
     }
-
 }
 
 int OpenconnectAuthWorkerThread::processAuthFormP(struct oc_auth_form *form)

@@ -13,12 +13,14 @@
 
 #include <KLocalizedString>
 
-bool signalCompare(const NetworkManager::AccessPoint::Ptr & one, const NetworkManager::AccessPoint::Ptr & two) {
+bool signalCompare(const NetworkManager::AccessPoint::Ptr &one, const NetworkManager::AccessPoint::Ptr &two)
+{
     return one->signalStrength() > two->signalStrength();
 }
 
-BssidComboBox::BssidComboBox(QWidget *parent) :
-    QComboBox(parent), m_dirty(false)
+BssidComboBox::BssidComboBox(QWidget *parent)
+    : QComboBox(parent)
+    , m_dirty(false)
 {
     setEditable(true);
     setInsertPolicy(QComboBox::NoInsert);
@@ -62,7 +64,7 @@ void BssidComboBox::slotCurrentIndexChanged(int)
     Q_EMIT bssidChanged();
 }
 
-void BssidComboBox::init(const QString & bssid, const QString &ssid)
+void BssidComboBox::init(const QString &bssid, const QString &ssid)
 {
     m_initialBssid = bssid;
 
@@ -80,7 +82,8 @@ void BssidComboBox::init(const QString & bssid, const QString &ssid)
             }
 
             for (const NetworkManager::AccessPoint::Ptr &newAp : wifiNetwork->accessPoints()) {
-                bool found = false;;
+                bool found = false;
+                ;
                 for (const NetworkManager::AccessPoint::Ptr &existingAp : aps) {
                     if (newAp->hardwareAddress() == existingAp->hardwareAddress()) {
                         if (newAp->signalStrength() > existingAp->signalStrength()) {
@@ -113,7 +116,7 @@ void BssidComboBox::init(const QString & bssid, const QString &ssid)
     setEditText(m_initialBssid);
 }
 
-void BssidComboBox::addBssidsToCombo(const QList<NetworkManager::AccessPoint::Ptr> & aps)
+void BssidComboBox::addBssidsToCombo(const QList<NetworkManager::AccessPoint::Ptr> &aps)
 {
     clear();
 
@@ -127,7 +130,11 @@ void BssidComboBox::addBssidsToCombo(const QList<NetworkManager::AccessPoint::Pt
             continue;
         }
 
-        const QString text = i18n("%1 (%2%)\nFrequency: %3 Mhz\nChannel: %4", ap->hardwareAddress(), ap->signalStrength(), ap->frequency(), QString::number(NetworkManager::findChannel(ap->frequency())));
+        const QString text = i18n("%1 (%2%)\nFrequency: %3 Mhz\nChannel: %4",
+                                  ap->hardwareAddress(),
+                                  ap->signalStrength(),
+                                  ap->frequency(),
+                                  QString::number(NetworkManager::findChannel(ap->frequency())));
         addItem(text, QVariant::fromValue(ap->hardwareAddress()));
     }
 }

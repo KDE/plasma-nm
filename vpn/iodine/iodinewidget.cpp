@@ -56,7 +56,8 @@ void IodineWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         m_ui->le_nameserver->setText(nameserver);
     }
 
-    const NetworkManager::Setting::SecretFlags passwordFlag = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_IODINE_KEY_PASSWORD"-flags").toInt());
+    const NetworkManager::Setting::SecretFlags passwordFlag =
+        static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_IODINE_KEY_PASSWORD "-flags").toInt());
     if (passwordFlag == NetworkManager::Setting::None) {
         m_ui->le_password->setPasswordOption(PasswordField::StoreForAllUsers);
     } else if (passwordFlag == NetworkManager::Setting::AgentOwned) {
@@ -107,11 +108,11 @@ QVariantMap IodineWidget::setting() const
     }
 
     if (m_ui->le_password->passwordOption() == PasswordField::StoreForAllUsers) {
-        data.insert(NM_IODINE_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::None));
+        data.insert(NM_IODINE_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::None));
     } else if (m_ui->le_password->passwordOption() == PasswordField::StoreForUser) {
-        data.insert(NM_IODINE_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
+        data.insert(NM_IODINE_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::AgentOwned));
     } else {
-        data.insert(NM_IODINE_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
+        data.insert(NM_IODINE_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::NotSaved));
     }
 
     if (m_ui->sb_fragmentSize->value()) {

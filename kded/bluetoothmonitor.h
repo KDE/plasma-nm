@@ -16,11 +16,11 @@
 
 #include <QObject>
 
-class BluetoothMonitor: public QObject
+class BluetoothMonitor : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    explicit BluetoothMonitor(QObject * parent);
+    explicit BluetoothMonitor(QObject *parent);
     ~BluetoothMonitor() override;
 
     bool bluetoothConnectionExists(const QString &bdAddr, const QString &service);

@@ -20,10 +20,12 @@ class WifiConnectionWidget;
 
 class Q_DECL_EXPORT WifiConnectionWidget : public SettingWidget
 {
-Q_OBJECT
+    Q_OBJECT
 
 public:
-    explicit WifiConnectionWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
+    explicit WifiConnectionWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
+                                  QWidget *parent = nullptr,
+                                  Qt::WindowFlags f = {});
     ~WifiConnectionWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
@@ -42,7 +44,7 @@ private Q_SLOTS:
     void bandChanged(int band);
 
 private:
-    Ui::WifiConnectionWidget * m_ui;
+    Ui::WifiConnectionWidget *m_ui;
     void fillChannels(NetworkManager::WirelessSetting::FrequencyBand band);
 };
 

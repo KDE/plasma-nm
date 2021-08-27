@@ -7,11 +7,11 @@
 #ifndef PLASMA_NM_IPV4_WIDGET_H
 #define PLASMA_NM_IPV4_WIDGET_H
 
-#include <QWidget>
 #include <NetworkManagerQt/Ipv4Setting>
+#include <QWidget>
 
-#include "settingwidget.h"
 #include "ipv4routeswidget.h"
+#include "settingwidget.h"
 
 namespace Ui
 {
@@ -20,11 +20,11 @@ class IPv4Widget;
 
 class Q_DECL_EXPORT IPv4Widget : public SettingWidget
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     enum MethodIndex { Automatic = 0, AutomaticOnlyIP, LinkLocal, Manual, Shared, Disabled };
 
-    explicit IPv4Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
+    explicit IPv4Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~IPv4Widget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
@@ -44,15 +44,15 @@ private Q_SLOTS:
     void slotAddIPAddress();
     void slotRemoveIPAddress();
 
-    void selectionChanged(const QItemSelection & selected);
-    void tableViewItemChanged(QStandardItem * item);
+    void selectionChanged(const QItemSelection &selected);
+    void tableViewItemChanged(QStandardItem *item);
 
 private:
-    Ui::IPv4Widget * m_ui;
+    Ui::IPv4Widget *m_ui;
     NetworkManager::Ipv4Setting m_tmpIpv4Setting;
 
     class Private;
-    Private * const d;
+    Private *const d;
 };
 
 #endif // PLASMA_NM_IPV4_WIDGET_H

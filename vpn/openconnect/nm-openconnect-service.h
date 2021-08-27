@@ -13,9 +13,9 @@
 #ifndef NM_OPENCONNECT_SERVICE_H
 #define NM_OPENCONNECT_SERVICE_H
 
-#define NM_DBUS_SERVICE_OPENCONNECT    "org.freedesktop.NetworkManager.openconnect"
-#define NM_DBUS_INTERFACE_OPENCONNECT  "org.freedesktop.NetworkManager.openconnect"
-#define NM_DBUS_PATH_OPENCONNECT       "/org/freedesktop/NetworkManager/openconnect"
+#define NM_DBUS_SERVICE_OPENCONNECT "org.freedesktop.NetworkManager.openconnect"
+#define NM_DBUS_INTERFACE_OPENCONNECT "org.freedesktop.NetworkManager.openconnect"
+#define NM_DBUS_PATH_OPENCONNECT "/org/freedesktop/NetworkManager/openconnect"
 
 #define NM_OPENCONNECT_KEY_GATEWAY "gateway"
 #define NM_OPENCONNECT_KEY_COOKIE "cookie"

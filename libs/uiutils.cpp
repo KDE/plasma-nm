@@ -12,22 +12,22 @@
 #include "debug.h"
 
 // KDE
-#include <KLocalizedString>
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KSharedConfig>
 
 #include <NetworkManagerQt/Manager>
 
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/manager.h>
-#include <ModemManagerQt/modemdevice.h>
 #include <ModemManagerQt/modem3gpp.h>
 #include <ModemManagerQt/modemcdma.h>
+#include <ModemManagerQt/modemdevice.h>
 #endif
 
 // Qt
-#include <QSizeF>
 #include <QHostAddress>
+#include <QSizeF>
 
 #include <QString>
 
@@ -36,57 +36,57 @@ using namespace NetworkManager;
 UiUtils::SortedConnectionType UiUtils::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
 {
     switch (type) {
-        case NetworkManager::ConnectionSettings::Unknown:
-            return UiUtils::Unknown;
-            break;
-        case NetworkManager::ConnectionSettings::Adsl:
-            return UiUtils::Adsl;
-            break;
-        case NetworkManager::ConnectionSettings::Bluetooth:
-            return UiUtils::Bluetooth;
-            break;
-        case NetworkManager::ConnectionSettings::Bond:
-            return UiUtils::Bond;
-            break;
-        case NetworkManager::ConnectionSettings::Bridge:
-            return UiUtils::Bridge;
-            break;
-        case NetworkManager::ConnectionSettings::Cdma:
-            return UiUtils::Cdma;
-            break;
-        case NetworkManager::ConnectionSettings::Gsm:
-            return UiUtils::Gsm;
-            break;
-        case NetworkManager::ConnectionSettings::Infiniband:
-            return UiUtils::Infiniband;
-            break;
-        case NetworkManager::ConnectionSettings::OLPCMesh:
-            return UiUtils::OLPCMesh;
-            break;
-        case NetworkManager::ConnectionSettings::Pppoe:
-            return UiUtils::Pppoe;
-            break;
-        case NetworkManager::ConnectionSettings::Team:
-            return UiUtils::Team;
-            break;
-        case NetworkManager::ConnectionSettings::Vlan:
-            return UiUtils::Vlan;
-            break;
-        case NetworkManager::ConnectionSettings::Vpn:
-            return UiUtils::Vpn;
-            break;
-        case NetworkManager::ConnectionSettings::Wired:
-            return UiUtils::Wired;
-            break;
-        case NetworkManager::ConnectionSettings::Wireless:
-            return UiUtils::Wireless;
-            break;
-        case NetworkManager::ConnectionSettings::WireGuard:
-            return UiUtils::Wireguard;
-            break;
-        default:
-            return UiUtils::Unknown;
-            break;
+    case NetworkManager::ConnectionSettings::Unknown:
+        return UiUtils::Unknown;
+        break;
+    case NetworkManager::ConnectionSettings::Adsl:
+        return UiUtils::Adsl;
+        break;
+    case NetworkManager::ConnectionSettings::Bluetooth:
+        return UiUtils::Bluetooth;
+        break;
+    case NetworkManager::ConnectionSettings::Bond:
+        return UiUtils::Bond;
+        break;
+    case NetworkManager::ConnectionSettings::Bridge:
+        return UiUtils::Bridge;
+        break;
+    case NetworkManager::ConnectionSettings::Cdma:
+        return UiUtils::Cdma;
+        break;
+    case NetworkManager::ConnectionSettings::Gsm:
+        return UiUtils::Gsm;
+        break;
+    case NetworkManager::ConnectionSettings::Infiniband:
+        return UiUtils::Infiniband;
+        break;
+    case NetworkManager::ConnectionSettings::OLPCMesh:
+        return UiUtils::OLPCMesh;
+        break;
+    case NetworkManager::ConnectionSettings::Pppoe:
+        return UiUtils::Pppoe;
+        break;
+    case NetworkManager::ConnectionSettings::Team:
+        return UiUtils::Team;
+        break;
+    case NetworkManager::ConnectionSettings::Vlan:
+        return UiUtils::Vlan;
+        break;
+    case NetworkManager::ConnectionSettings::Vpn:
+        return UiUtils::Vpn;
+        break;
+    case NetworkManager::ConnectionSettings::Wired:
+        return UiUtils::Wired;
+        break;
+    case NetworkManager::ConnectionSettings::Wireless:
+        return UiUtils::Wireless;
+        break;
+    case NetworkManager::ConnectionSettings::WireGuard:
+        return UiUtils::Wireguard;
+        break;
+    default:
+        return UiUtils::Unknown;
+        break;
     }
 }
 
@@ -119,7 +119,7 @@ bool UiUtils::isConnectionTypeVirtual(NetworkManager::ConnectionSettings::Connec
         return true;
     }
 
-   return false;
+    return false;
 }
 
 QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, const NetworkManager::Device::Ptr iface)
@@ -153,7 +153,7 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
     case NetworkManager::Device::Modem: {
         const NetworkManager::ModemDevice::Ptr nmModemIface = iface.objectCast<NetworkManager::ModemDevice>();
         if (nmModemIface) {
-            switch(modemSubType(nmModemIface->currentCapabilities())) {
+            switch (modemSubType(nmModemIface->currentCapabilities())) {
             case NetworkManager::ModemDevice::Pots:
                 deviceText = i18nc("title of the interface widget in nm's popup", "Serial Modem");
                 break;
@@ -167,8 +167,7 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
                 break;
             }
         }
-    }
-        break;
+    } break;
     case NetworkManager::Device::Ethernet:
     default:
         deviceText = i18nc("title of the interface widget in nm's popup", "Wired Ethernet");
@@ -276,51 +275,51 @@ QString UiUtils::connectionStateToString(NetworkManager::Device::State state, co
 {
     QString stateString;
     switch (state) {
-        case NetworkManager::Device::UnknownState:
-            stateString = i18nc("description of unknown network interface state", "Unknown");
-            break;
-        case NetworkManager::Device::Unmanaged:
-            stateString = i18nc("description of unmanaged network interface state", "Unmanaged");
-            break;
-        case NetworkManager::Device::Unavailable:
-            stateString = i18nc("description of unavailable network interface state", "Unavailable");
-            break;
-        case NetworkManager::Device::Disconnected:
-            stateString = i18nc("description of unconnected network interface state", "Not connected");
-            break;
-        case NetworkManager::Device::Preparing:
-            stateString = i18nc("description of preparing to connect network interface state", "Preparing to connect");
-            break;
-        case NetworkManager::Device::ConfiguringHardware:
-            stateString = i18nc("description of configuring hardware network interface state", "Configuring interface");
-            break;
-        case NetworkManager::Device::NeedAuth:
-            stateString = i18nc("description of waiting for authentication network interface state", "Waiting for authorization");
-            break;
-        case NetworkManager::Device::ConfiguringIp:
-            stateString = i18nc("network interface doing dhcp request in most cases", "Setting network address");
-            break;
-        case NetworkManager::Device::CheckingIp:
-            stateString = i18nc("is other action required to fully connect? captive portals, etc.", "Checking further connectivity");
-            break;
-        case NetworkManager::Device::WaitingForSecondaries:
-            stateString = i18nc("a secondary connection (e.g. VPN) has to be activated first to continue", "Waiting for a secondary connection");
-            break;
-        case NetworkManager::Device::Activated:
-            if (connectionName.isEmpty()) {
-                stateString = i18nc("network interface connected state label", "Connected");
-            } else {
-                stateString = i18nc("network interface connected state label", "Connected to %1", connectionName);
-            }
-            break;
-        case NetworkManager::Device::Deactivating:
-            stateString = i18nc("network interface disconnecting state label", "Deactivating connection");
-            break;
-        case NetworkManager::Device::Failed:
-            stateString = i18nc("network interface connection failed state label", "Connection Failed");
-            break;
-        default:
-            stateString = i18nc("interface state", "Error: Invalid state");
+    case NetworkManager::Device::UnknownState:
+        stateString = i18nc("description of unknown network interface state", "Unknown");
+        break;
+    case NetworkManager::Device::Unmanaged:
+        stateString = i18nc("description of unmanaged network interface state", "Unmanaged");
+        break;
+    case NetworkManager::Device::Unavailable:
+        stateString = i18nc("description of unavailable network interface state", "Unavailable");
+        break;
+    case NetworkManager::Device::Disconnected:
+        stateString = i18nc("description of unconnected network interface state", "Not connected");
+        break;
+    case NetworkManager::Device::Preparing:
+        stateString = i18nc("description of preparing to connect network interface state", "Preparing to connect");
+        break;
+    case NetworkManager::Device::ConfiguringHardware:
+        stateString = i18nc("description of configuring hardware network interface state", "Configuring interface");
+        break;
+    case NetworkManager::Device::NeedAuth:
+        stateString = i18nc("description of waiting for authentication network interface state", "Waiting for authorization");
+        break;
+    case NetworkManager::Device::ConfiguringIp:
+        stateString = i18nc("network interface doing dhcp request in most cases", "Setting network address");
+        break;
+    case NetworkManager::Device::CheckingIp:
+        stateString = i18nc("is other action required to fully connect? captive portals, etc.", "Checking further connectivity");
+        break;
+    case NetworkManager::Device::WaitingForSecondaries:
+        stateString = i18nc("a secondary connection (e.g. VPN) has to be activated first to continue", "Waiting for a secondary connection");
+        break;
+    case NetworkManager::Device::Activated:
+        if (connectionName.isEmpty()) {
+            stateString = i18nc("network interface connected state label", "Connected");
+        } else {
+            stateString = i18nc("network interface connected state label", "Connected to %1", connectionName);
+        }
+        break;
+    case NetworkManager::Device::Deactivating:
+        stateString = i18nc("network interface disconnecting state label", "Deactivating connection");
+        break;
+    case NetworkManager::Device::Failed:
+        stateString = i18nc("network interface connection failed state label", "Connection Failed");
+        break;
+    default:
+        stateString = i18nc("interface state", "Error: Invalid state");
     }
     return stateString;
 }
@@ -329,32 +328,33 @@ QString UiUtils::vpnConnectionStateToString(VpnConnection::State state)
 {
     QString stateString;
     switch (state) {
-        case VpnConnection::Unknown:
-            stateString = i18nc("The state of the VPN connection is unknown", "Unknown");
-            break;
-        case VpnConnection::Prepare:
-            stateString = i18nc("The VPN connection is preparing to connect", "Preparing to connect");
-            break;
-        case VpnConnection::NeedAuth:
-            stateString = i18nc("The VPN connection needs authorization credentials", "Needs authorization");
-            break;
-        case VpnConnection::Connecting:
-            stateString = i18nc("The VPN connection is being established", "Connecting");
-            break;
-        case VpnConnection::GettingIpConfig:
-            stateString = i18nc("The VPN connection is getting an IP address", "Setting network address");
-            break;
-        case VpnConnection::Activated:
-            stateString = i18nc("The VPN connection is active", "Activated");
-            break;
-        case VpnConnection::Failed:
-            stateString = i18nc("The VPN connection failed", "Failed");
-            break;
-        case VpnConnection::Disconnected:
-            stateString = i18nc("The VPN connection is disconnected", "Failed");
-            break;
-        default:
-            stateString = i18nc("interface state", "Error: Invalid state");    }
+    case VpnConnection::Unknown:
+        stateString = i18nc("The state of the VPN connection is unknown", "Unknown");
+        break;
+    case VpnConnection::Prepare:
+        stateString = i18nc("The VPN connection is preparing to connect", "Preparing to connect");
+        break;
+    case VpnConnection::NeedAuth:
+        stateString = i18nc("The VPN connection needs authorization credentials", "Needs authorization");
+        break;
+    case VpnConnection::Connecting:
+        stateString = i18nc("The VPN connection is being established", "Connecting");
+        break;
+    case VpnConnection::GettingIpConfig:
+        stateString = i18nc("The VPN connection is getting an IP address", "Setting network address");
+        break;
+    case VpnConnection::Activated:
+        stateString = i18nc("The VPN connection is active", "Activated");
+        break;
+    case VpnConnection::Failed:
+        stateString = i18nc("The VPN connection failed", "Failed");
+        break;
+    case VpnConnection::Disconnected:
+        stateString = i18nc("The VPN connection is disconnected", "Failed");
+        break;
+    default:
+        stateString = i18nc("interface state", "Error: Invalid state");
+    }
     return stateString;
 }
 
@@ -362,20 +362,20 @@ QString UiUtils::operationModeToString(NetworkManager::WirelessDevice::Operation
 {
     QString modeString;
     switch (mode) {
-        case NetworkManager::WirelessDevice::WirelessDevice::Unknown:
-            modeString = i18nc("wireless network operation mode", "Unknown");
-            break;
-        case NetworkManager::WirelessDevice::Adhoc:
-            modeString = i18nc("wireless network operation mode", "Adhoc");
-            break;
-        case NetworkManager::WirelessDevice::WirelessDevice::Infra:
-            modeString = i18nc("wireless network operation mode", "Infrastructure");
-            break;
-        case NetworkManager::WirelessDevice::WirelessDevice::ApMode:
-            modeString = i18nc("wireless network operation mode", "Access point");
-            break;
-        default:
-            modeString = I18N_NOOP("INCORRECT MODE FIX ME");
+    case NetworkManager::WirelessDevice::WirelessDevice::Unknown:
+        modeString = i18nc("wireless network operation mode", "Unknown");
+        break;
+    case NetworkManager::WirelessDevice::Adhoc:
+        modeString = i18nc("wireless network operation mode", "Adhoc");
+        break;
+    case NetworkManager::WirelessDevice::WirelessDevice::Infra:
+        modeString = i18nc("wireless network operation mode", "Infrastructure");
+        break;
+    case NetworkManager::WirelessDevice::WirelessDevice::ApMode:
+        modeString = i18nc("wireless network operation mode", "Access point");
+        break;
+    default:
+        modeString = I18N_NOOP("INCORRECT MODE FIX ME");
     }
     return modeString;
 }
@@ -420,16 +420,15 @@ QStringList UiUtils::wpaFlagsToStringList(NetworkManager::AccessPoint::WpaFlags 
     return flagList;
 }
 
-
 QString UiUtils::connectionSpeed(double bitrate)
 {
     QString out;
     if (bitrate < 1000) {
         out = i18nc("connection speed", "%1 Bit/s", bitrate);
     } else if (bitrate < 1000000) {
-        out = i18nc("connection speed", "%1 MBit/s", bitrate/1000);
+        out = i18nc("connection speed", "%1 MBit/s", bitrate / 1000);
     } else {
-        out = i18nc("connection speed", "%1 GBit/s", bitrate/1000000);
+        out = i18nc("connection speed", "%1 GBit/s", bitrate / 1000000);
     }
     return out;
 }
@@ -437,15 +436,15 @@ QString UiUtils::connectionSpeed(double bitrate)
 QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::FrequencyBand band)
 {
     switch (band) {
-        case NetworkManager::WirelessSetting::Automatic:
-            return QStringLiteral("automatic");
-            break;
-        case NetworkManager::WirelessSetting::A:
-            return QStringLiteral("a");
-            break;
-        case NetworkManager::WirelessSetting::Bg:
-            return QStringLiteral("b/g");
-            break;
+    case NetworkManager::WirelessSetting::Automatic:
+        return QStringLiteral("automatic");
+        break;
+    case NetworkManager::WirelessSetting::A:
+        return QStringLiteral("a");
+        break;
+    case NetworkManager::WirelessSetting::Bg:
+        return QStringLiteral("b/g");
+        break;
     }
 
     return QString();
@@ -455,59 +454,59 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
 QString UiUtils::convertAllowedModeToString(ModemManager::Modem::ModemModes modes)
 {
     if (modes.testFlag(MM_MODEM_MODE_4G)) {
-        return i18nc("Gsm modes (2G/3G/any)","LTE");
+        return i18nc("Gsm modes (2G/3G/any)", "LTE");
     } else if (modes.testFlag(MM_MODEM_MODE_3G)) {
-        return i18nc("Gsm modes (2G/3G/any)","UMTS/HSxPA");
+        return i18nc("Gsm modes (2G/3G/any)", "UMTS/HSxPA");
     } else if (modes.testFlag(MM_MODEM_MODE_2G)) {
-        return i18nc("Gsm modes (2G/3G/any)","GPRS/EDGE");
+        return i18nc("Gsm modes (2G/3G/any)", "GPRS/EDGE");
     } else if (modes.testFlag(MM_MODEM_MODE_CS)) {
-        return i18nc("Gsm modes (2G/3G/any)","GSM");
+        return i18nc("Gsm modes (2G/3G/any)", "GSM");
     } else if (modes.testFlag(MM_MODEM_MODE_ANY)) {
-        return i18nc("Gsm modes (2G/3G/any)","Any");
+        return i18nc("Gsm modes (2G/3G/any)", "Any");
     }
 
-    return i18nc("Gsm modes (2G/3G/any)","Any");
+    return i18nc("Gsm modes (2G/3G/any)", "Any");
 }
 
 QString UiUtils::convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech)
 {
     if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_LTE)) {
-        return i18nc("Cellular access technology","LTE");
+        return i18nc("Cellular access technology", "LTE");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EVDOB)) {
-        return i18nc("Cellular access technology","CDMA2000 EVDO revision B");
+        return i18nc("Cellular access technology", "CDMA2000 EVDO revision B");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EVDOA)) {
-        return i18nc("Cellular access technology","CDMA2000 EVDO revision A");
+        return i18nc("Cellular access technology", "CDMA2000 EVDO revision A");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EVDO0)) {
-        return i18nc("Cellular access technology","CDMA2000 EVDO revision 0");
+        return i18nc("Cellular access technology", "CDMA2000 EVDO revision 0");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_1XRTT)) {
-        return i18nc("Cellular access technology","CDMA2000 1xRTT");
+        return i18nc("Cellular access technology", "CDMA2000 1xRTT");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_HSPA_PLUS)) {
-        return i18nc("Cellular access technology","HSPA+");
+        return i18nc("Cellular access technology", "HSPA+");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_HSPA)) {
-        return i18nc("Cellular access technology","HSPA");
+        return i18nc("Cellular access technology", "HSPA");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_HSUPA)) {
-        return i18nc("Cellular access technology","HSUPA");
+        return i18nc("Cellular access technology", "HSUPA");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_HSDPA)) {
-        return i18nc("Cellular access technology","HSDPA");
+        return i18nc("Cellular access technology", "HSDPA");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_UMTS)) {
-        return i18nc("Cellular access technology","UMTS");
+        return i18nc("Cellular access technology", "UMTS");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EDGE)) {
-        return i18nc("Cellular access technology","EDGE");
+        return i18nc("Cellular access technology", "EDGE");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_GPRS)) {
-        return i18nc("Cellular access technology","GPRS");
+        return i18nc("Cellular access technology", "GPRS");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_GSM_COMPACT)) {
-        return i18nc("Cellular access technology","Compact GSM");
+        return i18nc("Cellular access technology", "Compact GSM");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_GSM)) {
-        return i18nc("Cellular access technology","GSM");
+        return i18nc("Cellular access technology", "GSM");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_POTS)) {
-        return i18nc("Analog wireline modem","Analog");
+        return i18nc("Analog wireline modem", "Analog");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_UNKNOWN)) {
-        return i18nc("Unknown cellular access technology","Unknown");
+        return i18nc("Unknown cellular access technology", "Unknown");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_ANY)) {
-        return i18nc("Any cellular access technology","Any");
+        return i18nc("Any cellular access technology", "Any");
     }
 
-    return i18nc("Unknown cellular access technology","Unknown");
+    return i18nc("Unknown cellular access technology", "Unknown");
 }
 
 QString UiUtils::convertLockReasonToString(MMModemLock reason)
@@ -570,61 +569,59 @@ QString UiUtils::labelFromWirelessSecurity(NetworkManager::WirelessSecurityType 
 {
     QString tip;
     switch (type) {
-        case NetworkManager::NoneSecurity:
-            tip = i18nc("@label no security", "Insecure");
-            break;
-        case NetworkManager::StaticWep:
-            tip = i18nc("@label WEP security", "WEP");
-            break;
-        case NetworkManager::Leap:
-            tip = i18nc("@label LEAP security", "LEAP");
-            break;
-        case NetworkManager::DynamicWep:
-            tip = i18nc("@label Dynamic WEP security", "Dynamic WEP");
-            break;
-        case NetworkManager::WpaPsk:
-            tip = i18nc("@label WPA-PSK security", "WPA-PSK");
-            break;
-        case NetworkManager::WpaEap:
-            tip = i18nc("@label WPA-EAP security", "WPA-EAP");
-            break;
-        case NetworkManager::Wpa2Psk:
-            tip = i18nc("@label WPA2-PSK security", "WPA2-PSK");
-            break;
-        case NetworkManager::Wpa2Eap:
-            tip = i18nc("@label WPA2-EAP security", "WPA2-EAP");
-            break;
-        case NetworkManager::SAE:
-            tip = i18nc("@label WPA3-SAE security", "WPA3-SAE");
-            break;
-        default:
-            tip = i18nc("@label unknown security", "Unknown security type");
-            break;
+    case NetworkManager::NoneSecurity:
+        tip = i18nc("@label no security", "Insecure");
+        break;
+    case NetworkManager::StaticWep:
+        tip = i18nc("@label WEP security", "WEP");
+        break;
+    case NetworkManager::Leap:
+        tip = i18nc("@label LEAP security", "LEAP");
+        break;
+    case NetworkManager::DynamicWep:
+        tip = i18nc("@label Dynamic WEP security", "Dynamic WEP");
+        break;
+    case NetworkManager::WpaPsk:
+        tip = i18nc("@label WPA-PSK security", "WPA-PSK");
+        break;
+    case NetworkManager::WpaEap:
+        tip = i18nc("@label WPA-EAP security", "WPA-EAP");
+        break;
+    case NetworkManager::Wpa2Psk:
+        tip = i18nc("@label WPA2-PSK security", "WPA2-PSK");
+        break;
+    case NetworkManager::Wpa2Eap:
+        tip = i18nc("@label WPA2-EAP security", "WPA2-EAP");
+        break;
+    case NetworkManager::SAE:
+        tip = i18nc("@label WPA3-SAE security", "WPA3-SAE");
+        break;
+    default:
+        tip = i18nc("@label unknown security", "Unknown security type");
+        break;
     }
     return tip;
 }
 
-QString UiUtils::formatDateRelative(const QDateTime & lastUsed)
+QString UiUtils::formatDateRelative(const QDateTime &lastUsed)
 {
     QString lastUsedText;
     if (lastUsed.isValid()) {
         const QDateTime now = QDateTime::currentDateTime();
-        if (lastUsed.daysTo(now) == 0 ) {
+        if (lastUsed.daysTo(now) == 0) {
             const int secondsAgo = lastUsed.secsTo(now);
-            if (secondsAgo < (60 * 60 )) {
+            if (secondsAgo < (60 * 60)) {
                 const int minutesAgo = secondsAgo / 60;
-                lastUsedText = i18ncp(
-                                   "Label for last used time for a network connection used in the last hour, as the number of minutes since usage",
-                                   "One minute ago",
-                                   "%1 minutes ago",
-                                   minutesAgo);
+                lastUsedText = i18ncp("Label for last used time for a network connection used in the last hour, as the number of minutes since usage",
+                                      "One minute ago",
+                                      "%1 minutes ago",
+                                      minutesAgo);
             } else {
                 const int hoursAgo = secondsAgo / (60 * 60);
-                lastUsedText = i18ncp(
-                                   "Label for last used time for a network connection used in the last day, as the number of hours since usage",
-                                   "One hour ago",
-                                   "%1 hours ago",
-                                   hoursAgo);
+                lastUsedText = i18ncp("Label for last used time for a network connection used in the last day, as the number of hours since usage",
+                                      "One hour ago",
+                                      "%1 hours ago",
+                                      hoursAgo);
             }
         } else if (lastUsed.daysTo(now) == 1) {
             lastUsedText = i18nc("Label for last used time for a network connection used the previous day", "Yesterday");
@@ -632,33 +629,33 @@ QString UiUtils::formatDateRelative(const QDateTime & lastUsed)
             lastUsedText = QLocale().toString(lastUsed.date(), QLocale::ShortFormat);
         }
     } else {
-        lastUsedText =  i18nc("Label for last used time for a "
-                              "network connection that has never been used", "Never");
+        lastUsedText = i18nc(
+            "Label for last used time for a "
+            "network connection that has never been used",
+            "Never");
     }
     return lastUsedText;
 }
 
-QString UiUtils::formatLastUsedDateRelative(const QDateTime & lastUsed)
+QString UiUtils::formatLastUsedDateRelative(const QDateTime &lastUsed)
 {
     QString lastUsedText;
     if (lastUsed.isValid()) {
         const QDateTime now = QDateTime::currentDateTime();
-        if (lastUsed.daysTo(now) == 0 ) {
+        if (lastUsed.daysTo(now) == 0) {
             const int secondsAgo = lastUsed.secsTo(now);
-            if (secondsAgo < (60 * 60 )) {
+            if (secondsAgo < (60 * 60)) {
                 const int minutesAgo = secondsAgo / 60;
-                lastUsedText = i18ncp(
-                                   "Label for last used time for a network connection used in the last hour, as the number of minutes since usage",
-                                   "Last used one minute ago",
-                                   "Last used %1 minutes ago",
-                                   minutesAgo);
+                lastUsedText = i18ncp("Label for last used time for a network connection used in the last hour, as the number of minutes since usage",
+                                      "Last used one minute ago",
+                                      "Last used %1 minutes ago",
+                                      minutesAgo);
             } else {
                 const int hoursAgo = secondsAgo / (60 * 60);
-                lastUsedText = i18ncp(
-                                   "Label for last used time for a network connection used in the last day, as the number of hours since usage",
-                                   "Last used one hour ago",
-                                   "Last used %1 hours ago",
-                                   hoursAgo);
+                lastUsedText = i18ncp("Label for last used time for a network connection used in the last day, as the number of hours since usage",
+                                      "Last used one hour ago",
+                                      "Last used %1 hours ago",
+                                      hoursAgo);
             }
         } else if (lastUsed.daysTo(now) == 1) {
             lastUsedText = i18nc("Label for last used time for a network connection used the previous day", "Last used yesterday");
@@ -666,8 +663,10 @@ QString UiUtils::formatLastUsedDateRelative(const QDateTime & lastUsed)
             lastUsedText = i18n("Last used on %1", QLocale().toString(lastUsed.date(), QLocale::ShortFormat));
         }
     } else {
-        lastUsedText =  i18nc("Label for last used time for a "
-                              "network connection that has never been used", "Never used");
+        lastUsedText = i18nc(
+            "Label for last used time for a "
+            "network connection that has never been used",
+            "Never used");
     }
     return lastUsedText;
 }

@@ -18,7 +18,7 @@ class Q_DECL_EXPORT SsidComboBox : public KComboBox
 public:
     explicit SsidComboBox(QWidget *parent = nullptr);
 
-    void init(const QString & ssid);
+    void init(const QString &ssid);
 
     QString ssid() const;
 

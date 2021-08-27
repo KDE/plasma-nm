@@ -9,11 +9,11 @@
 #ifndef PLASMA_NM_MODEM_MONITOR_H
 #define PLASMA_NM_MODEM_MONITOR_H
 
-#include <QObject>
 #include <QDBusPendingCallWatcher>
+#include <QObject>
 
-#include <ModemManagerQt/ModemDevice>
 #include <ModemManagerQt/Modem>
+#include <ModemManagerQt/ModemDevice>
 
 class ModemMonitorPrivate;
 
@@ -22,10 +22,10 @@ class ModemMonitorPrivate;
  */
 class Q_DECL_EXPORT ModemMonitor : public QObject
 {
-Q_OBJECT
-Q_DECLARE_PRIVATE(ModemMonitor)
+    Q_OBJECT
+    Q_DECLARE_PRIVATE(ModemMonitor)
 public:
-    explicit ModemMonitor(QObject * parent);
+    explicit ModemMonitor(QObject *parent);
     ~ModemMonitor() override;
 
 public Q_SLOTS:
@@ -33,8 +33,9 @@ public Q_SLOTS:
 private Q_SLOTS:
     void requestPin(MMModemLock lock);
     void onSendPinArrived(QDBusPendingCallWatcher *);
+
 private:
-    ModemMonitorPrivate * d_ptr;
+    ModemMonitorPrivate *d_ptr;
 };
 
 #endif // PLASMA_NM_MODEM_MONITOR_H

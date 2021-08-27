@@ -9,10 +9,10 @@
 #include "l2tpauth.h"
 #include "passwordfield.h"
 
-#include <QString>
+#include <QCheckBox>
 #include <QFormLayout>
 #include <QLabel>
-#include <QCheckBox>
+#include <QString>
 
 #include <KLocalizedString>
 
@@ -25,7 +25,7 @@ public:
     QFormLayout *layout;
 };
 
-L2tpAuthWidget::L2tpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
+L2tpAuthWidget::L2tpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
     : SettingWidget(setting, hints, parent)
     , d_ptr(new L2tpAuthWidgetPrivate)
 {
@@ -54,9 +54,9 @@ void L2tpAuthWidget::readSecrets()
     QLabel *label;
     PasswordField *lineEdit;
 
-    NetworkManager::Setting::SecretFlags passType = (NetworkManager::Setting::SecretFlags)dataMap[NM_L2TP_KEY_PASSWORD"-flags"].toInt();
-    NetworkManager::Setting::SecretFlags userCertType = (NetworkManager::Setting::SecretFlags)dataMap[NM_L2TP_KEY_USER_CERTPASS"-flags"].toInt();
-    NetworkManager::Setting::SecretFlags machineCertType = (NetworkManager::Setting::SecretFlags)dataMap[NM_L2TP_KEY_MACHINE_CERTPASS"-flags"].toInt();
+    NetworkManager::Setting::SecretFlags passType = (NetworkManager::Setting::SecretFlags)dataMap[NM_L2TP_KEY_PASSWORD "-flags"].toInt();
+    NetworkManager::Setting::SecretFlags userCertType = (NetworkManager::Setting::SecretFlags)dataMap[NM_L2TP_KEY_USER_CERTPASS "-flags"].toInt();
+    NetworkManager::Setting::SecretFlags machineCertType = (NetworkManager::Setting::SecretFlags)dataMap[NM_L2TP_KEY_MACHINE_CERTPASS "-flags"].toInt();
 
     if ((userAType.isEmpty() || userAType == QLatin1String(NM_L2TP_AUTHTYPE_PASSWORD)) && !(passType.testFlag(NetworkManager::Setting::NotRequired))) {
         label = new QLabel(this);
@@ -89,7 +89,7 @@ void L2tpAuthWidget::readSecrets()
     }
 
     for (int i = 0; i < d->layout->rowCount(); i++) {
-        PasswordField *le = qobject_cast<PasswordField*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+        PasswordField *le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && le->text().isEmpty()) {
             le->setFocus(Qt::OtherFocusReason);
             break;
@@ -104,7 +104,7 @@ QVariantMap L2tpAuthWidget::setting() const
     NMStringMap secrets;
     QVariantMap secretData;
     for (int i = 0; i < d->layout->rowCount(); i++) {
-        PasswordField *le = qobject_cast<PasswordField*>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+        PasswordField *le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && !le->text().isEmpty()) {
             const QString key = le->property("nm_secrets_key").toString();
             secrets.insert(key, le->text());

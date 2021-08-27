@@ -11,17 +11,16 @@
 #include <QTimer>
 
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Utils>
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/GenericTypes>
 #endif
 
-
 class Q_DECL_EXPORT Handler : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     enum HandlerAction {
@@ -35,12 +34,16 @@ public:
         CreateHotspot,
     };
 
-    explicit Handler(QObject* parent = nullptr);
+    explicit Handler(QObject *parent = nullptr);
     ~Handler() override;
 
     Q_PROPERTY(bool hotspotSupported READ hotspotSupported NOTIFY hotspotSupportedChanged);
+
 public:
-    bool hotspotSupported() const { return m_hotspotSupported; };
+    bool hotspotSupported() const
+    {
+        return m_hotspotSupported;
+    };
 
 public Q_SLOTS:
     /**
@@ -71,7 +74,7 @@ public Q_SLOTS:
      * @param ssid the name of the network being displayed
      * @param securityType the authentication protocol used for this specific ssid
      */
-    QString wifiCode(const QString& connectionPath, const QString& ssid, /*NetworkManager::WirelessSecurityType*/ int securityType) const;
+    QString wifiCode(const QString &connectionPath, const QString &ssid, /*NetworkManager::WirelessSecurityType*/ int securityType) const;
 
     /**
      * Adds a new connection
@@ -98,7 +101,7 @@ public Q_SLOTS:
      * Removes given connection
      * @connection - d-bus path of the connection you want to edit
      */
-    void removeConnection(const QString & connection);
+    void removeConnection(const QString &connection);
     /**
      * Updates given connection
      * @connection - connection which should be updated
@@ -124,6 +127,7 @@ Q_SIGNALS:
     void hotspotCreated();
     void hotspotDisabled();
     void hotspotSupportedChanged(bool hotspotSupported);
+
 private:
     bool m_hotspotSupported;
     bool m_runningLiveImage;
@@ -136,7 +140,7 @@ private:
     QString m_tmpDevicePath;
     QString m_tmpSpecificPath;
     QMap<QString, bool> m_bluetoothAdapters;
-    QMap<QString, QTimer*> m_wirelessScanRetryTimer;
+    QMap<QString, QTimer *> m_wirelessScanRetryTimer;
 
     void enableBluetooth(bool enable);
     void scanRequestFailed(const QString &interface);

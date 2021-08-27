@@ -11,8 +11,8 @@
 
 #include <NetworkManagerQt/Settings>
 
-#include <QIcon>
 #include <QFont>
+#include <QIcon>
 
 #include <KLocalizedString>
 
@@ -53,10 +53,11 @@ QHash<int, QByteArray> KcmIdentityModel::roleNames() const
 QVariant KcmIdentityModel::data(const QModelIndex &index, int role) const
 {
     const QModelIndex sourceIndex = sourceModel()->index(index.row(), 0);
-    NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(sourceModel()->data(sourceIndex, NetworkModel::TypeRole).toInt());
+    NetworkManager::ConnectionSettings::ConnectionType type =
+        static_cast<NetworkManager::ConnectionSettings::ConnectionType>(sourceModel()->data(sourceIndex, NetworkModel::TypeRole).toInt());
 
     NetworkManager::ConnectionSettings::Ptr settings;
-    NetworkManager::VpnSetting::Ptr vpnSetting ;
+    NetworkManager::VpnSetting::Ptr vpnSetting;
     if (type == NetworkManager::ConnectionSettings::Vpn) {
         settings = NetworkManager::findConnection(sourceModel()->data(sourceIndex, NetworkModel::ConnectionPathRole).toString())->settings();
         if (settings) {
@@ -102,4 +103,3 @@ QModelIndex KcmIdentityModel::mapToSource(const QModelIndex &proxyIndex) const
 
     return QIdentityProxyModel::mapToSource(proxyIndex);
 }
-

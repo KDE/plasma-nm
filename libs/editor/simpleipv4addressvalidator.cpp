@@ -14,15 +14,15 @@ SimpleIpV4AddressValidator::SimpleIpV4AddressValidator(AddressStyle style, QObje
     , m_addressStyle(style)
 {
     switch (style) {
-        case Base:
-            m_validator.setRegularExpression(QRegularExpression(QLatin1String("[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}")));
-            break;
-        case WithCidr:
-            m_validator.setRegularExpression(QRegularExpression(QLatin1String("([0-9]{1,3}\\.){3,3}[0-9]{1,3}/[0-9]{1,2}")));
-            break;
-        case WithPort:
-            m_validator.setRegularExpression(QRegularExpression(QLatin1String("([0-9]{1,3}\\.){3,3}[0-9]{1,3}:[0-9]{1,5}")));
-            break;
+    case Base:
+        m_validator.setRegularExpression(QRegularExpression(QLatin1String("[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}")));
+        break;
+    case WithCidr:
+        m_validator.setRegularExpression(QRegularExpression(QLatin1String("([0-9]{1,3}\\.){3,3}[0-9]{1,3}/[0-9]{1,2}")));
+        break;
+    case WithPort:
+        m_validator.setRegularExpression(QRegularExpression(QLatin1String("([0-9]{1,3}\\.){3,3}[0-9]{1,3}:[0-9]{1,5}")));
+        break;
     }
 }
 
@@ -113,8 +113,7 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
         // not all tetrads are filled... continue
         // qCDebug(PLASMA_NM) << "QValidator::Intermediate";
         return QValidator::Intermediate;
-    }
-    else {
+    } else {
         if (m_addressStyle == WithCidr) {
             if (cidrParts.size() > 1) {
                 value += QLatin1String("/");
@@ -126,8 +125,7 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
                         value += cidrParts[1];
                         return QValidator::Acceptable;
                     }
-                }
-                else {
+                } else {
                     return QValidator::Intermediate;
                 }
             }
@@ -142,8 +140,7 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
                         value += portParts[1];
                         return QValidator::Acceptable;
                     }
-                }
-                else {
+                } else {
                     return QValidator::Intermediate;
                 }
             }

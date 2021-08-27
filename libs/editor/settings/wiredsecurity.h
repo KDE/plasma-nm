@@ -11,8 +11,8 @@
 
 #include <NetworkManagerQt/Security8021xSetting>
 
-#include "settingwidget.h"
 #include "security802-1x.h"
+#include "settingwidget.h"
 
 namespace Ui
 {
@@ -23,7 +23,9 @@ class Q_DECL_EXPORT WiredSecurity : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
+    explicit WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(),
+                           QWidget *parent = nullptr,
+                           Qt::WindowFlags f = {});
     ~WiredSecurity() override;
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
@@ -32,8 +34,8 @@ public:
     bool enabled8021x() const;
 
 private:
-    Ui::WiredSecurity * m_ui;
-    Security8021x * m_8021xWidget;
+    Ui::WiredSecurity *m_ui;
+    Security8021x *m_8021xWidget;
     NetworkManager::Security8021xSetting::Ptr m_8021xSetting;
 };
 

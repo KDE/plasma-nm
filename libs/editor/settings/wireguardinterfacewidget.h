@@ -10,12 +10,12 @@
 #include <QWidget>
 
 #include "settingwidget.h"
-#include <NetworkManagerQt/WireguardSetting>
 #include "ui_wireguardinterfacewidget.h"
+#include <NetworkManagerQt/WireguardSetting>
 
 class Q_DECL_EXPORT WireGuardInterfaceWidget : public SettingWidget
 {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit WireGuardInterfaceWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent = nullptr, Qt::WindowFlags f = {});

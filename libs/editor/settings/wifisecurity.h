@@ -9,11 +9,11 @@
 
 #include <QWidget>
 
-#include <NetworkManagerQt/WirelessSecuritySetting>
 #include <NetworkManagerQt/Security8021xSetting>
+#include <NetworkManagerQt/WirelessSecuritySetting>
 
-#include "settingwidget.h"
 #include "security802-1x.h"
+#include "settingwidget.h"
 
 namespace Ui
 {
@@ -29,8 +29,9 @@ public:
     enum SecurityTypeIndex { None = 0, WepHex, WepPassphrase, Leap, DynamicWep, WpaPsk, WpaEap, SAE };
 
     explicit WifiSecurity(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
-                 const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(),
-                 QWidget *parent = nullptr, Qt::WindowFlags f = {});
+                          const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(),
+                          QWidget *parent = nullptr,
+                          Qt::WindowFlags f = {});
     ~WifiSecurity() override;
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;

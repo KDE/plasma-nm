@@ -32,7 +32,7 @@ private Q_SLOTS:
     void doAdvancedDialog();
 
 private:
-    SstpSettingWidgetPrivate * const d_ptr;
+    SstpSettingWidgetPrivate *const d_ptr;
     void fillOnePasswordCombo(PasswordField *, NetworkManager::Setting::SecretFlags);
     void handleOnePasswordType(const PasswordField *, const QString &, NMStringMap &) const;
 };

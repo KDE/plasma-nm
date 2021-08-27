@@ -15,10 +15,11 @@
 
 class Q_DECL_EXPORT ConnectionEditorDialog : public QDialog
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     explicit ConnectionEditorDialog(const NetworkManager::ConnectionSettings::Ptr &connection,
-                                    QWidget *parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+                                    QWidget *parent = nullptr,
+                                    Qt::WindowFlags f = Qt::WindowFlags());
     ~ConnectionEditorDialog() override;
 
     NMVariantMapMap setting() const;
@@ -32,4 +33,3 @@ private:
 };
 
 #endif // PLASMA_NM_CONNECTION_EDITOR_BASE_H
-

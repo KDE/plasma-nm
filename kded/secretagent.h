@@ -11,26 +11,30 @@
 
 #include <NetworkManagerQt/SecretAgent>
 
-namespace KWallet {
+namespace KWallet
+{
 class Wallet;
 }
 
 class PasswordDialog;
 
-class SecretsRequest {
+class SecretsRequest
+{
 public:
     enum Type {
         GetSecrets,
         SaveSecrets,
         DeleteSecrets,
     };
-    explicit SecretsRequest(Type _type) :
-        type(_type),
-        flags(NetworkManager::SecretAgent::None),
-        saveSecretsWithoutReply(false),
-        dialog(nullptr)
-    {}
-    inline bool operator==(const QString &other) const {
+    explicit SecretsRequest(Type _type)
+        : type(_type)
+        , flags(NetworkManager::SecretAgent::None)
+        , saveSecretsWithoutReply(false)
+        , dialog(nullptr)
+    {
+    }
+    inline bool operator==(const QString &other) const
+    {
         return callId == other;
     }
     Type type;
@@ -55,7 +59,7 @@ class Q_DECL_EXPORT SecretAgent : public NetworkManager::SecretAgent
 {
     Q_OBJECT
 public:
-    explicit SecretAgent(QObject* parent = nullptr);
+    explicit SecretAgent(QObject *parent = nullptr);
     explicit SecretAgent(NetworkManager::SecretAgent::Capabilities capabilities, QObject *parent = nullptr);
 
     ~SecretAgent() override;
@@ -64,7 +68,7 @@ Q_SIGNALS:
     void secretsError(const QString &connectionPath, const QString &message) const;
 
 public Q_SLOTS:
-    NMVariantMapMap GetSecrets(const NMVariantMapMap&, const QDBusObjectPath&, const QString&, const QStringList&, uint) override;
+    NMVariantMapMap GetSecrets(const NMVariantMapMap &, const QDBusObjectPath &, const QString &, const QStringList &, uint) override;
     void SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path) override;
     void DeleteSecrets(const NMVariantMapMap &, const QDBusObjectPath &) override;
     void CancelGetSecrets(const QDBusObjectPath &, const QString &) override;
@@ -110,7 +114,6 @@ private:
     QList<SecretsRequest> m_calls;
 
     void importSecretsFromPlainTextFiles();
-
 };
 
 #endif // PLASMA_NM_SECRET_AGENT_H

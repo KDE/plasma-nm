@@ -13,7 +13,7 @@
 
 namespace Ui
 {
-    class IodineWidget;
+class IodineWidget;
 }
 
 class IodineWidget : public SettingWidget

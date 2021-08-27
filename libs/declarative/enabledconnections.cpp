@@ -6,7 +6,7 @@
 
 #include "enabledconnections.h"
 
-EnabledConnections::EnabledConnections(QObject* parent)
+EnabledConnections::EnabledConnections(QObject *parent)
     : QObject(parent)
     , m_networkingEnabled(NetworkManager::isNetworkingEnabled())
     , m_wirelessEnabled(NetworkManager::isWirelessEnabled())

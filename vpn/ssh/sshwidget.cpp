@@ -6,15 +6,15 @@
 
 #include "sshwidget.h"
 
-#include "ui_sshwidget.h"
 #include "ui_sshadvanced.h"
+#include "ui_sshwidget.h"
 
 #include "simpleipv4addressvalidator.h"
 #include "simpleipv6addressvalidator.h"
 
-#include <QString>
 #include <QDialog>
 #include <QDialogButtonBox>
+#include <QString>
 
 #include "nm-ssh-service.h"
 
@@ -49,7 +49,7 @@ SshSettingWidget::SshSettingWidget(const NetworkManager::VpnSetting::Ptr &settin
     QVBoxLayout *layout = new QVBoxLayout(d->advancedDlg);
     layout->addWidget(d->advancedWid);
     d->advancedDlg->setLayout(layout);
-    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, d->advancedDlg);
+    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, d->advancedDlg);
     connect(buttons, &QDialogButtonBox::accepted, d->advancedDlg, &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, d->advancedDlg, &QDialog::reject);
 
@@ -148,7 +148,7 @@ void SshSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         d->ui.cmb_authType->setCurrentIndex(0);
     } else if (sshAuthType == QLatin1String(NM_SSH_AUTH_TYPE_PASSWORD)) {
         d->ui.cmb_authType->setCurrentIndex(1);
-        const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_SSH_KEY_PASSWORD"-flags"].toInt();
+        const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_SSH_KEY_PASSWORD "-flags"].toInt();
         fillOnePasswordCombo(d->ui.le_password, type);
     } else if (sshAuthType == QLatin1String(NM_SSH_AUTH_TYPE_KEY)) {
         d->ui.cmb_authType->setCurrentIndex(2);
@@ -228,7 +228,7 @@ QVariantMap SshSettingWidget::setting() const
     NMStringMap data;
     NMStringMap secretData;
 
-    data.insert(QLatin1String(NM_SSH_KEY_REMOTE),  d->ui.le_gateway->text());
+    data.insert(QLatin1String(NM_SSH_KEY_REMOTE), d->ui.le_gateway->text());
 
     if (!d->ui.le_remoteIp->text().isEmpty()) {
         data.insert(QLatin1String(NM_SSH_KEY_REMOTE_IP), d->ui.le_remoteIp->text());
@@ -259,22 +259,22 @@ QVariantMap SshSettingWidget::setting() const
     }
 
     switch (d->ui.cmb_authType->currentIndex()) {
-        case 0:
-            data.insert(QLatin1String(NM_SSH_KEY_AUTH_TYPE), QLatin1String(NM_SSH_AUTH_TYPE_SSH_AGENT));
-            break;
-        case 1:
-            data.insert(QLatin1String(NM_SSH_KEY_AUTH_TYPE), QLatin1String(NM_SSH_AUTH_TYPE_PASSWORD));
-            if (!d->ui.le_password->text().isEmpty()) {
-                secretData.insert(QLatin1String(NM_SSH_KEY_PASSWORD), d->ui.le_password->text());
-            }
-            handleOnePasswordType(d->ui.le_password, NM_SSH_KEY_PASSWORD"-flags", data);
-            break;
-        case 2:
-            data.insert(QLatin1String(NM_SSH_KEY_AUTH_TYPE), QLatin1String(NM_SSH_AUTH_TYPE_KEY));
-            if (!d->ui.kurl_sshKeyFile->url().isEmpty()) {
-                data.insert(QLatin1String(NM_SSH_KEY_KEY_FILE), d->ui.kurl_sshKeyFile->url().toLocalFile());
-            }
-            break;
+    case 0:
+        data.insert(QLatin1String(NM_SSH_KEY_AUTH_TYPE), QLatin1String(NM_SSH_AUTH_TYPE_SSH_AGENT));
+        break;
+    case 1:
+        data.insert(QLatin1String(NM_SSH_KEY_AUTH_TYPE), QLatin1String(NM_SSH_AUTH_TYPE_PASSWORD));
+        if (!d->ui.le_password->text().isEmpty()) {
+            secretData.insert(QLatin1String(NM_SSH_KEY_PASSWORD), d->ui.le_password->text());
+        }
+        handleOnePasswordType(d->ui.le_password, NM_SSH_KEY_PASSWORD "-flags", data);
+        break;
+    case 2:
+        data.insert(QLatin1String(NM_SSH_KEY_AUTH_TYPE), QLatin1String(NM_SSH_AUTH_TYPE_KEY));
+        if (!d->ui.kurl_sshKeyFile->url().isEmpty()) {
+            data.insert(QLatin1String(NM_SSH_KEY_KEY_FILE), d->ui.kurl_sshKeyFile->url().toLocalFile());
+        }
+        break;
     }
 
     if (d->advUi.chk_useCustomGatewayPort->isChecked()) {
@@ -375,6 +375,6 @@ bool SshSettingWidget::isValid() const
 {
     Q_D(const SshSettingWidget);
 
-    return !d->ui.le_gateway->text().isEmpty() && !d->ui.le_localIp->text().isEmpty() &&
-           !d->ui.le_remoteIp->text().isEmpty() && !d->ui.le_netmask->text().isEmpty();
+    return !d->ui.le_gateway->text().isEmpty() && !d->ui.le_localIp->text().isEmpty() && !d->ui.le_remoteIp->text().isEmpty()
+        && !d->ui.le_netmask->text().isEmpty();
 }

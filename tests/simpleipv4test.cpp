@@ -28,7 +28,6 @@ private:
     SimpleIpV4AddressValidator m_vp;
 };
 
-
 SimpleIpv4Test::SimpleIpv4Test()
     : m_vb(SimpleIpV4AddressValidator::AddressStyle::Base)
     , m_vc(SimpleIpV4AddressValidator::AddressStyle::WithCidr)

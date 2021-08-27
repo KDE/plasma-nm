@@ -22,7 +22,7 @@ class Q_DECL_EXPORT BtWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit BtWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget* parent = nullptr, Qt::WindowFlags f = {});
+    explicit BtWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~BtWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
@@ -32,7 +32,7 @@ public:
     bool isValid() const override;
 
 private:
-    Ui::BtWidget * m_ui;
+    Ui::BtWidget *m_ui;
 };
 
 #endif // PLASMA_NM_BT_WIDGET_H

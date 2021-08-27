@@ -29,8 +29,8 @@ private Q_SLOTS:
     void addDevice(const NetworkManager::Device::Ptr &device);
     void stateChanged(NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason);
 
-    void addActiveConnection(const QString & path);
-    void addActiveConnection(const NetworkManager::ActiveConnection::Ptr & ac);
+    void addActiveConnection(const QString &path);
+    void addActiveConnection(const NetworkManager::ActiveConnection::Ptr &ac);
     void onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state);
     void onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason);
 
@@ -40,12 +40,11 @@ private Q_SLOTS:
     void onCheckActiveConnectionOnResume();
 
 private:
-    QHash<QString, KNotification*> m_notifications;
+    QHash<QString, KNotification *> m_notifications;
 
     bool m_preparingForSleep = false;
     QStringList m_activeConnectionsBeforeSleep;
     QTimer *m_checkActiveConnectionOnResumeTimer = nullptr;
-
 };
 
 #endif // PLASMA_NM_NOTIFICATION_H

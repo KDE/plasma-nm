@@ -9,12 +9,12 @@
 
 #include <KPluginFactory>
 
-#include "pptpwidget.h"
 #include "pptpauth.h"
+#include "pptpwidget.h"
 
 K_PLUGIN_CLASS_WITH_JSON(PptpUiPlugin, "plasmanetworkmanagement_pptpui.json")
 
-PptpUiPlugin::PptpUiPlugin(QObject * parent, const QVariantList &)
+PptpUiPlugin::PptpUiPlugin(QObject *parent, const QVariantList &)
     : VpnUiPlugin(parent)
 {
 }
@@ -23,12 +23,12 @@ PptpUiPlugin::~PptpUiPlugin()
 {
 }
 
-SettingWidget * PptpUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget *PptpUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
     return new PptpSettingWidget(setting, parent);
 }
 
-SettingWidget * PptpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
+SettingWidget *PptpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
 {
     return new PptpAuthWidget(setting, hints, parent);
 }

@@ -10,10 +10,15 @@
 
 #include "simpleipv6addressvalidator.h"
 
-IpV6Delegate::IpV6Delegate(QObject * parent) : Delegate(parent) {}
-IpV6Delegate::~IpV6Delegate() {}
+IpV6Delegate::IpV6Delegate(QObject *parent)
+    : Delegate(parent)
+{
+}
+IpV6Delegate::~IpV6Delegate()
+{
+}
 
-QWidget * IpV6Delegate::createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const
+QWidget *IpV6Delegate::createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const
 {
     QLineEdit *editor = new QLineEdit(parent);
     editor->setValidator(new SimpleIpV6AddressValidator(SimpleIpV6AddressValidator::Base, editor));

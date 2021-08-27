@@ -8,7 +8,7 @@
 
 #include <NetworkManagerQt/Manager>
 
-AvailableDevices::AvailableDevices(QObject* parent)
+AvailableDevices::AvailableDevices(QObject *parent)
     : QObject(parent)
     , m_wiredDeviceAvailable(false)
     , m_wirelessDeviceAvailable(false)
@@ -55,7 +55,7 @@ bool AvailableDevices::isBluetoothDeviceAvailable() const
     return m_bluetoothDeviceAvailable;
 }
 
-void AvailableDevices::deviceAdded(const QString& dev)
+void AvailableDevices::deviceAdded(const QString &dev)
 {
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(dev);
 

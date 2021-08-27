@@ -7,9 +7,9 @@
 #ifndef PLASMA_NM_MOBILE_PROVIDERS_H
 #define PLASMA_NM_MOBILE_PROVIDERS_H
 
-#include <QStringList>
-#include <QHash>
 #include <QDomDocument>
+#include <QHash>
+#include <QStringList>
 #include <QVariantMap>
 
 #include <NetworkManagerQt/ConnectionSettings>
@@ -26,15 +26,27 @@ public:
 
     QStringList getCountryList() const;
     QString countryFromLocale() const;
-    QString getCountryName(const QString & key) const { return mCountries.value(key); }
+    QString getCountryName(const QString &key) const
+    {
+        return mCountries.value(key);
+    }
     QStringList getProvidersList(QString country, NetworkManager::ConnectionSettings::ConnectionType type);
-    QStringList getApns(const QString & provider);
-    QStringList getNetworkIds(const QString & provider);
-    QVariantMap getApnInfo(const QString & apn);
-    QVariantMap getCdmaInfo(const QString & provider);
-    QString getGsmNumber() const { return QString("*99#"); }
-    QString getCdmaNumber() const { return QString("#777"); }
-    inline ErrorCodes getError() { return mError; }
+    QStringList getApns(const QString &provider);
+    QStringList getNetworkIds(const QString &provider);
+    QVariantMap getApnInfo(const QString &apn);
+    QVariantMap getCdmaInfo(const QString &provider);
+    QString getGsmNumber() const
+    {
+        return QString("*99#");
+    }
+    QString getCdmaNumber() const
+    {
+        return QString("#777");
+    }
+    inline ErrorCodes getError()
+    {
+        return mError;
+    }
 
 private:
     QHash<QString, QString> mCountries;
@@ -45,7 +57,7 @@ private:
     QDomDocument mDocProviders;
     QDomElement docElement;
     ErrorCodes mError;
-    QString getNameByLocale(const QMap<QString, QString> & names) const;
+    QString getNameByLocale(const QMap<QString, QString> &names) const;
 };
 
 #endif // PLASMA_NM_MOBILE_PROVIDERS_H

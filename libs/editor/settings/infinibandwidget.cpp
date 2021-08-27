@@ -10,12 +10,12 @@
 
 #include <KLocalizedString>
 
-#include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/InfinibandSetting>
+#include <NetworkManagerQt/Utils>
 
-InfinibandWidget::InfinibandWidget(const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_ui(new Ui::InfinibandWidget)
+InfinibandWidget::InfinibandWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_ui(new Ui::InfinibandWidget)
 {
     m_ui->setupUi(this);
 

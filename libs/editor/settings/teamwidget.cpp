@@ -5,34 +5,33 @@
 */
 
 #include "teamwidget.h"
-#include "ui_team.h"
 #include "connectioneditordialog.h"
 #include "debug.h"
+#include "ui_team.h"
 
+#include <QDBusPendingReply>
 #include <QDesktopServices>
 #include <QFileDialog>
-#include <QDBusPendingReply>
 
-#include <NetworkManagerQt/GenericTypes>
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/GenericTypes>
+#include <NetworkManagerQt/Settings>
 
 #include <KLocalizedString>
 #include <KMessageBox>
 
-TeamWidget::TeamWidget(const QString & masterUuid, const QString &masterId,
-                       const NetworkManager::Setting::Ptr &setting, QWidget* parent, Qt::WindowFlags f):
-    SettingWidget(setting, parent, f),
-    m_uuid(masterUuid),
-    m_id(masterId),
-    m_ui(new Ui::TeamWidget)
+TeamWidget::TeamWidget(const QString &masterUuid, const QString &masterId, const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
+    : SettingWidget(setting, parent, f)
+    , m_uuid(masterUuid)
+    , m_id(masterId)
+    , m_ui(new Ui::TeamWidget)
 {
     m_ui->setupUi(this);
 
     // Action buttons and menu
     m_menu = new QMenu(this);
-    QAction * action = new QAction(i18n("Ethernet"), this);
+    QAction *action = new QAction(i18n("Ethernet"), this);
     action->setData(NetworkManager::ConnectionSettings::Wired);
     m_menu->addAction(action);
     action = new QAction(i18n("Infiniband"), this);
@@ -98,27 +97,26 @@ void TeamWidget::addTeam(QAction *action)
     qCDebug(PLASMA_NM) << "Slave type:" << type();
 
     NetworkManager::ConnectionSettings::ConnectionType connectionType = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(action->data().toInt());
-    NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(connectionType));
+    NetworkManager::ConnectionSettings::Ptr connectionSettings =
+        NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(connectionType));
     connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
     connectionSettings->setMaster(m_uuid);
     connectionSettings->setSlaveType(type());
     connectionSettings->setAutoconnect(false);
 
     QPointer<ConnectionEditorDialog> teamEditor = new ConnectionEditorDialog(connectionSettings);
-    connect(teamEditor.data(), &ConnectionEditorDialog::accepted,
-            [teamEditor, this] () {
-                qCDebug(PLASMA_NM) << "Saving slave connection";
-                // qCDebug(PLASMA_NM) << teamEditor->setting();
-                QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(teamEditor->setting());
-                QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-                connect(watcher, &QDBusPendingCallWatcher::finished, this, &TeamWidget::teamAddComplete);
-            });
-    connect(teamEditor.data(), &ConnectionEditorDialog::finished,
-            [teamEditor] () {
-                if (teamEditor) {
-                    teamEditor->deleteLater();
-                }
-            });
+    connect(teamEditor.data(), &ConnectionEditorDialog::accepted, [teamEditor, this]() {
+        qCDebug(PLASMA_NM) << "Saving slave connection";
+        // qCDebug(PLASMA_NM) << teamEditor->setting();
+        QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(teamEditor->setting());
+        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+        connect(watcher, &QDBusPendingCallWatcher::finished, this, &TeamWidget::teamAddComplete);
+    });
+    connect(teamEditor.data(), &ConnectionEditorDialog::finished, [teamEditor]() {
+        if (teamEditor) {
+            teamEditor->deleteLater();
+        }
+    });
     teamEditor->setModal(true);
     teamEditor->show();
 }
@@ -131,7 +129,7 @@ void TeamWidget::currentTeamChanged(QListWidgetItem *current, QListWidgetItem *p
     m_ui->btnDelete->setEnabled(current);
 }
 
-void TeamWidget::teamAddComplete(QDBusPendingCallWatcher * watcher)
+void TeamWidget::teamAddComplete(QDBusPendingCallWatcher *watcher)
 {
     QDBusPendingReply<QDBusObjectPath> reply = *watcher;
 
@@ -139,8 +137,9 @@ void TeamWidget::teamAddComplete(QDBusPendingCallWatcher * watcher)
         // find the slave connection with matching UUID
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(reply.value().path());
         if (connection && connection->settings()->master() == m_uuid) {
-            const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
-            QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->teams);
+            const QString label =
+                QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
+            QListWidgetItem *slaveItem = new QListWidgetItem(label, m_ui->teams);
             slaveItem->setData(Qt::UserRole, connection->uuid());
             slotWidgetChanged();
         }
@@ -151,7 +150,7 @@ void TeamWidget::teamAddComplete(QDBusPendingCallWatcher * watcher)
 
 void TeamWidget::editTeam()
 {
-    QListWidgetItem * currentItem = m_ui->teams->currentItem();
+    QListWidgetItem *currentItem = m_ui->teams->currentItem();
     if (!currentItem)
         return;
 
@@ -161,17 +160,15 @@ void TeamWidget::editTeam()
     if (connection) {
         qCDebug(PLASMA_NM) << "Editing teamed connection" << currentItem->text() << uuid;
         QPointer<ConnectionEditorDialog> teamEditor = new ConnectionEditorDialog(connection->settings());
-        connect(teamEditor.data(), &ConnectionEditorDialog::accepted,
-                [connection, teamEditor, this] () {
-                    connection->update(teamEditor->setting());
-                    connect(connection.data(), &NetworkManager::Connection::updated, this, &TeamWidget::populateTeams);
-                });
-        connect(teamEditor.data(), &ConnectionEditorDialog::finished,
-                [teamEditor] () {
-                    if (teamEditor) {
-                        teamEditor->deleteLater();
-                    }
-                });
+        connect(teamEditor.data(), &ConnectionEditorDialog::accepted, [connection, teamEditor, this]() {
+            connection->update(teamEditor->setting());
+            connect(connection.data(), &NetworkManager::Connection::updated, this, &TeamWidget::populateTeams);
+        });
+        connect(teamEditor.data(), &ConnectionEditorDialog::finished, [teamEditor]() {
+            if (teamEditor) {
+                teamEditor->deleteLater();
+            }
+        });
         teamEditor->setModal(true);
         teamEditor->show();
     }
@@ -179,7 +176,7 @@ void TeamWidget::editTeam()
 
 void TeamWidget::deleteTeam()
 {
-    QListWidgetItem * currentItem = m_ui->teams->currentItem();
+    QListWidgetItem *currentItem = m_ui->teams->currentItem();
     if (!currentItem)
         return;
 
@@ -188,9 +185,14 @@ void TeamWidget::deleteTeam()
 
     if (connection) {
         qCDebug(PLASMA_NM) << "About to delete teamed connection" << currentItem->text() << uuid;
-        if (KMessageBox::questionYesNo(this, i18n("Do you want to remove the connection '%1'?", connection->name()), i18n("Remove Connection"), KStandardGuiItem::remove(),
-                                       KStandardGuiItem::no(), QString(), KMessageBox::Dangerous)
-                == KMessageBox::Yes) {
+        if (KMessageBox::questionYesNo(this,
+                                       i18n("Do you want to remove the connection '%1'?", connection->name()),
+                                       i18n("Remove Connection"),
+                                       KStandardGuiItem::remove(),
+                                       KStandardGuiItem::no(),
+                                       QString(),
+                                       KMessageBox::Dangerous)
+            == KMessageBox::Yes) {
             connection->remove();
             delete currentItem;
             slotWidgetChanged();
@@ -210,8 +212,9 @@ void TeamWidget::populateTeams()
         bool isSlave = ((master == m_uuid) || // by-uuid
                         (!m_id.isEmpty() && master == m_id)); // by-name
         if (isSlave && (settings->slaveType() == type())) {
-            const QString label = QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
-            QListWidgetItem * slaveItem = new QListWidgetItem(label, m_ui->teams);
+            const QString label =
+                QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
+            QListWidgetItem *slaveItem = new QListWidgetItem(label, m_ui->teams);
             slaveItem->setData(Qt::UserRole, connection->uuid());
         }
     }
@@ -219,10 +222,10 @@ void TeamWidget::populateTeams()
 
 void TeamWidget::importConfig()
 {
-    const QString filename = QFileDialog::getOpenFileName(this, i18n("Select file to import"), QStandardPaths::writableLocation(QStandardPaths::HomeLocation),
-                                                          "text/plain");
+    const QString filename =
+        QFileDialog::getOpenFileName(this, i18n("Select file to import"), QStandardPaths::writableLocation(QStandardPaths::HomeLocation), "text/plain");
     if (!filename.isEmpty()) {
-        //qCDebug(PLASMA_NM) << "Importing" << filename;
+        // qCDebug(PLASMA_NM) << "Importing" << filename;
         QFile file(filename);
         if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
             QTextStream stream(&file);

@@ -7,17 +7,18 @@
 
 #include "pindialog.h"
 
-#include <QIntValidator>
 #include <QDesktopWidget>
 #include <QIcon>
+#include <QIntValidator>
 
-#include <KWindowSystem>
 #include <KLocalizedString>
+#include <KWindowSystem>
 
 #include <ModemManagerQt/manager.h>
 
 PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *parent)
-    : QDialog(parent), m_type(type)
+    : QDialog(parent)
+    , m_type(type)
 {
     if (modem) {
         m_udi = modem->uni();
@@ -37,12 +38,12 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     ui->setupUi(this);
     ui->pin->setPasswordMode(true);
 
-    QIntValidator * validator = new QIntValidator(this);
+    QIntValidator *validator = new QIntValidator(this);
     validator->setRange(1000, 99999999);
     ui->pin->setValidator(validator);
     ui->pin2->setValidator(validator);
 
-    QIntValidator * validator2 = new QIntValidator(this);
+    QIntValidator *validator2 = new QIntValidator(this);
     validator2->setRange(10000000, 99999999);
     ui->puk->setValidator(validator2);
 
@@ -79,7 +80,7 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
         setWindowTitle(i18n("%1 unlock required", pukType));
         ui->title->setText(i18n("%1 Unlock Required", pukType));
         ui->prompt->setText(i18n("The mobile broadband device '%1' requires a %2 code before it can be used.", m_name, pukType));
-        ui->pukLabel->setText(i18n("%1 code:",pukType));
+        ui->pukLabel->setText(i18n("%1 code:", pukType));
         ui->pinLabel->setText(i18n("New PIN code:"));
         ui->pin2Label->setText(i18n("Re-enter new PIN code:"));
         ui->chkShowPass->setText(i18n("Show PIN/PUK code"));
@@ -193,7 +194,7 @@ void PinDialog::showErrorMessage(const PinDialog::ErrorCode error)
     ui->pin2Label->setFont(bold);
     ui->pukLabel->setFont(bold);
     bold.setBold(true);
-    switch(error) {
+    switch (error) {
     case PinCodeTooShort:
         msg = i18n("PIN code too short. It should be at least 4 digits.");
         ui->pin->setFocus();
@@ -215,7 +216,6 @@ void PinDialog::showErrorMessage(const PinDialog::ErrorCode error)
     ui->errorMessage->setText(msg, KTitleWidget::ErrorMessage);
     adjustSize();
 }
-
 
 void PinDialog::accept()
 {
@@ -239,13 +239,13 @@ void PinDialog::accept()
 
 bool PinDialog::isPinDialog() const
 {
-    return (m_type == PinDialog::SimPin ||
-            m_type == PinDialog::SimPin2 ||
-            m_type == PinDialog::ModemServiceProviderPin ||
-            m_type == PinDialog::ModemNetworkPin ||
-            m_type == PinDialog::ModemPin ||
-            m_type == PinDialog::ModemCorporatePin ||
-            m_type == PinDialog::ModemPhFsimPin ||
+    return (m_type == PinDialog::SimPin || //
+            m_type == PinDialog::SimPin2 || //
+            m_type == PinDialog::ModemServiceProviderPin || //
+            m_type == PinDialog::ModemNetworkPin || //
+            m_type == PinDialog::ModemPin || //
+            m_type == PinDialog::ModemCorporatePin || //
+            m_type == PinDialog::ModemPhFsimPin || //
             m_type == PinDialog::ModemNetworkSubsetPin);
 }
 

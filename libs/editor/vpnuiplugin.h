@@ -8,13 +8,13 @@
 #ifndef PLASMA_NM_VPN_UI_PLUGIN_H
 #define PLASMA_NM_VPN_UI_PLUGIN_H
 
+#include <QMessageBox>
 #include <QObject>
 #include <QVariant>
-#include <QMessageBox>
 
-#include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/GenericTypes>
+#include <NetworkManagerQt/VpnSetting>
 
 #include <KPluginFactory>
 
@@ -27,13 +27,13 @@ class Q_DECL_EXPORT VpnUiPlugin : public QObject
 {
     Q_OBJECT
 public:
-    enum ErrorType {NoError, NotImplemented, Error};
+    enum ErrorType { NoError, NotImplemented, Error };
 
-    explicit VpnUiPlugin(QObject * parent = nullptr, const QVariantList& = QVariantList());
+    explicit VpnUiPlugin(QObject *parent = nullptr, const QVariantList & = QVariantList());
     ~VpnUiPlugin() override;
 
-    virtual SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) = 0;
-    virtual SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent = nullptr) = 0;
+    virtual SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr) = 0;
+    virtual SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr) = 0;
 
     /**
      * Suggested file name to save the exported connection configuration.

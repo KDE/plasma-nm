@@ -7,10 +7,10 @@
 #ifndef PLASMA_NM_TEAM_WIDGET_H
 #define PLASMA_NM_TEAM_WIDGET_H
 
-#include <QWidget>
-#include <QMenu>
-#include <QListWidgetItem>
 #include <QDBusPendingCallWatcher>
+#include <QListWidgetItem>
+#include <QMenu>
+#include <QWidget>
 
 #include "settingwidget.h"
 
@@ -25,9 +25,11 @@ class Q_DECL_EXPORT TeamWidget : public SettingWidget
 {
     Q_OBJECT
 public:
-    explicit TeamWidget(const QString & masterUuid, const QString &masterId,
+    explicit TeamWidget(const QString &masterUuid,
+                        const QString &masterId,
                         const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
-                        QWidget* parent = nullptr, Qt::WindowFlags f = {});
+                        QWidget *parent = nullptr,
+                        Qt::WindowFlags f = {});
     ~TeamWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
@@ -37,9 +39,9 @@ public:
     bool isValid() const override;
 
 private Q_SLOTS:
-    void addTeam(QAction * action);
-    void currentTeamChanged(QListWidgetItem * current, QListWidgetItem * previous);
-    void teamAddComplete(QDBusPendingCallWatcher * watcher);
+    void addTeam(QAction *action);
+    void currentTeamChanged(QListWidgetItem *current, QListWidgetItem *previous);
+    void teamAddComplete(QDBusPendingCallWatcher *watcher);
 
     void editTeam();
     void deleteTeam();
@@ -51,8 +53,8 @@ private Q_SLOTS:
 private:
     QString m_uuid;
     QString m_id;
-    Ui::TeamWidget * m_ui;
-    QMenu * m_menu;
+    Ui::TeamWidget *m_ui;
+    QMenu *m_menu;
 };
 
 #endif // PLASMA_NM_TEAM_WIDGET_H

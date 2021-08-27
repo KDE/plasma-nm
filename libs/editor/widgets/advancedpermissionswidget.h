@@ -17,22 +17,22 @@ class KUser;
 
 class AdvancedPermissionsWidget : public QDialog
 {
-Q_OBJECT
-Q_DECLARE_PRIVATE(AdvancedPermissionsWidget)
+    Q_OBJECT
+    Q_DECLARE_PRIVATE(AdvancedPermissionsWidget)
 public:
     explicit AdvancedPermissionsWidget(QWidget *parent = nullptr);
-    AdvancedPermissionsWidget(const QHash<QString,QString>&, QWidget *parent = nullptr);
+    AdvancedPermissionsWidget(const QHash<QString, QString> &, QWidget *parent = nullptr);
     ~AdvancedPermissionsWidget() override;
 
-    QHash<QString,QString> currentUsers() const;
+    QHash<QString, QString> currentUsers() const;
 
 protected:
-    AdvancedPermissionsWidgetPrivate * const d_ptr;
+    AdvancedPermissionsWidgetPrivate *const d_ptr;
 
 private:
-    enum Columns {FullName = 0, LoginName = 1};
+    enum Columns { FullName = 0, LoginName = 1 };
     void setupCommon();
-    QTreeWidgetItem * constructItem(const KUser &user, const QString &itemData = QString());
+    QTreeWidgetItem *constructItem(const KUser &user, const QString &itemData = QString());
 
 private Q_SLOTS:
     void leftArrowClicked();

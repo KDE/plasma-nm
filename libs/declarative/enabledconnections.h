@@ -13,30 +13,30 @@
 
 class EnabledConnections : public QObject
 {
-/**
- * Indicates if overall networking is currently enabled or not
- */
-Q_PROPERTY(bool networkingEnabled READ isNetworkingEnabled NOTIFY networkingEnabled)
-/**
- * Indicates if wireless is currently enabled or not
- */
-Q_PROPERTY(bool wirelessEnabled READ isWirelessEnabled NOTIFY wirelessEnabled)
-/**
- * Indicates if the wireless hardware is currently enabled, i.e. the state of the RF kill switch
- */
-Q_PROPERTY(bool wirelessHwEnabled READ isWirelessHwEnabled NOTIFY wirelessHwEnabled)
-/**
- * Indicates if mobile broadband devices are currently enabled or not.
- */
-Q_PROPERTY(bool wwanEnabled READ isWwanEnabled NOTIFY wwanEnabled)
-/**
- * Indicates if the mobile broadband hardware is currently enabled, i.e. the state of the RF kill switch.
- */
-Q_PROPERTY(bool wwanHwEnabled READ isWwanHwEnabled NOTIFY wwanHwEnabled)
+    /**
+     * Indicates if overall networking is currently enabled or not
+     */
+    Q_PROPERTY(bool networkingEnabled READ isNetworkingEnabled NOTIFY networkingEnabled)
+    /**
+     * Indicates if wireless is currently enabled or not
+     */
+    Q_PROPERTY(bool wirelessEnabled READ isWirelessEnabled NOTIFY wirelessEnabled)
+    /**
+     * Indicates if the wireless hardware is currently enabled, i.e. the state of the RF kill switch
+     */
+    Q_PROPERTY(bool wirelessHwEnabled READ isWirelessHwEnabled NOTIFY wirelessHwEnabled)
+    /**
+     * Indicates if mobile broadband devices are currently enabled or not.
+     */
+    Q_PROPERTY(bool wwanEnabled READ isWwanEnabled NOTIFY wwanEnabled)
+    /**
+     * Indicates if the mobile broadband hardware is currently enabled, i.e. the state of the RF kill switch.
+     */
+    Q_PROPERTY(bool wwanHwEnabled READ isWwanHwEnabled NOTIFY wwanHwEnabled)
 
-Q_OBJECT
+    Q_OBJECT
 public:
-    explicit EnabledConnections(QObject* parent = nullptr);
+    explicit EnabledConnections(QObject *parent = nullptr);
     ~EnabledConnections() override;
 
     bool isNetworkingEnabled() const;

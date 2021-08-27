@@ -20,7 +20,7 @@
 
 #define NUMBER_OF_STATIC_ENTRIES 3
 
-MobileConnectionWizard::MobileConnectionWizard(NetworkManager::ConnectionSettings::ConnectionType connectionType, QWidget * parent)
+MobileConnectionWizard::MobileConnectionWizard(NetworkManager::ConnectionSettings::ConnectionType connectionType, QWidget *parent)
     : QWizard(parent)
 {
     if (connectionType == NetworkManager::ConnectionSettings::Unknown) {
@@ -121,7 +121,7 @@ void MobileConnectionWizard::initializePage(int id)
             radioAutoProvider->setEnabled(false);
             radioManualProvider->setChecked(true);
             // TODO: this does not work, try reimplementing QWizardPage::isComplete()
-            //button(QWizard::NextButton)->setEnabled(false);
+            // button(QWizard::NextButton)->setEnabled(false);
         }
         break;
 
@@ -154,7 +154,7 @@ void MobileConnectionWizard::initializePage(int id)
         }
         mPlanComboBox->setCurrentIndex(0);
         slotEnablePlanEditBox(mPlanComboBox->currentText());
-OUT_3:
+    OUT_3:
         connect(mPlanComboBox, QOverload<const QString &>::of(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
         break;
 
@@ -184,7 +184,7 @@ OUT_3:
                 apn = userApn->text();
             } else {
                 int i = mPlanComboBox->currentIndex();
-                i = i > 1 ? (i-1) : 0; // ignores separator's index (i == 1).
+                i = i > 1 ? (i - 1) : 0; // ignores separator's index (i == 1).
 
                 QStringList mApns = mProviders->getApns(mProvidersList->currentItem()->text());
                 labelPlan->setText("    " + mPlanComboBox->currentText());
@@ -230,23 +230,24 @@ QVariantList MobileConnectionWizard::args()
 /* Intro page */
 /**********************************************************/
 
-QWizardPage * MobileConnectionWizard::createIntroPage()
+QWizardPage *MobileConnectionWizard::createIntroPage()
 {
     QWizardPage *page = new QWizardPage();
     page->setTitle(i18nc("Mobile Connection Wizard", "Set up a Mobile Broadband Connection"));
     QVBoxLayout *layout = new QVBoxLayout;
 
-    QLabel *label = new QLabel(i18nc("Mobile Connection Wizard", "This assistant helps you easily set up a mobile broadband connection to a cellular (3G) network."));
+    QLabel *label =
+        new QLabel(i18nc("Mobile Connection Wizard", "This assistant helps you easily set up a mobile broadband connection to a cellular (3G) network."));
     label->setWordWrap(true);
     layout->addWidget(label);
 
     label = new QLabel('\n' + i18nc("Mobile Connection Wizard", "You will need the following information:"));
     layout->addWidget(label);
 
-    label = new QLabel(QString("  . %1\n  . %2\n  . %3").
-                       arg(i18nc("Mobile Connection Wizard", "Your broadband provider's name")).
-                       arg(i18nc("Mobile Connection Wizard", "Your broadband billing plan name")).
-                       arg(i18nc("Mobile Connection Wizard", "(in some cases) Your broadband billing plan APN (Access Point Name)")));
+    label = new QLabel(QString("  . %1\n  . %2\n  . %3")
+                           .arg(i18nc("Mobile Connection Wizard", "Your broadband provider's name"))
+                           .arg(i18nc("Mobile Connection Wizard", "Your broadband billing plan name"))
+                           .arg(i18nc("Mobile Connection Wizard", "(in some cases) Your broadband billing plan APN (Access Point Name)")));
     layout->addWidget(label);
 
     if (!mInitialMethodType) {
@@ -258,7 +259,7 @@ QWizardPage * MobileConnectionWizard::createIntroPage()
         mDeviceComboBox->setItemData(0, NetworkManager::ConnectionSettings::Gsm);
         mDeviceComboBox->addItem(i18nc("Mobile Connection Wizard", "Any CDMA device"));
         mDeviceComboBox->setItemData(1, NetworkManager::ConnectionSettings::Cdma);
-        mDeviceComboBox->insertSeparator(NUMBER_OF_STATIC_ENTRIES-1);
+        mDeviceComboBox->insertSeparator(NUMBER_OF_STATIC_ENTRIES - 1);
         label->setBuddy(mDeviceComboBox);
         layout->addWidget(mDeviceComboBox);
 
@@ -385,7 +386,7 @@ void MobileConnectionWizard::introRemoveAllDevices()
     mDeviceComboBox->setItemData(0, NetworkManager::ConnectionSettings::Gsm);
     mDeviceComboBox->addItem(i18nc("Mobile Connection Wizard", "Any CDMA device"));
     mDeviceComboBox->setItemData(1, NetworkManager::ConnectionSettings::Cdma);
-    mDeviceComboBox->insertSeparator(NUMBER_OF_STATIC_ENTRIES-1);
+    mDeviceComboBox->insertSeparator(NUMBER_OF_STATIC_ENTRIES - 1);
     mDeviceComboBox->setCurrentIndex(0);
 }
 
@@ -393,7 +394,7 @@ void MobileConnectionWizard::introRemoveAllDevices()
 /* Country page */
 /**********************************************************/
 
-QWizardPage * MobileConnectionWizard::createCountryPage()
+QWizardPage *MobileConnectionWizard::createCountryPage()
 {
     QWizardPage *page = new QWizardPage();
     page->setTitle(i18nc("Mobile Connection Wizard", "Choose your Provider's Country"));
@@ -416,7 +417,7 @@ QWizardPage * MobileConnectionWizard::createCountryPage()
 /* Providers page */
 /**********************************************************/
 
-QWizardPage * MobileConnectionWizard::createProvidersPage()
+QWizardPage *MobileConnectionWizard::createProvidersPage()
 {
     QWizardPage *page = new QWizardPage();
     page->setTitle(i18nc("Mobile Connection Wizard", "Choose your Provider"));
@@ -457,7 +458,7 @@ void MobileConnectionWizard::slotCheckProviderEdit()
 {
     radioManualProvider->setChecked(true);
     // TODO: this does not work, try reimplementing QWizardPage::isComplete()
-    //button(QWizard::NextButton)->setEnabled(true);
+    // button(QWizard::NextButton)->setEnabled(true);
 }
 
 void MobileConnectionWizard::slotCheckProviderList()
@@ -470,7 +471,7 @@ void MobileConnectionWizard::slotCheckProviderList()
 /* Plan page */
 /**********************************************************/
 
-QWizardPage * MobileConnectionWizard::createPlansPage()
+QWizardPage *MobileConnectionWizard::createPlansPage()
 {
     QWizardPage *page = new QWizardPage();
     page->setTitle(i18nc("Mobile Connection Wizard", "Choose your Billing Plan"));
@@ -495,7 +496,9 @@ QWizardPage * MobileConnectionWizard::createPlansPage()
     label = new QLabel();
     label->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(32));
     layout2->addWidget(label, 0, Qt::AlignTop);
-    label = new QLabel(i18nc("Mobile Connection Wizard", "Warning: Selecting an incorrect plan may result in billing issues for your broadband account or may prevent connectivity.\n\nIf you are unsure of your plan please ask your provider for your plan's APN."));
+    label = new QLabel(i18nc("Mobile Connection Wizard",
+                             "Warning: Selecting an incorrect plan may result in billing issues for your broadband account or may prevent connectivity.\n\nIf "
+                             "you are unsure of your plan please ask your provider for your plan's APN."));
     label->setWordWrap(true);
     layout2->addWidget(label);
     layout->addWidget(new QLabel(""));
@@ -506,7 +509,7 @@ QWizardPage * MobileConnectionWizard::createPlansPage()
     return page;
 }
 
-void MobileConnectionWizard::slotEnablePlanEditBox(const QString & text)
+void MobileConnectionWizard::slotEnablePlanEditBox(const QString &text)
 {
     if (type() != NetworkManager::ConnectionSettings::Gsm) {
         return;
@@ -517,7 +520,8 @@ void MobileConnectionWizard::slotEnablePlanEditBox(const QString & text)
     } else {
         if (mProvidersList->currentItem() != nullptr) {
             int i = mPlanComboBox->currentIndex();
-            if (i>0) i=i-1; // Skipping the separator (i==1)
+            if (i > 0)
+                i = i - 1; // Skipping the separator (i==1)
             QStringList mApns = mProviders->getApns(mProvidersList->currentItem()->text());
             userApn->setText(mApns.at(i));
         }
@@ -529,7 +533,7 @@ void MobileConnectionWizard::slotEnablePlanEditBox(const QString & text)
 /* Confirm page */
 /**********************************************************/
 
-QWizardPage * MobileConnectionWizard::createConfirmPage()
+QWizardPage *MobileConnectionWizard::createConfirmPage()
 {
     QWizardPage *page = new QWizardPage();
     page->setTitle(i18nc("Mobile Connection Wizard", "Confirm Mobile Broadband Settings"));

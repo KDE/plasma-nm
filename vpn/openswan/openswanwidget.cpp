@@ -5,8 +5,8 @@
 */
 
 #include "openswanwidget.h"
-#include "ui_openswan.h"
 #include "nm-openswan-service.h"
+#include "ui_openswan.h"
 
 #include <NetworkManagerQt/Setting>
 
@@ -59,7 +59,8 @@ void OpenswanWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         m_ui->groupname->setText(groupName);
     }
 
-    const NetworkManager::Setting::SecretFlags groupPasswordFlag = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_OPENSWAN_PSK_VALUE"-flags").toInt());
+    const NetworkManager::Setting::SecretFlags groupPasswordFlag =
+        static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_OPENSWAN_PSK_VALUE "-flags").toInt());
     if (groupPasswordFlag == NetworkManager::Setting::None) {
         m_ui->groupPassword->setPasswordOption(PasswordField::StoreForAllUsers);
     } else if (groupPasswordFlag == NetworkManager::Setting::AgentOwned) {
@@ -68,7 +69,8 @@ void OpenswanWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         m_ui->groupPassword->setPasswordOption(PasswordField::AlwaysAsk);
     }
 
-    const NetworkManager::Setting::SecretFlags userPasswordFlag = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_OPENSWAN_XAUTH_PASSWORD"-flags").toInt());
+    const NetworkManager::Setting::SecretFlags userPasswordFlag =
+        static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_OPENSWAN_XAUTH_PASSWORD "-flags").toInt());
     if (userPasswordFlag == NetworkManager::Setting::None) {
         m_ui->userPassword->setPasswordOption(PasswordField::StoreForAllUsers);
     } else if (userPasswordFlag == NetworkManager::Setting::AgentOwned) {
@@ -140,12 +142,12 @@ QVariantMap OpenswanWidget::setting() const
 
     if (m_ui->userPassword->passwordOption() == PasswordField::StoreForAllUsers) {
         data.insert(NM_OPENSWAN_XAUTH_PASSWORD_INPUT_MODES, NM_OPENSWAN_PW_TYPE_SAVE);
-        data.insert(NM_OPENSWAN_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::None));
+        data.insert(NM_OPENSWAN_XAUTH_PASSWORD "-flags", QString::number(NetworkManager::Setting::None));
     } else if (m_ui->userPassword->passwordOption() == PasswordField::StoreForUser) {
-        data.insert(NM_OPENSWAN_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
+        data.insert(NM_OPENSWAN_XAUTH_PASSWORD "-flags", QString::number(NetworkManager::Setting::AgentOwned));
     } else {
         data.insert(NM_OPENSWAN_XAUTH_PASSWORD_INPUT_MODES, NM_OPENSWAN_PW_TYPE_ASK);
-        data.insert(NM_OPENSWAN_XAUTH_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
+        data.insert(NM_OPENSWAN_XAUTH_PASSWORD "-flags", QString::number(NetworkManager::Setting::NotSaved));
     }
 
     if (!m_ui->groupPassword->text().isEmpty()) {
@@ -154,12 +156,12 @@ QVariantMap OpenswanWidget::setting() const
 
     if (m_ui->groupPassword->passwordOption() == PasswordField::StoreForAllUsers) {
         data.insert(NM_OPENSWAN_PSK_INPUT_MODES, NM_OPENSWAN_PW_TYPE_SAVE);
-        data.insert(NM_OPENSWAN_PSK_VALUE"-flags", QString::number(NetworkManager::Setting::None));
+        data.insert(NM_OPENSWAN_PSK_VALUE "-flags", QString::number(NetworkManager::Setting::None));
     } else if (m_ui->groupPassword->passwordOption() == PasswordField::StoreForUser) {
-        data.insert(NM_OPENSWAN_PSK_VALUE"-flags", QString::number(NetworkManager::Setting::AgentOwned));
+        data.insert(NM_OPENSWAN_PSK_VALUE "-flags", QString::number(NetworkManager::Setting::AgentOwned));
     } else {
         data.insert(NM_OPENSWAN_PSK_INPUT_MODES, NM_OPENSWAN_PW_TYPE_ASK);
-        data.insert(NM_OPENSWAN_PSK_VALUE"-flags", QString::number(NetworkManager::Setting::NotSaved));
+        data.insert(NM_OPENSWAN_PSK_VALUE "-flags", QString::number(NetworkManager::Setting::NotSaved));
     }
 
     if (!m_ui->username->text().isEmpty()) {

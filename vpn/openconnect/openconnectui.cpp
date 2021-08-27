@@ -9,10 +9,10 @@
 
 #include <KPluginFactory>
 
-#include "openconnectwidget.h"
 #include "openconnectauth.h"
+#include "openconnectwidget.h"
 
-OpenconnectUiPlugin::OpenconnectUiPlugin(QObject * parent, const QVariantList &)
+OpenconnectUiPlugin::OpenconnectUiPlugin(QObject *parent, const QVariantList &)
     : VpnUiPlugin(parent)
 {
 }
@@ -21,12 +21,12 @@ OpenconnectUiPlugin::~OpenconnectUiPlugin()
 {
 }
 
-SettingWidget * OpenconnectUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent)
+SettingWidget *OpenconnectUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
     return new OpenconnectSettingWidget(setting, parent);
 }
 
-SettingWidget * OpenconnectUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent)
+SettingWidget *OpenconnectUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
 {
     return new OpenconnectAuthWidget(setting, hints, parent);
 }

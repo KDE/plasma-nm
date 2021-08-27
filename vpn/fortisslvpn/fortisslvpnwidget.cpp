@@ -50,10 +50,10 @@ FortisslvpnWidget::FortisslvpnWidget(const NetworkManager::VpnSetting::Ptr &sett
     d->advancedDlg = new QDialog(this);
     d->advancedWid = new QWidget(this);
     d->advUi.setupUi(d->advancedWid);
-    QVBoxLayout * layout = new QVBoxLayout(d->advancedDlg);
+    QVBoxLayout *layout = new QVBoxLayout(d->advancedDlg);
     layout->addWidget(d->advancedWid);
     d->advancedDlg->setLayout(layout);
-    QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok|QDialogButtonBox::Cancel, d->advancedDlg);
+    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, d->advancedDlg);
     connect(buttons, &QDialogButtonBox::accepted, d->advancedDlg, &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, d->advancedDlg, &QDialog::reject);
     layout->addWidget(buttons);
@@ -91,7 +91,8 @@ void FortisslvpnWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         d->ui.username->setText(username);
     }
 
-    const NetworkManager::Setting::SecretFlags passwordFlag = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_PASSWORD"-flags").toInt());
+    const NetworkManager::Setting::SecretFlags passwordFlag =
+        static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_PASSWORD "-flags").toInt());
     if (passwordFlag == NetworkManager::Setting::None) {
         d->ui.password->setPasswordOption(PasswordField::StoreForAllUsers);
     } else if (passwordFlag == NetworkManager::Setting::AgentOwned) {
@@ -123,15 +124,17 @@ void FortisslvpnWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         d->advUi.trustedCert->setText(trustedCert);
     }
 
-    if (!data.value(NM_FORTISSLVPN_KEY_OTP"-flags").isEmpty()) {
-        const NetworkManager::Setting::SecretFlags otpFlag = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_OTP"-flags").toInt());
+    if (!data.value(NM_FORTISSLVPN_KEY_OTP "-flags").isEmpty()) {
+        const NetworkManager::Setting::SecretFlags otpFlag =
+            static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_OTP "-flags").toInt());
         if (otpFlag & NetworkManager::Setting::NotSaved) {
             d->advUi.otp->setChecked(true);
         }
     }
 
-    if (!data.value(NM_FORTISSLVPN_KEY_2FA"-flags").isEmpty()) {
-        const NetworkManager::Setting::SecretFlags tfaFlag = static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_2FA"-flags").toInt());
+    if (!data.value(NM_FORTISSLVPN_KEY_2FA "-flags").isEmpty()) {
+        const NetworkManager::Setting::SecretFlags tfaFlag =
+            static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_2FA "-flags").toInt());
         if (tfaFlag & NetworkManager::Setting::AgentOwned) {
             d->advUi.tfa->setChecked(true);
         }
@@ -181,13 +184,13 @@ QVariantMap FortisslvpnWidget::setting() const
     }
 
     if (d->ui.password->passwordOption() == PasswordField::StoreForAllUsers) {
-        data.insert(NM_FORTISSLVPN_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::None));
+        data.insert(NM_FORTISSLVPN_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::None));
     } else if (d->ui.password->passwordOption() == PasswordField::StoreForUser) {
-        data.insert(NM_FORTISSLVPN_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::AgentOwned));
+        data.insert(NM_FORTISSLVPN_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::AgentOwned));
     } else if (d->ui.password->passwordOption() == PasswordField::AlwaysAsk) {
-        data.insert(NM_FORTISSLVPN_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotSaved));
+        data.insert(NM_FORTISSLVPN_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::NotSaved));
     } else {
-        data.insert(NM_FORTISSLVPN_KEY_PASSWORD"-flags", QString::number(NetworkManager::Setting::NotRequired));
+        data.insert(NM_FORTISSLVPN_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::NotRequired));
     }
 
     if (!d->ui.caCert->url().isEmpty()) {
@@ -208,14 +211,14 @@ QVariantMap FortisslvpnWidget::setting() const
     }
 
     if (d->advUi.otp->isChecked()) {
-        data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP"-flags"), QString::number(NetworkManager::Setting::NotSaved));
+        data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP "-flags"), QString::number(NetworkManager::Setting::NotSaved));
     } else {
-        data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP"-flags"), QString::number(NetworkManager::Setting::None));
+        data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP "-flags"), QString::number(NetworkManager::Setting::None));
     }
 
     if (d->advUi.tfa->isChecked()) {
-        data.insert(QLatin1String(NM_FORTISSLVPN_KEY_2FA"-flags"), QString::number(NetworkManager::Setting::AgentOwned));
-        data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP"-flags"), QString::number(NetworkManager::Setting::None));
+        data.insert(QLatin1String(NM_FORTISSLVPN_KEY_2FA "-flags"), QString::number(NetworkManager::Setting::AgentOwned));
+        data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP "-flags"), QString::number(NetworkManager::Setting::None));
     }
 
     if (!d->advUi.realm->text().isEmpty()) {

@@ -12,17 +12,17 @@
 
 #include "vpnuiplugin.h"
 
-#include <QVariant>
 #include <QTextStream>
+#include <QVariant>
 
 class Q_DECL_EXPORT OpenVpnUiPlugin : public VpnUiPlugin
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    explicit OpenVpnUiPlugin(QObject * parent = nullptr, const QVariantList& = QVariantList());
+    explicit OpenVpnUiPlugin(QObject *parent = nullptr, const QVariantList & = QVariantList());
     ~OpenVpnUiPlugin() override;
-    SettingWidget * widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget * parent = nullptr) override;
-    SettingWidget * askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget * parent = nullptr) override;
+    SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr) override;
+    SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr) override;
 
     QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
     QString supportedFileExtensions() const override;

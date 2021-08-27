@@ -14,13 +14,13 @@
 
 class Q_DECL_EXPORT WireGuardTabWidget : public QDialog
 {
-Q_OBJECT
+    Q_OBJECT
 
 public:
     explicit WireGuardTabWidget(const NMVariantMapList &peerData, QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~WireGuardTabWidget() override;
 
-    enum EndPointValid {BothValid, AddressValid, PortValid, BothInvalid};
+    enum EndPointValid { BothValid, AddressValid, PortValid, BothInvalid };
 
     void loadConfig(const NMVariantMapList &peerData);
 

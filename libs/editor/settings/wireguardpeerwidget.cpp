@@ -41,7 +41,6 @@ static SimpleIpListValidator allowedIPsValidator(SimpleIpListValidator::WithCidr
 class WireGuardPeerWidget::Private
 {
 public:
-    Private();
     ~Private();
 
     Ui_WireGuardPeersProp ui;
@@ -50,19 +49,11 @@ public:
     QPalette warningPalette;
     QPalette normalPalette;
     QVariantMap peerData;
-    bool publicKeyValid;
-    bool allowedIPsValid;
-    bool endpointValid;
-    bool presharedKeyValid;
+    bool publicKeyValid = false;
+    bool allowedIPsValid = false;
+    bool endpointValid = true;
+    bool presharedKeyValid = true;
 };
-
-WireGuardPeerWidget::Private::Private(void)
-    : publicKeyValid(false)
-    , allowedIPsValid(false)
-    , endpointValid(true)
-    , presharedKeyValid(true)
-{
-}
 
 WireGuardPeerWidget::Private::~Private()
 {

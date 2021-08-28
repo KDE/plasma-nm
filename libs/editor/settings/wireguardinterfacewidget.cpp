@@ -64,7 +64,6 @@
 class WireGuardInterfaceWidget::Private
 {
 public:
-    Private();
     ~Private();
 
     Ui_WireGuardInterfaceProp ui;
@@ -76,20 +75,12 @@ public:
     QRegularExpressionValidator *fwmarkValidator;
     QIntValidator *mtuValidator;
     QIntValidator *portValidator;
-    bool privateKeyValid;
-    bool fwmarkValid;
-    bool listenPortValid;
-    bool peersValid;
+    bool privateKeyValid = false;
+    bool fwmarkValid = true;
+    bool listenPortValid = true;
+    bool peersValid = false;
     NMVariantMapList peers;
 };
-
-WireGuardInterfaceWidget::Private::Private(void)
-    : privateKeyValid(false)
-    , fwmarkValid(true)
-    , listenPortValid(true)
-    , peersValid(false)
-{
-}
 
 WireGuardInterfaceWidget::Private::~Private()
 {

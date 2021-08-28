@@ -33,6 +33,7 @@
 #include <QDBusPendingReply>
 #include <QFile>
 #include <QIcon>
+#include <QPointer>
 
 #include <KLocalizedString>
 #include <KNotification>

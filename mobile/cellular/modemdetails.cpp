@@ -400,7 +400,7 @@ Q_INVOKABLE void ModemDetails::scanNetworks()
         m_isScanningNetworks = true;
         Q_EMIT isScanningNetworksChanged();
         m_scanNetworkWatcher = new QDBusPendingCallWatcher(reply, this);
-        connect(m_scanNetworkWatcher, SIGNAL(finished(QDBusPendingCallWatcher*)), this, SLOT(m_scanNetworkWatcher(QDBusPendingCallWatcher*)));
+        connect(m_scanNetworkWatcher, &QDBusPendingCallWatcher::finished, this, &ModemDetails::scanNetworksFinished);
     }
     
     Q_EMIT networksChanged();

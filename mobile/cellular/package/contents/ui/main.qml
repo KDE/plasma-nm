@@ -69,12 +69,18 @@ SimpleKCM {
         ColumnLayout {
             anchors.left: parent.left
             anchors.right: parent.right
-            anchors.margins: Kirigami.Units.gridUnit
-            spacing: Kirigami.Units.largeSpacing
+            spacing: 0
             visible: !noModem.visible
             
+            MessagesList {
+                Layout.fillWidth: true
+                Layout.margins: Kirigami.Units.largeSpacing
+                model: kcm.messages
+            }
+            
             Kirigami.FormLayout {
-                Layout.topMargin: Kirigami.Units.largeSpacing
+                Layout.leftMargin: Kirigami.Units.gridUnit
+                Layout.rightMargin: Kirigami.Units.gridUnit
                 Layout.fillWidth: true
                 wideMode: false
                 

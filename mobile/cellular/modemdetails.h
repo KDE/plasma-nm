@@ -177,16 +177,22 @@ class AvailableNetwork : public QObject
     Q_PROPERTY(QString accessTechnology READ accessTechnology NOTIFY accessTechnologyChanged)
     
 public:
-    AvailableNetwork(QObject *parent = nullptr, bool isCurrentlyUsed = false, 
-                     QString operatorLong = "", QString operatorShort = "", QString operatorCode = "", 
+    AvailableNetwork(QObject *parent = nullptr,
+                     ModemManager::Modem3gpp::Ptr mm3gppDevice = nullptr,
+                     bool isCurrentlyUsed = false,
+                     QString operatorLong = "",
+                     QString operatorShort = "",
+                     QString operatorCode = "",
                      MMModemAccessTechnology accessTechnology = MM_MODEM_ACCESS_TECHNOLOGY_UNKNOWN);
-    
+
     bool isCurrentlyUsed();
     QString operatorLong();
     QString operatorShort();
     QString operatorCode();
     QString accessTechnology();
-    
+
+    Q_INVOKABLE void registerToNetwork();
+
 Q_SIGNALS:
     void isCurrentlyUsedChanged();
     void operatorLongChanged();
@@ -197,4 +203,6 @@ Q_SIGNALS:
 private:
     bool m_isCurrentlyUsed;
     QString m_operatorLong, m_operatorShort, m_operatorCode, m_accessTechnology;
+
+    ModemManager::Modem3gpp::Ptr m_mm3gppDevice;
 };

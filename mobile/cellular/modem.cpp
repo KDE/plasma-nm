@@ -100,6 +100,7 @@ void Modem::reset()
     reply.waitForFinished();
     if (reply.isError()) {
         qDebug() << "Error resetting the modem:" << reply.error().message();
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error resetting the modem: " + reply.error().message());
     }
 }
 
@@ -110,7 +111,7 @@ void Modem::setEnabled(bool enabled)
         QDBusPendingReply<void> reply = m_mmInterface->setEnabled(enabled);
         reply.waitForFinished();
         if (reply.isError()) {
-            qDebug() << "Error setting the enabled state of the modem:" << reply.error().message();
+            qDebug() << "Error setting the enabled state of the modem: " << reply.error().message();
         }
     }
 }
@@ -140,6 +141,9 @@ void Modem::setIsRoaming(bool roaming)
             reply.waitForFinished();
             if (reply.isError()) {
                 qWarning() << "Error updating connection settings for" << connection->uuid() << ":" << reply.error().message() << ".";
+                CellularNetworkSettings::instance()->addMessage(InlineMessage::Error,
+                                                                "Error updating connection settings for " + connection->uuid() + ": " + reply.error().message()
+                                                                    + ".");
             } else {
                 qDebug() << "Successfully updated connection settings" << connection->uuid() << ".";
             }
@@ -188,7 +192,8 @@ void Modem::setMobileDataActive(bool active)
         reply.waitForFinished();
         
         if (reply.isError()) {
-            qWarning() << "Error disconnecting modem interface" << reply.error().message();
+            qWarning() << "Error disconnecting modem interface:" << reply.error().message();
+            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error disconnecting modem interface: " + reply.error().message());
         }
         Q_EMIT mobileDataActiveChanged();
     }
@@ -246,7 +251,8 @@ void Modem::activateProfile(const QString &connectionUni)
     QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::activateConnection(con->path(), m_nmDevice->uni(), "");
     reply.waitForFinished();
     if (reply.isError()) {
-        qWarning() << "Error activating connection" << reply.error().message();
+        qWarning() << "Error activating connection:" << reply.error().message();
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error activating connection: " + reply.error().message());
         return;
     }
     
@@ -274,6 +280,7 @@ void Modem::addProfile(QString name, QString apn, QString username, QString pass
     reply.waitForFinished();
     if (reply.isError()) {
         qWarning() << "Error adding connection:" << reply.error().message();
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error adding connection: " + reply.error().message());
     } else {
         qDebug() << "Successfully added a new connection" << name << "with APN" << apn << ".";
     }
@@ -311,6 +318,8 @@ void Modem::updateProfile(QString connectionUni, QString name, QString apn, QStr
             reply.waitForFinished();
             if (reply.isError()) {
                 qWarning() << "Error updating connection settings for" << connectionUni << ":" << reply.error().message() << ".";
+                CellularNetworkSettings::instance()->addMessage(InlineMessage::Error,
+                                                                "Error updating connection settings for" + connectionUni + ":" + reply.error().message() + ".");
             } else {
                 qDebug() << "Successfully updated connection settings" << connectionUni << ".";
             }

@@ -39,6 +39,7 @@ ModemDetails::ModemDetails(QObject *parent, Modem *modem)
         connect(m_modem->m_mm3gppDevice.data(), &ModemManager::Modem3gpp::registrationStateChanged, this, [this]() -> void { Q_EMIT registrationStateChanged(); Q_EMIT m_modem->isRoamingChanged(); });
     } else {
         qWarning() << "3gpp device not found!";
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Internal error: 3gpp device not found!");
     }
     
     connect(m_modem->m_nmDevice.data(), &NetworkManager::ModemDevice::firmwareVersionChanged, this, [this]() -> void { Q_EMIT firmwareVersionChanged(); });
@@ -411,6 +412,7 @@ void ModemDetails::scanNetworksFinished(QDBusPendingCallWatcher *call)
     QDBusPendingReply<ModemManager::QVariantMapList> reply = *call;
     if (reply.isError()) {
         qDebug() << "Scanning failed:" << reply.error().message();
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Scanning networks failed: " + reply.error().message());
     } else {
         ModemManager::QVariantMapList list = reply.value();
         
@@ -418,7 +420,13 @@ void ModemDetails::scanNetworksFinished(QDBusPendingCallWatcher *call)
             auto status = var["status"].value<MMModem3gppNetworkAvailability>();
             
             if (status == MM_MODEM_3GPP_NETWORK_AVAILABILITY_CURRENT || status == MM_MODEM_3GPP_NETWORK_AVAILABILITY_AVAILABLE) {
-                auto network = new AvailableNetwork{this, status == MM_MODEM_3GPP_NETWORK_AVAILABILITY_CURRENT, var["operator-long"].toString(), var["operator-short"].toString(), var["operator-code"].toString(), var["access-technology"].value<MMModemAccessTechnology>()};
+                auto network = new AvailableNetwork{this,
+                                                    m_modem->m_mm3gppDevice,
+                                                    status == MM_MODEM_3GPP_NETWORK_AVAILABILITY_CURRENT,
+                                                    var["operator-long"].toString(),
+                                                    var["operator-short"].toString(),
+                                                    var["operator-code"].toString(),
+                                                    var["access-technology"].value<MMModemAccessTechnology>()};
                 m_cachedScannedNetworks.push_back(network);
             }
         }
@@ -472,13 +480,20 @@ QString ModemDetails::txBytes()
     return QString((uint) m_modem->m_nmDevice->deviceStatistics()->txBytes()) + " B/s";
 }
 
-AvailableNetwork::AvailableNetwork(QObject *parent, bool isCurrentlyUsed, QString operatorLong, QString operatorShort, QString operatorCode, MMModemAccessTechnology accessTechnology)
-    : QObject{ parent },
-      m_isCurrentlyUsed{ isCurrentlyUsed },
-      m_operatorLong{ operatorLong },
-      m_operatorShort{ operatorShort },
-      m_operatorCode{ operatorCode },
-      m_accessTechnology{}
+AvailableNetwork::AvailableNetwork(QObject *parent,
+                                   ModemManager::Modem3gpp::Ptr mm3gppDevice,
+                                   bool isCurrentlyUsed,
+                                   QString operatorLong,
+                                   QString operatorShort,
+                                   QString operatorCode,
+                                   MMModemAccessTechnology accessTechnology)
+    : QObject{parent}
+    , m_isCurrentlyUsed{isCurrentlyUsed}
+    , m_operatorLong{operatorLong}
+    , m_operatorShort{operatorShort}
+    , m_operatorCode{operatorCode}
+    , m_accessTechnology{}
+    , m_mm3gppDevice{mm3gppDevice}
 {
     switch (accessTechnology) {
         case MM_MODEM_ACCESS_TECHNOLOGY_UNKNOWN:
@@ -561,4 +576,11 @@ QString AvailableNetwork::operatorCode()
 QString AvailableNetwork::accessTechnology()
 {
     return m_accessTechnology;
+}
+
+void AvailableNetwork::registerToNetwork()
+{
+    if (!m_isCurrentlyUsed) {
+        m_mm3gppDevice->registerToNetwork(m_operatorCode);
+    }
 }

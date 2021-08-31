@@ -21,18 +21,29 @@ import QtQuick 2.12
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.12 as Controls
 import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kcm 1.2
 import cellularnetworkkcm 1.0
 
 Kirigami.ScrollablePage {
     id: modemPage
     title: i18n("Modem") + " " + modem.displayId
+    padding: 0
     
     property Modem modem
     
     ColumnLayout {
+        MessagesList {
+            Layout.fillWidth: true
+            Layout.margins: Kirigami.Units.smallSpacing
+            visible: count != 0
+            model: kcm.messages
+        }
+        
         Kirigami.FormLayout {
+            Layout.margins: Kirigami.Units.gridUnit
             ColumnLayout {
                 Kirigami.FormData.label: i18n("<b>Modem Control:</b>")
+                
                 Controls.Button {
                     icon.name: "network-modem"
                     text: modem.details.isEnabled ? i18n("Disable Modem") : i18n("Enable Modem")

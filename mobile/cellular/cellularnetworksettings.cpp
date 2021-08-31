@@ -29,12 +29,16 @@
 
 K_PLUGIN_CLASS_WITH_JSON(CellularNetworkSettings, "cellularnetworksettings.json")
 
+CellularNetworkSettings *CellularNetworkSettings::staticInst = nullptr;
+
 CellularNetworkSettings::CellularNetworkSettings(QObject* parent, const QVariantList& args) 
     : KQuickAddons::ConfigModule(parent, args),
       m_modemList{},
       m_simList{},
       m_providers{ nullptr }
 {
+    CellularNetworkSettings::staticInst = this;
+
     KAboutData* about = new KAboutData("kcm_cellular_network", i18n("Cellular Networks"), "0.1", QString(), KAboutLicense::GPL);
     about->addAuthor(i18n("Devin Lin"), QString(), "espidev@gmail.com");
     about->addAuthor(i18n("Martin Kacej"), QString(), "m.kacej@atlas.sk");
@@ -45,7 +49,8 @@ CellularNetworkSettings::CellularNetworkSettings(QObject* parent, const QVariant
     qmlRegisterType<ModemDetails>("cellularnetworkkcm", 1, 0, "ModemDetails");
     qmlRegisterType<AvailableNetwork>("cellularnetworkkcm", 1, 0, "AvailableNetwork");
     qmlRegisterType<Sim>("cellularnetworkkcm", 1, 0, "Sim");
-    
+    qmlRegisterType<InlineMessage>("cellularnetworkkcm", 1, 0, "InlineMessage");
+
     // parse mobile providers list
     m_providers = new MobileProviders();
     m_providers->fillProvidersList(); 
@@ -86,6 +91,11 @@ CellularNetworkSettings::CellularNetworkSettings(QObject* parent, const QVariant
     Q_EMIT selectedModemChanged();
     
     fillSims();
+}
+
+CellularNetworkSettings *CellularNetworkSettings::instance()
+{
+    return CellularNetworkSettings::staticInst;
 }
 
 Modem *CellularNetworkSettings::selectedModem()
@@ -129,6 +139,42 @@ void CellularNetworkSettings::fillSims()
     }
     
     Q_EMIT simsChanged();
+}
+
+QList<InlineMessage *> CellularNetworkSettings::messages()
+{
+    return m_messages;
+}
+
+void CellularNetworkSettings::addMessage(InlineMessage::Type type, QString msg)
+{
+    m_messages.push_back(new InlineMessage{this, type, msg});
+    Q_EMIT messagesChanged();
+}
+
+void CellularNetworkSettings::removeMessage(int index)
+{
+    if (index >= 0 && index < m_messages.size()) {
+        m_messages.removeAt(index);
+        Q_EMIT messagesChanged();
+    }
+}
+
+InlineMessage::InlineMessage(QObject *parent, Type type, QString message)
+    : QObject{parent}
+    , m_type{type}
+    , m_message{message}
+{
+}
+
+InlineMessage::Type InlineMessage::type()
+{
+    return m_type;
+}
+
+QString InlineMessage::message()
+{
+    return m_message;
 }
 
 #include "cellularnetworksettings.moc"

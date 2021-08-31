@@ -63,9 +63,19 @@ Kirigami.ScrollablePage {
             anchors.left: parent.left
             anchors.right: parent.right
             spacing: 0
+            
+            MessagesList {
+                id: messagesList
+                visible: count != 0
+                Layout.fillWidth: true
+                Layout.margins: Kirigami.Units.largeSpacing
+                model: kcm.messages
+            }
+            
             Kirigami.InlineMessage {
                 id: cannotFindWarning
-                Layout.margins: Kirigami.Units.largeSpacing
+                Layout.margins: visible ? Kirigami.Units.largeSpacing : 0
+                Layout.topMargin: visible && !messagesList.visible ? Kirigami.Units.largeSpacing : 0
                 Layout.fillWidth: true
                 
                 visible: false

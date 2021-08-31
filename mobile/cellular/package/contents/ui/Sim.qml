@@ -21,6 +21,7 @@ import QtQuick 2.12
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.12 as Controls
 import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kcm 1.2
 import cellularnetworkkcm 1.0
 
 Kirigami.ScrollablePage {
@@ -29,15 +30,30 @@ Kirigami.ScrollablePage {
     
     property Sim sim
     
+    padding: 0
+    
     ColumnLayout {
+        spacing: 0
+        
         Kirigami.InlineMessage {
-            implicitWidth: simPage.width - Kirigami.Units.largeSpacing * 4
+            Layout.fillWidth: true
+            Layout.margins: Kirigami.Units.largeSpacing
+            Layout.bottomMargin: visible && !messagesList.visible ? Kirigami.Units.largeSpacing : 0
             visible: !sim.enabled
             type: Kirigami.MessageType.Error
             text: qsTr("This SIM slot is empty, a SIM card needs to be inserted in order for it to be used.")
         }
         
+        MessagesList {
+            id: messagesList
+            Layout.fillWidth: true
+            Layout.margins: Kirigami.Units.largeSpacing
+            visible: count != 0
+            model: kcm.messages
+        }
+        
         Kirigami.FormLayout {
+            Layout.margins: Kirigami.Units.gridUnit
             Layout.fillWidth: true
             wideMode: false
             
@@ -65,7 +81,7 @@ Kirigami.ScrollablePage {
                 text: "Select Network Operator"
                 enabled: sim.enabled
                 onClicked: {
-                    kcm.push("AvailableNetworks.qml", {"modem": sim.modem});
+                    kcm.push("AvailableNetworks.qml", { "modem": sim.modem, "sim": sim });
                 }
             }
             
@@ -101,11 +117,11 @@ Kirigami.ScrollablePage {
                 text: sim.eid
             }
             Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Operator ID:</b>")
+                Kirigami.FormData.label: i18n("<b>Operator ID (provided by SIM):</b>")
                 text: sim.operatorIdentifier
             }
             Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Operator Name:</b>")
+                Kirigami.FormData.label: i18n("<b>Operator Name (provided by SIM):</b>")
                 text: sim.operatorName
             }
             Controls.Label {

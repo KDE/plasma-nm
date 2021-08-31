@@ -19,9 +19,10 @@
 
 #pragma once
 
+#include "cellularnetworksettings.h"
 #include "mobileproviders.h"
-#include "sim.h"
 #include "modemdetails.h"
+#include "sim.h"
 
 #include <QList>
 #include <QString>

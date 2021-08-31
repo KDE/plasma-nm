@@ -53,7 +53,6 @@ CellularNetworkSettings::CellularNetworkSettings(QObject* parent, const QVariant
 
     // parse mobile providers list
     m_providers = new MobileProviders();
-    m_providers->fillProvidersList(); 
     
     // find modems
     ModemManager::scanDevices();

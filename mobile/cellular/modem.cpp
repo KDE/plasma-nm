@@ -283,6 +283,9 @@ void Modem::addProfile(QString name, QString apn, QString username, QString pass
         CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error adding connection: " + reply.error().message());
     } else {
         qDebug() << "Successfully added a new connection" << name << "with APN" << apn << ".";
+
+        // HACK: TODO GSM settings don't seem to get set when adding the connection, mm-qt bug?
+        updateProfile(reply.value().path(), name, apn, username, password, networkType);
     }
 }
 
@@ -294,6 +297,7 @@ void Modem::removeProfile(const QString &connectionUni)
         reply.waitForFinished();
         if (reply.isError()) {
             qWarning() << "Error removing connection" << reply.error().message();
+            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error removing connection " + reply.error().message());
         }
     }
 }
@@ -334,17 +338,25 @@ void Modem::updateProfile(QString connectionUni, QString name, QString apn, QStr
 
 void Modem::addDetectedProfileSettings()
 {
+    // load into cache
+    m_providers->fillProvidersList();
+
     bool found = false;
     
     if (m_mmDevice && hasSim()) {
-        QString op = m_mmDevice->sim()->operatorName();
-        qWarning() << "Detecting profile settings. Operator:" << op;
-        
+        QString operatorName = m_details->operatorName(); // operator currently connected to
+        if (operatorName == "") { // if not connected to a network, use the operator provided on the SIM
+            operatorName = m_mmDevice->sim()->operatorName();
+        }
+
+        qWarning() << "Detecting profile settings. Operator:" << operatorName;
+
         if (m_mm3gppDevice) {
-            qWarning() << "Using MCCMNC:" << m_mm3gppDevice->operatorCode() << "Provider:" << m_providers->getProvider(m_mm3gppDevice->operatorCode());
+            QString operatorCode = m_mm3gppDevice->operatorCode();
+            qWarning() << "Using MCCMNC:" << operatorCode << "Provider:" << m_providers->getProvider(operatorCode);
 
             // lookup apns with mccmnc codes
-            QStringList apns = m_providers->getApns(m_providers->getProvider(m_mm3gppDevice->operatorCode()));
+            QStringList apns = m_providers->getApns(m_providers->getProvider(operatorCode));
             for (auto apn : apns) {
                 QVariantMap apnInfo = m_providers->getApnInfo(apn);
                 qWarning() << "Found gsm profile settings. Type:" << apnInfo["usageType"];
@@ -352,8 +364,8 @@ void Modem::addDetectedProfileSettings()
                 // only add mobile data apns (not mms)
                 if (apnInfo["usageType"].toString() == "internet") {
                     found = true;
-                    
-                    QString name = op;
+
+                    QString name = operatorName;
                     if (!apnInfo["name"].isNull()) {
                         name += " - " + apnInfo["name"].toString();
                     }

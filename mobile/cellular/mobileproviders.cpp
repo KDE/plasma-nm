@@ -77,6 +77,7 @@ void MobileProviders::fillProvidersList()
 {
     mProvidersGsm.clear();
     mProvidersCdma.clear();
+    mNetworkIds.clear();
     QDomNode n = docElement.firstChild();
 
     QMap<QString, QString> sortedGsm;
@@ -94,12 +95,24 @@ void MobileProviders::fillProvidersList()
                 bool hasCdma = false;
                 QMap<QString, QString> localizedProviderNames;
 
+                QString mccmnc;
+
                 while (!n3.isNull()) {
                     QDomElement e3 = n3.toElement(); // <name | gsm | cdma>
 
                     if (!e3.isNull()) {
                         if (e3.tagName().toLower() == "gsm") {
                             hasGsm = true;
+
+                            QDomNode n4 = e3.firstChild();
+                            while (!n4.isNull()) {
+                                QDomElement e4 = n4.toElement(); // <apn | network-id>
+                                if (!e4.isNull() && e4.tagName().toLower() == "network-id") {
+                                    mccmnc = e4.attribute("mcc") + e4.attribute("mnc");
+                                }
+                                n4 = n4.nextSibling();
+                            }
+
                         } else if (e3.tagName().toLower() == "cdma") {
                             hasCdma = true;
                         } else if (e3.tagName().toLower() == "name") {
@@ -115,10 +128,12 @@ void MobileProviders::fillProvidersList()
                     }
                     n3 = n3.nextSibling();
                 }
+
                 const QString name = getNameByLocale(localizedProviderNames);
                 if (hasGsm) {
                     mProvidersGsm.insert(name, e2.firstChild());
                     sortedGsm.insert(name.toLower(), name);
+                    mNetworkIds.insert(mccmnc, name);
                 }
                 if (hasCdma) {
                     mProvidersCdma.insert(name, e2.firstChild());
@@ -134,7 +149,6 @@ void MobileProviders::fillProvidersList()
 QStringList MobileProviders::getApns(const QString & provider)
 {
     mApns.clear();
-    mNetworkIds.clear();
     if (!mProvidersGsm.contains(provider)) {
         return QStringList();
     }
@@ -167,8 +181,6 @@ QStringList MobileProviders::getApns(const QString & provider)
                     if (isInternet) {
                         mApns.insert(e2.attribute("value"), e2.firstChild());
                     }
-                } else if (!e2.isNull() && e2.tagName().toLower() == "network-id") {
-                    mNetworkIds.insert(e2.attribute("mcc") + e2.attribute("mnc"), provider);
                 }
 
                 n2 = n2.nextSibling();

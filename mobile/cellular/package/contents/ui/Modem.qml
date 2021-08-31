@@ -30,6 +30,7 @@ Kirigami.ScrollablePage {
     padding: 0
     
     property Modem modem
+    property bool showExtra: false
     
     ColumnLayout {
         MessagesList {
@@ -61,14 +62,6 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.label: "Modem Details"
                 Kirigami.FormData.isSection: true
             }
-            Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Uni:</b>")
-                text: modem.uni
-            }
-            Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Active Connection:</b>")
-                text: modem.activeConnectionUni
-            }
             ColumnLayout {
                 Kirigami.FormData.label: i18n("<b>Access Technologies:</b>")
                 Repeater {
@@ -79,24 +72,7 @@ Kirigami.ScrollablePage {
                 }
             }
             Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Device:</b>")
-                text: modem.details.device
-            }
-            Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Device ID:</b>")
-                text: modem.details.deviceIdentifier
-            }
-            ColumnLayout {
-                Kirigami.FormData.label: i18n("<b>Drivers:</b>")
-                Repeater {
-                    model: modem.details.drivers
-                    Controls.Label {
-                        text: modelData
-                    }
-                }
-            }
-            Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Equipment ID:</b>")
+                Kirigami.FormData.label: i18n("<b>IMEI:</b>")
                 text: modem.details.equipmentIdentifier
             }
             Controls.Label {
@@ -106,14 +82,6 @@ Kirigami.ScrollablePage {
             Controls.Label {
                 Kirigami.FormData.label: i18n("<b>Manufacturer:</b>")
                 text: modem.details.manufacturer
-            }
-            Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Maximum Active Bearers:</b>")
-                text: modem.details.maxActiveBearers
-            }
-            Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Maximum Total Bearers:</b>")
-                text: modem.details.maxBearers
             }
             Controls.Label {
                 Kirigami.FormData.label: i18n("<b>Model:</b>")
@@ -129,37 +97,12 @@ Kirigami.ScrollablePage {
                 }
             }
             Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Plugin:</b>")
-                text: modem.details.plugin
-            }
-            ColumnLayout {
-                Kirigami.FormData.label: i18n("<b>Ports:</b>")
-                Repeater {
-                    model: modem.details.ports
-                    Controls.Label {
-                        text: modelData
-                    }
-                }
-            }
-            Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Power State:</b>")
-                text: modem.details.powerState
-            }
-            Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Primary Port:</b>")
-                text: modem.details.primaryPort
-            }
-            Controls.Label {
                 Kirigami.FormData.label: i18n("<b>Revision:</b>")
                 text: modem.details.revision
             }
             Controls.Label {
                 Kirigami.FormData.label: i18n("<b>Signal Quality:</b>")
                 text: modem.details.signalQuality
-            }
-            Controls.Label {
-                Kirigami.FormData.label: i18n("<b>SIM Path:</b>")
-                text: modem.details.simPath
             }
             Controls.Label {
                 Kirigami.FormData.label: i18n("<b>State:</b>")
@@ -213,6 +156,83 @@ Kirigami.ScrollablePage {
             Controls.Label { 
                 Kirigami.FormData.label: i18n("<b>Outgoing data:</b>")
                 text: modem.details.txBytes
+            }
+            
+            // extra info
+            Controls.Button {
+                text: showExtra ? i18n("Hide Detailed Information") : i18n("Show Detailed Information")
+                onClicked: showExtra = !showExtra
+            }
+            
+            Controls.Label {
+                Kirigami.FormData.label: i18n("<b>Uni:</b>")
+                text: modem.uni
+                visible: showExtra
+            }
+            Controls.Label {
+                Kirigami.FormData.label: i18n("<b>Active NetworkManager Connection:</b>")
+                text: modem.activeConnectionUni
+                visible: showExtra
+            }
+            Controls.Label {
+                Kirigami.FormData.label: i18n("<b>Device:</b>")
+                text: modem.details.device
+                visible: showExtra
+            }
+            Controls.Label {
+                Kirigami.FormData.label: i18n("<b>Device ID:</b>")
+                text: modem.details.deviceIdentifier
+                visible: showExtra
+            }
+            ColumnLayout {
+                Kirigami.FormData.label: i18n("<b>Drivers:</b>")
+                visible: showExtra
+                Repeater {
+                    model: modem.details.drivers
+                    Controls.Label {
+                        text: modelData
+                    }
+                }
+            }
+            Controls.Label {
+                Kirigami.FormData.label: i18n("<b>Maximum Active Bearers:</b>")
+                text: modem.details.maxActiveBearers
+                visible: showExtra
+            }
+            Controls.Label {
+                Kirigami.FormData.label: i18n("<b>Maximum Total Bearers:</b>")
+                text: modem.details.maxBearers
+                visible: showExtra
+            }
+            Controls.Label {
+                Kirigami.FormData.label: i18n("<b>Plugin:</b>")
+                text: modem.details.plugin
+                visible: showExtra
+            }
+            ColumnLayout {
+                Kirigami.FormData.label: i18n("<b>Ports:</b>")
+                visible: showExtra
+                Repeater {
+                    model: modem.details.ports
+                    Controls.Label {
+                        text: modelData
+                    }
+                }
+            }
+            Controls.Label {
+                Kirigami.FormData.label: i18n("<b>Power State:</b>")
+                text: modem.details.powerState
+                visible: showExtra
+            }
+            Controls.Label {
+                Kirigami.FormData.label: i18n("<b>Primary Port:</b>")
+                text: modem.details.primaryPort
+                visible: showExtra
+            }
+            Controls.Label {
+                Kirigami.FormData.label: i18n("<b>SIM Path:</b>")
+                text: modem.details.simPath
+                visible: showExtra
             }
         }
     }

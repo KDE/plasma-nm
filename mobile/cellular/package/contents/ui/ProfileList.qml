@@ -44,7 +44,7 @@ Kirigami.ScrollablePage {
             
             helpfulAction: Kirigami.Action {
                 iconName: "list-add"
-                text: i18n("Add APN")
+                text: i18n("Add Connection")
                 onTriggered: {
                     profileDialog.profile = null;
                     profileDialog.open();

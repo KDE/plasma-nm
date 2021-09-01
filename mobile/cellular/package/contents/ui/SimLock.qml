@@ -66,7 +66,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             wideMode: false
             
-            Controls.Switch {
+            Controls.CheckBox {
                 Kirigami.FormData.label: "<b>" + i18n("SIM Lock:") + "</b>"
                 text: checked ? i18n("On") : i18n("Off")
                 checked: sim.locked

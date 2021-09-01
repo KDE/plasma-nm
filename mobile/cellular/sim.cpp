@@ -36,9 +36,6 @@ Sim::Sim(QObject *parent, Modem *modem, ModemManager::Sim::Ptr mmSim, ModemManag
         Q_EMIT lockedChanged();
         Q_EMIT lockedReasonChanged();
     });
-    connect(m_mmModem.data(), &ModemManager::Modem::unlockRetriesChanged, this, [this]() -> void {
-        Q_EMIT unlockRetriesChanged();
-    });
 }
 
 bool Sim::enabled()
@@ -46,9 +43,8 @@ bool Sim::enabled()
     return uni() != "/";
 }
 
-int Sim::unlockRetries()
+bool Sim::pinEnabled()
 {
-    return m_mmModem->unlockRetries()[MM_MODEM_LOCK_SIM_PIN];
 }
 
 bool Sim::locked()

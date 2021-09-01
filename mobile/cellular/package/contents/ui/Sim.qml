@@ -57,7 +57,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             wideMode: false
             
-            Controls.Switch {
+            Controls.CheckBox {
                 Kirigami.FormData.label: "<b>" + i18n("Data roaming:") + "</b>"
                 text: checked ? i18n("On") : i18n("Off")
                 enabled: sim.enabled
@@ -120,7 +120,15 @@ Kirigami.ScrollablePage {
                 text: sim.eid
             }
             Controls.Label {
-                Kirigami.FormData.label: "<b>" + i18n("Operator ID (provided by SIM):") + "</b>"
+                Kirigami.FormData.label: i18n("<b>Operator Code (modem):</b>")
+                text: modem.details.operatorCode
+            }
+            Controls.Label {
+                Kirigami.FormData.label: i18n("<b>Operator Name (modem):</b>")
+                text: modem.details.operatorName
+            }
+            Controls.Label {
+                Kirigami.FormData.label: "<b>" + i18n("Operator Code (provided by SIM):") + "</b>"
                 text: sim.operatorIdentifier
             }
             Controls.Label {

@@ -56,8 +56,8 @@ class Modem : public QObject {
     Q_PROPERTY(bool hasSim READ hasSim NOTIFY hasSimChanged)
     Q_PROPERTY(QList<ProfileSettings *> profiles READ profileList NOTIFY profileListChanged)
     Q_PROPERTY(QString activeConnectionUni READ activeConnectionUni NOTIFY activeConnectionUniChanged)
-    Q_PROPERTY(bool mobileDataActive READ mobileDataActive WRITE setMobileDataActive NOTIFY mobileDataActiveChanged)
-    
+    Q_PROPERTY(bool mobileDataActive READ mobileDataActive WRITE setMobileDataActive NOTIFY mobileDataActiveChanged) // not used atm (for per modem control)
+
 public:
     Modem(QObject *parent = nullptr) : QObject{ parent } {}
     Modem(QObject *parent, ModemManager::ModemDevice::Ptr mmDevice, NetworkManager::ModemDevice::Ptr nmDevice, ModemManager::Modem::Ptr m_mmInterface, MobileProviders *providers);

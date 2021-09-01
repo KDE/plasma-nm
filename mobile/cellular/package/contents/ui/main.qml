@@ -32,7 +32,7 @@ SimpleKCM {
     objectName: "mobileDataMain"
 
     PlasmaNM.Handler {
-        id: handler
+        id: nmHandler
     }
 
     PlasmaNM.AvailableDevices {
@@ -84,20 +84,22 @@ SimpleKCM {
                 Layout.fillWidth: true
                 wideMode: false
                 
-                Controls.Switch {
+                Controls.CheckBox {
                     id: mobileDataCheckbox
-                    Kirigami.FormData.label: i18n("<b>Mobile data:</b>")
+                    Kirigami.FormData.label: "<b>" + i18n("Mobile data:") + "</b>"
                     text: checked ? i18n("On") : i18n("Off")
                     enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable
                     
-                    checked: kcm.selectedModem.mobileDataActive
+                    checked: enabledConnections.wwanEnabled
                     onCheckedChanged: {
-                        kcm.selectedModem.mobileDataActive = checked;
+                        if (enabledConnections.wwanEnabled != checked) {
+                            nmHandler.enableWwan(checked)
+                        }
                     }
                 }
                 
                 Controls.Button {
-                    Kirigami.FormData.label: i18n("<b>Data Usage:</b>")
+                    Kirigami.FormData.label: "<b>" + i18n("Data Usage:") + "</b>"
                     text: i18n("View Data Usage")
                     icon.name: "office-chart-bar"
                     enabled: false // TODO

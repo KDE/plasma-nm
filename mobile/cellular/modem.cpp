@@ -36,7 +36,8 @@ Modem::Modem(QObject *parent, ModemManager::ModemDevice::Ptr mmDevice, NetworkMa
     
     // this is guaranteed to be a GSM modem
     m_mm3gppDevice = m_mmDevice->interface(ModemManager::ModemDevice::GsmInterface).objectCast<ModemManager::Modem3gpp>();
-    
+    m_mm3gppDevice->setTimeout(60000); // scanning networks likely takes longer than the default timeout
+
     // add profiles
     refreshProfiles();
     connect(m_nmDevice.data(), &NetworkManager::ModemDevice::availableConnectionChanged, this, [this]() -> void { refreshProfiles(); });
@@ -389,7 +390,7 @@ void Modem::addDetectedProfileSettings()
 QList<Sim *> Modem::sims()
 {
     if (m_mmDevice->sim()) {
-        return { new Sim{ this, this, m_mmDevice->sim(), m_mmInterface } };
+        return {new Sim{this, this, m_mmDevice->sim(), m_mmInterface, m_mm3gppDevice}};
     }
     return {};
 }

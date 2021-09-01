@@ -40,10 +40,35 @@ Kirigami.ScrollablePage {
         }
 
         ColumnLayout {
-            id: placeholder
-            visible: !sim.locked
+            id: unlockSimPlaceholder
+            visible: sim.locked
             Layout.fillWidth: true
-            Component.onCompleted: placeholder.Layout.preferredHeight = root.height
+            
+            // HACK: prevent infinite binding loop?
+            Component.onCompleted: unlockSimPlaceholder.Layout.preferredHeight = root.height
+            
+            Kirigami.PlaceholderMessage {
+                Layout.margins: Kirigami.Units.gridUnit * 2
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                text: i18n("SIM is locked")
+                explanation: i18n("In order to use this SIM, you must first unlock it.")
+                icon.name: "lock"
+                helpfulAction: Kirigami.Action {
+                    icon.name: "unlock"
+                    text: "Unlock SIM"
+                    onTriggered: unlockPinDialog.open() // TODO replace custom unlock pin dialog with just opening the system unlock PIN dialog
+                }
+            }
+        }
+        
+        ColumnLayout {
+            id: notLockedSimPlaceholder
+            visible: !sim.pinEnabled && !unlockSimPlaceholder.visible
+            Layout.fillWidth: true
+            
+            // HACK: prevent infinite binding loop?
+            Component.onCompleted: notLockedSimPlaceholder.Layout.preferredHeight = root.height
             
             Kirigami.PlaceholderMessage {
                 Layout.margins: Kirigami.Units.gridUnit * 2
@@ -61,7 +86,7 @@ Kirigami.ScrollablePage {
         }
         
         Kirigami.FormLayout {
-            visible: !placeholder.visible
+            visible: !notLockedSimPlaceholder.visible && !unlockSimPlaceholder.visible
             Layout.margins: Kirigami.Units.gridUnit
             Layout.fillWidth: true
             wideMode: false
@@ -69,10 +94,10 @@ Kirigami.ScrollablePage {
             Controls.CheckBox {
                 Kirigami.FormData.label: "<b>" + i18n("SIM Lock:") + "</b>"
                 text: checked ? i18n("On") : i18n("Off")
-                checked: sim.locked
+                checked: sim.pinEnabled
                 onCheckedChanged: {
                     if (!checked) {
-                        checked = sim.locked;
+                        checked = sim.pinEnabled; // prevent UI changing
                         removePinDialog.open();
                     }
                 }
@@ -82,17 +107,37 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.label: "<b>" + i18n("Change PIN:") + "</b>"
                 icon.name: "unlock"
                 text: i18n("Change PIN")
-                enabled: sim.locked
+                enabled: sim.pinEnabled
                 onClicked: changePinDialog.open()
             }
         }
+        
+        // dialogs
         
         RegExpValidator {
             id: pinValidator
             regExp: /[0-9]+/
         }
         
-        // dialogs
+        PopupDialog {
+            id: unlockPinDialog
+            title: i18n("Unlock SIM")
+            standardButtons: Controls.Dialog.Ok | Controls.Dialog.Cancel
+            padding: Kirigami.Units.largeSpacing
+            
+            onAccepted: sim.sendPin(unlockPinCurPin.text)
+            
+            ColumnLayout {
+                Controls.Label {
+                    text: i18n("Attempts left: %1", sim.unlockRetriesLeft)
+                }
+                Kirigami.PasswordField {
+                    id: unlockPinCurPin
+                    placeholderText: i18n("Enter PIN")
+                    validator: pinValidator
+                }
+            }
+        }
         
         PopupDialog {
             id: changePinDialog

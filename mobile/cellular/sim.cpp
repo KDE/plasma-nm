@@ -21,11 +21,12 @@
 
 #include <KLocalizedString>
 
-Sim::Sim(QObject *parent, Modem *modem, ModemManager::Sim::Ptr mmSim, ModemManager::Modem::Ptr mmModem)
-    : QObject{ parent },
-      m_modem{ modem },
-      m_mmSim{ mmSim },
-      m_mmModem{ mmModem }
+Sim::Sim(QObject *parent, Modem *modem, ModemManager::Sim::Ptr mmSim, ModemManager::Modem::Ptr mmModem, ModemManager::Modem3gpp::Ptr mmModem3gpp)
+    : QObject{parent}
+    , m_modem{modem}
+    , m_mmSim{mmSim}
+    , m_mmModem{mmModem}
+    , m_mmModem3gpp{mmModem3gpp}
 {
     connect(m_mmSim.data(), &ModemManager::Sim::imsiChanged, this, [this]() -> void { Q_EMIT imsiChanged(); });
     connect(m_mmSim.data(), &ModemManager::Sim::operatorIdentifierChanged, this, [this]() -> void { Q_EMIT operatorIdentifierChanged(); });
@@ -36,6 +37,10 @@ Sim::Sim(QObject *parent, Modem *modem, ModemManager::Sim::Ptr mmSim, ModemManag
         Q_EMIT lockedChanged();
         Q_EMIT lockedReasonChanged();
     });
+
+    connect(m_mmModem3gpp.data(), &ModemManager::Modem3gpp::enabledFacilityLocksChanged, this, [this]() -> void {
+        Q_EMIT pinEnabledChanged();
+    });
 }
 
 bool Sim::enabled()
@@ -45,11 +50,17 @@ bool Sim::enabled()
 
 bool Sim::pinEnabled()
 {
+    return m_mmModem3gpp->enabledFacilityLocks() & MM_MODEM_3GPP_FACILITY_SIM;
+}
+
+int Sim::unlockRetriesLeft()
+{
+    return m_mmModem->unlockRetries()[MM_MODEM_LOCK_SIM_PIN];
 }
 
 bool Sim::locked()
 {
-    return m_mmModem->unlockRequired() != MM_MODEM_LOCK_NONE && m_mmModem->unlockRequired() != MM_MODEM_LOCK_SIM_PIN2;
+    return m_mmModem->unlockRequired() == MM_MODEM_LOCK_SIM_PIN;
 }
 
 QString Sim::lockedReason()
@@ -142,11 +153,11 @@ Modem *Sim::modem()
 
 void Sim::togglePinEnabled(const QString &pin)
 {
-    bool isLocked = locked();
-    QDBusPendingReply reply = m_mmSim->enablePin(pin, !isLocked);
+    bool isPinEnabled = pinEnabled();
+    QDBusPendingReply reply = m_mmSim->enablePin(pin, !isPinEnabled);
     reply.waitForFinished();
     if (reply.isError()) {
-        qWarning() << "Error toggling SIM lock to" << isLocked << ":" << reply.error().message();
+        qWarning() << "Error toggling SIM lock to" << isPinEnabled << ":" << reply.error().message();
         CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error toggling SIM lock: " + reply.error().message());
     }
 }

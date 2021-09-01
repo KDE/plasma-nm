@@ -32,9 +32,10 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Settings>
 
-#include <ModemManagerQt/Manager>
 #include <ModemManagerQt/GenericTypes>
+#include <ModemManagerQt/Manager>
 #include <ModemManagerQt/ModemDevice>
+#include <modem3gpp.h>
 
 class Modem;
 
@@ -42,6 +43,7 @@ class Sim : public QObject {
     Q_OBJECT
     Q_PROPERTY(bool enabled READ enabled NOTIFY enabledChanged)
     Q_PROPERTY(bool pinEnabled READ pinEnabled NOTIFY pinEnabledChanged) // if there is a PIN set on the SIM
+    Q_PROPERTY(int unlockRetriesLeft READ unlockRetriesLeft NOTIFY unlockRetriesLeftChanged)
     Q_PROPERTY(bool locked READ locked NOTIFY lockedChanged) // if the SIM is currently locked (requires entering PIN)
     Q_PROPERTY(QString lockedReason READ lockedReason NOTIFY lockedReasonChanged)
     Q_PROPERTY(QString imsi READ imsi NOTIFY imsiChanged)
@@ -55,10 +57,15 @@ class Sim : public QObject {
     Q_PROPERTY(Modem *modem READ modem NOTIFY modemChanged)
 
 public:
-    Sim(QObject *parent = nullptr, Modem *modem = nullptr, ModemManager::Sim::Ptr mmSim = ModemManager::Sim::Ptr{ nullptr }, ModemManager::Modem::Ptr mmModem = ModemManager::Modem::Ptr{ nullptr });
-    
+    Sim(QObject *parent = nullptr,
+        Modem *modem = nullptr,
+        ModemManager::Sim::Ptr mmSim = ModemManager::Sim::Ptr{nullptr},
+        ModemManager::Modem::Ptr mmModem = ModemManager::Modem::Ptr{nullptr},
+        ModemManager::Modem3gpp::Ptr mmModem3gpp = ModemManager::Modem3gpp::Ptr{nullptr});
+
     bool enabled();
     bool pinEnabled();
+    int unlockRetriesLeft();
     bool locked();
     QString lockedReason();
     QString imsi();
@@ -79,6 +86,7 @@ public:
 Q_SIGNALS:
     void enabledChanged();
     void pinEnabledChanged();
+    void unlockRetriesLeftChanged();
     void lockedChanged();
     void lockedReasonChanged();
     void imsiChanged();
@@ -95,4 +103,5 @@ private:
     Modem *m_modem;
     ModemManager::Sim::Ptr m_mmSim;
     ModemManager::Modem::Ptr m_mmModem;
+    ModemManager::Modem3gpp::Ptr m_mmModem3gpp;
 };

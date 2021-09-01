@@ -31,8 +31,14 @@ Sim::Sim(QObject *parent, Modem *modem, ModemManager::Sim::Ptr mmSim, ModemManag
     connect(m_mmSim.data(), &ModemManager::Sim::operatorIdentifierChanged, this, [this]() -> void { Q_EMIT operatorIdentifierChanged(); });
     connect(m_mmSim.data(), &ModemManager::Sim::operatorNameChanged, this, [this]() -> void { Q_EMIT operatorNameChanged(); });
     connect(m_mmSim.data(), &ModemManager::Sim::simIdentifierChanged, this, [this]() -> void { Q_EMIT simIdentifierChanged(); });
-    
-    // TODO connect sim unlock
+
+    connect(m_mmModem.data(), &ModemManager::Modem::unlockRequiredChanged, this, [this]() -> void {
+        Q_EMIT lockedChanged();
+        Q_EMIT lockedReasonChanged();
+    });
+    connect(m_mmModem.data(), &ModemManager::Modem::unlockRetriesChanged, this, [this]() -> void {
+        Q_EMIT unlockRetriesChanged();
+    });
 }
 
 bool Sim::enabled()
@@ -40,9 +46,14 @@ bool Sim::enabled()
     return uni() != "/";
 }
 
+int Sim::unlockRetries()
+{
+    return m_mmModem->unlockRetries()[MM_MODEM_LOCK_SIM_PIN];
+}
+
 bool Sim::locked()
 {
-    return m_mmModem->unlockRequired() != MM_MODEM_LOCK_NONE;
+    return m_mmModem->unlockRequired() != MM_MODEM_LOCK_NONE && m_mmModem->unlockRequired() != MM_MODEM_LOCK_SIM_PIN2;
 }
 
 QString Sim::lockedReason()
@@ -131,4 +142,53 @@ QString Sim::displayId()
 Modem *Sim::modem()
 {
     return m_modem;
+}
+
+void Sim::togglePinEnabled(const QString &pin)
+{
+    bool isLocked = locked();
+    QDBusPendingReply reply = m_mmSim->enablePin(pin, !isLocked);
+    reply.waitForFinished();
+    if (reply.isError()) {
+        qWarning() << "Error toggling SIM lock to" << isLocked << ":" << reply.error().message();
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error toggling SIM lock: " + reply.error().message());
+    }
+}
+
+void Sim::changePin(const QString &oldPin, const QString &newPin)
+{
+    if (locked()) {
+        QDBusPendingReply reply = m_mmSim->changePin(oldPin, newPin);
+        reply.waitForFinished();
+        if (reply.isError()) {
+            qWarning() << "Error changing the PIN:" << reply.error().message();
+            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error changing the PIN: " + reply.error().message());
+        }
+    } else {
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Warning, "The SIM card is not locked.");
+    }
+}
+
+void Sim::sendPin(const QString &pin)
+{
+    if (m_mmModem->unlockRequired() != MM_MODEM_LOCK_NONE) {
+        QDBusPendingReply reply = m_mmSim->sendPin(pin);
+        reply.waitForFinished();
+        if (reply.isError()) {
+            qWarning() << "Error sending the PIN:" << reply.error().message();
+            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error sending the PIN: " + reply.error().message());
+        }
+    }
+}
+
+void Sim::sendPuk(const QString &pin, const QString &puk)
+{
+    if (m_mmModem->unlockRequired() != MM_MODEM_LOCK_NONE) {
+        QDBusPendingReply reply = m_mmSim->sendPuk(pin, puk);
+        reply.waitForFinished();
+        if (reply.isError()) {
+            qWarning() << "Error sending the PUK:" << reply.error().message();
+            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error sending the PUK: " + reply.error().message());
+        }
+    }
 }

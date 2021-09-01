@@ -41,6 +41,7 @@ class Modem;
 class Sim : public QObject {
     Q_OBJECT
     Q_PROPERTY(bool enabled READ enabled NOTIFY enabledChanged)
+    Q_PROPERTY(int unlockRetries READ unlockRetries NOTIFY unlockRetriesChanged)
     Q_PROPERTY(bool locked READ locked NOTIFY lockedChanged)
     Q_PROPERTY(QString lockedReason READ lockedReason NOTIFY lockedReasonChanged)
     Q_PROPERTY(QString imsi READ imsi NOTIFY imsiChanged)
@@ -57,6 +58,7 @@ public:
     Sim(QObject *parent = nullptr, Modem *modem = nullptr, ModemManager::Sim::Ptr mmSim = ModemManager::Sim::Ptr{ nullptr }, ModemManager::Modem::Ptr mmModem = ModemManager::Modem::Ptr{ nullptr });
     
     bool enabled();
+    int unlockRetries();
     bool locked();
     QString lockedReason();
     QString imsi();
@@ -68,9 +70,15 @@ public:
     QString uni();
     QString displayId();
     Modem *modem();
-    
+
+    Q_INVOKABLE void togglePinEnabled(const QString &pin);
+    Q_INVOKABLE void changePin(const QString &oldPin, const QString &newPin);
+    Q_INVOKABLE void sendPin(const QString &pin);
+    Q_INVOKABLE void sendPuk(const QString &pin, const QString &puk);
+
 Q_SIGNALS:
     void enabledChanged();
+    void unlockRetriesChanged();
     void lockedChanged();
     void lockedReasonChanged();
     void imsiChanged();

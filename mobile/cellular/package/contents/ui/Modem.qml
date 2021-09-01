@@ -165,11 +165,6 @@ Kirigami.ScrollablePage {
             }
             
             Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Uni:</b>")
-                text: modem.uni
-                visible: showExtra
-            }
-            Controls.Label {
                 Kirigami.FormData.label: i18n("<b>Active NetworkManager Connection:</b>")
                 text: modem.activeConnectionUni
                 visible: showExtra

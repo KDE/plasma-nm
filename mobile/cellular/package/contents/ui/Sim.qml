@@ -58,7 +58,7 @@ Kirigami.ScrollablePage {
             wideMode: false
             
             Controls.Switch {
-                Kirigami.FormData.label: i18n("<b>Data roaming:</b>")
+                Kirigami.FormData.label: "<b>" + i18n("Data roaming:") + "</b>"
                 text: checked ? i18n("On") : i18n("Off")
                 enabled: sim.enabled
                 checked: sim.modem.isRoaming
@@ -66,9 +66,9 @@ Kirigami.ScrollablePage {
             }
             
             Controls.Button {
-                Kirigami.FormData.label: i18n("<b>APNs:</b>")
+                Kirigami.FormData.label: "<b>" + i18n("APNs:") + "</b>"
                 icon.name: "globe"
-                text: "Modify Access Point Names"
+                text: i18n("Modify Access Point Names")
                 enabled: sim.enabled
                 onClicked: {
                     kcm.push("ProfileList.qml", {"modem": sim.modem});
@@ -76,9 +76,9 @@ Kirigami.ScrollablePage {
             }
             
             Controls.Button {
-                Kirigami.FormData.label: i18n("<b>Networks:</b>")
+                Kirigami.FormData.label: "<b>" + i18n("Networks:") + "</b>"
                 icon.name: "network-mobile-available"
-                text: "Select Network Operator"
+                text: i18n("Select Network Operator")
                 enabled: sim.enabled
                 onClicked: {
                     kcm.push("AvailableNetworks.qml", { "modem": sim.modem, "sim": sim });
@@ -86,50 +86,53 @@ Kirigami.ScrollablePage {
             }
             
             Controls.Button {
-                Kirigami.FormData.label: i18n("<b>Modem:</b>")
+                Kirigami.FormData.label: "<b>" + i18n("SIM Lock:") + "</b>"
+                icon.name: "unlock"
+                text: i18n("Modify SIM Lock")
+                onClicked: kcm.push("SimLock.qml", { "sim": sim });
+            }
+            
+            Controls.Button {
+                Kirigami.FormData.label: "<b>" + i18n("Modem:") + "</b>"
                 icon.name: "network-modem"
-                text: "View Modem Details"
+                text: i18n("View Modem Details")
                 onClicked: kcm.push("Modem.qml", { "modem": sim.modem })
             }
             
             Kirigami.Separator {
-                Kirigami.FormData.label: "SIM Details"
+                Kirigami.FormData.label: i18n("SIM Details")
                 Kirigami.FormData.isSection: true
             }
             Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Uni:</b>")
-                text: sim.uni
-            }
-            Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Is Locked:</b>")
+                Kirigami.FormData.label: "<b>" + i18n("Is Locked:") + "</b>"
                 text: sim.locked ? i18n("Yes") : i18n("No")
             }
             Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Locked Reason:</b>")
+                Kirigami.FormData.label: "<b>" + i18n("Locked Reason:") + "</b>"
                 text: sim.lockedReason
             }
             Controls.Label {
-                Kirigami.FormData.label: i18n("<b>IMSI:</b>")
+                Kirigami.FormData.label: "<b>" + i18n("IMSI:") + "</b>"
                 text: sim.imsi
             }
             Controls.Label {
-                Kirigami.FormData.label: i18n("<b>EID:</b>")
+                Kirigami.FormData.label: "<b>" + i18n("EID:") + "</b>"
                 text: sim.eid
             }
             Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Operator ID (provided by SIM):</b>")
+                Kirigami.FormData.label: "<b>" + i18n("Operator ID (provided by SIM):") + "</b>"
                 text: sim.operatorIdentifier
             }
             Controls.Label {
-                Kirigami.FormData.label: i18n("<b>Operator Name (provided by SIM):</b>")
+                Kirigami.FormData.label: "<b>" + i18n("Operator Name (provided by SIM):") + "</b>"
                 text: sim.operatorName
             }
             Controls.Label {
-                Kirigami.FormData.label: i18n("<b>SIM ID:</b>")
+                Kirigami.FormData.label: "<b>" + i18n("SIM ID:") + "</b>"
                 text: sim.simIdentifier
             }
             ColumnLayout {
-                Kirigami.FormData.label: i18n("<b>Emergency Numbers:</b>")
+                Kirigami.FormData.label: "<b>" + i18n("Emergency Numbers:") + "</b>"
                 Repeater {
                     model: sim.emergencyNumbers
                     Controls.Label {

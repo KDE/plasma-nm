@@ -285,7 +285,10 @@ void Modem::addProfile(QString name, QString apn, QString username, QString pass
         qDebug() << "Successfully added a new connection" << name << "with APN" << apn << ".";
 
         // HACK: TODO GSM settings don't seem to get set when adding the connection, mm-qt bug?
-        updateProfile(reply.value().path(), name, apn, username, password, networkType);
+        QString path = reply.value().path();
+        QMetaObject::invokeMethod(this, [this, path, name, apn, username, password, networkType] {
+            updateProfile(path, name, apn, username, password, networkType);
+        });
     }
 }
 

@@ -29,6 +29,7 @@ Controls.Dialog {
     anchors.centerIn: Controls.Overlay.overlay
     modal: true
     padding: Kirigami.Units.smallSpacing
+    closePolicy: Controls.Popup.CloseOnEscape | Controls.Popup.CloseOnReleaseOutside
     
     property int translateY: (1 - opacity) * Kirigami.Units.gridUnit * 2
     

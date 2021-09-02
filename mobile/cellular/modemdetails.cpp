@@ -32,7 +32,7 @@ ModemDetails::ModemDetails(QObject *parent, Modem *modem)
     connect(mmInterfacePointer, &ModemManager::Modem::stateChanged, this, [this]() -> void { Q_EMIT stateChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::stateFailedReasonChanged, this, [this]() -> void { Q_EMIT stateFailedReasonChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::supportedCapabilitiesChanged, this, [this]() -> void { Q_EMIT supportedCapabilitiesChanged(); });
-    
+
     if (m_modem->m_mm3gppDevice) {
         connect(m_modem->m_mm3gppDevice.data(), &ModemManager::Modem3gpp::operatorCodeChanged, this, [this]() -> void { Q_EMIT operatorCodeChanged(); });
         connect(m_modem->m_mm3gppDevice.data(), &ModemManager::Modem3gpp::operatorNameChanged, this, [this]() -> void { Q_EMIT operatorNameChanged(); });

@@ -32,6 +32,7 @@ Kirigami.ScrollablePage {
     property Sim sim
 
     ListView {
+        id: listView
         header: ColumnLayout {
             anchors.left: parent.left
             anchors.right: parent.right
@@ -47,7 +48,7 @@ Kirigami.ScrollablePage {
         
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            visible: !modem.details.isScanningNetworks
+            visible: !modem.details.isScanningNetworks && listView.count == 0
             icon.name: "network-mobile-100"
             text: i18n("Current operator: ") + (modem.details.operatorName ? modem.details.operatorName : i18n("none"))
             helpfulAction: Kirigami.Action {
@@ -61,14 +62,19 @@ Kirigami.ScrollablePage {
         Controls.BusyIndicator {
             anchors.centerIn: parent
             visible: modem.details.isScanningNetworks
-            Layout.minimumWidth: Kirigami.Units.iconSizes.medium
-            Layout.minimumHeight: width
+            implicitWidth: Kirigami.Units.iconSizes.large
+            implicitHeight: implicitWidth
         }
         
         model: modem.details.networks
         
         delegate: Kirigami.SwipeListItem {
-            onClicked: modelData.registerToNetwork()
+            onClicked: {
+                if (!modelData.isCurrentlyUsed) {
+                    modelData.registerToNetwork();
+                    modem.details.scanNetworks();
+                }
+            }
             
             contentItem: RowLayout {
                 Layout.fillWidth: true
@@ -86,7 +92,13 @@ Kirigami.ScrollablePage {
                 Controls.RadioButton {
                     Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                     checked: modelData.isCurrentlyUsed
-                    onClicked: modelData.registerToNetwork()
+                    onClicked: {
+                        if (!modelData.isCurrentlyUsed) {
+                            modelData.registerToNetwork();
+                            modem.details.scanNetworks();
+                        }
+                        checked = modelData.isCurrentlyUsed;
+                    }
                 }
             }
         }

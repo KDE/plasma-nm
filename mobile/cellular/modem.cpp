@@ -36,7 +36,11 @@ Modem::Modem(QObject *parent, ModemManager::ModemDevice::Ptr mmDevice, NetworkMa
     
     // this is guaranteed to be a GSM modem
     m_mm3gppDevice = m_mmDevice->interface(ModemManager::ModemDevice::GsmInterface).objectCast<ModemManager::Modem3gpp>();
-    m_mm3gppDevice->setTimeout(60000); // scanning networks likely takes longer than the default timeout
+
+    // if no sim is inserted, m_mm3gppDevice is nullptr
+    if (m_mm3gppDevice) {
+        m_mm3gppDevice->setTimeout(60000); // scanning networks likely takes longer than the default timeout
+    }
 
     // add profiles
     refreshProfiles();

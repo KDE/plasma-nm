@@ -204,5 +204,5 @@ private:
     bool m_isCurrentlyUsed;
     QString m_operatorLong, m_operatorShort, m_operatorCode, m_accessTechnology;
 
-    ModemManager::Modem3gpp::Ptr m_mm3gppDevice;
+    ModemManager::Modem3gpp::Ptr m_mm3gppDevice; // this may be a nullptr if no sim is inserted
 };

@@ -115,8 +115,8 @@ private:
     ModemManager::ModemDevice::Ptr m_mmDevice;
     NetworkManager::ModemDevice::Ptr m_nmDevice;
     ModemManager::Modem::Ptr m_mmInterface = nullptr;
-    ModemManager::Modem3gpp::Ptr m_mm3gppDevice = nullptr;
-    
+    ModemManager::Modem3gpp::Ptr m_mm3gppDevice = nullptr; // this may be a nullptr if no sim is inserted
+
     QList<ProfileSettings *> m_profileList;
     
     MobileProviders *m_providers;

@@ -89,6 +89,7 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.label: "<b>" + i18n("SIM Lock:") + "</b>"
                 icon.name: "unlock"
                 text: i18n("Modify SIM Lock")
+                enabled: sim.enabled
                 onClicked: kcm.push("SimLock.qml", { "sim": sim });
             }
             

@@ -39,7 +39,6 @@ ModemDetails::ModemDetails(QObject *parent, Modem *modem)
         connect(m_modem->m_mm3gppDevice.data(), &ModemManager::Modem3gpp::registrationStateChanged, this, [this]() -> void { Q_EMIT registrationStateChanged(); Q_EMIT m_modem->isRoamingChanged(); });
     } else {
         qWarning() << "3gpp device not found!";
-        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Internal error: 3gpp device not found!");
     }
     
     connect(m_modem->m_nmDevice.data(), &NetworkManager::ModemDevice::firmwareVersionChanged, this, [this]() -> void { Q_EMIT firmwareVersionChanged(); });
@@ -117,9 +116,6 @@ QStringList ModemDetails::accessTechnologies()
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_5GNR) {
         list.push_back("5GNR");
-    }
-    if (flags & MM_MODEM_ACCESS_TECHNOLOGY_ANY) {
-        list.push_back("Any");
     }
     return list;
 }
@@ -580,7 +576,7 @@ QString AvailableNetwork::accessTechnology()
 
 void AvailableNetwork::registerToNetwork()
 {
-    if (!m_isCurrentlyUsed) {
+    if (!m_isCurrentlyUsed && m_mm3gppDevice) {
         m_mm3gppDevice->registerToNetwork(m_operatorCode);
     }
 }

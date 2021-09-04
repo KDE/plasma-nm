@@ -103,5 +103,5 @@ private:
     Modem *m_modem;
     ModemManager::Sim::Ptr m_mmSim;
     ModemManager::Modem::Ptr m_mmModem;
-    ModemManager::Modem3gpp::Ptr m_mmModem3gpp;
+    ModemManager::Modem3gpp::Ptr m_mmModem3gpp; // this may be a nullptr if no sim is inserted
 };

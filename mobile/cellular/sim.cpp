@@ -38,9 +38,11 @@ Sim::Sim(QObject *parent, Modem *modem, ModemManager::Sim::Ptr mmSim, ModemManag
         Q_EMIT lockedReasonChanged();
     });
 
-    connect(m_mmModem3gpp.data(), &ModemManager::Modem3gpp::enabledFacilityLocksChanged, this, [this]() -> void {
-        Q_EMIT pinEnabledChanged();
-    });
+    if (m_mmModem3gpp) {
+        connect(m_mmModem3gpp.data(), &ModemManager::Modem3gpp::enabledFacilityLocksChanged, this, [this]() -> void {
+            Q_EMIT pinEnabledChanged();
+        });
+    }
 }
 
 bool Sim::enabled()
@@ -50,7 +52,7 @@ bool Sim::enabled()
 
 bool Sim::pinEnabled()
 {
-    return m_mmModem3gpp->enabledFacilityLocks() & MM_MODEM_3GPP_FACILITY_SIM;
+    return m_mmModem3gpp && (m_mmModem3gpp->enabledFacilityLocks() & MM_MODEM_3GPP_FACILITY_SIM);
 }
 
 int Sim::unlockRetriesLeft()

@@ -1,5 +1,3 @@
-include_directories(${CMAKE_SOURCE_DIR}/libs/editor/widgets)
-
 add_subdirectory(fortisslvpn)
 add_subdirectory(iodine)
 add_subdirectory(l2tp)

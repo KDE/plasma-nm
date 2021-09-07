@@ -1,7 +1,5 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-kded\")
 
-include_directories(${CMAKE_SOURCE_DIR}/libs/editor/widgets)
-
 if (WITH_MODEMMANAGER_SUPPORT)
     set(kded_networkmanagement_SRCS
         ../libs/debug.cpp

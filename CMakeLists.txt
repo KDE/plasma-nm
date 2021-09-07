@@ -104,9 +104,6 @@ remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)
 
 add_definitions(-DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT})
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/libs
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libs/editor/)
-
 add_subdirectory(applet)
 add_subdirectory(kded)
 add_subdirectory(kcm)

@@ -1,5 +1,3 @@
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/widgets)
-
 set(plasmanm_editor_SRCS
     settings/bondwidget.cpp
     settings/bridgewidget.cpp
@@ -91,6 +89,14 @@ ki18n_wrap_ui(plasmanm_editor_SRCS
 )
 
 add_library(plasmanm_editor SHARED ${plasmanm_editor_SRCS})
+
+target_include_directories(plasmanm_editor
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/widgets
+    PRIVATE
+        ${CMAKE_SOURCE_DIR}/libs
+)
+
 target_link_libraries(plasmanm_editor
 PUBLIC
     KF5::ConfigWidgets

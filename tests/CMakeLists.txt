@@ -1,7 +1,3 @@
-include_directories( ${CMAKE_SOURCE_DIR}/libs/editor )
-
-########### next target ###############
-
 include(ECMAddTests)
 
 find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Test)

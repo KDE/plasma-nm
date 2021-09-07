@@ -18,6 +18,8 @@ set(plasmanm_internal_SRCS
 
 add_library(plasmanm_internal SHARED ${plasmanm_internal_SRCS})
 
+target_include_directories(plasmanm_internal PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/models)
+
 target_link_libraries(plasmanm_internal
 PUBLIC
     KF5::NetworkManagerQt

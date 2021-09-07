@@ -1,6 +1,3 @@
-include_directories(${CMAKE_SOURCE_DIR}/libs/editor
-                    ${CMAKE_SOURCE_DIR}/libs/editor/widgets)
-
 #KI18N Translation Domain for this library
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-kcm\")
 

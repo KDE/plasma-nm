@@ -17,3 +17,8 @@ ecm_add_test(
     simpleiplisttest.cpp
     LINK_LIBRARIES Qt::Test plasmanm_editor
 )
+
+ecm_add_test(
+    mobileproviderstest.cpp
+    LINK_LIBRARIES Qt::Test plasmanm_editor
+)

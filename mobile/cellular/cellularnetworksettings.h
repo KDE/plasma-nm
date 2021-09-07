@@ -29,6 +29,7 @@
 
 class Sim;
 class Modem;
+class MobileProviders;
 
 class InlineMessage : public QObject
 {

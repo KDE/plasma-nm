@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "mobileproviders.h"
 #include "modem.h"
 
 #include <QList>

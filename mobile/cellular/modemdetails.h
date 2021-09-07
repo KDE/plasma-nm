@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "mobileproviders.h"
 #include "sim.h"
 #include "modem.h"
 
@@ -49,7 +48,6 @@ class ModemDetails : public QObject {
     Q_PROPERTY(QString simPath READ simPath NOTIFY simPathChanged)
     Q_PROPERTY(QString state READ state NOTIFY stateChanged)
     Q_PROPERTY(QString stateFailedReason READ stateFailedReason NOTIFY stateFailedReasonChanged)
-    Q_PROPERTY(QStringList supportedCapabilities READ supportedCapabilities NOTIFY supportedCapabilitiesChanged)
     
     // modemmanager 3gpp device
     Q_PROPERTY(QString operatorCode READ operatorCode NOTIFY operatorCodeChanged)
@@ -86,7 +84,6 @@ public:
     QString simPath();
     QString state();
     QString stateFailedReason();
-    QStringList supportedCapabilities();
     
     QString operatorCode();
     QString operatorName();

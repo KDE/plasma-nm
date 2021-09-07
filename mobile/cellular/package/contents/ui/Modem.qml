@@ -99,23 +99,6 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.label: i18n("Failure Reason:")
                 text: modem.details.stateFailedReason
             }
-            ColumnLayout {
-                Kirigami.FormData.label: i18n("Supported Capabilities:")
-                Repeater {
-                    model: modem.details.supportedCapabilities
-                    Controls.Label {
-                        text: modelData
-                    }
-                }
-            }
-            Controls.Label {
-                Kirigami.FormData.label: i18n("Operator Code:")
-                text: modem.details.operatorCode
-            }
-            Controls.Label {
-                Kirigami.FormData.label: i18n("Operator Name:")
-                text: modem.details.operatorName
-            }
             Controls.Label {
                 Kirigami.FormData.label: i18n("Registration State:")
                 text: modem.details.registrationState

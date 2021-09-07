@@ -314,42 +314,34 @@ void Modem::updateProfile(QString connectionUni, QString name, QString apn, QStr
 
 void Modem::addDetectedProfileSettings()
 {
-    // load into cache
-    m_providers->fillProvidersList();
-
     bool found = false;
     
     if (m_mmDevice && hasSim()) {
-        QString operatorName = m_details->operatorName(); // operator currently connected to
-        if (operatorName == "") { // if not connected to a network, use the operator provided on the SIM
-            operatorName = m_mmDevice->sim()->operatorName();
-        }
-
-        qWarning() << "Detecting profile settings. Operator:" << operatorName;
-
         if (m_mm3gppDevice) {
             QString operatorCode = m_mm3gppDevice->operatorCode();
-            qWarning() << "Using MCCMNC:" << operatorCode << "Provider:" << m_providers->getProvider(operatorCode);
+            qWarning() << "Detecting profile settings. Using MCCMNC:" << operatorCode;
 
             // lookup apns with mccmnc codes
-            QStringList apns = m_providers->getApns(m_providers->getProvider(operatorCode));
-            for (auto apn : apns) {
-                QVariantMap apnInfo = m_providers->getApnInfo(apn);
-                qWarning() << "Found gsm profile settings. Type:" << apnInfo["usageType"];
-                
-                // only add mobile data apns (not mms)
-                if (apnInfo["usageType"].toString() == "internet") {
-                    found = true;
+            for (QString &provider : m_providers->getProvidersFromMCCMNC(operatorCode)) {
+                QStringList apns = m_providers->getApns(provider);
+                for (auto apn : apns) {
+                    QVariantMap apnInfo = m_providers->getApnInfo(apn);
+                    qWarning() << "Found gsm profile settings. Type:" << apnInfo["usageType"];
 
-                    QString name = operatorName;
-                    if (!apnInfo["name"].isNull()) {
-                        name += " - " + apnInfo["name"].toString();
+                    // only add mobile data apns (not mms)
+                    if (apnInfo["usageType"].toString() == "internet") {
+                        found = true;
+
+                        QString name = provider;
+                        if (!apnInfo["name"].isNull()) {
+                            name += " - " + apnInfo["name"].toString();
+                        }
+
+                        addProfile(name, apn, apnInfo["username"].toString(), apnInfo["password"].toString(), "4G/3G/2G");
                     }
-                    
-                    addProfile(name, apn, apnInfo["username"].toString(), apnInfo["password"].toString(), "4G/3G/2G");
+
+                    // TODO in the future for MMS settings, add else if here for == "mms"
                 }
-                
-                // TODO in the future for MMS settings, add else if here for == "mms"
             }
         }
     }

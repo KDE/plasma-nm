@@ -33,7 +33,6 @@ ModemDetails::ModemDetails(QObject *parent, Modem *modem)
     connect(mmInterfacePointer, &ModemManager::Modem::simPathChanged, this, [this]() -> void { Q_EMIT simPathChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::stateChanged, this, [this]() -> void { Q_EMIT stateChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::stateFailedReasonChanged, this, [this]() -> void { Q_EMIT stateFailedReasonChanged(); });
-    connect(mmInterfacePointer, &ModemManager::Modem::supportedCapabilitiesChanged, this, [this]() -> void { Q_EMIT supportedCapabilitiesChanged(); });
 
     if (m_modem->m_mm3gppDevice) {
         connect(m_modem->m_mm3gppDevice.data(), &ModemManager::Modem3gpp::operatorCodeChanged, this, [this]() -> void { Q_EMIT operatorCodeChanged(); });
@@ -241,40 +240,6 @@ QString ModemDetails::stateFailedReason()
             return i18n("SIM is available but unusable.");
     }
     return "";
-}
-
-QStringList ModemDetails::supportedCapabilities()
-{
-    QStringList list;
-    for (auto &cap : m_modem->m_mmInterface->supportedCapabilities()) {
-        switch (cap) {
-            case MM_MODEM_CAPABILITY_NONE:
-                list.push_back("None");
-                break;
-            case MM_MODEM_CAPABILITY_POTS:
-                list.push_back("POTS");
-                break;
-            case MM_MODEM_CAPABILITY_CDMA_EVDO:
-                list.push_back("CDMA/EVDO");
-                break;
-            case MM_MODEM_CAPABILITY_GSM_UMTS:
-                list.push_back("GSM/UMTS");
-                break;
-            case MM_MODEM_CAPABILITY_LTE:
-                list.push_back("LTE");
-                break;
-            case MM_MODEM_CAPABILITY_IRIDIUM:
-                list.push_back("Iridium");
-                break;
-            case MM_MODEM_CAPABILITY_5GNR:
-                list.push_back("5GNR");
-                break;
-            case MM_MODEM_CAPABILITY_ANY:
-                list.push_back("Any");
-                break;
-        }
-    }
-    return list;
 }
 
 QString ModemDetails::operatorCode()

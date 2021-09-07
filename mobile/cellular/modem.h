@@ -31,6 +31,7 @@ class ProfileSettings;
 class Sim;
 class AvailableNetwork;
 class ModemDetails;
+class MobileProviders;
 
 // only supports GSM/UMTS/LTE
 class Modem : public QObject {

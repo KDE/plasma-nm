@@ -1,16 +1,15 @@
-include_directories(${CMAKE_SOURCE_DIR}/libs/editor)
-
 set (cellularnetworksettings_SRCS 
     cellularnetworksettings.cpp 
     modem.cpp
     modemdetails.cpp
     sim.cpp
-    mobileproviders.cpp
 )
 
 add_library(kcm_cellular_network MODULE ${cellularnetworksettings_SRCS})
 
 target_link_libraries(kcm_cellular_network
+    plasmanm_editor
+    plasmanm_internal
     Qt5::DBus
     Qt5::Gui
     Qt5::Quick

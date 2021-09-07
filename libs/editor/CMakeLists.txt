@@ -117,6 +117,7 @@ PRIVATE
 
 if (WITH_MODEMMANAGER_SUPPORT)
     target_link_libraries(plasmanm_editor PUBLIC KF5::ModemManagerQt)
+    target_compile_definitions(plasmanm_editor PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")
 endif()
 
 install(TARGETS plasmanm_editor ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

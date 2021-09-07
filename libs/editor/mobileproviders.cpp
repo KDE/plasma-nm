@@ -11,7 +11,7 @@
 #include <QLocale>
 #include <QTextStream>
 
-const QString MobileProviders::ProvidersFile = "/usr/share/mobile-broadband-provider-info/serviceproviders.xml";
+const QString MobileProviders::ProvidersFile = QStringLiteral(BROADBANDPROVIDER_DATABASE);
 
 bool localeAwareCompare(const QString &one, const QString &two)
 {

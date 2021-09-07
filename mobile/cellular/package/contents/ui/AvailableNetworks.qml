@@ -1,20 +1,7 @@
 /*
- *   Copyright 2021 Devin Lin <espidev@gmail.com>
+ * SPDX-FileCopyrightText: 2021 Devin Lin <espidev@gmail.com>
  *
- *   This program is free software; you can redistribute it and/or modify
- *   it under the terms of the GNU Library General Public License as
- *   published by the Free Software Foundation; either version 2 or
- *   (at your option) any later version.
- *
- *   This program is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *   GNU Library General Public License for more details
- *
- *   You should have received a copy of the GNU Library General Public
- *   License along with this program; if not, write to the
- *   Free Software Foundation, Inc.,
- *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 import QtQuick 2.12
@@ -50,10 +37,10 @@ Kirigami.ScrollablePage {
             anchors.centerIn: parent
             visible: !modem.details.isScanningNetworks && listView.count == 0
             icon.name: "network-mobile-100"
-            text: i18n("Current operator: ") + (modem.details.operatorName ? modem.details.operatorName : i18n("none"))
+            text: i18n("Current operator: %1", modem.details.operatorName ? modem.details.operatorName : i18n("none"))
             helpfulAction: Kirigami.Action {
                 icon.name: "view-refresh"
-                text: "Scan For Networks"
+                text: i18n("Scan For Networks")
                 enabled: !modem.details.isScanningNetworks
                 onTriggered: modem.details.scanNetworks()
             }

@@ -1,5 +1,3 @@
-project (kcm_cellular_network)
-
 include_directories(${CMAKE_SOURCE_DIR}/libs/editor)
 
 set (cellularnetworksettings_SRCS 

@@ -242,7 +242,7 @@ void Modem::addProfile(QString name, QString apn, QString username, QString pass
     settings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
     settings->setAutoconnect(true);
     settings->addToPermissions(KUser().loginName(), QString());
-    
+
     NetworkManager::GsmSetting::Ptr gsmSetting = settings->setting(NetworkManager::Setting::Gsm).dynamicCast<NetworkManager::GsmSetting>();
     gsmSetting->setApn(apn);
     gsmSetting->setUsername(username);
@@ -251,6 +251,8 @@ void Modem::addProfile(QString name, QString apn, QString username, QString pass
     gsmSetting->setNetworkType(ProfileSettings::networkTypeFlag(networkType));
     gsmSetting->setHomeOnly(!isRoaming());
 
+    gsmSetting->setInitialized(true);
+
     QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addAndActivateConnection(settings->toMap(), m_nmDevice->uni(), "");
     reply.waitForFinished();
     if (reply.isError()) {
@@ -258,12 +260,6 @@ void Modem::addProfile(QString name, QString apn, QString username, QString pass
         CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error adding connection: " + reply.error().message());
     } else {
         qDebug() << "Successfully added a new connection" << name << "with APN" << apn << ".";
-
-        // HACK: TODO GSM settings don't seem to get set when adding the connection, mm-qt bug?
-        QString path = reply.value().path();
-        QMetaObject::invokeMethod(this, [this, path, name, apn, username, password, networkType] {
-            updateProfile(path, name, apn, username, password, networkType);
-        });
     }
 }
 
@@ -295,7 +291,9 @@ void Modem::updateProfile(QString connectionUni, QString name, QString apn, QStr
             gsmSetting->setPasswordFlags(password == "" ? NetworkManager::Setting::NotRequired : NetworkManager::Setting::AgentOwned);
             gsmSetting->setNetworkType(ProfileSettings::networkTypeFlag(networkType));
             gsmSetting->setHomeOnly(!isRoaming());
-            
+
+            gsmSetting->setInitialized(true);
+
             QDBusPendingReply reply = con->update(conSettings->toMap());
             reply.waitForFinished();
             if (reply.isError()) {

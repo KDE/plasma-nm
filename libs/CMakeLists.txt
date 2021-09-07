@@ -22,7 +22,7 @@ target_link_libraries(plasmanm_internal
 PUBLIC
     KF5::NetworkManagerQt
     plasmanm_editor
-    ${NETWORKMANAGER_LIBRARIES}
+    PkgConfig::NETWORKMANAGER
 PRIVATE
     KF5::I18n
     KF5::Notifications

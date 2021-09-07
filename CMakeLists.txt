@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ################# set KDE specific information #################
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH}  ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
@@ -66,18 +66,6 @@ set_package_properties(KF5Kirigami2 PROPERTIES
     TYPE RUNTIME
 )
 
-
-# Required only for getting information about NetworkManager version in CMake
-find_package(NetworkManager 1.4.0)
-set_package_properties(NetworkManager PROPERTIES
-                       TYPE REQUIRED)
-
-find_package(MobileBroadbandProviderInfo)
-set_package_properties(MobileBroadbandProviderInfo PROPERTIES
-                       DESCRIPTION "Database of mobile broadband service providers"
-                       URL "https://wiki.gnome.org/action/show/Projects/NetworkManager/MobileBroadband/ServiceProviders"
-                       TYPE OPTIONAL)
-
 find_package(Qca-qt5 2.1.0)
 set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Support for encryption"
                        URL "https://download.kde.org/stable/qca-qt5/"
@@ -92,6 +80,8 @@ set_package_properties(KF5Prison PROPERTIES DESCRIPTION "Prison library"
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(OPENCONNECT IMPORTED_TARGET openconnect>3.99)
+pkg_check_modules(NETWORKMANAGER IMPORTED_TARGET libnm>1.4.0 REQUIRED)
+pkg_check_modules(MOBILEBROADBANDPROVIDERINFO mobile-broadband-provider-info)
 
 if (DISABLE_MODEMMANAGER_SUPPORT)
     message(STATUS "Disabling ModemManager support")

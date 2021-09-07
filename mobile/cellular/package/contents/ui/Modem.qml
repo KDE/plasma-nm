@@ -30,7 +30,7 @@ Kirigami.ScrollablePage {
         Kirigami.FormLayout {
             Layout.margins: Kirigami.Units.gridUnit
             ColumnLayout {
-                Kirigami.FormData.label: "<b>" + i18n("Modem Control:") + "</b>"
+                Kirigami.FormData.label: i18n("Modem Control:")
                 
                 Controls.Button {
                     icon.name: "network-modem"
@@ -50,7 +50,7 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.isSection: true
             }
             ColumnLayout {
-                Kirigami.FormData.label: "<b>" + i18n("Access Technologies:") + "</b>"
+                Kirigami.FormData.label: i18n("Access Technologies:")
                 Repeater {
                     model: modem.details.accessTechnologies
                     Controls.Label {
@@ -59,23 +59,23 @@ Kirigami.ScrollablePage {
                 }
             }
             Controls.Label {
-                Kirigami.FormData.label: "<b>" + i18n("IMEI:") + "</b>"
+                Kirigami.FormData.label: i18n("IMEI:")
                 text: modem.details.equipmentIdentifier
             }
             Controls.Label {
-                Kirigami.FormData.label: "<b>" + i18n("Enabled:") + "</b>"
+                Kirigami.FormData.label: i18n("Enabled:")
                 text: modem.details.isEnabled
             }
             Controls.Label {
-                Kirigami.FormData.label: "<b>" + i18n("Manufacturer:") + "</b>"
+                Kirigami.FormData.label: i18n("Manufacturer:")
                 text: modem.details.manufacturer
             }
             Controls.Label {
-                Kirigami.FormData.label: "<b>" + i18n("Model:") + "</b>"
+                Kirigami.FormData.label: i18n("Model:")
                 text: modem.details.model
             }
             ColumnLayout {
-                Kirigami.FormData.label: "<b>" + i18n("Owned Numbers:") + "</b>"
+                Kirigami.FormData.label: i18n("Owned Numbers:")
                 Repeater {
                     model: modem.details.ownNumbers
                     Controls.Label {
@@ -136,14 +136,6 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.label: "<b>" + i18n("Metered:") + "</b>"
                 text: modem.details.metered
             }
-            Controls.Label { 
-                Kirigami.FormData.label: "<b>" + i18n("Incoming data:") + "</b>"
-                text: modem.details.rxBytes
-            }
-            Controls.Label { 
-                Kirigami.FormData.label: "<b>" + i18n("Outgoing data:") + "</b>"
-                text: modem.details.txBytes
-            }
             
             // extra info
             Controls.Button {
@@ -177,38 +169,13 @@ Kirigami.ScrollablePage {
                 }
             }
             Controls.Label {
-                Kirigami.FormData.label: "<b>" + i18n("Maximum Active Bearers:") + "</b>"
-                text: modem.details.maxActiveBearers
-                visible: showExtra
-            }
-            Controls.Label {
-                Kirigami.FormData.label: "<b>" + i18n("Maximum Total Bearers:") + "</b>"
-                text: modem.details.maxBearers
-                visible: showExtra
-            }
-            Controls.Label {
                 Kirigami.FormData.label: "<b>" + i18n("Plugin:") + "</b>"
                 text: modem.details.plugin
                 visible: showExtra
             }
-            ColumnLayout {
-                Kirigami.FormData.label: "<b>" + i18n("Ports:") + "</b>"
-                visible: showExtra
-                Repeater {
-                    model: modem.details.ports
-                    Controls.Label {
-                        text: modelData
-                    }
-                }
-            }
             Controls.Label {
                 Kirigami.FormData.label: "<b>" + i18n("Power State:") + "</b>"
                 text: modem.details.powerState
-                visible: showExtra
-            }
-            Controls.Label {
-                Kirigami.FormData.label: "<b>" + i18n("Primary Port:") + "</b>"
-                text: modem.details.primaryPort
                 visible: showExtra
             }
             Controls.Label {

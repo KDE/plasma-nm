@@ -73,7 +73,7 @@ SimpleKCM {
                 
                 Controls.CheckBox {
                     id: mobileDataCheckbox
-                    Kirigami.FormData.label: "<b>" + i18n("Mobile data:") + "</b>"
+                    Kirigami.FormData.label: i18n("Mobile data:")
                     text: checked ? i18n("On") : i18n("Off")
                     enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable
                     
@@ -86,7 +86,7 @@ SimpleKCM {
                 }
                 
                 Controls.Button {
-                    Kirigami.FormData.label: "<b>" + i18n("Data Usage:") + "</b>"
+                    Kirigami.FormData.label: i18n("Data Usage:")
                     text: i18n("View Data Usage")
                     icon.name: "office-chart-bar"
                     enabled: false // TODO

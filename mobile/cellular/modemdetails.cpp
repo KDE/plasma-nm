@@ -24,14 +24,10 @@ ModemDetails::ModemDetails(QObject *parent, Modem *modem)
     connect(mmInterfacePointer, &ModemManager::Modem::driversChanged, this, [this]() -> void { Q_EMIT driversChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::equipmentIdentifierChanged, this, [this]() -> void { Q_EMIT equipmentIdentifierChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::manufacturerChanged, this, [this]() -> void { Q_EMIT manufacturerChanged(); });
-    connect(mmInterfacePointer, &ModemManager::Modem::maxActiveBearersChanged, this, [this]() -> void { Q_EMIT maxActiveBearersChanged(); });
-    connect(mmInterfacePointer, &ModemManager::Modem::maxBearersChanged, this, [this]() -> void { Q_EMIT maxBearersChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::modelChanged, this, [this]() -> void { Q_EMIT modelChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::ownNumbersChanged, this, [this]() -> void { Q_EMIT ownNumbersChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::pluginChanged, this, [this]() -> void { Q_EMIT pluginChanged(); });
-    connect(mmInterfacePointer, &ModemManager::Modem::portsChanged, this, [this]() -> void { Q_EMIT portsChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::powerStateChanged, this, [this]() -> void { Q_EMIT powerStateChanged(); });
-    connect(mmInterfacePointer, &ModemManager::Modem::primaryPortChanged, this, [this]() -> void { Q_EMIT primaryPortChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::revisionChanged, this, [this]() -> void { Q_EMIT revisionChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::signalQualityChanged, this, [this]() -> void { Q_EMIT signalQualityChanged(); });
     connect(mmInterfacePointer, &ModemManager::Modem::simPathChanged, this, [this]() -> void { Q_EMIT simPathChanged(); });
@@ -50,8 +46,6 @@ ModemDetails::ModemDetails(QObject *parent, Modem *modem)
     connect(m_modem->m_nmDevice.data(), &NetworkManager::ModemDevice::firmwareVersionChanged, this, [this]() -> void { Q_EMIT firmwareVersionChanged(); });
     connect(m_modem->m_nmDevice.data(), &NetworkManager::ModemDevice::interfaceNameChanged, this, [this]() -> void { Q_EMIT interfaceNameChanged(); });
     connect(m_modem->m_nmDevice.data(), &NetworkManager::ModemDevice::meteredChanged, this, [this]() -> void { Q_EMIT meteredChanged(); });
-    connect(m_modem->m_nmDevice->deviceStatistics().data(), &NetworkManager::DeviceStatistics::rxBytesChanged, this, [this]() -> void { Q_EMIT rxBytesChanged(); });
-    connect(m_modem->m_nmDevice->deviceStatistics().data(), &NetworkManager::DeviceStatistics::txBytesChanged, this, [this]() -> void { Q_EMIT txBytesChanged(); });
 }
 
 ModemDetails &ModemDetails::operator=(ModemDetails &&other)
@@ -156,16 +150,6 @@ QString ModemDetails::manufacturer()
     return m_modem->m_mmInterface->manufacturer();
 }
 
-uint ModemDetails::maxActiveBearers()
-{
-    return m_modem->m_mmInterface->maxActiveBearers();
-}
-
-uint ModemDetails::maxBearers()
-{
-    return m_modem->m_mmInterface->maxBearers();
-}
-
 QString ModemDetails::model()
 {
     return m_modem->m_mmInterface->model();
@@ -181,45 +165,6 @@ QString ModemDetails::plugin()
     return m_modem->m_mmInterface->plugin();
 }
 
-QStringList ModemDetails::ports()
-{
-    QStringList ports;
-    for (auto &port : m_modem->m_mmInterface->ports()) {
-        QString qs = port.name;
-        switch (port.type) {
-            case MM_MODEM_PORT_TYPE_UNKNOWN:
-                qs += " [Unknown]";
-                break;
-            case MM_MODEM_PORT_TYPE_NET:
-                qs += " [Net]";
-                break;
-            case MM_MODEM_PORT_TYPE_AT:
-                qs += " [AT]";
-                break;
-            case MM_MODEM_PORT_TYPE_QCDM:
-                qs += " [QCDM]";
-                break;
-            case MM_MODEM_PORT_TYPE_GPS:
-                qs += " [GPS]";
-                break;
-            case MM_MODEM_PORT_TYPE_QMI:
-                qs += " [QMI]";
-                break;
-            case MM_MODEM_PORT_TYPE_MBIM:
-                qs += " [MBIM]";
-                break;
-            case MM_MODEM_PORT_TYPE_AUDIO:
-                qs += " [Audio]";
-                break;
-            case MM_MODEM_PORT_TYPE_IGNORED:
-                qs += " [Ignored]";
-                break;
-        }
-        ports.push_back(qs);
-    }
-    return ports;
-}
-
 QString ModemDetails::powerState()
 {
     switch (m_modem->m_mmInterface->powerState()) {
@@ -233,11 +178,6 @@ QString ModemDetails::powerState()
             return i18n("Full power mode");
     }
     return "";
-}
-
-QString ModemDetails::primaryPort()
-{
-    return m_modem->m_mmInterface->primaryPort();
 }
 
 QString ModemDetails::revision()
@@ -470,16 +410,6 @@ QString ModemDetails::metered()
             return i18n("GuessNo");
     }
     return QString{};
-}
-
-QString ModemDetails::rxBytes()
-{
-    return QString((uint) m_modem->m_nmDevice->deviceStatistics()->rxBytes()) + " B/s";
-}
-
-QString ModemDetails::txBytes()
-{
-    return QString((uint) m_modem->m_nmDevice->deviceStatistics()->txBytes()) + " B/s";
 }
 
 AvailableNetwork::AvailableNetwork(QObject *parent,

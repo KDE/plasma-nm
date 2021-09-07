@@ -92,7 +92,7 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.isSection: true
             }
             Controls.Label {
-                Kirigami.FormData.label: i18n("Is Locked:")
+                Kirigami.FormData.label: i18n("Locked:")
                 text: sim.locked ? i18n("Yes") : i18n("No")
             }
             Controls.Label {

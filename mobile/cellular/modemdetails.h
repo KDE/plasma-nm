@@ -40,14 +40,10 @@ class ModemDetails : public QObject {
     // TODO add bands
     Q_PROPERTY(bool isEnabled READ isEnabled NOTIFY isEnabledChanged)
     Q_PROPERTY(QString manufacturer READ manufacturer NOTIFY manufacturerChanged)
-    Q_PROPERTY(uint maxActiveBearers READ maxActiveBearers NOTIFY maxActiveBearersChanged)
-    Q_PROPERTY(uint maxBearers READ maxBearers NOTIFY maxBearersChanged)
     Q_PROPERTY(QString model READ model NOTIFY modelChanged)
     Q_PROPERTY(QStringList ownNumbers READ ownNumbers NOTIFY ownNumbersChanged)
     Q_PROPERTY(QString plugin READ plugin NOTIFY pluginChanged)
-    Q_PROPERTY(QStringList ports READ ports NOTIFY portsChanged)
     Q_PROPERTY(QString powerState READ powerState NOTIFY powerStateChanged)
-    Q_PROPERTY(QString primaryPort READ primaryPort NOTIFY primaryPortChanged)
     Q_PROPERTY(QString revision READ revision NOTIFY revisionChanged)
     Q_PROPERTY(uint signalQuality READ signalQuality NOTIFY signalQualityChanged)
     Q_PROPERTY(QString simPath READ simPath NOTIFY simPathChanged)
@@ -66,8 +62,6 @@ class ModemDetails : public QObject {
     Q_PROPERTY(QString firmwareVersion READ firmwareVersion NOTIFY firmwareVersionChanged)
     Q_PROPERTY(QString interfaceName READ interfaceName NOTIFY interfaceNameChanged)
     Q_PROPERTY(QString metered READ metered NOTIFY meteredChanged)
-    Q_PROPERTY(QString rxBytes READ rxBytes NOTIFY rxBytesChanged)
-    Q_PROPERTY(QString txBytes READ rxBytes NOTIFY txBytesChanged)
     
 public:
     ModemDetails(QObject *parent = nullptr, Modem *modem = nullptr);
@@ -86,9 +80,7 @@ public:
     QString model();
     QStringList ownNumbers();
     QString plugin();
-    QStringList ports();
     QString powerState();
-    QString primaryPort();
     QString revision();
     uint signalQuality();
     QString simPath();
@@ -108,8 +100,6 @@ public:
     QString firmwareVersion();
     QString interfaceName();
     QString metered();
-    QString rxBytes();
-    QString txBytes();
     
 Q_SIGNALS:
     void accessTechnologiesChanged();
@@ -119,14 +109,10 @@ Q_SIGNALS:
     void equipmentIdentifierChanged();
     void isEnabledChanged();
     void manufacturerChanged();
-    void maxActiveBearersChanged();
-    void maxBearersChanged();
     void modelChanged();
     void ownNumbersChanged();
     void pluginChanged();
-    void portsChanged();
     void powerStateChanged();
-    void primaryPortChanged();
     void revisionChanged();
     void signalQualityChanged();
     void simPathChanged();
@@ -143,8 +129,6 @@ Q_SIGNALS:
     void firmwareVersionChanged();
     void interfaceNameChanged();
     void meteredChanged();
-    void rxBytesChanged();
-    void txBytesChanged();
     
 private:
     Modem *m_modem;

@@ -210,6 +210,76 @@ QStringList MobileProviders::getApns(const QString &provider)
     return temp;
 }
 
+ProviderData MobileProviders::parseProvider(const QDomNode &providerNode)
+{
+    ProviderData result;
+
+    QMap<QString, QString> localizedProviderNames;
+
+    QDomNode c = providerNode.firstChild(); // <name | gsm | cdma>
+
+    while (!c.isNull()) {
+        QDomElement ce = c.toElement();
+
+        if (ce.tagName().toLower() == QLatin1String("gsm")) {
+            QDomNode gsmNode = c.firstChild();
+
+            while (!gsmNode.isNull()) {
+                QDomElement gsmElement = gsmNode.toElement();
+
+                if (gsmElement.tagName().toLower() == QLatin1String("network-id")) {
+                    result.mccmncs.append(gsmElement.attribute("mcc") + gsmElement.attribute("mnc"));
+                }
+                gsmNode = gsmNode.nextSibling();
+            }
+        } else if (ce.tagName().toLower() == QLatin1String("name")) {
+            QString lang = ce.attribute("xml:lang");
+            if (lang.isEmpty()) {
+                lang = "en"; // English is default
+            } else {
+                lang = lang.toLower();
+                lang.remove(QRegExp("\\-.*$")); // Remove everything after '-' in xml:lang attribute.
+            }
+            localizedProviderNames.insert(lang, ce.text());
+        }
+        c = c.nextSibling();
+    }
+
+    result.name = getNameByLocale(localizedProviderNames);
+
+    return result;
+}
+
+QStringList MobileProviders::getProvidersFromMCCMNC(const QString &targetMccMnc)
+{
+    QStringList result;
+
+    QDomNode n = docElement.firstChild();
+
+    while (!n.isNull()) {
+        QDomElement e = n.toElement(); // <country ...>
+
+        if (!e.isNull()) {
+            QDomNode n2 = e.firstChild();
+            while (!n2.isNull()) {
+                QDomElement e2 = n2.toElement(); // <provider ...>
+
+                if (!e2.isNull() && e2.tagName().toLower() == "provider") {
+                    ProviderData data = parseProvider(e2);
+
+                    if (data.mccmncs.contains(targetMccMnc)) {
+                        result << data.name;
+                    }
+                }
+                n2 = n2.nextSibling();
+            }
+        }
+        n = n.nextSibling();
+    }
+
+    return result;
+}
+
 QStringList MobileProviders::getNetworkIds(const QString &provider)
 {
     if (mNetworkIds.isEmpty()) {

@@ -14,6 +14,11 @@
 
 #include <NetworkManagerQt/ConnectionSettings>
 
+struct ProviderData {
+    QStringList mccmncs;
+    QString name;
+};
+
 class Q_DECL_EXPORT MobileProviders
 {
 public:
@@ -35,6 +40,7 @@ public:
     QStringList getNetworkIds(const QString &provider);
     QVariantMap getApnInfo(const QString &apn);
     QVariantMap getCdmaInfo(const QString &provider);
+    QStringList getProvidersFromMCCMNC(const QString &mccmnc);
     QString getGsmNumber() const
     {
         return QString("*99#");
@@ -49,7 +55,10 @@ public:
     }
 
 private:
+    ProviderData parseProvider(const QDomNode &providerNode);
+
     QHash<QString, QString> mCountries;
+    QHash<QString, QString> mMccMncToName;
     QMap<QString, QDomNode> mProvidersGsm;
     QMap<QString, QDomNode> mProvidersCdma;
     QMap<QString, QDomNode> mApns;

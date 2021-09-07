@@ -48,8 +48,6 @@ class Modem : public QObject {
 public:
     Modem(QObject *parent = nullptr) : QObject{ parent } {}
     Modem(QObject *parent, ModemManager::ModemDevice::Ptr mmDevice, NetworkManager::ModemDevice::Ptr nmDevice, ModemManager::Modem::Ptr m_mmInterface, MobileProviders *providers);
-    Modem &operator=(Modem &&other);
-    void swap(Modem &other);
     
     ModemDetails *modemDetails();
     QString displayId(); // splits uni and obtains the number suffix
@@ -150,5 +148,10 @@ Q_SIGNALS:
     void connectionUniChanged();
 
 private:
-    QString m_name, m_apn, m_user, m_password, m_networkType, m_connectionUni;
+    QString m_name;
+    QString m_apn;
+    QString m_user;
+    QString m_password;
+    QString m_networkType;
+    QString m_connectionUni;
 };

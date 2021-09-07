@@ -66,7 +66,7 @@ Kirigami.ScrollablePage {
                 icon.name: "unlock"
                 helpfulAction: Kirigami.Action {
                     icon.name: "lock"
-                    text: "Lock SIM"
+                    text: i18n("Lock SIM")
                     onTriggered: createPinDialog.open()
                 }
             }

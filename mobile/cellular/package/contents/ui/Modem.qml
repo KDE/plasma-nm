@@ -13,7 +13,7 @@ import cellularnetworkkcm 1.0
 
 Kirigami.ScrollablePage {
     id: modemPage
-    title: i18n("Modem") + " " + modem.displayId
+    title: i18n("Modem %1", modem.displayId)
     padding: 0
     
     property Modem modem
@@ -46,7 +46,7 @@ Kirigami.ScrollablePage {
             }
             
             Kirigami.Separator {
-                Kirigami.FormData.label: "Modem Details"
+                Kirigami.FormData.label: i18n("Modem Details")
                 Kirigami.FormData.isSection: true
             }
             ColumnLayout {
@@ -122,7 +122,7 @@ Kirigami.ScrollablePage {
             }
             Controls.Label { 
                 Kirigami.FormData.label: "<b>" + i18n("Roaming:") + "</b>"
-                text: modem.isRoaming ? "Yes" : "No"
+                text: modem.isRoaming ? i18n("Yes") : i18n("No")
             }
             Controls.Label { 
                 Kirigami.FormData.label: "<b>" + i18n("Firmware Version:") + "</b>"

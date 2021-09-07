@@ -59,7 +59,7 @@ PopupDialog {
             Controls.ComboBox {
                 id: profileNetworkType
                 Kirigami.FormData.label: i18n("Network type")
-                model: ["4G/3G/2G", "3G/2G", "2G", "Only 4G", "Only 3G", "Only 2G", "Any"]
+                model: [i18n("4G/3G/2G"), i18n("3G/2G"), i18n("2G"), i18n("Only 4G"), i18n("Only 3G"), i18n("Only 2G"), i18n("Any")]
                 Component.onCompleted: {
                     if (profile != null) {
                         currentIndex = indexOfValue(profile.networkType)

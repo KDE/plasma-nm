@@ -93,7 +93,7 @@ SimpleKCM {
                 }
                 
                 Kirigami.Separator {
-                    Kirigami.FormData.label: kcm.sims.count == 1 ? "SIM" : "SIMs"
+                    Kirigami.FormData.label: kcm.sims.count == 1 ? i18n("SIM") : i18n("SIMs")
                     Kirigami.FormData.isSection: true
                 }
                 
@@ -101,7 +101,7 @@ SimpleKCM {
                     model: kcm.sims
                     
                     delegate: Kirigami.BasicListItem {
-                        label: "SIM " + modelData.displayId
+                        label: i18n("SIM %1", modelData.displayId)
                         icon: "auth-sim-symbolic"
                         onClicked: kcm.push("Sim.qml", { "sim": modelData })
                     }

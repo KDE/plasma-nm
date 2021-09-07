@@ -43,23 +43,6 @@ Modem::Modem(QObject *parent, ModemManager::ModemDevice::Ptr mmDevice, NetworkMa
     m_details = new ModemDetails(this, this);
 }
 
-Modem &Modem::operator=(Modem &&other)
-{
-    swap(other);
-    return *this;
-}
-
-void Modem::swap(Modem &other)
-{
-    std::swap(m_details, other.m_details);
-    std::swap(m_nmDevice, other.m_nmDevice);
-    std::swap(m_mmDevice, other.m_mmDevice);
-    std::swap(m_mmInterface, other.m_mmInterface);
-    std::swap(m_mm3gppDevice, other.m_mm3gppDevice);
-    std::swap(m_profileList, other.m_profileList);
-    std::swap(m_providers, other.m_providers);
-}
-
 ModemDetails *Modem::modemDetails()
 {
     return m_details;

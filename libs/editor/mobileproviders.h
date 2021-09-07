@@ -14,7 +14,7 @@
 
 #include <NetworkManagerQt/ConnectionSettings>
 
-class MobileProviders
+class Q_DECL_EXPORT MobileProviders
 {
 public:
     static const QString ProvidersFile;

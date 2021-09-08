@@ -66,14 +66,6 @@ PopupDialog {
                     }
                 }
             }
-            Controls.Button {
-                icon.name: "list-add"
-                text: i18n("Autodetect Settings")
-                onClicked: {
-                    dialog.close();
-                    modem.addDetectedProfileSettings();
-                }
-            }
         }
     }
 }

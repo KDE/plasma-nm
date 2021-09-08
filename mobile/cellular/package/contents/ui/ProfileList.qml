@@ -102,6 +102,29 @@ Kirigami.ScrollablePage {
                     }
                 }
             }
+            
+            Kirigami.SwipeListItem {
+                Layout.fillWidth: true
+                onClicked: {
+                    modem.addDetectedProfileSettings();
+                }
+                
+                contentItem: Row {
+                    spacing: Kirigami.Units.smallSpacing
+                    Kirigami.Icon {
+                        anchors.verticalCenter: parent.verticalCenter
+                        source: "list-add"
+                        height: Kirigami.Units.gridUnit * 1.5
+                        width: height
+                    }
+                    Kirigami.Heading {
+                        level: 3
+                        anchors.verticalCenter: parent.verticalCenter
+                        Layout.alignment: Qt.AlignLeft
+                        text: i18n("Autodetect APN")
+                    }
+                }
+            }
         }
         
         delegate: Kirigami.SwipeListItem {

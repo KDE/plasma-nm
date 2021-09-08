@@ -39,7 +39,7 @@ ModemDetails::ModemDetails(QObject *parent, Modem *modem)
         connect(m_modem->m_mm3gppDevice.data(), &ModemManager::Modem3gpp::operatorNameChanged, this, [this]() -> void { Q_EMIT operatorNameChanged(); });
         connect(m_modem->m_mm3gppDevice.data(), &ModemManager::Modem3gpp::registrationStateChanged, this, [this]() -> void { Q_EMIT registrationStateChanged(); Q_EMIT m_modem->isRoamingChanged(); });
     } else {
-        qWarning() << "3gpp device not found!";
+        qWarning() << QStringLiteral("3gpp device not found!");
     }
     
     connect(m_modem->m_nmDevice.data(), &NetworkManager::ModemDevice::firmwareVersionChanged, this, [this]() -> void { Q_EMIT firmwareVersionChanged(); });
@@ -66,55 +66,55 @@ QStringList ModemDetails::accessTechnologies()
     QStringList list;
     auto flags = m_modem->m_mmInterface->accessTechnologies();
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_UNKNOWN) {
-        list.push_back("Unknown");
+        list.push_back(i18n("Unknown"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_POTS) {
-        list.push_back("POTS");
+        list.push_back(i18n("POTS"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_GSM) {
-        list.push_back("GSM");
+        list.push_back(i18n("GSM"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_GSM_COMPACT) {
-        list.push_back("GSM Compact");
+        list.push_back(i18n("GSM Compact"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_GPRS) {
-        list.push_back("GPRS");
+        list.push_back(i18n("GPRS"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_EDGE) {
-        list.push_back("EDGE");
+        list.push_back(i18n("EDGE"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_UMTS) {
-        list.push_back("UMTS");
+        list.push_back(i18n("UMTS"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_HSDPA) {
-        list.push_back("HSDPA");
+        list.push_back(i18n("HSDPA"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_HSUPA) {
-        list.push_back("HSUPA");
+        list.push_back(i18n("HSUPA"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_HSPA) {
-        list.push_back("HSPA");
+        list.push_back(i18n("HSPA"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_HSPA_PLUS) {
-        list.push_back("HSPA+");
+        list.push_back(i18n("HSPA+"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_1XRTT) {
-        list.push_back("CDMA2000 1xRTT");
+        list.push_back(i18n("CDMA2000 1xRTT"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_EVDO0) {
-        list.push_back("CDMA2000 EVDO-0");
+        list.push_back(i18n("CDMA2000 EVDO-0"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_EVDOA) {
-        list.push_back("CDMA2000 EVDO-A");
+        list.push_back(i18n("CDMA2000 EVDO-A"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_EVDOB) {
-        list.push_back("CDMA2000 EVDO-B");
+        list.push_back(i18n("CDMA2000 EVDO-B"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_LTE) {
-        list.push_back("LTE");
+        list.push_back(i18n("LTE"));
     }
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_5GNR) {
-        list.push_back("5GNR");
+        list.push_back(i18n("5GNR"));
     }
     return list;
 }
@@ -176,7 +176,7 @@ QString ModemDetails::powerState()
         case MM_MODEM_POWER_STATE_ON:
             return i18n("Full power mode");
     }
-    return "";
+    return {};
 }
 
 QString ModemDetails::revision()
@@ -224,7 +224,7 @@ QString ModemDetails::state()
         case MM_MODEM_STATE_CONNECTED:
             return i18n("Connected");
     }
-    return "";
+    return {};
 }
 
 QString ModemDetails::stateFailedReason()
@@ -239,7 +239,7 @@ QString ModemDetails::stateFailedReason()
         case MM_MODEM_STATE_FAILED_REASON_SIM_ERROR:
             return i18n("SIM is available but unusable.");
     }
-    return "";
+    return {};
 }
 
 QString ModemDetails::operatorCode()
@@ -284,7 +284,7 @@ QString ModemDetails::registrationState()
         case MM_MODEM_3GPP_REGISTRATION_STATE_ATTACHED_RLOS:
             return i18n("Attached for access to Restricted Local Operator Services.");
     }
-    return "";
+    return {};
 }
 
 Q_DECLARE_METATYPE(MMModem3gppNetworkAvailability)
@@ -301,8 +301,8 @@ Q_INVOKABLE void ModemDetails::scanNetworks()
     m_cachedScannedNetworks.clear();
     
     if (m_modem->m_mm3gppDevice) {
-        qDebug() << "Scanning for available networks...";
-        
+        qDebug() << QStringLiteral("Scanning for available networks...");
+
         QDBusPendingReply<ModemManager::QVariantMapList> reply = m_modem->m_mm3gppDevice->scan();
         
         m_isScanningNetworks = true;
@@ -318,22 +318,22 @@ void ModemDetails::scanNetworksFinished(QDBusPendingCallWatcher *call)
 {
     QDBusPendingReply<ModemManager::QVariantMapList> reply = *call;
     if (reply.isError()) {
-        qDebug() << "Scanning failed:" << reply.error().message();
-        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Scanning networks failed: " + reply.error().message());
+        qDebug() << QStringLiteral("Scanning failed:") << reply.error().message();
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Scanning networks failed: %1", reply.error().message()));
     } else {
         ModemManager::QVariantMapList list = reply.value();
         
         for (auto &var : list) {
-            auto status = var["status"].value<MMModem3gppNetworkAvailability>();
-            
+            auto status = var[QStringLiteral("status")].value<MMModem3gppNetworkAvailability>();
+
             if (status == MM_MODEM_3GPP_NETWORK_AVAILABILITY_CURRENT || status == MM_MODEM_3GPP_NETWORK_AVAILABILITY_AVAILABLE) {
                 auto network = new AvailableNetwork{this,
                                                     m_modem->m_mm3gppDevice,
                                                     status == MM_MODEM_3GPP_NETWORK_AVAILABILITY_CURRENT,
-                                                    var["operator-long"].toString(),
-                                                    var["operator-short"].toString(),
-                                                    var["operator-code"].toString(),
-                                                    var["access-technology"].value<MMModemAccessTechnology>()};
+                                                    var[QStringLiteral("operator-long")].toString(),
+                                                    var[QStringLiteral("operator-short")].toString(),
+                                                    var[QStringLiteral("operator-code")].toString(),
+                                                    var[QStringLiteral("access-technology")].value<MMModemAccessTechnology>()};
                 m_cachedScannedNetworks.push_back(network);
             }
         }

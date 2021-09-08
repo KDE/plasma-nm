@@ -33,12 +33,16 @@ Modem::Modem(QObject *parent, ModemManager::ModemDevice::Ptr mmDevice, NetworkMa
     refreshProfiles();
     connect(m_nmDevice.data(), &NetworkManager::ModemDevice::availableConnectionChanged, this, [this]() -> void { refreshProfiles(); });
     connect(m_nmDevice.data(), &NetworkManager::ModemDevice::activeConnectionChanged, this, [this]() -> void { refreshProfiles(); Q_EMIT activeConnectionUniChanged(); });
-    
-    connect(m_nmDevice.data(), &NetworkManager::ModemDevice::stateChanged, this, [this](NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason) -> void {
-        qDebug() << "Modem" << m_nmDevice->uni() << "changed state:" << nmDeviceStateStr(oldstate) << "->" << nmDeviceStateStr(newstate) << "due to:" << reason;
-        Q_EMIT mobileDataActiveChanged();
-    });
-    
+
+    connect(m_nmDevice.data(),
+            &NetworkManager::ModemDevice::stateChanged,
+            this,
+            [this](NetworkManager::Device::State newstate, NetworkManager::Device::State oldstate, NetworkManager::Device::StateChangeReason reason) -> void {
+                qDebug() << QStringLiteral("Modem") << m_nmDevice->uni() << QStringLiteral("changed state:") << nmDeviceStateStr(oldstate)
+                         << QStringLiteral("->") << nmDeviceStateStr(newstate) << QStringLiteral("due to:") << reason;
+                Q_EMIT mobileDataActiveChanged();
+            });
+
     // we need to initialize it after m_mm3gppDevice has been set
     m_details = new ModemDetails(this, this);
 }
@@ -52,7 +56,7 @@ QString Modem::displayId()
 {
     // in the form /org/freedesktop/ModemManager1/Modem/0
     QStringList uniSplit = uni().split("/");
-    return uniSplit.count() == 0 ? "(empty)" : QString(uniSplit[uniSplit.size() - 1]);
+    return uniSplit.count() == 0 ? QStringLiteral("(empty)") : QString(uniSplit[uniSplit.size() - 1]);
 }
 
 QString Modem::uni() 
@@ -70,23 +74,23 @@ QString Modem::activeConnectionUni()
 
 void Modem::reset() 
 {
-    qDebug() << "Resetting the modem...";
+    qDebug() << QStringLiteral("Resetting the modem...");
     QDBusPendingReply<void> reply = m_mmInterface->reset();
     reply.waitForFinished();
     if (reply.isError()) {
-        qDebug() << "Error resetting the modem:" << reply.error().message();
-        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error resetting the modem: " + reply.error().message());
+        qDebug() << QStringLiteral("Error resetting the modem:") << reply.error().message();
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error resetting the modem: %1", reply.error().message()));
     }
 }
 
 void Modem::setEnabled(bool enabled)
 {
     if (enabled != m_mmInterface->isEnabled()) {
-        qDebug() << (enabled ? "Enabling" : "Disabling") << "the modem...";
+        qDebug() << (enabled ? QStringLiteral("Enabling") : QStringLiteral("Disabling")) << QStringLiteral("the modem...");
         QDBusPendingReply<void> reply = m_mmInterface->setEnabled(enabled);
         reply.waitForFinished();
         if (reply.isError()) {
-            qDebug() << "Error setting the enabled state of the modem: " << reply.error().message();
+            qDebug() << QStringLiteral("Error setting the enabled state of the modem: ") << reply.error().message();
         }
     }
 }
@@ -115,12 +119,13 @@ void Modem::setIsRoaming(bool roaming)
             QDBusPendingReply reply = connection->update(connection->settings()->toMap());
             reply.waitForFinished();
             if (reply.isError()) {
-                qWarning() << "Error updating connection settings for" << connection->uuid() << ":" << reply.error().message() << ".";
-                CellularNetworkSettings::instance()->addMessage(InlineMessage::Error,
-                                                                "Error updating connection settings for " + connection->uuid() + ": " + reply.error().message()
-                                                                    + ".");
+                qWarning() << QStringLiteral("Error updating connection settings for") << connection->uuid() << QStringLiteral(":") << reply.error().message()
+                           << QStringLiteral(".");
+                CellularNetworkSettings::instance()->addMessage(
+                    InlineMessage::Error,
+                    i18n("Error updating connection settings for %1: %2.", connection->uuid(), reply.error().message()));
             } else {
-                qDebug() << "Successfully updated connection settings" << connection->uuid() << ".";
+                qDebug() << QStringLiteral("Successfully updated connection settings") << connection->uuid() << QStringLiteral(".");
             }
         }
         
@@ -167,8 +172,8 @@ void Modem::setMobileDataActive(bool active)
         reply.waitForFinished();
         
         if (reply.isError()) {
-            qWarning() << "Error disconnecting modem interface:" << reply.error().message();
-            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error disconnecting modem interface: " + reply.error().message());
+            qWarning() << QStringLiteral("Error disconnecting modem interface:") << reply.error().message();
+            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error disconnecting modem interface: %1", reply.error().message()));
         }
         Q_EMIT mobileDataActiveChanged();
     }
@@ -199,8 +204,8 @@ void Modem::refreshProfiles()
 
 void Modem::activateProfile(const QString &connectionUni)
 {
-    qDebug() << "Activating profile on modem" << m_nmDevice->uni() << "for connection" << connectionUni << "."; 
- 
+    qDebug() << QStringLiteral("Activating profile on modem") << m_nmDevice->uni() << QStringLiteral("for connection") << connectionUni << ".";
+
     // cache roaming setting
     bool roaming = isRoaming();
     
@@ -217,7 +222,7 @@ void Modem::activateProfile(const QString &connectionUni)
     }
     
     if (!con) {
-        qDebug() << "Connection" << connectionUni << "not found.";
+        qDebug() << QStringLiteral("Connection") << connectionUni << QStringLiteral("not found.");
         return;
     }
     
@@ -226,8 +231,8 @@ void Modem::activateProfile(const QString &connectionUni)
     QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::activateConnection(con->path(), m_nmDevice->uni(), "");
     reply.waitForFinished();
     if (reply.isError()) {
-        qWarning() << "Error activating connection:" << reply.error().message();
-        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error activating connection: " + reply.error().message());
+        qWarning() << QStringLiteral("Error activating connection:") << reply.error().message();
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error activating connection: %1", reply.error().message()));
         return;
     }
     
@@ -247,7 +252,7 @@ void Modem::addProfile(QString name, QString apn, QString username, QString pass
     gsmSetting->setApn(apn);
     gsmSetting->setUsername(username);
     gsmSetting->setPassword(password);
-    gsmSetting->setPasswordFlags(password == "" ? NetworkManager::Setting::NotRequired : NetworkManager::Setting::AgentOwned);
+    gsmSetting->setPasswordFlags(password.isEmpty() ? NetworkManager::Setting::NotRequired : NetworkManager::Setting::AgentOwned);
     gsmSetting->setNetworkType(ProfileSettings::networkTypeFlag(networkType));
     gsmSetting->setHomeOnly(!isRoaming());
 
@@ -256,10 +261,10 @@ void Modem::addProfile(QString name, QString apn, QString username, QString pass
     QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addAndActivateConnection(settings->toMap(), m_nmDevice->uni(), "");
     reply.waitForFinished();
     if (reply.isError()) {
-        qWarning() << "Error adding connection:" << reply.error().message();
-        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error adding connection: " + reply.error().message());
+        qWarning() << QStringLiteral("Error adding connection:") << reply.error().message();
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error adding connection: %1", reply.error().message()));
     } else {
-        qDebug() << "Successfully added a new connection" << name << "with APN" << apn << ".";
+        qDebug() << QStringLiteral("Successfully added a new connection") << name << QStringLiteral("with APN") << apn << ".";
     }
 }
 
@@ -270,8 +275,8 @@ void Modem::removeProfile(const QString &connectionUni)
         QDBusPendingReply reply = con->remove();
         reply.waitForFinished();
         if (reply.isError()) {
-            qWarning() << "Error removing connection" << reply.error().message();
-            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error removing connection " + reply.error().message());
+            qWarning() << QStringLiteral("Error removing connection") << reply.error().message();
+            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error removing connection: %1", reply.error().message()));
         }
     }
 }
@@ -297,18 +302,19 @@ void Modem::updateProfile(QString connectionUni, QString name, QString apn, QStr
             QDBusPendingReply reply = con->update(conSettings->toMap());
             reply.waitForFinished();
             if (reply.isError()) {
-                qWarning() << "Error updating connection settings for" << connectionUni << ":" << reply.error().message() << ".";
+                qWarning() << QStringLiteral("Error updating connection settings for") << connectionUni << QStringLiteral(":") << reply.error().message()
+                           << QStringLiteral(".");
                 CellularNetworkSettings::instance()->addMessage(InlineMessage::Error,
-                                                                "Error updating connection settings for" + connectionUni + ":" + reply.error().message() + ".");
+                                                                i18n("Error updating connection settings for %1: %2.", connectionUni, reply.error().message()));
             } else {
-                qDebug() << "Successfully updated connection settings" << connectionUni << ".";
+                qDebug() << QStringLiteral("Successfully updated connection settings") << connectionUni << QStringLiteral(".");
             }
             
         } else {
-            qWarning() << "Could not find connection settings for" << connectionUni << "to update!";
+            qWarning() << QStringLiteral("Could not find connection settings for") << connectionUni << QStringLiteral("to update!");
         }
     } else {
-        qWarning() << "Could not find connection" << connectionUni << "to update!";
+        qWarning() << QStringLiteral("Could not find connection") << connectionUni << QStringLiteral("to update!");
     }
 }
 
@@ -319,25 +325,30 @@ void Modem::addDetectedProfileSettings()
     if (m_mmDevice && hasSim()) {
         if (m_mm3gppDevice) {
             QString operatorCode = m_mm3gppDevice->operatorCode();
-            qWarning() << "Detecting profile settings. Using MCCMNC:" << operatorCode;
+            qWarning() << QStringLiteral("Detecting profile settings. Using MCCMNC:") << operatorCode;
 
             // lookup apns with mccmnc codes
             for (QString &provider : m_providers->getProvidersFromMCCMNC(operatorCode)) {
-                QStringList apns = m_providers->getApns(provider);
-                for (auto apn : apns) {
+                qWarning() << QStringLiteral("Provider:") << provider;
+
+                for (auto apn : m_providers->getApns(provider)) {
                     QVariantMap apnInfo = m_providers->getApnInfo(apn);
-                    qWarning() << "Found gsm profile settings. Type:" << apnInfo["usageType"];
+                    qWarning() << QStringLiteral("Found gsm profile settings. Type:") << apnInfo[QStringLiteral("usageType")];
 
                     // only add mobile data apns (not mms)
-                    if (apnInfo["usageType"].toString() == "internet") {
+                    if (apnInfo[QStringLiteral("usageType")].toString() == QStringLiteral("internet")) {
                         found = true;
 
                         QString name = provider;
-                        if (!apnInfo["name"].isNull()) {
-                            name += " - " + apnInfo["name"].toString();
+                        if (!apnInfo[QStringLiteral("name")].isNull()) {
+                            name += " - " + apnInfo[QStringLiteral("name")].toString();
                         }
 
-                        addProfile(name, apn, apnInfo["username"].toString(), apnInfo["password"].toString(), "4G/3G/2G");
+                        addProfile(name,
+                                   apn,
+                                   apnInfo[QStringLiteral("username")].toString(),
+                                   apnInfo[QStringLiteral("password")].toString(),
+                                   QStringLiteral("4G/3G/2G"));
                     }
 
                     // TODO in the future for MMS settings, add else if here for == "mms"
@@ -346,7 +357,7 @@ void Modem::addDetectedProfileSettings()
         }
     }
     if (!found) {
-        qDebug() << "No profiles were found. :(";
+        qDebug() << QStringLiteral("No profiles were found. :(");
         Q_EMIT couldNotAutodetectSettings();
     }
 }
@@ -376,19 +387,32 @@ ModemManager::Modem::Ptr Modem::mmModemInterface()
 
 QString Modem::nmDeviceStateStr(NetworkManager::Device::State state)
 {
-    if (state == NetworkManager::Device::State::UnknownState) return "Unknown";
-    else if (state == NetworkManager::Device::State::Unmanaged) return "Unmanaged";
-    else if (state == NetworkManager::Device::State::Unavailable) return "Unavailable";
-    else if (state == NetworkManager::Device::State::Disconnected) return "Disconnected";
-    else if (state == NetworkManager::Device::State::Preparing) return "Preparing";
-    else if (state == NetworkManager::Device::State::ConfiguringHardware) return "ConfiguringHardware";
-    else if (state == NetworkManager::Device::State::NeedAuth) return "NeedAuth";
-    else if (state == NetworkManager::Device::State::ConfiguringIp) return "ConfiguringIp";
-    else if (state == NetworkManager::Device::State::CheckingIp) return "CheckingIp";
-    else if (state == NetworkManager::Device::State::WaitingForSecondaries) return "WaitingForSecondaries";
-    else if (state == NetworkManager::Device::State::Activated) return "Activated";
-    else if (state == NetworkManager::Device::State::Deactivating) return "Deactivating";
-    else if (state == NetworkManager::Device::State::Failed) return "Failed";
+    if (state == NetworkManager::Device::State::UnknownState)
+        return i18n("Unknown");
+    else if (state == NetworkManager::Device::State::Unmanaged)
+        return i18n("Unmanaged");
+    else if (state == NetworkManager::Device::State::Unavailable)
+        return i18n("Unavailable");
+    else if (state == NetworkManager::Device::State::Disconnected)
+        return i18n("Disconnected");
+    else if (state == NetworkManager::Device::State::Preparing)
+        return i18n("Preparing");
+    else if (state == NetworkManager::Device::State::ConfiguringHardware)
+        return i18n("ConfiguringHardware");
+    else if (state == NetworkManager::Device::State::NeedAuth)
+        return i18n("NeedAuth");
+    else if (state == NetworkManager::Device::State::ConfiguringIp)
+        return i18n("ConfiguringIp");
+    else if (state == NetworkManager::Device::State::CheckingIp)
+        return i18n("CheckingIp");
+    else if (state == NetworkManager::Device::State::WaitingForSecondaries)
+        return i18n("WaitingForSecondaries");
+    else if (state == NetworkManager::Device::State::Activated)
+        return i18n("Activated");
+    else if (state == NetworkManager::Device::State::Deactivating)
+        return i18n("Deactivating");
+    else if (state == NetworkManager::Device::State::Failed)
+        return i18n("Failed");
     else return "";
 }
 
@@ -482,38 +506,38 @@ QString ProfileSettings::connectionUni()
 QString ProfileSettings::networkTypeStr(NetworkManager::GsmSetting::NetworkType networkType)
 {
     if (networkType == NetworkManager::GsmSetting::NetworkType::Any) {
-        return "Any";
+        return QStringLiteral("Any");
     } else if (networkType == NetworkManager::GsmSetting::NetworkType::GprsEdgeOnly) {
-        return "Only 2G";
+        return QStringLiteral("Only 2G");
     } else if (networkType == NetworkManager::GsmSetting::NetworkType::Only3G) {
-        return "Only 3G";
+        return QStringLiteral("Only 3G");
     } else if (networkType == NetworkManager::GsmSetting::NetworkType::Only4GLte) {
-        return "Only 4G";
+        return QStringLiteral("Only 4G");
     } else if (networkType == NetworkManager::GsmSetting::NetworkType::Prefer2G) {
-        return "2G";
+        return QStringLiteral("2G");
     } else if (networkType == NetworkManager::GsmSetting::NetworkType::Prefer3G) {
-        return "3G/2G";
+        return QStringLiteral("3G/2G");
     } else if (networkType == NetworkManager::GsmSetting::NetworkType::Prefer4GLte) {
-        return "4G/3G/2G";
+        return QStringLiteral("4G/3G/2G");
     }
-    return "Any";
+    return QStringLiteral("Any");
 }
 
 NetworkManager::GsmSetting::NetworkType ProfileSettings::networkTypeFlag(const QString &networkType)
 {
-    if (networkType == "Any") {
+    if (networkType == QStringLiteral("Any")) {
         return NetworkManager::GsmSetting::NetworkType::Any;
-    } else if (networkType == "Only 2G") {
+    } else if (networkType == QStringLiteral("Only 2G")) {
         return NetworkManager::GsmSetting::NetworkType::GprsEdgeOnly;
-    } else if (networkType == "Only 3G") {
+    } else if (networkType == QStringLiteral("Only 3G")) {
         return NetworkManager::GsmSetting::NetworkType::Only3G;
-    } else if (networkType == "Only 4G") {
+    } else if (networkType == QStringLiteral("Only 4G")) {
         return NetworkManager::GsmSetting::NetworkType::Only4GLte;
-    } else if (networkType == "2G") {
+    } else if (networkType == QStringLiteral("2G")) {
         return NetworkManager::GsmSetting::NetworkType::Prefer2G;
-    } else if (networkType == "3G/2G") {
+    } else if (networkType == QStringLiteral("3G/2G")) {
         return NetworkManager::GsmSetting::NetworkType::Prefer3G;
-    } else if (networkType == "4G/3G/2G") {
+    } else if (networkType == QStringLiteral("4G/3G/2G")) {
         return NetworkManager::GsmSetting::NetworkType::Prefer4GLte;
     }
     return NetworkManager::GsmSetting::NetworkType::Any;

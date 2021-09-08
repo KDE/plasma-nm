@@ -34,7 +34,7 @@ Sim::Sim(QObject *parent, Modem *modem, ModemManager::Sim::Ptr mmSim, ModemManag
 
 bool Sim::enabled()
 {
-    return uni() != "/";
+    return uni() != QStringLiteral("/");
 }
 
 bool Sim::pinEnabled()
@@ -131,8 +131,8 @@ QString Sim::uni()
 QString Sim::displayId()
 {
     // in the form /org/freedesktop/ModemManager1/Sim/0
-    QStringList uniSplit = uni().split("/");
-    return (uniSplit.count() == 0 || uni() == "/") ? "(empty)" : QString(uniSplit[uniSplit.size() - 1]);
+    QStringList uniSplit = uni().split(QStringLiteral("/"));
+    return (uniSplit.count() == 0 || uni() == "/") ? i18n("(empty)") : QString(uniSplit[uniSplit.size() - 1]);
 }
 
 Modem *Sim::modem()
@@ -146,22 +146,18 @@ void Sim::togglePinEnabled(const QString &pin)
     QDBusPendingReply reply = m_mmSim->enablePin(pin, !isPinEnabled);
     reply.waitForFinished();
     if (reply.isError()) {
-        qWarning() << "Error toggling SIM lock to" << isPinEnabled << ":" << reply.error().message();
-        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error toggling SIM lock: " + reply.error().message());
+        qWarning() << QStringLiteral("Error toggling SIM lock to") << isPinEnabled << QStringLiteral(":") << reply.error().message();
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error toggling SIM lock: %1", reply.error().message()));
     }
 }
 
 void Sim::changePin(const QString &oldPin, const QString &newPin)
 {
-    if (locked()) {
-        QDBusPendingReply reply = m_mmSim->changePin(oldPin, newPin);
-        reply.waitForFinished();
-        if (reply.isError()) {
-            qWarning() << "Error changing the PIN:" << reply.error().message();
-            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error changing the PIN: " + reply.error().message());
-        }
-    } else {
-        CellularNetworkSettings::instance()->addMessage(InlineMessage::Warning, "The SIM card is not locked.");
+    QDBusPendingReply reply = m_mmSim->changePin(oldPin, newPin);
+    reply.waitForFinished();
+    if (reply.isError()) {
+        qWarning() << QStringLiteral("Error changing the PIN:") << reply.error().message();
+        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error changing the PIN: %1", reply.error().message()));
     }
 }
 
@@ -171,8 +167,8 @@ void Sim::sendPin(const QString &pin)
         QDBusPendingReply reply = m_mmSim->sendPin(pin);
         reply.waitForFinished();
         if (reply.isError()) {
-            qWarning() << "Error sending the PIN:" << reply.error().message();
-            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error sending the PIN: " + reply.error().message());
+            qWarning() << QStringLiteral("Error sending the PIN:") << reply.error().message();
+            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error sending the PIN: %1", reply.error().message()));
         }
     }
 }
@@ -183,8 +179,8 @@ void Sim::sendPuk(const QString &pin, const QString &puk)
         QDBusPendingReply reply = m_mmSim->sendPuk(pin, puk);
         reply.waitForFinished();
         if (reply.isError()) {
-            qWarning() << "Error sending the PUK:" << reply.error().message();
-            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, "Error sending the PUK: " + reply.error().message());
+            qWarning() << QStringLiteral("Error sending the PUK:") << reply.error().message();
+            CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error sending the PUK: %1", reply.error().message()));
         }
     }
 }

@@ -8,6 +8,7 @@ import QtQuick 2.12
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.12 as Controls
 import org.kde.kirigami 2.12 as Kirigami
+import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kcm 1.2
 import cellularnetworkkcm 1.0
 
@@ -18,6 +19,10 @@ Kirigami.ScrollablePage {
     property Sim sim
     
     padding: 0
+    
+    PlasmaNM.EnabledConnections {
+        id: enabledConnections
+    }
     
     ColumnLayout {
         spacing: 0
@@ -56,7 +61,7 @@ Kirigami.ScrollablePage {
                 Kirigami.FormData.label: i18n("APNs:")
                 icon.name: "globe"
                 text: i18n("Modify Access Point Names")
-                enabled: sim.enabled
+                enabled: sim.enabled && enabledConnections.wwanEnabled
                 onClicked: {
                     kcm.push("ProfileList.qml", {"modem": sim.modem});
                 }
@@ -109,11 +114,11 @@ Kirigami.ScrollablePage {
             }
             Controls.Label {
                 Kirigami.FormData.label: i18n("Operator Code (modem):")
-                text: modem.details.operatorCode
+                text: sim.modem.details.operatorCode
             }
             Controls.Label {
                 Kirigami.FormData.label: i18n("Operator Name (modem):")
-                text: modem.details.operatorName
+                text: sim.modem.details.operatorName
             }
             Controls.Label {
                 Kirigami.FormData.label: i18n("Operator Code (provided by SIM):")

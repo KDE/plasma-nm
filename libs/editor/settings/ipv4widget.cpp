@@ -420,8 +420,8 @@ void IPv4Widget::slotAdvancedDialog()
 
     layout->addRow(
         new QLabel(i18n("<qt>You can find more information about these values here:<br/><a "
-                        "href='https://developer.gnome.org/NetworkManager/stable/nm-settings.html'>https://developer.gnome.org/NetworkManager/stable/"
-                        "nm-settings.html</a></qt>")));
+                        "href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome.org/NetworkManager/stable/ch01.html"
+                        "nm-settings-nmcli.html</a></qt>")));
 
     auto sendHostname = new QCheckBox(dlg);
     sendHostname->setChecked(m_tmpIpv4Setting.dhcpSendHostname());

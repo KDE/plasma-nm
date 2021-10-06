@@ -86,8 +86,8 @@ PlasmaComponents3.Page {
                 section.property: showSeparator ? "Section" : ""
                 section.delegate: ListItem { separator: true }
                 highlight: PlasmaComponents.Highlight { }
-                highlightMoveDuration: PlasmaCore.Units.longDuration
-                highlightResizeDuration: PlasmaCore.Units.longDuration
+                highlightMoveDuration: 0
+                highlightResizeDuration: 0
                 delegate: ConnectionItem {
                     width: connectionView.width
                 }

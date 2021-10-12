@@ -13,7 +13,8 @@ import org.kde.kcoreaddons 1.0 as KCoreAddons
 import org.kde.kquickcontrolsaddons 2.0
 
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents // for ContextMenu+MenuItem/TabBar+TabButton
+import org.kde.plasma.components 2.0 as PlasmaComponents // for ContextMenu+MenuItem
+import org.kde.plasma.components 3.0 as PlasmaComponents3 // for TabBar+TabButton
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
@@ -48,6 +49,19 @@ PlasmaExtras.ExpandableListItem {
         onTriggered: changeState()
     }
     showDefaultActionButtonWhenBusy: true
+
+    Keys.onPressed: {
+        if ((customExpandedViewContent == detailsComponent) && showSpeed) {
+            if (event.key == Qt.Key_Right) {
+                customExpandedViewContentItem.detailsTabBar.currentIndex = 1;
+                event.accepted = true;
+            } else if (event.key == Qt.Key_Left) {
+                customExpandedViewContentItem.detailsTabBar.currentIndex = 0;
+                event.accepted = true;
+            }
+        }
+    }
+
     customExpandedViewContent: detailsComponent
     contextMenu: PlasmaComponents.Menu {
         id: contextMenu
@@ -102,8 +116,9 @@ PlasmaExtras.ExpandableListItem {
 
         Column {
             spacing: PlasmaCore.Units.smallSpacing
+            property Item detailsTabBar: detailsTabBar
 
-            PlasmaComponents.TabBar {
+            PlasmaComponents3.TabBar {
                 id: detailsTabBar
 
                 anchors {
@@ -111,21 +126,23 @@ PlasmaExtras.ExpandableListItem {
                     right: parent.right
                 }
                 height: visible ? implicitHeight : 0
+                implicitHeight: contentHeight
+                position: PlasmaComponents3.TabBar.Header
                 visible: showSpeed
 
-                PlasmaComponents.TabButton {
+                PlasmaComponents3.TabButton {
                     id: speedTabButton
                     text: i18n("Speed")
                 }
 
-                PlasmaComponents.TabButton {
+                PlasmaComponents3.TabButton {
                     id: detailsTabButton
                     text: i18n("Details")
                 }
 
                 Component.onCompleted: {
                     if (!showSpeed) {
-                        currentTab = detailsTabButton
+                        currentIndex = 1;
                     }
                 }
             }
@@ -137,7 +154,7 @@ PlasmaExtras.ExpandableListItem {
                     right: parent.right
                 }
                 details: ConnectionDetails
-                visible: detailsTabBar.currentTab == detailsTabButton
+                visible: detailsTabBar.currentIndex == 1
             }
 
             TrafficMonitor {
@@ -147,7 +164,7 @@ PlasmaExtras.ExpandableListItem {
                 }
                 downloadSpeed: rxBytes
                 uploadSpeed: txBytes
-                visible: detailsTabBar.currentTab == speedTabButton
+                visible: detailsTabBar.currentIndex == 0
             }
         }
     }

@@ -19,6 +19,8 @@ ColumnLayout {
     readonly property var displayWwanMessage: !wwanSwitchButton.checked && wwanSwitchButton.visible
     readonly property var displayplaneModeMessage: planeModeSwitchButton.checked && planeModeSwitchButton.visible
 
+    property alias searchTextField: searchTextField
+
     PlasmaCore.Svg {
         id: lineSvg
         imagePath: "widgets/line"

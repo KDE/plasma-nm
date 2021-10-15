@@ -195,7 +195,7 @@ void OpenconnectAuthWidget::readConfig()
     if (!dataMap[NM_OPENCONNECT_KEY_USERCERT].isEmpty()) {
         const QByteArray crt = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_USERCERT]);
         const QByteArray key = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_PRIVKEY]);
-        openconnect_set_client_cert(d->vpninfo, OC3DUP(crt.data()), OC3DUP(key.data()));
+        openconnect_set_client_cert(d->vpninfo, OC3DUP(crt.data()), OC3DUP(key.isEmpty() ? nullptr : key.data()));
 
         if (!crt.isEmpty() && dataMap[NM_OPENCONNECT_KEY_PEM_PASSPHRASE_FSID] == "yes") {
             openconnect_passphrase_from_fsid(d->vpninfo);

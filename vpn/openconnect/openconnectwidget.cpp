@@ -190,7 +190,8 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
     const NMStringMap dataMap = setting.staticCast<NetworkManager::VpnSetting>()->data();
 
     int cmbProtocolIndex;
-    if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("anyconnect")) {
+    // No value corresponds to "anyconnect", matching GNOME and the openconnect binary itself.
+    if (!dataMap.contains(NM_OPENCONNECT_KEY_PROTOCOL) || dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("anyconnect")) {
         cmbProtocolIndex = 0;
     } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("nc")) {
         cmbProtocolIndex = 1;
@@ -201,7 +202,7 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
     }
 
     int cmbReportedOsIndex;
-    if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QString()) {
+    if (!dataMap.contains(NM_OPENCONNECT_KEY_REPORTED_OS)) {
         cmbReportedOsIndex = 0;
     } else if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QLatin1String("linux")) {
         cmbReportedOsIndex = 1;

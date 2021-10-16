@@ -79,7 +79,7 @@ set_package_properties(KF5Prison PROPERTIES DESCRIPTION "Prison library"
                       )
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(OPENCONNECT IMPORTED_TARGET openconnect>3.99)
+pkg_check_modules(OPENCONNECT IMPORTED_TARGET openconnect>=3.99)
 pkg_check_modules(NETWORKMANAGER IMPORTED_TARGET libnm>1.4.0 REQUIRED)
 pkg_check_modules(MOBILEBROADBANDPROVIDERINFO mobile-broadband-provider-info)
 pkg_get_variable(BROADBANDPROVIDER_DATABASE mobile-broadband-provider-info database)

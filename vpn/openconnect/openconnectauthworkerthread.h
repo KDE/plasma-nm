@@ -11,21 +11,6 @@ extern "C" {
 #include <openconnect.h>
 }
 
-#if OPENCONNECT_API_VERSION_MAJOR == 1
-#define openconnect_vpninfo_new openconnect_vpninfo_new_with_cbdata
-#define openconnect_init_ssl openconnect_init_openssl
-#endif
-
-#ifndef OPENCONNECT_CHECK_VER
-#define OPENCONNECT_CHECK_VER(x, y) 0
-#endif
-
-#if !OPENCONNECT_CHECK_VER(1, 5)
-struct x509_st;
-#define OPENCONNECT_X509 struct x509_st
-#define OPENCONNECT_OPENSSL
-#endif
-
 #if OPENCONNECT_CHECK_VER(3, 0)
 #define NEWGROUP_SUPPORTED 1
 #define AUTHGROUP_OPT(form) (void *)(form)->authgroup_opt

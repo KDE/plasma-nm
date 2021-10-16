@@ -13,11 +13,6 @@
 
 extern "C" {
 #include <stdlib.h>
-#if !OPENCONNECT_CHECK_VER(1, 5)
-#include <openssl/bio.h>
-#include <openssl/ossl_typ.h>
-#include <openssl/ssl.h>
-#endif
 #include <errno.h>
 }
 
@@ -87,12 +82,7 @@ OpenconnectAuthWorkerThread::OpenconnectAuthWorkerThread(QMutex *mutex,
                                                 OpenconnectAuthStaticWrapper::processAuthForm,
                                                 OpenconnectAuthStaticWrapper::writeProgress,
                                                 this);
-#if OPENCONNECT_CHECK_VER(1, 4)
     openconnect_set_cancel_fd(m_openconnectInfo, cancelFd);
-#else
-    // Silence warning about unused parameter
-    Q_UNUSED(cancelFd);
-#endif
 }
 
 OpenconnectAuthWorkerThread::~OpenconnectAuthWorkerThread()
@@ -125,27 +115,6 @@ int OpenconnectAuthWorkerThread::writeNewConfig(const char *buf, int buflen)
     Q_EMIT writeNewConfig(QString(QByteArray(buf).toBase64()));
     return 0;
 }
-
-#if !OPENCONNECT_CHECK_VER(1, 5)
-static char *openconnect_get_cert_details(struct openconnect_info *vpninfo, OPENCONNECT_X509 *cert)
-{
-    Q_UNUSED(vpninfo)
-
-    BIO *bp = BIO_new(BIO_s_mem());
-    BUF_MEM *certinfo;
-    char zero = 0;
-    char *ret;
-
-    X509_print_ex(bp, cert, 0, 0);
-    BIO_write(bp, &zero, 1);
-    BIO_get_mem_ptr(bp, &certinfo);
-
-    ret = strdup(certinfo->data);
-    BIO_free(bp);
-
-    return ret;
-}
-#endif
 
 int OpenconnectAuthWorkerThread::validatePeerCert(void *cert, const char *reason)
 {

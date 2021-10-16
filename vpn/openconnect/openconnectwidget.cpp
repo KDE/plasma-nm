@@ -18,9 +18,6 @@
 #include <QString>
 
 #include <openconnect.h>
-#ifndef OPENCONNECT_CHECK_VER
-#define OPENCONNECT_CHECK_VER(x, y) 0
-#endif
 
 #if !OPENCONNECT_CHECK_VER(2, 1)
 #define openconnect_has_stoken_support() 0

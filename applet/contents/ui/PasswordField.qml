@@ -9,16 +9,14 @@ import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
 PlasmaComponents3.TextField {
-    property int securityType
+    property int/*PlasmaNM.Enums.SecurityType*/ securityType
 
     echoMode: TextInput.Password
     revealPasswordButtonShown: true
     placeholderText: i18n("Password…")
     validator: RegExpValidator {
-                    regExp: if (securityType == PlasmaNM.Enums.StaticWep) {
-                                /^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26})$/
-                            } else {
-                                /^(?:.{8,64})$/
-                            }
-                    }
+        regExp: (securityType === PlasmaNM.Enums.StaticWep)
+            ? /^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26})$/
+            : /^(?:.{8,64})$/
+    }
 }

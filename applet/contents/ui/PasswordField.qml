@@ -16,9 +16,9 @@ PlasmaComponents3.TextField {
     placeholderText: i18n("Password…")
     validator: RegExpValidator {
                     regExp: if (securityType == PlasmaNM.Enums.StaticWep) {
-                                /^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26}){1}$/
+                                /^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26})$/
                             } else {
-                                /^(?:.{8,64}){1}$/
+                                /^(?:.{8,64})$/
                             }
                     }
 }

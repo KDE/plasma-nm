@@ -151,6 +151,8 @@ ColumnLayout {
 
             Layout.fillWidth: true
 
+            inputMethodHints: Qt.ImhNoPredictiveText
+
             focus: true
             clearButtonShown: true
             placeholderText: i18nc("text field placeholder text", "Search…")

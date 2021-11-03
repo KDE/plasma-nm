@@ -95,18 +95,18 @@ void OpenVpnAuthWidget::readSecrets()
     } else {
         if (cType == QLatin1String(NM_OPENVPN_CONTYPE_TLS) || cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD_TLS)) {
             // Normal user password
-            if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD_TLS) || !passType.testFlag(NetworkManager::Setting::NotRequired)) {
+            if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD_TLS) && !passType.testFlag(NetworkManager::Setting::NotRequired)) {
                 addPasswordField(i18n("Password:"), secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)), QLatin1String(NM_OPENVPN_KEY_PASSWORD));
             }
             // Encrypted private key password
-            if (!dataMap.contains(QLatin1String(NM_OPENVPN_KEY_KEY)) && !certType.testFlag(NetworkManager::Setting::NotRequired)) {
+            if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_KEY)) && !certType.testFlag(NetworkManager::Setting::NotRequired)) {
                 addPasswordField(i18n("Key Password:"), secrets.value(QLatin1String(NM_OPENVPN_KEY_CERTPASS)), QLatin1String(NM_OPENVPN_KEY_CERTPASS));
             }
         } else if (cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD)) {
             addPasswordField(i18n("Password:"), secrets.value(QLatin1String(NM_OPENVPN_KEY_PASSWORD)), QLatin1String(NM_OPENVPN_KEY_PASSWORD));
         }
 
-        if (dataMap.contains(NM_OPENVPN_KEY_PROXY_SERVER) && !(proxyType.testFlag(NetworkManager::Setting::NotRequired))) {
+        if (dataMap.contains(NM_OPENVPN_KEY_PROXY_SERVER) && !proxyType.testFlag(NetworkManager::Setting::NotRequired)) {
             addPasswordField(i18n("Proxy Password:"),
                              secrets.value(QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD)),
                              QLatin1String(NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD));

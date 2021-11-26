@@ -1,49 +1,92 @@
 set(plasmanm_editor_SRCS
+    connectioneditorbase.cpp
+    connectioneditorbase.h
+    connectioneditordialog.cpp
+    connectioneditordialog.h
+    connectioneditortabwidget.cpp
+    connectioneditortabwidget.h
+    listvalidator.cpp
+    listvalidator.h
     settings/bondwidget.cpp
+    settings/bondwidget.h
     settings/bridgewidget.cpp
+    settings/bridgewidget.h
     settings/btwidget.cpp
+    settings/btwidget.h
     settings/cdmawidget.cpp
+    settings/cdmawidget.h
     settings/connectionwidget.cpp
+    settings/connectionwidget.h
     settings/gsmwidget.cpp
+    settings/gsmwidget.h
     settings/infinibandwidget.cpp
+    settings/infinibandwidget.h
     settings/ipv4widget.cpp
+    settings/ipv4widget.h
     settings/ipv6widget.cpp
+    settings/ipv6widget.h
     settings/pppoewidget.cpp
+    settings/pppoewidget.h
     settings/pppwidget.cpp
+    settings/pppwidget.h
     settings/security802-1x.cpp
+    settings/security802-1x.h
     settings/teamwidget.cpp
+    settings/teamwidget.h
     settings/vlanwidget.cpp
+    settings/vlanwidget.h
     settings/wificonnectionwidget.cpp
+    settings/wificonnectionwidget.h
     settings/wifisecurity.cpp
+    settings/wifisecurity.h
     settings/wiredconnectionwidget.cpp
+    settings/wiredconnectionwidget.h
     settings/wiredsecurity.cpp
+    settings/wiredsecurity.h
     settings/wireguardinterfacewidget.cpp
-    settings/wireguardtabwidget.cpp
+    settings/wireguardinterfacewidget.h
     settings/wireguardpeerwidget.cpp
+    settings/wireguardpeerwidget.h
+    settings/wireguardtabwidget.cpp
+    settings/wireguardtabwidget.h
+
+    simpleiplistvalidator.cpp
+    simpleiplistvalidator.h
+    simpleipv4addressvalidator.cpp
+    simpleipv4addressvalidator.h
+    simpleipv6addressvalidator.cpp
+    simpleipv6addressvalidator.h
+    vpnuiplugin.cpp
+    vpnuiplugin.h
 
     widgets/advancedpermissionswidget.cpp
+    widgets/advancedpermissionswidget.h
     widgets/bssidcombobox.cpp
+    widgets/bssidcombobox.h
     widgets/delegate.cpp
+    widgets/delegate.h
     widgets/editlistdialog.cpp
+    widgets/editlistdialog.h
     widgets/hwaddrcombobox.cpp
+    widgets/hwaddrcombobox.h
     widgets/intdelegate.cpp
+    widgets/intdelegate.h
     widgets/ipv4delegate.cpp
+    widgets/ipv4delegate.h
     widgets/ipv4routeswidget.cpp
+    widgets/ipv4routeswidget.h
     widgets/ipv6delegate.cpp
+    widgets/ipv6delegate.h
     widgets/ipv6routeswidget.cpp
+    widgets/ipv6routeswidget.h
     widgets/passwordfield.cpp
+    widgets/passwordfield.h
     widgets/settingwidget.cpp
+    widgets/settingwidget.h
     widgets/ssidcombobox.cpp
-
-    connectioneditorbase.cpp
-    connectioneditordialog.cpp
-    connectioneditortabwidget.cpp
-    listvalidator.cpp
-    simpleipv4addressvalidator.cpp
-    simpleipv6addressvalidator.cpp
-    simpleiplistvalidator.cpp
+    widgets/ssidcombobox.h
     wireguardkeyvalidator.cpp
-    vpnuiplugin.cpp
+    wireguardkeyvalidator.h
 
     ../configuration.cpp
     ../debug.cpp
@@ -54,7 +97,9 @@ if (WITH_MODEMMANAGER_SUPPORT)
     set(plasmanm_editor_SRCS
         ${plasmanm_editor_SRCS}
         widgets/mobileconnectionwizard.cpp
-        mobileproviders.cpp)
+        widgets/mobileconnectionwizard.h
+        mobileproviders.cpp
+        mobileproviders.h)
 endif()
 
 ki18n_wrap_ui(plasmanm_editor_SRCS

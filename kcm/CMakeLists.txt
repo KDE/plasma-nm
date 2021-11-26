@@ -4,6 +4,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-kcm\")
 set(kcm_networkmanagement_PART_SRCS
     ../libs/debug.cpp
     kcm.cpp
+    kcm.h
 )
 
 ki18n_wrap_ui(kcm_networkmanagement_PART_SRCS

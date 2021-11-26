@@ -72,7 +72,7 @@ QVariant KcmIdentityModel::data(const QModelIndex &index, int role) const
         return iconName;
     } else if (role == KcmConnectionTypeRole) {
         if (type == NetworkManager::ConnectionSettings::Vpn && vpnSetting) {
-            return QString("%1 (%2)").arg(tooltip).arg(vpnSetting->serviceType().section('.', -1));
+            return QStringLiteral("%1 (%2)").arg(tooltip, vpnSetting->serviceType().section('.', -1));
         }
         return tooltip;
     } else if (role == KcmVpnConnectionExportable) {

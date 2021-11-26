@@ -40,15 +40,15 @@ public:
 private:
     void initializeUi();
 
-    Ui::PasswordDialog *m_ui;
-    bool m_hasError;
+    Ui::PasswordDialog *m_ui = nullptr;
+    bool m_hasError = false;
     QString m_errorMessage;
     QString m_settingName;
     QStringList m_neededSecrets;
     NetworkManager::ConnectionSettings::Ptr m_connectionSettings;
     NetworkManager::SecretAgent::Error m_error;
     NetworkManager::SecretAgent::GetSecretsFlags m_flags;
-    SettingWidget *m_vpnWidget;
+    SettingWidget *m_vpnWidget = nullptr;
     QStringList m_hints;
 };
 

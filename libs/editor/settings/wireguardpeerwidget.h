@@ -40,7 +40,7 @@ private:
     void slotWidgetChanged();
 
     class Private;
-    Private *d;
+    Private *const d;
 };
 
 #endif // PLASMA_NM_WIREGUARD_PEER_WIDGET_H

@@ -17,7 +17,7 @@ class Q_DECL_EXPORT MobileProxyModel : public QSortFilterProxyModel
     Q_PROPERTY(QAbstractItemModel *sourceModel READ sourceModel WRITE setSourceModel)
     Q_PROPERTY(bool showSavedMode READ showSavedMode WRITE setShowSavedMode NOTIFY showSavedModeChanged)
 public:
-    explicit MobileProxyModel(QObject *parent = 0);
+    explicit MobileProxyModel(QObject *parent = nullptr);
     ~MobileProxyModel() override;
     void setShowSavedMode(bool mode);
     bool showSavedMode() const;

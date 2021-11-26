@@ -29,13 +29,10 @@ PasswordDialog::PasswordDialog(const NetworkManager::ConnectionSettings::Ptr &co
                                const QStringList &hints,
                                QWidget *parent)
     : QDialog(parent)
-    , m_ui(nullptr)
-    , m_hasError(false)
     , m_settingName(setting_name)
     , m_connectionSettings(connectionSettings)
     , m_error(SecretAgent::NoSecrets)
     , m_flags(flags)
-    , m_vpnWidget(nullptr)
     , m_hints(hints)
 {
     setWindowIcon(QIcon::fromTheme(QStringLiteral("dialog-password")));

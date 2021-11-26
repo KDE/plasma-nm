@@ -60,10 +60,10 @@ private:
     void showErrorMessage(const PinDialog::ErrorCode);
     bool isPukDialog() const;
     bool isPinDialog() const;
-    Ui::PinWidget *ui;
-    QLabel *pixmapLabel;
+    Ui::PinWidget *ui = nullptr;
+    QLabel *pixmapLabel = nullptr;
     QString m_name;
-    Type m_type;
+    const Type m_type;
     QString m_udi;
 };
 

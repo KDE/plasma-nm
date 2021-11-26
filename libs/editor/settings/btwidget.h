@@ -32,7 +32,7 @@ public:
     bool isValid() const override;
 
 private:
-    Ui::BtWidget *m_ui;
+    Ui::BtWidget *const m_ui;
 };
 
 #endif // PLASMA_NM_BT_WIDGET_H

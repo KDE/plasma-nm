@@ -230,8 +230,8 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
     });
 
     for (const auto &service : qAsConst(plugins)) {
-        const QString vpnType = service.value("X-NetworkManager-Services");
-        const QString vpnSubType = service.value("X-NetworkManager-Services-Subtype");
+        const QString vpnType = service.value(QStringLiteral("X-NetworkManager-Services"));
+        const QString vpnSubType = service.value(QStringLiteral("X-NetworkManager-Services-Subtype"));
         const QString vpnDescription = service.description();
 
         connectionItem = new CreatableConnectionItem(service.name(),
@@ -264,8 +264,8 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
                                                  i18n("Import a saved configuration file"),
                                                  QStringLiteral("document-import"),
                                                  NetworkManager::ConnectionSettings::Vpn,
-                                                 QLatin1String("imported"),
-                                                 QLatin1String("imported"),
+                                                 QStringLiteral("imported"),
+                                                 QStringLiteral("imported"),
                                                  false);
     m_list << connectionItem;
 }

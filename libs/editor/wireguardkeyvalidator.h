@@ -18,7 +18,7 @@ public:
     QValidator::State validate(QString &, int &) const override;
 
 private:
-    QRegularExpressionValidator *m_validator;
+    QRegularExpressionValidator *const m_validator;
 };
 
 #endif // SIMPLEIPV4ADDRESSVALIDATOR_H

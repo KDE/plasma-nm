@@ -21,8 +21,8 @@ public:
     Ui::FortisslvpnWidget ui;
     Ui::FortisslvpnAdvancedWidget advUi;
     NetworkManager::VpnSetting::Ptr setting;
-    QDialog *advancedDlg;
-    QWidget *advancedWid;
+    QDialog *advancedDlg = nullptr;
+    QWidget *advancedWid = nullptr;
 };
 
 FortisslvpnWidget::FortisslvpnWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)

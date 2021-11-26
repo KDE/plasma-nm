@@ -33,7 +33,7 @@ public:
     bool isValid() const override;
 
 private:
-    Ui::PppoeWidget *m_ui;
+    Ui::PppoeWidget *const m_ui;
 };
 
 #endif // PLASMA_NM_PPPOE_WIDGET_H

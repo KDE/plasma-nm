@@ -11,7 +11,6 @@
 
 ListValidator::ListValidator(QObject *parent)
     : QValidator(parent)
-    , inner(nullptr)
 {
 }
 

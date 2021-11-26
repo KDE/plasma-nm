@@ -33,7 +33,7 @@ public:
     bool isValid() const override;
 
 private:
-    Ui::GsmWidget *m_ui;
+    Ui::GsmWidget *const m_ui;
 };
 
 #endif // PLASMA_NM_GSM_WIDGET_H

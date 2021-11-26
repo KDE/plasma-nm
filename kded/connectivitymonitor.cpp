@@ -16,12 +16,15 @@
 #include <NetworkManagerQt/ActiveConnection>
 
 #include "debug.h"
+#include <chrono>
+
+using namespace std::chrono_literals;
 
 ConnectivityMonitor::ConnectivityMonitor(QObject *parent)
     : QObject(parent)
 {
     m_limitedConnectivityTimer.setSingleShot(true);
-    m_limitedConnectivityTimer.setInterval(10000);
+    m_limitedConnectivityTimer.setInterval(10s);
     connect(&m_limitedConnectivityTimer, &QTimer::timeout, this, &ConnectivityMonitor::showLimitedConnectivityNotification);
 
     checkConnectivity();
@@ -65,8 +68,8 @@ void ConnectivityMonitor::connectivityChanged(NetworkManager::Connectivity conne
                 m_notification->setComponentName(QStringLiteral("networkmanagement"));
                 m_notification->setTitle(title);
                 m_notification->setText(i18n("You need to log in to this network"));
-                connect(m_notification, &KNotification::action1Activated, this, [this]() {
-                    QDesktopServices::openUrl(QUrl("http://networkcheck.kde.org"));
+                connect(m_notification, &KNotification::action1Activated, this, []() {
+                    QDesktopServices::openUrl(QUrl(QStringLiteral("http://networkcheck.kde.org")));
                 });
                 m_notification->sendEvent();
             }

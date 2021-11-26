@@ -32,7 +32,7 @@ public:
 
 private:
     void fillConnections();
-    Ui::VlanWidget *m_ui;
+    Ui::VlanWidget *const m_ui;
 };
 
 #endif // PLASMA_NM_VLAN_WIDGET_H

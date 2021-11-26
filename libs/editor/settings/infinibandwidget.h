@@ -32,7 +32,7 @@ public:
     bool isValid() const override;
 
 private:
-    Ui::InfinibandWidget *m_ui;
+    Ui::InfinibandWidget *const m_ui;
 };
 
 #endif // PLASMA_NM_INFI_WIDGET_H

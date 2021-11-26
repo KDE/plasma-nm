@@ -50,7 +50,6 @@ K_PLUGIN_FACTORY(KCMNetworkConfigurationFactory, registerPlugin<KCMNetworkmanage
 KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &args)
     : KCModule(parent, args)
     , m_handler(new Handler(this))
-    , m_tabWidget(nullptr)
     , m_ui(new Ui::KCMForm)
 {
     QWidget *mainWidget = new QWidget(this);

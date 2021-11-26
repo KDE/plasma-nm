@@ -15,13 +15,13 @@ SimpleIpV4AddressValidator::SimpleIpV4AddressValidator(AddressStyle style, QObje
 {
     switch (style) {
     case Base:
-        m_validator.setRegularExpression(QRegularExpression(QLatin1String("[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}")));
+        m_validator.setRegularExpression(QRegularExpression(QStringLiteral("[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}\\.[0-9, ]{1,3}")));
         break;
     case WithCidr:
-        m_validator.setRegularExpression(QRegularExpression(QLatin1String("([0-9]{1,3}\\.){3,3}[0-9]{1,3}/[0-9]{1,2}")));
+        m_validator.setRegularExpression(QRegularExpression(QStringLiteral("([0-9]{1,3}\\.){3,3}[0-9]{1,3}/[0-9]{1,2}")));
         break;
     case WithPort:
-        m_validator.setRegularExpression(QRegularExpression(QLatin1String("([0-9]{1,3}\\.){3,3}[0-9]{1,3}:[0-9]{1,5}")));
+        m_validator.setRegularExpression(QRegularExpression(QStringLiteral("([0-9]{1,3}\\.){3,3}[0-9]{1,3}:[0-9]{1,5}")));
         break;
     }
 }
@@ -83,7 +83,7 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
     tetrads << -1 << -1 << -1 << -1;
 
     // lets check address parts
-    for (const QStringRef &part : addrParts) {
+    for (const QStringRef &part : std::as_const(addrParts)) {
         if (part.isEmpty()) {
             if (i != (addrParts.size() - 1)) {
                 // qCDebug(PLASMA_NM) << "part.isEmpty()";

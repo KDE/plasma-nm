@@ -39,7 +39,7 @@ private:
     void checkFwmarkValid();
     void checkListenPortValid();
     class Private;
-    Private *d;
+    Private *const d;
 };
 
 #endif // PLASMA_NM_WIREGUARD_INTERFACE_WIDGET_H

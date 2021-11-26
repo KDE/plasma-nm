@@ -43,10 +43,10 @@ private:
 
     QString m_currentConnectionPath;
     QString m_createdConnectionUuid;
-    Handler *m_handler;
-    ConnectionEditorTabWidget *m_tabWidget;
-    QTimer *m_timer;
-    Ui::KCMForm *m_ui;
+    Handler *const m_handler;
+    ConnectionEditorTabWidget *m_tabWidget = nullptr;
+    QTimer *m_timer = nullptr;
+    Ui::KCMForm *const m_ui;
 };
 
 #endif

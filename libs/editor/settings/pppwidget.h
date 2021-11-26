@@ -30,7 +30,7 @@ public:
     QVariantMap setting() const override;
 
 private:
-    Ui::PPPWidget *m_ui;
+    Ui::PPPWidget *const m_ui;
 };
 
 #endif // PLASMA_NM_PPP_WIDGET_H

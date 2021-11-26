@@ -33,7 +33,7 @@ protected:
     QString connectionName() const override;
 
 private:
-    Ui::ConnectionEditorTabWidget *m_ui;
+    Ui::ConnectionEditorTabWidget *const m_ui;
 
     void initializeTabWidget(const NetworkManager::ConnectionSettings::Ptr &connection);
 };

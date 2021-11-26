@@ -118,8 +118,8 @@ void Handler::activateConnection(const QString &connection, const QString &devic
 
             if (pluginMissing) {
                 qCWarning(PLASMA_NM) << "VPN" << vpnSetting->serviceType() << "not found, skipping";
-                KNotification *notification = new KNotification("MissingVpnPlugin", KNotification::CloseOnTimeout, this);
-                notification->setComponentName("networkmanagement");
+                KNotification *notification = new KNotification(QStringLiteral("MissingVpnPlugin"), KNotification::CloseOnTimeout, this);
+                notification->setComponentName(QStringLiteral("networkmanagement"));
                 notification->setTitle(con->name());
                 notification->setText(i18n("Missing VPN plugin"));
                 notification->setIconName(QStringLiteral("dialog-warning"));
@@ -803,7 +803,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
         }
 
         if (notification) {
-            notification->setComponentName("networkmanagement");
+            notification->setComponentName(QStringLiteral("networkmanagement"));
             notification->setText(error);
             notification->setIconName(QStringLiteral("dialog-warning"));
             notification->sendEvent();
@@ -814,7 +814,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
 
         switch (action) {
         case Handler::AddConnection:
-            notification = new KNotification("ConnectionAdded", KNotification::CloseOnTimeout, this);
+            notification = new KNotification(QStringLiteral("ConnectionAdded"), KNotification::CloseOnTimeout, this);
             notification->setText(i18n("Connection %1 has been added", watcher->property("connection").toString()));
             break;
         case Handler::RemoveConnection:
@@ -822,7 +822,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
             notification->setText(i18n("Connection %1 has been removed", watcher->property("connection").toString()));
             break;
         case Handler::UpdateConnection:
-            notification = new KNotification("ConnectionUpdated", KNotification::CloseOnTimeout, this);
+            notification = new KNotification(QStringLiteral("ConnectionUpdated"), KNotification::CloseOnTimeout, this);
             notification->setText(i18n("Connection %1 has been updated", watcher->property("connection").toString()));
             break;
         case Handler::RequestScan:
@@ -833,7 +833,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
         }
 
         if (notification) {
-            notification->setComponentName("networkmanagement");
+            notification->setComponentName(QStringLiteral("networkmanagement"));
             notification->setTitle(watcher->property("connection").toString());
             notification->setIconName(QStringLiteral("dialog-information"));
             notification->sendEvent();

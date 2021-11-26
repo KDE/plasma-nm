@@ -71,12 +71,12 @@ private:
     void setConnectionTooltipIcon(const QString &icon);
     void setVpn(bool vpn);
     void setLimited(bool limited);
-    uint m_signal;
+    uint m_signal = 0;
     NetworkManager::WirelessNetwork::Ptr m_wirelessNetwork;
 
-    bool m_connecting;
-    bool m_limited;
-    bool m_vpn;
+    bool m_connecting = false;
+    bool m_limited = false;
+    bool m_vpn = false;
     QString m_connectionIcon;
     QString m_connectionTooltipIcon;
     bool m_needsPortal = false;

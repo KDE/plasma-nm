@@ -23,8 +23,8 @@ public:
     State validate(QString &, int &) const override;
 
 private:
-    SimpleIpV6AddressValidator *m_ipv6Validator;
-    SimpleIpV4AddressValidator *m_ipv4Validator;
+    SimpleIpV6AddressValidator *m_ipv6Validator = nullptr;
+    SimpleIpV4AddressValidator *m_ipv4Validator = nullptr;
 };
 
 #endif // SIMPLEIPV4ADDRESSVALIDATOR_H

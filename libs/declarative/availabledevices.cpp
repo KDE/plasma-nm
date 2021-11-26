@@ -10,10 +10,6 @@
 
 AvailableDevices::AvailableDevices(QObject *parent)
     : QObject(parent)
-    , m_wiredDeviceAvailable(false)
-    , m_wirelessDeviceAvailable(false)
-    , m_modemDeviceAvailable(false)
-    , m_bluetoothDeviceAvailable(false)
 {
     for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Modem) {

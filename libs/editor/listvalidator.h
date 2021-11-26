@@ -26,7 +26,7 @@ public:
     void setInnerValidator(QValidator *validator);
 
 private:
-    QValidator *inner;
+    QValidator *inner = nullptr;
 };
 
 #endif // PLASMA_NM_LIST_VALIDATOR_H

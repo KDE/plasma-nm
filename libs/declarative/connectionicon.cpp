@@ -23,11 +23,7 @@
 
 ConnectionIcon::ConnectionIcon(QObject *parent)
     : QObject(parent)
-    , m_signal(0)
     , m_wirelessNetwork(nullptr)
-    , m_connecting(false)
-    , m_limited(false)
-    , m_vpn(false)
 #if WITH_MODEMMANAGER_SUPPORT
     , m_modemNetwork(nullptr)
 #endif
@@ -89,11 +85,11 @@ bool ConnectionIcon::connecting() const
 
 QString ConnectionIcon::connectionIcon() const
 {
-    if (m_vpn && !m_connectionIcon.contains("available")) {
+    if (m_vpn && !m_connectionIcon.contains(QLatin1String("available"))) {
         return m_connectionIcon + "-locked";
     }
 
-    if (m_limited && !m_connectionIcon.contains("available")) {
+    if (m_limited && !m_connectionIcon.contains(QLatin1String("available"))) {
         return m_connectionIcon + "-limited";
     }
 
@@ -204,7 +200,7 @@ void ConnectionIcon::modemSignalChanged(const ModemManager::SignalQualityPair &s
 void ConnectionIcon::networkingEnabledChanged(bool enabled)
 {
     if (!enabled) {
-        setConnectionIcon("network-unavailable");
+        setConnectionIcon(QStringLiteral("network-unavailable"));
     }
 }
 
@@ -359,7 +355,7 @@ void ConnectionIcon::setIcons()
                     }
                 }
             } else if (type == NetworkManager::Device::Ethernet) {
-                setConnectionIcon("network-wired-activated");
+                setConnectionIcon(QStringLiteral("network-wired-activated"));
                 setConnectionTooltipIcon("network-wired-activated");
             } else if (type == NetworkManager::Device::Modem) {
 #if WITH_MODEMMANAGER_SUPPORT
@@ -379,7 +375,7 @@ void ConnectionIcon::setIcons()
                         setConnectionTooltipIcon("phone");
 #endif
                     } else {
-                        setConnectionIcon("network-bluetooth-activated");
+                        setConnectionIcon(QStringLiteral("network-bluetooth-activated"));
                         setConnectionTooltipIcon("preferences-system-bluetooth");
                     }
                 }
@@ -407,7 +403,7 @@ void ConnectionIcon::setDisconnectedIcon()
 
     if (NetworkManager::status() == NetworkManager::Unknown //
         || NetworkManager::status() == NetworkManager::Asleep) {
-        setConnectionIcon("network-unavailable");
+        setConnectionIcon(QStringLiteral("network-unavailable"));
         return;
     }
 

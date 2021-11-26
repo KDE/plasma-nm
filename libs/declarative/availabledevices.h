@@ -53,10 +53,10 @@ Q_SIGNALS:
     void bluetoothDeviceAvailableChanged(bool available);
 
 private:
-    bool m_wiredDeviceAvailable;
-    bool m_wirelessDeviceAvailable;
-    bool m_modemDeviceAvailable;
-    bool m_bluetoothDeviceAvailable;
+    bool m_wiredDeviceAvailable = false;
+    bool m_wirelessDeviceAvailable = false;
+    bool m_modemDeviceAvailable = false;
+    bool m_bluetoothDeviceAvailable = false;
 };
 
 #endif // PLASMA_NM_AVAILABLE_DEVICES_H

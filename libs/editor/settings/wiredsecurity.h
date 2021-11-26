@@ -34,8 +34,8 @@ public:
     bool enabled8021x() const;
 
 private:
-    Ui::WiredSecurity *m_ui;
-    Security8021x *m_8021xWidget;
+    Ui::WiredSecurity *const m_ui;
+    Security8021x *m_8021xWidget = nullptr;
     NetworkManager::Security8021xSetting::Ptr m_8021xSetting;
 };
 

@@ -44,7 +44,7 @@ private:
     QStringList firewallZones() const;
 
     void populateVpnConnections();
-    Ui::ConnectionWidget *m_widget;
+    Ui::ConnectionWidget *const m_widget;
     NetworkManager::ConnectionSettings m_tmpSetting;
     NetworkManager::ConnectionSettings::ConnectionType m_type;
     QString m_masterUuid;

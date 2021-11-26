@@ -28,7 +28,7 @@ public:
     QValidator::State checkTetradsRanges(QString &) const;
 
 private:
-    AddressStyle m_addressStyle;
+    const AddressStyle m_addressStyle;
     QRegularExpressionValidator m_validator;
 };
 

@@ -51,8 +51,8 @@ private Q_SLOTS:
 private:
     QString m_uuid;
     QString m_id;
-    Ui::BondWidget *m_ui;
-    QMenu *m_menu;
+    Ui::BondWidget *const m_ui;
+    QMenu *m_menu = nullptr;
 };
 
 #endif // PLASMA_NM_BOND_WIDGET_H

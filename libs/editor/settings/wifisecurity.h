@@ -52,9 +52,9 @@ private Q_SLOTS:
     void setWepKey(int keyIndex);
 
 private:
-    Ui::WifiSecurity *m_ui;
-    Security8021x *m_8021xWidget;
-    Security8021x *m_WPA2Widget;
+    Ui::WifiSecurity *const m_ui;
+    Security8021x *m_8021xWidget = nullptr;
+    Security8021x *m_WPA2Widget = nullptr;
     NetworkManager::WirelessSecuritySetting::Ptr m_wifiSecurity;
 };
 

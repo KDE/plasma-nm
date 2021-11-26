@@ -45,7 +45,7 @@ private Q_SLOTS:
     void generateRandomClonedMac();
 
 private:
-    Ui::WiredConnectionWidget *m_widget;
+    Ui::WiredConnectionWidget *const m_widget;
 };
 
 #endif // PLASMA_NM_WIRED_CONNECTION_WIDGET_H

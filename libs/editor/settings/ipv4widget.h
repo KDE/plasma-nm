@@ -48,7 +48,7 @@ private Q_SLOTS:
     void tableViewItemChanged(QStandardItem *item);
 
 private:
-    Ui::IPv4Widget *m_ui;
+    Ui::IPv4Widget *const m_ui;
     NetworkManager::Ipv4Setting m_tmpIpv4Setting;
 
     class Private;

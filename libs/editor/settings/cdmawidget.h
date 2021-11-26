@@ -33,7 +33,7 @@ public:
     bool isValid() const override;
 
 private:
-    Ui::CdmaWidget *m_ui;
+    Ui::CdmaWidget *const m_ui;
 };
 
 #endif // PLASMA_NM_CDMA_WIDGET_H

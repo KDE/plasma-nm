@@ -28,8 +28,8 @@ private Q_SLOTS:
     void onValidityChanged(bool valid);
 
 private:
-    QDialogButtonBox *m_buttonBox;
-    ConnectionEditorTabWidget *m_connectionEditorTabWidget;
+    QDialogButtonBox *const m_buttonBox;
+    ConnectionEditorTabWidget *const m_connectionEditorTabWidget;
 };
 
 #endif // PLASMA_NM_CONNECTION_EDITOR_BASE_H

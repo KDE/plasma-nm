@@ -11,8 +11,6 @@
 
 SimpleIpListValidator::SimpleIpListValidator(AddressStyle style, AddressType type, QObject *parent)
     : QValidator(parent)
-    , m_ipv6Validator(nullptr)
-    , m_ipv4Validator(nullptr)
 {
     if (type == Ipv4 || type == Both) {
         SimpleIpV4AddressValidator::AddressStyle ipv4Style;

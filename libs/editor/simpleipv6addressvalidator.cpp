@@ -15,13 +15,13 @@ SimpleIpV6AddressValidator::SimpleIpV6AddressValidator(AddressStyle style, QObje
 {
     switch (style) {
     case Base:
-        m_validator.setRegularExpression(QRegularExpression(QLatin1String("([0-9a-fA-F]{1,4}|:)+")));
+        m_validator.setRegularExpression(QRegularExpression(QStringLiteral("([0-9a-fA-F]{1,4}|:)+")));
         break;
     case WithCidr:
-        m_validator.setRegularExpression(QRegularExpression(QLatin1String("([0-9a-fA-F]{1,4}|:){2,15}/[0-9]{1,3}")));
+        m_validator.setRegularExpression(QRegularExpression(QStringLiteral("([0-9a-fA-F]{1,4}|:){2,15}/[0-9]{1,3}")));
         break;
     case WithPort:
-        m_validator.setRegularExpression(QRegularExpression(QLatin1String("\\[([0-9a-fA-F]{1,4}|:)+\\]:[0-9]{1,5}")));
+        m_validator.setRegularExpression(QRegularExpression(QStringLiteral("\\[([0-9a-fA-F]{1,4}|:)+\\]:[0-9]{1,5}")));
     }
 }
 

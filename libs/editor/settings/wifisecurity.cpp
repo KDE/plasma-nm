@@ -325,7 +325,7 @@ void WifiSecurity::onSsidChanged(const QString &ssid)
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.staticCast<NetworkManager::WirelessDevice>();
             if (wifiDevice) {
-                for (const NetworkManager::WirelessNetwork::Ptr wifiNetwork : wifiDevice->networks()) {
+                for (const NetworkManager::WirelessNetwork::Ptr &wifiNetwork : wifiDevice->networks()) {
                     if (wifiNetwork && wifiNetwork->ssid() == ssid) {
                         NetworkManager::AccessPoint::Ptr ap = wifiNetwork->referenceAccessPoint();
                         NetworkManager::WirelessSecurityType securityType =

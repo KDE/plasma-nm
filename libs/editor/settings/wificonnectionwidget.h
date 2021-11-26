@@ -44,7 +44,7 @@ private Q_SLOTS:
     void bandChanged(int band);
 
 private:
-    Ui::WifiConnectionWidget *m_ui;
+    Ui::WifiConnectionWidget *const m_ui;
     void fillChannels(NetworkManager::WirelessSetting::FrequencyBand band);
 };
 

@@ -53,8 +53,8 @@ private Q_SLOTS:
 private:
     QString m_uuid;
     QString m_id;
-    Ui::TeamWidget *m_ui;
-    QMenu *m_menu;
+    Ui::TeamWidget *const m_ui;
+    QMenu *m_menu = nullptr;
 };
 
 #endif // PLASMA_NM_TEAM_WIDGET_H

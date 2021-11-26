@@ -34,7 +34,7 @@ private:
     void slotWidgetChanged();
 
     class Private;
-    Private *d;
+    Private *const d;
 };
 
 #endif // PLASMA_NM_WIREGUARD_TAB_WIDGET_H

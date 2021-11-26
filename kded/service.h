@@ -23,7 +23,7 @@ class Q_DECL_EXPORT NetworkManagementService : public KDEDModule
     Q_OBJECT
     Q_DECLARE_PRIVATE(NetworkManagementService)
 public:
-    NetworkManagementService(QObject *parent, const QVariantList &);
+    explicit NetworkManagementService(QObject *parent, const QVariantList &);
     ~NetworkManagementService() override;
 
 public Q_SLOTS:

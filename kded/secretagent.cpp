@@ -155,11 +155,11 @@ void SecretAgent::dialogAccepted()
         if (request.type == SecretsRequest::GetSecrets && request.dialog == m_dialog) {
             NMStringMap tmpOpenconnectSecrets;
             NMVariantMapMap connection = request.dialog->secrets();
-            if (connection.contains(QLatin1String("vpn"))) {
-                if (connection.value(QStringLiteral("vpn")).contains(QLatin1String("tmp-secrets"))) {
-                    QVariantMap vpnSetting = connection.value(QLatin1String("vpn"));
-                    tmpOpenconnectSecrets = qdbus_cast<NMStringMap>(vpnSetting.take(QLatin1String("tmp-secrets")));
-                    connection.insert(QLatin1String("vpn"), vpnSetting);
+            if (connection.contains(QStringLiteral("vpn"))) {
+                if (connection.value(QStringLiteral("vpn")).contains(QStringLiteral("tmp-secrets"))) {
+                    QVariantMap vpnSetting = connection.value(QStringLiteral("vpn"));
+                    tmpOpenconnectSecrets = qdbus_cast<NMStringMap>(vpnSetting.take(QStringLiteral("tmp-secrets")));
+                    connection.insert(QStringLiteral("vpn"), vpnSetting);
                 }
             }
 
@@ -222,13 +222,13 @@ void SecretAgent::dialogAccepted()
                     NMStringMap secrets = vpnSetting->secrets();
 
                     // Load secrets from auth dialog which are returned back to NM
-                    if (connection.value(QLatin1String("vpn")).contains(QLatin1String("secrets"))) {
-                        secrets.unite(qdbus_cast<NMStringMap>(connection.value(QLatin1String("vpn")).value(QLatin1String("secrets"))));
+                    if (connection.value(QStringLiteral("vpn")).contains(QStringLiteral("secrets"))) {
+                        secrets.unite(qdbus_cast<NMStringMap>(connection.value(QStringLiteral("vpn")).value(QLatin1String("secrets"))));
                     }
 
                     // Load temporary secrets from auth dialog which are not returned to NM
                     for (const QString &key : tmpOpenconnectSecrets.keys()) {
-                        if (secrets.contains(QLatin1String("save_passwords")) && secrets.value(QLatin1String("save_passwords")) == QLatin1String("yes")) {
+                        if (secrets.contains(QStringLiteral("save_passwords")) && secrets.value(QStringLiteral("save_passwords")) == QLatin1String("yes")) {
                             data.insert(key + QLatin1String("-flags"), QString::number(NetworkManager::Setting::AgentOwned));
                         } else {
                             data.insert(key + QLatin1String("-flags"), QString::number(NetworkManager::Setting::NotSaved));
@@ -363,13 +363,13 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
             qCDebug(PLASMA_NM) << Q_FUNC_INFO << "Sending SSH auth socket" << authSock;
 
             if (authSock.isEmpty()) {
-                sendError(SecretAgent::NoSecrets, QLatin1String("SSH_AUTH_SOCK not present"), request.message);
+                sendError(SecretAgent::NoSecrets, QStringLiteral("SSH_AUTH_SOCK not present"), request.message);
             } else {
                 NMStringMap secrets;
-                secrets.insert(QLatin1String("ssh-auth-sock"), authSock);
+                secrets.insert(QStringLiteral("ssh-auth-sock"), authSock);
 
                 QVariantMap secretData;
-                secretData.insert(QLatin1String("secrets"), QVariant::fromValue<NMStringMap>(secrets));
+                secretData.insert(QStringLiteral("secrets"), QVariant::fromValue<NMStringMap>(secrets));
                 request.connection[request.setting_name] = secretData;
                 sendSecrets(request.connection, request.message);
             }
@@ -380,7 +380,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
     NMStringMap secretsMap;
     if (!requestNew && useWallet()) {
         if (m_wallet->isOpen()) {
-            if (m_wallet->hasFolder("Network Management") && m_wallet->setFolder("Network Management")) {
+            if (m_wallet->hasFolder(QStringLiteral("Network Management")) && m_wallet->setFolder(QStringLiteral("Network Management"))) {
                 QString key = QLatin1Char('{') % connectionSettings->uuid() % QLatin1Char('}') % QLatin1Char(';') % request.setting_name;
                 m_wallet->readMap(key, secretsMap);
             }
@@ -415,10 +415,10 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
             // Insert an empty secrets map as it was before I fixed it in NetworkManagerQt to make sure NM will ask again
             // with flags we need
             QVariantMap secretsMap;
-            secretsMap.insert(QLatin1String("secrets"), QVariant::fromValue<NMStringMap>(NMStringMap()));
-            result.insert("wireguard", secretsMap);
+            secretsMap.insert(QStringLiteral("secrets"), QVariant::fromValue<NMStringMap>(NMStringMap()));
+            result.insert(QStringLiteral("wireguard"), secretsMap);
         } else {
-            result.insert("wireguard", wireGuardSetting->secretsToMap());
+            result.insert(QStringLiteral("wireguard"), wireGuardSetting->secretsToMap());
         }
         sendSecrets(result, request.message);
         return true;
@@ -451,10 +451,10 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
             // Insert an empty secrets map as it was before I fixed it in NetworkManagerQt to make sure NM will ask again
             // with flags we need
             QVariantMap secretsMap;
-            secretsMap.insert(QLatin1String("secrets"), QVariant::fromValue<NMStringMap>(NMStringMap()));
-            result.insert("vpn", secretsMap);
+            secretsMap.insert(QStringLiteral("secrets"), QVariant::fromValue<NMStringMap>(NMStringMap()));
+            result.insert(QStringLiteral("vpn"), secretsMap);
         } else {
-            result.insert("vpn", vpnSetting->secretsToMap());
+            result.insert(QStringLiteral("vpn"), vpnSetting->secretsToMap());
         }
         sendSecrets(result, request.message);
         return true;
@@ -475,11 +475,11 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request) const
         if (m_wallet->isOpen()) {
             NetworkManager::ConnectionSettings connectionSettings(request.connection);
 
-            if (!m_wallet->hasFolder("Network Management")) {
-                m_wallet->createFolder("Network Management");
+            if (!m_wallet->hasFolder(QStringLiteral("Network Management"))) {
+                m_wallet->createFolder(QStringLiteral("Network Management"));
             }
 
-            if (m_wallet->setFolder("Network Management")) {
+            if (m_wallet->setFolder(QStringLiteral("Network Management"))) {
                 for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
                     NMStringMap secretsMap = setting->secretsToStringMap();
 
@@ -512,7 +512,7 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request) const
 {
     if (useWallet()) {
         if (m_wallet->isOpen()) {
-            if (m_wallet->hasFolder("Network Management") && m_wallet->setFolder("Network Management")) {
+            if (m_wallet->hasFolder(QStringLiteral("Network Management")) && m_wallet->setFolder("Network Management")) {
                 NetworkManager::ConnectionSettings connectionSettings(request.connection);
                 for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
                     QString entryName = QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name();
@@ -590,7 +590,7 @@ void SecretAgent::sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage
 
 void SecretAgent::importSecretsFromPlainTextFiles()
 {
-    KConfig config(QLatin1String("plasma-networkmanagement"), KConfig::SimpleConfig);
+    KConfig config(QStringLiteral("plasma-networkmanagement"), KConfig::SimpleConfig);
 
     // No action is required when the list of secrets is empty
     if (!config.groupList().isEmpty()) {

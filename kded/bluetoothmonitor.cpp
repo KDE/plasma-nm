@@ -91,7 +91,7 @@ void BluetoothMonitor::addBluetoothConnection(const QString &bdAddr, const QStri
 #if WITH_MODEMMANAGER_SUPPORT
     else if (service == QLatin1String("dun")) {
         QPointer<MobileConnectionWizard> mobileConnectionWizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Bluetooth);
-        connect(mobileConnectionWizard.data(), &MobileConnectionWizard::accepted, [bdAddr, connectionName, mobileConnectionWizard, this]() {
+        connect(mobileConnectionWizard.data(), &MobileConnectionWizard::accepted, [bdAddr, connectionName, mobileConnectionWizard]() {
             if (mobileConnectionWizard->getError() == MobileProviders::Success) {
                 qCDebug(PLASMA_NM) << "Mobile broadband wizard finished:" << mobileConnectionWizard->type() << mobileConnectionWizard->args();
                 if (mobileConnectionWizard->args().count() == 2) { // GSM or CDMA

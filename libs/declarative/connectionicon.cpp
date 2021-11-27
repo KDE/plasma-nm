@@ -356,7 +356,7 @@ void ConnectionIcon::setIcons()
                 }
             } else if (type == NetworkManager::Device::Ethernet) {
                 setConnectionIcon(QStringLiteral("network-wired-activated"));
-                setConnectionTooltipIcon("network-wired-activated");
+                setConnectionTooltipIcon(QStringLiteral("network-wired-activated"));
             } else if (type == NetworkManager::Device::Modem) {
 #if WITH_MODEMMANAGER_SUPPORT
                 setModemIcon(device);
@@ -376,7 +376,7 @@ void ConnectionIcon::setIcons()
 #endif
                     } else {
                         setConnectionIcon(QStringLiteral("network-bluetooth-activated"));
-                        setConnectionTooltipIcon("preferences-system-bluetooth");
+                        setConnectionTooltipIcon(QStringLiteral("preferences-system-bluetooth"));
                     }
                 }
             } else if (type == 29) { // TODO change to WireGuard enum value once it is added
@@ -435,20 +435,20 @@ void ConnectionIcon::setDisconnectedIcon()
     }
 
     if (wired) {
-        setConnectionIcon("network-wired-available");
-        setConnectionTooltipIcon("network-wired");
+        setConnectionIcon(QStringLiteral("network-wired-available"));
+        setConnectionTooltipIcon(QStringLiteral("network-wired"));
         return;
     } else if (wireless) {
-        setConnectionIcon("network-wireless-available");
-        setConnectionTooltipIcon("network-wireless-connected-00");
+        setConnectionIcon(QStringLiteral("network-wireless-available"));
+        setConnectionTooltipIcon(QStringLiteral("network-wireless-connected-00"));
         return;
     } else if (modem) {
-        setConnectionIcon("network-mobile-available");
-        setConnectionTooltipIcon("phone");
+        setConnectionIcon(QStringLiteral("network-mobile-available"));
+        setConnectionTooltipIcon(QStringLiteral("phone"));
         return;
     } else {
-        setConnectionIcon("network-unavailable");
-        setConnectionTooltipIcon("network-wired");
+        setConnectionIcon(QStringLiteral("network-unavailable"));
+        setConnectionTooltipIcon(QStringLiteral("network-wired"));
     }
 }
 
@@ -458,7 +458,7 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr &device)
     NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
 
     if (!modemDevice) {
-        setConnectionIcon("network-mobile-100");
+        setConnectionIcon(QStringLiteral("network-mobile-100"));
 
         return;
     }
@@ -478,8 +478,8 @@ void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr &device)
         m_signal = m_modemNetwork->signalQuality().signal;
         setIconForModem();
     } else {
-        setConnectionIcon("network-mobile-0");
-        setConnectionTooltipIcon("phone");
+        setConnectionIcon(QStringLiteral("network-mobile-0"));
+        setConnectionTooltipIcon(QStringLiteral("phone"));
         return;
     }
 }
@@ -489,20 +489,20 @@ void ConnectionIcon::setIconForModem()
     if (!m_signal) {
         m_signal = m_modemNetwork->signalQuality().signal;
     }
-    QString strength = "00";
+    QString strength = QStringLiteral("00");
 
     if (m_signal == 0) {
         strength = '0';
     } else if (m_signal < 20) {
-        strength = "20";
+        strength = QStringLiteral("20");
     } else if (m_signal < 40) {
-        strength = "40";
+        strength = QStringLiteral("40");
     } else if (m_signal < 60) {
-        strength = "60";
+        strength = QStringLiteral("60");
     } else if (m_signal < 80) {
-        strength = "80";
+        strength = QStringLiteral("80");
     } else {
-        strength = "100";
+        strength = QStringLiteral("100");
     }
 
     QString result;
@@ -510,37 +510,37 @@ void ConnectionIcon::setIconForModem()
     switch (m_modemNetwork->accessTechnologies()) {
     case MM_MODEM_ACCESS_TECHNOLOGY_GSM:
     case MM_MODEM_ACCESS_TECHNOLOGY_GSM_COMPACT:
-        result = "network-mobile-%1";
+        result = QStringLiteral("network-mobile-%1");
         break;
     case MM_MODEM_ACCESS_TECHNOLOGY_GPRS:
-        result = "network-mobile-%1-gprs";
+        result = QStringLiteral("network-mobile-%1-gprs");
         break;
     case MM_MODEM_ACCESS_TECHNOLOGY_EDGE:
-        result = "network-mobile-%1-edge";
+        result = QStringLiteral("network-mobile-%1-edge");
         break;
     case MM_MODEM_ACCESS_TECHNOLOGY_UMTS:
-        result = "network-mobile-%1-umts";
+        result = QStringLiteral("network-mobile-%1-umts");
         break;
     case MM_MODEM_ACCESS_TECHNOLOGY_HSDPA:
-        result = "network-mobile-%1-hsdpa";
+        result = QStringLiteral("network-mobile-%1-hsdpa");
         break;
     case MM_MODEM_ACCESS_TECHNOLOGY_HSUPA:
-        result = "network-mobile-%1-hsupa";
+        result = QStringLiteral("network-mobile-%1-hsupa");
         break;
     case MM_MODEM_ACCESS_TECHNOLOGY_HSPA:
     case MM_MODEM_ACCESS_TECHNOLOGY_HSPA_PLUS:
-        result = "network-mobile-%1-hspa";
+        result = QStringLiteral("network-mobile-%1-hspa");
         break;
     case MM_MODEM_ACCESS_TECHNOLOGY_LTE:
-        result = "network-mobile-%1-lte";
+        result = QStringLiteral("network-mobile-%1-lte");
         break;
     default:
-        result = "network-mobile-%1";
+        result = QStringLiteral("network-mobile-%1");
         break;
     }
 
     setConnectionIcon(QString(result).arg(strength));
-    setConnectionTooltipIcon("phone");
+    setConnectionTooltipIcon(QStringLiteral("phone"));
 }
 #endif
 
@@ -571,24 +571,24 @@ void ConnectionIcon::setWirelessIconForSignalStrength(int strength)
     int iconStrength = 100;
     if (strength == 0) {
         iconStrength = 0;
-        setConnectionTooltipIcon("network-wireless-connected-00");
+        setConnectionTooltipIcon(QStringLiteral("network-wireless-connected-00"));
     } else if (strength < 20) {
         iconStrength = 20;
-        setConnectionTooltipIcon("network-wireless-connected-20");
+        setConnectionTooltipIcon(QStringLiteral("network-wireless-connected-20"));
     } else if (strength < 40) {
         iconStrength = 40;
-        setConnectionTooltipIcon("network-wireless-connected-40");
+        setConnectionTooltipIcon(QStringLiteral("network-wireless-connected-40"));
     } else if (strength < 60) {
         iconStrength = 60;
-        setConnectionTooltipIcon("network-wireless-connected-60");
+        setConnectionTooltipIcon(QStringLiteral("network-wireless-connected-60"));
     } else if (strength < 80) {
         iconStrength = 80;
-        setConnectionTooltipIcon("network-wireless-connected-80");
+        setConnectionTooltipIcon(QStringLiteral("network-wireless-connected-80"));
     } else if (strength < 100) {
-        setConnectionTooltipIcon("network-wireless-connected-100");
+        setConnectionTooltipIcon(QStringLiteral("network-wireless-connected-100"));
     }
 
-    QString icon = QString("network-wireless-%1").arg(iconStrength);
+    QString icon = QStringLiteral("network-wireless-%1").arg(iconStrength);
 
     setConnectionIcon(icon);
 }

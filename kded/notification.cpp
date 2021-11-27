@@ -22,6 +22,9 @@
 #include <QTimer>
 
 #include <algorithm>
+#include <chrono>
+
+using namespace std::chrono_literals;
 
 Notification::Notification(QObject *parent)
     : QObject(parent)
@@ -454,7 +457,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
     KNotification *notify = new KNotification(eventId, KNotification::CloseOnTimeout);
     connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
     notify->setProperty("uni", connectionId);
-    notify->setComponentName("networkmanagement");
+    notify->setComponentName(QStringLiteral("networkmanagement"));
     if (state == NetworkManager::VpnConnection::Activated) {
         notify->setIconName(QStringLiteral("dialog-information"));
     } else {
@@ -493,7 +496,7 @@ void Notification::onPrepareForSleep(bool sleep)
     } else {
         if (!m_checkActiveConnectionOnResumeTimer) {
             m_checkActiveConnectionOnResumeTimer = new QTimer(this);
-            m_checkActiveConnectionOnResumeTimer->setInterval(10000);
+            m_checkActiveConnectionOnResumeTimer->setInterval(10s);
             m_checkActiveConnectionOnResumeTimer->setSingleShot(true);
             connect(m_checkActiveConnectionOnResumeTimer, &QTimer::timeout, this, &Notification::onCheckActiveConnectionOnResume);
         }
@@ -524,7 +527,7 @@ void Notification::onCheckActiveConnectionOnResume()
     connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
     const QString uni = QStringLiteral("offlineNotification");
     notify->setProperty("uni", uni);
-    notify->setComponentName("networkmanagement");
+    notify->setComponentName(QStringLiteral("networkmanagement"));
     notify->setIconName(QStringLiteral("dialog-warning"));
     notify->setTitle(i18n("No Network Connection"));
     notify->setText(i18n("You are no longer connected to a network."));

@@ -21,11 +21,11 @@ Configuration &Configuration::self()
 
 bool Configuration::unlockModemOnDetection()
 {
-    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
-    KConfigGroup grp(config, QLatin1String("General"));
+    KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("plasma-nm"));
+    KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
-        return grp.readEntry(QLatin1String("UnlockModemOnDetection"), true);
+        return grp.readEntry(QStringLiteral("UnlockModemOnDetection"), true);
     }
 
     return true;
@@ -33,11 +33,11 @@ bool Configuration::unlockModemOnDetection()
 
 void Configuration::setUnlockModemOnDetection(bool unlock)
 {
-    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
-    KConfigGroup grp(config, QLatin1String("General"));
+    KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("plasma-nm"));
+    KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
-        grp.writeEntry(QLatin1String("UnlockModemOnDetection"), unlock);
+        grp.writeEntry(QStringLiteral("UnlockModemOnDetection"), unlock);
     }
 }
 
@@ -48,11 +48,11 @@ bool Configuration::manageVirtualConnections()
         return propManageVirtualConnections;
     }
 
-    KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
-    KConfigGroup grp(config, QLatin1String("General"));
+    KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("plasma-nm"));
+    KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
-        propManageVirtualConnections = grp.readEntry(QLatin1String("ManageVirtualConnections"), false);
+        propManageVirtualConnections = grp.readEntry(QStringLiteral("ManageVirtualConnections"), false);
         propManageVirtualConnectionsInitialized = true;
 
         return propManageVirtualConnections;

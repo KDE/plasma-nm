@@ -39,7 +39,7 @@ private Q_SLOTS:
     void showAdvanced();
 
 private:
-    Ui::VpncWidget *m_ui;
+    Ui::VpncWidget *const m_ui;
     NetworkManager::VpnSetting::Ptr m_setting;
     NetworkManager::VpnSetting::Ptr m_tmpSetting;
     QPointer<VpncAdvancedWidget> m_advancedWidget;

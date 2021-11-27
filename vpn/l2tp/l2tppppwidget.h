@@ -28,7 +28,7 @@ public:
 
 private:
     void loadConfig(const NetworkManager::VpnSetting::Ptr &setting);
-    Ui::L2tpPppWidget *m_ui;
+    Ui::L2tpPppWidget *const m_ui;
     bool m_need_peer_eap;
 };
 

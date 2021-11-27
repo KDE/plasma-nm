@@ -54,7 +54,7 @@ private:
     void loadConfig();
     void fillOnePasswordCombo(PasswordField *passwordField, NetworkManager::Setting::SecretFlags type);
     void handleOnePasswordType(const PasswordField *passwordField, const QString &key, NMStringMap &data) const;
-    Ui::OpenVpnAdvancedWidget *m_ui;
+    Ui::OpenVpnAdvancedWidget *const m_ui;
     class Private;
     Private *const d;
 };

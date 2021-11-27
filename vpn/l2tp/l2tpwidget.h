@@ -40,7 +40,7 @@ private Q_SLOTS:
     void showPpp();
 
 private:
-    Ui::L2tpWidget *m_ui;
+    Ui::L2tpWidget *const m_ui;
     NetworkManager::VpnSetting::Ptr m_setting;
     NetworkManager::VpnSetting::Ptr m_tmpIpsecSetting;
     NetworkManager::VpnSetting::Ptr m_tmpPppSetting;

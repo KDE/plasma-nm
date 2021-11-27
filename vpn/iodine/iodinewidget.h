@@ -29,7 +29,7 @@ public:
     bool isValid() const override;
 
 private:
-    Ui::IodineWidget *m_ui;
+    Ui::IodineWidget *const m_ui;
     NetworkManager::VpnSetting::Ptr m_setting;
 };
 

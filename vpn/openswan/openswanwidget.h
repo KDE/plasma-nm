@@ -31,7 +31,7 @@ public:
     bool isValid() const override;
 
 private:
-    Ui::OpenswanWidget *m_ui;
+    Ui::OpenswanWidget *const m_ui;
     NetworkManager::VpnSetting::Ptr m_setting;
 };
 

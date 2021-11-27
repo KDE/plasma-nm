@@ -24,7 +24,7 @@ public:
     VpncUiPluginPrivate();
     ~VpncUiPluginPrivate() override;
     QString readStringKeyValue(const KConfigGroup &configGroup, const QString &key);
-    KProcess *ciscoDecrypt;
+    KProcess *ciscoDecrypt = nullptr;
     QString decryptedPasswd;
 
 public Q_SLOTS:

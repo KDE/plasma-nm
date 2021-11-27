@@ -1148,7 +1148,7 @@ void NetworkModel::updateFromWirelessNetwork(NetworkModelItem *item,
             connection->settings()->setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
         if (wirelessSetting) {
             if (!wirelessSetting->bssid().isEmpty()) {
-                for (const NetworkManager::AccessPoint::Ptr ap : network->accessPoints()) {
+                for (const NetworkManager::AccessPoint::Ptr &ap : network->accessPoints()) {
                     if (ap->hardwareAddress() == NetworkManager::macAddressAsString(wirelessSetting->bssid())) {
                         item->setSignal(ap->signalStrength());
                         item->setSpecificPath(ap->uni());

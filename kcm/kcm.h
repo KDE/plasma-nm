@@ -13,7 +13,6 @@
 #include <KCModule>
 #include <ui_kcm.h>
 
-class QQuickView;
 
 class KCMNetworkmanagement : public KCModule
 {

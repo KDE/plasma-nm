@@ -110,7 +110,7 @@ void IpV6RoutesWidget::setRoutes(const QList<NetworkManager::IpRoute> &list)
     }
 }
 
-QList<NetworkManager::IpRoute> IpV6RoutesWidget::routes()
+QList<NetworkManager::IpRoute> IpV6RoutesWidget::routes() const
 {
     QList<NetworkManager::IpRoute> list;
 

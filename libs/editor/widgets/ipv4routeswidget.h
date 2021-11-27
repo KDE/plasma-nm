@@ -41,7 +41,7 @@ private Q_SLOTS:
 
 private:
     class Private;
-    Private *d;
+    Private *const d;
 };
 
 #endif // IPV4ROUTESWIDGET_H

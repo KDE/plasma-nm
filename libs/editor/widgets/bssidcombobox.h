@@ -36,7 +36,7 @@ private:
     void addBssidsToCombo(const QList<NetworkManager::AccessPoint::Ptr> &aps);
 
     QString m_initialBssid;
-    bool m_dirty;
+    bool m_dirty = false;
 };
 
 #endif // PLASMA_NM_BSSIDCOMBOBOX_H

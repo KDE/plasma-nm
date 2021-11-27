@@ -23,7 +23,7 @@ public:
     ~IpV6RoutesWidget() override;
 
     void setRoutes(const QList<NetworkManager::IpRoute> &list);
-    QList<NetworkManager::IpRoute> routes();
+    QList<NetworkManager::IpRoute> routes() const;
     void setNeverDefault(bool checked);
     bool neverDefault() const;
     void setIgnoreAutoRoutes(bool checked);
@@ -41,7 +41,7 @@ private Q_SLOTS:
 
 private:
     class Private;
-    Private *d;
+    Private *const d;
 };
 
 #endif // IPV6ROUTESWIDGET_H

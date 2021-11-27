@@ -49,10 +49,10 @@ Q_SIGNALS:
 
 private:
     PasswordOption m_currentPasswordOption;
-    QVBoxLayout *m_layout;
-    QLineEdit *m_passwordField;
-    QComboBox *m_passwordOptionsMenu;
-    QAction *m_toggleEchoModeAction;
+    QVBoxLayout *m_layout = nullptr;
+    QLineEdit *m_passwordField = nullptr;
+    QComboBox *m_passwordOptionsMenu = nullptr;
+    QAction *m_toggleEchoModeAction = nullptr;
 };
 
 #endif // PLASMA_NM_PASSWORD_FIELD_H

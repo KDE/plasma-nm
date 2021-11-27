@@ -26,7 +26,7 @@ public:
     void setValidator(const QValidator *validator);
     const QValidator *validator() const;
 
-    void setToolTip(const QString toolTip);
+    void setToolTip(const QString &toolTip);
 
 Q_SIGNALS:
     void itemsEdited(const QStringList &items);
@@ -35,7 +35,7 @@ protected Q_SLOTS:
     void dialogAccepted();
 
 private:
-    KEditListWidget *editListWidget;
+    KEditListWidget *const editListWidget;
 
     void removeEmptyItems(QStringList &list);
 };

@@ -33,7 +33,7 @@ private:
     void addAddressToCombo(const NetworkManager::Device::Ptr &device);
     QVariant hwAddressFromDevice(const NetworkManager::Device::Ptr &device);
     QString m_initialAddress;
-    bool m_dirty;
+    bool m_dirty = false;
 };
 
 #endif // PLASMA_NM_HWADDRCOMBOBOX_H

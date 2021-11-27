@@ -195,7 +195,7 @@ QStringList MobileProviders::getApns(const QString &provider)
                     if (isInternet) {
                         mApns.insert(e2.attribute("value"), e2.firstChild());
                     }
-                } else if (!e2.isNull() && e2.tagName().toLower() == "network-id") {
+                } else if (!e2.isNull() && e2.tagName().toLower() == QLatin1String("network-id")) {
                     mNetworkIds.append(e2.attribute("mcc") + '-' + e2.attribute("mnc"));
                 }
 
@@ -299,8 +299,8 @@ QVariantMap MobileProviders::getApnInfo(const QString &apn)
         QDomElement e = n.toElement(); // <name|username|password|dns(*)>
 
         if (!e.isNull()) {
-            if (e.tagName().toLower() == "name") {
-                QString lang = e.attribute("xml:lang");
+            if (e.tagName().toLower() == QLatin1String("name")) {
+                QString lang = e.attribute(QStringLiteral("xml:lang"));
                 if (lang.isEmpty()) {
                     lang = "en"; // English is default
                 } else {
@@ -308,7 +308,7 @@ QVariantMap MobileProviders::getApnInfo(const QString &apn)
                     lang.remove(QRegExp("\\-.*$")); // Remove everything after '-' in xml:lang attribute.
                 }
                 localizedPlanNames.insert(lang, e.text());
-            } else if (e.tagName().toLower() == "username") {
+            } else if (e.tagName().toLower() == QLatin1String("username")) {
                 temp.insert("username", e.text());
             } else if (e.tagName().toLower() == "password") {
                 temp.insert("password", e.text());
@@ -325,7 +325,7 @@ QVariantMap MobileProviders::getApnInfo(const QString &apn)
         temp.insert("name", QVariant::fromValue(name));
     }
     temp.insert("number", getGsmNumber());
-    temp.insert("apn", apn);
+    temp.insert(QStringLiteral("apn"), apn);
     temp.insert("dnsList", dnsList);
 
     return temp;

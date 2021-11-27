@@ -14,7 +14,7 @@ WireGuardKeyValidator::WireGuardKeyValidator(QObject *parent)
     // of 43 Alpha-numeric or  '+' or '/' with a 44th character of an equal sign.
     // The 43rd character is limited such that the converted character zeroes in
     // the 2 LSB.
-    m_validator->setRegularExpression(QRegularExpression(QLatin1String("[0-9a-zA-Z\\+/]{42,42}[AEIMQUYcgkosw048]=")));
+    m_validator->setRegularExpression(QRegularExpression(QStringLiteral("[0-9a-zA-Z\\+/]{42,42}[AEIMQUYcgkosw048]=")));
 }
 
 WireGuardKeyValidator::~WireGuardKeyValidator()

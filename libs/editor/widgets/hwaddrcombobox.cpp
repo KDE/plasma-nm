@@ -19,7 +19,6 @@
 
 HwAddrComboBox::HwAddrComboBox(QWidget *parent)
     : QComboBox(parent)
-    , m_dirty(false)
 {
     setEditable(true);
     setInsertPolicy(QComboBox::NoInsert);

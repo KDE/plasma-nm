@@ -96,7 +96,7 @@ QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value)
     // lets check address parts
     bool emptypresent = false;
     int i = 1;
-    for (QString part : addrParts) {
+    for (QString part : std::as_const(addrParts)) {
         if (part.isEmpty() && i < number) {
             // There is only one case where you can have 3 empty parts
             // and that is when you have the string: "::" which is valid

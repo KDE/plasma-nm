@@ -43,11 +43,11 @@ public:
     QStringList getProvidersFromMCCMNC(const QString &mccmnc);
     QString getGsmNumber() const
     {
-        return QString("*99#");
+        return QStringLiteral("*99#");
     }
     QString getCdmaNumber() const
     {
-        return QString("#777");
+        return QStringLiteral("#777");
     }
     inline ErrorCodes getError()
     {

@@ -14,8 +14,8 @@
 
 EditListDialog::EditListDialog(QWidget *parent)
     : QDialog(parent)
+    , editListWidget(new KEditListWidget(this))
 {
-    editListWidget = new KEditListWidget(this);
     editListWidget->setCheckAtEntering(true);
 
     QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
@@ -72,7 +72,7 @@ const QValidator *EditListDialog::validator() const
     return editListWidget->lineEdit()->validator();
 }
 
-void EditListDialog::setToolTip(const QString toolTip)
+void EditListDialog::setToolTip(const QString &toolTip)
 {
     editListWidget->lineEdit()->setToolTip(toolTip);
 }

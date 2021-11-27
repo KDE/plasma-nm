@@ -20,7 +20,6 @@ bool signalCompare(const NetworkManager::AccessPoint::Ptr &one, const NetworkMan
 
 BssidComboBox::BssidComboBox(QWidget *parent)
     : QComboBox(parent)
-    , m_dirty(false)
 {
     setEditable(true);
     setInsertPolicy(QComboBox::NoInsert);
@@ -83,7 +82,6 @@ void BssidComboBox::init(const QString &bssid, const QString &ssid)
 
             for (const NetworkManager::AccessPoint::Ptr &newAp : wifiNetwork->accessPoints()) {
                 bool found = false;
-                ;
                 for (const NetworkManager::AccessPoint::Ptr &existingAp : aps) {
                     if (newAp->hardwareAddress() == existingAp->hardwareAddress()) {
                         if (newAp->signalStrength() > existingAp->signalStrength()) {

@@ -43,7 +43,7 @@ QValidator::State SimpleIpListValidator::validate(QString &address, int &pos) co
     Q_UNUSED(pos)
 
     // Split the incoming address on commas possibly with spaces on either side
-    QStringList addressList = address.split(",");
+    QStringList addressList = address.split(QStringLiteral(","));
 
     // Use a local variable for position in the validators so it doesn't screw
     // up the position of the cursor when we return

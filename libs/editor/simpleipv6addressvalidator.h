@@ -11,6 +11,7 @@
 
 class Q_DECL_EXPORT SimpleIpV6AddressValidator : public QValidator
 {
+    Q_OBJECT
 public:
     enum AddressStyle { Base, WithCidr, WithPort };
 

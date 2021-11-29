@@ -13,6 +13,7 @@
 
 class Q_DECL_EXPORT SimpleIpListValidator : public QValidator
 {
+    Q_OBJECT
 public:
     enum AddressType { Ipv4, Ipv6, Both };
     enum AddressStyle { Base, WithCidr, WithPort };

@@ -18,6 +18,7 @@
  */
 class ListValidator : public QValidator
 {
+    Q_OBJECT
 public:
     explicit ListValidator(QObject *parent);
     ~ListValidator() override;

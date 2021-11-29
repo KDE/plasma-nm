@@ -106,7 +106,7 @@ QVariantMap WiredConnectionWidget::setting() const
 
     wiredSetting.setMacAddress(NetworkManager::macAddressFromString(m_widget->macAddress->hwAddress()));
 
-    if (!m_widget->clonedMacAddress->text().isEmpty() && m_widget->clonedMacAddress->text() != ":::::") {
+    if (!m_widget->clonedMacAddress->text().isEmpty() && m_widget->clonedMacAddress->text() != QLatin1String(":::::")) {
         wiredSetting.setClonedMacAddress(NetworkManager::macAddressFromString(m_widget->clonedMacAddress->text()));
     }
 
@@ -180,7 +180,7 @@ bool WiredConnectionWidget::isValid() const
         return false;
     }
 
-    if (m_widget->clonedMacAddress->text() != ":::::") {
+    if (m_widget->clonedMacAddress->text() != QLatin1String(":::::")) {
         if (!NetworkManager::macAddressIsValid(m_widget->clonedMacAddress->text())) {
             return false;
         }

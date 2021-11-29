@@ -11,6 +11,7 @@
 
 class WireGuardKeyValidator : public QValidator
 {
+    Q_OBJECT
 public:
     explicit WireGuardKeyValidator(QObject *parent = nullptr);
     ~WireGuardKeyValidator() override;

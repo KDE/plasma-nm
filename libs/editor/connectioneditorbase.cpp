@@ -130,7 +130,7 @@ NMVariantMapMap ConnectionEditorBase::setting() const
 
         if (securitySetting && wirelessSetting) {
             if (securitySetting->keyMgmt() != NetworkManager::WirelessSecuritySetting::WirelessSecuritySetting::Unknown) {
-                wirelessSetting->setSecurity("802-11-wireless-security");
+                wirelessSetting->setSecurity(QStringLiteral("802-11-wireless-security"));
             }
 
             if (securitySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::SAE
@@ -304,7 +304,7 @@ void ConnectionEditorBase::initialize()
 
     // Re-check validation
     bool valid = true;
-    for (SettingWidget *widget : m_settingWidgets) {
+    for (SettingWidget *widget : qAsConst(m_settingWidgets)) {
         valid = valid && widget->isValid();
         connect(widget, &SettingWidget::validChanged, this, &ConnectionEditorBase::validChanged);
     }
@@ -329,7 +329,7 @@ void ConnectionEditorBase::initialize()
                 if (adslSetting && !adslSetting->needSecrets().isEmpty()) {
                     requiredSecrets = adslSetting->needSecrets();
                     setting = adslSetting->toMap();
-                    settingName = QLatin1String("adsl");
+                    settingName = QStringLiteral("adsl");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Bluetooth) {
                 NetworkManager::GsmSetting::Ptr gsmSetting =
@@ -337,7 +337,7 @@ void ConnectionEditorBase::initialize()
                 if (gsmSetting && !gsmSetting->needSecrets().isEmpty()) {
                     requiredSecrets = gsmSetting->needSecrets();
                     setting = gsmSetting->toMap();
-                    settingName = QLatin1String("gsm");
+                    settingName = QStringLiteral("gsm");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Cdma) {
                 NetworkManager::CdmaSetting::Ptr cdmaSetting =
@@ -345,7 +345,7 @@ void ConnectionEditorBase::initialize()
                 if (cdmaSetting && !cdmaSetting->needSecrets().isEmpty()) {
                     requiredSecrets = cdmaSetting->needSecrets();
                     setting = cdmaSetting->toMap();
-                    settingName = QLatin1String("cdma");
+                    settingName = QStringLiteral("cdma");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Gsm) {
                 NetworkManager::GsmSetting::Ptr gsmSetting =
@@ -353,7 +353,7 @@ void ConnectionEditorBase::initialize()
                 if (gsmSetting && !gsmSetting->needSecrets().isEmpty()) {
                     requiredSecrets = gsmSetting->needSecrets();
                     setting = gsmSetting->toMap();
-                    settingName = QLatin1String("gsm");
+                    settingName = QStringLiteral("gsm");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Pppoe) {
                 NetworkManager::PppoeSetting::Ptr pppoeSetting =
@@ -361,7 +361,7 @@ void ConnectionEditorBase::initialize()
                 if (pppoeSetting && !pppoeSetting->needSecrets().isEmpty()) {
                     requiredSecrets = pppoeSetting->needSecrets();
                     setting = pppoeSetting->toMap();
-                    settingName = QLatin1String("pppoe");
+                    settingName = QStringLiteral("pppoe");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Wired) {
                 NetworkManager::Security8021xSetting::Ptr securitySetting =
@@ -369,7 +369,7 @@ void ConnectionEditorBase::initialize()
                 if (securitySetting && !securitySetting->needSecrets().isEmpty()) {
                     requiredSecrets = securitySetting->needSecrets();
                     setting = securitySetting->toMap();
-                    settingName = QLatin1String("802-1x");
+                    settingName = QStringLiteral("802-1x");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::WireGuard) {
                 NetworkManager::WireGuardSetting::Ptr securitySetting =
@@ -377,7 +377,7 @@ void ConnectionEditorBase::initialize()
                 if (securitySetting && !securitySetting->needSecrets().isEmpty()) {
                     requiredSecrets = securitySetting->needSecrets();
                     setting = securitySetting->toMap();
-                    settingName = QLatin1String("wireguard");
+                    settingName = QStringLiteral("wireguard");
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
                 NetworkManager::WirelessSecuritySetting::Ptr wifiSecuritySetting =
@@ -391,7 +391,7 @@ void ConnectionEditorBase::initialize()
                     if (securitySetting && !securitySetting->needSecrets().isEmpty()) {
                         requiredSecrets = securitySetting->needSecrets();
                         setting = securitySetting->toMap();
-                        settingName = QLatin1String("802-1x");
+                        settingName = QStringLiteral("802-1x");
 
                         if (requiredSecrets.contains(NM_SETTING_802_1X_PASSWORD_RAW)) {
                             requiredSecrets.removeAll(NM_SETTING_802_1X_PASSWORD_RAW);
@@ -401,11 +401,11 @@ void ConnectionEditorBase::initialize()
                     if (!wifiSecuritySetting->needSecrets().isEmpty()) {
                         requiredSecrets = wifiSecuritySetting->needSecrets();
                         setting = wifiSecuritySetting->toMap();
-                        settingName = QLatin1String("802-11-wireless-security");
+                        settingName = QStringLiteral("802-11-wireless-security");
                     }
                 }
             } else if (m_connection->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
-                settingName = QLatin1String("vpn");
+                settingName = QStringLiteral("vpn");
             }
 
             if (!requiredSecrets.isEmpty() || m_connection->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
@@ -422,7 +422,7 @@ void ConnectionEditorBase::initialize()
                         }
                     }
                 } else {
-                    for (const QString &secret : requiredSecrets) {
+                    for (const QString &secret : qAsConst(requiredSecrets)) {
                         if (setting.contains(secret + QLatin1String("-flags"))) {
                             NetworkManager::Setting::SecretFlagType secretFlag =
                                 (NetworkManager::Setting::SecretFlagType)setting.value(secret + QLatin1String("-flags")).toInt();
@@ -467,7 +467,7 @@ void ConnectionEditorBase::replyFinished(QDBusPendingCallWatcher *watcher)
                 NetworkManager::Setting::Ptr setting = m_connection->setting(NetworkManager::Setting::typeFromString(key));
                 if (setting) {
                     setting->secretsFromMap(secrets.value(key));
-                    for (SettingWidget *widget : m_settingWidgets) {
+                    for (SettingWidget *widget : qAsConst(m_settingWidgets)) {
                         const QString type = widget->type();
                         if (type == settingName
                             || (settingName == NetworkManager::Setting::typeAsString(NetworkManager::Setting::Security8021x)
@@ -479,8 +479,8 @@ void ConnectionEditorBase::replyFinished(QDBusPendingCallWatcher *watcher)
             }
         }
     } else {
-        KNotification *notification = new KNotification("FailedToGetSecrets", KNotification::CloseOnTimeout);
-        notification->setComponentName("networkmanagement");
+        KNotification *notification = new KNotification(QStringLiteral("FailedToGetSecrets"), KNotification::CloseOnTimeout);
+        notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setTitle(i18n("Failed to get secrets for %1", watcher->property("connection").toString()));
         notification->setText(reply.error().message());
         notification->setIconName(QStringLiteral("dialog-warning"));
@@ -502,7 +502,7 @@ void ConnectionEditorBase::validChanged(bool valid)
         Q_EMIT validityChanged(false);
         return;
     } else {
-        for (SettingWidget *widget : m_settingWidgets) {
+        for (SettingWidget *widget : qAsConst(m_settingWidgets)) {
             if (!widget->isValid()) {
                 m_valid = false;
                 Q_EMIT validityChanged(false);

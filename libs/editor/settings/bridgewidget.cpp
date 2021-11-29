@@ -149,7 +149,7 @@ void BridgeWidget::bridgeAddComplete(QDBusPendingCallWatcher *watcher)
         NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(reply.value().path());
         if (connection && connection->settings()->master() == m_uuid) {
             const QString label =
-                QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
+                QStringLiteral("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
             QListWidgetItem *slaveItem = new QListWidgetItem(label, m_ui->bridges);
             slaveItem->setData(Qt::UserRole, connection->uuid());
             slotWidgetChanged();
@@ -224,7 +224,7 @@ void BridgeWidget::populateBridges()
                         (!m_id.isEmpty() && master == m_id)); // by-name
         if (isSlave && (settings->slaveType() == type())) {
             const QString label =
-                QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
+                QStringLiteral("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
             QListWidgetItem *slaveItem = new QListWidgetItem(label, m_ui->bridges);
             slaveItem->setData(Qt::UserRole, connection->uuid());
         }

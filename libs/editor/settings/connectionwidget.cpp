@@ -175,10 +175,10 @@ NMStringMap ConnectionWidget::vpnConnections() const
 
 QStringList ConnectionWidget::firewallZones() const
 {
-    QDBusMessage msg = QDBusMessage::createMethodCall("org.fedoraproject.FirewallD1", //
-                                                      "/org/fedoraproject/FirewallD1",
-                                                      "org.fedoraproject.FirewallD1.zone",
-                                                      "getZones");
+    QDBusMessage msg = QDBusMessage::createMethodCall(QStringLiteral("org.fedoraproject.FirewallD1"), //
+                                                      QStringLiteral("/org/fedoraproject/FirewallD1"),
+                                                      QStringLiteral("org.fedoraproject.FirewallD1.zone"),
+                                                      QStringLiteral("getZones"));
     QDBusPendingReply<QStringList> reply = QDBusConnection::systemBus().asyncCall(msg);
     reply.waitForFinished();
     if (reply.isValid())

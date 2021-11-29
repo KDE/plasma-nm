@@ -160,8 +160,8 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     for (const QHostAddress &addr : ipv4Setting->dns()) {
         tmp.append(addr.toString());
     }
-    m_ui->dns->setText(tmp.join(","));
-    m_ui->dnsSearch->setText(ipv4Setting->dnsSearch().join(","));
+    m_ui->dns->setText(tmp.join(QStringLiteral(",")));
+    m_ui->dnsSearch->setText(ipv4Setting->dnsSearch().join(QStringLiteral(",")));
 
     m_ui->dhcpClientId->setText(ipv4Setting->dhcpClientId());
 
@@ -465,12 +465,12 @@ void IPv4Widget::slotDnsServers()
     connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
     KEditListWidget *listWidget = new KEditListWidget(dialog);
-    listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(" ", ""));
+    listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(QStringLiteral(" "), QLatin1String("")));
     listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
     connect(dialog.data(), &QDialog::accepted, [listWidget, this]() {
-        QString text = listWidget->items().join(",");
+        QString text = listWidget->items().join(QStringLiteral(","));
         if (text.endsWith(',')) {
             text.chop(1);
         }
@@ -494,12 +494,12 @@ void IPv4Widget::slotDnsDomains()
     connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
     KEditListWidget *listWidget = new KEditListWidget(dialog);
-    listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(" ", ""));
+    listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(QStringLiteral(" "), QLatin1String("")));
     listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
     connect(dialog.data(), &QDialog::accepted, [listWidget, this]() {
-        QString text = listWidget->items().join(",");
+        QString text = listWidget->items().join(QStringLiteral(","));
         if (text.endsWith(',')) {
             text.chop(1);
         }

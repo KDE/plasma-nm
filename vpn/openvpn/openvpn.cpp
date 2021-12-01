@@ -55,6 +55,7 @@ K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.jso
 #define RPORT_TAG "rport"
 #define SECRET_TAG "secret"
 #define TLS_AUTH_TAG "tls-auth"
+#define TLS_CRYPT_TAG "tls-crypt"
 #define TLS_CLIENT_TAG "tls-client"
 #define TLS_REMOTE_TAG "tls-remote"
 #define TUNMTU_TAG "tun-mtu"
@@ -70,6 +71,8 @@ K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.jso
 #define END_KEY_SECRET_TAG "</secret>"
 #define BEGIN_TLS_AUTH_TAG "<tls-auth>"
 #define END_TLS_AUTH_TAG "</tls-auth>"
+#define BEGIN_TLS_CRYPT_TAG "<tls-crypt>"
+#define END_TLS_CRYPT_TAG "</tls-crypt>"
 
 #define PROC_TYPE_TAG "Proc-Type: 4,ENCRYPTED"
 #define PKCS8_TAG "-----BEGIN ENCRYPTED PRIVATE KEY-----"
@@ -497,6 +500,27 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             }
             continue;
         }
+        if (key_value[0] == TLS_CRYPT_TAG && key_value.count() > 1) {
+            key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
+
+            // We will copy inline certificate later when we reach <tls-crypt> tag.
+            if (key_value[1].trimmed() != QLatin1String("[inline]")) {
+                if (copyCertificates) {
+                    const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TLS_CRYPT), absoluteFilePath);
+                } else {
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TLS_CRYPT), unQuote(key_value[1], fileName));
+                }
+            }
+
+            if (key_value.count() > 2) {
+                key_value[2] = key_value[1];
+                if (!key_value[2].isEmpty() && (key_value[2].toLong() == 0 || key_value[2].toLong() == 1)) {
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA_DIR), key_value[2]);
+                }
+            }
+            continue;
+        }
         if (key_value[0] == CIPHER_TAG) {
             if (key_value.count() == 2) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CIPHER), key_value[1]);
@@ -590,6 +614,16 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             const QString tlsAuthAbsolutePath = saveFile(in, QLatin1String(END_TLS_AUTH_TAG), connectionName, "tls_auth.key");
             if (!tlsAuthAbsolutePath.isEmpty()) {
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA), tlsAuthAbsolutePath);
+
+                if (key_direction > -1) {
+                    dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA_DIR), QString().setNum(key_direction));
+                }
+            }
+            continue;
+        } else if (key_value[0] == BEGIN_TLS_CRYPT_TAG) {
+            const QString tlsAuthAbsolutePath = saveFile(in, QLatin1String(END_TLS_CRYPT_TAG), connectionName, "tls_crypt.key");
+            if (!tlsAuthAbsolutePath.isEmpty()) {
+                dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TLS_CRYPT), tlsAuthAbsolutePath);
 
                 if (key_direction > -1) {
                     dataMap.insert(QLatin1String(NM_OPENVPN_KEY_TA_DIR), QString().setNum(key_direction));

@@ -157,12 +157,12 @@ SettingWidget *OpenVpnUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &s
 
 QString OpenVpnUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
-    return connection->id() + "_openvpn.conf";
+    return connection->id() + QStringLiteral("_openvpn.conf");
 }
 
 QString OpenVpnUiPlugin::supportedFileExtensions() const
 {
-    return "*.ovpn *.conf";
+    return QStringLiteral("*.ovpn *.conf");
 }
 
 NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileName)
@@ -210,10 +210,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         QStringList key_value;
         QString line = in.readLine();
         // Skip comments
-        if (line.indexOf('#') >= 0) {
+        if (line.indexOf(QLatin1Char('#')) >= 0) {
             line.truncate(line.indexOf('#'));
         }
-        if (line.indexOf(';') >= 0) {
+        if (line.indexOf(QLatin1Char(';')) >= 0) {
             line.truncate(line.indexOf(';'));
         }
         if (line.isEmpty()) {
@@ -603,8 +603,8 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             QList<NetworkManager::IpRoute> list;
             for (int i = 1; i < key_value.count(); i++) {
                 NetworkManager::IpRoute ipRoute;
-                ipRoute.setIp(QHostAddress(key_value[1].split('/').first()));
-                ipRoute.setPrefixLength(key_value[1].split('/').at(1).toInt());
+                ipRoute.setIp(QHostAddress(key_value[1].split(QLatin1Char('/')).first()));
+                ipRoute.setPrefixLength(key_value[1].split(QLatin1Char('/')).at(1).toInt());
                 list << ipRoute;
             }
             QList<QList<uint>> dbusRoutes;

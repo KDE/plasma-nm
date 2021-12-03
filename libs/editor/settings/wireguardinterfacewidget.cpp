@@ -398,7 +398,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
         QString line = in.readLine();
 
         // Remove comments starting with '#'
-        if (int index = line.indexOf('#') > 0)
+        if (int index = line.indexOf(QLatin1Char('#')) > 0)
             line.truncate(index);
 
         // Ignore blank lines
@@ -406,7 +406,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
             continue;
 
         keyValue.clear();
-        keyValue << line.split('=');
+        keyValue << line.split(QLatin1Char('='));
 
         if (keyValue[0] == PNM_WG_CONF_TAG_INTERFACE) {
             currentState = INTERFACE_SECTION;
@@ -438,7 +438,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
         if (currentState == INTERFACE_SECTION) {
             // Address
             if (key == PNM_WG_CONF_TAG_ADDRESS) {
-                QStringList valueList = keyValue[1].split(',');
+                QStringList valueList = keyValue[1].split(QLatin1Char(','));
                 if (valueList.isEmpty())
                     return result;
 
@@ -485,7 +485,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
                     havePrivateKey = true;
                 }
             } else if (key == PNM_WG_CONF_TAG_DNS) {
-                QStringList addressList = keyValue[1].split(',');
+                QStringList addressList = keyValue[1].split(QLatin1Char(','));
                 QList<QHostAddress> ipv4DnsList;
                 QList<QHostAddress> ipv6DnsList;
                 if (!addressList.isEmpty()) {
@@ -558,7 +558,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
                 SimpleIpListValidator validator(SimpleIpListValidator::WithCidr, SimpleIpListValidator::Both);
                 QString val = keyValue[1].trimmed();
                 if (QValidator::Acceptable == validator.validate(val, pos)) {
-                    QStringList valList = val.split(',');
+                    QStringList valList = val.split(QLatin1Char(','));
                     for (QString &str : valList)
                         str = str.trimmed();
                     currentPeer->insert(PNM_WG_PEER_KEY_ALLOWED_IPS, valList);

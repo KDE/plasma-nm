@@ -222,7 +222,7 @@ QVariantMap IPv4Widget::setting() const
 
     // dns
     if (m_ui->dns->isEnabled() && !m_ui->dns->text().isEmpty()) {
-        QStringList tmp = m_ui->dns->text().split(',');
+        QStringList tmp = m_ui->dns->text().split(QLatin1Char(','));
         QList<QHostAddress> tmpAddrList;
         for (const QString &str : tmp) {
             QHostAddress addr(str);
@@ -232,7 +232,7 @@ QVariantMap IPv4Widget::setting() const
         ipv4Setting.setDns(tmpAddrList);
     }
     if (m_ui->dnsSearch->isEnabled() && !m_ui->dnsSearch->text().isEmpty()) {
-        ipv4Setting.setDnsSearch(m_ui->dnsSearch->text().split(','));
+        ipv4Setting.setDnsSearch(m_ui->dnsSearch->text().split(QLatin1Char(',')));
     }
 
     // dhcp id
@@ -465,7 +465,7 @@ void IPv4Widget::slotDnsServers()
     connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
     auto listWidget = new KEditListWidget(dialog);
-    listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(QStringLiteral(" "), QLatin1String("")));
+    listWidget->setItems(m_ui->dns->text().split(QLatin1Char(',')).replaceInStrings(QStringLiteral(" "), QLatin1String("")));
     listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
@@ -494,7 +494,7 @@ void IPv4Widget::slotDnsDomains()
     connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
     auto listWidget = new KEditListWidget(dialog);
-    listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(QStringLiteral(" "), QLatin1String("")));
+    listWidget->setItems(m_ui->dnsSearch->text().split(QLatin1Char(',')).replaceInStrings(QStringLiteral(" "), QLatin1String("")));
     listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);
     dialog->layout()->addWidget(buttons);
@@ -534,7 +534,7 @@ bool IPv4Widget::isValid() const
 
     if (!m_ui->dns->text().isEmpty()
         && (m_ui->method->currentIndex() == Automatic || m_ui->method->currentIndex() == Manual || m_ui->method->currentIndex() == AutomaticOnlyIP)) {
-        const QStringList tmp = m_ui->dns->text().split(',');
+        const QStringList tmp = m_ui->dns->text().split(QLatin1Char(','));
         for (const QString &str : tmp) {
             QHostAddress addr(str);
             if (addr.isNull()) {

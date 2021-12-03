@@ -263,8 +263,8 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
             QList<NetworkManager::IpRoute> list;
             for (const QString &route : decrPlugin->readStringKeyValue(cg, "X-NM-Routes").split(' ')) {
                 NetworkManager::IpRoute ipRoute;
-                ipRoute.setIp(QHostAddress(route.split('/').first()));
-                ipRoute.setPrefixLength(route.split('/').at(1).toInt());
+                ipRoute.setIp(QHostAddress(route.split(QLatin1Char('/')).first()));
+                ipRoute.setPrefixLength(route.split(QLatin1Char('/')).at(1).toInt());
                 list << ipRoute;
             }
             QList<QList<uint>> dbusRoutes;

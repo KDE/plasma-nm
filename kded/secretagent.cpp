@@ -593,8 +593,8 @@ void SecretAgent::importSecretsFromPlainTextFiles()
     // No action is required when the list of secrets is empty
     if (!config.groupList().isEmpty()) {
         for (const QString &groupName : config.groupList()) {
-            QString loadedUuid = groupName.split(';').first().remove('{').remove('}');
-            QString loadedSettingType = groupName.split(';').last();
+            QString loadedUuid = groupName.split(QLatin1Char(';')).first().remove('{').remove('}');
+            QString loadedSettingType = groupName.split(QLatin1Char(';')).last();
             NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(loadedUuid);
             if (connection) {
                 NetworkManager::Setting::SecretFlags secretFlags =

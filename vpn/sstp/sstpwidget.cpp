@@ -21,8 +21,8 @@ public:
     Ui_SstpWidget ui;
     Ui_SstpAdvanced advUi;
     NetworkManager::VpnSetting::Ptr setting;
-    QDialog *advancedDlg;
-    QWidget *advancedWid;
+    QDialog *advancedDlg = nullptr;
+    QWidget *advancedWid = nullptr;
 };
 
 SstpSettingWidget::SstpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)

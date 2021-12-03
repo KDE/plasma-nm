@@ -156,7 +156,7 @@ void WireGuardPeerWidget::checkAllowedIpsValid()
     int pos = 0;
     QLineEdit *widget = d->ui.allowedIPsLineEdit;
     QString ipString = widget->displayText();
-    QStringList rawIPList = ipString.split(',');
+    QStringList rawIPList = ipString.split(QLatin1Char(','));
     QStringList ipList;
 
     bool valid = QValidator::Acceptable == allowedIPsValidator.validate(ipString, pos);

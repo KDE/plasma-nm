@@ -54,7 +54,7 @@ private:
     QString m_uuid;
     QString m_id;
     Ui::TeamWidget *const m_ui;
-    QMenu *m_menu = nullptr;
+    QMenu *const m_menu;
 };
 
 #endif // PLASMA_NM_TEAM_WIDGET_H

@@ -61,7 +61,7 @@ void HwAddrComboBox::slotCurrentIndexChanged(int)
     Q_EMIT hwAddressChanged();
 }
 
-void HwAddrComboBox::init(const NetworkManager::Device::Type &deviceType, const QString &address)
+void HwAddrComboBox::init(NetworkManager::Device::Type deviceType, const QString &address)
 {
     m_initialAddress = address;
 

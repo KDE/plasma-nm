@@ -26,11 +26,11 @@ TeamWidget::TeamWidget(const QString &masterUuid, const QString &masterId, const
     , m_uuid(masterUuid)
     , m_id(masterId)
     , m_ui(new Ui::TeamWidget)
+    , m_menu(new QMenu(this))
 {
     m_ui->setupUi(this);
 
     // Action buttons and menu
-    m_menu = new QMenu(this);
     auto action = new QAction(i18n("Ethernet"), this);
     action->setData(NetworkManager::ConnectionSettings::Wired);
     m_menu->addAction(action);

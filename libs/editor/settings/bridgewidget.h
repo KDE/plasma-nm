@@ -52,7 +52,7 @@ private:
     QString m_uuid;
     QString m_id;
     Ui::BridgeWidget *const m_ui;
-    QMenu *m_menu = nullptr;
+    QMenu *const m_menu;
 };
 
 #endif // PLASMA_NM_BRIDGE_WIDGET_H

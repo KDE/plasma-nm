@@ -36,7 +36,7 @@ PasswordField::PasswordField(QWidget *parent, Qt::WindowFlags f)
     m_layout->addWidget(m_passwordField);
 
     m_passwordOptionsMenu = new QComboBox(this);
-    m_passwordOptionsMenu->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLength);
+    m_passwordOptionsMenu->setSizeAdjustPolicy(QComboBox::AdjustToContentsOnFirstShow);
 
     m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("document-save")), i18n("Store password for this user only (encrypted)"), StoreForUser);
     m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("document-save-all")),

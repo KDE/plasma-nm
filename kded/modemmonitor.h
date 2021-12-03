@@ -35,7 +35,7 @@ private Q_SLOTS:
     void onSendPinArrived(QDBusPendingCallWatcher *);
 
 private:
-    ModemMonitorPrivate *d_ptr;
+    ModemMonitorPrivate *const d_ptr;
 };
 
 #endif // PLASMA_NM_MODEM_MONITOR_H

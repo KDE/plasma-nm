@@ -136,9 +136,9 @@ void Handler::activateConnection(const QString &connection, const QString &devic
                 ModemManager::Modem::Ptr modem = mmModemDevice->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
                 NetworkManager::GsmSetting::Ptr gsmSetting = con->settings()->setting(NetworkManager::Setting::Gsm).staticCast<NetworkManager::GsmSetting>();
                 if (gsmSetting && gsmSetting->pinFlags() == NetworkManager::Setting::NotSaved && modem && modem->unlockRequired() > MM_MODEM_LOCK_NONE) {
-                    QDBusInterface managerIface("org.kde.plasmanetworkmanagement",
-                                                "/org/kde/plasmanetworkmanagement",
-                                                "org.kde.plasmanetworkmanagement",
+                    QDBusInterface managerIface(QStringLiteral("org.kde.plasmanetworkmanagement"),
+                                                QStringLiteral("/org/kde/plasmanetworkmanagement"),
+                                                QStringLiteral("org.kde.plasmanetworkmanagement"),
                                                 QDBusConnection::sessionBus(),
                                                 this);
                     managerIface.call("unlockModem", mmModemDevice->uni());
@@ -170,14 +170,14 @@ QString Handler::wifiCode(const QString &connectionPath, const QString &ssid, in
         case NetworkManager::NoneSecurity:
             break;
         case NetworkManager::StaticWep:
-            ret += "T:WEP;";
+            ret += QStringLiteral("T:WEP;");
             break;
         case NetworkManager::WpaPsk:
         case NetworkManager::Wpa2Psk:
-            ret += "T:WPA;";
+            ret += QStringLiteral("T:WPA;");
             break;
         case NetworkManager::SAE:
-            ret += "T:SAE;";
+            ret += QStringLiteral("T:SAE;");
             break;
         default:
         case NetworkManager::DynamicWep:
@@ -258,7 +258,7 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
 
     if (securityType != NetworkManager::NoneSecurity) {
         wifiSecurity->setInitialized(true);
-        wifiSetting->setSecurity("802-11-wireless-security");
+        wifiSetting->setSecurity(QStringLiteral("802-11-wireless-security"));
     }
 
     if (securityType == NetworkManager::Leap //
@@ -324,7 +324,7 @@ void Handler::addConnection(const NMVariantMapMap &map)
     QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(map);
     auto watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", AddConnection);
-    watcher->setProperty("connection", map.value("connection").value("id"));
+    watcher->setProperty("connection", map.value(QStringLiteral("connection")).value(QStringLiteral("id")));
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
@@ -398,7 +398,7 @@ void makeDBusCall(const QDBusMessage &message, QObject *context, std::function<v
     });
 }
 
-void setBluetoothEnabled(QString path, bool enabled)
+void setBluetoothEnabled(const QString &path, bool enabled)
 {
     QDBusMessage message = QDBusMessage::createMethodCall("org.bluez", path, "org.freedesktop.DBus.Properties", "Set");
     QList<QVariant> arguments;
@@ -763,27 +763,27 @@ void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
         Handler::HandlerAction action = (Handler::HandlerAction)watcher->property("action").toUInt();
         switch (action) {
         case Handler::ActivateConnection:
-            notification = new KNotification("FailedToActivateConnection", KNotification::CloseOnTimeout, this);
+            notification = new KNotification(QStringLiteral("FailedToActivateConnection"), KNotification::CloseOnTimeout, this);
             notification->setTitle(i18n("Failed to activate %1", watcher->property("connection").toString()));
             break;
         case Handler::AddAndActivateConnection:
-            notification = new KNotification("FailedToAddConnection", KNotification::CloseOnTimeout, this);
+            notification = new KNotification(QStringLiteral("FailedToAddConnection"), KNotification::CloseOnTimeout, this);
             notification->setTitle(i18n("Failed to add %1", watcher->property("connection").toString()));
             break;
         case Handler::AddConnection:
-            notification = new KNotification("FailedToAddConnection", KNotification::CloseOnTimeout, this);
+            notification = new KNotification(QStringLiteral("FailedToAddConnection"), KNotification::CloseOnTimeout, this);
             notification->setTitle(i18n("Failed to add connection %1", watcher->property("connection").toString()));
             break;
         case Handler::DeactivateConnection:
-            notification = new KNotification("FailedToDeactivateConnection", KNotification::CloseOnTimeout, this);
+            notification = new KNotification(QStringLiteral("FailedToDeactivateConnection"), KNotification::CloseOnTimeout, this);
             notification->setTitle(i18n("Failed to deactivate %1", watcher->property("connection").toString()));
             break;
         case Handler::RemoveConnection:
-            notification = new KNotification("FailedToRemoveConnection", KNotification::CloseOnTimeout, this);
+            notification = new KNotification(QStringLiteral("FailedToRemoveConnection"), KNotification::CloseOnTimeout, this);
             notification->setTitle(i18n("Failed to remove %1", watcher->property("connection").toString()));
             break;
         case Handler::UpdateConnection:
-            notification = new KNotification("FailedToUpdateConnection", KNotification::CloseOnTimeout, this);
+            notification = new KNotification(QStringLiteral("FailedToUpdateConnection"), KNotification::CloseOnTimeout, this);
             notification->setTitle(i18n("Failed to update connection %1", watcher->property("connection").toString()));
             break;
         case Handler::RequestScan: {
@@ -793,7 +793,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
             break;
         }
         case Handler::CreateHotspot:
-            notification = new KNotification("FailedToCreateHotspot", KNotification::CloseOnTimeout, this);
+            notification = new KNotification(QStringLiteral("FailedToCreateHotspot"), KNotification::CloseOnTimeout, this);
             notification->setTitle(i18n("Failed to create hotspot %1", watcher->property("connection").toString()));
             break;
         default:
@@ -816,7 +816,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
             notification->setText(i18n("Connection %1 has been added", watcher->property("connection").toString()));
             break;
         case Handler::RemoveConnection:
-            notification = new KNotification("ConnectionRemoved", KNotification::CloseOnTimeout, this);
+            notification = new KNotification(QStringLiteral("ConnectionRemoved"), KNotification::CloseOnTimeout, this);
             notification->setText(i18n("Connection %1 has been removed", watcher->property("connection").toString()));
             break;
         case Handler::UpdateConnection:

@@ -17,7 +17,7 @@ class Q_DECL_EXPORT HwAddrComboBox : public QComboBox
 public:
     explicit HwAddrComboBox(QWidget *parent = nullptr);
 
-    void init(const NetworkManager::Device::Type &deviceType, const QString &address);
+    void init(NetworkManager::Device::Type deviceType, const QString &address);
 
     bool isValid() const;
     QString hwAddress() const;

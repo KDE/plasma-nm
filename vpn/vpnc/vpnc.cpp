@@ -52,7 +52,7 @@ void VpncUiPluginPrivate::gotCiscoDecryptOutput()
 {
     QByteArray output = ciscoDecrypt->readAll();
     if (!output.isEmpty()) {
-        QList<QByteArray> lines = output.split('\n');
+        const QList<QByteArray> lines = output.split('\n');
         if (!lines.isEmpty()) {
             decryptedPasswd = QString::fromUtf8(lines.first());
         }

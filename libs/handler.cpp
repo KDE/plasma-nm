@@ -141,7 +141,7 @@ void Handler::activateConnection(const QString &connection, const QString &devic
                                                 QStringLiteral("org.kde.plasmanetworkmanagement"),
                                                 QDBusConnection::sessionBus(),
                                                 this);
-                    managerIface.call("unlockModem", mmModemDevice->uni());
+                    managerIface.call(QStringLiteral("unlockModem"), mmModemDevice->uni());
                     connect(modem.data(), &ModemManager::Modem::unlockRequiredChanged, this, &Handler::unlockRequiredChanged);
                     m_tmpConnectionPath = connection;
                     m_tmpDevicePath = device;
@@ -203,7 +203,7 @@ QString Handler::wifiCode(const QString &connectionPath, const QString &ssid, in
     case NetworkManager::WpaPsk:
     case NetworkManager::Wpa2Psk:
     case NetworkManager::SAE:
-        pass = secret["psk"].toString();
+        pass = secret[QStringLiteral("psk")].toString();
         break;
     default:
         return {};

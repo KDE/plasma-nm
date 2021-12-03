@@ -24,8 +24,8 @@ public:
     Ui_SshWidget ui;
     Ui_SshAdvanced advUi;
     NetworkManager::VpnSetting::Ptr setting;
-    QDialog *advancedDlg;
-    QWidget *advancedWid;
+    QDialog *advancedDlg = nullptr;
+    QWidget *advancedWid = nullptr;
 };
 
 SshSettingWidget::SshSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)

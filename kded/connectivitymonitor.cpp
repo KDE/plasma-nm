@@ -93,7 +93,7 @@ void ConnectivityMonitor::showLimitedConnectivityNotification()
 void ConnectivityMonitor::checkConnectivity()
 {
     QDBusPendingReply<uint> pendingReply = NetworkManager::checkConnectivity();
-    QDBusPendingCallWatcher *callWatcher = new QDBusPendingCallWatcher(pendingReply);
+    auto callWatcher = new QDBusPendingCallWatcher(pendingReply);
     connect(callWatcher, &QDBusPendingCallWatcher::finished, this, [this](QDBusPendingCallWatcher *watcher) {
         QDBusPendingReply<uint> reply = *watcher;
         if (reply.isValid()) {

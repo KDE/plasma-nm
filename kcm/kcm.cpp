@@ -52,7 +52,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     , m_handler(new Handler(this))
     , m_ui(new Ui::KCMForm)
 {
-    QWidget *mainWidget = new QWidget(this);
+    auto mainWidget = new QWidget(this);
     m_ui->setupUi(mainWidget);
 
     KDeclarative::KDeclarative kdeclarative;
@@ -111,7 +111,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     connect(rootItem, SIGNAL(requestExportConnection(QString)), this, SLOT(onRequestExportConnection(QString)));
     connect(rootItem, SIGNAL(requestToChangeConnection(QString, QString)), this, SLOT(onRequestToChangeConnection(QString, QString)));
 
-    QVBoxLayout *l = new QVBoxLayout(this);
+    auto l = new QVBoxLayout(this);
     l->addWidget(mainWidget);
 
     setButtons(Button::Apply);
@@ -274,7 +274,7 @@ void KCMNetworkmanagement::onConnectionAdded(const QString &connection)
 
 void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared)
 {
-    NetworkManager::ConnectionSettings::ConnectionType type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(connectionType);
+    auto type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(connectionType);
 
     if (type == NetworkManager::ConnectionSettings::Vpn && vpnType == "imported") {
         importVpn();
@@ -286,7 +286,7 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
                 qCDebug(PLASMA_NM) << "Mobile broadband wizard finished:" << wizard->type() << wizard->args();
 
                 if (wizard->args().count() == 2) {
-                    QVariantMap tmp = qdbus_cast<QVariantMap>(wizard->args().value(1));
+                    auto tmp = qdbus_cast<QVariantMap>(wizard->args().value(1));
 
                     NetworkManager::ConnectionSettings::Ptr connectionSettings;
                     connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(wizard->type()));
@@ -503,7 +503,7 @@ void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::Connecti
                 kcmChanged(valid);
             }
         });
-        QVBoxLayout *layout = new QVBoxLayout(m_ui->connectionConfiguration);
+        auto layout = new QVBoxLayout(m_ui->connectionConfiguration);
         layout->addWidget(m_tabWidget);
     }
 

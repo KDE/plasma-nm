@@ -16,9 +16,7 @@ AppletProxyModel::AppletProxyModel(QObject *parent)
     sort(0, Qt::DescendingOrder);
 }
 
-AppletProxyModel::~AppletProxyModel()
-{
-}
+AppletProxyModel::~AppletProxyModel() = default;
 
 bool AppletProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {

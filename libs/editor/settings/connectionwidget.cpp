@@ -184,7 +184,7 @@ QStringList ConnectionWidget::firewallZones() const
     if (reply.isValid())
         return reply.value();
 
-    return QStringList();
+    return {};
 }
 
 void ConnectionWidget::populateVpnConnections()

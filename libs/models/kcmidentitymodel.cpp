@@ -19,13 +19,11 @@
 KcmIdentityModel::KcmIdentityModel(QObject *parent)
     : QIdentityProxyModel(parent)
 {
-    NetworkModel *baseModel = new NetworkModel(this);
+    auto baseModel = new NetworkModel(this);
     setSourceModel(baseModel);
 }
 
-KcmIdentityModel::~KcmIdentityModel()
-{
-}
+KcmIdentityModel::~KcmIdentityModel() = default;
 
 Qt::ItemFlags KcmIdentityModel::flags(const QModelIndex &index) const
 {
@@ -86,7 +84,7 @@ QVariant KcmIdentityModel::data(const QModelIndex &index, int role) const
         return sourceModel()->data(index, role);
     }
 
-    return QVariant();
+    return {};
 }
 
 QModelIndex KcmIdentityModel::index(int row, int column, const QModelIndex &parent) const
@@ -98,7 +96,7 @@ QModelIndex KcmIdentityModel::index(int row, int column, const QModelIndex &pare
 QModelIndex KcmIdentityModel::mapToSource(const QModelIndex &proxyIndex) const
 {
     if (proxyIndex.column() > 0) {
-        return QModelIndex();
+        return {};
     }
 
     return QIdentityProxyModel::mapToSource(proxyIndex);

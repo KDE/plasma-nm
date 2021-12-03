@@ -444,7 +444,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
 
                 for (const QString &address : valueList) {
                     const QPair<QHostAddress, int> addressIn = QHostAddress::parseSubnet(address.trimmed());
-                    NetworkManager::IpAddress *addr = new NetworkManager::IpAddress;
+                    auto addr = new NetworkManager::IpAddress;
                     addr->setIp(addressIn.first);
                     addr->setPrefixLength(addressIn.second);
                     if (addressIn.first.protocol() == QAbstractSocket::NetworkLayerProtocol::IPv4Protocol) {

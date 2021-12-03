@@ -70,9 +70,7 @@ MobileProviders::MobileProviders()
     }
 }
 
-MobileProviders::~MobileProviders()
-{
-}
+MobileProviders::~MobileProviders() = default;
 
 QStringList MobileProviders::getCountryList() const
 {
@@ -88,7 +86,7 @@ QString MobileProviders::countryFromLocale() const
     if (idx != -1) {
         return localeName.mid(idx + 1);
     }
-    return QString();
+    return {};
 }
 
 QStringList MobileProviders::getProvidersList(QString country, NetworkManager::ConnectionSettings::ConnectionType type)
@@ -166,7 +164,7 @@ QStringList MobileProviders::getApns(const QString &provider)
     mApns.clear();
     mNetworkIds.clear();
     if (!mProvidersGsm.contains(provider)) {
-        return QStringList();
+        return {};
     }
 
     QDomNode n = mProvidersGsm[provider];
@@ -334,7 +332,7 @@ QVariantMap MobileProviders::getApnInfo(const QString &apn)
 QVariantMap MobileProviders::getCdmaInfo(const QString &provider)
 {
     if (!mProvidersCdma.contains(provider)) {
-        return QVariantMap();
+        return {};
     }
 
     QVariantMap temp;

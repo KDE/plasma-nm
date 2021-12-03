@@ -65,7 +65,7 @@ Q_SIGNALS:
     void updateLog(const QString &, const int &);
     void writeNewConfig(const QString &);
     void cookieObtained(const int &);
-    void initTokens(void);
+    void initTokens();
 
 protected:
     void run() override;

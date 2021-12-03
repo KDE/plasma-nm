@@ -64,7 +64,7 @@ ConnectionIcon::ConnectionIcon(QObject *parent)
     setIcons();
 
     QDBusPendingReply<uint> pendingReply = NetworkManager::checkConnectivity();
-    QDBusPendingCallWatcher *callWatcher = new QDBusPendingCallWatcher(pendingReply);
+    auto callWatcher = new QDBusPendingCallWatcher(pendingReply);
     connect(callWatcher, &QDBusPendingCallWatcher::finished, this, [this](QDBusPendingCallWatcher *watcher) {
         QDBusPendingReply<uint> reply = *watcher;
         if (reply.isValid()) {
@@ -74,9 +74,7 @@ ConnectionIcon::ConnectionIcon(QObject *parent)
     });
 }
 
-ConnectionIcon::~ConnectionIcon()
-{
-}
+ConnectionIcon::~ConnectionIcon() = default;
 
 bool ConnectionIcon::connecting() const
 {

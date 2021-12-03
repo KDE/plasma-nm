@@ -46,9 +46,7 @@ SecretAgent::SecretAgent(QObject *parent)
     importSecretsFromPlainTextFiles();
 }
 
-SecretAgent::~SecretAgent()
-{
-}
+SecretAgent::~SecretAgent() = default;
 
 NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection,
                                         const QDBusObjectPath &connection_path,
@@ -84,7 +82,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection,
 
     processNext();
 
-    return NMVariantMapMap();
+    return {};
 }
 
 void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)

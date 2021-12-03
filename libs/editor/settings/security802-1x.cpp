@@ -99,11 +99,11 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool w
         this);
     serversValidator = new QRegExpValidator(QRegExp(QLatin1String("^[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+$")), this);
 
-    ListValidator *altSubjectListValidator = new ListValidator(this);
+    auto altSubjectListValidator = new ListValidator(this);
     altSubjectListValidator->setInnerValidator(altSubjectValidator);
     m_ui->leTlsSubjectMatch->setValidator(altSubjectListValidator);
 
-    ListValidator *serverListValidator = new ListValidator(this);
+    auto serverListValidator = new ListValidator(this);
     serverListValidator->setInnerValidator(serversValidator);
     m_ui->leTlsConnectToServers->setValidator(serverListValidator);
 

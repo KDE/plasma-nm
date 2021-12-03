@@ -24,9 +24,7 @@ BluetoothMonitor::BluetoothMonitor(QObject *parent)
 {
 }
 
-BluetoothMonitor::~BluetoothMonitor()
-{
-}
+BluetoothMonitor::~BluetoothMonitor() = default;
 
 bool BluetoothMonitor::bluetoothConnectionExists(const QString &bdAddr, const QString &service)
 {
@@ -97,7 +95,7 @@ void BluetoothMonitor::addBluetoothConnection(const QString &bdAddr, const QStri
                 if (mobileConnectionWizard->args().count() == 2) { // GSM or CDMA
                     qCDebug(PLASMA_NM) << "Creating new DUN connection for BT device:" << bdAddr;
 
-                    QVariantMap tmp = qdbus_cast<QVariantMap>(mobileConnectionWizard->args().value(1));
+                    auto tmp = qdbus_cast<QVariantMap>(mobileConnectionWizard->args().value(1));
                     NetworkManager::ConnectionSettings connectionSettings(NetworkManager::ConnectionSettings::Bluetooth, NM_BT_CAPABILITY_DUN);
                     connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
                     connectionSettings.setId(connectionName);

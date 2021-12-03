@@ -68,9 +68,7 @@ NetworkStatus::NetworkStatus(QObject *parent)
     statusChanged(NetworkManager::status());
 }
 
-NetworkStatus::~NetworkStatus()
-{
-}
+NetworkStatus::~NetworkStatus() = default;
 
 QString NetworkStatus::activeConnections() const
 {

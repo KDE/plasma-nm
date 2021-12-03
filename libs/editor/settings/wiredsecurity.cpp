@@ -66,5 +66,5 @@ QVariantMap WiredSecurity::setting() const
         return m_8021xWidget->setting();
     }
 
-    return QVariantMap();
+    return {};
 }

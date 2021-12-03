@@ -19,13 +19,11 @@ IntDelegate::IntDelegate(int min, int max, QObject *parent)
     , m_boundary(true)
 {
 }
-IntDelegate::~IntDelegate()
-{
-}
+IntDelegate::~IntDelegate() = default;
 
 QWidget *IntDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const
 {
-    QLineEdit *editor = new QLineEdit(parent);
+    auto editor = new QLineEdit(parent);
     if (m_boundary)
         editor->setValidator(new QIntValidator(m_min, m_max, editor));
     else

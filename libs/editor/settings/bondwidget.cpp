@@ -32,7 +32,7 @@ BondWidget::BondWidget(const QString &masterUuid, const QString &masterId, const
 
     // Action buttons and menu
     m_menu = new QMenu(this);
-    QAction *action = new QAction(i18n("Ethernet"), this);
+    auto action = new QAction(i18n("Ethernet"), this);
     action->setData(NetworkManager::ConnectionSettings::Wired);
     m_menu->addAction(action);
     action = new QAction(i18n("InfiniBand"), this);
@@ -170,7 +170,7 @@ void BondWidget::addBond(QAction *action)
         qCDebug(PLASMA_NM) << "Saving slave connection";
         // qCDebug(PLASMA_NM) << bondEditor->setting();
         QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(bondEditor->setting());
-        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+        auto watcher = new QDBusPendingCallWatcher(reply, this);
         connect(watcher, &QDBusPendingCallWatcher::finished, this, &BondWidget::bondAddComplete);
     });
     connect(bondEditor.data(), &ConnectionEditorDialog::finished, [bondEditor]() {
@@ -200,7 +200,7 @@ void BondWidget::bondAddComplete(QDBusPendingCallWatcher *watcher)
         if (connection && connection->settings()->master() == m_uuid) {
             const QString label =
                 QStringLiteral("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
-            QListWidgetItem *slaveItem = new QListWidgetItem(label, m_ui->bonds);
+            auto slaveItem = new QListWidgetItem(label, m_ui->bonds);
             slaveItem->setData(Qt::UserRole, connection->uuid());
             slotWidgetChanged();
         }
@@ -275,7 +275,7 @@ void BondWidget::populateBonds()
         if (isSlave && (settings->slaveType() == type())) {
             const QString label =
                 QStringLiteral("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
-            QListWidgetItem *slaveItem = new QListWidgetItem(label, m_ui->bonds);
+            auto slaveItem = new QListWidgetItem(label, m_ui->bonds);
             slaveItem->setData(Qt::UserRole, connection->uuid());
         }
     }

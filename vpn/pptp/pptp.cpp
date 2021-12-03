@@ -19,9 +19,7 @@ PptpUiPlugin::PptpUiPlugin(QObject *parent, const QVariantList &)
 {
 }
 
-PptpUiPlugin::~PptpUiPlugin()
-{
-}
+PptpUiPlugin::~PptpUiPlugin() = default;
 
 SettingWidget *PptpUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
@@ -36,12 +34,12 @@ SettingWidget *PptpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &sett
 QString PptpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
     Q_UNUSED(connection);
-    return QString();
+    return {};
 }
 
 QString PptpUiPlugin::supportedFileExtensions() const
 {
-    return QString();
+    return {};
 }
 
 NMVariantMapMap PptpUiPlugin::importConnectionSettings(const QString &fileName)
@@ -50,7 +48,7 @@ NMVariantMapMap PptpUiPlugin::importConnectionSettings(const QString &fileName)
 
     // TODO : import the Openconnect connection from file and return settings
     mError = VpnUiPlugin::NotImplemented;
-    return NMVariantMapMap();
+    return {};
 }
 
 bool PptpUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)

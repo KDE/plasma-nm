@@ -51,7 +51,7 @@ public:
     Private()
         : model(0, 3)
     {
-        QStandardItem *headerItem = new QStandardItem(i18nc("Header text for IPv4 address", "Address"));
+        auto headerItem = new QStandardItem(i18nc("Header text for IPv4 address", "Address"));
         model.setHorizontalHeaderItem(0, headerItem);
         headerItem = new QStandardItem(i18nc("Header text for IPv4 netmask", "Netmask"));
         model.setHorizontalHeaderItem(1, headerItem);
@@ -72,7 +72,7 @@ IPv4Widget::IPv4Widget(const NetworkManager::Setting::Ptr &setting, QWidget *par
     m_ui->tableViewAddresses->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
     m_ui->tableViewAddresses->horizontalHeader()->setStretchLastSection(true);
 
-    IpV4Delegate *ipDelegate = new IpV4Delegate(this);
+    auto ipDelegate = new IpV4Delegate(this);
     m_ui->tableViewAddresses->setItemDelegateForColumn(0, ipDelegate);
     m_ui->tableViewAddresses->setItemDelegateForColumn(1, ipDelegate);
     m_ui->tableViewAddresses->setItemDelegateForColumn(2, ipDelegate);
@@ -441,7 +441,7 @@ void IPv4Widget::slotAdvancedDialog()
     dadTimeout->setValue(m_tmpIpv4Setting.dadTimeout());
     layout->addRow(i18n("DAD timeout:"), dadTimeout);
 
-    QDialogButtonBox *box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dlg);
+    auto box = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dlg);
     connect(box, &QDialogButtonBox::accepted, dlg, &QDialog::accept);
     connect(box, &QDialogButtonBox::rejected, dlg, &QDialog::reject);
     layout->addWidget(box);
@@ -461,10 +461,10 @@ void IPv4Widget::slotDnsServers()
     QPointer<QDialog> dialog = new QDialog(this);
     dialog->setWindowTitle(i18n("Edit DNS servers"));
     dialog->setLayout(new QVBoxLayout);
-    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
+    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
     connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
-    KEditListWidget *listWidget = new KEditListWidget(dialog);
+    auto listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(QStringLiteral(" "), QLatin1String("")));
     listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);
@@ -490,10 +490,10 @@ void IPv4Widget::slotDnsDomains()
     QPointer<QDialog> dialog = new QDialog(this);
     dialog->setWindowTitle(i18n("Edit DNS search domains"));
     dialog->setLayout(new QVBoxLayout);
-    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
+    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
     connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
-    KEditListWidget *listWidget = new KEditListWidget(dialog);
+    auto listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(QStringLiteral(" "), QLatin1String("")));
     listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);

@@ -316,7 +316,7 @@ QVariantMap WifiSecurity::setting8021x() const
         return m_WPA2Widget->setting();
     }
 
-    return QVariantMap();
+    return {};
 }
 
 void WifiSecurity::onSsidChanged(const QString &ssid)

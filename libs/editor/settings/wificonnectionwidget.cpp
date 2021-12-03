@@ -110,7 +110,7 @@ QVariantMap WifiConnectionWidget::setting() const
 void WifiConnectionWidget::generateRandomClonedMac()
 {
     QByteArray mac;
-    auto *generator = QRandomGenerator::global();
+    auto generator = QRandomGenerator::global();
     mac.resize(6);
     for (int i = 0; i < 6; i++) {
         const int random = generator->bounded(255);

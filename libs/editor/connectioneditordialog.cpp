@@ -16,7 +16,7 @@ ConnectionEditorDialog::ConnectionEditorDialog(const NetworkManager::ConnectionS
     , m_buttonBox(new QDialogButtonBox(this))
     , m_connectionEditorTabWidget(new ConnectionEditorTabWidget(connection, parent, f))
 {
-    QVBoxLayout *layout = new QVBoxLayout(this);
+    auto layout = new QVBoxLayout(this);
     layout->addWidget(m_connectionEditorTabWidget);
 
     m_buttonBox->setStandardButtons(QDialogButtonBox::Save | QDialogButtonBox::Cancel);
@@ -36,9 +36,7 @@ ConnectionEditorDialog::ConnectionEditorDialog(const NetworkManager::ConnectionS
     }
 }
 
-ConnectionEditorDialog::~ConnectionEditorDialog()
-{
-}
+ConnectionEditorDialog::~ConnectionEditorDialog() = default;
 
 NMVariantMapMap ConnectionEditorDialog::setting() const
 {

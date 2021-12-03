@@ -38,12 +38,12 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     ui->setupUi(this);
     ui->pin->setPasswordMode(true);
 
-    QIntValidator *validator = new QIntValidator(this);
+    auto validator = new QIntValidator(this);
     validator->setRange(1000, 99999999);
     ui->pin->setValidator(validator);
     ui->pin2->setValidator(validator);
 
-    QIntValidator *validator2 = new QIntValidator(this);
+    auto validator2 = new QIntValidator(this);
     validator2->setRange(10000000, 99999999);
     ui->puk->setValidator(validator2);
 

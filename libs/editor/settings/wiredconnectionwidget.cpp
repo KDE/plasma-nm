@@ -159,7 +159,7 @@ QVariantMap WiredConnectionWidget::setting() const
 
 void WiredConnectionWidget::generateRandomClonedMac()
 {
-    auto *generator = QRandomGenerator::global();
+    auto generator = QRandomGenerator::global();
     QByteArray mac;
     mac.resize(6);
     for (int i = 0; i < 6; i++) {

@@ -11,6 +11,4 @@ Enums::Enums(QObject *parent)
 {
 }
 
-Enums::~Enums()
-{
-}
+Enums::~Enums() = default;

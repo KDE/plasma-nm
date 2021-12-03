@@ -55,9 +55,7 @@ public:
     bool presharedKeyValid = true;
 };
 
-WireGuardPeerWidget::Private::~Private()
-{
-}
+WireGuardPeerWidget::Private::~Private() = default;
 
 WireGuardPeerWidget::WireGuardPeerWidget(const QVariantMap &peerData, QWidget *parent, Qt::WindowFlags f)
     : QDialog(parent, f)
@@ -88,7 +86,7 @@ WireGuardPeerWidget::WireGuardPeerWidget(const QVariantMap &peerData, QWidget *p
     d->ui.presharedKeyLineEdit->setPasswordNotSavedEnabled(false);
 
     // Create validator for endpoint port
-    QIntValidator *portValidator = new QIntValidator(this);
+    auto portValidator = new QIntValidator(this);
     portValidator->setBottom(0);
     portValidator->setTop(65535);
     d->ui.endpointPortLineEdit->setValidator(portValidator);

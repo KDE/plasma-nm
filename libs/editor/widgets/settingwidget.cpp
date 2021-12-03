@@ -33,9 +33,7 @@ SettingWidget::SettingWidget(const NetworkManager::Setting::Ptr &setting, const 
 {
 }
 
-SettingWidget::~SettingWidget()
-{
-}
+SettingWidget::~SettingWidget() = default;
 
 void SettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {

@@ -34,9 +34,7 @@ SimpleIpListValidator::SimpleIpListValidator(AddressStyle style, AddressType typ
     }
 }
 
-SimpleIpListValidator::~SimpleIpListValidator()
-{
-}
+SimpleIpListValidator::~SimpleIpListValidator() = default;
 
 QValidator::State SimpleIpListValidator::validate(QString &address, int &pos) const
 {

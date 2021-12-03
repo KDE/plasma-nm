@@ -17,9 +17,7 @@ IodineUiPlugin::IodineUiPlugin(QObject *parent, const QVariantList &)
 {
 }
 
-IodineUiPlugin::~IodineUiPlugin()
-{
-}
+IodineUiPlugin::~IodineUiPlugin() = default;
 
 SettingWidget *IodineUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
@@ -34,12 +32,12 @@ SettingWidget *IodineUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &se
 QString IodineUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
     Q_UNUSED(connection);
-    return QString();
+    return {};
 }
 
 QString IodineUiPlugin::supportedFileExtensions() const
 {
-    return QString();
+    return {};
 }
 
 NMVariantMapMap IodineUiPlugin::importConnectionSettings(const QString &fileName)
@@ -48,7 +46,7 @@ NMVariantMapMap IodineUiPlugin::importConnectionSettings(const QString &fileName
 
     // TODO : import the Iodine connection from file and return settings
     mError = VpnUiPlugin::NotImplemented;
-    return NMVariantMapMap();
+    return {};
 }
 
 bool IodineUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)

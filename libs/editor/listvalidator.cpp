@@ -14,9 +14,7 @@ ListValidator::ListValidator(QObject *parent)
 {
 }
 
-ListValidator::~ListValidator()
-{
-}
+ListValidator::~ListValidator() = default;
 
 QValidator::State ListValidator::validate(QString &text, int &pos) const
 {

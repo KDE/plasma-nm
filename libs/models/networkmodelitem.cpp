@@ -69,9 +69,7 @@ NetworkModelItem::NetworkModelItem(const NetworkModelItem *item, QObject *parent
 {
 }
 
-NetworkModelItem::~NetworkModelItem()
-{
-}
+NetworkModelItem::~NetworkModelItem() = default;
 
 QString NetworkModelItem::activeConnectionPath() const
 {
@@ -317,7 +315,7 @@ QString NetworkModelItem::sectionType() const
     if (m_connectionState == NetworkManager::ActiveConnection::Deactivated) {
         return "Available connections";
     } else {
-        return QString();
+        return {};
     }
 }
 

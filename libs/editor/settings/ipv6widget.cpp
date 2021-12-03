@@ -39,7 +39,7 @@ public:
     Private()
         : model(0, 3)
     {
-        QStandardItem *headerItem = new QStandardItem(i18nc("Header text for IPv6 address", "Address"));
+        auto headerItem = new QStandardItem(i18nc("Header text for IPv6 address", "Address"));
         model.setHorizontalHeaderItem(0, headerItem);
         headerItem = new QStandardItem(i18nc("Header text for IPv6 prefix", "Prefix"));
         model.setHorizontalHeaderItem(1, headerItem);
@@ -60,8 +60,8 @@ IPv6Widget::IPv6Widget(const NetworkManager::Setting::Ptr &setting, QWidget *par
     m_ui->tableViewAddresses->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
     m_ui->tableViewAddresses->horizontalHeader()->setStretchLastSection(true);
 
-    IpV6Delegate *ipDelegate = new IpV6Delegate(this);
-    IntDelegate *prefixDelegate = new IntDelegate(0, 128, this);
+    auto ipDelegate = new IpV6Delegate(this);
+    auto prefixDelegate = new IntDelegate(0, 128, this);
     m_ui->tableViewAddresses->setItemDelegateForColumn(0, ipDelegate);
     m_ui->tableViewAddresses->setItemDelegateForColumn(1, prefixDelegate);
     m_ui->tableViewAddresses->setItemDelegateForColumn(2, ipDelegate);
@@ -407,10 +407,10 @@ void IPv6Widget::slotDnsServers()
     QPointer<QDialog> dialog = new QDialog(this);
     dialog->setWindowTitle(i18n("Edit DNS servers"));
     dialog->setLayout(new QVBoxLayout);
-    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
+    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
     connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
-    KEditListWidget *listWidget = new KEditListWidget(dialog);
+    auto listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dns->text().split(',').replaceInStrings(QStringLiteral(" "), QLatin1String("")));
     listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);
@@ -436,10 +436,10 @@ void IPv6Widget::slotDnsDomains()
     QPointer<QDialog> dialog = new QDialog(this);
     dialog->setWindowTitle(i18n("Edit DNS search domains"));
     dialog->setLayout(new QVBoxLayout);
-    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
+    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
     connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
-    KEditListWidget *listWidget = new KEditListWidget(dialog);
+    auto listWidget = new KEditListWidget(dialog);
     listWidget->setItems(m_ui->dnsSearch->text().split(',').replaceInStrings(QStringLiteral(" "), QLatin1String("")));
     listWidget->lineEdit()->setFocus(Qt::OtherFocusReason);
     dialog->layout()->addWidget(listWidget);

@@ -18,9 +18,7 @@ MobileProxyModel::MobileProxyModel(QObject *parent)
     sort(0, Qt::DescendingOrder);
 }
 
-MobileProxyModel::~MobileProxyModel()
-{
-}
+MobileProxyModel::~MobileProxyModel() = default;
 
 void MobileProxyModel::setShowSavedMode(bool mode)
 {

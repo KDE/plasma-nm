@@ -14,13 +14,11 @@ IpV4Delegate::IpV4Delegate(QObject *parent)
     : Delegate(parent)
 {
 }
-IpV4Delegate::~IpV4Delegate()
-{
-}
+IpV4Delegate::~IpV4Delegate() = default;
 
 QWidget *IpV4Delegate::createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const
 {
-    QLineEdit *editor = new QLineEdit(parent);
+    auto editor = new QLineEdit(parent);
     editor->setValidator(new SimpleIpV4AddressValidator(SimpleIpV4AddressValidator::Base, editor));
 
     return editor;

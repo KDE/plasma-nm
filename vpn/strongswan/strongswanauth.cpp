@@ -83,7 +83,7 @@ void StrongswanAuthWidget::setVisible(bool visible)
 
 void StrongswanAuthWidget::acceptDialog()
 {
-    QDialog *dialog = qobject_cast<QDialog *>(parentWidget());
+    auto dialog = qobject_cast<QDialog *>(parentWidget());
     if (dialog) {
         dialog->accept();
     }

@@ -125,7 +125,7 @@ QString Configuration::hotspotPassword()
         return grp.readEntry(QStringLiteral("HotspotPassword"), QString());
     }
 
-    return QString();
+    return {};
 }
 
 void Configuration::setHotspotPassword(const QString &password)
@@ -147,7 +147,7 @@ QString Configuration::hotspotConnectionPath()
         return grp.readEntry(QStringLiteral("HotspotConnectionPath"), QString());
     }
 
-    return QString();
+    return {};
 }
 
 void Configuration::setHotspotConnectionPath(const QString &path)

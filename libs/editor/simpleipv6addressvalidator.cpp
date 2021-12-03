@@ -25,9 +25,7 @@ SimpleIpV6AddressValidator::SimpleIpV6AddressValidator(AddressStyle style, QObje
     }
 }
 
-SimpleIpV6AddressValidator::~SimpleIpV6AddressValidator()
-{
-}
+SimpleIpV6AddressValidator::~SimpleIpV6AddressValidator() = default;
 
 QValidator::State SimpleIpV6AddressValidator::validate(QString &address, int &pos) const
 {

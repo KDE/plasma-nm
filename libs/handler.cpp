@@ -77,9 +77,7 @@ Handler::Handler(QObject *parent)
     }
 }
 
-Handler::~Handler()
-{
-}
+Handler::~Handler() = default;
 
 void Handler::activateConnection(const QString &connection, const QString &device, const QString &specificObject)
 {
@@ -118,7 +116,7 @@ void Handler::activateConnection(const QString &connection, const QString &devic
 
             if (pluginMissing) {
                 qCWarning(PLASMA_NM) << "VPN" << vpnSetting->serviceType() << "not found, skipping";
-                KNotification *notification = new KNotification(QStringLiteral("MissingVpnPlugin"), KNotification::CloseOnTimeout, this);
+                auto notification = new KNotification(QStringLiteral("MissingVpnPlugin"), KNotification::CloseOnTimeout, this);
                 notification->setComponentName(QStringLiteral("networkmanagement"));
                 notification->setTitle(con->name());
                 notification->setText(i18n("Missing VPN plugin"));
@@ -156,7 +154,7 @@ void Handler::activateConnection(const QString &connection, const QString &devic
 #endif
 
     QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::activateConnection(connection, device, specificObject);
-    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    auto watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", Handler::ActivateConnection);
     watcher->setProperty("connection", con->name());
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
@@ -164,7 +162,7 @@ void Handler::activateConnection(const QString &connection, const QString &devic
 
 QString Handler::wifiCode(const QString &connectionPath, const QString &ssid, int _securityType) const
 {
-    NetworkManager::WirelessSecurityType securityType = static_cast<NetworkManager::WirelessSecurityType>(_securityType);
+    auto securityType = static_cast<NetworkManager::WirelessSecurityType>(_securityType);
 
     QString ret = QStringLiteral("WIFI:S:") + ssid + QLatin1Char(';');
     if (securityType != NetworkManager::NoneSecurity) {
@@ -312,7 +310,7 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
             }
         }
         QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addAndActivateConnection(settings->toMap(), device, specificObject);
-        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+        auto watcher = new QDBusPendingCallWatcher(reply, this);
         watcher->setProperty("action", Handler::AddAndActivateConnection);
         watcher->setProperty("connection", settings->name());
         connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
@@ -324,7 +322,7 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
 void Handler::addConnection(const NMVariantMapMap &map)
 {
     QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(map);
-    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    auto watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", AddConnection);
     watcher->setProperty("connection", map.value("connection").value("id"));
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
@@ -353,7 +351,7 @@ void Handler::deactivateConnection(const QString &connection, const QString &dev
         }
     }
 
-    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    auto watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", Handler::DeactivateConnection);
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
@@ -388,7 +386,7 @@ template<typename T>
 void makeDBusCall(const QDBusMessage &message, QObject *context, std::function<void(QDBusPendingReply<T>)> func)
 {
     QDBusPendingReply<T> reply = QDBusConnection::systemBus().asyncCall(message);
-    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, context);
+    auto watcher = new QDBusPendingCallWatcher(reply, context);
     QObject::connect(watcher, &QDBusPendingCallWatcher::finished, context, [func](QDBusPendingCallWatcher *watcher) {
         const QDBusPendingReply<T> reply = *watcher;
         if (!reply.isValid()) {
@@ -478,7 +476,7 @@ void Handler::removeConnection(const QString &connection)
     }
 
     QDBusPendingReply<> reply = con->remove();
-    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    auto watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", Handler::RemoveConnection);
     watcher->setProperty("connection", con->name());
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
@@ -487,7 +485,7 @@ void Handler::removeConnection(const QString &connection)
 void Handler::updateConnection(const NetworkManager::Connection::Ptr &connection, const NMVariantMapMap &map)
 {
     QDBusPendingReply<> reply = connection->update(map);
-    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    auto watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", UpdateConnection);
     watcher->setProperty("connection", connection->name());
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
@@ -530,7 +528,7 @@ void Handler::requestScan(const QString &interface)
 
                 qCDebug(PLASMA_NM) << "Requesting wifi scan on device" << wifiDevice->interfaceName();
                 QDBusPendingReply<> reply = wifiDevice->requestScan();
-                QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+                auto watcher = new QDBusPendingCallWatcher(reply, this);
                 watcher->setProperty("action", Handler::RequestScan);
                 watcher->setProperty("interface", wifiDevice->interfaceName());
                 connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
@@ -619,7 +617,7 @@ void Handler::createHotspot()
 
     QDBusPendingReply<QDBusObjectPath, QDBusObjectPath, QVariantMap> reply =
         NetworkManager::addAndActivateConnection2(connectionSettings->toMap(), wifiDev->uni(), QString(), options);
-    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+    auto watcher = new QDBusPendingCallWatcher(reply, this);
     watcher->setProperty("action", Handler::CreateHotspot);
     watcher->setProperty("connection", Configuration::self().hotspotName());
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);

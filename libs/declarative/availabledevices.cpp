@@ -27,9 +27,7 @@ AvailableDevices::AvailableDevices(QObject *parent)
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::deviceRemoved, this, &AvailableDevices::deviceRemoved);
 }
 
-AvailableDevices::~AvailableDevices()
-{
-}
+AvailableDevices::~AvailableDevices() = default;
 
 bool AvailableDevices::isWiredDeviceAvailable() const
 {

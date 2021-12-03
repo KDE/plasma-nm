@@ -232,11 +232,11 @@ QVariantList MobileConnectionWizard::args()
 
 QWizardPage *MobileConnectionWizard::createIntroPage()
 {
-    QWizardPage *page = new QWizardPage();
+    auto page = new QWizardPage();
     page->setTitle(i18nc("Mobile Connection Wizard", "Set up a Mobile Broadband Connection"));
-    QVBoxLayout *layout = new QVBoxLayout;
+    auto layout = new QVBoxLayout;
 
-    QLabel *label =
+    auto label =
         new QLabel(i18nc("Mobile Connection Wizard", "This assistant helps you easily set up a mobile broadband connection to a cellular (3G) network."));
     label->setWordWrap(true);
     layout->addWidget(label);
@@ -396,11 +396,11 @@ void MobileConnectionWizard::introRemoveAllDevices()
 
 QWizardPage *MobileConnectionWizard::createCountryPage()
 {
-    QWizardPage *page = new QWizardPage();
+    auto page = new QWizardPage();
     page->setTitle(i18nc("Mobile Connection Wizard", "Choose your Provider's Country"));
-    QVBoxLayout *layout = new QVBoxLayout;
+    auto layout = new QVBoxLayout;
 
-    QLabel *label = new QLabel(i18nc("Mobile Connection Wizard", "Country List:"));
+    auto label = new QLabel(i18nc("Mobile Connection Wizard", "Country List:"));
     layout->addWidget(label);
 
     mCountryList = new QListWidget();
@@ -419,9 +419,9 @@ QWizardPage *MobileConnectionWizard::createCountryPage()
 
 QWizardPage *MobileConnectionWizard::createProvidersPage()
 {
-    QWizardPage *page = new QWizardPage();
+    auto page = new QWizardPage();
     page->setTitle(i18nc("Mobile Connection Wizard", "Choose your Provider"));
-    QVBoxLayout *layout = new QVBoxLayout;
+    auto layout = new QVBoxLayout;
 
     radioAutoProvider = new QRadioButton(i18nc("Mobile Connection Wizard", "Select your provider from a &list:"));
     radioAutoProvider->setChecked(true);
@@ -473,11 +473,11 @@ void MobileConnectionWizard::slotCheckProviderList()
 
 QWizardPage *MobileConnectionWizard::createPlansPage()
 {
-    QWizardPage *page = new QWizardPage();
+    auto page = new QWizardPage();
     page->setTitle(i18nc("Mobile Connection Wizard", "Choose your Billing Plan"));
-    QBoxLayout *layout = new QBoxLayout(QBoxLayout::TopToBottom);
+    auto layout = new QBoxLayout(QBoxLayout::TopToBottom);
 
-    QLabel *label = new QLabel(i18nc("Mobile Connection Wizard", "&Select your plan:"));
+    auto label = new QLabel(i18nc("Mobile Connection Wizard", "&Select your plan:"));
     layout->addWidget(label);
 
     mPlanComboBox = new KComboBox();
@@ -492,7 +492,7 @@ QWizardPage *MobileConnectionWizard::createPlansPage()
     label->setBuddy(userApn);
     layout->addWidget(userApn);
 
-    QHBoxLayout *layout2 = new QHBoxLayout();
+    auto layout2 = new QHBoxLayout();
     label = new QLabel();
     label->setPixmap(QIcon::fromTheme(QStringLiteral("dialog-warning")).pixmap(32));
     layout2->addWidget(label, 0, Qt::AlignTop);
@@ -535,11 +535,11 @@ void MobileConnectionWizard::slotEnablePlanEditBox(const QString &text)
 
 QWizardPage *MobileConnectionWizard::createConfirmPage()
 {
-    QWizardPage *page = new QWizardPage();
+    auto page = new QWizardPage();
     page->setTitle(i18nc("Mobile Connection Wizard", "Confirm Mobile Broadband Settings"));
-    QVBoxLayout *layout = new QVBoxLayout;
+    auto layout = new QVBoxLayout;
 
-    QLabel *label = new QLabel(i18nc("Mobile Connection Wizard", "Your mobile broadband connection is configured with the following settings:"));
+    auto label = new QLabel(i18nc("Mobile Connection Wizard", "Your mobile broadband connection is configured with the following settings:"));
     label->setWordWrap(true);
     layout->addWidget(label);
 

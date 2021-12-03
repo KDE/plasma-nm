@@ -17,9 +17,7 @@ WireGuardKeyValidator::WireGuardKeyValidator(QObject *parent)
     m_validator->setRegularExpression(QRegularExpression(QStringLiteral("[0-9a-zA-Z\\+/]{42,42}[AEIMQUYcgkosw048]=")));
 }
 
-WireGuardKeyValidator::~WireGuardKeyValidator()
-{
-}
+WireGuardKeyValidator::~WireGuardKeyValidator() = default;
 
 QValidator::State WireGuardKeyValidator::validate(QString &address, int &pos) const
 {

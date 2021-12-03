@@ -16,9 +16,7 @@ VpnUiPlugin::VpnUiPlugin(QObject *parent, const QVariantList & /*args*/)
     mError = NoError;
 }
 
-VpnUiPlugin::~VpnUiPlugin()
-{
-}
+VpnUiPlugin::~VpnUiPlugin() = default;
 
 QMessageBox::StandardButtons VpnUiPlugin::suggestedAuthDialogButtons() const
 {

@@ -53,13 +53,9 @@ public:
     bool otherPeersValid;
 };
 
-WireGuardTabWidget::Private::Private(void)
-{
-}
+WireGuardTabWidget::Private::Private() = default;
 
-WireGuardTabWidget::Private::~Private()
-{
-}
+WireGuardTabWidget::Private::~Private() = default;
 
 WireGuardTabWidget::WireGuardTabWidget(const NMVariantMapList &peerData, QWidget *parent, Qt::WindowFlags f)
     : QDialog(parent, f)
@@ -113,9 +109,9 @@ NMVariantMapList WireGuardTabWidget::setting() const
 
 void WireGuardTabWidget::slotAddPeer()
 {
-    QVariantMap *newItem = new QVariantMap;
+    auto newItem = new QVariantMap;
     int numPeers = d->ui.tabWidget->count() + 1;
-    WireGuardPeerWidget *newTab = new WireGuardPeerWidget(*newItem);
+    auto newTab = new WireGuardPeerWidget(*newItem);
     connect(newTab, &WireGuardPeerWidget::notifyValid, this, &WireGuardTabWidget::slotWidgetChanged);
     d->ui.tabWidget->addTab(newTab, QString("Peer %1").arg(QString::number(numPeers)));
     d->peers.append(*newItem);
@@ -126,7 +122,7 @@ void WireGuardTabWidget::slotAddPeer()
 void WireGuardTabWidget::slotAddPeerWithData(const QVariantMap &peerData)
 {
     int numPeers = d->ui.tabWidget->count() + 1;
-    WireGuardPeerWidget *newTab = new WireGuardPeerWidget(peerData);
+    auto newTab = new WireGuardPeerWidget(peerData);
     d->ui.tabWidget->addTab(newTab, QString("Peer %1").arg(QString::number(numPeers)));
     connect(newTab, &WireGuardPeerWidget::notifyValid, this, &WireGuardTabWidget::slotWidgetChanged);
     d->peers.append(peerData);

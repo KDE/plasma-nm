@@ -12,8 +12,8 @@
 #include <QWaitCondition>
 
 extern "C" {
-#include <stdlib.h>
-#include <errno.h>
+#include <cerrno>
+#include <cstdlib>
 }
 
 #include <cstdarg>

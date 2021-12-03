@@ -31,7 +31,7 @@ TeamWidget::TeamWidget(const QString &masterUuid, const QString &masterId, const
 
     // Action buttons and menu
     m_menu = new QMenu(this);
-    QAction *action = new QAction(i18n("Ethernet"), this);
+    auto action = new QAction(i18n("Ethernet"), this);
     action->setData(NetworkManager::ConnectionSettings::Wired);
     m_menu->addAction(action);
     action = new QAction(i18n("Infiniband"), this);
@@ -109,7 +109,7 @@ void TeamWidget::addTeam(QAction *action)
         qCDebug(PLASMA_NM) << "Saving slave connection";
         // qCDebug(PLASMA_NM) << teamEditor->setting();
         QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(teamEditor->setting());
-        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+        auto watcher = new QDBusPendingCallWatcher(reply, this);
         connect(watcher, &QDBusPendingCallWatcher::finished, this, &TeamWidget::teamAddComplete);
     });
     connect(teamEditor.data(), &ConnectionEditorDialog::finished, [teamEditor]() {
@@ -139,7 +139,7 @@ void TeamWidget::teamAddComplete(QDBusPendingCallWatcher *watcher)
         if (connection && connection->settings()->master() == m_uuid) {
             const QString label =
                 QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
-            QListWidgetItem *slaveItem = new QListWidgetItem(label, m_ui->teams);
+            auto slaveItem = new QListWidgetItem(label, m_ui->teams);
             slaveItem->setData(Qt::UserRole, connection->uuid());
             slotWidgetChanged();
         }
@@ -214,7 +214,7 @@ void TeamWidget::populateTeams()
         if (isSlave && (settings->slaveType() == type())) {
             const QString label =
                 QString("%1 (%2)").arg(connection->name()).arg(connection->settings()->typeAsString(connection->settings()->connectionType()));
-            QListWidgetItem *slaveItem = new QListWidgetItem(label, m_ui->teams);
+            auto slaveItem = new QListWidgetItem(label, m_ui->teams);
             slaveItem->setData(Qt::UserRole, connection->uuid());
         }
     }

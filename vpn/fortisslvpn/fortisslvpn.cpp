@@ -17,9 +17,7 @@ FortisslvpnUiPlugin::FortisslvpnUiPlugin(QObject *parent, const QVariantList &)
 {
 }
 
-FortisslvpnUiPlugin::~FortisslvpnUiPlugin()
-{
-}
+FortisslvpnUiPlugin::~FortisslvpnUiPlugin() = default;
 
 SettingWidget *FortisslvpnUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
@@ -34,12 +32,12 @@ SettingWidget *FortisslvpnUiPlugin::askUser(const NetworkManager::VpnSetting::Pt
 QString FortisslvpnUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
     Q_UNUSED(connection);
-    return QString();
+    return {};
 }
 
 QString FortisslvpnUiPlugin::supportedFileExtensions() const
 {
-    return QString();
+    return {};
 }
 
 NMVariantMapMap FortisslvpnUiPlugin::importConnectionSettings(const QString &fileName)
@@ -48,7 +46,7 @@ NMVariantMapMap FortisslvpnUiPlugin::importConnectionSettings(const QString &fil
 
     // TODO : import the Fortisslvpn connection from file and return settings
     mError = VpnUiPlugin::NotImplemented;
-    return NMVariantMapMap();
+    return {};
 }
 
 bool FortisslvpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)

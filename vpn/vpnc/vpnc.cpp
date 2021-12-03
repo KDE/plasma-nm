@@ -35,9 +35,7 @@ VpncUiPluginPrivate::VpncUiPluginPrivate()
     ciscoDecrypt = nullptr;
 }
 
-VpncUiPluginPrivate::~VpncUiPluginPrivate()
-{
-}
+VpncUiPluginPrivate::~VpncUiPluginPrivate() = default;
 
 QString VpncUiPluginPrivate::readStringKeyValue(const KConfigGroup &configGroup, const QString &key)
 {
@@ -86,9 +84,7 @@ VpncUiPlugin::VpncUiPlugin(QObject *parent, const QVariantList &)
 {
 }
 
-VpncUiPlugin::~VpncUiPlugin()
-{
-}
+VpncUiPlugin::~VpncUiPlugin() = default;
 
 SettingWidget *VpncUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {

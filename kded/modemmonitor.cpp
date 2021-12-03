@@ -91,7 +91,7 @@ void ModemMonitor::requestPin(MMModemLock lock)
         return;
     }
 
-    ModemManager::Modem *modem = qobject_cast<ModemManager::Modem *>(sender());
+    auto modem = qobject_cast<ModemManager::Modem *>(sender());
     if (!modem) {
         return;
     }

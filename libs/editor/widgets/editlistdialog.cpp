@@ -18,7 +18,7 @@ EditListDialog::EditListDialog(QWidget *parent)
 {
     editListWidget->setCheckAtEntering(true);
 
-    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     connect(buttons, &QDialogButtonBox::accepted, this, &QDialog::accept);
     connect(buttons, &QDialogButtonBox::accepted, this, &EditListDialog::dialogAccepted);
     connect(buttons, &QDialogButtonBox::rejected, this, &QDialog::reject);
@@ -28,9 +28,7 @@ EditListDialog::EditListDialog(QWidget *parent)
     layout()->addWidget(buttons);
 }
 
-EditListDialog::~EditListDialog()
-{
-}
+EditListDialog::~EditListDialog() = default;
 
 void EditListDialog::setItems(const QStringList &items)
 {

@@ -71,7 +71,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate,
 {
     Q_UNUSED(oldstate)
 
-    NetworkManager::Device *device = qobject_cast<NetworkManager::Device *>(sender());
+    auto device = qobject_cast<NetworkManager::Device *>(sender());
     if (newstate == NetworkManager::Device::Activated && m_notifications.contains(device->uni())) {
         KNotification *notify = m_notifications.value(device->uni());
         notify->close();
@@ -272,7 +272,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate,
         notify->setText(text.toHtmlEscaped());
         notify->update();
     } else {
-        KNotification *notify = new KNotification(QStringLiteral("DeviceFailed"), KNotification::CloseOnTimeout);
+        auto notify = new KNotification(QStringLiteral("DeviceFailed"), KNotification::CloseOnTimeout);
         connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
         notify->setProperty("uni", device->uni());
         notify->setComponentName(QStringLiteral("networkmanagement"));
@@ -310,7 +310,7 @@ void Notification::addActiveConnection(const NetworkManager::ActiveConnection::P
 
 void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnection::State state)
 {
-    NetworkManager::ActiveConnection *ac = qobject_cast<NetworkManager::ActiveConnection *>(sender());
+    auto ac = qobject_cast<NetworkManager::ActiveConnection *>(sender());
 
     QString eventId, text, iconName;
     const QString acName = ac->id();
@@ -397,7 +397,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
 
 void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
 {
-    NetworkManager::VpnConnection *vpn = qobject_cast<NetworkManager::VpnConnection *>(sender());
+    auto vpn = qobject_cast<NetworkManager::VpnConnection *>(sender());
 
     QString eventId, text;
     const QString vpnName = vpn->connection()->name();
@@ -454,7 +454,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         break;
     }
 
-    KNotification *notify = new KNotification(eventId, KNotification::CloseOnTimeout);
+    auto notify = new KNotification(eventId, KNotification::CloseOnTimeout);
     connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
     notify->setProperty("uni", connectionId);
     notify->setComponentName(QStringLiteral("networkmanagement"));
@@ -471,7 +471,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
 
 void Notification::notificationClosed()
 {
-    KNotification *notify = qobject_cast<KNotification *>(sender());
+    auto notify = qobject_cast<KNotification *>(sender());
     m_notifications.remove(notify->property("uni").toString());
 }
 
@@ -523,7 +523,7 @@ void Notification::onCheckActiveConnectionOnResume()
         return;
     }
 
-    KNotification *notify = new KNotification(QStringLiteral("NoLongerConnected"), KNotification::CloseOnTimeout);
+    auto notify = new KNotification(QStringLiteral("NoLongerConnected"), KNotification::CloseOnTimeout);
     connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
     const QString uni = QStringLiteral("offlineNotification");
     notify->setProperty("uni", uni);

@@ -120,7 +120,7 @@ void PasswordDialog::initializeUi()
                 const QString shortName = serviceType.section('.', -1);
                 NMStringMap data = vpnSetting->data();
                 m_vpnWidget = vpnUiPlugin->askUser(vpnSetting, m_hints, this);
-                QVBoxLayout *layout = new QVBoxLayout();
+                auto layout = new QVBoxLayout();
                 layout->addWidget(m_vpnWidget);
                 m_ui->vpnWidget->setLayout(layout);
                 m_ui->labelText->setText(i18n("Provide the secrets for the VPN connection '%1':", m_connectionSettings->id()));

@@ -447,7 +447,7 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
         break;
     }
 
-    return QString();
+    return {};
 }
 
 #if WITH_MODEMMANAGER_SUPPORT

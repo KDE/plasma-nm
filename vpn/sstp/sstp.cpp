@@ -17,9 +17,7 @@ SstpUiPlugin::SstpUiPlugin(QObject *parent, const QVariantList &)
 {
 }
 
-SstpUiPlugin::~SstpUiPlugin()
-{
-}
+SstpUiPlugin::~SstpUiPlugin() = default;
 
 SettingWidget *SstpUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
@@ -36,13 +34,13 @@ QString SstpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings
     Q_UNUSED(connection);
 
     // TODO : implement suggested file name
-    return QString();
+    return {};
 }
 
 QString SstpUiPlugin::supportedFileExtensions() const
 {
     // TODO : return supported file extensions
-    return QString();
+    return {};
 }
 
 NMVariantMapMap SstpUiPlugin::importConnectionSettings(const QString &fileName)
@@ -51,7 +49,7 @@ NMVariantMapMap SstpUiPlugin::importConnectionSettings(const QString &fileName)
 
     // TODO : import the SSTP connection from file and return settings
     mError = VpnUiPlugin::NotImplemented;
-    return NMVariantMapMap();
+    return {};
 }
 
 bool SstpUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)

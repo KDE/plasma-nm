@@ -19,9 +19,7 @@ StrongswanUiPlugin::StrongswanUiPlugin(QObject *parent, const QVariantList &)
 {
 }
 
-StrongswanUiPlugin::~StrongswanUiPlugin()
-{
-}
+StrongswanUiPlugin::~StrongswanUiPlugin() = default;
 
 SettingWidget *StrongswanUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
@@ -38,13 +36,13 @@ QString StrongswanUiPlugin::suggestedFileName(const NetworkManager::ConnectionSe
     Q_UNUSED(connection);
 
     // TODO : implement suggested file name
-    return QString();
+    return {};
 }
 
 QString StrongswanUiPlugin::supportedFileExtensions() const
 {
     // TODO : return supported file extensions
-    return QString();
+    return {};
 }
 
 NMVariantMapMap StrongswanUiPlugin::importConnectionSettings(const QString &fileName)
@@ -53,7 +51,7 @@ NMVariantMapMap StrongswanUiPlugin::importConnectionSettings(const QString &file
 
     // TODO : import the StrongSwan connection from file and return settings
     mError = VpnUiPlugin::NotImplemented;
-    return NMVariantMapMap();
+    return {};
 }
 
 bool StrongswanUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)

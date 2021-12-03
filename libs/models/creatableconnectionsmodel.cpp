@@ -37,9 +37,7 @@ CreatableConnectionItem::CreatableConnectionItem(QObject *parent)
 {
 }
 
-CreatableConnectionItem::~CreatableConnectionItem()
-{
-}
+CreatableConnectionItem::~CreatableConnectionItem() = default;
 NetworkManager::ConnectionSettings::ConnectionType CreatableConnectionItem::connectionType() const
 {
     return m_connectionType;
@@ -270,9 +268,7 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
     m_list << connectionItem;
 }
 
-CreatableConnectionsModel::~CreatableConnectionsModel()
-{
-}
+CreatableConnectionsModel::~CreatableConnectionsModel() = default;
 
 QVariant CreatableConnectionsModel::data(const QModelIndex &index, int role) const
 {
@@ -303,7 +299,7 @@ QVariant CreatableConnectionsModel::data(const QModelIndex &index, int role) con
         }
     }
 
-    return QVariant();
+    return {};
 }
 
 QHash<int, QByteArray> CreatableConnectionsModel::roleNames() const

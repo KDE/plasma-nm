@@ -89,7 +89,7 @@ QTreeWidgetItem *AdvancedPermissionsWidget::constructItem(const KUser &user, con
         nametooltip = name;
     }
     data << name << user.loginName();
-    QTreeWidgetItem *item = new QTreeWidgetItem(data);
+    auto item = new QTreeWidgetItem(data);
     item->setData(LoginName, UserTagRole, itemData);
     item->setToolTip(FullName, nametooltip);
     item->setToolTip(LoginName, user.loginName());

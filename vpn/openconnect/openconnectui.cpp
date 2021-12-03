@@ -17,9 +17,7 @@ OpenconnectUiPlugin::OpenconnectUiPlugin(QObject *parent, const QVariantList &)
 {
 }
 
-OpenconnectUiPlugin::~OpenconnectUiPlugin()
-{
-}
+OpenconnectUiPlugin::~OpenconnectUiPlugin() = default;
 
 SettingWidget *OpenconnectUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
@@ -34,12 +32,12 @@ SettingWidget *OpenconnectUiPlugin::askUser(const NetworkManager::VpnSetting::Pt
 QString OpenconnectUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
     Q_UNUSED(connection);
-    return QString();
+    return {};
 }
 
 QString OpenconnectUiPlugin::supportedFileExtensions() const
 {
-    return QString();
+    return {};
 }
 
 QMessageBox::StandardButtons OpenconnectUiPlugin::suggestedAuthDialogButtons() const
@@ -53,7 +51,7 @@ NMVariantMapMap OpenconnectUiPlugin::importConnectionSettings(const QString &fil
 
     // TODO : import the Openconnect connection from file and return settings
     mError = VpnUiPlugin::NotImplemented;
-    return NMVariantMapMap();
+    return {};
 }
 
 bool OpenconnectUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)

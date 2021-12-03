@@ -23,7 +23,7 @@ public:
     Private()
         : model(0, 4)
     {
-        QStandardItem *headerItem = new QStandardItem(i18nc("Header text for IPv6 address", "Address"));
+        auto headerItem = new QStandardItem(i18nc("Header text for IPv6 address", "Address"));
         model.setHorizontalHeaderItem(0, headerItem);
         headerItem = new QStandardItem(i18nc("Header text for IPv6 netmask", "Netmask"));
         model.setHorizontalHeaderItem(1, headerItem);
@@ -44,9 +44,9 @@ IpV6RoutesWidget::IpV6RoutesWidget(QWidget *parent)
     d->ui.tableViewAddresses->setModel(&d->model);
     d->ui.tableViewAddresses->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
 
-    IpV6Delegate *ipDelegate = new IpV6Delegate(this);
-    IntDelegate *netmaskDelegate = new IntDelegate(0, 128, this);
-    IntDelegate *metricDelegate = new IntDelegate(this);
+    auto ipDelegate = new IpV6Delegate(this);
+    auto netmaskDelegate = new IntDelegate(0, 128, this);
+    auto metricDelegate = new IntDelegate(this);
     d->ui.tableViewAddresses->setItemDelegateForColumn(0, ipDelegate);
     d->ui.tableViewAddresses->setItemDelegateForColumn(1, netmaskDelegate);
     d->ui.tableViewAddresses->setItemDelegateForColumn(2, ipDelegate);

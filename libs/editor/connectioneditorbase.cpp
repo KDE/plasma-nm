@@ -95,7 +95,7 @@ NMVariantMapMap ConnectionEditorBase::setting() const
         // add 802.1x security if needed
         QVariantMap security8021x;
         if (type == NetworkManager::Setting::typeAsString(NetworkManager::Setting::WirelessSecurity)) {
-            WifiSecurity *wifiSecurity = static_cast<WifiSecurity *>(widget);
+            auto wifiSecurity = static_cast<WifiSecurity *>(widget);
             if (wifiSecurity->enabled()) {
                 settings.insert(type, wifiSecurity->setting());
             }
@@ -104,7 +104,7 @@ NMVariantMapMap ConnectionEditorBase::setting() const
                 settings.insert(NetworkManager::Setting::typeAsString(NetworkManager::Setting::Security8021x), security8021x);
             }
         } else if (type == NetworkManager::Setting::typeAsString(NetworkManager::Setting::Security8021x)) {
-            WiredSecurity *wiredSecurity = static_cast<WiredSecurity *>(widget);
+            auto wiredSecurity = static_cast<WiredSecurity *>(widget);
             if (wiredSecurity->enabled8021x()) {
                 security8021x = static_cast<WiredSecurity *>(widget)->setting();
                 settings.insert(NetworkManager::Setting::typeAsString(NetworkManager::Setting::Security8021x), security8021x);
@@ -192,65 +192,64 @@ void ConnectionEditorBase::initialize()
     }
 
     // General configuration common to all connection types
-    ConnectionWidget *connectionWidget = new ConnectionWidget(m_connection);
+    auto connectionWidget = new ConnectionWidget(m_connection);
     addConnectionWidget(connectionWidget, i18nc("General", "General configuration"));
 
     // Add the rest of widgets
     QString serviceType;
     if (type == NetworkManager::ConnectionSettings::Wired) {
-        WiredConnectionWidget *wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Setting::Wired), this);
+        auto wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Setting::Wired), this);
         addSettingWidget(wiredWidget, i18n("Wired"));
-        WiredSecurity *wiredSecurity =
+        auto wiredSecurity =
             new WiredSecurity(m_connection->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>(), this);
         addSettingWidget(wiredSecurity, i18n("802.1x Security"));
     } else if (type == NetworkManager::ConnectionSettings::Wireless) {
-        WifiConnectionWidget *wifiWidget = new WifiConnectionWidget(m_connection->setting(NetworkManager::Setting::Wireless), this);
+        auto wifiWidget = new WifiConnectionWidget(m_connection->setting(NetworkManager::Setting::Wireless), this);
         addSettingWidget(wifiWidget, i18n("Wi-Fi"));
-        WifiSecurity *wifiSecurity =
-            new WifiSecurity(m_connection->setting(NetworkManager::Setting::WirelessSecurity),
-                             m_connection->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>(),
-                             this);
+        auto wifiSecurity = new WifiSecurity(m_connection->setting(NetworkManager::Setting::WirelessSecurity),
+                                             m_connection->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>(),
+                                             this);
         addSettingWidget(wifiSecurity, i18n("Wi-Fi Security"));
         connect(wifiWidget, QOverload<const QString &>::of(&WifiConnectionWidget::ssidChanged), wifiSecurity, &WifiSecurity::onSsidChanged);
     } else if (type == NetworkManager::ConnectionSettings::Pppoe) { // DSL
-        PppoeWidget *pppoeWidget = new PppoeWidget(m_connection->setting(NetworkManager::Setting::Pppoe), this);
+        auto pppoeWidget = new PppoeWidget(m_connection->setting(NetworkManager::Setting::Pppoe), this);
         addSettingWidget(pppoeWidget, i18n("DSL"));
-        WiredConnectionWidget *wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Setting::Wired), this);
+        auto wiredWidget = new WiredConnectionWidget(m_connection->setting(NetworkManager::Setting::Wired), this);
         addSettingWidget(wiredWidget, i18n("Wired"));
     } else if (type == NetworkManager::ConnectionSettings::Gsm) { // GSM
-        GsmWidget *gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Setting::Gsm), this);
+        auto gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Setting::Gsm), this);
         addSettingWidget(gsmWidget, i18n("Mobile Broadband (%1)", m_connection->typeAsString(m_connection->connectionType())));
     } else if (type == NetworkManager::ConnectionSettings::Cdma) { // CDMA
-        CdmaWidget *cdmaWidget = new CdmaWidget(m_connection->setting(NetworkManager::Setting::Cdma), this);
+        auto cdmaWidget = new CdmaWidget(m_connection->setting(NetworkManager::Setting::Cdma), this);
         addSettingWidget(cdmaWidget, i18n("Mobile Broadband (%1)", m_connection->typeAsString(m_connection->connectionType())));
     } else if (type == NetworkManager::ConnectionSettings::Bluetooth) { // Bluetooth
-        BtWidget *btWidget = new BtWidget(m_connection->setting(NetworkManager::Setting::Bluetooth), this);
+        auto btWidget = new BtWidget(m_connection->setting(NetworkManager::Setting::Bluetooth), this);
         addSettingWidget(btWidget, i18n("Bluetooth"));
         NetworkManager::BluetoothSetting::Ptr btSetting =
             m_connection->setting(NetworkManager::Setting::Bluetooth).staticCast<NetworkManager::BluetoothSetting>();
         if (btSetting->profileType() == NetworkManager::BluetoothSetting::Dun) {
-            GsmWidget *gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Setting::Gsm), this);
+            auto gsmWidget = new GsmWidget(m_connection->setting(NetworkManager::Setting::Gsm), this);
             addSettingWidget(gsmWidget, i18n("GSM"));
-            PPPWidget *pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Setting::Ppp), this);
+            auto pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Setting::Ppp), this);
             addSettingWidget(pppWidget, i18n("PPP"));
         }
     } else if (type == NetworkManager::ConnectionSettings::Infiniband) { // Infiniband
-        InfinibandWidget *infinibandWidget = new InfinibandWidget(m_connection->setting(NetworkManager::Setting::Infiniband), this);
+        auto infinibandWidget = new InfinibandWidget(m_connection->setting(NetworkManager::Setting::Infiniband), this);
         addSettingWidget(infinibandWidget, i18n("Infiniband"));
     } else if (type == NetworkManager::ConnectionSettings::Bond) { // Bond
-        BondWidget *bondWidget = new BondWidget(m_connection->uuid(), m_connection->id(), m_connection->setting(NetworkManager::Setting::Bond), this);
+        auto bondWidget = new BondWidget(m_connection->uuid(), m_connection->id(), m_connection->setting(NetworkManager::Setting::Bond), this);
         addSettingWidget(bondWidget, i18n("Bond"));
     } else if (type == NetworkManager::ConnectionSettings::Bridge) { // Bridge
-        BridgeWidget *bridgeWidget = new BridgeWidget(m_connection->uuid(), m_connection->id(), m_connection->setting(NetworkManager::Setting::Bridge), this);
+        auto bridgeWidget = new BridgeWidget(m_connection->uuid(), m_connection->id(), m_connection->setting(NetworkManager::Setting::Bridge), this);
         addSettingWidget(bridgeWidget, i18n("Bridge"));
     } else if (type == NetworkManager::ConnectionSettings::Vlan) { // Vlan
-        VlanWidget *vlanWidget = new VlanWidget(m_connection->setting(NetworkManager::Setting::Vlan), this);
+        auto vlanWidget = new VlanWidget(m_connection->setting(NetworkManager::Setting::Vlan), this);
         addSettingWidget(vlanWidget, i18n("Vlan"));
     } else if (type == NetworkManager::ConnectionSettings::Team) { // Team
-        TeamWidget *teamWidget = new TeamWidget(m_connection->uuid(), m_connection->id(), m_connection->setting(NetworkManager::Setting::Team), this);
+        auto teamWidget = new TeamWidget(m_connection->uuid(), m_connection->id(), m_connection->setting(NetworkManager::Setting::Team), this);
         addSettingWidget(teamWidget, i18n("Team"));
     } else if (type == NetworkManager::ConnectionSettings::WireGuard) { // WireGuard
-        WireGuardInterfaceWidget *wireGuardInterfaceWidget = new WireGuardInterfaceWidget(m_connection->setting(NetworkManager::Setting::WireGuard), this);
+        auto wireGuardInterfaceWidget = new WireGuardInterfaceWidget(m_connection->setting(NetworkManager::Setting::WireGuard), this);
         addSettingWidget(wireGuardInterfaceWidget, i18n("WireGuard Interface"));
     } else if (type == NetworkManager::ConnectionSettings::Vpn) { // VPN
         QString error;
@@ -275,13 +274,13 @@ void ConnectionEditorBase::initialize()
     // PPP widget
     if (type == NetworkManager::ConnectionSettings::Pppoe || type == NetworkManager::ConnectionSettings::Cdma
         || type == NetworkManager::ConnectionSettings::Gsm) {
-        PPPWidget *pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Setting::Ppp), this);
+        auto pppWidget = new PPPWidget(m_connection->setting(NetworkManager::Setting::Ppp), this);
         addSettingWidget(pppWidget, i18n("PPP"));
     }
 
     // IPv4 widget
     if (!m_connection->isSlave()) {
-        IPv4Widget *ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Setting::Ipv4), this);
+        auto ipv4Widget = new IPv4Widget(m_connection->setting(NetworkManager::Setting::Ipv4), this);
         addSettingWidget(ipv4Widget, i18n("IPv4"));
     }
 
@@ -298,7 +297,7 @@ void ConnectionEditorBase::initialize()
          || type == NetworkManager::ConnectionSettings::WireGuard //
          || (type == NetworkManager::ConnectionSettings::Vpn && serviceType == QLatin1String("org.freedesktop.NetworkManager.openvpn")))
         && !m_connection->isSlave()) {
-        IPv6Widget *ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Setting::Ipv6), this);
+        auto ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Setting::Ipv6), this);
         addSettingWidget(ipv6Widget, i18n("IPv6"));
     }
 
@@ -438,7 +437,7 @@ void ConnectionEditorBase::initialize()
                 if (requestSecrets) {
                     m_pendingReplies++;
                     reply = connection->secrets(settingName);
-                    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
+                    auto watcher = new QDBusPendingCallWatcher(reply, this);
                     watcher->setProperty("connection", connection->name());
                     watcher->setProperty("settingName", settingName);
                     connect(watcher, &QDBusPendingCallWatcher::finished, this, &ConnectionEditorBase::replyFinished);
@@ -479,7 +478,7 @@ void ConnectionEditorBase::replyFinished(QDBusPendingCallWatcher *watcher)
             }
         }
     } else {
-        KNotification *notification = new KNotification(QStringLiteral("FailedToGetSecrets"), KNotification::CloseOnTimeout);
+        auto notification = new KNotification(QStringLiteral("FailedToGetSecrets"), KNotification::CloseOnTimeout);
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setTitle(i18n("Failed to get secrets for %1", watcher->property("connection").toString()));
         notification->setText(reply.error().message());

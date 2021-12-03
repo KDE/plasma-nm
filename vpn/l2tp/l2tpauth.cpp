@@ -89,7 +89,7 @@ void L2tpAuthWidget::readSecrets()
     }
 
     for (int i = 0; i < d->layout->rowCount(); i++) {
-        PasswordField *le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+        auto le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && le->text().isEmpty()) {
             le->setFocus(Qt::OtherFocusReason);
             break;
@@ -104,7 +104,7 @@ QVariantMap L2tpAuthWidget::setting() const
     NMStringMap secrets;
     QVariantMap secretData;
     for (int i = 0; i < d->layout->rowCount(); i++) {
-        PasswordField *le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+        auto le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && !le->text().isEmpty()) {
             const QString key = le->property("nm_secrets_key").toString();
             secrets.insert(key, le->text());

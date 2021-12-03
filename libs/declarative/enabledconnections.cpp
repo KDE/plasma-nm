@@ -21,9 +21,7 @@ EnabledConnections::EnabledConnections(QObject *parent)
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::wwanHardwareEnabledChanged, this, &EnabledConnections::onWwanHwEnabled);
 }
 
-EnabledConnections::~EnabledConnections()
-{
-}
+EnabledConnections::~EnabledConnections() = default;
 
 bool EnabledConnections::isNetworkingEnabled() const
 {

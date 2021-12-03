@@ -19,9 +19,7 @@ L2tpUiPlugin::L2tpUiPlugin(QObject *parent, const QVariantList &)
 {
 }
 
-L2tpUiPlugin::~L2tpUiPlugin()
-{
-}
+L2tpUiPlugin::~L2tpUiPlugin() = default;
 
 SettingWidget *L2tpUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
@@ -36,19 +34,19 @@ SettingWidget *L2tpUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &sett
 QString L2tpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
     Q_UNUSED(connection);
-    return QString();
+    return {};
 }
 
 QString L2tpUiPlugin::supportedFileExtensions() const
 {
-    return QString();
+    return {};
 }
 
 NMVariantMapMap L2tpUiPlugin::importConnectionSettings(const QString &fileName)
 {
     Q_UNUSED(fileName);
     mError = VpnUiPlugin::NotImplemented;
-    return NMVariantMapMap();
+    return {};
 }
 
 bool L2tpUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)

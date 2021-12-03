@@ -29,9 +29,7 @@ void ConnectionEditorTabWidget::setConnection(const NetworkManager::ConnectionSe
     initializeTabWidget(connection);
 }
 
-ConnectionEditorTabWidget::~ConnectionEditorTabWidget()
-{
-}
+ConnectionEditorTabWidget::~ConnectionEditorTabWidget() = default;
 
 void ConnectionEditorTabWidget::addWidget(QWidget *widget, const QString &text)
 {

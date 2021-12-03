@@ -46,10 +46,10 @@ SshSettingWidget::SshSettingWidget(const NetworkManager::VpnSetting::Ptr &settin
     d->advancedDlg->setModal(true);
     d->advancedWid = new QWidget(this);
     d->advUi.setupUi(d->advancedWid);
-    QVBoxLayout *layout = new QVBoxLayout(d->advancedDlg);
+    auto layout = new QVBoxLayout(d->advancedDlg);
     layout->addWidget(d->advancedWid);
     d->advancedDlg->setLayout(layout);
-    QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, d->advancedDlg);
+    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, d->advancedDlg);
     connect(buttons, &QDialogButtonBox::accepted, d->advancedDlg, &QDialog::accept);
     connect(buttons, &QDialogButtonBox::rejected, d->advancedDlg, &QDialog::reject);
 
@@ -64,12 +64,12 @@ SshSettingWidget::SshSettingWidget(const NetworkManager::VpnSetting::Ptr &settin
     connect(d->ui.le_netmask, &QLineEdit::textChanged, this, &SshSettingWidget::slotWidgetChanged);
     connect(d->ui.le_remoteIp, &QLineEdit::textChanged, this, &SshSettingWidget::slotWidgetChanged);
 
-    SimpleIpV4AddressValidator *ipv4Validator = new SimpleIpV4AddressValidator(SimpleIpV4AddressValidator::Base, this);
+    auto ipv4Validator = new SimpleIpV4AddressValidator(SimpleIpV4AddressValidator::Base, this);
     d->ui.le_localIp->setValidator(ipv4Validator);
     d->ui.le_remoteIp->setValidator(ipv4Validator);
     d->ui.le_netmask->setValidator(ipv4Validator);
 
-    SimpleIpV6AddressValidator *ipv6Validator = new SimpleIpV6AddressValidator(SimpleIpV6AddressValidator::Base, this);
+    auto ipv6Validator = new SimpleIpV6AddressValidator(SimpleIpV6AddressValidator::Base, this);
     d->ui.le_localIpv6->setValidator(ipv6Validator);
     d->ui.le_remoteIpv6->setValidator(ipv6Validator);
 

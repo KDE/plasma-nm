@@ -29,10 +29,10 @@
 #define openconnect_has_yubioath_support() 0
 #endif
 
-typedef struct {
+using Token = struct {
     int tokenIndex;
     QString tokenSecret;
-} Token;
+};
 
 class OpenconnectSettingWidgetPrivate
 {
@@ -62,7 +62,7 @@ OpenconnectSettingWidget::OpenconnectSettingWidget(const NetworkManager::VpnSett
     d->tokenUi.setupUi(d->tokenDlg);
     d->tokenUi.leTokenSecret->setPasswordModeEnabled(true);
     d->tokenUi.leTokenSecret->setPasswordOptionsEnabled(true);
-    QVBoxLayout *layout = new QVBoxLayout(d->tokenDlg);
+    auto layout = new QVBoxLayout(d->tokenDlg);
     layout->addWidget(d->tokenDlg);
     d->tokenDlg->setLayout(layout);
     connect(d->tokenUi.buttonBox, &QDialogButtonBox::accepted, d->tokenDlg, &QDialog::accept);

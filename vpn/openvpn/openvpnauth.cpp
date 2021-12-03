@@ -114,7 +114,7 @@ void OpenVpnAuthWidget::readSecrets()
     }
 
     for (int i = 0; i < d->layout->rowCount(); i++) {
-        PasswordField *le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+        auto le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && le->text().isEmpty()) {
             le->setFocus(Qt::OtherFocusReason);
             break;
@@ -129,7 +129,7 @@ QVariantMap OpenVpnAuthWidget::setting() const
     NMStringMap secrets;
     QVariantMap secretData;
     for (int i = 0; i < d->layout->rowCount(); i++) {
-        PasswordField *le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+        auto le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && !le->text().isEmpty()) {
             const QString key = le->property("nm_secrets_key").toString();
             secrets.insert(key, le->text());
@@ -144,9 +144,9 @@ void OpenVpnAuthWidget::addPasswordField(const QString &labelText, const QString
 {
     Q_D(const OpenVpnAuthWidget);
 
-    QLabel *label = new QLabel(this);
+    auto label = new QLabel(this);
     label->setText(labelText);
-    PasswordField *lineEdit = new PasswordField(this);
+    auto lineEdit = new PasswordField(this);
     lineEdit->setPasswordModeEnabled(passwordMode);
     lineEdit->setProperty("nm_secrets_key", secretKey);
     lineEdit->setText(password);

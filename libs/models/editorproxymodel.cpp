@@ -16,9 +16,7 @@ EditorProxyModel::EditorProxyModel(QObject *parent)
     sort(0, Qt::DescendingOrder);
 }
 
-EditorProxyModel::~EditorProxyModel()
-{
-}
+EditorProxyModel::~EditorProxyModel() = default;
 
 bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {

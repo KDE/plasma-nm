@@ -14,13 +14,11 @@ IpV6Delegate::IpV6Delegate(QObject *parent)
     : Delegate(parent)
 {
 }
-IpV6Delegate::~IpV6Delegate()
-{
-}
+IpV6Delegate::~IpV6Delegate() = default;
 
 QWidget *IpV6Delegate::createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const
 {
-    QLineEdit *editor = new QLineEdit(parent);
+    auto editor = new QLineEdit(parent);
     editor->setValidator(new SimpleIpV6AddressValidator(SimpleIpV6AddressValidator::Base, editor));
 
     return editor;

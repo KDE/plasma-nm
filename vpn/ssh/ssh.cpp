@@ -17,9 +17,7 @@ SshUiPlugin::SshUiPlugin(QObject *parent, const QVariantList &)
 {
 }
 
-SshUiPlugin::~SshUiPlugin()
-{
-}
+SshUiPlugin::~SshUiPlugin() = default;
 
 SettingWidget *SshUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
@@ -36,13 +34,13 @@ QString SshUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings:
     Q_UNUSED(connection);
 
     // TODO : implement suggested file name
-    return QString();
+    return {};
 }
 
 QString SshUiPlugin::supportedFileExtensions() const
 {
     // TODO : return supported file extensions
-    return QString();
+    return {};
 }
 
 NMVariantMapMap SshUiPlugin::importConnectionSettings(const QString &fileName)
@@ -51,7 +49,7 @@ NMVariantMapMap SshUiPlugin::importConnectionSettings(const QString &fileName)
 
     // TODO : import the SSH connection from file and return settings
     mError = VpnUiPlugin::NotImplemented;
-    return NMVariantMapMap();
+    return {};
 }
 
 bool SshUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)

@@ -142,13 +142,11 @@ OpenVpnUiPlugin::OpenVpnUiPlugin(QObject *parent, const QVariantList &)
 {
 }
 
-OpenVpnUiPlugin::~OpenVpnUiPlugin()
-{
-}
+OpenVpnUiPlugin::~OpenVpnUiPlugin() = default;
 
 SettingWidget *OpenVpnUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
-    OpenVpnSettingWidget *wid = new OpenVpnSettingWidget(setting, parent);
+    auto wid = new OpenVpnSettingWidget(setting, parent);
     return wid;
 }
 
@@ -695,7 +693,7 @@ QString OpenVpnUiPlugin::saveFile(QTextStream &in, const QString &endTag, const 
     QDir().mkpath(certificatesDirectory);
     if (!outFile.open(QFile::WriteOnly | QFile::Text)) {
         KMessageBox::information(nullptr, i18n("Error saving file %1: %2", absoluteFilePath, outFile.errorString()));
-        return QString();
+        return {};
     }
 
     QTextStream out(&outFile);

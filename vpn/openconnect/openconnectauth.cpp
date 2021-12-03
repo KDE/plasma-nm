@@ -35,8 +35,8 @@
 #include <cstdarg>
 
 extern "C" {
+#include <cstring>
 #include <fcntl.h>
-#include <string.h>
 #include <unistd.h>
 }
 
@@ -54,16 +54,16 @@ static int updateToken(void *, const char *);
 
 // name/address: IP/domain name of the host (OpenConnect accepts both, so no difference here)
 // group: user group on the server
-typedef struct {
+using VPNHost = struct {
     QString name;
     QString group;
     QString address;
-} VPNHost;
+};
 
-typedef struct {
+using Token = struct {
     oc_token_mode_t tokenMode;
     QByteArray tokenSecret;
-} Token;
+};
 
 class OpenconnectAuthWidgetPrivate
 {
@@ -308,7 +308,7 @@ void OpenconnectAuthWidget::acceptDialog()
         widget = widget->parentWidget();
     }
 
-    QDialog *dialog = qobject_cast<QDialog *>(widget);
+    auto dialog = qobject_cast<QDialog *>(widget);
     if (dialog) {
         dialog->accept();
     }
@@ -415,7 +415,7 @@ QVariantMap OpenconnectAuthWidget::setting() const
 #if OPENCONNECT_CHECK_VER(3, 4)
 static int updateToken(void *cbdata, const char *tok)
 {
-    NMStringMap *secrets = static_cast<NMStringMap *>(cbdata);
+    auto secrets = static_cast<NMStringMap *>(cbdata);
     secrets->insert(QLatin1String(NM_OPENCONNECT_KEY_TOKEN_SECRET), QLatin1String(tok));
     return 0;
 }
@@ -478,8 +478,8 @@ void OpenconnectAuthWidget::addFormInfo(const QString &iconName, const QString &
 {
     Q_D(OpenconnectAuthWidget);
 
-    QHBoxLayout *layout = new QHBoxLayout();
-    QLabel *icon = new QLabel(this);
+    auto layout = new QHBoxLayout();
+    auto icon = new QLabel(this);
     QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     sizePolicy.setHorizontalStretch(0);
     sizePolicy.setVerticalStretch(0);
@@ -489,7 +489,7 @@ void OpenconnectAuthWidget::addFormInfo(const QString &iconName, const QString &
     icon->setMaximumSize(QSize(16, 16));
     layout->addWidget(icon);
 
-    QLabel *text = new QLabel(this);
+    auto text = new QLabel(this);
     text->setAlignment(Qt::AlignLeading | Qt::AlignLeft | Qt::AlignVCenter);
     text->setWordWrap(true);
     layout->addWidget(text);
@@ -508,21 +508,21 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
     deleteAllFromLayout(d->ui.loginBoxLayout);
 
     struct oc_form_opt *opt;
-    QFormLayout *layout = new QFormLayout();
+    auto layout = new QFormLayout();
     QSizePolicy policy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     bool focusSet = false;
     for (opt = form->opts; opt; opt = opt->next) {
         if (opt->type == OC_FORM_OPT_HIDDEN || IGNORE_OPT(opt)) {
             continue;
         }
-        QLabel *text = new QLabel(this);
+        auto text = new QLabel(this);
         text->setAlignment(Qt::AlignLeading | Qt::AlignLeft | Qt::AlignVCenter);
         text->setText(QString(opt->label));
         QWidget *widget = nullptr;
         const QString key = QString("form:%1:%2").arg(QLatin1String(form->auth_id)).arg(QLatin1String(opt->name));
         const QString value = d->secrets.value(key);
         if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {
-            PasswordField *le = new PasswordField(this);
+            auto le = new PasswordField(this);
             le->setText(value);
             if (opt->type == OC_FORM_OPT_PASSWORD) {
                 le->setPasswordModeEnabled(true);
@@ -533,8 +533,8 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
             }
             widget = qobject_cast<QWidget *>(le);
         } else if (opt->type == OC_FORM_OPT_SELECT) {
-            QComboBox *cmb = new QComboBox(this);
-            struct oc_form_opt_select *sopt = reinterpret_cast<oc_form_opt_select *>(opt);
+            auto cmb = new QComboBox(this);
+            auto sopt = reinterpret_cast<oc_form_opt_select *>(opt);
 #if !OPENCONNECT_CHECK_VER(8, 0)
             const QString protocol = d->setting->data()[NM_OPENCONNECT_KEY_PROTOCOL];
 #endif
@@ -585,7 +585,7 @@ void OpenconnectAuthWidget::processAuthForm(struct oc_auth_form *form)
     d->ui.loginBoxLayout->addLayout(layout);
     d->passwordFormIndex = d->ui.loginBoxLayout->count() - 1;
 
-    QDialogButtonBox *box = new QDialogButtonBox(this);
+    auto box = new QDialogButtonBox(this);
     QPushButton *btn = box->addButton(QDialogButtonBox::Ok);
     btn->setText(i18nc("Verb, to proceed with login", "Login"));
     btn->setDefault(true);
@@ -609,7 +609,7 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint, const Q
 #endif
 
     if (openconnect_check_peer_cert_hash(d->vpninfo, value.toUtf8().data())) {
-        QWidget *widget = new QWidget();
+        auto widget = new QWidget();
         QVBoxLayout *verticalLayout;
         QHBoxLayout *horizontalLayout;
         QLabel *icon;
@@ -655,7 +655,7 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint, const Q
         QPointer<QDialog> dialog = new QDialog(this);
         dialog.data()->setWindowModality(Qt::WindowModal);
         dialog->setLayout(new QVBoxLayout);
-        QDialogButtonBox *buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
+        auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
         connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
         connect(buttons, &QDialogButtonBox::rejected, dialog.data(), &QDialog::reject);
         dialog->layout()->addWidget(widget);
@@ -710,7 +710,7 @@ void OpenconnectAuthWidget::formLoginClicked()
             struct oc_form_opt *opt = (struct oc_form_opt *)widget->property("openconnect_opt").value<quintptr>();
             const QString key = QString("form:%1:%2").arg(QLatin1String(form->auth_id)).arg(QLatin1String(opt->name));
             if (opt->type == OC_FORM_OPT_PASSWORD || opt->type == OC_FORM_OPT_TEXT) {
-                PasswordField *le = qobject_cast<PasswordField *>(widget);
+                auto le = qobject_cast<PasswordField *>(widget);
                 QByteArray text = le->text().toUtf8();
                 openconnect_set_option_value(opt, text.data());
                 if (opt->type == OC_FORM_OPT_TEXT) {
@@ -719,7 +719,7 @@ void OpenconnectAuthWidget::formLoginClicked()
                     d->tmpSecrets.insert(key, le->text());
                 }
             } else if (opt->type == OC_FORM_OPT_SELECT) {
-                QComboBox *cbo = qobject_cast<QComboBox *>(widget);
+                auto cbo = qobject_cast<QComboBox *>(widget);
                 QByteArray text = cbo->itemData(cbo->currentIndex()).toString().toLatin1();
                 openconnect_set_option_value(opt, text.data());
                 d->secrets.insert(key, cbo->itemData(cbo->currentIndex()).toString());
@@ -782,7 +782,7 @@ void OpenconnectAuthWidget::viewServerLogToggled(bool toggled)
         d->ui.serverLogBox->setSizePolicy(policy);
         d->ui.serverLog->setVisible(true);
     } else {
-        QSpacerItem *verticalSpacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        auto verticalSpacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
         d->ui.verticalLayout->addItem(verticalSpacer);
         d->ui.serverLog->setVisible(false);
         QSizePolicy policy = d->ui.serverLogBox->sizePolicy();

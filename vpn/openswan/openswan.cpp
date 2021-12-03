@@ -18,9 +18,7 @@ OpenswanUiPlugin::OpenswanUiPlugin(QObject *parent, const QVariantList &)
 {
 }
 
-OpenswanUiPlugin::~OpenswanUiPlugin()
-{
-}
+OpenswanUiPlugin::~OpenswanUiPlugin() = default;
 
 SettingWidget *OpenswanUiPlugin::widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
 {
@@ -35,12 +33,12 @@ SettingWidget *OpenswanUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &
 QString OpenswanUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
     Q_UNUSED(connection);
-    return QString();
+    return {};
 }
 
 QString OpenswanUiPlugin::supportedFileExtensions() const
 {
-    return QString();
+    return {};
 }
 
 NMVariantMapMap OpenswanUiPlugin::importConnectionSettings(const QString &fileName)
@@ -49,7 +47,7 @@ NMVariantMapMap OpenswanUiPlugin::importConnectionSettings(const QString &fileNa
 
     // TODO : import the Openswan connection from file and return settings
     mError = VpnUiPlugin::NotImplemented;
-    return NMVariantMapMap();
+    return {};
 }
 
 bool OpenswanUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)

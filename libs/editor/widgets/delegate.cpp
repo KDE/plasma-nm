@@ -14,13 +14,11 @@ Delegate::Delegate(QObject *parent)
     : QStyledItemDelegate(parent)
 {
 }
-Delegate::~Delegate()
-{
-}
+Delegate::~Delegate() = default;
 
 QWidget *Delegate::createEditor(QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &) const
 {
-    QLineEdit *editor = new QLineEdit(parent);
+    auto editor = new QLineEdit(parent);
 
     return editor;
 }
@@ -29,13 +27,13 @@ void Delegate::setEditorData(QWidget *editor, const QModelIndex &index) const
 {
     QString value = index.model()->data(index, Qt::EditRole).toString();
 
-    QLineEdit *le = static_cast<QLineEdit *>(editor);
+    auto le = static_cast<QLineEdit *>(editor);
     le->setText(value);
 }
 
 void Delegate::setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const
 {
-    QLineEdit *le = static_cast<QLineEdit *>(editor);
+    auto le = static_cast<QLineEdit *>(editor);
 
     model->setData(index, le->text(), Qt::EditRole);
 }

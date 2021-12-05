@@ -85,6 +85,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
 private:
+    void populateModel();
     QList<CreatableConnectionItem *> m_list;
 };
 

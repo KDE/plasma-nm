@@ -69,6 +69,8 @@ void Configuration::setManageVirtualConnections(bool manage)
     if (grp.isValid()) {
         grp.writeEntry(QStringLiteral("ManageVirtualConnections"), manage);
         propManageVirtualConnections = manage;
+        grp.sync();
+        Q_EMIT manageVirtualConnectionsChanged(manage);
     }
 }
 

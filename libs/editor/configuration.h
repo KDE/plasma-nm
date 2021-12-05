@@ -14,7 +14,7 @@
 class Q_DECL_EXPORT Configuration : public QObject
 {
     Q_PROPERTY(bool unlockModemOnDetection READ unlockModemOnDetection WRITE setUnlockModemOnDetection)
-    Q_PROPERTY(bool manageVirtualConnections READ manageVirtualConnections WRITE setManageVirtualConnections)
+    Q_PROPERTY(bool manageVirtualConnections READ manageVirtualConnections WRITE setManageVirtualConnections NOTIFY manageVirtualConnectionsChanged)
     Q_PROPERTY(bool airplaneModeEnabled READ airplaneModeEnabled WRITE setAirplaneModeEnabled NOTIFY airplaneModeEnabledChanged)
     Q_PROPERTY(QString hotspotName READ hotspotName WRITE setHotspotName)
     Q_PROPERTY(QString hotspotPassword READ hotspotPassword WRITE setHotspotPassword)
@@ -46,6 +46,12 @@ public:
     bool showPasswordDialog();
 
     static Configuration &self();
+
+signals:
+    void manageVirtualConnectionsChanged(bool manage);
+
+private:
+    Configuration() = default;
 };
 
 #endif // PLAMA_NM_CONFIGURATION_H

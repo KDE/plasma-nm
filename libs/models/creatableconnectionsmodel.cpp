@@ -121,7 +121,22 @@ void CreatableConnectionItem::setVpnType(const QString &vpnType)
 CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-    CreatableConnectionItem *connectionItem;
+    connect(&Configuration::self(), &Configuration::manageVirtualConnectionsChanged, this, [&]() {
+        this->populateModel();
+    });
+    populateModel();
+}
+
+void CreatableConnectionsModel::populateModel()
+{
+    beginResetModel();
+
+    if (!m_list.isEmpty()) {
+        qDeleteAll(m_list);
+        m_list.clear();
+    }
+
+    CreatableConnectionItem *connectionItem{nullptr};
     connectionItem = new CreatableConnectionItem(i18n("DSL"),
                                                  i18n("Hardware based connections"),
                                                  i18n("Some DSL description"),
@@ -266,6 +281,7 @@ CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
                                                  QStringLiteral("imported"),
                                                  false);
     m_list << connectionItem;
+    endResetModel();
 }
 
 CreatableConnectionsModel::~CreatableConnectionsModel() = default;

@@ -22,6 +22,13 @@ Item {
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
+    Connections {
+        target: PlasmaNM.Configuration
+        function onManageVirtualConnectionsChanged() {
+            editorProxyModel.invalidate()
+        }
+    }
+
     Rectangle {
         id: background
         anchors.fill: parent

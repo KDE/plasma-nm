@@ -6,7 +6,6 @@
 
 import QtQuick 2.3
 import QtQuick.Dialogs 1.2
-import QtQuick.Controls 1.2 as QtControls
 import QtQuick.Controls 2.5 as QQC2
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.kirigami 2.15 as Kirigami
@@ -33,7 +32,7 @@ Dialog {
             color: baseColor
         }
 
-        QtControls.ScrollView {
+        QQC2.ScrollView {
             id: scrollView
             anchors {
                 bottom: buttonRow.top
@@ -42,6 +41,7 @@ Dialog {
                 right: parent.right
                 top: parent.top
             }
+            QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
 
             ListView {
                 id: view
@@ -52,7 +52,6 @@ Dialog {
                 property int connectionType
                 property string connectionVpnType
 
-                anchors.fill: parent
                 clip: true
                 model: connectionModel
                 currentIndex: -1
@@ -155,7 +154,7 @@ Dialog {
             }
             spacing: Math.round(Kirigami.Units.gridUnit / 2)
 
-            QtControls.Button {
+            QQC2.Button {
                 id: createButton
                 enabled: false
                 text: i18n("Create")
@@ -166,7 +165,7 @@ Dialog {
                 }
             }
 
-            QtControls.Button {
+            QQC2.Button {
                 id: cancelButton
                 text: i18n("Cancel")
 

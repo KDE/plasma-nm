@@ -7,6 +7,7 @@
 import QtQuick 2.3
 import QtQuick.Dialogs 1.2
 import QtQuick.Controls 1.2 as QtControls
+import QtQuick.Controls 2.5 as QQC2
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
@@ -172,6 +173,23 @@ Dialog {
                 onClicked: {
                     dialog.close()
                 }
+            }
+        }
+
+        QQC2.ToolButton {
+            id: configureButton
+            anchors {
+                bottom: parent.bottom
+                left: parent.left
+                margins: Math.round(Kirigami.Units.gridUnit / 2)
+            }
+            icon.name: "configure"
+
+            QQC2.ToolTip.text: i18n("Configuration")
+            QQC2.ToolTip.visible: hovered
+
+            onClicked: {
+                configurationDialog.open()
             }
         }
     }

@@ -48,11 +48,11 @@ MobileProviders::MobileProviders()
                 qCWarning(PLASMA_NM_EDITOR_LOG) << ProvidersFile << ": document is null";
                 mError = ProvidersIsNull;
             } else {
-                if (docElement.isNull() || docElement.tagName() != "serviceproviders") {
+                if (docElement.isNull() || docElement.tagName() != QLatin1String("serviceproviders")) {
                     qCWarning(PLASMA_NM_EDITOR_LOG) << ProvidersFile << ": wrong format";
                     mError = ProvidersWrongFormat;
                 } else {
-                    if (docElement.attribute("format") != "2.0") {
+                    if (docElement.attribute("format") != QLatin1String("2.0")) {
                         qCWarning(PLASMA_NM_EDITOR_LOG)
                             << ProvidersFile << ": mobile broadband provider database format '" << docElement.attribute("format") << "' not supported.";
                         mError = ProvidersFormatNotSupported;
@@ -104,12 +104,12 @@ QStringList MobileProviders::getProvidersList(QString country, NetworkManager::C
     while (!n.isNull()) {
         QDomElement e = n.toElement(); // <country ...>
 
-        if (!e.isNull() && e.attribute("code").toUpper() == country) {
+        if (!e.isNull() && e.attribute(QStringLiteral("code")).toUpper() == country) {
             QDomNode n2 = e.firstChild();
             while (!n2.isNull()) {
                 QDomElement e2 = n2.toElement(); // <provider ...>
 
-                if (!e2.isNull() && e2.tagName().toLower() == "provider") {
+                if (!e2.isNull() && e2.tagName().toLower() == QLatin1String("provider")) {
                     QDomNode n3 = e2.firstChild();
                     bool hasGsm = false;
                     bool hasCdma = false;
@@ -119,14 +119,14 @@ QStringList MobileProviders::getProvidersList(QString country, NetworkManager::C
                         QDomElement e3 = n3.toElement(); // <name | gsm | cdma>
 
                         if (!e3.isNull()) {
-                            if (e3.tagName().toLower() == "gsm") {
+                            if (e3.tagName().toLower() == QLatin1String("gsm")) {
                                 hasGsm = true;
-                            } else if (e3.tagName().toLower() == "cdma") {
+                            } else if (e3.tagName().toLower() == QLatin1String("cdma")) {
                                 hasCdma = true;
-                            } else if (e3.tagName().toLower() == "name") {
+                            } else if (e3.tagName().toLower() == QLatin1String("name")) {
                                 QString lang = e3.attribute("xml:lang");
                                 if (lang.isEmpty()) {
-                                    lang = "en"; // English is default
+                                    lang = QLatin1String("en"); // English is default
                                 } else {
                                     lang = lang.toLower();
                                     lang.remove(QRegExp("\\-.*$")); // Remove everything after '-' in xml:lang attribute.
@@ -183,7 +183,7 @@ QStringList MobileProviders::getApns(const QString &provider)
                     while (!n3.isNull()) {
                         QDomElement e3 = n3.toElement(); // <usage>
                         if (!e3.isNull() && e3.tagName().toLower() == "usage" && !e3.attribute("type").isNull()
-                            && e3.attribute("type").toLower() != "internet") {
+                            && e3.attribute("type").toLower() != QLatin1String("internet")) {
                             // qCDebug(PLASMA_NM_EDITOR_LOG) << "apn" << e2.attribute("value") << "ignored because of usage" << e3.attribute("type");
                             isInternet = false;
                             break;
@@ -194,7 +194,7 @@ QStringList MobileProviders::getApns(const QString &provider)
                         mApns.insert(e2.attribute("value"), e2.firstChild());
                     }
                 } else if (!e2.isNull() && e2.tagName().toLower() == QLatin1String("network-id")) {
-                    mNetworkIds.append(e2.attribute("mcc") + '-' + e2.attribute("mnc"));
+                    mNetworkIds.append(e2.attribute(QStringLiteral("mcc")) + '-' + e2.attribute(QStringLiteral("mnc")));
                 }
 
                 n2 = n2.nextSibling();
@@ -231,7 +231,7 @@ ProviderData MobileProviders::parseProvider(const QDomNode &providerNode)
                 gsmNode = gsmNode.nextSibling();
             }
         } else if (ce.tagName().toLower() == QLatin1String("name")) {
-            QString lang = ce.attribute("xml:lang");
+            QString lang = ce.attribute(QStringLiteral("xml:lang"));
             if (lang.isEmpty()) {
                 lang = "en"; // English is default
             } else {
@@ -262,7 +262,7 @@ QStringList MobileProviders::getProvidersFromMCCMNC(const QString &targetMccMnc)
             while (!n2.isNull()) {
                 QDomElement e2 = n2.toElement(); // <provider ...>
 
-                if (!e2.isNull() && e2.tagName().toLower() == "provider") {
+                if (!e2.isNull() && e2.tagName().toLower() == QLatin1String("provider")) {
                     ProviderData data = parseProvider(e2);
 
                     if (data.mccmncs.contains(targetMccMnc)) {
@@ -307,9 +307,9 @@ QVariantMap MobileProviders::getApnInfo(const QString &apn)
                 }
                 localizedPlanNames.insert(lang, e.text());
             } else if (e.tagName().toLower() == QLatin1String("username")) {
-                temp.insert("username", e.text());
+                temp.insert(QStringLiteral("username"), e.text());
             } else if (e.tagName().toLower() == "password") {
-                temp.insert("password", e.text());
+                temp.insert(QStringLiteral("password"), e.text());
             } else if (e.tagName().toLower() == "dns") {
                 dnsList.append(e.text());
             }
@@ -348,11 +348,11 @@ QVariantMap MobileProviders::getCdmaInfo(const QString &provider)
                 QDomElement e2 = n2.toElement(); // <name | username | password | sid>
 
                 if (!e2.isNull()) {
-                    if (e2.tagName().toLower() == "username") {
+                    if (e2.tagName().toLower() == QLatin1String("username")) {
                         temp.insert("username", e2.text());
-                    } else if (e2.tagName().toLower() == "password") {
+                    } else if (e2.tagName().toLower() == QLatin1String("password")) {
                         temp.insert("password", e2.text());
-                    } else if (e2.tagName().toLower() == "sid") {
+                    } else if (e2.tagName().toLower() == QLatin1String("sid")) {
                         sidList.append(e2.text());
                     }
                 }
@@ -363,7 +363,7 @@ QVariantMap MobileProviders::getCdmaInfo(const QString &provider)
         n = n.nextSibling();
     }
 
-    temp.insert("number", getCdmaNumber());
+    temp.insert(QStringLiteral("number"), getCdmaNumber());
     temp.insert("sidList", sidList);
     return temp;
 }

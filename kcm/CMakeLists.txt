@@ -1,17 +1,17 @@
 #KI18N Translation Domain for this library
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-kcm\")
 
-set(kcm_networkmanagement_PART_SRCS
+
+
+add_library(kcm_networkmanagement MODULE)
+target_sources(kcm_networkmanagement PRIVATE
     kcm.cpp
     kcm.h
 )
-ecm_qt_declare_logging_category(kcm_networkmanagement_PART_SRCS HEADER plasma_nm_kcm.h IDENTIFIER PLASMA_NM_KCM_LOG CATEGORY_NAME org.kde.plasma.nm.kcm DESCRIPTION "Plasma NM (kcm)" EXPORT PLASMANM)
-
-ki18n_wrap_ui(kcm_networkmanagement_PART_SRCS
+ecm_qt_declare_logging_category(kcm_networkmanagement HEADER plasma_nm_kcm.h IDENTIFIER PLASMA_NM_KCM_LOG CATEGORY_NAME org.kde.plasma.nm.kcm DESCRIPTION "Plasma NM (kcm)" EXPORT PLASMANM)
+ki18n_wrap_ui(kcm_networkmanagement
     kcm.ui
 )
-
-add_library(kcm_networkmanagement MODULE ${kcm_networkmanagement_PART_SRCS})
 target_link_libraries(kcm_networkmanagement
     plasmanm_internal
     plasmanm_editor

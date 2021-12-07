@@ -5,7 +5,7 @@
 */
 
 #include "wificonnectionwidget.h"
-#include "debug.h"
+#include "plasma_nm_editor.h"
 #include "ui_wificonnectionwidget.h"
 
 #include <KLocalizedString>
@@ -173,7 +173,7 @@ void WifiConnectionWidget::fillChannels(NetworkManager::WirelessSetting::Frequen
     } else if (band == NetworkManager::WirelessSetting::Bg) {
         channels = NetworkManager::getBFreqs();
     } else {
-        qCWarning(PLASMA_NM) << Q_FUNC_INFO << "Unhandled band number" << band;
+        qCWarning(PLASMA_NM_EDITOR_LOG) << Q_FUNC_INFO << "Unhandled band number" << band;
         return;
     }
 

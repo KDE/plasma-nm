@@ -5,7 +5,7 @@
 */
 
 #include "mobileproviders.h"
-#include "debug.h"
+#include "plasma_nm_editor.h"
 
 #include <QFile>
 #include <QLocale>
@@ -45,19 +45,19 @@ MobileProviders::MobileProviders()
             docElement = mDocProviders.documentElement();
 
             if (docElement.isNull()) {
-                qCWarning(PLASMA_NM) << ProvidersFile << ": document is null";
+                qCWarning(PLASMA_NM_EDITOR_LOG) << ProvidersFile << ": document is null";
                 mError = ProvidersIsNull;
             } else {
                 if (docElement.isNull() || docElement.tagName() != "serviceproviders") {
-                    qCWarning(PLASMA_NM) << ProvidersFile << ": wrong format";
+                    qCWarning(PLASMA_NM_EDITOR_LOG) << ProvidersFile << ": wrong format";
                     mError = ProvidersWrongFormat;
                 } else {
                     if (docElement.attribute("format") != "2.0") {
-                        qCWarning(PLASMA_NM) << ProvidersFile << ": mobile broadband provider database format '" << docElement.attribute("format")
-                                             << "' not supported.";
+                        qCWarning(PLASMA_NM_EDITOR_LOG)
+                            << ProvidersFile << ": mobile broadband provider database format '" << docElement.attribute("format") << "' not supported.";
                         mError = ProvidersFormatNotSupported;
                     } else {
-                        // qCDebug(PLASMA_NM) << "Everything is alright so far";
+                        // qCDebug(PLASMA_NM_EDITOR_LOG) << "Everything is alright so far";
                     }
                 }
             }
@@ -65,7 +65,7 @@ MobileProviders::MobileProviders()
 
         file2.close();
     } else {
-        qCWarning(PLASMA_NM) << "Error opening providers file" << ProvidersFile;
+        qCWarning(PLASMA_NM_EDITOR_LOG) << "Error opening providers file" << ProvidersFile;
         mError = ProvidersMissing;
     }
 }
@@ -184,7 +184,7 @@ QStringList MobileProviders::getApns(const QString &provider)
                         QDomElement e3 = n3.toElement(); // <usage>
                         if (!e3.isNull() && e3.tagName().toLower() == "usage" && !e3.attribute("type").isNull()
                             && e3.attribute("type").toLower() != "internet") {
-                            // qCDebug(PLASMA_NM) << "apn" << e2.attribute("value") << "ignored because of usage" << e3.attribute("type");
+                            // qCDebug(PLASMA_NM_EDITOR_LOG) << "apn" << e2.attribute("value") << "ignored because of usage" << e3.attribute("type");
                             isInternet = false;
                             break;
                         }

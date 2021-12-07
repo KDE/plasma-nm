@@ -8,7 +8,7 @@
 */
 
 #include "bluetoothmonitor.h"
-#include "debug.h"
+#include "plasma_nm_kded.h"
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -57,7 +57,7 @@ bool BluetoothMonitor::bluetoothConnectionExists(const QString &bdAddr, const QS
 
 void BluetoothMonitor::addBluetoothConnection(const QString &bdAddr, const QString &service, const QString &connectionName)
 {
-    qCDebug(PLASMA_NM) << "Adding BT connection:" << bdAddr << service;
+    qCDebug(PLASMA_NM_KDED_LOG) << "Adding BT connection:" << bdAddr << service;
 
     if (bdAddr.isEmpty() || service.isEmpty() || connectionName.isEmpty()) {
         return;
@@ -68,7 +68,7 @@ void BluetoothMonitor::addBluetoothConnection(const QString &bdAddr, const QStri
         return;
     }
 
-    qCDebug(PLASMA_NM) << "Bdaddr == " << bdAddr;
+    qCDebug(PLASMA_NM_KDED_LOG) << "Bdaddr == " << bdAddr;
 
     if (bluetoothConnectionExists(bdAddr, service)) {
         return;
@@ -91,9 +91,9 @@ void BluetoothMonitor::addBluetoothConnection(const QString &bdAddr, const QStri
         QPointer<MobileConnectionWizard> mobileConnectionWizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Bluetooth);
         connect(mobileConnectionWizard.data(), &MobileConnectionWizard::accepted, [bdAddr, connectionName, mobileConnectionWizard]() {
             if (mobileConnectionWizard->getError() == MobileProviders::Success) {
-                qCDebug(PLASMA_NM) << "Mobile broadband wizard finished:" << mobileConnectionWizard->type() << mobileConnectionWizard->args();
+                qCDebug(PLASMA_NM_KDED_LOG) << "Mobile broadband wizard finished:" << mobileConnectionWizard->type() << mobileConnectionWizard->args();
                 if (mobileConnectionWizard->args().count() == 2) { // GSM or CDMA
-                    qCDebug(PLASMA_NM) << "Creating new DUN connection for BT device:" << bdAddr;
+                    qCDebug(PLASMA_NM_KDED_LOG) << "Creating new DUN connection for BT device:" << bdAddr;
 
                     auto tmp = qdbus_cast<QVariantMap>(mobileConnectionWizard->args().value(1));
                     NetworkManager::ConnectionSettings connectionSettings(NetworkManager::ConnectionSettings::Bluetooth, NM_BT_CAPABILITY_DUN);
@@ -113,7 +113,7 @@ void BluetoothMonitor::addBluetoothConnection(const QString &bdAddr, const QStri
                         connectionSettings.setting(NetworkManager::Setting::Cdma)->setInitialized(true);
                     }
 
-                    qCDebug(PLASMA_NM) << "Adding DUN connection" << connectionSettings;
+                    qCDebug(PLASMA_NM_KDED_LOG) << "Adding DUN connection" << connectionSettings;
 
                     NetworkManager::addConnection(connectionSettings.toMap());
                 }

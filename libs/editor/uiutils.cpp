@@ -9,7 +9,7 @@
 #include "uiutils.h"
 
 #include "configuration.h"
-#include "debug.h"
+#include "plasma_nm_editor.h"
 
 // KDE
 #include <KConfigGroup>
@@ -163,7 +163,7 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
                 deviceText = i18nc("title of the interface widget in nm's popup", "Mobile Broadband");
                 break;
             case NetworkManager::ModemDevice::NoCapability:
-                qCWarning(PLASMA_NM) << "Unhandled modem sub type: NetworkManager::ModemDevice::NoCapability";
+                qCWarning(PLASMA_NM_EDITOR_LOG) << "Unhandled modem sub type: NetworkManager::ModemDevice::NoCapability";
                 break;
             }
         }

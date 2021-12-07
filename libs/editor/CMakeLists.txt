@@ -1,4 +1,6 @@
 set(plasmanm_editor_SRCS
+    configuration.cpp
+    uiutils.cpp
     connectioneditorbase.cpp
     connectioneditorbase.h
     connectioneditordialog.cpp
@@ -87,10 +89,6 @@ set(plasmanm_editor_SRCS
     widgets/ssidcombobox.h
     wireguardkeyvalidator.cpp
     wireguardkeyvalidator.h
-
-    ../configuration.cpp
-    ../debug.cpp
-    ../uiutils.cpp
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)
@@ -132,6 +130,8 @@ ki18n_wrap_ui(plasmanm_editor_SRCS
 
     connectioneditortabwidget.ui
 )
+
+ecm_qt_declare_logging_category(plasmanm_editor_SRCS HEADER plasma_nm_editor.h IDENTIFIER PLASMA_NM_EDITOR_LOG CATEGORY_NAME org.kde.plasma.nm.editor DESCRIPTION "Plasma NM (editor)" EXPORT PLASMANM)
 
 add_library(plasmanm_editor SHARED ${plasmanm_editor_SRCS})
 

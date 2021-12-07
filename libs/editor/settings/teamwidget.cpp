@@ -6,7 +6,7 @@
 
 #include "teamwidget.h"
 #include "connectioneditordialog.h"
-#include "debug.h"
+#include "plasma_nm_editor.h"
 #include "ui_team.h"
 
 #include <QDBusPendingReply>
@@ -92,9 +92,9 @@ QVariantMap TeamWidget::setting() const
 
 void TeamWidget::addTeam(QAction *action)
 {
-    qCDebug(PLASMA_NM) << "Adding teamed connection:" << action->data();
-    qCDebug(PLASMA_NM) << "Master UUID:" << m_uuid;
-    qCDebug(PLASMA_NM) << "Slave type:" << type();
+    qCDebug(PLASMA_NM_EDITOR_LOG) << "Adding teamed connection:" << action->data();
+    qCDebug(PLASMA_NM_EDITOR_LOG) << "Master UUID:" << m_uuid;
+    qCDebug(PLASMA_NM_EDITOR_LOG) << "Slave type:" << type();
 
     NetworkManager::ConnectionSettings::ConnectionType connectionType = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(action->data().toInt());
     NetworkManager::ConnectionSettings::Ptr connectionSettings =
@@ -106,8 +106,8 @@ void TeamWidget::addTeam(QAction *action)
 
     QPointer<ConnectionEditorDialog> teamEditor = new ConnectionEditorDialog(connectionSettings);
     connect(teamEditor.data(), &ConnectionEditorDialog::accepted, [teamEditor, this]() {
-        qCDebug(PLASMA_NM) << "Saving slave connection";
-        // qCDebug(PLASMA_NM) << teamEditor->setting();
+        qCDebug(PLASMA_NM_EDITOR_LOG) << "Saving slave connection";
+        // qCDebug(PLASMA_NM_EDITOR_LOG) << teamEditor->setting();
         QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(teamEditor->setting());
         auto watcher = new QDBusPendingCallWatcher(reply, this);
         connect(watcher, &QDBusPendingCallWatcher::finished, this, &TeamWidget::teamAddComplete);
@@ -144,7 +144,7 @@ void TeamWidget::teamAddComplete(QDBusPendingCallWatcher *watcher)
             slotWidgetChanged();
         }
     } else {
-        qCWarning(PLASMA_NM) << "Teamed connection not added:" << reply.error().message();
+        qCWarning(PLASMA_NM_EDITOR_LOG) << "Teamed connection not added:" << reply.error().message();
     }
 }
 
@@ -158,7 +158,7 @@ void TeamWidget::editTeam()
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
 
     if (connection) {
-        qCDebug(PLASMA_NM) << "Editing teamed connection" << currentItem->text() << uuid;
+        qCDebug(PLASMA_NM_EDITOR_LOG) << "Editing teamed connection" << currentItem->text() << uuid;
         QPointer<ConnectionEditorDialog> teamEditor = new ConnectionEditorDialog(connection->settings());
         connect(teamEditor.data(), &ConnectionEditorDialog::accepted, [connection, teamEditor, this]() {
             connection->update(teamEditor->setting());
@@ -184,7 +184,7 @@ void TeamWidget::deleteTeam()
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
 
     if (connection) {
-        qCDebug(PLASMA_NM) << "About to delete teamed connection" << currentItem->text() << uuid;
+        qCDebug(PLASMA_NM_EDITOR_LOG) << "About to delete teamed connection" << currentItem->text() << uuid;
         if (KMessageBox::questionYesNo(this,
                                        i18n("Do you want to remove the connection '%1'?", connection->name()),
                                        i18n("Remove Connection"),
@@ -225,7 +225,7 @@ void TeamWidget::importConfig()
     const QString filename =
         QFileDialog::getOpenFileName(this, i18n("Select file to import"), QStandardPaths::writableLocation(QStandardPaths::HomeLocation), "text/plain");
     if (!filename.isEmpty()) {
-        // qCDebug(PLASMA_NM) << "Importing" << filename;
+        // qCDebug(PLASMA_NM_EDITOR_LOG) << "Importing" << filename;
         QFile file(filename);
         if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
             QTextStream stream(&file);

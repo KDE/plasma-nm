@@ -7,7 +7,7 @@
 #include "handler.h"
 #include "configuration.h"
 #include "connectioneditordialog.h"
-#include "debug.h"
+#include "plasma_nm_libs.h"
 #include "uiutils.h"
 
 #include <NetworkManagerQt/AccessPoint>
@@ -84,14 +84,14 @@ void Handler::activateConnection(const QString &connection, const QString &devic
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
-        qCWarning(PLASMA_NM) << "Not possible to activate this connection";
+        qCWarning(PLASMA_NM_LIBS_LOG) << "Not possible to activate this connection";
         return;
     }
 
     if (con->settings()->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
         NetworkManager::VpnSetting::Ptr vpnSetting = con->settings()->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
         if (vpnSetting) {
-            qCDebug(PLASMA_NM) << "Checking VPN" << con->name() << "type:" << vpnSetting->serviceType();
+            qCDebug(PLASMA_NM_LIBS_LOG) << "Checking VPN" << con->name() << "type:" << vpnSetting->serviceType();
 
             bool pluginMissing = false;
 
@@ -115,7 +115,7 @@ void Handler::activateConnection(const QString &connection, const QString &devic
             }
 
             if (pluginMissing) {
-                qCWarning(PLASMA_NM) << "VPN" << vpnSetting->serviceType() << "not found, skipping";
+                qCWarning(PLASMA_NM_LIBS_LOG) << "VPN" << vpnSetting->serviceType() << "not found, skipping";
                 auto notification = new KNotification(QStringLiteral("MissingVpnPlugin"), KNotification::CloseOnTimeout, this);
                 notification->setComponentName(QStringLiteral("networkmanagement"));
                 notification->setTitle(con->name());
@@ -333,7 +333,7 @@ void Handler::deactivateConnection(const QString &connection, const QString &dev
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
-        qCWarning(PLASMA_NM) << "Not possible to deactivate this connection";
+        qCWarning(PLASMA_NM_LIBS_LOG) << "Not possible to deactivate this connection";
         return;
     }
 
@@ -390,7 +390,7 @@ void makeDBusCall(const QDBusMessage &message, QObject *context, std::function<v
     QObject::connect(watcher, &QDBusPendingCallWatcher::finished, context, [func](QDBusPendingCallWatcher *watcher) {
         const QDBusPendingReply<T> reply = *watcher;
         if (!reply.isValid()) {
-            qCWarning(PLASMA_NM) << reply.error().message();
+            qCWarning(PLASMA_NM_LIBS_LOG) << reply.error().message();
             return;
         }
         func(reply);
@@ -418,9 +418,9 @@ void Handler::enableBluetooth(bool enable)
     makeDBusCall<QMap<QDBusObjectPath, NMVariantMapMap>>(getObjects, this, [enable, this](const auto reply) {
         for (const QDBusObjectPath &path : reply.value().keys()) {
             const QString objPath = path.path();
-            qCDebug(PLASMA_NM) << "inspecting path" << objPath;
+            qCDebug(PLASMA_NM_LIBS_LOG) << "inspecting path" << objPath;
             const QStringList interfaces = reply.value().value(path).keys();
-            qCDebug(PLASMA_NM) << "interfaces:" << interfaces;
+            qCDebug(PLASMA_NM_LIBS_LOG) << "interfaces:" << interfaces;
 
             if (!interfaces.contains("org.bluez.Adapter1")) {
                 continue;
@@ -463,7 +463,7 @@ void Handler::removeConnection(const QString &connection)
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con || con->uuid().isEmpty()) {
-        qCWarning(PLASMA_NM) << "Not possible to remove connection " << connection;
+        qCWarning(PLASMA_NM_LIBS_LOG) << "Not possible to remove connection " << connection;
         return;
     }
 
@@ -514,7 +514,7 @@ void Handler::requestScan(const QString &interface)
                     } else if (lastRequestScan.isValid() && lastRequestScan.msecsTo(now) < NM_REQUESTSCAN_LIMIT_RATE) {
                         timeout = NM_REQUESTSCAN_LIMIT_RATE - lastRequestScan.msecsTo(now);
                     }
-                    qCDebug(PLASMA_NM) << "Rescheduling a request scan for" << wifiDevice->interfaceName() << "in" << timeout;
+                    qCDebug(PLASMA_NM_LIBS_LOG) << "Rescheduling a request scan for" << wifiDevice->interfaceName() << "in" << timeout;
                     scheduleRequestScan(wifiDevice->interfaceName(), timeout);
 
                     if (!interface.isEmpty()) {
@@ -526,7 +526,7 @@ void Handler::requestScan(const QString &interface)
                     delete m_wirelessScanRetryTimer.take(interface);
                 }
 
-                qCDebug(PLASMA_NM) << "Requesting wifi scan on device" << wifiDevice->interfaceName();
+                qCDebug(PLASMA_NM_LIBS_LOG) << "Requesting wifi scan on device" << wifiDevice->interfaceName();
                 QDBusPendingReply<> reply = wifiDevice->requestScan();
                 auto watcher = new QDBusPendingCallWatcher(reply, this);
                 watcher->setProperty("action", Handler::RequestScan);
@@ -577,7 +577,7 @@ void Handler::createHotspot()
     }
 
     if (!wifiDev) {
-        qCWarning(PLASMA_NM) << "Failed to create hotspot: missing wireless device";
+        qCWarning(PLASMA_NM_LIBS_LOG) << "Failed to create hotspot: missing wireless device";
         return;
     }
 
@@ -656,8 +656,8 @@ bool Handler::checkRequestScanRateLimit(const NetworkManager::WirelessDevice::Pt
     ret |= lastRequestScan.isValid() && lastRequestScan.msecsTo(now) < NM_REQUESTSCAN_LIMIT_RATE;
     // skip the request scan
     if (ret) {
-        qCDebug(PLASMA_NM) << "Last scan finished " << lastScan.msecsTo(now) << "ms ago and last request scan was sent " << lastRequestScan.msecsTo(now)
-                           << "ms ago, Skipping scanning interface:" << wifiDevice->interfaceName();
+        qCDebug(PLASMA_NM_LIBS_LOG) << "Last scan finished " << lastScan.msecsTo(now) << "ms ago and last request scan was sent "
+                                    << lastRequestScan.msecsTo(now) << "ms ago, Skipping scanning interface:" << wifiDevice->interfaceName();
         return false;
     }
     return true;
@@ -788,7 +788,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
             break;
         case Handler::RequestScan: {
             const QString interface = watcher->property("interface").toString();
-            qCWarning(PLASMA_NM) << "Wireless scan on" << interface << "failed:" << error;
+            qCWarning(PLASMA_NM_LIBS_LOG) << "Wireless scan on" << interface << "failed:" << error;
             scanRequestFailed(interface);
             break;
         }
@@ -824,7 +824,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
             notification->setText(i18n("Connection %1 has been updated", watcher->property("connection").toString()));
             break;
         case Handler::RequestScan:
-            qCDebug(PLASMA_NM) << "Wireless scan on" << watcher->property("interface").toString() << "succeeded";
+            qCDebug(PLASMA_NM_LIBS_LOG) << "Wireless scan on" << watcher->property("interface").toString() << "succeeded";
             break;
         default:
             break;

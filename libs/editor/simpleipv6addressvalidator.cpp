@@ -103,7 +103,7 @@ QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value)
             // parts indicates either a run of 3 colons ("1:::6")" or two sets of
             // 2 colons ("1:2::3:4::") which are always invalid
             if (emptypresent && i != 2) {
-                // qCDebug(PLASMA_NM) << "part.isEmpty()";
+                // qCDebug(PLASMA_NM_EDITOR_LOG) << "part.isEmpty()";
                 return QValidator::Invalid;
             } else {
                 // If this is an empty part then set it to zero to not fail

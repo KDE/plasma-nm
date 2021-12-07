@@ -1,12 +1,12 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_vpncui\")
 
 set(vpnc_SRCS
-    ../../libs/debug.cpp
     vpnc.cpp
     vpncwidget.cpp
     vpncadvancedwidget.cpp
     vpncauth.cpp
 )
+ecm_qt_declare_logging_category(vpnc_SRCS HEADER plasma_nm_vpnc.h IDENTIFIER PLASMA_NM_VPNC_LOG CATEGORY_NAME org.kde.plasma.nm.openvpn DESCRIPTION "Plasma NM (vpnc plugins)" EXPORT PLASMANM)
 
 ki18n_wrap_ui(vpnc_SRCS vpnc.ui vpncadvanced.ui vpncauth.ui)
 

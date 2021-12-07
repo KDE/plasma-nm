@@ -36,7 +36,7 @@ QString BssidComboBox::bssid() const
     else
         result = currentText();
 
-    // qCDebug(PLASMA_NM) << "Result:" << currentIndex() << result;
+    // qCDebug(PLASMA_NM_EDITOR_LOG) << "Result:" << currentIndex() << result;
 
     return result;
 }
@@ -67,7 +67,7 @@ void BssidComboBox::init(const QString &bssid, const QString &ssid)
 {
     m_initialBssid = bssid;
 
-    // qCDebug(PLASMA_NM) << "Initial ssid:" << m_initialBssid;
+    // qCDebug(PLASMA_NM_EDITOR_LOG) << "Initial ssid:" << m_initialBssid;
 
     QList<NetworkManager::AccessPoint::Ptr> aps;
 

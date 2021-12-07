@@ -44,7 +44,7 @@ QString HwAddrComboBox::hwAddress() const
     else
         result = currentText();
 
-    // qCDebug(PLASMA_NM)() << "Result:" << currentIndex() << result;
+    // qCDebug(PLASMA_NM_EDITOR_LOG)() << "Result:" << currentIndex() << result;
 
     return result;
 }
@@ -65,7 +65,7 @@ void HwAddrComboBox::init(NetworkManager::Device::Type deviceType, const QString
 {
     m_initialAddress = address;
 
-    // qCDebug(PLASMA_NM) << "Initial address:" << m_initialAddress;
+    // qCDebug(PLASMA_NM_EDITOR_LOG) << "Initial address:" << m_initialAddress;
 
     QString deviceName;
     for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
@@ -99,7 +99,7 @@ void HwAddrComboBox::init(NetworkManager::Device::Type deviceType, const QString
 void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device)
 {
     const QVariant data = hwAddressFromDevice(device);
-    // qCDebug(PLASMA_NM) << "Data:" << data;
+    // qCDebug(PLASMA_NM_EDITOR_LOG) << "Data:" << data;
 
     QString name;
     if (device->state() == NetworkManager::Device::Activated)
@@ -107,7 +107,7 @@ void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device
     else
         name = device->interfaceName();
 
-    // qCDebug(PLASMA_NM) << "Name:" << name;
+    // qCDebug(PLASMA_NM_EDITOR_LOG) << "Name:" << name;
 
     if (!data.isNull()) {
         if (name == data.toString()) {

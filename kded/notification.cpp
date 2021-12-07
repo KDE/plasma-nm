@@ -8,7 +8,7 @@
 */
 
 #include "notification.h"
-#include "debug.h"
+#include "plasma_nm_kded.h"
 
 #include <uiutils.h>
 
@@ -322,7 +322,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         });
 
         if (foundConnection != m_activeConnectionsBeforeSleep.constEnd()) {
-            qCDebug(PLASMA_NM) << "Not emitting connection activated notification as the connection was active prior to suspend";
+            qCDebug(PLASMA_NM_KDED_LOG) << "Not emitting connection activated notification as the connection was active prior to suspend";
             return;
         }
 
@@ -344,12 +344,12 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         }
     } else if (state == NetworkManager::ActiveConnection::Deactivated) {
         if (m_preparingForSleep) {
-            qCDebug(PLASMA_NM) << "Not emitting connection deactivated notification as we're about to suspend";
+            qCDebug(PLASMA_NM_KDED_LOG) << "Not emitting connection deactivated notification as we're about to suspend";
             return;
         }
 
         if (m_checkActiveConnectionOnResumeTimer && m_checkActiveConnectionOnResumeTimer->isActive()) {
-            qCDebug(PLASMA_NM) << "Not emitting connection deactivated notification as we've just woken up from suspend";
+            qCDebug(PLASMA_NM_KDED_LOG) << "Not emitting connection deactivated notification as we've just woken up from suspend";
             return;
         }
 
@@ -367,7 +367,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
             break;
         }
     } else {
-        qCWarning(PLASMA_NM) << "Unhandled active connection state change: " << state;
+        qCWarning(PLASMA_NM_KDED_LOG) << "Unhandled active connection state change: " << state;
         return;
     }
 
@@ -413,7 +413,7 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         eventId = QStringLiteral("ConnectionDeactivated");
         text = i18n("VPN connection '%1' deactivated.", vpnName);
     } else {
-        qCWarning(PLASMA_NM) << "Unhandled VPN connection state change: " << state;
+        qCWarning(PLASMA_NM_KDED_LOG) << "Unhandled VPN connection state change: " << state;
         return;
     }
 

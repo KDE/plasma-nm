@@ -7,7 +7,7 @@
 */
 
 #include "modemmonitor.h"
-#include "debug.h"
+#include "plasma_nm_kded.h"
 
 #include <QDBusPendingReply>
 
@@ -85,7 +85,7 @@ void ModemMonitor::unlockModem(const QString &modemUni)
 void ModemMonitor::requestPin(MMModemLock lock)
 {
     Q_D(ModemMonitor);
-    qCDebug(PLASMA_NM) << "unlockRequired == " << lock;
+    qCDebug(PLASMA_NM_KDED_LOG) << "unlockRequired == " << lock;
     // Handle just SIM-PIN and SIM-PUK, because some other types may cause problems and they are not also handled by nm-applet
     if (lock == MM_MODEM_LOCK_NONE || lock == MM_MODEM_LOCK_UNKNOWN || (lock != MM_MODEM_LOCK_SIM_PIN && lock != MM_MODEM_LOCK_SIM_PUK)) {
         return;
@@ -97,7 +97,7 @@ void ModemMonitor::requestPin(MMModemLock lock)
     }
 
     if (d->dialog) {
-        qCDebug(PLASMA_NM) << "PinDialog already running";
+        qCDebug(PLASMA_NM_KDED_LOG) << "PinDialog already running";
         return;
     }
 
@@ -137,7 +137,7 @@ void ModemMonitor::requestPin(MMModemLock lock)
         goto OUT;
     }
 
-    qCDebug(PLASMA_NM) << "Sending unlock code";
+    qCDebug(PLASMA_NM_KDED_LOG) << "Sending unlock code";
 
     {
         ModemManager::Sim::Ptr sim;

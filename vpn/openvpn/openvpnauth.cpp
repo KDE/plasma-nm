@@ -15,8 +15,8 @@
 
 #include <KLocalizedString>
 
-#include "debug.h"
 #include "nm-openvpn-service.h"
+#include "plasma_nm_openvpn.h"
 
 class OpenVpnAuthWidgetPrivate
 {

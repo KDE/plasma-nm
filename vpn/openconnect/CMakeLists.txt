@@ -1,8 +1,10 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_openconnectui\")
 
+ecm_qt_declare_logging_category(openvpn_plugins_SRCS HEADER plasma_nm_openconnect.h IDENTIFIER PLASMA_NM_OPENCONNECT_LOG CATEGORY_NAME org.kde.plasma.nm.openconnect DESCRIPTION "Plasma NM (openconnect plugins)" EXPORT PLASMANM)
+
 macro(add_openconnect_plugin name)
     set(openconnect_SRCS
-        ../../libs/debug.cpp
+        ${openvpn_plugins_SRCS}
         openconnectui.cpp
         openconnectwidget.cpp
         openconnectauth.cpp

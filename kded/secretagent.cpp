@@ -9,7 +9,7 @@
 #include "secretagent.h"
 #include "passworddialog.h"
 
-#include "debug.h"
+#include "plasma_nm_kded.h"
 
 #include "configuration.h"
 
@@ -54,16 +54,17 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection,
                                         const QStringList &hints,
                                         uint flags)
 {
-    qCDebug(PLASMA_NM) << Q_FUNC_INFO;
-    qCDebug(PLASMA_NM) << "Path:" << connection_path.path();
-    qCDebug(PLASMA_NM) << "Setting name:" << setting_name;
-    qCDebug(PLASMA_NM) << "Hints:" << hints;
-    qCDebug(PLASMA_NM) << "Flags:" << flags;
+    qCDebug(PLASMA_NM_KDED_LOG) << Q_FUNC_INFO;
+    qCDebug(PLASMA_NM_KDED_LOG) << "Path:" << connection_path.path();
+    qCDebug(PLASMA_NM_KDED_LOG) << "Setting name:" << setting_name;
+    qCDebug(PLASMA_NM_KDED_LOG) << "Hints:" << hints;
+    qCDebug(PLASMA_NM_KDED_LOG) << "Flags:" << flags;
 
     const QString callId = connection_path.path() % setting_name;
     for (const SecretsRequest &request : std::as_const(m_calls)) {
         if (request == callId) {
-            qCWarning(PLASMA_NM) << "GetSecrets was called again! This should not happen, cancelling first call" << connection_path.path() << setting_name;
+            qCWarning(PLASMA_NM_KDED_LOG) << "GetSecrets was called again! This should not happen, cancelling first call" << connection_path.path()
+                                          << setting_name;
             CancelGetSecrets(connection_path, setting_name);
             break;
         }
@@ -87,9 +88,9 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection,
 
 void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
-    qCDebug(PLASMA_NM) << Q_FUNC_INFO;
-    qCDebug(PLASMA_NM) << "Path:" << connection_path.path();
-    // qCDebug(PLASMA_NM) << "Setting:" << connection;
+    qCDebug(PLASMA_NM_KDED_LOG) << Q_FUNC_INFO;
+    qCDebug(PLASMA_NM_KDED_LOG) << "Path:" << connection_path.path();
+    // qCDebug(PLASMA_NM_KDED_LOG) << "Setting:" << connection;
 
     setDelayedReply(true);
     SecretsRequest::Type type;
@@ -109,9 +110,9 @@ void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObje
 
 void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusObjectPath &connection_path)
 {
-    qCDebug(PLASMA_NM) << Q_FUNC_INFO;
-    qCDebug(PLASMA_NM) << "Path:" << connection_path.path();
-    // qCDebug(PLASMA_NM) << "Setting:" << connection;
+    qCDebug(PLASMA_NM_KDED_LOG) << Q_FUNC_INFO;
+    qCDebug(PLASMA_NM_KDED_LOG) << "Path:" << connection_path.path();
+    // qCDebug(PLASMA_NM_KDED_LOG) << "Setting:" << connection;
 
     setDelayedReply(true);
     SecretsRequest request(SecretsRequest::DeleteSecrets);
@@ -125,9 +126,9 @@ void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusOb
 
 void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const QString &setting_name)
 {
-    qCDebug(PLASMA_NM) << Q_FUNC_INFO;
-    qCDebug(PLASMA_NM) << "Path:" << connection_path.path();
-    qCDebug(PLASMA_NM) << "Setting name:" << setting_name;
+    qCDebug(PLASMA_NM_KDED_LOG) << Q_FUNC_INFO;
+    qCDebug(PLASMA_NM_KDED_LOG) << "Path:" << connection_path.path();
+    qCDebug(PLASMA_NM_KDED_LOG) << "Setting name:" << setting_name;
 
     QString callId = connection_path.path() % setting_name;
     for (int i = 0; i < m_calls.size(); ++i) {
@@ -358,7 +359,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
         NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
         if (vpnSetting->serviceType() == QLatin1String("org.freedesktop.NetworkManager.ssh") && vpnSetting->data()["auth-type"] == QLatin1String("ssh-agent")) {
             QString authSock = qgetenv("SSH_AUTH_SOCK");
-            qCDebug(PLASMA_NM) << Q_FUNC_INFO << "Sending SSH auth socket" << authSock;
+            qCDebug(PLASMA_NM_KDED_LOG) << Q_FUNC_INFO << "Sending SSH auth socket" << authSock;
 
             if (authSock.isEmpty()) {
                 sendError(SecretAgent::NoSecrets, QStringLiteral("SSH_AUTH_SOCK not present"), request.message);
@@ -383,7 +384,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
                 m_wallet->readMap(key, secretsMap);
             }
         } else {
-            qCDebug(PLASMA_NM) << Q_FUNC_INFO << "Waiting for the wallet to open";
+            qCDebug(PLASMA_NM_KDED_LOG) << Q_FUNC_INFO << "Waiting for the wallet to open";
             return false;
         }
     }
@@ -491,7 +492,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request) const
                 return true;
             }
         } else {
-            qCDebug(PLASMA_NM) << Q_FUNC_INFO << "Waiting for the wallet to open";
+            qCDebug(PLASMA_NM_KDED_LOG) << Q_FUNC_INFO << "Waiting for the wallet to open";
             return false;
         }
     }
@@ -499,7 +500,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request) const
     if (!request.saveSecretsWithoutReply) {
         QDBusMessage reply = request.message.createReply();
         if (!QDBusConnection::systemBus().send(reply)) {
-            qCWarning(PLASMA_NM) << "Failed put save secrets reply into the queue";
+            qCWarning(PLASMA_NM_KDED_LOG) << "Failed put save secrets reply into the queue";
         }
     }
 
@@ -522,14 +523,14 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request) const
                 }
             }
         } else {
-            qCDebug(PLASMA_NM) << Q_FUNC_INFO << "Waiting for the wallet to open";
+            qCDebug(PLASMA_NM_KDED_LOG) << Q_FUNC_INFO << "Waiting for the wallet to open";
             return false;
         }
     }
 
     QDBusMessage reply = request.message.createReply();
     if (!QDBusConnection::systemBus().send(reply)) {
-        qCWarning(PLASMA_NM) << "Failed put delete secrets reply into the queue";
+        qCWarning(PLASMA_NM_KDED_LOG) << "Failed put delete secrets reply into the queue";
     }
 
     return true;
@@ -555,7 +556,7 @@ bool SecretAgent::useWallet() const
             connect(m_wallet, &KWallet::Wallet::walletClosed, this, &SecretAgent::walletClosed);
             return true;
         } else {
-            qCWarning(PLASMA_NM) << "Error opening kwallet.";
+            qCWarning(PLASMA_NM_KDED_LOG) << "Error opening kwallet.";
         }
     } else if (m_wallet) {
         m_wallet->deleteLater();
@@ -582,7 +583,7 @@ void SecretAgent::sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage
     QDBusMessage reply;
     reply = message.createReply(QVariant::fromValue(secrets));
     if (!QDBusConnection::systemBus().send(reply)) {
-        qCWarning(PLASMA_NM) << "Failed put the secret into the queue";
+        qCWarning(PLASMA_NM_KDED_LOG) << "Failed put the secret into the queue";
     }
 }
 

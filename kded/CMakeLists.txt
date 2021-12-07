@@ -2,7 +2,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-kded\")
 
 if (WITH_MODEMMANAGER_SUPPORT)
     set(kded_networkmanagement_SRCS
-        ../libs/debug.cpp
         bluetoothmonitor.cpp
         connectivitymonitor.cpp
         notification.cpp
@@ -19,7 +18,6 @@ if (WITH_MODEMMANAGER_SUPPORT)
     )
 else()
     set(kded_networkmanagement_SRCS
-        ../libs/debug.cpp
         bluetoothmonitor.cpp
         connectivitymonitor.cpp
         notification.cpp
@@ -32,6 +30,9 @@ else()
         passworddialog.ui
     )
 endif()
+
+ecm_qt_declare_logging_category(kded_networkmanagement_SRCS HEADER plasma_nm_kded.h IDENTIFIER PLASMA_NM_KDED_LOG CATEGORY_NAME org.kde.plasma.nm.kded DESCRIPTION "Plasma NM (kded)" EXPORT PLASMANM)
+
 
 add_library(kded_networkmanagement MODULE ${kded_networkmanagement_SRCS})
 set_target_properties(kded_networkmanagement PROPERTIES OUTPUT_NAME networkmanagement)

@@ -6,8 +6,8 @@
 */
 
 #include "openvpnwidget.h"
-#include "debug.h"
 #include "openvpnadvancedwidget.h"
+#include "plasma_nm_openvpn.h"
 
 #include <QDBusMetaType>
 #include <QLineEdit>
@@ -185,7 +185,7 @@ QVariantMap OpenVpnSettingWidget::setting() const
     switch (d->ui.cmbConnectionType->currentIndex()) {
     case Private::EnumConnectionType::Certificates:
         contype = QLatin1String(NM_OPENVPN_CONTYPE_TLS);
-        // qCDebug(PLASMA_NM) << "saving VPN TLS settings as urls:" << d->ui.x509CaFile->url() << d->ui.x509Cert->url() << d->ui.x509Key->url();
+        // qCDebug(PLASMA_NM_OPENVPN_LOG) << "saving VPN TLS settings as urls:" << d->ui.x509CaFile->url() << d->ui.x509Cert->url() << d->ui.x509Key->url();
         data.insert(QLatin1String(NM_OPENVPN_KEY_CA), d->ui.x509CaFile->url().toLocalFile());
         data.insert(QLatin1String(NM_OPENVPN_KEY_CERT), d->ui.x509Cert->url().toLocalFile());
         data.insert(QLatin1String(NM_OPENVPN_KEY_KEY), d->ui.x509Key->url().toLocalFile());

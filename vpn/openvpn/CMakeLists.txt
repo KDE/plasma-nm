@@ -9,6 +9,7 @@ set(openvpn_SRCS
     openvpnauth.cpp
     openvpnadvancedwidget.cpp
 )
+ecm_qt_declare_logging_category(openvpn_SRCS HEADER plasma_nm_openvpn.h IDENTIFIER PLASMA_NM_OPENVPN_LOG CATEGORY_NAME org.kde.plasma.nm.openvpn DESCRIPTION "Plasma NM (openvpn plugins)" EXPORT PLASMANM)
 
 ki18n_wrap_ui(openvpn_SRCS openvpn.ui openvpnadvanced.ui)
 

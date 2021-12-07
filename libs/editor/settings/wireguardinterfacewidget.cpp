@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 #include "wireguardinterfacewidget.h"
-#include "debug.h"
+#include "plasma_nm_editor.h"
 #include "simpleiplistvalidator.h"
 #include "simpleipv4addressvalidator.h"
 #include "uiutils.h"

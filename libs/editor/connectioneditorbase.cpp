@@ -7,7 +7,7 @@
 
 #include "connectioneditorbase.h"
 
-#include "debug.h"
+#include "plasma_nm_editor.h"
 #include "settings/bondwidget.h"
 #include "settings/bridgewidget.h"
 #include "settings/btwidget.h"
@@ -255,7 +255,7 @@ void ConnectionEditorBase::initialize()
         QString error;
         NetworkManager::VpnSetting::Ptr vpnSetting = m_connection->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
         if (!vpnSetting) {
-            qCWarning(PLASMA_NM) << "Missing VPN setting!";
+            qCWarning(PLASMA_NM_EDITOR_LOG) << "Missing VPN setting!";
         } else {
             serviceType = vpnSetting->serviceType();
 
@@ -266,7 +266,7 @@ void ConnectionEditorBase::initialize()
                 SettingWidget *vpnWidget = result.plugin->widget(vpnSetting, this);
                 addSettingWidget(vpnWidget, i18n("VPN (%1)", shortName));
             } else {
-                qCWarning(PLASMA_NM) << "Could not instantiate VPN UI plugin" << result.errorText;
+                qCWarning(PLASMA_NM_EDITOR_LOG) << "Could not instantiate VPN UI plugin" << result.errorText;
             }
         }
     }

@@ -84,7 +84,7 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
     for (const QStringRef &part : std::as_const(addrParts)) {
         if (part.isEmpty()) {
             if (i != (addrParts.size() - 1)) {
-                // qCDebug(PLASMA_NM) << "part.isEmpty()";
+                // qCDebug(PLASMA_NM_EDITOR_LOG) << "part.isEmpty()";
                 return QValidator::Invalid;
             }
             // the last tetrad can be empty, continue...
@@ -94,7 +94,7 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
         tetrads[i] = part.toInt();
 
         if (tetrads[i] > 255) {
-            // qCDebug(PLASMA_NM) << "tetrads[i] > 255";
+            // qCDebug(PLASMA_NM_EDITOR_LOG) << "tetrads[i] > 255";
             return QValidator::Invalid;
         }
 
@@ -109,7 +109,7 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
 
     if (i < 4) {
         // not all tetrads are filled... continue
-        // qCDebug(PLASMA_NM) << "QValidator::Intermediate";
+        // qCDebug(PLASMA_NM_EDITOR_LOG) << "QValidator::Intermediate";
         return QValidator::Intermediate;
     } else {
         if (m_addressStyle == WithCidr) {
@@ -144,7 +144,7 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
             }
         }
 
-        // qCDebug(PLASMA_NM) << "QValidator::Acceptable";
+        // qCDebug(PLASMA_NM_EDITOR_LOG) << "QValidator::Acceptable";
         return QValidator::Acceptable;
     }
 }

@@ -8,7 +8,7 @@
 */
 
 #include "vpnc.h"
-#include "debug.h"
+#include "plasma_nm_vpnc.h"
 
 #include <QFile>
 #include <QFileInfo>
@@ -69,7 +69,7 @@ void VpncUiPluginPrivate::ciscoDecryptFinished(int exitCode, QProcess::ExitStatu
 void VpncUiPluginPrivate::ciscoDecryptError(QProcess::ProcessError pError)
 {
     if (!pError) {
-        qCWarning(PLASMA_NM) << "Error in executing cisco-decrypt";
+        qCWarning(PLASMA_NM_VPNC_LOG) << "Error in executing cisco-decrypt";
         KMessageBox::error(nullptr, i18n("Error decrypting the obfuscated password"), i18n("Error"), KMessageBox::Notify);
     }
     decryptedPasswd.clear();
@@ -108,7 +108,7 @@ QString VpncUiPlugin::supportedFileExtensions() const
 
 NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
 {
-    // qCDebug(PLASMA_NM) << "Importing Cisco VPN connection from " << fileName;
+    // qCDebug(PLASMA_NM_VPNC_LOG) << "Importing Cisco VPN connection from " << fileName;
 
     VpncUiPluginPrivate *decrPlugin = nullptr;
     NMVariantMapMap result;

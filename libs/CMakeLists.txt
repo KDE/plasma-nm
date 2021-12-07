@@ -10,11 +10,11 @@ set(plasmanm_internal_SRCS
     models/networkmodel.cpp
     models/networkmodelitem.cpp
 
-    configuration.cpp
-    debug.cpp
     handler.cpp
-    uiutils.cpp
 )
+
+ecm_qt_declare_logging_category(plasmanm_internal_SRCS HEADER plasma_nm_libs.h IDENTIFIER PLASMA_NM_LIBS_LOG CATEGORY_NAME org.kde.plasma.nm.libs DESCRIPTION "Plasma NM (libs)" EXPORT PLASMANM)
+
 
 add_library(plasmanm_internal SHARED ${plasmanm_internal_SRCS})
 

@@ -6,7 +6,7 @@
 
 #include "bondwidget.h"
 #include "connectioneditordialog.h"
-#include "debug.h"
+#include "plasma_nm_editor.h"
 #include "ui_bond.h"
 
 #include <QDBusPendingReply>
@@ -153,9 +153,9 @@ QVariantMap BondWidget::setting() const
 
 void BondWidget::addBond(QAction *action)
 {
-    qCDebug(PLASMA_NM) << "Adding bonded connection:" << action->data();
-    qCDebug(PLASMA_NM) << "Master UUID:" << m_uuid;
-    qCDebug(PLASMA_NM) << "Slave type:" << type();
+    qCDebug(PLASMA_NM_EDITOR_LOG) << "Adding bonded connection:" << action->data();
+    qCDebug(PLASMA_NM_EDITOR_LOG) << "Master UUID:" << m_uuid;
+    qCDebug(PLASMA_NM_EDITOR_LOG) << "Slave type:" << type();
 
     NetworkManager::ConnectionSettings::ConnectionType connectionType = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(action->data().toInt());
     NetworkManager::ConnectionSettings::Ptr connectionSettings =
@@ -167,8 +167,8 @@ void BondWidget::addBond(QAction *action)
 
     QPointer<ConnectionEditorDialog> bondEditor = new ConnectionEditorDialog(connectionSettings);
     connect(bondEditor.data(), &ConnectionEditorDialog::accepted, [bondEditor, this]() {
-        qCDebug(PLASMA_NM) << "Saving slave connection";
-        // qCDebug(PLASMA_NM) << bondEditor->setting();
+        qCDebug(PLASMA_NM_EDITOR_LOG) << "Saving slave connection";
+        // qCDebug(PLASMA_NM_EDITOR_LOG) << bondEditor->setting();
         QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(bondEditor->setting());
         auto watcher = new QDBusPendingCallWatcher(reply, this);
         connect(watcher, &QDBusPendingCallWatcher::finished, this, &BondWidget::bondAddComplete);
@@ -205,7 +205,7 @@ void BondWidget::bondAddComplete(QDBusPendingCallWatcher *watcher)
             slotWidgetChanged();
         }
     } else {
-        qCWarning(PLASMA_NM) << "Bonded connection not added:" << reply.error().message();
+        qCWarning(PLASMA_NM_EDITOR_LOG) << "Bonded connection not added:" << reply.error().message();
     }
 }
 
@@ -219,7 +219,7 @@ void BondWidget::editBond()
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
 
     if (connection) {
-        // qCDebug(PLASMA_NM) << "Editing bonded connection" << currentItem->text() << uuid;
+        // qCDebug(PLASMA_NM_EDITOR_LOG) << "Editing bonded connection" << currentItem->text() << uuid;
         QPointer<ConnectionEditorDialog> bondEditor = new ConnectionEditorDialog(connection->settings());
         connect(bondEditor.data(), &ConnectionEditorDialog::accepted, [connection, bondEditor, this]() {
             connection->update(bondEditor->setting());
@@ -245,7 +245,7 @@ void BondWidget::deleteBond()
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(uuid);
 
     if (connection) {
-        // qCDebug(PLASMA_NM) << "About to delete bonded connection" << currentItem->text() << uuid;
+        // qCDebug(PLASMA_NM_EDITOR_LOG) << "About to delete bonded connection" << currentItem->text() << uuid;
         if (KMessageBox::questionYesNo(this,
                                        i18n("Do you want to remove the connection '%1'?", connection->name()),
                                        i18n("Remove Connection"),

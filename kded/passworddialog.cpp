@@ -6,7 +6,7 @@
 */
 
 #include "passworddialog.h"
-#include "debug.h"
+#include "plasma_nm_kded.h"
 #include "ui_passworddialog.h"
 #include "uiutils.h"
 
@@ -84,7 +84,7 @@ void PasswordDialog::initializeUi()
         m_neededSecrets = setting->needSecrets(m_flags & SecretAgent::RequestNew);
 
         if (m_neededSecrets.isEmpty()) {
-            qCWarning(PLASMA_NM) << "list of secrets is empty!!!";
+            qCWarning(PLASMA_NM_KDED_LOG) << "list of secrets is empty!!!";
             m_hasError = true;
             m_error = SecretAgent::InternalError;
             m_errorMessage = QLatin1String("No secrets were requested");
@@ -107,7 +107,7 @@ void PasswordDialog::initializeUi()
     } else {
         NetworkManager::VpnSetting::Ptr vpnSetting = m_connectionSettings->setting(Setting::Vpn).dynamicCast<VpnSetting>();
         if (!vpnSetting) {
-            qCWarning(PLASMA_NM) << "Missing VPN setting!";
+            qCWarning(PLASMA_NM_KDED_LOG) << "Missing VPN setting!";
             m_hasError = true;
             m_error = SecretAgent::InternalError;
             m_errorMessage = QLatin1String("VPN settings are missing");
@@ -137,7 +137,7 @@ void PasswordDialog::initializeUi()
                 setFocusProxy(m_vpnWidget);
                 m_vpnWidget->setFocus(Qt::OtherFocusReason);
             } else {
-                qCWarning(PLASMA_NM) << "Could not load VPN UI plugin" << result.errorText;
+                qCWarning(PLASMA_NM_KDED_LOG) << "Could not load VPN UI plugin" << result.errorText;
                 m_hasError = true;
                 m_error = SecretAgent::InternalError;
                 m_errorMessage = result.errorString;

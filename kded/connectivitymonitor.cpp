@@ -15,7 +15,7 @@
 
 #include <NetworkManagerQt/ActiveConnection>
 
-#include "debug.h"
+#include "plasma_nm_kded.h"
 #include <chrono>
 
 using namespace std::chrono_literals;
@@ -47,7 +47,7 @@ void ConnectivityMonitor::connectivityChanged(NetworkManager::Connectivity conne
     }
 
     if (connectivity == NetworkManager::Limited) {
-        qCDebug(PLASMA_NM) << "Network connectivity limited, scheduling notification";
+        qCDebug(PLASMA_NM_KDED_LOG) << "Network connectivity limited, scheduling notification";
         if (!m_limitedConnectivityTimer.isActive()) {
             m_limitedConnectivityTimer.start();
         }
@@ -55,7 +55,7 @@ void ConnectivityMonitor::connectivityChanged(NetworkManager::Connectivity conne
         m_limitedConnectivityTimer.stop();
 
         if (connectivity == NetworkManager::Portal) {
-            qCDebug(PLASMA_NM) << "Detected captive portal";
+            qCDebug(PLASMA_NM_KDED_LOG) << "Detected captive portal";
             const NetworkManager::ActiveConnection::Ptr primaryConnection = NetworkManager::primaryConnection();
             const QString title = primaryConnection ? primaryConnection->id() : i18n("Network authentication");
 

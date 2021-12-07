@@ -169,7 +169,7 @@ void IpV6RoutesWidget::removeRoute()
 
 void IpV6RoutesWidget::selectionChanged(const QItemSelection &selected)
 {
-    // qCDebug(PLASMA_NM) << "selectionChanged";
+    // qCDebug(PLASMA_NM_EDITOR_LOG) << "selectionChanged";
     d->ui.pushButtonRemove->setEnabled(!selected.isEmpty());
 }
 

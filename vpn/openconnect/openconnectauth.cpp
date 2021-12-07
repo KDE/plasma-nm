@@ -9,8 +9,8 @@
 #include "openconnectauthworkerthread.h"
 #include "ui_openconnectauth.h"
 
-#include "debug.h"
 #include "passwordfield.h"
+#include "plasma_nm_openconnect.h"
 
 #include <QComboBox>
 #include <QCryptographicHash>
@@ -341,7 +341,7 @@ void OpenconnectAuthWidget::connectHost()
     i = d->ui.cmbHosts->itemData(i).toInt();
     const VPNHost &host = d->hosts.at(i);
     if (openconnect_parse_url(d->vpninfo, host.address.toLatin1().data())) {
-        qCWarning(PLASMA_NM) << "Failed to parse server URL" << host.address;
+        qCWarning(PLASMA_NM_OPENCONNECT_LOG) << "Failed to parse server URL" << host.address;
         openconnect_set_hostname(d->vpninfo, OC3DUP(host.address.toLatin1().data()));
     }
     if (!openconnect_get_urlpath(d->vpninfo) && !host.group.isEmpty()) {

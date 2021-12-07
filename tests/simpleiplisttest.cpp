@@ -14,7 +14,7 @@ class SimpleipListTest : public QObject
 public:
     SimpleipListTest();
 
-private slots:
+private Q_SLOTS:
     void baseTest();
     void baseTest_data();
     void cidrTest();

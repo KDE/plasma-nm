@@ -35,7 +35,7 @@
 #include <KWindowSystem>
 
 SecretAgent::SecretAgent(QObject *parent)
-    : NetworkManager::SecretAgent("org.kde.plasma.networkmanagement", NetworkManager::SecretAgent::Capability::VpnHints, parent)
+    : NetworkManager::SecretAgent(QStringLiteral("org.kde.plasma.networkmanagement"), NetworkManager::SecretAgent::Capability::VpnHints, parent)
     , m_openWalletFailed(false)
     , m_wallet(nullptr)
     , m_dialog(nullptr)
@@ -61,7 +61,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection,
     qCDebug(PLASMA_NM) << "Flags:" << flags;
 
     const QString callId = connection_path.path() % setting_name;
-    for (const SecretsRequest &request : m_calls) {
+    for (const SecretsRequest &request : std::as_const(m_calls)) {
         if (request == callId) {
             qCWarning(PLASMA_NM) << "GetSecrets was called again! This should not happen, cancelling first call" << connection_path.path() << setting_name;
             CancelGetSecrets(connection_path, setting_name);
@@ -137,7 +137,7 @@ void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const
                 m_dialog = nullptr;
             }
             delete request.dialog;
-            sendError(SecretAgent::AgentCanceled, QLatin1String("Agent canceled the password dialog"), request.message);
+            sendError(SecretAgent::AgentCanceled, QStringLiteral("Agent canceled the password dialog"), request.message);
             m_calls.removeAt(i);
             break;
         }
@@ -221,7 +221,7 @@ void SecretAgent::dialogAccepted()
 
                     // Load secrets from auth dialog which are returned back to NM
                     if (connection.value(QStringLiteral("vpn")).contains(QStringLiteral("secrets"))) {
-                        secrets.unite(qdbus_cast<NMStringMap>(connection.value(QStringLiteral("vpn")).value(QLatin1String("secrets"))));
+                        secrets.unite(qdbus_cast<NMStringMap>(connection.value(QStringLiteral("vpn")).value(QStringLiteral("secrets"))));
                     }
 
                     // Load temporary secrets from auth dialog which are not returned to NM
@@ -262,7 +262,7 @@ void SecretAgent::dialogRejected()
     for (int i = 0; i < m_calls.size(); ++i) {
         SecretsRequest request = m_calls[i];
         if (request.type == SecretsRequest::GetSecrets && request.dialog == m_dialog) {
-            sendError(SecretAgent::UserCanceled, QLatin1String("User canceled the password dialog"), request.message);
+            sendError(SecretAgent::UserCanceled, QStringLiteral("User canceled the password dialog"), request.message);
             m_calls.removeAt(i);
             break;
         }
@@ -399,7 +399,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
     }
 
     if (!Configuration::self().showPasswordDialog()) {
-        sendError(SecretAgent::NoSecrets, "Cannot authenticate", request.message);
+        sendError(SecretAgent::NoSecrets, QStringLiteral("Cannot authenticate"), request.message);
         emit secretsError(request.connection_path.path(),
                           i18n("Authentication to %1 failed. Wrong password?", request.connection.value("connection").value("id").toString()));
         return true;
@@ -462,7 +462,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
         sendSecrets(result, request.message);
         return true;
     } else {
-        sendError(SecretAgent::InternalError, QLatin1String("Plasma-nm did not know how to handle the request"), request.message);
+        sendError(SecretAgent::InternalError, QStringLiteral("Plasma-nm did not know how to handle the request"), request.message);
         return true;
     }
 }
@@ -487,7 +487,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request) const
                     }
                 }
             } else if (!request.saveSecretsWithoutReply) {
-                sendError(SecretAgent::InternalError, QLatin1String("Could not store secrets in the wallet."), request.message);
+                sendError(SecretAgent::InternalError, QStringLiteral("Could not store secrets in the wallet."), request.message);
                 return true;
             }
         } else {
@@ -510,7 +510,7 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request) const
 {
     if (useWallet()) {
         if (m_wallet->isOpen()) {
-            if (m_wallet->hasFolder(QStringLiteral("Network Management")) && m_wallet->setFolder("Network Management")) {
+            if (m_wallet->hasFolder(QStringLiteral("Network Management")) && m_wallet->setFolder(QStringLiteral("Network Management"))) {
                 NetworkManager::ConnectionSettings connectionSettings(request.connection);
                 for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
                     QString entryName = QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name();

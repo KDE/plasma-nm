@@ -30,7 +30,7 @@ public Q_SLOTS:
     Q_SCRIPTABLE void unlockModem(const QString &modem);
 #endif
 private:
-    BluetoothMonitor *m_bluetoothMonitor = nullptr;
+    BluetoothMonitor *const m_bluetoothMonitor;
 #if WITH_MODEMMANAGER_SUPPORT
     ModemMonitor *m_modemMonitor = nullptr;
 #endif

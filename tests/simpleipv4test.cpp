@@ -14,7 +14,7 @@ class SimpleIpv4Test : public QObject
 public:
     SimpleIpv4Test();
 
-private slots:
+private Q_SLOTS:
     void baseTest();
     void baseTest_data();
     void cidrTest();

@@ -10,11 +10,11 @@
 
 Monitor::Monitor(QObject *parent)
     : QObject(parent)
+    , m_bluetoothMonitor(new BluetoothMonitor(this))
 {
 #if WITH_MODEMMANAGER_SUPPORT
     m_modemMonitor = new ModemMonitor(this);
 #endif
-    m_bluetoothMonitor = new BluetoothMonitor(this);
 
     QDBusConnection::sessionBus().registerService(QStringLiteral("org.kde.plasmanetworkmanagement"));
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/org/kde/plasmanetworkmanagement"), this, QDBusConnection::ExportScriptableContents);

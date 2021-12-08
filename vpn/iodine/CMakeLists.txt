@@ -1,14 +1,14 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_iodineui\")
 
-set(iodine_SRCS
+
+
+add_library(plasmanetworkmanagement_iodineui MODULE)
+target_sources(plasmanetworkmanagement_iodineui PRIVATE
     iodine.cpp
     iodinewidget.cpp
     iodineauth.cpp
 )
-
-ki18n_wrap_ui(iodine_SRCS iodine.ui iodineauth.ui)
-
-add_library(plasmanetworkmanagement_iodineui MODULE ${iodine_SRCS})
+ki18n_wrap_ui(plasmanetworkmanagement_iodineui iodine.ui iodineauth.ui)
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_iodineui plasmanetworkmanagement_iodineui.desktop)
 

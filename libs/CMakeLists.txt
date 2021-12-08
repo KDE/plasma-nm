@@ -1,6 +1,11 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-libs\")
 
-set(plasmanm_internal_SRCS
+
+
+
+add_library(plasmanm_internal SHARED)
+ecm_qt_declare_logging_category(plasmanm_internal HEADER plasma_nm_libs.h IDENTIFIER PLASMA_NM_LIBS_LOG CATEGORY_NAME org.kde.plasma.nm.libs DESCRIPTION "Plasma NM (libs)" EXPORT PLASMANM)
+target_sources(plasmanm_internal PRIVATE
     models/appletproxymodel.cpp
     models/creatableconnectionsmodel.cpp
     models/editorproxymodel.cpp
@@ -12,11 +17,6 @@ set(plasmanm_internal_SRCS
 
     handler.cpp
 )
-
-ecm_qt_declare_logging_category(plasmanm_internal_SRCS HEADER plasma_nm_libs.h IDENTIFIER PLASMA_NM_LIBS_LOG CATEGORY_NAME org.kde.plasma.nm.libs DESCRIPTION "Plasma NM (libs)" EXPORT PLASMANM)
-
-
-add_library(plasmanm_internal SHARED ${plasmanm_internal_SRCS})
 
 target_include_directories(plasmanm_internal PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/models)
 

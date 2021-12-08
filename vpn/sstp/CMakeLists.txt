@@ -1,14 +1,14 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_sstpui\")
 
-set(sstp_SRCS
+
+
+add_library(plasmanetworkmanagement_sstpui MODULE)
+target_sources(plasmanetworkmanagement_sstpui PRIVATE
    sstp.cpp
    sstpwidget.cpp
    sstpauth.cpp
    )
-
-ki18n_wrap_ui(sstp_SRCS sstpwidget.ui sstpadvanced.ui sstpauth.ui)
-
-add_library(plasmanetworkmanagement_sstpui MODULE ${sstp_SRCS})
+ki18n_wrap_ui(plasmanetworkmanagement_sstpui sstpwidget.ui sstpadvanced.ui sstpauth.ui)
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_sstpui plasmanetworkmanagement_sstpui.desktop)
 

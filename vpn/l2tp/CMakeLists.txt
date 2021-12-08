@@ -1,16 +1,16 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_l2tpui\")
 
-set(l2tp_SRCS
+
+
+add_library(plasmanetworkmanagement_l2tpui MODULE)
+target_sources(plasmanetworkmanagement_l2tpui PRIVATE
     l2tp.cpp
     l2tpwidget.cpp
     l2tpauth.cpp
     l2tpipsecwidget.cpp
     l2tppppwidget.cpp
 )
-
-ki18n_wrap_ui(l2tp_SRCS l2tp.ui l2tpipsec.ui l2tpppp.ui)
-
-add_library(plasmanetworkmanagement_l2tpui MODULE ${l2tp_SRCS})
+ki18n_wrap_ui(plasmanetworkmanagement_l2tpui l2tp.ui l2tpipsec.ui l2tpppp.ui)
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_l2tpui plasmanetworkmanagement_l2tpui.desktop)
 

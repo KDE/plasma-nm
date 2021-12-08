@@ -1,14 +1,14 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_strongswanui\")
 
-set(strongswan_SRCS
+
+
+add_library(plasmanetworkmanagement_strongswanui MODULE)
+target_sources(plasmanetworkmanagement_strongswanui PRIVATE
    strongswan.cpp
    strongswanwidget.cpp
    strongswanauth.cpp
    )
-
-ki18n_wrap_ui(strongswan_SRCS strongswanprop.ui strongswanauth.ui)
-
-add_library(plasmanetworkmanagement_strongswanui MODULE ${strongswan_SRCS})
+ki18n_wrap_ui(plasmanetworkmanagement_strongswanui strongswanprop.ui strongswanauth.ui)
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_strongswanui plasmanetworkmanagement_strongswanui.desktop)
 

@@ -1,14 +1,14 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_fortisslvpnui\")
 
-set(fortisslvpn_SRCS
+
+
+add_library(plasmanetworkmanagement_fortisslvpnui MODULE)
+target_sources(plasmanetworkmanagement_fortisslvpnui PRIVATE
     fortisslvpn.cpp
     fortisslvpnwidget.cpp
     fortisslvpnauth.cpp
 )
-
-ki18n_wrap_ui(fortisslvpn_SRCS fortisslvpn.ui fortisslvpnadvanced.ui fortisslvpnauth.ui)
-
-add_library(plasmanetworkmanagement_fortisslvpnui MODULE ${fortisslvpn_SRCS})
+ki18n_wrap_ui(plasmanetworkmanagement_fortisslvpnui fortisslvpn.ui fortisslvpnadvanced.ui fortisslvpnauth.ui)
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_fortisslvpnui plasmanetworkmanagement_fortisslvpnui.desktop)
 

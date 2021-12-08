@@ -1,4 +1,6 @@
-set(plasmanm_qml_plugins_SRCS
+
+add_library(plasmanm_qmlplugins SHARED)
+target_sources(plasmanm_qmlplugins PRIVATE
    availabledevices.cpp
    connectionicon.cpp
    enabledconnections.cpp
@@ -6,8 +8,6 @@ set(plasmanm_qml_plugins_SRCS
    networkstatus.cpp
    qmlplugins.cpp
 )
-
-add_library(plasmanm_qmlplugins SHARED ${plasmanm_qml_plugins_SRCS})
 
 target_link_libraries(plasmanm_qmlplugins
     plasmanm_internal

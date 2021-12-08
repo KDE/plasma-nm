@@ -1,14 +1,14 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_openswanui\")
 
-set(openswan_SRCS
+
+
+add_library(plasmanetworkmanagement_openswanui MODULE ${openswan_SRCS})
+target_sources(plasmanetworkmanagement_openswanui PRIVATE
     openswan.cpp
     openswanwidget.cpp
     openswanauth.cpp
 )
-
-ki18n_wrap_ui(openswan_SRCS openswan.ui openswanauth.ui)
-
-add_library(plasmanetworkmanagement_openswanui MODULE ${openswan_SRCS})
+ki18n_wrap_ui(plasmanetworkmanagement_openswanui openswan.ui openswanauth.ui)
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_openswanui plasmanetworkmanagement_openswanui.desktop)
 

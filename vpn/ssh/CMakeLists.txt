@@ -1,14 +1,14 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_sshui\")
 
-set(ssh_SRCS
+
+
+add_library(plasmanetworkmanagement_sshui MODULE ${ssh_SRCS})
+target_sources(plasmanetworkmanagement_sshui PRIVATE
    ssh.cpp
    sshwidget.cpp
    sshauth.cpp
    )
-
-ki18n_wrap_ui(ssh_SRCS sshwidget.ui sshadvanced.ui sshauth.ui)
-
-add_library(plasmanetworkmanagement_sshui MODULE ${ssh_SRCS})
+ki18n_wrap_ui(plasmanetworkmanagement_sshui sshwidget.ui sshadvanced.ui sshauth.ui)
 
 kcoreaddons_desktop_to_json(plasmanetworkmanagement_sshui plasmanetworkmanagement_sshui.desktop)
 

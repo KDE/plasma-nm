@@ -11,6 +11,8 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kquickcontrolsaddons 2.0
 
+import org.kde.kirigami 2.19 as Kirigami
+
 RowLayout {
     id: toolbar
 
@@ -151,7 +153,7 @@ RowLayout {
 
         inputMethodHints: Qt.ImhNoPredictiveText
 
-        focus: true
+        focus: !Kirigami.InputMethod.willShowOnActive
         clearButtonShown: true
         placeholderText: i18nc("text field placeholder text", "Search…")
 
@@ -177,6 +179,8 @@ RowLayout {
     }
 
     Component.onCompleted: {
-        searchTextField.forceActiveFocus()
+        if (Kirigami.InputMethod.willShowOnActive) {
+            searchTextField.forceActiveFocus()
+        }
     }
 }

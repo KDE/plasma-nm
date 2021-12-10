@@ -375,7 +375,7 @@ QString UiUtils::operationModeToString(NetworkManager::WirelessDevice::Operation
         modeString = i18nc("wireless network operation mode", "Access point");
         break;
     default:
-        modeString = I18N_NOOP("INCORRECT MODE FIX ME");
+        modeString = QStringLiteral("INCORRECT MODE FIX ME");
     }
     return modeString;
 }

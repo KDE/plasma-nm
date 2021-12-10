@@ -33,7 +33,7 @@
       </sizepolicy>
      </property>
      <property name="sizeAdjustPolicy">
-      <enum>QComboBox::AdjustToMinimumContentsLength</enum>
+      <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
      </property>
     </widget>
    </item>
@@ -101,7 +101,7 @@
  BSSID entered here. Example: 00:11:22:33:44:55</string>
      </property>
      <property name="sizeAdjustPolicy">
-      <enum>QComboBox::AdjustToMinimumContentsLength</enum>
+      <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
      </property>
     </widget>
    </item>

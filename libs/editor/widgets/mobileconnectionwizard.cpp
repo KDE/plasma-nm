@@ -126,7 +126,7 @@ void MobileConnectionWizard::initializePage(int id)
         break;
 
     case 3: // Plans Page
-        disconnect(mPlanComboBox, QOverload<const QString &>::of(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
+        disconnect(mPlanComboBox, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
         mPlanComboBox->clear();
         if (type() != NetworkManager::ConnectionSettings::Gsm) {
             goto OUT_3;
@@ -153,9 +153,9 @@ void MobileConnectionWizard::initializePage(int id)
             mPlanComboBox->addItem(i18nc("Mobile Connection Wizard", "My plan is not listed…"));
         }
         mPlanComboBox->setCurrentIndex(0);
-        slotEnablePlanEditBox(mPlanComboBox->currentText());
+        slotEnablePlanEditBox(mPlanComboBox->currentIndex());
     OUT_3:
-        connect(mPlanComboBox, QOverload<const QString &>::of(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
+        connect(mPlanComboBox, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &MobileConnectionWizard::slotEnablePlanEditBox);
         break;
 
     case 4: // Confirm Page
@@ -509,8 +509,9 @@ QWizardPage *MobileConnectionWizard::createPlansPage()
     return page;
 }
 
-void MobileConnectionWizard::slotEnablePlanEditBox(const QString &text)
+void MobileConnectionWizard::slotEnablePlanEditBox(int index)
 {
+    const QString text = mPlanComboBox->itemText(index);
     if (type() != NetworkManager::ConnectionSettings::Gsm) {
         return;
     }

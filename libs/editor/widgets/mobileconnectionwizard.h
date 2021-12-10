@@ -54,7 +54,7 @@ private Q_SLOTS:
     void introDeviceAdded(const QString &uni);
     void introDeviceRemoved(const QString &uni);
     void introStatusChanged(NetworkManager::Status);
-    void slotEnablePlanEditBox(const QString &text);
+    void slotEnablePlanEditBox(int index);
     void slotEnableProviderEdit(bool enable);
     void slotCheckProviderEdit();
     void slotCheckProviderList();

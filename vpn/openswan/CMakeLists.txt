@@ -2,7 +2,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_openswanui\")
 
 
 
-add_library(plasmanetworkmanagement_openswanui MODULE ${openswan_SRCS})
+add_library(plasmanetworkmanagement_openswanui MODULE)
 target_sources(plasmanetworkmanagement_openswanui PRIVATE
     openswan.cpp
     openswanwidget.cpp

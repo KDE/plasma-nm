@@ -2,7 +2,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_sshui\")
 
 
 
-add_library(plasmanetworkmanagement_sshui MODULE ${ssh_SRCS})
+add_library(plasmanetworkmanagement_sshui MODULE)
 target_sources(plasmanetworkmanagement_sshui PRIVATE
    ssh.cpp
    sshwidget.cpp

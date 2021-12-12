@@ -5,13 +5,14 @@
 */
 
 #include "configuration.h"
-
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KUser>
+#include <QMutexLocker>
 
 static bool propManageVirtualConnectionsInitialized = false;
 static bool propManageVirtualConnections = false;
+QMutex Configuration::sMutex;
 
 Configuration &Configuration::self()
 {
@@ -19,7 +20,7 @@ Configuration &Configuration::self()
     return c;
 }
 
-bool Configuration::unlockModemOnDetection()
+bool Configuration::unlockModemOnDetection() const
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("plasma-nm"));
     KConfigGroup grp(config, QStringLiteral("General"));
@@ -41,7 +42,7 @@ void Configuration::setUnlockModemOnDetection(bool unlock)
     }
 }
 
-bool Configuration::manageVirtualConnections()
+bool Configuration::manageVirtualConnections() const
 {
     // Avoid reading from the config file over and over
     if (propManageVirtualConnectionsInitialized) {
@@ -52,6 +53,7 @@ bool Configuration::manageVirtualConnections()
     KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
+        QMutexLocker locker(&sMutex);
         propManageVirtualConnections = grp.readEntry(QStringLiteral("ManageVirtualConnections"), false);
         propManageVirtualConnectionsInitialized = true;
 
@@ -67,9 +69,12 @@ void Configuration::setManageVirtualConnections(bool manage)
     KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
-        grp.writeEntry(QStringLiteral("ManageVirtualConnections"), manage);
-        propManageVirtualConnections = manage;
-        grp.sync();
+        {
+            QMutexLocker locker(&sMutex);
+            grp.writeEntry(QStringLiteral("ManageVirtualConnections"), manage);
+            grp.sync();
+            propManageVirtualConnections = manage;
+        }
         Q_EMIT manageVirtualConnectionsChanged(manage);
     }
 }
@@ -93,7 +98,7 @@ void Configuration::setAirplaneModeEnabled(bool enabled)
     }
 }
 
-QString Configuration::hotspotName()
+QString Configuration::hotspotName() const
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("plasma-nm"));
     KConfigGroup grp(config, QStringLiteral("General"));
@@ -118,7 +123,7 @@ void Configuration::setHotspotName(const QString &name)
     }
 }
 
-QString Configuration::hotspotPassword()
+QString Configuration::hotspotPassword() const
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("plasma-nm"));
     KConfigGroup grp(config, QStringLiteral("General"));
@@ -140,7 +145,7 @@ void Configuration::setHotspotPassword(const QString &password)
     }
 }
 
-QString Configuration::hotspotConnectionPath()
+QString Configuration::hotspotConnectionPath() const
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("plasma-nm"));
     KConfigGroup grp(config, QStringLiteral("General"));
@@ -162,7 +167,7 @@ void Configuration::setHotspotConnectionPath(const QString &path)
     }
 }
 
-bool Configuration::showPasswordDialog()
+bool Configuration::showPasswordDialog() const
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("plasma-nm"));
     KConfigGroup grp(config, QStringLiteral("General"));

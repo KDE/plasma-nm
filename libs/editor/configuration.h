@@ -7,51 +7,43 @@
 #ifndef PLASMA_NM_CONFIGURATION_H
 #define PLASMA_NM_CONFIGURATION_H
 
-#include <QObject>
-
 #include <NetworkManagerQt/Manager>
+#include <QMutex>
+#include <QObject>
 
 class Q_DECL_EXPORT Configuration : public QObject
 {
-    Q_PROPERTY(bool unlockModemOnDetection READ unlockModemOnDetection WRITE setUnlockModemOnDetection)
-    Q_PROPERTY(bool manageVirtualConnections READ manageVirtualConnections WRITE setManageVirtualConnections NOTIFY manageVirtualConnectionsChanged)
-    Q_PROPERTY(bool airplaneModeEnabled READ airplaneModeEnabled WRITE setAirplaneModeEnabled NOTIFY airplaneModeEnabledChanged)
-    Q_PROPERTY(QString hotspotName READ hotspotName WRITE setHotspotName)
-    Q_PROPERTY(QString hotspotPassword READ hotspotPassword WRITE setHotspotPassword)
-    Q_PROPERTY(QString hotspotConnectionPath READ hotspotConnectionPath WRITE setHotspotConnectionPath)
-
-    // Readonly constant property, as this value should only be set by the platform
-    Q_PROPERTY(bool showPasswordDialog READ showPasswordDialog CONSTANT)
     Q_OBJECT
 public:
-    bool unlockModemOnDetection();
+    bool unlockModemOnDetection() const;
     void setUnlockModemOnDetection(bool unlock);
 
-    bool manageVirtualConnections();
+    bool manageVirtualConnections() const;
     void setManageVirtualConnections(bool manage);
 
     bool airplaneModeEnabled() const;
     void setAirplaneModeEnabled(bool enabled);
-    Q_SIGNAL void airplaneModeEnabledChanged();
 
-    QString hotspotName();
+    QString hotspotName() const;
     void setHotspotName(const QString &name);
 
-    QString hotspotPassword();
+    QString hotspotPassword() const;
     void setHotspotPassword(const QString &password);
 
-    QString hotspotConnectionPath();
+    QString hotspotConnectionPath() const;
     void setHotspotConnectionPath(const QString &path);
 
-    bool showPasswordDialog();
+    bool showPasswordDialog() const;
 
     static Configuration &self();
 
-signals:
+Q_SIGNALS:
+    void airplaneModeEnabledChanged();
     void manageVirtualConnectionsChanged(bool manage);
 
 private:
     Configuration() = default;
+    static QMutex sMutex;
 };
 
 #endif // PLAMA_NM_CONFIGURATION_H

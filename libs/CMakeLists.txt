@@ -14,7 +14,7 @@ target_sources(plasmanm_internal PRIVATE
     models/networkitemslist.cpp
     models/networkmodel.cpp
     models/networkmodelitem.cpp
-
+    configurationproxy.cpp
     handler.cpp
 )
 

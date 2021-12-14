@@ -49,7 +49,7 @@ ColumnLayout {
             major.count: 3
             major.lineWidth: 1
             // Same calculation as Kirigami Separator
-            major.color: Kirigami.ColorUtils.linearInterpolation(PlasmaCore.Theme.backgroundColor, PlasmaCore.Theme.textColor, 0.2)
+            major.color: Kirigami.ColorUtils.linearInterpolation(PlasmaCore.Theme.backgroundColor, PlasmaCore.Theme.textColor, 0.4)
         }
         QuickCharts.LineChart {
             id: plotter

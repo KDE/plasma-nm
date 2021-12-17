@@ -49,7 +49,7 @@ private Q_SLOTS:
     void primaryConnectionChanged(const QString &connection);
 #if WITH_MODEMMANAGER_SUPPORT
     void modemNetworkRemoved();
-    void modemSignalChanged(const ModemManager::SignalQualityPair &signalQuality);
+    void modemSignalChanged(ModemManager::SignalQualityPair signalQuality);
     void setIconForModem();
 #endif
     void statusChanged(NetworkManager::Status status);

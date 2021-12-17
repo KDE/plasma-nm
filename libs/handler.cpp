@@ -400,7 +400,8 @@ void makeDBusCall(const QDBusMessage &message, QObject *context, std::function<v
 
 void setBluetoothEnabled(const QString &path, bool enabled)
 {
-    QDBusMessage message = QDBusMessage::createMethodCall("org.bluez", path, "org.freedesktop.DBus.Properties", "Set");
+    QDBusMessage message =
+        QDBusMessage::createMethodCall(QStringLiteral("org.bluez"), path, QStringLiteral("org.freedesktop.DBus.Properties"), QStringLiteral("Set"));
     QList<QVariant> arguments;
     arguments << QLatin1String("org.bluez.Adapter1");
     arguments << QLatin1String("Powered");
@@ -422,7 +423,7 @@ void Handler::enableBluetooth(bool enable)
             const QStringList interfaces = reply.value().value(path).keys();
             qCDebug(PLASMA_NM_LIBS_LOG) << "interfaces:" << interfaces;
 
-            if (!interfaces.contains("org.bluez.Adapter1")) {
+            if (!interfaces.contains(QStringLiteral("org.bluez.Adapter1"))) {
                 continue;
             }
 

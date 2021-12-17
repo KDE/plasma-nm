@@ -48,7 +48,7 @@ void EditListDialog::removeEmptyItems(QStringList &list)
         if ((*it).trimmed().isEmpty()) {
             it = list.erase(it);
         } else {
-            it++;
+            ++it;
         }
     }
 }

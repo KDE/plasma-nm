@@ -183,7 +183,7 @@ void ConnectionIcon::modemNetworkRemoved()
     m_modemNetwork.clear();
 }
 
-void ConnectionIcon::modemSignalChanged(const ModemManager::SignalQualityPair &signalQuality)
+void ConnectionIcon::modemSignalChanged(ModemManager::SignalQualityPair signalQuality)
 {
     int diff = m_signal - signalQuality.signal;
 

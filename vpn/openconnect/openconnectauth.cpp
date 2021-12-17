@@ -398,7 +398,7 @@ QVariantMap OpenconnectAuthWidget::setting() const
         if (i.value().isEmpty()) {
             i = secrets.erase(i);
         } else {
-            i++;
+            ++i;
         }
     }
 

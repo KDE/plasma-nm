@@ -313,7 +313,7 @@ QString NetworkModelItem::originalName() const
 QString NetworkModelItem::sectionType() const
 {
     if (m_connectionState == NetworkManager::ActiveConnection::Deactivated) {
-        return "Available connections";
+        return QStringLiteral("Available connections");
     } else {
         return {};
     }
@@ -612,11 +612,11 @@ void NetworkModelItem::updateDetails() const
                     }
                 } else {
                     ModemManager::ModemCdma::Ptr cdmaNet = modem->interface(ModemManager::ModemDevice::CdmaInterface).objectCast<ModemManager::ModemCdma>();
-                    m_details << i18n("Network ID") << QString("%1").arg(cdmaNet->nid());
+                    m_details << i18n("Network ID") << QStringLiteral("%1").arg(cdmaNet->nid());
                 }
 
                 if (modemNetwork) {
-                    m_details << i18n("Signal Quality") << QString("%1%").arg(modemNetwork->signalQuality().signal);
+                    m_details << i18n("Signal Quality") << QStringLiteral("%1%").arg(modemNetwork->signalQuality().signal);
                     m_details << i18n("Access Technology") << UiUtils::convertAccessTechnologyToString(modemNetwork->accessTechnologies());
                 }
             }

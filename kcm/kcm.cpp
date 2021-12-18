@@ -6,6 +6,7 @@
 
 #include "kcm.h"
 
+#include "configuration.h"
 #include "connectioneditordialog.h"
 #include "mobileconnectionwizard.h"
 #include "plasma_nm_kcm.h"
@@ -383,6 +384,12 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
         // Generate new UUID
         connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
         addConnection(connectionSettings);
+    }
+
+    // Automatically enable virtual connection management if one is created
+    if (type == NetworkManager::ConnectionSettings::Vlan || type == NetworkManager::ConnectionSettings::Bridge
+        || type == NetworkManager::ConnectionSettings::Bond || type == NetworkManager::ConnectionSettings::Team) {
+        Configuration::self().setManageVirtualConnections(true);
     }
 }
 

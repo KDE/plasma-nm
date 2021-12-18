@@ -7,9 +7,9 @@
 #ifndef PLASMA_NM_CREATABLE_CONNECTIONS_MODEL_H
 #define PLASMA_NM_CREATABLE_CONNECTIONS_MODEL_H
 
-#include <QAbstractListModel>
-
+#include "configuration.h"
 #include <NetworkManagerQt/ConnectionSettings>
+#include <QAbstractListModel>
 
 class Q_DECL_EXPORT CreatableConnectionItem : public QObject
 {

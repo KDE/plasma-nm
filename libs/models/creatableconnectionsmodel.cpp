@@ -5,9 +5,6 @@
 */
 
 #include "creatableconnectionsmodel.h"
-
-#include "configuration.h"
-
 #include <KLocalizedString>
 #include <KPluginMetaData>
 
@@ -121,9 +118,6 @@ void CreatableConnectionItem::setVpnType(const QString &vpnType)
 CreatableConnectionsModel::CreatableConnectionsModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-    connect(&Configuration::self(), &Configuration::manageVirtualConnectionsChanged, this, [&]() {
-        this->populateModel();
-    });
     populateModel();
 }
 
@@ -194,47 +188,45 @@ void CreatableConnectionsModel::populateModel()
                                                  true); // VpnType and SpecificType are empty
     m_list << connectionItem;
 
-    if (Configuration::self().manageVirtualConnections()) {
-        connectionItem = new CreatableConnectionItem(i18n("Bond"),
-                                                     i18n("Virtual connections"),
-                                                     i18n("Some bond description"),
-                                                     QStringLiteral("network-wired"),
-                                                     NetworkManager::ConnectionSettings::Bond,
-                                                     QString(),
-                                                     QString(),
-                                                     true); // VpnType and SpecificType are empty
-        m_list << connectionItem;
+    connectionItem = new CreatableConnectionItem(i18n("Bond"),
+                                                 i18n("Virtual connections"),
+                                                 i18n("Some bond description"),
+                                                 QStringLiteral("network-wired"),
+                                                 NetworkManager::ConnectionSettings::Bond,
+                                                 QString(),
+                                                 QString(),
+                                                 true); // VpnType and SpecificType are empty
+    m_list << connectionItem;
 
-        connectionItem = new CreatableConnectionItem(i18n("Bridge"),
-                                                     i18n("Virtual connections"),
-                                                     i18n("Some bond description"),
-                                                     QStringLiteral("network-wired"),
-                                                     NetworkManager::ConnectionSettings::Bridge,
-                                                     QString(),
-                                                     QString(),
-                                                     true); // VpnType and SpecificType are empty
-        m_list << connectionItem;
+    connectionItem = new CreatableConnectionItem(i18n("Bridge"),
+                                                 i18n("Virtual connections"),
+                                                 i18n("Some bond description"),
+                                                 QStringLiteral("network-wired"),
+                                                 NetworkManager::ConnectionSettings::Bridge,
+                                                 QString(),
+                                                 QString(),
+                                                 true); // VpnType and SpecificType are empty
+    m_list << connectionItem;
 
-        connectionItem = new CreatableConnectionItem(i18n("Team"),
-                                                     i18n("Virtual connections"),
-                                                     i18n("Some team description"),
-                                                     QStringLiteral("network-wired"),
-                                                     NetworkManager::ConnectionSettings::Team,
-                                                     QString(),
-                                                     QString(),
-                                                     true); // VpnType and SpecificType are empty
-        m_list << connectionItem;
+    connectionItem = new CreatableConnectionItem(i18n("Team"),
+                                                 i18n("Virtual connections"),
+                                                 i18n("Some team description"),
+                                                 QStringLiteral("network-wired"),
+                                                 NetworkManager::ConnectionSettings::Team,
+                                                 QString(),
+                                                 QString(),
+                                                 true); // VpnType and SpecificType are empty
+    m_list << connectionItem;
 
-        connectionItem = new CreatableConnectionItem(i18n("Vlan"),
-                                                     i18n("Virtual connections"),
-                                                     i18n("Some vlan description"),
-                                                     QStringLiteral("network-wired"),
-                                                     NetworkManager::ConnectionSettings::Vlan,
-                                                     QString(),
-                                                     QString(),
-                                                     true); // VpnType and SpecificType are empty
-        m_list << connectionItem;
-    }
+    connectionItem = new CreatableConnectionItem(i18n("Vlan"),
+                                                 i18n("Virtual connections"),
+                                                 i18n("Some vlan description"),
+                                                 QStringLiteral("network-wired"),
+                                                 NetworkManager::ConnectionSettings::Vlan,
+                                                 QString(),
+                                                 QString(),
+                                                 true); // VpnType and SpecificType are empty
+    m_list << connectionItem;
 
     QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
 

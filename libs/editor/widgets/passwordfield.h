@@ -45,7 +45,7 @@ private Q_SLOTS:
 
 Q_SIGNALS:
     void textChanged(const QString &text);
-    void passwordOptionChanged(PasswordOption option);
+    void passwordOptionChanged(PasswordField::PasswordOption option);
 
 private:
     PasswordOption m_currentPasswordOption;

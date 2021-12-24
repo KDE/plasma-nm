@@ -494,7 +494,7 @@ void Handler::updateConnection(const NetworkManager::Connection::Ptr &connection
 
 void Handler::requestScan(const QString &interface)
 {
-    for (NetworkManager::Device::Ptr device : NetworkManager::networkInterfaces()) {
+    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
 

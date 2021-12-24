@@ -207,7 +207,6 @@ void WireGuardPeerWidget::checkEndpointValid()
     QString addressString = addressWidget->displayText();
     QString portString = portWidget->displayText();
 
-    QUrl temp;
     WireGuardPeerWidget::EndPointValid valid = isEndpointValid(addressString, portString);
 
     setBackground(addressWidget, WireGuardPeerWidget::BothValid == valid || WireGuardPeerWidget::AddressValid == valid);

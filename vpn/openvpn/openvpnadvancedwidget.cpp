@@ -589,15 +589,15 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
         break;
     case CertCheckType::VerifyWholeSubjectExactly:
         data.insert(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME),
-                    QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_SUBJECT).arg(m_ui->subjectMatch->text()));
+                    QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_SUBJECT, m_ui->subjectMatch->text()));
         break;
     case CertCheckType::VerifyNameExactly:
         data.insert(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME),
-                    QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME).arg(m_ui->subjectMatch->text()));
+                    QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME, m_ui->subjectMatch->text()));
         break;
     case CertCheckType::VerifyNameByPrefix:
         data.insert(QLatin1String(NM_OPENVPN_KEY_VERIFY_X509_NAME),
-                    QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME_PREFIX).arg(m_ui->subjectMatch->text()));
+                    QStringLiteral("%1:%2").arg(NM_OPENVPN_VERIFY_X509_NAME_TYPE_NAME_PREFIX, m_ui->subjectMatch->text()));
         break;
     case CertCheckType::VerifySubjectPartially:
         data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE), m_ui->subjectMatch->text());

@@ -275,7 +275,7 @@ void OpenVpnSettingWidget::updateStartDir(const QUrl &url)
     QList<KUrlRequester *> requesters;
     requesters << d->ui.x509CaFile << d->ui.x509Cert << d->ui.x509Key << d->ui.pskSharedKey << d->ui.passCaFile << d->ui.x509PassCaFile << d->ui.x509PassCert
                << d->ui.x509PassKey;
-    for (KUrlRequester *requester : requesters) {
+    for (KUrlRequester *requester : qAsConst(requesters)) {
         requester->setStartDir(url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash));
     }
 }

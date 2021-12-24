@@ -85,7 +85,7 @@ void HwAddrComboBox::init(NetworkManager::Device::Type deviceType, const QString
     const int index = findData(m_initialAddress);
     if (index == -1) {
         if (!m_initialAddress.isEmpty()) {
-            const QString text = QStringLiteral("%1 (%2)").arg(deviceName).arg(m_initialAddress);
+            const QString text = QStringLiteral("%1 (%2)").arg(deviceName, m_initialAddress);
             insertItem(0, text, m_initialAddress);
         } else {
             insertItem(0, m_initialAddress, m_initialAddress);
@@ -113,7 +113,7 @@ void HwAddrComboBox::addAddressToCombo(const NetworkManager::Device::Ptr &device
         if (name == data.toString()) {
             addItem(data.toString(), data);
         } else {
-            addItem(QStringLiteral("%1 (%2)").arg(name).arg(data.toString()), data);
+            addItem(QStringLiteral("%1 (%2)").arg(name, data.toString()), data);
         }
     }
 }

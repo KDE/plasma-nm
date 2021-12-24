@@ -365,18 +365,13 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
     }
 
     const QString connectionName = QFileInfo(fileName).completeBaseName();
-    NMStringMap dataMap;
     NMVariantMapList peers;
-    QVariantMap ipv4Data;
     QVariantMap *currentPeer = nullptr;
     WireGuardKeyValidator keyValidator;
     NetworkManager::Ipv4Setting ipv4Setting;
     NetworkManager::Ipv6Setting ipv6Setting;
     NetworkManager::WireGuardSetting wgSetting;
 
-    QString proxyType;
-    QString proxyUser;
-    QString proxyPasswd;
     bool havePrivateKey = false;
     bool haveIpv4Setting = false;
     bool haveIpv6Setting = false;

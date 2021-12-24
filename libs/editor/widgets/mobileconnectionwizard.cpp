@@ -241,13 +241,13 @@ QWizardPage *MobileConnectionWizard::createIntroPage()
     label->setWordWrap(true);
     layout->addWidget(label);
 
-    label = new QLabel('\n' + i18nc("Mobile Connection Wizard", "You will need the following information:"));
+    label = new QLabel(QLatin1Char('\n') + i18nc("Mobile Connection Wizard", "You will need the following information:"));
     layout->addWidget(label);
 
-    label = new QLabel(QString("  . %1\n  . %2\n  . %3")
-                           .arg(i18nc("Mobile Connection Wizard", "Your broadband provider's name"))
-                           .arg(i18nc("Mobile Connection Wizard", "Your broadband billing plan name"))
-                           .arg(i18nc("Mobile Connection Wizard", "(in some cases) Your broadband billing plan APN (Access Point Name)")));
+    label = new QLabel(QStringLiteral("  . %1\n  . %2\n  . %3")
+                           .arg(i18nc("Mobile Connection Wizard", "Your broadband provider's name"),
+                                i18nc("Mobile Connection Wizard", "Your broadband billing plan name"),
+                                i18nc("Mobile Connection Wizard", "(in some cases) Your broadband billing plan APN (Access Point Name)")));
     layout->addWidget(label);
 
     if (!mInitialMethodType) {

@@ -113,7 +113,7 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
             continue;
         }
 
-        for (const NetworkManager::WirelessDevice::Ptr &wifiDev : wifiDevices) {
+        for (const NetworkManager::WirelessDevice::Ptr &wifiDev : qAsConst(wifiDevices)) {
             if (wifiDev->findNetwork(network->ssid()) == network) {
                 if (!empty) {
                     insertSeparator(count());

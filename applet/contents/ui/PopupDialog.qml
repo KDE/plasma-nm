@@ -12,9 +12,9 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
-PlasmaComponents3.Page {
+PlasmaExtras.Representation {
     id: full
-
+    collapseMarginsHint: true
     property alias toolbarValues: toolbar
 
     PlasmaNM.AvailableDevices {
@@ -69,15 +69,20 @@ PlasmaComponents3.Page {
         }
     }
 
-    FocusScope {
-
+    PlasmaComponents3.ScrollView {
+        id: scrollView
         anchors.fill: parent
-        anchors.topMargin: PlasmaCore.Units.smallSpacing * 2
+        leftPadding: PlasmaCore.Units.smallSpacing * 2
+        rightPadding: PlasmaCore.Units.smallSpacing * 2
 
-        PlasmaExtras.ScrollArea {
-            id: scrollView
-            anchors.fill: parent
-            frameVisible: false
+        // HACK: workaround for https://bugreports.qt.io/browse/QTBUG-83890
+        PlasmaComponents3.ScrollBar.horizontal.policy: PlasmaComponents3.ScrollBar.AlwaysOff
+
+        contentItem: ListView {
+            id: connectionView
+
+            property int currentVisibleButtonIndex: -1
+            property bool showSeparator: false
 
             PlasmaExtras.PlaceholderMessage {
                 anchors.centerIn: parent
@@ -100,39 +105,36 @@ PlasmaComponents3.Page {
                 }
             }
 
-            ListView {
-                id: connectionView
-
-                property int currentVisibleButtonIndex: -1
-                property bool showSeparator: false
-
-                spacing: PlasmaCore.Units.smallSpacing
-                clip: true
-                model: appletProxyModel
-                currentIndex: -1
-                boundsBehavior: Flickable.StopAtBounds
-                section.property: showSeparator ? "Section" : ""
-                section.delegate: ListItem { separator: true }
-                highlight: PlasmaComponents.Highlight { }
-                highlightMoveDuration: 0
-                highlightResizeDuration: 0
-                delegate: ConnectionItem {
-                    width: connectionView.width
-                }
+            topMargin: PlasmaCore.Units.smallSpacing * 2
+            bottomMargin: PlasmaCore.Units.smallSpacing * 2
+            spacing: PlasmaCore.Units.smallSpacing
+            model: appletProxyModel
+            currentIndex: -1
+            boundsBehavior: Flickable.StopAtBounds
+            section.property: showSeparator ? "Section" : ""
+            section.delegate: ListItem {
+                separator: true
+                width: connectionView.width - (scrollView.PlasmaComponents3.ScrollBar.vertical.visible ? PlasmaCore.Units.smallSpacing * 4 : 0)
+            }
+            highlight: PlasmaComponents.Highlight { }
+            highlightMoveDuration: 0
+            highlightResizeDuration: 0
+            delegate: ConnectionItem {
+                width: connectionView.width - (scrollView.PlasmaComponents3.ScrollBar.vertical.visible ? PlasmaCore.Units.smallSpacing * 4 : 0)
             }
         }
+    }
 
-        Connections {
-            target: plasmoid
-            function onExpandedChanged(expanded) {
-                connectionView.currentVisibleButtonIndex = -1;
+    Connections {
+        target: plasmoid
+        function onExpandedChanged(expanded) {
+            connectionView.currentVisibleButtonIndex = -1;
 
-                if (expanded) {
-                    handler.requestScan();
-                    full.connectionModel = networkModelComponent.createObject(full)
-                } else {
-                    full.connectionModel.destroy()
-                }
+            if (expanded) {
+                handler.requestScan();
+                full.connectionModel = networkModelComponent.createObject(full)
+            } else {
+                full.connectionModel.destroy()
             }
         }
     }

@@ -46,7 +46,7 @@ Item {
         plasmoid.removeAction("configure");
         plasmoid.setAction("showPortal", i18n("Open Network Login Page…"), "internet-services");
 
-        var action = plasmoid.action("showPortal");
+        const action = plasmoid.action("showPortal");
         action.visible = Qt.binding(function() { return connectionIconProvider.needsPortal; })
     }
 

@@ -72,8 +72,6 @@ PlasmaExtras.Representation {
     PlasmaComponents3.ScrollView {
         id: scrollView
         anchors.fill: parent
-        leftPadding: PlasmaCore.Units.smallSpacing * 2
-        rightPadding: PlasmaCore.Units.smallSpacing * 2
 
         // HACK: workaround for https://bugreports.qt.io/browse/QTBUG-83890
         PlasmaComponents3.ScrollBar.horizontal.policy: PlasmaComponents3.ScrollBar.AlwaysOff
@@ -107,6 +105,8 @@ PlasmaExtras.Representation {
 
             topMargin: PlasmaCore.Units.smallSpacing * 2
             bottomMargin: PlasmaCore.Units.smallSpacing * 2
+            leftMargin: PlasmaCore.Units.smallSpacing * 2
+            rightMargin: PlasmaCore.Units.smallSpacing * 2
             spacing: PlasmaCore.Units.smallSpacing
             model: appletProxyModel
             currentIndex: -1
@@ -114,13 +114,13 @@ PlasmaExtras.Representation {
             section.property: showSeparator ? "Section" : ""
             section.delegate: ListItem {
                 separator: true
-                width: connectionView.width - (scrollView.PlasmaComponents3.ScrollBar.vertical.visible ? PlasmaCore.Units.smallSpacing * 4 : 0)
+                width: connectionView.width - PlasmaCore.Units.smallSpacing * 4
             }
             highlight: PlasmaComponents.Highlight { }
             highlightMoveDuration: 0
             highlightResizeDuration: 0
             delegate: ConnectionItem {
-                width: connectionView.width - (scrollView.PlasmaComponents3.ScrollBar.vertical.visible ? PlasmaCore.Units.smallSpacing * 4 : 0)
+                width: connectionView.width - PlasmaCore.Units.smallSpacing * 4
             }
         }
     }

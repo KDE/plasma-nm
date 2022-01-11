@@ -10,8 +10,6 @@ target_sources(plasmanetworkmanagement_iodineui PRIVATE
 )
 ki18n_wrap_ui(plasmanetworkmanagement_iodineui iodine.ui iodineauth.ui)
 
-kcoreaddons_desktop_to_json(plasmanetworkmanagement_iodineui plasmanetworkmanagement_iodineui.desktop)
-
 target_link_libraries(plasmanetworkmanagement_iodineui
     plasmanm_internal
     plasmanm_editor

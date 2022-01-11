@@ -12,8 +12,6 @@ target_sources(plasmanetworkmanagement_l2tpui PRIVATE
 )
 ki18n_wrap_ui(plasmanetworkmanagement_l2tpui l2tp.ui l2tpipsec.ui l2tpppp.ui)
 
-kcoreaddons_desktop_to_json(plasmanetworkmanagement_l2tpui plasmanetworkmanagement_l2tpui.desktop)
-
 target_link_libraries(plasmanetworkmanagement_l2tpui
     plasmanm_internal
     plasmanm_editor

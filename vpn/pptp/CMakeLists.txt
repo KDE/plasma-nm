@@ -9,9 +9,6 @@ target_sources(plasmanetworkmanagement_pptpui PRIVATE
    )
 ki18n_wrap_ui(plasmanetworkmanagement_pptpui pptpprop.ui pptpadvanced.ui pptpauth.ui)
 
-
-kcoreaddons_desktop_to_json(plasmanetworkmanagement_pptpui plasmanetworkmanagement_pptpui.desktop)
-
 target_link_libraries(plasmanetworkmanagement_pptpui
     plasmanm_internal
     plasmanm_editor

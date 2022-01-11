@@ -28,7 +28,6 @@ macro(add_openconnect_plugin name)
         PkgConfig::OPENCONNECT
     )
 
-    kcoreaddons_desktop_to_json(plasmanetworkmanagement_openconnect_${name} "plasmanetworkmanagement_openconnect_${name}.desktop")
     install(TARGETS plasmanetworkmanagement_openconnect_${name}  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)
 endmacro()
 

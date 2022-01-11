@@ -10,8 +10,6 @@ target_sources(plasmanetworkmanagement_sshui PRIVATE
    )
 ki18n_wrap_ui(plasmanetworkmanagement_sshui sshwidget.ui sshadvanced.ui sshauth.ui)
 
-kcoreaddons_desktop_to_json(plasmanetworkmanagement_sshui plasmanetworkmanagement_sshui.desktop)
-
 target_link_libraries(plasmanetworkmanagement_sshui
     plasmanm_internal
     plasmanm_editor

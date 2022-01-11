@@ -10,8 +10,6 @@ target_sources(plasmanetworkmanagement_fortisslvpnui PRIVATE
 )
 ki18n_wrap_ui(plasmanetworkmanagement_fortisslvpnui fortisslvpn.ui fortisslvpnadvanced.ui fortisslvpnauth.ui)
 
-kcoreaddons_desktop_to_json(plasmanetworkmanagement_fortisslvpnui plasmanetworkmanagement_fortisslvpnui.desktop)
-
 target_link_libraries(plasmanetworkmanagement_fortisslvpnui
     plasmanm_internal
     plasmanm_editor

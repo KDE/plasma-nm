@@ -11,9 +11,6 @@ ecm_qt_declare_logging_category(plasmanetworkmanagement_vpncui HEADER plasma_nm_
 
 ki18n_wrap_ui(plasmanetworkmanagement_vpncui vpnc.ui vpncadvanced.ui vpncauth.ui)
 
-
-kcoreaddons_desktop_to_json(plasmanetworkmanagement_vpncui plasmanetworkmanagement_vpncui.desktop)
-
 target_link_libraries(plasmanetworkmanagement_vpncui
     plasmanm_internal
     plasmanm_editor

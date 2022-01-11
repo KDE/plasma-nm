@@ -15,8 +15,6 @@ target_sources(plasmanetworkmanagement_openvpnui PRIVATE
 ecm_qt_declare_logging_category(plasmanetworkmanagement_openvpnui HEADER plasma_nm_openvpn.h IDENTIFIER PLASMA_NM_OPENVPN_LOG CATEGORY_NAME org.kde.plasma.nm.openvpn DESCRIPTION "Plasma NM (openvpn plugins)" EXPORT PLASMANM)
 ki18n_wrap_ui(plasmanetworkmanagement_openvpnui openvpn.ui openvpnadvanced.ui)
 
-kcoreaddons_desktop_to_json(plasmanetworkmanagement_openvpnui plasmanetworkmanagement_openvpnui.desktop)
-
 target_link_libraries(plasmanetworkmanagement_openvpnui
     plasmanm_internal
     plasmanm_editor

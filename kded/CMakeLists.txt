@@ -36,7 +36,6 @@ ecm_qt_declare_logging_category(kded_networkmanagement_SRCS HEADER plasma_nm_kde
 
 add_library(kded_networkmanagement MODULE ${kded_networkmanagement_SRCS})
 set_target_properties(kded_networkmanagement PROPERTIES OUTPUT_NAME networkmanagement)
-kcoreaddons_desktop_to_json(kded_networkmanagement networkmanagement.desktop)
 
 target_link_libraries(kded_networkmanagement
     plasmanm_internal

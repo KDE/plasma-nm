@@ -10,8 +10,6 @@ target_sources(plasmanetworkmanagement_sstpui PRIVATE
    )
 ki18n_wrap_ui(plasmanetworkmanagement_sstpui sstpwidget.ui sstpadvanced.ui sstpauth.ui)
 
-kcoreaddons_desktop_to_json(plasmanetworkmanagement_sstpui plasmanetworkmanagement_sstpui.desktop)
-
 target_link_libraries(plasmanetworkmanagement_sstpui
     plasmanm_internal
     plasmanm_editor

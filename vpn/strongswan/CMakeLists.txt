@@ -10,8 +10,6 @@ target_sources(plasmanetworkmanagement_strongswanui PRIVATE
    )
 ki18n_wrap_ui(plasmanetworkmanagement_strongswanui strongswanprop.ui strongswanauth.ui)
 
-kcoreaddons_desktop_to_json(plasmanetworkmanagement_strongswanui plasmanetworkmanagement_strongswanui.desktop)
-
 target_link_libraries(plasmanetworkmanagement_strongswanui
     plasmanm_internal
     plasmanm_editor

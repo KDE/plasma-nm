@@ -10,8 +10,8 @@ target_link_libraries(kcm_mobile_hotspot
     KF5::QuickAddons
 )
 
-kcoreaddons_desktop_to_json(kcm_mobile_hotspot "package/metadata.desktop")
+kcoreaddons_desktop_to_json(kcm_mobile_hotspot "hotspotsettings.desktop")
 
-install(FILES package/metadata.desktop RENAME hotspotsettings.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
+install(FILES hotspotsettings.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR})
 install(TARGETS kcm_mobile_hotspot DESTINATION ${KDE_INSTALL_PLUGINDIR}/kcms)
 kpackage_install_package(package kcm_mobile_hotspot kcms)

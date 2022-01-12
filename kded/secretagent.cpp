@@ -189,7 +189,8 @@ void SecretAgent::dialogAccepted()
                 } else if (completeConnectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
                     NetworkManager::WirelessSecuritySetting::Ptr wirelessSecuritySetting =
                         completeConnectionSettings->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
-                    if (wirelessSecuritySetting && wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEap) {
+                    if (wirelessSecuritySetting && wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEap
+                        || wirelessSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEapSuiteB192) {
                         NetworkManager::Security8021xSetting::Ptr security8021xSetting =
                             completeConnectionSettings->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>();
                         if (security8021xSetting) {

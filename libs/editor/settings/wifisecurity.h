@@ -26,7 +26,7 @@ class Q_DECL_EXPORT WifiSecurity : public SettingWidget
 public:
     // Keep this in sync with NetworkManager::WirelessSecurityType from
     // NetworkManagerQt.
-    enum SecurityTypeIndex { None = 0, WepHex, WepPassphrase, Leap, DynamicWep, WpaPsk, WpaEap, SAE };
+    enum SecurityTypeIndex { None = 0, WepHex, WepPassphrase, Leap, DynamicWep, WpaPsk, WpaEap, SAE, Wpa3SuiteB192 };
 
     explicit WifiSecurity(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
                           const NetworkManager::Security8021xSetting::Ptr &setting8021x = NetworkManager::Security8021xSetting::Ptr(),
@@ -57,6 +57,7 @@ private:
     Ui::WifiSecurity *const m_ui;
     Security8021x *m_8021xWidget = nullptr;
     Security8021x *m_WPA2Widget = nullptr;
+    Security8021x *m_WPA3SuiteB192Widget = nullptr;
     NetworkManager::WirelessSecuritySetting::Ptr m_wifiSecurity;
     bool m_systemWideDefault = false;
 };

@@ -14,7 +14,7 @@ WiredSecurity::WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &se
 {
     m_ui->setupUi(this);
 
-    m_8021xWidget = new Security8021x(m_8021xSetting, false, this);
+    m_8021xWidget = new Security8021x(m_8021xSetting, Security8021x::Ethernet, this);
     m_8021xWidget->setDisabled(true);
 
     m_ui->verticalLayout->addWidget(m_8021xWidget);

@@ -26,10 +26,17 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting,
     m_ui->psk->setPasswordOptionsEnabled(true);
     m_ui->wepKey->setPasswordOptionsEnabled(true);
 
-    m_8021xWidget = new Security8021x(setting8021x, true, this); // Dynamic WEP
-    m_WPA2Widget = new Security8021x(setting8021x, true, this); // WPA(2) Enterprise
+    m_8021xWidget = new Security8021x(setting8021x, Security8021x::WirelessWpaEap, this); // Dynamic WEP
+    m_WPA2Widget = new Security8021x(setting8021x, Security8021x::WirelessWpaEap, this); // WPA(2) Enterprise
+    m_WPA3SuiteB192Widget = new Security8021x(setting8021x, Security8021x::WirelessWpaEapSuiteB192, this); // WPA3 Enterprise Suite B 192
     m_ui->stackedWidget->insertWidget(3, m_8021xWidget);
     m_ui->stackedWidget->insertWidget(5, m_WPA2Widget);
+    m_ui->stackedWidget->insertWidget(6, m_WPA3SuiteB192Widget);
+
+    // WPA3 Enterprise is available in NM 1.30+
+    if (!NetworkManager::checkVersion(1, 30, 0)) {
+        m_ui->securityCombo->removeItem(8);
+    }
 
     // WPA3 Personal is available in NM 1.16+
     if (!NetworkManager::checkVersion(1, 16, 0)) {
@@ -54,6 +61,7 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting,
     connect(m_ui->securityCombo, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiSecurity::slotWidgetChanged);
     connect(m_8021xWidget, &Security8021x::validChanged, this, &WifiSecurity::slotWidgetChanged);
     connect(m_WPA2Widget, &Security8021x::validChanged, this, &WifiSecurity::slotWidgetChanged);
+    connect(m_WPA3SuiteB192Widget, &Security8021x::validChanged, this, &WifiSecurity::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 
@@ -74,7 +82,7 @@ bool WifiSecurity::enabled() const
 
 bool WifiSecurity::enabled8021x() const
 {
-    if (m_ui->securityCombo->currentIndex() == 4 || m_ui->securityCombo->currentIndex() == 6) {
+    if (m_ui->securityCombo->currentIndex() == 4 || m_ui->securityCombo->currentIndex() == 6 || m_ui->securityCombo->currentIndex() == 8) {
         return true;
     }
 
@@ -101,6 +109,8 @@ bool WifiSecurity::isValid() const
         return m_8021xWidget->isValid();
     } else if (securityIndex == WpaEap) {
         return m_WPA2Widget->isValid();
+    } else if (securityIndex == Wpa3SuiteB192) {
+        return m_WPA3SuiteB192Widget->isValid();
     } else if (securityIndex == SAE) {
         return !m_ui->psk->text().isEmpty() || m_ui->psk->passwordOption() == PasswordField::AlwaysAsk;
     }
@@ -196,9 +206,13 @@ void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
         } else {
             m_ui->psk->setPasswordOption(PasswordField::AlwaysAsk);
         }
+    } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEapSuiteB192) {
+        m_ui->securityCombo->setCurrentIndex(Wpa3SuiteB192); // WPA3 Enterprise Suite B 192
+        // done in the widget
     }
 
-    if (keyMgmt != NetworkManager::WirelessSecuritySetting::Ieee8021x && keyMgmt != NetworkManager::WirelessSecuritySetting::WpaEap) {
+    if (keyMgmt != NetworkManager::WirelessSecuritySetting::Ieee8021x && keyMgmt != NetworkManager::WirelessSecuritySetting::WpaEap
+        && keyMgmt != NetworkManager::WirelessSecuritySetting::WpaEapSuiteB192) {
         loadSecrets(setting);
     }
 }
@@ -209,13 +223,15 @@ void WifiSecurity::loadSecrets(const NetworkManager::Setting::Ptr &setting)
     const NetworkManager::WirelessSecuritySetting::AuthAlg authAlg = m_wifiSecurity->authAlg();
 
     if ((keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x && authAlg != NetworkManager::WirelessSecuritySetting::Leap)
-        || keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEap) {
+        || keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEap || keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEapSuiteB192) {
         NetworkManager::Security8021xSetting::Ptr security8021xSetting = setting.staticCast<NetworkManager::Security8021xSetting>();
         if (security8021xSetting) {
             if (keyMgmt == NetworkManager::WirelessSecuritySetting::Ieee8021x) {
                 m_8021xWidget->loadSecrets(security8021xSetting);
-            } else {
+            } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEap) {
                 m_WPA2Widget->loadSecrets(security8021xSetting);
+            } else {
+                m_WPA3SuiteB192Widget->loadSecrets(security8021xSetting);
             }
         }
     } else {
@@ -319,6 +335,9 @@ QVariantMap WifiSecurity::setting() const
         } else {
             wifiSecurity.setPskFlags(NetworkManager::Setting::NotSaved);
         }
+    } else if (securityIndex == Wpa3SuiteB192) { // WPA3 Enterprise Suite B 192
+        wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaEapSuiteB192);
+        wifiSecurity.setPmf(NetworkManager::WirelessSecuritySetting::RequiredPmf);
     }
 
     return wifiSecurity.toMap();
@@ -330,6 +349,8 @@ QVariantMap WifiSecurity::setting8021x() const
         return m_8021xWidget->setting();
     } else if (m_ui->securityCombo->currentIndex() == WpaEap) { // WPA2 Enterprise
         return m_WPA2Widget->setting();
+    } else if (m_ui->securityCombo->currentIndex() == Wpa3SuiteB192) { // WPA3 Enterprise Suite B 192
+        return m_WPA3SuiteB192Widget->setting();
     }
 
     return {};
@@ -376,6 +397,9 @@ void WifiSecurity::onSsidChanged(const QString &ssid)
                         case NetworkManager::WirelessSecurityType::SAE:
                             m_ui->securityCombo->setCurrentIndex(SAE);
                             break;
+                        case NetworkManager::WirelessSecurityType::Wpa3SuiteB192:
+                            m_ui->securityCombo->setCurrentIndex(Wpa3SuiteB192);
+                            break;
                         default:
                             m_ui->securityCombo->setCurrentIndex(None);
                         }
@@ -418,6 +442,8 @@ void WifiSecurity::securityChanged(int index)
         m_ui->stackedWidget->setCurrentIndex(4);
     } else if (index == WpaEap) {
         m_ui->stackedWidget->setCurrentIndex(5);
+    } else if (index == Wpa3SuiteB192) {
+        m_ui->stackedWidget->setCurrentIndex(6);
     }
 
     KAcceleratorManager::manage(m_ui->stackedWidget->currentWidget());

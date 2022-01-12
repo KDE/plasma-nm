@@ -24,8 +24,10 @@ class Q_DECL_EXPORT Security8021x : public SettingWidget
 {
     Q_OBJECT
 public:
+    enum Type { Ethernet = 0, WirelessWpaEap, WirelessWpaEapSuiteB192 };
+
     explicit Security8021x(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
-                           bool wifiMode = true,
+                           Type type = WirelessWpaEap,
                            QWidget *parent = nullptr,
                            Qt::WindowFlags f = {});
     ~Security8021x() override;

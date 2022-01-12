@@ -187,6 +187,7 @@ QString Handler::wifiCode(const QString &connectionPath, const QString &ssid, in
         case NetworkManager::DynamicWep:
         case NetworkManager::WpaEap:
         case NetworkManager::Wpa2Eap:
+        case NetworkManager::Wpa3SuiteB192:
         case NetworkManager::Leap:
             return {};
         }
@@ -268,6 +269,7 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
 
     if (securityType == NetworkManager::Leap //
         || securityType == NetworkManager::DynamicWep //
+        || securityType == NetworkManager::Wpa3SuiteB192 //
         || securityType == NetworkManager::Wpa2Eap //
         || securityType == NetworkManager::WpaEap) {
         if (securityType == NetworkManager::DynamicWep || securityType == NetworkManager::Leap) {
@@ -275,6 +277,8 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
             if (securityType == NetworkManager::Leap) {
                 wifiSecurity->setAuthAlg(NetworkManager::WirelessSecuritySetting::Leap);
             }
+        } else if (securityType == NetworkManager::Wpa3SuiteB192) {
+            wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaEapSuiteB192);
         } else {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaEap);
         }

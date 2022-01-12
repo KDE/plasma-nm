@@ -385,6 +385,7 @@ void ConnectionEditorBase::initialize()
                     connection->settings()->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>();
                 if (wifiSecuritySetting
                     && (wifiSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEap
+                        || wifiSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WpaEapSuiteB192
                         || (wifiSecuritySetting->keyMgmt() == NetworkManager::WirelessSecuritySetting::WirelessSecuritySetting::Ieee8021x
                             && wifiSecuritySetting->authAlg() != NetworkManager::WirelessSecuritySetting::Leap))) {
                     NetworkManager::Security8021xSetting::Ptr securitySetting =

@@ -611,6 +611,9 @@ QString UiUtils::labelFromWirelessSecurity(NetworkManager::WirelessSecurityType 
     case NetworkManager::SAE:
         tip = i18nc("@label WPA3-SAE security", "WPA3-SAE");
         break;
+    case NetworkManager::Wpa3SuiteB192:
+        tip = i18nc("@label WPA3-EAP-SUITE-B-192 security", "WPA3-EAP-SUITE-B-192");
+        break;
     default:
         tip = i18nc("@label unknown security", "Unknown security type");
         break;

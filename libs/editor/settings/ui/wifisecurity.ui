@@ -63,6 +63,11 @@
        <string>WPA3 Personal</string>
       </property>
      </item>
+     <item>
+      <property name="text">
+       <string>WPA3 Enterprise 192-bit</string>
+      </property>
+     </item>
     </widget>
    </item>
    <item row="0" column="0">

@@ -14,7 +14,7 @@
 
 #include <QtCrypto>
 
-Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool wifiMode, QWidget *parent, Qt::WindowFlags f)
+Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, Type type, QWidget *parent, Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)
     , m_setting(setting.staticCast<NetworkManager::Security8021xSetting>())
     , m_ui(new Ui::Security8021x)
@@ -29,7 +29,7 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool w
     m_ui->tlsPrivateKeyPassword->setPasswordOptionsEnabled(true);
     m_ui->ttlsPassword->setPasswordOptionsEnabled(true);
 
-    if (wifiMode) {
+    if (type == WirelessWpaEap) {
         m_ui->auth->removeItem(0); // MD 5
         m_ui->stackedWidget->removeWidget(m_ui->md5Page);
 
@@ -39,6 +39,22 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool w
         m_ui->auth->setItemData(3, NetworkManager::Security8021xSetting::EapMethodFast);
         m_ui->auth->setItemData(4, NetworkManager::Security8021xSetting::EapMethodTtls);
         m_ui->auth->setItemData(5, NetworkManager::Security8021xSetting::EapMethodPeap);
+    } else if (type == WirelessWpaEapSuiteB192) {
+        // Remove all methods except TLS
+        m_ui->auth->removeItem(6); // Protected EAP (PEAP)
+        m_ui->auth->removeItem(5); // Tunneled TLS (TTLS)
+        m_ui->auth->removeItem(4); // FAST
+        m_ui->auth->removeItem(3); // PWD
+        m_ui->auth->removeItem(2); // LEAP
+        m_ui->auth->removeItem(0); // MD5
+        m_ui->stackedWidget->removeWidget(m_ui->peapPage);
+        m_ui->stackedWidget->removeWidget(m_ui->ttlsPage);
+        m_ui->stackedWidget->removeWidget(m_ui->fastPage);
+        m_ui->stackedWidget->removeWidget(m_ui->pwdPage);
+        m_ui->stackedWidget->removeWidget(m_ui->leapPage);
+        m_ui->stackedWidget->removeWidget(m_ui->md5Page);
+
+        m_ui->auth->setItemData(0, NetworkManager::Security8021xSetting::EapMethodTls);
     } else {
         m_ui->auth->removeItem(2); // LEAP
         m_ui->stackedWidget->removeWidget(m_ui->leapPage);
@@ -51,8 +67,13 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool w
         m_ui->auth->setItemData(5, NetworkManager::Security8021xSetting::EapMethodPeap);
     }
 
-    // Set PEAP authentication as default
-    m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodPeap));
+    if (type == WirelessWpaEapSuiteB192) {
+        // Set TLS authentication as default
+        m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodTls));
+    } else {
+        // Set PEAP authentication as default
+        m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodPeap));
+    }
 
     connect(m_ui->btnTlsAltSubjectMatches, &QPushButton::clicked, this, &Security8021x::altSubjectMatchesButtonClicked);
     connect(m_ui->btnTlsConnectToServers, &QPushButton::clicked, this, &Security8021x::connectToServersButtonClicked);

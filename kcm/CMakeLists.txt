@@ -1,9 +1,8 @@
 #KI18N Translation Domain for this library
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-kcm\")
 
+kcoreaddons_add_plugin(kcm_networkmanagement INSTALL_NAMESPACE "plasma/kcms/systemsettings_qwidgets")
 
-
-add_library(kcm_networkmanagement MODULE)
 target_sources(kcm_networkmanagement PRIVATE
     kcm.cpp
     kcm.h
@@ -22,11 +21,10 @@ target_link_libraries(kcm_networkmanagement
     Qt::Quick
     Qt::QuickWidgets
 )
-install(TARGETS kcm_networkmanagement  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 ########### install files ###############
 
-install( FILES kcm_networkmanagement.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+install( FILES kcm_networkmanagement.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
 install( FILES
     qml/AddConnectionDialog.qml
     qml/ConfigurationDialog.qml

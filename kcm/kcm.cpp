@@ -46,7 +46,7 @@
 #include <QTimer>
 #include <QVBoxLayout>
 
-K_PLUGIN_FACTORY(KCMNetworkConfigurationFactory, registerPlugin<KCMNetworkmanagement>();)
+K_PLUGIN_CLASS_WITH_JSON(KCMNetworkmanagement, "kcm_networkmanagement.json")
 
 KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &args)
     : KCModule(parent, args)

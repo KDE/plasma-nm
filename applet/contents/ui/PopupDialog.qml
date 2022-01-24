@@ -114,7 +114,6 @@ PlasmaExtras.Representation {
             section.property: showSeparator ? "Section" : ""
             section.delegate: ListItem {
                 separator: true
-                width: connectionView.width - PlasmaCore.Units.smallSpacing * 4
             }
             highlight: PlasmaComponents.Highlight { }
             highlightMoveDuration: 0

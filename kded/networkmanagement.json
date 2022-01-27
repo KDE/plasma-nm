@@ -1,6 +1,12 @@
 {
     "KPlugin": {
         "Description": "Provides secrets to the NetworkManager daemon",
+        "Description[ca]": "Proporciona secrets al dimoni NetworkManager",
+        "Description[es]": "Proporciona contraseñas al demonio de NetworkManager",
+        "Description[nl]": "Levert secrets aan de NetworkManager-daemon",
+        "Description[sv]": "Tillhandahåller hemligheter till nätverkshanteringsdemonen",
+        "Description[uk]": "Надає реєстраційні дані фоновій службі NetworkManager",
+        "Description[x-test]": "xxProvides secrets to the NetworkManager daemonxx",
         "Name": "Plasma Network Management module",
         "Name[ar]": "وحدة بلازما لإدارة الشّبكة",
         "Name[ast]": "Módulu de la xestión de redes de Plasma",

@@ -2,6 +2,12 @@
     "Categories": "Qt;KDE;X-KDE-settings-system;",
     "KPlugin": {
         "Description": "Wireless network setting",
+        "Description[ca]": "Configuració de la xarxa sense fil",
+        "Description[es]": "Preferencias de la red inalámbrica",
+        "Description[nl]": "Instelling van draadloos netwerk",
+        "Description[sv]": "Trådlös nätverksinställning",
+        "Description[uk]": "Налаштовування бездротової мережі",
+        "Description[x-test]": "xxWireless network settingxx",
         "FormFactors": [
             "handset",
             "tablet",
@@ -18,7 +24,7 @@
         "Name[da]": "Wi-fi",
         "Name[de]": "Wi-Fi",
         "Name[en_GB]": "Wi-Fi",
-        "Name[es]": "Wi-Fi",
+        "Name[es]": "Wifi",
         "Name[et]": "Wi-Fi",
         "Name[eu]": "Wi-Fi",
         "Name[fi]": "Langaton verkko",

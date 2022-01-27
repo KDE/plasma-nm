@@ -3,11 +3,23 @@
         "Authors": [
             {
                 "Email": "jgrulich@redhat.com",
-                "Name": "Jan Grulich"
+                "Name": "Jan Grulich",
+                "Name[ca]": "Jan Grulich",
+                "Name[es]": "Jan Grulich",
+                "Name[nl]": "Jan Grulich",
+                "Name[sv]": "Jan Grulich",
+                "Name[uk]": "Jan Grulich",
+                "Name[x-test]": "xxJan Grulichxx"
             }
         ],
         "Category": "VPNService",
         "Description": "Tunnel connections via DNS",
+        "Description[ca]": "Túnel de connexions via DNS",
+        "Description[es]": "Conexiones de túnel que usan DNS",
+        "Description[nl]": "Tunnelverbindingen via DNS",
+        "Description[sv]": "Tunnelanslutningar via DNS",
+        "Description[uk]": "Тунельоване з’єднання за допомогою DNS",
+        "Description[x-test]": "xxTunnel connections via DNSxx",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_iodineui",

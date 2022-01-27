@@ -3,11 +3,23 @@
         "Authors": [
             {
                 "Email": "jgrulich@redhat.com,ltinkl@redhat.com",
-                "Name": "Jan Grulich,Lukáš Tinkl"
+                "Name": "Jan Grulich,Lukáš Tinkl",
+                "Name[ca]": "Jan Grulich,Lukáš Tinkl",
+                "Name[es]": "Jan Grulich,Lukáš Tinkl",
+                "Name[nl]": "Jan Grulich,Lukáš Tinkl",
+                "Name[sv]": "Jan Grulich,Lukáš Tinkl",
+                "Name[uk]": "Jan Grulich, Lukáš Tinkl",
+                "Name[x-test]": "xxJan Grulich,Lukáš Tinklxx"
             }
         ],
         "Category": "System Information",
         "Description": "Network status and control",
+        "Description[ca]": "Control i estat de la xarxa",
+        "Description[es]": "Estado y control de redes",
+        "Description[nl]": "Netwerkstatus en besturing",
+        "Description[sv]": "Nätverksstatus och kontroll",
+        "Description[uk]": "Стеження за станом і керування мережею",
+        "Description[x-test]": "xxNetwork status and controlxx",
         "EnabledByDefault": true,
         "FormFactors": [
             "desktop"

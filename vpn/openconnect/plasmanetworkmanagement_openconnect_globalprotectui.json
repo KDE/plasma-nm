@@ -3,11 +3,23 @@
         "Authors": [
             {
                 "Email": "jgrulich@redhat.com",
-                "Name": "Jan Grulich"
+                "Name": "Jan Grulich",
+                "Name[ca]": "Jan Grulich",
+                "Name[es]": "Jan Grulich",
+                "Name[nl]": "Jan Grulich",
+                "Name[sv]": "Jan Grulich",
+                "Name[uk]": "Jan Grulich",
+                "Name[x-test]": "xxJan Grulichxx"
             }
         ],
         "Category": "VPNService",
         "Description": "Compatible with PAN GlobalProtect SSL VPN",
+        "Description[ca]": "Compatible amb la PAN VPN SSL de GlobalProtect",
+        "Description[es]": "Compatible con VPN SSL de PAN GlobalProtect",
+        "Description[nl]": "Compatibel met PAN GlobalProtect SSL VPN",
+        "Description[sv]": "Kompatibel med PAN GlobalProtect SSL VPN",
+        "Description[uk]": "Сумісний із VPN SSL PAN GlobalProtect",
+        "Description[x-test]": "xxCompatible with PAN GlobalProtect SSL VPNxx",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_openconnect_globalprotect",

@@ -3,11 +3,23 @@
         "Authors": [
             {
                 "Email": "ltinkl@redhat.com",
-                "Name": "Lukáš Tinkl"
+                "Name": "Lukáš Tinkl",
+                "Name[ca]": "Lukáš Tinkl",
+                "Name[es]": "Lukáš Tinkl",
+                "Name[nl]": "Lukáš Tinkl",
+                "Name[sv]": "Lukáš Tinkl",
+                "Name[uk]": "Lukáš Tinkl",
+                "Name[x-test]": "xxLukáš Tinklxx"
             }
         ],
         "Category": "VPNService",
         "Description": "Compatible with Cisco AnyConnect SSL VPN",
+        "Description[ca]": "VPN sobre SSL compatible amb AnyConnect de Cisco",
+        "Description[es]": "VPN compatible con Cisco AnyConnect SSL",
+        "Description[nl]": "Compatibel met Cisco AnyConnect SSL VPN",
+        "Description[sv]": "Kompatibel med Cisco AnyConnect SSL VPN",
+        "Description[uk]": "VPN, сумісний з Cisco AnyConnect SSL",
+        "Description[x-test]": "xxCompatible with Cisco AnyConnect SSL VPNxx",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_openconnect_anyconnect",

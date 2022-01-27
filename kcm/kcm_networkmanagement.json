@@ -1,6 +1,12 @@
 {
     "KPlugin": {
         "Description": "Edit your Network Connections",
+        "Description[ca]": "Edita les connexions de xarxa",
+        "Description[es]": "Editar las conexiones de red",
+        "Description[nl]": "Bewerk uw netwerkverbindingen",
+        "Description[sv]": "Redigera dina nätverksanslutningar",
+        "Description[uk]": "Редагування ваших записів з’єднань з мережею",
+        "Description[x-test]": "xxEdit your Network Connectionsxx",
         "Icon": "preferences-system-network",
         "Name": "Connections",
         "Name[ar]": "الاتّصالات",

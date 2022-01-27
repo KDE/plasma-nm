@@ -3,11 +3,23 @@
         "Authors": [
             {
                 "Email": "jgrulich@redhat.com",
-                "Name": "Jan Grulich"
+                "Name": "Jan Grulich",
+                "Name[ca]": "Jan Grulich",
+                "Name[es]": "Jan Grulich",
+                "Name[nl]": "Jan Grulich",
+                "Name[sv]": "Jan Grulich",
+                "Name[uk]": "Jan Grulich",
+                "Name[x-test]": "xxJan Grulichxx"
             }
         ],
         "Category": "VPNService",
         "Description": "Compatible with L2TP VPN servers",
+        "Description[ca]": "Compatible amb els servidors VPN del L2TP",
+        "Description[es]": "Compatible con servidores VPN de L2TP",
+        "Description[nl]": "Compatibel met L2TP VPN servers",
+        "Description[sv]": "Kompatibel med L2TP VPN-servrar",
+        "Description[uk]": "Сумісні з L2TP сервери VPN",
+        "Description[x-test]": "xxCompatible with L2TP VPN serversxx",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_l2tpui",

@@ -3,11 +3,23 @@
         "Authors": [
             {
                 "Email": "lukas@kde.org",
-                "Name": "Lukáš Tinkl"
+                "Name": "Lukáš Tinkl",
+                "Name[ca]": "Lukáš Tinkl",
+                "Name[es]": "Lukáš Tinkl",
+                "Name[nl]": "Lukáš Tinkl",
+                "Name[sv]": "Lukáš Tinkl",
+                "Name[uk]": "Lukáš Tinkl",
+                "Name[x-test]": "xxLukáš Tinklxx"
             }
         ],
         "Category": "VPNService",
         "Description": "Compatible with the OpenVPN server",
+        "Description[ca]": "Compatible amb el servidor OpenVPN",
+        "Description[es]": "Compatible con el servidor de OpenVPN",
+        "Description[nl]": "Compatibel met de OpenVPN-server",
+        "Description[sv]": "Kompatibel med OpenVPN-server",
+        "Description[uk]": "Сумісний із сервером OpenVPN",
+        "Description[x-test]": "xxCompatible with the OpenVPN serverxx",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_openvpnui",

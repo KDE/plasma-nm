@@ -3,11 +3,23 @@
         "Authors": [
             {
                 "Email": "jgrulich@redhat.com",
-                "Name": "Jan Grulich"
+                "Name": "Jan Grulich",
+                "Name[ca]": "Jan Grulich",
+                "Name[es]": "Jan Grulich",
+                "Name[nl]": "Jan Grulich",
+                "Name[sv]": "Jan Grulich",
+                "Name[uk]": "Jan Grulich",
+                "Name[x-test]": "xxJan Grulichxx"
             }
         ],
         "Category": "VPNService",
         "Description": "Compatible with Juniper Network Connect",
+        "Description[ca]": "Compatible amb la Juniper Network Connect",
+        "Description[es]": "Compatible con Juniper Network Connect",
+        "Description[nl]": "Compatibel met Juniper Network Connect",
+        "Description[sv]": "Kompatibel med Juniper Network Connect",
+        "Description[uk]": "Сумісний із Juniper Network Connect",
+        "Description[x-test]": "xxCompatible with Juniper Network Connectxx",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_openconnect_juniperui",

@@ -3,11 +3,23 @@
         "Authors": [
             {
                 "Email": "jgrulich@redhat.com",
-                "Name": "Jan Grulich"
+                "Name": "Jan Grulich",
+                "Name[ca]": "Jan Grulich",
+                "Name[es]": "Jan Grulich",
+                "Name[nl]": "Jan Grulich",
+                "Name[sv]": "Jan Grulich",
+                "Name[uk]": "Jan Grulich",
+                "Name[x-test]": "xxJan Grulichxx"
             }
         ],
         "Category": "VPNService",
         "Description": "Fortinet SSLVPN virtual private networks",
+        "Description[ca]": "Xarxes privades virtuals Fortinet SSLVPN",
+        "Description[es]": "Redes privadas virtuales SSLVPN de Fortinet",
+        "Description[nl]": "Fortinet SSLVPN virtuele private netwerken",
+        "Description[sv]": "Fortinet SSLVPN virtuella privata nätverk",
+        "Description[uk]": "Віртуальні приватні мережі SSLVPN Fortinet",
+        "Description[x-test]": "xxFortinet SSLVPN virtual private networksxx",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_fortisslvpnui",

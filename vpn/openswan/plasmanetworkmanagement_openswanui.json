@@ -3,11 +3,23 @@
         "Authors": [
             {
                 "Email": "jgrulich@redhat.com",
-                "Name": "Jan Grulich"
+                "Name": "Jan Grulich",
+                "Name[ca]": "Jan Grulich",
+                "Name[es]": "Jan Grulich",
+                "Name[nl]": "Jan Grulich",
+                "Name[sv]": "Jan Grulich",
+                "Name[uk]": "Jan Grulich",
+                "Name[x-test]": "xxJan Grulichxx"
             }
         ],
         "Category": "VPNService",
         "Description": "IPsec, IKEv1, IKEv2 based VPN",
+        "Description[ca]": "VPN basada en IKEv1, IKEv2 sobre IPsec",
+        "Description[es]": "VPN basada en IPsec, IKEv1 e IKEv2",
+        "Description[nl]": "Op IPsec, IKEv1, IKEv2 gebaseerde VPN",
+        "Description[sv]": "IPsec, IKEv1, IKEv2-baserad VPN",
+        "Description[uk]": "VPN на основі IPsec, IKEv1, IKEv2",
+        "Description[x-test]": "xxIPsec, IKEv1, IKEv2 based VPNxx",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_openswanui",

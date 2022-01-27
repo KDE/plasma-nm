@@ -3,11 +3,23 @@
         "Authors": [
             {
                 "Email": "ltinkl@redhat.com",
-                "Name": "Lukáš Tinkl"
+                "Name": "Lukáš Tinkl",
+                "Name[ca]": "Lukáš Tinkl",
+                "Name[es]": "Lukáš Tinkl",
+                "Name[nl]": "Lukáš Tinkl",
+                "Name[sv]": "Lukáš Tinkl",
+                "Name[uk]": "Lukáš Tinkl",
+                "Name[x-test]": "xxLukáš Tinklxx"
             }
         ],
         "Category": "VPNService",
         "Description": "Compatible with Microsoft and other PPTP VPN servers",
+        "Description[ca]": "Compatible amb Microsoft i altres servidors VPN sobre PPTP",
+        "Description[es]": "Compatible con Microsoft y otros servidores PPTP VPN",
+        "Description[nl]": "Compatibel met Microsoft en andere PPTP VPN servers",
+        "Description[sv]": "Kompatibel med Microsoft och andra PPTP VPN-servrar",
+        "Description[uk]": "Сумісні з Microsoft та іншими серверами VPN PPTP",
+        "Description[x-test]": "xxCompatible with Microsoft and other PPTP VPN serversxx",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_pptpui",

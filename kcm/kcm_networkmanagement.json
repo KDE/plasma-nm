@@ -1,9 +1,13 @@
 {
     "KPlugin": {
         "Description": "Edit your Network Connections",
+        "Description[az]": "Şəbəkə bağlantılarınıza düzəliş edin",
         "Description[ca]": "Edita les connexions de xarxa",
         "Description[es]": "Editar las conexiones de red",
+        "Description[fr]": "Modifier vos connexions réseau",
+        "Description[hu]": "A hálózati kapcsolatok szerkesztése",
         "Description[nl]": "Bewerk uw netwerkverbindingen",
+        "Description[sl]": "Uredi vaše omrežne povezave",
         "Description[sv]": "Redigera dina nätverksanslutningar",
         "Description[uk]": "Редагування ваших записів з’єднань з мережею",
         "Description[x-test]": "xxEdit your Network Connectionsxx",

@@ -2,9 +2,13 @@
     "Categories": "Qt;KDE;X-KDE-settings-system;",
     "KPlugin": {
         "Description": "Wireless network setting",
+        "Description[az]": "Naqilsiz şəbəkə ayarları",
         "Description[ca]": "Configuració de la xarxa sense fil",
         "Description[es]": "Preferencias de la red inalámbrica",
+        "Description[fr]": "Paramètre de réseau sans fil",
+        "Description[hu]": "Vezeték nélküli hálózati beállítások",
         "Description[nl]": "Instelling van draadloos netwerk",
+        "Description[sl]": "Nastavitve brezžičnega omrežja",
         "Description[sv]": "Trådlös nätverksinställning",
         "Description[uk]": "Налаштовування бездротової мережі",
         "Description[x-test]": "xxWireless network settingxx",

@@ -6,6 +6,7 @@
         "Description[es]": "Proporciona contraseñas al demonio de NetworkManager",
         "Description[fr]": "Fournit des éléments secrets pour le démon « NetworkManager »",
         "Description[hu]": "Titkokat biztosít a NetworkManager démonhoz",
+        "Description[ia]": "Forni secretos per le demon de NetworkManager",
         "Description[it]": "Fornisce i segreti al demone NetworkManager",
         "Description[nl]": "Levert secrets aan de NetworkManager-daemon",
         "Description[sl]": "Ponuja skrivnosti za odzadnji program NetworkManager",

@@ -179,7 +179,7 @@ RowLayout {
     }
 
     Component.onCompleted: {
-        if (Kirigami.InputMethod.willShowOnActive) {
+        if (!Kirigami.InputMethod.willShowOnActive) {
             searchTextField.forceActiveFocus()
         }
     }

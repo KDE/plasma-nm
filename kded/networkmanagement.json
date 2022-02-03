@@ -9,6 +9,7 @@
         "Description[ia]": "Forni secretos per le demon de NetworkManager",
         "Description[it]": "Fornisce i segreti al demone NetworkManager",
         "Description[nl]": "Levert secrets aan de NetworkManager-daemon",
+        "Description[pt_BR]": "Fornece as senhas do serviço NetworkManager",
         "Description[sl]": "Ponuja skrivnosti za odzadnji program NetworkManager",
         "Description[sv]": "Tillhandahåller hemligheter till nätverkshanteringsdemonen",
         "Description[uk]": "Надає реєстраційні дані фоновій службі NetworkManager",

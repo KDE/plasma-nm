@@ -153,7 +153,7 @@ RowLayout {
 
         inputMethodHints: Qt.ImhNoPredictiveText
 
-        focus: !Kirigami.InputMethod.willShowOnActive
+        focus: Kirigami.InputMethod ? !Kirigami.InputMethod.willShowOnActive : true
         clearButtonShown: true
         placeholderText: i18nc("text field placeholder text", "Search…")
 
@@ -179,7 +179,7 @@ RowLayout {
     }
 
     Component.onCompleted: {
-        if (!Kirigami.InputMethod.willShowOnActive) {
+        if (!Kirigami.InputMethod || !Kirigami.InputMethod.willShowOnActive) {
             searchTextField.forceActiveFocus()
         }
     }

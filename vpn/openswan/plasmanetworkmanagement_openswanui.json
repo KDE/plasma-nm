@@ -4,6 +4,7 @@
             {
                 "Email": "jgrulich@redhat.com",
                 "Name": "Jan Grulich",
+                "Name[ar]": "Jan Grulich",
                 "Name[az]": "Jan Grulich",
                 "Name[ca]": "Jan Grulich",
                 "Name[es]": "Jan Grulich",
@@ -21,6 +22,7 @@
         ],
         "Category": "VPNService",
         "Description": "IPsec, IKEv1, IKEv2 based VPN",
+        "Description[ar]": "شبكات تعتمد على IPsec و IKEv1 و IKEv2",
         "Description[az]": "IPsec, IKEv1, IKEv2 əsaslı VPN",
         "Description[ca]": "VPN basada en IKEv1, IKEv2 sobre IPsec",
         "Description[es]": "VPN basada en IPsec, IKEv1 e IKEv2",

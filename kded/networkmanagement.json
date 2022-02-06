@@ -1,6 +1,7 @@
 {
     "KPlugin": {
         "Description": "Provides secrets to the NetworkManager daemon",
+        "Description[ar]": "توفّر الأسرار لعفريت «مديرالشّبكة»",
         "Description[az]": "NetworkManager xidməti üçün şifrə və açar təqdim edir",
         "Description[ca]": "Proporciona secrets al dimoni NetworkManager",
         "Description[es]": "Proporciona contraseñas al demonio de NetworkManager",

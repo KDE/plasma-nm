@@ -4,6 +4,7 @@
             {
                 "Email": "ltinkl@redhat.com",
                 "Name": "Lukáš Tinkl",
+                "Name[ar]": "Lukáš Tinkl",
                 "Name[az]": "Lukáš Tinkl",
                 "Name[ca]": "Lukáš Tinkl",
                 "Name[es]": "Lukáš Tinkl",
@@ -21,6 +22,7 @@
         ],
         "Category": "VPNService",
         "Description": "Compatible with various Cisco, Juniper, Netscreen and Sonicwall IPsec-based VPN gateways",
+        "Description[ar]": "متوافق مع العديد من بوابات الشبكات الخاصة  Cisco و Juniper و Netscreen و Sonicwall المستندة إلى IPsec",
         "Description[az]": "Müxtəlif Cisco, Juniper, Netscreen və Sonicwall IPsec əsaslı VPN şəbəkə keçidləri ilə ilə uyğun",
         "Description[ca]": "Compatible amb diverses passarel·les VPN basades en IPsec de Cisco, Juniper, Netscreen i Sonicwall",
         "Description[es]": "Compatible con diversas puertas de enlace VPN de Cisco, Juniper, Netscreen y Sonicwall basadas en IPsec",

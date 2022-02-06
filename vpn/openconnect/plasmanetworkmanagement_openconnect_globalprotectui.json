@@ -4,6 +4,7 @@
             {
                 "Email": "jgrulich@redhat.com",
                 "Name": "Jan Grulich",
+                "Name[ar]": "Jan Grulich",
                 "Name[az]": "Jan Grulich",
                 "Name[ca]": "Jan Grulich",
                 "Name[es]": "Jan Grulich",
@@ -21,6 +22,7 @@
         ],
         "Category": "VPNService",
         "Description": "Compatible with PAN GlobalProtect SSL VPN",
+        "Description[ar]": "متوافق مع PAN GlobalProtect SSL VPN",
         "Description[az]": "PAN GlobalProtect  ilə uyğun SSL VPN",
         "Description[ca]": "Compatible amb la PAN VPN SSL de GlobalProtect",
         "Description[es]": "Compatible con VPN SSL de PAN GlobalProtect",

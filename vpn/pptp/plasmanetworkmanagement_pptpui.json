@@ -4,6 +4,7 @@
             {
                 "Email": "ltinkl@redhat.com",
                 "Name": "Lukáš Tinkl",
+                "Name[ar]": "Lukáš Tinkl",
                 "Name[az]": "Lukáš Tinkl",
                 "Name[ca]": "Lukáš Tinkl",
                 "Name[es]": "Lukáš Tinkl",
@@ -21,6 +22,7 @@
         ],
         "Category": "VPNService",
         "Description": "Compatible with Microsoft and other PPTP VPN servers",
+        "Description[ar]": "متوافق مع «مايكروسوفت» وخواديم PPTP VPN الأخرى",
         "Description[az]": "Microsoft və digər PPTP VPN serverləri ilə uyğun",
         "Description[ca]": "Compatible amb Microsoft i altres servidors VPN sobre PPTP",
         "Description[es]": "Compatible con Microsoft y otros servidores PPTP VPN",

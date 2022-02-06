@@ -4,6 +4,7 @@
             {
                 "Email": "jgrulich@redhat.com",
                 "Name": "Jan Grulich",
+                "Name[ar]": "Jan Grulich",
                 "Name[az]": "Jan Grulich",
                 "Name[ca]": "Jan Grulich",
                 "Name[es]": "Jan Grulich",
@@ -21,6 +22,7 @@
         ],
         "Category": "VPNService",
         "Description": "Fortinet SSLVPN virtual private networks",
+        "Description[ar]": "الشبكات الخاصة الافتراضية فورت نت SSLVPN",
         "Description[az]": "Fortinet SSLVPN virtual gizli şəbəkələri",
         "Description[ca]": "Xarxes privades virtuals Fortinet SSLVPN",
         "Description[es]": "Redes privadas virtuales SSLVPN de Fortinet",

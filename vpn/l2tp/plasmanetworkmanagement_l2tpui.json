@@ -4,6 +4,7 @@
             {
                 "Email": "jgrulich@redhat.com",
                 "Name": "Jan Grulich",
+                "Name[ar]": "Jan Grulich",
                 "Name[az]": "Jan Grulich",
                 "Name[ca]": "Jan Grulich",
                 "Name[es]": "Jan Grulich",
@@ -21,6 +22,7 @@
         ],
         "Category": "VPNService",
         "Description": "Compatible with L2TP VPN servers",
+        "Description[ar]": "متوافق مع خوادم L2TP VPN",
         "Description[az]": "L2TP ilə uyğun VPN serverləri",
         "Description[ca]": "Compatible amb els servidors VPN del L2TP",
         "Description[es]": "Compatible con servidores VPN de L2TP",

@@ -4,6 +4,7 @@
             {
                 "Email": "jgrulich@redhat.com",
                 "Name": "Jan Grulich",
+                "Name[ar]": "Jan Grulich",
                 "Name[az]": "Jan Grulich",
                 "Name[ca]": "Jan Grulich",
                 "Name[es]": "Jan Grulich",
@@ -21,6 +22,7 @@
         ],
         "Category": "VPNService",
         "Description": "Compatible with Microsoft and other SSTP VPN servers",
+        "Description[ar]": "متوافق مع «مايكروسوفت» وخواديم SSTP VPN الأخرى",
         "Description[az]": "Microsoft və digərSSTP VPN serverləri ilə uyğun",
         "Description[ca]": "Compatible amb Microsoft i altres servidors VPN sobre SSTP",
         "Description[es]": "Compatible con Microsoft y otros servidores SSTP VPN",

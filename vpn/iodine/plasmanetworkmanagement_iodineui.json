@@ -4,6 +4,7 @@
             {
                 "Email": "jgrulich@redhat.com",
                 "Name": "Jan Grulich",
+                "Name[ar]": "Jan Grulich",
                 "Name[az]": "Jan Grulich",
                 "Name[ca]": "Jan Grulich",
                 "Name[es]": "Jan Grulich",
@@ -21,6 +22,7 @@
         ],
         "Category": "VPNService",
         "Description": "Tunnel connections via DNS",
+        "Description[ar]": "اتصالات مغلفة عن طريق DNS",
         "Description[az]": "DNS vasitəsi ilə tunel bağlantıları",
         "Description[ca]": "Túnel de connexions via DNS",
         "Description[es]": "Conexiones de túnel que usan DNS",

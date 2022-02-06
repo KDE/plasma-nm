@@ -4,6 +4,7 @@
             {
                 "Email": "lukas@kde.org",
                 "Name": "Lukáš Tinkl",
+                "Name[ar]": "Lukáš Tinkl",
                 "Name[az]": "Lukáš Tinkl",
                 "Name[ca]": "Lukáš Tinkl",
                 "Name[es]": "Lukáš Tinkl",
@@ -21,6 +22,7 @@
         ],
         "Category": "VPNService",
         "Description": "Compatible with the OpenVPN server",
+        "Description[ar]": "متوافق مع خادوم OpenVPN",
         "Description[az]": "OpenVPN serveri ilə uyğun",
         "Description[ca]": "Compatible amb el servidor OpenVPN",
         "Description[es]": "Compatible con el servidor de OpenVPN",

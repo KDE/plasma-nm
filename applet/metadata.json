@@ -4,6 +4,7 @@
             {
                 "Email": "jgrulich@redhat.com,ltinkl@redhat.com",
                 "Name": "Jan Grulich,Lukáš Tinkl",
+                "Name[ar]": "Jan Grulich,Lukáš Tinkl",
                 "Name[az]": "Jan Grulich,Lukáš Tinkl",
                 "Name[ca]": "Jan Grulich,Lukáš Tinkl",
                 "Name[es]": "Jan Grulich,Lukáš Tinkl",
@@ -21,6 +22,7 @@
         ],
         "Category": "System Information",
         "Description": "Network status and control",
+        "Description[ar]": "حالة الشّبكة والتّحكّم بها",
         "Description[az]": "Şəbəkə statusu və idarəsi",
         "Description[ca]": "Control i estat de la xarxa",
         "Description[es]": "Estado y control de redes",

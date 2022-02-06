@@ -4,6 +4,7 @@
             {
                 "Email": "jgrulich@redhat.com",
                 "Name": "Jan Grulich",
+                "Name[ar]": "Jan Grulich",
                 "Name[az]": "Jan Grulich",
                 "Name[ca]": "Jan Grulich",
                 "Name[es]": "Jan Grulich",
@@ -21,6 +22,7 @@
         ],
         "Category": "VPNService",
         "Description": "Compatible with Pulse Connect Secure SSL VPN",
+        "Description[ar]": "متوافق مع خادوم Pulse Connect Secure SSL VPN",
         "Description[az]": "Pulse Connect Secure SSL VPN ilə uyğun",
         "Description[ca]": "Compatible amb la VPN SSL de Pulse Connect Secure",
         "Description[es]": "VPN compatible con Pulse Connect Secure SSL",

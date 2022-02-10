@@ -56,4 +56,4 @@ endif()
 
 install(TARGETS kded_networkmanagement DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kded)
 
-install(FILES networkmanagement.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR})
+install(FILES networkmanagement.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})

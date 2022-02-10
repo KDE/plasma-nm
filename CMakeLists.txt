@@ -27,7 +27,7 @@ include(ECMQtDeclareLoggingCategory)
 
 include(FeatureSummary)
 
-find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
+find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Core
     DBus
     Network
@@ -67,7 +67,7 @@ set_package_properties(KF5Kirigami2 PROPERTIES
     TYPE RUNTIME
 )
 
-find_package(Qca-qt5 2.1.0)
+find_package(Qca-qt${QT_MAJOR_VERSION} 2.1.0)
 set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Support for encryption"
                        URL "https://download.kde.org/stable/qca-qt5/"
                        TYPE REQUIRED)

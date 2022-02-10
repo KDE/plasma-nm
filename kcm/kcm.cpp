@@ -127,7 +127,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
             if (uuid.startsWith(uuidArgumentMarker)) {
                 uuid = uuid.replace(uuidArgumentMarker, QString());
                 selectedConnection = NetworkManager::findConnectionByUuid(uuid);
-                qDebug() << "Selecting user connection:" << uuid;
+                qDebug(PLASMA_NM_KCM_LOG) << "Selecting user connection:" << uuid;
                 break;
             }
         }
@@ -138,7 +138,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
         NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::primaryConnection();
         if (activeConnection && activeConnection->isValid()) {
             selectedConnection = activeConnection->connection();
-            qDebug() << "Selecting active connection:" << selectedConnection->uuid();
+            qDebug(PLASMA_NM_KCM_LOG) << "Selecting active connection:" << selectedConnection->uuid();
         }
     }
 
@@ -177,7 +177,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
             const NetworkManager::ConnectionSettings::ConnectionType type = connection->settings()->connectionType();
             if (UiUtils::isConnectionTypeSupported(type)) {
                 selectedConnection = connection;
-                qDebug() << "Selecting first connection:" << connection->uuid();
+                qDebug(PLASMA_NM_KCM_LOG) << "Selecting first connection:" << connection->uuid();
                 break;
             }
         }
@@ -189,7 +189,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
             QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, settings->id()), Q_ARG(QVariant, selectedConnection->path()));
         }
     } else {
-        qDebug() << "Cannot preselect a connection";
+        qDebug(PLASMA_NM_KCM_LOG) << "Cannot preselect a connection";
     }
 
     connect(NetworkManager::settingsNotifier(),

@@ -215,7 +215,7 @@ void NetworkStatus::changeActiveConnections()
                 }
 
                 if (!activeConnections.isEmpty()) {
-                    activeConnections += '\n';
+                    activeConnections += QLatin1Char('\n');
                 }
                 activeConnections += format.arg(conType, status);
 

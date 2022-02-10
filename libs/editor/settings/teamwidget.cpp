@@ -12,6 +12,7 @@
 #include <QDBusPendingReply>
 #include <QDesktopServices>
 #include <QFileDialog>
+#include <QStandardPaths>
 
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>

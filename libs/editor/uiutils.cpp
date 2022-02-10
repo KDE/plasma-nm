@@ -19,10 +19,10 @@
 #include <NetworkManagerQt/Manager>
 
 #if WITH_MODEMMANAGER_SUPPORT
-#include <ModemManagerQt/manager.h>
-#include <ModemManagerQt/modem3gpp.h>
-#include <ModemManagerQt/modemcdma.h>
-#include <ModemManagerQt/modemdevice.h>
+#include <ModemManagerQt/Manager>
+#include <ModemManagerQt/Modem3Gpp>
+#include <ModemManagerQt/ModemCdma>
+#include <ModemManagerQt/ModemDevice>
 #endif
 
 // Qt

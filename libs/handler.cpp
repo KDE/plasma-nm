@@ -125,7 +125,7 @@ void Handler::activateConnection(const QString &connection, const QString &devic
                 notification->setComponentName(QStringLiteral("networkmanagement"));
                 notification->setTitle(con->name());
                 notification->setText(errorMessage);
-                notification->setIconName(QStringLiteral("dialog-warning"));
+                notification->setIconName(QStringLiteral("dialog-error"));
                 notification->sendEvent();
                 return;
             }

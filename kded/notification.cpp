@@ -460,6 +460,9 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
     notify->setComponentName(QStringLiteral("networkmanagement"));
     if (state == NetworkManager::VpnConnection::Activated) {
         notify->setIconName(QStringLiteral("dialog-information"));
+    } else if (state == NetworkManager::VpnConnection::Disconnected && reason == NetworkManager::VpnConnection::UserDisconnectedReason) {
+        // Don't show warning icon if the user explicitly disconnected
+        notify->setIconName(QStringLiteral("dialog-information"));
     } else {
         notify->setIconName(QStringLiteral("dialog-warning"));
     }

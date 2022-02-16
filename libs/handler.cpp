@@ -120,7 +120,7 @@ void Handler::activateConnection(const QString &connection, const QString &devic
                 notification->setComponentName(QStringLiteral("networkmanagement"));
                 notification->setTitle(con->name());
                 notification->setText(i18n("Missing VPN plugin"));
-                notification->setIconName(QStringLiteral("dialog-warning"));
+                notification->setIconName(QStringLiteral("dialog-error"));
                 notification->sendEvent();
                 return;
             }

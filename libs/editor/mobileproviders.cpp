@@ -52,9 +52,9 @@ MobileProviders::MobileProviders()
                     qCWarning(PLASMA_NM_EDITOR_LOG) << ProvidersFile << ": wrong format";
                     mError = ProvidersWrongFormat;
                 } else {
-                    if (docElement.attribute("format") != QLatin1String("2.0")) {
-                        qCWarning(PLASMA_NM_EDITOR_LOG)
-                            << ProvidersFile << ": mobile broadband provider database format '" << docElement.attribute("format") << "' not supported.";
+                    if (docElement.attribute(QStringLiteral("format")) != QLatin1String("2.0")) {
+                        qCWarning(PLASMA_NM_EDITOR_LOG) << ProvidersFile << ": mobile broadband provider database format '"
+                                                        << docElement.attribute(QStringLiteral("format")) << "' not supported.";
                         mError = ProvidersFormatNotSupported;
                     } else {
                         // qCDebug(PLASMA_NM_EDITOR_LOG) << "Everything is alright so far";
@@ -124,12 +124,12 @@ QStringList MobileProviders::getProvidersList(QString country, NetworkManager::C
                             } else if (e3.tagName().toLower() == QLatin1String("cdma")) {
                                 hasCdma = true;
                             } else if (e3.tagName().toLower() == QLatin1String("name")) {
-                                QString lang = e3.attribute("xml:lang");
+                                QString lang = e3.attribute(QStringLiteral("xml:lang"));
                                 if (lang.isEmpty()) {
-                                    lang = QLatin1String("en"); // English is default
+                                    lang = QStringLiteral("en"); // English is default
                                 } else {
                                     lang = lang.toLower();
-                                    lang.remove(QRegExp("\\-.*$")); // Remove everything after '-' in xml:lang attribute.
+                                    lang.remove(QRegExp(QStringLiteral("\\-.*$"))); // Remove everything after '-' in xml:lang attribute.
                                 }
                                 localizedProviderNames.insert(lang, e3.text());
                             }
@@ -172,18 +172,18 @@ QStringList MobileProviders::getApns(const QString &provider)
     while (!n.isNull()) {
         QDomElement e = n.toElement(); // <gsm | cdma>
 
-        if (!e.isNull() && e.tagName().toLower() == "gsm") {
+        if (!e.isNull() && e.tagName().toLower() == QLatin1String("gsm")) {
             QDomNode n2 = e.firstChild();
             while (!n2.isNull()) {
                 QDomElement e2 = n2.toElement(); // <apn | network-id>
 
-                if (!e2.isNull() && e2.tagName().toLower() == "apn") {
+                if (!e2.isNull() && e2.tagName().toLower() == QLatin1String("apn")) {
                     bool isInternet = true;
                     QDomNode n3 = e2.firstChild();
                     while (!n3.isNull()) {
                         QDomElement e3 = n3.toElement(); // <usage>
-                        if (!e3.isNull() && e3.tagName().toLower() == "usage" && !e3.attribute("type").isNull()
-                            && e3.attribute("type").toLower() != QLatin1String("internet")) {
+                        if (!e3.isNull() && e3.tagName().toLower() == QLatin1String("usage") && !e3.attribute(QStringLiteral("type")).isNull()
+                            && e3.attribute(QStringLiteral("type")).toLower() != QLatin1String("internet")) {
                             // qCDebug(PLASMA_NM_EDITOR_LOG) << "apn" << e2.attribute("value") << "ignored because of usage" << e3.attribute("type");
                             isInternet = false;
                             break;
@@ -191,7 +191,7 @@ QStringList MobileProviders::getApns(const QString &provider)
                         n3 = n3.nextSibling();
                     }
                     if (isInternet) {
-                        mApns.insert(e2.attribute("value"), e2.firstChild());
+                        mApns.insert(e2.attribute(QStringLiteral("value")), e2.firstChild());
                     }
                 } else if (!e2.isNull() && e2.tagName().toLower() == QLatin1String("network-id")) {
                     mNetworkIds.append(e2.attribute(QStringLiteral("mcc")) + '-' + e2.attribute(QStringLiteral("mnc")));
@@ -226,17 +226,17 @@ ProviderData MobileProviders::parseProvider(const QDomNode &providerNode)
                 QDomElement gsmElement = gsmNode.toElement();
 
                 if (gsmElement.tagName().toLower() == QLatin1String("network-id")) {
-                    result.mccmncs.append(gsmElement.attribute(QStringLiteral("mcc")) + gsmElement.attribute("mnc"));
+                    result.mccmncs.append(gsmElement.attribute(QStringLiteral("mcc")) + gsmElement.attribute(QStringLiteral("mnc")));
                 }
                 gsmNode = gsmNode.nextSibling();
             }
         } else if (ce.tagName().toLower() == QLatin1String("name")) {
             QString lang = ce.attribute(QStringLiteral("xml:lang"));
             if (lang.isEmpty()) {
-                lang = QLatin1String("en"); // English is default
+                lang = QStringLiteral("en"); // English is default
             } else {
                 lang = lang.toLower();
-                lang.remove(QRegExp("\\-.*$")); // Remove everything after '-' in xml:lang attribute.
+                lang.remove(QRegExp(QStringLiteral("\\-.*$"))); // Remove everything after '-' in xml:lang attribute.
             }
             localizedProviderNames.insert(lang, ce.text());
         }
@@ -303,7 +303,7 @@ QVariantMap MobileProviders::getApnInfo(const QString &apn)
                     lang = QStringLiteral("en"); // English is default
                 } else {
                     lang = lang.toLower();
-                    lang.remove(QRegExp("\\-.*$")); // Remove everything after '-' in xml:lang attribute.
+                    lang.remove(QRegExp(QStringLiteral("\\-.*$"))); // Remove everything after '-' in xml:lang attribute.
                 }
                 localizedPlanNames.insert(lang, e.text());
             } else if (e.tagName().toLower() == QLatin1String("username")) {
@@ -364,7 +364,7 @@ QVariantMap MobileProviders::getCdmaInfo(const QString &provider)
     }
 
     temp.insert(QStringLiteral("number"), getCdmaNumber());
-    temp.insert("sidList", sidList);
+    temp.insert(QStringLiteral("sidList"), sidList);
     return temp;
 }
 
@@ -380,7 +380,7 @@ QString MobileProviders::getNameByLocale(const QMap<QString, QString> &localized
         }
     }
 
-    name = localizedNames["en"];
+    name = localizedNames[QStringLiteral("en")];
 
     // Use any language if no proper localized name were found.
     if (name.isEmpty() && !localizedNames.isEmpty()) {

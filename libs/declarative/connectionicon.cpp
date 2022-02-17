@@ -84,11 +84,11 @@ bool ConnectionIcon::connecting() const
 QString ConnectionIcon::connectionIcon() const
 {
     if (m_vpn && !m_connectionIcon.contains(QLatin1String("available"))) {
-        return m_connectionIcon + "-locked";
+        return m_connectionIcon + QStringLiteral("-locked");
     }
 
     if (m_limited && !m_connectionIcon.contains(QLatin1String("available"))) {
-        return m_connectionIcon + "-limited";
+        return m_connectionIcon + QStringLiteral("-limited");
     }
 
     return m_connectionIcon;
@@ -490,7 +490,7 @@ void ConnectionIcon::setIconForModem()
     QString strength = QStringLiteral("00");
 
     if (m_signal == 0) {
-        strength = '0';
+        strength = QLatin1Char('0');
     } else if (m_signal < 20) {
         strength = QStringLiteral("20");
     } else if (m_signal < 40) {
@@ -586,7 +586,7 @@ void ConnectionIcon::setWirelessIconForSignalStrength(int strength)
         setConnectionTooltipIcon(QStringLiteral("network-wireless-connected-100"));
     }
 
-    QString icon = QStringLiteral("network-wireless-%1").arg(iconStrength);
+    const QString icon = QStringLiteral("network-wireless-%1").arg(iconStrength);
 
     setConnectionIcon(icon);
 }

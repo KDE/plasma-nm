@@ -97,7 +97,7 @@ void IpV4RoutesWidget::setRoutes(const QList<NetworkManager::IpRoute> &list)
 {
     d->model.removeRows(0, d->model.rowCount());
     for (const NetworkManager::IpRoute &route : list) {
-        QList<QStandardItem *> item{
+        const QList<QStandardItem *> item{
             new QStandardItem(route.ip().toString()),
             new QStandardItem(route.netmask().toString()),
             new QStandardItem(route.nextHop().toString()),
@@ -186,7 +186,7 @@ void IpV4RoutesWidget::tableViewItemChanged(QStandardItem *item)
         QStandardItem *netmaskItem = d->model.item(row, column + 1); // netmask
         if (netmaskItem && netmaskItem->text().isEmpty()) {
             QHostAddress addr(item->text());
-            quint32 netmask = suggestNetmask(addr.toIPv4Address());
+            const quint32 netmask = suggestNetmask(addr.toIPv4Address());
             if (netmask) {
                 QHostAddress v(netmask);
                 netmaskItem->setText(v.toString());

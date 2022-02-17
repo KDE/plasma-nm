@@ -133,11 +133,11 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
                                               network->signalStrength(),
                                               UiUtils::labelFromWirelessSecurity(security),
                                               accessPoint->frequency());
-                    addItem(QIcon::fromTheme("object-locked"), text, accessPoint->ssid());
+                    addItem(QIcon::fromTheme(QStringLiteral("object-locked")), text, accessPoint->ssid());
                 } else {
                     const QString text =
                         i18n("%1 (%2%)\nSecurity: Insecure\nFrequency: %3 Mhz", accessPoint->ssid(), network->signalStrength(), accessPoint->frequency());
-                    addItem(QIcon::fromTheme("object-unlocked"), text, accessPoint->ssid());
+                    addItem(QIcon::fromTheme(QStringLiteral("object-unlocked")), text, accessPoint->ssid());
                 }
             }
         }

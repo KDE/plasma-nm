@@ -69,7 +69,7 @@ void MobileConnectionWizard::initializePage(int id)
         if (country.isEmpty())
             mCountryList->setCurrentRow(0);
         else {
-            QList<QListWidgetItem *> items = mCountryList->findItems(mProviders->getCountryName(country), Qt::MatchExactly);
+            const QList<QListWidgetItem *> items = mCountryList->findItems(mProviders->getCountryName(country), Qt::MatchExactly);
             if (!items.empty()) {
                 mCountryList->setCurrentItem(items.first());
             }
@@ -284,7 +284,7 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
         ModemManager::Modem::Ptr modemInterface = modem->interface(ModemManager::ModemDevice::ModemInterface).objectCast<ModemManager::Modem>();
         if (modemInterface->powerState() == MM_MODEM_POWER_STATE_ON) {
             desc.append(modemInterface->manufacturer());
-            desc.append(" ");
+            desc.append(QLatin1Char(' '));
             desc.append(modemInterface->model());
         } else {
             QString deviceName = modemInterface->device();
@@ -292,7 +292,7 @@ void MobileConnectionWizard::introAddDevice(const NetworkManager::Device::Ptr &d
                 if (d.udi().contains(deviceName, Qt::CaseInsensitive)) {
                     deviceName = d.product();
                     if (!deviceName.startsWith(d.vendor())) {
-                        deviceName = d.vendor() + ' ' + deviceName;
+                        deviceName = d.vendor() + QLatin1Char(' ') + deviceName;
                     }
                     desc.append(deviceName);
                     break;
@@ -501,7 +501,7 @@ QWizardPage *MobileConnectionWizard::createPlansPage()
                              "you are unsure of your plan please ask your provider for your plan's APN."));
     label->setWordWrap(true);
     layout2->addWidget(label);
-    layout->addWidget(new QLabel(""));
+    layout->addWidget(new QLabel());
     layout->addLayout(layout2);
 
     page->setLayout(layout);
@@ -549,7 +549,7 @@ QWizardPage *MobileConnectionWizard::createConfirmPage()
     labelProvider = new QLabel();
     layout->addWidget(labelProvider);
 
-    labelPlanLabel = new QLabel('\n' + i18nc("Mobile Connection Wizard", "Your Plan:"));
+    labelPlanLabel = new QLabel(QLatin1Char('\n') + i18nc("Mobile Connection Wizard", "Your Plan:"));
     layout->addWidget(labelPlanLabel);
     labelPlan = new QLabel();
     layout->addWidget(labelPlan);

@@ -56,23 +56,39 @@ QValidator::State SimpleIpV4AddressValidator::checkWithInputMask(QString &value,
 QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value, QList<int> &tetrads) const
 {
     QStringList temp;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QVector<QStringRef> addrParts;
+#else
+    QVector<QStringView> addrParts;
+#endif
     QStringList cidrParts;
     QStringList portParts;
 
     switch (m_addressStyle) {
     case Base:
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         addrParts = value.splitRef(QLatin1Char('.'));
+#else
+        addrParts = QStringView(value).split(QLatin1Char('.'));
+#endif
         break;
 
     case WithCidr:
         cidrParts = value.split(QLatin1Char('/'));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         addrParts = cidrParts[0].splitRef(QLatin1Char('.'));
+#else
+        addrParts = QStringView(cidrParts[0]).split(QLatin1Char('.'));
+#endif
         break;
 
     case WithPort:
         portParts = value.split(QLatin1Char(':'));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         addrParts = portParts[0].splitRef(QLatin1Char('.'));
+#else
+        addrParts = QStringView(portParts[0]).split(QLatin1Char('.'));
+#endif
         break;
     }
 
@@ -81,7 +97,11 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
     tetrads << -1 << -1 << -1 << -1;
 
     // lets check address parts
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     for (const QStringRef &part : std::as_const(addrParts)) {
+#else
+    for (const QStringView &part : std::as_const(addrParts)) {
+#endif
         if (part.isEmpty()) {
             if (i != (addrParts.size() - 1)) {
                 // qCDebug(PLASMA_NM_EDITOR_LOG) << "part.isEmpty()";

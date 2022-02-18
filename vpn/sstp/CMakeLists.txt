@@ -7,6 +7,9 @@ target_sources(plasmanetworkmanagement_sstpui PRIVATE
    sstp.cpp
    sstpwidget.cpp
    sstpauth.cpp
+   sstp.h
+   sstpwidget.h
+   sstpauth.h
    )
 ki18n_wrap_ui(plasmanetworkmanagement_sstpui sstpwidget.ui sstpadvanced.ui sstpauth.ui)
 

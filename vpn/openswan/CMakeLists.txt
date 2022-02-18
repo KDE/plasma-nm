@@ -7,6 +7,9 @@ target_sources(plasmanetworkmanagement_openswanui PRIVATE
     openswan.cpp
     openswanwidget.cpp
     openswanauth.cpp
+    openswan.h
+    openswanwidget.h
+    openswanauth.h
 )
 ki18n_wrap_ui(plasmanetworkmanagement_openswanui openswan.ui openswanauth.ui)
 

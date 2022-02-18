@@ -6,6 +6,9 @@ target_sources(plasmanetworkmanagement_pptpui PRIVATE
    pptp.cpp
    pptpwidget.cpp
    pptpauth.cpp
+   pptp.h
+   pptpwidget.h
+   pptpauth.h
    )
 ki18n_wrap_ui(plasmanetworkmanagement_pptpui pptpprop.ui pptpadvanced.ui pptpauth.ui)
 

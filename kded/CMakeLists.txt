@@ -11,6 +11,15 @@ if (WITH_MODEMMANAGER_SUPPORT)
         pindialog.cpp
         secretagent.cpp
         service.cpp
+        bluetoothmonitor.h
+        connectivitymonitor.h
+        notification.h
+        modemmonitor.h
+        monitor.h
+        passworddialog.h
+        pindialog.h
+        secretagent.h
+        service.h
     )
     ki18n_wrap_ui(kded_networkmanagement_SRCS
         pinwidget.ui
@@ -25,6 +34,13 @@ else()
         passworddialog.cpp
         secretagent.cpp
         service.cpp
+        bluetoothmonitor.h
+        connectivitymonitor.h
+        notification.h
+        monitor.h
+        passworddialog.h
+        secretagent.h
+        service.h
     )
     ki18n_wrap_ui(kded_networkmanagement_SRCS
         passworddialog.ui

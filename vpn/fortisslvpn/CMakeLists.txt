@@ -7,6 +7,9 @@ target_sources(plasmanetworkmanagement_fortisslvpnui PRIVATE
     fortisslvpn.cpp
     fortisslvpnwidget.cpp
     fortisslvpnauth.cpp
+    fortisslvpn.h
+    fortisslvpnwidget.h
+    fortisslvpnauth.h
 )
 ki18n_wrap_ui(plasmanetworkmanagement_fortisslvpnui fortisslvpn.ui fortisslvpnadvanced.ui fortisslvpnauth.ui)
 

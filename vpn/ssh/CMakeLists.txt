@@ -7,6 +7,9 @@ target_sources(plasmanetworkmanagement_sshui PRIVATE
    ssh.cpp
    sshwidget.cpp
    sshauth.cpp
+   ssh.h
+   sshwidget.h
+   sshauth.h
    )
 ki18n_wrap_ui(plasmanetworkmanagement_sshui sshwidget.ui sshadvanced.ui sshauth.ui)
 

@@ -11,6 +11,10 @@ target_sources(plasmanetworkmanagement_openvpnui PRIVATE
     openvpnwidget.cpp
     openvpnauth.cpp
     openvpnadvancedwidget.cpp
+    openvpn.h
+    openvpnwidget.h
+    openvpnauth.h
+    openvpnadvancedwidget.h
 )
 ecm_qt_declare_logging_category(plasmanetworkmanagement_openvpnui HEADER plasma_nm_openvpn.h IDENTIFIER PLASMA_NM_OPENVPN_LOG CATEGORY_NAME org.kde.plasma.nm.openvpn DESCRIPTION "Plasma NM (openvpn plugins)" EXPORT PLASMANM)
 ki18n_wrap_ui(plasmanetworkmanagement_openvpnui openvpn.ui openvpnadvanced.ui)

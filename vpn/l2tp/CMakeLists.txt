@@ -9,6 +9,11 @@ target_sources(plasmanetworkmanagement_l2tpui PRIVATE
     l2tpauth.cpp
     l2tpipsecwidget.cpp
     l2tppppwidget.cpp
+    l2tp.h
+    l2tpwidget.h
+    l2tpauth.h
+    l2tpipsecwidget.h
+    l2tppppwidget.h
 )
 ki18n_wrap_ui(plasmanetworkmanagement_l2tpui l2tp.ui l2tpipsec.ui l2tpppp.ui)
 

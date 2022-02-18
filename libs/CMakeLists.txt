@@ -16,6 +16,16 @@ target_sources(plasmanm_internal PRIVATE
     models/networkmodelitem.cpp
     configurationproxy.cpp
     handler.cpp
+    models/appletproxymodel.h
+    models/creatableconnectionsmodel.h
+    models/editorproxymodel.h
+    models/kcmidentitymodel.h
+    models/mobileproxymodel.h
+    models/networkitemslist.h
+    models/networkmodel.h
+    models/networkmodelitem.h
+    configurationproxy.h
+    handler.h
 )
 
 target_include_directories(plasmanm_internal PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/models)

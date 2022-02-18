@@ -7,6 +7,9 @@ target_sources(plasmanetworkmanagement_strongswanui PRIVATE
    strongswan.cpp
    strongswanwidget.cpp
    strongswanauth.cpp
+   strongswan.h
+   strongswanwidget.h
+   strongswanauth.h
    )
 ki18n_wrap_ui(plasmanetworkmanagement_strongswanui strongswanprop.ui strongswanauth.ui)
 

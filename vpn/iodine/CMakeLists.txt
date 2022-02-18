@@ -7,6 +7,9 @@ target_sources(plasmanetworkmanagement_iodineui PRIVATE
     iodine.cpp
     iodinewidget.cpp
     iodineauth.cpp
+    iodine.h
+    iodinewidget.h
+    iodineauth.h
 )
 ki18n_wrap_ui(plasmanetworkmanagement_iodineui iodine.ui iodineauth.ui)
 

@@ -6,6 +6,10 @@ target_sources(plasmanetworkmanagement_vpncui PRIVATE
     vpncwidget.cpp
     vpncadvancedwidget.cpp
     vpncauth.cpp
+    vpnc.h
+    vpncwidget.h
+    vpncadvancedwidget.h
+    vpncauth.h
 )
 ecm_qt_declare_logging_category(plasmanetworkmanagement_vpncui HEADER plasma_nm_vpnc.h IDENTIFIER PLASMA_NM_VPNC_LOG CATEGORY_NAME org.kde.plasma.nm.openvpn DESCRIPTION "Plasma NM (vpnc plugins)" EXPORT PLASMANM)
 

@@ -7,6 +7,12 @@ target_sources(plasmanm_qmlplugins PRIVATE
    enums.cpp
    networkstatus.cpp
    qmlplugins.cpp
+   availabledevices.h
+   connectionicon.h
+   enabledconnections.h
+   enums.h
+   networkstatus.h
+   qmlplugins.h
 )
 
 target_link_libraries(plasmanm_qmlplugins

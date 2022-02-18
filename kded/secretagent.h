@@ -52,7 +52,7 @@ public:
      */
     bool saveSecretsWithoutReply;
     QDBusMessage message;
-    PasswordDialog *dialog;
+    PasswordDialog *dialog = nullptr;
 };
 
 class Q_DECL_EXPORT SecretAgent : public NetworkManager::SecretAgent

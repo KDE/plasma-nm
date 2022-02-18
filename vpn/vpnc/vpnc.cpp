@@ -98,12 +98,12 @@ SettingWidget *VpncUiPlugin::askUser(const NetworkManager::VpnSetting::Ptr &sett
 
 QString VpncUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const
 {
-    return connection->id() + ".pcf";
+    return connection->id() + QStringLiteral(".pcf");
 }
 
 QString VpncUiPlugin::supportedFileExtensions() const
 {
-    return "*.pcf";
+    return QStringLiteral("*.pcf");
 }
 
 NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)

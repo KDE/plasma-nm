@@ -54,6 +54,6 @@ if (WITH_MODEMMANAGER_SUPPORT)
     target_link_libraries(kded_networkmanagement KF5::ModemManagerQt)
 endif()
 
-install(TARGETS kded_networkmanagement DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kded)
+install(TARGETS kded_networkmanagement DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/kded)
 
 install(FILES networkmanagement.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})

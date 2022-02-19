@@ -52,6 +52,11 @@ Notification::Notification(QObject *parent)
                                          QStringLiteral("PrepareForSleep"),
                                          this,
                                          SLOT(onPrepareForSleep(bool)));
+
+    // After 10 seconds we can consider it to not have "just launched" anymore
+    QTimer::singleShot(10s, this, [this]() {
+        m_justLaunched = false;
+    });
 }
 
 void Notification::deviceAdded(const QString &uni)
@@ -317,6 +322,16 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
     const QString connectionId = ac->id();
 
     if (state == NetworkManager::ActiveConnection::Activated) {
+        // Don't send notifications about activated connections just because the
+        // daemon was launched as these were not explicitly user-initiated actions,
+        // and notifications for automatic actions and background processes are
+        // annoying and unnecessary
+        if (m_justLaunched) {
+            qCDebug(PLASMA_NM_KDED_LOG) << "Not emitting connection activated notification as the daemon was just launched";
+            return;
+        }
+
+        // Also don't notify for re-made connections after waking up from sleep
         auto foundConnection = std::find_if(m_activeConnectionsBeforeSleep.constBegin(), m_activeConnectionsBeforeSleep.constEnd(), [ac](const QString &uuid) {
             return uuid == ac->uuid();
         });

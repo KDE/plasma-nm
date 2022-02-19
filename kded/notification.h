@@ -43,6 +43,7 @@ private:
     QHash<QString, KNotification *> m_notifications;
 
     bool m_preparingForSleep = false;
+    bool m_justLaunched = true;
     QStringList m_activeConnectionsBeforeSleep;
     QTimer *m_checkActiveConnectionOnResumeTimer = nullptr;
 };

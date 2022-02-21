@@ -401,8 +401,8 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
 
     if (!Configuration::self().showPasswordDialog()) {
         sendError(SecretAgent::NoSecrets, QStringLiteral("Cannot authenticate"), request.message);
-        emit secretsError(request.connection_path.path(),
-                          i18n("Authentication to %1 failed. Wrong password?", request.connection.value("connection").value("id").toString()));
+        Q_EMIT secretsError(request.connection_path.path(),
+                            i18n("Authentication to %1 failed. Wrong password?", request.connection.value("connection").value("id").toString()));
         return true;
     } else if (isWireGuard && userRequested) { // Just return what we have
         NMVariantMapMap result;

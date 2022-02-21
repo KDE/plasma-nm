@@ -334,15 +334,11 @@ bool L2tpIpsecWidget::hasIpsecDaemon()
         return true;
     }
 
-    QString ipsecBinary = QStandardPaths::findExecutable("ipsec",
-                                                         QStringList() << "/sbin"
-                                                                       << "/usr/sbin");
+    QString ipsecBinary = QStandardPaths::findExecutable(QStringLiteral("ipsec"), QStringList() << QStringLiteral("/sbin") << QStringLiteral("/usr/sbin"));
 
     // On some Linux distributions, ipsec executable has been renamed strongswan
     if (ipsecBinary.isEmpty()) {
-        ipsecBinary = QStandardPaths::findExecutable("strongswan",
-                                                     QStringList() << "/sbin"
-                                                                   << "/usr/sbin");
+        ipsecBinary = QStandardPaths::findExecutable(QStringLiteral("strongswan"), QStringList() << QStringLiteral("/sbin") << QStringLiteral("/usr/sbin"));
     }
 
     if (ipsecBinary.isEmpty()) {
@@ -352,7 +348,7 @@ bool L2tpIpsecWidget::hasIpsecDaemon()
 
     QProcess ipsecVersionProcess;
     ipsecVersionProcess.setProgram(ipsecBinary);
-    ipsecVersionProcess.setArguments(QStringList() << "--version");
+    ipsecVersionProcess.setArguments(QStringList() << QStringLiteral("--version"));
     ipsecVersionProcess.start();
     ipsecVersionProcess.waitForFinished(-1);
 

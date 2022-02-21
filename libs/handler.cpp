@@ -757,7 +757,7 @@ void Handler::secretAgentError(const QString &connectionPath, const QString &mes
 {
     // If the password was wrong, forget it
     removeConnection(connectionPath);
-    emit connectionActivationFailed(connectionPath, message);
+    Q_EMIT connectionActivationFailed(connectionPath, message);
 }
 
 void Handler::replyFinished(QDBusPendingCallWatcher *watcher)

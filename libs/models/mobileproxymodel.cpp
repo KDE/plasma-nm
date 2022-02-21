@@ -23,7 +23,7 @@ MobileProxyModel::~MobileProxyModel() = default;
 void MobileProxyModel::setShowSavedMode(bool mode)
 {
     m_showSavedMode = mode;
-    emit showSavedModeChanged(mode);
+    Q_EMIT showSavedModeChanged(mode);
     invalidate();
 }
 

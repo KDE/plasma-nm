@@ -278,7 +278,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
 
         // Set the '...-type' and '...-flags' value also
         NetworkManager::VpnSetting setting;
-        setting.setServiceType("org.freedesktop.NetworkManager.vpnc");
+        setting.setServiceType(QStringLiteral("org.freedesktop.NetworkManager.vpnc"));
         setting.setData(data);
         setting.setSecrets(secretData);
 

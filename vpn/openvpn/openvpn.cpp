@@ -93,7 +93,7 @@ QString unQuote(QString &certVal, const QString &fileName)
     if (certFile.startsWith('"') || certFile.startsWith('\'')) { // Quoted
         certFile.remove(0, 1); // Remove the starting quote
         nextSep = 0;
-        while ((nextSep = certFile.indexOf(QRegExp("\"|'"), nextSep)) != -1) {
+        while ((nextSep = certFile.indexOf(QRegExp(QStringLiteral("\"|'")), nextSep)) != -1) {
             if (nextSep > 0 && certFile.at(nextSep - 1) != '\\') { // Quote not escaped
                 certVal = certFile.right(certFile.length() - nextSep - 1); // Leftover string
                 certFile.truncate(nextSep); // Quoted string
@@ -101,7 +101,7 @@ QString unQuote(QString &certVal, const QString &fileName)
             }
         }
     } else {
-        nextSep = certFile.indexOf(QRegExp("\\s")); // First whitespace
+        nextSep = certFile.indexOf(QRegExp(QStringLiteral("\\s"))); // First whitespace
         if (nextSep != -1) {
             certVal = certFile.right(certFile.length() - nextSep - 1); // Leftover
             certFile = certFile.left(nextSep); // value
@@ -112,7 +112,7 @@ QString unQuote(QString &certVal, const QString &fileName)
     certFile.replace("\\\\", "\\"); // Replace '\\' with '\'
     certFile.replace("\\ ", " "); // Replace escaped space with space
     if (QFileInfo(certFile).isRelative()) {
-        certFile = QFileInfo(fileName).dir().absolutePath() + '/' + certFile;
+        certFile = QFileInfo(fileName).dir().absolutePath() + QLatin1Char('/') + certFile;
     }
     return certFile;
 }
@@ -130,7 +130,7 @@ bool isEncrypted(const QString &fileName)
     }
     QTextStream in(&inFile);
     while (!in.atEnd()) {
-        QString line = in.readLine();
+        const QString line = in.readLine();
         if (!line.isEmpty() && (line.startsWith(PROC_TYPE_TAG) || line.startsWith(PKCS8_TAG))) {
             encrypted = true;
             break;
@@ -214,10 +214,10 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         QString line = in.readLine();
         // Skip comments
         if (line.indexOf(QLatin1Char('#')) >= 0) {
-            line.truncate(line.indexOf('#'));
+            line.truncate(line.indexOf(QLatin1Char('#')));
         }
         if (line.indexOf(QLatin1Char(';')) >= 0) {
-            line.truncate(line.indexOf(';'));
+            line.truncate(line.indexOf(QLatin1Char(';')));
         }
         if (line.isEmpty()) {
             continue;

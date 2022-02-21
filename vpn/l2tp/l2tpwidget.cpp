@@ -33,7 +33,7 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *
     // around the filesystem, also if it is a .p12 file,  set the other URLs to that .p12 file.
     QList<const KUrlRequester *> requesters;
     requesters << m_ui->userCA << m_ui->userCert << m_ui->userKey;
-    for (const KUrlRequester *requester : qAsConst(requesters)) {
+    for (const KUrlRequester *requester : std::as_const(requesters)) {
         connect(requester, &KUrlRequester::urlSelected, this, &L2tpWidget::updateStartDirUrl);
     }
 
@@ -228,7 +228,7 @@ void L2tpWidget::updateStartDirUrl(const QUrl &url)
     requesters << m_ui->userCA << m_ui->userCert << m_ui->userKey;
     bool isP12 = url.toString().endsWith(QLatin1String(".p12"));
 
-    for (KUrlRequester *requester : qAsConst(requesters)) {
+    for (KUrlRequester *requester : std::as_const(requesters)) {
         requester->setStartDir(url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash));
         if (isP12) {
             requester->setUrl(url);

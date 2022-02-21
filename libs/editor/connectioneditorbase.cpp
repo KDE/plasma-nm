@@ -303,7 +303,7 @@ void ConnectionEditorBase::initialize()
 
     // Re-check validation
     bool valid = true;
-    for (SettingWidget *widget : qAsConst(m_settingWidgets)) {
+    for (SettingWidget *widget : std::as_const(m_settingWidgets)) {
         valid = valid && widget->isValid();
         connect(widget, &SettingWidget::validChanged, this, &ConnectionEditorBase::validChanged);
     }
@@ -421,7 +421,7 @@ void ConnectionEditorBase::initialize()
                         }
                     }
                 } else {
-                    for (const QString &secret : qAsConst(requiredSecrets)) {
+                    for (const QString &secret : std::as_const(requiredSecrets)) {
                         if (setting.contains(secret + QLatin1String("-flags"))) {
                             NetworkManager::Setting::SecretFlagType secretFlag =
                                 (NetworkManager::Setting::SecretFlagType)setting.value(secret + QLatin1String("-flags")).toInt();
@@ -466,7 +466,7 @@ void ConnectionEditorBase::replyFinished(QDBusPendingCallWatcher *watcher)
                 NetworkManager::Setting::Ptr setting = m_connection->setting(NetworkManager::Setting::typeFromString(key));
                 if (setting) {
                     setting->secretsFromMap(secrets.value(key));
-                    for (SettingWidget *widget : qAsConst(m_settingWidgets)) {
+                    for (SettingWidget *widget : std::as_const(m_settingWidgets)) {
                         const QString type = widget->type();
                         if (type == settingName
                             || (settingName == NetworkManager::Setting::typeAsString(NetworkManager::Setting::Security8021x)
@@ -501,7 +501,7 @@ void ConnectionEditorBase::validChanged(bool valid)
         Q_EMIT validityChanged(false);
         return;
     } else {
-        for (SettingWidget *widget : qAsConst(m_settingWidgets)) {
+        for (SettingWidget *widget : std::as_const(m_settingWidgets)) {
             if (!widget->isValid()) {
                 m_valid = false;
                 Q_EMIT validityChanged(false);

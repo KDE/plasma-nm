@@ -234,7 +234,7 @@ void CreatableConnectionsModel::populateModel()
         return QString::localeAwareCompare(left.name(), right.name()) <= 0;
     });
 
-    for (const auto &service : qAsConst(plugins)) {
+    for (const auto &service : std::as_const(plugins)) {
         const QString vpnType = service.value(QStringLiteral("X-NetworkManager-Services"));
         const QString vpnSubType = service.value(QStringLiteral("X-NetworkManager-Services-Subtype"));
         const QString vpnDescription = service.description();

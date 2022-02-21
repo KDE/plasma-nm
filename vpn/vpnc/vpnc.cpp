@@ -268,7 +268,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
                 list << ipRoute;
             }
             QList<QList<uint>> dbusRoutes;
-            for (const NetworkManager::IpRoute &route : qAsConst(list)) {
+            for (const NetworkManager::IpRoute &route : std::as_const(list)) {
                 QList<uint> dbusRoute;
                 dbusRoute << htonl(route.ip().toIPv4Address()) << route.prefixLength() << htonl(route.nextHop().toIPv4Address()) << route.metric();
                 dbusRoutes << dbusRoute;

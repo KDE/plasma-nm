@@ -59,7 +59,7 @@ void OpenVpnAuthWidget::readSecrets()
     if (!m_hints.isEmpty()) {
         QString passwordType;
         QString prompt;
-        for (const QString &hint : qAsConst(m_hints)) {
+        for (const QString &hint : std::as_const(m_hints)) {
             const QString vpnMessage = QStringLiteral("x-vpn-message:");
             if (hint.startsWith(vpnMessage)) {
                 prompt = hint.right(hint.length() - vpnMessage.length());

@@ -23,6 +23,13 @@ Optional dependencies:
 
 Compiling:
 ----------
+**Recommended method**
+The best way to develop for KDE is to use [kdesrc-build](https://kdesrc-build.kde.org/), a KDE supported tool chain to manage installation and compilation of KDE applications and dependencies. Please refer to the following guide when developing, building, and testing `plasma-nm`:
+
+https://community.kde.org/Get_Involved/development#Iterating_on_a_single_project
+
+**Expert method (quick and dirty)**
+:warning: **The following method is for experienced developers. developers should use the above mentioned recommmended method when developing for KDE. This expert method will install files on your system that may not align with your specific OS best practices and may cause issues.** :warning:
 
 ```sh
   mkdir build

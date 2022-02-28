@@ -23,6 +23,7 @@
                 "Name[ru]": "Lukáš Tinkl",
                 "Name[sl]": "Lukáš Tinkl",
                 "Name[sv]": "Lukáš Tinkl",
+                "Name[tr]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
                 "Name[x-test]": "xxLukáš Tinklxx",
                 "Name[zh_CN]": "Lukáš Tinkl"
@@ -49,6 +50,7 @@
         "Description[ru]": "Совместимая с различными VPN-шлюзами на основе IPsec от Cisco, Juniper, Netscreen и Sonicwall",
         "Description[sl]": "Združljiv z različnimi prehodi VPN, temelječimi na IPsec: Cisco, Juniper, Netscreen in Sonicwall",
         "Description[sv]": "Kompatibel med olika Cisco, Juniper, Netscreen och Sonicwall IPsec-baserade VPN-förmedlingsnoder",
+        "Description[tr]": "Çeşitli Cisco, Juniper, Netscreen ve Sonicwall IPsec tabanlı VPN ağ geçitleri ile uyumlu",
         "Description[uk]": "Сумісний із різноманітними шлюзами VPN Cisco, Juniper, Netscreen та Sonicwall на основі IPsec",
         "Description[x-test]": "xxCompatible with various Cisco, Juniper, Netscreen and Sonicwall IPsec-based VPN gatewaysxx",
         "Description[zh_CN]": "兼容多种 Cisco、Juniper、Netscreen 和 Sonicwall 基于 IPsec 的 VPN 网关",

@@ -23,6 +23,7 @@
                 "Name[ru]": "Jan Grulich,Lukáš Tinkl",
                 "Name[sl]": "Jan Grulich,Lukáš Tinkl",
                 "Name[sv]": "Jan Grulich,Lukáš Tinkl",
+                "Name[tr]": "Jan Grulich,Lukáš Tinkl",
                 "Name[uk]": "Jan Grulich, Lukáš Tinkl",
                 "Name[x-test]": "xxJan Grulich,Lukáš Tinklxx",
                 "Name[zh_CN]": "Jan Grulich,Lukáš Tinkl"
@@ -49,6 +50,7 @@
         "Description[ru]": "Состояние и управление сетью",
         "Description[sl]": "Stanje omrežja in nadzor",
         "Description[sv]": "Nätverksstatus och kontroll",
+        "Description[tr]": "Ağ denetim ve durum izleme",
         "Description[uk]": "Стеження за станом і керування мережею",
         "Description[x-test]": "xxNetwork status and controlxx",
         "Description[zh_CN]": "网络状态和控制",

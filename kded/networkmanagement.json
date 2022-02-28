@@ -20,6 +20,7 @@
         "Description[ru]": "Предоставляет пароли и ключи демону NetworkManager",
         "Description[sl]": "Ponuja skrivnosti za odzadnji program NetworkManager",
         "Description[sv]": "Tillhandahåller hemligheter till nätverkshanteringsdemonen",
+        "Description[tr]": "AğYönetici yardımcısına şifreleri sağlar",
         "Description[uk]": "Надає реєстраційні дані фоновій службі NetworkManager",
         "Description[x-test]": "xxProvides secrets to the NetworkManager daemonxx",
         "Description[zh_CN]": "为 NetworkManager 守护程序提供密码",

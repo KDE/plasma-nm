@@ -23,6 +23,7 @@
                 "Name[ru]": "Jan Grulich",
                 "Name[sl]": "Jan Grulich",
                 "Name[sv]": "Jan Grulich",
+                "Name[tr]": "Jan Grulich",
                 "Name[uk]": "Jan Grulich",
                 "Name[x-test]": "xxJan Grulichxx",
                 "Name[zh_CN]": "Jan Grulich"
@@ -49,6 +50,7 @@
         "Description[ru]": "Совместимая с сервером SSH",
         "Description[sl]": "Združljiv s strežnikom SSH",
         "Description[sv]": "Kompatibel med SSH-server",
+        "Description[tr]": "SSH sunucusuyla uyumlu",
         "Description[uk]": "Сумісний з сервером SSH",
         "Description[x-test]": "xxCompatible with the SSH serverxx",
         "Description[zh_CN]": "兼容 SSH 服务器",

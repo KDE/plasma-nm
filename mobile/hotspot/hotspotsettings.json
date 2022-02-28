@@ -23,6 +23,7 @@
                 "Name[ru]": "Tobias Fella",
                 "Name[sl]": "Tobias Fella",
                 "Name[sv]": "Tobias Fella",
+                "Name[tr]": "Tobias Fella",
                 "Name[uk]": "Tobias Fella",
                 "Name[x-test]": "xxTobias Fellaxx",
                 "Name[zh_CN]": "Tobias Fella"
@@ -49,6 +50,7 @@
         "Description[ru]": "Точки доступа Wi-Fi",
         "Description[sl]": "Vroče točke Wi-Fi",
         "Description[sv]": "WIFI-accesspunkter",
+        "Description[tr]": "Wi-Fi Taşınabilir Ağları",
         "Description[uk]": "Хот-споти Wi-Fi",
         "Description[x-test]": "xxWi-Fi Hotspotsxx",
         "Description[zh_CN]": "Wi-Fi 热点",

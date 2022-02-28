@@ -23,6 +23,7 @@
                 "Name[ru]": "Jan Grulich",
                 "Name[sl]": "Jan Grulich",
                 "Name[sv]": "Jan Grulich",
+                "Name[tr]": "Jan Grulich",
                 "Name[uk]": "Jan Grulich",
                 "Name[x-test]": "xxJan Grulichxx",
                 "Name[zh_CN]": "Jan Grulich"
@@ -49,6 +50,7 @@
         "Description[ru]": "Протокол туннелирования iodine через DNS",
         "Description[sl]": "Tuneliranje povezav preko DNS",
         "Description[sv]": "Tunnelanslutningar via DNS",
+        "Description[tr]": "DNS üzerinden tünel bağlantıları",
         "Description[uk]": "Тунельоване з’єднання за допомогою DNS",
         "Description[x-test]": "xxTunnel connections via DNSxx",
         "Description[zh_CN]": "通过 DNS 建立隧道链接",

@@ -23,6 +23,7 @@
                 "Name[ru]": "Lukáš Tinkl",
                 "Name[sl]": "Lukáš Tinkl",
                 "Name[sv]": "Lukáš Tinkl",
+                "Name[tr]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
                 "Name[x-test]": "xxLukáš Tinklxx",
                 "Name[zh_CN]": "Lukáš Tinkl"
@@ -49,6 +50,7 @@
         "Description[ru]": "Совместимая с Cisco AnyConnect VPN с SSL",
         "Description[sl]": "Združljivo s Cisco AnyConnect SSL VPN",
         "Description[sv]": "Kompatibel med Cisco AnyConnect SSL VPN",
+        "Description[tr]": "Cisco AnyConnect SSL VPN ile uyumlu",
         "Description[uk]": "VPN, сумісний з Cisco AnyConnect SSL",
         "Description[x-test]": "xxCompatible with Cisco AnyConnect SSL VPNxx",
         "Description[zh_CN]": "兼容 Cisco AnyConnect SSL VPN",

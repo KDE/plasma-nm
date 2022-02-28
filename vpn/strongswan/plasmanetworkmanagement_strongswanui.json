@@ -23,6 +23,7 @@
                 "Name[ru]": "Lukáš Tinkl",
                 "Name[sl]": "Lukáš Tinkl",
                 "Name[sv]": "Lukáš Tinkl",
+                "Name[tr]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
                 "Name[x-test]": "xxLukáš Tinklxx",
                 "Name[zh_CN]": "Lukáš Tinkl"
@@ -49,6 +50,7 @@
         "Description[ru]": "VPN на основе IPsec, IKEv1, IKEv2",
         "Description[sl]": "Na IPsec, IKEv1, IKEv2 temelječ VPN",
         "Description[sv]": "IPsec, IKEv1, IKEv2-baserad VPN",
+        "Description[tr]": "IPsec, IKEv1, IKEv2 tabanlı VPN",
         "Description[uk]": "VPN на основі IPsec, IKEv1, IKEv2",
         "Description[x-test]": "xxIPsec, IKEv1, IKEv2 based VPNxx",
         "Description[zh_CN]": "基于 IPsec、IKEv1、IKEv2 的 VPN",

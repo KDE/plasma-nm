@@ -23,6 +23,7 @@
                 "Name[ru]": "Lukáš Tinkl",
                 "Name[sl]": "Lukáš Tinkl",
                 "Name[sv]": "Lukáš Tinkl",
+                "Name[tr]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
                 "Name[x-test]": "xxLukáš Tinklxx",
                 "Name[zh_CN]": "Lukáš Tinkl"
@@ -49,6 +50,7 @@
         "Description[ru]": "Совместимая с серверами PPTP от Microsoft и другими",
         "Description[sl]": "Združljiv z Microsoftovimi in drugimi PPTP strežniki VPN",
         "Description[sv]": "Kompatibel med Microsoft och andra PPTP VPN-servrar",
+        "Description[tr]": "Microsoft ve diğer PPTP VPN sunucuları ile uyumlu",
         "Description[uk]": "Сумісні з Microsoft та іншими серверами VPN PPTP",
         "Description[x-test]": "xxCompatible with Microsoft and other PPTP VPN serversxx",
         "Description[zh_CN]": "兼容 Microsoft 和其他 PPTP VPN 服务器",

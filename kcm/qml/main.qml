@@ -50,7 +50,7 @@ Item {
         sourceModel: connectionModel
     }
 
-    QQC2.TextField {
+    Kirigami.SearchField {
         id: searchField
 
         anchors {
@@ -58,8 +58,6 @@ Item {
             right: parent.right
             top: parent.top
         }
-
-        placeholderText: i18n("Search…")
 
         onTextChanged: {
             editorProxyModel.setFilterRegExp(text)

@@ -68,7 +68,7 @@ set_package_properties(KF5Kirigami2 PROPERTIES
 )
 
 find_package(Qca-qt${QT_MAJOR_VERSION} 2.1.0)
-set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION "Support for encryption"
+set_package_properties(Qca-qt${QT_MAJOR_VERSION} PROPERTIES DESCRIPTION "Support for encryption"
                        URL "https://download.kde.org/stable/qca-qt5/"
                        TYPE REQUIRED)
 

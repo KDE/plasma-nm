@@ -157,7 +157,7 @@ PRIVATE
     KF5::Wallet
     Qt::DBus
     Qt::Network
-    qca-qt5
+    qca-qt${QT_MAJOR_VERSION}
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)

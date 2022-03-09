@@ -138,11 +138,11 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="KLineEdit" name="puk">
-       <property name="showClearButton" stdset="0">
-        <bool>true</bool>
+      <widget class="QLineEdit" name="puk">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
        </property>
-       <property name="passwordMode">
+       <property name="showClearButton" stdset="0">
         <bool>true</bool>
        </property>
       </widget>
@@ -158,11 +158,11 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="KLineEdit" name="pin">
-       <property name="showClearButton" stdset="0">
-        <bool>true</bool>
+      <widget class="QLineEdit" name="pin">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
        </property>
-       <property name="passwordMode">
+       <property name="showClearButton" stdset="0">
         <bool>true</bool>
        </property>
       </widget>
@@ -178,11 +178,11 @@
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="KLineEdit" name="pin2">
-       <property name="showClearButton" stdset="0">
-        <bool>true</bool>
+      <widget class="QLineEdit" name="pin2">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
        </property>
-       <property name="passwordMode">
+       <property name="showClearButton" stdset="0">
         <bool>true</bool>
        </property>
       </widget>
@@ -210,11 +210,6 @@
    <class>KTitleWidget</class>
    <extends>QWidget</extends>
    <header>ktitlewidget.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

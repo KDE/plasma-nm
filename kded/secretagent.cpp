@@ -222,7 +222,7 @@ void SecretAgent::dialogAccepted()
 
                     // Load secrets from auth dialog which are returned back to NM
                     if (connection.value(QStringLiteral("vpn")).contains(QStringLiteral("secrets"))) {
-                        secrets.unite(qdbus_cast<NMStringMap>(connection.value(QStringLiteral("vpn")).value(QStringLiteral("secrets"))));
+                        secrets.insert(qdbus_cast<NMStringMap>(connection.value(QStringLiteral("vpn")).value(QStringLiteral("secrets"))));
                     }
 
                     // Load temporary secrets from auth dialog which are not returned to NM

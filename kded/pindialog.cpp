@@ -36,7 +36,7 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
 
     ui = new Ui::PinWidget();
     ui->setupUi(this);
-    ui->pin->setPasswordMode(true);
+    ui->pin->setEchoMode(QLineEdit::Password);
 
     auto validator = new QIntValidator(this);
     validator->setRange(1000, 99999999);
@@ -144,9 +144,9 @@ PinDialog::~PinDialog()
 
 void PinDialog::chkShowPassToggled(bool on)
 {
-    ui->pin->setPasswordMode(!on);
-    ui->pin2->setPasswordMode(!on);
-    ui->puk->setPasswordMode(!on);
+    ui->pin->setEchoMode(!on ? QLineEdit::Password : QLineEdit::Normal);
+    ui->pin2->setEchoMode(!on ? QLineEdit::Password : QLineEdit::Normal);
+    ui->puk->setEchoMode(!on ? QLineEdit::Password : QLineEdit::Normal);
 
     ui->puk->setCursorPosition(0);
     ui->pin->setCursorPosition(0);

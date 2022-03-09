@@ -368,7 +368,7 @@ QVariantMap OpenconnectAuthWidget::setting() const
     NMStringMap secrets;
     QVariantMap secretData;
 
-    secrets.unite(d->secrets);
+    secrets.insert(d->secrets);
     QString host(openconnect_get_hostname(d->vpninfo));
     const QString port = QString::number(openconnect_get_port(d->vpninfo));
     QString gateway = host + ':' + port;

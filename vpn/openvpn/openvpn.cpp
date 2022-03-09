@@ -10,12 +10,14 @@
 #include "openvpn.h"
 
 #include <QLatin1Char>
+#include <QRegularExpression>
 #include <QStandardPaths>
 #include <QStringBuilder>
 
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPluginFactory>
+#include <QRegularExpression>
 
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Ipv4Setting>
@@ -93,7 +95,7 @@ QString unQuote(QString &certVal, const QString &fileName)
     if (certFile.startsWith('"') || certFile.startsWith('\'')) { // Quoted
         certFile.remove(0, 1); // Remove the starting quote
         nextSep = 0;
-        while ((nextSep = certFile.indexOf(QRegExp(QStringLiteral("\"|'")), nextSep)) != -1) {
+        while ((nextSep = certFile.indexOf(QRegularExpression(QStringLiteral("\"|'")), nextSep)) != -1) {
             if (nextSep > 0 && certFile.at(nextSep - 1) != '\\') { // Quote not escaped
                 certVal = certFile.right(certFile.length() - nextSep - 1); // Leftover string
                 certFile.truncate(nextSep); // Quoted string
@@ -101,7 +103,7 @@ QString unQuote(QString &certVal, const QString &fileName)
             }
         }
     } else {
-        nextSep = certFile.indexOf(QRegExp(QStringLiteral("\\s"))); // First whitespace
+        nextSep = certFile.indexOf(QRegularExpression(QStringLiteral("\\s"))); // First whitespace
         if (nextSep != -1) {
             certVal = certFile.right(certFile.length() - nextSep - 1); // Leftover
             certFile = certFile.left(nextSep); // value
@@ -223,7 +225,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             continue;
         }
         key_value.clear();
-        key_value << line.split(QRegExp("\\s+")); // Split at one or more whitespaces
+        key_value << line.split(QRegularExpression("\\s+")); // Split at one or more whitespaces
 
         if (key_value[0] == CLIENT_TAG || key_value[0] == TLS_CLIENT_TAG) {
             have_client = true;
@@ -413,7 +415,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             continue;
         }
         if (key_value[0] == PKCS12_TAG && key_value.count() > 1) {
-            key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
+            key_value[1] = line.right(line.length() - line.indexOf(QRegularExpression("\\s"))); // Get whole string after key
             QString certFile = unQuote(key_value[1], fileName);
             dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CA), certFile);
             dataMap.insert(QLatin1String(NM_OPENVPN_KEY_CERT), certFile);
@@ -421,7 +423,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             continue;
         }
         if (key_value[0] == CA_TAG && key_value.count() > 1) {
-            key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
+            key_value[1] = line.right(line.length() - line.indexOf(QRegularExpression("\\s"))); // Get whole string after key
             if (key_value[1].trimmed() == QLatin1String("[inline]")) {
                 // No data or file to copy for now, it will be available later when we reach <ca> tag.
                 continue;
@@ -435,7 +437,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             continue;
         }
         if (key_value[0] == CERT_TAG && key_value.count() > 1) {
-            key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
+            key_value[1] = line.right(line.length() - line.indexOf(QRegularExpression("\\s"))); // Get whole string after key
             if (key_value[1].trimmed() == QLatin1String("[inline]")) {
                 // No data or file to copy for now, it will be available later when we reach <cert> tag.
                 continue;
@@ -449,7 +451,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             continue;
         }
         if (key_value[0] == KEY_TAG && key_value.count() > 1) {
-            key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
+            key_value[1] = line.right(line.length() - line.indexOf(QRegularExpression("\\s"))); // Get whole string after key
             if (key_value[1].trimmed() == QLatin1String("[inline]")) {
                 // No data or file to copy for now, it will be available later when we reach <key> tag.
                 continue;
@@ -463,7 +465,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             continue;
         }
         if (key_value[0] == SECRET_TAG && key_value.count() > 1) {
-            key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
+            key_value[1] = line.right(line.length() - line.indexOf(QRegularExpression("\\s"))); // Get whole string after key
             if (copyCertificates) {
                 const QString absoluteFilePath = tryToCopyToCertificatesDirectory(connectionName, unQuote(key_value[1], fileName));
                 dataMap.insert(QLatin1String(NM_OPENVPN_KEY_STATIC_KEY), absoluteFilePath);
@@ -480,7 +482,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             continue;
         }
         if (key_value[0] == TLS_AUTH_TAG && key_value.count() > 1) {
-            key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
+            key_value[1] = line.right(line.length() - line.indexOf(QRegularExpression("\\s"))); // Get whole string after key
 
             // We will copy inline certificate later when we reach <tls-auth> tag.
             if (key_value[1].trimmed() != QLatin1String("[inline]")) {
@@ -501,7 +503,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
             continue;
         }
         if (key_value[0] == TLS_CRYPT_TAG && key_value.count() > 1) {
-            key_value[1] = line.right(line.length() - line.indexOf(QRegExp("\\s"))); // Get whole string after key
+            key_value[1] = line.right(line.length() - line.indexOf(QRegularExpression("\\s"))); // Get whole string after key
 
             // We will copy inline certificate later when we reach <tls-crypt> tag.
             if (key_value[1].trimmed() != QLatin1String("[inline]")) {

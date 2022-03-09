@@ -58,9 +58,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
 
     KDeclarative::KDeclarative kdeclarative;
     kdeclarative.setDeclarativeEngine(m_ui->connectionView->engine());
-    kdeclarative.setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
     kdeclarative.setupEngine(m_ui->connectionView->engine());
-    kdeclarative.setupContext();
 
     // Check if we can use AP mode to identify security type
     bool useApMode = false;

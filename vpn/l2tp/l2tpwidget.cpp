@@ -147,13 +147,13 @@ QVariantMap L2tpWidget::setting() const
     }
 
     if (!m_tmpPppSetting.isNull()) {
-        data.unite(m_tmpPppSetting->data());
+        data.insert(m_tmpPppSetting->data());
     } else {
         const bool need_peer_eap = m_ui->cmbAuthType->currentIndex() != AuthType::Password;
 
         // retrieve the settings if the dialog has not been opened
         QScopedPointer<L2tpPPPWidget> ppp(new L2tpPPPWidget(m_setting, nullptr, need_peer_eap));
-        data.unite(ppp->setting());
+        data.insert(ppp->setting());
     }
 
     if (!m_ui->gateway->text().isEmpty()) {

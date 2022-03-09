@@ -11,7 +11,7 @@
 #include "uiutils.h"
 
 #if WITH_MODEMMANAGER_SUPPORT
-#include <ModemManagerQt/manager.h>
+#include <ModemManagerQt/Manager>
 #endif
 #include <NetworkManagerQt/Settings>
 

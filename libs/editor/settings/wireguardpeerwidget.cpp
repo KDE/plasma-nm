@@ -179,7 +179,8 @@ WireGuardPeerWidget::EndPointValid WireGuardPeerWidget::isEndpointValid(QString 
     // Create a Reg Expression validator to do a simple check for a valid qualified domain name
     // which checks to see that there are between 2 and 63 strings of at least 1 character each
     // separated by '.'. The full string must also be less than 255 characters long.
-    static QRegExpValidator fqdnValidator(QRegExp(QLatin1String("(?=.{3,254}$)([a-zA-Z0-9][a-zA-Z0-9-]{0,62}\\.){1,63}[a-zA-Z]{1,63}")), nullptr);
+    static QRegularExpressionValidator fqdnValidator(QRegularExpression(QLatin1String("(?=.{3,254}$)([a-zA-Z0-9][a-zA-Z0-9-]{0,62}\\.){1,63}[a-zA-Z]{1,63}")),
+                                                     nullptr);
     static SimpleIpV4AddressValidator ipv4Validator;
     static SimpleIpV6AddressValidator ipv6Validator;
     int pos = 0;

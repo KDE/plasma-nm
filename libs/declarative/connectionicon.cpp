@@ -18,7 +18,7 @@
 #include <NetworkManagerQt/WirelessSetting>
 
 #if WITH_MODEMMANAGER_SUPPORT
-#include <ModemManagerQt/manager.h>
+#include <ModemManagerQt/Manager>
 #endif
 
 ConnectionIcon::ConnectionIcon(QObject *parent)

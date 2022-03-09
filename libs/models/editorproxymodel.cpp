@@ -41,7 +41,7 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex &sourc
         return false;
     }
 
-    const QString pattern = filterRegExp().pattern();
+    const QString pattern = filterRegularExpression().pattern();
     if (!pattern.isEmpty()) { // filtering on data (connection name), wildcard-only
         QString data = sourceModel()->data(index, Qt::DisplayRole).toString();
         if (data.isEmpty()) {

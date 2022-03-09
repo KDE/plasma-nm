@@ -24,7 +24,7 @@ bool AppletProxyModel::filterAcceptsRow(int source_row, const QModelIndex &sourc
 
     // slaves are filtered-out when not searching for a connection (makes the state of search results clear)
     const bool isSlave = sourceModel()->data(index, NetworkModel::SlaveRole).toBool();
-    if (isSlave && filterRegExp().isEmpty()) {
+    if (isSlave && filterRegularExpression().pattern().isEmpty()) {
         return false;
     }
 
@@ -40,11 +40,11 @@ bool AppletProxyModel::filterAcceptsRow(int source_row, const QModelIndex &sourc
         return false;
     }
 
-    if (filterRegExp().isEmpty()) {
+    if (filterRegularExpression().pattern().isEmpty()) {
         return true;
     }
 
-    return sourceModel()->data(index, NetworkModel::ItemUniqueNameRole).toString().contains(filterRegExp());
+    return sourceModel()->data(index, NetworkModel::ItemUniqueNameRole).toString().contains(filterRegularExpression().pattern());
 }
 
 bool AppletProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const

@@ -7,7 +7,7 @@
 #ifndef PLASMA_NM_SECURITY8021X_H
 #define PLASMA_NM_SECURITY8021X_H
 
-#include <QRegExpValidator>
+#include <QRegularExpressionValidator>
 #include <QWidget>
 
 #include <NetworkManagerQt/Security8021xSetting>
@@ -44,8 +44,8 @@ private Q_SLOTS:
 private:
     NetworkManager::Security8021xSetting::Ptr m_setting;
     Ui::Security8021x *const m_ui;
-    QRegExpValidator *altSubjectValidator = nullptr;
-    QRegExpValidator *serversValidator = nullptr;
+    QRegularExpressionValidator *altSubjectValidator = nullptr;
+    QRegularExpressionValidator *serversValidator = nullptr;
 };
 
 #endif // SECURITY8021X_H

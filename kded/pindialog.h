@@ -14,7 +14,7 @@
 #include <Solid/Device>
 
 #include "ui_pinwidget.h"
-#include <ModemManagerQt/modem.h>
+#include <ModemManagerQt/Modem>
 
 class PinWidget;
 

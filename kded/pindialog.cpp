@@ -14,7 +14,7 @@
 #include <KLocalizedString>
 #include <KWindowSystem>
 
-#include <ModemManagerQt/manager.h>
+#include <ModemManagerQt/Manager>
 
 PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *parent)
     : QDialog(parent)

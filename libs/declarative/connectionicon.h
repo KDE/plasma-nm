@@ -12,7 +12,7 @@
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessNetwork>
 #if WITH_MODEMMANAGER_SUPPORT
-#include <ModemManagerQt/modem.h>
+#include <ModemManagerQt/Modem>
 #endif
 
 class ConnectionIcon : public QObject

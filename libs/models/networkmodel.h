@@ -18,7 +18,7 @@
 #include <NetworkManagerQt/WirelessDevice>
 
 #if WITH_MODEMMANAGER_SUPPORT
-#include <ModemManagerQt/modem.h>
+#include <ModemManagerQt/Modem>
 #endif
 
 class Q_DECL_EXPORT NetworkModel : public QAbstractListModel

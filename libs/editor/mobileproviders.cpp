@@ -9,6 +9,7 @@
 
 #include <QFile>
 #include <QLocale>
+#include <QRegularExpression>
 #include <QTextStream>
 
 const QString MobileProviders::ProvidersFile = QStringLiteral(BROADBANDPROVIDER_DATABASE);
@@ -129,7 +130,7 @@ QStringList MobileProviders::getProvidersList(QString country, NetworkManager::C
                                     lang = QStringLiteral("en"); // English is default
                                 } else {
                                     lang = lang.toLower();
-                                    lang.remove(QRegExp(QStringLiteral("\\-.*$"))); // Remove everything after '-' in xml:lang attribute.
+                                    lang.remove(QRegularExpression(QStringLiteral("\\-.*$"))); // Remove everything after '-' in xml:lang attribute.
                                 }
                                 localizedProviderNames.insert(lang, e3.text());
                             }
@@ -236,7 +237,7 @@ ProviderData MobileProviders::parseProvider(const QDomNode &providerNode)
                 lang = QStringLiteral("en"); // English is default
             } else {
                 lang = lang.toLower();
-                lang.remove(QRegExp(QStringLiteral("\\-.*$"))); // Remove everything after '-' in xml:lang attribute.
+                lang.remove(QRegularExpression(QStringLiteral("\\-.*$"))); // Remove everything after '-' in xml:lang attribute.
             }
             localizedProviderNames.insert(lang, ce.text());
         }
@@ -303,7 +304,7 @@ QVariantMap MobileProviders::getApnInfo(const QString &apn)
                     lang = QStringLiteral("en"); // English is default
                 } else {
                     lang = lang.toLower();
-                    lang.remove(QRegExp(QStringLiteral("\\-.*$"))); // Remove everything after '-' in xml:lang attribute.
+                    lang.remove(QRegularExpression(QStringLiteral("\\-.*$"))); // Remove everything after '-' in xml:lang attribute.
                 }
                 localizedPlanNames.insert(lang, e.text());
             } else if (e.tagName().toLower() == QLatin1String("username")) {

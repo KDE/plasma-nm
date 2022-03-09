@@ -11,7 +11,7 @@
 #define PLASMA_NM_BLUETOOTH_MONITOR_H
 #if WITH_MODEMMANAGER_SUPPORT
 #include "mobileconnectionwizard.h"
-#include <ModemManagerQt/manager.h>
+#include <ModemManagerQt/Manager>
 #endif
 
 #include <QObject>

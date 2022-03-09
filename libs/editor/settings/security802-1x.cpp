@@ -94,10 +94,11 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool w
     KAcceleratorManager::manage(this);
     connect(m_ui->stackedWidget, &QStackedWidget::currentChanged, this, &Security8021x::currentAuthChanged);
 
-    altSubjectValidator = new QRegExpValidator(
-        QRegExp(QLatin1String("^(DNS:[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+|EMAIL:[a-zA-Z0-9._-]+@[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+|URI:[a-zA-Z0-9.+-]+:.+|)$")),
+    altSubjectValidator = new QRegularExpressionValidator(
+        QRegularExpression(
+            QLatin1String("^(DNS:[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+|EMAIL:[a-zA-Z0-9._-]+@[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+|URI:[a-zA-Z0-9.+-]+:.+|)$")),
         this);
-    serversValidator = new QRegExpValidator(QRegExp(QLatin1String("^[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+$")), this);
+    serversValidator = new QRegularExpressionValidator(QRegularExpression(QLatin1String("^[a-zA-Z0-9_-]+\\.[a-zA-Z0-9_.-]+$")), this);
 
     auto altSubjectListValidator = new ListValidator(this);
     altSubjectListValidator->setInnerValidator(altSubjectValidator);

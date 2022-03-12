@@ -2,7 +2,7 @@
 <ui version="4.0">
  <author>Lukáš Tinkl &lt;ltinkl@redhat.com&gt;</author>
  <class>VpncAdvancedWidget</class>
- <widget class="QWidget" name="VpncAdvancedWidget">
+ <widget class="QDialog" name="VpncAdvancedWidget">
   <property name="geometry">
    <rect>
     <x>0</x>

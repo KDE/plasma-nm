@@ -7,9 +7,9 @@
 
 #include "pindialog.h"
 
-#include <QDesktopWidget>
 #include <QIcon>
 #include <QIntValidator>
+#include <QScreen>
 
 #include <KLocalizedString>
 #include <KWindowSystem>
@@ -48,7 +48,8 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     ui->puk->setValidator(validator2);
 
     ui->errorMessage->setHidden(true);
-    QRect desktop = QApplication::desktop()->screenGeometry(topLevelWidget());
+    const QRect desktop = screen()->availableGeometry();
+    // QRect desktop = QApplication::desktop()->screenGeometry(topLevelWidget());
     setMinimumWidth(360); // width of the PinePhone display
 
     pixmapLabel = new QLabel(this);

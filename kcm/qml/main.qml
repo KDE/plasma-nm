@@ -60,7 +60,7 @@ Item {
         }
 
         onTextChanged: {
-            editorProxyModel.setFilterRegExp(text)
+            editorProxyModel.setFilterFixedString(text)
         }
     }
 

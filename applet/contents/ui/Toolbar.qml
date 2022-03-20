@@ -155,7 +155,7 @@ RowLayout {
         focus: !Kirigami.InputMethod.willShowOnActive
 
         onTextChanged: {
-            appletProxyModel.setFilterRegExp(text)
+            appletProxyModel.setFilterFixedString(text)
         }
     }
 

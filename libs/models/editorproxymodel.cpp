@@ -11,6 +11,7 @@ EditorProxyModel::EditorProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
     setDynamicSortFilter(true);
+    setFilterRole(NetworkModel::NameRole);
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setSortLocaleAware(true);
     sort(0, Qt::DescendingOrder);
@@ -41,16 +42,7 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex &sourc
         return false;
     }
 
-    const QString pattern = filterRegularExpression().pattern();
-    if (!pattern.isEmpty()) { // filtering on data (connection name), wildcard-only
-        QString data = sourceModel()->data(index, Qt::DisplayRole).toString();
-        if (data.isEmpty()) {
-            data = sourceModel()->data(index, NetworkModel::NameRole).toString();
-        }
-        return data.contains(pattern, Qt::CaseInsensitive);
-    }
-
-    return true;
+    return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 
 bool EditorProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const

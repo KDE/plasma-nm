@@ -17,6 +17,7 @@
         "Description[nl]": "Levert secrets aan de NetworkManager-daemon",
         "Description[nn]": "Forsyner NetworkManager-tenesta med løyndomar",
         "Description[pl]": "Dostarcza danych poufnych do usługi Zarządzania Siecią",
+        "Description[pt]": "Fornece as senhas ao serviço NetworkManager",
         "Description[pt_BR]": "Fornece as senhas do serviço NetworkManager",
         "Description[ru]": "Предоставляет пароли и ключи демону NetworkManager",
         "Description[sl]": "Ponuja skrivnosti za odzadnji program NetworkManager",

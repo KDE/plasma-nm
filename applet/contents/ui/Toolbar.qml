@@ -153,7 +153,11 @@ RowLayout {
         Layout.fillWidth: true
 
         enabled: connectionView.count > 0 || text.length > 0
-        focus: !Kirigami.InputMethod.willShowOnActive
+
+        // This uses expanded to ensure the binding gets reevaluated
+        // when the plasmoid is shown again and that way ensure we are
+        // always in the correct state on show.
+        focus: plasmoid.expanded && !Kirigami.InputMethod.willShowOnActive
 
         onTextChanged: {
             appletProxyModel.setFilterFixedString(text)
@@ -173,12 +177,6 @@ RowLayout {
 
         onClicked: {
             KCMShell.openSystemSettings(mainWindow.kcm)
-        }
-    }
-
-    Component.onCompleted: {
-        if (!Kirigami.InputMethod.willShowOnActive) {
-            searchTextField.forceActiveFocus()
         }
     }
 }

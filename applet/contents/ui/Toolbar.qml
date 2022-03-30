@@ -153,7 +153,7 @@ RowLayout {
 
         inputMethodHints: Qt.ImhNoPredictiveText
 
-        focus: Kirigami.InputMethod ? !Kirigami.InputMethod.willShowOnActive : true
+        focus: plasmoid.expanded && !Kirigami.InputMethod.willShowOnActive
         clearButtonShown: true
         placeholderText: i18nc("text field placeholder text", "Search…")
 
@@ -175,12 +175,6 @@ RowLayout {
 
         onClicked: {
             KCMShell.openSystemSettings(mainWindow.kcm)
-        }
-    }
-
-    Component.onCompleted: {
-        if (!Kirigami.InputMethod || !Kirigami.InputMethod.willShowOnActive) {
-            searchTextField.forceActiveFocus()
         }
     }
 }

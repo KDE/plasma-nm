@@ -83,39 +83,43 @@ PlasmaExtras.Representation {
             property int currentVisibleButtonIndex: -1
             property bool showSeparator: false
 
-            PlasmaExtras.PlaceholderMessage {
+            Loader {
                 anchors.centerIn: parent
                 width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
-                visible: connectionView.count === 0
-                iconName: {
-                    if (toolbarValues.displayplaneModeMessage) {
-                        return "network-flightmode-on"
-                    }
-                    if (toolbarValues.displayWifiMessage) {
-                        return "network-wireless-off"
-                    }
-                    if (toolbarValues.displayWwanMessage) {
-                        return "network-mobile-off"
-                    }
-                    return "edit-none"
-                }
-                text: {
-                    if (toolbarValues.displayplaneModeMessage) {
-                        return i18n("Airplane mode is enabled")
-                    }
-                    if (toolbarValues.displayWifiMessage) {
-                        if (toolbarValues.displayWwanMessage) {
-                            return i18n("Wireless and mobile networks are deactivated")
+                active: connectionView.count === 0
+                asynchronous: true
+                visible: status == Loader.Ready
+                sourceComponent: PlasmaExtras.PlaceholderMessage {
+                    iconName: {
+                        if (toolbarValues.displayplaneModeMessage) {
+                            return "network-flightmode-on"
                         }
-                        return i18n("Wireless is deactivated")
+                        if (toolbarValues.displayWifiMessage) {
+                            return "network-wireless-off"
+                        }
+                        if (toolbarValues.displayWwanMessage) {
+                            return "network-mobile-off"
+                        }
+                        return "edit-none"
                     }
-                    if (toolbarValues.displayWwanMessage) {
-                        return i18n("Mobile network is deactivated")
+                    text: {
+                        if (toolbarValues.displayplaneModeMessage) {
+                            return i18n("Airplane mode is enabled")
+                        }
+                        if (toolbarValues.displayWifiMessage) {
+                            if (toolbarValues.displayWwanMessage) {
+                                return i18n("Wireless and mobile networks are deactivated")
+                            }
+                            return i18n("Wireless is deactivated")
+                        }
+                        if (toolbarValues.displayWwanMessage) {
+                            return i18n("Mobile network is deactivated")
+                        }
+                        if (toolbar.searchTextField.text.length > 0) {
+                            return i18n("No matches")
+                        }
+                        return i18n("No available connections")
                     }
-                    if (toolbar.searchTextField.text.length > 0) {
-                        return i18n("No matches")
-                    }
-                    return i18n("No available connections")
                 }
             }
 

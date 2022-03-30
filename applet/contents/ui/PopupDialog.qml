@@ -100,6 +100,9 @@ PlasmaExtras.Representation {
                     if (toolbarValues.displayWwanMessage) {
                         return i18n("Mobile network is deactivated")
                     }
+                    if (toolbar.searchTextField.text.length > 0) {
+                        return i18n("No matches")
+                    }
                     return i18n("No available connections")
                 }
             }

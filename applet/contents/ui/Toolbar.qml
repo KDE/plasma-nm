@@ -152,7 +152,7 @@ RowLayout {
 
         Layout.fillWidth: true
 
-        enabled: connectionView.count > 0
+        enabled: connectionView.count > 0 || text.length > 0
         focus: !Kirigami.InputMethod.willShowOnActive
 
         onTextChanged: {

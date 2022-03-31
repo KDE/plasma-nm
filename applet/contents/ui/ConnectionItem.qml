@@ -13,7 +13,6 @@ import org.kde.kcoreaddons 1.0 as KCoreAddons
 import org.kde.kquickcontrolsaddons 2.0
 
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents // for ContextMenu+MenuItem
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
@@ -35,6 +34,7 @@ PlasmaExtras.ExpandableListItem {
 
     property real rxBytes: 0
     property real txBytes: 0
+    property Component showQRComponent: null
 
     icon: model.ConnectionIcon
     title: model.ItemUniqueName
@@ -62,54 +62,33 @@ PlasmaExtras.ExpandableListItem {
         }
     }
 
-    customExpandedViewContent: detailsComponent
-    contextMenu: PlasmaComponents.Menu {
-        id: contextMenu
-
-        property Component showQRComponent: null
-
-        function prepare() {
-            showQRMenuItem.visible = false;
-
-            if (Uuid && Type === PlasmaNM.Enums.Wireless && passwordIsStatic) {
-                if (!showQRComponent) {
-                    showQRComponent = Qt.createComponent("ShowQR.qml", this);
-                    if (showQRComponent.status === Component.Error) {
-                        console.warn("Cannot create QR code component:", showQRComponent.errorString());
+    contextualActionsModel: [
+        Action {
+            enabled: connectionItem.isDefault
+            text: i18n("Show network's QR code")
+            icon.name: "view-barcode-qr"
+            onTriggered: {
+                if (Uuid && Type === PlasmaNM.Enums.Wireless && passwordIsStatic) {
+                    if (!connectionItem.showQRComponent) {
+                        connectionItem.showQRComponent = Qt.createComponent("ShowQR.qml", this);
+                        if (connectionItem.showQRComponent.status === Component.Error) {
+                            console.warn("Cannot create QR code component:", connectionItemshowQRComponent.errorString());
+                        }
                     }
                 }
-
-                showQRMenuItem.visible = (showQRComponent.status === Component.Ready);
-            }
-        }
-
-        PlasmaComponents.MenuItem {
-            text: ItemUniqueName
-            enabled: false
-        }
-        PlasmaComponents.MenuItem {
-            text: stateChangeButton.text
-            icon: (ConnectionState == PlasmaNM.Enums.Deactivated) ? "network-connect" : "network-disconnect"
-            onClicked: changeState()
-        }
-        PlasmaComponents.MenuItem {
-            id: showQRMenuItem
-            text: i18n("Show network's QR code")
-            icon: "view-barcode-qr"
-            // Updated in prepare()
-            visible: false
-            onClicked: {
                 const data = handler.wifiCode(ConnectionPath, Ssid, SecurityType)
-                var obj = contextMenu.showQRComponent.createObject(connectionItem, { content: data });
+                var obj = connectionItem.showQRComponent.createObject(connectionItem, { content: data });
                 obj.showMaximized()
             }
-        }
-        PlasmaComponents.MenuItem {
+        },
+        Action {
             text: i18n("Configure…")
-            icon: "settings-configure"
-            onClicked: KCMShell.open([mainWindow.kcm, "--args", "Uuid=" + Uuid])
+            icon.name: "configure"
+            onTriggered: KCMShell.open([mainWindow.kcm, "--args", "Uuid=" + Uuid])
         }
-    }
+    ]
+
+    customExpandedViewContent: detailsComponent
 
     Component {
         id: detailsComponent

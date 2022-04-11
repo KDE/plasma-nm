@@ -12,6 +12,7 @@ EditorProxyModel::EditorProxyModel(QObject *parent)
 {
     setDynamicSortFilter(true);
     setFilterRole(NetworkModel::NameRole);
+    setFilterCaseSensitivity(Qt::CaseInsensitive);
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setSortLocaleAware(true);
     sort(0, Qt::DescendingOrder);

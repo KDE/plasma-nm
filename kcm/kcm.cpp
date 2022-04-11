@@ -506,8 +506,7 @@ void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::Connecti
                 kcmChanged(valid);
             }
         });
-        auto layout = new QVBoxLayout(m_ui->connectionConfiguration);
-        layout->addWidget(m_tabWidget);
+        m_ui->horizontalLayout->addWidget(m_tabWidget);
     }
 
     kcmChanged(false);
@@ -593,7 +592,6 @@ void KCMNetworkmanagement::resetSelection()
     QObject *rootItem = m_ui->connectionView->rootObject();
     QMetaObject::invokeMethod(rootItem, "deselectConnections");
     if (m_tabWidget) {
-        delete m_ui->connectionConfiguration->layout();
         delete m_tabWidget;
         m_tabWidget = nullptr;
     }

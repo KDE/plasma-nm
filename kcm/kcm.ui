@@ -23,15 +23,15 @@
    </size>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
    <item>
     <widget class="QQuickWidget" name="connectionView">
      <property name="resizeMode">
       <enum>QQuickWidget::SizeRootObjectToView</enum>
      </property>
     </widget>
-   </item>
-   <item>
-    <widget class="QWidget" name="connectionConfiguration" native="true"/>
    </item>
   </layout>
  </widget>

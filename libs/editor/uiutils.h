@@ -110,6 +110,12 @@ public:
      */
     static QString wirelessBandToString(NetworkManager::WirelessSetting::FrequencyBand band);
 
+    /**
+     * @param frequency The frequency of a wireless network access point in MHz
+     * @return A string representation
+     */
+    static QString wirelessFrequencyToString(uint frequency);
+
 #if WITH_MODEMMANAGER_SUPPORT
     static QString convertAllowedModeToString(ModemManager::Modem::ModemModes mode);
     static QString convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech);

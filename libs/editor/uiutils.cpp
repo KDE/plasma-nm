@@ -450,6 +450,11 @@ QString UiUtils::wirelessBandToString(NetworkManager::WirelessSetting::Frequency
     return {};
 }
 
+QString UiUtils::wirelessFrequencyToString(uint frequency)
+{
+    return i18nc("Wireless connection frequency", "%1 GHz", frequency / 1000.0);
+}
+
 #if WITH_MODEMMANAGER_SUPPORT
 QString UiUtils::convertAllowedModeToString(ModemManager::Modem::ModemModes modes)
 {

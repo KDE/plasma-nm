@@ -595,6 +595,11 @@ void NetworkModelItem::updateDetails() const
             if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
                 m_details << i18n("Connection speed") << UiUtils::connectionSpeed(wirelessDevice->bitRate());
             }
+            const NetworkManager::AccessPoint::Ptr accessPoint = wirelessDevice->findAccessPoint(m_specificPath);
+            if (accessPoint) {
+                m_details << i18n("Frequency") << UiUtils::wirelessFrequencyToString(accessPoint->frequency());
+                m_details << i18n("BSSID") << accessPoint->hardwareAddress();
+            }
             m_details << i18n("MAC Address") << wirelessDevice->permanentHardwareAddress();
         }
     } else if (m_type == NetworkManager::ConnectionSettings::Gsm || m_type == NetworkManager::ConnectionSettings::Cdma) {

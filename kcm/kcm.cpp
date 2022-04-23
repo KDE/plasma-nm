@@ -43,6 +43,7 @@
 #include <QQuickItem>
 #include <QQuickView>
 #include <QQuickWidget>
+#include <QStringBuilder>
 #include <QTimer>
 #include <QVBoxLayout>
 

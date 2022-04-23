@@ -32,6 +32,8 @@
 #include <ModemManagerQt/ModemDevice>
 #endif
 
+#include <QStringBuilder>
+
 NetworkModelItem::NetworkModelItem(QObject *parent)
     : QObject(parent)
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)

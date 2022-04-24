@@ -382,7 +382,6 @@ a temporary IPv6 address in addition to the public one generated from MAC addres
   <zorder>dnsSearchLabel</zorder>
   <zorder>privacyCombo</zorder>
   <zorder>label</zorder>
-  <zorder>verticalSpacer</zorder>
  </widget>
  <customwidgets>
   <customwidget>

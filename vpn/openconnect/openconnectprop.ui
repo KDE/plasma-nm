@@ -75,8 +75,21 @@
       <item row="3" column="1">
        <widget class="QLineEdit" name="leProxy"/>
       </item>
-      <item row="6" column="0">
+      <item row="4" column="0">
        <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>User Agent:</string>
+        </property>
+        <property name="buddy">
+         <cstring>leUserAgent</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="leUserAgent"/>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_4">
         <property name="text">
          <string>CSD Wrapper Script:</string>
         </property>
@@ -85,14 +98,14 @@
         </property>
        </widget>
       </item>
-      <item row="5" column="0" colspan="2">
+      <item row="6" column="0" colspan="2">
        <widget class="QCheckBox" name="chkAllowTrojan">
         <property name="text">
          <string>Allow Cisco Secure Desktop trojan</string>
         </property>
        </widget>
       </item>
-      <item row="6" column="1">
+      <item row="7" column="1">
        <widget class="KUrlRequester" name="leCsdWrapperScript"/>
       </item>
       <item row="0" column="0">
@@ -135,14 +148,14 @@
         </item>
        </widget>
       </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_8">
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_9">
         <property name="text">
          <string>Reported OS:</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="1">
+      <item row="5" column="1">
        <widget class="QComboBox" name="cmbReportedOs">
         <property name="sizePolicy">
          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">

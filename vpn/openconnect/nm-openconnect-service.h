@@ -29,6 +29,7 @@
 #define NM_OPENCONNECT_KEY_PREVENT_INVALID_CERT "prevent_invalid_cert"
 #define NM_OPENCONNECT_KEY_PROTOCOL "protocol"
 #define NM_OPENCONNECT_KEY_PROXY "proxy"
+#define NM_OPENCONNECT_KEY_USERAGENT "useragent"
 #define NM_OPENCONNECT_KEY_CSD_ENABLE "enable_csd_trojan"
 #define NM_OPENCONNECT_KEY_CSD_WRAPPER "csd_wrapper"
 #define NM_OPENCONNECT_KEY_TOKEN_MODE "stoken_source"

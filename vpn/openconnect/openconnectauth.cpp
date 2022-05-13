@@ -192,6 +192,12 @@ void OpenconnectAuthWidget::readConfig()
         const QByteArray proxy = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_PROXY]);
         openconnect_set_http_proxy(d->vpninfo, OC3DUP(proxy.data()));
     }
+#if OPENCONNECT_CHECK_VER(5, 8)
+    if (!dataMap[NM_OPENCONNECT_KEY_USERAGENT].isEmpty()) {
+        const QByteArray useragent = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_USERAGENT]);
+        openconnect_set_useragent(d->vpninfo, OC3DUP(useragent.data()));
+    }
+#endif
     if (!dataMap[NM_OPENCONNECT_KEY_USERCERT].isEmpty()) {
         const QByteArray crt = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_USERCERT]);
         const QByteArray key = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_PRIVKEY]);

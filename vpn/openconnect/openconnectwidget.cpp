@@ -318,6 +318,9 @@ QVariantMap OpenconnectSettingWidget::setting() const
     if (!d->ui.leProxy->text().isEmpty()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_PROXY), d->ui.leProxy->text());
     }
+    if (!d->ui.leUserAgent->text().isEmpty()) {
+        data.insert(QLatin1String(NM_OPENCONNECT_KEY_USERAGENT), d->ui.leUserAgent->text());
+    }
     data.insert(NM_OPENCONNECT_KEY_REPORTED_OS, reportedOs);
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_CSD_ENABLE), d->ui.chkAllowTrojan->isChecked() ? "yes" : "no");
     if (d->ui.leCsdWrapperScript->url().isValid()) {

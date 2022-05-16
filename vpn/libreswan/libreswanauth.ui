@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>OpenswanAuth</class>
- <widget class="QWidget" name="OpenswanAuth">
+ <class>LibreswanAuth</class>
+ <widget class="QWidget" name="LibreswanAuth">
   <property name="geometry">
    <rect>
     <x>0</x>

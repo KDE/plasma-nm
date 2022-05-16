@@ -18,7 +18,7 @@ Optional dependencies:
   * openconnect
     - if you want to build the OpenConnect VPN plugin
 
-  * NetworkManager-fortisslvpn|iodine|l2tp|openconnect|openswan|openvpn|pptp|ssh|sstp|strongswan|vpnc
+  * NetworkManager-fortisslvpn|iodine|l2tp|libreswan|openconnect|openvpn|pptp|ssh|sstp|strongswan|vpnc
     - these are runtime dependencies for VPN plugins
 
 Compiling:

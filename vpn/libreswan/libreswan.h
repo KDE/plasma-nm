@@ -4,19 +4,19 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-#ifndef PLASMA_NM_OPENSWAN_H
-#define PLASMA_NM_OPENSWAN_H
+#ifndef PLASMA_NM_LIBRESWAN_H
+#define PLASMA_NM_LIBRESWAN_H
 
 #include "vpnuiplugin.h"
 
 #include <QVariant>
 
-class Q_DECL_EXPORT OpenswanUiPlugin : public VpnUiPlugin
+class Q_DECL_EXPORT LibreswanUiPlugin : public VpnUiPlugin
 {
     Q_OBJECT
 public:
-    explicit OpenswanUiPlugin(QObject *parent = nullptr, const QVariantList & = QVariantList());
-    ~OpenswanUiPlugin() override;
+    explicit LibreswanUiPlugin(QObject *parent = nullptr, const QVariantList & = QVariantList());
+    ~LibreswanUiPlugin() override;
     SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr) override;
     SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr) override;
 
@@ -26,4 +26,4 @@ public:
     bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
 };
 
-#endif //  PLASMA_NM_OPENSWAN_H
+#endif //  PLASMA_NM_LIBRESWAN_H

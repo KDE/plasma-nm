@@ -21,6 +21,7 @@
         "Description[pt_BR]": "Fornece as senhas do serviço NetworkManager",
         "Description[ro]": "Furnizează secrete către demonul NetworkManager",
         "Description[ru]": "Предоставляет пароли и ключи демону NetworkManager",
+        "Description[sk]": "Poskytuje tajnosti službe správcu siete NetworkManager",
         "Description[sl]": "Ponuja skrivnosti za odzadnji program NetworkManager",
         "Description[sv]": "Tillhandahåller hemligheter till nätverkshanteringsdemonen",
         "Description[tr]": "AğYönetici yardımcısına şifreleri sağlar",

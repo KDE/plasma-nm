@@ -64,6 +64,7 @@ target_link_libraries(kded_networkmanagement
     KF5::Solid
     KF5::Wallet
     KF5::WindowSystem
+    KF5::KIOGui
 )
 
 if (WITH_MODEMMANAGER_SUPPORT)

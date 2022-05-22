@@ -1,56 +1,44 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-kded\")
 
+add_library(kded_networkmanagement MODULE)
+
+target_sources(kded_networkmanagement PRIVATE
+    bluetoothmonitor.cpp
+    connectivitymonitor.cpp
+    notification.cpp
+    monitor.cpp
+    passworddialog.cpp
+    secretagent.cpp
+    service.cpp
+    bluetoothmonitor.h
+    connectivitymonitor.h
+    notification.h
+    monitor.h
+    passworddialog.h
+    secretagent.h
+    service.h
+)
+
+ki18n_wrap_ui(kded_networkmanagement
+    passworddialog.ui
+)
+
 if (WITH_MODEMMANAGER_SUPPORT)
-    set(kded_networkmanagement_SRCS
-        bluetoothmonitor.cpp
-        connectivitymonitor.cpp
-        notification.cpp
+    target_sources(kded_networkmanagement PRIVATE
         modemmonitor.cpp
-        monitor.cpp
-        passworddialog.cpp
-        pindialog.cpp
-        secretagent.cpp
-        service.cpp
-        bluetoothmonitor.h
-        connectivitymonitor.h
-        notification.h
         modemmonitor.h
-        monitor.h
-        passworddialog.h
+        pindialog.cpp
         pindialog.h
-        secretagent.h
-        service.h
     )
-    ki18n_wrap_ui(kded_networkmanagement_SRCS
+
+    ki18n_wrap_ui(kded_networkmanagement
         pinwidget.ui
-        passworddialog.ui
-    )
-else()
-    set(kded_networkmanagement_SRCS
-        bluetoothmonitor.cpp
-        connectivitymonitor.cpp
-        notification.cpp
-        monitor.cpp
-        passworddialog.cpp
-        secretagent.cpp
-        service.cpp
-        bluetoothmonitor.h
-        connectivitymonitor.h
-        notification.h
-        monitor.h
-        passworddialog.h
-        secretagent.h
-        service.h
-    )
-    ki18n_wrap_ui(kded_networkmanagement_SRCS
-        passworddialog.ui
     )
 endif()
 
-ecm_qt_declare_logging_category(kded_networkmanagement_SRCS HEADER plasma_nm_kded.h IDENTIFIER PLASMA_NM_KDED_LOG CATEGORY_NAME org.kde.plasma.nm.kded DESCRIPTION "Plasma NM (kded)" EXPORT PLASMANM)
+ecm_qt_declare_logging_category(kded_networkmanagement HEADER plasma_nm_kded.h IDENTIFIER PLASMA_NM_KDED_LOG CATEGORY_NAME org.kde.plasma.nm.kded DESCRIPTION "Plasma NM (kded)" EXPORT PLASMANM)
 
 
-add_library(kded_networkmanagement MODULE ${kded_networkmanagement_SRCS})
 set_target_properties(kded_networkmanagement PROPERTIES OUTPUT_NAME networkmanagement)
 
 target_link_libraries(kded_networkmanagement

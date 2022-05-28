@@ -67,6 +67,7 @@
         "License": "GPL",
         "Name": "IPsec based VPN (libreswan)",
         "Name[az]": "İPsec əsaslı VPN (libreswan)",
+        "Name[ca@valencia]": "VPN basada en IPsec (libreswan)",
         "Name[ca]": "VPN basada en IPsec (libreswan)",
         "Name[es]": "VPN basada en IPsec (libreswan)",
         "Name[fr]": "VPN utilisant « IPsec » (libreswan)",

@@ -80,6 +80,7 @@
         "Name[tr]": "IPsec tabanlı VPN (libreswan)",
         "Name[uk]": "VPN на основі IPsec (libreswan)",
         "Name[x-test]": "xxIPsec based VPN (libreswan)xx",
+        "Name[zh_CN]": "基于 IPsec 的 VPN (libreswan)",
         "Version": "0.1",
         "Website": ""
     },

@@ -26,3 +26,5 @@ Dependencies:
     'frameworks/networkmanager-qt': '@latest'
     'frameworks/solid': '@latest'
     'frameworks/plasma-framework': '@latest'
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD']

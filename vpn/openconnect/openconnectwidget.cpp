@@ -219,6 +219,7 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
     d->ui.leGateway->setText(dataMap[NM_OPENCONNECT_KEY_GATEWAY]);
     d->ui.leCaCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_CACERT]));
     d->ui.leProxy->setText(dataMap[NM_OPENCONNECT_KEY_PROXY]);
+    d->ui.leUserAgent->setText(dataMap[NM_OPENCONNECT_KEY_USERAGENT]);
     d->ui.cmbReportedOs->setCurrentIndex(cmbReportedOsIndex);
     d->ui.chkAllowTrojan->setChecked(dataMap[NM_OPENCONNECT_KEY_CSD_ENABLE] == "yes");
     d->ui.leCsdWrapperScript->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_CSD_WRAPPER]));

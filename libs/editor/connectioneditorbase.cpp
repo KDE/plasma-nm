@@ -187,7 +187,8 @@ void ConnectionEditorBase::initialize()
     const bool emptyConnection = m_connection->id().isEmpty();
     const NetworkManager::ConnectionSettings::ConnectionType type = m_connection->connectionType();
 
-    if (emptyConnection) {
+    auto modifySystem = NetworkManager::permissions().value(QStringLiteral("org.freedesktop.NetworkManager.settings.modify.system"));
+    if (modifySystem != QStringLiteral("yes") && emptyConnection) {
         m_connection->addToPermissions(KUser().loginName(), QString());
     }
 

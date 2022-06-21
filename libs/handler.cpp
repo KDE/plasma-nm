@@ -242,7 +242,11 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
     settings->setId(ap->ssid());
     settings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
     settings->setAutoconnect(true);
-    settings->addToPermissions(KUser().loginName(), QString());
+
+    auto modifySystem = NetworkManager::permissions().value(QStringLiteral("org.freedesktop.NetworkManager.settings.modify.system"));
+    if (modifySystem != QStringLiteral("yes")) {
+        settings->addToPermissions(KUser().loginName(), QString());
+    }
 
     NetworkManager::WirelessSetting::Ptr wifiSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
     wifiSetting->setInitialized(true);

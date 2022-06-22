@@ -7,14 +7,16 @@
 
 #include "connectivitymonitor.h"
 
-#include <QDBusPendingCallWatcher>
-#include <QDBusPendingReply>
+#include <QDBusReply>
 #include <QDesktopServices>
 
 #include <KIO/OpenUrlJob>
 #include <KLocalizedString>
 
 #include <NetworkManagerQt/ActiveConnection>
+
+#include <QCoroCore>
+#include <QCoroDBus>
 
 #include "plasma_nm_kded.h"
 #include <chrono>
@@ -93,15 +95,11 @@ void ConnectivityMonitor::showLimitedConnectivityNotification()
     m_notification->sendEvent();
 }
 
-void ConnectivityMonitor::checkConnectivity()
+QCoro::Task<void> ConnectivityMonitor::checkConnectivity()
 {
-    QDBusPendingReply<uint> pendingReply = NetworkManager::checkConnectivity();
-    auto callWatcher = new QDBusPendingCallWatcher(pendingReply);
-    connect(callWatcher, &QDBusPendingCallWatcher::finished, this, [this](QDBusPendingCallWatcher *watcher) {
-        QDBusPendingReply<uint> reply = *watcher;
-        if (reply.isValid()) {
-            connectivityChanged((NetworkManager::Connectivity)reply.value());
-        }
-        watcher->deleteLater();
-    });
+    QDBusReply<uint> reply = co_await NetworkManager::checkConnectivity();
+
+    if (reply.isValid()) {
+        connectivityChanged((NetworkManager::Connectivity)reply.value());
+    }
 }

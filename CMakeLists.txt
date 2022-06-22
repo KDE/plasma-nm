@@ -97,6 +97,10 @@ pkg_check_modules(NETWORKMANAGER IMPORTED_TARGET libnm>1.4.0 REQUIRED)
 pkg_check_modules(MOBILEBROADBANDPROVIDERINFO mobile-broadband-provider-info)
 pkg_get_variable(BROADBANDPROVIDER_DATABASE mobile-broadband-provider-info database)
 
+find_package(QCoro${QT_MAJOR_VERSION} REQUIRED COMPONENTS Core DBus)
+
+qcoro_enable_coroutines()
+
 add_definitions(
     -DQT_DISABLE_DEPRECATED_BEFORE=0x050f00
     -DQT_DEPRECATED_WARNINGS_SINCE=0x060000

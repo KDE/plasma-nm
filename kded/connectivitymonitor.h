@@ -15,6 +15,8 @@
 #include <QPointer>
 #include <QTimer>
 
+#include <QCoroCore>
+
 class ConnectivityMonitor : public QObject
 {
     Q_OBJECT
@@ -24,7 +26,7 @@ public:
 
 private Q_SLOTS:
     void connectivityChanged(NetworkManager::Connectivity connectivity);
-    void checkConnectivity();
+    QCoro::Task<void> checkConnectivity();
 
 private:
     void showLimitedConnectivityNotification();

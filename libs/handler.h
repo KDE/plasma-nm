@@ -17,22 +17,13 @@
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Utils>
 
+#include <QCoroCore>
+
 class Q_DECL_EXPORT Handler : public QObject
 {
     Q_OBJECT
 
 public:
-    enum HandlerAction {
-        ActivateConnection,
-        AddAndActivateConnection,
-        AddConnection,
-        DeactivateConnection,
-        RemoveConnection,
-        RequestScan,
-        UpdateConnection,
-        CreateHotspot,
-    };
-
     explicit Handler(QObject *parent = nullptr);
     ~Handler() override;
 
@@ -92,7 +83,7 @@ public Q_SLOTS:
      * Adds a new connection
      * @map - NMVariantMapMap with connection settings
      */
-    void addConnection(const NMVariantMapMap &map);
+    QCoro::Task<void> addConnection(const NMVariantMapMap &map);
 
     void addConnection(NMConnection *connection);
 
@@ -122,7 +113,7 @@ public Q_SLOTS:
      * @connection - connection which should be updated
      * @map - NMVariantMapMap with new connection settings
      */
-    void updateConnection(const NetworkManager::Connection::Ptr &connection, const NMVariantMapMap &map);
+    QCoro::Task<void> updateConnection(NetworkManager::Connection::Ptr connection, const NMVariantMapMap &map);
     void requestScan(const QString &interface = QString());
 
     void createHotspot();
@@ -130,8 +121,6 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void secretAgentError(const QString &connectionPath, const QString &message);
-    void replyFinished(QDBusPendingCallWatcher *watcher);
-    void hotspotCreated(QDBusPendingCallWatcher *watcher);
     void primaryConnectionTypeChanged(NetworkManager::ConnectionSettings::ConnectionType type);
     void unlockRequiredChanged(MMModemLock modemLock);
     void slotRequestWifiCode(QDBusPendingCallWatcher *watcher);
@@ -145,7 +134,13 @@ Q_SIGNALS:
     void wifiCodeReceived(const QString &data, const QString &connectionName);
 
 private:
-    void addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject);
+    QCoro::Task<void> addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject);
+    QCoro::Task<void> activateConnectionInternal(const QString &connection, const QString &device, const QString &specificParameter);
+    QCoro::Task<void> addAndActivateConnectionInternal(const QString &device, const QString &specificParameter, const QString &password = QString());
+    QCoro::Task<void> deactivateConnectionInternal(const QString &connection, const QString &device);
+    QCoro::Task<void> removeConnectionInternal(const QString &connection);
+    QCoro::Task<void> requestScanInternal(const QString &interface = QString());
+    QCoro::Task<void> createHotspotInternal();
 
     bool m_hotspotSupported;
     bool m_tmpWirelessEnabled;
@@ -158,7 +153,7 @@ private:
     QMap<QString, QTimer *> m_wirelessScanRetryTimer;
     short m_ongoingScansCount = 0;
 
-    void enableBluetooth(bool enable);
+    QCoro::Task<void> enableBluetooth(bool enable);
     void scanRequestFailed(const QString &interface);
     bool checkRequestScanRateLimit(const NetworkManager::WirelessDevice::Ptr &wifiDevice);
     bool checkHotspotSupported();

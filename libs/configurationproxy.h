@@ -45,6 +45,8 @@ public:
 
     bool showPasswordDialog() const;
 
+    bool systemConnectionsByDefault() const;
+
 Q_SIGNALS:
     void airplaneModeEnabledChanged();
     void manageVirtualConnectionsChanged(bool manage);

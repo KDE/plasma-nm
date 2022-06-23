@@ -102,3 +102,12 @@ bool ConfigurationProxy::showPasswordDialog() const
     }
     return mConfiguration->showPasswordDialog();
 }
+
+bool ConfigurationProxy::systemConnectionsByDefault() const
+{
+    if (!mConfiguration) {
+        return false;
+    }
+
+    return mConfiguration->systemConnectionsByDefault();
+}

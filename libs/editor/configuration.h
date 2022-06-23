@@ -35,6 +35,8 @@ public:
 
     bool showPasswordDialog() const;
 
+    bool systemConnectionsByDefault() const;
+
     static Configuration &self();
 
 Q_SIGNALS:

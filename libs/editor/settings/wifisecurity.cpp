@@ -109,6 +109,23 @@ bool WifiSecurity::isValid() const
     return true;
 }
 
+void WifiSecurity::setStoreSecretsSystemWide(bool system)
+{
+    if (system) {
+        m_ui->wepKey->setPasswordOption(PasswordField::StoreForAllUsers);
+        m_ui->leapPassword->setPasswordOption(PasswordField::StoreForAllUsers);
+        m_ui->psk->setPasswordOption(PasswordField::StoreForAllUsers);
+        m_8021xWidget->setPasswordOption(PasswordField::StoreForAllUsers);
+        m_WPA2Widget->setPasswordOption(PasswordField::StoreForAllUsers);
+    } else {
+        m_ui->wepKey->setPasswordOption(PasswordField::StoreForUser);
+        m_ui->leapPassword->setPasswordOption(PasswordField::StoreForUser);
+        m_ui->psk->setPasswordOption(PasswordField::StoreForUser);
+        m_8021xWidget->setPasswordOption(PasswordField::StoreForUser);
+        m_WPA2Widget->setPasswordOption(PasswordField::StoreForUser);
+    }
+}
+
 void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     NetworkManager::WirelessSecuritySetting::Ptr wifiSecurity = setting.staticCast<NetworkManager::WirelessSecuritySetting>();

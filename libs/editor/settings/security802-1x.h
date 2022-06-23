@@ -12,6 +12,7 @@
 
 #include <NetworkManagerQt/Security8021xSetting>
 
+#include "passwordfield.h"
 #include "settingwidget.h"
 
 namespace Ui
@@ -35,6 +36,8 @@ public:
     QVariantMap setting() const override;
 
     bool isValid() const override;
+
+    void setPasswordOption(PasswordField::PasswordOption option);
 
 private Q_SLOTS:
     void altSubjectMatchesButtonClicked();

@@ -53,6 +53,7 @@ ConnectionWidget::ConnectionWidget(const NetworkManager::ConnectionSettings::Ptr
 
     connect(m_widget->autoconnect, &QCheckBox::stateChanged, this, &ConnectionWidget::settingChanged);
     connect(m_widget->allUsers, &QCheckBox::stateChanged, this, &ConnectionWidget::settingChanged);
+    connect(m_widget->allUsers, &QCheckBox::stateChanged, this, &ConnectionWidget::allUsersChanged);
     connect(m_widget->autoconnectVpn, &QCheckBox::stateChanged, this, &ConnectionWidget::settingChanged);
     connect(m_widget->pushButtonPermissions, &QPushButton::clicked, this, &ConnectionWidget::settingChanged);
     connect(m_widget->firewallZone, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ConnectionWidget::settingChanged);
@@ -139,6 +140,11 @@ NMVariantMapMap ConnectionWidget::setting() const
     settings.setMetered(static_cast<NetworkManager::ConnectionSettings::Metered>(m_widget->metered->currentIndex()));
 
     return settings.toMap();
+}
+
+bool ConnectionWidget::allUsers() const
+{
+    return m_widget->allUsers->isChecked();
 }
 
 void ConnectionWidget::autoVpnToggled(bool on)

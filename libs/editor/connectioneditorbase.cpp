@@ -195,6 +195,7 @@ void ConnectionEditorBase::initialize()
     // General configuration common to all connection types
     auto connectionWidget = new ConnectionWidget(m_connection);
     addConnectionWidget(connectionWidget, i18nc("General", "General configuration"));
+    connect(connectionWidget, &ConnectionWidget::allUsersChanged, this, &ConnectionEditorBase::onAllUsersChanged);
 
     // Add the rest of widgets
     QString serviceType;
@@ -212,6 +213,7 @@ void ConnectionEditorBase::initialize()
                                              this);
         addSettingWidget(wifiSecurity, i18n("Wi-Fi Security"));
         connect(wifiWidget, QOverload<const QString &>::of(&WifiConnectionWidget::ssidChanged), wifiSecurity, &WifiSecurity::onSsidChanged);
+        m_wifiSecurity = wifiSecurity;
     } else if (type == NetworkManager::ConnectionSettings::Pppoe) { // DSL
         auto pppoeWidget = new PppoeWidget(m_connection->setting(NetworkManager::Setting::Pppoe), this);
         addSettingWidget(pppoeWidget, i18n("DSL"));
@@ -513,4 +515,14 @@ void ConnectionEditorBase::validChanged(bool valid)
 
     m_valid = true;
     Q_EMIT validityChanged(true);
+}
+
+void ConnectionEditorBase::onAllUsersChanged()
+{
+    if (!m_wifiSecurity) {
+        return;
+    }
+
+    auto allUsers = m_connectionWidget->allUsers();
+    m_wifiSecurity->setStoreSecretsSystemWide(allUsers);
 }

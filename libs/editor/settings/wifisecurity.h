@@ -44,6 +44,8 @@ public:
 
     bool isValid() const override;
 
+    void setStoreSecretsSystemWide(bool system);
+
 public Q_SLOTS:
     void onSsidChanged(const QString &ssid);
 
@@ -56,6 +58,7 @@ private:
     Security8021x *m_8021xWidget = nullptr;
     Security8021x *m_WPA2Widget = nullptr;
     NetworkManager::WirelessSecuritySetting::Ptr m_wifiSecurity;
+    bool m_systemWideDefault = false;
 };
 
 #endif // PLASMA_NM_WIFI_SECURITY_H

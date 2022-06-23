@@ -14,6 +14,7 @@
 
 class ConnectionWidget;
 class SettingWidget;
+class WifiSecurity;
 
 class Q_DECL_EXPORT ConnectionEditorBase : public QWidget
 {
@@ -45,6 +46,7 @@ Q_SIGNALS:
 private Q_SLOTS:
     void replyFinished(QDBusPendingCallWatcher *watcher);
     void validChanged(bool valid);
+    void onAllUsersChanged();
 
 protected:
     // Subclassed widget is supposed to take care of layouting for setting widgets
@@ -63,6 +65,7 @@ private:
     NetworkManager::ConnectionSettings::Ptr m_connection;
     ConnectionWidget *m_connectionWidget;
     QList<SettingWidget *> m_settingWidgets;
+    WifiSecurity *m_wifiSecurity = nullptr;
 
     void addConnectionWidget(ConnectionWidget *widget, const QString &text);
     void addSettingWidget(SettingWidget *widget, const QString &text);

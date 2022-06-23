@@ -30,12 +30,15 @@ public:
 
     NMVariantMapMap setting() const;
 
+    bool allUsers() const;
+
 private Q_SLOTS:
     void autoVpnToggled(bool on);
     void openAdvancedPermissions();
 
 Q_SIGNALS:
     void settingChanged();
+    void allUsersChanged();
 
 private:
     // list of VPN: UUID, name

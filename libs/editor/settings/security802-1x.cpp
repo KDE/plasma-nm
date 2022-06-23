@@ -508,6 +508,17 @@ QVariantMap Security8021x::setting() const
     return setting.toMap();
 }
 
+void Security8021x::setPasswordOption(PasswordField::PasswordOption option)
+{
+    m_ui->fastPassword->setPasswordOption(option);
+    m_ui->leapPassword->setPasswordOption(option);
+    m_ui->md5Password->setPasswordOption(option);
+    m_ui->peapPassword->setPasswordOption(option);
+    m_ui->pwdPassword->setPasswordOption(option);
+    m_ui->tlsPrivateKeyPassword->setPasswordOption(option);
+    m_ui->ttlsPassword->setPasswordOption(option);
+}
+
 void Security8021x::altSubjectMatchesButtonClicked()
 {
     QPointer<EditListDialog> editor = new EditListDialog(this);

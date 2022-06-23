@@ -70,7 +70,7 @@ Handler::Handler(QObject *parent)
     }
 
     m_hotspotSupported = checkHotspotSupported();
-    m_runningLiveImage = checkRunningLiveImage();
+    m_runningLiveImage = UiUtils::isLiveImage();
 
     if (NetworkManager::checkVersion(1, 16, 0)) {
         connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionTypeChanged, this, &Handler::primaryConnectionTypeChanged);
@@ -699,25 +699,6 @@ bool Handler::checkHotspotSupported()
         if (NetworkManager::primaryConnectionType() != NetworkManager::ConnectionSettings::Wireless) {
             return true;
         }
-    }
-
-    return false;
-}
-
-bool Handler::checkRunningLiveImage()
-{
-    QFile cmdFile(QStringLiteral("/proc/cmdline"));
-    cmdFile.open(QIODevice::ReadOnly);
-
-    if (!cmdFile.isOpen()) {
-        return false;
-    }
-
-    const QString cmdFileOutput = cmdFile.readAll();
-    cmdFile.close();
-
-    if (cmdFileOutput.contains(QStringLiteral("rd.live.image"))) {
-        return true;
     }
 
     return false;

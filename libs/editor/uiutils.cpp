@@ -31,6 +31,8 @@
 
 #include <QString>
 
+#include <optional>
+
 using namespace NetworkManager;
 
 UiUtils::SortedConnectionType UiUtils::connectionTypeToSortedType(NetworkManager::ConnectionSettings::ConnectionType type)
@@ -674,4 +676,30 @@ QString UiUtils::formatLastUsedDateRelative(const QDateTime &lastUsed)
             "Never used");
     }
     return lastUsedText;
+}
+
+bool UiUtils::isLiveImage()
+{
+    static std::optional<bool> liveImage = std::nullopt;
+    if (liveImage.has_value()) {
+        return liveImage.value();
+    }
+
+    QFile cmdFile(QStringLiteral("/proc/cmdline"));
+    cmdFile.open(QIODevice::ReadOnly);
+
+    if (!cmdFile.isOpen()) {
+        return false;
+    }
+
+    const QString cmdFileOutput = cmdFile.readAll();
+    cmdFile.close();
+
+    if (cmdFileOutput.contains(QStringLiteral("rd.live.image"))) {
+        liveImage = true;
+        return true;
+    }
+
+    liveImage = false;
+    return false;
 }

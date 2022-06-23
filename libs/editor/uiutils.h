@@ -116,6 +116,11 @@ public:
      */
     static QString wirelessFrequencyToString(uint frequency);
 
+    /**
+     * Check whether we're running in a live image session.
+     */
+    static bool isLiveImage();
+
 #if WITH_MODEMMANAGER_SUPPORT
     static QString convertAllowedModeToString(ModemManager::Modem::ModemModes mode);
     static QString convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech);

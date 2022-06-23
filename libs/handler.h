@@ -148,7 +148,6 @@ private:
     void scanRequestFailed(const QString &interface);
     bool checkRequestScanRateLimit(const NetworkManager::WirelessDevice::Ptr &wifiDevice);
     bool checkHotspotSupported();
-    bool checkRunningLiveImage();
     void scheduleRequestScan(const QString &interface, int timeout);
 };
 

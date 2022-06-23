@@ -125,17 +125,17 @@ void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const QList<NetworkManager::Security8021xSetting::EapMethod> eapMethods = securitySetting->eapMethods();
     const NetworkManager::Security8021xSetting::AuthMethod phase2AuthMethod = securitySetting->phase2AuthMethod();
 
+    if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
+        setPasswordOption(PasswordField::StoreForAllUsers);
+    } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
+        setPasswordOption(PasswordField::StoreForUser);
+    } else {
+        setPasswordOption(PasswordField::AlwaysAsk);
+    }
+
     if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodMd5)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodMd5));
         m_ui->md5UserName->setText(securitySetting->identity());
-
-        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
-            m_ui->md5Password->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
-            m_ui->md5Password->setPasswordOption(PasswordField::StoreForUser);
-        } else {
-            m_ui->md5Password->setPasswordOption(PasswordField::AlwaysAsk);
-        }
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTls)) {
         QStringList servers;
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodTls));
@@ -152,35 +152,12 @@ void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
         }
         m_ui->leTlsConnectToServers->setText(servers.join(QLatin1String(", ")));
         m_ui->tlsPrivateKey->setUrl(QUrl::fromLocalFile(securitySetting->privateKey()));
-        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
-            m_ui->tlsPrivateKeyPassword->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
-            m_ui->tlsPrivateKeyPassword->setPasswordOption(PasswordField::StoreForUser);
-        } else {
-            m_ui->tlsPrivateKeyPassword->setPasswordOption(PasswordField::AlwaysAsk);
-        }
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodLeap)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodLeap));
         m_ui->leapUsername->setText(securitySetting->identity());
-        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
-            m_ui->leapPassword->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
-            m_ui->leapPassword->setPasswordOption(PasswordField::StoreForUser);
-        } else {
-            m_ui->leapPassword->setPasswordOption(PasswordField::AlwaysAsk);
-        }
-
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPwd)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodPwd));
         m_ui->pwdUsername->setText(securitySetting->identity());
-
-        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
-            m_ui->pwdPassword->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
-            m_ui->pwdPassword->setPasswordOption(PasswordField::StoreForUser);
-        } else {
-            m_ui->pwdPassword->setPasswordOption(PasswordField::AlwaysAsk);
-        }
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodFast)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodFast));
         m_ui->fastAnonIdentity->setText(securitySetting->anonymousIdentity());
@@ -193,13 +170,6 @@ void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
             m_ui->fastInnerAuth->setCurrentIndex(1);
         }
         m_ui->fastUsername->setText(securitySetting->identity());
-        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
-            m_ui->fastPassword->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
-            m_ui->fastPassword->setPasswordOption(PasswordField::StoreForUser);
-        } else {
-            m_ui->fastPassword->setPasswordOption(PasswordField::AlwaysAsk);
-        }
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTtls)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodTtls));
         m_ui->ttlsAnonIdentity->setText(securitySetting->anonymousIdentity());
@@ -215,13 +185,6 @@ void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
             m_ui->ttlsInnerAuth->setCurrentIndex(3);
         }
         m_ui->ttlsUsername->setText(securitySetting->identity());
-        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
-            m_ui->ttlsPassword->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
-            m_ui->ttlsPassword->setPasswordOption(PasswordField::StoreForUser);
-        } else {
-            m_ui->ttlsPassword->setPasswordOption(PasswordField::AlwaysAsk);
-        }
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPeap)) {
         m_ui->auth->setCurrentIndex(m_ui->auth->findData(NetworkManager::Security8021xSetting::EapMethodPeap));
         m_ui->peapAnonIdentity->setText(securitySetting->anonymousIdentity());
@@ -236,13 +199,6 @@ void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
             m_ui->peapInnerAuth->setCurrentIndex(2);
         }
         m_ui->peapUsername->setText(securitySetting->identity());
-        if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
-            m_ui->peapPassword->setPasswordOption(PasswordField::StoreForAllUsers);
-        } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
-            m_ui->peapPassword->setPasswordOption(PasswordField::StoreForUser);
-        } else {
-            m_ui->peapPassword->setPasswordOption(PasswordField::AlwaysAsk);
-        }
     }
 
     loadSecrets(setting);

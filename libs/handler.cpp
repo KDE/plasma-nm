@@ -70,7 +70,6 @@ Handler::Handler(QObject *parent)
     }
 
     m_hotspotSupported = checkHotspotSupported();
-    m_runningLiveImage = UiUtils::isLiveImage();
 
     if (NetworkManager::checkVersion(1, 16, 0)) {
         connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionTypeChanged, this, &Handler::primaryConnectionTypeChanged);
@@ -242,7 +241,8 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
     settings->setId(ap->ssid());
     settings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
     settings->setAutoconnect(true);
-    settings->addToPermissions(KUser().loginName(), QString());
+
+    UiUtils::setConnectionDefaultPermissions(settings);
 
     NetworkManager::WirelessSetting::Ptr wifiSetting = settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
     wifiSetting->setInitialized(true);
@@ -296,9 +296,6 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
         if (securityType == NetworkManager::StaticWep) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
             wifiSecurity->setWepKey0(password);
-            if (KWallet::Wallet::isEnabled() && !m_runningLiveImage) {
-                wifiSecurity->setWepKeyFlags(NetworkManager::Setting::AgentOwned);
-            }
         } else {
             if (ap->mode() == NetworkManager::AccessPoint::Adhoc) {
                 wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaNone);
@@ -306,9 +303,6 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
                 wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
             }
             wifiSecurity->setPsk(password);
-            if (KWallet::Wallet::isEnabled() && !m_runningLiveImage) {
-                wifiSecurity->setPskFlags(NetworkManager::Setting::AgentOwned);
-            }
         }
         addAndActivateConnectionDBus(settings->toMap(), device, specificObject);
     }

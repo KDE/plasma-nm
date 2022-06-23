@@ -26,6 +26,7 @@
 #include "settings/wiredconnectionwidget.h"
 #include "settings/wiredsecurity.h"
 #include "settings/wireguardinterfacewidget.h"
+#include "uiutils.h"
 #include "vpnuiplugin.h"
 
 #include <NetworkManagerQt/ActiveConnection>
@@ -188,7 +189,7 @@ void ConnectionEditorBase::initialize()
     const NetworkManager::ConnectionSettings::ConnectionType type = m_connection->connectionType();
 
     if (emptyConnection) {
-        m_connection->addToPermissions(KUser().loginName(), QString());
+        UiUtils::setConnectionDefaultPermissions(m_connection);
     }
 
     // General configuration common to all connection types

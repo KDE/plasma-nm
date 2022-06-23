@@ -132,7 +132,6 @@ private:
     void addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject);
 
     bool m_hotspotSupported;
-    bool m_runningLiveImage;
     bool m_tmpWirelessEnabled;
     bool m_tmpWwanEnabled;
 #if WITH_MODEMMANAGER_SUPPORT

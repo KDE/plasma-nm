@@ -121,6 +121,21 @@ public:
      */
     static bool isLiveImage();
 
+    /**
+     * Setup default permissions for a new connection.
+     *
+     * This determines whether we should use system connections or user
+     * connections by default and sets the default permissions accordingly.
+     * System connections are preferred if either the preference for that is
+     * set, KWallet is not enabled or we're running in a live image. However, if
+     * we do not have permissions to create system connections, we fall back to
+     * user connections.
+     *
+     * @param settings The connection settings to setup.
+     * @param liveSession Whether we are running a session from a live disk image.
+     */
+    static void setConnectionDefaultPermissions(NetworkManager::ConnectionSettings::Ptr &settings);
+
 #if WITH_MODEMMANAGER_SUPPORT
     static QString convertAllowedModeToString(ModemManager::Modem::ModemModes mode);
     static QString convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech);

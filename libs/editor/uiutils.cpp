@@ -15,8 +15,11 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
+#include <KUser>
+#include <KWallet>
 
 #include <NetworkManagerQt/Manager>
+#include <NetworkManagerQt/Security8021xSetting>
 
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/Manager>
@@ -702,4 +705,31 @@ bool UiUtils::isLiveImage()
 
     liveImage = false;
     return false;
+}
+
+void UiUtils::setConnectionDefaultPermissions(NetworkManager::ConnectionSettings::Ptr &settings)
+{
+    auto wifiSecurity = settings->setting(NetworkManager::Setting::WirelessSecurity).dynamicCast<NetworkManager::WirelessSecuritySetting>();
+    auto security8021x = settings->setting(NetworkManager::Setting::Security8021x).dynamicCast<NetworkManager::Security8021xSetting>();
+
+    if (!wifiSecurity || !security8021x) {
+        return;
+    }
+
+    if (Configuration::self().systemConnectionsByDefault() || !KWallet::Wallet::isEnabled() || isLiveImage()) {
+        auto modifySystem = NetworkManager::permissions().value(QStringLiteral("org.freedesktop.NetworkManager.settings.modify.system"));
+        if (modifySystem == QLatin1String("yes")) {
+            wifiSecurity->setLeapPasswordFlags(NetworkManager::Setting::SecretFlagType::None);
+            wifiSecurity->setPskFlags(NetworkManager::Setting::SecretFlagType::None);
+            wifiSecurity->setWepKeyFlags(NetworkManager::Setting::SecretFlagType::None);
+            security8021x->setPasswordFlags(NetworkManager::Setting::SecretFlagType::None);
+            return;
+        }
+    }
+
+    settings->addToPermissions(KUser().loginName(), QString());
+    wifiSecurity->setLeapPasswordFlags(NetworkManager::Setting::SecretFlagType::AgentOwned);
+    wifiSecurity->setPskFlags(NetworkManager::Setting::SecretFlagType::AgentOwned);
+    wifiSecurity->setWepKeyFlags(NetworkManager::Setting::SecretFlagType::AgentOwned);
+    security8021x->setPasswordFlags(NetworkManager::Setting::SecretFlagType::AgentOwned);
 }

@@ -166,17 +166,13 @@ void BondWidget::addBond(QAction *action)
     connectionSettings->setAutoconnect(false);
 
     QPointer<ConnectionEditorDialog> bondEditor = new ConnectionEditorDialog(connectionSettings);
+    bondEditor->setAttribute(Qt::WA_DeleteOnClose);
     connect(bondEditor.data(), &ConnectionEditorDialog::accepted, [bondEditor, this]() {
         qCDebug(PLASMA_NM_EDITOR_LOG) << "Saving slave connection";
         // qCDebug(PLASMA_NM_EDITOR_LOG) << bondEditor->setting();
         QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(bondEditor->setting());
         auto watcher = new QDBusPendingCallWatcher(reply, this);
         connect(watcher, &QDBusPendingCallWatcher::finished, this, &BondWidget::bondAddComplete);
-    });
-    connect(bondEditor.data(), &ConnectionEditorDialog::finished, [bondEditor]() {
-        if (bondEditor) {
-            bondEditor->deleteLater();
-        }
     });
     bondEditor->setModal(true);
     bondEditor->show();
@@ -221,14 +217,10 @@ void BondWidget::editBond()
     if (connection) {
         // qCDebug(PLASMA_NM_EDITOR_LOG) << "Editing bonded connection" << currentItem->text() << uuid;
         QPointer<ConnectionEditorDialog> bondEditor = new ConnectionEditorDialog(connection->settings());
+        bondEditor->setAttribute(Qt::WA_DeleteOnClose);
         connect(bondEditor.data(), &ConnectionEditorDialog::accepted, [connection, bondEditor, this]() {
             connection->update(bondEditor->setting());
             connect(connection.data(), &NetworkManager::Connection::updated, this, &BondWidget::populateBonds);
-        });
-        connect(bondEditor.data(), &ConnectionEditorDialog::finished, [bondEditor]() {
-            if (bondEditor) {
-                bondEditor->deleteLater();
-            }
         });
         bondEditor->setModal(true);
         bondEditor->show();

@@ -379,6 +379,7 @@ void IPv6Widget::tableViewItemChanged(QStandardItem *item)
 void IPv6Widget::slotRoutesDialog()
 {
     QPointer<IpV6RoutesWidget> dlg = new IpV6RoutesWidget(this);
+    dlg->setAttribute(Qt::WA_DeleteOnClose);
 
     dlg->setRoutes(m_tmpIpv6Setting.routes());
     dlg->setNeverDefault(m_tmpIpv6Setting.neverDefault());
@@ -393,11 +394,6 @@ void IPv6Widget::slotRoutesDialog()
         m_tmpIpv6Setting.setNeverDefault(dlg->neverDefault());
         m_tmpIpv6Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
     });
-    connect(dlg.data(), &QDialog::finished, [dlg]() {
-        if (dlg) {
-            dlg->deleteLater();
-        }
-    });
     dlg->setModal(true);
     dlg->show();
 }
@@ -405,6 +401,7 @@ void IPv6Widget::slotRoutesDialog()
 void IPv6Widget::slotDnsServers()
 {
     QPointer<QDialog> dialog = new QDialog(this);
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->setWindowTitle(i18n("Edit DNS servers"));
     dialog->setLayout(new QVBoxLayout);
     auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
@@ -422,11 +419,6 @@ void IPv6Widget::slotDnsServers()
         }
         m_ui->dns->setText(text);
     });
-    connect(dialog.data(), &QDialog::finished, [dialog]() {
-        if (dialog) {
-            dialog->deleteLater();
-        }
-    });
     dialog->setModal(true);
     dialog->show();
 }
@@ -434,6 +426,7 @@ void IPv6Widget::slotDnsServers()
 void IPv6Widget::slotDnsDomains()
 {
     QPointer<QDialog> dialog = new QDialog(this);
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->setWindowTitle(i18n("Edit DNS search domains"));
     dialog->setLayout(new QVBoxLayout);
     auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
@@ -450,11 +443,6 @@ void IPv6Widget::slotDnsDomains()
             text.chop(1);
         }
         m_ui->dnsSearch->setText(text);
-    });
-    connect(dialog.data(), &QDialog::finished, [dialog]() {
-        if (dialog) {
-            dialog->deleteLater();
-        }
     });
     dialog->setModal(true);
     dialog->show();

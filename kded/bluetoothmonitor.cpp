@@ -89,6 +89,7 @@ void BluetoothMonitor::addBluetoothConnection(const QString &bdAddr, const QStri
 #if WITH_MODEMMANAGER_SUPPORT
     else if (service == QLatin1String("dun")) {
         QPointer<MobileConnectionWizard> mobileConnectionWizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Bluetooth);
+        mobileConnectionWizard->setAttribute(Qt::WA_DeleteOnClose);
         connect(mobileConnectionWizard.data(), &MobileConnectionWizard::accepted, [bdAddr, connectionName, mobileConnectionWizard]() {
             if (mobileConnectionWizard->getError() == MobileProviders::Success) {
                 qCDebug(PLASMA_NM_KDED_LOG) << "Mobile broadband wizard finished:" << mobileConnectionWizard->type() << mobileConnectionWizard->args();
@@ -117,11 +118,6 @@ void BluetoothMonitor::addBluetoothConnection(const QString &bdAddr, const QStri
 
                     NetworkManager::addConnection(connectionSettings.toMap());
                 }
-            }
-        });
-        connect(mobileConnectionWizard.data(), &MobileConnectionWizard::finished, [mobileConnectionWizard]() {
-            if (mobileConnectionWizard) {
-                mobileConnectionWizard->deleteLater();
             }
         });
         mobileConnectionWizard->setModal(true);

@@ -511,6 +511,7 @@ QVariantMap Security8021x::setting() const
 void Security8021x::altSubjectMatchesButtonClicked()
 {
     QPointer<EditListDialog> editor = new EditListDialog(this);
+    editor->setAttribute(Qt::WA_DeleteOnClose);
 
     editor->setItems(m_ui->leTlsSubjectMatch->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), Qt::SkipEmptyParts));
     editor->setWindowTitle(i18n("Alternative Subject Matches"));
@@ -522,11 +523,6 @@ void Security8021x::altSubjectMatchesButtonClicked()
     connect(editor.data(), &QDialog::accepted, [editor, this]() {
         m_ui->leTlsSubjectMatch->setText(editor->items().join(QLatin1String(", ")));
     });
-    connect(editor.data(), &QDialog::finished, [editor]() {
-        if (editor) {
-            editor->deleteLater();
-        }
-    });
     editor->setModal(true);
     editor->show();
 }
@@ -534,6 +530,7 @@ void Security8021x::altSubjectMatchesButtonClicked()
 void Security8021x::connectToServersButtonClicked()
 {
     QPointer<EditListDialog> editor = new EditListDialog(this);
+    editor->setAttribute(Qt::WA_DeleteOnClose);
 
     editor->setItems(m_ui->leTlsConnectToServers->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), Qt::SkipEmptyParts));
     editor->setWindowTitle(i18n("Connect to these servers only"));
@@ -541,11 +538,6 @@ void Security8021x::connectToServersButtonClicked()
 
     connect(editor.data(), &QDialog::accepted, [editor, this]() {
         m_ui->leTlsConnectToServers->setText(editor->items().join(QLatin1String(", ")));
-    });
-    connect(editor.data(), &QDialog::finished, [editor]() {
-        if (editor) {
-            editor->deleteLater();
-        }
     });
     editor->setModal(true);
     editor->show();

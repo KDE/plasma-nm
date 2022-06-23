@@ -279,6 +279,7 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
     } else if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
 #if WITH_MODEMMANAGER_SUPPORT
         QPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
+        wizard->setAttribute(Qt::WA_DeleteOnClose);
         connect(wizard.data(), &MobileConnectionWizard::accepted, [wizard, this]() {
             if (wizard->getError() == MobileProviders::Success) {
                 qCDebug(PLASMA_NM_KCM_LOG) << "Mobile broadband wizard finished:" << wizard->type() << wizard->args();
@@ -306,11 +307,6 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
                 } else {
                     qCWarning(PLASMA_NM_KCM_LOG) << Q_FUNC_INFO << "Unexpected number of args to parse";
                 }
-            }
-        });
-        connect(wizard.data(), &MobileConnectionWizard::finished, [wizard]() {
-            if (wizard) {
-                wizard->deleteLater();
             }
         });
         wizard->setModal(true);
@@ -471,15 +467,11 @@ void KCMNetworkmanagement::onSelectedConnectionChanged(const QString &connection
 void KCMNetworkmanagement::addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings)
 {
     QPointer<ConnectionEditorDialog> editor = new ConnectionEditorDialog(connectionSettings);
+    editor->setAttribute(Qt::WA_DeleteOnClose);
     connect(editor.data(), &ConnectionEditorDialog::accepted, [connectionSettings, editor, this]() {
         // We got confirmation so watch this connection and select it once it is created
         m_createdConnectionUuid = connectionSettings->uuid();
         m_handler->addConnection(editor->setting());
-    });
-    connect(editor.data(), &ConnectionEditorDialog::finished, [editor]() {
-        if (editor) {
-            editor->deleteLater();
-        }
     });
     editor->setModal(true);
     editor->show();

@@ -106,17 +106,13 @@ void TeamWidget::addTeam(QAction *action)
     connectionSettings->setAutoconnect(false);
 
     QPointer<ConnectionEditorDialog> teamEditor = new ConnectionEditorDialog(connectionSettings);
+    teamEditor->setAttribute(Qt::WA_DeleteOnClose);
     connect(teamEditor.data(), &ConnectionEditorDialog::accepted, [teamEditor, this]() {
         qCDebug(PLASMA_NM_EDITOR_LOG) << "Saving slave connection";
         // qCDebug(PLASMA_NM_EDITOR_LOG) << teamEditor->setting();
         QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(teamEditor->setting());
         auto watcher = new QDBusPendingCallWatcher(reply, this);
         connect(watcher, &QDBusPendingCallWatcher::finished, this, &TeamWidget::teamAddComplete);
-    });
-    connect(teamEditor.data(), &ConnectionEditorDialog::finished, [teamEditor]() {
-        if (teamEditor) {
-            teamEditor->deleteLater();
-        }
     });
     teamEditor->setModal(true);
     teamEditor->show();
@@ -160,14 +156,10 @@ void TeamWidget::editTeam()
     if (connection) {
         qCDebug(PLASMA_NM_EDITOR_LOG) << "Editing teamed connection" << currentItem->text() << uuid;
         QPointer<ConnectionEditorDialog> teamEditor = new ConnectionEditorDialog(connection->settings());
+        teamEditor->setAttribute(Qt::WA_DeleteOnClose);
         connect(teamEditor.data(), &ConnectionEditorDialog::accepted, [connection, teamEditor, this]() {
             connection->update(teamEditor->setting());
             connect(connection.data(), &NetworkManager::Connection::updated, this, &TeamWidget::populateTeams);
-        });
-        connect(teamEditor.data(), &ConnectionEditorDialog::finished, [teamEditor]() {
-            if (teamEditor) {
-                teamEditor->deleteLater();
-            }
         });
         teamEditor->setModal(true);
         teamEditor->show();

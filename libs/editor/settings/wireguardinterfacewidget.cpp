@@ -332,6 +332,7 @@ QString WireGuardInterfaceWidget::supportedFileExtensions()
 void WireGuardInterfaceWidget::showPeers()
 {
     QPointer<WireGuardTabWidget> peers = new WireGuardTabWidget(d->peers, this);
+    peers->setAttribute(Qt::WA_DeleteOnClose);
 
     connect(peers.data(), &WireGuardTabWidget::accepted, [peers, this]() {
         NMVariantMapList peersData = peers->setting();
@@ -341,11 +342,6 @@ void WireGuardInterfaceWidget::showPeers()
             // unless all the peers are valid so no need to check
             d->peersValid = true;
             slotWidgetChanged();
-        }
-    });
-    connect(peers.data(), &WireGuardTabWidget::finished, [peers]() {
-        if (peers) {
-            peers->deleteLater();
         }
     });
     peers->setModal(true);

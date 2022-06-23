@@ -320,17 +320,13 @@ void OpenVpnSettingWidget::handleOnePasswordType(const PasswordField *passwordFi
 void OpenVpnSettingWidget::showAdvanced()
 {
     QPointer<OpenVpnAdvancedWidget> adv = new OpenVpnAdvancedWidget(d->setting, this);
+    adv->setAttribute(Qt::WA_DeleteOnClose);
     adv->init();
     connect(adv.data(), &OpenVpnAdvancedWidget::accepted, [adv, this]() {
         NetworkManager::VpnSetting::Ptr advData = adv->setting();
         if (!advData.isNull()) {
             d->setting->setData(advData->data());
             d->setting->setSecrets(advData->secrets());
-        }
-    });
-    connect(adv.data(), &OpenVpnAdvancedWidget::finished, [adv]() {
-        if (adv) {
-            adv->deleteLater();
         }
     });
     adv->setModal(true);

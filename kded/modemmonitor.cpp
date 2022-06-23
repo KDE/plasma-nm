@@ -133,8 +133,10 @@ void ModemMonitor::requestPin(MMModemLock lock)
         d->dialog = QPointer<PinDialog>(new PinDialog(modem, PinDialog::ModemNetworkSubsetPuk));
     }
 
+    d->dialog->setAttribute(Qt::WA_DeleteOnClose);
+
     if (d->dialog.data()->exec() != QDialog::Accepted) {
-        goto OUT;
+        return;
     }
 
     qCDebug(PLASMA_NM_KDED_LOG) << "Sending unlock code";
@@ -170,12 +172,6 @@ void ModemMonitor::requestPin(MMModemLock lock)
 
         connect(watcher, &QDBusPendingCallWatcher::finished, this, &ModemMonitor::onSendPinArrived);
     }
-
-OUT:
-    if (d->dialog) {
-        d->dialog.data()->deleteLater();
-    }
-    d->dialog.clear();
 }
 
 void ModemMonitor::onSendPinArrived(QDBusPendingCallWatcher *watcher)

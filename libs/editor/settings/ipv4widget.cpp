@@ -387,6 +387,7 @@ void IPv4Widget::tableViewItemChanged(QStandardItem *item)
 void IPv4Widget::slotRoutesDialog()
 {
     QPointer<IpV4RoutesWidget> dlg = new IpV4RoutesWidget(this);
+    dlg->setAttribute(Qt::WA_DeleteOnClose);
 
     dlg->setRoutes(m_tmpIpv4Setting.routes());
     dlg->setNeverDefault(m_tmpIpv4Setting.neverDefault());
@@ -400,11 +401,6 @@ void IPv4Widget::slotRoutesDialog()
         m_tmpIpv4Setting.setRoutes(dlg->routes());
         m_tmpIpv4Setting.setNeverDefault(dlg->neverDefault());
         m_tmpIpv4Setting.setIgnoreAutoRoutes(dlg->ignoreautoroutes());
-    });
-    connect(dlg.data(), &QDialog::finished, [dlg]() {
-        if (dlg) {
-            dlg->deleteLater();
-        }
     });
     dlg->setModal(true);
     dlg->show();
@@ -459,6 +455,7 @@ void IPv4Widget::slotAdvancedDialog()
 void IPv4Widget::slotDnsServers()
 {
     QPointer<QDialog> dialog = new QDialog(this);
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->setWindowTitle(i18n("Edit DNS servers"));
     dialog->setLayout(new QVBoxLayout);
     auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
@@ -476,11 +473,6 @@ void IPv4Widget::slotDnsServers()
         }
         m_ui->dns->setText(text);
     });
-    connect(dialog.data(), &QDialog::finished, [dialog]() {
-        if (dialog) {
-            dialog->deleteLater();
-        }
-    });
     dialog->setModal(true);
     dialog->show();
 }
@@ -488,6 +480,7 @@ void IPv4Widget::slotDnsServers()
 void IPv4Widget::slotDnsDomains()
 {
     QPointer<QDialog> dialog = new QDialog(this);
+    dialog->setAttribute(Qt::WA_DeleteOnClose);
     dialog->setWindowTitle(i18n("Edit DNS search domains"));
     dialog->setLayout(new QVBoxLayout);
     auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
@@ -504,11 +497,6 @@ void IPv4Widget::slotDnsDomains()
             text.chop(1);
         }
         m_ui->dnsSearch->setText(text);
-    });
-    connect(dialog.data(), &QDialog::finished, [dialog]() {
-        if (dialog) {
-            dialog->deleteLater();
-        }
     });
     dialog->setModal(true);
     dialog->show();

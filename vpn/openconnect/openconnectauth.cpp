@@ -659,6 +659,7 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint, const Q
         certificate->setText(peerCert);
 
         QPointer<QDialog> dialog = new QDialog(this);
+        dialog->setAttribute(Qt::WA_DeleteOnClose);
         dialog.data()->setWindowModality(Qt::WindowModal);
         dialog->setLayout(new QVBoxLayout);
         auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
@@ -674,9 +675,6 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint, const Q
             *accepted = true;
         } else {
             *accepted = false;
-        }
-        if (dialog) {
-            dialog.data()->deleteLater();
         }
         widget->deleteLater();
     } else {

@@ -244,6 +244,7 @@ void L2tpWidget::showIpsec()
     } else {
         ipsec = new L2tpIpsecWidget(m_tmpIpsecSetting, this);
     }
+    ipsec->setAttribute(Qt::WA_DeleteOnClose);
     connect(ipsec.data(), &L2tpIpsecWidget::accepted, [ipsec, this]() {
         NMStringMap ipsecData = ipsec->setting();
         if (!ipsecData.isEmpty()) {
@@ -251,11 +252,6 @@ void L2tpWidget::showIpsec()
                 m_tmpIpsecSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
             }
             m_tmpIpsecSetting->setData(ipsecData);
-        }
-    });
-    connect(ipsec.data(), &L2tpIpsecWidget::finished, [ipsec]() {
-        if (ipsec) {
-            ipsec->deleteLater();
         }
     });
     ipsec->setModal(true);
@@ -271,6 +267,7 @@ void L2tpWidget::showPpp()
     } else {
         ipsec = new L2tpPPPWidget(m_tmpPppSetting, this, need_peer_eap);
     }
+    ipsec->setAttribute(Qt::WA_DeleteOnClose);
     connect(ipsec.data(), &L2tpPPPWidget::accepted, [ipsec, this]() {
         NMStringMap ipsecData = ipsec->setting();
         if (!ipsecData.isEmpty()) {
@@ -278,11 +275,6 @@ void L2tpWidget::showPpp()
                 m_tmpPppSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
             }
             m_tmpPppSetting->setData(ipsecData);
-        }
-    });
-    connect(ipsec.data(), &L2tpPPPWidget::finished, [ipsec]() {
-        if (ipsec) {
-            ipsec->deleteLater();
         }
     });
     ipsec->setModal(true);

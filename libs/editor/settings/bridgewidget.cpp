@@ -116,17 +116,13 @@ void BridgeWidget::addBridge(QAction *action)
     connectionSettings->setAutoconnect(false);
 
     QPointer<ConnectionEditorDialog> bridgeEditor = new ConnectionEditorDialog(connectionSettings);
+    bridgeEditor->setAttribute(Qt::WA_DeleteOnClose);
     connect(bridgeEditor.data(), &ConnectionEditorDialog::accepted, [bridgeEditor, this]() {
         qCDebug(PLASMA_NM_EDITOR_LOG) << "Saving slave connection";
         // qCDebug(PLASMA_NM_EDITOR_LOG) << bridgeEditor->setting();
         QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::addConnection(bridgeEditor->setting());
         auto watcher = new QDBusPendingCallWatcher(reply, this);
         connect(watcher, &QDBusPendingCallWatcher::finished, this, &BridgeWidget::bridgeAddComplete);
-    });
-    connect(bridgeEditor.data(), &ConnectionEditorDialog::finished, [bridgeEditor]() {
-        if (bridgeEditor) {
-            bridgeEditor->deleteLater();
-        }
     });
     bridgeEditor->setModal(true);
     bridgeEditor->show();
@@ -171,14 +167,10 @@ void BridgeWidget::editBridge()
     if (connection) {
         qCDebug(PLASMA_NM_EDITOR_LOG) << "Editing bridged connection" << currentItem->text() << uuid;
         QPointer<ConnectionEditorDialog> bridgeEditor = new ConnectionEditorDialog(connection->settings());
+        bridgeEditor->setAttribute(Qt::WA_DeleteOnClose);
         connect(bridgeEditor.data(), &ConnectionEditorDialog::accepted, [connection, bridgeEditor, this]() {
             connection->update(bridgeEditor->setting());
             connect(connection.data(), &NetworkManager::Connection::updated, this, &BridgeWidget::populateBridges);
-        });
-        connect(bridgeEditor.data(), &ConnectionEditorDialog::finished, [bridgeEditor]() {
-            if (bridgeEditor) {
-                bridgeEditor->deleteLater();
-            }
         });
         bridgeEditor->setModal(true);
         bridgeEditor->show();

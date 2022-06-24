@@ -69,13 +69,19 @@ ColumnLayout {
                 increment: 100 * 1024
             }
             valueSources: [
-                QuickCharts.ValueHistorySource {
-                    id: upload
+                QuickCharts.HistoryProxySource {
+                    source: QuickCharts.SingleValueSource {
+                        id: upload
+                    }
                     maximumHistory: 40
+                    fillMode: QuickCharts.HistoryProxySource.FillFromStart
                 },
-                QuickCharts.ValueHistorySource {
-                    id: download
+                QuickCharts.HistoryProxySource {
+                    source: QuickCharts.SingleValueSource {
+                        id: download
+                    }
                     maximumHistory: 40
+                    fillMode: QuickCharts.HistoryProxySource.FillFromStart
                 }
             ]
             nameSource: QuickCharts.ArraySource {

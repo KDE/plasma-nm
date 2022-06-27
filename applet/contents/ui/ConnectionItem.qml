@@ -75,7 +75,10 @@ PlasmaExtras.ExpandableListItem {
                     }
                 }
                 const data = handler.wifiCode(ConnectionPath, Ssid, SecurityType)
-                var obj = connectionItem.showQRComponent.createObject(connectionItem, { content: data });
+                var obj = connectionItem.showQRComponent.createObject(connectionItem, {
+                    content: data,
+                    title: i18nc("@title:window", "QR Code for %1", connectionItem.title),
+                });
                 obj.showMaximized()
             }
         },

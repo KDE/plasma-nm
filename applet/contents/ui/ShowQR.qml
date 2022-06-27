@@ -18,13 +18,20 @@ Window {
 
     property alias content: dataInput.content
 
+    function destroyWindow() {
+        window.close();
+        window.destroy();
+    }
+
+    Shortcut {
+        sequences: [StandardKey.Back, StandardKey.Cancel, StandardKey.Close, StandardKey.Delete, StandardKey.Quit]
+        onActivated: window.destroyWindow()
+    }
+
     MouseArea {
         anchors.fill: parent
 
-        onClicked: {
-            window.visible = false
-            window.destroy()
-        }
+        onClicked: window.destroyWindow()
 
         Prison.Barcode {
             id: dataInput

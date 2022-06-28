@@ -64,16 +64,14 @@ PlasmaExtras.ExpandableListItem {
 
     contextualActionsModel: [
         Action {
-            enabled: connectionItem.isDefault
+            enabled: Uuid && Type === PlasmaNM.Enums.Wireless && passwordIsStatic
             text: i18n("Show network's QR code")
             icon.name: "view-barcode-qr"
             onTriggered: {
-                if (Uuid && Type === PlasmaNM.Enums.Wireless && passwordIsStatic) {
-                    if (!connectionItem.showQRComponent) {
-                        connectionItem.showQRComponent = Qt.createComponent("ShowQR.qml", this);
-                        if (connectionItem.showQRComponent.status === Component.Error) {
-                            console.warn("Cannot create QR code component:", connectionItemshowQRComponent.errorString());
-                        }
+                if (!connectionItem.showQRComponent) {
+                    connectionItem.showQRComponent = Qt.createComponent("ShowQR.qml", this);
+                    if (connectionItem.showQRComponent.status === Component.Error) {
+                        console.warn("Cannot create QR code component:", connectionItemshowQRComponent.errorString());
                     }
                 }
                 const data = handler.wifiCode(ConnectionPath, Ssid, SecurityType)

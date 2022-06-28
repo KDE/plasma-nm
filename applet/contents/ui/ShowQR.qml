@@ -5,6 +5,7 @@
 */
 
 import QtQuick 2.15
+import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import QtQuick.Window 2.15
 
@@ -42,6 +43,17 @@ Window {
             }
 
             barcodeType: "QRCode"
+        }
+
+        QQC2.Button {
+            anchors {
+                right: parent.right
+                rightMargin: Kirigami.Units.largeSpacing
+                top: parent.top
+                topMargin: Kirigami.Units.largeSpacing
+            }
+            icon.name: "window-close"
+            onClicked: window.destroyWindow()
         }
     }
 }

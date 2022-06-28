@@ -8,6 +8,8 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Window 2.15
 
+import org.kde.plasma.components 3.0 as PlasmaComponents3
+
 import org.kde.kirigami 2.3 as Kirigami
 import org.kde.prison 1.0 as Prison
 
@@ -42,6 +44,20 @@ Window {
             }
 
             barcodeType: "QRCode"
+        }
+
+        // Because some people like to have something visible to click on,
+        // and to them, it might not be obvious that you close the overlay
+        // by clicking anywhere on it.
+        PlasmaComponents3.Button {
+            anchors {
+                right: parent.right
+                top: parent.top
+                margins: Kirigami.Units.largeSpacing
+            }
+
+            icon.name: "window-close"
+            onClicked: window.destroyWindow()
         }
     }
 }

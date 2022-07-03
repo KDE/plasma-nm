@@ -29,6 +29,7 @@
         "Description[uk]": "Редагування ваших записів з’єднань з мережею",
         "Description[x-test]": "xxEdit your Network Connectionsxx",
         "Description[zh_CN]": "编辑您的网络连接",
+        "Description[zh_TW]": "編輯您的網路連線",
         "Icon": "preferences-system-network",
         "Name": "Connections",
         "Name[ar]": "الاتّصالات",

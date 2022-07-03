@@ -31,7 +31,8 @@
                 "Name[tr]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
                 "Name[x-test]": "xxLukáš Tinklxx",
-                "Name[zh_CN]": "Lukáš Tinkl"
+                "Name[zh_CN]": "Lukáš Tinkl",
+                "Name[zh_TW]": "Lukáš Tinkl"
             }
         ],
         "Category": "VPNService",
@@ -63,6 +64,7 @@
         "Description[uk]": "Сумісний із різноманітними шлюзами VPN Cisco, Juniper, Netscreen та Sonicwall на основі IPsec",
         "Description[x-test]": "xxCompatible with various Cisco, Juniper, Netscreen and Sonicwall IPsec-based VPN gatewaysxx",
         "Description[zh_CN]": "兼容多种 Cisco、Juniper、Netscreen 和 Sonicwall 基于 IPsec 的 VPN 网关",
+        "Description[zh_TW]": "與多種 Cisco, Juniper, Netscreen 與 Sonicwall IPsec 為基底的 VPN 閘道相容",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_vpncui",

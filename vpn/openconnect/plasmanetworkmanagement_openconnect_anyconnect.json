@@ -31,7 +31,8 @@
                 "Name[tr]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
                 "Name[x-test]": "xxLukáš Tinklxx",
-                "Name[zh_CN]": "Lukáš Tinkl"
+                "Name[zh_CN]": "Lukáš Tinkl",
+                "Name[zh_TW]": "Lukáš Tinkl"
             }
         ],
         "Category": "VPNService",
@@ -63,6 +64,7 @@
         "Description[uk]": "VPN, сумісний з Cisco AnyConnect SSL",
         "Description[x-test]": "xxCompatible with Cisco AnyConnect SSL VPNxx",
         "Description[zh_CN]": "兼容 Cisco AnyConnect SSL VPN",
+        "Description[zh_TW]": "與 Cisco AnyConnect SSL VPN 相容",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_openconnect_anyconnect",

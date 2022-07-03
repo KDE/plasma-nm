@@ -31,7 +31,8 @@
                 "Name[tr]": "Jan Grulich",
                 "Name[uk]": "Jan Grulich",
                 "Name[x-test]": "xxJan Grulichxx",
-                "Name[zh_CN]": "Jan Grulich"
+                "Name[zh_CN]": "Jan Grulich",
+                "Name[zh_TW]": "Jan Grulich"
             }
         ],
         "Category": "VPNService",
@@ -64,6 +65,7 @@
         "Description[uk]": "Віртуальні приватні мережі SSLVPN Fortinet",
         "Description[x-test]": "xxFortinet SSLVPN virtual private networksxx",
         "Description[zh_CN]": "Fortinet SSLVPN 虛拟私人网络",
+        "Description[zh_TW]": "Fortinet SSLVPN 虛擬私人網路",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_fortisslvpnui",

@@ -29,6 +29,7 @@
         "Description[uk]": "Надає реєстраційні дані фоновій службі NetworkManager",
         "Description[x-test]": "xxProvides secrets to the NetworkManager daemonxx",
         "Description[zh_CN]": "为 NetworkManager 守护程序提供密码",
+        "Description[zh_TW]": "提供秘密予 NetworkManager 伺服程式",
         "Name": "Plasma Network Management module",
         "Name[ar]": "وحدة بلازما لإدارة الشّبكة",
         "Name[ast]": "Módulu de la xestión de redes de Plasma",

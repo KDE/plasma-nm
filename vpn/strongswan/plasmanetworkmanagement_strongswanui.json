@@ -31,7 +31,8 @@
                 "Name[tr]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
                 "Name[x-test]": "xxLukáš Tinklxx",
-                "Name[zh_CN]": "Lukáš Tinkl"
+                "Name[zh_CN]": "Lukáš Tinkl",
+                "Name[zh_TW]": "Lukáš Tinkl"
             }
         ],
         "Category": "VPNService",
@@ -63,6 +64,7 @@
         "Description[uk]": "VPN на основі IPsec, IKEv1, IKEv2",
         "Description[x-test]": "xxIPsec, IKEv1, IKEv2 based VPNxx",
         "Description[zh_CN]": "基于 IPsec、IKEv1、IKEv2 的 VPN",
+        "Description[zh_TW]": "基於 IPsec, IKEv1, IKEv2 的 VPN",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_strongswanui",

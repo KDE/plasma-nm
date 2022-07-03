@@ -31,7 +31,8 @@
                 "Name[tr]": "Jan Grulich,Lukáš Tinkl",
                 "Name[uk]": "Jan Grulich, Lukáš Tinkl",
                 "Name[x-test]": "xxJan Grulich,Lukáš Tinklxx",
-                "Name[zh_CN]": "Jan Grulich,Lukáš Tinkl"
+                "Name[zh_CN]": "Jan Grulich,Lukáš Tinkl",
+                "Name[zh_TW]": "Jan Grulich,Lukáš Tinkl"
             }
         ],
         "Category": "System Information",
@@ -64,6 +65,7 @@
         "Description[uk]": "Стеження за станом і керування мережею",
         "Description[x-test]": "xxNetwork status and controlxx",
         "Description[zh_CN]": "网络状态和控制",
+        "Description[zh_TW]": "網路狀態與控制",
         "EnabledByDefault": true,
         "FormFactors": [
             "desktop"

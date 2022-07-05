@@ -31,7 +31,7 @@
 // Qt
 #include <QHostAddress>
 #include <QSizeF>
-
+#include <QFile>
 #include <QString>
 
 #include <optional>

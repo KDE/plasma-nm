@@ -37,13 +37,13 @@ public:
     explicit Handler(QObject *parent = nullptr);
     ~Handler() override;
 
-    Q_PROPERTY(bool hotspotSupported READ hotspotSupported NOTIFY hotspotSupportedChanged);
+    Q_PROPERTY(bool hotspotSupported READ hotspotSupported NOTIFY hotspotSupportedChanged)
 
 public:
     bool hotspotSupported() const
     {
         return m_hotspotSupported;
-    };
+    }
 
 public Q_SLOTS:
     /**

@@ -24,8 +24,8 @@ public:
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
 private:
-    int m_min;
-    int m_max;
+    int m_min = -1;
+    int m_max = -1;
     bool m_boundary;
 };
 

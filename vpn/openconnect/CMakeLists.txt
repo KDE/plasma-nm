@@ -9,6 +9,10 @@ macro(add_openconnect_plugin name)
         openconnectwidget.cpp
         openconnectauth.cpp
         openconnectauthworkerthread.cpp
+        openconnectui.h
+        openconnectwidget.h
+        openconnectauth.h
+        openconnectauthworkerthread.h
         openconnect_${name}.cpp
     )
 

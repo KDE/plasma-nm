@@ -39,7 +39,7 @@ private Q_SLOTS:
 
 private:
     class Private;
-    Private *d;
+    Private *const d;
     void setPasswordType(QLineEdit *, int);
     void fillOnePasswordCombo(PasswordField *, NetworkManager::Setting::SecretFlags);
     void handleOnePasswordType(const PasswordField *, const QString &, NMStringMap &) const;

@@ -63,7 +63,7 @@ private:
     bool m_valid;
     int m_pendingReplies;
     NetworkManager::ConnectionSettings::Ptr m_connection;
-    ConnectionWidget *m_connectionWidget;
+    ConnectionWidget *m_connectionWidget = nullptr;
     QList<SettingWidget *> m_settingWidgets;
     WifiSecurity *m_wifiSecurity = nullptr;
 

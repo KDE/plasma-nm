@@ -76,28 +76,28 @@ private:
     bool mInitialMethodType;
 
     // Intro page
-    KComboBox *mDeviceComboBox;
+    KComboBox *mDeviceComboBox = nullptr;
     void introAddInitialDevices();
     void introRemoveAllDevices();
     void introAddDevice(const NetworkManager::Device::Ptr &device);
 
     // Country page
-    QListWidget *mCountryList;
+    QListWidget *mCountryList = nullptr;
 
     // Providers page
-    QListWidget *mProvidersList;
-    QRadioButton *radioAutoProvider;
-    QRadioButton *radioManualProvider;
-    KLineEdit *lineEditProvider;
+    QListWidget *mProvidersList = nullptr;
+    QRadioButton *radioAutoProvider = nullptr;
+    QRadioButton *radioManualProvider = nullptr;
+    KLineEdit *lineEditProvider = nullptr;
 
     // Plan page
-    KComboBox *mPlanComboBox;
-    KLineEdit *userApn;
+    KComboBox *mPlanComboBox = nullptr;
+    KLineEdit *userApn = nullptr;
 
     // Confirm page
-    QLabel *labelProvider;
-    QLabel *labelPlanLabel;
-    QLabel *labelPlan;
-    QLabel *labelApn;
+    QLabel *labelProvider = nullptr;
+    QLabel *labelPlanLabel = nullptr;
+    QLabel *labelPlan = nullptr;
+    QLabel *labelApn = nullptr;
 };
 #endif // PLASMA_NM_MOBILE_CONNECTION_WIZARD_H

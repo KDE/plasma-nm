@@ -78,6 +78,7 @@
         "Name[ca]": "VPN basada en IPsec (libreswan)",
         "Name[cs]": "VPN založena na IPsec (libreswan)",
         "Name[es]": "VPN basada en IPsec (libreswan)",
+        "Name[fi]": "IPsec-pohjainen VPN (libreswan)",
         "Name[fr]": "VPN utilisant « IPsec » (libreswan)",
         "Name[ia]": "VPN basate sur IPsec (libreswan)",
         "Name[it]": "VPN basata su IPsec (libreswan)",

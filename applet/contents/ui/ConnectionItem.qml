@@ -134,14 +134,24 @@ PlasmaExtras.ExpandableListItem {
                 }
             }
 
-            DetailsText {
+            FocusScope {
                 anchors {
                     left: parent.left
                     leftMargin: PlasmaCore.Units.iconSizes.smallMedium
                     right: parent.right
                 }
-                details: ConnectionDetails
+                height: detailsTextColumn.implicitHeight
                 visible: detailsTabBar.currentIndex == 1
+
+                activeFocusOnTab: true
+
+                Accessible.description: ConnectionDetails.join(" ")
+
+                DetailsText {
+                    id: detailsTextColumn
+                    width: parent.width
+                    details: ConnectionDetails
+                }
             }
 
             TrafficMonitor {

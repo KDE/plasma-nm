@@ -96,6 +96,8 @@ PlasmaExtras.ExpandableListItem {
 
     customExpandedViewContent: detailsComponent
 
+    Accessible.description: `${ListView.view.connectionTypeToString(Type)} ${subtitle}`
+
     Component {
         id: detailsComponent
 

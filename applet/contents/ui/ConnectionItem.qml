@@ -147,6 +147,17 @@ PlasmaExtras.ExpandableListItem {
 
                 Accessible.description: ConnectionDetails.join(" ")
 
+                Loader {
+                    anchors.fill: parent
+                    active: parent.activeFocus
+                    asynchronous: true
+                    z: -1
+
+                    sourceComponent: PlasmaExtras.Highlight {
+                        hovered: true
+                    }
+                }
+
                 DetailsText {
                     id: detailsTextColumn
                     width: parent.width
@@ -165,6 +176,17 @@ PlasmaExtras.ExpandableListItem {
                 activeFocusOnTab: true
 
                 Accessible.description: i18nc("@info:tooltip", "Current download speed is %1 kibibytes per second; current upload speed is %2 kibibytes per second", Math.round(rxBytes / 1024), Math.round(txBytes / 1024))
+
+                Loader {
+                    anchors.fill: parent
+                    active: parent.activeFocus
+                    asynchronous: true
+                    z: -1
+
+                    sourceComponent: PlasmaExtras.Highlight {
+                        hovered: true
+                    }
+                }
 
                 TrafficMonitor {
                     id: trafficMonitorGraph

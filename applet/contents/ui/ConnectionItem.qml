@@ -140,7 +140,7 @@ PlasmaExtras.ExpandableListItem {
                 width: parent.width
                 visible: detailsTabBar.currentIndex == 1
 
-                activeFocusOnTab: true
+                activeFocusOnTab: details.length > 0
                 details: ConnectionDetails
 
                 Accessible.description: details.join(" ")

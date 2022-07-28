@@ -21,7 +21,7 @@ MouseArea {
 
     onPressed: {
         const item = detailsGrid.childAt(mouse.x, mouse.y);
-        if (!item) {
+        if (!item || !item.isContent) {
             return;
         }
         contextMenu.show(this, item.text, mouse.x, mouse.y);

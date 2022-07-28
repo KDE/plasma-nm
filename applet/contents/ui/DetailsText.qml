@@ -5,13 +5,27 @@
 */
 
 import QtQuick 2.2
+import QtQuick.Layouts 1.15
+
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents // for ContextMenu+MenuItem
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 
-Column {
+MouseArea {
+    height: detailsGrid.implicitHeight
+
     property var details: []
+
+    acceptedButtons: Qt.RightButton
+
+    onPressed: {
+        const item = detailsGrid.childAt(mouse.x, mouse.y);
+        if (!item) {
+            return;
+        }
+        contextMenu.show(this, item.text, mouse.x, mouse.y);
+    }
 
     KQuickControlsAddons.Clipboard {
         id: clipboard
@@ -35,58 +49,28 @@ Column {
         }
     }
 
-    Repeater {
-        id: repeater
+    GridLayout {
+        id: detailsGrid
+        width: parent.width
+        columns: 2
+        rowSpacing: PlasmaCore.Units.smallSpacing / 4
 
-        property int contentHeight: 0
-        property int longestString: 0
+        Repeater {
+            id: repeater
 
-        model: details.length / 2
-
-        Item {
-            anchors {
-                left: parent.left
-                right: parent.right
-            }
-            height: Math.max(detailNameLabel.height, detailValueLabel.height)
+            model: details.length
 
             PlasmaComponents3.Label {
-                id: detailNameLabel
+                Layout.fillWidth: true
 
-                anchors {
-                    left: parent.left
-                    leftMargin: repeater.longestString - paintedWidth + Math.round(PlasmaCore.Units.gridUnit / 2)
-                }
+                readonly property bool isContent: index % 2
+
+                elide: isContent ? Text.ElideRight : Text.ElideNone
                 font: PlasmaCore.Theme.smallestFont
-                horizontalAlignment: Text.AlignRight
-                text: details[index*2] + ": "
-                opacity: 0.6
-
-                Component.onCompleted: {
-                    if (paintedWidth > repeater.longestString) {
-                        repeater.longestString = paintedWidth
-                    }
-                }
-            }
-
-            PlasmaComponents3.Label {
-                id: detailValueLabel
-
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                    leftMargin: repeater.longestString + Math.round(PlasmaCore.Units.gridUnit / 2)
-                }
-                elide: Text.ElideRight
-                font: PlasmaCore.Theme.smallestFont
-                text: details[(index*2)+1]
+                horizontalAlignment: isContent ? Text.AlignLeft : Text.AlignRight
+                text: isContent ? details[index] : `${details[index]}:`
                 textFormat: Text.PlainText
-
-                MouseArea {
-                    anchors.fill: parent
-                    acceptedButtons: Qt.RightButton
-                    onPressed: contextMenu.show(this, detailValueLabel.text, mouse.x, mouse.y)
-                }
+                opacity: isContent ? 1 : 0.6
             }
         }
     }

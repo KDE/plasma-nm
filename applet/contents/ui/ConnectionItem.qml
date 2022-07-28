@@ -134,18 +134,16 @@ PlasmaExtras.ExpandableListItem {
                 }
             }
 
-            FocusScope {
-                anchors {
-                    left: parent.left
-                    leftMargin: PlasmaCore.Units.iconSizes.smallMedium
-                    right: parent.right
-                }
-                height: detailsTextColumn.implicitHeight
+            DetailsText {
+                id: detailsTextColumn
+
+                width: parent.width
                 visible: detailsTabBar.currentIndex == 1
 
                 activeFocusOnTab: true
+                details: ConnectionDetails
 
-                Accessible.description: ConnectionDetails.join(" ")
+                Accessible.description: details.join(" ")
 
                 Loader {
                     anchors.fill: parent
@@ -156,12 +154,6 @@ PlasmaExtras.ExpandableListItem {
                     sourceComponent: PlasmaExtras.Highlight {
                         hovered: true
                     }
-                }
-
-                DetailsText {
-                    id: detailsTextColumn
-                    width: parent.width
-                    details: ConnectionDetails
                 }
             }
 

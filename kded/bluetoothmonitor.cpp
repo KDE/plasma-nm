@@ -64,7 +64,7 @@ void BluetoothMonitor::addBluetoothConnection(const QString &bdAddr, const QStri
     }
 
     if (service != QLatin1String("dun") && service != QLatin1String("nap")) {
-        KMessageBox::sorry(nullptr, i18n("Only 'dun' and 'nap' services are supported."));
+        KMessageBox::error(nullptr, i18n("Only 'dun' and 'nap' services are supported."));
         return;
     }
 

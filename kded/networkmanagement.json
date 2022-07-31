@@ -72,10 +72,7 @@
         "Name[uk]": "Модуль керування мережею Плазми",
         "Name[x-test]": "xxPlasma Network Management modulexx",
         "Name[zh_CN]": "Plasma 网络管理模块",
-        "Name[zh_TW]": "Plasma 網路管理模組",
-        "ServiceTypes": [
-            "KDEDModule"
-        ]
+        "Name[zh_TW]": "Plasma 網路管理模組"
     },
     "OnlyShowIn": "KDE;",
     "X-KDE-Kded-autoload": true,

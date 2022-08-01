@@ -5,7 +5,7 @@
 */
 
 import QtQuick 2.1
-import QtQuick.Controls 1.4 as QQC
+import QtQuick.Controls 2.15 as QQC
 import org.kde.kirigami 2.5 as Kirigami
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.plasma.components 3.0 as PlasmaComponents3
@@ -108,7 +108,7 @@ ListItem {
         }
 
         QQC.MenuItem {
-            iconName: "list-remove"
+            icon.name: "list-remove"
             text: i18n("Delete");
 
             onTriggered: {
@@ -117,7 +117,7 @@ ListItem {
         }
 
         QQC.MenuItem {
-            iconName: "document-export"
+            icon.name: "document-export"
             visible: KcmVpnConnectionExportable
             text: i18n("Export");
 

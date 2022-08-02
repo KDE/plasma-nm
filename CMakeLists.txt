@@ -52,6 +52,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     Wallet
     WidgetsAddons
     WindowSystem
+    KCMUtils
 )
 
 find_package(KF5ModemManagerQt ${KF5_MIN_VERSION})

@@ -3,6 +3,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-kcm\")
 
 kcoreaddons_add_plugin(kcm_networkmanagement INSTALL_NAMESPACE "plasma/kcms/systemsettings_qwidgets")
 
+kcmutils_generate_desktop_file(kcm_networkmanagement)
 target_sources(kcm_networkmanagement PRIVATE
     kcm.cpp
     kcm.h
@@ -24,7 +25,6 @@ target_link_libraries(kcm_networkmanagement
 
 ########### install files ###############
 
-install( FILES kcm_networkmanagement.desktop  DESTINATION  ${KDE_INSTALL_APPDIR} )
 install( FILES
     qml/AddConnectionDialog.qml
     qml/ConfigurationDialog.qml

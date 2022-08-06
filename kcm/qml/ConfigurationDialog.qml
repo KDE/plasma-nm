@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-import QtQuick 2.5
+import QtQuick 2.15
 import QtQuick.Dialogs 1.2
 import QtQuick.Controls 2.5 as QQC2
 import org.kde.kirigami 2.5 as Kirigami
@@ -71,8 +71,8 @@ Dialog {
             QQC2.TextField {
                 id: hotspotPassword
                 Kirigami.FormData.label: i18n("Hotspot password:")
-                validator: RegExpValidator {
-                    regExp: if (useApMode) {
+                validator: RegularExpressionValidator {
+                    regularExpression: if (useApMode) {
                                 /^$|^(?:.{8,64}){1}$/
                             } else {
                                 /^$|^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26}){1}$/

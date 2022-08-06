@@ -3,7 +3,7 @@
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
-import QtQuick 2.6
+import QtQuick 2.15
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.2 as Controls
 import org.kde.kirigami 2.3 as Kirigami
@@ -148,8 +148,8 @@ SimpleKCM {
             placeholderText: "192.168.1.128"
             text: ipSettings["address"] ? ipSettings["address"] : ""
             onTextChanged: ipSettings["address"] = text
-            validator: RegExpValidator {
-                regExp: ipRegex
+            validator: RegularExpressionValidator {
+                regularExpression: ipRegex
             }
         }
 
@@ -160,8 +160,8 @@ SimpleKCM {
             placeholderText: "192.168.1.1"
             text: ipSettings["gateway"] ? ipSettings["gateway"] : ""
             onTextChanged: ipSettings["gateway"] = text
-            validator: RegExpValidator {
-                regExp: ipRegex
+            validator: RegularExpressionValidator {
+                regularExpression: ipRegex
             }
         }
 
@@ -185,8 +185,8 @@ SimpleKCM {
             placeholderText: "8.8.8.8"
             text: ipSettings["dns"] ? ipSettings["dns"] : ""
             onTextChanged: ipSettings["dns"] = text
-            validator: RegExpValidator {
-                regExp: ipRegex
+            validator: RegularExpressionValidator {
+                regularExpression: ipRegex
             }
         }
     }

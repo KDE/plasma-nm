@@ -56,6 +56,11 @@ PlasmaExtras.ExpandableListItem {
     showDefaultActionButtonWhenBusy: true
 
     Keys.onPressed: {
+        if (!connectionItem.expanded) {
+            event.accepted = false;
+            return;
+        }
+
         if ((customExpandedViewContent == detailsComponent) && showSpeed) {
             if (event.key == Qt.Key_Right) {
                 customExpandedViewContentItem.detailsTabBar.currentIndex = 1;

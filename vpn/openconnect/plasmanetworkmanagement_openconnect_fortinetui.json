@@ -1,0 +1,22 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "plasma-devel@kde.org  ",
+                "Name": "KDE plasma",
+                "Name[es]": "KDE plasma"
+            }
+        ],
+        "Category": "VPNService",
+        "Description": "Compatible with Fortinet VPN",
+        "EnabledByDefault": false,
+        "Icon": "",
+        "Id": "plasmanetworkmanagement_openconnect_fortinetui",
+        "License": "GPL",
+        "Name": "Fortinet Compatible VPN (openconnect)",
+        "Version": "0.1",
+        "Website": ""
+    },
+    "X-NetworkManager-Services": "org.freedesktop.NetworkManager.openconnect",
+    "X-NetworkManager-Services-Subtype": "anyconnect"
+}

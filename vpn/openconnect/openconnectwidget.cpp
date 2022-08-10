@@ -194,8 +194,16 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
         cmbProtocolIndex = 1;
     } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("gp")) {
         cmbProtocolIndex = 2;
-    } else {
+    } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("pulse")) {
         cmbProtocolIndex = 3; // pulse, Pulse Connect Secure
+    } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("f5")) {
+        cmbProtocolIndex = 4; // F5 BIG-IP SSL VPN
+    } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("fortinet")) {
+        cmbProtocolIndex = 5; // Fortinet SSL VPN
+    } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("array")) {
+        cmbProtocolIndex = 6; // Array SSL VPN
+    } else {
+        cmbProtocolIndex = 3; // pulse, Pulse Connect Secure is the default
     }
 
     int cmbReportedOsIndex;
@@ -282,6 +290,18 @@ QVariantMap OpenconnectSettingWidget::setting() const
         break;
     case 2:
         protocol = QLatin1String("gp");
+        break;
+    case 3:
+        protocol = QLatin1String("pulse");
+        break;
+    case 4:
+        protocol = QLatin1String("f5");
+        break;
+    case 5:
+        protocol = QLatin1String("fortinet");
+        break;
+    case 6:
+        protocol = QLatin1String("array");
         break;
     default:
         protocol = QLatin1String("pulse");

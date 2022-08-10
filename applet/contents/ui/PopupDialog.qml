@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-import QtQuick 2.2
+import QtQuick 2.15
 import QtQuick.Layouts 1.2
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
@@ -41,31 +41,14 @@ PlasmaExtras.Representation {
         }
     }
 
+    Keys.forwardTo: [connectionView]
     Keys.onPressed: {
-        function goToCurrent() {
-            connectionView.positionViewAtIndex(connectionView.currentIndex, ListView.Contain);
-            if (connectionView.currentIndex != -1) {
-                connectionView.currentItem.forceActiveFocus();
-            }
-        }
         if (event.modifiers & Qt.ControlModifier && event.key == Qt.Key_F) {
             toolbar.searchTextField.forceActiveFocus();
             toolbar.searchTextField.selectAll();
             event.accepted = true;
-        } else if (event.key == Qt.Key_Down) {
-            connectionView.incrementCurrentIndex();
-            goToCurrent()
-            event.accepted = true;
-        } else if (event.key == Qt.Key_Up) {
-            if (connectionView.currentIndex == 0) {
-                connectionView.currentIndex = -1;
-                toolbar.searchTextField.forceActiveFocus();
-                toolbar.searchTextField.selectAll();
-            } else {
-                connectionView.decrementCurrentIndex();
-                goToCurrent();
-            }
-            event.accepted = true;
+        } else {
+            event.accepted = false;
         }
     }
 
@@ -83,6 +66,20 @@ PlasmaExtras.Representation {
 
             property int currentVisibleButtonIndex: -1
             property bool showSeparator: false
+
+            Keys.onDownPressed: {
+                connectionView.incrementCurrentIndex();
+                connectionView.currentItem.forceActiveFocus();
+            }
+            Keys.onUpPressed: {
+                if (connectionView.currentIndex === 0) {
+                    connectionView.currentIndex = -1;
+                    toolbar.searchTextField.forceActiveFocus();
+                    toolbar.searchTextField.selectAll();
+                } else {
+                    event.accepted = false;
+                }
+            }
 
             Loader {
                 anchors.centerIn: parent

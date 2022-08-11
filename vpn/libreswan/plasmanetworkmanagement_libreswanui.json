@@ -70,6 +70,7 @@
         "Id": "plasmanetworkmanagement_libreswanui",
         "License": "GPL",
         "Name": "IPsec based VPN (libreswan)",
+        "Name[ar]": "شبكة خاصة افتراضية بالاعتماد على IPsec بواسطة (libreswan)",
         "Name[bg]": "IPsec базирани VPN (libreswan)",
         "Name[ca@valencia]": "VPN basada en IPsec (libreswan)",
         "Name[ca]": "VPN basada en IPsec (libreswan)",

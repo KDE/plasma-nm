@@ -3,8 +3,7 @@
         "Authors": [
             {
                 "Email": "plasma-devel@kde.org  ",
-                "Name": "KDE plasma",
-                "Name[es]": "KDE plasma"
+                "Name": "KDE plasma"
             }
         ],
         "Category": "VPNService",

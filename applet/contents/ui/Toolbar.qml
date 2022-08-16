@@ -59,6 +59,8 @@ RowLayout {
         icon.name: enabled ? "network-wireless-on" : "network-wireless-off"
         visible: availableDevices.wirelessDeviceAvailable
 
+        KeyNavigation.right: wwanSwitchButton.visible ? wwanSwitchButton : wwanSwitchButton.KeyNavigation.right
+
         onToggled: handler.enableWireless(checked);
 
         PlasmaComponents3.ToolTip {
@@ -74,6 +76,9 @@ RowLayout {
 
         icon.name: enabled ? "network-mobile-on" : "network-mobile-off"
         visible: availableDevices.modemDeviceAvailable
+
+        KeyNavigation.left: wifiSwitchButton
+        KeyNavigation.right: planeModeSwitchButton.visible ? planeModeSwitchButton : planeModeSwitchButton.KeyNavigation.right
 
         onToggled: handler.enableWwan(checked);
 
@@ -92,6 +97,9 @@ RowLayout {
         icon.name: PlasmaNM.Configuration.airplaneModeEnabled ? "network-flightmode-on" : "network-flightmode-off"
 
         visible: availableDevices.modemDeviceAvailable || availableDevices.wirelessDeviceAvailable
+
+        KeyNavigation.left: wwanSwitchButton.visible ? wwanSwitchButton : wwanSwitchButton.KeyNavigation.left
+        KeyNavigation.right: hotspotButton.visible ? hotspotButton : hotspotButton.KeyNavigation.right
 
         onToggled: {
             handler.enableAirplaneMode(checked);
@@ -113,6 +121,9 @@ RowLayout {
 
         text: i18n("Hotspot")
         icon.name: "network-wireless-on"
+
+        KeyNavigation.left: planeModeSwitchButton.visible ? planeModeSwitchButton : planeModeSwitchButton.KeyNavigation.left
+        KeyNavigation.right: searchTextField
 
         onClicked: {
             if (PlasmaNM.Configuration.hotspotConnectionPath) {
@@ -158,6 +169,8 @@ RowLayout {
         // when the plasmoid is shown again and that way ensure we are
         // always in the correct state on show.
         focus: plasmoid.expanded && !Kirigami.InputMethod.willShowOnActive
+
+        KeyNavigation.left: hotspotButton.visible ? hotspotButton : hotspotButton.KeyNavigation.left
 
         onTextChanged: {
             appletProxyModel.setFilterFixedString(text)

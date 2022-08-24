@@ -615,7 +615,7 @@ void NetworkModelItem::updateDetails() const
                 m_details << i18n("Frequency") << UiUtils::wirelessFrequencyToString(accessPoint->frequency());
                 m_details << i18n("BSSID") << accessPoint->hardwareAddress();
             }
-            m_details << i18n("MAC Address") << wirelessDevice->permanentHardwareAddress();
+            m_details << i18n("MAC Address") << wirelessDevice->hardwareAddress();
         }
     } else if (m_type == NetworkManager::ConnectionSettings::Gsm || m_type == NetworkManager::ConnectionSettings::Cdma) {
 #if WITH_MODEMMANAGER_SUPPORT

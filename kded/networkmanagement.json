@@ -14,6 +14,7 @@
         "Description[fr]": "Fournit des éléments secrets pour le démon « NetworkManager »",
         "Description[hu]": "Titkokat biztosít a NetworkManager démonhoz",
         "Description[ia]": "Forni secretos per le demon de NetworkManager",
+        "Description[is]": "Kemur leyniteiknum áleiðis til netstjóravaktarinnar",
         "Description[it]": "Fornisce i segreti al demone NetworkManager",
         "Description[ko]": "NetworkManager 데몬에 비밀 정보 제공",
         "Description[nl]": "Levert secrets aan de NetworkManager-daemon",

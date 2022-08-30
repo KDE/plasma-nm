@@ -52,7 +52,6 @@ Window {
             anchors {
                 right: parent.right
                 top: parent.top
-                margins: PlasmaCore.Units.smallSpacing * 2
             }
 
             icon.name: "window-close"

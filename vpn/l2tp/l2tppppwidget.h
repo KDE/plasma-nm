@@ -29,7 +29,7 @@ public:
 private:
     void loadConfig(const NetworkManager::VpnSetting::Ptr &setting);
     Ui::L2tpPppWidget *const m_ui;
-    bool m_need_peer_eap;
+    const bool m_need_peer_eap;
 };
 
 #endif // PLASMA_NM_L2TP_PPP_WIDGET_H

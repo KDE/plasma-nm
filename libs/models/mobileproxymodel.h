@@ -29,7 +29,7 @@ protected:
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const Q_DECL_OVERRIDE;
 
 private:
-    bool m_showSavedMode;
+    bool m_showSavedMode = false;
 };
 
 #endif // PLASMA_NM_MOBILE_PROXY_MODEL_H

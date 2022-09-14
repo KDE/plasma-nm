@@ -16,13 +16,14 @@
 PasswordField::PasswordField(QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)
     , m_currentPasswordOption(StoreForUser)
+    , m_layout(new QVBoxLayout(this))
+    , m_passwordField(new QLineEdit(this))
+    , m_passwordOptionsMenu(new QComboBox(this))
 {
-    m_layout = new QVBoxLayout(this);
     // The widget will be already in layout, thus reset content margins
     // to align it with the rest of widgets
     m_layout->setContentsMargins(0, 0, 0, 0);
 
-    m_passwordField = new QLineEdit(this);
     connect(m_passwordField, &QLineEdit::textChanged, this, &PasswordField::textChanged);
 
     if (KAuthorized::authorize(QStringLiteral("lineedit_reveal_password"))) {
@@ -35,7 +36,6 @@ PasswordField::PasswordField(QWidget *parent, Qt::WindowFlags f)
 
     m_layout->addWidget(m_passwordField);
 
-    m_passwordOptionsMenu = new QComboBox(this);
     m_passwordOptionsMenu->setSizeAdjustPolicy(QComboBox::AdjustToContentsOnFirstShow);
 
     m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("document-save")), i18n("Store password for this user only (encrypted)"), StoreForUser);

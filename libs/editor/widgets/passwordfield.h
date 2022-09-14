@@ -49,9 +49,9 @@ Q_SIGNALS:
 
 private:
     PasswordOption m_currentPasswordOption;
-    QVBoxLayout *m_layout = nullptr;
-    QLineEdit *m_passwordField = nullptr;
-    QComboBox *m_passwordOptionsMenu = nullptr;
+    QVBoxLayout *const m_layout;
+    QLineEdit *const m_passwordField;
+    QComboBox *const m_passwordOptionsMenu;
     QAction *m_toggleEchoModeAction = nullptr;
 };
 

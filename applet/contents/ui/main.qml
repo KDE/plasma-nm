@@ -31,6 +31,20 @@ Item {
         focus: true
     }
 
+    function action_wifiSwitch() {
+        handler.enableWireless(plasmoid.action("wifiSwitch").checked)
+    }
+
+    function action_wwanSwitch() {
+        handler.enableWwan(plasmoid.action("wifiSwitch").checked)
+    }
+
+    function action_planeModeSwitch() {
+        let checked = plasmoid.action("wifiSwitch").checked
+        handler.enableAirplaneMode(checked)
+        PlasmaNM.Configuration.airplaneModeEnabled = checked
+    }
+
     function action_openKCM() {
         KCMShell.openSystemSettings(kcm)
     }
@@ -40,14 +54,41 @@ Item {
     }
 
     Component.onCompleted: {
-        if (kcmAuthorized) {
-            plasmoid.setAction("openKCM", i18n("&Configure Network Connections…"), "configure");
-        }
-        plasmoid.removeAction("configure");
-        plasmoid.setAction("showPortal", i18n("Open Network Login Page…"), "internet-services");
+        Plasmoid.setAction("wifiSwitch", i18n("Enable Wi-Fi"), "network-wireless-on")
+        plasmoid.action("wifiSwitch").priority = 0
+        plasmoid.action("wifiSwitch").checkable = true
+        plasmoid.action("wifiSwitch").checked = Qt.binding(() => enabledConnections.wirelessEnabled)
+        plasmoid.action("wifiSwitch").visible = Qt.binding(() => enabledConnections.wirelessHwEnabled
+                                                                 && availableDevices.wirelessDeviceAvailable
+                                                                 && !PlasmaNM.Configuration.airplaneModeEnabled)
 
-        const action = plasmoid.action("showPortal");
-        action.visible = Qt.binding(function() { return connectionIconProvider.needsPortal; })
+        Plasmoid.setAction("wwanSwitch", i18n("Enable Mobile Network"), "network-mobile-on")
+        plasmoid.action("wwanSwitch").priority = 0
+        plasmoid.action("wwanSwitch").checkable = true
+        plasmoid.action("wwanSwitch").checked = Qt.binding(() => enabledConnections.wwanEnabled)
+        plasmoid.action("wwanSwitch").visible = Qt.binding(() => enabledConnections.wwanHwEnabled
+                                                                 && availableDevices.modemDeviceAvailable
+                                                                 && !PlasmaNM.Configuration.airplaneModeEnabled)
+
+        Plasmoid.setAction("planeModeSwitch", i18n("Enable Airplane Mode"), "network-flightmode-on")
+        plasmoid.action("planeModeSwitch").priority = 0
+        plasmoid.action("planeModeSwitch").checkable = true
+        plasmoid.action("planeModeSwitch").checked = Qt.binding(() => PlasmaNM.Configuration.airplaneModeEnabled)
+
+        plasmoid.setAction("showPortal", i18n("Open Network Login Page…"), "internet-services")
+        plasmoid.action("showPortal").visible = Qt.binding(() => connectionIconProvider.needsPortal)
+
+        plasmoid.removeAction("configure")
+        if (kcmAuthorized)
+            plasmoid.setAction("openKCM", i18n("&Configure Network Connections…"), "configure")
+    }
+
+    PlasmaNM.EnabledConnections {
+        id: enabledConnections
+    }
+
+    PlasmaNM.AvailableDevices {
+        id: availableDevices
     }
 
     PlasmaNM.NetworkStatus {

@@ -16,10 +16,6 @@ PlasmaExtras.Representation {
     collapseMarginsHint: true
     property alias toolbarValues: toolbar
 
-    PlasmaNM.AvailableDevices {
-        id: availableDevices
-    }
-
     Component {
         id: networkModelComponent
         PlasmaNM.NetworkModel {}

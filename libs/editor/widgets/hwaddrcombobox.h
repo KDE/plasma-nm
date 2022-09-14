@@ -25,11 +25,9 @@ public:
 Q_SIGNALS:
     void hwAddressChanged();
 
-private Q_SLOTS:
+private:
     void slotEditTextChanged(const QString &);
     void slotCurrentIndexChanged(int);
-
-private:
     void addAddressToCombo(const NetworkManager::Device::Ptr &device);
     QVariant hwAddressFromDevice(const NetworkManager::Device::Ptr &device);
     QString m_initialAddress;

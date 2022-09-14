@@ -30,13 +30,11 @@ protected:
     AdvancedPermissionsWidgetPrivate *const d_ptr;
 
 private:
+    void leftArrowClicked();
+    void rightArrowClicked();
     enum Columns { FullName = 0, LoginName = 1 };
     void setupCommon();
     QTreeWidgetItem *constructItem(const KUser &user, const QString &itemData = QString());
-
-private Q_SLOTS:
-    void leftArrowClicked();
-    void rightArrowClicked();
 };
 
 #endif // PLASMA_NM_ADVANCED_PERMISSIONS_WIDGET_H

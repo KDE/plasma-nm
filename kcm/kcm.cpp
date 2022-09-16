@@ -15,6 +15,7 @@
 #include "vpnuiplugin.h"
 
 // KDE
+#include <KLocalizedContext>
 #include <KMessageBox>
 #include <KPluginFactory>
 #include <KPluginMetaData>
@@ -60,6 +61,10 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     KDeclarative::KDeclarative kdeclarative;
     kdeclarative.setDeclarativeEngine(m_ui->connectionView->engine());
     kdeclarative.setupEngine(m_ui->connectionView->engine());
+
+    KLocalizedContext *l10nContext = new KLocalizedContext(m_ui->connectionView->engine());
+    l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
+    m_ui->connectionView->engine()->rootContext()->setContextObject(l10nContext);
 
     // Check if we can use AP mode to identify security type
     bool useApMode = false;

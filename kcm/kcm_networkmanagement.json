@@ -1,5 +1,6 @@
 {
     "KPlugin": {
+        "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=systemsettings&component=kcm_networkmanagement",
         "Description": "Edit your Network Connections",
         "Description[ar]": "حرّر اتّصالاتك الشّبكيّة",
         "Description[az]": "Şəbəkə bağlantılarınıza düzəliş edin",

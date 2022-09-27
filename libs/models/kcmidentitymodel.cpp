@@ -6,7 +6,6 @@
 
 #include "kcmidentitymodel.h"
 #include "networkmodel.h"
-#include "networkmodelitem.h"
 #include "uiutils.h"
 
 #include <NetworkManagerQt/Settings>

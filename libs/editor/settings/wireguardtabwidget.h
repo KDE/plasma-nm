@@ -9,7 +9,6 @@
 
 #include <QDialog>
 
-#include "settingwidget.h"
 #include <NetworkManagerQt/WireguardSetting>
 
 class Q_DECL_EXPORT WireGuardTabWidget : public QDialog

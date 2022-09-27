@@ -7,8 +7,6 @@
 #ifndef PLASMA_NM_EDITOR_PROXY_MODEL_H
 #define PLASMA_NM_EDITOR_PROXY_MODEL_H
 
-#include "networkmodelitem.h"
-
 #include <QSortFilterProxyModel>
 
 class Q_DECL_EXPORT EditorProxyModel : public QSortFilterProxyModel

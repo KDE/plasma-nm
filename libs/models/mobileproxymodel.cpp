@@ -9,7 +9,6 @@
 #include "mobileproxymodel.h"
 #include "networkmodel.h"
 #include "networkmodelitem.h"
-#include "uiutils.h"
 
 MobileProxyModel::MobileProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)

@@ -5,6 +5,8 @@
 */
 
 #include "editorproxymodel.h"
+#include "networkmodel.h"
+#include "networkmodelitem.h"
 #include "uiutils.h"
 
 EditorProxyModel::EditorProxyModel(QObject *parent)

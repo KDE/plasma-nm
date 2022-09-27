@@ -6,6 +6,7 @@
 
 #include "appletproxymodel.h"
 #include "networkmodel.h"
+#include "networkmodelitem.h"
 #include "uiutils.h"
 
 AppletProxyModel::AppletProxyModel(QObject *parent)

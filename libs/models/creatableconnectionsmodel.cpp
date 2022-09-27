@@ -7,6 +7,7 @@
 #include "creatableconnectionsmodel.h"
 #include <KLocalizedString>
 #include <KPluginMetaData>
+#include <NetworkManagerQt/Manager>
 
 CreatableConnectionItem::CreatableConnectionItem(const QString &typeName,
                                                  const QString &typeSection,

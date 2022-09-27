@@ -6,7 +6,6 @@
 
 #include "btwidget.h"
 #include "ui_bt.h"
-#include "uiutils.h"
 
 #include <KLocalizedString>
 

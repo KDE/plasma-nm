@@ -9,8 +9,6 @@
 
 #include <QSortFilterProxyModel>
 
-#include "networkmodelitem.h"
-
 class Q_DECL_EXPORT AppletProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT

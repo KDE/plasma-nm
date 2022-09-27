@@ -6,7 +6,6 @@
 
 #include "wiredconnectionwidget.h"
 #include "ui_wiredconnectionwidget.h"
-#include "uiutils.h"
 
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/WiredSetting>

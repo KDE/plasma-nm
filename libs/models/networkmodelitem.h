@@ -12,8 +12,7 @@
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/Device>
 #include <NetworkManagerQt/Utils>
-
-#include "networkmodel.h"
+#include <NetworkManagerQt/VpnConnection>
 
 class Q_DECL_EXPORT NetworkModelItem : public QObject
 {

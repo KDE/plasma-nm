@@ -12,8 +12,6 @@
 #include <NetworkManagerQt/Utils>
 #include <QRandomGenerator>
 
-#include "uiutils.h"
-
 WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)
     , m_ui(new Ui::WifiConnectionWidget)

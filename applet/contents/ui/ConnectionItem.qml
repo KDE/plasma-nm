@@ -5,9 +5,9 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-import QtQuick 2.12
-import QtQuick.Layouts 1.2
-import QtQuick.Controls 2.12
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15
 
 import org.kde.kcoreaddons 1.0 as KCoreAddons
 import org.kde.kquickcontrolsaddons 2.0
@@ -46,6 +46,16 @@ PlasmaExtras.ExpandableListItem {
         id: stateChangeButton
 
         readonly property bool isDeactivated: model.ConnectionState === PlasmaNM.Enums.Deactivated
+
+        enabled: {
+            if (!connectionItem.expanded) {
+                return true;
+            }
+            if (connectionItem.customExpandedViewContent === passwordDialogComponent) {
+                return connectionItem.customExpandedViewContentItem.passwordField.acceptableInput;
+            }
+            return true;
+        }
 
         icon.name: isDeactivated ? "network-connect" : "network-disconnect"
         text: isDeactivated ? i18n("Connect") : i18n("Disconnect")
@@ -201,10 +211,11 @@ PlasmaExtras.ExpandableListItem {
 
         ColumnLayout {
             property alias password: passwordField.text
-            property alias passwordInput: passwordField
+            property alias passwordField: passwordField
 
             PasswordField {
                 id: passwordField
+
                 Layout.fillWidth: true
                 Layout.leftMargin: PlasmaCore.Units.iconSizes.smallMedium + PlasmaCore.Units.smallSpacing * 4
                 Layout.rightMargin: PlasmaCore.Units.iconSizes.smallMedium + PlasmaCore.Units.smallSpacing * 4
@@ -216,19 +227,9 @@ PlasmaExtras.ExpandableListItem {
                     connectionItem.customExpandedViewContent = detailsComponent
                 }
 
-                onAcceptableInputChanged: {
-                    stateChangeButton.enabled = acceptableInput
-                }
-
                 Component.onCompleted: {
-                    stateChangeButton.enabled = false
                     passwordField.forceActiveFocus()
                     full.connectionModel.delayModelUpdates = true
-                }
-
-                Component.onDestruction: {
-                    stateChangeButton.enabled = true
-                    connectionItem.customExpandedViewContent = detailsComponent
                 }
             }
         }
@@ -332,10 +333,8 @@ PlasmaExtras.ExpandableListItem {
         return
     }
 
-    // Re-activate the default button if the password field is hidden without
-    // sending a password
     onItemCollapsed: {
-        stateChangeButton.enabled = true;
+        connectionItem.customExpandedViewContent = detailsComponent;
         full.connectionModel.delayModelUpdates = false;
     }
 

@@ -657,7 +657,7 @@ bool Handler::checkRequestScanRateLimit(const NetworkManager::WirelessDevice::Pt
     ret |= lastRequestScan.isValid() && lastRequestScan.msecsTo(now) < NM_REQUESTSCAN_LIMIT_RATE;
     // skip the request scan
     if (ret) {
-        qCDebug(PLASMA_NM_LIBS_LOG) << "Last scan finished " << lastScan.msecsTo(now) << "ms ago and last request scan was sent "
+        qCDebug(PLASMA_NM_LIBS_LOG) << "Last scan finished" << lastScan.msecsTo(now) << "ms ago and last request scan was sent" //
                                     << lastRequestScan.msecsTo(now) << "ms ago, Skipping scanning interface:" << wifiDevice->interfaceName();
         return false;
     }

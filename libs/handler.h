@@ -39,10 +39,18 @@ public:
 
     Q_PROPERTY(bool hotspotSupported READ hotspotSupported NOTIFY hotspotSupportedChanged)
 
+    // Not scientifically correct, but a good estimation of whether a scanning is currently in progress.
+    Q_PROPERTY(bool scanning READ isScanning NOTIFY isScanningChanged)
+
 public:
     bool hotspotSupported() const
     {
         return m_hotspotSupported;
+    }
+
+    bool isScanning() const
+    {
+        return m_ongoingScansCount != 0;
     }
 
 public Q_SLOTS:
@@ -127,6 +135,7 @@ Q_SIGNALS:
     void hotspotCreated();
     void hotspotDisabled();
     void hotspotSupportedChanged(bool hotspotSupported);
+    void isScanningChanged();
 
 private:
     void addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject);
@@ -142,12 +151,15 @@ private:
     QString m_tmpSpecificPath;
     QMap<QString, bool> m_bluetoothAdapters;
     QMap<QString, QTimer *> m_wirelessScanRetryTimer;
+    short m_ongoingScansCount = 0;
 
     void enableBluetooth(bool enable);
     void scanRequestFailed(const QString &interface);
     bool checkRequestScanRateLimit(const NetworkManager::WirelessDevice::Ptr &wifiDevice);
     bool checkHotspotSupported();
     void scheduleRequestScan(const QString &interface, int timeout);
+    void incrementScansCount();
+    void decrementScansCount();
 };
 
 #endif // PLASMA_NM_HANDLER_H

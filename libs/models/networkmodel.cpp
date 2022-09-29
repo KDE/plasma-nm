@@ -9,6 +9,8 @@
 #include "networkmodelitem.h"
 #include "plasma_nm_libs.h"
 #include "uiutils.h"
+#include <QVector>
+#include <algorithm>
 
 #if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/Manager>
@@ -93,12 +95,31 @@ QVariant NetworkModel::data(const QModelIndex &index, int role) const
             return item->rxBytes();
         case TxBytesRole:
             return item->txBytes();
+        case DelayModelUpdatesRole:
+            return item->delayModelUpdates();
         default:
             break;
         }
     }
 
     return {};
+}
+
+bool NetworkModel::setData(const QModelIndex &index, const QVariant &value, int role)
+{
+    const int row = index.row();
+    const bool delay = value.toBool();
+
+    if (row >= 0 && row < m_list.count() && role == DelayModelUpdatesRole) {
+        NetworkModelItem *item = m_list.itemAt(row);
+        if (item->delayModelUpdates() != delay) {
+            item->setDelayModelUpdates(delay);
+            dataChanged(index, index, QVector<int>{DelayModelUpdatesRole});
+            updateDelayModelUpdates();
+            return true;
+        }
+    }
+    return false;
 }
 
 int NetworkModel::rowCount(const QModelIndex &parent) const
@@ -138,25 +159,42 @@ QHash<int, QByteArray> NetworkModel::roleNames() const
     roles[VpnType] = "VpnType";
     roles[RxBytesRole] = "RxBytes";
     roles[TxBytesRole] = "TxBytes";
+    roles[DelayModelUpdatesRole] = "DelayModelUpdates";
 
     return roles;
 }
 
-void NetworkModel::setDelayModelUpdates(bool delayUpdates)
+bool NetworkModel::delayModelUpdates() const
 {
-    m_delayModelUpdates = delayUpdates;
+    return m_delayModelUpdates;
+}
 
-    // Process queue
-    if (!delayUpdates) {
-        while (!m_updateQueue.isEmpty()) {
-            QPair<NetworkModel::ModelChangeType, NetworkModelItem *> update = m_updateQueue.dequeue();
-            if (update.first == ItemAdded) {
-                insertItem(update.second);
-            } else if (update.first == ItemRemoved) {
-                removeItem(update.second);
-            } else if (update.first == ItemPropertyChanged) {
-                updateItem(update.second);
-            }
+void NetworkModel::updateDelayModelUpdates()
+{
+    const QList<NetworkModelItem *> items = m_list.items();
+    const bool delay = std::any_of(items.begin(), items.end(), [](NetworkModelItem *item) -> bool {
+        return item->delayModelUpdates();
+    });
+    if (m_delayModelUpdates != delay) {
+        m_delayModelUpdates = delay;
+        Q_EMIT delayModelUpdatesChanged();
+
+        if (!m_delayModelUpdates) {
+            flushUpdateQueue();
+        }
+    }
+}
+
+void NetworkModel::flushUpdateQueue()
+{
+    while (!m_updateQueue.isEmpty()) {
+        QPair<NetworkModel::ModelChangeType, NetworkModelItem *> update = m_updateQueue.dequeue();
+        if (update.first == ItemAdded) {
+            insertItem(update.second);
+        } else if (update.first == ItemRemoved) {
+            removeItem(update.second);
+        } else if (update.first == ItemPropertyChanged) {
+            updateItem(update.second);
         }
     }
 }
@@ -595,6 +633,7 @@ void NetworkModel::insertItem(NetworkModelItem *item)
     beginInsertRows(QModelIndex(), index, index);
     m_list.insertItem(item);
     endInsertRows();
+    updateDelayModelUpdates();
 }
 
 void NetworkModel::removeItem(NetworkModelItem *item)
@@ -605,11 +644,12 @@ void NetworkModel::removeItem(NetworkModelItem *item)
     }
 
     const int row = m_list.indexOf(item);
-    if (row >= 0) {
+    if (row != -1) {
         beginRemoveRows(QModelIndex(), row, row);
         m_list.removeItem(item);
         item->deleteLater();
         endRemoveRows();
+        updateDelayModelUpdates();
     }
 }
 
@@ -621,12 +661,12 @@ void NetworkModel::updateItem(NetworkModelItem *item)
     }
 
     const int row = m_list.indexOf(item);
-
-    if (row >= 0) {
+    if (row != -1) {
         item->invalidateDetails();
         QModelIndex index = createIndex(row, 0);
         Q_EMIT dataChanged(index, index, item->changedRoles());
         item->clearChangedRoles();
+        updateDelayModelUpdates();
     }
 }
 

@@ -25,9 +25,10 @@ class Q_DECL_EXPORT NetworkModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-    // HACK: Delay model updates to prevent jumping password entry in the applet
-    // BUG: 435430
-    Q_PROPERTY(bool delayModelUpdates WRITE setDelayModelUpdates)
+    // Delay model updates to prevent jumping password entry in the applet.
+    // This is an aggregate property, which is true whenever any of model items is true.
+    // BUG: 435430, 389052
+    Q_PROPERTY(bool delayModelUpdates READ delayModelUpdates NOTIFY delayModelUpdatesChanged)
 
     explicit NetworkModel(QObject *parent = nullptr);
     ~NetworkModel() override;
@@ -61,6 +62,8 @@ public:
         VpnType,
         RxBytesRole,
         TxBytesRole,
+        // writable roles
+        DelayModelUpdatesRole,
     };
     Q_ENUMS(ItemRole)
 
@@ -68,8 +71,13 @@ public:
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
+    bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole) override;
     QHash<int, QByteArray> roleNames() const override;
-    void setDelayModelUpdates(bool delayUpdates);
+
+    bool delayModelUpdates() const;
+
+Q_SIGNALS:
+    void delayModelUpdatesChanged();
 
 public Q_SLOTS:
     void onItemUpdated();
@@ -122,6 +130,8 @@ private:
     void initializeSignals(const NetworkManager::WirelessNetwork::Ptr &network);
     void
     updateFromWirelessNetwork(NetworkModelItem *item, const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::WirelessDevice::Ptr &device);
+    void updateDelayModelUpdates();
+    void flushUpdateQueue();
 
     void insertItem(NetworkModelItem *item);
     void removeItem(NetworkModelItem *item);

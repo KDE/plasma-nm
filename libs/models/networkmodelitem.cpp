@@ -39,6 +39,7 @@ NetworkModelItem::NetworkModelItem(QObject *parent)
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
     , m_deviceState(NetworkManager::Device::UnknownState)
     , m_detailsValid(false)
+    , m_delayModelUpdates(false)
     , m_duplicate(false)
     , m_mode(NetworkManager::WirelessSetting::Infrastructure)
     , m_securityType(NetworkManager::NoneSecurity)
@@ -56,6 +57,7 @@ NetworkModelItem::NetworkModelItem(const NetworkModelItem *item, QObject *parent
     , m_connectionPath(item->connectionPath())
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
     , m_detailsValid(false)
+    , m_delayModelUpdates(item->delayModelUpdates())
     , m_duplicate(true)
     , m_mode(item->mode())
     , m_name(item->name())
@@ -488,6 +490,17 @@ void NetworkModelItem::setTxBytes(qulonglong bytes)
         m_txBytes = bytes;
         m_changedRoles << NetworkModel::TxBytesRole;
     }
+}
+
+bool NetworkModelItem::delayModelUpdates() const
+{
+    return m_delayModelUpdates;
+}
+
+void NetworkModelItem::setDelayModelUpdates(bool delay)
+{
+    // special case, does not need m_changedRoles
+    m_delayModelUpdates = delay;
 }
 
 bool NetworkModelItem::operator==(const NetworkModelItem *item) const

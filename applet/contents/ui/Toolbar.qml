@@ -66,6 +66,30 @@ RowLayout {
         PlasmaComponents3.ToolTip {
             text: i18n("Enable Wi-Fi")
         }
+
+        PlasmaComponents3.BusyIndicator {
+            parent: wifiSwitchButton
+            anchors {
+                fill: wifiSwitchButton.contentItem
+                leftMargin: wifiSwitchButton.indicator.width + wifiSwitchButton.spacing
+            }
+            z: 1
+
+            // Scanning may be too fast to notice. Prolong the animation up to at least `humanMoment`.
+            running: handler.scanning || timer.running
+            Timer {
+                id: timer
+                interval: PlasmaCore.Units.humanMoment
+            }
+            Connections {
+                target: handler
+                function onScanningChanged() {
+                    if (handler.scanning) {
+                        timer.restart();
+                    }
+                }
+            }
+        }
     }
 
     PlasmaComponents3.CheckBox {

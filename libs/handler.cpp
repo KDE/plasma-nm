@@ -528,6 +528,7 @@ void Handler::requestScan(const QString &interface)
                 }
 
                 qCDebug(PLASMA_NM_LIBS_LOG) << "Requesting wifi scan on device" << wifiDevice->interfaceName();
+                incrementScansCount();
                 QDBusPendingReply<> reply = wifiDevice->requestScan();
                 auto watcher = new QDBusPendingCallWatcher(reply, this);
                 watcher->setProperty("action", Handler::RequestScan);
@@ -535,6 +536,26 @@ void Handler::requestScan(const QString &interface)
                 connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
             }
         }
+    }
+}
+
+void Handler::incrementScansCount()
+{
+    m_ongoingScansCount += 1;
+    if (m_ongoingScansCount == 1) {
+        Q_EMIT isScanningChanged();
+    }
+}
+
+void Handler::decrementScansCount()
+{
+    if (m_ongoingScansCount == 0) {
+        qCDebug(PLASMA_NM_LIBS_LOG) << "Extra decrementScansCount() called";
+        return;
+    }
+    m_ongoingScansCount -= 1;
+    if (m_ongoingScansCount == 0) {
+        Q_EMIT isScanningChanged();
     }
 }
 
@@ -772,6 +793,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
             const QString interface = watcher->property("interface").toString();
             qCWarning(PLASMA_NM_LIBS_LOG) << "Wireless scan on" << interface << "failed:" << error;
             scanRequestFailed(interface);
+            decrementScansCount();
             break;
         }
         case Handler::CreateHotspot:
@@ -807,6 +829,7 @@ void Handler::replyFinished(QDBusPendingCallWatcher *watcher)
             break;
         case Handler::RequestScan:
             qCDebug(PLASMA_NM_LIBS_LOG) << "Wireless scan on" << watcher->property("interface").toString() << "succeeded";
+            decrementScansCount();
             break;
         default:
             break;

@@ -229,7 +229,7 @@ PlasmaExtras.ExpandableListItem {
 
                 Component.onCompleted: {
                     passwordField.forceActiveFocus()
-                    full.connectionModel.delayModelUpdates = true
+                    setDelayModelUpdates(true)
                 }
             }
         }
@@ -275,7 +275,7 @@ PlasmaExtras.ExpandableListItem {
                 handler.deactivateConnection(ConnectionPath, DevicePath)
             }
         } else if (predictableWirelessPassword) {
-            full.connectionModel.delayModelUpdates = true
+            setDelayModelUpdates(true)
             connectionItem.customExpandedViewContent = passwordDialogComponent
             connectionItem.expand()
         }
@@ -309,6 +309,10 @@ PlasmaExtras.ExpandableListItem {
         return ""
     }
 
+    function setDelayModelUpdates(delay: bool) {
+        appletProxyModel.setData(appletProxyModel.index(index, 0), delay, PlasmaNM.NetworkModel.DelayModelUpdatesRole);
+    }
+
     onShowSpeedChanged: {
         connectionModel.setDeviceStatisticsRefreshRateMs(DevicePath, showSpeed ? 2000 : 0)
     }
@@ -335,12 +339,6 @@ PlasmaExtras.ExpandableListItem {
 
     onItemCollapsed: {
         connectionItem.customExpandedViewContent = detailsComponent;
-        full.connectionModel.delayModelUpdates = false;
-    }
-
-    Component.onDestruction: {
-        if ( full != null && full.connectionModel != null) {
-            full.connectionModel.delayModelUpdates = false;
-        }
+        setDelayModelUpdates(false);
     }
 }

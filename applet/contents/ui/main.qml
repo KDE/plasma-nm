@@ -16,6 +16,9 @@ Item {
 
     readonly property string kcm: "kcm_networkmanagement"
     readonly property bool kcmAuthorized: KCMShell.authorize("kcm_networkmanagement.desktop").length == 1
+    readonly property bool delayModelUpdates: Plasmoid.fullRepresentationItem !== null
+        && Plasmoid.fullRepresentationItem.connectionModel !== null
+        && Plasmoid.fullRepresentationItem.connectionModel.delayModelUpdates
 
     Plasmoid.toolTipMainText: i18n("Networks")
     Plasmoid.toolTipSubText: networkStatus.activeConnections
@@ -66,7 +69,7 @@ Item {
         id: scanTimer
         interval: 10200
         repeat: true
-        running: plasmoid.expanded && !PlasmaNM.Configuration.airplaneModeEnabled
+        running: plasmoid.expanded && !PlasmaNM.Configuration.airplaneModeEnabled && !mainWindow.delayModelUpdates
 
         onTriggered: handler.requestScan()
     }

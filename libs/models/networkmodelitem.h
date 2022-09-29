@@ -103,6 +103,9 @@ public:
     qulonglong txBytes() const;
     void setTxBytes(qulonglong bytes);
 
+    bool delayModelUpdates() const;
+    void setDelayModelUpdates(bool delay);
+
     bool operator==(const NetworkModelItem *item) const;
 
     QVector<int> changedRoles() const
@@ -130,6 +133,7 @@ private:
     NetworkManager::Device::State m_deviceState;
     mutable QStringList m_details;
     mutable bool m_detailsValid;
+    bool m_delayModelUpdates;
     bool m_duplicate;
     NetworkManager::WirelessSetting::NetworkMode m_mode;
     QString m_name;

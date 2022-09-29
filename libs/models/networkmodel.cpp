@@ -615,9 +615,7 @@ void NetworkModel::removeItem(NetworkModelItem *item)
 
 void NetworkModel::updateItem(NetworkModelItem *item)
 {
-    const QVector<int> changedRoles = item->changedRoles();
-    // Check only primary roles which can change item order
-    if (m_delayModelUpdates && (changedRoles.contains(ConnectionStateRole) || changedRoles.contains(ItemTypeRole) || changedRoles.contains(SignalRole))) {
+    if (m_delayModelUpdates) {
         m_updateQueue.enqueue(QPair<NetworkModel::ModelChangeType, NetworkModelItem *>(NetworkModel::ItemPropertyChanged, item));
         return;
     }

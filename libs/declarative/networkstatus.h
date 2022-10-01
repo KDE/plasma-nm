@@ -17,10 +17,12 @@ class NetworkStatus : public QObject
      * Returns a formated list of active connections or NM status when there is no active connection
      */
     Q_PROPERTY(QString activeConnections READ activeConnections NOTIFY activeConnectionsChanged)
+
     /**
-     * Returns the current status of NetworkManager
+     * Returns the network connectivity state
      */
-    Q_PROPERTY(QString networkStatus READ networkStatus NOTIFY networkStatusChanged)
+    Q_PROPERTY(NetworkManager::Connectivity connectivity READ connectivity NOTIFY connectivityChanged)
+
     Q_OBJECT
 public:
     enum SortedConnectionType {
@@ -45,6 +47,7 @@ public:
 
     QString activeConnections() const;
     QString networkStatus() const;
+    NetworkManager::Connectivity connectivity() const;
 
 private Q_SLOTS:
     void activeConnectionsChanged();
@@ -54,11 +57,12 @@ private Q_SLOTS:
 
 Q_SIGNALS:
     void activeConnectionsChanged(const QString &activeConnections);
-    void networkStatusChanged(const QString &status);
+    void connectivityChanged(NetworkManager::Connectivity connectivity);
 
 private:
     QString m_activeConnections;
     QString m_networkStatus;
+    NetworkManager::Connectivity m_connectivity = NetworkManager::UnknownConnectivity;
 
     QString checkUnknownReason() const;
 };

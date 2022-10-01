@@ -61,11 +61,22 @@ NetworkStatus::NetworkStatus(QObject *parent)
     : QObject(parent)
 {
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this, &NetworkStatus::changeActiveConnections);
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this, &NetworkStatus::connectivityChanged);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::statusChanged, this, &NetworkStatus::statusChanged);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionsChanged, this, QOverload<>::of(&NetworkStatus::activeConnectionsChanged));
 
     activeConnectionsChanged();
     statusChanged(NetworkManager::status());
+
+    QDBusPendingReply<uint> pendingReply = NetworkManager::checkConnectivity();
+    auto callWatcher = new QDBusPendingCallWatcher(pendingReply);
+    connect(callWatcher, &QDBusPendingCallWatcher::finished, this, [this](QDBusPendingCallWatcher *watcher) {
+        QDBusPendingReply<uint> reply = *watcher;
+        if (reply.isValid()) {
+            connectivityChanged((NetworkManager::Connectivity)reply.value());
+        }
+        watcher->deleteLater();
+    });
 }
 
 NetworkStatus::~NetworkStatus() = default;
@@ -78,6 +89,11 @@ QString NetworkStatus::activeConnections() const
 QString NetworkStatus::networkStatus() const
 {
     return m_networkStatus;
+}
+
+NetworkManager::Connectivity NetworkStatus::connectivity() const
+{
+    return NetworkManager::connectivity();
 }
 
 void NetworkStatus::activeConnectionsChanged()
@@ -131,10 +147,6 @@ void NetworkStatus::statusChanged(NetworkManager::Status status)
     } else if (m_activeConnections != m_networkStatus) {
         m_activeConnections = m_networkStatus;
         Q_EMIT activeConnectionsChanged(m_activeConnections);
-    }
-
-    if (oldNetworkStatus != m_networkStatus) {
-        Q_EMIT networkStatusChanged(m_networkStatus);
     }
 }
 

@@ -53,6 +53,8 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterType<CreatableConnectionsModel>(uri, 0, 2, "CreatableConnectionsModel");
     // @uri org.kde.plasma.networkmanagement.MobileProxyModel
     qmlRegisterType<MobileProxyModel>(uri, 0, 2, "MobileProxyModel");
+    // @uri org.kde.plasma.networkmanagement.NetworkManager
+    qmlRegisterUncreatableMetaObject(NetworkManager::staticMetaObject, uri, 0, 2, "NetworkManager", "You cannot create the NetworkManager namespace");
 
     qmlRegisterSingletonType<ConfigurationProxy>(uri, 0, 2, "Configuration", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
         Q_UNUSED(engine)

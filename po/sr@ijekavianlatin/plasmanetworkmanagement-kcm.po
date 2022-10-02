@@ -1,0 +1,151 @@
+# Translation of plasmanetworkmanagement-kcm.po into Serbian.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasmanetworkmanagement-kcm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-03-10 03:49+0100\n"
+"PO-Revision-Date: 2017-10-30 23:08+0100\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavianlatin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+# well-spelled: моја_дељена_веза
+#: kcm.cpp:362
+#, kde-format
+msgid "my_shared_connection"
+msgstr "moja_deljena_veza"
+
+# >> @title:window
+#: kcm.cpp:424
+#, kde-format
+msgid "Export VPN Connection"
+msgstr "Izvoz VPN veze"
+
+#: kcm.cpp:444
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "Želite li da sačuvate izmene nad vezom „%1“?"
+
+#: kcm.cpp:444
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "Upisivanje izmena"
+
+# >> @title:window
+#: kcm.cpp:533
+#, kde-format
+msgid "Import VPN Connection"
+msgstr "Uvoz VPN veze"
+
+#: qml/AddConnectionDialog.qml:31
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr "Izbor tipa veze"
+
+#: qml/AddConnectionDialog.qml:174
+msgid "Create"
+msgstr "Napravi"
+
+#: qml/AddConnectionDialog.qml:184 qml/ConfigurationDialog.qml:130
+msgid "Cancel"
+msgstr "Odustani"
+
+#: qml/ConfigurationDialog.qml:30
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:55
+msgid "General"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:60
+msgid "Ask for PIN on modem detection"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:67
+#, fuzzy
+#| msgid "Export selected connection"
+msgid "Show virtual connections"
+msgstr "Izvezi izabranu vezu"
+
+#: qml/ConfigurationDialog.qml:75
+msgid "Hotspot"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:81
+msgid "Hotspot name:"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:91
+msgid "Hotspot password:"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:121
+msgid "Ok"
+msgstr ""
+
+#: qml/ConnectionItem.qml:112
+msgid "Connect"
+msgstr "Poveži se"
+
+#: qml/ConnectionItem.qml:112
+msgid "Disconnect"
+msgstr "Prekini vezu"
+
+#: qml/ConnectionItem.qml:125
+msgid "Delete"
+msgstr "Obriši"
+
+#: qml/ConnectionItem.qml:135
+msgid "Export"
+msgstr "Izvezi"
+
+# >> @item
+#: qml/ConnectionItem.qml:160
+msgid "Connected"
+msgstr "povezan"
+
+# >> @item
+#: qml/ConnectionItem.qml:162
+msgid "Connecting"
+msgstr "u povezivanju"
+
+#: qml/main.qml:75
+msgid "Search..."
+msgstr ""
+
+#: qml/main.qml:154
+msgid "Add new connection"
+msgstr "Dodaj novu vezu"
+
+#: qml/main.qml:168
+msgid "Remove selected connection"
+msgstr "Ukloni izabranu vezu"
+
+#: qml/main.qml:184
+msgid "Export selected connection"
+msgstr "Izvezi izabranu vezu"
+
+#: qml/main.qml:208
+msgid "Configuration"
+msgstr ""
+
+#: qml/main.qml:236
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr "Uklanjanje veze"
+
+#: qml/main.qml:237
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Želite li zaista da uklonite vezu „%1“?"

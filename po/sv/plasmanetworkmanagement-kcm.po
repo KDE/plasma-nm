@@ -1,0 +1,151 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2017, 2019, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"PO-Revision-Date: 2021-06-26 22:30+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.08.1\n"
+
+#: kcm.cpp:350
+#, kde-format
+msgid "my_shared_connection"
+msgstr "min-delade-anslutning"
+
+#: kcm.cpp:421
+#, kde-format
+msgid "Export VPN Connection"
+msgstr "Exportera VPN-anslutning"
+
+#: kcm.cpp:441
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "Vill du spara ändringarna som gjorts av anslutningen '%1'?"
+
+#: kcm.cpp:442
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "Spara ändringar"
+
+#: kcm.cpp:526
+#, kde-format
+msgid "Import VPN Connection"
+msgstr "Importera VPN-anslutning"
+
+#: qml/AddConnectionDialog.qml:16
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr "Välj en anslutningstyp"
+
+#: qml/AddConnectionDialog.qml:160
+msgid "Create"
+msgstr "Skapa"
+
+#: qml/AddConnectionDialog.qml:170 qml/ConfigurationDialog.qml:112
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: qml/AddConnectionDialog.qml:187 qml/main.qml:193
+msgid "Configuration"
+msgstr "Inställning"
+
+#: qml/ConfigurationDialog.qml:16
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr "Inställning"
+
+#: qml/ConfigurationDialog.qml:37
+msgid "General"
+msgstr "Allmänt"
+
+#: qml/ConfigurationDialog.qml:42
+msgid "Ask for PIN on modem detection"
+msgstr "fråga efter PIN-kod vid detektering av modem"
+
+#: qml/ConfigurationDialog.qml:49
+msgid "Show virtual connections"
+msgstr "Visa virtuella anslutningar"
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Hotspot"
+msgstr "Accesspunkt"
+
+#: qml/ConfigurationDialog.qml:63
+msgid "Hotspot name:"
+msgstr "Accesspunktsnamn:"
+
+#: qml/ConfigurationDialog.qml:73
+msgid "Hotspot password:"
+msgstr "Accesspunktens lösenord:"
+
+#: qml/ConfigurationDialog.qml:103
+msgid "Ok"
+msgstr "Ok"
+
+#: qml/ConnectionItem.qml:99
+msgid "Connect"
+msgstr "Anslut"
+
+#: qml/ConnectionItem.qml:99
+msgid "Disconnect"
+msgstr "Koppla ner"
+
+#: qml/ConnectionItem.qml:112
+msgid "Delete"
+msgstr "Ta bort"
+
+#: qml/ConnectionItem.qml:122
+msgid "Export"
+msgstr "Exportera"
+
+#: qml/ConnectionItem.qml:147
+msgid "Connected"
+msgstr "Ansluten"
+
+#: qml/ConnectionItem.qml:149
+msgid "Connecting"
+msgstr "Ansluter"
+
+#: qml/main.qml:139
+msgid "Add new connection"
+msgstr "Lägg till ny anslutning"
+
+#: qml/main.qml:153
+msgid "Remove selected connection"
+msgstr "Ta bort markerad anslutning"
+
+#: qml/main.qml:169
+msgid "Export selected connection"
+msgstr "Exportera markerad anslutning"
+
+#: qml/main.qml:221
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr "Ta bort anslutning"
+
+#: qml/main.qml:222
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Vill du ta bort anslutningen '%1'?"
+
+#~ msgid "Search…"
+#~ msgstr "Sök..."
+
+#~ msgid "Type here to search connections..."
+#~ msgstr "Skriv här för att söka efter anslutningar..."
+
+#~ msgid "Close"
+#~ msgstr "Stäng"
+
+#~ msgid "Form"
+#~ msgstr "Formulär"

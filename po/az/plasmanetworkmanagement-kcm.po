@@ -1,0 +1,144 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+#
+# Kheyyam Gojayev <xxmn77@gmail.com>, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"PO-Revision-Date: 2021-05-31 14:24+0400\n"
+"Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
+"Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
+"Language: az\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.04.1\n"
+
+#: kcm.cpp:350
+#, kde-format
+msgid "my_shared_connection"
+msgstr "mənim_qoşulma_nöqtəm"
+
+#: kcm.cpp:421
+#, kde-format
+msgid "Export VPN Connection"
+msgstr "VPN bağlantısını ixrac etmək"
+
+#: kcm.cpp:441
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr ""
+"\"%1\" bağlantısı üçün edilmiş dəyişiklikləri saxlamaq istədiyinizə "
+"əminsiniz?"
+
+#: kcm.cpp:442
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "Dəyişikliklər saxlanılsın"
+
+#: kcm.cpp:526
+#, kde-format
+msgid "Import VPN Connection"
+msgstr "VPN bağlantısını idxal etmək"
+
+#: qml/AddConnectionDialog.qml:16
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr "Bağlantı növünü seçmək"
+
+#: qml/AddConnectionDialog.qml:160
+msgid "Create"
+msgstr "Yaratmaq"
+
+#: qml/AddConnectionDialog.qml:170 qml/ConfigurationDialog.qml:112
+msgid "Cancel"
+msgstr "İmtina"
+
+#: qml/AddConnectionDialog.qml:187 qml/main.qml:193
+msgid "Configuration"
+msgstr "Tənzimləmə"
+
+#: qml/ConfigurationDialog.qml:16
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr "Tənzimləmə"
+
+#: qml/ConfigurationDialog.qml:37
+msgid "General"
+msgstr "Əsas"
+
+#: qml/ConfigurationDialog.qml:42
+msgid "Ask for PIN on modem detection"
+msgstr "Modem aşkarlandığında PİN tələb etmək"
+
+#: qml/ConfigurationDialog.qml:49
+msgid "Show virtual connections"
+msgstr "Virtual bağlantıları göstərmək"
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Hotspot"
+msgstr "Qoşulma nöqtəsi"
+
+#: qml/ConfigurationDialog.qml:63
+msgid "Hotspot name:"
+msgstr "Qoşulma nöqtəsi adı:"
+
+#: qml/ConfigurationDialog.qml:73
+msgid "Hotspot password:"
+msgstr "Qoşulma nöqtəsi şifrəsi:"
+
+#: qml/ConfigurationDialog.qml:103
+msgid "Ok"
+msgstr "Ok"
+
+#: qml/ConnectionItem.qml:99
+msgid "Connect"
+msgstr "Qoşmaq"
+
+#: qml/ConnectionItem.qml:99
+msgid "Disconnect"
+msgstr "Ayırmaq"
+
+#: qml/ConnectionItem.qml:112
+msgid "Delete"
+msgstr "Silmək"
+
+#: qml/ConnectionItem.qml:122
+msgid "Export"
+msgstr "İxrac etmək"
+
+#: qml/ConnectionItem.qml:147
+msgid "Connected"
+msgstr "Qoşuldu"
+
+#: qml/ConnectionItem.qml:149
+msgid "Connecting"
+msgstr "Qoşulur"
+
+#: qml/main.qml:139
+msgid "Add new connection"
+msgstr "Yeni bağlantı əlavə etmək"
+
+#: qml/main.qml:153
+msgid "Remove selected connection"
+msgstr "Seçilmiş bağlantını silmək"
+
+#: qml/main.qml:169
+msgid "Export selected connection"
+msgstr "Seçilmiş bağlantını ixrac etmək"
+
+#: qml/main.qml:221
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr "Bağlantını silmək"
+
+#: qml/main.qml:222
+msgid "Do you want to remove the connection '%1'?"
+msgstr "\"%1\" bağlantısını silmək istədiyinizə əminsiniz?"
+
+#~ msgid "Search…"
+#~ msgstr "Axtarış..."

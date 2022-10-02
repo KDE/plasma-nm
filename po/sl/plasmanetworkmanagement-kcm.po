@@ -1,0 +1,151 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andrej Mernik <andrejm@ubuntu.si>, 2017, 2018.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"PO-Revision-Date: 2021-06-01 08:22+0200\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 2.4.3\n"
+
+#: kcm.cpp:350
+#, kde-format
+msgid "my_shared_connection"
+msgstr "moja_deljena_povezava"
+
+#: kcm.cpp:421
+#, kde-format
+msgid "Export VPN Connection"
+msgstr "Izvozi povezavo VPN"
+
+#: kcm.cpp:441
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "Ali želite shraniti spremembe povezave '%1'?"
+
+#: kcm.cpp:442
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "Shrani spremembe"
+
+#: kcm.cpp:526
+#, kde-format
+msgid "Import VPN Connection"
+msgstr "Uvozi povezavo VPN"
+
+#: qml/AddConnectionDialog.qml:16
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr "Izberite vrsto povezave"
+
+#: qml/AddConnectionDialog.qml:160
+msgid "Create"
+msgstr "Ustvari"
+
+#: qml/AddConnectionDialog.qml:170 qml/ConfigurationDialog.qml:112
+msgid "Cancel"
+msgstr "Prekliči"
+
+#: qml/AddConnectionDialog.qml:187 qml/main.qml:193
+msgid "Configuration"
+msgstr "Nastavitev"
+
+#: qml/ConfigurationDialog.qml:16
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr "Nastavitev"
+
+#: qml/ConfigurationDialog.qml:37
+msgid "General"
+msgstr "Splošno"
+
+#: qml/ConfigurationDialog.qml:42
+msgid "Ask for PIN on modem detection"
+msgstr "Pri zaznavanju modema vprašaj za PIN"
+
+#: qml/ConfigurationDialog.qml:49
+msgid "Show virtual connections"
+msgstr "Pokaži navidezne povezave"
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Hotspot"
+msgstr "Vroča točka"
+
+#: qml/ConfigurationDialog.qml:63
+msgid "Hotspot name:"
+msgstr "Ime vroče točke:"
+
+#: qml/ConfigurationDialog.qml:73
+msgid "Hotspot password:"
+msgstr "Geslo vroče točke:"
+
+#: qml/ConfigurationDialog.qml:103
+msgid "Ok"
+msgstr "Ok"
+
+#: qml/ConnectionItem.qml:99
+msgid "Connect"
+msgstr "Poveži se"
+
+#: qml/ConnectionItem.qml:99
+msgid "Disconnect"
+msgstr "Prekini povezavo"
+
+#: qml/ConnectionItem.qml:112
+msgid "Delete"
+msgstr "Izbriši"
+
+#: qml/ConnectionItem.qml:122
+msgid "Export"
+msgstr "Izvozi"
+
+#: qml/ConnectionItem.qml:147
+msgid "Connected"
+msgstr "Povezano"
+
+#: qml/ConnectionItem.qml:149
+msgid "Connecting"
+msgstr "Povezovanje"
+
+#: qml/main.qml:139
+msgid "Add new connection"
+msgstr "Dodaj novo povezavo"
+
+#: qml/main.qml:153
+msgid "Remove selected connection"
+msgstr "Odstrani izbrano povezavo"
+
+#: qml/main.qml:169
+msgid "Export selected connection"
+msgstr "Izvozi izbrano povezavo"
+
+#: qml/main.qml:221
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr "Odstrani povezavo"
+
+#: qml/main.qml:222
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Ali želite odstraniti povezavo '%1'?"
+
+#~ msgid "Search…"
+#~ msgstr "Poišči…"
+
+#~ msgid "Type here to search connections..."
+#~ msgstr "Tipkajte tukaj za iskanje povezav ..."
+
+#~ msgid "Close"
+#~ msgstr "Zapri"

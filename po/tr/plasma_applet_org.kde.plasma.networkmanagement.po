@@ -1,0 +1,301 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Serdar SOYTETİR <tulliana@gmail.com>, 2010, 2011, 2012.
+# Gökçen Eraslan <gokcen@pardus.org.tr>, 2011, 2013.
+# Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2017, 2021.
+# Emir SARI <emir_sari@icloud.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: networkmanagement_openvpnui\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-16 00:46+0000\n"
+"PO-Revision-Date: 2022-07-25 12:52+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 22.04.2\n"
+"X-POOTLE-MTIME: 1413102242.000000\n"
+
+#: contents/ui/ConnectionItem.qml:51
+#, kde-format
+msgid "Connect"
+msgstr "Bağlan"
+
+#: contents/ui/ConnectionItem.qml:51
+#, kde-format
+msgid "Disconnect"
+msgstr "Bağlantıyı Kes"
+
+#: contents/ui/ConnectionItem.qml:54
+#, kde-format
+msgctxt "@info:tooltip %1 is the name of a network connection"
+msgid "Connect to %1"
+msgstr "Bağlan: %1"
+
+#: contents/ui/ConnectionItem.qml:54
+#, kde-format
+msgctxt "@info:tooltip %1 is the name of a network connection"
+msgid "Disconnect from %1"
+msgstr "Bağlantıyı Kes: %1"
+
+#: contents/ui/ConnectionItem.qml:78
+#, kde-format
+msgid "Show Network's QR Code"
+msgstr "Ağın kare kodunu göster"
+
+#: contents/ui/ConnectionItem.qml:90
+#, kde-format
+msgctxt "@title:window"
+msgid "QR Code for %1"
+msgstr "%1 için Kare Kod"
+
+#: contents/ui/ConnectionItem.qml:96
+#, kde-format
+msgid "Configure…"
+msgstr "Yapılandır…"
+
+#: contents/ui/ConnectionItem.qml:127
+#, kde-format
+msgid "Speed"
+msgstr "Hız"
+
+#: contents/ui/ConnectionItem.qml:132
+#, kde-format
+msgid "Details"
+msgstr "Ayrıntılar"
+
+#: contents/ui/ConnectionItem.qml:175
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Current download speed is %1 kibibytes per second; current upload speed is "
+"%2 kibibytes per second"
+msgstr ""
+"Geçerli indirme hızı, saniye başına %1 kibibayt; geçerli gönderme hızı, "
+"saniye başına %2 kibibayt"
+
+#: contents/ui/ConnectionItem.qml:301
+#, kde-format
+msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+msgstr "Bağlı, ⬇ %1/sn, ⬆ %2/sn"
+
+#: contents/ui/ConnectionItem.qml:305
+#, kde-format
+msgid "Connected"
+msgstr "Bağlı"
+
+#: contents/ui/DetailsText.qml:45
+#, kde-format
+msgid "Copy"
+msgstr "Kopyala"
+
+#: contents/ui/main.qml:20
+#, kde-format
+msgid "Networks"
+msgstr "Ağlar"
+
+#: contents/ui/main.qml:57 contents/ui/Toolbar.qml:67
+#, kde-format
+msgid "Enable Wi-Fi"
+msgstr "Kablosuzu etkinleştir"
+
+#: contents/ui/main.qml:65
+#, kde-format
+msgid "Enable Mobile Network"
+msgstr "Taşınabilir Ağı Etkinleştir"
+
+#: contents/ui/main.qml:73
+#, kde-format
+msgid "Enable Airplane Mode"
+msgstr "Uçak Kipini Etkinleştir"
+
+#: contents/ui/main.qml:78
+#, kde-format
+msgid "Open Network Login Page…"
+msgstr "Ağ Oturum Açma Sayfasını Aç…"
+
+#: contents/ui/main.qml:83
+#, kde-format
+msgid "&Configure Network Connections…"
+msgstr "&Ağ Bağlantılarını Yapılandır…"
+
+#: contents/ui/PasswordField.qml:16
+#, kde-format
+msgid "Password…"
+msgstr "Parola…"
+
+#: contents/ui/PopupDialog.qml:101
+#, kde-format
+msgid "Airplane mode is enabled"
+msgstr "Uçak kipi etkin"
+
+#: contents/ui/PopupDialog.qml:105
+#, kde-format
+msgid "Wireless and mobile networks are deactivated"
+msgstr "Kablosuz ve mobil ağlar devre dışı bırakıldı"
+
+#: contents/ui/PopupDialog.qml:107
+#, kde-format
+msgid "Wireless is deactivated"
+msgstr "Kablosuz devre dışı"
+
+#: contents/ui/PopupDialog.qml:110
+#, kde-format
+msgid "Mobile network is deactivated"
+msgstr "Mobil ağ devre dışı bırakıldı"
+
+#: contents/ui/PopupDialog.qml:113
+#, kde-format
+msgid "No matches"
+msgstr "Eşleşme yok"
+
+#: contents/ui/PopupDialog.qml:115
+#, kde-format
+msgid "No available connections"
+msgstr "Kullanılabilir bağlantı yok"
+
+#: contents/ui/PopupDialog.qml:142
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is ADSL"
+msgstr "Bağlantı türü: ADSL"
+
+#: contents/ui/PopupDialog.qml:144
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Bluetooth"
+msgstr "Bağlantı türü: Bluetooth"
+
+#: contents/ui/PopupDialog.qml:146
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Bridge"
+msgstr "Bağlantı türü: Köprü"
+
+#: contents/ui/PopupDialog.qml:148
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is CDMA"
+msgstr "Bağlantı türü: CDMA"
+
+#: contents/ui/PopupDialog.qml:150
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is GSM"
+msgstr "Bağlantı türü: GSM"
+
+#: contents/ui/PopupDialog.qml:152
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Infiniband"
+msgstr "Bağlantı türü: Infiniband"
+
+#: contents/ui/PopupDialog.qml:154
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is OLPC Mesh"
+msgstr "Bağlantı türü: OLPC Mesh"
+
+#: contents/ui/PopupDialog.qml:156
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is PPOPE"
+msgstr "Bağlantı türü: PPOPE"
+
+#: contents/ui/PopupDialog.qml:158
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is VLAN"
+msgstr "Bağlantı türü: VLAN"
+
+#: contents/ui/PopupDialog.qml:160
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is VPN"
+msgstr "Bağlantı türü: VPN"
+
+#: contents/ui/PopupDialog.qml:162
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Wimax"
+msgstr "Bağlantı türü: Wimax"
+
+#: contents/ui/PopupDialog.qml:164
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Wired"
+msgstr "Bağlantı türü: Kablolu"
+
+#: contents/ui/PopupDialog.qml:166
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Wireless"
+msgstr "Bağlantı türü: Kablosuz"
+
+#: contents/ui/PopupDialog.qml:168
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Unknown"
+msgstr "Bağlantı türü: Bilinmiyor"
+
+#: contents/ui/Toolbar.qml:86
+#, kde-format
+msgid "Enable mobile network"
+msgstr "Mobil ağları etkinleştir"
+
+#: contents/ui/Toolbar.qml:111
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
+msgstr ""
+"Uçak kipini devre dışı bırak<nl/><nl/>Bu, Kablosuz ve Bluetooth'u "
+"etkinleştirir"
+
+#: contents/ui/Toolbar.qml:112
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
+msgstr ""
+"Uçak kipini etkinleştir<nl/><nl/>Bu, Kablosuz ve Bluetooth'u devre dışı "
+"bırakır"
+
+#: contents/ui/Toolbar.qml:122
+#, kde-format
+msgid "Hotspot"
+msgstr "Erişim Noktası"
+
+#: contents/ui/Toolbar.qml:146 contents/ui/Toolbar.qml:157
+#, kde-format
+msgid "Disable Hotspot"
+msgstr "Erişim Noktasını Devre Dışı Bırak"
+
+#: contents/ui/Toolbar.qml:151 contents/ui/Toolbar.qml:157
+#, kde-format
+msgid "Create Hotspot"
+msgstr "Erişim Noktası Oluştur"
+
+#: contents/ui/Toolbar.qml:188
+#, kde-format
+msgid "Configure network connections…"
+msgstr "Ağ bağlantılarını yapılandır…"
+
+#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:106
+#, kde-format
+msgid "/s"
+msgstr "/sn"
+
+#: contents/ui/TrafficMonitor.qml:88
+#, kde-format
+msgid "Upload"
+msgstr "Karşıya Yükleme"
+
+#: contents/ui/TrafficMonitor.qml:88
+#, kde-format
+msgid "Download"
+msgstr "İndirme"

@@ -1,0 +1,142 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+#
+# Kishore G <kishore96@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"PO-Revision-Date: 2021-06-12 21:51+0530\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.04.2\n"
+
+#: kcm.cpp:350
+#, kde-format
+msgid "my_shared_connection"
+msgstr "என்_பகிர்ந்த_இணைப்பு"
+
+#: kcm.cpp:421
+#, kde-format
+msgid "Export VPN Connection"
+msgstr "VPN இணைப்பை ஏற்றுமதி செய்"
+
+#: kcm.cpp:441
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "'%1' என்ற இணைப்பிற்கான மாற்றங்களை சேமிக்கலாமா?"
+
+#: kcm.cpp:442
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "மாற்றங்களை சேமி"
+
+#: kcm.cpp:526
+#, kde-format
+msgid "Import VPN Connection"
+msgstr "VPN இணைப்பை இறக்குமதி செய்"
+
+#: qml/AddConnectionDialog.qml:16
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr "இணைப்பின் வகையை தேர்ந்தெடுத்தல்"
+
+#: qml/AddConnectionDialog.qml:160
+msgid "Create"
+msgstr "உருவாக்கு"
+
+#: qml/AddConnectionDialog.qml:170 qml/ConfigurationDialog.qml:112
+msgid "Cancel"
+msgstr "ரத்து செய்"
+
+#: qml/AddConnectionDialog.qml:187 qml/main.qml:193
+msgid "Configuration"
+msgstr "அமைப்பு"
+
+#: qml/ConfigurationDialog.qml:16
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr "அமைப்பு"
+
+#: qml/ConfigurationDialog.qml:37
+msgid "General"
+msgstr "பொது"
+
+#: qml/ConfigurationDialog.qml:42
+msgid "Ask for PIN on modem detection"
+msgstr "இணக்கி கண்டறியப்பாடும்போது PIN-ஐ கேள்"
+
+#: qml/ConfigurationDialog.qml:49
+msgid "Show virtual connections"
+msgstr "மெய்நிகர் இணைப்புகளை காட்டு"
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Hotspot"
+msgstr "ஹாட்ஸ்பாட்"
+
+#: qml/ConfigurationDialog.qml:63
+msgid "Hotspot name:"
+msgstr "ஹாட்ஸ்பாட்டின் பெயர்:"
+
+#: qml/ConfigurationDialog.qml:73
+msgid "Hotspot password:"
+msgstr "ஹாட்ஸ்பாட்டிற்கான கடவுச்சொல்:"
+
+#: qml/ConfigurationDialog.qml:103
+msgid "Ok"
+msgstr "சரி"
+
+#: qml/ConnectionItem.qml:99
+msgid "Connect"
+msgstr "இணை "
+
+#: qml/ConnectionItem.qml:99
+msgid "Disconnect"
+msgstr "இணைப்பை துண்டி"
+
+#: qml/ConnectionItem.qml:112
+msgid "Delete"
+msgstr "நீக்கு"
+
+#: qml/ConnectionItem.qml:122
+msgid "Export"
+msgstr "ஏற்றுமதி"
+
+#: qml/ConnectionItem.qml:147
+msgid "Connected"
+msgstr "இணைந்துள்ளது"
+
+#: qml/ConnectionItem.qml:149
+msgid "Connecting"
+msgstr "இணைகிறது"
+
+#: qml/main.qml:139
+msgid "Add new connection"
+msgstr "புதிய இணைப்பை சேர்"
+
+#: qml/main.qml:153
+msgid "Remove selected connection"
+msgstr "தேர்ந்தெடுத்த இணைப்பை நீக்கு"
+
+#: qml/main.qml:169
+msgid "Export selected connection"
+msgstr "தேர்ந்தெடுத்த இணைப்பை ஏற்றுமதி செய்"
+
+#: qml/main.qml:221
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr "இணைப்பை நீக்குதல்"
+
+#: qml/main.qml:222
+msgid "Do you want to remove the connection '%1'?"
+msgstr "'%1' என்ற இணைப்பை உறுதியாக நீக்க வேண்டுமா?"
+
+#~ msgid "Search…"
+#~ msgstr "தேடு..."

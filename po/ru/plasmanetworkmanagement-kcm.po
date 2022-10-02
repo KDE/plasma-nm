@@ -1,0 +1,155 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Victor Ryzhykh <victorr2007@yandex.ru>, 2014, 2016, 2017.
+# Alexander Lakhin <exclusion@gmail.com>, 2014.
+# Alexander Potashev <aspotashev@gmail.com>, 2015, 2017, 2019.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"PO-Revision-Date: 2021-06-07 21:34+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.04.1\n"
+
+#: kcm.cpp:350
+#, kde-format
+msgid "my_shared_connection"
+msgstr "моя_точка_доступа"
+
+#: kcm.cpp:421
+#, kde-format
+msgid "Export VPN Connection"
+msgstr "Экспорт соединения VPN"
+
+#: kcm.cpp:441
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "Сохранить изменения, внесённые в соединение «%1»?"
+
+#: kcm.cpp:442
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "Сохранение изменений"
+
+#: kcm.cpp:526
+#, kde-format
+msgid "Import VPN Connection"
+msgstr "Импорт соединения VPN"
+
+#: qml/AddConnectionDialog.qml:16
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr "Выбор типа соединения"
+
+#: qml/AddConnectionDialog.qml:160
+msgid "Create"
+msgstr "Создать"
+
+#: qml/AddConnectionDialog.qml:170 qml/ConfigurationDialog.qml:112
+msgid "Cancel"
+msgstr "Отмена"
+
+#: qml/AddConnectionDialog.qml:187 qml/main.qml:193
+msgid "Configuration"
+msgstr "Настроить"
+
+#: qml/ConfigurationDialog.qml:16
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr "Параметры"
+
+#: qml/ConfigurationDialog.qml:37
+msgid "General"
+msgstr "Основное"
+
+#: qml/ConfigurationDialog.qml:42
+msgid "Ask for PIN on modem detection"
+msgstr "Запрашивать PIN-код при подключении модема"
+
+#: qml/ConfigurationDialog.qml:49
+msgid "Show virtual connections"
+msgstr "Показывать виртуальные сетевые соединения"
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Hotspot"
+msgstr "Точка доступа Wi-Fi"
+
+#: qml/ConfigurationDialog.qml:63
+msgid "Hotspot name:"
+msgstr "Имя точки доступа:"
+
+#: qml/ConfigurationDialog.qml:73
+msgid "Hotspot password:"
+msgstr "Пароль точки доступа"
+
+#: qml/ConfigurationDialog.qml:103
+msgid "Ok"
+msgstr "ОК"
+
+#: qml/ConnectionItem.qml:99
+msgid "Connect"
+msgstr "Подключить"
+
+#: qml/ConnectionItem.qml:99
+msgid "Disconnect"
+msgstr "Отключить"
+
+#: qml/ConnectionItem.qml:112
+msgid "Delete"
+msgstr "Удалить"
+
+#: qml/ConnectionItem.qml:122
+msgid "Export"
+msgstr "Экспорт"
+
+#: qml/ConnectionItem.qml:147
+msgid "Connected"
+msgstr "Подключено"
+
+#: qml/ConnectionItem.qml:149
+msgid "Connecting"
+msgstr "Подключение"
+
+#: qml/main.qml:139
+msgid "Add new connection"
+msgstr "Добавить новое соединение"
+
+#: qml/main.qml:153
+msgid "Remove selected connection"
+msgstr "Удалить выбранное соединение"
+
+#: qml/main.qml:169
+msgid "Export selected connection"
+msgstr "Экспортировать выбранное соединение"
+
+#: qml/main.qml:221
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr "Удаление соединения"
+
+#: qml/main.qml:222
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Удалить соединение «%1»?"
+
+#~ msgid "Search…"
+#~ msgstr "Поиск..."
+
+#~ msgid "Type here to search connections..."
+#~ msgstr "Введите текст для поиска соединений..."
+
+#~ msgid "Close"
+#~ msgstr "Отмена"
+
+#~ msgid "Form"
+#~ msgstr "Форма"

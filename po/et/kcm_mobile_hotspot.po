@@ -1,0 +1,58 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+#
+# Marek Laane <qiilaq69@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-08-28 00:19+0000\n"
+"PO-Revision-Date: 2020-04-22 12:47+0300\n"
+"Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
+"Language-Team: Estonian <kde-et@lists.linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 19.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Marek Laane"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "qiilaq69@gmail.com"
+
+#: hotspotsettings.cpp:18
+#, kde-format
+msgid "Hotspot"
+msgstr "Pääsupunkt"
+
+#: hotspotsettings.cpp:19
+#, kde-format
+msgid "Tobias Fella"
+msgstr "Tobias Fella"
+
+#: package/contents/ui/main.qml:23
+#, kde-format
+msgid "Enabled:"
+msgstr "Lubatud:"
+
+#: package/contents/ui/main.qml:35
+#, kde-format
+msgid "SSID:"
+msgstr "SSID:"
+
+#: package/contents/ui/main.qml:41
+#, kde-format
+msgid "Password:"
+msgstr "Parool:"
+
+#: package/contents/ui/main.qml:46
+#, kde-format
+msgid "Save"
+msgstr "Salvesta"

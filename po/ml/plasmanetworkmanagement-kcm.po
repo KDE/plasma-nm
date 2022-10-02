@@ -1,0 +1,145 @@
+# Malayalam translations for plasma-nm package.
+# Copyright (C) 2019 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"PO-Revision-Date: 2019-12-12 22:22+0000\n"
+"Last-Translator: Sabu Siyad <ssiyad@tuta.io>\n"
+"Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
+"org.in>\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: kcm.cpp:350
+#, kde-format
+msgid "my_shared_connection"
+msgstr ""
+
+#: kcm.cpp:421
+#, kde-format
+msgid "Export VPN Connection"
+msgstr ""
+
+#: kcm.cpp:441
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr ""
+
+#: kcm.cpp:442
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr ""
+
+#: kcm.cpp:526
+#, kde-format
+msgid "Import VPN Connection"
+msgstr ""
+
+#: qml/AddConnectionDialog.qml:16
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr ""
+
+#: qml/AddConnectionDialog.qml:160
+msgid "Create"
+msgstr ""
+
+#: qml/AddConnectionDialog.qml:170 qml/ConfigurationDialog.qml:112
+msgid "Cancel"
+msgstr ""
+
+#: qml/AddConnectionDialog.qml:187 qml/main.qml:193
+msgid "Configuration"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:16
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:37
+msgid "General"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:42
+msgid "Ask for PIN on modem detection"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:49
+msgid "Show virtual connections"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Hotspot"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:63
+msgid "Hotspot name:"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:73
+msgid "Hotspot password:"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:103
+msgid "Ok"
+msgstr ""
+
+#: qml/ConnectionItem.qml:99
+msgid "Connect"
+msgstr ""
+
+#: qml/ConnectionItem.qml:99
+msgid "Disconnect"
+msgstr ""
+
+#: qml/ConnectionItem.qml:112
+msgid "Delete"
+msgstr ""
+
+#: qml/ConnectionItem.qml:122
+msgid "Export"
+msgstr ""
+
+#: qml/ConnectionItem.qml:147
+msgid "Connected"
+msgstr ""
+
+#: qml/ConnectionItem.qml:149
+msgid "Connecting"
+msgstr ""
+
+#: qml/main.qml:139
+msgid "Add new connection"
+msgstr ""
+
+#: qml/main.qml:153
+msgid "Remove selected connection"
+msgstr ""
+
+#: qml/main.qml:169
+msgid "Export selected connection"
+msgstr ""
+
+#: qml/main.qml:221
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr ""
+
+#: qml/main.qml:222
+msgid "Do you want to remove the connection '%1'?"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Search..."
+#~ msgid "Search…"
+#~ msgstr "തിരയുക..."

@@ -1,0 +1,154 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Dimitris Kardarakos <dimkard@gmail.com>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"PO-Revision-Date: 2017-01-19 19:33+0200\n"
+"Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: kcm.cpp:350
+#, kde-format
+msgid "my_shared_connection"
+msgstr "my_shared_connection"
+
+#: kcm.cpp:421
+#, kde-format
+msgid "Export VPN Connection"
+msgstr "Εξαγωγή σύνδεσης VPN"
+
+#: kcm.cpp:441
+#, fuzzy, kde-format
+#| msgid "Do you want to remove the connection '%1'"
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "Επιθυμείτε να αφαιρέσετε τη σύνδεση '%1'"
+
+#: kcm.cpp:442
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr ""
+
+#: kcm.cpp:526
+#, kde-format
+msgid "Import VPN Connection"
+msgstr "Εισαγωγή σύνδεσης VPN"
+
+#: qml/AddConnectionDialog.qml:16
+#, fuzzy
+#| msgid "Choose a connection type"
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr "Επιλέξτε έναν τύπο σύνδεσης"
+
+#: qml/AddConnectionDialog.qml:160
+msgid "Create"
+msgstr "Δημιουργία"
+
+#: qml/AddConnectionDialog.qml:170 qml/ConfigurationDialog.qml:112
+msgid "Cancel"
+msgstr ""
+
+#: qml/AddConnectionDialog.qml:187 qml/main.qml:193
+msgid "Configuration"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:16
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:37
+msgid "General"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:42
+msgid "Ask for PIN on modem detection"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:49
+#, fuzzy
+#| msgid "Export selected connection"
+msgid "Show virtual connections"
+msgstr "Εξαγωγή επιλεγμένης σύνδεσης"
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Hotspot"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:63
+msgid "Hotspot name:"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:73
+msgid "Hotspot password:"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:103
+msgid "Ok"
+msgstr ""
+
+#: qml/ConnectionItem.qml:99
+msgid "Connect"
+msgstr "Σύνδεση"
+
+#: qml/ConnectionItem.qml:99
+msgid "Disconnect"
+msgstr "Αποσύνδεση"
+
+#: qml/ConnectionItem.qml:112
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: qml/ConnectionItem.qml:122
+msgid "Export"
+msgstr "Εξαγωγή"
+
+#: qml/ConnectionItem.qml:147
+msgid "Connected"
+msgstr "Συνδέθηκε"
+
+#: qml/ConnectionItem.qml:149
+msgid "Connecting"
+msgstr "Συνδέεται"
+
+#: qml/main.qml:139
+msgid "Add new connection"
+msgstr "Προσθήκη νέας σύνδεσης"
+
+#: qml/main.qml:153
+msgid "Remove selected connection"
+msgstr "Αφαίρεση επιλεγμένης σύνδεσης"
+
+#: qml/main.qml:169
+msgid "Export selected connection"
+msgstr "Εξαγωγή επιλεγμένης σύνδεσης"
+
+#: qml/main.qml:221
+#, fuzzy
+#| msgid "Remove connection"
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr "Αφαίρεση σύνδεσης"
+
+#: qml/main.qml:222
+#, fuzzy
+#| msgid "Do you want to remove the connection '%1'"
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Επιθυμείτε να αφαιρέσετε τη σύνδεση '%1'"
+
+#~ msgid "Type here to search connections..."
+#~ msgstr "Πληκτρολογήστε εδώ για αναζήτηση συνδέσεων..."
+
+#~ msgid "Close"
+#~ msgstr "Κλείσιμο"

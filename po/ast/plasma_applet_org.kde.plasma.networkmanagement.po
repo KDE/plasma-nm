@@ -1,0 +1,332 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+#
+# enolp <enolp@softastur.org>, 2019, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-16 00:46+0000\n"
+"PO-Revision-Date: 2021-01-20 22:53+0100\n"
+"Last-Translator: enolp <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.12.1\n"
+
+#: contents/ui/ConnectionItem.qml:51
+#, kde-format
+msgid "Connect"
+msgstr "Coneutar"
+
+#: contents/ui/ConnectionItem.qml:51
+#, kde-format
+msgid "Disconnect"
+msgstr "Desconectar"
+
+#: contents/ui/ConnectionItem.qml:54
+#, fuzzy, kde-format
+#| msgid "Connect"
+msgctxt "@info:tooltip %1 is the name of a network connection"
+msgid "Connect to %1"
+msgstr "Coneutar"
+
+#: contents/ui/ConnectionItem.qml:54
+#, fuzzy, kde-format
+#| msgid "Disconnect"
+msgctxt "@info:tooltip %1 is the name of a network connection"
+msgid "Disconnect from %1"
+msgstr "Desconectar"
+
+#: contents/ui/ConnectionItem.qml:78
+#, fuzzy, kde-format
+#| msgid "Show network's QR code"
+msgid "Show Network's QR Code"
+msgstr "Amosar el códigu QR de la rede"
+
+#: contents/ui/ConnectionItem.qml:90
+#, kde-format
+msgctxt "@title:window"
+msgid "QR Code for %1"
+msgstr ""
+
+#: contents/ui/ConnectionItem.qml:96
+#, fuzzy, kde-format
+#| msgid "Configure..."
+msgid "Configure…"
+msgstr "Configurar…"
+
+#: contents/ui/ConnectionItem.qml:127
+#, kde-format
+msgid "Speed"
+msgstr "Velocidá"
+
+#: contents/ui/ConnectionItem.qml:132
+#, kde-format
+msgid "Details"
+msgstr "Detalles"
+
+#: contents/ui/ConnectionItem.qml:175
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Current download speed is %1 kibibytes per second; current upload speed is "
+"%2 kibibytes per second"
+msgstr ""
+
+#: contents/ui/ConnectionItem.qml:301
+#, kde-format
+msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+msgstr "Coneutóse, ⬇ %1/s, ⬆ %2/s"
+
+#: contents/ui/ConnectionItem.qml:305
+#, kde-format
+msgid "Connected"
+msgstr "Coneutóse"
+
+#: contents/ui/DetailsText.qml:45
+#, kde-format
+msgid "Copy"
+msgstr "Copiar"
+
+#: contents/ui/main.qml:20
+#, kde-format
+msgid "Networks"
+msgstr "Redes"
+
+#: contents/ui/main.qml:57 contents/ui/Toolbar.qml:67
+#, kde-format
+msgid "Enable Wi-Fi"
+msgstr "Habilitar el Wi-Fi"
+
+#: contents/ui/main.qml:65
+#, fuzzy, kde-format
+#| msgid "Enable mobile network"
+msgid "Enable Mobile Network"
+msgstr "Activar la rede móvil"
+
+#: contents/ui/main.qml:73
+#, fuzzy, kde-format
+#| msgid "Enable airplane mode"
+msgid "Enable Airplane Mode"
+msgstr "Activar el mou avión"
+
+#: contents/ui/main.qml:78
+#, fuzzy, kde-format
+#| msgid "Open Network Login Page..."
+msgid "Open Network Login Page…"
+msgstr "Abrir la páxina d'aniciu de sesión de la rede…"
+
+#: contents/ui/main.qml:83
+#, fuzzy, kde-format
+#| msgid "&Configure Network Connections..."
+msgid "&Configure Network Connections…"
+msgstr "&Configurar les conexones a la rede…"
+
+#: contents/ui/PasswordField.qml:16
+#, fuzzy, kde-format
+#| msgid "Password..."
+msgid "Password…"
+msgstr "Contraseña…"
+
+#: contents/ui/PopupDialog.qml:101
+#, kde-format
+msgid "Airplane mode is enabled"
+msgstr "El mou avión ta activáu"
+
+#: contents/ui/PopupDialog.qml:105
+#, kde-format
+msgid "Wireless and mobile networks are deactivated"
+msgstr "Les redes móviles ya inalámbriques tán desactivaes"
+
+#: contents/ui/PopupDialog.qml:107
+#, kde-format
+msgid "Wireless is deactivated"
+msgstr "La rede inalámbrica ta desactivada"
+
+#: contents/ui/PopupDialog.qml:110
+#, kde-format
+msgid "Mobile network is deactivated"
+msgstr "La rede móvil ta desactivada"
+
+#: contents/ui/PopupDialog.qml:113
+#, kde-format
+msgid "No matches"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:115
+#, kde-format
+msgid "No available connections"
+msgstr "Nun hai conexones disponibles"
+
+#: contents/ui/PopupDialog.qml:142
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is ADSL"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:144
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Bluetooth"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:146
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Bridge"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:148
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is CDMA"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:150
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is GSM"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:152
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Infiniband"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:154
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is OLPC Mesh"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:156
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is PPOPE"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:158
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is VLAN"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:160
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is VPN"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:162
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Wimax"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:164
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Wired"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:166
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Wireless"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:168
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Unknown"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:86
+#, kde-format
+msgid "Enable mobile network"
+msgstr "Activar la rede móvil"
+
+#: contents/ui/Toolbar.qml:111
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
+msgstr ""
+"Desactivar el mou avión<nl/><nl/>Esto va habilitar el Wi-Fi y Bluetooth"
+
+#: contents/ui/Toolbar.qml:112
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
+msgstr "Activar el mou avión<nl/><nl/>Esto va inhabilitar el Wi-Fi y Bluetooth"
+
+#: contents/ui/Toolbar.qml:122
+#, kde-format
+msgid "Hotspot"
+msgstr "Puntu Wi-Fi"
+
+#: contents/ui/Toolbar.qml:146 contents/ui/Toolbar.qml:157
+#, kde-format
+msgid "Disable Hotspot"
+msgstr "Desactivar el puntu Wi-Fi"
+
+#: contents/ui/Toolbar.qml:151 contents/ui/Toolbar.qml:157
+#, kde-format
+msgid "Create Hotspot"
+msgstr "Crear un puntu Wi-Fi"
+
+#: contents/ui/Toolbar.qml:188
+#, fuzzy, kde-format
+#| msgid "Configure network connections..."
+msgid "Configure network connections…"
+msgstr "Configurar conexones a la rede…"
+
+#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:106
+#, kde-format
+msgid "/s"
+msgstr "/s"
+
+#: contents/ui/TrafficMonitor.qml:88
+#, kde-format
+msgid "Upload"
+msgstr "Xuba"
+
+#: contents/ui/TrafficMonitor.qml:88
+#, kde-format
+msgid "Download"
+msgstr "Baxada"
+
+#, fuzzy
+#~| msgctxt "text field placeholder text"
+#~| msgid "Search..."
+#~ msgctxt "text field placeholder text"
+#~ msgid "Search…"
+#~ msgstr "Buscar…"
+
+#~ msgctxt "button tooltip"
+#~ msgid "Search the connections"
+#~ msgstr "Buscar conexones"
+
+#~ msgid ""
+#~ "Connected, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s"
+#~ msgstr ""
+#~ "Coneutóse, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s"
+
+#~ msgid "Enable wireless"
+#~ msgstr "Habilitar el Wi-Fi"
+
+#~ msgid "Available connections"
+#~ msgstr "Conexones disponibles"
+
+#~ msgid "General"
+#~ msgstr "Xeneral"
+
+#~ msgid "Ask for PIN on modem detection"
+#~ msgstr "Pidir el PIN al deteutar dalgún módem"
+
+#~ msgid "Show virtual connections"
+#~ msgstr "Amosar les conexones virtuales"

@@ -1,0 +1,149 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# Lasse Liehu <lasse.liehu@gmail.com>, 2017.
+# Tommi Nieminen <translator@legisign.org>, 2017, 2019, 2020, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"PO-Revision-Date: 2021-06-18 12:41+0300\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 20.04.2\n"
+
+#: kcm.cpp:350
+#, kde-format
+msgid "my_shared_connection"
+msgstr "oma_jaettu_yhteys"
+
+#: kcm.cpp:421
+#, kde-format
+msgid "Export VPN Connection"
+msgstr "Vie VPN-yhteys"
+
+#: kcm.cpp:441
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "Haluatko tallentaa muutokset yhteyteen ”%1”?"
+
+#: kcm.cpp:442
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "Tallenna muutokset"
+
+#: kcm.cpp:526
+#, kde-format
+msgid "Import VPN Connection"
+msgstr "Tuo VPN-yhteys"
+
+#: qml/AddConnectionDialog.qml:16
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr "Valitse yhteystyyppi"
+
+#: qml/AddConnectionDialog.qml:160
+msgid "Create"
+msgstr "Luo"
+
+#: qml/AddConnectionDialog.qml:170 qml/ConfigurationDialog.qml:112
+msgid "Cancel"
+msgstr "Peru"
+
+#: qml/AddConnectionDialog.qml:187 qml/main.qml:193
+msgid "Configuration"
+msgstr "Asetus"
+
+#: qml/ConfigurationDialog.qml:16
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr "Asetus"
+
+#: qml/ConfigurationDialog.qml:37
+msgid "General"
+msgstr "Yleistä"
+
+#: qml/ConfigurationDialog.qml:42
+msgid "Ask for PIN on modem detection"
+msgstr "Kysy PINiä, kun modeemi on havaittu"
+
+#: qml/ConfigurationDialog.qml:49
+msgid "Show virtual connections"
+msgstr "Näytä virtuaaliyhteydet"
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Hotspot"
+msgstr "Tukiasema"
+
+#: qml/ConfigurationDialog.qml:63
+msgid "Hotspot name:"
+msgstr "Tukiaseman nimi:"
+
+#: qml/ConfigurationDialog.qml:73
+msgid "Hotspot password:"
+msgstr "Tukiaseman salasana:"
+
+#: qml/ConfigurationDialog.qml:103
+msgid "Ok"
+msgstr "OK"
+
+#: qml/ConnectionItem.qml:99
+msgid "Connect"
+msgstr "Yhdistä"
+
+#: qml/ConnectionItem.qml:99
+msgid "Disconnect"
+msgstr "Katkaise yhteys"
+
+#: qml/ConnectionItem.qml:112
+msgid "Delete"
+msgstr "Poista"
+
+#: qml/ConnectionItem.qml:122
+msgid "Export"
+msgstr "Vie"
+
+#: qml/ConnectionItem.qml:147
+msgid "Connected"
+msgstr "Yhteydessä"
+
+#: qml/ConnectionItem.qml:149
+msgid "Connecting"
+msgstr "Yhdistetään"
+
+#: qml/main.qml:139
+msgid "Add new connection"
+msgstr "Lisää uusi yhteys"
+
+#: qml/main.qml:153
+msgid "Remove selected connection"
+msgstr "Poista valittu yhteys"
+
+#: qml/main.qml:169
+msgid "Export selected connection"
+msgstr "Vie valittu yhteys"
+
+#: qml/main.qml:221
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr "Poista yhteys"
+
+#: qml/main.qml:222
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Haluatko poistaa yhteyden ”%1”?"
+
+#~ msgid "Search…"
+#~ msgstr "Etsi…"
+
+#~ msgid "Type here to search connections..."
+#~ msgstr "Etsi yhteyksiä kirjoittamalla tähän…"
+
+#~ msgid "Close"
+#~ msgstr "Sulje"

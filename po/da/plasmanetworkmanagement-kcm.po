@@ -1,0 +1,150 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Martin Schlander <mschlander@opensuse.org>, 2017, 2018, 2019, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"PO-Revision-Date: 2020-01-30 20:19+0100\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 18.12.3\n"
+
+#: kcm.cpp:350
+#, kde-format
+msgid "my_shared_connection"
+msgstr "min_delte_forbindelse"
+
+#: kcm.cpp:421
+#, kde-format
+msgid "Export VPN Connection"
+msgstr "Eksportér VPN-forbindelse"
+
+#: kcm.cpp:441
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "Vil du gemme ændringerne af forbindelsen \"%1\"?"
+
+#: kcm.cpp:442
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "Gem ændringer"
+
+#: kcm.cpp:526
+#, kde-format
+msgid "Import VPN Connection"
+msgstr "Importér VPN-forbindelse"
+
+#: qml/AddConnectionDialog.qml:16
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr "Vælg forbindelsestype"
+
+#: qml/AddConnectionDialog.qml:160
+msgid "Create"
+msgstr "Opret"
+
+#: qml/AddConnectionDialog.qml:170 qml/ConfigurationDialog.qml:112
+msgid "Cancel"
+msgstr "Annullér"
+
+#: qml/AddConnectionDialog.qml:187 qml/main.qml:193
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#: qml/ConfigurationDialog.qml:16
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#: qml/ConfigurationDialog.qml:37
+msgid "General"
+msgstr "Generelt"
+
+#: qml/ConfigurationDialog.qml:42
+msgid "Ask for PIN on modem detection"
+msgstr "Spørg om pin-kode ved detektion af modem"
+
+#: qml/ConfigurationDialog.qml:49
+msgid "Show virtual connections"
+msgstr "Vis virtuelle forbindelser"
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Hotspot"
+msgstr "Internetdeling"
+
+#: qml/ConfigurationDialog.qml:63
+msgid "Hotspot name:"
+msgstr "Navn på delt internet:"
+
+#: qml/ConfigurationDialog.qml:73
+msgid "Hotspot password:"
+msgstr "Adgangskode til delt internet:"
+
+#: qml/ConfigurationDialog.qml:103
+msgid "Ok"
+msgstr "Ok"
+
+#: qml/ConnectionItem.qml:99
+msgid "Connect"
+msgstr "Forbind"
+
+#: qml/ConnectionItem.qml:99
+msgid "Disconnect"
+msgstr "Afbryd forbindelse"
+
+#: qml/ConnectionItem.qml:112
+msgid "Delete"
+msgstr "Slet"
+
+#: qml/ConnectionItem.qml:122
+msgid "Export"
+msgstr "Eksportér"
+
+#: qml/ConnectionItem.qml:147
+msgid "Connected"
+msgstr "Forbundet"
+
+#: qml/ConnectionItem.qml:149
+msgid "Connecting"
+msgstr "Forbinder"
+
+#: qml/main.qml:139
+msgid "Add new connection"
+msgstr "Tilføj ny forbindelse"
+
+#: qml/main.qml:153
+msgid "Remove selected connection"
+msgstr "Fjern den markerede forbindelse"
+
+#: qml/main.qml:169
+msgid "Export selected connection"
+msgstr "Eksportér valgt forbindelse"
+
+#: qml/main.qml:221
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr "Fjern forbindelse"
+
+#: qml/main.qml:222
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Vil du fjerne forbindelsen \"%1\"?"
+
+#, fuzzy
+#~| msgid "Search..."
+#~ msgid "Search…"
+#~ msgstr "Søg..."
+
+#~ msgid "Type here to search connections..."
+#~ msgstr "Skriv her for at søge efter forbindelser..."
+
+#~ msgid "Close"
+#~ msgstr "Luk"

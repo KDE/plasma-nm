@@ -1,0 +1,184 @@
+# Translation of plasma_applet_org.kde.plasma.networkmanagement.po into Serbian.
+# Chusslove Illich <caslav.ilic@gmx.net>, 2014, 2015, 2016, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-06-15 02:20+0200\n"
+"PO-Revision-Date: 2017-09-25 19:53+0200\n"
+"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@ijekavian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#: contents/ui/ConnectionItem.qml:62
+#, kde-format
+msgid "Connect"
+msgstr "Повежи се"
+
+#: contents/ui/ConnectionItem.qml:62
+#, kde-format
+msgid "Disconnect"
+msgstr "Прекини везу"
+
+#: contents/ui/ConnectionItem.qml:98
+#, kde-format
+msgid "Show network's QR code"
+msgstr ""
+
+#: contents/ui/ConnectionItem.qml:109
+#, kde-format
+msgid "Configure..."
+msgstr ""
+
+#: contents/ui/ConnectionItem.qml:133
+#, kde-format
+msgid "Speed"
+msgstr "Брзина"
+
+#: contents/ui/ConnectionItem.qml:138
+#, kde-format
+msgid "Details"
+msgstr "Детаљи"
+
+#: contents/ui/ConnectionItem.qml:276
+#, fuzzy, kde-format
+#| msgid ""
+#| "Connected, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s"
+msgid ""
+"Connected, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s"
+msgstr ""
+"Повезан, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s"
+
+#: contents/ui/ConnectionItem.qml:282
+#, kde-format
+msgid "Connected"
+msgstr "Повезан"
+
+#: contents/ui/DetailsText.qml:43
+#, kde-format
+msgid "Copy"
+msgstr "Копирање"
+
+#: contents/ui/main.qml:33
+#, kde-format
+msgid "Networks"
+msgstr "Мреже"
+
+#: contents/ui/main.qml:57
+#, kde-format
+msgid "&Configure Network Connections..."
+msgstr "&Подеси мрежне везе..."
+
+#: contents/ui/main.qml:60
+#, kde-format
+msgid "Open Network Login Page..."
+msgstr ""
+
+#: contents/ui/PasswordField.qml:30
+#, kde-format
+msgid "Password..."
+msgstr "Лозинка..."
+
+#: contents/ui/PopupDialog.qml:78
+#, kde-format
+msgid "Airplane mode is enabled"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:82
+#, kde-format
+msgid "Wireless and mobile networks are deactivated"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:84
+#, kde-format
+msgid "Wireless is deactivated"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:87
+#, kde-format
+msgid "Mobile network is deactivated"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:103
+#, fuzzy, kde-format
+#| msgid "Available connections"
+msgid "No available connections"
+msgstr "Доступне везе"
+
+#: contents/ui/Toolbar.qml:78
+#, kde-format
+msgid "Enable Wi-Fi"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:92
+#, kde-format
+msgid "Enable mobile network"
+msgstr "Активирај мобилну мрежу"
+
+#: contents/ui/Toolbar.qml:114
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:115
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:150
+#, kde-format
+msgid "Hotspot"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:171 contents/ui/Toolbar.qml:182
+#, kde-format
+msgid "Disable Hotspot"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:176 contents/ui/Toolbar.qml:182
+#, kde-format
+msgid "Create Hotspot"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:196
+#, fuzzy, kde-format
+#| msgid "Available connections"
+msgctxt "button tooltip"
+msgid "Search the connections"
+msgstr "Доступне везе"
+
+#: contents/ui/Toolbar.qml:210
+#, kde-format
+msgid "Configure network connections..."
+msgstr "Подеси мрежне везе..."
+
+#: contents/ui/Toolbar.qml:230
+#, kde-format
+msgctxt "text field placeholder text"
+msgid "Search..."
+msgstr ""
+
+#: contents/ui/TrafficMonitor.qml:49 contents/ui/TrafficMonitor.qml:107
+#, kde-format
+msgid "/s"
+msgstr ""
+
+#: contents/ui/TrafficMonitor.qml:73
+#, kde-format
+msgid "Download"
+msgstr "Преузимање"
+
+#: contents/ui/TrafficMonitor.qml:78
+#, kde-format
+msgid "Upload"
+msgstr "Отпремање"

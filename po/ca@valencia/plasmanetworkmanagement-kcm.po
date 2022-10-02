@@ -1,0 +1,142 @@
+# Translation of plasmanetworkmanagement-kcm.po to Catalan (Valencian)
+# Copyright (C) 2017-2021 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Josep M. Ferrer <txemaq@gmail.com>, 2017, 2019, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"PO-Revision-Date: 2021-05-31 09:56+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: kcm.cpp:350
+#, kde-format
+msgid "my_shared_connection"
+msgstr "la_meva_connexió_compartida"
+
+#: kcm.cpp:421
+#, kde-format
+msgid "Export VPN Connection"
+msgstr "Exportació de la connexió VPN"
+
+#: kcm.cpp:441
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "Voleu guardar els canvis efectuats a la connexió «%1»?"
+
+#: kcm.cpp:442
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "Guarda els canvis"
+
+#: kcm.cpp:526
+#, kde-format
+msgid "Import VPN Connection"
+msgstr "Importació d'una connexió VPN"
+
+#: qml/AddConnectionDialog.qml:16
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr "Seleccioneu un tipus de connexió"
+
+#: qml/AddConnectionDialog.qml:160
+msgid "Create"
+msgstr "Crea"
+
+#: qml/AddConnectionDialog.qml:170 qml/ConfigurationDialog.qml:112
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: qml/AddConnectionDialog.qml:187 qml/main.qml:193
+msgid "Configuration"
+msgstr "Configuració"
+
+#: qml/ConfigurationDialog.qml:16
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr "Configuració"
+
+#: qml/ConfigurationDialog.qml:37
+msgid "General"
+msgstr "General"
+
+#: qml/ConfigurationDialog.qml:42
+msgid "Ask for PIN on modem detection"
+msgstr "Demana un PIN en detectar un mòdem"
+
+#: qml/ConfigurationDialog.qml:49
+msgid "Show virtual connections"
+msgstr "Mostra les connexions virtuals"
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Hotspot"
+msgstr "Punt d'accés"
+
+#: qml/ConfigurationDialog.qml:63
+msgid "Hotspot name:"
+msgstr "Nom del punt d'accés:"
+
+#: qml/ConfigurationDialog.qml:73
+msgid "Hotspot password:"
+msgstr "Contrasenya del punt d'accés:"
+
+#: qml/ConfigurationDialog.qml:103
+msgid "Ok"
+msgstr "D'acord"
+
+#: qml/ConnectionItem.qml:99
+msgid "Connect"
+msgstr "Connecta"
+
+#: qml/ConnectionItem.qml:99
+msgid "Disconnect"
+msgstr "Desconnecta"
+
+#: qml/ConnectionItem.qml:112
+msgid "Delete"
+msgstr "Suprimix"
+
+#: qml/ConnectionItem.qml:122
+msgid "Export"
+msgstr "Exporta"
+
+#: qml/ConnectionItem.qml:147
+msgid "Connected"
+msgstr "Connectat"
+
+#: qml/ConnectionItem.qml:149
+msgid "Connecting"
+msgstr "Connectant"
+
+#: qml/main.qml:139
+msgid "Add new connection"
+msgstr "Afig una connexió nova"
+
+#: qml/main.qml:153
+msgid "Remove selected connection"
+msgstr "Elimina la connexió seleccionada"
+
+#: qml/main.qml:169
+msgid "Export selected connection"
+msgstr "Exporta la connexió seleccionada"
+
+#: qml/main.qml:221
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr "Elimina la connexió"
+
+#: qml/main.qml:222
+msgid "Do you want to remove the connection '%1'?"
+msgstr "Voleu eliminar la connexió «%1»?"

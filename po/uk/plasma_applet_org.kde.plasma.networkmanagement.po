@@ -1,0 +1,329 @@
+# Translation of plasma_applet_org.kde.plasma.networkmanagement.po to Ukrainian
+# Copyright (C) 2013-2020 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-16 00:46+0000\n"
+"PO-Revision-Date: 2022-09-16 08:45+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#: contents/ui/ConnectionItem.qml:51
+#, kde-format
+msgid "Connect"
+msgstr "З'єднатися"
+
+#: contents/ui/ConnectionItem.qml:51
+#, kde-format
+msgid "Disconnect"
+msgstr "Від'єднатися"
+
+#: contents/ui/ConnectionItem.qml:54
+#, kde-format
+msgctxt "@info:tooltip %1 is the name of a network connection"
+msgid "Connect to %1"
+msgstr "З'єднатися з %1"
+
+#: contents/ui/ConnectionItem.qml:54
+#, kde-format
+msgctxt "@info:tooltip %1 is the name of a network connection"
+msgid "Disconnect from %1"
+msgstr "Від'єднатися від %1"
+
+#: contents/ui/ConnectionItem.qml:78
+#, kde-format
+msgid "Show Network's QR Code"
+msgstr "Показувати код QR мережі"
+
+#: contents/ui/ConnectionItem.qml:90
+#, kde-format
+msgctxt "@title:window"
+msgid "QR Code for %1"
+msgstr "QR-код для %1"
+
+#: contents/ui/ConnectionItem.qml:96
+#, kde-format
+msgid "Configure…"
+msgstr "Налаштувати…"
+
+#: contents/ui/ConnectionItem.qml:127
+#, kde-format
+msgid "Speed"
+msgstr "Швидкість"
+
+#: contents/ui/ConnectionItem.qml:132
+#, kde-format
+msgid "Details"
+msgstr "Параметри"
+
+#: contents/ui/ConnectionItem.qml:175
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Current download speed is %1 kibibytes per second; current upload speed is "
+"%2 kibibytes per second"
+msgstr ""
+"Поточна швидкість отримання даних — %1 кібібайтів за секунду; поточна "
+"швидкість вивантаження даних — %2 кібібайтів за секунду"
+
+#: contents/ui/ConnectionItem.qml:301
+#, kde-format
+msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+msgstr "З'єднано, ⬇ %1/с, ⬆ %2/с"
+
+#: contents/ui/ConnectionItem.qml:305
+#, kde-format
+msgid "Connected"
+msgstr "З'єднано"
+
+#: contents/ui/DetailsText.qml:45
+#, kde-format
+msgid "Copy"
+msgstr "Копіювати"
+
+#: contents/ui/main.qml:20
+#, kde-format
+msgid "Networks"
+msgstr "Мережі"
+
+#: contents/ui/main.qml:57 contents/ui/Toolbar.qml:67
+#, kde-format
+msgid "Enable Wi-Fi"
+msgstr "Увімкнути Wi-Fi"
+
+#: contents/ui/main.qml:65
+#, kde-format
+msgid "Enable Mobile Network"
+msgstr "Увімкнути мобільну мережу"
+
+#: contents/ui/main.qml:73
+#, kde-format
+msgid "Enable Airplane Mode"
+msgstr "Увімкнути режим польоту"
+
+#: contents/ui/main.qml:78
+#, kde-format
+msgid "Open Network Login Page…"
+msgstr "Відкрити сторінку входу у мережі…"
+
+#: contents/ui/main.qml:83
+#, kde-format
+msgid "&Configure Network Connections…"
+msgstr "&Налаштувати з'єднання мережі…"
+
+#: contents/ui/PasswordField.qml:16
+#, kde-format
+msgid "Password…"
+msgstr "Пароль…"
+
+#: contents/ui/PopupDialog.qml:101
+#, kde-format
+msgid "Airplane mode is enabled"
+msgstr "Увімкнено режим польоту"
+
+#: contents/ui/PopupDialog.qml:105
+#, kde-format
+msgid "Wireless and mobile networks are deactivated"
+msgstr "Бездротові і мобільні мережі вимкнено"
+
+#: contents/ui/PopupDialog.qml:107
+#, kde-format
+msgid "Wireless is deactivated"
+msgstr "Бездротову мережу вимкнено"
+
+#: contents/ui/PopupDialog.qml:110
+#, kde-format
+msgid "Mobile network is deactivated"
+msgstr "Мобільну мережу вимкнено"
+
+#: contents/ui/PopupDialog.qml:113
+#, kde-format
+msgid "No matches"
+msgstr "Немає відповідників"
+
+#: contents/ui/PopupDialog.qml:115
+#, kde-format
+msgid "No available connections"
+msgstr "Немає доступних з'єднань"
+
+#: contents/ui/PopupDialog.qml:142
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is ADSL"
+msgstr "Тип з'єднання – ADSL"
+
+#: contents/ui/PopupDialog.qml:144
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Bluetooth"
+msgstr "Тип з'єднання — Bluetooth"
+
+#: contents/ui/PopupDialog.qml:146
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Bridge"
+msgstr "Тип з'єднання — місток"
+
+#: contents/ui/PopupDialog.qml:148
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is CDMA"
+msgstr "Тип з'єднання — CDMA"
+
+#: contents/ui/PopupDialog.qml:150
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is GSM"
+msgstr "Тип з'єднання – GSM"
+
+#: contents/ui/PopupDialog.qml:152
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Infiniband"
+msgstr "Тип з'єднання – Infiniband"
+
+#: contents/ui/PopupDialog.qml:154
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is OLPC Mesh"
+msgstr "Тип з'єднання – сітка OLPC"
+
+#: contents/ui/PopupDialog.qml:156
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is PPOPE"
+msgstr "Тип з'єднання – PPOPE"
+
+#: contents/ui/PopupDialog.qml:158
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is VLAN"
+msgstr "Тип з'єднання — VLAN"
+
+#: contents/ui/PopupDialog.qml:160
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is VPN"
+msgstr "Тип з'єднання — VPN"
+
+#: contents/ui/PopupDialog.qml:162
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Wimax"
+msgstr "Тип з'єднання — Wimax"
+
+#: contents/ui/PopupDialog.qml:164
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Wired"
+msgstr "Тип з'єднання — дротове"
+
+#: contents/ui/PopupDialog.qml:166
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Wireless"
+msgstr "Тип з'єднання — бездротове"
+
+#: contents/ui/PopupDialog.qml:168
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Unknown"
+msgstr "Тип з'єднання — невідомий"
+
+#: contents/ui/Toolbar.qml:86
+#, kde-format
+msgid "Enable mobile network"
+msgstr "Увімкнути мобільну мережу"
+
+#: contents/ui/Toolbar.qml:111
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
+msgstr "Вимкнути режим польоту<nl/><nl/>Цим буде увімкнено Wi-Fi і Bluetooth"
+
+#: contents/ui/Toolbar.qml:112
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
+msgstr "Увімкнути режим польоту<nl/><nl/>Цим буде вимкнено Wi-Fi і Bluetooth"
+
+#: contents/ui/Toolbar.qml:122
+#, kde-format
+msgid "Hotspot"
+msgstr "Хот-спот"
+
+#: contents/ui/Toolbar.qml:146 contents/ui/Toolbar.qml:157
+#, kde-format
+msgid "Disable Hotspot"
+msgstr "Вимкнути хот-спот"
+
+#: contents/ui/Toolbar.qml:151 contents/ui/Toolbar.qml:157
+#, kde-format
+msgid "Create Hotspot"
+msgstr "Створити хот-спот"
+
+#: contents/ui/Toolbar.qml:188
+#, kde-format
+msgid "Configure network connections…"
+msgstr "Налаштувати з'єднання мережі…"
+
+#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:106
+#, kde-format
+msgid "/s"
+msgstr "/с"
+
+#: contents/ui/TrafficMonitor.qml:88
+#, kde-format
+msgid "Upload"
+msgstr "Вивантаження"
+
+#: contents/ui/TrafficMonitor.qml:88
+#, kde-format
+msgid "Download"
+msgstr "Отримання"
+
+#~ msgctxt "text field placeholder text"
+#~ msgid "Search…"
+#~ msgstr "Шукати…"
+
+#~ msgctxt "button tooltip"
+#~ msgid "Search the connections"
+#~ msgstr "Шукати з'єднання"
+
+#~ msgid ""
+#~ "Connected, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s"
+#~ msgstr ""
+#~ "З’єднано, <font color='%1'>⬇</font> %2/с, <font color='%3'>⬆</font> %4/с"
+
+#~ msgid "Enable wireless"
+#~ msgstr "Увімкнути бездротову мережу"
+
+#~ msgid "Available connections"
+#~ msgstr "Доступні з’єднання"
+
+#~ msgid "General"
+#~ msgstr "Загальне"
+
+#~ msgid "Ask for PIN on modem detection"
+#~ msgstr "Питати PIN-код, якщо виявлено модем"
+
+#~ msgid "Show virtual connections"
+#~ msgstr "Показувати віртуальні з'єднання"
+
+#~ msgid "Rescan wireless networks"
+#~ msgstr "Виконати повторний пошук бездротових мереж"
+
+#~ msgid "Show password"
+#~ msgstr "Показувати пароль"

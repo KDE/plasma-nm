@@ -40,7 +40,6 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     ConfigWidgets
     Completion
     CoreAddons
-    Declarative
     DBusAddons
     KIO
     I18n

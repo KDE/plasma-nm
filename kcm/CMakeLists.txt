@@ -16,7 +16,6 @@ target_link_libraries(kcm_networkmanagement
     plasmanm_internal
     plasmanm_editor
     KF5::ConfigWidgets
-    KF5::Declarative
     KF5::I18n
     KF5::Service
     Qt::Quick

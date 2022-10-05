@@ -20,7 +20,6 @@
 #include <KPluginFactory>
 #include <KPluginMetaData>
 #include <KSharedConfig>
-#include <kdeclarative/kdeclarative.h>
 
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>
@@ -57,10 +56,6 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
 {
     auto mainWidget = new QWidget(this);
     m_ui->setupUi(mainWidget);
-
-    KDeclarative::KDeclarative kdeclarative;
-    kdeclarative.setDeclarativeEngine(m_ui->connectionView->engine());
-    kdeclarative.setupEngine(m_ui->connectionView->engine());
 
     KLocalizedContext *l10nContext = new KLocalizedContext(m_ui->connectionView->engine());
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));

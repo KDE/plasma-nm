@@ -341,4 +341,7 @@ PlasmaExtras.ExpandableListItem {
         connectionItem.customExpandedViewContent = detailsComponent;
         setDelayModelUpdates(false);
     }
+    Component.onDestruction: {
+        setDelayModelUpdates(false);
+    }
 }

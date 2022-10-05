@@ -217,8 +217,8 @@ PlasmaExtras.ExpandableListItem {
                 id: passwordField
 
                 Layout.fillWidth: true
-                Layout.leftMargin: PlasmaCore.Units.iconSizes.smallMedium + PlasmaCore.Units.smallSpacing * 4
-                Layout.rightMargin: PlasmaCore.Units.iconSizes.smallMedium + PlasmaCore.Units.smallSpacing * 4
+                Layout.leftMargin: PlasmaCore.Units.gridUnit
+                Layout.rightMargin: PlasmaCore.Units.gridUnit
 
                 securityType: SecurityType
 

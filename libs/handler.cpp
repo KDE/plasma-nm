@@ -543,7 +543,7 @@ void Handler::incrementScansCount()
 {
     m_ongoingScansCount += 1;
     if (m_ongoingScansCount == 1) {
-        Q_EMIT isScanningChanged();
+        Q_EMIT scanningChanged();
     }
 }
 
@@ -555,7 +555,7 @@ void Handler::decrementScansCount()
     }
     m_ongoingScansCount -= 1;
     if (m_ongoingScansCount == 0) {
-        Q_EMIT isScanningChanged();
+        Q_EMIT scanningChanged();
     }
 }
 

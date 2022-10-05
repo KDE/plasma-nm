@@ -40,7 +40,7 @@ public:
     Q_PROPERTY(bool hotspotSupported READ hotspotSupported NOTIFY hotspotSupportedChanged)
 
     // Not scientifically correct, but a good estimation of whether a scanning is currently in progress.
-    Q_PROPERTY(bool scanning READ isScanning NOTIFY isScanningChanged)
+    Q_PROPERTY(bool scanning READ isScanning NOTIFY scanningChanged)
 
 public:
     bool hotspotSupported() const
@@ -135,7 +135,7 @@ Q_SIGNALS:
     void hotspotCreated();
     void hotspotDisabled();
     void hotspotSupportedChanged(bool hotspotSupported);
-    void isScanningChanged();
+    void scanningChanged();
 
 private:
     void addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject);

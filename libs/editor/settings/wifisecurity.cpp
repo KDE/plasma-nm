@@ -18,9 +18,8 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting,
                            Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)
     , m_ui(new Ui::WifiSecurity)
+    , m_wifiSecurity(setting.staticCast<NetworkManager::WirelessSecuritySetting>())
 {
-    m_wifiSecurity = setting.staticCast<NetworkManager::WirelessSecuritySetting>();
-
     m_ui->setupUi(this);
 
     m_ui->leapPassword->setPasswordOptionsEnabled(true);

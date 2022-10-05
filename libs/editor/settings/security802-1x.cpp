@@ -16,10 +16,9 @@
 
 Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, bool wifiMode, QWidget *parent, Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)
+    , m_setting(setting.staticCast<NetworkManager::Security8021xSetting>())
     , m_ui(new Ui::Security8021x)
 {
-    m_setting = setting.staticCast<NetworkManager::Security8021xSetting>();
-
     m_ui->setupUi(this);
 
     m_ui->fastPassword->setPasswordOptionsEnabled(true);

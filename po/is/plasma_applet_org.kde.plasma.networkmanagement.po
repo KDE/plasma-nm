@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-16 00:46+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2022-08-23 08:48+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -21,55 +21,55 @@ msgstr ""
 "\n"
 "\n"
 
-#: contents/ui/ConnectionItem.qml:51
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "Tengjast"
 
-#: contents/ui/ConnectionItem.qml:51
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Disconnect"
 msgstr "Aftengjast"
 
-#: contents/ui/ConnectionItem.qml:54
+#: contents/ui/ConnectionItem.qml:64
 #, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
 msgstr "Tengjast við %1"
 
-#: contents/ui/ConnectionItem.qml:54
+#: contents/ui/ConnectionItem.qml:64
 #, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
 msgstr "Aftengjast frá %1"
 
-#: contents/ui/ConnectionItem.qml:78
+#: contents/ui/ConnectionItem.qml:88
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Birta QR-kóða netkerfis"
 
-#: contents/ui/ConnectionItem.qml:90
+#: contents/ui/ConnectionItem.qml:100
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
 msgstr "QR-kóði fyrir %1"
 
-#: contents/ui/ConnectionItem.qml:96
+#: contents/ui/ConnectionItem.qml:106
 #, kde-format
 msgid "Configure…"
 msgstr "Stilla…"
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:137
 #, kde-format
 msgid "Speed"
 msgstr "Hraði"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:142
 #, kde-format
 msgid "Details"
 msgstr "Nánar"
 
-#: contents/ui/ConnectionItem.qml:175
+#: contents/ui/ConnectionItem.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -79,12 +79,12 @@ msgstr ""
 "Núverandi niðurhalshraði er %1 kibibæti á sekúndu; núverandi "
 "innsendingarhraði er %2 kibibæti á sekúndu"
 
-#: contents/ui/ConnectionItem.qml:301
+#: contents/ui/ConnectionItem.qml:302
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Tengt, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:305
+#: contents/ui/ConnectionItem.qml:306
 #, kde-format
 msgid "Connected"
 msgstr "Tengt"
@@ -94,34 +94,34 @@ msgstr "Tengt"
 msgid "Copy"
 msgstr "Afrita"
 
-#: contents/ui/main.qml:20
+#: contents/ui/main.qml:23
 #, kde-format
 msgid "Networks"
 msgstr "Netkerfi"
 
-#: contents/ui/main.qml:57 contents/ui/Toolbar.qml:67
+#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:67
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Virkja Wi-Fi"
 
-#: contents/ui/main.qml:65
+#: contents/ui/main.qml:68
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "Virkja farsímanet"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:76
 #, fuzzy, kde-format
 #| msgid "Wireless"
 msgid "Enable Airplane Mode"
 msgstr "Þráðlaust"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:81
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Opna innskráningarsíðu netkerfis…"
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Stilla netten&gingar…"
@@ -245,39 +245,39 @@ msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
 msgstr "Tegund tengingarinnar er óþekkt"
 
-#: contents/ui/Toolbar.qml:86
+#: contents/ui/Toolbar.qml:110
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Virkja farsímanet"
 
-#: contents/ui/Toolbar.qml:111
+#: contents/ui/Toolbar.qml:135
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "Slökktu á flugham<nl/><nl/>Þetta mun virkja Wi-Fi og Bluetooth"
 
-#: contents/ui/Toolbar.qml:112
+#: contents/ui/Toolbar.qml:136
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Virkjaðu á flugham<nl/><nl/>Þetta mun gera Wi-Fi og Bluetooth óvirkt"
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:146
 #, kde-format
 msgid "Hotspot"
 msgstr "Aðgangsstaður"
 
-#: contents/ui/Toolbar.qml:146 contents/ui/Toolbar.qml:157
+#: contents/ui/Toolbar.qml:170 contents/ui/Toolbar.qml:181
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Gera aðgangsstað óvirkan"
 
-#: contents/ui/Toolbar.qml:151 contents/ui/Toolbar.qml:157
+#: contents/ui/Toolbar.qml:175 contents/ui/Toolbar.qml:181
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Búa til aðgangsstað"
 
-#: contents/ui/Toolbar.qml:188
+#: contents/ui/Toolbar.qml:212
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Stilla nettengingar…"

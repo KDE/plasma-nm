@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-16 00:46+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2012-07-09 11:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -19,57 +19,57 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "X-Language: km-KH\n"
 
-#: contents/ui/ConnectionItem.qml:51
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "តភ្ជាប់​​"
 
-#: contents/ui/ConnectionItem.qml:51
+#: contents/ui/ConnectionItem.qml:61
 #, fuzzy, kde-format
 msgid "Disconnect"
 msgstr "បាន​តភ្ជាប់​​"
 
-#: contents/ui/ConnectionItem.qml:54
+#: contents/ui/ConnectionItem.qml:64
 #, fuzzy, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
 msgstr "បាន​តភ្ជាប់​ទៅកាន់​​ %1​​"
 
-#: contents/ui/ConnectionItem.qml:54
+#: contents/ui/ConnectionItem.qml:64
 #, fuzzy, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
 msgstr "បាន​តភ្ជាប់​​"
 
-#: contents/ui/ConnectionItem.qml:78
+#: contents/ui/ConnectionItem.qml:88
 #, fuzzy, kde-format
 #| msgid "Show network speed in:"
 msgid "Show Network's QR Code"
 msgstr "បង្ហាញ​​ល្បឿន​បណ្ដាញ​នៅ​ក្នុង​ ៖​"
 
-#: contents/ui/ConnectionItem.qml:90
+#: contents/ui/ConnectionItem.qml:100
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:96
+#: contents/ui/ConnectionItem.qml:106
 #, fuzzy, kde-format
 #| msgid "Confirm Delete"
 msgid "Configure…"
 msgstr "អះអាង​ការ​លុប"
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:137
 #, kde-format
 msgid "Speed"
 msgstr "ល្បឿន"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:142
 #, kde-format
 msgid "Details"
 msgstr "សេចក្ដី​លម្អិត"
 
-#: contents/ui/ConnectionItem.qml:175
+#: contents/ui/ConnectionItem.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -77,12 +77,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:301
+#: contents/ui/ConnectionItem.qml:302
 #, fuzzy, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "បាន​តភ្ជាប់​ទៅកាន់​​ %1​​"
 
-#: contents/ui/ConnectionItem.qml:305
+#: contents/ui/ConnectionItem.qml:306
 #, fuzzy, kde-format
 msgid "Connected"
 msgstr "បាន​តភ្ជាប់​​"
@@ -92,35 +92,35 @@ msgstr "បាន​តភ្ជាប់​​"
 msgid "Copy"
 msgstr ""
 
-#: contents/ui/main.qml:20
+#: contents/ui/main.qml:23
 #, fuzzy, kde-format
 #| msgid "Net&work:"
 msgid "Networks"
 msgstr "បណ្ដាញ ៖"
 
-#: contents/ui/main.qml:57 contents/ui/Toolbar.qml:67
+#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:67
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: contents/ui/main.qml:65
+#: contents/ui/main.qml:68
 #, fuzzy, kde-format
 #| msgid "Username on this network"
 msgid "Enable Mobile Network"
 msgstr "ឈ្មោះ​អ្នក​ប្រើ​នៅ​លើ​បណ្ដាញ​នេះ"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:76
 #, fuzzy, kde-format
 #| msgid "Wireless"
 msgid "Enable Airplane Mode"
 msgstr "ឥត​ខ្សែ"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:81
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:86
 #, fuzzy, kde-format
 #| msgid "Configure Notifications..."
 msgid "&Configure Network Connections…"
@@ -249,43 +249,43 @@ msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
 msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
 
-#: contents/ui/Toolbar.qml:86
+#: contents/ui/Toolbar.qml:110
 #, fuzzy, kde-format
 #| msgid "Username on this network"
 msgid "Enable mobile network"
 msgstr "ឈ្មោះ​អ្នក​ប្រើ​នៅ​លើ​បណ្ដាញ​នេះ"
 
-#: contents/ui/Toolbar.qml:111
+#: contents/ui/Toolbar.qml:135
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:112
+#: contents/ui/Toolbar.qml:136
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:146
 #, kde-format
 msgid "Hotspot"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:146 contents/ui/Toolbar.qml:157
+#: contents/ui/Toolbar.qml:170 contents/ui/Toolbar.qml:181
 #, fuzzy, kde-format
 #| msgid "Disable &split tunnel"
 msgid "Disable Hotspot"
 msgstr "បិទ​ធ្យូនែល​ពុះ​"
 
-#: contents/ui/Toolbar.qml:151 contents/ui/Toolbar.qml:157
+#: contents/ui/Toolbar.qml:175 contents/ui/Toolbar.qml:181
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Create Connection"
 msgid "Create Hotspot"
 msgstr "ធ្វើ​ការ​តភ្ជាប់​"
 
-#: contents/ui/Toolbar.qml:188
+#: contents/ui/Toolbar.qml:212
 #, fuzzy, kde-format
 #| msgid "Configure Notifications..."
 msgid "Configure network connections…"

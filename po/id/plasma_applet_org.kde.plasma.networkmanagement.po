@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-16 00:46+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2022-04-07 22:19+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -19,58 +19,58 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: contents/ui/ConnectionItem.qml:51
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "Koneksikan"
 
-#: contents/ui/ConnectionItem.qml:51
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Disconnect"
 msgstr "Diskoneksikan"
 
-#: contents/ui/ConnectionItem.qml:54
+#: contents/ui/ConnectionItem.qml:64
 #, fuzzy, kde-format
 #| msgid "Connect"
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
 msgstr "Koneksikan"
 
-#: contents/ui/ConnectionItem.qml:54
+#: contents/ui/ConnectionItem.qml:64
 #, fuzzy, kde-format
 #| msgid "Disconnect"
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
 msgstr "Diskoneksikan"
 
-#: contents/ui/ConnectionItem.qml:78
+#: contents/ui/ConnectionItem.qml:88
 #, fuzzy, kde-format
 #| msgid "Show network's QR code"
 msgid "Show Network's QR Code"
 msgstr "Tampilkan kode QR jaringan"
 
-#: contents/ui/ConnectionItem.qml:90
+#: contents/ui/ConnectionItem.qml:100
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:96
+#: contents/ui/ConnectionItem.qml:106
 #, kde-format
 msgid "Configure…"
 msgstr "Konfigurasikan..."
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:137
 #, kde-format
 msgid "Speed"
 msgstr "Kecepatan"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:142
 #, kde-format
 msgid "Details"
 msgstr "Perincian"
 
-#: contents/ui/ConnectionItem.qml:175
+#: contents/ui/ConnectionItem.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -78,12 +78,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:301
+#: contents/ui/ConnectionItem.qml:302
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Terkoneksi, ⬇ %1/dt,  ⬆ %2/dt"
 
-#: contents/ui/ConnectionItem.qml:305
+#: contents/ui/ConnectionItem.qml:306
 #, kde-format
 msgid "Connected"
 msgstr "Terkoneksi"
@@ -93,34 +93,34 @@ msgstr "Terkoneksi"
 msgid "Copy"
 msgstr "Salin"
 
-#: contents/ui/main.qml:20
+#: contents/ui/main.qml:23
 #, kde-format
 msgid "Networks"
 msgstr "Jaringan"
 
-#: contents/ui/main.qml:57 contents/ui/Toolbar.qml:67
+#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:67
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Fungsikan Wi-Fi"
 
-#: contents/ui/main.qml:65
+#: contents/ui/main.qml:68
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "Fungsikan jaringan mobile"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:76
 #, fuzzy, kde-format
 #| msgid "Enable airplane mode"
 msgid "Enable Airplane Mode"
 msgstr "Fungsikan mode pesawat"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:81
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Buka Halaman Login Jaringan..."
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Konfigurasikan Koneksi Jaringan..."
@@ -244,41 +244,41 @@ msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:86
+#: contents/ui/Toolbar.qml:110
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Fungsikan jaringan mobile"
 
-#: contents/ui/Toolbar.qml:111
+#: contents/ui/Toolbar.qml:135
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Nonfungsikan mode pesawat<nl/><nl/>Ini akan memfungsikan Wi-Fi dan Bluetooth"
 
-#: contents/ui/Toolbar.qml:112
+#: contents/ui/Toolbar.qml:136
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Fungsikan mode pesawat<nl/><nl/>Ini akan menonfungsikan Wi-Fi dan Bluetooth"
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:146
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: contents/ui/Toolbar.qml:146 contents/ui/Toolbar.qml:157
+#: contents/ui/Toolbar.qml:170 contents/ui/Toolbar.qml:181
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Nonfungsikan Hotspot"
 
-#: contents/ui/Toolbar.qml:151 contents/ui/Toolbar.qml:157
+#: contents/ui/Toolbar.qml:175 contents/ui/Toolbar.qml:181
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Ciptakan Hotspot"
 
-#: contents/ui/Toolbar.qml:188
+#: contents/ui/Toolbar.qml:212
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Konfigurasikan koneksi jaringan..."

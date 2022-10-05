@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-16 00:46+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2020-09-28 13:41+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -19,58 +19,58 @@ msgstr ""
 "X-Generator: Lokalize 20.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: contents/ui/ConnectionItem.qml:51
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "Ühenda"
 
-#: contents/ui/ConnectionItem.qml:51
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Disconnect"
 msgstr "Katkesta ühendus"
 
-#: contents/ui/ConnectionItem.qml:54
+#: contents/ui/ConnectionItem.qml:64
 #, fuzzy, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
 msgstr "Ühendatud liidesega %1"
 
-#: contents/ui/ConnectionItem.qml:54
+#: contents/ui/ConnectionItem.qml:64
 #, fuzzy, kde-format
 #| msgid "Disconnect"
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
 msgstr "Katkesta ühendus"
 
-#: contents/ui/ConnectionItem.qml:78
+#: contents/ui/ConnectionItem.qml:88
 #, fuzzy, kde-format
 #| msgid "Show network's QR code"
 msgid "Show Network's QR Code"
 msgstr "Võrgu QR-koodi näitamine"
 
-#: contents/ui/ConnectionItem.qml:90
+#: contents/ui/ConnectionItem.qml:100
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:96
+#: contents/ui/ConnectionItem.qml:106
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgid "Configure…"
 msgstr "Seadista ..."
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:137
 #, kde-format
 msgid "Speed"
 msgstr "Kiirus"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:142
 #, kde-format
 msgid "Details"
 msgstr "Üksikasjad"
 
-#: contents/ui/ConnectionItem.qml:175
+#: contents/ui/ConnectionItem.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -78,12 +78,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:301
+#: contents/ui/ConnectionItem.qml:302
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Ühendatud, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:305
+#: contents/ui/ConnectionItem.qml:306
 #, kde-format
 msgid "Connected"
 msgstr "Ühendatud"
@@ -93,35 +93,35 @@ msgstr "Ühendatud"
 msgid "Copy"
 msgstr "Kopeeri"
 
-#: contents/ui/main.qml:20
+#: contents/ui/main.qml:23
 #, kde-format
 msgid "Networks"
 msgstr "Võrgud"
 
-#: contents/ui/main.qml:57 contents/ui/Toolbar.qml:67
+#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:67
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi lubamine"
 
-#: contents/ui/main.qml:65
+#: contents/ui/main.qml:68
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "Mobiilandmeside lubamine"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:76
 #, fuzzy, kde-format
 #| msgid "Enable airplane mode"
 msgid "Enable Airplane Mode"
 msgstr "Lennurežiimi lubamine"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:81
 #, fuzzy, kde-format
 #| msgid "Open Network Login Page..."
 msgid "Open Network Login Page…"
 msgstr "Ava võrku sisselogimise lehekülg ..."
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:86
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections..."
 msgid "&Configure Network Connections…"
@@ -250,41 +250,41 @@ msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
 msgstr "Ühenduse ikooni valimine"
 
-#: contents/ui/Toolbar.qml:86
+#: contents/ui/Toolbar.qml:110
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Mobiilandmeside lubamine"
 
-#: contents/ui/Toolbar.qml:111
+#: contents/ui/Toolbar.qml:135
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Lennurežiimi välja lülitamine<nl/><nl/>See lülitab sisse Wi-Fi ja Bluetoothi"
 
-#: contents/ui/Toolbar.qml:112
+#: contents/ui/Toolbar.qml:136
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Lennurežiimi sisse lülitamine<nl/><nl/>See lülitab välja Wi-Fi ja Bluetoothi"
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:146
 #, kde-format
 msgid "Hotspot"
 msgstr "Pääsupunkt"
 
-#: contents/ui/Toolbar.qml:146 contents/ui/Toolbar.qml:157
+#: contents/ui/Toolbar.qml:170 contents/ui/Toolbar.qml:181
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Keela pääsupunkt"
 
-#: contents/ui/Toolbar.qml:151 contents/ui/Toolbar.qml:157
+#: contents/ui/Toolbar.qml:175 contents/ui/Toolbar.qml:181
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Loo pääsupunkt"
 
-#: contents/ui/Toolbar.qml:188
+#: contents/ui/Toolbar.qml:212
 #, fuzzy, kde-format
 #| msgid "Configure network connections..."
 msgid "Configure network connections…"

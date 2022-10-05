@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-16 00:46+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2022-07-13 15:44+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,57 +17,57 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: contents/ui/ConnectionItem.qml:51
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "연결"
 
-#: contents/ui/ConnectionItem.qml:51
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Disconnect"
 msgstr "연결 해제"
 
-#: contents/ui/ConnectionItem.qml:54
+#: contents/ui/ConnectionItem.qml:64
 #, fuzzy, kde-format
 #| msgid "Connect"
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
 msgstr "연결"
 
-#: contents/ui/ConnectionItem.qml:54
+#: contents/ui/ConnectionItem.qml:64
 #, fuzzy, kde-format
 #| msgid "Disconnect"
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
 msgstr "연결 해제"
 
-#: contents/ui/ConnectionItem.qml:78
+#: contents/ui/ConnectionItem.qml:88
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "네트워크의 QR 코드 표시"
 
-#: contents/ui/ConnectionItem.qml:90
+#: contents/ui/ConnectionItem.qml:100
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
 msgstr "%1의 QR 코드"
 
-#: contents/ui/ConnectionItem.qml:96
+#: contents/ui/ConnectionItem.qml:106
 #, kde-format
 msgid "Configure…"
 msgstr "설정…"
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:137
 #, kde-format
 msgid "Speed"
 msgstr "속도"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:142
 #, kde-format
 msgid "Details"
 msgstr "자세히"
 
-#: contents/ui/ConnectionItem.qml:175
+#: contents/ui/ConnectionItem.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -75,12 +75,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:301
+#: contents/ui/ConnectionItem.qml:302
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "연결됨, ⬇ %1/초, ⬆ %2/초"
 
-#: contents/ui/ConnectionItem.qml:305
+#: contents/ui/ConnectionItem.qml:306
 #, kde-format
 msgid "Connected"
 msgstr "연결됨"
@@ -90,34 +90,34 @@ msgstr "연결됨"
 msgid "Copy"
 msgstr "복사"
 
-#: contents/ui/main.qml:20
+#: contents/ui/main.qml:23
 #, kde-format
 msgid "Networks"
 msgstr "네트워크"
 
-#: contents/ui/main.qml:57 contents/ui/Toolbar.qml:67
+#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:67
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi 활성화"
 
-#: contents/ui/main.qml:65
+#: contents/ui/main.qml:68
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "모바일 네트워크 사용"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:76
 #, fuzzy, kde-format
 #| msgid "Enable airplane mode"
 msgid "Enable Airplane Mode"
 msgstr "비행기 모드 사용"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:81
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "네트워크 로그인 페이지 열기…"
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "네트워크 연결 설정(&C)…"
@@ -241,39 +241,39 @@ msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:86
+#: contents/ui/Toolbar.qml:110
 #, kde-format
 msgid "Enable mobile network"
 msgstr "모바일 네트워크 사용"
 
-#: contents/ui/Toolbar.qml:111
+#: contents/ui/Toolbar.qml:135
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "비행기 모드 비활성화<nl/><nl/>Wi-Fi와 블루투스를 활성화합니다"
 
-#: contents/ui/Toolbar.qml:112
+#: contents/ui/Toolbar.qml:136
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "비행기 모드 활성화<nl/><nl/>Wi-Fi와 블루투스를 비활성화합니다"
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:146
 #, kde-format
 msgid "Hotspot"
 msgstr "핫스팟"
 
-#: contents/ui/Toolbar.qml:146 contents/ui/Toolbar.qml:157
+#: contents/ui/Toolbar.qml:170 contents/ui/Toolbar.qml:181
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "핫스팟 비활성화"
 
-#: contents/ui/Toolbar.qml:151 contents/ui/Toolbar.qml:157
+#: contents/ui/Toolbar.qml:175 contents/ui/Toolbar.qml:181
 #, kde-format
 msgid "Create Hotspot"
 msgstr "핫스팟 만들기"
 
-#: contents/ui/Toolbar.qml:188
+#: contents/ui/Toolbar.qml:212
 #, kde-format
 msgid "Configure network connections…"
 msgstr "네트워크 연결 설정…"

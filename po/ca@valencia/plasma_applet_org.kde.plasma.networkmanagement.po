@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-16 00:46+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2022-09-16 10:09+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -22,55 +22,55 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
-#: contents/ui/ConnectionItem.qml:51
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "Connecta"
 
-#: contents/ui/ConnectionItem.qml:51
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Disconnect"
 msgstr "Desconnecta"
 
-#: contents/ui/ConnectionItem.qml:54
+#: contents/ui/ConnectionItem.qml:64
 #, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
 msgstr "Connecta a %1"
 
-#: contents/ui/ConnectionItem.qml:54
+#: contents/ui/ConnectionItem.qml:64
 #, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
 msgstr "Desconnecta de %1"
 
-#: contents/ui/ConnectionItem.qml:78
+#: contents/ui/ConnectionItem.qml:88
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Mostra el codi QR de la xarxa"
 
-#: contents/ui/ConnectionItem.qml:90
+#: contents/ui/ConnectionItem.qml:100
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
 msgstr "Codi QR de %1"
 
-#: contents/ui/ConnectionItem.qml:96
+#: contents/ui/ConnectionItem.qml:106
 #, kde-format
 msgid "Configure…"
 msgstr "Configura…"
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:137
 #, kde-format
 msgid "Speed"
 msgstr "Velocitat"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:142
 #, kde-format
 msgid "Details"
 msgstr "Detalls"
 
-#: contents/ui/ConnectionItem.qml:175
+#: contents/ui/ConnectionItem.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -80,12 +80,12 @@ msgstr ""
 "La velocitat actual de baixada és de %1 kibibytes per segon; la velocitat "
 "actual de pujada és de %2 kibibytes per segon"
 
-#: contents/ui/ConnectionItem.qml:301
+#: contents/ui/ConnectionItem.qml:302
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Connectat, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:305
+#: contents/ui/ConnectionItem.qml:306
 #, kde-format
 msgid "Connected"
 msgstr "Connectat"
@@ -95,32 +95,32 @@ msgstr "Connectat"
 msgid "Copy"
 msgstr "Copia"
 
-#: contents/ui/main.qml:20
+#: contents/ui/main.qml:23
 #, kde-format
 msgid "Networks"
 msgstr "Xarxes"
 
-#: contents/ui/main.qml:57 contents/ui/Toolbar.qml:67
+#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:67
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activa la Wi-Fi"
 
-#: contents/ui/main.qml:65
+#: contents/ui/main.qml:68
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Activa la xarxa mòbil"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:76
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Activa el mode avió"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:81
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Obri la pàgina de connexió amb la xarxa…"
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configura les connexions de xarxa…"
@@ -244,39 +244,39 @@ msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
 msgstr "El tipus de connexió és desconegut"
 
-#: contents/ui/Toolbar.qml:86
+#: contents/ui/Toolbar.qml:110
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Activa la xarxa mòbil"
 
-#: contents/ui/Toolbar.qml:111
+#: contents/ui/Toolbar.qml:135
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "Desactiva el mode avió<nl/><nl/>Açò activarà la Wi-Fi i Bluetooth"
 
-#: contents/ui/Toolbar.qml:112
+#: contents/ui/Toolbar.qml:136
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Activa el mode avió<nl/><nl/>Açò desactivarà la Wi-Fi i Bluetooth"
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:146
 #, kde-format
 msgid "Hotspot"
 msgstr "Punt d'accés"
 
-#: contents/ui/Toolbar.qml:146 contents/ui/Toolbar.qml:157
+#: contents/ui/Toolbar.qml:170 contents/ui/Toolbar.qml:181
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Desactiva el punt d'accés"
 
-#: contents/ui/Toolbar.qml:151 contents/ui/Toolbar.qml:157
+#: contents/ui/Toolbar.qml:175 contents/ui/Toolbar.qml:181
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Crea un punt d'accés"
 
-#: contents/ui/Toolbar.qml:188
+#: contents/ui/Toolbar.qml:212
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Configura les connexions de xarxa…"

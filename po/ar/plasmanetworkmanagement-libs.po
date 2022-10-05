@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-15 00:46+0000\n"
+"POT-Creation-Date: 2022-10-05 00:47+0000\n"
 "PO-Revision-Date: 2022-08-10 23:20+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: Arabic <kde-l10n-ar@kde.org>\n"
@@ -70,8 +70,8 @@ msgstr "يتّصل"
 msgid "VPN"
 msgstr "ش.خ.ا"
 
-#: declarative/networkstatus.cpp:193 models/creatableconnectionsmodel.cpp:255
-#: models/creatableconnectionsmodel.cpp:257
+#: declarative/networkstatus.cpp:193 models/creatableconnectionsmodel.cpp:256
+#: models/creatableconnectionsmodel.cpp:258
 #, kde-format
 msgid "WireGuard"
 msgstr "واير غارد"
@@ -135,7 +135,7 @@ msgstr "أمن 802.1x"
 
 #: editor/connectioneditorbase.cpp:210 editor/settings/bridgewidget.cpp:38
 #: editor/settings/teamwidget.cpp:41 editor/uiutils.cpp:230
-#: models/creatableconnectionsmodel.cpp:174
+#: models/creatableconnectionsmodel.cpp:175
 #, kde-format
 msgid "Wi-Fi"
 msgstr "واي فاي"
@@ -146,7 +146,7 @@ msgid "Wi-Fi Security"
 msgstr "أمن الواي-فاي"
 
 #: editor/connectioneditorbase.cpp:219 editor/uiutils.cpp:194
-#: models/creatableconnectionsmodel.cpp:134
+#: models/creatableconnectionsmodel.cpp:135
 #, kde-format
 msgid "DSL"
 msgstr "DSL"
@@ -172,32 +172,32 @@ msgid "PPP"
 msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:241 editor/settings/teamwidget.cpp:38
-#: editor/uiutils.cpp:213 models/creatableconnectionsmodel.cpp:141
-#: models/networkmodelitem.cpp:660
+#: editor/uiutils.cpp:213 models/creatableconnectionsmodel.cpp:142
+#: models/networkmodelitem.cpp:674
 #, kde-format
 msgid "Infiniband"
 msgstr "Infiniband"
 
 #: editor/connectioneditorbase.cpp:244 editor/uiutils.cpp:202
-#: models/creatableconnectionsmodel.cpp:191 models/networkmodelitem.cpp:666
+#: models/creatableconnectionsmodel.cpp:192 models/networkmodelitem.cpp:680
 #, kde-format
 msgid "Bond"
 msgstr "Bond"
 
 #: editor/connectioneditorbase.cpp:247 editor/uiutils.cpp:205
-#: models/creatableconnectionsmodel.cpp:201 models/networkmodelitem.cpp:672
+#: models/creatableconnectionsmodel.cpp:202 models/networkmodelitem.cpp:686
 #, kde-format
 msgid "Bridge"
 msgstr "Bridge"
 
-#: editor/connectioneditorbase.cpp:250 models/creatableconnectionsmodel.cpp:221
-#: models/networkmodelitem.cpp:678
+#: editor/connectioneditorbase.cpp:250 models/creatableconnectionsmodel.cpp:222
+#: models/networkmodelitem.cpp:692
 #, kde-format
 msgid "Vlan"
 msgstr "Vlan"
 
 #: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:234
-#: models/creatableconnectionsmodel.cpp:211 models/networkmodelitem.cpp:687
+#: models/creatableconnectionsmodel.cpp:212 models/networkmodelitem.cpp:701
 #, kde-format
 msgid "Team"
 msgstr "Team"
@@ -325,12 +325,12 @@ msgstr "أزل الاتصال"
 msgid "VLAN"
 msgstr "VLAN"
 
-#: editor/settings/btwidget.cpp:21
+#: editor/settings/btwidget.cpp:20
 #, kde-format
 msgid "DUN (dial up networking)"
 msgstr "DUN (تشبيك اتصال هاتفي)"
 
-#: editor/settings/btwidget.cpp:22
+#: editor/settings/btwidget.cpp:21
 #, kde-format
 msgid "PAN (personal area network)"
 msgstr "PAN (منطقة شبكة شخصية)"
@@ -2032,13 +2032,13 @@ msgstr ""
 msgid "Remove this Peer"
 msgstr ""
 
-#: editor/settings/wificonnectionwidget.cpp:183
+#: editor/settings/wificonnectionwidget.cpp:181
 #, kde-format
 msgid "%1 (%2 MHz)"
 msgstr "%1 (%2 م.هرتز)"
 
-#: editor/settings/wireguardpeerwidget.cpp:74
-#: editor/settings/wireguardtabwidget.cpp:67
+#: editor/settings/wireguardpeerwidget.cpp:71
+#: editor/settings/wireguardtabwidget.cpp:59
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"
@@ -2125,7 +2125,7 @@ msgstr "شبكة هاتف محمول"
 msgid "Olpc mesh"
 msgstr "شبكة Olpc"
 
-#: editor/uiutils.cpp:226 models/creatableconnectionsmodel.cpp:157
+#: editor/uiutils.cpp:226 models/creatableconnectionsmodel.cpp:158
 #, kde-format
 msgid "Wired Ethernet"
 msgstr "إيثرنت سلكي"
@@ -3216,307 +3216,307 @@ msgid ""
 "package manager to install it."
 msgstr ""
 
-#: handler.cpp:749
+#: handler.cpp:770
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "فشل تفعيل %1"
 
-#: handler.cpp:753
+#: handler.cpp:774
 #, kde-format
 msgid "Failed to add %1"
 msgstr "فشلت إضافة %1"
 
-#: handler.cpp:757
+#: handler.cpp:778
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "فشلت إضافة الاتصال %1"
 
-#: handler.cpp:761
+#: handler.cpp:782
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "فشل تعطيل %1"
 
-#: handler.cpp:765
+#: handler.cpp:786
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "فشلت إزالة %1"
 
-#: handler.cpp:769
+#: handler.cpp:790
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "فشل تحديث الاتصال %1"
 
-#: handler.cpp:779
+#: handler.cpp:801
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "فشل إنشاء نقطة فعالة %1"
 
-#: handler.cpp:798
+#: handler.cpp:820
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "أُضيف الاتصال %1"
 
-#: handler.cpp:802
+#: handler.cpp:824
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "أُزيل الاتصال %1"
 
-#: handler.cpp:806
+#: handler.cpp:828
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "حُدَّث الاتصال %1"
 
-#: models/creatableconnectionsmodel.cpp:135
-#: models/creatableconnectionsmodel.cpp:142
-#: models/creatableconnectionsmodel.cpp:150
-#: models/creatableconnectionsmodel.cpp:158
-#: models/creatableconnectionsmodel.cpp:165
-#: models/creatableconnectionsmodel.cpp:175
-#: models/creatableconnectionsmodel.cpp:182
+#: models/creatableconnectionsmodel.cpp:136
+#: models/creatableconnectionsmodel.cpp:143
+#: models/creatableconnectionsmodel.cpp:151
+#: models/creatableconnectionsmodel.cpp:159
+#: models/creatableconnectionsmodel.cpp:166
+#: models/creatableconnectionsmodel.cpp:176
+#: models/creatableconnectionsmodel.cpp:183
 #, fuzzy, kde-format
 #| msgid "Remove Connection"
 msgid "Hardware based connections"
 msgstr "أزل الاتصال"
 
-#: models/creatableconnectionsmodel.cpp:136
+#: models/creatableconnectionsmodel.cpp:137
 #, kde-format
 msgid "Some DSL description"
 msgstr ""
 
-#: models/creatableconnectionsmodel.cpp:143
+#: models/creatableconnectionsmodel.cpp:144
 #, kde-format
 msgid "Some infiniband description"
 msgstr ""
 
-#: models/creatableconnectionsmodel.cpp:149
+#: models/creatableconnectionsmodel.cpp:150
 #, kde-format
 msgid "Mobile Broadband"
 msgstr "شبكة هاتف محمول"
 
-#: models/creatableconnectionsmodel.cpp:151
+#: models/creatableconnectionsmodel.cpp:152
 #, fuzzy, kde-format
 #| msgctxt "Mobile Connection Wizard"
 #| msgid "New Mobile Broadband Connection"
 msgid "Some mobile broadband description"
 msgstr "اتصال شبكة هاتف محمول جديد..."
 
-#: models/creatableconnectionsmodel.cpp:159
-#: models/creatableconnectionsmodel.cpp:166
+#: models/creatableconnectionsmodel.cpp:160
+#: models/creatableconnectionsmodel.cpp:167
 #, kde-format
 msgid "Some wired ethernet description"
 msgstr ""
 
-#: models/creatableconnectionsmodel.cpp:164
+#: models/creatableconnectionsmodel.cpp:165
 #, kde-format
 msgid "Wired Ethernet (shared)"
 msgstr "إيثرنت سلكي (مشاركة)"
 
-#: models/creatableconnectionsmodel.cpp:176
-#: models/creatableconnectionsmodel.cpp:183
+#: models/creatableconnectionsmodel.cpp:177
+#: models/creatableconnectionsmodel.cpp:184
 #, kde-format
 msgid "Some wi-fi description"
 msgstr ""
 
-#: models/creatableconnectionsmodel.cpp:181
+#: models/creatableconnectionsmodel.cpp:182
 #, kde-format
 msgid "Wi-Fi (shared)"
 msgstr ""
 
-#: models/creatableconnectionsmodel.cpp:192
-#: models/creatableconnectionsmodel.cpp:202
-#: models/creatableconnectionsmodel.cpp:212
-#: models/creatableconnectionsmodel.cpp:222
+#: models/creatableconnectionsmodel.cpp:193
+#: models/creatableconnectionsmodel.cpp:203
+#: models/creatableconnectionsmodel.cpp:213
+#: models/creatableconnectionsmodel.cpp:223
 #, kde-format
 msgid "Virtual connections"
 msgstr "اتصال افتراضي"
 
-#: models/creatableconnectionsmodel.cpp:193
-#: models/creatableconnectionsmodel.cpp:203
+#: models/creatableconnectionsmodel.cpp:194
+#: models/creatableconnectionsmodel.cpp:204
 #, fuzzy, kde-format
 #| msgctxt "Mobile Connection Wizard"
 #| msgid "New Mobile Broadband Connection"
 msgid "Some bond description"
 msgstr "اتصال شبكة هاتف محمول جديد..."
 
-#: models/creatableconnectionsmodel.cpp:213
+#: models/creatableconnectionsmodel.cpp:214
 #, fuzzy, kde-format
 #| msgctxt "Mobile Connection Wizard"
 #| msgid "New Mobile Broadband Connection"
 msgid "Some team description"
 msgstr "اتصال شبكة هاتف محمول جديد..."
 
-#: models/creatableconnectionsmodel.cpp:223
+#: models/creatableconnectionsmodel.cpp:224
 #, fuzzy, kde-format
 #| msgctxt "Mobile Connection Wizard"
 #| msgid "New Mobile Broadband Connection"
 msgid "Some vlan description"
 msgstr "اتصال شبكة هاتف محمول جديد..."
 
-#: models/creatableconnectionsmodel.cpp:243
-#: models/creatableconnectionsmodel.cpp:256
+#: models/creatableconnectionsmodel.cpp:244
+#: models/creatableconnectionsmodel.cpp:257
 #, fuzzy, kde-format
 #| msgid "VPN Connection"
 msgid "VPN connections"
 msgstr "اتصال VPN"
 
-#: models/creatableconnectionsmodel.cpp:267
+#: models/creatableconnectionsmodel.cpp:268
 #, fuzzy, kde-format
 #| msgid "VPN Connection"
 msgid "Import VPN connection…"
 msgstr "اتصال VPN"
 
-#: models/creatableconnectionsmodel.cpp:268
+#: models/creatableconnectionsmodel.cpp:269
 #, kde-format
 msgid "Other"
 msgstr "أخرى"
 
-#: models/creatableconnectionsmodel.cpp:269
+#: models/creatableconnectionsmodel.cpp:270
 #, kde-format
 msgid "Import a saved configuration file"
 msgstr "استورد ملف ضبط محفوظ"
 
-#: models/networkmodelitem.cpp:530
+#: models/networkmodelitem.cpp:544
 #, kde-format
 msgid "IPv4 Address"
 msgstr "عنوان IPv4"
 
-#: models/networkmodelitem.cpp:536
+#: models/networkmodelitem.cpp:550
 #, kde-format
 msgid "IPv4 Default Gateway"
 msgstr "بوابة IPv4 المبدئية"
 
-#: models/networkmodelitem.cpp:543
+#: models/networkmodelitem.cpp:557
 #, kde-format
 msgid "IPv4 Primary Nameserver"
 msgstr "خادوم النطاقات IPv4 الأساسي"
 
-#: models/networkmodelitem.cpp:547
+#: models/networkmodelitem.cpp:561
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
 msgstr "خادوم النطاقات IPv4 الثانوي"
 
-#: models/networkmodelitem.cpp:557
+#: models/networkmodelitem.cpp:571
 #, kde-format
 msgid "IPv6 Address"
 msgstr "عنوان IPv6"
 
-#: models/networkmodelitem.cpp:559
+#: models/networkmodelitem.cpp:573
 #, fuzzy, kde-format
 #| msgid "IPv6 Address"
 msgid "IPv6 ULA Address"
 msgstr "عناوين IPv6"
 
-#: models/networkmodelitem.cpp:565
+#: models/networkmodelitem.cpp:579
 #, kde-format
 msgid "IPv6 Default Gateway"
 msgstr "بوابة IPv6 المبدئية"
 
-#: models/networkmodelitem.cpp:572
+#: models/networkmodelitem.cpp:586
 #, kde-format
 msgid "IPv6 Primary Nameserver"
 msgstr "خادوم النطاقات IPv6 الأساسي"
 
-#: models/networkmodelitem.cpp:576
+#: models/networkmodelitem.cpp:590
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
 msgstr "خادوم النطاقات IPv6 الثانوي"
 
-#: models/networkmodelitem.cpp:585 models/networkmodelitem.cpp:598
+#: models/networkmodelitem.cpp:599 models/networkmodelitem.cpp:612
 #, kde-format
 msgid "Connection speed"
 msgstr "سرعة الاتصال"
 
-#: models/networkmodelitem.cpp:587 models/networkmodelitem.cpp:605
-#: models/networkmodelitem.cpp:656 models/networkmodelitem.cpp:662
-#: models/networkmodelitem.cpp:668 models/networkmodelitem.cpp:674
-#: models/networkmodelitem.cpp:681 models/networkmodelitem.cpp:689
+#: models/networkmodelitem.cpp:601 models/networkmodelitem.cpp:619
+#: models/networkmodelitem.cpp:670 models/networkmodelitem.cpp:676
+#: models/networkmodelitem.cpp:682 models/networkmodelitem.cpp:688
+#: models/networkmodelitem.cpp:695 models/networkmodelitem.cpp:703
 #, kde-format
 msgid "MAC Address"
 msgstr "عنوان ماك (MAC)"
 
-#: models/networkmodelitem.cpp:591
+#: models/networkmodelitem.cpp:605
 #, kde-format
 msgid "Access point (SSID)"
 msgstr "نقطة الوصول (SSID)"
 
-#: models/networkmodelitem.cpp:593
+#: models/networkmodelitem.cpp:607
 #, kde-format
 msgid "Signal strength"
 msgstr "قوّة الإشارة"
 
-#: models/networkmodelitem.cpp:595
+#: models/networkmodelitem.cpp:609
 #, kde-format
 msgid "Security type"
 msgstr "نوع الأمن"
 
-#: models/networkmodelitem.cpp:602
+#: models/networkmodelitem.cpp:616
 #, kde-format
 msgid "Frequency"
 msgstr "التردّد"
 
-#: models/networkmodelitem.cpp:603
+#: models/networkmodelitem.cpp:617
 #, kde-format
 msgid "BSSID"
 msgstr ""
 
-#: models/networkmodelitem.cpp:618
+#: models/networkmodelitem.cpp:632
 #, kde-format
 msgid "Operator"
 msgstr "المُعامِل"
 
-#: models/networkmodelitem.cpp:622
+#: models/networkmodelitem.cpp:636
 #, kde-format
 msgid "Network ID"
 msgstr "معرّف الشبكة"
 
-#: models/networkmodelitem.cpp:626
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Signal Quality"
 msgstr "جودة الإشارة"
 
-#: models/networkmodelitem.cpp:627
+#: models/networkmodelitem.cpp:641
 #, kde-format
 msgid "Access Technology"
 msgstr "تقنيّة الوصول"
 
-#: models/networkmodelitem.cpp:633
+#: models/networkmodelitem.cpp:647
 #, kde-format
 msgid "VPN plugin"
 msgstr "ملحقة VPN"
 
-#: models/networkmodelitem.cpp:644
+#: models/networkmodelitem.cpp:658
 #, kde-format
 msgid "Banner"
 msgstr "اللافتة"
 
-#: models/networkmodelitem.cpp:650
+#: models/networkmodelitem.cpp:664
 #, kde-format
 msgid "Name"
 msgstr "الاسم"
 
-#: models/networkmodelitem.cpp:652 models/networkmodelitem.cpp:654
+#: models/networkmodelitem.cpp:666 models/networkmodelitem.cpp:668
 #, kde-format
 msgid "Capabilities"
 msgstr "الإمكانيات"
 
-#: models/networkmodelitem.cpp:660 models/networkmodelitem.cpp:666
-#: models/networkmodelitem.cpp:672 models/networkmodelitem.cpp:678
-#: models/networkmodelitem.cpp:684 models/networkmodelitem.cpp:687
+#: models/networkmodelitem.cpp:674 models/networkmodelitem.cpp:680
+#: models/networkmodelitem.cpp:686 models/networkmodelitem.cpp:692
+#: models/networkmodelitem.cpp:698 models/networkmodelitem.cpp:701
 #, kde-format
 msgid "Type"
 msgstr "النوع"
 
-#: models/networkmodelitem.cpp:680
+#: models/networkmodelitem.cpp:694
 #, kde-format
 msgid "Vlan ID"
 msgstr "معرّف VLAN"
 
-#: models/networkmodelitem.cpp:684
+#: models/networkmodelitem.cpp:698
 #, kde-format
 msgid "Adsl"
 msgstr "Adsl"
 
-#: models/networkmodelitem.cpp:694
+#: models/networkmodelitem.cpp:708
 #, kde-format
 msgid "Device"
 msgstr "الجهاز"

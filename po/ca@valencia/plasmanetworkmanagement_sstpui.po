@@ -152,7 +152,7 @@ msgstr "Envia paquets d'eco PPP "
 #: sstpadvanced.ui:244
 #, kde-format
 msgid "Misc"
-msgstr "Miscelànea"
+msgstr "Miscel·lània"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomUnitNumber)
 #: sstpadvanced.ui:252

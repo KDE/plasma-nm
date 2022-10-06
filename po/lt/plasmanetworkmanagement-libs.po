@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2022-10-06 00:47+0000\n"
 "PO-Revision-Date: 2021-12-10 00:21+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -454,12 +454,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "Tinklų sietuvas"
 
-#: editor/settings/security802-1x.cpp:484
+#: editor/settings/security802-1x.cpp:483
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Alternatyvūs objektų atitikmenys"
 
-#: editor/settings/security802-1x.cpp:486
+#: editor/settings/security802-1x.cpp:485
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -470,7 +470,7 @@ msgstr ""
 "adresas&gt;</li><li>EMAIL: &lt;el. paštas&gt;</li><li>URI: &lt;uri, pvz., "
 "https://www.kde.org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:503
+#: editor/settings/security802-1x.cpp:502
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Jungtis tik prie šių serverių"

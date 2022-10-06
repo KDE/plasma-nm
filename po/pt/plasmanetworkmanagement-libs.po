@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2022-10-06 00:47+0000\n"
 "PO-Revision-Date: 2022-04-21 15:43+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -474,12 +474,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "'Gateway'"
 
-#: editor/settings/security802-1x.cpp:484
+#: editor/settings/security802-1x.cpp:483
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "O Assunto Alternativo Corresponde"
 
-#: editor/settings/security802-1x.cpp:486
+#: editor/settings/security802-1x.cpp:485
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -490,7 +490,7 @@ msgstr ""
 "IP&gt;</li><li>EMAIL: &lt;e-mail&gt;</li><li>URI: &lt;uri, p.ex. https://www."
 "kde.org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:503
+#: editor/settings/security802-1x.cpp:502
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Ligar apenas a estes servidores"

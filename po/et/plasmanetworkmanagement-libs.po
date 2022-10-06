@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2022-10-06 00:47+0000\n"
 "PO-Revision-Date: 2020-09-28 13:49+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -456,12 +456,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "Lüüs"
 
-#: editor/settings/security802-1x.cpp:484
+#: editor/settings/security802-1x.cpp:483
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Alternatiivsed subjekti vasted"
 
-#: editor/settings/security802-1x.cpp:486
+#: editor/settings/security802-1x.cpp:485
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -472,7 +472,7 @@ msgstr ""
 "aadress&gt;</li><li>EMAIL: &lt;e-posti aadress&gt;</li><li>URI: &lt;URI, nt. "
 "https://www.kde.org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:503
+#: editor/settings/security802-1x.cpp:502
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Ühendumine ainult järgmiste serveritega"

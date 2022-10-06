@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2022-10-06 00:47+0000\n"
 "PO-Revision-Date: 2022-07-14 00:27+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -449,12 +449,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "Gateway"
 
-#: editor/settings/security802-1x.cpp:484
+#: editor/settings/security802-1x.cpp:483
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Alternative Betreff-Übereinstimmungen"
 
-#: editor/settings/security802-1x.cpp:486
+#: editor/settings/security802-1x.cpp:485
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -465,7 +465,7 @@ msgstr ""
 "Name oder IP-Adresse&gt;</li><li>EMAIL: &lt;E-Mail&gt;</li><li>URI: &lt;URI "
 "wie z. B. https://www.kde.org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:503
+#: editor/settings/security802-1x.cpp:502
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Nur mit diesen Servern verbinden"

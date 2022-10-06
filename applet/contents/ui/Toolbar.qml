@@ -31,21 +31,17 @@ RowLayout {
     PlasmaNM.EnabledConnections {
         id: enabledConnections
 
-        onWirelessEnabledChanged: {
-            wifiSwitchButton.checked = wifiSwitchButton.enabled && enabled
-        }
+        // When user interactively toggles a checkbox, a binding may be
+        // preserved, but the state gets out of sync until next relevant
+        // notify signal is dispatched. So, we refresh the bindings here.
 
-        onWirelessHwEnabledChanged: {
-            wifiSwitchButton.enabled = enabled && availableDevices.wirelessDeviceAvailable && !PlasmaNM.Configuration.airplaneModeEnabled
-        }
+        onWirelessEnabledChanged: wifiSwitchButton.checked = Qt.binding(() =>
+            wifiSwitchButton.administrativelyEnabled && enabledConnections.wirelessEnabled
+        );
 
-        onWwanEnabledChanged: {
-            wwanSwitchButton.checked = wwanSwitchButton.enabled && enabled
-        }
-
-        onWwanHwEnabledChanged: {
-            wwanSwitchButton.enabled = enabled && availableDevices.modemDeviceAvailable && !PlasmaNM.Configuration.airplaneModeEnabled
-        }
+        onWwanEnabledChanged: wwanSwitchButton.checked = Qt.binding(() =>
+            wwanSwitchButton.administrativelyEnabled && enabledConnections.wwanEnabled
+        );
     }
 
     spacing: PlasmaCore.Units.smallSpacing * 3
@@ -53,10 +49,16 @@ RowLayout {
     PlasmaComponents3.CheckBox {
         id: wifiSwitchButton
 
-        checked: enabled && enabledConnections.wirelessEnabled
-        enabled: enabledConnections.wirelessHwEnabled && availableDevices.wirelessDeviceAvailable && !PlasmaNM.Configuration.airplaneModeEnabled
+        // can't overload Item::enabled, because it's being used for other things, like Edit Mode on a desktop
+        readonly property bool administrativelyEnabled:
+            !PlasmaNM.Configuration.airplaneModeEnabled
+            && availableDevices.wirelessDeviceAvailable
+            && enabledConnections.wirelessHwEnabled
 
-        icon.name: enabled ? "network-wireless-on" : "network-wireless-off"
+        checked: administrativelyEnabled && enabledConnections.wirelessEnabled
+        enabled: administrativelyEnabled
+
+        icon.name: administrativelyEnabled ? "network-wireless-on" : "network-wireless-off"
         visible: availableDevices.wirelessDeviceAvailable
 
         KeyNavigation.right: wwanSwitchButton.visible ? wwanSwitchButton : wwanSwitchButton.KeyNavigation.right
@@ -95,10 +97,16 @@ RowLayout {
     PlasmaComponents3.CheckBox {
         id: wwanSwitchButton
 
-        checked: enabled && enabledConnections.wwanEnabled
-        enabled: enabledConnections.wwanHwEnabled && availableDevices.modemDeviceAvailable && !PlasmaNM.Configuration.airplaneModeEnabled
+        // can't overload Item::enabled, because it's being used for other things, like Edit Mode on a desktop
+        readonly property bool administrativelyEnabled:
+            !PlasmaNM.Configuration.airplaneModeEnabled
+            && availableDevices.modemDeviceAvailable
+            && enabledConnections.wwanHwEnabled
 
-        icon.name: enabled ? "network-mobile-on" : "network-mobile-off"
+        checked: administrativelyEnabled && enabledConnections.wwanEnabled
+        enabled: administrativelyEnabled
+
+        icon.name: administrativelyEnabled ? "network-mobile-on" : "network-mobile-off"
         visible: availableDevices.modemDeviceAvailable
 
         KeyNavigation.left: wifiSwitchButton

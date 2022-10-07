@@ -28,9 +28,6 @@ public:
     };
     explicit SecretsRequest(Type _type)
         : type(_type)
-        , flags(NetworkManager::SecretAgent::None)
-        , saveSecretsWithoutReply(false)
-        , dialog(nullptr)
     {
     }
     inline bool operator==(const QString &other) const
@@ -43,14 +40,14 @@ public:
     QDBusObjectPath connection_path;
     QString setting_name;
     QStringList hints;
-    NetworkManager::SecretAgent::GetSecretsFlags flags;
+    NetworkManager::SecretAgent::GetSecretsFlags flags = NetworkManager::SecretAgent::None;
     /**
      * When a user connection is called on GetSecrets,
      * the secret agent is supposed to save the secrets
      * typed by user, when true proccessSaveSecrets
      * should skip the DBus reply.
      */
-    bool saveSecretsWithoutReply;
+    bool saveSecretsWithoutReply = false;
     QDBusMessage message;
     PasswordDialog *dialog = nullptr;
 };

@@ -8,6 +8,7 @@
 #include "ipv4delegate.h"
 #include "ui_ipv4.h"
 
+#include <QDesktopServices>
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QFormLayout>
@@ -16,6 +17,7 @@
 #include <QNetworkAddressEntry>
 #include <QSpinBox>
 #include <QStandardItemModel>
+#include <QUrl>
 
 #include <KEditListWidget>
 #include <KLocalizedString>
@@ -414,10 +416,14 @@ void IPv4Widget::slotAdvancedDialog()
     auto layout = new QFormLayout(dlg);
     dlg->setLayout(layout);
 
-    layout->addRow(
+    auto label =
         new QLabel(i18n("<qt>You can find more information about these values here:<br/><a "
                         "href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome.org/NetworkManager/stable/ch01.html"
-                        "nm-settings-nmcli.html</a></qt>")));
+                        "nm-settings-nmcli.html</a></qt>"));
+    connect(label, &QLabel::linkActivated, this, [](const QString &link) {
+        QDesktopServices::openUrl(QUrl(link));
+    });
+    layout->addRow(label);
 
     auto sendHostname = new QCheckBox(dlg);
     sendHostname->setChecked(m_tmpIpv4Setting.dhcpSendHostname());

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2022-10-07 00:48+0000\n"
 "PO-Revision-Date: 2022-05-14 17:15+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -96,7 +96,7 @@ msgstr "Kopiér"
 msgid "Networks"
 msgstr "Netværk"
 
-#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:67
+#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Aktivér wi-fi"
@@ -253,39 +253,39 @@ msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
 msgstr "Ukendt forbindelsestype"
 
-#: contents/ui/Toolbar.qml:110
+#: contents/ui/Toolbar.qml:118
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Aktivér mobilt netværk"
 
-#: contents/ui/Toolbar.qml:135
+#: contents/ui/Toolbar.qml:143
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "Deaktivér flytilstand<nl/><nl/>Dette vil aktivere wi-fi og bluetooth"
 
-#: contents/ui/Toolbar.qml:136
+#: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Aktivér flytilstand<nl/><nl/>Dette vil deaktivere wi-fi og bluetooth"
 
-#: contents/ui/Toolbar.qml:146
+#: contents/ui/Toolbar.qml:154
 #, kde-format
 msgid "Hotspot"
 msgstr "Internetdeling"
 
-#: contents/ui/Toolbar.qml:170 contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:178 contents/ui/Toolbar.qml:189
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Deaktivér internetdeling"
 
-#: contents/ui/Toolbar.qml:175 contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:189
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Opret internetdeling"
 
-#: contents/ui/Toolbar.qml:212
+#: contents/ui/Toolbar.qml:220
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Indstil netværksforbindelser…"

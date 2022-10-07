@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2022-10-07 00:48+0000\n"
 "PO-Revision-Date: 2019-08-19 20:30+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -103,7 +103,7 @@ msgstr "Copiar"
 msgid "Networks"
 msgstr "Redes"
 
-#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:67
+#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
@@ -257,42 +257,42 @@ msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
 msgstr "Tipo de seguranza descoñecido"
 
-#: contents/ui/Toolbar.qml:110
+#: contents/ui/Toolbar.qml:118
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Activar a rede móbil."
 
-#: contents/ui/Toolbar.qml:135
+#: contents/ui/Toolbar.qml:143
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:136
+#: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:146
+#: contents/ui/Toolbar.qml:154
 #, kde-format
 msgid "Hotspot"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:170 contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:178 contents/ui/Toolbar.qml:189
 #, fuzzy, kde-format
 #| msgid "Disable &split tunnel"
 msgid "Disable Hotspot"
 msgstr "De&sactivar o túnel partido"
 
-#: contents/ui/Toolbar.qml:175 contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:189
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Create Connection"
 msgid "Create Hotspot"
 msgstr "Crear unha conexión"
 
-#: contents/ui/Toolbar.qml:212
+#: contents/ui/Toolbar.qml:220
 #, fuzzy, kde-format
 #| msgid "Configure network connections..."
 msgid "Configure network connections…"

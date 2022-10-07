@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2022-10-07 00:48+0000\n"
 "PO-Revision-Date: 2021-10-17 16:07+0200\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -98,7 +98,7 @@ msgstr "Másolás"
 msgid "Networks"
 msgstr "Hálózatok"
 
-#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:67
+#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi bekapcsolása"
@@ -254,12 +254,12 @@ msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
 msgstr "Ismeretlen kapcsolattípus"
 
-#: contents/ui/Toolbar.qml:110
+#: contents/ui/Toolbar.qml:118
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Mobil adatkapcsolat bekapcsolása"
 
-#: contents/ui/Toolbar.qml:135
+#: contents/ui/Toolbar.qml:143
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
@@ -267,7 +267,7 @@ msgstr ""
 "Repülős üzemmód kikapcsolása<nl/><nl/>Ez bekapcsolja a Wi-Fi-t és a "
 "Bluetooth-t"
 
-#: contents/ui/Toolbar.qml:136
+#: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
@@ -275,22 +275,22 @@ msgstr ""
 "Repülős üzemmód bekapcsolása<nl/><nl/>Ez kikapcsolja a Wi-Fi-t és a "
 "Bluetooth-t"
 
-#: contents/ui/Toolbar.qml:146
+#: contents/ui/Toolbar.qml:154
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: contents/ui/Toolbar.qml:170 contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:178 contents/ui/Toolbar.qml:189
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Hotspot kikapcsolása"
 
-#: contents/ui/Toolbar.qml:175 contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:189
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Hotspot létrehozása"
 
-#: contents/ui/Toolbar.qml:212
+#: contents/ui/Toolbar.qml:220
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Hálózati kapcsolatok szerkesztése…"

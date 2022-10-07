@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2022-10-07 00:48+0000\n"
 "PO-Revision-Date: 2022-10-02 15:49\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -94,7 +94,7 @@ msgstr "复制"
 msgid "Networks"
 msgstr "网络"
 
-#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:67
+#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "启用 Wi-Fi"
@@ -238,39 +238,39 @@ msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
 msgstr "连接类型未知"
 
-#: contents/ui/Toolbar.qml:110
+#: contents/ui/Toolbar.qml:118
 #, kde-format
 msgid "Enable mobile network"
 msgstr "启用移动网络"
 
-#: contents/ui/Toolbar.qml:135
+#: contents/ui/Toolbar.qml:143
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "禁用飞行模式<nl/><nl/>这将启用 Wi-Fi 和蓝牙"
 
-#: contents/ui/Toolbar.qml:136
+#: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "启用飞行模式<nl/><nl/>这将禁用 Wi-Fi 和蓝牙"
 
-#: contents/ui/Toolbar.qml:146
+#: contents/ui/Toolbar.qml:154
 #, kde-format
 msgid "Hotspot"
 msgstr "热点"
 
-#: contents/ui/Toolbar.qml:170 contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:178 contents/ui/Toolbar.qml:189
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "禁用热点"
 
-#: contents/ui/Toolbar.qml:175 contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:189
 #, kde-format
 msgid "Create Hotspot"
 msgstr "创建热点"
 
-#: contents/ui/Toolbar.qml:212
+#: contents/ui/Toolbar.qml:220
 #, kde-format
 msgid "Configure network connections…"
 msgstr "配置网络连接…"

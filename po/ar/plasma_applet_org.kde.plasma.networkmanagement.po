@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-05 00:47+0000\n"
+"POT-Creation-Date: 2022-10-07 00:48+0000\n"
 "PO-Revision-Date: 2022-08-10 23:13+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: Arabic <kde-l10n-ar@kde.org>\n"
@@ -97,7 +97,7 @@ msgstr "انسخ"
 msgid "Networks"
 msgstr "الشّبكات"
 
-#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:67
+#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "مكّن واي فاي"
@@ -242,39 +242,39 @@ msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
 msgstr "نوع الاتصال مجهول"
 
-#: contents/ui/Toolbar.qml:110
+#: contents/ui/Toolbar.qml:118
 #, kde-format
 msgid "Enable mobile network"
 msgstr "مكن شبكة هاتف"
 
-#: contents/ui/Toolbar.qml:135
+#: contents/ui/Toolbar.qml:143
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "عطل وضع الطيران <nl/><nl/> هذا سيمكن الواي فاي و البلوتوث"
 
-#: contents/ui/Toolbar.qml:136
+#: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "مكن وضع الطيران <nl/><nl/> هذا سيعطل الواي فاي و البلوتوث"
 
-#: contents/ui/Toolbar.qml:146
+#: contents/ui/Toolbar.qml:154
 #, kde-format
 msgid "Hotspot"
 msgstr "نقطة فعالة"
 
-#: contents/ui/Toolbar.qml:170 contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:178 contents/ui/Toolbar.qml:189
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "عطل النقطة الفعالة"
 
-#: contents/ui/Toolbar.qml:175 contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:189
 #, kde-format
 msgid "Create Hotspot"
 msgstr "أنشئ نقطة فعالة"
 
-#: contents/ui/Toolbar.qml:212
+#: contents/ui/Toolbar.qml:220
 #, kde-format
 msgid "Configure network connections…"
 msgstr "اضبط اتّصالات الشّبكة..."

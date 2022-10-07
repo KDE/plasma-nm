@@ -3472,6 +3472,3 @@ msgstr ""
 #, kde-format
 msgid "Device"
 msgstr "デバイス"
-
-#~ msgid "Missing VPN plugin"
-#~ msgstr "VPN プラグインがありません"

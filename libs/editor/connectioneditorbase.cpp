@@ -255,7 +255,6 @@ void ConnectionEditorBase::initialize()
         auto wireGuardInterfaceWidget = new WireGuardInterfaceWidget(m_connection->setting(NetworkManager::Setting::WireGuard), this);
         addSettingWidget(wireGuardInterfaceWidget, i18n("WireGuard Interface"));
     } else if (type == NetworkManager::ConnectionSettings::Vpn) { // VPN
-        QString error;
         NetworkManager::VpnSetting::Ptr vpnSetting = m_connection->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
         if (!vpnSetting) {
             qCWarning(PLASMA_NM_EDITOR_LOG) << "Missing VPN setting!";

@@ -480,7 +480,12 @@ QString UiUtils::convertAllowedModeToString(ModemManager::Modem::ModemModes mode
 
 QString UiUtils::convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech)
 {
-    if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_LTE)) {
+#if MM_CHECK_VERSION(1, 14, 0)
+    if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_5GNR)) {
+        return i18nc("Cellular access technology", "5G NR");
+    } else
+#endif
+        if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_LTE)) {
         return i18nc("Cellular access technology", "LTE");
     } else if (tech.testFlag(MM_MODEM_ACCESS_TECHNOLOGY_EVDOB)) {
         return i18nc("Cellular access technology", "CDMA2000 EVDO revision B");

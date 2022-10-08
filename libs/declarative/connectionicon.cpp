@@ -532,6 +532,11 @@ void ConnectionIcon::setIconForModem()
     case MM_MODEM_ACCESS_TECHNOLOGY_LTE:
         result = QStringLiteral("network-mobile-%1-lte");
         break;
+#if MM_CHECK_VERSION(1, 14, 0)
+    case MM_MODEM_ACCESS_TECHNOLOGY_5GNR:
+        result = QStringLiteral("network-mobile-%1-5g");
+        break;
+#endif
     default:
         result = QStringLiteral("network-mobile-%1");
         break;

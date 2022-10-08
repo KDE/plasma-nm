@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-29 00:48+0000\n"
+"POT-Creation-Date: 2022-10-08 00:49+0000\n"
 "PO-Revision-Date: 2021-01-13 15:03+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -37,8 +37,9 @@ msgid "Log in"
 msgstr "Войти"
 
 #: connectivitymonitor.cpp:71
-#, kde-format
-msgid "You need to log in to this network"
+#, fuzzy, kde-format
+#| msgid "You need to log in to this network"
+msgid "You need to log into this network"
 msgstr "Необходимо выполнить вход в эту сеть"
 
 #: connectivitymonitor.cpp:91

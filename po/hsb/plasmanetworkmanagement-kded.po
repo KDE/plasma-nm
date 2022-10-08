@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-29 00:48+0000\n"
+"POT-Creation-Date: 2022-10-08 00:49+0000\n"
 "PO-Revision-Date: 2021-10-30 10:49+0200\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -33,8 +33,9 @@ msgid "Log in"
 msgstr "So přizjewić"
 
 #: connectivitymonitor.cpp:71
-#, kde-format
-msgid "You need to log in to this network"
+#, fuzzy, kde-format
+#| msgid "You need to log in to this network"
+msgid "You need to log into this network"
 msgstr "Dyrbiće so na tutej syći přizjewić"
 
 #: connectivitymonitor.cpp:91

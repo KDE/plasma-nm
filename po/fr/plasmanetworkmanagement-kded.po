@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-29 00:48+0000\n"
+"POT-Creation-Date: 2022-10-08 00:49+0000\n"
 "PO-Revision-Date: 2021-01-13 19:01+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -42,8 +42,9 @@ msgid "Log in"
 msgstr "Connexion"
 
 #: connectivitymonitor.cpp:71
-#, kde-format
-msgid "You need to log in to this network"
+#, fuzzy, kde-format
+#| msgid "You need to log in to this network"
+msgid "You need to log into this network"
 msgstr "Vous devez vous connecter sur ce réseau"
 
 #: connectivitymonitor.cpp:91

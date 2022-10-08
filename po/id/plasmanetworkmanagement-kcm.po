@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"POT-Creation-Date: 2022-10-08 00:49+0000\n"
 "PO-Revision-Date: 2022-03-03 12:25+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -17,28 +17,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: kcm.cpp:350
+#: kcm.cpp:345
 #, kde-format
 msgid "my_shared_connection"
 msgstr "koneksi_berbagiku"
 
-#: kcm.cpp:421
+#: kcm.cpp:416
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Ekspor Koneksi VPN"
 
-#: kcm.cpp:441
+#: kcm.cpp:436
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Apakah kamu ingin menyimpan perubahan yang dibuat ke koneksi '%1'?"
 
-#: kcm.cpp:442
+#: kcm.cpp:437
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Simpan Perubahan"
 
-#: kcm.cpp:526
+#: kcm.cpp:521
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Impor Koneksi VPN"

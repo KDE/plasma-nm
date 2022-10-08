@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-29 00:48+0000\n"
+"POT-Creation-Date: 2022-10-08 00:49+0000\n"
 "PO-Revision-Date: 2021-10-23 19:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -37,8 +37,9 @@ msgid "Log in"
 msgstr "Inici de sessió"
 
 #: connectivitymonitor.cpp:71
-#, kde-format
-msgid "You need to log in to this network"
+#, fuzzy, kde-format
+#| msgid "You need to log in to this network"
+msgid "You need to log into this network"
 msgstr "Cal iniciar la sessió en aquesta xarxa"
 
 #: connectivitymonitor.cpp:91

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-06 00:47+0000\n"
+"POT-Creation-Date: 2022-10-08 00:49+0000\n"
 "PO-Revision-Date: 2017-05-16 06:57-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -355,38 +355,38 @@ msgctxt "infiniband transport mode"
 msgid "Connected"
 msgstr "מחובר"
 
-#: editor/settings/ipv4widget.cpp:54 editor/widgets/ipv4routeswidget.cpp:25
+#: editor/settings/ipv4widget.cpp:56 editor/widgets/ipv4routeswidget.cpp:25
 #, kde-format
 msgctxt "Header text for IPv4 address"
 msgid "Address"
 msgstr "כתובת"
 
-#: editor/settings/ipv4widget.cpp:56 editor/widgets/ipv4routeswidget.cpp:27
+#: editor/settings/ipv4widget.cpp:58 editor/widgets/ipv4routeswidget.cpp:27
 #, kde-format
 msgctxt "Header text for IPv4 netmask"
 msgid "Netmask"
 msgstr "מסיכת רשת"
 
-#: editor/settings/ipv4widget.cpp:58 editor/widgets/ipv4routeswidget.cpp:29
+#: editor/settings/ipv4widget.cpp:60 editor/widgets/ipv4routeswidget.cpp:29
 #, kde-format
 msgctxt "Header text for IPv4 gateway"
 msgid "Gateway"
 msgstr "שער גישה"
 
-#: editor/settings/ipv4widget.cpp:269 editor/settings/ipv6widget.cpp:262
+#: editor/settings/ipv4widget.cpp:271 editor/settings/ipv6widget.cpp:262
 #, kde-format
 msgid "Other DNS Servers:"
 msgstr "שרתי DNS אחרים:"
 
-#: editor/settings/ipv4widget.cpp:281 editor/settings/ipv4widget.cpp:293
-#: editor/settings/ipv4widget.cpp:305 editor/settings/ipv4widget.cpp:317
+#: editor/settings/ipv4widget.cpp:283 editor/settings/ipv4widget.cpp:295
+#: editor/settings/ipv4widget.cpp:307 editor/settings/ipv4widget.cpp:319
 #: editor/settings/ipv6widget.cpp:274 editor/settings/ipv6widget.cpp:286
 #: editor/settings/ipv6widget.cpp:298 editor/settings/ipv6widget.cpp:310
 #, kde-format
 msgid "DNS Servers:"
 msgstr "שרתי DNS:"
 
-#: editor/settings/ipv4widget.cpp:418
+#: editor/settings/ipv4widget.cpp:420
 #, kde-format
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
@@ -395,40 +395,40 @@ msgid ""
 "a></qt>"
 msgstr ""
 
-#: editor/settings/ipv4widget.cpp:424
+#: editor/settings/ipv4widget.cpp:430
 #, kde-format
 msgid "Send hostname:"
 msgstr ""
 
-#: editor/settings/ipv4widget.cpp:429
+#: editor/settings/ipv4widget.cpp:435
 #, kde-format
 msgid "DHCP hostname:"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ipv4widget.cpp:434 editor/settings/ui/ipv6.ui:197
+#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
 #, kde-format
 msgid "Default"
 msgstr "ברירת־מחדל"
 
-#: editor/settings/ipv4widget.cpp:435
+#: editor/settings/ipv4widget.cpp:441
 #, fuzzy, kde-format
 #| msgid " ms"
 msgctxt "Milliseconds"
 msgid " ms"
 msgstr " מילישניות"
 
-#: editor/settings/ipv4widget.cpp:438
+#: editor/settings/ipv4widget.cpp:444
 #, kde-format
 msgid "DAD timeout:"
 msgstr ""
 
-#: editor/settings/ipv4widget.cpp:459 editor/settings/ipv6widget.cpp:405
+#: editor/settings/ipv4widget.cpp:465 editor/settings/ipv6widget.cpp:405
 #, kde-format
 msgid "Edit DNS servers"
 msgstr "ערוך שרתי DNS"
 
-#: editor/settings/ipv4widget.cpp:484 editor/settings/ipv6widget.cpp:430
+#: editor/settings/ipv4widget.cpp:490 editor/settings/ipv6widget.cpp:430
 #, kde-format
 msgid "Edit DNS search domains"
 msgstr ""

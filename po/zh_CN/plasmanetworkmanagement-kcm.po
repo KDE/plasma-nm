@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"POT-Creation-Date: 2022-10-08 00:49+0000\n"
 "PO-Revision-Date: 2022-10-02 15:49\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,28 +18,28 @@ msgstr ""
 "pot\n"
 "X-Crowdin-File-ID: 4176\n"
 
-#: kcm.cpp:350
+#: kcm.cpp:345
 #, kde-format
 msgid "my_shared_connection"
 msgstr "my_shared_connection"
 
-#: kcm.cpp:421
+#: kcm.cpp:416
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "导出 VPN 连接"
 
-#: kcm.cpp:441
+#: kcm.cpp:436
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "您想要保存对连接“%1”的更改吗？"
 
-#: kcm.cpp:442
+#: kcm.cpp:437
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "保存更改"
 
-#: kcm.cpp:526
+#: kcm.cpp:521
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "导入 VPN 连接"

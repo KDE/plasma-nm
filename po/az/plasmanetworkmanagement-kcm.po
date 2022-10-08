@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-18 00:47+0000\n"
+"POT-Creation-Date: 2022-10-08 00:49+0000\n"
 "PO-Revision-Date: 2021-05-31 14:24+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -17,30 +17,30 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.04.1\n"
 
-#: kcm.cpp:350
+#: kcm.cpp:345
 #, kde-format
 msgid "my_shared_connection"
 msgstr "mənim_qoşulma_nöqtəm"
 
-#: kcm.cpp:421
+#: kcm.cpp:416
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "VPN bağlantısını ixrac etmək"
 
-#: kcm.cpp:441
+#: kcm.cpp:436
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr ""
 "\"%1\" bağlantısı üçün edilmiş dəyişiklikləri saxlamaq istədiyinizə "
 "əminsiniz?"
 
-#: kcm.cpp:442
+#: kcm.cpp:437
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Dəyişikliklər saxlanılsın"
 
-#: kcm.cpp:526
+#: kcm.cpp:521
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "VPN bağlantısını idxal etmək"

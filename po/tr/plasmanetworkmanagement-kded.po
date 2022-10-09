@@ -36,7 +36,6 @@ msgstr "Oturum aç"
 
 #: connectivitymonitor.cpp:71
 #, kde-format
-#| msgid "You need to log in to this network"
 msgid "You need to log into this network"
 msgstr "Bu ağa oturum açmalısınız"
 

@@ -12,6 +12,7 @@ Dependencies:
     'frameworks/kconfigwidgets': '@latest'
     'frameworks/kcoreaddons': '@latest'
     'frameworks/kdbusaddons': '@latest'
+    'frameworks/kdeclarative': '@latest'
     'frameworks/ki18n': '@latest'
     'frameworks/kio': '@latest'
     'frameworks/kjobwidgets': '@latest'

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 00:49+0000\n"
+"POT-Creation-Date: 2022-10-10 00:47+0000\n"
 "PO-Revision-Date: 2021-12-10 00:21+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -168,7 +168,7 @@ msgstr "Bluetooth"
 msgid "GSM"
 msgstr "GSM"
 
-#: editor/connectioneditorbase.cpp:237 editor/connectioneditorbase.cpp:281
+#: editor/connectioneditorbase.cpp:237 editor/connectioneditorbase.cpp:280
 #, kde-format
 msgid "PPP"
 msgstr "PPP"
@@ -209,22 +209,22 @@ msgstr "Komanda"
 msgid "WireGuard Interface"
 msgstr "WireGuard sąsaja"
 
-#: editor/connectioneditorbase.cpp:270
+#: editor/connectioneditorbase.cpp:269
 #, kde-format
 msgid "VPN (%1)"
 msgstr "VPN (%1)"
 
-#: editor/connectioneditorbase.cpp:287
+#: editor/connectioneditorbase.cpp:286
 #, kde-format
 msgid "IPv4"
 msgstr "IPv4"
 
-#: editor/connectioneditorbase.cpp:304
+#: editor/connectioneditorbase.cpp:303
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:486
+#: editor/connectioneditorbase.cpp:485
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "Nepavyko gauti paslapčių skirtų %1"

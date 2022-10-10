@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 00:49+0000\n"
+"POT-Creation-Date: 2022-10-10 00:47+0000\n"
 "PO-Revision-Date: 2022-03-17 23:11+0800\n"
 "Last-Translator: Chaoting Liu <brli@chakralinux.org>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -166,7 +166,7 @@ msgstr "藍牙"
 msgid "GSM"
 msgstr "GSM"
 
-#: editor/connectioneditorbase.cpp:237 editor/connectioneditorbase.cpp:281
+#: editor/connectioneditorbase.cpp:237 editor/connectioneditorbase.cpp:280
 #, kde-format
 msgid "PPP"
 msgstr "PPP"
@@ -207,22 +207,22 @@ msgstr "Team"
 msgid "WireGuard Interface"
 msgstr "WireGuard 介面"
 
-#: editor/connectioneditorbase.cpp:270
+#: editor/connectioneditorbase.cpp:269
 #, kde-format
 msgid "VPN (%1)"
 msgstr "VPN (%1)"
 
-#: editor/connectioneditorbase.cpp:287
+#: editor/connectioneditorbase.cpp:286
 #, kde-format
 msgid "IPv4"
 msgstr "IPv4"
 
-#: editor/connectioneditorbase.cpp:304
+#: editor/connectioneditorbase.cpp:303
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:486
+#: editor/connectioneditorbase.cpp:485
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "取得 %1 密碼失敗"

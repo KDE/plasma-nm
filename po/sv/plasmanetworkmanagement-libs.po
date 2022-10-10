@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 00:49+0000\n"
+"POT-Creation-Date: 2022-10-10 00:47+0000\n"
 "PO-Revision-Date: 2022-04-19 19:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -164,7 +164,7 @@ msgstr "Blåtand"
 msgid "GSM"
 msgstr "GSM"
 
-#: editor/connectioneditorbase.cpp:237 editor/connectioneditorbase.cpp:281
+#: editor/connectioneditorbase.cpp:237 editor/connectioneditorbase.cpp:280
 #, kde-format
 msgid "PPP"
 msgstr "PPP"
@@ -205,22 +205,22 @@ msgstr "Grupp"
 msgid "WireGuard Interface"
 msgstr "Wireguard-gränssnitt"
 
-#: editor/connectioneditorbase.cpp:270
+#: editor/connectioneditorbase.cpp:269
 #, kde-format
 msgid "VPN (%1)"
 msgstr "VPN (%1)"
 
-#: editor/connectioneditorbase.cpp:287
+#: editor/connectioneditorbase.cpp:286
 #, kde-format
 msgid "IPv4"
 msgstr "IPv4"
 
-#: editor/connectioneditorbase.cpp:304
+#: editor/connectioneditorbase.cpp:303
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:486
+#: editor/connectioneditorbase.cpp:485
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "Misslyckades hämta hemligheter för %1"

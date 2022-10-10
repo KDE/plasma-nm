@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 00:49+0000\n"
+"POT-Creation-Date: 2022-10-10 00:47+0000\n"
 "PO-Revision-Date: 2022-02-16 16:42+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -165,7 +165,7 @@ msgstr "Bluetooth"
 msgid "GSM"
 msgstr "GSM"
 
-#: editor/connectioneditorbase.cpp:237 editor/connectioneditorbase.cpp:281
+#: editor/connectioneditorbase.cpp:237 editor/connectioneditorbase.cpp:280
 #, kde-format
 msgid "PPP"
 msgstr "PPP"
@@ -206,22 +206,22 @@ msgstr ""
 msgid "WireGuard Interface"
 msgstr "Interfață WireGuard"
 
-#: editor/connectioneditorbase.cpp:270
+#: editor/connectioneditorbase.cpp:269
 #, kde-format
 msgid "VPN (%1)"
 msgstr "VPN (%1)"
 
-#: editor/connectioneditorbase.cpp:287
+#: editor/connectioneditorbase.cpp:286
 #, kde-format
 msgid "IPv4"
 msgstr "IPv4"
 
-#: editor/connectioneditorbase.cpp:304
+#: editor/connectioneditorbase.cpp:303
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:486
+#: editor/connectioneditorbase.cpp:485
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "Obținerea secretelor pentru %1 a eșuat"

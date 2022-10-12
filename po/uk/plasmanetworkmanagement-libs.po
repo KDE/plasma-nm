@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-10 00:47+0000\n"
+"POT-Creation-Date: 2022-10-12 00:48+0000\n"
 "PO-Revision-Date: 2022-04-17 08:42+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -2564,271 +2564,277 @@ msgctxt "Gsm modes (2G/3G/any)"
 msgid "Any"
 msgstr "Будь-який"
 
-#: editor/uiutils.cpp:484
+#: editor/uiutils.cpp:485
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "5G NR"
+msgstr ""
+
+#: editor/uiutils.cpp:489
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "LTE"
 msgstr "LTE"
 
-#: editor/uiutils.cpp:486
+#: editor/uiutils.cpp:491
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision B"
 msgstr "CDMA2000 EVDO, модифікація B"
 
-#: editor/uiutils.cpp:488
+#: editor/uiutils.cpp:493
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision A"
 msgstr "CDMA2000 EVDO, модифікація A"
 
-#: editor/uiutils.cpp:490
+#: editor/uiutils.cpp:495
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision 0"
 msgstr "CDMA2000 EVDO, модифікація 0"
 
-#: editor/uiutils.cpp:492
+#: editor/uiutils.cpp:497
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 1xRTT"
 msgstr "CDMA2000 1xRTT"
 
-#: editor/uiutils.cpp:494
+#: editor/uiutils.cpp:499
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSPA+"
 msgstr "HSPA+"
 
-#: editor/uiutils.cpp:496
+#: editor/uiutils.cpp:501
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSPA"
 msgstr "HSPA"
 
-#: editor/uiutils.cpp:498
+#: editor/uiutils.cpp:503
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSUPA"
 msgstr "HSUPA"
 
-#: editor/uiutils.cpp:500
+#: editor/uiutils.cpp:505
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSDPA"
 msgstr "HSDPA"
 
-#: editor/uiutils.cpp:502
+#: editor/uiutils.cpp:507
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "UMTS"
 msgstr "UMTS"
 
-#: editor/uiutils.cpp:504
+#: editor/uiutils.cpp:509
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "EDGE"
 msgstr "EDGE"
 
-#: editor/uiutils.cpp:506
+#: editor/uiutils.cpp:511
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "GPRS"
 msgstr "GPRS"
 
-#: editor/uiutils.cpp:508
+#: editor/uiutils.cpp:513
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "Compact GSM"
 msgstr "Compact GSM"
 
-#: editor/uiutils.cpp:510
+#: editor/uiutils.cpp:515
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "GSM"
 msgstr "GSM"
 
-#: editor/uiutils.cpp:512
+#: editor/uiutils.cpp:517
 #, kde-format
 msgctxt "Analog wireline modem"
 msgid "Analog"
 msgstr "Аналоговий"
 
-#: editor/uiutils.cpp:514 editor/uiutils.cpp:519
+#: editor/uiutils.cpp:519 editor/uiutils.cpp:524
 #, kde-format
 msgctxt "Unknown cellular access technology"
 msgid "Unknown"
 msgstr "Невідома"
 
-#: editor/uiutils.cpp:516
+#: editor/uiutils.cpp:521
 #, kde-format
 msgctxt "Any cellular access technology"
 msgid "Any"
 msgstr "Будь-яка"
 
-#: editor/uiutils.cpp:526
+#: editor/uiutils.cpp:531
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem is unlocked."
 msgstr "Модем розблоковано."
 
-#: editor/uiutils.cpp:528
+#: editor/uiutils.cpp:533
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN code."
 msgstr "Для роботи з SIM слід вказати код PIN."
 
-#: editor/uiutils.cpp:530
+#: editor/uiutils.cpp:535
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN2 code."
 msgstr "Для роботи з SIM слід вказати код PIN2."
 
-#: editor/uiutils.cpp:532
+#: editor/uiutils.cpp:537
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK code."
 msgstr "Для роботи з SIM слід вказати код PUK."
 
-#: editor/uiutils.cpp:534
+#: editor/uiutils.cpp:539
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK2 code."
 msgstr "Для роботи з SIM слід вказати код PUK2."
 
-#: editor/uiutils.cpp:536
+#: editor/uiutils.cpp:541
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PIN code."
 msgstr "Для роботи з модемом слід вказати код PIN надавача послуг."
 
-#: editor/uiutils.cpp:538
+#: editor/uiutils.cpp:543
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PUK code."
 msgstr "Для роботи з модемом слід вказати код PUK надавача послуг."
 
-#: editor/uiutils.cpp:540
+#: editor/uiutils.cpp:545
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PIN code."
 msgstr "Для роботи з модемом слід вказати код PIN до мережі."
 
-#: editor/uiutils.cpp:542
+#: editor/uiutils.cpp:547
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PUK code."
 msgstr "Для роботи з модемом слід вказати код PUK до мережі."
 
-#: editor/uiutils.cpp:544
+#: editor/uiutils.cpp:549
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PIN code."
 msgstr "Для роботи з модемом слід вказати код PIN."
 
-#: editor/uiutils.cpp:546
+#: editor/uiutils.cpp:551
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PIN code."
 msgstr "Для роботи з модемом слід вказати корпоративний код PIN."
 
-#: editor/uiutils.cpp:548
+#: editor/uiutils.cpp:553
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PUK code."
 msgstr "Для роботи з модемом слід вказати корпоративний код PUK."
 
-#: editor/uiutils.cpp:550
+#: editor/uiutils.cpp:555
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PIN code."
 msgstr "Для роботи з модемом слід вказати код PIN PH-FSIM."
 
-#: editor/uiutils.cpp:552
+#: editor/uiutils.cpp:557
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PUK code."
 msgstr "Для роботи з модемом слід вказати код PUK PH-FSIM."
 
-#: editor/uiutils.cpp:554
+#: editor/uiutils.cpp:559
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PIN code."
 msgstr "Для роботи з модемом слід вказати код PIN до підмножини команд мережі."
 
-#: editor/uiutils.cpp:556
+#: editor/uiutils.cpp:561
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PUK code."
 msgstr "Для роботи з модемом слід вказати код PUK до підмножини команд мережі."
 
-#: editor/uiutils.cpp:559
+#: editor/uiutils.cpp:564
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Lock reason unknown."
 msgstr "Невідома причина блокування."
 
-#: editor/uiutils.cpp:583
+#: editor/uiutils.cpp:588
 #, kde-format
 msgctxt "@label no security"
 msgid "Insecure"
 msgstr "Незахищена"
 
-#: editor/uiutils.cpp:586
+#: editor/uiutils.cpp:591
 #, kde-format
 msgctxt "@label WEP security"
 msgid "WEP"
 msgstr "WEP"
 
-#: editor/uiutils.cpp:589
+#: editor/uiutils.cpp:594
 #, kde-format
 msgctxt "@label LEAP security"
 msgid "LEAP"
 msgstr "LEAP"
 
-#: editor/uiutils.cpp:592
+#: editor/uiutils.cpp:597
 #, kde-format
 msgctxt "@label Dynamic WEP security"
 msgid "Dynamic WEP"
 msgstr "Динамічна WEP"
 
-#: editor/uiutils.cpp:595
+#: editor/uiutils.cpp:600
 #, kde-format
 msgctxt "@label WPA-PSK security"
 msgid "WPA-PSK"
 msgstr "WPA-PSK"
 
-#: editor/uiutils.cpp:598
+#: editor/uiutils.cpp:603
 #, kde-format
 msgctxt "@label WPA-EAP security"
 msgid "WPA-EAP"
 msgstr "WPA-EAP"
 
-#: editor/uiutils.cpp:601
+#: editor/uiutils.cpp:606
 #, kde-format
 msgctxt "@label WPA2-PSK security"
 msgid "WPA2-PSK"
 msgstr "WPA2-PSK"
 
-#: editor/uiutils.cpp:604
+#: editor/uiutils.cpp:609
 #, kde-format
 msgctxt "@label WPA2-EAP security"
 msgid "WPA2-EAP"
 msgstr "WPA2-EAP"
 
-#: editor/uiutils.cpp:607
+#: editor/uiutils.cpp:612
 #, kde-format
 msgctxt "@label WPA3-SAE security"
 msgid "WPA3-SAE"
 msgstr "WPA3-SAE"
 
-#: editor/uiutils.cpp:610
+#: editor/uiutils.cpp:615
 #, kde-format
 msgctxt "@label unknown security"
 msgid "Unknown security type"
 msgstr "Невідомий тип захисту"
 
-#: editor/uiutils.cpp:626
+#: editor/uiutils.cpp:631
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
@@ -2840,7 +2846,7 @@ msgstr[1] "%1 хвилини тому"
 msgstr[2] "%1 хвилин тому"
 msgstr[3] "одну хвилину тому"
 
-#: editor/uiutils.cpp:632
+#: editor/uiutils.cpp:637
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2852,21 +2858,21 @@ msgstr[1] "%1 години тому"
 msgstr[2] "%1 годин тому"
 msgstr[3] "одну годину тому"
 
-#: editor/uiutils.cpp:637
+#: editor/uiutils.cpp:642
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Yesterday"
 msgstr "Вчора"
 
-#: editor/uiutils.cpp:645
+#: editor/uiutils.cpp:650
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
 msgstr "Ніколи"
 
-#: editor/uiutils.cpp:660
+#: editor/uiutils.cpp:665
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
@@ -2878,7 +2884,7 @@ msgstr[1] "Востаннє використано %1 хвилини тому"
 msgstr[2] "Востаннє використано %1 хвилин тому"
 msgstr[3] "Востаннє використано одну хвилину тому"
 
-#: editor/uiutils.cpp:666
+#: editor/uiutils.cpp:671
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2890,19 +2896,19 @@ msgstr[1] "Востаннє використано %1 години тому"
 msgstr[2] "Востаннє використано %1 годин тому"
 msgstr[3] "Востаннє використано одну годину тому"
 
-#: editor/uiutils.cpp:671
+#: editor/uiutils.cpp:676
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
 msgstr "Востаннє використано вчора"
 
-#: editor/uiutils.cpp:673
+#: editor/uiutils.cpp:678
 #, kde-format
 msgid "Last used on %1"
 msgstr "Востаннє використано %1"
 
-#: editor/uiutils.cpp:679
+#: editor/uiutils.cpp:684
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-03-10 00:46+0000\n"
-"PO-Revision-Date: 2022-03-12 14:23+0300\n"
+"PO-Revision-Date: 2022-10-12 15:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.1\n"
 "X-POOTLE-MTIME: 1413106147.000000\n"
 
 #: openvpn.cpp:180
@@ -549,13 +549,13 @@ msgstr "Özel UDP parçalam boyutu seçin:"
 #: openvpnadvanced.ui:294
 #, kde-format
 msgid "Restrict tunnel TCP maximum segment size."
-msgstr "TPC tunnel azami parça boyutunu kısıtla."
+msgstr "Tünel TCP en büyük bölüt boyutunu sınırla."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMssRestrict)
 #: openvpnadvanced.ui:297
 #, kde-format
 msgid "Restrict TCP maximum segment size (MSS)"
-msgstr "Azami TCP parça boyutunu (MSS) sınırla"
+msgstr "TCP en büyük bölüt boyutunu sınırla (MSS)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:305

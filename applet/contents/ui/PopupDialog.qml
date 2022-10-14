@@ -32,7 +32,7 @@ PlasmaExtras.Representation {
     header: PlasmaExtras.PlasmoidHeading {
         focus: true
         leftPadding: PlasmaCore.Units.smallSpacing
-        Toolbar {
+        contentItem: Toolbar {
             id: toolbar
             width: parent.width
         }

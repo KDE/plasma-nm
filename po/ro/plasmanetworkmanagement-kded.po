@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 00:49+0000\n"
+"POT-Creation-Date: 2022-10-14 00:48+0000\n"
 "PO-Revision-Date: 2022-02-16 14:58+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -790,7 +790,7 @@ msgstr "Cod PUK:"
 msgid "Re-enter PIN code:"
 msgstr "Reintroduceți codul PIN:"
 
-#: secretagent.cpp:405
+#: secretagent.cpp:406
 #, fuzzy, kde-format
 #| msgid "Authentication to the VPN server failed."
 msgid "Authentication to %1 failed. Wrong password?"

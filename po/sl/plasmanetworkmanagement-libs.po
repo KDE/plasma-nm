@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-12 00:48+0000\n"
-"PO-Revision-Date: 2022-10-09 08:14+0200\n"
+"POT-Creation-Date: 2022-10-14 00:48+0000\n"
+"PO-Revision-Date: 2022-10-13 09:26+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "X-Generator: Poedit 3.1.1\n"
 
@@ -223,7 +223,7 @@ msgstr "IPv4"
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:485
+#: editor/connectioneditorbase.cpp:486
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "Ni bilo mogoče dobiti skrivnosti za %1"
@@ -452,12 +452,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "Prehod"
 
-#: editor/settings/security802-1x.cpp:483
+#: editor/settings/security802-1x.cpp:504
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Drugotno ujemanje zadeve"
 
-#: editor/settings/security802-1x.cpp:485
+#: editor/settings/security802-1x.cpp:506
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -468,7 +468,7 @@ msgstr ""
 "naslov IP&gt;</li><li>EMAIL: &lt;e-pošta&gt;</li><li>URI: &lt;spletni "
 "naslov, npr. https://www.kde.org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:502
+#: editor/settings/security802-1x.cpp:523
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Poveži se samo s temi strežniki"
@@ -480,7 +480,7 @@ msgstr "Izberite datoteko za uvoz"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:152
+#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
 #, kde-format
 msgid "Authentication:"
 msgstr "Overitev:"
@@ -540,7 +540,7 @@ msgstr "Zaščiteni EAP (PEAP)"
 #: editor/settings/ui/802-1x.ui:311 editor/settings/ui/802-1x.ui:440
 #: editor/settings/ui/802-1x.ui:544 editor/settings/ui/802-1x.ui:688
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
-#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:189
+#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
 #, kde-format
 msgid "Username:"
 msgstr "Uporabniško ime:"
@@ -556,8 +556,8 @@ msgstr "Uporabniško ime:"
 #: editor/settings/ui/802-1x.ui:324 editor/settings/ui/802-1x.ui:453
 #: editor/settings/ui/802-1x.ui:557 editor/settings/ui/802-1x.ui:701
 #: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
-#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:202
-#: editor/settings/ui/wifisecurity.ui:226
+#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:207
+#: editor/settings/ui/wifisecurity.ui:231
 #, kde-format
 msgid "Password:"
 msgstr "Geslo:"
@@ -1650,56 +1650,63 @@ msgstr "Podjetniški WPA/WPA2"
 msgid "WPA3 Personal"
 msgstr "Osebni WPA3"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:68
+#, fuzzy, kde-format
+#| msgid "WPA/WPA2 Enterprise"
+msgid "WPA3 Enterprise 192-bit"
+msgstr "Podjetniški WPA/WPA2"
+
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/wifisecurity.ui:71
+#: editor/settings/ui/wifisecurity.ui:76
 #, kde-format
 msgid "Security:"
 msgstr "Varnost:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wifisecurity.ui:92
+#: editor/settings/ui/wifisecurity.ui:97
 #, kde-format
 msgid "Key:"
 msgstr "Ključ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/wifisecurity.ui:112
+#: editor/settings/ui/wifisecurity.ui:117
 #, kde-format
 msgid "WEP index:"
 msgstr "Indeks WEP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:129
+#: editor/settings/ui/wifisecurity.ui:134
 #, kde-format
 msgid "1 (default)"
 msgstr "1 (privzeto)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:134
+#: editor/settings/ui/wifisecurity.ui:139
 #, kde-format
 msgid "2"
 msgstr "2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:139
+#: editor/settings/ui/wifisecurity.ui:144
 #, kde-format
 msgid "3"
 msgstr "3"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:144
+#: editor/settings/ui/wifisecurity.ui:149
 #, kde-format
 msgid "4"
 msgstr "4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:169
+#: editor/settings/ui/wifisecurity.ui:174
 #, kde-format
 msgid "Open System"
 msgstr "Odprt sistem"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:174
+#: editor/settings/ui/wifisecurity.ui:179
 #, kde-format
 msgid "Shared Key"
 msgstr "Deljeni ključ"
@@ -2561,7 +2568,7 @@ msgstr "Katerikoli"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G NR"
 
 #: editor/uiutils.cpp:489
 #, kde-format
@@ -2823,11 +2830,17 @@ msgstr "WPA3-SAE"
 
 #: editor/uiutils.cpp:615
 #, kde-format
+msgctxt "@label WPA3-EAP-SUITE-B-192 security"
+msgid "WPA3-EAP-SUITE-B-192"
+msgstr ""
+
+#: editor/uiutils.cpp:618
+#, kde-format
 msgctxt "@label unknown security"
 msgid "Unknown security type"
 msgstr "Neznana vrsta varnosti"
 
-#: editor/uiutils.cpp:631
+#: editor/uiutils.cpp:634
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
@@ -2839,7 +2852,7 @@ msgstr[1] "Pred %1 minutama"
 msgstr[2] "Pred %1 minutami"
 msgstr[3] "Pred %1 minutami"
 
-#: editor/uiutils.cpp:637
+#: editor/uiutils.cpp:640
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2851,21 +2864,21 @@ msgstr[1] "Pred %1 urama"
 msgstr[2] "Pred %1 urami"
 msgstr[3] "Pred %1 urami"
 
-#: editor/uiutils.cpp:642
+#: editor/uiutils.cpp:645
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Yesterday"
 msgstr "Včeraj"
 
-#: editor/uiutils.cpp:650
+#: editor/uiutils.cpp:653
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
 msgstr "Nikoli"
 
-#: editor/uiutils.cpp:665
+#: editor/uiutils.cpp:668
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
@@ -2877,7 +2890,7 @@ msgstr[1] "Nazadnje uporabljeno pred %1 minutama"
 msgstr[2] "Nazadnje uporabljeno pred %1 minutami"
 msgstr[3] "Nazadnje uporabljeno pred %1 minutami"
 
-#: editor/uiutils.cpp:671
+#: editor/uiutils.cpp:674
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2889,19 +2902,19 @@ msgstr[1] "Nazadnje uporabljeno pred %1 urama"
 msgstr[2] "Nazadnje uporabljeno pred %1 urami"
 msgstr[3] "Nazadnje uporabljeno pred %1 urami"
 
-#: editor/uiutils.cpp:676
+#: editor/uiutils.cpp:679
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
 msgstr "Nazadnje uporabljeno včeraj"
 
-#: editor/uiutils.cpp:678
+#: editor/uiutils.cpp:681
 #, kde-format
 msgid "Last used on %1"
 msgstr "Nazadnje uporabljeno %1"
 
-#: editor/uiutils.cpp:684
+#: editor/uiutils.cpp:687
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
@@ -3325,52 +3338,52 @@ msgstr ""
 "Programu NetworkManager manjka podpora za '%1' povezave VPN. Uporabite "
 "namestilnik, da to podporo namestite."
 
-#: handler.cpp:770
+#: handler.cpp:774
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Ni bilo mogoče omogočiti %1"
 
-#: handler.cpp:774
+#: handler.cpp:778
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Ni bilo mogoče dodati %1"
 
-#: handler.cpp:778
+#: handler.cpp:782
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Povezave %1 ni bilo mogoče dodati"
 
-#: handler.cpp:782
+#: handler.cpp:786
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Povezave %1 ni bilo mogoče onemogočiti"
 
-#: handler.cpp:786
+#: handler.cpp:790
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Ni bilo mogoče odstraniti %1"
 
-#: handler.cpp:790
+#: handler.cpp:794
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Povezave %1 ni bilo mogoče posodobiti"
 
-#: handler.cpp:801
+#: handler.cpp:805
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Ni bilo mogoče ustvariti vroče točke %1"
 
-#: handler.cpp:820
+#: handler.cpp:824
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Povezava %1 je bila dodana"
 
-#: handler.cpp:824
+#: handler.cpp:828
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Povezava %1 je bila odstranjena"
 
-#: handler.cpp:828
+#: handler.cpp:832
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Povezava %1 je bila posodobljena"

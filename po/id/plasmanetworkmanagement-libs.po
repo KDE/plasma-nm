@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-12 00:48+0000\n"
+"POT-Creation-Date: 2022-10-14 00:48+0000\n"
 "PO-Revision-Date: 2022-08-26 23:44+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -220,7 +220,7 @@ msgstr "IPv4"
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:485
+#: editor/connectioneditorbase.cpp:486
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "Gagal mendapatkan rahasiaan untuk %1"
@@ -450,12 +450,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "Gerbang"
 
-#: editor/settings/security802-1x.cpp:483
+#: editor/settings/security802-1x.cpp:504
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Subjek Alternatif yang Cocok"
 
-#: editor/settings/security802-1x.cpp:485
+#: editor/settings/security802-1x.cpp:506
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -466,7 +466,7 @@ msgstr ""
 "ip&gt;</li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;url, misal https://www."
 "kde.org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:502
+#: editor/settings/security802-1x.cpp:523
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Koneksikan ke server ini saja"
@@ -478,7 +478,7 @@ msgstr "Pilih file untuk impor"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:152
+#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
 #, kde-format
 msgid "Authentication:"
 msgstr "Autentikasi:"
@@ -538,7 +538,7 @@ msgstr "Protected EAP (PEAP)"
 #: editor/settings/ui/802-1x.ui:311 editor/settings/ui/802-1x.ui:440
 #: editor/settings/ui/802-1x.ui:544 editor/settings/ui/802-1x.ui:688
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
-#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:189
+#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
 #, kde-format
 msgid "Username:"
 msgstr "Nama pengguna:"
@@ -554,8 +554,8 @@ msgstr "Nama pengguna:"
 #: editor/settings/ui/802-1x.ui:324 editor/settings/ui/802-1x.ui:453
 #: editor/settings/ui/802-1x.ui:557 editor/settings/ui/802-1x.ui:701
 #: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
-#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:202
-#: editor/settings/ui/wifisecurity.ui:226
+#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:207
+#: editor/settings/ui/wifisecurity.ui:231
 #, kde-format
 msgid "Password:"
 msgstr "Sandi:"
@@ -1653,56 +1653,63 @@ msgstr "WPA/WPA2 Perusahaan"
 msgid "WPA3 Personal"
 msgstr "WPA3 Personal"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:68
+#, fuzzy, kde-format
+#| msgid "WPA/WPA2 Enterprise"
+msgid "WPA3 Enterprise 192-bit"
+msgstr "WPA/WPA2 Perusahaan"
+
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/wifisecurity.ui:71
+#: editor/settings/ui/wifisecurity.ui:76
 #, kde-format
 msgid "Security:"
 msgstr "Keamanan:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wifisecurity.ui:92
+#: editor/settings/ui/wifisecurity.ui:97
 #, kde-format
 msgid "Key:"
 msgstr "Kunci:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/wifisecurity.ui:112
+#: editor/settings/ui/wifisecurity.ui:117
 #, kde-format
 msgid "WEP index:"
 msgstr "Indeks WEP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:129
+#: editor/settings/ui/wifisecurity.ui:134
 #, kde-format
 msgid "1 (default)"
 msgstr "1 (baku)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:134
+#: editor/settings/ui/wifisecurity.ui:139
 #, kde-format
 msgid "2"
 msgstr "2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:139
+#: editor/settings/ui/wifisecurity.ui:144
 #, kde-format
 msgid "3"
 msgstr "3"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:144
+#: editor/settings/ui/wifisecurity.ui:149
 #, kde-format
 msgid "4"
 msgstr "4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:169
+#: editor/settings/ui/wifisecurity.ui:174
 #, kde-format
 msgid "Open System"
 msgstr "Buka Sistem"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:174
+#: editor/settings/ui/wifisecurity.ui:179
 #, kde-format
 msgid "Shared Key"
 msgstr "Berbagi Kunci"
@@ -2834,11 +2841,17 @@ msgstr "WPA3-SAE"
 
 #: editor/uiutils.cpp:615
 #, kde-format
+msgctxt "@label WPA3-EAP-SUITE-B-192 security"
+msgid "WPA3-EAP-SUITE-B-192"
+msgstr ""
+
+#: editor/uiutils.cpp:618
+#, kde-format
 msgctxt "@label unknown security"
 msgid "Unknown security type"
 msgstr "Tipe keamanan takdiketahui"
 
-#: editor/uiutils.cpp:631
+#: editor/uiutils.cpp:634
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
@@ -2848,7 +2861,7 @@ msgid_plural "%1 minutes ago"
 msgstr[0] "Semenit yang lalu"
 msgstr[1] "%1 menit yang lalu"
 
-#: editor/uiutils.cpp:637
+#: editor/uiutils.cpp:640
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2858,21 +2871,21 @@ msgid_plural "%1 hours ago"
 msgstr[0] "Sejam yang lalu"
 msgstr[1] "%1 jam yang lalu"
 
-#: editor/uiutils.cpp:642
+#: editor/uiutils.cpp:645
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Yesterday"
 msgstr "Kemarin"
 
-#: editor/uiutils.cpp:650
+#: editor/uiutils.cpp:653
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
 msgstr "Tidak pernah"
 
-#: editor/uiutils.cpp:665
+#: editor/uiutils.cpp:668
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
@@ -2882,7 +2895,7 @@ msgid_plural "Last used %1 minutes ago"
 msgstr[0] "Terakhir digunakan semenit yang lalu"
 msgstr[1] "Terakhir digunakan %1 menit yang lalu"
 
-#: editor/uiutils.cpp:671
+#: editor/uiutils.cpp:674
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2892,7 +2905,7 @@ msgid_plural "Last used %1 hours ago"
 msgstr[0] "Terakhir digunakan sejam yang lalu"
 msgstr[1] "Terakhir digunakan %1 jam yang lalu"
 
-#: editor/uiutils.cpp:676
+#: editor/uiutils.cpp:679
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
@@ -2900,12 +2913,12 @@ msgid "Last used yesterday"
 msgstr "Terakhir digunakan kemarin"
 
 # %1 is time?
-#: editor/uiutils.cpp:678
+#: editor/uiutils.cpp:681
 #, kde-format
 msgid "Last used on %1"
 msgstr "Terakhir digunakan pada %1"
 
-#: editor/uiutils.cpp:684
+#: editor/uiutils.cpp:687
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
@@ -3332,52 +3345,52 @@ msgstr ""
 "NetworkManager kehilangan dukungan koneksi VPN '%1'. Mohon gunakan manajer "
 "paket untuk menginstalnya."
 
-#: handler.cpp:770
+#: handler.cpp:774
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Gagal mengaktifkan %1"
 
-#: handler.cpp:774
+#: handler.cpp:778
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Gagal menambahkan %1"
 
-#: handler.cpp:778
+#: handler.cpp:782
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Gagal menambahkan koneksi %1"
 
-#: handler.cpp:782
+#: handler.cpp:786
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Gagal menonaktifkan %1"
 
-#: handler.cpp:786
+#: handler.cpp:790
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Gagal menghapus %1"
 
-#: handler.cpp:790
+#: handler.cpp:794
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Gagal memperbarui koneksi %1"
 
-#: handler.cpp:801
+#: handler.cpp:805
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Gagal menciptakan hotspot %1"
 
-#: handler.cpp:820
+#: handler.cpp:824
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Koneksi %1 telah ditambahkan"
 
-#: handler.cpp:824
+#: handler.cpp:828
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Koneksi %1 telah dihapus"
 
-#: handler.cpp:828
+#: handler.cpp:832
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Koneksi %1 telah diperbarui"

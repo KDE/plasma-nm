@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-07 00:48+0000\n"
+"POT-Creation-Date: 2022-10-15 00:48+0000\n"
 "PO-Revision-Date: 2022-10-08 13:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -130,115 +130,115 @@ msgstr "&Ağ Bağlantılarını Yapılandır…"
 msgid "Password…"
 msgstr "Parola…"
 
-#: contents/ui/PopupDialog.qml:101
+#: contents/ui/PopupDialog.qml:102
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Uçak kipi etkin"
 
-#: contents/ui/PopupDialog.qml:105
+#: contents/ui/PopupDialog.qml:106
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Kablosuz ve mobil ağlar devre dışı bırakıldı"
 
-#: contents/ui/PopupDialog.qml:107
+#: contents/ui/PopupDialog.qml:108
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Kablosuz devre dışı"
 
-#: contents/ui/PopupDialog.qml:110
+#: contents/ui/PopupDialog.qml:111
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobil ağ devre dışı bırakıldı"
 
-#: contents/ui/PopupDialog.qml:113
+#: contents/ui/PopupDialog.qml:114
 #, kde-format
 msgid "No matches"
 msgstr "Eşleşme yok"
 
-#: contents/ui/PopupDialog.qml:115
+#: contents/ui/PopupDialog.qml:116
 #, kde-format
 msgid "No available connections"
 msgstr "Kullanılabilir bağlantı yok"
 
-#: contents/ui/PopupDialog.qml:142
+#: contents/ui/PopupDialog.qml:143
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
 msgstr "Bağlantı türü: ADSL"
 
-#: contents/ui/PopupDialog.qml:144
+#: contents/ui/PopupDialog.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
 msgstr "Bağlantı türü: Bluetooth"
 
-#: contents/ui/PopupDialog.qml:146
+#: contents/ui/PopupDialog.qml:147
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
 msgstr "Bağlantı türü: Köprü"
 
-#: contents/ui/PopupDialog.qml:148
+#: contents/ui/PopupDialog.qml:149
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
 msgstr "Bağlantı türü: CDMA"
 
-#: contents/ui/PopupDialog.qml:150
+#: contents/ui/PopupDialog.qml:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
 msgstr "Bağlantı türü: GSM"
 
-#: contents/ui/PopupDialog.qml:152
+#: contents/ui/PopupDialog.qml:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
 msgstr "Bağlantı türü: Infiniband"
 
-#: contents/ui/PopupDialog.qml:154
+#: contents/ui/PopupDialog.qml:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
 msgstr "Bağlantı türü: OLPC Mesh"
 
-#: contents/ui/PopupDialog.qml:156
+#: contents/ui/PopupDialog.qml:157
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
 msgstr "Bağlantı türü: PPOPE"
 
-#: contents/ui/PopupDialog.qml:158
+#: contents/ui/PopupDialog.qml:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
 msgstr "Bağlantı türü: VLAN"
 
-#: contents/ui/PopupDialog.qml:160
+#: contents/ui/PopupDialog.qml:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
 msgstr "Bağlantı türü: VPN"
 
-#: contents/ui/PopupDialog.qml:162
+#: contents/ui/PopupDialog.qml:163
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
 msgstr "Bağlantı türü: Wimax"
 
-#: contents/ui/PopupDialog.qml:164
+#: contents/ui/PopupDialog.qml:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
 msgstr "Bağlantı türü: Kablolu"
 
-#: contents/ui/PopupDialog.qml:166
+#: contents/ui/PopupDialog.qml:167
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
 msgstr "Bağlantı türü: Kablosuz"
 
-#: contents/ui/PopupDialog.qml:168
+#: contents/ui/PopupDialog.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"

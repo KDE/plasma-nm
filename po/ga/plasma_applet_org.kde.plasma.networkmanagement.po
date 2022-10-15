@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-07 00:48+0000\n"
+"POT-Creation-Date: 2022-10-15 00:48+0000\n"
 "PO-Revision-Date: 2009-02-05 06:35-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -129,115 +129,115 @@ msgstr "Cumraigh Fógairt..."
 msgid "Password…"
 msgstr "Focal Faire:"
 
-#: contents/ui/PopupDialog.qml:101
+#: contents/ui/PopupDialog.qml:102
 #, fuzzy, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Díchumasaíodh crua-earraí gan sreang"
 
-#: contents/ui/PopupDialog.qml:105
+#: contents/ui/PopupDialog.qml:106
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:107
+#: contents/ui/PopupDialog.qml:108
 #, fuzzy, kde-format
 msgid "Wireless is deactivated"
 msgstr "Díchumasaíodh crua-earraí gan sreang"
 
-#: contents/ui/PopupDialog.qml:110
+#: contents/ui/PopupDialog.qml:111
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:113
+#: contents/ui/PopupDialog.qml:114
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:115
+#: contents/ui/PopupDialog.qml:116
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "Ceangal córai&s"
 
-#: contents/ui/PopupDialog.qml:142
+#: contents/ui/PopupDialog.qml:143
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
 msgstr "Ceangal"
 
-#: contents/ui/PopupDialog.qml:144
+#: contents/ui/PopupDialog.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:146
+#: contents/ui/PopupDialog.qml:147
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
 msgstr "Ceangal"
 
-#: contents/ui/PopupDialog.qml:148
+#: contents/ui/PopupDialog.qml:149
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
 msgstr "Ceangal"
 
-#: contents/ui/PopupDialog.qml:150
+#: contents/ui/PopupDialog.qml:151
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
 msgstr "Ceangal"
 
-#: contents/ui/PopupDialog.qml:152
+#: contents/ui/PopupDialog.qml:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:154
+#: contents/ui/PopupDialog.qml:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:156
+#: contents/ui/PopupDialog.qml:157
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
 msgstr "Ceangal"
 
-#: contents/ui/PopupDialog.qml:158
+#: contents/ui/PopupDialog.qml:159
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
 msgstr "Ceangal"
 
-#: contents/ui/PopupDialog.qml:160
+#: contents/ui/PopupDialog.qml:161
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
 msgstr "Ceangal"
 
-#: contents/ui/PopupDialog.qml:162
+#: contents/ui/PopupDialog.qml:163
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
 msgstr "Ceangal"
 
-#: contents/ui/PopupDialog.qml:164
+#: contents/ui/PopupDialog.qml:165
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
 msgstr "Ceangal"
 
-#: contents/ui/PopupDialog.qml:166
+#: contents/ui/PopupDialog.qml:167
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:168
+#: contents/ui/PopupDialog.qml:169
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"

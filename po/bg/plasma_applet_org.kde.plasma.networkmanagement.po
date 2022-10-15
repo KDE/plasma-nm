@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-07 00:48+0000\n"
+"POT-Creation-Date: 2022-10-15 00:48+0000\n"
 "PO-Revision-Date: 2022-09-16 09:38+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -127,115 +127,115 @@ msgstr "&Конфигуриране на мрежови връзки…"
 msgid "Password…"
 msgstr "Парола…"
 
-#: contents/ui/PopupDialog.qml:101
+#: contents/ui/PopupDialog.qml:102
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Самолетен режим е активиран"
 
-#: contents/ui/PopupDialog.qml:105
+#: contents/ui/PopupDialog.qml:106
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Безжичните и мобилните мрежи са деактивирани"
 
-#: contents/ui/PopupDialog.qml:107
+#: contents/ui/PopupDialog.qml:108
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Безжичната връзка е деактивирана"
 
-#: contents/ui/PopupDialog.qml:110
+#: contents/ui/PopupDialog.qml:111
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Мобилната мрежа е деактивирана"
 
-#: contents/ui/PopupDialog.qml:113
+#: contents/ui/PopupDialog.qml:114
 #, kde-format
 msgid "No matches"
 msgstr "Няма съвпадения"
 
-#: contents/ui/PopupDialog.qml:115
+#: contents/ui/PopupDialog.qml:116
 #, kde-format
 msgid "No available connections"
 msgstr "Няма налични връзки"
 
-#: contents/ui/PopupDialog.qml:142
+#: contents/ui/PopupDialog.qml:143
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
 msgstr "Видът на връзката е ADSL"
 
-#: contents/ui/PopupDialog.qml:144
+#: contents/ui/PopupDialog.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
 msgstr "Видът на връзката е Bluetooth"
 
-#: contents/ui/PopupDialog.qml:146
+#: contents/ui/PopupDialog.qml:147
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
 msgstr "Видът на връзката е Bridge"
 
-#: contents/ui/PopupDialog.qml:148
+#: contents/ui/PopupDialog.qml:149
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
 msgstr "Видът на връзката е CDMA"
 
-#: contents/ui/PopupDialog.qml:150
+#: contents/ui/PopupDialog.qml:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
 msgstr "Видът на връзката е GSM"
 
-#: contents/ui/PopupDialog.qml:152
+#: contents/ui/PopupDialog.qml:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
 msgstr "Видът на връзката е Infiniband"
 
-#: contents/ui/PopupDialog.qml:154
+#: contents/ui/PopupDialog.qml:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
 msgstr "Видът на връзката е OLPC Mesh"
 
-#: contents/ui/PopupDialog.qml:156
+#: contents/ui/PopupDialog.qml:157
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
 msgstr "Видът на връзката е PPOPE"
 
-#: contents/ui/PopupDialog.qml:158
+#: contents/ui/PopupDialog.qml:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
 msgstr "Видът на връзката е VLAN"
 
-#: contents/ui/PopupDialog.qml:160
+#: contents/ui/PopupDialog.qml:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
 msgstr "Видът на връзката е VPN"
 
-#: contents/ui/PopupDialog.qml:162
+#: contents/ui/PopupDialog.qml:163
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
 msgstr "Видът на връзката е Wimax"
 
-#: contents/ui/PopupDialog.qml:164
+#: contents/ui/PopupDialog.qml:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
 msgstr "Видът на връзката е кабелна"
 
-#: contents/ui/PopupDialog.qml:166
+#: contents/ui/PopupDialog.qml:167
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
 msgstr "Видът на връзката е безжична"
 
-#: contents/ui/PopupDialog.qml:168
+#: contents/ui/PopupDialog.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"

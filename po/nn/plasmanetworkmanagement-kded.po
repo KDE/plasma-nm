@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-29 00:48+0000\n"
+"POT-Creation-Date: 2022-10-14 00:48+0000\n"
 "PO-Revision-Date: 2020-10-22 21:02+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -36,8 +36,8 @@ msgstr "Logg på"
 
 #: connectivitymonitor.cpp:71
 #, kde-format
-msgid "You need to log in to this network"
-msgstr "Du må logga på nettverket"
+msgid "You need to log into this network"
+msgstr ""
 
 #: connectivitymonitor.cpp:91
 #, kde-format
@@ -760,7 +760,7 @@ msgstr "PUK-kode:"
 msgid "Re-enter PIN code:"
 msgstr "Tast inn ny PIN-kode igjen:"
 
-#: secretagent.cpp:405
+#: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Feil ved autentisering til %1. Feil passord?"

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-07 00:48+0000\n"
+"POT-Creation-Date: 2022-10-15 00:48+0000\n"
 "PO-Revision-Date: 2022-09-24 14:03+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -137,116 +137,116 @@ msgstr "На&строить сетевые соединения..."
 msgid "Password…"
 msgstr "Пароль..."
 
-#: contents/ui/PopupDialog.qml:101
+#: contents/ui/PopupDialog.qml:102
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Режим полёта активен"
 
-#: contents/ui/PopupDialog.qml:105
+#: contents/ui/PopupDialog.qml:106
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Беспроводные и мобильные сети отключены"
 
-#: contents/ui/PopupDialog.qml:107
+#: contents/ui/PopupDialog.qml:108
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Беспроводная сеть отключена"
 
-#: contents/ui/PopupDialog.qml:110
+#: contents/ui/PopupDialog.qml:111
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Мобильная сеть отключена"
 
-#: contents/ui/PopupDialog.qml:113
+#: contents/ui/PopupDialog.qml:114
 #, kde-format
 msgid "No matches"
 msgstr "Совпадений не найдено"
 
-#: contents/ui/PopupDialog.qml:115
+#: contents/ui/PopupDialog.qml:116
 #, kde-format
 msgid "No available connections"
 msgstr "Нет доступных соединений"
 
-#: contents/ui/PopupDialog.qml:142
+#: contents/ui/PopupDialog.qml:143
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
 msgstr "Тип подключения: ADSL"
 
-#: contents/ui/PopupDialog.qml:144
+#: contents/ui/PopupDialog.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
 msgstr "Тип подключения: Bluetooth"
 
-#: contents/ui/PopupDialog.qml:146
+#: contents/ui/PopupDialog.qml:147
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
 msgstr "Тип подключения: мост"
 
-#: contents/ui/PopupDialog.qml:148
+#: contents/ui/PopupDialog.qml:149
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
 msgstr "Тип подключения: CDMA"
 
-#: contents/ui/PopupDialog.qml:150
+#: contents/ui/PopupDialog.qml:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
 msgstr "Тип подключения: GSM"
 
-#: contents/ui/PopupDialog.qml:152
+#: contents/ui/PopupDialog.qml:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
 msgstr "Тип подключения: Infiniband"
 
-#: contents/ui/PopupDialog.qml:154
+#: contents/ui/PopupDialog.qml:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
 msgstr "Тип подключения: mesh-сеть OLPC"
 
-#: contents/ui/PopupDialog.qml:156
+#: contents/ui/PopupDialog.qml:157
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
 msgstr "Тип подключения: PPOPE"
 
-#: contents/ui/PopupDialog.qml:158
+#: contents/ui/PopupDialog.qml:159
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
 msgstr "Тип подключения: VLAN"
 
-#: contents/ui/PopupDialog.qml:160
+#: contents/ui/PopupDialog.qml:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
 msgstr "Тип подключения: VPN"
 
 # BUGME: WiMAX? --ayavorsky 2022-08-11
-#: contents/ui/PopupDialog.qml:162
+#: contents/ui/PopupDialog.qml:163
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
 msgstr "Тип подключения: WiMAX"
 
-#: contents/ui/PopupDialog.qml:164
+#: contents/ui/PopupDialog.qml:165
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
 msgstr "Тип подключения: проводное"
 
-#: contents/ui/PopupDialog.qml:166
+#: contents/ui/PopupDialog.qml:167
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
 msgstr "Тип подключения: беспроводное"
 
-#: contents/ui/PopupDialog.qml:168
+#: contents/ui/PopupDialog.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"

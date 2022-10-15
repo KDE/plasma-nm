@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-07 00:48+0000\n"
+"POT-Creation-Date: 2022-10-15 00:48+0000\n"
 "PO-Revision-Date: 2010-12-17 15:28+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -132,12 +132,12 @@ msgstr "การเชื่อมต่อ"
 msgid "Password…"
 msgstr "รหัสผ่าน:"
 
-#: contents/ui/PopupDialog.qml:101
+#: contents/ui/PopupDialog.qml:102
 #, fuzzy, kde-format
 msgid "Airplane mode is enabled"
 msgstr "ฮาร์ดแวร์ไร้สายเปิดใช้งานแล้ว"
 
-#: contents/ui/PopupDialog.qml:105
+#: contents/ui/PopupDialog.qml:106
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:status Notification text when a single wireless network disappeared"
@@ -145,105 +145,105 @@ msgstr "ฮาร์ดแวร์ไร้สายเปิดใช้งา
 msgid "Wireless and mobile networks are deactivated"
 msgstr "ไม่พบเครือข่ายไร้สาย %1 แล้ว"
 
-#: contents/ui/PopupDialog.qml:107
+#: contents/ui/PopupDialog.qml:108
 #, fuzzy, kde-format
 msgid "Wireless is deactivated"
 msgstr "ฮาร์ดแวร์ไร้สายเปิดใช้งานแล้ว"
 
-#: contents/ui/PopupDialog.qml:110
+#: contents/ui/PopupDialog.qml:111
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:113
+#: contents/ui/PopupDialog.qml:114
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:115
+#: contents/ui/PopupDialog.qml:116
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "การเชื่อมต่อ"
 
-#: contents/ui/PopupDialog.qml:142
+#: contents/ui/PopupDialog.qml:143
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
 msgstr "ไม่ทราบชนิดความปลอดภัย"
 
-#: contents/ui/PopupDialog.qml:144
+#: contents/ui/PopupDialog.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:146
+#: contents/ui/PopupDialog.qml:147
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
 msgstr "ไม่ทราบชนิดความปลอดภัย"
 
-#: contents/ui/PopupDialog.qml:148
+#: contents/ui/PopupDialog.qml:149
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
 msgstr "ไม่ทราบชนิดความปลอดภัย"
 
-#: contents/ui/PopupDialog.qml:150
+#: contents/ui/PopupDialog.qml:151
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
 msgstr "ไม่ทราบชนิดความปลอดภัย"
 
-#: contents/ui/PopupDialog.qml:152
+#: contents/ui/PopupDialog.qml:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:154
+#: contents/ui/PopupDialog.qml:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:156
+#: contents/ui/PopupDialog.qml:157
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
 msgstr "ไม่ทราบชนิดความปลอดภัย"
 
-#: contents/ui/PopupDialog.qml:158
+#: contents/ui/PopupDialog.qml:159
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
 msgstr "ไม่ทราบชนิดความปลอดภัย"
 
-#: contents/ui/PopupDialog.qml:160
+#: contents/ui/PopupDialog.qml:161
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
 msgstr "ไม่ทราบชนิดความปลอดภัย"
 
-#: contents/ui/PopupDialog.qml:162
+#: contents/ui/PopupDialog.qml:163
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
 msgstr "ไม่ทราบชนิดความปลอดภัย"
 
-#: contents/ui/PopupDialog.qml:164
+#: contents/ui/PopupDialog.qml:165
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
 msgstr "การเชื่อมต่อล้มเหลว"
 
-#: contents/ui/PopupDialog.qml:166
+#: contents/ui/PopupDialog.qml:167
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:168
+#: contents/ui/PopupDialog.qml:169
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip user action"
 #| msgid "Choose a connection icon"

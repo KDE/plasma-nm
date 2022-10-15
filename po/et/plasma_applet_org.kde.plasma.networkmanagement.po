@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-07 00:48+0000\n"
+"POT-Creation-Date: 2022-10-15 00:48+0000\n"
 "PO-Revision-Date: 2020-09-28 13:41+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -133,116 +133,116 @@ msgstr "Seadista &võrguühendusi ..."
 msgid "Password…"
 msgstr "Parool:"
 
-#: contents/ui/PopupDialog.qml:101
+#: contents/ui/PopupDialog.qml:102
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Lennurežiim on sisse lülitatud"
 
-#: contents/ui/PopupDialog.qml:105
+#: contents/ui/PopupDialog.qml:106
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Juhtmeta ja mobiilne side on välja lülitatud"
 
-#: contents/ui/PopupDialog.qml:107
+#: contents/ui/PopupDialog.qml:108
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Juhtmeta side on välja lülitatud"
 
-#: contents/ui/PopupDialog.qml:110
+#: contents/ui/PopupDialog.qml:111
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobiilne side on välja lülitatud"
 
-#: contents/ui/PopupDialog.qml:113
+#: contents/ui/PopupDialog.qml:114
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:115
+#: contents/ui/PopupDialog.qml:116
 #, kde-format
 msgid "No available connections"
 msgstr "Ühtegi ühendust pole saadaval"
 
-#: contents/ui/PopupDialog.qml:142
+#: contents/ui/PopupDialog.qml:143
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
 msgstr "Tundmatu turbetüüp"
 
-#: contents/ui/PopupDialog.qml:144
+#: contents/ui/PopupDialog.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:146
+#: contents/ui/PopupDialog.qml:147
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
 msgstr "Tundmatu turbetüüp"
 
-#: contents/ui/PopupDialog.qml:148
+#: contents/ui/PopupDialog.qml:149
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
 msgstr "Tundmatu turbetüüp"
 
-#: contents/ui/PopupDialog.qml:150
+#: contents/ui/PopupDialog.qml:151
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
 msgstr "Tundmatu turbetüüp"
 
-#: contents/ui/PopupDialog.qml:152
+#: contents/ui/PopupDialog.qml:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:154
+#: contents/ui/PopupDialog.qml:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:156
+#: contents/ui/PopupDialog.qml:157
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
 msgstr "Tundmatu turbetüüp"
 
-#: contents/ui/PopupDialog.qml:158
+#: contents/ui/PopupDialog.qml:159
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
 msgstr "Tundmatu turbetüüp"
 
-#: contents/ui/PopupDialog.qml:160
+#: contents/ui/PopupDialog.qml:161
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
 msgstr "Tundmatu turbetüüp"
 
-#: contents/ui/PopupDialog.qml:162
+#: contents/ui/PopupDialog.qml:163
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
 msgstr "Tundmatu turbetüüp"
 
-#: contents/ui/PopupDialog.qml:164
+#: contents/ui/PopupDialog.qml:165
 #, fuzzy, kde-format
 #| msgid "Connection Speed"
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
 msgstr "Ühenduse kiirus"
 
-#: contents/ui/PopupDialog.qml:166
+#: contents/ui/PopupDialog.qml:167
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:168
+#: contents/ui/PopupDialog.qml:169
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip user action"
 #| msgid "Choose a connection icon"

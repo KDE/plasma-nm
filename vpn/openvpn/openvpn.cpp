@@ -203,9 +203,9 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
 #endif
     } else {
 #if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
-        copyCertificates = buttonCode == KMessageBox::Yes;
-#else
         copyCertificates = buttonCode == KMessageBox::ButtonCode::PrimaryAction;
+#else
+        copyCertificates = buttonCode == KMessageBox::Yes;
 #endif
     }
 

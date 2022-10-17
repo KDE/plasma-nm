@@ -21,6 +21,7 @@
 
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <kwidgetsaddons_version.h>
 
 TeamWidget::TeamWidget(const QString &masterUuid, const QString &masterId, const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)
@@ -177,14 +178,23 @@ void TeamWidget::deleteTeam()
 
     if (connection) {
         qCDebug(PLASMA_NM_EDITOR_LOG) << "About to delete teamed connection" << currentItem->text() << uuid;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        if (KMessageBox::questionTwoActions(this,
+#else
         if (KMessageBox::questionYesNo(this,
-                                       i18n("Do you want to remove the connection '%1'?", connection->name()),
-                                       i18n("Remove Connection"),
-                                       KStandardGuiItem::remove(),
-                                       KStandardGuiItem::no(),
-                                       QString(),
-                                       KMessageBox::Dangerous)
+
+#endif
+                                            i18n("Do you want to remove the connection '%1'?", connection->name()),
+                                            i18n("Remove Connection"),
+                                            KStandardGuiItem::remove(),
+                                            KStandardGuiItem::no(),
+                                            QString(),
+                                            KMessageBox::Dangerous)
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            == KMessageBox::ButtonCode::PrimaryAction) {
+#else
             == KMessageBox::Yes) {
+#endif
             connection->remove();
             delete currentItem;
             slotWidgetChanged();

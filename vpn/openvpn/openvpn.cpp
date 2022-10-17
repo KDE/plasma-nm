@@ -18,6 +18,7 @@
 #include <KMessageBox>
 #include <KPluginFactory>
 #include <QRegularExpression>
+#include <kwidgetsaddons_version.h>
 
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Ipv4Setting>
@@ -183,16 +184,29 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
 
     bool copyCertificates;
     KMessageBox::ButtonCode buttonCode;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+    if (KMessageBox::shouldBeShownTwoActions(QLatin1String("copyCertificatesDialog"), buttonCode)) {
+        copyCertificates = KMessageBox::questionTwoActions(nullptr,
+#else
     if (KMessageBox::shouldBeShownYesNo(QLatin1String("copyCertificatesDialog"), buttonCode)) {
         copyCertificates = KMessageBox::questionYesNo(nullptr,
-                                                      i18n("Do you want to copy your certificates to %1?", localCertPath()),
-                                                      i18n("Copy certificates"),
-                                                      KStandardGuiItem::yes(),
-                                                      KStandardGuiItem::no(),
-                                                      QLatin1String("copyCertificatesDialog"))
+#endif
+                                                           i18n("Do you want to copy your certificates to %1?", localCertPath()),
+                                                           i18n("Copy certificates"),
+                                                           KGuiItem(i18n("Copy")),
+                                                           KStandardGuiItem::cancel(),
+                                                           QLatin1String("copyCertificatesDialog"))
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            == KMessageBox::ButtonCode::PrimaryAction;
+#else
             == KMessageBox::Yes;
+#endif
     } else {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         copyCertificates = buttonCode == KMessageBox::Yes;
+#else
+        copyCertificates = buttonCode == KMessageBox::ButtonCode::PrimaryAction;
+#endif
     }
 
     const QString connectionName = QFileInfo(fileName).completeBaseName();

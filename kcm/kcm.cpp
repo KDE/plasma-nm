@@ -432,14 +432,23 @@ void KCMNetworkmanagement::onRequestToChangeConnection(const QString &connection
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(m_currentConnectionPath);
 
     if (connection) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        if (KMessageBox::questionTwoActions(this,
+#else
         if (KMessageBox::questionYesNo(this,
-                                       i18n("Do you want to save changes made to the connection '%1'?", connection->name()),
-                                       i18nc("@title:window", "Save Changes"),
-                                       KStandardGuiItem::save(),
-                                       KStandardGuiItem::discard(),
-                                       QString(),
-                                       KMessageBox::Notify)
+
+#endif
+                                            i18n("Do you want to save changes made to the connection '%1'?", connection->name()),
+                                            i18nc("@title:window", "Save Changes"),
+                                            KStandardGuiItem::save(),
+                                            KStandardGuiItem::discard(),
+                                            QString(),
+                                            KMessageBox::Notify)
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            == KMessageBox::ButtonCode::PrimaryAction) {
+#else
             == KMessageBox::Yes) {
+#endif
             save();
         }
     }
@@ -592,3 +601,4 @@ void KCMNetworkmanagement::resetSelection()
 }
 
 #include "kcm.moc"
+#include <kwidgetsaddons_version.h>

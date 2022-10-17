@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-14 00:48+0000\n"
-"PO-Revision-Date: 2022-10-12 09:14+0200\n"
+"PO-Revision-Date: 2022-10-14 12:25+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -479,7 +479,7 @@ msgstr "Connecta només a estos servidors"
 #: editor/settings/teamwidget.cpp:218
 #, kde-format
 msgid "Select file to import"
-msgstr "Seleccioneu el fitxer per a importar"
+msgstr "Seleccioneu el fitxer que s'ha d'importar"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -1170,8 +1170,8 @@ msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
 "separate entries."
 msgstr ""
-"Utilitzeu este camp per a especificar un o més dominis de DNS a buscar. "
-"Utilitzeu «,» per a separar les entrades."
+"Utilitzeu este camp per a especificar un o més dominis de DNS que es "
+"buscaran. Utilitzeu «,» per a separar les entrades."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
 #: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
@@ -1656,10 +1656,9 @@ msgstr "WPA3 personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA/WPA2 corporativa"
+msgstr "WPA3 corporativa de 192-bits"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -2841,7 +2840,7 @@ msgstr "WPA3-SAE"
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:618
 #, kde-format

@@ -234,7 +234,7 @@ msgstr "Travessada de NAT:"
 #: vpncadvanced.ui:121
 #, kde-format
 msgid "NAT traversal method to use."
-msgstr "Mètode de travessada de NAT a utilitzar."
+msgstr "Mètode de travessada de NAT que s'utilitzarà."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: vpncadvanced.ui:128
@@ -273,8 +273,8 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
-"El port local a utilitzar (0-65535). 0 (valor predeterminat) vol dir port "
-"aleatori. De manera predeterminada, als vpnc és 500."
+"El port local que s'utilitzarà (0-65535). 0 (valor predeterminat) vol dir "
+"port aleatori. De manera predeterminada, als vpnc és 500."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193

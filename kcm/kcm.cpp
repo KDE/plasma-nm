@@ -20,6 +20,7 @@
 #include <KPluginFactory>
 #include <KPluginMetaData>
 #include <KSharedConfig>
+#include <kwidgetsaddons_version.h>
 
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>
@@ -601,4 +602,3 @@ void KCMNetworkmanagement::resetSelection()
 }
 
 #include "kcm.moc"
-#include <kwidgetsaddons_version.h>

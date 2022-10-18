@@ -7,7 +7,6 @@
 import QtQuick 2.1
 import QtQuick.Controls 2.15 as QQC
 import org.kde.kirigami 2.5 as Kirigami
-import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 
@@ -32,7 +31,7 @@ ListItem {
         }
         height: Math.max(Kirigami.Units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(Kirigami.Units.gridUnit / 2)
 
-        KQuickControlsAddons.QIconItem {
+        Kirigami.Icon {
             id: connectionIcon
 
             anchors {
@@ -40,7 +39,7 @@ ListItem {
                 verticalCenter: parent.verticalCenter
             }
             height: Kirigami.Units.iconSizes.medium; width: height
-            icon: KcmConnectionIcon
+            source: KcmConnectionIcon
         }
 
         Text {

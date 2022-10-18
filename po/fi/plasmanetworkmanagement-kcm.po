@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 00:49+0000\n"
+"POT-Creation-Date: 2022-10-18 00:46+0000\n"
 "PO-Revision-Date: 2021-06-18 12:41+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -28,18 +28,18 @@ msgstr "oma_jaettu_yhteys"
 msgid "Export VPN Connection"
 msgstr "Vie VPN-yhteys"
 
-#: kcm.cpp:436
+#: kcm.cpp:441
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Haluatko tallentaa muutokset yhteyteen ”%1”?"
 
-#: kcm.cpp:437
+#: kcm.cpp:442
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Tallenna muutokset"
 
-#: kcm.cpp:521
+#: kcm.cpp:530
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Tuo VPN-yhteys"

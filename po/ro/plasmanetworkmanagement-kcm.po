@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 00:49+0000\n"
+"POT-Creation-Date: 2022-10-18 00:46+0000\n"
 "PO-Revision-Date: 2021-07-25 12:42+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -28,18 +28,18 @@ msgstr "conexiunea_mea_partajată"
 msgid "Export VPN Connection"
 msgstr "Exportă conexiune VPN"
 
-#: kcm.cpp:436
+#: kcm.cpp:441
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Doriți să salvați modificările aduse conexiunii „%1”?"
 
-#: kcm.cpp:437
+#: kcm.cpp:442
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Salvează modificările"
 
-#: kcm.cpp:521
+#: kcm.cpp:530
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Importă conexiune VPN"

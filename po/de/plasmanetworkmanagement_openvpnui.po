@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-03-10 00:46+0000\n"
+"POT-Creation-Date: 2022-10-18 00:46+0000\n"
 "PO-Revision-Date: 2021-06-02 07:37+0200\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -14,81 +14,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: openvpn.cpp:180
+#: openvpn.cpp:181
 #, kde-format
 msgid "Could not open file"
 msgstr "Datei kann nicht geöffnet werden"
 
-#: openvpn.cpp:188
+#: openvpn.cpp:194
 #, kde-format
 msgid "Do you want to copy your certificates to %1?"
 msgstr "Möchten Sie Ihre Zertifikate zu %1 kopieren?"
 
-#: openvpn.cpp:189
+#: openvpn.cpp:195
 #, kde-format
 msgid "Copy certificates"
 msgstr "Zertifikate kopieren"
 
-#: openvpn.cpp:241 openvpn.cpp:259 openvpn.cpp:538
+#: openvpn.cpp:196
+#, kde-format
+msgid "Copy"
+msgstr ""
+
+#: openvpn.cpp:255 openvpn.cpp:273 openvpn.cpp:552
 #, kde-format
 msgid "Unknown option: %1"
 msgstr "Unbekannte Option „%1“"
 
-#: openvpn.cpp:244 openvpn.cpp:262 openvpn.cpp:278 openvpn.cpp:290
-#: openvpn.cpp:322 openvpn.cpp:413 openvpn.cpp:530 openvpn.cpp:558
+#: openvpn.cpp:258 openvpn.cpp:276 openvpn.cpp:292 openvpn.cpp:304
+#: openvpn.cpp:336 openvpn.cpp:427 openvpn.cpp:544 openvpn.cpp:572
 #, kde-format
 msgid "Invalid number of arguments (expected 1) in option: %1"
 msgstr "Ungültige Anzahl von Argumenten (erwartet 1) in Option: %1"
 
-#: openvpn.cpp:275 openvpn.cpp:287
+#: openvpn.cpp:289 openvpn.cpp:301
 #, kde-format
 msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
 msgstr "Ungültige Größe (sollte zwischen 0 und 0xFFFF liegen) in Option: %1"
 
-#: openvpn.cpp:376
+#: openvpn.cpp:390
 #, kde-format
 msgid "Invalid proxy option: %1"
 msgstr "Ungültige Proxy-Option: %1"
 
-#: openvpn.cpp:410
+#: openvpn.cpp:424
 #, kde-format
 msgid "Invalid port (should be between 1 and 65535) in option: %1"
 msgstr ""
 "Ungültige Portnummer (sollte zwischen 1 und 65535 liegen) in Option: %1"
 
-#: openvpn.cpp:547
+#: openvpn.cpp:561
 #, kde-format
 msgid "Invalid number of arguments (expected 2) in option: %1"
 msgstr "Ungültige Anzahl von Argumenten (erwartet 2) in Option: %1"
 
-#: openvpn.cpp:569
+#: openvpn.cpp:583
 #, kde-format
 msgid "Invalid argument in option: %1"
 msgstr "Ungültiges Argument in der Option: %1"
 
-#: openvpn.cpp:658
+#: openvpn.cpp:672
 #, kde-format
 msgid "File %1 is not a valid OpenVPN's client configuration file"
 msgstr ""
 "Die Datei %1 ist keine gültige Einrichtungsdatei für den OpenVPN-Client"
 
-#: openvpn.cpp:662
+#: openvpn.cpp:676
 #, kde-format
 msgid "File %1 is not a valid OpenVPN configuration (no remote)."
 msgstr ""
 "Die Datei %1 ist keine gültige OpenVPN-Konfiguration (kein Fernzugang)."
 
-#: openvpn.cpp:731
+#: openvpn.cpp:745
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "Fehler beim Speichern der Datei %1: %2"
 
-#: openvpn.cpp:759
+#: openvpn.cpp:773
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "Fehler beim Kopieren des Zertifikats zu %1: %2"
 
-#: openvpn.cpp:771
+#: openvpn.cpp:785
 #, kde-format
 msgid "Could not open file for writing"
 msgstr "Datei kann nicht zum Schreiben geöffnet werden"

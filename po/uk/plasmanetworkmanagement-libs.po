@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-14 00:48+0000\n"
+"POT-Creation-Date: 2022-10-18 00:46+0000\n"
 "PO-Revision-Date: 2022-10-14 17:07+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -134,8 +134,8 @@ msgstr "Дротова"
 msgid "802.1x Security"
 msgstr "Безпека 802.1x"
 
-#: editor/connectioneditorbase.cpp:210 editor/settings/bridgewidget.cpp:38
-#: editor/settings/teamwidget.cpp:41 editor/uiutils.cpp:230
+#: editor/connectioneditorbase.cpp:210 editor/settings/bridgewidget.cpp:39
+#: editor/settings/teamwidget.cpp:42 editor/uiutils.cpp:230
 #: models/creatableconnectionsmodel.cpp:175
 #, kde-format
 msgid "Wi-Fi"
@@ -172,7 +172,7 @@ msgstr "GSM"
 msgid "PPP"
 msgstr "PPP"
 
-#: editor/connectioneditorbase.cpp:241 editor/settings/teamwidget.cpp:38
+#: editor/connectioneditorbase.cpp:241 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:213 models/creatableconnectionsmodel.cpp:142
 #: models/networkmodelitem.cpp:674
 #, kde-format
@@ -249,78 +249,78 @@ msgstr "Нове з'єднання %1"
 msgid "Connection name:"
 msgstr "Назва з'єднання:"
 
-#: editor/settings/bondwidget.cpp:35 editor/settings/bridgewidget.cpp:32
-#: editor/settings/teamwidget.cpp:35
+#: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
+#: editor/settings/teamwidget.cpp:36
 #, kde-format
 msgid "Ethernet"
 msgstr "Ethernet"
 
-#: editor/settings/bondwidget.cpp:38
+#: editor/settings/bondwidget.cpp:39
 #, kde-format
 msgid "InfiniBand"
 msgstr "InfiniBand"
 
-#: editor/settings/bondwidget.cpp:47
+#: editor/settings/bondwidget.cpp:48
 #, kde-format
 msgctxt "bond mode"
 msgid "Round-robin"
 msgstr "Циклічний"
 
-#: editor/settings/bondwidget.cpp:48
+#: editor/settings/bondwidget.cpp:49
 #, kde-format
 msgctxt "bond mode"
 msgid "Active backup"
 msgstr "Активне резервування"
 
-#: editor/settings/bondwidget.cpp:49
+#: editor/settings/bondwidget.cpp:50
 #, kde-format
 msgctxt "bond mode"
 msgid "Broadcast"
 msgstr "Трансляція"
 
-#: editor/settings/bondwidget.cpp:50
+#: editor/settings/bondwidget.cpp:51
 #, kde-format
 msgctxt "bond mode"
 msgid "802.3ad"
 msgstr "802.3ad"
 
-#: editor/settings/bondwidget.cpp:51
+#: editor/settings/bondwidget.cpp:52
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive transmit load balancing"
 msgstr "Адаптивне урівноваження навантаження за передаванням"
 
-#: editor/settings/bondwidget.cpp:52
+#: editor/settings/bondwidget.cpp:53
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive load balancing"
 msgstr "Адаптивне урівноваження навантаження"
 
-#: editor/settings/bondwidget.cpp:55
+#: editor/settings/bondwidget.cpp:56
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "MII (recommended)"
 msgstr "MII (рекомендоване)"
 
-#: editor/settings/bondwidget.cpp:56
+#: editor/settings/bondwidget.cpp:57
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "ARP"
 msgstr "ARP"
 
-#: editor/settings/bondwidget.cpp:242 editor/settings/bridgewidget.cpp:192
-#: editor/settings/teamwidget.cpp:181
+#: editor/settings/bondwidget.cpp:248 editor/settings/bridgewidget.cpp:198
+#: editor/settings/teamwidget.cpp:187
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Хочете вилучити запис з'єднання «%1»?"
 
-#: editor/settings/bondwidget.cpp:243 editor/settings/bridgewidget.cpp:193
-#: editor/settings/teamwidget.cpp:182
+#: editor/settings/bondwidget.cpp:249 editor/settings/bridgewidget.cpp:199
+#: editor/settings/teamwidget.cpp:188
 #, kde-format
 msgid "Remove Connection"
 msgstr "Вилучити з'єднання"
 
-#: editor/settings/bridgewidget.cpp:35 editor/settings/teamwidget.cpp:44
+#: editor/settings/bridgewidget.cpp:36 editor/settings/teamwidget.cpp:45
 #: editor/uiutils.cpp:219
 #, kde-format
 msgid "VLAN"
@@ -473,7 +473,7 @@ msgstr ""
 msgid "Connect to these servers only"
 msgstr "З'єднатися лише з цими серверами"
 
-#: editor/settings/teamwidget.cpp:218
+#: editor/settings/teamwidget.cpp:228
 #, kde-format
 msgid "Select file to import"
 msgstr "Виберіть файл для імпортування"

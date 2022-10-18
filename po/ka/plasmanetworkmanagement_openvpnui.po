@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-03-10 00:46+0000\n"
+"POT-Creation-Date: 2022-10-18 00:46+0000\n"
 "PO-Revision-Date: 2022-09-15 12:27+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,78 +18,83 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.1.1\n"
 
-#: openvpn.cpp:180
+#: openvpn.cpp:181
 #, kde-format
 msgid "Could not open file"
 msgstr "ფაილის გახსნის შეცდომა"
 
-#: openvpn.cpp:188
+#: openvpn.cpp:194
 #, kde-format
 msgid "Do you want to copy your certificates to %1?"
 msgstr "გნებავთ თქვენი სერტიფიკატების %1-ში კოპირება?"
 
-#: openvpn.cpp:189
+#: openvpn.cpp:195
 #, kde-format
 msgid "Copy certificates"
 msgstr "სერტიფიკატების კოპირება"
 
-#: openvpn.cpp:241 openvpn.cpp:259 openvpn.cpp:538
+#: openvpn.cpp:196
+#, kde-format
+msgid "Copy"
+msgstr ""
+
+#: openvpn.cpp:255 openvpn.cpp:273 openvpn.cpp:552
 #, kde-format
 msgid "Unknown option: %1"
 msgstr "უცნობი პარამეტრი '%1'"
 
-#: openvpn.cpp:244 openvpn.cpp:262 openvpn.cpp:278 openvpn.cpp:290
-#: openvpn.cpp:322 openvpn.cpp:413 openvpn.cpp:530 openvpn.cpp:558
+#: openvpn.cpp:258 openvpn.cpp:276 openvpn.cpp:292 openvpn.cpp:304
+#: openvpn.cpp:336 openvpn.cpp:427 openvpn.cpp:544 openvpn.cpp:572
 #, kde-format
 msgid "Invalid number of arguments (expected 1) in option: %1"
 msgstr "არგუმენტების არასწორი რაოდენობა (მოველოდი 1-ს) პარამეტრში: %1"
 
-#: openvpn.cpp:275 openvpn.cpp:287
+#: openvpn.cpp:289 openvpn.cpp:301
 #, kde-format
 msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
 msgstr ""
 
-#: openvpn.cpp:376
+#: openvpn.cpp:390
 #, kde-format
 msgid "Invalid proxy option: %1"
 msgstr "პროქსის არასწორი პარამეტრი: %1"
 
-#: openvpn.cpp:410
+#: openvpn.cpp:424
 #, kde-format
 msgid "Invalid port (should be between 1 and 65535) in option: %1"
 msgstr ""
 
-#: openvpn.cpp:547
+#: openvpn.cpp:561
 #, kde-format
 msgid "Invalid number of arguments (expected 2) in option: %1"
 msgstr ""
 
-#: openvpn.cpp:569
+#: openvpn.cpp:583
 #, kde-format
 msgid "Invalid argument in option: %1"
 msgstr "არასწორი არგუმენტი პარამეტრში: %1"
 
-#: openvpn.cpp:658
+#: openvpn.cpp:672
 #, kde-format
 msgid "File %1 is not a valid OpenVPN's client configuration file"
 msgstr ""
 
-#: openvpn.cpp:662
+#: openvpn.cpp:676
 #, kde-format
 msgid "File %1 is not a valid OpenVPN configuration (no remote)."
 msgstr ""
 
-#: openvpn.cpp:731
+#: openvpn.cpp:745
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "%1-ის შენახვის შეცდომა: %2"
 
-#: openvpn.cpp:759
+#: openvpn.cpp:773
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "სერტიფიკატის %1 -ში კოპირების შეცდომა: %2"
 
-#: openvpn.cpp:771
+#: openvpn.cpp:785
 #, kde-format
 msgid "Could not open file for writing"
 msgstr "ფაილის ჩასაწერად გახსნა შეუძლებელია"

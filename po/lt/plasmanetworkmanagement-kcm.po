@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-08 00:49+0000\n"
+"POT-Creation-Date: 2022-10-18 00:46+0000\n"
 "PO-Revision-Date: 2021-06-15 23:28+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt\n"
@@ -29,18 +29,18 @@ msgstr "mano_bendrinamas_ryšys"
 msgid "Export VPN Connection"
 msgstr "Eksportuoti VPN ryšį"
 
-#: kcm.cpp:436
+#: kcm.cpp:441
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Ar norite įrašyti pakeitimus, kuriuos atlikote ryšiui \"%1\"?"
 
-#: kcm.cpp:437
+#: kcm.cpp:442
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Įrašyti pakeitimus"
 
-#: kcm.cpp:521
+#: kcm.cpp:530
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Importuoti VPN ryšį"

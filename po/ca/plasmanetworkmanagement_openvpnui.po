@@ -1,16 +1,16 @@
 # Translation of plasmanetworkmanagement_openvpnui.po to Catalan
-# Copyright (C) 2014-2021 This_file_is_part_of_KDE
+# Copyright (C) 2014-2022 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2020.
-# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2017, 2020, 2021.
+# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2017, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-18 00:46+0000\n"
-"PO-Revision-Date: 2021-09-06 14:08+0200\n"
+"PO-Revision-Date: 2022-10-18 09:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -39,7 +39,7 @@ msgstr "Copia els certificats"
 #: openvpn.cpp:196
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Copia"
 
 #: openvpn.cpp:255 openvpn.cpp:273 openvpn.cpp:552
 #, kde-format
@@ -1225,9 +1225,3 @@ msgstr "testimoni"
 #, kde-format
 msgid "one-time password"
 msgstr "contrasenya d'un sol ús"
-
-#~ msgid "Use fast LZO compression."
-#~ msgstr "Usa la compressió LZO ràpida."
-
-#~ msgid "Yes"
-#~ msgstr "Sí"

@@ -39,7 +39,7 @@ msgstr "Copiar os certificados"
 #: openvpn.cpp:196
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: openvpn.cpp:255 openvpn.cpp:273 openvpn.cpp:552
 #, kde-format

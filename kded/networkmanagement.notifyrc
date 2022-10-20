@@ -2,7 +2,6 @@
 IconName=applications-internet
 Name=Network Management
 Name[ar]=إدارة الشّبكات
-Name[ast]=Xestión de redes
 Name[az]=Şəbəkə İdarəetməsi
 Name[bg]=Управление на мрежата
 Name[ca]=Gestió de xarxes
@@ -44,7 +43,6 @@ Name[zh_CN]=网络管理
 Name[zh_TW]=網路管理
 Comment=Network management
 Comment[ar]=إدارة الشّبكات
-Comment[ast]=Xestión de redes
 Comment[az]=Şəbəkə idarəetməsi
 Comment[bg]=Управление на мрежата
 Comment[bs]=Upravljanje mrežom
@@ -101,7 +99,6 @@ Comment[zh_TW]=網路管理
 [Event/ConnectionActivated]
 Name=Connection Activated
 Name[ar]=فُعِّل الاتصال
-Name[ast]=Activóse una conexón
 Name[az]=Bağlantı quruldu
 Name[bg]=Връзката е активирана
 Name[ca]=Connexió activada
@@ -147,7 +144,6 @@ Action=Popup
 [Event/ConnectionDeactivated]
 Name=Connection Deactivated
 Name[ar]=عُطل الاتصال
-Name[ast]=Desactivóse una conexón
 Name[az]=Bağlantısı kəsildi
 Name[bg]=Връзката е деактивирана
 Name[ca]=Connexió desactivada
@@ -193,7 +189,6 @@ Action=Popup
 [Event/ConnectionAdded]
 Name=Connection Added
 Name[ar]=أُضيف الاتّصال
-Name[ast]=Amestóse una conexón
 Name[az]=Bağlantı əlavə edildi
 Name[bg]=Връзката е добавена
 Name[ca]=S'ha afegit una connexió
@@ -238,7 +233,6 @@ Action=None
 [Event/ConnectionRemoved]
 Name=Connection Removed
 Name[ar]=أُزيل الاتّصال
-Name[ast]=Desanicióse una conexón
 Name[az]=Bağlantı silindi
 Name[bg]=Връзката е премахната
 Name[ca]=S'ha eliminat una connexió
@@ -283,7 +277,6 @@ Action=None
 [Event/ConnectionUpdated]
 Name=Connection Updated
 Name[ar]=حُدّث الاتّصال
-Name[ast]=Anovóse una conexón
 Name[az]=Bağlantı yeniləndi
 Name[bg]=Връзката е актуализирана
 Name[ca]=S'ha actualitzat una connexió
@@ -328,7 +321,6 @@ Action=None
 [Event/DeviceFailed]
 Name=Device Failed
 Name[ar]=فشل الجهاز
-Name[ast]=El preséu falló
 Name[az]=Cihaz xətası
 Name[bg]=Устройството се срина
 Name[ca]=Ha fallat el dispositiu
@@ -373,7 +365,6 @@ Action=Popup
 [Event/FailedToActivateConnection]
 Name=Failed to Activate Connection
 Name[ar]=فشل تفعيل الاتّصال
-Name[ast]=Fallu al activar la conexón
 Name[az]=Bağlantını qurmaq mümkün olmadı
 Name[bg]=Неуспешно активиране на връзка
 Name[ca]=Ha fallat en activar la connexió
@@ -418,7 +409,6 @@ Action=Popup
 [Event/FailedToAddConnection]
 Name=Failed to Add Connection
 Name[ar]=فشلت إضافة الاتصال
-Name[ast]=Fallu al amestar la conexón
 Name[az]=Bağlantı əlavə etmək mümkün olmadı
 Name[bg]=Неуспешно добавяне на връзка
 Name[ca]=Ha fallat en afegir la connexió
@@ -463,7 +453,6 @@ Action=Popup
 [Event/FailedToDeactivateConnection]
 Name=Failed to Deactivate Connection
 Name[ar]=فشل تعطيل الاتّصال
-Name[ast]=Fallu al desactivar la conexón
 Name[az]=Bağlantını ayırmaq mümkün olmadı
 Name[bg]=Неуспешно деактивиране на връзка
 Name[ca]=Ha fallat en desactivar la connexió
@@ -508,7 +497,6 @@ Action=Popup
 [Event/FailedToRemoveConnection]
 Name=Failed to Remove Connection
 Name[ar]=فشلت إزالة الاتّصال
-Name[ast]=Fallu al desaniciar la conexón
 Name[az]=Bağlantını silmək mümkün olmadı
 Name[bg]=Неуспешно премахване на връзка
 Name[ca]=Ha fallat en eliminar la connexió
@@ -553,7 +541,6 @@ Action=Popup
 [Event/FailedToGetSecrets]
 Name=Failed to Get Secrets
 Name[ar]=فشل جلب الأسرار
-Name[ast]=Fallu al consiguir los secretos
 Name[az]=Şifrə və açarı almaq mümkün olmadı
 Name[bg]=Неуспешно получаване на поверителни данни
 Name[ca]=Ha fallat en obtenir els secrets
@@ -598,7 +585,6 @@ Action=Popup
 [Event/FailedToUpdateConnection]
 Name=Failed to Update Connection
 Name[ar]=فشل تحديث الاتصال
-Name[ast]=Fallu al anovar la conexón
 Name[az]=Bağlantını yeniləmək mümkün olmadı
 Name[bg]=Неуспешно актуализиране на връзка
 Name[ca]=Ha fallat en actualitzar la connexió
@@ -731,7 +717,6 @@ Action=Popup
 [Event/CaptivePortal]
 Name=Captive Portal Detected
 Name[ar]=اكتشف بوابة مقيدة
-Name[ast]=Detectóse un portal cativu
 Name[az]=Əlavə kimlik doğrulaması tələb edən bağlantı aşkar edildi
 Name[bg]=Открит е портал за идентификация
 Name[ca]=S'ha detectat un portal captiu
@@ -822,7 +807,6 @@ Action=Popup
 [Event/FailedToCreateHotspot]
 Name=Failed to Create Hotspot
 Name[ar]=فشل إنشاء نقطة فعالة
-Name[ast]=Fallu al crear el puntu d'accesu
 Name[az]=Qoşulma nöqtəsi yaratmaq mümkün olmadı
 Name[bg]=Създаването на точка за достъп
 Name[ca]=Ha fallat en crear el punt d'accés

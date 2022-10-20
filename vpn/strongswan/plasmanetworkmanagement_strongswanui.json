@@ -78,7 +78,6 @@
         "License": "GPL",
         "Name": "IPsec based VPN (strongswan)",
         "Name[ar]": "شبكة خاصة افتراضية بالاعتماد على IPsec بواسطة (strongswan)",
-        "Name[ast]": "VPN basada n'IPsec (strongswan)",
         "Name[az]": "IPsec əsaslı VPN (strongswan)",
         "Name[bg]": "IPsec базирани VPN (strongswan)",
         "Name[ca@valencia]": "VPN basada en IPsec (strongswan)",

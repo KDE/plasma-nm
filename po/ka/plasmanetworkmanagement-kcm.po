@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-18 00:46+0000\n"
+"POT-Creation-Date: 2022-10-20 00:52+0000\n"
 "PO-Revision-Date: 2022-04-24 19:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,46 +18,46 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: kcm.cpp:345
+#: kcm.cpp:346
 #, kde-format
 msgid "my_shared_connection"
 msgstr "my_shared_connection"
 
-#: kcm.cpp:416
+#: kcm.cpp:417
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "VPN შეერთების გატანა"
 
-#: kcm.cpp:441
+#: kcm.cpp:442
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "გნებავთ შეინახოთ შეერთება \"%1\"-ში შეტანილი ცვლილებები?"
 
-#: kcm.cpp:442
+#: kcm.cpp:443
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "ცვლილებების შენახვა"
 
-#: kcm.cpp:530
+#: kcm.cpp:531
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "VPN შეერთების შემოტანა"
 
-#: qml/AddConnectionDialog.qml:16
+#: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "აირჩიეთ შეერთების ტიპი"
 
-#: qml/AddConnectionDialog.qml:160
+#: qml/AddConnectionDialog.qml:159
 msgid "Create"
 msgstr "შექმნა"
 
-#: qml/AddConnectionDialog.qml:170 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: qml/AddConnectionDialog.qml:187 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:186 qml/main.qml:193
 msgid "Configuration"
 msgstr "გამართვა"
 
@@ -94,27 +94,27 @@ msgstr "ჰოტსპოტის პაროლი:"
 msgid "Ok"
 msgstr "დიახ"
 
-#: qml/ConnectionItem.qml:99
+#: qml/ConnectionItem.qml:98
 msgid "Connect"
 msgstr "დაკავშირება"
 
-#: qml/ConnectionItem.qml:99
+#: qml/ConnectionItem.qml:98
 msgid "Disconnect"
 msgstr "გათიშვა"
 
-#: qml/ConnectionItem.qml:112
+#: qml/ConnectionItem.qml:111
 msgid "Delete"
 msgstr "წაშლა"
 
-#: qml/ConnectionItem.qml:122
+#: qml/ConnectionItem.qml:121
 msgid "Export"
 msgstr "ექსპორტი"
 
-#: qml/ConnectionItem.qml:147
+#: qml/ConnectionItem.qml:146
 msgid "Connected"
 msgstr "დაკავშირებულია"
 
-#: qml/ConnectionItem.qml:149
+#: qml/ConnectionItem.qml:148
 msgid "Connecting"
 msgstr "დაკავშირება"
 

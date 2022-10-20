@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-18 00:46+0000\n"
+"POT-Creation-Date: 2022-10-20 00:52+0000\n"
 "PO-Revision-Date: 2019-01-15 20:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -16,46 +16,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcm.cpp:345
+#: kcm.cpp:346
 #, kde-format
 msgid "my_shared_connection"
 msgstr "conexion_compartida"
 
-#: kcm.cpp:416
+#: kcm.cpp:417
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Exportar a conexión de VPN"
 
-#: kcm.cpp:441
+#: kcm.cpp:442
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Quere gardar os cambios da conexión «%1»?"
 
-#: kcm.cpp:442
+#: kcm.cpp:443
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Gardar os cambios"
 
-#: kcm.cpp:530
+#: kcm.cpp:531
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Importar unha conexión de VPN"
 
-#: qml/AddConnectionDialog.qml:16
+#: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Escolla un tipo de conexión"
 
-#: qml/AddConnectionDialog.qml:160
+#: qml/AddConnectionDialog.qml:159
 msgid "Create"
 msgstr "Crear"
 
-#: qml/AddConnectionDialog.qml:170 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: qml/AddConnectionDialog.qml:187 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:186 qml/main.qml:193
 msgid "Configuration"
 msgstr ""
 
@@ -94,27 +94,27 @@ msgstr ""
 msgid "Ok"
 msgstr ""
 
-#: qml/ConnectionItem.qml:99
+#: qml/ConnectionItem.qml:98
 msgid "Connect"
 msgstr "Conectar"
 
-#: qml/ConnectionItem.qml:99
+#: qml/ConnectionItem.qml:98
 msgid "Disconnect"
 msgstr "Desconectar"
 
-#: qml/ConnectionItem.qml:112
+#: qml/ConnectionItem.qml:111
 msgid "Delete"
 msgstr "Eliminar"
 
-#: qml/ConnectionItem.qml:122
+#: qml/ConnectionItem.qml:121
 msgid "Export"
 msgstr "Exportar"
 
-#: qml/ConnectionItem.qml:147
+#: qml/ConnectionItem.qml:146
 msgid "Connected"
 msgstr "Conectado"
 
-#: qml/ConnectionItem.qml:149
+#: qml/ConnectionItem.qml:148
 msgid "Connecting"
 msgstr "Conectando"
 

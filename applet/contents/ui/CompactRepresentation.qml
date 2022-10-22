@@ -11,10 +11,20 @@ import org.kde.plasma.components 3.0 as PlasmaComponents3
 MouseArea {
     id: panelIconWidget
 
+    readonly property bool airplaneModeAvailable: availableDevices.modemDeviceAvailable || availableDevices.wirelessDeviceAvailable
+
     anchors.fill: parent
     hoverEnabled: true
 
-    onClicked: plasmoid.expanded = !plasmoid.expanded
+    acceptedButtons: airplaneModeAvailable ? Qt.LeftButton | Qt.MiddleButton : Qt.LeftButton
+
+    onClicked: {
+        if (airplaneModeAvailable && mouse.button === Qt.MiddleButton) {
+            action_planeModeSwitch();
+        } else {
+            plasmoid.expanded = !plasmoid.expanded;
+        }
+    }
 
     PlasmaCore.IconItem {
         id: connectionIcon

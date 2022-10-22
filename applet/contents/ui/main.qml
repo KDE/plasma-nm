@@ -21,7 +21,15 @@ Item {
         && Plasmoid.fullRepresentationItem.connectionModel.delayModelUpdates
 
     Plasmoid.toolTipMainText: i18n("Networks")
-    Plasmoid.toolTipSubText: networkStatus.activeConnections
+    Plasmoid.toolTipSubText: {
+        if (!availableDevices.modemDeviceAvailable && !availableDevices.wirelessDeviceAvailable) {
+            return networkStatus.activeConnections;
+        }
+        return PlasmaNM.Configuration.airplaneModeEnabled
+            ? i18nc("@info:tooltip", "Middle-click to turn off Airplane Mode")
+            : i18nc("@info:tooltip %1 is a list of the active network connections", "%1\nMiddle-click to turn on Airplane Mode", networkStatus.activeConnections)
+    }
+
     Plasmoid.icon: connectionIconProvider.connectionTooltipIcon
     Plasmoid.switchWidth: PlasmaCore.Units.gridUnit * 10
     Plasmoid.switchHeight: PlasmaCore.Units.gridUnit * 10

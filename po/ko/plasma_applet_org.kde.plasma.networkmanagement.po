@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-15 00:48+0000\n"
+"POT-Creation-Date: 2022-10-26 00:47+0000\n"
 "PO-Revision-Date: 2022-07-13 15:44+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -95,29 +95,43 @@ msgstr "복사"
 msgid "Networks"
 msgstr "네트워크"
 
-#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:29
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Middle-click to turn off Airplane Mode"
+msgstr ""
+
+#: contents/ui/main.qml:30
+#, kde-format
+msgctxt "@info:tooltip %1 is a list of the active network connections"
+msgid ""
+"%1\n"
+"Middle-click to turn on Airplane Mode"
+msgstr ""
+
+#: contents/ui/main.qml:68 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi 활성화"
 
-#: contents/ui/main.qml:68
+#: contents/ui/main.qml:76
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "모바일 네트워크 사용"
 
-#: contents/ui/main.qml:76
+#: contents/ui/main.qml:84
 #, fuzzy, kde-format
 #| msgid "Enable airplane mode"
 msgid "Enable Airplane Mode"
 msgstr "비행기 모드 사용"
 
-#: contents/ui/main.qml:81
+#: contents/ui/main.qml:89
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "네트워크 로그인 페이지 열기…"
 
-#: contents/ui/main.qml:86
+#: contents/ui/main.qml:94
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "네트워크 연결 설정(&C)…"

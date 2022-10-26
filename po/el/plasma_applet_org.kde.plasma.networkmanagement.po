@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-15 00:48+0000\n"
+"POT-Creation-Date: 2022-10-26 00:47+0000\n"
 "PO-Revision-Date: 2017-09-08 16:23+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -101,29 +101,43 @@ msgstr "Αντιγραφή"
 msgid "Networks"
 msgstr "Δίκτυα"
 
-#: contents/ui/main.qml:60 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:29
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Middle-click to turn off Airplane Mode"
+msgstr ""
+
+#: contents/ui/main.qml:30
+#, kde-format
+msgctxt "@info:tooltip %1 is a list of the active network connections"
+msgid ""
+"%1\n"
+"Middle-click to turn on Airplane Mode"
+msgstr ""
+
+#: contents/ui/main.qml:68 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: contents/ui/main.qml:68
+#: contents/ui/main.qml:76
 #, fuzzy, kde-format
 #| msgid "Username on this network"
 msgid "Enable Mobile Network"
 msgstr "Όνομα χρήστη για το δίκτυο αυτό"
 
-#: contents/ui/main.qml:76
+#: contents/ui/main.qml:84
 #, fuzzy, kde-format
 #| msgid "Wireless"
 msgid "Enable Airplane Mode"
 msgstr "Ασύρματο"
 
-#: contents/ui/main.qml:81
+#: contents/ui/main.qml:89
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: contents/ui/main.qml:86
+#: contents/ui/main.qml:94
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections..."
 msgid "&Configure Network Connections…"

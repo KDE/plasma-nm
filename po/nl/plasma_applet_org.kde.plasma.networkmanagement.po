@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-26 00:47+0000\n"
-"PO-Revision-Date: 2022-09-16 10:12+0200\n"
+"PO-Revision-Date: 2022-10-26 23:06+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #: contents/ui/ConnectionItem.qml:61
 #, kde-format
@@ -99,7 +99,7 @@ msgstr "Netwerken"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Midden-klik om modus vliegtuigmodus uit te schakelen"
 
 #: contents/ui/main.qml:30
 #, kde-format
@@ -108,6 +108,8 @@ msgid ""
 "%1\n"
 "Middle-click to turn on Airplane Mode"
 msgstr ""
+"%1\n"
+"Midden-klik om modus vliegtuigmodus in te schakelen"
 
 #: contents/ui/main.qml:68 contents/ui/Toolbar.qml:69
 #, kde-format

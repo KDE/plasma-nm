@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-26 00:47+0000\n"
-"PO-Revision-Date: 2022-09-16 10:09+0200\n"
+"PO-Revision-Date: 2022-10-26 08:48+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -104,7 +104,7 @@ msgstr "Xarxes"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Clic del mig per a apagar al mode avió"
 
 #: contents/ui/main.qml:30
 #, kde-format
@@ -113,6 +113,8 @@ msgid ""
 "%1\n"
 "Middle-click to turn on Airplane Mode"
 msgstr ""
+"%1\n"
+"Clic del mig per a activar al mode avió"
 
 #: contents/ui/main.qml:68 contents/ui/Toolbar.qml:69
 #, kde-format

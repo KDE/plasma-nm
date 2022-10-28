@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-26 00:47+0000\n"
-"PO-Revision-Date: 2022-09-17 07:14+0200\n"
+"PO-Revision-Date: 2022-10-27 07:14+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 22.08.1\n"
 
 #: contents/ui/ConnectionItem.qml:61
 #, kde-format
@@ -102,7 +102,7 @@ msgstr "Omrežja"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Srednji klik za izklop letalskega načina"
 
 #: contents/ui/main.qml:30
 #, kde-format
@@ -111,6 +111,8 @@ msgid ""
 "%1\n"
 "Middle-click to turn on Airplane Mode"
 msgstr ""
+"%1\n"
+"Srednji klik za vklop letalskega načina"
 
 #: contents/ui/main.qml:68 contents/ui/Toolbar.qml:69
 #, kde-format

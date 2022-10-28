@@ -1,6 +1,6 @@
 # Translation for plasma_applet_org.kde.plasma.networkmanagement.po to Euskara/Basque (eu).
-# Copyright (C) 2017-2018, The Free Software Foundation.
-# Copyright (C) 2019-2022, This file is copyright:
+# Copyright (C) 2017-2018 The Free Software Foundation.
+# Copyright (C) 2019-2022 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 # KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>.
 #
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-26 00:47+0000\n"
-"PO-Revision-Date: 2022-09-16 08:14+0200\n"
+"PO-Revision-Date: 2022-10-27 05:27+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.0\n"
+"X-Generator: Lokalize 22.08.1\n"
 
 #: contents/ui/ConnectionItem.qml:61
 #, kde-format
@@ -103,7 +103,7 @@ msgstr "Sareak"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Erdiko klik «Hegaldi modua» modua itzaltzeko"
 
 #: contents/ui/main.qml:30
 #, kde-format
@@ -112,6 +112,8 @@ msgid ""
 "%1\n"
 "Middle-click to turn on Airplane Mode"
 msgstr ""
+"%1\n"
+"Erdiko klik «Hegaldi modua» pizteko"
 
 #: contents/ui/main.qml:68 contents/ui/Toolbar.qml:69
 #, kde-format

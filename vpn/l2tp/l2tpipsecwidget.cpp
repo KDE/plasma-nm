@@ -359,11 +359,11 @@ bool L2tpIpsecWidget::hasIpsecDaemon()
     if (ipsecVersionProcess.exitStatus() == QProcess::NormalExit) {
         QString ipsecStdout = ipsecVersionProcess.readAllStandardOutput();
 
-        if (ipsecStdout.contains(" strongSwan ", Qt::CaseSensitive)) {
+        if (ipsecStdout.contains("strongSwan", Qt::CaseSensitive)) {
             L2tpIpsecWidget::m_ipsecDaemonType = IpsecDaemonType::Strongswan;
-        } else if (ipsecStdout.contains(" Libreswan ", Qt::CaseSensitive)) {
+        } else if (ipsecStdout.contains("Libreswan", Qt::CaseSensitive)) {
             L2tpIpsecWidget::m_ipsecDaemonType = IpsecDaemonType::Libreswan;
-        } else if (ipsecStdout.contains(" Openswan ", Qt::CaseSensitive)) {
+        } else if (ipsecStdout.contains("Openswan", Qt::CaseSensitive)) {
             L2tpIpsecWidget::m_ipsecDaemonType = IpsecDaemonType::Openswan;
         } else {
             L2tpIpsecWidget::m_ipsecDaemonType = IpsecDaemonType::UnknownIpsecDaemon;

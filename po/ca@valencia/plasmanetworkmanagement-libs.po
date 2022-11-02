@@ -1736,7 +1736,7 @@ msgid ""
 msgstr ""
 "L'adreça MAC introduïda ací s'utilitzarà com a adreça de maquinari del\n"
 "dispositiu de xarxa per al que s'ha activat esta connexió. Esta\n"
-"funcionalitat es coneix com a clonatge o falsejament de la identitat MAC.\n"
+"característica es coneix com a clonatge o falsejament de la identitat MAC.\n"
 "Exemple 11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)

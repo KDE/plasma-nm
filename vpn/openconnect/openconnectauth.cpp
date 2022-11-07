@@ -615,7 +615,11 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint, const Q
 #endif
 
     if (openconnect_check_peer_cert_hash(d->vpninfo, value.toUtf8().data())) {
-        auto widget = new QWidget();
+        QPointer<QDialog> dialog = new QDialog(this);
+        dialog->setAttribute(Qt::WA_DeleteOnClose);
+        dialog.data()->setWindowModality(Qt::WindowModal);
+
+        auto widget = new QWidget(dialog.data());
         QVBoxLayout *verticalLayout;
         QHBoxLayout *horizontalLayout;
         QLabel *icon;
@@ -658,9 +662,6 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint, const Q
         infoText->setWordWrap(true);
         certificate->setText(peerCert);
 
-        QPointer<QDialog> dialog = new QDialog(this);
-        dialog->setAttribute(Qt::WA_DeleteOnClose);
-        dialog.data()->setWindowModality(Qt::WindowModal);
         dialog->setLayout(new QVBoxLayout);
         auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, dialog);
         connect(buttons, &QDialogButtonBox::accepted, dialog.data(), &QDialog::accept);
@@ -676,7 +677,6 @@ void OpenconnectAuthWidget::validatePeerCert(const QString &fingerprint, const Q
         } else {
             *accepted = false;
         }
-        widget->deleteLater();
     } else {
         *accepted = true;
     }

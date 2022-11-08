@@ -187,7 +187,7 @@ void TeamWidget::deleteTeam()
                                             i18n("Do you want to remove the connection '%1'?", connection->name()),
                                             i18n("Remove Connection"),
                                             KStandardGuiItem::remove(),
-                                            KStandardGuiItem::no(),
+                                            KStandardGuiItem::cancel(),
                                             QString(),
                                             KMessageBox::Dangerous)
 #if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)

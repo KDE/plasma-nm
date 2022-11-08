@@ -105,7 +105,7 @@ PlasmaExtras.ExpandableListItem {
         Action {
             text: i18n("Configure…")
             icon.name: "configure"
-            onTriggered: KCMShell.open([mainWindow.kcm, "--args", "Uuid=" + Uuid])
+            onTriggered: KCMShell.openSystemSettings(mainWindow.kcm, ["--args", "Uuid=" + Uuid])
         }
     ]
 

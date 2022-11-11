@@ -37,23 +37,4 @@ QString SstpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings
     return {};
 }
 
-NMVariantMapMap SstpUiPlugin::importConnectionSettings(const QString &fileName)
-{
-    Q_UNUSED(fileName);
-
-    // TODO : import the SSTP connection from file and return settings
-    mError = VpnUiPlugin::NotImplemented;
-    return {};
-}
-
-bool SstpUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
-{
-    Q_UNUSED(connection);
-    Q_UNUSED(fileName);
-
-    // TODO : export SSTP connection to file
-    mError = VpnUiPlugin::NotImplemented;
-    return false;
-}
-
 #include "sstp.moc"

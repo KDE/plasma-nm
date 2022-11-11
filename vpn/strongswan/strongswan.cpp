@@ -39,25 +39,6 @@ QString StrongswanUiPlugin::suggestedFileName(const NetworkManager::ConnectionSe
     return {};
 }
 
-NMVariantMapMap StrongswanUiPlugin::importConnectionSettings(const QString &fileName)
-{
-    Q_UNUSED(fileName);
-
-    // TODO : import the StrongSwan connection from file and return settings
-    mError = VpnUiPlugin::NotImplemented;
-    return {};
-}
-
-bool StrongswanUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
-{
-    Q_UNUSED(connection);
-    Q_UNUSED(fileName);
-
-    // TODO : export StrongSwan connection to file
-    mError = VpnUiPlugin::NotImplemented;
-    return false;
-}
-
 #include "strongswan.moc"
 
 // vim: sw=4 sts=4 et tw=100

@@ -37,23 +37,4 @@ QString PptpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings
     return {};
 }
 
-NMVariantMapMap PptpUiPlugin::importConnectionSettings(const QString &fileName)
-{
-    Q_UNUSED(fileName);
-
-    // TODO : import the Openconnect connection from file and return settings
-    mError = VpnUiPlugin::NotImplemented;
-    return {};
-}
-
-bool PptpUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
-{
-    Q_UNUSED(connection);
-    Q_UNUSED(fileName);
-
-    // TODO : export Openconnect connection to file
-    mError = VpnUiPlugin::NotImplemented;
-    return false;
-}
-
 #include "pptp.moc"

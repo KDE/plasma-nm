@@ -24,8 +24,6 @@ public:
 
     QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
     QMessageBox::StandardButtons suggestedAuthDialogButtons() const override;
-    NMVariantMapMap importConnectionSettings(const QString &fileName) override;
-    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
 };
 
 #endif //  OPENCONNECT_UI_H

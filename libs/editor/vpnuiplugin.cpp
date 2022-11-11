@@ -13,7 +13,6 @@
 VpnUiPlugin::VpnUiPlugin(QObject *parent, const QVariantList & /*args*/)
     : QObject(parent)
 {
-    mError = NoError;
 }
 
 VpnUiPlugin::~VpnUiPlugin() = default;
@@ -21,26 +20,6 @@ VpnUiPlugin::~VpnUiPlugin() = default;
 QMessageBox::StandardButtons VpnUiPlugin::suggestedAuthDialogButtons() const
 {
     return QMessageBox::Ok | QMessageBox::Cancel;
-}
-
-VpnUiPlugin::ErrorType VpnUiPlugin::lastError() const
-{
-    return mError;
-}
-
-QString VpnUiPlugin::lastErrorMessage()
-{
-    switch (mError) {
-    case NoError:
-        mErrorMessage.clear();
-        break;
-    case NotImplemented:
-        return i18nc("Error message in VPN import/export dialog", "Operation not supported for this VPN type.");
-        break;
-    case Error:
-        break;
-    }
-    return mErrorMessage;
 }
 
 QStringList VpnUiPlugin::supportedFileExtensions() const
@@ -66,4 +45,91 @@ KPluginFactory::Result<VpnUiPlugin> VpnUiPlugin::loadPluginForType(QObject *pare
     }
 
     return KPluginFactory::instantiatePlugin<VpnUiPlugin>(offers.first(), parent);
+}
+
+VpnUiPlugin::ImportResult VpnUiPlugin::importConnectionSettings(const QString &fileName)
+{
+    Q_UNUSED(fileName);
+    return VpnUiPlugin::ImportResult::notImplemented();
+}
+
+VpnUiPlugin::ExportResult VpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
+{
+    Q_UNUSED(connection);
+    Q_UNUSED(fileName);
+    return VpnUiPlugin::ExportResult::notImplemented();
+}
+
+VpnUiPlugin::ImportResult::operator bool() const
+{
+    return m_error == NoError;
+}
+
+QString VpnUiPlugin::ImportResult::errorMessage() const
+{
+    return m_errorMessage;
+}
+
+NMVariantMapMap VpnUiPlugin::ImportResult::connection() const
+{
+    return m_connection;
+}
+
+VpnUiPlugin::ImportResult VpnUiPlugin::ImportResult::fail(const QString &errorMessage)
+{
+    ImportResult result;
+    result.m_error = Error;
+    result.m_errorMessage = errorMessage;
+
+    return result;
+}
+
+VpnUiPlugin::ImportResult VpnUiPlugin::ImportResult::pass(const NMVariantMapMap &connection)
+{
+    ImportResult result;
+    result.m_connection = connection;
+
+    return result;
+}
+
+VpnUiPlugin::ImportResult VpnUiPlugin::ImportResult::notImplemented()
+{
+    VpnUiPlugin::ImportResult result;
+    result.m_error = NotImplemented;
+    result.m_errorMessage = i18n("Importing this type of VPN is not implemented");
+
+    return result;
+}
+
+VpnUiPlugin::ExportResult::operator bool() const
+{
+    return m_error == NoError;
+}
+
+QString VpnUiPlugin::ExportResult::errorMessage() const
+{
+    return m_errorMessage;
+}
+
+VpnUiPlugin::ExportResult VpnUiPlugin::ExportResult::pass()
+{
+    return ExportResult();
+}
+
+VpnUiPlugin::ExportResult VpnUiPlugin::ExportResult::notImplemented()
+{
+    ExportResult result;
+    result.m_error = NotImplemented;
+    result.m_errorMessage = i18n("Not implemented");
+
+    return result;
+}
+
+VpnUiPlugin::ExportResult VpnUiPlugin::ExportResult::fail(const QString &errorMessage)
+{
+    ExportResult result;
+    result.m_error = Error;
+    result.m_errorMessage = errorMessage;
+
+    return result;
 }

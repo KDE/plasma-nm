@@ -46,23 +46,50 @@ public:
      */
     virtual QStringList supportedFileExtensions() const;
 
-    /**
-     * If the plugin does not support fileName's extension it must just return an empty QVariantList.
-     * If it supports the extension and import has failed it must set mError with VpnUiPlugin::Error
-     * and mErrorMessage with a custom error message before returning an empty QVariantList.
-     */
-    virtual NMVariantMapMap importConnectionSettings(const QString &fileName) = 0;
-    virtual bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) = 0;
+    struct ImportResult {
+    private:
+        NMVariantMapMap m_connection;
+        ErrorType m_error = NoError;
+        QString m_errorMessage;
+
+    public:
+        operator bool() const;
+
+        QString errorMessage() const;
+
+        NMVariantMapMap connection() const;
+
+        static ImportResult fail(const QString &errorMessage);
+
+        static ImportResult pass(const NMVariantMapMap &connection);
+
+        static ImportResult notImplemented();
+    };
+
+    virtual ImportResult importConnectionSettings(const QString &fileName);
+
+    struct ExportResult {
+    private:
+        ErrorType m_error = NoError;
+        QString m_errorMessage;
+
+    public:
+        operator bool() const;
+
+        QString errorMessage() const;
+
+        static ExportResult pass();
+
+        static ExportResult fail(const QString &errorMessage);
+
+        static ExportResult notImplemented();
+    };
+
+    virtual ExportResult exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName);
 
     virtual QMessageBox::StandardButtons suggestedAuthDialogButtons() const;
-    ErrorType lastError() const;
-    QString lastErrorMessage();
 
     static KPluginFactory::Result<VpnUiPlugin> loadPluginForType(QObject *parent, const QString &serviceType);
-
-protected:
-    ErrorType mError;
-    QString mErrorMessage;
 };
 
 #endif // PLASMA_NM_VPN_UI_PLUGIN_H

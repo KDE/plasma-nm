@@ -106,25 +106,23 @@ QStringList VpncUiPlugin::supportedFileExtensions() const
     return {QStringLiteral("*.pcf")};
 }
 
-NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
+VpnUiPlugin::ImportResult VpncUiPlugin::importConnectionSettings(const QString &fileName)
 {
     // qCDebug(PLASMA_NM_VPNC_LOG) << "Importing Cisco VPN connection from " << fileName;
 
     VpncUiPluginPrivate *decrPlugin = nullptr;
     NMVariantMapMap result;
+    VpnUiPlugin::ImportResult importResult;
 
     if (!fileName.endsWith(QLatin1String(".pcf"), Qt::CaseInsensitive)) {
-        return result;
+        return VpnUiPlugin::ImportResult::fail(i18n("Wrong file extension"));
     }
-
-    mError = VpnUiPlugin::Error;
 
     // NOTE: Cisco VPN pcf files follow ini style matching KConfig files
     // http://www.cisco.com/en/US/docs/security/vpn_client/cisco_vpn_client/vpn_client46/administration/guide/vcAch2.html#wp1155033
     KSharedConfig::Ptr config = KSharedConfig::openConfig(fileName);
     if (!config) {
-        mErrorMessage = i18n("File %1 could not be opened.", fileName);
-        return result;
+        return VpnUiPlugin::ImportResult::fail(i18n("File %1 could not be opened.", fileName));
     }
 
     KConfigGroup cg(config, "main"); // Keys&Values are stored under [main]
@@ -132,8 +130,7 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
         // Setup cisco-decrypt binary to decrypt the passwords
         const QString ciscoDecryptBinary = QStandardPaths::findExecutable("cisco-decrypt");
         if (ciscoDecryptBinary.isEmpty()) {
-            mErrorMessage = i18n("Needed executable cisco-decrypt could not be found.");
-            return result;
+            return VpnUiPlugin::ImportResult::fail(i18n("Needed executable cisco-decrypt could not be found."));
         }
 
         decrPlugin = new VpncUiPluginPrivate();
@@ -300,15 +297,13 @@ NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)
 
         delete decrPlugin;
     } else {
-        mErrorMessage = i18n("%1: file format error.", fileName);
-        return result;
+        return VpnUiPlugin::ImportResult::fail(i18n("%1: file format error.", fileName));
     }
 
-    mError = VpncUiPlugin::NoError;
-    return result;
+    return VpnUiPlugin::ImportResult::pass(result);
 }
 
-bool VpncUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
+VpncUiPlugin::ExportResult VpncUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
 {
     NMStringMap data;
     NMStringMap secretData;
@@ -319,8 +314,7 @@ bool VpncUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSett
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig(fileName);
     if (!config) {
-        mErrorMessage = i18n("%1: file could not be created", fileName);
-        return false;
+        return VpnUiPlugin::ExportResult::fail(i18n("%1: file could not be created", fileName));
     }
     KConfigGroup cg(config, "main");
 
@@ -396,8 +390,7 @@ bool VpncUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSett
 
     cg.sync();
 
-    mError = VpncUiPlugin::NoError;
-    return true;
+    return VpnUiPlugin::ExportResult::pass();
 }
 
 #include "vpnc.moc"

@@ -26,8 +26,8 @@ public:
 
     QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
     QStringList supportedFileExtensions() const override;
-    NMVariantMapMap importConnectionSettings(const QString &fileName) override;
-    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
+    ImportResult importConnectionSettings(const QString &fileName) override;
+    ExportResult exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
 
 private:
     QString saveFile(QTextStream &in, const QString &endTag, const QString &connectionName, const QString &fileName);

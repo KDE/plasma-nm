@@ -36,23 +36,4 @@ QString LibreswanUiPlugin::suggestedFileName(const NetworkManager::ConnectionSet
     return {};
 }
 
-NMVariantMapMap LibreswanUiPlugin::importConnectionSettings(const QString &fileName)
-{
-    Q_UNUSED(fileName);
-
-    // TODO : import the Libreswan connection from file and return settings
-    mError = VpnUiPlugin::NotImplemented;
-    return {};
-}
-
-bool LibreswanUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
-{
-    Q_UNUSED(connection);
-    Q_UNUSED(fileName);
-
-    // TODO : export Libreswan connection to file
-    mError = VpnUiPlugin::NotImplemented;
-    return false;
-}
-
 #include "libreswan.moc"

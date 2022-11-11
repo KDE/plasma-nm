@@ -35,23 +35,4 @@ QString FortisslvpnUiPlugin::suggestedFileName(const NetworkManager::ConnectionS
     return {};
 }
 
-NMVariantMapMap FortisslvpnUiPlugin::importConnectionSettings(const QString &fileName)
-{
-    Q_UNUSED(fileName);
-
-    // TODO : import the Fortisslvpn connection from file and return settings
-    mError = VpnUiPlugin::NotImplemented;
-    return {};
-}
-
-bool FortisslvpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
-{
-    Q_UNUSED(connection);
-    Q_UNUSED(fileName);
-
-    // TODO : export Fortisslvpn connection to file
-    mError = VpnUiPlugin::NotImplemented;
-    return false;
-}
-
 #include "fortisslvpn.moc"

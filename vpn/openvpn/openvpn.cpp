@@ -171,15 +171,13 @@ QStringList OpenVpnUiPlugin::supportedFileExtensions() const
     return {QStringLiteral("*.ovpn"), QStringLiteral("*.conf")};
 }
 
-NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileName)
+VpnUiPlugin::ImportResult OpenVpnUiPlugin::importConnectionSettings(const QString &fileName)
 {
     NMVariantMapMap result;
 
     QFile impFile(fileName);
     if (!impFile.open(QFile::ReadOnly | QFile::Text)) {
-        mError = VpnUiPlugin::Error;
-        mErrorMessage = i18n("Could not open file");
-        return result;
+        return VpnUiPlugin::ImportResult::fail(i18n("Could not open file"));
     }
 
     bool copyCertificates;
@@ -668,13 +666,9 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
         }
     }
     if (!have_client && !have_sk) {
-        mError = VpnUiPlugin::Error;
-        mErrorMessage = i18n("File %1 is not a valid OpenVPN's client configuration file", fileName);
-        return result;
+        return VpnUiPlugin::ImportResult::fail(i18n("File %1 is not a valid OpenVPN's client configuration file", fileName));
     } else if (!have_remote) {
-        mError = VpnUiPlugin::Error;
-        mErrorMessage = i18n("File %1 is not a valid OpenVPN configuration (no remote).", fileName);
-        return result;
+        return VpnUiPlugin::ImportResult::fail(i18n("File %1 is not a valid OpenVPN configuration (no remote).", fileName));
     } else {
         QString conType;
         bool have_certs = false;
@@ -731,7 +725,7 @@ NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileNam
     }
 
     impFile.close();
-    return result;
+    return VpnUiPlugin::ImportResult::pass(result);
 }
 
 QString OpenVpnUiPlugin::saveFile(QTextStream &in, const QString &endTag, const QString &connectionName, const QString &fileName)
@@ -777,13 +771,11 @@ QString OpenVpnUiPlugin::tryToCopyToCertificatesDirectory(const QString &connect
     return absoluteFilePath;
 }
 
-bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
+VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
 {
     QFile expFile(fileName);
     if (!expFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        mError = VpnUiPlugin::Error;
-        mErrorMessage = i18n("Could not open file for writing");
-        return false;
+        return VpnUiPlugin::ExportResult::fail("Could not open file for writing");
     }
 
     NMStringMap dataMap;
@@ -960,7 +952,7 @@ bool OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionS
         "user nobody\n"
         "group nobody\n");
     expFile.close();
-    return true;
+    return VpnUiPlugin::ExportResult::pass();
 }
 
 #include "openvpn.moc"

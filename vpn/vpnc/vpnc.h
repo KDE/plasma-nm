@@ -45,8 +45,8 @@ public:
 
     QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
     QStringList supportedFileExtensions() const override;
-    NMVariantMapMap importConnectionSettings(const QString &fileName) override;
-    bool exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
+    ImportResult importConnectionSettings(const QString &fileName) override;
+    ExportResult exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName) override;
 };
 
 #endif // PLASMA_NM_VPNC_H

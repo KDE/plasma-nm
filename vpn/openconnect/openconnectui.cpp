@@ -39,22 +39,3 @@ QMessageBox::StandardButtons OpenconnectUiPlugin::suggestedAuthDialogButtons() c
 {
     return QMessageBox::Close;
 }
-
-NMVariantMapMap OpenconnectUiPlugin::importConnectionSettings(const QString &fileName)
-{
-    Q_UNUSED(fileName);
-
-    // TODO : import the Openconnect connection from file and return settings
-    mError = VpnUiPlugin::NotImplemented;
-    return {};
-}
-
-bool OpenconnectUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
-{
-    Q_UNUSED(connection);
-    Q_UNUSED(fileName);
-
-    // TODO : export Openconnect connection to file
-    mError = VpnUiPlugin::NotImplemented;
-    return false;
-}

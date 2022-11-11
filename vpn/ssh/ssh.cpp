@@ -37,23 +37,4 @@ QString SshUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings:
     return {};
 }
 
-NMVariantMapMap SshUiPlugin::importConnectionSettings(const QString &fileName)
-{
-    Q_UNUSED(fileName);
-
-    // TODO : import the SSH connection from file and return settings
-    mError = VpnUiPlugin::NotImplemented;
-    return {};
-}
-
-bool SshUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)
-{
-    Q_UNUSED(connection);
-    Q_UNUSED(fileName);
-
-    // TODO : export SSH connection to file
-    mError = VpnUiPlugin::NotImplemented;
-    return false;
-}
-
 #include "ssh.moc"

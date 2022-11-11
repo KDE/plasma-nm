@@ -40,8 +40,8 @@ class Q_DECL_EXPORT VpncUiPlugin : public VpnUiPlugin
 public:
     explicit VpncUiPlugin(QObject *parent = nullptr, const QVariantList & = QVariantList());
     ~VpncUiPlugin() override;
-    SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr) override;
-    SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr) override;
+    SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent) override;
+    SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent) override;
 
     QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
     QStringList supportedFileExtensions() const override;

@@ -19,8 +19,8 @@ class Q_DECL_EXPORT StrongswanUiPlugin : public VpnUiPlugin
 public:
     explicit StrongswanUiPlugin(QObject *parent = nullptr, const QVariantList & = QVariantList());
     ~StrongswanUiPlugin() override;
-    SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr) override;
-    SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr) override;
+    SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent) override;
+    SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent) override;
     QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
 };
 

@@ -32,8 +32,8 @@ public:
     explicit VpnUiPlugin(QObject *parent = nullptr, const QVariantList & = QVariantList());
     ~VpnUiPlugin() override;
 
-    virtual SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr) = 0;
-    virtual SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr) = 0;
+    virtual SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent) = 0;
+    virtual SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent) = 0;
 
     /**
      * Suggested file name to save the exported connection configuration.

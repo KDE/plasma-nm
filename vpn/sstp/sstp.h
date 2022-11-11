@@ -15,8 +15,8 @@ class Q_DECL_EXPORT SstpUiPlugin : public VpnUiPlugin
 public:
     explicit SstpUiPlugin(QObject *parent = nullptr, const QVariantList & = QVariantList());
     ~SstpUiPlugin() override;
-    SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr) override;
-    SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr) override;
+    SettingWidget *widget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent) override;
+    SettingWidget *askUser(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent) override;
     QString suggestedFileName(const NetworkManager::ConnectionSettings::Ptr &connection) const override;
 };
 

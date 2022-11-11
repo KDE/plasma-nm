@@ -597,7 +597,7 @@ void NetworkModelItem::updateDetails() const
             if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
                 m_details << i18n("Connection speed") << UiUtils::connectionSpeed(wiredDevice->bitRate());
             }
-            m_details << i18n("MAC Address") << wiredDevice->permanentHardwareAddress();
+            m_details << i18n("MAC Address") << wiredDevice->hardwareAddress();
         }
     } else if (m_type == NetworkManager::ConnectionSettings::Wireless) {
         NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();

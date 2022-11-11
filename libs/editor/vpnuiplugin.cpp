@@ -45,8 +45,6 @@ QString VpnUiPlugin::lastErrorMessage()
 
 KPluginFactory::Result<VpnUiPlugin> VpnUiPlugin::loadPluginForType(QObject *parent, const QString &serviceType)
 {
-    LoadResult result;
-
     auto filter = [serviceType](const KPluginMetaData &md) {
         return md.value(QStringLiteral("X-NetworkManager-Services")) == serviceType;
     };

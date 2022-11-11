@@ -58,16 +58,6 @@ public:
     ErrorType lastError() const;
     QString lastErrorMessage();
 
-    struct LoadResult {
-        VpnUiPlugin *plugin = nullptr;
-        QString error;
-
-        operator bool() const
-        {
-            return plugin != nullptr;
-        }
-    };
-
     static KPluginFactory::Result<VpnUiPlugin> loadPluginForType(QObject *parent, const QString &serviceType);
 
 protected:

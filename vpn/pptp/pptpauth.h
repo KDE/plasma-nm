@@ -11,21 +11,19 @@
 #include <NetworkManagerQt/VpnSetting>
 
 #include "settingwidget.h"
-
-class PptpAuthWidgetPrivate;
+#include "ui_pptpauth.h"
 
 class PptpAuthWidget : public SettingWidget
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(PptpAuthWidget)
 public:
     explicit PptpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr);
-    ~PptpAuthWidget() override;
 
     QVariantMap setting() const override;
 
 private:
-    PptpAuthWidgetPrivate *const d_ptr;
+    NetworkManager::VpnSetting::Ptr m_setting;
+    Ui_PptpAuthenticationWidget ui;
 };
 
 #endif // PPTPAUTH_H

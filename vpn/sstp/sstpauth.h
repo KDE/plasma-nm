@@ -8,23 +8,21 @@
 #define SSTP_AUTH_H
 
 #include "settingwidget.h"
+#include "ui_sstpauth.h"
 
 #include <NetworkManagerQt/VpnSetting>
-
-class SstpAuthWidgetPrivate;
 
 class SstpAuthWidget : public SettingWidget
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(SstpAuthWidget)
 public:
     explicit SstpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr);
-    ~SstpAuthWidget() override;
 
     QVariantMap setting() const override;
 
 private:
-    SstpAuthWidgetPrivate *const d_ptr;
+    NetworkManager::VpnSetting::Ptr m_setting;
+    Ui_SstpAuth ui;
 };
 
 #endif // SSTP_AUTH_H

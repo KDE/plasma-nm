@@ -11,11 +11,6 @@
 
 #include <KPluginFactory>
 
-#include "connectivitymonitor.h"
-#include "monitor.h"
-#include "notification.h"
-#include "secretagent.h"
-
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 #include <QDBusMetaType>
@@ -24,46 +19,27 @@
 
 K_PLUGIN_CLASS_WITH_JSON(NetworkManagementService, "networkmanagement.json")
 
-class NetworkManagementServicePrivate
-{
-public:
-    SecretAgent *agent = nullptr;
-    Notification *notification = nullptr;
-    Monitor *monitor = nullptr;
-    ConnectivityMonitor *connectivityMonitor = nullptr;
-};
-
 NetworkManagementService::NetworkManagementService(QObject *parent, const QVariantList &)
     : KDEDModule(parent)
-    , d_ptr(new NetworkManagementServicePrivate)
 {
-    Q_D(NetworkManagementService);
-
     connect(this, &KDEDModule::moduleRegistered, this, &NetworkManagementService::init);
 
-    d->agent = new SecretAgent(this);
-    connect(d->agent, &SecretAgent::secretsError, this, &NetworkManagementService::secretsError);
-}
-
-NetworkManagementService::~NetworkManagementService()
-{
-    delete d_ptr;
+    agent = new SecretAgent(this);
+    connect(agent, &SecretAgent::secretsError, this, &NetworkManagementService::secretsError);
 }
 
 void NetworkManagementService::init()
 {
-    Q_D(NetworkManagementService);
-
-    if (!d->notification) {
-        d->notification = new Notification(this);
+    if (!notification) {
+        notification = new Notification(this);
     }
 
-    if (!d->monitor) {
-        d->monitor = new Monitor(this);
+    if (!monitor) {
+        monitor = new Monitor(this);
     }
 
-    if (!d->connectivityMonitor) {
-        d->connectivityMonitor = new ConnectivityMonitor(this);
+    if (!connectivityMonitor) {
+        connectivityMonitor = new ConnectivityMonitor(this);
     }
 }
 

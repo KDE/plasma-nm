@@ -11,14 +11,14 @@
 #include <QDialog>
 #include <QHash>
 
+#include "ui_advancedpermissionswidget.h"
+
 class QTreeWidgetItem;
-class AdvancedPermissionsWidgetPrivate;
 class KUser;
 
 class AdvancedPermissionsWidget : public QDialog
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(AdvancedPermissionsWidget)
 public:
     explicit AdvancedPermissionsWidget(QWidget *parent = nullptr);
     AdvancedPermissionsWidget(const QHash<QString, QString> &, QWidget *parent = nullptr);
@@ -26,15 +26,14 @@ public:
 
     QHash<QString, QString> currentUsers() const;
 
-protected:
-    AdvancedPermissionsWidgetPrivate *const d_ptr;
-
 private:
     void leftArrowClicked();
     void rightArrowClicked();
     enum Columns { FullName = 0, LoginName = 1 };
     void setupCommon();
     QTreeWidgetItem *constructItem(const KUser &user, const QString &itemData = QString());
+
+    Ui_AdvancedPermissions ui;
 };
 
 #endif // PLASMA_NM_ADVANCED_PERMISSIONS_WIDGET_H

@@ -10,18 +10,16 @@
 
 #include "passwordfield.h"
 #include "settingwidget.h"
+#include "ui_pptpadvanced.h"
+#include "ui_pptpprop.h"
 
 #include <NetworkManagerQt/VpnSetting>
-
-class PptpSettingWidgetPrivate;
 
 class PptpSettingWidget : public SettingWidget
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(PptpSettingWidget)
 public:
     explicit PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
-    ~PptpSettingWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
@@ -33,9 +31,14 @@ private Q_SLOTS:
     void doAdvancedDialog();
 
 private:
-    PptpSettingWidgetPrivate *const d_ptr;
     void fillOnePasswordCombo(PasswordField *, NetworkManager::Setting::SecretFlags);
     void handleOnePasswordType(const PasswordField *, const QString &, NMStringMap &) const;
+
+    Ui_PptpProp ui;
+    Ui_PptpAdvanced advUi;
+    NetworkManager::VpnSetting::Ptr m_setting;
+    QDialog *advancedDlg;
+    QWidget *advancedWid;
 };
 
 #endif // PPTPWIDGET_H

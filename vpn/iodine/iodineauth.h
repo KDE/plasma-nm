@@ -10,20 +10,18 @@
 #include <NetworkManagerQt/VpnSetting>
 
 #include "settingwidget.h"
-
-class IodineAuthDialogPrivate;
+#include "ui_iodineauth.h"
 
 class IodineAuthDialog : public SettingWidget
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(IodineAuthDialog)
 public:
     explicit IodineAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr);
-    ~IodineAuthDialog() override;
     QVariantMap setting() const override;
 
 private:
-    IodineAuthDialogPrivate *const d_ptr;
+    Ui_IodineAuth ui;
+    NetworkManager::VpnSetting::Ptr m_setting;
 };
 
 #endif // PLASMA_NM_IODINE_AUTH_H

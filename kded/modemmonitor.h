@@ -15,7 +15,7 @@
 #include <ModemManagerQt/Modem>
 #include <ModemManagerQt/ModemDevice>
 
-class ModemMonitorPrivate;
+#include "pindialog.h"
 
 /**
  * Monitors modem hardware and provides a PIN unlock dialog
@@ -23,7 +23,6 @@ class ModemMonitorPrivate;
 class Q_DECL_EXPORT ModemMonitor : public QObject
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(ModemMonitor)
 public:
     explicit ModemMonitor(QObject *parent);
     ~ModemMonitor() override;
@@ -35,7 +34,7 @@ private Q_SLOTS:
     void onSendPinArrived(QDBusPendingCallWatcher *);
 
 private:
-    ModemMonitorPrivate *const d_ptr;
+    QPointer<PinDialog> dialog;
 };
 
 #endif // PLASMA_NM_MODEM_MONITOR_H

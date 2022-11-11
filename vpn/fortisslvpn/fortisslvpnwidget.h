@@ -10,16 +10,14 @@
 #include <NetworkManagerQt/VpnSetting>
 
 #include "settingwidget.h"
-
-class FortisslvpnWidgetPrivate;
+#include "ui_fortisslvpn.h"
+#include "ui_fortisslvpnadvanced.h"
 
 class FortisslvpnWidget : public SettingWidget
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(FortisslvpnWidget)
 public:
     explicit FortisslvpnWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr, Qt::WindowFlags f = {});
-    ~FortisslvpnWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
@@ -30,7 +28,11 @@ private Q_SLOTS:
     void showAdvanced();
 
 private:
-    FortisslvpnWidgetPrivate *const d_ptr;
+    Ui::FortisslvpnWidget ui;
+    Ui::FortisslvpnAdvancedWidget advUi;
+    NetworkManager::VpnSetting::Ptr m_setting;
+    QDialog *advancedDlg = nullptr;
+    QWidget *advancedWid = nullptr;
 };
 
 #endif // PLASMA_NM_FORTISSLVPN_WIDGET_H

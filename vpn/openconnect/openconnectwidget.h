@@ -10,18 +10,16 @@
 
 #include "settingwidget.h"
 
-#include <NetworkManagerQt/VpnSetting>
+#include "ui_openconnectprop.h"
+#include "ui_openconnecttoken.h"
 
-class OpenconnectSettingWidgetPrivate;
+#include <NetworkManagerQt/VpnSetting>
 
 class OpenconnectSettingWidget : public SettingWidget
 {
     Q_OBJECT
-
-    Q_DECLARE_PRIVATE(OpenconnectSettingWidget)
 public:
     explicit OpenconnectSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
-    ~OpenconnectSettingWidget() override;
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
     QVariantMap setting() const override;
@@ -35,7 +33,17 @@ private Q_SLOTS:
     void restoreTokens();
 
 private:
-    OpenconnectSettingWidgetPrivate *const d_ptr;
+    Ui_OpenconnectProp ui;
+    Ui::OpenConnectToken tokenUi;
+    NetworkManager::VpnSetting::Ptr m_setting;
+    QDialog *tokenDlg;
+
+    using Token = struct {
+        int tokenIndex;
+        QString tokenSecret;
+    };
+
+    Token token;
 };
 
 #endif // OPENCONNECTWIDGET_H

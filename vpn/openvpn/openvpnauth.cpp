@@ -18,38 +18,22 @@
 #include "nm-openvpn-service.h"
 #include "plasma_nm_openvpn.h"
 
-class OpenVpnAuthWidgetPrivate
-{
-public:
-    NetworkManager::VpnSetting::Ptr setting;
-    QFormLayout *layout;
-};
-
 OpenVpnAuthWidget::OpenVpnAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
     : SettingWidget(setting, hints, parent)
-    , d_ptr(new OpenVpnAuthWidgetPrivate)
 {
-    Q_D(OpenVpnAuthWidget);
-    d->setting = setting;
-    d->layout = new QFormLayout(this);
-    setLayout(d->layout);
+    m_setting = setting;
+    layout = new QFormLayout(this);
+    setLayout(layout);
 
     readSecrets();
 
     KAcceleratorManager::manage(this);
 }
 
-OpenVpnAuthWidget::~OpenVpnAuthWidget()
-{
-    delete d_ptr;
-}
-
 void OpenVpnAuthWidget::readSecrets()
 {
-    Q_D(OpenVpnAuthWidget);
-
-    const NMStringMap dataMap = d->setting->data();
-    const NMStringMap secrets = d->setting->secrets();
+    const NMStringMap dataMap = m_setting->data();
+    const NMStringMap secrets = m_setting->secrets();
     const QString cType = dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE];
     NetworkManager::Setting::SecretFlags certType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_CERTPASS "-flags").toInt();
     NetworkManager::Setting::SecretFlags passType = (NetworkManager::Setting::SecretFlags)dataMap.value(NM_OPENVPN_KEY_PASSWORD "-flags").toInt();
@@ -113,8 +97,8 @@ void OpenVpnAuthWidget::readSecrets()
         }
     }
 
-    for (int i = 0; i < d->layout->rowCount(); i++) {
-        auto le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+    for (int i = 0; i < layout->rowCount(); i++) {
+        auto le = qobject_cast<PasswordField *>(layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && le->text().isEmpty()) {
             le->setFocus(Qt::OtherFocusReason);
             break;
@@ -124,12 +108,10 @@ void OpenVpnAuthWidget::readSecrets()
 
 QVariantMap OpenVpnAuthWidget::setting() const
 {
-    Q_D(const OpenVpnAuthWidget);
-
     NMStringMap secrets;
     QVariantMap secretData;
-    for (int i = 0; i < d->layout->rowCount(); i++) {
-        auto le = qobject_cast<PasswordField *>(d->layout->itemAt(i, QFormLayout::FieldRole)->widget());
+    for (int i = 0; i < layout->rowCount(); i++) {
+        auto le = qobject_cast<PasswordField *>(layout->itemAt(i, QFormLayout::FieldRole)->widget());
         if (le && !le->text().isEmpty()) {
             const QString key = le->property("nm_secrets_key").toString();
             secrets.insert(key, le->text());
@@ -142,13 +124,11 @@ QVariantMap OpenVpnAuthWidget::setting() const
 
 void OpenVpnAuthWidget::addPasswordField(const QString &labelText, const QString &password, const QString &secretKey, bool passwordMode)
 {
-    Q_D(const OpenVpnAuthWidget);
-
     auto label = new QLabel(this);
     label->setText(labelText);
     auto lineEdit = new PasswordField(this);
     lineEdit->setPasswordModeEnabled(passwordMode);
     lineEdit->setProperty("nm_secrets_key", secretKey);
     lineEdit->setText(password);
-    d->layout->addRow(label, lineEdit);
+    layout->addRow(label, lineEdit);
 }

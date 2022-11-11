@@ -25,20 +25,10 @@
 #include <ModemManagerQt/Manager>
 #include <ModemManagerQt/Sim>
 
-#include "pindialog.h"
-
-class ModemMonitorPrivate
-{
-public:
-    QPointer<PinDialog> dialog;
-};
-
 ModemMonitor::ModemMonitor(QObject *parent)
     : QObject(parent)
-    , d_ptr(new ModemMonitorPrivate)
 {
-    Q_D(ModemMonitor);
-    d->dialog.clear();
+    dialog.clear();
 
     KSharedConfigPtr config = KSharedConfig::openConfig(QLatin1String("plasma-nm"));
     KConfigGroup grp(config, QLatin1String("General"));
@@ -55,13 +45,10 @@ ModemMonitor::ModemMonitor(QObject *parent)
 
 ModemMonitor::~ModemMonitor()
 {
-    delete d_ptr;
 }
 
 void ModemMonitor::unlockModem(const QString &modemUni)
 {
-    Q_D(ModemMonitor);
-
     ModemManager::Modem::Ptr modem;
     ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(modemUni);
     if (modemDevice) {
@@ -72,7 +59,7 @@ void ModemMonitor::unlockModem(const QString &modemUni)
 
     connect(modem.data(), &ModemManager::Modem::unlockRequiredChanged, this, &ModemMonitor::requestPin, Qt::UniqueConnection);
 
-    if (d->dialog || (modem && modem->unlockRequired() == MM_MODEM_LOCK_NONE) || (modem && modem->unlockRequired() == MM_MODEM_LOCK_UNKNOWN)) {
+    if (dialog || (modem && modem->unlockRequired() == MM_MODEM_LOCK_NONE) || (modem && modem->unlockRequired() == MM_MODEM_LOCK_UNKNOWN)) {
         return;
     }
 
@@ -84,7 +71,6 @@ void ModemMonitor::unlockModem(const QString &modemUni)
 
 void ModemMonitor::requestPin(MMModemLock lock)
 {
-    Q_D(ModemMonitor);
     qCDebug(PLASMA_NM_KDED_LOG) << "unlockRequired == " << lock;
     // Handle just SIM-PIN and SIM-PUK, because some other types may cause problems and they are not also handled by nm-applet
     if (lock == MM_MODEM_LOCK_NONE || lock == MM_MODEM_LOCK_UNKNOWN || (lock != MM_MODEM_LOCK_SIM_PIN && lock != MM_MODEM_LOCK_SIM_PUK)) {
@@ -96,14 +82,14 @@ void ModemMonitor::requestPin(MMModemLock lock)
         return;
     }
 
-    if (d->dialog) {
+    if (dialog) {
         qCDebug(PLASMA_NM_KDED_LOG) << "PinDialog already running";
         return;
     }
 
 #define MM_DIALOG(lockType, dialogType)                                                                                                                        \
     if (lock == lockType) {                                                                                                                                    \
-        d->dialog = QPointer<PinDialog>(new PinDialog(modem, PinDialog::dialogType));                                                                          \
+        dialog = QPointer<PinDialog>(new PinDialog(modem, PinDialog::dialogType));                                                                             \
     }
 
     // clang-format off
@@ -124,7 +110,7 @@ void ModemMonitor::requestPin(MMModemLock lock)
     else MM_DIALOG(MM_MODEM_LOCK_PH_NETSUB_PUK, ModemNetworkSubsetPuk);
     // clang-format on
 
-    if (d->dialog.data()->exec() != QDialog::Accepted) {
+    if (dialog.data()->exec() != QDialog::Accepted) {
         goto OUT;
     }
 
@@ -143,19 +129,19 @@ void ModemMonitor::requestPin(MMModemLock lock)
 
         QDBusPendingCallWatcher *watcher = nullptr;
 
-        PinDialog::Type type = d->dialog.data()->type();
+        PinDialog::Type type = dialog.data()->type();
 
         if (type == PinDialog::SimPin || type == PinDialog::SimPin2 //
             || type == PinDialog::ModemServiceProviderPin || type == PinDialog::ModemNetworkPin //
             || type == PinDialog::ModemPin || type == PinDialog::ModemCorporatePin //
             || type == PinDialog::ModemPhFsimPin || type == PinDialog::ModemNetworkSubsetPin) {
-            QDBusPendingCall reply = sim->sendPin(d->dialog.data()->pin());
+            QDBusPendingCall reply = sim->sendPin(dialog.data()->pin());
             watcher = new QDBusPendingCallWatcher(reply, sim.data());
         } else if (type == PinDialog::SimPuk //
                    || type == PinDialog::SimPuk2 || type == PinDialog::ModemServiceProviderPuk //
                    || type == PinDialog::ModemNetworkPuk || type == PinDialog::ModemCorporatePuk //
                    || type == PinDialog::ModemPhFsimPuk || type == PinDialog::ModemNetworkSubsetPuk) {
-            QDBusPendingCall reply = sim->sendPuk(d->dialog.data()->puk(), d->dialog.data()->pin());
+            QDBusPendingCall reply = sim->sendPuk(dialog.data()->puk(), dialog.data()->pin());
             watcher = new QDBusPendingCallWatcher(reply, sim.data());
         }
 
@@ -163,10 +149,10 @@ void ModemMonitor::requestPin(MMModemLock lock)
     }
 
 OUT:
-    if (d->dialog) {
-        d->dialog.data()->deleteLater();
+    if (dialog) {
+        dialog.data()->deleteLater();
     }
-    d->dialog.clear();
+    dialog.clear();
 }
 
 void ModemMonitor::onSendPinArrived(QDBusPendingCallWatcher *watcher)

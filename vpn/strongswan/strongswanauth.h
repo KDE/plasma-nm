@@ -9,18 +9,15 @@
 #define STRONGSWANAUTH_H
 
 #include "settingwidget.h"
+#include "ui_strongswanauth.h"
 
 #include <NetworkManagerQt/VpnSetting>
-
-class StrongswanAuthWidgetPrivate;
 
 class StrongswanAuthWidget : public SettingWidget
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(StrongswanAuthWidget)
 public:
     explicit StrongswanAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr);
-    ~StrongswanAuthWidget() override;
 
     virtual void readSecrets();
 
@@ -30,8 +27,11 @@ public Q_SLOTS:
     void setVisible(bool) override;
 
 private:
-    StrongswanAuthWidgetPrivate *const d_ptr;
     void acceptDialog();
+
+    Ui_StrongswanAuth ui;
+    bool acceptOnShow;
+    NetworkManager::VpnSetting::Ptr m_setting;
 };
 
 #endif // STRONGSWANAUTH_H

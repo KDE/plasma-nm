@@ -9,38 +9,22 @@
 
 #include "nm-ssh-service.h"
 
-class SshAuthWidgetPrivate
-{
-public:
-    NetworkManager::VpnSetting::Ptr setting;
-    Ui_SshAuth ui;
-};
-
 SshAuthWidget::SshAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
     : SettingWidget(setting, hints, parent)
-    , d_ptr(new SshAuthWidgetPrivate)
 {
-    Q_D(SshAuthWidget);
-    d->setting = setting;
-    d->ui.setupUi(this);
+    m_setting = setting;
+    ui.setupUi(this);
 
     KAcceleratorManager::manage(this);
 }
 
-SshAuthWidget::~SshAuthWidget()
-{
-    delete d_ptr;
-}
-
 QVariantMap SshAuthWidget::setting() const
 {
-    Q_D(const SshAuthWidget);
-
     NMStringMap secrets;
     QVariantMap secretData;
 
-    if (!d->ui.le_password->text().isEmpty()) {
-        secrets.insert(QLatin1String(NM_SSH_KEY_PASSWORD), d->ui.le_password->text());
+    if (!ui.le_password->text().isEmpty()) {
+        secrets.insert(QLatin1String(NM_SSH_KEY_PASSWORD), ui.le_password->text());
     }
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));

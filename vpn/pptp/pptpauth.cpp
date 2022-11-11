@@ -6,42 +6,30 @@
 */
 
 #include "pptpauth.h"
-#include "ui_pptpauth.h"
 
 #include "nm-pptp-service.h"
 
 class PptpAuthWidgetPrivate
 {
 public:
-    NetworkManager::VpnSetting::Ptr setting;
-    Ui_PptpAuthenticationWidget ui;
 };
 
 PptpAuthWidget::PptpAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
     : SettingWidget(setting, hints, parent)
-    , d_ptr(new PptpAuthWidgetPrivate)
 {
-    Q_D(PptpAuthWidget);
-    d->setting = setting;
-    d->ui.setupUi(this);
+    m_setting = setting;
+    ui.setupUi(this);
 
     KAcceleratorManager::manage(this);
 }
 
-PptpAuthWidget::~PptpAuthWidget()
-{
-    delete d_ptr;
-}
-
 QVariantMap PptpAuthWidget::setting() const
 {
-    Q_D(const PptpAuthWidget);
-
     NMStringMap secrets;
     QVariantMap secretData;
 
-    if (!d->ui.lePassword->text().isEmpty()) {
-        secrets.insert(QLatin1String(NM_PPTP_KEY_PASSWORD), d->ui.lePassword->text());
+    if (!ui.lePassword->text().isEmpty()) {
+        secrets.insert(QLatin1String(NM_PPTP_KEY_PASSWORD), ui.lePassword->text());
     }
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));

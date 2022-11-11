@@ -5,8 +5,6 @@
 */
 
 #include "fortisslvpnwidget.h"
-#include "ui_fortisslvpn.h"
-#include "ui_fortisslvpnadvanced.h"
 
 #include "nm-fortisslvpn-service.h"
 
@@ -15,53 +13,40 @@
 #include <QDialog>
 #include <QDialogButtonBox>
 
-class FortisslvpnWidgetPrivate
-{
-public:
-    Ui::FortisslvpnWidget ui;
-    Ui::FortisslvpnAdvancedWidget advUi;
-    NetworkManager::VpnSetting::Ptr setting;
-    QDialog *advancedDlg = nullptr;
-    QWidget *advancedWid = nullptr;
-};
-
 FortisslvpnWidget::FortisslvpnWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)
-    , d_ptr(new FortisslvpnWidgetPrivate)
 {
-    Q_D(FortisslvpnWidget);
+    m_setting = setting;
 
-    d->setting = setting;
+    ui.setupUi(this);
 
-    d->ui.setupUi(this);
-
-    d->ui.password->setPasswordOptionsEnabled(true);
-    d->ui.password->setPasswordNotRequiredEnabled(true);
+    ui.password->setPasswordOptionsEnabled(true);
+    ui.password->setPasswordNotRequiredEnabled(true);
 
     // Connect for setting check
     watchChangedSetting();
 
     // Connect for validity check
-    connect(d->ui.gateway, &QLineEdit::textChanged, this, &FortisslvpnWidget::slotWidgetChanged);
+    connect(ui.gateway, &QLineEdit::textChanged, this, &FortisslvpnWidget::slotWidgetChanged);
 
     // Advanced configuration
-    connect(d->ui.advancedButton, &QPushButton::clicked, this, &FortisslvpnWidget::showAdvanced);
+    connect(ui.advancedButton, &QPushButton::clicked, this, &FortisslvpnWidget::showAdvanced);
 
-    d->advancedDlg = new QDialog(this);
-    d->advancedWid = new QWidget(this);
-    d->advUi.setupUi(d->advancedWid);
-    auto layout = new QVBoxLayout(d->advancedDlg);
-    layout->addWidget(d->advancedWid);
-    d->advancedDlg->setLayout(layout);
-    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, d->advancedDlg);
-    connect(buttons, &QDialogButtonBox::accepted, d->advancedDlg, &QDialog::accept);
-    connect(buttons, &QDialogButtonBox::rejected, d->advancedDlg, &QDialog::reject);
+    advancedDlg = new QDialog(this);
+    advancedWid = new QWidget(this);
+    advUi.setupUi(advancedWid);
+    auto layout = new QVBoxLayout(advancedDlg);
+    layout->addWidget(advancedWid);
+    advancedDlg->setLayout(layout);
+    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, advancedDlg);
+    connect(buttons, &QDialogButtonBox::accepted, advancedDlg, &QDialog::accept);
+    connect(buttons, &QDialogButtonBox::rejected, advancedDlg, &QDialog::reject);
     layout->addWidget(buttons);
     KAcceleratorManager::manage(this);
 
     // Remove these from setting check:
     // Just popping up the advancedDlg changes nothing
-    disconnect(d->ui.advancedButton, &QPushButton::clicked, this, &SettingWidget::settingChanged);
+    disconnect(ui.advancedButton, &QPushButton::clicked, this, &SettingWidget::settingChanged);
     // But the accept button does
     connect(buttons, &QDialogButtonBox::accepted, this, &SettingWidget::settingChanged);
 
@@ -70,65 +55,58 @@ FortisslvpnWidget::FortisslvpnWidget(const NetworkManager::VpnSetting::Ptr &sett
     }
 }
 
-FortisslvpnWidget::~FortisslvpnWidget()
-{
-    delete d_ptr;
-}
-
 void FortisslvpnWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    Q_D(FortisslvpnWidget);
-
-    const NMStringMap data = d->setting->data();
+    const NMStringMap data = m_setting->data();
 
     const QString gateway = data.value(NM_FORTISSLVPN_KEY_GATEWAY);
     if (!gateway.isEmpty()) {
-        d->ui.gateway->setText(gateway);
+        ui.gateway->setText(gateway);
     }
 
     const QString username = data.value(NM_FORTISSLVPN_KEY_USER);
     if (!username.isEmpty()) {
-        d->ui.username->setText(username);
+        ui.username->setText(username);
     }
 
     const NetworkManager::Setting::SecretFlags passwordFlag =
         static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_PASSWORD "-flags").toInt());
     if (passwordFlag == NetworkManager::Setting::None) {
-        d->ui.password->setPasswordOption(PasswordField::StoreForAllUsers);
+        ui.password->setPasswordOption(PasswordField::StoreForAllUsers);
     } else if (passwordFlag == NetworkManager::Setting::AgentOwned) {
-        d->ui.password->setPasswordOption(PasswordField::StoreForUser);
+        ui.password->setPasswordOption(PasswordField::StoreForUser);
     } else if (passwordFlag == NetworkManager::Setting::NotSaved) {
-        d->ui.password->setPasswordOption(PasswordField::AlwaysAsk);
+        ui.password->setPasswordOption(PasswordField::AlwaysAsk);
     } else {
-        d->ui.password->setPasswordOption(PasswordField::NotRequired);
+        ui.password->setPasswordOption(PasswordField::NotRequired);
     }
 
     const QString caCert = data.value(NM_FORTISSLVPN_KEY_CA);
     if (!caCert.isEmpty()) {
-        d->ui.caCert->setText(caCert);
+        ui.caCert->setText(caCert);
     }
 
     const QString userCert = data.value(NM_FORTISSLVPN_KEY_CERT);
     if (!userCert.isEmpty()) {
-        d->ui.userCert->setText(userCert);
+        ui.userCert->setText(userCert);
     }
 
     const QString userKey = data.value(NM_FORTISSLVPN_KEY_KEY);
     if (!userKey.isEmpty()) {
-        d->ui.userKey->setText(userKey);
+        ui.userKey->setText(userKey);
     }
 
     // From advanced dialog
     const QString trustedCert = data.value(NM_FORTISSLVPN_KEY_TRUSTED_CERT);
     if (!trustedCert.isEmpty()) {
-        d->advUi.trustedCert->setText(trustedCert);
+        advUi.trustedCert->setText(trustedCert);
     }
 
     if (!data.value(NM_FORTISSLVPN_KEY_OTP "-flags").isEmpty()) {
         const NetworkManager::Setting::SecretFlags otpFlag =
             static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_OTP "-flags").toInt());
         if (otpFlag & NetworkManager::Setting::NotSaved) {
-            d->advUi.otp->setChecked(true);
+            advUi.otp->setChecked(true);
         }
     }
 
@@ -136,13 +114,13 @@ void FortisslvpnWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         const NetworkManager::Setting::SecretFlags tfaFlag =
             static_cast<NetworkManager::Setting::SecretFlags>(data.value(NM_FORTISSLVPN_KEY_2FA "-flags").toInt());
         if (tfaFlag & NetworkManager::Setting::AgentOwned) {
-            d->advUi.tfa->setChecked(true);
+            advUi.tfa->setChecked(true);
         }
     }
 
     const QString realm = data.value(NM_FORTISSLVPN_KEY_REALM);
     if (!realm.isEmpty()) {
-        d->advUi.realm->setText(realm);
+        advUi.realm->setText(realm);
     }
 
     loadSecrets(setting);
@@ -150,8 +128,6 @@ void FortisslvpnWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
 void FortisslvpnWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
 {
-    Q_D(FortisslvpnWidget);
-
     NetworkManager::VpnSetting::Ptr vpnSetting = setting.staticCast<NetworkManager::VpnSetting>();
 
     if (vpnSetting) {
@@ -159,70 +135,68 @@ void FortisslvpnWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
 
         const QString password = secrets.value(NM_FORTISSLVPN_KEY_PASSWORD);
         if (!password.isEmpty()) {
-            d->ui.password->setText(password);
+            ui.password->setText(password);
         }
     }
 }
 
 QVariantMap FortisslvpnWidget::setting() const
 {
-    Q_D(const FortisslvpnWidget);
-
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_FORTISSLVPN));
     NMStringMap data;
     NMStringMap secrets;
 
-    data.insert(NM_FORTISSLVPN_KEY_GATEWAY, d->ui.gateway->text());
+    data.insert(NM_FORTISSLVPN_KEY_GATEWAY, ui.gateway->text());
 
-    if (!d->ui.username->text().isEmpty()) {
-        data.insert(NM_FORTISSLVPN_KEY_USER, d->ui.username->text());
+    if (!ui.username->text().isEmpty()) {
+        data.insert(NM_FORTISSLVPN_KEY_USER, ui.username->text());
     }
 
-    if (!d->ui.password->text().isEmpty()) {
-        secrets.insert(NM_FORTISSLVPN_KEY_PASSWORD, d->ui.password->text());
+    if (!ui.password->text().isEmpty()) {
+        secrets.insert(NM_FORTISSLVPN_KEY_PASSWORD, ui.password->text());
     }
 
-    if (d->ui.password->passwordOption() == PasswordField::StoreForAllUsers) {
+    if (ui.password->passwordOption() == PasswordField::StoreForAllUsers) {
         data.insert(NM_FORTISSLVPN_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::None));
-    } else if (d->ui.password->passwordOption() == PasswordField::StoreForUser) {
+    } else if (ui.password->passwordOption() == PasswordField::StoreForUser) {
         data.insert(NM_FORTISSLVPN_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::AgentOwned));
-    } else if (d->ui.password->passwordOption() == PasswordField::AlwaysAsk) {
+    } else if (ui.password->passwordOption() == PasswordField::AlwaysAsk) {
         data.insert(NM_FORTISSLVPN_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::NotSaved));
     } else {
         data.insert(NM_FORTISSLVPN_KEY_PASSWORD "-flags", QString::number(NetworkManager::Setting::NotRequired));
     }
 
-    if (!d->ui.caCert->url().isEmpty()) {
-        data.insert(NM_FORTISSLVPN_KEY_CA, d->ui.caCert->url().toLocalFile());
+    if (!ui.caCert->url().isEmpty()) {
+        data.insert(NM_FORTISSLVPN_KEY_CA, ui.caCert->url().toLocalFile());
     }
 
-    if (!d->ui.userCert->url().isEmpty()) {
-        data.insert(NM_FORTISSLVPN_KEY_CERT, d->ui.userCert->url().toLocalFile());
+    if (!ui.userCert->url().isEmpty()) {
+        data.insert(NM_FORTISSLVPN_KEY_CERT, ui.userCert->url().toLocalFile());
     }
 
-    if (!d->ui.userKey->url().isEmpty()) {
-        data.insert(NM_FORTISSLVPN_KEY_KEY, d->ui.userKey->url().toLocalFile());
+    if (!ui.userKey->url().isEmpty()) {
+        data.insert(NM_FORTISSLVPN_KEY_KEY, ui.userKey->url().toLocalFile());
     }
 
     // From advanced
-    if (!d->advUi.trustedCert->text().isEmpty()) {
-        data.insert(NM_FORTISSLVPN_KEY_TRUSTED_CERT, d->advUi.trustedCert->text());
+    if (!advUi.trustedCert->text().isEmpty()) {
+        data.insert(NM_FORTISSLVPN_KEY_TRUSTED_CERT, advUi.trustedCert->text());
     }
 
-    if (d->advUi.otp->isChecked()) {
+    if (advUi.otp->isChecked()) {
         data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP "-flags"), QString::number(NetworkManager::Setting::NotSaved));
     } else {
         data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP "-flags"), QString::number(NetworkManager::Setting::None));
     }
 
-    if (d->advUi.tfa->isChecked()) {
+    if (advUi.tfa->isChecked()) {
         data.insert(QLatin1String(NM_FORTISSLVPN_KEY_2FA "-flags"), QString::number(NetworkManager::Setting::AgentOwned));
         data.insert(QLatin1String(NM_FORTISSLVPN_KEY_OTP "-flags"), QString::number(NetworkManager::Setting::None));
     }
 
-    if (!d->advUi.realm->text().isEmpty()) {
-        data.insert(NM_FORTISSLVPN_KEY_REALM, d->advUi.realm->text());
+    if (!advUi.realm->text().isEmpty()) {
+        data.insert(NM_FORTISSLVPN_KEY_REALM, advUi.realm->text());
     }
 
     setting.setData(data);
@@ -233,14 +207,10 @@ QVariantMap FortisslvpnWidget::setting() const
 
 void FortisslvpnWidget::showAdvanced()
 {
-    Q_D(FortisslvpnWidget);
-
-    d->advancedDlg->show();
+    advancedDlg->show();
 }
 
 bool FortisslvpnWidget::isValid() const
 {
-    Q_D(const FortisslvpnWidget);
-
-    return !d->ui.gateway->text().isEmpty();
+    return !ui.gateway->text().isEmpty();
 }

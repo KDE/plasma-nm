@@ -8,9 +8,6 @@
 
 #include "pptpwidget.h"
 
-#include "ui_pptpadvanced.h"
-#include "ui_pptpprop.h"
-
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QString>
@@ -20,85 +17,71 @@
 class PptpSettingWidgetPrivate
 {
 public:
-    Ui_PptpProp ui;
-    Ui_PptpAdvanced advUi;
-    NetworkManager::VpnSetting::Ptr setting;
-    QDialog *advancedDlg;
-    QWidget *advancedWid;
 };
 
 PptpSettingWidget::PptpSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
     : SettingWidget(setting, parent)
-    , d_ptr(new PptpSettingWidgetPrivate)
 {
-    Q_D(PptpSettingWidget);
-    d->ui.setupUi(this);
+    ui.setupUi(this);
 
-    d->setting = setting;
+    m_setting = setting;
 
-    d->ui.edt_password->setPasswordOptionsEnabled(true);
-    d->ui.edt_password->setPasswordNotRequiredEnabled(true);
+    ui.edt_password->setPasswordOptionsEnabled(true);
+    ui.edt_password->setPasswordNotRequiredEnabled(true);
 
-    connect(d->ui.btnAdvanced, &QPushButton::clicked, this, &PptpSettingWidget::doAdvancedDialog);
+    connect(ui.btnAdvanced, &QPushButton::clicked, this, &PptpSettingWidget::doAdvancedDialog);
 
-    d->advancedDlg = new QDialog(this);
-    d->advancedWid = new QWidget(this);
-    d->advUi.setupUi(d->advancedWid);
-    auto layout = new QVBoxLayout(d->advancedDlg);
-    layout->addWidget(d->advancedWid);
-    d->advancedDlg->setLayout(layout);
-    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, d->advancedDlg);
-    connect(buttons, &QDialogButtonBox::accepted, d->advancedDlg, &QDialog::accept);
-    connect(buttons, &QDialogButtonBox::rejected, d->advancedDlg, &QDialog::reject);
+    advancedDlg = new QDialog(this);
+    advancedWid = new QWidget(this);
+    advUi.setupUi(advancedWid);
+    auto layout = new QVBoxLayout(advancedDlg);
+    layout->addWidget(advancedWid);
+    advancedDlg->setLayout(layout);
+    auto buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, advancedDlg);
+    connect(buttons, &QDialogButtonBox::accepted, advancedDlg, &QDialog::accept);
+    connect(buttons, &QDialogButtonBox::rejected, advancedDlg, &QDialog::reject);
     layout->addWidget(buttons);
 
     // Connect for setting check
     watchChangedSetting();
 
     // Connect for validity check
-    connect(d->ui.edt_gateway, &QLineEdit::textChanged, this, &PptpSettingWidget::slotWidgetChanged);
+    connect(ui.edt_gateway, &QLineEdit::textChanged, this, &PptpSettingWidget::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
 
-    if (d->setting && !d->setting->isNull()) {
-        loadConfig(d->setting);
+    if (setting && !setting->isNull()) {
+        loadConfig(setting);
     }
-}
-
-PptpSettingWidget::~PptpSettingWidget()
-{
-    delete d_ptr;
 }
 
 void PptpSettingWidget::doAdvancedDialog()
 {
-    Q_D(PptpSettingWidget);
-    d->advancedDlg->setModal(true);
-    d->advancedDlg->show();
+    advancedDlg->setModal(true);
+    advancedDlg->show();
 }
 
 void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
-    Q_D(PptpSettingWidget);
     Q_UNUSED(setting)
 
     // General settings
-    const NMStringMap dataMap = d->setting->data();
+    const NMStringMap dataMap = m_setting->data();
 
     // Authentication
     const QString sGateway = dataMap[NM_PPTP_KEY_GATEWAY];
     if (!sGateway.isEmpty()) {
-        d->ui.edt_gateway->setText(sGateway);
+        ui.edt_gateway->setText(sGateway);
     }
 
     const QString sLogin = dataMap[NM_PPTP_KEY_USER];
     if (!sLogin.isEmpty()) {
-        d->ui.edt_login->setText(sLogin);
+        ui.edt_login->setText(sLogin);
     }
 
     const QString sDomain = dataMap[NM_PPTP_KEY_DOMAIN];
     if (!sDomain.isEmpty()) {
-        d->ui.edt_ntDomain->setText(sDomain);
+        ui.edt_ntDomain->setText(sDomain);
     }
 
     // Options below is belongs to "Advanced" dialog
@@ -112,15 +95,15 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     bool refuse_eap = (dataMap[NM_PPTP_KEY_REFUSE_EAP] == yesString);
 
     QListWidgetItem *item = nullptr;
-    item = d->advUi.listWidget->item(0); // PAP
+    item = advUi.listWidget->item(0); // PAP
     item->setCheckState(refuse_pap ? Qt::Unchecked : Qt::Checked);
-    item = d->advUi.listWidget->item(1); // CHAP
+    item = advUi.listWidget->item(1); // CHAP
     item->setCheckState(refuse_chap ? Qt::Unchecked : Qt::Checked);
-    item = d->advUi.listWidget->item(2); // MSCHAP
+    item = advUi.listWidget->item(2); // MSCHAP
     item->setCheckState(refuse_mschap ? Qt::Unchecked : Qt::Checked);
-    item = d->advUi.listWidget->item(3); // MSCHAPv2
+    item = advUi.listWidget->item(3); // MSCHAPv2
     item->setCheckState(refuse_mschapv2 ? Qt::Unchecked : Qt::Checked);
-    item = d->advUi.listWidget->item(4); // EAP
+    item = advUi.listWidget->item(4); // EAP
     item->setCheckState(refuse_eap ? Qt::Unchecked : Qt::Checked);
 
     // Cryptography and compression
@@ -130,56 +113,52 @@ void PptpSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const bool mppe_stateful = (dataMap[NM_PPTP_KEY_MPPE_STATEFUL] == yesString);
 
     if (mppe || mppe40 || mppe128) { // If MPPE is use
-        d->advUi.gb_MPPE->setChecked(mppe || mppe40 || mppe128);
+        advUi.gb_MPPE->setChecked(mppe || mppe40 || mppe128);
         if (mppe128) {
-            d->advUi.cb_MPPECrypto->setCurrentIndex(1); // 128 bit
+            advUi.cb_MPPECrypto->setCurrentIndex(1); // 128 bit
         } else if (mppe40) {
-            d->advUi.cb_MPPECrypto->setCurrentIndex(2); // 40 bit
+            advUi.cb_MPPECrypto->setCurrentIndex(2); // 40 bit
         } else {
-            d->advUi.cb_MPPECrypto->setCurrentIndex(0); // Any
+            advUi.cb_MPPECrypto->setCurrentIndex(0); // Any
         }
-        d->advUi.cb_statefulEncryption->setChecked(mppe_stateful);
+        advUi.cb_statefulEncryption->setChecked(mppe_stateful);
     }
 
     const bool nobsd = (dataMap[NM_PPTP_KEY_NOBSDCOMP] == yesString);
-    d->advUi.cb_BSD->setChecked(!nobsd);
+    advUi.cb_BSD->setChecked(!nobsd);
 
     const bool nodeflate = (dataMap[NM_PPTP_KEY_NODEFLATE] == yesString);
-    d->advUi.cb_deflate->setChecked(!nodeflate);
+    advUi.cb_deflate->setChecked(!nodeflate);
 
     const bool novjcomp = (dataMap[NM_PPTP_KEY_NO_VJ_COMP] == yesString);
-    d->advUi.cb_TCPheaders->setChecked(!novjcomp);
+    advUi.cb_TCPheaders->setChecked(!novjcomp);
 
     // Echo
     const int lcp_echo_interval = QString(dataMap[NM_PPTP_KEY_LCP_ECHO_INTERVAL]).toInt();
-    d->advUi.cb_sendEcho->setChecked(lcp_echo_interval > 0);
+    advUi.cb_sendEcho->setChecked(lcp_echo_interval > 0);
 
     // secrets
     const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_PPTP_KEY_PASSWORD "-flags"].toInt();
-    fillOnePasswordCombo(d->ui.edt_password, type);
+    fillOnePasswordCombo(ui.edt_password, type);
 
     loadSecrets(setting);
 }
 
 void PptpSettingWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
 {
-    Q_D(PptpSettingWidget);
-
     NetworkManager::VpnSetting::Ptr vpnSetting = setting.staticCast<NetworkManager::VpnSetting>();
 
     if (vpnSetting) {
         const NMStringMap secrets = vpnSetting->secrets();
         const QString keyPassword = secrets.value(QLatin1String(NM_PPTP_KEY_PASSWORD));
         if (!keyPassword.isEmpty()) {
-            d->ui.edt_password->setText(keyPassword);
+            ui.edt_password->setText(keyPassword);
         }
     }
 }
 
 QVariantMap PptpSettingWidget::setting() const
 {
-    Q_D(const PptpSettingWidget);
-
     NetworkManager::VpnSetting setting;
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_PPTP));
 
@@ -189,45 +168,45 @@ QVariantMap PptpSettingWidget::setting() const
     NMStringMap data;
     NMStringMap secretData;
 
-    data.insert(NM_PPTP_KEY_GATEWAY, d->ui.edt_gateway->text());
-    data.insert(NM_PPTP_KEY_USER, d->ui.edt_login->text());
-    if (!d->ui.edt_password->text().isEmpty()) {
-        secretData.insert(QLatin1String(NM_PPTP_KEY_PASSWORD), d->ui.edt_password->text());
+    data.insert(NM_PPTP_KEY_GATEWAY, ui.edt_gateway->text());
+    data.insert(NM_PPTP_KEY_USER, ui.edt_login->text());
+    if (!ui.edt_password->text().isEmpty()) {
+        secretData.insert(QLatin1String(NM_PPTP_KEY_PASSWORD), ui.edt_password->text());
     }
-    handleOnePasswordType(d->ui.edt_password, NM_PPTP_KEY_PASSWORD "-flags", data);
-    if (!d->ui.edt_ntDomain->text().isEmpty()) {
-        data.insert(NM_PPTP_KEY_DOMAIN, d->ui.edt_ntDomain->text());
+    handleOnePasswordType(ui.edt_password, NM_PPTP_KEY_PASSWORD "-flags", data);
+    if (!ui.edt_ntDomain->text().isEmpty()) {
+        data.insert(NM_PPTP_KEY_DOMAIN, ui.edt_ntDomain->text());
     }
 
     // Advanced dialog settings
 
     // Authentication options
     QListWidgetItem *item = nullptr;
-    item = d->advUi.listWidget->item(0); // PAP
+    item = advUi.listWidget->item(0); // PAP
     const QString yesString = QLatin1String("yes");
     if (item->checkState() == Qt::Unchecked) {
         data.insert(NM_PPTP_KEY_REFUSE_PAP, yesString);
     }
-    item = d->advUi.listWidget->item(1); // CHAP
+    item = advUi.listWidget->item(1); // CHAP
     if (item->checkState() == Qt::Unchecked) {
         data.insert(NM_PPTP_KEY_REFUSE_CHAP, yesString);
     }
-    item = d->advUi.listWidget->item(2); // MSCHAP
+    item = advUi.listWidget->item(2); // MSCHAP
     if (item->checkState() == Qt::Unchecked) {
         data.insert(NM_PPTP_KEY_REFUSE_MSCHAP, yesString);
     }
-    item = d->advUi.listWidget->item(3); // MSCHAPv2
+    item = advUi.listWidget->item(3); // MSCHAPv2
     if (item->checkState() == Qt::Unchecked) {
         data.insert(NM_PPTP_KEY_REFUSE_MSCHAPV2, yesString);
     }
-    item = d->advUi.listWidget->item(4); // EAP
+    item = advUi.listWidget->item(4); // EAP
     if (item->checkState() == Qt::Unchecked) {
         data.insert(NM_PPTP_KEY_REFUSE_EAP, yesString);
     }
 
     // Cryptography and compression
-    if (d->advUi.gb_MPPE->isChecked()) {
-        int index = d->advUi.cb_MPPECrypto->currentIndex();
+    if (advUi.gb_MPPE->isChecked()) {
+        int index = advUi.cb_MPPECrypto->currentIndex();
 
         switch (index) {
         case 0:
@@ -241,23 +220,23 @@ QVariantMap PptpSettingWidget::setting() const
             break;
         }
 
-        if (d->advUi.cb_statefulEncryption->isChecked()) {
+        if (advUi.cb_statefulEncryption->isChecked()) {
             data.insert(NM_PPTP_KEY_MPPE_STATEFUL, yesString);
         }
     }
 
-    if (!d->advUi.cb_BSD->isChecked()) {
+    if (!advUi.cb_BSD->isChecked()) {
         data.insert(NM_PPTP_KEY_NOBSDCOMP, yesString);
     }
-    if (!d->advUi.cb_deflate->isChecked()) {
+    if (!advUi.cb_deflate->isChecked()) {
         data.insert(NM_PPTP_KEY_NODEFLATE, yesString);
     }
 
-    if (!d->advUi.cb_TCPheaders->isChecked()) {
+    if (!advUi.cb_TCPheaders->isChecked()) {
         data.insert(NM_PPTP_KEY_NO_VJ_COMP, yesString);
     }
     // Echo
-    if (d->advUi.cb_sendEcho->isChecked()) {
+    if (advUi.cb_sendEcho->isChecked()) {
         data.insert(NM_PPTP_KEY_LCP_ECHO_FAILURE, "5");
         data.insert(NM_PPTP_KEY_LCP_ECHO_INTERVAL, "30");
     }
@@ -303,7 +282,5 @@ void PptpSettingWidget::handleOnePasswordType(const PasswordField *passwordField
 
 bool PptpSettingWidget::isValid() const
 {
-    Q_D(const PptpSettingWidget);
-
-    return !d->ui.edt_gateway->text().isEmpty();
+    return !ui.edt_gateway->text().isEmpty();
 }

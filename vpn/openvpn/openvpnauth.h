@@ -8,26 +8,25 @@
 #ifndef OPENVPNAUTH_H
 #define OPENVPNAUTH_H
 
+#include <QFormLayout>
+
 #include <NetworkManagerQt/VpnSetting>
 
 #include "settingwidget.h"
 
-class OpenVpnAuthWidgetPrivate;
-
 class OpenVpnAuthWidget : public SettingWidget
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(OpenVpnAuthWidget)
 public:
     explicit OpenVpnAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr);
-    ~OpenVpnAuthWidget() override;
     virtual void readSecrets();
     QVariantMap setting() const override;
 
 private:
     void addPasswordField(const QString &labelText, const QString &password, const QString &secretKey, bool passwordMode = true);
 
-    OpenVpnAuthWidgetPrivate *const d_ptr;
+    NetworkManager::VpnSetting::Ptr m_setting;
+    QFormLayout *layout;
 };
 
 #endif // OPENVPNAUTH_H

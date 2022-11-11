@@ -11,18 +11,15 @@
 
 #include "passwordfield.h"
 #include "settingwidget.h"
+#include "ui_strongswanprop.h"
 
 #include <NetworkManagerQt/VpnSetting>
-
-class StrongswanSettingWidgetPrivate;
 
 class StrongswanSettingWidget : public SettingWidget
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(StrongswanSettingWidget)
 public:
     explicit StrongswanSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent = nullptr);
-    ~StrongswanSettingWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
     void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
@@ -32,7 +29,9 @@ public:
     bool isValid() const override;
 
 private:
-    StrongswanSettingWidgetPrivate *const d_ptr;
+    Ui_StrongswanProp ui;
+    NetworkManager::VpnSetting::Ptr m_setting;
+    enum AuthType { PrivateKey = 0, SshAgent, Smartcard, Eap };
 };
 
 #endif // STRONGSWANWIDGET_H

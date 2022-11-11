@@ -7,7 +7,6 @@
 
 #include "strongswanauth.h"
 #include "nm-strongswan-service.h"
-#include "ui_strongswanauth.h"
 
 #include <KMessageBox>
 #include <QDialog>
@@ -19,59 +18,46 @@
 class StrongswanAuthWidgetPrivate
 {
 public:
-    Ui_StrongswanAuth ui;
-    bool acceptOnShow;
-    NetworkManager::VpnSetting::Ptr setting;
 };
 
 StrongswanAuthWidget::StrongswanAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)
     : SettingWidget(setting, hints, parent)
-    , d_ptr(new StrongswanAuthWidgetPrivate)
 {
-    Q_D(StrongswanAuthWidget);
-    d->setting = setting;
-    d->ui.setupUi(this);
-    d->acceptOnShow = false;
+    m_setting = setting;
+    ui.setupUi(this);
+    acceptOnShow = false;
 
     readSecrets();
 
     KAcceleratorManager::manage(this);
 }
 
-StrongswanAuthWidget::~StrongswanAuthWidget()
-{
-    delete d_ptr;
-}
-
 void StrongswanAuthWidget::readSecrets()
 {
-    Q_D(StrongswanAuthWidget);
-    const NMStringMap dataMap = d->setting->data();
+    const NMStringMap dataMap = m_setting->data();
 
     const QString method = dataMap[NM_STRONGSWAN_METHOD];
     if (method == QLatin1String(NM_STRONGSWAN_AUTH_AGENT) || dataMap[NM_STRONGSWAN_SECRET_TYPE] == QLatin1String(NM_STRONGSWAN_PW_TYPE_UNUSED)) {
         if (isVisible()) {
             acceptDialog();
         } else {
-            d->acceptOnShow = true;
+            acceptOnShow = true;
         }
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_KEY)) {
-        d->ui.passwordLabel->setText(i18nc("@label:textbox password label for private key password", "Private Key Password:"));
+        ui.passwordLabel->setText(i18nc("@label:textbox password label for private key password", "Private Key Password:"));
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD)) {
-        d->ui.passwordLabel->setText(i18nc("@label:textbox password label for smartcard pin", "PIN:"));
+        ui.passwordLabel->setText(i18nc("@label:textbox password label for smartcard pin", "PIN:"));
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_EAP)) {
-        d->ui.passwordLabel->setText(i18nc("@label:textbox password label for EAP password", "Password:"));
+        ui.passwordLabel->setText(i18nc("@label:textbox password label for EAP password", "Password:"));
     }
 }
 
 void StrongswanAuthWidget::setVisible(bool visible)
 {
-    Q_D(StrongswanAuthWidget);
-
     SettingWidget::setVisible(visible);
 
     if (visible) {
-        if (d->acceptOnShow) {
+        if (acceptOnShow) {
             acceptDialog();
         } else {
             SettingWidget::setVisible(visible);
@@ -91,12 +77,10 @@ void StrongswanAuthWidget::acceptDialog()
 
 QVariantMap StrongswanAuthWidget::setting() const
 {
-    Q_D(const StrongswanAuthWidget);
-
     NMStringMap secrets;
     QVariantMap secretData;
 
-    if (d->setting->data()[NM_STRONGSWAN_METHOD] == QLatin1String(NM_STRONGSWAN_AUTH_AGENT)) {
+    if (m_setting->data()[NM_STRONGSWAN_METHOD] == QLatin1String(NM_STRONGSWAN_AUTH_AGENT)) {
         const QString agent = QProcessEnvironment::systemEnvironment().value(QLatin1String("SSH_AUTH_SOCK"));
         if (!agent.isEmpty()) {
             secrets.insert(NM_STRONGSWAN_AUTH_AGENT, agent);
@@ -106,7 +90,7 @@ QVariantMap StrongswanAuthWidget::setting() const
                                      "Configuration uses ssh-agent for authentication, but no ssh-agent found running."));
         }
     } else {
-        secrets.insert(NM_STRONGSWAN_SECRET, d->ui.password->text());
+        secrets.insert(NM_STRONGSWAN_SECRET, ui.password->text());
     }
 
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));

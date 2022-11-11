@@ -10,20 +10,18 @@
 #include <NetworkManagerQt/VpnSetting>
 
 #include "settingwidget.h"
-
-class FortisslvpnAuthDialogPrivate;
+#include "ui_fortisslvpnauth.h"
 
 class FortisslvpnAuthDialog : public SettingWidget
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(FortisslvpnAuthDialog)
 public:
     explicit FortisslvpnAuthDialog(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr);
-    ~FortisslvpnAuthDialog() override;
     QVariantMap setting() const override;
 
 private:
-    FortisslvpnAuthDialogPrivate *const d_ptr;
+    Ui_FortisslvpnAuth ui;
+    NetworkManager::VpnSetting::Ptr m_setting;
 };
 
 #endif // PLASMA_NM_FORTISSLVPN_AUTH_H

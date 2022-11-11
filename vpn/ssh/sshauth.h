@@ -8,23 +8,21 @@
 #define SSH_AUTH_H
 
 #include "settingwidget.h"
+#include "ui_sshauth.h"
 
 #include <NetworkManagerQt/VpnSetting>
-
-class SshAuthWidgetPrivate;
 
 class SshAuthWidget : public SettingWidget
 {
     Q_OBJECT
-    Q_DECLARE_PRIVATE(SshAuthWidget)
 public:
     explicit SshAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent = nullptr);
-    ~SshAuthWidget() override;
 
     QVariantMap setting() const override;
 
 private:
-    SshAuthWidgetPrivate *const d_ptr;
+    NetworkManager::VpnSetting::Ptr m_setting;
+    Ui_SshAuth ui;
 };
 
 #endif // SSH_AUTH_H

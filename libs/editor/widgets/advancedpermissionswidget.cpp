@@ -6,7 +6,6 @@
 */
 
 #include "advancedpermissionswidget.h"
-#include "ui_advancedpermissionswidget.h"
 
 #include <KAcceleratorManager>
 #include <KLocalizedString>
@@ -15,64 +14,51 @@
 
 #define UserTagRole Qt::UserRole + 1
 
-class AdvancedPermissionsWidgetPrivate
-{
-public:
-    Ui_AdvancedPermissions ui;
-};
-
 AdvancedPermissionsWidget::AdvancedPermissionsWidget(QWidget *parent)
     : QDialog(parent)
-    , d_ptr(new AdvancedPermissionsWidgetPrivate)
 {
-    Q_D(AdvancedPermissionsWidget);
-    d->ui.setupUi(this);
+    ui.setupUi(this);
 
     for (const KUser &user : KUser::allUsers()) {
         if (user.userId().nativeId() >= 1000 && user.loginName() != QLatin1String("nobody"))
-            d->ui.availUsers->addTopLevelItem(constructItem(user));
+            ui.availUsers->addTopLevelItem(constructItem(user));
     }
     setupCommon();
 }
 
 AdvancedPermissionsWidget::AdvancedPermissionsWidget(const QHash<QString, QString> &users, QWidget *parent)
     : QDialog(parent)
-    , d_ptr(new AdvancedPermissionsWidgetPrivate)
 {
-    Q_D(AdvancedPermissionsWidget);
-    d->ui.setupUi(this);
+    ui.setupUi(this);
 
     for (const KUser &user : KUser::allUsers()) {
         const QString name = user.loginName();
         if (!users.contains(name) && user.userId().nativeId() >= 1000 && user.loginName() != QLatin1String("nobody"))
-            d->ui.availUsers->addTopLevelItem(constructItem(user));
+            ui.availUsers->addTopLevelItem(constructItem(user));
         else if (users.contains(name))
-            d->ui.currentUsers->addTopLevelItem(constructItem(user, users.value(name)));
+            ui.currentUsers->addTopLevelItem(constructItem(user, users.value(name)));
     }
     setupCommon();
 }
 
 AdvancedPermissionsWidget::~AdvancedPermissionsWidget()
 {
-    Q_D(AdvancedPermissionsWidget);
-    while (QTreeWidgetItem *item = d->ui.currentUsers->takeTopLevelItem(0)) {
+    while (QTreeWidgetItem *item = ui.currentUsers->takeTopLevelItem(0)) {
         delete item;
     }
-    while (QTreeWidgetItem *item = d->ui.availUsers->takeTopLevelItem(0)) {
+    while (QTreeWidgetItem *item = ui.availUsers->takeTopLevelItem(0)) {
         delete item;
     }
-    delete d_ptr;
 }
 
 void AdvancedPermissionsWidget::setupCommon()
 {
-    Q_D(AdvancedPermissionsWidget);
-    connect(d->ui.arrowLeft, &QPushButton::clicked, this, &AdvancedPermissionsWidget::leftArrowClicked);
-    connect(d->ui.arrowRight, &QPushButton::clicked, this, &AdvancedPermissionsWidget::rightArrowClicked);
-    d->ui.availUsers->sortByColumn(FullName, Qt::AscendingOrder);
-    d->ui.currentUsers->sortByColumn(FullName, Qt::AscendingOrder);
-    d->ui.availUsers->setSortingEnabled(true);
-    d->ui.currentUsers->setSortingEnabled(true);
+    connect(ui.arrowLeft, &QPushButton::clicked, this, &AdvancedPermissionsWidget::leftArrowClicked);
+    connect(ui.arrowRight, &QPushButton::clicked, this, &AdvancedPermissionsWidget::rightArrowClicked);
+    ui.availUsers->sortByColumn(FullName, Qt::AscendingOrder);
+    ui.currentUsers->sortByColumn(FullName, Qt::AscendingOrder);
+    ui.availUsers->setSortingEnabled(true);
+    ui.currentUsers->setSortingEnabled(true);
 
     KAcceleratorManager::manage(this);
 }
@@ -98,11 +84,10 @@ QTreeWidgetItem *AdvancedPermissionsWidget::constructItem(const KUser &user, con
 
 QHash<QString, QString> AdvancedPermissionsWidget::currentUsers() const
 {
-    Q_D(const AdvancedPermissionsWidget);
     QHash<QString, QString> permissions;
-    const int itemNumber = d->ui.currentUsers->topLevelItemCount();
+    const int itemNumber = ui.currentUsers->topLevelItemCount();
     for (int i = 0; i < itemNumber; i++) {
-        QTreeWidgetItem *item = d->ui.currentUsers->topLevelItem(i);
+        QTreeWidgetItem *item = ui.currentUsers->topLevelItem(i);
         QString username = item->data(LoginName, Qt::DisplayRole).toString();
         QString tags = item->data(LoginName, UserTagRole).toString();
         permissions.insert(username, tags);
@@ -112,22 +97,20 @@ QHash<QString, QString> AdvancedPermissionsWidget::currentUsers() const
 
 void AdvancedPermissionsWidget::rightArrowClicked()
 {
-    Q_D(AdvancedPermissionsWidget);
-    for (QTreeWidgetItem *item : d->ui.availUsers->selectedItems()) {
-        const int index = d->ui.availUsers->indexOfTopLevelItem(item);
-        d->ui.availUsers->takeTopLevelItem(index);
-        d->ui.currentUsers->addTopLevelItem(item);
+    for (QTreeWidgetItem *item : ui.availUsers->selectedItems()) {
+        const int index = ui.availUsers->indexOfTopLevelItem(item);
+        ui.availUsers->takeTopLevelItem(index);
+        ui.currentUsers->addTopLevelItem(item);
     }
 }
 
 void AdvancedPermissionsWidget::leftArrowClicked()
 {
-    Q_D(AdvancedPermissionsWidget);
-    for (QTreeWidgetItem *item : d->ui.currentUsers->selectedItems()) {
+    for (QTreeWidgetItem *item : ui.currentUsers->selectedItems()) {
         if (item->data(LoginName, Qt::DisplayRole) != KUser().loginName()) {
-            const int index = d->ui.currentUsers->indexOfTopLevelItem(item);
-            d->ui.currentUsers->takeTopLevelItem(index);
-            d->ui.availUsers->addTopLevelItem(item);
+            const int index = ui.currentUsers->indexOfTopLevelItem(item);
+            ui.currentUsers->takeTopLevelItem(index);
+            ui.availUsers->addTopLevelItem(item);
         }
     }
 }

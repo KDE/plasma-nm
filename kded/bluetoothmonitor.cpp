@@ -85,9 +85,7 @@ void BluetoothMonitor::addBluetoothConnection(const QString &bdAddr, const QStri
         btSetting->setInitialized(true);
 
         NetworkManager::addConnection(connectionSettings.toMap());
-    }
-#if WITH_MODEMMANAGER_SUPPORT
-    else if (service == QLatin1String("dun")) {
+    } else if (service == QLatin1String("dun")) {
         QPointer<MobileConnectionWizard> mobileConnectionWizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Bluetooth);
         mobileConnectionWizard->setAttribute(Qt::WA_DeleteOnClose);
         connect(mobileConnectionWizard.data(), &MobileConnectionWizard::accepted, [bdAddr, connectionName, mobileConnectionWizard]() {
@@ -123,5 +121,4 @@ void BluetoothMonitor::addBluetoothConnection(const QString &bdAddr, const QStri
         mobileConnectionWizard->setModal(true);
         mobileConnectionWizard->show();
     }
-#endif
 }

@@ -23,10 +23,8 @@
 
 #include <libnm/nm-vpn-plugin-info.h>
 
-#if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/Manager>
 #include <ModemManagerQt/ModemDevice>
-#endif
 
 #include <QDBusError>
 #include <QDBusMetaType>
@@ -131,7 +129,6 @@ void Handler::activateConnection(const QString &connection, const QString &devic
         }
     }
 
-#if WITH_MODEMMANAGER_SUPPORT
     if (con->settings()->connectionType() == NetworkManager::ConnectionSettings::Gsm) {
         NetworkManager::ModemDevice::Ptr nmModemDevice = NetworkManager::findNetworkInterface(device).objectCast<NetworkManager::ModemDevice>();
         if (nmModemDevice) {
@@ -155,7 +152,6 @@ void Handler::activateConnection(const QString &connection, const QString &devic
             }
         }
     }
-#endif
 
     QDBusPendingReply<QDBusObjectPath> reply = NetworkManager::activateConnection(connection, device, specificObject);
     auto watcher = new QDBusPendingCallWatcher(reply, this);
@@ -887,11 +883,9 @@ void Handler::primaryConnectionTypeChanged(NetworkManager::ConnectionSettings::C
     Q_EMIT hotspotSupportedChanged(m_hotspotSupported);
 }
 
-#if WITH_MODEMMANAGER_SUPPORT
 void Handler::unlockRequiredChanged(MMModemLock modemLock)
 {
     if (modemLock == MM_MODEM_LOCK_NONE) {
         activateConnection(m_tmpConnectionPath, m_tmpDevicePath, m_tmpSpecificPath);
     }
 }
-#endif

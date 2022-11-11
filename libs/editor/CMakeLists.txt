@@ -87,18 +87,13 @@ set(plasmanm_editor_SRCS
     widgets/settingwidget.h
     widgets/ssidcombobox.cpp
     widgets/ssidcombobox.h
+    widgets/mobileconnectionwizard.cpp
+    widgets/mobileconnectionwizard.h
     wireguardkeyvalidator.cpp
     wireguardkeyvalidator.h
+    mobileproviders.cpp
+    mobileproviders.h
 )
-
-if (WITH_MODEMMANAGER_SUPPORT)
-    set(plasmanm_editor_SRCS
-        ${plasmanm_editor_SRCS}
-        widgets/mobileconnectionwizard.cpp
-        widgets/mobileconnectionwizard.h
-        mobileproviders.cpp
-        mobileproviders.h)
-endif()
 
 ki18n_wrap_ui(plasmanm_editor_SRCS
     settings/ui/802-1x.ui
@@ -148,6 +143,7 @@ PUBLIC
     KF5::Completion
     KF5::NetworkManagerQt
     KF5::WidgetsAddons
+    KF5::ModemManagerQt
     Qt::Widgets
 PRIVATE
     KF5::I18n
@@ -160,9 +156,6 @@ PRIVATE
     qca-qt${QT_MAJOR_VERSION}
 )
 
-if (WITH_MODEMMANAGER_SUPPORT)
-    target_link_libraries(plasmanm_editor PUBLIC KF5::ModemManagerQt)
-    target_compile_definitions(plasmanm_editor PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")
-endif()
+target_compile_definitions(plasmanm_editor PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")
 
 install(TARGETS plasmanm_editor ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

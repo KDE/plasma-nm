@@ -7,13 +7,11 @@
 #ifndef PLASMA_NM_CONNECTION_ICON_H
 #define PLASMA_NM_CONNECTION_ICON_H
 
+#include <ModemManagerQt/Modem>
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessNetwork>
-#if WITH_MODEMMANAGER_SUPPORT
-#include <ModemManagerQt/Modem>
-#endif
 
 class ConnectionIcon : public QObject
 {
@@ -47,11 +45,9 @@ private Q_SLOTS:
     void deviceRemoved(const QString &device);
     void networkingEnabledChanged(bool enabled);
     void primaryConnectionChanged(const QString &connection);
-#if WITH_MODEMMANAGER_SUPPORT
     void modemNetworkRemoved();
     void modemSignalChanged(ModemManager::SignalQualityPair signalQuality);
     void setIconForModem();
-#endif
     void statusChanged(NetworkManager::Status status);
     void setWirelessIconForSignalStrength(int strength);
     void vpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason);
@@ -85,10 +81,8 @@ private:
     void setIcons();
     void setStates();
     void setWirelessIcon(const NetworkManager::Device::Ptr &device, const QString &ssid);
-#if WITH_MODEMMANAGER_SUPPORT
     ModemManager::Modem::Ptr m_modemNetwork;
     void setModemIcon(const NetworkManager::Device::Ptr &device);
-#endif
 };
 
 #endif // PLASMA_NM_CONNECTION_ICON_H

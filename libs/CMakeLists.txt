@@ -43,9 +43,7 @@ PRIVATE
     KF5::WindowSystem
 )
 
-if (WITH_MODEMMANAGER_SUPPORT)
-    target_link_libraries(plasmanm_internal PUBLIC KF5::ModemManagerQt)
-endif()
+target_link_libraries(plasmanm_internal PUBLIC KF5::ModemManagerQt)
 
 install(TARGETS plasmanm_internal ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 

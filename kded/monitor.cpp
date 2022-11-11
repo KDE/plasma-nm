@@ -12,9 +12,7 @@ Monitor::Monitor(QObject *parent)
     : QObject(parent)
     , m_bluetoothMonitor(new BluetoothMonitor(this))
 {
-#if WITH_MODEMMANAGER_SUPPORT
     m_modemMonitor = new ModemMonitor(this);
-#endif
 
     QDBusConnection::sessionBus().registerService(QStringLiteral("org.kde.plasmanetworkmanagement"));
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/org/kde/plasmanetworkmanagement"), this, QDBusConnection::ExportScriptableContents);
@@ -23,9 +21,7 @@ Monitor::Monitor(QObject *parent)
 Monitor::~Monitor()
 {
     delete m_bluetoothMonitor;
-#if WITH_MODEMMANAGER_SUPPORT
     delete m_modemMonitor;
-#endif
 }
 
 bool Monitor::bluetoothConnectionExists(const QString &bdAddr, const QString &service)
@@ -38,10 +34,8 @@ void Monitor::addBluetoothConnection(const QString &bdAddr, const QString &servi
     m_bluetoothMonitor->addBluetoothConnection(bdAddr, service, connectionName);
 }
 
-#if WITH_MODEMMANAGER_SUPPORT
 void Monitor::unlockModem(const QString &modem)
 {
     qDebug() << "unlocking " << modem;
     m_modemMonitor->unlockModem(modem);
 }
-#endif

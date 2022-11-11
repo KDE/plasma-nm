@@ -53,11 +53,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
     WidgetsAddons
     WindowSystem
     KCMUtils
+    ModemManagerQt
 )
-
-find_package(KF5ModemManagerQt ${KF5_MIN_VERSION})
-set_package_properties(KF5ModemManagerQt PROPERTIES
-                       TYPE OPTIONAL)
 
 ecm_find_qmlmodule(org.kde.prison 1.0)
 
@@ -86,19 +83,6 @@ pkg_check_modules(NETWORKMANAGER IMPORTED_TARGET libnm>1.4.0 REQUIRED)
 pkg_check_modules(MOBILEBROADBANDPROVIDERINFO mobile-broadband-provider-info)
 pkg_get_variable(BROADBANDPROVIDER_DATABASE mobile-broadband-provider-info database)
 
-if (DISABLE_MODEMMANAGER_SUPPORT)
-    message(STATUS "Disabling ModemManager support")
-    set(WITH_MODEMMANAGER_SUPPORT 0)
-else()
-    if (KF5ModemManagerQt_FOUND)
-        message(STATUS "Enabling ModemManager support")
-        set(WITH_MODEMMANAGER_SUPPORT 1)
-    else()
-        message(STATUS "ModemManager or ModemManagerQt not found")
-        set(WITH_MODEMMANAGER_SUPPORT 0)
-    endif()
-endif()
-
 add_definitions(
     -DQT_DISABLE_DEPRECATED_BEFORE=0x050f00
     -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
@@ -110,8 +94,6 @@ add_definitions(
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)
-
-add_definitions(-DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT})
 
 add_subdirectory(applet)
 add_subdirectory(kded)

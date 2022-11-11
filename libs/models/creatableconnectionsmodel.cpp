@@ -146,14 +146,12 @@ void CreatableConnectionsModel::populateModel()
                                                  NetworkManager::ConnectionSettings::Infiniband);
     m_list << connectionItem;
 
-#if WITH_MODEMMANAGER_SUPPORT
     connectionItem = new CreatableConnectionItem(i18n("Mobile Broadband"),
                                                  i18n("Hardware based connections"),
                                                  i18n("Some mobile broadband description"),
                                                  QStringLiteral("smartphone"),
                                                  NetworkManager::ConnectionSettings::Gsm);
     m_list << connectionItem;
-#endif
 
     connectionItem = new CreatableConnectionItem(i18n("Wired Ethernet"),
                                                  i18n("Hardware based connections"),

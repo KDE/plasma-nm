@@ -19,10 +19,8 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 
-#if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/Modem>
-#endif
 
 class Q_DECL_EXPORT UiUtils
 {
@@ -136,11 +134,9 @@ public:
      */
     static void setConnectionDefaultPermissions(NetworkManager::ConnectionSettings::Ptr &settings);
 
-#if WITH_MODEMMANAGER_SUPPORT
     static QString convertAllowedModeToString(ModemManager::Modem::ModemModes mode);
     static QString convertAccessTechnologyToString(ModemManager::Modem::AccessTechnologies tech);
     static QString convertLockReasonToString(MMModemLock reason);
-#endif
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
     static QString labelFromWirelessSecurity(NetworkManager::WirelessSecurityType type);
 

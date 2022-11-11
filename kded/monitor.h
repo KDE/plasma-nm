@@ -11,9 +11,7 @@
 #include <QObject>
 
 #include "bluetoothmonitor.h"
-#if WITH_MODEMMANAGER_SUPPORT
 #include "modemmonitor.h"
-#endif
 
 class Q_DECL_EXPORT Monitor : public QObject
 {
@@ -26,14 +24,11 @@ public:
 public Q_SLOTS:
     Q_SCRIPTABLE bool bluetoothConnectionExists(const QString &bdAddr, const QString &service);
     Q_SCRIPTABLE void addBluetoothConnection(const QString &bdAddr, const QString &service, const QString &connectionName);
-#if WITH_MODEMMANAGER_SUPPORT
     Q_SCRIPTABLE void unlockModem(const QString &modem);
-#endif
+
 private:
     BluetoothMonitor *const m_bluetoothMonitor;
-#if WITH_MODEMMANAGER_SUPPORT
     ModemMonitor *m_modemMonitor = nullptr;
-#endif
 };
 
 #endif // PLASMA_NM_MONITOR_H

@@ -21,12 +21,10 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Security8021xSetting>
 
-#if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/Manager>
 #include <ModemManagerQt/Modem3Gpp>
 #include <ModemManagerQt/ModemCdma>
 #include <ModemManagerQt/ModemDevice>
-#endif
 
 // Qt
 #include <QHostAddress>
@@ -460,7 +458,6 @@ QString UiUtils::wirelessFrequencyToString(uint frequency)
     return i18nc("Wireless connection frequency", "%1 GHz", frequency / 1000.0);
 }
 
-#if WITH_MODEMMANAGER_SUPPORT
 QString UiUtils::convertAllowedModeToString(ModemManager::Modem::ModemModes modes)
 {
     if (modes.testFlag(MM_MODEM_MODE_4G)) {
@@ -564,7 +561,6 @@ QString UiUtils::convertLockReasonToString(MMModemLock reason)
         return i18nc("possible SIM lock reason", "Lock reason unknown.");
     }
 }
-#endif
 
 NetworkManager::ModemDevice::Capability UiUtils::modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps)
 {

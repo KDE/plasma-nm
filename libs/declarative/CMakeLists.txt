@@ -20,11 +20,8 @@ target_link_libraries(plasmanm_qmlplugins
     plasmanm_editor
     Qt::Quick
     KF5::I18n
+    KF5::ModemManagerQt
 )
-
-if (WITH_MODEMMANAGER_SUPPORT)
-    target_link_libraries(plasmanm_qmlplugins KF5::ModemManagerQt)
-endif()
 
 install(TARGETS plasmanm_qmlplugins DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/plasma/networkmanagement)
 install(FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/plasma/networkmanagement)

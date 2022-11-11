@@ -17,24 +17,16 @@ target_sources(kded_networkmanagement PRIVATE
     passworddialog.h
     secretagent.h
     service.h
+    modemmonitor.cpp
+    modemmonitor.h
+    pindialog.cpp
+    pindialog.h
 )
 
 ki18n_wrap_ui(kded_networkmanagement
     passworddialog.ui
+    pinwidget.ui
 )
-
-if (WITH_MODEMMANAGER_SUPPORT)
-    target_sources(kded_networkmanagement PRIVATE
-        modemmonitor.cpp
-        modemmonitor.h
-        pindialog.cpp
-        pindialog.h
-    )
-
-    ki18n_wrap_ui(kded_networkmanagement
-        pinwidget.ui
-    )
-endif()
 
 ecm_qt_declare_logging_category(kded_networkmanagement HEADER plasma_nm_kded.h IDENTIFIER PLASMA_NM_KDED_LOG CATEGORY_NAME org.kde.plasma.nm.kded DESCRIPTION "Plasma NM (kded)" EXPORT PLASMANM)
 
@@ -53,11 +45,8 @@ target_link_libraries(kded_networkmanagement
     KF5::Wallet
     KF5::WindowSystem
     KF5::KIOGui
+    KF5::ModemManagerQt
 )
-
-if (WITH_MODEMMANAGER_SUPPORT)
-    target_link_libraries(kded_networkmanagement KF5::ModemManagerQt)
-endif()
 
 install(TARGETS kded_networkmanagement DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/kded)
 

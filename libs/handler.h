@@ -10,13 +10,11 @@
 #include <QDBusInterface>
 #include <QTimer>
 
+#include <ModemManagerQt/GenericTypes>
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Utils>
-#if WITH_MODEMMANAGER_SUPPORT
-#include <ModemManagerQt/GenericTypes>
-#endif
 
 class Q_DECL_EXPORT Handler : public QObject
 {
@@ -126,9 +124,7 @@ private Q_SLOTS:
     void replyFinished(QDBusPendingCallWatcher *watcher);
     void hotspotCreated(QDBusPendingCallWatcher *watcher);
     void primaryConnectionTypeChanged(NetworkManager::ConnectionSettings::ConnectionType type);
-#if WITH_MODEMMANAGER_SUPPORT
     void unlockRequiredChanged(MMModemLock modemLock);
-#endif
 
 Q_SIGNALS:
     void connectionActivationFailed(const QString &connectionPath, const QString &message);
@@ -143,9 +139,7 @@ private:
     bool m_hotspotSupported;
     bool m_tmpWirelessEnabled;
     bool m_tmpWwanEnabled;
-#if WITH_MODEMMANAGER_SUPPORT
     QString m_tmpConnectionPath;
-#endif
     QString m_tmpConnectionUuid;
     QString m_tmpDevicePath;
     QString m_tmpSpecificPath;

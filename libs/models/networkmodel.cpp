@@ -12,9 +12,8 @@
 #include <QVector>
 #include <algorithm>
 
-#if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/Manager>
-#endif
+
 #include <NetworkManagerQt/Settings>
 
 NetworkModel::NetworkModel(QObject *parent)
@@ -293,9 +292,7 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr &device)
         connect(wifiDev.data(), &NetworkManager::WirelessDevice::networkAppeared, this, &NetworkModel::wirelessNetworkAppeared, Qt::UniqueConnection);
         connect(wifiDev.data(), &NetworkManager::WirelessDevice::networkDisappeared, this, &NetworkModel::wirelessNetworkDisappeared, Qt::UniqueConnection);
 
-    }
-#if WITH_MODEMMANAGER_SUPPORT
-    else if (device->type() == NetworkManager::Device::Modem) {
+    } else if (device->type() == NetworkManager::Device::Modem) {
         ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(device->udi());
         if (modem) {
             if (modem->hasInterface(ModemManager::ModemDevice::ModemInterface)) {
@@ -320,7 +317,6 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr &device)
             }
         }
     }
-#endif
 }
 
 void NetworkModel::initializeSignals(const NetworkManager::WirelessNetwork::Ptr &network)
@@ -406,7 +402,6 @@ void NetworkModel::addAvailableConnection(const QString &connection, const Netwo
         item->setDevicePath(device->uni());
         item->setDeviceState(device->state());
         qCDebug(PLASMA_NM_LIBS_LOG).nospace() << "Item " << item->name() << ": device changed to " << item->devicePath();
-#if WITH_MODEMMANAGER_SUPPORT
         if (device->type() == NetworkManager::Device::Modem) {
             ModemManager::ModemDevice::Ptr modemDevice = ModemManager::findModemDevice(device->udi());
             if (modemDevice) {
@@ -417,7 +412,7 @@ void NetworkModel::addAvailableConnection(const QString &connection, const Netwo
                 }
             }
         }
-#endif
+
         if (item->type() == NetworkManager::ConnectionSettings::Wireless && item->mode() == NetworkManager::WirelessSetting::Infrastructure) {
             // Find an accesspoint which could be removed, because it will be merged with a connection
             for (NetworkModelItem *secondItem : m_list.returnItems(NetworkItemsList::Ssid, item->ssid())) {
@@ -931,7 +926,6 @@ void NetworkModel::deviceStateChanged(NetworkManager::Device::State state,
     }
 }
 
-#if WITH_MODEMMANAGER_SUPPORT
 void NetworkModel::gsmNetworkAccessTechnologiesChanged(QFlags<MMModemAccessTechnology> accessTechnologies)
 {
     Q_UNUSED(accessTechnologies);
@@ -1028,8 +1022,6 @@ void NetworkModel::gsmNetworkSignalQualityChanged(const ModemManager::SignalQual
         }
     }
 }
-
-#endif
 
 void NetworkModel::ipConfigChanged()
 {

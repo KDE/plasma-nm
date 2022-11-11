@@ -17,16 +17,12 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 
-#if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/Manager>
-#endif
 
 ConnectionIcon::ConnectionIcon(QObject *parent)
     : QObject(parent)
     , m_wirelessNetwork(nullptr)
-#if WITH_MODEMMANAGER_SUPPORT
     , m_modemNetwork(nullptr)
-#endif
 {
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionChanged, this, &ConnectionIcon::primaryConnectionChanged);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::activatingConnectionChanged, this, &ConnectionIcon::activatingConnectionChanged);
@@ -177,7 +173,6 @@ void ConnectionIcon::deviceRemoved(const QString &device)
     }
 }
 
-#if WITH_MODEMMANAGER_SUPPORT
 void ConnectionIcon::modemNetworkRemoved()
 {
     m_modemNetwork.clear();
@@ -193,7 +188,6 @@ void ConnectionIcon::modemSignalChanged(ModemManager::SignalQualityPair signalQu
         setIconForModem();
     }
 }
-#endif
 
 void ConnectionIcon::networkingEnabledChanged(bool enabled)
 {
@@ -278,12 +272,10 @@ void ConnectionIcon::setStates()
 void ConnectionIcon::setIcons()
 {
     m_signal = 0;
-#if WITH_MODEMMANAGER_SUPPORT
     if (m_modemNetwork) {
         disconnect(m_modemNetwork.data(), nullptr, this, nullptr);
         m_modemNetwork.clear();
     }
-#endif
     if (m_wirelessNetwork) {
         disconnect(m_wirelessNetwork.data(), nullptr, this, nullptr);
         m_wirelessNetwork.clear();
@@ -356,22 +348,12 @@ void ConnectionIcon::setIcons()
                 setConnectionIcon(QStringLiteral("network-wired-activated"));
                 setConnectionTooltipIcon(QStringLiteral("network-wired-activated"));
             } else if (type == NetworkManager::Device::Modem) {
-#if WITH_MODEMMANAGER_SUPPORT
                 setModemIcon(device);
-#else
-                setConnectionIcon("network-mobile-0");
-                setConnectionTooltipIcon("phone");
-#endif
             } else if (type == NetworkManager::Device::Bluetooth) {
                 NetworkManager::BluetoothDevice::Ptr btDevice = device.objectCast<NetworkManager::BluetoothDevice>();
                 if (btDevice) {
                     if (btDevice->bluetoothCapabilities().testFlag(NetworkManager::BluetoothDevice::Dun)) {
-#if WITH_MODEMMANAGER_SUPPORT
                         setModemIcon(device);
-#else
-                        setConnectionIcon("network-mobile-0");
-                        setConnectionTooltipIcon("phone");
-#endif
                     } else {
                         setConnectionIcon(QStringLiteral("network-bluetooth-activated"));
                         setConnectionTooltipIcon(QStringLiteral("preferences-system-bluetooth"));
@@ -450,7 +432,6 @@ void ConnectionIcon::setDisconnectedIcon()
     }
 }
 
-#if WITH_MODEMMANAGER_SUPPORT
 void ConnectionIcon::setModemIcon(const NetworkManager::Device::Ptr &device)
 {
     NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
@@ -545,7 +526,6 @@ void ConnectionIcon::setIconForModem()
     setConnectionIcon(QString(result).arg(strength));
     setConnectionTooltipIcon(QStringLiteral("phone"));
 }
-#endif
 
 void ConnectionIcon::setWirelessIcon(const NetworkManager::Device::Ptr &device, const QString &ssid)
 {

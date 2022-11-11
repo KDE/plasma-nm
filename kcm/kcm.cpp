@@ -278,7 +278,6 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
     if (type == NetworkManager::ConnectionSettings::Vpn && vpnType == "imported") {
         importVpn();
     } else if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
-#if WITH_MODEMMANAGER_SUPPORT
         QPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
         wizard->setAttribute(Qt::WA_DeleteOnClose);
         connect(wizard.data(), &MobileConnectionWizard::accepted, [wizard, this]() {
@@ -312,7 +311,6 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
         });
         wizard->setModal(true);
         wizard->show();
-#endif
     } else {
         NetworkManager::ConnectionSettings::Ptr connectionSettings;
         connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(type));

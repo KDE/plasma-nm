@@ -17,9 +17,7 @@
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessDevice>
 
-#if WITH_MODEMMANAGER_SUPPORT
 #include <ModemManagerQt/Modem>
-#endif
 
 class Q_DECL_EXPORT NetworkModel : public QAbstractListModel
 {
@@ -97,11 +95,9 @@ private Q_SLOTS:
     void deviceAdded(const QString &device);
     void deviceRemoved(const QString &device);
     void deviceStateChanged(NetworkManager::Device::State state, NetworkManager::Device::State oldState, NetworkManager::Device::StateChangeReason reason);
-#if WITH_MODEMMANAGER_SUPPORT
     void gsmNetworkAccessTechnologiesChanged(QFlags<MMModemAccessTechnology> accessTechnologies);
     void gsmNetworkCurrentModesChanged();
     void gsmNetworkSignalQualityChanged(const ModemManager::SignalQualityPair &signalQuality);
-#endif
     void ipConfigChanged();
     void ipInterfaceChanged();
     void statusChanged(NetworkManager::Status status);

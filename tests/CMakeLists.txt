@@ -18,9 +18,7 @@ ecm_add_test(
     LINK_LIBRARIES Qt::Test plasmanm_editor
 )
 
-if (WITH_MODEMMANAGER_SUPPORT)
-    ecm_add_test(
-        mobileproviderstest.cpp
-        LINK_LIBRARIES Qt::Test plasmanm_editor
-    )
-endif()
+ecm_add_test(
+    mobileproviderstest.cpp
+    LINK_LIBRARIES Qt::Test plasmanm_editor
+)

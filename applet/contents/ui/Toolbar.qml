@@ -17,11 +17,15 @@ import org.kde.kirigami 2.19 as Kirigami
 RowLayout {
     id: toolbar
 
+    signal scanQrCodeRequested
+
     readonly property var displayWifiMessage: !wifiSwitchButton.checked && wifiSwitchButton.visible
     readonly property var displayWwanMessage: !wwanSwitchButton.checked && wwanSwitchButton.visible
     readonly property var displayplaneModeMessage: planeModeSwitchButton.checked && planeModeSwitchButton.visible
 
     property alias searchTextField: searchTextField
+    property alias qrCodeScanSupported: qrScanButton.visible
+    property bool hasConnections: false
 
     PlasmaCore.Svg {
         id: lineSvg
@@ -195,7 +199,7 @@ RowLayout {
 
         Layout.fillWidth: true
 
-        enabled: connectionView.count > 0 || text.length > 0
+        enabled: toolbar.hasConnections || text.length > 0
 
         // This uses expanded to ensure the binding gets reevaluated
         // when the plasmoid is shown again and that way ensure we are
@@ -209,19 +213,35 @@ RowLayout {
         }
     }
 
-    PlasmaComponents3.ToolButton {
-        id: openEditorButton
+    RowLayout {
+        spacing: 0
 
-        visible: mainWindow.kcmAuthorized && !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
+        PlasmaComponents3.ToolButton {
+            id: qrScanButton
+            text: i18nc("@action:button", "Scan QR Code")
+            display: PlasmaComponents3.AbstractButton.IconOnly
+            icon.name: "view-barcode-qr"
+            onClicked: toolbar.scanQrCodeRequested()
 
-        icon.name: "configure"
-
-        PlasmaComponents3.ToolTip {
-            text: i18n("Configure network connections…")
+            PlasmaComponents3.ToolTip {
+                text: parent.text
+            }
         }
 
-        onClicked: {
-            KCMShell.openSystemSettings(mainWindow.kcm)
+        PlasmaComponents3.ToolButton {
+            id: openEditorButton
+
+            visible: mainWindow.kcmAuthorized && !(plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
+
+            icon.name: "configure"
+
+            PlasmaComponents3.ToolTip {
+                text: i18n("Configure network connections…")
+            }
+
+            onClicked: {
+                KCMShell.openSystemSettings(mainWindow.kcm)
+            }
         }
     }
 }

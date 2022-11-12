@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-18 00:46+0000\n"
-"PO-Revision-Date: 2022-09-15 12:27+0200\n"
+"PO-Revision-Date: 2022-11-11 06:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #: openvpn.cpp:181
 #, kde-format
@@ -36,7 +36,7 @@ msgstr "სერტიფიკატების კოპირება"
 #: openvpn.cpp:196
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "კოპირება"
 
 #: openvpn.cpp:255 openvpn.cpp:273 openvpn.cpp:552
 #, kde-format
@@ -52,7 +52,7 @@ msgstr "არგუმენტების არასწორი რაო�
 #: openvpn.cpp:289 openvpn.cpp:301
 #, kde-format
 msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
-msgstr ""
+msgstr "არასწორი ზომა (უნდა იყოს დიაპაზონში 0 ... 0xFFFF): %1"
 
 #: openvpn.cpp:390
 #, kde-format
@@ -62,7 +62,7 @@ msgstr "პროქსის არასწორი პარამეტრ�
 #: openvpn.cpp:424
 #, kde-format
 msgid "Invalid port (should be between 1 and 65535) in option: %1"
-msgstr ""
+msgstr "არასწორი ზომა (უნდა იყოს დიაპაზონში 1 ... 65535): %1"
 
 #: openvpn.cpp:561
 #, kde-format
@@ -397,7 +397,7 @@ msgstr ""
 #: openvpnadvanced.ui:75
 #, kde-format
 msgid "Use custom renegotiation interval:"
-msgstr ""
+msgstr "თავიდან შეერთების ინტერვალის ხელით მითითება:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCompression)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbUseCompression)
@@ -453,7 +453,7 @@ msgstr "ავტომატური"
 #: openvpnadvanced.ui:148
 #, kde-format
 msgid "Use TCP for communicating with remote host."
-msgstr ""
+msgstr "დაშორებულ ჰოსტთან ურთიერთობისას TCP-ის გამოყენება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:151
@@ -466,7 +466,7 @@ msgstr "TCP შეერთების გამოყენება"
 #: openvpnadvanced.ui:160 openvpnadvanced.ui:173
 #, kde-format
 msgid "Explicitly set virtual device type (TUN/TAP)."
-msgstr ""
+msgstr "ვირტუალური მოწყობილობის ტიპის (TUN/TAP) ხელით მითითება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceType)
 #: openvpnadvanced.ui:163
@@ -708,7 +708,7 @@ msgstr ""
 #: openvpnadvanced.ui:564
 #, kde-format
 msgid "HMAC Authentication:"
-msgstr ""
+msgstr "HMAC ავთენტიკაცია:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:587
@@ -798,31 +798,31 @@ msgstr ""
 #: openvpnadvanced.ui:673
 #, kde-format
 msgid "Server Certificate Check:"
-msgstr ""
+msgstr "სერვერის სერტიფიკატის შემოწმება:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:690
 #, kde-format
 msgid "Don't verify certificate identification"
-msgstr ""
+msgstr "სერვერის სერტიფიკატი არ შემოწმდება"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:695
 #, kde-format
 msgid "Verify whole subject exactly"
-msgstr ""
+msgstr "თემის ზუსტად გადამოწმება"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:700
 #, kde-format
 msgid "Verify name exactly"
-msgstr ""
+msgstr "სახელის ზუსტად გადამოწმება"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:705
 #, kde-format
 msgid "Verify name by prefix"
-msgstr ""
+msgstr "სახელის პრეფიქსით გადამოწმება"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:710
@@ -873,7 +873,7 @@ msgstr ""
 #: openvpnadvanced.ui:776
 #, kde-format
 msgid "Remote peer certificate TLS type:"
-msgstr ""
+msgstr "დაშორებული პარტნიორის სერტიფიკატის TLS ტიპი:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbRemoteCertTls)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbNsCertType)

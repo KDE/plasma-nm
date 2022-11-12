@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-18 00:46+0000\n"
+"POT-Creation-Date: 2022-11-12 00:49+0000\n"
 "PO-Revision-Date: 2022-10-14 12:25+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2927,7 +2927,7 @@ msgctxt "Error message in VPN import/export dialog"
 msgid "Operation not supported for this VPN type."
 msgstr "Operació no admesa per a este tipus de VPN."
 
-#: editor/vpnuiplugin.cpp:60
+#: editor/vpnuiplugin.cpp:58
 #, kde-format
 msgid "No VPN plugin found for type %1"
 msgstr "No s'ha trobat cap connector VPN per al tipus %1"

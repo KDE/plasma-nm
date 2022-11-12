@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-18 00:46+0000\n"
+"POT-Creation-Date: 2022-11-12 00:49+0000\n"
 "PO-Revision-Date: 2022-06-18 10:34+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -2935,7 +2935,7 @@ msgctxt "Error message in VPN import/export dialog"
 msgid "Operation not supported for this VPN type."
 msgstr "Для данного типа VPN операция не поддерживается."
 
-#: editor/vpnuiplugin.cpp:60
+#: editor/vpnuiplugin.cpp:58
 #, kde-format
 msgid "No VPN plugin found for type %1"
 msgstr "Не найден модуль для поддержки протокола VPN %1"

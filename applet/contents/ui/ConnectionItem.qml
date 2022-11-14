@@ -111,40 +111,7 @@ PlasmaExtras.ExpandableListItem {
 
     customExpandedViewContent: detailsComponent
 
-    Accessible.description: `${connectionTypeToString(Type)} ${subtitle}`
-
-    function connectionTypeToString(type): string {
-        switch (type) {
-        case PlasmaNM.Enums.Adsl:
-            return i18nc("@info:tooltip", "The connection type is ADSL");
-        case PlasmaNM.Enums.Bluetooth:
-            return i18nc("@info:tooltip", "The connection type is Bluetooth");
-        case PlasmaNM.Enums.Bridge:
-            return i18nc("@info:tooltip", "The connection type is Bridge");
-        case PlasmaNM.Enums.Cdma:
-            return i18nc("@info:tooltip", "The connection type is CDMA");
-        case PlasmaNM.Enums.Gsm:
-            return i18nc("@info:tooltip", "The connection type is GSM");
-        case PlasmaNM.Enums.Infiniband:
-            return i18nc("@info:tooltip", "The connection type is Infiniband");
-        case PlasmaNM.Enums.OLPCMesh:
-            return i18nc("@info:tooltip", "The connection type is OLPC Mesh");
-        case PlasmaNM.Enums.Pppoe:
-            return i18nc("@info:tooltip", "The connection type is PPOPE");
-        case PlasmaNM.Enums.Vlan:
-            return i18nc("@info:tooltip", "The connection type is VLAN");
-        case PlasmaNM.Enums.Vpn:
-            return i18nc("@info:tooltip", "The connection type is VPN");
-        case PlasmaNM.Enums.Wimax:
-            return i18nc("@info:tooltip", "The connection type is Wimax");
-        case PlasmaNM.Enums.Wired:
-            return i18nc("@info:tooltip", "The connection type is Wired");
-        case PlasmaNM.Enums.Wireless:
-            return i18nc("@info:tooltip", "The connection type is Wireless");
-        default:
-            return i18nc("@info:tooltip", "The connection type is Unknown");
-        }
-    }
+    Accessible.description: `${model.AccessibleDescription} ${subtitle}`
 
     Component {
         id: detailsComponent

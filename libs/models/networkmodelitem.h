@@ -85,6 +85,8 @@ public:
     NetworkManager::ConnectionSettings::ConnectionType type() const;
     void setType(NetworkManager::ConnectionSettings::ConnectionType type);
 
+    QString accessibleDescription() const;
+
     QString uni() const;
 
     QString uuid() const;
@@ -143,6 +145,7 @@ private:
     QString m_ssid;
     QDateTime m_timestamp;
     NetworkManager::ConnectionSettings::ConnectionType m_type;
+    QString m_accessibleDescription;
     QString m_uuid;
     QString m_vpnType;
     NetworkManager::VpnConnection::State m_vpnState;

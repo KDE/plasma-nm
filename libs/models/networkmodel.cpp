@@ -97,6 +97,8 @@ QVariant NetworkModel::data(const QModelIndex &index, int role) const
             return item->txBytes();
         case DelayModelUpdatesRole:
             return item->delayModelUpdates();
+        case Qt::AccessibleDescriptionRole:
+            return item->accessibleDescription();
         default:
             break;
         }
@@ -153,6 +155,7 @@ QHash<int, QByteArray> NetworkModel::roleNames() const
     roles[SecurityTypeStringRole] = "SecurityTypeString";
     roles[TimeStampRole] = "TimeStamp";
     roles[TypeRole] = "Type";
+    roles[Qt::AccessibleDescriptionRole] = "AccessibleDescription";
     roles[UniRole] = "Uni";
     roles[UuidRole] = "Uuid";
     roles[VpnState] = "VpnState";

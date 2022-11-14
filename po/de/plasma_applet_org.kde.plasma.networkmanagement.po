@@ -2,6 +2,7 @@
 # Markus Slopianka <kamikazow@web.de>, 2013.
 # Benjamin Weis <benjamin.weis@gmx.com>, 2013.
 # Frederik Schwarzer <schwarzer@kde.org>, 2016, 2017, 2020, 2022.
+# Alois Spitzbart <spitz234@hotmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -28,22 +29,19 @@ msgid "Disconnect"
 msgstr "Verbindung trennen"
 
 #: contents/ui/ConnectionItem.qml:64
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
-msgstr "Verbunden mit %1"
+msgstr "Mit %1 verbinden"
 
 #: contents/ui/ConnectionItem.qml:64
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
-msgstr "Verbindung trennen"
+msgstr "Verbindung mit %1 trennen"
 
 #: contents/ui/ConnectionItem.qml:88
-#, fuzzy, kde-format
-#| msgid "Show network's QR code"
+#, kde-format
 msgid "Show Network's QR Code"
 msgstr "QR-Code des Netzwerks anzeigen"
 
@@ -51,7 +49,7 @@ msgstr "QR-Code des Netzwerks anzeigen"
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
-msgstr ""
+msgstr "QR-Code für %1"
 
 #: contents/ui/ConnectionItem.qml:106
 #, kde-format
@@ -75,6 +73,8 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
+"Aktuelle Download-Geschwindigkeit ist %1 Kibibytes pro Sekunde; aktuelle "
+"Upload-Geschwindigkeit ist %2 Kibibytes pro Sekunde"
 
 #: contents/ui/ConnectionItem.qml:302
 #, kde-format
@@ -116,16 +116,14 @@ msgid "Enable Wi-Fi"
 msgstr "Wi-Fi aktivieren"
 
 #: contents/ui/main.qml:76
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable Mobile Network"
 msgstr "Mobiles Netzwerk aktivieren"
 
 #: contents/ui/main.qml:84
-#, fuzzy, kde-format
-#| msgid "Enable airplane mode"
+#, kde-format
 msgid "Enable Airplane Mode"
-msgstr "Flugzeug-Modus-aktivieren"
+msgstr "Flugzeug-Modus aktivieren"
 
 #: contents/ui/main.qml:89
 #, kde-format
@@ -173,98 +171,88 @@ msgid "No available connections"
 msgstr "Keine verfügbaren Verbindungen"
 
 #: contents/ui/PopupDialog.qml:143
-#, fuzzy, kde-format
-#| msgid "Unknown connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr "Unbekannter Verbindungstyp"
+msgstr "Die Verbindungsart ist ADSL"
 
 #: contents/ui/PopupDialog.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
-msgstr ""
+msgstr "Die Verbindungsart ist Bluetooth"
 
 #: contents/ui/PopupDialog.qml:147
-#, fuzzy, kde-format
-#| msgid "Unknown connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr "Unbekannter Verbindungstyp"
+msgstr "Die Verbindungsart ist Netzwerkbrücke"
 
 #: contents/ui/PopupDialog.qml:149
-#, fuzzy, kde-format
-#| msgid "Unknown connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr "Unbekannter Verbindungstyp"
+msgstr "Die Verbindungsart ist CDMA"
 
 #: contents/ui/PopupDialog.qml:151
-#, fuzzy, kde-format
-#| msgid "Unknown connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr "Unbekannter Verbindungstyp"
+msgstr "Die Verbindungsart ist GSM"
 
 #: contents/ui/PopupDialog.qml:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr ""
+msgstr "Die Verbindungsart ist Infiniband"
 
 #: contents/ui/PopupDialog.qml:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
-msgstr ""
+msgstr "Die Verbindungsart ist vermaschtes OLPC-Netz"
 
 #: contents/ui/PopupDialog.qml:157
-#, fuzzy, kde-format
-#| msgid "Unknown connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr "Unbekannter Verbindungstyp"
+msgstr "Die Verbindungsart ist PPOPE"
 
 #: contents/ui/PopupDialog.qml:159
-#, fuzzy, kde-format
-#| msgid "Unknown connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "Unbekannter Verbindungstyp"
+msgstr "Die Verbindungsart ist VLAN"
 
 #: contents/ui/PopupDialog.qml:161
-#, fuzzy, kde-format
-#| msgid "Unknown connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "Unbekannter Verbindungstyp"
+msgstr "Die Verbindungsart ist VPN"
 
 #: contents/ui/PopupDialog.qml:163
-#, fuzzy, kde-format
-#| msgid "Unknown connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr "Unbekannter Verbindungstyp"
+msgstr "Die Verbindungsart ist Wimax"
 
 #: contents/ui/PopupDialog.qml:165
-#, fuzzy, kde-format
-#| msgid "Connection Speed"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr "Verbindungsgeschwindigkeit"
+msgstr "Die Verbindungsart ist Kabelgebunden"
 
 #: contents/ui/PopupDialog.qml:167
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
-msgstr ""
+msgstr "Die Verbindungsart ist Drahtlos"
 
 #: contents/ui/PopupDialog.qml:169
-#, fuzzy, kde-format
-#| msgid "Unknown connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr "Unbekannter Verbindungstyp"
+msgstr "Die Verbindungsart ist Unbekannt"
 
 #: contents/ui/Toolbar.qml:118
 #, kde-format

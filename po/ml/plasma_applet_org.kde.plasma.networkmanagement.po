@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-11-15 00:48+0000\n"
 "PO-Revision-Date: 2019-12-29 06:50+0000\n"
 "Last-Translator: Subin Siby <subins2000@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -175,90 +175,6 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "ലഭ്യമായ ബന്ധങ്ങള്‍"
-
-#: contents/ui/PopupDialog.qml:143
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is ADSL"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:145
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bluetooth"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:147
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bridge"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:149
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is CDMA"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:151
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is GSM"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:153
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Infiniband"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:155
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is OLPC Mesh"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:157
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is PPOPE"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:159
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VLAN"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:161
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VPN"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:163
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wimax"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:165
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wired"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:167
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wireless"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:169
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Unknown"
-msgstr ""
 
 #: contents/ui/Toolbar.qml:118
 #, kde-format

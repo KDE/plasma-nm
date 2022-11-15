@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-11-15 00:48+0000\n"
 "PO-Revision-Date: 2020-11-13 11:23+0200\n"
 "Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -178,91 +178,6 @@ msgstr ""
 msgid "No available connections"
 msgstr "Nav pieejamu savienojumu"
 
-#: contents/ui/PopupDialog.qml:143
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is ADSL"
-msgstr "Drošības veids"
-
-#: contents/ui/PopupDialog.qml:145
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bluetooth"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:147
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bridge"
-msgstr "Drošības veids"
-
-#: contents/ui/PopupDialog.qml:149
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is CDMA"
-msgstr "Drošības veids"
-
-#: contents/ui/PopupDialog.qml:151
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is GSM"
-msgstr "Drošības veids"
-
-#: contents/ui/PopupDialog.qml:153
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Infiniband"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:155
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is OLPC Mesh"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:157
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is PPOPE"
-msgstr "Drošības veids"
-
-#: contents/ui/PopupDialog.qml:159
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VLAN"
-msgstr "Drošības veids"
-
-#: contents/ui/PopupDialog.qml:161
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VPN"
-msgstr "Drošības veids"
-
-#: contents/ui/PopupDialog.qml:163
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wimax"
-msgstr "Drošības veids"
-
-#: contents/ui/PopupDialog.qml:165
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wired"
-msgstr "Pieslēguma veids"
-
-#: contents/ui/PopupDialog.qml:167
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wireless"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:169
-#, fuzzy, kde-format
-#| msgid "ConnectionType"
-msgctxt "@info:tooltip"
-msgid "The connection type is Unknown"
-msgstr "Pieslēguma veids"
-
 #: contents/ui/Toolbar.qml:118
 #, kde-format
 msgid "Enable mobile network"
@@ -317,6 +232,57 @@ msgstr "Augšupielāde"
 #, kde-format
 msgid "Download"
 msgstr "Lejupielāde"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is ADSL"
+#~ msgstr "Drošības veids"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Bridge"
+#~ msgstr "Drošības veids"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is CDMA"
+#~ msgstr "Drošības veids"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is GSM"
+#~ msgstr "Drošības veids"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is PPOPE"
+#~ msgstr "Drošības veids"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VLAN"
+#~ msgstr "Drošības veids"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VPN"
+#~ msgstr "Drošības veids"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wimax"
+#~ msgstr "Drošības veids"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wired"
+#~ msgstr "Pieslēguma veids"
+
+#, fuzzy
+#~| msgid "ConnectionType"
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Unknown"
+#~ msgstr "Pieslēguma veids"
 
 #, fuzzy
 #~| msgctxt "text field placeholder text"

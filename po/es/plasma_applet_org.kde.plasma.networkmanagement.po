@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-11-15 00:48+0000\n"
 "PO-Revision-Date: 2022-10-27 12:24+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -173,90 +173,6 @@ msgstr "Sin coincidencias"
 msgid "No available connections"
 msgstr "No hay conexiones disponibles"
 
-#: contents/ui/PopupDialog.qml:143
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is ADSL"
-msgstr "El tipo de conexión es ADSL"
-
-#: contents/ui/PopupDialog.qml:145
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bluetooth"
-msgstr "El tipo de conexión es Bluetooth"
-
-#: contents/ui/PopupDialog.qml:147
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bridge"
-msgstr "El tipo de conexión es Bridge"
-
-#: contents/ui/PopupDialog.qml:149
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is CDMA"
-msgstr "El tipo de conexión es CDMA"
-
-#: contents/ui/PopupDialog.qml:151
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is GSM"
-msgstr "El tipo de conexión es GSM"
-
-#: contents/ui/PopupDialog.qml:153
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Infiniband"
-msgstr "El tipo de conexión es Infiniband"
-
-#: contents/ui/PopupDialog.qml:155
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is OLPC Mesh"
-msgstr "El tipo de conexión es OLPC Mesh"
-
-#: contents/ui/PopupDialog.qml:157
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is PPOPE"
-msgstr "El tipo de conexión es PPOPE"
-
-#: contents/ui/PopupDialog.qml:159
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VLAN"
-msgstr "El tipo de conexión es VLAN"
-
-#: contents/ui/PopupDialog.qml:161
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VPN"
-msgstr "El tipo de conexión es VPN"
-
-#: contents/ui/PopupDialog.qml:163
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wimax"
-msgstr "El tipo de conexión es Wimax"
-
-#: contents/ui/PopupDialog.qml:165
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wired"
-msgstr "El tipo de conexión es cableada"
-
-#: contents/ui/PopupDialog.qml:167
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wireless"
-msgstr "El tipo de conexión es inalámbrica"
-
-#: contents/ui/PopupDialog.qml:169
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Unknown"
-msgstr "El tipo de conexión es desconocido"
-
 #: contents/ui/Toolbar.qml:118
 #, kde-format
 msgid "Enable mobile network"
@@ -308,6 +224,62 @@ msgstr "Enviar"
 #, kde-format
 msgid "Download"
 msgstr "Descargar"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is ADSL"
+#~ msgstr "El tipo de conexión es ADSL"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Bluetooth"
+#~ msgstr "El tipo de conexión es Bluetooth"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Bridge"
+#~ msgstr "El tipo de conexión es Bridge"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is CDMA"
+#~ msgstr "El tipo de conexión es CDMA"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is GSM"
+#~ msgstr "El tipo de conexión es GSM"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Infiniband"
+#~ msgstr "El tipo de conexión es Infiniband"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is OLPC Mesh"
+#~ msgstr "El tipo de conexión es OLPC Mesh"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is PPOPE"
+#~ msgstr "El tipo de conexión es PPOPE"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VLAN"
+#~ msgstr "El tipo de conexión es VLAN"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VPN"
+#~ msgstr "El tipo de conexión es VPN"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wimax"
+#~ msgstr "El tipo de conexión es Wimax"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wired"
+#~ msgstr "El tipo de conexión es cableada"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wireless"
+#~ msgstr "El tipo de conexión es inalámbrica"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Unknown"
+#~ msgstr "El tipo de conexión es desconocido"
 
 #~ msgctxt "text field placeholder text"
 #~ msgid "Search…"

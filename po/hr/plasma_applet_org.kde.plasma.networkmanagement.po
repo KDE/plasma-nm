@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-11-15 00:48+0000\n"
 "PO-Revision-Date: 2011-06-27 14:57+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -187,92 +187,6 @@ msgstr ""
 msgid "No available connections"
 msgstr "&Sistemska veza"
 
-#: contents/ui/PopupDialog.qml:143
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is ADSL"
-msgstr "Nepoznta vrsta sigurnosti"
-
-#: contents/ui/PopupDialog.qml:145
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bluetooth"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:147
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bridge"
-msgstr "Nepoznta vrsta sigurnosti"
-
-#: contents/ui/PopupDialog.qml:149
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is CDMA"
-msgstr "Nepoznta vrsta sigurnosti"
-
-#: contents/ui/PopupDialog.qml:151
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is GSM"
-msgstr "Nepoznta vrsta sigurnosti"
-
-#: contents/ui/PopupDialog.qml:153
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Infiniband"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:155
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is OLPC Mesh"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:157
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is PPOPE"
-msgstr "Nepoznta vrsta sigurnosti"
-
-#: contents/ui/PopupDialog.qml:159
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VLAN"
-msgstr "Nepoznta vrsta sigurnosti"
-
-#: contents/ui/PopupDialog.qml:161
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VPN"
-msgstr "Nepoznta vrsta sigurnosti"
-
-#: contents/ui/PopupDialog.qml:163
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wimax"
-msgstr "Nepoznta vrsta sigurnosti"
-
-#: contents/ui/PopupDialog.qml:165
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wired"
-msgstr "&Tip veze:"
-
-#: contents/ui/PopupDialog.qml:167
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wireless"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:169
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip user action"
-#| msgid "Choose a connection icon"
-msgctxt "@info:tooltip"
-msgid "The connection type is Unknown"
-msgstr "Izaberite mrežnu ikonu"
-
 #: contents/ui/Toolbar.qml:118
 #, fuzzy, kde-format
 #| msgid "User name on this network"
@@ -327,6 +241,58 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is ADSL"
+#~ msgstr "Nepoznta vrsta sigurnosti"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Bridge"
+#~ msgstr "Nepoznta vrsta sigurnosti"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is CDMA"
+#~ msgstr "Nepoznta vrsta sigurnosti"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is GSM"
+#~ msgstr "Nepoznta vrsta sigurnosti"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is PPOPE"
+#~ msgstr "Nepoznta vrsta sigurnosti"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VLAN"
+#~ msgstr "Nepoznta vrsta sigurnosti"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VPN"
+#~ msgstr "Nepoznta vrsta sigurnosti"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wimax"
+#~ msgstr "Nepoznta vrsta sigurnosti"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wired"
+#~ msgstr "&Tip veze:"
+
+#, fuzzy
+#~| msgctxt "@info:tooltip user action"
+#~| msgid "Choose a connection icon"
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Unknown"
+#~ msgstr "Izaberite mrežnu ikonu"
 
 #, fuzzy
 #~| msgid "Password"

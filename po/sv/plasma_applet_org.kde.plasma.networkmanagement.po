@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-11-15 00:48+0000\n"
 "PO-Revision-Date: 2022-09-24 15:52+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -169,90 +169,6 @@ msgstr "Inga träffar"
 msgid "No available connections"
 msgstr "Inga tillgängliga anslutningar"
 
-#: contents/ui/PopupDialog.qml:143
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is ADSL"
-msgstr "Anslutningstypen är ADSL"
-
-#: contents/ui/PopupDialog.qml:145
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bluetooth"
-msgstr "Anslutningstypen är Blåtand"
-
-#: contents/ui/PopupDialog.qml:147
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bridge"
-msgstr "Anslutningstypen är Brygga"
-
-#: contents/ui/PopupDialog.qml:149
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is CDMA"
-msgstr "Anslutningstypen är CDMA"
-
-#: contents/ui/PopupDialog.qml:151
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is GSM"
-msgstr "Anslutningstypen är GSM"
-
-#: contents/ui/PopupDialog.qml:153
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Infiniband"
-msgstr "Anslutningstypen är Infiniband"
-
-#: contents/ui/PopupDialog.qml:155
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is OLPC Mesh"
-msgstr "Anslutningstypen är OLPC Mesh"
-
-#: contents/ui/PopupDialog.qml:157
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is PPOPE"
-msgstr "Anslutningstypen är PPOPE"
-
-#: contents/ui/PopupDialog.qml:159
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VLAN"
-msgstr "Anslutningstypen är VLAN"
-
-#: contents/ui/PopupDialog.qml:161
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VPN"
-msgstr "Anslutningstypen är VPN"
-
-#: contents/ui/PopupDialog.qml:163
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wimax"
-msgstr "Anslutningstypen är Wimax"
-
-#: contents/ui/PopupDialog.qml:165
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wired"
-msgstr "Anslutningstypen är trådbunden"
-
-#: contents/ui/PopupDialog.qml:167
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wireless"
-msgstr "Anslutningstypen är trådlös"
-
-#: contents/ui/PopupDialog.qml:169
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Unknown"
-msgstr "Anslutningstypen är okänd"
-
 #: contents/ui/Toolbar.qml:118
 #, kde-format
 msgid "Enable mobile network"
@@ -304,6 +220,62 @@ msgstr "Ladda upp"
 #, kde-format
 msgid "Download"
 msgstr "Ladda ner"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is ADSL"
+#~ msgstr "Anslutningstypen är ADSL"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Bluetooth"
+#~ msgstr "Anslutningstypen är Blåtand"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Bridge"
+#~ msgstr "Anslutningstypen är Brygga"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is CDMA"
+#~ msgstr "Anslutningstypen är CDMA"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is GSM"
+#~ msgstr "Anslutningstypen är GSM"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Infiniband"
+#~ msgstr "Anslutningstypen är Infiniband"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is OLPC Mesh"
+#~ msgstr "Anslutningstypen är OLPC Mesh"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is PPOPE"
+#~ msgstr "Anslutningstypen är PPOPE"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VLAN"
+#~ msgstr "Anslutningstypen är VLAN"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VPN"
+#~ msgstr "Anslutningstypen är VPN"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wimax"
+#~ msgstr "Anslutningstypen är Wimax"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wired"
+#~ msgstr "Anslutningstypen är trådbunden"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wireless"
+#~ msgstr "Anslutningstypen är trådlös"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Unknown"
+#~ msgstr "Anslutningstypen är okänd"
 
 #~ msgctxt "text field placeholder text"
 #~ msgid "Search…"

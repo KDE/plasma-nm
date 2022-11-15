@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-11-15 00:48+0000\n"
 "PO-Revision-Date: 2019-08-19 20:30+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -186,91 +186,6 @@ msgstr ""
 msgid "No available connections"
 msgstr "Conexións dispoñíbeis"
 
-#: contents/ui/PopupDialog.qml:143
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is ADSL"
-msgstr "Tipo de seguranza descoñecido"
-
-#: contents/ui/PopupDialog.qml:145
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bluetooth"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:147
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bridge"
-msgstr "Tipo de seguranza descoñecido"
-
-#: contents/ui/PopupDialog.qml:149
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is CDMA"
-msgstr "Tipo de seguranza descoñecido"
-
-#: contents/ui/PopupDialog.qml:151
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is GSM"
-msgstr "Tipo de seguranza descoñecido"
-
-#: contents/ui/PopupDialog.qml:153
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Infiniband"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:155
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is OLPC Mesh"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:157
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is PPOPE"
-msgstr "Tipo de seguranza descoñecido"
-
-#: contents/ui/PopupDialog.qml:159
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VLAN"
-msgstr "Tipo de seguranza descoñecido"
-
-#: contents/ui/PopupDialog.qml:161
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VPN"
-msgstr "Tipo de seguranza descoñecido"
-
-#: contents/ui/PopupDialog.qml:163
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wimax"
-msgstr "Tipo de seguranza descoñecido"
-
-#: contents/ui/PopupDialog.qml:165
-#, fuzzy, kde-format
-#| msgid "Connection Speed"
-msgctxt "@info:tooltip"
-msgid "The connection type is Wired"
-msgstr "Velocidade da conexión"
-
-#: contents/ui/PopupDialog.qml:167
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wireless"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:169
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Unknown"
-msgstr "Tipo de seguranza descoñecido"
-
 #: contents/ui/Toolbar.qml:118
 #, kde-format
 msgid "Enable mobile network"
@@ -326,6 +241,57 @@ msgstr "Enviar"
 #, kde-format
 msgid "Download"
 msgstr "Descargar"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is ADSL"
+#~ msgstr "Tipo de seguranza descoñecido"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Bridge"
+#~ msgstr "Tipo de seguranza descoñecido"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is CDMA"
+#~ msgstr "Tipo de seguranza descoñecido"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is GSM"
+#~ msgstr "Tipo de seguranza descoñecido"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is PPOPE"
+#~ msgstr "Tipo de seguranza descoñecido"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VLAN"
+#~ msgstr "Tipo de seguranza descoñecido"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VPN"
+#~ msgstr "Tipo de seguranza descoñecido"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wimax"
+#~ msgstr "Tipo de seguranza descoñecido"
+
+#, fuzzy
+#~| msgid "Connection Speed"
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wired"
+#~ msgstr "Velocidade da conexión"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Unknown"
+#~ msgstr "Tipo de seguranza descoñecido"
 
 #, fuzzy
 #~| msgctxt "text field placeholder text"

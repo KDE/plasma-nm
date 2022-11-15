@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-11-15 00:48+0000\n"
 "PO-Revision-Date: 2012-07-09 11:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -179,90 +179,6 @@ msgstr ""
 msgid "No available connections"
 msgstr "ធ្វើឲ្យ​ការ​តភ្ជាប់​​អសកម្ម"
 
-#: contents/ui/PopupDialog.qml:143
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is ADSL"
-msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
-
-#: contents/ui/PopupDialog.qml:145
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bluetooth"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:147
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bridge"
-msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
-
-#: contents/ui/PopupDialog.qml:149
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is CDMA"
-msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
-
-#: contents/ui/PopupDialog.qml:151
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is GSM"
-msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
-
-#: contents/ui/PopupDialog.qml:153
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Infiniband"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:155
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is OLPC Mesh"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:157
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is PPOPE"
-msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
-
-#: contents/ui/PopupDialog.qml:159
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VLAN"
-msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
-
-#: contents/ui/PopupDialog.qml:161
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VPN"
-msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
-
-#: contents/ui/PopupDialog.qml:163
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wimax"
-msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
-
-#: contents/ui/PopupDialog.qml:165
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wired"
-msgstr "ប្រភេទ​តភ្ជាប់ ៖"
-
-#: contents/ui/PopupDialog.qml:167
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wireless"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:169
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Unknown"
-msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
-
 #: contents/ui/Toolbar.qml:118
 #, fuzzy, kde-format
 #| msgid "Username on this network"
@@ -319,6 +235,56 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is ADSL"
+#~ msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Bridge"
+#~ msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is CDMA"
+#~ msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is GSM"
+#~ msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is PPOPE"
+#~ msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VLAN"
+#~ msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VPN"
+#~ msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wimax"
+#~ msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wired"
+#~ msgstr "ប្រភេទ​តភ្ជាប់ ៖"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Unknown"
+#~ msgstr "មិន​ស្គាល់​ប្រភេទ​សុវត្ថិភាព​​"
 
 #, fuzzy
 #~| msgid "Password"

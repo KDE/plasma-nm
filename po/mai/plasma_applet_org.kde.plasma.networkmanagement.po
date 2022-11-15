@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-11-15 00:48+0000\n"
 "PO-Revision-Date: 2010-09-08 12:33+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -174,90 +174,6 @@ msgstr ""
 msgid "No available connections"
 msgstr "कनेक्शन"
 
-#: contents/ui/PopupDialog.qml:143
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is ADSL"
-msgstr "संबंधन बिफल भए गेल"
-
-#: contents/ui/PopupDialog.qml:145
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bluetooth"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:147
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bridge"
-msgstr "संबंधन बिफल भए गेल"
-
-#: contents/ui/PopupDialog.qml:149
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is CDMA"
-msgstr "संबंधन बिफल भए गेल"
-
-#: contents/ui/PopupDialog.qml:151
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is GSM"
-msgstr "संबंधन बिफल भए गेल"
-
-#: contents/ui/PopupDialog.qml:153
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Infiniband"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:155
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is OLPC Mesh"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:157
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is PPOPE"
-msgstr "संबंधन बिफल भए गेल"
-
-#: contents/ui/PopupDialog.qml:159
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VLAN"
-msgstr "संबंधन बिफल भए गेल"
-
-#: contents/ui/PopupDialog.qml:161
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VPN"
-msgstr "संबंधन बिफल भए गेल"
-
-#: contents/ui/PopupDialog.qml:163
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wimax"
-msgstr "संबंधन बिफल भए गेल"
-
-#: contents/ui/PopupDialog.qml:165
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wired"
-msgstr "संबंधन बिफल भए गेल"
-
-#: contents/ui/PopupDialog.qml:167
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wireless"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:169
-#, fuzzy, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Unknown"
-msgstr "संबंधन बिफल भए गेल"
-
 #: contents/ui/Toolbar.qml:118
 #, kde-format
 msgid "Enable mobile network"
@@ -311,6 +227,56 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is ADSL"
+#~ msgstr "संबंधन बिफल भए गेल"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Bridge"
+#~ msgstr "संबंधन बिफल भए गेल"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is CDMA"
+#~ msgstr "संबंधन बिफल भए गेल"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is GSM"
+#~ msgstr "संबंधन बिफल भए गेल"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is PPOPE"
+#~ msgstr "संबंधन बिफल भए गेल"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VLAN"
+#~ msgstr "संबंधन बिफल भए गेल"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VPN"
+#~ msgstr "संबंधन बिफल भए गेल"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wimax"
+#~ msgstr "संबंधन बिफल भए गेल"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wired"
+#~ msgstr "संबंधन बिफल भए गेल"
+
+#, fuzzy
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Unknown"
+#~ msgstr "संबंधन बिफल भए गेल"
 
 #, fuzzy
 #~| msgid "Password"

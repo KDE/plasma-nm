@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-11-15 00:48+0000\n"
 "PO-Revision-Date: 2014-10-28 10:24+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -176,100 +176,6 @@ msgstr ""
 msgid "No available connections"
 msgstr "उपलब्ध जुळवण्या"
 
-#: contents/ui/PopupDialog.qml:143
-#, fuzzy, kde-format
-#| msgid "Edit connections..."
-msgctxt "@info:tooltip"
-msgid "The connection type is ADSL"
-msgstr "जुळवण्या संपादित करा..."
-
-#: contents/ui/PopupDialog.qml:145
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bluetooth"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:147
-#, fuzzy, kde-format
-#| msgid "Edit connections..."
-msgctxt "@info:tooltip"
-msgid "The connection type is Bridge"
-msgstr "जुळवण्या संपादित करा..."
-
-#: contents/ui/PopupDialog.qml:149
-#, fuzzy, kde-format
-#| msgid "Edit connections..."
-msgctxt "@info:tooltip"
-msgid "The connection type is CDMA"
-msgstr "जुळवण्या संपादित करा..."
-
-#: contents/ui/PopupDialog.qml:151
-#, fuzzy, kde-format
-#| msgid "Edit connections..."
-msgctxt "@info:tooltip"
-msgid "The connection type is GSM"
-msgstr "जुळवण्या संपादित करा..."
-
-#: contents/ui/PopupDialog.qml:153
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Infiniband"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:155
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is OLPC Mesh"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:157
-#, fuzzy, kde-format
-#| msgid "Edit connections..."
-msgctxt "@info:tooltip"
-msgid "The connection type is PPOPE"
-msgstr "जुळवण्या संपादित करा..."
-
-#: contents/ui/PopupDialog.qml:159
-#, fuzzy, kde-format
-#| msgid "Edit connections..."
-msgctxt "@info:tooltip"
-msgid "The connection type is VLAN"
-msgstr "जुळवण्या संपादित करा..."
-
-#: contents/ui/PopupDialog.qml:161
-#, fuzzy, kde-format
-#| msgid "Edit connections..."
-msgctxt "@info:tooltip"
-msgid "The connection type is VPN"
-msgstr "जुळवण्या संपादित करा..."
-
-#: contents/ui/PopupDialog.qml:163
-#, fuzzy, kde-format
-#| msgid "Edit connections..."
-msgctxt "@info:tooltip"
-msgid "The connection type is Wimax"
-msgstr "जुळवण्या संपादित करा..."
-
-#: contents/ui/PopupDialog.qml:165
-#, fuzzy, kde-format
-#| msgid "Connection speed:"
-msgctxt "@info:tooltip"
-msgid "The connection type is Wired"
-msgstr "जुळवणी वेग :"
-
-#: contents/ui/PopupDialog.qml:167
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wireless"
-msgstr ""
-
-#: contents/ui/PopupDialog.qml:169
-#, fuzzy, kde-format
-#| msgid "Edit connections..."
-msgctxt "@info:tooltip"
-msgid "The connection type is Unknown"
-msgstr "जुळवण्या संपादित करा..."
-
 #: contents/ui/Toolbar.qml:118
 #, kde-format
 msgid "Enable mobile network"
@@ -322,6 +228,66 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Edit connections..."
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is ADSL"
+#~ msgstr "जुळवण्या संपादित करा..."
+
+#, fuzzy
+#~| msgid "Edit connections..."
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Bridge"
+#~ msgstr "जुळवण्या संपादित करा..."
+
+#, fuzzy
+#~| msgid "Edit connections..."
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is CDMA"
+#~ msgstr "जुळवण्या संपादित करा..."
+
+#, fuzzy
+#~| msgid "Edit connections..."
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is GSM"
+#~ msgstr "जुळवण्या संपादित करा..."
+
+#, fuzzy
+#~| msgid "Edit connections..."
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is PPOPE"
+#~ msgstr "जुळवण्या संपादित करा..."
+
+#, fuzzy
+#~| msgid "Edit connections..."
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VLAN"
+#~ msgstr "जुळवण्या संपादित करा..."
+
+#, fuzzy
+#~| msgid "Edit connections..."
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VPN"
+#~ msgstr "जुळवण्या संपादित करा..."
+
+#, fuzzy
+#~| msgid "Edit connections..."
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wimax"
+#~ msgstr "जुळवण्या संपादित करा..."
+
+#, fuzzy
+#~| msgid "Connection speed:"
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wired"
+#~ msgstr "जुळवणी वेग :"
+
+#, fuzzy
+#~| msgid "Edit connections..."
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Unknown"
+#~ msgstr "जुळवण्या संपादित करा..."
 
 #, fuzzy
 #~| msgid "Edit connections..."

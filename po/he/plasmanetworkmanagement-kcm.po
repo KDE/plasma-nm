@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 00:52+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2017-05-23 09:10-0400\n"
 "Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
 "Language-Team: Hebrew\n"
@@ -14,29 +14,29 @@ msgstr ""
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcm.cpp:346
+#: kcm.cpp:344
 #, kde-format
 msgid "my_shared_connection"
 msgstr "החיבור_המשותף_שלי"
 
-#: kcm.cpp:417
+#: kcm.cpp:415
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "ייצוא חיבור VPN"
 
-#: kcm.cpp:442
+#: kcm.cpp:440
 #, fuzzy, kde-format
 #| msgid "Do you want to remove the connection '%1'"
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "להסיר את החיבור \"%1\"?"
 
-#: kcm.cpp:443
+#: kcm.cpp:441
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr ""
 
-#: kcm.cpp:531
+#: kcm.cpp:529
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "ייבא חיבור VPN"

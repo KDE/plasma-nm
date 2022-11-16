@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-20 00:52+0000\n"
+"POT-Creation-Date: 2022-11-16 00:48+0000\n"
 "PO-Revision-Date: 2017-01-19 19:33+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -17,29 +17,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 2.0\n"
 
-#: kcm.cpp:346
+#: kcm.cpp:344
 #, kde-format
 msgid "my_shared_connection"
 msgstr "my_shared_connection"
 
-#: kcm.cpp:417
+#: kcm.cpp:415
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Εξαγωγή σύνδεσης VPN"
 
-#: kcm.cpp:442
+#: kcm.cpp:440
 #, fuzzy, kde-format
 #| msgid "Do you want to remove the connection '%1'"
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Επιθυμείτε να αφαιρέσετε τη σύνδεση '%1'"
 
-#: kcm.cpp:443
+#: kcm.cpp:441
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr ""
 
-#: kcm.cpp:531
+#: kcm.cpp:529
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Εισαγωγή σύνδεσης VPN"

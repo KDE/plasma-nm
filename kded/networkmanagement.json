@@ -19,6 +19,7 @@
         "Description[it]": "Fornisce i segreti al demone NetworkManager",
         "Description[ka]": "საიდუმლო სტრიქონების მიწოდება NetowkManager-ის დემონამდე",
         "Description[ko]": "NetworkManager 데몬에 비밀 정보 제공",
+        "Description[lt]": "Teikia paslaptis NetworkManager tarnybai",
         "Description[nl]": "Levert secrets aan de NetworkManager-daemon",
         "Description[nn]": "Forsyner NetworkManager-tenesta med løyndomar",
         "Description[pl]": "Dostarcza danych poufnych do usługi Zarządzania Siecią",

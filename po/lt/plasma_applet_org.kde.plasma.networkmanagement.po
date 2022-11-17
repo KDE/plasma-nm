@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-15 00:48+0000\n"
-"PO-Revision-Date: 2021-06-15 23:24+0300\n"
-"Last-Translator: Moo\n"
+"PO-Revision-Date: 2022-11-16 21:58+0200\n"
+"Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.2.1\n"
 
 #: contents/ui/ConnectionItem.qml:61
 #, kde-format
@@ -34,22 +34,19 @@ msgid "Disconnect"
 msgstr "Atsijungti"
 
 #: contents/ui/ConnectionItem.qml:64
-#, fuzzy, kde-format
-#| msgid "Connect"
+#, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
-msgstr "Prisijungti"
+msgstr "Prisijungti prie %1"
 
 #: contents/ui/ConnectionItem.qml:64
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
-msgstr "Atsijungti"
+msgstr "Atsijungti nuo %1"
 
 #: contents/ui/ConnectionItem.qml:88
-#, fuzzy, kde-format
-#| msgid "Show network's QR code"
+#, kde-format
 msgid "Show Network's QR Code"
 msgstr "Rodyti tinklo QR kodą"
 
@@ -57,7 +54,7 @@ msgstr "Rodyti tinklo QR kodą"
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
-msgstr ""
+msgstr "„%1“ QR kodas"
 
 #: contents/ui/ConnectionItem.qml:106
 #, kde-format
@@ -81,6 +78,8 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
+"Dabartinis atsiuntimo greitis yra %1 kibibaitų per sekundę; dabartinis "
+"išsiuntimo greitis yra %2 kibibaitų per sekundę"
 
 #: contents/ui/ConnectionItem.qml:302
 #, kde-format
@@ -107,6 +106,7 @@ msgstr "Tinklai"
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
+"Spustelėkite viduriniuoju pelės mygtuku, kad išjungtumėte lėktuvo veikseną"
 
 #: contents/ui/main.qml:30
 #, kde-format
@@ -115,6 +115,8 @@ msgid ""
 "%1\n"
 "Middle-click to turn on Airplane Mode"
 msgstr ""
+"%1\n"
+"Spustelėkite viduriniuoju pelės mygtuku, kad įjungtumėte lėktuvo veikseną"
 
 #: contents/ui/main.qml:68 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -122,14 +124,12 @@ msgid "Enable Wi-Fi"
 msgstr "Įjungti belaidį (Wi-Fi)"
 
 #: contents/ui/main.qml:76
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable Mobile Network"
 msgstr "Įjungti mobilųjį tinklą"
 
 #: contents/ui/main.qml:84
-#, fuzzy, kde-format
-#| msgid "Enable airplane mode"
+#, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Įjungti lėktuvo veikseną"
 
@@ -171,7 +171,7 @@ msgstr "Mobilusis tinklas yra pasyvintas"
 #: contents/ui/PopupDialog.qml:114
 #, kde-format
 msgid "No matches"
-msgstr ""
+msgstr "Nėra atitikmenų"
 
 #: contents/ui/PopupDialog.qml:116
 #, kde-format

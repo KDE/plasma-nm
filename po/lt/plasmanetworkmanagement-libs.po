@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-16 00:48+0000\n"
-"PO-Revision-Date: 2021-12-10 00:21+0200\n"
-"Last-Translator: Moo\n"
+"PO-Revision-Date: 2022-11-16 21:39+0200\n"
+"Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.2.1\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -1655,10 +1655,9 @@ msgstr "WPA3 asmeninis"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA / WPA2 industrinis"
+msgstr "WPA3 industrinis 192 bitų"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -2541,7 +2540,7 @@ msgstr "%1 GBit/s"
 #, kde-format
 msgctxt "Wireless connection frequency"
 msgid "%1 GHz"
-msgstr ""
+msgstr "%1 GHz"
 
 #: editor/uiutils.cpp:464
 #, kde-format
@@ -2577,7 +2576,7 @@ msgstr "Bet kokia"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G NR"
 
 #: editor/uiutils.cpp:486
 #, kde-format
@@ -2841,7 +2840,7 @@ msgstr "WPA3-SAE"
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:614
 #, kde-format
@@ -3336,6 +3335,8 @@ msgid ""
 "Plasma is missing support for '%1' VPN connections. Please report this to "
 "your distribution."
 msgstr ""
+"Plasma trūksta palaikymo, skirto „%1“ VPN ryšiams. Praneškite apie tai savo "
+"„Linux“ platinamajam paketui."
 
 #: handler.cpp:116
 #, kde-format
@@ -3343,6 +3344,8 @@ msgid ""
 "NetworkManager is missing support for '%1' VPN connections. Please use the "
 "package manager to install it."
 msgstr ""
+"NetworkManager trūksta palaikymo, skirto „%1“ VPN ryšiams. Naudokite paketų "
+"tvarkytuvę, kad įdiegtumėte palaikymą."
 
 #: handler.cpp:770
 #, kde-format
@@ -3493,132 +3496,118 @@ msgid "Import a saved configuration file"
 msgstr "Importuoti įrašytos konfigūracijos failą"
 
 #: models/networkmodelitem.cpp:43
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra nežinomas"
 
 #: models/networkmodelitem.cpp:44
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „ADSL“"
 
 #: models/networkmodelitem.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
-msgstr ""
+msgstr "Ryšio tipas yra „Bluetooth“"
 
 #: models/networkmodelitem.cpp:46
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „Tinklų tiltas“"
 
 #: models/networkmodelitem.cpp:47
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „CDMA“"
 
 #: models/networkmodelitem.cpp:48
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „GSM“"
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr ""
+msgstr "Ryšio tipas yra „Infiniband“"
 
 #: models/networkmodelitem.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
-msgstr ""
+msgstr "Ryšio tipas yra „OLPC junglusis tinklas“"
 
 #: models/networkmodelitem.cpp:51
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „PPOPE“"
 
 #: models/networkmodelitem.cpp:52
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „VLAN“"
 
 #: models/networkmodelitem.cpp:53
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „VPN“"
 
 #: models/networkmodelitem.cpp:54
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „Wimax“"
 
 #: models/networkmodelitem.cpp:55
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „Laidinis“"
 
 #: models/networkmodelitem.cpp:56
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „Belaidis“"
 
 #: models/networkmodelitem.cpp:57
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Team"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „Komanda“"
 
 #: models/networkmodelitem.cpp:58
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Generic"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „Bendrinis“"
 
 #: models/networkmodelitem.cpp:59
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr "Ryšio tipas"
+msgstr "Ryšio tipas yra „Tunelis“"
 
 #: models/networkmodelitem.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is IP Tunnel"
-msgstr ""
+msgstr "Ryšio tipas yra „IP tunelis“"
 
 #: models/networkmodelitem.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
-msgstr ""
+msgstr "Ryšio tipas yra „WireGuard“"
 
 #: models/networkmodelitem.cpp:586
 #, kde-format
@@ -3696,13 +3685,12 @@ msgstr "Saugumo tipas"
 #: models/networkmodelitem.cpp:658
 #, kde-format
 msgid "Frequency"
-msgstr ""
+msgstr "Dažnis"
 
 #: models/networkmodelitem.cpp:659
-#, fuzzy, kde-format
-#| msgid "BSSID:"
+#, kde-format
 msgid "BSSID"
-msgstr "BSSID:"
+msgstr "BSSID"
 
 #: models/networkmodelitem.cpp:673
 #, kde-format

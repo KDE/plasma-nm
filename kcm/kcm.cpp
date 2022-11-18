@@ -530,14 +530,46 @@ void KCMNetworkmanagement::importVpn()
     const QString &filename =
         QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), i18n("VPN connections (%1)", extensions.join(QLatin1Char(' '))));
 
-    if (!filename.isEmpty()) {
-        QFileInfo fi(filename);
-        const QString ext = QStringLiteral("*.") % fi.suffix();
-        qCDebug(PLASMA_NM_KCM_LOG) << "Importing VPN connection " << filename << "extension:" << ext;
+    if (filename.isEmpty()) {
+        return;
+    }
 
-        // Handle WireGuard separately because it is different than all the other VPNs
-        if (WireGuardInterfaceWidget::supportedFileExtensions().contains(ext)) {
-            NMVariantMapMap connection = WireGuardInterfaceWidget::importConnectionSettings(filename);
+    QFileInfo fi(filename);
+    const QString ext = QStringLiteral("*.") % fi.suffix();
+    qCDebug(PLASMA_NM_KCM_LOG) << "Importing VPN connection " << filename << "extension:" << ext;
+
+    // Handle WireGuard separately because it is different than all the other VPNs
+    if (WireGuardInterfaceWidget::supportedFileExtensions().contains(ext)) {
+        NMVariantMapMap connection = WireGuardInterfaceWidget::importConnectionSettings(filename);
+        NetworkManager::ConnectionSettings connectionSettings;
+        connectionSettings.fromMap(connection);
+        connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+
+        // qCDebug(PLASMA_NM_KCM_LOG) << "Converted connection:" << connectionSettings;
+
+        m_handler->addConnection(connectionSettings.toMap());
+        // qCDebug(PLASMA_NM_KCM_LOG) << "Adding imported connection under id:" << conId;
+
+        if (!connection.isEmpty()) {
+            return; // get out if the import produced at least some output
+        }
+    }
+    for (const KPluginMetaData &service : services) {
+        const auto result = KPluginFactory::instantiatePlugin<VpnUiPlugin>(service);
+
+        if (!result) {
+            continue;
+        }
+
+        std::unique_ptr<VpnUiPlugin> vpnPlugin(result.plugin);
+
+        if (vpnPlugin->supportedFileExtensions().contains(ext)) {
+            qCDebug(PLASMA_NM_KCM_LOG) << "Found VPN plugin" << service.name() << ", type:" << service.value("X-NetworkManager-Services");
+
+            NMVariantMapMap connection = vpnPlugin->importConnectionSettings(filename);
+
+            // qCDebug(PLASMA_NM_KCM_LOG) << "Raw connection:" << connection;
+
             NetworkManager::ConnectionSettings connectionSettings;
             connectionSettings.fromMap(connection);
             connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
@@ -547,40 +579,10 @@ void KCMNetworkmanagement::importVpn()
             m_handler->addConnection(connectionSettings.toMap());
             // qCDebug(PLASMA_NM_KCM_LOG) << "Adding imported connection under id:" << conId;
 
-            if (!connection.isEmpty()) {
-                return; // get out if the import produced at least some output
-            }
-        }
-        for (const KPluginMetaData &service : services) {
-            const auto result = KPluginFactory::instantiatePlugin<VpnUiPlugin>(service);
-
-            if (!result) {
-                continue;
-            }
-
-            std::unique_ptr<VpnUiPlugin> vpnPlugin(result.plugin);
-
-            if (vpnPlugin->supportedFileExtensions().contains(ext)) {
-                qCDebug(PLASMA_NM_KCM_LOG) << "Found VPN plugin" << service.name() << ", type:" << service.value("X-NetworkManager-Services");
-
-                NMVariantMapMap connection = vpnPlugin->importConnectionSettings(filename);
-
-                // qCDebug(PLASMA_NM_KCM_LOG) << "Raw connection:" << connection;
-
-                NetworkManager::ConnectionSettings connectionSettings;
-                connectionSettings.fromMap(connection);
-                connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
-
-                // qCDebug(PLASMA_NM_KCM_LOG) << "Converted connection:" << connectionSettings;
-
-                m_handler->addConnection(connectionSettings.toMap());
-                // qCDebug(PLASMA_NM_KCM_LOG) << "Adding imported connection under id:" << conId;
-
-                if (connection.isEmpty()) { // the "positive" part will arrive with connectionAdded
-                    // TODO display success
-                } else {
-                    break; // stop iterating over the plugins if the import produced at least some output
-                }
+            if (connection.isEmpty()) { // the "positive" part will arrive with connectionAdded
+                // TODO display success
+            } else {
+                break; // stop iterating over the plugins if the import produced at least some output
             }
         }
     }

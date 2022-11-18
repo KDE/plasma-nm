@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-16 00:48+0000\n"
-"PO-Revision-Date: 2022-10-18 21:38+0530\n"
+"PO-Revision-Date: 2022-11-17 19:47+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -383,12 +383,7 @@ msgid "DNS Servers:"
 msgstr "DNS சேவையகங்கள்:"
 
 #: editor/settings/ipv4widget.cpp:420
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>You can find more information about these values here:<br/><a "
-#| "href='https://developer.gnome.org/NetworkManager/stable/nm-settings."
-#| "html'>https://developer.gnome.org/NetworkManager/stable/nm-settings.html</"
-#| "a></qt>"
+#, kde-format
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
 "href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
@@ -396,8 +391,8 @@ msgid ""
 "a></qt>"
 msgstr ""
 "<qt>இந்த மதிப்புகளைப் பற்றிய மேலும் விவரங்களை நீங்கள் இங்கு காணலாம்:<br/><a "
-"href='https://developer.gnome.org/NetworkManager/stable/nm-settings."
-"html'>https://developer.gnome.org/NetworkManager/stable/nm-settings.html</"
+"href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
+"developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 
 #: editor/settings/ipv4widget.cpp:430
@@ -885,25 +880,25 @@ msgstr ""
 #: editor/settings/ui/bt.ui:21
 #, kde-format
 msgid "Address of the device:"
-msgstr ""
+msgstr "சாதனத்தின் முகவரி:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bt.ui:41
 #, kde-format
 msgid "Connection type:"
-msgstr ""
+msgstr "இணைப்பு வகை:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/cdma.ui:20 editor/settings/ui/gsm.ui:24
 #, kde-format
 msgid "Number:"
-msgstr ""
+msgstr "எண்:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
 #: editor/settings/ui/connectionwidget.ui:17
 #, kde-format
 msgid "Connect automatically with priority"
-msgstr ""
+msgstr "இந்த முன்னிலையுடன் தானாக இணை"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
@@ -920,7 +915,7 @@ msgstr ""
 #: editor/settings/ui/connectionwidget.ui:48
 #, kde-format
 msgid "All users may connect to this network"
-msgstr ""
+msgstr "இப்பிணையத்திற்கு அனைத்து பயனர்களும் இணையலாம்"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:64
@@ -1019,13 +1014,13 @@ msgstr ""
 #: editor/settings/ui/gsm.ui:110
 #, kde-format
 msgid "Network ID:"
-msgstr ""
+msgstr "பிணைய அடையாளம்:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/gsm.ui:130
 #, kde-format
 msgid "PIN:"
-msgstr ""
+msgstr "கடவெண்:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/infiniband.ui:21
@@ -1040,7 +1035,7 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:23
 #, kde-format
 msgid "Restrict to device:"
-msgstr ""
+msgstr "இச்சாதனத்திற்கு வரம்புப்படுத்து:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, mtuLabel)
@@ -1068,7 +1063,7 @@ msgstr "தானியக்கம்"
 #: editor/settings/ui/wiredconnectionwidget.ui:115
 #, kde-format
 msgid " bytes"
-msgstr ""
+msgstr " பைட்டுகள்"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, IPv6Widget)
 #. i18n: ectx: property (toolTip), widget (QWidget, IPv4Widget)
@@ -1081,7 +1076,7 @@ msgstr "மேம்பட்ட IP அமைப்புகள்"
 #: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
 #, kde-format
 msgid "Method:"
-msgstr ""
+msgstr "முறை:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:227
@@ -1127,7 +1122,7 @@ msgstr "முடக்கு"
 #, kde-format
 msgctxt "@info"
 msgid "DNS Servers:"
-msgstr ""
+msgstr "DNS சேவையகங்கள்:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
 #: editor/settings/ui/ipv4.ui:118 editor/settings/ui/ipv6.ui:76
@@ -1141,7 +1136,7 @@ msgstr ""
 #: editor/settings/ui/ipv4.ui:125
 #, kde-format
 msgid "Edit DNS the list of servers"
-msgstr ""
+msgstr "DNS சேவையகங்களின் பட்டியலை திருத்தவிடும்"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:354
@@ -1242,7 +1237,7 @@ msgstr ""
 #: editor/settings/ui/ipv6.ui:83
 #, kde-format
 msgid "Edit the list of DNS servers"
-msgstr ""
+msgstr "DNS சேவையகங்களின் பட்டியலை திருத்தவிடும்"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:193

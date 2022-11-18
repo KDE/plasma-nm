@@ -35,11 +35,6 @@ QString IodineUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettin
     return {};
 }
 
-QString IodineUiPlugin::supportedFileExtensions() const
-{
-    return {};
-}
-
 NMVariantMapMap IodineUiPlugin::importConnectionSettings(const QString &fileName)
 {
     Q_UNUSED(fileName);

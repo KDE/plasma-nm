@@ -44,7 +44,7 @@ public:
      * File extension to be used in QFileDialog when selecting the file to import.
      * The format is: *.<extension> [*.<extension> ...]. For instance: '*.pcf'
      */
-    virtual QString supportedFileExtensions() const = 0;
+    virtual QString supportedFileExtensions() const;
 
     /**
      * If the plugin does not support fileName's extension it must just return an empty QVariantList.

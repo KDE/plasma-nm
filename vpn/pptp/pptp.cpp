@@ -37,11 +37,6 @@ QString PptpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings
     return {};
 }
 
-QString PptpUiPlugin::supportedFileExtensions() const
-{
-    return {};
-}
-
 NMVariantMapMap PptpUiPlugin::importConnectionSettings(const QString &fileName)
 {
     Q_UNUSED(fileName);

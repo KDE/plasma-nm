@@ -43,6 +43,11 @@ QString VpnUiPlugin::lastErrorMessage()
     return mErrorMessage;
 }
 
+QString VpnUiPlugin::supportedFileExtensions() const
+{
+    return {};
+}
+
 KPluginFactory::Result<VpnUiPlugin> VpnUiPlugin::loadPluginForType(QObject *parent, const QString &serviceType)
 {
     auto filter = [serviceType](const KPluginMetaData &md) {

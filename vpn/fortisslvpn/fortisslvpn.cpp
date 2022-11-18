@@ -35,11 +35,6 @@ QString FortisslvpnUiPlugin::suggestedFileName(const NetworkManager::ConnectionS
     return {};
 }
 
-QString FortisslvpnUiPlugin::supportedFileExtensions() const
-{
-    return {};
-}
-
 NMVariantMapMap FortisslvpnUiPlugin::importConnectionSettings(const QString &fileName)
 {
     Q_UNUSED(fileName);

@@ -37,12 +37,6 @@ QString SshUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings:
     return {};
 }
 
-QString SshUiPlugin::supportedFileExtensions() const
-{
-    // TODO : return supported file extensions
-    return {};
-}
-
 NMVariantMapMap SshUiPlugin::importConnectionSettings(const QString &fileName)
 {
     Q_UNUSED(fileName);

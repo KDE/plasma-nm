@@ -36,11 +36,6 @@ QString LibreswanUiPlugin::suggestedFileName(const NetworkManager::ConnectionSet
     return {};
 }
 
-QString LibreswanUiPlugin::supportedFileExtensions() const
-{
-    return {};
-}
-
 NMVariantMapMap LibreswanUiPlugin::importConnectionSettings(const QString &fileName)
 {
     Q_UNUSED(fileName);

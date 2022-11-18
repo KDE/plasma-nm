@@ -39,12 +39,6 @@ QString StrongswanUiPlugin::suggestedFileName(const NetworkManager::ConnectionSe
     return {};
 }
 
-QString StrongswanUiPlugin::supportedFileExtensions() const
-{
-    // TODO : return supported file extensions
-    return {};
-}
-
 NMVariantMapMap StrongswanUiPlugin::importConnectionSettings(const QString &fileName)
 {
     Q_UNUSED(fileName);

@@ -35,11 +35,6 @@ QString OpenconnectUiPlugin::suggestedFileName(const NetworkManager::ConnectionS
     return {};
 }
 
-QString OpenconnectUiPlugin::supportedFileExtensions() const
-{
-    return {};
-}
-
 QMessageBox::StandardButtons OpenconnectUiPlugin::suggestedAuthDialogButtons() const
 {
     return QMessageBox::Close;

@@ -37,12 +37,6 @@ QString SstpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings
     return {};
 }
 
-QString SstpUiPlugin::supportedFileExtensions() const
-{
-    // TODO : return supported file extensions
-    return {};
-}
-
 NMVariantMapMap SstpUiPlugin::importConnectionSettings(const QString &fileName)
 {
     Q_UNUSED(fileName);

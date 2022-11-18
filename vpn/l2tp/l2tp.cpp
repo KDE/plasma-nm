@@ -37,11 +37,6 @@ QString L2tpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings
     return {};
 }
 
-QString L2tpUiPlugin::supportedFileExtensions() const
-{
-    return {};
-}
-
 NMVariantMapMap L2tpUiPlugin::importConnectionSettings(const QString &fileName)
 {
     Q_UNUSED(fileName);

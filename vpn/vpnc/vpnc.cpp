@@ -101,9 +101,9 @@ QString VpncUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings
     return connection->id() + QStringLiteral(".pcf");
 }
 
-QString VpncUiPlugin::supportedFileExtensions() const
+QStringList VpncUiPlugin::supportedFileExtensions() const
 {
-    return QStringLiteral("*.pcf");
+    return {QStringLiteral("*.pcf")};
 }
 
 NMVariantMapMap VpncUiPlugin::importConnectionSettings(const QString &fileName)

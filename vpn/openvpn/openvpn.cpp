@@ -166,9 +166,9 @@ QString OpenVpnUiPlugin::suggestedFileName(const NetworkManager::ConnectionSetti
     return connection->id() + QStringLiteral("_openvpn.conf");
 }
 
-QString OpenVpnUiPlugin::supportedFileExtensions() const
+QStringList OpenVpnUiPlugin::supportedFileExtensions() const
 {
-    return QStringLiteral("*.ovpn *.conf");
+    return {QStringLiteral("*.ovpn"), QStringLiteral("*.conf")};
 }
 
 NMVariantMapMap OpenVpnUiPlugin::importConnectionSettings(const QString &fileName)

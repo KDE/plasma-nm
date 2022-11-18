@@ -412,7 +412,8 @@ void KCMNetworkmanagement::onRequestExportConnection(const QString &connectionPa
 
         const QString url =
             QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + QDir::separator() + vpnPlugin->suggestedFileName(connSettings);
-        const QString filename = QFileDialog::getSaveFileName(this, i18n("Export VPN Connection"), url, vpnPlugin->supportedFileExtensions());
+        const QString filename =
+            QFileDialog::getSaveFileName(this, i18n("Export VPN Connection"), url, vpnPlugin->supportedFileExtensions().join(QLatin1Char(' ')));
         if (!filename.isEmpty()) {
             if (!vpnPlugin->exportConnectionSettings(connSettings, filename)) {
                 // TODO display failure
@@ -517,16 +518,17 @@ void KCMNetworkmanagement::importVpn()
 {
     // get the list of supported extensions
     const QVector<KPluginMetaData> services = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
-    QString extensions;
+    QStringList extensions;
     for (const KPluginMetaData &service : services) {
         const auto result = KPluginFactory::instantiatePlugin<VpnUiPlugin>(service);
         if (result) {
-            extensions += result.plugin->supportedFileExtensions() % QStringLiteral(" ");
+            extensions += result.plugin->supportedFileExtensions();
             delete result.plugin;
         }
     }
 
-    const QString &filename = QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), extensions.simplified());
+    const QString &filename =
+        QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), i18n("VPN connections (%1)", extensions.join(QLatin1Char(' '))));
 
     if (!filename.isEmpty()) {
         const QVector<KPluginMetaData> services = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));

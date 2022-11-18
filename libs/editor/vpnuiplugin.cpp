@@ -43,7 +43,7 @@ QString VpnUiPlugin::lastErrorMessage()
     return mErrorMessage;
 }
 
-QString VpnUiPlugin::supportedFileExtensions() const
+QStringList VpnUiPlugin::supportedFileExtensions() const
 {
     return {};
 }

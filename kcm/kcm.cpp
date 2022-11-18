@@ -531,8 +531,6 @@ void KCMNetworkmanagement::importVpn()
         QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), i18n("VPN connections (%1)", extensions.join(QLatin1Char(' '))));
 
     if (!filename.isEmpty()) {
-        const QVector<KPluginMetaData> services = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
-
         QFileInfo fi(filename);
         const QString ext = QStringLiteral("*.") % fi.suffix();
         qCDebug(PLASMA_NM_KCM_LOG) << "Importing VPN connection " << filename << "extension:" << ext;

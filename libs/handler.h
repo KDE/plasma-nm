@@ -8,6 +8,7 @@
 #define PLASMA_NM_HANDLER_H
 
 #include <QDBusInterface>
+#include <QPointer>
 #include <QTimer>
 
 #include <ModemManagerQt/GenericTypes>
@@ -72,15 +73,20 @@ public Q_SLOTS:
     void addAndActivateConnection(const QString &device, const QString &specificParameter, const QString &password = QString());
 
     /**
-     * Returns a code that includes the credentials to a said wifi connection
+     * Request a code that includes the credentials to a said wifi connection
      * Here's some information on how this information is created, it's generally used to put in QR codes to share.
      * https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11
      *
      * @param connectionPath the d-bus path to the connection we want to read
      * @param ssid the name of the network being displayed
      * @param securityType the authentication protocol used for this specific ssid
+     * @param connectionName the name of the connection
+     * @see wifiCodeReceived
      */
-    QString wifiCode(const QString &connectionPath, const QString &ssid, /*NetworkManager::WirelessSecurityType*/ int securityType) const;
+    void requestWifiCode(const QString &connectionPath,
+                         const QString &ssid,
+                         /*NetworkManager::WirelessSecurityType*/ int securityType,
+                         const QString &connectionName);
 
     /**
      * Adds a new connection
@@ -125,6 +131,7 @@ private Q_SLOTS:
     void hotspotCreated(QDBusPendingCallWatcher *watcher);
     void primaryConnectionTypeChanged(NetworkManager::ConnectionSettings::ConnectionType type);
     void unlockRequiredChanged(MMModemLock modemLock);
+    void slotRequestWifiCode(QDBusPendingCallWatcher *watcher);
 
 Q_SIGNALS:
     void connectionActivationFailed(const QString &connectionPath, const QString &message);
@@ -132,6 +139,7 @@ Q_SIGNALS:
     void hotspotDisabled();
     void hotspotSupportedChanged(bool hotspotSupported);
     void scanningChanged();
+    void wifiCodeReceived(const QString &data, const QString &connectionName);
 
 private:
     void addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject);
@@ -154,6 +162,8 @@ private:
     void scheduleRequestScan(const QString &interface, int timeout);
     void incrementScansCount();
     void decrementScansCount();
+
+    QPointer<QDBusPendingCallWatcher> m_requestWifiCodeWatcher;
 };
 
 #endif // PLASMA_NM_HANDLER_H

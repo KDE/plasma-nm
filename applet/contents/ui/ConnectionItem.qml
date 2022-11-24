@@ -34,7 +34,6 @@ PlasmaExtras.ExpandableListItem {
 
     property real rxBytes: 0
     property real txBytes: 0
-    property Component showQRComponent: null
 
     icon: model.ConnectionIcon
     title: model.ItemUniqueName
@@ -87,20 +86,7 @@ PlasmaExtras.ExpandableListItem {
             enabled: Uuid && Type === PlasmaNM.Enums.Wireless && passwordIsStatic
             text: i18n("Show Network's QR Code")
             icon.name: "view-barcode-qr"
-            onTriggered: {
-                if (!connectionItem.showQRComponent) {
-                    connectionItem.showQRComponent = Qt.createComponent("ShowQR.qml", this);
-                    if (connectionItem.showQRComponent.status === Component.Error) {
-                        console.warn("Cannot create QR code component:", connectionItemshowQRComponent.errorString());
-                    }
-                }
-                const data = handler.wifiCode(ConnectionPath, Ssid, SecurityType)
-                var obj = connectionItem.showQRComponent.createObject(connectionItem, {
-                    content: data,
-                    title: i18nc("@title:window", "QR Code for %1", connectionItem.title),
-                });
-                obj.showMaximized()
-            }
+            onTriggered: handler.requestWifiCode(ConnectionPath, Ssid, SecurityType, connectionItem.title);
         },
         Action {
             text: i18n("Configure…")

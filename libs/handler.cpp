@@ -160,8 +160,12 @@ void Handler::activateConnection(const QString &connection, const QString &devic
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
 }
 
-QString Handler::wifiCode(const QString &connectionPath, const QString &ssid, int _securityType) const
+void Handler::requestWifiCode(const QString &connectionPath, const QString &ssid, int _securityType, const QString &connectionName)
 {
+    if (!m_requestWifiCodeWatcher.isNull()) {
+        delete m_requestWifiCodeWatcher;
+    }
+
     auto securityType = static_cast<NetworkManager::WirelessSecurityType>(_securityType);
 
     QString ret = QStringLiteral("WIFI:S:") + ssid + QLatin1Char(';');
@@ -185,34 +189,25 @@ QString Handler::wifiCode(const QString &connectionPath, const QString &ssid, in
         case NetworkManager::Wpa2Eap:
         case NetworkManager::Wpa3SuiteB192:
         case NetworkManager::Leap:
-            return {};
+            Q_EMIT wifiCodeReceived(QString(), connectionName);
+            return;
         }
     }
 
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(connectionPath);
-    if (!connection)
-        return {};
+    if (!connection) {
+        Q_EMIT wifiCodeReceived(QString(), connectionName);
+        return;
+    }
 
     const auto key = QStringLiteral("802-11-wireless-security");
     auto reply = connection->secrets(key);
-
-    const auto secret = reply.argumentAt<0>()[key];
-    QString pass;
-    switch (securityType) {
-    case NetworkManager::NoneSecurity:
-        break;
-    case NetworkManager::WpaPsk:
-    case NetworkManager::Wpa2Psk:
-    case NetworkManager::SAE:
-        pass = secret[QStringLiteral("psk")].toString();
-        break;
-    default:
-        return {};
-    }
-    if (!pass.isEmpty())
-        ret += QStringLiteral("P:") + pass + QLatin1Char(';');
-
-    return ret + QLatin1Char(';');
+    m_requestWifiCodeWatcher = new QDBusPendingCallWatcher(reply, this);
+    m_requestWifiCodeWatcher->setProperty("key", key);
+    m_requestWifiCodeWatcher->setProperty("ret", ret);
+    m_requestWifiCodeWatcher->setProperty("securityType", static_cast<int>(securityType));
+    m_requestWifiCodeWatcher->setProperty("connectionName", connectionName);
+    connect(m_requestWifiCodeWatcher, &QDBusPendingCallWatcher::finished, this, &Handler::slotRequestWifiCode);
 }
 
 void Handler::addAndActivateConnection(const QString &device, const QString &specificObject, const QString &password)
@@ -888,4 +883,37 @@ void Handler::unlockRequiredChanged(MMModemLock modemLock)
     if (modemLock == MM_MODEM_LOCK_NONE) {
         activateConnection(m_tmpConnectionPath, m_tmpDevicePath, m_tmpSpecificPath);
     }
+}
+
+void Handler::slotRequestWifiCode(QDBusPendingCallWatcher *watcher)
+{
+    watcher->deleteLater();
+
+    QString ret = watcher->property("ret").toString();
+    const QString connectionName = watcher->property("connectionName").toString();
+    QDBusPendingReply<NMVariantMapMap> reply = *watcher;
+    if (!reply.isValid() || reply.isError()) {
+        Q_EMIT wifiCodeReceived(ret % QLatin1Char(';'), connectionName);
+        return;
+    }
+
+    const auto secret = reply.argumentAt<0>()[watcher->property("key").toString()];
+    QString pass;
+    switch (static_cast<NetworkManager::WirelessSecurityType>(watcher->property("securityType").toInt())) {
+    case NetworkManager::NoneSecurity:
+        break;
+    case NetworkManager::WpaPsk:
+    case NetworkManager::Wpa2Psk:
+    case NetworkManager::SAE:
+        pass = secret[QStringLiteral("psk")].toString();
+        break;
+    default:
+        Q_EMIT wifiCodeReceived(QString(), connectionName);
+        return;
+    }
+    if (!pass.isEmpty()) {
+        ret += QStringLiteral("P:") % pass % QLatin1Char(';');
+    }
+
+    Q_EMIT wifiCodeReceived(ret % QLatin1Char(';'), connectionName);
 }

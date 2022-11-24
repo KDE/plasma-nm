@@ -112,6 +112,27 @@ Item {
 
     PlasmaNM.Handler {
         id: handler
+
+        onWifiCodeReceived: (data, connectionName) => {
+            if (data.length === 0) {
+                console.error("Cannot create QR code component: Unsupported connection");
+                return;
+            }
+
+            const showQRComponent = Qt.createComponent("ShowQR.qml", mainWindow);
+            if (showQRComponent.status === Component.Error) {
+                console.warn("Cannot create QR code component:", showQRComponent.errorString());
+                return;
+            }
+
+            const obj = showQRComponent.createObject(mainWindow, {
+                content: data,
+                title: i18nc("@title:window", "QR Code for %1", connectionName),
+            });
+            obj.showMaximized()
+
+            showQRComponent.destroy();
+        }
     }
 
     Timer {

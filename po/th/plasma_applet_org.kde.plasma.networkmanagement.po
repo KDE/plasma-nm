@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-15 00:48+0000\n"
+"POT-Creation-Date: 2022-11-26 00:48+0000\n"
 "PO-Revision-Date: 2010-12-17 15:28+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -18,59 +18,53 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 1.1\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, fuzzy, kde-format
 #| msgctxt "network interface connected state label"
 #| msgid "Connected"
 msgid "Connect"
 msgstr "เชื่อมต่อแล้ว"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, fuzzy, kde-format
 msgid "Disconnect"
 msgstr "เชื่อมต่อแล้ว"
 
-#: contents/ui/ConnectionItem.qml:64
+#: contents/ui/ConnectionItem.qml:63
 #, fuzzy, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
 msgstr "เชื่อมต่อไปยัง %1 แล้ว"
 
-#: contents/ui/ConnectionItem.qml:64
+#: contents/ui/ConnectionItem.qml:63
 #, fuzzy, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
 msgstr "เชื่อมต่อแล้ว"
 
-#: contents/ui/ConnectionItem.qml:88
+#: contents/ui/ConnectionItem.qml:87
 #, fuzzy, kde-format
 #| msgid "Show network interfaces using:"
 msgid "Show Network's QR Code"
 msgstr "แสดงอินเทอร์เฟซเครือข่ายที่ใช้:"
 
-#: contents/ui/ConnectionItem.qml:100
-#, kde-format
-msgctxt "@title:window"
-msgid "QR Code for %1"
-msgstr ""
-
-#: contents/ui/ConnectionItem.qml:106
+#: contents/ui/ConnectionItem.qml:92
 #, fuzzy, kde-format
 #| msgid "Confirm Delete"
 msgid "Configure…"
 msgstr "ยืนยันการลบ"
 
-#: contents/ui/ConnectionItem.qml:137
+#: contents/ui/ConnectionItem.qml:123
 #, kde-format
 msgid "Speed"
 msgstr "ความเร็ว"
 
-#: contents/ui/ConnectionItem.qml:142
+#: contents/ui/ConnectionItem.qml:128
 #, kde-format
 msgid "Details"
 msgstr "รายละเอียด"
 
-#: contents/ui/ConnectionItem.qml:185
+#: contents/ui/ConnectionItem.qml:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -78,12 +72,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:302
+#: contents/ui/ConnectionItem.qml:288
 #, fuzzy, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "เชื่อมต่อไปยัง %1 แล้ว"
 
-#: contents/ui/ConnectionItem.qml:306
+#: contents/ui/ConnectionItem.qml:292
 #, fuzzy, kde-format
 msgid "Connected"
 msgstr "เชื่อมต่อแล้ว"
@@ -139,6 +133,12 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "&Configure Network Connections…"
 msgstr "การเชื่อมต่อ"
+
+#: contents/ui/main.qml:130
+#, kde-format
+msgctxt "@title:window"
+msgid "QR Code for %1"
+msgstr ""
 
 #: contents/ui/PasswordField.qml:16
 #, fuzzy, kde-format

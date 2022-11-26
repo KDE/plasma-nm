@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-15 00:48+0000\n"
+"POT-Creation-Date: 2022-11-26 00:48+0000\n"
 "PO-Revision-Date: 2022-10-26 19:23+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -23,55 +23,49 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Connect"
 msgstr "Connecter"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Disconnect"
 msgstr "Déconnecter"
 
-#: contents/ui/ConnectionItem.qml:64
+#: contents/ui/ConnectionItem.qml:63
 #, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
 msgstr "Connecter à %1"
 
-#: contents/ui/ConnectionItem.qml:64
+#: contents/ui/ConnectionItem.qml:63
 #, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
 msgstr "Déconnecter de %1"
 
-#: contents/ui/ConnectionItem.qml:88
+#: contents/ui/ConnectionItem.qml:87
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Afficher le code « QR » du réseau"
 
-#: contents/ui/ConnectionItem.qml:100
-#, kde-format
-msgctxt "@title:window"
-msgid "QR Code for %1"
-msgstr "Code « QR » pour %1"
-
-#: contents/ui/ConnectionItem.qml:106
+#: contents/ui/ConnectionItem.qml:92
 #, kde-format
 msgid "Configure…"
 msgstr "Configurer..."
 
-#: contents/ui/ConnectionItem.qml:137
+#: contents/ui/ConnectionItem.qml:123
 #, kde-format
 msgid "Speed"
 msgstr "Vitesse"
 
-#: contents/ui/ConnectionItem.qml:142
+#: contents/ui/ConnectionItem.qml:128
 #, kde-format
 msgid "Details"
 msgstr "Détails"
 
-#: contents/ui/ConnectionItem.qml:185
+#: contents/ui/ConnectionItem.qml:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -81,12 +75,12 @@ msgstr ""
 "La vitesse courante de téléchargement est de %1 Kilo-octets par seconde et "
 "celle d'envoi de %2 Kilo-octets par seconde."
 
-#: contents/ui/ConnectionItem.qml:302
+#: contents/ui/ConnectionItem.qml:288
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Connecté, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:306
+#: contents/ui/ConnectionItem.qml:292
 #, kde-format
 msgid "Connected"
 msgstr "Connecté"
@@ -141,6 +135,12 @@ msgstr "Ouvrir la page de connexion du réseau..."
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configurer les connexions réseau…"
+
+#: contents/ui/main.qml:130
+#, kde-format
+msgctxt "@title:window"
+msgid "QR Code for %1"
+msgstr "Code « QR » pour %1"
 
 #: contents/ui/PasswordField.qml:16
 #, kde-format

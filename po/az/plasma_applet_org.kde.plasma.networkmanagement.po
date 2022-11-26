@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-15 00:48+0000\n"
+"POT-Creation-Date: 2022-11-26 00:48+0000\n"
 "PO-Revision-Date: 2022-11-11 11:20+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -17,55 +17,49 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.08.3\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Connect"
 msgstr "Qoşulun"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Disconnect"
 msgstr "Ayırmaq"
 
-#: contents/ui/ConnectionItem.qml:64
+#: contents/ui/ConnectionItem.qml:63
 #, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
 msgstr "%1 ilə bağlantı hyaradın"
 
-#: contents/ui/ConnectionItem.qml:64
+#: contents/ui/ConnectionItem.qml:63
 #, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
 msgstr "%1 ilə bağlantını kəsin"
 
-#: contents/ui/ConnectionItem.qml:88
+#: contents/ui/ConnectionItem.qml:87
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Şəbəkə QR kodu göstərilsin"
 
-#: contents/ui/ConnectionItem.qml:100
-#, kde-format
-msgctxt "@title:window"
-msgid "QR Code for %1"
-msgstr "%1 üçün QR-kod"
-
-#: contents/ui/ConnectionItem.qml:106
+#: contents/ui/ConnectionItem.qml:92
 #, kde-format
 msgid "Configure…"
 msgstr "Tənzimləyin..."
 
-#: contents/ui/ConnectionItem.qml:137
+#: contents/ui/ConnectionItem.qml:123
 #, kde-format
 msgid "Speed"
 msgstr "sSürət"
 
-#: contents/ui/ConnectionItem.qml:142
+#: contents/ui/ConnectionItem.qml:128
 #, kde-format
 msgid "Details"
 msgstr "Təfərrüatlar"
 
-#: contents/ui/ConnectionItem.qml:185
+#: contents/ui/ConnectionItem.qml:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -75,12 +69,12 @@ msgstr ""
 "Cari endirmə sürəti saniyədə %1 kilobaytdır; cari göndərmə sürəti saniyədə "
 "%2 kilobaytdır"
 
-#: contents/ui/ConnectionItem.qml:302
+#: contents/ui/ConnectionItem.qml:288
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Qoşulub, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:306
+#: contents/ui/ConnectionItem.qml:292
 #, kde-format
 msgid "Connected"
 msgstr "Qoşuldu"
@@ -135,6 +129,12 @@ msgstr "Şəbəkəyə giriş səhifəsini açın..."
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Şəbəkə bağlantılarını tənzimləyin..."
+
+#: contents/ui/main.qml:130
+#, kde-format
+msgctxt "@title:window"
+msgid "QR Code for %1"
+msgstr "%1 üçün QR-kod"
 
 #: contents/ui/PasswordField.qml:16
 #, kde-format

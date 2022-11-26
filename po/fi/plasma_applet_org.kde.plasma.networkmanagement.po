@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-15 00:48+0000\n"
+"POT-Creation-Date: 2022-11-26 00:48+0000\n"
 "PO-Revision-Date: 2022-08-05 10:23+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -19,55 +19,49 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Connect"
 msgstr "Yhdistä"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Disconnect"
 msgstr "Katkaise yhteys"
 
-#: contents/ui/ConnectionItem.qml:64
+#: contents/ui/ConnectionItem.qml:63
 #, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
 msgstr "Yhdistä verkkoon %1"
 
-#: contents/ui/ConnectionItem.qml:64
+#: contents/ui/ConnectionItem.qml:63
 #, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
 msgstr "Katkaise verkkoyhteys %1"
 
-#: contents/ui/ConnectionItem.qml:88
+#: contents/ui/ConnectionItem.qml:87
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Näytä verkon QR-koodi"
 
-#: contents/ui/ConnectionItem.qml:100
-#, kde-format
-msgctxt "@title:window"
-msgid "QR Code for %1"
-msgstr "%1 – QR-koodi"
-
-#: contents/ui/ConnectionItem.qml:106
+#: contents/ui/ConnectionItem.qml:92
 #, kde-format
 msgid "Configure…"
 msgstr "Asetukset…"
 
-#: contents/ui/ConnectionItem.qml:137
+#: contents/ui/ConnectionItem.qml:123
 #, kde-format
 msgid "Speed"
 msgstr "Nopeus"
 
-#: contents/ui/ConnectionItem.qml:142
+#: contents/ui/ConnectionItem.qml:128
 #, kde-format
 msgid "Details"
 msgstr "Tiedot"
 
-#: contents/ui/ConnectionItem.qml:185
+#: contents/ui/ConnectionItem.qml:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -75,12 +69,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr "Nykyinen latausnopeus on %1 KB/s, nykyinen lähetysnopeus on %2 KB/s"
 
-#: contents/ui/ConnectionItem.qml:302
+#: contents/ui/ConnectionItem.qml:288
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Yhteydessä, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:306
+#: contents/ui/ConnectionItem.qml:292
 #, kde-format
 msgid "Connected"
 msgstr "Yhdistetty"
@@ -135,6 +129,12 @@ msgstr "Avaa verkon kirjautumissivu…"
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Muokkaa &verkkoyhteyksiä…"
+
+#: contents/ui/main.qml:130
+#, kde-format
+msgctxt "@title:window"
+msgid "QR Code for %1"
+msgstr "%1 – QR-koodi"
 
 #: contents/ui/PasswordField.qml:16
 #, kde-format

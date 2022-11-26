@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-15 00:48+0000\n"
+"POT-Creation-Date: 2022-11-26 00:48+0000\n"
 "PO-Revision-Date: 2022-10-27 12:24+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,55 +19,49 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.08.2\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Connect"
 msgstr "Conectar"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Disconnect"
 msgstr "Desconectar"
 
-#: contents/ui/ConnectionItem.qml:64
+#: contents/ui/ConnectionItem.qml:63
 #, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Connect to %1"
 msgstr "Conectar a %1"
 
-#: contents/ui/ConnectionItem.qml:64
+#: contents/ui/ConnectionItem.qml:63
 #, kde-format
 msgctxt "@info:tooltip %1 is the name of a network connection"
 msgid "Disconnect from %1"
 msgstr "Desconectar de %1"
 
-#: contents/ui/ConnectionItem.qml:88
+#: contents/ui/ConnectionItem.qml:87
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Mostrar el código QR de la red"
 
-#: contents/ui/ConnectionItem.qml:100
-#, kde-format
-msgctxt "@title:window"
-msgid "QR Code for %1"
-msgstr "Código QR para %1"
-
-#: contents/ui/ConnectionItem.qml:106
+#: contents/ui/ConnectionItem.qml:92
 #, kde-format
 msgid "Configure…"
 msgstr "Configurar..."
 
-#: contents/ui/ConnectionItem.qml:137
+#: contents/ui/ConnectionItem.qml:123
 #, kde-format
 msgid "Speed"
 msgstr "Velocidad"
 
-#: contents/ui/ConnectionItem.qml:142
+#: contents/ui/ConnectionItem.qml:128
 #, kde-format
 msgid "Details"
 msgstr "Detalles"
 
-#: contents/ui/ConnectionItem.qml:185
+#: contents/ui/ConnectionItem.qml:171
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -77,12 +71,12 @@ msgstr ""
 "La velocidad de descarga actual es de %1 kibibytes por segundo; la velocidad "
 "de subida actual es de %2 kibibytes por segundo"
 
-#: contents/ui/ConnectionItem.qml:302
+#: contents/ui/ConnectionItem.qml:288
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Conectado, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:306
+#: contents/ui/ConnectionItem.qml:292
 #, kde-format
 msgid "Connected"
 msgstr "Conectado"
@@ -137,6 +131,12 @@ msgstr "Abrir la página de inicio de sesión en la red..."
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configurar conexiones de red..."
+
+#: contents/ui/main.qml:130
+#, kde-format
+msgctxt "@title:window"
+msgid "QR Code for %1"
+msgstr "Código QR para %1"
 
 #: contents/ui/PasswordField.qml:16
 #, kde-format

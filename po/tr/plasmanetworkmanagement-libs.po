@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-26 00:48+0000\n"
 "PO-Revision-Date: 2022-11-15 04:50+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3332,52 +3332,52 @@ msgstr ""
 "NetworkManager, '%1' VPN bağlantıları için destek içermiyor. Lütfen bunu "
 "dağıtımınıza bildirin."
 
-#: handler.cpp:770
+#: handler.cpp:765
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "%1 etkinleştirilemedi"
 
-#: handler.cpp:774
+#: handler.cpp:769
 #, kde-format
 msgid "Failed to add %1"
 msgstr "%1 eklenemedi"
 
-#: handler.cpp:778
+#: handler.cpp:773
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "%1 bağlantısı eklenemedi"
 
-#: handler.cpp:782
+#: handler.cpp:777
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "%1 devre dışı bırakılamadı"
 
-#: handler.cpp:786
+#: handler.cpp:781
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "%1 silinemedi"
 
-#: handler.cpp:790
+#: handler.cpp:785
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "%1 bağlantısı güncellenemedi"
 
-#: handler.cpp:801
+#: handler.cpp:796
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "%1 kişisel erişim noktası oluşturulamadı"
 
-#: handler.cpp:820
+#: handler.cpp:815
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "%1 bağlantısı eklendi"
 
-#: handler.cpp:824
+#: handler.cpp:819
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "%1 bağlantısı silindi"
 
-#: handler.cpp:828
+#: handler.cpp:823
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "%1 bağlantısı güncellendi"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-11-26 00:48+0000\n"
 "PO-Revision-Date: 2022-06-29 14:51+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -3336,52 +3336,52 @@ msgstr ""
 "NetworkManager es mancante supporto per connexiones VPN '%1'. Pro favor usa "
 "le gerente de pacchettos per installar lo."
 
-#: handler.cpp:770
+#: handler.cpp:765
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Il falleva activar %1"
 
-#: handler.cpp:774
+#: handler.cpp:769
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Falleva adder %1"
 
-#: handler.cpp:778
+#: handler.cpp:773
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Il falleva adder connexion %1"
 
-#: handler.cpp:782
+#: handler.cpp:777
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Il falleva a deactivar %1"
 
-#: handler.cpp:786
+#: handler.cpp:781
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Il falleva a remover %1"
 
-#: handler.cpp:790
+#: handler.cpp:785
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Il falleva actualisar connexion %1"
 
-#: handler.cpp:801
+#: handler.cpp:796
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Il falleva a crear hotspot %1"
 
-#: handler.cpp:820
+#: handler.cpp:815
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Connexion %1 ha essite addite"
 
-#: handler.cpp:824
+#: handler.cpp:819
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Connexion %1 ha essite removite"
 
-#: handler.cpp:828
+#: handler.cpp:823
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Connexion %1 ha essite actualisate"

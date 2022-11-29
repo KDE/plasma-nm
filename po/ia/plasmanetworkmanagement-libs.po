@@ -3185,12 +3185,12 @@ msgstr "Modifica le visibilitate del contrasigno"
 #: editor/widgets/passwordfield.cpp:41
 #, kde-format
 msgid "Store password for this user only (encrypted)"
-msgstr "Immagazina contrasignosolmente per isto usator (cryptate)"
+msgstr "Immagazina contrasigno solmente per iste usator (cryptate)"
 
 #: editor/widgets/passwordfield.cpp:43
 #, kde-format
 msgid "Store password for all users (not encrypted)"
-msgstr "Immagazina contrasigno per omne usatores (non sryptate)"
+msgstr "Immagazina contrasigno per omne usatores (non cryptate)"
 
 #: editor/widgets/passwordfield.cpp:45 editor/widgets/passwordfield.cpp:91
 #, kde-format

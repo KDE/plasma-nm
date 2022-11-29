@@ -361,6 +361,7 @@ Name[zh_CN]=设备失败
 Name[zh_TW]=裝置失敗
 IconName=applications-internet
 Action=Popup
+Urgency=Low
 
 [Event/FailedToActivateConnection]
 Name=Failed to Activate Connection

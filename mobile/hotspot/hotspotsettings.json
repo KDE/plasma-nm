@@ -60,6 +60,7 @@
         "Description[tr]": "Wi-Fi Kişisel Erişim Noktası",
         "Description[uk]": "Хот-спот Wi-Fi",
         "Description[x-test]": "xxWi-Fi Hotspotxx",
+        "Description[zh_CN]": "Wi-Fi 热点",
         "EnabledByDefault": true,
         "FormFactors": [
             "handset",

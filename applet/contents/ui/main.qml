@@ -22,12 +22,18 @@ Item {
 
     Plasmoid.toolTipMainText: i18n("Networks")
     Plasmoid.toolTipSubText: {
+        const activeConnections = networkStatus.activeConnections;
+
         if (!availableDevices.modemDeviceAvailable && !availableDevices.wirelessDeviceAvailable) {
-            return networkStatus.activeConnections;
+            return activeConnections;
         }
-        return PlasmaNM.Configuration.airplaneModeEnabled
-            ? i18nc("@info:tooltip", "Middle-click to turn off Airplane Mode")
-            : i18nc("@info:tooltip %1 is a list of the active network connections", "%1\nMiddle-click to turn on Airplane Mode", networkStatus.activeConnections)
+
+        if (PlasmaNM.Configuration.airplaneModeEnabled) {
+            return i18nc("@info:tooltip", "Middle-click to turn off Airplane Mode");
+        } else {
+            const hint = i18nc("@info:tooltip", "Middle-click to turn on Airplane Mode");
+            return activeConnections ? `${activeConnections}\n${hint}` : hint;
+        }
     }
 
     Plasmoid.icon: connectionIconProvider.connectionTooltipIcon

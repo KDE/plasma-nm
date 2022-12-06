@@ -56,7 +56,7 @@ Item {
         PlasmaNM.Configuration.airplaneModeEnabled = checked
     }
 
-    function action_openKCM() {
+    function action_configure() {
         KCMShell.openSystemSettings(kcm)
     }
 
@@ -91,7 +91,7 @@ Item {
 
         plasmoid.removeAction("configure")
         if (kcmAuthorized)
-            plasmoid.setAction("openKCM", i18n("&Configure Network Connections…"), "configure")
+            plasmoid.setAction("configure", i18n("&Configure Network Connections…"), "configure", "alt+d, s")
     }
 
     PlasmaNM.EnabledConnections {

@@ -20,7 +20,7 @@ Item {
 
     signal clicked
 
-    width: parent ? parent.width : childrenRect.width
+    width: parent ? parent.width : undefined
     height: paddingItem.childrenRect.height + background.margins.top + background.margins.bottom
 
     implicitHeight: paddingItem.childrenRect.height + Math.round(Kirigami.Units.gridUnit / 2)

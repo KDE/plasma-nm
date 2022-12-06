@@ -5,8 +5,10 @@
 */
 
 import QtQuick 2.2
+
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.plasma.plasmoid 2.0
 
 MouseArea {
     id: panelIconWidget
@@ -18,11 +20,14 @@ MouseArea {
 
     acceptedButtons: airplaneModeAvailable ? Qt.LeftButton | Qt.MiddleButton : Qt.LeftButton
 
+    property bool wasExpanded
+
+    onPressed: wasExpanded = Plasmoid.expanded
     onClicked: {
         if (airplaneModeAvailable && mouse.button === Qt.MiddleButton) {
             action_planeModeSwitch();
         } else {
-            plasmoid.expanded = !plasmoid.expanded;
+            Plasmoid.expanded = !wasExpanded;
         }
     }
 

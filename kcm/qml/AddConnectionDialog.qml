@@ -89,11 +89,11 @@ Dialog {
                             id: connectionNameLabel
 
                             anchors {
-                                bottom: ConnectionType == 11 ? connectionIcon.verticalCenter : undefined
+                                bottom: ConnectionType == PlasmaNM.Enums.Vpn ? connectionIcon.verticalCenter : undefined
                                 left: connectionIcon.right
                                 leftMargin: Math.round(Kirigami.Units.gridUnit / 2)
                                 right: parent.right
-                                verticalCenter: ConnectionType == 11 ? undefined : parent.verticalCenter
+                                verticalCenter: ConnectionType == PlasmaNM.Enums.Vpn ? undefined : parent.verticalCenter
                             }
                             color: textColor
                             height: paintedHeight
@@ -117,7 +117,7 @@ Dialog {
                             font.pointSize: Kirigami.Theme.smallFont.pointSize
                             opacity: 0.6
                             text: ConnectionDescription
-                            visible: ConnectionType == 11 // VPN
+                            visible: ConnectionType == PlasmaNM.Enums.Vpn
                         }
                     }
 

@@ -96,8 +96,9 @@ Item {
         plasmoid.action("showPortal").visible = Qt.binding(() => connectionIconProvider.needsPortal)
 
         plasmoid.removeAction("configure")
-        if (kcmAuthorized)
+        if (kcmAuthorized) {
             plasmoid.setAction("configure", i18n("&Configure Network Connections…"), "configure", "alt+d, s")
+        }
     }
 
     PlasmaNM.EnabledConnections {

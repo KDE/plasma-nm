@@ -85,7 +85,8 @@ ListItem {
                 rightMargin: Math.round(Kirigami.Units.gridUnit / 2)
                 verticalCenter: connectionIcon.verticalCenter
             }
-            height: Kirigami.Units.iconSizes.medium; width: height
+            height: Kirigami.Units.iconSizes.medium
+            width: Kirigami.Units.iconSizes.medium
             running: ConnectionState == PlasmaNM.Enums.Activating
             visible: running
         }

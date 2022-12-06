@@ -72,12 +72,10 @@ Dialog {
                 id: hotspotPassword
                 Kirigami.FormData.label: i18n("Hotspot password:")
                 validator: RegularExpressionValidator {
-                    regularExpression: if (useApMode) {
-                                /^$|^(?:.{8,64}){1}$/
-                            } else {
-                                /^$|^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26}){1}$/
-                            }
-                    }
+                    regularExpression: useApMode
+                        ? /^$|^(?:.{8,64}){1}$/
+                        : /^$|^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26}){1}$/
+                }
 
                 onAcceptableInputChanged: configurationChanged()
 

@@ -36,7 +36,7 @@ Item {
     }
 
     Rectangle {
-        id : background
+        id: background
 
         anchors.fill: parent
         visible: listItem.ListView.view ? listItem.ListView.view.highlight === null : true

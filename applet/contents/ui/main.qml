@@ -36,6 +36,7 @@ Item {
         }
     }
 
+    Plasmoid.busy: connectionIconProvider.connecting
     Plasmoid.icon: connectionIconProvider.connectionTooltipIcon
     Plasmoid.switchWidth: PlasmaCore.Units.gridUnit * 10
     Plasmoid.switchHeight: PlasmaCore.Units.gridUnit * 10

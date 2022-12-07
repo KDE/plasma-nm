@@ -38,15 +38,5 @@ MouseArea {
         source: connectionIconProvider.connectionIcon
         colorGroup: PlasmaCore.ColorScope.colorGroup
         active: parent.containsMouse
-
-        PlasmaComponents3.BusyIndicator {
-            id: connectingIndicator
-
-            anchors.centerIn: parent
-            height: Math.min (parent.width, parent.height)
-            width: height
-            running: connectionIconProvider.connecting
-            visible: running
-        }
     }
 }

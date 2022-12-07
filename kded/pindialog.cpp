@@ -131,7 +131,6 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     ui->pin2->setCursorPosition(0);
 
     KWindowSystem::setState(winId(), NET::KeepAbove);
-    KWindowSystem::activateWindow(winId());
 
     move((desktop.width() - width()) / 2, (desktop.height() - height()) / 2);
     connect(ui->chkShowPass, &QCheckBox::toggled, this, &PinDialog::chkShowPassToggled);

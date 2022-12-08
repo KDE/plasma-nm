@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-14 00:48+0000\n"
+"POT-Creation-Date: 2022-12-08 00:48+0000\n"
 "PO-Revision-Date: 2021-05-16 23:24+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -708,22 +708,22 @@ msgstr "네트워크 하위 집합 PIN"
 msgid "Show PIN code"
 msgstr "PIN 코드 표시"
 
-#: pindialog.cpp:200
+#: pindialog.cpp:199
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "PIN 코드가 너무 짧습니다. 최소 4자리 이상 입력해야 합니다."
 
-#: pindialog.cpp:205
+#: pindialog.cpp:204
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "PIN 코드가 일치하지 않음"
 
-#: pindialog.cpp:210
+#: pindialog.cpp:209
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "PUK 코드가 너무 짧습니다. 최소 8자리 이상 입력해야 합니다."
 
-#: pindialog.cpp:215
+#: pindialog.cpp:214
 #, kde-format
 msgid "Unknown Error"
 msgstr "알 수 없는 오류"

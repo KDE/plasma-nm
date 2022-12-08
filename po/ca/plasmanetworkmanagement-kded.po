@@ -3,15 +3,15 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2017, 2020.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2017, 2020, 2022.
 # Josep M. Ferrer <txemaq@gmail.com>, 2015, 2016, 2017, 2019, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-14 00:48+0000\n"
-"PO-Revision-Date: 2022-10-08 11:59+0200\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"POT-Creation-Date: 2022-12-08 00:48+0000\n"
+"PO-Revision-Date: 2022-12-07 14:51+0100\n"
+"Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Kate 22.08.3\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -452,7 +452,7 @@ msgstr "El PIN de la SIM és incorrecte"
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to NewActivation"
 msgid "A new connection activation was enqueued"
-msgstr "S'ha post a la cua una nova activació de la connexió"
+msgstr "S'ha posat a la cua una activació nova de la connexió"
 
 #: notification.cpp:266
 #, kde-format
@@ -718,22 +718,22 @@ msgstr "Codi PIN del subsegment de xarxa"
 msgid "Show PIN code"
 msgstr "Mostra el codi PIN"
 
-#: pindialog.cpp:200
+#: pindialog.cpp:199
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "El codi PIN és massa curt. Hauria de tenir 4 dígits com a mínim."
 
-#: pindialog.cpp:205
+#: pindialog.cpp:204
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "Els dos codis PIN no coincideixen"
 
-#: pindialog.cpp:210
+#: pindialog.cpp:209
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "El codi PUK és massa curt. Hauria de tenir 8 dígits com a mínim."
 
-#: pindialog.cpp:215
+#: pindialog.cpp:214
 #, kde-format
 msgid "Unknown Error"
 msgstr "Error desconegut"

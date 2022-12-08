@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-14 00:48+0000\n"
+"POT-Creation-Date: 2022-12-08 00:48+0000\n"
 "PO-Revision-Date: 2017-06-12 16:38+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -737,22 +737,22 @@ msgstr "PIN υποσυνόλου δικτύου"
 msgid "Show PIN code"
 msgstr "Εμφάνιση κωδικού PIN"
 
-#: pindialog.cpp:200
+#: pindialog.cpp:199
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "Πολύ μικρός κωδικός PIN. Πρέπει να έχει τουλάχιστον 4 ψηφία."
 
-#: pindialog.cpp:205
+#: pindialog.cpp:204
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "Οι δύο κωδικοί PIN δεν ταιριάζουν"
 
-#: pindialog.cpp:210
+#: pindialog.cpp:209
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "Πολύ μικρός κωδικός PUK. Πρέπει να έχει τουλάχιστον 8 ψηφία."
 
-#: pindialog.cpp:215
+#: pindialog.cpp:214
 #, kde-format
 msgid "Unknown Error"
 msgstr "Άγνωστο σφάλμα"

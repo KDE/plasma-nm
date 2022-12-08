@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-14 00:48+0000\n"
+"POT-Creation-Date: 2022-12-08 00:48+0000\n"
 "PO-Revision-Date: 2021-03-01 12:11+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -714,22 +714,22 @@ msgstr "PIN de sub insimul de rete"
 msgid "Show PIN code"
 msgstr "Monstra codice PIN"
 
-#: pindialog.cpp:200
+#: pindialog.cpp:199
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "Codice de PIN troppe curte, il deberea esser de al minus 4 cifras."
 
-#: pindialog.cpp:205
+#: pindialog.cpp:204
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "Le duo codices de PIN non es coincidente"
 
-#: pindialog.cpp:210
+#: pindialog.cpp:209
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "Codice de PUK troppe curte, il deberea esser de al minus  8 cifras."
 
-#: pindialog.cpp:215
+#: pindialog.cpp:214
 #, kde-format
 msgid "Unknown Error"
 msgstr "Error Incognite"

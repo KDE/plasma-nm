@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-26 00:48+0000\n"
+"POT-Creation-Date: 2022-12-08 00:48+0000\n"
 "PO-Revision-Date: 2021-11-03 17:13+0100\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -3198,52 +3198,52 @@ msgid ""
 "package manager to install it."
 msgstr ""
 
-#: handler.cpp:765
+#: handler.cpp:764
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Njemóžach %1 aktiwizować"
 
-#: handler.cpp:769
+#: handler.cpp:768
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Njemóžach %1 dodać"
 
-#: handler.cpp:773
+#: handler.cpp:772
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Njemóžach zwisk %1 dodać"
 
-#: handler.cpp:777
+#: handler.cpp:776
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Njemóžach %1 deaktiwizować"
 
-#: handler.cpp:781
+#: handler.cpp:780
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Njemóžach  %1 wotstronić"
 
-#: handler.cpp:785
+#: handler.cpp:784
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Njemóžach zwisk %1 aktualizować"
 
-#: handler.cpp:796
+#: handler.cpp:795
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Njemóžach hotspot %1 wutworić"
 
-#: handler.cpp:815
+#: handler.cpp:814
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Zwisk %1 je so dodał"
 
-#: handler.cpp:819
+#: handler.cpp:818
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Zwisk %1 je so wotstronił"
 
-#: handler.cpp:823
+#: handler.cpp:822
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Zwisk %1 je so aktualizował"

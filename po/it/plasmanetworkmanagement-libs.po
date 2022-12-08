@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-26 00:48+0000\n"
+"POT-Creation-Date: 2022-12-08 00:48+0000\n"
 "PO-Revision-Date: 2022-11-15 16:11+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -3348,52 +3348,52 @@ msgstr ""
 "Manca il supporto di NetworkManager per le connessioni VPN «%1». Utilizza il "
 "gestore dei pacchetti per installarlo."
 
-#: handler.cpp:765
+#: handler.cpp:764
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Attivazione di %1 non riuscita"
 
-#: handler.cpp:769
+#: handler.cpp:768
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Aggiunta di %1 non riuscita"
 
-#: handler.cpp:773
+#: handler.cpp:772
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Aggiunta della connessione %1 non riuscita"
 
-#: handler.cpp:777
+#: handler.cpp:776
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Disattivazione di %1 non riuscita"
 
-#: handler.cpp:781
+#: handler.cpp:780
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Rimozione di %1 non riuscita"
 
-#: handler.cpp:785
+#: handler.cpp:784
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Aggiornamento della connessione %1 non riuscito"
 
-#: handler.cpp:796
+#: handler.cpp:795
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Creazione dell'hotspot %1 non riuscita"
 
-#: handler.cpp:815
+#: handler.cpp:814
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "La connessione %1 è stata aggiunta"
 
-#: handler.cpp:819
+#: handler.cpp:818
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "La connessione %1 è stata rimossa"
 
-#: handler.cpp:823
+#: handler.cpp:822
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "La connessione %1 è stata aggiornata"

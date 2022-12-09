@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-26 00:48+0000\n"
+"POT-Creation-Date: 2022-12-09 00:48+0000\n"
 "PO-Revision-Date: 2017-05-22 05:24-0400\n"
 "Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -90,47 +90,45 @@ msgstr "העתק"
 msgid "Networks"
 msgstr "רשתות"
 
-#: contents/ui/main.qml:29
+#: contents/ui/main.qml:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:30
+#: contents/ui/main.qml:34
 #, kde-format
-msgctxt "@info:tooltip %1 is a list of the active network connections"
-msgid ""
-"%1\n"
-"Middle-click to turn on Airplane Mode"
+msgctxt "@info:tooltip"
+msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:68 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:74 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: contents/ui/main.qml:76
+#: contents/ui/main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr ""
 
-#: contents/ui/main.qml:84
+#: contents/ui/main.qml:90
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:89
+#: contents/ui/main.qml:95
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: contents/ui/main.qml:94
+#: contents/ui/main.qml:100
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections..."
 msgid "&Configure Network Connections…"
 msgstr "הגדרות חיבורי רשת..."
 
-#: contents/ui/main.qml:130
+#: contents/ui/main.qml:136
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

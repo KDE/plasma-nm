@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-26 00:48+0000\n"
+"POT-Creation-Date: 2022-12-09 00:48+0000\n"
 "PO-Revision-Date: 2022-10-26 19:23+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -95,48 +95,50 @@ msgstr "Copier"
 msgid "Networks"
 msgstr "Réseaux"
 
-#: contents/ui/main.qml:29
+#: contents/ui/main.qml:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Effectuer un clic central pour sortir du mode « Avion »"
 
-#: contents/ui/main.qml:30
-#, kde-format
-msgctxt "@info:tooltip %1 is a list of the active network connections"
-msgid ""
-"%1\n"
-"Middle-click to turn on Airplane Mode"
+#: contents/ui/main.qml:34
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip %1 is a list of the active network connections"
+#| msgid ""
+#| "%1\n"
+#| "Middle-click to turn on Airplane Mode"
+msgctxt "@info:tooltip"
+msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 "%1\n"
 "Effectuer un clic central pour basculer en mode « Avion »"
 
-#: contents/ui/main.qml:68 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:74 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activer la connexion « wifi »"
 
-#: contents/ui/main.qml:76
+#: contents/ui/main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Activer le réseau mobile"
 
-#: contents/ui/main.qml:84
+#: contents/ui/main.qml:90
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Activer le mode avion"
 
-#: contents/ui/main.qml:89
+#: contents/ui/main.qml:95
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Ouvrir la page de connexion du réseau..."
 
-#: contents/ui/main.qml:94
+#: contents/ui/main.qml:100
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configurer les connexions réseau…"
 
-#: contents/ui/main.qml:130
+#: contents/ui/main.qml:136
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-26 00:48+0000\n"
+"POT-Creation-Date: 2022-12-09 00:48+0000\n"
 "PO-Revision-Date: 2012-07-09 11:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -92,49 +92,47 @@ msgstr ""
 msgid "Networks"
 msgstr "បណ្ដាញ ៖"
 
-#: contents/ui/main.qml:29
+#: contents/ui/main.qml:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:30
+#: contents/ui/main.qml:34
 #, kde-format
-msgctxt "@info:tooltip %1 is a list of the active network connections"
-msgid ""
-"%1\n"
-"Middle-click to turn on Airplane Mode"
+msgctxt "@info:tooltip"
+msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:68 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:74 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: contents/ui/main.qml:76
+#: contents/ui/main.qml:82
 #, fuzzy, kde-format
 #| msgid "Username on this network"
 msgid "Enable Mobile Network"
 msgstr "ឈ្មោះ​អ្នក​ប្រើ​នៅ​លើ​បណ្ដាញ​នេះ"
 
-#: contents/ui/main.qml:84
+#: contents/ui/main.qml:90
 #, fuzzy, kde-format
 #| msgid "Wireless"
 msgid "Enable Airplane Mode"
 msgstr "ឥត​ខ្សែ"
 
-#: contents/ui/main.qml:89
+#: contents/ui/main.qml:95
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: contents/ui/main.qml:94
+#: contents/ui/main.qml:100
 #, fuzzy, kde-format
 #| msgid "Configure Notifications..."
 msgid "&Configure Network Connections…"
 msgstr "កំណត់​រចនា​សម្ព័ន្ធ​ការ​ជូនដំណឹង​...​"
 
-#: contents/ui/main.qml:130
+#: contents/ui/main.qml:136
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

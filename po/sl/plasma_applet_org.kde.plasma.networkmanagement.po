@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-26 00:48+0000\n"
+"POT-Creation-Date: 2022-12-09 00:48+0000\n"
 "PO-Revision-Date: 2022-10-27 07:14+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -92,48 +92,50 @@ msgstr "Kopiraj"
 msgid "Networks"
 msgstr "Omrežja"
 
-#: contents/ui/main.qml:29
+#: contents/ui/main.qml:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Srednji klik za izklop letalskega načina"
 
-#: contents/ui/main.qml:30
-#, kde-format
-msgctxt "@info:tooltip %1 is a list of the active network connections"
-msgid ""
-"%1\n"
-"Middle-click to turn on Airplane Mode"
+#: contents/ui/main.qml:34
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip %1 is a list of the active network connections"
+#| msgid ""
+#| "%1\n"
+#| "Middle-click to turn on Airplane Mode"
+msgctxt "@info:tooltip"
+msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 "%1\n"
 "Srednji klik za vklop letalskega načina"
 
-#: contents/ui/main.qml:68 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:74 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Omogoči Wi-Fi"
 
-#: contents/ui/main.qml:76
+#: contents/ui/main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Omogoči mobilno omrežje"
 
-#: contents/ui/main.qml:84
+#: contents/ui/main.qml:90
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Omogoči način Na letalu"
 
-#: contents/ui/main.qml:89
+#: contents/ui/main.qml:95
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Odpri prijavno stran omrežja…"
 
-#: contents/ui/main.qml:94
+#: contents/ui/main.qml:100
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Nastavi omrežne povezave…"
 
-#: contents/ui/main.qml:130
+#: contents/ui/main.qml:136
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

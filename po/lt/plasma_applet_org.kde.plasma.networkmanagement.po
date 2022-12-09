@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-26 00:48+0000\n"
+"POT-Creation-Date: 2022-12-09 00:48+0000\n"
 "PO-Revision-Date: 2022-11-16 21:58+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -95,49 +95,51 @@ msgstr "Kopijuoti"
 msgid "Networks"
 msgstr "Tinklai"
 
-#: contents/ui/main.qml:29
+#: contents/ui/main.qml:32
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
 "Spustelėkite viduriniuoju pelės mygtuku, kad išjungtumėte lėktuvo veikseną"
 
-#: contents/ui/main.qml:30
-#, kde-format
-msgctxt "@info:tooltip %1 is a list of the active network connections"
-msgid ""
-"%1\n"
-"Middle-click to turn on Airplane Mode"
+#: contents/ui/main.qml:34
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip %1 is a list of the active network connections"
+#| msgid ""
+#| "%1\n"
+#| "Middle-click to turn on Airplane Mode"
+msgctxt "@info:tooltip"
+msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 "%1\n"
 "Spustelėkite viduriniuoju pelės mygtuku, kad įjungtumėte lėktuvo veikseną"
 
-#: contents/ui/main.qml:68 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:74 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Įjungti belaidį (Wi-Fi)"
 
-#: contents/ui/main.qml:76
+#: contents/ui/main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Įjungti mobilųjį tinklą"
 
-#: contents/ui/main.qml:84
+#: contents/ui/main.qml:90
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Įjungti lėktuvo veikseną"
 
-#: contents/ui/main.qml:89
+#: contents/ui/main.qml:95
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Atverti prisijungimo prie tinklo puslapį…"
 
-#: contents/ui/main.qml:94
+#: contents/ui/main.qml:100
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Konfigūruoti tinklo ryšius…"
 
-#: contents/ui/main.qml:130
+#: contents/ui/main.qml:136
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

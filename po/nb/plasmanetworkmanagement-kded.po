@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-14 00:48+0000\n"
+"POT-Creation-Date: 2022-12-08 00:48+0000\n"
 "PO-Revision-Date: 2015-04-29 08:46+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -707,22 +707,22 @@ msgstr "PIN for under-nettverk"
 msgid "Show PIN code"
 msgstr "Vis PIN-kode"
 
-#: pindialog.cpp:200
+#: pindialog.cpp:199
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "PIN-koden er for kort. Den bør være minst 4 sifre."
 
-#: pindialog.cpp:205
+#: pindialog.cpp:204
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "De to PIN-kodene stemmer ikke overens"
 
-#: pindialog.cpp:210
+#: pindialog.cpp:209
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "PUK-koden er for kort. Den burde være 8 sifre."
 
-#: pindialog.cpp:215
+#: pindialog.cpp:214
 #, kde-format
 msgid "Unknown Error"
 msgstr "Ukjent feil"

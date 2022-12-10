@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-09 00:48+0000\n"
-"PO-Revision-Date: 2022-11-11 06:31+0100\n"
+"PO-Revision-Date: 2022-12-09 10:40+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -97,16 +97,10 @@ msgid "Middle-click to turn off Airplane Mode"
 msgstr "შუა წკაპი თვითმფრინავის რეჟიმის გამოსართავად"
 
 #: contents/ui/main.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip %1 is a list of the active network connections"
-#| msgid ""
-#| "%1\n"
-#| "Middle-click to turn on Airplane Mode"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
-"%1\n"
-"შუა წკაპი თვითმფრინავის რეჟიმის ჩასართავად"
+msgstr "შუა წკაპი თვითმფრინავის რეჟიმის ჩასართავად"
 
 #: contents/ui/main.qml:74 contents/ui/Toolbar.qml:69
 #, kde-format

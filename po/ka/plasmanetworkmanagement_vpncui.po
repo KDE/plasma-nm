@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-12-04 00:45+0000\n"
-"PO-Revision-Date: 2022-09-15 12:37+0200\n"
+"PO-Revision-Date: 2022-12-09 10:55+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: vpnc.cpp:73
 #, kde-format
@@ -246,7 +246,7 @@ msgstr ""
 #: vpncadvanced.ui:167
 #, kde-format
 msgid "Diffie-Hellman group to use for PFS."
-msgstr ""
+msgstr "დიფი-ჰელმანის ჯგუფი PFS-სთვის."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: vpncadvanced.ui:174
@@ -261,6 +261,8 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
+"ლოკალური პორტი (0-65535). 0 (ნაგულისხმები) ნიშნავს შემთხვევით პორტს. 500 "
+"vpnc-ის ნაგულისხმები მნიშვნელობაა."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193
@@ -272,7 +274,7 @@ msgstr "შემთხვევით"
 #: vpncadvanced.ui:209
 #, kde-format
 msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr ""
+msgstr "DPD პაკეტების გაგზავნის გათიშვა (ტაიმაუტის განულება)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
 #: vpncadvanced.ui:212

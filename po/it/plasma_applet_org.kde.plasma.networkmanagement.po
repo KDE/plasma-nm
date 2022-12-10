@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-09 00:48+0000\n"
-"PO-Revision-Date: 2022-10-28 08:34+0200\n"
+"PO-Revision-Date: 2022-12-09 14:13+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -97,16 +97,10 @@ msgstr ""
 "Clic con il pulsante centrale del mouse per disattivare la modalità aereo"
 
 #: contents/ui/main.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip %1 is a list of the active network connections"
-#| msgid ""
-#| "%1\n"
-#| "Middle-click to turn on Airplane Mode"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
-"%1\n"
-"Clic con il pulsante centrale del mouse per attivare la modalità aereo"
+msgstr "Clic con il pulsante centrale del mouse per attivare la modalità aereo"
 
 #: contents/ui/main.qml:74 contents/ui/Toolbar.qml:69
 #, kde-format

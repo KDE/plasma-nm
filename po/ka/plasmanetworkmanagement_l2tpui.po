@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2022-09-15 10:48+0200\n"
+"PO-Revision-Date: 2022-12-09 10:50+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -82,6 +82,8 @@ msgid ""
 "<html><head/><body><p>Password passed to PPPD when prompted for it.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>PPPD -ს პაროლი გადაეცა, როცა ის მოითხოვა.</p></body></"
+"html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_3)
 #: l2tp.ui:140
@@ -135,6 +137,8 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 formats."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>სერტიფიკატი .pem, .der, .crt, .cer ან .p12 ფორმატებში."
+"</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
@@ -151,6 +155,8 @@ msgid ""
 "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>პირადი გასაღები .pem, .der, .key, .pk8 ან .p12 "
+"ფორმატში.</p></body></html>"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineKey)
 #. i18n: ectx: property (filter), widget (KUrlRequester, userKey)
@@ -174,6 +180,8 @@ msgid ""
 "<html><head/><body><p>Password for private key or PKCS#12 certificate.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>პაროლი პირადი გასაღებისთვის ან PKCS#12 სერტიფიკატი.</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:286
@@ -237,6 +245,7 @@ msgstr "წინასწარ გაზიარებული გასა�
 #, kde-format
 msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>წინასწარ-გაზიარებული გასაღები (PSK).</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: l2tpipsec.ui:129
@@ -251,6 +260,8 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>სერტიფიკატი .pem, .der ან .p12 ფორმატში.</p></body></"
+"html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAdvanced)
 #: l2tpipsec.ui:219
@@ -493,13 +504,15 @@ msgstr ""
 #: l2tpppp.ui:151
 #, kde-format
 msgid "Use protocol field compression negotiation"
-msgstr ""
+msgstr "პროტოკოლის ველის შეკუმშვის მოლაპარაკების გამოყენება"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbAddressControlCompression)
 #: l2tpppp.ui:164
 #, kde-format
 msgid "Use Address/Control compression in both directions (send and receive)."
 msgstr ""
+"მისამართის/კონტროლის შეკუმშვის ორივე მხარეს (მიღების და გაგზავნისას) "
+"გამოყენება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAddressControlCompression)
 #: l2tpppp.ui:167
@@ -601,7 +614,7 @@ msgstr ""
 #: l2tpppp.ui:322
 #, kde-format
 msgid "Use stateful encryption"
-msgstr ""
+msgstr "სრული მიერთების დაშიფვრის გამოყენება"
 
 #: l2tppppwidget.cpp:22
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-09 00:48+0000\n"
-"PO-Revision-Date: 2022-07-31 09:42+0200\n"
+"PO-Revision-Date: 2022-12-10 10:52+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.03.70\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -94,13 +94,13 @@ msgstr "Sieci"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Środkowy wyłączy tryb samolotowy"
 
 #: contents/ui/main.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "Środkowy włączy tryb samolotowy"
 
 #: contents/ui/main.qml:74 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -108,14 +108,12 @@ msgid "Enable Wi-Fi"
 msgstr "Włącz Wi-Fi"
 
 #: contents/ui/main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable Mobile Network"
 msgstr "Włącz sieć komórkową"
 
 #: contents/ui/main.qml:90
-#, fuzzy, kde-format
-#| msgid "Enable airplane mode"
+#, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Włącz tryb samolotowy"
 

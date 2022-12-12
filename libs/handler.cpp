@@ -41,6 +41,8 @@
 #include <KUser>
 #include <KWallet>
 
+#include <nm-client.h>
+
 #define AGENT_SERVICE "org.kde.kded5"
 #define AGENT_PATH "/modules/networkmanagement"
 #define AGENT_IFACE "org.kde.plasmanetworkmanagement"
@@ -330,6 +332,57 @@ void Handler::addConnection(const NMVariantMapMap &map)
     watcher->setProperty("action", AddConnection);
     watcher->setProperty("connection", map.value(QStringLiteral("connection")).value(QStringLiteral("id")));
     connect(watcher, &QDBusPendingCallWatcher::finished, this, &Handler::replyFinished);
+}
+
+struct AddConnectionData {
+    QString id;
+    Handler *handler;
+};
+
+void add_connection_cb(GObject *client, GAsyncResult *result, gpointer user_data)
+{
+    AddConnectionData *data = static_cast<AddConnectionData *>(user_data);
+
+    GError *error = nullptr;
+    NMRemoteConnection *connection = nm_client_add_connection2_finish(NM_CLIENT(client), result, NULL, &error);
+
+    if (error) {
+        KNotification *notification = new KNotification(QStringLiteral("FailedToAddConnection"), KNotification::CloseOnTimeout, data->handler);
+        notification->setTitle(i18n("Failed to add connection %1", data->id));
+        notification->setComponentName(QStringLiteral("networkmanagement"));
+        notification->setText(QString::fromUtf8(error->message));
+        notification->setIconName(QStringLiteral("dialog-warning"));
+        notification->sendEvent();
+
+        g_error_free(error);
+    } else {
+        KNotification *notification = new KNotification(QStringLiteral("ConnectionAdded"), KNotification::CloseOnTimeout, data->handler);
+        notification->setText(i18n("Connection %1 has been added", data->id));
+        notification->setComponentName(QStringLiteral("networkmanagement"));
+        notification->setTitle(data->id);
+        notification->setIconName(QStringLiteral("dialog-information"));
+        notification->sendEvent();
+
+        g_object_unref(connection);
+    }
+
+    delete data;
+}
+
+void Handler::addConnection(NMConnection *connection)
+{
+    NMClient *client = nm_client_new(nullptr, nullptr);
+
+    AddConnectionData *userData = new AddConnectionData{QString::fromUtf8(nm_connection_get_id(connection)), this};
+
+    nm_client_add_connection2(client,
+                              nm_connection_to_dbus(connection, NM_CONNECTION_SERIALIZE_ALL),
+                              NM_SETTINGS_ADD_CONNECTION2_FLAG_IN_MEMORY,
+                              nullptr,
+                              true,
+                              nullptr,
+                              add_connection_cb,
+                              userData);
 }
 
 void Handler::addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject)

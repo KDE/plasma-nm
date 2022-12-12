@@ -20,6 +20,8 @@
 
 #include "settingwidget.h"
 
+#include "nm-connection.h"
+
 /**
  * Plugin for UI elements for VPN configuration
  */
@@ -48,7 +50,7 @@ public:
 
     struct ImportResult {
     private:
-        NMVariantMapMap m_connection;
+        NMConnection *m_connection;
         ErrorType m_error = NoError;
         QString m_errorMessage;
 
@@ -57,11 +59,11 @@ public:
 
         QString errorMessage() const;
 
-        NMVariantMapMap connection() const;
+        NMConnection *connection() const;
 
         static ImportResult fail(const QString &errorMessage);
 
-        static ImportResult pass(const NMVariantMapMap &connection);
+        static ImportResult pass(NMConnection *connection);
 
         static ImportResult notImplemented();
     };

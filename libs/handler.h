@@ -93,6 +93,9 @@ public Q_SLOTS:
      * @map - NMVariantMapMap with connection settings
      */
     void addConnection(const NMVariantMapMap &map);
+
+    void addConnection(NMConnection *connection);
+
     /**
      * Deactivates given connection
      * @connection - d-bus path of the connection you want to deactivate

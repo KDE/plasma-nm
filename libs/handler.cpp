@@ -95,22 +95,22 @@ void Handler::activateConnection(const QString &connection, const QString &devic
                 return md.value(QStringLiteral("X-NetworkManager-Services")) == vpnSetting->serviceType();
             };
 
-            const QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
+            const QVector<KPluginMetaData> plasmaNmPlugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
 
             const QString pluginBaseName = vpnSetting->serviceType().remove(QLatin1String("org.freedesktop.NetworkManager."));
-            bool pluginMissing = plugins.isEmpty();
+            bool pluginMissing = plasmaNmPlugins.isEmpty();
             QString errorMessage;
 
-            if (plugins.empty()) {
+            if (plasmaNmPlugins.empty()) {
                 errorMessage = i18n("Plasma is missing support for '%1' VPN connections. Please report this to your distribution.", pluginBaseName);
             }
 
             // Check missing NetworkManager VPN plugin
             if (!pluginMissing) {
-                GSList *plugins = nullptr;
-                plugins = nm_vpn_plugin_info_list_load();
+                GSList *networkManagerPlugins = nullptr;
+                networkManagerPlugins = nm_vpn_plugin_info_list_load();
 
-                NMVpnPluginInfo *plugin_info = nm_vpn_plugin_info_list_find_by_service(plugins, vpnSetting->serviceType().toStdString().c_str());
+                NMVpnPluginInfo *plugin_info = nm_vpn_plugin_info_list_find_by_service(networkManagerPlugins, vpnSetting->serviceType().toStdString().c_str());
                 pluginMissing = !plugin_info;
                 errorMessage = i18n("NetworkManager is missing support for '%1' VPN connections. Please use the package manager to install it.", pluginBaseName);
             }

@@ -41,6 +41,7 @@ PRIVATE
     KF5::Service
     KF5::Wallet
     KF5::WindowSystem
+    KF5::KIOGui
 )
 
 target_link_libraries(plasmanm_internal PUBLIC KF5::ModemManagerQt)

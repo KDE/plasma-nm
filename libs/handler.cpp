@@ -98,29 +98,32 @@ void Handler::activateConnection(const QString &connection, const QString &devic
             const QVector<KPluginMetaData> plasmaNmPlugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
 
             const QString pluginBaseName = vpnSetting->serviceType().remove(QLatin1String("org.freedesktop.NetworkManager."));
-            bool pluginMissing = plasmaNmPlugins.isEmpty();
-            QString errorMessage;
 
             if (plasmaNmPlugins.empty()) {
-                errorMessage = i18n("Plasma is missing support for '%1' VPN connections. Please report this to your distribution.", pluginBaseName);
-            }
-
-            // Check missing NetworkManager VPN plugin
-            if (!pluginMissing) {
-                GSList *networkManagerPlugins = nullptr;
-                networkManagerPlugins = nm_vpn_plugin_info_list_load();
-
-                NMVpnPluginInfo *plugin_info = nm_vpn_plugin_info_list_find_by_service(networkManagerPlugins, vpnSetting->serviceType().toStdString().c_str());
-                pluginMissing = !plugin_info;
-                errorMessage = i18n("NetworkManager is missing support for '%1' VPN connections. Please use the package manager to install it.", pluginBaseName);
-            }
-
-            if (pluginMissing) {
                 qCWarning(PLASMA_NM_LIBS_LOG) << "VPN" << vpnSetting->serviceType() << "not found, skipping";
                 auto notification = new KNotification(QStringLiteral("MissingVpnPlugin"), KNotification::Persistent, this);
                 notification->setComponentName(QStringLiteral("networkmanagement"));
                 notification->setTitle(con->name());
-                notification->setText(errorMessage);
+                notification->setText(i18n("Plasma is missing support for '%1' VPN connections. Please report this to your distribution.", pluginBaseName));
+                notification->setIconName(QStringLiteral("dialog-error"));
+                notification->sendEvent();
+
+                return;
+            }
+
+            // Check missing NetworkManager VPN plugin
+            GSList *networkManagerPlugins = nullptr;
+            networkManagerPlugins = nm_vpn_plugin_info_list_load();
+
+            NMVpnPluginInfo *plugin_info = nm_vpn_plugin_info_list_find_by_service(networkManagerPlugins, vpnSetting->serviceType().toStdString().c_str());
+
+            if (!plugin_info) {
+                qCWarning(PLASMA_NM_LIBS_LOG) << "VPN" << vpnSetting->serviceType() << "not found, skipping";
+                auto notification = new KNotification(QStringLiteral("MissingVpnPlugin"), KNotification::Persistent, this);
+                notification->setComponentName(QStringLiteral("networkmanagement"));
+                notification->setTitle(con->name());
+                notification->setText(
+                    i18n("NetworkManager is missing support for '%1' VPN connections. Please use the package manager to install it.", pluginBaseName));
                 notification->setIconName(QStringLiteral("dialog-error"));
                 notification->sendEvent();
                 return;

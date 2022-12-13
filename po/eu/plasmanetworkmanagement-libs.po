@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-08 00:48+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2022-11-15 05:36+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2926,16 +2926,20 @@ msgctxt ""
 msgid "Never used"
 msgstr "Inoiz erabili gabe"
 
-#: editor/vpnuiplugin.cpp:38
-#, kde-format
-msgctxt "Error message in VPN import/export dialog"
-msgid "Operation not supported for this VPN type."
-msgstr "Eragiketa ez da onartzen VPN mota honekin."
-
-#: editor/vpnuiplugin.cpp:58
+#: editor/vpnuiplugin.cpp:42
 #, kde-format
 msgid "No VPN plugin found for type %1"
 msgstr "Ez da %1 motaren VPN pluginik aurkitu"
+
+#: editor/vpnuiplugin.cpp:99
+#, kde-format
+msgid "Importing this type of VPN is not implemented"
+msgstr ""
+
+#: editor/vpnuiplugin.cpp:123
+#, kde-format
+msgid "Not implemented"
+msgstr ""
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -3751,6 +3755,10 @@ msgstr "Adsl"
 #, kde-format
 msgid "Device"
 msgstr "Gailua"
+
+#~ msgctxt "Error message in VPN import/export dialog"
+#~ msgid "Operation not supported for this VPN type."
+#~ msgstr "Eragiketa ez da onartzen VPN mota honekin."
 
 #~ msgid "Missing VPN plugin"
 #~ msgstr "VPN plugina falta da"

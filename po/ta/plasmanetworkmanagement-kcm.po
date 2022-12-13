@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2021-06-12 21:51+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -22,26 +22,32 @@ msgstr ""
 msgid "my_shared_connection"
 msgstr "என்_பகிர்ந்த_இணைப்பு"
 
-#: kcm.cpp:415
+#: kcm.cpp:416
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "VPN இணைப்பை ஏற்றுமதி செய்"
 
-#: kcm.cpp:440
+#: kcm.cpp:441
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "'%1' என்ற இணைப்பிற்கான மாற்றங்களை சேமிக்கலாமா?"
 
-#: kcm.cpp:441
+#: kcm.cpp:442
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "மாற்றங்களை சேமி"
 
-#: kcm.cpp:529
+#: kcm.cpp:531
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "VPN இணைப்பை இறக்குமதி செய்"
+
+#: kcm.cpp:531
+#, fuzzy, kde-format
+#| msgid "Export VPN Connection"
+msgid "VPN connections (%1)"
+msgstr "VPN இணைப்பை ஏற்றுமதி செய்"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
@@ -52,7 +58,7 @@ msgstr "இணைப்பின் வகையை தேர்ந்தெட�
 msgid "Create"
 msgstr "உருவாக்கு"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
 msgid "Cancel"
 msgstr "ரத்து செய்"
 
@@ -89,31 +95,31 @@ msgstr "ஹாட்ஸ்பாட்டின் பெயர்:"
 msgid "Hotspot password:"
 msgstr "ஹாட்ஸ்பாட்டிற்கான கடவுச்சொல்:"
 
-#: qml/ConfigurationDialog.qml:103
+#: qml/ConfigurationDialog.qml:101
 msgid "Ok"
 msgstr "சரி"
 
-#: qml/ConnectionItem.qml:98
+#: qml/ConnectionItem.qml:99
 msgid "Connect"
 msgstr "இணை "
 
-#: qml/ConnectionItem.qml:98
+#: qml/ConnectionItem.qml:99
 msgid "Disconnect"
 msgstr "இணைப்பை துண்டி"
 
-#: qml/ConnectionItem.qml:111
+#: qml/ConnectionItem.qml:112
 msgid "Delete"
 msgstr "நீக்கு"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:122
 msgid "Export"
 msgstr "ஏற்றுமதி"
 
-#: qml/ConnectionItem.qml:146
+#: qml/ConnectionItem.qml:147
 msgid "Connected"
 msgstr "இணைந்துள்ளது"
 
-#: qml/ConnectionItem.qml:148
+#: qml/ConnectionItem.qml:149
 msgid "Connecting"
 msgstr "இணைகிறது"
 

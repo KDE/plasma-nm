@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-12-04 00:45+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2021-05-31 23:17+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,17 +27,22 @@ msgstr "난독화된 암호를 복호화할 수 없음"
 msgid "Error"
 msgstr "오류"
 
-#: vpnc.cpp:126
+#: vpnc.cpp:118
+#, kde-format
+msgid "Wrong file extension"
+msgstr ""
+
+#: vpnc.cpp:125
 #, kde-format
 msgid "File %1 could not be opened."
 msgstr "파일 %1을(를) 열 수 없습니다."
 
-#: vpnc.cpp:135
+#: vpnc.cpp:133
 #, kde-format
 msgid "Needed executable cisco-decrypt could not be found."
 msgstr "cisco-decrypt 실행 파일을 찾을 수 없습니다."
 
-#: vpnc.cpp:252
+#: vpnc.cpp:249
 #, kde-format
 msgid ""
 "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
@@ -52,17 +57,17 @@ msgstr ""
 "TCP 터널링을 사용하지 않고 연결을 설정할 수 있지만 예상했던 대로 작동하지 않"
 "을 수도 있습니다."
 
-#: vpnc.cpp:255
+#: vpnc.cpp:252
 #, kde-format
 msgid "Not supported"
 msgstr "지원하지 않음"
 
-#: vpnc.cpp:303
+#: vpnc.cpp:300
 #, kde-format
 msgid "%1: file format error."
 msgstr "%1: 파일 형식 오류입니다."
 
-#: vpnc.cpp:322
+#: vpnc.cpp:317
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: 파일을 만들 수 없음"

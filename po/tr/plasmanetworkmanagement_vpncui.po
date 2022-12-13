@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-12-04 00:45+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2022-03-12 14:26+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -29,17 +29,22 @@ msgstr "Karartılmış parolanın çözülmesi sırasında hata"
 msgid "Error"
 msgstr "Hata"
 
-#: vpnc.cpp:126
+#: vpnc.cpp:118
+#, kde-format
+msgid "Wrong file extension"
+msgstr ""
+
+#: vpnc.cpp:125
 #, kde-format
 msgid "File %1 could not be opened."
 msgstr "%1 dosyası açılamadı."
 
-#: vpnc.cpp:135
+#: vpnc.cpp:133
 #, kde-format
 msgid "Needed executable cisco-decrypt could not be found."
 msgstr "Gerekli cisco-decrypt uygulaması bulunamadı."
 
-#: vpnc.cpp:252
+#: vpnc.cpp:249
 #, kde-format
 msgid ""
 "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
@@ -54,17 +59,17 @@ msgstr ""
 "Bağlantı yine oluşturulabilir ancak TCP tünelleme devre dışı olacağından "
 "istenildiği gibi çalışmayabilir."
 
-#: vpnc.cpp:255
+#: vpnc.cpp:252
 #, kde-format
 msgid "Not supported"
 msgstr "Desteklenmiyor"
 
-#: vpnc.cpp:303
+#: vpnc.cpp:300
 #, kde-format
 msgid "%1: file format error."
 msgstr "%1: dosya biçimi hatası."
 
-#: vpnc.cpp:322
+#: vpnc.cpp:317
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: dosya oluşturulamadı"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-09 00:48+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2022-09-24 15:52+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -101,32 +101,32 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:74 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Aktivera WIFI"
 
-#: contents/ui/main.qml:82
+#: contents/ui/main.qml:83
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Aktivera mobilt nätverk"
 
-#: contents/ui/main.qml:90
+#: contents/ui/main.qml:91
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Aktivera flygplansläge"
 
-#: contents/ui/main.qml:95
+#: contents/ui/main.qml:96
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Öppna nätverksinloggningssida..."
 
-#: contents/ui/main.qml:100
+#: contents/ui/main.qml:101
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Anpassa nätver&ksanslutningar..."
 
-#: contents/ui/main.qml:136
+#: contents/ui/main.qml:138
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

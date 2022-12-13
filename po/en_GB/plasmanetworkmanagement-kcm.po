@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2021-06-12 14:07+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -22,26 +22,32 @@ msgstr ""
 msgid "my_shared_connection"
 msgstr "my_shared_connection"
 
-#: kcm.cpp:415
+#: kcm.cpp:416
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Export VPN Connection"
 
-#: kcm.cpp:440
+#: kcm.cpp:441
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Do you want to save changes made to the connection '%1'?"
 
-#: kcm.cpp:441
+#: kcm.cpp:442
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Save Changes"
 
-#: kcm.cpp:529
+#: kcm.cpp:531
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Import VPN Connection"
+
+#: kcm.cpp:531
+#, fuzzy, kde-format
+#| msgid "Export VPN Connection"
+msgid "VPN connections (%1)"
+msgstr "Export VPN Connection"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
@@ -52,7 +58,7 @@ msgstr "Choose a Connection Type"
 msgid "Create"
 msgstr "Create"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -89,31 +95,31 @@ msgstr "Hotspot name:"
 msgid "Hotspot password:"
 msgstr "Hotspot password:"
 
-#: qml/ConfigurationDialog.qml:103
+#: qml/ConfigurationDialog.qml:101
 msgid "Ok"
 msgstr "Ok"
 
-#: qml/ConnectionItem.qml:98
+#: qml/ConnectionItem.qml:99
 msgid "Connect"
 msgstr "Connect"
 
-#: qml/ConnectionItem.qml:98
+#: qml/ConnectionItem.qml:99
 msgid "Disconnect"
 msgstr "Disconnect"
 
-#: qml/ConnectionItem.qml:111
+#: qml/ConnectionItem.qml:112
 msgid "Delete"
 msgstr "Delete"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:122
 msgid "Export"
 msgstr "Export"
 
-#: qml/ConnectionItem.qml:146
+#: qml/ConnectionItem.qml:147
 msgid "Connected"
 msgstr "Connected"
 
-#: qml/ConnectionItem.qml:148
+#: qml/ConnectionItem.qml:149
 msgid "Connecting"
 msgstr "Connecting"
 

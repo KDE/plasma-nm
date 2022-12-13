@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2022-06-28 09:54+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -22,26 +22,32 @@ msgstr ""
 msgid "my_shared_connection"
 msgstr "my_shared_connection"
 
-#: kcm.cpp:415
+#: kcm.cpp:416
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Експортиране на VPN връзка"
 
-#: kcm.cpp:440
+#: kcm.cpp:441
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Искате ли да запазите промените, направени във връзката \"%1\"?"
 
-#: kcm.cpp:441
+#: kcm.cpp:442
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Запазване на промените"
 
-#: kcm.cpp:529
+#: kcm.cpp:531
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Импортиране на VPN връзка"
+
+#: kcm.cpp:531
+#, fuzzy, kde-format
+#| msgid "Export VPN Connection"
+msgid "VPN connections (%1)"
+msgstr "Експортиране на VPN връзка"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
@@ -52,7 +58,7 @@ msgstr "Изберете тип връзка"
 msgid "Create"
 msgstr "Създаване"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
 msgid "Cancel"
 msgstr "Отказ"
 
@@ -89,31 +95,31 @@ msgstr "Име на точка на достъп:"
 msgid "Hotspot password:"
 msgstr "Парола на точка на достъп:"
 
-#: qml/ConfigurationDialog.qml:103
+#: qml/ConfigurationDialog.qml:101
 msgid "Ok"
 msgstr "Добре"
 
-#: qml/ConnectionItem.qml:98
+#: qml/ConnectionItem.qml:99
 msgid "Connect"
 msgstr "Свързване"
 
-#: qml/ConnectionItem.qml:98
+#: qml/ConnectionItem.qml:99
 msgid "Disconnect"
 msgstr "Разкачване"
 
-#: qml/ConnectionItem.qml:111
+#: qml/ConnectionItem.qml:112
 msgid "Delete"
 msgstr "Изтриване"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:122
 msgid "Export"
 msgstr "Експортиране"
 
-#: qml/ConnectionItem.qml:146
+#: qml/ConnectionItem.qml:147
 msgid "Connected"
 msgstr "Свързано"
 
-#: qml/ConnectionItem.qml:148
+#: qml/ConnectionItem.qml:149
 msgid "Connecting"
 msgstr "Свързване"
 

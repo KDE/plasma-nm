@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2021-07-25 12:42+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -23,26 +23,32 @@ msgstr ""
 msgid "my_shared_connection"
 msgstr "conexiunea_mea_partajată"
 
-#: kcm.cpp:415
+#: kcm.cpp:416
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Exportă conexiune VPN"
 
-#: kcm.cpp:440
+#: kcm.cpp:441
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Doriți să salvați modificările aduse conexiunii „%1”?"
 
-#: kcm.cpp:441
+#: kcm.cpp:442
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Salvează modificările"
 
-#: kcm.cpp:529
+#: kcm.cpp:531
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Importă conexiune VPN"
+
+#: kcm.cpp:531
+#, fuzzy, kde-format
+#| msgid "Export VPN Connection"
+msgid "VPN connections (%1)"
+msgstr "Exportă conexiune VPN"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
@@ -53,7 +59,7 @@ msgstr "Alegeți tipul conexiunii"
 msgid "Create"
 msgstr "Creează"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
 msgid "Cancel"
 msgstr "Renunță"
 
@@ -90,31 +96,31 @@ msgstr "Denumire Hotspot:"
 msgid "Hotspot password:"
 msgstr "Parolă Hotspot:"
 
-#: qml/ConfigurationDialog.qml:103
+#: qml/ConfigurationDialog.qml:101
 msgid "Ok"
 msgstr "Bine"
 
-#: qml/ConnectionItem.qml:98
+#: qml/ConnectionItem.qml:99
 msgid "Connect"
 msgstr "Conectează"
 
-#: qml/ConnectionItem.qml:98
+#: qml/ConnectionItem.qml:99
 msgid "Disconnect"
 msgstr "Deconectează"
 
-#: qml/ConnectionItem.qml:111
+#: qml/ConnectionItem.qml:112
 msgid "Delete"
 msgstr "Șterge"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:122
 msgid "Export"
 msgstr "Exportă"
 
-#: qml/ConnectionItem.qml:146
+#: qml/ConnectionItem.qml:147
 msgid "Connected"
 msgstr "Conectat"
 
-#: qml/ConnectionItem.qml:148
+#: qml/ConnectionItem.qml:149
 msgid "Connecting"
 msgstr "Se conectează"
 

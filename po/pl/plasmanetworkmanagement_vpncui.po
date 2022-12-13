@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-12-04 00:45+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2022-01-08 09:18+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -28,17 +28,22 @@ msgstr "Błąd odszyfrowania zamaskowanego hasła"
 msgid "Error"
 msgstr "Błąd"
 
-#: vpnc.cpp:126
+#: vpnc.cpp:118
+#, kde-format
+msgid "Wrong file extension"
+msgstr ""
+
+#: vpnc.cpp:125
 #, kde-format
 msgid "File %1 could not be opened."
 msgstr "Nie można otworzyć pliku %1."
 
-#: vpnc.cpp:135
+#: vpnc.cpp:133
 #, kde-format
 msgid "Needed executable cisco-decrypt could not be found."
 msgstr "Nie można znaleźć potrzebnego pliku wykonywalnego cisco-decrypt."
 
-#: vpnc.cpp:252
+#: vpnc.cpp:249
 #, kde-format
 msgid ""
 "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
@@ -53,17 +58,17 @@ msgstr ""
 "Połączenie może nadal być utworzone, lecz z wyłączonym tunelowaniem TCP, "
 "jednakże może nie działać tak jak tego oczekujesz."
 
-#: vpnc.cpp:255
+#: vpnc.cpp:252
 #, kde-format
 msgid "Not supported"
 msgstr "Nieobsługiwane"
 
-#: vpnc.cpp:303
+#: vpnc.cpp:300
 #, kde-format
 msgid "%1: file format error."
 msgstr "%1: błąd formatu pliku."
 
-#: vpnc.cpp:322
+#: vpnc.cpp:317
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: nie można utworzyć pliku"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-08 00:48+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2015-02-04 14:10+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -2855,15 +2855,19 @@ msgctxt ""
 msgid "Never used"
 msgstr "Nikad nije korišteno"
 
-#: editor/vpnuiplugin.cpp:38
-#, kde-format
-msgctxt "Error message in VPN import/export dialog"
-msgid "Operation not supported for this VPN type."
-msgstr "Operacija nije podržana za ovaj VPN tip."
-
-#: editor/vpnuiplugin.cpp:58
+#: editor/vpnuiplugin.cpp:42
 #, kde-format
 msgid "No VPN plugin found for type %1"
+msgstr ""
+
+#: editor/vpnuiplugin.cpp:99
+#, kde-format
+msgid "Importing this type of VPN is not implemented"
+msgstr ""
+
+#: editor/vpnuiplugin.cpp:123
+#, kde-format
+msgid "Not implemented"
 msgstr ""
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
@@ -3696,6 +3700,10 @@ msgstr "Adsl"
 #| msgid "Service:"
 msgid "Device"
 msgstr "Usluga:"
+
+#~ msgctxt "Error message in VPN import/export dialog"
+#~ msgid "Operation not supported for this VPN type."
+#~ msgstr "Operacija nije podržana za ovaj VPN tip."
 
 #~ msgid "Missing VPN plugin"
 #~ msgstr "Nedostaje VPN dodatak"

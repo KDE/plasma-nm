@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-18 00:46+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2021-11-12 01:32+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,86 +17,81 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 21.08.1\n"
 
-#: openvpn.cpp:181
+#: openvpn.cpp:180
 #, kde-format
 msgid "Could not open file"
 msgstr "파일을 열 수 없음"
 
-#: openvpn.cpp:194
+#: openvpn.cpp:192
 #, kde-format
 msgid "Do you want to copy your certificates to %1?"
 msgstr "인증서를 %1(으)로 복사하시겠습니까?"
 
-#: openvpn.cpp:195
+#: openvpn.cpp:193
 #, kde-format
 msgid "Copy certificates"
 msgstr "인증서 복사"
 
-#: openvpn.cpp:196
+#: openvpn.cpp:194
 #, kde-format
 msgid "Copy"
 msgstr ""
 
-#: openvpn.cpp:255 openvpn.cpp:273 openvpn.cpp:552
+#: openvpn.cpp:253 openvpn.cpp:271 openvpn.cpp:550
 #, kde-format
 msgid "Unknown option: %1"
 msgstr "알 수 없는 옵션: %1"
 
-#: openvpn.cpp:258 openvpn.cpp:276 openvpn.cpp:292 openvpn.cpp:304
-#: openvpn.cpp:336 openvpn.cpp:427 openvpn.cpp:544 openvpn.cpp:572
+#: openvpn.cpp:256 openvpn.cpp:274 openvpn.cpp:290 openvpn.cpp:302
+#: openvpn.cpp:334 openvpn.cpp:425 openvpn.cpp:542 openvpn.cpp:570
 #, kde-format
 msgid "Invalid number of arguments (expected 1) in option: %1"
 msgstr "옵션의 인자 개수가 잘못됨(1개 예상함): %1"
 
-#: openvpn.cpp:289 openvpn.cpp:301
+#: openvpn.cpp:287 openvpn.cpp:299
 #, kde-format
 msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
 msgstr "옵션의 크기가 잘못됨(0-0xFFFF 예상함): %1"
 
-#: openvpn.cpp:390
+#: openvpn.cpp:388
 #, kde-format
 msgid "Invalid proxy option: %1"
 msgstr "잘못된 프록시 옵션: %1"
 
-#: openvpn.cpp:424
+#: openvpn.cpp:422
 #, kde-format
 msgid "Invalid port (should be between 1 and 65535) in option: %1"
 msgstr "옵션의 포트가 잘못됨(1-65535 예상함): %1"
 
-#: openvpn.cpp:561
+#: openvpn.cpp:559
 #, kde-format
 msgid "Invalid number of arguments (expected 2) in option: %1"
 msgstr "옵션의 인자 개수가 잘못됨(2개 예상함): %1"
 
-#: openvpn.cpp:583
+#: openvpn.cpp:581
 #, kde-format
 msgid "Invalid argument in option: %1"
 msgstr "옵션에 잘못된 인자가 있음: %1"
 
-#: openvpn.cpp:672
+#: openvpn.cpp:669
 #, kde-format
 msgid "File %1 is not a valid OpenVPN's client configuration file"
 msgstr "파일 %1은(는) 올바른 OpenVPN 클라이언트 설정 파일이 아님"
 
-#: openvpn.cpp:676
+#: openvpn.cpp:671
 #, kde-format
 msgid "File %1 is not a valid OpenVPN configuration (no remote)."
 msgstr "파일 %1은(는) 올바른 OpenVPN 클라이언트 설정 파일이 아님(remote 없음)."
 
-#: openvpn.cpp:745
+#: openvpn.cpp:739
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "파일 %1 저장 오류: %2"
 
-#: openvpn.cpp:773
+#: openvpn.cpp:767
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "인증서를 %1(으)로 복사 중 오류: %2"
-
-#: openvpn.cpp:785
-#, kde-format
-msgid "Could not open file for writing"
-msgstr "파일에 쓰려고 열 수 없습니다."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: openvpn.ui:19
@@ -1186,6 +1181,9 @@ msgstr "토큰"
 #, kde-format
 msgid "one-time password"
 msgstr "일회용 암호"
+
+#~ msgid "Could not open file for writing"
+#~ msgstr "파일에 쓰려고 열 수 없습니다."
 
 #~ msgid "Use fast LZO compression."
 #~ msgstr "빠른 LZO 압축을 사용합니다."

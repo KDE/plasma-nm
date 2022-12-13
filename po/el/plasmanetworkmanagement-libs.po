@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-08 00:48+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2017-09-08 16:16+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -2891,15 +2891,19 @@ msgctxt ""
 msgid "Never used"
 msgstr "Δε χρησιμοποιήθηκε ποτέ"
 
-#: editor/vpnuiplugin.cpp:38
-#, kde-format
-msgctxt "Error message in VPN import/export dialog"
-msgid "Operation not supported for this VPN type."
-msgstr "Η λειτουργία δεν υποστηρίζεται για αυτόν τον τύπο VPN."
-
-#: editor/vpnuiplugin.cpp:58
+#: editor/vpnuiplugin.cpp:42
 #, kde-format
 msgid "No VPN plugin found for type %1"
+msgstr ""
+
+#: editor/vpnuiplugin.cpp:99
+#, kde-format
+msgid "Importing this type of VPN is not implemented"
+msgstr ""
+
+#: editor/vpnuiplugin.cpp:123
+#, kde-format
+msgid "Not implemented"
 msgstr ""
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
@@ -3735,6 +3739,10 @@ msgstr "Adsl"
 #| msgid "Service:"
 msgid "Device"
 msgstr "Υπηρεσία:"
+
+#~ msgctxt "Error message in VPN import/export dialog"
+#~ msgid "Operation not supported for this VPN type."
+#~ msgstr "Η λειτουργία δεν υποστηρίζεται για αυτόν τον τύπο VPN."
 
 #~ msgid "Missing VPN plugin"
 #~ msgstr "Λείπει το πρόσθετο VPN"

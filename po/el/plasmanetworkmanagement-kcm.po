@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:48+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2017-01-19 19:33+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -22,27 +22,33 @@ msgstr ""
 msgid "my_shared_connection"
 msgstr "my_shared_connection"
 
-#: kcm.cpp:415
+#: kcm.cpp:416
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Εξαγωγή σύνδεσης VPN"
 
-#: kcm.cpp:440
+#: kcm.cpp:441
 #, fuzzy, kde-format
 #| msgid "Do you want to remove the connection '%1'"
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Επιθυμείτε να αφαιρέσετε τη σύνδεση '%1'"
 
-#: kcm.cpp:441
+#: kcm.cpp:442
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr ""
 
-#: kcm.cpp:529
+#: kcm.cpp:531
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Εισαγωγή σύνδεσης VPN"
+
+#: kcm.cpp:531
+#, fuzzy, kde-format
+#| msgid "Export VPN Connection"
+msgid "VPN connections (%1)"
+msgstr "Εξαγωγή σύνδεσης VPN"
 
 #: qml/AddConnectionDialog.qml:15
 #, fuzzy
@@ -55,7 +61,7 @@ msgstr "Επιλέξτε έναν τύπο σύνδεσης"
 msgid "Create"
 msgstr "Δημιουργία"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
 msgid "Cancel"
 msgstr ""
 
@@ -94,31 +100,31 @@ msgstr ""
 msgid "Hotspot password:"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:103
+#: qml/ConfigurationDialog.qml:101
 msgid "Ok"
 msgstr ""
 
-#: qml/ConnectionItem.qml:98
+#: qml/ConnectionItem.qml:99
 msgid "Connect"
 msgstr "Σύνδεση"
 
-#: qml/ConnectionItem.qml:98
+#: qml/ConnectionItem.qml:99
 msgid "Disconnect"
 msgstr "Αποσύνδεση"
 
-#: qml/ConnectionItem.qml:111
+#: qml/ConnectionItem.qml:112
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:122
 msgid "Export"
 msgstr "Εξαγωγή"
 
-#: qml/ConnectionItem.qml:146
+#: qml/ConnectionItem.qml:147
 msgid "Connected"
 msgstr "Συνδέθηκε"
 
-#: qml/ConnectionItem.qml:148
+#: qml/ConnectionItem.qml:149
 msgid "Connecting"
 msgstr "Συνδέεται"
 

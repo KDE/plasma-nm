@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-09 00:48+0000\n"
-"PO-Revision-Date: 2022-10-26 21:56+0100\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"PO-Revision-Date: 2022-12-12 16:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -115,43 +115,37 @@ msgid "Middle-click to turn off Airplane Mode"
 msgstr "Carregue com o botão do meio para desactivar o Modo de Avião"
 
 #: contents/ui/main.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip %1 is a list of the active network connections"
-#| msgid ""
-#| "%1\n"
-#| "Middle-click to turn on Airplane Mode"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
-"%1\n"
-"Carregue com o botão do meio para activar o Modo de Avião"
+msgstr "Carregue com o botão do meio para activar o Modo de Avião"
 
-#: contents/ui/main.qml:74 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activar o Wi-Fi"
 
-#: contents/ui/main.qml:82
+#: contents/ui/main.qml:83
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Activar a Rede Móvel"
 
-#: contents/ui/main.qml:90
+#: contents/ui/main.qml:91
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Activar o Modo de Avião"
 
-#: contents/ui/main.qml:95
+#: contents/ui/main.qml:96
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Abrir a Página de Autenticação na Rede…"
 
-#: contents/ui/main.qml:100
+#: contents/ui/main.qml:101
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configurar as Ligações de Rede…"
 
-#: contents/ui/main.qml:136
+#: contents/ui/main.qml:138
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
@@ -245,59 +239,3 @@ msgstr "Enviar"
 #, kde-format
 msgid "Download"
 msgstr "Obter"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is ADSL"
-#~ msgstr "O tipo da ligação é ADSL"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Bluetooth"
-#~ msgstr "O tipo da ligação é Bluetooth"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Bridge"
-#~ msgstr "O tipo da ligação é em Ponte"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is CDMA"
-#~ msgstr "O tipo da ligação é CDMA"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is GSM"
-#~ msgstr "O tipo da ligação é GSM"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Infiniband"
-#~ msgstr "O tipo da ligação é Infiniband"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is OLPC Mesh"
-#~ msgstr "O tipo da ligação é OLPC em Malha"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is PPOPE"
-#~ msgstr "O tipo da ligação é PPPoE"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is VLAN"
-#~ msgstr "O tipo da ligação é VLAN"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is VPN"
-#~ msgstr "O tipo da ligação é VPN"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wimax"
-#~ msgstr "O tipo da ligação é Wimax"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wired"
-#~ msgstr "O tipo da ligação é com-fios"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wireless"
-#~ msgstr "O tipo da ligação é sem-fios"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Unknown"
-#~ msgstr "O tipo da ligação é desconhecido"

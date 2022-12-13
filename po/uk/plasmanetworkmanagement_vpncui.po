@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-12-04 00:45+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2021-05-31 09:06+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -30,17 +30,22 @@ msgstr "Помилка під час спроби розшифрування з�
 msgid "Error"
 msgstr "Помилка"
 
-#: vpnc.cpp:126
+#: vpnc.cpp:118
+#, kde-format
+msgid "Wrong file extension"
+msgstr ""
+
+#: vpnc.cpp:125
 #, kde-format
 msgid "File %1 could not be opened."
 msgstr "Не вдалося відкрити файл %1."
 
-#: vpnc.cpp:135
+#: vpnc.cpp:133
 #, kde-format
 msgid "Needed executable cisco-decrypt could not be found."
 msgstr "Не вдалося знайти потрібний для роботи виконуваний файл cisco-decrypt."
 
-#: vpnc.cpp:252
+#: vpnc.cpp:249
 #, kde-format
 msgid ""
 "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
@@ -56,17 +61,17 @@ msgstr ""
 "З’єднання можна буде створити з вимкненим тунелюванням через TCP, але "
 "з’єднання, отримане у такий спосіб, може бути непрацездатним."
 
-#: vpnc.cpp:255
+#: vpnc.cpp:252
 #, kde-format
 msgid "Not supported"
 msgstr "Не підтримується"
 
-#: vpnc.cpp:303
+#: vpnc.cpp:300
 #, kde-format
 msgid "%1: file format error."
 msgstr "%1: помилка у форматуванні файла."
 
-#: vpnc.cpp:322
+#: vpnc.cpp:317
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: не вдалося створити файл"

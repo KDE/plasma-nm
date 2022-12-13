@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-08 00:48+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2022-12-01 06:53\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2864,16 +2864,20 @@ msgctxt ""
 msgid "Never used"
 msgstr "从未使用"
 
-#: editor/vpnuiplugin.cpp:38
-#, kde-format
-msgctxt "Error message in VPN import/export dialog"
-msgid "Operation not supported for this VPN type."
-msgstr "此 VPN 类型不支持这个操作"
-
-#: editor/vpnuiplugin.cpp:58
+#: editor/vpnuiplugin.cpp:42
 #, kde-format
 msgid "No VPN plugin found for type %1"
 msgstr "找不到类型为 %1 的 VPN 插件"
+
+#: editor/vpnuiplugin.cpp:99
+#, kde-format
+msgid "Importing this type of VPN is not implemented"
+msgstr ""
+
+#: editor/vpnuiplugin.cpp:123
+#, kde-format
+msgid "Not implemented"
+msgstr ""
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -3675,3 +3679,7 @@ msgstr "Adsl"
 #, kde-format
 msgid "Device"
 msgstr "设备"
+
+#~ msgctxt "Error message in VPN import/export dialog"
+#~ msgid "Operation not supported for this VPN type."
+#~ msgstr "此 VPN 类型不支持这个操作"

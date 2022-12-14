@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2017, 2019, 2020, 2021.
+# Yuri Chornoivan <yurchor@ukr.net>, 2017, 2019, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-13 00:58+0000\n"
-"PO-Revision-Date: 2021-05-31 09:06+0300\n"
+"PO-Revision-Date: 2022-12-13 14:49+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -47,10 +47,9 @@ msgid "Import VPN Connection"
 msgstr "Імпортування з’єднання VPN"
 
 #: kcm.cpp:531
-#, fuzzy, kde-format
-#| msgid "Export VPN Connection"
+#, kde-format
 msgid "VPN connections (%1)"
-msgstr "Експортування з’єднання VPN"
+msgstr "З'єднання VPN (%1)"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"

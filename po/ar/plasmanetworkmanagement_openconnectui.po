@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-11 00:47+0000\n"
+"POT-Creation-Date: 2022-12-14 00:48+0000\n"
 "PO-Revision-Date: 2015-01-10 03:31+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -36,7 +36,7 @@ msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "لِج"
 
-#: openconnectauth.cpp:654
+#: openconnectauth.cpp:658
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-11 00:47+0000\n"
+"POT-Creation-Date: 2022-12-14 00:48+0000\n"
 "PO-Revision-Date: 2022-08-11 10:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -37,7 +37,7 @@ msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Entrada"
 
-#: openconnectauth.cpp:654
+#: openconnectauth.cpp:658
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"

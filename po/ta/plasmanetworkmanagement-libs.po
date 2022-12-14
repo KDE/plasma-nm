@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-13 00:58+0000\n"
-"PO-Revision-Date: 2022-11-17 19:47+0530\n"
+"PO-Revision-Date: 2022-12-13 19:33+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -442,7 +442,7 @@ msgstr "முகவரி"
 #, kde-format
 msgctxt "Header text for IPv6 prefix"
 msgid "Prefix"
-msgstr ""
+msgstr "முன்னொட்டு"
 
 #: editor/settings/ipv6widget.cpp:46 editor/widgets/ipv6routeswidget.cpp:30
 #, kde-format
@@ -604,7 +604,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: editor/settings/ui/802-1x.ui:215
@@ -856,7 +856,7 @@ msgstr ""
 #: editor/settings/ui/bridge.ui:151
 #, kde-format
 msgid "Priority:"
-msgstr ""
+msgstr "முக்கியத்துவம்:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/bridge.ui:177
@@ -921,7 +921,7 @@ msgstr "இப்பிணையத்திற்கு அனைத்து �
 #: editor/settings/ui/connectionwidget.ui:64
 #, kde-format
 msgid "Edit advanced permissions for this connection"
-msgstr ""
+msgstr "இவ்விணைப்புக்கான மேம்பட்ட அமைப்புகளைத் திருத்துங்கள்"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:67
@@ -1297,7 +1297,7 @@ msgstr "தனியுரிமை:"
 #: editor/settings/ui/ppp.ui:23
 #, kde-format
 msgid "Authentication"
-msgstr ""
+msgstr "சான்றளித்தல்"
 
 #. i18n: ectx: property (text), widget (QCheckBox, eap)
 #: editor/settings/ui/ppp.ui:38
@@ -3312,7 +3312,7 @@ msgstr ""
 #: models/creatableconnectionsmodel.cpp:221
 #, kde-format
 msgid "Virtual connections"
-msgstr ""
+msgstr "மெய்நிகர் இணைப்புகள்"
 
 #: models/creatableconnectionsmodel.cpp:192
 #: models/creatableconnectionsmodel.cpp:202
@@ -3544,7 +3544,7 @@ msgstr "பாதுகாப்பு வகை"
 #: models/networkmodelitem.cpp:658
 #, kde-format
 msgid "Frequency"
-msgstr ""
+msgstr "அதிர்வெண்"
 
 #: models/networkmodelitem.cpp:659
 #, kde-format
@@ -3611,7 +3611,7 @@ msgstr ""
 #: models/networkmodelitem.cpp:748
 #, kde-format
 msgid "Device"
-msgstr ""
+msgstr "சாதனம்"
 
 #~ msgid "Missing VPN plugin"
 #~ msgstr "VPN செருகுநிரல் காணவில்லை"

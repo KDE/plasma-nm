@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-13 00:58+0000\n"
-"PO-Revision-Date: 2022-10-27 19:48+0530\n"
+"PO-Revision-Date: 2022-12-13 19:34+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -96,16 +96,10 @@ msgid "Middle-click to turn off Airplane Mode"
 msgstr "விமானப் பயன்முறையை முடக்க நடு-கிளிக் செய்யுங்கள்"
 
 #: contents/ui/main.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip %1 is a list of the active network connections"
-#| msgid ""
-#| "%1\n"
-#| "Middle-click to turn on Airplane Mode"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
-"%1\n"
-"விமானப் பயன்முறையை இயக்க நடு-கிளிக் செய்யுங்கள்"
+msgstr "விமானப் பயன்முறையை இயக்க நடு-கிளிக் செய்யுங்கள்"
 
 #: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
 #, kde-format

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-13 00:58+0000\n"
-"PO-Revision-Date: 2021-06-07 01:08+0100\n"
+"PO-Revision-Date: 2022-12-14 09:39+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -40,10 +40,9 @@ msgid "Import VPN Connection"
 msgstr "Importar uma Ligação VPN"
 
 #: kcm.cpp:531
-#, fuzzy, kde-format
-#| msgid "Export VPN Connection"
+#, kde-format
 msgid "VPN connections (%1)"
-msgstr "Exportar a Ligação VPN"
+msgstr "Ligações de VPN (%1)"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
@@ -139,6 +138,3 @@ msgstr "Remover a Ligação"
 #: qml/main.qml:222
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Deseja remover a ligação '%1'?"
-
-#~ msgid "Search…"
-#~ msgstr "Procurar…"

@@ -1206,6 +1206,3 @@ msgstr "token"
 #, kde-format
 msgid "one-time password"
 msgstr "еднократна парола"
-
-#~ msgid "Could not open file for writing"
-#~ msgstr "Не можа да се отвори файла за запис"

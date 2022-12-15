@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-13 00:58+0000\n"
-"PO-Revision-Date: 2022-11-15 10:12+0100\n"
+"PO-Revision-Date: 2022-12-13 14:16+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2929,12 +2929,12 @@ msgstr "No s'ha trobat cap connector VPN per al tipus %1"
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr ""
+msgstr "No està implementada la importació d'este tipus de VPN"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr ""
+msgstr "Sense implementar"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -3751,7 +3751,3 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Dispositiu"
-
-#~ msgctxt "Error message in VPN import/export dialog"
-#~ msgid "Operation not supported for this VPN type."
-#~ msgstr "Operació no admesa per a este tipus de VPN."

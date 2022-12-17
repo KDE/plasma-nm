@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-09 00:48+0000\n"
+"POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2014-09-22 19:17+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -101,32 +101,32 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:74 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: contents/ui/main.qml:82
+#: contents/ui/main.qml:83
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr ""
 
-#: contents/ui/main.qml:90
+#: contents/ui/main.qml:91
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:95
+#: contents/ui/main.qml:96
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: contents/ui/main.qml:100
+#: contents/ui/main.qml:101
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr ""
 
-#: contents/ui/main.qml:136
+#: contents/ui/main.qml:138
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

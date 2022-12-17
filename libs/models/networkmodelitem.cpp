@@ -19,7 +19,6 @@
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/TeamDevice>
 #include <NetworkManagerQt/VlanDevice>
-#include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/VpnSetting>
 #include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WirelessDevice>

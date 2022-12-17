@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the plasma-nm package.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2017, 2019, 2020, 2021.
+# Vincenzo Reale <smart2128vr@gmail.com>, 2017, 2019, 2020, 2021, 2022.
 #
 #
 msgid ""
@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-13 00:58+0000\n"
-"PO-Revision-Date: 2021-06-01 02:37+0200\n"
+"PO-Revision-Date: 2022-12-16 11:03+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.04.1\n"
+"X-Generator: Lokalize 22.12.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: kcm.cpp:344
@@ -45,10 +45,9 @@ msgid "Import VPN Connection"
 msgstr "Importa connessione VPN"
 
 #: kcm.cpp:531
-#, fuzzy, kde-format
-#| msgid "Export VPN Connection"
+#, kde-format
 msgid "VPN connections (%1)"
-msgstr "Esporta connessione VPN"
+msgstr "Connessioni VPN (%1)"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"

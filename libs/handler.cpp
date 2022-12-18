@@ -299,6 +299,8 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
         } else {
             if (ap->mode() == NetworkManager::AccessPoint::Adhoc) {
                 wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaNone);
+            } else if (securityType == NetworkManager::SAE) {
+                wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::SAE);
             } else {
                 wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
             }

@@ -75,6 +75,9 @@ private:
     int validatePeerCert(void *, const char *);
     int processAuthFormP(struct oc_auth_form *);
     void writeProgress(int level, const char *, va_list);
+#if OPENCONNECT_CHECK_VER(5, 8)
+    int openUri(struct openconnect_info *, const char *, void *);
+#endif
 
     QMutex *m_mutex;
     QWaitCondition *m_waitForUserInput;

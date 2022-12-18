@@ -30,6 +30,7 @@ include(FeatureSummary)
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Core
     DBus
+    Gui
     Network
     Quick
     QuickWidgets

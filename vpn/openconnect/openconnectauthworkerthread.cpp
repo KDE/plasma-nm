@@ -11,6 +11,11 @@
 #include <QString>
 #include <QWaitCondition>
 
+#if OPENCONNECT_CHECK_VER(5, 8)
+#include <QUrl>
+#include <QDesktopServices>
+#endif
+
 extern "C" {
 #include <cerrno>
 #include <cstdlib>
@@ -21,6 +26,14 @@ extern "C" {
 class OpenconnectAuthStaticWrapper
 {
 public:
+#if OPENCONNECT_CHECK_VER(5, 8)
+    static int openUri(struct openconnect_info *vpninfo, const char *login_uri, void *obj)
+    {
+        if (obj)
+            return static_cast<OpenconnectAuthWorkerThread *>(obj)->openUri(vpninfo, login_uri, obj);
+        return -1;
+    }
+#endif
 #if OPENCONNECT_CHECK_VER(5, 0)
     static int writeNewConfig(void *obj, const char *str, int num)
     {
@@ -83,6 +96,9 @@ OpenconnectAuthWorkerThread::OpenconnectAuthWorkerThread(QMutex *mutex,
                                                 OpenconnectAuthStaticWrapper::writeProgress,
                                                 this);
     openconnect_set_cancel_fd(m_openconnectInfo, cancelFd);
+#if OPENCONNECT_CHECK_VER(5, 8)
+    openconnect_set_external_browser_callback(m_openconnectInfo, OpenconnectAuthStaticWrapper::openUri);
+#endif
 }
 
 OpenconnectAuthWorkerThread::~OpenconnectAuthWorkerThread()
@@ -186,3 +202,17 @@ void OpenconnectAuthWorkerThread::writeProgress(int level, const char *fmt, va_l
     const QString msg = QString::vasprintf(fmt, argPtr);
     Q_EMIT updateLog(msg, level);
 }
+
+#if OPENCONNECT_CHECK_VER(5, 8)
+int OpenconnectAuthWorkerThread::openUri(__attribute__((unused)) struct openconnect_info *vpninfo,
+                                         const char *login_uri, __attribute__((unused)) void *privdata)
+{
+    bool opened = QDesktopServices::openUrl(QUrl(login_uri, QUrl::TolerantMode));
+    if (!opened) {
+        OpenconnectAuthWorkerThread::writeProgress(PRG_ERR, "Failed to invoke QDesktopServices::openUrl.", nullptr);
+        return 1;
+    }
+
+    return 0;
+}
+#endif

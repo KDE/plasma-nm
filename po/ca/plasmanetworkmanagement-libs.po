@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-18 00:56+0000\n"
+"POT-Creation-Date: 2022-12-19 00:48+0000\n"
 "PO-Revision-Date: 2022-12-13 14:16+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3346,52 +3346,52 @@ msgstr ""
 "Manca la implementació del NetworkManager per a les connexions VPN «%1». Si "
 "us plau, useu el gestor de paquets per a instal·lar-ho."
 
-#: handler.cpp:763
+#: handler.cpp:765
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Ha fallat en activar %1"
 
-#: handler.cpp:767
+#: handler.cpp:769
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Ha fallat en afegir %1"
 
-#: handler.cpp:771
+#: handler.cpp:773
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Ha fallat en afegir la connexió %1"
 
-#: handler.cpp:775
+#: handler.cpp:777
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Ha fallat en desactivar %1"
 
-#: handler.cpp:779
+#: handler.cpp:781
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Ha fallat en eliminar %1"
 
-#: handler.cpp:783
+#: handler.cpp:785
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Ha fallat en actualitzar la connexió %1"
 
-#: handler.cpp:794
+#: handler.cpp:796
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Ha fallat en crear el punt d'accés %1"
 
-#: handler.cpp:813
+#: handler.cpp:815
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "S'ha afegit la connexió %1"
 
-#: handler.cpp:817
+#: handler.cpp:819
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "S'ha eliminat la connexió %1"
 
-#: handler.cpp:821
+#: handler.cpp:823
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "S'ha actualitzat la connexió %1"

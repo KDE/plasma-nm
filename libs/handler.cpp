@@ -35,6 +35,7 @@
 #include <KIO/OpenUrlJob>
 #include <KLocalizedString>
 #include <KNotification>
+#include <KOSRelease>
 #include <KPluginMetaData>
 #include <KProcess>
 #include <KUser>
@@ -104,8 +105,15 @@ void Handler::activateConnection(const QString &connection, const QString &devic
                 auto notification = new KNotification(QStringLiteral("MissingVpnPlugin"), KNotification::Persistent, this);
                 notification->setComponentName(QStringLiteral("networkmanagement"));
                 notification->setTitle(con->name());
-                notification->setText(i18n("Plasma is missing support for '%1' VPN connections. Please report this to your distribution.", pluginBaseName));
+                notification->setText(i18n("Plasma is missing support for '%1' VPN connections.", pluginBaseName));
                 notification->setIconName(QStringLiteral("dialog-error"));
+                notification->setActions({i18n("Report Bug")});
+                connect(notification, &KNotification::action1Activated, this, [notification] {
+                    auto *job = new KIO::OpenUrlJob(QUrl(KOSRelease().bugReportUrl()));
+                    job->setStartupId(notification->xdgActivationToken().toUtf8());
+                    job->start();
+                });
+
                 notification->sendEvent();
 
                 return;

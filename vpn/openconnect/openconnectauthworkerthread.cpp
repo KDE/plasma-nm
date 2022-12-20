@@ -209,7 +209,7 @@ int OpenconnectAuthWorkerThread::openUri(__attribute__((unused)) struct openconn
 {
     bool opened = QDesktopServices::openUrl(QUrl(login_uri, QUrl::TolerantMode));
     if (!opened) {
-        OpenconnectAuthWorkerThread::writeProgress(PRG_ERR, "Failed to invoke QDesktopServices::openUrl.", nullptr);
+        OpenconnectAuthStaticWrapper::writeProgress(this, PRG_ERR, "Failed to invoke QDesktopServices::openUrl.");
         return 1;
     }
 

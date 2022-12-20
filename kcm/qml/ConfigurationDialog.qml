@@ -23,7 +23,7 @@ Dialog {
             id: background
             anchors.fill: parent
             focus: true
-            color: baseColor
+            color: Kirigami.Theme.backgroundColor
         }
 
         Kirigami.FormLayout {
@@ -93,12 +93,13 @@ Dialog {
                 right: parent.right
                 margins: Kirigami.Units.smallSpacing
             }
-            spacing: Kirigami.Units.smallSpacing
+            spacing: Kirigami.Units.mediumSpacing
 
             QQC2.Button {
                 id: okButton
+                icon.name: "dialog-ok"
                 enabled: false
-                text: i18n("Ok")
+                text: i18n("OK")
 
                 onClicked: {
                     configurationDialog.accept()
@@ -107,6 +108,7 @@ Dialog {
 
             QQC2.Button {
                 id: cancelButton
+                icon.name: "dialog-cancel"
                 text: i18n("Cancel")
 
                 onClicked: {

@@ -28,7 +28,7 @@ Dialog {
             id: background
             anchors.fill: parent
             focus: true
-            color: baseColor
+            color: Kirigami.Theme.backgroundColor
         }
 
         QQC2.ScrollView {
@@ -40,6 +40,7 @@ Dialog {
                 right: parent.right
                 top: parent.top
             }
+
             QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
 
             ListView {
@@ -57,6 +58,14 @@ Dialog {
                 boundsBehavior: Flickable.StopAtBounds
                 section.property: "ConnectionTypeSection"
                 section.delegate: Kirigami.ListSectionHeader { text: section }
+                Rectangle {
+                    id: background1
+                    z: -1
+                    anchors.fill: parent
+                    focus: true
+                    Kirigami.Theme.colorSet: Kirigami.Theme.View
+                    color: Kirigami.Theme.backgroundColor
+                }
                 delegate: ListItem {
                     checked: mouseArea.containsMouse || view.currentlySelectedIndex == index
                     height: connectionTypeBase.height
@@ -151,10 +160,11 @@ Dialog {
                 right: parent.right
                 margins: Math.round(Kirigami.Units.gridUnit / 2)
             }
-            spacing: Math.round(Kirigami.Units.gridUnit / 2)
+            spacing: Kirigami.Units.mediumSpacing
 
             QQC2.Button {
                 id: createButton
+                icon.name: "list-add"
                 enabled: false
                 text: i18n("Create")
 
@@ -166,6 +176,7 @@ Dialog {
 
             QQC2.Button {
                 id: cancelButton
+                icon.name: "dialog-cancel"
                 text: i18n("Cancel")
 
                 onClicked: {

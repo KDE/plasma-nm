@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-18 00:56+0000\n"
+"POT-Creation-Date: 2022-12-20 00:48+0000\n"
 "PO-Revision-Date: 2022-12-17 09:46+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque\n"
@@ -3331,7 +3331,7 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Kendu"
 
-#: handler.cpp:105
+#: handler.cpp:108
 #, kde-format
 msgid ""
 "Plasma is missing support for '%1' VPN connections. Please report this to "
@@ -3340,61 +3340,67 @@ msgstr ""
 "Plasmari «%1» VPN konexioen euskarria falta zaio. Mesedez, eman zure "
 "banaketari honen berri."
 
-#: handler.cpp:115
-#, kde-format
-msgid ""
-"NetworkManager is missing support for '%1' VPN connections. Please use the "
-"package manager to install it."
+#: handler.cpp:126
+#, fuzzy, kde-format
+#| msgid ""
+#| "NetworkManager is missing support for '%1' VPN connections. Please use "
+#| "the package manager to install it."
+msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 "Plasmari «%1» VPN konexioen euskarria falta zaio. Mesedez, erabili pakete-"
 "kudeatzailea hura instalatzeko."
 
-#: handler.cpp:763
+#: handler.cpp:128
+#, kde-format
+msgid "Install"
+msgstr ""
+
+#: handler.cpp:776
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Huts egin du hau %1 aktibatzean"
 
-#: handler.cpp:767
+#: handler.cpp:780
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Huts egin du hau %1 gehitzean"
 
-#: handler.cpp:771
+#: handler.cpp:784
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Huts egin du %1 konexioa gehitzean"
 
-#: handler.cpp:775
+#: handler.cpp:788
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Huts egin du %1 desaktibatzean"
 
-#: handler.cpp:779
+#: handler.cpp:792
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Huts egin du %1 kentzean"
 
-#: handler.cpp:783
+#: handler.cpp:796
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Huts egin du %1 konexioa eguneratzean"
 
-#: handler.cpp:794
+#: handler.cpp:807
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "%1 berogunea sortzea huts egin du"
 
-#: handler.cpp:813
+#: handler.cpp:826
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "%1 konexioa gehitu da"
 
-#: handler.cpp:817
+#: handler.cpp:830
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "%1 konexioa kendu da"
 
-#: handler.cpp:821
+#: handler.cpp:834
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "%1 konexioa eguneratu da"

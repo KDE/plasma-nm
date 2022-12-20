@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-19 00:48+0000\n"
+"POT-Creation-Date: 2022-12-20 00:48+0000\n"
 "PO-Revision-Date: 2022-11-14 11:51+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -3318,7 +3318,7 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "O&dstrániť"
 
-#: handler.cpp:105
+#: handler.cpp:108
 #, kde-format
 msgid ""
 "Plasma is missing support for '%1' VPN connections. Please report this to "
@@ -3327,61 +3327,67 @@ msgstr ""
 "V systéme Plasma chýba podpora pripojení VPN '%1'. Nahláste to, prosím, "
 "vašej distribúcii."
 
-#: handler.cpp:115
-#, kde-format
-msgid ""
-"NetworkManager is missing support for '%1' VPN connections. Please use the "
-"package manager to install it."
+#: handler.cpp:126
+#, fuzzy, kde-format
+#| msgid ""
+#| "NetworkManager is missing support for '%1' VPN connections. Please use "
+#| "the package manager to install it."
+msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 "NetworkManageru chýba podpora pripojení VPN '%1'. Použite prosím správcu "
 "balíčkov na jeho inštaláciu."
 
-#: handler.cpp:765
+#: handler.cpp:128
+#, kde-format
+msgid "Install"
+msgstr ""
+
+#: handler.cpp:776
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Zlyhalo aktivovanie %1"
 
-#: handler.cpp:769
+#: handler.cpp:780
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Zlyhalo pridanie %1"
 
-#: handler.cpp:773
+#: handler.cpp:784
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Zlyhalo pridanie pripojenia %1"
 
-#: handler.cpp:777
+#: handler.cpp:788
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Zlyhalo deaktivovanie %1"
 
-#: handler.cpp:781
+#: handler.cpp:792
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Zlyhalo odstránenie %1"
 
-#: handler.cpp:785
+#: handler.cpp:796
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Zlyhala aktualizácia pripojenia %1"
 
-#: handler.cpp:796
+#: handler.cpp:807
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Zlyhalo vytvorenie aktívneho bodu %1"
 
-#: handler.cpp:815
+#: handler.cpp:826
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Pripojenie %1 bolo pridané"
 
-#: handler.cpp:819
+#: handler.cpp:830
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Pripojenie %1 bolo odstránené"
 
-#: handler.cpp:823
+#: handler.cpp:834
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Pripojenie %1 bolo aktualizované"
